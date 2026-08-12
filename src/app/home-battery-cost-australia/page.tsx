@@ -128,6 +128,21 @@ export default function HomeBatteryCostAustraliaPage() {
             </p>
           </header>
 
+          {/* Answer-first: the exact buyer question as an H2, then a liftable answer for engines. */}
+          <section className="pb-2">
+            <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#10251b]">How much does it cost to install a home battery in Australia?</h2>
+            <div className="mt-4 nw-card px-6 py-5">
+              <p className="text-[15.5px] leading-relaxed text-[#2b362f]">
+                Installed home batteries in Australia are commonly quoted around $600 to $1,300 per usable kWh before
+                rebates, with larger systems costing less per kWh. The federal Cheaper Home Batteries discount then takes
+                roughly 30% off at the point of sale, applied by your installer. What you actually pay depends on
+                capacity, whether a new hybrid inverter is needed, and whether the quote is supply-only or fully
+                installed, which is why quotes vary so much. Use these ranges to sense-check a quote, then get a quote
+                for a figure specific to your home.
+              </p>
+            </div>
+          </section>
+
           {/* Info-only note */}
           <div className="nw-card px-5 py-4 text-sm leading-relaxed text-[#3d4b44]">
             <span className="font-bold text-[#10251b]">Indicative ranges.</span> The figures below are researched

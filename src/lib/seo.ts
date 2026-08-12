@@ -1489,6 +1489,16 @@ export const seoConfig = {
     keywords: ["juniper australia", "juniper weight loss", "juniper review australia", "is juniper legit", "is juniper worth it", "does juniper work", "juniper weight reset program", "juniper cost australia", "myjuniper", "juniper program australia"],
   },
 
+  weightLossGuide: {
+    // Social / lead-capture landing, not a search page: noindex avoids a thin-content signal.
+    noIndex: true,
+    title: "Free Australian Weight-Loss Options Guide | Refer Labs",
+    description:
+      "A free, plain-English guide to the main weight-loss pathways in Australia: medical telehealth, coaching-led programs and the GP route, and who each suits. Emailed to you.",
+    url: `${SITE_URL}/weight-loss-guide`,
+    keywords: ["weight loss options australia", "weight loss guide australia", "weight loss telehealth guide"],
+  },
+
   moshReview: {
     title: "Mosh Review 2026: Is It Legit and Worth It? | Refer Labs",
     description:

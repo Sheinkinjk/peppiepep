@@ -130,6 +130,20 @@ export default function HomeBatteryRebatePage() {
             <Offer loc="rebate-hero" />
           </div>
 
+          {/* Answer-first: the exact buyer question as an H2, then a liftable answer for engines. */}
+          <section className="mt-10">
+            <h2 className="text-2xl font-bold text-[#10251b]">Which home battery systems qualify for the Australian government rebate?</h2>
+            <div className="mt-4 rounded-2xl border border-[#cfe6da] bg-[#f4f9f6] px-6 py-5">
+              <p className="text-[15.5px] leading-relaxed text-[#2b362f]">
+                Under the federal Cheaper Home Batteries Program, small-scale battery systems from 5kWh up to 100kWh of
+                usable capacity qualify when installed by an accredited installer. The rebate takes roughly 30% off the
+                upfront cost, applied at the point of sale, and is calculated on usable capacity, with the full rate on
+                the first 14kWh before it tapers above that. Some states add their own incentive on top, such as a NSW
+                Virtual Power Plant payment. Eligibility for your address is confirmed in the quote.
+              </p>
+            </div>
+          </section>
+
           {/* What it is */}
           <section className="mt-12 border-t border-[#e5e9e7] pt-10">
             <h2 className="text-2xl font-bold text-[#10251b]">What the rebate actually is</h2>
