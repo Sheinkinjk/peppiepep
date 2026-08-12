@@ -11,6 +11,7 @@ import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
 import { OrganizationSchema, WebsiteSchema } from "@/components/StructuredData";
 import { GoogleAnalytics, GoogleTagManager, MetaPixel, LinkedInInsight, SearchableAnalytics } from "@/components/Analytics";
 import { AffiliateClickTracker } from "@/components/AffiliateClickTracker";
+import { AiReferralTracker } from "@/components/AiReferralTracker";
 import { ChromeGate } from "@/components/ChromeGate";
 // Cookieless, consent-independent pageview counting, so real traffic is visible
 // even for visitors who decline analytics cookies (GA4 only counts consenters).
@@ -95,6 +96,7 @@ export default function RootLayout({
         <Analytics />
         <SearchableAnalytics />
         <AffiliateClickTracker />
+        <AiReferralTracker />
         <div className="relative z-10 flex min-h-screen flex-col">
           <ChromeGate>
             <StickyHeader />

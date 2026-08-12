@@ -61,6 +61,7 @@ const SUBID_PARAM: Record<string, string> = {
   "get.alidrop.co": "sid1",             // PartnerStack
   "try.leadpages.com": "sid1",          // PartnerStack
   "ps.superfiliate.com": "sid1",        // PartnerStack
+  "myjuniper.com": "utm_content",       // Juniper reads utm_content in its own analytics
 };
 
 /** Page path -> compact subid slug, e.g. "/polymarket/trading-bots" -> "polymarket-trading-bots". */
