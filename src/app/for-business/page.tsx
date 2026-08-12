@@ -9,20 +9,24 @@ const CALENDLY = "https://calendly.com/jarred-referlabs/30min";
 
 const offers = [
   {
-    tag: "Partnerships",
-    title: "Get your product featured",
-    body: "Our comparisons reach Australians at the exact moment they are choosing a provider. If your product genuinely belongs in a category we cover, we should talk. Placement is always disclosed and never buys a ranking, which is precisely why the traffic converts.",
-    cta: { label: "Enquire about partnership", href: "mailto:jarred@referlabs.com.au?subject=Partnership%20enquiry", external: true },
+    tag: "Get discovered",
+    title: "Put your product in front of people choosing",
+    body: "Our comparisons reach Australians at the exact moment they are picking a provider in your category. If your product genuinely belongs in one we cover, we add it and disclose the relationship. Placement never buys a ranking, which is precisely why the traffic converts.",
+    cta: { label: "Enquire about being featured", href: "mailto:jarred@referlabs.com.au?subject=Get%20featured%20enquiry", external: true },
+    links: [{ href: "/comparison-website", label: "How featuring works" }],
   },
   {
-    tag: "Growth services",
+    tag: "Generate leads",
+    title: "Qualified enquiries, not anonymous clicks",
+    body: "For categories where a click is not enough, we run enquiry funnels that capture the details you need to quote: postcode, usage, budget, timeframe. You receive a qualified lead rather than a visitor, priced per lead or per appointment. Live today for home batteries and business lending.",
+    cta: { label: "Enquire about lead generation", href: "mailto:jarred@referlabs.com.au?subject=Lead%20generation%20enquiry", external: true },
+  },
+  {
+    tag: "Build distribution",
     title: "Referral & affiliate programs, built and run",
     body: "We design, launch and actively distribute referral and affiliate programs for Australian and international businesses. Incentive design, tracking, channel activation and ongoing management, handled end to end.",
     cta: { label: "Enquire about growth services", href: "mailto:jarred@referlabs.com.au?subject=Growth%20services%20enquiry", external: true },
-    links: [
-      { href: "/comparison-website", label: "Get featured on Refer Labs" },
-      { href: "/affiliate-programs-australia", label: "Affiliate programs in Australia" },
-    ],
+    links: [{ href: "/affiliate-programs-australia", label: "Affiliate programs in Australia" }],
   },
 ];
 
@@ -78,7 +82,7 @@ export default function ForBusinessPage() {
         </section>
 
         <section className="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-16">
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {offers.map((o) => (
               <div key={o.title} className="flex flex-col rounded-2xl border border-[#e5e9e7] bg-[#f5f8f6] p-7 shadow-[0_2px_24px_-16px_rgba(0,0,0,0.2)]">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#0a7c42]">{o.tag}</p>

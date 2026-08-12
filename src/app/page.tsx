@@ -79,13 +79,15 @@ const categoryCards = [
   },
 ];
 
+// The head-to-head format is what ranks and what AI engines cite, so the
+// homepage funnels equity into the comparisons Search Console shows winning.
 const guides = [
   { href: "/moshy-vs-juniper", cat: "Weight loss", title: "Moshy vs Juniper: which is built for you?" },
-  { href: "/cheapest-weight-loss-telehealth-australia", cat: "Weight loss", title: "The cheapest weight-loss telehealth in Australia" },
-  { href: "/best-website-builder", cat: "Software", title: "The best website builder in 2026, without the fluff" },
-  { href: "/best-newsletter-platform", cat: "Creator tools", title: "beehiiv vs Substack vs Kit, compared properly" },
+  { href: "/mosh-vs-pilot", cat: "Hair loss", title: "Mosh vs Pilot: which should you choose?" },
   { href: "/moshy-vs-gp", cat: "Weight loss", title: "Telehealth or your GP? A practical comparison" },
-  { href: "/best-hair-loss-treatment-australia", cat: "Hair loss", title: "The best hair-loss treatment in Australia" },
+  { href: "/mosh-vs-dense", cat: "Hair loss", title: "Mosh vs Dense: clinical pathway or topical products?" },
+  { href: "/compare-business-lenders/prospa-vs-lumi", cat: "Business loans", title: "Prospa vs Lumi: two fast lenders, compared" },
+  { href: "/best-newsletter-platform", cat: "Creator tools", title: "beehiiv vs Substack vs Kit, compared properly" },
 ];
 
 const itemListSchema = {
@@ -324,7 +326,7 @@ export default function HomePage() {
         <section className="border-y border-[#e5e9e7] bg-[#f5f8f6]">
           <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
             <div className="mb-9 flex items-end justify-between gap-4">
-              <h2 className="text-2xl font-black tracking-[-0.02em] text-[#10251b] sm:text-[2rem]">Latest guides</h2>
+              <h2 className="text-2xl font-black tracking-[-0.02em] text-[#10251b] sm:text-[2rem]">Popular comparisons</h2>
               <Link href="/guides" className="hidden items-center gap-1 text-sm font-semibold text-[#0a7c42] hover:text-[#086536] sm:inline-flex">
                 All guides <ArrowRight className="h-3.5 w-3.5" />
               </Link>

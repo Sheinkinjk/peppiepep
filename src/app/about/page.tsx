@@ -72,6 +72,19 @@ export default function AboutPage() {
           </section>
 
           <section>
+            <h2 className="text-lg font-bold text-[#10251b]">How we rank</h2>
+            <p className="mt-2 text-[15px] leading-relaxed text-[#2b362f]">
+              When a page orders providers or names a first pick, the order comes from the same checklist every time:
+              published price and what the price includes; eligibility and who the provider actually serves; what is
+              bundled versus billed separately; cancellation and refund terms; delivery, support and follow-up; and
+              availability in Australia. We weigh those against who each provider suits, because the right pick for one
+              reader is the wrong pick for another, and we say who each option fits rather than crowning one winner for
+              everyone. Where two providers tie on the facts, we say that too. Commission rates play no part in the
+              order, and a provider we earn nothing from can and does outrank one we partner with.
+            </p>
+          </section>
+
+          <section>
             <h2 className="text-lg font-bold text-[#10251b]">How we are paid</h2>
             <p className="mt-2 text-[15px] leading-relaxed text-[#2b362f]">
               Many pages contain affiliate links. If you sign up or buy through one, we may earn a commission at no extra
