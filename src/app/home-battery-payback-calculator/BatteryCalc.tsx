@@ -125,16 +125,32 @@ export default function BatteryCalc() {
             <Row k="Net position after 10 years" v={(tenYearNet >= 0 ? "+" : "−") + fmt(Math.abs(tenYearNet))} bold accent={tenYearNet >= 0} />
           </dl>
 
-          <a
-            href={APOLLO_ENERGY_URL}
-            target="_blank"
-            rel="nofollow sponsored"
-            data-cta="battery-calc-result"
+          <Link
+            href="/apollo-energy-group#register"
+            data-cta="battery-calc-to-eoi"
+            onClick={() => {
+              // First-party intent data: the estimate this reader carried into the
+              // enquiry. Consent-gated like all gtag calls.
+              window.gtag?.("event", "battery_estimate", {
+                battery_kwh: size,
+                shifted_kwh_day: effShift,
+                net_cost: netCost,
+                annual_saving: annualSaving,
+                payback_years: Math.round(paybackYears * 10) / 10,
+                event_category: "matcher",
+              });
+            }}
             className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-bold text-white transition-all hover:-translate-y-0.5"
             style={{ background: GREEN, boxShadow: `0 8px 24px ${GREEN}25` }}
           >
-            Get $500 off a real quote <ArrowRight className="h-4 w-4" />
-          </a>
+            Turn this estimate into a real quote, $500 off <ArrowRight className="h-4 w-4" />
+          </Link>
+          <p className="mt-2.5 text-center text-xs text-[#6e7b74]">
+            Registers your interest with Apollo Energy through us; they quote from your actual usage.{" "}
+            <a href={APOLLO_ENERGY_URL} target="_blank" rel="nofollow sponsored" data-cta="battery-calc-direct" className="underline">
+              Or go straight to Apollo
+            </a>
+          </p>
           <p className="mt-3 text-xs leading-relaxed text-[#6e7b74]">
             Illustrative only, from your inputs and stated assumptions. It is not a quote, a guarantee, or financial
             advice. Rebate and prices are indicative and move with the market. Your real figure depends on your home,
