@@ -26,34 +26,30 @@ export async function POST(request: Request) {
   }
 
   const { email, source } = parsed.data;
-  const supabase = await createServiceClient();
 
-  const { error } = await supabase.from("newsletter_subscribers").insert({
-    email,
-    source,
-  });
-
-  if (error && error.code !== "23505") {
-    return NextResponse.json(
-      { error: "Unable to subscribe right now. Please try again." },
-      { status: 500 },
-    );
+  // Persist the subscriber (best-effort). If the newsletter_subscribers table is
+  // missing (fresh Supabase project) the insert fails, but that must NOT 500 the
+  // user or skip the admin email: the notification below is the backstop capture.
+  let stored = false;
+  try {
+    const supabase = await createServiceClient();
+    const { error } = await supabase.from("newsletter_subscribers").insert({ email, source });
+    stored = !error || error.code === "23505"; // 23505 = already subscribed
+    if (error && error.code !== "23505") console.error("newsletter insert failed:", error.message);
+  } catch (e) {
+    console.error("newsletter insert threw:", e);
   }
 
+  // Always notify the admin on a registration, and flag any lead that wasn't stored.
   const html = buildNewsletterSubscriptionEmail({
     email,
     source,
     createdAt: new Date().toISOString(),
   });
-
-  const notifyResult = await sendAdminNotification({
-    subject: `📰 New newsletter subscriber: ${email}`,
+  await sendAdminNotification({
+    subject: `📰 New newsletter subscriber: ${email}${stored ? "" : " (NOT stored — add manually)"}`,
     html,
   });
 
-  if (!notifyResult.success) {
-    // Email notification failed - non-critical
-  }
-
-  return NextResponse.json({ success: true, status: error?.code === "23505" ? "exists" : "created" });
+  return NextResponse.json({ success: true, status: stored ? "created" : "pending" });
 }
