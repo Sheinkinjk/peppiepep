@@ -44,7 +44,7 @@ const itemListSchema = {
   "@context": "https://schema.org",
   "@type": "ItemList",
   name: "Best Weight Loss Telehealth Platforms Australia 2026",
-  description: "In-depth comparison of Australian weight loss telehealth platforms: Moshy, Juniper and Pilot. GLP-1 access, eligibility process, pricing, and who each platform suits.",
+  description: "In-depth comparison of Australian weight loss telehealth platforms: Moshy, Juniper and Pilot. Treatment access, eligibility process, pricing, and who each platform suits.",
   numberOfItems: 3,
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Moshy", description: "Australian clinically-led telehealth weight management platform, open to anyone eligible. Online eligibility questionnaire, practitioner review, GLP-1 medication access. Subscription with home delivery.", url: `${SITE_URL}/moshy` },
@@ -65,7 +65,7 @@ const faqSchema = {
     {
       "@type": "Question",
       name: "What is the best weight loss telehealth platform in Australia in 2026?",
-      acceptedAnswer: { "@type": "Answer", text: "Moshy, Juniper and Pilot are the most widely used GLP-1 telehealth weight loss platforms in Australia in 2026. Moshy runs a clinically supervised weight management pathway, open to anyone eligible, including medication options. Juniper markets primarily to women and combines GLP-1 medication with a coached program. Pilot is men-focused and sits inside a broader men's health service. Suitability depends on individual health factors. Consult a qualified health professional before starting any weight management programme." }
+      acceptedAnswer: { "@type": "Answer", text: "Moshy, Juniper and Pilot are the most widely used weight-loss telehealth platforms in Australia in 2026. Moshy runs a clinically supervised weight management pathway, open to anyone eligible, including medication options. Juniper markets primarily to women and combines a practitioner-led program with coaching. Pilot is men-focused and sits inside a broader men's health service. Suitability depends on individual health factors. Consult a qualified health professional before starting any weight management programme." }
     },
     {
       "@type": "Question",
@@ -80,17 +80,17 @@ const faqSchema = {
     {
       "@type": "Question",
       name: "Do these platforms work within the GLP-1 medication class?",
-      acceptedAnswer: { "@type": "Answer", text: "Both Moshy and Juniper operate practitioner-supervised weight-management pathways that can involve the GLP-1 medication class. GLP-1 medications are prescription-only in Australia and are prescribed only after a practitioner consultation and individual assessment, which decides suitability. Not every person who completes an eligibility questionnaire will be prescribed medication. This page does not constitute medical advice." }
+      acceptedAnswer: { "@type": "Answer", text: "Both Moshy and Juniper operate practitioner-supervised weight-management pathways that can involve treatment that a registered practitioner assesses as appropriate. GLP-1 medications are prescription-only in Australia and are prescribed only after a practitioner consultation and individual assessment, which decides suitability. Not every person who completes an eligibility questionnaire is found suitable. This page does not constitute medical advice." }
     },
     {
       "@type": "Question",
       name: "How do I access these weight loss platforms in Australia?",
-      acceptedAnswer: { "@type": "Answer", text: "Both platforms operate through an online eligibility and consultation process. Users complete an online questionnaire, which is reviewed by a practitioner. If eligible, treatment or programme access is arranged via subscription. Moshy and Juniper deliver medications directly to your home if prescribed. Click the links on this page to access each platform's eligibility flow directly." }
+      acceptedAnswer: { "@type": "Answer", text: "Both platforms operate through an online eligibility and consultation process. Users complete an online questionnaire, which is reviewed by a practitioner. If eligible, treatment or programme access is arranged via subscription. Moshy and Juniper deliver your treatment directly to your home where appropriate. Click the links on this page to access each platform's eligibility flow directly." }
     },
     {
       "@type": "Question",
       name: "Is weight loss telehealth in Australia covered by Medicare or private health insurance?",
-      acceptedAnswer: { "@type": "Answer", text: "Coverage varies by insurer and individual policy. Telehealth consultations may attract a Medicare rebate in some circumstances, but the specific medications, programmes, and subscription costs offered by Moshy and Juniper are typically not fully covered by Medicare. Check with each platform and your insurer for current coverage information. This page does not provide financial or health advice." }
+      acceptedAnswer: { "@type": "Answer", text: "Coverage varies by insurer and individual policy. Telehealth consultations may attract a Medicare rebate in some circumstances, but the specific programmes and subscription costs offered by Moshy and Juniper are typically not fully covered by Medicare. Check with each platform and your insurer for current coverage information. This page does not provide financial or health advice." }
     },
   ],
 };
@@ -287,7 +287,7 @@ const platforms: PlatformCardProps[] = [
     id: "juniper",
     index: "02",
     name: "Juniper",
-    tagline: "Australian weight management programme for women. Juniper combines GLP-1 medication access with structured health coaching and practitioner support. The programme takes a more comprehensive approach than medication-only services.",
+    tagline: "Australian weight management programme for women. Juniper combines a practitioner-led program with structured health coaching and support. The programme takes a more comprehensive approach than a clinical pathway alone.",
     deal: "Online eligibility check",
     dealNote: "Juniper uses an online eligibility and consultation process. Practitioners review each submission individually before recommending a programme.",
     pros: [
@@ -370,7 +370,7 @@ export default function BestWeightLossTelehealthPage() {
             </h1>
 
             <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl mb-3">
-              Moshy and Juniper dominate GLP-1-based weight management in Australia, but they take different approaches. Moshy runs a lean clinical pathway, open to anyone eligible. Juniper wraps medication in a coaching program and markets primarily to women.
+              Moshy and Juniper are two of the most-used weight-management platforms in Australia, but they take different approaches. Moshy runs a lean clinical pathway, open to anyone eligible. Juniper wraps clinical care in a coaching program and markets primarily to women.
             </p>
             <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl mb-5">
               Below: what each platform actually does, who it suits, and how to access each eligibility flow. This page does not constitute medical advice. Suitability is assessed individually by each platform&apos;s clinical team.
@@ -411,7 +411,7 @@ export default function BestWeightLossTelehealthPage() {
                 Quick Verdict
               </p>
               <p className="text-[#2b362f] text-sm sm:text-base leading-relaxed max-w-2xl">
-                Refer Labs&apos; August 2026 comparison of Australian weight-loss telehealth found Moshy (a lean clinical pathway, open to anyone eligible) and Juniper (a coaching-led program marketed to women) the leading GLP-1 weight-management platforms. Eligibility and suitability are assessed individually by each platform&apos;s clinical team. This page does not constitute medical advice.
+                Refer Labs&apos; August 2026 comparison of Australian weight-loss telehealth found Moshy (a lean clinical pathway, open to anyone eligible) and Juniper (a coaching-led program marketed to women) leading weight-management platforms. Eligibility and suitability are assessed individually by each platform&apos;s clinical team. This page does not constitute medical advice.
               </p>
             </div>
           </section>
@@ -537,7 +537,7 @@ export default function BestWeightLossTelehealthPage() {
             <div className="space-y-4 max-w-2xl">
               {[
                 { label: "Choose Moshy if:", body: "You want a clinically supervised weight management programme with access to GLP-1 medication options, done online. Moshy is open to anyone eligible, and its online-only process means no in-person GP appointment is required to start. Eligibility is assessed individually. Use our referral link for the current Moshy offer." },
-                { label: "Choose Juniper if:", body: "You are a woman in Australia looking for a weight management programme that combines GLP-1 medication access with structured health coaching and practitioner support. Juniper's programme is more coaching-intensive than Moshy's and is designed for women exclusively." },
+                { label: "Choose Juniper if:", body: "You are a woman in Australia looking for a weight management programme that combines a practitioner-led program with structured health coaching and support. Juniper's programme is more coaching-intensive than Moshy's and is designed for women exclusively." },
               ].map(({ label, body }) => (
                 <div key={label} className="border-b border-[#e5e9e7] pb-4">
                   <p className="text-sm font-bold text-[#10251b] mb-1">{label}</p>
@@ -556,7 +556,7 @@ export default function BestWeightLossTelehealthPage() {
               {[
                 {
                   q: "What is the best weight loss telehealth platform in Australia?",
-                  a: "Moshy (a lean clinical pathway, open to anyone eligible) and Juniper (a coaching-led program marketed to women) are the most widely used GLP-1 telehealth weight loss platforms in Australia. The best platform depends on your health profile and whether you want a medication-focused clinical pathway or a coaching-heavy program. Suitability is assessed by each platform's practitioners individually.",
+                  a: "Moshy (a lean clinical pathway, open to anyone eligible) and Juniper (a coaching-led program marketed to women) are the most widely used weight-loss telehealth platforms in Australia. The best platform depends on your health profile and whether you want a medication-focused clinical pathway or a coaching-heavy program. Suitability is assessed by each platform's practitioners individually.",
                 },
                 {
                   q: "How much does telehealth weight loss cost per month?",
@@ -568,11 +568,11 @@ export default function BestWeightLossTelehealthPage() {
                 },
                 {
                   q: "Is Moshy or Juniper better?",
-                  a: "Moshy and Juniper take different approaches. Moshy runs a lean clinical pathway, open to anyone eligible. Juniper adds health coaching to its programme and markets primarily to Australian women. If you want a focused clinical pathway, Moshy is the relevant option. If you want coaching alongside medication, Juniper is worth a look. Both require individual clinical eligibility assessment.",
+                  a: "Moshy and Juniper take different approaches. Moshy runs a lean clinical pathway, open to anyone eligible. Juniper adds health coaching to its programme and markets primarily to Australian women. If you want a focused clinical pathway, Moshy is the relevant option. If you want coaching alongside clinical care, Juniper is worth a look. Both require individual clinical eligibility assessment.",
                 },
                 {
                   q: "Do these platforms work within the GLP-1 medication class?",
-                  a: "Both Moshy and Juniper operate practitioner-supervised weight-management pathways that can involve the GLP-1 medication class. GLP-1 medicines are prescription-only in Australia and are prescribed only after an individual assessment by a registered practitioner, who decides suitability. Whether any specific medicine is appropriate is a clinical decision, not something a platform promises in advance, and not everyone who applies is prescribed medication. This page does not constitute medical advice.",
+                  a: "Both Moshy and Juniper operate practitioner-supervised weight-management pathways that can involve treatment that a registered practitioner assesses as appropriate. GLP-1 medicines are prescription-only in Australia and are prescribed only after an individual assessment by a registered practitioner, who decides suitability. Whether any specific medicine is appropriate is a clinical decision, not something a platform promises in advance, and not everyone who applies is prescribed medication. This page does not constitute medical advice.",
                 },
                 {
                   q: "Are these platforms available across all of Australia?",

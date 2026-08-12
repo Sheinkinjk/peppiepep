@@ -14,7 +14,7 @@ const aff = { href: MOSHY_URL, target: "_blank" as const, rel: "nofollow sponsor
 const faqs = [
   {
     q: "Which weight loss telehealth services are aimed at women?",
-    a: "In Australia, Juniper markets primarily to women and wraps health coaching around medication. Moshy runs a clinically-led pathway that is open to anyone eligible and is not gendered. Both start with an online questionnaire that a registered Australian practitioner reviews before any treatment is discussed. The right fit depends on whether you want coaching built in or a leaner clinical pathway.",
+    a: "In Australia, Juniper markets primarily to women and wraps health coaching around clinical care. Moshy runs a clinically-led pathway that is open to anyone eligible and is not gendered. Both start with an online questionnaire that a registered Australian practitioner reviews before any treatment is discussed. The right fit depends on whether you want coaching built in or a leaner clinical pathway.",
   },
   {
     q: "Do I need a referral or an in-person appointment to start?",
@@ -30,7 +30,7 @@ const faqs = [
   },
   {
     q: "How much does Juniper cost, and is there a discount?",
-    a: "Juniper runs as a monthly subscription that its own site says covers treatment, unlimited consultations and delivery, with optional 1:1 coaching as a paid add-on and a 30-day money-back guarantee. There is no single fixed price, since any medication is prescribed only after an individual assessment, and you can view Juniper's latest offers through our link. The cost that applies to you is confirmed inside Juniper's own flow before you commit.",
+    a: "Juniper runs as a monthly subscription that its own site says covers treatment, unlimited consultations and delivery, with optional 1:1 coaching as a paid add-on and a 30-day money-back guarantee. There is no single fixed price, since any treatment is arranged only after an individual assessment, and you can view Juniper's latest offers through our link. The cost that applies to you is confirmed inside Juniper's own flow before you commit.",
   },
 ];
 
@@ -148,7 +148,7 @@ export default function WeightLossTelehealthWomenPage() {
             practitioner, and some applicants are declined.
           </p>
           <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
-            You can view Juniper&apos;s latest offers through our link, and any medication is prescribed only after an
+            You can view Juniper&apos;s latest offers through our link, and any treatment is arranged only after an
             individual assessment, so the cost is confirmed inside Juniper&apos;s own flow before you commit. Our{" "}
             <Link href="/juniper" className="underline decoration-[#cdd5cf] underline-offset-2 hover:text-[#10251b]" style={{ color: CYAN }}>
               full Juniper review
@@ -178,7 +178,7 @@ export default function WeightLossTelehealthWomenPage() {
             Moshy runs a clinically-led telehealth pathway that is open to anyone eligible, women included, and it passes
             the checklist above: AHPRA-registered practitioners, an eligibility step that genuinely screens, pricing
             disclosed inside the platform before any commitment, and Australian regulation. If you would rather have
-            coaching wrapped around medication, Juniper is the women-focused option, and we compare the two directly in
+            coaching wrapped around clinical care, Juniper is the women-focused option, and we compare the two directly in
             our{" "}
             <Link href="/moshy-vs-juniper" className="underline decoration-[#cdd5cf] underline-offset-2 hover:text-[#10251b]" style={{ color: CYAN }}>
               Moshy vs Juniper guide

@@ -22,7 +22,7 @@ const faqs = [
   },
   {
     q: "How do these providers differ?",
-    a: "Moshy runs a lean, clinically-led pathway that is open to anyone eligible. Juniper wraps medication in a coaching program and markets primarily to women. Suitability for either is assessed individually.",
+    a: "Moshy runs a lean, clinically-led pathway that is open to anyone eligible. Juniper wraps clinical care in a coaching program and markets primarily to women. Suitability for either is assessed individually.",
   },
   {
     q: "Are these programs regulated?",

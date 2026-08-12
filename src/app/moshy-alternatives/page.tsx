@@ -18,7 +18,7 @@ const faqs = [
   },
   {
     q: "How is Juniper different from Moshy?",
-    a: "Juniper wraps medication access inside a broader coaching and community program and markets primarily to women. Moshy keeps the experience focused on the clinical pathway, open to anyone eligible. Which suits you depends on how much coaching support you want alongside the clinical side.",
+    a: "Juniper wraps clinical care inside a broader coaching and community program and markets primarily to women. Moshy keeps the experience focused on the clinical pathway, open to anyone eligible. Which suits you depends on how much coaching support you want alongside the clinical side.",
   },
   {
     q: "Is going through my GP a real alternative?",

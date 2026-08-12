@@ -75,8 +75,8 @@ export const moshyConfig: AffiliatePageConfig = {
     {
       heading: "Moshy vs Juniper",
       paragraphs: [
-        "Moshy and Juniper are Australia's two most commonly compared online weight management telehealth platforms. The most significant structural difference is approach: Moshy runs a lean, practitioner-led clinical pathway that is open to anyone eligible, while Juniper wraps medication in a structured coaching programme and markets primarily to women. Both platforms use an online eligibility and consultation model and can facilitate access to GLP-1 medications through Australian-registered practitioners.",
-        "The differences between the two platforms come down to how much support wraps around the medication. Juniper combines medication access with a structured coaching and community programme, positioning itself as a holistic weight management system rather than purely a telehealth prescribing service. Moshy's approach is more clinical, the focus is on the practitioner-led treatment pathway rather than ongoing lifestyle coaching.",
+        "Moshy and Juniper are Australia's two most commonly compared online weight management telehealth platforms. The most significant structural difference is approach: Moshy runs a lean, practitioner-led clinical pathway that is open to anyone eligible, while Juniper wraps clinical care in a structured coaching programme and markets primarily to women. Both platforms use an online eligibility and consultation model and provide access to Australian-registered practitioners who determine an appropriate treatment plan.",
+        "The differences between the two platforms come down to how much support wraps around the clinical care. Juniper combines its program with a structured coaching and community programme, positioning itself as a holistic weight management system rather than purely a telehealth prescribing service. Moshy's approach is more clinical, the focus is on the practitioner-led treatment pathway rather than ongoing lifestyle coaching.",
         "In terms of which platform is 'better' for weight loss, this is not a meaningful comparison at a general level. Outcomes from weight management programmes depend on the individual, adherence, clinical suitability for specific treatments, and lifestyle factors. The right starting point is completing the eligibility process with whichever platform matches the kind of support you want and your health profile.",
       ],
       hasCta: true,
@@ -160,7 +160,7 @@ export const moshyConfig: AffiliatePageConfig = {
     {
       href: "/best-weight-loss-telehealth-australia",
       label: "Best Weight Loss Telehealth Australia 2026",
-      desc: "Moshy vs Juniper compared, GLP-1 access, eligibility, pricing, and our verdict.",
+      desc: "Moshy vs Juniper compared: approach, eligibility, pricing, and our verdict.",
     },
     {
       href: "/moshhair",

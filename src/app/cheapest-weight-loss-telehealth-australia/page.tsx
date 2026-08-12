@@ -120,7 +120,7 @@ const webPageSchema = {
 // ── Price table ──────────────────────────────────────────────────────────────
 const priceRows: { name: string; model: string; price: string; who: string; highlight?: boolean }[] = [
   { name: "Moshy", model: "Subscription", price: "Confirmed in the consult ($120 off first treatment for new customers)", who: "Anyone eligible" },
-  { name: "Juniper", model: "Subscription", price: "Confirmed in the consult; bundles medication, coaching, unlimited consults", who: "Women" },
+  { name: "Juniper", model: "Subscription", price: "Confirmed in the consult; bundles a clinical program, coaching, unlimited consults", who: "Women" },
   { name: "Pilot", model: "Subscription", price: "Confirmed in the consult", who: "Men" },
   { name: "Doctors for Weight Loss", model: "Pay-as-you-go", price: "Per appointment, confirmed with the provider", who: "Anyone eligible" },
 ];

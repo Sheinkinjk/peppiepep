@@ -14,7 +14,7 @@ const aff = { href: MOSHY_URL, target: "_blank" as const, rel: "nofollow sponsor
 const faqs = [
   {
     q: "Why do some weight loss services market to men and others to women?",
-    a: "Partly clinical tailoring and partly candour. Providers found some men engage more readily with a service worded for them, so the marketing split. In Australia, Moshy runs a clinical pathway that is open to anyone eligible, while Juniper wraps coaching around medication and markets primarily to women. Both use an eligibility-then-practitioner-review model.",
+    a: "Partly clinical tailoring and partly candour. Providers found some men engage more readily with a service worded for them, so the marketing split. In Australia, Moshy runs a clinical pathway that is open to anyone eligible, while Juniper wraps coaching around clinical care and markets primarily to women. Both use an eligibility-then-practitioner-review model.",
   },
   {
     q: "Do I need to see a doctor in person first?",
@@ -128,7 +128,7 @@ export default function WeightLossTelehealthMenPage() {
             Moshy runs a clinically-led telehealth pathway that is open to anyone eligible, and it passes the checklist
             above: AHPRA-registered practitioners, an eligibility step that genuinely screens, pricing disclosed inside
             the platform before any commitment, and Australian regulation. If you would rather have coaching wrapped
-            around medication, Juniper markets primarily to women, and we cover the wider field in our{" "}
+            around clinical care, Juniper markets primarily to women, and we cover the wider field in our{" "}
             <Link href="/online-weight-loss-programs-australia" className="underline decoration-[#cdd5cf] underline-offset-2 hover:text-[#10251b]" style={{ color: CYAN }}>
               online weight loss programs guide
             </Link>.
