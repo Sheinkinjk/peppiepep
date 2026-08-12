@@ -1022,9 +1022,9 @@ export const seoConfig = {
     // This is the roundup; /moshy-vs-juniper owns the head-to-head. The title and
     // keywords deliberately no longer claim "moshy vs juniper", so the two pages
     // stop competing for the same query.
-    title: "Best Weight Loss Telehealth Australia 2026 | Refer Labs",
+    title: "Best Weight-Loss Telehealth in Australia 2026: Ranked | Refer Labs",
     description:
-      "Compare Moshy, Juniper and Pilot for Australian weight-loss telehealth: pricing, eligibility, support and treatment pathways.",
+      "Compare Moshy, Juniper and Pilot for Australian weight-loss telehealth: pricing, eligibility, support and who each actually suits. Independent, no paid rankings.",
     url: `${SITE_URL}/best-weight-loss-telehealth-australia`,
     keywords: [
       "best weight loss telehealth australia 2026",
@@ -1043,7 +1043,7 @@ export const seoConfig = {
   },
 
   moshyVsJuniper: {
-    title: "Moshy vs Juniper 2026: Cost, Eligibility & Fit | Refer Labs",
+    title: "Moshy vs Juniper 2026: Which Is Better for You? | Refer Labs",
     description:
       "Moshy vs Juniper 2026: Moshy is a lean clinical pathway open to anyone; Juniper wraps coaching around clinical care and is built for women. Cost, eligibility and fit.",
     url: `${SITE_URL}/moshy-vs-juniper`,
@@ -1461,7 +1461,7 @@ export const seoConfig = {
   },
 
   moshVsPilot: {
-    title: "Mosh vs Pilot 2026: Hair Loss & Men's Health Telehealth Compared",
+    title: "Mosh vs Pilot 2026: Which Should You Choose? | Refer Labs",
     description:
       "Mosh vs Pilot 2026: two Australian men's hair-loss telehealth services. How they differ, what each includes, and who each suits. Info only.",
     url: `${SITE_URL}/mosh-vs-pilot`,
@@ -2075,7 +2075,7 @@ export const seoConfig = {
   },
 
   bestHairLossTreatmentAustralia: {
-    title: "Best Hair Loss Treatment in Australia 2026 | Refer Labs",
+    title: "Best Hair-Loss Treatment in Australia 2026: Compared | Refer Labs",
     description:
       "The best hair-loss options in Australia 2026, compared: Mosh, Dense and telehealth. Clinical vs topical care, real pricing, and how to start.",
     url: `${SITE_URL}/best-hair-loss-treatment-australia`,
