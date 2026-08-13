@@ -52,6 +52,9 @@ Invented testimonials, personas, customer names, statistics, case studies or sta
 
 **Do not "fix" the SoftwareApplication rich-result errors.** SEO tools (Semrush et al.) flag ~21 `SoftwareApplication` items as errors for missing `aggregateRating`/`review`. That is Google's *software* rich-result recipe wanting a star rating. We have no real ratings for Pipedrive, Brevo, AiSDR etc., and inventing them to clear the error is exactly the s29(1)(e) breach above, at scale, on commission pages. **Leave all of them.** The error count is the correct state for a site that will not invent ratings; the pages are not broken, they simply do not qualify for a rich result that needs something we cannot honestly provide. (The genuinely-real structured-data defects, missing `Offer.price` and `ItemList` `url`, are fine to fix and were.)
 
+### Revenue-first page rule (master brief, Aug 2026)
+No new page ships without a one-line answer to: **what search intent does it serve, what decision does it help the reader make, and what is its monetisation event** (affiliate click, lead capture, email capture, or internal funnel to a page that has one)? A keyword having volume is not a reason to build a page. Pages that can't answer this get folded into an existing page instead.
+
 ## Adding a new affiliate/brand page — the full checklist
 1. `src/lib/affiliate-links.ts` — export the tracked URL constant.
 2. `src/app/<slug>/config.ts` — `AffiliatePageConfig` (quickAnswer, offer, atAGlance w/ REAL price, hero, sections, `faqs`, `relatedLinks`, disclaimer).
