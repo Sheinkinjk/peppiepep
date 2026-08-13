@@ -3,7 +3,7 @@ import { ArrowRight, Check } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
-import { APOLLO_ENERGY_URL } from "@/lib/affiliate-links";
+import { APOLLO_ENERGY_LEAD_HREF } from "@/lib/affiliate-links";
 
 export const metadata = generateSEOMetadata(seoConfig.homeBatteryRebate);
 
@@ -85,9 +85,7 @@ function Offer({ loc }: { loc: string }) {
       </p>
       <div className="mt-4 flex flex-wrap items-center gap-3">
         <a
-          href={APOLLO_ENERGY_URL}
-          target="_blank"
-          rel="nofollow sponsored"
+          href={APOLLO_ENERGY_LEAD_HREF}
           data-cta={loc}
           className="nw-btn justify-center px-6 py-3 text-[15px]"
         >
@@ -347,7 +345,7 @@ export default function HomeBatteryRebatePage() {
             it we may earn a commission at no extra cost to you, and it never changes our assessment.
           </p>
         </main>
-        <StickyCta href={APOLLO_ENERGY_URL} product="Apollo Energy · home batteries" label="Get $500 off" />
+        <StickyCta href={APOLLO_ENERGY_LEAD_HREF} sponsored={false} product="Apollo Energy · home batteries" label="Get $500 off" />
     </ConsumerShell>
     </>
   );

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { APOLLO_ENERGY_URL, glance, steps, faqs } from "./config";
+import { APOLLO_ENERGY_LEAD_HREF, glance, steps, faqs } from "./config";
 import { ArrowRight, Check, ShieldCheck, BatteryCharging, BadgeCheck, Wrench } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
@@ -26,9 +26,7 @@ function ApolloCTA({
   } as const;
   return (
     <a
-      href={APOLLO_ENERGY_URL}
-      target="_blank"
-      rel="nofollow sponsored"
+      href={APOLLO_ENERGY_LEAD_HREF}
       data-cta={loc}
       className={`nw-btn justify-center ${sizes[size]} ${block ? "w-full" : ""}`}
     >
@@ -516,7 +514,7 @@ export default function ApolloLanding() {
         </p>
       </main>
 
-      <StickyCta href={APOLLO_ENERGY_URL} product="Apollo Energy · home batteries" label="Get $500 off" />
+      <StickyCta href={APOLLO_ENERGY_LEAD_HREF} sponsored={false} product="Apollo Energy · home batteries" label="Get $500 off" />
     </ConsumerShell>
   );
 }

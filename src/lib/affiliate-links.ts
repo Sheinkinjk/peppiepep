@@ -171,5 +171,10 @@ export const PANDADOC_URL = "https://pandadoc.partnerlinks.io/kc9kruhmgrfy";
 // Blinq
 export const BLINQ_URL = "https://partners.blinq.me/vpsdocfxga1y";
 
-// Apollo Energy Group: NSW home battery installer. Exclusive Refer Labs landing ($500 off).
-export const APOLLO_ENERGY_URL = "https://apolloenergygroup.com.au/referlabs";
+// Apollo Energy Group: NSW home battery installer.
+// Aug 2026: Apollo lead generation is handled ON SITE, not by sending traffic out.
+// Every Apollo CTA points at our own enquiry form so Refer Labs captures and manages
+// the lead, then passes it to Apollo. The old outbound landing
+// (apolloenergygroup.com.au/referlabs) is deliberately retired: do not reintroduce it,
+// and do not mark this href sponsored/nofollow, it is an internal link.
+export const APOLLO_ENERGY_LEAD_HREF = "/apollo-energy-group#register";

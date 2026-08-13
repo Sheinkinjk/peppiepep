@@ -1,5 +1,5 @@
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
-import { APOLLO_ENERGY_URL } from "@/lib/affiliate-links";
+import { APOLLO_ENERGY_LEAD_HREF } from "@/lib/affiliate-links";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
@@ -102,7 +102,7 @@ const faqs = [
   },
   {
     q: "Does Refer Labs set these rebate amounts?",
-    a: "No. Refer Labs is an independent comparison publisher. We consolidate what the federal and state programs currently offer and link out to services, including a disclosed affiliate link to Apollo Energy Group. We do not set rebate amounts, they are set by government programs and move with certificate markets and scheme rules, so confirm the current figure for your address at quote. Nothing here is financial advice.",
+    a: "No. Refer Labs is an independent comparison publisher. We consolidate what the federal and state programs currently offer and refer readers to services, including a disclosed commercial referral arrangement with Apollo Energy Group. We do not set rebate amounts, they are set by government programs and move with certificate markets and scheme rules, so confirm the current figure for your address at quote. Nothing here is financial advice.",
   },
 ];
 
@@ -198,7 +198,7 @@ export default function HomeBatteryRebateByStatePage() {
             <span className="font-bold text-[#10251b]">Indicative only, updated {UPDATED}.</span> Rebate amounts are set
             by government programs, move with certificate markets, and change often. State schemes open and close. Confirm
             the current figure for your address and battery when you get a quote. Nothing here is financial advice. This
-            page contains a disclosed affiliate link to Apollo Energy Group.
+            page contains a disclosed commercial referral arrangement with Apollo Energy Group.
           </div>
 
           {/* The by-state table (the asset) */}
@@ -244,9 +244,7 @@ export default function HomeBatteryRebateByStatePage() {
               Energy Group takes an extra $500 off your quote on top of it, with no code to enter.
             </p>
             <a
-              href={APOLLO_ENERGY_URL}
-              target="_blank"
-              rel="nofollow sponsored"
+              href={APOLLO_ENERGY_LEAD_HREF}
               data-cta="bystate-hero"
               className="nw-btn shrink-0 whitespace-nowrap"
             >
@@ -302,9 +300,7 @@ export default function HomeBatteryRebateByStatePage() {
             </p>
             <div className="mt-5 flex flex-wrap gap-3">
               <a
-                href={APOLLO_ENERGY_URL}
-                target="_blank"
-                rel="nofollow sponsored"
+                href={APOLLO_ENERGY_LEAD_HREF}
                 data-cta="bystate-footer"
                 className="nw-btn"
               >
@@ -358,7 +354,7 @@ export default function HomeBatteryRebateByStatePage() {
           </section>
         </div>
       </main>
-      <StickyCta href={APOLLO_ENERGY_URL} product="Apollo Energy home battery" label="Claim $500 off" />
+      <StickyCta href={APOLLO_ENERGY_LEAD_HREF} sponsored={false} product="Apollo Energy home battery" label="Claim $500 off" />
     </ConsumerShell>
   );
 }

@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { ArrowRight, RotateCcw } from "lucide-react";
-import { APOLLO_ENERGY_URL } from "@/lib/affiliate-links";
+import { APOLLO_ENERGY_LEAD_HREF } from "@/lib/affiliate-links";
 
 /**
  * Home-battery payback estimator.
@@ -146,10 +146,7 @@ export default function BatteryCalc() {
             Turn this estimate into a real quote, $500 off <ArrowRight className="h-4 w-4" />
           </Link>
           <p className="mt-2.5 text-center text-xs text-[#6e7b74]">
-            Registers your interest with Apollo Energy through us; they quote from your actual usage.{" "}
-            <a href={APOLLO_ENERGY_URL} target="_blank" rel="nofollow sponsored" data-cta="battery-calc-direct" className="underline">
-              Or go straight to Apollo
-            </a>
+            Registers your interest with Apollo Energy through us; they quote from your actual usage.
           </p>
           <p className="mt-3 text-xs leading-relaxed text-[#6e7b74]">
             Illustrative only, from your inputs and stated assumptions. It is not a quote, a guarantee, or financial

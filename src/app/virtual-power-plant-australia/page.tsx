@@ -1,5 +1,5 @@
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
-import { APOLLO_ENERGY_URL } from "@/lib/affiliate-links";
+import { APOLLO_ENERGY_LEAD_HREF } from "@/lib/affiliate-links";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
@@ -150,7 +150,7 @@ export default function VirtualPowerPlantAustraliaPage() {
             <span className="font-bold text-[#10251b]">Indicative only, updated {UPDATED}.</span> VPP payments vary by
             battery, state, wholesale market and program, and terms change. Figures here are illustrative; confirm current
             rates and warranty cover with the provider and your installer. Nothing here is financial advice. This page
-            contains a disclosed affiliate link to Apollo Energy Group.
+            contains a disclosed commercial referral arrangement with Apollo Energy Group.
           </div>
 
           {/* What a VPP is */}
@@ -206,9 +206,7 @@ export default function VirtualPowerPlantAustraliaPage() {
               and can connect an eligible battery to a VPP. Refer Labs readers get $500 off the quote.
             </p>
             <a
-              href={APOLLO_ENERGY_URL}
-              target="_blank"
-              rel="nofollow sponsored"
+              href={APOLLO_ENERGY_LEAD_HREF}
               data-cta="vpp-hero"
               className="nw-btn shrink-0 whitespace-nowrap"
             >
@@ -262,9 +260,7 @@ export default function VirtualPowerPlantAustraliaPage() {
             </p>
             <div className="mt-5 flex flex-wrap gap-3">
               <a
-                href={APOLLO_ENERGY_URL}
-                target="_blank"
-                rel="nofollow sponsored"
+                href={APOLLO_ENERGY_LEAD_HREF}
                 data-cta="vpp-footer"
                 className="nw-btn"
               >
@@ -317,7 +313,7 @@ export default function VirtualPowerPlantAustraliaPage() {
           </section>
         </div>
       </main>
-      <StickyCta href={APOLLO_ENERGY_URL} product="Apollo Energy home battery" label="Claim $500 off" />
+      <StickyCta href={APOLLO_ENERGY_LEAD_HREF} sponsored={false} product="Apollo Energy home battery" label="Claim $500 off" />
     </ConsumerShell>
   );
 }

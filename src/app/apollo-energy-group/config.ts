@@ -1,6 +1,6 @@
-import { APOLLO_ENERGY_URL } from "@/lib/affiliate-links";
+import { APOLLO_ENERGY_LEAD_HREF } from "@/lib/affiliate-links";
 
-export { APOLLO_ENERGY_URL };
+export { APOLLO_ENERGY_LEAD_HREF };
 
 /** At-a-glance rows for the hero card. Facts only, sourced from Apollo Energy Group. */
 export const glance: [string, string][] = [
@@ -16,7 +16,7 @@ export const steps = [
   {
     num: "1",
     heading: "Claim the $500 discount",
-    body: "Open Apollo through the link on this page and complete the short form: name, email, phone and your postcode. It takes under 30 seconds and commits you to nothing.",
+    body: "Complete the short form on this page: name, email, phone and your postcode. We pass it to Apollo with your consent. It takes under 30 seconds and commits you to nothing.",
   },
   {
     num: "2",

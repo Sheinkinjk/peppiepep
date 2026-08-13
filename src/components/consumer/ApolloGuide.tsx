@@ -4,7 +4,7 @@ import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
 import EditorialMeta from "@/components/consumer/EditorialMeta";
 import { SITE_URL } from "@/lib/seo";
-import { APOLLO_ENERGY_URL } from "@/lib/affiliate-links";
+import { APOLLO_ENERGY_LEAD_HREF } from "@/lib/affiliate-links";
 import OffersTable from "@/components/lending/OffersTable";
 import { DEALS } from "@/lib/offers";
 
@@ -71,7 +71,7 @@ function ApolloCta({ heading, body, loc }: { heading: string; body: string; loc:
         <p className="font-bold text-[#10251b]">{heading}</p>
         <p className="mt-1 text-[14px] leading-relaxed text-[#10251b]">{body}</p>
       </div>
-      <a href={APOLLO_ENERGY_URL} target="_blank" rel="nofollow sponsored" data-cta={`battery-${loc}`} className="nw-btn shrink-0 whitespace-nowrap">
+      <a href={APOLLO_ENERGY_LEAD_HREF} data-cta={`battery-${loc}`} className="nw-btn shrink-0 whitespace-nowrap">
         Get your $500-off quote <ArrowRight className="h-4 w-4" aria-hidden="true" />
       </a>
     </div>
@@ -186,7 +186,7 @@ export default function ApolloGuide({ cfg }: { cfg: ApolloGuideConfig }) {
         </p>
       </main>
 
-      <StickyCta href={APOLLO_ENERGY_URL} product="Apollo Energy home batteries" label="Claim offer" offer="$500 off your quote" />
+      <StickyCta href={APOLLO_ENERGY_LEAD_HREF} sponsored={false} product="Apollo Energy home batteries" label="Claim offer" offer="$500 off your quote" />
     </ConsumerShell>
   );
 }

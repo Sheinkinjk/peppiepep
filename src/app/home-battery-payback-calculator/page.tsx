@@ -1,5 +1,5 @@
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
-import { APOLLO_ENERGY_URL } from "@/lib/affiliate-links";
+import { APOLLO_ENERGY_LEAD_HREF } from "@/lib/affiliate-links";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
@@ -136,9 +136,7 @@ export default function HomeBatteryPaybackCalculatorPage() {
                 needed, and it commits you to nothing.
               </p>
               <a
-                href={APOLLO_ENERGY_URL}
-                target="_blank"
-                rel="nofollow sponsored"
+                href={APOLLO_ENERGY_LEAD_HREF}
                 data-cta="battery-calc-footer"
                 className="nw-btn mt-5"
               >
@@ -177,7 +175,7 @@ export default function HomeBatteryPaybackCalculatorPage() {
             <section className="border-t border-[#e5e9e7] pt-6 pb-16">
               <p className="text-xs leading-relaxed text-[#9aa39c]">
                 This page is published by Refer Labs, an independent comparison publisher, and contains a disclosed
-                affiliate link to Apollo Energy Group, which means we may earn a commission if you request a quote
+                commercial referral arrangement with Apollo Energy Group, which means we may earn a commission if you request a quote
                 through our link. Commissions never change what we write or what the calculator computes. All figures are
                 illustrative estimates built from your inputs and stated assumptions, are not a quote, and are subject to
                 change with the market. Content is general information, not financial advice.
@@ -186,7 +184,7 @@ export default function HomeBatteryPaybackCalculatorPage() {
           </article>
         </div>
       </main>
-      <StickyCta href={APOLLO_ENERGY_URL} product="Apollo Energy · home batteries" label="Get $500 off" />
+      <StickyCta href={APOLLO_ENERGY_LEAD_HREF} sponsored={false} product="Apollo Energy · home batteries" label="Get $500 off" />
     </ConsumerShell>
   );
 }

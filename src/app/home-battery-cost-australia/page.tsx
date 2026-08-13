@@ -1,5 +1,5 @@
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
-import { APOLLO_ENERGY_URL } from "@/lib/affiliate-links";
+import { APOLLO_ENERGY_LEAD_HREF } from "@/lib/affiliate-links";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
@@ -45,7 +45,7 @@ const faqs = [
   },
   {
     q: "Does Refer Labs sell batteries?",
-    a: "No. Refer Labs is an independent comparison publisher. We explain how the costs and rebates work and link out to providers, including a disclosed affiliate link to Apollo Energy Group, which offers $500 off a quote through our link. We do not sell or install batteries and do not provide financial advice. Prices here are general information; get a quote for figures specific to your home.",
+    a: "No. Refer Labs is an independent comparison publisher. We explain how the costs and rebates work and refer readers to providers, including a disclosed commercial referral arrangement with Apollo Energy Group, which offers $500 off a quote requested through us. We do not sell or install batteries and do not provide financial advice. Prices here are general information; get a quote for figures specific to your home.",
   },
 ];
 
@@ -147,7 +147,7 @@ export default function HomeBatteryCostAustraliaPage() {
           <div className="nw-card px-5 py-4 text-sm leading-relaxed text-[#3d4b44]">
             <span className="font-bold text-[#10251b]">Indicative ranges.</span> The figures below are researched
             industry ranges, not fixed prices, and battery costs move with the market. Use them to sense-check a quote,
-            not as a promise. This page contains a disclosed affiliate link to Apollo Energy Group.
+            not as a promise. This page contains a disclosed commercial referral arrangement with Apollo Energy Group.
           </div>
 
           {/* First CTA */}
@@ -158,9 +158,7 @@ export default function HomeBatteryCostAustraliaPage() {
               needed.
             </p>
             <a
-              href={APOLLO_ENERGY_URL}
-              target="_blank"
-              rel="nofollow sponsored"
+              href={APOLLO_ENERGY_LEAD_HREF}
               data-cta="battery-cost-hero"
               className="nw-btn shrink-0 whitespace-nowrap"
             >
@@ -279,9 +277,7 @@ export default function HomeBatteryCostAustraliaPage() {
                 our link, no code needed, and it commits you to nothing.
               </p>
               <a
-                href={APOLLO_ENERGY_URL}
-                target="_blank"
-                rel="nofollow sponsored"
+                href={APOLLO_ENERGY_LEAD_HREF}
                 data-cta="battery-cost-footer"
                 className="nw-btn mt-5"
               >
@@ -321,7 +317,7 @@ export default function HomeBatteryCostAustraliaPage() {
             <section className="border-t border-[#e5e9e7] pt-6 pb-16">
               <p className="text-xs leading-relaxed text-[#9aa39c]">
                 This page is published by Refer Labs, an independent comparison publisher, and contains a disclosed
-                affiliate link to Apollo Energy Group, which means we may earn a commission if you request a quote through
+                commercial referral arrangement with Apollo Energy Group, which means we may earn a commission if you request a quote through
                 our link. Commissions never change what we write. Prices are researched industry ranges, indicative only
                 and subject to change, and are not a quote. Content is general information, not financial advice.
               </p>
@@ -329,7 +325,7 @@ export default function HomeBatteryCostAustraliaPage() {
           </article>
         </div>
       </main>
-      <StickyCta href={APOLLO_ENERGY_URL} product="Apollo Energy · home batteries" label="Get $500 off" />
+      <StickyCta href={APOLLO_ENERGY_LEAD_HREF} sponsored={false} product="Apollo Energy · home batteries" label="Get $500 off" />
     </ConsumerShell>
   );
 }

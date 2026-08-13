@@ -24,6 +24,9 @@ export default function StickyCta({
   sponsored?: boolean;
 }) {
   const [show, setShow] = useState(false);
+  const isInternal = href.startsWith("/") || href.startsWith("#");
+  // An on-site enquiry form is a disclosed commercial referral, not an affiliate link.
+  const disclosure = isInternal ? "enquiry form · disclosed referral" : "disclosed affiliate link";
 
   useEffect(() => {
     const onScroll = () => setShow(window.scrollY > 520);
@@ -42,19 +45,23 @@ export default function StickyCta({
           {offer ? (
             <>
               <p className="truncate text-[13px] font-bold text-[#0a7c42]">{offer}</p>
-              <p className="truncate text-[11px] text-[#9aa39c]">{product} · disclosed affiliate link</p>
+              <p className="truncate text-[11px] text-[#9aa39c]">{product} · {disclosure}</p>
             </>
           ) : (
             <>
               <p className="truncate text-[13px] font-bold text-[#10251b]">{product}</p>
-              <p className="truncate text-[11px] text-[#9aa39c]">Disclosed affiliate link</p>
+              <p className="truncate text-[11px] text-[#9aa39c]">{disclosure.charAt(0).toUpperCase() + disclosure.slice(1)}</p>
             </>
           )}
         </div>
         <a
           href={href}
-          target="_blank"
-          rel={sponsored ? "nofollow sponsored" : "nofollow"}
+          // Internal destinations (our own lead forms) must open in the same tab and
+          // must not carry nofollow/sponsored, which would waste internal link equity
+          // and misdescribe the link. Only outbound partner links get those.
+          {...(isInternal
+            ? {}
+            : { target: "_blank", rel: sponsored ? "nofollow sponsored" : "nofollow" })}
           data-cta="mobile-sticky"
           className="nw-btn shrink-0 !px-4 !py-2.5 !text-[13px]"
         >
