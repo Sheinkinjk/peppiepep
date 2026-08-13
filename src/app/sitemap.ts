@@ -10,7 +10,7 @@ const BASE = process.env.NEXT_PUBLIC_SITE_URL || 'https://referlabs.com.au';
 
 // Credible per-page lastmod tiers (avoids the "everything changed today" signal
 // that Google discounts). Bump the relevant tier when a page is genuinely edited.
-const TODAY  = new Date('2026-07-28'); // materially rewritten in this batch
+const TODAY  = new Date('2026-08-13'); // materially rewritten in this batch (Aug: TGA scrub, pricing, compliance, answer-first)
 const NEW    = new Date('2026-07-22'); // published/edited in the current batch
 const FRESH  = new Date('2026-07-07'); // redesigned / new this release
 const RECENT = new Date('2026-05-20'); // updated within the last few weeks
@@ -23,7 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // ── Core platform ──────────────────────────────────────────────────
     { url: BASE,                         lastModified: FRESH,  changeFrequency: 'weekly',  priority: 1.0 },
     { url: `${BASE}/weight-loss`,        lastModified: TODAY,  changeFrequency: 'weekly',  priority: 0.95 },
-    { url: `${BASE}/hair-loss`,          lastModified: FRESH,  changeFrequency: 'weekly',  priority: 0.9 },
+    { url: `${BASE}/hair-loss`,          lastModified: TODAY,  changeFrequency: 'weekly',  priority: 0.9 },
     { url: `${BASE}/for-business`,       lastModified: FRESH,  changeFrequency: 'monthly', priority: 0.7 },
     // Programmatic category hubs (auto-generated from the catalog)
     ...CATALOG.map((v) => ({
@@ -99,7 +99,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // The medicine-name slugs (/finasteride-australia, /minoxidil-australia,
     // /finasteride-vs-minoxidil-australia, /how-long-does-finasteride-take-to-work-australia)
     // 301-redirect to /hair-loss for TGA compliance, so they are kept out of the sitemap.
-    { url: `${BASE}/hair-loss-treatment-cost-australia`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/hair-loss-treatment-cost-australia`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.8 },
     // Hair-loss guide cluster (generated from the registry)
     ...HAIR_LOSS_GUIDES.filter((g) => !g.meta?.noIndex).map((g) => ({
       url: `${BASE}${g.slug}`,
