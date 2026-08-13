@@ -215,8 +215,10 @@ export default function HomePage() {
           <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-16">
             <div className="mb-8 flex items-end justify-between gap-4">
               <h2 className="text-2xl font-black tracking-[-0.02em] text-[#10251b] sm:text-[2rem]">This month&apos;s top picks</h2>
-              <Link href="/guides" className="hidden items-center gap-1 text-sm font-semibold text-[#0a7c42] hover:text-[#086536] sm:inline-flex">
-                All guides <ArrowRight className="h-3.5 w-3.5" />
+              {/* The picks are offer-led, so this points at the offers hub rather than
+                  /guides, which the comparisons section below already links to. */}
+              <Link href="/deals" className="hidden items-center gap-1 text-sm font-semibold text-[#0a7c42] hover:text-[#086536] sm:inline-flex">
+                All current offers <ArrowRight className="h-3.5 w-3.5" />
               </Link>
             </div>
             <div className="grid gap-5 sm:grid-cols-3">
