@@ -9,7 +9,7 @@ import { SupabaseSessionListener } from "@/components/SupabaseSessionListener";
 import { CookieConsent } from "@/components/CookieConsent";
 import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
 import { OrganizationSchema, WebsiteSchema } from "@/components/StructuredData";
-import { GoogleAnalytics, GoogleTagManager, MetaPixel, LinkedInInsight, SearchableAnalytics } from "@/components/Analytics";
+import { GoogleAnalytics, GoogleTagManager, MetaPixel, LinkedInInsight } from "@/components/Analytics";
 import { AffiliateClickTracker } from "@/components/AffiliateClickTracker";
 import { AiReferralTracker } from "@/components/AiReferralTracker";
 import { ChromeGate } from "@/components/ChromeGate";
@@ -94,7 +94,6 @@ export default function RootLayout({
         <MetaPixel />
         <LinkedInInsight />
         <Analytics />
-        <SearchableAnalytics />
         <AffiliateClickTracker />
         <AiReferralTracker />
         <div className="relative z-10 flex min-h-screen flex-col">

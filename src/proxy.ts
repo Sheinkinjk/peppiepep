@@ -1,6 +1,5 @@
 import { createServerClient } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
-import { withSearchable } from '@searchablehq/middleware/nextjs'
 import { logger } from '@/lib/logger'
 
 /**
@@ -138,18 +137,12 @@ async function runProxy(request: NextRequest) {
   return response
 }
 
-// Compose Searchable Analytics server-side event capture around the existing
-// proxy (auth session refresh + 410 Gone). withSearchable captures the request
-// asynchronously (no added latency) and returns the wrapped handler's response
-// untouched, so auth cookies and 410s are preserved. IP anonymisation is on by
-// default. Guarded: a missing/rotated key degrades to the plain proxy, never a 500.
-const searchableSiteToken = process.env.SEARCHABLE_SITE_TOKEN
-const searchableApiKey = process.env.SEARCHABLE_API_KEY
-
-export const proxy =
-  searchableSiteToken && searchableApiKey
-    ? withSearchable({ siteToken: searchableSiteToken, apiKey: searchableApiKey }, runProxy)
-    : runProxy
+// Searchable's server-side event capture was removed on 14 Aug 2026 when the
+// trial ended. It wrapped every request and forwarded it to a third party, so
+// leaving it in place after the relationship ended would keep sending visitor
+// data to a vendor with no reason to receive it. The client-side tracker in
+// components/Analytics.tsx went with it.
+export const proxy = runProxy
 
 export default proxy
 

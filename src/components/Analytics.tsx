@@ -195,23 +195,6 @@ export function LinkedInInsight() {
  * AI crawlers that don't run JS) is handled separately in src/proxy.ts.
  * Production only, so local/preview traffic doesn't pollute the data.
  */
-export function SearchableAnalytics() {
-  if (process.env.NODE_ENV !== "production") return null;
-  return (
-    <>
-      <Script id="searchable-init" strategy="afterInteractive">
-        {`window.sa=window.sa||function(){(sa.q=sa.q||[]).push(arguments)}`}
-      </Script>
-      <Script
-        id="searchable-tracker"
-        src="https://searchable-tracker.searchable.workers.dev/s.js"
-        strategy="afterInteractive"
-        data-domain="referlabs.com.au"
-        data-site-token="pst_9ba4c3b9bc08bbd0b074e90e"
-      />
-    </>
-  );
-}
 
 /**
  * Custom Event Tracking Utilities
