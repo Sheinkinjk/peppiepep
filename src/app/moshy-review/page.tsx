@@ -16,6 +16,10 @@ const aff = { href: MOSHY_URL, target: "_blank" as const, rel: "nofollow sponsor
 
 const faqs = [
   {
+    q: "Is Moshy legit?",
+    a: "Yes. Moshy is an Australian telehealth service operating under Australian health service regulations, and every eligibility submission is reviewed individually by a registered Australian practitioner. Some applicants are declined, which is the clinical screening working as it should, and pricing is shown inside the flow before you commit. Those are the markers of a real clinical service rather than a storefront.",
+  },
+  {
     q: "Is Moshy a real Australian company?",
     a: "Yes. Moshy is an Australian telehealth provider operating under Australian health service regulations, and eligibility submissions are reviewed by registered Australian practitioners. It sits in the same family of Australian telehealth brands as Mosh.",
   },

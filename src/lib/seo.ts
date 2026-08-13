@@ -1109,7 +1109,7 @@ export const seoConfig = {
   },
 
   moshyReview: {
-    title: "Moshy Review Australia 2026: How the Service Actually Works | Refer Labs",
+    title: "Moshy Review 2026: Is It Legit and How It Works | Refer Labs",
     description:
       "An independent Moshy review for Australians. What the clinically-led weight-loss telehealth service is, how the sign-up runs in practice, what the subscription involves, and who it suits. Information only, not medical advice.",
     url: `${SITE_URL}/moshy-review`,

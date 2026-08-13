@@ -404,8 +404,11 @@ export default function BestWeightLossTelehealthPage() {
             </nav>
           </section>
 
-          {/* ── Quick Verdict (answer-first, GEO) ─────────────────────────────── */}
+          {/* ── Quick Verdict (answer-first, GEO): the buyer's question as an H2 so engines match it ── */}
           <section className="pb-2">
+            <h2 className="text-xl sm:text-2xl font-black text-[#10251b] mb-4">
+              What is the best weight-loss telehealth in Australia?
+            </h2>
             <div className="rounded-xl border px-6 py-5" style={{ borderColor: `${CYAN}40`, background: `${CYAN}0A` }}>
               <p className="text-[10px] font-bold uppercase tracking-[0.18em] mb-2" style={{ color: CYAN_LT }}>
                 Quick Verdict
