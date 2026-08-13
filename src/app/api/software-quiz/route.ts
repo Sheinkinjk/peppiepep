@@ -63,7 +63,7 @@ export async function POST(req: NextRequest) {
       <p style="color:#6b7280;font-size:13px;margin-top:20px">Refer Labs publishes independent comparisons. Some links are disclosed affiliate links; we may earn a commission at no extra cost to you, and it never changes a recommendation.</p>
       <p style="color:#6b7280;font-size:13px">Pepform Pty Ltd trading as Refer Labs · ABN 32 660 008 159</p>
     </div>`;
-  await sendAdminNotification({ subject: "Your business-software shortlist — Refer Labs", html: applicantHtml, to: d.email });
+  await sendAdminNotification({ subject: "Your business-software shortlist | Refer Labs", html: applicantHtml, to: d.email });
 
   return NextResponse.json({ ok: true });
 }

@@ -88,7 +88,7 @@ export async function POST(req: NextRequest) {
       <p style="color:#6b7280;font-size:13px;margin-top:20px">Refer Labs is an independent referrer, not Apollo Energy Group and not the installer. With your consent we introduce your enquiry to Apollo; they assess it and make any offer to you directly. We may be paid a commission if you proceed, at no extra cost to you.</p>
       <p style="color:#6b7280;font-size:13px">Pepform Pty Ltd trading as Refer Labs · ABN 32 660 008 159</p>
     </div>`;
-  await sendAdminNotification({ subject: "Your Apollo Energy home battery enquiry — Refer Labs", html: applicantHtml, to: d.email });
+  await sendAdminNotification({ subject: "Your Apollo Energy home battery enquiry | Refer Labs", html: applicantHtml, to: d.email });
 
   return NextResponse.json({ ok: true });
 }

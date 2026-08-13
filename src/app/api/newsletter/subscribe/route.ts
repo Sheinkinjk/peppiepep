@@ -47,7 +47,7 @@ export async function POST(request: Request) {
     createdAt: new Date().toISOString(),
   });
   await sendAdminNotification({
-    subject: `📰 New newsletter subscriber: ${email}${stored ? "" : " (NOT stored — add manually)"}`,
+    subject: `📰 New newsletter subscriber: ${email}${stored ? "" : " (NOT stored, add manually)"}`,
     html,
   });
 

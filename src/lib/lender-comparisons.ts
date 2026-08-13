@@ -42,7 +42,7 @@ export const LENDER_COMPARISONS: LenderComparison[] = [
     lead:
       "Prospa and Moula both lend unsecured to Australian businesses, but they get to a decision differently. Moula leans heavily on your bank-transaction and accounting data, which suits a business with clean, readable books, and it publishes a from-rate so you have a number to anchor to. Prospa prices each loan on simple interest and is built to fund quickly once approved. The right one depends on how your business looks on paper and how fast you need the money.",
     verdict:
-      "Moula tends to suit a data-rich business that wants a published rate to start from; Prospa suits one that values speed and has a clean file. Both cap out around $500,000. Tell us your numbers once and we'll show you which of the two your enquiry fits, alongside the other lenders we compare.",
+      "Moula tends to suit a data-rich business that wants a published rate to start from; Prospa suits one that values speed and has a clean file. Both cap out at $500,000. Tell us your numbers once and we'll show you which of the two your enquiry fits, alongside the other lenders we compare.",
     priority: 0.78,
   },
   {
@@ -53,7 +53,7 @@ export const LENDER_COMPARISONS: LenderComparison[] = [
       "Lumi vs Moula for an Australian business loan: loan size, pricing transparency, speed and how each assesses you. Lumi funds up to $1M and quotes a total repayment; Moula publishes a from-rate and reads your bank data. Independent, no paid rankings.",
     keywords: ["lumi vs moula", "moula vs lumi", "lumi or moula business loan", "lumi moula comparison australia"],
     lead:
-      "Lumi and Moula are both Australian non-bank lenders that fund fast and assess more flexibly than a bank, but they diverge on size and how they present cost. Lumi will write up to $1 million and quotes a total repayment amount upfront, which some borrowers find clearer than a rate. Moula caps lower, around $500,000, publishes a from-rate, and relies on reading your bank and accounting data to decide.",
+      "Lumi and Moula are both Australian non-bank lenders that fund fast and assess more flexibly than a bank, but they diverge on size and how they present cost. Lumi will write up to $1 million and quotes a total repayment amount upfront, which some borrowers find clearer than a rate. Moula caps lower, at $500,000, publishes a from-rate, and relies on reading your bank and accounting data to decide.",
     verdict:
       "Choose the frame that helps you decide: Lumi if you want a larger facility or the total-repayment number upfront, Moula if you want a published rate and have clean, readable books. One enquiry with us checks both against your actual situation.",
     priority: 0.76,

@@ -150,7 +150,7 @@ export async function POST(req: NextRequest) {
   }
   try {
     await sendAdminNotification({
-      subject: "We've received your business finance enquiry — Refer Labs",
+      subject: "We've received your business finance enquiry | Refer Labs",
       html: buildApplicantEmail(lead, matched),
       to: lead.email,
     });
