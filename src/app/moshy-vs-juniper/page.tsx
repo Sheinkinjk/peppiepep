@@ -228,12 +228,12 @@ export default function MoshyVsJuniperPage() {
               className="inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-bold text-white transition-all hover:-translate-y-0.5 shadow-md"
               style={{ background: CYAN, boxShadow: `0 8px 24px ${CYAN}25` }}
             >
-              Read our Juniper review
+              See Juniper: free first consult
               <ArrowRight className="h-4 w-4" />
             </Link>
             <p className="mt-3">
-              <Link href="/juniper" className="text-xs text-[#3d4b44] underline decoration-[#cdd5cf] underline-offset-2 hover:text-[#2b362f]">
-                How Juniper works &rarr;
+              <Link href="/weight-loss-telehealth-women-australia" className="text-xs text-[#3d4b44] underline decoration-[#cdd5cf] underline-offset-2 hover:text-[#2b362f]">
+                Weight-loss telehealth for women &rarr;
               </Link>
             </p>
           </div>

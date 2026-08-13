@@ -151,8 +151,8 @@ export default function HomePage() {
                 Big decisions,<br />compared properly.
               </h1>
               <p className="mt-5 max-w-md text-lg leading-relaxed text-[#3d4b44]">
-                Independent comparisons across Australian health, home energy, business finance and software, so you
-                can choose the right one with confidence.
+                Independent comparisons across Australian health, home energy, pet insurance, business finance and
+                software, so you can choose the right one with confidence.
               </p>
               <div className="mt-8">
                 <SiteSearch variant="hero" />

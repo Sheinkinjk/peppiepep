@@ -414,7 +414,7 @@ export default function BestWeightLossTelehealthPage() {
                 Quick Verdict
               </p>
               <p className="text-[#2b362f] text-sm sm:text-base leading-relaxed max-w-2xl">
-                Refer Labs&apos; August 2026 comparison of Australian weight-loss telehealth found Moshy (a lean clinical pathway, open to anyone eligible) and Juniper (a coaching-led program marketed to women) leading weight-management platforms. Eligibility and suitability are assessed individually by each platform&apos;s clinical team. This page does not constitute medical advice.
+                Refer Labs&apos; August 2026 comparison of Australian weight-loss telehealth found Moshy (a lean clinical pathway, open to anyone eligible) and Juniper (a coaching-led program marketed to women) the leading weight-management platforms. Eligibility and suitability are assessed individually by each platform&apos;s clinical team. This page does not constitute medical advice.
               </p>
             </div>
           </section>
