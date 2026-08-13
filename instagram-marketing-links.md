@@ -25,8 +25,10 @@ The problem this fixes: right now most visitors land on the **homepage** and nev
 
 You only get one bio link, so point it at **whatever you're actively promoting this week**, tagged as bio:
 
+- **Best default for a weight-loss audience → the quiz** (interactive, routes women to Juniper's free consult and everyone else to Moshy, and captures emails): `https://referlabs.com.au/weight-loss-quiz?utm_source=instagram&utm_medium=social&utm_campaign=bio_quiz`
+- **List-building → the free guide** (captures the email and auto-emails the "Australian weight-loss options" guide, then you own the audience): `https://referlabs.com.au/weight-loss-guide?utm_source=instagram&utm_medium=social&utm_campaign=bio_guide`
 - Promoting batteries this week → `https://referlabs.com.au/apollo-energy-group?utm_source=instagram&utm_medium=social&utm_campaign=bio`
-- Promoting weight loss → `https://referlabs.com.au/moshy?utm_source=instagram&utm_medium=social&utm_campaign=bio`
+- Promoting weight loss directly → `https://referlabs.com.au/moshy?utm_source=instagram&utm_medium=social&utm_campaign=bio`
 
 If you use Linktree/Beacons, give **each** button its own link from the table above (change `utm_campaign` to something like `bio_moshy`, `bio_apollo`).
 
