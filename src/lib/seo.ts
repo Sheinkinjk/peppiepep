@@ -990,7 +990,7 @@ export const seoConfig = {
   moshy: {
     title: "Moshy Discount Code Australia 2026: $120 Off | Refer Labs",
     description:
-      "Moshy's current discount: $120 off your first order, applied automatically through our referral link (code REFERRAL120), verified July 2026. Plus how the eligibility check works and what Moshy costs. Independent, not medical advice.",
+      "Moshy's current discount: $120 off your first order, applied automatically through our referral link (code REFERRAL120), verified August 2026. Plus how the eligibility check works and what Moshy costs. Independent, not medical advice.",
     url: `${SITE_URL}/moshy`,
     keywords: [
       "moshy discount code",

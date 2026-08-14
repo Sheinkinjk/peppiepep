@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
+import EditorialMeta from "@/components/consumer/EditorialMeta";
 import MatchPrompt from "@/components/consumer/MatchPrompt";
 
 export const metadata = generateSEOMetadata(seoConfig.weightLossTelehealthCost);
@@ -29,7 +30,7 @@ const faqs = [
   },
   {
     q: "How much does Moshy cost?",
-    a: "Moshy advertises its program from $229 a month on its own site, checked 14 August 2026. That is a starting figure rather than a quote: the total depends on the plan a practitioner considers appropriate for you, and it is confirmed inside Moshy's eligibility flow before you commit to anything. New customers get $120 off their first order through the link on this page, which Moshy states applies to eligible programs with a minimum three-month commitment. Prices change, so confirm the current figure on Moshy before you sign up.",
+    a: "Moshy advertises its program from $229 a month* on its own site, checked 14 August 2026. That is a starting figure rather than a quote: the total depends on the plan a practitioner considers appropriate for you, and it is confirmed inside Moshy's eligibility flow before you commit to anything. New customers get $120 off their first order through the link on this page, which Moshy states applies to eligible programs with a minimum three-month commitment. *Indicative only and subject to change: view the latest pricing on Moshy's own site before you sign up.",
   },
   {
     q: "Is the medication included in the telehealth subscription?",
@@ -108,6 +109,7 @@ export default function WeightLossTelehealthCostAustraliaPage() {
             <h1 className="mt-4 text-3xl sm:text-4xl lg:text-[2.6rem] font-extrabold leading-[1.08] tracking-tight text-[#10251b]">
               Weight-loss telehealth cost in Australia: how the pricing actually works
             </h1>
+            <EditorialMeta lastUpdated="2026-08-14" className="mt-5" />
             <p className="mt-5 text-base sm:text-lg leading-relaxed text-[#3d4b44]">
               &ldquo;How much does weight-loss telehealth cost?&rdquo; is one of the most common questions Australians ask before
               they start, and it depends on the plan you land on. This page breaks down the pricing model most online

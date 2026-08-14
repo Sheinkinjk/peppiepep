@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
+import EditorialMeta from "@/components/consumer/EditorialMeta";
 
 export const metadata = generateSEOMetadata(seoConfig.hairLossTreatmentCost);
 
@@ -115,6 +116,7 @@ export default function HairLossTreatmentCostAustraliaPage() {
             <h1 className="mt-4 text-3xl sm:text-4xl lg:text-[2.6rem] font-extrabold leading-[1.08] tracking-tight text-[#10251b]">
               What hair-loss treatment costs in Australia
             </h1>
+            <EditorialMeta lastUpdated="2026-08-14" className="mt-5" />
             <p className="mt-5 text-base sm:text-lg leading-relaxed text-[#3d4b44]">
               Hair-loss treatment does not have one price, because there are different routes. This page breaks down the
               real numbers: buying an over-the-counter topical product, and telehealth subscription plans, using Mosh&apos;s

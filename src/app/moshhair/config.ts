@@ -175,7 +175,7 @@ export const moshHairConfig: AffiliatePageConfig = {
     },
     {
       q: "How much does Mosh cost for hair loss in Australia?",
-      a: "Mosh runs on a subscription model and the cost depends on the plan determined through your online consultation. Mosh does not publish plan prices publicly: pricing covers any treatment, practitioner oversight and home delivery, and is shown to you in the consultation flow before you commit. If you are comparing on cost, two published terms matter: Mosh advertises a 180-day money-back guarantee, and a price-match guarantee on substantially comparable programs, so a cheaper like-for-like plan elsewhere is worth raising with them. Checked on Mosh's own site, 14 August 2026. This page does not provide medical advice.",
+      a: "Mosh runs on a subscription model and the cost depends on the plan determined through your online consultation. Mosh does not publish plan prices publicly: pricing covers any treatment, practitioner oversight and home delivery, and is shown to you in the consultation flow before you commit. If you are comparing on cost, two published terms matter: Mosh advertises a 180-day money-back guarantee, and a price-match guarantee on substantially comparable programs, so a cheaper like-for-like plan elsewhere is worth raising with them. Checked on Mosh's own site, 14 August 2026.* This page does not provide medical advice. *Terms are indicative and subject to change: view the latest pricing and terms on Mosh's own site before you commit.",
     },
     {
       q: "Does Mosh handle hair-loss treatment online?",

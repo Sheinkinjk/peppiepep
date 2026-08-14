@@ -71,7 +71,7 @@ const itemListSchema = {
 const faqs = [
   {
     q: "What is the cheapest weight loss telehealth in Australia?",
-    a: "It depends on how you count cost, which is exactly the trap with the word cheapest. The subscription services, like Moshy, Juniper and Pilot, bundle consults and support into a monthly fee. A pay-as-you-go service like Doctors for Weight Loss charges per appointment instead, so it can look lower up front. Of the subscription services, Moshy publishes a starting figure: it advertises its program from $229 a month on its own site, checked 14 August 2026. Juniper and Pilot confirm pricing inside their own flows rather than publishing a start price. The true total also depends on how often you need reviews, so treat any start price as a floor rather than a quote, and check current pricing directly on each provider. One concrete note: Moshy currently advertises $120 off your first order for new customers.",
+    a: "It depends on how you count cost, which is exactly the trap with the word cheapest. The subscription services, like Moshy, Juniper and Pilot, bundle consults and support into a monthly fee. A pay-as-you-go service like Doctors for Weight Loss charges per appointment instead, so it can look lower up front. Of the subscription services, Moshy publishes a starting figure: it advertises its program from $229 a month* on its own site, checked 14 August 2026. Juniper and Pilot confirm pricing inside their own flows rather than publishing a start price. The true total also depends on how often you need reviews, so treat any start price as a floor rather than a quote. One concrete note: Moshy currently advertises $120 off your first order for new customers. *Indicative only and subject to change: view the latest pricing on each provider's own site before you sign up.",
   },
   {
     q: "Is subscription or pay-as-you-go cheaper for weight loss telehealth?",
@@ -150,7 +150,7 @@ export default function CheapestWeightLossTelehealthPage() {
             <h1 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-extrabold leading-[1.08] tracking-tight text-[#10251b] mb-4 max-w-3xl">
               Cheapest weight loss telehealth in Australia: affordable options compared
             </h1>
-            <EditorialMeta lastUpdated="2026-07-06" className="mb-5" />
+            <EditorialMeta lastUpdated="2026-08-14" className="mb-5" />
             <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl mb-3">
               &ldquo;Cheapest&rdquo; is a slippery word in weight-loss telehealth, because services bill in different
               ways. Subscription programs charge a flat monthly fee. Pay-as-you-go services charge per consult. And
