@@ -16,6 +16,7 @@ const R = {
   mosh: { href: "/moshhair", label: "Mosh: how it works & the offer" },
   quiz: { href: "/hair-loss-quiz", label: "Which option fits you? (30-sec quiz)" },
   best: { href: "/best-hair-loss-treatment-australia", label: "Best hair-loss treatment, compared" },
+  moshReview: { href: "/mosh-review", label: "Is Mosh legit? Our review" },
 };
 
 export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
@@ -76,7 +77,7 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
       { q: "Is telehealth or my GP better for hair loss?", a: "Both are valid. A GP offers in-person, whole-of-health care but is slower to start; telehealth is faster and bundles medicine, review and delivery, but is focused on the one issue. It comes down to how you prefer to be supported." },
       { q: "Is hair-loss treatment safe, and what are the side effects?", a: "Prescription hair-loss treatments carry potential side effects, which is why they are prescription-only and why an assessment is required first. A registered practitioner weighs the likely benefit against the risks for your health history, explains what to watch for, and provides follow-up. Over-the-counter topical products carry their own considerations. Raise any concerns before starting. Information only, not medical advice." },
     ],
-    related: [R.best, R.cost, R.mosh, R.hub],
+    related: [R.best, R.cost, R.mosh, R.moshReview, R.hub],
   },
 
   {
@@ -239,7 +240,7 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
       { q: "Can early hair loss be slowed if I catch it?", a: "Often the earlier it is assessed, the more options there are, because it is easier to hold onto existing hair than to recover hair that is already gone. Whether any treatment is appropriate for you is a clinical decision made by a registered practitioner after an assessment. This is general information, not medical advice." },
       { q: "Who should I see about early hair loss?", a: "You can start with your own GP, or an online telehealth service where a registered Australian practitioner reviews your case. For significant or sudden loss, see a doctor in person. Our hair-loss match can point you to the route that fits." },
     ],
-    related: [R.quiz, R.best, R.mosh, R.hub],
+    related: [R.quiz, R.best, R.mosh, R.moshReview, R.hub],
   },
 ];
 

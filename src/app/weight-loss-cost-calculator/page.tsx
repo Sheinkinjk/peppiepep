@@ -164,7 +164,8 @@ export default function WeightLossCostCalculatorPage() {
               <span className="text-[#9aa39c]">·</span>
               <Link href="/best-weight-loss-telehealth-australia" className="nw-link text-sm">Best weight-loss telehealth</Link>
               <span className="text-[#9aa39c]">·</span>
-              <Link href="/moshy-review" className="nw-link text-sm">Moshy, explained</Link>
+              <Link href="/moshy" className="nw-link text-sm">Moshy: what it costs</Link>
+          <Link href="/moshy-review" className="nw-link text-sm">Moshy, explained</Link>
               <span className="text-[#9aa39c]">·</span>
               <Link href="/weight-loss" className="nw-link text-sm">The full weight-loss hub</Link>
             </div>

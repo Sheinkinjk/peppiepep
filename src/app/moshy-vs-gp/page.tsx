@@ -167,6 +167,7 @@ export default function MoshyVsGpPage() {
         </section>
 
         <div className="border-t border-[#e5e9e7] pt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm">
+          <Link href="/moshy" style={{ color: CYAN }} className="hover:opacity-80">Moshy: the offer</Link>
           <Link href="/moshy-review" style={{ color: CYAN }} className="hover:opacity-80">Moshy review →</Link>
           <Link href="/moshy-eligibility" style={{ color: CYAN }} className="hover:opacity-80">The eligibility check →</Link>
           <Link href="/moshy-alternatives" style={{ color: CYAN }} className="hover:opacity-80">Moshy alternatives →</Link>

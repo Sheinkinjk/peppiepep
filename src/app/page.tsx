@@ -175,7 +175,9 @@ export default function HomePage() {
 
             {/* Featured pick, real logo, editorial "cover story" */}
             <div className="lg:pl-6">
-              <Link href="/moshy-review" className="group block rounded-2xl border border-[#e3e7e2] bg-white p-6 shadow-[0_24px_60px_-34px_rgba(16,37,27,0.4)] transition-all hover:border-[#cfe6da] sm:p-7">
+              {/* Points at the money page, not the review: the offer page is what
+                  converts, and the review is one click away from there. */}
+              <Link href="/moshy" className="group block rounded-2xl border border-[#e3e7e2] bg-white p-6 shadow-[0_24px_60px_-34px_rgba(16,37,27,0.4)] transition-all hover:border-[#cfe6da] sm:p-7">
                 <div className="flex items-center gap-4">
                   <span className="flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-[#eef1ef] bg-white">
                     <Image src="/logos/moshy.png" alt="Moshy logo" width={48} height={48} className="h-11 w-11 object-contain" />
@@ -190,7 +192,7 @@ export default function HomePage() {
                   <span className="font-semibold text-[#10251b]"> New customers can now receive $120 off their first treatment.</span>
                 </p>
                 <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[#0a7c42]">
-                  See how Moshy works
+                  See the Moshy offer
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                 </span>
               </Link>

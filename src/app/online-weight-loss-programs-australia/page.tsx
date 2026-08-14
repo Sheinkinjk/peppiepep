@@ -208,6 +208,7 @@ export default function OnlineWeightLossProgramsPage() {
         <div className="border-t border-[#e5e9e7] pt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm">
           <Link href="/best-weight-loss-telehealth-australia" style={{ color: CYAN }} className="hover:opacity-80">Full provider comparison →</Link>
           <Link href="/weight-loss-telehealth-men-australia" style={{ color: CYAN }} className="hover:opacity-80">The men&apos;s guide →</Link>
+          <Link href="/moshy" style={{ color: CYAN }} className="hover:opacity-80">Moshy: the offer</Link>
           <Link href="/moshy-review" style={{ color: CYAN }} className="hover:opacity-80">Moshy review →</Link>
         </div>
 

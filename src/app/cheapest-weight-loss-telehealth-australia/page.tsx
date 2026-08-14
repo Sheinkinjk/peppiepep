@@ -331,7 +331,8 @@ export default function CheapestWeightLossTelehealthPage() {
           <section className="border-t border-[#e5e9e7] py-8 pb-16">
             <h2 className="text-sm font-bold text-[#10251b] mb-3">Keep comparing</h2>
             <div className="flex flex-wrap gap-3 mb-6">
-              <Link href="/moshy-review" className="nw-link text-sm">Moshy review</Link>
+              <Link href="/moshy" className="nw-link text-sm">Moshy: current offer</Link>
+          <Link href="/moshy-review" className="nw-link text-sm">Moshy review</Link>
               <span className="text-[#9aa39c]">·</span>
               <Link href="/moshy-vs-pilot" className="nw-link text-sm">Moshy vs Pilot</Link>
               <span className="text-[#9aa39c]">·</span>

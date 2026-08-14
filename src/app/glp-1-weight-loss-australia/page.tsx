@@ -283,6 +283,7 @@ export default function Glp1WeightLossAustraliaPage() {
                 <li><Link href="/weight-loss-injections-australia" className="nw-link">Weight-loss injections in Australia, explained</Link></li>
                 <li><Link href="/weight-loss-telehealth-cost-australia" className="nw-link">How much weight-loss telehealth costs in Australia</Link></li>
                 <li><Link href="/online-weight-loss-doctor-australia" className="nw-link">Seeing an online weight-loss doctor in Australia</Link></li>
+                <li><Link href="/moshy" className="nw-link">Moshy: the offer and how to start</Link></li>
                 <li><Link href="/moshy-review" className="nw-link">Our independent Moshy review</Link></li>
                 <li><Link href="/best-weight-loss-telehealth-australia" className="nw-link">Best weight-loss telehealth in Australia, compared</Link></li>
                 <li><Link href="/weight-loss" className="nw-link">The full weight-loss hub</Link></li>

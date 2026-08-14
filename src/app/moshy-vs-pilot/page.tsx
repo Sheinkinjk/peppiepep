@@ -331,7 +331,8 @@ export default function MoshyVsPilotPage() {
           <section className="border-t border-[#e5e9e7] py-8 pb-16">
             <h2 className="text-sm font-bold text-[#10251b] mb-3">Keep comparing</h2>
             <div className="flex flex-wrap gap-3 mb-6">
-              <Link href="/moshy-review" className="nw-link text-sm">Moshy review</Link>
+              <Link href="/moshy" className="nw-link text-sm">Moshy offer</Link>
+          <Link href="/moshy-review" className="nw-link text-sm">Moshy review</Link>
               <span className="text-[#9aa39c]">·</span>
               <Link href="/moshy-vs-juniper" className="nw-link text-sm">Moshy vs Juniper</Link>
               <span className="text-[#9aa39c]">·</span>
