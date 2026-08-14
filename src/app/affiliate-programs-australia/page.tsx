@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
+import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
 
 // Programs we've reviewed in depth, linked to our own pages (which carry the
@@ -354,6 +355,20 @@ export default function AffiliateProgramsAustraliaPage() {
               </Link>
             </div>
           </div>
+        </section>
+
+        {/* This is the most-seen page on the site and it sold nothing: the audience
+            is people building an income from a site or newsletter, not buyers of
+            anything we compare. Capturing the email is the honest monetisation
+            event for them, rather than bolting on affiliate CTAs they did not
+            come for. */}
+        <section className="mx-auto max-w-3xl px-5 pt-16 sm:px-8">
+          <NewsletterSignup
+            variant="band"
+            source="affiliate-programs-australia"
+            heading="Building an income from affiliate programs?"
+            sub="We send the occasional plain-English update when commission structures, networks or terms change. No spam."
+          />
         </section>
 
         {/* Editorial: how to join + what makes a good program */}

@@ -52,6 +52,18 @@ export function OrganizationSchema() {
       "availableLanguage": ["English"]
     },
     "publishingPrinciples": "https://referlabs.com.au/about",
+    // Names the real person behind the publisher. Health and money topics are
+    // assessed against expertise and accountability signals, and an
+    // organisation string alone provides neither. Only verifiable facts here:
+    // no invented credentials, titles or history.
+    "founder": {
+      "@type": "Person",
+      "name": "Jarred Krowitz",
+      "jobTitle": "Founder",
+      "email": "jarred@referlabs.com.au",
+      "url": "https://referlabs.com.au/about",
+      "worksFor": { "@type": "Organization", "name": "Refer Labs" }
+    },
     "sameAs": [
       "https://www.instagram.com/referlabs",
       "https://www.facebook.com/profile.php?id=61592445156591"

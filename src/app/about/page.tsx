@@ -118,8 +118,10 @@ export default function AboutPage() {
             <h2 className="text-lg font-bold text-[#10251b]">Who we are</h2>
             <p className="mt-2 text-[15px] leading-relaxed text-[#2b362f]">
               Refer Labs is a small independent Australian publisher, operated by Pepform Pty Ltd trading as Refer Labs,
-              ABN 32 660 008 159. Comparisons are researched and written in-house. We are not the manufacturer,
-              prescriber or provider of anything we cover, and we hold no stock and dispense nothing.
+              ABN 32 660 008 159. It is founded and run by Jarred Krowitz, who researches and writes the comparisons
+              here. There is no content team and no outsourced writing pool: if a page is wrong, one person is
+              accountable for it, and you can reach him directly at jarred@referlabs.com.au. We are not the
+              manufacturer, prescriber or provider of anything we cover, and we hold no stock and dispense nothing.
             </p>
           </section>
 

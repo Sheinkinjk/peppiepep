@@ -2420,13 +2420,23 @@ export function comparisonArticleSchema(input: {
     inLanguage: "en-AU",
     datePublished: input.datePublished,
     dateModified: input.dateModified,
+    // A named person rather than a bare organisation string: health and money
+    // pages are weighed on accountability, and "who stands behind this" is a
+    // question an org name does not answer. Verifiable facts only.
     author: {
-      "@type": "Organization",
-      name: SITE_NAME,
-      url: SITE_URL,
-      description:
-        input.authorDescription ??
-        "Independent Australian comparison publisher. Compares providers on published facts, with pricing checked against provider sites and the date recorded.",
+      "@type": "Person",
+      name: "Jarred Krowitz",
+      jobTitle: "Founder",
+      url: `${SITE_URL}/about`,
+      email: "jarred@referlabs.com.au",
+      worksFor: {
+        "@type": "Organization",
+        name: SITE_NAME,
+        url: SITE_URL,
+        description:
+          input.authorDescription ??
+          "Independent Australian comparison publisher. Compares providers on published facts, with pricing checked against provider sites and the date recorded.",
+      },
     },
     publisher: {
       "@type": "Organization",
