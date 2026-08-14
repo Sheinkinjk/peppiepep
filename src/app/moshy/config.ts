@@ -129,6 +129,10 @@ export const moshyConfig: AffiliatePageConfig = {
       a: "The current Moshy discount code is REFERRAL120, worth $120 off a new customer's first order, verified against Moshy's own sign-up page in July 2026. You do not need to type it: when you click through from this page, Moshy's landing page carries the code into the sign-up flow automatically. Other Moshy codes circulating on coupon sites are frequently expired or unofficial and may not apply at checkout; REFERRAL120 for $120 off is the current, verified offer.",
     },
     {
+      q: "How much does Moshy cost per month?",
+      a: "Moshy advertises its program from $229 a month on its own site, checked 14 August 2026. Treat that as a starting figure rather than a quote: what you pay depends on the plan a registered practitioner considers appropriate after your eligibility check, and the exact cost is confirmed inside Moshy's own flow before you commit to anything. New customers get $120 off their first order through the link on this page, which Moshy states applies to eligible programs with a minimum three-month commitment. Prices change, so confirm the current figure on Moshy before signing up.",
+    },
+    {
       q: "Does Moshy have a referral code?",
       a: "Yes, Moshy operates through referral links that give users direct access to their eligibility flow and any associated offer. This page provides a personalised Moshy referral link. Click any button on this page to use it, and the referral is tracked through the link automatically.",
     },

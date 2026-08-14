@@ -50,7 +50,7 @@ const faqs = [
   },
   {
     q: "What does the Mosh hair-loss offer include?",
-    a: "New customers get 55% off their first order through the link on this page. Plans include free, discreet delivery, and Mosh advertises a money-back guarantee. The exact plan and price depend on the assessment, since a practitioner assigns the plan, and you see them on Mosh before you commit. Verify the current terms on Mosh, as pricing can change.",
+    a: "New customers get 55% off their first order through the link on this page, and plans include free, discreet delivery. Mosh does not publish its plan prices publicly: the plan and price are set by the assessment and shown to you before you commit. Two things Mosh does publish are worth knowing if you are comparing on cost. It advertises a 180-day money-back guarantee, and a price-match guarantee on substantially comparable programs, so a cheaper like-for-like plan elsewhere is worth raising with them directly. Checked on Mosh's own site, 14 August 2026; terms can change, so verify before you commit.",
   },
   {
     q: "Does Refer Labs earn money from this page?",

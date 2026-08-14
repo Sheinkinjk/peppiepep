@@ -29,7 +29,7 @@ const faqs = [
   },
   {
     q: "How much does Moshy cost?",
-    a: "Moshy's pricing is confirmed during the eligibility and consult process, because the total depends on the plan a practitioner considers appropriate for you. As with most Australian weight-loss telehealth, the cost typically separates the service or subscription from any medicine that is dispensed. We do not quote a fixed Moshy price here because prices change and are individual. The current figure is shown to you within the Moshy flow before you commit to anything.",
+    a: "Moshy advertises its program from $229 a month on its own site, checked 14 August 2026. That is a starting figure rather than a quote: the total depends on the plan a practitioner considers appropriate for you, and it is confirmed inside Moshy's eligibility flow before you commit to anything. New customers get $120 off their first order through the link on this page, which Moshy states applies to eligible programs with a minimum three-month commitment. Prices change, so confirm the current figure on Moshy before you sign up.",
   },
   {
     q: "Is the medication included in the telehealth subscription?",

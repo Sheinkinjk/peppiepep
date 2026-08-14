@@ -71,7 +71,7 @@ const itemListSchema = {
 const faqs = [
   {
     q: "What is the cheapest weight loss telehealth in Australia?",
-    a: "It depends on how you count cost, which is exactly the trap with the word cheapest. The subscription services, like Moshy, Juniper and Pilot, bundle consults and support into a monthly fee. A pay-as-you-go service like Doctors for Weight Loss charges per appointment instead, so it can look lower up front. We do not quote specific figures here because pricing is confirmed inside the consult and can change; check the current pricing directly on each provider. The true total also depends on whether medication is prescribed and how often you need reviews. One concrete note: Moshy currently advertises $120 off your first treatment for new customers.",
+    a: "It depends on how you count cost, which is exactly the trap with the word cheapest. The subscription services, like Moshy, Juniper and Pilot, bundle consults and support into a monthly fee. A pay-as-you-go service like Doctors for Weight Loss charges per appointment instead, so it can look lower up front. Of the subscription services, Moshy publishes a starting figure: it advertises its program from $229 a month on its own site, checked 14 August 2026. Juniper and Pilot confirm pricing inside their own flows rather than publishing a start price. The true total also depends on how often you need reviews, so treat any start price as a floor rather than a quote, and check current pricing directly on each provider. One concrete note: Moshy currently advertises $120 off your first order for new customers.",
   },
   {
     q: "Is subscription or pay-as-you-go cheaper for weight loss telehealth?",
