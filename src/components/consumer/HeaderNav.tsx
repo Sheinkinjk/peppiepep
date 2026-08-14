@@ -23,7 +23,6 @@ const GROUPS: Group[] = [
     items: [
       { href: "/moshy", label: "Moshy", note: "How the program works, plus $120 off your first order" },
       { href: "/juniper", label: "Juniper", note: "Built for women, with a free first consultation" },
-      { href: "/moshy-vs-juniper", label: "Moshy vs Juniper", note: "Which one is built for you" },
       { href: "/best-weight-loss-telehealth-australia", label: "Compare all providers", note: "Pricing, eligibility and who each suits" },
       { href: "/weight-loss-quiz", label: "Which pathway fits you?", note: "A 60-second match, no sign-up" },
     ],

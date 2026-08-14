@@ -151,9 +151,11 @@ export const seoConfig = {
     keywords: ["pet insurance australia", "compare pet insurance australia", "dog insurance australia", "cat insurance australia", "pet insurance offers"],
   },
   knose: {
-    title: "Knose Pet Insurance: 2 Months Free via Refer Labs",
+    // "knose promo code" draws 26 impressions at position 38 with no clicks, and
+    // the title carried no matching phrase at all. The offer is unchanged.
+    title: "Knose Promo Code 2026: 2 Months Free | Refer Labs",
     description:
-      "Knose is an Australian pet insurance provider. New customers get 2 months free with code referlab2mf. General info and a referral, not financial advice.",
+      "Knose promo code Australia: new customers get 2 months free with code referlab2mf through our link. What Knose pet insurance covers, in plain English. Not financial advice.",
     url: `${SITE_URL}/knose`,
     keywords: ["knose pet insurance", "knose promo code", "knose 2 months free", "knose pet insurance review"],
   },
@@ -924,9 +926,14 @@ export const seoConfig = {
   },
 
   moshHair: {
-    title: "Mosh Hair Discount Code 2026: 55% Off | Refer Labs",
+    // Titled for the query that actually earns. GSC: "mosh discount code" pulls
+    // 63 impressions but sat at position 21, because "Hair" split the exact
+    // phrase; "mosh hair" queries draw a third of that and are carried by the
+    // body copy, which is hair-loss throughout. The offer is a Mosh-wide first
+    // order discount, not a hair-only one, so the broader title is also truer.
+    title: "Mosh Discount Code 2026: 55% Off Your First Order | Refer Labs",
     description:
-      "Mosh hair loss discount code Australia 2026: 55% off your first order with code REFERAL55 via our link. How the service, consult and cost work, explained.",
+      "Mosh discount code Australia 2026: 55% off your first order with code REFERAL55 via our link. How the hair-loss service, the consult and the cost work, explained.",
     url: `${SITE_URL}/moshhair`,
     keywords: [
       "mosh hair discount code",
