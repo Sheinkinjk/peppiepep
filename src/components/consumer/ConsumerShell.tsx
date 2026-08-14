@@ -10,13 +10,17 @@ import { ReferLabsLogo } from "../ReferLabsLogo";
 // Deliberately short: the consumer verticals up front, then one "Business Tools"
 // door (the /guides index) that holds the software hubs, so the row reads as a
 // few clear worlds rather than a long list of unrelated tools.
+// Ordered by where the revenue is: the two health clusters lead, and the offer
+// pages sit alongside their hubs because they are what convert. Business is one
+// trailing door rather than two.
 const NAV = [
+  { href: "/moshy", label: "Moshy" },
   { href: "/weight-loss", label: "Weight Loss" },
+  { href: "/moshhair", label: "Mosh" },
   { href: "/hair-loss", label: "Hair Loss" },
   { href: "/pet-insurance", label: "Pet Insurance" },
   { href: "/apollo-energy-group", label: "Home Batteries" },
-  { href: "/business-loans", label: "Business Loans" },
-  { href: "/business-software", label: "Business Tools" },
+  { href: "/business-software", label: "Business" },
 ];
 
 /**

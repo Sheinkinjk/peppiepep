@@ -29,8 +29,8 @@ const categoryCards = [
     accent: "#0E7C66", tint: "#E4F1EB",
     note: "Moshy, coaching-led programs and the GP pathway, compared on price and inclusions.",
     links: [
+      { h: "/moshy", l: "Moshy: the offer" },
       { h: "/moshy-vs-juniper", l: "Moshy vs Juniper" },
-      { h: "/cheapest-weight-loss-telehealth-australia", l: "The cheapest telehealth" },
     ],
   },
   {
@@ -38,8 +38,8 @@ const categoryCards = [
     accent: "#B4552D", tint: "#F7EBE3",
     note: "Clinical telehealth versus topical products, and which suits which stage.",
     links: [
+      { h: "/moshhair", l: "Mosh: the offer" },
       { h: "/best-hair-loss-treatment-australia", l: "Best treatment, compared" },
-      { h: "/hair-loss-treatment-cost-australia", l: "What it costs" },
     ],
   },
   {
