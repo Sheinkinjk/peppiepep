@@ -88,6 +88,21 @@ export default function MoshyAlternativesPage() {
           affiliate link.
         </p>
 
+        {/* Answer-first: the question verbatim, then a liftable summary of the options. */}
+        <section className="mb-10">
+          <h2 className="text-xl font-black mb-3">What are the best alternatives to Moshy in Australia?</h2>
+          <div className="rounded-xl border border-[#cfe6da] bg-[#e8f5ee] px-6 py-5">
+            <p className="text-[#2b362f] text-sm sm:text-base leading-relaxed max-w-2xl">
+              There are three realistic alternatives, and which suits you depends on what Moshy is missing for you.
+              Your GP is the cheapest route and the best fit if you want weight managed alongside the rest of your
+              health. Juniper is the closest like-for-like online option and is built for women, wrapping coaching, an
+              app and a patient community around the clinical care, with a free first consultation for new patients.
+              Pilot sits inside a broader men's health service, so it suits men who want one provider across several
+              concerns. Suitability for any of them is decided individually by a registered Australian practitioner.
+            </p>
+          </div>
+        </section>
+
         <section className="space-y-4 mb-8">
           <h2 className="text-xl font-black">1. Your GP</h2>
           <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">

@@ -181,8 +181,11 @@ export default function MoshyVsPilotPage() {
             </div>
           </section>
 
-          {/* Quick verdict */}
+          {/* Answer-first: the buyer's question verbatim as an H2, then the liftable verdict. */}
           <section className="pb-2">
+            <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-[#10251b] mb-4">
+              Moshy or Pilot: which is better for weight loss?
+            </h2>
             <div className="rounded-xl border px-6 py-5" style={{ borderColor: `${GREEN}40`, background: `${GREEN}0A` }}>
               <p className="text-[10px] font-bold uppercase tracking-[0.18em] mb-2" style={{ color: GREEN }}>
                 Quick verdict

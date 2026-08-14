@@ -96,6 +96,22 @@ export default function MoshyVsGpPage() {
           legitimate. Contains an affiliate link.
         </p>
 
+        {/* Answer-first: the question verbatim, then a liftable answer, before the table. */}
+        <section className="mb-10">
+          <h2 className="text-xl font-black mb-3">Should you use Moshy or see your GP for weight loss?</h2>
+          <div className="rounded-xl border border-[#cfe6da] bg-[#e8f5ee] px-6 py-5">
+            <p className="text-[#2b362f] text-sm sm:text-base leading-relaxed max-w-2xl">
+              Both are legitimate, and the right one depends on what you want from the process. Your GP is the cheaper
+              route because Medicare offsets part of the consult, already knows your history, and can manage weight
+              alongside the rest of your health, but it is slower to begin and depends on appointment availability.
+              Moshy is faster and entirely online, with the eligibility check, practitioner review and delivery handled
+              in one flow, though it is focused on the single issue rather than your whole health. If cost and
+              continuity matter most, start with your GP. If speed and convenience matter most, Moshy is the more
+              natural starting point. Either way a registered Australian practitioner decides what is appropriate.
+            </p>
+          </div>
+        </section>
+
         <section className="mb-10">
           <h2 className="text-xl font-black mb-4">Side by side</h2>
           <div className="overflow-x-auto rounded-xl border border-[#e5e9e7]">

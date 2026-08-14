@@ -290,7 +290,10 @@ export default function BestHairLossTreatmentAustraliaPage() {
           </div>
         </div>
 
-        {/* Quick Verdict (answer-first, GEO) */}
+        {/* Answer-first (GEO): the buyer's question verbatim as an H2 above the verdict. */}
+        <h2 className="max-w-3xl text-xl sm:text-2xl font-black text-[#10251b] mb-4">
+          What is the best hair-loss treatment in Australia?
+        </h2>
         <div className="mb-16 sm:mb-20 max-w-3xl rounded-xl border px-6 py-5" style={{ borderColor: `${CYAN}40`, background: `${CYAN}0A` }}>
           <p className="text-[10px] font-bold uppercase tracking-[0.18em] mb-2" style={{ color: CYAN_LT }}>
             Quick Verdict
