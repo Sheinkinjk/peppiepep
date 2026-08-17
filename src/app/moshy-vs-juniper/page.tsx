@@ -83,7 +83,7 @@ const webPageSchema = {
   url: seoConfig.moshyVsJuniper.url,
   inLanguage: "en-AU",
   datePublished: "2026-07-05",
-  dateModified: "2026-07-16",
+  dateModified: "2026-08-13",
   isPartOf: { "@type": "WebSite", name: "Refer Labs", url: SITE_URL },
 };
 
@@ -101,7 +101,7 @@ const articleSchema = comparisonArticleSchema({
   description: "Refer Labs compares Moshy and Juniper on approach, process and published pricing for Australian weight-loss telehealth.",
   url: "https://referlabs.com.au/moshy-vs-juniper",
   datePublished: "2026-07-05",
-  dateModified: "2026-08-08",
+  dateModified: "2026-08-13",
 });
 
 export default function MoshyVsJuniperPage() {
@@ -129,7 +129,7 @@ export default function MoshyVsJuniperPage() {
           Moshy vs Juniper:{" "}
           <span style={{ color: CYAN_LT }}>which one is built for you?</span>
         </h1>
-        <EditorialMeta lastUpdated="2026-07-16" className="mb-6" />
+        <EditorialMeta lastUpdated="2026-08-13" className="mb-6" />
         <p className="text-[#3d4b44] text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
           Australia&apos;s two most-compared weight-loss telehealth platforms answer the same problem in different
           ways. The short version: <strong className="text-[#2b362f]">Moshy runs a lean clinical pathway, Juniper wraps

@@ -72,7 +72,7 @@ const webPageSchema = {
   url: seoConfig.weightLossTelehealthCost.url,
   inLanguage: "en-AU",
   datePublished: "2026-07-05",
-  dateModified: "2026-07-05",
+  dateModified: "2026-08-14",
   about: [
     { "@type": "Thing", name: "weight loss telehealth cost Australia" },
     { "@type": "Thing", name: "Moshy cost" },

@@ -17,7 +17,7 @@ const articleSchema = comparisonArticleSchema({
   description: "Refer Labs sets out what hair-loss treatment costs in Australia, comparing over-the-counter options with telehealth plans.",
   url: "https://referlabs.com.au/hair-loss-treatment-cost-australia",
   datePublished: "2026-07-17",
-  dateModified: "2026-08-07",
+  dateModified: "2026-08-14",
   authorDescription:
     "Independent Australian comparison publisher. Compares providers on published facts, with no paid rankings and commercial relationships disclosed.",
 });
@@ -73,7 +73,7 @@ const webPageSchema = {
   url: seoConfig.hairLossTreatmentCost.url,
   inLanguage: "en-AU",
   datePublished: "2026-07-17",
-  dateModified: "2026-07-17",
+  dateModified: "2026-08-14",
   about: [
     { "@type": "Thing", name: "hair loss treatment cost Australia" },
     { "@type": "Thing", name: "Mosh hair loss cost" },

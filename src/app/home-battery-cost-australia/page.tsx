@@ -76,7 +76,7 @@ const webPageSchema = {
   url: seoConfig.homeBatteryCost.url,
   inLanguage: "en-AU",
   datePublished: "2026-07-17",
-  dateModified: "2026-07-17",
+  dateModified: "2026-08-13",
   about: [
     { "@type": "Thing", name: "home battery cost Australia" },
     { "@type": "Thing", name: "home battery price 2026" },
@@ -119,7 +119,7 @@ export default function HomeBatteryCostAustraliaPage() {
             <h1 className="mt-4 text-3xl sm:text-4xl lg:text-[2.6rem] font-extrabold leading-[1.08] tracking-tight text-[#10251b]">
               How much a home battery costs in Australia
             </h1>
-            <EditorialMeta lastUpdated="2026-07-17" className="mt-5" />
+            <EditorialMeta lastUpdated="2026-08-13" className="mt-5" />
             <p className="mt-5 text-base sm:text-lg leading-relaxed text-[#3d4b44]">
               Battery prices are confusing because quotes mix up supply-only and installed, and before and after the
               rebate. This page sets out the real installed cost ranges for 2026 by size, what the federal rebate takes

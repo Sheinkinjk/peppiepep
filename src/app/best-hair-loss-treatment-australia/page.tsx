@@ -109,7 +109,7 @@ const webPageSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
   datePublished: "2026-07-05",
-  dateModified: "2026-07-21",
+  dateModified: "2026-08-14",
   name: seoConfig.bestHairLossTreatmentAustralia.title,
   description: seoConfig.bestHairLossTreatmentAustralia.description,
   url: `${SITE_URL}/best-hair-loss-treatment-australia`,
@@ -227,7 +227,7 @@ const articleSchema = comparisonArticleSchema({
   description: "Refer Labs compares Australian men's hair loss treatment services on published monthly pricing, treatments offered and process.",
   url: "https://referlabs.com.au/best-hair-loss-treatment-australia",
   datePublished: "2026-07-05",
-  dateModified: "2026-08-08",
+  dateModified: "2026-08-14",
 });
 
 export default function BestHairLossTreatmentAustraliaPage() {
@@ -264,7 +264,7 @@ export default function BestHairLossTreatmentAustraliaPage() {
             Best Hair Loss Treatment Australia 2026:{" "}
             <span style={{ color: CYAN_LT }}>Mosh vs Dense vs Telehealth</span>
           </h1>
-          <EditorialMeta lastUpdated="2026-07-21" className="mb-6" />
+          <EditorialMeta lastUpdated="2026-08-14" className="mb-6" />
           <p className="text-[#3d4b44] text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
             A practical comparison of the most accessible hair loss options for Australians, prescription telehealth, topical products, and when to see a specialist.
           </p>
