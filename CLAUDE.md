@@ -65,6 +65,28 @@ No new page ships without a one-line answer to: **what search intent does it ser
 7. Logo: `public/logos/<slug>.png` (square, transparent, ~256px). Falls back to a monogram until added.
 8. Update `public/llms.txt` if it's a notable/money page.
 
+## Onboarding a new affiliate/referral program — the standard
+Run this in order. Steps 1-3 are the ones that were repeatedly missed and cost real revenue.
+
+**1. Verify the facts from the vendor's own page, never from the partner's email or memory.**
+`WebFetch` the actual landing page and read off: plan names, what each includes, limits, the exact code string, and the offer's conditions. If WebFetch gets a 403, the site is blocking its user-agent, not hiding the data: retry with `curl -A "Mozilla/5.0 ... Chrome/124.0 Safari/537.36"`, which is how Knose's cover page was recovered. If a vendor publishes no price, say so; never fill the gap.
+
+**2. Write down what the offer actually discounts.** A partner saying "15% off" does not mean 15% off the product. PetsOnMe's REFERLABS discounts *pet care services*, not the premium; describing it as an insurance discount would breach ACL s29. State the object of the discount in every place the offer appears.
+
+**3. Name the code in `public/llms.txt`.** This is the single highest-value AEO step and the one most often skipped. "$120 off, no code to type" is true but gives an engine nothing to match when someone asks for "<brand> discount code". Write the literal string: **"the current X discount code is CODE"**, plus the conditions and the date you verified it. Every code in `offers.ts` must appear in `llms.txt`.
+
+**4. Date every offer and price claim** inline ("verified on <brand>'s own page, 17 August 2026"), and asterisk prices with a "view the latest pricing on <brand>'s own site" note. Do NOT bump the global `VERIFIED_DATE` in `offers.ts` unless you re-checked every offer in the table.
+
+**5. Then the page checklist below** (affiliate-links.ts → config → page.tsx → seo.ts → sitemap/guides/search-index/catalog → inbound links → logo → llms.txt).
+
+**6. Add it to `src/lib/offers.ts`** so it appears in `/deals`. Knose and PetsOnMe were both live for months without ever reaching the offers hub.
+
+**7. Logo:** pull it from the vendor's own site rather than asking for a file. Many ship a white-on-brand SVG that is invisible on our light background: recolour the fills to the brand's own hex (PetsOnMe → `#1faae1`), never to an invented colour.
+
+**8. Link the money page from the nav and the hub**, not just the review page. `/moshy` sat at 6 inbound files against the review's 16, and was absent from the nav entirely.
+
+**9. Keep `llms.txt` clean.** Retiring or redirecting a page means removing its `llms.txt` entry: pointing AI engines at a 308 wastes the citation. Re-run the URL check after any retirement.
+
 ## Deploy & verify (do this after changes)
 `git` commit on `main` (branch first if needed) → push → `vercel --prod --yes` → poll `vercel inspect <url>` for "Ready" → **curl-verify the change is live** → `npm run indexnow` (pushes changed URLs to Bing/Yandex). Co-author commits per the global convention.
 
