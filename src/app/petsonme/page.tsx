@@ -227,6 +227,7 @@ export default function PetsOnMePage() {
         </div>
 
         <div className="mt-10 flex flex-wrap gap-x-6 gap-y-2 border-t border-[#e5e9e7] pt-8 text-sm">
+          <Link href="/knose-vs-petsonme" className="nw-link">PetsOnMe vs Knose, compared</Link>
           <Link href="/best-pet-insurance-australia" className="nw-link">How to choose pet insurance</Link>
           <Link href="/pet-insurance" className="nw-link">Compare pet insurance</Link>
           <Link href="/what-pet-insurance-covers-australia" className="nw-link">What pet insurance covers</Link>

@@ -230,6 +230,7 @@ export default function BestPetInsuranceAustraliaPage() {
         </section>
 
         <div className="mt-10 flex flex-wrap gap-x-6 gap-y-2 border-t border-[#e5e9e7] pt-8 text-sm">
+          <Link href="/knose-vs-petsonme" className="nw-link">Knose vs PetsOnMe, side by side</Link>
           <Link href="/what-pet-insurance-covers-australia" className="nw-link">What pet insurance covers</Link>
           <Link href="/petsonme" className="nw-link">PetsOnMe: cover &amp; code</Link>
           <Link href="/knose" className="nw-link">Knose: 2 months free</Link>

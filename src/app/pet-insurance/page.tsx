@@ -183,9 +183,10 @@ export default function PetInsurancePage() {
               </div>
             </div>
             <p className="mt-4 text-[13px] text-[#6e7b74]">
-              Weighing them up? Our{" "}
-              <Link href="/best-pet-insurance-australia" className="nw-link">guide to choosing pet insurance</Link>{" "}
-              sets out the six things that decide what you actually get back.
+              Weighing them up? See{" "}
+              <Link href="/knose-vs-petsonme" className="nw-link">Knose vs PetsOnMe side by side</Link>, or our{" "}
+              <Link href="/best-pet-insurance-australia" className="nw-link">guide to choosing pet insurance</Link>,
+              which sets out the six things that decide what you actually get back.
             </p>
           </section>
 
