@@ -126,7 +126,7 @@ export const moshyConfig: AffiliatePageConfig = {
   faqs: [
     {
       q: "What is the current Moshy discount code?",
-      a: "The current Moshy discount code is REFERRAL120, worth $120 off a new customer's first order, verified against Moshy's own sign-up page in July 2026. You do not need to type it: when you click through from this page, Moshy's landing page carries the code into the sign-up flow automatically. Other Moshy codes circulating on coupon sites are frequently expired or unofficial and may not apply at checkout; REFERRAL120 for $120 off is the current, verified offer.",
+      a: "The current Moshy discount code is REFERRAL120, worth $120 off a new customer's first order, verified against Moshy's own sign-up page on 17 August 2026. Moshy states the offer applies to new customers who purchase a practitioner-assigned weight-loss program, excluding dietitian, over-the-counter and meal-replacement plans, is one use per customer, and carries a minimum three-month commitment. You do not need to type it: when you click through from this page, Moshy's landing page carries the code into the sign-up flow automatically. Other Moshy codes circulating on coupon sites are frequently expired or unofficial and may not apply at checkout; REFERRAL120 for $120 off is the current, verified offer.",
     },
     {
       q: "How much does Moshy cost per month?",
