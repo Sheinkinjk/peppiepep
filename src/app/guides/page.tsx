@@ -18,6 +18,8 @@ const breadcrumbSchema = {
 const hubs = [
   { href: "/weight-loss", label: "Weight Loss", desc: "Telehealth, programs and the GP pathway, compared." },
   { href: "/hair-loss", label: "Hair Loss", desc: "Clinical prescription treatment versus topical products." },
+  { href: "/best-pet-insurance-australia", label: "Best Pet Insurance: How to Choose", desc: "The six things that decide what you get back: benefit percentage, annual limit, hereditary cover, waiting periods, excess and exclusions." },
+  { href: "/petsonme", label: "PetsOnMe: Cover & Code", desc: "The Accidental, Classic and Deluxe plans, the 80% benefit, and what the REFERLABS code actually discounts." },
   { href: "/pet-insurance", label: "Pet Insurance", desc: "Cover types, waiting periods and exclusions explained, plus current offers. General information, not advice." },
   { href: "/apollo-energy-group", label: "Home Batteries", desc: "Battery sizing, the federal rebate, and what a quote should include." },
   { href: "/business-software", label: "Business Software", desc: "A finder that matches you to the right tools by use case, size and budget, plus the full directory." },

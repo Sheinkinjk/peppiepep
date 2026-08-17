@@ -1,5 +1,5 @@
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
-import { KNOSE_URL } from "@/lib/affiliate-links";
+import { KNOSE_URL, PETSONME_URL, PETSONME_CODE } from "@/lib/affiliate-links";
 import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
@@ -142,8 +142,49 @@ export default function PetInsurancePage() {
                 </Link>
               </div>
             </div>
+          </section>
+
+          {/* Second provider: PetsOnMe. Kept factual and even-handed, and the code is
+              stated precisely because it discounts pet care services, not the premium. */}
+          <section className="mb-10">
+            <div className="rounded-2xl border border-[#e5e9e7] bg-[#f5f8f6] p-6 sm:p-8">
+              <div className="flex flex-wrap items-center justify-between gap-4">
+                <span className="text-xl font-extrabold tracking-[-0.01em] text-[#10251b]">PetsOnMe</span>
+                <span className="rounded-full border border-[#cfe6da] bg-[#e8f5ee] px-4 py-1.5 text-sm font-bold text-[#0a7c42]">
+                  Three cover levels
+                </span>
+              </div>
+              <p className="mt-5 text-[15px] leading-relaxed text-[#3d4b44]">
+                PetsOnMe publishes its cover levels openly: Accidental ($5,000 annual limit), Classic ($10,000, with
+                hereditary conditions to $2,300 a year) and Deluxe ($20,000, hereditary to $3,800 and select dental to
+                $500). All three pay 80% of the eligible vet bill less a $100, $200 or $300 excess. Underwritten by
+                Pacific International Insurance.
+              </p>
+              <p className="mt-3 rounded-lg border border-[#cfe6da] bg-[#e8f5ee] px-4 py-3 text-sm leading-relaxed text-[#2b362f]">
+                <span className="font-semibold text-[#10251b]">The code. </span>
+                <strong className="text-[#10251b]">{PETSONME_CODE}</strong> upgrades the discount on PetsOnMe&apos;s pet
+                care services, such as walking, minding and grooming, from 12% to 15%. It is a discount on those
+                services, not on the insurance premium.
+              </p>
+              <div className="mt-6 flex flex-wrap items-center gap-3">
+                <a
+                  href={PETSONME_URL}
+                  target="_blank"
+                  rel="nofollow sponsored"
+                  data-cta="pet-insurance-petsonme-offer"
+                  className="nw-btn"
+                >
+                  Compare PetsOnMe cover <ArrowRight className="h-4 w-4" />
+                </a>
+                <Link href="/petsonme" className="text-sm font-semibold text-[#0a7c42] hover:text-[#086536]">
+                  More about PetsOnMe
+                </Link>
+              </div>
+            </div>
             <p className="mt-4 text-[13px] text-[#6e7b74]">
-              More Australian pet insurers are being added to this page over the coming weeks.
+              Weighing them up? Our{" "}
+              <Link href="/best-pet-insurance-australia" className="nw-link">guide to choosing pet insurance</Link>{" "}
+              sets out the six things that decide what you actually get back.
             </p>
           </section>
 

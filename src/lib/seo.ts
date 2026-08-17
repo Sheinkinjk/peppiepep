@@ -150,6 +150,21 @@ export const seoConfig = {
     url: `${SITE_URL}/pet-insurance`,
     keywords: ["pet insurance australia", "compare pet insurance australia", "dog insurance australia", "cat insurance australia", "pet insurance offers"],
   },
+  petsonme: {
+    title: "PetsOnMe Pet Insurance Review 2026: Cover & Code | Refer Labs",
+    description:
+      "PetsOnMe pet insurance explained: the Accidental, Classic and Deluxe plans, what each annual limit covers, the 80% benefit and excess options, plus the REFERLABS code. General information, not financial advice.",
+    url: `${SITE_URL}/petsonme`,
+    keywords: ["petsonme", "pets on me pet insurance", "petsonme review", "petsonme pet insurance australia", "petsonme referral code", "pets on me insurance"],
+  },
+  bestPetInsurance: {
+    title: "Best Pet Insurance in Australia 2026: How to Choose | Refer Labs",
+    description:
+      "How to choose pet insurance in Australia: the benefit percentage, annual limits, excess, waiting periods and exclusions that decide what you actually get back, plus the providers we cover. Not financial advice.",
+    url: `${SITE_URL}/best-pet-insurance-australia`,
+    keywords: ["best pet insurance australia", "best pet insurance", "compare pet insurance australia", "best dog insurance australia", "best cat insurance australia", "pet insurance comparison australia"],
+  },
+
   knose: {
     // "knose promo code" draws 26 impressions at position 38 with no clicks, and
     // the title carried no matching phrase at all. The offer is unchanged.

@@ -24,6 +24,14 @@ export const MOSH_HAIR_URL = "https://www.getmosh.com.au/start/referlabs";
 // Promo code referlab2mf gives the customer 2 months free.
 export const KNOSE_URL = "https://quick-quote.knose.com.au/details?promo=referlab2mf";
 
+// PetsOnMe: second pet-insurance partner (Aug 2026). No tracked URL exists yet, so
+// the code REFERLABS is entered by the customer at quote and must stay visible next
+// to every CTA. Swap this constant for a tracked link if PetsOnMe supplies one.
+// NOTE: REFERLABS upgrades the pet-care-services discount from 12% to 15%. It is NOT
+// a discount on the premium; never describe it as one.
+export const PETSONME_URL = "https://www.petsonme.com.au/pet-insurance/compare-cover/";
+export const PETSONME_CODE = "REFERLABS";
+
 // ── Health: hair care ───────────────────────────────────────────────────────
 export const DENSE_URL =
   "https://densehairexperts.myshopify.com?sca_ref=10755034.xwTupm6fuv&utm_source=affiliate-jarred-krowitz&utm_medium=affiliate-jarred-krowitz&utm_campaign=affiliate";
