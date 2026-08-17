@@ -51,7 +51,7 @@ const providers = [
   {
     name: "Knose",
     href: "/knose",
-    published: "Knose does not publish its cover levels, limits or benefit percentage on its public pages, so we do not restate them here. The detail sits in its Product Disclosure Statement, and the quote flow shows what applies to your pet.",
+    published: "Claims back up to 90% on eligible vet bills across its policies, with an annual limit up to $25,000 and an excess of $0, $100 or $200. Knose states there are no sub-limits on eligible treatments, so the full annual limit applies to any covered condition. Hereditary and congenital conditions are covered, with a six-month exclusion period unless waived. Dental illness, behavioural and specialised therapies are optional extras.",
     offer: "Code referlab2mf gives new customers 2 months free when they take out a policy through our link.",
     cta: { label: "Get a Knose quote", href: KNOSE_URL },
   },
@@ -187,9 +187,10 @@ export default function BestPetInsuranceAustraliaPage() {
         <section className="mt-14">
           <h2 className="text-xl font-bold text-[#10251b] sm:text-2xl">The providers we cover</h2>
           <p className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">
-            Two, both Australian. We show what each publishes rather than filling gaps: one sets out its cover levels
-            openly, the other keeps the detail in its Product Disclosure Statement, and pretending otherwise would make
-            a comparison table look more useful than it is.
+            Two, both Australian, and they differ in ways that matter. On the published numbers Knose pays a higher
+            share of the bill and carries no sub-limits, while PetsOnMe sets out three clearly-tiered plans with
+            sub-limits on hereditary and dental cover. Neither is better in the abstract, because the right one depends
+            on your pet and what you would claim for. Every figure below is from each provider&apos;s own site.
           </p>
           <div className="mt-6 grid gap-5">
             {providers.map((p) => (

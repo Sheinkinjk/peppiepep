@@ -106,6 +106,8 @@ export default function PetsOnMePage() {
         </nav>
 
         <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#0a7c42]">Pet insurance · Australia</p>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/logos/petsonme.svg" alt="PetsOnMe logo" width={161} height={45} className="mt-5 h-9 w-auto" />
         <h1 className="mt-4 text-3xl font-extrabold leading-[1.08] tracking-tight text-[#10251b] sm:text-4xl">
           PetsOnMe pet insurance: the cover, and what the REFERLABS code gives you
         </h1>

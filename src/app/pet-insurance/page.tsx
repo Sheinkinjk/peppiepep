@@ -149,7 +149,8 @@ export default function PetInsurancePage() {
           <section className="mb-10">
             <div className="rounded-2xl border border-[#e5e9e7] bg-[#f5f8f6] p-6 sm:p-8">
               <div className="flex flex-wrap items-center justify-between gap-4">
-                <span className="text-xl font-extrabold tracking-[-0.01em] text-[#10251b]">PetsOnMe</span>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/logos/petsonme.svg" alt="PetsOnMe logo" width={161} height={45} className="h-9 w-auto" />
                 <span className="rounded-full border border-[#cfe6da] bg-[#e8f5ee] px-4 py-1.5 text-sm font-bold text-[#0a7c42]">
                   Three cover levels
                 </span>

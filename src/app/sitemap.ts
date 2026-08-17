@@ -40,6 +40,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/knose`,  lastModified: FRESH,  changeFrequency: 'weekly',  priority: 0.8 },
     { url: `${BASE}/petsonme`,  lastModified: TODAY,  changeFrequency: 'weekly',  priority: 0.8 },
     { url: `${BASE}/best-pet-insurance-australia`,  lastModified: TODAY,  changeFrequency: 'weekly',  priority: 0.86 },
+    { url: `${BASE}/knose-vs-petsonme`,  lastModified: TODAY,  changeFrequency: 'weekly',  priority: 0.84 },
     { url: `${BASE}/what-pet-insurance-covers-australia`,  lastModified: FRESH,  changeFrequency: 'monthly',  priority: 0.7 },
     { url: `${BASE}/about`,              lastModified: TODAY, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${BASE}/contact`,            lastModified: STABLE, changeFrequency: 'monthly', priority: 0.6 },

@@ -157,6 +157,13 @@ export const seoConfig = {
     url: `${SITE_URL}/petsonme`,
     keywords: ["petsonme", "pets on me pet insurance", "petsonme review", "petsonme pet insurance australia", "petsonme referral code", "pets on me insurance"],
   },
+  knoseVsPetsonme: {
+    title: "Knose vs PetsOnMe 2026: Which Pet Insurance? | Refer Labs",
+    description:
+      "Knose vs PetsOnMe compared on published cover: 90% vs 80% of the vet bill, $25,000 vs $20,000 annual limits, excess from $0 vs $100, and sub-limits. Not financial advice.",
+    url: `${SITE_URL}/knose-vs-petsonme`,
+    keywords: ["knose vs petsonme", "petsonme vs knose", "knose or petsonme", "compare knose petsonme pet insurance", "best pet insurance australia comparison"],
+  },
   bestPetInsurance: {
     title: "Best Pet Insurance in Australia 2026: How to Choose | Refer Labs",
     description:
