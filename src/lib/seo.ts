@@ -1037,7 +1037,7 @@ export const seoConfig = {
       "moshy vs juniper australia",
       "moshy eligibility quiz",
       "moshy eligibility check",
-      "moshy GLP-1 australia",
+      "moshy practitioner-assessed treatment australia",
       "moshy weight loss cost",
       "moshy cost australia",
       "how much does moshy cost",
@@ -1064,7 +1064,7 @@ export const seoConfig = {
       "weight loss telehealth compared australia",
       "online weight loss australia 2026",
       "weight loss telehealth australia",
-      "GLP-1 telehealth australia",
+      "weight loss telehealth australia",
       "moshy weight loss review",
       "juniper weight loss review",
       "australian weight loss program comparison",
@@ -1112,7 +1112,7 @@ export const seoConfig = {
       "mens weight loss telehealth australia",
       "weight loss telehealth australia 2026",
       "cheapest weight loss telehealth australia",
-      "glp-1 telehealth australia",
+      "weight loss telehealth australia",
       "moshy review",
       "pilot review australia",
     ],
@@ -1130,7 +1130,7 @@ export const seoConfig = {
       "affordable weight loss program australia",
       "cheap weight loss telehealth australia",
       "low cost weight loss telehealth australia",
-      "cheapest glp-1 telehealth australia",
+      "cheapest weight loss telehealth australia",
       "cheapest online weight loss australia",
       "weight loss telehealth cost comparison australia",
       "moshy vs juniper vs pilot price",
@@ -1336,43 +1336,10 @@ export const seoConfig = {
     ],
   },
 
-  weightLossInjections: {
-    title: "Weight Loss Injections Australia 2026: How to Access Online",
-    description:
-      "A plain-English guide to weight-loss injections in Australia. What GLP-1 weight-loss injections are as a category, why they are prescription-only, and how online telehealth assessment and access works. Information only, not medical advice.",
-    url: `${SITE_URL}/weight-loss-injections-australia`,
-    keywords: [
-      "weight loss injections australia",
-      "weight loss injection australia",
-      "weight loss injections online australia",
-      "prescription weight loss injections australia",
-      "glp-1 injections australia",
-      "weight loss injection cost australia",
-      "how to get weight loss injections australia",
-      "weight loss injections telehealth australia",
-      "online weight loss injections australia",
-    ],
-  },
-
-  glp1WeightLoss: {
-    title: "GLP-1 Weight Loss Australia 2026: How Online Access Works",
-    description:
-      "GLP-1 weight-loss medications in Australia, explained: what the class is, why it is prescription-only, and how telehealth assessment works. Info only.",
-    url: `${SITE_URL}/glp-1-weight-loss-australia`,
-    keywords: [
-      "glp-1 weight loss australia",
-      "glp-1 australia",
-      "glp1 weight loss australia",
-      "glp-1 medication australia",
-      "glp-1 telehealth australia",
-      "glp-1 weight loss telehealth",
-      "semaglutide australia",
-      "tirzepatide australia",
-      "glp-1 eligibility australia",
-      "how to get glp-1 australia",
-    ],
-  },
-
+  // weightLossInjections / glp1WeightLoss seoConfig entries removed (19 Aug 2026):
+  // both pages existed only to rank for terms that identify a Schedule 4 medicine and
+  // both carried affiliate CTAs, so neither qualified as editorial. Deleted and
+  // 301-redirected to /weight-loss via next.config.
   weightLossTelehealthCost: {
     title: "Weight Loss Telehealth Cost in Australia 2026 | Refer Labs",
     description:
@@ -1386,8 +1353,7 @@ export const seoConfig = {
       "how much does moshy cost",
       "weight loss program cost australia",
       "online weight loss cost australia",
-      "weight loss injection cost australia",
-      "glp-1 cost australia",
+      "weight loss telehealth cost australia",
       "weight loss telehealth pricing australia",
     ],
   },

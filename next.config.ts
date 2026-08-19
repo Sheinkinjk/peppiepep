@@ -56,6 +56,14 @@ const nextConfig: NextConfig = {
       { source: '/finasteride-vs-minoxidil-australia', destination: '/hair-loss', permanent: true },
       { source: '/how-long-does-finasteride-take-to-work-australia', destination: '/hair-loss', permanent: true },
       { source: '/how-we-research', destination: '/about', permanent: true },
+      // Weight-loss pages retired on the same TGA ground (19 August 2026). Both existed
+      // only to rank for terms that identify a Schedule 4 medicine (the GLP-1 class, and
+      // "weight-loss injections" as an indirect reference), and both carried affiliate
+      // CTAs, so neither could claim the editorial exemption. The term could not be
+      // stripped from a page whose entire premise was the term. 301 to the service hub.
+      { source: '/glp-1-weight-loss-australia', destination: '/weight-loss', permanent: true },
+      { source: '/weight-loss-injections-australia', destination: '/weight-loss', permanent: true },
+
       // Apollo money page renamed to the exact brand match (26 July 2026).
       { source: '/apollo-energy', destination: '/apollo-energy-group', permanent: true },
       { source: '/instapage', destination: '/swipepages', permanent: true },

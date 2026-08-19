@@ -87,7 +87,7 @@ const faqs = [
   },
   {
     q: "Is medication included in the subscription price?",
-    a: "Not always. On many weight-loss telehealth plans the subscription covers the consult and support, and any prescribed medication is billed separately on top, though some plans bundle it. GLP-1 medications are prescription-only in Australia and are only supplied where a registered practitioner assesses them as clinically appropriate. Because medication cost varies, the headline monthly subscription figure is not always the full cost. Always read the pricing breakdown in full on each provider.",
+    a: "Not always. On many weight-loss telehealth plans the subscription covers the consult and support, and any prescribed medication is billed separately on top, though some plans bundle it. Weight-management medicines are prescription-only in Australia and are only supplied where a registered practitioner assesses them as clinically appropriate. Because medication cost varies, the headline monthly subscription figure is not always the full cost. Always read the pricing breakdown in full on each provider.",
   },
   {
     q: "What is a pay-as-you-go weight loss telehealth option?",
@@ -223,7 +223,7 @@ export default function CheapestWeightLossTelehealthPage() {
             </div>
             <p className="text-[#9aa39c] text-[10px] mt-3 leading-relaxed">
               Prices are approximate, based on publicly available information, and change often.
-              Check current pricing on each provider. Medication, where prescribed, may be billed separately. GLP-1
+              Check current pricing on each provider. Medication, where prescribed, may be billed separately. Treatment
               access is subject to individual clinical assessment.
             </p>
           </section>
@@ -349,7 +349,7 @@ export default function CheapestWeightLossTelehealthPage() {
               This page is operated by Refer Labs and contains a disclosed affiliate referral link to Moshy. Juniper,
               Pilot and Doctors for Weight Loss are linked without affiliate arrangements. We compare on price, model and
               what is included, and we never sell rankings. All content is for informational purposes only and does not
-              constitute medical advice. Prescription medicines in Australia, including GLP-1 medications, are available
+              constitute medical advice. Prescription medicines in Australia, prescribed for weight management, are available
               only after an individual assessment by a registered Australian practitioner, and suitability is
               practitioner-decided and never guaranteed. Consult a qualified health professional before starting any
               weight management program.

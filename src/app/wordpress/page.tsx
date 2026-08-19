@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Download, ExternalLink, ShieldCheck, Wrench } from "lucide-react";
+import { ExternalLink, ShieldCheck, Wrench } from "lucide-react";
 
 import { Card } from "@/components/ui/card";
 import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
@@ -30,13 +30,15 @@ export default function WordPressGuidePage() {
           </p>
         </div>
 
-        <a
-          href="/referlabs-referral-integration.zip"
+        {/* Plugin download removed (19 Aug 2026): the zip integrated the retired
+            Pepform referral platform and pointed at a dashboard that no longer
+            exists, so it was shipping a download that could not work. */}
+        <Link
+          href="/contact"
           className="inline-flex items-center gap-2 rounded-xl bg-teal-600 px-4 py-3 text-sm font-bold text-white hover:bg-teal-700"
         >
-          <Download className="h-4 w-4" />
-          Download plugin zip
-        </a>
+          Ask about an integration
+        </Link>
       </div>
 
       <div className="mt-8 grid gap-6 lg:grid-cols-2">

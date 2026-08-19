@@ -11,7 +11,7 @@ export type SearchEntry = {
 export const SEARCH_INDEX: SearchEntry[] = [
   // Categories
   { title: "Deals & discount codes", href: "/deals", category: "Deals", kind: "Guide", keywords: "deals discount codes promo codes australia moshy mosh apollo offers current verified" },
-  { title: "Weight loss & telehealth", href: "/weight-loss", category: "Health", kind: "Category", keywords: "weight management obesity diet telehealth glp-1 injections online clinic" },
+  { title: "Weight loss & telehealth", href: "/weight-loss", category: "Health", kind: "Category", keywords: "weight management obesity diet telehealth weight management telehealth online clinic" },
   { title: "Hair loss treatment", href: "/hair-loss", category: "Health", kind: "Category", keywords: "hair regrowth balding thinning telehealth topical scalp" },
   { title: "Pet insurance", href: "/pet-insurance", category: "Insurance", kind: "Category", keywords: "pet insurance australia dog cat cover waiting period exclusions excess annual limit knose offers referrer" },
   { title: "Knose pet insurance (2 months free)", href: "/knose", category: "Insurance", kind: "Guide", keywords: "knose pet insurance promo code referlab2mf 2 months free australia quote" },
@@ -29,8 +29,8 @@ export const SEARCH_INDEX: SearchEntry[] = [
   // Weight loss
   { title: "Moshy, explained: how the service works", href: "/moshy-review", category: "Weight loss", kind: "Guide", keywords: "getmoshy moshy review telehealth weight management online clinic" },
   { title: "Moshy vs Juniper", href: "/moshy-vs-juniper", category: "Weight loss", kind: "Guide", keywords: "compare weight loss telehealth juniper" },
-  { title: "Juniper review (women's weight-management)", href: "/juniper", category: "Weight loss", kind: "Guide", keywords: "juniper australia weight loss review cost 349 coaching women glp-1 vs moshy myjuniper" },
-  { title: "Best weight loss telehealth in Australia", href: "/best-weight-loss-telehealth-australia", category: "Weight loss", kind: "Guide", keywords: "top online weight loss clinic australia glp-1" },
+  { title: "Juniper review (women's weight-management)", href: "/juniper", category: "Weight loss", kind: "Guide", keywords: "juniper australia weight loss review cost 349 coaching women weight management vs moshy myjuniper" },
+  { title: "Best weight loss telehealth in Australia", href: "/best-weight-loss-telehealth-australia", category: "Weight loss", kind: "Guide", keywords: "top online weight loss clinic australia weight management" },
   { title: "Do you qualify for weight-loss treatment?", href: "/weight-loss-treatment-eligibility-australia", category: "Weight loss", kind: "Guide", keywords: "weight loss treatment eligibility australia do i qualify bmi criteria am i eligible" },
   { title: "Moshy vs your GP", href: "/moshy-vs-gp", category: "Weight loss", kind: "Guide", keywords: "doctor bulk bill medicare gp telehealth" },
   { title: "Moshy alternatives", href: "/moshy-alternatives", category: "Weight loss", kind: "Guide", keywords: "other options competitors similar" },
@@ -137,8 +137,6 @@ export const SEARCH_INDEX: SearchEntry[] = [
   // Weight loss (guides + head-to-heads not yet indexed)
   { title: "Weight-loss telehealth cost, explained", href: "/weight-loss-telehealth-cost-australia", category: "Weight loss", kind: "Guide", keywords: "cost price how much weight loss telehealth australia subscription" },
   { title: "Cheapest weight-loss telehealth", href: "/cheapest-weight-loss-telehealth-australia", category: "Weight loss", kind: "Guide", keywords: "cheapest affordable low cost weight loss telehealth australia" },
-  { title: "Weight-loss injections in Australia", href: "/weight-loss-injections-australia", category: "Weight loss", kind: "Guide", keywords: "weight loss injections glp-1 telehealth australia how to access" },
-  { title: "GLP-1 weight loss in Australia", href: "/glp-1-weight-loss-australia", category: "Weight loss", kind: "Guide", keywords: "glp-1 weight loss australia telehealth access information" },
   { title: "Online weight-loss doctor in Australia", href: "/online-weight-loss-doctor-australia", category: "Weight loss", kind: "Guide", keywords: "online weight loss doctor practitioner assessment australia" },
   { title: "Moshy vs Pilot", href: "/moshy-vs-pilot", category: "Weight loss", kind: "Guide", keywords: "moshy vs pilot weight loss telehealth compare price model" },
 

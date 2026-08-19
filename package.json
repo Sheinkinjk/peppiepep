@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "prebuild": "node scripts/build-wordpress-plugin.mjs",
     "dev": "next dev",
     "dev:env": "set -a && source .env.local && npm run dev",
     "build": "next build",

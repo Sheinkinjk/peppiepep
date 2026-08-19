@@ -76,7 +76,7 @@ export default function MoshyLanding() {
                   ["What it is", "Australian weight-management telehealth"],
                   ["For", "Anyone eligible seeking a clinically-supervised program"],
                   ["Format", "Online eligibility → practitioner review → delivery"],
-                  ["Medication", "GLP-1 access if clinically appropriate"],
+                  ["Medication", "Treatment access if clinically appropriate"],
                   ["Pricing", "Subscription, confirmed in the consult"],
                   ["Discount", "$120 off your first order (code REFERRAL120), via our link"],
                 ].map(([k, v]) => (
@@ -131,7 +131,7 @@ export default function MoshyLanding() {
               <ul className="space-y-2.5 text-sm">
                 {[
                   ["what", "What Moshy actually is"],
-                  ["glp1", "GLP-1 medications"],
+                  ["treatment", "Treatment and eligibility"],
                   ["start", "How to start"],
                   ["bottom-line", "The bottom line"],
                   ["faq", "FAQ"],
@@ -172,14 +172,14 @@ export default function MoshyLanding() {
               </p>
             </section>
 
-            {/* GLP-1 */}
-            <section id="glp1" className="mt-12 scroll-mt-24">
+            {/* Treatment and eligibility */}
+            <section id="treatment" className="mt-12 scroll-mt-24">
               <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">
-                GLP-1 medications, the facts
+                How treatment and eligibility actually work
               </h2>
               <div className="mt-4 space-y-4 text-[15.5px] leading-relaxed text-[#3d4b44]">
                 <p>
-                  A lot of people reach Moshy while researching GLP-1 medications. The most important fact to understand
+                  A lot of people reach Moshy while researching medical weight management. The most important fact to understand
                   up front is a regulatory one.
                 </p>
                 <p>
@@ -196,7 +196,7 @@ export default function MoshyLanding() {
                   Ready to see whether you&apos;re eligible? It takes a few minutes and commits you to nothing.
                 </p>
                 <div className="mt-4">
-                  <MoshyCTA label="Start the Moshy eligibility check" loc="glp1" />
+                  <MoshyCTA label="Start the Moshy eligibility check" loc="treatment" />
                 </div>
               </div>
             </section>
@@ -233,7 +233,7 @@ export default function MoshyLanding() {
                   {[
                     "Fast, fully online eligibility, no GP appointment to start",
                     "Real practitioner review; not everyone is approved",
-                    "Clear that GLP-1 medication is prescription-only and assessed individually",
+                    "Clear that any medicine is prescription-only and assessed individually",
                   ].map((point) => (
                     <li key={point} className="flex items-start gap-2.5 text-sm text-[#2b362f]">
                       <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#0a7c42]" />

@@ -17,8 +17,6 @@ const guides = [
   { href: "/best-weight-loss-telehealth-australia", title: "Best weight loss telehealth", desc: "Moshy and Juniper side by side." },
   { href: "/moshy-vs-pilot", title: "Moshy vs Pilot", desc: "The gender-neutral option against Eucalyptus's men's service." },
   { href: "/cheapest-weight-loss-telehealth-australia", title: "Cheapest weight loss telehealth", desc: "Subscription vs pay-as-you-go, and what cheapest really means." },
-  { href: "/weight-loss-injections-australia", title: "Weight loss injections, explained", desc: "What the injection category is and how online access works." },
-  { href: "/glp-1-weight-loss-australia", title: "GLP-1 weight loss in Australia", desc: "The medication class, factually, and how prescription access works." },
   { href: "/weight-loss-telehealth-cost-australia", title: "What it costs", desc: "How telehealth pricing and subscriptions actually work." },
   { href: "/online-weight-loss-doctor-australia", title: "Online weight loss doctor", desc: "How a telehealth consult and eligibility review runs." },
   { href: "/moshy-vs-gp", title: "Telehealth vs your GP", desc: "Two doors to the same care. The practical trade." },

@@ -22,12 +22,12 @@ export const moshyConfig: AffiliatePageConfig = {
     h1Prefix: "Moshy Discount Code Australia 2026:",
     h1Highlight: "Referral Link, Review & Eligibility Guide",
     subheading:
-      "Looking for a Moshy discount code, promo code, or referral link? This page gives you direct access to the current Moshy referral offer and covers the eligibility process, cost, GLP-1 options, and how Moshy compares to Juniper.",
+      "Looking for a Moshy discount code, promo code, or referral link? This page gives you direct access to the current Moshy referral offer and covers the eligibility process, cost, practitioner-assessed treatment options, and how Moshy compares to Juniper.",
     trustBullets: [
       "Current Moshy referral link - no code required",
       "Covers Moshy weight loss cost and subscription pricing",
       "Moshy vs Juniper comparison",
-      "GLP-1 eligibility explained",
+      "Treatment eligibility explained",
       "Australia-only - links to getmoshy.com.au",
     ],
   },
@@ -53,16 +53,16 @@ export const moshyConfig: AffiliatePageConfig = {
         "This page does not constitute medical advice and does not imply suitability for any specific individual. Consult a qualified health professional before making any health-related decisions.",
     },
     {
-      heading: "GLP-1 Medications",
+      heading: "Treatment and eligibility",
       paragraphs: [
-        "Moshy is one of the most searched Australian telehealth platforms in connection with GLP-1 medications used in weight management. The most important thing to understand up front is a regulatory fact, not a sales pitch.",
-        "In Australia, GLP-1 medications are prescription-only. A telehealth platform like Moshy can facilitate access to an assessment with a registered Australian practitioner who, if they determine it is clinically appropriate, may prescribe. Moshy does not advertise which specific medications are available - this is discussed only as part of the clinical consultation after eligibility is assessed.",
+        "Moshy is one of the most searched Australian telehealth platforms in connection with practitioner-assessed weight management. The most important thing to understand up front is a regulatory fact, not a sales pitch.",
+        "In Australia, weight-management medicines are prescription-only. A telehealth platform like Moshy can facilitate access to an assessment with a registered Australian practitioner who, if they determine it is clinically appropriate, may prescribe. Moshy does not advertise which specific medications are available - this is discussed only as part of the clinical consultation after eligibility is assessed.",
         "No platform can guarantee access to any specific medication before the consultation, and suitability is assessed individually. This is information about the service, not medical advice or a recommendation to use any medicine.",
       ],
       hasCta: true,
       ctaText: "Start the Moshy Eligibility Quiz",
       disclaimer:
-        "GLP-1 medications are prescription-only in Australia. Access depends on individual clinical assessment by a registered Australian practitioner. This page does not constitute medical advice.",
+        "Weight-management medicines are prescription-only in Australia. Access depends on individual clinical assessment by a registered Australian practitioner. This page does not constitute medical advice.",
     },
     {
       heading: "Moshy Cost & Pricing",
@@ -117,7 +117,7 @@ export const moshyConfig: AffiliatePageConfig = {
 
   whyUseThis: [
     "Direct access to the current Moshy referral link - no outdated or expired codes",
-    "Covers Moshy pricing, GLP-1 access, and what to expect from the eligibility process",
+    "Covers Moshy pricing, Treatment access, and what to expect from the eligibility process",
     "Moshy vs Juniper comparison in plain terms",
     "Built for Australian users - links to the AU Moshy platform only",
     "Medical disclaimers throughout - no misleading health claims",
@@ -141,8 +141,8 @@ export const moshyConfig: AffiliatePageConfig = {
       a: "Yes, Moshy operates through referral links that give users direct access to their eligibility flow and any associated offer. This page provides a personalised Moshy referral link. Click any button on this page to use it, and the referral is tracked through the link automatically.",
     },
     {
-      q: "Does Moshy offer GLP-1 medications in Australia?",
-      a: "Moshy can facilitate access to a clinical assessment with an Australian-registered practitioner who may, if clinically appropriate, prescribe GLP-1 medications. GLP-1 medications are prescription-only in Australia and access depends entirely on individual clinical suitability. Moshy does not advertise which specific medications are available prior to the consultation. This page does not constitute medical advice.",
+      q: "How does Moshy handle treatment and eligibility in Australia?",
+      a: "Moshy can facilitate access to a clinical assessment with an Australian-registered practitioner who may prescribe if they consider it clinically appropriate. Weight-management medicines are prescription-only in Australia and access depends entirely on individual clinical suitability. Moshy does not advertise which specific medications are available prior to the consultation. This page does not constitute medical advice.",
     },
     {
       q: "Is Moshy available in all Australian states?",

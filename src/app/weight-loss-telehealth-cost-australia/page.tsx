@@ -78,7 +78,7 @@ const webPageSchema = {
     { "@type": "Thing", name: "Moshy cost" },
     { "@type": "Thing", name: "online weight loss pricing Australia" },
     { "@type": "Thing", name: "weight loss subscription Australia" },
-    { "@type": "Thing", name: "GLP-1 cost Australia" },
+    { "@type": "Thing", name: "weight management cost Australia" },
   ],
   isPartOf: { "@type": "WebSite", name: "Refer Labs", url: SITE_URL },
 };
@@ -225,10 +225,9 @@ export default function WeightLossTelehealthCostAustraliaPage() {
                   ))}
                 </ul>
                 <p>
-                  If any medicine in your plan is an injectable, our page on{" "}
-                  <Link href="/weight-loss-injections-australia" className="nw-link">weight-loss injections in Australia</Link> and our
-                  guide to{" "}
-                  <Link href="/glp-1-weight-loss-australia" className="nw-link">GLP-1 weight loss in Australia</Link> explain that side
+                  Whether any medicine forms part of your plan is decided by the practitioner during your assessment, and
+                  our guide to{" "}
+                  <Link href="/online-weight-loss-doctor-australia" className="nw-link">seeing an online weight-loss doctor</Link> explains that side
                   of the category. Remember that any medicine is prescription-only and only supplied after a practitioner assessment.
                 </p>
               </div>
@@ -294,8 +293,6 @@ export default function WeightLossTelehealthCostAustraliaPage() {
                 <li><Link href="/weight-loss-cost-calculator" className="nw-link">Try the cost planner: find your pathway in three questions</Link></li>
                 <li><Link href="/moshy" className="nw-link">Moshy: the offer and how to start</Link></li>
                 <li><Link href="/moshy-review" className="nw-link">Our independent Moshy review</Link></li>
-                <li><Link href="/weight-loss-injections-australia" className="nw-link">Weight-loss injections in Australia, explained</Link></li>
-                <li><Link href="/glp-1-weight-loss-australia" className="nw-link">GLP-1 weight loss in Australia</Link></li>
                 <li><Link href="/online-weight-loss-doctor-australia" className="nw-link">Seeing an online weight-loss doctor in Australia</Link></li>
                 <li><Link href="/best-weight-loss-telehealth-australia" className="nw-link">Best weight-loss telehealth in Australia, compared</Link></li>
                 <li><Link href="/weight-loss" className="nw-link">The full weight-loss hub</Link></li>

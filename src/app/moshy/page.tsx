@@ -42,7 +42,7 @@ const webPageSchema = {
     { "@type": "Thing", name: "Moshy referral link" },
     { "@type": "Thing", name: "Moshy review Australia" },
     { "@type": "Thing", name: "Australian weight loss telehealth" },
-    { "@type": "Thing", name: "Moshy GLP-1 Australia" },
+    { "@type": "Thing", name: "Moshy Australia" },
     { "@type": "Thing", name: "Moshy eligibility check" },
   ],
   isPartOf: { "@type": "WebSite", name: "Refer Labs", url: SITE_URL },

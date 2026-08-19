@@ -47,6 +47,15 @@ The tic is **narrating your own even-handedness instead of just being even-hande
 - **Check `src/lib/seo.ts` meta descriptions too**, not just page bodies — those are SERP-visible.
 - Legitimate and must stay: "honest answers about your health history" (means truthful), advice to the reader about their own conduct, and third-party figures with explicit attribution ("Apollo's own site cites 4.9/5").
 
+### TGA — never name or identify a prescription medicine (Aug 2026 sweep)
+Advertising a Schedule 4 medicine to the public is prohibited under the Therapeutic Goods Act, and the TGA has fined Australian weight-loss telehealth operators for exactly this. **Every page on this site carries an affiliate CTA or links into one, so no page can claim the editorial exemption** — the commercial nexus is what turns "information" into advertising.
+
+**The rule: describe the SERVICE, never the medicine.** Banned in all shipped copy, metadata, keywords, JSON-LD, anchor IDs and `llms.txt`: `GLP-1`/`GLP1`, `semaglutide`, `tirzepatide`, `finasteride`, `minoxidil`, brand names (Ozempic, Wegovy, Mounjaro, Saxenda), and indirect identifiers like **"weight-loss injections"** — the TGA treats a description that lets a reader identify the medicine as advertising it.
+
+Say instead: "practitioner-assessed treatment", "weight-management medicines are prescription-only in Australia", "any treatment is decided by the practitioner and only where clinically appropriate". Stating that medicines in a category require a prescription is a factual regulatory statement and is fine; naming *which* medicine is not.
+
+A page that exists only to rank for a banned term cannot be fixed by stripping the term — retire it (301 to the category hub). Done for `/glp-1-weight-loss-australia` and `/weight-loss-injections-australia` (19 Aug 2026), as previously for the finasteride/minoxidil slugs. Watch for a mechanical find-and-replace leaving lowercase sentence starts, doubled words, or broken `href`s: the sweep corrupted `/glp-1-weight-loss-australia` links into `/weight management-weight-loss-australia`. Also note **BSD `sed` on macOS does not support `\b`** — word-boundary renames silently do nothing; use python.
+
 ### Never fabricate social proof (Australian Consumer Law)
 Invented testimonials, personas, customer names, statistics, case studies or star ratings breach **ACL s29(1)(e)** and the ACCC enforces it. Real penalties, and it destroys the trust that is the entire moat. A tell: the same quote appearing under different job titles on different pages. Only publish a testimonial from a real, identifiable customer who consented. No star ratings of our own, ever.
 

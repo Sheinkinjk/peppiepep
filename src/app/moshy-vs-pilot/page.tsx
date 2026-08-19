@@ -39,7 +39,7 @@ const itemListSchema = {
   "@type": "ItemList",
   name: "Moshy vs Pilot: Weight Loss Telehealth Australia 2026",
   description:
-    "A side-by-side comparison of Moshy and Pilot, two Australian weight-management telehealth services, on how their pricing models differ, who each is built for, the online process, what is included, and GLP-1 access.",
+    "A side-by-side comparison of Moshy and Pilot, two Australian weight-management telehealth services, on how their pricing models differ, who each is built for, the online process, what is included, and how treatment access is handled.",
   numberOfItems: 2,
   itemListElement: [
     {
@@ -47,7 +47,7 @@ const itemListSchema = {
       position: 1,
       name: "Moshy",
       description:
-        "Australian telehealth weight-management program, gender-neutral and open to anyone eligible. Runs on a subscription model; new customers can currently receive $120 off their first treatment. Online eligibility check, practitioner review, GLP-1 access where clinically appropriate.",
+        "Australian telehealth weight-management program, gender-neutral and open to anyone eligible. Runs on a subscription model; new customers can currently receive $120 off their first treatment. Online eligibility check, practitioner review, Treatment access where clinically appropriate.",
       url: `${SITE_URL}/moshy-review`,
     },
     {
@@ -55,7 +55,7 @@ const itemListSchema = {
       position: 2,
       name: "Pilot",
       description:
-        "Men-focused telehealth from Eucalyptus, covering broader men's health alongside weight management. Subscription program within a wider ecosystem. Online consult, practitioner review, GLP-1 access where clinically appropriate.",
+        "Men-focused telehealth from Eucalyptus, covering broader men's health alongside weight management. Subscription program within a wider ecosystem. Online consult, practitioner review, Treatment access where clinically appropriate.",
       url: PILOT_URL,
     },
   ],
@@ -64,7 +64,7 @@ const itemListSchema = {
 const faqs = [
   {
     q: "Is Moshy or Pilot better for weight loss in Australia?",
-    a: "Neither is universally better, they suit different people. Both run on a subscription model, and pricing is confirmed inside the consult and can change, so check the current pricing directly on each provider rather than relying on a headline figure. Moshy is gender-neutral and open to anyone eligible; new customers can currently receive $120 off their first treatment. Pilot is Eucalyptus's men-focused service and folds weight management into a broader men's health offering, so it suits someone who wants that wider ecosystem. Both facilitate GLP-1 access only where an Australian-registered practitioner assesses it as clinically appropriate.",
+    a: "Neither is universally better, they suit different people. Both run on a subscription model, and pricing is confirmed inside the consult and can change, so check the current pricing directly on each provider rather than relying on a headline figure. Moshy is gender-neutral and open to anyone eligible; new customers can currently receive $120 off their first treatment. Pilot is Eucalyptus's men-focused service and folds weight management into a broader men's health offering, so it suits someone who wants that wider ecosystem. Both facilitate Treatment access only where an Australian-registered practitioner assesses it as clinically appropriate.",
   },
   {
     q: "How much do Moshy and Pilot cost?",
@@ -75,8 +75,8 @@ const faqs = [
     a: "Pilot is the men-focused telehealth brand from Eucalyptus, the parent company that also runs Juniper. It covers a range of men's health areas as well as weight management, so it suits someone who wants weight support inside a broader men's health service. Moshy, by contrast, is gender-neutral and open to anyone eligible. Eucalyptus was acquired by Hims and Hers Health in 2026.",
   },
   {
-    q: "Do Moshy and Pilot both offer GLP-1 medications?",
-    a: "Both are associated with GLP-1 weight-management pathways. GLP-1 medications are prescription-only in Australia and access depends entirely on an individual clinical assessment by a registered Australian practitioner. Suitability is decided case by case and is never guaranteed before that assessment. Not everyone who completes an eligibility check will be prescribed medication. This page is not medical advice.",
+    q: "How is treatment access handled by Moshy and Pilot?",
+    a: "Both run practitioner-supervised weight-management pathways. Weight-management medicines are prescription-only in Australia and access depends entirely on an individual clinical assessment by a registered Australian practitioner. Suitability is decided case by case and is never guaranteed before that assessment. Not everyone who completes an eligibility check will be prescribed medication. This page is not medical advice.",
   },
   {
     q: "How does Moshy's billing work?",
@@ -119,7 +119,7 @@ const rows: { label: string; moshy: string; pilot: string; highlightMoshy?: bool
   { label: "Scope", moshy: "Weight management focus", pilot: "Broader men's health plus weight" },
   { label: "Online process", moshy: "Online eligibility check, no in-person GP", pilot: "Online consult, no in-person GP" },
   { label: "Practitioner review", moshy: "Registered Australian practitioner", pilot: "Registered Australian practitioner" },
-  { label: "GLP-1 access", moshy: "Where clinically appropriate", pilot: "Where clinically appropriate" },
+  { label: "Treatment access", moshy: "Where clinically appropriate", pilot: "Where clinically appropriate" },
   { label: "Home delivery", moshy: "Yes, if prescribed", pilot: "Yes, if prescribed" },
 ];
 
@@ -154,7 +154,7 @@ export default function MoshyVsPilotPage() {
               Moshy is gender-neutral and open to anyone eligible, and new customers can currently receive $120 off their
               first treatment. Pilot is Eucalyptus&apos;s men-focused service, wrapping weight support inside a broader
               men&apos;s health offering. Both run on a subscription model. Below we line them up on how their pricing
-              models differ, who each suits, the online process, what is included, and how GLP-1 access is handled.
+              models differ, who each suits, the online process, what is included, and how treatment access is handled.
             </p>
             <p className="text-[#9aa39c] text-xs leading-relaxed max-w-2xl mb-7">
               Information only, not medical advice. Prices are approximate and change, so check current pricing on each
@@ -193,7 +193,7 @@ export default function MoshyVsPilotPage() {
               <p className="text-[#2b362f] text-sm sm:text-base leading-relaxed max-w-2xl">
                 Moshy is gender-neutral, so it is open to anyone eligible, and it keeps the experience focused on the
                 weight-management pathway. Pilot suits someone who specifically wants the Eucalyptus men&apos;s health ecosystem, with weight
-                management as one part of a wider service. Both run fully online and both facilitate GLP-1 access only
+                management as one part of a wider service. Both run fully online and both facilitate Treatment access only
                 where a registered Australian practitioner assesses it as clinically appropriate. Suitability is
                 practitioner-decided and never guaranteed.
               </p>
@@ -227,7 +227,7 @@ export default function MoshyVsPilotPage() {
             </div>
             <p className="text-[#9aa39c] text-[10px] mt-3 leading-relaxed">
               Prices and terms are approximate and based on publicly available information. They
-              change often, so check current pricing on each provider. GLP-1 access is subject to individual clinical
+              change often, so check current pricing on each provider. Treatment access is subject to individual clinical
               assessment.
             </p>
           </section>
@@ -274,10 +274,10 @@ export default function MoshyVsPilotPage() {
             </div>
           </section>
 
-          {/* Prose: process + GLP-1 */}
+          {/* Prose: process + practitioner-assessed treatment */}
           <section className="border-t border-[#e5e9e7] py-10">
             <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-[#10251b] mb-4">
-              The online process, what&apos;s included and GLP-1 access
+              The online process, what&apos;s included and treatment access
             </h2>
             <div className="space-y-4 text-[15px] leading-relaxed text-[#3d4b44] max-w-2xl">
               <p>
@@ -288,7 +288,7 @@ export default function MoshyVsPilotPage() {
                 is the single most useful thing to look for in any provider.
               </p>
               <p>
-                On medication, both are associated with GLP-1 weight-management pathways. GLP-1 medications are
+                On treatment, both run practitioner-supervised weight-management pathways. Weight-management medicines are
                 prescription-only in Australia. Access depends entirely on an individual clinical assessment by a
                 registered practitioner, suitability is decided case by case, and nothing is guaranteed before that
                 assessment. Not everyone who completes an eligibility check will be prescribed medication. Neither this
@@ -349,7 +349,7 @@ export default function MoshyVsPilotPage() {
               This page is operated by Refer Labs and contains a disclosed affiliate referral link to Moshy. Pilot is
               linked without an affiliate arrangement. We compare on price, model and what is included, and we never sell
               rankings. All content is for informational purposes only and does not constitute medical advice.
-              Prescription medicines in Australia, including GLP-1 medications, are available only after an individual
+              Prescription medicines in Australia, prescribed for weight management, are available only after an individual
               assessment by a registered Australian practitioner, and suitability is practitioner-decided and never
               guaranteed. Consult a qualified health professional before starting any weight management program. Our
             </p>

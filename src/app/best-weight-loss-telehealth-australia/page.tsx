@@ -47,7 +47,7 @@ const itemListSchema = {
   description: "In-depth comparison of Australian weight loss telehealth platforms: Moshy, Juniper and Pilot. Treatment access, eligibility process, pricing, and who each platform suits.",
   numberOfItems: 3,
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Moshy", description: "Australian clinically-led telehealth weight management platform, open to anyone eligible. Online eligibility questionnaire, practitioner review, GLP-1 medication access. Subscription with home delivery.", url: `${SITE_URL}/moshy` },
+    { "@type": "ListItem", position: 1, name: "Moshy", description: "Australian clinically-led telehealth weight management platform, open to anyone eligible. Online eligibility questionnaire, practitioner review, Practitioner-assessed treatment. Subscription with home delivery.", url: `${SITE_URL}/moshy` },
     { "@type": "ListItem", position: 2, name: "Juniper", description: "Australian weight management program for women. Combines a medical program with health coaching and ongoing practitioner support. Premium subscription model.", url: `${SITE_URL}/juniper` },
     { "@type": "ListItem", position: 3, name: "Pilot", description: "Men-focused telehealth from Eucalyptus, covering weight management alongside broader men's health. Quiz, practitioner phone consultation, then discreet home delivery where clinically appropriate.", url: PILOT_URL },
   ],
@@ -70,7 +70,7 @@ const faqSchema = {
     {
       "@type": "Question",
       name: "Are online weight loss clinics in Australia legit?",
-      acceptedAnswer: { "@type": "Answer", text: "The established Australian platforms, Moshy, Juniper and Pilot, operate as regulated telehealth services: eligibility questionnaires are reviewed by Australian-registered practitioners, and GLP-1 medications are prescription-only, prescribed only after individual clinical assessment. The practical checks for any provider: a practitioner consultation before any prescription, an Australian business entity, and published contact details. A service that offers prescription medication without a practitioner review is the red flag. This page does not constitute medical advice." }
+      acceptedAnswer: { "@type": "Answer", text: "The established Australian platforms, Moshy, Juniper and Pilot, operate as regulated telehealth services: eligibility questionnaires are reviewed by Australian-registered practitioners, and Weight-management medicines are prescription-only, prescribed only after individual clinical assessment. The practical checks for any provider: a practitioner consultation before any prescription, an Australian business entity, and published contact details. A service that offers prescription medication without a practitioner review is the red flag. This page does not constitute medical advice." }
     },
     {
       "@type": "Question",
@@ -79,8 +79,8 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      name: "Do these platforms work within the GLP-1 medication class?",
-      acceptedAnswer: { "@type": "Answer", text: "Both Moshy and Juniper operate practitioner-supervised weight-management pathways that can involve treatment that a registered practitioner assesses as appropriate. GLP-1 medications are prescription-only in Australia and are prescribed only after a practitioner consultation and individual assessment, which decides suitability. Not every person who completes an eligibility questionnaire is found suitable. This page does not constitute medical advice." }
+      name: "Do these platforms work within this category of treatment?",
+      acceptedAnswer: { "@type": "Answer", text: "Both Moshy and Juniper operate practitioner-supervised weight-management pathways that can involve treatment that a registered practitioner assesses as appropriate. Weight-management medicines are prescription-only in Australia and are prescribed only after a practitioner consultation and individual assessment, which decides suitability. Not every person who completes an eligibility questionnaire is found suitable. This page does not constitute medical advice." }
     },
     {
       "@type": "Question",
@@ -120,7 +120,7 @@ const webPageSchema = {
   about: [
     { "@type": "Thing", name: "weight loss telehealth Australia 2026" },
     { "@type": "Thing", name: "Moshy vs Juniper Australia" },
-    { "@type": "Thing", name: "GLP-1 telehealth Australia" },
+    { "@type": "Thing", name: "practitioner-assessed treatment telehealth Australia" },
     { "@type": "Thing", name: "online weight management Australia" },
     { "@type": "Thing", name: "prescription weight-loss medication Australia" },
     { "@type": "Thing", name: "Moshy weight loss review" },
@@ -264,12 +264,12 @@ const platforms: PlatformCardProps[] = [
     id: "moshy",
     index: "01",
     name: "Moshy",
-    tagline: "Australian clinically-led telehealth weight management, open to anyone eligible. Moshy's online eligibility questionnaire is reviewed by Australian-registered practitioners. GLP-1 medication options are available subject to individual clinical assessment. Subscription with home delivery.",
+    tagline: "Australian clinically-led telehealth weight management, open to anyone eligible. Moshy's online eligibility questionnaire is reviewed by Australian-registered practitioners. Any treatment is decided by the practitioner and only where clinically appropriate. Subscription with home delivery.",
     deal: "Online eligibility, referral link",
     dealNote: "Our referral link takes you directly to the Moshy eligibility page. No code required. The offer is applied at the link level.",
     pros: [
       "Clinically-led pathway, open to anyone eligible",
-      "GLP-1 medication access (subject to eligibility)",
+      "Practitioner-assessed treatment where appropriate",
       "Online-only process, no in-person GP visit required",
       "Subscription home delivery",
     ],
@@ -292,7 +292,7 @@ const platforms: PlatformCardProps[] = [
     dealNote: "Juniper uses an online eligibility and consultation process. Practitioners review each submission individually before recommending a programme.",
     pros: [
       "Purpose-built for Australian women",
-      "GLP-1 medication access (subject to eligibility)",
+      "Practitioner-assessed treatment where appropriate",
       "Health coaching included in programme",
       "Online process, no in-person GP visit required",
     ],
@@ -313,7 +313,7 @@ const platforms: PlatformCardProps[] = [
     dealNote: "Pilot's process starts with a health-history quiz and includes a private phone consultation with a practitioner before anything is prescribed.",
     pros: [
       "Practitioner phone consult included in the process",
-      "GLP-1 medication access (subject to eligibility)",
+      "Practitioner-assessed treatment where appropriate",
       "Covers other men's health areas in the same account",
       "Discreet packaging and free shipping, no lock-in contracts",
     ],
@@ -430,7 +430,7 @@ export default function BestWeightLossTelehealthPage() {
               <li><strong className="text-[#10251b]">Eligibility.</strong> Each provider runs an online questionnaire and a practitioner reviews whether treatment is appropriate for you. Approval is assessed individually and is not guaranteed.</li>
               <li><strong className="text-[#10251b]">Total monthly cost.</strong> Add the program or subscription fee <em>and</em> the medication, which is usually billed separately and can vary by dose. A low program fee can still mean a high total.</li>
               <li><strong className="text-[#10251b]">Practitioner review and support.</strong> Check whether you get an initial consult, ongoing check-ins, and how you reach a practitioner if something changes.</li>
-              <li><strong className="text-[#10251b]">Medication pathway.</strong> GLP-1 medications are prescription-only and dispensed by a pharmacy. Availability depends on the practitioner&apos;s assessment and current supply.</li>
+              <li><strong className="text-[#10251b]">Medication pathway.</strong> Weight-management medicines are prescription-only and dispensed by a pharmacy. Availability depends on the practitioner&apos;s assessment and current supply.</li>
               <li><strong className="text-[#10251b]">Cancellation terms.</strong> Confirm whether it is month-to-month and how to pause or cancel before you subscribe.</li>
             </ul>
             <p className="text-sm text-[#3d4b44] leading-relaxed max-w-2xl">
@@ -461,14 +461,14 @@ export default function BestWeightLossTelehealthPage() {
                     <th className="text-left pb-3 pr-4 text-[#9aa39c] font-semibold text-[11px] uppercase tracking-wider w-36">Platform</th>
                     <th className="pb-3 px-3 text-left text-[#9aa39c] font-semibold text-[11px] uppercase tracking-wider">Who it&apos;s for</th>
                     <th className="pb-3 px-3 text-left text-[#9aa39c] font-semibold text-[11px] uppercase tracking-wider">Approach</th>
-                    <th className="pb-3 px-3 text-left text-[#9aa39c] font-semibold text-[11px] uppercase tracking-wider">GLP-1 access</th>
+                    <th className="pb-3 px-3 text-left text-[#9aa39c] font-semibold text-[11px] uppercase tracking-wider">Treatment access</th>
                     <th className="pb-3 pl-3 text-right text-[#9aa39c] font-semibold text-[11px] uppercase tracking-wider"></th>
                   </tr>
                 </thead>
                 <tbody>
                   {[
-                    { name: "Moshy",        audience: "Anyone eligible (Australia)", approach: "Telehealth + medication",    glp1: "Yes (subject to eligibility)", href: "#moshy",       url: MOSHY_URL,    cta: "Check eligibility",  isAff: true },
-                    { name: "Juniper",      audience: "Women (Australia)",        approach: "Coaching + medical program", glp1: "Yes (subject to eligibility)", href: "#juniper",     url: "/juniper",  cta: "Juniper review",     isAff: false },
+                    { name: "Moshy",        audience: "Anyone eligible (Australia)", approach: "Telehealth + medication",    treatment: "Yes (subject to eligibility)", href: "#moshy",       url: MOSHY_URL,    cta: "Check eligibility",  isAff: true },
+                    { name: "Juniper",      audience: "Women (Australia)",        approach: "Coaching + medical program", treatment: "Yes (subject to eligibility)", href: "#juniper",     url: "/juniper",  cta: "Juniper review",     isAff: false },
                   ].map((row) => (
                     <tr key={row.name} className="border-b border-[#e5e9e7] hover:bg-[#f5f8f6] transition-colors">
                       <td className="py-3 pr-4">
@@ -476,7 +476,7 @@ export default function BestWeightLossTelehealthPage() {
                       </td>
                       <td className="py-3 px-3 text-[#3d4b44] text-xs">{row.audience}</td>
                       <td className="py-3 px-3 text-[#3d4b44] text-xs">{row.approach}</td>
-                      <td className="py-3 px-3 text-xs font-semibold" style={{ color: CYAN_LT }}>{row.glp1}</td>
+                      <td className="py-3 px-3 text-xs font-semibold" style={{ color: CYAN_LT }}>{row.treatment}</td>
                       <td className="py-3 pl-3 text-right">
                         <a
                           {...(row.isAff ? aff(row.url) : ext(row.url))}
@@ -491,7 +491,7 @@ export default function BestWeightLossTelehealthPage() {
               </table>
             </div>
             <p className="text-[#9aa39c] text-[10px] mt-3">
-              GLP-1 medication access is subject to individual clinical assessment by each platform&apos;s practitioners. This comparison does not constitute medical advice.
+              Practitioner-assessed treatment is subject to individual clinical assessment by each platform&apos;s practitioners. This comparison does not constitute medical advice.
             </p>
           </section>
 
@@ -520,7 +520,7 @@ export default function BestWeightLossTelehealthPage() {
                 // rest of the page.
                 { label: "Men's programme",            vals: [true,  false, true]  },
                 { label: "Women's programme",          vals: [true,  true,  false] },
-                { label: "GLP-1 medication access",    vals: [true,  true,  true], note: "Subject to individual clinical eligibility" },
+                { label: "Practitioner-assessed treatment",    vals: [true,  true,  true], note: "Subject to individual clinical eligibility" },
                 { label: "Online eligibility process", vals: [true,  true,  true]  },
                 { label: "No in-person GP required",   vals: [true,  true,  true]  },
                 { label: "Health coaching included",   vals: [false, true,  false] },
@@ -539,7 +539,7 @@ export default function BestWeightLossTelehealthPage() {
             </h2>
             <div className="space-y-4 max-w-2xl">
               {[
-                { label: "Choose Moshy if:", body: "You want a clinically supervised weight management programme with access to GLP-1 medication options, done online. Moshy is open to anyone eligible, and its online-only process means no in-person GP appointment is required to start. Eligibility is assessed individually. Use our referral link for the current Moshy offer." },
+                { label: "Choose Moshy if:", body: "You want a clinically supervised weight management programme with access to practitioner-assessed treatment options, done online. Moshy is open to anyone eligible, and its online-only process means no in-person GP appointment is required to start. Eligibility is assessed individually. Use our referral link for the current Moshy offer." },
                 { label: "Choose Juniper if:", body: "You are a woman in Australia looking for a weight management programme that combines a practitioner-led program with structured health coaching and support. Juniper's programme is more coaching-intensive than Moshy's and is designed for women exclusively." },
               ].map(({ label, body }) => (
                 <div key={label} className="border-b border-[#e5e9e7] pb-4">
@@ -567,15 +567,15 @@ export default function BestWeightLossTelehealthPage() {
                 },
                 {
                   q: "Are online weight loss clinics in Australia legit?",
-                  a: "The established platforms operate as regulated telehealth services: questionnaires reviewed by Australian-registered practitioners, and GLP-1 medications prescribed only after individual clinical assessment, because they are prescription-only. Check for a practitioner consultation before any prescription, an Australian business entity, and published contact details. A service offering prescription medication without practitioner review is the red flag.",
+                  a: "The established platforms operate as regulated telehealth services: questionnaires reviewed by Australian-registered practitioners, and practitioner-assessed treatment prescribed only after individual clinical assessment, because they are prescription-only. Check for a practitioner consultation before any prescription, an Australian business entity, and published contact details. A service offering prescription medication without practitioner review is the red flag.",
                 },
                 {
                   q: "Is Moshy or Juniper better?",
                   a: "Moshy and Juniper take different approaches. Moshy runs a lean clinical pathway, open to anyone eligible. Juniper adds health coaching to its programme and markets primarily to Australian women. If you want a focused clinical pathway, Moshy is the relevant option. If you want coaching alongside clinical care, Juniper is worth a look. Both require individual clinical eligibility assessment.",
                 },
                 {
-                  q: "Do these platforms work within the GLP-1 medication class?",
-                  a: "Both Moshy and Juniper operate practitioner-supervised weight-management pathways that can involve treatment that a registered practitioner assesses as appropriate. GLP-1 medicines are prescription-only in Australia and are prescribed only after an individual assessment by a registered practitioner, who decides suitability. Whether any specific medicine is appropriate is a clinical decision, not something a platform promises in advance, and not everyone who applies is prescribed medication. This page does not constitute medical advice.",
+                  q: "Do these platforms work within this category of treatment?",
+                  a: "Both Moshy and Juniper operate practitioner-supervised weight-management pathways that can involve treatment that a registered practitioner assesses as appropriate. Weight-management medicines are prescription-only in Australia and are prescribed only after an individual assessment by a registered practitioner, who decides suitability. Whether any specific medicine is appropriate is a clinical decision, not something a platform promises in advance, and not everyone who applies is prescribed medication. This page does not constitute medical advice.",
                 },
                 {
                   q: "Are these platforms available across all of Australia?",

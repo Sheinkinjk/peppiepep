@@ -63,8 +63,6 @@ const STANDALONE_ROUTES = [
   "/leadpages",
   "/superfiliate",
   // Weight-loss cluster (own light shell)
-  "/glp-1-weight-loss-australia",
-  "/weight-loss-injections-australia",
   "/weight-loss-telehealth-cost-australia",
   "/online-weight-loss-doctor-australia",
   "/cheapest-weight-loss-telehealth-australia",

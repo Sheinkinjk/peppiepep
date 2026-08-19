@@ -212,10 +212,9 @@ export default function OnlineWeightLossDoctorAustraliaPage() {
                   That is also why some applications are declined. If a practitioner decides a plan or a medicine is not suitable for
                   you, that is the screening doing its job, not a flaw in the service. A pathway where nobody is ever turned away would
                   be the thing to worry about. If a prescription is appropriate, any medicine is prescription-only and is arranged
-                  through a pharmacy, often with home delivery. Our pages on{" "}
-                  <Link href="/glp-1-weight-loss-australia" className="nw-link">GLP-1 weight loss in Australia</Link> and{" "}
-                  <Link href="/weight-loss-injections-australia" className="nw-link">weight-loss injections in Australia</Link> explain
-                  the medicine side of the category in more detail.
+                  through a pharmacy, often with home delivery. Our guide to{" "}
+                  <Link href="/weight-loss-telehealth-cost-australia" className="nw-link">what weight-loss telehealth costs in Australia</Link> explains
+                  how that is billed.
                 </p>
               </div>
             </section>
@@ -286,8 +285,6 @@ export default function OnlineWeightLossDoctorAustraliaPage() {
             <section>
               <h2 className="text-lg font-bold text-[#10251b]">Keep reading</h2>
               <ul className="mt-3 space-y-2 text-[15px]">
-                <li><Link href="/glp-1-weight-loss-australia" className="nw-link">GLP-1 weight loss in Australia, explained</Link></li>
-                <li><Link href="/weight-loss-injections-australia" className="nw-link">Weight-loss injections in Australia</Link></li>
                 <li><Link href="/weight-loss-telehealth-cost-australia" className="nw-link">How much weight-loss telehealth costs in Australia</Link></li>
                 <li><Link href="/moshy" className="nw-link">Moshy: the offer and how to start</Link></li>
                 <li><Link href="/moshy-review" className="nw-link">Our independent Moshy review</Link></li>
