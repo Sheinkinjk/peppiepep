@@ -153,7 +153,7 @@ export const seoConfig = {
   petsonme: {
     title: "PetsOnMe Pet Insurance Review 2026: Cover & Code | Refer Labs",
     description:
-      "PetsOnMe pet insurance explained: the Accidental, Classic and Deluxe plans, what each annual limit covers, the 80% benefit and excess options, plus the REFERLABS code. General information, not financial advice.",
+      "PetsOnMe pet insurance: the REFERLABS code takes 15% off pet care services, not the premium. Accidental, Classic and Deluxe plans compared. Not financial advice.",
     url: `${SITE_URL}/petsonme`,
     keywords: ["petsonme", "pets on me pet insurance", "petsonme review", "petsonme pet insurance australia", "petsonme referral code", "pets on me insurance"],
   },
@@ -1482,7 +1482,7 @@ export const seoConfig = {
   juniper: {
     title: "Juniper Australia Review 2026: Cost & How It Works",
     description:
-      "An independent look at Juniper, the women-focused weight-management program in Australia: what's included, how the pricing and eligibility work, and its free first consultation. Information only.",
+      "An independent look at Juniper, the women-focused weight-management program in Australia: the free first consultation, what's included, pricing and eligibility.",
     url: `${SITE_URL}/juniper`,
     keywords: ["juniper australia", "juniper weight loss", "juniper review australia", "is juniper legit", "is juniper worth it", "does juniper work", "juniper weight reset program", "juniper cost australia", "myjuniper", "juniper program australia"],
   },

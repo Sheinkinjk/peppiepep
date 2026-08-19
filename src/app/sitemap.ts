@@ -10,7 +10,8 @@ const BASE = process.env.NEXT_PUBLIC_SITE_URL || 'https://referlabs.com.au';
 
 // Credible per-page lastmod tiers (avoids the "everything changed today" signal
 // that Google discounts). Bump the relevant tier when a page is genuinely edited.
-const TODAY  = new Date('2026-08-13'); // materially rewritten in this batch (Aug: TGA scrub, pricing, compliance, answer-first)
+const TODAY  = new Date('2026-08-19'); // TGA sweep + hub offer bands
+const AUG13  = new Date('2026-08-13'); // previous batch // materially rewritten in this batch (Aug: TGA scrub, pricing, compliance, answer-first)
 const NEW    = new Date('2026-07-22'); // published/edited in the current batch
 const FRESH  = new Date('2026-07-07'); // redesigned / new this release
 const RECENT = new Date('2026-05-20'); // updated within the last few weeks
@@ -33,32 +34,32 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.85,
     })),
     { url: `${BASE}/faq`,                lastModified: STABLE, changeFrequency: 'monthly', priority: 0.75 },
-    { url: `${BASE}/guides`,             lastModified: TODAY,  changeFrequency: 'weekly',  priority: 0.8 },
-    { url: `${BASE}/deals`,              lastModified: TODAY,  changeFrequency: 'weekly',  priority: 0.82 },
+    { url: `${BASE}/guides`,             lastModified: AUG13,  changeFrequency: 'weekly',  priority: 0.8 },
+    { url: `${BASE}/deals`,              lastModified: AUG13,  changeFrequency: 'weekly',  priority: 0.82 },
     { url: `${BASE}/business-software`,  lastModified: FRESH,  changeFrequency: 'weekly',  priority: 0.85 },
     { url: `${BASE}/pet-insurance`,  lastModified: FRESH,  changeFrequency: 'weekly',  priority: 0.85 },
     { url: `${BASE}/knose`,  lastModified: FRESH,  changeFrequency: 'weekly',  priority: 0.8 },
-    { url: `${BASE}/petsonme`,  lastModified: TODAY,  changeFrequency: 'weekly',  priority: 0.8 },
-    { url: `${BASE}/best-pet-insurance-australia`,  lastModified: TODAY,  changeFrequency: 'weekly',  priority: 0.86 },
-    { url: `${BASE}/knose-vs-petsonme`,  lastModified: TODAY,  changeFrequency: 'weekly',  priority: 0.84 },
+    { url: `${BASE}/petsonme`,  lastModified: AUG13,  changeFrequency: 'weekly',  priority: 0.8 },
+    { url: `${BASE}/best-pet-insurance-australia`,  lastModified: AUG13,  changeFrequency: 'weekly',  priority: 0.86 },
+    { url: `${BASE}/knose-vs-petsonme`,  lastModified: AUG13,  changeFrequency: 'weekly',  priority: 0.84 },
     { url: `${BASE}/what-pet-insurance-covers-australia`,  lastModified: FRESH,  changeFrequency: 'monthly',  priority: 0.7 },
-    { url: `${BASE}/about`,              lastModified: TODAY, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${BASE}/about`,              lastModified: AUG13, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${BASE}/contact`,            lastModified: STABLE, changeFrequency: 'monthly', priority: 0.6 },
 
     // ── Business lending (lead-capture vertical; admin/api never listed) ─
-    { url: `${BASE}/business-loans`,                            lastModified: TODAY, changeFrequency: 'weekly',  priority: 0.9 },
+    { url: `${BASE}/business-loans`,                            lastModified: AUG13, changeFrequency: 'weekly',  priority: 0.9 },
     { url: `${BASE}/business-loan-calculator`,                  lastModified: NEW, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE}/what-a-business-loan-actually-costs`,       lastModified: NEW, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/equipment-finance-instant-asset-write-off`, lastModified: NEW, changeFrequency: 'monthly', priority: 0.75 },
-    { url: `${BASE}/how-we-make-money`,                         lastModified: TODAY, changeFrequency: 'monthly', priority: 0.5 },
+    { url: `${BASE}/how-we-make-money`,                         lastModified: AUG13, changeFrequency: 'monthly', priority: 0.5 },
     { url: `${BASE}/true-cost-of-business-loans-australia`,     lastModified: NEW, changeFrequency: 'monthly', priority: 0.82 },
     // Lender pages, generated from the config (adding a lender = one config entry)
     ...LENDERS.flatMap((l) => [
-      { url: `${BASE}/business-loans/${l.slug}`,        lastModified: TODAY, changeFrequency: 'monthly' as const, priority: 0.78 },
-      { url: `${BASE}/business-loans/${l.slug}/review`, lastModified: TODAY, changeFrequency: 'monthly' as const, priority: 0.72 },
+      { url: `${BASE}/business-loans/${l.slug}`,        lastModified: AUG13, changeFrequency: 'monthly' as const, priority: 0.78 },
+      { url: `${BASE}/business-loans/${l.slug}/review`, lastModified: AUG13, changeFrequency: 'monthly' as const, priority: 0.72 },
     ]),
     // Lender head-to-head comparisons
-    ...LENDER_COMPARISONS.map((c) => ({ url: `${BASE}/compare-business-lenders/${c.slug}`, lastModified: TODAY, changeFrequency: 'monthly' as const, priority: c.priority })),
+    ...LENDER_COMPARISONS.map((c) => ({ url: `${BASE}/compare-business-lenders/${c.slug}`, lastModified: AUG13, changeFrequency: 'monthly' as const, priority: c.priority })),
     // Intent + explainer pages, generated from the registry
     ...INTENT_PAGES.map((p) => ({
       url: `${BASE}/${p.slug}`,
@@ -71,36 +72,36 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // ── Services ───────────────────────────────────────────────────────
 
     // ── Apollo Energy (VIP money page) ────────────────────────────────
-    { url: `${BASE}/apollo-energy-group`, lastModified: TODAY, changeFrequency: "weekly", priority: 0.95 },
-    { url: `${BASE}/apollo-energy-review`, lastModified: TODAY, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${BASE}/apollo-energy-group`, lastModified: AUG13, changeFrequency: "weekly", priority: 0.95 },
+    { url: `${BASE}/apollo-energy-review`, lastModified: AUG13, changeFrequency: "weekly", priority: 0.9 },
     { url: `${BASE}/home-battery-rebate-australia`, lastModified: FRESH, changeFrequency: "weekly", priority: 0.9 },
-    { url: `${BASE}/home-battery-rebate-by-state-australia`, lastModified: TODAY, changeFrequency: "weekly", priority: 0.88 },
-    { url: `${BASE}/virtual-power-plant-australia`, lastModified: TODAY, changeFrequency: "weekly", priority: 0.82 },
+    { url: `${BASE}/home-battery-rebate-by-state-australia`, lastModified: AUG13, changeFrequency: "weekly", priority: 0.88 },
+    { url: `${BASE}/virtual-power-plant-australia`, lastModified: AUG13, changeFrequency: "weekly", priority: 0.82 },
     { url: `${BASE}/home-battery-cost-australia`, lastModified: FRESH, changeFrequency: "weekly", priority: 0.9 },
     { url: `${BASE}/home-battery-payback-calculator`, lastModified: FRESH, changeFrequency: "weekly", priority: 0.88 },
 
     // ── Health affiliate pages (redesigned this release) ───────────────
     { url: `${BASE}/moshy`,             lastModified: TODAY, changeFrequency: 'weekly',  priority: 0.92 },
-    { url: `${BASE}/juniper`,           lastModified: TODAY, changeFrequency: 'weekly',  priority: 0.85 },
+    { url: `${BASE}/juniper`,           lastModified: AUG13, changeFrequency: 'weekly',  priority: 0.85 },
     { url: `${BASE}/moshy-review`,      lastModified: FRESH, changeFrequency: 'monthly', priority: 0.85 },
-    { url: `${BASE}/moshy-eligibility`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE}/getmoshy`,          lastModified: FRESH, changeFrequency: 'monthly', priority: 0.78 },
-    { url: `${BASE}/moshy-vs-gp`,       lastModified: FRESH, changeFrequency: 'monthly', priority: 0.78 },
-    { url: `${BASE}/moshy-alternatives`,lastModified: FRESH, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE}/weight-loss-telehealth-men-australia`,   lastModified: FRESH, changeFrequency: 'monthly', priority: 0.82 },
-    { url: `${BASE}/weight-loss-telehealth-women-australia`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.82 },
-    { url: `${BASE}/online-weight-loss-programs-australia`,  lastModified: FRESH, changeFrequency: 'monthly', priority: 0.82 },
-    { url: `${BASE}/mens-health-telehealth-australia`,       lastModified: FRESH, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE}/weight-loss-telehealth-cost-australia`,  lastModified: FRESH, changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${BASE}/moshy-eligibility`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/getmoshy`,          lastModified: TODAY, changeFrequency: 'monthly', priority: 0.78 },
+    { url: `${BASE}/moshy-vs-gp`,       lastModified: TODAY, changeFrequency: 'monthly', priority: 0.78 },
+    { url: `${BASE}/moshy-alternatives`,lastModified: TODAY, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/weight-loss-telehealth-men-australia`,   lastModified: TODAY, changeFrequency: 'monthly', priority: 0.82 },
+    { url: `${BASE}/weight-loss-telehealth-women-australia`, lastModified: AUG13, changeFrequency: 'monthly', priority: 0.82 },
+    { url: `${BASE}/online-weight-loss-programs-australia`,  lastModified: TODAY, changeFrequency: 'monthly', priority: 0.82 },
+    { url: `${BASE}/mens-health-telehealth-australia`,       lastModified: TODAY, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/weight-loss-telehealth-cost-australia`,  lastModified: TODAY, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${BASE}/weight-loss-cost-calculator`,            lastModified: FRESH, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${BASE}/weight-loss-quiz`,                       lastModified: FRESH, changeFrequency: 'monthly', priority: 0.88 },
-    { url: `${BASE}/online-weight-loss-doctor-australia`,    lastModified: FRESH, changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${BASE}/online-weight-loss-doctor-australia`,    lastModified: TODAY, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${BASE}/moshhair`,          lastModified: TODAY, changeFrequency: 'weekly',  priority: 0.78 },
     { url: `${BASE}/mosh-review`,        lastModified: FRESH, changeFrequency: 'monthly', priority: 0.82 },
     // The medicine-name slugs (/finasteride-australia, /minoxidil-australia,
     // /finasteride-vs-minoxidil-australia, /how-long-does-finasteride-take-to-work-australia)
     // 301-redirect to /hair-loss for TGA compliance, so they are kept out of the sitemap.
-    { url: `${BASE}/hair-loss-treatment-cost-australia`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/hair-loss-treatment-cost-australia`, lastModified: AUG13, changeFrequency: 'monthly', priority: 0.8 },
     // Hair-loss guide cluster (generated from the registry)
     ...HAIR_LOSS_GUIDES.filter((g) => !g.meta?.noIndex).map((g) => ({
       url: `${BASE}${g.slug}`,
@@ -118,65 +119,65 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/dense`,             lastModified: FRESH, changeFrequency: 'monthly', priority: 0.7 },
 
     // ── Website builders / AI tools (redesigned this release) ──────────
-    { url: `${BASE}/carrd`,      lastModified: TODAY, changeFrequency: 'monthly', priority: 0.78 },
-    { url: `${BASE}/durableai`,  lastModified: TODAY, changeFrequency: 'monthly', priority: 0.78 },
-    { url: `${BASE}/butternut`,  lastModified: TODAY, changeFrequency: 'monthly', priority: 0.75 },
-    { url: `${BASE}/swipepages`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.72 },
+    { url: `${BASE}/carrd`,      lastModified: AUG13, changeFrequency: 'monthly', priority: 0.78 },
+    { url: `${BASE}/durableai`,  lastModified: AUG13, changeFrequency: 'monthly', priority: 0.78 },
+    { url: `${BASE}/butternut`,  lastModified: AUG13, changeFrequency: 'monthly', priority: 0.75 },
+    { url: `${BASE}/swipepages`, lastModified: AUG13, changeFrequency: 'monthly', priority: 0.72 },
 
     // ── Creator / newsletter tools (redesigned this release) ───────────
-    { url: `${BASE}/beehiiv`,    lastModified: TODAY, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/beehiiv`,    lastModified: AUG13, changeFrequency: 'monthly', priority: 0.8 },
 
     // ── AI sales & automation tools (new this release) ─────────────────
-    { url: `${BASE}/gohighlevel`,        lastModified: TODAY, changeFrequency: 'monthly', priority: 0.85 },
-    { url: `${BASE}/aisdr`,              lastModified: TODAY, changeFrequency: 'monthly', priority: 0.85 },
-    { url: `${BASE}/replyio`,            lastModified: TODAY, changeFrequency: 'monthly', priority: 0.85 },
-    { url: `${BASE}/fullenrich`,         lastModified: TODAY, changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${BASE}/gohighlevel`,        lastModified: AUG13, changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${BASE}/aisdr`,              lastModified: AUG13, changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${BASE}/replyio`,            lastModified: AUG13, changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${BASE}/fullenrich`,         lastModified: AUG13, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${BASE}/employmenthero`,     lastModified: FRESH, changeFrequency: 'monthly', priority: 0.85 },
-    { url: `${BASE}/best-ai-sales-tools`,lastModified: TODAY, changeFrequency: 'monthly', priority: 0.85 },
-    { url: `${BASE}/best-crm-small-business-australia`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/best-ai-sales-tools`,lastModified: AUG13, changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${BASE}/best-crm-small-business-australia`, lastModified: AUG13, changeFrequency: 'monthly', priority: 0.8 },
 
     // ── Email / e-commerce / landing pages / affiliate software ────────
-    { url: `${BASE}/brevo`,        lastModified: TODAY, changeFrequency: 'monthly', priority: 0.82 },
-    { url: `${BASE}/alidrop`,      lastModified: TODAY, changeFrequency: 'monthly', priority: 0.82 },
-    { url: `${BASE}/leadpages`,    lastModified: TODAY, changeFrequency: 'monthly', priority: 0.82 },
-    { url: `${BASE}/cloudtalk`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE}/krispcall`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE}/dext`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE}/trainual`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE}/lindy`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE}/elevenlabs`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE}/wing-assistant`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE}/survicate`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE}/nutshell`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.82 },
-    { url: `${BASE}/pipedrive`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.82 },
-    { url: `${BASE}/activecampaign`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.82 },
-    { url: `${BASE}/hellobar`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE}/outgrow`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE}/flexiquiz`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE}/landingi`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE}/superfiliate`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.82 },
-    { url: `${BASE}/keap`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.82 },
-    { url: `${BASE}/capsule`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE}/beautifulai`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE}/pandadoc`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.82 },
-    { url: `${BASE}/blinq`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.78 },
+    { url: `${BASE}/brevo`,        lastModified: AUG13, changeFrequency: 'monthly', priority: 0.82 },
+    { url: `${BASE}/alidrop`,      lastModified: AUG13, changeFrequency: 'monthly', priority: 0.82 },
+    { url: `${BASE}/leadpages`,    lastModified: AUG13, changeFrequency: 'monthly', priority: 0.82 },
+    { url: `${BASE}/cloudtalk`, lastModified: AUG13, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/krispcall`, lastModified: AUG13, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/dext`, lastModified: AUG13, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/trainual`, lastModified: AUG13, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/lindy`, lastModified: AUG13, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/elevenlabs`, lastModified: AUG13, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/wing-assistant`, lastModified: AUG13, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/survicate`, lastModified: AUG13, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/nutshell`, lastModified: AUG13, changeFrequency: 'monthly', priority: 0.82 },
+    { url: `${BASE}/pipedrive`, lastModified: AUG13, changeFrequency: 'monthly', priority: 0.82 },
+    { url: `${BASE}/activecampaign`, lastModified: AUG13, changeFrequency: 'monthly', priority: 0.82 },
+    { url: `${BASE}/hellobar`, lastModified: AUG13, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/outgrow`, lastModified: AUG13, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/flexiquiz`, lastModified: AUG13, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/landingi`, lastModified: AUG13, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/superfiliate`, lastModified: AUG13, changeFrequency: 'monthly', priority: 0.82 },
+    { url: `${BASE}/keap`, lastModified: AUG13, changeFrequency: 'monthly', priority: 0.82 },
+    { url: `${BASE}/capsule`, lastModified: AUG13, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/beautifulai`, lastModified: AUG13, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/pandadoc`, lastModified: AUG13, changeFrequency: 'monthly', priority: 0.82 },
+    { url: `${BASE}/blinq`, lastModified: AUG13, changeFrequency: 'monthly', priority: 0.78 },
 
     // ── Polymarket guides (prediction markets cluster) ─────────────────
 
     // ── Comparison roundups ────────────────────────────────────────────
-    { url: `${BASE}/best-website-builder`,                  lastModified: TODAY,  changeFrequency: 'weekly',  priority: 0.82 },
-    { url: `${BASE}/best-newsletter-platform`,              lastModified: TODAY,  changeFrequency: 'weekly',  priority: 0.82 },
+    { url: `${BASE}/best-website-builder`,                  lastModified: AUG13,  changeFrequency: 'weekly',  priority: 0.82 },
+    { url: `${BASE}/best-newsletter-platform`,              lastModified: AUG13,  changeFrequency: 'weekly',  priority: 0.82 },
     { url: `${BASE}/best-weight-loss-telehealth-australia`, lastModified: TODAY,  changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/weight-loss-treatment-eligibility-australia`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.82 },
     { url: `${BASE}/best-hair-loss-treatment-australia`,    lastModified: TODAY,  changeFrequency: 'monthly', priority: 0.78 },
-    { url: `${BASE}/moshy-vs-juniper`,                      lastModified: FRESH,  changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE}/moshy-vs-pilot`,                        lastModified: FRESH,  changeFrequency: 'monthly', priority: 0.85 },
-    { url: `${BASE}/cheapest-weight-loss-telehealth-australia`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${BASE}/moshy-vs-juniper`,                      lastModified: TODAY,  changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/moshy-vs-pilot`,                        lastModified: TODAY,  changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${BASE}/cheapest-weight-loss-telehealth-australia`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${BASE}/carrd-vs-durable`,                      lastModified: FRESH,  changeFrequency: 'monthly', priority: 0.74 },
     { url: `${BASE}/durable-vs-butternut`,                  lastModified: FRESH,  changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/carrd-vs-butternut`,                    lastModified: FRESH,  changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE}/mosh-vs-dense`,                         lastModified: FRESH,  changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE}/mosh-vs-pilot`,                         lastModified: FRESH,  changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/mosh-vs-dense`,                         lastModified: TODAY,  changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/mosh-vs-pilot`,                         lastModified: TODAY,  changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/comparison-website`,                    lastModified: RECENT, changeFrequency: 'monthly', priority: 0.7 },
 
     // ── Affiliate programs cluster (hub + 3 spokes) ────────────────────
@@ -205,7 +206,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // drop, which is self-contradictory and burns crawl budget on a young domain.
 
     // ── Legal ──────────────────────────────────────────────────────────
-    { url: `${BASE}/privacy`, lastModified: TODAY, changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${BASE}/privacy`, lastModified: AUG13, changeFrequency: 'yearly', priority: 0.3 },
     { url: `${BASE}/terms`,   lastModified: LEGAL, changeFrequency: 'yearly', priority: 0.3 },
     // /security removed: noIndex (retired SaaS trust page).
 

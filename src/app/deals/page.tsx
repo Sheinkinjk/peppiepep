@@ -8,6 +8,48 @@ import OffersTable from "@/components/lending/OffersTable";
 
 export const metadata = generateSEOMetadata(seoConfig.deals);
 
+/**
+ * The literal question people put to a search or answer engine. Answers lead
+ * with the code and state what the discount actually applies to, which ACL s29
+ * requires and which is also what makes an answer citable.
+ */
+const FAQS = [
+  {
+    q: "What is the current Moshy discount code?",
+    a: "The current Moshy discount code is REFERRAL120, worth $120 off a new customer's first order. Moshy states it applies to a practitioner-assigned weight-loss program, one use per customer, with a minimum three-month commitment, and excludes dietitian, over-the-counter and meal-replacement plans. It applies automatically through our link, so there is nothing to type. Read off Moshy's own sign-up page on 17 August 2026.",
+  },
+  {
+    q: "What is the current Mosh discount code?",
+    a: "The current Mosh discount code is REFERAL55, worth 55% off a new customer's first order. It applies to that first order rather than to later renewals, and Mosh runs as a subscription after that. It applies automatically through our link. Read off Mosh's own page on 17 August 2026.",
+  },
+  {
+    q: "What is the current Knose promo code?",
+    a: "The current Knose promo code is referlab2mf, which gives new customers 2 months free on Knose pet insurance. What the policy covers, along with waiting periods, exclusions and limits, is set out in Knose's PDS, so get a quote to see what would apply to your pet. This is general information, not financial advice.",
+  },
+  {
+    q: "What is the current PetsOnMe discount code?",
+    a: "The current PetsOnMe discount code is REFERLABS, which takes 15% off pet care services rather than off the insurance premium, up from the usual 12%. The distinction matters: it is a discount on services, not on the cost of cover. Read off PetsOnMe's own page on 17 August 2026. General information, not financial advice.",
+  },
+  {
+    q: "Are these discount codes actually current?",
+    a: "Each offer in the table shows the date we last read it off that provider's own page, rather than one site-wide stamp, so you can see how current each individual code is. Offers change without notice, so treat the date as when we checked rather than a guarantee, and confirm the terms on the provider's site before you sign up.",
+  },
+  {
+    q: "Does Refer Labs earn from these deals?",
+    a: "Yes, some of the links are affiliate links, so we may earn a commission if you sign up. It costs you nothing extra and never changes what you pay or which offers we list. We do not accept payment for rankings.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQS.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -42,6 +84,7 @@ export default function DealsPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <main id="main-content" className="mx-auto max-w-5xl px-5 py-12 sm:px-8 sm:py-16">
         <nav className="mb-8 flex items-center gap-2 text-sm text-[#9aa39c]">
@@ -118,6 +161,18 @@ export default function DealsPage() {
               </Link>
             ))}
           </div>
+        </section>
+
+        <section className="mt-14">
+          <h2 className="text-xl font-extrabold text-[#10251b]">Discount code questions</h2>
+          <dl className="mt-5 divide-y divide-[#eef1ef] overflow-hidden rounded-2xl border border-[#e5e9e7] bg-white">
+            {FAQS.map((f) => (
+              <div key={f.q} className="px-5 py-5 sm:px-6">
+                <dt className="text-[15px] font-bold text-[#10251b]">{f.q}</dt>
+                <dd className="mt-2 text-sm leading-relaxed text-[#3d4b44]">{f.a}</dd>
+              </div>
+            ))}
+          </dl>
         </section>
 
         <p className="mt-10 max-w-2xl text-xs leading-relaxed text-[#6e7b74]">
