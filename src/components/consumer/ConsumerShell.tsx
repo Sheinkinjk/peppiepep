@@ -18,7 +18,7 @@ const NAV = [
   { href: "/weight-loss", label: "Weight Loss" },
   { href: "/moshhair", label: "Mosh" },
   { href: "/hair-loss", label: "Hair Loss" },
-  { href: "/pet-insurance", label: "Pet Insurance" },
+  { href: "/pet-insurance", label: "Pets" },
   { href: "/apollo-energy-group", label: "Home Batteries" },
   { href: "/business-software", label: "Business" },
 ];
@@ -113,7 +113,7 @@ export default function ConsumerShell({ children }: { children: React.ReactNode 
                 <li><Link href="/home-battery-rebate-australia" className="transition-colors hover:text-[#0a7c42]">Home Battery Rebate 2026</Link></li>
                 <li><Link href="/best-home-battery-australia" className="transition-colors hover:text-[#0a7c42]">Best Home Battery</Link></li>
                 <li><Link href="/true-cost-of-business-loans-australia" className="transition-colors hover:text-[#0a7c42]">What Business Loans Really Cost</Link></li>
-                <li><Link href="/pet-insurance" className="transition-colors hover:text-[#0a7c42]">Pet Insurance</Link></li>
+                <li><Link href="/pet-insurance" className="transition-colors hover:text-[#0a7c42]">Pets</Link></li>
               </ul>
             </div>
             <div>

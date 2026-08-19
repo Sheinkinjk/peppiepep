@@ -47,12 +47,12 @@ const GROUPS: Group[] = [
     ],
   },
   {
-    label: "Pet Insurance",
+    label: "Pets",
     items: [
       { href: "/best-pet-insurance-australia", label: "How to choose", note: "The six things that decide what you get back" },
       { href: "/knose", label: "Knose", note: "2 months free for new customers" },
       { href: "/petsonme", label: "PetsOnMe", note: "Three cover levels, plus the REFERLABS code" },
-      { href: "/pet-insurance", label: "Compare all", note: "Cover explained, plus current offers" },
+      { href: "/pet-insurance", label: "Compare all", note: "Pet insurance cover explained, plus current offers" },
     ],
   },
   // Merged and placed last. Every page below stays live and reachable; the full

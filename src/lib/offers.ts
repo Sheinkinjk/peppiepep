@@ -65,8 +65,8 @@ export const DEALS: Deal[] = [
   { brand: "Leadpages", logo: "/logos/leadpages.png", href: "/leadpages", offer: "50% off your first month", category: "Landing pages", featured: true },
   { brand: "Superfiliate", logo: "/logos/superfiliate.png", href: "/superfiliate", offer: "15% off your monthly fee", category: "Creator growth", featured: true },
 
-  { brand: "Knose", logo: "/logos/knose.svg", href: "/knose", offer: "2 months free for new customers", code: "referlab2mf", category: "Pet insurance", featured: true },
-  { brand: "PetsOnMe", logo: "/logos/petsonme.svg", href: "/petsonme", offer: "15% off pet care services, up from 12% (not the premium)", code: "REFERLABS", category: "Pet insurance", featured: true, verified: "2026-08-17" },
+  { brand: "Knose", logo: "/logos/knose.svg", href: "/knose", offer: "2 months free for new customers", code: "referlab2mf", category: "Pets", featured: true },
+  { brand: "PetsOnMe", logo: "/logos/petsonme.svg", href: "/petsonme", offer: "15% off pet care services, up from 12% (not the premium)", code: "REFERLABS", category: "Pets", featured: true, verified: "2026-08-17" },
 
   { brand: "Carrd", logo: "/logos/carrd.png", href: "/carrd", offer: "Free plan forever; Pro from US$9/yr", category: "Website builders" },
   { brand: "beehiiv", logo: "/logos/beehiiv.png", href: "/best-newsletter-platform", offer: "Free plan, no revenue cut", category: "Newsletters" },

@@ -12,7 +12,7 @@ import BrandMark from "@/components/consumer/BrandMark";
 // makes a comparison site read as a real publication rather than a template.
 const picks = [
   { logo: "mosh-tile", name: "Mosh", cat: "Hair loss", offer: "55% off first order", verdict: "Men's hair-loss telehealth: a practitioner reviews your case and treatment is provided where appropriate, delivered to your door.", href: "/moshhair" },
-  { logo: "knose", name: "Knose", cat: "Pet insurance", offer: "First 2 months free", verdict: "Australian pet insurance with the cover, waiting periods and exclusions explained in plain English.", href: "/pet-insurance" },
+  { logo: "knose", name: "Knose", cat: "Pets", offer: "First 2 months free", verdict: "Australian pet insurance with the cover, waiting periods and exclusions explained in plain English.", href: "/pet-insurance" },
   { logo: "apollo-energy", name: "Apollo Energy", cat: "Home batteries", offer: "$500 off, plus the federal rebate", verdict: "Home battery specialists, SAA-accredited and sized from your real usage, not a generic quote.", href: "/apollo-energy-group" },
 ];
 
@@ -43,9 +43,9 @@ const categoryCards = [
     ],
   },
   {
-    href: "/pet-insurance", icon: PawPrint, title: "Pet Insurance",
+    href: "/pet-insurance", icon: PawPrint, title: "Pets",
     accent: "#3E6B99", tint: "#E8F0F8",
-    note: "How cover, waiting periods and exclusions actually work, plus current offers.",
+    note: "How pet insurance cover, waiting periods and exclusions actually work, plus current offers.",
     links: [
       { h: "/what-pet-insurance-covers-australia", l: "What it covers" },
     ],
