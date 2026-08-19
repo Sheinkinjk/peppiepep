@@ -22,7 +22,7 @@ export const moshyConfig: AffiliatePageConfig = {
     h1Prefix: "Moshy Discount Code Australia 2026:",
     h1Highlight: "Referral Link, Review & Eligibility Guide",
     subheading:
-      "Looking for a Moshy discount code, promo code, or referral link? This page gives you direct access to the current Moshy referral offer and covers the eligibility process, cost, practitioner-assessed treatment options, and how Moshy compares to Juniper.",
+      "Looking for a Moshy discount code, promo code, or referral link? This page gives you direct access to the current Moshy referral offer and covers the eligibility process, cost, how treatment access works, and how Moshy compares to Juniper.",
     trustBullets: [
       "Current Moshy referral link - no code required",
       "Covers Moshy weight loss cost and subscription pricing",
@@ -117,7 +117,7 @@ export const moshyConfig: AffiliatePageConfig = {
 
   whyUseThis: [
     "Direct access to the current Moshy referral link - no outdated or expired codes",
-    "Covers Moshy pricing, Treatment access, and what to expect from the eligibility process",
+    "Covers Moshy pricing, treatment access, and what to expect from the eligibility process",
     "Moshy vs Juniper comparison in plain terms",
     "Built for Australian users - links to the AU Moshy platform only",
     "Medical disclaimers throughout - no misleading health claims",

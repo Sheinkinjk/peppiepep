@@ -47,7 +47,7 @@ const itemListSchema = {
       position: 1,
       name: "Moshy",
       description:
-        "Australian telehealth weight-management program, gender-neutral and open to anyone eligible. Runs on a subscription model; new customers can currently receive $120 off their first treatment. Online eligibility check, practitioner review, Treatment access where clinically appropriate.",
+        "Australian telehealth weight-management program, gender-neutral and open to anyone eligible. Runs on a subscription model; new customers can currently receive $120 off their first treatment. Online eligibility check, practitioner review, and treatment access where clinically appropriate.",
       url: `${SITE_URL}/moshy-review`,
     },
     {
@@ -55,7 +55,7 @@ const itemListSchema = {
       position: 2,
       name: "Pilot",
       description:
-        "Men-focused telehealth from Eucalyptus, covering broader men's health alongside weight management. Subscription program within a wider ecosystem. Online consult, practitioner review, Treatment access where clinically appropriate.",
+        "Men-focused telehealth from Eucalyptus, covering broader men's health alongside weight management. Subscription program within a wider ecosystem. online consult, practitioner review, and treatment access where clinically appropriate.",
       url: PILOT_URL,
     },
   ],
@@ -64,7 +64,7 @@ const itemListSchema = {
 const faqs = [
   {
     q: "Is Moshy or Pilot better for weight loss in Australia?",
-    a: "Neither is universally better, they suit different people. Both run on a subscription model, and pricing is confirmed inside the consult and can change, so check the current pricing directly on each provider rather than relying on a headline figure. Moshy is gender-neutral and open to anyone eligible; new customers can currently receive $120 off their first treatment. Pilot is Eucalyptus's men-focused service and folds weight management into a broader men's health offering, so it suits someone who wants that wider ecosystem. Both facilitate Treatment access only where an Australian-registered practitioner assesses it as clinically appropriate.",
+    a: "Neither is universally better, they suit different people. Both run on a subscription model, and pricing is confirmed inside the consult and can change, so check the current pricing directly on each provider rather than relying on a headline figure. Moshy is gender-neutral and open to anyone eligible; new customers can currently receive $120 off their first treatment. Pilot is Eucalyptus's men-focused service and folds weight management into a broader men's health offering, so it suits someone who wants that wider ecosystem. Both handle treatment access only where an Australian-registered practitioner assesses it as clinically appropriate.",
   },
   {
     q: "How much do Moshy and Pilot cost?",
@@ -193,7 +193,7 @@ export default function MoshyVsPilotPage() {
               <p className="text-[#2b362f] text-sm sm:text-base leading-relaxed max-w-2xl">
                 Moshy is gender-neutral, so it is open to anyone eligible, and it keeps the experience focused on the
                 weight-management pathway. Pilot suits someone who specifically wants the Eucalyptus men&apos;s health ecosystem, with weight
-                management as one part of a wider service. Both run fully online and both facilitate Treatment access only
+                management as one part of a wider service. Both run fully online and both handle treatment access only
                 where a registered Australian practitioner assesses it as clinically appropriate. Suitability is
                 practitioner-decided and never guaranteed.
               </p>
@@ -349,7 +349,7 @@ export default function MoshyVsPilotPage() {
               This page is operated by Refer Labs and contains a disclosed affiliate referral link to Moshy. Pilot is
               linked without an affiliate arrangement. We compare on price, model and what is included, and we never sell
               rankings. All content is for informational purposes only and does not constitute medical advice.
-              Prescription medicines in Australia, prescribed for weight management, are available only after an individual
+              Medicines prescribed for weight management in Australia are available only after an individual
               assessment by a registered Australian practitioner, and suitability is practitioner-decided and never
               guaranteed. Consult a qualified health professional before starting any weight management program. Our
             </p>

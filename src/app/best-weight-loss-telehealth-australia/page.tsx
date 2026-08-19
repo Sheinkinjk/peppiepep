@@ -47,7 +47,7 @@ const itemListSchema = {
   description: "In-depth comparison of Australian weight loss telehealth platforms: Moshy, Juniper and Pilot. Treatment access, eligibility process, pricing, and who each platform suits.",
   numberOfItems: 3,
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Moshy", description: "Australian clinically-led telehealth weight management platform, open to anyone eligible. Online eligibility questionnaire, practitioner review, Practitioner-assessed treatment. Subscription with home delivery.", url: `${SITE_URL}/moshy` },
+    { "@type": "ListItem", position: 1, name: "Moshy", description: "Australian clinically-led telehealth weight management platform, open to anyone eligible. Online eligibility questionnaire, practitioner review, and treatment access where clinically appropriate. Subscription with home delivery.", url: `${SITE_URL}/moshy` },
     { "@type": "ListItem", position: 2, name: "Juniper", description: "Australian weight management program for women. Combines a medical program with health coaching and ongoing practitioner support. Premium subscription model.", url: `${SITE_URL}/juniper` },
     { "@type": "ListItem", position: 3, name: "Pilot", description: "Men-focused telehealth from Eucalyptus, covering weight management alongside broader men's health. Quiz, practitioner phone consultation, then discreet home delivery where clinically appropriate.", url: PILOT_URL },
   ],
@@ -70,7 +70,7 @@ const faqSchema = {
     {
       "@type": "Question",
       name: "Are online weight loss clinics in Australia legit?",
-      acceptedAnswer: { "@type": "Answer", text: "The established Australian platforms, Moshy, Juniper and Pilot, operate as regulated telehealth services: eligibility questionnaires are reviewed by Australian-registered practitioners, and Weight-management medicines are prescription-only, prescribed only after individual clinical assessment. The practical checks for any provider: a practitioner consultation before any prescription, an Australian business entity, and published contact details. A service that offers prescription medication without a practitioner review is the red flag. This page does not constitute medical advice." }
+      acceptedAnswer: { "@type": "Answer", text: "The established Australian platforms, Moshy, Juniper and Pilot, operate as regulated telehealth services: eligibility questionnaires are reviewed by Australian-registered practitioners, and weight-management medicines are prescription-only, prescribed only after individual clinical assessment. The practical checks for any provider: a practitioner consultation before any prescription, an Australian business entity, and published contact details. A service that offers prescription medication without a practitioner review is the red flag. This page does not constitute medical advice." }
     },
     {
       "@type": "Question",
@@ -79,7 +79,7 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      name: "Do these platforms work within this category of treatment?",
+      name: "How do these platforms handle treatment access?",
       acceptedAnswer: { "@type": "Answer", text: "Both Moshy and Juniper operate practitioner-supervised weight-management pathways that can involve treatment that a registered practitioner assesses as appropriate. Weight-management medicines are prescription-only in Australia and are prescribed only after a practitioner consultation and individual assessment, which decides suitability. Not every person who completes an eligibility questionnaire is found suitable. This page does not constitute medical advice." }
     },
     {
@@ -491,7 +491,7 @@ export default function BestWeightLossTelehealthPage() {
               </table>
             </div>
             <p className="text-[#9aa39c] text-[10px] mt-3">
-              Practitioner-assessed treatment is subject to individual clinical assessment by each platform&apos;s practitioners. This comparison does not constitute medical advice.
+              Treatment access is subject to individual clinical assessment by each platform&apos;s practitioners. This comparison does not constitute medical advice.
             </p>
           </section>
 
@@ -567,14 +567,14 @@ export default function BestWeightLossTelehealthPage() {
                 },
                 {
                   q: "Are online weight loss clinics in Australia legit?",
-                  a: "The established platforms operate as regulated telehealth services: questionnaires reviewed by Australian-registered practitioners, and practitioner-assessed treatment prescribed only after individual clinical assessment, because they are prescription-only. Check for a practitioner consultation before any prescription, an Australian business entity, and published contact details. A service offering prescription medication without practitioner review is the red flag.",
+                  a: "The established platforms operate as regulated telehealth services: questionnaires reviewed by Australian-registered practitioners, and any medicine prescribed only after individual clinical assessment, because they are prescription-only. Check for a practitioner consultation before any prescription, an Australian business entity, and published contact details. A service offering prescription medication without practitioner review is the red flag.",
                 },
                 {
                   q: "Is Moshy or Juniper better?",
                   a: "Moshy and Juniper take different approaches. Moshy runs a lean clinical pathway, open to anyone eligible. Juniper adds health coaching to its programme and markets primarily to Australian women. If you want a focused clinical pathway, Moshy is the relevant option. If you want coaching alongside clinical care, Juniper is worth a look. Both require individual clinical eligibility assessment.",
                 },
                 {
-                  q: "Do these platforms work within this category of treatment?",
+                  q: "How do these platforms handle treatment access?",
                   a: "Both Moshy and Juniper operate practitioner-supervised weight-management pathways that can involve treatment that a registered practitioner assesses as appropriate. Weight-management medicines are prescription-only in Australia and are prescribed only after an individual assessment by a registered practitioner, who decides suitability. Whether any specific medicine is appropriate is a clinical decision, not something a platform promises in advance, and not everyone who applies is prescribed medication. This page does not constitute medical advice.",
                 },
                 {
