@@ -34,13 +34,13 @@ export const moshHairConfig: AffiliatePageConfig = {
     { k: "How it works", v: "Online consult, reviewed by a practitioner" },
     { k: "Treatment", v: "Decided individually, only if clinically appropriate" },
     { k: "Pricing", v: "Subscription, confirmed in the consult" },
-    { k: "Discount code", v: "None needed, referral via the link" },
+    { k: "Discount code", v: "REFERAL55, applied automatically via our link" },
   ],
   trustStrip: [
     "AHPRA-registered practitioners",
     "Online consult, no GP visit to start",
     "Subscription with home delivery",
-    "No code, referral via the link",
+    "Code REFERAL55, applied automatically via the link",
   ],
   pullQuote:
     "Hair-loss treatment works best early and consistently, the real value of telehealth is removing the friction that delays men for years.",

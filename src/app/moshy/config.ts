@@ -24,7 +24,7 @@ export const moshyConfig: AffiliatePageConfig = {
     subheading:
       "Looking for a Moshy discount code, promo code, or referral link? This page gives you direct access to the current Moshy referral offer and covers the eligibility process, cost, how treatment access works, and how Moshy compares to Juniper.",
     trustBullets: [
-      "Current Moshy referral link - no code required",
+      "Code REFERRAL120, applied automatically via our link",
       "Covers Moshy weight loss cost and subscription pricing",
       "Moshy vs Juniper comparison",
       "Treatment eligibility explained",

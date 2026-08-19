@@ -78,10 +78,10 @@ export default function MoshyLanding() {
                   ["Format", "Online eligibility → practitioner review → delivery"],
                   ["Medication", "Treatment access if clinically appropriate"],
                   ["Pricing", "Subscription, confirmed in the consult"],
-                  ["Discount", "$120 off your first order (code REFERRAL120), via our link"],
+                  ["Discount code", "REFERRAL120, for $120 off your first order, via our link"],
                 ].map(([k, v]) => (
                   <div key={k} className="flex gap-3 py-2.5">
-                    <dt className="w-24 shrink-0 text-[#9aa39c]">{k}</dt>
+                    <dt className="w-28 shrink-0 text-[#9aa39c]">{k}</dt>
                     <dd className="text-[#2b362f]">{v}</dd>
                   </div>
                 ))}
