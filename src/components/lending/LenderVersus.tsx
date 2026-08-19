@@ -111,8 +111,8 @@ export default function LenderVersus({ cfg }: { cfg: LenderComparison }) {
       {/* Related */}
       <section className="mt-12 flex flex-wrap gap-x-6 gap-y-2 border-t border-[#eef1ef] pt-8 text-sm">
         <Link href="/business-loans" className="font-semibold text-[#0a7c42] hover:text-[#086536]">Compare all business lenders</Link>
-        <Link href={`/business-loans/${a.slug}`} className="font-semibold text-[#0a7c42] hover:text-[#086536]">{a.name} review</Link>
-        <Link href={`/business-loans/${b.slug}`} className="font-semibold text-[#0a7c42] hover:text-[#086536]">{b.name} review</Link>
+        <Link href={`/business-loans/${a.slug}/review`} className="font-semibold text-[#0a7c42] hover:text-[#086536]">{a.name} review</Link>
+        <Link href={`/business-loans/${b.slug}/review`} className="font-semibold text-[#0a7c42] hover:text-[#086536]">{b.name} review</Link>
         <Link href="/true-cost-of-business-loans-australia" className="font-semibold text-[#6e7b74] hover:text-[#10251b]">The real cost of a business loan</Link>
       </section>
     </main>

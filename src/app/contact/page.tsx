@@ -1,15 +1,25 @@
 import { Mail, Calendar, ArrowRight, MapPin, Clock, FileCheck2 } from "lucide-react";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
-import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
+import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
 
 export const metadata = generateSEOMetadata(seoConfig.contact);
 
 const calendlyUrl = "https://calendly.com/jarred-referlabs/30min?month=2026-01";
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Refer Labs", item: SITE_URL },
+    { "@type": "ListItem", position: 2, name: "Contact", item: `${SITE_URL}/contact` },
+  ],
+};
+
 export default function Contact() {
   return (
     <ConsumerShell>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <main id="main-content" className="mx-auto max-w-5xl px-6 pb-24 pt-16 sm:px-8 lg:px-12">
         {/* Header */}
         <header className="text-center space-y-6 mb-16 rounded-[2rem] px-6 py-12 sm:px-10 sm:py-14">

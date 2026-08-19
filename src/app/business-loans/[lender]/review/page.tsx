@@ -6,6 +6,7 @@ import ConsumerShell from "@/components/consumer/ConsumerShell";
 import LeadForm from "@/components/lending/LeadForm";
 import CommissionDisclosure from "@/components/lending/CommissionDisclosure";
 import { LENDERS, getLender, hasHeadlineRate, type Lender } from "@/lib/lenders";
+import { LENDER_COMPARISONS } from "@/lib/lender-comparisons";
 import { label, LENDING_LAST_UPDATED } from "@/lib/lending-schema";
 
 const money = (n: number) => `$${n.toLocaleString("en-AU")}`;
@@ -78,6 +79,11 @@ export default async function LenderReviewPage({ params }: { params: Promise<{ l
     publisher: { "@type": "Organization", name: "Refer Labs", url: SITE_URL },
   };
 
+  const headToHeads = LENDER_COMPARISONS.filter((c) => c.a === l.slug || c.b === l.slug);
+
+  const siblings = LENDERS.filter((o) => o.slug !== l.slug).slice(0, 4);
+
+
   return (
     <ConsumerShell>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
@@ -146,6 +152,36 @@ export default async function LenderReviewPage({ params }: { params: Promise<{ l
           <div className="mt-4">
             <CommissionDisclosure variant="inline" />
           </div>
+        </section>
+
+        {/* The five lender reviews were dead ends in both directions: nothing on the
+            site linked to them and they linked nowhere. Both lists are derived from
+            the registries, so they stay correct as lenders and pairings change. */}
+        <section className="mt-12 rounded-2xl border border-[#e5e9e7] bg-[#f8faf9] p-6">
+          <h2 className="text-xs font-bold uppercase tracking-[0.12em] text-[#9aa39c]">Keep comparing</h2>
+
+          {headToHeads.length > 0 && (
+            <ul className="mt-3 space-y-2 text-sm">
+              {headToHeads.map((c) => (
+                <li key={c.slug}>
+                  <Link href={`/compare-business-lenders/${c.slug}`} className="font-semibold text-[#0a7c42] hover:underline">
+                    {getLender(c.a)?.name} vs {getLender(c.b)?.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          )}
+
+          <ul className="mt-4 flex flex-wrap gap-x-4 gap-y-2 text-sm">
+            <li><Link href="/business-loans" className="font-semibold text-[#0a7c42] hover:underline">All business lenders</Link></li>
+            {siblings.map((o) => (
+              <li key={o.slug}>
+                <Link href={`/business-loans/${o.slug}/review`} className="text-[#3d4b44] hover:text-[#0a7c42] hover:underline">
+                  {o.name} review
+                </Link>
+              </li>
+            ))}
+          </ul>
         </section>
       </main>
     </ConsumerShell>

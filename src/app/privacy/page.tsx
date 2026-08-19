@@ -1,13 +1,23 @@
 /* eslint-disable react/no-unescaped-entities */
-import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
+import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import Link from "next/link";
 
 export const metadata = generateSEOMetadata(seoConfig.privacy);
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Refer Labs", item: SITE_URL },
+    { "@type": "ListItem", position: 2, name: "Privacy Policy", item: `${SITE_URL}/privacy` },
+  ],
+};
+
 export default function Privacy() {
   return (
     <ConsumerShell>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <main id="main-content" className="mx-auto max-w-3xl px-5 pb-20 pt-12 sm:px-8 sm:pt-16">
         <nav className="mb-8 flex items-center gap-2 text-sm text-[#9aa39c]">
           <Link href="/" className="hover:text-[#0a7c42]">Refer Labs</Link>

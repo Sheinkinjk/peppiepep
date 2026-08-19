@@ -64,6 +64,7 @@ export default function LenderCards({ lenders = LENDERS }: { lenders?: Lender[] 
               >
                 See {l.name} <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
+              <Link href={`/business-loans/${l.slug}/review`} className="text-sm font-semibold text-[#0a7c42] hover:text-[#086536]">Read the review</Link>
               <a href="#enquire" className="text-sm font-semibold text-[#0a7c42] hover:text-[#086536]">Check eligibility</a>
             </div>
           </div>
