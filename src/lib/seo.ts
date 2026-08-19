@@ -504,11 +504,14 @@ export const seoConfig = {
     keywords: ["hair loss treatment cost australia", "mosh hair loss cost", "prescription hair loss treatment cost", "hair loss telehealth cost australia", "hair loss telehealth cost", "how much does hair loss treatment cost"],
   },
   deals: {
-    title: "Deals & Discount Codes Australia 2026 | Refer Labs",
+    // Leads with verification because that is the actual differentiator: most
+    // "[brand] discount code" results publish expired or invented codes. Every
+    // code here is read off the provider's own page and shows its own date.
+    title: "Verified Discount Codes Australia 2026: Every Code Dated | Refer Labs",
     description:
-      "Current, verified deals and discount codes from the providers Refer Labs compares: Moshy $120 off, Mosh 55% off, Apollo Energy $500 off, plus free trials. Checked against each provider. Some are affiliate links.",
+      "Verified Australian discount codes, each showing the date we last read it off the provider's own page: Moshy REFERRAL120 for $120 off, Mosh REFERAL55 for 55% off, Knose, PetsOnMe and more. No expired or invented codes.",
     url: `${SITE_URL}/deals`,
-    keywords: ["discount codes australia", "deals australia", "promo codes", "refer labs deals", "moshy discount code", "apollo energy discount"],
+    keywords: ["discount codes australia", "verified discount codes australia", "promo codes australia", "deals australia", "refer labs deals", "moshy discount code", "mosh discount code", "australian coupon codes"],
   },
   apolloEnergy: {
     title: "Apollo Energy Group: $500 Off a Home Battery | Refer Labs",

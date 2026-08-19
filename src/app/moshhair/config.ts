@@ -158,6 +158,10 @@ export const moshHairConfig: AffiliatePageConfig = {
       a: "Mosh's current new-customer offer is 55% off your first order, applied through the code REFERAL55. You don't need to enter it: every button on this page carries it into the Mosh sign-up page at getmosh.com.au automatically. Other codes circulating on coupon sites are frequently expired or unofficial; this is the current, verified offer. Offers can change, so this reflects the current new-customer discount, confirmed on Mosh's own sign-up page.",
     },
     {
+      q: "Is the Mosh discount only for your first order?",
+      a: "Yes. REFERAL55 takes 55% off your first Mosh order as a new-customer offer, so it applies to that first order rather than to every renewal. Mosh treatment runs as a subscription, and from the second order onward you pay the standard rate for whichever plan a registered practitioner considers appropriate after your consultation. Mosh confirms that price inside its own sign-up flow before you commit, and offers can change, so treat 55% as the current new-customer rate rather than a permanent price.",
+    },
+    {
       q: "Does Mosh have a promo code for hair loss treatment?",
       a: "Yes. The current promotion is 55% off your first order (code REFERAL55), applied automatically when you start through the link on this page. There is nothing to type. Offers change over time, so the amount shown is the current new-customer rate.",
     },

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { DEALS, VERIFIED_FULL } from "@/lib/offers";
+import { DEALS, VERIFIED_FULL, VERIFIED_DATE, formatVerifiedFull } from "@/lib/offers";
 
 /**
  * Structured, AI-extractable offers table (Provider / Saving / Code / Status /
@@ -12,7 +12,7 @@ import { DEALS, VERIFIED_FULL } from "@/lib/offers";
  * single-row table straight from a page config (not just the DEALS registry).
  * The Provider cell only links out when an href is given.
  */
-type OfferRow = { brand: string; href?: string; offer: string; code?: string };
+type OfferRow = { brand: string; href?: string; offer: string; code?: string; verified?: string };
 
 export default function OffersTable({
   deals = DEALS,
@@ -51,13 +51,14 @@ export default function OffersTable({
               <td className="px-4 py-3 font-semibold tabular-nums text-[#10251b]">{saving(d.offer)}</td>
               <td className="px-4 py-3 font-mono text-[13px]">{d.code ?? "No code needed"}</td>
               <td className="px-4 py-3"><span className="inline-flex items-center gap-1 font-medium text-[#0a7c42]">Active ✓</span></td>
-              <td className="px-4 py-3 whitespace-nowrap tabular-nums">{VERIFIED_FULL}</td>
+              <td className="px-4 py-3 whitespace-nowrap tabular-nums">{formatVerifiedFull(d.verified ?? VERIFIED_DATE)}</td>
             </tr>
           ))}
         </tbody>
       </table>
       <p className="border-t border-[#eef1ef] bg-[#f8faf9] px-4 py-2.5 text-xs text-[#6e7b74]">
-        Offers checked against each provider on {VERIFIED_FULL}. &ldquo;No code needed&rdquo; means the offer applies
+        Each offer shows the date we last read it off that provider’s own page, rather than a single site-wide
+        stamp, so you can see exactly how current each one is. &ldquo;No code needed&rdquo; means the offer applies
         automatically through our link. Offers can change; figures are indicative, not a guarantee. Some links are
         affiliate links, at no cost to you.
       </p>

@@ -129,6 +129,10 @@ export const moshyConfig: AffiliatePageConfig = {
       a: "The current Moshy discount code is REFERRAL120, worth $120 off a new customer's first order, verified against Moshy's own sign-up page on 17 August 2026. Moshy states the offer applies to new customers who purchase a practitioner-assigned weight-loss program, excluding dietitian, over-the-counter and meal-replacement plans, is one use per customer, and carries a minimum three-month commitment. You do not need to type it: when you click through from this page, Moshy's landing page carries the code into the sign-up flow automatically. Other Moshy codes circulating on coupon sites are frequently expired or unofficial and may not apply at checkout; REFERRAL120 for $120 off is the current, verified offer.",
     },
     {
+      q: "Is the Moshy discount only for your first order?",
+      a: "Yes. REFERRAL120 takes $120 off a new customer's first order and is one use per customer, so it applies once rather than to every month of the subscription. Moshy states the offer covers a practitioner-assigned weight-loss program with a minimum three-month commitment, and excludes dietitian, over-the-counter and meal-replacement plans. From the second order onward you pay Moshy's standard plan price, which the practitioner confirms inside the eligibility flow before you commit to anything. Verified against Moshy's own sign-up page on 17 August 2026.",
+    },
+    {
       q: "How much does Moshy cost per month?",
       a: "Moshy advertises its program from $229 a month* on its own site, checked 14 August 2026. Treat that as a starting figure rather than a quote: what you pay depends on the plan a registered practitioner considers appropriate after your eligibility check, and the exact cost is confirmed inside Moshy's own flow before you commit to anything. New customers get $120 off their first order through the link on this page, which Moshy states applies to eligible programs with a minimum three-month commitment. *Indicative only and subject to change: view the latest pricing on Moshy's own site before you sign up.",
     },
