@@ -91,7 +91,7 @@ export default function FAQPage() {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link
-                href="/how-we-research"
+                href="/about"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#0a7c42] text-sm font-bold text-white transition-colors hover:bg-[#086536]"
               >
                 How we research

@@ -50,14 +50,17 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Services */}
+          {/* For business. The three service links here named offerings that were
+              retired in Aug 2026 and each 308'd to /for-business from every page
+              on the site, leaking equity sitewide and advertising services we do
+              not provide. Replaced with the live destinations. */}
           <div>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-500 mb-5">Services</p>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-500 mb-5">For business</p>
             <ul className="space-y-3">
               {[
-                { href: "/services/affiliate-distribution", label: "Affiliate Distribution" },
-                { href: "/services/referral-programs",      label: "Referral Programs" },
-                { href: "/services/apac-expansion",         label: "APAC Expansion" },
+                { href: "/for-business",                 label: "Work With Us" },
+                { href: "/affiliate-programs-australia",  label: "Affiliate Programs AU" },
+                { href: "/business-loans",               label: "Business Loans" },
               ].map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="text-sm text-slate-400 transition-all hover:translate-x-0.5 hover:text-white">

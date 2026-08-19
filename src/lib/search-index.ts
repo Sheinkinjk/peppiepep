@@ -201,12 +201,6 @@ export const SEARCH_INDEX: SearchEntry[] = [
   { title: "Contact", href: "/contact", category: "Browse", kind: "Guide", keywords: "contact email get in touch support" },
   { title: "For business", href: "/for-business", category: "Browse", kind: "Category", keywords: "for business brands partner with us grow" },
   { title: "Get featured on a comparison", href: "/comparison-website", category: "Browse", kind: "Guide", keywords: "get featured listed comparison website partner brand" },
-  { title: "Growth services", href: "/services", category: "Browse", kind: "Category", keywords: "services growth distribution done with you" },
-  { title: "Affiliate distribution service", href: "/services/affiliate-distribution", category: "Browse", kind: "Guide", keywords: "affiliate distribution service program growth" },
-  { title: "Referral program service", href: "/services/referral-programs", category: "Browse", kind: "Guide", keywords: "referral program service build launch" },
-  { title: "APAC expansion service", href: "/services/apac-expansion", category: "Browse", kind: "Guide", keywords: "apac expansion australia market entry service" },
-  { title: "Partner activation service", href: "/services/partner-activation", category: "Browse", kind: "Guide", keywords: "partner activation service channel" },
-  { title: "Product distribution service", href: "/services/product-distribution", category: "Browse", kind: "Guide", keywords: "product distribution service reach" },
   { title: "Privacy policy", href: "/privacy", category: "Browse", kind: "Guide", keywords: "privacy policy data personal information collection" },
   { title: "Terms of service", href: "/terms", category: "Browse", kind: "Guide", keywords: "terms of service conditions legal" },
 ];
