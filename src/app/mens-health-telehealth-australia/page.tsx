@@ -120,7 +120,7 @@ export default function MensHealthTelehealthPage() {
                 className="inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-bold text-white transition-all hover:-translate-y-0.5 shadow-md"
                 style={{ background: CYAN, boxShadow: `0 8px 24px ${CYAN}25` }}
               >
-                Check eligibility on Moshy
+                Check eligibility on Moshy ($120 off first order)
                 <ArrowRight className="h-4 w-4" />
               </a>
               <p className="mt-3">
@@ -143,7 +143,7 @@ export default function MensHealthTelehealthPage() {
                 className="inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-bold text-white transition-all hover:-translate-y-0.5 shadow-md"
                 style={{ background: CYAN, boxShadow: `0 8px 24px ${CYAN}25` }}
               >
-                Start the Mosh consultation
+                Start the Mosh consultation (55% off first order)
                 <ArrowRight className="h-4 w-4" />
               </a>
               <p className="mt-3">

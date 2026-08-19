@@ -1,4 +1,5 @@
 import Link from "next/link";
+import HubOffer from "@/components/consumer/HubOffer";
 import { ArrowRight } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
@@ -132,6 +133,21 @@ export default function WeightLossHubPage() {
           </div>
         </section>
 
+        <HubOffer
+          logo="/logos/moshy.png"
+          logoAlt="Moshy logo"
+          badge="$120 off"
+          headline="New customers: $120 off your first Moshy order"
+          code="REFERRAL120"
+          appliesTo="Moshy states it applies to new customers on a practitioner-assigned weight-loss program, one use per customer, with a minimum three-month commitment, and excludes dietitian, over-the-counter and meal-replacement plans."
+          href={MOSHY_URL}
+          ctaLabel="Check eligibility on Moshy ($120 off)"
+          dataCta="hub-weight-loss-offer"
+          moreHref="/moshy"
+          moreLabel="More about the Moshy offer"
+          verified="2026-08-17"
+        />
+
         {/* Quiz */}
         <section className="mx-auto max-w-3xl px-5 pt-6 sm:px-8">
           <PathwayQuiz />
@@ -190,14 +206,15 @@ export default function WeightLossHubPage() {
           <div className="mt-8 flex flex-col items-start justify-between gap-5 rounded-2xl border border-[#0a7c42]/20 bg-[#0a7c42]/[0.05] px-7 py-6 sm:flex-row sm:items-center">
             <p className="max-w-xl text-[15px] leading-relaxed text-[#10251b]">
               If you are leaning toward the telehealth pathway, Moshy&apos;s eligibility check is the usual starting
-              point. About ten minutes, no commitment, and the referral applies automatically through our link.
+              point. About ten minutes and no commitment, and new customers get $120 off their first order with code
+              REFERRAL120, applied automatically through our link.
             </p>
             <a
               {...aff}
               data-cta="hub-weight-loss"
               className="group inline-flex shrink-0 items-center gap-2 rounded-full bg-[#0a7c42] px-6 py-3 text-sm font-semibold text-white shadow-[0_10px_30px_-8px_rgba(14,124,102,0.6)] transition-all hover:-translate-y-0.5 hover:bg-[#0a7c42]"
             >
-              Check eligibility on Moshy
+              Check eligibility on Moshy ($120 off)
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
             </a>
           </div>

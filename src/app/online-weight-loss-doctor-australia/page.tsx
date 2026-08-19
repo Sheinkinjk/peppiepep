@@ -136,7 +136,7 @@ export default function OnlineWeightLossDoctorAustraliaPage() {
               data-cta="doctor-hero"
               className="nw-btn shrink-0 whitespace-nowrap"
             >
-              Check your eligibility on Moshy <ArrowRight className="h-4 w-4" />
+              Check your eligibility on Moshy ($120 off first order) <ArrowRight className="h-4 w-4" />
             </a>
           </div>
 

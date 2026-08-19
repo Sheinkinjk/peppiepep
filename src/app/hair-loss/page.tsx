@@ -1,4 +1,5 @@
 import Link from "next/link";
+import HubOffer from "@/components/consumer/HubOffer";
 import { ArrowRight } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import MatchPrompt from "@/components/consumer/MatchPrompt";
@@ -98,6 +99,21 @@ export default function HairLossHubPage() {
           </div>
         </section>
 
+        <HubOffer
+          logo="/logos/mosh-tile.png"
+          logoAlt="Mosh logo"
+          badge="55% off"
+          headline="New customers: 55% off your first Mosh order"
+          code="REFERAL55"
+          appliesTo="It applies to your first order rather than to later renewals, and Mosh runs as a subscription after that. Any treatment is decided by a registered practitioner after your consultation and only where clinically appropriate."
+          href={MOSH_HAIR_URL}
+          ctaLabel="Start the Mosh consultation (55% off)"
+          dataCta="hub-hair-loss-offer"
+          moreHref="/moshhair"
+          moreLabel="More about the Mosh offer"
+          verified="2026-08-17"
+        />
+
         <section className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
           <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">
             First, which route are you on?
@@ -138,15 +154,16 @@ export default function HairLossHubPage() {
 
           <div className="mt-8 flex flex-col items-start justify-between gap-5 rounded-2xl border border-[#0a7c42]/20 bg-[#0a7c42]/[0.05] px-7 py-6 sm:flex-row sm:items-center">
             <p className="max-w-xl text-[15px] leading-relaxed text-[#10251b]">
-              For men leaning toward the clinical route, Mosh&apos;s online consultation is the usual starting point.
-              The referral applies automatically through our link.
+              For men leaning toward the clinical route, Mosh&apos;s online consultation is the usual starting point,
+              and new customers get 55% off their first order with code REFERAL55. The code applies automatically
+              through our link, so there is nothing to type.
             </p>
             <a
               {...aff}
               data-cta="hub-hair-loss"
               className="group inline-flex shrink-0 items-center gap-2 rounded-full bg-[#0a7c42] px-6 py-3 text-sm font-semibold text-white shadow-[0_10px_30px_-8px_rgba(14,124,102,0.6)] transition-all hover:-translate-y-0.5 hover:bg-[#0a7c42]"
             >
-              Start the Mosh consultation
+              Start the Mosh consultation (55% off)
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
             </a>
           </div>

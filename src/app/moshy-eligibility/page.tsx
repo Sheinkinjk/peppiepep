@@ -148,7 +148,7 @@ export default function MoshyEligibilityPage() {
             className="inline-flex items-center gap-2 rounded-xl px-6 py-3 text-sm font-bold text-white transition-all hover:-translate-y-0.5 shadow-lg"
             style={{ background: CYAN, boxShadow: `0 8px 32px ${CYAN}30` }}
           >
-            Start the Moshy eligibility check
+            Start the Moshy eligibility check ($120 off first order)
             <ArrowRight className="h-4 w-4" />
           </a>
         </div>

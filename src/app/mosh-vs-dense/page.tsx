@@ -157,7 +157,7 @@ export default function MoshVsDensePage() {
                 className="inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3.5 text-sm font-bold text-white shadow-lg transition-all hover:-translate-y-0.5"
                 style={{ background: GREEN, boxShadow: `0 6px 24px ${GREEN}30` }}
               >
-                Check eligibility on Mosh
+                Check eligibility on Mosh (55% off first order)
                 <ArrowRight className="h-4 w-4" />
               </a>
               <a
