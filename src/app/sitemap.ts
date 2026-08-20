@@ -25,6 +25,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: BASE,                         lastModified: FRESH,  changeFrequency: 'weekly',  priority: 1.0 },
     { url: `${BASE}/weight-loss`,        lastModified: TODAY,  changeFrequency: 'weekly',  priority: 0.95 },
     { url: `${BASE}/hair-loss`,          lastModified: TODAY,  changeFrequency: 'weekly',  priority: 0.9 },
+    // Skin & beauty (19 Aug 2026). Category live and indexed ahead of partners.
+    { url: `${BASE}/skin-and-beauty`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${BASE}/skin-and-beauty/retinol-vs-prescription-strength-australia`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE}/skin-and-beauty/led-face-mask-comparison-australia`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE}/skin-and-beauty/best-value-skincare-australia-cost-per-use`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE}/skin-and-beauty/acne-treatment-options-and-costs-australia`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE}/skin-and-beauty/anti-ageing-treatments-what-they-cost`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE}/skin-and-beauty/skincare-quiz`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.65 },
     { url: `${BASE}/for-business`,       lastModified: FRESH,  changeFrequency: 'monthly', priority: 0.7 },
     // Programmatic category hubs (auto-generated from the catalog)
     ...CATALOG.map((v) => ({

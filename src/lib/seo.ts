@@ -496,6 +496,60 @@ export const seoConfig = {
   },
   // finasterideAustralia / minoxidilAustralia seoConfig entries removed (Aug 2026):
   // the medicine-name pages are deleted and 301-redirect to /hair-loss via next.config.
+  // ─── Skin & beauty (Aug 2026) ────────────────────────────────────────────────
+  // Category built ahead of any partner. Note there is no "tretinoin" page: that
+  // molecule is Schedule 4 in Australia, so the comparison is framed as
+  // over-the-counter vs prescription-strength without naming the medicine.
+  skinAndBeauty: {
+    title: "Skin & Beauty Australia 2026: What Works and What It Costs | Refer Labs",
+    description:
+      "Independent guides to skincare and skin treatments in Australia: what over-the-counter actives do, what LED masks cost here, how to judge value per use, and what clinic treatments are priced at.",
+    url: `${SITE_URL}/skin-and-beauty`,
+    keywords: ["skincare australia", "skin treatments australia", "beauty australia 2026", "skincare guide australia", "skin care costs australia"],
+  },
+  retinolVsPrescription: {
+    title: "Retinol vs Prescription-Strength: The Australian Guide 2026 | Refer Labs",
+    description:
+      "How over-the-counter retinol differs from prescription-strength skin treatment in Australia: how each is accessed, what the strength difference means, and how to decide which route to explore.",
+    url: `${SITE_URL}/skin-and-beauty/retinol-vs-prescription-strength-australia`,
+    keywords: ["retinol australia", "retinol vs prescription australia", "retinol strength australia", "prescription skincare australia", "how to get prescription skincare australia"],
+  },
+  ledFaceMask: {
+    title: "LED Face Masks Australia 2026: What They Cost, Compared | Refer Labs",
+    description:
+      "LED face masks in Australia: the real AUD prices, why they cost more here than the US listing, what the wavelengths mean, and how to check a device is on the ARTG before buying.",
+    url: `${SITE_URL}/skin-and-beauty/led-face-mask-comparison-australia`,
+    keywords: ["led face mask australia", "led face mask price australia", "omnilux australia price", "red light therapy mask australia", "best led face mask australia"],
+  },
+  skincareCostPerUse: {
+    title: "Skincare Cost Per Use: What Australians Actually Pay 2026 | Refer Labs",
+    description:
+      "Judging skincare by cost per use instead of sticker price. How to work it out, why a $90 serum can be cheaper than a $30 one, and where the maths misleads you.",
+    url: `${SITE_URL}/skin-and-beauty/best-value-skincare-australia-cost-per-use`,
+    keywords: ["best value skincare australia", "skincare cost per use", "affordable skincare australia", "is expensive skincare worth it", "skincare value australia"],
+  },
+  acneTreatmentCosts: {
+    title: "Acne Treatment in Australia 2026: The Options and What They Cost | Refer Labs",
+    description:
+      "Acne treatment routes in Australia, from over-the-counter products to GP and dermatologist referral: how each pathway works, what Medicare covers, and what you pay.",
+    url: `${SITE_URL}/skin-and-beauty/acne-treatment-options-and-costs-australia`,
+    keywords: ["acne treatment australia", "acne treatment cost australia", "how to treat acne australia", "dermatologist acne australia cost", "acne gp australia"],
+  },
+  antiAgeingCosts: {
+    title: "Anti-Ageing Treatments Australia: What They Actually Cost 2026 | Refer Labs",
+    description:
+      "What anti-ageing treatments cost in Australia and why almost none publish a price. How clinics quote, what drives the number, and the questions to ask before you book.",
+    url: `${SITE_URL}/skin-and-beauty/anti-ageing-treatments-what-they-cost`,
+    keywords: ["anti ageing treatment cost australia", "anti wrinkle cost australia", "skin treatment prices australia", "cosmetic treatment cost australia", "laser skin treatment cost australia"],
+  },
+  skincareQuiz: {
+    title: "Skincare Quiz: Which Routine Fits You? | Refer Labs",
+    description:
+      "A short quiz that matches you to a skincare approach based on your priorities, budget and how much effort you want to spend. General information, not medical advice.",
+    url: `${SITE_URL}/skin-and-beauty/skincare-quiz`,
+    keywords: ["skincare quiz", "skincare routine quiz australia", "which skincare is right for me", "skincare routine builder australia"],
+  },
+
   hairLossTreatmentCost: {
     title: "Hair Loss Treatment Cost Australia 2026 | Refer Labs",
     description:

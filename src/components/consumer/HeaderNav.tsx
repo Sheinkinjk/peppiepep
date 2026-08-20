@@ -38,6 +38,15 @@ const GROUPS: Group[] = [
     ],
   },
   {
+    label: "Skin & Beauty",
+    items: [
+      { href: "/skin-and-beauty", label: "Start here", note: "What works, and what it costs in Australia" },
+      { href: "/skin-and-beauty/led-face-mask-comparison-australia", label: "LED Face Masks", note: "Real Australian prices, and the ARTG check" },
+      { href: "/skin-and-beauty/acne-treatment-options-and-costs-australia", label: "Acne Routes & Costs", note: "Over the counter, GP, dermatologist" },
+      { href: "/skin-and-beauty/skincare-quiz", label: "Skincare Quiz", note: "Four questions, no health data" },
+    ],
+  },
+  {
     label: "Home & Energy",
     items: [
       { href: "/apollo-energy-group", label: "Home Batteries", note: "Apollo Energy Group, sized to your usage" },

@@ -18,6 +18,7 @@ const NAV = [
   { href: "/weight-loss", label: "Weight Loss" },
   { href: "/moshhair", label: "Mosh" },
   { href: "/hair-loss", label: "Hair Loss" },
+  { href: "/skin-and-beauty", label: "Skin & Beauty" },
   { href: "/pet-insurance", label: "Pets" },
   { href: "/apollo-energy-group", label: "Home Batteries" },
   { href: "/business-software", label: "Business" },
