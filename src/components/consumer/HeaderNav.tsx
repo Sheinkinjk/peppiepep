@@ -37,18 +37,6 @@ const GROUPS: Group[] = [
       { href: "/hair-loss-quiz", label: "Which option fits you?", note: "A 30-second match" },
     ],
   },
-  // Sections built ahead of their partners live together under one heading
-  // rather than as separate top-level groups. Two half-empty categories in the
-  // nav reads as an unfinished site; one honest "Coming soon" reads as a
-  // roadmap. Each becomes its own group when it has a checked provider.
-  {
-    label: "Coming Soon",
-    items: [
-      { href: "/coming-soon", label: "What's Coming", note: "The sections we're building, and when" },
-      { href: "/skin-and-beauty", label: "Skin & Beauty", note: "Actives, device prices, and the prescription route" },
-      { href: "/sleep", label: "Sleep", note: "Apnoea diagnosis, CPAP costs, mattresses" },
-    ],
-  },
   {
     label: "Home & Energy",
     items: [
@@ -77,6 +65,18 @@ const GROUPS: Group[] = [
       { href: "/best-ai-sales-tools", label: "Sales, CRM & Outreach", note: "GoHighLevel, Pipedrive, Reply.io" },
       { href: "/affiliate-programs-australia", label: "Affiliate Programs", note: "The best programs to join in 2026" },
       { href: "/for-business", label: "Partner with us", note: "Get discovered, generate leads, build distribution" },
+    ],
+  },
+  // Sections built ahead of their partners live together under one heading
+  // rather than as separate top-level groups. Two half-empty categories in the
+  // nav reads as an unfinished site; one honest "Coming soon" reads as a
+  // roadmap. Each becomes its own group when it has a checked provider.
+  {
+    label: "Coming Soon",
+    items: [
+      { href: "/coming-soon", label: "What's Coming", note: "The sections we're building, and when" },
+      { href: "/skin-and-beauty", label: "Skin & Beauty", note: "Actives, device prices, and the prescription route" },
+      { href: "/sleep", label: "Sleep", note: "Apnoea diagnosis, CPAP costs, mattresses" },
     ],
   },
 ];

@@ -18,10 +18,10 @@ const NAV = [
   { href: "/weight-loss", label: "Weight Loss" },
   { href: "/moshhair", label: "Mosh" },
   { href: "/hair-loss", label: "Hair Loss" },
-  { href: "/coming-soon", label: "Coming Soon" },
   { href: "/pet-insurance", label: "Pets" },
   { href: "/apollo-energy-group", label: "Home Batteries" },
   { href: "/business-software", label: "Business" },
+  { href: "/coming-soon", label: "Coming Soon" },
 ];
 
 /**

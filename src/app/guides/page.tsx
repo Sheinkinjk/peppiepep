@@ -22,6 +22,7 @@ const hubs = [
   { href: "/knose-vs-petsonme", label: "Knose vs PetsOnMe", desc: "The two compared on published cover: benefit percentage, annual limits, excess and sub-limits." },
   { href: "/petsonme", label: "PetsOnMe: Cover & Code", desc: "The Accidental, Classic and Deluxe plans, the 80% benefit, and what the REFERLABS code actually discounts." },
   { href: "/pet-insurance", label: "Pets", desc: "Cover types, waiting periods and exclusions explained, plus current offers. General information, not advice." },
+  { href: "/coming-soon", label: "Coming Soon", desc: "The categories we are building before adding any provider, and what is already readable in each." },
   { href: "/skin-and-beauty", label: "Skin & Beauty", desc: "What skincare actives do, what devices cost here, and how the prescription route differs." },
   { href: "/sleep", label: "Sleep", desc: "Sleep apnoea diagnosis, CPAP costs, mattresses and trackers, separated properly." },
   { href: "/sleep/do-i-have-sleep-apnoea", label: "Do I Have Sleep Apnoea?", desc: "How it is diagnosed in Australia, and how to prepare for the GP appointment." },

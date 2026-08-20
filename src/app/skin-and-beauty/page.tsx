@@ -177,9 +177,10 @@ export default function SkinAndBeautyHub() {
               Other categories
             </h2>
             <p className="mt-2 text-sm leading-relaxed text-[#3d4b44]">
-              The rest of our health coverage, where the comparisons and current offers are already live.
+              Sleep is being built alongside this one. The rest already have their comparisons and current offers in place.
             </p>
             <ul className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold">
+              <li><Link href="/sleep" className="text-[#0a7c42] hover:underline">Sleep</Link></li>
               <li><Link href="/weight-loss" className="text-[#0a7c42] hover:underline">Weight loss</Link></li>
               <li><Link href="/hair-loss" className="text-[#0a7c42] hover:underline">Hair loss</Link></li>
               <li><Link href="/pet-insurance" className="text-[#0a7c42] hover:underline">Pets</Link></li>
