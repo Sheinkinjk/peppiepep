@@ -76,6 +76,7 @@ const sections = [
       { href: "/best-weight-loss-telehealth-australia", label: "Best Weight Loss Telehealth", desc: "Moshy vs Juniper, compared." },
       { href: "/best-hair-loss-treatment-australia", label: "Best Hair Loss Treatment", desc: "Clinical telehealth vs topical products." },
       { href: "/best-ai-sales-tools", label: "Best AI Sales Tools 2026", desc: "GoHighLevel, AiSDR, Reply.io and FullEnrich, by job." },
+        { href: "/what-pet-insurance-covers-australia", label: "What Pet Insurance Covers", desc: "Cover types, waiting periods and exclusions." },
     ],
   },
   {
@@ -100,6 +101,11 @@ const sections = [
       { href: "/business-loans-sole-traders-australia", label: "Sole Trader Business Loans", desc: "Same products, but the whole application rests on you personally." },
       { href: "/business-loans-hospitality-australia", label: "Hospitality Business Loans", desc: "Cafes, restaurants and food businesses: fit-out, equipment and seasonal swings." },
       { href: "/equipment-finance-instant-asset-write-off", label: "Equipment Finance & the Write-Off", desc: "Chattel mortgage vs lease, and how the instant asset write-off fits." },
+        { href: "/business-loans/prospa/review", label: "Prospa Review", desc: "What they fund, typical speed, and what to check." },
+        { href: "/business-loans/lumi/review", label: "Lumi Review", desc: "Larger facilities and total-repayment pricing." },
+        { href: "/business-loans/moula/review", label: "Moula Review", desc: "What they fund and who it suits." },
+        { href: "/business-loans/moneytech/review", label: "Moneytech Review", desc: "Where this lender fits." },
+        { href: "/business-loans/shift/review", label: "Shift Review", desc: "What they fund and who it suits." },
     ],
   },
   {
@@ -111,6 +117,9 @@ const sections = [
       { href: "/business-loans/prospa", label: "Prospa", desc: "ASX-listed, $5,000 to $500,000, funds within an hour. Wants a clean credit file." },
       { href: "/business-loans/moneytech", label: "Moneytech", desc: "$25,000 to $1 million from 13.95% p.a. Rate and limit both move with security." },
       { href: "/business-loans/shift", label: "Shift", desc: "Overdraft $10,000 to $2 million from 14.95% p.a. AFIA Code signatory." },
+        { href: "/compare-business-lenders/prospa-vs-lumi", label: "Prospa vs Lumi", desc: "Speed, loan size and how each prices." },
+        { href: "/compare-business-lenders/prospa-vs-moula", label: "Prospa vs Moula", desc: "Two non-bank lenders, side by side." },
+        { href: "/compare-business-lenders/lumi-vs-moula", label: "Lumi vs Moula", desc: "Facility size against approval speed." },
     ],
   },
   {
@@ -125,6 +134,15 @@ const sections = [
       { href: "/weight-loss-treatment-eligibility-australia", label: "Do You Qualify?", desc: "The eligibility criteria practitioners use, and how to check." },
       { href: "/mens-health-telehealth-australia", label: "Men's Health Telehealth", desc: "The wider category and its limits." },
       { href: "/weight-loss-telehealth-women-australia", label: "Weight Loss Telehealth for Women", desc: "Coaching-led vs clinical pathways, and how to choose." },
+        { href: "/cheapest-weight-loss-telehealth-australia", label: "Cheapest Weight Loss Telehealth", desc: "Where the price differences actually come from." },
+        { href: "/weight-loss-telehealth-cost-australia", label: "What Weight Loss Telehealth Costs", desc: "Consult fees, subscriptions and what is billed separately." },
+        { href: "/online-weight-loss-doctor-australia", label: "Seeing an Online Weight-Loss Doctor", desc: "How the telehealth assessment works." },
+        { href: "/online-weight-loss-programs-australia", label: "Online Programs, Untangled", desc: "Medical telehealth against coaching programs." },
+        { href: "/weight-loss-telehealth-men-australia", label: "Weight Loss Telehealth for Men", desc: "How the men’s services differ." },
+        { href: "/weight-loss-cost-calculator", label: "Weight-Loss Cost Calculator", desc: "Estimate the monthly and annual figure." },
+        { href: "/moshy-eligibility", label: "The Moshy Eligibility Check", desc: "What the questionnaire asks and why." },
+        { href: "/moshy-vs-pilot", label: "Moshy vs Pilot", desc: "The gender-neutral option against Eucalyptus’s men’s service." },
+        { href: "/getmoshy", label: "getmoshy.com.au", desc: "Confirming the official site and the fastest way in." },
     ],
   },
   {
@@ -163,6 +181,7 @@ const sections = [
       { href: "/online-hair-loss-treatment-australia", label: "Online Hair-Loss Treatment", desc: "How the telehealth assessment works, and what you can and can\u2019t get online." },
       { href: "/how-to-stop-hair-loss-australia", label: "How to Stop Hair Loss", desc: "Understanding the cause, what the evidence supports, and acting early." },
       { href: "/receding-hairline-treatment-australia", label: "Receding Hairline Treatment", desc: "What causes it, which treatments have real evidence, and why acting early matters." },
+        { href: "/mosh-vs-dense", label: "Mosh vs Dense", desc: "Clinical pathway or topical products." },
     ],
   },
   {
@@ -176,6 +195,9 @@ const sections = [
       { href: "/leadpages", label: "Leadpages", desc: "Landing pages built for lead capture, with A/B testing." },
       { href: "/landingi", label: "Landingi", desc: "No-code landing-page builder for marketers." },
       { href: "/carrd-vs-durable", label: "Carrd vs Durable AI", desc: "Cheap-and-simple vs AI-built business site." },
+        { href: "/carrd-vs-butternut", label: "Carrd vs Butternut AI", desc: "One-page simplicity against AI generation." },
+        { href: "/durable-vs-butternut", label: "Durable vs Butternut AI", desc: "Two AI builders compared." },
+        { href: "/website-builder-quiz", label: "Website Builder Quiz", desc: "Match a builder to what you are making." },
     ],
   },
   {
@@ -195,6 +217,7 @@ const sections = [
       { href: "/beehiiv", label: "beehiiv", desc: "Newsletter platform built for growth. Free to start." },
       { href: "/brevo", label: "Brevo", desc: "Email, SMS, automation and a CRM in one tool." },
       { href: "/activecampaign", label: "ActiveCampaign", desc: "Email marketing with a powerful automation builder." },
+        { href: "/newsletter-platform-quiz", label: "Newsletter Platform Quiz", desc: "Match a platform to your list and budget." },
     ],
   },
   {
@@ -210,6 +233,7 @@ const sections = [
       { href: "/fullenrich", label: "FullEnrich", desc: "Waterfall enrichment for verified emails and mobiles." },
       { href: "/keap", label: "Keap", desc: "Small-business CRM with sales and marketing automation." },
       { href: "/capsule", label: "Capsule", desc: "A simple CRM small teams actually keep using." },
+        { href: "/ai-sales-tools-quiz", label: "AI Sales Tools Quiz", desc: "Match a tool to the job you are hiring it for." },
     ],
   },
   {
@@ -244,6 +268,20 @@ const sections = [
     ],
   },
   {
+    label: "Coming Soon Categories",
+    description: "Sections we are researching before adding any provider. The guides are complete; nothing in them earns a commission yet.",
+    guides: [
+      { href: "/coming-soon", label: "What We're Building", desc: "The four categories in progress, and what is readable in each." },
+      { href: "/skin-and-beauty/skincare-quiz", label: "Skincare Quiz", desc: "Four questions on budget, effort and priority." },
+      { href: "/mens-health/mens-health-quiz", label: "Men's Health Quiz", desc: "Cost, privacy and consult preference. No health questions." },
+      { href: "/mens-health/sexual-wellness-products", label: "Sexual Wellness Products", desc: "The non-prescription retail category, kept separate from the clinical guides." },
+      { href: "/longevity/recovery", label: "Recovery", desc: "Ice baths and saunas: purchase price and the running cost nobody quotes." },
+      { href: "/longevity/recovery/recovery-setup-quiz", label: "Recovery Setup Quiz", desc: "Space, budget, climate and frequency." },
+      { href: "/longevity/diagnostics", label: "Diagnostics & Screening", desc: "What the tests cost, and what clinicians say about screening the well." },
+      { href: "/longevity/diagnostics/health-screening-quiz", label: "Health Screening Quiz", desc: "Whether preventive screening suits your situation." },
+    ],
+  },
+  {
     label: "Affiliate Programs",
     description: "Which Australian affiliate programs are worth promoting, what they pay, and how to start.",
     guides: [
@@ -252,6 +290,7 @@ const sections = [
       { href: "/recurring-affiliate-programs", label: "Recurring Commission Programs", desc: "Programs that pay every month a customer stays, not once." },
       { href: "/affiliate-earnings-calculator", label: "Earnings Calculator", desc: "Turn audience size, channel and niche into a realistic range, with the assumptions on show." },
       { href: "/how-to-start-affiliate-marketing-australia", label: "How to Start From Zero", desc: "The step-by-step path, from choosing a niche to first traffic." },
+        { href: "/how-we-make-money", label: "How We Make Money", desc: "Where our revenue comes from, and what it does not influence." },
     ],
   },
 ];

@@ -70,12 +70,16 @@ export default function ApolloLanding() {
                 </li>
               ))}
             </ul>
+            {/* The second button here read "Or go direct on Apollo" while pointing at
+                #register on this page, so the label promised an outbound route that
+                does not exist and the copy beneath repeated it. The outbound Apollo
+                landing was retired and enquiries are handled through this form, so
+                both are gone rather than relabelled. */}
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <a href="#register" className="nw-btn">Register your interest <ArrowRight className="h-4 w-4" /></a>
-              <ApolloCTA label="Or go direct on Apollo" size="md" loc="hero-direct" />
             </div>
             <p className="mt-4 text-xs text-[#9aa39c]">
-              $500 off applies whether you register here or go direct. No code needed.
+              $500 off is applied to your quote through this enquiry. No code needed.
             </p>
           </div>
 
