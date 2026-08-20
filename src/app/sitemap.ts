@@ -7,6 +7,9 @@ import { HAIR_LOSS_GUIDES } from '@/lib/hair-loss-guides';
 import { APOLLO_GUIDES } from '@/lib/apollo-guides';
 
 const BASE = process.env.NEXT_PUBLIC_SITE_URL || 'https://referlabs.com.au';
+// Deploy-trigger check, 19 Aug 2026: verifying git auto-deploy fires on a single
+// isolated push. Rapid consecutive pushes earlier today produced deploys for some
+// commits and not others.
 
 // Credible per-page lastmod tiers (avoids the "everything changed today" signal
 // that Google discounts). Bump the relevant tier when a page is genuinely edited.
