@@ -26,6 +26,15 @@ const STANDALONE_ROUTES = [
   // so these cover every child guide in the new sections, including ones not yet
   // built. Listing the sections rather than each page is what stops the
   // double-header this file warns about from returning with the next guide.
+  // Found by a sitewide sweep, not by anyone noticing: these render ConsumerShell
+  // but were never registered, so the legacy header stacked on top of their own
+  // nav. Three are pet money pages. Worth re-running that sweep after any new
+  // ConsumerShell page rather than trusting this list to stay complete.
+  "/petsonme",
+  "/best-pet-insurance-australia",
+  "/knose-vs-petsonme",
+  "/mosh-review",
+  "/weight-loss-treatment-eligibility-australia",
   "/coming-soon",
   "/skin-and-beauty",
   "/sleep",
