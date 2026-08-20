@@ -2242,7 +2242,7 @@ export const seoConfig = {
   },
 
   alidrop: {
-    title: "AliDrop Discount Code 2026: Dropshipping Tool | Refer Labs",
+    title: "AliDrop Discount Code 2026: US$1 for a 7-Day Trial | Refer Labs",
     description:
       "AliDrop discount code, promo and referral link, plus the current offer: the dropshipping tool for sourcing from AliExpress and Temu into Shopify.",
     url: `${SITE_URL}/alidrop`,
@@ -2267,7 +2267,7 @@ export const seoConfig = {
   leadpages: {
     title: "Leadpages Discount Code 2026: Landing Page Builder | Refer Labs",
     description:
-      "Leadpages offer: a 7-day free trial then 50% off your first month via our link. A lead-focused landing-page builder with A/B testing and a big template library.",
+      "Leadpages offer: a 7-day free trial, and 20% off if you pay annually, via our link. A lead-focused landing-page builder with A/B testing and a big template library.",
     url: `${SITE_URL}/leadpages`,
     keywords: [
       "leadpages discount code",
@@ -2288,7 +2288,7 @@ export const seoConfig = {
   },
 
   superfiliate: {
-    title: "Superfiliate Discount Code 2026: For Brands | Refer Labs",
+    title: "Superfiliate Discount Code 2026: 15% Off Monthly Fee | Refer Labs",
     description:
       "Superfiliate offer: new subscribers get 15% off the monthly fee via our link. A creator-led platform for brands to run affiliate, referral and creator programs.",
     url: `${SITE_URL}/superfiliate`,

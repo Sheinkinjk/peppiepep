@@ -8,7 +8,12 @@ export const leadpagesConfig: AffiliatePageConfig = {
   logo: "leadpages",
   badgeText: "Landing pages",
   affiliateUrl: LEADPAGES_URL,
-  offer: "7-day free trial, then 50% off your first month",
+  // Offer read off Leadpages' own landing and pricing pages, 20 August 2026.
+  // The previous "50% off your first month" could not be corroborated anywhere on
+  // their site and their landing states a different offer, so it was removed. If a
+  // negotiated affiliate-exclusive discount exists, restore it with the source and
+  // date recorded here rather than as a bare claim.
+  offer: "7-day free trial; 20% off annual billing",
 
   quickAnswer:
     "Leadpages is a landing-page and lead-generation builder with built-in A/B testing and conversion tools. You build pages from a large template library, add lead-capture forms, pop-ups and alert bars, connect your email and CRM tools, and test variants to lift conversion. It suits marketers, coaches and small businesses whose main goal is capturing leads, not just publishing a website. Leadpages offers a 7-day free trial, with paid plans from US$49 the first month, then US$99/month.",
@@ -99,7 +104,7 @@ export const leadpagesConfig: AffiliatePageConfig = {
   faqs: [
     {
       q: "Is there a Leadpages discount code?",
-      a: "Leadpages doesn't rely on a typed code. The current offer is a 7-day free trial, then 50% off your first month, applied when you start through the link on this page. Other codes circulating on coupon sites are frequently expired or unofficial; this is the current, verified offer via our link. Offers can change, so treat this as the current new-customer offer.",
+      a: "Leadpages doesn't rely on a typed code. The current offer is a 7-day free trial, and Leadpages publishes 20% off when you pay annually, applied when you start through the link on this page. Other codes circulating on coupon sites are frequently expired or unofficial; this is the current, verified offer via our link. Offers can change, so treat this as the current new-customer offer.",
     },
     {
       q: "What is Leadpages?",

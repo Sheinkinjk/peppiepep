@@ -62,19 +62,19 @@ export const DEALS: Deal[] = [
   { brand: "Moshy", logo: "/logos/moshy.png", href: "/moshy", offer: "$120 off your first order", code: "REFERRAL120", category: "Weight loss", featured: true, verified: "2026-08-17" },
   { brand: "Mosh", logo: "/logos/mosh-tile.png", href: "/moshhair", offer: "55% off your first order", code: "REFERAL55", category: "Hair loss", featured: true, verified: "2026-08-17" },
   { brand: "Apollo Energy Group", logo: "/logos/apollo-energy.png", href: "/apollo-energy-group", offer: "$500 off your quote, on top of any rebate", category: "Home batteries", featured: true },
-  { brand: "Leadpages", logo: "/logos/leadpages.png", href: "/leadpages", offer: "50% off your first month", category: "Landing pages", featured: true },
-  { brand: "Superfiliate", logo: "/logos/superfiliate.png", href: "/superfiliate", offer: "15% off your monthly fee", category: "Creator growth", featured: true },
+  { brand: "Leadpages", logo: "/logos/leadpages.png", href: "/leadpages", offer: "7-day free trial; 20% off annual billing", category: "Landing pages", featured: true },
+  { brand: "Superfiliate", logo: "/logos/superfiliate.png", href: "/superfiliate", offer: "15% off your monthly SaaS fee", category: "Creator growth", featured: true, verified: "2026-08-20" },
 
   { brand: "Knose", logo: "/logos/knose.svg", href: "/knose", offer: "2 months free for new customers", code: "referlab2mf", category: "Pets", featured: true },
   { brand: "PetsOnMe", logo: "/logos/petsonme.svg", href: "/petsonme", offer: "15% off pet care services, up from 12% (not the premium)", code: "REFERLABS", category: "Pets", featured: true, verified: "2026-08-17" },
 
   { brand: "Carrd", logo: "/logos/carrd.png", href: "/carrd", offer: "Free plan forever; Pro from US$9/yr", category: "Website builders" },
-  { brand: "beehiiv", logo: "/logos/beehiiv.png", href: "/best-newsletter-platform", offer: "Free plan, no revenue cut", category: "Newsletters" },
-  { brand: "Brevo", logo: "/logos/brevo.png", href: "/brevo", offer: "Free plan forever, no card", category: "Email marketing" },
+  { brand: "beehiiv", logo: "/logos/beehiiv.png", href: "/best-newsletter-platform", offer: "Free plan, no revenue cut", category: "Newsletters", verified: "2026-08-20" },
+  { brand: "Brevo", logo: "/logos/brevo.png", href: "/brevo", offer: "Free plan forever, no card", category: "Email marketing", verified: "2026-08-20" },
   { brand: "Pipedrive", logo: "/logos/pipedrive.png", href: "/pipedrive", offer: "14-day free trial, no card", category: "CRM" },
-  { brand: "GoHighLevel", logo: "/logos/gohighlevel.png", href: "/best-ai-sales-tools", offer: "14-day free trial, no card", category: "Sales & CRM" },
-  { brand: "ElevenLabs", logo: "/logos/elevenlabs.png", href: "/elevenlabs", offer: "Free plan (10,000 credits/month)", category: "AI tools" },
-  { brand: "AliDrop", logo: "/logos/alidrop.png", href: "/alidrop", offer: "US$1 for a 7-day trial", category: "E-commerce" },
+  { brand: "GoHighLevel", logo: "/logos/gohighlevel.png", href: "/best-ai-sales-tools", offer: "14-day free trial, no card", category: "Sales & CRM", verified: "2026-08-20" },
+  { brand: "ElevenLabs", logo: "/logos/elevenlabs.png", href: "/elevenlabs", offer: "Free plan (10,000 credits/month)", category: "AI tools", verified: "2026-08-20" },
+  { brand: "AliDrop", logo: "/logos/alidrop.png", href: "/alidrop", offer: "US$1 for a 7-day trial", category: "E-commerce", verified: "2026-08-20" },
 ];
 
 export const FEATURED_DEALS = DEALS.filter((d) => d.featured);
