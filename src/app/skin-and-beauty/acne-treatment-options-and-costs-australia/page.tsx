@@ -1,4 +1,4 @@
-import SkinGuideShell from "@/components/consumer/SkinGuideShell";
+import SectionGuideShell from "@/components/consumer/SectionGuideShell";
 import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
 
 export const metadata = generateSEOMetadata(seoConfig.acneTreatmentCosts);
@@ -40,11 +40,16 @@ const faqs = [
 
 export default function Page() {
   return (
-    <SkinGuideShell
+    <SectionGuideShell
+      section="Skin and beauty"
+      sectionHref="/skin-and-beauty"
       slug="/skin-and-beauty/acne-treatment-options-and-costs-australia"
       crumb="Acne: routes and costs"
       h1={<>Acne treatment in Australia: <span className="italic text-[#0a7c42]">the routes, and what each costs</span></>}
       intro="Acne is treated through three different access routes in Australia, and they differ more in cost structure than most people expect. This sets out how each works, where Medicare applies, and what to ask before you commit to a private fee."
+      headline="Acne treatment in Australia: the options and what they cost"
+      description={seoConfig.acneTreatmentCosts.description}
+      updated="2026-08-19"
       faqs={faqs}
       related={[
         { href: "/skin-and-beauty/retinol-vs-prescription-strength-australia", label: "Retinol vs prescription-strength" },
@@ -119,6 +124,6 @@ export default function Page() {
           individually, and only they can say what is appropriate for you.
         </p>
       </section>
-    </SkinGuideShell>
+    </SectionGuideShell>
   );
 }

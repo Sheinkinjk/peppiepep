@@ -496,6 +496,62 @@ export const seoConfig = {
   },
   // finasterideAustralia / minoxidilAustralia seoConfig entries removed (Aug 2026):
   // the medicine-name pages are deleted and 301-redirect to /hair-loss via next.config.
+  // ─── Sleep (Aug 2026) ────────────────────────────────────────────────────────
+  // /sleep/do-i-have-sleep-apnoea keeps the question as its slug because that is
+  // what people search, but the page explains the diagnostic pathway rather than
+  // scoring anyone. Software intended to diagnose or predict disease is a
+  // regulated medical device in Australia, and the TGA lists software-as-a-
+  // medical-device among its priority enforcement areas for 2026-27.
+  sleep: {
+    title: "Sleep in Australia 2026: What Better Sleep Costs | Refer Labs",
+    description:
+      "Independent guides to sleep in Australia: what mattresses and trackers actually cost, how a sleep study works and what Medicare covers, and the real price of CPAP equipment.",
+    url: `${SITE_URL}/sleep`,
+    keywords: ["sleep australia", "better sleep australia", "sleep health australia", "sleep cost australia", "sleep guide australia 2026"],
+  },
+  mattressComparison: {
+    title: "Mattress Buying in Australia 2026: How to Compare Properly | Refer Labs",
+    description:
+      "How to compare mattresses in Australia without relying on marketing: what the specifications mean, how trial periods and returns really work, and where the money goes.",
+    url: `${SITE_URL}/sleep/mattress-comparison-australia`,
+    keywords: ["mattress comparison australia", "best mattress australia", "mattress buying guide australia", "mattress trial period australia", "how to choose a mattress australia"],
+  },
+  sleepTrackers: {
+    title: "Sleep Trackers Australia 2026: What They Measure | Refer Labs",
+    description:
+      "What sleep trackers actually measure in Australia, the difference between a consumer wearable and a clinical sleep study, and what the numbers can and cannot tell you.",
+    url: `${SITE_URL}/sleep/sleep-tracker-comparison-australia`,
+    keywords: ["sleep tracker australia", "best sleep tracker australia", "sleep tracking accuracy", "wearable sleep tracker australia", "sleep tracker vs sleep study"],
+  },
+  sleepApnoeaPathway: {
+    title: "Do I Have Sleep Apnoea? How Australians Get Answers 2026 | Refer Labs",
+    description:
+      "How sleep apnoea is actually diagnosed in Australia: what a GP asks, how a sleep study is arranged, what Medicare covers, and how to prepare for the appointment.",
+    url: `${SITE_URL}/sleep/do-i-have-sleep-apnoea`,
+    keywords: ["do i have sleep apnoea", "sleep apnoea diagnosis australia", "sleep apnoea test australia", "sleep apnoea gp australia", "how to get tested for sleep apnoea australia"],
+  },
+  homeSleepTestCost: {
+    title: "Home Sleep Study Australia 2026: How It Works and What It Costs | Refer Labs",
+    description:
+      "Home sleep studies in Australia: how the referral works, the difference between home and lab testing, where Medicare rebates apply, and what you can be left out of pocket.",
+    url: `${SITE_URL}/sleep/home-sleep-test-australia-cost`,
+    keywords: ["home sleep study australia", "home sleep test cost australia", "sleep study cost australia", "sleep study medicare australia", "sleep study bulk billed australia"],
+  },
+  cpapCosts: {
+    title: "CPAP Costs in Australia 2026: Verified Prices | Refer Labs",
+    description:
+      "What CPAP equipment costs in Australia, with prices read off the manufacturer's own store and an Australian retailer, plus the ongoing consumable costs people miss.",
+    url: `${SITE_URL}/sleep/cpap-machine-costs-australia`,
+    keywords: ["cpap machine cost australia", "cpap price australia", "resmed airsense 11 price australia", "cpap machine australia", "cpap consumables cost australia"],
+  },
+  costOfGoodSleep: {
+    title: "What Does Good Sleep Actually Cost in Australia? 2026 | Refer Labs",
+    description:
+      "Costing sleep honestly: what the free changes are worth trying first, where spending genuinely helps, and how to work out whether a purchase is worth it over its lifespan.",
+    url: `${SITE_URL}/sleep/how-much-does-good-sleep-cost`,
+    keywords: ["cost of good sleep", "how much to spend on sleep australia", "sleep products worth it australia", "improve sleep australia cost"],
+  },
+
   // ─── Skin & beauty (Aug 2026) ────────────────────────────────────────────────
   // Category built ahead of any partner. Note there is no "tretinoin" page: that
   // molecule is Schedule 4 in Australia, so the comparison is framed as

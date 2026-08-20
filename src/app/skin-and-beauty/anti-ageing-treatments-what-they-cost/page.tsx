@@ -1,4 +1,4 @@
-import SkinGuideShell from "@/components/consumer/SkinGuideShell";
+import SectionGuideShell from "@/components/consumer/SectionGuideShell";
 import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
 
 export const metadata = generateSEOMetadata(seoConfig.antiAgeingCosts);
@@ -39,11 +39,16 @@ const faqs = [
 
 export default function Page() {
   return (
-    <SkinGuideShell
+    <SectionGuideShell
+      section="Skin and beauty"
+      sectionHref="/skin-and-beauty"
       slug="/skin-and-beauty/anti-ageing-treatments-what-they-cost"
       crumb="Anti-ageing pricing"
       h1={<>Anti-ageing treatments: <span className="italic text-[#0a7c42]">why nobody will tell you the price</span></>}
       intro="Search for what a cosmetic treatment costs in Australia and you will mostly find enquiry forms. That is not evasion by every clinic; there is a regulatory reason for it. Understanding why changes how you should ask."
+      headline="Anti-ageing treatments in Australia: what they actually cost"
+      description={seoConfig.antiAgeingCosts.description}
+      updated="2026-08-19"
       faqs={faqs}
       related={[
         { href: "/skin-and-beauty/led-face-mask-comparison-australia", label: "LED face masks" },
@@ -102,6 +107,6 @@ export default function Page() {
           before you are sitting in the chair.
         </p>
       </section>
-    </SkinGuideShell>
+    </SectionGuideShell>
   );
 }

@@ -25,6 +25,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: BASE,                         lastModified: FRESH,  changeFrequency: 'weekly',  priority: 1.0 },
     { url: `${BASE}/weight-loss`,        lastModified: TODAY,  changeFrequency: 'weekly',  priority: 0.95 },
     { url: `${BASE}/hair-loss`,          lastModified: TODAY,  changeFrequency: 'weekly',  priority: 0.9 },
+    // Sleep (19 Aug 2026). Category live and indexed ahead of partners.
+    { url: `${BASE}/sleep`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${BASE}/sleep/do-i-have-sleep-apnoea`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.75 },
+    { url: `${BASE}/sleep/home-sleep-test-australia-cost`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.72 },
+    { url: `${BASE}/sleep/cpap-machine-costs-australia`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.72 },
+    { url: `${BASE}/sleep/mattress-comparison-australia`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE}/sleep/sleep-tracker-comparison-australia`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE}/sleep/how-much-does-good-sleep-cost`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.68 },
     // Skin & beauty (19 Aug 2026). Category live and indexed ahead of partners.
     { url: `${BASE}/skin-and-beauty`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${BASE}/skin-and-beauty/retinol-vs-prescription-strength-australia`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },

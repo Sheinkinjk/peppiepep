@@ -1,4 +1,4 @@
-import SkinGuideShell from "@/components/consumer/SkinGuideShell";
+import SectionGuideShell from "@/components/consumer/SectionGuideShell";
 import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
 
 export const metadata = generateSEOMetadata(seoConfig.retinolVsPrescription);
@@ -37,11 +37,16 @@ const faqs = [
 
 export default function Page() {
   return (
-    <SkinGuideShell
+    <SectionGuideShell
+      section="Skin and beauty"
+      sectionHref="/skin-and-beauty"
       slug="/skin-and-beauty/retinol-vs-prescription-strength-australia"
       crumb="Retinol vs prescription-strength"
       h1={<>Retinol vs prescription-strength: <span className="italic text-[#0a7c42]">what actually separates them</span></>}
       intro="Both sit in the same family of vitamin A derivatives. The difference that matters to you is not the chemistry, it is how you get hold of each one, and what that says about how carefully it needs to be used."
+      headline="Retinol vs prescription-strength: the Australian guide"
+      description={seoConfig.retinolVsPrescription.description}
+      updated="2026-08-19"
       faqs={faqs}
       related={[
         { href: "/skin-and-beauty/acne-treatment-options-and-costs-australia", label: "Acne: routes and costs" },
@@ -118,6 +123,6 @@ export default function Page() {
           <li>Sun protection, which this whole category makes more important rather than less.</li>
         </ul>
       </section>
-    </SkinGuideShell>
+    </SectionGuideShell>
   );
 }

@@ -1,7 +1,7 @@
 import type { CSSProperties } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Check, Scale, Scissors, PawPrint, BatteryCharging, Landmark, LayoutGrid } from "lucide-react";
+import { ArrowRight, Check, Scale, Scissors, PawPrint, BatteryCharging, Landmark, LayoutGrid, Sparkles, Moon } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import SiteSearch from "@/components/consumer/SiteSearch";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
@@ -40,6 +40,24 @@ const categoryCards = [
     links: [
       { h: "/moshhair", l: "Mosh: the offer" },
       { h: "/best-hair-loss-treatment-australia", l: "Best treatment, compared" },
+    ],
+  },
+  {
+    href: "/skin-and-beauty", icon: Sparkles, title: "Skin & Beauty",
+    accent: "#7A5A8C", tint: "#F2ECF6",
+    note: "What the actives do, what devices really cost here, and how the prescription route differs.",
+    links: [
+      { h: "/skin-and-beauty/led-face-mask-comparison-australia", l: "LED masks: real prices" },
+      { h: "/skin-and-beauty/acne-treatment-options-and-costs-australia", l: "Acne: routes and costs" },
+    ],
+  },
+  {
+    href: "/sleep", icon: Moon, title: "Sleep",
+    accent: "#3D5A80", tint: "#E9EFF6",
+    note: "Where sleep is clinical and where it is retail, and what each actually costs.",
+    links: [
+      { h: "/sleep/do-i-have-sleep-apnoea", l: "How diagnosis works" },
+      { h: "/sleep/cpap-machine-costs-australia", l: "CPAP: verified prices" },
     ],
   },
   {

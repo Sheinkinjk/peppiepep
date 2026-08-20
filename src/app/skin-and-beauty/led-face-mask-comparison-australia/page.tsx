@@ -1,4 +1,4 @@
-import SkinGuideShell from "@/components/consumer/SkinGuideShell";
+import SectionGuideShell from "@/components/consumer/SectionGuideShell";
 import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
 
 export const metadata = generateSEOMetadata(seoConfig.ledFaceMask);
@@ -40,11 +40,16 @@ const faqs = [
 
 export default function Page() {
   return (
-    <SkinGuideShell
+    <SectionGuideShell
+      section="Skin and beauty"
+      sectionHref="/skin-and-beauty"
       slug="/skin-and-beauty/led-face-mask-comparison-australia"
       crumb="LED face masks"
       h1={<>LED face masks in Australia: <span className="italic text-[#0a7c42]">what they cost here</span></>}
       intro="At-home LED devices are one of the few skincare categories where the Australian price gap is large, visible and easy to misread. Here is what the numbers actually are, and what to check on a listing before you spend several hundred dollars."
+      headline="LED face masks in Australia: what they cost"
+      description={seoConfig.ledFaceMask.description}
+      updated="2026-08-19"
       faqs={faqs}
       related={[
         { href: "/skin-and-beauty/anti-ageing-treatments-what-they-cost", label: "Clinic treatment pricing" },
@@ -114,6 +119,6 @@ export default function Page() {
           <li><strong className="text-[#10251b]">Warranty and who honours it.</strong> An Australian seller and an overseas one are not the same proposition if the device fails.</li>
         </ul>
       </section>
-    </SkinGuideShell>
+    </SectionGuideShell>
   );
 }

@@ -19,6 +19,7 @@ const NAV = [
   { href: "/moshhair", label: "Mosh" },
   { href: "/hair-loss", label: "Hair Loss" },
   { href: "/skin-and-beauty", label: "Skin & Beauty" },
+  { href: "/sleep", label: "Sleep" },
   { href: "/pet-insurance", label: "Pets" },
   { href: "/apollo-energy-group", label: "Home Batteries" },
   { href: "/business-software", label: "Business" },

@@ -1,4 +1,4 @@
-import SkinGuideShell from "@/components/consumer/SkinGuideShell";
+import SectionGuideShell from "@/components/consumer/SectionGuideShell";
 import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
 
 export const metadata = generateSEOMetadata(seoConfig.skincareCostPerUse);
@@ -38,11 +38,16 @@ const faqs = [
 
 export default function Page() {
   return (
-    <SkinGuideShell
+    <SectionGuideShell
+      section="Skin and beauty"
+      sectionHref="/skin-and-beauty"
       slug="/skin-and-beauty/best-value-skincare-australia-cost-per-use"
       crumb="Cost per use"
       h1={<>Skincare value: <span className="italic text-[#0a7c42]">work in cost per use, not sticker price</span></>}
       intro="A $30 moisturiser you replace every six weeks is more expensive than a $90 one that lasts eight months. Sticker price hides that completely. Here is the arithmetic, and the three places it quietly lies to you."
+      headline="Skincare cost per use: what Australians actually pay"
+      description={seoConfig.skincareCostPerUse.description}
+      updated="2026-08-19"
       faqs={faqs}
       related={[
         { href: "/skin-and-beauty/retinol-vs-prescription-strength-australia", label: "Retinol vs prescription-strength" },
@@ -138,6 +143,6 @@ export default function Page() {
           you are weighing the prescription route.
         </p>
       </section>
-    </SkinGuideShell>
+    </SectionGuideShell>
   );
 }

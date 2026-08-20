@@ -47,6 +47,15 @@ const GROUPS: Group[] = [
     ],
   },
   {
+    label: "Sleep",
+    items: [
+      { href: "/sleep", label: "Start here", note: "The medical route and the retail one" },
+      { href: "/sleep/do-i-have-sleep-apnoea", label: "Sleep Apnoea", note: "How diagnosis actually works here" },
+      { href: "/sleep/cpap-machine-costs-australia", label: "CPAP Costs", note: "Verified Australian prices" },
+      { href: "/sleep/mattress-comparison-australia", label: "Mattresses", note: "What is actually checkable" },
+    ],
+  },
+  {
     label: "Home & Energy",
     items: [
       { href: "/apollo-energy-group", label: "Home Batteries", note: "Apollo Energy Group, sized to your usage" },
