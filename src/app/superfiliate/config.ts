@@ -128,6 +128,7 @@ export const superfiliateConfig: AffiliatePageConfig = {
   ],
 
   relatedLinks: [
+    { href: "/affiliate-software-australia", label: "Choosing affiliate software", desc: "The six questions that make two platform quotes comparable." },
     { href: "/affiliate-programs-australia", label: "Best affiliate programs Australia", desc: "For affiliates: the programs worth promoting, by category." },
     { href: "/for-business", label: "For Business", desc: "How brands grow with Refer Labs: partnerships and growth services." },
     { href: "/guides", label: "All Guides & Comparisons", desc: "Independent comparison guides across tools, health and business." },

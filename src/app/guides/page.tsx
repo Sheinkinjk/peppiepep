@@ -286,6 +286,7 @@ const sections = [
     description: "Which Australian affiliate programs are worth promoting, what they pay, and how to start.",
     guides: [
       { href: "/affiliate-programs-australia", label: "Best Affiliate Programs in Australia", desc: "The programs worth your time, sorted by category and payout." },
+  { href: "/affiliate-software-australia", label: "Affiliate & Referral Software", desc: "Choosing a platform to run your own program: the six questions that make quotes comparable." },
       { href: "/high-paying-affiliate-programs", label: "Highest Paying Programs", desc: "Twelve high-payout programs, what they typically pay, and the networks behind them." },
       { href: "/recurring-affiliate-programs", label: "Recurring Commission Programs", desc: "Programs that pay every month a customer stays, not once." },
       { href: "/affiliate-earnings-calculator", label: "Earnings Calculator", desc: "Turn audience size, channel and niche into a realistic range, with the assumptions on show." },

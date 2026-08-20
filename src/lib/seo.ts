@@ -504,6 +504,19 @@ export const seoConfig = {
     keywords: ["refer labs new sections", "refer labs coming soon", "australian comparison guides"],
   },
 
+  // Superfiliate is the business-software page that actually converts, and it had
+  // no roundup or decision page feeding it: /affiliate-programs-australia is about
+  // programs to JOIN, a different buyer entirely. This is criteria rather than a
+  // ranking, because Superfiliate is the only tool in the category we have checked
+  // and ranking tools we have not verified would be invented authority.
+  affiliateSoftware: {
+    title: "Affiliate & Referral Software in Australia 2026: How to Choose | Refer Labs",
+    description:
+      "Choosing software to run your own affiliate or referral program in Australia: what actually separates the platforms, why almost none publish a price, and the questions that make two quotes comparable.",
+    url: `${SITE_URL}/affiliate-software-australia`,
+    keywords: ["affiliate software australia", "referral software australia", "affiliate marketing software australia", "referral program software australia", "affiliate platform for brands australia", "how to run an affiliate program australia"],
+  },
+
   // ─── Longevity (Aug 2026) ────────────────────────────────────────────────────
   // Three sub-sections. Recovery is consumer hardware and is straightforward.
   // Diagnostics is not: whole-body MRI and biological-age testing are contested

@@ -128,6 +128,10 @@ const totalPrograms = categories.reduce((n, c) => n + c.programs.length, 0);
 const spokes = [
   { href: "/high-paying-affiliate-programs", title: "Highest paying affiliate programs", desc: "The high-commission niches, SaaS, hosting, finance and courses, with the biggest per-sale payouts." },
   { href: "/recurring-affiliate-programs", title: "Best recurring commission programs", desc: "Subscription and SaaS programs that pay you every month a customer stays. The most reliable income." },
+  // The other side of the same relationship: this page serves people looking for
+  // programs to join, and brands running one are a different buyer with a different
+  // query. Linking across gives that buyer somewhere to go.
+  { href: "/affiliate-software-australia", title: "Running your own affiliate program", desc: "For brands: how to choose the software, and the six questions that make quotes comparable." },
   { href: "/how-to-start-affiliate-marketing-australia", title: "How to start affiliate marketing in Australia", desc: "The beginner path: choose a niche, pick programs, build a platform, disclose properly, and drive traffic." },
 ];
 
