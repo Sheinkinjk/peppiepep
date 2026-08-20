@@ -124,7 +124,7 @@ export default function MoshReviewPage() {
             door. No waiting room and no referral letter to get started.
           </p>
           <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
-            Delivery is free, new customers get 55% off their first order through our link, and you see the plan and
+            Delivery is free, new customers get 55% off their first order with code REFERAL55, and you see the plan and
             price before you commit. The starting point is a quick online consultation that commits you to nothing.
           </p>
           <div className="pt-1">
@@ -185,7 +185,7 @@ export default function MoshReviewPage() {
           <div className="rounded-xl border px-6 py-5 mt-6" style={{ borderColor: `${CYAN}40`, background: `${CYAN}0A` }}>
             <p className="text-[#2b362f] text-sm sm:text-base leading-relaxed mb-4">
               The online consultation is free, takes a few minutes, and commits you to nothing. It is the quickest way to
-              find out whether treatment is appropriate for you, with 55% off your first order through our link.
+              find out whether treatment is appropriate for you, with 55% off your first order using code REFERAL55.
             </p>
             <Cta label="Start the Mosh consultation" loc="mid-cta" />
           </div>

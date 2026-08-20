@@ -126,7 +126,8 @@ export default function MoshyReviewPage() {
           </p>
           <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
             The starting point is a free eligibility check that takes about ten minutes and commits you to nothing.
-            That is the fastest way to see what Moshy would offer you.
+            That is the fastest way to see what Moshy would offer you. New customers get $120 off their first order
+              with code REFERRAL120, which our link applies for you.
           </p>
           <div className="pt-1">
             <Cta label="Start your free eligibility check" loc="short-version" />
@@ -208,7 +209,7 @@ export default function MoshyReviewPage() {
             source="deal-alert-moshy-review"
             interest="Moshy offer"
             heading="Not ready today? Get told when the Moshy offer changes."
-            sub="New customers can currently get $120 off. We'll email you if that changes, and nothing else."
+            sub="New customers can currently get $120 off with code REFERRAL120. We'll email you if that changes, and nothing else."
           />
         </div>
 
