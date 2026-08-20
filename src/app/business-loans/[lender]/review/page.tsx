@@ -27,6 +27,43 @@ export async function generateMetadata({ params }: { params: Promise<{ lender: s
   });
 }
 
+/**
+ * FAQs generated from the lender's own verified config rather than written per
+ * page. These eight pages carried no Q&A and no FAQPage schema at all, which on
+ * commercial lead-gen pages is the single biggest AEO gap on the site. Deriving
+ * them from lenders.ts means every answer is factually correct for that lender
+ * and stays correct when the data is updated, instead of drifting.
+ */
+function lenderFaqs(l: Lender): { q: string; a: string }[] {
+  const rate = hasHeadlineRate(l)
+    ? `${l.name} advertises ${l.advertisedRateFrom}, as at ${l.rateAsAt}.`
+    : `${l.name} does not publish a headline rate, so pricing is quote-based and confirmed after assessment.`;
+  return [
+    {
+      q: `How much can you borrow from ${l.name}?`,
+      a: `${l.name} funds from ${money(l.minAmount)} to ${money(l.maxAmount)}. What you are offered inside that range depends on their assessment of your business, not on the maximum. Figures are from ${l.name}'s own published information; confirm current terms on their site before applying.`,
+    },
+    {
+      q: `What are ${l.name}'s eligibility requirements?`,
+      a: `${l.name} looks for a minimum of ${l.minTradingMonths} months trading and around ${money(l.minMonthlyRevenue)} a month in revenue. Those are thresholds to get assessed rather than a guarantee of approval, and each lender weighs the rest of your file differently.`,
+    },
+    {
+      q: `How fast is ${l.name}?`,
+      a: `${l.name} indicates ${l.speed.toLowerCase()}. Speed assumes a clean, complete application; missing documents are the usual reason a fast lender turns out not to be fast for a particular borrower.`,
+    },
+    {
+      q: `What does ${l.name} charge?`,
+      a: `${rate}${l.establishmentFee ? ` An establishment fee of ${l.establishmentFee} is published.` : " No establishment fee is published, so ask what fees apply."} The figure that matters is the total cost of the facility rather than the headline rate, so ask for the full repayment amount before you commit.`,
+    },
+    {
+      q: `Is ${l.name} a signatory to the AFIA code?`,
+      a: l.afiaCodeSignatory
+        ? `Yes. ${l.name} is a signatory to the AFIA Online Small Business Lender Code of Practice, which sets standards for disclosure and conduct. You can verify current signatories on AFIA's own site.`
+        : `Not according to our records. That is not a judgement about ${l.name}, and it does mean the code's disclosure standards do not automatically apply. Check AFIA's current signatory list yourself.`,
+    },
+  ];
+}
+
 // Editorial framing DERIVED from the config numbers — not fabricated claims or ratings.
 function suitsWho(l: Lender): string[] {
   const out: string[] = [];
@@ -57,6 +94,7 @@ export default async function LenderReviewPage({ params }: { params: Promise<{ l
   if (!l) notFound();
 
   const url = `${SITE_URL}/business-loans/${l.slug}/review`;
+  const faqs = lenderFaqs(l);
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -88,6 +126,20 @@ export default async function LenderReviewPage({ params }: { params: Promise<{ l
     <ConsumerShell>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqs.map((f) => ({
+              "@type": "Question",
+              name: f.q,
+              acceptedAnswer: { "@type": "Answer", text: f.a },
+            })),
+          }),
+        }}
+      />
 
       <main className="mx-auto max-w-3xl px-5 py-10 sm:px-8 sm:py-14">
         <nav className="text-xs text-[#6e7b74]">
@@ -157,6 +209,18 @@ export default async function LenderReviewPage({ params }: { params: Promise<{ l
         {/* The five lender reviews were dead ends in both directions: nothing on the
             site linked to them and they linked nowhere. Both lists are derived from
             the registries, so they stay correct as lenders and pairings change. */}
+        <section className="mt-12">
+          <h2 className="text-2xl font-extrabold text-[#10251b]">Common questions</h2>
+          <dl className="mt-5 divide-y divide-[#eef1ef] rounded-2xl border border-[#e5e9e7] bg-white">
+            {faqs.map((f) => (
+              <div key={f.q} className="px-5 py-5">
+                <dt className="text-[15px] font-bold text-[#10251b]">{f.q}</dt>
+                <dd className="mt-2 text-sm leading-relaxed text-[#3d4b44]">{f.a}</dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+
         <section className="mt-12 rounded-2xl border border-[#e5e9e7] bg-[#f8faf9] p-6">
           <h2 className="text-xs font-bold uppercase tracking-[0.12em] text-[#9aa39c]">Keep comparing</h2>
 
