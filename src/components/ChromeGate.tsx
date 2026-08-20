@@ -36,6 +36,7 @@ const STANDALONE_ROUTES = [
   "/mosh-review",
   "/weight-loss-treatment-eligibility-australia",
   "/coming-soon",
+  "/longevity",
   "/mens-health",
   "/skin-and-beauty",
   "/sleep",

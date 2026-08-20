@@ -504,6 +504,118 @@ export const seoConfig = {
     keywords: ["refer labs new sections", "refer labs coming soon", "australian comparison guides"],
   },
 
+  // ─── Longevity (Aug 2026) ────────────────────────────────────────────────────
+  // Three sub-sections. Recovery is consumer hardware and is straightforward.
+  // Diagnostics is not: whole-body MRI and biological-age testing are contested
+  // in the Australian medical community, so those pages carry the criticism
+  // rather than the marketing. Supplements makes no therapeutic claim at all,
+  // because claims on listed medicines are what the TGA polices hardest here.
+  longevityHub: {
+    title: "Longevity in Australia 2026: What It Costs and What Holds Up | Refer Labs",
+    description:
+      "Independent guides to the longevity market in Australia: recovery hardware and its running costs, what screening and diagnostics actually cost, and how to read the evidence behind supplements.",
+    url: `${SITE_URL}/longevity`,
+    keywords: ["longevity australia", "longevity clinic australia", "biohacking australia", "longevity cost australia"],
+  },
+  recoveryHub: {
+    title: "Recovery in Australia 2026: Ice Baths, Saunas and Real Costs | Refer Labs",
+    description:
+      "Ice baths and saunas in Australia: what the units cost, what they cost to run each year, and what the evidence does and does not support.",
+    url: `${SITE_URL}/longevity/recovery`,
+    keywords: ["ice bath australia", "home sauna australia", "recovery australia", "cold plunge australia"],
+  },
+  iceBathComparison: {
+    title: "Ice Baths in Australia 2026: How to Compare Them | Refer Labs",
+    description:
+      "Comparing ice baths and cold plunges in Australia: chiller capacity, insulation, filtration and what separates a $1,000 setup from a $10,000 one.",
+    url: `${SITE_URL}/longevity/recovery/ice-bath-comparison-australia`,
+    keywords: ["ice bath australia", "cold plunge australia", "best ice bath australia", "ice bath comparison australia", "ice bath chiller australia"],
+  },
+  iceBathRunningCosts: {
+    title: "Ice Bath Running Costs in Australia 2026: The Real Numbers | Refer Labs",
+    description:
+      "What an ice bath actually costs to run in Australia each year: chiller electricity worked from your own tariff, water, filtration and consumables, plus how it compares to buying bagged ice.",
+    url: `${SITE_URL}/longevity/recovery/ice-bath-running-costs-australia`,
+    keywords: ["ice bath running cost australia", "cold plunge electricity cost australia", "ice bath chiller running cost", "how much does an ice bath cost to run"],
+  },
+  saunaComparison: {
+    title: "Infrared vs Traditional Sauna in Australia 2026 | Refer Labs",
+    description:
+      "How infrared and traditional saunas differ in Australia on installation, electrical requirements, running cost and what the evidence supports, without the marketing.",
+    url: `${SITE_URL}/longevity/recovery/infrared-vs-traditional-sauna-australia`,
+    keywords: ["infrared vs traditional sauna", "infrared sauna australia", "traditional sauna australia", "which sauna is better australia"],
+  },
+  homeSaunaCost: {
+    title: "Home Sauna Cost in Australia 2026: Purchase and Running | Refer Labs",
+    description:
+      "What a home sauna costs in Australia: unit price, the electrical work most quotes exclude, installation, and what it adds to your power bill each year.",
+    url: `${SITE_URL}/longevity/recovery/home-sauna-cost-australia`,
+    keywords: ["home sauna cost australia", "sauna price australia", "sauna installation cost australia", "sauna running cost australia"],
+  },
+  contrastTherapy: {
+    title: "Contrast Therapy: What the Evidence Actually Says 2026 | Refer Labs",
+    description:
+      "Hot and cold contrast therapy, assessed on evidence rather than marketing: what the research supports, where it is weak, and what that means before you spend.",
+    url: `${SITE_URL}/longevity/recovery/contrast-therapy-what-the-evidence-says`,
+    keywords: ["contrast therapy evidence", "hot cold therapy australia", "contrast therapy benefits", "does contrast therapy work"],
+  },
+  recoveryQuiz: {
+    title: "Recovery Setup Quiz: What Fits Your Space and Budget | Refer Labs",
+    description:
+      "A short quiz matching you to a recovery setup based on space, budget, climate and how often you would use it. General information, not medical advice.",
+    url: `${SITE_URL}/longevity/recovery/recovery-setup-quiz`,
+    keywords: ["recovery setup quiz", "ice bath or sauna", "home recovery australia"],
+  },
+  diagnosticsHub: {
+    title: "Health Diagnostics in Australia 2026: What They Cost and What They Find | Refer Labs",
+    description:
+      "Preventive screening and diagnostics in Australia: what whole-body MRI, biological-age testing and continuous glucose monitoring cost, and what the medical community says about each.",
+    url: `${SITE_URL}/longevity/diagnostics`,
+    keywords: ["health screening australia", "preventive health australia", "health diagnostics australia cost"],
+  },
+  screeningCompared: {
+    title: "Everlab vs Prenuvo vs i-screen in Australia 2026 | Refer Labs",
+    description:
+      "How Australia's preventive screening services differ on what they actually measure, how each is priced, whether a doctor reviews the result, and what happens when something incidental shows up.",
+    url: `${SITE_URL}/longevity/diagnostics/everlab-vs-prenuvo-vs-i-screen-australia`,
+    keywords: ["everlab australia", "prenuvo australia", "i-screen australia", "health screening compared australia", "preventive screening australia"],
+  },
+  wholeBodyMri: {
+    title: "Whole-Body MRI in Australia 2026: Cost and the Case Against | Refer Labs",
+    description:
+      "What whole-body MRI screening costs in Australia, why no Medicare rebate applies, and why Australian medical bodies are cautious about screening people with no symptoms.",
+    url: `${SITE_URL}/longevity/diagnostics/whole-body-mri-australia-cost`,
+    keywords: ["whole body mri australia cost", "prenuvo cost australia", "full body scan australia", "whole body mri medicare"],
+  },
+  biologicalAge: {
+    title: "Biological Age Testing in Australia 2026: Does It Mean Anything? | Refer Labs",
+    description:
+      "What biological age tests measure in Australia, why two tests can give you different ages from the same sample, and what the science does and does not currently support.",
+    url: `${SITE_URL}/longevity/diagnostics/biological-age-testing-australia`,
+    keywords: ["biological age test australia", "epigenetic age test australia", "biological age testing cost", "dna methylation test australia"],
+  },
+  cgmNonDiabetic: {
+    title: "CGM for Non-Diabetics in Australia 2026: Cost and Evidence | Refer Labs",
+    description:
+      "Continuous glucose monitors for people without diabetes in Australia: what they cost without a subsidy, how access works, and what the evidence supports for non-diabetic use.",
+    url: `${SITE_URL}/longevity/diagnostics/cgm-for-non-diabetics-australia`,
+    keywords: ["cgm for non diabetics australia", "continuous glucose monitor australia cost", "cgm without diabetes", "glucose monitor australia price"],
+  },
+  screeningQuiz: {
+    title: "Health Screening Quiz: Is Preventive Screening Worth It For You? | Refer Labs",
+    description:
+      "A short quiz on whether preventive screening suits your situation, based on budget and how you would handle an uncertain result. No health questions. Not medical advice.",
+    url: `${SITE_URL}/longevity/diagnostics/health-screening-quiz`,
+    keywords: ["health screening quiz", "should i get a full body scan", "preventive screening worth it australia"],
+  },
+  supplementsEvidence: {
+    title: "Longevity Supplements in Australia 2026: An Evidence Review | Refer Labs",
+    description:
+      "How to read the evidence behind longevity supplements sold in Australia, what AUST L on the label actually means, and why almost none of the headline claims survive scrutiny.",
+    url: `${SITE_URL}/longevity/supplements/longevity-supplements-evidence-review`,
+    keywords: ["longevity supplements australia", "anti ageing supplements australia", "supplement evidence australia", "aust l meaning australia"],
+  },
+
   // ─── Men's health (Aug 2026) ─────────────────────────────────────────────────
   // Contained under /mens-health/ with a clinical register throughout. Conditions
   // are named because a condition is not a medicine; no medicine, molecule or

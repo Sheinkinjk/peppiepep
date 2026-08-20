@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Sparkles, Moon, Stethoscope } from "lucide-react";
+import { ArrowRight, Sparkles, Moon, Stethoscope, Activity } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
@@ -47,6 +47,20 @@ const SECTIONS = [
       { h: "/mens-health/erectile-dysfunction-treatment-cost-australia", l: "What the routes cost" },
       { h: "/mens-health/is-telehealth-or-a-gp-cheaper-for-mens-health", l: "Telehealth or a GP?" },
       { h: "/mens-health/mens-health-quiz", l: "Which route fits you?" },
+    ],
+  },
+  {
+    href: "/longevity",
+    icon: Activity,
+    accent: "#8A6A3B",
+    tint: "#F5EFE4",
+    title: "Longevity",
+    live: "Eleven guides, live now",
+    body: "Recovery hardware costed over three years rather than at the checkout, and the screening pages that carry what Australian clinicians say about scanning people who feel well. No health claim is made for anything.",
+    links: [
+      { h: "/longevity/recovery/ice-bath-running-costs-australia", l: "What an ice bath costs to run" },
+      { h: "/longevity/diagnostics/whole-body-mri-australia-cost", l: "Whole-body MRI: the case against" },
+      { h: "/longevity/supplements/longevity-supplements-evidence-review", l: "Supplements, reviewed" },
     ],
   },
   {
@@ -145,7 +159,7 @@ export default function ComingSoonPage() {
               What we&apos;re <span className="italic text-[#0a7c42]">building next</span>
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#2b362f]">
-              Three new categories are underway. The guides in each are finished and free to read today. What is still
+              Four new categories are underway. The guides in each are finished and free to read today. What is still
               missing is the provider comparison, which we add only once we have checked someone ourselves, so nothing
               in these sections earns us a commission yet.
             </p>
