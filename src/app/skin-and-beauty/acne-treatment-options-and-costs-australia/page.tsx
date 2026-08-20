@@ -30,7 +30,7 @@ const faqs = [
   },
   {
     q: "How much does a dermatologist cost in Australia for acne?",
-    a: "Dermatologists set their own fees and most do not publish them, so the honest answer is that it is quote-based and you should ask when booking. What you can establish in advance is the structure: ask the clinic for the consult fee, whether they bulk bill, what the item number is so you can look up the rebate, and what a follow-up appointment costs. Waiting lists in the public system can be long, which is often what pushes people toward private fees.",
+    a: "Dermatologists set their own fees and most do not publish them, so it is quote-based and you should ask when booking. What you can establish in advance is the structure: ask the clinic for the consult fee, whether they bulk bill, what the item number is so you can look up the rebate, and what a follow-up appointment costs. Waiting lists in the public system can be long, which is often what pushes people toward private fees.",
   },
   {
     q: "Are prescription acne treatments available online in Australia?",

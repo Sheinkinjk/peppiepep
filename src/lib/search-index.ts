@@ -15,6 +15,7 @@ export const SEARCH_INDEX: SearchEntry[] = [
   { title: "Hair loss treatment", href: "/hair-loss", category: "Health", kind: "Category", keywords: "hair regrowth balding thinning telehealth topical scalp" },
   { title: "Pet insurance", href: "/pet-insurance", category: "Insurance", kind: "Category", keywords: "pet insurance australia dog cat cover waiting period exclusions excess annual limit knose offers referrer" },
   { title: "Skin & beauty", href: "/skin-and-beauty", category: "Skin & beauty", kind: "Category", keywords: "skincare australia skin treatments beauty acne anti ageing led mask" },
+  { title: "Coming soon: what we are building", href: "/coming-soon", category: "Refer Labs", kind: "Guide", keywords: "coming soon new sections skin beauty sleep refer labs" },
   { title: "Sleep", href: "/sleep", category: "Sleep", kind: "Category", keywords: "sleep australia sleep apnoea cpap mattress sleep tracker sleep study" },
   { title: "Do I have sleep apnoea?", href: "/sleep/do-i-have-sleep-apnoea", category: "Sleep", kind: "Guide", keywords: "sleep apnoea diagnosis australia gp referral sleep study symptoms" },
   { title: "Home sleep study cost", href: "/sleep/home-sleep-test-australia-cost", category: "Sleep", kind: "Guide", keywords: "home sleep study australia cost medicare rebate referral bulk billed" },

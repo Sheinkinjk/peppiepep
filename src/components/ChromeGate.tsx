@@ -22,6 +22,13 @@ const STANDALONE_ROUTES = [
   "/",
   "/weight-loss",
   "/hair-loss",
+  // Prefix entries: the matcher below also tests `pathname.startsWith(route + "/")`,
+  // so these cover every child guide in the new sections, including ones not yet
+  // built. Listing the sections rather than each page is what stops the
+  // double-header this file warns about from returning with the next guide.
+  "/coming-soon",
+  "/skin-and-beauty",
+  "/sleep",
   "/for-business",
   "/compare",
   // Brand / affiliate review pages

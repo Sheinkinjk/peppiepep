@@ -25,6 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: BASE,                         lastModified: FRESH,  changeFrequency: 'weekly',  priority: 1.0 },
     { url: `${BASE}/weight-loss`,        lastModified: TODAY,  changeFrequency: 'weekly',  priority: 0.95 },
     { url: `${BASE}/hair-loss`,          lastModified: TODAY,  changeFrequency: 'weekly',  priority: 0.9 },
+    { url: `${BASE}/coming-soon`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.6 },
     // Sleep (19 Aug 2026). Category live and indexed ahead of partners.
     { url: `${BASE}/sleep`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${BASE}/sleep/do-i-have-sleep-apnoea`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.75 },

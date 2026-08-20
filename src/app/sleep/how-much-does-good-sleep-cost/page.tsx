@@ -45,7 +45,7 @@ export default function Page() {
       slug="/sleep/how-much-does-good-sleep-cost"
       crumb="What good sleep costs"
       h1={<>What does good sleep cost? <span className="italic text-[#0a7c42]">Start at zero</span></>}
-      intro="Sleep is marketed as something you buy. For most people the changes with the largest effect cost nothing, and the purchases only start earning their keep once those are in place. Here is the honest order to do it in."
+      intro="Sleep is marketed as something you buy. For most people the changes with the largest effect cost nothing, and the purchases only start earning their keep once those are in place. Here is the order to do it in."
       headline="What does good sleep actually cost in Australia?"
       description={seoConfig.costOfGoodSleep.description}
       updated="2026-08-19"

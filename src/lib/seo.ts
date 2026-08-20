@@ -496,6 +496,14 @@ export const seoConfig = {
   },
   // finasterideAustralia / minoxidilAustralia seoConfig entries removed (Aug 2026):
   // the medicine-name pages are deleted and 301-redirect to /hair-loss via next.config.
+  comingSoon: {
+    title: "What We're Building Next | Refer Labs",
+    description:
+      "The categories Refer Labs is researching before adding any provider: skin and beauty, and sleep. The guides are live and free to read; the comparisons follow once we have checked a provider ourselves.",
+    url: `${SITE_URL}/coming-soon`,
+    keywords: ["refer labs new sections", "refer labs coming soon", "australian comparison guides"],
+  },
+
   // ─── Sleep (Aug 2026) ────────────────────────────────────────────────────────
   // /sleep/do-i-have-sleep-apnoea keeps the question as its slug because that is
   // what people search, but the page explains the diagnostic pathway rather than

@@ -37,22 +37,16 @@ const GROUPS: Group[] = [
       { href: "/hair-loss-quiz", label: "Which option fits you?", note: "A 30-second match" },
     ],
   },
+  // Sections built ahead of their partners live together under one heading
+  // rather than as separate top-level groups. Two half-empty categories in the
+  // nav reads as an unfinished site; one honest "Coming soon" reads as a
+  // roadmap. Each becomes its own group when it has a checked provider.
   {
-    label: "Skin & Beauty",
+    label: "Coming Soon",
     items: [
-      { href: "/skin-and-beauty", label: "Start here", note: "What works, and what it costs in Australia" },
-      { href: "/skin-and-beauty/led-face-mask-comparison-australia", label: "LED Face Masks", note: "Real Australian prices, and the ARTG check" },
-      { href: "/skin-and-beauty/acne-treatment-options-and-costs-australia", label: "Acne Routes & Costs", note: "Over the counter, GP, dermatologist" },
-      { href: "/skin-and-beauty/skincare-quiz", label: "Skincare Quiz", note: "Four questions, no health data" },
-    ],
-  },
-  {
-    label: "Sleep",
-    items: [
-      { href: "/sleep", label: "Start here", note: "The medical route and the retail one" },
-      { href: "/sleep/do-i-have-sleep-apnoea", label: "Sleep Apnoea", note: "How diagnosis actually works here" },
-      { href: "/sleep/cpap-machine-costs-australia", label: "CPAP Costs", note: "Verified Australian prices" },
-      { href: "/sleep/mattress-comparison-australia", label: "Mattresses", note: "What is actually checkable" },
+      { href: "/coming-soon", label: "What's Coming", note: "The sections we're building, and when" },
+      { href: "/skin-and-beauty", label: "Skin & Beauty", note: "Actives, device prices, and the prescription route" },
+      { href: "/sleep", label: "Sleep", note: "Apnoea diagnosis, CPAP costs, mattresses" },
     ],
   },
   {
