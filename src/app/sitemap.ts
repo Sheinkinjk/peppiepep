@@ -26,6 +26,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/weight-loss`,        lastModified: TODAY,  changeFrequency: 'weekly',  priority: 0.95 },
     { url: `${BASE}/hair-loss`,          lastModified: TODAY,  changeFrequency: 'weekly',  priority: 0.9 },
     { url: `${BASE}/coming-soon`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.6 },
+    // Men's health (19 Aug 2026). Clinical guides carry no commercial links.
+    { url: `${BASE}/mens-health`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${BASE}/mens-health/erectile-dysfunction-treatment-cost-australia`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.75 },
+    { url: `${BASE}/mens-health/premature-ejaculation-treatment-options-australia`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.72 },
+    { url: `${BASE}/mens-health/online-mens-health-clinics-compared`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.72 },
+    { url: `${BASE}/mens-health/is-telehealth-or-a-gp-cheaper-for-mens-health`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE}/mens-health/sexual-wellness-products`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${BASE}/mens-health/mens-health-quiz`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.65 },
     // Sleep (19 Aug 2026). Category live and indexed ahead of partners.
     { url: `${BASE}/sleep`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${BASE}/sleep/do-i-have-sleep-apnoea`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.75 },

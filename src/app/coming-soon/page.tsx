@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Sparkles, Moon } from "lucide-react";
+import { ArrowRight, Sparkles, Moon, Stethoscope } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
@@ -36,6 +36,20 @@ const SECTIONS = [
     ],
   },
   {
+    href: "/mens-health",
+    icon: Stethoscope,
+    accent: "#2F6E5A",
+    tint: "#E7F1EC",
+    title: "Men's Health",
+    live: "Five guides, live now",
+    body: "How the access routes are priced, why a subscription and a consult fee are not comparable figures, and the rebated pathway most single-condition services cannot arrange. No medicine is named anywhere.",
+    links: [
+      { h: "/mens-health/erectile-dysfunction-treatment-cost-australia", l: "What the routes cost" },
+      { h: "/mens-health/is-telehealth-or-a-gp-cheaper-for-mens-health", l: "Telehealth or a GP?" },
+      { h: "/mens-health/mens-health-quiz", l: "Which route fits you?" },
+    ],
+  },
+  {
     href: "/sleep",
     icon: Moon,
     accent: "#3D5A80",
@@ -66,7 +80,7 @@ const faqs = [
   },
   {
     q: "What other categories are planned?",
-    a: "Longevity and sexual health are both under consideration and neither has started. Sexual health in particular has to be written entirely around access pathways and costs, because advertising prescription medicines to the public is prohibited in Australia, and we will not publish it until that is right.",
+    a: "Longevity is under consideration and has not started. Men's health has, and it is written entirely around access pathways and costs because advertising prescription medicines to the public is prohibited in Australia, so no medicine is named on any of those pages.",
   },
 ];
 
@@ -131,7 +145,7 @@ export default function ComingSoonPage() {
               What we&apos;re <span className="italic text-[#0a7c42]">building next</span>
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#2b362f]">
-              Two new categories are underway. The guides in both are finished and free to read today. What is still
+              Three new categories are underway. The guides in each are finished and free to read today. What is still
               missing is the provider comparison, which we add only once we have checked someone ourselves, so nothing
               in these sections earns us a commission yet.
             </p>
@@ -139,7 +153,7 @@ export default function ComingSoonPage() {
         </section>
 
         <section className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
-          <div className="grid gap-6 lg:grid-cols-2">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {SECTIONS.map((s) => {
               const Icon = s.icon;
               return (

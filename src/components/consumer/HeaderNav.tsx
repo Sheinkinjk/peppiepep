@@ -77,6 +77,7 @@ const GROUPS: Group[] = [
       { href: "/coming-soon", label: "What's Coming", note: "The sections we're building, and when" },
       { href: "/skin-and-beauty", label: "Skin & Beauty", note: "Actives, device prices, and the prescription route" },
       { href: "/sleep", label: "Sleep", note: "Apnoea diagnosis, CPAP costs, mattresses" },
+      { href: "/mens-health", label: "Men's Health", note: "Access routes, costs and what is bulk-billed" },
     ],
   },
 ];

@@ -504,6 +504,63 @@ export const seoConfig = {
     keywords: ["refer labs new sections", "refer labs coming soon", "australian comparison guides"],
   },
 
+  // ─── Men's health (Aug 2026) ─────────────────────────────────────────────────
+  // Contained under /mens-health/ with a clinical register throughout. Conditions
+  // are named because a condition is not a medicine; no medicine, molecule or
+  // brand appears anywhere, since advertising a prescription medicine to the
+  // Australian public is prohibited. The pages compare PROVIDERS on consult
+  // model, price and inclusions, never products. Adult-retail links are confined
+  // to /mens-health/sexual-wellness-products and are not live yet.
+  mensHealthHub: {
+    title: "Men's Health in Australia 2026: Costs and How Access Works | Refer Labs",
+    description:
+      "Independent guides to men's health services in Australia: how online clinics and GPs differ on cost and consult model, what is bulk-billed, and what to ask before subscribing.",
+    url: `${SITE_URL}/mens-health`,
+    keywords: ["mens health australia", "mens health telehealth australia", "mens health clinic australia", "mens health cost australia"],
+  },
+  edTreatmentCost: {
+    title: "Erectile Dysfunction Treatment Cost in Australia 2026 | Refer Labs",
+    description:
+      "What treatment for erectile dysfunction costs in Australia: how GP, telehealth and subscription models are priced differently, where Medicare applies, and the questions that reveal the real annual cost.",
+    url: `${SITE_URL}/mens-health/erectile-dysfunction-treatment-cost-australia`,
+    keywords: ["erectile dysfunction treatment cost australia", "ed treatment cost australia", "erectile dysfunction australia", "ed clinic cost australia", "erectile dysfunction gp australia"],
+  },
+  peTreatmentOptions: {
+    title: "Premature Ejaculation Treatment in Australia 2026: The Options | Refer Labs",
+    description:
+      "The routes to treatment for premature ejaculation in Australia: what a GP, a psychologist and an online clinic each offer, how they are priced, and where Medicare applies.",
+    url: `${SITE_URL}/mens-health/premature-ejaculation-treatment-options-australia`,
+    keywords: ["premature ejaculation treatment australia", "premature ejaculation options australia", "premature ejaculation gp australia", "premature ejaculation cost australia"],
+  },
+  mensClinicsCompared: {
+    title: "Online Men's Health Clinics in Australia 2026, Compared | Refer Labs",
+    description:
+      "How Australian online men's health clinics differ on consult model, subscription structure, what is included and what is billed separately, plus the checks to run before you sign up.",
+    url: `${SITE_URL}/mens-health/online-mens-health-clinics-compared`,
+    keywords: ["online mens health clinic australia", "mens health telehealth compared australia", "best mens health clinic australia", "mens health subscription australia"],
+  },
+  telehealthVsGpMens: {
+    title: "Telehealth or a GP for Men's Health: Which Is Cheaper? 2026 | Refer Labs",
+    description:
+      "Comparing an online men's health service against your regular GP on total cost: consult fees, Medicare rebates, subscription structure and what each route actually includes over a year.",
+    url: `${SITE_URL}/mens-health/is-telehealth-or-a-gp-cheaper-for-mens-health`,
+    keywords: ["telehealth vs gp cost australia", "is telehealth cheaper than a gp", "mens health gp or online australia", "bulk billed mens health australia"],
+  },
+  sexualWellnessProducts: {
+    title: "Sexual Wellness Products in Australia: What to Know | Refer Labs",
+    description:
+      "General information on the non-prescription sexual wellness retail category in Australia, kept separate from our clinical men's health guides. For adults.",
+    url: `${SITE_URL}/mens-health/sexual-wellness-products`,
+    keywords: ["sexual wellness products australia", "adult wellness retail australia"],
+  },
+  mensHealthQuiz: {
+    title: "Men's Health: Which Route Fits You? | Refer Labs",
+    description:
+      "A short quiz matching you to a men's health access route based on cost, discretion and how you prefer to consult. Asks no health questions. General information, not medical advice.",
+    url: `${SITE_URL}/mens-health/mens-health-quiz`,
+    keywords: ["mens health quiz australia", "online clinic or gp quiz", "mens health options australia"],
+  },
+
   // ─── Sleep (Aug 2026) ────────────────────────────────────────────────────────
   // /sleep/do-i-have-sleep-apnoea keeps the question as its slug because that is
   // what people search, but the page explains the diagnostic pathway rather than
