@@ -29,7 +29,7 @@ const faqs = [
   },
   {
     q: "Are online erectile dysfunction clinics cheaper than a GP?",
-    a: "Sometimes on convenience, less often on total cost. A bulk-billed GP consult can cost nothing, while a subscription runs every month whether or not you need a consultation that month. The honest comparison is a year of subscription against a year of appointments plus anything dispensed. That is arithmetic you can do before you sign up.",
+    a: "Sometimes on convenience, less often on total cost. A bulk-billed GP consult can cost nothing, while a subscription runs every month whether or not you need a consultation that month. Compare a year of subscription against a year of appointments plus anything dispensed. That is arithmetic you can do before you sign up.",
   },
   {
     q: "Do I need a prescription for erectile dysfunction treatment in Australia?",
