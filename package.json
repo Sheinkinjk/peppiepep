@@ -8,6 +8,7 @@
     "build": "next build",
     "start": "next start",
     "indexnow": "node scripts/indexnow.mjs",
+    "check-offers": "node scripts/check-offer-wiring.mjs",
     "lint": "eslint",
     "test": "vitest run",
     "test:ux-viewports": "node scripts/test-ux-viewports.mjs",

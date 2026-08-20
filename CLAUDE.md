@@ -96,6 +96,13 @@ Run this in order. Steps 1-3 are the ones that were repeatedly missed and cost r
 
 **9. Keep `llms.txt` clean.** Retiring or redirecting a page means removing its `llms.txt` entry: pointing AI engines at a 308 wastes the citation. Re-run the URL check after any retirement.
 
+### Adding an offer: run the checker
+`npm run check-offers` verifies every brand page reaches all eight places an offer has to land (seoConfig, sitemap, search-index, /guides, offers.ts, llms.txt, plus the discount appearing in the `<title>`). Steps 5-8 are the ones historically skipped: Knose and PetsOnMe were both live for months without ever appearing on `/deals`, which fails silently and costs real revenue. Run it after adding a program and before pushing.
+
+Two rules it encodes, both learned the hard way:
+- **Only a genuine monetary discount belongs on `/deals`.** A free trial anyone can start direct from the vendor is not a deal, and listing them all buries the offers that actually differentiate us. Of 39 brand pages, only a handful have a real discount, which is why Superfiliate converts and the rest mostly do not.
+- **A real discount must appear in the `<title>`.** `/moshy` and `/moshhair`, the two best-performing pages on the site, both carry the amount there. Pages with a real offer that omitted it were underperforming for that reason alone.
+
 ## Deploy & verify (do this after changes)
 `git` commit on `main` (branch first if needed) → push → `vercel --prod --yes` → poll `vercel inspect <url>` for "Ready" → **curl-verify the change is live** → `npm run indexnow` (pushes changed URLs to Bing/Yandex). Co-author commits per the global convention.
 

@@ -2278,7 +2278,7 @@ export const seoConfig = {
   },
 
   leadpages: {
-    title: "Leadpages Discount Code 2026: Landing Page Builder | Refer Labs",
+    title: "Leadpages Discount Code 2026: 20% Off Annual Billing | Refer Labs",
     description:
       "Leadpages offer: a 7-day free trial, and 20% off if you pay annually, via our link. A lead-focused landing-page builder with A/B testing and a big template library.",
     url: `${SITE_URL}/leadpages`,
