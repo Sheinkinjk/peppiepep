@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { execSync } from "node:child_process";
 /**
  * IndexNow submitter for referlabs.com.au.
  *
@@ -19,9 +20,20 @@ const SITEMAP = `https://${HOST}/sitemap.xml`;
 const KEY_LOCATION = `https://${HOST}/${KEY}.txt`;
 
 async function main() {
-  const res = await fetch(SITEMAP, { headers: { "User-Agent": "referlabs-indexnow" } });
-  if (!res.ok) throw new Error(`Failed to fetch sitemap: ${res.status}`);
-  const xml = await res.text();
+    // Vercel's bot protection began 403ing node's fetch on 21 Aug 2026, while the
+    // identical request from curl returned 200 even with full browser headers, so
+    // it is a TLS/client fingerprint block rather than a header one. Shelling out
+    // to curl is the pragmatic fix; the alternative is this silently never
+    // submitting again, which is the kind of failure nobody notices.
+    let xml;
+    try {
+      xml = execSync(
+        `curl -s --fail -m 30 -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" "${SITEMAP}"`,
+        { encoding: "utf8", maxBuffer: 20 * 1024 * 1024 },
+      );
+    } catch {
+      throw new Error("Failed to fetch sitemap (curl)");
+    }
   const urlList = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1].trim());
   if (urlList.length === 0) throw new Error("No <loc> URLs found in sitemap");
 
