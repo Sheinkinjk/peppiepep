@@ -151,7 +151,7 @@ export const seoConfig = {
     keywords: ["pet insurance australia", "compare pet insurance australia", "dog insurance australia", "cat insurance australia", "pet insurance offers"],
   },
   petsonme: {
-    title: "PetsOnMe Pet Insurance Review 2026: Cover & Code | Refer Labs",
+    title: "PetsOnMe Discount Code 2026: 15% Off Pet Care Services | Refer Labs",
     description:
       "PetsOnMe pet insurance: the REFERLABS code takes 15% off pet care services, not the premium. Accidental, Classic and Deluxe plans compared. Not financial advice.",
     url: `${SITE_URL}/petsonme`,
@@ -2269,7 +2269,7 @@ export const seoConfig = {
   alidrop: {
     title: "AliDrop Discount Code 2026: US$1 for a 7-Day Trial | Refer Labs",
     description:
-      "AliDrop discount code, promo and referral link, plus the current offer: the dropshipping tool for sourcing from AliExpress and Temu into Shopify.",
+      "The current AliDrop offer: US$1 for a 7-day trial through our referral link. The dropshipping tool for sourcing from AliExpress and Temu into Shopify, with pricing and what it does explained.",
     url: `${SITE_URL}/alidrop`,
     keywords: [
       "alidrop discount code",
