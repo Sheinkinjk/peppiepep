@@ -130,7 +130,6 @@ export default function MoshyVsJuniperPage() {
           Moshy vs Juniper:{" "}
           <span style={{ color: CYAN_LT }}>which one is built for you?</span>
         </h1>
-          <EarningsBalanceNote earnFrom="Moshy" noEarnFrom="Juniper" />
         <EditorialMeta lastUpdated="2026-08-13" className="mb-6" />
         <p className="text-[#3d4b44] text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
           Australia&apos;s two most-compared weight-loss telehealth platforms answer the same problem in different
@@ -218,6 +217,7 @@ export default function MoshyVsJuniperPage() {
                 Read our full Moshy review →
               </Link>
             </p>
+            <EarningsBalanceNote earnFrom="Moshy" noEarnFrom="Juniper" className="mt-4" />
           </div>
           <div className="rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] p-6">
             <p className="text-[10px] font-bold uppercase tracking-[0.18em] mb-2 text-[#3d4b44]">Designed for women</p>

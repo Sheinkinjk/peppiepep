@@ -151,7 +151,6 @@ export default function CheapestWeightLossTelehealthPage() {
             <h1 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-extrabold leading-[1.08] tracking-tight text-[#10251b] mb-4 max-w-3xl">
               Cheapest weight loss telehealth in Australia: affordable options compared
             </h1>
-          <EarningsBalanceNote earnFrom="Moshy" noEarnFrom="Juniper" />
             <EditorialMeta lastUpdated="2026-08-14" className="mb-5" />
             <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl mb-3">
               &ldquo;Cheapest&rdquo; is a slippery word in weight-loss telehealth, because services bill in different
@@ -174,6 +173,7 @@ export default function CheapestWeightLossTelehealthPage() {
               Check eligibility on Moshy
               <ArrowRight className="h-4 w-4" />
             </a>
+            <EarningsBalanceNote earnFrom="Moshy" noEarnFrom="Juniper" className="mt-4 max-w-2xl" />
           </section>
 
           {/* Answer-first: the buyer's question verbatim as an H2, then the liftable verdict. */}

@@ -252,6 +252,12 @@ function PlatformCard({
               {reviewLabel} <ExternalLink className="h-3 w-3" />
             </Link>
           )}
+
+          {/* Only the card we actually earn from. This page ranks Juniper
+              alongside Moshy while carrying a link for Moshy alone, so the
+              asymmetry is stated where the link is rather than as a banner
+              above the article. */}
+          {isAffiliate && <EarningsBalanceNote earnFrom={name} noEarnFrom="Juniper" className="mt-1" />}
         </div>
       </div>
     </section>
@@ -370,7 +376,6 @@ export default function BestWeightLossTelehealthPage() {
               <span style={{ color: CYAN_LT }}>Moshy vs Juniper</span>
             </h1>
 
-          <EarningsBalanceNote earnFrom="Moshy" noEarnFrom="Juniper" />
             <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl mb-3">
               Moshy and Juniper are two of the most-used weight-management platforms in Australia, but they take different approaches. Moshy runs a lean clinical pathway, open to anyone eligible. Juniper wraps clinical care in a coaching program and markets primarily to women.
             </p>

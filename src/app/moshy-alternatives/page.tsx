@@ -78,7 +78,6 @@ export default function MoshyAlternativesPage() {
         <h1 className="text-3xl sm:text-4xl lg:text-[2.7rem] font-black leading-[1.08] tracking-tight mb-5">
           Moshy alternatives in Australia: <span style={{ color: CYAN_LT }}>the shortlist</span>
         </h1>
-          <EarningsBalanceNote earnFrom="Moshy" noEarnFrom="Juniper" />
         <p className="text-[#3d4b44] text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
           People search for Moshy alternatives for good reasons: comparing before committing, or the service was not
           the right fit. The shortlist is genuinely short, and here it is without padding.
@@ -149,6 +148,7 @@ export default function MoshyAlternativesPage() {
               Check your eligibility on Moshy ($120 off first order)
               <ArrowRight className="h-4 w-4" />
             </a>
+            <EarningsBalanceNote earnFrom="Moshy" noEarnFrom="Juniper" className="mt-4 max-w-2xl" />
           </div>
         </section>
 
