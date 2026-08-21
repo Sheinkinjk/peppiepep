@@ -20,7 +20,10 @@ export function OrganizationSchema() {
     "url": "https://referlabs.com.au",
     "logo": "https://referlabs.com.au/logo.svg",
     "image": "https://referlabs.com.au/og-image.png",
-    "description": "Refer Labs is an Australian comparison and research platform. It helps consumers choose between health services, software and tools through independent, disclosed comparisons, and helps businesses acquire customers through featured partnerships, referral programs and growth services.",
+    // Leads with the publishing, not the commercial side. The previous wording
+    // ended on "featured partnerships ... growth services", which reads as paid
+    // placement and undercuts the rankings-never-sold claim in the same breath.
+    "description": "Refer Labs is an independent Australian comparison publisher. It researches and publishes comparisons of health services, insurance, energy and business software for Australian readers, using published provider pricing and terms. Rankings are never sold; pages carry disclosed affiliate links.",
     "slogan": "Compare properly. Choose with confidence.",
     "email": "jarred@referlabs.com.au",
     "foundingLocation": { "@type": "Country", "name": "Australia" },
@@ -29,21 +32,29 @@ export function OrganizationSchema() {
       { "@type": "Country", "name": "United States" },
       { "@type": "Country", "name": "United Kingdom" }
     ],
+    // The strongest topical signal an entity sends, and it used to open with
+    // "Affiliate Marketing", "Affiliate Program Database" and "SEO for Affiliate
+    // Marketing". That described the retired $799 Blueprint business, and it told
+    // every engine that this publisher's expertise IS affiliate marketing, which
+    // is the last thing a comparison publisher wants asserted about it.
+    //
+    // Now the verticals actually published, consumer-first. Affiliate programmes
+    // remain, once, at the end: /affiliate-programs-australia is a real and
+    // growing cluster, so removing it entirely would be inaccurate. Position
+    // matters more than presence.
     "knowsAbout": [
-      "Affiliate Marketing",
-      "Referral Marketing",
-      "Affiliate Program Database",
-      "SEO for Affiliate Marketing",
-      "Generative Engine Optimization",
-      "Distribution Strategy",
-      "Product Comparison and Reviews",
-      "Weight Loss Telehealth Australia",
-      "Hair Loss Treatment Australia",
-      "Weight Management Telehealth",
-      "Business Loans and Business Finance Australia",
+      "Weight Management Telehealth Australia",
+      "Hair Loss Telehealth Australia",
+      "Telehealth Services Australia",
+      "Pet Insurance Australia",
       "Home Batteries and Solar Rebates Australia",
-      "Website Builders",
-      "Newsletter Platforms"
+      "Business Loans and Business Finance Australia",
+      "Website Builders and Landing Page Software",
+      "Email Marketing and Newsletter Platforms",
+      "CRM and Sales Software",
+      "Product Comparison and Review Methodology",
+      "Consumer Pricing Research Australia",
+      "Affiliate Programs in Australia"
     ],
     "contactPoint": {
       "@type": "ContactPoint",
@@ -51,7 +62,17 @@ export function OrganizationSchema() {
       "email": "jarred@referlabs.com.au",
       "availableLanguage": ["English"]
     },
-    "publishingPrinciples": "https://referlabs.com.au/about",
+    // Public-record date: ABN 32 660 008 159 is active from 16 August 2022 on the
+    // Australian Business Register. Stating it is how an engine can tell this is
+    // an established business rather than a site that appeared last quarter.
+    "foundingDate": "2022-08-16",
+    "publishingPrinciples": "https://referlabs.com.au/about#how-we-research",
+    // The properties that separate a publisher from a content farm. Each points
+    // at a section that genuinely exists on /about; none is aspirational.
+    "ethicsPolicy": "https://referlabs.com.au/about#how-we-rank",
+    "correctionsPolicy": "https://referlabs.com.au/about#corrections",
+    "actionableFeedbackPolicy": "https://referlabs.com.au/about#corrections",
+    "ownershipFundingInfo": "https://referlabs.com.au/how-we-make-money",
     // Names the real person behind the publisher. Health and money topics are
     // assessed against expertise and accountability signals, and an
     // organisation string alone provides neither. Only verifiable facts here:
@@ -64,9 +85,14 @@ export function OrganizationSchema() {
       "url": "https://referlabs.com.au/about",
       "worksFor": { "@type": "Organization", "name": "Refer Labs" }
     },
+    // Entity corroboration. Only live, verified profiles belong here: the
+    // Facebook profile.php URL that used to sit in this list returns 400, and a
+    // dead sameAs weakens the entity graph rather than strengthening it. Add a
+    // LinkedIn company page here when one exists; it is the single highest-value
+    // addition still missing.
     "sameAs": [
       "https://www.instagram.com/referlabs",
-      "https://www.facebook.com/profile.php?id=61592445156591"
+      "https://abr.business.gov.au/ABN/View?abn=32660008159"
     ]
   };
 

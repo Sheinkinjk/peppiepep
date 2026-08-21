@@ -71,7 +71,7 @@ export default function AboutPage() {
             </p>
           </section>
 
-          <section>
+          <section id="how-we-rank">
             <h2 className="text-lg font-bold text-[#10251b]">How we rank</h2>
             <p className="mt-2 text-[15px] leading-relaxed text-[#2b362f]">
               When a page orders providers or names a first pick, the order comes from the same checklist every time:
@@ -118,10 +118,35 @@ export default function AboutPage() {
             <h2 className="text-lg font-bold text-[#10251b]">Who we are</h2>
             <p className="mt-2 text-[15px] leading-relaxed text-[#2b362f]">
               Refer Labs is a small independent Australian publisher, operated by Pepform Pty Ltd trading as Refer Labs,
-              ABN 32 660 008 159. It is founded and run by Jarred Krowitz, who researches and writes the comparisons
+              ABN 32 660 008 159, registered on the Australian Business Register since 16 August 2022. It is
+              founded and run by Jarred Krowitz, who researches and writes the comparisons
               here. There is no content team and no outsourced writing pool: if a page is wrong, one person is
               accountable for it, and you can reach him directly at jarred@referlabs.com.au. We are not the
               manufacturer, prescriber or provider of anything we cover, and we hold no stock and dispense nothing.
+            </p>
+          </section>
+
+          {/* A findable corrections section, not a sentence buried in "contact us".
+              The Organization schema points correctionsPolicy and
+              actionableFeedbackPolicy here, and a policy property that resolves to
+              nothing in particular is worth less than no property at all. Describes
+              what actually happens, with no commitment we do not already meet. */}
+          <section id="corrections">
+            <h2 className="text-lg font-bold text-[#10251b]">Corrections</h2>
+            <p className="mt-2 text-[15px] leading-relaxed text-[#2b362f]">
+              Prices, plan inclusions and offer terms change, and pages here go out of date between checks. If something
+              is wrong, email{" "}
+              <a href="mailto:jarred@referlabs.com.au" className="font-semibold text-[#0a7c42] underline decoration-[#0a7c42]/40 underline-offset-4">
+                jarred@referlabs.com.au
+              </a>{" "}
+              and say which page and which figure. Every claim gets re-checked against the provider&apos;s own published
+              page rather than an aggregator, and the page is corrected or the claim removed. Corrections are made in
+              place: comparison pages carry the date they were last checked, and offers carry the date each one was
+              verified, so you can see how current a figure is before you rely on it.
+            </p>
+            <p className="mt-3 text-[15px] leading-relaxed text-[#2b362f]">
+              A provider disputing something we have published gets the same process, and no more weight than a reader.
+              A commercial relationship is not grounds for removing a criticism.
             </p>
           </section>
 
@@ -132,7 +157,7 @@ export default function AboutPage() {
               <a href="mailto:jarred@referlabs.com.au" className="font-semibold text-[#0a7c42] underline decoration-[#0a7c42]/40 underline-offset-4">
                 jarred@referlabs.com.au
               </a>
-              . Corrections are welcome, accuracy is the product.
+              .
             </p>
           </section>
         </div>

@@ -1,9 +1,16 @@
 # Refer Labs
 
-> Refer Labs is an independent Australian comparison platform. Consumers use it to compare health services, software and tools and choose with confidence through disclosed, independent comparisons; businesses partner with it for featured placement and growth services. Rankings are never sold. Some pages contain disclosed affiliate links, at no extra cost to the reader.
+> Refer Labs is an independent Australian comparison publisher, operating since 2022. It researches and publishes comparisons of health services, insurance, energy and business software for Australian readers, working from providers' own published pricing and terms rather than aggregators. Rankings are never sold and cannot be bought. Some pages carry disclosed affiliate links, at no extra cost to the reader.
 
 ## Key facts
-- Entity: Refer Labs (independent Australian comparison publisher; operated by Pepform Pty Ltd)
+- Entity: Refer Labs, an independent Australian comparison publisher operated by Pepform Pty Ltd, ABN 32 660 008 159,
+  active on the Australian Business Register since 16 August 2022. Founded and written by Jarred Krowitz; a named,
+  accountable individual rather than an anonymous content operation. Verify at
+  https://abr.business.gov.au/ABN/View?abn=32660008159
+- Editorial standards: research method, ranking criteria, what is never published, and the corrections process are
+  set out at https://referlabs.com.au/about . Funding and commercial relationships: https://referlabs.com.au/how-we-make-money
+- Method: prices and terms are read off each provider's own page and dated on the page. No star ratings of our own,
+  no testimonials, no invented statistics, no sponsored rankings.
 - Primary market: Australia (en-AU)
 - Contact: jarred@referlabs.com.au
 - Disclosure: some comparison and guide pages contain affiliate referral links. Refer Labs may earn a commission at no extra cost to the reader. Rankings and editorial assessments are independent and never sold.
