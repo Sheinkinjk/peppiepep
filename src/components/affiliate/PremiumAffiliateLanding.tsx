@@ -3,7 +3,7 @@ import Image from "next/image";
 import { ArrowRight, Check, ShieldCheck, Gift } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
-import { OFFERS_VERIFIED, DEALS } from "@/lib/offers";
+import { OFFERS_VERIFIED, DEALS, formatVerified } from "@/lib/offers";
 import OffersTable from "@/components/lending/OffersTable";
 import type { AffiliatePageConfig } from "./types";
 
@@ -26,6 +26,20 @@ function offerCode(offer: string): string | undefined {
  * Matched on brand, which is what the hub pages already filter by. Falls back to
  * the synthetic row so a brand page without a DEALS entry still renders.
  */
+/**
+ * The month to show beside a brand's offer.
+ *
+ * OFFERS_VERIFIED is a global "we swept every offer" stamp and is deliberately
+ * not bumped unless every offer really was re-checked. An individual offer
+ * re-checked since then carries its own `verified` date, and showing the older
+ * global stamp on that page understates how current it is. Falls back to the
+ * global stamp for offers with no per-offer date, which is what it means.
+ */
+function verifiedStamp(brand: string): string {
+  const d = DEALS.find((x) => x.brand === brand)?.verified;
+  return d ? formatVerified(d) : OFFERS_VERIFIED;
+}
+
 function dealRow(brand: string, offer: string) {
   const real = DEALS.find((d) => d.brand === brand);
   return real ?? { brand, offer, code: offerCode(offer) };
@@ -123,7 +137,7 @@ export default function PremiumAffiliateLanding({ config }: { config: AffiliateP
                 <div>
                   <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#0a7c42]">Current offer via our link</p>
                   <p className="mt-1 text-[15px] font-bold leading-snug text-[#10251b]">{config.offer}</p>
-                  <p className="mt-1.5 text-[11px] font-medium text-[#6e7b74]">Checked &amp; verified {OFFERS_VERIFIED}</p>
+                  <p className="mt-1.5 text-[11px] font-medium text-[#6e7b74]">Checked &amp; verified {verifiedStamp(config.brand)}</p>
                 </div>
               </div>
             )}

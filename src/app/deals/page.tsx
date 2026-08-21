@@ -3,7 +3,7 @@ import Image from "next/image";
 import { ArrowRight, BadgeCheck, Tag } from "lucide-react";
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
-import { FEATURED_DEALS, OTHER_DEALS, DEALS, OFFERS_VERIFIED } from "@/lib/offers";
+import { FEATURED_DEALS, OTHER_DEALS, DEALS } from "@/lib/offers";
 import OffersTable from "@/components/lending/OffersTable";
 
 export const metadata = generateSEOMetadata(seoConfig.deals);
@@ -102,7 +102,12 @@ export default function DealsPage() {
           list deals for brands we actually work with, and every one links to our full guide with the details.
         </p>
         <p className="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-[#6e7b74]">
-          <BadgeCheck className="h-4 w-4 text-[#0a7c42]" aria-hidden="true" /> Checked &amp; verified {OFFERS_VERIFIED}
+            {/* A single month here contradicted the table underneath, which dates
+                every offer individually: the header claimed July while rows read
+                August. Per-row dating is the stronger claim anyway, so the header
+                points at it rather than competing with it. */}
+            <BadgeCheck className="h-4 w-4 text-[#0a7c42]" aria-hidden="true" /> Every offer below carries the
+            date we last checked it
         </p>
 
         {/* Structured offers table (AI-extractable canonical source) */}
