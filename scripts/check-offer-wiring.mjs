@@ -28,6 +28,7 @@ const offers      = read("src/lib/offers.ts");
 const llms        = read("public/llms.txt");
 const links       = read("src/lib/affiliate-links.ts");
 const redirects   = read("next.config.ts");
+const chromeGate  = read("src/components/ChromeGate.tsx");
 
 // Retired pages redirect and are deliberately absent from the sitemap and index.
 const isRetired = (slug) => new RegExp(`source: '/${slug}'`).test(redirects);
@@ -59,6 +60,11 @@ for (const slug of slugs) {
   if (!new RegExp(`\`\\$\\{BASE\\}/${slug}\``).test(sitemap)) miss.push("sitemap");
   if (!new RegExp(`href: "/${slug}"`).test(searchIndex)) miss.push("search-index");
   if (!new RegExp(`href: "/${slug}"`).test(guides)) miss.push("/guides");
+  // A ConsumerShell page missing from ChromeGate renders the legacy header
+  // stacked above its own nav. It has bitten four pages in two days and never
+  // fails a build, so it belongs in the check rather than in anyone's memory.
+  if (/ConsumerShell|PremiumAffiliateLanding/.test(cfg + read(join("src/app", slug, "page.tsx")))
+      && !new RegExp(`"/${slug}"`).test(chromeGate)) miss.push("ChromeGate (page will double-header)");
 
   if (hasOffer(cfg)) {
     const text = offerText(cfg);

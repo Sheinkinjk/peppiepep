@@ -178,6 +178,7 @@ const STANDALONE_ROUTES = [
   "/outgrow",
   "/flexiquiz",
   "/landingi",
+  "/unbounce",
   "/beautifulai",
   "/pandadoc",
   "/blinq",
