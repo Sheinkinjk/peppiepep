@@ -65,7 +65,7 @@ const webPageSchema = {
   description: seoConfig.moshReview.description,
   url: seoConfig.moshReview.url,
   inLanguage: "en-AU",
-  isPartOf: { "@type": "WebSite", name: "Refer Labs", url: SITE_URL },
+  isPartOf: { "@id": `${SITE_URL}/#website` },
 };
 
 function Cta({ label, loc }: { label: string; loc: string }) {

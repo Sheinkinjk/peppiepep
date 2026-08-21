@@ -87,7 +87,7 @@ const collectionSchema = {
     "Refer Labs' weight loss telehealth hub for Australians. Compare online weight loss programs, medical telehealth clinics, lifestyle coaching and the GP pathway, with independent guides to Moshy, Juniper and more.",
   url: `${SITE_URL}/weight-loss`,
   inLanguage: "en-AU",
-  isPartOf: { "@type": "WebSite", name: "Refer Labs", url: SITE_URL },
+  isPartOf: { "@id": `${SITE_URL}/#website` },
   mainEntity: {
     "@type": "ItemList",
     itemListElement: guides.map((g, i) => ({

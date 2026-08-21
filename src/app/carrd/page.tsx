@@ -44,7 +44,7 @@ const webPageSchema = {
     { "@type": "Thing", name: "Carrd free plan" },
     { "@type": "Thing", name: "Carrd link in bio" },
   ],
-  isPartOf: { "@type": "WebSite", name: "Refer Labs", url: SITE_URL },
+  isPartOf: { "@id": `${SITE_URL}/#website` },
 };
 
 const softwareSchema = {

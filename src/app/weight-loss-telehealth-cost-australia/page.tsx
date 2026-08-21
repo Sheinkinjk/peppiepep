@@ -80,7 +80,7 @@ const webPageSchema = {
     { "@type": "Thing", name: "weight loss subscription Australia" },
     { "@type": "Thing", name: "weight management cost Australia" },
   ],
-  isPartOf: { "@type": "WebSite", name: "Refer Labs", url: SITE_URL },
+  isPartOf: { "@id": `${SITE_URL}/#website` },
 };
 
 // ─── Page ─────────────────────────────────────────────────────────────────────

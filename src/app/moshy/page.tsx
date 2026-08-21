@@ -45,7 +45,7 @@ const webPageSchema = {
     { "@type": "Thing", name: "Moshy Australia" },
     { "@type": "Thing", name: "Moshy eligibility check" },
   ],
-  isPartOf: { "@type": "WebSite", name: "Refer Labs", url: SITE_URL },
+  isPartOf: { "@id": `${SITE_URL}/#website` },
 };
 
 const organizationSchema = {

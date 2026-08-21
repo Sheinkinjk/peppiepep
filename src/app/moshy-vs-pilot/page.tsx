@@ -107,7 +107,7 @@ const webPageSchema = {
   inLanguage: "en-AU",
   datePublished: "2026-07-06",
   dateModified: "2026-07-06",
-  isPartOf: { "@type": "WebSite", name: "Refer Labs", url: SITE_URL },
+  isPartOf: { "@id": `${SITE_URL}/#website` },
 };
 
 // ── Comparison rows ──────────────────────────────────────────────────────────

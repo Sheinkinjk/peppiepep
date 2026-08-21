@@ -88,7 +88,7 @@ export default async function ComparePage({ params }: { params: Promise<{ slug: 
     description: v.metaDescription,
     url: `${SITE_URL}/compare/${v.slug}`,
     inLanguage: "en-AU",
-    isPartOf: { "@type": "WebSite", name: "Refer Labs", url: SITE_URL },
+    isPartOf: { "@id": `${SITE_URL}/#website` },
     mainEntity: {
       "@type": "ItemList",
       itemListElement: v.providers.map((p, i) => ({ "@type": "ListItem", position: i + 1, name: p.name })),

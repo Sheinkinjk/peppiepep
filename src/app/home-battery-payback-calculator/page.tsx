@@ -64,7 +64,7 @@ const webPageSchema = {
     { "@type": "Thing", name: "battery savings calculator Australia" },
     { "@type": "Thing", name: "Cheaper Home Batteries rebate" },
   ],
-  isPartOf: { "@type": "WebSite", name: "Refer Labs", url: SITE_URL },
+  isPartOf: { "@id": `${SITE_URL}/#website` },
 };
 
 export default function HomeBatteryPaybackCalculatorPage() {

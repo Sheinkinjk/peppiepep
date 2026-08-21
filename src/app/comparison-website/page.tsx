@@ -25,7 +25,7 @@ const webPageSchema = {
   description: seoConfig.comparisonWebsite.description,
   url: URL,
   inLanguage: "en-AU",
-  isPartOf: { "@type": "WebSite", name: "Refer Labs", url: SITE_URL },
+  isPartOf: { "@id": `${SITE_URL}/#website` },
 };
 
 // The categories Refer Labs actually compares today, across health, home energy

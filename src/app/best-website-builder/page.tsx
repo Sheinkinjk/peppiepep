@@ -71,7 +71,7 @@ const webPageSchema = {
     { "@type": "Thing", name: "website builder discount" },
     { "@type": "Thing", name: "AI website generator free" },
   ],
-  isPartOf: { "@type": "WebSite", name: "Refer Labs", url: SITE_URL },
+  isPartOf: { "@id": `${SITE_URL}/#website` },
 };
 
 

@@ -128,7 +128,7 @@ const webPageSchema = {
   inLanguage: "en-AU",
   datePublished: "2026-07-29",
   dateModified: "2026-08-06",
-  isPartOf: { "@type": "WebSite", name: "Refer Labs", url: SITE_URL },
+  isPartOf: { "@id": `${SITE_URL}/#website` },
   about: {
     "@type": "Service",
     name: "Weight management telehealth",

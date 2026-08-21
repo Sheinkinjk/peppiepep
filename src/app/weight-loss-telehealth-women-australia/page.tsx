@@ -70,7 +70,7 @@ const webPageSchema = {
   description: seoConfig.weightLossTelehealthWomen.description,
   url: seoConfig.weightLossTelehealthWomen.url,
   inLanguage: "en-AU",
-  isPartOf: { "@type": "WebSite", name: "Refer Labs", url: SITE_URL },
+  isPartOf: { "@id": `${SITE_URL}/#website` },
 };
 
 export default function WeightLossTelehealthWomenPage() {

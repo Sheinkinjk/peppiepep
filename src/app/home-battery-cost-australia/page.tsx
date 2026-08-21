@@ -83,7 +83,7 @@ const webPageSchema = {
     { "@type": "Thing", name: "battery payback period Australia" },
     { "@type": "Thing", name: "Cheaper Home Batteries Program" },
   ],
-  isPartOf: { "@type": "WebSite", name: "Refer Labs", url: SITE_URL },
+  isPartOf: { "@id": `${SITE_URL}/#website` },
 };
 
 // Installed cost bands per usable kWh, from SolarQuotes' battery cost guide

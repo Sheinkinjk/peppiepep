@@ -7,6 +7,13 @@ export function OrganizationSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Organization",
+    // Stable node id. Every page in the site renders this Organization and the
+    // WebSite below, and ~110 pages also emit an isPartOf WebSite node. Without
+    // ids those were all anonymous nodes an engine had to guess were the same
+    // brand. With them there is one Organization and one WebSite, referenced by
+    // id from everywhere else, which is the difference between a coherent entity
+    // and a scatter of look-alike duplicates.
+    "@id": "https://referlabs.com.au/#organization",
     "name": "Refer Labs",
     // The registered entity behind the trading name, matching /terms and /privacy.
     // Ties the site to a real, identifiable Australian business, which is a trust
@@ -85,13 +92,18 @@ export function OrganizationSchema() {
       "url": "https://referlabs.com.au/about",
       "worksFor": { "@type": "Organization", "name": "Refer Labs" }
     },
-    // Entity corroboration. Only live, verified profiles belong here: the
-    // Facebook profile.php URL that used to sit in this list returns 400, and a
-    // dead sameAs weakens the entity graph rather than strengthening it. Add a
-    // LinkedIn company page here when one exists; it is the single highest-value
-    // addition still missing.
+    // Entity corroboration, ordered by how much weight each carries. LinkedIn
+    // first: a company page is the profile an engine is most likely to already
+    // hold an entity record for. The ABR entry is the only third-party one, and
+    // the only one that proves the trading name maps to a registered company.
+    //
+    // Facebook returns 400 to a plain curl and renders normally in a browser, so
+    // do not "fix" this list by removing it on the strength of a bot check; the
+    // profile is live and is mirrored by a rel="me" link in the footer.
     "sameAs": [
+      "https://www.linkedin.com/company/refer-labs",
       "https://www.instagram.com/referlabs",
+      "https://www.facebook.com/profile.php?id=61592445156591",
       "https://abr.business.gov.au/ABN/View?abn=32660008159"
     ]
   };
@@ -240,8 +252,14 @@ export function WebsiteSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
+    "@id": "https://referlabs.com.au/#website",
     "name": "Refer Labs",
+    "alternateName": "referlabs.com.au",
     "url": "https://referlabs.com.au",
+    "inLanguage": "en-AU",
+    // Ties the site to the publisher behind it. Previously the two nodes sat
+    // side by side on every page with nothing stating they were related.
+    "publisher": { "@id": "https://referlabs.com.au/#organization" },
     "description": "Independent comparisons for Australians choosing health services, software and tools. Researched by people, disclosed on every page, rankings never sold.",
     "potentialAction": {
       "@type": "SearchAction",

@@ -48,7 +48,7 @@ const webPageSchema = {
   url: `${SITE_URL}${SLUG}`,
   inLanguage: "en-AU",
   dateModified: UPDATED,
-  isPartOf: { "@type": "WebSite", name: "Refer Labs", url: SITE_URL },
+  isPartOf: { "@id": `${SITE_URL}/#website` },
   publisher: { "@type": "Organization", name: "Refer Labs", url: SITE_URL },
 };
 

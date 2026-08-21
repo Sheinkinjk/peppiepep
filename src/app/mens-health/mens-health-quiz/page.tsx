@@ -50,7 +50,7 @@ const webPageSchema = {
   description: seoConfig.mensHealthQuiz.description,
   url: `${SITE_URL}${SLUG}`,
   inLanguage: "en-AU",
-  isPartOf: { "@type": "WebSite", name: "Refer Labs", url: SITE_URL },
+  isPartOf: { "@id": `${SITE_URL}/#website` },
 };
 
 export default function MensHealthQuizPage() {

@@ -44,7 +44,7 @@ const webPageSchema = {
     { "@type": "Thing", name: "AI website builder for small business" },
     { "@type": "Thing", name: "generate website free AI" },
   ],
-  isPartOf: { "@type": "WebSite", name: "Refer Labs", url: SITE_URL },
+  isPartOf: { "@id": `${SITE_URL}/#website` },
 };
 
 const softwareSchema = {

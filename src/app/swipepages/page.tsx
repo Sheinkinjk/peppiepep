@@ -44,7 +44,7 @@ const webPageSchema = {
     { "@type": "Thing", name: "conversion rate optimisation" },
     { "@type": "Thing", name: "Swipe Pages 14-day free trial" },
   ],
-  isPartOf: { "@type": "WebSite", name: "Refer Labs", url: SITE_URL },
+  isPartOf: { "@id": `${SITE_URL}/#website` },
 };
 
 const softwareSchema = {

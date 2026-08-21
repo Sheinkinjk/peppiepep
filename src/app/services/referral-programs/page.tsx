@@ -116,7 +116,7 @@ const webPageSchema = {
     { "@type": "Thing", name: "referral program consultant" },
     { "@type": "Thing", name: "customer referral program management" },
   ],
-  isPartOf: { "@type": "WebSite", name: "Refer Labs", url: SITE_URL },
+  isPartOf: { "@id": `${SITE_URL}/#website` },
   breadcrumb: breadcrumbSchema,
 };
 

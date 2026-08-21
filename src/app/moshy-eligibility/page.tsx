@@ -59,7 +59,7 @@ const webPageSchema = {
   description: seoConfig.moshyEligibility.description,
   url: seoConfig.moshyEligibility.url,
   inLanguage: "en-AU",
-  isPartOf: { "@type": "WebSite", name: "Refer Labs", url: SITE_URL },
+  isPartOf: { "@id": `${SITE_URL}/#website` },
 };
 
 export default function MoshyEligibilityPage() {

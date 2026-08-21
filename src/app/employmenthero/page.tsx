@@ -44,7 +44,7 @@ const webPageSchema = {
     { "@type": "Thing", name: "Fair Work compliance" },
     { "@type": "Thing", name: "employment platform Australia" },
   ],
-  isPartOf: { "@type": "WebSite", name: "Refer Labs", url: SITE_URL },
+  isPartOf: { "@id": `${SITE_URL}/#website` },
 };
 
 // Pricing is not published publicly, so no Offer with a price is asserted.

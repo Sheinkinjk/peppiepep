@@ -78,7 +78,7 @@ const webPageSchema = {
   inLanguage: "en-AU",
   datePublished: UPDATED,
   dateModified: UPDATED,
-  isPartOf: { "@type": "WebSite", name: "Refer Labs", url: SITE_URL },
+  isPartOf: { "@id": `${SITE_URL}/#website` },
 };
 
 function Cta({ label, loc }: { label: string; loc: string }) {

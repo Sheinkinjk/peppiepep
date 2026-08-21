@@ -44,7 +44,7 @@ const webPageSchema = {
     { "@type": "Thing", name: "GoHighLevel for agencies" },
     { "@type": "Thing", name: "AI sales and automation tools" },
   ],
-  isPartOf: { "@type": "WebSite", name: "Refer Labs", url: SITE_URL },
+  isPartOf: { "@id": `${SITE_URL}/#website` },
 };
 
 const softwareSchema = {

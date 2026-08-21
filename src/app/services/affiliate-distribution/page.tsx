@@ -113,7 +113,7 @@ const webPageSchema = {
     { "@type": "Thing", name: "community affiliate distribution" },
     { "@type": "Thing", name: "affiliate distribution agency" },
   ],
-  isPartOf: { "@type": "WebSite", name: "Refer Labs", url: SITE_URL },
+  isPartOf: { "@id": `${SITE_URL}/#website` },
   breadcrumb: breadcrumbSchema,
 };
 

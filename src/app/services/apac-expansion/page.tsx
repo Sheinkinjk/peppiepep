@@ -116,7 +116,7 @@ const webPageSchema = {
     { "@type": "Thing", name: "enter Australian market" },
     { "@type": "Thing", name: "Australia go to market partner" },
   ],
-  isPartOf: { "@type": "WebSite", name: "Refer Labs", url: SITE_URL },
+  isPartOf: { "@id": `${SITE_URL}/#website` },
   breadcrumb: breadcrumbSchema,
 };
 

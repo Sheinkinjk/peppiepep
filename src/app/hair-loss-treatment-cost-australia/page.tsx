@@ -80,7 +80,7 @@ const webPageSchema = {
     { "@type": "Thing", name: "hair loss telehealth cost Australia" },
     { "@type": "Thing", name: "hair loss treatment subscription cost" },
   ],
-  isPartOf: { "@type": "WebSite", name: "Refer Labs", url: SITE_URL },
+  isPartOf: { "@id": `${SITE_URL}/#website` },
 };
 
 // Mosh's plan tiers. We deliberately do not quote specific plan prices: they are

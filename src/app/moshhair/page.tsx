@@ -46,7 +46,7 @@ const webPageSchema = {
     { "@type": "Thing", name: "Mosh vs Dense Hair Experts" },
     { "@type": "Thing", name: "Mosh hair loss results" },
   ],
-  isPartOf: { "@type": "WebSite", name: "Refer Labs", url: SITE_URL },
+  isPartOf: { "@id": `${SITE_URL}/#website` },
 };
 
 const organizationSchema = {

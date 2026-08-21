@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Instagram, Facebook } from "lucide-react";
+import { Instagram, Facebook, Linkedin } from "lucide-react";
 import NewsletterSignup from "./NewsletterSignup";
 import SiteSearch from "./SiteSearch";
 import CookiePreferencesLink from "./CookiePreferencesLink";
@@ -83,6 +83,14 @@ export default function ConsumerShell({ children }: { children: React.ReactNode 
                 <a href="https://www.facebook.com/profile.php?id=61592445156591" target="_blank" rel="me noopener" aria-label="Refer Labs on Facebook"
                   className="flex h-9 w-9 items-center justify-center rounded-full border border-[#e3e7e2] text-[#6e7b74] transition-colors hover:border-[#0a7c42] hover:text-[#0a7c42]">
                   <Facebook className="h-4 w-4" aria-hidden="true" />
+                </a>
+                {/* rel="me" on all three: it is the reciprocal half of the sameAs
+                    list in the Organization schema, and an entity claim an engine
+                    can verify from both ends is worth more than one asserted only
+                    by the site about itself. */}
+                <a href="https://www.linkedin.com/company/refer-labs" target="_blank" rel="me noopener" aria-label="Refer Labs on LinkedIn"
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-[#e3e7e2] text-[#6e7b74] transition-colors hover:border-[#0a7c42] hover:text-[#0a7c42]">
+                  <Linkedin className="h-4 w-4" aria-hidden="true" />
                 </a>
               </div>
             </div>

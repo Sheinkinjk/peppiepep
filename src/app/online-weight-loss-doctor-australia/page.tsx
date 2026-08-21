@@ -79,7 +79,7 @@ const webPageSchema = {
     { "@type": "Thing", name: "registered practitioner assessment Australia" },
     { "@type": "Thing", name: "online weight loss eligibility questionnaire" },
   ],
-  isPartOf: { "@type": "WebSite", name: "Refer Labs", url: SITE_URL },
+  isPartOf: { "@id": `${SITE_URL}/#website` },
 };
 
 // ─── Page ─────────────────────────────────────────────────────────────────────

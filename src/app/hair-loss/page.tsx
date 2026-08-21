@@ -61,7 +61,7 @@ const collectionSchema = {
     "Refer Labs' hair loss hub for Australians. Compare clinical telehealth and topical products, with independent guides to the main providers.",
   url: `${SITE_URL}/hair-loss`,
   inLanguage: "en-AU",
-  isPartOf: { "@type": "WebSite", name: "Refer Labs", url: SITE_URL },
+  isPartOf: { "@id": `${SITE_URL}/#website` },
   mainEntity: {
     "@type": "ItemList",
     itemListElement: guides.map((g, i) => ({ "@type": "ListItem", position: i + 1, name: g.title, url: `${SITE_URL}${g.href}` })),

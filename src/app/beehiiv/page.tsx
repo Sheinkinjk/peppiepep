@@ -43,7 +43,7 @@ const webPageSchema = {
     { "@type": "Thing", name: "beehiiv 14-day free trial" },
     { "@type": "Thing", name: "best newsletter platform 2026" },
   ],
-  isPartOf: { "@type": "WebSite", name: "Refer Labs", url: SITE_URL },
+  isPartOf: { "@id": `${SITE_URL}/#website` },
 };
 
 const softwareSchema = {

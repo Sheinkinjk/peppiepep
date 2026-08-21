@@ -304,7 +304,7 @@ const collectionSchema = {
   description: seoConfig.guides.description,
   url: `${SITE_URL}/guides`,
   inLanguage: "en-AU",
-  isPartOf: { "@type": "WebSite", name: "Refer Labs", url: SITE_URL },
+  isPartOf: { "@id": `${SITE_URL}/#website` },
   mainEntity: {
     "@type": "ItemList",
     itemListElement: hubs.map((h, i) => ({

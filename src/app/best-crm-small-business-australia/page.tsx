@@ -109,7 +109,7 @@ const webPageSchema = {
   description: seoConfig.bestCrmSmallBusiness.description,
   url: seoConfig.bestCrmSmallBusiness.url,
   inLanguage: "en-AU",
-  isPartOf: { "@type": "WebSite", name: "Refer Labs", url: SITE_URL },
+  isPartOf: { "@id": `${SITE_URL}/#website` },
 };
 
 export default function BestCrmSmallBusinessPage() {

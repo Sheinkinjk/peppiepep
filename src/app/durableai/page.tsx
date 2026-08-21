@@ -44,7 +44,7 @@ const webPageSchema = {
     { "@type": "Thing", name: "Durable AI vs Butternut AI" },
     { "@type": "Thing", name: "website builder with CRM" },
   ],
-  isPartOf: { "@type": "WebSite", name: "Refer Labs", url: SITE_URL },
+  isPartOf: { "@id": `${SITE_URL}/#website` },
 };
 
 const softwareSchema = {

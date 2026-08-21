@@ -214,7 +214,7 @@ const webPageSchema = {
   inLanguage: "en-AU",
   datePublished: "2026-05-20",
   dateModified: "2026-06-30",
-  isPartOf: { "@type": "WebSite", name: "Refer Labs", url: SITE_URL },
+  isPartOf: { "@id": `${SITE_URL}/#website` },
 };
 
 export default function HowToStartAffiliateMarketingAustraliaPage() {
