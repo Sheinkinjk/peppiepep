@@ -35,7 +35,7 @@ const faqs = [
   },
   {
     q: "Do I need affiliate software, or can I track it manually?",
-    a: "Manually is workable at a handful of partners and stops being workable quickly. The point at which software pays for itself is usually when you cannot answer, from memory or a spreadsheet, which partner drove which sale. If you are still comfortably tracking it by hand, the honest answer is that you do not need to buy anything yet.",
+    a: "Manually is workable at a handful of partners and stops being workable quickly. The point at which software pays for itself is usually when you cannot answer, from memory or a spreadsheet, which partner drove which sale. If you are still comfortably tracking it by hand, you do not need to buy anything yet.",
   },
   {
     q: "What should I check before signing up to an affiliate platform?",

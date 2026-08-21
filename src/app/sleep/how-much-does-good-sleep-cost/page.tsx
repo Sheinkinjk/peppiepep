@@ -10,8 +10,7 @@ export const metadata = generateSEOMetadata(seoConfig.costOfGoodSleep);
  * to be ignored.
  *
  * It also routes anyone with clinical symptoms to the diagnosis pathway rather
- * than to a purchase, which is both the honest answer and the one that avoids
- * implying a product can treat a condition.
+ * than to a purchase, which avoids implying a product can treat a condition.
  */
 
 const faqs = [

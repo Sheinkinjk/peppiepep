@@ -27,7 +27,7 @@ const faqs = [
   },
   {
     q: "Is a home sauna cheaper than a gym membership?",
-    a: "Over enough years, potentially, and the honest comparison includes the running cost and how often you would go. Work out the annual total including electricity, divide by the sessions you realistically expect, and compare that to what a facility charges per visit. Doing that arithmetic before you buy is the whole exercise.",
+    a: "Over enough years, potentially, but only once the running cost and how often you would go are in the sum. Work out the annual total including electricity, divide by the sessions you realistically expect, and compare that to what a facility charges per visit. Doing that arithmetic before you buy is the whole exercise.",
   },
 ];
 

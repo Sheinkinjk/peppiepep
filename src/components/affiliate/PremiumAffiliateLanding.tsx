@@ -3,7 +3,7 @@ import Image from "next/image";
 import { ArrowRight, Check, ShieldCheck, Gift } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
-import { OFFERS_VERIFIED } from "@/lib/offers";
+import { OFFERS_VERIFIED, DEALS } from "@/lib/offers";
 import OffersTable from "@/components/lending/OffersTable";
 import type { AffiliatePageConfig } from "./types";
 
@@ -11,6 +11,24 @@ import type { AffiliatePageConfig } from "./types";
 function offerCode(offer: string): string | undefined {
   const m = offer.match(/\(code\s+([A-Za-z0-9]+)\)/i);
   return m ? m[1] : undefined;
+}
+
+/**
+ * Prefer the real DEALS entry over a row synthesised from the page config.
+ *
+ * The synthetic row carried only brand, offer and code, which silently dropped
+ * two fields DEALS does hold: `verified`, so a page rechecked in August still
+ * displayed the global July fallback date, and `exclusive`, so Mosh lost its
+ * "Refer Labs only" badge on Mosh's own page while keeping it on the hub pages
+ * that read DEALS directly. Both were invisible because nothing errors when an
+ * optional field is simply absent.
+ *
+ * Matched on brand, which is what the hub pages already filter by. Falls back to
+ * the synthetic row so a brand page without a DEALS entry still renders.
+ */
+function dealRow(brand: string, offer: string) {
+  const real = DEALS.find((d) => d.brand === brand);
+  return real ?? { brand, offer, code: offerCode(offer) };
 }
 
 function slugify(s: string) {
@@ -154,7 +172,7 @@ export default function PremiumAffiliateLanding({ config }: { config: AffiliateP
             <h2 className="text-lg font-extrabold text-[#10251b]">{config.brand} offer at a glance</h2>
             <div className="mt-4">
               <OffersTable
-                deals={[{ brand: config.brand, offer: config.offer, code: offerCode(config.offer) }]}
+                deals={[dealRow(config.brand, config.offer)]}
                 caption={`${config.brand} discount code and current offer, verified`}
               />
             </div>
