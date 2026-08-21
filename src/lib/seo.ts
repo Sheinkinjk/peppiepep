@@ -517,6 +517,18 @@ export const seoConfig = {
     keywords: ["affiliate software australia", "referral software australia", "affiliate marketing software australia", "referral program software australia", "affiliate platform for brands australia", "how to run an affiliate program australia"],
   },
 
+  // Offer read off Unbounce's own invitation page (the partner-link destination)
+  // on 20 August 2026. The discount is stated in the title because that is the
+  // pattern /moshy, /moshhair and /superfiliate use, and it is what someone
+  // searching "unbounce discount code" is looking for.
+  unbounce: {
+    title: "Unbounce Discount Code 2026: 20% Off 3 Months or 35% Off a Year | Refer Labs",
+    description:
+      "The current Unbounce offer: 20% off your first three months, or 35% off your first full year on annual billing. New customers only, applied through our link with no code to type. Verified on Unbounce's own page, 20 August 2026.",
+    url: `${SITE_URL}/unbounce`,
+    keywords: ["unbounce discount code", "unbounce promo code", "unbounce coupon", "unbounce discount australia", "unbounce free trial", "unbounce pricing discount", "unbounce landing page builder"],
+  },
+
   // ─── Longevity (Aug 2026) ────────────────────────────────────────────────────
   // Three sub-sections. Recovery is consumer hardware and is straightforward.
   // Diagnostics is not: whole-body MRI and biological-age testing are contested

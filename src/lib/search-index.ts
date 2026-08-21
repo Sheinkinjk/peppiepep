@@ -193,6 +193,7 @@ export const SEARCH_INDEX: SearchEntry[] = [
   { title: "FlexiQuiz", href: "/flexiquiz", category: "Software", kind: "Guide", keywords: "flexiquiz quiz test maker assessments exams online" },
   { title: "Hello Bar", href: "/hellobar", category: "Software", kind: "Guide", keywords: "hello bar popups bars lead capture email signups conversion" },
   { title: "Landingi", href: "/landingi", category: "Software", kind: "Guide", keywords: "landingi landing page builder no-code conversion" },
+  { title: "Unbounce (20% off 3 months, or 35% off a year)", href: "/unbounce", category: "Website builders", kind: "Review", keywords: "unbounce discount code promo landing page builder conversion ab testing" },
   { title: "Nutshell CRM", href: "/nutshell", category: "AI & sales", kind: "Guide", keywords: "nutshell crm easy sales pipeline marketing small business" },
   { title: "Outgrow", href: "/outgrow", category: "Software", kind: "Guide", keywords: "outgrow interactive quizzes calculators lead generation content" },
   { title: "Pipedrive CRM", href: "/pipedrive", category: "AI & sales", kind: "Guide", keywords: "pipedrive crm visual sales pipeline deals" },

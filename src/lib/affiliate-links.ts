@@ -90,6 +90,14 @@ export const ALIDROP_URL = "https://get.alidrop.co/v33ywxmnny7c";
 
 // ── Landing pages / lead generation ──────────────────────────────────────────
 // Leadpages: AI landing-page builder with A/B testing and CRO (PartnerStack).
+// Unbounce referral link. The destination is an "invitation" page that states the
+// offer in full: 20% off the first three months, or 35% off the first full year
+// on an annual plan, new customers only. Read there 20 August 2026.
+// Worth noting for future onboarding: that offer appears ONLY on the partner
+// destination, not on unbounce.com, so checking a vendor's public site alone
+// will miss affiliate-exclusive discounts.
+export const UNBOUNCE_URL = "https://unbounce.partnerlinks.io/659i6182mwb4";
+
 export const LEADPAGES_URL = "https://try.leadpages.com/sdb15x9a4i98";
 
 // ── Affiliate / referral software (for brands) ───────────────────────────────

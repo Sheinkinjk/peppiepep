@@ -18,7 +18,7 @@ const reviewed = [
   { name: "Carrd", logo: "carrd", cat: "Website builder", href: "/carrd" },
   { name: "Durable AI", logo: "durable", cat: "AI website builder", href: "/durableai" },
   { name: "Employment Hero", logo: "employmenthero", cat: "HR & payroll", href: "/employmenthero" },
-  { name: "Superfiliate", logo: "superfiliate", cat: "For brands", href: "/superfiliate" },
+  { name: "Superfiliate", logo: "superfiliate", cat: "For brands · 15% off", href: "/superfiliate" },
   { name: "AliDrop", logo: "alidrop", cat: "Dropshipping", href: "/alidrop" },
 ];
 

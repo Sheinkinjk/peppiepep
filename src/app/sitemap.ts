@@ -199,6 +199,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/outgrow`, lastModified: AUG13, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/flexiquiz`, lastModified: AUG13, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/landingi`, lastModified: AUG13, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/unbounce`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.75 },
     { url: `${BASE}/superfiliate`, lastModified: AUG13, changeFrequency: 'monthly', priority: 0.82 },
     { url: `${BASE}/affiliate-software-australia`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.78 },
     { url: `${BASE}/keap`, lastModified: AUG13, changeFrequency: 'monthly', priority: 0.82 },

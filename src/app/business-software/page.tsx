@@ -79,6 +79,10 @@ const tools = [
   { href: "/gohighlevel", label: "GoHighLevel", desc: "All-in-one CRM, marketing automation and funnels." },
   { href: "/employmenthero", label: "Employment Hero", desc: "Australian HR, payroll and employment platform." },
   { href: "/leadpages", label: "Leadpages", desc: "Landing pages and lead capture with A/B testing." },
+  // The two business tools with a genuine discount rather than a free trial, and
+  // the two that convert. Superfiliate was missing from this hub entirely.
+  { href: "/superfiliate", label: "Superfiliate", desc: "Run your own affiliate and creator program. 15% off the monthly SaaS fee." },
+  { href: "/unbounce", label: "Unbounce", desc: "Landing pages built to convert. 20% off three months, or 35% off your first year." },
 ];
 
 const itemListSchema = {
