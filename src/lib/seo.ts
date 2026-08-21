@@ -1455,7 +1455,7 @@ export const seoConfig = {
   moshyReview: {
     title: "Moshy Review 2026: Is It Legit and How It Works | Refer Labs",
     description:
-      "An independent Moshy review for Australians. What the clinically-led weight-loss telehealth service is, how the sign-up runs in practice, what the subscription involves, and who it suits. Information only, not medical advice.",
+      "An independent Moshy review for Australians, with $120 off your first order using code REFERRAL120: what the clinically-led weight-loss telehealth service is, how sign-up runs, and who it suits. Information only.",
     url: `${SITE_URL}/moshy-review`,
     keywords: [
       "moshy review",
@@ -1812,7 +1812,7 @@ export const seoConfig = {
   moshReview: {
     title: "Mosh Review 2026: Is It Legit and Worth It? | Refer Labs",
     description:
-      "An independent Mosh review: is the Australian men's hair-loss telehealth service legit, is it worth it, what it costs, and what people actually raise, plus 55% off your first order. Information only.",
+      "An independent Mosh review with 55% off your first order using code REFERAL55: is the Australian men's hair-loss telehealth service legit, what it costs, and what people raise. Information only.",
     url: `${SITE_URL}/mosh-review`,
     keywords: ["mosh review", "is mosh legit", "is mosh worth it", "does mosh work", "mosh hair loss review australia", "mosh reviews"],
   },
