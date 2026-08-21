@@ -59,6 +59,14 @@ const providers = [
 
 const faqs = [
   {
+    q: "Who underwrites pet insurance in Australia?",
+    a: "Far fewer companies than there are brands. PetSure names more than twenty pet insurance brands it administers or issues on its own partners page, covering many of the policies sold under bank, health fund, retailer and motoring club names; those are issued by The Hollard Insurance Company (ABN 78 090 584 473, AFSL 241436) and/or PetSure (Australia) Pty Ltd (ABN 95 075 949 923, AFSL 420183). Knose and PetsOnMe are not on that list: both are underwritten by Pacific International Insurance Pty Ltd (ABN 83 169 311 193, AFSL 523921), which also means they share an insurer with each other. Read off each company's own disclosure statements on 21 August 2026; confirm in the current Product Disclosure Statement before you buy.",
+  },
+  {
+    q: "Are Knose and PetsOnMe underwritten by the same company?",
+    a: "Yes. Both name Pacific International Insurance Pty Ltd (ABN 83 169 311 193, AFSL 523921) as the underwriter, so choosing between them is a choice between two products carried by the same insurer rather than a spread across two. It does not make either a worse policy, and the cover levels, waiting periods and excess options still differ, but it is worth knowing if you thought you were comparing unrelated companies. Refer Labs earns a commission from both, which is why we state it rather than leave it out.",
+  },
+  {
     q: "What is the best pet insurance in Australia?",
     a: "There is no single best policy, and any page that names one without knowing your pet is guessing. The right cover depends on your pet's breed and age, whether hereditary conditions are a realistic risk, the annual limit you would need in a bad year, and the excess you could absorb on the day. What you can do is compare on the same six things every time: benefit percentage, annual limit, hereditary and congenital cover, waiting periods, excess, and what is excluded. We compare PetsOnMe and Knose, and we publish no star ratings of our own.",
   },
@@ -180,6 +188,50 @@ export default function BestPetInsuranceAustraliaPage() {
                 <p className="mt-2 text-[15px] leading-relaxed text-[#3d4b44]">{c.p}</p>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* The structural fact this category is built on, and the one every
+            "top 10 pet insurers" list leaves out. Sourced entirely from the
+            insurers' own disclosure statements, read 21 August 2026:
+              - petsure.com.au/partners names the brands it administers
+              - knose.com.au and petsonme.com.au name Pacific International
+            Deliberately inconvenient for us: it says the two providers we earn
+            from share an underwriter, which is the part a page selling them
+            would omit. Stating who carries the risk is a factual disclosure
+            about a financial product, not advice about one. */}
+        <section className="mt-14">
+          <h2 className="text-xl font-bold text-[#10251b] sm:text-2xl">
+            Why so many brands are really the same product
+          </h2>
+          <p className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">
+            Australian pet insurance has many more brands than it has insurers. PetSure names more than twenty pet
+            insurance brands it administers or issues on its own partners page, including the ones sold under bank,
+            health fund, retailer and motoring club names. Those policies are issued by The Hollard Insurance Company
+            (ABN 78 090 584 473, AFSL 241436) and/or PetSure (Australia) Pty Ltd (ABN 95 075 949 923, AFSL 420183).
+            Line up ten of those brands and you are largely comparing distribution, pricing and packaging of the same
+            underlying product.
+          </p>
+          <p className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">
+            That is worth knowing before you spend an evening on a comparison table, because it explains why so many
+            policies share the same exclusions, the same waiting periods and the same wording about pre-existing
+            conditions. It also means a &ldquo;second opinion&rdquo; quote from another brand is often not a second
+            opinion at all.
+          </p>
+          <div className="mt-5 rounded-2xl border border-[#e5e9e7] bg-[#f8faf9] p-6">
+            <p className="text-[15px] font-bold text-[#10251b]">Where the two providers we cover sit</p>
+            <p className="mt-2 text-[15px] leading-relaxed text-[#3d4b44]">
+              Neither Knose nor PetsOnMe appears on PetSure&apos;s partner list. Both are underwritten by Pacific
+              International Insurance Pty Ltd (ABN 83 169 311 193, AFSL 523921), so they sit outside the PetSure group,
+              but they also sit alongside each other. If you are weighing Knose against PetsOnMe, you are choosing
+              between two products carried by the same insurer, not diversifying across two. We earn from both, and
+              that is exactly why it is stated here rather than left out.
+            </p>
+            <p className="mt-3 text-[13px] leading-relaxed text-[#6e7b74]">
+              Read off PetSure&apos;s, Knose&apos;s and PetsOnMe&apos;s own disclosure statements on 21 August 2026.
+              Underwriting arrangements change, so confirm in the current Product Disclosure Statement and Target
+              Market Determination before you buy.
+            </p>
           </div>
         </section>
 
