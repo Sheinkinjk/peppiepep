@@ -255,7 +255,7 @@ export default function CarrdVsButternutPage() {
             <div className="mt-6 flex flex-col items-start gap-4 rounded-2xl border px-6 py-5 sm:flex-row sm:items-center sm:justify-between" style={{ borderColor: `${GREEN}25`, background: `${GREEN}0A` }}>
               <p className="max-w-lg text-sm leading-relaxed text-[#10251b]">
                 Just need a clean one-page site or link-in-bio without paying much? Carrd&apos;s free plan is the quickest
-                way to build and publish one. No card, and Pro starts at US$9 a year.
+                way to build and publish one. No card, and Pro starts at US$19 a year.
               </p>
               <a
                 {...carrd}
@@ -277,7 +277,7 @@ export default function CarrdVsButternutPage() {
             <div className="space-y-4 text-[15px] leading-relaxed text-[#3d4b44] max-w-2xl">
               <p>
                 On price the gap is real. Carrd is one of the cheapest builders anywhere: the free plan works, and Pro
-                tiers start at US$9 a year, which is why it is a perennial recommendation for anyone on a budget.
+                tiers start at US$19 a year, which is why it is a perennial recommendation for anyone on a budget.
                 Butternut is a monthly or annual subscription priced as a full website solution, more than Carrd but pitched
                 to undercut the twenty-to-forty-dollar-a-month cost of a traditional builder. Prices move, so confirm the
                 current plans on each platform before you decide.

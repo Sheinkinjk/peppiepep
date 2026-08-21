@@ -81,9 +81,9 @@ export const CATALOG: Vertical[] = [
       {
         name: "Carrd",
         bestFor: "Cheapest one-page sites",
-        blurb: "The best value in simple websites. Free to start, Pro from US$9/year. Ideal for a portfolio, link-in-bio, or a single landing page.",
+        blurb: "The best value in simple websites. Free to start, Pro from US$19/year. Ideal for a portfolio, link-in-bio, or a single landing page.",
         facts: [
-          { label: "Price", value: "Free; Pro from US$9/year" },
+          { label: "Price", value: "Free; Pro from US$19/year" },
           { label: "Best for", value: "One-page sites" },
           { label: "AI build", value: "No" },
         ],
