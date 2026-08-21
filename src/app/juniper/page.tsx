@@ -185,6 +185,17 @@ export default function JuniperPage() {
             <div className="mt-6">
               <JuniperCTA label="Start with a free consultation" loc="hero" size="lg" />
             </div>
+              {/* Juniper's handbook requires one of two disclosure statements
+                  word-for-word AND prominently displayed, benchmarked against a
+                  social caption. It previously appeared once, in 45%-opacity text
+                  at the very bottom of a 440-line page, which a reader who clicked
+                  the hero CTA would never reach. This is the exact wording, in
+                  readable contrast, beside the CTA. Do not reword, abbreviate or
+                  append to this sentence. */}
+              <p className="mt-5 max-w-xl rounded-xl border border-[#e5e9e7] bg-[#f8faf9] px-4 py-3 text-[13px] leading-relaxed text-[#3d4b44]">
+                This post contains affiliate links. If you are a new Juniper patient and make a purchase through these
+                links, I may earn a small commission at no extra cost to you.
+              </p>
           </div>
 
           {/* At-a-glance card */}
@@ -426,9 +437,10 @@ export default function JuniperPage() {
           </div>
           <p className="mx-auto mt-6 max-w-lg text-xs leading-relaxed text-white/45">
             This post contains affiliate links. If you are a new Juniper patient and make a purchase through these links,
-            I may earn a small commission at no extra cost to you. Content is general information, not medical advice, and
-            suitability for any program is decided by a registered Australian practitioner. Juniper&apos;s inclusions and
-            pricing are drawn from Juniper&apos;s own site and can change, so confirm current terms before you commit.
+            I may earn a small commission at no extra cost to you.
+          </p>
+          <p className="mx-auto mt-3 max-w-lg text-xs leading-relaxed text-white/45">
+            Content is general information, not medical advice, and suitability for any program is decided by a registered Australian practitioner. Juniper&apos;s inclusions and pricing are drawn from Juniper&apos;s own site and can change, so confirm current terms before you commit.
           </p>
         </section>
       </main>
