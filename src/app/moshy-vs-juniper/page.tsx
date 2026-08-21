@@ -1,4 +1,5 @@
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, comparisonArticleSchema } from "@/lib/seo";
+import EarningsBalanceNote from "@/components/consumer/EarningsBalanceNote";
 import { MOSHY_URL } from "@/lib/affiliate-links";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 import Link from "next/link";
@@ -129,6 +130,7 @@ export default function MoshyVsJuniperPage() {
           Moshy vs Juniper:{" "}
           <span style={{ color: CYAN_LT }}>which one is built for you?</span>
         </h1>
+          <EarningsBalanceNote earnFrom="Moshy" noEarnFrom="Juniper" />
         <EditorialMeta lastUpdated="2026-08-13" className="mb-6" />
         <p className="text-[#3d4b44] text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
           Australia&apos;s two most-compared weight-loss telehealth platforms answer the same problem in different

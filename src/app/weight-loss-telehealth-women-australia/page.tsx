@@ -1,4 +1,5 @@
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, comparisonArticleSchema } from "@/lib/seo";
+import EarningsBalanceNote from "@/components/consumer/EarningsBalanceNote";
 import { MOSHY_URL } from "@/lib/affiliate-links";
 import { ArrowRight, Check } from "lucide-react";
 import Link from "next/link";
@@ -92,6 +93,7 @@ export default function WeightLossTelehealthWomenPage() {
         <h1 className="text-3xl sm:text-4xl lg:text-[2.7rem] font-black leading-[1.08] tracking-tight mb-5">
           Weight loss telehealth for women in Australia: <span style={{ color: CYAN_LT }}>the options, and how to choose</span>
         </h1>
+          <EarningsBalanceNote earnFrom="Moshy" noEarnFrom="Juniper" />
         <p className="text-[#3d4b44] text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
           Most of the weight-loss telehealth marketing aimed at women leads with coaching and community. That suits some
           people and not others. This page explains how the women&apos;s services actually work, the difference between a

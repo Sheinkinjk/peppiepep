@@ -1,4 +1,5 @@
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
+import EarningsBalanceNote from "@/components/consumer/EarningsBalanceNote";
 import { MOSHY_URL } from "@/lib/affiliate-links";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
@@ -77,6 +78,7 @@ export default function MoshyAlternativesPage() {
         <h1 className="text-3xl sm:text-4xl lg:text-[2.7rem] font-black leading-[1.08] tracking-tight mb-5">
           Moshy alternatives in Australia: <span style={{ color: CYAN_LT }}>the shortlist</span>
         </h1>
+          <EarningsBalanceNote earnFrom="Moshy" noEarnFrom="Juniper" />
         <p className="text-[#3d4b44] text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
           People search for Moshy alternatives for good reasons: comparing before committing, or the service was not
           the right fit. The shortlist is genuinely short, and here it is without padding.

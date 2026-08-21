@@ -1,4 +1,5 @@
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
+import EarningsBalanceNote from "@/components/consumer/EarningsBalanceNote";
 import { MOSHY_URL } from "@/lib/affiliate-links";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 import Link from "next/link";
@@ -150,6 +151,7 @@ export default function CheapestWeightLossTelehealthPage() {
             <h1 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-extrabold leading-[1.08] tracking-tight text-[#10251b] mb-4 max-w-3xl">
               Cheapest weight loss telehealth in Australia: affordable options compared
             </h1>
+          <EarningsBalanceNote earnFrom="Moshy" noEarnFrom="Juniper" />
             <EditorialMeta lastUpdated="2026-08-14" className="mb-5" />
             <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl mb-3">
               &ldquo;Cheapest&rdquo; is a slippery word in weight-loss telehealth, because services bill in different
