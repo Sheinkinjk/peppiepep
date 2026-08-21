@@ -95,7 +95,7 @@ const faqs = [
   },
   {
     q: "Does Juniper actually work?",
-    a: "Juniper is a program and support service rather than a single treatment, so whether it works comes down to the individual and is a clinical matter decided with your practitioner, not something a webpage can promise. What Juniper provides is structure: practitioner-led care, unlimited follow-ups, coaching, tracking and a patient community, all designed to help people stay consistent. Results vary between people and depend on suitability and how closely the program is followed. This is general information, not medical advice.",
+    a: "Juniper is a program and support service rather than a one-off intervention, so whether it works comes down to the individual and is a clinical matter decided with your practitioner, not something a webpage can promise. What Juniper provides is structure: practitioner-led care, unlimited follow-ups, coaching, tracking and a patient community, all designed to help people stay consistent. Results vary between people and depend on suitability and how closely the program is followed. This is general information, not medical advice.",
   },
   {
     q: "Can I cancel Juniper, and are refunds available?",
