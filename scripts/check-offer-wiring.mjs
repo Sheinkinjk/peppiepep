@@ -66,6 +66,16 @@ for (const slug of slugs) {
   if (/ConsumerShell|PremiumAffiliateLanding/.test(cfg + read(join("src/app", slug, "page.tsx")))
       && !new RegExp(`"/${slug}"`).test(chromeGate)) miss.push("ChromeGate (page will double-header)");
 
+  // "Exclusive" is a commercial claim ACL s29 applies to. Flag it wherever a page
+  // says it but offers.ts does not record the offer as exclusive, so the claim
+  // cannot drift back in the way it did on /superfiliate.
+  if (/\bexclusive\b/i.test(cfg.replace(/\/\/[^\n]*/g, ""))) {
+    const dealBlock = offers.match(new RegExp(`\\{[^}]*href: "/${slug}"[^}]*\\}`));
+    if (!dealBlock || !/exclusive:\s*true/.test(dealBlock[0])) {
+      miss.push('claims "exclusive" but is not marked exclusive in offers.ts');
+    }
+  }
+
   if (hasOffer(cfg)) {
     const text = offerText(cfg);
     // Only a genuine monetary discount belongs on /deals. A free trial anyone can

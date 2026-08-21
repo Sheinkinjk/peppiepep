@@ -12,7 +12,7 @@ import { DEALS, VERIFIED_FULL, VERIFIED_DATE, formatVerifiedFull } from "@/lib/o
  * single-row table straight from a page config (not just the DEALS registry).
  * The Provider cell only links out when an href is given.
  */
-type OfferRow = { brand: string; href?: string; offer: string; code?: string; verified?: string };
+type OfferRow = { brand: string; href?: string; offer: string; code?: string; verified?: string; exclusive?: boolean };
 
 export default function OffersTable({
   deals = DEALS,
@@ -49,7 +49,14 @@ export default function OffersTable({
               </th>
               <td className="px-4 py-3">{d.offer}</td>
               <td className="px-4 py-3 font-semibold tabular-nums text-[#10251b]">{saving(d.offer)}</td>
-              <td className="px-4 py-3 font-mono text-[13px]">{d.code ?? "No code needed"}</td>
+              <td className="px-4 py-3 font-mono text-[13px]">
+                {d.code ?? "No code needed"}
+                {d.exclusive && (
+                  <span className="ml-2 rounded-full bg-[#e8f5ee] px-2 py-0.5 font-sans text-[10px] font-bold uppercase tracking-wide text-[#0a7c42]">
+                    Refer Labs only
+                  </span>
+                )}
+              </td>
               <td className="px-4 py-3"><span className="inline-flex items-center gap-1 font-medium text-[#0a7c42]">Active ✓</span></td>
               <td className="px-4 py-3 whitespace-nowrap tabular-nums">{formatVerifiedFull(d.verified ?? VERIFIED_DATE)}</td>
             </tr>

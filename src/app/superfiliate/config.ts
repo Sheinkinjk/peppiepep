@@ -13,11 +13,11 @@ export const superfiliateConfig: AffiliatePageConfig = {
   offer: "15% off your monthly Superfiliate SaaS fee",
 
   quickAnswer:
-    "Through the link on this page, new subscribers get an exclusive 15% off their monthly Superfiliate fee. Superfiliate is a creator-led growth platform that helps e-commerce and DTC brands run affiliate, referral and creator programs in one place. Each affiliate or creator gets a personalised landing page and custom links, with rewards, tracking and integrations into your store. It is a tool for brands running programs, not for individual affiliates. Pricing is otherwise quoted per brand, so book a demo to scope it.",
+    "Through the link on this page, new subscribers get 15% off their monthly Superfiliate SaaS fee. Superfiliate is a creator-led growth platform that helps e-commerce and DTC brands run affiliate, referral and creator programs in one place. Each affiliate or creator gets a personalised landing page and custom links, with rewards, tracking and integrations into your store. It is a tool for brands running programs, not for individual affiliates. Pricing is otherwise quoted per brand, so book a demo to scope it.",
 
   banner: {
     heading: "Superfiliate: 15% Off Your Monthly Fee",
-    body: "Click below to claim the current exclusive offer, 15% off your monthly Superfiliate fee for new subscribers, via our link.",
+    body: "Click below to claim the current partner offer, 15% off your monthly Superfiliate SaaS fee for new subscribers, via our link.",
     buttonLabel: "Claim 15% off Superfiliate",
   },
 

@@ -49,6 +49,19 @@ export interface Deal {
   category: string;
   featured?: boolean;
   /**
+   * True only where the offer is genuinely unique to Refer Labs, meaning a
+   * reader cannot obtain it by going direct or through another publisher.
+   *
+   * This is a commercial differentiator and therefore a claim ACL s29 applies
+   * to, so it is set ONLY on offers confirmed exclusive, not inferred from a
+   * code containing our name. Superfiliate and Unbounce are deliberately absent:
+   * Superfiliate's page says "Exclusive Offer for Subscribers", which means
+   * exclusive to partner-link arrivals rather than to us, and Unbounce is an
+   * openly generic referral programme.
+   */
+  exclusive?: boolean;
+
+  /**
    * ISO date this specific offer was last read off the provider's own page.
    * Falls back to VERIFIED_DATE when absent. Per-offer beats a single global
    * stamp: it is the truthful claim when only some offers were re-checked, and
@@ -59,8 +72,8 @@ export interface Deal {
 }
 
 export const DEALS: Deal[] = [
-  { brand: "Moshy", logo: "/logos/moshy.png", href: "/moshy", offer: "$120 off your first order", code: "REFERRAL120", category: "Weight loss", featured: true, verified: "2026-08-17" },
-  { brand: "Mosh", logo: "/logos/mosh-tile.png", href: "/moshhair", offer: "55% off your first order", code: "REFERAL55", category: "Hair loss", featured: true, verified: "2026-08-17" },
+  { brand: "Moshy", logo: "/logos/moshy.png", href: "/moshy", offer: "$120 off your first order", code: "REFERRAL120", category: "Weight loss", featured: true, verified: "2026-08-17", exclusive: true },
+  { brand: "Mosh", logo: "/logos/mosh-tile.png", href: "/moshhair", offer: "55% off your first order", code: "REFERAL55", category: "Hair loss", featured: true, verified: "2026-08-17", exclusive: true },
   { brand: "Apollo Energy Group", logo: "/logos/apollo-energy.png", href: "/apollo-energy-group", offer: "$500 off your quote, on top of any rebate", category: "Home batteries", featured: true },
   { brand: "Unbounce", logo: "/logos/unbounce.png", href: "/unbounce", offer: "20% off 3 months, or 35% off your first year", category: "Landing pages", featured: true, verified: "2026-08-20" },
   { brand: "Leadpages", logo: "/logos/leadpages.png", href: "/leadpages", offer: "7-day free trial; 20% off annual billing", category: "Landing pages", featured: true },
