@@ -1,7 +1,7 @@
 import type { CSSProperties } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Check, Scale, Scissors, PawPrint, BatteryCharging, LayoutGrid, Sparkles, Moon, Stethoscope, Activity, ChevronDown } from "lucide-react";
+import { ArrowRight, Check, Scale, Scissors, PawPrint, BatteryCharging, LayoutGrid, Sparkles, Moon, Stethoscope, Activity, ChevronDown, Clock } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import SiteSearch from "@/components/consumer/SiteSearch";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
@@ -335,71 +335,69 @@ export default function HomePage() {
                   </div>
                 );
               })}
-            </div>
 
-            {/* Coming soon, as a disclosure rather than a hidden section. Native
-                <details> keeps the homepage a server component, works without JS,
-                and leaves the links in the DOM so these pages keep their inbound
-                link from the homepage even while collapsed. Closed by default so
-                the live categories stay the point of the section. */}
-            <details className="group mt-6 rounded-2xl border border-[#e5e9e7] bg-[#f5f8f6]">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-6 py-5 [&::-webkit-details-marker]:hidden">
-                <span>
-                  <span className="text-base font-extrabold tracking-[-0.01em] text-[#10251b]">
-                    Coming soon: {comingSoonCategories.length} more categories
+              {/* Coming soon, sitting in the grid's spare cell rather than as a
+                  bar underneath it. Five live categories in a 2/3-column grid
+                  leave exactly one empty slot at both breakpoints, so this fills
+                  the gap and the section reads as one deliberate block. On a
+                  phone the grid is a single column, so it simply stacks last.
+
+                  Native <details>: no client JS, the homepage stays a server
+                  component, and the four links stay in the DOM while collapsed so
+                  those pages keep their inbound link from the homepage either
+                  way. Collapsed by default; the live categories are the point. */}
+              <details className="group flex flex-col rounded-2xl border border-dashed border-[#cfd6d1] bg-white/60 open:bg-[#f5f8f6]">
+                <summary className="flex cursor-pointer list-none flex-col p-6 [&::-webkit-details-marker]:hidden">
+                  <div className="flex items-center gap-3.5">
+                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#eef1ef] text-[#6e7b74]">
+                      <Clock className="h-[1.35rem] w-[1.35rem]" strokeWidth={1.9} aria-hidden="true" />
+                    </span>
+                    <h3 className="text-lg font-extrabold leading-tight tracking-[-0.01em] text-[#10251b]">
+                      Coming soon
+                    </h3>
+                  </div>
+                  <p className="mt-4 text-sm leading-relaxed text-[#3d4b44]">
+                    {comingSoonCategories.length} more categories. The guides are finished and free to read; the provider
+                    comparison is not, so nothing there earns us a commission yet.
+                  </p>
+                  <span className="mt-4 inline-flex items-center gap-1.5 border-t border-[#e5e9e7] pt-4 text-sm font-semibold text-[#0a7c42]">
+                    <span className="group-open:hidden">See what we&apos;re building</span>
+                    <span className="hidden group-open:inline">Hide</span>
+                    <ChevronDown className="h-4 w-4 transition-transform group-open:rotate-180" aria-hidden="true" />
                   </span>
-                  <span className="mt-1 block text-sm leading-relaxed text-[#3d4b44]">
-                    The guides are finished and free to read. The provider comparison is not, so nothing here earns us a
-                    commission yet.
-                  </span>
-                </span>
-                <ChevronDown
-                  className="h-5 w-5 shrink-0 text-[#6e7b74] transition-transform group-open:rotate-180"
-                  aria-hidden="true"
-                />
-              </summary>
-              <div className="grid gap-5 border-t border-[#e5e9e7] p-6 sm:grid-cols-2 lg:grid-cols-4">
-                {comingSoonCategories.map((c) => {
-                  const Icon = c.icon;
-                  return (
-                    <div
-                      key={c.href}
-                      style={{ "--accent": c.accent, "--tint": c.tint } as CSSProperties}
-                      className="flex flex-col rounded-xl border border-[#e5e9e7] bg-white p-5"
-                    >
-                      <div className="flex items-center gap-3">
+                </summary>
+                <div className="flex flex-col gap-3 border-t border-[#e5e9e7] px-6 py-5">
+                  {comingSoonCategories.map((c) => {
+                    const Icon = c.icon;
+                    return (
+                      <div key={c.href} className="flex items-start gap-3">
                         <span
-                          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg"
-                          style={{ background: "var(--tint)", color: "var(--accent)" }}
+                          className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg"
+                          style={{ background: c.tint, color: c.accent }}
                         >
-                          <Icon className="h-[1.15rem] w-[1.15rem]" strokeWidth={1.9} aria-hidden="true" />
+                          <Icon className="h-4 w-4" strokeWidth={1.9} aria-hidden="true" />
                         </span>
-                        <h3 className="text-base font-extrabold leading-tight tracking-[-0.01em] text-[#10251b]">
-                          <Link href={c.href} className="transition-opacity hover:opacity-70">{c.title}</Link>
-                        </h3>
-                      </div>
-                      <p className="mt-3 flex-1 text-[13px] leading-relaxed text-[#3d4b44]">{c.note}</p>
-                      <div className="mt-3 flex flex-col gap-1.5 border-t border-[#e5e9e7] pt-3 text-[13px]">
-                        {c.links.map((l) => (
+                        <span className="min-w-0">
                           <Link
-                            key={l.h}
-                            href={l.h}
-                            className="font-medium text-[#6e7b74] underline-offset-4 transition-colors hover:text-[color:var(--accent)] hover:underline"
+                            href={c.href}
+                            className="block text-sm font-bold text-[#10251b] underline-offset-4 hover:underline"
                           >
-                            {l.l}
+                            {c.title}
                           </Link>
-                        ))}
+                          <span className="mt-0.5 block text-[13px] leading-snug text-[#6e7b74]">{c.note}</span>
+                        </span>
                       </div>
-                    </div>
-                  );
-                })}
-              </div>
-              <p className="border-t border-[#e5e9e7] px-6 py-4 text-sm">
-                <Link href="/coming-soon" className="font-semibold text-[#0a7c42] hover:underline">
-                  How &ldquo;coming soon&rdquo; works here
-                </Link>
-              </p>
-            </details>
+                    );
+                  })}
+                  <Link
+                    href="/coming-soon"
+                    className="mt-1 inline-flex items-center gap-1.5 text-sm font-semibold text-[#0a7c42] hover:underline"
+                  >
+                    How &ldquo;coming soon&rdquo; works here <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  </Link>
+                </div>
+              </details>
+            </div>
           </div>
         </section>
 
