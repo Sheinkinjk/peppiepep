@@ -7,9 +7,9 @@ const URL = `${SITE_URL}/how-we-make-money`;
 export const metadata = generateSEOMetadata({
   title: "How Refer Labs Makes Money | Refer Labs",
   description:
-    "Plainly: Refer Labs earns from affiliate links and, in business finance, from lender referral commissions. What that means for you, and the lines we don't cross. Rankings are never sold.",
+    "Plainly: Refer Labs earns from affiliate links. What that means for you, and the lines we don't cross. Rankings are never sold.",
   url: URL,
-  keywords: ["refer labs how we make money", "affiliate disclosure refer labs", "lender commission disclosure"],
+  keywords: ["refer labs how we make money", "affiliate disclosure refer labs", "affiliate commission disclosure"],
 });
 
 const breadcrumbSchema = {
@@ -33,33 +33,12 @@ export default function HowWeMakeMoney() {
           Neither one lets a company buy a better ranking or a softer review.
         </p>
 
-        <Section h="1. Affiliate links">
+        <Section h="Affiliate links">
           <p>
             On most of the site, when you click through to a product we recommend and sign up, the provider may pay us a
             commission. It costs you nothing extra, and sometimes gets you a better deal than going direct. We only earn if
             you act on a recommendation, which is exactly why the recommendation has to be honest to be worth anything.
           </p>
-        </Section>
-
-        <Section h="2. Lender referral commissions (business finance)">
-          <p>
-            In our <Link href="/business-loans" className="font-semibold text-[#0a7c42] underline">business loans</Link> section
-            it works differently. You send us an enquiry, a person reviews it, and with your consent we introduce you to
-            the lenders we compare. Where an enquiry is submitted through a finance broker, Refer Labs may be paid a share of that broker's commission if a loan settles, and some lenders may pay a commission directly for the
-            introduction.
-          </p>
-          <p>Three things that are always true here:</p>
-          <ul className="space-y-2">
-            {[
-              "It never changes the rate or fees you're offered. The lender's price to you is the same whether you come through us or walk in the front door.",
-              "Commission doesn't decide the order lenders appear in, or whether we tell you one fits. If a lender is wrong for you, we say so.",
-              "We're a referrer, not a lender or a credit provider. We don't provide credit advice, and we never ask for bank statements, ID documents or logins.",
-            ].map((x) => (
-              <li key={x} className="flex gap-2.5 leading-relaxed">
-                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#0a7c42]" aria-hidden="true" />{x}
-              </li>
-            ))}
-          </ul>
         </Section>
 
         <Section h="The lines we don't cross">

@@ -18,7 +18,31 @@ function clientIp(req: NextRequest): string | null {
   return req.headers.get("x-real-ip") || null;
 }
 
+/**
+ * Lead capture is CLOSED while the business lending vertical is hidden
+ * (22 August 2026).
+ *
+ * The pages 307 away in next.config.ts, but a redirect only governs navigation:
+ * this endpoint would still accept a POST from a cached page, a saved form or a
+ * direct call. The vertical is paused partly to review the credit-licensing
+ * position, and collecting business financial details into the database while
+ * that review is open is the specific thing worth not doing. Refusing here is
+ * the part that actually stops data arriving.
+ *
+ * 503 rather than 404: the route is temporarily unavailable, not gone, which
+ * matches the temporary redirects. The handler below is left intact so
+ * restoring the vertical is deleting this guard, nothing more.
+ */
+const LEAD_CAPTURE_CLOSED = true;
+
 export async function POST(req: NextRequest) {
+  if (LEAD_CAPTURE_CLOSED) {
+    return NextResponse.json(
+      { ok: false, error: "Business loan enquiries are closed." },
+      { status: 503 },
+    );
+  }
+
   const body = await req.json().catch(() => null);
   if (!body || typeof body !== "object") {
     return NextResponse.json({ ok: false, error: "Invalid request" }, { status: 400 });

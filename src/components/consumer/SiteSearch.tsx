@@ -13,7 +13,6 @@ const BROWSE: { label: string; href: string; cat: string }[] = [
   { label: "Weight loss & telehealth", href: "/weight-loss", cat: "Weight loss" },
   { label: "Hair loss treatment", href: "/hair-loss", cat: "Hair loss" },
   { label: "Home batteries & solar", href: "/apollo-energy-group", cat: "Home & energy" },
-  { label: "Business loans", href: "/business-loans", cat: "Business finance" },
   { label: "Business software", href: "/business-software", cat: "Software" },
   { label: "All guides", href: "/guides", cat: "Browse" },
 ];

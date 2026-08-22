@@ -99,9 +99,10 @@ export default function Privacy() {
             <div>
               <h2 className="text-2xl font-bold text-[#10251b] mb-4">2A. Business Finance Enquiries</h2>
               <p className="text-[#2b362f] mb-2">
-                If you submit an enquiry through our <a href="/business-loans" className="text-[#0a7c42] hover:underline">business loans</a> section,
-                additional handling applies. Refer Labs is an <strong>independent referrer, not a lender or credit provider</strong>, and does not
-                provide credit assistance or credit advice.
+                  Refer Labs is <strong>not currently accepting business finance enquiries</strong>: that section was withdrawn
+                  in August 2026 and its enquiry form is closed. This clause is kept because it still governs enquiries
+                  submitted before then. Refer Labs is an <strong>independent referrer, not a lender or credit provider</strong>,
+                  and does not provide credit assistance or credit advice.
               </p>
               <ul className="list-disc list-inside text-[#2b362f] space-y-1">
                 <li><strong>What we collect:</strong> your contact details and high-level business information (such as loan amount band, business name, ABN, industry, revenue band and credit profile). We do <strong>not</strong> collect bank statements, identity documents, or account logins through this form.</li>

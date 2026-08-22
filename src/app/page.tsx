@@ -1,7 +1,7 @@
 import type { CSSProperties } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Check, Scale, Scissors, PawPrint, BatteryCharging, Landmark, LayoutGrid, Sparkles, Moon } from "lucide-react";
+import { ArrowRight, Check, Scale, Scissors, PawPrint, BatteryCharging, LayoutGrid, Sparkles, Moon, Stethoscope, Activity, ChevronDown } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import SiteSearch from "@/components/consumer/SiteSearch";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
@@ -23,6 +23,51 @@ const picks = [
 // always matches what is on the page. Each card carries its own muted accent
 // (icon tile + hover), so the grid reads as an editorial index, not a wall of
 // identical green cards.
+// Sections with finished guides but no provider comparison yet. Kept out of
+// categoryCards so the live grid means one thing: a category you can actually
+// compare and act on today. They sit behind a disclosure below the grid, open
+// on demand, so a reader browsing categories can still find them and the pages
+// keep their inbound link from the homepage. Native <details>, so it needs no
+// client JS and the content is in the DOM for crawlers either way.
+const comingSoonCategories = [
+  {
+    href: "/skin-and-beauty", icon: Sparkles, title: "Skin & Beauty",
+    accent: "#7A5A8C", tint: "#F2ECF6",
+    note: "What the actives do, what devices really cost here, and how the prescription route differs.",
+    links: [
+      { h: "/skin-and-beauty/led-face-mask-comparison-australia", l: "LED masks: real prices" },
+      { h: "/skin-and-beauty/acne-treatment-options-and-costs-australia", l: "Acne: routes and costs" },
+    ],
+  },
+  {
+    href: "/sleep", icon: Moon, title: "Sleep",
+    accent: "#3D5A80", tint: "#E9EFF6",
+    note: "Where sleep is clinical and where it is retail, and what each actually costs.",
+    links: [
+      { h: "/sleep/do-i-have-sleep-apnoea", l: "How diagnosis works" },
+      { h: "/sleep/cpap-machine-costs-australia", l: "CPAP: verified prices" },
+    ],
+  },
+  {
+    href: "/mens-health", icon: Stethoscope, title: "Men's Health",
+    accent: "#2F6E5A", tint: "#E7F1EC",
+    note: "How the access routes are priced, and the rebated pathway single-condition services cannot arrange.",
+    links: [
+      { h: "/mens-health/erectile-dysfunction-treatment-cost-australia", l: "What the routes cost" },
+      { h: "/mens-health/is-telehealth-or-a-gp-cheaper-for-mens-health", l: "Telehealth or a GP?" },
+    ],
+  },
+  {
+    href: "/longevity", icon: Activity, title: "Longevity",
+    accent: "#8A6A3B", tint: "#F5EFE4",
+    note: "Recovery hardware costed over three years, and what clinicians say about screening people who feel well.",
+    links: [
+      { h: "/longevity/recovery/ice-bath-running-costs-australia", l: "What an ice bath costs to run" },
+      { h: "/longevity/diagnostics/whole-body-mri-australia-cost", l: "Whole-body MRI: the case against" },
+    ],
+  },
+];
+
 const categoryCards = [
   {
     href: "/weight-loss", icon: Scale, title: "Weight Loss & Telehealth",
@@ -43,24 +88,6 @@ const categoryCards = [
     ],
   },
   {
-    href: "/skin-and-beauty", icon: Sparkles, title: "Skin & Beauty",
-    accent: "#7A5A8C", tint: "#F2ECF6",
-    note: "What the actives do, what devices really cost here, and how the prescription route differs.",
-    links: [
-      { h: "/skin-and-beauty/led-face-mask-comparison-australia", l: "LED masks: real prices" },
-      { h: "/skin-and-beauty/acne-treatment-options-and-costs-australia", l: "Acne: routes and costs" },
-    ],
-  },
-  {
-    href: "/sleep", icon: Moon, title: "Sleep",
-    accent: "#3D5A80", tint: "#E9EFF6",
-    note: "Where sleep is clinical and where it is retail, and what each actually costs.",
-    links: [
-      { h: "/sleep/do-i-have-sleep-apnoea", l: "How diagnosis works" },
-      { h: "/sleep/cpap-machine-costs-australia", l: "CPAP: verified prices" },
-    ],
-  },
-  {
     href: "/pet-insurance", icon: PawPrint, title: "Pets",
     accent: "#3E6B99", tint: "#E8F0F8",
     note: "How pet insurance cover, waiting periods and exclusions actually work, plus current offers.",
@@ -75,15 +102,6 @@ const categoryCards = [
     links: [
       { h: "/home-battery-rebate-australia", l: "The battery rebate, explained" },
       { h: "/what-size-home-battery-do-i-need-australia", l: "What size do I need?" },
-    ],
-  },
-  {
-    href: "/business-loans", icon: Landmark, title: "Business Loans",
-    accent: "#1E6E74", tint: "#E1EEEF",
-    note: "Compare Australian lenders in one enquiry, with the real cost broken down.",
-    links: [
-      { h: "/business-loan-calculator", l: "Repayment calculator" },
-      { h: "/what-a-business-loan-actually-costs", l: "What loans really cost" },
     ],
   },
   {
@@ -104,7 +122,6 @@ const guides = [
   { href: "/mosh-vs-pilot", cat: "Hair loss", title: "Mosh vs Pilot: which should you choose?" },
   { href: "/moshy-vs-gp", cat: "Weight loss", title: "Telehealth or your GP? A practical comparison" },
   { href: "/mosh-vs-dense", cat: "Hair loss", title: "Mosh vs Dense: clinical pathway or topical products?" },
-  { href: "/compare-business-lenders/prospa-vs-lumi", cat: "Business loans", title: "Prospa vs Lumi: two fast lenders, compared" },
   { href: "/best-newsletter-platform", cat: "Creator tools", title: "beehiiv vs Substack vs Kit, compared properly" },
 ];
 
@@ -112,7 +129,16 @@ const itemListSchema = {
   "@context": "https://schema.org",
   "@type": "ItemList",
   name: "Refer Labs comparison categories",
-  itemListElement: categoryCards.map((c, i) => ({ "@type": "ListItem", position: i + 1, name: c.title, url: `${SITE_URL}${c.href}` })),
+  // Both lists, so the structured data matches what the page actually offers.
+  // The coming-soon four are real, reachable pages rendered in the disclosure
+  // below the grid, so omitting them would understate the site; listing them
+  // after the live categories keeps the order meaningful.
+  itemListElement: [...categoryCards, ...comingSoonCategories].map((c, i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    name: c.title,
+    url: `${SITE_URL}${c.href}`,
+  })),
 };
 
 // Trust points shown as a strip under the hero. For a comparison site, trust is
@@ -181,7 +207,6 @@ export default function HomePage() {
                   { l: "Weight loss", h: "/weight-loss" },
                   { l: "Hair loss", h: "/hair-loss" },
                   { l: "Home batteries", h: "/apollo-energy-group" },
-                  { l: "Business loans", h: "/business-loans" },
                 ].map((p, i) => (
                   <span key={p.h} className="flex items-center gap-2">
                     {i > 0 && <span className="text-[#cdd5cf]">·</span>}
@@ -311,6 +336,70 @@ export default function HomePage() {
                 );
               })}
             </div>
+
+            {/* Coming soon, as a disclosure rather than a hidden section. Native
+                <details> keeps the homepage a server component, works without JS,
+                and leaves the links in the DOM so these pages keep their inbound
+                link from the homepage even while collapsed. Closed by default so
+                the live categories stay the point of the section. */}
+            <details className="group mt-6 rounded-2xl border border-[#e5e9e7] bg-[#f5f8f6]">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-6 py-5 [&::-webkit-details-marker]:hidden">
+                <span>
+                  <span className="text-base font-extrabold tracking-[-0.01em] text-[#10251b]">
+                    Coming soon: {comingSoonCategories.length} more categories
+                  </span>
+                  <span className="mt-1 block text-sm leading-relaxed text-[#3d4b44]">
+                    The guides are finished and free to read. The provider comparison is not, so nothing here earns us a
+                    commission yet.
+                  </span>
+                </span>
+                <ChevronDown
+                  className="h-5 w-5 shrink-0 text-[#6e7b74] transition-transform group-open:rotate-180"
+                  aria-hidden="true"
+                />
+              </summary>
+              <div className="grid gap-5 border-t border-[#e5e9e7] p-6 sm:grid-cols-2 lg:grid-cols-4">
+                {comingSoonCategories.map((c) => {
+                  const Icon = c.icon;
+                  return (
+                    <div
+                      key={c.href}
+                      style={{ "--accent": c.accent, "--tint": c.tint } as CSSProperties}
+                      className="flex flex-col rounded-xl border border-[#e5e9e7] bg-white p-5"
+                    >
+                      <div className="flex items-center gap-3">
+                        <span
+                          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg"
+                          style={{ background: "var(--tint)", color: "var(--accent)" }}
+                        >
+                          <Icon className="h-[1.15rem] w-[1.15rem]" strokeWidth={1.9} aria-hidden="true" />
+                        </span>
+                        <h3 className="text-base font-extrabold leading-tight tracking-[-0.01em] text-[#10251b]">
+                          <Link href={c.href} className="transition-opacity hover:opacity-70">{c.title}</Link>
+                        </h3>
+                      </div>
+                      <p className="mt-3 flex-1 text-[13px] leading-relaxed text-[#3d4b44]">{c.note}</p>
+                      <div className="mt-3 flex flex-col gap-1.5 border-t border-[#e5e9e7] pt-3 text-[13px]">
+                        {c.links.map((l) => (
+                          <Link
+                            key={l.h}
+                            href={l.h}
+                            className="font-medium text-[#6e7b74] underline-offset-4 transition-colors hover:text-[color:var(--accent)] hover:underline"
+                          >
+                            {l.l}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+              <p className="border-t border-[#e5e9e7] px-6 py-4 text-sm">
+                <Link href="/coming-soon" className="font-semibold text-[#0a7c42] hover:underline">
+                  How &ldquo;coming soon&rdquo; works here
+                </Link>
+              </p>
+            </details>
           </div>
         </section>
 

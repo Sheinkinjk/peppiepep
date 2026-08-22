@@ -60,7 +60,6 @@ export default function Footer() {
               {[
                 { href: "/for-business",                 label: "Work With Us" },
                 { href: "/affiliate-programs-australia",  label: "Affiliate Programs AU" },
-                { href: "/business-loans",               label: "Business Loans" },
               ].map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="text-sm text-slate-400 transition-all hover:translate-x-0.5 hover:text-white">

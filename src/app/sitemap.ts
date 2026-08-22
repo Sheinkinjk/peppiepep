@@ -1,8 +1,5 @@
 import { MetadataRoute } from 'next';
 import { CATALOG } from '@/lib/catalog/catalog';
-import { LENDERS } from '@/lib/lenders';
-import { INTENT_PAGES } from '@/lib/lending-intent';
-import { LENDER_COMPARISONS } from '@/lib/lender-comparisons';
 import { HAIR_LOSS_GUIDES } from '@/lib/hair-loss-guides';
 import { APOLLO_GUIDES } from '@/lib/apollo-guides';
 
@@ -90,27 +87,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/about`,              lastModified: AUG13, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${BASE}/contact`,            lastModified: STABLE, changeFrequency: 'monthly', priority: 0.6 },
 
-    // ── Business lending (lead-capture vertical; admin/api never listed) ─
-    { url: `${BASE}/business-loans`,                            lastModified: AUG13, changeFrequency: 'weekly',  priority: 0.9 },
-    { url: `${BASE}/business-loan-calculator`,                  lastModified: NEW, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE}/what-a-business-loan-actually-costs`,       lastModified: NEW, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE}/equipment-finance-instant-asset-write-off`, lastModified: NEW, changeFrequency: 'monthly', priority: 0.75 },
-    { url: `${BASE}/how-we-make-money`,                         lastModified: AUG13, changeFrequency: 'monthly', priority: 0.5 },
-    { url: `${BASE}/true-cost-of-business-loans-australia`,     lastModified: NEW, changeFrequency: 'monthly', priority: 0.82 },
-    // Lender pages, generated from the config (adding a lender = one config entry)
-    ...LENDERS.flatMap((l) => [
-      { url: `${BASE}/business-loans/${l.slug}`,        lastModified: AUG13, changeFrequency: 'monthly' as const, priority: 0.78 },
-      { url: `${BASE}/business-loans/${l.slug}/review`, lastModified: AUG13, changeFrequency: 'monthly' as const, priority: 0.72 },
-    ]),
-    // Lender head-to-head comparisons
-    ...LENDER_COMPARISONS.map((c) => ({ url: `${BASE}/compare-business-lenders/${c.slug}`, lastModified: AUG13, changeFrequency: 'monthly' as const, priority: c.priority })),
-    // Intent + explainer pages, generated from the registry
-    ...INTENT_PAGES.map((p) => ({
-      url: `${BASE}/${p.slug}`,
-      lastModified: NEW,
-      changeFrequency: 'monthly' as const,
-      priority: p.priority,
-    })),
+    // ── Business lending: withdrawn from the sitemap, 22 August 2026 ──────
+    // The vertical is hidden pending a review of the credit-licensing position
+    // and because it never found traction. The routes temporarily redirect (see
+    // next.config.ts), and a redirecting URL must never appear here: it tells
+    // Google to crawl a page we are simultaneously sending away. /how-we-make-money
+    // stays, because it is a sitewide trust page that only happened to live in
+    // this block.
+    //
+    // To restore: put this block back, and delete the lending redirects in
+    // next.config.ts. LENDERS, LENDER_COMPARISONS and INTENT_PAGES are untouched.
+    { url: `${BASE}/how-we-make-money`, lastModified: AUG13, changeFrequency: 'monthly', priority: 0.5 },
 
 
     // ── Services ───────────────────────────────────────────────────────

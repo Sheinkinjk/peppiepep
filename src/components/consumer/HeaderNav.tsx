@@ -32,7 +32,6 @@ const GROUPS: Group[] = [
     items: [
       { href: "/moshhair", label: "Mosh", note: "How it works, plus 55% off your first order" },
       { href: "/best-hair-loss-treatment-australia", label: "Compare all options", note: "Clinical telehealth vs topical products" },
-      { href: "/mosh-vs-pilot", label: "Mosh vs Pilot", note: "Which should you choose" },
       { href: "/hair-loss-treatment-cost-australia", label: "What treatment costs", note: "What you pay and what is included" },
       { href: "/hair-loss-quiz", label: "Which option fits you?", note: "A 30-second match" },
     ],
@@ -61,7 +60,6 @@ const GROUPS: Group[] = [
     label: "Business",
     items: [
       { href: "/business-software", label: "Business Software", note: "CRM, email, AI and website tools, compared" },
-      { href: "/business-loans", label: "Business Loans", note: "Compare Australian lenders in one enquiry" },
       { href: "/best-ai-sales-tools", label: "Sales, CRM & Outreach", note: "GoHighLevel, Pipedrive, Reply.io" },
       { href: "/affiliate-programs-australia", label: "Affiliate Programs", note: "The best programs to join in 2026" },
       { href: "/for-business", label: "Partner with us", note: "Get discovered, generate leads, build distribution" },

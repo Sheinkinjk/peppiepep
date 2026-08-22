@@ -32,6 +32,39 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // ── Business lending: hidden, not retired (22 August 2026) ────────────
+      // Withdrawn pending a review of the credit-licensing position, and because
+      // the vertical never found traction. Deliberately TEMPORARY (307), which is
+      // normally the wrong choice: it keeps the old URL in the index rather than
+      // consolidating equity. Here that is the accurate signal, because the pages
+      // are intended to come back and a 308 would tell Google they never will.
+      //
+      // The pages, components, lender data and admin tooling all still exist and
+      // build. Restoring the vertical is: delete this block, put the sitemap block
+      // back, and re-enable /api/lending-lead. Nothing else was deleted.
+      //
+      // /for-business is the closest live page by intent for a business audience.
+      { source: '/business-loans', destination: '/for-business', permanent: false },
+      { source: '/business-loan-calculator', destination: '/for-business', permanent: false },
+      { source: '/what-a-business-loan-actually-costs', destination: '/for-business', permanent: false },
+      { source: '/true-cost-of-business-loans-australia', destination: '/for-business', permanent: false },
+      { source: '/equipment-finance-instant-asset-write-off', destination: '/for-business', permanent: false },
+      { source: '/unsecured-business-loans-australia', destination: '/for-business', permanent: false },
+      { source: '/business-loans-bad-credit-australia', destination: '/for-business', permanent: false },
+      { source: '/fast-business-loans-australia', destination: '/for-business', permanent: false },
+      { source: '/small-business-loans-australia', destination: '/for-business', permanent: false },
+      { source: '/business-line-of-credit-australia', destination: '/for-business', permanent: false },
+      { source: '/working-capital-loans-australia', destination: '/for-business', permanent: false },
+      { source: '/low-doc-business-loans-australia', destination: '/for-business', permanent: false },
+      { source: '/startup-business-loans-australia', destination: '/for-business', permanent: false },
+      { source: '/business-loans-sole-traders-australia', destination: '/for-business', permanent: false },
+      { source: '/business-loans-hospitality-australia', destination: '/for-business', permanent: false },
+      { source: '/secured-vs-unsecured-business-loans', destination: '/for-business', permanent: false },
+      { source: '/how-to-get-a-business-loan-australia', destination: '/for-business', permanent: false },
+      { source: '/business-loan-eligibility-australia', destination: '/for-business', permanent: false },
+      { source: '/business-loans/:path*', destination: '/for-business', permanent: false },
+      { source: '/compare-business-lenders/:path*', destination: '/for-business', permanent: false },
+
       // ── Retired verticals (July 2026) ─────────────────────────────────────
       // Gusto/Melio: US-only, wrong jurisdiction. Income Lab: off-brand. 301 to the
       // closest live page so equity consolidates.
