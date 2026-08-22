@@ -55,10 +55,12 @@ export function OrganizationSchema() {
       "Telehealth Services Australia",
       "Pet Insurance Australia",
       "Home Batteries and Solar Rebates Australia",
-      "Business Loans and Business Finance Australia",
       "Website Builders and Landing Page Software",
       "Email Marketing and Newsletter Platforms",
       "CRM and Sales Software",
+      // Business lending removed 22 Aug 2026: the vertical is hidden, and claiming
+      // expertise in a subject the site no longer publishes is the same category of
+      // inaccuracy this array was cleaned up to fix. Restore it with the vertical.
       "Product Comparison and Review Methodology",
       "Consumer Pricing Research Australia",
       "Affiliate Programs in Australia"
