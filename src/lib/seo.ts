@@ -129,9 +129,18 @@ export function generateMetadata(config: SEOConfig): Metadata {
     },
 
     // Icons
+    // logo.svg is the 128x96 wordmark. It was declared as both the favicon and the
+    // apple-touch-icon, which are square formats, so it competed with favicon.ico
+    // and iOS ignored it outright. Google was left resolving two rel="icon" tags
+    // and served a plain black-and-white mark that is not the brand at all.
+    // These are square, on-brand, and sized to Google's rule that a favicon be a
+    // square multiple of 48.
     icons: {
-      icon: "/logo.svg",
-      apple: "/logo.svg",
+      icon: [
+        { url: "/favicon.ico", sizes: "48x48 96x96 144x144", type: "image/x-icon" },
+        { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+      ],
+      apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
     },
 
     // Manifest

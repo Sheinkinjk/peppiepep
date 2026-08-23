@@ -118,6 +118,54 @@ export function OrganizationSchema() {
   );
 }
 
+/**
+ * Declares the primary navigation to search engines.
+ *
+ * Sitelinks are algorithmic and cannot be forced; the demotion tool was retired
+ * years ago. But every page on this site links to every hub through the nav and
+ * footer, so internal link counts are identical across 166 URLs and give Google
+ * nothing to rank importance by. With no hierarchy signal it falls back on page
+ * type, which is why a brand search for "Refer Labs" surfaced About and For
+ * Business, the two classically sitelink-shaped pages, rather than the
+ * categories that earn.
+ *
+ * SiteNavigationElement is the one schema type designed to state that hierarchy.
+ * It is a hint rather than a guarantee, and it is listed money-first so the
+ * signal at least points the right way. The rest is brand search volume and what
+ * people click, which no markup can substitute for.
+ */
+export function SiteNavigationSchema() {
+  const nav = [
+    { name: "Weight loss & telehealth", url: "https://referlabs.com.au/weight-loss" },
+    { name: "Hair loss treatment", url: "https://referlabs.com.au/hair-loss" },
+    { name: "Pet insurance", url: "https://referlabs.com.au/pet-insurance" },
+    { name: "Home batteries", url: "https://referlabs.com.au/apollo-energy-group" },
+    { name: "Business software", url: "https://referlabs.com.au/business-software" },
+    { name: "Deals & discount codes", url: "https://referlabs.com.au/deals" },
+    { name: "Guides & comparisons", url: "https://referlabs.com.au/guides" },
+    { name: "About Refer Labs", url: "https://referlabs.com.au/about" },
+  ];
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "@id": "https://referlabs.com.au/#nav",
+    name: "Refer Labs primary navigation",
+    itemListOrder: "https://schema.org/ItemListOrderAscending",
+    itemListElement: nav.map((n, i) => ({
+      "@type": "SiteNavigationElement",
+      position: i + 1,
+      name: n.name,
+      url: n.url,
+    })),
+  };
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
 export function FAQSchema({ faqs }: { faqs: Array<{ question: string; answer: string }> }) {
   const schema = {
     "@context": "https://schema.org",

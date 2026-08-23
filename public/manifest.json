@@ -1,0 +1,15 @@
+{
+  "name": "Refer Labs",
+  "short_name": "Refer Labs",
+  "description": "Independent Australian comparisons for health services, insurance, energy and business software.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F6F5F1",
+  "theme_color": "#0E7C66",
+  "lang": "en-AU",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

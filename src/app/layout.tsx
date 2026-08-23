@@ -8,7 +8,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { SupabaseSessionListener } from "@/components/SupabaseSessionListener";
 import { CookieConsent } from "@/components/CookieConsent";
 import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
-import { OrganizationSchema, WebsiteSchema } from "@/components/StructuredData";
+import { OrganizationSchema, WebsiteSchema, SiteNavigationSchema } from "@/components/StructuredData";
 import { GoogleAnalytics, GoogleTagManager, MetaPixel, LinkedInInsight } from "@/components/Analytics";
 import { AffiliateClickTracker } from "@/components/AffiliateClickTracker";
 import { AiReferralTracker } from "@/components/AiReferralTracker";
@@ -69,6 +69,7 @@ export default function RootLayout({
     <html lang="en-AU">
       <head>
         <OrganizationSchema />
+        <SiteNavigationSchema />
         <WebsiteSchema />
       </head>
       <body
