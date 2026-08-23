@@ -108,7 +108,7 @@ const rows: { label: string; mosh: string; dense: string }[] = [
   { label: "Prescription", mosh: "Yes, where clinically appropriate", dense: "Topical range, no consult" },
   { label: "Best for", mosh: "Active or progressing male-pattern loss", dense: "Early thinning, density & scalp health" },
   { label: "Pricing", mosh: "Subscription, confirmed in the consult", dense: "Per product or routine" },
-  { label: "Discount", mosh: "Referral via the link, no code", dense: "Referral via the link, no code" },
+  { label: "Discount", mosh: "55% off a first order with code REFERAL55, applied via the link", dense: "Referral via the link, no code" },
 ];
 
 export default function MoshVsDensePage() {

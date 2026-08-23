@@ -202,7 +202,7 @@ export default function MoshyVsJuniperPage() {
             <p className="text-[10px] font-bold uppercase tracking-[0.18em] mb-2" style={{ color: CYAN_LT }}>The clinical pathway</p>
             <h3 className="text-lg font-bold mb-2">Start with Moshy</h3>
             <p className="text-[#3d4b44] text-sm leading-relaxed mb-4">
-              Fast online eligibility check, practitioner-reviewed, delivered. No code needed, the referral applies automatically.
+              Fast online eligibility check, practitioner-reviewed, delivered. The discount code is REFERRAL120, applied automatically through this link so there is nothing to type.
             </p>
             <a
               {...aff(MOSHY_URL)}

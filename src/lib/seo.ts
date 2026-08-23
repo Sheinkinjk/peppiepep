@@ -1396,7 +1396,7 @@ export const seoConfig = {
   moshyVsJuniper: {
     title: "Moshy vs Juniper 2026: Which Is Better for You? | Refer Labs",
     description:
-      "Moshy vs Juniper 2026: Moshy is a lean clinical pathway open to anyone; Juniper wraps coaching around clinical care and is built for women. Cost, eligibility and fit.",
+      "Moshy vs Juniper 2026, with $120 off Moshy using code REFERRAL120: Moshy is a lean clinical pathway open to anyone, Juniper wraps coaching around clinical care and is built for women. Cost, eligibility and fit.",
     url: `${SITE_URL}/moshy-vs-juniper`,
     keywords: [
       "moshy vs juniper",
@@ -1417,7 +1417,7 @@ export const seoConfig = {
   moshyVsPilot: {
     title: "Moshy vs Pilot 2026: Weight Loss Telehealth Compared",
     description:
-      "Moshy vs Pilot 2026: Moshy is gender-neutral and open to anyone; Pilot is Eucalyptus's men-focused telehealth. Pricing, process and who each suits.",
+      "Moshy vs Pilot 2026, with $120 off Moshy using code REFERRAL120: Moshy is gender-neutral and open to anyone, Pilot is men-focused. Pricing and who each suits.",
     url: `${SITE_URL}/moshy-vs-pilot`,
     keywords: [
       "moshy vs pilot",
@@ -1642,7 +1642,7 @@ export const seoConfig = {
   moshyAlternatives: {
     title: "Moshy Alternatives in Australia 2026: Who Else Does This? | Refer Labs",
     description:
-      "The realistic alternatives to Moshy in Australia: Juniper for women, and your own GP. What each pathway offers and how they differ. Information only, not medical advice.",
+      "Moshy alternatives in Australia, and $120 off Moshy with code REFERRAL120 if you stay: Juniper for women, or your own GP. What each pathway offers. Information only, not medical advice.",
     url: `${SITE_URL}/moshy-alternatives`,
     keywords: [
       "moshy alternatives",
@@ -1780,7 +1780,7 @@ export const seoConfig = {
   moshVsPilot: {
     title: "Mosh vs Pilot 2026: Which Should You Choose? | Refer Labs",
     description:
-      "Mosh vs Pilot 2026: two Australian men's hair-loss telehealth services. How they differ, what each includes, and who each suits. Info only.",
+      "Mosh vs Pilot 2026, with 55% off a first Mosh order using code REFERAL55: two Australian men's hair-loss telehealth services, how they differ and who each suits. Info only.",
     url: `${SITE_URL}/mosh-vs-pilot`,
     keywords: [
       "mosh vs pilot",

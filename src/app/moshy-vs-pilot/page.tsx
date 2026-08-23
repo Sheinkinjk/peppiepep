@@ -112,7 +112,7 @@ const webPageSchema = {
 
 // ── Comparison rows ──────────────────────────────────────────────────────────
 const rows: { label: string; moshy: string; pilot: string; highlightMoshy?: boolean }[] = [
-  { label: "Pricing model", moshy: "Subscription, confirmed in the consult ($120 off first treatment for new customers)", pilot: "Subscription, confirmed in the consult" },
+  { label: "Pricing model", moshy: "Subscription, confirmed in the consult ($120 off a new customer's first order with code REFERRAL120)", pilot: "Subscription, confirmed in the consult" },
   { label: "Billing terms", moshy: "Set by provider, check current terms", pilot: "Set by provider, check current terms" },
   { label: "Who it is built for", moshy: "Gender-neutral, anyone eligible", pilot: "Men-focused (Eucalyptus men's brand)" },
   { label: "Parent company", moshy: "Moshy (Australian telehealth)", pilot: "Eucalyptus (also runs Juniper)" },

@@ -104,7 +104,7 @@ const rows: { label: string; mosh: string; pilot: string }[] = [
   { label: "Breadth", mosh: "Hair, skin, weight, mind, sexual health", pilot: "Hair, weight, sexual health and more" },
   { label: "Best for", mosh: "A focused, quick hair-loss consult", pilot: "Those who prefer a broad health ecosystem" },
   { label: "Pricing", mosh: "Subscription, confirmed in the consult", pilot: "Subscription, confirmed in the consult" },
-  { label: "Referral offer", mosh: "Applied via the link, no code", pilot: "Not a Refer Labs partner" },
+  { label: "Referral offer", mosh: "55% off a first order with code REFERAL55, applied automatically via the link", pilot: "Not a Refer Labs partner" },
 ];
 
 const articleSchema = comparisonArticleSchema({
