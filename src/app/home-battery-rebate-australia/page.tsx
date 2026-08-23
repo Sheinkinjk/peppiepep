@@ -338,6 +338,17 @@ export default function HomeBatteryRebatePage() {
             </div>
           </section>
 
+          <section className="mt-12 border-t border-[#e5e9e7] pt-8">
+            <h2 className="text-xs font-bold uppercase tracking-[0.12em] text-[#9aa39c]">More on home batteries</h2>
+            <ul className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-sm">
+              <li><Link href="/solar-and-battery-package-australia" className="font-semibold text-[#0a7c42] hover:underline">Buying solar and a battery together</Link></li>
+              <li><Link href="/tesla-powerwall-alternatives-australia" className="font-semibold text-[#0a7c42] hover:underline">Powerwall alternatives</Link></li>
+              <li><Link href="/home-battery-blackout-backup-australia" className="font-semibold text-[#0a7c42] hover:underline">Will it run the house in a blackout?</Link></li>
+              <li><Link href="/home-battery-installer-sydney" className="text-[#3d4b44] hover:text-[#0a7c42] hover:underline">Installers in Sydney</Link></li>
+              <li><Link href="/deals" className="text-[#3d4b44] hover:text-[#0a7c42] hover:underline">All current offers</Link></li>
+            </ul>
+          </section>
+
           <p className="mt-10 text-xs leading-relaxed text-[#9aa39c]">
             Rebate figures reflect the federal Cheaper Home Batteries Program and state incentives as at July 2026 and
             are indicative only. STC prices move, and scheme rules change, so confirm current terms and your own

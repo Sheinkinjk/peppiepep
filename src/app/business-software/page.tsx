@@ -212,6 +212,11 @@ export default function BusinessSoftwarePage() {
               Some pages contain affiliate links, disclosed on the page. We may earn a commission if you buy through them,
               at no extra cost to you, and it never changes a recommendation.
             </p>
+            <p className="mt-4 max-w-2xl text-sm leading-relaxed text-[#3d4b44]">
+              Only a handful of these carry a genuine discount rather than a free trial. Those are listed, with the date
+              each was checked, on{" "}
+              <Link href="/deals" className="font-semibold text-[#0a7c42] hover:underline">the deals page</Link>.
+            </p>
           </div>
         </div>
       </main>

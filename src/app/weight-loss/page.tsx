@@ -320,6 +320,10 @@ export default function WeightLossHubPage() {
             Juniper: if you are a new Juniper patient and make a purchase through these links, I may earn a small
             commission at no extra cost to you. Commissions never change a comparison or a conclusion.
           </p>
+          <p className="mt-6 text-sm leading-relaxed text-[#3d4b44]">
+            Every current offer we hold, with the date each one was checked, is on{" "}
+            <Link href="/deals" className="font-semibold text-[#0a7c42] hover:underline">the deals page</Link>.
+          </p>
         </section>
       </main>
     </ConsumerShell>

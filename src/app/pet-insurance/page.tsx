@@ -189,6 +189,7 @@ export default function PetInsurancePage() {
               which sets out the six things that decide what you actually get back. Both are underwritten by the same
               insurer, which is worth knowing first:{" "}
               <Link href="/who-underwrites-pet-insurance-australia" className="nw-link">who underwrites which brand</Link>.
+              Current offers across every category sit on <Link href="/deals" className="nw-link">the deals page</Link>.
             </p>
           </section>
 

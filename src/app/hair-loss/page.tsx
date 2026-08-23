@@ -132,6 +132,7 @@ export default function HairLossHubPage() {
               <div className="mt-5 space-y-2 text-sm font-semibold">
                 <p><Link href="/best-hair-loss-treatment-australia" className="text-[#0a7c42] hover:underline">Compare treatments →</Link></p>
                 <p><Link href="/moshhair" className="text-[#0a7c42] hover:underline">Read the Mosh guide →</Link></p>
+                <p><Link href="/receding-hairline-treatment-australia" className="text-[#0a7c42] hover:underline">Receding hairline: the options →</Link></p>
               </div>
             </div>
             <div className="rounded-2xl border border-[#e5e9e7] bg-[#f5f8f6] p-7">
@@ -217,6 +218,10 @@ export default function HairLossHubPage() {
             recommendation of any treatment. Prescription medicines in Australia are available only after individual
             assessment by a registered practitioner. Some links are disclosed affiliate links, and commissions never
             change a comparison or a conclusion.
+          </p>
+          <p className="mt-6 text-sm leading-relaxed text-[#3d4b44]">
+            Every current offer we hold, with the date each one was checked, is on{" "}
+            <Link href="/deals" className="font-semibold text-[#0a7c42] hover:underline">the deals page</Link>.
           </p>
         </section>
       </main>

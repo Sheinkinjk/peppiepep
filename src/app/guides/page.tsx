@@ -70,13 +70,14 @@ const sections = [
     label: "Comparison Roundups",
     description: "Head-to-head comparisons across categories. Independent, and never pay-to-rank.",
     guides: [
+      { href: "/deals", label: "Every Verified Discount Code", desc: "Each current offer with the date it was last checked." },
       { href: "/best-website-builder", label: "Best Website Builder 2026", desc: "Carrd vs Durable AI vs Butternut AI vs Swipe Pages." },
       { href: "/best-newsletter-platform", label: "Best Newsletter Platform 2026", desc: "beehiiv vs Substack vs ConvertKit." },
       { href: "/best-weight-loss-telehealth-australia", label: "Best Weight Loss Telehealth", desc: "Moshy vs Juniper, compared." },
       { href: "/best-hair-loss-treatment-australia", label: "Best Hair Loss Treatment", desc: "Clinical telehealth vs topical products." },
       { href: "/best-ai-sales-tools", label: "Best AI Sales Tools 2026", desc: "GoHighLevel, AiSDR, Reply.io and FullEnrich, by job." },
-        { href: "/who-underwrites-pet-insurance-australia", label: "Who Underwrites Pet Insurance", desc: "PetSure issues 20+ brands. Which are independent, from each company's own disclosure." },
-        { href: "/what-pet-insurance-covers-australia", label: "What Pet Insurance Covers", desc: "Cover types, waiting periods and exclusions." },
+      { href: "/who-underwrites-pet-insurance-australia", label: "Who Underwrites Pet Insurance", desc: "PetSure issues 20+ brands. Which are independent, from each company's own disclosure." },
+      { href: "/what-pet-insurance-covers-australia", label: "What Pet Insurance Covers", desc: "Cover types, waiting periods and exclusions." },
     ],
   },
   {
