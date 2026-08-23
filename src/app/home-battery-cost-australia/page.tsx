@@ -119,13 +119,13 @@ export default function HomeBatteryCostAustraliaPage() {
             <h1 className="mt-4 text-3xl sm:text-4xl lg:text-[2.6rem] font-extrabold leading-[1.08] tracking-tight text-[#10251b]">
               How much a home battery costs in Australia
             </h1>
-            <EditorialMeta lastUpdated="2026-08-13" className="mt-5" />
             <p className="mt-5 text-base sm:text-lg leading-relaxed text-[#3d4b44]">
               Battery prices are confusing because quotes mix up supply-only and installed, and before and after the
               rebate. This page sets out the real installed cost ranges for 2026 by size, what the federal rebate takes
               off, what payback periods reputable sources actually cite, and why quotes vary so much. It is general
               information to help you read a quote, not financial advice. For a figure specific to your home, get a quote.
             </p>
+            <EditorialMeta lastUpdated="2026-08-13" className="mt-5" />
           </header>
 
           {/* Answer-first: the exact buyer question as an H2, then a liftable answer for engines. */}

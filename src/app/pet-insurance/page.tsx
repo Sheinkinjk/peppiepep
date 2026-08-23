@@ -103,13 +103,13 @@ export default function PetInsurancePage() {
             <h1 className="mt-4 text-3xl font-extrabold leading-[1.08] tracking-tight text-[#10251b] sm:text-4xl">
               Pet insurance in Australia
             </h1>
-            <EditorialMeta lastUpdated={UPDATED} className="mt-4" />
             <p className="mt-5 text-lg leading-relaxed text-[#3d4b44]">
               Pet insurance helps with the cost of vet care for accidents and illness. Policies differ a lot on what
               they cover, waiting periods, exclusions, excess and annual limits, so the detail that matters is in each
               insurer&apos;s Product Disclosure Statement. This page is general information to help you understand the
               terms, plus current offers we can refer you to. It is not advice and not a recommendation.
             </p>
+            <EditorialMeta lastUpdated={UPDATED} className="mt-4" />
           </header>
 
           {/* Prominent current offer: Knose */}

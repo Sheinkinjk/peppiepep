@@ -116,7 +116,6 @@ export default function HairLossTreatmentCostAustraliaPage() {
             <h1 className="mt-4 text-3xl sm:text-4xl lg:text-[2.6rem] font-extrabold leading-[1.08] tracking-tight text-[#10251b]">
               What hair-loss treatment costs in Australia
             </h1>
-            <EditorialMeta lastUpdated="2026-08-14" className="mt-5" />
             <p className="mt-5 text-base sm:text-lg leading-relaxed text-[#3d4b44]">
               Hair-loss treatment does not have one price, because there are different routes. This page breaks down the
               real numbers: buying an over-the-counter topical product, and telehealth subscription plans, using Mosh&apos;s
@@ -124,6 +123,7 @@ export default function HairLossTreatmentCostAustraliaPage() {
               subsidised, and how to compare like with like. It is general information about cost, not medical or
               financial advice.
             </p>
+            <EditorialMeta lastUpdated="2026-08-14" className="mt-5" />
           </header>
 
           {/* Info-only note */}
@@ -153,6 +153,39 @@ export default function HairLossTreatmentCostAustraliaPage() {
           {/* Body */}
           <article className="mt-10 space-y-9">
 
+            {/* Answer-first block. The page carried the buyer's question only as
+                the sixth FAQ, so an engine had to read to the bottom to find the
+                answer, and it was cited in none of eleven sampled answers.
+                The question is now a visible H2 at the top with a liftable answer
+                beneath it, which is the pattern the sibling comparison pages use.
+
+                It deliberately does not invent a monthly figure. Mosh does not
+                publish plan prices: the plan and price are set after a
+                practitioner assessment. Competitor pages that win this question
+                quote numbers we cannot honestly match, so this states the cost
+                STRUCTURE and the one figure that is verified. */}
+            <section>
+              <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#10251b]">
+                How much does hair-loss treatment cost per month in Australia?
+              </h2>
+              <div className="mt-4 rounded-xl border border-[#cfe6da] bg-[#e8f5ee] px-6 py-5">
+                <p className="text-[15px] leading-relaxed text-[#2b362f]">
+                  There are two cost structures, and they are not comparable on a single number. An over-the-counter
+                  topical product is a one-off purchase you repeat, priced by the pharmacy and paid for entirely by you.
+                  A telehealth plan is a monthly subscription that bundles the practitioner assessment, ongoing review
+                  and delivery into one recurring charge, so the monthly figure covers more than the product. Neither
+                  route attracts a Medicare rebate or a PBS subsidy for cosmetic hair loss, so the price you see is the
+                  price you pay.
+                </p>
+                <p className="mt-3 text-[15px] leading-relaxed text-[#2b362f]">
+                  Mosh does not publish its plan prices, because the plan is assigned after the assessment and shown to
+                  you before you commit. Rather than quote a figure that would be a guess, this page explains what sits
+                  inside each route so you can compare the quote you are given. Refer Labs readers get{" "}
+                  <strong className="font-semibold text-[#10251b]">55% off a first order</strong> through our link
+                  (verified on Mosh&apos;s own page, 17 August 2026).
+                </p>
+              </div>
+            </section>
             <section>
               <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#10251b]">
                 The two cost routes

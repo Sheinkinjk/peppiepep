@@ -109,7 +109,6 @@ export default function WeightLossTelehealthCostAustraliaPage() {
             <h1 className="mt-4 text-3xl sm:text-4xl lg:text-[2.6rem] font-extrabold leading-[1.08] tracking-tight text-[#10251b]">
               Weight-loss telehealth cost in Australia: how the pricing actually works
             </h1>
-            <EditorialMeta lastUpdated="2026-08-14" className="mt-5" />
             <p className="mt-5 text-base sm:text-lg leading-relaxed text-[#3d4b44]">
               &ldquo;How much does weight-loss telehealth cost?&rdquo; is one of the most common questions Australians ask before
               they start, and it depends on the plan you land on. This page breaks down the pricing model most online
@@ -117,6 +116,7 @@ export default function WeightLossTelehealthCostAustraliaPage() {
               can compare services sensibly. It is general information, not medical or financial advice, and we do not quote a single
               guaranteed price because there isn&apos;t one.
             </p>
+            <EditorialMeta lastUpdated="2026-08-14" className="mt-5" />
           </header>
 
           {/* Info-only note */}

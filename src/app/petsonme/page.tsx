@@ -111,12 +111,12 @@ export default function PetsOnMePage() {
         <h1 className="mt-4 text-3xl font-extrabold leading-[1.08] tracking-tight text-[#10251b] sm:text-4xl">
           PetsOnMe pet insurance: the cover, and what the REFERLABS code gives you
         </h1>
-        <EditorialMeta lastUpdated={UPDATED} className="mt-5" />
         <p className="mt-5 text-base leading-relaxed text-[#3d4b44] sm:text-lg">
           PetsOnMe is an Australian pet insurance provider offering three levels of cover, all paying 80% of the
           eligible vet bill less your excess. This page sets out what each plan includes, what the code does and does
           not do, and what to check before you buy. It is general information, not financial advice.
         </p>
+        <EditorialMeta lastUpdated={UPDATED} className="mt-5" />
 
         {/* Answer-first: what the code gives, stated precisely. */}
         <section className="mt-8">

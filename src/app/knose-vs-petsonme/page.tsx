@@ -119,7 +119,6 @@ export default function KnoseVsPetsOnMePage() {
         <h1 className="mt-4 text-3xl font-extrabold leading-[1.08] tracking-tight text-[#10251b] sm:text-4xl">
           Knose vs PetsOnMe: the two compared on published cover
         </h1>
-        <EditorialMeta lastUpdated={UPDATED} className="mt-5" />
 
         {/* Answer-first */}
         <section className="mt-6">
@@ -133,6 +132,7 @@ export default function KnoseVsPetsOnMePage() {
               wins outright, because neither publishes premiums and the one that looks better on paper can still cost
               more for your pet. The sub-limit difference is the one most likely to decide it in a real claim.
             </p>
+        <EditorialMeta lastUpdated={UPDATED} className="mt-5" />
           </div>
         </section>
 

@@ -153,7 +153,6 @@ export default function BestPetInsuranceAustraliaPage() {
         <h1 className="mt-4 text-3xl font-extrabold leading-[1.08] tracking-tight text-[#10251b] sm:text-4xl">
           Best pet insurance in Australia: how to actually choose
         </h1>
-        <EditorialMeta lastUpdated={UPDATED} className="mt-5" />
 
         {/* Answer-first */}
         <section className="mt-6">
@@ -166,6 +165,7 @@ export default function BestPetInsuranceAustraliaPage() {
               six things every time: benefit percentage, annual limit, hereditary and congenital cover, waiting periods,
               excess, and exclusions. Below is how to read each one, and what the two providers we cover publish.
             </p>
+        <EditorialMeta lastUpdated={UPDATED} className="mt-5" />
           </div>
         </section>
 

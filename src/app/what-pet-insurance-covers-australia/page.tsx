@@ -89,12 +89,12 @@ export default function WhatPetInsuranceCoversPage() {
             <h1 className="mt-4 text-3xl font-extrabold leading-[1.08] tracking-tight text-[#10251b] sm:text-4xl">
               What pet insurance covers in Australia
             </h1>
-            <EditorialMeta lastUpdated={UPDATED} className="mt-4" />
             <p className="mt-5 text-lg leading-relaxed text-[#3d4b44]">
               Pet insurance is not one product. Cover levels, waiting periods, exclusions, excess and limits all vary by
               insurer, and the specifics that matter are always in the Product Disclosure Statement (PDS). Here is what
               each of those terms means, so you can read a policy for yourself. This is general information, not advice.
             </p>
+            <EditorialMeta lastUpdated={UPDATED} className="mt-4" />
           </header>
 
           <InsuranceDisclosure className="mb-10" />

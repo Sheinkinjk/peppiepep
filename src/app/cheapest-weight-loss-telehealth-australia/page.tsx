@@ -151,7 +151,6 @@ export default function CheapestWeightLossTelehealthPage() {
             <h1 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-extrabold leading-[1.08] tracking-tight text-[#10251b] mb-4 max-w-3xl">
               Cheapest weight loss telehealth in Australia: affordable options compared
             </h1>
-            <EditorialMeta lastUpdated="2026-08-14" className="mb-5" />
             <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl mb-3">
               &ldquo;Cheapest&rdquo; is a slippery word in weight-loss telehealth, because services bill in different
               ways. Subscription programs charge a flat monthly fee. Pay-as-you-go services charge per consult. And
@@ -159,6 +158,7 @@ export default function CheapestWeightLossTelehealthPage() {
               side by side, from subscription programs to pay-per-appointment alternatives, and explains what cheapest
               really means once you factor in the whole cost.
             </p>
+            <EditorialMeta lastUpdated="2026-08-14" className="mb-5" />
             <p className="text-[#9aa39c] text-xs leading-relaxed max-w-2xl mb-7">
               Information only, not medical advice. Prices are approximate and change, so check current pricing on each
               provider. This page contains a disclosed affiliate link to Moshy.

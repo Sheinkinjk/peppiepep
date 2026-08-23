@@ -92,12 +92,12 @@ export default function KnosePage() {
             <h1 className="mt-4 text-3xl font-extrabold leading-[1.08] tracking-tight text-[#10251b] sm:text-4xl">
               Knose pet insurance: <span className="text-[#0a7c42]">2 months free</span> via Refer Labs
             </h1>
-            <EditorialMeta lastUpdated={UPDATED} className="mt-4" />
             <p className="mt-5 text-lg leading-relaxed text-[#3d4b44]">
               Knose is an Australian pet insurance provider. New customers can get <strong className="text-[#10251b]">2
               months free</strong> when they take out a policy using the code <strong className="text-[#10251b]">referlab2mf</strong> through
               our link. This page is general information and a referral, not financial advice or a recommendation.
             </p>
+            <EditorialMeta lastUpdated={UPDATED} className="mt-4" />
             <div className="mt-6 flex flex-wrap items-center gap-3">
               <KnoseCta label="Get a Knose quote (2 months free)" loc="hero" />
               <Link href="/pet-insurance" className="text-sm font-semibold text-[#0a7c42] hover:text-[#086536]">
