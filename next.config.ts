@@ -208,8 +208,10 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        // Was pointing at /services, which itself redirects to /for-business.
+        // A -> B -> C leaks equity at every hop, so this goes straight there.
         source: '/affiliate-partnerships',
-        destination: '/services',
+        destination: '/for-business',
         permanent: true,
       },
       {
@@ -219,7 +221,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/services/influencer-activation',
-        destination: '/services/partner-activation',
+        destination: '/for-business',
         permanent: true,
       },
       {

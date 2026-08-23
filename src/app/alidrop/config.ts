@@ -41,8 +41,8 @@ export const alidropConfig: AffiliatePageConfig = {
   ],
 
   hero: {
-    h1Prefix: "AliDrop:",
-    h1Highlight: "the AliExpress and Temu dropshipping tool, explained",
+    h1Prefix: "AliDrop offer:",
+    h1Highlight: "US$1 for a 7-day trial of the AliExpress and Temu tool",
     subheading:
       "Considering AliDrop for a dropshipping store and want to know what it does, who it suits, and how pricing works before you start? This page covers the essentials and takes you directly to AliDrop.",
     trustBullets: [

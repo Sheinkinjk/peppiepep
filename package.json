@@ -19,7 +19,8 @@
     "test:site-smoke": "node scripts/test-site-smoke.mjs",
     "supabase:types": "supabase gen types typescript --project-id $SUPABASE_PROJECT_ID > src/types/supabase.ts",
     "deploy:prod": "node scripts/deploy-prod.mjs",
-    "load:test": "node scripts/load-test.mjs"
+    "load:test": "node scripts/load-test.mjs",
+    "check-aeo": "node scripts/check-aeo.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.71.2",
