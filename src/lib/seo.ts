@@ -181,6 +181,13 @@ export const seoConfig = {
     url: `${SITE_URL}/knose`,
     keywords: ["knose pet insurance", "knose promo code", "knose 2 months free", "knose pet insurance review"],
   },
+  whoUnderwritesPetInsurance: {
+    title: "Who Underwrites Pet Insurance in Australia? 2026 List | Refer Labs",
+    description:
+      "PetSure issues or administers 20+ Australian pet insurance brands, including Trupanion since March 2026. Knose and PetsOnMe are underwritten by Pacific International. Read off each company's own disclosure, dated.",
+    url: `${SITE_URL}/who-underwrites-pet-insurance-australia`,
+    keywords: ["who underwrites pet insurance australia", "is trupanion underwritten by petsure", "who underwrites knose", "petsure brands list", "pet insurance underwriter australia", "petsonme underwriter"],
+  },
   whatPetInsuranceCovers: {
     title: "What Pet Insurance Covers in Australia | Refer Labs",
     description:

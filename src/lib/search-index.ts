@@ -13,6 +13,7 @@ export const SEARCH_INDEX: SearchEntry[] = [
   { title: "Deals & discount codes", href: "/deals", category: "Deals", kind: "Guide", keywords: "deals discount codes promo codes australia moshy mosh apollo offers current verified" },
   { title: "Weight loss & telehealth", href: "/weight-loss", category: "Health", kind: "Category", keywords: "weight management obesity diet telehealth weight management telehealth online clinic" },
   { title: "Hair loss treatment", href: "/hair-loss", category: "Health", kind: "Category", keywords: "hair regrowth balding thinning telehealth topical scalp" },
+  { title: "Who underwrites pet insurance in Australia", href: "/who-underwrites-pet-insurance-australia", category: "Insurance", kind: "Guide", keywords: "who underwrites pet insurance petsure hollard pacific international knose petsonme trupanion bow wow underwriter issuer australia" },
   { title: "Pet insurance", href: "/pet-insurance", category: "Insurance", kind: "Category", keywords: "pet insurance australia dog cat cover waiting period exclusions excess annual limit knose offers referrer" },
   { title: "Skin & beauty", href: "/skin-and-beauty", category: "Skin & beauty", kind: "Category", keywords: "skincare australia skin treatments beauty acne anti ageing led mask" },
   { title: "Coming soon: what we are building", href: "/coming-soon", category: "Refer Labs", kind: "Guide", keywords: "coming soon new sections skin beauty sleep refer labs" },

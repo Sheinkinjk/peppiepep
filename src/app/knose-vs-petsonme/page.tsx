@@ -221,6 +221,7 @@ export default function KnoseVsPetsOnMePage() {
           <Link href="/petsonme" className="nw-link">PetsOnMe: cover &amp; code</Link>
           <Link href="/knose" className="nw-link">Knose: 2 months free</Link>
           <Link href="/what-pet-insurance-covers-australia" className="nw-link">What pet insurance covers</Link>
+          <Link href="/who-underwrites-pet-insurance-australia" className="nw-link">Who underwrites pet insurance</Link>
         </div>
 
         <p className="mt-8 text-xs leading-relaxed text-[#9aa39c]">

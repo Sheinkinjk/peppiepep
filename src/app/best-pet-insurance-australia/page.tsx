@@ -228,7 +228,11 @@ export default function BestPetInsuranceAustraliaPage() {
               that is exactly why it is stated here rather than left out.
             </p>
             <p className="mt-3 text-[13px] leading-relaxed text-[#6e7b74]">
-              Read off PetSure&apos;s, Knose&apos;s and PetsOnMe&apos;s own disclosure statements on 21 August 2026.
+              Read off PetSure&apos;s, Knose&apos;s and PetsOnMe&apos;s own disclosure statements on 21 August 2026. The{" "}
+              <Link href="/who-underwrites-pet-insurance-australia" className="underline hover:text-[#3d4b44]">
+                full list of who underwrites which brand
+              </Link>{" "}
+              covers the rest of the market.
               Underwriting arrangements change, so confirm in the current Product Disclosure Statement and Target
               Market Determination before you buy.
             </p>

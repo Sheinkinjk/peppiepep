@@ -186,7 +186,9 @@ export default function PetInsurancePage() {
               Weighing them up? See{" "}
               <Link href="/knose-vs-petsonme" className="nw-link">Knose vs PetsOnMe side by side</Link>, or our{" "}
               <Link href="/best-pet-insurance-australia" className="nw-link">guide to choosing pet insurance</Link>,
-              which sets out the six things that decide what you actually get back.
+              which sets out the six things that decide what you actually get back. Both are underwritten by the same
+              insurer, which is worth knowing first:{" "}
+              <Link href="/who-underwrites-pet-insurance-australia" className="nw-link">who underwrites which brand</Link>.
             </p>
           </section>
 

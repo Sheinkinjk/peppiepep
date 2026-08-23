@@ -64,6 +64,49 @@ Invented testimonials, personas, customer names, statistics, case studies or sta
 ### Revenue-first page rule (master brief, Aug 2026)
 No new page ships without a one-line answer to: **what search intent does it serve, what decision does it help the reader make, and what is its monetisation event** (affiliate click, lead capture, email capture, or internal funnel to a page that has one)? A keyword having volume is not a reason to build a page. Pages that can't answer this get folded into an existing page instead.
 
+### The citation rule: what to build, and what never to build again (Aug 2026)
+
+Measured over 115 AI answers across ChatGPT, Claude and Perplexity: the only Refer Labs
+pages both ranking in Google and getting cited were the **brand-pair comparisons**
+(`/moshy-vs-juniper` 7/15 citations at Google #6, `/mosh-vs-pilot` 7/12 at #6). Generic
+`best-X` pages carrying no brand pair were invisible (`/best-ai-sales-tools` 0/10, no
+impressions). Two conclusions, both load-bearing:
+
+**1. A page earns its place by owning a fact, not by covering a topic.** Before building,
+name the single fact the page will state that is (a) verifiable from a **primary source**
+(the company's own site or disclosure, never an aggregator), (b) **not already correct** on
+the pages that currently win the query, and (c) **load-bearing for a decision** that leads to
+a money page. If you cannot name that fact, the page is another ranked list and will lose to
+Canstar, Finder or Forbes, who outrank us on authority for every generic comparison.
+
+Worked example, and the template: every published source names Knose's underwriter as
+Hollard, Allied World or PetSure. Knose's own disclosure names Pacific International. That
+one verifiable, wrong-everywhere fact justified `/who-underwrites-pet-insurance-australia`;
+a tenth "best pet insurance" list would not have.
+
+**2. Publish the commercially inconvenient half.** The reason that page is citable is that it
+states our two partners share an insurer, which argues against treating them as alternatives.
+A page that only says what suits us reads as marketing and gets cited like marketing.
+
+**Format, in priority order** (measured, not stylistic):
+- Title carries a **brand pair or a named entity**, not a category ("Moshy vs Juniper", "Who
+  underwrites pet insurance"), because that is what both Google and the engines matched.
+- **The answer is the first paragraph after the `<h1>`.** Nothing goes above it: not the
+  last-updated line, not a disclaimer box, not a CTA. Twelve pages had metadata sitting in
+  that slot in Aug 2026 and it was fixed for exactly this reason.
+- At least one `<h2>` is the buyer's question **verbatim**, with a liftable answer beneath.
+- Every figure carries the source it was read from and the **date it was read**.
+
+**Do not build:** another `best-<category>` page with no brand pair and no owned fact; a page
+for a query with **zero Google impressions** (a page must be indexed and snippet-eligible
+before any engine quotes it, so ranking comes first and content rewrites address the wrong
+step); a page for a query with **no recorded monetisation route**; a duplicate of a page we
+already have (check first: `/weight-loss-telehealth-cost-australia` and `/business-software`
+both exist and have been proposed as "missing").
+
+**Do not cargo-cult a competitor's schema.** Adding `BlogPosting` because a quoted page has it
+is worthless when we already emit `Article`, its parent type.
+
 ## Adding a new affiliate/brand page — the full checklist
 1. `src/lib/affiliate-links.ts` — export the tracked URL constant.
 2. `src/app/<slug>/config.ts` — `AffiliatePageConfig` (quickAnswer, offer, atAGlance w/ REAL price, hero, sections, `faqs`, `relatedLinks`, disclaimer).
