@@ -273,7 +273,7 @@ const platforms: PlatformCardProps[] = [
     name: "Moshy",
     tagline: "Australian clinically-led telehealth weight management, open to anyone eligible. Moshy's online eligibility questionnaire is reviewed by Australian-registered practitioners. Any treatment is decided by the practitioner and only where clinically appropriate. Subscription with home delivery.",
     deal: "Online eligibility, referral link",
-    dealNote: "Our referral link takes you directly to the Moshy eligibility page. No code required. The offer is applied at the link level.",
+    dealNote: "The discount code is REFERRAL120. Our referral link takes you to the Moshy eligibility page with it already applied, so there is nothing to type.",
     pros: [
       "Clinically-led pathway, open to anyone eligible",
       "Practitioner-assessed treatment where appropriate",

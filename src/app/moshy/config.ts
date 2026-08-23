@@ -96,7 +96,7 @@ export const moshyConfig: AffiliatePageConfig = {
     {
       num: "01",
       heading: "Click through to Moshy",
-      body: "Use any link or button on this page to reach the official Moshy eligibility page at getmoshy.com.au. The referral is applied automatically, no code required.",
+      body: "Use any link or button on this page to reach the official Moshy eligibility page at getmoshy.com.au. The code is REFERRAL120 and the link applies it automatically, so there is nothing to type.",
     },
     {
       num: "02",
@@ -192,7 +192,7 @@ export const moshyConfig: AffiliatePageConfig = {
     secondary: "Go to Moshy",
     midHeading: "Ready to Start the Moshy Eligibility Process?",
     midBody:
-      "Click below to be taken directly to the Moshy eligibility page via our personalised referral link. No code required - the referral is applied automatically.",
+      "Click below to be taken directly to the Moshy eligibility page via our personalised referral link. The code is REFERRAL120 and the link applies it automatically, so there is nothing to type.",
     midButton: "Start the Moshy Quiz",
     bottomHeading: "Access the Current Moshy Referral Link",
     bottomBody:
