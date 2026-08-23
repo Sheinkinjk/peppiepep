@@ -53,8 +53,17 @@ export const moshHairConfig: AffiliatePageConfig = {
   ],
 
   hero: {
-    h1Prefix: "Mosh hair loss in Australia,",
-    h1Highlight: "explained",
+    // Title and h1 must agree. This page is titled "Mosh Discount Code 2026:
+    // 55% Off Your First Order" and its h1 read "Mosh hair loss in Australia,
+    // explained", so the two targeted different intents and Google served
+    // /mosh-review for "mosh discount code" at position 20 instead of the page
+    // built for it. Its sibling /moshy pairs the title "Moshy Discount Code
+    // Australia 2026: $120 Off" with the h1 "Moshy discount code Australia:
+    // $120 off your first order" and ranks 8th for the equivalent query. Same
+    // pattern here; the hair-loss framing moves to the subheading, which
+    // already carried it.
+    h1Prefix: "Mosh discount code Australia:",
+    h1Highlight: "55% off your first order",
     subheading:
       "If you're weighing up Mosh for hair loss, here's what matters before you start: how the service actually works, what it really costs, and how it compares to a GP and to topical brands like Dense.",
     trustBullets: [
