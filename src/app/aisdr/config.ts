@@ -134,7 +134,11 @@ export const aisdrConfig: AffiliatePageConfig = {
       a: "AiSDR is an AI sales development rep that automates B2B outbound. It finds in-market prospects using intent signals, researches each one, writes personalised messages, runs multi-channel sequences across email, LinkedIn and phone, qualifies replies and books meetings. It integrates with HubSpot and Salesforce, so it works with the CRM your team already uses.",
     },
     {
-      q: "How much does AiSDR cost?",
+      q: "Is there an AiSDR discount code?",
+    a: "AiSDR does not publish a public discount code, and Refer Labs does not hold one for it. Pricing starts from US$250 a month on the Solo plan with no long-term contract, and larger plans are quoted, so the saving worth chasing is on plan size and billing period rather than a code. Verify current pricing on AiSDR's own site before you commit.",
+  },
+  {
+    q: "How much does AiSDR cost?",
       a: "AiSDR starts from $250/month for the Solo plan, with the popular quarterly plan $900/month, unlimited seats and no long-term contract. Pricing can change, so verify the current figures on the provider. The value case is usually judged against the fully loaded cost of hiring a human SDR.",
     },
     {

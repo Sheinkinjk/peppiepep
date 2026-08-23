@@ -81,6 +81,7 @@ for (const slug of slugDirs) {
   if (new RegExp(`source: '/${slug}'`).test(redirects)) continue; // retired
   const title = SEO.get(`/${slug}`) || "";
   if (!/discount code/i.test(title)) continue;
+  if (/\bis there (one|a)\b|\?/i.test(title)) continue; // question form: answered by an FAQ, not the h1
 
   const src = read(join("src/app", slug, "page.tsx")) + read(join("src/app", slug, "config.ts"));
   const h1 =
@@ -129,8 +130,13 @@ for (const slug of slugDirs) {
   const offer = (src.match(/^\s*offer:\s*"([^"]+)"/m) || [, ""])[1];
   const dealRow = offers.match(new RegExp(`\\{[^}]*href: "/${slug}"[^}]*\\}`));
   const dealOffer = dealRow ? (dealRow[0].match(/offer: "([^"]+)"/) || [, ""])[1] : "";
-  if (!REAL_DISCOUNT.test(offer) && !REAL_DISCOUNT.test(dealOffer) && !REAL_DISCOUNT.test(title)) {
-    add(`/${slug}`, `title claims a discount code but no real discount exists (offer: "${offer || "none"}")`);
+  const asksRatherThanClaims = /\bis there (one|a)\b|\?/i.test(title);
+  if (!REAL_DISCOUNT.test(offer) && !REAL_DISCOUNT.test(dealOffer) && !REAL_DISCOUNT.test(title) && !asksRatherThanClaims) {
+    add(`/${slug}`, `title asserts a discount code but none exists (offer: "${offer || "none"}"). Either name the real offer or pose it as a question the page answers.`);
+  }
+  // A question-form title must actually be answered on the page.
+  if (asksRatherThanClaims && !/q(?:uestion)?:\s*"[^"]*discount code[^"]*"/i.test(src)) {
+    add(`/${slug}`, "title asks whether a discount code exists but no FAQ on the page answers it");
   }
 }
 
