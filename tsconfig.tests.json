@@ -1,0 +1,8 @@
+{
+  // Deliberate typecheck for the test suite, kept out of `next build` so a
+  // fixture drifting from a generated type cannot block a production deploy.
+  // Run with: npx tsc --noEmit -p tsconfig.tests.json
+  "extends": "./tsconfig.json",
+  "include": ["tests/**/*.ts", "tests/**/*.tsx", "next-env.d.ts"],
+  "exclude": ["node_modules"]
+}
