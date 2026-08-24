@@ -61,9 +61,30 @@ async function runProxy(request: NextRequest) {
     },
   })
 
+  // A missing Supabase env var must never take the whole site down. These two
+  // were asserted non-null with `!`, so when they became unreadable on 24 Aug
+  // 2026 createServerClient threw inside middleware, which runs on every
+  // request, and every page returned 500 including the ones people paid for.
+  // Auth is the only thing here that needs them; the other 160-odd pages are
+  // public and do not.
+  //
+  // If they are absent: log it and serve the request without the auth check. A
+  // signed-in user loses session refresh until the variable is restored, which
+  // is a far smaller failure than a total outage.
+  const supaUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
+  const supaAnon = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+  if (!supaUrl || !supaAnon) {
+    console.error(
+      "[proxy] Supabase env missing (NEXT_PUBLIC_SUPABASE_URL / NEXT_PUBLIC_SUPABASE_ANON_KEY); " +
+        "serving without an auth check. NEXT_PUBLIC_* values are inlined at build, so they must " +
+        'not be marked "Sensitive" in Vercel, which makes them runtime-only.',
+    )
+    return response
+  }
+
   const supabase = createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    supaUrl,
+    supaAnon,
     {
       cookies: {
         getAll() {
