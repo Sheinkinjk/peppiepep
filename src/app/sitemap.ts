@@ -172,7 +172,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/brevo`,        lastModified: AUG13, changeFrequency: 'monthly', priority: 0.82 },
     { url: `${BASE}/alidrop`,      lastModified: AUG13, changeFrequency: 'monthly', priority: 0.82 },
     { url: `${BASE}/leadpages`,    lastModified: AUG13, changeFrequency: 'monthly', priority: 0.82 },
-    { url: `${BASE}/cloudtalk`, lastModified: AUG13, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/krispcall`, lastModified: AUG13, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/dext`, lastModified: AUG13, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/trainual`, lastModified: AUG13, changeFrequency: 'monthly', priority: 0.8 },

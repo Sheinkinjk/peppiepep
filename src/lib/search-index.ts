@@ -112,7 +112,6 @@ export const SEARCH_INDEX: SearchEntry[] = [
 
   // Software / landing pages
   { title: "Leadpages review", href: "/leadpages", category: "Software", kind: "Guide", keywords: "leadpages landing page builder lead generation ab testing conversion" },
-  { title: "CloudTalk review", href: "/cloudtalk", category: "Software", kind: "Guide", keywords: "cloudtalk business phone call centre voip ai voice agents sales support discount code" },
   { title: "KrispCall review", href: "/krispcall", category: "Software", kind: "Guide", keywords: "krispcall cloud phone virtual number shared inbox remote team voip discount code" },
   { title: "Dext review", href: "/dext", category: "Software", kind: "Guide", keywords: "dext bookkeeping automation receipt invoice capture xero quickbooks accounting discount code" },
   { title: "Trainual review", href: "/trainual", category: "Software", kind: "Guide", keywords: "trainual training onboarding sop documentation hr process discount code" },

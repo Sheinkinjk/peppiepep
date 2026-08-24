@@ -32,6 +32,13 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // CloudTalk retired (24 August 2026): get.cloudtalk.io/9mxppdbxerja returns
+      // 404, so the page's only CTA was broken while the page stayed live and
+      // indexed. Same fault and same remedy as Instapage in July. 301 to
+      // KrispCall, the same intent (cloud phone system) with a working link.
+      // Remove this line if a CloudTalk link is ever restored.
+      { source: '/cloudtalk', destination: '/krispcall', permanent: true },
+
       // ── Business lending: hidden, not retired (22 August 2026) ────────────
       // Withdrawn pending a review of the credit-licensing position, and because
       // the vertical never found traction. Deliberately TEMPORARY (307), which is

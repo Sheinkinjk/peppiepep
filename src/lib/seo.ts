@@ -357,6 +357,9 @@ export const seoConfig = {
   },
 
   cloudtalk: {
+    // Retired 24 Aug 2026: the affiliate link 404s. Defensive noIndex so
+    // deleting the redirect cannot silently republish the page.
+    noIndex: true,
     title: "CloudTalk Discount Code 2026: Is There One? Pricing & Free Trial | Refer Labs",
     description:
       "Looking for a CloudTalk discount code, promo code or referral link? CloudTalk is an AI call-centre and business phone system. Start with a 14-day free trial plus free AI-voice test minutes through our link.",

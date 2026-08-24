@@ -2,8 +2,7 @@ import {
   CARRD_URL, DURABLE_URL, BUTTERNUT_URL, SWIPE_PAGES_URL, BEEHIIV_URL,
   GOHIGHLEVEL_URL, AISDR_URL, REPLY_IO_URL, FULLENRICH_URL, SNOV_URL, NUTSHELL_URL,
   
-  EMPLOYMENT_HERO_URL, PAYONEER_URL,
-  CLOUDTALK_URL, KRISPCALL_URL, DEXT_URL, TRAINUAL_URL, LINDY_URL, ELEVENLABS_URL,
+  EMPLOYMENT_HERO_URL, PAYONEER_URL, KRISPCALL_URL, DEXT_URL, TRAINUAL_URL, LINDY_URL, ELEVENLABS_URL,
   LEADPAGES_URL, HELLOBAR_URL, OUTGROW_URL, FLEXIQUIZ_URL,
   PIPEDRIVE_URL, ZOOMINFO_URL, ACTIVECAMPAIGN_URL,
   LANDINGI_URL, MEETGEEK_URL,
@@ -633,23 +632,9 @@ export const CATALOG: Vertical[] = [
     metaTitle: "Business Phone Systems Compared 2026: CloudTalk vs KrispCall | Refer Labs",
     metaDescription:
       "Compare cloud business phone systems for 2026: CloudTalk for AI call-centre features and analytics, KrispCall for virtual numbers and a shared team inbox. Independent, no pay-to-rank.",
-    keywords: ["business phone system comparison", "cloudtalk vs krispcall", "best voip for business 2026", "cloud phone system", "virtual phone number for teams"],
+    keywords: ["business phone system comparison", "best voip for business 2026", "cloud phone system", "virtual phone number for teams"],
     relatedCategory: "Software",
     providers: [
-      {
-        name: "CloudTalk",
-        bestFor: "AI call centre for sales & support",
-        blurb: "A cloud call-centre platform with smart routing, recording, analytics, SMS/WhatsApp and AI voice agents. Strongest where call volume and reporting matter.",
-        facts: [
-          { label: "Role", value: "Cloud call centre" },
-          { label: "Best for", value: "Sales & support teams" },
-          { label: "Pricing", value: "No free plan; from €19/user/mo" },
-        ],
-        affiliateUrl: CLOUDTALK_URL,
-        reviewHref: "/cloudtalk",
-        ctaLabel: "See CloudTalk",
-        featured: true,
-      },
       {
         name: "KrispCall",
         bestFor: "Virtual numbers & shared inbox",

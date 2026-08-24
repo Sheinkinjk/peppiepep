@@ -167,7 +167,6 @@ Independent, non-sponsored picks and the offers currently available through Refe
 ## Business, phone, finance & AI tools
 - [Employment Hero](https://referlabs.com.au/employmenthero): Australian all-in-one HR, payroll (ATO-certified Single Touch Payroll) and employment platform for SMEs.
 - [Trainual](https://referlabs.com.au/trainual): Employee training, onboarding and SOP documentation platform.
-- [CloudTalk](https://referlabs.com.au/cloudtalk): AI-powered call-centre and business phone system for sales and support; 14-day free trial.
 - [KrispCall](https://referlabs.com.au/krispcall): Cloud phone system with virtual numbers and a shared team inbox for remote teams.
 - [Dext](https://referlabs.com.au/dext): Bookkeeping automation that captures receipts and invoices and syncs to Xero, QuickBooks and Sage; 14-day free trial.
 - [Lindy](https://referlabs.com.au/lindy): AI work assistant that automates inbox, scheduling and CRM tasks; 7-day free trial, from US$49.99/month.

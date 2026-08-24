@@ -208,7 +208,6 @@ const sections = [
     label: "Business Phone, HR & Finance",
     description: "The tools that run the back office: calling, people and money.",
     guides: [
-      { href: "/cloudtalk", label: "CloudTalk", desc: "AI call-centre and business phone for sales and support." },
       { href: "/krispcall", label: "KrispCall", desc: "Cloud phone with virtual numbers and a shared inbox." },
       { href: "/employmenthero", label: "Employment Hero", desc: "Australian HR, payroll and employment platform." },
       { href: "/trainual", label: "Trainual", desc: "Document processes, onboarding and SOPs in one place." },
