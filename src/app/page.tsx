@@ -10,10 +10,17 @@ import BrandMark from "@/components/consumer/BrandMark";
 
 // Top picks lead with the real brand logo, the single biggest thing that
 // makes a comparison site read as a real publication rather than a template.
+// The three shown are one health, one insurance, one software: a deliberate
+// spread rather than the strongest three offers, which would be Moshy and Mosh
+// back to back. Refer Labs is about to open a conversation with Juniper about
+// covering their other brands, and a homepage that leads with two competing
+// weight-loss and hair-loss brands reads as a Moshy shop rather than a
+// comparison publisher. Mosh keeps its own money page, its hub placement and
+// its slot on /deals; it simply is not one of three homepage picks.
 const picks = [
-  { logo: "mosh-tile", name: "Mosh", cat: "Hair loss", offer: "55% off first order", verdict: "Men's hair-loss telehealth: a practitioner reviews your case and treatment is provided where appropriate, delivered to your door.", href: "/moshhair" },
-  { logo: "knose", name: "Knose", cat: "Pets", offer: "First 2 months free", verdict: "Australian pet insurance with the cover, waiting periods and exclusions explained in plain English.", href: "/pet-insurance" },
-  { logo: "apollo-energy", name: "Apollo Energy", cat: "Home batteries", offer: "$500 off, plus the federal rebate", verdict: "Home battery specialists, SAA-accredited and sized from your real usage, not a generic quote.", href: "/apollo-energy-group" },
+  { logo: "moshy", name: "Moshy", cat: "Weight loss", offer: "$120 off with code REFERRAL120", verdict: "Clinically-led weight-management telehealth, open to anyone eligible, with the plan set by a practitioner.", href: "/moshy" },
+  { logo: "knose", name: "Knose", cat: "Pets", offer: "First 2 months free", verdict: "Australian pet insurance with the cover, waiting periods and exclusions explained in plain English.", href: "/knose" },
+  { logo: "superfiliate", name: "Superfiliate", cat: "Creator growth", offer: "15% off your monthly fee", verdict: "Creator-led affiliate and referral software: partner storefronts and code-based attribution in one place.", href: "/superfiliate" },
 ];
 
 // Six category cards that route link equity INWARD to the money hubs (mirrors
@@ -216,26 +223,33 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Featured pick, real logo, editorial "cover story" */}
+            {/* Featured pick, real logo, editorial "cover story".
+                Apollo rather than Moshy: the picks below already lead with a
+                health brand, and a homepage whose hero AND first pick are both
+                weight-loss telehealth reads as a Moshy shop rather than a
+                comparison publisher. Apollo also carries the largest single
+                saving on the site and is the only offer with no competitor of
+                ours in the same category, so nothing is being downplayed to make
+                room for it. */}
             <div className="lg:pl-6">
               {/* Points at the money page, not the review: the offer page is what
                   converts, and the review is one click away from there. */}
-              <Link href="/moshy" className="group block rounded-2xl border border-[#e3e7e2] bg-white p-6 shadow-[0_24px_60px_-34px_rgba(16,37,27,0.4)] transition-all hover:border-[#cfe6da] sm:p-7">
+              <Link href="/apollo-energy-group" className="group block rounded-2xl border border-[#e3e7e2] bg-white p-6 shadow-[0_24px_60px_-34px_rgba(16,37,27,0.4)] transition-all hover:border-[#cfe6da] sm:p-7">
                 <div className="flex items-center gap-4">
                   <span className="flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-[#eef1ef] bg-white">
-                    <Image src="/logos/moshy.png" alt="Moshy logo" width={48} height={48} className="h-11 w-11 object-contain" />
+                    <Image src="/logos/apollo-energy.png" alt="Apollo Energy Group logo" width={48} height={48} className="h-11 w-11 object-contain" />
                   </span>
                   <div>
-                    <span className="text-[1.35rem] font-extrabold tracking-[-0.01em] text-[#10251b]">Moshy</span>
-                    <p className="text-[13px] text-[#6e7b74]">Weight-loss telehealth</p>
+                    <span className="text-[1.35rem] font-extrabold tracking-[-0.01em] text-[#10251b]">Apollo Energy Group</span>
+                    <p className="text-[13px] text-[#6e7b74]">Home batteries</p>
                   </div>
                 </div>
                 <p className="mt-4 text-[15px] leading-relaxed text-[#3d4b44]">
-                  A clinically-led, fully-online weight-management program, open to anyone eligible.
-                  <span className="font-semibold text-[#10251b]"> New customers can now receive $120 off their first treatment.</span>
+                  SAA-accredited Australian battery installers, sized from your actual usage rather than a package.
+                  <span className="font-semibold text-[#10251b]"> Refer Labs readers get $500 off their quote, on top of the federal rebate.</span>
                 </p>
                 <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[#0a7c42]">
-                  See the Moshy offer
+                  See the Apollo Energy offer
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                 </span>
               </Link>
@@ -270,11 +284,9 @@ export default function HomePage() {
               {picks.map((p) => (
                 <Link key={p.href} href={p.href} className="group flex flex-col rounded-2xl border border-[#e5e9e7] bg-white p-6 transition-all hover:-translate-y-0.5 hover:border-[#cfe6da] hover:shadow-[0_22px_50px_-26px_rgba(14,124,66,0.45)]">
                   <div className="flex items-center justify-between">
-                    <span className={`flex h-12 w-12 items-center justify-center overflow-hidden rounded-xl ${p.logo === "mosh-tile" ? "" : "border border-[#eef1ef] bg-white"}`}>
+                    <span className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-xl border border-[#eef1ef] bg-white">
                       {p.logo === "knose" ? (
                         <BrandMark src="/logos/knose.svg" alt="Knose logo" monogram="K" className="h-9 w-9 text-lg" />
-                      ) : p.logo === "mosh-tile" ? (
-                        <Image src="/logos/mosh-tile.png" alt="Mosh logo" width={48} height={48} className="h-full w-full object-cover" />
                       ) : (
                         <Image src={`/logos/${p.logo}.png`} alt={`${p.name} logo`} width={40} height={40} className="h-9 w-9 object-contain" />
                       )}
