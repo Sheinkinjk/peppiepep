@@ -33,7 +33,7 @@ const faqs = [
   },
   {
     q: "What running costs do people forget?",
-    a: "Water, which is replaced periodically. Filters and sanitiser on their own schedule. A cover, which is not an accessory but the single largest influence on how hard the chiller works. And standby draw, which continues in weeks you do not use it at all. None of these are large individually and together they are a meaningful share of the annual figure.",
+    a: "Water, which is replaced periodically. Filters and sanitiser on their own schedule. A cover, which has more influence on how hard the chiller works than anything else you buy. And standby draw, which continues in weeks you do not use it at all. None of these are large individually and together they are a meaningful share of the annual figure.",
   },
   {
     q: "Does a cover really reduce running costs?",

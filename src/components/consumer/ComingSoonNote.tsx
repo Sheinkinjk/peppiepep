@@ -13,6 +13,11 @@ import { Clock } from "lucide-react";
  * Deliberately says nothing about which brands are coming. Naming a partner
  * before an agreement exists would be a claim we cannot support.
  */
+// Dropped "The guidance on this page is complete and researched." It shipped on
+// 36 pages, and telling a reader the work is thorough is the self-narrating move
+// this repo greps for everywhere else: say the thing, delete the sentence that
+// introduces the thing. Repeated 36 times it also reads as a template rather
+// than a fact, which is the second half of the same rule.
 export default function ComingSoonNote({
   category,
   what = "provider comparisons and any current offers",
@@ -25,7 +30,7 @@ export default function ComingSoonNote({
       <Clock className="mt-0.5 h-4 w-4 shrink-0 text-[#6e7b74]" aria-hidden="true" />
       <p className="text-[13px] leading-relaxed text-[#3d4b44]">
         <strong className="font-semibold text-[#10251b]">{category} is still being built.</strong>{" "}
-        The guidance on this page is complete and researched. What is not here yet is {what}, which we add only once
+        What is not here yet is {what}, which we add only once
         we have checked a provider ourselves. Until then nothing on this page earns us a commission.{" "}
         <Link href="/how-we-make-money" className="underline hover:text-[#10251b]">
           How we make money

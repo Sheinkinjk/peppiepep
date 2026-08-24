@@ -1,4 +1,4 @@
-# The Hormozi read on Refer Labs, and a 30-day plan
+are you # The Hormozi read on Refer Labs, and a 30-day plan
 
 Written against the real numbers: ~150 organic clicks/month, average position 39, 50%+ of revenue from one Moshy link, Instagram outperforming search, `/moshy` converting at 13.85% CTR from position 8.
 
