@@ -103,6 +103,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // ── Services ───────────────────────────────────────────────────────
 
+    // ── Portable power (EcoFlow + Anker SOLIX, both Commission Factory) ─
+    { url: `${BASE}/portable-power-station-australia`, lastModified: FRESH, changeFrequency: "weekly", priority: 0.85 },
+    { url: `${BASE}/ecoflow-vs-anker-solix`, lastModified: FRESH, changeFrequency: "weekly", priority: 0.85 },
+    { url: `${BASE}/ecoflow`, lastModified: FRESH, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${BASE}/anker-solix`, lastModified: FRESH, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${BASE}/portable-vs-installed-home-battery-australia`, lastModified: FRESH, changeFrequency: "weekly", priority: 0.8 },
+
     // ── Apollo Energy (VIP money page) ────────────────────────────────
     { url: `${BASE}/apollo-energy-group`, lastModified: AUG13, changeFrequency: "weekly", priority: 0.95 },
     { url: `${BASE}/apollo-energy-review`, lastModified: AUG13, changeFrequency: "weekly", priority: 0.9 },

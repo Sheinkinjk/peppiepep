@@ -16,6 +16,8 @@ const R = {
   rebate: { href: "/home-battery-rebate-australia", label: "The federal battery rebate" },
   cost: { href: "/home-battery-cost-australia", label: "What a battery costs" },
   calc: { href: "/home-battery-payback-calculator", label: "Payback calculator" },
+  portable: { href: "/portable-power-station-australia", label: "Portable power stations" },
+  pvi: { href: "/portable-vs-installed-home-battery-australia", label: "Portable vs installed" },
 };
 
 export const APOLLO_GUIDES: ApolloGuideEntry[] = [
@@ -314,7 +316,7 @@ export const APOLLO_GUIDES: ApolloGuideEntry[] = [
       { q: "Does a home battery save money without solar?", a: "It can, by charging from the grid during cheap off-peak periods and discharging at the expensive peak, but the savings are usually smaller than when a battery stores surplus solar. Without solar the case leans more on backup and time-of-use arbitrage, so a projection from your own tariff and usage matters even more." },
       { q: "What makes a battery not worth it?", a: "Little or no solar, a small roof, low overnight use, or a flat tariff with a small peak-to-offpeak gap all weaken the financial case, because there is less surplus to store and less peak use to offset. In those cases the value is more about blackout backup and independence than payback." },
     ],
-    related: [R.calc, R.cost, R.rebate, R.hub, R.review],
+    related: [R.pvi, R.cost, R.rebate, R.hub, R.review],
   },
 
   {
@@ -363,7 +365,7 @@ export const APOLLO_GUIDES: ApolloGuideEntry[] = [
       { q: "Can I get a rebate on a battery with backup?", a: "Yes. The federal Cheaper Home Batteries rebate applies at the point of sale regardless of whether you include backup, and in NSW the VPP incentive can apply on top. Refer Labs readers also get $500 off an Apollo quote through our link. Backup adds hardware, so get the full price in writing." },
       { q: "Can I go off-grid with a home battery?", a: "A single grid-connected battery is sized for evening and overnight use, not for running your home through cloudy days with no grid, so going fully off-grid usually needs much larger battery and solar capacity and often a backup generator. For most homes, staying grid-connected with blackout backup is far cheaper and more practical. An installer can model what genuine off-grid would require." },
     ],
-    related: [{ href: "/is-a-home-battery-worth-it-australia", label: "Is a battery worth it?" }, R.cost, R.hub, R.review, R.calc],
+    related: [{ href: "/is-a-home-battery-worth-it-australia", label: "Is a battery worth it?" }, R.pvi, R.cost, R.hub, R.review],
   },
 
   {
@@ -461,7 +463,7 @@ export const APOLLO_GUIDES: ApolloGuideEntry[] = [
       { q: "How do I compare home batteries fairly?", a: "Compare usable capacity, whether it provides blackout backup (and whole-home vs essential circuits), the warranty including throughput or cycles, chemistry, VPP-readiness, and the total cost after the federal rebate. The last one decides payback, so a headline sticker price alone can be misleading." },
       { q: "Do alternatives to the Powerwall get the same rebate?", a: "Yes, provided the battery is on the eligible product list, the federal Cheaper Home Batteries rebate applies at the point of sale regardless of brand, and in NSW the VPP incentive can apply on top. An installer confirms eligibility and applies the discount to your quote. Refer Labs readers also get $500 off an Apollo quote through our link." },
     ],
-    related: [{ href: "/best-home-battery-australia", label: "Best home battery: how to choose" }, R.cost, R.hub, R.review, R.calc],
+    related: [{ href: "/best-home-battery-australia", label: "Best home battery: how to choose" }, R.portable, R.cost, R.hub, R.review],
   },
 ];
 

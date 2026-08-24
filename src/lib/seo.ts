@@ -190,6 +190,42 @@ export const seoConfig = {
     url: `${SITE_URL}/knose`,
     keywords: ["knose pet insurance", "knose promo code", "knose 2 months free", "knose pet insurance review"],
   },
+  ecoflow: {
+    title: "EcoFlow Australia Review 2026: Real AUD Prices by Model | Refer Labs",
+    description:
+      "EcoFlow's Australian range priced per model and per watt-hour, read off EcoFlow's own AU store: DELTA 3 Classic A$999 for 1024Wh up to DELTA Pro Ultra A$7,299. What each actually runs, and who it suits.",
+    url: `${SITE_URL}/ecoflow`,
+    keywords: ["ecoflow australia", "ecoflow price australia", "ecoflow delta 3 price", "ecoflow portable power station", "ecoflow review australia"],
+  },
+  ankerSolix: {
+    title: "Anker SOLIX Australia Review 2026: Real AUD Prices by Model | Refer Labs",
+    description:
+      "Anker SOLIX's Australian range priced per model and per watt-hour, read off Anker's own AU store: C300 A$449 for 288Wh up to F3800 A$5,399 for 3840Wh. What each runs, and who it suits.",
+    url: `${SITE_URL}/anker-solix`,
+    keywords: ["anker solix australia", "anker solix price australia", "anker c1000 price", "anker solix f3800", "anker solix review australia"],
+  },
+  ecoflowVsAnkerSolix: {
+    title: "EcoFlow vs Anker SOLIX 2026: Priced Per Watt-Hour in AUD | Refer Labs",
+    description:
+      "EcoFlow vs Anker SOLIX compared on the number that decides it: cost per watt-hour in Australian dollars, at matching capacities, read off both companies' own AU stores and dated.",
+    url: `${SITE_URL}/ecoflow-vs-anker-solix`,
+    keywords: ["ecoflow vs anker solix", "anker solix vs ecoflow", "best portable power station australia", "ecoflow or anker", "portable power station comparison australia"],
+  },
+  portablePowerStationAustralia: {
+    title: "Portable Power Stations Australia 2026: What They Cost & What They Run | Refer Labs",
+    description:
+      "What a portable power station actually costs in Australia and what it will run in a blackout, with real AUD prices per watt-hour from EcoFlow and Anker SOLIX. Written for renters and apartments, who cannot install a fixed battery.",
+    url: `${SITE_URL}/portable-power-station-australia`,
+    keywords: ["portable power station australia", "blackout backup renters australia", "power station for apartment", "backup power without solar", "best portable power station australia"],
+  },
+  portableVsInstalledBattery: {
+    title: "Portable Power Station vs Installed Home Battery: Which Do You Need? | Refer Labs",
+    description:
+      "A portable power station and an installed home battery solve different problems at roughly ten times the price difference. Where each one wins, with real AUD figures and the rebate rules that only apply to one of them.",
+    url: `${SITE_URL}/portable-vs-installed-home-battery-australia`,
+    keywords: ["portable power station vs home battery", "do i need a home battery or generator", "home battery vs power station australia", "cheapest blackout backup australia"],
+  },
+
   whoUnderwritesPetInsurance: {
     title: "Who Underwrites Pet Insurance in Australia? 2026 List | Refer Labs",
     description:

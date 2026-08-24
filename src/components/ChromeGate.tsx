@@ -119,6 +119,12 @@ const STANDALONE_ROUTES = [
   "/elevenlabs",
   "/wing-assistant",
   "/survicate",
+  // Portable power sub-category (EcoFlow + Anker SOLIX, Aug 2026)
+  "/ecoflow",
+  "/anker-solix",
+  "/ecoflow-vs-anker-solix",
+  "/portable-power-station-australia",
+  "/portable-vs-installed-home-battery-australia",
   // Apollo Energy (VIP standalone money page, own bespoke shell)
   "/apollo-energy-group",
   "/apollo-energy-review",

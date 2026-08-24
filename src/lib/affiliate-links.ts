@@ -44,6 +44,17 @@ export const DENSE_URL =
 export const JUNIPER_URL =
   "https://www.myjuniper.com/?utm_source=affiliate&utm_campaign=jarred_k&discountCode=JARREDKFC";
 
+// ── Home & energy: portable power (Commission Factory) ───────────────────────
+// Both brands sell portable power stations AND installed whole-home batteries.
+// The whole-home half competes with Apollo Energy Group, which pays us on a
+// $500 exclusive; every page that compares them states that we earn from all
+// three rather than quietly ranking one above another.
+export const ECOFLOW_URL =
+  "https://t.cfjump.com/94361/t/88567?Url=https%3a%2f%2fau.ecoflow.com%2f";
+
+export const ANKER_SOLIX_URL =
+  "https://t.cfjump.com/94361/t/91722?Url=https%3a%2f%2fwww.ankersolix.com%2fau";
+
 // ── Research peptides (research use only) ────────────────────────────────────
 
 // ── Website builders / landing pages ─────────────────────────────────────────
