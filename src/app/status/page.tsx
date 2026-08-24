@@ -1,3 +1,4 @@
+import { supabaseCredentialReport } from "@/lib/supabase-env";
 import Link from "next/link";
 import { Activity, CheckCircle2, ExternalLink, Wrench } from "lucide-react";
 
@@ -16,7 +17,13 @@ function flag(label: string, ok: boolean, detail?: string): Flag {
 
 export default function StatusPage() {
   const hasSupabasePublic = Boolean(process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
-  const hasSupabaseServiceRole = Boolean(process.env.SUPABASE_SERVICE_ROLE_KEY);
+  // Reads both naming schemes, because the Vercel/Supabase integration provisions
+  // SUPABASE_SECRET_KEY / SUPABASE_PROJECT_ID while this codebase historically read
+  // SUPABASE_SERVICE_ROLE_KEY / NEXT_PUBLIC_SUPABASE_URL. Checking only the old
+  // names reported "Configured" as false while the newer ones were sitting right
+  // there, and reported nothing at all about lead capture being down.
+  const supaCreds = supabaseCredentialReport();
+  const hasSupabaseServiceRole = supaCreds.ok;
   const hasAdminReferralCode = Boolean(process.env.ADMIN_REFERRAL_CODE?.trim());
 
   const hasStripe = Boolean(process.env.STRIPE_SECRET_KEY && process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY);
@@ -30,7 +37,7 @@ export default function StatusPage() {
 
   const flags: Flag[] = [
     flag("Supabase (public keys)", hasSupabasePublic, hasSupabasePublic ? "Configured" : "Missing NEXT_PUBLIC_SUPABASE_URL / NEXT_PUBLIC_SUPABASE_ANON_KEY"),
-    flag("Supabase (service role)", hasSupabaseServiceRole, hasSupabaseServiceRole ? "Configured" : "Missing SUPABASE_SERVICE_ROLE_KEY (server-only)"),
+    flag("Supabase (server key) — lead capture", hasSupabaseServiceRole, hasSupabaseServiceRole ? `Configured via ${supaCreds.keyVar} + ${supaCreds.urlVar}` : "Missing SUPABASE_SERVICE_ROLE_KEY (server-only)"),
     flag("Attribution health check", hasAdminReferralCode, hasAdminReferralCode ? "Configured" : "Missing ADMIN_REFERRAL_CODE"),
     flag("Stripe payments", hasStripe, hasStripe ? "Configured" : "Missing STRIPE_SECRET_KEY / NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY"),
     flag("Stripe webhook", hasStripeWebhook, hasStripeWebhook ? "Configured" : "Missing STRIPE_WEBHOOK_SECRET"),

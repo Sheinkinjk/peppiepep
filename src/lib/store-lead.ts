@@ -33,9 +33,24 @@ export async function storeLead(input: {
       })
       .select("id")
       .single();
-    if (error || !data) return { stored: false, error: error?.message };
+    if (error || !data) {
+      console.error(
+        `[store-lead] FAILED to persist ${input.type} lead for ${input.email ?? "unknown"}: ${error?.message ?? "no row returned"}`,
+      );
+      return { stored: false, error: error?.message };
+    }
     return { stored: true, id: data.id as string };
   } catch (e) {
+    // Loudly. Resolving quietly is exactly how Apollo enquiries were accepted by
+    // the form and written nowhere: the Supabase credentials were present-but-empty
+    // in Vercel, lendingDb() threw, and nothing anywhere said so. Still
+    // non-throwing, so the route can still fall back to email, but the failure now
+    // reaches the logs with the lead attached so it can be recovered by hand.
+    console.error(
+      `[store-lead] FAILED to persist ${input.type} lead for ${input.email ?? "unknown"}: ` +
+        (e instanceof Error ? e.message : "store failed"),
+      { payload: input.payload },
+    );
     return { stored: false, error: e instanceof Error ? e.message : "store failed" };
   }
 }
