@@ -29,7 +29,7 @@ const UPDATED = "2026-08-24";
 const cheapest1k = STATIONS.filter((s) => Math.abs(s.wh - 1024) < 40).sort((a, b) => a.aud - b.aud)[0];
 
 const ROWS: { label: string; portable: string; installed: string }[] = [
-  { label: "Typical spend", portable: `${fmtAud(cheapest1k.aud)} to about ${fmtAud(7299)}`, installed: "Commonly $8,000 to $20,000+ installed, before rebate" },
+  { label: "Typical spend", portable: `${fmtAud(299)} entry, ${fmtAud(cheapest1k.aud)} for 1,024Wh, up to ${fmtAud(7299)}`, installed: "About $7,000 to $14,000 before the federal rebate for a 10-13kWh system, roughly $4,000 to $13,000 after it" },
   { label: "Who can buy one", portable: "Anyone, including renters and apartments", installed: "Owners with a suitable switchboard and space" },
   { label: "Installation", portable: "None. It plugs into a power point", installed: "Accredited installer, switchboard work, approval" },
   { label: "Federal rebate", portable: "Not eligible", installed: "Eligible under the Cheaper Home Batteries program" },
@@ -43,7 +43,7 @@ const ROWS: { label: string; portable: string; installed: string }[] = [
 const faqs = [
   {
     q: "Is a portable power station a substitute for a home battery?",
-    a: `No. They solve different problems at roughly ten times the price difference. A portable unit at ${fmtAud(cheapest1k.aud)} for 1,024Wh carries a fridge, a router and devices through an outage and needs no electrician. An installed battery costs several thousand, runs nominated circuits automatically, charges from your rooftop solar, cuts your bill year-round and qualifies for the federal rebate. If the goal is surviving a blackout, portable is often enough. If the goal is lower bills, portable does essentially nothing.`,
+    a: `No. They solve different problems, an order of magnitude apart in price. A portable unit at ${fmtAud(cheapest1k.aud)} for 1,024Wh carries a fridge, a router and devices through an outage and needs no electrician. An installed battery costs eight to fifteen times that, runs nominated circuits automatically, charges from your rooftop solar, cuts your bill year-round and qualifies for the federal rebate. If the goal is surviving a blackout, portable is often enough. If the goal is lower bills, portable does essentially nothing.`,
   },
   {
     q: "Which one qualifies for the federal battery rebate?",
@@ -59,7 +59,7 @@ const faqs = [
   },
   {
     q: "How is this page paid for?",
-    a: "Every commercial link on it earns us something: EcoFlow and Anker SOLIX pay on purchases, Apollo pays on quote enquiries. There is no version of this page where we are neutral, so instead of claiming neutrality we have set the comparison on facts you can verify without us, chiefly the rebate rule and each brand's published prices.",
+    a: "Every commercial link on it earns us something: EcoFlow and Anker SOLIX pay on purchases, Apollo pays on quote enquiries. Refer Labs is paid by all three, and no arrangement between us and a brand changes the rebate rule or the prices each brand publishes, which is what this comparison is built on.",
   },
 ];
 
@@ -120,9 +120,10 @@ export default function Page() {
         </h1>
 
         <p className="mt-5 text-lg leading-relaxed text-[#2b362f]">
-          They answer different questions. A portable unit from{" "}
-          <strong>{fmtAud(cheapest1k.aud)}</strong> gets you through a blackout with no electrician and moves house with
-          you, but it will not lower your power bill. An installed battery costs several thousand, runs your circuits
+          They answer different questions. A portable unit, {fmtAud(299)} for a small one
+          and <strong>{fmtAud(cheapest1k.aud)}</strong> for one that will hold a fridge, gets you through a blackout with
+          no electrician and moves house with you, but it will not lower your power bill. An installed battery costs
+          several thousand, runs your circuits
           automatically, charges from rooftop solar, cuts your bill and{" "}
           <strong>qualifies for the federal rebate, which the portable one does not</strong>. If you rent, only one of
           these is available to you at all.
@@ -133,9 +134,8 @@ export default function Page() {
         {/* The conflict, up front rather than buried at the bottom. */}
         <div className="mt-6 rounded-xl border border-[#e5e9e7] bg-[#f8faf9] px-5 py-4 text-sm leading-relaxed text-[#3d4b44]">
           <strong className="font-semibold text-[#10251b]">We are paid on both sides of this page.</strong> EcoFlow and
-          Anker SOLIX pay us on purchases; Apollo Energy Group pays us on quote enquiries. There is no version of this
-          comparison where we are neutral, so rather than claim neutrality we have built it on things you can check
-          without us: the rebate rule, and each brand&apos;s own published prices.
+          Anker SOLIX pay us on purchases; Apollo Energy Group pays us on quote enquiries. The comparison below rests on two things you
+          can check without us: the rebate rule, and each brand&apos;s own published prices.
         </div>
 
         <section className="mt-12">

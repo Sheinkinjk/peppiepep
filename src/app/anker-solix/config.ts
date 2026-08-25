@@ -12,7 +12,7 @@ export const ankerSolixConfig: AffiliatePageConfig = {
   eyebrow: "Portable power · Australia",
   affiliateUrl: ANKER_SOLIX_URL,
   quickAnswer:
-    "Anker SOLIX sells portable power stations in Australia from A$449 for a 288Wh C300 DC to A$5,399 for a 3,840Wh F3800. It costs more per watt-hour than EcoFlow at every shared capacity, and answers with output: its C1000 Gen 2 delivers 2,000W where EcoFlow's 1,024Wh units deliver 1,800W. None need an electrician, and none qualify for the federal battery rebate.",
+    "Anker SOLIX sells portable power stations in Australia from A$449 for a 288Wh C300 DC to A$5,399 for a 3,840Wh F3800. It costs more per watt-hour than EcoFlow at the 1,000Wh and 2,000Wh tiers, is level with it at the 290Wh entry tier, and answers with output: its C1000 Gen 2 delivers 2,000W where EcoFlow's 1,024Wh units deliver 1,800W. None need an electrician, and none qualify for the federal battery rebate.",
   atAGlance: [
     { k: "Type", v: "Portable power stations and the SOLIX X1 home battery" },
     { k: "AU range", v: "288Wh to 3,840Wh portable" },
@@ -50,19 +50,19 @@ export const ankerSolixConfig: AffiliatePageConfig = {
       heading: "How the range is priced",
       paragraphs: [
         "Entry is the C300 DC at A$449 for 288Wh. The C1000 Gen 2 at A$1,599 gives 1,024Wh with 2,000W output, and the C2000 Gen 2 at A$2,699 doubles capacity to 2,048Wh at 2,400W. The largest single unit is the F3800 at A$5,399 for 3,840Wh and 6,000W, which is the most output in either range short of EcoFlow's top model.",
-        "Anker showed no struck-through prices on these models when we read them, where several EcoFlow models were discounted. That is worth knowing when comparing: EcoFlow's advantage narrows at its regular prices, though it does not disappear.",
+        "Anker's Australian site was running a dated sale when we read it, 17 August to 7 September 2026, advertising up to 55% off across its range. The power station models above each showed a single price rather than a struck-through one, so we cannot tell you whether those are sale prices or standing prices. Several EcoFlow models did show a struck-through price, and EcoFlow's advantage narrows at its regular figures without disappearing.",
       ],
     },
     {
       heading: "Where Anker wins, and where it does not",
       paragraphs: [
         "It costs more per watt-hour than EcoFlow at the 1,000Wh and 2,000Wh tiers: about $1.42/Wh for the C1000 against $0.98/Wh for EcoFlow's DELTA 3 Classic. At the entry tier they are level, both charging A$449, though EcoFlow's 286Wh unit puts out 600W against the C300 DC's 300W. What it offers instead is output. The C1000 Gen 2 delivers 2,000W where EcoFlow's 1,024Wh units deliver 1,800W, and output is what decides whether a kettle, a microwave or a power tool runs at all rather than how long it runs.",
-        "So the choice is fairly clean: buy EcoFlow if you are buying stored energy per dollar, buy Anker if you are buying the ability to run something demanding.",
+        "Buy EcoFlow if you are buying stored energy per dollar. Buy Anker if you are buying the ability to run something demanding.",
       ],
     },
   ],
   steps: [
-    { num: "1", heading: "Work out your load", body: "Add up what you actually need running: a fridge averages about 100W, a laptop 60W, a router and phones about 20W." },
+    { num: "1", heading: "Start with the hardest thing you want to run", body: "A kettle or a microwave draws around 1,200W, a portable air conditioner about 1,000W. That number sets the output you need." },
     { num: "2", heading: "Check output first if it is high-draw", body: "This is Anker's advantage. A 2,000W unit runs things a 1,800W one refuses, regardless of capacity." },
     { num: "3", heading: "Compare per watt-hour", body: "Divide price by capacity, then decide whether the extra output is worth the higher rate." },
     { num: "4", heading: "Open Anker SOLIX through the link", body: "Prices move often in this category, so confirm the current figure on Anker's own store before buying." },
@@ -88,15 +88,15 @@ export const ankerSolixConfig: AffiliatePageConfig = {
     },
     {
       q: "Does an Anker SOLIX qualify for the federal battery rebate?",
-      a: "No. The Cheaper Home Batteries program applies to systems installed by an accredited installer, not to a plug-in appliance. Anker's installed SOLIX X1 is a separate product sold through installer partners. If the rebate is central to your decision you are looking at an installed battery.",
+      a: "No. The Cheaper Home Batteries program applies to systems installed by an accredited installer, not to a plug-in appliance. Anker's installed SOLIX X1 is a separate product sold through installer partners and does qualify, since it is fitted by an installer.",
     },
     {
       q: "Is there an Anker SOLIX discount code?",
-      a: "Refer Labs does not hold one, and Anker does not publish a standing public code. It runs periodic sales instead, and its Australian site was advertising a seasonal promotion when we read these prices. The saving worth chasing is a sale on the model you want rather than a code.",
+      a: "Refer Labs does not hold one, and Anker does not publish a standing public code. It runs dated sales instead: when we read these prices on 24 August 2026 its Australian site was advertising up to 55% off, running 17 August to 7 September. The saving worth chasing is a sale on the model you want rather than a code.",
     },
     {
       q: "Does Refer Labs earn from this page?",
-      a: "Yes, we earn a commission if you buy through the link, at no extra cost to you. We earn from EcoFlow too, which is why this page states plainly that EcoFlow is cheaper per watt-hour rather than talking around it. We also earn from Apollo Energy Group on installed batteries, and Anker's SOLIX X1 competes with them.",
+      a: "Yes, we earn a commission if you buy through the link, at no extra cost to you. We earn from EcoFlow too, so the comparison here runs on cost per watt-hour taken from each company's published prices. We also earn from Apollo Energy Group on installed batteries, and Anker's SOLIX X1 competes with them.",
     },
   ],
   breadcrumb: [

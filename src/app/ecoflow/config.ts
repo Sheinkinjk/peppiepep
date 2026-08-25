@@ -54,7 +54,7 @@ export const ecoflowConfig: AffiliatePageConfig = {
       ],
     },
     {
-      heading: "Output matters more than most buyers expect",
+      heading: "What the output rating decides",
       paragraphs: [
         "Capacity in watt-hours decides how long something runs. Output in watts decides whether it runs at all. EcoFlow's 1,024Wh units deliver 1,800W continuous, which is below the 2,000W that Anker's C1000 Gen 2 delivers at the same capacity. For electronics and a fridge that difference is academic; for a kettle, a microwave or a power tool it is the whole decision.",
       ],
@@ -95,7 +95,7 @@ export const ecoflowConfig: AffiliatePageConfig = {
     },
     {
       q: "Does Refer Labs earn from this page?",
-      a: "Yes, we earn a commission if you buy through the link, at no extra cost to you. We also earn from Anker SOLIX, which is why our comparison of the two runs on cost per watt-hour taken from each company's own published prices rather than on a preference. We earn from Apollo Energy Group on installed batteries as well, and EcoFlow's installed range competes with them.",
+      a: "Yes, we earn a commission if you buy through the link, at no extra cost to you. We also earn from Anker SOLIX, so the comparison of the two runs on cost per watt-hour taken from each company's own published prices. We earn from Apollo Energy Group on installed batteries as well, and EcoFlow's installed range competes with them.",
     },
   ],
   breadcrumb: [

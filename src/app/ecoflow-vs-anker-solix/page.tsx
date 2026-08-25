@@ -33,6 +33,10 @@ const pair = (wh: number) => {
   return { eco, ank };
 };
 const P1K = pair(1024);
+// The most output you can buy under A$2,000, whichever brand holds it. Named
+// rather than assumed: it is currently Anker's, and that is the whole case for
+// paying its premium.
+const TOP_OUTPUT_UNDER_2K = [...STATIONS].filter((s) => s.aud < 2000).sort((a, b) => b.watts - a.watts)[0];
 const P2K = pair(2048);
 
 const faqs = [
@@ -50,11 +54,11 @@ const faqs = [
   },
   {
     q: "Are these a substitute for an installed home battery?",
-    a: "No, and the price difference makes that obvious once you compare them properly. A portable unit runs a fridge, a router and devices through an outage and needs no electrician, which is why it suits renters and apartments. An installed battery runs circuits, charges from rooftop solar and qualifies for the federal rebate, none of which a portable unit does. We set the two out side by side on our portable versus installed page.",
+    a: "No. A portable unit runs a fridge, a router and devices through an outage and needs no electrician, which is why it suits renters and apartments. An installed battery runs circuits, charges from rooftop solar and qualifies for the federal rebate, none of which a portable unit does. We set the two out side by side on our portable versus installed page.",
   },
   {
     q: "Does Refer Labs earn from this comparison?",
-    a: "Yes, from both brands, which is the reason this page compares them on a published number rather than naming a favourite. Cost per watt-hour is arithmetic on prices you can check on each company's own store, so a commission cannot move it. We also earn from Apollo Energy Group on installed batteries, and that is stated wherever the two categories are compared.",
+    a: "Yes, from both brands. Cost per watt-hour is arithmetic on prices you can check on each company's own store, so a commission cannot move it. We also earn from Apollo Energy Group on installed batteries, and that is stated wherever the two categories are compared.",
   },
 ];
 
@@ -136,8 +140,8 @@ export default function Page() {
           </h2>
           <p className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">
             Cost per watt-hour is the only figure that makes different capacities comparable, and it is simple
-            arithmetic on a published price. Sorted that way, the two ranges interleave but EcoFlow holds the cheaper
-            slot at each shared capacity.
+            arithmetic on a published price. Sorted that way the two ranges interleave, with EcoFlow holding the cheaper slot at 1,000Wh and
+            2,000Wh and the pair level at the 290Wh entry tier.
           </p>
           <PowerStationTable caption="EcoFlow and Anker SOLIX, Australian range, sorted by cost per watt-hour." />
         </section>
@@ -170,7 +174,8 @@ export default function Page() {
                 high-draw appliances rather than storing the most energy per dollar.
               </p>
               <p className="mt-3 text-[13px] text-[#6e7b74]">
-                Most output under A$2,000: {P1K.ank.model} at {P1K.ank.watts.toLocaleString("en-AU")}W
+                Most output under A$2,000: {TOP_OUTPUT_UNDER_2K.model} at{" "}
+                {TOP_OUTPUT_UNDER_2K.watts.toLocaleString("en-AU")}W, {fmtAud(TOP_OUTPUT_UNDER_2K.aud)}
               </p>
               <a href={ANKER_SOLIX_URL} {...aff} data-cta="vs-anker" className="nw-btn mt-5 justify-center">
                 See Anker SOLIX prices <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -190,8 +195,7 @@ export default function Page() {
           </h2>
           <p className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">
             Capacity in watt-hours tells you how long something runs. Output in watts tells you whether it runs at all.
-            A 2,000Wh unit rated at 1,800W will refuse a 2,400W appliance no matter how full it is, and that is the
-            specification most buyers skip. If your reason for buying is a kettle, a microwave, a power tool or a
+            A 2,000Wh unit rated at 1,800W will refuse a 2,400W appliance no matter how full it is. If your reason for buying is a kettle, a microwave, a power tool or a
             portable air conditioner, read the output column first and the capacity column second.
           </p>
         </section>
@@ -205,11 +209,11 @@ export default function Page() {
               companies themselves, which you can check in a minute and a commission cannot move. We also earn from{" "}
               <Link href="/apollo-energy-group" className="font-semibold text-[#0a7c42] hover:underline">Apollo Energy Group</Link>{" "}
               on installed home batteries, and both of these brands sell installed systems that compete with Apollo.
-              That is set out on our{" "}
+              Our{" "}
               <Link href="/portable-vs-installed-home-battery-australia" className="font-semibold text-[#0a7c42] hover:underline">
                 portable versus installed
               </Link>{" "}
-              page rather than left for you to discover.{" "}
+              page sets out that overlap.{" "}
               <Link href="/how-we-make-money" className="underline hover:text-[#10251b]">How we make money</Link>.
             </p>
           </div>

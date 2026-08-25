@@ -69,7 +69,7 @@ export const RUNS = [
   { appliance: "Wi-Fi router and a phone charger", watts: 20, note: "The bare minimum to stay contactable." },
   { appliance: "Laptop, on and working", watts: 60, note: "A full working day is well within a 1,000Wh unit." },
   { appliance: "Fridge-freezer (cycling average)", watts: 100, note: "Cycles on and off, so it draws far less than its nameplate." },
-  { appliance: "CPAP machine, humidifier off", watts: 40, note: "The reason many people buy one at all." },
+  { appliance: "CPAP machine, humidifier off", watts: 40, note: "Low, steady draw, so capacity is the limit rather than output." },
   { appliance: "Microwave or kettle", watts: 1200, note: "Brief bursts only. Check the unit's output, not its capacity." },
   { appliance: "Portable air conditioner", watts: 1000, note: "Needs high output and drains a small unit in under an hour." },
 ];

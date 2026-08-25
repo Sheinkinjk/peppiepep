@@ -121,10 +121,11 @@ export default function Page() {
             Can I use one if I rent or live in an apartment?
           </h2>
           <p className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">
-            Yes, and it is the reason this category exists for most people who buy one. A portable station charges from
+            Yes. A portable station charges from
             a normal power point and powers appliances from its own outlets. No switchboard work, no roof, no accredited
             installer, no landlord conversation. Every other page in this section assumes you own the building and can
-            have someone wire a battery into it, which rules out roughly a third of Australian households.
+            have someone wire a battery into it. The ABS put the renting share of Australian households at 31% in its
+            Housing Occupancy and Costs release for 2019-20, its latest, read 25 August 2026.
           </p>
           <p className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">
             The trade is scale. You are powering selected appliances through a plug, not the circuits of a house, and
@@ -202,8 +203,8 @@ export default function Page() {
             </div>
           </div>
           <p className="mt-4 text-[13px] leading-relaxed text-[#6e7b74]">
-            Both links are affiliate links and we earn from either, at no extra cost to you, which is why the comparison
-            rests on published prices rather than a favourite.{" "}
+            Both links are affiliate links and we earn from either, at no extra cost to you. The comparison rests on each
+            brand&apos;s published prices.{" "}
             <Link href="/ecoflow-vs-anker-solix" className="underline hover:text-[#3d4b44]">The full head-to-head</Link>{" "}
             sets them out at matching capacities.{" "}
             <Link href="/how-we-make-money" className="underline hover:text-[#3d4b44]">How we make money</Link>.
