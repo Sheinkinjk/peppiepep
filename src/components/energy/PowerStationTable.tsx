@@ -29,7 +29,7 @@ export default function PowerStationTable({
   return (
     <figure className="mt-5">
       <div className="overflow-x-auto rounded-2xl border border-[#e5e9e7]">
-        <table className="w-full min-w-[640px] border-collapse text-left text-sm">
+        <table className="w-full min-w-[720px] border-collapse text-left text-sm">
           <thead>
             <tr className="border-b border-[#e5e9e7] bg-[#f8faf9] text-[#6e7b74]">
               <th className="px-4 py-3 font-semibold">Model</th>
