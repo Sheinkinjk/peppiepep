@@ -202,7 +202,7 @@ export default function HomePage() {
                 Big decisions,<br />compared properly.
               </h1>
               <p className="mt-5 max-w-md text-lg leading-relaxed text-[#3d4b44]">
-                Independent comparisons across Australian health, home energy, pet insurance, business finance and
+                Independent comparisons across Australian health, solar and energy, pet insurance and business
                 software, so you can choose the right one with confidence.
               </p>
               <div className="mt-8">
@@ -214,6 +214,7 @@ export default function HomePage() {
                   { l: "Weight loss", h: "/weight-loss" },
                   { l: "Hair loss", h: "/hair-loss" },
                   { l: "Home batteries", h: "/apollo-energy-group" },
+                  { l: "Portable power", h: "/portable-power-station-australia" },
                 ].map((p, i) => (
                   <span key={p.h} className="flex items-center gap-2">
                     {i > 0 && <span className="text-[#cdd5cf]">·</span>}
@@ -221,6 +222,17 @@ export default function HomePage() {
                   </span>
                 ))}
               </div>
+
+            {/* One line, under the popular row: businesses arrive on the homepage
+                looking for a way in, and the only entry point used to be a dark
+                band at the very bottom of the page. A full CTA up here would
+                fight the consumer proposition, so it is a link, not a button. */}
+              <p className="mt-6 text-[13px] text-[#6e7b74]">
+                Run a business?{" "}
+                <Link href="/partner-with-refer-labs" className="font-semibold text-[#0a7c42] underline-offset-2 hover:underline">
+                  Apply to partner with Refer Labs
+                </Link>
+              </p>
             </div>
 
             {/* Featured pick, real logo, editorial "cover story".
@@ -495,12 +507,12 @@ export default function HomePage() {
                   Reach people who have already done the research.
                 </h2>
                 <p className="mt-3 text-[15px] leading-relaxed text-white/70">
-                  We partner with Australian brands on comparisons, distribution and growth. Always disclosed, never a
-                  bought ranking.
+                  We partner with Australian brands on comparisons, distribution and growth. Always disclosed, and
+                  rankings are never sold. Applications are open across every category we cover.
                 </p>
               </div>
-              <Link href="/for-business" className="nw-btn group shrink-0 !bg-white !text-[#0a7c42] hover:!bg-[#e8f5ee]">
-                Partner with us
+              <Link href="/partner-with-refer-labs" className="nw-btn group shrink-0 !bg-white !text-[#0a7c42] hover:!bg-[#e8f5ee]">
+                Apply to partner with us
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </Link>
             </div>

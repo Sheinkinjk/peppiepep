@@ -12,7 +12,7 @@ const listingSchema = z.object({
   businessName: z.string().min(1, "Business name is required").max(200),
   website: z.string().min(1, "Website is required").max(300),
   contactEmail: z.string().email("Valid email is required").max(300),
-  category: z.enum(["Weight loss & telehealth", "Hair loss & men's health", "Home batteries & solar", "Business lending", "Business software"]),
+  category: z.enum(["Weight loss & telehealth", "Hair loss & men's health", "Solar & energy", "Pet insurance", "Business software"]),
   description: z.string().min(10, "Please provide a brief description").max(1500),
 });
 
@@ -92,14 +92,14 @@ export async function POST(request: Request) {
       type: "comparison_listing",
       name: data.contactName,
       email: data.contactEmail,
-      source_page: "/comparison-website",
+      source_page: "/partner-with-refer-labs",
       payload: data,
     });
 
     const html = buildListingEmail(data, submittedAt);
 
     const notification = await sendAdminNotification({
-      subject: `Comparison Platform Enquiry: ${data.businessName} (${data.category})`,
+      subject: `Partner application: ${data.businessName} (${data.category})`,
       html,
       to: "jarred@referlabs.com.au",
     });

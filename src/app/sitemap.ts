@@ -220,7 +220,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/carrd-vs-butternut`,                    lastModified: FRESH,  changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/mosh-vs-dense`,                         lastModified: TODAY,  changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/mosh-vs-pilot`,                         lastModified: TODAY,  changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE}/comparison-website`,                    lastModified: RECENT, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE}/disclaimer`, lastModified: FRESH, changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${BASE}/partner-with-refer-labs`,               lastModified: FRESH, changeFrequency: 'monthly', priority: 0.75 },
 
     // ── Affiliate programs cluster (hub + 3 spokes) ────────────────────
     { url: `${BASE}/affiliate-programs-australia`,             lastModified: FRESH, changeFrequency: 'monthly', priority: 0.85 },

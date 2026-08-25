@@ -214,7 +214,7 @@ export const SEARCH_INDEX: SearchEntry[] = [
   { title: "About Refer Labs", href: "/about", category: "Browse", kind: "Guide", keywords: "about us who we are company refer labs" },
   { title: "Contact", href: "/contact", category: "Browse", kind: "Guide", keywords: "contact email get in touch support" },
   { title: "For business", href: "/for-business", category: "Browse", kind: "Category", keywords: "for business brands partner with us grow" },
-  { title: "Get featured on a comparison", href: "/comparison-website", category: "Browse", kind: "Guide", keywords: "get featured listed comparison website partner brand" },
+  { title: "Partner with Refer Labs", href: "/partner-with-refer-labs", category: "Browse", kind: "Guide", keywords: "partner with refer labs apply get featured listed comparison affiliate partnership brand australia" },
   { title: "Privacy policy", href: "/privacy", category: "Browse", kind: "Guide", keywords: "privacy policy data personal information collection" },
   { title: "Terms of service", href: "/terms", category: "Browse", kind: "Guide", keywords: "terms of service conditions legal" },
 ];

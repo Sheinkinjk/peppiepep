@@ -30,7 +30,7 @@ export default function Terms() {
           Terms of Service
         </h1>
         <p className="mt-4 text-sm text-[#9aa39c]">
-          Last updated: 7 August 2026
+          Last updated: 25 August 2026
         </p>
 
         <div className="mt-10 space-y-8">
@@ -189,16 +189,19 @@ export default function Terms() {
             <div>
               <h2 className="text-2xl font-bold text-[#10251b] mb-4">7. Fees, Billing, and Payment Terms</h2>
               <p className="text-[#2b362f] mb-2">
-                You agree to pay all fees associated with your use of the Service as outlined in your selected subscription plan. All fees are:
+                <strong>Reading Refer Labs is free.</strong> There is no subscription, no account requirement and no fee to access any comparison, guide or tool on this website. This section applies only where you separately purchase a product or service from us, which today means a business service described on our /for-business pages, or continued access to a product you have already paid for.
+              </p>
+              <p className="text-[#2b362f] mb-2">
+                Where you do purchase from us, fees are:
               </p>
               <ul className="list-disc list-inside text-[#2b362f] space-y-2 mb-3">
-                <li>Non-refundable except as required by law or explicitly stated</li>
-                <li>Charged in advance on a recurring basis (monthly or annually)</li>
-                <li>Subject to change with 30 days' prior written notice</li>
-                <li>Exclusive of all applicable taxes, which you are responsible for paying</li>
+                <li>As stated at the point of purchase, in Australian dollars unless otherwise specified</li>
+                <li>Non-refundable except as required by law, including the consumer guarantees in Section 8B.1, or where we say otherwise</li>
+                <li>Charged in advance, and on a recurring basis only where the purchase is expressly described as recurring</li>
+                <li>Inclusive or exclusive of GST as stated at the point of purchase</li>
               </ul>
               <p className="text-[#2b362f] mb-3">
-                If payment fails or your account becomes past due, Pepform may suspend or terminate your access to the Service. You remain liable for all unpaid fees plus interest at 1.5% per month or the maximum rate permitted by law, whichever is lower.
+                If payment for a purchased service fails, Pepform may suspend access to that service. Nothing in this section affects your free access to the published comparisons and guides.
               </p>
               <p className="text-[#2b362f]">
                 Pepform may offer promotional discounts or credit-based allowances at its discretion. Such promotions do not create any ongoing entitlement or expectation of continued free service.
@@ -249,6 +252,20 @@ export default function Terms() {
               <p className="text-[#2b362f] mb-4">
                 Nothing in these Terms excludes, restricts, or modifies any consumer guarantee, right, or remedy under the Australian Consumer Law (ACL) or other applicable consumer protection legislation that cannot be excluded, restricted, or modified by agreement. If a paid product or service fails to meet a consumer guarantee, you may be entitled to a remedy under the ACL, including a refund where the failure is major.
               </p>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-bold text-[#10251b] mb-4">8C. Partner Applications and Placement</h2>
+              <p className="text-[#2b362f] mb-3">
+                Businesses may apply to be compared on Refer Labs through our partner application page. Applying does not create any agreement to feature you, and we may decline any application without giving reasons.
+              </p>
+              <ul className="list-disc list-inside text-[#2b362f] space-y-2 mb-3">
+                <li><strong>Placement is not for sale.</strong> We do not charge a listing fee and we do not accept payment for a ranking, a position in a table, or a favourable conclusion. Where a commercial relationship exists it is a commission or referral fee on outcomes, and it is disclosed on the page.</li>
+                <li><strong>What we publish is editorial.</strong> We decide what a page says, including anything unfavourable, and we may compare you against providers we also earn from. We will correct anything factually wrong on request, but we do not give partners approval over conclusions.</li>
+                <li><strong>Information you give us must be accurate.</strong> Prices, offer terms, accreditations and claims you supply must be true and verifiable from your own published sources, and you must tell us when they change. We verify against your own site before publishing, and we date what we publish.</li>
+                <li><strong>We may remove a listing at any time,</strong> including where an offer expires, a claim cannot be substantiated, or the arrangement no longer serves our readers.</li>
+                <li><strong>Regulated categories.</strong> Where you operate in a regulated category, including therapeutic goods, credit, insurance or health services, you are responsible for your own compliance, and we will not publish material that would breach the relevant law.</li>
+              </ul>
             </div>
 
             <div>
@@ -345,6 +362,9 @@ export default function Terms() {
 
             <div>
               <h2 className="text-2xl font-bold text-[#10251b] mb-4">14. Disclaimer of Warranties</h2>
+              <p className="text-[#2b362f] mb-3">
+                Our plain-language <Link href="/disclaimer" className="text-[#0a7c42] hover:underline">Disclaimer</Link> sets out what our content is and is not, including that health pages are information rather than medical advice and that prices are dated records rather than quotes. It sits alongside this clause.
+              </p>
               <p className="text-[#2b362f] mb-3 uppercase font-bold">
                 THE SERVICE IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, WHETHER EXPRESS, IMPLIED, OR STATUTORY.
               </p>

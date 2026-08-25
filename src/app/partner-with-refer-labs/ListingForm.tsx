@@ -6,8 +6,8 @@ import { ArrowRight, Loader2, CheckCircle2 } from "lucide-react";
 const categories = [
   "Weight loss & telehealth",
   "Hair loss & men's health",
-  "Home batteries & solar",
-  "Business lending",
+  "Solar & energy",
+  "Pet insurance",
   "Business software",
 ] as const;
 

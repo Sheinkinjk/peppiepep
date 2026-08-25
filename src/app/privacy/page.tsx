@@ -30,7 +30,7 @@ export default function Privacy() {
           Privacy Policy
         </h1>
         <p className="mt-4 text-sm text-[#9aa39c]">
-          Last updated: 7 August 2026 · Version 2.5
+          Last updated: 25 August 2026 · Version 2.6
         </p>
 
         <div className="mt-10 space-y-6">
@@ -60,6 +60,7 @@ export default function Privacy() {
                 
                 
                 <li><strong>Referral Attribution:</strong> Which page you came from when you follow a link to a provider, so a referral can be credited</li>
+                <li><strong>Assistant Messages:</strong> Anything you type into the site assistant, which is sent to OpenAI to generate a reply (see Section 3.1). Please do not type personal or health information into it.</li>
                 <li><strong>Payment Data:</strong> Processed by Stripe (we do not store credit card details)</li>
               </ul>
 
@@ -143,7 +144,7 @@ export default function Privacy() {
                   <ul className="text-sm text-[#2b362f] list-disc list-inside space-y-0.5">
                     <li><strong>Data Shared:</strong> All user and customer data</li>
                     <li><strong>Purpose:</strong> Database hosting, user authentication</li>
-                    <li><strong>Location:</strong> United States (AWS US-East-1)</li>
+                    <li><strong>Location:</strong> Hosted by Supabase on AWS in a single provisioned region. Personal information may be stored outside Australia; see Section 4.</li>
                     <li><strong>Privacy Policy:</strong> <a href="https://supabase.com/privacy" className="text-[#0a7c42] hover:underline" target="_blank" rel="noopener">supabase.com/privacy</a></li>
                   </ul>
                 </div>
@@ -169,13 +170,23 @@ export default function Privacy() {
                 </div>
 
                 <div className="bg-[#f5f8f6] rounded-lg p-4">
-                  <p className="font-semibold text-[#10251b] mb-1">OpenAI (Message Features)</p>
+                  <p className="font-semibold text-[#10251b] mb-1">OpenAI (Site Assistant)</p>
                   <ul className="text-sm text-[#2b362f] list-disc list-inside space-y-0.5">
-                    <li><strong>Data Shared:</strong> Message content for response generation (anonymized)</li>
-                    <li><strong>Purpose:</strong> Generate campaign message suggestions</li>
+                    <li><strong>Data Shared:</strong> The messages you type into the assistant on this site, and the assistant&rsquo;s replies</li>
+                    <li><strong>Purpose:</strong> Generate the assistant&rsquo;s answers to your questions</li>
                     <li><strong>Location:</strong> United States</li>
-                    <li><strong>Note:</strong> No customer PII is sent; only anonymized prompts</li>
+                    <li><strong>Note:</strong> Anything you type is sent to OpenAI to produce a reply, so please do not type personal or health information into it. If you separately give us your name and email to continue a conversation, that is emailed to us and handled under this policy.</li>
                     <li><strong>Privacy Policy:</strong> <a href="https://openai.com/privacy" className="text-[#0a7c42] hover:underline" target="_blank" rel="noopener">openai.com/privacy</a></li>
+                  </ul>
+                </div>
+
+                <div className="bg-[#f5f8f6] rounded-lg p-4">
+                  <p className="font-semibold text-[#10251b] mb-1">Affiliate networks (Commission Factory and similar)</p>
+                  <ul className="text-sm text-[#2b362f] list-disc list-inside space-y-0.5">
+                    <li><strong>Data Shared:</strong> That a click came from Refer Labs, and the page it came from. We do not pass your name, email or account details.</li>
+                    <li><strong>Purpose:</strong> To credit a referral so the brand can pay a commission</li>
+                    <li><strong>How it works:</strong> A disclosed affiliate link takes you to the network&rsquo;s own domain before the brand&rsquo;s site. The network, not Refer Labs, sets its own cookie there, and from that point the network and the brand handle your data under their own policies.</li>
+                    <li><strong>Location:</strong> Australia and overseas, depending on the network</li>
                   </ul>
                 </div>
 

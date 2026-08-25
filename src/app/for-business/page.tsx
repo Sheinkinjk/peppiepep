@@ -13,7 +13,7 @@ const offers = [
     title: "Put your product in front of people choosing",
     body: "Our comparisons reach Australians at the exact moment they are picking a provider in your category. If your product genuinely belongs in one we cover, we add it and disclose the relationship. Placement never buys a ranking, which is precisely why the traffic converts.",
     cta: { label: "Enquire about being featured", href: "mailto:jarred@referlabs.com.au?subject=Get%20featured%20enquiry", external: true },
-    links: [{ href: "/comparison-website", label: "How featuring works" }],
+    links: [{ href: "/partner-with-refer-labs", label: "Apply to partner with us" }],
   },
   {
     tag: "Generate leads",

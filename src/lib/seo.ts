@@ -2155,23 +2155,37 @@ export const seoConfig = {
     ],
   },
 
-  comparisonWebsite: {
-    title: "Get Featured: Australia's Independent Comparison Platform | Refer Labs",
+  disclaimer: {
+    title: "Disclaimer | Refer Labs",
     description:
-      "Apply to be featured on Refer Labs, an independent Australian comparison platform across health, home energy and business software. Placement is earned against published criteria, never pay-to-rank.",
-    url: `${SITE_URL}/comparison-website`,
+      "Refer Labs publishes general information to help Australians compare providers. Not medical, financial or legal advice; we are not the provider of anything we compare; prices are dated and change. Your Australian Consumer Law rights are unaffected.",
+    url: `${SITE_URL}/disclaimer`,
+    keywords: ["refer labs disclaimer", "general information not advice australia", "comparison site disclaimer"],
+  },
+
+  partnerWithReferLabs: {
+    title: "Partner with Refer Labs: Apply to Be Compared | Refer Labs",
+    description:
+      "Apply to partner with Refer Labs, an independent Australian comparison publisher across health, solar and energy, pet insurance and business software. Placement is earned against published criteria and is never sold.",
+    url: `${SITE_URL}/partner-with-refer-labs`,
     keywords: [
-      "best ED clinics Australia",
-      "best weight loss programs Australia",
-      "hair loss treatment Australia",
-      "TRT clinic Australia",
-      "testosterone clinic Australia",
-      "Australian health comparison",
-      "supplements Australia comparison",
-      "men's health Australia",
-      "health platform Australia",
-      "performance health Australia",
+      "partner with refer labs",
+      "australian comparison site partnership",
+      "get listed on a comparison site australia",
+      "affiliate partnership australia brands",
+      "australian affiliate publisher",
+      "get featured comparison australia",
     ],
+  },
+
+  // Retired route, 308 to /partner-with-refer-labs. noIndex is defensive: if the
+  // redirect is ever removed, this cannot silently republish as a live page.
+  comparisonWebsite: {
+    title: "Partner with Refer Labs | Refer Labs",
+    description: "This page has moved to /partner-with-refer-labs.",
+    url: `${SITE_URL}/partner-with-refer-labs`,
+    noIndex: true,
+    keywords: [],
   },
 
   bestNewsletterPlatform: {
