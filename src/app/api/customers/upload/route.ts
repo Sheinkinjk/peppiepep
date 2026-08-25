@@ -2,7 +2,6 @@ import { NextResponse } from "next/server";
 import { revalidatePath } from "next/cache";
 import type { SupabaseClient } from "@supabase/supabase-js";
 import Papa from "papaparse";
-import * as XLSX from "xlsx";
 import { z } from "zod";
 import DOMPurify from "isomorphic-dompurify";
 
@@ -117,12 +116,23 @@ export async function POST(request: Request) {
 
     const { file: uploadedFile } = validation.data;
     const fileName = uploadedFile.name.toLowerCase();
+    // Excel support is gone deliberately. It required the `xlsx` package, which
+    // carries an unfixed prototype-pollution and ReDoS advisory with no patched
+    // release, on a route that parses a file an uploader controls. Papa Parse
+    // handles CSV, every spreadsheet exports CSV, and this is the only place the
+    // dependency was used.
     const isCSV = fileName.endsWith(".csv");
     const isExcel = fileName.endsWith(".xlsx") || fileName.endsWith(".xls");
 
-    if (!isCSV && !isExcel) {
+    if (isExcel) {
       return NextResponse.json(
-        { error: "Invalid file type. Upload a CSV or Excel file." },
+        { error: "Excel files are no longer supported. Save the sheet as CSV and upload that." },
+        { status: 400 },
+      );
+    }
+    if (!isCSV) {
+      return NextResponse.json(
+        { error: "Invalid file type. Upload a CSV file." },
         { status: 400 },
       );
     }
@@ -142,7 +152,7 @@ export async function POST(request: Request) {
 
     let parsedRows: Array<Record<string, string>> = [];
 
-    if (isCSV) {
+    {
       const text = await uploadedFile.text();
       const parsed = Papa.parse<Record<string, string>>(text, {
         header: true,
@@ -167,26 +177,9 @@ export async function POST(request: Request) {
 
       parsedRows =
         parsed.data?.filter((row) => row && Object.values(row).some(Boolean)) ?? [];
-    } else {
-      const arrayBuffer = await uploadedFile.arrayBuffer();
-      const workbook = XLSX.read(arrayBuffer, { type: "array" });
-      const firstSheetName = workbook.SheetNames[0];
-      const worksheet = workbook.Sheets[firstSheetName];
-      const rows = XLSX.utils.sheet_to_json<(string | number)[]>(worksheet, {
-        header: 1,
-        defval: "",
-      });
-      const headers = (rows[0] as string[] | undefined) || [];
-      parsedRows = rows.slice(1).map((rowArr) => {
-        const record: Record<string, string> = {};
-        headers.forEach((header, index) => {
-          const value = rowArr && rowArr[index] !== undefined ? String(rowArr[index]) : "";
-          record[header] = value;
-        });
-        return record;
-      });
     }
 
+    // Validate row count
     // Validate row count
     if (parsedRows.length > MAX_ROWS) {
       logger.warn("Upload exceeded row limit", {

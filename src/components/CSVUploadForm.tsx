@@ -192,7 +192,7 @@ export function CSVUploadForm({ pagesPublished = true, hostConfigured = true }: 
           id="file"
           type="file"
           name="file"
-          accept=".csv,.xlsx,.xls"
+          accept=".csv"
           disabled={isUploading}
           onChange={handleFileChange}
           className="hidden"
@@ -219,7 +219,7 @@ export function CSVUploadForm({ pagesPublished = true, hostConfigured = true }: 
           </Button>
         </div>
         <p className="text-xs text-slate-500">
-          Supported formats: CSV (.csv), Excel (.xlsx, .xls). Every new contact automatically receives a referral link and a reusable discount code you can sync to Shopify or your checkout form.
+          Supported format: CSV (.csv). Export from Excel or Sheets as CSV. Every new contact automatically receives a referral link and a reusable discount code you can sync to Shopify or your checkout form.
         </p>
         {status && (
           <div

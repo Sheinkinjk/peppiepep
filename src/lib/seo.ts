@@ -2158,6 +2158,17 @@ export const seoConfig = {
     ],
   },
 
+  // Retired product (the Blueprint), so noIndex, but crawlable so Google can read
+  // the noindex, and it needs its own canonical: without one the page claimed to
+  // be the homepage.
+  leaveAReview: {
+    title: "Leave a Review | Refer Labs",
+    description: "Share your experience of the Refer Labs Referral Blueprint.",
+    url: `${SITE_URL}/leave-a-review`,
+    noIndex: true,
+    keywords: [],
+  },
+
   disclaimer: {
     title: "Disclaimer | Refer Labs",
     description:
