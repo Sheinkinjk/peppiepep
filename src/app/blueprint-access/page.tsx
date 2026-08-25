@@ -91,9 +91,13 @@ function BlueprintPortal() {
     setError(null);
     try {
       const res = await fetch(`/api/blueprint-access/verify?token=${encodeURIComponent(t)}`);
-      const data = await res.json() as { valid: boolean; error?: string } & Partial<PurchaseData>;
+      const data = await res.json() as { valid: boolean; error?: string; reason?: string } & Partial<PurchaseData>;
       if (!res.ok || !data.valid) {
-        setError("This portal link is not recognised. Please check your confirmation email or contact jarred@referlabs.com.au");
+        setError(
+          data.reason === "unavailable"
+            ? "We could not check your access just now, and that is a problem at our end rather than anything wrong with your link. Email jarred@referlabs.com.au and we will restore your access."
+            : "This portal link is not recognised. Please check your confirmation email or contact jarred@referlabs.com.au",
+        );
       } else {
         setPurchase({
           name:             data.name || "there",
