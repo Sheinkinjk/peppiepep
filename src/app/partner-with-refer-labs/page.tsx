@@ -110,6 +110,42 @@ const APPROACH = [
   "No fee to be listed, and no paid placement",
 ];
 
+// The questions every applicant asks before they fill the form in, answered on
+// the page rather than by email. Also the page's only AEO surface: "how do I get
+// listed on an Australian comparison site" is a real query with no good answer
+// ranking for it.
+const faqs = [
+  {
+    q: "How much does it cost to be listed on Refer Labs?",
+    a: "Nothing. There is no listing fee and no placement fee, and we do not sell position in a table. Where a commercial relationship exists it is a commission on a sale, or a referral fee on an enquiry we introduce, and it is disclosed on the page it applies to.",
+  },
+  {
+    q: "Can I pay to rank above a competitor?",
+    a: "No. Rankings and conclusions are editorial, and no brand has ever paid for one. We compare brands we earn from against each other, and we publish the result even when it favours the one paying us less.",
+  },
+  {
+    q: "Do I get to approve what you write about my business?",
+    a: "You get to correct anything factually wrong, and we will fix it promptly. You do not get approval over conclusions, comparisons or the order of a table. If that is a condition of partnering, we are not the right publisher for you.",
+  },
+  {
+    q: "What do you need from me to publish a page?",
+    a: "Prices from your own published pages, the exact terms and conditions of any offer, including the code string if there is one, and whatever accreditation or licensing applies in your category. We verify against your own site before publishing and we date what we publish, so anything that cannot be checked from a primary source does not go on the page.",
+  },
+  {
+    q: "How long does an application take?",
+    a: "Applications are read by Jarred rather than a queue, and you will get an answer either way. If we take it forward, we will come back with what we need to verify and where the page would sit.",
+  },
+  {
+    q: "What categories are you accepting?",
+    a: "Weight loss and telehealth, hair loss and men's health, solar and energy, pet insurance, and business software. We are deliberately narrow: a category we cannot research properly is one where our comparison is worth nothing to a reader.",
+  },
+];
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+};
+
 function SectionHead({ children }: { children: React.ReactNode }) {
   return <h2 className="text-2xl font-extrabold tracking-tight text-[#10251b] sm:text-3xl">{children}</h2>;
 }
@@ -119,6 +155,7 @@ export default function PartnerWithReferLabsPage() {
     <ConsumerShell>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <main id="main-content" className="mx-auto max-w-4xl px-5 pb-24 sm:px-8">
         {/* Breadcrumb */}
@@ -245,6 +282,18 @@ export default function PartnerWithReferLabsPage() {
           <div className="mt-8 max-w-2xl">
             <ListingForm />
           </div>
+        </section>
+
+        <section className="mt-16 border-t border-[#e5e9e7] pt-12">
+          <h2 className="text-2xl font-extrabold tracking-tight text-[#10251b] sm:text-3xl">Common questions</h2>
+          <dl className="mt-6 divide-y divide-[#eef1ef] rounded-2xl border border-[#e5e9e7] bg-white">
+            {faqs.map((f) => (
+              <div key={f.q} className="px-5 py-5">
+                <dt className="text-[15px] font-bold text-[#10251b]">{f.q}</dt>
+                <dd className="mt-2 text-sm leading-relaxed text-[#3d4b44]">{f.a}</dd>
+              </div>
+            ))}
+          </dl>
         </section>
 
         {/* Bottom CTA */}
