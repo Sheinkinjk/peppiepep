@@ -121,25 +121,13 @@ async function runProxy(request: NextRequest) {
     if (authError) {
       logger.error('[Middleware] Auth error:', authError)
     }
-    if (request.nextUrl.pathname.startsWith('/dashboard')) {
-      logger.info('[Middleware] Dashboard access attempt:', {
-        path: request.nextUrl.pathname,
-        hasUser: !!user,
-        userId: user?.id ? user.id.substring(0, 8) + '...' : undefined, // Truncated for privacy
-      })
-    }
   }
 
-  // Protect dashboard routes - redirect to login if not authenticated
-  if (request.nextUrl.pathname.startsWith('/dashboard') && !user) {
-    const url = request.nextUrl.clone()
-    url.pathname = '/login'
-    const nextPath = `${request.nextUrl.pathname}${request.nextUrl.search}`
-    url.searchParams.set('next', nextPath)
-    return NextResponse.redirect(url)
-  }
+  // The dashboard it used to guard is gone with the retired SaaS (Aug 2026).
+  // Anything under /dashboard now 404s, which is the honest answer for a product
+  // that no longer exists, and there is nothing left to gate.
 
-  // Redirect to dashboard if already logged in and trying to access login
+  // Already signed in and hitting /login: send them on rather than showing a form
   if (request.nextUrl.pathname === '/login' && user) {
     const needsOnboarding = request.nextUrl.searchParams.get('needs_onboarding') === 'true'
     if (needsOnboarding) {
@@ -149,7 +137,7 @@ async function runProxy(request: NextRequest) {
     const safeNext =
       nextParam && nextParam.startsWith('/') && !nextParam.startsWith('//')
         ? nextParam
-        : '/dashboard'
+        : '/'
     return NextResponse.redirect(new URL(safeNext, request.url))
   }
 
