@@ -306,7 +306,7 @@ export default function ROICalculatorPage() {
               Book a Call
             </a>
             <Link
-              href="/application"
+              href="/partner-with-refer-labs"
               className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-white/10"
             >
               Apply Now

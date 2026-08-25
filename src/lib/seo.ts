@@ -986,17 +986,14 @@ export const seoConfig = {
     ],
   },
 
+  // Retired Aug 2026, 308 to /partner-with-refer-labs. Kept with noIndex so
+  // removing the redirect cannot silently republish it.
   application: {
-    title: "Apply to Work With Refer Labs",
-    description:
-      "Submit your application to work with Refer Labs. Tell us about your business, growth goals, and which services you need. We review every application and respond within 1-2 business days.",
-    url: `${SITE_URL}/application`,
-    keywords: [
-      "apply refer labs",
-      "referral program application",
-      "work with refer labs",
-      "growth partner application",
-    ],
+    title: "Application Moved | Refer Labs",
+    description: "The Refer Labs services application has moved to the partner application page.",
+    url: `${SITE_URL}/partner-with-refer-labs`,
+    noIndex: true,
+    keywords: [],
   },
 
   security: {
@@ -2195,8 +2192,8 @@ export const seoConfig = {
   // Retired route, 308 to /partner-with-refer-labs. noIndex is defensive: if the
   // redirect is ever removed, this cannot silently republish as a live page.
   comparisonWebsite: {
-    title: "Partner with Refer Labs | Refer Labs",
-    description: "This page has moved to /partner-with-refer-labs.",
+    title: "Get Featured Has Moved | Refer Labs",
+    description: "The Refer Labs get-featured page has moved to the partner application page.",
     url: `${SITE_URL}/partner-with-refer-labs`,
     noIndex: true,
     keywords: [],

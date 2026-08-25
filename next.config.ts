@@ -41,6 +41,9 @@ const nextConfig: NextConfig = {
       // Renamed Aug 2026: the page is a partner application, not an article
       // about comparison websites, and the old slug read as the latter.
       { source: '/comparison-website', destination: '/partner-with-refer-labs', permanent: true },
+      // Retired Aug 2026: a second "apply to work with us" page competing with the
+      // partner application for the same intent. One door, not two.
+      { source: '/application', destination: '/partner-with-refer-labs', permanent: true },
 
       // ── Business lending: hidden, not retired (22 August 2026) ────────────
       // Withdrawn pending a review of the credit-licensing position, and because

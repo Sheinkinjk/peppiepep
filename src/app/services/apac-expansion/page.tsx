@@ -173,7 +173,7 @@ export default function ApacExpansionPage() {
               Partner With Us
             </a>
             <Link
-              href="/application"
+              href="/partner-with-refer-labs"
               className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#0AA7B5]/25 bg-[#0AA7B5]/[0.05] px-7 py-3.5 text-sm font-semibold text-white/80 transition-all hover:bg-[#0AA7B5]/10 hover:text-white"
             >
               Apply Now
@@ -401,7 +401,7 @@ export default function ApacExpansionPage() {
               Partner With Us
             </a>
             <Link
-              href="/application"
+              href="/partner-with-refer-labs"
               className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#0AA7B5]/25 bg-[#0AA7B5]/[0.05] px-8 py-4 text-sm font-semibold text-white/80 transition-all hover:bg-[#0AA7B5]/10 hover:text-white"
             >
               Apply Now

@@ -40,7 +40,7 @@ export default function Contact() {
               Partner With Us
             </a>
             <Link
-              href="/application"
+              href="/partner-with-refer-labs"
               className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#e5e9e7] bg-white px-6 py-3 text-sm font-semibold text-[#10251b] hover:border-[#0a7c42]/40"
             >
               Apply Now
@@ -87,7 +87,7 @@ export default function Contact() {
 
           {/* Apply */}
           <Link
-            href="/application"
+            href="/partner-with-refer-labs"
             className="group relative overflow-hidden rounded-3xl border border-[#0a7c42]/25 bg-white p-8 shadow-sm transition-all hover:border-[#0a7c42]/45"
             data-lift="true"
           >

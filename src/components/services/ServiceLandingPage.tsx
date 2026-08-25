@@ -59,7 +59,7 @@ export default function ServiceLandingPage({ content }: ServiceLandingPageProps)
               Book a Market Entry Call
             </a>
             <Link
-              href="/application"
+              href="/partner-with-refer-labs"
               className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-8 py-4 text-sm font-semibold text-white transition-all hover:bg-white/10"
             >
               Apply Now
@@ -188,7 +188,7 @@ export default function ServiceLandingPage({ content }: ServiceLandingPageProps)
                   Book a Market Entry Call
                 </a>
                 <Link
-                  href="/application"
+                  href="/partner-with-refer-labs"
                   className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-8 py-4 text-sm font-semibold text-white transition-all hover:bg-white/10"
                 >
                   Apply Now
