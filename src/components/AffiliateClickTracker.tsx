@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 
-import { landingPage, newEventId, referrerHost } from "@/lib/attribution";
+import { attributionContext, firstTouch, landingPage, newEventId } from "@/lib/attribution";
 
 /**
  * Site-wide affiliate outbound click tracking.
@@ -82,6 +82,16 @@ function pageSlug(pathname: string): string {
 
 export function AffiliateClickTracker() {
   useEffect(() => {
+    // Record where this visit came from NOW, on the entry page, before any
+    // internal navigation. Working it out lazily at click time would be wrong:
+    // after a hard navigation between our own pages, document.referrer is our
+    // own domain and the real source is gone, so a visitor from Instagram who
+    // read two pages before clicking would be filed as direct.
+    landingPage();
+    firstTouch();
+  }, []);
+
+  useEffect(() => {
     function onClick(e: MouseEvent) {
       const target = e.target as HTMLElement | null;
       const link = target?.closest?.("a[rel~='sponsored']") as HTMLAnchorElement | null;
@@ -98,7 +108,11 @@ export function AffiliateClickTracker() {
       // navigation, so the outbound URL carries the source page).
       const subidParam = SUBID_PARAM[destinationHost];
       const cid = newEventId();
-      const subid = `${pageSlug(window.location.pathname)}__${cid}`;
+      // source__page__clickid, e.g. "instagram__solar-and-energy__a1b2c3d4".
+      // The channel goes first so the network's own transaction report answers
+      // "did this sale come from search or from Instagram" without anyone
+      // opening GA4, and the click id still joins it back to the exact event.
+      const subid = `${firstTouch().source}__${pageSlug(window.location.pathname)}__${cid}`.slice(0, 120);
       if (subidParam) {
         try {
           const url = new URL(link.href);
@@ -118,17 +132,16 @@ export function AffiliateClickTracker() {
         // Placement of the CTA that was clicked (data-cta), e.g. "hero",
         // "verdict", "mobile-sticky", lets you see which positions convert.
         cta_location: link.getAttribute("data-cta") || "inline",
-        page_path: window.location.pathname,
         // The sub-ID sent to networks that support it; also logged here so
         // GA4 and partner-dashboard reports join on the same key.
         subid,
         // Joins a network-reported sale back to this exact click.
         click_id: cid,
-        // The page that earned the visit, and where the visit came from. GA4
-        // resolves session source itself; these answer "which entry page and
-        // which referrer produced the click", which it does not.
-        landing_page: landingPage(),
-        referrer_host: referrerHost(),
+        // Where the visit came from, which page earned it, and which page the
+        // click happened on. GA4 resolves session source itself, but not on the
+        // event, so "which channel produces Moshy clicks" needed a cross-scope
+        // join; now it is one row of a table.
+        ...attributionContext(),
         // Estimated commission value so GA can rank pages by likely revenue.
         // This is a planning weight, NOT money received: read it as "expected
         // value per click", and never as revenue in a report shown to anyone.
