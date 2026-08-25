@@ -105,9 +105,10 @@ const sections = [
     ],
   },
   {
-    label: "Home Batteries & Energy",
+    label: "Solar & Energy",
     description: "What a home battery costs, what the federal rebate pays, and how to size one.",
     guides: [
+      { href: "/solar-and-energy", label: "Solar & Energy: start here", desc: "Every energy guide grouped by the decision it helps you make." },
       { href: "/apollo-energy-group", label: "Apollo Energy Group", desc: "Battery specialists, sized from your real usage. $500 off your quote via our link." },
       { href: "/home-battery-rebate-australia", label: "The 2026 Battery Rebate", desc: "What the Cheaper Home Batteries discount pays, and why it tapers above 14kWh." },
       { href: "/home-battery-rebate-by-state-australia", label: "Battery Rebate by State", desc: "Which states add their own incentive on top of the federal rebate in 2026, and which no longer do." },

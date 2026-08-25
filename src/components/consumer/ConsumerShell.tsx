@@ -19,7 +19,7 @@ const NAV = [
   { href: "/moshhair", label: "Mosh" },
   { href: "/hair-loss", label: "Hair Loss" },
   { href: "/pet-insurance", label: "Pets" },
-  { href: "/apollo-energy-group", label: "Home Batteries" },
+  { href: "/solar-and-energy", label: "Solar & Energy" },
   { href: "/business-software", label: "Business" },
   { href: "/coming-soon", label: "Coming Soon" },
 ];
@@ -103,7 +103,7 @@ export default function ConsumerShell({ children }: { children: React.ReactNode 
                 {/* The header nav renders its dropdown items only when open, so those
                     links are not in the HTML and Google cannot follow them. The footer
                     is the crawlable path into each category. */}
-                <li><Link href="/apollo-energy-group" className="transition-colors hover:text-[#0a7c42]">Home Batteries</Link></li>
+                <li><Link href="/solar-and-energy" className="transition-colors hover:text-[#0a7c42]">Solar &amp; Energy</Link></li>
                 <li><Link href="/compare/website-builders" className="transition-colors hover:text-[#0a7c42]">Website Builders</Link></li>
                 <li><Link href="/compare/newsletter-platforms" className="transition-colors hover:text-[#0a7c42]">Newsletter Platforms</Link></li>
                 <li><Link href="/best-ai-sales-tools" className="transition-colors hover:text-[#0a7c42]">AI Sales &amp; Automation</Link></li>

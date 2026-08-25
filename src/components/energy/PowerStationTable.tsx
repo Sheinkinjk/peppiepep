@@ -1,4 +1,5 @@
 import { STATIONS, perWh, fmtPerWh, fmtAud, PRICES_READ_ON, type PowerStation } from "@/lib/portable-power";
+import { ECOFLOW_URL, ANKER_SOLIX_URL } from "@/lib/affiliate-links";
 
 /**
  * The price table these pages exist for.
@@ -10,7 +11,13 @@ import { STATIONS, perWh, fmtPerWh, fmtAud, PRICES_READ_ON, type PowerStation } 
  *
  * Wide, so it sits in its own horizontal scroll container. On a phone the table
  * scrolls inside the container rather than the page scrolling sideways.
+ *
+ * Each row carries its own disclosed link to the brand's store. Before that, a
+ * reader on the hub page passed 761 words before reaching any way to act on what
+ * the table told them; the row they are already reading is the natural place to
+ * act, and it is the same link either way.
  */
+const AFF: Record<string, string> = { EcoFlow: ECOFLOW_URL, "Anker SOLIX": ANKER_SOLIX_URL };
 export default function PowerStationTable({
   filter,
   caption,
@@ -30,6 +37,7 @@ export default function PowerStationTable({
               <th className="px-4 py-3 font-semibold">Output</th>
               <th className="px-4 py-3 font-semibold">Price</th>
               <th className="px-4 py-3 font-semibold">Cost per Wh</th>
+              <th className="px-4 py-3 font-semibold"><span className="sr-only">Check the current price</span></th>
             </tr>
           </thead>
           <tbody>
@@ -46,6 +54,17 @@ export default function PowerStationTable({
                   {s.wasAud ? <span className="ml-1.5 text-[12px] text-[#9aa39c]">was {fmtAud(s.wasAud)}</span> : null}
                 </td>
                 <td className="px-4 py-3 font-semibold tabular-nums text-[#10251b]">{fmtPerWh(s)}</td>
+                <td className="px-4 py-3 text-right whitespace-nowrap">
+                  <a
+                    href={AFF[s.brand]}
+                    target="_blank"
+                    rel="nofollow sponsored"
+                    data-cta={`table-${s.brand === "EcoFlow" ? "ecoflow" : "anker"}`}
+                    className="text-[13px] font-semibold text-[#0a7c42] underline-offset-2 hover:underline"
+                  >
+                    Check price
+                  </a>
+                </td>
               </tr>
             ))}
           </tbody>
@@ -54,7 +73,9 @@ export default function PowerStationTable({
       <figcaption className="mt-2.5 text-[13px] leading-relaxed text-[#6e7b74]">
         {caption ?? "Australian range, sorted by cost per watt-hour."} Read off each brand&apos;s own Australian store
         on {PRICES_READ_ON}. Where a struck-through price was shown it is recorded, so a sale is not mistaken for the
-        standing price. Prices change often in this category: check the current figure before you buy.
+        standing price. Prices change often in this category: check the current figure before you buy. The
+        &ldquo;check price&rdquo; links are disclosed affiliate links to each brand&apos;s own Australian store, and we
+        earn from both.
       </figcaption>
     </figure>
   );

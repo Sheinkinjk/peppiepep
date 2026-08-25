@@ -103,12 +103,12 @@ const categoryCards = [
     ],
   },
   {
-    href: "/apollo-energy-group", icon: BatteryCharging, title: "Home Batteries",
+    href: "/solar-and-energy", icon: BatteryCharging, title: "Solar & Energy",
     accent: "#B07D1A", tint: "#F6EEDA",
-    note: "Sized to your real usage, on top of the federal Cheaper Home Batteries rebate.",
+    note: "Home batteries sized to your real usage, the federal rebate, and portable power if you rent.",
     links: [
       { h: "/home-battery-rebate-australia", l: "The battery rebate, explained" },
-      { h: "/what-size-home-battery-do-i-need-australia", l: "What size do I need?" },
+      { h: "/portable-power-station-australia", l: "Portable power for renters" },
     ],
   },
   {

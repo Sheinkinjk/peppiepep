@@ -211,6 +211,13 @@ export const seoConfig = {
     url: `${SITE_URL}/ecoflow-vs-anker-solix`,
     keywords: ["ecoflow vs anker solix", "anker solix vs ecoflow", "best portable power station australia", "ecoflow or anker", "portable power station comparison australia"],
   },
+  solarAndEnergy: {
+    title: "Solar & Energy Australia: Batteries, Rebates and Portable Power | Refer Labs",
+    description:
+      "The Australian energy decisions in the order they matter: whether a home battery pays back on your usage, what the federal and state rebates leave you paying, who installs it, and what to do instead if you rent. Real prices, dated.",
+    url: `${SITE_URL}/solar-and-energy`,
+    keywords: ["solar and energy australia", "home battery guide australia", "home battery rebate 2026", "battery payback australia", "portable power for renters australia"],
+  },
   portablePowerStationAustralia: {
     title: "Portable Power Stations Australia 2026: What They Cost & What They Run | Refer Labs",
     description:

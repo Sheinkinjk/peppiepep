@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import EditorialMeta from "@/components/consumer/EditorialMeta";
 import PowerStationTable from "@/components/energy/PowerStationTable";
+import PowerCtaPair from "@/components/energy/PowerCtaPair";
 import { ECOFLOW_URL, ANKER_SOLIX_URL } from "@/lib/affiliate-links";
 import { STATIONS, RUNS, fmtAud, fmtPerWh, PRICES_READ_ON } from "@/lib/portable-power";
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, comparisonArticleSchema } from "@/lib/seo";
@@ -56,7 +57,7 @@ const breadcrumbSchema = {
   "@type": "BreadcrumbList",
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Refer Labs", item: SITE_URL },
-    { "@type": "ListItem", position: 2, name: "Home & energy", item: `${SITE_URL}/apollo-energy-group` },
+    { "@type": "ListItem", position: 2, name: "Solar & energy", item: `${SITE_URL}/solar-and-energy` },
     { "@type": "ListItem", position: 3, name: "Portable power stations", item: `${SITE_URL}${SLUG}` },
   ],
 };
@@ -113,6 +114,8 @@ export default function Page() {
           or more. The useful middle sits around 1,000Wh from <strong>{fmtAud(cheapest1k.aud)}</strong>. None of them
           need an electrician, which is the whole point if you rent or live in an apartment.
         </p>
+
+        <PowerCtaPair location="pps-top" className="mt-6" />
 
         <EditorialMeta lastUpdated={UPDATED} className="mt-5" />
 

@@ -119,6 +119,7 @@ const STANDALONE_ROUTES = [
   "/elevenlabs",
   "/wing-assistant",
   "/survicate",
+  "/solar-and-energy",
   // Portable power sub-category (EcoFlow + Anker SOLIX, Aug 2026)
   "/ecoflow",
   "/anker-solix",

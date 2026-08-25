@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import EditorialMeta from "@/components/consumer/EditorialMeta";
 import PowerStationTable from "@/components/energy/PowerStationTable";
+import PowerCtaPair from "@/components/energy/PowerCtaPair";
 import { ECOFLOW_URL, ANKER_SOLIX_URL } from "@/lib/affiliate-links";
 import { STATIONS, perWh, fmtPerWh, fmtAud, PRICES_READ_ON } from "@/lib/portable-power";
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, comparisonArticleSchema } from "@/lib/seo";
@@ -11,6 +12,7 @@ export const metadata = generateSEOMetadata(seoConfig.ecoflowVsAnkerSolix);
 
 const SLUG = "/ecoflow-vs-anker-solix";
 const UPDATED = "2026-08-24";
+const UPDATED_LABEL = "24 August 2026";
 
 /**
  * The brand-pair format, which is the only page type on this site measured to
@@ -67,7 +69,7 @@ const breadcrumbSchema = {
   "@type": "BreadcrumbList",
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Refer Labs", item: SITE_URL },
-    { "@type": "ListItem", position: 2, name: "Home & energy", item: `${SITE_URL}/apollo-energy-group` },
+    { "@type": "ListItem", position: 2, name: "Solar & energy", item: `${SITE_URL}/solar-and-energy` },
     { "@type": "ListItem", position: 3, name: "EcoFlow vs Anker SOLIX", item: `${SITE_URL}${SLUG}` },
   ],
 };
@@ -125,6 +127,8 @@ export default function Page() {
           {fmtPerWh(P2K.ank)}. Anker answers with output rather than price: its C1000 Gen 2 delivers 2,000W where
           EcoFlow&apos;s 1,000Wh units deliver 1,800W, which decides whether a kettle or a microwave will run at all. At the 290Wh entry tier both brands charge A$449 and the rate per watt-hour is level, though EcoFlow&apos;s unit puts out 600W against Anker&apos;s 300W.
         </p>
+
+        <PowerCtaPair location="vs-top" className="mt-6" />
 
         <EditorialMeta lastUpdated={UPDATED} className="mt-5" />
 
@@ -229,6 +233,15 @@ export default function Page() {
               </div>
             ))}
           </dl>
+        </section>
+
+        <section className="mt-12 rounded-2xl border border-[#e5e9e7] bg-[#f8faf9] p-6">
+          <h2 className="text-lg font-bold text-[#10251b]">Check the current price on the one you have picked</h2>
+          <p className="mt-2 text-[15px] leading-relaxed text-[#3d4b44]">
+            Both ranges move on sale pricing, so the figures above are a snapshot dated {UPDATED_LABEL}. Open whichever
+            store matches your decision and confirm what the model costs today.
+          </p>
+          <PowerCtaPair location="vs-bottom" className="mt-5" />
         </section>
 
         <section className="mt-10 border-t border-[#eef1ef] pt-8">

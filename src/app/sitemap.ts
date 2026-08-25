@@ -103,6 +103,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // ── Services ───────────────────────────────────────────────────────
 
+    { url: `${BASE}/solar-and-energy`, lastModified: FRESH, changeFrequency: "weekly", priority: 0.9 },
+
     // ── Portable power (EcoFlow + Anker SOLIX, both Commission Factory) ─
     { url: `${BASE}/portable-power-station-australia`, lastModified: FRESH, changeFrequency: "weekly", priority: 0.85 },
     { url: `${BASE}/ecoflow-vs-anker-solix`, lastModified: FRESH, changeFrequency: "weekly", priority: 0.85 },

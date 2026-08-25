@@ -37,8 +37,9 @@ const GROUPS: Group[] = [
     ],
   },
   {
-    label: "Home & Energy",
+    label: "Solar & Energy",
     items: [
+      { href: "/solar-and-energy", label: "Start here", note: "Every energy guide, and what each one decides" },
       { href: "/apollo-energy-group", label: "Home Batteries", note: "Apollo Energy Group, sized to your usage" },
       { href: "/home-battery-rebate-australia", label: "Battery Rebate 2026", note: "What the federal rebate actually pays" },
       { href: "/home-battery-payback-calculator", label: "Payback Calculator", note: "Estimate your saving and payback period" },

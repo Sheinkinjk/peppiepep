@@ -36,19 +36,19 @@ export default function EditorialMeta({
   className?: string;
 }) {
   return (
-    <p className={`flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-[#6e7b74] ${className}`}>
+    <p className={`flex flex-wrap items-center gap-x-2 gap-y-1 text-[11px] leading-relaxed text-[#9aa39c] ${className}`}>
       <span>
-        Last updated:{" "}
-        <time dateTime={lastUpdated} className="font-semibold text-[#3d4b44]">
+        Last updated{" "}
+        <time dateTime={lastUpdated} className="text-[#6e7b74]">
           {formatAU(lastUpdated)}
         </time>
       </span>
       <span aria-hidden="true">·</span>
-      <Link href="/about" className="underline hover:text-[#3d4b44]">
-        Independent, and how we compare
+      <Link href="/about" className="transition-colors hover:text-[#3d4b44] hover:underline">
+        How we compare
       </Link>
       <span aria-hidden="true">·</span>
-      <Link href="/how-we-make-money" className="underline hover:text-[#3d4b44]">
+      <Link href="/how-we-make-money" className="transition-colors hover:text-[#3d4b44] hover:underline">
         How we make money
       </Link>
     </p>

@@ -68,7 +68,7 @@ const breadcrumbSchema = {
   "@type": "BreadcrumbList",
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Refer Labs", item: SITE_URL },
-    { "@type": "ListItem", position: 2, name: "Home & energy", item: `${SITE_URL}/apollo-energy-group` },
+    { "@type": "ListItem", position: 2, name: "Solar & energy", item: `${SITE_URL}/solar-and-energy` },
     { "@type": "ListItem", position: 3, name: "Portable vs installed", item: `${SITE_URL}${SLUG}` },
   ],
 };
