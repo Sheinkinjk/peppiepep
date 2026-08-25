@@ -4,25 +4,9 @@ import NewsletterSignup from "./NewsletterSignup";
 import SiteSearch from "./SiteSearch";
 import CookiePreferencesLink from "./CookiePreferencesLink";
 import HeaderNav from "./HeaderNav";
+import MobileNav from "./MobileNav";
 import { ReferLabsLogo } from "../ReferLabsLogo";
 
-// Mobile shortcut row (desktop uses the grouped HeaderNav dropdowns).
-// Deliberately short: the consumer verticals up front, then one "Business Tools"
-// door (the /guides index) that holds the software hubs, so the row reads as a
-// few clear worlds rather than a long list of unrelated tools.
-// Ordered by where the revenue is: the two health clusters lead, and the offer
-// pages sit alongside their hubs because they are what convert. Business is one
-// trailing door rather than two.
-const NAV = [
-  { href: "/moshy", label: "Moshy" },
-  { href: "/weight-loss", label: "Weight Loss" },
-  { href: "/moshhair", label: "Mosh" },
-  { href: "/hair-loss", label: "Hair Loss" },
-  { href: "/pet-insurance", label: "Pets" },
-  { href: "/solar-and-energy", label: "Solar & Energy" },
-  { href: "/business-software", label: "Business" },
-  { href: "/coming-soon", label: "Coming Soon" },
-];
 
 /**
  * NerdWallet-style light shell for the consumer platform: white sticky header
@@ -42,22 +26,13 @@ export default function ConsumerShell({ children }: { children: React.ReactNode 
             <SiteSearch variant="header" />
           </div>
         </div>
-        {/* Below lg: category shortcut row (search only below md, since the header search covers md+) */}
+        {/* Below lg: the same categories as the desktop dropdowns, from src/lib/nav.ts
+            (search only below md, since the header search covers md+) */}
         <div className="border-t border-[#eef1ef] px-5 py-2.5 lg:hidden">
           <div className="mb-2.5 md:hidden">
             <SiteSearch variant="header" />
           </div>
-          <nav className="-my-1 flex gap-1 overflow-x-auto text-[13px] font-medium text-[#3d4b44]">
-            {NAV.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="inline-flex shrink-0 items-center whitespace-nowrap rounded-lg px-2.5 py-2.5 transition-colors hover:bg-[#f5f8f6] hover:text-[#0a7c42]"
-              >
-                {item.label}
-              </Link>
-            ))}
-          </nav>
+          <MobileNav />
         </div>
       </header>
 
