@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+
+import { attributionContext } from "@/lib/attribution";
 import { ArrowRight, Loader2, CheckCircle2 } from "lucide-react";
 
 const categories = [
@@ -63,6 +65,21 @@ export default function ListingForm() {
         setErrorMsg(json.error || "Something went wrong. Please try again.");
         setStatus("error");
         return;
+      }
+      // The partner application had no event at all, so nothing in GA4 could
+      // tell you which page or channel produces businesses applying.
+      if (typeof window !== "undefined") {
+        window.gtag?.("event", "partner_application", {
+          category: form.category,
+          ...attributionContext(),
+          transport_type: "beacon",
+        });
+        window.gtag?.("event", "generate_lead", {
+          currency: "AUD",
+          lead_source: "partner_application",
+          ...attributionContext(),
+          transport_type: "beacon",
+        });
       }
       setStatus("success");
     } catch {

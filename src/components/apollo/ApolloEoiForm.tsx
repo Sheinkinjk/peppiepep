@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+
+import { attributionContext } from "@/lib/attribution";
 import { ArrowRight, Loader2, Check, ShieldCheck } from "lucide-react";
 
 const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -71,8 +73,18 @@ export default function ApolloEoiForm() {
         // event so it can be imported as a Google Ads conversion (assign the
         // conversion value in Google Ads, not here). Both are consent-gated via
         // Consent Mode, so they only send when analytics consent is granted.
-        window.gtag?.("event", "apollo_eoi_submit", { postcode });
-        window.gtag?.("event", "generate_lead", { currency: "AUD", lead_source: "apollo_eoi", postcode });
+        // Same attribution context as an affiliate click, so one report can
+        // answer "which entry page and which channel produce enquiries" as well
+        // as "which produce outbound clicks".
+        const ctx = attributionContext();
+        window.gtag?.("event", "apollo_eoi_submit", { postcode, ...ctx });
+        window.gtag?.("event", "generate_lead", {
+          currency: "AUD",
+          lead_source: "apollo_eoi",
+          postcode,
+          ...ctx,
+          transport_type: "beacon",
+        });
       }
       setDone(true);
     } catch {

@@ -2,6 +2,8 @@
 
 import { useEffect } from "react";
 
+import { landingPage, newEventId, referrerHost } from "@/lib/attribution";
+
 /**
  * Site-wide affiliate outbound click tracking.
  *
@@ -42,6 +44,9 @@ const PARTNER_VALUE: Record<string, number> = {
   "get.alidrop.co": 30,
   "try.leadpages.com": 60,
   "ps.superfiliate.com": 100,
+  // Commission Factory (physical goods, commission is a % of a one-off order
+  // rather than a recurring SaaS payout, so the expected value is lower)
+  "t.cfjump.com": 25,
 };
 const DEFAULT_VALUE = 10;
 
@@ -62,6 +67,11 @@ const SUBID_PARAM: Record<string, string> = {
   "try.leadpages.com": "sid1",          // PartnerStack
   "ps.superfiliate.com": "sid1",        // PartnerStack
   "myjuniper.com": "utm_content",       // Juniper reads utm_content in its own analytics
+  // Commission Factory. UniqueId is the parameter CF passes through to its own
+  // reporting; confirm with the CF account manager that it appears against
+  // transactions before trusting it, and never extend this to Moshy until it is
+  // confirmed in that dashboard.
+  "t.cfjump.com": "UniqueId",
 };
 
 /** Page path -> compact subid slug, e.g. "/polymarket/trading-bots" -> "polymarket-trading-bots". */
@@ -87,7 +97,8 @@ export function AffiliateClickTracker() {
       // Per-page sub-ID decoration for networks that report it (runs before
       // navigation, so the outbound URL carries the source page).
       const subidParam = SUBID_PARAM[destinationHost];
-      const subid = pageSlug(window.location.pathname);
+      const cid = newEventId();
+      const subid = `${pageSlug(window.location.pathname)}__${cid}`;
       if (subidParam) {
         try {
           const url = new URL(link.href);
@@ -111,7 +122,16 @@ export function AffiliateClickTracker() {
         // The sub-ID sent to networks that support it; also logged here so
         // GA4 and partner-dashboard reports join on the same key.
         subid,
+        // Joins a network-reported sale back to this exact click.
+        click_id: cid,
+        // The page that earned the visit, and where the visit came from. GA4
+        // resolves session source itself; these answer "which entry page and
+        // which referrer produced the click", which it does not.
+        landing_page: landingPage(),
+        referrer_host: referrerHost(),
         // Estimated commission value so GA can rank pages by likely revenue.
+        // This is a planning weight, NOT money received: read it as "expected
+        // value per click", and never as revenue in a report shown to anyone.
         value: PARTNER_VALUE[destinationHost] ?? DEFAULT_VALUE,
         currency: "AUD",
         // GA4 recommended ecommerce-style fields for easier reporting
@@ -119,7 +139,10 @@ export function AffiliateClickTracker() {
         event_label: destinationHost,
       };
 
-      window.gtag?.("event", "affiliate_click", payload);
+      // transport_type beacon: a link that opens in the same tab can otherwise
+      // navigate away before the request leaves, and the click is simply never
+      // counted. Most of our CTAs are target=_blank, but not all of them.
+      window.gtag?.("event", "affiliate_click", { ...payload, transport_type: "beacon" });
       // Also push to dataLayer for GTM consumers, if present.
       window.dataLayer?.push({ event: "affiliate_click", ...payload });
     }
