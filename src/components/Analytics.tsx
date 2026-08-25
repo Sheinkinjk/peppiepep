@@ -32,10 +32,13 @@ export function GoogleAnalytics() {
 
   return (
     <>
-      {/* Consent Mode v2. This block must push to dataLayer before gtag.js drains it,
-          so analytics_storage starts denied and is only granted if the visitor said yes
-          in the cookie banner (see CookieConsent.tsx, which calls gtag('consent','update')). */}
-      <Script id="google-analytics" strategy="afterInteractive">
+      {/* Consent Mode v2. beforeInteractive, not afterInteractive: both this and
+          gtag.js used to be afterInteractive, which queues them together and does
+          not guarantee which runs first. Google requires the consent default to be
+          set BEFORE the library loads, and if the library won the race the default
+          was applied too late. beforeInteractive removes the race entirely.
+          (See CookieConsent.tsx, which calls gtag('consent','update') on save.) */}
+      <Script id="google-analytics" strategy="beforeInteractive">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
@@ -68,10 +71,22 @@ export function GoogleAnalytics() {
           try { __dbg = new URLSearchParams(window.location.search).get('ga_debug') === '1'; } catch (e) {}
 
           gtag('config', '${measurementId}', {
-            page_path: window.location.pathname,
             send_page_view: true,
             debug_mode: __dbg
           });
+
+          /* A visible answer to "is this working". With ?ga_debug=1 the console
+             prints whether config ran and what consent is actually set to, which
+             is the difference between a broken tag and a tag correctly staying
+             quiet because nobody accepted analytics cookies. */
+          if (__dbg) {
+            try {
+              var __c = JSON.parse(localStorage.getItem('referlabs_cookie_consent') || 'null');
+              console.log('[Refer Labs] GA4 ${measurementId} configured. debug_mode on.');
+              console.log('[Refer Labs] stored consent:', __c || 'NONE YET (banner not answered, analytics stays denied)');
+              console.log('[Refer Labs] dataLayer entries:', (window.dataLayer || []).length);
+            } catch (e) {}
+          }
 
           /* AI-assistant referral detection. GA4 lumps these into generic
              "Referral", so we tag them explicitly: an 'ai_referral' event with
