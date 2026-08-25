@@ -8,6 +8,7 @@ import { ANKER_SOLIX_URL } from "@/lib/affiliate-links";
 export const ankerSolixConfig: AffiliatePageConfig = {
   brand: "Anker SOLIX",
   logo: "anker-solix",
+  logoWide: true,
   badgeText: "Portable power",
   eyebrow: "Portable power · Australia",
   affiliateUrl: ANKER_SOLIX_URL,

@@ -4,6 +4,7 @@ import { BLINQ_URL } from "@/lib/affiliate-links";
 export const blinqConfig: AffiliatePageConfig = {
   brand: "Blinq",
   logo: "blinq",
+  logoWide: true,
   badgeText: "Digital business cards",
   eyebrow: "Digital business cards",
   affiliateUrl: BLINQ_URL,

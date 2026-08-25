@@ -4,6 +4,7 @@ import { UNBOUNCE_URL } from "@/lib/affiliate-links";
 export const unbounceConfig: AffiliatePageConfig = {
   brand: "Unbounce",
   logo: "unbounce",
+  logoWide: true,
   badgeText: "Landing pages",
   eyebrow: "Landing pages",
   affiliateUrl: UNBOUNCE_URL,

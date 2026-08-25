@@ -4,6 +4,7 @@ import { PANDADOC_URL } from "@/lib/affiliate-links";
 export const pandadocConfig: AffiliatePageConfig = {
   brand: "PandaDoc",
   logo: "pandadoc",
+  logoWide: true,
   badgeText: "Docs & e-signature",
   eyebrow: "Documents & e-signature",
   affiliateUrl: PANDADOC_URL,

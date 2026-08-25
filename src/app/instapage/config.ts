@@ -4,6 +4,7 @@ import { INSTAPAGE_URL } from "@/lib/affiliate-links";
 export const instapageConfig: AffiliatePageConfig = {
   brand: "Instapage",
   logo: "instapage",
+  logoWide: true,
   badgeText: "Landing pages",
   eyebrow: "Landing page platform",
   affiliateUrl: INSTAPAGE_URL,

@@ -431,7 +431,7 @@ export default function HomePage() {
             <h2 className="text-2xl font-black tracking-[-0.02em] text-[#10251b] sm:text-[2rem]">How Refer Labs compares services</h2>
             <p className="mt-6 text-[17px] leading-relaxed text-[#3d4b44]">
               Refer Labs is an independent Australian comparison publisher. We research the categories where the choice
-              is genuinely hard, from weight-loss and hair-loss telehealth to home batteries, business finance and the
+              is genuinely hard, from weight-loss and hair-loss telehealth to home batteries, pet insurance and the
               software that runs a business.
             </p>
             <p className="mt-4 text-[17px] leading-relaxed text-[#3d4b44]">

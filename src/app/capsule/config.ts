@@ -4,6 +4,7 @@ import { CAPSULE_URL } from "@/lib/affiliate-links";
 export const capsuleConfig: AffiliatePageConfig = {
   brand: "Capsule",
   logo: "capsule",
+  logoWide: true,
   badgeText: "Simple CRM",
   eyebrow: "Sales CRM",
   affiliateUrl: CAPSULE_URL,

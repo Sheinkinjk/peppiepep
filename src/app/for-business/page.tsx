@@ -18,7 +18,7 @@ const offers = [
   {
     tag: "Generate leads",
     title: "Qualified enquiries, not anonymous clicks",
-    body: "For categories where a click is not enough, we run enquiry funnels that capture the details you need to quote: postcode, usage, budget, timeframe. You receive a qualified lead rather than a visitor, priced per lead or per appointment. Live today for home batteries and business lending.",
+    body: "For categories where a click is not enough, we run enquiry funnels that capture the details you need to quote: postcode, usage, budget, timeframe. You receive a qualified lead rather than a visitor, priced per lead or per appointment. Live today for home batteries.",
     cta: { label: "Enquire about lead generation", href: "mailto:jarred@referlabs.com.au?subject=Lead%20generation%20enquiry", external: true },
   },
   {

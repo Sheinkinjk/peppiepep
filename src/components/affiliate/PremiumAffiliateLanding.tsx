@@ -102,6 +102,10 @@ export default function PremiumAffiliateLanding({ config }: { config: AffiliateP
                 height={64}
                 className="mb-5 h-16 w-16 rounded-2xl object-cover shadow-[0_10px_28px_-16px_rgba(16,37,27,0.35)]"
               />
+            ) : config.logo && config.logoWide ? (
+              <span className="mb-5 inline-flex h-16 max-w-[228px] items-center justify-center overflow-hidden rounded-2xl border border-[#e5e9e7] bg-white px-4 shadow-[0_10px_28px_-16px_rgba(16,37,27,0.35)]">
+                <Image src={`/logos/${config.logo}.png`} alt={`${config.brand} logo`} width={196} height={49} className="h-8 w-auto max-w-[196px] object-contain" />
+              </span>
             ) : config.logo ? (
               <span className="mb-5 inline-flex h-16 w-16 items-center justify-center overflow-hidden rounded-2xl border border-[#e5e9e7] bg-white shadow-[0_10px_28px_-16px_rgba(16,37,27,0.35)]">
                 <Image src={`/logos/${config.logo}.png`} alt={`${config.brand} logo`} width={52} height={52} className="h-12 w-12 object-contain" />

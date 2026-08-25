@@ -4,6 +4,7 @@ import { KEAP_URL } from "@/lib/affiliate-links";
 export const keapConfig: AffiliatePageConfig = {
   brand: "Keap",
   logo: "keap",
+  logoWide: true,
   badgeText: "CRM & automation",
   eyebrow: "Sales & marketing automation",
   affiliateUrl: KEAP_URL,

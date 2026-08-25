@@ -38,6 +38,12 @@ export interface AffiliatePageConfig {
    *  box. Prevents a coloured square from floating on white. */
   logoBleed?: boolean;
 
+  /** When the brand's logo is a wordmark rather than a square mark, render it in
+   *  a wide frame instead of a 48px square. A 1024x256 wordmark inside a square
+   *  comes out about twelve pixels tall, which is how nine brand pages ended up
+   *  with an illegible logo nobody noticed. */
+  logoWide?: boolean;
+
   /** Small badge label shown in hero, e.g. "Australia" or "Hair Care" */
   badgeText: string;
 
