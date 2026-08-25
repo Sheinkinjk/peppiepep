@@ -93,7 +93,6 @@ export default function DealsPage() {
           <span className="text-[#2b362f]">Deals</span>
         </nav>
 
-        <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#0a7c42]">Current offers</p>
         <h1 className="mt-4 text-4xl font-black leading-[1.05] tracking-[-0.02em] text-[#10251b] sm:text-5xl">
           Deals &amp; discount codes
         </h1>

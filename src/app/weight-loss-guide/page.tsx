@@ -17,7 +17,6 @@ export default function WeightLossGuidePage() {
   return (
     <ConsumerShell>
       <main id="main-content" className="mx-auto max-w-2xl px-5 pb-24 pt-12 sm:px-8 sm:pt-16">
-        <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#0a7c42]">Free guide</p>
         <h1 className="mt-3 text-3xl font-black leading-[1.1] tracking-tight text-[#10251b] sm:text-[2.6rem]">
           Weight loss in Australia, without the confusion
         </h1>

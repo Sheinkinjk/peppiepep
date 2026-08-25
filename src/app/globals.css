@@ -913,12 +913,16 @@ main > section:nth-child(8) { animation-delay: 0.56s; }
 .nw-btn-ghost:hover { border-color: #bfe0cf; background: var(--nw-tint); transform: translateY(-1px); }
 
 /* Eyebrow / category label — small, restrained, NOT a pill */
+/* Category label above a page title, on pages with no visible breadcrumb. It is
+   a locator, not a banner: sentence case, muted, and never used to announce the
+   section type ("What it is", "Our approach"), which is the template tic that
+   made pages read as generated. */
 .nw-kicker {
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--nw-green);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--nw-ink-soft, #6e7b74);
 }
 
 /* Search field */

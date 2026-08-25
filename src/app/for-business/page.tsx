@@ -52,7 +52,6 @@ export default function ForBusinessPage() {
             <span className="text-[#2b362f]">For business</span>
           </nav>
           <div className="max-w-2xl">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#0a7c42]">For business</p>
             <h1 className="mt-4 text-4xl font-bold leading-[1.06] tracking-[-0.01em] text-[#10251b] sm:text-5xl">
               Customers who have already <span className="italic text-[#0a7c42]">done the research</span>
             </h1>

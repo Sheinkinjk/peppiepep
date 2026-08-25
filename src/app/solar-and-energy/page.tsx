@@ -147,9 +147,7 @@ export default function Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
 
       <main id="main-content" className="mx-auto max-w-4xl px-5 pb-20 pt-10 sm:px-8">
-        <p className="text-sm text-[#9aa39c]">Solar &amp; energy · Australia</p>
-
-        <h1 className="mt-3 text-3xl font-bold leading-[1.1] tracking-[-0.01em] text-[#10251b] sm:text-[2.6rem]">
+        <h1 className="mt-2 text-3xl font-bold leading-[1.1] tracking-[-0.01em] text-[#10251b] sm:text-[2.6rem]">
           Solar &amp; energy: <span className="text-[#0a7c42]">what to decide, in the order it matters</span>
         </h1>
 
@@ -166,7 +164,7 @@ export default function Page() {
 
         <div className="mt-8 grid gap-4 sm:grid-cols-2">
           <div className="rounded-2xl border border-[#e5e9e7] bg-white p-6">
-            <p className="text-xs font-bold uppercase tracking-[0.12em] text-[#9aa39c]">If you own the home</p>
+            <p className="text-[15px] font-bold text-[#10251b]">If you own the home</p>
             <p className="mt-2 text-[15px] leading-relaxed text-[#3d4b44]">
               An installed battery cuts your bill year-round and is the only option the federal rebate applies to.
               Apollo Energy Group sizes it from your real usage, and our readers get $500 off the quote.
@@ -181,7 +179,7 @@ export default function Page() {
             <p className="mt-2 text-[12px] text-[#9aa39c]">Apollo pays us when you enquire. The $500 is yours either way.</p>
           </div>
           <div className="rounded-2xl border border-[#e5e9e7] bg-white p-6">
-            <p className="text-xs font-bold uppercase tracking-[0.12em] text-[#9aa39c]">If you rent, or cannot install</p>
+            <p className="text-[15px] font-bold text-[#10251b]">If you rent, or cannot install</p>
             <p className="mt-2 text-[15px] leading-relaxed text-[#3d4b44]">
               A portable power station needs no electrician, no roof and no landlord conversation. It will hold a fridge
               and devices through an outage, and it moves house with you.
@@ -193,7 +191,7 @@ export default function Page() {
         {GROUPS.map((g) => (
           <section key={g.heading} className="mt-12">
             <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">{g.heading}</h2>
-            <p className="mt-1.5 text-[13px] font-semibold uppercase tracking-[0.08em] text-[#9aa39c]">{g.question}</p>
+            <p className="mt-1.5 text-[14px] font-medium text-[#6e7b74]">{g.question}</p>
             <p className="mt-3 max-w-3xl text-[15px] leading-relaxed text-[#3d4b44]">{g.body}</p>
             <div className="mt-5 grid gap-3 sm:grid-cols-2">
               {g.links.map((l) => (

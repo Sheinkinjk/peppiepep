@@ -232,7 +232,6 @@ export default function AffiliateProgramsAustraliaPage() {
             <span>/</span>
             <span className="text-[#2b362f]">Affiliate programs Australia</span>
           </nav>
-          <p className="nw-kicker">Guide</p>
           <h1 className="mt-4 text-4xl font-bold leading-[1.07] tracking-[-0.01em] text-[#10251b] sm:text-5xl">
             Best affiliate programs in Australia <span className="italic text-[#0a7c42]">(2026)</span>
           </h1>
@@ -259,7 +258,6 @@ export default function AffiliateProgramsAustraliaPage() {
         {/* Programs we've reviewed — our own coverage, clickable, on-brand */}
         <section className="mx-auto max-w-4xl px-5 pt-12 sm:px-8">
           <div className="rounded-2xl border border-[#e5e9e7] bg-white p-6 sm:p-8">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#0a7c42]">Reviewed by us</p>
             <h2 className="mt-2 text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Programs we&rsquo;ve looked at closely</h2>
             <p className="mt-2 max-w-xl text-sm leading-relaxed text-[#6e7b74]">
               These are the tools and services we&rsquo;ve tested and written up ourselves. Each links to our independent
@@ -343,7 +341,6 @@ export default function AffiliateProgramsAustraliaPage() {
         {/* For-business band */}
         <section className="mx-auto max-w-4xl px-5 pt-14 sm:px-8">
           <div className="rounded-2xl border border-[#0a7c42]/25 bg-[#0a7c42]/[0.05] px-7 py-8">
-            <p className="nw-kicker">For businesses</p>
             <h2 className="mt-3 text-2xl font-bold text-[#10251b] sm:text-[1.75rem]">
               Run a program you want in front of the right audience?
             </h2>

@@ -72,7 +72,6 @@ export default function ServiceLandingPage({ content }: ServiceLandingPageProps)
         <section className="mb-28">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
             <div className="space-y-6">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-400">Why this market</p>
               <h2 className="text-3xl sm:text-4xl font-black text-white leading-[1.1]">
                 The Australian Opportunity
               </h2>
@@ -97,7 +96,6 @@ export default function ServiceLandingPage({ content }: ServiceLandingPageProps)
         {/* How We Help */}
         <section className="mb-28">
           <div className="text-center space-y-4 mb-14">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-400">Our approach</p>
             <h2 className="text-3xl sm:text-4xl font-black text-white">
               How We Enter This Market for You
             </h2>

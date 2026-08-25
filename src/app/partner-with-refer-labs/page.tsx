@@ -110,13 +110,8 @@ const APPROACH = [
   "No fee to be listed, and no paid placement",
 ];
 
-function SectionHead({ kicker, children }: { kicker: string; children: React.ReactNode }) {
-  return (
-    <div>
-      <span className="nw-kicker">{kicker}</span>
-      <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-[#10251b] sm:text-3xl">{children}</h2>
-    </div>
-  );
+function SectionHead({ children }: { children: React.ReactNode }) {
+  return <h2 className="text-2xl font-extrabold tracking-tight text-[#10251b] sm:text-3xl">{children}</h2>;
 }
 
 export default function PartnerWithReferLabsPage() {
@@ -135,11 +130,7 @@ export default function PartnerWithReferLabsPage() {
 
         {/* Hero */}
         <header className="pt-9">
-          <span className="inline-flex items-center gap-2 rounded-full border border-[#0a7c42]/25 bg-[#e6f3ec] px-3.5 py-1.5">
-            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#0a7c42]" />
-            <span className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#0a7c42]">Applications open</span>
-          </span>
-          <h1 className="mt-6 text-4xl font-extrabold leading-[1.05] tracking-[-0.02em] text-[#10251b] sm:text-5xl">
+          <h1 className=" text-4xl font-extrabold leading-[1.05] tracking-[-0.02em] text-[#10251b] sm:text-5xl">
             Apply to partner with{" "}
             <span className="text-[#0a7c42]">Refer Labs</span>
           </h1>
@@ -163,7 +154,7 @@ export default function PartnerWithReferLabsPage() {
 
         {/* What it is */}
         <section className="mt-16 border-t border-[#e5e9e7] pt-12">
-          <SectionHead kicker="What it is">The independent alternative to a pay-to-rank directory</SectionHead>
+          <SectionHead>The independent alternative to a pay-to-rank directory</SectionHead>
           <div className="mt-5 max-w-2xl space-y-4 text-[15px] leading-relaxed text-[#3d4b44]">
             <p>
               There are more providers than ever across health, energy and business software, and the marketing budgets
@@ -185,7 +176,7 @@ export default function PartnerWithReferLabsPage() {
 
         {/* Categories */}
         <section className="mt-16 border-t border-[#e5e9e7] pt-12">
-          <SectionHead kicker="Categories">What we compare, and what we assess</SectionHead>
+          <SectionHead>What we compare, and what we assess</SectionHead>
           <div className="mt-8 space-y-5">
             {categories.map((cat) => (
               <div key={cat.label} className="nw-card rounded-2xl p-6 sm:p-7">
@@ -213,7 +204,7 @@ export default function PartnerWithReferLabsPage() {
 
         {/* Our approach */}
         <section className="mt-16 border-t border-[#e5e9e7] pt-12">
-          <SectionHead kicker="Our approach">What partnering actually involves</SectionHead>
+          <SectionHead>What partnering actually involves</SectionHead>
           <div className="mt-5 max-w-2xl space-y-4 text-[15px] leading-relaxed text-[#3d4b44]">
             <p>
               Each category carries a shortlist assessed on standards, transparency, pricing honesty and the experience
@@ -238,7 +229,7 @@ export default function PartnerWithReferLabsPage() {
 
         {/* List your business */}
         <section id="apply" className="mt-16 scroll-mt-24 border-t border-[#e5e9e7] pt-12">
-          <SectionHead kicker="Apply">Apply to partner with us</SectionHead>
+          <SectionHead>Apply to partner with us</SectionHead>
           <div className="mt-5 max-w-2xl space-y-4 text-[15px] leading-relaxed text-[#3d4b44]">
             <p>
               If you run a business in one of the categories above, apply below. Tell us what you sell, what an

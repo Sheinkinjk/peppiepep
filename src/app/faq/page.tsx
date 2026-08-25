@@ -65,7 +65,6 @@ export default function FAQPage() {
         </nav>
 
         <header className="mb-12">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#0a7c42]">Questions</p>
           <h1 className="mt-4 text-4xl font-bold leading-[1.07] tracking-[-0.01em] text-[#10251b] sm:text-5xl">
             Frequently asked questions
           </h1>

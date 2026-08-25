@@ -10,7 +10,22 @@
 // Deliberately NOT a mass programmatic coupon dump, which Google's helpful-content
 // system now treats as scaled content abuse.
 
-/** ISO date we last re-checked the offers. Bump monthly. */
+/**
+ * ISO date of the last sweep in which EVERY offer was re-checked. It is the
+ * fallback stamp for an offer with no `verified` of its own, so bumping it
+ * claims freshness for offers nobody looked at. Only move it when the whole
+ * table has been re-read from source.
+ *
+ * Sweep of 25 Aug 2026 re-read seven from the vendor's own page (Carrd,
+ * beehiiv, Brevo, GoHighLevel, ElevenLabs, AliDrop, Leadpages) and stamped
+ * those individually. The rest could not be verified without partner access:
+ * Moshy's REFERRAL120, Mosh's REFERAL55, Knose's referlab2mf, PetsOnMe's
+ * REFERLABS, Superfiliate's 15% and Unbounce's 20/35% are partner-specific and
+ * never appear on a public page, Apollo's $500 is our own arrangement, and
+ * Pipedrive's pricing page blocks automated fetching. Worth knowing from the
+ * same sweep: Mosh now publicly runs MOSHINTRO100 for $100 off a first month of
+ * weight loss, which is a different product from the hair-loss offer we list.
+ */
 export const VERIFIED_DATE = "2026-07-28";
 
 /** "2026-07-24" -> "July 2026". Fixed input, so plain Date parsing is safe here. */
@@ -76,19 +91,19 @@ export const DEALS: Deal[] = [
   { brand: "Mosh", logo: "/logos/mosh-tile.png", href: "/moshhair", offer: "55% off your first order", code: "REFERAL55", category: "Hair loss", featured: true, verified: "2026-08-17", exclusive: true },
   { brand: "Apollo Energy Group", logo: "/logos/apollo-energy.png", href: "/apollo-energy-group", offer: "$500 off your quote, on top of any rebate", category: "Home batteries", featured: true },
   { brand: "Unbounce", logo: "/logos/unbounce.png", href: "/unbounce", offer: "20% off 3 months, or 35% off your first year", category: "Landing pages", featured: true, verified: "2026-08-20" },
-  { brand: "Leadpages", logo: "/logos/leadpages.png", href: "/leadpages", offer: "7-day free trial; 20% off annual billing", category: "Landing pages", featured: true },
+  { brand: "Leadpages", logo: "/logos/leadpages.png", href: "/leadpages", offer: "7-day free trial; 20% off annual billing", category: "Landing pages", featured: true, verified: "2026-08-25" },
   { brand: "Superfiliate", logo: "/logos/superfiliate.png", href: "/superfiliate", offer: "15% off your monthly SaaS fee", category: "Creator growth", featured: true, verified: "2026-08-20" },
 
   { brand: "Knose", logo: "/logos/knose.svg", href: "/knose", offer: "2 months free for new customers", code: "referlab2mf", category: "Pets", featured: true },
   { brand: "PetsOnMe", logo: "/logos/petsonme.svg", href: "/petsonme", offer: "15% off pet care services, up from 12% (not the premium)", code: "REFERLABS", category: "Pets", featured: true, verified: "2026-08-17" },
 
-  { brand: "Carrd", logo: "/logos/carrd.png", href: "/carrd", offer: "Free plan forever; Pro from US$19/yr", category: "Website builders", verified: "2026-08-21" },
-  { brand: "beehiiv", logo: "/logos/beehiiv.png", href: "/best-newsletter-platform", offer: "Free plan, no revenue cut", category: "Newsletters", verified: "2026-08-20" },
-  { brand: "Brevo", logo: "/logos/brevo.png", href: "/brevo", offer: "Free plan forever, no card", category: "Email marketing", verified: "2026-08-20" },
+  { brand: "Carrd", logo: "/logos/carrd.png", href: "/carrd", offer: "Free plan forever; Pro from US$19/yr", category: "Website builders", verified: "2026-08-25" },
+  { brand: "beehiiv", logo: "/logos/beehiiv.png", href: "/best-newsletter-platform", offer: "Free plan, no revenue cut", category: "Newsletters", verified: "2026-08-25" },
+  { brand: "Brevo", logo: "/logos/brevo.png", href: "/brevo", offer: "Free plan forever, no card", category: "Email marketing", verified: "2026-08-25" },
   { brand: "Pipedrive", logo: "/logos/pipedrive.png", href: "/pipedrive", offer: "14-day free trial, no card", category: "CRM" },
-  { brand: "GoHighLevel", logo: "/logos/gohighlevel.png", href: "/best-ai-sales-tools", offer: "14-day free trial, no card", category: "Sales & CRM", verified: "2026-08-20" },
-  { brand: "ElevenLabs", logo: "/logos/elevenlabs.png", href: "/elevenlabs", offer: "Free plan (10,000 credits/month)", category: "AI tools", verified: "2026-08-20" },
-  { brand: "AliDrop", logo: "/logos/alidrop.png", href: "/alidrop", offer: "US$1 for a 7-day trial", category: "E-commerce", verified: "2026-08-20" },
+  { brand: "GoHighLevel", logo: "/logos/gohighlevel.png", href: "/best-ai-sales-tools", offer: "14-day free trial, no card", category: "Sales & CRM", verified: "2026-08-25" },
+  { brand: "ElevenLabs", logo: "/logos/elevenlabs.png", href: "/elevenlabs", offer: "Free plan (10,000 credits/month)", category: "AI tools", verified: "2026-08-25" },
+  { brand: "AliDrop", logo: "/logos/alidrop.png", href: "/alidrop", offer: "US$1 for a 7-day trial", category: "E-commerce", verified: "2026-08-25" },
 ];
 
 export const FEATURED_DEALS = DEALS.filter((d) => d.featured);

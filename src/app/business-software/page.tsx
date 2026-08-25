@@ -123,7 +123,6 @@ export default function BusinessSoftwarePage() {
         <section className="border-b border-[#e5e9e7] bg-[#f5f8f6]">
           <div className="mx-auto grid max-w-6xl items-start gap-10 px-5 py-12 sm:px-8 sm:py-16 lg:grid-cols-[1fr_1.05fr] lg:gap-14">
             <div className="lg:pt-4">
-              <span className="text-[12px] font-bold uppercase tracking-[0.16em] text-[#0a7c42]">Business software</span>
               <h1 className="mt-3 text-4xl font-extrabold leading-[1.05] tracking-[-0.02em] text-[#10251b] sm:text-5xl">
                 Find the right software for your business in a minute
               </h1>
@@ -165,7 +164,6 @@ export default function BusinessSoftwarePage() {
               {hubs.map((h) => (
                 <Link key={h.href} href={h.href} className="nw-card nw-card-hover group flex flex-col rounded-2xl p-6">
                   <div className="flex items-center justify-between">
-                    <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#0a7c42]">Compare</span>
                     <ArrowRight className="h-4 w-4 text-[#0a7c42] transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
                   </div>
                   <h3 className="mt-3 text-xl font-bold text-[#10251b] group-hover:text-[#0a7c42]">{h.label}</h3>

@@ -234,7 +234,6 @@ export default function HowToStartAffiliateMarketingAustraliaPage() {
             <span>/</span>
             <span className="text-[#2b362f]">How to start</span>
           </nav>
-          <p className="nw-kicker">Beginner guide</p>
           <h1 className="mt-4 text-4xl font-bold leading-[1.07] tracking-[-0.01em] text-[#10251b] sm:text-5xl">
             How to start affiliate marketing <span className="italic text-[#0a7c42]">in Australia</span>
           </h1>
