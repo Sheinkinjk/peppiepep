@@ -61,9 +61,16 @@ export function GoogleAnalytics() {
 
           gtag('js', new Date());
 
+          /* ?ga_debug=1 on any URL turns on DebugView for that tab, so the
+             tag can be verified on the real site without installing an
+             extension. It only affects the visitor who typed it. */
+          var __dbg = false;
+          try { __dbg = new URLSearchParams(window.location.search).get('ga_debug') === '1'; } catch (e) {}
+
           gtag('config', '${measurementId}', {
             page_path: window.location.pathname,
-            send_page_view: true
+            send_page_view: true,
+            debug_mode: __dbg
           });
 
           /* AI-assistant referral detection. GA4 lumps these into generic
