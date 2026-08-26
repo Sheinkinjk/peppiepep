@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { sendAdminNotification, escapeHtml } from "@/lib/email-notifications";
 import { createApiLogger } from "@/lib/api-logger";
+import { SITE_URL } from "@/lib/seo";
+import { unsubscribeUrl } from "@/lib/unsubscribe-token";
 
 const logger = createApiLogger("api:subscribe");
 // Respect the configured sender/reply-to (RESEND_FROM_EMAIL / RESEND_REPLY_TO),
@@ -8,7 +10,10 @@ const logger = createApiLogger("api:subscribe");
 const FROM = process.env.RESEND_FROM_EMAIL?.trim() || "Refer Labs <jarred@referlabs.com.au>";
 const REPLY_TO = process.env.RESEND_REPLY_TO?.trim() || "jarred@referlabs.com.au";
 
-function welcomeHtml(): string {
+// TODO(editorial): add the postal address to the footer below. The repo holds no
+// address (the Terms say one is "available on request"), and sender identification
+// under the Spam Act expects one. Do not invent an address; paste the real one.
+function welcomeHtml(unsubUrl: string): string {
   return `<!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
 <body style="margin:0;padding:0;background:#f0f4f5;font-family:Georgia,serif;color:#1b2420;">
@@ -24,7 +29,13 @@ function welcomeHtml(): string {
     <p style="margin:0 0 28px;">
       <a href="https://referlabs.com.au/guides" style="display:inline-block;background:#0E7C66;color:#fff;text-decoration:none;font-family:Arial,sans-serif;font-weight:700;font-size:15px;padding:14px 28px;border-radius:999px;">Browse the guides →</a>
     </p>
-    <p style="font-size:13px;line-height:1.6;color:#6b756f;margin:0;">Refer Labs</p>
+    <p style="font-size:13px;line-height:1.6;color:#6b756f;margin:0 0 6px;">
+      You are receiving this because you subscribed at referlabs.com.au.
+      <a href="${unsubUrl}" style="color:#6b756f;">Unsubscribe</a>.
+    </p>
+    <p style="font-size:13px;line-height:1.6;color:#6b756f;margin:0;">
+      Pepform Pty Ltd, ABN 32 660 008 159, trading as Refer Labs.
+    </p>
   </div>
 </body></html>`;
 }
@@ -65,10 +76,23 @@ export async function POST(request: NextRequest) {
     if (apiKey) {
       const added = await addToAudience(email, apiKey);
 
+      const unsubUrl = unsubscribeUrl(email, SITE_URL);
       fetch("https://api.resend.com/emails", {
         method: "POST",
         headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
-        body: JSON.stringify({ from: FROM, to: [email], reply_to: REPLY_TO, subject: "Welcome to Refer Labs", html: welcomeHtml() }),
+        body: JSON.stringify({
+          from: FROM,
+          to: [email],
+          reply_to: REPLY_TO,
+          subject: "Welcome to Refer Labs",
+          html: welcomeHtml(unsubUrl),
+          // RFC 8058: lets a mail client show its own unsubscribe button and
+          // post to it directly, which is what Gmail and Apple Mail act on.
+          headers: {
+            "List-Unsubscribe": `<${unsubUrl}>`,
+            "List-Unsubscribe-Post": "List-Unsubscribe=One-Click",
+          },
+        }),
       }).catch((err) => logger.error("welcome email failed", { error: err }));
 
       // Fallback capture so a lead is never lost even without an Audience configured.
