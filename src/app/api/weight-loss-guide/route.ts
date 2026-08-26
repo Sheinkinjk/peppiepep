@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
 
-import { createServiceClient } from "@/lib/supabase";
+import { recordSubscriber } from "@/lib/subscribe";
 import { sendAdminNotification, escapeHtml as esc } from "@/lib/email-notifications";
 import { checkRateLimit } from "@/lib/rate-limit";
 import { buildWeightLossGuideEmail } from "@/lib/weight-loss-guide-email";
@@ -29,16 +29,10 @@ export async function POST(request: Request) {
   // Persist the subscriber (best-effort). The newsletter_subscribers table can be
   // absent in the fresh Supabase project, and a storage failure must NOT block guide
   // delivery: the admin notification below captures the email as a reliable backstop.
-  let stored = false;
-  try {
-    const supabase = await createServiceClient();
-    const { error } = await supabase.from("newsletter_subscribers").insert({ email, source });
-    // 23505 = already subscribed: fine, still send them the guide.
-    stored = !error || error.code === "23505";
-    if (error && error.code !== "23505") console.error("guide subscriber insert failed:", error.message);
-  } catch (e) {
-    console.error("guide subscriber insert threw:", e);
-  }
+  // One upsert path for every capture control, in src/lib/subscribe.ts.
+  // `stored` keeps its existing meaning so the caller's branch below is unchanged.
+  const saved = await recordSubscriber(email, { source });
+  const stored = saved.stored;
 
   // Deliver the guide to the subscriber. This is the core function, so a failure here
   // is a real error the user should retry.

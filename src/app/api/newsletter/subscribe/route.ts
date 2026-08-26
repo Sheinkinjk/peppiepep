@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
 
-import { createServiceClient } from "@/lib/supabase";
+import { recordSubscriber } from "@/lib/subscribe";
 import { sendAdminNotification, buildNewsletterSubscriptionEmail } from "@/lib/email-notifications";
 import { checkRateLimit } from "@/lib/rate-limit";
 
@@ -30,15 +30,10 @@ export async function POST(request: Request) {
   // Persist the subscriber (best-effort). If the newsletter_subscribers table is
   // missing (fresh Supabase project) the insert fails, but that must NOT 500 the
   // user or skip the admin email: the notification below is the backstop capture.
-  let stored = false;
-  try {
-    const supabase = await createServiceClient();
-    const { error } = await supabase.from("newsletter_subscribers").insert({ email, source });
-    stored = !error || error.code === "23505"; // 23505 = already subscribed
-    if (error && error.code !== "23505") console.error("newsletter insert failed:", error.message);
-  } catch (e) {
-    console.error("newsletter insert threw:", e);
-  }
+  // One upsert path for every capture control, in src/lib/subscribe.ts.
+  // `stored` keeps its existing meaning so the caller's branch below is unchanged.
+  const saved = await recordSubscriber(email, { source });
+  const stored = saved.stored;
 
   // Always notify the admin on a registration, and flag any lead that wasn't stored.
   const html = buildNewsletterSubscriptionEmail({

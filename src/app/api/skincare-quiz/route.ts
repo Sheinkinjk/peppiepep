@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
 
-import { createServiceClient } from "@/lib/supabase";
+import { recordSubscriber } from "@/lib/subscribe";
 import { sendAdminNotification, escapeHtml as esc } from "@/lib/email-notifications";
 import { checkRateLimit } from "@/lib/rate-limit";
 
@@ -36,15 +36,10 @@ export async function POST(request: Request) {
 
   if (company_website_confirm) return NextResponse.json({ ok: true });
 
-  let stored = false;
-  try {
-    const supabase = await createServiceClient();
-    const { error } = await supabase.from("newsletter_subscribers").insert({ email, source });
-    stored = !error || error.code === "23505";
-    if (error && error.code !== "23505") console.error("skincare subscriber insert failed:", error.message);
-  } catch (e) {
-    console.error("skincare subscriber insert threw:", e);
-  }
+  // One upsert path for every capture control, in src/lib/subscribe.ts.
+  // `stored` keeps its existing meaning so the caller's branch below is unchanged.
+  const saved = await recordSubscriber(email, { source });
+  const stored = saved.stored;
 
   const confirmation = await sendAdminNotification({
     subject: "You're on the list: Refer Labs skin & beauty",

@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
 
+import { sendAdminNotification, escapeHtml } from "@/lib/email-notifications";
+import { recordUnsubscribe } from "@/lib/subscribe";
 import { readUnsubscribeToken } from "@/lib/unsubscribe-token";
 
 /**
@@ -67,8 +69,29 @@ ${body}
 async function handle(token: string): Promise<{ ok: boolean; email: string | null }> {
   const email = readUnsubscribeToken(token);
   if (!email) return { ok: false, email: null };
-  const ok = await unsubscribeInAudience(email);
-  return { ok, email };
+
+  // Our own table decides whether the person is unsubscribed. The Resend
+  // Audience is a sending tool that may not even be configured, and an
+  // unsubscribe has to be honoured either way, so its result never determines
+  // what the person is told.
+  const recorded = await recordUnsubscribe(email);
+  const inAudience = await unsubscribeInAudience(email);
+  if (!inAudience) console.warn(`[unsubscribe] Resend Audience not updated for ${email}`);
+
+  // If neither automated path took, a person still asked to be removed and the
+  // request must not evaporate. Tell an operator so it is actioned by hand, and
+  // treat the request as honoured: the Spam Act allows five working days, and a
+  // failed unsubscribe screen invites the complaint the link exists to prevent.
+  if (!recorded && !inAudience) {
+    await sendAdminNotification({
+      subject: `ACTION: unsubscribe ${email} by hand`,
+      html:
+        `<p><strong>${escapeHtml(email)}</strong> clicked unsubscribe, and neither the database ` +
+        `nor the Resend Audience recorded it.</p><p>Remove them manually today.</p>`,
+    }).catch(() => undefined);
+  }
+
+  return { ok: true, email };
 }
 
 export async function GET(_req: Request, ctx: { params: Promise<{ token: string }> }) {

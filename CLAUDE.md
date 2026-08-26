@@ -2,7 +2,7 @@
 
 Independent, NerdWallet-style affiliate comparison site for Australians. Next.js 16 App Router, React 19, Tailwind, TS. Deployed on Vercel (`main` → prod). Consumer money pages are health (weight-loss, hair-loss, peptides); everything else is business/marketing software, the affiliate-programs cluster, and growth services under `/for-business`.
 
-**Retired, do not reintroduce (July 2026):** the $799 Referral Blueprint and `/become-an-affiliate` (all 301 → `/affiliate-programs-australia`), and the Pepform referral SaaS platform (dashboards, ambassador programs, Twilio SMS/WhatsApp). `/blueprint-access` and `/referral-blueprint/success` must keep working: people paid for those. Legal entity is **Pepform Pty Ltd trading as Refer Labs, ABN 32 660 008 159** — that is correct, do not "fix" it. Only `jarred@referlabs.com.au` receives mail (`noreply@` is an outbound Resend sender; never add `hello@`/`support@`/`security@`).
+**Retired, do not reintroduce (July 2026):** the $799 Referral Blueprint and `/become-an-affiliate` (all 301 → `/affiliate-programs-australia`), and the Pepform referral SaaS platform (dashboards, ambassador programs, Twilio SMS/WhatsApp). **Blueprint fully shut down 26 Aug 2026:** its Supabase project was deleted, so no access token can be verified. `/blueprint-access` is now a static retirement notice pointing at jarred@referlabs.com.au, kept alive rather than redirected because buyers have that link in their receipts. The checkout, lead and access API routes are deleted; do not rebuild them. Legal entity is **Pepform Pty Ltd trading as Refer Labs, ABN 32 660 008 159** — that is correct, do not "fix" it. Only `jarred@referlabs.com.au` receives mail (`noreply@` is an outbound Resend sender; never add `hello@`/`support@`/`security@`).
 
 ## SEO / AEO / GEO — apply on EVERY edit and new page
 
@@ -151,3 +151,13 @@ Two rules it encodes, both learned the hard way:
 
 ## Deeper context
 Persistent decisions/architecture live in the auto-memory at `~/.claude/projects/.../memory/` (taxonomy, pricing rules, theme split, off-core-program pruning, etc.). Check `MEMORY.md` there.
+
+<!-- BEGIN:nextjs-agent-rules -->
+
+# This is NOT the Next.js you know
+
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+
+This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+
+<!-- END:nextjs-agent-rules -->

@@ -197,6 +197,12 @@ const STANDALONE_ROUTES = [
   // Get Featured (consumer-facing partner door; migrated to the consumer shell)
   // Prefix: covers /authors/<id> for every author in the registry.
   "/authors",
+  // Found by sweeping every ConsumerShell page against this list rather than
+  // by anyone noticing: all three rendered two headers and two footers.
+  "/apollo-energy-group-eoi",
+  "/weight-loss-guide",
+  "/who-underwrites-pet-insurance-australia",
+  "/blueprint-access",
   "/data",
   "/disclaimer",
   "/partner-with-refer-labs",

@@ -3,6 +3,7 @@ import { sendAdminNotification, escapeHtml } from "@/lib/email-notifications";
 import { createApiLogger } from "@/lib/api-logger";
 import { SITE_URL } from "@/lib/seo";
 import { unsubscribeUrl } from "@/lib/unsubscribe-token";
+import { hubForPath, recordSubscriber } from "@/lib/subscribe";
 
 const logger = createApiLogger("api:subscribe");
 // Respect the configured sender/reply-to (RESEND_FROM_EMAIL / RESEND_REPLY_TO),
@@ -10,9 +11,10 @@ const logger = createApiLogger("api:subscribe");
 const FROM = process.env.RESEND_FROM_EMAIL?.trim() || "Refer Labs <jarred@referlabs.com.au>";
 const REPLY_TO = process.env.RESEND_REPLY_TO?.trim() || "jarred@referlabs.com.au";
 
-// TODO(editorial): add the postal address to the footer below. The repo holds no
-// address (the Terms say one is "available on request"), and sender identification
-// under the Spam Act expects one. Do not invent an address; paste the real one.
+// Sender identification: the Spam Act requires accurate sender details and a way
+// to be readily contacted, not specifically a postal address. The ABN plus a
+// monitored reply address satisfies that, and the Terms already say a postal
+// address is available on request.
 function welcomeHtml(unsubUrl: string): string {
   return `<!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
@@ -35,6 +37,7 @@ function welcomeHtml(unsubUrl: string): string {
     </p>
     <p style="font-size:13px;line-height:1.6;color:#6b756f;margin:0;">
       Pepform Pty Ltd, ABN 32 660 008 159, trading as Refer Labs.
+      Contact <a href="mailto:jarred@referlabs.com.au" style="color:#6b756f;">jarred@referlabs.com.au</a>.
     </p>
   </div>
 </body></html>`;
@@ -69,6 +72,13 @@ export async function POST(request: NextRequest) {
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       return NextResponse.json({ error: "A valid email is required" }, { status: 400 });
     }
+
+    // Additive: the footer was the only capture path that never reached
+    // Supabase, so the list lived half in Resend and half in the database.
+    // Failure here never blocks the subscription; the Resend path below is
+    // unchanged and still runs.
+    const sourcePath = typeof body?.source_path === "string" ? body.source_path.slice(0, 200) : undefined;
+    await recordSubscriber(email, { source, sourcePath, hub: hubForPath(sourcePath) });
 
     const apiKey = process.env.RESEND_API_KEY?.trim();
 

@@ -37,7 +37,16 @@ export default function NewsletterSignup({
       const res = await fetch("/api/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, source, ...(interest ? { interest } : {}) }),
+        // source_path records which page the visitor was on when they
+        // subscribed, so conversion can be attributed to a page rather than
+        // just to "footer". Read at submit time, not render time, so it is
+        // correct after client-side navigation.
+        body: JSON.stringify({
+          email,
+          source,
+          source_path: typeof window !== "undefined" ? window.location.pathname : undefined,
+          ...(interest ? { interest } : {}),
+        }),
       });
       setState(res.ok ? "done" : "error");
       if (typeof window !== "undefined" && res.ok) window.gtag?.("event", "newsletter_subscribe", { source, interest });
