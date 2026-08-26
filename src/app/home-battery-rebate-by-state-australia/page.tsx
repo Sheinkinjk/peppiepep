@@ -1,4 +1,4 @@
-import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
+import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, SCHEMA_AUTHOR, SCHEMA_PUBLISHER } from "@/lib/seo";
 import { APOLLO_ENERGY_LEAD_HREF } from "@/lib/affiliate-links";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
@@ -149,6 +149,8 @@ const webPageSchema = {
   datePublished: "2026-07-28",
   dateModified: "2026-07-28",
   isPartOf: { "@id": `${SITE_URL}/#website` },
+  author: SCHEMA_AUTHOR,
+  publisher: SCHEMA_PUBLISHER,
 };
 
 const stacksTone: Record<string, string> = {

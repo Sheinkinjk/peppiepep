@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Check, ShieldCheck, BatteryCharging, HandCoins, Wrench, BadgeCheck } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
-import { SITE_URL } from "@/lib/seo";
+import { SITE_URL, SCHEMA_AUTHOR, SCHEMA_PUBLISHER } from "@/lib/seo";
 import { VERIFIED_FULL } from "@/lib/offers";
 import ApolloEoiForm from "@/components/apollo/ApolloEoiForm";
 
@@ -101,6 +101,8 @@ const webPageSchema = {
   datePublished: "2026-07-28",
   dateModified: "2026-07-28",
   isPartOf: { "@id": `${SITE_URL}/#website` },
+  author: SCHEMA_AUTHOR,
+  publisher: SCHEMA_PUBLISHER,
   about: {
     "@type": "Service",
     name: "Home battery installation",

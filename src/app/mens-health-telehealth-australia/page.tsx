@@ -1,4 +1,4 @@
-import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
+import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, SCHEMA_AUTHOR, SCHEMA_PUBLISHER } from "@/lib/seo";
 import { MOSHY_URL, MOSH_HAIR_URL } from "@/lib/affiliate-links";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
@@ -56,6 +56,8 @@ const webPageSchema = {
   url: seoConfig.mensHealthTelehealth.url,
   inLanguage: "en-AU",
   isPartOf: { "@id": `${SITE_URL}/#website` },
+  author: SCHEMA_AUTHOR,
+  publisher: SCHEMA_PUBLISHER,
 };
 
 export default function MensHealthTelehealthPage() {

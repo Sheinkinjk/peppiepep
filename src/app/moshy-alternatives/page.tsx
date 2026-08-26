@@ -1,4 +1,4 @@
-import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
+import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, SCHEMA_AUTHOR, SCHEMA_PUBLISHER } from "@/lib/seo";
 import EarningsBalanceNote from "@/components/consumer/EarningsBalanceNote";
 import { MOSHY_URL } from "@/lib/affiliate-links";
 import { ArrowRight } from "lucide-react";
@@ -57,6 +57,8 @@ const webPageSchema = {
   url: seoConfig.moshyAlternatives.url,
   inLanguage: "en-AU",
   isPartOf: { "@id": `${SITE_URL}/#website` },
+  author: SCHEMA_AUTHOR,
+  publisher: SCHEMA_PUBLISHER,
 };
 
 export default function MoshyAlternativesPage() {

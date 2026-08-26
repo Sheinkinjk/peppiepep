@@ -1,4 +1,4 @@
-import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
+import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, SCHEMA_AUTHOR, SCHEMA_PUBLISHER } from "@/lib/seo";
 import { JUNIPER_URL } from "@/lib/affiliate-links";
 import { ArrowRight, Check, ShieldCheck, Stethoscope, Truck, Users } from "lucide-react";
 import Image from "next/image";
@@ -129,6 +129,8 @@ const webPageSchema = {
   datePublished: "2026-07-29",
   dateModified: "2026-08-06",
   isPartOf: { "@id": `${SITE_URL}/#website` },
+  author: SCHEMA_AUTHOR,
+  publisher: SCHEMA_PUBLISHER,
   about: {
     "@type": "Service",
     name: "Weight management telehealth",

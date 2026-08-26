@@ -1,4 +1,4 @@
-import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
+import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, SCHEMA_AUTHOR, SCHEMA_PUBLISHER } from "@/lib/seo";
 import PremiumAffiliateLanding from "@/components/affiliate/PremiumAffiliateLanding";
 import { denseConfig } from "./config";
 
@@ -58,6 +58,8 @@ const webPageSchema = {
     name: "Refer Labs",
     url: SITE_URL,
   },
+  author: SCHEMA_AUTHOR,
+  publisher: SCHEMA_PUBLISHER,
 };
 
 const organizationSchema = {

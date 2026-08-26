@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 import PathwayQuiz from "@/components/consumer/PathwayQuiz";
-import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
+import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, SCHEMA_AUTHOR, SCHEMA_PUBLISHER } from "@/lib/seo";
 import { MOSHY_URL } from "@/lib/affiliate-links";
 
 export const metadata = generateSEOMetadata(seoConfig.weightLossHub);
@@ -88,6 +88,8 @@ const collectionSchema = {
   url: `${SITE_URL}/weight-loss`,
   inLanguage: "en-AU",
   isPartOf: { "@id": `${SITE_URL}/#website` },
+  author: SCHEMA_AUTHOR,
+  publisher: SCHEMA_PUBLISHER,
   mainEntity: {
     "@type": "ItemList",
     itemListElement: guides.map((g, i) => ({

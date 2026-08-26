@@ -1,4 +1,4 @@
-import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
+import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, SCHEMA_AUTHOR, SCHEMA_PUBLISHER } from "@/lib/seo";
 import ApolloLanding from "./ApolloLanding";
 import { faqs } from "./config";
 
@@ -33,6 +33,8 @@ const webPageSchema = {
   datePublished: "2026-07-15",
   dateModified: "2026-07-15",
   isPartOf: { "@id": `${SITE_URL}/#website` },
+  author: SCHEMA_AUTHOR,
+  publisher: SCHEMA_PUBLISHER,
   about: {
     "@type": "Service",
     name: "Home battery installation",

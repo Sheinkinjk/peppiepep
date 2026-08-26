@@ -1,4 +1,4 @@
-import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
+import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, SCHEMA_AUTHOR, SCHEMA_PUBLISHER } from "@/lib/seo";
 import PremiumAffiliateLanding from "@/components/affiliate/PremiumAffiliateLanding";
 import { moshHairConfig } from "./config";
 
@@ -47,6 +47,8 @@ const webPageSchema = {
     { "@type": "Thing", name: "Mosh hair loss results" },
   ],
   isPartOf: { "@id": `${SITE_URL}/#website` },
+  author: SCHEMA_AUTHOR,
+  publisher: SCHEMA_PUBLISHER,
 };
 
 const organizationSchema = {

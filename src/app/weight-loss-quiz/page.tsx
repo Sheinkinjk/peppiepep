@@ -1,4 +1,4 @@
-import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
+import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, SCHEMA_AUTHOR, SCHEMA_PUBLISHER } from "@/lib/seo";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import PathwayQuiz from "@/components/consumer/PathwayQuiz";
@@ -44,6 +44,8 @@ const webPageSchema = {
   datePublished: "2026-07-08",
   dateModified: "2026-07-08",
   isPartOf: { "@id": `${SITE_URL}/#website` },
+  author: SCHEMA_AUTHOR,
+  publisher: SCHEMA_PUBLISHER,
 };
 
 const faqSchema = {

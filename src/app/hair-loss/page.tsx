@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import MatchPrompt from "@/components/consumer/MatchPrompt";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
-import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
+import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, SCHEMA_AUTHOR, SCHEMA_PUBLISHER } from "@/lib/seo";
 import { MOSH_HAIR_URL, DENSE_URL } from "@/lib/affiliate-links";
 
 export const metadata = generateSEOMetadata(seoConfig.hairLossHub);
@@ -62,6 +62,8 @@ const collectionSchema = {
   url: `${SITE_URL}/hair-loss`,
   inLanguage: "en-AU",
   isPartOf: { "@id": `${SITE_URL}/#website` },
+  author: SCHEMA_AUTHOR,
+  publisher: SCHEMA_PUBLISHER,
   mainEntity: {
     "@type": "ItemList",
     itemListElement: guides.map((g, i) => ({ "@type": "ListItem", position: i + 1, name: g.title, url: `${SITE_URL}${g.href}` })),

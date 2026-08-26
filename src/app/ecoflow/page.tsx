@@ -1,4 +1,4 @@
-import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
+import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, SCHEMA_AUTHOR, SCHEMA_PUBLISHER } from "@/lib/seo";
 import PremiumAffiliateLanding from "@/components/affiliate/PremiumAffiliateLanding";
 import Link from "next/link";
 import { ecoflowConfig } from "./config";
@@ -29,6 +29,8 @@ const webPageSchema = {
   datePublished: "2026-08-24",
   dateModified: "2026-08-24",
   isPartOf: { "@id": `${SITE_URL}/#website` },
+  author: SCHEMA_AUTHOR,
+  publisher: SCHEMA_PUBLISHER,
 };
 // Product rather than SoftwareApplication: these are physical goods. No
 // aggregateRating, because Refer Labs publishes no ratings of its own and

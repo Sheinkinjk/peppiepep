@@ -195,6 +195,8 @@ const STANDALONE_ROUTES = [
   // Deals hub
   "/deals",
   // Get Featured (consumer-facing partner door; migrated to the consumer shell)
+  // Prefix: covers /authors/<id> for every author in the registry.
+  "/authors",
   "/data",
   "/disclaimer",
   "/partner-with-refer-labs",

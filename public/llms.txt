@@ -11,6 +11,7 @@
   set out at https://referlabs.com.au/about . Funding and commercial relationships: https://referlabs.com.au/how-we-make-money
 - Method: prices and terms are read off each provider's own page and dated on the page. No star ratings of our own,
   no testimonials, no invented statistics, no sponsored rankings.
+- Dated first-party observations of provider offers: https://referlabs.com.au/data
 - Primary market: Australia (en-AU)
 - Contact: jarred@referlabs.com.au
 - Disclosure: some comparison and guide pages contain affiliate referral links. Refer Labs may earn a commission at no extra cost to the reader. Rankings and editorial assessments are independent and never sold.

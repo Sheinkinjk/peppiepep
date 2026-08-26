@@ -26,6 +26,18 @@ const HUB_LABEL: Record<Fact['hub'], string> = {
 
 const HUB_ORDER: Fact['hub'][] = ['hair-loss', 'weight-loss', 'solar-energy'];
 
+const MONTHS = [
+  'January', 'February', 'March', 'April', 'May', 'June',
+  'July', 'August', 'September', 'October', 'November', 'December',
+];
+
+/** '2026-07-21' -> '21 July 2026'. Returns the input unchanged if malformed. */
+function formatObserved(iso: string): string {
+  const [y, m, d] = iso.split('-').map(Number);
+  if (!y || !m || !d || m < 1 || m > 12) return iso;
+  return `${d} ${MONTHS[m - 1]} ${y}`;
+}
+
 /** Earliest and latest observedAt across the registry, derived not hand-kept. */
 function coverage(facts: Fact[]): { earliest: string; latest: string } | null {
   if (facts.length === 0) return null;
@@ -87,6 +99,13 @@ export default function DataPage() {
           not a promise about what a provider charges today: providers change prices and terms
           without notice, which is the reason each record carries its date and method. Where a
           provider publishes no figure, that absence is recorded too.
+        </p>
+
+        <p className="mt-4 text-[15px] leading-relaxed text-[#3d4b44]">
+          {span ? `This log began on ${formatObserved(span.earliest)}.` : 'This log has just begun.'}{' '}
+          We record what we see on a provider&apos;s own site, on the day we see it, and we record it
+          again when nothing has changed: an unchanged figure on a new date is evidence that it held.
+          The log is short because it is new. It is re-checked weekly and grows from here.
         </p>
 
         {HUB_ORDER.map((hub) => {

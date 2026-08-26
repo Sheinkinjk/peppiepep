@@ -5,7 +5,7 @@ import EditorialMeta from "@/components/consumer/EditorialMeta";
 import PowerCtaPair from "@/components/energy/PowerCtaPair";
 import { APOLLO_ENERGY_LEAD_HREF } from "@/lib/affiliate-links";
 import { STATIONS, fmtAud } from "@/lib/portable-power";
-import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
+import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, SCHEMA_AUTHOR, SCHEMA_PUBLISHER } from "@/lib/seo";
 
 export const metadata = generateSEOMetadata(seoConfig.solarAndEnergy);
 
@@ -136,6 +136,8 @@ const webPageSchema = {
   inLanguage: "en-AU",
   dateModified: UPDATED,
   isPartOf: { "@id": `${SITE_URL}/#website` },
+  author: SCHEMA_AUTHOR,
+  publisher: SCHEMA_PUBLISHER,
 };
 
 export default function Page() {
