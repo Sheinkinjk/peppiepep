@@ -220,6 +220,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/carrd-vs-butternut`,                    lastModified: FRESH,  changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/mosh-vs-dense`,                         lastModified: TODAY,  changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/mosh-vs-pilot`,                         lastModified: TODAY,  changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/data`, lastModified: FRESH, changeFrequency: 'weekly', priority: 0.6 },
     { url: `${BASE}/disclaimer`, lastModified: FRESH, changeFrequency: 'yearly', priority: 0.3 },
     { url: `${BASE}/partner-with-refer-labs`,               lastModified: FRESH, changeFrequency: 'monthly', priority: 0.75 },
 

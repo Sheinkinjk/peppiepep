@@ -195,6 +195,7 @@ const STANDALONE_ROUTES = [
   // Deals hub
   "/deals",
   // Get Featured (consumer-facing partner door; migrated to the consumer shell)
+  "/data",
   "/disclaimer",
   "/partner-with-refer-labs",
   // Apollo EOI campaign landing (own dark design)

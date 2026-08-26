@@ -2166,6 +2166,23 @@ export const seoConfig = {
     keywords: [],
   },
 
+  // The observation log. Indexable on purpose: a dated, checkable record of what
+  // providers published is the one thing on this site a competitor cannot copy
+  // without doing the work, and it is what an answer engine can cite.
+  data: {
+    title: "Observation Log: Dated Checks of Australian Provider Offers | Refer Labs",
+    description:
+      "A dated log of first-party observations of Australian provider offers and prices, recorded on a weekly cadence. Each entry names the date it was read, who read it and the method, so any figure can be traced to the day it was seen.",
+    url: `${SITE_URL}/data`,
+    keywords: [
+      "refer labs observation log",
+      "australian provider offer tracking",
+      "dated price observations australia",
+      "first-party price checks australia",
+      "when was this price checked",
+    ],
+  },
+
   disclaimer: {
     title: "Disclaimer | Refer Labs",
     description:
