@@ -6,7 +6,7 @@ import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 import VerifiedStamp from "@/components/consumer/VerifiedStamp";
-import { VERIFIED_DATE } from "@/lib/offers";
+import { verifiedFor } from "@/lib/offers";
 import FactHistory from "@/components/facts/FactHistory";
 import CodeAnswer from "@/components/offers/CodeAnswer";
 import OfferSchema from "@/components/offers/OfferSchema";
@@ -116,7 +116,7 @@ export default function MoshReviewPage() {
         <OfferSchema code="REFERAL55" />
 
         <div className="mb-6">
-          <VerifiedStamp date={VERIFIED_DATE} label="55% off first order for new customers · verified" />
+          <VerifiedStamp date={verifiedFor("REFERAL55")!} label="55% off first order for new customers · verified" />
         </div>
 
         <p className="mb-10 rounded-lg border border-[#e5e9e7] bg-[#f5f8f6] px-4 py-3 text-xs leading-relaxed text-[#3d4b44]">

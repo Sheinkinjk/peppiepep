@@ -105,8 +105,26 @@ for (const slug of slugs) {
   }
 }
 
+// ── OFFER_FACTS must be backed by a DEALS row ───────────────────────────────
+// OFFER_FACTS feeds the on-page answer sentence and the Offer schema; DEALS
+// feeds /deals and the check dates. They used to hold the date twice, and two
+// copies agree only until someone updates the one the tooling knows about.
+// The date is now derived by code lookup, so a fact with no matching row means
+// checkedOn() silently returns null and every sentence for that code loses its
+// date with nothing failing. That is the failure this catches.
+const factCodes = [...offers.matchAll(/^  ([A-Za-z0-9]+): \{\s*$/gm)].map((m) => m[1]);
+const dealCodes = new Set([...offers.matchAll(/code: "([A-Za-z0-9]+)"/g)].map((m) => m[1]));
+const orphans = factCodes.filter((c) => !dealCodes.has(c));
+if (orphans.length) {
+  problems += orphans.length;
+  for (const c of orphans) {
+    rows.push([`OFFER_FACTS.${c}`, "(no DEALS row)", "a DEALS row with this code, so verifiedFor() can find its date"]);
+  }
+}
+
 if (!rows.length) {
   console.log(`  ${slugs.length} brand pages checked. All fully wired.`);
+  console.log(`  ${factCodes.length} OFFER_FACTS codes each backed by a DEALS row.`);
 } else {
   console.log(`  ${slugs.length} checked, ${problems} with gaps:\n`);
   for (const [slug, offer, miss] of rows) {

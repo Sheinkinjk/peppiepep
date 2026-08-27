@@ -4,7 +4,7 @@ import { ArrowRight, Check } from "lucide-react";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import EditorialMeta from "@/components/consumer/EditorialMeta";
-import CodeAnswer from "@/components/offers/CodeAnswer";
+import { checkedOn } from "@/lib/offers";
 import OfferSchema from "@/components/offers/OfferSchema";
 
 export const metadata = generateSEOMetadata(seoConfig.petsonme);
@@ -118,9 +118,13 @@ export default function PetsOnMePage() {
           eligible vet bill less your excess. This page sets out what each plan includes, what the code does and does
           not do, and what to check before you buy. It is general information, not financial advice.
         </p>
-        <CodeAnswer code="REFERLABS" className="mt-6">
-          PetsOnMe&apos;s REFERLABS code lifts its pet care services discount from the usual 12% to 15% once you hold a policy, and it does not reduce the insurance premium.
-        </CodeAnswer>
+        {/* The sentence that sat here duplicated the paragraph above it. The date
+            stays: it is the only reading date on this page, and without it the nearest
+            date to the code is the "Last updated" stamp, which reads as verification. */}
+        <p className="mt-4 text-[12px] font-medium text-[#5c6b63]">
+          Read off PetsOnMe&apos;s own page on {checkedOn("REFERLABS")}. Offers can change, so check the current terms
+          before you sign up.
+        </p>
         <OfferSchema code="REFERLABS" />
 
         <EditorialMeta lastUpdated={UPDATED} className="mt-5" />

@@ -6,7 +6,6 @@ import ConsumerShell from "@/components/consumer/ConsumerShell";
 import EditorialMeta from "@/components/consumer/EditorialMeta";
 import InsuranceDisclosure from "@/components/consumer/InsuranceDisclosure";
 import PetOfferPair from "@/components/pet/PetOfferPair";
-import CodeAnswer from "@/components/offers/CodeAnswer";
 import OfferSchema from "@/components/offers/OfferSchema";
 
 export const metadata = generateSEOMetadata(seoConfig.petInsurance);
@@ -112,13 +111,7 @@ export default function PetInsurancePage() {
               insurer&apos;s Product Disclosure Statement. This page is general information to help you understand the
               terms, plus current offers we can refer you to. It is not advice and not a recommendation.
             </p>
-            <CodeAnswer code="referlab2mf" className="mt-4">
-              Of the two pet insurers compared here, Knose is the one with a free period: 2 months free for new customers taking out a policy with the code referlab2mf.
-            </CodeAnswer>
             <OfferSchema code="referlab2mf" />
-            <CodeAnswer code="REFERLABS" className="mt-4">
-              PetsOnMe&apos;s code REFERLABS raises its pet care services discount from 12% to 15% once you hold a policy, which is a discount on services such as walking and grooming rather than on the premium.
-            </CodeAnswer>
             <OfferSchema code="REFERLABS" />
 
             <EditorialMeta lastUpdated={UPDATED} className="mt-4" />

@@ -137,8 +137,6 @@ export interface OfferFacts {
   object: string;
   newCustomer?: boolean;
   oneUse?: boolean;
-  /** ISO date, from the DEALS row. Absent where no reading date exists. */
-  verified?: string;
 }
 
 export const OFFER_FACTS: Record<string, OfferFacts> = {
@@ -148,7 +146,7 @@ export const OFFER_FACTS: Record<string, OfferFacts> = {
   REFERRAL120: {
     brand: "Moshy", code: "REFERRAL120", amount: "$120 off",
     object: "a new customer's first order",
-    newCustomer: true, oneUse: true, verified: "2026-08-17",
+    newCustomer: true, oneUse: true,
   },
   // amount + verified: the Mosh DEALS row above.
   // object + newCustomer: src/app/moshhair/config.ts:22 and :127.
@@ -156,7 +154,7 @@ export const OFFER_FACTS: Record<string, OfferFacts> = {
   REFERAL55: {
     brand: "Mosh", code: "REFERAL55", amount: "55% off",
     object: "a new customer's first order",
-    newCustomer: true, verified: "2026-08-17",
+    newCustomer: true,
   },
   // amount + newCustomer: the Knose DEALS row above.
   // object: src/app/knose/page.tsx:21 ("when they take out a policy").
@@ -166,7 +164,7 @@ export const OFFER_FACTS: Record<string, OfferFacts> = {
   referlab2mf: {
     brand: "Knose", code: "referlab2mf", amount: "2 months free",
     object: "a policy taken out through our link",
-    newCustomer: true, verified: "2026-08-27",
+    newCustomer: true,
   },
   // amount + verified: the PetsOnMe DEALS row above.
   // object: src/app/petsonme/page.tsx:28. The object is the whole point here:
@@ -176,13 +174,25 @@ export const OFFER_FACTS: Record<string, OfferFacts> = {
   REFERLABS: {
     brand: "PetsOnMe", code: "REFERLABS", amount: "15% off",
     object: "pet care services, up from the usual 12%, not the insurance premium",
-    verified: "2026-08-17",
   },
 };
 
+/**
+ * The date a code's offer was last read off the vendor's page.
+ *
+ * Derived from the DEALS row, never stored a second time. OFFER_FACTS used to
+ * carry its own copy, which is the same shape as the bug it was written after:
+ * MOSHY_OFFER held a date that had drifted from its DEALS row and put "July
+ * 2026" on three pages against "17 August" on /deals. Two copies agree until
+ * someone updates the one the tooling knows about.
+ */
+export function verifiedFor(code: string): string | undefined {
+  return DEALS.find((d) => d.code === code)?.verified;
+}
+
 /** "2026-08-17" -> "17 August 2026", for a check date printed beside a code. */
 export function checkedOn(code: string): string | null {
-  const v = OFFER_FACTS[code]?.verified;
+  const v = verifiedFor(code);
   if (!v) return null;
   const d = new Date(`${v}T00:00:00`);
   return isNaN(d.getTime()) ? v : d.toLocaleDateString("en-AU", { day: "numeric", month: "long", year: "numeric" });
@@ -202,6 +212,7 @@ export function checkedOn(code: string): string | null {
 export function offerSchema(code: string) {
   const f = OFFER_FACTS[code];
   if (!f) return null;
+  const verified = verifiedFor(code);
   const dollars = f.amount.match(/^\$(\d[\d,]*)/);
   const terms = [
     f.newCustomer ? "New customers only." : null,
@@ -215,6 +226,6 @@ export function offerSchema(code: string) {
     seller: { "@type": "Organization", name: f.brand },
     availability: "https://schema.org/InStock",
     ...(dollars ? { price: dollars[1].replace(/,/g, ""), priceCurrency: "AUD" } : {}),
-    ...(f.verified ? { dateModified: f.verified } : {}),
+    ...(verified ? { dateModified: verified } : {}),
   };
 }

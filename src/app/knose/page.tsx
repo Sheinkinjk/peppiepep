@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import EditorialMeta from "@/components/consumer/EditorialMeta";
 import InsuranceDisclosure from "@/components/consumer/InsuranceDisclosure";
-import CodeAnswer from "@/components/offers/CodeAnswer";
+import { checkedOn } from "@/lib/offers";
 import OfferSchema from "@/components/offers/OfferSchema";
 
 export const metadata = generateSEOMetadata(seoConfig.knose);
@@ -99,9 +99,13 @@ export default function KnosePage() {
               months free</strong> when they take out a policy using the code <strong className="text-[#10251b]">referlab2mf</strong> through
               our link. This page is general information and a referral, not financial advice or a recommendation.
             </p>
-            <CodeAnswer code="referlab2mf" className="mt-6">
-              Knose gives new customers 2 months free on a policy taken out with the code referlab2mf through the link on this page.
-            </CodeAnswer>
+            {/* The sentence that sat here duplicated the paragraph above it. The date
+                stays: it is the only reading date on this page, and without it the nearest
+                date to the code is the "Last updated" stamp, which reads as verification. */}
+            <p className="mt-4 text-[12px] font-medium text-[#5c6b63]">
+              Read off Knose&apos;s own page on {checkedOn("referlab2mf")}. Offers can change, so check the current terms
+              before you sign up.
+            </p>
             <OfferSchema code="referlab2mf" />
 
             <EditorialMeta lastUpdated={UPDATED} className="mt-4" />
