@@ -9,6 +9,7 @@ import { DEALS } from "@/lib/offers";
 import StickyCta from "@/components/consumer/StickyCta";
 import CodeAnswer from "@/components/offers/CodeAnswer";
 import OfferSchema from "@/components/offers/OfferSchema";
+import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 
 export const metadata = generateSEOMetadata(seoConfig.bestHairLossTreatmentAustralia);
 
@@ -275,8 +276,9 @@ export default function BestHairLossTreatmentAustraliaPage() {
           <OfferSchema code="REFERAL55" />
 
           <EditorialMeta lastUpdated="2026-08-14" className="mb-6" />
+          <AffiliateDisclosure className="mb-3" />
           <p className="text-[#9aa39c] text-xs mb-8">
-            This page contains affiliate links. We may earn a commission if you purchase through them. This does not constitute medical advice, consult a registered healthcare professional before starting any hair loss treatment.
+            This does not constitute medical advice, consult a registered healthcare professional before starting any hair loss treatment.
           </p>
           <div className="flex flex-wrap gap-3">
             <a

@@ -10,6 +10,7 @@ import { MOSHY_OFFER } from "@/lib/offers";
 import FactHistory from "@/components/facts/FactHistory";
 import CodeAnswer from "@/components/offers/CodeAnswer";
 import OfferSchema from "@/components/offers/OfferSchema";
+import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 
 export const metadata = generateSEOMetadata(seoConfig.moshyReview);
 
@@ -233,9 +234,9 @@ export default function MoshyReviewPage() {
             exists so the series appears here the moment the next re-check lands. */}
         <FactHistory subject="Moshy" kind="offer_observation" hub="weight-loss" route="/moshy-review" />
 
-        <p className="text-[#9aa39c] text-xs mt-8 leading-relaxed">
-          This page is operated by Refer Labs and contains an affiliate referral link. We may earn a commission if you
-          sign up through it, at no extra cost to you. Nothing on this page is medical advice. Prescription medicines in
+        <AffiliateDisclosure className="mt-8" />
+        <p className="text-[#9aa39c] text-xs mt-3 leading-relaxed">
+          Nothing on this page is medical advice. Prescription medicines in
           Australia are available only after assessment by a registered practitioner.
         </p>
         <p className="text-[#9aa39c] text-xs mt-4">© 2026 Refer Labs · Australia · <Link href="/guides" className="hover:text-[#3d4b44]">All guides</Link></p>

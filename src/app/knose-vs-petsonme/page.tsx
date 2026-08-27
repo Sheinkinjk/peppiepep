@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import EditorialMeta from "@/components/consumer/EditorialMeta";
+import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 
 export const metadata = generateSEOMetadata(seoConfig.knoseVsPetsonme);
 
@@ -224,10 +225,9 @@ export default function KnoseVsPetsOnMePage() {
           <Link href="/who-underwrites-pet-insurance-australia" className="nw-link">Who underwrites pet insurance</Link>
         </div>
 
-        <p className="mt-8 text-xs leading-relaxed text-[#9aa39c]">
-          Published by Refer Labs. Contains disclosed affiliate links to Knose and PetsOnMe, both of which pay us a
-          commission if you take out a policy through them, at no extra cost to you. Because we earn from both, we set
-          out the published figures rather than naming a winner, and a provider cannot pay to be described more
+        <AffiliateDisclosure partners={["Knose", "PetsOnMe"]} earnsFromAll noStarRatings className="mt-8" />
+        <p className="mt-3 text-xs leading-relaxed text-[#9aa39c]">
+          A provider cannot pay to be described more
           favourably than the facts support. Cover details are from each provider&apos;s own pages, checked 17 August
           2026, and can change: confirm current cover, limits, exclusions and waiting periods in the Product Disclosure
           Statement before you buy.

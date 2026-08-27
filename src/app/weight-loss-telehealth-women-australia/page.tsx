@@ -7,6 +7,7 @@ import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
 import CodeAnswer from "@/components/offers/CodeAnswer";
 import OfferSchema from "@/components/offers/OfferSchema";
+import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 
 export const metadata = generateSEOMetadata(seoConfig.weightLossTelehealthWomen);
 
@@ -231,9 +232,9 @@ export default function WeightLossTelehealthWomenPage() {
           <Link href="/online-weight-loss-programs-australia" style={{ color: CYAN }} className="hover:opacity-80">Online weight loss programs &rarr;</Link>
         </div>
 
-        <p className="text-[#9aa39c] text-xs mt-8 leading-relaxed">
-          This page is operated by Refer Labs and contains an affiliate referral link. We may earn a commission if you
-          sign up through it, at no extra cost to you. Nothing here is medical advice. Always consult a qualified health
+        <AffiliateDisclosure className="mt-8" />
+        <p className="text-[#9aa39c] text-xs mt-3 leading-relaxed">
+          Nothing here is medical advice. Always consult a qualified health
           professional before making health decisions.
         </p>
         <p className="text-[#9aa39c] text-xs mt-4">&copy; 2026 Refer Labs &middot; Australia &middot; <Link href="/guides" className="hover:text-[#3d4b44]">All guides</Link></p>

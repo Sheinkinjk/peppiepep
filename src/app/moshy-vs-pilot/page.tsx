@@ -7,6 +7,7 @@ import StickyCta from "@/components/consumer/StickyCta";
 import FactHistory from "@/components/facts/FactHistory";
 import CodeAnswer from "@/components/offers/CodeAnswer";
 import OfferSchema from "@/components/offers/OfferSchema";
+import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 
 export const metadata = generateSEOMetadata(seoConfig.moshyVsPilot);
 
@@ -351,8 +352,9 @@ export default function MoshyVsPilotPage() {
               <span className="text-[#9aa39c]">·</span>
               <Link href="/weight-loss" className="nw-link text-sm">Weight loss hub</Link>
             </div>
+            <AffiliateDisclosure partners={["Moshy"]} className="mb-3 max-w-2xl" />
             <p className="text-[#9aa39c] text-xs leading-relaxed max-w-2xl">
-              This page is operated by Refer Labs and contains a disclosed affiliate referral link to Moshy. Pilot is
+              Pilot is
               linked without an affiliate arrangement. We compare on price, model and what is included, and we never sell
               rankings. All content is for informational purposes only and does not constitute medical advice.
               Medicines prescribed for weight management in Australia are available only after an individual

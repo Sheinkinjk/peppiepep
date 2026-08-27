@@ -7,6 +7,7 @@ import { FEATURED_DEALS, OTHER_DEALS, DEALS } from "@/lib/offers";
 import OffersTable from "@/components/lending/OffersTable";
 import CodeAnswer from "@/components/offers/CodeAnswer";
 import OfferSchema from "@/components/offers/OfferSchema";
+import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 
 export const metadata = generateSEOMetadata(seoConfig.deals);
 
@@ -198,11 +199,19 @@ export default function DealsPage() {
           </dl>
         </section>
 
-        <p className="mt-10 max-w-2xl text-xs leading-relaxed text-[#6e7b74]">
+        <AffiliateDisclosure
+          priceUnaffected
+          className="mt-10 max-w-2xl"
+          extra={
+            <>
+              See{" "}
+              <Link href="/how-we-make-money" className="underline hover:text-[#10251b]">how we make money</Link>.
+            </>
+          }
+        />
+        <p className="mt-3 max-w-2xl text-xs leading-relaxed text-[#6e7b74]">
           Offers are the providers&apos; own current terms and can change; we recheck them regularly and show when we
-          last did. Some links are affiliate links, so we may earn a commission if you sign up, at no extra cost to you,
-          and it never changes what you pay. See{" "}
-          <Link href="/how-we-make-money" className="underline hover:text-[#10251b]">how we make money</Link>.
+          last did.
         </p>
       </main>
     </ConsumerShell>

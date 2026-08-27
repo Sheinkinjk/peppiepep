@@ -340,9 +340,12 @@ export default function GuidesPage() {
 
         <div className="border-t border-[#e5e9e7] pt-10">
           <NewsletterSignup variant="band" source="guides" />
+          {/* Not the shared AffiliateDisclosure: that says "some links on this page",
+              and this index carries none. Same three clauses, same subject, scoped
+              to the pages it links to rather than to itself. */}
           <p className="mt-8 max-w-2xl text-sm leading-relaxed text-[#3d4b44]">
-            Some pages contain affiliate links, disclosed on the page. We may earn a commission if you buy through them,
-            at no extra cost to you, and it never changes a conclusion.
+            Some pages linked from this index carry affiliate links. Where they do, Refer Labs may earn a commission at
+            no extra cost to you, and it never changes a comparison or a conclusion.
           </p>
         </div>
       </main>

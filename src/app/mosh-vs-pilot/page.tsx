@@ -7,6 +7,7 @@ import StickyCta from "@/components/consumer/StickyCta";
 import FactHistory from "@/components/facts/FactHistory";
 import CodeAnswer from "@/components/offers/CodeAnswer";
 import OfferSchema from "@/components/offers/OfferSchema";
+import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 
 export const metadata = generateSEOMetadata(seoConfig.moshVsPilot);
 
@@ -342,9 +343,9 @@ export default function MoshVsPilotPage() {
               <span className="text-[#9aa39c]">·</span>
               <Link href="/guides" className="nw-link text-sm">All guides</Link>
             </div>
+            <AffiliateDisclosure partners={["Mosh"]} className="mb-3 max-w-2xl" />
             <p className="text-[#9aa39c] text-xs leading-relaxed max-w-2xl">
-              This page is operated by Refer Labs and contains a disclosed affiliate referral link to Mosh. We may earn a
-              commission if you sign up through it, at no extra cost to you. Pilot is referenced for comparison only and is
+              Pilot is referenced for comparison only and is
               not a Refer Labs partner. We compare on category, model, and what is included, and we never sell rankings.
               All content is for informational purposes only and does not constitute medical advice. Prescription
               hair-loss treatment in Australia is available only after an individual assessment by a registered Australian

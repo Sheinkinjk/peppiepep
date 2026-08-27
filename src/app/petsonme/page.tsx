@@ -6,6 +6,7 @@ import ConsumerShell from "@/components/consumer/ConsumerShell";
 import EditorialMeta from "@/components/consumer/EditorialMeta";
 import { checkedOn } from "@/lib/offers";
 import OfferSchema from "@/components/offers/OfferSchema";
+import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 
 export const metadata = generateSEOMetadata(seoConfig.petsonme);
 
@@ -245,9 +246,9 @@ export default function PetsOnMePage() {
           <Link href="/knose" className="nw-link">Knose: the offer</Link>
         </div>
 
-        <p className="mt-8 text-xs leading-relaxed text-[#9aa39c]">
-          This page is published by Refer Labs and contains a disclosed affiliate link. PetsOnMe pays us a commission if
-          you take out a policy through it, at no extra cost to you, and it never changes what we write. The product is
+        <AffiliateDisclosure partners={["PetsOnMe"]} className="mt-8" />
+        <p className="mt-3 text-xs leading-relaxed text-[#9aa39c]">
+          The product is
           underwritten by Pacific International Insurance Pty Ltd (ABN 83 169 311 193) and distributed by Pets On Me
           Insurance Pty Limited (ABN 42 650 975 554). Cover details are from PetsOnMe&apos;s own compare-cover page,
           checked 17 August 2026, and can change: confirm current terms, limits and waiting periods in the Product

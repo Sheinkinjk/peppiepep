@@ -6,6 +6,7 @@ import ConsumerShell from "@/components/consumer/ConsumerShell";
 import EditorialMeta from "@/components/consumer/EditorialMeta";
 import CodeAnswer from "@/components/offers/CodeAnswer";
 import OfferSchema from "@/components/offers/OfferSchema";
+import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 
 export const metadata = generateSEOMetadata(seoConfig.bestPetInsurance);
 
@@ -304,10 +305,9 @@ export default function BestPetInsuranceAustraliaPage() {
           <Link href="/pet-insurance" className="nw-link">The pet insurance hub</Link>
         </div>
 
-        <p className="mt-8 text-xs leading-relaxed text-[#9aa39c]">
-          Published by Refer Labs. This page contains disclosed affiliate links to PetsOnMe and Knose, which pay us a
-          commission if you take out a policy through them, at no extra cost to you. Commission never changes what we
-          write, and a provider cannot pay to be described more favourably than the facts support. Cover details are
+        <AffiliateDisclosure partners={["PetsOnMe", "Knose"]} earnsFromAll className="mt-8" />
+        <p className="mt-3 text-xs leading-relaxed text-[#9aa39c]">
+          A provider cannot pay to be described more favourably than the facts support. Cover details are
           taken from each provider&apos;s own published pages and were checked on 17 August 2026; terms change, so
           confirm current cover, limits and waiting periods in the Product Disclosure Statement before you buy.
         </p>
