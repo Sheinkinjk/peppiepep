@@ -92,7 +92,18 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
       keywords: ["how to stop hair loss", "how to stop balding australia", "stop hair loss men", "hair loss treatment that works australia"],
     },
     lead:
-      "If you want to stop hair loss, the first useful step is knowing what kind you have. The most common form in men, male pattern hair loss, is largely genetic and driven by the hormone DHT, and it is gradual and progressive. That matters because the two treatments with the strongest evidence, prescription hair-loss treatments, target that specific process, while most shampoos, supplements and gadgets do not. Acting earlier tends to give you more to work with, since it is easier to hold onto hair you still have than to recover what is gone. What is right for you is a clinical decision, and this page is general information, not medical advice.",
+      // Deleted, 27 August 2026: "That matters because the two treatments with
+      // the strongest evidence, prescription hair-loss treatments, target that
+      // specific process, while most shampoos, supplements and gadgets do not."
+      // Counting the treatments that act on a mechanism the same paragraph names
+      // lets a reader work out which two medicines are meant, and this page
+      // carries an affiliate CTA, so no editorial exemption applies. Deleted
+      // rather than reworded: "prescription options" or "most shampoos do not
+      // target that process" narrow to the same set by another route, and a
+      // claim about the evidence behind over-the-counter products would be a new
+      // claim with no source on file. The mechanism sentence stays: describing
+      // the condition is not advertising a medicine.
+      "If you want to stop hair loss, the first useful step is knowing what kind you have. The most common form in men, male pattern hair loss, is largely genetic and driven by the hormone DHT, and it is gradual and progressive. Acting earlier tends to give you more to work with, since it is easier to hold onto hair you still have than to recover what is gone. What is right for you is a clinical decision, and this page is general information, not medical advice.",
     sections: [
       {
         h: "Work out what is actually causing it",

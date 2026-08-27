@@ -149,6 +149,29 @@ Every page listed above was checked live. All of the following are present on
    including the weight-management content's treatment of obesity, which we
    understand may be a restricted representation.
 
+8. **Does naming a treatment category, without naming any substance, amount to
+   identifying the medicine?** Two live examples, both on pages carrying an
+   affiliate CTA, both surfaced by our own audit on 27 August 2026:
+
+   a. `/skin-and-beauty/anti-ageing-treatments-what-they-cost` says "many
+      cosmetic injectable treatments involve prescription-only medicines, and
+      advertising prescription medicines to the public is prohibited in
+      Australia". That is a statement of the regulatory position and names no
+      substance, but "cosmetic injectables" narrows to a very small set of
+      Schedule 4 products. We have left it unchanged pending your view.
+
+   b. The hair-loss guides describe the condition's mechanism: "male pattern
+      hair loss is largely genetic and driven by the hormone DHT" and "follicles
+      at the temples and front are sensitive to DHT, a hormone that gradually
+      shrinks them" (`/how-to-stop-hair-loss-australia`,
+      `/receding-hairline-treatment-australia`). This is disease-state
+      information with no treatment named. We removed an adjacent sentence that
+      went further and counted the treatments targeting that mechanism, which we
+      judged an indirect identifier, but we have deliberately not sanitised the
+      description of the condition itself: doing so would strip the pages of
+      their clinical usefulness without, as we read it, reducing risk. We would
+      rather be told we are wrong about that than guess.
+
 ---
 
 ## 6. What we will do with your answer
