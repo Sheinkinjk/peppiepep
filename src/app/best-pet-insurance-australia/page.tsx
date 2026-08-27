@@ -176,6 +176,36 @@ export default function BestPetInsuranceAustraliaPage() {
           deciding. This page contains disclosed affiliate links.
         </p>
 
+        {/* Providers */}
+        <section className="mt-14">
+          <h2 className="text-xl font-bold text-[#10251b] sm:text-2xl">The providers we cover</h2>
+          <p className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">
+            Two, both Australian, and they differ in ways that matter. On the published numbers Knose pays a higher
+            share of the bill and carries no sub-limits, while PetsOnMe sets out three clearly-tiered plans with
+            sub-limits on hereditary and dental cover. Neither is better in the abstract, because the right one depends
+            on your pet and what you would claim for. Every figure below is from each provider&apos;s own site.
+          </p>
+          <div className="mt-6 grid gap-5">
+            {providers.map((p) => (
+              <div key={p.name} className="rounded-2xl border border-[#e5e9e7] bg-[#f5f8f6] p-6">
+                <h3 className="text-lg font-extrabold text-[#10251b]">{p.name}</h3>
+                <p className="mt-2 text-[15px] leading-relaxed text-[#3d4b44]">{p.published}</p>
+                <p className="mt-3 rounded-lg border border-[#cfe6da] bg-[#e8f5ee] px-4 py-3 text-sm leading-relaxed text-[#2b362f]">
+                  <span className="font-semibold text-[#10251b]">Current offer. </span>{p.offer}
+                </p>
+                <div className="mt-5 flex flex-wrap items-center gap-4">
+                  <a href={p.cta.href} target="_blank" rel="nofollow sponsored" data-cta={`best-pet-${p.name.toLowerCase()}`} className="nw-btn justify-center">
+                    {p.cta.label} <ArrowRight className="h-4 w-4" />
+                  </a>
+                  <Link href={p.href} className="text-sm font-semibold text-[#10251b] underline decoration-[#cdd5cf] underline-offset-4 hover:decoration-[#0a7c42]">
+                    Read our {p.name} page
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* Criteria */}
         <section className="mt-12">
           <h2 className="text-xl font-bold text-[#10251b] sm:text-2xl">The six things that decide what you get back</h2>
@@ -236,36 +266,6 @@ export default function BestPetInsuranceAustraliaPage() {
               Underwriting arrangements change, so confirm in the current Product Disclosure Statement and Target
               Market Determination before you buy.
             </p>
-          </div>
-        </section>
-
-        {/* Providers */}
-        <section className="mt-14">
-          <h2 className="text-xl font-bold text-[#10251b] sm:text-2xl">The providers we cover</h2>
-          <p className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">
-            Two, both Australian, and they differ in ways that matter. On the published numbers Knose pays a higher
-            share of the bill and carries no sub-limits, while PetsOnMe sets out three clearly-tiered plans with
-            sub-limits on hereditary and dental cover. Neither is better in the abstract, because the right one depends
-            on your pet and what you would claim for. Every figure below is from each provider&apos;s own site.
-          </p>
-          <div className="mt-6 grid gap-5">
-            {providers.map((p) => (
-              <div key={p.name} className="rounded-2xl border border-[#e5e9e7] bg-[#f5f8f6] p-6">
-                <h3 className="text-lg font-extrabold text-[#10251b]">{p.name}</h3>
-                <p className="mt-2 text-[15px] leading-relaxed text-[#3d4b44]">{p.published}</p>
-                <p className="mt-3 rounded-lg border border-[#cfe6da] bg-[#e8f5ee] px-4 py-3 text-sm leading-relaxed text-[#2b362f]">
-                  <span className="font-semibold text-[#10251b]">Current offer. </span>{p.offer}
-                </p>
-                <div className="mt-5 flex flex-wrap items-center gap-4">
-                  <a href={p.cta.href} target="_blank" rel="nofollow sponsored" data-cta={`best-pet-${p.name.toLowerCase()}`} className="nw-btn justify-center">
-                    {p.cta.label} <ArrowRight className="h-4 w-4" />
-                  </a>
-                  <Link href={p.href} className="text-sm font-semibold text-[#10251b] underline decoration-[#cdd5cf] underline-offset-4 hover:decoration-[#0a7c42]">
-                    Read our {p.name} page
-                  </Link>
-                </div>
-              </div>
-            ))}
           </div>
         </section>
 

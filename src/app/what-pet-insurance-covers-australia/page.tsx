@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import EditorialMeta from "@/components/consumer/EditorialMeta";
 import InsuranceDisclosure from "@/components/consumer/InsuranceDisclosure";
+import PetOfferPair from "@/components/pet/PetOfferPair";
 
 export const metadata = generateSEOMetadata(seoConfig.whatPetInsuranceCovers);
 
@@ -133,6 +134,12 @@ export default function WhatPetInsuranceCoversPage() {
               See current pet insurance offers <ArrowRight className="h-3.5 w-3.5" />
             </Link>
           </section>
+
+          {/* Both partners, from the shared block used across the pet pages, so the
+              offer and the wording about what each code discounts stay identical. */}
+          <div className="mb-12">
+            <PetOfferPair ctaPrefix="what-covers" />
+          </div>
 
           <InsuranceDisclosure className="mb-16" />
         </div>

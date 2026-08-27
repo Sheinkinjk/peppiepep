@@ -1,5 +1,6 @@
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
+import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
 
 export const metadata = generateSEOMetadata(seoConfig.howToStartAffiliateMarketingAustralia);
@@ -304,6 +305,23 @@ export default function HowToStartAffiliateMarketingAustraliaPage() {
               </details>
             ))}
           </div>
+          {/* The only commercial path this page can honestly carry.
+              TODO(editorial): there is no affiliate-network or affiliate-marketing
+              partner in src/lib/affiliate-links.ts, so a reader who wants to START
+              affiliate marketing has nothing to click through to. All 52 partners
+              sell something else (telehealth, insurance, energy, SaaS). Until such a
+              partner exists, email capture is the honest monetisation for this page
+              and its ~210 monthly AI citations. Do not bolt an unrelated SaaS link
+              on to fill the gap. */}
+          <div className="mt-12">
+            <NewsletterSignup
+              variant="band"
+              source="how-to-start-affiliate-marketing-australia"
+              heading="Building an income from affiliate programs?"
+              sub="We send the occasional plain-English update when commission structures, networks or terms change. No spam."
+            />
+          </div>
+
           <p className="mt-8 text-sm text-[#3d4b44]">
             Refer Labs is an independent Australian comparison publisher. Some pages carry disclosed affiliate links.
           </p>
