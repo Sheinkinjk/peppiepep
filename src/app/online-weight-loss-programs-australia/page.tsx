@@ -95,7 +95,6 @@ export default function OnlineWeightLossProgramsPage() {
         <p className="mb-10 rounded-lg border border-[#e5e9e7] bg-[#f5f8f6] px-4 py-3 text-xs leading-relaxed text-[#3d4b44]">
           <span className="font-semibold text-[#2b362f]">Information only.</span> This page maps a category of services
           and is not medical advice. It does not recommend any treatment or imply suitability for any individual.
-          Contains an affiliate link.
         </p>
 
         <section className="space-y-4 mb-10">

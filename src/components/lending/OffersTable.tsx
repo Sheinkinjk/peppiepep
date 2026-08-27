@@ -73,8 +73,7 @@ export default function OffersTable({
         Each offer shows the date we last read it off that provider’s own page, rather than a single site-wide
         stamp, so you can see exactly how current each one is. &ldquo;Not recorded&rdquo; means we have not logged a
         reading date for that one yet. &ldquo;No code needed&rdquo; means the offer applies
-        automatically through our link. Offers can change; figures are indicative, not a guarantee. Some links are
-        affiliate links, at no cost to you.
+        automatically through our link. Offers can change; figures are indicative, not a guarantee.
       </p>
     </div>
   );

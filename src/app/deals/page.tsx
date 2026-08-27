@@ -103,19 +103,19 @@ export default function DealsPage() {
           The current offers on the providers we compare, each checked against the provider&apos;s own page. We only
           list deals for brands we actually work with, and every one links to our full guide with the details.
         </p>
-        <CodeAnswer code="REFERRAL120" className="mt-4">
+        <CodeAnswer code="REFERRAL120" hideDate className="mt-4">
           Moshy&apos;s REFERRAL120 is the largest of the codes below: $120 off a new customer&apos;s first order, one use per customer.
         </CodeAnswer>
         <OfferSchema code="REFERRAL120" />
-        <CodeAnswer code="REFERAL55" className="mt-4">
+        <CodeAnswer code="REFERAL55" hideDate className="mt-4">
           Mosh&apos;s REFERAL55 is the largest percentage discount below: 55% off a new customer&apos;s first order.
         </CodeAnswer>
         <OfferSchema code="REFERAL55" />
-        <CodeAnswer code="referlab2mf" className="mt-4">
+        <CodeAnswer code="referlab2mf" hideDate className="mt-4">
           Of the codes Refer Labs holds, Knose&apos;s referlab2mf is the only one giving free cover time: 2 months free for new customers taking out a policy.
         </CodeAnswer>
         <OfferSchema code="referlab2mf" />
-        <CodeAnswer code="REFERLABS" className="mt-4">
+        <CodeAnswer code="REFERLABS" hideDate className="mt-4">
           PetsOnMe&apos;s REFERLABS is the one code below that does not touch the price of cover: it lifts pet care services from 12% to 15% once you hold a policy.
         </CodeAnswer>
         <OfferSchema code="REFERLABS" />

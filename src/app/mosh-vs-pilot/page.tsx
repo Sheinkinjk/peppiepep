@@ -159,8 +159,7 @@ export default function MoshVsPilotPage() {
             <p className="text-[#9aa39c] text-xs leading-relaxed max-w-2xl mb-7">
               Information only, not medical advice. Prescription hair-loss treatment is available only after an individual
               assessment by a registered Australian practitioner, with suitability practitioner-decided and never
-              guaranteed. This page contains a disclosed affiliate link to Mosh, which is
-              a Refer Labs partner. Pilot is mentioned for comparison and is not a Refer Labs partner.
+              guaranteed. Pilot is mentioned for comparison and is not a Refer Labs partner.
             </p>
 
             <div className="flex flex-wrap gap-3">

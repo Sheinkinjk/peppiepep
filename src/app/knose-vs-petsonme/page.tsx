@@ -139,9 +139,8 @@ export default function KnoseVsPetsOnMePage() {
 
         <p className="mt-6 rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] px-5 py-4 text-xs leading-relaxed text-[#3d4b44]">
           <span className="font-semibold text-[#2b362f]">General information only.</span> Refer Labs is not an insurer,
-          broker or financial adviser, and this is not a recommendation or personal financial advice. We publish no star
-          ratings of our own and earn a commission from both providers. Read each Product Disclosure Statement and
-          Target Market Determination before deciding. Contains disclosed affiliate links.
+          broker or financial adviser, and this is not a recommendation or personal financial advice. Read each Product Disclosure Statement and
+          Target Market Determination before deciding.
         </p>
 
         {/* Table */}

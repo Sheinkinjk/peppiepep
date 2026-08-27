@@ -109,7 +109,7 @@ export default function WeightLossTelehealthWomenPage() {
         <p className="mb-10 rounded-lg border border-[#e5e9e7] bg-[#f5f8f6] px-4 py-3 text-xs leading-relaxed text-[#3d4b44]">
           <span className="font-semibold text-[#2b362f]">Information only.</span> This page describes a category of
           services. It is not medical advice and does not recommend any treatment. Prescription medicines in Australia
-          require individual assessment by a registered practitioner. Contains an affiliate link.
+          require individual assessment by a registered practitioner.
         </p>
 
         <section className="space-y-4 mb-10">

@@ -276,7 +276,6 @@ export default function BestHairLossTreatmentAustraliaPage() {
           <OfferSchema code="REFERAL55" />
 
           <EditorialMeta lastUpdated="2026-08-14" className="mb-6" />
-          <AffiliateDisclosure className="mb-3" />
           <p className="text-[#9aa39c] text-xs mb-8">
             This does not constitute medical advice, consult a registered healthcare professional before starting any hair loss treatment.
           </p>
@@ -556,6 +555,14 @@ export default function BestHairLossTreatmentAustraliaPage() {
             </div>
           </div>
         </section>
+
+        {/* Moved out of the hero, 28 August 2026. It sat directly under the
+            attribution stamp, so the page read "Verified by Refer Labs on 17
+            August 2026... Refer Labs is an independent Australian comparison
+            publisher. ...Refer Labs may earn a commission" in three consecutive
+            sentences, with "Last updated 14 August 2026" wedged between two
+            different dates. Same words, further from the stamp. */}
+        <AffiliateDisclosure className="mx-auto max-w-5xl px-5 pb-10 sm:px-8" />
 
       </main>
       <StickyCta href={MOSH_HAIR_URL} product="Mosh · hair-loss treatment" label="Get started" />

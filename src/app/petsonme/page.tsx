@@ -150,8 +150,7 @@ export default function PetsOnMePage() {
         <p className="mt-6 rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] px-5 py-4 text-xs leading-relaxed text-[#3d4b44]">
           <span className="font-semibold text-[#2b362f]">General information only.</span> Refer Labs is not an insurer,
           broker or financial adviser, and nothing here is a recommendation or personal financial advice. Read the
-          Product Disclosure Statement and Target Market Determination before deciding. This page contains a disclosed
-          affiliate link.
+          Product Disclosure Statement and Target Market Determination before deciding.
         </p>
 
         {/* Plans */}

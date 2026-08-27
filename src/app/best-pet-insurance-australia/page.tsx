@@ -185,7 +185,7 @@ export default function BestPetInsuranceAustraliaPage() {
           <span className="font-semibold text-[#2b362f]">General information only.</span> Refer Labs is not an insurer,
           broker or financial adviser. Nothing here is a recommendation or personal financial advice, and we publish no
           star ratings of our own. Read each Product Disclosure Statement and Target Market Determination before
-          deciding. This page contains disclosed affiliate links.
+          deciding.
         </p>
 
         {/* Providers */}

@@ -111,8 +111,7 @@ export default function MoshyAlternativesPage() {
 
         <p className="mb-10 rounded-lg border border-[#e5e9e7] bg-[#f5f8f6] px-4 py-3 text-xs leading-relaxed text-[#3d4b44]">
           <span className="font-semibold text-[#2b362f]">Information only.</span> This page compares services and is not
-          medical advice. Suitability for any provider is assessed individually by registered practitioners. Contains an
-          affiliate link.
+          medical advice. Suitability for any provider is assessed individually by registered practitioners.
         </p>
 
         <section className="space-y-4 mb-8">

@@ -104,7 +104,7 @@ export default function MoshyVsGpPage() {
         <p className="mb-10 rounded-lg border border-[#e5e9e7] bg-[#f5f8f6] px-4 py-3 text-xs leading-relaxed text-[#3d4b44]">
           <span className="font-semibold text-[#2b362f]">Information only.</span> This page compares two ways of
           accessing care. It is not medical advice, does not recommend either pathway for any individual, and both are
-          legitimate. Contains an affiliate link.
+          legitimate.
         </p>
 
         {/* Answer-first: the question verbatim, then a liftable answer, before the table. */}

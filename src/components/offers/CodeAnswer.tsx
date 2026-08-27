@@ -44,10 +44,24 @@ import { OFFER_FACTS, checkedOn } from "@/lib/offers";
 export default function CodeAnswer({
   code,
   className = "",
+  hideDate = false,
   children,
 }: {
   code: string;
   className?: string;
+  /**
+   * Suppress the attribution stamp because the page already dates this offer
+   * somewhere a reader will see.
+   *
+   * Set on /deals only, and for one reason: it stacks four of these blocks above
+   * an offers table that carries every date in a "Last checked" column, under a
+   * line that already says every offer shows the date we checked it. Four
+   * near-identical stamps in 250 words is the repetition rule breaking inside
+   * the fix for it, which is the same fault the "Offers can change" caveat had
+   * on this page a day earlier. Do not set this where the date has nowhere else
+   * to appear: the stamp beside the code is the point everywhere else.
+   */
+  hideDate?: boolean;
   children: React.ReactNode;
 }) {
   const facts = OFFER_FACTS[code];
@@ -57,7 +71,7 @@ export default function CodeAnswer({
   return (
     <div className={`rounded-2xl border border-[#cfe6da] bg-[#e8f5ee] px-5 py-4 ${className}`} data-code-answer={code}>
       <p className="text-[15px] leading-relaxed text-[#2b362f]">{children}</p>
-      {checked ? (
+      {checked && !hideDate ? (
         /* Date only, no "offers can change" caveat. CLAUDE.md gives that caveat a
            single home per page, the disclaimer, and /deals stacks four of these
            blocks: the caveat rendered four times back to back, which is the
@@ -67,7 +81,7 @@ export default function CodeAnswer({
         <p className="mt-2 text-[12px] font-medium text-[#5c6b63]">
           Verified by Refer Labs on {checked}, read off {facts.brand}&apos;s own page.
         </p>
-      ) : (
+      ) : hideDate ? null : (
         /* Dormant since 27 August 2026: every code in OFFER_FACTS now carries a
            reading date, so nothing renders this branch today.
 

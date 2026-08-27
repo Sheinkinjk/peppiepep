@@ -157,8 +157,7 @@ export default function MoshVsDensePage() {
             <p className="text-[#9aa39c] text-xs leading-relaxed max-w-2xl mb-7">
               Information only, not medical advice. Prescription hair-loss treatment is available only after an individual
               assessment by a registered Australian practitioner, with suitability practitioner-decided and never
-              guaranteed. This page contains disclosed
-              affiliate links to both Mosh and Dense; both are Refer Labs partners.
+              guaranteed.
             </p>
 
             <div className="flex flex-wrap gap-3">

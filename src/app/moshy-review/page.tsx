@@ -142,7 +142,6 @@ export default function MoshyReviewPage() {
         <p className="mb-10 rounded-lg border border-[#e5e9e7] bg-[#f5f8f6] px-4 py-3 text-xs leading-relaxed text-[#3d4b44]">
           <span className="font-semibold text-[#2b362f]">Information only.</span> This page describes a telehealth service.
           It is not medical advice, does not recommend any treatment, and does not imply suitability for any individual.
-          This page contains an affiliate referral link.
         </p>
 
         <section className="space-y-5 mb-10">

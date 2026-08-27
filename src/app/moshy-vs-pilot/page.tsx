@@ -165,7 +165,7 @@ export default function MoshyVsPilotPage() {
 
             <p className="text-[#9aa39c] text-xs leading-relaxed max-w-2xl mb-7">
               Information only, not medical advice. Prices are approximate and change, so check current pricing on each
-              provider. This page contains a disclosed affiliate link to Moshy.
+              provider.
             </p>
 
             <div className="flex flex-wrap gap-3">
