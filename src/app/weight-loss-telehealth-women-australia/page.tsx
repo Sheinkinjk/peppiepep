@@ -100,7 +100,7 @@ export default function WeightLossTelehealthWomenPage() {
           them.
         </p>
         <CodeAnswer code="REFERRAL120" className="mt-6">
-          The one code on this page is Moshy&apos;s REFERRAL120: $120 off a new customer&apos;s first order, once per customer, applied automatically through the link.
+          The one code on this page is REFERRAL120, the Moshy code Refer Labs holds: $120 off a new customer&apos;s first order, once per customer, applied automatically through the link.
         </CodeAnswer>
         <OfferSchema code="REFERRAL120" />
 

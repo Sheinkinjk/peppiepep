@@ -95,7 +95,7 @@ export default function MoshyVsGpPage() {
           practical: speed, format, continuity, and what kind of case each one handles best.
         </p>
         <CodeAnswer code="REFERRAL120" className="mt-6">
-          A GP visit has no discount code attached; the telehealth route does, and Moshy&apos;s REFERRAL120 takes $120 off a new customer&apos;s first order, once per customer.
+          A GP visit has no discount code attached; the telehealth route does, and REFERRAL120, the Moshy code Refer Labs verified, takes $120 off a new customer&apos;s first order, once per customer.
         </CodeAnswer>
         <OfferSchema code="REFERRAL120" />
 

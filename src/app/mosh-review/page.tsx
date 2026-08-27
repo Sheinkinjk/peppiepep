@@ -111,7 +111,7 @@ export default function MoshReviewPage() {
           clinical service, what it costs, what people actually raise about it, and how to start.
         </p>
         <CodeAnswer code="REFERAL55" className="mt-6">
-          A new Mosh customer coming through this page gets 55% off a first order, the value of the code REFERAL55.
+          REFERAL55, the Mosh code Refer Labs holds, gets a new customer 55% off a first order.
         </CodeAnswer>
         <OfferSchema code="REFERAL55" />
 

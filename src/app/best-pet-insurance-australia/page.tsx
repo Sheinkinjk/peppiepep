@@ -168,7 +168,7 @@ export default function BestPetInsuranceAustraliaPage() {
               excess, and exclusions. Below is how to read each one, and what the two providers we cover publish.
             </p>
             <CodeAnswer code="referlab2mf" className="mt-4">
-              Knose carries the only free-months offer in this comparison: 2 months free for new customers who take out a policy using the code referlab2mf.
+              Of the codes Refer Labs holds, Knose&apos;s referlab2mf is the only free-months offer: 2 months free for new customers who take out a policy.
             </CodeAnswer>
             <OfferSchema code="referlab2mf" />
             <CodeAnswer code="REFERLABS" className="mt-4">

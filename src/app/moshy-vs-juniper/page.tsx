@@ -139,7 +139,7 @@ export default function MoshyVsJuniperPage() {
           clinical care in a coaching program</strong>, and the difference goes deeper than that.
         </p>
         <CodeAnswer code="REFERRAL120" className="mt-6">
-          Juniper&apos;s incentive is a free first consultation rather than a code, while Moshy&apos;s is REFERRAL120: $120 off a new customer&apos;s first order, one use per customer.
+          Juniper&apos;s incentive is a free first consultation rather than a code, while Moshy&apos;s is REFERRAL120, the code Refer Labs holds for Moshy: $120 off a new customer&apos;s first order, one use per customer.
         </CodeAnswer>
         <OfferSchema code="REFERRAL120" />
 
