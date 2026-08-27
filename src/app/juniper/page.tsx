@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
+import FactHistory from "@/components/facts/FactHistory";
 
 export const metadata = generateSEOMetadata(seoConfig.juniper);
 
@@ -445,6 +446,10 @@ export default function JuniperPage() {
             Content is general information, not medical advice, and suitability for any program is decided by a registered Australian practitioner. Juniper&apos;s inclusions and pricing are drawn from Juniper&apos;s own site and can change, so confirm current terms before you commit.
           </p>
         </section>
+      {/* Renders nothing until this subject has a third observation. The slot
+          exists so the series appears here the moment the next re-check lands. */}
+      <FactHistory subject="Juniper" kind="availability_check" hub="weight-loss" route="/juniper" />
+
       </main>
 
       <StickyCta href={JUNIPER_URL} product="Juniper weight-management program" label="Check eligibility" />

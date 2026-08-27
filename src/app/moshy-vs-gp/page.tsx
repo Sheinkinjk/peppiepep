@@ -138,21 +138,6 @@ export default function MoshyVsGpPage() {
           </div>
         </section>
 
-        <section className="space-y-4 mb-10">
-          <h2 className="text-xl font-black">The trade-off</h2>
-          <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
-            Telehealth trades continuity for convenience. Moshy will never know your history the way a GP you have seen
-            for a decade does, and it is not trying to. What it offers instead is the removal of every small barrier
-            between deciding to act and actually acting: no booking lead time, no waiting room, no need to say anything
-            out loud to anyone until a practitioner has already reviewed your details.
-          </p>
-          <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
-            For plenty of men, that difference is the difference between starting and not starting. For others, the
-            GP&apos;s office is the better room. Anything urgent, unusual, or layered on top of other conditions belongs
-            with a doctor in person, full stop.
-          </p>
-        </section>
-
         <div className="rounded-xl border px-6 py-5 mb-12" style={{ borderColor: `${CYAN}40`, background: `${CYAN}0A` }}>
           <p className="text-[#2b362f] text-sm sm:text-base leading-relaxed mb-4">
             If the telehealth route suits your situation, Moshy&apos;s eligibility check is the starting point. Ten
@@ -168,6 +153,21 @@ export default function MoshyVsGpPage() {
             <ArrowRight className="h-4 w-4" />
           </a>
         </div>
+
+        <section className="space-y-4 mb-10">
+          <h2 className="text-xl font-black">The trade-off</h2>
+          <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
+            Telehealth trades continuity for convenience. Moshy will never know your history the way a GP you have seen
+            for a decade does, and it is not trying to. What it offers instead is the removal of every small barrier
+            between deciding to act and actually acting: no booking lead time, no waiting room, no need to say anything
+            out loud to anyone until a practitioner has already reviewed your details.
+          </p>
+          <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
+            For plenty of men, that difference is the difference between starting and not starting. For others, the
+            GP&apos;s office is the better room. Anything urgent, unusual, or layered on top of other conditions belongs
+            with a doctor in person, full stop.
+          </p>
+        </section>
 
         <section className="mb-12">
           <h2 className="text-xl font-black mb-5">Common questions</h2>

@@ -7,6 +7,7 @@ import StickyCta from "@/components/consumer/StickyCta";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 import VerifiedStamp from "@/components/consumer/VerifiedStamp";
 import { MOSHY_OFFER } from "@/lib/offers";
+import FactHistory from "@/components/facts/FactHistory";
 
 export const metadata = generateSEOMetadata(seoConfig.moshyReview);
 
@@ -112,12 +113,6 @@ export default function MoshyReviewPage() {
           <VerifiedStamp date={MOSHY_OFFER.verified} label={`${MOSHY_OFFER.amount} for new customers · verified`} />
         </div>
 
-        <p className="mb-10 rounded-lg border border-[#e5e9e7] bg-[#f5f8f6] px-4 py-3 text-xs leading-relaxed text-[#3d4b44]">
-          <span className="font-semibold text-[#2b362f]">Information only.</span> This page describes a telehealth service.
-          It is not medical advice, does not recommend any treatment, and does not imply suitability for any individual.
-          This page contains an affiliate referral link.
-        </p>
-
         <section className="space-y-4 mb-10">
           <h2 className="text-xl font-black">The short version</h2>
           <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
@@ -135,6 +130,12 @@ export default function MoshyReviewPage() {
             <Cta label="Start your free eligibility check" loc="short-version" />
           </div>
         </section>
+
+        <p className="mb-10 rounded-lg border border-[#e5e9e7] bg-[#f5f8f6] px-4 py-3 text-xs leading-relaxed text-[#3d4b44]">
+          <span className="font-semibold text-[#2b362f]">Information only.</span> This page describes a telehealth service.
+          It is not medical advice, does not recommend any treatment, and does not imply suitability for any individual.
+          This page contains an affiliate referral link.
+        </p>
 
         <section className="space-y-5 mb-10">
           <h2 className="text-xl font-black">What you get</h2>
@@ -220,6 +221,10 @@ export default function MoshyReviewPage() {
           <Link href="/moshy-eligibility" style={{ color: CYAN }} className="hover:opacity-80">The eligibility check, explained →</Link>
           <Link href="/moshy-alternatives" style={{ color: CYAN }} className="hover:opacity-80">Moshy alternatives →</Link>
         </div>
+
+        {/* Renders nothing until this subject has a third observation. The slot
+            exists so the series appears here the moment the next re-check lands. */}
+        <FactHistory subject="Moshy" kind="offer_observation" hub="weight-loss" route="/moshy-review" />
 
         <p className="text-[#9aa39c] text-xs mt-8 leading-relaxed">
           This page is operated by Refer Labs and contains an affiliate referral link. We may earn a commission if you

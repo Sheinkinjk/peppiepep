@@ -7,6 +7,7 @@ import StickyCta from "@/components/consumer/StickyCta";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 import VerifiedStamp from "@/components/consumer/VerifiedStamp";
 import { VERIFIED_DATE } from "@/lib/offers";
+import FactHistory from "@/components/facts/FactHistory";
 
 export const metadata = generateSEOMetadata(seoConfig.moshReview);
 
@@ -233,6 +234,10 @@ export default function MoshReviewPage() {
           <Link href="/best-hair-loss-treatment-australia" style={{ color: CYAN }} className="hover:opacity-80">Best hair-loss treatment, compared →</Link>
           <Link href="/hair-loss" style={{ color: CYAN }} className="hover:opacity-80">The full hair-loss hub →</Link>
         </div>
+
+        {/* Renders nothing until this subject has a third observation. The slot
+            exists so the series appears here the moment the next re-check lands. */}
+        <FactHistory subject="Mosh" kind="offer_observation" hub="hair-loss" route="/mosh-review" />
 
         <p className="text-[#9aa39c] text-xs mt-8 leading-relaxed">
           This page is operated by Refer Labs and contains a disclosed affiliate referral link. We may earn a commission

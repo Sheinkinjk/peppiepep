@@ -5,6 +5,7 @@ import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
+import FactHistory from "@/components/facts/FactHistory";
 
 export const metadata = generateSEOMetadata(seoConfig.moshyAlternatives);
 
@@ -85,12 +86,6 @@ export default function MoshyAlternativesPage() {
           the right fit. The shortlist is genuinely short, and here it is without padding.
         </p>
 
-        <p className="mb-10 rounded-lg border border-[#e5e9e7] bg-[#f5f8f6] px-4 py-3 text-xs leading-relaxed text-[#3d4b44]">
-          <span className="font-semibold text-[#2b362f]">Information only.</span> This page compares services and is not
-          medical advice. Suitability for any provider is assessed individually by registered practitioners. Contains an
-          affiliate link.
-        </p>
-
         {/* Answer-first: the question verbatim, then a liftable summary of the options. */}
         <section className="mb-10">
           <h2 className="text-xl font-black mb-3">What are the best alternatives to Moshy in Australia?</h2>
@@ -105,6 +100,12 @@ export default function MoshyAlternativesPage() {
             </p>
           </div>
         </section>
+
+        <p className="mb-10 rounded-lg border border-[#e5e9e7] bg-[#f5f8f6] px-4 py-3 text-xs leading-relaxed text-[#3d4b44]">
+          <span className="font-semibold text-[#2b362f]">Information only.</span> This page compares services and is not
+          medical advice. Suitability for any provider is assessed individually by registered practitioners. Contains an
+          affiliate link.
+        </p>
 
         <section className="space-y-4 mb-8">
           <h2 className="text-xl font-black">1. Your GP</h2>
@@ -175,6 +176,10 @@ export default function MoshyAlternativesPage() {
           <Link href="/moshy-review" style={{ color: CYAN }} className="hover:opacity-80">Moshy review →</Link>
           <Link href="/online-weight-loss-programs-australia" style={{ color: CYAN }} className="hover:opacity-80">Online programs, untangled →</Link>
         </div>
+
+        {/* Renders nothing until this subject has a third observation. The slot
+            exists so the series appears here the moment the next re-check lands. */}
+        <FactHistory subject="Moshy" kind="offer_observation" hub="weight-loss" route="/moshy-alternatives" />
 
         <p className="text-[#9aa39c] text-xs mt-8 leading-relaxed">
           This page is operated by Refer Labs and contains affiliate referral links to Moshy and Juniper. This post

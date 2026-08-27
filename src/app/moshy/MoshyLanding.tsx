@@ -6,6 +6,7 @@ import { moshyConfig, MOSHY_URL } from "./config";
 import { ArrowRight, Check, ShieldCheck, Stethoscope, Truck, ClipboardList } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
+import FactHistory from "@/components/facts/FactHistory";
 
 // ── Money CTA (tracked: rel=sponsored is picked up by AffiliateClickTracker) ──
 function MoshyCTA({
@@ -288,6 +289,10 @@ export default function MoshyLanding() {
             any health decision.
           </p>
         </section>
+      {/* Renders nothing until this subject has a third observation. The slot
+          exists so the series appears here the moment the next re-check lands. */}
+      <FactHistory subject="Moshy" kind="offer_observation" hub="weight-loss" route="/moshy" />
+
       </main>
 
       <StickyCta href={MOSHY_URL} product="Moshy · weight-loss telehealth" label="Check eligibility" />

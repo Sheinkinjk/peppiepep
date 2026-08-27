@@ -5,6 +5,7 @@ import { CheckCircle2, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import EditorialMeta from "@/components/consumer/EditorialMeta";
+import FactHistory from "@/components/facts/FactHistory";
 
 export const metadata = generateSEOMetadata(seoConfig.moshyVsJuniper);
 
@@ -135,11 +136,6 @@ export default function MoshyVsJuniperPage() {
           ways. The short version: <strong className="text-[#2b362f]">Moshy runs a lean clinical pathway, Juniper wraps
           clinical care in a coaching program</strong>, and the difference goes deeper than that.
         </p>
-        <EditorialMeta lastUpdated="2026-08-13" className="mb-6" />
-        <p className="mb-8 rounded-lg border border-[#e5e9e7] bg-[#f5f8f6] px-4 py-3 text-xs leading-relaxed text-[#3d4b44]">
-          <span className="font-semibold text-[#2b362f]">Information only.</span> This page compares two telehealth services and is not medical advice. It does not recommend any treatment or imply suitability for any individual. Suitability for any program is decided by a registered Australian practitioner.
-        </p>
-
         {/* Answer-first: the buyer's question verbatim as an H2, then a liftable answer. */}
         <h2 className="text-xl sm:text-2xl font-black text-[#10251b] mb-3">Is Moshy or Juniper better for weight loss in Australia?</h2>
         <div className="rounded-xl border px-6 py-5 mb-10" style={{ borderColor: `${CYAN}40`, background: `${CYAN}0A` }}>
@@ -152,6 +148,11 @@ export default function MoshyVsJuniperPage() {
             assess suitability individually through registered Australian practitioners.
           </p>
         </div>
+
+        <EditorialMeta lastUpdated="2026-08-13" className="mb-6" />
+        <p className="mb-8 rounded-lg border border-[#e5e9e7] bg-[#f5f8f6] px-4 py-3 text-xs leading-relaxed text-[#3d4b44]">
+          <span className="font-semibold text-[#2b362f]">Information only.</span> This page compares two telehealth services and is not medical advice. It does not recommend any treatment or imply suitability for any individual. Suitability for any program is decided by a registered Australian practitioner.
+        </p>
 
         {/* Comparison table */}
         <h2 className="text-xl font-black mb-4">Moshy vs Juniper at a glance</h2>
@@ -175,26 +176,6 @@ export default function MoshyVsJuniperPage() {
             </tbody>
           </table>
         </div>
-
-        {/* Prose */}
-        <section className="space-y-4 mb-10">
-          <h2 className="text-xl font-black">The real difference</h2>
-          <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
-            The most useful distinction is philosophy. Moshy keeps the experience deliberately lean: complete the
-            eligibility questionnaire, have a practitioner review your case, and if appropriate, proceed with a treatment
-            plan delivered to your door. For a lot of people who simply want to get started without friction, that focus
-            is the appeal.
-          </p>
-          <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
-            Juniper wraps that clinical care inside a broader program: coaching, habit tracking, and a community, and
-            positions weight management as a longer behavioural project rather than a one-off. If accountability
-            and structure are what tend to make or break your results, that is a meaningful advantage.
-          </p>
-          <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
-            Outcomes from weight-management programs depend on clinical
-            suitability, adherence, and individual factors far more than on which logo is on the box.
-          </p>
-        </section>
 
         {/* Dual CTA */}
         <div className="grid sm:grid-cols-2 gap-4 mb-12">
@@ -241,6 +222,26 @@ export default function MoshyVsJuniperPage() {
           </div>
         </div>
 
+        {/* Prose */}
+        <section className="space-y-4 mb-10">
+          <h2 className="text-xl font-black">The real difference</h2>
+          <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
+            The most useful distinction is philosophy. Moshy keeps the experience deliberately lean: complete the
+            eligibility questionnaire, have a practitioner review your case, and if appropriate, proceed with a treatment
+            plan delivered to your door. For a lot of people who simply want to get started without friction, that focus
+            is the appeal.
+          </p>
+          <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
+            Juniper wraps that clinical care inside a broader program: coaching, habit tracking, and a community, and
+            positions weight management as a longer behavioural project rather than a one-off. If accountability
+            and structure are what tend to make or break your results, that is a meaningful advantage.
+          </p>
+          <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
+            Outcomes from weight-management programs depend on clinical
+            suitability, adherence, and individual factors far more than on which logo is on the box.
+          </p>
+        </section>
+
         {/* FAQ */}
         <section>
           <h2 className="text-xl font-black mb-5">Moshy vs Juniper, FAQ</h2>
@@ -266,6 +267,10 @@ export default function MoshyVsJuniperPage() {
           <Link href="/juniper" style={{ color: CYAN }} className="hover:opacity-80">Juniper review →</Link>
           <Link href="/guides" style={{ color: CYAN }} className="hover:opacity-80">All guides →</Link>
         </div>
+
+        {/* Renders nothing until this subject has a third observation. The slot
+            exists so the series appears here the moment the next re-check lands. */}
+        <FactHistory subject="Moshy" kind="offer_observation" hub="weight-loss" route="/moshy-vs-juniper" />
 
         <p className="text-[#9aa39c] text-xs mt-8 leading-relaxed">
           This post contains affiliate links. If you are a new Juniper patient and make a purchase through these links, I
