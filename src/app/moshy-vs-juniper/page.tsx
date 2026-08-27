@@ -8,6 +8,7 @@ import EditorialMeta from "@/components/consumer/EditorialMeta";
 import FactHistory from "@/components/facts/FactHistory";
 import CodeAnswer from "@/components/offers/CodeAnswer";
 import OfferSchema from "@/components/offers/OfferSchema";
+import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 
 export const metadata = generateSEOMetadata(seoConfig.moshyVsJuniper);
 
@@ -279,10 +280,9 @@ export default function MoshyVsJuniperPage() {
             exists so the series appears here the moment the next re-check lands. */}
         <FactHistory subject="Moshy" kind="offer_observation" hub="weight-loss" route="/moshy-vs-juniper" />
 
-        <p className="text-[#9aa39c] text-xs mt-8 leading-relaxed">
-          This post contains affiliate links. If you are a new Juniper patient and make a purchase through these links, I
-          may earn a small commission at no extra cost to you. Refer Labs also has a disclosed affiliate arrangement with
-          Moshy. Commissions never change what we write. This page does not constitute medical advice. Treatment
+        <AffiliateDisclosure partners={["Moshy", "Juniper"]} className="mt-8" />
+        <p className="text-[#9aa39c] text-xs mt-3 leading-relaxed">
+          This page does not constitute medical advice. Treatment
           suitability is decided by a registered Australian practitioner. Consult a qualified health professional
           before making health decisions.
         </p>

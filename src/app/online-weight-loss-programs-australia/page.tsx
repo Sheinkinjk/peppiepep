@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
+import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 
 export const metadata = generateSEOMetadata(seoConfig.onlineWeightLossPrograms);
 
@@ -210,10 +211,9 @@ export default function OnlineWeightLossProgramsPage() {
           <Link href="/moshy-review" style={{ color: CYAN }} className="hover:opacity-80">Moshy review →</Link>
         </div>
 
-        <p className="text-[#9aa39c] text-xs mt-8 leading-relaxed">
-          This page is operated by Refer Labs and contains affiliate referral links to Moshy and Juniper. This post
-          contains affiliate links: if you are a new Juniper patient and make a purchase through these links, I may earn a
-          small commission at no extra cost to you. Nothing here is medical advice. Prescription medicines in Australia
+        <AffiliateDisclosure partners={["Moshy", "Juniper"]} className="mt-8" />
+        <p className="text-[#9aa39c] text-xs mt-3 leading-relaxed">
+          Nothing here is medical advice. Prescription medicines in Australia
           require individual assessment by a registered practitioner.
         </p>
         <p className="text-[#9aa39c] text-xs mt-4">© 2026 Refer Labs · Australia · <Link href="/guides" className="hover:text-[#3d4b44]">All guides</Link></p>

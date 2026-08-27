@@ -58,7 +58,21 @@ export default function AffiliateDisclosure({
       : "";
 
   return (
-    <p className={`text-[13px] leading-relaxed text-[#6e7b74] ${className}`} data-affiliate-disclosure>
+    <div className={className} data-affiliate-disclosure>
+      {/* Its own <p>, first, and nothing shares the paragraph with it.
+          Measured: of 27 pages carrying a discount code, one stated in prose what
+          Refer Labs is. The rest named a verifier an engine had no definition for.
+          The wording is /about's, verbatim, and matches the Organization
+          description in JSON-LD so prose and schema corroborate.
+          The separate paragraph is the load-bearing part. Inside the disclosure
+          paragraph, an extractor taking a span around "Refer Labs" would return
+          "...publisher. If you sign up through a link we may earn a commission"
+          and turn the entity statement into a monetisation statement. A paragraph
+          boundary puts the span edge where it belongs. Do not merge these two. */}
+      <p className="text-[13px] leading-relaxed text-[#6e7b74]">
+        Refer Labs is an independent Australian comparison publisher.
+      </p>
+      <p className="mt-1.5 text-[13px] leading-relaxed text-[#6e7b74]">
       Some links on this page are affiliate links{named}. If you sign up or buy through one, Refer Labs may earn a
       commission at no extra cost to you, and it never changes a comparison or a conclusion.
       {priceUnaffected ? " It never changes what you pay." : null}
@@ -67,6 +81,7 @@ export default function AffiliateDisclosure({
         : null}
       {noStarRatings ? " We publish no star ratings of our own." : null}
       {extra ? <> {extra}</> : null}
-    </p>
+      </p>
+    </div>
   );
 }

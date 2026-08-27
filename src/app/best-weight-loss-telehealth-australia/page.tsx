@@ -13,6 +13,7 @@ import { MOSHY_OFFER, DEALS } from "@/lib/offers";
 import OffersTable from "@/components/lending/OffersTable";
 import CodeAnswer from "@/components/offers/CodeAnswer";
 import OfferSchema from "@/components/offers/OfferSchema";
+import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 
 export const metadata = generateSEOMetadata(seoConfig.bestWeightLossTelehealth);
 
@@ -617,8 +618,9 @@ export default function BestWeightLossTelehealthPage() {
 
           {/* ── Disclaimer + internal links ───────────────────────────────────── */}
           <section className="border-t border-[#e5e9e7] py-8 pb-16">
+            <AffiliateDisclosure partners={["Moshy", "Juniper"]} className="mb-3 max-w-2xl" />
             <p className="text-[#9aa39c] text-xs leading-relaxed max-w-2xl">
-              This page is operated by Refer Labs and contains affiliate referral links to Moshy and Juniper. This post contains affiliate links: if you are a new Juniper patient and make a purchase through these links, I may earn a small commission at no extra cost to you. Pilot is linked without an affiliate arrangement. All content on this page is for informational purposes only and does not constitute medical advice. Suitability for any weight management programme depends on individual health factors. Consult a qualified health professional before starting any treatment.
+              Pilot is linked without an affiliate arrangement. All content on this page is for informational purposes only and does not constitute medical advice. Suitability for any weight management programme depends on individual health factors. Consult a qualified health professional before starting any treatment.
             </p>
             <div className="mt-4 flex flex-wrap gap-3">
               <Link href="/moshy" className="text-xs hover:opacity-80 transition-opacity" style={{ color: `${CYAN_LT}50` }}>
