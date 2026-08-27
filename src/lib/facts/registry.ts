@@ -3,10 +3,22 @@ import type { Fact, FactKind } from './types';
 /**
  * The observation log.
  *
- * SEEDING RULE, and it is the whole point of this file: every record here was
- * transcribed from a dated observation already published on the live site. No
- * record was created because a fact seemed true, and no `observedAt` was
- * inferred from a file date, a git commit or a build timestamp.
+ * PROVENANCE RULE, and it is the whole point of this file: no record was
+ * created because a fact seemed true, and no `observedAt` was inferred from a
+ * file date, a git commit or a build timestamp. Every record names where its
+ * date came from, in a `// Source:` comment, and there are exactly two ways it
+ * can have come:
+ *
+ *   1. Transcribed from a dated observation already published on this site.
+ *      The comment quotes the sentence and names the page. Eight records.
+ *   2. Created from a live reading of the provider's own page on the stated
+ *      day. The comment names the URL read and says it was a reading rather
+ *      than a transcription, because the two are different evidence and a
+ *      reader cannot tell them apart from the record alone. Six records, all
+ *      from the re-check of 26 August 2026.
+ *
+ * A record with no `// Source:` comment is a bug. It means nobody can tell
+ * whether the observation happened, which makes the whole log worthless.
  *
  * Facts published without an explicit date were skipped rather than
  * back-filled. Several were: the federal rebate figures on the Apollo pages
@@ -17,9 +29,11 @@ import type { Fact, FactKind } from './types';
  * a read date, but its subject is a statistical release rather than a provider
  * offer, so it does not fit any of the four kinds.
  *
- * Nine of the ten seeded dates come from prose that names both the source and
- * the day. Where the live page does not print a URL, `sourceUrl` is omitted
- * rather than guessed.
+ * Fourteen records: eight transcribed, six read live. `sourceUrl` is populated
+ * only where the URL belongs on the page as a public link. The three health
+ * records read on 26 August were read off referral landing pages, so their URL
+ * is named in the comment and left out of the field: it would render on /data
+ * as an undisclosed affiliate link.
  */
 export const FACTS: Fact[] = [
   // ── hair-loss ────────────────────────────────────────────────────────────
@@ -133,6 +147,10 @@ export const FACTS: Fact[] = [
   // and kind. Every claim below is identical to the one it supersedes, which is
   // the point: an unchanged claim on a new date is evidence the figure held, and
   // it is only evidence if the re-check actually happened.
+  //
+  // Unlike the eight above, these were not transcribed from copy published on
+  // this site: each was created from opening the provider's own page on
+  // 26 August 2026 and reading it. Each comment names the URL that was read.
   {
     id: 'mosh-offer-2026-08-26',
     kind: 'offer_observation',
@@ -143,6 +161,10 @@ export const FACTS: Fact[] = [
     method: "Read the offer on Mosh's own hair-loss page.",
     claim: 'Mosh gave Refer Labs readers 55% off a first order through the link on this site.',
     supersedes: 'mosh-offer-2026-08-17',
+    // Source: read live from https://www.getmosh.com.au/start/referlabs on
+    // 26 August 2026. Created from that reading, not transcribed from copy
+    // published on this site. URL kept out of `sourceUrl`: it is a referral
+    // landing page and would render on /data as an undisclosed affiliate link.
   },
   {
     id: 'moshy-offer-2026-08-26',
@@ -155,6 +177,11 @@ export const FACTS: Fact[] = [
     claim:
       "The code REFERRAL120 took $120 off a new customer's first order, one use per customer, on a practitioner-assigned weight-loss program.",
     supersedes: 'moshy-offer-2026-08-17',
+    // Source: read live from
+    // https://www.getmoshy.com.au/start/eligibility-check-moshy on 26 August
+    // 2026. Created from that reading, not transcribed from copy published on
+    // this site. URL kept out of `sourceUrl` for the same reason as the Mosh
+    // record above.
   },
   {
     id: 'juniper-availability-2026-08-26',
@@ -166,6 +193,10 @@ export const FACTS: Fact[] = [
     method: "Looked for published pricing on Juniper's own site.",
     claim: 'Juniper published no pricing publicly at the time of the check.',
     supersedes: 'juniper-availability-2026-07-21',
+    // Source: read live from https://www.myjuniper.com on 26 August 2026, the
+    // live site (myjuniper.com.au is parked). Created from that reading, not
+    // transcribed from copy published on this site. A null result: the check
+    // is that no price was published, so there is no figure to cite.
   },
   {
     id: 'ecoflow-price-2026-08-26',
@@ -178,6 +209,9 @@ export const FACTS: Fact[] = [
     sourceUrl: 'https://au.ecoflow.com/',
     claim: 'EcoFlow listed portable power stations from A$299 to A$7,299 on its Australian store.',
     supersedes: 'ecoflow-price-2026-08-24',
+    // Source: read live from https://au.ecoflow.com/ on 26 August 2026. Created
+    // from that reading, not transcribed from copy published on this site. The
+    // range was unchanged from the 24 August reading it supersedes.
   },
   {
     id: 'anker-solix-price-2026-08-26',
@@ -190,6 +224,9 @@ export const FACTS: Fact[] = [
     sourceUrl: 'https://www.ankersolix.com/au',
     claim: 'Anker SOLIX listed portable power stations from A$449 to A$5,399 on its Australian store.',
     supersedes: 'anker-solix-price-2026-08-24',
+    // Source: read live from https://www.ankersolix.com/au on 26 August 2026.
+    // Created from that reading, not transcribed from copy published on this
+    // site. The range was unchanged from the 24 August reading it supersedes.
   },
   {
     id: 'anker-solix-availability-2026-08-26',
@@ -203,6 +240,10 @@ export const FACTS: Fact[] = [
     claim:
       'Anker SOLIX advertised a sale of up to 55% off running 17 August to 7 September 2026, and showed a single price rather than a struck-through one on each power station.',
     supersedes: 'anker-solix-availability-2026-08-24',
+    // Source: read live from https://www.ankersolix.com/au on 26 August 2026,
+    // the same visit that produced the price record above. Created from that
+    // reading, not transcribed from copy published on this site. The banner and
+    // the single-price presentation were unchanged from 24 August.
   },
 ];
 

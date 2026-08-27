@@ -63,7 +63,7 @@ export default function DataPage() {
     '@type': 'Dataset',
     name: 'Refer Labs observation log',
     description:
-      'Dated first-party observations of Australian provider offers and prices, recorded on a weekly cadence. Each record states the date it was read, the person who read it and the method used.',
+      'Dated first-party observations of Australian provider offers and prices. Each record states the date it was read, the person who read it and the method used. Re-checks are intended weekly; the records are the log of what has actually been checked.',
     url: `${SITE_URL}/data`,
     inLanguage: 'en-AU',
     isAccessibleForFree: true,
@@ -89,9 +89,9 @@ export default function DataPage() {
 
         <p className="mt-5 text-lg leading-relaxed text-[#2b362f]">
           Every entry below is a first-party observation: something a person at Refer Labs read on a
-          provider&apos;s own page, on a stated date, recorded as it appeared. Offers and prices are
-          re-checked on a weekly cadence, and each check is logged here rather than overwriting the
-          last one, so a figure can be traced to the day it was seen.
+          provider&apos;s own page, on a stated date, recorded as it appeared. Each check is logged
+          here rather than overwriting the last one, so a figure can be traced to the day it was
+          seen, and the dates below are the record of what has actually been checked and when.
         </p>
 
         <p className="mt-4 text-[15px] leading-relaxed text-[#3d4b44]">
@@ -105,7 +105,8 @@ export default function DataPage() {
           {span ? `This log began on ${formatObserved(span.earliest)}.` : 'This log has just begun.'}{' '}
           We record what we see on a provider&apos;s own site, on the day we see it, and we record it
           again when nothing has changed: an unchanged figure on a new date is evidence that it held.
-          The log is short because it is new. It is re-checked weekly and grows from here.
+          The log is short because it is new. Weekly re-checks are what we are aiming for; the dates
+          above are what has happened so far.
         </p>
 
         {HUB_ORDER.map((hub) => {

@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Check, ShieldCheck, BatteryCharging, HandCoins, Wrench, BadgeCheck } from "lucide-react";
+import { Check, ShieldCheck, BatteryCharging, HandCoins, Wrench } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import { SITE_URL, SCHEMA_AUTHOR, SCHEMA_PUBLISHER } from "@/lib/seo";
-import { VERIFIED_FULL } from "@/lib/offers";
 import ApolloEoiForm from "@/components/apollo/ApolloEoiForm";
 
 const URL = `${SITE_URL}/apollo-energy-group-eoi`;
@@ -158,11 +157,12 @@ export default function ApolloEoiPage() {
             </div>
 
             <div id="register" className="scroll-mt-24 lg:sticky lg:top-24">
-              <div className="mb-4 flex items-baseline justify-between">
+              {/* The "Verified <VERIFIED_FULL>" badge that sat here has been removed. VERIFIED_FULL
+                  is the global offers-table sweep date, and Apollo's DEALS row carries no per-offer
+                  `verified`, so the badge stamped a date on which nothing about this offer was
+                  actually checked. Add it back only with a real Apollo check date. */}
+              <div className="mb-4">
                 <h2 className="text-lg font-extrabold tracking-tight text-[#10251b]">Register your interest</h2>
-                <span className="inline-flex items-center gap-1 text-[12px] font-medium text-[#0a7c42]">
-                  <BadgeCheck className="h-3.5 w-3.5" aria-hidden="true" /> Verified {VERIFIED_FULL}
-                </span>
               </div>
               <ApolloEoiForm />
             </div>

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
+import { generateMetadata as generateSEOMetadata, SITE_URL, SCHEMA_AUTHOR, SCHEMA_PUBLISHER } from "@/lib/seo";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import LeadForm from "@/components/lending/LeadForm";
 import CommissionDisclosure from "@/components/lending/CommissionDisclosure";
@@ -113,8 +113,8 @@ export default async function LenderReviewPage({ params }: { params: Promise<{ l
     about: l.name,
     url,
     dateModified: LENDING_LAST_UPDATED,
-    author: { "@type": "Organization", name: "Refer Labs" },
-    publisher: { "@type": "Organization", name: "Refer Labs", url: SITE_URL },
+    author: SCHEMA_AUTHOR,
+    publisher: SCHEMA_PUBLISHER,
   };
 
   const headToHeads = LENDER_COMPARISONS.filter((c) => c.a === l.slug || c.b === l.slug);

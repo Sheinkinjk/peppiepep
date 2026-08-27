@@ -3,7 +3,7 @@ import { ArrowRight, ShieldCheck } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
 import EditorialMeta from "@/components/consumer/EditorialMeta";
-import { SITE_URL } from "@/lib/seo";
+import { SITE_URL, SCHEMA_AUTHOR, SCHEMA_PUBLISHER } from "@/lib/seo";
 import { MOSH_HAIR_URL } from "@/lib/affiliate-links";
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -45,8 +45,8 @@ export function hairLossGuideSchemas(cfg: HairLossGuideConfig) {
       headline: cfg.h1,
       url,
       dateModified: "2026-07-20",
-      author: { "@type": "Organization", name: "Refer Labs" },
-      publisher: { "@type": "Organization", name: "Refer Labs", url: SITE_URL },
+      author: SCHEMA_AUTHOR,
+      publisher: SCHEMA_PUBLISHER,
     },
     {
       "@context": "https://schema.org",

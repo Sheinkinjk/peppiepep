@@ -10,9 +10,11 @@ export default async function PaymentSuccessPage({ searchParams }: PageProps) {
   const params = await searchParams;
   const sessionId = params.session_id;
 
-  // Redirect to dashboard if no session ID provided
+  // The dashboard was deleted with the retired SaaS (Aug 2026), so this used to
+  // land the visitor on a 404 immediately after paying. Home is the nearest live
+  // page.
   if (!sessionId) {
-    redirect("/dashboard");
+    redirect("/");
   }
 
   // Verify the payment session with Stripe server-side
@@ -122,10 +124,10 @@ export default async function PaymentSuccessPage({ searchParams }: PageProps) {
         {/* Action Buttons */}
         <div className="space-y-3">
           <Link
-            href="/dashboard"
+            href="/"
             className="inline-block w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold py-3.5 px-6 rounded-xl hover:from-blue-700 hover:to-blue-800 transition-all shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40"
           >
-            Go to Dashboard
+            Back to Refer Labs
           </Link>
 
           <Link

@@ -20,8 +20,6 @@ const articleSchema = comparisonArticleSchema({
   url: "https://referlabs.com.au/moshy-vs-pilot",
   datePublished: "2026-07-06",
   dateModified: "2026-08-06",
-  authorDescription:
-    "Independent Australian comparison publisher. Compares providers on published facts, with no paid rankings and commercial relationships disclosed.",
 });
 
 const breadcrumbSchema = {

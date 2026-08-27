@@ -18,8 +18,6 @@ const articleSchema = comparisonArticleSchema({
   url: "https://referlabs.com.au/hair-loss-treatment-cost-australia",
   datePublished: "2026-07-17",
   dateModified: "2026-08-14",
-  authorDescription:
-    "Independent Australian comparison publisher. Compares providers on published facts, with no paid rankings and commercial relationships disclosed.",
 });
 
 const breadcrumbSchema = {

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
+import { generateMetadata as generateSEOMetadata, SITE_URL, SCHEMA_AUTHOR, SCHEMA_PUBLISHER } from "@/lib/seo";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 
 const URL = `${SITE_URL}/what-a-business-loan-actually-costs`;
@@ -58,8 +58,8 @@ const articleSchema = {
   headline: "What a business loan actually costs in Australia",
   url: URL,
   dateModified: "2026-07-20",
-  author: { "@type": "Organization", name: "Refer Labs" },
-  publisher: { "@type": "Organization", name: "Refer Labs", url: SITE_URL },
+  author: SCHEMA_AUTHOR,
+  publisher: SCHEMA_PUBLISHER,
 };
 
 export default function CostGuide() {

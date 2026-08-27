@@ -124,8 +124,8 @@ async function runProxy(request: NextRequest) {
   }
 
   // The dashboard it used to guard is gone with the retired SaaS (Aug 2026).
-  // Anything under /dashboard now 404s, which is the honest answer for a product
-  // that no longer exists, and there is nothing left to gate.
+  // Anything under /dashboard now 404s, because the product no longer exists and
+  // there is nothing left to gate.
 
   // Already signed in and hitting /login: send them on rather than showing a form
   if (request.nextUrl.pathname === '/login' && user) {

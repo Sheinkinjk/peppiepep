@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
+import { generateMetadata as generateSEOMetadata, SITE_URL, SCHEMA_AUTHOR, SCHEMA_PUBLISHER } from "@/lib/seo";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 
 const URL = `${SITE_URL}/true-cost-of-business-loans-australia`;
@@ -80,8 +80,8 @@ const articleSchema = {
   headline: "The hidden cost of factor rates: what business loans really cost in Australia",
   url: URL,
   dateModified: "2026-07-20",
-  author: { "@type": "Organization", name: "Refer Labs" },
-  publisher: { "@type": "Organization", name: "Refer Labs", url: SITE_URL },
+  author: SCHEMA_AUTHOR,
+  publisher: SCHEMA_PUBLISHER,
 };
 
 export default function FactorRateStudy() {

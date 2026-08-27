@@ -160,10 +160,10 @@ export default async function PaymentCancelPage({ searchParams }: PageProps) {
           </Link>
 
           <Link
-            href="/dashboard"
+            href="/"
             className="inline-block w-full bg-white text-gray-700 font-semibold py-3 px-6 rounded-xl border-2 border-gray-200 hover:border-gray-300 hover:bg-gray-50 transition-colors"
           >
-            Go to Dashboard
+            Back to Refer Labs
           </Link>
 
           <Link

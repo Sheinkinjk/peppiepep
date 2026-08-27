@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
-import { formatVerifiedFull, VERIFIED_DATE } from "@/lib/offers";
+import { formatVerifiedFull } from "@/lib/offers";
 
 /**
  * The current offer, stated high on a category hub.
@@ -42,7 +42,13 @@ export default function HubOffer({
   dataCta: string;
   moreHref: string;
   moreLabel: string;
-  verified?: string;
+  /**
+   * Required, and deliberately not defaulted. It used to fall back to the global
+   * VERIFIED_DATE, which meant a caller that forgot it published "read off the
+   * provider's own page on <date>" for a check nobody ran on that provider.
+   * A date this specific has to come from a real reading of that provider's page.
+   */
+  verified: string;
 }) {
   return (
     <section className="mx-auto max-w-6xl px-5 pt-2 sm:px-8">
@@ -82,7 +88,7 @@ export default function HubOffer({
         </div>
 
         <p className="mt-4 text-[11px] font-medium text-[#6e7b74]">
-          Read off the provider&apos;s own page on {formatVerifiedFull(verified ?? VERIFIED_DATE)}. Offers can change,
+          Read off the provider&apos;s own page on {formatVerifiedFull(verified)}. Offers can change,
           so check the current terms before you sign up.
         </p>
       </div>

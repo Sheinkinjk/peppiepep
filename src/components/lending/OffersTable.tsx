@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { DEALS, VERIFIED_FULL, VERIFIED_DATE, formatVerifiedFull } from "@/lib/offers";
+import { DEALS, formatVerifiedFull } from "@/lib/offers";
 
 /**
  * Structured, AI-extractable offers table (Provider / Saving / Code / Status /
@@ -58,14 +58,21 @@ export default function OffersTable({
                 )}
               </td>
               <td className="px-4 py-3"><span className="inline-flex items-center gap-1 font-medium text-[#0a7c42]">Active ✓</span></td>
-              <td className="px-4 py-3 whitespace-nowrap tabular-nums">{formatVerifiedFull(d.verified ?? VERIFIED_DATE)}</td>
+              {/* No fallback to the global sweep date. The footnote below promises
+                  each date is a reading of that provider's own page, and rows without
+                  a per-offer `verified` (Apollo, Knose, Pipedrive) were inheriting the
+                  site-wide stamp and presenting it as such a reading. */}
+              <td className="px-4 py-3 whitespace-nowrap tabular-nums">
+                {d.verified ? formatVerifiedFull(d.verified) : <span className="text-[#6e7b74]">Not recorded</span>}
+              </td>
             </tr>
           ))}
         </tbody>
       </table>
       <p className="border-t border-[#eef1ef] bg-[#f8faf9] px-4 py-2.5 text-xs text-[#6e7b74]">
         Each offer shows the date we last read it off that provider’s own page, rather than a single site-wide
-        stamp, so you can see exactly how current each one is. &ldquo;No code needed&rdquo; means the offer applies
+        stamp, so you can see exactly how current each one is. &ldquo;Not recorded&rdquo; means we have not logged a
+        reading date for that one yet. &ldquo;No code needed&rdquo; means the offer applies
         automatically through our link. Offers can change; figures are indicative, not a guarantee. Some links are
         affiliate links, at no cost to you.
       </p>

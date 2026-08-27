@@ -2183,7 +2183,7 @@ export const seoConfig = {
   data: {
     title: "Observation Log: Dated Checks of Australian Provider Offers | Refer Labs",
     description:
-      "A dated log of first-party observations of Australian provider offers and prices, recorded on a weekly cadence. Each entry names the date it was read, who read it and the method, so any figure can be traced to the day it was seen.",
+      "A dated log of first-party observations of Australian provider offers and prices. Each entry names the date it was read, who read it and the method, so any figure can be traced to the day it was seen. New, and short: the dates are the record of what has been checked so far.",
     url: `${SITE_URL}/data`,
     keywords: [
       "refer labs observation log",
@@ -2819,14 +2819,6 @@ export function comparisonArticleSchema(input: {
   url: string;
   datePublished: string;
   dateModified: string;
-  /**
-   * Overrides the author description. The default claims pricing is checked
-   * against provider sites with the date recorded, which is only true of pages
-   * that actually show prices and a checked date. Structured data must not
-   * claim more than the page it sits on can show, so pages without that carry
-   * the site-wide description instead.
-   */
-  authorDescription?: string;
 }) {
   return {
     "@context": "https://schema.org",
@@ -2838,30 +2830,13 @@ export function comparisonArticleSchema(input: {
     inLanguage: "en-AU",
     datePublished: input.datePublished,
     dateModified: input.dateModified,
-    // A named person rather than a bare organisation string: health and money
-    // pages are weighed on accountability, and "who stands behind this" is a
-    // question an org name does not answer. Verifiable facts only.
-    author: {
-      "@type": "Person",
-      name: "Jarred Krowitz",
-      jobTitle: "Founder",
-      url: `${SITE_URL}/about`,
-      email: "jarred@referlabs.com.au",
-      worksFor: {
-        "@type": "Organization",
-        name: SITE_NAME,
-        url: SITE_URL,
-        description:
-          input.authorDescription ??
-          "Independent Australian comparison publisher. Compares providers on published facts, with pricing checked against provider sites and the date recorded.",
-      },
-    },
-    publisher: {
-      "@type": "Organization",
-      name: SITE_NAME,
-      url: SITE_URL,
-      logo: { "@type": "ImageObject", url: `${SITE_URL}/logo.svg` },
-    },
+    // By @id, per the rule at the top of this file. Inlining them here defeated
+    // it: 38 Article nodes carried a Person named "Jarred Krowitz, Founder"
+    // pointing at /about, while the author page publishes "Jarred, Editor" at
+    // /authors/jarred#person, so one person read as two entities and the
+    // publisher as 38 near-duplicate organisations.
+    author: SCHEMA_AUTHOR,
+    publisher: SCHEMA_PUBLISHER,
     isAccessibleForFree: true,
   };
 }

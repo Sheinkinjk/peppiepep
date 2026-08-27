@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import { authorById } from '@/lib/entities/authors';
 import type { Fact } from '@/lib/facts/types';
 
@@ -34,7 +36,15 @@ export default function CitableFact({ fact }: { fact: Fact }) {
     >
       <p className="text-[15px] leading-relaxed text-[#2b362f]">{fact.claim}</p>
       <figcaption className="mt-2 text-[13px] leading-relaxed text-[#6e7b74]">
-        Observed by {authorName},{' '}
+        Observed by{' '}
+        {author ? (
+          <Link href={`/authors/${author.id}`} className="text-[#0a7c42] underline-offset-2 hover:underline">
+            {authorName}
+          </Link>
+        ) : (
+          authorName
+        )}
+        ,{' '}
         <time dateTime={fact.observedAt}>{formatObserved(fact.observedAt)}</time>. Method:{' '}
         {fact.method}
         {fact.sourceUrl ? (

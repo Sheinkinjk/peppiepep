@@ -3,7 +3,7 @@ import { ArrowRight, BadgeCheck, ShieldCheck, Wrench } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
 import EditorialMeta from "@/components/consumer/EditorialMeta";
-import { SITE_URL } from "@/lib/seo";
+import { SITE_URL, SCHEMA_AUTHOR, SCHEMA_PUBLISHER } from "@/lib/seo";
 import { APOLLO_ENERGY_LEAD_HREF } from "@/lib/affiliate-links";
 import OffersTable from "@/components/lending/OffersTable";
 import { DEALS } from "@/lib/offers";
@@ -52,8 +52,8 @@ export function apolloGuideSchemas(cfg: ApolloGuideConfig) {
       headline: cfg.h1,
       url,
       dateModified: "2026-07-20",
-      author: { "@type": "Organization", name: "Refer Labs" },
-      publisher: { "@type": "Organization", name: "Refer Labs", url: SITE_URL },
+      author: SCHEMA_AUTHOR,
+      publisher: SCHEMA_PUBLISHER,
     },
     {
       "@context": "https://schema.org",

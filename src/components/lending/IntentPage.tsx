@@ -4,7 +4,7 @@ import EditorialMeta from "@/components/consumer/EditorialMeta";
 import LenderTable from "@/components/lending/LenderTable";
 import CommissionDisclosure from "@/components/lending/CommissionDisclosure";
 import { LENDERS, type Lender } from "@/lib/lenders";
-import { SITE_URL } from "@/lib/seo";
+import { SITE_URL, SCHEMA_AUTHOR, SCHEMA_PUBLISHER } from "@/lib/seo";
 import { LENDING_LAST_UPDATED, type Product } from "@/lib/lending-schema";
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -56,8 +56,8 @@ export function intentSchemas(cfg: IntentConfig) {
   };
   const main = cfg.kind === "guide"
     ? { "@context": "https://schema.org", "@type": "Article", headline: cfg.h1, url, dateModified: LENDING_LAST_UPDATED,
-        author: { "@type": "Organization", name: "Refer Labs" }, publisher: { "@type": "Organization", name: "Refer Labs", url: SITE_URL } }
-    : { "@context": "https://schema.org", "@type": "WebPage", name: cfg.h1, url, publisher: { "@type": "Organization", name: "Refer Labs", url: SITE_URL } };
+        author: SCHEMA_AUTHOR, publisher: SCHEMA_PUBLISHER }
+    : { "@context": "https://schema.org", "@type": "WebPage", name: cfg.h1, url, publisher: SCHEMA_PUBLISHER };
   return [breadcrumb, faq, main];
 }
 

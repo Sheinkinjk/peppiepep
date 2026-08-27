@@ -89,9 +89,9 @@ export default function ResetPasswordPage() {
 
       setSuccess(true);
 
-      // Redirect to dashboard after 2 seconds
+      // Home, not the dashboard: that was deleted with the retired SaaS (Aug 2026).
       setTimeout(() => {
-        router.push("/dashboard");
+        router.push("/");
       }, 2000);
     } catch (err: unknown) {
       const message =

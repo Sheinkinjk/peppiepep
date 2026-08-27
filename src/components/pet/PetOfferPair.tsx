@@ -34,6 +34,11 @@ export default function PetOfferPair({ ctaPrefix }: { ctaPrefix: string }) {
             Use the code <strong className="text-[#10251b]">referlab2mf</strong> through our link. Cover, waiting
             periods, exclusions and limits are in Knose&apos;s PDS, so get a quote to see what would apply to your pet.
           </p>
+          {/* TODO(editorial): no date for the Knose offer exists anywhere in this repo. Its DEALS row
+              in offers.ts carries no `verified`, unlike PetsOnMe's, and no page states when the offer
+              was last read. Re-read it on Knose's own page, add `verified` to the DEALS row, then
+              state the date here the way the PetsOnMe block below does. Inventing one is the exact
+              fault this component was extracted to stop. */}
           <div className="mt-6 flex flex-wrap items-center gap-3">
             <a
               href={KNOSE_URL}
@@ -67,6 +72,10 @@ export default function PetOfferPair({ ctaPrefix }: { ctaPrefix: string }) {
             hereditary conditions to $2,300 a year) and Deluxe ($20,000, hereditary to $3,800 and select dental to
             $500). All three pay 80% of the eligible vet bill less a $100, $200 or $300 excess. Underwritten by
             Pacific International Insurance.
+          </p>
+          <p className="mt-2 text-[11px] font-medium text-[#6e7b74]">
+            Figures are from PetsOnMe&apos;s own compare-cover page, checked 17 August 2026. Offers can change, so
+            check the current terms before you sign up.
           </p>
           <p className="mt-3 rounded-lg border border-[#cfe6da] bg-[#e8f5ee] px-4 py-3 text-sm leading-relaxed text-[#2b362f]">
             <span className="font-semibold text-[#10251b]">The code. </span>

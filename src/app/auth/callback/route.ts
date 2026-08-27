@@ -37,8 +37,10 @@ export async function GET(request: NextRequest) {
   const nextParam = requestUrl.searchParams.get("next");
   const nextPath =
     nextParam && nextParam.startsWith("/") && !nextParam.startsWith("//")
+      // The dashboard went with the retired SaaS (Aug 2026); "/" is the fallback
+      // so a completed sign-in does not land on a 404.
       ? nextParam
-      : "/dashboard";
+      : "/";
 
   try {
     const code = requestUrl.searchParams.get('code')

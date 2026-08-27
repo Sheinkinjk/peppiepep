@@ -1,4 +1,10 @@
-import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
+import {
+  generateMetadata as generateSEOMetadata,
+  seoConfig,
+  SITE_URL,
+  SCHEMA_AUTHOR,
+  SCHEMA_PUBLISHER,
+} from "@/lib/seo";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
@@ -40,7 +46,8 @@ const articleSchema = {
   mainEntityOfPage: `${SITE_URL}${SLUG}`,
   inLanguage: "en-AU",
   dateModified: UPDATED,
-  publisher: { "@type": "Organization", name: "Refer Labs", url: SITE_URL },
+  author: SCHEMA_AUTHOR,
+  publisher: SCHEMA_PUBLISHER,
 };
 
 const faqs: { q: string; a: string }[] = [

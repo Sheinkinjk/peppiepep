@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
-import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
+import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, SCHEMA_AUTHOR, SCHEMA_PUBLISHER } from "@/lib/seo";
 import { APOLLO_ENERGY_LEAD_HREF } from "@/lib/affiliate-links";
 
 export const metadata = generateSEOMetadata(seoConfig.apolloEnergyReview);
@@ -55,8 +55,8 @@ const articleSchema = {
   inLanguage: "en-AU",
   datePublished: "2026-07-15",
   dateModified: "2026-07-15",
-  author: { "@type": "Organization", name: "Refer Labs", url: SITE_URL },
-  publisher: { "@type": "Organization", name: "Refer Labs", url: SITE_URL },
+  author: SCHEMA_AUTHOR,
+  publisher: SCHEMA_PUBLISHER,
   mainEntityOfPage: seoConfig.apolloEnergyReview.url,
 };
 
