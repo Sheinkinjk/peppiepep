@@ -11,6 +11,8 @@ import VerifiedStamp from "@/components/consumer/VerifiedStamp";
 import FeatureMatrix from "@/components/consumer/FeatureMatrix";
 import { MOSHY_OFFER, DEALS } from "@/lib/offers";
 import OffersTable from "@/components/lending/OffersTable";
+import CodeAnswer from "@/components/offers/CodeAnswer";
+import OfferSchema from "@/components/offers/OfferSchema";
 
 export const metadata = generateSEOMetadata(seoConfig.bestWeightLossTelehealth);
 
@@ -379,6 +381,11 @@ export default function BestWeightLossTelehealthPage() {
             <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl mb-3">
               Moshy and Juniper are two of the most-used weight-management platforms in Australia, but they take different approaches. Moshy runs a lean clinical pathway, open to anyone eligible. Juniper wraps clinical care in a coaching program and markets primarily to women.
             </p>
+            <CodeAnswer code="REFERRAL120" className="mt-6">
+              Of the providers compared here, only Moshy carries a Refer Labs code: REFERRAL120, worth $120 off a new customer&apos;s first order, one use per customer.
+            </CodeAnswer>
+            <OfferSchema code="REFERRAL120" />
+
             <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl mb-5">
               Below: what each platform actually does, who it suits, and how to access each eligibility flow. This page does not constitute medical advice. Suitability is assessed individually by each platform&apos;s clinical team.
             </p>

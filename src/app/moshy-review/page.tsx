@@ -8,6 +8,8 @@ import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 import VerifiedStamp from "@/components/consumer/VerifiedStamp";
 import { MOSHY_OFFER } from "@/lib/offers";
 import FactHistory from "@/components/facts/FactHistory";
+import CodeAnswer from "@/components/offers/CodeAnswer";
+import OfferSchema from "@/components/offers/OfferSchema";
 
 export const metadata = generateSEOMetadata(seoConfig.moshyReview);
 
@@ -109,6 +111,11 @@ export default function MoshyReviewPage() {
           A plain walkthrough of how Moshy works: what you get, what happens when you apply, and how to start the free
           eligibility check.
         </p>
+        <CodeAnswer code="REFERRAL120" className="mt-6">
+          A new Moshy customer starting here gets $120 off a first order, applied by the code REFERRAL120, once per customer.
+        </CodeAnswer>
+        <OfferSchema code="REFERRAL120" />
+
         <div className="mb-6">
           <VerifiedStamp date={MOSHY_OFFER.verified} label={`${MOSHY_OFFER.amount} for new customers · verified`} />
         </div>

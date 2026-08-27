@@ -6,6 +6,8 @@ import MatchPrompt from "@/components/consumer/MatchPrompt";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, SCHEMA_AUTHOR, SCHEMA_PUBLISHER } from "@/lib/seo";
 import { MOSH_HAIR_URL, DENSE_URL } from "@/lib/affiliate-links";
+import CodeAnswer from "@/components/offers/CodeAnswer";
+import OfferSchema from "@/components/offers/OfferSchema";
 
 export const metadata = generateSEOMetadata(seoConfig.hairLossHub);
 
@@ -98,6 +100,11 @@ export default function HairLossHubPage() {
               Prescription telehealth, topical products, and everything marketed in between. This hub separates the
               clinical route from the cosmetic one so you know which you are actually looking at.
             </p>
+            <CodeAnswer code="REFERAL55" className="mt-6">
+              The current Mosh offer for new customers is 55% off a first order with the code REFERAL55, applied by the link on this page.
+            </CodeAnswer>
+            <OfferSchema code="REFERAL55" />
+
           </div>
         </section>
 

@@ -5,6 +5,8 @@ import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
 import FactHistory from "@/components/facts/FactHistory";
+import CodeAnswer from "@/components/offers/CodeAnswer";
+import OfferSchema from "@/components/offers/OfferSchema";
 
 export const metadata = generateSEOMetadata(seoConfig.moshVsDense);
 
@@ -146,6 +148,11 @@ export default function MoshVsDensePage() {
               shampoos, conditioners, serums, and scalp treatments aimed at density and scalp health. One is a clinical route and the other is a topical one. Below we set out the difference, who each suits, and how
               to think about starting.
             </p>
+            <CodeAnswer code="REFERAL55" className="mt-6">
+              Dense has no Refer Labs code, while Mosh&apos;s REFERAL55 gives new customers 55% off a first order.
+            </CodeAnswer>
+            <OfferSchema code="REFERAL55" />
+
             <p className="text-[#9aa39c] text-xs leading-relaxed max-w-2xl mb-7">
               Information only, not medical advice. Prescription hair-loss treatment is available only after an individual
               assessment by a registered Australian practitioner, with suitability practitioner-decided and never

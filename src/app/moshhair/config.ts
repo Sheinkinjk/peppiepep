@@ -65,7 +65,7 @@ export const moshHairConfig: AffiliatePageConfig = {
     h1Prefix: "Mosh discount code Australia:",
     h1Highlight: "55% off your first order",
     subheading:
-      "If you're weighing up Mosh for hair loss, here's what matters before you start: how the service actually works, what it really costs, and how it compares to a GP and to topical brands like Dense.",
+      "If you're weighing up Mosh for hair loss, here's what matters before you start: how the service actually works, what it really costs, and how it compares to a GP and to topical brands like Dense. Mosh's new-customer offer is 55% off your first order, which is what the code REFERAL55 applies, carried by the link so there is nothing to type.",
     trustBullets: [
       "How the Mosh service and practitioner review work",
       "How the cost and subscription model work",

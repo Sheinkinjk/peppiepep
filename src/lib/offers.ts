@@ -52,7 +52,11 @@ export const VERIFIED_FULL = formatVerifiedFull(VERIFIED_DATE);
 export const MOSHY_OFFER = {
   amount: "$120 off",
   code: "REFERRAL120",
-  verified: VERIFIED_DATE,
+  // The Moshy DEALS row below, not the global sweep. This read VERIFIED_DATE
+  // (28 July), so /moshy, /moshy-review and /best-weight-loss-telehealth-australia
+  // printed "verified July 2026" for the same offer /deals dated 17 August: one
+  // fact with two dates on the same site.
+  verified: "2026-08-17",
 };
 
 export interface Deal {
@@ -108,3 +112,109 @@ export const DEALS: Deal[] = [
 
 export const FEATURED_DEALS = DEALS.filter((d) => d.featured);
 export const OTHER_DEALS = DEALS.filter((d) => !d.featured);
+
+/**
+ * The facts behind each discount code, in one place, with where each came from.
+ *
+ * Assembled rather than written: every value below is transcribed from either
+ * the DEALS row above or the brand page's own FAQ, and the `source` line on each
+ * field says which. Nothing here is new. The provenance comments follow the
+ * convention in src/lib/facts/registry.ts, for the same reason: a claim about a
+ * commercial offer has to be traceable to the thing it was read off, and a
+ * reader of this file must be able to check it without opening the vendor's site.
+ *
+ * `oneUse` and `newCustomer` are optional because only some vendors state them.
+ * An unstated term is left out, never inferred from a sibling offer: describing
+ * a discount as one-use when the vendor has not said so is a representation
+ * about the offer that ACL s29 covers.
+ */
+export interface OfferFacts {
+  brand: string;
+  code: string;
+  /** The discount as the vendor states it. */
+  amount: string;
+  /** What the discount applies TO. Required: s29 turns on the object. */
+  object: string;
+  newCustomer?: boolean;
+  oneUse?: boolean;
+  /** ISO date, from the DEALS row. Absent where no reading date exists. */
+  verified?: string;
+}
+
+export const OFFER_FACTS: Record<string, OfferFacts> = {
+  // amount + verified: the Moshy DEALS row above.
+  // object, newCustomer, oneUse: src/app/moshy/config.ts:129 and :133, which
+  // state the terms as read off Moshy's own sign-up page on 17 August 2026.
+  REFERRAL120: {
+    brand: "Moshy", code: "REFERRAL120", amount: "$120 off",
+    object: "a new customer's first order",
+    newCustomer: true, oneUse: true, verified: "2026-08-17",
+  },
+  // amount + verified: the Mosh DEALS row above.
+  // object + newCustomer: src/app/moshhair/config.ts:22 and :127.
+  // oneUse omitted: Mosh does not state it anywhere on file.
+  REFERAL55: {
+    brand: "Mosh", code: "REFERAL55", amount: "55% off",
+    object: "a new customer's first order",
+    newCustomer: true, verified: "2026-08-17",
+  },
+  // amount + newCustomer: the Knose DEALS row above.
+  // object: src/app/knose/page.tsx:21 ("when they take out a policy").
+  // verified omitted: NO reading date for the Knose offer exists in this repo.
+  // See the TODO in src/components/pet/PetOfferPair.tsx. Do not fill it from
+  // the global stamp or from a page's last-updated date.
+  referlab2mf: {
+    brand: "Knose", code: "referlab2mf", amount: "2 months free",
+    object: "a policy taken out through our link",
+    newCustomer: true,
+  },
+  // amount + verified: the PetsOnMe DEALS row above.
+  // object: src/app/petsonme/page.tsx:28. The object is the whole point here:
+  // the code discounts pet care services, NOT the premium, and saying otherwise
+  // is the s29 breach this field exists to prevent.
+  // newCustomer/oneUse omitted: PetsOnMe states neither.
+  REFERLABS: {
+    brand: "PetsOnMe", code: "REFERLABS", amount: "15% off",
+    object: "pet care services, up from the usual 12%, not the insurance premium",
+    verified: "2026-08-17",
+  },
+};
+
+/** "2026-08-17" -> "17 August 2026", for a check date printed beside a code. */
+export function checkedOn(code: string): string | null {
+  const v = OFFER_FACTS[code]?.verified;
+  if (!v) return null;
+  const d = new Date(`${v}T00:00:00`);
+  return isNaN(d.getTime()) ? v : d.toLocaleDateString("en-AU", { day: "numeric", month: "long", year: "numeric" });
+}
+
+/**
+ * schema.org Offer for a code.
+ *
+ * No `priceValidUntil`: this repo holds no expiry for any of these offers, and
+ * an invented one is a representation about how long a price benefit lasts.
+ * Omitting a property is correct; guessing it is not.
+ *
+ * `price` only where the amount is a dollar figure. A percentage discount and a
+ * free period have no price on file, so those emit a described Offer without one
+ * rather than a made-up number.
+ */
+export function offerSchema(code: string) {
+  const f = OFFER_FACTS[code];
+  if (!f) return null;
+  const dollars = f.amount.match(/^\$(\d[\d,]*)/);
+  const terms = [
+    f.newCustomer ? "New customers only." : null,
+    f.oneUse ? "One use per customer." : null,
+  ].filter(Boolean).join(" ");
+  return {
+    "@context": "https://schema.org",
+    "@type": "Offer",
+    name: `${f.brand} discount code ${f.code}`,
+    description: `${f.amount} on ${f.object}, with the code ${f.code}.${terms ? " " + terms : ""}`,
+    seller: { "@type": "Organization", name: f.brand },
+    availability: "https://schema.org/InStock",
+    ...(dollars ? { price: dollars[1].replace(/,/g, ""), priceCurrency: "AUD" } : {}),
+    ...(f.verified ? { dateModified: f.verified } : {}),
+  };
+}

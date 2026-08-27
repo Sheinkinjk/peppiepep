@@ -2,6 +2,7 @@ import Image from "next/image";
 import VerifiedStamp from "@/components/consumer/VerifiedStamp";
 import OffersTable from "@/components/lending/OffersTable";
 import { MOSHY_OFFER, DEALS } from "@/lib/offers";
+import OfferSchema from "@/components/offers/OfferSchema";
 import { moshyConfig, MOSHY_URL } from "./config";
 import { ArrowRight, Check, ShieldCheck, Stethoscope, Truck, ClipboardList } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
@@ -42,6 +43,7 @@ function MoshyCTA({
 export default function MoshyLanding() {
   return (
     <ConsumerShell>
+      <OfferSchema code="REFERRAL120" />
       <main id="main-content" className="mx-auto max-w-5xl px-5 pb-24 sm:px-8">
         {/* ── Hero ── */}
         <section className="grid gap-10 pt-10 sm:pt-14 lg:grid-cols-[1.55fr_1fr] lg:gap-14">

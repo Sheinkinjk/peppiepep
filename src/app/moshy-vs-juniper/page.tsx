@@ -6,6 +6,8 @@ import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import EditorialMeta from "@/components/consumer/EditorialMeta";
 import FactHistory from "@/components/facts/FactHistory";
+import CodeAnswer from "@/components/offers/CodeAnswer";
+import OfferSchema from "@/components/offers/OfferSchema";
 
 export const metadata = generateSEOMetadata(seoConfig.moshyVsJuniper);
 
@@ -136,6 +138,11 @@ export default function MoshyVsJuniperPage() {
           ways. The short version: <strong className="text-[#2b362f]">Moshy runs a lean clinical pathway, Juniper wraps
           clinical care in a coaching program</strong>, and the difference goes deeper than that.
         </p>
+        <CodeAnswer code="REFERRAL120" className="mt-6">
+          Juniper&apos;s incentive is a free first consultation rather than a code, while Moshy&apos;s is REFERRAL120: $120 off a new customer&apos;s first order, one use per customer.
+        </CodeAnswer>
+        <OfferSchema code="REFERRAL120" />
+
         {/* Answer-first: the buyer's question verbatim as an H2, then a liftable answer. */}
         <h2 className="text-xl sm:text-2xl font-black text-[#10251b] mb-3">Is Moshy or Juniper better for weight loss in Australia?</h2>
         <div className="rounded-xl border px-6 py-5 mb-10" style={{ borderColor: `${CYAN}40`, background: `${CYAN}0A` }}>

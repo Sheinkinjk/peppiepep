@@ -6,6 +6,8 @@ import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
 import FactHistory from "@/components/facts/FactHistory";
+import CodeAnswer from "@/components/offers/CodeAnswer";
+import OfferSchema from "@/components/offers/OfferSchema";
 
 export const metadata = generateSEOMetadata(seoConfig.moshyAlternatives);
 
@@ -85,6 +87,11 @@ export default function MoshyAlternativesPage() {
           People search for Moshy alternatives for good reasons: comparing before committing, or the service was not
           the right fit. The shortlist is genuinely short, and here it is without padding.
         </p>
+        <CodeAnswer code="REFERRAL120" className="mt-6">
+          Among the alternatives set out below, Moshy is the one with a Refer Labs code: REFERRAL120, $120 off a new customer&apos;s first order, one use per customer.
+        </CodeAnswer>
+        <OfferSchema code="REFERRAL120" />
+
 
         {/* Answer-first: the question verbatim, then a liftable summary of the options. */}
         <section className="mb-10">

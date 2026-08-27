@@ -5,6 +5,8 @@ import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
 import FactHistory from "@/components/facts/FactHistory";
+import CodeAnswer from "@/components/offers/CodeAnswer";
+import OfferSchema from "@/components/offers/OfferSchema";
 
 export const metadata = generateSEOMetadata(seoConfig.moshyVsGp);
 
@@ -92,6 +94,11 @@ export default function MoshyVsGpPage() {
           Both routes end with a qualified practitioner making an individual decision about you. The differences are
           practical: speed, format, continuity, and what kind of case each one handles best.
         </p>
+        <CodeAnswer code="REFERRAL120" className="mt-6">
+          A GP visit has no discount code attached; the telehealth route does, and Moshy&apos;s REFERRAL120 takes $120 off a new customer&apos;s first order, once per customer.
+        </CodeAnswer>
+        <OfferSchema code="REFERRAL120" />
+
 
         <p className="mb-10 rounded-lg border border-[#e5e9e7] bg-[#f5f8f6] px-4 py-3 text-xs leading-relaxed text-[#3d4b44]">
           <span className="font-semibold text-[#2b362f]">Information only.</span> This page compares two ways of

@@ -4,6 +4,8 @@ import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import EditorialMeta from "@/components/consumer/EditorialMeta";
+import CodeAnswer from "@/components/offers/CodeAnswer";
+import OfferSchema from "@/components/offers/OfferSchema";
 
 export const metadata = generateSEOMetadata(seoConfig.bestPetInsurance);
 
@@ -165,6 +167,15 @@ export default function BestPetInsuranceAustraliaPage() {
               six things every time: benefit percentage, annual limit, hereditary and congenital cover, waiting periods,
               excess, and exclusions. Below is how to read each one, and what the two providers we cover publish.
             </p>
+            <CodeAnswer code="referlab2mf" className="mt-4">
+              Knose carries the only free-months offer in this comparison: 2 months free for new customers who take out a policy using the code referlab2mf.
+            </CodeAnswer>
+            <OfferSchema code="referlab2mf" />
+            <CodeAnswer code="REFERLABS" className="mt-4">
+              PetsOnMe&apos;s REFERLABS code is a services discount, not a premium one: it lifts pet care services from the usual 12% to 15% once you hold a policy.
+            </CodeAnswer>
+            <OfferSchema code="REFERLABS" />
+
         <EditorialMeta lastUpdated={UPDATED} className="mt-5" />
           </div>
         </section>

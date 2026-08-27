@@ -5,6 +5,8 @@ import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
 import FactHistory from "@/components/facts/FactHistory";
+import CodeAnswer from "@/components/offers/CodeAnswer";
+import OfferSchema from "@/components/offers/OfferSchema";
 
 export const metadata = generateSEOMetadata(seoConfig.moshyVsPilot);
 
@@ -155,6 +157,11 @@ export default function MoshyVsPilotPage() {
               men&apos;s health offering. Both run on a subscription model. Below we line them up on how their pricing
               models differ, who each suits, the online process, what is included, and how treatment access is handled.
             </p>
+            <CodeAnswer code="REFERRAL120" className="mt-6">
+              Pilot has no Refer Labs code; Moshy does, and REFERRAL120 is worth $120 off a new customer&apos;s first order, once per customer.
+            </CodeAnswer>
+            <OfferSchema code="REFERRAL120" />
+
             <p className="text-[#9aa39c] text-xs leading-relaxed max-w-2xl mb-7">
               Information only, not medical advice. Prices are approximate and change, so check current pricing on each
               provider. This page contains a disclosed affiliate link to Moshy.

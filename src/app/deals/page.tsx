@@ -5,6 +5,8 @@ import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import { FEATURED_DEALS, OTHER_DEALS, DEALS } from "@/lib/offers";
 import OffersTable from "@/components/lending/OffersTable";
+import CodeAnswer from "@/components/offers/CodeAnswer";
+import OfferSchema from "@/components/offers/OfferSchema";
 
 export const metadata = generateSEOMetadata(seoConfig.deals);
 
@@ -100,6 +102,23 @@ export default function DealsPage() {
           The current offers on the providers we compare, each checked against the provider&apos;s own page. We only
           list deals for brands we actually work with, and every one links to our full guide with the details.
         </p>
+        <CodeAnswer code="REFERRAL120" className="mt-4">
+          Moshy&apos;s REFERRAL120 is the largest of the codes below: $120 off a new customer&apos;s first order, one use per customer.
+        </CodeAnswer>
+        <OfferSchema code="REFERRAL120" />
+        <CodeAnswer code="REFERAL55" className="mt-4">
+          Mosh&apos;s REFERAL55 is the largest percentage discount below: 55% off a new customer&apos;s first order.
+        </CodeAnswer>
+        <OfferSchema code="REFERAL55" />
+        <CodeAnswer code="referlab2mf" className="mt-4">
+          Knose&apos;s referlab2mf is the only offer below giving free cover time: 2 months free for new customers taking out a policy.
+        </CodeAnswer>
+        <OfferSchema code="referlab2mf" />
+        <CodeAnswer code="REFERLABS" className="mt-4">
+          PetsOnMe&apos;s REFERLABS is the one code below that does not touch the price of cover: it lifts pet care services from 12% to 15% once you hold a policy.
+        </CodeAnswer>
+        <OfferSchema code="REFERLABS" />
+
         <p className="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-[#6e7b74]">
             {/* A single month here contradicted the table underneath, which dates
                 every offer individually: the header claimed July while rows read

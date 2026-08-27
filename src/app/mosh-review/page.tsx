@@ -8,6 +8,8 @@ import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 import VerifiedStamp from "@/components/consumer/VerifiedStamp";
 import { VERIFIED_DATE } from "@/lib/offers";
 import FactHistory from "@/components/facts/FactHistory";
+import CodeAnswer from "@/components/offers/CodeAnswer";
+import OfferSchema from "@/components/offers/OfferSchema";
 
 export const metadata = generateSEOMetadata(seoConfig.moshReview);
 
@@ -108,6 +110,11 @@ export default function MoshReviewPage() {
           An independent look at Mosh, the Australian men&apos;s hair-loss telehealth service: whether it is a real
           clinical service, what it costs, what people actually raise about it, and how to start.
         </p>
+        <CodeAnswer code="REFERAL55" className="mt-6">
+          A new Mosh customer coming through this page gets 55% off a first order, the value of the code REFERAL55.
+        </CodeAnswer>
+        <OfferSchema code="REFERAL55" />
+
         <div className="mb-6">
           <VerifiedStamp date={VERIFIED_DATE} label="55% off first order for new customers · verified" />
         </div>

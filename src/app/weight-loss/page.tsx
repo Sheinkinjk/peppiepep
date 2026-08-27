@@ -6,6 +6,8 @@ import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 import PathwayQuiz from "@/components/consumer/PathwayQuiz";
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, SCHEMA_AUTHOR, SCHEMA_PUBLISHER } from "@/lib/seo";
 import { MOSHY_URL } from "@/lib/affiliate-links";
+import CodeAnswer from "@/components/offers/CodeAnswer";
+import OfferSchema from "@/components/offers/OfferSchema";
 
 export const metadata = generateSEOMetadata(seoConfig.weightLossHub);
 
@@ -132,6 +134,11 @@ export default function WeightLossHubPage() {
               compares the online programs and clinics available in Australia across three clear pathways, with
               independent research for each.
             </p>
+            <CodeAnswer code="REFERRAL120" className="mt-6">
+              The current Moshy offer for Australians starting a weight-management program is $120 off a new customer&apos;s first order with the code REFERRAL120, one use per customer, applied by the link on this page.
+            </CodeAnswer>
+            <OfferSchema code="REFERRAL120" />
+
           </div>
         </section>
 

@@ -7,6 +7,8 @@ import EditorialMeta from "@/components/consumer/EditorialMeta";
 import OffersTable from "@/components/lending/OffersTable";
 import { DEALS } from "@/lib/offers";
 import StickyCta from "@/components/consumer/StickyCta";
+import CodeAnswer from "@/components/offers/CodeAnswer";
+import OfferSchema from "@/components/offers/OfferSchema";
 
 export const metadata = generateSEOMetadata(seoConfig.bestHairLossTreatmentAustralia);
 
@@ -267,6 +269,11 @@ export default function BestHairLossTreatmentAustraliaPage() {
           <p className="text-[#3d4b44] text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
             A practical comparison of the most accessible hair loss options for Australians, prescription telehealth, topical products, and when to see a specialist.
           </p>
+          <CodeAnswer code="REFERAL55" className="mt-6">
+            Of the hair-loss options compared here, Mosh is the one carrying a Refer Labs code: REFERAL55, 55% off a new customer&apos;s first order.
+          </CodeAnswer>
+          <OfferSchema code="REFERAL55" />
+
           <EditorialMeta lastUpdated="2026-08-14" className="mb-6" />
           <p className="text-[#9aa39c] text-xs mb-8">
             This page contains affiliate links. We may earn a commission if you purchase through them. This does not constitute medical advice, consult a registered healthcare professional before starting any hair loss treatment.

@@ -5,6 +5,8 @@ import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
 import FactHistory from "@/components/facts/FactHistory";
+import CodeAnswer from "@/components/offers/CodeAnswer";
+import OfferSchema from "@/components/offers/OfferSchema";
 
 export const metadata = generateSEOMetadata(seoConfig.moshVsPilot);
 
@@ -148,6 +150,11 @@ export default function MoshVsPilotPage() {
               registered Australian practitioner, and both can prescribe prescription hair-loss treatments when it is
               appropriate. So the real question is which experience, plan and price suits you. Below we set out where they overlap, where they diverge, and how to choose.
             </p>
+            <CodeAnswer code="REFERAL55" className="mt-6">
+              Pilot carries no Refer Labs code; Mosh does, and REFERAL55 takes 55% off a new customer&apos;s first order.
+            </CodeAnswer>
+            <OfferSchema code="REFERAL55" />
+
             <p className="text-[#9aa39c] text-xs leading-relaxed max-w-2xl mb-7">
               Information only, not medical advice. Prescription hair-loss treatment is available only after an individual
               assessment by a registered Australian practitioner, with suitability practitioner-decided and never

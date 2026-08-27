@@ -5,6 +5,8 @@ import { ArrowRight, Check } from "lucide-react";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
+import CodeAnswer from "@/components/offers/CodeAnswer";
+import OfferSchema from "@/components/offers/OfferSchema";
 
 export const metadata = generateSEOMetadata(seoConfig.weightLossTelehealthWomen);
 
@@ -97,6 +99,11 @@ export default function WeightLossTelehealthWomenPage() {
           coaching-led program and a leaner clinical pathway, and the checklist worth running before you commit to any of
           them.
         </p>
+        <CodeAnswer code="REFERRAL120" className="mt-6">
+          The one code on this page is Moshy&apos;s REFERRAL120: $120 off a new customer&apos;s first order, once per customer, applied automatically through the link.
+        </CodeAnswer>
+        <OfferSchema code="REFERRAL120" />
+
 
         <p className="mb-10 rounded-lg border border-[#e5e9e7] bg-[#f5f8f6] px-4 py-3 text-xs leading-relaxed text-[#3d4b44]">
           <span className="font-semibold text-[#2b362f]">Information only.</span> This page describes a category of

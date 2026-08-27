@@ -1,5 +1,6 @@
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, SCHEMA_AUTHOR, SCHEMA_PUBLISHER } from "@/lib/seo";
 import PremiumAffiliateLanding from "@/components/affiliate/PremiumAffiliateLanding";
+import OfferSchema from "@/components/offers/OfferSchema";
 import { moshHairConfig } from "./config";
 
 export const metadata = generateSEOMetadata(seoConfig.moshHair);
@@ -65,6 +66,7 @@ const organizationSchema = {
 export default function MoshHairPage() {
   return (
     <>
+      <OfferSchema code="REFERAL55" />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />

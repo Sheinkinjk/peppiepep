@@ -5,6 +5,8 @@ import { ArrowRight } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import EditorialMeta from "@/components/consumer/EditorialMeta";
 import InsuranceDisclosure from "@/components/consumer/InsuranceDisclosure";
+import CodeAnswer from "@/components/offers/CodeAnswer";
+import OfferSchema from "@/components/offers/OfferSchema";
 
 export const metadata = generateSEOMetadata(seoConfig.knose);
 
@@ -97,6 +99,11 @@ export default function KnosePage() {
               months free</strong> when they take out a policy using the code <strong className="text-[#10251b]">referlab2mf</strong> through
               our link. This page is general information and a referral, not financial advice or a recommendation.
             </p>
+            <CodeAnswer code="referlab2mf" className="mt-6">
+              Knose gives new customers 2 months free on a policy taken out with the code referlab2mf through the link on this page.
+            </CodeAnswer>
+            <OfferSchema code="referlab2mf" />
+
             <EditorialMeta lastUpdated={UPDATED} className="mt-4" />
             <div className="mt-6 flex flex-wrap items-center gap-3">
               <KnoseCta label="Get a Knose quote (2 months free)" loc="hero" />

@@ -5,6 +5,8 @@ import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
 import FactHistory from "@/components/facts/FactHistory";
+import CodeAnswer from "@/components/offers/CodeAnswer";
+import OfferSchema from "@/components/offers/OfferSchema";
 
 export const metadata = generateSEOMetadata(seoConfig.getMoshy);
 
@@ -84,6 +86,11 @@ export default function GetMoshyPage() {
           Searching &ldquo;getmoshy&rdquo; usually means one of two things: you want to confirm the site is real, or you
           want the quickest route to the eligibility check. Both answers are below.
         </p>
+        <CodeAnswer code="REFERRAL120" className="mt-6">
+          getmoshy.com.au is Moshy&apos;s own site, and the code REFERRAL120 takes $120 off a new customer&apos;s first order there, once per customer, carried into the sign-up flow by the link below.
+        </CodeAnswer>
+        <OfferSchema code="REFERRAL120" />
+
 
         <div className="rounded-xl border px-6 py-5 mb-10" style={{ borderColor: `${CYAN}40`, background: `${CYAN}0A` }}>
           <p className="text-[#2b362f] text-sm sm:text-base leading-relaxed mb-4">

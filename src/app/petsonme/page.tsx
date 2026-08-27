@@ -4,6 +4,8 @@ import { ArrowRight, Check } from "lucide-react";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import EditorialMeta from "@/components/consumer/EditorialMeta";
+import CodeAnswer from "@/components/offers/CodeAnswer";
+import OfferSchema from "@/components/offers/OfferSchema";
 
 export const metadata = generateSEOMetadata(seoConfig.petsonme);
 
@@ -116,6 +118,11 @@ export default function PetsOnMePage() {
           eligible vet bill less your excess. This page sets out what each plan includes, what the code does and does
           not do, and what to check before you buy. It is general information, not financial advice.
         </p>
+        <CodeAnswer code="REFERLABS" className="mt-6">
+          PetsOnMe&apos;s REFERLABS code lifts its pet care services discount from the usual 12% to 15% once you hold a policy, and it does not reduce the insurance premium.
+        </CodeAnswer>
+        <OfferSchema code="REFERLABS" />
+
         <EditorialMeta lastUpdated={UPDATED} className="mt-5" />
 
         {/* Answer-first: what the code gives, stated precisely. */}
