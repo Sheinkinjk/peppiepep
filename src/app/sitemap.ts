@@ -221,9 +221,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/mosh-vs-dense`,                         lastModified: TODAY,  changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/mosh-vs-pilot`,                         lastModified: TODAY,  changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/data`, lastModified: FRESH, changeFrequency: 'weekly', priority: 0.6 },
-    // The Person node that every Article and WebPage author references by @id.
-    // Crawlable so the reference resolves to something rather than dangling.
-    { url: `${BASE}/authors/jarred`, lastModified: FRESH, changeFrequency: 'yearly', priority: 0.3 },
+    // /authors/jarred is deliberately NOT here. It is noIndex until the bio is
+    // written, and a noIndex URL in the sitemap tells Google to crawl a page we
+    // also tell it to drop. The Person @id still resolves: noindex does not
+    // block crawling, and the page is not disallowed in robots.txt.
+    // Add the row when the noIndex comes off.
     { url: `${BASE}/disclaimer`, lastModified: FRESH, changeFrequency: 'yearly', priority: 0.3 },
     { url: `${BASE}/partner-with-refer-labs`,               lastModified: FRESH, changeFrequency: 'monthly', priority: 0.75 },
 

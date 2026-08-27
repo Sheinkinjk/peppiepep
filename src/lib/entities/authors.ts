@@ -18,7 +18,7 @@ export const AUTHORS: Author[] = [
   {
     id: 'jarred',
     name: 'Jarred',
-    role: 'Editor',
+    role: 'Founder',
     // TODO(editorial): Jarred to write this. Do not generate a biography here.
     bio: '',
     sameAs: [],

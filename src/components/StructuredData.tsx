@@ -86,13 +86,22 @@ export function OrganizationSchema() {
     // assessed against expertise and accountability signals, and an
     // organisation string alone provides neither. Only verifiable facts here:
     // no invented credentials, titles or history.
+    // Carries the SAME @id as the Person node on /authors/jarred, so the two are
+    // one entity rather than two people with one name between them. Before this
+    // it was a second inline Person ("Jarred Krowitz", url /about) rendering on
+    // every page, competing with the node that 65 Article authors point at.
+    //
+    // The full legal name still appears on /about and in llms.txt, both times
+    // beside the ABN and the ABR link, where a reader verifying the company
+    // against the register needs it. It does not belong in the entity node.
     "founder": {
       "@type": "Person",
-      "name": "Jarred Krowitz",
+      "@id": "https://referlabs.com.au/authors/jarred#person",
+      "name": "Jarred",
       "jobTitle": "Founder",
       "email": "jarred@referlabs.com.au",
-      "url": "https://referlabs.com.au/about",
-      "worksFor": { "@type": "Organization", "name": "Refer Labs" }
+      "url": "https://referlabs.com.au/authors/jarred",
+      "worksFor": { "@id": "https://referlabs.com.au/#organization" }
     },
     // Entity corroboration, ordered by how much weight each carries. LinkedIn
     // first: a company page is the profile an engine is most likely to already
