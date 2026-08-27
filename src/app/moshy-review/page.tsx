@@ -112,7 +112,7 @@ export default function MoshyReviewPage() {
           eligibility check.
         </p>
         <CodeAnswer code="REFERRAL120" className="mt-6">
-          A new Moshy customer starting here gets $120 off a first order, applied by the code REFERRAL120, once per customer.
+          REFERRAL120, the Moshy code Refer Labs holds, gets a new customer $120 off a first order, once per customer.
         </CodeAnswer>
         <OfferSchema code="REFERRAL120" />
 

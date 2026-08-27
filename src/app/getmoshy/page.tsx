@@ -87,7 +87,7 @@ export default function GetMoshyPage() {
           want the quickest route to the eligibility check. Both answers are below.
         </p>
         <CodeAnswer code="REFERRAL120" className="mt-6">
-          getmoshy.com.au is Moshy&apos;s own site, and the code REFERRAL120 takes $120 off a new customer&apos;s first order there, once per customer, carried into the sign-up flow by the link below.
+          getmoshy.com.au is Moshy&apos;s own site, and the code Refer Labs holds for it, REFERRAL120, takes $120 off a new customer&apos;s first order, once per customer, carried into the sign-up flow by the link below.
         </CodeAnswer>
         <OfferSchema code="REFERRAL120" />
 

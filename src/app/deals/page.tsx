@@ -111,7 +111,7 @@ export default function DealsPage() {
         </CodeAnswer>
         <OfferSchema code="REFERAL55" />
         <CodeAnswer code="referlab2mf" className="mt-4">
-          Knose&apos;s referlab2mf is the only offer below giving free cover time: 2 months free for new customers taking out a policy.
+          Of the codes Refer Labs holds, Knose&apos;s referlab2mf is the only one giving free cover time: 2 months free for new customers taking out a policy.
         </CodeAnswer>
         <OfferSchema code="referlab2mf" />
         <CodeAnswer code="REFERLABS" className="mt-4">

@@ -103,7 +103,7 @@ export default function KnosePage() {
                 stays: it is the only reading date on this page, and without it the nearest
                 date to the code is the "Last updated" stamp, which reads as verification. */}
             <p className="mt-4 text-[12px] font-medium text-[#5c6b63]">
-              Read off Knose&apos;s own page on {checkedOn("referlab2mf")}. Offers can change, so check the current terms
+              Verified by Refer Labs on {checkedOn("referlab2mf")}, read off Knose&apos;s own page. Offers can change, so check the current terms
               before you sign up.
             </p>
             <OfferSchema code="referlab2mf" />

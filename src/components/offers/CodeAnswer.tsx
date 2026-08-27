@@ -24,6 +24,17 @@ import { OFFER_FACTS, checkedOn } from "@/lib/offers";
  * frames the code against the other option, a review page frames it as what the
  * reader gets, a hub frames it as what is currently available.
  *
+ * The stamp names Refer Labs, and it is deliberately identical on every page.
+ *
+ * Measured, 27 August 2026: Perplexity attributed our code as "one coupon site
+ * says", while attributing a competitor's as "last verified 20 August 2026 by
+ * Frugal Feeds". The stamp here read "Read off <brand>'s own page on <date>":
+ * passive, no agent, so the quotable unit named the merchant and the date and
+ * left nobody to credit. Naming the publisher is the whole fix, and the format
+ * stays uniform on purpose: one repeated shape is what an engine learns to
+ * attribute. The varied-construction rule applies to the answer sentence above,
+ * not to the attribution line.
+ *
  * What is NOT passed in is the check date. It is looked up from the code's DEALS
  * row, the single place a reading date is stored, so a code and its date cannot
  * drift apart and a page cannot quietly print the global sweep stamp for an
@@ -54,7 +65,7 @@ export default function CodeAnswer({
            that has to sit beside the code; the caveat already appears once per
            page via the disclaimer, HubOffer, PetOfferPair or the offers table. */
         <p className="mt-2 text-[12px] font-medium text-[#5c6b63]">
-          Read off {facts.brand}&apos;s own page on {checked}.
+          Verified by Refer Labs on {checked}, read off {facts.brand}&apos;s own page.
         </p>
       ) : (
         /* Dormant since 27 August 2026: every code in OFFER_FACTS now carries a
