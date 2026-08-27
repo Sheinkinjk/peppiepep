@@ -11,13 +11,20 @@ import { generateMetadata as generateSEOMetadata, SITE_URL } from '@/lib/seo';
  * node rather than dangling. The Person `@id` here is the one those pages point
  * at, so this file is the single definition of that entity.
  *
- * noindex for now, deliberately: the bio is empty until a human writes one, and
- * an author page with no biography is exactly the thin, auto-generated E-E-A-T
- * signal that publishing it is supposed to counter. It stays crawlable so the
- * noindex can be read, and so the Person node is still fetchable by anything
- * resolving the @id.
+ * noindex permanently, and that is a decision, not a holding position. There
+ * will be no biography, so this page will always be a short identity node, and
+ * a thin page is exactly the auto-generated E-E-A-T signal that publishing an
+ * author page is meant to counter. Indexing 23 words would work against the
+ * thing the page exists to support.
  *
- * TODO: remove `noIndex` once `bio` in src/lib/entities/authors.ts is populated.
+ * None of that costs anything, because indexing was never the job. The job is
+ * that the Person @id resolves, and it does: noindex does not block crawling,
+ * /authors is not disallowed in robots.txt, and the node is fetchable by
+ * anything following the reference from the 65 Article authors that point here.
+ *
+ * For the same reason the page is deliberately absent from src/app/sitemap.ts:
+ * a noIndex URL in the sitemap asks Google to crawl a page we also ask it to
+ * drop. Do not "fix" either by adding the row or lifting the noIndex.
  */
 
 export function generateStaticParams() {
@@ -56,7 +63,6 @@ export default async function AuthorPage({ params }: { params: Promise<{ id: str
     url: `${SITE_URL}/authors/${author.id}`,
     worksFor: { '@id': `${SITE_URL}/#organization` },
     ...(author.sameAs.length > 0 ? { sameAs: author.sameAs } : {}),
-    ...(author.bio ? { description: author.bio } : {}),
   };
 
   return (
@@ -70,11 +76,6 @@ export default async function AuthorPage({ params }: { params: Promise<{ id: str
           {author.name}
         </h1>
         <p className="mt-2 text-[15px] text-[#6e7b74]">{author.role}, Refer Labs</p>
-
-        {/* TODO(editorial): the biography goes here, once written. */}
-        {author.bio ? (
-          <p className="mt-5 text-lg leading-relaxed text-[#2b362f]">{author.bio}</p>
-        ) : null}
 
         <p className="mt-5 text-[15px] leading-relaxed text-[#3d4b44]">
           Observations recorded by {author.name} are listed in the{' '}

@@ -4,6 +4,7 @@ import { CheckCircle2, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
+import FactHistory from "@/components/facts/FactHistory";
 
 export const metadata = generateSEOMetadata(seoConfig.moshyVsPilot);
 
@@ -354,6 +355,10 @@ export default function MoshyVsPilotPage() {
           </section>
 
         </div>
+      {/* Renders nothing until this subject has a third observation. The slot
+          exists so the series appears here the moment the next re-check lands. */}
+      <FactHistory subject="Moshy" kind="offer_observation" hub="weight-loss" route="/moshy-vs-pilot" />
+
       </main>
       <StickyCta href={MOSHY_URL} product="Moshy weight-loss telehealth" label="Check eligibility" />
     </ConsumerShell>

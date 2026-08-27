@@ -4,6 +4,7 @@ import { CheckCircle2, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
+import FactHistory from "@/components/facts/FactHistory";
 
 export const metadata = generateSEOMetadata(seoConfig.moshVsDense);
 
@@ -375,6 +376,10 @@ export default function MoshVsDensePage() {
           </section>
 
         </div>
+      {/* Renders nothing until this subject has a third observation. The slot
+          exists so the series appears here the moment the next re-check lands. */}
+      <FactHistory subject="Mosh" kind="offer_observation" hub="hair-loss" route="/mosh-vs-dense" />
+
       </main>
       <StickyCta href={MOSH_HAIR_URL} product="Mosh · hair-loss telehealth" label="Check eligibility" />
     </ConsumerShell>

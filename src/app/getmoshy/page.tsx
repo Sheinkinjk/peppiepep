@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
+import FactHistory from "@/components/facts/FactHistory";
 
 export const metadata = generateSEOMetadata(seoConfig.getMoshy);
 
@@ -141,6 +142,10 @@ export default function GetMoshyPage() {
           <Link href="/moshy-review" style={{ color: CYAN }} className="hover:opacity-80">Moshy review →</Link>
           <Link href="/mens-health-telehealth-australia" style={{ color: CYAN }} className="hover:opacity-80">Men&apos;s health telehealth in Australia →</Link>
         </div>
+
+        {/* Renders nothing until this subject has a third observation. The slot
+            exists so the series appears here the moment the next re-check lands. */}
+        <FactHistory subject="Moshy" kind="offer_observation" hub="weight-loss" route="/getmoshy" />
 
         <p className="text-[#9aa39c] text-xs mt-8 leading-relaxed">
           This page is operated by Refer Labs, is not the official Moshy website, and contains an affiliate referral

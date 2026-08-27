@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
+import FactHistory from "@/components/facts/FactHistory";
 
 export const metadata = generateSEOMetadata(seoConfig.moshyVsGp);
 
@@ -190,6 +191,10 @@ export default function MoshyVsGpPage() {
           <Link href="/moshy-eligibility" style={{ color: CYAN }} className="hover:opacity-80">The eligibility check →</Link>
           <Link href="/moshy-alternatives" style={{ color: CYAN }} className="hover:opacity-80">Moshy alternatives →</Link>
         </div>
+
+        {/* Renders nothing until this subject has a third observation. The slot
+            exists so the series appears here the moment the next re-check lands. */}
+        <FactHistory subject="Moshy" kind="offer_observation" hub="weight-loss" route="/moshy-vs-gp" />
 
         <p className="text-[#9aa39c] text-xs mt-8 leading-relaxed">
           This page is operated by Refer Labs and contains an affiliate referral link. We may earn a commission if you
