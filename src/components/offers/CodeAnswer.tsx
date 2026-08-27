@@ -44,10 +44,15 @@ export default function CodeAnswer({
           you sign up.
         </p>
       ) : (
-        /* Says the absence out loud. Without this the nearest date to the code is
-           the page's own "Last updated" stamp, which reads to a person and to an
-           answer engine as the day we verified the offer. A borrowed date is a
-           worse claim than no date, so the gap is named instead of filled. */
+        /* Dormant since 27 August 2026: every code in OFFER_FACTS now carries a
+           reading date, so nothing renders this branch today.
+
+           It stays as the guard, not as leftovers. Knose reached production with
+           no date at all, and the nearest date to its code was the page's own
+           "Last updated" stamp, which reads to a person and to an answer engine
+           as the day we verified the offer. A borrowed date is a worse claim than
+           no date. If a future code arrives undated, this names the gap instead
+           of letting the stamp stand in again. Do not delete it to tidy up. */
         <p className="mt-2 text-[12px] font-medium text-[#5c6b63]">
           We have not recorded a date for reading this offer off {facts.brand}&apos;s own page. Any date shown
           elsewhere on this page is when the page was updated, not when the offer was checked. Confirm the current

@@ -98,7 +98,7 @@ export const DEALS: Deal[] = [
   { brand: "Leadpages", logo: "/logos/leadpages.png", href: "/leadpages", offer: "7-day free trial; 20% off annual billing", category: "Landing pages", featured: true, verified: "2026-08-25" },
   { brand: "Superfiliate", logo: "/logos/superfiliate.png", href: "/superfiliate", offer: "15% off your monthly SaaS fee", category: "Creator growth", featured: true, verified: "2026-08-20" },
 
-  { brand: "Knose", logo: "/logos/knose.svg", href: "/knose", offer: "2 months free for new customers", code: "referlab2mf", category: "Pets", featured: true },
+  { brand: "Knose", logo: "/logos/knose.svg", href: "/knose", offer: "2 months free for new customers", code: "referlab2mf", category: "Pets", featured: true, verified: "2026-08-27" },
   { brand: "PetsOnMe", logo: "/logos/petsonme.svg", href: "/petsonme", offer: "15% off pet care services, up from 12% (not the premium)", code: "REFERLABS", category: "Pets", featured: true, verified: "2026-08-17" },
 
   { brand: "Carrd", logo: "/logos/carrd.png", href: "/carrd", offer: "Free plan forever; Pro from US$19/yr", category: "Website builders", verified: "2026-08-25" },
@@ -160,13 +160,13 @@ export const OFFER_FACTS: Record<string, OfferFacts> = {
   },
   // amount + newCustomer: the Knose DEALS row above.
   // object: src/app/knose/page.tsx:21 ("when they take out a policy").
-  // verified omitted: NO reading date for the Knose offer exists in this repo.
-  // See the TODO in src/components/pet/PetOfferPair.tsx. Do not fill it from
-  // the global stamp or from a page's last-updated date.
+  // verified: Jarred read Knose's own page on 27 August 2026 and confirmed the
+  // offer current. This is the only date on file for it; the global sweep stamp
+  // and the page's last-updated date are not substitutes and were never used.
   referlab2mf: {
     brand: "Knose", code: "referlab2mf", amount: "2 months free",
     object: "a policy taken out through our link",
-    newCustomer: true,
+    newCustomer: true, verified: "2026-08-27",
   },
   // amount + verified: the PetsOnMe DEALS row above.
   // object: src/app/petsonme/page.tsx:28. The object is the whole point here:
