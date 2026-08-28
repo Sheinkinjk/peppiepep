@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Calendar, ExternalLink, ShieldCheck, Wrench } from "lucide-react";
+import { Calendar, ShieldCheck, Wrench } from "lucide-react";
 
 import { Card } from "@/components/ui/card";
 import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
@@ -34,14 +34,6 @@ export default function CalendlyGuidePage() {
             Track referral conversions for service bookings by collecting the ambassador’s discount code and posting confirmed bookings to Refer Labs.
           </p>
         </div>
-
-        <Link
-          href="/dashboard"
-          className="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-800 hover:bg-slate-50"
-        >
-          <ExternalLink className="h-4 w-4" />
-          Open dashboard
-        </Link>
       </div>
 
       <div className="mt-8 grid gap-6 lg:grid-cols-2">

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Code2, ExternalLink, ShieldCheck, Wrench } from "lucide-react";
+import { Code2, ShieldCheck, Wrench } from "lucide-react";
 
 import { Card } from "@/components/ui/card";
 import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
@@ -34,14 +34,6 @@ export default function ApiGuidePage() {
             Post conversions from your backend for maximum reliability: retries, idempotency, and complete auditability.
           </p>
         </div>
-
-        <Link
-          href="/dashboard"
-          className="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-800 hover:bg-slate-50"
-        >
-          <ExternalLink className="h-4 w-4" />
-          Open dashboard
-        </Link>
       </div>
 
       <div className="mt-8 grid gap-6 lg:grid-cols-2">
