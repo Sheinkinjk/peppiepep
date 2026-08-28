@@ -1485,7 +1485,7 @@ export const seoConfig = {
     // This is the roundup; /moshy-vs-juniper owns the head-to-head. The title and
     // keywords deliberately no longer claim "moshy vs juniper", so the two pages
     // stop competing for the same query.
-    title: "Best Weight Loss Telehealth Australia 2026",
+    title: "Best Weight Loss Telehealth: Moshy vs Juniper",
     description:
       "Moshy, Juniper and Pilot compared on eligibility, process and cost. REFERRAL120 takes $120 off a first Moshy order, checked 17 Aug 2026.",
     url: `${SITE_URL}/best-weight-loss-telehealth-australia`,
@@ -2549,7 +2549,7 @@ export const seoConfig = {
   },
 
   bestHairLossTreatmentAustralia: {
-    title: "Best Hair Loss Treatment Australia 2026",
+    title: "Best Hair Loss Treatment 2026: Mosh vs Dense",
     description:
       "What clinical telehealth and topical products cost, and who each suits. REFERAL55 takes 55% off a first Mosh order, checked 17 Aug 2026.",
     url: `${SITE_URL}/best-hair-loss-treatment-australia`,
