@@ -1387,9 +1387,9 @@ export const seoConfig = {
     // phrase; "mosh hair" queries draw a third of that and are carried by the
     // body copy, which is hair-loss throughout. The offer is a Mosh-wide first
     // order discount, not a hair-only one, so the broader title is also truer.
-    title: "Mosh Discount Code 2026: 55% Off Your First Order | Refer Labs",
+    title: "Mosh Discount Code 2026: 55% Off First Order",
     description:
-      "Mosh discount code Australia 2026: 55% off your first order with code REFERAL55 via our link. How the hair-loss service, the consult and the cost work, explained.",
+      "REFERAL55 takes 55% off a first Mosh order, applied through our link. What the hair-loss consult involves, and the cost after that first order.",
     url: `${SITE_URL}/moshhair`,
     keywords: [
       "mosh hair discount code",
@@ -1446,7 +1446,7 @@ export const seoConfig = {
   moshy: {
     title: "Moshy Discount Code Australia 2026: $120 Off | Refer Labs",
     description:
-      "Moshy's current discount: $120 off your first order, applied automatically through our referral link (code REFERRAL120), verified August 2026. Plus how the eligibility check works and what Moshy costs. Independent, not medical advice.",
+      "REFERRAL120 takes $120 off your first Moshy order, applied by our link so there is nothing to type. Read off Moshy's own page, 17 Aug 2026.",
     url: `${SITE_URL}/moshy`,
     keywords: [
       "moshy discount code",
@@ -1485,9 +1485,9 @@ export const seoConfig = {
     // This is the roundup; /moshy-vs-juniper owns the head-to-head. The title and
     // keywords deliberately no longer claim "moshy vs juniper", so the two pages
     // stop competing for the same query.
-    title: "Best Weight-Loss Telehealth in Australia 2026: Ranked | Refer Labs",
+    title: "Best Weight Loss Telehealth Australia 2026",
     description:
-      "Compare Moshy, Juniper and Pilot for Australian weight-loss telehealth: eligibility, process, support and who each actually suits. Independent, no paid rankings.",
+      "Moshy, Juniper and Pilot compared on eligibility, process and cost. REFERRAL120 takes $120 off a first Moshy order, checked 17 Aug 2026.",
     url: `${SITE_URL}/best-weight-loss-telehealth-australia`,
     keywords: [
       "best weight loss telehealth australia 2026",
@@ -1506,9 +1506,9 @@ export const seoConfig = {
   },
 
   moshyVsJuniper: {
-    title: "Moshy vs Juniper 2026: Which Is Better for You? | Refer Labs",
+    title: "Moshy vs Juniper 2026: Cost and Who Each Suits",
     description:
-      "Moshy vs Juniper 2026, with $120 off Moshy using code REFERRAL120: Moshy is a lean clinical pathway open to anyone, Juniper wraps coaching around clinical care and is built for women. Cost, eligibility and fit.",
+      "Juniper wraps coaching around clinical care and is built for women; Moshy is open to anyone eligible. $120 off Moshy with REFERRAL120, 17 Aug 2026.",
     url: `${SITE_URL}/moshy-vs-juniper`,
     keywords: [
       "moshy vs juniper",
@@ -1527,9 +1527,9 @@ export const seoConfig = {
   },
 
   moshyVsPilot: {
-    title: "Moshy vs Pilot 2026: Weight Loss Telehealth Compared",
+    title: "Moshy vs Pilot 2026: Weight Loss Telehealth",
     description:
-      "Moshy vs Pilot 2026, with $120 off Moshy using code REFERRAL120: Moshy is gender-neutral and open to anyone, Pilot is men-focused. Model, audience, process and how treatment access is handled.",
+      "Pilot is men-focused, Moshy is open to anyone eligible. How each runs the assessment, plus $120 off Moshy with REFERRAL120, checked 17 Aug 2026.",
     url: `${SITE_URL}/moshy-vs-pilot`,
     keywords: [
       "moshy vs pilot",
@@ -1572,9 +1572,9 @@ export const seoConfig = {
   },
 
   moshyReview: {
-    title: "Moshy Review 2026: Is It Legit and How It Works | Refer Labs",
+    title: "Moshy Review 2026: How It Works and the Cost",
     description:
-      "An independent Moshy review for Australians, with $120 off your first order using code REFERRAL120: what the clinically-led weight-loss telehealth service is, how sign-up runs, and who it suits. Information only.",
+      "What sign-up, the practitioner review and the subscription actually involve. $120 off a first order with REFERRAL120, checked 17 Aug 2026.",
     url: `${SITE_URL}/moshy-review`,
     keywords: [
       "moshy review",
@@ -1662,11 +1662,10 @@ export const seoConfig = {
 
   bestCrmSmallBusiness: {
 
-    title: "Best CRM for Small Business Australia 2026: Compared | Refer Labs",
+    title: "Best CRM for Small Business Australia 2026 | Refer Labs",
 
     description:
-
-      "The best CRM software for small business in Australia, compared on price, ease of use and who each suits: Pipedrive, Capsule, Nutshell and Keap. Real pricing, free trials, and how to choose. No paid rankings.",
+      "Pipedrive, Capsule, Nutshell and Keap on real monthly pricing, what each free tier includes, and which suits a small Australian team.",
 
     url: `${SITE_URL}/best-crm-small-business-australia`,
 
@@ -1894,9 +1893,9 @@ export const seoConfig = {
   },
 
   moshVsPilot: {
-    title: "Mosh vs Pilot 2026: Which Should You Choose? | Refer Labs",
+    title: "Mosh vs Pilot 2026: Hair Loss Telehealth",
     description:
-      "Mosh vs Pilot 2026, with 55% off a first Mosh order using code REFERAL55: two Australian men's hair-loss telehealth services, how they differ and who each suits. Info only.",
+      "Where the two differ on consult, treatment route and ongoing cost. REFERAL55 takes 55% off a first Mosh order, checked 17 Aug 2026.",
     url: `${SITE_URL}/mosh-vs-pilot`,
     keywords: [
       "mosh vs pilot",
@@ -1933,9 +1932,9 @@ export const seoConfig = {
   },
 
   moshReview: {
-    title: "Mosh Review 2026: Is It Legit and Worth It? | Refer Labs",
+    title: "Mosh Review 2026: Is It Legit, and the Cost",
     description:
-      "An independent Mosh review with 55% off your first order using code REFERAL55: is the Australian men's hair-loss telehealth service legit, what it costs, and what people raise. Information only.",
+      "An independent look at the consult, the treatment route and what you pay monthly. REFERAL55 takes 55% off a first order, checked 17 Aug 2026.",
     url: `${SITE_URL}/mosh-review`,
     keywords: ["mosh review", "is mosh legit", "is mosh worth it", "does mosh work", "mosh hair loss review australia", "mosh reviews"],
   },
@@ -2278,9 +2277,9 @@ export const seoConfig = {
   },
 
   bestNewsletterPlatform: {
-    title: "beehiiv vs Substack vs ConvertKit 2026: Best Newsletter Platform",
+    title: "beehiiv vs Substack vs ConvertKit 2026",
     description:
-      "beehiiv vs Substack vs ConvertKit (Kit) for 2026: free plans, monetisation, growth tools and pricing compared side by side, plus a clear pick for creators, writers and businesses.",
+      "Free plans, what each takes from your revenue, and where pricing jumps as your list grows. Side by side for creators, writers and businesses.",
     url: `${SITE_URL}/best-newsletter-platform`,
     keywords: [
       "best newsletter platform 2026",
@@ -2550,9 +2549,9 @@ export const seoConfig = {
   },
 
   bestHairLossTreatmentAustralia: {
-    title: "Best Hair-Loss Treatment in Australia 2026: Compared | Refer Labs",
+    title: "Best Hair Loss Treatment Australia 2026",
     description:
-      "The best hair-loss options in Australia 2026, compared: Mosh, Dense and telehealth. Clinical vs topical care, real pricing, and how to start.",
+      "What clinical telehealth and topical products cost, and who each suits. REFERAL55 takes 55% off a first Mosh order, checked 17 Aug 2026.",
     url: `${SITE_URL}/best-hair-loss-treatment-australia`,
     keywords: [
       "best hair loss treatment australia 2026",
@@ -2763,9 +2762,9 @@ export const seoConfig = {
   },
 
   affiliateProgramsAustralia: {
-    title: "Best Affiliate Programs in Australia (2026)",
+    title: "Best Affiliate Programs in Australia 2026 | Refer Labs",
     description:
-      "A practical roundup of the best affiliate programs for Australians in 2026, across SaaS, web hosting, finance, health, creator tools, retail and courses. Commission structures, cookie windows, and the networks that run them, plus how to join.",
+      "Commission rates, cookie windows and payout terms across SaaS, finance, health and retail. Nobody pays to be listed here.",
     url: `${SITE_URL}/affiliate-programs-australia`,
     keywords: [
       "affiliate programs australia",
