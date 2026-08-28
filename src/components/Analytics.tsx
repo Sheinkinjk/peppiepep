@@ -88,32 +88,6 @@ export function GoogleAnalytics() {
             } catch (e) {}
           }
 
-          /* AI-assistant referral detection. GA4 lumps these into generic
-             "Referral", so we tag them explicitly: an 'ai_referral' event with
-             the assistant name, plus a user property, so AI visibility is
-             reportable. Fires through gtag, so Consent Mode still governs cookies. */
-          try {
-            var __ref = document.referrer || '';
-            var __ai = [
-              { re: /chatgpt\\.com|chat\\.openai\\.com|openai\\.com/i, name: 'ChatGPT' },
-              { re: /perplexity\\.ai/i, name: 'Perplexity' },
-              { re: /claude\\.ai|anthropic\\.com/i, name: 'Claude' },
-              { re: /gemini\\.google\\.com|bard\\.google\\.com/i, name: 'Gemini' },
-              { re: /copilot\\.microsoft\\.com|bing\\.com\\/(chat|search\\?.*(showconv|sydney))|edgeservices\\.bing\\.com/i, name: 'Microsoft Copilot' }
-            ];
-            for (var __i = 0; __i < __ai.length; __i++) {
-              if (__ai[__i].re.test(__ref)) {
-                gtag('event', 'ai_referral', {
-                  ai_source: __ai[__i].name,
-                  page_location: window.location.href,
-                  page_referrer: __ref
-                });
-                gtag('set', 'user_properties', { last_ai_source: __ai[__i].name });
-                window.dataLayer.push({ event: 'ai_referral', ai_source: __ai[__i].name });
-                break;
-              }
-            }
-          } catch (e) {}
         `}
       </Script>
       <Script
@@ -223,47 +197,18 @@ export function LinkedInInsight() {
  * Use these to track specific user actions
  */
 
-export const trackEvent = (eventName: string, parameters?: Record<string, unknown>) => {
-  if (typeof window !== "undefined" && "gtag" in window) {
-    (window as Window & { gtag: (command: string, eventName: string, params?: Record<string, unknown>) => void }).gtag("event", eventName, parameters);
-  }
-};
-
-/**
- * The one predefined tracker still wired to anything.
+/* No predefined event trackers live here any more.
  *
- * Twelve siblings were deleted on 28 Aug 2026: trackPricingPlanClick,
- * trackTrialSignup, trackPurchase, trackROICalculator, trackReferralCreated,
- * trackContactFormSubmit, trackBlogView, trackVideoPlay, trackOutboundClick,
- * blueprintIntakeStarted, blueprintCheckoutInitiated and leadCaptured. Every one
- * had zero call sites: they were built for the Pepform SaaS subscription funnel
- * and the $799 Blueprint, both retired, and several priced their events in USD
- * for an Australian business. Dead trackers are worse than no trackers, because
- * the next person reading this file assumes the funnel they describe exists.
- *
- * This one survives only because /referral-blueprint/success still calls it. See
- * the warning there: it fires a $799 purchase on any visit to a page whose
- * product was shut down on 26 Aug 2026, so it is a reporting hazard rather than
- * a measurement. Delete both together, not this alone.
+ * `trackEvent` and the thirteen-method `analytics` object were deleted on
+ * 28 Aug 2026. Twelve methods had no callers at all; the last,
+ * blueprintPurchaseCompleted, fired a $799 GA4 `purchase` on every visit to
+ * /referral-blueprint/success with no check that a payment had happened, for a
+ * product shut down on 26 Aug 2026. Those events sat in the same `purchase`
+ * metric used to judge the affiliate work. `trackEvent` went with them because
+ * it had no other caller; everything that measures anything on this site calls
+ * window.gtag directly, which is one indirection fewer and harder to leave
+ * pointing at a funnel that no longer exists.
  */
-export const analytics = {
-  blueprintPurchaseCompleted: (sessionId?: string) => {
-    trackEvent("purchase", {
-      transaction_id: sessionId ?? "blueprint_" + Date.now(),
-      value: 799,
-      currency: "AUD",
-      items: [{ item_name: "Referral Growth Blueprint", item_category: "Digital Product", price: 799, quantity: 1 }],
-    });
-    if (typeof window !== "undefined" && "fbq" in window) {
-      (window as Window & { fbq: (track: string, event: string, params?: Record<string, unknown>) => void })
-        .fbq("track", "Purchase", { content_name: "Referral Growth Blueprint", value: 799, currency: "AUD" });
-    }
-    if (typeof window !== "undefined" && "lintrk" in window) {
-      (window as Window & { lintrk: (track: string, params: { conversion_id: number }) => void })
-        .lintrk("track", { conversion_id: 0 });
-    }
-  },
-};
 
 // Type declaration for window.gtag
 declare global {

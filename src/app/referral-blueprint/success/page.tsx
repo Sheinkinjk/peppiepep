@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { CheckCircle2, ArrowRight, Mail, Clock, FileSpreadsheet } from "lucide-react";
 import type { Metadata } from "next";
-import PurchaseTracker from "./PurchaseTracker";
 import { cancelScheduledEmail } from "@/lib/abandoned-checkout";
 
 export const metadata: Metadata = {
@@ -39,7 +38,6 @@ export default async function ReferralBlueprintSuccessPage({
 
   return (
     <main className="min-h-screen bg-[#060f15] text-white">
-      <PurchaseTracker />
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(10,167,181,0.12),transparent_60%)]" />
       </div>
