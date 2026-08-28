@@ -3,9 +3,7 @@ import { headers } from 'next/headers';
 import Stripe from 'stripe';
 import { stripe, requireStripe } from '@/lib/stripe';
 import { createServerComponentClient } from '@/lib/supabase';
-import { createBlueprintClient } from '@/lib/supabase-blueprint';
 import { createApiLogger } from '@/lib/api-logger';
-import { sendAdminNotification, buildBlueprintBuyerConfirmationEmail } from '@/lib/email-notifications';
 import type { Json } from '@/types/supabase';
 
 // Defensive trim, protects against trailing whitespace from how the env var was set (e.g. via `echo "..." | vercel env add`)
@@ -79,9 +77,15 @@ export async function POST(request: NextRequest) {
   // Process the event
   try {
     switch (event.type) {
-      case 'checkout.session.completed':
-        await handleCheckoutSessionCompleted(event.data.object as Stripe.Checkout.Session, logger);
-        break;
+      /* 'checkout.session.completed' had one handler and it was entirely the
+         $799 Blueprint fulfilment: it returned early unless the session metadata
+         said referral_growth_blueprint. The Blueprint shut down on 26 Aug 2026
+         and its Supabase project was deleted, so the handler was writing to a
+         database that no longer exists. Removed on 28 Aug 2026; the event now
+         falls to `default` and is still recorded in stripe_webhook_events by the
+         insert above, so nothing stops being logged. If a future product ever
+         sells through Stripe Checkout, add a handler here rather than reviving
+         that one. */
 
       case 'payment_intent.succeeded':
         await handlePaymentIntentSucceeded(event.data.object as Stripe.PaymentIntent, logger);
@@ -125,71 +129,6 @@ export async function POST(request: NextRequest) {
     // Still return 200 for unhandled event types, only return 500 for signature failures (handled above)
     return NextResponse.json({ received: true });
   }
-}
-
-/**
- * Handle checkout session completed
- */
-async function handleCheckoutSessionCompleted(session: Stripe.Checkout.Session, logger: ReturnType<typeof createApiLogger>) {
-  logger.info('Processing checkout session completed', { sessionId: session.id, customerId: session.customer });
-
-  const isBlueprint =
-    session.metadata?.product === 'referral_growth_blueprint' ||
-    session.metadata?.source === 'referral-blueprint';
-
-  if (!isBlueprint) return;
-
-  const buyerEmail = session.customer_email || (session.customer_details?.email ?? '');
-  const buyerName  = session.metadata?.buyer_name || session.customer_details?.name || 'there';
-
-  if (!buyerEmail) {
-    logger.warn('Blueprint purchase missing buyer email', { sessionId: session.id });
-    return;
-  }
-
-  // Generate access token and save purchase record to the dedicated blueprint Supabase project
-  const accessToken = crypto.randomUUID();
-  const SITE_URL    = process.env.NEXT_PUBLIC_SITE_URL || 'https://referlabs.com.au';
-  const portalUrl   = `${SITE_URL}/blueprint-access?token=${accessToken}`;
-
-  const blueprintDb = createBlueprintClient();
-  const { error: dbError } = await blueprintDb.from('blueprint_purchases').insert({
-    email:             buyerEmail,
-    name:              buyerName,
-    access_token:      accessToken,
-    stripe_session_id: session.id,
-    industry:          session.metadata?.industry || '',
-    primary_goal:      session.metadata?.primary_goal || '',
-    experience_level:  session.metadata?.experience_level || '',
-    purchased_at:      new Date(session.created * 1000).toISOString(),
-    status:            'preparing',
-  });
-
-  if (dbError) {
-    logger.error('Failed to save blueprint purchase record', { error: dbError, buyerEmail });
-    // Continue, still send the email, just without a portal link
-  } else {
-    logger.info('Blueprint purchase record created', { buyerEmail, accessToken });
-  }
-
-  // Send buyer confirmation email (with portal link if DB write succeeded)
-  sendAdminNotification({
-    to: buyerEmail,
-    subject: 'Your Referral Growth Blueprint, confirmed',
-    html: buildBlueprintBuyerConfirmationEmail({
-      name:            buyerName,
-      email:           buyerEmail,
-      industry:        session.metadata?.industry || '',
-      primaryGoal:     session.metadata?.primary_goal || '',
-      experienceLevel: session.metadata?.experience_level || '',
-      purchasedAt:     new Date(session.created * 1000).toISOString(),
-      portalUrl:       dbError ? undefined : portalUrl,
-    }),
-  }).catch((err) => {
-    logger.error('Failed to send blueprint buyer confirmation email', { error: err, buyerEmail });
-  });
-
-  logger.info('Blueprint purchase handled', { buyerEmail, portalUrl });
 }
 
 /**

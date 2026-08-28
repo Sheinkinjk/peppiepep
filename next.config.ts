@@ -57,6 +57,17 @@ const nextConfig: NextConfig = {
       // purchase on every visit, bot included, into the same metric used to
       // judge affiliate performance.
       { source: '/referral-blueprint/success', destination: '/', permanent: true },
+      // Deleted Aug 2026 with its parent directory. A second Blueprint success
+      // page, orphaned: nothing linked to it, /referral-business-program itself
+      // had no page and already 308s to /affiliate-programs-australia, and this
+      // child served "Payment Successful, Referral Growth Blueprint" for a
+      // product that no longer exists.
+      { source: '/referral-business-program/success', destination: '/', permanent: true },
+      // Retired Aug 2026. Kept alive until now on the stated reasoning that
+      // buyers held the link in their receipts. There were no paid Blueprint
+      // users, so there was nobody to keep it for, and its Supabase project was
+      // deleted on 26 Aug 2026 so no token could be verified anyway.
+      { source: '/blueprint-access', destination: '/', permanent: true },
 
       // ── Business lending: hidden, not retired (22 August 2026) ────────────
       // Withdrawn pending a review of the credit-licensing position, and because
@@ -176,10 +187,10 @@ const nextConfig: NextConfig = {
       // The $799 Blueprint is no longer offered; the business is now pushing the
       // affiliate-programs content. Retiring the 6 marketing pages into the closest
       // live page by intent so their ranking equity consolidates instead of 404ing.
-      // NOTE: exact sources only. /blueprint-access is deliberately NOT redirected.
-      // /referral-blueprint/success WAS in that exemption on the same reasoning,
-      // "people who already paid still need delivery". There were no paid Blueprint
-      // users, so the premise was false and it now 308s to / above.
+      // NOTE: /blueprint-access and /referral-blueprint/success were both exempt
+      // here on the reasoning that "people who already paid still need delivery".
+      // There were no paid Blueprint users, so the premise was false and both now
+      // 308 to / above.
       {
         source: '/referral-blueprint',
         destination: '/affiliate-programs-australia',

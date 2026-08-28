@@ -144,8 +144,6 @@ const STANDALONE_ROUTES = [
   "/receding-hairline-treatment-australia",
   // Business software hub (own light ConsumerShell; was double-headering)
   "/business-software",
-  // $799 Blueprint (migrated to the light ConsumerShell theme)
-  "/referral-blueprint",
   // Legal + contact (migrated to the consumer shell so the footer doesn't jump themes)
   "/privacy",
   "/terms",
@@ -201,7 +199,6 @@ const STANDALONE_ROUTES = [
   "/apollo-energy-group-eoi",
   "/weight-loss-guide",
   "/who-underwrites-pet-insurance-australia",
-  "/blueprint-access",
   "/data",
   "/disclaimer",
   "/partner-with-refer-labs",

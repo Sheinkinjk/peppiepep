@@ -258,7 +258,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/terms`,   lastModified: LEGAL, changeFrequency: 'yearly', priority: 0.3 },
     // /security removed: noIndex (retired SaaS trust page).
 
-    // Excluded as noIndex: /blueprint-access, /dashboard,
+    // Excluded as noIndex: /dashboard,
     // /login, /auth/*, /security, /integrations + children.
   ];
 }

@@ -900,6 +900,29 @@ export const seoConfig = {
     url: `${SITE_URL}/hair-loss-treatment-cost-australia`,
     keywords: ["hair loss treatment cost australia", "mosh hair loss cost", "prescription hair loss treatment cost", "hair loss telehealth cost australia", "hair loss telehealth cost", "how much does hair loss treatment cost"],
   },
+  // Retired Aug 2026: a second Blueprint success page, now 308ing to /. Same
+  // defensive purpose as referralBlueprintSuccess below.
+  referralBusinessProgramSuccess: {
+    noIndex: true,
+    title: "Referral Growth Blueprint, retired | Refer Labs",
+    description:
+      "The Referral Growth Blueprint is no longer offered. See our guide to Australian affiliate programs instead.",
+    url: `${SITE_URL}/referral-business-program/success`,
+    keywords: [],
+  },
+
+  // Retired Aug 2026: the Blueprint access portal, now 308ing to /. It was kept
+  // alive for buyers holding the link; there were no buyers, and its Supabase
+  // project was deleted on 26 Aug 2026, so no token could be verified.
+  blueprintAccess: {
+    noIndex: true,
+    title: "Blueprint access, retired | Refer Labs",
+    description:
+      "The Referral Growth Blueprint and its access portal are no longer offered. Contact jarred@referlabs.com.au with any questions.",
+    url: `${SITE_URL}/blueprint-access`,
+    keywords: [],
+  },
+
   // Retired Aug 2026: the Blueprint Stripe success page, now 308ing to /. It
   // never had a seoConfig entry; its metadata was inline on the page, which is
   // why this is an addition rather than an edit. It exists as the defensive

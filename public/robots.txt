@@ -6,7 +6,7 @@
 # noindex tag. Disallowing a page that also carries noindex means Google can never
 # see the directive, so an already-indexed URL can never be dropped. Pages below
 # that carry noindex in their metadata are therefore deliberately NOT disallowed
-# here: /login, /blueprint-access, /referred,
+# here: /login, /referred,
 # /roi-calculator (301), /security, /integrations + children.
 #
 User-agent: *
@@ -32,8 +32,8 @@ Disallow: /payment/
 # ── AI / generative answer engines (GEO) ──
 # Explicitly allowed to crawl and cite Refer Labs content. See /llms.txt for a curated index.
 # Disallow list is IDENTICAL to the `*` group above: the same private/utility paths,
-# and, like `*`, the noindex pages (/login, /blueprint-access, /referred)
-# are deliberately left crawlable so any
+# and, like `*`, the noindex pages (/login, /referred) are deliberately left
+# crawlable so any
 # engine with an index can see the noindex and drop them, rather than being blind to it.
 User-agent: GPTBot
 User-agent: OAI-SearchBot
