@@ -50,6 +50,8 @@ export const ASSIGNMENTS: Assignment[] = [
   { route: '/moshy-eligibility', hub: 'weight-loss', arm: 'excluded', pairId: 'weight-loss-p6', wordsAtAssignment: 629 }, // was treated, pair weight-loss-p6
   { route: '/weight-loss-telehealth-men-australia', hub: 'weight-loss', arm: 'excluded', pairId: 'weight-loss-p7', wordsAtAssignment: 618 }, // was control, pair weight-loss-p7
   { route: '/online-weight-loss-programs-australia', hub: 'weight-loss', arm: 'excluded', pairId: 'weight-loss-p7', wordsAtAssignment: 577 }, // was treated, pair weight-loss-p7
+  // Folded into /moshy on 28 Aug 2026 and now 308s there. The row stays: the
+  // table is the audit record against the pre-registration, not a route list.
   { route: '/getmoshy', hub: 'weight-loss', arm: 'excluded', pairId: null, wordsAtAssignment: 403 },
   // ── solar-energy ──
   { route: '/home-battery-rebate-australia', hub: 'solar-energy', arm: 'excluded', pairId: 'solar-energy-p1', wordsAtAssignment: 1643 }, // was control, pair solar-energy-p1

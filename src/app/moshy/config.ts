@@ -129,6 +129,16 @@ export const moshyConfig: AffiliatePageConfig = {
       a: "The current Moshy discount code is REFERRAL120, worth $120 off a new customer's first order, verified against Moshy's own sign-up page on 17 August 2026. Moshy states the offer applies to new customers who purchase a practitioner-assigned weight-loss program, excluding dietitian, over-the-counter and meal-replacement plans, is one use per customer, and carries a minimum three-month commitment. You do not need to type it: when you click through from this page, Moshy's landing page carries the code into the sign-up flow automatically. Other Moshy codes circulating on coupon sites are frequently expired or unofficial and may not apply at checkout; REFERRAL120 for $120 off is the current, verified offer.",
     },
     {
+      // Absorbed from /getmoshy. Deliberately the "legit" variant, not the
+      // "official site" one: that question is answered by an h2 on this page,
+      // and asking it twice in near-identical words 520 words apart is the
+      // duplicate pattern, not a second answer. "Legit" is a real, separate
+      // query and this answer carries what the h2 does not, the practitioner
+      // review behind the submissions.
+      q: "Is getmoshy legit?",
+      a: "getmoshy.com.au is the real website of a registered Australian telehealth provider, and eligibility submissions made on it are reviewed by registered Australian practitioners. As with any health service, read Moshy's own terms before signing up. This page is operated by Refer Labs and is not the official Moshy site.",
+    },
+    {
       q: "Is the Moshy discount only for your first order?",
       a: "Yes. REFERRAL120 takes $120 off a new customer's first order and is one use per customer, so it applies once rather than to every month of the subscription. Moshy states the offer covers a practitioner-assigned weight-loss program with a minimum three-month commitment, and excludes dietitian, over-the-counter and meal-replacement plans. From the second order onward you pay Moshy's standard plan price, which the practitioner confirms inside the eligibility flow before you commit to anything. Verified against Moshy's own sign-up page on 17 August 2026.",
     },

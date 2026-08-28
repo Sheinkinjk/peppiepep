@@ -1572,6 +1572,10 @@ export const seoConfig = {
   },
 
   getMoshy: {
+    // Folded into /moshy (Aug 2026) and 308ing there. The entry stays so that
+    // removing the redirect cannot silently republish the route with no
+    // metadata; noIndex is the defensive belt on top of that.
+    noIndex: true,
     title: "getmoshy.com.au: The Official Moshy Site & How to Start",
     description:
       "getmoshy.com.au is the official website of Moshy, the Australian telehealth weight-management service. What the site is, how the referral link works, and where the eligibility check lives.",

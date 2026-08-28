@@ -44,6 +44,12 @@ const nextConfig: NextConfig = {
       // Retired Aug 2026: a second "apply to work with us" page competing with the
       // partner application for the same intent. One door, not two.
       { source: '/application', destination: '/partner-with-refer-labs', permanent: true },
+      // Folded into /moshy, Aug 2026: 489 words and two inbound links, competing
+      // with /moshy for the brand query while /moshy ranks 8.6 on it. Its one
+      // distinct answer, that getmoshy.com.au is Moshy's own domain, moved to
+      // /moshy as an h2 and a FAQ entry. /moshy is not itself redirected, so
+      // this is a single hop.
+      { source: '/getmoshy', destination: '/moshy', permanent: true },
 
       // ── Business lending: hidden, not retired (22 August 2026) ────────────
       // Withdrawn pending a review of the credit-licensing position, and because

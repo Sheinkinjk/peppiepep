@@ -29,7 +29,6 @@ const guides = [
   { href: "/online-weight-loss-programs-australia", title: "Online programs, untangled", desc: "Medical telehealth vs coaching apps vs meal plans." },
   { href: "/weight-loss-telehealth-men-australia", title: "The men's guide", desc: "How men's services work and the pre-signup checklist." },
   { href: "/mens-health-telehealth-australia", title: "Men's health telehealth", desc: "The wider category, and what online clinics can't do." },
-  { href: "/getmoshy", title: "getmoshy.com.au", desc: "Confirming the official site and the fastest way in." },
   { href: "/moshy", title: "Moshy offer & referral link", desc: "$120 off your first order, applied automatically. No code to type." },
   { href: "/weight-loss-treatment-eligibility-australia", title: "Do you qualify?", desc: "The eligibility criteria practitioners use, and how to check where you stand." },
   { href: "/weight-loss-quiz", title: "Which pathway fits you?", desc: "A short matcher across the clinical, coaching and GP routes." },

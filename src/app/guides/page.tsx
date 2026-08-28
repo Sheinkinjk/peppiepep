@@ -101,7 +101,6 @@ const sections = [
         { href: "/weight-loss-cost-calculator", label: "Weight-Loss Cost Calculator", desc: "Estimate the monthly and annual figure." },
         { href: "/moshy-eligibility", label: "The Moshy Eligibility Check", desc: "What the questionnaire asks and why." },
         { href: "/moshy-vs-pilot", label: "Moshy vs Pilot", desc: "The gender-neutral option against Eucalyptus’s men’s service." },
-        { href: "/getmoshy", label: "getmoshy.com.au", desc: "Confirming the official site and the fastest way in." },
     ],
   },
   {

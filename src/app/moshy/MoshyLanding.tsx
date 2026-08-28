@@ -134,6 +134,7 @@ export default function MoshyLanding() {
               <ul className="space-y-2.5 text-sm">
                 {[
                   ["code", "The discount code"],
+                  ["official-site", "Is getmoshy.com.au official?"],
                   ["what", "What Moshy actually is"],
                   ["treatment", "Treatment and eligibility"],
                   ["start", "How to start"],
@@ -167,6 +168,23 @@ export default function MoshyLanding() {
                   weight-management program, one use per customer, with a minimum three-month commitment; dietitian,
                   over-the-counter and meal-replacement plans are excluded. Our link carries it into the sign-up flow,
                   so there is nothing to type.
+                </p>
+              </div>
+            </section>
+
+            {/* Absorbed from /getmoshy when it was folded in (Aug 2026). It is the
+                one answer that page held and this one did not, and it is the whole
+                reason anyone types "getmoshy": confirming the domain is real. The
+                old page buried it below a discount box. */}
+            <section id="official-site" className="mt-12 scroll-mt-24">
+              <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">
+                Is getmoshy.com.au the official Moshy site?
+              </h2>
+              <div className="mt-4 space-y-4 text-[15.5px] leading-relaxed text-[#3d4b44]">
+                <p>
+                  Yes. getmoshy.com.au is Moshy&apos;s own domain. &ldquo;Get Moshy&rdquo;, &ldquo;getmoshy&rdquo; and
+                  &ldquo;getmoshy.com.au&rdquo; all refer to the same Australian telehealth weight-management service;
+                  this page is operated by Refer Labs, not by Moshy.
                 </p>
               </div>
             </section>

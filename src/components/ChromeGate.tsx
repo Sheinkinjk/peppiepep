@@ -55,7 +55,6 @@ const STANDALONE_ROUTES = [
   // Moshy funnel pages
   "/moshy-review",
   "/moshy-eligibility",
-  "/getmoshy",
   "/moshy-vs-gp",
   "/moshy-alternatives",
   "/weight-loss-telehealth-men-australia",
