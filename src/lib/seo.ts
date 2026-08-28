@@ -1389,7 +1389,7 @@ export const seoConfig = {
     // order discount, not a hair-only one, so the broader title is also truer.
     title: "Mosh Discount Code 2026: 55% Off First Order",
     description:
-      "REFERAL55 takes 55% off a first Mosh order, applied through our link. What the hair-loss consult involves, and the cost after that first order.",
+      "REFERAL55, applied by our link: 55% off a first Mosh order. What the hair-loss consult involves, and the cost once that first order is behind you.",
     url: `${SITE_URL}/moshhair`,
     keywords: [
       "mosh hair discount code",
@@ -1446,7 +1446,7 @@ export const seoConfig = {
   moshy: {
     title: "Moshy Discount Code Australia 2026: $120 Off | Refer Labs",
     description:
-      "REFERRAL120 takes $120 off your first Moshy order, applied by our link so there is nothing to type. Read off Moshy's own page, 17 Aug 2026.",
+      "The current Moshy discount code is REFERRAL120. It applies through our link for $120 off a first order, read off Moshy's own page on 17 Aug 2026.",
     url: `${SITE_URL}/moshy`,
     keywords: [
       "moshy discount code",
@@ -1487,7 +1487,7 @@ export const seoConfig = {
     // stop competing for the same query.
     title: "Best Weight Loss Telehealth: Moshy vs Juniper",
     description:
-      "Moshy, Juniper and Pilot compared for Australians on eligibility, process and cost. REFERRAL120 takes $120 off a first Moshy order, checked 17 Aug 2026.",
+      "Moshy, Juniper and Pilot compared for Australians on eligibility, process and cost. Our link carries REFERRAL120: $120 off a first Moshy order.",
     url: `${SITE_URL}/best-weight-loss-telehealth-australia`,
     keywords: [
       "best weight loss telehealth australia 2026",
@@ -1508,7 +1508,7 @@ export const seoConfig = {
   moshyVsJuniper: {
     title: "Moshy vs Juniper 2026: Cost and Who Each Suits",
     description:
-      "Juniper wraps coaching around clinical care and is built for women; Moshy is open to anyone eligible. $120 off Moshy with REFERRAL120, 17 Aug 2026.",
+      "Juniper wraps coaching around clinical care and is built for women; Moshy is open to anyone eligible. Our Moshy link applies REFERRAL120 for $120 off.",
     url: `${SITE_URL}/moshy-vs-juniper`,
     keywords: [
       "moshy vs juniper",
@@ -1529,7 +1529,7 @@ export const seoConfig = {
   moshyVsPilot: {
     title: "Moshy vs Pilot 2026: Weight Loss Telehealth",
     description:
-      "Pilot is men-focused, Moshy is open to anyone eligible. How each runs the assessment, plus $120 off Moshy with REFERRAL120, checked 17 Aug 2026.",
+      "Pilot is men-focused, Moshy is open to anyone eligible. How each runs the assessment, and a first Moshy order costs $120 less with REFERRAL120.",
     url: `${SITE_URL}/moshy-vs-pilot`,
     keywords: [
       "moshy vs pilot",
@@ -1895,7 +1895,7 @@ export const seoConfig = {
   moshVsPilot: {
     title: "Mosh vs Pilot 2026: Hair Loss Telehealth",
     description:
-      "Where the two differ on consult, treatment route and ongoing cost. REFERAL55 takes 55% off a first Mosh order, checked 17 Aug 2026.",
+      "55% off a first Mosh order, via REFERAL55 on our link. Where Mosh and Pilot differ on consult, treatment route and ongoing cost. Checked 17 Aug 2026.",
     url: `${SITE_URL}/mosh-vs-pilot`,
     keywords: [
       "mosh vs pilot",
@@ -1934,7 +1934,7 @@ export const seoConfig = {
   moshReview: {
     title: "Mosh Review 2026: Is It Legit, and the Cost",
     description:
-      "An independent look at the consult, the treatment route and what you pay monthly. REFERAL55 takes 55% off a first order, checked 17 Aug 2026.",
+      "Is it legit, what the consult involves, and what you pay monthly. The REFERAL55 code on our link takes 55% off a first order.",
     url: `${SITE_URL}/mosh-review`,
     keywords: ["mosh review", "is mosh legit", "is mosh worth it", "does mosh work", "mosh hair loss review australia", "mosh reviews"],
   },
@@ -2551,7 +2551,7 @@ export const seoConfig = {
   bestHairLossTreatmentAustralia: {
     title: "Best Hair Loss Treatment 2026: Mosh vs Dense",
     description:
-      "What clinical telehealth and topical products cost in Australia, and who each suits. REFERAL55 takes 55% off a first Mosh order, checked 17 Aug 2026.",
+      "New customers get 55% off a first Mosh order with REFERAL55. What clinical telehealth and topical products cost in Australia, and who each suits.",
     url: `${SITE_URL}/best-hair-loss-treatment-australia`,
     keywords: [
       "best hair loss treatment australia 2026",
