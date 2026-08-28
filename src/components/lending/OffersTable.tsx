@@ -60,8 +60,10 @@ export default function OffersTable({
               <td className="px-4 py-3"><span className="inline-flex items-center gap-1 font-medium text-[#0a7c42]">Active ✓</span></td>
               {/* No fallback to the global sweep date. The footnote below promises
                   each date is a reading of that provider's own page, and rows without
-                  a per-offer `verified` (Apollo, Knose, Pipedrive) were inheriting the
-                  site-wide stamp and presenting it as such a reading. */}
+                  a per-offer `verified` were inheriting the site-wide stamp and
+                  presenting it as such a reading. Pipedrive is the last such row:
+                  its pricing page blocks automated fetching, so dating it needs a
+                  manual visit. */}
               <td className="px-4 py-3 whitespace-nowrap tabular-nums">
                 {d.verified ? formatVerifiedFull(d.verified) : <span className="text-[#6e7b74]">Not recorded</span>}
               </td>

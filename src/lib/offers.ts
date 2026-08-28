@@ -21,8 +21,9 @@
  * those individually. The rest could not be verified without partner access:
  * Moshy's REFERRAL120, Mosh's REFERAL55, Knose's referlab2mf, PetsOnMe's
  * REFERLABS, Superfiliate's 15% and Unbounce's 20/35% are partner-specific and
- * never appear on a public page, Apollo's $500 is our own arrangement, and
- * Pipedrive's pricing page blocks automated fetching. Worth knowing from the
+ * never appear on a public page, and Pipedrive's pricing page blocks automated
+ * fetching. Apollo's $500 was confirmed separately on 28 Aug 2026 and carries
+ * its own date; it is our own arrangement, so there is still no page to re-read. Worth knowing from the
  * same sweep: Mosh now publicly runs MOSHINTRO100 for $100 off a first month of
  * weight loss, which is a different product from the hair-loss offer we list.
  */
@@ -90,40 +91,49 @@ export interface Deal {
   verified?: string;
 
   /**
-   * The page this offer was read off, so a re-check starts from the same place
+   * Where this offer was traced to, so a re-check starts from the same place
    * rather than from a search. Follows the `// Source:` convention in
    * src/lib/facts/registry.ts, for the same reason: a commercial claim has to be
    * traceable to the thing it was read off.
    *
-   * ABSENT MEANS ONE OF TWO THINGS, and they are not the same:
-   *   - There is no page to name. Six of these codes are partner-specific and
-   *     appear on no page a reader can open, and Apollo's $500 is our own
-   *     arrangement rather than a published offer. Absent is correct there, and
-   *     filling it in with the vendor's homepage would fabricate a source.
-   *   - Nobody recorded it. That is a gap, and the fix is to record the URL the
-   *     next time the offer is actually re-read, not to guess one now.
-   * Do not populate this from src/lib/affiliate-links.ts. Those are tracked
+   * A union, not a URL string, because "there is no URL" is a real and common
+   * answer here and it is not the same answer as "nobody wrote one down". Left
+   * as a bare optional string those two collapsed into one absent field, which
+   * is the ambiguity this replaces.
+   *
+   *   { readOff }      a page that can be opened to see the offer. Includes the
+   *                    partner landing pages our own links resolve to, which are
+   *                    not publicly discoverable but are readable.
+   *   { noPublicPage } nothing to open. The offer exists in an arrangement or a
+   *                    partner dashboard, so no re-read is possible and no URL
+   *                    would be honest. The string says why, and where that came
+   *                    from.
+   *
+   * ABSENT now means exactly one thing: nobody has recorded it. That is a gap,
+   * and the fix is to record it the next time the offer is actually re-read, not
+   * to guess. Pipedrive is the only row in that state.
+   *
+   * Do not populate `readOff` from src/lib/affiliate-links.ts. Those are tracked
    * redirect URLs, not the pages an offer was read off.
    */
-  source?: string;
+  source?: { readOff: string } | { noPublicPage: string };
 }
 
 export const DEALS: Deal[] = [
-  // source: the partner landing page our link resolves to, where the offer is
+  // readOff: the partner landing page our link resolves to, where the offer is
   // visible. Read live on 26 Aug 2026 per src/lib/facts/registry.ts.
-  { brand: "Moshy", logo: "/logos/moshy.png", href: "/moshy", offer: "$120 off your first order", code: "REFERRAL120", category: "Weight loss", featured: true, verified: "2026-08-17", exclusive: true, source: "https://www.getmoshy.com.au/start/eligibility-check-moshy" },
-  { brand: "Mosh", logo: "/logos/mosh-tile.png", href: "/moshhair", offer: "55% off your first order", code: "REFERAL55", category: "Hair loss", featured: true, verified: "2026-08-17", exclusive: true, source: "https://www.getmosh.com.au/start/referlabs" },
-  // No `verified` on purpose, so this shows the global sweep stamp. The $500 is
-  // our own arrangement with Apollo, not an offer published anywhere, so there is
-  // no page to re-read and no per-offer date to honestly set. Confirm it with
-  // Apollo directly before changing the amount or the conditions.
-  { brand: "Apollo Energy Group", logo: "/logos/apollo-energy.png", href: "/apollo-energy-group", offer: "$500 off your quote, on top of any rebate", category: "Home batteries", featured: true },
-  { brand: "Unbounce", logo: "/logos/unbounce.png", href: "/unbounce", offer: "20% off 3 months, or 35% off your first year", category: "Landing pages", featured: true, verified: "2026-08-20" },
+  { brand: "Moshy", logo: "/logos/moshy.png", href: "/moshy", offer: "$120 off your first order", code: "REFERRAL120", category: "Weight loss", featured: true, verified: "2026-08-17", exclusive: true, source: { readOff: "https://www.getmoshy.com.au/start/eligibility-check-moshy" } },
+  { brand: "Mosh", logo: "/logos/mosh-tile.png", href: "/moshhair", offer: "55% off your first order", code: "REFERAL55", category: "Hair loss", featured: true, verified: "2026-08-17", exclusive: true, source: { readOff: "https://www.getmosh.com.au/start/referlabs" } },
+  // Read on Apollo's page on 28 Aug 2026: the $500 is current and unchanged,
+  // eligibility is the only stated condition, and the offer is not publicly
+  // stated anywhere. It applies to applications made through our link.
+  { brand: "Apollo Energy Group", logo: "/logos/apollo-energy.png", href: "/apollo-energy-group", offer: "$500 off your quote, on top of any rebate", category: "Home batteries", featured: true, verified: "2026-08-28", source: { noPublicPage: "Our own arrangement with Apollo, applying only to applications made through our link. Confirmed with Apollo's page on 28 August 2026: no public page states it." } },
+  { brand: "Unbounce", logo: "/logos/unbounce.png", href: "/unbounce", offer: "20% off 3 months, or 35% off your first year", category: "Landing pages", featured: true, verified: "2026-08-20", source: { noPublicPage: "Partner-specific, stated on no public page. Recorded in the 25 Aug 2026 sweep note at the top of this file; re-confirm with the partner, not by searching." } },
   { brand: "Leadpages", logo: "/logos/leadpages.png", href: "/leadpages", offer: "7-day free trial; 20% off annual billing", category: "Landing pages", featured: true, verified: "2026-08-25" },
-  { brand: "Superfiliate", logo: "/logos/superfiliate.png", href: "/superfiliate", offer: "15% off your monthly SaaS fee", category: "Creator growth", featured: true, verified: "2026-08-20" },
+  { brand: "Superfiliate", logo: "/logos/superfiliate.png", href: "/superfiliate", offer: "15% off your monthly SaaS fee", category: "Creator growth", featured: true, verified: "2026-08-20", source: { noPublicPage: "Partner-specific, stated on no public page. Recorded in the 25 Aug 2026 sweep note at the top of this file; re-confirm with the partner, not by searching." } },
 
-  { brand: "Knose", logo: "/logos/knose.svg", href: "/knose", offer: "2 months free for new customers", code: "referlab2mf", category: "Pets", featured: true, verified: "2026-08-27" },
-  { brand: "PetsOnMe", logo: "/logos/petsonme.svg", href: "/petsonme", offer: "15% off pet care services, up from 12% (not the premium)", code: "REFERLABS", category: "Pets", featured: true, verified: "2026-08-17" },
+  { brand: "Knose", logo: "/logos/knose.svg", href: "/knose", offer: "2 months free for new customers", code: "referlab2mf", category: "Pets", featured: true, verified: "2026-08-27", source: { noPublicPage: "Partner-specific, stated on no public page. Recorded in the 25 Aug 2026 sweep note at the top of this file; re-confirm with the partner, not by searching." } },
+  { brand: "PetsOnMe", logo: "/logos/petsonme.svg", href: "/petsonme", offer: "15% off pet care services, up from 12% (not the premium)", code: "REFERLABS", category: "Pets", featured: true, verified: "2026-08-17", source: { noPublicPage: "Partner-specific, stated on no public page. Recorded in the 25 Aug 2026 sweep note at the top of this file; re-confirm with the partner, not by searching." } },
 
   { brand: "Carrd", logo: "/logos/carrd.png", href: "/carrd", offer: "Free plan forever; Pro from US$19/yr", category: "Website builders", verified: "2026-08-25" },
   { brand: "beehiiv", logo: "/logos/beehiiv.png", href: "/best-newsletter-platform", offer: "Free plan, no revenue cut", category: "Newsletters", verified: "2026-08-25" },
