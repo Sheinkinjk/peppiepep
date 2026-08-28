@@ -27,7 +27,7 @@ const faqs = [
   },
   {
     q: "Why is the evidence so unclear?",
-    a: "Small studies, short durations, protocols that differ between them, and outcomes that are hard to measure objectively. Perceived recovery is easier to record than actual adaptation, which is part of why the supportive findings cluster there. It is a genuinely young area rather than a settled one being misrepresented, and the honest position is that a lot is not yet known.",
+    a: "Small studies, short durations, protocols that differ between them, and outcomes that are hard to measure objectively. Perceived recovery is easier to record than actual adaptation, which is part of why the supportive findings cluster there. It is a genuinely young area rather than a settled one being misrepresented, and a lot is not yet known.",
   },
 ];
 

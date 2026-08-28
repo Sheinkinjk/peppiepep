@@ -2215,12 +2215,12 @@ export const seoConfig = {
     ],
   },
 
-  // Retired product (the Blueprint), so noIndex, but crawlable so Google can read
-  // the noindex, and it needs its own canonical: without one the page claimed to
-  // be the homepage.
+  // Retired Aug 2026 and 308ing to /. The entry stays as the defensive guard the
+  // convention calls for: a restored route gets its own noindexed metadata
+  // rather than inheriting the homepage canonical.
   leaveAReview: {
-    title: "Leave a Review | Refer Labs",
-    description: "Share your experience of the Refer Labs Referral Blueprint.",
+    title: "Leave a review, retired | Refer Labs",
+    description: "The Referral Growth Blueprint is no longer offered, so this review form has been retired.",
     url: `${SITE_URL}/leave-a-review`,
     noIndex: true,
     keywords: [],

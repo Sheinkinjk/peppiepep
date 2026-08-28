@@ -181,7 +181,7 @@ export const goHighLevelConfig: AffiliatePageConfig = {
     {
       href: "/for-business",
       label: "For Business: Partner With Refer Labs",
-      desc: "Growth services, the referral Blueprint, and get-featured partnerships for businesses.",
+      desc: "Growth services and get-featured partnerships for businesses.",
     },
     {
       href: "/guides",

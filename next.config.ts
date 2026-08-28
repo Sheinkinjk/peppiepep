@@ -68,6 +68,11 @@ const nextConfig: NextConfig = {
       // users, so there was nobody to keep it for, and its Supabase project was
       // deleted on 26 Aug 2026 so no token could be verified anyway.
       { source: '/blueprint-access', destination: '/', permanent: true },
+      // Deleted Aug 2026. It collected reviews of the $799 Blueprint from people
+      // who bought it; nobody did. Its form also POSTed to /api/blueprint-review,
+      // which was deleted with the rest of the Blueprint on 28 Aug 2026, so every
+      // submission had been failing since.
+      { source: '/leave-a-review', destination: '/', permanent: true },
 
       // ── Business lending: hidden, not retired (22 August 2026) ────────────
       // Withdrawn pending a review of the credit-licensing position, and because
