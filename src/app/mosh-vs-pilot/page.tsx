@@ -70,10 +70,8 @@ const faqs = [
     q: "Are Mosh and Pilot the same company?",
     a: "No. They are separate Australian telehealth brands. Pilot is part of the Eucalyptus group, which also runs other health brands. Mosh is its own men's health brand. They compete in overlapping categories, including hair loss, which is why they come up together, but they are run independently.",
   },
-  {
-    q: "How much do Mosh and Pilot cost for hair loss?",
-    a: "Both run on a subscription, and the figure depends on the plan your consultation lands on, since a single-active plan differs from a multi-active plan, and the fee bundles treatment, practitioner oversight and delivery. You see the actual price inside the consultation before you commit to anything. Prices change, so check the current figures on each site. Our link to Mosh applies any current referral offer at the URL level, with no code to enter.",
-  },
+  // PILOT-NON-PARTNER: the cost Q&A named both providers and cannot be answered
+  // for one alone on a comparison page. Removed here and from FAQPage JSON-LD.
   {
     q: "Which should I start with?",
     a: "Because both use a no-commitment online consult reviewed by a registered practitioner, the low-friction move is to start one and see what you are actually offered before deciding. We link Mosh because it is our partner and its hair-loss consult is quick and focused; Pilot is a legitimate alternative if you prefer its broader ecosystem. For significant or sudden hair loss, see a doctor in person. Suitability for any prescription medicine is practitioner-decided and never guaranteed.",
@@ -107,7 +105,7 @@ const rows: { label: string; mosh: string; pilot: string }[] = [
   { label: "Prescription", mosh: "Yes, where clinically appropriate", pilot: "Yes, where clinically appropriate" },
   { label: "Breadth", mosh: "Hair, skin, weight, mind, sexual health", pilot: "Hair, weight, sexual health and more" },
   { label: "Best for", mosh: "A focused, quick hair-loss consult", pilot: "Those who prefer a broad health ecosystem" },
-  { label: "Pricing", mosh: "Subscription, confirmed in the consult", pilot: "Subscription, confirmed in the consult" },
+  // PILOT-NON-PARTNER: pricing row removed. Restore when Pilot approves.
 ];
 
 const articleSchema = comparisonArticleSchema({

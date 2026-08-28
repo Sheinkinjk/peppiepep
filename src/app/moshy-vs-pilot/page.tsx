@@ -41,7 +41,7 @@ const itemListSchema = {
   "@type": "ItemList",
   name: "Moshy vs Pilot: Weight Loss Telehealth Australia 2026",
   description:
-    "A side-by-side comparison of Moshy and Pilot, two Australian weight-management telehealth services, on how their pricing models differ, who each is built for, the online process, what is included, and how treatment access is handled.",
+    "A side-by-side comparison of Moshy and Pilot, two Australian weight-management telehealth services, on who each is built for, the online process, what is included, and how treatment access is handled.",
   numberOfItems: 2,
   itemListElement: [
     {
@@ -57,7 +57,7 @@ const itemListSchema = {
       position: 2,
       name: "Pilot",
       description:
-        "Men-focused telehealth from Eucalyptus, covering broader men's health alongside weight management. Subscription program within a wider ecosystem. online consult, practitioner review, and treatment access where clinically appropriate.",
+        "Men-focused telehealth from Eucalyptus, covering broader men's health alongside weight management within a wider ecosystem. Online consult, practitioner review, and treatment access where clinically appropriate.",
       url: PILOT_URL,
     },
   ],
@@ -66,12 +66,10 @@ const itemListSchema = {
 const faqs = [
   {
     q: "Is Moshy or Pilot better for weight loss in Australia?",
-    a: "Neither is universally better, they suit different people. Both run on a subscription model, and pricing is confirmed inside the consult and can change, so check the current pricing directly on each provider rather than relying on a headline figure. Moshy is gender-neutral and open to anyone eligible; new customers can currently receive $120 off their first treatment. Pilot is Eucalyptus's men-focused service and folds weight management into a broader men's health offering, so it suits someone who wants that wider ecosystem. Both handle treatment access only where an Australian-registered practitioner assesses it as clinically appropriate.",
+    a: "Neither is universally better, they suit different people. Moshy is gender-neutral and open to anyone eligible; new customers can currently receive $120 off their first treatment. Pilot is Eucalyptus's men-focused service and folds weight management into a broader men's health offering, so it suits someone who wants that wider ecosystem. Both handle treatment access only where an Australian-registered practitioner assesses it as clinically appropriate.",
   },
-  {
-    q: "How much do Moshy and Pilot cost?",
-    a: "We do not quote fixed figures here, because pricing is confirmed inside the consult and can change. Both Moshy and Pilot run on a subscription model, so the comparison is how the models work rather than a number on a single day. One concrete note: Moshy currently advertises $120 off your first treatment for new customers. Any medication, if prescribed, may be billed within or on top of the subscription depending on the plan. Check the current pricing directly on each provider before you commit.",
-  },
+  // PILOT-NON-PARTNER: the cost Q&A named both providers and cannot be answered
+  // for one alone on a comparison page. Removed here and from FAQPage JSON-LD.
   {
     q: "Who is Pilot built for?",
     a: "Pilot is the men-focused telehealth brand from Eucalyptus, the parent company that also runs Juniper. It covers a range of men's health areas as well as weight management, so it suits someone who wants weight support inside a broader men's health service. Moshy, by contrast, is gender-neutral and open to anyone eligible. Hims & Hers Health completed its acquisition of Eucalyptus on 2 June 2026, announced 19 February 2026 at up to US$1.15bn (source: Hims & Hers Health announcement, 2 June 2026).",
@@ -114,7 +112,7 @@ const webPageSchema = {
 
 // ── Comparison rows ──────────────────────────────────────────────────────────
 const rows: { label: string; moshy: string; pilot: string; highlightMoshy?: boolean }[] = [
-  { label: "Pricing model", moshy: "Subscription, confirmed in the consult ($120 off a new customer's first order with code REFERRAL120)", pilot: "Subscription, confirmed in the consult" },
+  // PILOT-NON-PARTNER: pricing row removed. Restore when Pilot approves.
   { label: "Billing terms", moshy: "Set by provider, check current terms", pilot: "Set by provider, check current terms" },
   { label: "Who it is built for", moshy: "Gender-neutral, anyone eligible", pilot: "Men-focused (Eucalyptus men's brand)" },
   { label: "Parent company", moshy: "Moshy (Australian telehealth)", pilot: "Eucalyptus (also runs Juniper)" },
@@ -247,7 +245,7 @@ export default function MoshyVsPilotPage() {
             </h2>
             <div className="space-y-4 text-[15px] leading-relaxed text-[#3d4b44] max-w-2xl">
               <p>
-                Both Moshy and Pilot run on a subscription model rather than pay-as-you-go, so the useful comparison is
+                Moshy runs on a subscription model rather than pay-as-you-go, so the useful comparison is
                 how each subscription is structured, not a single dollar figure. Pricing is confirmed inside the consult
                 and can change, so check the current pricing directly on each provider before you commit. One concrete,
                 current note on Moshy: new customers can receive $120 off their first treatment.

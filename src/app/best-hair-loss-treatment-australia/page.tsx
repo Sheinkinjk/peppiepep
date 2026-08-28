@@ -64,14 +64,14 @@ const faqSchema = {
     {
       "@type": "Question",
       name: "Pilot vs Mosh for hair loss, which should I choose?",
-      acceptedAnswer: { "@type": "Answer", text: "Both are Australian men's telehealth platforms prescribing clinically backed hair loss treatment (prescription hair-loss treatments) after an online practitioner review. Mosh offers tiered plans (prevention only, prevention and regrowth, and a clinic plan) and shows the plan and price before you commit; Pilot offers hair loss treatment within a broader men's health service. Mosh's tiered plans make it the more flexible starting point; Pilot suits men who want hair loss handled alongside other men's health needs. Final pricing depends on what a practitioner assesses as appropriate and is shown on each provider's own site." }
+      acceptedAnswer: { "@type": "Answer", text: "Both are Australian men's telehealth platforms prescribing clinically backed hair loss treatment (prescription hair-loss treatments) after an online practitioner review. Mosh offers tiered plans (prevention only, prevention and regrowth, and a clinic plan) and shows the plan and price before you commit; Pilot offers hair loss treatment within a broader men's health service. Mosh's tiered plans make it the more flexible starting point; Pilot suits men who want hair loss handled alongside other men's health needs. Final Mosh pricing depends on what a practitioner assesses as appropriate and is shown on Mosh's own site." }
     },
     {
       "@type": "Question",
       name: "How much does hair loss treatment cost per month in Australia?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Telehealth hair loss treatment in Australia is usually a monthly subscription that bundles treatment, practitioner oversight and delivery. Mosh offers tiered plans (prevention only, prevention and regrowth, and a clinic plan) and Pilot offers hair loss treatment within a broader men's health service. Each shows its price before you commit, and final pricing depends on the treatment prescribed after a practitioner consultation.",
+        text: "Telehealth hair loss treatment in Australia is usually a monthly subscription that bundles treatment, practitioner oversight and delivery. Mosh offers tiered plans (prevention only, prevention and regrowth, and a clinic plan) and shows its price before you commit. Pilot offers hair loss treatment within a broader men's health service. Final pricing depends on the treatment prescribed after a practitioner consultation.",
       },
     },
     {
@@ -355,7 +355,7 @@ export default function BestHairLossTreatmentAustraliaPage() {
             </table>
           </div>
           <p className="text-xs text-[#6b7a72] mt-3">
-            Sources: getmosh.com.au/hair-loss and pilot.com.au/hair-loss, as published on 21 July 2026.
+            Sources: getmosh.com.au/hair-loss as published on 21 July 2026; pilot.com.au read on 28 August 2026.
           </p>
         </section>
 
@@ -487,7 +487,7 @@ export default function BestHairLossTreatmentAustraliaPage() {
               },
               {
                 q: "How much does hair loss treatment cost per month in Australia?",
-                a: "Telehealth hair-loss treatment is usually a monthly subscription that bundles treatment, practitioner oversight and delivery. Mosh offers tiered plans and Pilot offers treatment within a broader men's health service; each shows its price before you commit. Final pricing depends on what a practitioner assesses as appropriate.",
+                a: "Telehealth hair-loss treatment is usually a monthly subscription that bundles treatment, practitioner oversight and delivery. Mosh offers tiered plans and shows its price before you commit; Pilot offers treatment within a broader men's health service. Final pricing depends on what a practitioner assesses as appropriate.",
               },
               {
                 q: "Pilot vs Mosh for hair loss, which should I choose?",

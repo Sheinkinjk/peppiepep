@@ -48,7 +48,7 @@ const itemListSchema = {
   "@context": "https://schema.org",
   "@type": "ItemList",
   name: "Best Weight Loss Telehealth Platforms Australia 2026",
-  description: "In-depth comparison of Australian weight loss telehealth platforms: Moshy, Juniper and Pilot. Treatment access, eligibility process, pricing, and who each platform suits.",
+  description: "In-depth comparison of Australian weight loss telehealth platforms: Moshy, Juniper and Pilot. Treatment access, eligibility process and who each platform suits.",
   numberOfItems: 3,
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Moshy", description: "Australian clinically-led telehealth weight management platform, open to anyone eligible. Online eligibility questionnaire, practitioner review, and treatment access where clinically appropriate. Subscription with home delivery.", url: `${SITE_URL}/moshy` },
@@ -463,7 +463,8 @@ export default function BestWeightLossTelehealthPage() {
               Here is what makes this market hard to compare: <strong className="text-[#10251b]">most Australian providers confirm pricing after an online consultation</strong> rather than publishing a fixed figure. Expect a monthly subscription that bundles treatment, consultations and delivery, shown before you commit, with the final cost depending on the treatment prescribed. New Moshy customers get $120 off their first order through our link.
             </p>
             <p className="text-xs text-[#6b7a72]">
-              Sources: getmoshy.com.au/weight-loss (price as published), pilot.com.au/weight-loss and Juniper (no public pricing at time of check), 21 July 2026.
+              Sources: getmoshy.com.au/weight-loss (price as published) and Juniper (no public pricing at time of check),
+              21 July 2026. Pilot process, practitioner and breadth claims read off pilot.com.au on 28 August 2026.
             </p>
           </section>
 

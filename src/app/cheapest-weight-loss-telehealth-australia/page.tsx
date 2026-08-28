@@ -10,7 +10,6 @@ import StickyCta from "@/components/consumer/StickyCta";
 export const metadata = generateSEOMetadata(seoConfig.cheapestWeightLossTelehealth);
 
 const GREEN = "#0a7c42";
-const PILOT_URL = "https://pilot.com.au/";
 const DFWL_URL = "https://www.doctorsforweightloss.com.au/";
 
 const aff = { href: MOSHY_URL, target: "_blank" as const, rel: "nofollow sponsored" as const };
@@ -31,8 +30,10 @@ const itemListSchema = {
   "@type": "ItemList",
   name: "Affordable Weight Loss Telehealth Australia 2026: Pricing Models Compared",
   description:
-    "A comparison of Australian weight-loss telehealth pricing models, subscription versus pay-as-you-go, covering Moshy, Juniper, Pilot and pay-per-consult alternatives.",
-  numberOfItems: 4,
+    "A comparison of Australian weight-loss telehealth pricing models, subscription versus pay-as-you-go, covering Moshy, Juniper and pay-per-consult alternatives.",
+  // PILOT-NON-PARTNER: Pilot's entry removed with the rest of its pricing on
+  // this page. Restore it, and numberOfItems, when Pilot approves.
+  numberOfItems: 3,
   itemListElement: [
     {
       "@type": "ListItem",
@@ -53,14 +54,6 @@ const itemListSchema = {
     {
       "@type": "ListItem",
       position: 3,
-      name: "Pilot",
-      description:
-        "Men-focused telehealth from Eucalyptus, a subscription program within a broader men's health service. Pricing is confirmed in the consult.",
-      url: PILOT_URL,
-    },
-    {
-      "@type": "ListItem",
-      position: 4,
       name: "Doctors for Weight Loss",
       description:
         "Pay-as-you-go alternative with no subscription, so you pay per appointment rather than monthly. Pricing is confirmed with the provider.",
@@ -72,7 +65,7 @@ const itemListSchema = {
 const faqs = [
   {
     q: "What is the cheapest weight loss telehealth in Australia?",
-    a: "It depends on how you count cost, which is exactly the trap with the word cheapest. The subscription services, like Moshy, Juniper and Pilot, bundle consults and support into a monthly fee. A pay-as-you-go service like Doctors for Weight Loss charges per appointment instead, so it can look lower up front. Of the subscription services, Moshy publishes a starting figure: it advertises its program from $229 a month* on its own site, checked 14 August 2026. Juniper and Pilot confirm pricing inside their own flows rather than publishing a start price. The true total also depends on how often you need reviews, so treat any start price as a floor rather than a quote. One concrete note: Moshy currently advertises $120 off your first order for new customers. *Indicative only and subject to change: view the latest pricing on each provider's own site before you sign up.",
+    a: "It depends on how you count cost, which is exactly the trap with the word cheapest. The subscription services, like Moshy and Juniper, bundle consults and support into a monthly fee. A pay-as-you-go service like Doctors for Weight Loss charges per appointment instead, so it can look lower up front. Of the subscription services, Moshy publishes a starting figure: it advertises its program from $229 a month* on its own site, checked 14 August 2026. Juniper confirms pricing inside its own flow rather than publishing a start price. The true total also depends on how often you need reviews, so treat any start price as a floor rather than a quote. One concrete note: Moshy currently advertises $120 off your first order for new customers. *Indicative only and subject to change: view the latest pricing on each provider's own site before you sign up.",
   },
   {
     q: "Is subscription or pay-as-you-go cheaper for weight loss telehealth?",
@@ -83,8 +76,8 @@ const faqs = [
     a: "No. Cheapest is a useful filter, not a verdict. The lowest monthly figure can still be the wrong fit if the model does not match how you want to be supported, if the coaching you need is not included, or if medication is billed separately on top. Compare the pricing model, what is included, and whether a registered practitioner assesses you individually, then weigh price against fit. Suitability for any program is decided by a practitioner, not by price.",
   },
   {
-    q: "How does Moshy's pricing compare to Juniper and Pilot?",
-    a: "All three run on a subscription model, so the useful comparison is how each subscription is structured rather than a headline figure. We do not quote specific prices here because they are confirmed inside the consult and can change. Juniper, the women-focused Eucalyptus program, bundles coaching and unlimited consults; Pilot is the men-focused Eucalyptus service within a broader men's health offering; Moshy is gender-neutral and open to anyone eligible, and new customers can currently receive $120 off their first treatment. Confirm the current pricing directly on each provider before you decide.",
+    q: "How does Moshy's pricing compare to Juniper?",
+    a: "Both run on a subscription model, so the useful comparison is how each subscription is structured rather than a headline figure. We do not quote specific prices here because they are confirmed inside the consult and can change. Juniper, the women-focused Eucalyptus program, bundles coaching and unlimited consults; Moshy is gender-neutral and open to anyone eligible, and new customers can currently receive $120 off their first treatment. Confirm the current pricing directly on each provider before you decide.",
   },
   {
     q: "Is medication included in the subscription price?",
@@ -124,7 +117,6 @@ const webPageSchema = {
 const priceRows: { name: string; model: string; price: string; who: string; highlight?: boolean }[] = [
   { name: "Moshy", model: "Subscription", price: "Confirmed in the consult ($120 off first treatment for new customers)", who: "Anyone eligible" },
   { name: "Juniper", model: "Subscription", price: "Confirmed in the consult; bundles a clinical program, coaching, unlimited consults", who: "Women" },
-  { name: "Pilot", model: "Subscription", price: "Confirmed in the consult", who: "Men" },
   { name: "Doctors for Weight Loss", model: "Pay-as-you-go", price: "Per appointment, confirmed with the provider", who: "Anyone eligible" },
 ];
 
@@ -175,7 +167,7 @@ export default function CheapestWeightLossTelehealthPage() {
               Check eligibility on Moshy
               <ArrowRight className="h-4 w-4" />
             </a>
-            <EarningsBalanceNote earnFrom="Moshy" noEarnFrom={["Juniper", "Pilot"]} /* PILOT-NON-PARTNER */ className="mt-4 max-w-2xl" />
+            <EarningsBalanceNote earnFrom="Moshy" noEarnFrom="Juniper" noEarnHref="/juniper" /* PILOT-NON-PARTNER: Pilot is no longer named on this page */ className="mt-4 max-w-2xl" />
           </section>
 
           {/* Answer-first: the buyer's question verbatim as an H2, then the liftable verdict. */}
@@ -189,7 +181,7 @@ export default function CheapestWeightLossTelehealthPage() {
               </p>
               <p className="text-[#2b362f] text-sm sm:text-base leading-relaxed max-w-2xl">
                 There is no single cheapest service, because they bill differently. Subscription programs like Moshy,
-                Juniper and Pilot fold consults and support into a monthly fee, while a pay-as-you-go service like
+                and Juniper fold consults and support into a monthly fee, while a pay-as-you-go service like
                 Doctors for Weight Loss charges per consult and can look lower up front. The genuinely cheapest option for
                 you depends on how much ongoing support you want and whether medication is prescribed, since that is often
                 billed separately. Pricing is confirmed in the consult and can change, so check each provider directly.
@@ -246,7 +238,7 @@ export default function CheapestWeightLossTelehealthPage() {
                 total.
               </p>
               <p>
-                The two pricing models split the cost differently. A subscription, like Moshy, Juniper or Pilot, folds
+                The two pricing models split the cost differently. A subscription, like Moshy or Juniper, folds
                 consults and ongoing support into one predictable monthly fee. Pay-as-you-go, like Doctors for Weight
                 Loss, charges per appointment with no monthly commitment. If you want frequent contact and structure, the
                 subscription model can suit you better. If you want occasional clinical input without a recurring charge,
@@ -303,8 +295,7 @@ export default function CheapestWeightLossTelehealthPage() {
               <p>
                 Chasing the lowest number can backfire. If you specifically want coaching and unlimited consults, a
                 program that bundles them, like Juniper, may suit you better even at a higher monthly price than a leaner
-                service you end up supplementing elsewhere. If you want weight support inside a broader men&apos;s health
-                service, Pilot&apos;s ecosystem may matter more to you than price. And if you only want occasional
+                service you end up supplementing elsewhere. And if you only want occasional
                 clinical input, a pay-as-you-go consult may work out better than any subscription.
               </p>
               <p>
@@ -350,8 +341,8 @@ export default function CheapestWeightLossTelehealthPage() {
               <Link href="/weight-loss" className="nw-link text-sm">Weight loss hub</Link>
             </div>
             <p className="text-[#9aa39c] text-xs leading-relaxed max-w-2xl">
-              This page is operated by Refer Labs and contains a disclosed affiliate referral link to Moshy. Juniper,
-              Pilot and Doctors for Weight Loss are linked without affiliate arrangements. We compare on price, model and
+              This page is operated by Refer Labs and contains a disclosed affiliate referral link to Moshy. Juniper
+              and Doctors for Weight Loss are linked without affiliate arrangements. We compare on price, model and
               what is included, and we never sell rankings. All content is for informational purposes only and does not
               constitute medical advice. Prescription medicines in Australia, prescribed for weight management, are available
               only after an individual assessment by a registered Australian practitioner, and suitability is

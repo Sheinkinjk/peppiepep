@@ -1441,7 +1441,7 @@ export const seoConfig = {
     // stop competing for the same query.
     title: "Best Weight-Loss Telehealth in Australia 2026: Ranked | Refer Labs",
     description:
-      "Compare Moshy, Juniper and Pilot for Australian weight-loss telehealth: pricing, eligibility, support and who each actually suits. Independent, no paid rankings.",
+      "Compare Moshy, Juniper and Pilot for Australian weight-loss telehealth: eligibility, process, support and who each actually suits. Independent, no paid rankings.",
     url: `${SITE_URL}/best-weight-loss-telehealth-australia`,
     keywords: [
       "best weight loss telehealth australia 2026",
@@ -1483,7 +1483,7 @@ export const seoConfig = {
   moshyVsPilot: {
     title: "Moshy vs Pilot 2026: Weight Loss Telehealth Compared",
     description:
-      "Moshy vs Pilot 2026, with $120 off Moshy using code REFERRAL120: Moshy is gender-neutral and open to anyone, Pilot is men-focused. Pricing and who each suits.",
+      "Moshy vs Pilot 2026, with $120 off Moshy using code REFERRAL120: Moshy is gender-neutral and open to anyone, Pilot is men-focused. Model, audience, process and how treatment access is handled.",
     url: `${SITE_URL}/moshy-vs-pilot`,
     keywords: [
       "moshy vs pilot",
@@ -1506,7 +1506,7 @@ export const seoConfig = {
   cheapestWeightLossTelehealth: {
     title: "Cheapest Weight Loss Telehealth Australia 2026 Compared",
     description:
-      "The cheapest weight-loss telehealth in Australia, compared: how subscription vs pay-per-consult pricing differs across Moshy, Juniper and Pilot. Info only.",
+      "The cheapest weight-loss telehealth in Australia, compared: how subscription vs pay-per-consult pricing differs across Moshy and Juniper. Info only.",
     url: `${SITE_URL}/cheapest-weight-loss-telehealth-australia`,
     keywords: [
       "cheapest weight loss telehealth australia",
