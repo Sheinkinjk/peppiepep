@@ -50,6 +50,13 @@ const nextConfig: NextConfig = {
       // /moshy as an h2 and a FAQ entry. /moshy is not itself redirected, so
       // this is a single hop.
       { source: '/getmoshy', destination: '/moshy', permanent: true },
+      // Deleted Aug 2026. A Stripe success page for the $799 Blueprint, which
+      // was shut down on 26 Aug 2026. It had no buyers, so nobody holds the URL
+      // in a receipt, and it rendered "Payment Confirmed / delivered within 48
+      // hours" for a product that cannot be delivered. It also fired a $799 GA4
+      // purchase on every visit, bot included, into the same metric used to
+      // judge affiliate performance.
+      { source: '/referral-blueprint/success', destination: '/', permanent: true },
 
       // ── Business lending: hidden, not retired (22 August 2026) ────────────
       // Withdrawn pending a review of the credit-licensing position, and because
@@ -169,8 +176,10 @@ const nextConfig: NextConfig = {
       // The $799 Blueprint is no longer offered; the business is now pushing the
       // affiliate-programs content. Retiring the 6 marketing pages into the closest
       // live page by intent so their ranking equity consolidates instead of 404ing.
-      // NOTE: exact sources only. /referral-blueprint/success and /blueprint-access
-      // are deliberately NOT redirected: people who already paid still need delivery.
+      // NOTE: exact sources only. /blueprint-access is deliberately NOT redirected.
+      // /referral-blueprint/success WAS in that exemption on the same reasoning,
+      // "people who already paid still need delivery". There were no paid Blueprint
+      // users, so the premise was false and it now 308s to / above.
       {
         source: '/referral-blueprint',
         destination: '/affiliate-programs-australia',

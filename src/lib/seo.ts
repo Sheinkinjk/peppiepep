@@ -900,6 +900,20 @@ export const seoConfig = {
     url: `${SITE_URL}/hair-loss-treatment-cost-australia`,
     keywords: ["hair loss treatment cost australia", "mosh hair loss cost", "prescription hair loss treatment cost", "hair loss telehealth cost australia", "hair loss telehealth cost", "how much does hair loss treatment cost"],
   },
+  // Retired Aug 2026: the Blueprint Stripe success page, now 308ing to /. It
+  // never had a seoConfig entry; its metadata was inline on the page, which is
+  // why this is an addition rather than an edit. It exists as the defensive
+  // guard the convention calls for: if the route is ever restored, it gets its
+  // own noindexed metadata instead of inheriting the homepage canonical.
+  referralBlueprintSuccess: {
+    noIndex: true,
+    title: "Referral Growth Blueprint, retired | Refer Labs",
+    description:
+      "The Referral Growth Blueprint is no longer offered. See our guide to Australian affiliate programs instead.",
+    url: `${SITE_URL}/referral-blueprint/success`,
+    keywords: [],
+  },
+
   deals: {
     // Leads with verification because that is the actual differentiator: most
     // "[brand] discount code" results publish expired or invented codes. Every
