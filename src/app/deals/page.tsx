@@ -97,7 +97,7 @@ export default function DealsPage() {
         </nav>
 
         <h1 className="mt-4 text-4xl font-black leading-[1.05] tracking-[-0.02em] text-[#10251b] sm:text-5xl">
-          Deals &amp; discount codes
+          Australian discount codes, each dated
         </h1>
         <p className="mt-5 max-w-2xl text-lg leading-relaxed text-[#3d4b44]">
           The current offers on the providers we compare, each checked against the provider&apos;s own page. We only

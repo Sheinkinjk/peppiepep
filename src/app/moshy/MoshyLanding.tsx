@@ -133,6 +133,7 @@ export default function MoshyLanding() {
               <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[#9aa39c]">On this page</p>
               <ul className="space-y-2.5 text-sm">
                 {[
+                  ["code", "The discount code"],
                   ["what", "What Moshy actually is"],
                   ["treatment", "Treatment and eligibility"],
                   ["start", "How to start"],
@@ -151,8 +152,27 @@ export default function MoshyLanding() {
 
           {/* Article */}
           <article className="max-w-2xl">
+            {/* The buyer's question as an h2, verbatim. It existed only inside the
+                FAQPage JSON-LD. It sits here rather than in the hero because the
+                answer paragraph directly under the h1 owns that slot, and nothing
+                goes above it. Worded differently from the FAQ entry: same facts,
+                not the same sentence twice on one page. */}
+            <section id="code" className="scroll-mt-24">
+              <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">
+                What is the current Moshy discount code?
+              </h2>
+              <div className="mt-4 space-y-4 text-[15.5px] leading-relaxed text-[#3d4b44]">
+                <p>
+                  REFERRAL120, worth $120 off a first order. It applies to new customers on a practitioner-assigned
+                  weight-management program, one use per customer, with a minimum three-month commitment; dietitian,
+                  over-the-counter and meal-replacement plans are excluded. Our link carries it into the sign-up flow,
+                  so there is nothing to type.
+                </p>
+              </div>
+            </section>
+
             {/* What */}
-            <section id="what" className="scroll-mt-24">
+            <section id="what" className="mt-12 scroll-mt-24">
               <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">What Moshy actually is</h2>
               <div className="mt-4 space-y-4 text-[15.5px] leading-relaxed text-[#3d4b44]">
                 <p>

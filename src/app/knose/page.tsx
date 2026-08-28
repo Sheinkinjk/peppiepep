@@ -92,7 +92,7 @@ export default function KnosePage() {
             <img src="/logos/knose.svg" alt="Knose logo" width={160} height={62} className="mb-5 h-11 w-auto" />
             <p className="nw-kicker">Pet insurance · Current offer</p>
             <h1 className="mt-4 text-3xl font-extrabold leading-[1.08] tracking-tight text-[#10251b] sm:text-4xl">
-              Knose pet insurance: <span className="text-[#0a7c42]">2 months free</span> via Refer Labs
+              Knose promo code <span className="text-[#0a7c42]">referlab2mf</span>: 2 months free for new customers
             </h1>
             <p className="mt-5 text-lg leading-relaxed text-[#3d4b44]">
               Knose is an Australian pet insurance provider. New customers can get <strong className="text-[#10251b]">2
@@ -118,6 +118,19 @@ export default function KnosePage() {
           </header>
 
           <InsuranceDisclosure className="mb-10" />
+
+          {/* The buyer's question as an h2, verbatim. It lived only inside the
+              FAQPage JSON-LD, which an engine can read but a heading-led snippet
+              cannot be built from. Worded differently from the FAQ entry below on
+              purpose: same facts, not the same sentence twice on one page. */}
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">What is the current Knose promo code?</h2>
+            <p className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">
+              referlab2mf, worth 2 months free for new customers taking out a policy. What the policy itself covers, and
+              the waiting periods, exclusions and limits that apply, sit in Knose&apos;s PDS rather than in the offer, so
+              get a quote to see what would apply to your pet.
+            </p>
+          </section>
 
           {/* What to check (factual pointers, not advice) */}
           <section className="mb-12">

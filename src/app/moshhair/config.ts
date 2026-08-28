@@ -77,8 +77,13 @@ export const moshHairConfig: AffiliatePageConfig = {
 
   sections: [
     {
-      heading: "Current Offer",
+      // The buyer's question verbatim, replacing a heading ("Current Offer") that
+      // matched no query. The answer leads the section; the page-purpose paragraph
+      // that used to open it now follows. Worded differently from the FAQ entry
+      // below: same facts, not the same sentence twice on one page.
+      heading: "What is the current Mosh discount code?",
       paragraphs: [
+        "REFERAL55, worth 55% off a first order. It applies to that first order rather than to later renewals, and Mosh runs as a subscription from there. Every button on this page carries it into Mosh's sign-up page, so there is nothing to enter.",
         "This page is built for Australians searching for a Mosh hair discount code, Mosh promo code, or the current Mosh sale. Rather than searching for a code that may have expired, our referral link gives you direct access to the Mosh sign-up page with our partner link applied automatically.",
         "Click any button on this page to be taken directly to the Mosh hair treatment platform. No code needs to be entered manually and no information is required on this page before you arrive.",
       ],
