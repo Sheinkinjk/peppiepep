@@ -904,9 +904,9 @@ export const seoConfig = {
   // defensive purpose as referralBlueprintSuccess below.
   referralBusinessProgramSuccess: {
     noIndex: true,
-    title: "Referral Growth Blueprint, retired | Refer Labs",
+    title: "Referral business program, retired | Refer Labs",
     description:
-      "The Referral Growth Blueprint is no longer offered. See our guide to Australian affiliate programs instead.",
+      "The Refer Labs referral business program is closed. Our affiliate-programs guide covers the Australian programs worth joining.",
     url: `${SITE_URL}/referral-business-program/success`,
     keywords: [],
   },
