@@ -5,6 +5,7 @@ import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
 
+import EarningsBalanceNote from "@/components/consumer/EarningsBalanceNote";
 export const metadata = generateSEOMetadata(seoConfig.carrdVsButternut);
 
 const GREEN = "#0a7c42";
@@ -164,6 +165,7 @@ export default function CarrdVsButternutPage() {
                 Try Butternut AI free
               </a>
             </div>
+            <EarningsBalanceNote earnFromAll={["Carrd", "Butternut AI"]} className="mt-4 max-w-2xl" />
           </section>
 
           {/* Quick verdict */}

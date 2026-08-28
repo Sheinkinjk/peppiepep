@@ -6,6 +6,7 @@ import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
 import MatchPrompt from "@/components/consumer/MatchPrompt";
 
+import EarningsBalanceNote from "@/components/consumer/EarningsBalanceNote";
 export const metadata = generateSEOMetadata(seoConfig.onlineWeightLossDoctor);
 
 const SLUG = "/online-weight-loss-doctor-australia";
@@ -141,6 +142,7 @@ export default function OnlineWeightLossDoctorAustraliaPage() {
               Check your eligibility on Moshy ($120 off first order) <ArrowRight className="h-4 w-4" />
             </a>
           </div>
+          <EarningsBalanceNote earnFrom="Moshy" className="mt-3 max-w-2xl" />
 
           {/* Body */}
           <article className="mt-10 space-y-9">

@@ -9,6 +9,7 @@ import CodeAnswer from "@/components/offers/CodeAnswer";
 import OfferSchema from "@/components/offers/OfferSchema";
 import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 
+import EarningsBalanceNote from "@/components/consumer/EarningsBalanceNote";
 export const metadata = generateSEOMetadata(seoConfig.moshVsDense);
 
 const GREEN = "#0a7c42";
@@ -179,6 +180,7 @@ export default function MoshVsDensePage() {
                 Shop Dense Hair Experts
               </a>
             </div>
+            <EarningsBalanceNote earnFromAll={["Mosh", "Dense"]} className="mt-4 max-w-2xl" />
           </section>
 
           {/* Answer-first: the buyer's question verbatim as an H2, then the liftable verdict. */}

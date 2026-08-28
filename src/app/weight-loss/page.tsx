@@ -9,6 +9,7 @@ import { MOSHY_URL } from "@/lib/affiliate-links";
 import OfferSchema from "@/components/offers/OfferSchema";
 import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 
+import EarningsBalanceNote from "@/components/consumer/EarningsBalanceNote";
 export const metadata = generateSEOMetadata(seoConfig.weightLossHub);
 
 const aff = { href: MOSHY_URL, target: "_blank" as const, rel: "nofollow sponsored" as const };
@@ -152,6 +153,12 @@ export default function WeightLossHubPage() {
           moreHref="/moshy"
           moreLabel="More about the Moshy offer"
           verified="2026-08-17"
+        />
+        <EarningsBalanceNote
+          earnFrom="Moshy"
+          noEarnFrom="Juniper"
+          noEarnHref="/juniper"
+          className="mx-auto max-w-3xl px-5 pt-3 sm:px-8"
         />
 
         {/* Quiz */}

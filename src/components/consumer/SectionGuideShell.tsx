@@ -97,8 +97,11 @@ export default function SectionGuideShell({
 
         <h1 className="mt-5 text-3xl font-bold leading-[1.1] tracking-[-0.01em] text-[#10251b] sm:text-4xl">{h1}</h1>
         <p className="mt-5 text-lg leading-relaxed text-[#2b362f]">{intro}</p>
+        {/* Named verifier, matching the brand-page offer stamp. A bare "Last
+            checked <date>" is liftable but uncreditable; see the note in
+            PremiumAffiliateLanding. */}
         <p className="mt-4 text-xs font-medium text-[#6e7b74]">
-          Last checked{" "}
+          Last checked by Refer Labs,{" "}
           {new Date(`${updated}T00:00:00`).toLocaleDateString("en-AU", { day: "numeric", month: "long", year: "numeric" })}
         </p>
 

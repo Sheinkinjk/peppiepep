@@ -107,7 +107,7 @@ export default function Page() {
           comparable. These are the six questions that do that, from a business that runs affiliate programs rather than
           only writing about them.
         </p>
-        <p className="mt-4 text-xs font-medium text-[#6e7b74]">Last checked 20 August 2026</p>
+        <p className="mt-4 text-xs font-medium text-[#6e7b74]">Last checked by Refer Labs, 20 August 2026</p>
 
         <div className="mt-10 space-y-10 text-[15px] leading-relaxed text-[#3d4b44]">
           <section>

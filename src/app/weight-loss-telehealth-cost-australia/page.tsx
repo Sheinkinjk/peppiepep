@@ -7,6 +7,7 @@ import StickyCta from "@/components/consumer/StickyCta";
 import EditorialMeta from "@/components/consumer/EditorialMeta";
 import MatchPrompt from "@/components/consumer/MatchPrompt";
 
+import EarningsBalanceNote from "@/components/consumer/EarningsBalanceNote";
 export const metadata = generateSEOMetadata(seoConfig.weightLossTelehealthCost);
 
 const SLUG = "/weight-loss-telehealth-cost-australia";
@@ -144,6 +145,7 @@ export default function WeightLossTelehealthCostAustraliaPage() {
               Check your eligibility on Moshy <ArrowRight className="h-4 w-4" />
             </a>
           </div>
+          <EarningsBalanceNote earnFrom="Moshy" className="mt-3 max-w-2xl" />
 
           {/* Body */}
           <article className="mt-10 space-y-9">

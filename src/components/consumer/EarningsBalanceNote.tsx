@@ -35,31 +35,69 @@ import Link from "next/link";
  *
  * Do not pass `noEarnHref` for a provider with no referral link anywhere. The
  * sentence it unlocks is a claim about a page that has to exist.
+ *
+ * Two further shapes were added on 28 August 2026, when the ten pages placing
+ * their disclosure furthest from the first CTA turned out not to be one problem:
+ *
+ *   4. We earn from EVERY brand linked (`earnFromAll`). Five of the ten compare
+ *      two or four providers and carry an affiliate link for each. None of the
+ *      shapes above is true there, and passing one would have asserted we earn
+ *      nothing from a brand we do earn from. States that we earn from all of
+ *      them, which is the fact a reader needs to weigh the comparison.
+ *   5. One affiliate link and no competitor named at all (`earnFrom` alone).
+ *      Nothing to balance against, so the second sentence is simply absent
+ *      rather than reaching for a comparison the page does not make.
+ *
+ * Every shape is one component on purpose. Four near-identical hand-written
+ * sentences across ten pages is how the eighteen disclosure wordings happened.
  */
+const WORD = ["", "", "both", "all three", "all four", "all five", "all six"];
+
+function list(names: string[], conj: string) {
+  return names.length === 1
+    ? names[0]
+    : `${names.slice(0, -1).join(", ")} ${conj} ${names[names.length - 1]}`;
+}
+
 export default function EarningsBalanceNote({
   earnFrom,
+  earnFromAll,
   noEarnFrom,
   noEarnHref,
   className = "",
 }: {
-  earnFrom: string;
+  /** The one brand we earn from here. Omit when passing `earnFromAll`. */
+  earnFrom?: string;
+  /** Every brand linked, where we earn from each of them. */
+  earnFromAll?: string[];
   /** One name, or several where we earn from none of them on this page. */
-  noEarnFrom: string | string[];
+  noEarnFrom?: string | string[];
   /** Only where that provider has a referral link on its own review page. */
   noEarnHref?: string;
   className?: string;
 }) {
-  const names = Array.isArray(noEarnFrom) ? noEarnFrom : [noEarnFrom];
-  const listed =
-    names.length === 1
-      ? names[0]
-      : `${names.slice(0, -1).join(", ")} or ${names[names.length - 1]}`;
+  if (earnFromAll?.length) {
+    return (
+      <p className={`text-xs leading-relaxed text-[#6e7b74] ${className}`}>
+        We earn a commission if you sign up through the {list(earnFromAll, "or")} link
+        {earnFromAll.length > 1 ? "s" : ""} on this page, at no extra cost to you. We earn from{" "}
+        {WORD[earnFromAll.length] ?? "each"} of them.{" "}
+        <Link href="/how-we-make-money" className="underline hover:text-[#3d4b44]">
+          How we make money
+        </Link>
+        .
+      </p>
+    );
+  }
+
+  const names = noEarnFrom ? (Array.isArray(noEarnFrom) ? noEarnFrom : [noEarnFrom]) : [];
+  const listed = list(names, "or");
   const single = names.length === 1 && noEarnHref;
 
   return (
     <p className={`text-xs leading-relaxed text-[#6e7b74] ${className}`}>
       We earn a commission if you sign up through the {earnFrom} link above, at no extra cost to you.{" "}
-      {single ? (
+      {names.length === 0 ? null : single ? (
         <>
           We earn nothing from {listed} here: our {listed} referral link sits only on our{" "}
           <Link href={noEarnHref} className="underline hover:text-[#3d4b44]">

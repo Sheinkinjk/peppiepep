@@ -113,6 +113,15 @@ export function generateMetadata(config: SEOConfig): Metadata {
     },
 
     // Verification tags
+    //
+    // Google is the only token emitted here, and that is not a gap. Bing
+    // Webmaster Tools IS set up for referlabs.com.au and verified outside this
+    // file (DNS / XML file / Search Console import), so there is nothing to add.
+    // Its AI Performance report is read regularly: 1,200 citations over 28 days,
+    // 201 pages indexed, 34 warnings, 15 excluded, with a full query breakdown.
+    // A file-level audit sees `google` alone and concludes Bing is a blind spot.
+    // It has been concluded wrongly at least once. Do not add a Bing token here
+    // and do not treat Bing coverage as unknown; ask for the report instead.
     verification: {
       google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
     },

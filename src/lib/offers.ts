@@ -88,11 +88,35 @@ export interface Deal {
    * Only set this when you have actually opened the provider's page.
    */
   verified?: string;
+
+  /**
+   * The page this offer was read off, so a re-check starts from the same place
+   * rather than from a search. Follows the `// Source:` convention in
+   * src/lib/facts/registry.ts, for the same reason: a commercial claim has to be
+   * traceable to the thing it was read off.
+   *
+   * ABSENT MEANS ONE OF TWO THINGS, and they are not the same:
+   *   - There is no page to name. Six of these codes are partner-specific and
+   *     appear on no page a reader can open, and Apollo's $500 is our own
+   *     arrangement rather than a published offer. Absent is correct there, and
+   *     filling it in with the vendor's homepage would fabricate a source.
+   *   - Nobody recorded it. That is a gap, and the fix is to record the URL the
+   *     next time the offer is actually re-read, not to guess one now.
+   * Do not populate this from src/lib/affiliate-links.ts. Those are tracked
+   * redirect URLs, not the pages an offer was read off.
+   */
+  source?: string;
 }
 
 export const DEALS: Deal[] = [
-  { brand: "Moshy", logo: "/logos/moshy.png", href: "/moshy", offer: "$120 off your first order", code: "REFERRAL120", category: "Weight loss", featured: true, verified: "2026-08-17", exclusive: true },
-  { brand: "Mosh", logo: "/logos/mosh-tile.png", href: "/moshhair", offer: "55% off your first order", code: "REFERAL55", category: "Hair loss", featured: true, verified: "2026-08-17", exclusive: true },
+  // source: the partner landing page our link resolves to, where the offer is
+  // visible. Read live on 26 Aug 2026 per src/lib/facts/registry.ts.
+  { brand: "Moshy", logo: "/logos/moshy.png", href: "/moshy", offer: "$120 off your first order", code: "REFERRAL120", category: "Weight loss", featured: true, verified: "2026-08-17", exclusive: true, source: "https://www.getmoshy.com.au/start/eligibility-check-moshy" },
+  { brand: "Mosh", logo: "/logos/mosh-tile.png", href: "/moshhair", offer: "55% off your first order", code: "REFERAL55", category: "Hair loss", featured: true, verified: "2026-08-17", exclusive: true, source: "https://www.getmosh.com.au/start/referlabs" },
+  // No `verified` on purpose, so this shows the global sweep stamp. The $500 is
+  // our own arrangement with Apollo, not an offer published anywhere, so there is
+  // no page to re-read and no per-offer date to honestly set. Confirm it with
+  // Apollo directly before changing the amount or the conditions.
   { brand: "Apollo Energy Group", logo: "/logos/apollo-energy.png", href: "/apollo-energy-group", offer: "$500 off your quote, on top of any rebate", category: "Home batteries", featured: true },
   { brand: "Unbounce", logo: "/logos/unbounce.png", href: "/unbounce", offer: "20% off 3 months, or 35% off your first year", category: "Landing pages", featured: true, verified: "2026-08-20" },
   { brand: "Leadpages", logo: "/logos/leadpages.png", href: "/leadpages", offer: "7-day free trial; 20% off annual billing", category: "Landing pages", featured: true, verified: "2026-08-25" },
@@ -104,6 +128,10 @@ export const DEALS: Deal[] = [
   { brand: "Carrd", logo: "/logos/carrd.png", href: "/carrd", offer: "Free plan forever; Pro from US$19/yr", category: "Website builders", verified: "2026-08-25" },
   { brand: "beehiiv", logo: "/logos/beehiiv.png", href: "/best-newsletter-platform", offer: "Free plan, no revenue cut", category: "Newsletters", verified: "2026-08-25" },
   { brand: "Brevo", logo: "/logos/brevo.png", href: "/brevo", offer: "Free plan forever, no card", category: "Email marketing", verified: "2026-08-25" },
+  // No `verified` on purpose, so this shows the global sweep stamp. Pipedrive's
+  // pricing page blocks automated fetching, so the 25 Aug 2026 sweep could not
+  // re-read it and stamping a date would have claimed a check that did not
+  // happen. Needs a manual visit to date.
   { brand: "Pipedrive", logo: "/logos/pipedrive.png", href: "/pipedrive", offer: "14-day free trial, no card", category: "CRM" },
   { brand: "GoHighLevel", logo: "/logos/gohighlevel.png", href: "/best-ai-sales-tools", offer: "14-day free trial, no card", category: "Sales & CRM", verified: "2026-08-25" },
   { brand: "ElevenLabs", logo: "/logos/elevenlabs.png", href: "/elevenlabs", offer: "Free plan (10,000 credits/month)", category: "AI tools", verified: "2026-08-25" },

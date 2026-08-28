@@ -12,6 +12,7 @@ export const metadata = generateSEOMetadata(seoConfig.bestAiSalesTools);
 
 import { GOHIGHLEVEL_URL, AISDR_URL, REPLY_IO_URL, FULLENRICH_URL } from "@/lib/affiliate-links";
 
+import EarningsBalanceNote from "@/components/consumer/EarningsBalanceNote";
 const aff = (url: string) => ({
   href: url,
   target: "_blank" as const,
@@ -265,6 +266,10 @@ export default function BestAiSalesToolsPage() {
             Try GoHighLevel Free
             <ArrowRight className="h-4 w-4" />
           </a>
+          <EarningsBalanceNote
+            earnFromAll={["GoHighLevel", "AiSDR", "Reply.io", "FullEnrich"]}
+            className="mt-4 max-w-2xl"
+          />
         </div>
 
         {/* Answer-first verdict: the direct answer an engine can lift. The heading

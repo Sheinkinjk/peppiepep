@@ -8,6 +8,7 @@ import CodeAnswer from "@/components/offers/CodeAnswer";
 import OfferSchema from "@/components/offers/OfferSchema";
 import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 
+import EarningsBalanceNote from "@/components/consumer/EarningsBalanceNote";
 export const metadata = generateSEOMetadata(seoConfig.bestPetInsurance);
 
 const SLUG = "/best-pet-insurance-australia";
@@ -216,6 +217,7 @@ export default function BestPetInsuranceAustraliaPage() {
               </div>
             ))}
           </div>
+          <EarningsBalanceNote earnFromAll={["Knose", "PetsOnMe"]} className="mt-5" />
         </section>
 
         {/* Criteria */}

@@ -141,7 +141,13 @@ export default function PremiumAffiliateLanding({ config }: { config: AffiliateP
                 <div>
                   <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#0a7c42]">Current offer via our link</p>
                   <p className="mt-1 text-[15px] font-bold leading-snug text-[#10251b]">{config.offer}</p>
-                  <p className="mt-1.5 text-[11px] font-medium text-[#6e7b74]">Checked &amp; verified {verifiedStamp(config.brand)}</p>
+                  {/* Names the publisher, for the same measured reason CodeAnswer's
+                      stamp does: Perplexity attributed our code as "one coupon site
+                      says" while crediting a competitor by name and date. A date with
+                      no agent is a quotable unit with nobody to cite. Do not trim the
+                      name back out as redundant with the site it sits on: the unit
+                      gets lifted away from the site. */}
+                  <p className="mt-1.5 text-[11px] font-medium text-[#6e7b74]">Checked &amp; verified by Refer Labs, {verifiedStamp(config.brand)}</p>
                 </div>
               </div>
             )}

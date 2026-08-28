@@ -31,6 +31,7 @@ Independent, NerdWallet-style affiliate comparison site for Australians. Next.js
 - Avoid redirect **chains** (A→B→C leaks equity); point straight at the final destination.
 - A page with no `metadata` export inherits the **root layout's canonical**, i.e. it claims to be the homepage. Any new route needs its own metadata (or a sibling `layout.tsx` if it's a client component).
 - `seoConfig` entries for retired routes carry defensive `noIndex: true`, so removing a redirect can't silently republish them.
+- **Bing Webmaster Tools is set up and verified** for referlabs.com.au, outside `seo.ts` (DNS / XML file / Search Console import). `seo.ts` emits a Google token only; that is not a missing Bing token. Its AI Performance report is the live read on GEO (1,200 citations / 28 days, 201 pages indexed, 34 warnings, 15 excluded, full query breakdown) and Bing is the index ChatGPT retrieves from. Do not report Bing as unverified or as a blind spot.
 - Verify against the **live site**, not the filesystem: `next.config.ts` redirects make many routes unreachable, and auth guards 307 before render. A file-level audit will report problems that don't exist.
 
 ### Internal linking (no orphans)
