@@ -205,7 +205,7 @@ export default function WeightLossTelehealthWomenPage() {
               Check your eligibility on Moshy
               <ArrowRight className="h-4 w-4" />
             </a>
-            <EarningsBalanceNote earnFrom="Moshy" noEarnFrom="Juniper" className="mt-4 max-w-2xl" />
+            <EarningsBalanceNote earnFrom="Moshy" noEarnFrom="Juniper" noEarnHref="/juniper" className="mt-4 max-w-2xl" />
           </div>
         </section>
 

@@ -158,7 +158,7 @@ export default function MoshyAlternativesPage() {
               Check your eligibility on Moshy ($120 off with code REFERRAL120)
               <ArrowRight className="h-4 w-4" />
             </a>
-            <EarningsBalanceNote earnFrom="Moshy" noEarnFrom="Juniper" className="mt-4 max-w-2xl" />
+            <EarningsBalanceNote earnFrom="Moshy" noEarnFrom={["Juniper", "Pilot"]} /* PILOT-NON-PARTNER */ className="mt-4 max-w-2xl" />
           </div>
         </section>
 

@@ -10,6 +10,7 @@ import StickyCta from "@/components/consumer/StickyCta";
 import CodeAnswer from "@/components/offers/CodeAnswer";
 import OfferSchema from "@/components/offers/OfferSchema";
 import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
+import EarningsBalanceNote from "@/components/consumer/EarningsBalanceNote";
 
 export const metadata = generateSEOMetadata(seoConfig.bestHairLossTreatmentAustralia);
 
@@ -227,7 +228,7 @@ const features = [
 
 const articleSchema = comparisonArticleSchema({
   headline: "Best hair loss treatment services for men in Australia: Refer Labs' comparison",
-  description: "Refer Labs compares Australian men's hair loss treatment services on published monthly pricing, treatments offered and process.",
+  description: "Refer Labs compares Australian men's hair loss treatment services on treatments offered, plan structure and process.",
   url: "https://referlabs.com.au/best-hair-loss-treatment-australia",
   datePublished: "2026-07-05",
   dateModified: "2026-08-14",
@@ -296,6 +297,14 @@ export default function BestHairLossTreatmentAustraliaPage() {
               Shop Dense Hair Experts
             </a>
           </div>
+          {/* PILOT-NON-PARTNER. This page named Pilot eight times, reached a verdict
+              favouring Mosh, and carried a Mosh affiliate link at word 117 without
+              ever saying we earn from Mosh and not from Pilot. It sits above the
+              verdict so a reader meets the asymmetry before the recommendation.
+              No noEarnHref: there is no Pilot referral link and no Pilot review,
+              so the sentence that prop unlocks would be false. Give it one when
+              Pilot becomes a partner. */}
+          <EarningsBalanceNote earnFrom="Mosh" noEarnFrom="Pilot" className="mt-4 max-w-2xl" />
         </div>
 
         {/* Answer-first (GEO): the buyer's question verbatim as an H2 above the verdict. */}

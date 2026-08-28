@@ -260,7 +260,7 @@ function PlatformCard({
               alongside Moshy while carrying a link for Moshy alone, so the
               asymmetry is stated where the link is rather than as a banner
               above the article. */}
-          {isAffiliate && <EarningsBalanceNote earnFrom={name} noEarnFrom="Juniper" className="mt-1" />}
+          {isAffiliate && <EarningsBalanceNote earnFrom={name} noEarnFrom={["Juniper", "Pilot"]} /* PILOT-NON-PARTNER */ className="mt-1" />}
         </div>
       </div>
     </section>

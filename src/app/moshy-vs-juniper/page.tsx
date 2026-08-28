@@ -206,7 +206,7 @@ export default function MoshyVsJuniperPage() {
                 Read our full Moshy review →
               </Link>
             </p>
-            <EarningsBalanceNote earnFrom="Moshy" noEarnFrom="Juniper" className="mt-4" />
+            <EarningsBalanceNote earnFrom="Moshy" noEarnFrom="Juniper" noEarnHref="/juniper" className="mt-4" />
           </div>
           <div className="rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] p-6">
             <p className="text-[10px] font-bold uppercase tracking-[0.18em] mb-2 text-[#3d4b44]">Designed for women</p>

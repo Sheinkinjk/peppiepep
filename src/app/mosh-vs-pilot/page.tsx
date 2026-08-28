@@ -108,12 +108,11 @@ const rows: { label: string; mosh: string; pilot: string }[] = [
   { label: "Breadth", mosh: "Hair, skin, weight, mind, sexual health", pilot: "Hair, weight, sexual health and more" },
   { label: "Best for", mosh: "A focused, quick hair-loss consult", pilot: "Those who prefer a broad health ecosystem" },
   { label: "Pricing", mosh: "Subscription, confirmed in the consult", pilot: "Subscription, confirmed in the consult" },
-  { label: "Referral offer", mosh: "55% off a first order with code REFERAL55, applied automatically via the link", pilot: "Not a Refer Labs partner" },
 ];
 
 const articleSchema = comparisonArticleSchema({
   headline: "Mosh vs Pilot: Refer Labs' Australian men's hair loss comparison",
-  description: "Refer Labs compares Mosh and Pilot on treatments, process and published monthly pricing for Australian men's hair loss telehealth.",
+  description: "Refer Labs compares Mosh and Pilot on treatments, process and how each subscription is structured for Australian men's hair loss telehealth.",
   url: "https://referlabs.com.au/mosh-vs-pilot",
   datePublished: "2026-07-05",
   dateModified: "2026-08-08",
@@ -151,8 +150,9 @@ export default function MoshVsPilotPage() {
               registered Australian practitioner, and both can prescribe prescription hair-loss treatments when it is
               appropriate. So the real question is which experience, plan and price suits you. Below we set out where they overlap, where they diverge, and how to choose.
             </p>
+            {/* PILOT-NON-PARTNER: states what Refer Labs holds, not what Pilot lacks. */}
             <CodeAnswer code="REFERAL55" className="mt-6">
-              Pilot carries no Refer Labs code; Mosh does, and REFERAL55 takes 55% off a new customer&apos;s first order.
+              Refer Labs holds one code on this page: REFERAL55, 55% off a new customer&apos;s first Mosh order. We have no commercial arrangement with Pilot.
             </CodeAnswer>
             <OfferSchema code="REFERAL55" />
 
@@ -225,6 +225,12 @@ export default function MoshVsPilotPage() {
                   ))}
                 </tbody>
               </table>
+              {/* PILOT-NON-PARTNER. The table used to carry a "Referral offer" row
+                  reading "55% off with code REFERAL55" against "Not a Refer Labs
+                  partner". Every other row compares the two services; that one
+                  compared our contracts, and put Pilot on the wrong side of a
+                  product comparison for a fact about us. Restore the row when
+                  Pilot becomes a partner and there is an offer to compare. */}
             </div>
             <p className="text-[#9aa39c] text-[10px] mt-3 leading-relaxed">
               Details are based on publicly available information and can change. Prescription

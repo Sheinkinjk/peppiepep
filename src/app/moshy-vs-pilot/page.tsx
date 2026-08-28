@@ -74,7 +74,7 @@ const faqs = [
   },
   {
     q: "Who is Pilot built for?",
-    a: "Pilot is the men-focused telehealth brand from Eucalyptus, the parent company that also runs Juniper. It covers a range of men's health areas as well as weight management, so it suits someone who wants weight support inside a broader men's health service. Moshy, by contrast, is gender-neutral and open to anyone eligible. Eucalyptus was acquired by Hims and Hers Health in 2026.",
+    a: "Pilot is the men-focused telehealth brand from Eucalyptus, the parent company that also runs Juniper. It covers a range of men's health areas as well as weight management, so it suits someone who wants weight support inside a broader men's health service. Moshy, by contrast, is gender-neutral and open to anyone eligible. Hims & Hers Health completed its acquisition of Eucalyptus on 2 June 2026, announced 19 February 2026 at up to US$1.15bn (source: Hims & Hers Health announcement, 2 June 2026).",
   },
   {
     q: "How is treatment access handled by Moshy and Pilot?",
@@ -158,8 +158,9 @@ export default function MoshyVsPilotPage() {
               men&apos;s health offering. Both run on a subscription model. Below we line them up on how their pricing
               models differ, who each suits, the online process, what is included, and how treatment access is handled.
             </p>
+            {/* PILOT-NON-PARTNER: states what Refer Labs holds, not what Pilot lacks. */}
             <CodeAnswer code="REFERRAL120" className="mt-6">
-              Pilot has no Refer Labs code; Moshy does, and REFERRAL120 is worth $120 off a new customer&apos;s first order, once per customer.
+              The one code Refer Labs holds here is REFERRAL120, worth $120 off a new customer&apos;s first Moshy order, once per customer. Refer Labs has no arrangement with Pilot.
             </CodeAnswer>
             <OfferSchema code="REFERRAL120" />
 
@@ -268,9 +269,14 @@ export default function MoshyVsPilotPage() {
             <div className="space-y-4 text-[15px] leading-relaxed text-[#3d4b44] max-w-2xl">
               <p>
                 Pilot is the men-focused brand from Eucalyptus, the same parent company behind the women-focused Juniper.
-                Eucalyptus was acquired by Hims and Hers Health in 2026. Pilot covers a spread of men&apos;s health areas
+                Hims &amp; Hers Health completed its acquisition of Eucalyptus on 2 June 2026, announced on 19 February 2026
+                at up to US$1.15bn. Pilot covers a spread of men&apos;s health areas
                 alongside weight management, so its appeal is the wider ecosystem: if you want weight support to sit next
                 to other men&apos;s health services in one place, that is the pitch.
+              </p>
+              <p className="text-xs text-[#6b7a72]">
+                Source: Hims &amp; Hers Health, &ldquo;Hims &amp; Hers Completes Acquisition of Eucalyptus&rdquo;,
+                2 June 2026.
               </p>
               <p>
                 Moshy takes the opposite tack on audience. It is gender-neutral and open to anyone eligible, and it keeps
