@@ -229,108 +229,24 @@ export const trackEvent = (eventName: string, parameters?: Record<string, unknow
   }
 };
 
-// Predefined event trackers for common actions
+/**
+ * The one predefined tracker still wired to anything.
+ *
+ * Twelve siblings were deleted on 28 Aug 2026: trackPricingPlanClick,
+ * trackTrialSignup, trackPurchase, trackROICalculator, trackReferralCreated,
+ * trackContactFormSubmit, trackBlogView, trackVideoPlay, trackOutboundClick,
+ * blueprintIntakeStarted, blueprintCheckoutInitiated and leadCaptured. Every one
+ * had zero call sites: they were built for the Pepform SaaS subscription funnel
+ * and the $799 Blueprint, both retired, and several priced their events in USD
+ * for an Australian business. Dead trackers are worse than no trackers, because
+ * the next person reading this file assumes the funnel they describe exists.
+ *
+ * This one survives only because /referral-blueprint/success still calls it. See
+ * the warning there: it fires a $799 purchase on any visit to a page whose
+ * product was shut down on 26 Aug 2026, so it is a reporting hazard rather than
+ * a measurement. Delete both together, not this alone.
+ */
 export const analytics = {
-  // Track pricing plan selection
-  trackPricingPlanClick: (plan: string, billingCycle: string) => {
-    trackEvent("select_plan", {
-      plan_name: plan,
-      billing_cycle: billingCycle,
-      value: plan === "base" ? 399 : 599,
-      currency: "USD",
-    });
-  },
-
-  // Track trial signup
-  trackTrialSignup: (plan: string) => {
-    trackEvent("sign_up", {
-      method: "email",
-      plan_name: plan,
-    });
-  },
-
-  // Track successful payment
-  trackPurchase: (plan: string, amount: number, transactionId: string) => {
-    trackEvent("purchase", {
-      transaction_id: transactionId,
-      value: amount,
-      currency: "USD",
-      items: [
-        {
-          item_name: `Refer Labs ${plan} Plan`,
-          item_category: "subscription",
-          price: amount,
-          quantity: 1,
-        },
-      ],
-    });
-  },
-
-  // Track ROI calculator usage
-  trackROICalculator: (monthlyCustomers: number, conversionRate: number, estimatedROI: number) => {
-    trackEvent("roi_calculator_used", {
-      monthly_customers: monthlyCustomers,
-      conversion_rate: conversionRate,
-      estimated_roi: estimatedROI,
-    });
-  },
-
-  // Track referral link creation
-  trackReferralCreated: (ambassadorId: string) => {
-    trackEvent("referral_link_created", {
-      ambassador_id: ambassadorId,
-    });
-  },
-
-  // Track contact form submission
-  trackContactFormSubmit: () => {
-    trackEvent("generate_lead", {
-      form_name: "contact_form",
-    });
-  },
-
-  // Track blog post view
-  trackBlogView: (postTitle: string) => {
-    trackEvent("blog_view", {
-      post_title: postTitle,
-    });
-  },
-
-  // Track video play
-  trackVideoPlay: (videoTitle: string) => {
-    trackEvent("video_start", {
-      video_title: videoTitle,
-    });
-  },
-
-  // Track outbound link clicks
-  trackOutboundClick: (url: string, linkText: string) => {
-    trackEvent("click", {
-      link_url: url,
-      link_text: linkText,
-      outbound: true,
-    });
-  },
-
-  // ── Cross-platform Blueprint events (GA4 + Meta Pixel + LinkedIn) ──────
-  blueprintIntakeStarted: () => {
-    trackEvent("blueprint_intake_started", { product: "Referral Growth Blueprint" });
-    if (typeof window !== "undefined" && "fbq" in window) {
-      (window as Window & { fbq: (track: string, event: string, params?: Record<string, unknown>) => void })
-        .fbq("track", "InitiateCheckout", { content_name: "Referral Growth Blueprint", value: 799, currency: "AUD" });
-    }
-    if (typeof window !== "undefined" && "lintrk" in window) {
-      (window as Window & { lintrk: (track: string, params: { conversion_id: number }) => void })
-        .lintrk("track", { conversion_id: 0 });
-    }
-  },
-  blueprintCheckoutInitiated: () => {
-    trackEvent("blueprint_checkout_initiated", { value: 799, currency: "AUD" });
-    if (typeof window !== "undefined" && "fbq" in window) {
-      (window as Window & { fbq: (track: string, event: string, params?: Record<string, unknown>) => void })
-        .fbq("track", "AddPaymentInfo", { content_name: "Referral Growth Blueprint", value: 799, currency: "AUD" });
-    }
-  },
   blueprintPurchaseCompleted: (sessionId?: string) => {
     trackEvent("purchase", {
       transaction_id: sessionId ?? "blueprint_" + Date.now(),
@@ -345,13 +261,6 @@ export const analytics = {
     if (typeof window !== "undefined" && "lintrk" in window) {
       (window as Window & { lintrk: (track: string, params: { conversion_id: number }) => void })
         .lintrk("track", { conversion_id: 0 });
-    }
-  },
-  leadCaptured: (source: string) => {
-    trackEvent("generate_lead", { source, value: 1, currency: "AUD" });
-    if (typeof window !== "undefined" && "fbq" in window) {
-      (window as Window & { fbq: (track: string, event: string, params?: Record<string, unknown>) => void })
-        .fbq("track", "Lead", { source });
     }
   },
 };
