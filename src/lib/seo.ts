@@ -1487,7 +1487,7 @@ export const seoConfig = {
     // stop competing for the same query.
     title: "Best Weight Loss Telehealth: Moshy vs Juniper",
     description:
-      "Moshy, Juniper and Pilot compared on eligibility, process and cost. REFERRAL120 takes $120 off a first Moshy order, checked 17 Aug 2026.",
+      "Moshy, Juniper and Pilot compared for Australians on eligibility, process and cost. REFERRAL120 takes $120 off a first Moshy order, checked 17 Aug 2026.",
     url: `${SITE_URL}/best-weight-loss-telehealth-australia`,
     keywords: [
       "best weight loss telehealth australia 2026",
@@ -2551,7 +2551,7 @@ export const seoConfig = {
   bestHairLossTreatmentAustralia: {
     title: "Best Hair Loss Treatment 2026: Mosh vs Dense",
     description:
-      "What clinical telehealth and topical products cost, and who each suits. REFERAL55 takes 55% off a first Mosh order, checked 17 Aug 2026.",
+      "What clinical telehealth and topical products cost in Australia, and who each suits. REFERAL55 takes 55% off a first Mosh order, checked 17 Aug 2026.",
     url: `${SITE_URL}/best-hair-loss-treatment-australia`,
     keywords: [
       "best hair loss treatment australia 2026",
