@@ -202,7 +202,7 @@ export default function MoshyVsJuniperPage() {
               <ArrowRight className="h-4 w-4" />
             </a>
             <p className="mt-3">
-              <Link href="/moshy" className="text-xs text-[#3d4b44] underline decoration-[#cdd5cf] underline-offset-2 hover:text-[#2b362f]">
+              <Link href="/moshy-review" className="text-xs text-[#3d4b44] underline decoration-[#cdd5cf] underline-offset-2 hover:text-[#2b362f]">
                 Read our full Moshy review →
               </Link>
             </p>
@@ -271,7 +271,7 @@ export default function MoshyVsJuniperPage() {
           <Link href="/best-weight-loss-telehealth-australia" style={{ color: CYAN }} className="hover:opacity-80">
             Best Weight Loss Telehealth Australia →
           </Link>
-          <Link href="/moshy" style={{ color: CYAN }} className="hover:opacity-80">Moshy full review →</Link>
+          <Link href="/moshy" style={{ color: CYAN }} className="hover:opacity-80">Moshy</Link>
           <Link href="/juniper" style={{ color: CYAN }} className="hover:opacity-80">Juniper review →</Link>
           <Link href="/guides" style={{ color: CYAN }} className="hover:opacity-80">All guides →</Link>
         </div>

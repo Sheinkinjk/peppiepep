@@ -179,7 +179,7 @@ export default function MoshyAlternativesPage() {
 
         <div className="border-t border-[#e5e9e7] pt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm">
           <Link href="/best-weight-loss-telehealth-australia" style={{ color: CYAN }} className="hover:opacity-80">Full provider comparison →</Link>
-          <Link href="/moshy" style={{ color: CYAN }} className="hover:opacity-80">Moshy: current offer</Link>
+          <Link href="/moshy" style={{ color: CYAN }} className="hover:opacity-80">our Moshy page</Link>
           <Link href="/moshy-review" style={{ color: CYAN }} className="hover:opacity-80">Moshy review →</Link>
           <Link href="/online-weight-loss-programs-australia" style={{ color: CYAN }} className="hover:opacity-80">Online programs, untangled →</Link>
         </div>

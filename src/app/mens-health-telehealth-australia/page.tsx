@@ -126,7 +126,7 @@ export default function MensHealthTelehealthPage() {
                 <ArrowRight className="h-4 w-4" />
               </a>
               <p className="mt-3">
-                <Link href="/moshy" className="text-xs text-[#3d4b44] underline decoration-[#cdd5cf] underline-offset-2 hover:text-[#2b362f]">Moshy: the offer</Link>
+                <Link href="/moshy" className="text-xs text-[#3d4b44] underline decoration-[#cdd5cf] underline-offset-2 hover:text-[#2b362f]">Moshy, explained</Link>
           <Link href="/moshy-review" className="text-xs text-[#3d4b44] underline decoration-[#cdd5cf] underline-offset-2 hover:text-[#2b362f]">
                   Read our Moshy review →
                 </Link>

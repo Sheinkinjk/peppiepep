@@ -173,7 +173,7 @@ export default function MoshyEligibilityPage() {
 
         <div className="border-t border-[#e5e9e7] pt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm">
           <Link href="/moshy-review" style={{ color: CYAN }} className="hover:opacity-80">Our full Moshy review →</Link>
-          <Link href="/moshy" style={{ color: CYAN }} className="hover:opacity-80">Moshy referral link &amp; offer →</Link>
+          <Link href="/moshy" style={{ color: CYAN }} className="hover:opacity-80">Moshy, in full →</Link>
           <Link href="/weight-loss-telehealth-men-australia" style={{ color: CYAN }} className="hover:opacity-80">Men&apos;s weight loss telehealth →</Link>
         </div>
 
