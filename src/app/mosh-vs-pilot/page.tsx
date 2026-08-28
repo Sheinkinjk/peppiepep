@@ -110,7 +110,7 @@ const rows: { label: string; mosh: string; pilot: string }[] = [
 
 const articleSchema = comparisonArticleSchema({
   headline: "Mosh vs Pilot: Refer Labs' Australian men's hair loss comparison",
-  description: "Refer Labs compares Mosh and Pilot on treatments, process and how each subscription is structured for Australian men's hair loss telehealth.",
+  description: "Refer Labs compares Mosh and Pilot on treatments, process and who each suits for Australian men's hair loss telehealth.",
   url: "https://referlabs.com.au/mosh-vs-pilot",
   datePublished: "2026-07-05",
   dateModified: "2026-08-08",
