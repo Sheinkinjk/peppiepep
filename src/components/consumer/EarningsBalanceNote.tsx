@@ -77,11 +77,24 @@ export default function EarningsBalanceNote({
   className?: string;
 }) {
   if (earnFromAll?.length) {
+    /* `earnFromAll` may be combined with `noEarnFrom`. Added 28 Aug 2026 for
+       /best-hair-loss-treatment-australia, which links Mosh AND Dense, both of
+       which pay us, while naming Pilot, which does not. Neither existing shape
+       could say that: earnFrom+noEarnFrom named one earner and silently dropped
+       the other, and earnFromAll alone would drop the Pilot statement the page
+       exists to make. The page had been shipping the first of those, telling a
+       reader we earn from Mosh and nothing from Pilot beside a Dense CTA that
+       also pays us. A disclosure that omits a payer is worse than none. */
+    const others = noEarnFrom ? (Array.isArray(noEarnFrom) ? noEarnFrom : [noEarnFrom]) : [];
     return (
       <p className={`text-xs leading-relaxed text-[#6e7b74] ${className}`}>
         We earn a commission if you sign up through the {list(earnFromAll, "or")} link
         {earnFromAll.length > 1 ? "s" : ""} on this page, at no extra cost to you. We earn from{" "}
-        {WORD[earnFromAll.length] ?? "each"} of them.{" "}
+        {WORD[earnFromAll.length] ?? "each"} of them
+        {others.length > 0 ? (
+          <>, and nothing from {list(others, "or")}: we have no commercial arrangement with them</>
+        ) : null}
+        .{" "}
         <Link href="/how-we-make-money" className="underline hover:text-[#3d4b44]">
           How we make money
         </Link>

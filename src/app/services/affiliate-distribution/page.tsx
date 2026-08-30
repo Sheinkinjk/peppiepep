@@ -39,59 +39,43 @@ const breadcrumbSchema = {
   ],
 };
 
+/**
+ * One array, rendered below AND used to build the FAQPage JSON-LD.
+ *
+ * Until 28 Aug 2026 the schema held a separate hand-written list whose questions
+ * did not all appear on the page. Google's FAQPage guidance requires the
+ * marked-up content to be visible on the source page, and a structured-data
+ * manual action is site-wide rather than per-page, so this was worth closing
+ * even on routes that are not in the sitemap. Deriving one from the other makes
+ * divergence impossible. Do not reintroduce a second list.
+ */
+const FAQS: { q: string; a: string }[] = [
+                {
+                  q: "What does affiliate program distribution mean?",
+                  a: "Affiliate program distribution means actively placing your offer into communities and channels where your buyers already research and make decisions, rather than listing the program and waiting for affiliates to find it. Refer Labs handles the full execution: channel identification, community-native content, contextual placement, and conversion tracking.",
+                },
+                {
+                  q: "How is this different from a typical affiliate marketing agency?",
+                  a: "Most affiliate agencies recruit affiliates and manage commissions. Refer Labs distributes. Our in-house team places your offer in communities using community-native content. We are not a marketplace or network, we are a distribution team that treats your affiliate program as an active growth channel.",
+                },
+                {
+                  q: "What does sector-exclusive representation mean?",
+                  a: "We work with one business per sector. If we are distributing an affiliate program in your category, we do not take on a competing offer. This means you get our full distribution focus without a competitor benefiting from the same team and channels.",
+                },
+                {
+                  q: "Is affiliate program distribution available for Australian businesses?",
+                  a: "Yes. Refer Labs is based in Australia and distributes affiliate programs for Australian businesses domestically and internationally. We have existing presence in Australian online communities, Reddit, Facebook groups, and professional networks across multiple sectors.",
+                },
+];
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "What does affiliate program distribution mean?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Affiliate program distribution means actively placing your affiliate offer into the communities, forums, newsletters, and channels where your ideal buyers already research and make decisions, rather than simply listing the program and waiting for affiliates to find it. Refer Labs handles the full execution: channel identification, community-native content, contextual placement, and conversion tracking.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How does Refer Labs distribute affiliate programs?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "We start by mapping your buyer profile and identifying the highest-intent channels, subreddits, industry forums, newsletters, and niche communities where your buyers research purchases. Our in-house team then places your offer contextually in those channels, builds credibility over time, and tracks conversion at the source level. We cut low-performing channels and scale what converts.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What sectors does Refer Labs work with for affiliate distribution?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Refer Labs works across SaaS, health and wellness, fintech, AI tools, professional services, and eCommerce. We work with one business per sector, if we are already distributing a competing offer in your category, we will let you know. Applications are reviewed within two business days.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How is this different from a typical affiliate marketing agency?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Most affiliate agencies recruit affiliates and manage commissions. Refer Labs does not recruit, we distribute. Our in-house team actively places your offer in communities and channels using community-native content. We are not a marketplace or network. We are a distribution team that treats your affiliate program as an active growth channel, not a passive listing.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Is affiliate program distribution available for Australian businesses?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes. Refer Labs is based in Australia and distributes affiliate programs for Australian businesses domestically and internationally. We have existing presence in Australian online communities including Reddit, Facebook Groups, industry forums, and professional networks. We also work with global businesses targeting Australian buyers.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What does sector-exclusive representation mean?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Sector-exclusive means we work with one business per category. If we are distributing an affiliate program for a SaaS product in your space, we do not take on a competing offer. Our distribution team's credibility in each community depends on not promoting two competing products simultaneously. This exclusivity works in your favour, you get our full focus in your sector without a competitor benefiting from the same team.",
-      },
-    },
-  ],
+  mainEntity: FAQS.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
 };
 
 const webPageSchema = {
@@ -327,24 +311,7 @@ export default function AffiliateDistributionPage() {
               <h2 className="text-xl font-black text-[#22C0CD]">Common Questions</h2>
             </div>
             <div className="space-y-8 max-w-2xl">
-              {[
-                {
-                  q: "What does affiliate program distribution mean?",
-                  a: "Affiliate program distribution means actively placing your offer into communities and channels where your buyers already research and make decisions, rather than listing the program and waiting for affiliates to find it. Refer Labs handles the full execution: channel identification, community-native content, contextual placement, and conversion tracking.",
-                },
-                {
-                  q: "How is this different from a typical affiliate marketing agency?",
-                  a: "Most affiliate agencies recruit affiliates and manage commissions. Refer Labs distributes. Our in-house team places your offer in communities using community-native content. We are not a marketplace or network, we are a distribution team that treats your affiliate program as an active growth channel.",
-                },
-                {
-                  q: "What does sector-exclusive representation mean?",
-                  a: "We work with one business per sector. If we are distributing an affiliate program in your category, we do not take on a competing offer. This means you get our full distribution focus without a competitor benefiting from the same team and channels.",
-                },
-                {
-                  q: "Is affiliate program distribution available for Australian businesses?",
-                  a: "Yes. Refer Labs is based in Australia and distributes affiliate programs for Australian businesses domestically and internationally. We have existing presence in Australian online communities, Reddit, Facebook groups, and professional networks across multiple sectors.",
-                },
-              ].map(({ q, a }) => (
+              {FAQS.map(({ q, a }) => (
                 <div key={q}>
                   <h3 className="text-sm font-bold text-white mb-2">{q}</h3>
                   <p className="text-sm text-white/50 leading-relaxed">{a}</p>

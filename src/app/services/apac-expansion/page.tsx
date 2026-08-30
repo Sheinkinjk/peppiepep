@@ -42,59 +42,43 @@ const breadcrumbSchema = {
   ],
 };
 
+/**
+ * One array, rendered below AND used to build the FAQPage JSON-LD.
+ *
+ * Until 28 Aug 2026 the schema held a separate hand-written list whose questions
+ * did not all appear on the page. Google's FAQPage guidance requires the
+ * marked-up content to be visible on the source page, and a structured-data
+ * manual action is site-wide rather than per-page, so this was worth closing
+ * even on routes that are not in the sitemap. Deriving one from the other makes
+ * divergence impossible. Do not reintroduce a second list.
+ */
+const FAQS: { q: string; a: string }[] = [
+                {
+                  q: "Why is a local partner important for entering the Australian market?",
+                  a: "Australian markets are built on trust and existing relationships. Buyers make decisions based on who introduces them, not who sends the cold email. A local partner with established relationships in your target industry accelerates market entry, reduces the cost of building trust from scratch, and opens distribution channels that would otherwise take years to develop independently.",
+                },
+                {
+                  q: "What is the commercial structure for an APAC expansion partnership?",
+                  a: "The structure depends on how deeply embedded we are in the Australian operation. Arrangements include retainer, revenue share, equity, or a hybrid. We define the structure clearly upfront, what we contribute, how we are compensated, and what success looks like for both parties.",
+                },
+                {
+                  q: "What types of businesses do you partner with for Australian market entry?",
+                  a: "We partner with SaaS, fintech, health tech, professional services, and distribution-led businesses where genuine synergy exists with our network and capabilities. We assess every partnership individually, if the synergy is not real, we will say so directly.",
+                },
+                {
+                  q: "How quickly can you activate the Australian operation after a partnership is agreed?",
+                  a: "Commercial activation, introductions, outreach, and first partner conversations, typically begins within 2-4 weeks of completing the synergy assessment and formalising the partnership structure. The pace depends on the complexity of the go-to-market and the existing relationship density in your specific sector.",
+                },
+];
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "What does an APAC expansion partnership with Refer Labs involve?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Refer Labs partners with businesses where genuine commercial synergy exists, then embeds in the Australian operation, contributing local relationships, distribution networks, partner activations, and commercial capability. This is not an advisory arrangement. We operate in-market on your behalf, handle commercial outreach, structure deals, and manage the Australian growth operation as a genuine partner.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How do you enter the Australian market with a distribution partner?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "The fastest path to Australian market entry with genuine commercial traction is through a local partner with existing relationships in your target distribution channels. Refer Labs brings connections across Australian partner networks, referral channels, industry communities, and professional networks, relationships that typically take 2-5 years to develop independently. We structure the engagement based on your go-to-market approach and the depth of operational involvement required.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What types of businesses does Refer Labs partner with for Australian expansion?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "We partner with businesses where our capabilities create genuine commercial synergy, typically SaaS, fintech, health tech, professional services, or distribution-led businesses entering Australia. We assess every partnership for synergy with our existing network, team domain knowledge, and the businesses we already work with. We take on a small number of expansion partners at any time.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What is the commercial structure for an APAC expansion partnership?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "The structure depends on how deeply embedded we are in the Australian operation and the scale of contribution. Arrangements include retainer, revenue share, equity, or a hybrid model. We define the structure clearly upfront, what we contribute, how we are compensated, and what success looks like for both parties.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Why is a local partner important for entering the Australian market?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Australian markets are built on trust and existing relationships. Buyers make decisions based on who introduces them, not who sends the cold email. A local partner with established relationships in your target industry accelerates market entry significantly, reduces the cost of building trust from scratch, and opens distribution channels that would otherwise take years to develop independently.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Does Refer Labs only work with businesses expanding to Australia?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Our primary focus is Australia and the broader APAC region. We have the deepest relationships and operational capability in the Australian market specifically. If your expansion covers additional APAC markets, we assess those on a case-by-case basis depending on the synergy and our existing network in those markets.",
-      },
-    },
-  ],
+  mainEntity: FAQS.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
 };
 
 const webPageSchema = {
@@ -334,24 +318,7 @@ export default function ApacExpansionPage() {
               <h2 className="text-xl font-black text-[#22C0CD]">Common Questions</h2>
             </div>
             <div className="space-y-8 max-w-2xl">
-              {[
-                {
-                  q: "Why is a local partner important for entering the Australian market?",
-                  a: "Australian markets are built on trust and existing relationships. Buyers make decisions based on who introduces them, not who sends the cold email. A local partner with established relationships in your target industry accelerates market entry, reduces the cost of building trust from scratch, and opens distribution channels that would otherwise take years to develop independently.",
-                },
-                {
-                  q: "What is the commercial structure for an APAC expansion partnership?",
-                  a: "The structure depends on how deeply embedded we are in the Australian operation. Arrangements include retainer, revenue share, equity, or a hybrid. We define the structure clearly upfront, what we contribute, how we are compensated, and what success looks like for both parties.",
-                },
-                {
-                  q: "What types of businesses do you partner with for Australian market entry?",
-                  a: "We partner with SaaS, fintech, health tech, professional services, and distribution-led businesses where genuine synergy exists with our network and capabilities. We assess every partnership individually, if the synergy is not real, we will say so directly.",
-                },
-                {
-                  q: "How quickly can you activate the Australian operation after a partnership is agreed?",
-                  a: "Commercial activation, introductions, outreach, and first partner conversations, typically begins within 2-4 weeks of completing the synergy assessment and formalising the partnership structure. The pace depends on the complexity of the go-to-market and the existing relationship density in your specific sector.",
-                },
-              ].map(({ q, a }) => (
+              {FAQS.map(({ q, a }) => (
                 <div key={q}>
                   <h3 className="text-sm font-bold text-white mb-2">{q}</h3>
                   <p className="text-sm text-white/50 leading-relaxed">{a}</p>

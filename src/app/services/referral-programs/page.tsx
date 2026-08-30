@@ -42,59 +42,43 @@ const breadcrumbSchema = {
   ],
 };
 
+/**
+ * One array, rendered below AND used to build the FAQPage JSON-LD.
+ *
+ * Until 28 Aug 2026 the schema held a separate hand-written list whose questions
+ * did not all appear on the page. Google's FAQPage guidance requires the
+ * marked-up content to be visible on the source page, and a structured-data
+ * manual action is site-wide rather than per-page, so this was worth closing
+ * even on routes that are not in the sitemap. Deriving one from the other makes
+ * divergence impossible. Do not reintroduce a second list.
+ */
+const FAQS: { q: string; a: string }[] = [
+                {
+                  q: "What is the difference between a referral program and an affiliate program?",
+                  a: "A referral program incentivises existing customers to refer new customers, typically word-of-mouth driven with bilateral rewards. An affiliate program recruits external promoters who earn commissions for driving new customers. Both are distribution channels. Refer Labs designs, launches, and distributes both, with the approach tailored to your business model.",
+                },
+                {
+                  q: "Can you help if we already have a referral program that is not working?",
+                  a: "Yes. We work with businesses that have existing but underperforming referral programs. We diagnose the specific failure point, incentive design, distribution gaps, funnel drop-off, or wrong referrer targeting, and rebuild from there. We do not always need to start from scratch.",
+                },
+                {
+                  q: "What platforms do you integrate referral tracking with?",
+                  a: "We work with the major referral tracking platforms including ReferralHero, Rewardful, PartnerStack, Tapfiliate, and Impact. We can also configure custom tracking via your CRM, eCommerce platform, or SaaS stack with full attribution from first click to closed revenue.",
+                },
+                {
+                  q: "How long does it take to launch a referral program?",
+                  a: "A standard referral program launch from incentive design to go-live takes 3-6 weeks, depending on the complexity of the tracking setup and integration requirements. Distribution activation begins at or shortly after launch.",
+                },
+];
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "What is included in a referral program launch service?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Refer Labs covers the full cycle: incentive structure design with unit economics modelling, tracking system setup and CRM/platform integration, partner portal configuration, launch communications, active referrer seeding across distribution channels, A/B testing on incentive mechanics and messaging, referrer tiering, and ongoing optimisation toward compounding referral growth.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Why do most referral programs fail to scale?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Most referral programs stagnate after launch because the structure is built but not distributed. The incentive is set, a landing page goes live, and then nothing, because launching the program is not the same as getting it in front of the right people. Scaling requires active distribution: identifying your highest-value referrers, getting the program in front of them directly, and embedding referral prompts at the right points in the customer journey.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What platforms do you integrate with for referral tracking?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Refer Labs integrates with the major referral tracking platforms (ReferralHero, Rewardful, PartnerStack, Tapfiliate, Impact) and can configure custom tracking via CRM, eCommerce platform, or SaaS stack. We set up full-funnel attribution from first click to closed revenue.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What is the difference between a referral program and an affiliate program?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "A referral program incentivises existing customers to refer new customers, typically word-of-mouth driven with bilateral rewards. An affiliate program recruits external promoters (affiliates) who earn commissions for driving new customers. Both are distribution channels. Refer Labs designs, launches, and distributes both, with the approach tailored to the business model and buyer acquisition dynamics.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Can you help if we already have a referral program that is not working?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes. Refer Labs works with businesses that have existing but underperforming referral programs. We diagnose the specific failure point, incentive design, distribution gaps, funnel drop-off, or wrong referrer targeting, and rebuild from there. We do not always need to start from scratch.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Is this referral program service available for Australian businesses?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes. Refer Labs is based in Australia and designs and distributes referral programs for Australian eCommerce, SaaS, subscription, and B2B businesses. We have specific experience with Australian market dynamics, buyer behaviour, and community channels.",
-      },
-    },
-  ],
+  mainEntity: FAQS.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
 };
 
 const webPageSchema = {
@@ -311,24 +295,7 @@ export default function ReferralProgramsPage() {
               <h2 className="text-xl font-black text-[#22C0CD]">Common Questions</h2>
             </div>
             <div className="space-y-8 max-w-2xl">
-              {[
-                {
-                  q: "What is the difference between a referral program and an affiliate program?",
-                  a: "A referral program incentivises existing customers to refer new customers, typically word-of-mouth driven with bilateral rewards. An affiliate program recruits external promoters who earn commissions for driving new customers. Both are distribution channels. Refer Labs designs, launches, and distributes both, with the approach tailored to your business model.",
-                },
-                {
-                  q: "Can you help if we already have a referral program that is not working?",
-                  a: "Yes. We work with businesses that have existing but underperforming referral programs. We diagnose the specific failure point, incentive design, distribution gaps, funnel drop-off, or wrong referrer targeting, and rebuild from there. We do not always need to start from scratch.",
-                },
-                {
-                  q: "What platforms do you integrate referral tracking with?",
-                  a: "We work with the major referral tracking platforms including ReferralHero, Rewardful, PartnerStack, Tapfiliate, and Impact. We can also configure custom tracking via your CRM, eCommerce platform, or SaaS stack with full attribution from first click to closed revenue.",
-                },
-                {
-                  q: "How long does it take to launch a referral program?",
-                  a: "A standard referral program launch from incentive design to go-live takes 3-6 weeks, depending on the complexity of the tracking setup and integration requirements. Distribution activation begins at or shortly after launch.",
-                },
-              ].map(({ q, a }) => (
+              {FAQS.map(({ q, a }) => (
                 <div key={q}>
                   <h3 className="text-sm font-bold text-white mb-2">{q}</h3>
                   <p className="text-sm text-white/50 leading-relaxed">{a}</p>

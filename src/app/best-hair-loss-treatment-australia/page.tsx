@@ -82,14 +82,11 @@ const faqSchema = {
         text: "Mosh is a legitimate Australian telehealth platform offering online consultation and prescription for hair loss treatments including prescription hair-loss treatments. It provides a structured clinical process, photo assessment, questionnaire, and doctor review, and ships treatment directly to your door. Reviews generally acknowledge it as a convenient and properly supervised option for men dealing with hair loss who want to avoid a GP appointment.",
       },
     },
-    {
-      "@type": "Question",
-      name: "What is Dense Hair Experts and is it effective?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Dense Hair Experts offers shampoos, conditioners, serums, and scalp treatments formulated for thinning hair and reduced density. Their products are designed as a topical support approach to hair care and are not prescription medicines. They are most effective as part of a consistent routine rather than a standalone treatment. For people with early or mild hair thinning looking for non-prescription support, Dense products are a reasonable option. For progressive or significant hair loss, clinical treatment through a telehealth provider like Mosh is the stronger approach.",
-      },
-    },
+    /* "What is Dense Hair Experts and is it effective?" was removed from this
+       schema on 28 Aug 2026: it was the only question here with no visible
+       counterpart, and Google requires marked-up FAQ content to be on the
+       page. Not re-added as copy, because the 'Mosh vs Dense Hair Experts'
+       answer below already covers it and a second version would repeat it. */
     {
       "@type": "Question",
       name: "Mosh vs Dense Hair Experts, which should I use?",
@@ -276,7 +273,6 @@ export default function BestHairLossTreatmentAustraliaPage() {
           </CodeAnswer>
           <OfferSchema code="REFERAL55" />
 
-          <EditorialMeta lastUpdated="2026-08-14" className="mb-6" />
           <p className="text-[#9aa39c] text-xs mb-8">
             This does not constitute medical advice, consult a registered healthcare professional before starting any hair loss treatment.
           </p>
@@ -303,8 +299,12 @@ export default function BestHairLossTreatmentAustraliaPage() {
               verdict so a reader meets the asymmetry before the recommendation.
               No noEarnHref: there is no Pilot referral link and no Pilot review,
               so the sentence that prop unlocks would be false. Give it one when
-              Pilot becomes a partner. */}
-          <EarningsBalanceNote earnFrom="Mosh" noEarnFrom="Pilot" className="mt-4 max-w-2xl" />
+              Pilot becomes a partner.
+
+              earnFromAll, not earnFrom: this page links Dense as well as Mosh and
+              both pay us. It named Mosh alone until 28 Aug 2026, which disclosed
+              one payer beside the other payer's CTA. */}
+          <EarningsBalanceNote earnFromAll={["Mosh", "Dense"]} noEarnFrom="Pilot" className="mt-4 max-w-2xl" />
         </div>
 
         {/* Answer-first (GEO): the buyer's question verbatim as an H2 above the verdict. */}
@@ -571,6 +571,14 @@ export default function BestHairLossTreatmentAustraliaPage() {
             publisher. ...Refer Labs may earn a commission" in three consecutive
             sentences, with "Last updated 14 August 2026" wedged between two
             different dates. Same words, further from the stamp. */}
+          {/* Moved below the fold, 28 Aug 2026. The last-updated line sat in the
+              opening screenful alongside the code sentence, the verification
+              stamp, the disclaimer and the CTAs, so a reader met roughly 120
+              words of provenance before the second idea. The date is a trust
+              signal, not an opening argument; it belongs next to the disclosure
+              at the foot. The verification stamp stays above: that one is
+              load-bearing for the attribution work. */}
+        <EditorialMeta lastUpdated="2026-08-14" className="mx-auto max-w-5xl px-5 pb-2 sm:px-8" />
         <AffiliateDisclosure className="mx-auto max-w-5xl px-5 pb-10 sm:px-8" />
 
       </main>

@@ -178,7 +178,6 @@ export default function BestPetInsuranceAustraliaPage() {
             </CodeAnswer>
             <OfferSchema code="REFERLABS" />
 
-        <EditorialMeta lastUpdated={UPDATED} className="mt-5" />
           </div>
         </section>
 
@@ -307,6 +306,14 @@ export default function BestPetInsuranceAustraliaPage() {
           <Link href="/pet-insurance" className="nw-link">The pet insurance hub</Link>
         </div>
 
+          {/* Moved below the fold, 28 Aug 2026. The last-updated line sat in the
+              opening screenful alongside the code sentence, the verification
+              stamp, the disclaimer and the CTAs, so a reader met roughly 120
+              words of provenance before the second idea. The date is a trust
+              signal, not an opening argument; it belongs next to the disclosure
+              at the foot. The verification stamp stays above: that one is
+              load-bearing for the attribution work. */}
+        <EditorialMeta lastUpdated={UPDATED} className="mt-8" />
         <AffiliateDisclosure partners={["PetsOnMe", "Knose"]} earnsFromAll className="mt-8" />
         <p className="mt-3 text-xs leading-relaxed text-[#9aa39c]">
           A provider cannot pay to be described more favourably than the facts support. Cover details are

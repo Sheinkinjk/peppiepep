@@ -57,46 +57,52 @@ const itemListSchema = {
   ],
 };
 
+/**
+ * The page's FAQ, rendered below AND used to build the FAQPage JSON-LD.
+ *
+ * One array, two consumers, deliberately. Until 28 Aug 2026 the schema held a
+ * separate, differently-worded set of seven while the page rendered six: five of
+ * the schema questions appeared nowhere on the page. Google's FAQPage guidance
+ * requires the marked-up content to be visible on the source page, so that was a
+ * structured-data policy breach on the site's highest-impression page. Deriving
+ * the schema from the rendered array makes divergence impossible rather than
+ * merely fixed. Do not reintroduce a second hand-written list.
+ */
+const FAQS: { q: string; a: string }[] = [
+                {
+                  q: "What is the best weight loss telehealth platform in Australia?",
+                  a: "Moshy (a lean clinical pathway, open to anyone eligible) and Juniper (a coaching-led program marketed to women) are the most widely used weight-loss telehealth platforms in Australia. The best platform depends on your health profile and whether you want a medication-focused clinical pathway or a coaching-heavy program. Suitability is assessed by each platform's practitioners individually.",
+                },
+                {
+                  q: "How much does telehealth weight loss cost per month?",
+                  a: "Most providers confirm pricing after an online consultation rather than publishing a fixed figure. Expect a monthly subscription that bundles treatment, consultations and delivery, shown before you commit. Final cost depends on the treatment prescribed.",
+                },
+                {
+                  q: "Are online weight loss clinics in Australia legit?",
+                  a: "The established platforms operate as regulated telehealth services: questionnaires reviewed by Australian-registered practitioners, and any medicine prescribed only after individual clinical assessment, because they are prescription-only. Check for a practitioner consultation before any prescription, an Australian business entity, and published contact details. A service offering prescription medication without practitioner review is the red flag.",
+                },
+                {
+                  q: "Is Moshy or Juniper better?",
+                  a: "Moshy and Juniper take different approaches. Moshy runs a lean clinical pathway, open to anyone eligible. Juniper adds health coaching to its programme and markets primarily to Australian women. If you want a focused clinical pathway, Moshy is the relevant option. If you want coaching alongside clinical care, Juniper is worth a look. Both require individual clinical eligibility assessment.",
+                },
+                {
+                  q: "How do these platforms handle treatment access?",
+                  a: "Both Moshy and Juniper operate practitioner-supervised weight-management pathways that can involve treatment that a registered practitioner assesses as appropriate. Weight-management medicines are prescription-only in Australia and are prescribed only after an individual assessment by a registered practitioner, who decides suitability. Whether any specific medicine is appropriate is a clinical decision, not something a platform promises in advance, and not everyone who applies is prescribed medication. This page does not constitute medical advice.",
+                },
+                {
+                  q: "Are these platforms available across all of Australia?",
+                  a: "Moshy and Juniper are both Australian platforms operating nationally. Availability may vary by state for certain services. Check each platform's website for current service coverage.",
+                },
+];
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "How much does telehealth weight loss cost per month in Australia?",
-      acceptedAnswer: { "@type": "Answer", text: "Most Australian telehealth weight-loss providers confirm pricing after an online consultation rather than publishing a fixed figure. The cost is usually a monthly subscription that bundles treatment, consultations and delivery, and you see it before you commit. Final cost on any platform depends on the treatment prescribed." }
-    },
-    {
-      "@type": "Question",
-      name: "What is the best weight loss telehealth platform in Australia in 2026?",
-      acceptedAnswer: { "@type": "Answer", text: "Moshy, Juniper and Pilot are the most widely used weight-loss telehealth platforms in Australia in 2026. Moshy runs a clinically supervised weight management pathway, open to anyone eligible, including medication options. Juniper markets primarily to women and combines a practitioner-led program with coaching. Pilot is men-focused and sits inside a broader men's health service. Suitability depends on individual health factors. Consult a qualified health professional before starting any weight management programme." }
-    },
-    {
-      "@type": "Question",
-      name: "Are online weight loss clinics in Australia legit?",
-      acceptedAnswer: { "@type": "Answer", text: "The established Australian platforms, Moshy, Juniper and Pilot, operate as regulated telehealth services: eligibility questionnaires are reviewed by Australian-registered practitioners, and weight-management medicines are prescription-only, prescribed only after individual clinical assessment. The practical checks for any provider: a practitioner consultation before any prescription, an Australian business entity, and published contact details. A service that offers prescription medication without a practitioner review is the red flag. This page does not constitute medical advice." }
-    },
-    {
-      "@type": "Question",
-      name: "Is Moshy or Juniper better for weight loss in Australia?",
-      acceptedAnswer: { "@type": "Answer", text: "Moshy and Juniper take different approaches. Moshy runs a lean clinical pathway, open to anyone eligible. Juniper adds structured health coaching to its programme and markets primarily to Australian women. Both use an online eligibility questionnaire and practitioner-led review process. Suitability is assessed individually by each platform's clinical team. This page does not constitute medical advice." }
-    },
-    {
-      "@type": "Question",
-      name: "How do these platforms handle treatment access?",
-      acceptedAnswer: { "@type": "Answer", text: "Both Moshy and Juniper operate practitioner-supervised weight-management pathways that can involve treatment that a registered practitioner assesses as appropriate. Weight-management medicines are prescription-only in Australia and are prescribed only after a practitioner consultation and individual assessment, which decides suitability. Not every person who completes an eligibility questionnaire is found suitable. This page does not constitute medical advice." }
-    },
-    {
-      "@type": "Question",
-      name: "How do I access these weight loss platforms in Australia?",
-      acceptedAnswer: { "@type": "Answer", text: "Both platforms operate through an online eligibility and consultation process. Users complete an online questionnaire, which is reviewed by a practitioner. If eligible, treatment or programme access is arranged via subscription. Moshy and Juniper deliver your treatment directly to your home where appropriate. Click the links on this page to access each platform's eligibility flow directly." }
-    },
-    {
-      "@type": "Question",
-      name: "Is weight loss telehealth in Australia covered by Medicare or private health insurance?",
-      acceptedAnswer: { "@type": "Answer", text: "Coverage varies by insurer and individual policy. Telehealth consultations may attract a Medicare rebate in some circumstances, but the specific programmes and subscription costs offered by Moshy and Juniper are typically not fully covered by Medicare. Check with each platform and your insurer for current coverage information. This page does not provide financial or health advice." }
-    },
-  ],
+  mainEntity: FAQS.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
 };
 
 // Describes Refer Labs' comparison service, NOT any telehealth provider's service.
@@ -391,8 +397,6 @@ export default function BestWeightLossTelehealthPage() {
               Below: what each platform actually does, who it suits, and how to access each eligibility flow. This page does not constitute medical advice. Suitability is assessed individually by each platform&apos;s clinical team.
             </p>
 
-            <EditorialMeta lastUpdated="2026-08-03" className="mb-6" />
-
             <div className="mb-7">
               <VerifiedStamp date={MOSHY_OFFER.verified} label={`Moshy: ${MOSHY_OFFER.amount} for new customers · verified`} />
             </div>
@@ -572,32 +576,7 @@ export default function BestWeightLossTelehealthPage() {
               Frequently Asked Questions
             </h2>
             <div className="space-y-6">
-              {[
-                {
-                  q: "What is the best weight loss telehealth platform in Australia?",
-                  a: "Moshy (a lean clinical pathway, open to anyone eligible) and Juniper (a coaching-led program marketed to women) are the most widely used weight-loss telehealth platforms in Australia. The best platform depends on your health profile and whether you want a medication-focused clinical pathway or a coaching-heavy program. Suitability is assessed by each platform's practitioners individually.",
-                },
-                {
-                  q: "How much does telehealth weight loss cost per month?",
-                  a: "Most providers confirm pricing after an online consultation rather than publishing a fixed figure. Expect a monthly subscription that bundles treatment, consultations and delivery, shown before you commit. Final cost depends on the treatment prescribed.",
-                },
-                {
-                  q: "Are online weight loss clinics in Australia legit?",
-                  a: "The established platforms operate as regulated telehealth services: questionnaires reviewed by Australian-registered practitioners, and any medicine prescribed only after individual clinical assessment, because they are prescription-only. Check for a practitioner consultation before any prescription, an Australian business entity, and published contact details. A service offering prescription medication without practitioner review is the red flag.",
-                },
-                {
-                  q: "Is Moshy or Juniper better?",
-                  a: "Moshy and Juniper take different approaches. Moshy runs a lean clinical pathway, open to anyone eligible. Juniper adds health coaching to its programme and markets primarily to Australian women. If you want a focused clinical pathway, Moshy is the relevant option. If you want coaching alongside clinical care, Juniper is worth a look. Both require individual clinical eligibility assessment.",
-                },
-                {
-                  q: "How do these platforms handle treatment access?",
-                  a: "Both Moshy and Juniper operate practitioner-supervised weight-management pathways that can involve treatment that a registered practitioner assesses as appropriate. Weight-management medicines are prescription-only in Australia and are prescribed only after an individual assessment by a registered practitioner, who decides suitability. Whether any specific medicine is appropriate is a clinical decision, not something a platform promises in advance, and not everyone who applies is prescribed medication. This page does not constitute medical advice.",
-                },
-                {
-                  q: "Are these platforms available across all of Australia?",
-                  a: "Moshy and Juniper are both Australian platforms operating nationally. Availability may vary by state for certain services. Check each platform's website for current service coverage.",
-                },
-              ].map(({ q, a }, i) => (
+              {FAQS.map(({ q, a }, i) => (
                 <div key={i} className="border-b border-[#e5e9e7] pb-6">
                   <h3 className="text-sm font-bold text-[#10251b] mb-2">{q}</h3>
                   <p className="text-sm text-[#3d4b44] leading-relaxed">{a}</p>
@@ -619,6 +598,14 @@ export default function BestWeightLossTelehealthPage() {
 
           {/* ── Disclaimer + internal links ───────────────────────────────────── */}
           <section className="border-t border-[#e5e9e7] py-8 pb-16">
+          {/* Moved below the fold, 28 Aug 2026. The last-updated line sat in the
+              opening screenful alongside the code sentence, the verification
+              stamp, the disclaimer and the CTAs, so a reader met roughly 120
+              words of provenance before the second idea. The date is a trust
+              signal, not an opening argument; it belongs next to the disclosure
+              at the foot. The verification stamp stays above: that one is
+              load-bearing for the attribution work. */}
+            <EditorialMeta lastUpdated="2026-08-03" className="mb-4" />
             <AffiliateDisclosure partners={["Moshy", "Juniper"]} className="mb-3 max-w-2xl" />
             <p className="text-[#9aa39c] text-xs leading-relaxed max-w-2xl">
               Pilot is linked without an affiliate arrangement. All content on this page is for informational purposes only and does not constitute medical advice. Suitability for any weight management programme depends on individual health factors. Consult a qualified health professional before starting any treatment.

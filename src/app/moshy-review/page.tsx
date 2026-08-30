@@ -106,7 +106,7 @@ export default function MoshyReviewPage() {
         </nav>
 
         <h1 className="text-3xl sm:text-4xl lg:text-[2.7rem] font-black leading-[1.08] tracking-tight mb-5">
-          Moshy review: <span style={{ color: CYAN_LT }}>what the service is actually like</span>
+          Moshy review: <span style={{ color: CYAN_LT }}>is it legit, and what the service is like</span>
         </h1>
         <p className="text-[#3d4b44] text-base sm:text-lg leading-relaxed mb-4 max-w-2xl">
           A plain walkthrough of how Moshy works: what you get, what happens when you apply, and how to start the free
