@@ -107,7 +107,12 @@ export default function SexualWellnessProductsPage() {
         </div>
 
         <div className="mt-4">
-          <ComingSoonNote category="This page" what="the retailers themselves, which we will name and link once agreements are in place" />
+          {/* `what` must be a noun phrase: the variants place it as a sentence subject,
+              and the old value was a relative clause, which rendered as "The retailers
+              themselves, which we will name and link once agreements are in place are not
+              on the page yet." The dropped clause said nothing the next sentence does not
+              already say. */}
+          <ComingSoonNote category="This page" what="the retailers themselves" />
         </div>
 
         <div className="mt-10 space-y-10 text-[15px] leading-relaxed text-[#3d4b44]">
