@@ -1946,30 +1946,6 @@ export const seoConfig = {
     keywords: ["weight loss treatment eligibility australia", "do i qualify for weight loss medication", "weight loss eligibility criteria australia", "what bmi for weight loss treatment", "am i eligible for weight loss treatment"],
   },
 
-  juniperAlternatives: {
-    // Route retired (July 2026) and 301s to /best-weight-loss-telehealth-australia (see next.config.ts)
-    // ahead of onboarding Juniper as a partner. noIndex is defensive: if the redirect is ever removed,
-    // this cannot silently republish a page that steers away from a partner.
-    noIndex: true,
-    title: "Juniper Alternatives 2026: Weight Loss Telehealth Options in Australia",
-    description:
-      "Juniper alternatives in Australia 2026: want a gender-neutral option, a leaner clinical pathway or a different price model? Here's who fits, and why.",
-    url: `${SITE_URL}/juniper-alternatives`,
-    keywords: [
-      "juniper alternatives",
-      "juniper alternatives australia",
-      "alternatives to juniper weight loss",
-      "is juniper only for women",
-      "juniper for men",
-      "juniper vs moshy",
-      "moshy vs juniper",
-      "youly vs juniper",
-      "weight loss telehealth australia",
-      "gender neutral weight loss telehealth australia",
-      "juniper weight loss review",
-      "best weight loss telehealth australia",
-    ],
-  },
 
   affiliateEarningsCalculator: {
     title: "Affiliate Marketing Earnings Calculator: What Could You Make?",
