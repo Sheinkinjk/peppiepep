@@ -123,12 +123,16 @@ const categoryCards = [
 ];
 
 // The head-to-head format is what ranks and what AI engines cite, so the
-// homepage funnels equity into the comparisons Search Console shows winning.
+// homepage funnels equity into the pages Search Console shows winning. Three
+// category rankings replaced three head-to-heads here on 2 Sep 2026: the two
+// hub pages carry a brand pair in the h1 and so keep the format that earns the
+// citations, and the solar hub is the entry point for the site's largest
+// cluster by word count, which had no homepage slot at all.
 const guides = [
-  { href: "/moshy-vs-juniper", cat: "Weight loss", title: "Moshy vs Juniper: which is built for you?" },
-  { href: "/mosh-vs-pilot", cat: "Hair loss", title: "Mosh vs Pilot: which should you choose?" },
+  { href: "/best-weight-loss-telehealth-australia", cat: "Weight loss", title: "Best weight loss telehealth: Moshy vs Juniper" },
+  { href: "/best-hair-loss-treatment-australia", cat: "Hair loss", title: "Best hair loss treatment: Mosh vs Dense vs telehealth" },
+  { href: "/solar-and-energy", cat: "Solar & energy", title: "Solar and batteries: what to decide, in order" },
   { href: "/moshy-vs-gp", cat: "Weight loss", title: "Telehealth or your GP? A practical comparison" },
-  { href: "/mosh-vs-dense", cat: "Hair loss", title: "Mosh vs Dense: clinical pathway or topical products?" },
   { href: "/best-newsletter-platform", cat: "Creator tools", title: "beehiiv vs Substack vs Kit, compared properly" },
 ];
 
