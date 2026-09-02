@@ -560,7 +560,14 @@ export default function BestWeightLossTelehealthPage() {
             <div className="space-y-4 max-w-2xl">
               {[
                 { label: "Choose Moshy if:", body: "You want a clinically supervised weight management programme with access to practitioner-assessed treatment options, done online. Moshy is open to anyone eligible, and its online-only process means no in-person GP appointment is required to start. Eligibility is assessed individually. Use our referral link for the current Moshy offer." },
-                { label: "Choose Juniper if:", body: "You are a woman in Australia looking for a weight management programme that combines a practitioner-led program with structured health coaching and support. Juniper's programme is more coaching-intensive than Moshy's and is designed for women exclusively." },
+                // "designed for women exclusively" until 2 Sep 2026. Juniper's own FAQ answer
+                // on /juniper deliberately says "designs and markets its program for women",
+                // not "only": suitability is decided individually by a practitioner in the
+                // consultation. "Exclusively" was a stronger claim than Juniper makes about
+                // itself, it contradicted our own Juniper page, and it sat on the page with
+                // the most impressions on the site, where it would have turned away readers
+                // searching "is juniper for men" and "can men use juniper".
+                { label: "Choose Juniper if:", body: "You want a weight management programme that combines practitioner-led care with structured health coaching and community support. Juniper's programme is more coaching-intensive than Moshy's, and Juniper designs and markets it for women; suitability is decided individually in your consultation." },
               ].map(({ label, body }) => (
                 <div key={label} className="border-b border-[#e5e9e7] pb-4">
                   <p className="text-sm font-bold text-[#10251b] mb-1">{label}</p>
