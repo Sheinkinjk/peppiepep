@@ -129,7 +129,6 @@ const categoryCards = [
 // citations, and the solar hub is the entry point for the site's largest
 // cluster by word count, which had no homepage slot at all.
 const guides = [
-  { href: "/best-weight-loss-telehealth-australia", cat: "Weight loss", title: "Best weight loss telehealth: Moshy vs Juniper" },
   { href: "/best-hair-loss-treatment-australia", cat: "Hair loss", title: "Best hair loss treatment: Mosh vs Dense vs telehealth" },
   { href: "/solar-and-energy", cat: "Solar & energy", title: "Solar and batteries: what to decide, in order" },
   { href: "/moshy-vs-gp", cat: "Weight loss", title: "Telehealth or your GP? A practical comparison" },
