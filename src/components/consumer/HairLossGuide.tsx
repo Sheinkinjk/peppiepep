@@ -27,6 +27,9 @@ export interface HairLossGuideConfig {
   related: { href: string; label: string }[];
 }
 
+// Restamped 2 Sep 2026, when the telehealth prescribing claim on these guides
+// was corrected: it said the rule applied "since 2025" when the Medical Board's
+// revised telehealth guidelines took effect 1 September 2023.
 export function hairLossGuideSchemas(cfg: HairLossGuideConfig) {
   const url = `${SITE_URL}${cfg.slug}`;
   return [
@@ -44,7 +47,7 @@ export function hairLossGuideSchemas(cfg: HairLossGuideConfig) {
       "@type": "Article",
       headline: cfg.h1,
       url,
-      dateModified: "2026-07-20",
+      dateModified: "2026-09-02",
       author: SCHEMA_AUTHOR,
       publisher: SCHEMA_PUBLISHER,
     },
@@ -89,7 +92,7 @@ export default function HairLossGuide({ cfg }: { cfg: HairLossGuideConfig }) {
         </nav>
 
         <h1 className="mt-4 text-3xl font-extrabold leading-[1.08] tracking-tight text-[#10251b] sm:text-4xl">{cfg.h1}</h1>
-        <EditorialMeta lastUpdated="2026-07-20" className="mt-4" />
+        <EditorialMeta lastUpdated="2026-09-02" className="mt-4" />
         <p className="mt-5 text-lg leading-relaxed text-[#3d4b44]">{cfg.lead}</p>
 
         {/* Information-only notice */}

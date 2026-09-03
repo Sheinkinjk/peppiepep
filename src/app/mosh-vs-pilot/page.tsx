@@ -69,7 +69,7 @@ const faqs = [
   },
   {
     q: "Are Mosh and Pilot the same company?",
-    a: "No. They are separate Australian telehealth brands. Pilot is part of the Eucalyptus group, which also runs other health brands. Mosh is its own men's health brand. They compete in overlapping categories, including hair loss, which is why they come up together, but they are run independently.",
+    a: "No. They are separate Australian telehealth brands. Pilot is part of the Eucalyptus group, which also runs other health brands, and Hims & Hers Health completed its acquisition of Eucalyptus on 2 June 2026. Mosh is its own men's health brand. They compete in overlapping categories, including hair loss, which is why they come up together, but they are run independently.",
   },
   // PILOT-NON-PARTNER: the cost Q&A named both providers and cannot be answered
   // for one alone on a comparison page. Removed here and from FAQPage JSON-LD.

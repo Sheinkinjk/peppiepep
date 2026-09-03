@@ -34,6 +34,11 @@ const TRUST = [
   { icon: Wrench, label: "Sized from your real usage" },
 ];
 
+// Restamped 2 Sep 2026. The governing fact for this cluster, the federal
+// Cheaper Home Batteries discount, was re-checked against DCCEEW that day: the
+// 1 May 2026 commencement, the 100%/60%/15% taper across the 14kWh, 28kWh and
+// 50kWh bands, and the ~$252 per usable kWh derived from 6.8 STCs are all
+// unchanged. Do not bump this date without re-reading the source.
 export function apolloGuideSchemas(cfg: ApolloGuideConfig) {
   const url = `${SITE_URL}${cfg.slug}`;
   return [
@@ -51,7 +56,7 @@ export function apolloGuideSchemas(cfg: ApolloGuideConfig) {
       "@type": "Article",
       headline: cfg.h1,
       url,
-      dateModified: "2026-07-20",
+      dateModified: "2026-09-02",
       author: SCHEMA_AUTHOR,
       publisher: SCHEMA_PUBLISHER,
     },
@@ -95,7 +100,7 @@ export default function ApolloGuide({ cfg }: { cfg: ApolloGuideConfig }) {
         </nav>
 
         <h1 className="mt-4 text-3xl font-extrabold leading-[1.08] tracking-tight text-[#10251b] sm:text-4xl">{cfg.h1}</h1>
-        <EditorialMeta lastUpdated="2026-07-20" className="mt-4" />
+        <EditorialMeta lastUpdated="2026-09-02" className="mt-4" />
         <p className="mt-5 text-lg leading-relaxed text-[#3d4b44]">{cfg.lead}</p>
 
         {/* Trust strip */}

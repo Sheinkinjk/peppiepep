@@ -19,6 +19,10 @@ const R = {
   moshReview: { href: "/mosh-review", label: "Is Mosh legit? Our review" },
 };
 
+// Source for the telehealth prescribing rule: Medical Board of Australia,
+// "Telehealth consultations with patients", revised guidelines in effect from
+// 1 September 2023. Checked 2 September 2026. The page said "Since 2025" until
+// then, which understated the rule by two years and carried no source.
 export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
   {
     slug: "/online-hair-loss-treatment-australia",
@@ -32,7 +36,7 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
       keywords: ["online hair loss treatment australia", "hair loss telehealth australia", "online hair loss doctor australia", "hair loss treatment online"],
     },
     lead:
-      "Online hair-loss treatment in Australia means having your case assessed by a registered practitioner over telehealth rather than in a clinic, and, if it is appropriate, having any prescribed treatment delivered to you. It is not a way around the clinical step. Since 2025 the rules require a genuine practitioner assessment rather than a form filled in on its own, so a compliant service always involves a real review before anything is prescribed. What you gain is convenience and speed to start; what you do not gain is a shortcut past the medicine's rules.",
+      "Online hair-loss treatment in Australia means having your case assessed by a registered practitioner over telehealth rather than in a clinic, and, if it is appropriate, having any prescribed treatment delivered to you. It is not a way around the clinical step. Since September 2023 the Medical Board's telehealth guidelines have required a genuine practitioner assessment rather than a form filled in on its own, so a compliant service always involves a real review before anything is prescribed. What you gain is convenience and speed to start; what you do not gain is a shortcut past the medicine's rules.",
     sections: [
       {
         h: "How the process runs, step by step",
@@ -70,7 +74,7 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
       },
     ],
     faqs: [
-      { q: "Is online hair-loss treatment legitimate in Australia?", a: "Yes, telehealth is a recognised pathway. A registered Australian practitioner assesses you remotely and prescribes only if appropriate. Since 2025 a prescription cannot rest on a questionnaire alone, so a compliant service involves a genuine practitioner review, not just a form." },
+      { q: "Is online hair-loss treatment legitimate in Australia?", a: "Yes, telehealth is a recognised pathway. A registered Australian practitioner assesses you remotely and prescribes only if appropriate. Since September 2023 a prescription cannot rest on a questionnaire alone, so a compliant service involves a genuine practitioner review, not just a form." },
       { q: "Can I get prescription hair-loss treatment online without seeing anyone?", a: "No. Prescription treatment requires a registered practitioner to assess you first, even through telehealth. The review can happen online, but it has to be a real assessment. No compliant service can supply it before that." },
       { q: "How much does online hair-loss treatment cost?", a: "It is usually a monthly subscription that bundles the treatment, practitioner oversight and delivery, with the plan and price set at the assessment. Mosh, for example, includes free delivery and shows the plan and price before you commit, so confirm the current terms on the provider's site." },
       { q: "How do I find the cheapest hair-loss treatment online in Australia?", a: "Online telehealth usually charges one monthly subscription that bundles the treatment, practitioner oversight and delivery, so the cheapest option is the one whose bundle fits you, not just the lowest headline figure. Compare the monthly plan, what is included, delivery cost and cancellation terms across providers. Mosh, for example, includes free delivery, shows the plan and price before you commit, and gives new customers 55% off their first order through our link. Confirm current terms on the provider's site, and the lowest price is not always the best fit." },
