@@ -1,0 +1,385 @@
+{
+ "robots": "# Refer Labs Robots.txt\n\n# ── All crawlers ──\n#\n# Note on Disallow vs noindex: a page must be CRAWLABLE for Google to read its\n# noindex tag. Disallowing a page that also carries noindex means Google can never\n# see the directive, so an already-indexed URL can never be dropped. Pages below\n# that carry noindex in their metadata are therefore deliberately NOT disallowed\n# here: /login, /referred,\n# /roi-calculator (301), /security, /integrations + children.\n#\nUser-agent: *\nAllow: /\n# Private / authenticated (no content to index; auth-redirects before render)\nDisallow: /dashboard/\nDisallow: /dashboard-test/\nDisallow: /api/\nDisallow: /auth/\n# Internal / utility pages (dev checklists, tools - no public SEO value)\nDisallow: /go-live\nDisallow: /status\nDisallow: /analytics\nDisallow: /application\nDisallow: /calendly\n# Personalised referral links (redirect out to affiliate destinations)\nDisallow: /r/\nDisallow: /me/\n# Payment flows\nDisallow: /payment/\n\n# ── AI / generative answer engines (GEO) ──\n# Explicitly allowed to crawl and cite Refer Labs content. See /llms.txt for a curated index.\n# Disallow list is IDENTICAL to the `*` group above: the same private/utility paths,\n# and, like `*`, the noindex pages (/login, /referred) are deliberately left\n# crawlable so any\n# engine with an index can see the noindex and drop them, rather than being blind to it.\nUser-agent: GPTBot\nUser-agent: OAI-SearchBot\nUser-agent: ChatGPT-User\nUser-agent: ClaudeBot\nUser-agent: Claude-Web\nUser-agent: anthropic-ai\nUser-agent: PerplexityBot\nUser-agent: Perplexity-User\nUser-agent: Google-Extended\nUser-agent: Applebot-Extended\nUser-agent: cohere-ai\nUser-agent: Amazonbot\nUser-agent: meta-externalagent\nAllow: /\nDisallow: /dashboard/\nDisallow: /dashboard-test/\nDisallow: /api/\nDisallow: /auth/\nDisallow: /go-live\nDisallow: /status\nDisallow: /analytics\nDisallow: /application\nDisallow: /calendly\nDisallow: /r/\nDisallow: /me/\nDisallow: /payment/\n\nSitemap: https://referlabs.com.au/sitemap.xml\n",
+ "verdict": {
+  "GPTBot": "explicitly allowed (own group)",
+  "OAI-SearchBot": "explicitly allowed (own group)",
+  "ChatGPT-User": "explicitly allowed (own group)",
+  "PerplexityBot": "explicitly allowed (own group)",
+  "Perplexity-User": "explicitly allowed (own group)",
+  "ClaudeBot": "explicitly allowed (own group)",
+  "Claude-User": "not named; falls under User-agent: *",
+  "anthropic-ai": "explicitly allowed (own group)",
+  "Google-Extended": "explicitly allowed (own group)",
+  "CCBot": "not named; falls under User-agent: *",
+  "Bytespider": "not named; falls under User-agent: *",
+  "Amazonbot": "explicitly allowed (own group)",
+  "Applebot-Extended": "explicitly allowed (own group)",
+  "meta-externalagent": "explicitly allowed (own group)"
+ },
+ "diffs": {
+  "/": {
+   "browser": {
+    "status": 200,
+    "xRobots": null,
+    "len": 195122,
+    "head": "<!DOCTYPE html><html lang=\"en-AU\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" href=\"/_next/static/immutable/media/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"preload\" as=\"image\" href=\"/logos/knose.svg\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2n9m2cyi8rls3.css\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2vpyqtf"
+   },
+   "GPTBot": {
+    "status": 200,
+    "xRobots": null,
+    "len": 195122,
+    "head": "<!DOCTYPE html><html lang=\"en-AU\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" href=\"/_next/static/immutable/media/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"preload\" as=\"image\" href=\"/logos/knose.svg\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2n9m2cyi8rls3.css\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2vpyqtf"
+   },
+   "OAI-SearchBot": {
+    "status": 200,
+    "xRobots": null,
+    "len": 195122,
+    "head": "<!DOCTYPE html><html lang=\"en-AU\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" href=\"/_next/static/immutable/media/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"preload\" as=\"image\" href=\"/logos/knose.svg\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2n9m2cyi8rls3.css\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2vpyqtf"
+   },
+   "PerplexityBot": {
+    "status": 200,
+    "xRobots": null,
+    "len": 195122,
+    "head": "<!DOCTYPE html><html lang=\"en-AU\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" href=\"/_next/static/immutable/media/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"preload\" as=\"image\" href=\"/logos/knose.svg\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2n9m2cyi8rls3.css\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2vpyqtf"
+   },
+   "ClaudeBot": {
+    "status": 200,
+    "xRobots": null,
+    "len": 195122,
+    "head": "<!DOCTYPE html><html lang=\"en-AU\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" href=\"/_next/static/immutable/media/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"preload\" as=\"image\" href=\"/logos/knose.svg\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2n9m2cyi8rls3.css\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2vpyqtf"
+   },
+   "CCBot": {
+    "status": 200,
+    "xRobots": null,
+    "len": 195122,
+    "head": "<!DOCTYPE html><html lang=\"en-AU\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" href=\"/_next/static/immutable/media/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"preload\" as=\"image\" href=\"/logos/knose.svg\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2n9m2cyi8rls3.css\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2vpyqtf"
+   },
+   "curl": {
+    "status": 200,
+    "xRobots": null,
+    "len": 195122,
+    "head": "<!DOCTYPE html><html lang=\"en-AU\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" href=\"/_next/static/immutable/media/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"preload\" as=\"image\" href=\"/logos/knose.svg\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2n9m2cyi8rls3.css\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2vpyqtf"
+   },
+   "_verdict": [
+    "GPTBot: status 200, size drift 0.0%",
+    "OAI-SearchBot: status 200, size drift 0.0%",
+    "PerplexityBot: status 200, size drift 0.0%",
+    "ClaudeBot: status 200, size drift 0.0%",
+    "CCBot: status 200, size drift 0.0%",
+    "curl: status 200, size drift 0.0%"
+   ]
+  },
+  "/moshy": {
+   "browser": {
+    "status": 200,
+    "xRobots": null,
+    "len": 191636,
+    "head": "<!DOCTYPE html><html lang=\"en-AU\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" href=\"/_next/static/immutable/media/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2n9m2cyi8rls3.css\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2vpyqtfi5to4k.css\" data-precedence=\"next\"/><link rel=\"preload\" "
+   },
+   "GPTBot": {
+    "status": 200,
+    "xRobots": null,
+    "len": 191636,
+    "head": "<!DOCTYPE html><html lang=\"en-AU\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" href=\"/_next/static/immutable/media/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2n9m2cyi8rls3.css\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2vpyqtfi5to4k.css\" data-precedence=\"next\"/><link rel=\"preload\" "
+   },
+   "OAI-SearchBot": {
+    "status": 200,
+    "xRobots": null,
+    "len": 191636,
+    "head": "<!DOCTYPE html><html lang=\"en-AU\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" href=\"/_next/static/immutable/media/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2n9m2cyi8rls3.css\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2vpyqtfi5to4k.css\" data-precedence=\"next\"/><link rel=\"preload\" "
+   },
+   "PerplexityBot": {
+    "status": 200,
+    "xRobots": null,
+    "len": 191636,
+    "head": "<!DOCTYPE html><html lang=\"en-AU\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" href=\"/_next/static/immutable/media/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2n9m2cyi8rls3.css\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2vpyqtfi5to4k.css\" data-precedence=\"next\"/><link rel=\"preload\" "
+   },
+   "ClaudeBot": {
+    "status": 200,
+    "xRobots": null,
+    "len": 191636,
+    "head": "<!DOCTYPE html><html lang=\"en-AU\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" href=\"/_next/static/immutable/media/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2n9m2cyi8rls3.css\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2vpyqtfi5to4k.css\" data-precedence=\"next\"/><link rel=\"preload\" "
+   },
+   "CCBot": {
+    "status": 200,
+    "xRobots": null,
+    "len": 191636,
+    "head": "<!DOCTYPE html><html lang=\"en-AU\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" href=\"/_next/static/immutable/media/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2n9m2cyi8rls3.css\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2vpyqtfi5to4k.css\" data-precedence=\"next\"/><link rel=\"preload\" "
+   },
+   "curl": {
+    "status": 200,
+    "xRobots": null,
+    "len": 191636,
+    "head": "<!DOCTYPE html><html lang=\"en-AU\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" href=\"/_next/static/immutable/media/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2n9m2cyi8rls3.css\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2vpyqtfi5to4k.css\" data-precedence=\"next\"/><link rel=\"preload\" "
+   },
+   "_verdict": [
+    "GPTBot: status 200, size drift 0.0%",
+    "OAI-SearchBot: status 200, size drift 0.0%",
+    "PerplexityBot: status 200, size drift 0.0%",
+    "ClaudeBot: status 200, size drift 0.0%",
+    "CCBot: status 200, size drift 0.0%",
+    "curl: status 200, size drift 0.0%"
+   ]
+  },
+  "/moshhair": {
+   "browser": {
+    "status": 200,
+    "xRobots": null,
+    "len": 208287,
+    "head": "<!DOCTYPE html><html lang=\"en-AU\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" href=\"/_next/static/immutable/media/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2n9m2cyi8rls3.css\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2vpyqtfi5to4k.css\" data-precedence=\"next\"/><link rel=\"preload\" "
+   },
+   "GPTBot": {
+    "status": 200,
+    "xRobots": null,
+    "len": 208287,
+    "head": "<!DOCTYPE html><html lang=\"en-AU\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" href=\"/_next/static/immutable/media/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2n9m2cyi8rls3.css\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2vpyqtfi5to4k.css\" data-precedence=\"next\"/><link rel=\"preload\" "
+   },
+   "OAI-SearchBot": {
+    "status": 200,
+    "xRobots": null,
+    "len": 208287,
+    "head": "<!DOCTYPE html><html lang=\"en-AU\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" href=\"/_next/static/immutable/media/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2n9m2cyi8rls3.css\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2vpyqtfi5to4k.css\" data-precedence=\"next\"/><link rel=\"preload\" "
+   },
+   "PerplexityBot": {
+    "status": 200,
+    "xRobots": null,
+    "len": 208287,
+    "head": "<!DOCTYPE html><html lang=\"en-AU\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" href=\"/_next/static/immutable/media/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2n9m2cyi8rls3.css\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2vpyqtfi5to4k.css\" data-precedence=\"next\"/><link rel=\"preload\" "
+   },
+   "ClaudeBot": {
+    "status": 200,
+    "xRobots": null,
+    "len": 208287,
+    "head": "<!DOCTYPE html><html lang=\"en-AU\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" href=\"/_next/static/immutable/media/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2n9m2cyi8rls3.css\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2vpyqtfi5to4k.css\" data-precedence=\"next\"/><link rel=\"preload\" "
+   },
+   "CCBot": {
+    "status": 200,
+    "xRobots": null,
+    "len": 208287,
+    "head": "<!DOCTYPE html><html lang=\"en-AU\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" href=\"/_next/static/immutable/media/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2n9m2cyi8rls3.css\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2vpyqtfi5to4k.css\" data-precedence=\"next\"/><link rel=\"preload\" "
+   },
+   "curl": {
+    "status": 200,
+    "xRobots": null,
+    "len": 208287,
+    "head": "<!DOCTYPE html><html lang=\"en-AU\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" href=\"/_next/static/immutable/media/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2n9m2cyi8rls3.css\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2vpyqtfi5to4k.css\" data-precedence=\"next\"/><link rel=\"preload\" "
+   },
+   "_verdict": [
+    "GPTBot: status 200, size drift 0.0%",
+    "OAI-SearchBot: status 200, size drift 0.0%",
+    "PerplexityBot: status 200, size drift 0.0%",
+    "ClaudeBot: status 200, size drift 0.0%",
+    "CCBot: status 200, size drift 0.0%",
+    "curl: status 200, size drift 0.0%"
+   ]
+  },
+  "/deals": {
+   "browser": {
+    "status": 200,
+    "xRobots": null,
+    "len": 203406,
+    "head": "<!DOCTYPE html><html lang=\"en-AU\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" href=\"/_next/static/immutable/media/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2n9m2cyi8rls3.css\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2vpyqtfi5to4k.css\" data-precedence=\"next\"/><link rel=\"preload\" "
+   },
+   "GPTBot": {
+    "status": 200,
+    "xRobots": null,
+    "len": 203406,
+    "head": "<!DOCTYPE html><html lang=\"en-AU\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" href=\"/_next/static/immutable/media/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2n9m2cyi8rls3.css\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2vpyqtfi5to4k.css\" data-precedence=\"next\"/><link rel=\"preload\" "
+   },
+   "OAI-SearchBot": {
+    "status": 200,
+    "xRobots": null,
+    "len": 203406,
+    "head": "<!DOCTYPE html><html lang=\"en-AU\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" href=\"/_next/static/immutable/media/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2n9m2cyi8rls3.css\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2vpyqtfi5to4k.css\" data-precedence=\"next\"/><link rel=\"preload\" "
+   },
+   "PerplexityBot": {
+    "status": 200,
+    "xRobots": null,
+    "len": 203406,
+    "head": "<!DOCTYPE html><html lang=\"en-AU\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" href=\"/_next/static/immutable/media/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2n9m2cyi8rls3.css\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2vpyqtfi5to4k.css\" data-precedence=\"next\"/><link rel=\"preload\" "
+   },
+   "ClaudeBot": {
+    "status": 200,
+    "xRobots": null,
+    "len": 203406,
+    "head": "<!DOCTYPE html><html lang=\"en-AU\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" href=\"/_next/static/immutable/media/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2n9m2cyi8rls3.css\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2vpyqtfi5to4k.css\" data-precedence=\"next\"/><link rel=\"preload\" "
+   },
+   "CCBot": {
+    "status": 200,
+    "xRobots": null,
+    "len": 203406,
+    "head": "<!DOCTYPE html><html lang=\"en-AU\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" href=\"/_next/static/immutable/media/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2n9m2cyi8rls3.css\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2vpyqtfi5to4k.css\" data-precedence=\"next\"/><link rel=\"preload\" "
+   },
+   "curl": {
+    "status": 200,
+    "xRobots": null,
+    "len": 203406,
+    "head": "<!DOCTYPE html><html lang=\"en-AU\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" href=\"/_next/static/immutable/media/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2n9m2cyi8rls3.css\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2vpyqtfi5to4k.css\" data-precedence=\"next\"/><link rel=\"preload\" "
+   },
+   "_verdict": [
+    "GPTBot: status 200, size drift 0.0%",
+    "OAI-SearchBot: status 200, size drift 0.0%",
+    "PerplexityBot: status 200, size drift 0.0%",
+    "ClaudeBot: status 200, size drift 0.0%",
+    "CCBot: status 200, size drift 0.0%",
+    "curl: status 200, size drift 0.0%"
+   ]
+  },
+  "/knose": {
+   "browser": {
+    "status": 200,
+    "xRobots": null,
+    "len": 129974,
+    "head": "<!DOCTYPE html><html lang=\"en-AU\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" href=\"/_next/static/immutable/media/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"preload\" href=\"/logos/knose.svg\" as=\"image\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2n9m2cyi8rls3.css\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2vpyqtf"
+   },
+   "GPTBot": {
+    "status": 200,
+    "xRobots": null,
+    "len": 129974,
+    "head": "<!DOCTYPE html><html lang=\"en-AU\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" href=\"/_next/static/immutable/media/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"preload\" href=\"/logos/knose.svg\" as=\"image\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2n9m2cyi8rls3.css\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2vpyqtf"
+   },
+   "OAI-SearchBot": {
+    "status": 200,
+    "xRobots": null,
+    "len": 129974,
+    "head": "<!DOCTYPE html><html lang=\"en-AU\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" href=\"/_next/static/immutable/media/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"preload\" href=\"/logos/knose.svg\" as=\"image\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2n9m2cyi8rls3.css\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2vpyqtf"
+   },
+   "PerplexityBot": {
+    "status": 200,
+    "xRobots": null,
+    "len": 129974,
+    "head": "<!DOCTYPE html><html lang=\"en-AU\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" href=\"/_next/static/immutable/media/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"preload\" href=\"/logos/knose.svg\" as=\"image\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2n9m2cyi8rls3.css\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2vpyqtf"
+   },
+   "ClaudeBot": {
+    "status": 200,
+    "xRobots": null,
+    "len": 129974,
+    "head": "<!DOCTYPE html><html lang=\"en-AU\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" href=\"/_next/static/immutable/media/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"preload\" href=\"/logos/knose.svg\" as=\"image\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2n9m2cyi8rls3.css\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2vpyqtf"
+   },
+   "CCBot": {
+    "status": 200,
+    "xRobots": null,
+    "len": 129974,
+    "head": "<!DOCTYPE html><html lang=\"en-AU\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" href=\"/_next/static/immutable/media/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"preload\" href=\"/logos/knose.svg\" as=\"image\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2n9m2cyi8rls3.css\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2vpyqtf"
+   },
+   "curl": {
+    "status": 200,
+    "xRobots": null,
+    "len": 129974,
+    "head": "<!DOCTYPE html><html lang=\"en-AU\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" href=\"/_next/static/immutable/media/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"preload\" href=\"/logos/knose.svg\" as=\"image\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2n9m2cyi8rls3.css\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2vpyqtf"
+   },
+   "_verdict": [
+    "GPTBot: status 200, size drift 0.0%",
+    "OAI-SearchBot: status 200, size drift 0.0%",
+    "PerplexityBot: status 200, size drift 0.0%",
+    "ClaudeBot: status 200, size drift 0.0%",
+    "CCBot: status 200, size drift 0.0%",
+    "curl: status 200, size drift 0.0%"
+   ]
+  },
+  "/best-weight-loss-telehealth-australia": {
+   "browser": {
+    "status": 200,
+    "xRobots": null,
+    "len": 243442,
+    "head": "<!DOCTYPE html><html lang=\"en-AU\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" href=\"/_next/static/immutable/media/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2n9m2cyi8rls3.css\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2vpyqtfi5to4k.css\" data-precedence=\"next\"/><link rel=\"preload\" "
+   },
+   "GPTBot": {
+    "status": 200,
+    "xRobots": null,
+    "len": 243442,
+    "head": "<!DOCTYPE html><html lang=\"en-AU\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" href=\"/_next/static/immutable/media/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2n9m2cyi8rls3.css\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2vpyqtfi5to4k.css\" data-precedence=\"next\"/><link rel=\"preload\" "
+   },
+   "OAI-SearchBot": {
+    "status": 200,
+    "xRobots": null,
+    "len": 243442,
+    "head": "<!DOCTYPE html><html lang=\"en-AU\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" href=\"/_next/static/immutable/media/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2n9m2cyi8rls3.css\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2vpyqtfi5to4k.css\" data-precedence=\"next\"/><link rel=\"preload\" "
+   },
+   "PerplexityBot": {
+    "status": 200,
+    "xRobots": null,
+    "len": 243442,
+    "head": "<!DOCTYPE html><html lang=\"en-AU\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" href=\"/_next/static/immutable/media/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2n9m2cyi8rls3.css\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2vpyqtfi5to4k.css\" data-precedence=\"next\"/><link rel=\"preload\" "
+   },
+   "ClaudeBot": {
+    "status": 200,
+    "xRobots": null,
+    "len": 243442,
+    "head": "<!DOCTYPE html><html lang=\"en-AU\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" href=\"/_next/static/immutable/media/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2n9m2cyi8rls3.css\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2vpyqtfi5to4k.css\" data-precedence=\"next\"/><link rel=\"preload\" "
+   },
+   "CCBot": {
+    "status": 200,
+    "xRobots": null,
+    "len": 243442,
+    "head": "<!DOCTYPE html><html lang=\"en-AU\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" href=\"/_next/static/immutable/media/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2n9m2cyi8rls3.css\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2vpyqtfi5to4k.css\" data-precedence=\"next\"/><link rel=\"preload\" "
+   },
+   "curl": {
+    "status": 200,
+    "xRobots": null,
+    "len": 243442,
+    "head": "<!DOCTYPE html><html lang=\"en-AU\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" href=\"/_next/static/immutable/media/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2n9m2cyi8rls3.css\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2vpyqtfi5to4k.css\" data-precedence=\"next\"/><link rel=\"preload\" "
+   },
+   "_verdict": [
+    "GPTBot: status 200, size drift 0.0%",
+    "OAI-SearchBot: status 200, size drift 0.0%",
+    "PerplexityBot: status 200, size drift 0.0%",
+    "ClaudeBot: status 200, size drift 0.0%",
+    "CCBot: status 200, size drift 0.0%",
+    "curl: status 200, size drift 0.0%"
+   ]
+  },
+  "/moshy-vs-juniper": {
+   "browser": {
+    "status": 200,
+    "xRobots": null,
+    "len": 150268,
+    "head": "<!DOCTYPE html><html lang=\"en-AU\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" href=\"/_next/static/immutable/media/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2n9m2cyi8rls3.css\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2vpyqtfi5to4k.css\" data-precedence=\"next\"/><link rel=\"preload\" "
+   },
+   "GPTBot": {
+    "status": 200,
+    "xRobots": null,
+    "len": 150268,
+    "head": "<!DOCTYPE html><html lang=\"en-AU\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" href=\"/_next/static/immutable/media/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2n9m2cyi8rls3.css\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2vpyqtfi5to4k.css\" data-precedence=\"next\"/><link rel=\"preload\" "
+   },
+   "OAI-SearchBot": {
+    "status": 200,
+    "xRobots": null,
+    "len": 150268,
+    "head": "<!DOCTYPE html><html lang=\"en-AU\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" href=\"/_next/static/immutable/media/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2n9m2cyi8rls3.css\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2vpyqtfi5to4k.css\" data-precedence=\"next\"/><link rel=\"preload\" "
+   },
+   "PerplexityBot": {
+    "status": 200,
+    "xRobots": null,
+    "len": 150268,
+    "head": "<!DOCTYPE html><html lang=\"en-AU\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" href=\"/_next/static/immutable/media/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2n9m2cyi8rls3.css\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2vpyqtfi5to4k.css\" data-precedence=\"next\"/><link rel=\"preload\" "
+   },
+   "ClaudeBot": {
+    "status": 200,
+    "xRobots": null,
+    "len": 150268,
+    "head": "<!DOCTYPE html><html lang=\"en-AU\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" href=\"/_next/static/immutable/media/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2n9m2cyi8rls3.css\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2vpyqtfi5to4k.css\" data-precedence=\"next\"/><link rel=\"preload\" "
+   },
+   "CCBot": {
+    "status": 200,
+    "xRobots": null,
+    "len": 150268,
+    "head": "<!DOCTYPE html><html lang=\"en-AU\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" href=\"/_next/static/immutable/media/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2n9m2cyi8rls3.css\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2vpyqtfi5to4k.css\" data-precedence=\"next\"/><link rel=\"preload\" "
+   },
+   "curl": {
+    "status": 200,
+    "xRobots": null,
+    "len": 150268,
+    "head": "<!DOCTYPE html><html lang=\"en-AU\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" href=\"/_next/static/immutable/media/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2\" as=\"font\" crossorigin=\"\" type=\"font/woff2\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2n9m2cyi8rls3.css\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/immutable/chunks/2vpyqtfi5to4k.css\" data-precedence=\"next\"/><link rel=\"preload\" "
+   },
+   "_verdict": [
+    "GPTBot: status 200, size drift 0.0%",
+    "OAI-SearchBot: status 200, size drift 0.0%",
+    "PerplexityBot: status 200, size drift 0.0%",
+    "ClaudeBot: status 200, size drift 0.0%",
+    "CCBot: status 200, size drift 0.0%",
+    "curl: status 200, size drift 0.0%"
+   ]
+  }
+ }
+}

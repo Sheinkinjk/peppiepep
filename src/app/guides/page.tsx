@@ -4,6 +4,7 @@ import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 
+import { checkedOn } from "@/lib/offers";
 export const metadata = generateSEOMetadata(seoConfig.guides);
 
 const breadcrumbSchema = {
@@ -20,7 +21,7 @@ const hubs = [
   { href: "/hair-loss", label: "Hair Loss", desc: "Clinical prescription treatment versus topical products." },
   { href: "/best-pet-insurance-australia", label: "Best Pet Insurance: How to Choose", desc: "The six things that decide what you get back: benefit percentage, annual limit, hereditary cover, waiting periods, excess and exclusions." },
   { href: "/knose-vs-petsonme", label: "Knose vs PetsOnMe", desc: "The two compared on published cover: benefit percentage, annual limits, excess and sub-limits." },
-  { href: "/petsonme", label: "PetsOnMe: Cover & Code", desc: "The Accidental, Classic and Deluxe plans, the 80% benefit, and what the REFERLABS code actually discounts." },
+  { href: "/petsonme", label: "PetsOnMe: Cover & Code", desc: `The Accidental, Classic and Deluxe plans, the 80% benefit, and what the REFERLABS code actually discounts. Read off PetsOnMe's own page on ${checkedOn("REFERLABS")}.` },
   { href: "/pet-insurance", label: "Pets", desc: "Cover types, waiting periods and exclusions explained, plus current offers. General information, not advice." },
   { href: "/coming-soon", label: "Coming Soon", desc: "The categories we are building before adding any provider, and what is already readable in each." },
   { href: "/skin-and-beauty", label: "Skin & Beauty", desc: "What skincare actives do, what devices cost here, and how the prescription route differs." },
@@ -85,7 +86,7 @@ const sections = [
     label: "Weight Loss & Telehealth",
     description: "How Australia's online weight-loss services work, and which suits whom.",
     guides: [
-      { href: "/moshy", label: "Moshy, Offer & Referral Link", desc: "$120 off a first order with code REFERRAL120, applied by the link." },
+      { href: "/moshy", label: "Moshy, Offer & Referral Link", desc: `$120 off a first order with code REFERRAL120, applied by the link. Read off Moshy's own page on ${checkedOn("REFERRAL120")}.` },
       { href: "/moshy-review", label: "Moshy, Explained", desc: "How the service actually runs, application to subscription." },
       { href: "/moshy-vs-juniper", label: "Moshy vs Juniper", desc: "The clinical and coaching platforms, split properly." },
       { href: "/moshy-vs-gp", label: "Telehealth vs Your GP", desc: "Two doors to the same care. The practical trade." },

@@ -1,0 +1,40 @@
+| `/weight-loss-treatment-eligibility-australia` | excluded | BreadcrumbList, FAQPage, ItemList, Organization, WebPage, WebSite | yes | yes | yes | yes | yes |
+
+### solar-energy
+
+| route | arm | @types | author | dateModified | publisher | breadcrumb | FAQ |
+|---|---|---|---|---|---|---|---|
+| `/anker-solix` | excluded | BreadcrumbList, FAQPage, ItemList, Organization, Product, WebPage, WebSite | yes | yes | yes | yes | yes |
+| `/apollo-energy-group` | excluded | BreadcrumbList, FAQPage, ItemList, Organization, WebPage, WebSite | yes | yes | yes | yes | yes |
+| `/apollo-energy-group-eoi` | excluded | BreadcrumbList, FAQPage, ItemList, Organization, WebPage, WebSite | yes | yes | yes | yes | yes |
+| `/apollo-energy-review` | excluded | Article, BreadcrumbList, FAQPage, ItemList, Organization, WebSite | yes | yes | yes | yes | yes |
+| `/best-home-battery-australia` | excluded | Article, BreadcrumbList, FAQPage, ItemList, Organization, WebSite | yes | yes | yes | yes | yes |
+| `/ecoflow` | excluded | BreadcrumbList, FAQPage, ItemList, Organization, Product, WebPage, WebSite | yes | yes | yes | yes | yes |
+| `/ecoflow-vs-anker-solix` | excluded | Article, BreadcrumbList, FAQPage, ItemList, Organization, WebPage, WebSite | yes | yes | yes | yes | yes |
+| `/home-battery-blackout-backup-australia` | excluded | Article, BreadcrumbList, FAQPage, ItemList, Organization, WebSite | yes | yes | yes | yes | yes |
+| `/home-battery-cost-australia` | excluded | BreadcrumbList, FAQPage, ItemList, Organization, Service, WebPage, WebSite | yes | yes | yes | yes | yes |
+| `/home-battery-installer-nsw` | excluded | Article, BreadcrumbList, FAQPage, ItemList, Organization, WebSite | yes | yes | yes | yes | yes |
+| `/home-battery-installer-sydney` | excluded | Article, BreadcrumbList, FAQPage, ItemList, Organization, WebSite | yes | yes | yes | yes | yes |
+| `/home-battery-payback-calculator` | excluded | BreadcrumbList, FAQPage, ItemList, Organization, WebPage, WebSite | yes | yes | yes | yes | yes |
+| `/home-battery-rebate-australia` | excluded | Article, BreadcrumbList, FAQPage, ItemList, Organization, WebSite | yes | yes | yes | yes | yes |
+| `/home-battery-rebate-by-state-australia` | excluded | BreadcrumbList, Dataset, FAQPage, ItemList, Organization, WebPage, WebSite | yes | yes | yes | yes | yes |
+| `/is-a-home-battery-worth-it-australia` | excluded | Article, BreadcrumbList, FAQPage, ItemList, Organization, WebSite | yes | yes | yes | yes | yes |
+| `/nsw-home-battery-rebate-2026` | excluded | Article, BreadcrumbList, FAQPage, ItemList, Organization, WebSite | yes | yes | yes | yes | yes |
+| `/portable-power-station-australia` | excluded | Article, BreadcrumbList, FAQPage, ItemList, Organization, WebPage, WebSite | yes | yes | yes | yes | yes |
+| `/portable-vs-installed-home-battery-australia` | excluded | Article, BreadcrumbList, FAQPage, ItemList, Organization, WebPage, WebSite | yes | yes | yes | yes | yes |
+| `/solar-and-battery-package-australia` | excluded | Article, BreadcrumbList, FAQPage, ItemList, Organization, WebSite | yes | yes | yes | yes | yes |
+| `/solar-and-energy` | excluded | BreadcrumbList, CollectionPage, FAQPage, ItemList, Organization, WebSite | yes | yes | yes | yes | yes |
+| `/tesla-powerwall-alternatives-australia` | excluded | Article, BreadcrumbList, FAQPage, ItemList, Organization, WebSite | yes | yes | yes | yes | yes |
+| `/virtual-power-plant-australia` | excluded | BreadcrumbList, FAQPage, ItemList, Organization, WebPage, WebSite | yes | yes | yes | yes | yes |
+| `/what-size-home-battery-do-i-need-australia` | excluded | Article, BreadcrumbList, FAQPage, ItemList, Organization, WebSite | yes | yes | yes | yes | yes |
+
+### Gap summary (58 routes)
+
+| gap | routes |
+|---|---:|
+| missing author on Article/WebPage | 0 |
+| missing dateModified | 0 |
+| missing publisher | 0 |
+| no Article/WebPage node at all | 2 |
+| visual breadcrumbs without BreadcrumbList | 0 |
+| FAQ block without FAQPage | 0 |

@@ -1,0 +1,358 @@
+
+> tempapp@0.1.0 build
+> next build
+
+▲ Next.js 16.3.2 (Turbopack)
+- Environments: .env.local
+⚠ Warning: Next.js ignored package-lock.json in /Users/jarredkrowitz because it is outside the current Git repository (/Users/jarredkrowitz/Desktop/Refer Labs/Peppiepep).
+ To use this directory, set `turbopack.root` in your Next.js config.
+
+✓ Running next.config.ts took 40ms
+- Experiments (use with caution):
+  · serverActions
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 1366ms
+  Running TypeScript ...
+  Finished TypeScript in 3.3s ...
+  Collecting page data using 7 workers ...
+  Generating static pages using 7 workers (0/313) ...
+  Generating static pages using 7 workers (78/313) 
+  Generating static pages using 7 workers (156/313) 
+  Generating static pages using 7 workers (234/313) 
+✓ Generating static pages using 7 workers (313/313) in 2.7s
+  Finalizing page optimization ...
+
+Route (app)                                                          Revalidate  Expire
+┌ ○ /
+├ ○ /_not-found
+├ ○ /about
+├ ○ /activecampaign
+├ ƒ /admin/leads
+├ ƒ /admin/leads/[id]
+├ ○ /affiliate-earnings-calculator
+├ ○ /affiliate-partnerships                                                  1h      1y
+├ ○ /affiliate-programs-australia
+├ ○ /affiliate-software-australia
+├ ○ /ai-sales-tools-quiz
+├ ○ /aisdr
+├ ○ /alidrop
+├ ○ /analytics
+├ ○ /anker-solix
+├ ○ /api-guide
+├ ƒ /api/admin/analytics
+├ ƒ /api/admin/commissions
+├ ƒ /api/admin/compliance
+├ ƒ /api/admin/db-health
+├ ƒ /api/admin/db-health-lite
+├ ƒ /api/admin/debug
+├ ƒ /api/admin/export
+├ ƒ /api/admin/master/businesses
+├ ƒ /api/admin/master/businesses/[businessId]/stats
+├ ƒ /api/admin/partner-applications
+├ ƒ /api/admin/partner-applications/approve
+├ ƒ /api/admin/partner-applications/reject
+├ ƒ /api/admin/partner-applications/request-info
+├ ƒ /api/admin/payments
+├ ƒ /api/ai/score-referrals
+├ ƒ /api/ambassadors/[code]
+├ ƒ /api/ambassadors/approve
+├ ƒ /api/ambassadors/delete
+├ ƒ /api/ambassadors/export
+├ ƒ /api/apollo-eoi
+├ ƒ /api/auth/send-confirmation
+├ ƒ /api/auth/send-recovery
+├ ƒ /api/auth/signin
+├ ƒ /api/auth/signup
+├ ƒ /api/chatbot
+├ ƒ /api/chatbot/lead-capture
+├ ƒ /api/commissions/balance
+├ ƒ /api/comparison-listing
+├ ƒ /api/discount-codes/redeem
+├ ƒ /api/health/attribution
+├ ƒ /api/lending-lead
+├ ƒ /api/newsletter/subscribe
+├ ƒ /api/qr
+├ ƒ /api/referral-redirect
+├ ƒ /api/referral-stats
+├ ƒ /api/referred/submit-application
+├ ƒ /api/skincare-quiz
+├ ƒ /api/software-quiz
+├ ƒ /api/stripe/create-checkout
+├ ƒ /api/stripe/create-connect-account
+├ ƒ /api/stripe/create-payout
+├ ƒ /api/stripe/test
+├ ƒ /api/stripe/webhook
+├ ƒ /api/subscribe
+├ ƒ /api/track-conversion
+├ ƒ /api/verify-attribution
+├ ƒ /api/webhooks/resend
+├ ƒ /api/webhooks/twilio
+├ ƒ /api/weight-loss-guide
+├ ○ /apollo-energy-group
+├ ○ /apollo-energy-group-eoi
+├ ○ /apollo-energy-review
+├ ƒ /auth/callback
+├ ƒ /auth/reset-password
+├   /authors/[id]
+│ └ ● /authors/jarred
+├ ○ /beautifulai
+├ ○ /beehiiv
+├ ○ /best-ai-sales-tools
+├ ○ /best-crm-small-business-australia
+├ ○ /best-hair-loss-treatment-australia
+├ ○ /best-home-battery-australia
+├ ○ /best-newsletter-platform
+├ ○ /best-pet-insurance-australia
+├ ○ /best-website-builder
+├ ○ /best-weight-loss-telehealth-australia
+├ ○ /blinq
+├ ○ /brevo
+├ ○ /business-line-of-credit-australia
+├ ○ /business-loan-calculator
+├ ○ /business-loan-eligibility-australia
+├ ○ /business-loans
+├ ○ /business-loans-bad-credit-australia
+├ ○ /business-loans-hospitality-australia
+├ ○ /business-loans-sole-traders-australia
+├   /business-loans/[lender]
+│ ├ ● /business-loans/lumi
+│ ├ ● /business-loans/moula
+│ ├ ● /business-loans/prospa
+│ └ ● [+2 more paths]
+├   /business-loans/[lender]/review
+│ ├ ● /business-loans/lumi/review
+│ ├ ● /business-loans/moula/review
+│ ├ ● /business-loans/prospa/review
+│ └ ● [+2 more paths]
+├ ○ /business-software
+├ ○ /butternut
+├ ○ /calendly
+├ ○ /capsule
+├ ○ /carrd
+├ ○ /carrd-vs-butternut
+├ ○ /carrd-vs-durable
+├ ○ /case-studies
+├ ○ /cheapest-weight-loss-telehealth-australia
+├ ○ /cloudtalk
+├ ○ /coming-soon
+├   /compare-business-lenders/[slug]
+│ ├ ● /compare-business-lenders/prospa-vs-lumi
+│ ├ ● /compare-business-lenders/prospa-vs-moula
+│ └ ● /compare-business-lenders/lumi-vs-moula
+├   /compare/[slug]
+│ ├ ● /compare/website-builders
+│ ├ ● /compare/newsletter-platforms
+│ ├ ● /compare/ai-sales-tools
+│ └ ● [+6 more paths]
+├ ○ /contact
+├ ƒ /dashboard-test
+├ ○ /data
+├ ○ /deals
+├ ○ /dense
+├ ○ /dext
+├ ○ /disclaimer
+├ ○ /durable-vs-butternut
+├ ○ /durableai
+├ ○ /early-signs-of-hair-loss-australia
+├ ○ /ecoflow
+├ ○ /ecoflow-vs-anker-solix
+├ ○ /elevenlabs
+├ ○ /employmenthero
+├ ○ /equipment-finance-instant-asset-write-off
+├ ○ /faq
+├ ○ /fast-business-loans-australia
+├ ○ /flexiquiz
+├ ○ /for-business
+├ ○ /fullenrich
+├ ○ /go-live
+├ ○ /gohighlevel
+├ ○ /gtm
+├ ○ /guides
+├ ○ /hair-loss
+├ ○ /hair-loss-quiz
+├ ○ /hair-loss-treatment-cost-australia
+├ ○ /hellobar
+├ ○ /high-paying-affiliate-programs
+├ ○ /home-battery-blackout-backup-australia
+├ ○ /home-battery-cost-australia
+├ ○ /home-battery-installer-nsw
+├ ○ /home-battery-installer-sydney
+├ ○ /home-battery-payback-calculator
+├ ○ /home-battery-rebate-australia
+├ ○ /home-battery-rebate-by-state-australia
+├ ○ /how-to-get-a-business-loan-australia
+├ ○ /how-to-start-affiliate-marketing-australia
+├ ○ /how-to-stop-hair-loss-australia
+├ ○ /how-we-make-money
+├ ○ /hubspot
+├ ○ /instapage
+├ ○ /is-a-home-battery-worth-it-australia
+├ ○ /juniper
+├ ○ /keap
+├ ○ /klaviyo
+├ ○ /knose
+├ ○ /knose-vs-petsonme
+├ ○ /krispcall
+├ ○ /landingi
+├ ○ /lead-hacking
+├ ○ /leadpages
+├ ○ /lindy
+├ ○ /linkedin-growth                                                         1h      1y
+├ ƒ /linkedin-growth/business
+├ ƒ /linkedin-growth/influencer
+├ ○ /linkedin-influencer
+├ ƒ /linkedin-influencer/business
+├ ƒ /linkedin-influencer/influencer
+├ ƒ /login
+├ ○ /longevity
+├ ○ /longevity/diagnostics
+├ ○ /longevity/diagnostics/biological-age-testing-australia
+├ ○ /longevity/diagnostics/cgm-for-non-diabetics-australia
+├ ○ /longevity/diagnostics/everlab-vs-prenuvo-vs-i-screen-australia
+├ ○ /longevity/diagnostics/health-screening-quiz
+├ ○ /longevity/diagnostics/whole-body-mri-australia-cost
+├ ○ /longevity/recovery
+├ ○ /longevity/recovery/contrast-therapy-what-the-evidence-says
+├ ○ /longevity/recovery/home-sauna-cost-australia
+├ ○ /longevity/recovery/ice-bath-comparison-australia
+├ ○ /longevity/recovery/ice-bath-running-costs-australia
+├ ○ /longevity/recovery/infrared-vs-traditional-sauna-australia
+├ ○ /longevity/recovery/recovery-setup-quiz
+├ ○ /longevity/supplements/longevity-supplements-evidence-review
+├ ○ /low-doc-business-loans-australia
+├ ○ /mailchimp
+├ ○ /make
+├ ƒ /me/[code]
+├ ○ /mens-health
+├ ○ /mens-health-telehealth-australia
+├ ○ /mens-health/erectile-dysfunction-treatment-cost-australia
+├ ○ /mens-health/is-telehealth-or-a-gp-cheaper-for-mens-health
+├ ○ /mens-health/mens-health-quiz
+├ ○ /mens-health/online-mens-health-clinics-compared
+├ ○ /mens-health/premature-ejaculation-treatment-options-australia
+├ ○ /mens-health/sexual-wellness-products
+├ ○ /meta-ads
+├ ○ /mosh-review
+├ ○ /mosh-vs-dense
+├ ○ /mosh-vs-pilot
+├ ○ /moshhair
+├ ○ /moshy
+├ ○ /moshy-alternatives
+├ ○ /moshy-eligibility
+├ ○ /moshy-review
+├ ○ /moshy-vs-gp
+├ ○ /moshy-vs-juniper
+├ ○ /moshy-vs-pilot
+├ ○ /newsletter-platform-quiz
+├ ○ /nsw-home-battery-rebate-2026
+├ ○ /nutshell
+├ ƒ /og
+├ ○ /online-hair-loss-treatment-australia
+├ ○ /online-weight-loss-doctor-australia
+├ ○ /online-weight-loss-programs-australia
+├ ○ /outgrow
+├ ○ /pandadoc
+├ ○ /partner-with-refer-labs
+├ ƒ /payment/cancel
+├ ƒ /payment/success
+├ ○ /pet-insurance
+├ ○ /petsonme
+├ ○ /pipedrive
+├ ○ /playbooks
+├ ○ /portable-power-station-australia
+├ ○ /portable-vs-installed-home-battery-australia
+├ ○ /privacy
+├ ƒ /r/[code]
+├ ƒ /r/ambassador-join
+├ ƒ /r/referral
+├ ○ /receding-hairline-treatment-australia
+├ ○ /recurring-affiliate-programs
+├ ○ /referral-partnerships
+├ ƒ /referred
+├ ○ /replyio
+├ ○ /roi-calculator
+├ ƒ /search
+├ ○ /secured-vs-unsecured-business-loans
+├ ○ /security
+├ ○ /servicem8
+├ ○ /services
+├ ○ /services/accountants
+├ ○ /services/affiliate-distribution
+├ ○ /services/apac-expansion
+├ ○ /services/consultants-coaches
+├ ○ /services/financial-advisors
+├ ○ /services/influencer-activation
+├ ○ /services/insurance-brokers
+├ ○ /services/partner-activation
+├ ○ /services/product-distribution
+├ ○ /services/recruiters-staffing
+├ ○ /services/referral-programs
+├ ○ /shopify
+├ ○ /shopify/checkout-extensibility
+├ ○ /sitemap.xml
+├ ○ /skin-and-beauty
+├ ○ /skin-and-beauty/acne-treatment-options-and-costs-australia
+├ ○ /skin-and-beauty/anti-ageing-treatments-what-they-cost
+├ ○ /skin-and-beauty/best-value-skincare-australia-cost-per-use
+├ ○ /skin-and-beauty/led-face-mask-comparison-australia
+├ ○ /skin-and-beauty/retinol-vs-prescription-strength-australia
+├ ○ /skin-and-beauty/skincare-quiz
+├ ○ /sleep
+├ ○ /sleep/cpap-machine-costs-australia
+├ ○ /sleep/do-i-have-sleep-apnoea
+├ ○ /sleep/home-sleep-test-australia-cost
+├ ○ /sleep/how-much-does-good-sleep-cost
+├ ○ /sleep/mattress-comparison-australia
+├ ○ /sleep/sleep-tracker-comparison-australia
+├ ○ /small-business-loans-australia
+├ ○ /solar-and-battery-package-australia
+├ ○ /solar-and-energy
+├ ○ /square
+├ ○ /squarespace
+├ ○ /startup-business-loans-australia
+├ ○ /status
+├ ○ /stripe
+├ ○ /superfiliate
+├ ○ /survicate
+├ ○ /swipepages
+├ ○ /terms
+├ ○ /tesla-powerwall-alternatives-australia
+├ ○ /trainual
+├ ○ /true-cost-of-business-loans-australia
+├ ○ /unbounce
+├ ○ /unsecured-business-loans-australia
+├ ƒ /unsubscribe/[token]
+├ ○ /virtual-power-plant-australia
+├ ○ /webflow
+├ ○ /website-builder-quiz
+├ ○ /weight-loss
+├ ○ /weight-loss-cost-calculator
+├ ○ /weight-loss-guide
+├ ○ /weight-loss-quiz
+├ ○ /weight-loss-telehealth-cost-australia
+├ ○ /weight-loss-telehealth-men-australia
+├ ○ /weight-loss-telehealth-women-australia
+├ ○ /weight-loss-treatment-eligibility-australia
+├ ○ /what-a-business-loan-actually-costs
+├ ○ /what-pet-insurance-covers-australia
+├ ○ /what-size-home-battery-do-i-need-australia
+├ ○ /who-its-for
+├ ○ /who-its-for/access-to-capital
+├ ○ /who-its-for/financial-tools
+├ ○ /who-its-for/global-investments
+├ ○ /who-its-for/niche-opportunities
+├ ○ /who-underwrites-pet-insurance-australia
+├ ○ /wing-assistant
+├ ○ /wix
+├ ○ /wordpress
+├ ○ /working-capital-loans-australia
+└ ○ /zapier
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+

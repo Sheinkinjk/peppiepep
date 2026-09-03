@@ -1,0 +1,862 @@
+{
+ "/website-builder-quiz": {
+  "anyDate": false,
+  "verifWord": false,
+  "datedVerification": false
+ },
+ "/solar-and-battery-package-australia": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/partner-with-refer-labs": {
+  "anyDate": false,
+  "verifWord": true,
+  "datedVerification": false
+ },
+ "/home-battery-cost-australia": {
+  "anyDate": false,
+  "verifWord": false,
+  "datedVerification": false
+ },
+ "/weight-loss-telehealth-cost-australia": {
+  "anyDate": true,
+  "verifWord": false,
+  "datedVerification": false
+ },
+ "/best-ai-sales-tools": {
+  "anyDate": false,
+  "verifWord": true,
+  "datedVerification": false
+ },
+ "/mosh-review": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/home-battery-payback-calculator": {
+  "anyDate": false,
+  "verifWord": false,
+  "datedVerification": false
+ },
+ "/": {
+  "anyDate": false,
+  "verifWord": true,
+  "datedVerification": false
+ },
+ "/how-to-stop-hair-loss-australia": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/affiliate-programs-australia": {
+  "anyDate": false,
+  "verifWord": true,
+  "datedVerification": false
+ },
+ "/beautifulai": {
+  "anyDate": false,
+  "verifWord": true,
+  "datedVerification": false
+ },
+ "/leadpages": {
+  "anyDate": false,
+  "verifWord": true,
+  "datedVerification": false
+ },
+ "/best-crm-small-business-australia": {
+  "anyDate": false,
+  "verifWord": false,
+  "datedVerification": false
+ },
+ "/longevity": {
+  "anyDate": false,
+  "verifWord": true,
+  "datedVerification": false
+ },
+ "/about": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/deals": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/best-website-builder": {
+  "anyDate": false,
+  "verifWord": false,
+  "datedVerification": false
+ },
+ "/contact": {
+  "anyDate": false,
+  "verifWord": false,
+  "datedVerification": false
+ },
+ "/hair-loss": {
+  "anyDate": false,
+  "verifWord": true,
+  "datedVerification": false
+ },
+ "/moshy-vs-juniper": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/best-hair-loss-treatment-australia": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/petsonme": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/elevenlabs": {
+  "anyDate": false,
+  "verifWord": true,
+  "datedVerification": false
+ },
+ "/pandadoc": {
+  "anyDate": false,
+  "verifWord": true,
+  "datedVerification": false
+ },
+ "/carrd-vs-butternut": {
+  "anyDate": false,
+  "verifWord": false,
+  "datedVerification": false
+ },
+ "/pipedrive": {
+  "anyDate": false,
+  "verifWord": true,
+  "datedVerification": false
+ },
+ "/for-business": {
+  "anyDate": false,
+  "verifWord": false,
+  "datedVerification": false
+ },
+ "/moshy-vs-gp": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/superfiliate": {
+  "anyDate": false,
+  "verifWord": true,
+  "datedVerification": false
+ },
+ "/survicate": {
+  "anyDate": false,
+  "verifWord": true,
+  "datedVerification": false
+ },
+ "/best-home-battery-australia": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/dense": {
+  "anyDate": false,
+  "verifWord": false,
+  "datedVerification": false
+ },
+ "/disclaimer": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/terms": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/weight-loss-telehealth-women-australia": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/fullenrich": {
+  "anyDate": false,
+  "verifWord": true,
+  "datedVerification": false
+ },
+ "/carrd-vs-durable": {
+  "anyDate": false,
+  "verifWord": false,
+  "datedVerification": false
+ },
+ "/home-battery-rebate-by-state-australia": {
+  "anyDate": false,
+  "verifWord": false,
+  "datedVerification": false
+ },
+ "/weight-loss": {
+  "anyDate": false,
+  "verifWord": true,
+  "datedVerification": false
+ },
+ "/lindy": {
+  "anyDate": false,
+  "verifWord": true,
+  "datedVerification": false
+ },
+ "/durable-vs-butternut": {
+  "anyDate": false,
+  "verifWord": false,
+  "datedVerification": false
+ },
+ "/apollo-energy-review": {
+  "anyDate": false,
+  "verifWord": false,
+  "datedVerification": false
+ },
+ "/best-pet-insurance-australia": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/wing-assistant": {
+  "anyDate": false,
+  "verifWord": true,
+  "datedVerification": false
+ },
+ "/what-pet-insurance-covers-australia": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/weight-loss-quiz": {
+  "anyDate": false,
+  "verifWord": false,
+  "datedVerification": false
+ },
+ "/durableai": {
+  "anyDate": false,
+  "verifWord": false,
+  "datedVerification": false
+ },
+ "/capsule": {
+  "anyDate": false,
+  "verifWord": true,
+  "datedVerification": false
+ },
+ "/butternut": {
+  "anyDate": false,
+  "verifWord": false,
+  "datedVerification": false
+ },
+ "/knose-vs-petsonme": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/online-hair-loss-treatment-australia": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/how-we-make-money": {
+  "anyDate": false,
+  "verifWord": false,
+  "datedVerification": false
+ },
+ "/portable-vs-installed-home-battery-australia": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/how-to-start-affiliate-marketing-australia": {
+  "anyDate": false,
+  "verifWord": false,
+  "datedVerification": false
+ },
+ "/online-weight-loss-programs-australia": {
+  "anyDate": false,
+  "verifWord": false,
+  "datedVerification": false
+ },
+ "/moshy-alternatives": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/skin-and-beauty": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/knose": {
+  "anyDate": false,
+  "verifWord": false,
+  "datedVerification": false
+ },
+ "/data": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/trainual": {
+  "anyDate": false,
+  "verifWord": true,
+  "datedVerification": false
+ },
+ "/weight-loss-cost-calculator": {
+  "anyDate": false,
+  "verifWord": true,
+  "datedVerification": false
+ },
+ "/swipepages": {
+  "anyDate": false,
+  "verifWord": false,
+  "datedVerification": false
+ },
+ "/mens-health": {
+  "anyDate": false,
+  "verifWord": true,
+  "datedVerification": false
+ },
+ "/mosh-vs-pilot": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/juniper": {
+  "anyDate": false,
+  "verifWord": false,
+  "datedVerification": false
+ },
+ "/solar-and-energy": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/alidrop": {
+  "anyDate": false,
+  "verifWord": true,
+  "datedVerification": false
+ },
+ "/who-underwrites-pet-insurance-australia": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/ai-sales-tools-quiz": {
+  "anyDate": false,
+  "verifWord": true,
+  "datedVerification": false
+ },
+ "/mosh-vs-dense": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/high-paying-affiliate-programs": {
+  "anyDate": false,
+  "verifWord": true,
+  "datedVerification": false
+ },
+ "/moshy-eligibility": {
+  "anyDate": false,
+  "verifWord": false,
+  "datedVerification": false
+ },
+ "/home-battery-installer-nsw": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/online-weight-loss-doctor-australia": {
+  "anyDate": false,
+  "verifWord": false,
+  "datedVerification": false
+ },
+ "/apollo-energy-group": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/beehiiv": {
+  "anyDate": false,
+  "verifWord": false,
+  "datedVerification": false
+ },
+ "/outgrow": {
+  "anyDate": false,
+  "verifWord": true,
+  "datedVerification": false
+ },
+ "/affiliate-earnings-calculator": {
+  "anyDate": false,
+  "verifWord": true,
+  "datedVerification": false
+ },
+ "/guides": {
+  "anyDate": false,
+  "verifWord": true,
+  "datedVerification": false
+ },
+ "/hellobar": {
+  "anyDate": false,
+  "verifWord": true,
+  "datedVerification": false
+ },
+ "/hair-loss-treatment-cost-australia": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/mens-health-telehealth-australia": {
+  "anyDate": false,
+  "verifWord": false,
+  "datedVerification": false
+ },
+ "/hair-loss-quiz": {
+  "anyDate": false,
+  "verifWord": false,
+  "datedVerification": false
+ },
+ "/moshy-vs-pilot": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/early-signs-of-hair-loss-australia": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/unbounce": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/business-software": {
+  "anyDate": false,
+  "verifWord": true,
+  "datedVerification": false
+ },
+ "/best-weight-loss-telehealth-australia": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/moshhair": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/aisdr": {
+  "anyDate": false,
+  "verifWord": false,
+  "datedVerification": false
+ },
+ "/ecoflow-vs-anker-solix": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/coming-soon": {
+  "anyDate": false,
+  "verifWord": true,
+  "datedVerification": false
+ },
+ "/employmenthero": {
+  "anyDate": false,
+  "verifWord": true,
+  "datedVerification": false
+ },
+ "/nutshell": {
+  "anyDate": false,
+  "verifWord": true,
+  "datedVerification": false
+ },
+ "/moshy-review": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/sleep": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/best-newsletter-platform": {
+  "anyDate": false,
+  "verifWord": false,
+  "datedVerification": false
+ },
+ "/brevo": {
+  "anyDate": false,
+  "verifWord": true,
+  "datedVerification": false
+ },
+ "/ecoflow": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/nsw-home-battery-rebate-2026": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/portable-power-station-australia": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/virtual-power-plant-australia": {
+  "anyDate": false,
+  "verifWord": false,
+  "datedVerification": false
+ },
+ "/landingi": {
+  "anyDate": false,
+  "verifWord": true,
+  "datedVerification": false
+ },
+ "/krispcall": {
+  "anyDate": false,
+  "verifWord": false,
+  "datedVerification": false
+ },
+ "/what-size-home-battery-do-i-need-australia": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/recurring-affiliate-programs": {
+  "anyDate": false,
+  "verifWord": false,
+  "datedVerification": false
+ },
+ "/affiliate-software-australia": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/flexiquiz": {
+  "anyDate": false,
+  "verifWord": true,
+  "datedVerification": false
+ },
+ "/anker-solix": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/home-battery-rebate-australia": {
+  "anyDate": true,
+  "verifWord": false,
+  "datedVerification": false
+ },
+ "/is-a-home-battery-worth-it-australia": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/activecampaign": {
+  "anyDate": false,
+  "verifWord": true,
+  "datedVerification": false
+ },
+ "/keap": {
+  "anyDate": false,
+  "verifWord": true,
+  "datedVerification": false
+ },
+ "/dext": {
+  "anyDate": false,
+  "verifWord": true,
+  "datedVerification": false
+ },
+ "/gohighlevel": {
+  "anyDate": false,
+  "verifWord": true,
+  "datedVerification": false
+ },
+ "/tesla-powerwall-alternatives-australia": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/home-battery-installer-sydney": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/faq": {
+  "anyDate": false,
+  "verifWord": false,
+  "datedVerification": false
+ },
+ "/newsletter-platform-quiz": {
+  "anyDate": false,
+  "verifWord": false,
+  "datedVerification": false
+ },
+ "/weight-loss-telehealth-men-australia": {
+  "anyDate": false,
+  "verifWord": false,
+  "datedVerification": false
+ },
+ "/replyio": {
+  "anyDate": false,
+  "verifWord": true,
+  "datedVerification": false
+ },
+ "/cheapest-weight-loss-telehealth-australia": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/weight-loss-treatment-eligibility-australia": {
+  "anyDate": false,
+  "verifWord": false,
+  "datedVerification": false
+ },
+ "/receding-hairline-treatment-australia": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/pet-insurance": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/privacy": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/blinq": {
+  "anyDate": false,
+  "verifWord": true,
+  "datedVerification": false
+ },
+ "/carrd": {
+  "anyDate": false,
+  "verifWord": true,
+  "datedVerification": false
+ },
+ "/moshy": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/home-battery-blackout-backup-australia": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/mens-health/mens-health-quiz": {
+  "anyDate": false,
+  "verifWord": false,
+  "datedVerification": false
+ },
+ "/mens-health/erectile-dysfunction-treatment-cost-australia": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/mens-health/sexual-wellness-products": {
+  "anyDate": false,
+  "verifWord": false,
+  "datedVerification": false
+ },
+ "/mens-health/is-telehealth-or-a-gp-cheaper-for-mens-health": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/mens-health/premature-ejaculation-treatment-options-australia": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/mens-health/online-mens-health-clinics-compared": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/sleep/how-much-does-good-sleep-cost": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/sleep/sleep-tracker-comparison-australia": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/sleep/do-i-have-sleep-apnoea": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/sleep/cpap-machine-costs-australia": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/sleep/mattress-comparison-australia": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/sleep/home-sleep-test-australia-cost": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/longevity/recovery": {
+  "anyDate": false,
+  "verifWord": true,
+  "datedVerification": false
+ },
+ "/longevity/diagnostics": {
+  "anyDate": false,
+  "verifWord": true,
+  "datedVerification": false
+ },
+ "/longevity/supplements/longevity-supplements-evidence-review": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/longevity/recovery/ice-bath-running-costs-australia": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/longevity/recovery/contrast-therapy-what-the-evidence-says": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/longevity/recovery/recovery-setup-quiz": {
+  "anyDate": false,
+  "verifWord": false,
+  "datedVerification": false
+ },
+ "/longevity/recovery/infrared-vs-traditional-sauna-australia": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/longevity/recovery/ice-bath-comparison-australia": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/longevity/recovery/home-sauna-cost-australia": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/longevity/diagnostics/health-screening-quiz": {
+  "anyDate": false,
+  "verifWord": false,
+  "datedVerification": false
+ },
+ "/longevity/diagnostics/whole-body-mri-australia-cost": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/longevity/diagnostics/biological-age-testing-australia": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/longevity/diagnostics/everlab-vs-prenuvo-vs-i-screen-australia": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/longevity/diagnostics/cgm-for-non-diabetics-australia": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/compare/newsletter-platforms": {
+  "anyDate": false,
+  "verifWord": true,
+  "datedVerification": false
+ },
+ "/compare/payments": {
+  "anyDate": false,
+  "verifWord": true,
+  "datedVerification": false
+ },
+ "/compare/hr-payroll": {
+  "anyDate": false,
+  "verifWord": true,
+  "datedVerification": false
+ },
+ "/compare/ai-tools": {
+  "anyDate": false,
+  "verifWord": true,
+  "datedVerification": false
+ },
+ "/compare/website-builders": {
+  "anyDate": false,
+  "verifWord": true,
+  "datedVerification": false
+ },
+ "/compare/business-phone": {
+  "anyDate": false,
+  "verifWord": true,
+  "datedVerification": false
+ },
+ "/compare/sales-outreach": {
+  "anyDate": false,
+  "verifWord": true,
+  "datedVerification": false
+ },
+ "/compare/ai-sales-tools": {
+  "anyDate": false,
+  "verifWord": true,
+  "datedVerification": false
+ },
+ "/compare/lead-generation": {
+  "anyDate": false,
+  "verifWord": true,
+  "datedVerification": false
+ },
+ "/skin-and-beauty/acne-treatment-options-and-costs-australia": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/skin-and-beauty/anti-ageing-treatments-what-they-cost": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/skin-and-beauty/retinol-vs-prescription-strength-australia": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/skin-and-beauty/skincare-quiz": {
+  "anyDate": false,
+  "verifWord": false,
+  "datedVerification": false
+ },
+ "/skin-and-beauty/best-value-skincare-australia-cost-per-use": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ },
+ "/skin-and-beauty/led-face-mask-comparison-australia": {
+  "anyDate": true,
+  "verifWord": true,
+  "datedVerification": true
+ }
+}
