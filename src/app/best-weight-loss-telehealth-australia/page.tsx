@@ -50,7 +50,7 @@ const itemListSchema = {
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Moshy", description: "Australian clinically-led telehealth weight management platform, open to anyone eligible. Online eligibility questionnaire, practitioner review, and treatment access where clinically appropriate. Subscription with home delivery.", url: `${SITE_URL}/moshy` },
     { "@type": "ListItem", position: 2, name: "Juniper", description: "Australian weight management program for women. Combines a medical program with health coaching and ongoing practitioner support. Premium subscription model.", url: `${SITE_URL}/juniper` },
-    { "@type": "ListItem", position: 3, name: "Pilot", description: "Men-focused telehealth from Eucalyptus, covering weight management alongside broader men's health. Quiz, practitioner phone consultation, then discreet home delivery where clinically appropriate.", url: PILOT_URL },
+    { "@type": "ListItem", position: 3, name: "Pilot", description: "Men-focused telehealth from Eucalyptus, covering weight management alongside broader men's health.", url: PILOT_URL },
   ],
 };
 
@@ -169,8 +169,10 @@ interface PlatformCardProps {
   index: string;
   name: string;
   tagline: string;
-  deal: string;
-  dealNote: string;
+  /* Optional: a provider we hold no arrangement with, and whose process we
+     cannot verify, shows no "Current access" box rather than a guess. */
+  deal?: string;
+  dealNote?: string;
   pros: string[];
   cons: string[];
   affUrl?: string;
@@ -229,16 +231,18 @@ function PlatformCard({
 
         {/* Right, deal + CTA */}
         <div className="flex flex-col gap-4">
-          <div
-            className="rounded-xl p-5"
-            style={{ background: `${CYAN}0D`, border: `1px solid ${CYAN}30` }}
-          >
-            <p className="text-[10px] font-black uppercase tracking-widest mb-1.5" style={{ color: CYAN_LT }}>
-              Current access
-            </p>
-            <p className="text-[#10251b] font-black text-base leading-snug mb-1">{deal}</p>
-            <p className="text-[#3d4b44] text-xs leading-snug">{dealNote}</p>
-          </div>
+          {deal && (
+            <div
+              className="rounded-xl p-5"
+              style={{ background: `${CYAN}0D`, border: `1px solid ${CYAN}30` }}
+            >
+              <p className="text-[10px] font-black uppercase tracking-widest mb-1.5" style={{ color: CYAN_LT }}>
+                Current access
+              </p>
+              <p className="text-[#10251b] font-black text-base leading-snug mb-1">{deal}</p>
+              {dealNote && <p className="text-[#3d4b44] text-xs leading-snug">{dealNote}</p>}
+            </div>
+          )}
 
           <a
             {...ctaLinkProps}
@@ -264,6 +268,17 @@ function PlatformCard({
               asymmetry is stated where the link is rather than as a banner
               above the article. */}
           {isAffiliate && <EarningsBalanceNote earnFrom={name} noEarnFrom={["Juniper", "Pilot"]} /* PILOT-NON-PARTNER */ className="mt-1" />}
+
+          {/* PILOT-NON-PARTNER. Says where the button actually goes. We hold no
+              affiliate link for Pilot, so this is their home page rather than a
+              tracked or deep link, and a reader who expects to land on a
+              weight-management sign-up should know that before clicking. */}
+          {!isAffiliate && !deal && (
+            <p className="text-xs leading-relaxed text-[#6e7b74]">
+              We hold no affiliate arrangement with {name}, so this link goes to their home page
+              rather than a tracked or dedicated sign-up page, and we earn nothing if you use it.
+            </p>
+          )}
         </div>
       </div>
     </section>
@@ -321,11 +336,13 @@ const platforms: PlatformCardProps[] = [
     id: "pilot",
     index: "03",
     name: "Pilot",
-    tagline: "Men-focused telehealth from Eucalyptus, covering weight management alongside broader men's health. The process runs as a quiz, then a private phone consultation with a practitioner, then discreet home delivery if you are eligible. Weight management sits inside a wider men's health service rather than standing alone.",
-    deal: "Online quiz, then a phone consult",
-    dealNote: "Pilot's process starts with a health-history quiz and includes a private phone consultation with a practitioner before anything is prescribed.",
+    /* No deal, dealNote, or process description. Refer Labs holds no arrangement
+       with Pilot and has not verified their sign-up flow, so the page described a
+       quiz-then-phone-consult sequence it could not stand behind. Removed 3 Sep
+       2026 as misleading. Do not restore it without reading Pilot's own page and
+       dating the observation. */
+    tagline: "Men-focused telehealth from Eucalyptus, covering weight management alongside broader men's health. Weight management sits inside a wider men's health service rather than standing alone.",
     pros: [
-      "Practitioner phone consult included in the process",
       "Practitioner-assessed treatment where appropriate",
       "Covers other men's health areas in the same account",
       "Discreet packaging and free shipping, no lock-in contracts",
@@ -378,8 +395,7 @@ export default function BestWeightLossTelehealthPage() {
             </p>
 
             <h1 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-black leading-[1.08] tracking-tight text-[#10251b] mb-4 max-w-3xl">
-              Best Weight Loss Telehealth Australia 2026:{" "}
-              <span style={{ color: CYAN_LT }}>Moshy vs Juniper</span>
+              Best Weight Loss Telehealth Australia 2026
             </h1>
 
             <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl mb-3">
