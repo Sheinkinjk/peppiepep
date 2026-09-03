@@ -5,6 +5,7 @@ import ConsumerShell from "@/components/consumer/ConsumerShell";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 import SoftwareFinder, { type FinderGoal, type FinderProvider } from "@/components/consumer/SoftwareFinder";
 import { CATALOG } from "@/lib/catalog/catalog";
+import { DEALS, formatVerifiedFull } from "@/lib/offers";
 
 export const metadata = generateSEOMetadata(seoConfig.businessSoftware);
 
@@ -70,6 +71,35 @@ const hubs = [
   { href: "/compare/ai-tools", label: "AI tools", desc: "AI assistants, voice and branding, sorted by what they do." },
 ];
 
+/**
+ * The three business tools where we hold a real monetary discount rather than a
+ * free trial anyone can start direct from the vendor.
+ *
+ * Ordered deliberately, not alphabetically: Superfiliate first because it is the
+ * only one of the three that discounts a recurring fee rather than a first term.
+ * Terms, dates and hrefs come from the DEALS registry, so this block cannot drift
+ * from /deals or from the brand page it links to.
+ *
+ * Why this block exists at all: measured 3 Sep 2026, the three pages holding a
+ * real discount were the least-linked in the cluster (Unbounce 3 inbound,
+ * Superfiliate 6, Leadpages 9) and sat last in "Popular tools" beneath eight
+ * tools offering nothing but a trial.
+ */
+const OFFER_BRANDS = ["Superfiliate", "Unbounce", "Leadpages"] as const;
+const featuredOffers = OFFER_BRANDS
+  .map((brand) => DEALS.find((d) => d.brand === brand))
+  .filter((d): d is NonNullable<typeof d> => Boolean(d));
+
+// The cluster's own in-depth guides. None of these was linked from this hub
+// before 3 Sep 2026, including /best-newsletter-platform, which is the
+// best-ranking page in the cluster.
+const guides = [
+  { href: "/best-newsletter-platform", label: "beehiiv vs Substack vs ConvertKit", desc: "Free plans, revenue cuts, and where pricing jumps as a list grows." },
+  { href: "/best-crm-small-business-australia", label: "Best CRM for small business", desc: "Pipedrive, Capsule, Nutshell and Keap on real monthly pricing." },
+  { href: "/best-website-builder", label: "Best website builder", desc: "One-page, AI-generated and full builders, compared on what they cost." },
+  { href: "/best-ai-sales-tools", label: "Best AI sales tools", desc: "GoHighLevel, AiSDR, Reply.io and FullEnrich, by the bottleneck each solves." },
+];
+
 const tools = [
   { href: "/pipedrive", label: "Pipedrive", desc: "Visual sales CRM with pipeline and automation." },
   { href: "/nutshell", label: "Nutshell", desc: "Easy sales CRM with email marketing built in." },
@@ -78,11 +108,9 @@ const tools = [
   { href: "/keap", label: "Keap", desc: "Small-business CRM with sales and marketing automation." },
   { href: "/gohighlevel", label: "GoHighLevel", desc: "All-in-one CRM, marketing automation and funnels." },
   { href: "/employmenthero", label: "Employment Hero", desc: "Australian HR, payroll and employment platform." },
-  { href: "/leadpages", label: "Leadpages", desc: "Landing pages and lead capture with A/B testing." },
-  // The two business tools with a genuine discount rather than a free trial, and
-  // the two that convert. Superfiliate was missing from this hub entirely.
-  { href: "/superfiliate", label: "Superfiliate", desc: "Run your own affiliate and creator program. 15% off the monthly SaaS fee." },
-  { href: "/unbounce", label: "Unbounce", desc: "Landing pages built to convert. 20% off three months, or 35% off your first year." },
+  // Superfiliate, Unbounce and Leadpages are not listed here: they carry a real
+  // discount and are featured in the offers block above instead, so the link is
+  // not split across two places on one page.
 ];
 
 const itemListSchema = {
@@ -168,6 +196,50 @@ export default function BusinessSoftwarePage() {
                   </div>
                   <h3 className="mt-3 text-xl font-bold text-[#10251b] group-hover:text-[#0a7c42]">{h.label}</h3>
                   <p className="mt-1.5 text-sm leading-relaxed text-[#3d4b44]">{h.desc}</p>
+                </Link>
+              ))}
+            </div>
+          </section>
+
+          {/* Current offers: the three tools we hold a real discount on. Placed
+              above "Popular tools" because a discount is the only reason a reader
+              has to start here rather than at the vendor's own site. */}
+          <section className="mt-14 border-t border-[#e5e9e7] pt-12">
+            <h2 className="text-2xl font-extrabold text-[#10251b]">Current offers</h2>
+            <p className="mt-2 max-w-2xl text-sm leading-relaxed text-[#3d4b44]">
+              Three of the tools we cover carry a real discount rather than a free trial anyone can
+              start direct. Each was read off the provider&apos;s own page on the date shown.
+            </p>
+            <div className="mt-7 grid gap-4 sm:grid-cols-3">
+              {featuredOffers.map((d) => (
+                <Link
+                  key={d.brand}
+                  href={d.href}
+                  className="group flex flex-col rounded-2xl border border-[#0a7c42]/25 bg-[#0a7c42]/[0.04] p-6 transition-all hover:-translate-y-0.5 hover:border-[#0a7c42]/50"
+                >
+                  <h3 className="text-lg font-extrabold text-[#10251b] group-hover:text-[#0a7c42]">{d.brand}</h3>
+                  <p className="mt-2 text-[15px] font-bold leading-snug text-[#0a7c42]">{d.offer}</p>
+                  {d.verified && (
+                    <p className="mt-2 text-[11px] font-medium text-[#6e7b74]">
+                      Read off {d.brand}&apos;s own page on {formatVerifiedFull(d.verified)}.
+                    </p>
+                  )}
+                  <span className="mt-auto inline-flex items-center gap-1.5 pt-5 text-sm font-semibold text-[#0a7c42]">
+                    See the offer <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </section>
+
+          {/* In-depth guides. None of these was reachable from this hub before. */}
+          <section className="mt-14 border-t border-[#e5e9e7] pt-12">
+            <h2 className="text-2xl font-extrabold text-[#10251b]">In-depth comparisons</h2>
+            <div className="mt-7 grid gap-4 sm:grid-cols-2">
+              {guides.map((g) => (
+                <Link key={g.href} href={g.href} className="group rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] p-5 transition-all hover:-translate-y-0.5 hover:border-[#0a7c42]/40">
+                  <h3 className="text-[15px] font-bold text-[#10251b] group-hover:text-[#0a7c42]">{g.label}</h3>
+                  <p className="mt-1.5 text-sm leading-relaxed text-[#3d4b44]">{g.desc}</p>
                 </Link>
               ))}
             </div>
