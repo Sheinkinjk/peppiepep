@@ -7,10 +7,7 @@ import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
-import VerifiedStamp from "@/components/consumer/VerifiedStamp";
 import FeatureMatrix from "@/components/consumer/FeatureMatrix";
-import { MOSHY_OFFER, DEALS } from "@/lib/offers";
-import OffersTable from "@/components/lending/OffersTable";
 import CodeAnswer from "@/components/offers/CodeAnswer";
 import OfferSchema from "@/components/offers/OfferSchema";
 import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
@@ -388,22 +385,24 @@ export default function BestWeightLossTelehealthPage() {
             <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl mb-3">
               Moshy and Juniper are two of the most-used weight-management platforms in Australia, but they take different approaches. Moshy runs a lean clinical pathway, open to anyone eligible. Juniper wraps clinical care in a coaching program and markets primarily to women.
             </p>
-            <CodeAnswer code="REFERRAL120" className="mt-6">
-              Of the providers compared here, only Moshy carries a Refer Labs code: REFERRAL120, worth $120 off a new customer&apos;s first order, one use per customer.
-            </CodeAnswer>
-            <OfferSchema code="REFERRAL120" />
-
             <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl mb-5">
               Below: what each platform actually does, who it suits, and how to access each eligibility flow. This page does not constitute medical advice. Suitability is assessed individually by each platform&apos;s clinical team.
             </p>
 
-            <div className="mb-7">
-              <VerifiedStamp date={MOSHY_OFFER.verified} label={`Moshy: ${MOSHY_OFFER.amount} for new customers · verified`} />
-            </div>
+            <CodeAnswer code="REFERRAL120" className="mt-2 mb-7">
+              Of the providers compared here, only Moshy carries a Refer Labs code: REFERRAL120, worth $120 off a new customer&apos;s first order, one use per customer.
+            </CodeAnswer>
+            <OfferSchema code="REFERRAL120" />
 
-              <div className="mb-7 max-w-2xl">
-                <OffersTable deals={DEALS.filter((d) => d.brand === "Moshy")} caption="Moshy weight-loss offer, verified" />
-              </div>
+
+            {/* A VerifiedStamp and a one-row OffersTable stood here until 2 Sep 2026,
+                restating the $120/REFERRAL120 fact the CodeAnswer above had already
+                given, three times in one screenful. The table was worse than
+                redundant: filtered to Moshy on a page comparing three providers, it
+                rendered a "Provider / Best offer / Saving" header with a single row,
+                and dragged in four lines of footnotes about "Not recorded" and "No
+                code needed" that describe states no row on it could have. One
+                statement of the code, with its date, is the whole of what is needed. */}
 
             {/* Jump nav */}
             <nav aria-label="Jump to section" className="flex flex-wrap gap-2">
@@ -529,24 +528,28 @@ export default function BestWeightLossTelehealthPage() {
             <FeatureMatrix
               firstColLabel="Criteria"
               columns={[
-                { name: "Moshy", highlight: true },
+                /* No highlight, and alphabetical. The Moshy column was tinted green
+                   and placed first on a page that ranks three providers and carries a
+                   link for one of them, which reads as the pick rather than as a
+                   column heading. */
                 { name: "Juniper" },
+                { name: "Moshy" },
                 { name: "Pilot" },
               ]}
               rows={[
-                { label: "Available in Australia",     vals: [true,  true,  true]  },
+                { label: "Available in Australia",     vals: [true , true , true]  },
                 // Moshy is open to anyone eligible, so it serves both. This row
                 // previously said Moshy had no women's programme, contradicting the
                 // rest of the page.
-                { label: "Men's programme",            vals: [true,  false, true]  },
-                { label: "Women's programme",          vals: [true,  true,  false] },
-                { label: "Practitioner-assessed treatment",    vals: [true,  true,  true], note: "Subject to individual clinical eligibility" },
-                { label: "Online eligibility process", vals: [true,  true,  true]  },
-                { label: "No in-person GP required",   vals: [true,  true,  true]  },
-                { label: "Health coaching included",   vals: [false, true,  false] },
-                { label: "Home delivery",              vals: [true,  true,  true]  },
-                { label: "Lifestyle programme",        vals: [false, true,  false] },
-                { label: "Community discussion",       vals: [true,  true,  false] },
+                { label: "Men's programme",            vals: [false, true , true]  },
+                { label: "Women's programme",          vals: [true , true , false] },
+                { label: "Practitioner-assessed treatment",    vals: [true , true , true], note: "Subject to individual clinical eligibility" },
+                { label: "Online eligibility process", vals: [true , true , true]  },
+                { label: "No in-person GP required",   vals: [true , true , true]  },
+                { label: "Health coaching included",   vals: [true , false, false] },
+                { label: "Home delivery",              vals: [true , true , true]  },
+                { label: "Lifestyle programme",        vals: [true , false, false] },
+                { label: "Community discussion",       vals: [true , true , false] },
               ]}
               footnote="Feature availability is based on publicly available information at time of publication and may change. This page does not constitute medical advice."
             />
