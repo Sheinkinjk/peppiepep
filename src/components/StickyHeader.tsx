@@ -16,7 +16,7 @@ const navLinks = [
   { href: "/",                   label: "Compare" },
   { href: "/for-business",       label: "For Business" },
   { href: "/affiliate-programs-australia", label: "Affiliate Programs" },
-  { href: "/guides",             label: "Guides" },
+  // "Guides" moved to the footer only, 3 Sep 2026.
   { href: "/faq",                label: "FAQ" },
 ];
 

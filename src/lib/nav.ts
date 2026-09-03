@@ -83,6 +83,12 @@ export const GROUPS: Group[] = [
   },
 ];
 
-export const DIRECT: Item[] = [
-  { href: "/guides", label: "All Guides" },
-];
+/**
+ * Standalone links beside the mega-menu groups.
+ *
+ * Emptied on 3 Sep 2026: "All Guides" moved to the footer only. /guides keeps a
+ * sitewide footer link and 56 in-content inbound links, so it loses nothing but
+ * the header slot. Kept as an exported empty array rather than deleted, because
+ * HeaderNav and MobileNav both map over it.
+ */
+export const DIRECT: Item[] = [];
