@@ -50,15 +50,12 @@ export const GROUPS: Group[] = [
       { href: "/portable-power-station-australia", label: "Portable Power", note: "EcoFlow and Anker SOLIX, priced per watt-hour" },
     ],
   },
-  {
-    label: "Pets",
-    items: [
-      { href: "/best-pet-insurance-australia", label: "How to choose", note: "The six things that decide what you get back" },
-      { href: "/knose", label: "Knose", note: "2 months free for new customers" },
-      { href: "/petsonme", label: "PetsOnMe", note: "Three cover levels, plus the REFERLABS code" },
-      { href: "/pet-insurance", label: "Compare all", note: "Pet insurance cover explained, plus current offers" },
-    ],
-  },
+  // Pets removed from the nav on 3 Sep 2026. Every pet page stays live, indexed
+  // and in the sitemap; only the header group is gone. Checked before removing:
+  // each keeps between four and eight in-content inbound links without it,
+  // including from the homepage category card and /guides, so nothing is
+  // orphaned. Restore this group rather than rebuilding it if pets returns to
+  // the nav.
   // Merged and placed last. Every page below stays live and reachable; the full
   // set lives on the two hubs and the /compare category pages.
   {
