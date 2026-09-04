@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 
+import { MIDOC } from "@/lib/partners/midoc";
 export interface SEOConfig {
   title: string;
   description: string;
@@ -942,9 +943,9 @@ export const seoConfig = {
   // title carries the price rather than a discount. Prices read off
   // midoc.com.au on 3 Sep 2026.
   midoc: {
-    title: "Midoc Review 2026: Consultations from $49 | Refer Labs",
+    title: `Midoc Review 2026: Consultations from ${MIDOC.consultStandard} | Refer Labs`,
     description:
-      "Midoc is Australian telehealth: AHPRA-registered doctors by phone or video, usually within 5 to 60 minutes. Consultations from $49, certificates from $18, read 3 Sep 2026.",
+      `Midoc is Australian telehealth: AHPRA-registered doctors by phone or video, ${MIDOC.waitTime}. Consultations from ${MIDOC.consultStandard}, certificates from ${MIDOC.certificateSingleDay}.`,
     url: `${SITE_URL}/midoc`,
     keywords: ["midoc", "midoc review", "midoc australia", "midoc telehealth", "online doctor australia", "telehealth consultation cost australia", "online medical certificate australia"],
   },

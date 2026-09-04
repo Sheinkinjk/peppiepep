@@ -2,6 +2,7 @@ import SectionGuideShell from "@/components/consumer/SectionGuideShell";
 import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
 
 import PartnerRoute from "@/components/consumer/PartnerRoute";
+import { MIDOC } from "@/lib/partners/midoc";
 export const metadata = generateSEOMetadata(seoConfig.peTreatmentOptions);
 
 /**
@@ -138,7 +139,7 @@ export default function Page() {
           {
             name: "Midoc",
             href: "/go/midoc-premature-ejaculation",
-            what: "Men's health consultations, priced at $69 after the Medicare rebate, 9am to 5pm. Phone or video with an AHPRA-registered doctor.",
+            what: `Men's health consultations, priced at ${MIDOC.consultSpecialist} after the Medicare rebate. ${MIDOC.format.charAt(0).toUpperCase()+MIDOC.format.slice(1)}, with ${MIDOC.practitioners}.`,
             checked: "3 September 2026",
           },
         ]}

@@ -4,6 +4,7 @@ import ComingSoonNote from "@/components/consumer/ComingSoonNote";
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
 
 import PartnerRoute from "@/components/consumer/PartnerRoute";
+import { MIDOC } from "@/lib/partners/midoc";
 export const metadata = generateSEOMetadata(seoConfig.sexualWellnessProducts);
 
 const SLUG = "/mens-health/sexual-wellness-products";
@@ -207,7 +208,7 @@ export default function SexualWellnessProductsPage() {
             {
               name: "Midoc",
               href: "/go/midoc-sexual-wellness",
-              what: "Sexual health and STI consultations listed at $49, phone or video with an AHPRA-registered doctor, usually within 5 to 60 minutes.",
+              what: `Sexual health and STI consultations listed at ${MIDOC.consultStandard}, ${MIDOC.format}, ${MIDOC.waitTime}.`,
               checked: "3 September 2026",
             },
           ]}

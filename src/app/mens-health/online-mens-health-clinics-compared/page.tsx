@@ -2,6 +2,7 @@ import SectionGuideShell from "@/components/consumer/SectionGuideShell";
 import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
 
 import PartnerRoute from "@/components/consumer/PartnerRoute";
+import { MIDOC } from "@/lib/partners/midoc";
 export const metadata = generateSEOMetadata(seoConfig.mensClinicsCompared);
 
 /**
@@ -140,7 +141,7 @@ export default function Page() {
           {
             name: "Midoc",
             href: "/go/midoc-clinics-compared",
-            what: "Australian telehealth with AHPRA-registered doctors. Standard consultations $49, specialist $69, medical certificates from $18, usually within 5 to 60 minutes.",
+            what: `Australian telehealth with ${MIDOC.practitioners}. Standard consultations ${MIDOC.consultStandard}, specialist ${MIDOC.consultSpecialist}, medical certificates from ${MIDOC.certificateSingleDay}, ${MIDOC.waitTime}.`,
             checked: "3 September 2026",
           },
         ]}

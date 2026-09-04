@@ -4,10 +4,11 @@ import ConsumerShell from "@/components/consumer/ConsumerShell";
 import EditorialMeta from "@/components/consumer/EditorialMeta";
 import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 import PartnerRoute from "@/components/consumer/PartnerRoute";
+import { MIDOC } from "@/lib/partners/midoc";
 
 export const metadata = generateSEOMetadata(seoConfig.midoc);
 
-const UPDATED = "2026-09-03";
+const UPDATED = MIDOC.readOn;
 
 /**
  * Everything factual on this page was read off midoc.com.au on 3 September 2026
@@ -18,26 +19,19 @@ const UPDATED = "2026-09-03";
  * exemption. No medicine is named or made identifiable anywhere on it. The page
  * describes access, price and process only. Do not add a product name.
  */
-const PRICING = [
-  { band: "Standard consultation, $49", items: "General health, child health, COVID-19 antivirals, hair loss, sexual health and STI, smoking cessation, continence." },
-  { band: "Specialist consultation, $69", items: "Weight management, men's health (priced after the Medicare rebate), dementia support, wound care." },
-  { band: "Mental health, fully bulk billed", items: "A mental health care plan or a plan review is listed at no cost." },
-  { band: "Medical certificate, $18", items: "A single-day certificate, reviewed by an Australian-registered doctor." },
-  { band: "Medical certificate, $36", items: "Covering up to seven days." },
-];
 
 const FAQS = [
   {
     q: "What is Midoc?",
-    a: "Midoc is an Australian telehealth service. You complete a short form, a doctor registered with AHPRA calls you by phone or video, and where appropriate they can issue a prescription, a medical certificate or a specialist referral. Read off midoc.com.au on 3 September 2026.",
+    a: `Midoc is an Australian telehealth service. You complete a short form, a doctor registered with AHPRA calls you by phone or video, and where appropriate they can issue a prescription, a medical certificate or a specialist referral. Read off midoc.com.au on ${MIDOC.readOnLabel}.`,
   },
   {
     q: "How much does a Midoc consultation cost?",
-    a: "Midoc lists standard consultations at $49, covering general health, child health, COVID-19 antivirals, hair loss, sexual health and STI, smoking cessation and continence. Specialist consultations are listed at $69, covering weight management, men's health priced after the Medicare rebate, dementia support and wound care. A mental health care plan or review is listed as fully bulk billed. Medical certificates are $18 for a single day and $36 for up to seven days. Read off midoc.com.au on 3 September 2026, and prices can change.",
+    a: `Midoc lists standard consultations at ${MIDOC.consultStandard}, covering general health, child health, COVID-19 antivirals, hair loss, sexual health and STI, smoking cessation and continence. Specialist consultations are listed at ${MIDOC.consultSpecialist}, covering weight management, men's health priced after the Medicare rebate, dementia support and wound care. A mental health care plan or review is listed as ${MIDOC.mentalHealth}. Medical certificates are ${MIDOC.certificateSingleDay} for a single day and ${MIDOC.certificateWeek} for up to seven days. Read off midoc.com.au on ${MIDOC.readOnLabel}, and prices can change.`,
   },
   {
     q: "How long is the wait?",
-    a: "Midoc states a call usually comes within 5 to 60 minutes. Most services run 8am to 2am, seven days. Weight management runs 8am to 8pm, smoking cessation 8am to 5pm, and men's health 9am to 5pm. Read off midoc.com.au on 3 September 2026.",
+    a: `Midoc states a call comes ${MIDOC.waitTime}. Most services run ${MIDOC.hoursMost}, with ${MIDOC.hoursExceptions}. Read off midoc.com.au on ${MIDOC.readOnLabel}.`,
   },
   {
     q: "Do I need a Medicare card?",
@@ -45,7 +39,7 @@ const FAQS = [
   },
   {
     q: "Is Midoc available in my state?",
-    a: "Midoc states it operates nationally, listing QLD, NSW, ACT, VIC, SA, WA, NT and TAS. Read off midoc.com.au on 3 September 2026.",
+    a: `Midoc states it operates ${MIDOC.coverage}. Read off midoc.com.au on ${MIDOC.readOnLabel}.`,
   },
   {
     q: "Who is Midoc not right for?",
@@ -110,8 +104,9 @@ export default function MidocPage() {
           Midoc is an Australian telehealth service. You fill in a short form, a doctor registered with
           AHPRA calls you by phone or video usually within 5 to 60 minutes, and where it is
           appropriate they can issue a prescription, a medical certificate or a specialist referral.
-          Standard consultations are listed at $49 and specialist consultations at $69, with mental
-          health care plans listed as fully bulk billed. Read off midoc.com.au on 3 September 2026.
+          Standard consultations are listed at {MIDOC.consultStandard} and specialist consultations at{" "}
+          {MIDOC.consultSpecialist}, with mental health care plans listed as {MIDOC.mentalHealth}. Read
+          off midoc.com.au on {MIDOC.readOnLabel}.
         </p>
 
         <EditorialMeta lastUpdated={UPDATED} className="mt-5" />
@@ -131,9 +126,9 @@ export default function MidocPage() {
             change, so confirm the current price on their site before you book.
           </p>
           <dl className="mt-6 divide-y divide-[#eef1ef] overflow-hidden rounded-2xl border border-[#e5e9e7] bg-white">
-            {PRICING.map((p) => (
+            {MIDOC.bands.map((p) => (
               <div key={p.band} className="px-5 py-4 sm:px-6">
-                <dt className="text-[15px] font-bold text-[#10251b]">{p.band}</dt>
+                <dt className="text-[15px] font-bold text-[#10251b]">{p.band}, {p.price}</dt>
                 <dd className="mt-1 text-sm leading-relaxed text-[#3d4b44]">{p.items}</dd>
               </div>
             ))}
@@ -177,7 +172,7 @@ export default function MidocPage() {
             {
               name: "Midoc",
               href: "/go/midoc-brand-page",
-              what: "Consultations from $49, medical certificates from $18, mental health care plans listed as bulk billed. Phone or video, nationally, usually within 5 to 60 minutes.",
+              what: `Consultations from ${MIDOC.consultStandard}, medical certificates from ${MIDOC.certificateSingleDay}, mental health care plans ${MIDOC.mentalHealth}. Phone or video, nationally, ${MIDOC.waitTime}.`,
               checked: "3 September 2026",
             },
           ]}
