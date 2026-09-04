@@ -55,6 +55,7 @@ export default function Page() {
       related={[
         { href: "/skin-and-beauty/anti-ageing-treatments-what-they-cost", label: "Clinic treatment pricing" },
         { href: "/skin-and-beauty/best-value-skincare-australia-cost-per-use", label: "Cost per use" },
+        { href: "/skin-and-beauty/foreo-luna-vs-ufo", label: "Foreo Luna vs UFO" },
       ]}
     >
       <section>

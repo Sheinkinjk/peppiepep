@@ -107,7 +107,7 @@ export default function MensHealthQuizPage() {
               name: "Midoc",
               href: "/go/midoc-mens-health-quiz",
               what: `Consultations from ${MIDOC.consultStandard} across general, sexual health, hair loss and men's health lines, plus certificates from ${MIDOC.certificateSingleDay}. Nationally, ${MIDOC.format}.`,
-              checked: "3 September 2026",
+              checked: MIDOC.readOnLabel,
             },
           ]}
         />

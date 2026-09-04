@@ -769,6 +769,20 @@ export const seoConfig = {
     url: `${SITE_URL}/mens-health/is-telehealth-or-a-gp-cheaper-for-mens-health`,
     keywords: ["telehealth vs gp cost australia", "is telehealth cheaper than a gp", "mens health gp or online australia", "bulk billed mens health australia"],
   },
+  onlineMedicalCertificate: {
+    title: "Online Medical Certificate Australia: Cost 2026 | Refer Labs",
+    description:
+      "What an online medical certificate costs in Australia: Midoc's four types from $18, issued 24/7, and the doctor's review you are actually paying for.",
+    url: `${SITE_URL}/mens-health/online-doctor-medical-certificate-australia`,
+    keywords: ["online medical certificate australia", "medical certificate online cost", "sick certificate online australia", "telehealth medical certificate australia", "same day medical certificate online"],
+  },
+  onlinePrescription: {
+    title: "Online Prescription Australia: Cost, Medicare | Refer Labs",
+    description:
+      "What an online prescription costs in Australia, and the identifier that decides whether you get one: a Medicare card, or an IHI number if you have none.",
+    url: `${SITE_URL}/mens-health/online-prescription-australia`,
+    keywords: ["online prescription australia", "online script australia cost", "escript australia", "repeat prescription online australia", "telehealth prescription australia"],
+  },
   sexualWellnessProducts: {
     title: "Sexual Wellness Products in Australia: What to Know | Refer Labs",
     description:
@@ -864,6 +878,20 @@ export const seoConfig = {
       "LED face masks in Australia: the real AUD prices, why they cost more here than the US listing, what the wavelengths mean, and how to check a device is on the ARTG before buying.",
     url: `${SITE_URL}/skin-and-beauty/led-face-mask-comparison-australia`,
     keywords: ["led face mask australia", "led face mask price australia", "omnilux australia price", "red light therapy mask australia", "best led face mask australia"],
+  },
+  foreoLunaVsUfo: {
+    title: "Foreo Luna vs UFO: Two Different Devices | Refer Labs",
+    description:
+      "Foreo's LUNA and UFO are separate lines, not alternatives: one cleanses, one emits LED light. Australian list prices for every model in both.",
+    url: `${SITE_URL}/skin-and-beauty/foreo-luna-vs-ufo`,
+    keywords: ["foreo luna vs ufo", "foreo luna australia price", "foreo ufo 3 australia", "foreo luna 4 price australia", "which foreo device"],
+  },
+  naturalSkincareAustralia: {
+    title: "Natural vs Certified Organic Skincare Australia | Refer Labs",
+    description:
+      "\"Natural\" needs no certification on an Australian cosmetic. \"Certified organic\" is checkable in a public register. How to run that check before you buy.",
+    url: `${SITE_URL}/skin-and-beauty/natural-skincare-australia`,
+    keywords: ["natural skincare australia", "organic skincare australia", "certified organic skincare australia", "aco certified skincare", "natural skincare brands australia"],
   },
   skincareCostPerUse: {
     title: "Skincare Cost Per Use: What Australians Actually Pay 2026 | Refer Labs",

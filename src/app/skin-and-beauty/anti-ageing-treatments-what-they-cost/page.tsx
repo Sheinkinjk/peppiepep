@@ -54,6 +54,7 @@ export default function Page() {
       related={[
         { href: "/skin-and-beauty/led-face-mask-comparison-australia", label: "LED face masks" },
         { href: "/skin-and-beauty/retinol-vs-prescription-strength-australia", label: "Retinol vs prescription-strength" },
+        { href: "/skin-and-beauty/foreo-luna-vs-ufo", label: "Foreo Luna vs UFO" },
       ]}
     >
       <section>

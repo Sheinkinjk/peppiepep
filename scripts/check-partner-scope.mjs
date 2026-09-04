@@ -89,7 +89,17 @@ for (const file of pages(APP)) {
 
   // ── 2. partner tokens may only appear under an allowlisted prefix ─────────
   for (const p of PARTNERS) {
-    if (!p.tokens.some((t) => src.includes(t))) continue;
+    // An index page has to be able to LINK to a partner page whose own slug
+    // carries the brand: /guides names "/skin-and-beauty/foreo-luna-vs-ufo",
+    // and so do sitemap, search and the hubs. Those are internal hrefs into
+    // allowlisted territory with no affiliate link attached, so they are
+    // stripped before matching. A /go/<partner> slug or a cfjump URL is not
+    // stripped, which is the thing the guard is actually for.
+    const scoped = p.allow.reduce(
+      (acc, a) => acc.split(new RegExp(`"${a}/[^"]*"`, "g")).join('""'),
+      src,
+    );
+    if (!p.tokens.some((t) => scoped.includes(t))) continue;
     if (p.allow.some((a) => route === a || route.startsWith(a + "/"))) continue;
     errors.push(
       `${route}: references partner "${p.name}", which is scoped to ${p.allow.join(", ")}. ` +

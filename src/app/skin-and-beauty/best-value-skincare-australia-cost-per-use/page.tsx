@@ -53,6 +53,7 @@ export default function Page() {
       related={[
         { href: "/skin-and-beauty/retinol-vs-prescription-strength-australia", label: "Retinol vs prescription-strength" },
         { href: "/skin-and-beauty/led-face-mask-comparison-australia", label: "LED face masks" },
+        { href: "/skin-and-beauty/natural-skincare-australia", label: "Natural vs certified organic" },
         { href: "/skin-and-beauty/skincare-quiz", label: "Which routine fits you?" },
       ]}
     >

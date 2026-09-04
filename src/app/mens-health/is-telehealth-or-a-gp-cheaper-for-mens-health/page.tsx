@@ -1,5 +1,6 @@
 import SectionGuideShell from "@/components/consumer/SectionGuideShell";
 import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
+import { MIDOC } from "@/lib/partners/midoc";
 
 import PartnerRoute from "@/components/consumer/PartnerRoute";
 export const metadata = generateSEOMetadata(seoConfig.telehealthVsGpMens);
@@ -53,6 +54,7 @@ export default function Page() {
       related={[
         { href: "/mens-health/online-mens-health-clinics-compared", label: "Clinics compared" },
         { href: "/mens-health/erectile-dysfunction-treatment-cost-australia", label: "Erectile dysfunction costs" },
+        { href: "/mens-health/online-prescription-australia", label: "Online prescription costs" },
       ]}
     >
       <section>
@@ -150,7 +152,7 @@ export default function Page() {
             name: "Midoc",
             href: "/go/midoc-telehealth-vs-gp",
             what: "Australian telehealth with AHPRA-registered doctors, covering consultations, scripts, specialist referrals and medical certificates. Pricing is shown before you commit and there is no membership fee.",
-            checked: "3 September 2026",
+            checked: MIDOC.readOnLabel,
           },
         ]}
       />

@@ -56,7 +56,8 @@ export default function PartnerRoute({
                 <p className="mt-1 text-sm leading-relaxed text-[#3d4b44]">{p.what}</p>
                 {p.checked && (
                   <p className="mt-2 text-[11px] font-medium text-[#6e7b74]">
-                    Read off {p.name}&apos;s own site on {p.checked}.
+                    Read off {p.name}
+                    {p.name.endsWith("s") ? <>&apos;</> : <>&apos;s</>} own site on {p.checked}.
                   </p>
                 )}
                 <a

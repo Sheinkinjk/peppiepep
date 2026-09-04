@@ -56,6 +56,7 @@ export default function Page() {
       faqs={faqs}
       related={[
         { href: "/mens-health/is-telehealth-or-a-gp-cheaper-for-mens-health", label: "Telehealth or a GP?" },
+        { href: "/mens-health/online-doctor-medical-certificate-australia", label: "Online medical certificates" },
         { href: "/mens-health/mens-health-quiz", label: "Which route fits you?" },
       ]}
     >
@@ -142,7 +143,7 @@ export default function Page() {
             name: "Midoc",
             href: "/go/midoc-clinics-compared",
             what: `Australian telehealth with ${MIDOC.practitioners}. Standard consultations ${MIDOC.consultStandard}, specialist ${MIDOC.consultSpecialist}, medical certificates from ${MIDOC.certificateSingleDay}, ${MIDOC.waitTime}.`,
-            checked: "3 September 2026",
+            checked: MIDOC.readOnLabel,
           },
         ]}
       />

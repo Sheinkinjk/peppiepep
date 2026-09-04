@@ -11,8 +11,9 @@ export const metadata = generateSEOMetadata(seoConfig.midoc);
 const UPDATED = MIDOC.readOn;
 
 /**
- * Everything factual on this page was read off midoc.com.au on 3 September 2026
- * and is stated with that date beside it, per the site's provenance rule.
+ * Every figure on this page comes from src/lib/partners/midoc.ts, which carries
+ * the date it was read off midoc.com.au and prints it beside the numbers, per
+ * the site's provenance rule. Refreshing the prices is one edit to that file.
  *
  * TGA: Midoc supplies Schedule 4 treatments through several of the lines below,
  * and this page carries a commission link, so it cannot claim the editorial
@@ -122,7 +123,7 @@ export default function MidocPage() {
           <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">What a Midoc consultation costs</h2>
           <p className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">
             Midoc publishes its prices rather than quoting after an assessment, and states there is no
-            membership fee. Every figure below was read off midoc.com.au on 3 September 2026 and can
+            membership fee. Every figure below was read off midoc.com.au on {MIDOC.readOnLabel} and can
             change, so confirm the current price on their site before you book.
           </p>
           <dl className="mt-6 divide-y divide-[#eef1ef] overflow-hidden rounded-2xl border border-[#e5e9e7] bg-white">
@@ -173,7 +174,7 @@ export default function MidocPage() {
               name: "Midoc",
               href: "/go/midoc-brand-page",
               what: `Consultations from ${MIDOC.consultStandard}, medical certificates from ${MIDOC.certificateSingleDay}, mental health care plans ${MIDOC.mentalHealth}. Phone or video, nationally, ${MIDOC.waitTime}.`,
-              checked: "3 September 2026",
+              checked: MIDOC.readOnLabel,
             },
           ]}
         />
@@ -195,6 +196,8 @@ export default function MidocPage() {
           <ul className="mt-4 space-y-2 text-[15px]">
             <li><Link href="/mens-health/is-telehealth-or-a-gp-cheaper-for-mens-health" className="text-[#0a7c42] hover:underline">Is telehealth or a GP cheaper for men&apos;s health?</Link></li>
             <li><Link href="/mens-health/online-mens-health-clinics-compared" className="text-[#0a7c42] hover:underline">Online men&apos;s health clinics compared</Link></li>
+            <li><Link href="/mens-health/online-prescription-australia" className="text-[#0a7c42] hover:underline">Online prescriptions in Australia: cost and Medicare</Link></li>
+            <li><Link href="/mens-health/online-doctor-medical-certificate-australia" className="text-[#0a7c42] hover:underline">Online medical certificates: cost and turnaround</Link></li>
             <li><Link href="/mens-health" className="text-[#0a7c42] hover:underline">All men&apos;s health guides</Link></li>
           </ul>
         </section>

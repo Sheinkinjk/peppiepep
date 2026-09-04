@@ -209,7 +209,7 @@ export default function SexualWellnessProductsPage() {
               name: "Midoc",
               href: "/go/midoc-sexual-wellness",
               what: `Sexual health and STI consultations listed at ${MIDOC.consultStandard}, ${MIDOC.format}, ${MIDOC.waitTime}.`,
-              checked: "3 September 2026",
+              checked: MIDOC.readOnLabel,
             },
           ]}
         />

@@ -27,12 +27,12 @@ const SECTIONS = [
     accent: "#7A5A8C",
     tint: "#F2ECF6",
     title: "Skin & Beauty",
-    live: "Six guides, live now",
+    live: "Eight guides, live now",
     body: "What over-the-counter actives do and how the prescription route differs, verified Australian device prices against the US listing, and why cosmetic clinics will not publish a price.",
     links: [
       { h: "/skin-and-beauty/led-face-mask-comparison-australia", l: "LED masks: the real AUD prices" },
-      { h: "/skin-and-beauty/acne-treatment-options-and-costs-australia", l: "Acne: routes and costs" },
-      { h: "/skin-and-beauty/skincare-quiz", l: "Which routine fits you?" },
+      { h: "/skin-and-beauty/foreo-luna-vs-ufo", l: "Foreo Luna vs UFO" },
+      { h: "/skin-and-beauty/natural-skincare-australia", l: "Natural vs certified organic" },
     ],
   },
   {
@@ -41,12 +41,12 @@ const SECTIONS = [
     accent: "#2F6E5A",
     tint: "#E7F1EC",
     title: "Men's Health",
-    live: "Five guides, live now",
+    live: "Seven guides, live now",
     body: "How the access routes are priced, why a subscription and a consult fee are not comparable figures, and the rebated pathway most single-condition services cannot arrange. No medicine is named anywhere.",
     links: [
       { h: "/mens-health/erectile-dysfunction-treatment-cost-australia", l: "What the routes cost" },
-      { h: "/mens-health/is-telehealth-or-a-gp-cheaper-for-mens-health", l: "Telehealth or a GP?" },
-      { h: "/mens-health/mens-health-quiz", l: "Which route fits you?" },
+      { h: "/mens-health/online-prescription-australia", l: "Online prescription: cost and Medicare" },
+      { h: "/mens-health/online-doctor-medical-certificate-australia", l: "Medical certificate: cost and speed" },
     ],
   },
   {

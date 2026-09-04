@@ -55,6 +55,7 @@ export default function Page() {
       related={[
         { href: "/skin-and-beauty/retinol-vs-prescription-strength-australia", label: "Retinol vs prescription-strength" },
         { href: "/skin-and-beauty/best-value-skincare-australia-cost-per-use", label: "Cost per use" },
+        { href: "/skin-and-beauty/natural-skincare-australia", label: "Natural vs certified organic" },
       ]}
     >
       <section>

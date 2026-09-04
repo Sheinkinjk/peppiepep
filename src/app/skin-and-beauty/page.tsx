@@ -22,6 +22,16 @@ const guides = [
     desc: "Real Australian prices, why they are higher than the US listing, and how to check the ARTG.",
   },
   {
+    href: "/skin-and-beauty/foreo-luna-vs-ufo",
+    title: "Foreo Luna vs UFO",
+    desc: "Two separate device lines rather than two versions of one, with Australian list prices for both.",
+  },
+  {
+    href: "/skin-and-beauty/natural-skincare-australia",
+    title: "Natural vs certified organic",
+    desc: "One of those words is checkable in a public register and the other is not. Which, and how.",
+  },
+  {
     href: "/skin-and-beauty/best-value-skincare-australia-cost-per-use",
     title: "Cost per use, not sticker price",
     desc: "Why a $90 serum can work out cheaper than a $30 one, and where the maths misleads you.",

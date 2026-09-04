@@ -41,6 +41,16 @@ const guides = [
     desc: "Consult models, subscription structures, and what is billed separately.",
   },
   {
+    href: "/mens-health/online-doctor-medical-certificate-australia",
+    title: "Online medical certificate: cost and speed",
+    desc: `From ${MIDOC.certificateSingleDay} for a single day, with what the review actually buys you.`,
+  },
+  {
+    href: "/mens-health/online-prescription-australia",
+    title: "Online prescription: cost and Medicare",
+    desc: `${MIDOC.scriptRepeat} for a repeat, ${MIDOC.scriptNew} for a new script, and the identifier that decides whether you get one.`,
+  },
+  {
     href: "/mens-health/is-telehealth-or-a-gp-cheaper-for-mens-health",
     title: "Telehealth or a GP: which is cheaper?",
     desc: "The same question costed over a year rather than a single appointment.",
@@ -219,7 +229,7 @@ export default function MensHealthHub() {
               name: "Midoc",
               href: "/go/midoc-mens-health-hub",
               what: `Australian telehealth with ${MIDOC.practitioners}. Standard consultations ${MIDOC.consultStandard}, specialist ${MIDOC.consultSpecialist}, certificates from ${MIDOC.certificateSingleDay}, ${MIDOC.waitTime}. Read our full Midoc page for what it costs and who it suits.`,
-              checked: "3 September 2026",
+              checked: MIDOC.readOnLabel,
             },
           ]}
         />

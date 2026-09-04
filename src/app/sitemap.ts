@@ -49,6 +49,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/mens-health/premature-ejaculation-treatment-options-australia`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.72 },
     { url: `${BASE}/mens-health/online-mens-health-clinics-compared`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.72 },
     { url: `${BASE}/mens-health/is-telehealth-or-a-gp-cheaper-for-mens-health`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE}/mens-health/online-doctor-medical-certificate-australia`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.75 },
+    { url: `${BASE}/mens-health/online-prescription-australia`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.75 },
     { url: `${BASE}/mens-health/sexual-wellness-products`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${BASE}/mens-health/mens-health-quiz`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.65 },
     // Sleep (19 Aug 2026). Category live and indexed ahead of partners.
@@ -66,6 +68,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/skin-and-beauty/best-value-skincare-australia-cost-per-use`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE}/skin-and-beauty/acne-treatment-options-and-costs-australia`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE}/skin-and-beauty/anti-ageing-treatments-what-they-cost`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE}/skin-and-beauty/foreo-luna-vs-ufo`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.72 },
+    { url: `${BASE}/skin-and-beauty/natural-skincare-australia`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.72 },
     { url: `${BASE}/skin-and-beauty/skincare-quiz`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.65 },
     { url: `${BASE}/for-business`,       lastModified: FRESH,  changeFrequency: 'monthly', priority: 0.7 },
     // Programmatic category hubs (auto-generated from the catalog)
