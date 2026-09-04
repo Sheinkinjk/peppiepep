@@ -22,7 +22,8 @@
     "load:test": "node scripts/load-test.mjs",
     "check-aeo": "node scripts/check-aeo.mjs",
     "check-partner-scope": "node scripts/check-partner-scope.mjs",
-    "prebuild": "node scripts/check-partner-scope.mjs"
+    "prebuild": "node scripts/check-partner-scope.mjs && node scripts/check-partner-freshness.mjs",
+    "check-freshness": "node scripts/check-partner-freshness.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.71.2",

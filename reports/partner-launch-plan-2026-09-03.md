@@ -240,3 +240,57 @@ the client is fine. Sending the answer to the server is not.
    health pays, and the cookie window.
 4. **Foreo AU shipping and commissionability** — no AU storefront exists.
 5. **ARTG status** for any Foreo device we link from the LED page.
+
+---
+
+## Addendum, 4 September 2026: the failure shape, and what now catches it
+
+Four instances of one fault have now been found by hand rather than by a check:
+
+| # | The stale claim | What changed underneath it |
+|---|---|---|
+| 1 | `/mens-health/sexual-wellness-products` rendered "nothing here earns us a commission" | it gained a Midoc link |
+| 2 | `midoc.ts` duplicated `$49` between the scalar fields and the `bands` table | one copy was edited |
+| 3 | `llms.txt` told AI engines "Refer Labs has NO commercial partner in this category" for both hubs, and `/midoc` had no entry at all | four partners went live |
+| 4 | Seven files carried `checked: "3 September 2026"` as a literal | the source was re-read on the 4th |
+
+None of these was a mistake at the time of writing. Each was **true when written and
+went stale when something elsewhere changed**, which is why proofreading does not find
+them: the sentence still reads correctly, it is just no longer describing the site.
+
+**The rule that follows.** Any sentence asserting the commercial state of a hub, a page
+or a price is a **generated artefact that happens to be stored as prose**. It is output,
+not writing. It may not be hand-maintained, it may not be duplicated, and it must either
+be derived from the thing it describes or be guarded by a check that compares the two.
+`llms.txt` is the clearest case: nobody opens it when they add a link, so left to prose
+it drifts into asserting the opposite of the site to the engines we most want to cite us.
+
+### What now enforces it
+
+`scripts/check-partner-scope.mjs`, run in `prebuild`:
+
+1. A page carrying a partner link may not render coming-soon wording that says it earns
+   nothing. *(catches #1)*
+2. A partner token may not appear outside its allowlisted route prefixes. Internal links
+   into allowlisted territory are stripped first, so an index page can name a partner
+   page without tripping it, while a `/go/` slug or a `cfjump` URL outside its hub still
+   fires.
+3. **New.** `llms.txt` may not tell engines a hub earns nothing when a page in it carries
+   a partner link, and every live partner must be named in `llms.txt` **prose**. URLs and
+   bare domains are stripped before that test, because `midoc.com.au` appeared inside
+   other entries the whole time `/midoc` was missing, and a naive substring test passes on
+   exactly the fault it exists to catch. *(catches #3)*
+
+`scripts/check-partner-freshness.mjs`, also in `prebuild`: every file in
+`src/lib/partners/` must carry a `readOn` date and a `source` URL. Silent under 45 days,
+warns from 45 with the list of pages that print its figures, fails the build at 90.
+*(the thing #2 and #4 were symptoms of: a date nobody re-reads)*
+
+All three guards were verified by reintroducing the real fault and confirming the check
+fires, then reverting.
+
+### Still only catchable by hand
+
+A price that changed on the vendor's site. No check can see that. The freshness escalation
+is the substitute: it does not detect a wrong number, it makes it progressively harder to
+ship without going to look.

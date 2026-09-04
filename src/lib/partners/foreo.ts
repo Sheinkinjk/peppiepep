@@ -31,6 +31,8 @@ export type ForeoDevice = {
 export const FOREO = {
   readOn: "2026-09-04",
   readOnLabel: "4 September 2026",
+  /** Read by scripts/check-partner-freshness.mjs; every partner file needs one. */
+  source: "https://www.foreo.com/luna-collection and https://www.foreo.com/ufo",
   sources: {
     luna: "https://www.foreo.com/luna-collection",
     ufo: "https://www.foreo.com/ufo",

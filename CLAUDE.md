@@ -140,6 +140,51 @@ Run this in order. Steps 1-3 are the ones that were repeatedly missed and cost r
 
 **9. Keep `llms.txt` clean.** Retiring or redirecting a page means removing its `llms.txt` entry: pointing AI engines at a 308 wastes the citation. Re-run the URL check after any retirement.
 
+### Adding a partner to a coming-soon hub: the five artefacts
+
+Partners one through four were each added from memory and each one missed something
+different. A partner addition is exactly these five things, in this order. If you are not
+touching all five, you have not finished.
+
+1. **Destination** — one entry per *placement* in `src/lib/go-links.ts`, keyed
+   `<partner>-<page-slug>`, so a conversion can be attributed to the page that produced it.
+   Never one entry per partner: most networks cannot tell our pages apart, and the slug is
+   the only signal we get. Deep-link only if a server response proves the referral survives
+   the hop; Midoc's does not, so every Midoc placement points at the homepage on purpose.
+2. **Data file** — `src/lib/partners/<partner>.ts`, holding every price and access fact,
+   with a **`readOn`** date and a **`source`** URL. Both are mandatory and
+   `check-partner-freshness` enforces them. Declare each price once as a constant and
+   reference it from every field, including any table: the first version of `midoc.ts`
+   duplicated its prices and a test edit moved 30 mentions while leaving 2 behind. Derive
+   anything computed (a spread, a count, a cheapest model) rather than typing it.
+3. **Allowlist** — a `PARTNERS` entry in `scripts/check-partner-scope.mjs` naming the
+   tokens and the *only* route prefixes the partner may appear under. Without it the
+   partner can leak onto a page monetised by a competitor.
+4. **Registries** — `seoConfig`, `sitemap.ts`, `search-index.ts`, `/guides`, the hub's own
+   `guides` array, `/coming-soon`, and `offers.ts` **if and only if there is a genuine
+   monetary discount**. Reverse `relatedLinks` from 1-2 siblings so the page is not an
+   orphan.
+5. **`llms.txt`** — the partner named in prose, the code stated literally if there is one,
+   and **every stale "we earn nothing here" sentence removed**. On 4 Sep 2026 this file
+   was still telling AI engines both partnered hubs had no commercial partner.
+   `check-partner-scope` now fails the build on that, but it only checks the sentences it
+   knows about: read the hub's entry, do not just grep.
+
+Then `npm run build` (which runs both guards), `npm run check-offers`, and `npm run
+check-aeo`. Verify against the live site after deploying, never the filesystem.
+
+**Re-verification.** `check-partner-freshness` is silent under 45 days, warns from 45 with
+the list of pages that print the figures, and fails the build at 90. To clear it, open the
+`source` URL, correct anything that moved, then set `readOn` to today. Bumping `readOn`
+without re-reading makes the date a lie, and the date is the claim the pages print.
+
+**The failure shape to watch for.** Every one of these rules exists because a sentence that
+was true when written went stale when something else changed. Any text asserting the
+commercial state of a hub, a page or a price is a generated artefact stored as prose: it
+must be derived from the thing it describes, or guarded by a check that compares the two.
+Never hand-maintained, never duplicated. See the addendum in
+`reports/partner-launch-plan-2026-09-03.md`.
+
 ### Adding an offer: run the checker
 `npm run check-offers` verifies every brand page reaches all eight places an offer has to land (seoConfig, sitemap, search-index, /guides, offers.ts, llms.txt, plus the discount appearing in the `<title>`). Steps 5-8 are the ones historically skipped: Knose and PetsOnMe were both live for months without ever appearing on `/deals`, which fails silently and costs real revenue. Run it after adding a program and before pushing.
 
