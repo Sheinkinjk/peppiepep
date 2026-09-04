@@ -15,9 +15,17 @@ export const metadata = generateSEOMetadata(seoConfig.onlinePrescription);
  * between a wasted fee and a script for anyone without a card. That is the
  * single most decision-load-bearing thing on the page and it leads.
  *
- * TGA: no medicine is named anywhere. "Antibiotics" appears as one of the three
- * request types Midoc publishes, which is a therapeutic class rather than an
- * identifiable medicine, and it is stated with their own conditionality intact.
+ * TGA: no medicine and no therapeutic class is named anywhere.
+ *
+ * An earlier version of this page priced Midoc's antibiotic request line as one
+ * of three tiers, on the reasoning that a class name is not an identifiable
+ * medicine and that stewardship context made it safe. Removed on 4 Sep 2026.
+ * Every member of that class is Schedule 4, the page carries a commission link
+ * so it cannot claim the editorial exemption, and pricing a route to a class of
+ * prescription medicine is the thing National Law s133(1)(e) is aimed at when it
+ * prohibits encouraging the indiscriminate or unnecessary use of health
+ * services. The stewardship paragraph was a mitigation for a risk we did not
+ * have to take. `check-partner-scope` now denies the term for this partner.
  */
 
 const faqs = [
@@ -27,7 +35,7 @@ const faqs = [
   },
   {
     q: "How much is an online prescription?",
-    a: `Midoc lists ${MIDOC.scriptNew} for a new script, ${MIDOC.scriptRepeat} for a repeat and ${MIDOC.scriptAntibiotic} for an antibiotic request, each available ${MIDOC.scriptsHours}, read off midoc.com.au/instantscripts on 4 September 2026. That is the platform fee only. The medicine itself is priced separately by the pharmacy that dispenses it, and for most people that second amount is the larger one.`,
+    a: `Midoc lists ${MIDOC.scriptNew} for a new script and ${MIDOC.scriptRepeat} for a repeat, each available ${MIDOC.scriptsHours}, read off midoc.com.au/instantscripts on 4 September 2026. That is the platform fee only. The medicine itself is priced separately by the pharmacy that dispenses it, and for most people that second amount is the larger one.`,
   },
   {
     q: "What is the difference between a new script and a repeat?",
@@ -46,10 +54,6 @@ const faqs = [
     a: `Midoc's page says both things: the product copy says ${MIDOC.scriptRepeatCountProductCopy}, and the FAQ further down the same page says ${MIDOC.scriptRepeatCountFaq}. We cannot resolve that for you, so ask before paying if you need more than one.`,
   },
   {
-    q: "Can I just request antibiotics online?",
-    a: "You can make the request, which is not the same as receiving a prescription. Most coughs, colds, sore throats and flu are viral, and antibiotics do nothing for a viral illness while adding side effects and contributing to resistance. A practitioner declining an antibiotic request is the system working, not a service failing you, and prescribing that is not clinically warranted is something practitioners are accountable to AHPRA for. If you are unwell enough to be worried, the thing worth paying for is the assessment.",
-  },
-  {
     q: "Is this cheaper than seeing my GP?",
     a: "If your practice bulk bills and can fit you in, the GP route costs nothing and the online fee is pure additional spend. The case for paying is speed and availability rather than price, particularly outside clinic hours. Where the online fee wins outright is when the alternative is going without.",
   },
@@ -58,7 +62,6 @@ const faqs = [
 const REQUEST_TYPES: [string, string, string][] = [
   ["Repeat script", MIDOC.scriptRepeat, `For a medicine you already take regularly. Requires ${MIDOC.scriptRepeatProof}.`],
   ["New script", MIDOC.scriptNew, "For something you do not take regularly. Issued where a practitioner assesses it as appropriate."],
-  ["Antibiotic request", MIDOC.scriptAntibiotic, "Reviewed the same way, and declined where a practitioner judges it is not appropriate."],
 ];
 
 export default function Page() {
@@ -159,17 +162,14 @@ export default function Page() {
       <section>
         <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">A request is not a prescription</h2>
         <p className="mt-3">
-          All three request types end the same way: a practitioner decides. Midoc conditions every
-          one of them on the request being clinically appropriate, and the fee buys that assessment
-          whichever way it goes.
+          Both request types end the same way: a practitioner decides. Midoc conditions each of them
+          on the request being clinically appropriate, and the fee buys that assessment whichever way
+          it goes.
         </p>
         <p className="mt-3">
-          That matters most for the antibiotic line. Most coughs, colds, sore throats and flu are
-          viral, and antibiotics do nothing for a viral illness while adding side effects and
-          contributing to resistance that makes them less useful for everyone later. A practitioner
-          who declines is doing the job. If you go in treating the fee as the price of a
-          medicine rather than the price of an opinion, you have misunderstood what is being sold,
-          and you will be annoyed by the correct outcome.
+          If you go in treating the fee as the price of a medicine rather than the price of an
+          opinion, you have misunderstood what is being sold, and you will be annoyed by the correct
+          outcome. A practitioner who says no has done the job you paid for.
         </p>
       </section>
 

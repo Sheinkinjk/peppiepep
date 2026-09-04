@@ -16,7 +16,17 @@
  * without re-reading: the date is the claim, not decoration. If a figure has
  * gone, delete it rather than leaving the last-known number in place.
  *
- * TGA: nothing here may name a medicine. Midoc supplies Schedule 4 treatments
+ * TGA, AND A CLASS COUNTS, NOT ONLY A MOLECULE. The TGA's guidance on complying
+ * with the restrictions on advertising prescription medicines (read 4 Sep 2026)
+ * puts "reference to a class of prescription medicines, including indirectly or
+ * using substitute terms" in the same prohibited table as brand names, with
+ * "weight-loss injections" and "peptides" as worked examples. "COVID-19
+ * antivirals" sat in this file until then, describing a consultation line. It is
+ * now the condition, "COVID-19", because the TGA's own general guide is that
+ * promoting the conditions a service covers, without referring to the goods, is
+ * unlikely to constitute advertising of those goods.
+ *
+ * Nothing here may name a medicine. Midoc supplies Schedule 4 treatments
  * through several of these lines, and every page quoting this file carries a
  * commission link, so none of them can claim the editorial exemption. Service
  * names and prices only.
@@ -25,7 +35,6 @@ const CONSULT_STANDARD = "$49";
 const CONSULT_SPECIALIST = "$69";
 const SCRIPT_REPEAT = "$18";
 const SCRIPT_NEW = "$39";
-const SCRIPT_ANTIBIOTIC = "$39";
 const CERT_SINGLE = "$18";
 const CERT_WEEK = "$36";
 const MENTAL_HEALTH = "fully bulk billed";
@@ -42,7 +51,6 @@ export const MIDOC = {
   consultSpecialist: CONSULT_SPECIALIST,
   scriptRepeat: SCRIPT_REPEAT,
   scriptNew: SCRIPT_NEW,
-  scriptAntibiotic: SCRIPT_ANTIBIOTIC,
   /** Midoc's own framing, read off midoc.com.au/scripts on 3 Sep 2026. */
   scriptSpeed: "in minutes",
 
@@ -146,12 +154,11 @@ export const MIDOC = {
   practitioners: "doctors registered with AHPRA",
 
   bands: [
-    { band: "Standard consultation", price: CONSULT_STANDARD, items: "General health, child health, COVID-19 antivirals, hair loss, sexual health and STI, smoking cessation, continence." },
+    { band: "Standard consultation", price: CONSULT_STANDARD, items: "General health, child health, COVID-19, hair loss, sexual health and STI, smoking cessation, continence." },
     { band: "Specialist consultation", price: CONSULT_SPECIALIST, items: "Among other services: men's health (priced after the Medicare rebate), dementia support, wound care." },
     { band: "Mental health care plan or review", price: "Fully bulk billed", items: "Listed at no cost, so there is nothing for us to earn on it." },
     { band: "Repeat script", price: SCRIPT_REPEAT, items: "A repeat of something already prescribed to you." },
     { band: "New script", price: SCRIPT_NEW, items: "For something you do not take regularly. Issued where a practitioner assesses it as appropriate." },
-    { band: "Antibiotic request", price: SCRIPT_ANTIBIOTIC, items: "Reviewed like any other request, and declined where it is not appropriate." },
     { band: "Medical or carer certificate, single day", price: CERT_SINGLE, items: "Reviewed by an Australian-registered doctor. Carer certificates are priced the same as medical ones." },
     { band: "Medical or carer certificate, multiple days", price: CERT_WEEK, items: "The same review, covering a longer period." },
   ],

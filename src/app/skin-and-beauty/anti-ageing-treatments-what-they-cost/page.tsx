@@ -22,7 +22,7 @@ const faqs = [
   },
   {
     q: "Why do cosmetic clinics not advertise prices?",
-    a: "Partly commercial and partly legal. Many cosmetic injectable treatments involve prescription-only medicines, and advertising prescription medicines to the public is prohibited in Australia. That restriction extends to promoting them by price or by offering discounts on them, which is why clinics describe consultations rather than products and why price lists are often behind an enquiry form.",
+    a: "Partly commercial and partly legal. Many cosmetic clinic treatments involve prescription-only medicines, and advertising prescription medicines to the public is prohibited in Australia. That restriction extends to promoting them by price or by offering discounts on them, which is why clinics describe consultations rather than products and why price lists are often behind an enquiry form.",
   },
   {
     q: "What makes one quote higher than another?",
@@ -118,7 +118,7 @@ export default function Page() {
           {
             name: "Foreo",
             href: "/go/foreo-anti-ageing",
-            what: "Sells its red light therapy range direct. Check the listed price in Australian dollars and the shipping terms to an Australian address at checkout, and search the ARTG yourself for any device you are considering.",
+            what: "Sells LED skincare devices direct in Australia. Check the listed price in Australian dollars and the shipping terms to an Australian address at checkout, and search the ARTG yourself for any device you are considering.",
           },
         ]}
       />

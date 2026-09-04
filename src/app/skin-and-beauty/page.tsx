@@ -210,7 +210,7 @@ export default function SkinAndBeautyHub() {
             {
               name: "Foreo",
               href: "/go/foreo-skin-hub",
-              what: "Sells its red light therapy range direct. Check the listed price in Australian dollars and the shipping terms to an Australian address at checkout.",
+              what: "Sells LED skincare devices direct in Australia. Check the listed price in Australian dollars and the shipping terms to an Australian address at checkout.",
             },
             {
               name: "Edible Beauty Australia",

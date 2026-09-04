@@ -54,7 +54,7 @@ const faqs = [
  * no provenance. Every table of prices on this site should be quotable in
  * isolation without becoming an undated claim.
  */
-function DeviceTable({ rows, caption }: { rows: readonly { name: string; price: string; blurb: string }[]; caption: string }) {
+function DeviceTable({ rows, caption, descriptionHeader }: { rows: readonly { name: string; price: string; blurb: string }[]; caption: string; descriptionHeader: string }) {
   return (
     <div className="mt-4 overflow-x-auto rounded-2xl border border-[#e5e9e7]">
       <table className="w-full min-w-[560px] border-collapse text-left text-sm">
@@ -67,7 +67,7 @@ function DeviceTable({ rows, caption }: { rows: readonly { name: string; price: 
             <th className="px-4 py-3 font-semibold">
               Price, {FOREO.readOnShort}
             </th>
-            <th className="px-4 py-3 font-semibold">Foreo&apos;s own description</th>
+            <th className="px-4 py-3 font-semibold">{descriptionHeader}</th>
           </tr>
         </thead>
         <tbody className="divide-y divide-[#eef1ef]">
@@ -141,7 +141,7 @@ export default function Page() {
 
       <section>
         <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">The LUNA line and what it costs</h2>
-        <DeviceTable rows={FOREO.luna} caption="Foreo LUNA devices and Australian list prices" />
+        <DeviceTable rows={FOREO.luna} caption="Foreo LUNA devices and Australian list prices" descriptionHeader="Foreo's own description" />
         <p className="mt-3 text-sm text-[#3d4b44]">
           Foreo states {FOREO.lunaBattery}, and {FOREO.lunaMaterial}. Note that{" "}
           {LUNA_SHARED_PRICE.count} separate devices sat at {LUNA_SHARED_PRICE.price} on{" "}
@@ -153,7 +153,7 @@ export default function Page() {
 
       <section>
         <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">The UFO line and what it costs</h2>
-        <DeviceTable rows={FOREO.ufo} caption="Foreo UFO devices and Australian list prices" />
+        <DeviceTable rows={FOREO.ufo} caption="Foreo UFO devices and Australian list prices" descriptionHeader="What it is, in our words" />
         <p className="mt-3 text-sm text-[#3d4b44]">
           On {FOREO.readOnLabel} the line ran from {FOREO_ENTRY.ufo.price} to {FOREO_TOP.ufo.price},
           and Foreo&apos;s own descriptions do not explain what the extra {UFO_SPREAD} buys beyond
@@ -180,38 +180,42 @@ export default function Page() {
 
       <section>
         <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">
-          &quot;Red light therapy&quot; is Foreo&apos;s product name, and it is worth checking
+          Foreo held an Australian therapeutic-goods registration and gave it up
         </h2>
         <p className="mt-3">
-          Four of the UFO models carry the phrase in the name Foreo gives them. That is their
-          wording, reproduced above in the column headed as theirs, and it is not us saying the
-          devices do anything therapeutic. We make no claim about what any device here achieves.
+          {FOREO.artg.sponsor} was the sponsor of ARTG entry {FOREO.artg.entry}, a{" "}
+          {FOREO.artg.product.toLowerCase()}. It was {FOREO.artg.basis}, effective{" "}
+          {FOREO.artg.cancelled}. Read on the TGA&apos;s own site on {FOREO.artg.readOn}. We could
+          find no current ARTG entry for a LUNA or a UFO, though the register&apos;s search blocks
+          automated queries, so treat that as a gap in our checking rather than a finding.
         </p>
         <p className="mt-3">
-          It does change what you should check before buying. In Australia a device represented for
-          a therapeutic purpose is regulated, and should appear on the Australian Register of
-          Therapeutic Goods. Search the ARTG yourself by brand or sponsor name rather than reading a
-          product name as a regulatory status. Inclusion means a device met the requirements for
-          lawful supply here. It is not a promise about results for your skin, and a name containing
-          the word therapy is not evidence of either.
+          What it tells you is worth more than a marketing line. A device represented for a
+          therapeutic purpose is regulated in Australia and should appear on the register.
+          Inclusion means a device met the requirements for lawful supply here. It is not a promise
+          about results, and a product name containing the word therapy is not evidence of either.
+          Search the ARTG yourself, by brand or by sponsor, before reading any name as a regulatory
+          status.
         </p>
         <p className="mt-3">
-          The same check is worth running on any device in this category, which is why our{" "}
+          It is also why the UFO table above describes each model by what it emits rather than
+          repeating the marketing name. We are not in a position to say these devices do anything
+          therapeutic, so we do not describe them as though they do. The same reasoning is why our{" "}
           <a href="/skin-and-beauty/led-face-mask-comparison-australia" className="font-semibold text-[#0a7c42] underline">
             LED face mask page
           </a>{" "}
-          carries it too.
+          tells you to search the register there too.
         </p>
       </section>
 
       <PartnerRoute
         heading="Where to buy"
-        intro="Foreo sells direct in Australia. This link goes to their red light therapy range, which is the UFO line."
+        intro="Foreo sells direct in Australia, and we earn a commission if you buy through this link. It goes to the LUNA range."
         providers={[
           {
             name: "Foreo",
             href: "/go/foreo-luna-vs-ufo",
-            what: `The UFO line, ${FOREO_ENTRY.ufo.price} to ${FOREO_TOP.ufo.price} at Australian list prices, on Foreo's own store.`,
+            what: `The LUNA cleansing range, ${FOREO_ENTRY.luna.price} to ${FOREO_TOP.luna.price} at Australian list prices, on Foreo's own store. The UFO models are reachable from the same site.`,
             checked: FOREO.readOnLabel,
           },
         ]}
@@ -221,11 +225,11 @@ export default function Page() {
         <p className="text-sm leading-relaxed text-[#3d4b44]">
           This page describes what these devices are and what they cost. It does not say what any of
           them treats, reduces or clears, because that is a claim we are not in a position to make.
-          Where a product description appears in quotation marks or in the column headed
-          &quot;Foreo&apos;s own description&quot;, those are Foreo&apos;s words about its own
-          products and we neither endorse nor verify them. Foreo publishes user-outcome percentages
-          on its own site; we have deliberately not carried any of them across. General information
-          for an Australian audience.
+          The LUNA descriptions are Foreo&apos;s own words about its own products, which we neither
+          endorse nor verify. The UFO descriptions are ours, and describe what the device emits
+          rather than what the emitting is for. Foreo publishes user-outcome percentages on its own
+          site; we have deliberately not carried any of them across. General information for an
+          Australian audience.
         </p>
       </section>
     </SectionGuideShell>

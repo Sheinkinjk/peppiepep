@@ -72,6 +72,14 @@ const PARTNERS = [
           "prescription-medicine identifiers",
       },
       {
+        pattern: /\bantibiotics?\b/i,
+        reason:
+          "we do not price, list or describe Midoc's antibiotic request line. Every member " +
+          "of that class is Schedule 4, every page linking to Midoc carries a commission so " +
+          "none can claim the editorial exemption, and pricing a route to a class of " +
+          "prescription medicine is what National Law s133(1)(e) is aimed at. Removed 4 Sep 2026",
+      },
+      {
         pattern: /weight[- ]management/i,
         reason:
           "we do not name, price or describe Midoc's weight-management line, because it " +
@@ -82,11 +90,45 @@ const PARTNERS = [
   },
   { name: "Edible Beauty",  tokens: ["edible-beauty", "ediblebeauty"], allow: ["/skin-and-beauty", "/coming-soon"] },
   { name: "Aussie Health",  tokens: ["aussie-health", "aussiehealthproducts"], allow: ["/skin-and-beauty", "/coming-soon"] },
-  { name: "Foreo",          tokens: ["foreo-", "t/60709"],             allow: ["/skin-and-beauty", "/coming-soon"] },
+  {
+    name: "Foreo",
+    // "foreo-" not "Foreo": every page that links Foreo contains a /go/foreo-<slug>,
+    // and the bare brand name appears in index-page link labels like "Foreo Luna vs
+    // UFO", which are internal links into allowlisted territory, not placements.
+    tokens: ["foreo-", "t/60709"],
+    allow: ["/skin-and-beauty", "/coming-soon"],
+    deny: [
+      {
+        pattern: /red[- ]light therap|light therapy (?:range|device)/i,
+        reason:
+          "we do not describe Foreo's devices as therapy in our own voice, and we do not route " +
+          "to foreo.com/red-light-therapy. Under the Therapeutic Goods Act a good is a " +
+          "therapeutic good if it is \"represented in any way\" to be for therapeutic use, and " +
+          "the representation counts against whoever publishes it. Foreo Oceania cancelled its " +
+          "only known ARTG entry on 5 Oct 2023, so our page must not be the thing that puts " +
+          "these back in the therapeutic category. Describe what the device emits instead",
+      },
+    ],
+  },
 ];
 
 /** Wording that asserts the page earns nothing. Must never sit beside a link. */
 const EARNS_NOTHING = /nothing (?:here|on this page) (?:earns us a commission|pays us)/i;
+
+/**
+ * Source with comments removed, for the denial checks.
+ *
+ * The reason a term is denied has to be written down beside the denial, and that
+ * prose necessarily quotes the term. Without this, documenting why we removed
+ * something is what fails the build.
+ *
+ * Line comments are only stripped where "//" starts a line, so a URL inside a
+ * string literal survives. Stripping every "//" would eat the destinations this
+ * file exists to police, which would make the check pass by blinding it.
+ */
+function withoutComments(src) {
+  return src.replace(/\/\*[\s\S]*?\*\//g, "").replace(/^[ \t]*\/\/.*$/gm, "");
+}
 
 function pages(dir, acc = []) {
   for (const e of readdirSync(dir, { withFileTypes: true })) {
@@ -142,10 +184,11 @@ for (const file of pages(APP)) {
   if (hasPartnerLink) linkedRoutes.set(route, new Set());
 
   // ── 4. a denied service line may not appear anywhere, allowed prefix or not ─
+  const prose = withoutComments(src);
   for (const p of PARTNERS) {
     if (!p.deny || !p.tokens.some((t) => src.includes(t))) continue;
     for (const d of p.deny) {
-      const hit = src.match(d.pattern);
+      const hit = prose.match(d.pattern);
       if (hit) errors.push(`${route}: mentions "${hit[0]}" on a page that references ${p.name}. Denied: ${d.reason}.`);
     }
   }
@@ -195,7 +238,7 @@ for (const file of readdirSync(PARTNER_DATA).map((f) => join(PARTNER_DATA, f))) 
     p.tokens.some((t) => file.toLowerCase().includes(t.toLowerCase().replace(/\s+/g, "-"))),
   );
   if (!partner?.deny) continue;
-  const code = readFileSync(file, "utf8").replace(/\/\*[\s\S]*?\*\/|\/\/.*$/gm, "");
+  const code = withoutComments(readFileSync(file, "utf8"));
   for (const d of partner.deny) {
     const hit = code.match(d.pattern);
     if (hit) errors.push(`${file}: contains "${hit[0]}" outside a comment. Denied for ${partner.name}: ${d.reason}.`);

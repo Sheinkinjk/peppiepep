@@ -28,7 +28,7 @@ const FAQS = [
   },
   {
     q: "How much does a Midoc consultation cost?",
-    a: `Midoc lists standard consultations at ${MIDOC.consultStandard}, covering general health, child health, COVID-19 antivirals, hair loss, sexual health and STI, smoking cessation and continence. Specialist consultations are listed at ${MIDOC.consultSpecialist}, covering, among other services, men's health priced after the Medicare rebate, dementia support and wound care. A mental health care plan or review is listed as ${MIDOC.mentalHealth}. Medical certificates are ${MIDOC.certificateSingleDay} for a single day and ${MIDOC.certificateWeek} for multiple days. Read off midoc.com.au on ${MIDOC.readOnLabel}, and prices can change.`,
+    a: `Midoc lists standard consultations at ${MIDOC.consultStandard}, covering general health, child health, COVID-19, hair loss, sexual health and STI, smoking cessation and continence. Specialist consultations are listed at ${MIDOC.consultSpecialist}, covering, among other services, men's health priced after the Medicare rebate, dementia support and wound care. A mental health care plan or review is listed as ${MIDOC.mentalHealth}. Medical certificates are ${MIDOC.certificateSingleDay} for a single day and ${MIDOC.certificateWeek} for multiple days. Read off midoc.com.au on ${MIDOC.readOnLabel}, and prices can change.`,
   },
   {
     q: "How long is the wait?",

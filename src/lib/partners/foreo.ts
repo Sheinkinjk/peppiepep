@@ -11,8 +11,28 @@
  * worth stating on the page: the category is full of US prices quoted at
  * Australians.
  *
- * CLAIM RULE. `blurb` is Foreo's own one-line product descriptor, quoted so a
- * reader can see whose words they are. Nothing here may say a device treats,
+ * CLAIM RULE, AND WHY THE UFO BLURBS ARE OURS AND THE LUNA BLURBS ARE THEIRS.
+ *
+ * `blurb` is normally Foreo's own descriptor, quoted so a reader can see whose
+ * words they are. For the UFO line it is not, and that is deliberate. Foreo names
+ * all four UFO models "red light therapy device". Under the Therapeutic Goods
+ * Act a good is a therapeutic good if it is "represented in any way" to be for
+ * therapeutic use, and reprinting that descriptor four times beside a commission
+ * link puts the representation inside OUR advertisement, whoever wrote it first.
+ * So the UFO rows describe the mechanism instead: what the device emits, not
+ * what the emitting is for.
+ *
+ * The LUNA descriptors stay verbatim. "Cleansing", "massager" and "microcurrent"
+ * describe what a device does; none of them represents a therapeutic use.
+ *
+ * Context, verified on the TGA's own site 4 Sep 2026: Foreo Oceania Pty Ltd held
+ * ARTG entry 288695 for a blue-light phototherapy lamp, home-use, and cancelled
+ * it at its own request effective 5 October 2023. No current ARTG entry for a
+ * LUNA or a UFO could be found. The register's search is bot-blocked, so that is
+ * an absence of evidence and not proof of absence, but it is consistent with
+ * Foreo supplying these in Australia as cosmetic devices rather than therapeutic
+ * ones. Which is exactly why our page must not be the thing that calls them
+ * therapy. Nothing here may say a device treats,
  * reduces or clears any condition, and Foreo's own outcome statistics are
  * deliberately not carried across. We describe what a device does and what it
  * costs.
@@ -24,7 +44,10 @@
 export type ForeoDevice = {
   name: string;
   price: string;
-  /** Foreo's own descriptor, verbatim. */
+  /**
+   * LUNA: Foreo's own descriptor, verbatim, presented as theirs.
+   * UFO: ours, describing mechanism, for the reason in the header comment.
+   */
   blurb: string;
 };
 
@@ -35,6 +58,21 @@ export const FOREO = {
   readOnShort: "4 Sep 2026",
   /** Read by scripts/check-partner-freshness.mjs; every partner file needs one. */
   source: "https://www.foreo.com/luna-collection and https://www.foreo.com/ufo",
+
+  /**
+   * Primary-sourced, and wrong or absent on every competing page: Foreo had an
+   * Australian therapeutic-goods registration and gave it up.
+   * tga.gov.au/resources/cancellations-by-sponsors, read 4 September 2026.
+   */
+  artg: {
+    sponsor: "Foreo Oceania Pty Ltd",
+    entry: "288695",
+    product: "Blue-light phototherapy lamp, home-use",
+    cancelled: "5 October 2023",
+    basis: "cancelled at the sponsor's own request, listed by the TGA under cancellations by sponsors",
+    source: "https://www.tga.gov.au/resources/cancellations-by-sponsors/foreo-oceania-pty-ltd-blue-light-phototherapy-lamp-home-use-cancelled-under-section-41gld-act",
+    readOn: "4 September 2026",
+  },
   sources: {
     luna: "https://www.foreo.com/luna-collection",
     ufo: "https://www.foreo.com/ufo",
@@ -76,10 +114,10 @@ export const FOREO = {
   ] as ForeoDevice[],
 
   ufo: [
-    { name: "UFO 3", price: "A$499", blurb: "Red light therapy device" },
-    { name: "UFO 3 LED", price: "A$329", blurb: "Concentrated NIR & red LED light therapy" },
-    { name: "UFO 3 mini", price: "A$229", blurb: "Red light therapy device for young skin" },
-    { name: "UFO 3 go", price: "A$119", blurb: "Portable red light therapy device" },
+    { name: "UFO 3", price: "A$499", blurb: "Full-size handheld, emits red and near-infrared LED light" },
+    { name: "UFO 3 LED", price: "A$329", blurb: "Emits red and near-infrared LED light, Foreo describes the output as concentrated" },
+    { name: "UFO 3 mini", price: "A$229", blurb: "Smaller handheld, same red and near-infrared LED output" },
+    { name: "UFO 3 go", price: "A$119", blurb: "Travel size, red and near-infrared LED output" },
   ] as ForeoDevice[],
 
   /**

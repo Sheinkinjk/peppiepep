@@ -30,14 +30,29 @@ const MIDOC_HOME = "https://www.midoc.com.au/?ref=ytvpnchm";
  * pages take providers as data. If Adore Beauty, Shaver Shop or Activeskin turn
  * out to be on CF, their link replaces this line.
  *
- * Destination verified 3 Sep 2026: resolves 200 to foreo.com/red-light-therapy
- * with CF tracking intact.
+ * Destinations verified 4 Sep 2026: both resolve 200 with CF tracking intact.
  */
 const EDIBLE_BEAUTY = "https://t.cfjump.com/94361/t/76712";
 const AUSSIE_HEALTH = "https://t.cfjump.com/94361/t/14839";
 
-const FOREO_RED_LIGHT =
-  "https://t.cfjump.com/94361/t/60709?Url=https%3a%2f%2fwww.foreo.com%2fred-light-therapy";
+/**
+ * Points at the UFO PRODUCT page, not foreo.com/red-light-therapy.
+ *
+ * Changed 4 Sep 2026. Under the Therapeutic Goods Act a good is a therapeutic
+ * good if it is "represented in any way" to be for therapeutic use, and the
+ * representation can be made by whoever publishes it. Routing our commission
+ * traffic through a URL whose own path asserts "red light therapy" put that
+ * representation inside our advertisement rather than only on Foreo's site.
+ * The product page carries the same range and the same tracking; both were
+ * confirmed to resolve 200 with cfclick intact on 4 Sep 2026.
+ *
+ * Same principle as the Midoc denial: we do not repeat a claim we would not
+ * publish, and we do not route to the page that makes it.
+ */
+const FOREO_UFO =
+  "https://t.cfjump.com/94361/t/60709?Url=https%3a%2f%2fwww.foreo.com%2fufo";
+const FOREO_LUNA =
+  "https://t.cfjump.com/94361/t/60709?Url=https%3a%2f%2fwww.foreo.com%2fluna-collection";
 
 export const GO_DESTINATIONS: Record<string, string> = {
   "midoc-telehealth-vs-gp": MIDOC_HOME,
@@ -48,10 +63,10 @@ export const GO_DESTINATIONS: Record<string, string> = {
   "midoc-brand-page": MIDOC_HOME,
   "midoc-medical-certificate": MIDOC_HOME,
   "midoc-online-prescription": MIDOC_HOME,
-  "foreo-led-masks": FOREO_RED_LIGHT,
-  "foreo-skin-hub": FOREO_RED_LIGHT,
-  "foreo-anti-ageing": FOREO_RED_LIGHT,
-  "foreo-luna-vs-ufo": FOREO_RED_LIGHT,
+  "foreo-led-masks": FOREO_UFO,
+  "foreo-skin-hub": FOREO_LUNA,
+  "foreo-anti-ageing": FOREO_UFO,
+  "foreo-luna-vs-ufo": FOREO_LUNA,
   "edible-beauty-natural-skincare": EDIBLE_BEAUTY,
   "aussie-health-natural-skincare": AUSSIE_HEALTH,
   "edible-beauty-acne": EDIBLE_BEAUTY,

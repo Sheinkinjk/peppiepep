@@ -136,7 +136,7 @@ export default function Page() {
           {
             name: "Foreo",
             href: "/go/foreo-led-masks",
-            what: "Sells its red light therapy range direct. Check the listed price in Australian dollars and the shipping terms to an Australian address at checkout, and search the ARTG yourself for any device you are considering.",
+            what: "Sells LED skincare devices direct in Australia. Check the listed price in Australian dollars and the shipping terms to an Australian address at checkout, and search the ARTG yourself for any device you are considering.",
           },
         ]}
       />
