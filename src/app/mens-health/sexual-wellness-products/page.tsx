@@ -113,7 +113,12 @@ export default function SexualWellnessProductsPage() {
               themselves, which we will name and link once agreements are in place are not
               on the page yet." The dropped clause said nothing the next sentence does not
               already say. */}
-          <ComingSoonNote category="This page" what="the retailers themselves" />
+          {/* variant="partnered" explicitly, not via BY_CATEGORY: this page passes
+              category="This page", which maps to the unpartnered wording. It now
+              carries a Midoc link, so the old copy ("nothing here earns us a
+              commission before then") became false the moment that landed. The
+              partnered body ignores `what`, so the retailer prop goes with it. */}
+          <ComingSoonNote category="This page" variant="partnered" />
         </div>
 
         <div className="mt-10 space-y-10 text-[15px] leading-relaxed text-[#3d4b44]">
