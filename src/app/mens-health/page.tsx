@@ -5,6 +5,7 @@ import ComingSoonNote from "@/components/consumer/ComingSoonNote";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
 
+import PartnerRoute from "@/components/consumer/PartnerRoute";
 export const metadata = generateSEOMetadata(seoConfig.mensHealthHub);
 
 const SLUG = "/mens-health";
@@ -16,6 +17,13 @@ const SLUG = "/mens-health";
  */
 
 const guides = [
+  {
+    // The provider page, listed first: it is the only page in this hub that
+    // states what a consultation actually costs.
+    href: "/midoc",
+    title: "Midoc: what it costs and how access works",
+    desc: "Consultations from $49, certificates from $18, and who the service does not suit.",
+  },
   {
     href: "/mens-health/erectile-dysfunction-treatment-cost-australia",
     title: "Erectile dysfunction: what treatment costs",
@@ -201,6 +209,19 @@ export default function MensHealthHub() {
             <NewsletterSignup />
           </div>
         </section>
+        <PartnerRoute
+          className="mt-12"
+          heading="Providers in this section"
+          intro="Midoc is the first partner here. More are being added, so this is a starting set rather than the full market."
+          providers={[
+            {
+              name: "Midoc",
+              href: "/go/midoc-mens-health-hub",
+              what: "Australian telehealth with AHPRA-registered doctors. Standard consultations $49, specialist $69, certificates from $18, usually within 5 to 60 minutes. Read our full Midoc page for what it costs and who it suits.",
+              checked: "3 September 2026",
+            },
+          ]}
+        />
       </main>
     </ConsumerShell>
   );

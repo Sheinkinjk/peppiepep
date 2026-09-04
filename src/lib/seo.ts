@@ -937,6 +937,18 @@ export const seoConfig = {
     keywords: [],
   },
 
+  // Australian telehealth partner, men's health hub. No discount code: Midoc's
+  // programme is a referral code on our account, not a consumer offer, so the
+  // title carries the price rather than a discount. Prices read off
+  // midoc.com.au on 3 Sep 2026.
+  midoc: {
+    title: "Midoc Review 2026: Consultations from $49 | Refer Labs",
+    description:
+      "Midoc is Australian telehealth: AHPRA-registered doctors by phone or video, usually within 5 to 60 minutes. Consultations from $49, certificates from $18, read 3 Sep 2026.",
+    url: `${SITE_URL}/midoc`,
+    keywords: ["midoc", "midoc review", "midoc australia", "midoc telehealth", "online doctor australia", "telehealth consultation cost australia", "online medical certificate australia"],
+  },
+
   deals: {
     // Leads with verification because that is the actual differentiator: most
     // "[brand] discount code" results publish expired or invented codes. Every

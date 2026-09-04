@@ -3,6 +3,7 @@ import ConsumerShell from "@/components/consumer/ConsumerShell";
 import ComingSoonNote from "@/components/consumer/ComingSoonNote";
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
 
+import PartnerRoute from "@/components/consumer/PartnerRoute";
 export const metadata = generateSEOMetadata(seoConfig.sexualWellnessProducts);
 
 const SLUG = "/mens-health/sexual-wellness-products";
@@ -193,6 +194,19 @@ export default function SexualWellnessProductsPage() {
             </li>
           </ul>
         </section>
+        <PartnerRoute
+          className="mt-12"
+          heading="If you want the clinical route instead"
+          intro="Products are one thing; a consultation is another. Midoc's sexual health line covers STI and related concerns, and what is appropriate is decided by the practitioner."
+          providers={[
+            {
+              name: "Midoc",
+              href: "/go/midoc-sexual-wellness",
+              what: "Sexual health and STI consultations listed at $49, phone or video with an AHPRA-registered doctor, usually within 5 to 60 minutes.",
+              checked: "3 September 2026",
+            },
+          ]}
+        />
       </main>
     </ConsumerShell>
   );

@@ -4,6 +4,7 @@ import SkincareQuiz from "@/components/consumer/SkincareQuiz";
 import ComingSoonNote from "@/components/consumer/ComingSoonNote";
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
 
+import PartnerRoute from "@/components/consumer/PartnerRoute";
 export const metadata = generateSEOMetadata(seoConfig.skincareQuiz);
 
 const SLUG = "/skin-and-beauty/skincare-quiz";
@@ -96,6 +97,18 @@ export default function SkincareQuizPage() {
         <div className="mt-10">
           <ComingSoonNote category="Skin and beauty" />
         </div>
+        <PartnerRoute
+          className="mt-12"
+          heading="Where to go next"
+          intro="Your answers stay in your browser. This is simply where to buy if you want to act on the result."
+          providers={[
+            {
+              name: "Edible Beauty Australia",
+              href: "/go/edible-beauty-skincare-quiz",
+              what: "An Australian natural skincare range, priced in Australian dollars and shipped domestically.",
+            },
+          ]}
+        />
       </main>
     </ConsumerShell>
   );

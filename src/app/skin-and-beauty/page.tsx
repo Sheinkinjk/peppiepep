@@ -5,6 +5,7 @@ import ComingSoonNote from "@/components/consumer/ComingSoonNote";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
 
+import PartnerRoute from "@/components/consumer/PartnerRoute";
 export const metadata = generateSEOMetadata(seoConfig.skinAndBeauty);
 
 const SLUG = "/skin-and-beauty";
@@ -191,6 +192,28 @@ export default function SkinAndBeautyHub() {
             <NewsletterSignup />
           </div>
         </section>
+        <PartnerRoute
+          className="mt-12"
+          heading="Retailers in this section"
+          intro="Three retailers we have a commercial arrangement with. More are being added, so this is a starting set rather than the full market."
+          providers={[
+            {
+              name: "Foreo",
+              href: "/go/foreo-skin-hub",
+              what: "Sells its red light therapy range direct. Check the listed price in Australian dollars and the shipping terms to an Australian address at checkout.",
+            },
+            {
+              name: "Edible Beauty Australia",
+              href: "/go/edible-beauty-skin-hub",
+              what: "An Australian natural skincare range, priced in Australian dollars and shipped domestically.",
+            },
+            {
+              name: "Aussie Health Products",
+              href: "/go/aussie-health-skin-hub",
+              what: "An Australian retailer carrying health and skincare ranges, priced in Australian dollars.",
+            },
+          ]}
+        />
       </main>
     </ConsumerShell>
   );

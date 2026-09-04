@@ -4,6 +4,7 @@ import MensHealthQuiz from "@/components/consumer/MensHealthQuiz";
 import ComingSoonNote from "@/components/consumer/ComingSoonNote";
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
 
+import PartnerRoute from "@/components/consumer/PartnerRoute";
 export const metadata = generateSEOMetadata(seoConfig.mensHealthQuiz);
 
 const SLUG = "/mens-health/mens-health-quiz";
@@ -96,6 +97,19 @@ export default function MensHealthQuizPage() {
         <div className="mt-10">
           <ComingSoonNote category="Men's health" />
         </div>
+        <PartnerRoute
+          className="mt-12"
+          heading="Where to go next"
+          intro="Whichever route the quiz points you to, one Australian provider we work with covers most of these areas."
+          providers={[
+            {
+              name: "Midoc",
+              href: "/go/midoc-mens-health-quiz",
+              what: "Consultations from $49 across general, sexual health, hair loss and men's health lines, plus certificates from $18. Nationally, phone or video.",
+              checked: "3 September 2026",
+            },
+          ]}
+        />
       </main>
     </ConsumerShell>
   );

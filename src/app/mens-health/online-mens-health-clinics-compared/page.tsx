@@ -1,6 +1,7 @@
 import SectionGuideShell from "@/components/consumer/SectionGuideShell";
 import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
 
+import PartnerRoute from "@/components/consumer/PartnerRoute";
 export const metadata = generateSEOMetadata(seoConfig.mensClinicsCompared);
 
 /**
@@ -130,6 +131,20 @@ export default function Page() {
           a registered practitioner after an individual assessment.
         </p>
       </section>
+
+      <PartnerRoute
+        className="mt-10"
+        heading="Where to start"
+        intro="One Australian provider we have a commercial arrangement with is listed below. More are being added to this comparison."
+        providers={[
+          {
+            name: "Midoc",
+            href: "/go/midoc-clinics-compared",
+            what: "Australian telehealth with AHPRA-registered doctors. Standard consultations $49, specialist $69, medical certificates from $18, usually within 5 to 60 minutes.",
+            checked: "3 September 2026",
+          },
+        ]}
+      />
     </SectionGuideShell>
   );
 }

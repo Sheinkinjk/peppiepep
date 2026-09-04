@@ -1,6 +1,7 @@
 import SectionGuideShell from "@/components/consumer/SectionGuideShell";
 import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
 
+import PartnerRoute from "@/components/consumer/PartnerRoute";
 export const metadata = generateSEOMetadata(seoConfig.skincareCostPerUse);
 
 /**
@@ -143,6 +144,24 @@ export default function Page() {
           you are weighing the prescription route.
         </p>
       </section>
+
+      <PartnerRoute
+        className="mt-10"
+        heading="Where to buy"
+        intro="Two Australian retailers we have a commercial arrangement with sell in this category. More are being added."
+        providers={[
+          {
+            name: "Edible Beauty Australia",
+            href: "/go/edible-beauty-cost-per-use",
+            what: "An Australian natural skincare range, priced in Australian dollars and shipped domestically.",
+          },
+          {
+            name: "Aussie Health Products",
+            href: "/go/aussie-health-cost-per-use",
+            what: "An Australian retailer carrying health and skincare ranges, priced in Australian dollars.",
+          },
+        ]}
+      />
     </SectionGuideShell>
   );
 }

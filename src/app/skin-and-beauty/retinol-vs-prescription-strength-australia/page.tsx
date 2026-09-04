@@ -1,6 +1,7 @@
 import SectionGuideShell from "@/components/consumer/SectionGuideShell";
 import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
 
+import PartnerRoute from "@/components/consumer/PartnerRoute";
 export const metadata = generateSEOMetadata(seoConfig.retinolVsPrescription);
 
 /**
@@ -123,6 +124,19 @@ export default function Page() {
           <li>Sun protection, which this whole category makes more important rather than less.</li>
         </ul>
       </section>
+
+      <PartnerRoute
+        className="mt-10"
+        heading="Where to buy the over-the-counter option"
+        intro="This route covers over-the-counter products only. The prescription side needs a practitioner, and we have no partner for it, so there is no link for that half."
+        providers={[
+          {
+            name: "Edible Beauty Australia",
+            href: "/go/edible-beauty-retinol-otc",
+            what: "An Australian natural skincare range sold over the counter, priced in Australian dollars.",
+          },
+        ]}
+      />
     </SectionGuideShell>
   );
 }

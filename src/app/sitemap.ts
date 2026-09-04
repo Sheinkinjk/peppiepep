@@ -44,6 +44,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/longevity/supplements/longevity-supplements-evidence-review`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
     // Men's health (19 Aug 2026). Clinical guides carry no commercial links.
     { url: `${BASE}/mens-health`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${BASE}/midoc`,               lastModified: TODAY, changeFrequency: 'monthly', priority: 0.78 },
     { url: `${BASE}/mens-health/erectile-dysfunction-treatment-cost-australia`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.75 },
     { url: `${BASE}/mens-health/premature-ejaculation-treatment-options-australia`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.72 },
     { url: `${BASE}/mens-health/online-mens-health-clinics-compared`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.72 },

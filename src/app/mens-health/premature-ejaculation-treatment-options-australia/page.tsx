@@ -1,6 +1,7 @@
 import SectionGuideShell from "@/components/consumer/SectionGuideShell";
 import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
 
+import PartnerRoute from "@/components/consumer/PartnerRoute";
 export const metadata = generateSEOMetadata(seoConfig.peTreatmentOptions);
 
 /**
@@ -128,6 +129,20 @@ export default function Page() {
           for a registered practitioner after an individual assessment.
         </p>
       </section>
+
+      <PartnerRoute
+        className="mt-10"
+        heading="If you want to speak to a doctor"
+        intro="Midoc's men's health line covers this area. It is a consultation, not a product: what is appropriate is decided by the practitioner."
+        providers={[
+          {
+            name: "Midoc",
+            href: "/go/midoc-premature-ejaculation",
+            what: "Men's health consultations, priced at $69 after the Medicare rebate, 9am to 5pm. Phone or video with an AHPRA-registered doctor.",
+            checked: "3 September 2026",
+          },
+        ]}
+      />
     </SectionGuideShell>
   );
 }

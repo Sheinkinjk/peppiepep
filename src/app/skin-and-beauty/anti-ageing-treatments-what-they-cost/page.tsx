@@ -1,6 +1,7 @@
 import SectionGuideShell from "@/components/consumer/SectionGuideShell";
 import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
 
+import PartnerRoute from "@/components/consumer/PartnerRoute";
 export const metadata = generateSEOMetadata(seoConfig.antiAgeingCosts);
 
 /**
@@ -107,6 +108,19 @@ export default function Page() {
           before you are sitting in the chair.
         </p>
       </section>
+
+      <PartnerRoute
+        className="mt-10"
+        heading="Where to buy"
+        intro="One retailer we have a commercial arrangement with sells devices in this category. More are being added."
+        providers={[
+          {
+            name: "Foreo",
+            href: "/go/foreo-anti-ageing",
+            what: "Sells its red light therapy range direct. Check the listed price in Australian dollars and the shipping terms to an Australian address at checkout, and search the ARTG yourself for any device you are considering.",
+          },
+        ]}
+      />
     </SectionGuideShell>
   );
 }

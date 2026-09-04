@@ -1,6 +1,7 @@
 import SectionGuideShell from "@/components/consumer/SectionGuideShell";
 import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
 
+import PartnerRoute from "@/components/consumer/PartnerRoute";
 export const metadata = generateSEOMetadata(seoConfig.acneTreatmentCosts);
 
 /**
@@ -124,6 +125,19 @@ export default function Page() {
           individually, and only they can say what is appropriate for you.
         </p>
       </section>
+
+      <PartnerRoute
+        className="mt-10"
+        heading="Where to buy"
+        intro="One Australian retailer we have a commercial arrangement with sells in this category. More are being added."
+        providers={[
+          {
+            name: "Edible Beauty Australia",
+            href: "/go/edible-beauty-acne",
+            what: "An Australian natural skincare range, priced in Australian dollars and shipped domestically. Read the ingredient list and the product's own description before buying.",
+          },
+        ]}
+      />
     </SectionGuideShell>
   );
 }

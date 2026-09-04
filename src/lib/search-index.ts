@@ -77,6 +77,7 @@ export const SEARCH_INDEX: SearchEntry[] = [
   { title: "Which weight-loss option fits you", href: "/weight-loss-quiz", category: "Weight loss", kind: "Guide", keywords: "which weight loss program quiz match telehealth or gp online moshy eligibility recommend option for me" },
   { title: "Online weight loss programs, untangled", href: "/online-weight-loss-programs-australia", category: "Weight loss", kind: "Guide", keywords: "compare programs australia" },
   { title: "Weight loss telehealth for men", href: "/weight-loss-telehealth-men-australia", category: "Weight loss", kind: "Guide", keywords: "mens weight loss male" },
+  { title: "Midoc: telehealth consultation costs", href: "/midoc", category: "Men's health", kind: "Review", keywords: "midoc telehealth online doctor australia medical certificate script referral" },
   { title: "Moshy offer & referral link", href: "/moshy", category: "Weight loss", kind: "Guide", keywords: "getmoshy discount code deal sign up" },
   { title: "getmoshy.com.au explained", href: "/moshy", category: "Weight loss", kind: "Guide", keywords: "moshy website legit real official domain" },
 

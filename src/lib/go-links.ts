@@ -33,6 +33,9 @@ const MIDOC_HOME = "https://www.midoc.com.au/?ref=ytvpnchm";
  * Destination verified 3 Sep 2026: resolves 200 to foreo.com/red-light-therapy
  * with CF tracking intact.
  */
+const EDIBLE_BEAUTY = "https://t.cfjump.com/94361/t/76712";
+const AUSSIE_HEALTH = "https://t.cfjump.com/94361/t/14839";
+
 const FOREO_RED_LIGHT =
   "https://t.cfjump.com/94361/t/60709?Url=https%3a%2f%2fwww.foreo.com%2fred-light-therapy";
 
@@ -45,6 +48,16 @@ export const GO_DESTINATIONS: Record<string, string> = {
   "midoc-brand-page": MIDOC_HOME,
   "foreo-led-masks": FOREO_RED_LIGHT,
   "foreo-skin-hub": FOREO_RED_LIGHT,
+  "foreo-anti-ageing": FOREO_RED_LIGHT,
+  "edible-beauty-acne": EDIBLE_BEAUTY,
+  "edible-beauty-cost-per-use": EDIBLE_BEAUTY,
+  "edible-beauty-retinol-otc": EDIBLE_BEAUTY,
+  "edible-beauty-skin-hub": EDIBLE_BEAUTY,
+  "edible-beauty-skincare-quiz": EDIBLE_BEAUTY,
+  "aussie-health-cost-per-use": AUSSIE_HEALTH,
+  "aussie-health-skin-hub": AUSSIE_HEALTH,
+  "midoc-sexual-wellness": MIDOC_HOME,
+  "midoc-mens-health-quiz": MIDOC_HOME,
   // No mental-health placement: Midoc describe that line as fully bulk billed,
   // so there is no purchase to earn a commission on.
   // No erectile-dysfunction placement: Midoc's sexual-health line is scoped to
