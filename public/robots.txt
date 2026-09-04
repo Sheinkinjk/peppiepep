@@ -23,6 +23,7 @@ Disallow: /analytics
 Disallow: /application
 Disallow: /calendly
 # Personalised referral links (redirect out to affiliate destinations)
+Disallow: /go/
 Disallow: /r/
 Disallow: /me/
 # Payment flows
@@ -57,6 +58,7 @@ Disallow: /status
 Disallow: /analytics
 Disallow: /application
 Disallow: /calendly
+Disallow: /go/
 Disallow: /r/
 Disallow: /me/
 Disallow: /payment/

@@ -1,6 +1,7 @@
 import SectionGuideShell from "@/components/consumer/SectionGuideShell";
 import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
 
+import PartnerRoute from "@/components/consumer/PartnerRoute";
 export const metadata = generateSEOMetadata(seoConfig.edTreatmentCost);
 
 /**
@@ -143,6 +144,20 @@ export default function Page() {
           your own situation.
         </p>
       </section>
+
+      {/* Reserved, deliberately empty. Midoc is our men's-health partner, but
+          their sexual-health line is scoped to STI/STD on their own site and does
+          not name erectile dysfunction, so linking them from this page would
+          route a reader to a service that may not cover what they came for. The
+          slot renders so the gap is visible in the page rather than only in a
+          plan. Fill it when a partner covers this line, not before. */}
+      <PartnerRoute
+        className="mt-10"
+        heading="Where to go from here"
+        intro="This page is about what treatment costs and how access works in Australia."
+        providers={[]}
+        reservedNote="We do not yet have a partner whose service covers this specific area, so there is no link here. We would rather show nothing than send you to a provider that may not treat what you came to read about."
+      />
     </SectionGuideShell>
   );
 }

@@ -30,15 +30,19 @@ import { Clock } from "lucide-react";
  * as the sentence removed above, in new clothes. Say what is missing; do not
  * tell the reader the rest is good.
  */
-type Variant = "a" | "b" | "c" | "d";
+type Variant = "a" | "b" | "c" | "d" | "partnered";
 
 const BY_CATEGORY: Record<string, Variant> = {
   Longevity: "a",
   Diagnostics: "a",
   Recovery: "a",
   Sleep: "b",
-  "Skin and beauty": "c",
-  "Men's health": "d",
+  // Hubs that now carry live partners. "Coming soon" here means the category is
+  // still being built out, NOT that it carries no commercial links: the earlier
+  // wording promised "nothing here earns us a commission", which went false the
+  // moment a partner landed.
+  "Men's health": "partnered",
+  "Skin and beauty": "partnered",
   // Sits under men's health, so it takes that hub's wording.
   "This page": "d",
 };
@@ -75,6 +79,11 @@ export default function ComingSoonNote({
             than avoiding the negative altogether. */}
         {cap(what)} are not on the page yet. We add those once we have checked a provider ourselves,
         and nothing here earns us a commission before then.
+      </>
+    ) : v === "partnered" ? (
+      <>
+        The providers below are ones we have checked ourselves, and we earn a commission if you sign
+        up through them. More are being added, so this is a starting set rather than the full market.
       </>
     ) : (
       <>

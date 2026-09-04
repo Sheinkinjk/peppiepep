@@ -94,7 +94,10 @@ const faqs = [
   },
   {
     q: "What other categories are planned?",
-    a: "Longevity is under consideration and has not started. Men's health has, and it is written entirely around access pathways and costs because advertising prescription medicines to the public is prohibited in Australia, so no medicine is named on any of those pages.",
+    // "Longevity is under consideration and has not started" until 3 Sep 2026,
+    // directly below a section listing the live longevity guides. Fifteen
+    // longevity URLs are in the sitemap, eleven of them guides.
+    a: "Longevity has started: recovery, diagnostics and supplement evidence are live, and you can read them now. It carries no partners yet, so nothing in that section earns us a commission. Men\'s health has started too, and it is written entirely around access pathways and costs because advertising prescription medicines to the public is prohibited in Australia, so no medicine is named on any of those pages.",
   },
 ];
 

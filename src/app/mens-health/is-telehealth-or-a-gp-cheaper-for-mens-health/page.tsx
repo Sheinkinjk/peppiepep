@@ -1,6 +1,7 @@
 import SectionGuideShell from "@/components/consumer/SectionGuideShell";
 import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
 
+import PartnerRoute from "@/components/consumer/PartnerRoute";
 export const metadata = generateSEOMetadata(seoConfig.telehealthVsGpMens);
 
 /**
@@ -133,6 +134,26 @@ export default function Page() {
           General information for an Australian audience, not medical advice.
         </p>
       </section>
+
+      {/* The decision this page describes is the one Midoc competes for, so the
+          route sits at the decision point rather than only at the foot. No
+          medicine is named here or anywhere on this page: Midoc supplies
+          Schedule 4 treatments, and adding a commission link removes any
+          editorial exemption, so the service is described and the product is
+          not. */}
+      <PartnerRoute
+        className="mt-10"
+        heading="If telehealth is the route you want"
+        intro="One Australian provider we have a commercial arrangement with covers this decision. More are being added to this section."
+        providers={[
+          {
+            name: "Midoc",
+            href: "/go/midoc-telehealth-vs-gp",
+            what: "Australian telehealth with AHPRA-registered doctors, covering consultations, scripts, specialist referrals and medical certificates. Pricing is shown before you commit and there is no membership fee.",
+            checked: "3 September 2026",
+          },
+        ]}
+      />
     </SectionGuideShell>
   );
 }

@@ -1,6 +1,7 @@
 import SectionGuideShell from "@/components/consumer/SectionGuideShell";
 import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
 
+import PartnerRoute from "@/components/consumer/PartnerRoute";
 export const metadata = generateSEOMetadata(seoConfig.ledFaceMask);
 
 /**
@@ -119,6 +120,25 @@ export default function Page() {
           <li><strong className="text-[#10251b]">Warranty and who honours it.</strong> An Australian seller and an overseas one are not the same proposition if the device fails.</li>
         </ul>
       </section>
+
+      {/* COSMETIC FRAMING ONLY. This block must never state or imply that a
+          device treats, reduces or clears any condition, and must carry no
+          merchant marketing copy making those claims and no before-and-after
+          imagery. Anything a manufacturer says about intended use is attributed
+          to them, never asserted by us. The page already tells a reader to check
+          the ARTG themselves, and that stays above this. */}
+      <PartnerRoute
+        className="mt-10"
+        heading="Where to buy"
+        intro="One retailer we have a commercial arrangement with sells devices in this category. More are being added to this section."
+        providers={[
+          {
+            name: "Foreo",
+            href: "/go/foreo-led-masks",
+            what: "Sells its red light therapy range direct. Check the listed price in Australian dollars and the shipping terms to an Australian address at checkout, and search the ARTG yourself for any device you are considering.",
+          },
+        ]}
+      />
     </SectionGuideShell>
   );
 }
