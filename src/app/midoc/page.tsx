@@ -28,7 +28,7 @@ const FAQS = [
   },
   {
     q: "How much does a Midoc consultation cost?",
-    a: `Midoc lists standard consultations at ${MIDOC.consultStandard}, covering general health, child health, COVID-19 antivirals, hair loss, sexual health and STI, smoking cessation and continence. Specialist consultations are listed at ${MIDOC.consultSpecialist}, covering weight management, men's health priced after the Medicare rebate, dementia support and wound care. A mental health care plan or review is listed as ${MIDOC.mentalHealth}. Medical certificates are ${MIDOC.certificateSingleDay} for a single day and ${MIDOC.certificateWeek} for up to seven days. Read off midoc.com.au on ${MIDOC.readOnLabel}, and prices can change.`,
+    a: `Midoc lists standard consultations at ${MIDOC.consultStandard}, covering general health, child health, COVID-19 antivirals, hair loss, sexual health and STI, smoking cessation and continence. Specialist consultations are listed at ${MIDOC.consultSpecialist}, covering, among other services, men's health priced after the Medicare rebate, dementia support and wound care. A mental health care plan or review is listed as ${MIDOC.mentalHealth}. Medical certificates are ${MIDOC.certificateSingleDay} for a single day and ${MIDOC.certificateWeek} for multiple days. Read off midoc.com.au on ${MIDOC.readOnLabel}, and prices can change.`,
   },
   {
     q: "How long is the wait?",
@@ -147,8 +147,7 @@ export default function MidocPage() {
             <li><span className="font-semibold text-[#10251b]">3.</span> If it is clinically appropriate, they issue what you need: a prescription, a certificate, or a referral. A Medicare card is required for a prescription, though not for the consultation itself.</li>
           </ol>
           <p className="mt-4 text-[15px] leading-relaxed text-[#3d4b44]">
-            Hours vary by service. Most run 8am to 2am, seven days. Weight management runs 8am to 8pm,
-            smoking cessation 8am to 5pm, and men&apos;s health 9am to 5pm.
+            Hours vary by service. Most run {MIDOC.hoursMost}, with {MIDOC.hoursExceptions}.
           </p>
         </section>
 

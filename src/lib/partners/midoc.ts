@@ -76,6 +76,40 @@ export const MIDOC = {
   certificateVerifyUrl: "https://www.midoc.com.au/verify",
   certificateCarer: true,
 
+  /**
+   * MIDOC SERVICE LINES WE DELIBERATELY DO NOT COVER, LINK TO OR DESCRIBE.
+   *
+   * Midoc runs a weight-management line. We do not mention it, price it, list it
+   * among the services a consultation band covers, or route a reader toward it,
+   * and `check-partner-scope` fails the build if any of that reappears.
+   *
+   * Two reasons, and the first is sufficient on its own:
+   *
+   *  1. Its landing page, midoc.com.au/weightloss, read 4 September 2026, uses
+   *     "GLP-1 receptor agonists" and "weight loss injections". Both are on this
+   *     site's banned list because the TGA treats a description that lets a
+   *     reader identify the medicine as advertising it. We are not going to send
+   *     readers, for commission, toward a page we would not publish ourselves.
+   *
+   *  2. Weight loss is covered in a separate hub with different partners, so
+   *     there is no editorial gap created by leaving this out.
+   *
+   * A first draft of this added an on-page sentence saying we do not cover that
+   * line. That was worse than silence: naming a service in order to disclaim it
+   * still tells a reader it exists and where to look. We say nothing about it.
+   *
+   * The one accuracy consequence is handled rather than ignored. Our description
+   * of what the specialist band covers is now explicitly PARTIAL ("among other
+   * services"), because presenting a shortened list as exhaustive would be its
+   * own small misrepresentation.
+   *
+   * The limit of what we control: every Midoc placement lands on their homepage,
+   * whose own navigation includes a Weight Loss item. We cannot prevent a reader
+   * clicking it, and pretending otherwise would be the same kind of overclaim
+   * this file exists to stop. What we control is that nothing of ours names the
+   * line, prices it, or points at it.
+   */
+
   /** Their own disclaimer, verbatim. */
   platformNote:
     "MIDOC operates as a technology and administrative platform connecting users with independent Australian-registered practitioners. MIDOC does not provide healthcare services, medical treatment or clinical care. All clinical decisions are made solely by the independent practitioners. MIDOC is not a substitute for your regular doctor. In an emergency, call 000 immediately.",
@@ -106,14 +140,14 @@ export const MIDOC = {
   waitTime: "usually within 5 to 60 minutes",
   format: "phone or video, depending on the service",
   hoursMost: "8am to 2am, seven days",
-  hoursExceptions: "weight management 8am to 8pm, smoking cessation 8am to 5pm, men's health 9am to 5pm",
+  hoursExceptions: "smoking cessation 8am to 5pm, men's health 9am to 5pm",
   coverage: "nationally, across QLD, NSW, ACT, VIC, SA, WA, NT and TAS",
   medicare: "not required for a consultation, required for a prescription",
   practitioners: "doctors registered with AHPRA",
 
   bands: [
     { band: "Standard consultation", price: CONSULT_STANDARD, items: "General health, child health, COVID-19 antivirals, hair loss, sexual health and STI, smoking cessation, continence." },
-    { band: "Specialist consultation", price: CONSULT_SPECIALIST, items: "Weight management, men's health (priced after the Medicare rebate), dementia support, wound care." },
+    { band: "Specialist consultation", price: CONSULT_SPECIALIST, items: "Among other services: men's health (priced after the Medicare rebate), dementia support, wound care." },
     { band: "Mental health care plan or review", price: "Fully bulk billed", items: "Listed at no cost, so there is nothing for us to earn on it." },
     { band: "Repeat script", price: SCRIPT_REPEAT, items: "A repeat of something already prescribed to you." },
     { band: "New script", price: SCRIPT_NEW, items: "For something you do not take regularly. Issued where a practitioner assesses it as appropriate." },

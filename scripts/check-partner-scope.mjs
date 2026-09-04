@@ -21,6 +21,14 @@
  *     llms.txt asserting the commercial state of a hub as a generated artefact
  *     that happens to be stored as prose, never as prose someone maintains.
  *
+ *  4. DENIED SERVICE LINES. A partner is not all-or-nothing. Midoc's own
+ *     weight-management landing page uses "GLP-1 receptor agonists" and "weight
+ *     loss injections", both of which this site bans as prescription-medicine
+ *     identifiers, so we do not name, price, describe or route toward that line
+ *     even though we happily route to the rest of the service. Denials are per
+ *     partner and carry their reason, because in a year nobody will remember why
+ *     one line of one partner is off limits and it will quietly come back.
+ *
  *  2. PARTNER SCOPE. Midoc, Edible Beauty, Aussie Health and the Foreo link
  *     belong to two coming-soon hubs. Hair loss and weight loss are partnered
  *     with Mosh and Moshy, who generate the revenue, and a competing partner
@@ -36,14 +44,42 @@ import { join } from "node:path";
 
 const APP = "src/app";
 const LLMS = "public/llms.txt";
+const PARTNER_DATA = "src/lib/partners";
 const errors = [];
 
 /** Routes carrying a partner link, and which partners each one links to. */
 const linkedRoutes = new Map(); // route -> Set(partner name)
 
-/** Partner tokens, and the ONLY route prefixes each may appear under. */
+/**
+ * Partner tokens, the ONLY route prefixes each may appear under, and any service
+ * line of theirs we refuse to touch.
+ *
+ * `deny` is checked EVERYWHERE, including inside the allowed prefixes and in
+ * llms.txt and go-links.ts. An allowlist says where a partner may appear; a
+ * denylist says what about them may never appear at all.
+ */
 const PARTNERS = [
-  { name: "Midoc",          tokens: ["midoc", "Midoc"],                allow: ["/mens-health", "/midoc", "/coming-soon"] },
+  {
+    name: "Midoc",
+    tokens: ["midoc", "Midoc"],
+    allow: ["/mens-health", "/midoc", "/coming-soon"],
+    deny: [
+      {
+        pattern: /midoc\.com\.au\/weightloss|\/weightloss/i,
+        reason:
+          "no link may resolve to midoc.com.au/weightloss: read 4 Sep 2026 it uses " +
+          '"GLP-1 receptor agonists" and "weight loss injections", both banned here as ' +
+          "prescription-medicine identifiers",
+      },
+      {
+        pattern: /weight[- ]management/i,
+        reason:
+          "we do not name, price or describe Midoc's weight-management line, because it " +
+          "routes readers to the page above. Weight loss is covered in its own hub with " +
+          "different partners, so nothing is lost by leaving it out",
+      },
+    ],
+  },
   { name: "Edible Beauty",  tokens: ["edible-beauty", "ediblebeauty"], allow: ["/skin-and-beauty", "/coming-soon"] },
   { name: "Aussie Health",  tokens: ["aussie-health", "aussiehealthproducts"], allow: ["/skin-and-beauty", "/coming-soon"] },
   { name: "Foreo",          tokens: ["foreo-", "t/60709"],             allow: ["/skin-and-beauty", "/coming-soon"] },
@@ -105,6 +141,15 @@ for (const file of pages(APP)) {
 
   if (hasPartnerLink) linkedRoutes.set(route, new Set());
 
+  // ── 4. a denied service line may not appear anywhere, allowed prefix or not ─
+  for (const p of PARTNERS) {
+    if (!p.deny || !p.tokens.some((t) => src.includes(t))) continue;
+    for (const d of p.deny) {
+      const hit = src.match(d.pattern);
+      if (hit) errors.push(`${route}: mentions "${hit[0]}" on a page that references ${p.name}. Denied: ${d.reason}.`);
+    }
+  }
+
   // ── 2. partner tokens may only appear under an allowlisted prefix ─────────
   for (const p of PARTNERS) {
     // An index page has to be able to LINK to a partner page whose own slug
@@ -128,6 +173,51 @@ for (const file of pages(APP)) {
       `scripts/check-partner-scope.mjs only if that is deliberate.`,
     );
   }
+}
+
+// ── 4b. the same denial applies to destinations and to what we tell engines ──
+/**
+ * Per LINE, not per file. go-links.ts and llms.txt describe every partner, so a
+ * file-wide match flags the wrong thing: the first version of this rule failed on
+ * llms.txt because our Moshy and Juniper entries say "weight-management", which
+ * is the TGA-safe phrasing those pages are supposed to use. A denial is only a
+ * denial when it lands on the same line as the partner it belongs to.
+ */
+/**
+ * Partner data files are checked whole rather than per line, because the file is
+ * about one partner and the denied phrase sits inside a data row that names no
+ * partner. Comments are stripped first: the reason a line is denied has to be
+ * written down next to the denial, and that prose necessarily quotes the phrase.
+ */
+for (const file of readdirSync(PARTNER_DATA).map((f) => join(PARTNER_DATA, f))) {
+  if (!file.endsWith(".ts")) continue;
+  const partner = PARTNERS.find((p) =>
+    p.tokens.some((t) => file.toLowerCase().includes(t.toLowerCase().replace(/\s+/g, "-"))),
+  );
+  if (!partner?.deny) continue;
+  const code = readFileSync(file, "utf8").replace(/\/\*[\s\S]*?\*\/|\/\/.*$/gm, "");
+  for (const d of partner.deny) {
+    const hit = code.match(d.pattern);
+    if (hit) errors.push(`${file}: contains "${hit[0]}" outside a comment. Denied for ${partner.name}: ${d.reason}.`);
+  }
+}
+
+for (const file of ["src/lib/go-links.ts", LLMS]) {
+  if (!existsSync(file)) continue;
+  const lines = readFileSync(file, "utf8").split("\n");
+  lines.forEach((line, i) => {
+    for (const p of PARTNERS) {
+      if (!p.deny || !p.tokens.some((t) => line.includes(t))) continue;
+      for (const d of p.deny) {
+        const hit = line.match(d.pattern);
+        if (hit) {
+          errors.push(
+            `${file}:${i + 1}: line mentions ${p.name} and contains "${hit[0]}". Denied: ${d.reason}.`,
+          );
+        }
+      }
+    }
+  });
 }
 
 // ── 3. llms.txt must not contradict a hub that now earns ────────────────────
@@ -200,5 +290,6 @@ if (errors.length) {
 }
 console.log(
   `\n  Partner scope holds: no page earns while claiming otherwise, no partner outside ` +
-  `its hub, and llms.txt agrees with the site on ${linkedRoutes.size} earning routes.\n`,
+  `its hub, no denied service line anywhere, and llms.txt agrees with the site on ` +
+  `${linkedRoutes.size} earning routes.\n`,
 );
