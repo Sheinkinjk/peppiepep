@@ -129,7 +129,10 @@ export default function MidocPage() {
           <dl className="mt-6 divide-y divide-[#eef1ef] overflow-hidden rounded-2xl border border-[#e5e9e7] bg-white">
             {MIDOC.bands.map((p) => (
               <div key={p.band} className="px-5 py-4 sm:px-6">
-                <dt className="text-[15px] font-bold text-[#10251b]">{p.band}, {p.price}</dt>
+                <dt className="text-[15px] font-bold text-[#10251b]">
+                  {p.band}, {p.price}{" "}
+                  <span className="font-medium text-[#9aa39c]">({MIDOC.readOnShort})</span>
+                </dt>
                 <dd className="mt-1 text-sm leading-relaxed text-[#3d4b44]">{p.items}</dd>
               </div>
             ))}

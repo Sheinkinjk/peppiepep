@@ -26,7 +26,7 @@ const faqs = [
   },
   {
     q: "Can one device do both?",
-    a: `One does. The LUNA 4 plus at ${FOREO_TOP.luna.price} is the only device in either line that Foreo describes as combining both, listed as "${FOREO_TOP.luna.blurb}". It is also the most expensive device across the two lines, above the ${FOREO_TOP.ufo.price} ${FOREO_TOP.ufo.name}, so buying it to avoid choosing costs more than buying an entry model from each line.`,
+    a: `One does. The ${FOREO_TOP.luna.name} at ${FOREO_TOP.luna.price} is the only device in either line that Foreo describes as combining both, listed as "${FOREO_TOP.luna.blurb}". It is also the most expensive device across the two lines, above the ${FOREO_TOP.ufo.price} ${FOREO_TOP.ufo.name}, so buying it to avoid choosing costs more than buying an entry model from each line. Prices read off foreo.com on ${FOREO.readOnLabel}.`,
   },
   {
     q: "What do the Foreo Luna and UFO cost in Australia?",
@@ -34,7 +34,7 @@ const faqs = [
   },
   {
     q: "Which is the cheapest way into each line?",
-    a: `The ${FOREO_ENTRY.ufo.name} at ${FOREO_ENTRY.ufo.price} is the cheapest device across both lines, and the ${FOREO_ENTRY.luna.name} at ${FOREO_ENTRY.luna.price} is the cheapest LUNA. Both are the travel-sized models, so the saving is partly a size decision rather than purely a discount.`,
+    a: `On ${FOREO.readOnLabel} the ${FOREO_ENTRY.ufo.name} at ${FOREO_ENTRY.ufo.price} was the cheapest device across both lines, and the ${FOREO_ENTRY.luna.name} at ${FOREO_ENTRY.luna.price} the cheapest LUNA. Both are the travel-sized models, so the saving is partly a size decision rather than purely a discount.`,
   },
   {
     q: "How long does a Foreo device last on a charge?",
@@ -46,15 +46,27 @@ const faqs = [
   },
 ];
 
+/**
+ * A price table stamps its own read date in the caption.
+ *
+ * The date used to sit in a sentence after the table, which meant a row lifted
+ * on its own, by a reader or by an answer engine, carried a dollar figure with
+ * no provenance. Every table of prices on this site should be quotable in
+ * isolation without becoming an undated claim.
+ */
 function DeviceTable({ rows, caption }: { rows: readonly { name: string; price: string; blurb: string }[]; caption: string }) {
   return (
     <div className="mt-4 overflow-x-auto rounded-2xl border border-[#e5e9e7]">
       <table className="w-full min-w-[560px] border-collapse text-left text-sm">
-        <caption className="sr-only">{caption}</caption>
+        <caption className="px-4 py-3 text-left text-xs text-[#6e7b74]">
+          {caption}, read off foreo.com on {FOREO.readOnLabel}. Australian list prices, which change.
+        </caption>
         <thead className="bg-[#f8faf9] text-[11px] uppercase tracking-[0.1em] text-[#9aa39c]">
           <tr>
             <th className="px-4 py-3 font-semibold">Device</th>
-            <th className="px-4 py-3 font-semibold">Price</th>
+            <th className="px-4 py-3 font-semibold">
+              Price, {FOREO.readOnShort}
+            </th>
             <th className="px-4 py-3 font-semibold">Foreo&apos;s own description</th>
           </tr>
         </thead>
@@ -105,19 +117,22 @@ export default function Page() {
             <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#9aa39c]">LUNA</p>
             <p className="mt-2 text-[15px] leading-relaxed text-[#10251b]">{FOREO.lunaWhatItIs}.</p>
             <p className="mt-3 text-sm text-[#3d4b44]">
-              From {FOREO_ENTRY.luna.price} ({FOREO_ENTRY.luna.name}) to {FOREO_TOP.luna.price} ({FOREO_TOP.luna.name}).
+              From {FOREO_ENTRY.luna.price} ({FOREO_ENTRY.luna.name}) to {FOREO_TOP.luna.price} ({FOREO_TOP.luna.name}),
+              read on {FOREO.readOnLabel}.
             </p>
           </div>
           <div className="rounded-2xl border border-[#e5e9e7] bg-white p-6">
             <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#9aa39c]">UFO</p>
             <p className="mt-2 text-[15px] leading-relaxed text-[#10251b]">{FOREO.ufoWhatItIs}.</p>
             <p className="mt-3 text-sm text-[#3d4b44]">
-              From {FOREO_ENTRY.ufo.price} ({FOREO_ENTRY.ufo.name}) to {FOREO_TOP.ufo.price} ({FOREO_TOP.ufo.name}).
+              From {FOREO_ENTRY.ufo.price} ({FOREO_ENTRY.ufo.name}) to {FOREO_TOP.ufo.price} ({FOREO_TOP.ufo.name}),
+              read on {FOREO.readOnLabel}.
             </p>
           </div>
         </div>
         <p className="mt-4">
-          The one device that sits in both families is the {FOREO_TOP.luna.name} at {FOREO_TOP.luna.price},
+          The one device that sits in both families is the {FOREO_TOP.luna.name} at {FOREO_TOP.luna.price}
+          (read on {FOREO.readOnLabel}),
           which Foreo lists as &quot;{FOREO_TOP.luna.blurb}&quot;. It is the most expensive device
           across either line, so buying it to avoid choosing costs more than buying one of each of
           the entry models.
@@ -129,7 +144,8 @@ export default function Page() {
         <DeviceTable rows={FOREO.luna} caption="Foreo LUNA devices and Australian list prices" />
         <p className="mt-3 text-sm text-[#3d4b44]">
           Foreo states {FOREO.lunaBattery}, and {FOREO.lunaMaterial}. Note that{" "}
-          {LUNA_SHARED_PRICE.count} separate devices sit at {LUNA_SHARED_PRICE.price}: the face
+          {LUNA_SHARED_PRICE.count} separate devices sat at {LUNA_SHARED_PRICE.price} on{" "}
+          {FOREO.readOnLabel}: the face
           model, the scalp massager and the beard model. The price tells you nothing about which one
           suits you, so read the descriptions rather than the numbers.
         </p>
@@ -139,8 +155,9 @@ export default function Page() {
         <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">The UFO line and what it costs</h2>
         <DeviceTable rows={FOREO.ufo} caption="Foreo UFO devices and Australian list prices" />
         <p className="mt-3 text-sm text-[#3d4b44]">
-          The line runs from {FOREO_ENTRY.ufo.price} to {FOREO_TOP.ufo.price}, and Foreo&apos;s own
-          descriptions do not explain what the extra {UFO_SPREAD} buys beyond size and portability. Nor do they state {FOREO.notPublished[0]} or{" "}
+          On {FOREO.readOnLabel} the line ran from {FOREO_ENTRY.ufo.price} to {FOREO_TOP.ufo.price},
+          and Foreo&apos;s own descriptions do not explain what the extra {UFO_SPREAD} buys beyond
+          size and portability. Nor do they state {FOREO.notPublished[0]} or{" "}
           {FOREO.notPublished[1]} anywhere on the page, which is the information you would want to
           compare a UFO against a mask.
         </p>
@@ -161,6 +178,32 @@ export default function Page() {
         </p>
       </section>
 
+      <section>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">
+          &quot;Red light therapy&quot; is Foreo&apos;s product name, and it is worth checking
+        </h2>
+        <p className="mt-3">
+          Four of the UFO models carry the phrase in the name Foreo gives them. That is their
+          wording, reproduced above in the column headed as theirs, and it is not us saying the
+          devices do anything therapeutic. We make no claim about what any device here achieves.
+        </p>
+        <p className="mt-3">
+          It does change what you should check before buying. In Australia a device represented for
+          a therapeutic purpose is regulated, and should appear on the Australian Register of
+          Therapeutic Goods. Search the ARTG yourself by brand or sponsor name rather than reading a
+          product name as a regulatory status. Inclusion means a device met the requirements for
+          lawful supply here. It is not a promise about results for your skin, and a name containing
+          the word therapy is not evidence of either.
+        </p>
+        <p className="mt-3">
+          The same check is worth running on any device in this category, which is why our{" "}
+          <a href="/skin-and-beauty/led-face-mask-comparison-australia" className="font-semibold text-[#0a7c42] underline">
+            LED face mask page
+          </a>{" "}
+          carries it too.
+        </p>
+      </section>
+
       <PartnerRoute
         heading="Where to buy"
         intro="Foreo sells direct in Australia. This link goes to their red light therapy range, which is the UFO line."
@@ -177,9 +220,12 @@ export default function Page() {
       <section>
         <p className="text-sm leading-relaxed text-[#3d4b44]">
           This page describes what these devices are and what they cost. It does not say what any of
-          them treats, because that is a claim we are not in a position to make and a device sold as
-          a cosmetic product is not the same thing as a therapeutic one. General information for an
-          Australian audience.
+          them treats, reduces or clears, because that is a claim we are not in a position to make.
+          Where a product description appears in quotation marks or in the column headed
+          &quot;Foreo&apos;s own description&quot;, those are Foreo&apos;s words about its own
+          products and we neither endorse nor verify them. Foreo publishes user-outcome percentages
+          on its own site; we have deliberately not carried any of them across. General information
+          for an Australian audience.
         </p>
       </section>
     </SectionGuideShell>

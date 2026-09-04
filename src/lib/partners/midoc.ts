@@ -34,6 +34,8 @@ export const MIDOC = {
   /** The date every figure below was read off midoc.com.au. */
   readOn: "2026-09-04",
   readOnLabel: "4 September 2026",
+  /** Short form, for a card or a table header where the full label will not fit. */
+  readOnShort: "4 Sep 2026",
   source: "https://www.midoc.com.au/telehealth",
 
   consultStandard: CONSULT_STANDARD,

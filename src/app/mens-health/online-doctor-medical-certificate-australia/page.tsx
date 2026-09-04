@@ -38,11 +38,11 @@ const faqs = [
   },
   {
     q: "Can I get one for a day that has already passed?",
-    a: "Sometimes, but it is the harder request and some services will not do it at all. A practitioner is being asked to attest to something they could not observe, so the further back you go the more likely the answer is no. Ask before you pay rather than after.",
+    a: "Often not. A practitioner is being asked to attest to something they did not observe, so it is a clinical judgement they may decline, and some services do not offer it at all. Check a service's position before paying rather than after, and treat a refusal as the expected answer rather than an obstacle.",
   },
   {
     q: "Does it cover carer's leave?",
-    a: `Yes. Midoc lists carer certificates as two of its four certificate types, single day at ${MIDOC.certificateSingleDay} and multiple days at ${MIDOC.certificateWeek}, the same prices as the medical ones. Choose the carer type at the point of request, because it is a different document rather than the same one used differently.`,
+    a: `Yes. Midoc lists carer certificates as two of its four certificate types, single day at ${MIDOC.certificateSingleDay} and multiple days at ${MIDOC.certificateWeek}, the same prices as the medical ones, read off midoc.com.au on ${MIDOC.readOnLabel}. Choose the carer type at the point of request, because it is a different document rather than the same one used differently.`,
   },
 ];
 
@@ -148,7 +148,7 @@ export default function Page() {
           {[
             ["You need examining, not certifying", "If someone needs to physically look at you, start with a GP or an emergency service. A certificate is documentation, not care."],
             ["Your employer requires an in-person consultation", "Some workplace policies specify it. Read the policy before you pay, because a telehealth certificate that does not satisfy it costs you twice."],
-            ["The day has already passed", "Backdating is the harder request and some services decline it outright. Ask first."],
+            ["The day has already passed", "A practitioner is being asked to attest to something they did not observe. It is a clinical judgement, often declined, and some services do not offer it at all."],
             ["You are not sure it is the right certificate", "Personal-illness and carer certificates are different documents. Midoc lists both, at the same prices, so pick the right one at the point of request rather than assuming one fee covers the other."],
           ].map(([t, d]) => (
             <li key={t} className="rounded-xl border border-[#e5e9e7] bg-white p-5">

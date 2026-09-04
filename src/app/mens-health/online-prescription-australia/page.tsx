@@ -27,7 +27,7 @@ const faqs = [
   },
   {
     q: "How much is an online prescription?",
-    a: `Midoc lists ${MIDOC.scriptNew} for a new script, ${MIDOC.scriptRepeat} for a repeat and ${MIDOC.scriptAntibiotic} for an antibiotic request, each available ${MIDOC.scriptsHours}. That is the platform fee only. The medicine itself is priced separately by the pharmacy that dispenses it.`,
+    a: `Midoc lists ${MIDOC.scriptNew} for a new script, ${MIDOC.scriptRepeat} for a repeat and ${MIDOC.scriptAntibiotic} for an antibiotic request, each available ${MIDOC.scriptsHours}, read off midoc.com.au/instantscripts on 4 September 2026. That is the platform fee only. The medicine itself is priced separately by the pharmacy that dispenses it, and for most people that second amount is the larger one.`,
   },
   {
     q: "What is the difference between a new script and a repeat?",
@@ -44,6 +44,10 @@ const faqs = [
   {
     q: "How many medicines can one repeat request cover?",
     a: `Midoc's page says both things: the product copy says ${MIDOC.scriptRepeatCountProductCopy}, and the FAQ further down the same page says ${MIDOC.scriptRepeatCountFaq}. We cannot resolve that for you, so ask before paying if you need more than one.`,
+  },
+  {
+    q: "Can I just request antibiotics online?",
+    a: "You can make the request, which is not the same as receiving a prescription. Most coughs, colds, sore throats and flu are viral, and antibiotics do nothing for a viral illness while adding side effects and contributing to resistance. A practitioner declining an antibiotic request is the system working, not a service failing you, and prescribing that is not clinically warranted is something practitioners are accountable to AHPRA for. If you are unwell enough to be worried, the thing worth paying for is the assessment.",
   },
   {
     q: "Is this cheaper than seeing my GP?",
@@ -149,6 +153,23 @@ export default function Page() {
           current figure before you pay. These are platform fees: the medicine is priced separately
           by the pharmacy that dispenses it, and that second cost is the one people forget to budget
           for.
+        </p>
+      </section>
+
+      <section>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">A request is not a prescription</h2>
+        <p className="mt-3">
+          All three request types end the same way: a practitioner decides. Midoc conditions every
+          one of them on the request being clinically appropriate, and the fee buys that assessment
+          whichever way it goes.
+        </p>
+        <p className="mt-3">
+          That matters most for the antibiotic line. Most coughs, colds, sore throats and flu are
+          viral, and antibiotics do nothing for a viral illness while adding side effects and
+          contributing to resistance that makes them less useful for everyone later. A practitioner
+          who declines is doing the job. If you go in treating the fee as the price of a
+          medicine rather than the price of an opinion, you have misunderstood what is being sold,
+          and you will be annoyed by the correct outcome.
         </p>
       </section>
 

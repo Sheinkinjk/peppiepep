@@ -34,7 +34,7 @@ const guides = [
   {
     href: "/skin-and-beauty/best-value-skincare-australia-cost-per-use",
     title: "Cost per use, not sticker price",
-    desc: "Why a $90 serum can work out cheaper than a $30 one, and where the maths misleads you.",
+    desc: "Why a pricier serum can work out cheaper per application than a budget one, and where that maths misleads you.",
   },
   {
     href: "/skin-and-beauty/acne-treatment-options-and-costs-australia",

@@ -23,7 +23,7 @@ const guides = [
     // states what a consultation actually costs.
     href: "/midoc",
     title: "Midoc: what it costs and how access works",
-    desc: `Consultations from ${MIDOC.consultStandard}, certificates from ${MIDOC.certificateSingleDay}, and who the service does not suit.`,
+    desc: `Consultations from ${MIDOC.consultStandard}, certificates from ${MIDOC.certificateSingleDay}, and who the service does not suit. Prices read ${MIDOC.readOnShort}.`,
   },
   {
     href: "/mens-health/erectile-dysfunction-treatment-cost-australia",
@@ -43,12 +43,12 @@ const guides = [
   {
     href: "/mens-health/online-doctor-medical-certificate-australia",
     title: "Online medical certificate: cost and speed",
-    desc: `From ${MIDOC.certificateSingleDay} for a single day, with what the review actually buys you.`,
+    desc: `From ${MIDOC.certificateSingleDay} for a single day (read ${MIDOC.readOnShort}), with what the review actually buys you.`,
   },
   {
     href: "/mens-health/online-prescription-australia",
     title: "Online prescription: cost and Medicare",
-    desc: `${MIDOC.scriptRepeat} for a repeat, ${MIDOC.scriptNew} for a new script, and the identifier that decides whether you get one.`,
+    desc: `${MIDOC.scriptRepeat} for a repeat and ${MIDOC.scriptNew} for a new script (read ${MIDOC.readOnShort}), plus the identifier that decides whether you get one.`,
   },
   {
     href: "/mens-health/is-telehealth-or-a-gp-cheaper-for-mens-health",

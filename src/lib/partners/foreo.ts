@@ -31,6 +31,8 @@ export type ForeoDevice = {
 export const FOREO = {
   readOn: "2026-09-04",
   readOnLabel: "4 September 2026",
+  /** Short form, for a table column header where the full label will not fit. */
+  readOnShort: "4 Sep 2026",
   /** Read by scripts/check-partner-freshness.mjs; every partner file needs one. */
   source: "https://www.foreo.com/luna-collection and https://www.foreo.com/ufo",
   sources: {
@@ -38,10 +40,26 @@ export const FOREO = {
     ufo: "https://www.foreo.com/ufo",
   },
 
-  /** What each family physically is, in our words, with no outcome claim. */
+  /**
+   * What each family physically is, in our words, describing MECHANISM only.
+   *
+   * Two claims were removed from these strings on 4 Sep 2026 after checking them
+   * against the source pages, and both are the shape to watch for:
+   *
+   *   "a FIRMING massage mode"  Foreo's own marketing says firming massages
+   *     "help reduce fine lines & sagging" and "86% of users report skin looks &
+   *     feels firmer". Repeating "firming" in OUR voice adopts that efficacy
+   *     claim as our own. Their product descriptor may be quoted as theirs, in
+   *     the `blurb` field; it may not be restated as fact here.
+   *
+   *   "a HEATED disc"  nothing on foreo.com/ufo says the UFO is heated. The only
+   *     heating reference on either page is to the LUNA 4 plus. It was a
+   *     plausible detail that the cited source did not support, which is exactly
+   *     the kind of sentence a reader has no way to check.
+   */
   lunaWhatItIs:
-    "a silicone-bristled device that vibrates against the skin while you cleanse, with a firming massage mode on the reverse",
-  ufoWhatItIs: "a heated disc that emits red and near-infrared LED light while you hold it to the face",
+    "a silicone-bristled device that vibrates against the skin while you cleanse, with a second massage mode on the reverse",
+  ufoWhatItIs: "a handheld disc that emits red and near-infrared LED light while you hold it to the face",
 
   /** Foreo's own hardware statements, read off the LUNA collection page. */
   lunaBattery: "up to 600 uses per single charge",

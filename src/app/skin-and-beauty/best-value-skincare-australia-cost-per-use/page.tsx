@@ -17,7 +17,7 @@ export const metadata = generateSEOMetadata(seoConfig.skincareCostPerUse);
 const faqs = [
   {
     q: "How do you work out skincare cost per use?",
-    a: "Divide the price by the number of applications the bottle holds. Applications are volume divided by how much you use each time, so a 30ml serum used at 0.5ml per application gives 60 uses. A $90 serum at 60 uses costs $1.50 per application. The figure only means something if you are honest about how much you actually dispense, which for most people is more than they think.",
+    a: "Divide the price by the number of applications the bottle holds. Applications are volume divided by how much you use each time, so a 30ml serum used at 0.5ml per application gives 60 uses. Illustratively, a $90 serum at 60 uses costs $1.50 per application. The figure only means something if you are honest about how much you actually dispense, which for most people is more than they think.",
   },
   {
     q: "Is expensive skincare worth it?",
