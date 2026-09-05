@@ -186,10 +186,36 @@ already warned about in a comment beside the code.
 Two checks exist because of that pair, and the reason they are separate is that
 each caught a different failure:
 
-- `npm run verify:deploy` polls the LIVE URL of every route a commit touched and
-  asserts the status **the repo says it should return** (410 for a GONE path,
-  30x for a `next.config` source, 200 for a route with a `page.tsx`). Run it
-  after every deploy. A route the repo does not describe is reported, not guessed.
+- `npm run verify:deploy` checks the DEPLOYMENT first, then the routes. It polls
+  `vercel inspect` until Ready or Error, prints the last 25 log lines on failure,
+  and asserts each touched route returns the status **the repo says it should**
+  (410 for a GONE path, 30x for a `next.config` source, 200 for a route with a
+  `page.tsx`). Run it after every deploy. A route the repo does not describe is
+  reported, not guessed. **A commit that touched no `page.tsx` prints "that is
+  not a pass: the verdict above is the deployment status"** rather than "nothing
+  to verify", which is how a failing deploy read as clean.
+
+**A printed URL is not evidence of a deploy.** Same rule as the commit message,
+one level up. `vercel deploy` prints a Production URL **before the build runs**,
+so it prints one whether the build passes or fails. Every CLI deploy for a week
+returned a URL and the status **Error**. The status is in `vercel ls --prod`, and
+nobody looked at it.
+
+**A working pipeline can hide a broken one, and did.** The Vercel Git integration
+builds every pushed commit independently and *has* the repo, so it succeeded on
+exactly the commits the CLI deploy failed on. Production stayed healthy, every
+live check passed, and half the deploys were red for a week. When two paths can
+ship the same change, a green site proves only that *one* of them works. Check
+the path you actually used.
+
+**When a build fails, look at what the failing step sits DOWNSTREAM of before
+fixing what the message names.** The error said undated prices on
+`/skin-and-beauty/best-value-skincare-australia-cost-per-use`. The fault was
+`generate-page-dates` writing an empty file three steps earlier, in `prebuild`,
+because a `vercel deploy` tarball carries no `.git` and every `git log` returned
+"fatal: not a git repository". The prices had never been dated by anything except
+the "Last updated" line that had just vanished. Fixing the page would have been
+fixing the symptom on the wrong file.
 - `check-redirect-order` runs in `prebuild` and fails if a GONE path is shadowed
   by an earlier `next.config` pattern. Redirects run **before** middleware, so a
   shadowed 410 is unreachable. The fix is always to carve the path out of the

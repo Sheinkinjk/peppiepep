@@ -17,6 +17,14 @@
  * A commit message is not evidence. A green build is not evidence. The status
  * code the origin returns is evidence.
  *
+ * AND NEITHER IS A PRINTED URL. `vercel deploy` prints a Production URL before
+ * the build runs, so it prints one whether the build succeeds or fails. Every
+ * CLI deploy for a week returned a URL and the status Error, while the Git
+ * integration built the same commits independently and served production
+ * healthily. A working pipeline masked a broken one and the site looked fine
+ * throughout. So this script checks the DEPLOYMENT first and the routes second,
+ * and it reports the deployment status even when the commit touched no page.
+ *
  * USAGE
  *   npm run verify:deploy              routes touched in the last commit
  *   npm run verify:deploy -- HEAD~3    routes touched since that ref
@@ -91,14 +99,83 @@ function status(url) {
   }
 }
 
+// ── 1. the deployment itself ────────────────────────────────────────────────
+/**
+ * Checked first and always. A route check that passes against the PREVIOUS
+ * deployment tells you nothing about the one you just made.
+ */
+/**
+ * 2>&1 is load-bearing: `vercel inspect` writes its report to STDERR, so
+ * capturing stdout alone returns an empty string and every state reads as
+ * "polling" until the loop times out. The first version of this did exactly
+ * that and reported a Ready deployment as Timeout.
+ */
+function vercel(cmd) {
+  try {
+    return execSync(`vercel ${cmd} 2>&1`, { encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] });
+  } catch (e) {
+    return String(e.stdout ?? "") + String(e.stderr ?? "");
+  }
+}
+
+function latestProductionDeployment() {
+  const out = vercel("ls --prod");
+  const line = out.split("\n").find((l) => /https:\/\/\S+\.vercel\.app/.test(l));
+  if (!line) return null;
+  const url = line.match(/https:\/\/\S+\.vercel\.app/)?.[0] ?? null;
+  const state = line.match(/●\s*(\w+)/)?.[1] ?? "Unknown";
+  return { url, state };
+}
+
+function checkDeployment(url) {
+  for (let i = 0; i < 40; i++) {
+    const out = url ? vercel(`inspect ${url}`) : "";
+    const state = out.match(/status\s+●\s*(\w+)/)?.[1] ?? out.match(/●\s*(\w+)/)?.[1];
+    if (state === "Ready" || state === "Error" || state === "Canceled") return state;
+    process.stdout.write(`   … ${state ?? "polling"} (${i + 1})\r`);
+    execSync("perl -e 'select(undef,undef,undef,10)'");
+  }
+  return "Timeout";
+}
+
 const args = process.argv.slice(2).filter(Boolean);
 const explicit = args.filter((a) => a.startsWith("/"));
-const ref = args.find((a) => !a.startsWith("/")) ?? "HEAD~1 HEAD";
+const urlArg = args.find((a) => a.startsWith("https://"));
+const ref = args.find((a) => !a.startsWith("/") && !a.startsWith("https://")) ?? "HEAD~1 HEAD";
+
+let deployFailed = false;
+const latest = urlArg ? { url: urlArg, state: null } : latestProductionDeployment();
+if (!latest?.url) {
+  console.warn(
+    "\n  ! Could not read the deployment list from the Vercel CLI. The routes below\n" +
+      "    are checked against whatever production currently serves, which may not be\n" +
+      "    the build you just made. Run `vercel ls --prod` by hand.\n",
+  );
+} else {
+  console.log(`\n  Latest production deployment: ${latest.url}`);
+  const state = checkDeployment(latest.url);
+  const mark = state === "Ready" ? "OK" : "!!";
+  console.log(`   ${mark}  ${state}                    `);
+  if (state !== "Ready") {
+    deployFailed = true;
+    console.error(`\n  The deployment is ${state}. The last 25 log lines:\n`);
+    const log = vercel(`inspect --logs ${latest.url}`);
+    for (const l of log.split("\n").slice(-25)) console.error(`     ${l}`);
+    console.error(
+      "\n  Read what the failing check sits DOWNSTREAM of before fixing what it names.\n" +
+        "  A price check failing on a skincare page was the date generator writing an\n" +
+        "  empty file three steps earlier.\n",
+    );
+  }
+}
+
+// ── 2. the routes the commit touched ────────────────────────────────────────
 const routes = explicit.length ? explicit : routesFromGit(ref);
 
 if (routes.length === 0) {
-  console.log("  No routes touched. Nothing to verify.");
-  process.exit(0);
+  console.log("\n  This commit touched no page.tsx, so there are no routes to check.");
+  console.log(`  That is not a pass: the verdict above is the deployment status.\n`);
+  process.exit(deployFailed ? 1 : 0);
 }
 
 console.log(`\n  Verifying ${routes.length} route(s) against ${ORIGIN}\n`);
@@ -121,8 +198,9 @@ for (const item of checkable) {
   if (!ok) failed.push({ ...item, got });
 }
 
-if (failed.length) {
-  console.error(`\n  ${failed.length} route(s) do not serve what the repo says they should:\n`);
+if (failed.length || deployFailed) {
+  if (deployFailed) console.error(`\n  The deployment did not reach Ready. Everything above was checked against\n  whatever production served instead.`);
+  if (failed.length) console.error(`\n  ${failed.length} route(s) do not serve what the repo says they should:\n`);
   for (const f of failed) {
     console.error(`   - ${f.route}: expected ${f.code} because it ${f.why}, got ${f.got}.`);
   }
@@ -133,4 +211,4 @@ if (failed.length) {
   );
   process.exit(1);
 }
-console.log(`\n  Deploy verified: ${checkable.length} route(s) serve what the repo says.\n`);
+console.log(`\n  Deploy verified: deployment Ready, ${checkable.length} route(s) serve what the repo says.\n`);
