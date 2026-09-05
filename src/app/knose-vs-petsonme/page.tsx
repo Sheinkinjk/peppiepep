@@ -121,8 +121,6 @@ export default function KnoseVsPetsOnMePage() {
           Knose vs PetsOnMe: the two compared on published cover
         </h1>
 
-        {/* Above the first affiliate link, not below it. */}
-        <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
         {/* Answer-first */}
         <section className="mt-6">
           <h2 className="text-xl font-bold text-[#10251b] sm:text-2xl">Is Knose or PetsOnMe better?</h2>
@@ -135,6 +133,10 @@ export default function KnoseVsPetsOnMePage() {
               wins outright, because neither publishes premiums and the one that looks better on paper can still cost
               more for your pet. The sub-limit difference is the one most likely to decide it in a real claim.
             </p>
+        {/* Below the lead. The first paragraph after the h1 is the answer;
+            a disclosure in that slot is what an engine lifts instead. Still
+            above the first affiliate link, which is what it is for. */}
+        <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
         <EditorialMeta lastUpdated={UPDATED} className="mt-5" />
           </div>
         </section>

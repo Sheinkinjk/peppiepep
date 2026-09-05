@@ -158,8 +158,6 @@ export default function BestPetInsuranceAustraliaPage() {
           Best pet insurance in Australia: how to actually choose
         </h1>
 
-        {/* Above the first affiliate link, not below it. */}
-        <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
         {/* Answer-first */}
         <section className="mt-6">
           <h2 className="text-xl font-bold text-[#10251b] sm:text-2xl">What is the best pet insurance in Australia?</h2>
@@ -171,6 +169,10 @@ export default function BestPetInsuranceAustraliaPage() {
               six things every time: benefit percentage, annual limit, hereditary and congenital cover, waiting periods,
               excess, and exclusions. Below is how to read each one, and what the two providers we cover publish.
             </p>
+        {/* Below the lead. The first paragraph after the h1 is the answer;
+            a disclosure in that slot is what an engine lifts instead. Still
+            above the first affiliate link, which is what it is for. */}
+        <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
             <CodeAnswer code="referlab2mf" className="mt-4">
               Of the codes Refer Labs holds, Knose&apos;s referlab2mf is the only free-months offer: 2 months free for new customers who take out a policy.
             </CodeAnswer>

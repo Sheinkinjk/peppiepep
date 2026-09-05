@@ -85,13 +85,15 @@ export default function MoshyEligibilityPage() {
         <h1 className="text-3xl sm:text-4xl lg:text-[2.7rem] font-black leading-[1.08] tracking-tight mb-5">
           The Moshy eligibility check, <span style={{ color: CYAN_LT }}>explained before you start it</span>
         </h1>
-        {/* Above the first affiliate link, not below it. */}
-        <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
         <p className="text-[#3d4b44] text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
           Ten minutes, a questionnaire, and a practitioner on the other end. Here is what the Moshy quiz actually asks,
           what happens after you hit submit, and why not everyone gets through.
         </p>
 
+        {/* Below the lead. The first paragraph after the h1 is the answer;
+            a disclosure in that slot is what an engine lifts instead. Still
+            above the first affiliate link, which is what it is for. */}
+        <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
         <p className="mb-10 rounded-lg border border-[#e5e9e7] bg-[#f5f8f6] px-4 py-3 text-xs leading-relaxed text-[#3d4b44]">
           <span className="font-semibold text-[#2b362f]">Information only.</span> This page explains a sign-up process.
           It is not medical advice and does not imply the service is suitable for any individual. This page contains an

@@ -134,14 +134,16 @@ export default function MoshyVsJuniperPage() {
           Moshy vs Juniper:{" "}
           <span style={{ color: CYAN_LT }}>which one is built for you?</span>
         </h1>
-        {/* Above the first affiliate link, not below it. */}
-        <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
         <p className="text-[#3d4b44] text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
           Australia&apos;s two most-compared weight-management telehealth platforms answer the same problem in different
           ways. <strong className="text-[#2b362f]">Moshy runs a lean clinical pathway, Juniper wraps clinical care in a
           coaching program</strong>. Moshy is gender-neutral and carries REFERRAL120, $120 off a first order; Juniper
           markets primarily to women and gives a free first consultation instead of a code.
         </p>
+        {/* Below the lead. The first paragraph after the h1 is the answer;
+            a disclosure in that slot is what an engine lifts instead. Still
+            above the first affiliate link, which is what it is for. */}
+        <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
         <CodeAnswer code="REFERRAL120" className="mt-6">
           Juniper&apos;s incentive is a free first consultation rather than a code, while Moshy&apos;s is REFERRAL120, the code Refer Labs holds for Moshy: $120 off a new customer&apos;s first order, one use per customer.
         </CodeAnswer>

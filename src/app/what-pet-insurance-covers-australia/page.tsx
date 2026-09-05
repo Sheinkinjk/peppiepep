@@ -98,13 +98,15 @@ export default function WhatPetInsuranceCoversPage() {
             <h1 className="mt-4 text-3xl font-extrabold leading-[1.08] tracking-tight text-[#10251b] sm:text-4xl">
               What pet insurance covers in Australia
             </h1>
-            {/* Above the first affiliate link, not below it. */}
-            <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
             <p className="mt-5 text-lg leading-relaxed text-[#3d4b44]">
               Pet insurance is not one product. Cover levels, waiting periods, exclusions, excess and limits all vary by
               insurer, and the specifics that matter are always in the Product Disclosure Statement (PDS). Here is what
               each of those terms means, so you can read a policy for yourself. This is general information, not advice.
             </p>
+            {/* Below the lead. The first paragraph after the h1 is the answer;
+                a disclosure in that slot is what an engine lifts instead. Still
+                above the first affiliate link, which is what it is for. */}
+            <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
             <EditorialMeta lastUpdated={UPDATED} className="mt-4" />
           </header>
 

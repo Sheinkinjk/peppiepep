@@ -75,14 +75,16 @@ export default function CarrdVsDurablePage() {
           Carrd vs Durable AI:{" "}
           <span style={{ color: CYAN_LT }}>cheap-and-simple vs AI-built business site</span>
         </h1>
-        {/* Above the first affiliate link, not below it. */}
-        <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
         <p className="text-[#3d4b44] text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
           Both are excellent, for different jobs. <strong className="text-[#2b362f]">Carrd</strong> is the cheapest way to
           ship a clean one-page site. <strong className="text-[#2b362f]">Durable AI</strong> generates a full business
           website with a CRM in about 30 seconds.
         </p>
 
+        {/* Below the lead. The first paragraph after the h1 is the answer;
+            a disclosure in that slot is what an engine lifts instead. Still
+            above the first affiliate link, which is what it is for. */}
+        <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
         <div className="rounded-xl border px-6 py-5 mb-10" style={{ borderColor: `${CYAN}40`, background: `${CYAN}0A` }}>
           <p className="text-[10px] font-bold uppercase tracking-[0.18em] mb-2" style={{ color: CYAN_LT }}>Quick Verdict</p>
           <p className="text-[#2b362f] text-sm sm:text-base leading-relaxed mb-5">

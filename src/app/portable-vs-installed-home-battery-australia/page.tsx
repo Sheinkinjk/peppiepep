@@ -120,8 +120,6 @@ export default function Page() {
           Portable power station or installed home battery: <span className="text-[#0a7c42]">which do you need?</span>
         </h1>
 
-        {/* Above the first affiliate link, not below it. */}
-        <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
         <p className="mt-5 text-lg leading-relaxed text-[#2b362f]">
           They answer different questions. A portable unit, {fmtAud(299)} for a small one
           and <strong>{fmtAud(cheapest1k.aud)}</strong> for one that will hold a fridge, gets you through a blackout with
@@ -132,6 +130,10 @@ export default function Page() {
           these is available to you at all.
         </p>
 
+        {/* Below the lead. The first paragraph after the h1 is the answer;
+            a disclosure in that slot is what an engine lifts instead. Still
+            above the first affiliate link, which is what it is for. */}
+        <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
         <EditorialMeta lastUpdated={UPDATED} className="mt-5" />
 
         {/* The conflict, up front rather than buried at the bottom. */}

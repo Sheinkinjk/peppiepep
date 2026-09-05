@@ -151,8 +151,6 @@ export default function MoshyVsPilotPage() {
             <h1 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-extrabold leading-[1.08] tracking-tight text-[#10251b] mb-4 max-w-3xl">
               Moshy vs Pilot: weight loss telehealth compared for 2026
             </h1>
-            {/* Above the first affiliate link, not below it. */}
-            <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
             <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl mb-3">
               Moshy and Pilot are two Australian telehealth routes into weight management, but they are built differently.
               Moshy is gender-neutral and open to anyone eligible, and new customers can currently receive $120 off their
@@ -160,6 +158,10 @@ export default function MoshyVsPilotPage() {
               men&apos;s health offering. Both run on a subscription model. Below we line them up on how their pricing
               models differ, who each suits, the online process, what is included, and how treatment access is handled.
             </p>
+            {/* Below the lead. The first paragraph after the h1 is the answer;
+                a disclosure in that slot is what an engine lifts instead. Still
+                above the first affiliate link, which is what it is for. */}
+            <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
             {/* PILOT-NON-PARTNER: states what Refer Labs holds, not what Pilot lacks. */}
             <CodeAnswer code="REFERRAL120" className="mt-6">
               The one code Refer Labs holds here is REFERRAL120, worth $120 off a new customer&apos;s first Moshy order, once per customer. Refer Labs has no arrangement with Pilot.

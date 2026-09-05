@@ -128,14 +128,16 @@ export default function WeightLossHubPage() {
             <h1 className="text-4xl font-bold leading-[1.06] tracking-[-0.01em] text-[#10251b] sm:text-5xl">
               Weight loss telehealth in Australia: <span className="italic text-[#0a7c42]">online programs, compared properly</span>
             </h1>
-            {/* Above the first affiliate link, not below it. */}
-            <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#2b362f]">
               Online weight loss telehealth lets you start without waiting weeks for an appointment: you complete an
               assessment, a registered practitioner reviews it, and a plan follows if you&apos;re suitable. This hub
               compares the online programs and clinics available in Australia across three clear pathways, with
               independent research for each.
             </p>
+            {/* Below the lead. The first paragraph after the h1 is the answer;
+                a disclosure in that slot is what an engine lifts instead. Still
+                above the first affiliate link, which is what it is for. */}
+            <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
             <OfferSchema code="REFERRAL120" />
 
           </div>

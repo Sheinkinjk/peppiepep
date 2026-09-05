@@ -108,12 +108,14 @@ export default function MoshReviewPage() {
         <h1 className="text-3xl sm:text-4xl lg:text-[2.7rem] font-black leading-[1.08] tracking-tight mb-5">
           Mosh review: <span style={{ color: CYAN }}>is it legit, and is it worth it?</span>
         </h1>
-        {/* Above the first affiliate link, not below it. */}
-        <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
         <p className="text-[#3d4b44] text-base sm:text-lg leading-relaxed mb-4 max-w-2xl">
           An independent look at Mosh, the Australian men&apos;s hair-loss telehealth service: whether it is a real
           clinical service, what it costs, what people actually raise about it, and how to start.
         </p>
+        {/* Below the lead. The first paragraph after the h1 is the answer;
+            a disclosure in that slot is what an engine lifts instead. Still
+            above the first affiliate link, which is what it is for. */}
+        <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
         <CodeAnswer code="REFERAL55" className="mt-6">
           REFERAL55, the Mosh code Refer Labs holds, gets a new customer 55% off a first order.
         </CodeAnswer>

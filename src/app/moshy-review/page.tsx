@@ -108,12 +108,14 @@ export default function MoshyReviewPage() {
         <h1 className="text-3xl sm:text-4xl lg:text-[2.7rem] font-black leading-[1.08] tracking-tight mb-5">
           Moshy review: <span style={{ color: CYAN_LT }}>is it legit, and what the service is like</span>
         </h1>
-        {/* Above the first affiliate link, not below it. */}
-        <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
         <p className="text-[#3d4b44] text-base sm:text-lg leading-relaxed mb-4 max-w-2xl">
           A plain walkthrough of how Moshy works: what you get, what happens when you apply, and how to start the free
           eligibility check.
         </p>
+        {/* Below the lead. The first paragraph after the h1 is the answer;
+            a disclosure in that slot is what an engine lifts instead. Still
+            above the first affiliate link, which is what it is for. */}
+        <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
         <CodeAnswer code="REFERRAL120" className="mt-6">
           REFERRAL120, the Moshy code Refer Labs holds, gets a new customer $120 off a first order, once per customer.
         </CodeAnswer>

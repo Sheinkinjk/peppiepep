@@ -96,12 +96,14 @@ export default function HairLossHubPage() {
             <h1 className="mt-4 text-4xl font-bold leading-[1.06] tracking-[-0.01em] text-[#10251b] sm:text-5xl">
               Hair loss in Australia: <span className="italic text-[#0a7c42]">the options, compared properly</span>
             </h1>
-            {/* Above the first affiliate link, not below it. */}
-            <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#2b362f]">
               Prescription telehealth, topical products, and everything marketed in between. This hub separates the
               clinical route from the cosmetic one so you know which you are actually looking at.
             </p>
+            {/* Below the lead. The first paragraph after the h1 is the answer;
+                a disclosure in that slot is what an engine lifts instead. Still
+                above the first affiliate link, which is what it is for. */}
+            <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
             <OfferSchema code="REFERAL55" />
 
           </div>

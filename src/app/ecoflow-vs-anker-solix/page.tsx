@@ -121,8 +121,6 @@ export default function Page() {
           EcoFlow vs Anker SOLIX: <span className="text-[#0a7c42]">priced per watt-hour, in AUD</span>
         </h1>
 
-        {/* Above the first affiliate link, not below it. */}
-        <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
         {/* The answer, first. Nothing above it. */}
         <p className="mt-5 text-lg leading-relaxed text-[#2b362f]">
           <strong>EcoFlow is cheaper per watt-hour at the 1,000Wh and 2,000Wh tiers, where most buyers land.</strong> At about
@@ -131,6 +129,10 @@ export default function Page() {
           EcoFlow&apos;s 1,000Wh units deliver 1,800W, which decides whether a kettle or a microwave will run at all. At the 290Wh entry tier both brands charge A$449 and the rate per watt-hour is level, though EcoFlow&apos;s unit puts out 600W against Anker&apos;s 300W.
         </p>
 
+        {/* Below the lead. The first paragraph after the h1 is the answer;
+            a disclosure in that slot is what an engine lifts instead. Still
+            above the first affiliate link, which is what it is for. */}
+        <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
         <PowerCtaPair location="vs-top" className="mt-6" />
 
         <EditorialMeta lastUpdated={UPDATED} className="mt-5" />

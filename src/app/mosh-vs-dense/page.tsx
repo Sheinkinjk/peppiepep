@@ -144,8 +144,6 @@ export default function MoshVsDensePage() {
             <h1 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-extrabold leading-[1.08] tracking-tight text-[#10251b] mb-4 max-w-3xl">
               Mosh vs Dense: hair loss treatment compared (2026)
             </h1>
-            {/* Above the first affiliate link, not below it. */}
-            <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
             <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl mb-3">
               They are not alternatives, and only one of them involves a practitioner. Mosh is prescription telehealth:
               it can prescribe hair-loss treatments after an online consultation reviewed by a registered Australian
@@ -153,6 +151,10 @@ export default function MoshVsDensePage() {
               scalp treatments aimed at density and scalp health, bought straight off the shelf. One is a clinical route
               and the other is a retail one, so the choice is which you want rather than which is better.
             </p>
+            {/* Below the lead. The first paragraph after the h1 is the answer;
+                a disclosure in that slot is what an engine lifts instead. Still
+                above the first affiliate link, which is what it is for. */}
+            <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
             <CodeAnswer code="REFERAL55" className="mt-6">
               Dense has no Refer Labs code, while Mosh&apos;s REFERAL55 gives new customers 55% off a first order.
             </CodeAnswer>

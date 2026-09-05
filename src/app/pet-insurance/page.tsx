@@ -106,8 +106,6 @@ export default function PetInsurancePage() {
             <h1 className="mt-4 text-3xl font-extrabold leading-[1.08] tracking-tight text-[#10251b] sm:text-4xl">
               Pet insurance in Australia
             </h1>
-            {/* Above the first affiliate link, not below it. */}
-            <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
             <p className="mt-5 text-lg leading-relaxed text-[#3d4b44]">
               Far fewer insurers exist than brands: one underwriter, PetSure, sits behind more than twenty of the
               policies sold in Australia, so two brands you are comparing may be the same product with different
@@ -115,6 +113,10 @@ export default function PetInsurancePage() {
               Statement rather than the marketing: cover level, waiting periods, exclusions, excess and annual limit.
               General information, not advice and not a recommendation.
             </p>
+            {/* Below the lead. The first paragraph after the h1 is the answer;
+                a disclosure in that slot is what an engine lifts instead. Still
+                above the first affiliate link, which is what it is for. */}
+            <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
             <OfferSchema code="referlab2mf" />
             <OfferSchema code="REFERLABS" />
 

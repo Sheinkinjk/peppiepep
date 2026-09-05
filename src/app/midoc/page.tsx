@@ -100,8 +100,6 @@ export default function MidocPage() {
           Midoc: what it costs and how the access route works
         </h1>
 
-        {/* Above the first affiliate link, not below it. */}
-        <AffiliateDisclosure compact partners={["Midoc"]} className="mt-4 max-w-2xl" />
         {/* Answer-first. Nothing goes above this paragraph. */}
         <p className="mt-5 text-lg leading-relaxed text-[#3d4b44]">
           Midoc is an Australian telehealth service. You fill in a short form, a doctor registered with
@@ -112,6 +110,10 @@ export default function MidocPage() {
           off midoc.com.au on {MIDOC.readOnLabel}.
         </p>
 
+        {/* Below the lead. The first paragraph after the h1 is the answer;
+            a disclosure in that slot is what an engine lifts instead. Still
+            above the first affiliate link, which is what it is for. */}
+        <AffiliateDisclosure compact partners={["Midoc"]} className="mt-4 max-w-2xl" />
         <EditorialMeta lastUpdated={UPDATED} className="mt-5" />
 
         <p className="mt-6 rounded-xl border border-[#e5e9e7] bg-[#f8faf9] px-5 py-4 text-xs leading-relaxed text-[#6e7b74]">

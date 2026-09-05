@@ -103,13 +103,15 @@ export default function Page() {
         <h1 className="mt-5 text-3xl font-bold leading-[1.1] tracking-[-0.01em] text-[#10251b] sm:text-4xl">
           Affiliate and referral software: <span className="italic text-[#0a7c42]">how to choose one</span>
         </h1>
-        {/* Above the first affiliate link, not below it. */}
-        <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
         <p className="mt-5 text-lg leading-relaxed text-[#2b362f]">
           Almost nobody in this category publishes a price, so comparing platforms means getting quotes and making them
           comparable. These are the six questions that do that, from a business that runs affiliate programs rather than
           only writing about them.
         </p>
+        {/* Below the lead. The first paragraph after the h1 is the answer;
+            a disclosure in that slot is what an engine lifts instead. Still
+            above the first affiliate link, which is what it is for. */}
+        <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
         <p className="mt-4 text-xs font-medium text-[#6e7b74]">Last checked by Refer Labs, 20 August 2026</p>
 
         <div className="mt-10 space-y-10 text-[15px] leading-relaxed text-[#3d4b44]">

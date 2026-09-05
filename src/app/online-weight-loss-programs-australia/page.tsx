@@ -87,13 +87,15 @@ export default function OnlineWeightLossProgramsPage() {
         <h1 className="text-3xl sm:text-4xl lg:text-[2.7rem] font-black leading-[1.08] tracking-tight mb-5">
           Online weight loss programs in Australia: <span style={{ color: CYAN_LT }}>the three types, untangled</span>
         </h1>
-        {/* Above the first affiliate link, not below it. */}
-        <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
         <p className="text-[#3d4b44] text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
           &ldquo;Online weight loss program&rdquo; covers everything from a practitioner-supervised medical service to a
           meal-plan PDF. Knowing which type you are looking at is most of the decision.
         </p>
 
+        {/* Below the lead. The first paragraph after the h1 is the answer;
+            a disclosure in that slot is what an engine lifts instead. Still
+            above the first affiliate link, which is what it is for. */}
+        <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
         <p className="mb-10 rounded-lg border border-[#e5e9e7] bg-[#f5f8f6] px-4 py-3 text-xs leading-relaxed text-[#3d4b44]">
           <span className="font-semibold text-[#2b362f]">Information only.</span> This page maps a category of services
           and is not medical advice. It does not recommend any treatment or imply suitability for any individual.

@@ -265,11 +265,13 @@ export default function BestHairLossTreatmentAustraliaPage() {
             Best Hair Loss Treatment Australia 2026:{" "}
             <span style={{ color: CYAN_LT }}>Mosh vs Dense vs Telehealth</span>
           </h1>
-          {/* Above the first affiliate link, not below it. */}
-          <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
           <p className="text-[#3d4b44] text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
             A practical comparison of the most accessible hair loss options for Australians, prescription telehealth, topical products, and when to see a specialist.
           </p>
+          {/* Below the lead. The first paragraph after the h1 is the answer;
+              a disclosure in that slot is what an engine lifts instead. Still
+              above the first affiliate link, which is what it is for. */}
+          <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
           <CodeAnswer code="REFERAL55" className="mt-6">
             Of the hair-loss options compared here, Mosh is the one carrying a Refer Labs code: REFERAL55, 55% off a new customer&apos;s first order.
           </CodeAnswer>

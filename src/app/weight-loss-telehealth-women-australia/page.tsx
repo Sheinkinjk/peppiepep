@@ -95,14 +95,16 @@ export default function WeightLossTelehealthWomenPage() {
         <h1 className="text-3xl sm:text-4xl lg:text-[2.7rem] font-black leading-[1.08] tracking-tight mb-5">
           Weight loss telehealth for women in Australia: <span style={{ color: CYAN_LT }}>the options, and how to choose</span>
         </h1>
-        {/* Above the first affiliate link, not below it. */}
-        <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
         <p className="text-[#3d4b44] text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
           Most of the weight-loss telehealth marketing aimed at women leads with coaching and community. That suits some
           people and not others. This page explains how the women&apos;s services actually work, the difference between a
           coaching-led program and a leaner clinical pathway, and the checklist worth running before you commit to any of
           them.
         </p>
+        {/* Below the lead. The first paragraph after the h1 is the answer;
+            a disclosure in that slot is what an engine lifts instead. Still
+            above the first affiliate link, which is what it is for. */}
+        <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
         <CodeAnswer code="REFERRAL120" className="mt-6">
           The one code on this page is REFERRAL120, the Moshy code Refer Labs holds: $120 off a new customer&apos;s first order, once per customer, applied automatically through the link.
         </CodeAnswer>

@@ -140,8 +140,6 @@ export default function CarrdVsButternutPage() {
             <h1 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-extrabold leading-[1.08] tracking-tight text-[#10251b] mb-4 max-w-3xl">
               Carrd vs Butternut AI (2026)
             </h1>
-            {/* Above the first affiliate link, not below it. */}
-            <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
             <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl mb-3">
               Carrd and Butternut AI both get you a website without a developer, but they take opposite routes. Carrd is a
               simple, low-cost one-page builder that you design yourself, and it does that one job extremely well.
@@ -150,6 +148,10 @@ export default function CarrdVsButternutPage() {
               pricing, and who each one suits.
             </p>
 
+            {/* Below the lead. The first paragraph after the h1 is the answer;
+                a disclosure in that slot is what an engine lifts instead. Still
+                above the first affiliate link, which is what it is for. */}
+            <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
             <div className="flex flex-wrap gap-3">
               <a
                 {...carrd}

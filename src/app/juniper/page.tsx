@@ -177,11 +177,13 @@ export default function JuniperPage() {
             <h1 className="mt-4 text-4xl font-extrabold leading-[1.06] tracking-[-0.02em] text-[#10251b] sm:text-5xl lg:text-[3.2rem]">
               Juniper Australia: <span className="text-[#0a7c42]">a free first consultation for new patients</span>
             </h1>
-            {/* Above the first affiliate link, not below it. */}
-            <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
             <p className="mt-5 inline-flex items-center gap-2 rounded-full border border-[#cfe6da] bg-[#e8f5ee] px-4 py-1.5 text-[13px] font-bold text-[#0a7c42]">
               <ShieldCheck className="h-4 w-4" aria-hidden="true" /> New patients get a free first consultation through our link
             </p>
+            {/* Below the lead. The first paragraph after the h1 is the answer;
+                a disclosure in that slot is what an engine lifts instead. Still
+                above the first affiliate link, which is what it is for. */}
+            <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#3d4b44]">
               Juniper is an Australian medical weight-management program designed for women. Its Weight Reset Program
               pairs online consultations with Australian-registered practitioners with a full wraparound of care:

@@ -114,13 +114,15 @@ export default function PetsOnMePage() {
         <h1 className="mt-4 text-3xl font-extrabold leading-[1.08] tracking-tight text-[#10251b] sm:text-4xl">
           PetsOnMe pet insurance: the cover, and what the REFERLABS code gives you
         </h1>
-        {/* Above the first affiliate link, not below it. */}
-        <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
         <p className="mt-5 text-base leading-relaxed text-[#3d4b44] sm:text-lg">
           PetsOnMe is an Australian pet insurance provider offering three levels of cover, all paying 80% of the
           eligible vet bill less your excess. This page sets out what each plan includes, what the code does and does
           not do, and what to check before you buy. It is general information, not financial advice.
         </p>
+        {/* Below the lead. The first paragraph after the h1 is the answer;
+            a disclosure in that slot is what an engine lifts instead. Still
+            above the first affiliate link, which is what it is for. */}
+        <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
         {/* The sentence that sat here duplicated the paragraph above it. The date
             stays: it is the only reading date on this page, and without it the nearest
             date to the code is the "Last updated" stamp, which reads as verification. */}

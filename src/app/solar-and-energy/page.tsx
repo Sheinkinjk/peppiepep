@@ -154,8 +154,6 @@ export default function Page() {
           Solar &amp; energy: <span className="text-[#0a7c42]">what to decide, in the order it matters</span>
         </h1>
 
-        {/* Above the first affiliate link, not below it. */}
-        <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
         {/* The answer, first. */}
         <p className="mt-5 max-w-3xl text-lg leading-relaxed text-[#2b362f]">
           Three decisions sit behind almost every energy question we get asked, and they come in order:{" "}
@@ -165,6 +163,10 @@ export default function Page() {
           those you are on.
         </p>
 
+        {/* Below the lead. The first paragraph after the h1 is the answer;
+            a disclosure in that slot is what an engine lifts instead. Still
+            above the first affiliate link, which is what it is for. */}
+        <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
         <EditorialMeta lastUpdated={UPDATED} className="mt-5" />
 
         <div className="mt-8 grid gap-4 sm:grid-cols-2">

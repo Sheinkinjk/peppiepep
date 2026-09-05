@@ -95,13 +95,15 @@ export default function KnosePage() {
             <h1 className="mt-4 text-3xl font-extrabold leading-[1.08] tracking-tight text-[#10251b] sm:text-4xl">
               Knose promo code <span className="text-[#0a7c42]">referlab2mf</span>: 2 months free for new customers
             </h1>
-            {/* Above the first affiliate link, not below it. */}
-            <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
             <p className="mt-5 text-lg leading-relaxed text-[#3d4b44]">
               Knose is an Australian pet insurance provider. New customers can get <strong className="text-[#10251b]">2
               months free</strong> when they take out a policy using the code <strong className="text-[#10251b]">referlab2mf</strong> through
               our link. This page is general information and a referral, not financial advice or a recommendation.
             </p>
+            {/* Below the lead. The first paragraph after the h1 is the answer;
+                a disclosure in that slot is what an engine lifts instead. Still
+                above the first affiliate link, which is what it is for. */}
+            <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
             {/* The sentence that sat here duplicated the paragraph above it. The date
                 stays: it is the only reading date on this page, and without it the nearest
                 date to the code is the "Last updated" stamp, which reads as verification. */}

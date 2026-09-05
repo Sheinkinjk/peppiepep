@@ -106,14 +106,16 @@ export default function WeightLossEligibilityPage() {
         <h1 className="text-3xl sm:text-4xl lg:text-[2.7rem] font-black leading-[1.08] tracking-tight mb-5">
           Do you qualify for weight-loss treatment in Australia? <span style={{ color: CYAN }}>The eligibility criteria, explained</span>
         </h1>
-        {/* Above the first affiliate link, not below it. */}
-        <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
         <p className="text-[#3d4b44] text-base sm:text-lg leading-relaxed mb-4 max-w-2xl">
           There is no online form that decides this for you, but there are clear criteria a registered practitioner uses.
           This page explains what generally counts, what does not automatically qualify you, and the fastest way to find
           out where you actually stand. It is general information, not medical advice.
         </p>
 
+        {/* Below the lead. The first paragraph after the h1 is the answer;
+            a disclosure in that slot is what an engine lifts instead. Still
+            above the first affiliate link, which is what it is for. */}
+        <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
         <p className="mb-10 rounded-lg border border-[#e5e9e7] bg-[#f5f8f6] px-4 py-3 text-xs leading-relaxed text-[#3d4b44]">
           <span className="font-semibold text-[#2b362f]">Information only.</span> Eligibility for any medical
           weight-management program is decided individually by a registered Australian practitioner after an assessment.

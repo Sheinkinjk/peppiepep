@@ -140,8 +140,6 @@ export default function DurableVsButternutPage() {
             <h1 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-extrabold leading-[1.08] tracking-tight text-[#10251b] mb-4 max-w-3xl">
               Durable AI vs Butternut AI (2026)
             </h1>
-            {/* Above the first affiliate link, not below it. */}
-            <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
             <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl mb-3">
               Durable AI and Butternut AI are two of the fastest AI website builders around, and they overlap heavily,
               yet they are built for slightly different jobs. Durable generates a business site in about 30 seconds and
@@ -150,6 +148,10 @@ export default function DurableVsButternutPage() {
               setup speed, the free tier, what you actually get, pricing, and who each one suits.
             </p>
 
+            {/* Below the lead. The first paragraph after the h1 is the answer;
+                a disclosure in that slot is what an engine lifts instead. Still
+                above the first affiliate link, which is what it is for. */}
+            <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
             <div className="flex flex-wrap gap-3">
               <a
                 {...durable}

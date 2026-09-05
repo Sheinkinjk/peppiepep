@@ -235,11 +235,13 @@ export default function BestNewsletterPlatformPage() {
             Best Newsletter Platform 2026:{" "}
             <span style={{ color: CYAN_LT }}>beehiiv vs Substack vs ConvertKit</span>
           </h1>
-          {/* Above the first affiliate link, not below it. */}
-          <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
           <p className="text-[#3d4b44] text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
             We compared the three leading newsletter platforms on free plans, monetisation, growth tools, and what the community actually recommends. Our verdict is below.
           </p>
+          {/* Below the lead. The first paragraph after the h1 is the answer;
+              a disclosure in that slot is what an engine lifts instead. Still
+              above the first affiliate link, which is what it is for. */}
+          <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
           <a
             {...aff(BEEHIIV_URL)}
             className="inline-flex items-center justify-center gap-2 rounded-xl px-7 py-3.5 text-sm font-bold text-white transition-all hover:-translate-y-0.5 shadow-lg"

@@ -109,8 +109,6 @@ export default function Page() {
           Portable power stations in Australia: <span className="text-[#0a7c42]">what they cost, and what they run</span>
         </h1>
 
-        {/* Above the first affiliate link, not below it. */}
-        <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
         <p className="mt-5 text-lg leading-relaxed text-[#2b362f]">
           Australian prices run from <strong>{fmtAud(cheapestAny.aud)}</strong> for a {cheapestAny.wh}Wh unit that keeps
           a router and phones alive, to <strong>{fmtAud(7299)}</strong> for 6,144Wh that will carry a fridge for a day
@@ -118,6 +116,10 @@ export default function Page() {
           need an electrician, which is the whole point if you rent or live in an apartment.
         </p>
 
+        {/* Below the lead. The first paragraph after the h1 is the answer;
+            a disclosure in that slot is what an engine lifts instead. Still
+            above the first affiliate link, which is what it is for. */}
+        <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
         <PowerCtaPair location="pps-top" className="mt-6" />
 
         <EditorialMeta lastUpdated={UPDATED} className="mt-5" />

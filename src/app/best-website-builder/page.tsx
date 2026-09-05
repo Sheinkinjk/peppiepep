@@ -334,11 +334,13 @@ export default function BestWebsiteBuilderPage() {
               <span style={{ color: CYAN_LT }}>Four Platforms. One Clear Answer.</span>
             </h1>
 
-            {/* Above the first affiliate link, not below it. */}
-            <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
             <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl mb-3">
               Most people need Carrd (free, permanent, live in an hour) or one of the AI builders. Swipe Pages sits in a different category entirely, it is a conversion tool for paid ad campaigns, not a general website solution.
             </p>
+            {/* Below the lead. The first paragraph after the h1 is the answer;
+                a disclosure in that slot is what an engine lifts instead. Still
+                above the first affiliate link, which is what it is for. */}
+            <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
             <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl mb-4">
               Below: what each platform is actually built for, current pricing, current offers, and a direct link to get started. No affiliate fluff, each verdict is based on what the product does well and who it will fail.
             </p>

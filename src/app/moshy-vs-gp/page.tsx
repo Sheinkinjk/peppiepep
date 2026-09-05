@@ -91,12 +91,14 @@ export default function MoshyVsGpPage() {
         <h1 className="text-3xl sm:text-4xl lg:text-[2.7rem] font-black leading-[1.08] tracking-tight mb-5">
           Moshy vs your GP: <span style={{ color: CYAN_LT }}>two doors to the same kind of care</span>
         </h1>
-        {/* Above the first affiliate link, not below it. */}
-        <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
         <p className="text-[#3d4b44] text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
           Both routes end with a qualified practitioner making an individual decision about you. The differences are
           practical: speed, format, continuity, and what kind of case each one handles best.
         </p>
+        {/* Below the lead. The first paragraph after the h1 is the answer;
+            a disclosure in that slot is what an engine lifts instead. Still
+            above the first affiliate link, which is what it is for. */}
+        <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
         <CodeAnswer code="REFERRAL120" className="mt-6">
           A GP visit has no discount code attached; the telehealth route does, and REFERRAL120, the Moshy code Refer Labs verified, takes $120 off a new customer&apos;s first order, once per customer.
         </CodeAnswer>

@@ -84,12 +84,14 @@ export default function MoshyAlternativesPage() {
         <h1 className="text-3xl sm:text-4xl lg:text-[2.7rem] font-black leading-[1.08] tracking-tight mb-5">
           Moshy alternatives in Australia: <span style={{ color: CYAN_LT }}>the shortlist</span>
         </h1>
-        {/* Above the first affiliate link, not below it. */}
-        <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
         <p className="text-[#3d4b44] text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
           People search for Moshy alternatives for good reasons: comparing before committing, or the service was not
           the right fit. The shortlist is genuinely short, and here it is without padding.
         </p>
+        {/* Below the lead. The first paragraph after the h1 is the answer;
+            a disclosure in that slot is what an engine lifts instead. Still
+            above the first affiliate link, which is what it is for. */}
+        <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
         <CodeAnswer code="REFERRAL120" className="mt-6">
           Among the alternatives set out below, Moshy is the one with a Refer Labs code: REFERRAL120, $120 off a new customer&apos;s first order, one use per customer.
         </CodeAnswer>

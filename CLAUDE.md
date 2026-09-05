@@ -94,7 +94,12 @@ A page that only says what suits us reads as marketing and gets cited like marke
   underwrites pet insurance"), because that is what both Google and the engines matched.
 - **The answer is the first paragraph after the `<h1>`.** Nothing goes above it: not the
   last-updated line, not a disclaimer box, not a CTA. Twelve pages had metadata sitting in
-  that slot in Aug 2026 and it was fixed for exactly this reason.
+  that slot in Aug 2026 and it was fixed for exactly this reason. **It came back twice**, in
+  `HairLossGuide` and `ApolloGuide` (an `EditorialMeta` strip) and then on 34 pages when the
+  affiliate disclosure was hoisted to fix a different fault, so `scripts/check-answer-slot.mjs`
+  now runs in `postbuild` and watches it. A heading between the `<h1>` and the lead is
+  allowed and is often the better pattern: `/best-pet-insurance-australia` asks the buyer's
+  question as an `<h2>` and answers it underneath. Furniture is what may not sit there.
 - At least one `<h2>` is the buyer's question **verbatim**, with a liftable answer beneath.
 - Every figure carries the source it was read from and the **date it was read**.
 
@@ -139,6 +144,41 @@ Run this in order. Steps 1-3 are the ones that were repeatedly missed and cost r
 **8. Link the money page from the nav and the hub**, not just the review page. `/moshy` sat at 6 inbound files against the review's 16, and was absent from the nav entirely.
 
 **9. Keep `llms.txt` clean.** Retiring or redirecting a page means removing its `llms.txt` entry: pointing AI engines at a 308 wastes the citation. Re-run the URL check after any retirement.
+
+### Measuring the site: two rules, both learned by getting them wrong
+
+**A surprisingly bad number gets checked against three pages by hand before it is
+reported.** Four measurement bugs have now produced numbers that were acted on:
+
+| The number | What was actually wrong |
+|---|---|
+| "4 pages have undated claims" | the date regex matched only full month names, so `17 Aug 2026` was invisible |
+| "only 31% of pages are answer-first" | the window read h1-to-first-h2, so a page leading with the buyer's question as a heading scored zero. The real figure was 57% |
+| "31 dead affiliate links" | PartnerStack 404s on HEAD and 200s on a browser GET. Two were dead |
+| "68 pages fail answer-first" | the metric scored "pay nothing" and "no single price" as failures because they contain no digit, measuring punctuation rather than answers |
+
+The tell is the same every time: the number is worse than the site feels. Three
+pages read by hand costs a few minutes and has caught every one of these.
+
+**A regex matching a string is not evidence of a problem.** `/terms` was reported
+as "the most exposed thing in this audit", escalated to the top of a lawyer list,
+and the finding was 35 hits on **Pepform**, our own legal entity name, which this
+file explicitly says not to "fix". Acting on it would have deleted correct legal
+identity from the terms of service.
+
+Before reporting a match as a fault, read one. Ask what the string *is* in
+context: a negation ("suitability is never guaranteed"), a question the page then
+answers ("what is the best CRM?" / "there is no single best"), an attributed
+quote, our own disclaimer, or our own company name. A scan for ACL superlatives
+flagged 103 pages; reading them, three carried a real claim.
+
+**The corollary for guards.** A new check gets its false positives read before it
+ships, and gets tested by reintroducing the real fault. `check-answer-slot` was
+wrong three times before it was right: it flagged an h2 question as furniture
+(that is the pattern we want), read a window that ran past the paragraph it was
+judging, and failed a lead that answered the question and then closed with a
+disclosure. And an unwired guard passes silently: wire it into `prebuild` or
+`postbuild`, then break something on purpose and watch it fail.
 
 ### Adding a partner to a coming-soon hub: the five artefacts
 

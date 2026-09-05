@@ -256,8 +256,6 @@ export default function BestAiSalesToolsPage() {
             Best AI Sales Tools in 2026:{" "}
             <span style={{ color: ACCENT_LT }}>GoHighLevel, AiSDR, Reply.io & FullEnrich</span>
           </h1>
-          {/* Above the first affiliate link, not below it. */}
-          <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
           <p className="text-[#3d4b44] text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
             Each of these four fixes a different bottleneck, so the right one depends on where your outbound actually
             stalls. FullEnrich fixes bad contact data. Reply.io runs multichannel sequences you control. AiSDR replaces
@@ -265,6 +263,10 @@ export default function BestAiSalesToolsPage() {
             funnels and automation together. Buy for the bottleneck you have, not the longest feature list. Prices are
             below; confirm each with the vendor, because none of the figures on this page carries a date we verified.
           </p>
+          {/* Below the lead. The first paragraph after the h1 is the answer;
+              a disclosure in that slot is what an engine lifts instead. Still
+              above the first affiliate link, which is what it is for. */}
+          <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
           <a
             {...aff(GOHIGHLEVEL_URL)}
             className="inline-flex items-center justify-center gap-2 rounded-xl px-7 py-3.5 text-sm font-bold text-white transition-all hover:-translate-y-0.5 shadow-lg"

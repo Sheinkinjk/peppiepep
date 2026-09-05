@@ -398,14 +398,16 @@ export default function BestWeightLossTelehealthPage() {
               Best Weight Loss Telehealth Australia 2026
             </h1>
 
-            {/* Above the first affiliate link, not below it. */}
-            <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
             <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl mb-3">
               Moshy and Juniper are the two most-used weight-management platforms in Australia and they are built
               differently. Moshy runs a lean clinical pathway open to anyone eligible, and Refer Labs holds REFERRAL120,
               $120 off a new customer&apos;s first order. Juniper wraps clinical care in a coaching program, markets
               primarily to women, and offers a free first consultation instead of a code.
             </p>
+            {/* Below the lead. The first paragraph after the h1 is the answer;
+                a disclosure in that slot is what an engine lifts instead. Still
+                above the first affiliate link, which is what it is for. */}
+            <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
             <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl mb-5">
               Below: what each platform actually does, who it suits, and how to access each eligibility flow. This page does not constitute medical advice. Suitability is assessed individually by each platform&apos;s clinical team.
             </p>

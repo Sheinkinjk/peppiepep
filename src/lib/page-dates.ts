@@ -12,11 +12,11 @@ export type PageDates = { published: string; updated: string };
 export const PAGE_DATES: Record<string, PageDates> = {
   "/about": {
     "published": "2025-11-22",
-    "updated": "2026-08-25"
+    "updated": "2026-09-05"
   },
   "/activecampaign": {
     "published": "2026-07-11",
-    "updated": "2026-08-21"
+    "updated": "2026-09-05"
   },
   "/admin/leads": {
     "published": "2026-07-21",
@@ -24,7 +24,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/affiliate-earnings-calculator": {
     "published": "2026-07-07",
-    "updated": "2026-08-21"
+    "updated": "2026-09-05"
   },
   "/affiliate-partnerships": {
     "published": "2026-02-04",
@@ -36,19 +36,19 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/affiliate-software-australia": {
     "published": "2026-08-21",
-    "updated": "2026-08-28"
+    "updated": "2026-09-05"
   },
   "/ai-sales-tools-quiz": {
     "published": "2026-07-08",
-    "updated": "2026-08-21"
+    "updated": "2026-09-05"
   },
   "/aisdr": {
     "published": "2026-07-06",
-    "updated": "2026-08-21"
+    "updated": "2026-09-05"
   },
   "/alidrop": {
     "published": "2026-07-08",
-    "updated": "2026-08-21"
+    "updated": "2026-09-05"
   },
   "/analytics": {
     "published": "2025-12-28",
@@ -56,7 +56,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/anker-solix": {
     "published": "2026-08-25",
-    "updated": "2026-08-26"
+    "updated": "2026-09-05"
   },
   "/api-guide": {
     "published": "2025-12-28",
@@ -64,15 +64,15 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/apollo-energy-group": {
     "published": "2026-07-26",
-    "updated": "2026-08-26"
+    "updated": "2026-09-05"
   },
   "/apollo-energy-group-eoi": {
     "published": "2026-07-28",
-    "updated": "2026-08-27"
+    "updated": "2026-09-05"
   },
   "/apollo-energy-review": {
     "published": "2026-07-15",
-    "updated": "2026-08-27"
+    "updated": "2026-09-05"
   },
   "/auth/reset-password": {
     "published": "2025-12-11",
@@ -80,7 +80,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/beautifulai": {
     "published": "2026-07-14",
-    "updated": "2026-08-21"
+    "updated": "2026-09-05"
   },
   "/beehiiv": {
     "published": "2026-06-29",
@@ -96,7 +96,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/best-hair-loss-treatment-australia": {
     "published": "2026-06-29",
-    "updated": "2026-08-31"
+    "updated": "2026-09-05"
   },
   "/best-home-battery-australia": {
     "published": "2026-07-22",
@@ -108,11 +108,11 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/best-pet-insurance-australia": {
     "published": "2026-08-17",
-    "updated": "2026-08-31"
+    "updated": "2026-09-05"
   },
   "/best-website-builder": {
     "published": "2026-06-29",
-    "updated": "2026-08-21"
+    "updated": "2026-09-05"
   },
   "/best-weight-loss-telehealth-australia": {
     "published": "2026-06-29",
@@ -120,11 +120,11 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/blinq": {
     "published": "2026-07-14",
-    "updated": "2026-08-21"
+    "updated": "2026-09-05"
   },
   "/brevo": {
     "published": "2026-07-08",
-    "updated": "2026-08-21"
+    "updated": "2026-09-05"
   },
   "/business-line-of-credit-australia": {
     "published": "2026-07-21",
@@ -168,7 +168,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/capsule": {
     "published": "2026-07-14",
-    "updated": "2026-08-21"
+    "updated": "2026-09-05"
   },
   "/carrd": {
     "published": "2026-06-29",
@@ -176,11 +176,11 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/carrd-vs-butternut": {
     "published": "2026-07-06",
-    "updated": "2026-08-28"
+    "updated": "2026-09-05"
   },
   "/carrd-vs-durable": {
     "published": "2026-06-30",
-    "updated": "2026-07-16"
+    "updated": "2026-09-05"
   },
   "/case-studies": {
     "published": "2025-12-07",
@@ -188,11 +188,11 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/cheapest-weight-loss-telehealth-australia": {
     "published": "2026-07-06",
-    "updated": "2026-08-28"
+    "updated": "2026-09-05"
   },
   "/cloudtalk": {
     "published": "2026-07-09",
-    "updated": "2026-08-21"
+    "updated": "2026-09-05"
   },
   "/coming-soon": {
     "published": "2026-08-20",
@@ -220,7 +220,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/dext": {
     "published": "2026-07-09",
-    "updated": "2026-08-21"
+    "updated": "2026-09-05"
   },
   "/disclaimer": {
     "published": "2026-08-25",
@@ -228,7 +228,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/durable-vs-butternut": {
     "published": "2026-07-06",
-    "updated": "2026-08-28"
+    "updated": "2026-09-05"
   },
   "/durableai": {
     "published": "2026-06-29",
@@ -240,19 +240,19 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/ecoflow": {
     "published": "2026-08-25",
-    "updated": "2026-08-26"
+    "updated": "2026-09-05"
   },
   "/ecoflow-vs-anker-solix": {
     "published": "2026-08-25",
-    "updated": "2026-08-25"
+    "updated": "2026-09-05"
   },
   "/elevenlabs": {
     "published": "2026-07-09",
-    "updated": "2026-08-21"
+    "updated": "2026-09-05"
   },
   "/employmenthero": {
     "published": "2026-07-06",
-    "updated": "2026-08-21"
+    "updated": "2026-09-05"
   },
   "/equipment-finance-instant-asset-write-off": {
     "published": "2026-07-21",
@@ -260,7 +260,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/faq": {
     "published": "2025-12-10",
-    "updated": "2026-08-25"
+    "updated": "2026-09-05"
   },
   "/fast-business-loans-australia": {
     "published": "2026-07-21",
@@ -268,7 +268,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/flexiquiz": {
     "published": "2026-07-11",
-    "updated": "2026-08-21"
+    "updated": "2026-09-05"
   },
   "/for-business": {
     "published": "2026-07-03",
@@ -276,7 +276,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/fullenrich": {
     "published": "2026-07-07",
-    "updated": "2026-08-21"
+    "updated": "2026-09-05"
   },
   "/go-live": {
     "published": "2025-12-28",
@@ -284,7 +284,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/gohighlevel": {
     "published": "2026-07-06",
-    "updated": "2026-08-21"
+    "updated": "2026-09-05"
   },
   "/gtm": {
     "published": "2025-12-28",
@@ -296,23 +296,23 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/hair-loss": {
     "published": "2026-07-03",
-    "updated": "2026-08-27"
+    "updated": "2026-09-05"
   },
   "/hair-loss-quiz": {
     "published": "2026-07-08",
-    "updated": "2026-08-26"
+    "updated": "2026-09-05"
   },
   "/hair-loss-treatment-cost-australia": {
     "published": "2026-07-17",
-    "updated": "2026-08-27"
+    "updated": "2026-09-05"
   },
   "/hellobar": {
     "published": "2026-07-11",
-    "updated": "2026-08-21"
+    "updated": "2026-09-05"
   },
   "/high-paying-affiliate-programs": {
     "published": "2026-07-05",
-    "updated": "2026-08-25"
+    "updated": "2026-09-05"
   },
   "/home-battery-blackout-backup-australia": {
     "published": "2026-07-24",
@@ -332,15 +332,15 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/home-battery-payback-calculator": {
     "published": "2026-07-20",
-    "updated": "2026-08-26"
+    "updated": "2026-09-05"
   },
   "/home-battery-rebate-australia": {
     "published": "2026-07-15",
-    "updated": "2026-08-27"
+    "updated": "2026-09-05"
   },
   "/home-battery-rebate-by-state-australia": {
     "published": "2026-07-28",
-    "updated": "2026-08-26"
+    "updated": "2026-09-05"
   },
   "/how-to-get-a-business-loan-australia": {
     "published": "2026-07-21",
@@ -364,7 +364,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/instapage": {
     "published": "2026-07-14",
-    "updated": "2026-08-21"
+    "updated": "2026-09-05"
   },
   "/is-a-home-battery-worth-it-australia": {
     "published": "2026-07-24",
@@ -372,11 +372,11 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/juniper": {
     "published": "2026-07-29",
-    "updated": "2026-08-27"
+    "updated": "2026-09-05"
   },
   "/keap": {
     "published": "2026-07-14",
-    "updated": "2026-08-21"
+    "updated": "2026-09-05"
   },
   "/klaviyo": {
     "published": "2025-12-28",
@@ -384,19 +384,19 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/knose": {
     "published": "2026-08-04",
-    "updated": "2026-08-28"
+    "updated": "2026-09-05"
   },
   "/knose-vs-petsonme": {
     "published": "2026-08-17",
-    "updated": "2026-08-28"
+    "updated": "2026-09-05"
   },
   "/krispcall": {
     "published": "2026-07-09",
-    "updated": "2026-08-21"
+    "updated": "2026-09-05"
   },
   "/landingi": {
     "published": "2026-07-13",
-    "updated": "2026-08-21"
+    "updated": "2026-09-05"
   },
   "/lead-hacking": {
     "published": "2025-12-22",
@@ -404,11 +404,11 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/leadpages": {
     "published": "2026-07-08",
-    "updated": "2026-08-21"
+    "updated": "2026-09-05"
   },
   "/lindy": {
     "published": "2026-07-09",
-    "updated": "2026-08-21"
+    "updated": "2026-09-05"
   },
   "/linkedin-growth/business": {
     "published": "2026-01-03",
@@ -556,11 +556,11 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/midoc": {
     "published": "2026-09-04",
-    "updated": "2026-09-04"
+    "updated": "2026-09-05"
   },
   "/mosh-review": {
     "published": "2026-08-07",
-    "updated": "2026-08-28"
+    "updated": "2026-09-05"
   },
   "/mosh-vs-dense": {
     "published": "2026-07-06",
@@ -580,19 +580,19 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/moshy-alternatives": {
     "published": "2026-07-02",
-    "updated": "2026-08-28"
+    "updated": "2026-09-05"
   },
   "/moshy-eligibility": {
     "published": "2026-07-02",
-    "updated": "2026-08-28"
+    "updated": "2026-09-05"
   },
   "/moshy-review": {
     "published": "2026-07-02",
-    "updated": "2026-08-31"
+    "updated": "2026-09-05"
   },
   "/moshy-vs-gp": {
     "published": "2026-07-02",
-    "updated": "2026-08-28"
+    "updated": "2026-09-05"
   },
   "/moshy-vs-juniper": {
     "published": "2026-06-30",
@@ -600,11 +600,11 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/moshy-vs-pilot": {
     "published": "2026-07-06",
-    "updated": "2026-08-28"
+    "updated": "2026-09-05"
   },
   "/newsletter-platform-quiz": {
     "published": "2026-07-08",
-    "updated": "2026-08-21"
+    "updated": "2026-09-05"
   },
   "/nsw-home-battery-rebate-2026": {
     "published": "2026-07-22",
@@ -612,7 +612,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/nutshell": {
     "published": "2026-07-10",
-    "updated": "2026-08-21"
+    "updated": "2026-09-05"
   },
   "/online-hair-loss-treatment-australia": {
     "published": "2026-07-22",
@@ -620,15 +620,15 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/online-weight-loss-doctor-australia": {
     "published": "2026-07-05",
-    "updated": "2026-08-28"
+    "updated": "2026-09-05"
   },
   "/online-weight-loss-programs-australia": {
     "published": "2026-07-02",
-    "updated": "2026-08-28"
+    "updated": "2026-09-05"
   },
   "/outgrow": {
     "published": "2026-07-11",
-    "updated": "2026-08-21"
+    "updated": "2026-09-05"
   },
   "/": {
     "published": "2025-11-22",
@@ -636,7 +636,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/pandadoc": {
     "published": "2026-07-14",
-    "updated": "2026-08-21"
+    "updated": "2026-09-05"
   },
   "/partner-with-refer-labs": {
     "published": "2026-08-25",
@@ -652,15 +652,15 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/pet-insurance": {
     "published": "2026-08-04",
-    "updated": "2026-08-27"
+    "updated": "2026-09-05"
   },
   "/petsonme": {
     "published": "2026-08-17",
-    "updated": "2026-08-28"
+    "updated": "2026-09-05"
   },
   "/pipedrive": {
     "published": "2026-07-11",
-    "updated": "2026-08-21"
+    "updated": "2026-09-05"
   },
   "/playbooks": {
     "published": "2026-02-24",
@@ -668,15 +668,15 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/portable-power-station-australia": {
     "published": "2026-08-25",
-    "updated": "2026-08-25"
+    "updated": "2026-09-05"
   },
   "/portable-vs-installed-home-battery-australia": {
     "published": "2026-08-25",
-    "updated": "2026-08-25"
+    "updated": "2026-09-05"
   },
   "/privacy": {
     "published": "2025-11-25",
-    "updated": "2026-08-25"
+    "updated": "2026-09-05"
   },
   "/r/ambassador-join": {
     "published": "2025-12-03",
@@ -704,7 +704,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/replyio": {
     "published": "2026-07-07",
-    "updated": "2026-08-21"
+    "updated": "2026-09-05"
   },
   "/roi-calculator": {
     "published": "2025-12-07",
@@ -808,7 +808,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/skin-and-beauty": {
     "published": "2026-08-20",
-    "updated": "2026-09-04"
+    "updated": "2026-09-05"
   },
   "/skin-and-beauty/retinol-vs-prescription-strength-australia": {
     "published": "2026-08-20",
@@ -856,7 +856,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/solar-and-energy": {
     "published": "2026-08-25",
-    "updated": "2026-08-26"
+    "updated": "2026-09-05"
   },
   "/square": {
     "published": "2025-12-28",
@@ -880,11 +880,11 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/superfiliate": {
     "published": "2026-07-08",
-    "updated": "2026-08-21"
+    "updated": "2026-09-05"
   },
   "/survicate": {
     "published": "2026-07-09",
-    "updated": "2026-08-21"
+    "updated": "2026-09-05"
   },
   "/swipepages": {
     "published": "2026-06-29",
@@ -900,7 +900,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/trainual": {
     "published": "2026-07-09",
-    "updated": "2026-08-21"
+    "updated": "2026-09-05"
   },
   "/true-cost-of-business-loans-australia": {
     "published": "2026-07-22",
@@ -908,7 +908,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/unbounce": {
     "published": "2026-08-21",
-    "updated": "2026-08-21"
+    "updated": "2026-09-05"
   },
   "/unsecured-business-loans-australia": {
     "published": "2026-07-21",
@@ -916,7 +916,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/virtual-power-plant-australia": {
     "published": "2026-07-28",
-    "updated": "2026-08-26"
+    "updated": "2026-09-05"
   },
   "/webflow": {
     "published": "2025-12-28",
@@ -924,15 +924,15 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/website-builder-quiz": {
     "published": "2026-07-08",
-    "updated": "2026-08-21"
+    "updated": "2026-09-05"
   },
   "/weight-loss": {
     "published": "2026-07-03",
-    "updated": "2026-08-28"
+    "updated": "2026-09-05"
   },
   "/weight-loss-cost-calculator": {
     "published": "2026-07-07",
-    "updated": "2026-08-26"
+    "updated": "2026-09-05"
   },
   "/weight-loss-guide": {
     "published": "2026-08-12",
@@ -940,11 +940,11 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/weight-loss-quiz": {
     "published": "2026-07-08",
-    "updated": "2026-08-26"
+    "updated": "2026-09-05"
   },
   "/weight-loss-telehealth-cost-australia": {
     "published": "2026-07-05",
-    "updated": "2026-08-28"
+    "updated": "2026-09-05"
   },
   "/weight-loss-telehealth-men-australia": {
     "published": "2026-07-02",
@@ -952,11 +952,11 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/weight-loss-telehealth-women-australia": {
     "published": "2026-07-24",
-    "updated": "2026-08-28"
+    "updated": "2026-09-05"
   },
   "/weight-loss-treatment-eligibility-australia": {
     "published": "2026-08-07",
-    "updated": "2026-08-26"
+    "updated": "2026-09-05"
   },
   "/what-a-business-loan-actually-costs": {
     "published": "2026-07-21",
@@ -964,7 +964,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/what-pet-insurance-covers-australia": {
     "published": "2026-08-04",
-    "updated": "2026-08-27"
+    "updated": "2026-09-05"
   },
   "/what-size-home-battery-do-i-need-australia": {
     "published": "2026-07-22",
@@ -996,7 +996,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/wing-assistant": {
     "published": "2026-07-09",
-    "updated": "2026-08-21"
+    "updated": "2026-09-05"
   },
   "/wix": {
     "published": "2025-12-28",
