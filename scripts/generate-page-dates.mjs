@@ -23,10 +23,23 @@
  * Pages that genuinely have one pass it explicitly, sourced from a partner data
  * file's readOn. Everything else says "Last updated", which is what git knows.
  *
+ * THE COMMITTED FILE IS THE SOURCE OF TRUTH. This script UPDATES it; it never
+ * replaces it wholesale. `vercel deploy` from the CLI uploads a source tarball
+ * with no .git, so every git call returns "fatal: not a git repository". The
+ * first version of this script wrote an empty map in that case, every
+ * "Last updated" line rendered blank, and the build then failed three checks
+ * later in check-price-provenance, whose message said nothing about dates being
+ * missing. Every CLI deploy failed that way while the Git-integration build,
+ * which does have the repo, succeeded and served production. The site looked
+ * fine and half the deploys were red.
+ *
+ * So: read the existing file, overlay whatever git can answer, and keep the rest.
+ * If git answers nothing at all, keep the committed data and say so loudly.
+ *
  * Run: npm run gen:dates   (also run by prebuild)
  */
 import { execSync } from "node:child_process";
-import { readdirSync, writeFileSync } from "node:fs";
+import { readdirSync, writeFileSync, readFileSync, existsSync } from "node:fs";
 import { join } from "node:path";
 
 const APP = "src/app";
@@ -41,8 +54,23 @@ function pages(dir = APP, acc = []) {
   return acc;
 }
 
-const git = (args) => execSync(`git ${args}`, { encoding: "utf8" }).trim();
-const entries = {};
+const git = (args) => execSync(`git ${args}`, { encoding: "utf8", stdio: ["ignore", "pipe", "ignore"] }).trim();
+
+/** Whatever is already committed. Anything git cannot answer keeps this value. */
+function existing() {
+  if (!existsSync(OUT)) return {};
+  const m = readFileSync(OUT, "utf8").match(/PAGE_DATES: Record<string, PageDates> = (\{[\s\S]*?\n\});/);
+  if (!m) return {};
+  try {
+    return JSON.parse(m[1]);
+  } catch {
+    return {};
+  }
+}
+
+const entries = existing();
+const before = Object.keys(entries).length;
+let fromGit = 0;
 for (const file of pages()) {
   const route = "/" + file.slice(APP.length + 1).replace(/\/page\.tsx$/, "").replace(/^page\.tsx$/, "");
   if (route.includes("[")) continue;
@@ -55,8 +83,23 @@ for (const file of pages()) {
   } catch {
     continue;
   }
-  if (!published || !updated) continue;
+  if (!published || !updated) continue; // git said nothing: keep whatever is committed
   entries[key] = { published, updated };
+  fromGit++;
+}
+
+if (fromGit === 0) {
+  console.warn(
+    `\n  WARNING: git answered for 0 routes, so no date was refreshed.\n` +
+      `  Keeping the ${before} committed entries. This is expected in a build with no\n` +
+      `  .git (a 'vercel deploy' tarball) and is why this script updates rather than\n` +
+      `  replaces. If you see this locally, your working copy has no git history and\n` +
+      `  the dates on the site are as stale as the last commit of ${OUT}.\n`,
+  );
+  if (before === 0) {
+    console.error(`  And ${OUT} is empty, so every page will render a blank date. Refusing to continue.`);
+    process.exit(1);
+  }
 }
 
 const body = `/**
@@ -77,4 +120,7 @@ export function pageDates(route: string): PageDates | undefined {
 }
 `;
 writeFileSync(OUT, body);
-console.log(`  Wrote ${OUT}: ${Object.keys(entries).length} routes dated from git history.`);
+console.log(
+  `  Wrote ${OUT}: ${Object.keys(entries).length} routes (${fromGit} refreshed from git, ` +
+    `${Object.keys(entries).length - fromGit} kept from the committed file).`,
+);
