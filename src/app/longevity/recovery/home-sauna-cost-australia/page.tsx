@@ -42,7 +42,6 @@ export default function Page() {
       intro="The advertised price is the cabin. The total is the cabin plus delivery, a base, an electrician, and a running cost that continues for as long as you own it. Here is how to build the real number before you commit."
       headline="Home sauna cost in Australia: purchase and running"
       description={seoConfig.homeSaunaCost.description}
-      updated="2026-08-19"
       faqs={faqs}
       related={[
         { href: "/longevity/recovery/infrared-vs-traditional-sauna-australia", label: "Infrared vs traditional" },

@@ -49,7 +49,6 @@ export default function Page() {
       intro="The advertised prices in this category are entry prices, and the models behind them differ enough that comparing them head-on is misleading. Here is how each route is actually structured, and the arithmetic that makes them comparable."
       headline="Erectile dysfunction treatment cost in Australia"
       description={seoConfig.edTreatmentCost.description}
-      updated="2026-08-19"
       faqs={faqs}
       related={[
         { href: "/mens-health/is-telehealth-or-a-gp-cheaper-for-mens-health", label: "Telehealth or a GP?" },

@@ -3,6 +3,7 @@ import ConsumerShell from "@/components/consumer/ConsumerShell";
 import ComingSoonNote from "@/components/consumer/ComingSoonNote";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 import { SITE_URL, comparisonArticleSchema } from "@/lib/seo";
+import { pageDates } from "@/lib/page-dates";
 
 /**
  * Chrome and structured data for a section guide.
@@ -36,10 +37,22 @@ export default function SectionGuideShell({
   related: { href: string; label: string }[];
   headline: string;
   description: string;
-  updated: string;
+  /**
+   * A date on which a person actually re-read this page's sources. Optional,
+   * because most pages do not have one and inventing it is the fault this
+   * replaced: 25 pages showed "Last checked 19 August 2026", a day BEFORE their
+   * own first commit. Pass it only where it is real, sourced from a partner data
+   * file's readOn. Where it is absent the page says "Last updated" and uses the
+   * generated git date, which is a fact rather than a claim about our diligence.
+   */
+  updated?: string;
   children: React.ReactNode;
 }) {
   const url = `${SITE_URL}${slug}`;
+  const dates = pageDates(slug);
+  const published = dates?.published ?? updated ?? "";
+  const modified = dates?.updated ?? updated ?? "";
+  const checked = updated;
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -66,8 +79,11 @@ export default function SectionGuideShell({
     headline,
     description,
     url,
-    datePublished: updated,
-    dateModified: updated,
+    // Distinct on purpose. Setting both to one value told Google every page was
+    // published and modified on the same day, and moved datePublished forward on
+    // every edit, so an established page kept presenting as brand new.
+    datePublished: published,
+    dateModified: modified,
   });
 
   const webPageSchema = {
@@ -101,8 +117,12 @@ export default function SectionGuideShell({
             checked <date>" is liftable but uncreditable; see the note in
             PremiumAffiliateLanding. */}
         <p className="mt-4 text-xs font-medium text-[#6e7b74]">
-          Last checked by Refer Labs,{" "}
-          {new Date(`${updated}T00:00:00`).toLocaleDateString("en-AU", { day: "numeric", month: "long", year: "numeric" })}
+          {checked ? "Last checked by Refer Labs, " : "Last updated "}
+          {new Date(`${checked ?? modified}T00:00:00`).toLocaleDateString("en-AU", {
+            day: "numeric",
+            month: "long",
+            year: "numeric",
+          })}
         </p>
 
         <div className="mt-7">

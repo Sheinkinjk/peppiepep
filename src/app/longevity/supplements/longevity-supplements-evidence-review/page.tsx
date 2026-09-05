@@ -42,7 +42,6 @@ export default function Page() {
       intro="We name no products here, deliberately. What is more useful, and more durable as the fashionable compound changes each year, is knowing what the label actually certifies and how to tell a supportive study from a persuasive one."
       headline="Longevity supplements in Australia: an evidence review"
       description={seoConfig.supplementsEvidence.description}
-      updated="2026-08-19"
       faqs={faqs}
       related={[
         { href: "/longevity/diagnostics/biological-age-testing-australia", label: "Biological age testing" },

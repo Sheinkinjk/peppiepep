@@ -144,10 +144,10 @@ export default function MoshVsPilotPage() {
               Mosh vs Pilot: men&apos;s hair loss telehealth compared (2026)
             </h1>
             <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl mb-3">
-              Mosh and Pilot are the two names Australian men run into most when they start researching hair loss online,
-              and they are more alike than different. Both are telehealth services, both put your case in front of a
-              registered Australian practitioner, and both can prescribe prescription hair-loss treatments when it is
-              appropriate. So the real question is which experience, plan and price suits you. Below we set out where they overlap, where they diverge, and how to choose.
+              These two are more alike than different. Both are telehealth services, both put your case in front of a
+              registered Australian practitioner, and both can prescribe hair-loss treatments where it is appropriate,
+              so no clinical difference decides it. What differs is the experience, the plan structure and the price.
+              Refer Labs holds a code on one of them: REFERAL55, 55% off a new customer&apos;s first Mosh order.
             </p>
             {/* PILOT-NON-PARTNER: states what Refer Labs holds, not what Pilot lacks. */}
             <CodeAnswer code="REFERAL55" className="mt-6">

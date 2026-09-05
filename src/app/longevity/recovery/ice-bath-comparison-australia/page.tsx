@@ -41,7 +41,6 @@ export default function Page() {
       intro="The cold water is the same at every price point. What separates a few hundred dollars from ten thousand is how much effort the setup removes from your week, and whether that trade is worth it depends on how often you would really use it."
       headline="Ice baths in Australia: how to compare them"
       description={seoConfig.iceBathComparison.description}
-      updated="2026-08-19"
       faqs={faqs}
       related={[
         { href: "/longevity/recovery/ice-bath-running-costs-australia", label: "What it costs to run" },

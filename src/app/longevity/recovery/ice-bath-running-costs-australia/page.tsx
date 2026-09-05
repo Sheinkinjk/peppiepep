@@ -52,7 +52,6 @@ export default function Page() {
       intro="Every page answering this question gives you one number. That number cannot be right for you, because it depends on your tariff, your climate and your tub. Here is the calculation instead, with the working shown."
       headline="Ice bath running costs in Australia: the real numbers"
       description={seoConfig.iceBathRunningCosts.description}
-      updated="2026-08-19"
       faqs={faqs}
       related={[
         { href: "/longevity/recovery/ice-bath-comparison-australia", label: "Comparing ice baths" },

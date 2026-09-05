@@ -49,7 +49,6 @@ export default function Page() {
       intro="A monthly subscription and a single consult fee are not comparable figures, and this category places them side by side constantly. Here is the arithmetic that makes them comparable, with your own numbers."
       headline="Telehealth or a GP for men's health: which is cheaper?"
       description={seoConfig.telehealthVsGpMens.description}
-      updated="2026-08-19"
       faqs={faqs}
       related={[
         { href: "/mens-health/online-mens-health-clinics-compared", label: "Clinics compared" },

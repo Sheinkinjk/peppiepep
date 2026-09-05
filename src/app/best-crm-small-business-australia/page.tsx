@@ -133,10 +133,11 @@ export default function BestCrmSmallBusinessPage() {
           Best CRM for small business in Australia
         </h1>
         <p className="text-[#3d4b44] text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
-          The best CRM for your small business is the one that matches your main job, whether that is closing deals,
-          tracking relationships, or automating a lot from one place. Below are four that suit Australian small
-          businesses, split by what each is actually good at, with real starting prices and free trials so you can test
-          fit before you pay.
+          Pick by the job, not the feature list. Of these four, Pipedrive suits teams whose day is chasing and closing
+          deals, Capsule suits contact management and has a genuinely free tier up to 250 contacts, Nutshell sits at
+          the low end on price, and Keap costs materially more because it is a marketing automation and payments suite
+          with a CRM inside rather than a CRM alone. Starting prices are below; confirm each with the vendor, because
+          they move and none of the figures on this page carries a date we verified.
         </p>
 
         <p className="mb-10 rounded-lg border border-[#e5e9e7] bg-[#f5f8f6] px-4 py-3 text-xs leading-relaxed text-[#3d4b44]">

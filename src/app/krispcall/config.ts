@@ -72,7 +72,6 @@ export const krispcallConfig: AffiliatePageConfig = {
     },
   ],
   relatedLinks: [
-    { href: "/cloudtalk", label: "CloudTalk", desc: "A call-center-grade business phone with deeper CRM integrations and AI call features." },
     { href: "/best-ai-sales-tools", label: "Best AI Sales Tools 2026", desc: "Outbound and CRM tools that sit alongside a virtual phone system." },
     { href: "/guides", label: "All Guides & Comparisons", desc: "Independent comparison guides across tools, health, and business categories." },
   ],

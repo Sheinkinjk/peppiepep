@@ -52,7 +52,6 @@ export default function Page() {
       intro="The clinical process at these services is broadly the same. What differs is the commercial model, and that is where the cost difference lives. These are the criteria that separate them, and the checks worth running before you enter a card."
       headline="Online men's health clinics in Australia, compared"
       description={seoConfig.mensClinicsCompared.description}
-      updated="2026-08-19"
       faqs={faqs}
       related={[
         { href: "/mens-health/is-telehealth-or-a-gp-cheaper-for-mens-health", label: "Telehealth or a GP?" },

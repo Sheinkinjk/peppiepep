@@ -42,7 +42,6 @@ export default function Page() {
       intro="This category is sold with more confidence than the research currently justifies. Here is what the evidence covers, where it thins out, and the one finding that should change how some people use it."
       headline="Contrast therapy: what the evidence actually says"
       description={seoConfig.contrastTherapy.description}
-      updated="2026-08-19"
       faqs={faqs}
       related={[
         { href: "/longevity/recovery/ice-bath-running-costs-australia", label: "What an ice bath costs to run" },

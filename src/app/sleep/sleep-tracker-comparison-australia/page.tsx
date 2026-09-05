@@ -48,7 +48,6 @@ export default function Page() {
       intro="A tracker gives you a confident-looking number every morning. Knowing how that number is produced changes what it is worth, and changes whether it belongs in a conversation with your GP."
       headline="Sleep trackers in Australia: what they measure"
       description={seoConfig.sleepTrackers.description}
-      updated="2026-08-19"
       faqs={faqs}
       related={[
         { href: "/sleep/do-i-have-sleep-apnoea", label: "How diagnosis works" },

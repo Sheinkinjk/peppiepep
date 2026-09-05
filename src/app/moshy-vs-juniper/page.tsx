@@ -135,9 +135,10 @@ export default function MoshyVsJuniperPage() {
           <span style={{ color: CYAN_LT }}>which one is built for you?</span>
         </h1>
         <p className="text-[#3d4b44] text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
-          Australia&apos;s two most-compared weight-loss telehealth platforms answer the same problem in different
-          ways. The short version: <strong className="text-[#2b362f]">Moshy runs a lean clinical pathway, Juniper wraps
-          clinical care in a coaching program</strong>, and the difference goes deeper than that.
+          Australia&apos;s two most-compared weight-management telehealth platforms answer the same problem in different
+          ways. <strong className="text-[#2b362f]">Moshy runs a lean clinical pathway, Juniper wraps clinical care in a
+          coaching program</strong>. Moshy is gender-neutral and carries REFERRAL120, $120 off a first order; Juniper
+          markets primarily to women and gives a free first consultation instead of a code.
         </p>
         <CodeAnswer code="REFERRAL120" className="mt-6">
           Juniper&apos;s incentive is a free first consultation rather than a code, while Moshy&apos;s is REFERRAL120, the code Refer Labs holds for Moshy: $120 off a new customer&apos;s first order, one use per customer.

@@ -50,7 +50,6 @@ export default function Page() {
       intro="Acne is treated through three different access routes in Australia, and they differ more in cost structure than most people expect. This sets out how each works, where Medicare applies, and what to ask before you commit to a private fee."
       headline="Acne treatment in Australia: the options and what they cost"
       description={seoConfig.acneTreatmentCosts.description}
-      updated="2026-08-19"
       faqs={faqs}
       related={[
         { href: "/skin-and-beauty/retinol-vs-prescription-strength-australia", label: "Retinol vs prescription-strength" },

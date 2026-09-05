@@ -256,7 +256,11 @@ export default function BestAiSalesToolsPage() {
             <span style={{ color: ACCENT_LT }}>GoHighLevel, AiSDR, Reply.io & FullEnrich</span>
           </h1>
           <p className="text-[#3d4b44] text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
-            We compared four of the strongest AI sales and automation tools on what they actually do, who they suit, and what they cost. Each sits at a different point in the sales stack, so the right pick depends on your bottleneck. Our verdict is below.
+            Each of these four fixes a different bottleneck, so the right one depends on where your outbound actually
+            stalls. FullEnrich fixes bad contact data. Reply.io runs multichannel sequences you control. AiSDR replaces
+            the outbound rep and books the meetings itself. GoHighLevel is the all-in-one for agencies running CRM,
+            funnels and automation together. Buy for the bottleneck you have, not the longest feature list. Prices are
+            below; confirm each with the vendor, because none of the figures on this page carries a date we verified.
           </p>
           <a
             {...aff(GOHIGHLEVEL_URL)}

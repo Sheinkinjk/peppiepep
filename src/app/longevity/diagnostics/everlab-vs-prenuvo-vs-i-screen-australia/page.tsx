@@ -40,10 +40,9 @@ export default function Page() {
       slug="/longevity/diagnostics/everlab-vs-prenuvo-vs-i-screen-australia"
       crumb="Screening services compared"
       h1={<>Everlab, Prenuvo and i-screen: <span className="italic text-[#0a7c42]">what each is actually looking at</span></>}
-      intro="These get compared as if they were three prices for one product. They are three different kinds of test answering different questions, and picking on price means comparing things that are not alternatives."
+      intro="Three different tests, not three prices for one. Prenuvo is whole-body MRI imaging. i-screen is pathology you can order directly. Everlab is extensive pathology with clinician review, run as a programme. Comparing them on price compares things that are not substitutes, so the first question is which of the three questions you are actually asking."
       headline="Everlab vs Prenuvo vs i-screen in Australia"
       description={seoConfig.screeningCompared.description}
-      updated="2026-08-19"
       faqs={faqs}
       related={[
         { href: "/longevity/diagnostics/whole-body-mri-australia-cost", label: "Whole-body MRI: the case against" },

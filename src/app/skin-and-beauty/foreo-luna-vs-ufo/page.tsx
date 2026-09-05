@@ -92,7 +92,7 @@ export default function Page() {
       slug="/skin-and-beauty/foreo-luna-vs-ufo"
       crumb="Foreo Luna vs UFO"
       h1={<>Foreo Luna vs UFO: <span className="italic text-[#0a7c42]">they are not alternatives</span></>}
-      intro={`The LUNA is ${FOREO.lunaWhatItIs}. The UFO is ${FOREO.ufoWhatItIs}. They are separate product lines that happen to share a brand, so choosing between them is choosing which of two different things you want a device for, not deciding which is better. Prices read off foreo.com on ${FOREO.readOnLabel}.`}
+      intro={`They are not alternatives. The LUNA is ${FOREO.lunaWhatItIs}, ${FOREO_ENTRY.luna.price} to ${FOREO_TOP.luna.price}. The UFO is ${FOREO.ufoWhatItIs}, ${FOREO_ENTRY.ufo.price} to ${FOREO_TOP.ufo.price}. Separate product lines that share a brand, so the choice is which of two different jobs you want done, not which device is better. Australian list prices read off foreo.com on ${FOREO.readOnLabel}.`}
       headline="Foreo Luna vs UFO: what each device does and what it costs"
       description={seoConfig.foreoLunaVsUfo.description}
       updated={FOREO.readOn}

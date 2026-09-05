@@ -55,7 +55,6 @@ export default function Page() {
       intro="We have not built a quiz that tells you the answer, because no website can honestly give you one. What we can do is show you exactly how the diagnosis happens here, and how to make the appointment that produces it worth your time."
       headline="Do I have sleep apnoea? How Australians get answers"
       description={seoConfig.sleepApnoeaPathway.description}
-      updated="2026-08-19"
       faqs={faqs}
       related={[
         { href: "/sleep/home-sleep-test-australia-cost", label: "Home sleep studies and cost" },

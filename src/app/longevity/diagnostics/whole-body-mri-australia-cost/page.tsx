@@ -44,7 +44,6 @@ export default function Page() {
       intro="These scans are marketed on the idea that finding things early is always better. Australian clinicians are cautious about that in people with no symptoms, and the reason is worth understanding before you spend."
       headline="Whole-body MRI in Australia: cost and the case against"
       description={seoConfig.wholeBodyMri.description}
-      updated="2026-08-19"
       faqs={faqs}
       related={[
         { href: "/longevity/diagnostics/everlab-vs-prenuvo-vs-i-screen-australia", label: "The services compared" },

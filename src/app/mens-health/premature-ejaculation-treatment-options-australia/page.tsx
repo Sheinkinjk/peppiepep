@@ -49,7 +49,6 @@ export default function Page() {
       intro="This category is marketed as a purchase, and it is one of the few where the most subsidised support available in Australia is not a product at all. Here are the routes, how each is arranged, and where Medicare reaches."
       headline="Premature ejaculation treatment in Australia: the options"
       description={seoConfig.peTreatmentOptions.description}
-      updated="2026-08-19"
       faqs={faqs}
       related={[
         { href: "/mens-health/is-telehealth-or-a-gp-cheaper-for-mens-health", label: "Telehealth or a GP?" },

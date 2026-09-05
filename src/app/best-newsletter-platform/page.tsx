@@ -11,12 +11,26 @@ export const metadata = generateSEOMetadata(seoConfig.bestNewsletterPlatform);
 
 import { BEEHIIV_URL } from "@/lib/affiliate-links";
 
-const aff = (url: string, loc = "best-newsletter") => ({
-  href: url,
-  target: "_blank" as const,
-  rel: "nofollow sponsored" as const,
-  "data-cta": loc,
-});
+/**
+ * rel="sponsored" is a statement that a link is paid. It is only true where we
+ * actually hold a tracked affiliate URL.
+ *
+ * Substack and Kit were both marked sponsored while pointing at bare domains
+ * with no tracking of any kind, so the marking asserted a commercial
+ * relationship that does not exist and the traffic earned nothing. Checked
+ * 5 September 2026: Substack runs no affiliate program; Kit does, at
+ * kit.com/affiliate, and we are not in it. Until we are, its link is an
+ * ordinary editorial one.
+ *
+ * A tracked URL is an absolute link on a partner network host, never a bare
+ * vendor domain, so the test is whether the URL carries anything to attribute.
+ */
+const isTracked = (url: string) => /[?&]|partnerlinks|cfjump|\/go\/|utm_|ref=/.test(url);
+
+const aff = (url: string, loc = "best-newsletter") =>
+  isTracked(url)
+    ? { href: url, target: "_blank" as const, rel: "nofollow sponsored" as const, "data-cta": loc }
+    : { href: url, target: "_blank" as const, rel: "nofollow" as const };
 
 // ─── JSON-LD ──────────────────────────────────────────────────────────────────
 

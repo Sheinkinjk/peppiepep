@@ -42,7 +42,6 @@ export default function Page() {
       intro="A device built and validated for managing diabetes is now marketed as a wellness tool. The technology is genuinely good at what it was designed for. Whether that transfers to people without diabetes is a separate question, and a much less settled one."
       headline="CGM for non-diabetics in Australia: cost and evidence"
       description={seoConfig.cgmNonDiabetic.description}
-      updated="2026-08-19"
       faqs={faqs}
       related={[
         { href: "/longevity/diagnostics/biological-age-testing-australia", label: "Biological age testing" },

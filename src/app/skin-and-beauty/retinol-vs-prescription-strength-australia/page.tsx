@@ -44,10 +44,9 @@ export default function Page() {
       slug="/skin-and-beauty/retinol-vs-prescription-strength-australia"
       crumb="Retinol vs prescription-strength"
       h1={<>Retinol vs prescription-strength: <span className="italic text-[#0a7c42]">what actually separates them</span></>}
-      intro="Both sit in the same family of vitamin A derivatives. The difference that matters to you is not the chemistry, it is how you get hold of each one, and what that says about how carefully it needs to be used."
+      intro="You can buy one off a shelf today and the other only after a practitioner assesses you. Both are vitamin A derivatives, but in Australia the stronger topicals are prescription-only, and that regulatory line, not the chemistry, is what decides which route is open to you and how carefully the product needs to be used."
       headline="Retinol vs prescription-strength: the Australian guide"
       description={seoConfig.retinolVsPrescription.description}
-      updated="2026-08-19"
       faqs={faqs}
       related={[
         { href: "/skin-and-beauty/acne-treatment-options-and-costs-australia", label: "Acne: routes and costs" },

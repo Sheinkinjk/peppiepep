@@ -49,7 +49,6 @@ export default function Page() {
       intro="Search for what a cosmetic treatment costs in Australia and you will mostly find enquiry forms. That is not evasion by every clinic; there is a regulatory reason for it. Understanding why changes how you should ask."
       headline="Anti-ageing treatments in Australia: what they actually cost"
       description={seoConfig.antiAgeingCosts.description}
-      updated="2026-08-19"
       faqs={faqs}
       related={[
         { href: "/skin-and-beauty/led-face-mask-comparison-australia", label: "LED face masks" },

@@ -45,7 +45,6 @@ export default function Page() {
       intro="Many Australians pay nothing for a sleep study, and some pay several hundred dollars for the same thing. The difference is rarely the provider. It is whether the referral and eligibility conditions that unlock a Medicare rebate were met before you started."
       headline="Home sleep study Australia: how it works and what it costs"
       description={seoConfig.homeSleepTestCost.description}
-      updated="2026-08-19"
       faqs={faqs}
       related={[
         { href: "/sleep/do-i-have-sleep-apnoea", label: "How diagnosis works" },

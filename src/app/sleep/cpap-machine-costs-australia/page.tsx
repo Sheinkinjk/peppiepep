@@ -48,7 +48,6 @@ export default function Page() {
       intro="CPAP pricing is unusually opaque for a product this expensive, and the assumption that buying direct from the manufacturer is cheapest turns out not to hold. Here is what we found on live listings, and the ongoing cost most comparisons leave out."
       headline="CPAP costs in Australia: verified prices"
       description={seoConfig.cpapCosts.description}
-      updated="2026-08-19"
       faqs={faqs}
       related={[
         { href: "/sleep/do-i-have-sleep-apnoea", label: "How diagnosis works" },

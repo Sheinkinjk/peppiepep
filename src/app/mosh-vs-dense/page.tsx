@@ -144,11 +144,11 @@ export default function MoshVsDensePage() {
               Mosh vs Dense: hair loss treatment compared (2026)
             </h1>
             <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl mb-3">
-              Mosh and Dense both come up when Australians research hair loss, but they are not the same kind of thing.
-              Mosh is prescription telehealth: it can prescribe prescription hair-loss treatments after an online consultation
-              reviewed by a registered Australian practitioner. Dense Hair Experts is a non-prescription topical range,
-              shampoos, conditioners, serums, and scalp treatments aimed at density and scalp health. One is a clinical route and the other is a topical one. Below we set out the difference, who each suits, and how
-              to think about starting.
+              They are not alternatives, and only one of them involves a practitioner. Mosh is prescription telehealth:
+              it can prescribe hair-loss treatments after an online consultation reviewed by a registered Australian
+              practitioner. Dense Hair Experts is a non-prescription topical range of shampoos, conditioners, serums and
+              scalp treatments aimed at density and scalp health, bought straight off the shelf. One is a clinical route
+              and the other is a retail one, so the choice is which you want rather than which is better.
             </p>
             <CodeAnswer code="REFERAL55" className="mt-6">
               Dense has no Refer Labs code, while Mosh&apos;s REFERAL55 gives new customers 55% off a first order.

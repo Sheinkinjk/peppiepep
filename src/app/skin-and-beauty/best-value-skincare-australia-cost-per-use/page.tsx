@@ -48,7 +48,6 @@ export default function Page() {
       intro="A $30 moisturiser you replace every six weeks is more expensive than a $90 one that lasts eight months. Sticker price hides that completely. Here is the arithmetic, and the three places it quietly lies to you."
       headline="Skincare cost per use: what Australians actually pay"
       description={seoConfig.skincareCostPerUse.description}
-      updated="2026-08-19"
       faqs={faqs}
       related={[
         { href: "/skin-and-beauty/retinol-vs-prescription-strength-australia", label: "Retinol vs prescription-strength" },

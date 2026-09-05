@@ -42,7 +42,6 @@ export default function Page() {
       intro="These tests return a confident single figure. Understanding how that figure is produced changes what it is worth, and explains why two tests can hand you different ages from the same sample."
       headline="Biological age testing in Australia: does it mean anything?"
       description={seoConfig.biologicalAge.description}
-      updated="2026-08-19"
       faqs={faqs}
       related={[
         { href: "/longevity/diagnostics/whole-body-mri-australia-cost", label: "Whole-body MRI" },

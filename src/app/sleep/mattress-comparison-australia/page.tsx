@@ -47,7 +47,6 @@ export default function Page() {
       intro="Almost every mattress comparison online is a ranking assembled by someone who has not slept on any of them. This is the opposite: no list, no scores, just the specifications that are verifiable and the trial terms where people lose money."
       headline="Mattress buying in Australia: how to compare properly"
       description={seoConfig.mattressComparison.description}
-      updated="2026-08-19"
       faqs={faqs}
       related={[
         { href: "/sleep/how-much-does-good-sleep-cost", label: "What good sleep costs" },
