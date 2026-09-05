@@ -118,7 +118,7 @@ is worthless when we already emit `Article`, its parent type.
 2. `src/app/<slug>/config.ts` — `AffiliatePageConfig` (quickAnswer, offer, atAGlance w/ REAL price, hero, sections, `faqs`, `relatedLinks`, disclaimer).
 3. `src/app/<slug>/page.tsx` — renders `PremiumAffiliateLanding` + the 4 JSON-LD blocks (pattern: copy an existing brand page).
 4. `src/lib/seo.ts` — add `seoConfig.<slug>` (title, description, url, keywords). **Required** or the page has no metadata.
-5. Wire it in: `src/app/sitemap.ts` (manual list — add it), `/guides`, `src/lib/search-index.ts`, `src/lib/catalog/catalog.ts` (add as a provider if it fits a `/compare` vertical), `/business-software` grid (if a business tool).
+5. Wire it in: `src/app/sitemap.ts` (manual list — add it), `/guides`, `src/lib/search-index.ts`, `src/lib/catalog/catalog.ts` (add as a provider if it fits a `/compare` vertical), `/business-software` grid (if a business tool), and **`src/components/ChromeGate.tsx`** — a ConsumerShell page missing from that list renders the legacy header as well as its own and ships with two `<header>` elements. `/databox` did, and `check-offers` reported it as "will double-header" from the first build; nobody read the output. **Run `npm run check-offers` and `npm run check-aeo` before pushing a new brand page**: neither is in `prebuild`, both are run by hand, and both were flagging that page for a day.
 6. Inbound links: add `relatedLinks` to it from 1–2 sibling pages.
 7. Logo: `public/logos/<slug>.png` (square, transparent, ~256px). Falls back to a monogram until added.
 8. Update `public/llms.txt` if it's a notable/money page.

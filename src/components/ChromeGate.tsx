@@ -76,6 +76,7 @@ const STANDALONE_ROUTES = [
   "/fullenrich",
   "/best-ai-sales-tools",
   // Email / e-commerce / landing pages / affiliate software (new this release)
+  "/databox",
   "/brevo",
   "/alidrop",
   "/leadpages",
