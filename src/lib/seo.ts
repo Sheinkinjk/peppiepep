@@ -498,7 +498,7 @@ export const seoConfig = {
     keywords: ["business software comparison", "best crm australia", "best business phone system", "hr payroll software australia", "ai business tools", "small business software 2026"],
   },
   databox: {
-    title: "Databox Discount Code 2026: There Isn't One | Refer Labs",
+    title: "Databox Discount Code 2026: Is There One? | Refer Labs",
     description:
       "No Databox coupon exists and nobody holds one. The free plan is permanent (3 data sources, 1 user) and annual billing takes 20% off. Every plan priced, read 5 September 2026.",
     url: `${SITE_URL}/databox`,

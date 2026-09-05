@@ -148,6 +148,30 @@ export default function SkinAndBeautyHub() {
           </div>
         </section>
 
+
+        <PartnerRoute
+          className="mt-10"
+          heading="Retailers in this section"
+          intro="Three retailers we have a commercial arrangement with. More are being added, so this is a starting set rather than the full market."
+          providers={[
+            {
+              name: "Foreo",
+              href: "/go/foreo-skin-hub",
+              what: "Sells LED skincare devices direct in Australia. Check the listed price in Australian dollars and the shipping terms to an Australian address at checkout.",
+            },
+            {
+              name: "Edible Beauty Australia",
+              href: "/go/edible-beauty-skin-hub",
+              what: "An Australian natural skincare range, priced in Australian dollars and shipped domestically.",
+            },
+            {
+              name: "Aussie Health Products",
+              href: "/go/aussie-health-skin-hub",
+              what: "An Australian retailer carrying health and skincare ranges, priced in Australian dollars.",
+            },
+          ]}
+        />
+
         <section className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
           <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">Start here</h2>
           <div className="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -203,28 +227,6 @@ export default function SkinAndBeautyHub() {
             <NewsletterSignup />
           </div>
         </section>
-        <PartnerRoute
-          className="mt-12"
-          heading="Retailers in this section"
-          intro="Three retailers we have a commercial arrangement with. More are being added, so this is a starting set rather than the full market."
-          providers={[
-            {
-              name: "Foreo",
-              href: "/go/foreo-skin-hub",
-              what: "Sells LED skincare devices direct in Australia. Check the listed price in Australian dollars and the shipping terms to an Australian address at checkout.",
-            },
-            {
-              name: "Edible Beauty Australia",
-              href: "/go/edible-beauty-skin-hub",
-              what: "An Australian natural skincare range, priced in Australian dollars and shipped domestically.",
-            },
-            {
-              name: "Aussie Health Products",
-              href: "/go/aussie-health-skin-hub",
-              what: "An Australian retailer carrying health and skincare ranges, priced in Australian dollars.",
-            },
-          ]}
-        />
       </main>
     </ConsumerShell>
   );

@@ -11,7 +11,6 @@ export { MOSH_HAIR_URL };
 // describe the service and direct people to a practitioner assessment.
 export const moshHairConfig: AffiliatePageConfig = {
   brand: "Mosh",
-  showResearchNote: true,
   logo: "mosh-tile",
   logoBleed: true,
   badgeText: "Australia",

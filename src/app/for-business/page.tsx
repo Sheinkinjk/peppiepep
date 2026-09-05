@@ -26,7 +26,6 @@ const offers = [
     title: "Referral & affiliate programs, built and run",
     body: "We design, launch and actively distribute referral and affiliate programs for Australian and international businesses. Incentive design, tracking, channel activation and ongoing management, handled end to end.",
     cta: { label: "Enquire about growth services", href: "mailto:jarred@referlabs.com.au?subject=Growth%20services%20enquiry", external: true },
-    links: [{ href: "/affiliate-programs-australia", label: "Affiliate programs in Australia" }],
   },
 ];
 
@@ -116,13 +115,6 @@ export default function ForBusinessPage() {
               </div>
             ))}
           </div>
-
-          <p className="mt-10 text-sm">
-            <Link href="/affiliate-programs-australia" className="font-semibold text-[#0a7c42] underline decoration-[#0a7c42]/30 underline-offset-4">
-              Affiliate programs in Australia →
-            </Link>{" "}
-            <span className="text-[#9aa39c]">Referral and affiliate strategy for founders and marketers.</span>
-          </p>
 
           <p className="mt-6 max-w-2xl text-sm leading-relaxed text-[#3d4b44]">
             One thing we will not sell: a ranking. Editorial conclusions on Refer Labs are never part of a commercial
