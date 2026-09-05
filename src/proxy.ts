@@ -41,6 +41,13 @@ const GONE = [
   // at position 5.6 with clicks; losing that is the accepted price of the
   // decision, and 410 makes the withdrawal explicit rather than ambiguous.
   '/juniper-alternatives',
+  // US legal content we do not write and will not write (5 Sep 2026). It drew
+  // 13 clicks a quarter at position 19.5 and 308ed to /affiliate-programs-
+  // australia, an Australian affiliate hub that answers a different question
+  // entirely, so every one of those readers arrived and left. There is no
+  // closest-live-page for "attorney referral fee rules by state" on a site
+  // about Australian consumer comparisons, which is what 410 is for.
+  '/blog/attorney-referral-fee-rules-state-guide',
 ]
 
 function isGone(pathname: string): boolean {

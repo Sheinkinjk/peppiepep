@@ -101,6 +101,7 @@ const guides = [
 ];
 
 const tools = [
+  { href: "/databox", label: "Databox", desc: "KPI dashboards over the tools you already use. Free plan, no expiry." },
   { href: "/pipedrive", label: "Pipedrive", desc: "Visual sales CRM with pipeline and automation." },
   { href: "/nutshell", label: "Nutshell", desc: "Easy sales CRM with email marketing built in." },
   { href: "/capsule", label: "Capsule", desc: "A simple CRM small teams actually keep using." },

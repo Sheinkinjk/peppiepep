@@ -497,6 +497,13 @@ export const seoConfig = {
     url: `${SITE_URL}/business-software`,
     keywords: ["business software comparison", "best crm australia", "best business phone system", "hr payroll software australia", "ai business tools", "small business software 2026"],
   },
+  databox: {
+    title: "Databox Discount Code 2026: There Isn't One | Refer Labs",
+    description:
+      "No Databox coupon exists and nobody holds one. The free plan is permanent (3 data sources, 1 user) and annual billing takes 20% off. Every plan priced, read 5 September 2026.",
+    url: `${SITE_URL}/databox`,
+    keywords: ["databox discount code", "databox coupon", "databox promo code", "databox pricing", "databox free plan", "databox cost australia"],
+  },
   pipedrive: {
     title: "Pipedrive Discount Code 2026: Is There One? Pricing & Free Trial | Refer Labs",
     description:
@@ -1350,9 +1357,14 @@ export const seoConfig = {
   },
 
   durableAi: {
-    title: "Durable AI Review 2026: Website Builder | Refer Labs",
+        // TITLE TEST, set 5 September 2026. Baseline in the 92-day export to 2 Sep:
+    // 360 impressions, 0 clicks, 0.00% CTR at position 11.8. The two pages that convert best on this site, /moshy (2.50% at
+    // position 16.1) and /moshy-review (2.03% at 12.7), both rank WORSE than this
+    // page and both carry a figure in the title. Testing whether the figure is the
+    // cause. Measure on 5 October 2026: CTR at unchanged position is the read.
+    title: "Durable AI 2026: A Site in 30 Seconds, From $19 | Refer Labs",
     description:
-      "Durable AI review 2026: generate a complete business website in 30 seconds, free with no account. Includes CRM, invoicing, and Google Business integration. Compare Durable AI vs Wix, Squarespace, and Butternut AI.",
+      "A complete business website in 30 seconds with no account, then from $19 a month to publish. The CRM and invoicing are what you are paying for.",
     url: `${SITE_URL}/durableai`,
     keywords: [
       "durable ai review 2026",
@@ -1914,9 +1926,14 @@ export const seoConfig = {
   },
 
   moshVsDense: {
-    title: "Mosh vs Dense: Hair Loss Treatment Compared (2026) | Refer Labs",
+        // TITLE TEST, set 5 September 2026. Baseline in the 92-day export to 2 Sep:
+    // 644 impressions, 3 clicks, 0.47% CTR at position 11.5. The two pages that convert best on this site, /moshy (2.50% at
+    // position 16.1) and /moshy-review (2.03% at 12.7), both rank WORSE than this
+    // page and both carry a figure in the title. Testing whether the figure is the
+    // cause. Measure on 5 October 2026: CTR at unchanged position is the read.
+    title: "Mosh vs Dense: Script vs Topical, 55% Off Mosh | Refer Labs",
     description:
-      "Mosh vs Dense 2026: Mosh is a prescription telehealth service (assessed by a practitioner); Dense is a topical hair-care brand (shampoos, serums). Info only.",
+      "One needs a practitioner, one does not. Mosh is prescription telehealth, 55% off a first order with REFERAL55; Dense is a non-prescription topical.",
     url: `${SITE_URL}/mosh-vs-dense`,
     keywords: [
       "mosh vs dense",
@@ -1956,9 +1973,14 @@ export const seoConfig = {
   },
 
   juniper: {
-    title: "Juniper Australia Review 2026: Cost & How It Works",
+        // TITLE TEST, set 5 September 2026. Baseline in the 92-day export to 2 Sep:
+    // 568 impressions, 1 click, 0.18% CTR at position 11.5. The two pages that convert best on this site, /moshy (2.50% at
+    // position 16.1) and /moshy-review (2.03% at 12.7), both rank WORSE than this
+    // page and both carry a figure in the title. Testing whether the figure is the
+    // cause. Measure on 5 October 2026: CTR at unchanged position is the read.
+    title: "Juniper Review 2026: Free Consult, 30-Day Refund",
     description:
-      "An independent look at Juniper, the women-focused weight-management program in Australia: the free first consultation, what's included, pricing and eligibility.",
+      "A free first consultation for new patients through our link, and Juniper states a 30-day money-back guarantee. What the coaching-led program includes.",
     url: `${SITE_URL}/juniper`,
     keywords: ["juniper australia", "juniper weight loss", "juniper review australia", "is juniper legit", "is juniper worth it", "does juniper work", "juniper weight reset program", "juniper cost australia", "myjuniper", "juniper program australia"],
   },
@@ -1974,9 +1996,14 @@ export const seoConfig = {
   },
 
   moshReview: {
-    title: "Mosh Review 2026: Is It Legit, and the Cost",
+        // TITLE TEST, set 5 September 2026. Baseline in the 92-day export to 2 Sep:
+    // 1,213 impressions, 3 clicks, 0.25% CTR at position 10.6. The two pages that convert best on this site, /moshy (2.50% at
+    // position 16.1) and /moshy-review (2.03% at 12.7), both rank WORSE than this
+    // page and both carry a figure in the title. Testing whether the figure is the
+    // cause. Measure on 5 October 2026: CTR at unchanged position is the read.
+    title: "Mosh Review 2026: Is It Legit? Plus 55% Off",
     description:
-      "Is it legit, what the consult involves, and what you pay monthly. The REFERAL55 code on our link takes 55% off a first order.",
+      "A real clinical service, and REFERAL55 takes 55% off a first order. What the consult involves, what you pay monthly after, and who it does not suit.",
     url: `${SITE_URL}/mosh-review`,
     keywords: ["mosh review", "is mosh legit", "is mosh worth it", "does mosh work", "mosh hair loss review australia", "mosh reviews"],
   },
@@ -2295,9 +2322,14 @@ export const seoConfig = {
   },
 
   bestNewsletterPlatform: {
-    title: "beehiiv vs Substack vs ConvertKit 2026",
+        // TITLE TEST, set 5 September 2026. Baseline in the 92-day export to 2 Sep:
+    // 1,426 impressions, 1 click, 0.07% CTR at position 10.3. The two pages that convert best on this site, /moshy (2.50% at
+    // position 16.1) and /moshy-review (2.03% at 12.7), both rank WORSE than this
+    // page and both carry a figure in the title. Testing whether the figure is the
+    // cause. Measure on 5 October 2026: CTR at unchanged position is the read.
+    title: "beehiiv vs Substack: 0% vs 10% of Your Revenue",
     description:
-      "Free plans, what each takes from your revenue, and where pricing jumps as your list grows. Side by side for creators, writers and businesses.",
+      "Substack takes 10% of paid subscription revenue; beehiiv and Kit take 0%. Free to 2,500 and 1,000 subscribers. What each costs as your list grows.",
     url: `${SITE_URL}/best-newsletter-platform`,
     keywords: [
       "best newsletter platform 2026",
@@ -2567,9 +2599,14 @@ export const seoConfig = {
   },
 
   bestHairLossTreatmentAustralia: {
-    title: "Best Hair Loss Treatment 2026: Mosh vs Dense",
+        // TITLE TEST, set 5 September 2026. Baseline in the 92-day export to 2 Sep:
+    // 3,710 impressions, 27 clicks, 0.73% CTR at position 10.4. The two pages that convert best on this site, /moshy (2.50% at
+    // position 16.1) and /moshy-review (2.03% at 12.7), both rank WORSE than this
+    // page and both carry a figure in the title. Testing whether the figure is the
+    // cause. Measure on 5 October 2026: CTR at unchanged position is the read.
+    title: "Hair Loss Treatment 2026: Mosh 55% Off vs Dense",
     description:
-      "New customers get 55% off a first Mosh order with REFERAL55. What clinical telehealth and topical products cost in Australia, and who each suits.",
+      "REFERAL55 takes 55% off a first Mosh order. Mosh is prescription telehealth, Dense is a topical range off the shelf. What each route costs here.",
     url: `${SITE_URL}/best-hair-loss-treatment-australia`,
     keywords: [
       "best hair loss treatment australia 2026",

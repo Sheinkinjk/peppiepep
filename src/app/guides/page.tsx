@@ -196,6 +196,7 @@ const sections = [
     guides: [
       { href: "/gohighlevel", label: "GoHighLevel", desc: "All-in-one CRM, marketing automation and funnels." },
       { href: "/nutshell", label: "Nutshell", desc: "An easy sales CRM with email marketing built in." },
+      { href: "/databox", label: "Databox", desc: "KPI dashboards. No discount code exists; the free plan is permanent." },
       { href: "/pipedrive", label: "Pipedrive", desc: "A visual, pipeline-first sales CRM." },
       { href: "/best-crm-small-business-australia", label: "Best CRM for Small Business", desc: "Pipedrive, Capsule, Nutshell and Keap compared by who each suits." },
       { href: "/aisdr", label: "AiSDR", desc: "A done-for-you AI rep that prospects and books meetings." },

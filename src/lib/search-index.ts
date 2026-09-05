@@ -207,6 +207,7 @@ export const SEARCH_INDEX: SearchEntry[] = [
   { title: "Unbounce (20% off 3 months, or 35% off a year)", href: "/unbounce", category: "Website builders", kind: "Review", keywords: "unbounce discount code promo landing page builder conversion ab testing" },
   { title: "Nutshell CRM", href: "/nutshell", category: "AI & sales", kind: "Guide", keywords: "nutshell crm easy sales pipeline marketing small business" },
   { title: "Outgrow", href: "/outgrow", category: "Software", kind: "Guide", keywords: "outgrow interactive quizzes calculators lead generation content" },
+  { title: "Databox", href: "/databox", category: "Business software", kind: "Review", keywords: "databox discount code coupon pricing free plan kpi dashboard reporting" },
   { title: "Pipedrive CRM", href: "/pipedrive", category: "AI & sales", kind: "Guide", keywords: "pipedrive crm visual sales pipeline deals" },
 
   // Business finance (lending vertical)

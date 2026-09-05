@@ -210,6 +210,10 @@ export const PAGE_DATES: Record<string, PageDates> = {
     "published": "2026-08-26",
     "updated": "2026-08-27"
   },
+  "/databox": {
+    "published": "2026-07-13",
+    "updated": "2026-07-22"
+  },
   "/deals": {
     "published": "2026-07-27",
     "updated": "2026-08-28"

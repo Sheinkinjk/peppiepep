@@ -160,6 +160,27 @@ reported.** Four measurement bugs have now produced numbers that were acted on:
 The tell is the same every time: the number is worse than the site feels. Three
 pages read by hand costs a few minutes and has caught every one of these.
 
+**Before any before-and-after comparison, check whether the treatment group was
+touched inside the measurement window.** The Search Console join initially showed
+answer-first pages out-clicking the rest in three of four position bands. Then:
+**88 of the 152 pages counted as answer-first had been edited on 4 and 5
+September, after the window closed on 2 September**, carrying 23,065 of 44,705
+impressions and 236 of 361 clicks. The comparison was measuring recent edits
+against pages Google saw months ago. Excluding everything touched left a control
+group with **one click in total**, so the test was not available at all.
+
+That result would have been believed. Structural work had just shipped, the
+number pointed the way everyone expected, and nothing in the output flagged it.
+Any join between a content change and a traffic metric needs the edit dates of
+both sides checked before the numbers are read, not after.
+
+**Counting a name is not counting a fact.** An audit reported Brevo, Pipedrive
+and Leadpages as merchants whose discount code we hold. We hold four codes:
+Moshy, Mosh, Knose, PetsOnMe. The other three matched because their names appear
+in `offers.ts` **comments**. Partner counts, code counts and offer counts come
+from the `DEALS` rows themselves, never from a string search over the file that
+contains them.
+
 **A regex matching a string is not evidence of a problem.** `/terms` was reported
 as "the most exposed thing in this audit", escalated to the top of a lawyer list,
 and the finding was 35 hits on **Pepform**, our own legal entity name, which this

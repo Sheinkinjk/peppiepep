@@ -193,6 +193,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/wing-assistant`, lastModified: AUG13, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/survicate`, lastModified: AUG13, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/nutshell`, lastModified: AUG13, changeFrequency: 'monthly', priority: 0.82 },
+    { url: `${BASE}/databox`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE}/pipedrive`, lastModified: AUG13, changeFrequency: 'monthly', priority: 0.82 },
     { url: `${BASE}/activecampaign`, lastModified: AUG13, changeFrequency: 'monthly', priority: 0.82 },
     { url: `${BASE}/hellobar`, lastModified: AUG13, changeFrequency: 'monthly', priority: 0.8 },
