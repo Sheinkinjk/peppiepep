@@ -156,7 +156,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/business-software": {
     "published": "2026-07-10",
-    "updated": "2026-09-03"
+    "updated": "2026-09-05"
   },
   "/butternut": {
     "published": "2026-06-29",
@@ -212,7 +212,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/databox": {
     "published": "2026-07-13",
-    "updated": "2026-07-22"
+    "updated": "2026-09-05"
   },
   "/deals": {
     "published": "2026-07-27",
@@ -296,7 +296,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/guides": {
     "published": "2026-06-29",
-    "updated": "2026-09-04"
+    "updated": "2026-09-05"
   },
   "/hair-loss": {
     "published": "2026-07-03",

@@ -158,7 +158,6 @@ const nextConfig: NextConfig = {
       { source: '/industries', destination: '/for-business', permanent: true },
       // Pruned low-value B2B pages (July 2026) -> closest live hub, equity preserved
       { source: '/cometchat', destination: '/business-software', permanent: true },
-      { source: '/databox', destination: '/business-software', permanent: true },
       { source: '/alohi', destination: '/business-software', permanent: true },
       { source: '/flocksy', destination: '/business-software', permanent: true },
       { source: '/zoominfo', destination: '/best-ai-sales-tools', permanent: true },
