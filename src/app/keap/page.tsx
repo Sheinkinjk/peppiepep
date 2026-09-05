@@ -3,6 +3,7 @@ import PremiumAffiliateLanding from "@/components/affiliate/PremiumAffiliateLand
 import Link from "next/link";
 import { keapConfig } from "./config";
 
+import { pageDates } from "@/lib/page-dates";
 export const metadata = generateSEOMetadata(seoConfig.keap);
 
 const faqSchema = {
@@ -27,7 +28,7 @@ const webPageSchema = {
   url: seoConfig.keap.url,
   inLanguage: "en-AU",
   datePublished: "2026-07-14",
-  dateModified: "2026-07-14",
+  dateModified: pageDates("/keap")?.updated ?? "2026-07-14",
   isPartOf: { "@id": `${SITE_URL}/#website` },
 };
 const softwareSchema = {

@@ -10,8 +10,8 @@ import { MOSHY_OFFER } from "@/lib/offers";
 import FactHistory from "@/components/facts/FactHistory";
 import CodeAnswer from "@/components/offers/CodeAnswer";
 import OfferSchema from "@/components/offers/OfferSchema";
-import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 
+import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 export const metadata = generateSEOMetadata(seoConfig.moshyReview);
 
 const CYAN = "#0a7c42";
@@ -108,6 +108,8 @@ export default function MoshyReviewPage() {
         <h1 className="text-3xl sm:text-4xl lg:text-[2.7rem] font-black leading-[1.08] tracking-tight mb-5">
           Moshy review: <span style={{ color: CYAN_LT }}>is it legit, and what the service is like</span>
         </h1>
+        {/* Above the first affiliate link, not below it. */}
+        <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
         <p className="text-[#3d4b44] text-base sm:text-lg leading-relaxed mb-4 max-w-2xl">
           A plain walkthrough of how Moshy works: what you get, what happens when you apply, and how to start the free
           eligibility check.

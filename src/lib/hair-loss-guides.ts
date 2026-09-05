@@ -107,7 +107,7 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
       // claim about the evidence behind over-the-counter products would be a new
       // claim with no source on file. The mechanism sentence stays: describing
       // the condition is not advertising a medicine.
-      "If you want to stop hair loss, the first useful step is knowing what kind you have. The most common form in men, male pattern hair loss, is largely genetic and driven by the hormone DHT, and it is gradual and progressive. Acting earlier tends to give you more to work with, since it is easier to hold onto hair you still have than to recover what is gone. What is right for you is a clinical decision, and this page is general information, not medical advice.",
+      "One step comes before any product: knowing which kind you have, because they do not respond to the same things. The most common form in men, male pattern hair loss, is largely genetic and driven by the hormone DHT, and it is gradual and progressive. Acting earlier gives you more to work with, since holding onto hair you still have is easier than recovering what is gone. What is right for you is a clinical decision, and this page is general information, not medical advice.",
     sections: [
       {
         h: "Work out what is actually causing it",
@@ -210,7 +210,7 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
       keywords: ["early signs of hair loss", "how to tell if you are going bald", "am i going bald", "signs of balding men", "thinning crown", "early signs of balding australia"],
     },
     lead:
-      "Most men notice hair loss later than it starts, because the earliest changes are gradual and easy to explain away. Male pattern hair loss usually shows up first at the temples and the crown, and the sooner you recognise it, the more options you have, since it is easier to hold onto hair than to recover it once it is gone. This page walks through the early signs, what counts as normal, and how to check yourself. It is general information, not medical advice.",
+      "Two places show it first: the temples and the crown. Most men notice later than it starts, because the earliest changes are gradual and easy to explain away, and shedding roughly 50 to 100 hairs a day is normal for anyone. The sooner you recognise the pattern the more options you have, since holding onto hair is easier than recovering it. General information, not medical advice.",
     sections: [
       {
         h: "The early signs, roughly in order",

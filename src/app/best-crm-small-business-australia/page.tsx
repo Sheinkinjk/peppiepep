@@ -4,6 +4,7 @@ import { ArrowRight, Check } from "lucide-react";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 
+import { pageDates } from "@/lib/page-dates";
 export const metadata = generateSEOMetadata(seoConfig.bestCrmSmallBusiness);
 
 const GREEN = "#0a7c42";
@@ -104,7 +105,7 @@ const webPageSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
   datePublished: "2026-07-24",
-  dateModified: "2026-07-24",
+  dateModified: pageDates("/best-crm-small-business-australia")?.updated ?? "2026-07-24",
   name: seoConfig.bestCrmSmallBusiness.title,
   description: seoConfig.bestCrmSmallBusiness.description,
   url: seoConfig.bestCrmSmallBusiness.url,

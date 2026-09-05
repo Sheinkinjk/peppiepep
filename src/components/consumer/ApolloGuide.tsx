@@ -100,8 +100,11 @@ export default function ApolloGuide({ cfg }: { cfg: ApolloGuideConfig }) {
         </nav>
 
         <h1 className="mt-4 text-3xl font-extrabold leading-[1.08] tracking-tight text-[#10251b] sm:text-4xl">{cfg.h1}</h1>
-        <EditorialMeta lastUpdated="2026-09-02" className="mt-4" />
         <p className="mt-5 text-lg leading-relaxed text-[#3d4b44]">{cfg.lead}</p>
+        {/* Below the lead, never between it and the h1. The first thing after
+            the h1 is the answer; a meta strip in that slot is what an engine
+            lifts instead. */}
+        <EditorialMeta lastUpdated="2026-09-02" className="mt-4" />
 
         {/* Trust strip */}
         <div className="mt-6 grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-[#e5e9e7] bg-[#e5e9e7] sm:grid-cols-3">

@@ -3,6 +3,7 @@ import PremiumAffiliateLanding from "@/components/affiliate/PremiumAffiliateLand
 import Link from "next/link";
 import { goHighLevelConfig } from "./config";
 
+import { pageDates } from "@/lib/page-dates";
 export const metadata = generateSEOMetadata(seoConfig.goHighLevel);
 
 // ─── JSON-LD Schemas ──────────────────────────────────────────────────────────
@@ -35,7 +36,7 @@ const webPageSchema = {
   url: seoConfig.goHighLevel.url,
   inLanguage: "en-AU",
   datePublished: "2026-07-06",
-  dateModified: "2026-07-06",
+  dateModified: pageDates("/gohighlevel")?.updated ?? "2026-07-06",
   about: [
     { "@type": "Thing", name: "GoHighLevel all-in-one platform" },
     { "@type": "Thing", name: "GoHighLevel CRM" },

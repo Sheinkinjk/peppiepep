@@ -39,7 +39,7 @@ export const denseConfig: AffiliatePageConfig = {
     h1Prefix: "Dense Discount Code Australia:",
     h1Highlight: "Access the Current Offer",
     subheading:
-      "Looking for a Dense discount code, promo code, or coupon for Dense Hair Experts? This page gives you access to the current Dense offer and takes you straight through to their online store.",
+      "Dense Hair Experts is a non-prescription topical range you buy straight off the shelf: shampoos, conditioners, serums and scalp treatments. No consultation, no practitioner and no prescription is involved, which is the single thing that separates it from the telehealth services it is usually compared against. This page links to the current offer on their own store.",
     trustBullets: [
       "Access the current Dense affiliate link",
       "Direct to Dense Hair Experts store",

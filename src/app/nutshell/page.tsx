@@ -3,6 +3,7 @@ import PremiumAffiliateLanding from "@/components/affiliate/PremiumAffiliateLand
 import Link from "next/link";
 import { nutshellConfig } from "./config";
 
+import { pageDates } from "@/lib/page-dates";
 export const metadata = generateSEOMetadata(seoConfig.nutshell);
 
 const faqSchema = {
@@ -27,7 +28,7 @@ const webPageSchema = {
   url: seoConfig.nutshell.url,
   inLanguage: "en-AU",
   datePublished: "2026-07-10",
-  dateModified: "2026-07-10",
+  dateModified: pageDates("/nutshell")?.updated ?? "2026-07-10",
   isPartOf: { "@id": `${SITE_URL}/#website` },
 };
 const softwareSchema = {

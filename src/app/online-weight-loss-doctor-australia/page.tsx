@@ -7,6 +7,7 @@ import StickyCta from "@/components/consumer/StickyCta";
 import MatchPrompt from "@/components/consumer/MatchPrompt";
 
 import EarningsBalanceNote from "@/components/consumer/EarningsBalanceNote";
+import { pageDates } from "@/lib/page-dates";
 export const metadata = generateSEOMetadata(seoConfig.onlineWeightLossDoctor);
 
 const SLUG = "/online-weight-loss-doctor-australia";
@@ -72,7 +73,7 @@ const webPageSchema = {
   url: seoConfig.onlineWeightLossDoctor.url,
   inLanguage: "en-AU",
   datePublished: "2026-07-05",
-  dateModified: "2026-07-05",
+  dateModified: pageDates("/online-weight-loss-doctor-australia")?.updated ?? "2026-07-05",
   about: [
     { "@type": "Thing", name: "online weight loss doctor Australia" },
     { "@type": "Thing", name: "weight loss prescription online Australia" },
@@ -112,10 +113,11 @@ export default function OnlineWeightLossDoctorAustraliaPage() {
               Online weight-loss doctor in Australia: how a telehealth consult really works
             </h1>
             <p className="mt-5 text-base sm:text-lg leading-relaxed text-[#3d4b44]">
-              Seeing a weight-loss doctor online has become a normal way to be assessed in Australia, but a lot of people are unsure
-              what actually happens behind the questionnaire. This page explains how the online consultation model works, what the
-              eligibility questionnaire asks, what a registered practitioner reviews, and how a weight-loss prescription online is
-              handled. It is general information to help you understand the process, not medical advice and not a recommendation.
+              The questionnaire is not the assessment. It is a screening form, and what follows is a review by a
+              practitioner registered with AHPRA who decides whether treatment is appropriate for you, which means the
+              outcome is never guaranteed by completing it. Medicines in this category are prescription-only in
+              Australia and any prescription is a clinical decision. General information about the process, not medical
+              advice and not a recommendation.
             </p>
           </header>
 

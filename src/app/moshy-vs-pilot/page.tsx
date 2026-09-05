@@ -7,9 +7,10 @@ import StickyCta from "@/components/consumer/StickyCta";
 import FactHistory from "@/components/facts/FactHistory";
 import CodeAnswer from "@/components/offers/CodeAnswer";
 import OfferSchema from "@/components/offers/OfferSchema";
-import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 
 import EarningsBalanceNote from "@/components/consumer/EarningsBalanceNote";
+import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
+import { pageDates } from "@/lib/page-dates";
 export const metadata = generateSEOMetadata(seoConfig.moshyVsPilot);
 
 const GREEN = "#0a7c42";
@@ -107,7 +108,7 @@ const webPageSchema = {
   url: seoConfig.moshyVsPilot.url,
   inLanguage: "en-AU",
   datePublished: "2026-07-06",
-  dateModified: "2026-07-06",
+  dateModified: pageDates("/moshy-vs-pilot")?.updated ?? "2026-07-06",
   isPartOf: { "@id": `${SITE_URL}/#website` },
 };
 
@@ -150,6 +151,8 @@ export default function MoshyVsPilotPage() {
             <h1 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-extrabold leading-[1.08] tracking-tight text-[#10251b] mb-4 max-w-3xl">
               Moshy vs Pilot: weight loss telehealth compared for 2026
             </h1>
+            {/* Above the first affiliate link, not below it. */}
+            <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
             <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl mb-3">
               Moshy and Pilot are two Australian telehealth routes into weight management, but they are built differently.
               Moshy is gender-neutral and open to anyone eligible, and new customers can currently receive $120 off their

@@ -8,8 +8,8 @@ import EditorialMeta from "@/components/consumer/EditorialMeta";
 import FactHistory from "@/components/facts/FactHistory";
 import CodeAnswer from "@/components/offers/CodeAnswer";
 import OfferSchema from "@/components/offers/OfferSchema";
-import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 
+import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 export const metadata = generateSEOMetadata(seoConfig.moshyVsJuniper);
 
 const CYAN = "#0a7c42";
@@ -134,6 +134,8 @@ export default function MoshyVsJuniperPage() {
           Moshy vs Juniper:{" "}
           <span style={{ color: CYAN_LT }}>which one is built for you?</span>
         </h1>
+        {/* Above the first affiliate link, not below it. */}
+        <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
         <p className="text-[#3d4b44] text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
           Australia&apos;s two most-compared weight-management telehealth platforms answer the same problem in different
           ways. <strong className="text-[#2b362f]">Moshy runs a lean clinical pathway, Juniper wraps clinical care in a

@@ -6,6 +6,7 @@ import { ECOFLOW_URL, ANKER_SOLIX_URL, APOLLO_ENERGY_LEAD_HREF } from "@/lib/aff
 import { STATIONS, fmtAud, PRICES_READ_ON } from "@/lib/portable-power";
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, comparisonArticleSchema } from "@/lib/seo";
 
+import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 export const metadata = generateSEOMetadata(seoConfig.portableVsInstalledBattery);
 
 const SLUG = "/portable-vs-installed-home-battery-australia";
@@ -119,6 +120,8 @@ export default function Page() {
           Portable power station or installed home battery: <span className="text-[#0a7c42]">which do you need?</span>
         </h1>
 
+        {/* Above the first affiliate link, not below it. */}
+        <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
         <p className="mt-5 text-lg leading-relaxed text-[#2b362f]">
           They answer different questions. A portable unit, {fmtAud(299)} for a small one
           and <strong>{fmtAud(cheapest1k.aud)}</strong> for one that will hold a fridge, gets you through a blackout with

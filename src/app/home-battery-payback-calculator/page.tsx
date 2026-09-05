@@ -6,6 +6,7 @@ import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
 import BatteryCalc from "./BatteryCalc";
 
+import { pageDates } from "@/lib/page-dates";
 export const metadata = generateSEOMetadata(seoConfig.homeBatteryPaybackCalculator);
 
 const SLUG = "/home-battery-payback-calculator";
@@ -57,7 +58,7 @@ const webPageSchema = {
   url: seoConfig.homeBatteryPaybackCalculator.url,
   inLanguage: "en-AU",
   datePublished: "2026-07-19",
-  dateModified: "2026-07-19",
+  dateModified: pageDates("/home-battery-payback-calculator")?.updated ?? "2026-07-19",
   about: [
     { "@type": "Thing", name: "home battery payback calculator" },
     { "@type": "Thing", name: "home battery payback period Australia" },
@@ -94,10 +95,10 @@ export default function HomeBatteryPaybackCalculatorPage() {
               Home battery payback calculator
             </h1>
             <p className="mt-5 text-base sm:text-lg leading-relaxed text-[#3d4b44]">
-              Work out roughly how long a home battery would take to pay for itself, from your own usage and tariff. It
-              estimates the federal rebate, the net cost and the annual saving, then the payback period. Every number is
-              built from your inputs and stated assumptions, so treat it as a starting estimate, not a quote. It is
-              general information, not financial advice.
+              Four inputs and you get a payback period: your usage, your tariff, the battery size and your state. The
+              calculator estimates the federal rebate, subtracts it to a net cost, works out the annual saving and
+              divides one by the other. Every number is built from your inputs and stated assumptions, so treat it as a
+              starting estimate rather than a quote. General information, not financial advice.
             </p>
           </header>
 

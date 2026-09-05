@@ -3,6 +3,7 @@ import PremiumAffiliateLanding from "@/components/affiliate/PremiumAffiliateLand
 import Link from "next/link";
 import { elevenlabsConfig } from "./config";
 
+import { pageDates } from "@/lib/page-dates";
 export const metadata = generateSEOMetadata(seoConfig.elevenlabs);
 
 const faqSchema = {
@@ -27,7 +28,7 @@ const webPageSchema = {
   url: seoConfig.elevenlabs.url,
   inLanguage: "en-AU",
   datePublished: "2026-07-09",
-  dateModified: "2026-07-09",
+  dateModified: pageDates("/elevenlabs")?.updated ?? "2026-07-09",
   isPartOf: { "@id": `${SITE_URL}/#website` },
 };
 const softwareSchema = {

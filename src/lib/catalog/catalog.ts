@@ -553,7 +553,7 @@ export const CATALOG: Vertical[] = [
     h1Lead: "Payments & finance:",
     h1Accent: "get paid, and keep the books straight",
     intro:
-      "Tools for receiving payments, paying vendors and moving money internationally, plus the bookkeeping that keeps the finances tidy. Useful for freelancers, creators and online businesses working with overseas clients, marketplaces and affiliate programs.",
+      "Three jobs, three different tools, and no one product does all three well: receiving cross-border payments, paying vendors, and the bookkeeping that keeps it reconcilable. Sorting which of the three is your actual bottleneck decides the choice, and it matters most for freelancers, creators and online businesses working with overseas clients, marketplaces and affiliate programs.",
     metaTitle: "Payments & Finance Tools Compared 2026: Payoneer, Dext & Melio | Refer Labs",
     metaDescription:
       "Payments and finance tools for 2026: Payoneer for cross-border payments and multi-currency accounts, Dext for bookkeeping automation, and Melio for US business bill pay. Independent, no pay-to-rank.",
@@ -628,7 +628,7 @@ export const CATALOG: Vertical[] = [
     h1Lead: "Business phone systems:",
     h1Accent: "calls, texts and numbers in one place",
     intro:
-      "Cloud phone systems let a team make and take calls from the browser and mobile, with virtual numbers instead of hardware. This hub compares the main options by who they suit, from lean remote teams to busier sales and support floors.",
+      "No handset, no PBX, no line rental: a cloud phone system runs calls through the browser and the mobile app, with virtual numbers replacing hardware entirely. That removes the up-front cost and makes the decision a question of who the software suits, from a lean remote team to a busier sales or support floor.",
     metaTitle: "Business Phone Systems Compared 2026: CloudTalk vs KrispCall | Refer Labs",
     metaDescription:
       "Compare cloud business phone systems for 2026: CloudTalk for AI call-centre features and analytics, KrispCall for virtual numbers and a shared team inbox. Independent, no pay-to-rank.",

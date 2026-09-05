@@ -3,6 +3,7 @@ import PremiumAffiliateLanding from "@/components/affiliate/PremiumAffiliateLand
 import Link from "next/link";
 import { brevoConfig } from "./config";
 
+import { pageDates } from "@/lib/page-dates";
 export const metadata = generateSEOMetadata(seoConfig.brevo);
 
 const faqSchema = {
@@ -29,7 +30,7 @@ const webPageSchema = {
   url: seoConfig.brevo.url,
   inLanguage: "en-AU",
   datePublished: "2026-07-08",
-  dateModified: "2026-07-08",
+  dateModified: pageDates("/brevo")?.updated ?? "2026-07-08",
   isPartOf: { "@id": `${SITE_URL}/#website` },
 };
 

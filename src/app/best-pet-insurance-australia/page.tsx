@@ -6,9 +6,9 @@ import ConsumerShell from "@/components/consumer/ConsumerShell";
 import EditorialMeta from "@/components/consumer/EditorialMeta";
 import CodeAnswer from "@/components/offers/CodeAnswer";
 import OfferSchema from "@/components/offers/OfferSchema";
-import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 
 import EarningsBalanceNote from "@/components/consumer/EarningsBalanceNote";
+import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 export const metadata = generateSEOMetadata(seoConfig.bestPetInsurance);
 
 const SLUG = "/best-pet-insurance-australia";
@@ -158,6 +158,8 @@ export default function BestPetInsuranceAustraliaPage() {
           Best pet insurance in Australia: how to actually choose
         </h1>
 
+        {/* Above the first affiliate link, not below it. */}
+        <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
         {/* Answer-first */}
         <section className="mt-6">
           <h2 className="text-xl font-bold text-[#10251b] sm:text-2xl">What is the best pet insurance in Australia?</h2>

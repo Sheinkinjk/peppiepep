@@ -4,6 +4,7 @@ import ConsumerShell from "@/components/consumer/ConsumerShell";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 import EarningsCalc from "./EarningsCalc";
 
+import { pageDates } from "@/lib/page-dates";
 export const metadata = generateSEOMetadata(seoConfig.affiliateEarningsCalculator);
 
 const faqs = [
@@ -47,7 +48,7 @@ const webPageSchema = {
   url: seoConfig.affiliateEarningsCalculator.url,
   inLanguage: "en-AU",
   datePublished: "2026-07-07",
-  dateModified: "2026-07-07",
+  dateModified: pageDates("/affiliate-earnings-calculator")?.updated ?? "2026-07-07",
   isPartOf: { "@id": `${SITE_URL}/#website` },
 };
 

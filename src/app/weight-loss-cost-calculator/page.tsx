@@ -6,6 +6,7 @@ import StickyCta from "@/components/consumer/StickyCta";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 import CostPlanner from "./CostPlanner";
 
+import { pageDates } from "@/lib/page-dates";
 export const metadata = generateSEOMetadata(seoConfig.weightLossCostCalculator);
 
 const faqs = [
@@ -49,7 +50,7 @@ const webPageSchema = {
   url: seoConfig.weightLossCostCalculator.url,
   inLanguage: "en-AU",
   datePublished: "2026-07-07",
-  dateModified: "2026-07-07",
+  dateModified: pageDates("/weight-loss-cost-calculator")?.updated ?? "2026-07-07",
   isPartOf: { "@id": `${SITE_URL}/#website` },
   author: SCHEMA_AUTHOR,
   publisher: SCHEMA_PUBLISHER,

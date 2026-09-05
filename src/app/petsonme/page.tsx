@@ -6,8 +6,8 @@ import ConsumerShell from "@/components/consumer/ConsumerShell";
 import EditorialMeta from "@/components/consumer/EditorialMeta";
 import { checkedOn } from "@/lib/offers";
 import OfferSchema from "@/components/offers/OfferSchema";
-import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 
+import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 export const metadata = generateSEOMetadata(seoConfig.petsonme);
 
 const SLUG = "/petsonme";
@@ -114,6 +114,8 @@ export default function PetsOnMePage() {
         <h1 className="mt-4 text-3xl font-extrabold leading-[1.08] tracking-tight text-[#10251b] sm:text-4xl">
           PetsOnMe pet insurance: the cover, and what the REFERLABS code gives you
         </h1>
+        {/* Above the first affiliate link, not below it. */}
+        <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
         <p className="mt-5 text-base leading-relaxed text-[#3d4b44] sm:text-lg">
           PetsOnMe is an Australian pet insurance provider offering three levels of cover, all paying 80% of the
           eligible vet bill less your excess. This page sets out what each plan includes, what the code does and does

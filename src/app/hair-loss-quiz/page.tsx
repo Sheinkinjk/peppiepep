@@ -3,6 +3,7 @@ import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import HairLossQuiz from "./HairLossQuiz";
 
+import { pageDates } from "@/lib/page-dates";
 export const metadata = generateSEOMetadata(seoConfig.hairLossQuiz);
 
 const faqs = [
@@ -42,7 +43,7 @@ const webPageSchema = {
   url: seoConfig.hairLossQuiz.url,
   inLanguage: "en-AU",
   datePublished: "2026-07-08",
-  dateModified: "2026-07-08",
+  dateModified: pageDates("/hair-loss-quiz")?.updated ?? "2026-07-08",
   isPartOf: { "@id": `${SITE_URL}/#website` },
   author: SCHEMA_AUTHOR,
   publisher: SCHEMA_PUBLISHER,

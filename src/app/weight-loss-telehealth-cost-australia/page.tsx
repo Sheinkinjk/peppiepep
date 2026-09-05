@@ -113,11 +113,10 @@ export default function WeightLossTelehealthCostAustraliaPage() {
               Weight-loss telehealth cost in Australia: how the pricing actually works
             </h1>
             <p className="mt-5 text-base sm:text-lg leading-relaxed text-[#3d4b44]">
-              &ldquo;How much does weight-loss telehealth cost?&rdquo; is one of the most common questions Australians ask before
-              they start, and it depends on the plan you land on. This page breaks down the pricing model most online
-              weight-management services use, why medicine is usually billed separately, and what actually drives the number, so you
-              can compare services sensibly. It is general information, not medical or financial advice, and we do not quote a single
-              guaranteed price because there isn&apos;t one.
+              There is no single price, and the reason matters: almost every online weight-management service bills in two
+              parts, a program or subscription fee and the medicine, and the second is usually charged separately by the
+              pharmacy. A service that advertises one number is quoting the first part. Add both, multiply by twelve, and
+              the services become comparable. General information, not medical or financial advice.
             </p>
             <EditorialMeta lastUpdated="2026-08-14" className="mt-5" />
           </header>

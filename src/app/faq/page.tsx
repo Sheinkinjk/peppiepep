@@ -69,7 +69,9 @@ export default function FAQPage() {
             Frequently asked questions
           </h1>
           <p className="mt-5 text-lg leading-relaxed text-[#2b362f] max-w-2xl">
-            Common questions about how Refer Labs works, how we stay independent, and how we make money.
+            Three questions come up most: how Refer Labs makes money, whether that changes what we publish, and who
+            writes it. The short answers are affiliate commissions on some links, no, and one person. Every question
+            below is answered in full.
           </p>
           <div className="mt-6 flex gap-4 text-sm font-semibold">
             <button onClick={expandAll} className="text-[#0a7c42] hover:text-[#086536]">Expand all</button>

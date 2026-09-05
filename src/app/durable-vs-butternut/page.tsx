@@ -6,6 +6,8 @@ import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
 
 import EarningsBalanceNote from "@/components/consumer/EarningsBalanceNote";
+import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
+import { pageDates } from "@/lib/page-dates";
 export const metadata = generateSEOMetadata(seoConfig.durableVsButternut);
 
 const GREEN = "#0a7c42";
@@ -96,7 +98,7 @@ const webPageSchema = {
   url: seoConfig.durableVsButternut.url,
   inLanguage: "en-AU",
   datePublished: "2026-07-06",
-  dateModified: "2026-07-06",
+  dateModified: pageDates("/durable-vs-butternut")?.updated ?? "2026-07-06",
   isPartOf: { "@id": `${SITE_URL}/#website` },
 };
 
@@ -138,6 +140,8 @@ export default function DurableVsButternutPage() {
             <h1 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-extrabold leading-[1.08] tracking-tight text-[#10251b] mb-4 max-w-3xl">
               Durable AI vs Butternut AI (2026)
             </h1>
+            {/* Above the first affiliate link, not below it. */}
+            <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
             <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl mb-3">
               Durable AI and Butternut AI are two of the fastest AI website builders around, and they overlap heavily,
               yet they are built for slightly different jobs. Durable generates a business site in about 30 seconds and

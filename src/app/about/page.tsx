@@ -38,9 +38,10 @@ export default function AboutPage() {
           About Refer Labs
         </h1>
         <p className="mt-5 text-lg leading-relaxed text-[#2b362f]">
-          Refer Labs is an independent Australian comparison platform. We help people choose between health services,
-          software and tools by researching the options properly and writing up what we find, in plain language, with
-          the fine print read.
+          Refer Labs is an independent Australian comparison platform, run by one person and trading since
+          16 August 2022. We compare health services, software and tools by reading each provider&apos;s own page,
+          recording the date we read it, and publishing what we find in plain language. Some links earn a commission and
+          every one of them is disclosed. Rankings are never sold.
         </p>
 
         <div className="mt-12 space-y-8">

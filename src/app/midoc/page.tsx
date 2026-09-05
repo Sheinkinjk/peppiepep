@@ -100,6 +100,8 @@ export default function MidocPage() {
           Midoc: what it costs and how the access route works
         </h1>
 
+        {/* Above the first affiliate link, not below it. */}
+        <AffiliateDisclosure compact partners={["Midoc"]} className="mt-4 max-w-2xl" />
         {/* Answer-first. Nothing goes above this paragraph. */}
         <p className="mt-5 text-lg leading-relaxed text-[#3d4b44]">
           Midoc is an Australian telehealth service. You fill in a short form, a doctor registered with

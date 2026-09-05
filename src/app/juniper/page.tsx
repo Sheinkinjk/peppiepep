@@ -7,6 +7,7 @@ import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
 import FactHistory from "@/components/facts/FactHistory";
 
+import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 export const metadata = generateSEOMetadata(seoConfig.juniper);
 
 const SLUG = "/juniper";
@@ -176,6 +177,8 @@ export default function JuniperPage() {
             <h1 className="mt-4 text-4xl font-extrabold leading-[1.06] tracking-[-0.02em] text-[#10251b] sm:text-5xl lg:text-[3.2rem]">
               Juniper Australia: <span className="text-[#0a7c42]">a free first consultation for new patients</span>
             </h1>
+            {/* Above the first affiliate link, not below it. */}
+            <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
             <p className="mt-5 inline-flex items-center gap-2 rounded-full border border-[#cfe6da] bg-[#e8f5ee] px-4 py-1.5 text-[13px] font-bold text-[#0a7c42]">
               <ShieldCheck className="h-4 w-4" aria-hidden="true" /> New patients get a free first consultation through our link
             </p>

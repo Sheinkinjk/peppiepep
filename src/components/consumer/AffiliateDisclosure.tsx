@@ -29,6 +29,7 @@ import type { ReactNode } from "react";
  */
 export default function AffiliateDisclosure({
   partners,
+  compact = false,
   earnsFromAll = false,
   noStarRatings = false,
   priceUnaffected = false,
@@ -50,12 +51,36 @@ export default function AffiliateDisclosure({
   priceUnaffected?: boolean;
   /** Anything the canonical sentence and these props cannot hold. */
   extra?: ReactNode;
+  /**
+   * One line, for the slot ABOVE the first affiliate link.
+   *
+   * Added 5 Sep 2026. An audit found 82 of the 113 pages carrying an affiliate
+   * link put the disclosure beneath it, so the reader who clicks never reaches
+   * it. Ahpra's guidance is that such information be "easily found and
+   * accessible" and that the public "should not be required to exhaustively
+   * search"; the ACCC's affiliate guidance is stricter still. Below the button
+   * fails both.
+   *
+   * The full two-paragraph block stays where it is. This is the sentence the
+   * reader needs before they act, not a replacement for the one they can read
+   * afterwards.
+   */
+  compact?: boolean;
   className?: string;
 }) {
   const named =
     partners && partners.length > 0
       ? `, including to ${partners.length === 1 ? partners[0] : `${partners.slice(0, -1).join(", ")} and ${partners[partners.length - 1]}`}`
       : "";
+
+  if (compact) {
+    return (
+      <p className={`text-[13px] leading-relaxed text-[#6e7b74] ${className}`} data-affiliate-disclosure>
+        Refer Labs may earn a commission if you sign up or buy through the links on this page
+        {named}, at no extra cost to you. It never changes a comparison or a conclusion.
+      </p>
+    );
+  }
 
   return (
     <div className={className} data-affiliate-disclosure>

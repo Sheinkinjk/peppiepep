@@ -3,6 +3,7 @@ import PremiumAffiliateLanding from "@/components/affiliate/PremiumAffiliateLand
 import Link from "next/link";
 import { landingiConfig } from "./config";
 
+import { pageDates } from "@/lib/page-dates";
 export const metadata = generateSEOMetadata(seoConfig.landingi);
 
 const faqSchema = {
@@ -27,7 +28,7 @@ const webPageSchema = {
   url: seoConfig.landingi.url,
   inLanguage: "en-AU",
   datePublished: "2026-07-12",
-  dateModified: "2026-07-12",
+  dateModified: pageDates("/landingi")?.updated ?? "2026-07-12",
   isPartOf: { "@id": `${SITE_URL}/#website` },
 };
 const softwareSchema = {

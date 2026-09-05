@@ -7,9 +7,9 @@ import PathwayQuiz from "@/components/consumer/PathwayQuiz";
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, SCHEMA_AUTHOR, SCHEMA_PUBLISHER } from "@/lib/seo";
 import { MOSHY_URL } from "@/lib/affiliate-links";
 import OfferSchema from "@/components/offers/OfferSchema";
-import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 
 import EarningsBalanceNote from "@/components/consumer/EarningsBalanceNote";
+import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 export const metadata = generateSEOMetadata(seoConfig.weightLossHub);
 
 const aff = { href: MOSHY_URL, target: "_blank" as const, rel: "nofollow sponsored" as const };
@@ -128,6 +128,8 @@ export default function WeightLossHubPage() {
             <h1 className="text-4xl font-bold leading-[1.06] tracking-[-0.01em] text-[#10251b] sm:text-5xl">
               Weight loss telehealth in Australia: <span className="italic text-[#0a7c42]">online programs, compared properly</span>
             </h1>
+            {/* Above the first affiliate link, not below it. */}
+            <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#2b362f]">
               Online weight loss telehealth lets you start without waiting weeks for an appointment: you complete an
               assessment, a registered practitioner reviews it, and a plan follows if you&apos;re suitable. This hub

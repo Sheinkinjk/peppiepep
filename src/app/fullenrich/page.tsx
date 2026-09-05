@@ -3,6 +3,7 @@ import PremiumAffiliateLanding from "@/components/affiliate/PremiumAffiliateLand
 import Link from "next/link";
 import { fullenrichConfig } from "./config";
 
+import { pageDates } from "@/lib/page-dates";
 export const metadata = generateSEOMetadata(seoConfig.fullenrich);
 
 // ─── JSON-LD Schemas ──────────────────────────────────────────────────────────
@@ -35,7 +36,7 @@ const webPageSchema = {
   url: seoConfig.fullenrich.url,
   inLanguage: "en-AU",
   datePublished: "2026-07-07",
-  dateModified: "2026-07-07",
+  dateModified: pageDates("/fullenrich")?.updated ?? "2026-07-07",
   about: [
     { "@type": "Thing", name: "FullEnrich contact enrichment" },
     { "@type": "Thing", name: "waterfall enrichment" },

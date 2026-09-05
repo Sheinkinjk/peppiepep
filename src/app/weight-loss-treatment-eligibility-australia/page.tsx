@@ -6,6 +6,8 @@ import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 
+import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
+import { pageDates } from "@/lib/page-dates";
 export const metadata = generateSEOMetadata(seoConfig.weightLossEligibility);
 
 const CYAN = "#0a7c42";
@@ -61,7 +63,7 @@ const webPageSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
   datePublished: "2026-08-07",
-  dateModified: "2026-08-07",
+  dateModified: pageDates("/weight-loss-treatment-eligibility-australia")?.updated ?? "2026-08-07",
   name: seoConfig.weightLossEligibility.title,
   description: seoConfig.weightLossEligibility.description,
   url: seoConfig.weightLossEligibility.url,
@@ -104,6 +106,8 @@ export default function WeightLossEligibilityPage() {
         <h1 className="text-3xl sm:text-4xl lg:text-[2.7rem] font-black leading-[1.08] tracking-tight mb-5">
           Do you qualify for weight-loss treatment in Australia? <span style={{ color: CYAN }}>The eligibility criteria, explained</span>
         </h1>
+        {/* Above the first affiliate link, not below it. */}
+        <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
         <p className="text-[#3d4b44] text-base sm:text-lg leading-relaxed mb-4 max-w-2xl">
           There is no online form that decides this for you, but there are clear criteria a registered practitioner uses.
           This page explains what generally counts, what does not automatically qualify you, and the fastest way to find

@@ -49,7 +49,7 @@ export default function Page() {
       slug="/mens-health/online-mens-health-clinics-compared"
       crumb="Online clinics compared"
       h1={<>Online men&apos;s health clinics: <span className="italic text-[#0a7c42]">what actually differs</span></>}
-      intro="The clinical process at these services is broadly the same. What differs is the commercial model, and that is where the cost difference lives. These are the criteria that separate them, and the checks worth running before you enter a card."
+      intro="The clinical process is broadly the same at all of them: a form, then a practitioner registered with AHPRA who decides. One thing differs and it is the commercial model, which is where the entire cost difference lives. Two structures exist, per-consult and subscription, and they win in opposite situations. These are the criteria that separate them and the checks worth running before you enter a card."
       headline="Online men's health clinics in Australia, compared"
       description={seoConfig.mensClinicsCompared.description}
       faqs={faqs}

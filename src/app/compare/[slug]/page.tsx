@@ -8,6 +8,7 @@ import RelatedGuides from "@/components/consumer/RelatedGuides";
 import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
 import { CATALOG, getVertical, type Provider } from "@/lib/catalog/catalog";
 
+import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 // Only catalog slugs are valid, anything else is a real 404, not a soft-404.
 export const dynamicParams = false;
 
@@ -121,6 +122,10 @@ export default async function ComparePage({ params }: { params: Promise<{ slug: 
               {v.h1Lead} <span className="italic text-[#0a7c42]">{v.h1Accent}</span>
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#2b362f]">{v.intro}</p>
+            {/* Above the provider cards, which carry the first affiliate links. */}
+            {v.providers.some((p) => p.affiliateUrl) && (
+              <AffiliateDisclosure compact className="mt-5 max-w-xl" />
+            )}
           </div>
           {v.note && (
             <p className="mt-8 max-w-3xl rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] px-5 py-4 text-xs leading-relaxed text-[#3d4b44]">

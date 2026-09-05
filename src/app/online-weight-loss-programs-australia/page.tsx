@@ -4,8 +4,8 @@ import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
-import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 
+import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 export const metadata = generateSEOMetadata(seoConfig.onlineWeightLossPrograms);
 
 const CYAN = "#0a7c42";
@@ -87,6 +87,8 @@ export default function OnlineWeightLossProgramsPage() {
         <h1 className="text-3xl sm:text-4xl lg:text-[2.7rem] font-black leading-[1.08] tracking-tight mb-5">
           Online weight loss programs in Australia: <span style={{ color: CYAN_LT }}>the three types, untangled</span>
         </h1>
+        {/* Above the first affiliate link, not below it. */}
+        <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
         <p className="text-[#3d4b44] text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
           &ldquo;Online weight loss program&rdquo; covers everything from a practitioner-supervised medical service to a
           meal-plan PDF. Knowing which type you are looking at is most of the decision.

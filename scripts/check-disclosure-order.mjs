@@ -27,9 +27,16 @@ import { join } from "node:path";
 
 const BUILT = ".next/server/app";
 const APP = "src/app";
+/**
+ * Must match the canonical wording in AffiliateDisclosure, which deliberately
+ * says "Refer Labs may earn" and not "we may earn": first person is
+ * unattributable once a sentence is lifted out of the page. An earlier version
+ * of this pattern required the word "we" and so failed to see the very component
+ * that fixes the fault.
+ */
 const DISCLOSURE =
-  /commercial arrangement|affiliate link|we (?:may )?earn a commission|paid partnership|how we make money/i;
-const FIRST_LINK = /<a[^>]+(?:rel="nofollow sponsored"|href="\/go\/)/;
+  /commercial arrangement|affiliate links?\b|(?:we|Refer Labs) (?:may )?earn a commission|paid partnership|how we make money/i;
+const FIRST_LINK = /<a[^>]+(?:rel="[^"]*sponsored|href="\/go\/)/;
 
 if (!existsSync(BUILT)) {
   console.log("  No build output to check. Run after next build.");
@@ -42,7 +49,10 @@ function earningRoutes(dir = APP, acc = []) {
     if (e.isDirectory()) earningRoutes(p, acc);
     else if (e.name === "page.tsx") {
       const src = readFileSync(p, "utf8");
-      if (/href:\s*"\/go\/|href="\/go\/|t\.cfjump\.com/.test(src)) {
+      // Widened 5 Sep 2026 from /go/ pages to EVERY page carrying an affiliate
+      // link. The narrow version passed while 82 pages put the disclosure under
+      // the button, because it only ever looked at the 18 newest.
+      if (/href:\s*"\/go\/|href="\/go\/|t\.cfjump\.com|rel="nofollow sponsored"|AffiliateDisclosure|PremiumAffiliateLanding/.test(src)) {
         const r = "/" + dir.slice(APP.length + 1);
         if (!r.includes("[")) acc.push(r === "/" ? "/index" : r);
       }
@@ -59,10 +69,9 @@ for (const route of earningRoutes()) {
   const main = readFileSync(file, "utf8").match(/<main[^>]*>([\s\S]*?)<\/main>/);
   if (!main) continue;
   const link = FIRST_LINK.exec(main[1]);
-  if (!link) {
-    errors.push(`${route}: source carries a partner link but none renders inside <main>.`);
-    continue;
-  }
+  // A page may import the disclosure component without rendering a link (a hub
+  // that only describes partners). Nothing to order, so nothing to check.
+  if (!link) continue;
   checked++;
   const above = main[1].slice(0, link.index).replace(/<[^>]+>/g, " ");
   if (!DISCLOSURE.test(above)) {

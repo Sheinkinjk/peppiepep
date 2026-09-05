@@ -10,6 +10,7 @@ import OfferSchema from "@/components/offers/OfferSchema";
 import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 
 import EarningsBalanceNote from "@/components/consumer/EarningsBalanceNote";
+import { pageDates } from "@/lib/page-dates";
 export const metadata = generateSEOMetadata(seoConfig.moshVsPilot);
 
 const GREEN = "#0a7c42";
@@ -93,7 +94,7 @@ const webPageSchema = {
   url: seoConfig.moshVsPilot.url,
   inLanguage: "en-AU",
   datePublished: "2026-07-06",
-  dateModified: "2026-07-06",
+  dateModified: pageDates("/mosh-vs-pilot")?.updated ?? "2026-07-06",
   isPartOf: { "@id": `${SITE_URL}/#website` },
 };
 

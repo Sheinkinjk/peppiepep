@@ -7,6 +7,7 @@ import { APOLLO_ENERGY_LEAD_HREF } from "@/lib/affiliate-links";
 import { STATIONS, fmtAud } from "@/lib/portable-power";
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, SCHEMA_AUTHOR, SCHEMA_PUBLISHER } from "@/lib/seo";
 
+import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 export const metadata = generateSEOMetadata(seoConfig.solarAndEnergy);
 
 const SLUG = "/solar-and-energy";
@@ -153,6 +154,8 @@ export default function Page() {
           Solar &amp; energy: <span className="text-[#0a7c42]">what to decide, in the order it matters</span>
         </h1>
 
+        {/* Above the first affiliate link, not below it. */}
+        <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
         {/* The answer, first. */}
         <p className="mt-5 max-w-3xl text-lg leading-relaxed text-[#2b362f]">
           Three decisions sit behind almost every energy question we get asked, and they come in order:{" "}

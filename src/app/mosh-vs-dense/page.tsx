@@ -7,9 +7,10 @@ import StickyCta from "@/components/consumer/StickyCta";
 import FactHistory from "@/components/facts/FactHistory";
 import CodeAnswer from "@/components/offers/CodeAnswer";
 import OfferSchema from "@/components/offers/OfferSchema";
-import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 
 import EarningsBalanceNote from "@/components/consumer/EarningsBalanceNote";
+import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
+import { pageDates } from "@/lib/page-dates";
 export const metadata = generateSEOMetadata(seoConfig.moshVsDense);
 
 const GREEN = "#0a7c42";
@@ -100,7 +101,7 @@ const webPageSchema = {
   url: seoConfig.moshVsDense.url,
   inLanguage: "en-AU",
   datePublished: "2026-07-06",
-  dateModified: "2026-07-06",
+  dateModified: pageDates("/mosh-vs-dense")?.updated ?? "2026-07-06",
   isPartOf: { "@id": `${SITE_URL}/#website` },
   author: SCHEMA_AUTHOR,
   publisher: SCHEMA_PUBLISHER,
@@ -143,6 +144,8 @@ export default function MoshVsDensePage() {
             <h1 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-extrabold leading-[1.08] tracking-tight text-[#10251b] mb-4 max-w-3xl">
               Mosh vs Dense: hair loss treatment compared (2026)
             </h1>
+            {/* Above the first affiliate link, not below it. */}
+            <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
             <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl mb-3">
               They are not alternatives, and only one of them involves a practitioner. Mosh is prescription telehealth:
               it can prescribe hair-loss treatments after an online consultation reviewed by a registered Australian

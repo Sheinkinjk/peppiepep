@@ -12,6 +12,7 @@ import EditorialMeta from "@/components/consumer/EditorialMeta";
 import InsuranceDisclosure from "@/components/consumer/InsuranceDisclosure";
 import PetOfferPair from "@/components/pet/PetOfferPair";
 
+import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 export const metadata = generateSEOMetadata(seoConfig.whatPetInsuranceCovers);
 
 const SLUG = "/what-pet-insurance-covers-australia";
@@ -97,6 +98,8 @@ export default function WhatPetInsuranceCoversPage() {
             <h1 className="mt-4 text-3xl font-extrabold leading-[1.08] tracking-tight text-[#10251b] sm:text-4xl">
               What pet insurance covers in Australia
             </h1>
+            {/* Above the first affiliate link, not below it. */}
+            <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
             <p className="mt-5 text-lg leading-relaxed text-[#3d4b44]">
               Pet insurance is not one product. Cover levels, waiting periods, exclusions, excess and limits all vary by
               insurer, and the specifics that matter are always in the Product Disclosure Statement (PDS). Here is what

@@ -146,11 +146,11 @@ export default function CheapestWeightLossTelehealthPage() {
               Cheapest weight loss telehealth in Australia: affordable options compared
             </h1>
             <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl mb-3">
-              &ldquo;Cheapest&rdquo; is a slippery word in weight-loss telehealth, because services bill in different
-              ways. Subscription programs charge a flat monthly fee. Pay-as-you-go services charge per consult. And
-              medication, when it is prescribed, is often billed separately on top. This page compares the pricing models
-              side by side, from subscription programs to pay-per-appointment alternatives, and explains what cheapest
-              really means once you factor in the whole cost.
+              No service is cheapest for everyone, because there are two billing models and they win in opposite
+              situations. A subscription charges a flat monthly fee whether you consult or not, so it wins if you
+              consult often. Pay-as-you-go charges per consult, so it wins if you rarely do. Medicine is usually billed
+              separately on top of either. Annualise both against your own likely number of consults and the answer
+              stops being a matter of opinion.
             </p>
             <EditorialMeta lastUpdated="2026-08-14" className="mb-5" />
             <p className="text-[#9aa39c] text-xs leading-relaxed max-w-2xl mb-7">

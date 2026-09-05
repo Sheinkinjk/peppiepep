@@ -5,6 +5,7 @@ import StickyCta from "@/components/consumer/StickyCta";
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, SCHEMA_AUTHOR, SCHEMA_PUBLISHER } from "@/lib/seo";
 import { APOLLO_ENERGY_LEAD_HREF } from "@/lib/affiliate-links";
 
+import { pageDates } from "@/lib/page-dates";
 export const metadata = generateSEOMetadata(seoConfig.apolloEnergyReview);
 
 const faqs = [
@@ -54,7 +55,7 @@ const articleSchema = {
   description: seoConfig.apolloEnergyReview.description,
   inLanguage: "en-AU",
   datePublished: "2026-07-15",
-  dateModified: "2026-07-15",
+  dateModified: pageDates("/apollo-energy-review")?.updated ?? "2026-07-15",
   author: SCHEMA_AUTHOR,
   publisher: SCHEMA_PUBLISHER,
   mainEntityOfPage: seoConfig.apolloEnergyReview.url,

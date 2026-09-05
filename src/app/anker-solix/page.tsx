@@ -3,6 +3,7 @@ import PremiumAffiliateLanding from "@/components/affiliate/PremiumAffiliateLand
 import Link from "next/link";
 import { ankerSolixConfig } from "./config";
 
+import { pageDates } from "@/lib/page-dates";
 export const metadata = generateSEOMetadata(seoConfig.ankerSolix);
 
 const faqSchema = {
@@ -27,7 +28,7 @@ const webPageSchema = {
   url: seoConfig.ankerSolix.url,
   inLanguage: "en-AU",
   datePublished: "2026-08-24",
-  dateModified: "2026-08-24",
+  dateModified: pageDates("/anker-solix")?.updated ?? "2026-08-24",
   isPartOf: { "@id": `${SITE_URL}/#website` },
   author: SCHEMA_AUTHOR,
   publisher: SCHEMA_PUBLISHER,

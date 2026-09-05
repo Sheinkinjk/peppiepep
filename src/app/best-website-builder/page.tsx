@@ -11,6 +11,7 @@ export const metadata = generateSEOMetadata(seoConfig.bestWebsiteBuilder);
 
 import { CARRD_URL, DURABLE_URL, BUTTERNUT_URL, SWIPE_PAGES_URL as SWIPE_URL } from "@/lib/affiliate-links";
 
+import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 const aff = (url: string, loc = "best-website-builder") => ({
   href: url,
   target: "_blank" as const,
@@ -333,6 +334,8 @@ export default function BestWebsiteBuilderPage() {
               <span style={{ color: CYAN_LT }}>Four Platforms. One Clear Answer.</span>
             </h1>
 
+            {/* Above the first affiliate link, not below it. */}
+            <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
             <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl mb-3">
               Most people need Carrd (free, permanent, live in an hour) or one of the AI builders. Swipe Pages sits in a different category entirely, it is a conversion tool for paid ad campaigns, not a general website solution.
             </p>

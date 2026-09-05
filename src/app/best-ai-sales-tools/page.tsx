@@ -13,6 +13,7 @@ export const metadata = generateSEOMetadata(seoConfig.bestAiSalesTools);
 import { GOHIGHLEVEL_URL, AISDR_URL, REPLY_IO_URL, FULLENRICH_URL } from "@/lib/affiliate-links";
 
 import EarningsBalanceNote from "@/components/consumer/EarningsBalanceNote";
+import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 const aff = (url: string) => ({
   href: url,
   target: "_blank" as const,
@@ -255,6 +256,8 @@ export default function BestAiSalesToolsPage() {
             Best AI Sales Tools in 2026:{" "}
             <span style={{ color: ACCENT_LT }}>GoHighLevel, AiSDR, Reply.io & FullEnrich</span>
           </h1>
+          {/* Above the first affiliate link, not below it. */}
+          <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
           <p className="text-[#3d4b44] text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
             Each of these four fixes a different bottleneck, so the right one depends on where your outbound actually
             stalls. FullEnrich fixes bad contact data. Reply.io runs multichannel sequences you control. AiSDR replaces

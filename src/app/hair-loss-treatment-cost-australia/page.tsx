@@ -115,11 +115,11 @@ export default function HairLossTreatmentCostAustraliaPage() {
               What hair-loss treatment costs in Australia
             </h1>
             <p className="mt-5 text-base sm:text-lg leading-relaxed text-[#3d4b44]">
-              Hair-loss treatment does not have one price, because there are different routes. This page breaks down the
-              real numbers: buying an over-the-counter topical product, and telehealth subscription plans, using Mosh&apos;s
-              own published prices as the worked example. It explains why treatment is priced monthly, what is and is not
-              subsidised, and how to compare like with like. It is general information about cost, not medical or
-              financial advice.
+              There are two routes and they are priced on different models, which is why a single figure does not exist.
+              An over-the-counter topical is a one-off purchase that varies by pharmacy. A telehealth plan is a monthly
+              subscription that continues whether you consult or not, and nothing in this category attracts a Medicare
+              rebate on the product itself. Annualise both before comparing them. General information about cost, not
+              medical or financial advice.
             </p>
             <EditorialMeta lastUpdated="2026-08-14" className="mt-5" />
           </header>

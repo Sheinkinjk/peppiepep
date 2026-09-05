@@ -8,6 +8,7 @@ import { ECOFLOW_URL, ANKER_SOLIX_URL } from "@/lib/affiliate-links";
 import { STATIONS, RUNS, fmtAud, fmtPerWh, PRICES_READ_ON } from "@/lib/portable-power";
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, comparisonArticleSchema } from "@/lib/seo";
 
+import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 export const metadata = generateSEOMetadata(seoConfig.portablePowerStationAustralia);
 
 const SLUG = "/portable-power-station-australia";
@@ -108,6 +109,8 @@ export default function Page() {
           Portable power stations in Australia: <span className="text-[#0a7c42]">what they cost, and what they run</span>
         </h1>
 
+        {/* Above the first affiliate link, not below it. */}
+        <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
         <p className="mt-5 text-lg leading-relaxed text-[#2b362f]">
           Australian prices run from <strong>{fmtAud(cheapestAny.aud)}</strong> for a {cheapestAny.wh}Wh unit that keeps
           a router and phones alive, to <strong>{fmtAud(7299)}</strong> for 6,144Wh that will carry a fridge for a day

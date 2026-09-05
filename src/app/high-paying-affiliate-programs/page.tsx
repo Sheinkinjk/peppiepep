@@ -125,10 +125,10 @@ export default function HighPayingAffiliateProgramsPage() {
             Highest paying affiliate programs <span className="italic text-[#0a7c42]">2026</span>
           </h1>
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-[#2b362f]">
-            If you want the most income per referral, follow the money into the high-commission niches: web hosting,
-            business SaaS, online courses and finance. These programs pay far more than retail because the products are
-            expensive, or because a customer stays for years. Here are twelve of the best known high-payout programs,
-            what they typically pay, and the networks that run them.
+            Four niches pay far more per referral than retail does: web hosting, business SaaS, online courses and
+            finance. The reason is the same in each case, either the product is expensive or the customer stays for
+            years, so one referral is worth many months of commission. Twelve of the best known high-payout programs are
+            below, with what they typically pay and the network that runs each one.
           </p>
           <p className="mt-8 max-w-3xl rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] px-5 py-4 text-xs leading-relaxed text-[#3d4b44]">
             <span className="font-semibold text-[#2b362f]">A note on the numbers.</span> Commission rates and terms

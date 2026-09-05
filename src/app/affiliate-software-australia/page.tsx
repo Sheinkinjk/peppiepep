@@ -5,6 +5,7 @@ import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 import { SUPERFILIATE_URL } from "@/lib/affiliate-links";
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, comparisonArticleSchema } from "@/lib/seo";
 
+import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 export const metadata = generateSEOMetadata(seoConfig.affiliateSoftware);
 
 const SLUG = "/affiliate-software-australia";
@@ -102,6 +103,8 @@ export default function Page() {
         <h1 className="mt-5 text-3xl font-bold leading-[1.1] tracking-[-0.01em] text-[#10251b] sm:text-4xl">
           Affiliate and referral software: <span className="italic text-[#0a7c42]">how to choose one</span>
         </h1>
+        {/* Above the first affiliate link, not below it. */}
+        <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
         <p className="mt-5 text-lg leading-relaxed text-[#2b362f]">
           Almost nobody in this category publishes a price, so comparing platforms means getting quotes and making them
           comparable. These are the six questions that do that, from a business that runs affiliate programs rather than

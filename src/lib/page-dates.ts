@@ -88,11 +88,11 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/best-ai-sales-tools": {
     "published": "2026-07-06",
-    "updated": "2026-08-28"
+    "updated": "2026-09-05"
   },
   "/best-crm-small-business-australia": {
     "published": "2026-07-24",
-    "updated": "2026-08-21"
+    "updated": "2026-09-05"
   },
   "/best-hair-loss-treatment-australia": {
     "published": "2026-06-29",
@@ -104,7 +104,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/best-newsletter-platform": {
     "published": "2026-06-29",
-    "updated": "2026-07-20"
+    "updated": "2026-09-05"
   },
   "/best-pet-insurance-australia": {
     "published": "2026-08-17",
@@ -116,7 +116,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/best-weight-loss-telehealth-australia": {
     "published": "2026-06-29",
-    "updated": "2026-09-03"
+    "updated": "2026-09-05"
   },
   "/blinq": {
     "published": "2026-07-14",
@@ -440,15 +440,15 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/longevity/diagnostics/biological-age-testing-australia": {
     "published": "2026-08-20",
-    "updated": "2026-08-20"
+    "updated": "2026-09-05"
   },
   "/longevity/diagnostics/cgm-for-non-diabetics-australia": {
     "published": "2026-08-20",
-    "updated": "2026-08-20"
+    "updated": "2026-09-05"
   },
   "/longevity/diagnostics/everlab-vs-prenuvo-vs-i-screen-australia": {
     "published": "2026-08-20",
-    "updated": "2026-08-20"
+    "updated": "2026-09-05"
   },
   "/longevity/diagnostics/health-screening-quiz": {
     "published": "2026-08-20",
@@ -460,7 +460,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/longevity/diagnostics/whole-body-mri-australia-cost": {
     "published": "2026-08-20",
-    "updated": "2026-08-20"
+    "updated": "2026-09-05"
   },
   "/longevity": {
     "published": "2026-08-20",
@@ -468,23 +468,23 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/longevity/recovery/contrast-therapy-what-the-evidence-says": {
     "published": "2026-08-20",
-    "updated": "2026-08-28"
+    "updated": "2026-09-05"
   },
   "/longevity/recovery/home-sauna-cost-australia": {
     "published": "2026-08-20",
-    "updated": "2026-08-21"
+    "updated": "2026-09-05"
   },
   "/longevity/recovery/ice-bath-comparison-australia": {
     "published": "2026-08-20",
-    "updated": "2026-08-20"
+    "updated": "2026-09-05"
   },
   "/longevity/recovery/ice-bath-running-costs-australia": {
     "published": "2026-08-20",
-    "updated": "2026-08-24"
+    "updated": "2026-09-05"
   },
   "/longevity/recovery/infrared-vs-traditional-sauna-australia": {
     "published": "2026-08-20",
-    "updated": "2026-08-20"
+    "updated": "2026-09-05"
   },
   "/longevity/recovery": {
     "published": "2026-08-20",
@@ -496,7 +496,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/longevity/supplements/longevity-supplements-evidence-review": {
     "published": "2026-08-20",
-    "updated": "2026-08-20"
+    "updated": "2026-09-05"
   },
   "/low-doc-business-loans-australia": {
     "published": "2026-07-21",
@@ -512,11 +512,11 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/mens-health/erectile-dysfunction-treatment-cost-australia": {
     "published": "2026-08-20",
-    "updated": "2026-09-04"
+    "updated": "2026-09-05"
   },
   "/mens-health/is-telehealth-or-a-gp-cheaper-for-mens-health": {
     "published": "2026-08-20",
-    "updated": "2026-09-04"
+    "updated": "2026-09-05"
   },
   "/mens-health/mens-health-quiz": {
     "published": "2026-08-20",
@@ -528,7 +528,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/mens-health/online-mens-health-clinics-compared": {
     "published": "2026-08-20",
-    "updated": "2026-09-04"
+    "updated": "2026-09-05"
   },
   "/mens-health/online-prescription-australia": {
     "published": "2026-09-04",
@@ -540,7 +540,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/mens-health/premature-ejaculation-treatment-options-australia": {
     "published": "2026-08-20",
-    "updated": "2026-09-04"
+    "updated": "2026-09-05"
   },
   "/mens-health/sexual-wellness-products": {
     "published": "2026-08-20",
@@ -564,11 +564,11 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/mosh-vs-dense": {
     "published": "2026-07-06",
-    "updated": "2026-08-28"
+    "updated": "2026-09-05"
   },
   "/mosh-vs-pilot": {
     "published": "2026-07-06",
-    "updated": "2026-09-03"
+    "updated": "2026-09-05"
   },
   "/moshhair": {
     "published": "2026-06-29",
@@ -596,7 +596,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/moshy-vs-juniper": {
     "published": "2026-06-30",
-    "updated": "2026-08-28"
+    "updated": "2026-09-05"
   },
   "/moshy-vs-pilot": {
     "published": "2026-07-06",
@@ -784,23 +784,23 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/skin-and-beauty/acne-treatment-options-and-costs-australia": {
     "published": "2026-08-20",
-    "updated": "2026-09-04"
+    "updated": "2026-09-05"
   },
   "/skin-and-beauty/anti-ageing-treatments-what-they-cost": {
     "published": "2026-08-20",
-    "updated": "2026-09-04"
+    "updated": "2026-09-05"
   },
   "/skin-and-beauty/best-value-skincare-australia-cost-per-use": {
     "published": "2026-08-20",
-    "updated": "2026-09-04"
+    "updated": "2026-09-05"
   },
   "/skin-and-beauty/foreo-luna-vs-ufo": {
     "published": "2026-09-04",
-    "updated": "2026-09-04"
+    "updated": "2026-09-05"
   },
   "/skin-and-beauty/led-face-mask-comparison-australia": {
     "published": "2026-08-20",
-    "updated": "2026-09-04"
+    "updated": "2026-09-05"
   },
   "/skin-and-beauty/natural-skincare-australia": {
     "published": "2026-09-04",
@@ -812,7 +812,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/skin-and-beauty/retinol-vs-prescription-strength-australia": {
     "published": "2026-08-20",
-    "updated": "2026-09-04"
+    "updated": "2026-09-05"
   },
   "/skin-and-beauty/skincare-quiz": {
     "published": "2026-08-20",
@@ -820,23 +820,23 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/sleep/cpap-machine-costs-australia": {
     "published": "2026-08-20",
-    "updated": "2026-08-20"
+    "updated": "2026-09-05"
   },
   "/sleep/do-i-have-sleep-apnoea": {
     "published": "2026-08-20",
-    "updated": "2026-08-20"
+    "updated": "2026-09-05"
   },
   "/sleep/home-sleep-test-australia-cost": {
     "published": "2026-08-20",
-    "updated": "2026-08-20"
+    "updated": "2026-09-05"
   },
   "/sleep/how-much-does-good-sleep-cost": {
     "published": "2026-08-20",
-    "updated": "2026-08-21"
+    "updated": "2026-09-05"
   },
   "/sleep/mattress-comparison-australia": {
     "published": "2026-08-20",
-    "updated": "2026-08-20"
+    "updated": "2026-09-05"
   },
   "/sleep": {
     "published": "2026-08-20",
@@ -844,7 +844,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/sleep/sleep-tracker-comparison-australia": {
     "published": "2026-08-20",
-    "updated": "2026-08-20"
+    "updated": "2026-09-05"
   },
   "/small-business-loans-australia": {
     "published": "2026-07-21",

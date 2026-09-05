@@ -3,6 +3,7 @@ import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import NewsletterQuiz from "./NewsletterQuiz";
 
+import { pageDates } from "@/lib/page-dates";
 export const metadata = generateSEOMetadata(seoConfig.newsletterPlatformQuiz);
 
 const faqs = [
@@ -38,7 +39,7 @@ const webPageSchema = {
   url: seoConfig.newsletterPlatformQuiz.url,
   inLanguage: "en-AU",
   datePublished: "2026-07-08",
-  dateModified: "2026-07-08",
+  dateModified: pageDates("/newsletter-platform-quiz")?.updated ?? "2026-07-08",
   isPartOf: { "@id": `${SITE_URL}/#website` },
 };
 

@@ -3,6 +3,7 @@ import PremiumAffiliateLanding from "@/components/affiliate/PremiumAffiliateLand
 import Link from "next/link";
 import { replyioConfig } from "./config";
 
+import { pageDates } from "@/lib/page-dates";
 export const metadata = generateSEOMetadata(seoConfig.replyio);
 
 // ─── JSON-LD Schemas ──────────────────────────────────────────────────────────
@@ -35,7 +36,7 @@ const webPageSchema = {
   url: seoConfig.replyio.url,
   inLanguage: "en-AU",
   datePublished: "2026-07-07",
-  dateModified: "2026-07-07",
+  dateModified: pageDates("/replyio")?.updated ?? "2026-07-07",
   about: [
     { "@type": "Thing", name: "Reply.io sales engagement platform" },
     { "@type": "Thing", name: "multichannel sales outreach" },

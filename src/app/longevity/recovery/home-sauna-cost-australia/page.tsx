@@ -39,7 +39,7 @@ export default function Page() {
       slug="/longevity/recovery/home-sauna-cost-australia"
       crumb="Home sauna costs"
       h1={<>What a home sauna costs in Australia: <span className="italic text-[#0a7c42]">including the line quotes leave out</span></>}
-      intro="The advertised price is the cabin. The total is the cabin plus delivery, a base, an electrician, and a running cost that continues for as long as you own it. Here is how to build the real number before you commit."
+      intro="The advertised price is one of five numbers. The total is the cabin, plus delivery, plus a base to stand it on, plus an electrician where the heater needs a dedicated circuit, plus a running cost that continues for as long as you own it. Quotes that name only the first are not wrong, they are incomplete."
       headline="Home sauna cost in Australia: purchase and running"
       description={seoConfig.homeSaunaCost.description}
       faqs={faqs}

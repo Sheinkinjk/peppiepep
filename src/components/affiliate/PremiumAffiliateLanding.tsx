@@ -7,6 +7,7 @@ import { OFFERS_VERIFIED, DEALS, formatVerified } from "@/lib/offers";
 import OffersTable from "@/components/lending/OffersTable";
 import type { AffiliatePageConfig } from "./types";
 
+import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 // Pull a typed code out of an offer string like "55% off your first order (code REFERAL55)".
 function offerCode(offer: string): string | undefined {
   const m = offer.match(/\(code\s+([A-Za-z0-9]+)\)/i);
@@ -151,6 +152,11 @@ export default function PremiumAffiliateLanding({ config }: { config: AffiliateP
                 </div>
               </div>
             )}
+
+            {/* Above the button, deliberately. The reader who clicks the hero CTA
+                never scrolls to a disclosure sitting under the fold, which is how
+                38 brand pages came to disclose only after the action. */}
+            <AffiliateDisclosure compact className="mt-7" />
 
             <div className="mt-8">{cta(config.ctas.primary, "hero", "lg")}</div>
           </div>

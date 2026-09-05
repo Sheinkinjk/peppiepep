@@ -6,6 +6,7 @@ import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
 import FactHistory from "@/components/facts/FactHistory";
 
+import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 export const metadata = generateSEOMetadata(seoConfig.moshyEligibility);
 
 const CYAN = "#0a7c42";
@@ -84,6 +85,8 @@ export default function MoshyEligibilityPage() {
         <h1 className="text-3xl sm:text-4xl lg:text-[2.7rem] font-black leading-[1.08] tracking-tight mb-5">
           The Moshy eligibility check, <span style={{ color: CYAN_LT }}>explained before you start it</span>
         </h1>
+        {/* Above the first affiliate link, not below it. */}
+        <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
         <p className="text-[#3d4b44] text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
           Ten minutes, a questionnaire, and a practitioner on the other end. Here is what the Moshy quiz actually asks,
           what happens after you hit submit, and why not everyone gets through.

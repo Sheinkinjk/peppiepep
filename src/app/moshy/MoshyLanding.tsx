@@ -9,6 +9,7 @@ import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
 import FactHistory from "@/components/facts/FactHistory";
 
+import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 // ── Money CTA (tracked: rel=sponsored is picked up by AffiliateClickTracker) ──
 function MoshyCTA({
   label = "Continue to Moshy",
@@ -64,6 +65,11 @@ export default function MoshyLanding() {
             <div className="mt-5">
               <VerifiedStamp date={MOSHY_OFFER.verified} label="$120-off offer verified" />
             </div>
+
+            {/* The site's biggest money page carried only a four-word label,
+                "Disclosed affiliate link", beside a button further down. This is
+                the sentence, above the button, where the reader meets it first. */}
+            <AffiliateDisclosure compact partners={["Moshy"]} className="mt-5 max-w-xl" />
 
             <div className="mt-6">
               <MoshyCTA label="Get $120 off on Moshy" size="lg" loc="hero" />

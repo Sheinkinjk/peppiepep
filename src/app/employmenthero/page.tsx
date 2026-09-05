@@ -3,6 +3,7 @@ import PremiumAffiliateLanding from "@/components/affiliate/PremiumAffiliateLand
 import Link from "next/link";
 import { employmentHeroConfig } from "./config";
 
+import { pageDates } from "@/lib/page-dates";
 export const metadata = generateSEOMetadata(seoConfig.employmentHero);
 
 // ─── JSON-LD Schemas ──────────────────────────────────────────────────────────
@@ -35,7 +36,7 @@ const webPageSchema = {
   url: seoConfig.employmentHero.url,
   inLanguage: "en-AU",
   datePublished: "2026-07-06",
-  dateModified: "2026-07-06",
+  dateModified: pageDates("/employmenthero")?.updated ?? "2026-07-06",
   about: [
     { "@type": "Thing", name: "Employment Hero HR and payroll platform" },
     { "@type": "Thing", name: "HR software Australia" },

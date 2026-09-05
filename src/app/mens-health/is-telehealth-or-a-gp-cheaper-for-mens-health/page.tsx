@@ -46,7 +46,7 @@ export default function Page() {
       slug="/mens-health/is-telehealth-or-a-gp-cheaper-for-mens-health"
       crumb="Telehealth or a GP?"
       h1={<>Telehealth or a GP for men&apos;s health: <span className="italic text-[#0a7c42]">which actually costs less</span></>}
-      intro="A monthly subscription and a single consult fee are not comparable figures, and this category places them side by side constantly. Here is the arithmetic that makes them comparable, with your own numbers."
+      intro="Often not, once you annualise both. A bulk-billed GP appointment can cost nothing and a gap payment attracts a Medicare rebate, while most online subscriptions sit outside Medicare and charge every month whether you consult or not. Telehealth usually wins on speed and privacy. It wins on price only when you would consult often, or when your GP does not bulk bill."
       headline="Telehealth or a GP for men's health: which is cheaper?"
       description={seoConfig.telehealthVsGpMens.description}
       faqs={faqs}

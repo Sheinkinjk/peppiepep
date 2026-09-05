@@ -3,6 +3,7 @@ import PremiumAffiliateLanding from "@/components/affiliate/PremiumAffiliateLand
 import Link from "next/link";
 import { alidropConfig } from "./config";
 
+import { pageDates } from "@/lib/page-dates";
 export const metadata = generateSEOMetadata(seoConfig.alidrop);
 
 const faqSchema = {
@@ -29,7 +30,7 @@ const webPageSchema = {
   url: seoConfig.alidrop.url,
   inLanguage: "en-AU",
   datePublished: "2026-07-08",
-  dateModified: "2026-07-08",
+  dateModified: pageDates("/alidrop")?.updated ?? "2026-07-08",
   isPartOf: { "@id": `${SITE_URL}/#website` },
 };
 

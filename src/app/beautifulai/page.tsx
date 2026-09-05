@@ -3,6 +3,7 @@ import PremiumAffiliateLanding from "@/components/affiliate/PremiumAffiliateLand
 import Link from "next/link";
 import { beautifulaiConfig } from "./config";
 
+import { pageDates } from "@/lib/page-dates";
 export const metadata = generateSEOMetadata(seoConfig.beautifulai);
 
 const faqSchema = {
@@ -27,7 +28,7 @@ const webPageSchema = {
   url: seoConfig.beautifulai.url,
   inLanguage: "en-AU",
   datePublished: "2026-07-14",
-  dateModified: "2026-07-14",
+  dateModified: pageDates("/beautifulai")?.updated ?? "2026-07-14",
   isPartOf: { "@id": `${SITE_URL}/#website` },
 };
 const softwareSchema = {

@@ -183,7 +183,7 @@ export const APOLLO_GUIDES: ApolloGuideEntry[] = [
       keywords: ["home battery installer nsw", "solar battery installer sydney", "battery installer nsw", "home battery installation nsw"],
     },
     lead:
-      "Choosing who installs your home battery matters as much as choosing the battery, because it is high-value electrical equipment wired into your home and it needs to be sized, installed and warranted properly. In NSW the markers to look for are SAA accreditation, a valid electrical licence, a genuine workmanship warranty alongside the manufacturer's, and an installer who applies the federal rebate at the point of sale and can connect you to a Virtual Power Plant for the NSW incentive. How well the system is sized and fitted shapes the result more than raw capacity does.",
+      "Four markers separate a NSW installer worth quoting from one that is not: SAA accreditation, a valid electrical licence, a workmanship warranty in writing alongside the manufacturer's, and an installer who applies the federal rebate at the point of sale and can connect you to a Virtual Power Plant for the NSW incentive. How well the system is sized and fitted shapes the result more than raw capacity does.",
     sections: [
       {
         h: "What to check before you sign",
@@ -233,7 +233,7 @@ export const APOLLO_GUIDES: ApolloGuideEntry[] = [
       keywords: ["home battery installer sydney", "solar battery installer sydney", "battery installation sydney", "home battery sydney"],
     },
     lead:
-      "Sydney has more battery installers than almost anywhere in the country, which is good for choice and bad for telling them apart. The ones worth your time share a few traits: SAA accreditation, a valid electrical licence, warranties in writing, and a quote sized from your actual bills rather than a package pulled off a shelf. Because a battery is wired into your switchboard and meant to last a decade or more, who installs it in your Sydney home shapes both safety and how much it saves you.",
+      "Four traits separate the Sydney installers worth your time: SAA accreditation, a valid electrical licence, warranties in writing, and a quote sized from your actual bills rather than a package pulled off a shelf. Sydney has more installers than almost anywhere in the country, which is good for choice and bad for telling them apart. Because a battery is wired into your switchboard and meant to last a decade or more, who installs it in your Sydney home shapes both safety and how much it saves you.",
     sections: [
       {
         h: "What separates a real Sydney installer from a lead form",
@@ -282,7 +282,7 @@ export const APOLLO_GUIDES: ApolloGuideEntry[] = [
       keywords: ["is a home battery worth it", "are home batteries worth it australia", "home battery worth it 2026", "solar battery worth it australia"],
     },
     lead:
-      "Whether a home battery is worth it depends on your own numbers, not a headline. The batteries that pay their way tend to sit under a solar system that generates more than the household uses during the day, on a home with high evening and overnight consumption, in a state with a rebate. Where those line up, a battery stores cheap or free daytime solar and spends it at the expensive evening peak, and the federal rebate plus any state incentive shortens the payback. Where they don't, the sums are weaker, and it is worth being clear-eyed about that before you buy.",
+      "Three conditions have to line up, and where they do not the sums are weak. A battery pays its way when solar generates more than the household uses during the day, when consumption is high in the evening and overnight, and when a state rebate applies on top of the federal one. Where those line up, a battery stores cheap or free daytime solar and spends it at the expensive evening peak, and the federal rebate plus any state incentive shortens the payback. Where they don't, the sums are weaker, and it is worth being clear-eyed about that before you buy.",
     sections: [
       {
         h: "When a battery is most likely to be worth it",

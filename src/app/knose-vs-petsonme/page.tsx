@@ -4,8 +4,8 @@ import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import EditorialMeta from "@/components/consumer/EditorialMeta";
-import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 
+import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 export const metadata = generateSEOMetadata(seoConfig.knoseVsPetsonme);
 
 const SLUG = "/knose-vs-petsonme";
@@ -121,6 +121,8 @@ export default function KnoseVsPetsOnMePage() {
           Knose vs PetsOnMe: the two compared on published cover
         </h1>
 
+        {/* Above the first affiliate link, not below it. */}
+        <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
         {/* Answer-first */}
         <section className="mt-6">
           <h2 className="text-xl font-bold text-[#10251b] sm:text-2xl">Is Knose or PetsOnMe better?</h2>

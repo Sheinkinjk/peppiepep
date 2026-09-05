@@ -137,9 +137,10 @@ export default function SkinAndBeautyHub() {
               Skin and beauty in Australia: <span className="italic text-[#0a7c42]">what works, and what it costs</span>
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#2b362f]">
-              Skincare is a category where the price on the shelf tells you very little. These guides cover what the
-              common actives do, what devices genuinely cost here rather than overseas, and how the prescription route
-              differs from what you can buy yourself.
+              The price on the shelf tells you very little in this category, because the same product can cost twice as
+              much here as it lists for overseas, and the stronger topicals are prescription-only in Australia no matter
+              what they cost. These guides cover what the common actives actually do, what devices cost in Australian
+              dollars rather than converted, and where the prescription line falls.
             </p>
           </div>
           <div className="mt-8 max-w-3xl">

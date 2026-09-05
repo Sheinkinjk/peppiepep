@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 
+import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 export const metadata = generateSEOMetadata(seoConfig.carrdVsDurable);
 
 const CYAN = "#0a7c42";
@@ -74,6 +75,8 @@ export default function CarrdVsDurablePage() {
           Carrd vs Durable AI:{" "}
           <span style={{ color: CYAN_LT }}>cheap-and-simple vs AI-built business site</span>
         </h1>
+        {/* Above the first affiliate link, not below it. */}
+        <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
         <p className="text-[#3d4b44] text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
           Both are excellent, for different jobs. <strong className="text-[#2b362f]">Carrd</strong> is the cheapest way to
           ship a clean one-page site. <strong className="text-[#2b362f]">Durable AI</strong> generates a full business

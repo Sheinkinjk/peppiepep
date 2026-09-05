@@ -6,6 +6,7 @@ import ConsumerShell from "@/components/consumer/ConsumerShell";
 import { SITE_URL, SCHEMA_AUTHOR, SCHEMA_PUBLISHER } from "@/lib/seo";
 import ApolloEoiForm from "@/components/apollo/ApolloEoiForm";
 
+import { pageDates } from "@/lib/page-dates";
 const URL = `${SITE_URL}/apollo-energy-group-eoi`;
 
 // Indexable conversion page. Kept distinct from the editorial /apollo-energy-group
@@ -98,7 +99,7 @@ const webPageSchema = {
   url: URL,
   inLanguage: "en-AU",
   datePublished: "2026-07-28",
-  dateModified: "2026-07-28",
+  dateModified: pageDates("/apollo-energy-group-eoi")?.updated ?? "2026-07-28",
   isPartOf: { "@id": `${SITE_URL}/#website` },
   author: SCHEMA_AUTHOR,
   publisher: SCHEMA_PUBLISHER,

@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 
 import { MIDOC } from "@/lib/partners/midoc";
+import { pageDates } from "./page-dates";
 export interface SEOConfig {
   title: string;
   description: string;
@@ -2886,6 +2887,26 @@ export function comparisonArticleSchema(input: {
   datePublished: string;
   dateModified: string;
 }) {
+  /**
+   * dateModified comes from git, not from the caller (5 Sep 2026).
+   *
+   * 75 pages passed the same literal for both dates, so every one told Google it
+   * was published and modified on the same day. That is wrong in both
+   * directions: an edited page looks untouched, and datePublished moves forward
+   * on every bump, so an established page keeps presenting as brand new and
+   * never accrues the age signal it has actually earned.
+   *
+   * The caller's datePublished is kept, because it is often the real editorial
+   * publication date and predates this repo's history. Only dateModified is
+   * derived, and only when the caller gave no distinct value of its own.
+   */
+  const route = input.url.replace(SITE_URL, "").replace(/\/$/, "") || "/";
+  const git = pageDates(route);
+  const dateModified =
+    input.dateModified && input.dateModified !== input.datePublished
+      ? input.dateModified
+      : (git?.updated ?? input.dateModified);
+
   return {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -2895,7 +2916,7 @@ export function comparisonArticleSchema(input: {
     mainEntityOfPage: { "@type": "WebPage", "@id": input.url },
     inLanguage: "en-AU",
     datePublished: input.datePublished,
-    dateModified: input.dateModified,
+    dateModified,
     // By @id, per the rule at the top of this file. Inlining them here defeated
     // it: 38 Article nodes carried a Person named "Jarred Krowitz, Founder"
     // pointing at /about, while the author page publishes "Jarred, Editor" at

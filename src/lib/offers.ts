@@ -20,6 +20,14 @@
  * beehiiv, Brevo, GoHighLevel, ElevenLabs, AliDrop, Leadpages) and stamped
  * those individually. The rest could not be verified without partner access:
  * Moshy's REFERRAL120, Mosh's REFERAL55, Knose's referlab2mf, PetsOnMe's
+ * PetsOnMe is deliberately NOT featured (5 Sep 2026). Its link,
+ * petsonme.com.au/pet-insurance/compare-cover/, carries no tracking parameter of
+ * any kind, so attribution depends entirely on the customer remembering to type
+ * REFERLABS at checkout. Compare Knose on the same hub, which is tracked via
+ * ?promo=referlab2mf. Featuring the one merchant whose clicks we cannot measure
+ * puts our most prominent slot on our least accountable partner. Restore
+ * featured: true once a tracked link exists.
+ *
  * REFERLABS, Superfiliate's 15% and Unbounce's 20/35% are partner-specific and
  * never appear on a public page, and Pipedrive's pricing page blocks automated
  * fetching. Apollo's $500 was confirmed separately on 28 Aug 2026 and carries
@@ -133,7 +141,7 @@ export const DEALS: Deal[] = [
   { brand: "Superfiliate", logo: "/logos/superfiliate.png", href: "/superfiliate", offer: "15% off your monthly SaaS fee", category: "Creator growth", featured: true, verified: "2026-08-20", source: { noPublicPage: "Partner-specific, stated on no public page. Recorded in the 25 Aug 2026 sweep note at the top of this file; re-confirm with the partner, not by searching." } },
 
   { brand: "Knose", logo: "/logos/knose.svg", href: "/knose", offer: "2 months free for new customers", code: "referlab2mf", category: "Pets", featured: true, verified: "2026-08-27", source: { noPublicPage: "Partner-specific, stated on no public page. Recorded in the 25 Aug 2026 sweep note at the top of this file; re-confirm with the partner, not by searching." } },
-  { brand: "PetsOnMe", logo: "/logos/petsonme.svg", href: "/petsonme", offer: "15% off pet care services, up from 12% (not the premium)", code: "REFERLABS", category: "Pets", featured: true, verified: "2026-08-17", source: { noPublicPage: "Partner-specific, stated on no public page. Recorded in the 25 Aug 2026 sweep note at the top of this file; re-confirm with the partner, not by searching." } },
+  { brand: "PetsOnMe", logo: "/logos/petsonme.svg", href: "/petsonme", offer: "15% off pet care services, up from 12% (not the premium)", code: "REFERLABS", category: "Pets", featured: false, verified: "2026-08-17", source: { noPublicPage: "Partner-specific, stated on no public page. Recorded in the 25 Aug 2026 sweep note at the top of this file; re-confirm with the partner, not by searching." } },
 
   { brand: "Carrd", logo: "/logos/carrd.png", href: "/carrd", offer: "Free plan forever; Pro from US$19/yr", category: "Website builders", verified: "2026-08-25" },
   { brand: "beehiiv", logo: "/logos/beehiiv.png", href: "/best-newsletter-platform", offer: "Free plan, no revenue cut", category: "Newsletters", verified: "2026-08-25" },

@@ -86,27 +86,31 @@ const nextConfig: NextConfig = {
       // back, and re-enable /api/lending-lead. Nothing else was deleted.
       //
       // /for-business is the closest live page by intent for a business audience.
-      { source: '/business-loans', destination: '/for-business', permanent: false },
-      { source: '/business-loan-calculator', destination: '/for-business', permanent: false },
-      { source: '/what-a-business-loan-actually-costs', destination: '/for-business', permanent: false },
-      { source: '/true-cost-of-business-loans-australia', destination: '/for-business', permanent: false },
-      { source: '/equipment-finance-instant-asset-write-off', destination: '/for-business', permanent: false },
-      { source: '/unsecured-business-loans-australia', destination: '/for-business', permanent: false },
-      { source: '/business-loans-bad-credit-australia', destination: '/for-business', permanent: false },
-      { source: '/fast-business-loans-australia', destination: '/for-business', permanent: false },
-      { source: '/small-business-loans-australia', destination: '/for-business', permanent: false },
-      { source: '/business-line-of-credit-australia', destination: '/for-business', permanent: false },
-      { source: '/working-capital-loans-australia', destination: '/for-business', permanent: false },
-      { source: '/low-doc-business-loans-australia', destination: '/for-business', permanent: false },
-      { source: '/startup-business-loans-australia', destination: '/for-business', permanent: false },
-      { source: '/business-loans-sole-traders-australia', destination: '/for-business', permanent: false },
-      { source: '/business-loans-hospitality-australia', destination: '/for-business', permanent: false },
-      { source: '/secured-vs-unsecured-business-loans', destination: '/for-business', permanent: false },
-      { source: '/how-to-get-a-business-loan-australia', destination: '/for-business', permanent: false },
-      { source: '/business-loan-eligibility-australia', destination: '/for-business', permanent: false },
-      { source: '/business-loans/:path*', destination: '/for-business', permanent: false },
-      { source: '/compare-business-lenders/:path*', destination: '/for-business', permanent: false },
+      { source: '/business-loans', destination: '/for-business', permanent: true },
+      { source: '/business-loan-calculator', destination: '/for-business', permanent: true },
+      { source: '/what-a-business-loan-actually-costs', destination: '/for-business', permanent: true },
+      { source: '/true-cost-of-business-loans-australia', destination: '/for-business', permanent: true },
+      { source: '/equipment-finance-instant-asset-write-off', destination: '/for-business', permanent: true },
+      { source: '/unsecured-business-loans-australia', destination: '/for-business', permanent: true },
+      { source: '/business-loans-bad-credit-australia', destination: '/for-business', permanent: true },
+      { source: '/fast-business-loans-australia', destination: '/for-business', permanent: true },
+      { source: '/small-business-loans-australia', destination: '/for-business', permanent: true },
+      { source: '/business-line-of-credit-australia', destination: '/for-business', permanent: true },
+      { source: '/working-capital-loans-australia', destination: '/for-business', permanent: true },
+      { source: '/low-doc-business-loans-australia', destination: '/for-business', permanent: true },
+      { source: '/startup-business-loans-australia', destination: '/for-business', permanent: true },
+      { source: '/business-loans-sole-traders-australia', destination: '/for-business', permanent: true },
+      { source: '/business-loans-hospitality-australia', destination: '/for-business', permanent: true },
+      { source: '/secured-vs-unsecured-business-loans', destination: '/for-business', permanent: true },
+      { source: '/how-to-get-a-business-loan-australia', destination: '/for-business', permanent: true },
+      { source: '/business-loan-eligibility-australia', destination: '/for-business', permanent: true },
+      { source: '/business-loans/:path*', destination: '/for-business', permanent: true },
+      { source: '/compare-business-lenders/:path*', destination: '/for-business', permanent: true },
 
+      // The lending cluster is 308, not 307 (corrected 5 Sep 2026). A temporary
+      // redirect tells Google the original is coming back and keeps it indexed:
+      // 2,700 impressions were still landing on URLs retired months ago. These
+      // are not coming back, so the signal has to say so.
       // ── Retired verticals (July 2026) ─────────────────────────────────────
       // Gusto/Melio: US-only, wrong jurisdiction. Income Lab: off-brand. 301 to the
       // closest live page so equity consolidates.

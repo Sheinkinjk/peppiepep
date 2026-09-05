@@ -3,6 +3,7 @@ import PremiumAffiliateLanding from "@/components/affiliate/PremiumAffiliateLand
 import Link from "next/link";
 import { dextConfig } from "./config";
 
+import { pageDates } from "@/lib/page-dates";
 export const metadata = generateSEOMetadata(seoConfig.dext);
 
 const faqSchema = {
@@ -27,7 +28,7 @@ const webPageSchema = {
   url: seoConfig.dext.url,
   inLanguage: "en-AU",
   datePublished: "2026-07-09",
-  dateModified: "2026-07-09",
+  dateModified: pageDates("/dext")?.updated ?? "2026-07-09",
   isPartOf: { "@id": `${SITE_URL}/#website` },
 };
 const softwareSchema = {

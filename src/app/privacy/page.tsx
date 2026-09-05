@@ -445,7 +445,7 @@ export default function Privacy() {
               <h2 className="text-2xl font-bold text-[#10251b] mb-4">8. Email Communications & Consent</h2>
               <p className="text-[#2b362f] mb-2">
                 Our newsletters and marketing are email-only; we do not use SMS, WhatsApp or voice messages for these. The
-                one exception is enquiry forms: where you submit an enquiry (for example, home batteries or business loans)
+                one exception is enquiry forms: where you submit an enquiry (for example, home batteries)
                 and consent on that form, we and the provider we introduce you to may contact you about that enquiry by
                 phone, email or SMS. The email we send is:
               </p>
@@ -546,7 +546,6 @@ export default function Privacy() {
               </p>
               <ul className="list-disc list-inside text-[#2b362f] space-y-1">
                 <li>Email notification to your account email</li>
-                <li>Prominent notice in the dashboard</li>
                 <li>Updated "Last updated" date at the top of this policy</li>
               </ul>
               <p className="text-[#2b362f] mt-2">

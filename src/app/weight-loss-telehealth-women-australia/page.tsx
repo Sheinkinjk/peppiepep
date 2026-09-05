@@ -7,8 +7,9 @@ import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
 import CodeAnswer from "@/components/offers/CodeAnswer";
 import OfferSchema from "@/components/offers/OfferSchema";
-import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 
+import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
+import { pageDates } from "@/lib/page-dates";
 export const metadata = generateSEOMetadata(seoConfig.weightLossTelehealthWomen);
 
 const CYAN = "#0a7c42";
@@ -66,7 +67,7 @@ const webPageSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
   datePublished: "2026-07-24",
-  dateModified: "2026-07-24",
+  dateModified: pageDates("/weight-loss-telehealth-women-australia")?.updated ?? "2026-07-24",
   name: seoConfig.weightLossTelehealthWomen.title,
   description: seoConfig.weightLossTelehealthWomen.description,
   url: seoConfig.weightLossTelehealthWomen.url,
@@ -94,6 +95,8 @@ export default function WeightLossTelehealthWomenPage() {
         <h1 className="text-3xl sm:text-4xl lg:text-[2.7rem] font-black leading-[1.08] tracking-tight mb-5">
           Weight loss telehealth for women in Australia: <span style={{ color: CYAN_LT }}>the options, and how to choose</span>
         </h1>
+        {/* Above the first affiliate link, not below it. */}
+        <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
         <p className="text-[#3d4b44] text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
           Most of the weight-loss telehealth marketing aimed at women leads with coaching and community. That suits some
           people and not others. This page explains how the women&apos;s services actually work, the difference between a

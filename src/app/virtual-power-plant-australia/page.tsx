@@ -5,6 +5,7 @@ import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
 
+import { pageDates } from "@/lib/page-dates";
 export const metadata = generateSEOMetadata(seoConfig.virtualPowerPlantAustralia);
 
 const SLUG = "/virtual-power-plant-australia";
@@ -102,7 +103,7 @@ const webPageSchema = {
   url: seoConfig.virtualPowerPlantAustralia.url,
   inLanguage: "en-AU",
   datePublished: "2026-07-28",
-  dateModified: "2026-07-28",
+  dateModified: pageDates("/virtual-power-plant-australia")?.updated ?? "2026-07-28",
   isPartOf: { "@id": `${SITE_URL}/#website` },
   author: SCHEMA_AUTHOR,
   publisher: SCHEMA_PUBLISHER,

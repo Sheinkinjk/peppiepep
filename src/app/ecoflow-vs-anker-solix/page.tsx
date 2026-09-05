@@ -8,6 +8,7 @@ import { ECOFLOW_URL, ANKER_SOLIX_URL } from "@/lib/affiliate-links";
 import { STATIONS, perWh, fmtPerWh, fmtAud, PRICES_READ_ON } from "@/lib/portable-power";
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, comparisonArticleSchema } from "@/lib/seo";
 
+import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 export const metadata = generateSEOMetadata(seoConfig.ecoflowVsAnkerSolix);
 
 const SLUG = "/ecoflow-vs-anker-solix";
@@ -120,6 +121,8 @@ export default function Page() {
           EcoFlow vs Anker SOLIX: <span className="text-[#0a7c42]">priced per watt-hour, in AUD</span>
         </h1>
 
+        {/* Above the first affiliate link, not below it. */}
+        <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
         {/* The answer, first. Nothing above it. */}
         <p className="mt-5 text-lg leading-relaxed text-[#2b362f]">
           <strong>EcoFlow is cheaper per watt-hour at the 1,000Wh and 2,000Wh tiers, where most buyers land.</strong> At about

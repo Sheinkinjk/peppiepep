@@ -3,6 +3,7 @@ import PremiumAffiliateLanding from "@/components/affiliate/PremiumAffiliateLand
 import Link from "next/link";
 import { aisdrConfig } from "./config";
 
+import { pageDates } from "@/lib/page-dates";
 export const metadata = generateSEOMetadata(seoConfig.aisdr);
 
 // ─── JSON-LD Schemas ──────────────────────────────────────────────────────────
@@ -35,7 +36,7 @@ const webPageSchema = {
   url: seoConfig.aisdr.url,
   inLanguage: "en-AU",
   datePublished: "2026-07-06",
-  dateModified: "2026-07-06",
+  dateModified: pageDates("/aisdr")?.updated ?? "2026-07-06",
   about: [
     { "@type": "Thing", name: "AiSDR AI sales development rep" },
     { "@type": "Thing", name: "AI SDR tool" },

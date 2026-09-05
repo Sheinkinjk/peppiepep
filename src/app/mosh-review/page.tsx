@@ -10,8 +10,9 @@ import { verifiedFor } from "@/lib/offers";
 import FactHistory from "@/components/facts/FactHistory";
 import CodeAnswer from "@/components/offers/CodeAnswer";
 import OfferSchema from "@/components/offers/OfferSchema";
-import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 
+import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
+import { pageDates } from "@/lib/page-dates";
 export const metadata = generateSEOMetadata(seoConfig.moshReview);
 
 const CYAN = "#0a7c42";
@@ -64,7 +65,7 @@ const webPageSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
   datePublished: "2026-08-07",
-  dateModified: "2026-08-07",
+  dateModified: pageDates("/mosh-review")?.updated ?? "2026-08-07",
   name: seoConfig.moshReview.title,
   description: seoConfig.moshReview.description,
   url: seoConfig.moshReview.url,
@@ -107,6 +108,8 @@ export default function MoshReviewPage() {
         <h1 className="text-3xl sm:text-4xl lg:text-[2.7rem] font-black leading-[1.08] tracking-tight mb-5">
           Mosh review: <span style={{ color: CYAN }}>is it legit, and is it worth it?</span>
         </h1>
+        {/* Above the first affiliate link, not below it. */}
+        <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
         <p className="text-[#3d4b44] text-base sm:text-lg leading-relaxed mb-4 max-w-2xl">
           An independent look at Mosh, the Australian men&apos;s hair-loss telehealth service: whether it is a real
           clinical service, what it costs, what people actually raise about it, and how to start.

@@ -46,7 +46,7 @@ export default function Page() {
       slug="/skin-and-beauty/anti-ageing-treatments-what-they-cost"
       crumb="Anti-ageing pricing"
       h1={<>Anti-ageing treatments: <span className="italic text-[#0a7c42]">why nobody will tell you the price</span></>}
-      intro="Search for what a cosmetic treatment costs in Australia and you will mostly find enquiry forms. That is not evasion by every clinic; there is a regulatory reason for it. Understanding why changes how you should ask."
+      intro="Almost no Australian clinic publishes a price for these treatments, and the reason is regulatory rather than evasive: many involve prescription-only medicines, and advertising those to the public is prohibited here, which extends to promoting them by price. So the question that gets you a usable number is not what it costs, it is what the quote includes."
       headline="Anti-ageing treatments in Australia: what they actually cost"
       description={seoConfig.antiAgeingCosts.description}
       faqs={faqs}

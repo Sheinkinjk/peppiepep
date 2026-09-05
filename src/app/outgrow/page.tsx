@@ -3,6 +3,7 @@ import PremiumAffiliateLanding from "@/components/affiliate/PremiumAffiliateLand
 import Link from "next/link";
 import { outgrowConfig } from "./config";
 
+import { pageDates } from "@/lib/page-dates";
 export const metadata = generateSEOMetadata(seoConfig.outgrow);
 
 const faqSchema = {
@@ -27,7 +28,7 @@ const webPageSchema = {
   url: seoConfig.outgrow.url,
   inLanguage: "en-AU",
   datePublished: "2026-07-11",
-  dateModified: "2026-07-11",
+  dateModified: pageDates("/outgrow")?.updated ?? "2026-07-11",
   isPartOf: { "@id": `${SITE_URL}/#website` },
 };
 const softwareSchema = {

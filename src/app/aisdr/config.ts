@@ -43,7 +43,7 @@ export const aisdrConfig: AffiliatePageConfig = {
     h1Prefix: "AiSDR:",
     h1Highlight: "the AI sales rep that builds pipeline without hiring SDRs",
     subheading:
-      "Considering an AI SDR tool to automate B2B outbound and want to know what AiSDR actually does, who it suits, and what it costs before you start? This page covers the essentials and takes you directly to AiSDR to see it for yourself.",
+      "AiSDR is an AI sales development rep: it finds prospects, personalises outreach across email, LinkedIn and phone, and books the meetings itself, rather than being a tool a human rep operates. That one distinction decides whether it fits, because it replaces a role rather than speeding one up. It integrates with HubSpot and Salesforce, and seats are unlimited with no long-term contract.",
     trustBullets: [
       "Direct access to AiSDR",
       "Covers what AiSDR does, who it suits, and pricing",

@@ -24,6 +24,23 @@ const GONE = [
   '/apollo-vs-biopeptitech',
   '/ascension-vs-biopeptitech',
   '/compare/research-peptides',
+  // Integration docs for the referral SaaS retired in July 2026 (5 Sep 2026).
+  // "Sync ambassadors into Klaviyo", "Embed Refer Labs referral pages in
+  // Squarespace": a product that no longer exists. They were in no sitemap and
+  // no seoConfig, yet live, indexed and drawing impressions. There is no
+  // closest-live-page for a feature that was withdrawn, so 410 rather than a
+  // redirect to a hub that does not answer the query either.
+  '/calendly',
+  '/klaviyo',
+  '/mailchimp',
+  '/make',
+  '/squarespace',
+  '/stripe',
+  '/webflow',
+  // Deleted on purpose (Aug 2026), and 404 left Google guessing. It was ranking
+  // at position 5.6 with clicks; losing that is the accepted price of the
+  // decision, and 410 makes the withdrawal explicit rather than ambiguous.
+  '/juniper-alternatives',
 ]
 
 function isGone(pathname: string): boolean {

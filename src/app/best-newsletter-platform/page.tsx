@@ -11,6 +11,7 @@ export const metadata = generateSEOMetadata(seoConfig.bestNewsletterPlatform);
 
 import { BEEHIIV_URL } from "@/lib/affiliate-links";
 
+import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 /**
  * rel="sponsored" is a statement that a link is paid. It is only true where we
  * actually hold a tracked affiliate URL.
@@ -234,6 +235,8 @@ export default function BestNewsletterPlatformPage() {
             Best Newsletter Platform 2026:{" "}
             <span style={{ color: CYAN_LT }}>beehiiv vs Substack vs ConvertKit</span>
           </h1>
+          {/* Above the first affiliate link, not below it. */}
+          <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
           <p className="text-[#3d4b44] text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
             We compared the three leading newsletter platforms on free plans, monetisation, growth tools, and what the community actually recommends. Our verdict is below.
           </p>
