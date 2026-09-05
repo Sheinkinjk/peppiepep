@@ -187,7 +187,7 @@ const nextConfig: NextConfig = {
       // we do not write, and pointing it at an Australian affiliate hub sent 13
       // clicks a quarter to a page answering a different question.
       {
-        source: '/blog/:path((?!attorney-referral-fee-rules-state-guide$).*)',
+        source: '/blog/:path((?!attorney-referral-fee-rules-state-guide(?:$|/)).*)',
         destination: '/affiliate-programs-australia',
         permanent: true,
       },

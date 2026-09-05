@@ -22,14 +22,16 @@
     "load:test": "node scripts/load-test.mjs",
     "check-aeo": "node scripts/check-aeo.mjs",
     "check-partner-scope": "node scripts/check-partner-scope.mjs",
-    "prebuild": "node scripts/generate-page-dates.mjs && node scripts/check-partner-scope.mjs && node scripts/check-partner-freshness.mjs",
+    "prebuild": "node scripts/generate-page-dates.mjs && node scripts/check-partner-scope.mjs && node scripts/check-partner-freshness.mjs && node scripts/check-redirect-order.mjs",
     "check-freshness": "node scripts/check-partner-freshness.mjs",
     "postbuild": "node scripts/check-price-provenance.mjs && node scripts/check-tga-classes.mjs && node scripts/check-disclosure-order.mjs && node scripts/check-answer-slot.mjs",
     "check-prices": "node scripts/check-price-provenance.mjs",
     "check-tga": "node scripts/check-tga-classes.mjs",
     "check-disclosure": "node scripts/check-disclosure-order.mjs",
     "gen:dates": "node scripts/generate-page-dates.mjs",
-    "check-answer-slot": "node scripts/check-answer-slot.mjs"
+    "check-answer-slot": "node scripts/check-answer-slot.mjs",
+    "verify:deploy": "node scripts/verify-deploy.mjs",
+    "check-redirect-order": "node scripts/check-redirect-order.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.71.2",

@@ -174,6 +174,27 @@ number pointed the way everyone expected, and nothing in the output flagged it.
 Any join between a content change and a traffic metric needs the edit dates of
 both sides checked before the numbers are read, not after.
 
+**A commit message is not evidence, and neither is a green build.** `/databox`
+shipped with a message saying its redirect had been removed. The removal never
+ran: the script doing it aborted on an unrelated assertion earlier in the same
+block, that step was fixed separately, and the redirect step was never redone.
+The page was built, wired into eight registries, listed in the sitemap, and
+unreachable. Every guard passed. The same day, a path added to the GONE list kept
+returning 308 because a `next.config` catch-all answered first, which the file
+already warned about in a comment beside the code.
+
+Two checks exist because of that pair, and the reason they are separate is that
+each caught a different failure:
+
+- `npm run verify:deploy` polls the LIVE URL of every route a commit touched and
+  asserts the status **the repo says it should return** (410 for a GONE path,
+  30x for a `next.config` source, 200 for a route with a `page.tsx`). Run it
+  after every deploy. A route the repo does not describe is reported, not guessed.
+- `check-redirect-order` runs in `prebuild` and fails if a GONE path is shadowed
+  by an earlier `next.config` pattern. Redirects run **before** middleware, so a
+  shadowed 410 is unreachable. The fix is always to carve the path out of the
+  redirect, never to drop it from GONE.
+
 **Counting a name is not counting a fact.** An audit reported Brevo, Pipedrive
 and Leadpages as merchants whose discount code we hold. We hold four codes:
 Moshy, Mosh, Knose, PetsOnMe. The other three matched because their names appear

@@ -31,17 +31,35 @@ cause, these should move at unchanged position.
 Meta descriptions were rewritten on the same six to lead with the same figure.
 All titles render inside 61 characters including the `| Refer Labs` suffix.
 
-## `/moshhair` is the control, and it argues against the hypothesis
+## `/moshhair` is the control, and that it argues against the hypothesis is the reason to trust the test
 
 It already carried `55% Off First Order` and converts at **0.71%**, which is
 below `/moshy` and `/moshy-review` despite the figure being present. Left
 unchanged deliberately.
 
 If the six move and `/moshhair` does not, the figure is doing something. If the
-six do not move either, the figure is not the cause and the difference between
-`/moshy` at 2.50% and this group is something else, most likely query intent:
-`/moshy` and `/moshy-review` rank for **branded discount-code searches**, where
-the searcher already intends to buy. That reading is currently unevidenced.
+six do not move either, the figure is not the cause.
+
+**This is what makes the test worth running.** A test whose control agrees with
+the hypothesis tells you nothing you did not already believe. `/moshhair` has
+carried a figure the whole time and sits at 0.71%, below both benchmark pages, so
+the design has a live counter-example built into it rather than only supporting
+cases. If the six move anyway, that is a result reached against the evidence
+already on the board, which is the only kind worth acting on.
+
+### If the October read comes back null
+
+**Intent is the explanation, and the seven titles revert.** `/moshy` and
+`/moshy-review` rank for **branded discount-code searches**, where the searcher
+has already decided to buy and is looking for the code. The seven rank for
+research and comparison queries, where the searcher is still deciding. On that
+reading the 2.50% was never about the title, and no title rewrite reaches it.
+
+Reverting matters. The old titles were not broken, they were differently framed,
+and leaving a change in place because it was made is how a site accumulates
+alterations nobody can attribute. Revert to the titles recorded in the baseline
+table above, and record the null result next to them so the same idea is not
+retried in six months as if it were new.
 
 ## How to read it on 5 October
 
