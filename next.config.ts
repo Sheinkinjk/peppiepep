@@ -180,7 +180,17 @@ const nextConfig: NextConfig = {
       // The catch-all covers every post; the specific rule below is kept for clarity
       // (same destination, so ordering is harmless).
       { source: '/blog', destination: '/affiliate-programs-australia', permanent: true },
-      { source: '/blog/:path*', destination: '/affiliate-programs-australia', permanent: true },
+      // The catch-all EXCLUDES the attorney-referral-fee post, which returns 410
+      // from src/proxy.ts (5 Sep 2026). next.config redirects run before
+      // middleware, so a path that needs a 410 has to be carved out here or the
+      // redirect wins and the 410 is never reached. That post is US legal content
+      // we do not write, and pointing it at an Australian affiliate hub sent 13
+      // clicks a quarter to a page answering a different question.
+      {
+        source: '/blog/:path((?!attorney-referral-fee-rules-state-guide$).*)',
+        destination: '/affiliate-programs-australia',
+        permanent: true,
+      },
       {
         // Consolidate the legacy affiliate blog post onto the strategic hub page
         // (both ranked for the same intent; the hub is the canonical asset).
