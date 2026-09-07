@@ -49,3 +49,6 @@ next-env.d.ts
 # supabase CLI artifacts
 supabase/.temp/
 .env*.local
+
+# Network conversion exports: commercial data, not source
+reports/conversions/*.csv

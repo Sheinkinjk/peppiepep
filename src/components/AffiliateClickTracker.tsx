@@ -69,9 +69,35 @@ const SUBID_PARAM: Record<string, string> = {
   "myjuniper.com": "utm_content",       // Juniper reads utm_content in its own analytics
   // Commission Factory. UniqueId is the parameter CF passes through to its own
   // reporting; confirm with the CF account manager that it appears against
-  // transactions before trusting it, and never extend this to Moshy until it is
-  // confirmed in that dashboard.
+  // transactions before trusting it.
   "t.cfjump.com": "UniqueId",
+
+  // ── Moshy and Mosh: DELIBERATELY ABSENT, and this is the gap that matters ──
+  //
+  // These two are the largest earners on the site and the only two whose
+  // conversions cannot be traced to a page, because no SubID reaches them.
+  // Every page-level judgement about /moshy, /moshhair, /mosh-review and the
+  // rest is inferred from impressions and CTR rather than from revenue.
+  //
+  // The change is one line each. It is not made yet because pushing an
+  // unrecognised parameter onto a referral URL can break the referral, and
+  // nobody has confirmed which parameter Moshy's dashboard passes through.
+  //
+  // TO ENABLE, in this order:
+  //   1. Ask Moshy (and Mosh, same operator) which query parameter appears
+  //      against a transaction in their partner reporting. Common answers are
+  //      sub_id, subid, ref2, aff_sub, utm_content.
+  //   2. Add the host and that parameter here:
+  //        "www.getmoshy.com.au": "<param>",
+  //        "www.getmosh.com.au":  "<param>",
+  //   3. Click the live link once, complete nothing, and confirm the value
+  //      appears in their dashboard against that click BEFORE trusting any
+  //      report built on it. A parameter that is accepted but discarded looks
+  //      identical from our side.
+  //   4. Only then join it in scripts/reconcile-conversions.mjs.
+  //
+  // Do not guess the parameter name. A wrong one is silently dropped at best
+  // and voids attribution at worst, and we would not be able to tell which.
 };
 
 /** Page path -> compact subid slug, e.g. "/polymarket/trading-bots" -> "polymarket-trading-bots". */

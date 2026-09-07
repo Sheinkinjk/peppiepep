@@ -163,7 +163,18 @@ const unique = problems.filter((p) => {
 if (!unique.length) {
   console.log("  AEO invariants hold: answer slot clear, titles and h1s agree, codes named, no duplicates.");
 } else {
-  console.log(`  ${unique.length} AEO problem(s):\n`);
-  for (const p of unique) console.log(`  ${p.file}\n     ${p.msg}\n`);
+  console.error(`  ${unique.length} AEO problem(s):\n`);
+  for (const p of unique) console.error(`  ${p.file}\n     ${p.msg}\n`);
 }
-process.exit(0);
+/**
+ * Exits NON-ZERO on a finding, as of 5 Sep 2026.
+ *
+ * This script printed its findings and then exited 0, every time, since it was
+ * written. It was reporting /databox's title problem from the moment that page
+ * was built and nothing stopped, because nothing could: a check that always
+ * succeeds is a log line. It was also run by hand rather than by the build,
+ * so the log line was only seen when someone chose to look.
+ *
+ * Both halves of that are now fixed: this runs in `postbuild` and it fails.
+ */
+process.exit(unique.length ? 1 : 0);

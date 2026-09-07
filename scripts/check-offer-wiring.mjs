@@ -126,11 +126,17 @@ if (!rows.length) {
   console.log(`  ${slugs.length} brand pages checked. All fully wired.`);
   console.log(`  ${factCodes.length} OFFER_FACTS codes each backed by a DEALS row.`);
 } else {
-  console.log(`  ${slugs.length} checked, ${problems} with gaps:\n`);
+  console.error(`  ${slugs.length} checked, ${problems} with gaps:\n`);
   for (const [slug, offer, miss] of rows) {
-    console.log(`  /${slug}`);
-    console.log(`     offer:   ${offer.slice(0, 60)}`);
-    console.log(`     missing: ${miss}\n`);
+    console.error(`  /${slug}`);
+    console.error(`     offer:   ${offer.slice(0, 60)}`);
+    console.error(`     missing: ${miss}\n`);
   }
 }
-process.exit(0);
+/**
+ * Exits NON-ZERO on a gap, as of 5 Sep 2026. Same reason as check-aeo: this
+ * reported "/databox: missing ChromeGate (page will double-header)" from the
+ * first build of that page and exited 0 every time, so the page shipped serving
+ * two <header> elements. A wiring gap is a shipped defect, not a suggestion.
+ */
+process.exit(rows.length ? 1 : 0);
