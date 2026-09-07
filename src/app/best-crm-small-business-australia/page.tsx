@@ -18,7 +18,7 @@ const CRMS = [
     href: PIPEDRIVE_URL,
     cta: "pipedrive",
     page: "/pipedrive",
-    from: "US$14",
+    from: "US$14", // unverified: pipedrive.com/pricing returns 403 to non-browser requests (5 Sep 2026)
     trial: "14-day free trial, no card",
     suits: "Sales teams that live in the pipeline",
     body: "Pipedrive is built around a visual sales pipeline you drag deals through, which makes it the natural pick for a small team whose main job is chasing and closing deals. It is quick to set up and hard to lose track of a deal in. If you want a CRM that is really a marketing-and-everything suite, it is narrower than that by design.",
@@ -29,7 +29,7 @@ const CRMS = [
     href: CAPSULE_URL,
     cta: "capsule",
     page: "/capsule",
-    from: "US$18",
+    from: "US$18", // unverified: capsulecrm.com renders prices client-side (5 Sep 2026)
     trial: "Free plan for up to 250 contacts",
     suits: "Small teams wanting simple contact management",
     body: "Capsule keeps things deliberately simple: contacts, a light pipeline, and tasks, without the sprawl of a bigger platform. The free plan makes it an easy starting point for a very small business, and you step up to paid as your contact list grows. If you need deep automation or marketing, you may outgrow it.",
@@ -40,7 +40,7 @@ const CRMS = [
     href: NUTSHELL_URL,
     cta: "nutshell",
     page: "/nutshell",
-    from: "US$13",
+    from: "US$13", // read off nutshell.com/pricing, 5 Sep 2026: Foundation, per user/month
     trial: "14-day free trial",
     suits: "Teams wanting sales plus built-in email marketing",
     body: "Nutshell bundles a straightforward CRM with email marketing in one subscription, which appeals to small businesses that would otherwise pay for two tools. It is priced keenly at the entry level. The trade-off is that each individual piece is less deep than a specialist tool, which is usually fine for a small team.",
@@ -51,10 +51,12 @@ const CRMS = [
     href: KEAP_URL,
     cta: "keap",
     page: "/keap",
-    from: "US$249",
+    // Was US$249 on a feature-tiered model. Read off keap.com/pricing 5 Sep 2026:
+    // Keap has dropped tiers entirely for one platform price.
+    from: "US$299",
     trial: "14-day free trial",
     suits: "Established small businesses wanting all-in-one automation",
-    body: "Keap is the heaviest option here: CRM, marketing automation, and payments in one platform, aimed at small businesses that want to run a lot from a single tool. That power comes at a much higher price and a steeper setup, so it suits an established business with processes to automate rather than a team just getting organised.",
+    body: "Keap is the heaviest option here: CRM, marketing automation and payments in one platform. It has dropped feature-based tiers entirely, so there is one platform price of US$299 a month, billed at US$2,988 a year, read off keap.com on 5 September 2026. That suits an established business with processes to automate rather than a team just getting organised.",
     good: ["CRM plus marketing automation plus payments", "Powerful automation flows", "Best for businesses ready to systemise"],
   },
 ];
@@ -66,7 +68,7 @@ const faqs = [
   },
   {
     q: "What is the cheapest CRM for small business?",
-    a: "Among these, Nutshell (from US$13 per user a month) and Pipedrive (from US$14) sit at the low end, and Capsule offers a genuinely free plan for up to 250 contacts, which is the cheapest way to start. Keap is materially more expensive because it bundles marketing automation and payments. Always confirm current pricing and the AUD conversion with the vendor.",
+    a: "Nutshell sits at the low end from US$13 per user a month, read off nutshell.com on 5 September 2026, and Capsule offers a free plan, which is the cheapest way to start. Keap is materially more expensive at US$299 a month for the whole platform, read off keap.com the same day, because it bundles marketing automation and payments and no longer sells feature tiers. Pipedrive and Capsule publish their pricing behind scripts we could not read, so treat those two figures as unverified and confirm them with the vendor.",
   },
   {
     q: "Do these CRMs work for Australian businesses?",
@@ -137,8 +139,10 @@ export default function BestCrmSmallBusinessPage() {
           Pick by the job, not the feature list. Of these four, Pipedrive suits teams whose day is chasing and closing
           deals, Capsule suits contact management and has a genuinely free tier up to 250 contacts, Nutshell sits at
           the low end on price, and Keap costs materially more because it is a marketing automation and payments suite
-          with a CRM inside rather than a CRM alone. Starting prices are below; confirm each with the vendor, because
-          they move and none of the figures on this page carries a date we verified.
+          with a CRM inside rather than a CRM alone. Starting prices are below.
+          Nutshell and Keap were read off their own pricing pages on 5 September 2026. Pipedrive
+          and Capsule publish theirs behind scripts we could not read, so those two are marked
+          unverified rather than presented as current.
         </p>
 
         <p className="mb-10 rounded-lg border border-[#e5e9e7] bg-[#f5f8f6] px-4 py-3 text-xs leading-relaxed text-[#3d4b44]">
