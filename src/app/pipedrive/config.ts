@@ -14,7 +14,7 @@ export const pipedriveConfig: AffiliatePageConfig = {
   atAGlance: [
     { k: "Type", v: "Sales CRM / pipeline" },
     { k: "Best for", v: "Sales teams & SMBs" },
-    { k: "Pricing", v: "No free plan; from US$14/seat/mo (annual)" },
+    { k: "Pricing", v: "No free plan; from AU$19/seat/mo billed annually (5 Sep 2026)" },
   ],
   hero: {
     h1Prefix: "Pipedrive:",
@@ -52,7 +52,7 @@ export const pipedriveConfig: AffiliatePageConfig = {
   whyUseThis: ["A visual pipeline that shows deal status at a glance","Activity reminders so follow-ups never slip","Workflow automation for repetitive sales admin","Reporting to see what is winning and what is stuck"],
   faqs: [
     { q: "Is there a Pipedrive free trial or discount code?", a: "Yes to the trial: new accounts get a 14-day free trial with no credit card. Pipedrive does not typically publish a public discount code; signing up through our referral link is the most reliable way to start, at no extra cost to you." },
-    { q: "How much does Pipedrive cost?", a: "Pipedrive is priced per seat per month. Its entry Lite plan starts at US$14 per seat per month billed annually, with the popular Growth plan US$39 per seat per month annually. Check the current tiers on Pipedrive's pricing page before committing." },
+    { q: "How much does Pipedrive cost?", a: "Pipedrive quotes Australian visitors in Australian dollars, per seat per month billed annually: Lite AU$19 (AU$228 a year), Growth AU$49, Premium AU$79 and Ultimate AU$109. Read off pipedrive.com/en/pricing on 5 September 2026. Annual billing saves up to 44% against monthly on their own page. Check the current tiers before committing." },
     { q: "Does Pipedrive have a free plan?", a: "No, Pipedrive does not offer a permanent free plan; it offers a 14-day free trial instead. If you specifically need a free-forever CRM tier, a tool like a freemium CRM may suit better, but Pipedrive's trial lets you test everything first." },
     { q: "Is Pipedrive good for a small team?", a: "Yes, that is its sweet spot. It is built to be quick to set up and easy enough that a small sales team keeps it current, while still offering automation and reporting to run a pipeline properly." },
   ],

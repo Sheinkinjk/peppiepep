@@ -26,6 +26,13 @@
  *   the parser looks for a SubID-shaped column and an amount column by name.
  *   Then:  npm run reconcile
  *
+ * PULL THE RIGHT PARTNERSTACK REPORT. The "partner team member report" is
+ * aggregated by merchant and month and carries no sub-ID column, so it cannot
+ * be joined and this script will say so. The one that works is the
+ * TRANSACTION or CUSTOMER level export, where each row is one conversion and
+ * sid1 is available as a column. If PartnerStack shows no such report, there
+ * have been no transactions to list, which is itself the answer.
+ *
  * WHAT IT WILL NOT DO. It will not estimate. A conversion whose SubID is absent,
  * truncated or unrecognised is counted as unattributed and named. The whole
  * point is to replace inference with measurement, so inferring here would defeat

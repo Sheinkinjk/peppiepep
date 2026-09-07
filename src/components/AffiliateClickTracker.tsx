@@ -72,32 +72,27 @@ const SUBID_PARAM: Record<string, string> = {
   // transactions before trusting it.
   "t.cfjump.com": "UniqueId",
 
-  // ── Moshy and Mosh: DELIBERATELY ABSENT, and this is the gap that matters ──
+  // ── Moshy and Mosh: NOT SUPPORTED BY THE MERCHANT. Closed, not pending ──
   //
-  // These two are the largest earners on the site and the only two whose
-  // conversions cannot be traced to a page, because no SubID reaches them.
-  // Every page-level judgement about /moshy, /moshhair, /mosh-review and the
-  // rest is inferred from impressions and CTR rather than from revenue.
+  // Asked and answered, 5 Sep 2026: Moshy and Mosh cannot implement a
+  // pass-through sub-ID. There is no parameter to add here and this is not a
+  // task waiting on someone. Do not reopen it as one, and do not guess a
+  // parameter name: a wrong one is silently dropped at best and voids the
+  // referral at worst, and we could not tell which from our side.
   //
-  // The change is one line each. It is not made yet because pushing an
-  // unrecognised parameter onto a referral URL can break the referral, and
-  // nobody has confirmed which parameter Moshy's dashboard passes through.
+  // THE CONSEQUENCE, which has to be carried in every report that ranks these
+  // pages: the two largest earners on the site produce no page-level
+  // attribution. /moshy, /moshhair, /mosh-review, /moshy-review,
+  // /best-weight-loss-telehealth-australia and the rest can be ranked by
+  // impressions, clicks and CTR, and by nothing that involves money.
   //
-  // TO ENABLE, in this order:
-  //   1. Ask Moshy (and Mosh, same operator) which query parameter appears
-  //      against a transaction in their partner reporting. Common answers are
-  //      sub_id, subid, ref2, aff_sub, utm_content.
-  //   2. Add the host and that parameter here:
-  //        "www.getmoshy.com.au": "<param>",
-  //        "www.getmosh.com.au":  "<param>",
-  //   3. Click the live link once, complete nothing, and confirm the value
-  //      appears in their dashboard against that click BEFORE trusting any
-  //      report built on it. A parameter that is accepted but discarded looks
-  //      identical from our side.
-  //   4. Only then join it in scripts/reconcile-conversions.mjs.
-  //
-  // Do not guess the parameter name. A wrong one is silently dropped at best
-  // and voids attribution at worst, and we would not be able to tell which.
+  // What is still measurable for them, and worth using instead:
+  //   - affiliate_click by cta_location, which shows WHERE on a page people
+  //     click even though it cannot show whether they converted
+  //   - the merchant's own total, monthly, against our total clicks, which
+  //     gives a site-wide conversion rate but no page split
+  //   - a code-level split IF Moshy ever reports REFERRAL120 redemptions
+  //     separately, which is worth asking about even though sub-IDs are out
 };
 
 /** Page path -> compact subid slug, e.g. "/polymarket/trading-bots" -> "polymarket-trading-bots". */

@@ -18,7 +18,10 @@ const CRMS = [
     href: PIPEDRIVE_URL,
     cta: "pipedrive",
     page: "/pipedrive",
-    from: "US$14", // unverified: pipedrive.com/pricing returns 403 to non-browser requests (5 Sep 2026)
+    // AUD, because that is the currency Pipedrive shows Australian visitors, and
+    // this is an Australian comparison page. Lite, per seat per month billed
+    // annually (AU$228/year). Read off pipedrive.com/en/pricing 5 Sep 2026.
+    from: "AU$19",
     trial: "14-day free trial, no card",
     suits: "Sales teams that live in the pipeline",
     body: "Pipedrive is built around a visual sales pipeline you drag deals through, which makes it the natural pick for a small team whose main job is chasing and closing deals. It is quick to set up and hard to lose track of a deal in. If you want a CRM that is really a marketing-and-everything suite, it is narrower than that by design.",
@@ -29,7 +32,7 @@ const CRMS = [
     href: CAPSULE_URL,
     cta: "capsule",
     page: "/capsule",
-    from: "US$18", // unverified: capsulecrm.com renders prices client-side (5 Sep 2026)
+    from: "US$18", // Starter, per user/month billed annually. Read off capsulecrm.com/pricing 5 Sep 2026: correct.
     trial: "Free plan for up to 250 contacts",
     suits: "Small teams wanting simple contact management",
     body: "Capsule keeps things deliberately simple: contacts, a light pipeline, and tasks, without the sprawl of a bigger platform. The free plan makes it an easy starting point for a very small business, and you step up to paid as your contact list grows. If you need deep automation or marketing, you may outgrow it.",
@@ -68,7 +71,7 @@ const faqs = [
   },
   {
     q: "What is the cheapest CRM for small business?",
-    a: "Nutshell sits at the low end from US$13 per user a month, read off nutshell.com on 5 September 2026, and Capsule offers a free plan, which is the cheapest way to start. Keap is materially more expensive at US$299 a month for the whole platform, read off keap.com the same day, because it bundles marketing automation and payments and no longer sells feature tiers. Pipedrive and Capsule publish their pricing behind scripts we could not read, so treat those two figures as unverified and confirm them with the vendor.",
+    a: "All four were read off their own pricing pages on 5 September 2026. Capsule has a free plan for up to 250 contacts and two users, which is the cheapest way to start, then US$18 per user a month. Nutshell starts at US$13 and Pipedrive at AU$19 per seat, both billed annually. Keap is materially more expensive at US$299 a month because it has dropped feature tiers for one platform price covering marketing automation and payments. Pipedrive quotes Australians in Australian dollars; the other three quote US.",
   },
   {
     q: "Do these CRMs work for Australian businesses?",
@@ -139,10 +142,10 @@ export default function BestCrmSmallBusinessPage() {
           Pick by the job, not the feature list. Of these four, Pipedrive suits teams whose day is chasing and closing
           deals, Capsule suits contact management and has a genuinely free tier up to 250 contacts, Nutshell sits at
           the low end on price, and Keap costs materially more because it is a marketing automation and payments suite
-          with a CRM inside rather than a CRM alone. Starting prices are below.
-          Nutshell and Keap were read off their own pricing pages on 5 September 2026. Pipedrive
-          and Capsule publish theirs behind scripts we could not read, so those two are marked
-          unverified rather than presented as current.
+          with a CRM inside rather than a CRM alone. Starting prices are below, all
+          four read off the vendors&rsquo; own pricing pages on 5 September 2026. Pipedrive quotes
+          Australian visitors in Australian dollars, so its figure is AUD and the other three are
+          USD, which is worth knowing before you compare the numbers directly.
         </p>
 
         <p className="mb-10 rounded-lg border border-[#e5e9e7] bg-[#f5f8f6] px-4 py-3 text-xs leading-relaxed text-[#3d4b44]">

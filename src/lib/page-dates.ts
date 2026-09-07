@@ -92,7 +92,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/best-crm-small-business-australia": {
     "published": "2026-07-24",
-    "updated": "2026-09-05"
+    "updated": "2026-09-07"
   },
   "/best-hair-loss-treatment-australia": {
     "published": "2026-06-29",
