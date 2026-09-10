@@ -1,0 +1,173 @@
+{
+  "site": "canstar",
+  "url": "https://www.canstar.com.au/",
+  "header": {
+    "at0": {
+      "h": 74,
+      "top": 0,
+      "position": "relative",
+      "bg": "rgb(255, 255, 255)",
+      "shadow": "none",
+      "borderBottom": "1px rgb(244, 244, 244)",
+      "backdrop": "none"
+    },
+    "at800": {
+      "h": 74,
+      "top": -800,
+      "position": "relative",
+      "bg": "rgb(255, 255, 255)",
+      "shadow": "none",
+      "borderBottom": "1px rgb(244, 244, 244)",
+      "backdrop": "none"
+    },
+    "changed": true
+  },
+  "motion": [
+    {
+      "v": "transition all 0.2s ease-in-out",
+      "n": 379
+    },
+    {
+      "v": "animation fadeFromtop 0.2s ease-out",
+      "n": 9
+    },
+    {
+      "v": "transition transform 0.2s ease-in",
+      "n": 2
+    },
+    {
+      "v": "transition background-color 0.2s ease",
+      "n": 1
+    },
+    {
+      "v": "transition right 0.3s ease",
+      "n": 1
+    }
+  ],
+  "ctas": [
+    {
+      "default": {
+        "text": "Join",
+        "h": 42,
+        "w": 64,
+        "padX": "9px/9px",
+        "radius": "20px",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "bg": "rgb(0, 149, 169)",
+        "color": "rgb(255, 255, 255)",
+        "border": "0px rgb(0, 149, 169)",
+        "shadow": "none",
+        "transition": "0s all",
+        "selector": "button.btn.signup"
+      },
+      "hover": null,
+      "focus": null
+    }
+  ],
+  "cardHover": null,
+  "keyboard": [
+    {
+      "tag": "A",
+      "text": "",
+      "outline": "0px auto",
+      "outlineColor": "rgb(0, 149, 169)",
+      "offset": "0px",
+      "shadow": "no"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Log in",
+      "outline": "0px none",
+      "outlineColor": "rgb(0, 117, 128)",
+      "offset": "0px",
+      "shadow": "no"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Join",
+      "outline": "0px none",
+      "outlineColor": "rgb(255, 255, 255)",
+      "offset": "0px",
+      "shadow": "no"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "outline": "1px auto",
+      "outlineColor": "rgb(0, 95, 204)",
+      "offset": "0px",
+      "shadow": "no"
+    },
+    {
+      "tag": "A",
+      "text": "Home Loans",
+      "outline": "0px auto",
+      "outlineColor": "rgb(0, 149, 169)",
+      "offset": "0px",
+      "shadow": "yes"
+    },
+    {
+      "tag": "A",
+      "text": "Personal Loans",
+      "outline": "0px auto",
+      "outlineColor": "rgb(0, 149, 169)",
+      "offset": "0px",
+      "shadow": "yes"
+    },
+    {
+      "tag": "A",
+      "text": "Credit Cards",
+      "outline": "0px auto",
+      "outlineColor": "rgb(0, 149, 169)",
+      "offset": "0px",
+      "shadow": "yes"
+    },
+    {
+      "tag": "A",
+      "text": "Health Insurance",
+      "outline": "0px auto",
+      "outlineColor": "rgb(0, 149, 169)",
+      "offset": "0px",
+      "shadow": "yes"
+    },
+    {
+      "tag": "A",
+      "text": "Car Insurance",
+      "outline": "0px auto",
+      "outlineColor": "rgb(0, 149, 169)",
+      "offset": "0px",
+      "shadow": "yes"
+    },
+    {
+      "tag": "A",
+      "text": "Home Insurance",
+      "outline": "0px auto",
+      "outlineColor": "rgb(0, 149, 169)",
+      "offset": "0px",
+      "shadow": "yes"
+    },
+    {
+      "tag": "A",
+      "text": "Superannuation",
+      "outline": "0px auto",
+      "outlineColor": "rgb(0, 149, 169)",
+      "offset": "0px",
+      "shadow": "yes"
+    },
+    {
+      "tag": "A",
+      "text": "Energy",
+      "outline": "0px auto",
+      "outlineColor": "rgb(0, 149, 169)",
+      "offset": "0px",
+      "shadow": "yes"
+    }
+  ],
+  "asks": {
+    "formsAboveFold": 0,
+    "inputsAboveFold": [],
+    "totalInputs": 0,
+    "hasEmailGate": false
+  }
+}

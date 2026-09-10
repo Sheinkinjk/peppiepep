@@ -1,0 +1,286 @@
+{
+  "site": "bankrate",
+  "url": "https://www.bankrate.com/",
+  "header": {
+    "at0": {
+      "h": 72,
+      "top": 0,
+      "position": "relative",
+      "bg": "rgba(0, 0, 0, 0)",
+      "shadow": "none",
+      "borderBottom": "0px rgb(229, 226, 219)",
+      "backdrop": "none"
+    },
+    "at800": {
+      "h": 72,
+      "top": -800,
+      "position": "relative",
+      "bg": "rgba(0, 0, 0, 0)",
+      "shadow": "none",
+      "borderBottom": "0px rgb(229, 226, 219)",
+      "backdrop": "none"
+    },
+    "changed": true
+  },
+  "motion": [
+    {
+      "v": "transition text-decoration-color, color 0.2s, 0.2s ease-in-out, ease-in-out",
+      "n": 138
+    },
+    {
+      "v": "transition transform, translate, scale, rotate 0.15s cubic-bezier(0.4, 0, 0.2, 1)",
+      "n": 24
+    },
+    {
+      "v": "transition color, text-decoration-color 0.15s, 0.15s ease-in, ease-in",
+      "n": 24
+    },
+    {
+      "v": "transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1)",
+      "n": 15
+    },
+    {
+      "v": "transition color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.2s cubic-bezier(0.4, 0, 0.2, 1)",
+      "n": 12
+    },
+    {
+      "v": "transition color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events 0.15s cubic-bezier(0.4, 0, 0.2, 1)",
+      "n": 12
+    },
+    {
+      "v": "transition all 0.2s ease-in-out",
+      "n": 10
+    },
+    {
+      "v": "transition background-color, border-bottom, color 0.2s, 0.2s, 0.2s ease-in-out, ease-in-out, ease-in-out",
+      "n": 6
+    },
+    {
+      "v": "transition background-color, border-color 0.15s, 0.15s cubic-bezier(0.4, 0, 0.2, 1), cubic-bezier(0.4, 0, 0.2, 1)",
+      "n": 6
+    },
+    {
+      "v": "transition color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1)",
+      "n": 4
+    },
+    {
+      "v": "transition opacity, transform 0.2s, 0s ease-in-out, linear",
+      "n": 2
+    },
+    {
+      "v": "transition opacity, visibility 0.2s, 0s ease-in-out, linear",
+      "n": 1
+    }
+  ],
+  "ctas": [
+    {
+      "default": {
+        "text": "Log in Log in or sign up",
+        "h": 38,
+        "w": 144,
+        "padX": "16px/16px",
+        "radius": "8px",
+        "fontSize": "14px",
+        "fontWeight": "700",
+        "bg": "rgb(0, 97, 254)",
+        "color": "rgb(255, 255, 255)",
+        "border": "2px rgb(0, 97, 254)",
+        "shadow": "none",
+        "transition": "0.2s color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to",
+        "selector": "#auth-button"
+      },
+      "hover": null,
+      "focus": null
+    },
+    {
+      "default": {
+        "text": "Get a better rate",
+        "h": 48,
+        "w": 180,
+        "padX": "24px/24px",
+        "radius": "12px",
+        "fontSize": "14px",
+        "fontWeight": "600",
+        "bg": "rgb(0, 97, 254)",
+        "color": "rgb(255, 255, 255)",
+        "border": "0px rgb(229, 226, 219)",
+        "shadow": "none",
+        "transition": "0.15s all",
+        "selector": "#homepage-get-a-better-rate"
+      },
+      "hover": {
+        "bg": "rgb(16, 75, 181)",
+        "color": "rgb(255, 255, 255)",
+        "shadow": "none",
+        "transform": "none",
+        "h": 48,
+        "textDecoration": "none",
+        "border": "rgb(229, 226, 219)"
+      },
+      "focus": {
+        "outline": "2px solid rgb(0, 97, 254)",
+        "offset": "4px",
+        "shadow": "none"
+      }
+    },
+    {
+      "default": {
+        "text": "Mortgages",
+        "h": 40,
+        "w": 122,
+        "padX": "24px/24px",
+        "radius": "20px",
+        "fontSize": "14px",
+        "fontWeight": "600",
+        "bg": "rgb(0, 97, 254)",
+        "color": "rgb(255, 255, 255)",
+        "border": "1px rgba(0, 0, 0, 0)",
+        "shadow": "none",
+        "transition": "0.15s all",
+        "selector": "#homepage-tab-mortgages"
+      },
+      "hover": {
+        "bg": "rgb(0, 97, 254)",
+        "color": "rgb(255, 255, 255)",
+        "shadow": "none",
+        "transform": "none",
+        "h": 40,
+        "textDecoration": "none",
+        "border": "rgba(0, 0, 0, 0)"
+      },
+      "focus": {
+        "outline": "1px solid rgb(0, 97, 254)",
+        "offset": "0px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(0, 97, 254) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px"
+      }
+    }
+  ],
+  "cardHover": {
+    "before": {
+      "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.269299 0.000906073 0.00218749 / 0.2) 5px 5px 15px -10px, oklab(0.269299 0.000906073 0.00218749 / 0.2) -5px 5px 15px -10px",
+      "transform": "none",
+      "border": "rgb(229, 226, 219)",
+      "bg": "rgb(255, 255, 255)",
+      "top": 483
+    },
+    "after": {
+      "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.269299 0.000906073 0.00218749 / 0.2) 5px 5px 15px -10px, oklab(0.269299 0.000906073 0.00218749 / 0.2) -5px 5px 15px -10px",
+      "transform": "none",
+      "border": "rgb(229, 226, 219)",
+      "bg": "rgb(255, 255, 255)",
+      "top": 483
+    },
+    "changed": false
+  },
+  "keyboard": [
+    {
+      "tag": "DIV",
+      "text": "Buy a home90% of buyers over",
+      "outline": "0px none",
+      "outlineColor": "rgb(0, 95, 204)",
+      "offset": "0px",
+      "shadow": "no"
+    },
+    {
+      "tag": "A",
+      "text": "Get a top rate now",
+      "outline": "0px solid",
+      "outlineColor": "rgb(0, 97, 254)",
+      "offset": "4px",
+      "shadow": "no"
+    },
+    {
+      "tag": "A",
+      "text": "Check if I’m overpaying",
+      "outline": "0px solid",
+      "outlineColor": "rgb(0, 97, 254)",
+      "offset": "4px",
+      "shadow": "no"
+    },
+    {
+      "tag": "A",
+      "text": "See your equity options",
+      "outline": "0px solid",
+      "outlineColor": "rgb(0, 97, 254)",
+      "offset": "4px",
+      "shadow": "no"
+    },
+    {
+      "tag": "A",
+      "text": "How we’re paid",
+      "outline": "0px solid",
+      "outlineColor": "rgb(0, 97, 254)",
+      "offset": "4px",
+      "shadow": "no"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "outline": "0px none",
+      "outlineColor": "rgb(0, 95, 204)",
+      "offset": "0px",
+      "shadow": "yes"
+    },
+    {
+      "tag": "A",
+      "text": "The Hidden Homeownership Tax",
+      "outline": "1px auto",
+      "outlineColor": "rgb(19, 34, 59)",
+      "offset": "1px",
+      "shadow": "no"
+    },
+    {
+      "tag": "A",
+      "text": "Mortgage overpayment costs A",
+      "outline": "1px auto",
+      "outlineColor": "rgb(19, 34, 59)",
+      "offset": "1px",
+      "shadow": "no"
+    },
+    {
+      "tag": "A",
+      "text": "The refinance ‘Seniority Tax",
+      "outline": "1px auto",
+      "outlineColor": "rgb(19, 34, 59)",
+      "offset": "1px",
+      "shadow": "no"
+    },
+    {
+      "tag": "A",
+      "text": "3 homeowners, 6 refinances: ",
+      "outline": "1px auto",
+      "outlineColor": "rgb(19, 34, 59)",
+      "offset": "1px",
+      "shadow": "no"
+    },
+    {
+      "tag": "A",
+      "text": "See all our reporting",
+      "outline": "0px solid",
+      "outlineColor": "rgb(0, 97, 254)",
+      "offset": "4px",
+      "shadow": "no"
+    },
+    {
+      "tag": "A",
+      "text": "See who we are",
+      "outline": "1px solid",
+      "outlineColor": "rgb(0, 97, 254)",
+      "offset": "4px",
+      "shadow": "no"
+    }
+  ],
+  "asks": {
+    "formsAboveFold": 1,
+    "inputsAboveFold": [
+      {
+        "type": "text",
+        "name": "q",
+        "placeholder": "Search...",
+        "label": null
+      }
+    ],
+    "totalInputs": 1,
+    "hasEmailGate": false
+  }
+}

@@ -1,0 +1,1776 @@
+{
+  "site": "ctm",
+  "url": "https://www.comparethemarket.com.au/",
+  "capturedAt": "2026-09-10T08:40:55.364Z",
+  "breakpoints": {
+    "d": {
+      "viewport": {
+        "vw": 1440,
+        "vh": 900
+      },
+      "docHeight": 5714,
+      "type": {
+        "combos": [
+          {
+            "family": "Plus Jakarta Sans",
+            "size": 16,
+            "weight": 600,
+            "lineHeight": "24.8",
+            "letterSpacing": "normal",
+            "count": 30,
+            "sample": "Insurance"
+          },
+          {
+            "family": "Plus Jakarta Sans",
+            "size": 16,
+            "weight": 400,
+            "lineHeight": "24",
+            "letterSpacing": "normal",
+            "count": 19,
+            "sample": "Financial Services Guide (Life Insurance Products)"
+          },
+          {
+            "family": "Plus Jakarta Sans",
+            "size": 11,
+            "weight": 400,
+            "lineHeight": "18.7",
+            "letterSpacing": "normal",
+            "count": 9,
+            "sample": "© 2026 Compare The Market. All rights reserved. ACN: 117 323"
+          },
+          {
+            "family": "Plus Jakarta Sans",
+            "size": 16,
+            "weight": 600,
+            "lineHeight": "19.2",
+            "letterSpacing": "normal",
+            "count": 8,
+            "sample": "Landlord Insurance"
+          },
+          {
+            "family": "Plus Jakarta Sans",
+            "size": 16,
+            "weight": 400,
+            "lineHeight": "27.2",
+            "letterSpacing": "normal",
+            "count": 7,
+            "sample": "When you buy through us, our partners pay a commission, whic"
+          },
+          {
+            "family": "Plus Jakarta Sans",
+            "size": 18,
+            "weight": 600,
+            "lineHeight": "21.6",
+            "letterSpacing": "normal",
+            "count": 6,
+            "sample": "Car Insurance"
+          },
+          {
+            "family": "Plus Jakarta Sans",
+            "size": 32,
+            "weight": 400,
+            "lineHeight": "43.5",
+            "letterSpacing": "normal",
+            "count": 5,
+            "sample": "We compare hundreds of products from a wide range of househo"
+          },
+          {
+            "family": "Plus Jakarta Sans",
+            "size": 32,
+            "weight": 700,
+            "lineHeight": "43.5",
+            "letterSpacing": "normal",
+            "count": 4,
+            "sample": "compare hundreds of products"
+          },
+          {
+            "family": "Plus Jakarta Sans",
+            "size": 18,
+            "weight": 400,
+            "lineHeight": "30.6",
+            "letterSpacing": "normal",
+            "count": 4,
+            "sample": "Get started by answering a few quick questions to help us un"
+          },
+          {
+            "family": "Plus Jakarta Sans",
+            "size": 20,
+            "weight": 700,
+            "lineHeight": "27.2",
+            "letterSpacing": "normal",
+            "count": 4,
+            "sample": "Insurance"
+          },
+          {
+            "family": "Plus Jakarta Sans",
+            "size": 24,
+            "weight": 700,
+            "lineHeight": "37.2",
+            "letterSpacing": "normal",
+            "count": 3,
+            "sample": "Switching is easy"
+          },
+          {
+            "family": "Plus Jakarta Sans",
+            "size": 24,
+            "weight": 800,
+            "lineHeight": "32.6",
+            "letterSpacing": "normal",
+            "count": 3,
+            "sample": "Trusted by Aussies"
+          },
+          {
+            "family": "Plus Jakarta Sans",
+            "size": 16,
+            "weight": 400,
+            "lineHeight": "16",
+            "letterSpacing": "normal",
+            "count": 2,
+            "sample": "Sign up"
+          },
+          {
+            "family": "Plus Jakarta Sans",
+            "size": 64,
+            "weight": 700,
+            "lineHeight": "64",
+            "letterSpacing": "normal",
+            "count": 2,
+            "sample": "AUSTRALIA’S #1FOR COMPARISON"
+          },
+          {
+            "family": "Plus Jakarta Sans",
+            "size": 12,
+            "weight": 600,
+            "lineHeight": "20.4",
+            "letterSpacing": "normal",
+            "count": 2,
+            "sample": "We do not compare all products or all products from all bran"
+          },
+          {
+            "family": "Plus Jakarta Sans",
+            "size": 48,
+            "weight": 400,
+            "lineHeight": "65.3",
+            "letterSpacing": "normal",
+            "count": 2,
+            "sample": "4.4 / 5"
+          },
+          {
+            "family": "Plus Jakarta Sans",
+            "size": 48,
+            "weight": 700,
+            "lineHeight": "65.3",
+            "letterSpacing": "normal",
+            "count": 2,
+            "sample": "4.4"
+          },
+          {
+            "family": "Plus Jakarta Sans",
+            "size": 14,
+            "weight": 700,
+            "lineHeight": "23.8",
+            "letterSpacing": "normal",
+            "count": 2,
+            "sample": "Based on 3,334 reviews"
+          },
+          {
+            "family": "Plus Jakarta Sans",
+            "size": 24,
+            "weight": 400,
+            "lineHeight": "37.2",
+            "letterSpacing": "normal",
+            "count": 1,
+            "sample": "Compare the Market helps Australians compare insurance, ener"
+          },
+          {
+            "family": "Plus Jakarta Sans",
+            "size": 10,
+            "weight": 400,
+            "lineHeight": "17",
+            "letterSpacing": "normal",
+            "count": 1,
+            "sample": "Average customer rating: 4.5/5"
+          },
+          {
+            "family": "Plus Jakarta Sans",
+            "size": 56,
+            "weight": 800,
+            "lineHeight": "76.2",
+            "letterSpacing": "normal",
+            "count": 1,
+            "sample": "23 million comparisons and counting"
+          },
+          {
+            "family": "Plus Jakarta Sans",
+            "size": 14,
+            "weight": 400,
+            "lineHeight": "23.8",
+            "letterSpacing": "normal",
+            "count": 1,
+            "sample": "Ratings as of 30/06/2026."
+          },
+          {
+            "family": "Plus Jakarta Sans",
+            "size": 18,
+            "weight": 800,
+            "lineHeight": "24.5",
+            "letterSpacing": "normal",
+            "count": 1,
+            "sample": "Download the Simples App"
+          },
+          {
+            "family": "Plus Jakarta Sans",
+            "size": 18,
+            "weight": 700,
+            "lineHeight": "30.6",
+            "letterSpacing": "normal",
+            "count": 1,
+            "sample": "Let's connect"
+          },
+          {
+            "family": "Plus Jakarta Sans",
+            "size": 20,
+            "weight": 700,
+            "lineHeight": "31",
+            "letterSpacing": "normal",
+            "count": 1,
+            "sample": "Looking for something else?"
+          }
+        ],
+        "distinctCombos": 25,
+        "distinctSizes": [
+          10,
+          11,
+          12,
+          14,
+          16,
+          18,
+          20,
+          24,
+          32,
+          48,
+          56,
+          64
+        ],
+        "families": [
+          {
+            "v": "Plus Jakarta Sans",
+            "n": 1
+          }
+        ],
+        "largestHeadlinePx": 32,
+        "largestHeadlineText": "We compare hundreds of products from a wide range of househo",
+        "largestTextPx": 64,
+        "bodySizePx": 16,
+        "bodySizeCount": 7
+      },
+      "colour": {
+        "backgrounds": [
+          {
+            "color": "rgb(252,252,251)",
+            "count": 5,
+            "area": 4200300
+          },
+          {
+            "color": "rgb(15,88,171)",
+            "count": 3,
+            "area": 1938795
+          },
+          {
+            "color": "rgb(0,20,100)",
+            "count": 1,
+            "area": 1706445
+          },
+          {
+            "color": "rgb(255,255,255)",
+            "count": 23,
+            "area": 1084063
+          },
+          {
+            "color": "rgb(233,242,251)",
+            "count": 1,
+            "area": 429261
+          },
+          {
+            "color": "rgba(236,235,235,0.48)",
+            "count": 27,
+            "area": 410009
+          }
+        ],
+        "inks": [
+          {
+            "color": "rgb(0,20,100)",
+            "count": 62,
+            "area": 661256
+          },
+          {
+            "color": "rgb(255,255,255)",
+            "count": 48,
+            "area": 1293407
+          },
+          {
+            "color": "rgb(0,20,67)",
+            "count": 7,
+            "area": 142168
+          },
+          {
+            "color": "rgb(120,117,115)",
+            "count": 2,
+            "area": 28104
+          },
+          {
+            "color": "rgb(180,212,248)",
+            "count": 1,
+            "area": 47616
+          },
+          {
+            "color": "rgb(15,88,171)",
+            "count": 1,
+            "area": 720
+          }
+        ],
+        "accentColours": [
+          {
+            "color": "rgb(15,88,171)",
+            "count": 3,
+            "area": 1938795
+          },
+          {
+            "color": "rgb(0,20,100)",
+            "count": 1,
+            "area": 1706445
+          }
+        ],
+        "accentAreaPct": 44.3,
+        "paintedAreaPct": 118.7,
+        "docArea": 8228160
+      },
+      "depth": {
+        "shadows": [
+          {
+            "v": "rgb(180, 212, 248) 8px 8px 0px 0px",
+            "n": 3
+          },
+          {
+            "v": "rgba(0, 0, 0, 0.12) 0px 0px 12px 0px",
+            "n": 1
+          }
+        ],
+        "distinctShadows": 2,
+        "radii": [
+          {
+            "v": "8px",
+            "n": 36
+          },
+          {
+            "v": "50%",
+            "n": 9
+          },
+          {
+            "v": "16px",
+            "n": 7
+          },
+          {
+            "v": "32px",
+            "n": 5
+          },
+          {
+            "v": "5px",
+            "n": 1
+          }
+        ],
+        "distinctRadii": 5,
+        "borders": [
+          {
+            "v": "1px/solid",
+            "n": 18
+          },
+          {
+            "v": "0px/none",
+            "n": 4
+          }
+        ]
+      },
+      "layout": {
+        "containers": [
+          {
+            "maxWidth": 1344,
+            "n": 10
+          },
+          {
+            "maxWidth": 856,
+            "n": 3
+          }
+        ],
+        "gutter": 20,
+        "sections": [
+          {
+            "i": 0,
+            "tag": "SECTION",
+            "cls": "theme-blue   block block-homepage-banner",
+            "height": 601,
+            "paddingTop": 0,
+            "paddingBottom": 0,
+            "bg": "rgb(15,88,171)",
+            "heading": "AUSTRALIA’S #1FOR COMPARISON",
+            "imgs": 4
+          },
+          {
+            "i": 1,
+            "tag": "SECTION",
+            "cls": "block block-product-grid position-relati",
+            "height": 449,
+            "paddingTop": 60,
+            "paddingBottom": 60,
+            "bg": "rgba(0,0,0,0)",
+            "heading": null,
+            "imgs": 0
+          },
+          {
+            "i": 2,
+            "tag": "SECTION",
+            "cls": "theme-cream-white pt-40 pt-lg-80 pe-0 pb",
+            "height": 563,
+            "paddingTop": 80,
+            "paddingBottom": 80,
+            "bg": "rgb(252,252,251)",
+            "heading": "We compare hundreds of products from a wide range of",
+            "imgs": 13
+          },
+          {
+            "i": 3,
+            "tag": "SECTION",
+            "cls": "theme-cream-white pt-40 pt-lg-80 pe-0 pb",
+            "height": 796,
+            "paddingTop": 80,
+            "paddingBottom": 80,
+            "bg": "rgb(252,252,251)",
+            "heading": "It pays to compare",
+            "imgs": 1
+          },
+          {
+            "i": 4,
+            "tag": "SECTION",
+            "cls": "theme-cream-white pt-40 pt-lg-80 pe-0 pb",
+            "height": 959,
+            "paddingTop": 80,
+            "paddingBottom": 80,
+            "bg": "rgb(252,252,251)",
+            "heading": "Why compare with us?",
+            "imgs": 0
+          },
+          {
+            "i": 5,
+            "tag": "SECTION",
+            "cls": "theme-blue   block block-customer-feedba",
+            "height": 702,
+            "paddingTop": 0,
+            "paddingBottom": 0,
+            "bg": "rgb(15,88,171)",
+            "heading": "We believe the best decisions start with a compariso",
+            "imgs": 3
+          },
+          {
+            "i": 6,
+            "tag": "SECTION",
+            "cls": "theme-cream-white pt-40 pt-lg-80 pe-0 pb",
+            "height": 527,
+            "paddingTop": 80,
+            "paddingBottom": 80,
+            "bg": "rgb(252,252,251)",
+            "heading": "As seen in the media",
+            "imgs": 14
+          }
+        ],
+        "grids": []
+      },
+      "imagery": {
+        "all": [
+          {
+            "kind": "img",
+            "src": "site-logo.svg",
+            "w": 227,
+            "h": 40,
+            "ratio": 5.67,
+            "aboveFold": true,
+            "cls": "logo",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "number-1-comparison-desktop.png",
+            "w": 1440,
+            "h": 601,
+            "ratio": 2.4,
+            "aboveFold": true,
+            "cls": "illustration-or-photo",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "product-review-light-1.png",
+            "w": 212,
+            "h": 48,
+            "ratio": 4.42,
+            "aboveFold": true,
+            "cls": "illustration-or-photo",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "feefo-light-2026.png",
+            "w": 222,
+            "h": 48,
+            "ratio": 4.62,
+            "aboveFold": true,
+            "cls": "illustration-or-photo",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "number1-kochie.png",
+            "w": 520,
+            "h": 441,
+            "ratio": 1.18,
+            "aboveFold": true,
+            "cls": "illustration-or-photo",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "bupa-min.png",
+            "w": 113,
+            "h": 68,
+            "ratio": 1.67,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "bupa logo"
+          },
+          {
+            "kind": "img",
+            "src": "anz-min.png",
+            "w": 113,
+            "h": 68,
+            "ratio": 1.67,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "anz logo"
+          },
+          {
+            "kind": "img",
+            "src": "nab-min.png",
+            "w": 113,
+            "h": 68,
+            "ratio": 1.67,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "nab logo"
+          },
+          {
+            "kind": "img",
+            "src": "ing-min.png",
+            "w": 113,
+            "h": 68,
+            "ratio": 1.67,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "ing logo"
+          },
+          {
+            "kind": "img",
+            "src": "ahm-min-2026.png",
+            "w": 113,
+            "h": 68,
+            "ratio": 1.67,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "ahm-insurance logo"
+          },
+          {
+            "kind": "img",
+            "src": "budget-direct-min-2025.png",
+            "w": 113,
+            "h": 68,
+            "ratio": 1.67,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "budget-direct logo"
+          },
+          {
+            "kind": "img",
+            "src": "nib-min.png",
+            "w": 113,
+            "h": 68,
+            "ratio": 1.67,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "nib logo"
+          },
+          {
+            "kind": "img",
+            "src": "westpac-min.png",
+            "w": 113,
+            "h": 68,
+            "ratio": 1.67,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "westpac logo"
+          },
+          {
+            "kind": "img",
+            "src": "everyday-insurance-min.png",
+            "w": 113,
+            "h": 68,
+            "ratio": 1.67,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "everyday-insurance logo"
+          },
+          {
+            "kind": "img",
+            "src": "agl-min.png",
+            "w": 113,
+            "h": 68,
+            "ratio": 1.67,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "agl logo"
+          },
+          {
+            "kind": "img",
+            "src": "macquarie-min.png",
+            "w": 113,
+            "h": 68,
+            "ratio": 1.67,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "macquarie logo"
+          },
+          {
+            "kind": "img",
+            "src": "origin-min-2025.png",
+            "w": 113,
+            "h": 68,
+            "ratio": 1.67,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "origin logo"
+          },
+          {
+            "kind": "img",
+            "src": "commbank-min.png",
+            "w": 113,
+            "h": 68,
+            "ratio": 1.67,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "commonwealth-bank logo"
+          },
+          {
+            "kind": "img",
+            "src": "TEST.png",
+            "w": 636,
+            "h": 636,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "illustration-or-photo",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "meercat-arm.png",
+            "w": 292,
+            "h": 135,
+            "ratio": 2.17,
+            "aboveFold": false,
+            "cls": "illustration-or-photo",
+            "alt": "Meerkat Arm"
+          },
+          {
+            "kind": "img",
+            "src": "product_review.webp",
+            "w": 210,
+            "h": 36,
+            "ratio": 5.83,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "feefo_logo.webp",
+            "w": 149,
+            "h": 36,
+            "ratio": 4.14,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "courier-mail-min.png",
+            "w": 113,
+            "h": 68,
+            "ratio": 1.67,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "9-news-min.png",
+            "w": 113,
+            "h": 68,
+            "ratio": 1.67,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "daily-telegraph-min.png",
+            "w": 113,
+            "h": 68,
+            "ratio": 1.67,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "the-west-australian-min.png",
+            "w": 113,
+            "h": 68,
+            "ratio": 1.67,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "acm-min.png",
+            "w": 113,
+            "h": 68,
+            "ratio": 1.67,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "10-news-min.png",
+            "w": 113,
+            "h": 68,
+            "ratio": 1.67,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "herald-sun-min.png",
+            "w": 113,
+            "h": 68,
+            "ratio": 1.67,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "sunrise-min.png",
+            "w": 113,
+            "h": 68,
+            "ratio": 1.67,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "daily-mail-min.png",
+            "w": 113,
+            "h": 68,
+            "ratio": 1.67,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "abc-min.png",
+            "w": 113,
+            "h": 68,
+            "ratio": 1.67,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "financial-review-min.png",
+            "w": 113,
+            "h": 68,
+            "ratio": 1.67,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "7-news-min.png",
+            "w": 113,
+            "h": 68,
+            "ratio": 1.67,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "newscorp-min.png",
+            "w": 113,
+            "h": 68,
+            "ratio": 1.67,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "abc-news-min.png",
+            "w": 113,
+            "h": 68,
+            "ratio": 1.67,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "app-icon.webp",
+            "w": 64,
+            "h": 64,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "app-google.png",
+            "w": 124,
+            "h": 37,
+            "ratio": 3.38,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "app-apple.png",
+            "w": 124,
+            "h": 37,
+            "ratio": 3.38,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": ""
+          }
+        ],
+        "total": 39,
+        "aboveFold": 5,
+        "belowFold": 34,
+        "byClass": {
+          "logo": 18,
+          "illustration-or-photo": 6,
+          "photography": 1,
+          "icon": 14
+        },
+        "gradientElements": 0
+      },
+      "motion": [
+        {
+          "v": "all|0.2s|ease",
+          "n": 14
+        },
+        {
+          "v": "all|0.35s|ease",
+          "n": 6
+        },
+        {
+          "v": "color|0.4s|ease",
+          "n": 6
+        },
+        {
+          "v": "color, background-color, border-color, box-shadow, border-radius|0.15s, 0.15s, 0.15s, 0.15s, 0.15s|ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease",
+          "n": 4
+        },
+        {
+          "v": "height|0.3s|ease",
+          "n": 1
+        },
+        {
+          "v": "transform|0.15s|linear",
+          "n": 1
+        },
+        {
+          "v": "max-height|0.3s|ease",
+          "n": 1
+        },
+        {
+          "v": "padding-top|0.3s|ease",
+          "n": 1
+        },
+        {
+          "v": "max-height|0.3s|ease-in-out",
+          "n": 1
+        },
+        {
+          "v": "width, transform|0.2s, 1.5s|ease, ease",
+          "n": 1
+        }
+      ],
+      "header": {
+        "at0": {
+          "h": 72,
+          "pos": "fixed",
+          "bg": "rgba(0, 0, 0, 0)",
+          "shadow": "none",
+          "top": 0
+        },
+        "at800": {
+          "h": 72,
+          "pos": "fixed",
+          "bg": "rgba(0, 0, 0, 0)",
+          "shadow": "none",
+          "top": 0
+        },
+        "consentDismissed": null
+      }
+    },
+    "m": {
+      "viewport": {
+        "vw": 390,
+        "vh": 844
+      },
+      "docHeight": 7190,
+      "type": {
+        "combos": [
+          {
+            "family": "Plus Jakarta Sans",
+            "size": 16,
+            "weight": 400,
+            "lineHeight": "24",
+            "letterSpacing": "normal",
+            "count": 19,
+            "sample": "Scroll"
+          },
+          {
+            "family": "Plus Jakarta Sans",
+            "size": 14,
+            "weight": 600,
+            "lineHeight": "16.8",
+            "letterSpacing": "normal",
+            "count": 14,
+            "sample": "Car Insurance"
+          },
+          {
+            "family": "Plus Jakarta Sans",
+            "size": 11,
+            "weight": 400,
+            "lineHeight": "18.7",
+            "letterSpacing": "normal",
+            "count": 9,
+            "sample": "© 2026 Compare The Market. All rights reserved. ACN: 117 323"
+          },
+          {
+            "family": "Plus Jakarta Sans",
+            "size": 16,
+            "weight": 400,
+            "lineHeight": "27.2",
+            "letterSpacing": "normal",
+            "count": 7,
+            "sample": "When you buy through us, our partners pay a commission, whic"
+          },
+          {
+            "family": "Plus Jakarta Sans",
+            "size": 18,
+            "weight": 400,
+            "lineHeight": "30.6",
+            "letterSpacing": "normal",
+            "count": 5,
+            "sample": "Compare the Market helps Australians compare insurance, ener"
+          },
+          {
+            "family": "Plus Jakarta Sans",
+            "size": 28,
+            "weight": 400,
+            "lineHeight": "38.1",
+            "letterSpacing": "normal",
+            "count": 5,
+            "sample": "We compare hundreds of products from a wide range of househo"
+          },
+          {
+            "family": "Plus Jakarta Sans",
+            "size": 18,
+            "weight": 700,
+            "lineHeight": "30.6",
+            "letterSpacing": "normal",
+            "count": 5,
+            "sample": "Let's connect"
+          },
+          {
+            "family": "Plus Jakarta Sans",
+            "size": 28,
+            "weight": 700,
+            "lineHeight": "38.1",
+            "letterSpacing": "normal",
+            "count": 4,
+            "sample": "compare hundreds of products"
+          },
+          {
+            "family": "Plus Jakarta Sans",
+            "size": 18,
+            "weight": 700,
+            "lineHeight": "24.5",
+            "letterSpacing": "normal",
+            "count": 4,
+            "sample": "Insurance"
+          },
+          {
+            "family": "Plus Jakarta Sans",
+            "size": 20,
+            "weight": 800,
+            "lineHeight": "27.2",
+            "letterSpacing": "normal",
+            "count": 3,
+            "sample": "Trusted by Aussies"
+          },
+          {
+            "family": "Plus Jakarta Sans",
+            "size": 34,
+            "weight": 700,
+            "lineHeight": "34",
+            "letterSpacing": "normal",
+            "count": 2,
+            "sample": "AUSTRALIA’S #1FOR COMPARISON"
+          },
+          {
+            "family": "Plus Jakarta Sans",
+            "size": 14,
+            "weight": 700,
+            "lineHeight": "21",
+            "letterSpacing": "normal",
+            "count": 2,
+            "sample": "View all media partners"
+          },
+          {
+            "family": "Plus Jakarta Sans",
+            "size": 12,
+            "weight": 600,
+            "lineHeight": "20.4",
+            "letterSpacing": "normal",
+            "count": 2,
+            "sample": "We do not compare all products or all products from all bran"
+          },
+          {
+            "family": "Plus Jakarta Sans",
+            "size": 34,
+            "weight": 400,
+            "lineHeight": "46.2",
+            "letterSpacing": "normal",
+            "count": 2,
+            "sample": "4.4 / 5"
+          },
+          {
+            "family": "Plus Jakarta Sans",
+            "size": 34,
+            "weight": 700,
+            "lineHeight": "46.2",
+            "letterSpacing": "normal",
+            "count": 2,
+            "sample": "4.4"
+          },
+          {
+            "family": "Plus Jakarta Sans",
+            "size": 14,
+            "weight": 700,
+            "lineHeight": "23.8",
+            "letterSpacing": "normal",
+            "count": 2,
+            "sample": "Based on 3,334 reviews"
+          },
+          {
+            "family": "Plus Jakarta Sans",
+            "size": 12,
+            "weight": 400,
+            "lineHeight": "20.4",
+            "letterSpacing": "normal",
+            "count": 1,
+            "sample": "Average customer rating: 4.5/5"
+          },
+          {
+            "family": "Plus Jakarta Sans",
+            "size": 16,
+            "weight": 700,
+            "lineHeight": "24",
+            "letterSpacing": "normal",
+            "count": 1,
+            "sample": "Compare more"
+          },
+          {
+            "family": "Plus Jakarta Sans",
+            "size": 40,
+            "weight": 800,
+            "lineHeight": "54.4",
+            "letterSpacing": "normal",
+            "count": 1,
+            "sample": "23 million comparisons and counting"
+          },
+          {
+            "family": "Plus Jakarta Sans",
+            "size": 14,
+            "weight": 400,
+            "lineHeight": "23.8",
+            "letterSpacing": "normal",
+            "count": 1,
+            "sample": "Ratings as of 30/06/2026."
+          },
+          {
+            "family": "Plus Jakarta Sans",
+            "size": 16,
+            "weight": 800,
+            "lineHeight": "21.8",
+            "letterSpacing": "normal",
+            "count": 1,
+            "sample": "Download the Simples App"
+          }
+        ],
+        "distinctCombos": 21,
+        "distinctSizes": [
+          11,
+          12,
+          14,
+          16,
+          18,
+          20,
+          28,
+          34,
+          40
+        ],
+        "families": [
+          {
+            "v": "Plus Jakarta Sans",
+            "n": 1
+          }
+        ],
+        "largestHeadlinePx": 28,
+        "largestHeadlineText": "We compare hundreds of products from a wide range of househo",
+        "largestTextPx": 40,
+        "bodySizePx": 16,
+        "bodySizeCount": 7
+      },
+      "colour": {
+        "backgrounds": [
+          {
+            "color": "rgb(252,252,251)",
+            "count": 5,
+            "area": 1253509
+          },
+          {
+            "color": "rgb(15,88,171)",
+            "count": 3,
+            "area": 820330
+          },
+          {
+            "color": "rgb(0,20,100)",
+            "count": 2,
+            "area": 677614
+          },
+          {
+            "color": "rgb(255,255,255)",
+            "count": 23,
+            "area": 500160
+          },
+          {
+            "color": "rgba(236,235,235,0.48)",
+            "count": 18,
+            "area": 167904
+          },
+          {
+            "color": "rgb(233,242,251)",
+            "count": 1,
+            "area": 124873
+          },
+          {
+            "color": "rgba(0,20,100,0.72)",
+            "count": 1,
+            "area": 17160
+          }
+        ],
+        "inks": [
+          {
+            "color": "rgb(255,255,255)",
+            "count": 49,
+            "area": 727983
+          },
+          {
+            "color": "rgb(0,20,100)",
+            "count": 29,
+            "area": 338779
+          },
+          {
+            "color": "rgb(0,20,67)",
+            "count": 7,
+            "area": 124411
+          },
+          {
+            "color": "rgb(15,88,171)",
+            "count": 4,
+            "area": 9197
+          },
+          {
+            "color": "rgb(120,117,115)",
+            "count": 2,
+            "area": 30063
+          },
+          {
+            "color": "rgb(180,212,248)",
+            "count": 1,
+            "area": 11900
+          }
+        ],
+        "accentColours": [
+          {
+            "color": "rgb(15,88,171)",
+            "count": 3,
+            "area": 820330
+          },
+          {
+            "color": "rgb(0,20,100)",
+            "count": 2,
+            "area": 677614
+          },
+          {
+            "color": "rgba(0,20,100,0.72)",
+            "count": 1,
+            "area": 17160
+          }
+        ],
+        "accentAreaPct": 54.03,
+        "paintedAreaPct": 127,
+        "docArea": 2804100
+      },
+      "depth": {
+        "shadows": [
+          {
+            "v": "rgb(180, 212, 248) 8px 8px 0px 0px",
+            "n": 3
+          },
+          {
+            "v": "rgba(0, 0, 0, 0.12) 0px 0px 12px 0px",
+            "n": 1
+          }
+        ],
+        "distinctShadows": 2,
+        "radii": [
+          {
+            "v": "8px",
+            "n": 27
+          },
+          {
+            "v": "50%",
+            "n": 9
+          },
+          {
+            "v": "16px",
+            "n": 7
+          },
+          {
+            "v": "32px",
+            "n": 5
+          },
+          {
+            "v": "5px",
+            "n": 1
+          },
+          {
+            "v": "40px",
+            "n": 1
+          }
+        ],
+        "distinctRadii": 6,
+        "borders": [
+          {
+            "v": "1px/solid",
+            "n": 18
+          },
+          {
+            "v": "0px/none",
+            "n": 7
+          },
+          {
+            "v": "2px/solid",
+            "n": 1
+          }
+        ]
+      },
+      "layout": {
+        "containers": [
+          {
+            "maxWidth": 856,
+            "n": 3
+          }
+        ],
+        "gutter": 20,
+        "sections": [
+          {
+            "i": 0,
+            "tag": "SECTION",
+            "cls": "theme-blue   block block-homepage-banner",
+            "height": 838,
+            "paddingTop": 0,
+            "paddingBottom": 0,
+            "bg": "rgb(15,88,171)",
+            "heading": "AUSTRALIA’S #1FOR COMPARISON",
+            "imgs": 4
+          },
+          {
+            "i": 1,
+            "tag": "SECTION",
+            "cls": "block block-product-grid position-relati",
+            "height": 417,
+            "paddingTop": 30,
+            "paddingBottom": 30,
+            "bg": "rgba(0,0,0,0)",
+            "heading": null,
+            "imgs": 0
+          },
+          {
+            "i": 2,
+            "tag": "SECTION",
+            "cls": "theme-cream-white pt-40 pt-lg-80 pe-0 pb",
+            "height": 800,
+            "paddingTop": 40,
+            "paddingBottom": 40,
+            "bg": "rgb(252,252,251)",
+            "heading": "We compare hundreds of products from a wide range of",
+            "imgs": 13
+          },
+          {
+            "i": 3,
+            "tag": "SECTION",
+            "cls": "theme-cream-white pt-40 pt-lg-80 pe-0 pb",
+            "height": 1106,
+            "paddingTop": 40,
+            "paddingBottom": 40,
+            "bg": "rgb(252,252,251)",
+            "heading": "It pays to compare",
+            "imgs": 1
+          },
+          {
+            "i": 4,
+            "tag": "SECTION",
+            "cls": "theme-cream-white pt-40 pt-lg-80 pe-0 pb",
+            "height": 605,
+            "paddingTop": 40,
+            "paddingBottom": 40,
+            "bg": "rgb(252,252,251)",
+            "heading": "Why compare with us?",
+            "imgs": 0
+          },
+          {
+            "i": 5,
+            "tag": "SECTION",
+            "cls": "theme-blue   block block-customer-feedba",
+            "height": 1124,
+            "paddingTop": 0,
+            "paddingBottom": 0,
+            "bg": "rgb(15,88,171)",
+            "heading": "We believe the best decisions start with a compariso",
+            "imgs": 3
+          },
+          {
+            "i": 6,
+            "tag": "SECTION",
+            "cls": "theme-cream-white pt-40 pt-lg-80 pe-0 pb",
+            "height": 631,
+            "paddingTop": 40,
+            "paddingBottom": 40,
+            "bg": "rgb(252,252,251)",
+            "heading": "As seen in the media",
+            "imgs": 14
+          }
+        ],
+        "grids": []
+      },
+      "imagery": {
+        "all": [
+          {
+            "kind": "img",
+            "src": "svgTest.svg",
+            "w": 149,
+            "h": 40,
+            "ratio": 3.73,
+            "aboveFold": true,
+            "cls": "logo",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "number-1-comparison-mobile.png",
+            "w": 390,
+            "h": 838,
+            "ratio": 0.47,
+            "aboveFold": true,
+            "cls": "illustration-or-photo",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "product-review-light-1.png",
+            "w": 125,
+            "h": 32,
+            "ratio": 3.91,
+            "aboveFold": true,
+            "cls": "illustration-or-photo",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "feefo-light-2026.png",
+            "w": 125,
+            "h": 32,
+            "ratio": 3.91,
+            "aboveFold": true,
+            "cls": "illustration-or-photo",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "number1-kochie.png",
+            "w": 350,
+            "h": 297,
+            "ratio": 1.18,
+            "aboveFold": true,
+            "cls": "illustration-or-photo",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "budget-direct-min-2025.png",
+            "w": 86,
+            "h": 52,
+            "ratio": 1.67,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "budget-direct logo"
+          },
+          {
+            "kind": "img",
+            "src": "macquarie-min.png",
+            "w": 86,
+            "h": 52,
+            "ratio": 1.67,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "macquarie logo"
+          },
+          {
+            "kind": "img",
+            "src": "nab-min.png",
+            "w": 86,
+            "h": 52,
+            "ratio": 1.67,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "nab logo"
+          },
+          {
+            "kind": "img",
+            "src": "bupa-min.png",
+            "w": 86,
+            "h": 52,
+            "ratio": 1.67,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "bupa logo"
+          },
+          {
+            "kind": "img",
+            "src": "ing-min.png",
+            "w": 86,
+            "h": 52,
+            "ratio": 1.67,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "ing logo"
+          },
+          {
+            "kind": "img",
+            "src": "anz-min.png",
+            "w": 86,
+            "h": 52,
+            "ratio": 1.67,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "anz logo"
+          },
+          {
+            "kind": "img",
+            "src": "everyday-insurance-min.png",
+            "w": 86,
+            "h": 52,
+            "ratio": 1.67,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "everyday-insurance logo"
+          },
+          {
+            "kind": "img",
+            "src": "nib-min.png",
+            "w": 86,
+            "h": 52,
+            "ratio": 1.67,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "nib logo"
+          },
+          {
+            "kind": "img",
+            "src": "agl-min.png",
+            "w": 86,
+            "h": 52,
+            "ratio": 1.67,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "agl logo"
+          },
+          {
+            "kind": "img",
+            "src": "TEST.png",
+            "w": 350,
+            "h": 350,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "illustration-or-photo",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "product_review.webp",
+            "w": 210,
+            "h": 36,
+            "ratio": 5.83,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "feefo_logo.webp",
+            "w": 149,
+            "h": 36,
+            "ratio": 4.14,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "9-news-min.png",
+            "w": 86,
+            "h": 52,
+            "ratio": 1.67,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "herald-sun-min.png",
+            "w": 86,
+            "h": 52,
+            "ratio": 1.67,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "financial-review-min.png",
+            "w": 86,
+            "h": 52,
+            "ratio": 1.67,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "abc-news-min.png",
+            "w": 86,
+            "h": 52,
+            "ratio": 1.67,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "10-news-min.png",
+            "w": 86,
+            "h": 52,
+            "ratio": 1.67,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "acm-min.png",
+            "w": 86,
+            "h": 52,
+            "ratio": 1.67,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "abc-min.png",
+            "w": 86,
+            "h": 52,
+            "ratio": 1.67,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "the-west-australian-min.png",
+            "w": 86,
+            "h": 52,
+            "ratio": 1.67,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "7-news-min.png",
+            "w": 86,
+            "h": 52,
+            "ratio": 1.67,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "app-icon.webp",
+            "w": 64,
+            "h": 64,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "app-google.png",
+            "w": 124,
+            "h": 37,
+            "ratio": 3.38,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "app-apple.png",
+            "w": 124,
+            "h": 37,
+            "ratio": 3.38,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": ""
+          }
+        ],
+        "total": 29,
+        "aboveFold": 5,
+        "belowFold": 24,
+        "byClass": {
+          "logo": 14,
+          "illustration-or-photo": 5,
+          "photography": 1,
+          "icon": 9
+        },
+        "gradientElements": 0
+      },
+      "motion": [
+        {
+          "v": "all|0.2s|ease",
+          "n": 14
+        },
+        {
+          "v": "color, background-color, border-color, box-shadow, border-radius|0.15s, 0.15s, 0.15s, 0.15s, 0.15s|ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease",
+          "n": 4
+        },
+        {
+          "v": "height|0.3s|ease",
+          "n": 1
+        },
+        {
+          "v": "transform|0.2s|ease-in",
+          "n": 1
+        },
+        {
+          "v": "all|0.2s|ease-in",
+          "n": 1
+        },
+        {
+          "v": "max-height|0.3s|ease",
+          "n": 1
+        },
+        {
+          "v": "padding-top|0.3s|ease",
+          "n": 1
+        },
+        {
+          "v": "all|0.4s|ease",
+          "n": 1
+        },
+        {
+          "v": "color, background-color, border-color, box-shadow|0.15s, 0.15s, 0.15s, 0.15s|ease-in-out, ease-in-out, ease-in-out, ease-in-out",
+          "n": 1
+        },
+        {
+          "v": "all|0.3s|ease-in-out",
+          "n": 1
+        },
+        {
+          "v": "transform|0.3s|ease",
+          "n": 1
+        }
+      ],
+      "header": {
+        "at0": {
+          "h": 72,
+          "pos": "fixed",
+          "bg": "rgba(0, 0, 0, 0)",
+          "shadow": "none",
+          "top": 0
+        },
+        "at800": {
+          "h": 72,
+          "pos": "fixed",
+          "bg": "rgba(0, 0, 0, 0)",
+          "shadow": "none",
+          "top": 0
+        },
+        "consentDismissed": null
+      }
+    }
+  }
+}

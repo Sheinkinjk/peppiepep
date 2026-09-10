@@ -1,0 +1,267 @@
+{
+  "site": "finder",
+  "url": "https://www.finder.com.au/",
+  "header": {
+    "at0": {
+      "h": 68,
+      "top": 0,
+      "position": "static",
+      "bg": "rgba(0, 0, 0, 0)",
+      "shadow": "none",
+      "borderBottom": "0px rgb(35, 35, 32)",
+      "backdrop": "none"
+    },
+    "at800": {
+      "h": 68,
+      "top": -800,
+      "position": "static",
+      "bg": "rgba(0, 0, 0, 0)",
+      "shadow": "none",
+      "borderBottom": "0px rgb(35, 35, 32)",
+      "backdrop": "none"
+    },
+    "changed": true
+  },
+  "motion": [
+    {
+      "v": "transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1)",
+      "n": 867
+    },
+    {
+      "v": "transition color, -webkit-text-decoration, text-decoration, text-decoration-thickness, outline 0.1s, 0.1s, 0.1s, 0.1s, 0.1s ease, ease, ease, ease, ease",
+      "n": 156
+    },
+    {
+      "v": "transition opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1)",
+      "n": 116
+    },
+    {
+      "v": "transition max-height 0.2s ease",
+      "n": 58
+    },
+    {
+      "v": "transition box-shadow, -webkit-box-shadow 0.3s, 0.3s ease-in-out, ease-in-out",
+      "n": 23
+    },
+    {
+      "v": "transition box-shadow, filter 0.3s, 0.3s ease, ease",
+      "n": 16
+    },
+    {
+      "v": "transition background-color 0.2s ease",
+      "n": 16
+    },
+    {
+      "v": "transition all 0.2s ease",
+      "n": 6
+    },
+    {
+      "v": "transition color, text-decoration-color 0.15s, 0.15s ease, ease",
+      "n": 4
+    },
+    {
+      "v": "animation rewards-card-flame-flicker 1.5s ease-in-out",
+      "n": 3
+    },
+    {
+      "v": "transition background-color 0.15s ease",
+      "n": 3
+    },
+    {
+      "v": "animation finder-assistant-fab-sparkle 2.4s ease-in-out",
+      "n": 3
+    }
+  ],
+  "ctas": [
+    {
+      "default": {
+        "text": "Log in",
+        "h": 34,
+        "w": 82,
+        "padX": "14px/14px",
+        "radius": "8px",
+        "fontSize": "16px",
+        "fontWeight": "800",
+        "bg": "rgb(10, 65, 238)",
+        "color": "rgb(255, 255, 255)",
+        "border": "0px rgb(255, 255, 255)",
+        "shadow": "none",
+        "transition": "0.1s, 0.1s, 0.1s, 0.1s, 0.1s color, -webkit-text-decoration, text-decoration, text-decoration-thickness, outline",
+        "selector": "a.h-\\[34px\\].font-extrabold"
+      },
+      "hover": null,
+      "focus": null
+    },
+    {
+      "default": {
+        "text": "All rewards (16)",
+        "h": 32,
+        "w": 129,
+        "padX": "16px/16px",
+        "radius": "24px",
+        "fontSize": "14px",
+        "fontWeight": "500",
+        "bg": "rgb(35, 35, 32)",
+        "color": "rgb(255, 255, 255)",
+        "border": "1px rgb(35, 35, 32)",
+        "shadow": "none",
+        "transition": "0.2s all",
+        "selector": "button.rewards-banner-card-list__filter-pill.rewards-banner-card-list__filter-pill--active"
+      },
+      "hover": {
+        "bg": "rgb(51, 51, 51)",
+        "color": "rgb(255, 255, 255)",
+        "shadow": "none",
+        "transform": "none",
+        "h": 32,
+        "textDecoration": "none",
+        "border": "rgb(35, 35, 32)"
+      },
+      "focus": {
+        "outline": "1px auto rgb(0, 95, 204)",
+        "offset": "0px",
+        "shadow": "none"
+      }
+    }
+  ],
+  "cardHover": {
+    "before": {
+      "shadow": "none",
+      "transform": "none",
+      "border": "rgb(35, 35, 32)",
+      "bg": "rgb(255, 255, 255)",
+      "top": 260
+    },
+    "after": {
+      "shadow": "none",
+      "transform": "none",
+      "border": "rgb(35, 35, 32)",
+      "bg": "rgb(255, 255, 255)",
+      "top": 260
+    },
+    "changed": false
+  },
+  "keyboard": [
+    {
+      "tag": "BUTTON",
+      "text": "Internet plans (5)",
+      "outline": "0px auto",
+      "outlineColor": "rgb(35, 35, 32)",
+      "offset": "0px",
+      "shadow": "no"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Mobile plans (5)",
+      "outline": "0px auto",
+      "outlineColor": "rgb(35, 35, 32)",
+      "offset": "0px",
+      "shadow": "no"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Share trading (4)",
+      "outline": "0px auto",
+      "outlineColor": "rgb(35, 35, 32)",
+      "offset": "0px",
+      "shadow": "no"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Energy (1)",
+      "outline": "0px auto",
+      "outlineColor": "rgb(35, 35, 32)",
+      "offset": "0px",
+      "shadow": "no"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Home loans (1)",
+      "outline": "0px auto",
+      "outlineColor": "rgb(35, 35, 32)",
+      "offset": "0px",
+      "shadow": "no"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Refer for $25",
+      "outline": "1px auto",
+      "outlineColor": "rgb(0, 95, 204)",
+      "offset": "0px",
+      "shadow": "no"
+    },
+    {
+      "tag": "A",
+      "text": "Get UP TO $150 with AGL",
+      "outline": "0px none",
+      "outlineColor": "rgb(35, 35, 32)",
+      "offset": "2px",
+      "shadow": "no"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Refer for $50",
+      "outline": "1px auto",
+      "outlineColor": "rgb(0, 95, 204)",
+      "offset": "0px",
+      "shadow": "no"
+    },
+    {
+      "tag": "A",
+      "text": "Get $1,000 with Unloan",
+      "outline": "0px none",
+      "outlineColor": "rgb(35, 35, 32)",
+      "offset": "2px",
+      "shadow": "no"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Refer for $25",
+      "outline": "1px auto",
+      "outlineColor": "rgb(0, 95, 204)",
+      "offset": "0px",
+      "shadow": "no"
+    },
+    {
+      "tag": "A",
+      "text": "Get $50 with AGL",
+      "outline": "0px none",
+      "outlineColor": "rgb(35, 35, 32)",
+      "offset": "2px",
+      "shadow": "no"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Refer for $25",
+      "outline": "1px auto",
+      "outlineColor": "rgb(0, 95, 204)",
+      "offset": "0px",
+      "shadow": "no"
+    }
+  ],
+  "asks": {
+    "formsAboveFold": 0,
+    "inputsAboveFold": [
+      {
+        "type": "text",
+        "name": null,
+        "placeholder": "Tell us why (optional)",
+        "label": null
+      },
+      {
+        "type": "text",
+        "name": null,
+        "placeholder": null,
+        "label": null
+      },
+      {
+        "type": "text",
+        "name": "feedback-text",
+        "placeholder": "Tell us why (optional)",
+        "label": null
+      }
+    ],
+    "totalInputs": 3,
+    "hasEmailGate": false
+  }
+}

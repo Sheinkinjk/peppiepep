@@ -1,0 +1,2415 @@
+{
+  "site": "finder",
+  "url": "https://www.finder.com.au/",
+  "capturedAt": "2026-09-10T08:41:17.630Z",
+  "breakpoints": {
+    "d": {
+      "viewport": {
+        "vw": 1440,
+        "vh": 900
+      },
+      "docHeight": 6659,
+      "type": {
+        "combos": [
+          {
+            "family": "Modern Era",
+            "size": 12,
+            "weight": 400,
+            "lineHeight": "18",
+            "letterSpacing": "normal",
+            "count": 32,
+            "sample": "Electricity & Gas"
+          },
+          {
+            "family": "Modern Era",
+            "size": 16,
+            "weight": 800,
+            "lineHeight": "21",
+            "letterSpacing": "normal",
+            "count": 23,
+            "sample": "Share trading"
+          },
+          {
+            "family": "Modern Era",
+            "size": 14,
+            "weight": 400,
+            "lineHeight": "21.8",
+            "letterSpacing": "normal",
+            "count": 21,
+            "sample": "Instagram"
+          },
+          {
+            "family": "Modern Era",
+            "size": 10,
+            "weight": 900,
+            "lineHeight": "15.6",
+            "letterSpacing": "normal",
+            "count": 16,
+            "sample": "$1,000"
+          },
+          {
+            "family": "Modern Era",
+            "size": 12,
+            "weight": 400,
+            "lineHeight": "16",
+            "letterSpacing": "normal",
+            "count": 16,
+            "sample": "Refer for $50"
+          },
+          {
+            "family": "Modern Era",
+            "size": 14,
+            "weight": 800,
+            "lineHeight": "18",
+            "letterSpacing": "normal",
+            "count": 16,
+            "sample": "Get UP TO $150 with AGL"
+          },
+          {
+            "family": "Modern Era",
+            "size": 16,
+            "weight": 400,
+            "lineHeight": "24",
+            "letterSpacing": "normal",
+            "count": 16,
+            "sample": "\"Finder is easy to use, customer friendly, and provides accu"
+          },
+          {
+            "family": "Modern Era",
+            "size": 16,
+            "weight": 700,
+            "lineHeight": "20",
+            "letterSpacing": "normal",
+            "count": 16,
+            "sample": "Angela"
+          },
+          {
+            "family": "Modern Era",
+            "size": 16,
+            "weight": 900,
+            "lineHeight": "16",
+            "letterSpacing": "-0.16px",
+            "count": 15,
+            "sample": "$1,000 REWARD"
+          },
+          {
+            "family": "Modern Era",
+            "size": 10,
+            "weight": 500,
+            "lineHeight": "15",
+            "letterSpacing": "normal",
+            "count": 11,
+            "sample": "Insurance"
+          },
+          {
+            "family": "Modern Era",
+            "size": 14,
+            "weight": 400,
+            "lineHeight": "20",
+            "letterSpacing": "normal",
+            "count": 11,
+            "sample": "© 2026 Hive Empire Pty Ltd."
+          },
+          {
+            "family": "Modern Era",
+            "size": 18,
+            "weight": 500,
+            "lineHeight": "27",
+            "letterSpacing": "normal",
+            "count": 9,
+            "sample": "how we make money"
+          },
+          {
+            "family": "Modern Era",
+            "size": 14,
+            "weight": 500,
+            "lineHeight": "21.8",
+            "letterSpacing": "normal",
+            "count": 8,
+            "sample": "by Sarah Megginson"
+          },
+          {
+            "family": "Modern Era",
+            "size": 16,
+            "weight": 400,
+            "lineHeight": "20",
+            "letterSpacing": "-0.016px",
+            "count": 6,
+            "sample": "RBA rates"
+          },
+          {
+            "family": "Modern Era",
+            "size": 12,
+            "weight": 500,
+            "lineHeight": "21",
+            "letterSpacing": "normal",
+            "count": 6,
+            "sample": "Up to $1,000 rewards"
+          },
+          {
+            "family": "Modern Era",
+            "size": 12,
+            "weight": 900,
+            "lineHeight": "21",
+            "letterSpacing": "normal",
+            "count": 6,
+            "sample": "$1,000"
+          },
+          {
+            "family": "Modern Era",
+            "size": 14,
+            "weight": 500,
+            "lineHeight": "normal",
+            "letterSpacing": "normal",
+            "count": 6,
+            "sample": "Internet plans (5)"
+          },
+          {
+            "family": "Modern Era",
+            "size": 20,
+            "weight": 800,
+            "lineHeight": "28",
+            "letterSpacing": "normal",
+            "count": 5,
+            "sample": "Investing"
+          },
+          {
+            "family": "Modern Era",
+            "size": 18,
+            "weight": 400,
+            "lineHeight": "28",
+            "letterSpacing": "normal",
+            "count": 5,
+            "sample": "Check out all of your reviews of us at REVIEWS.io"
+          },
+          {
+            "family": "Modern Era",
+            "size": 18,
+            "weight": 400,
+            "lineHeight": "27",
+            "letterSpacing": "normal",
+            "count": 5,
+            "sample": "You don't pay more when you compare through us - plus you ca"
+          },
+          {
+            "family": "Modern Era",
+            "size": 17,
+            "weight": 700,
+            "lineHeight": "26.5",
+            "letterSpacing": "normal",
+            "count": 4,
+            "sample": "TRAVEL INSURANCE"
+          },
+          {
+            "family": "Modern Era",
+            "size": 18,
+            "weight": 500,
+            "lineHeight": "25.2",
+            "letterSpacing": "normal",
+            "count": 4,
+            "sample": "OurMoneyMarket Unsecured Low-Rate Personal Loan ($20,000-$10"
+          },
+          {
+            "family": "Modern Era",
+            "size": 18,
+            "weight": 400,
+            "lineHeight": "25.2",
+            "letterSpacing": "normal",
+            "count": 4,
+            "sample": "Save with 0% p.a. for the first 18 months on balance transfe"
+          },
+          {
+            "family": "Modern Era",
+            "size": 16,
+            "weight": 800,
+            "lineHeight": "24",
+            "letterSpacing": "normal",
+            "count": 4,
+            "sample": "GO TO SITE"
+          },
+          {
+            "family": "Modern Era",
+            "size": 11,
+            "weight": 400,
+            "lineHeight": "15.4",
+            "letterSpacing": "normal",
+            "count": 4,
+            "sample": "T&Cs apply"
+          },
+          {
+            "family": "Modern Era",
+            "size": 12,
+            "weight": 800,
+            "lineHeight": "18.7",
+            "letterSpacing": "normal",
+            "count": 4,
+            "sample": "News"
+          },
+          {
+            "family": "Modern Era",
+            "size": 18.4,
+            "weight": 800,
+            "lineHeight": "28",
+            "letterSpacing": "normal",
+            "count": 4,
+            "sample": "Apple Watch Series 12 and Ultra 4: New health sensor, a read"
+          },
+          {
+            "family": "Modern Era",
+            "size": 16,
+            "weight": 700,
+            "lineHeight": "24.9",
+            "letterSpacing": "normal",
+            "count": 4,
+            "sample": "We compare"
+          },
+          {
+            "family": "Modern Era",
+            "size": 12,
+            "weight": 500,
+            "lineHeight": "16",
+            "letterSpacing": "-0.09px",
+            "count": 4,
+            "sample": "Financial Services Guide"
+          },
+          {
+            "family": "Modern Era",
+            "size": 10,
+            "weight": 700,
+            "lineHeight": "18",
+            "letterSpacing": "0.2px",
+            "count": 3,
+            "sample": "Popular"
+          },
+          {
+            "family": "Modern Era",
+            "size": 36,
+            "weight": 800,
+            "lineHeight": "45",
+            "letterSpacing": "-0.54px",
+            "count": 3,
+            "sample": "Don't just take our word for it"
+          },
+          {
+            "family": "Modern Era",
+            "size": 24,
+            "weight": 800,
+            "lineHeight": "30",
+            "letterSpacing": "0.12px",
+            "count": 3,
+            "sample": "We do the work for you"
+          },
+          {
+            "family": "Modern Era",
+            "size": 60,
+            "weight": 800,
+            "lineHeight": "66",
+            "letterSpacing": "-1.8px",
+            "count": 2,
+            "sample": "Find a better deal for you"
+          },
+          {
+            "family": "Modern Era",
+            "size": 24,
+            "weight": 800,
+            "lineHeight": "32",
+            "letterSpacing": "normal",
+            "count": 2,
+            "sample": "Members have claimed"
+          },
+          {
+            "family": "Modern Era",
+            "size": 30,
+            "weight": 800,
+            "lineHeight": "46.7",
+            "letterSpacing": "normal",
+            "count": 2,
+            "sample": "2 million"
+          },
+          {
+            "family": "Modern Era",
+            "size": 14,
+            "weight": 400,
+            "lineHeight": "16",
+            "letterSpacing": "-0.09px",
+            "count": 2,
+            "sample": "Hive Empire Pty Ltd (trading as 'finder.com.au') is proudly "
+          },
+          {
+            "family": "Modern Era",
+            "size": 12,
+            "weight": 400,
+            "lineHeight": "16",
+            "letterSpacing": "-0.09px",
+            "count": 2,
+            "sample": "Finder is an information service that allows you to compare "
+          },
+          {
+            "family": "Modern Era",
+            "size": 12,
+            "weight": 700,
+            "lineHeight": "16",
+            "letterSpacing": "-0.09px",
+            "count": 2,
+            "sample": "CAR"
+          },
+          {
+            "family": "Modern Era",
+            "size": 14,
+            "weight": 800,
+            "lineHeight": "20",
+            "letterSpacing": "normal",
+            "count": 1,
+            "sample": "$2,945"
+          },
+          {
+            "family": "ui-sans-serif",
+            "size": 16,
+            "weight": 800,
+            "lineHeight": "24.9",
+            "letterSpacing": "normal",
+            "count": 1,
+            "sample": "Log in"
+          }
+        ],
+        "distinctCombos": 54,
+        "distinctSizes": [
+          10,
+          11,
+          12,
+          14,
+          16,
+          17,
+          18,
+          18.4,
+          20,
+          24,
+          26,
+          30,
+          36,
+          60
+        ],
+        "families": [
+          {
+            "v": "Modern Era",
+            "n": 1
+          },
+          {
+            "v": "ui-sans-serif",
+            "n": 1
+          },
+          {
+            "v": "Finder Front",
+            "n": 1
+          }
+        ],
+        "largestHeadlinePx": 60,
+        "largestHeadlineText": "Find a better deal for you",
+        "largestTextPx": 60,
+        "bodySizePx": 18,
+        "bodySizeCount": 19
+      },
+      "colour": {
+        "backgrounds": [
+          {
+            "color": "rgb(255,255,255)",
+            "count": 58,
+            "area": 1267981
+          },
+          {
+            "color": "rgb(29,83,255)",
+            "count": 6,
+            "area": 1261558
+          },
+          {
+            "color": "rgb(245,244,239)",
+            "count": 32,
+            "area": 1000016
+          },
+          {
+            "color": "rgb(35,32,33)",
+            "count": 1,
+            "area": 893270
+          },
+          {
+            "color": "rgb(9,38,115)",
+            "count": 1,
+            "area": 203689
+          },
+          {
+            "color": "rgb(34,33,28)",
+            "count": 1,
+            "area": 13970
+          },
+          {
+            "color": "rgb(0,0,0)",
+            "count": 1,
+            "area": 10417
+          },
+          {
+            "color": "rgb(35,35,32)",
+            "count": 2,
+            "area": 7104
+          },
+          {
+            "color": "rgb(10,65,238)",
+            "count": 2,
+            "area": 4092
+          },
+          {
+            "color": "rgb(255,243,224)",
+            "count": 3,
+            "area": 3713
+          },
+          {
+            "color": "rgb(230,229,224)",
+            "count": 1,
+            "area": 2856
+          },
+          {
+            "color": "rgb(0,178,255)",
+            "count": 4,
+            "area": 2304
+          },
+          {
+            "color": "rgb(136,136,136)",
+            "count": 1,
+            "area": 324
+          },
+          {
+            "color": "rgb(116,115,110)",
+            "count": 1,
+            "area": 12
+          }
+        ],
+        "inks": [
+          {
+            "color": "rgb(35,35,32)",
+            "count": 152,
+            "area": 979081
+          },
+          {
+            "color": "rgb(255,255,255)",
+            "count": 65,
+            "area": 436175
+          },
+          {
+            "color": "rgb(65,64,59)",
+            "count": 35,
+            "area": 139826
+          },
+          {
+            "color": "rgb(9,38,115)",
+            "count": 28,
+            "area": 46246
+          },
+          {
+            "color": "rgb(29,83,255)",
+            "count": 13,
+            "area": 94750
+          },
+          {
+            "color": "rgb(35,32,33)",
+            "count": 11,
+            "area": 5635
+          },
+          {
+            "color": "rgb(116,115,110)",
+            "count": 10,
+            "area": 54165
+          },
+          {
+            "color": "rgb(0,0,0)",
+            "count": 4,
+            "area": 9645
+          },
+          {
+            "color": "rgb(181,48,0)",
+            "count": 3,
+            "area": 3713
+          },
+          {
+            "color": "rgb(17,17,17)",
+            "count": 1,
+            "area": 13037
+          }
+        ],
+        "accentColours": [
+          {
+            "color": "rgb(29,83,255)",
+            "count": 6,
+            "area": 1261558
+          },
+          {
+            "color": "rgb(9,38,115)",
+            "count": 1,
+            "area": 203689
+          },
+          {
+            "color": "rgb(10,65,238)",
+            "count": 2,
+            "area": 4092
+          },
+          {
+            "color": "rgb(255,243,224)",
+            "count": 3,
+            "area": 3713
+          },
+          {
+            "color": "rgb(0,178,255)",
+            "count": 4,
+            "area": 2304
+          }
+        ],
+        "accentAreaPct": 15.39,
+        "paintedAreaPct": 48.7,
+        "docArea": 9588960
+      },
+      "depth": {
+        "shadows": [
+          {
+            "v": "rgba(0, 0, 0, 0.12) 0px 2px 8px 0px",
+            "n": 1
+          },
+          {
+            "v": "rgb(34, 33, 28) 1px 2px 0px 0px",
+            "n": 1
+          },
+          {
+            "v": "rgba(0, 0, 0, 0.3) 0px 10px 20px 0px",
+            "n": 1
+          },
+          {
+            "v": "rgba(0, 0, 0, 0.1) 0px 4px 20px 0px",
+            "n": 1
+          }
+        ],
+        "distinctShadows": 4,
+        "radii": [
+          {
+            "v": "12px",
+            "n": 35
+          },
+          {
+            "v": "8px",
+            "n": 29
+          },
+          {
+            "v": "9999px",
+            "n": 18
+          },
+          {
+            "v": "20px",
+            "n": 17
+          },
+          {
+            "v": "8px 8px 0px 0px",
+            "n": 16
+          },
+          {
+            "v": "12px 12px 0px 0px",
+            "n": 16
+          },
+          {
+            "v": "0px 0px 12px 12px",
+            "n": 16
+          },
+          {
+            "v": "4px",
+            "n": 8
+          },
+          {
+            "v": "4px 20px 20px",
+            "n": 6
+          },
+          {
+            "v": "24px",
+            "n": 6
+          },
+          {
+            "v": "10px",
+            "n": 5
+          },
+          {
+            "v": "16px",
+            "n": 5
+          }
+        ],
+        "distinctRadii": 16,
+        "borders": [
+          {
+            "v": "0px/none",
+            "n": 46
+          },
+          {
+            "v": "1px/solid",
+            "n": 38
+          },
+          {
+            "v": "2px/solid",
+            "n": 32
+          }
+        ]
+      },
+      "layout": {
+        "containers": [
+          {
+            "maxWidth": 1160,
+            "n": 7
+          },
+          {
+            "maxWidth": 650,
+            "n": 1
+          },
+          {
+            "maxWidth": 800,
+            "n": 1
+          },
+          {
+            "maxWidth": 835,
+            "n": 1
+          },
+          {
+            "maxWidth": 1200,
+            "n": 1
+          }
+        ],
+        "gutter": 73,
+        "sections": [
+          {
+            "i": 0,
+            "tag": "DIV",
+            "cls": "f1-main-right-content f1-main-right-cont",
+            "height": 6659,
+            "paddingTop": 0,
+            "paddingBottom": 0,
+            "bg": "rgba(0,0,0,0)",
+            "heading": "Find a better deal for you",
+            "imgs": 39
+          },
+          {
+            "i": 1,
+            "tag": "BUTTON",
+            "cls": "finder-assistant finder-assistant-fab",
+            "height": 76,
+            "paddingTop": 0,
+            "paddingBottom": 0,
+            "bg": "rgba(0,0,0,0)",
+            "heading": null,
+            "imgs": 0
+          },
+          {
+            "i": 2,
+            "tag": "DIV",
+            "cls": "finder-assistant finder-assistant-toolti",
+            "height": 53,
+            "paddingTop": 0,
+            "paddingBottom": 0,
+            "bg": "rgba(0,0,0,0)",
+            "heading": null,
+            "imgs": 0
+          },
+          {
+            "i": 3,
+            "tag": "DIV",
+            "cls": "gn-slideout__backdrop",
+            "height": 900,
+            "paddingTop": 0,
+            "paddingBottom": 0,
+            "bg": "rgba(0,0,0,0.4)",
+            "heading": null,
+            "imgs": 0
+          },
+          {
+            "i": 4,
+            "tag": "DIV",
+            "cls": "usefulness-widget collapsed",
+            "height": 110,
+            "paddingTop": 0,
+            "paddingBottom": 0,
+            "bg": "rgba(0,0,0,0)",
+            "heading": null,
+            "imgs": 0
+          },
+          {
+            "i": 5,
+            "tag": "DIV",
+            "cls": "",
+            "height": 900,
+            "paddingTop": 0,
+            "paddingBottom": 0,
+            "bg": "rgba(0,0,0,0)",
+            "heading": null,
+            "imgs": 0
+          }
+        ],
+        "grids": [
+          {
+            "cols": 2,
+            "n": 6
+          },
+          {
+            "cols": 8,
+            "n": 2
+          },
+          {
+            "cols": 5,
+            "n": 1
+          }
+        ]
+      },
+      "imagery": {
+        "all": [
+          {
+            "kind": "img",
+            "src": "Card-Image-3-1.png?fit=1200",
+            "w": 70,
+            "h": 48,
+            "ratio": 1.46,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Finder Rewards card icon"
+          },
+          {
+            "kind": "img",
+            "src": "Finder-Eyes-No-Background.png?fit=1200",
+            "w": 104,
+            "h": 66,
+            "ratio": 1.57,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Finder eyes"
+          },
+          {
+            "kind": "img",
+            "src": "agl-logo",
+            "w": 75,
+            "h": 40,
+            "ratio": 1.88,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "AGL logo"
+          },
+          {
+            "kind": "img",
+            "src": "unloan-logo",
+            "w": 75,
+            "h": 40,
+            "ratio": 1.88,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "Unloan logo"
+          },
+          {
+            "kind": "img",
+            "src": "agl-logo",
+            "w": 75,
+            "h": 40,
+            "ratio": 1.88,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "AGL logo"
+          },
+          {
+            "kind": "img",
+            "src": "rewards-logo-optus",
+            "w": 75,
+            "h": 40,
+            "ratio": 1.88,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "Optus logo"
+          },
+          {
+            "kind": "img",
+            "src": "rewards-logo-optus",
+            "w": 75,
+            "h": 40,
+            "ratio": 1.88,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "Optus logo"
+          },
+          {
+            "kind": "img",
+            "src": "aussie-broadband-logo",
+            "w": 75,
+            "h": 40,
+            "ratio": 1.88,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "Aussie Broadband logo"
+          },
+          {
+            "kind": "img",
+            "src": "dodo-logo",
+            "w": 75,
+            "h": 40,
+            "ratio": 1.88,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "Dodo logo"
+          },
+          {
+            "kind": "img",
+            "src": "tiger-brokers-provider-logo",
+            "w": 75,
+            "h": 40,
+            "ratio": 1.88,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "Tiger Brokers logo"
+          },
+          {
+            "kind": "img",
+            "src": "etoro-provider-logo",
+            "w": 75,
+            "h": 40,
+            "ratio": 1.88,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "eToro logo"
+          },
+          {
+            "kind": "img",
+            "src": "moomoo-provider-logo",
+            "w": 75,
+            "h": 40,
+            "ratio": 1.88,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "Moomoo logo"
+          },
+          {
+            "kind": "img",
+            "src": "webull-logo",
+            "w": 75,
+            "h": 40,
+            "ratio": 1.88,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "Webull logo"
+          },
+          {
+            "kind": "img",
+            "src": "lycamobile-logo",
+            "w": 75,
+            "h": 40,
+            "ratio": 1.88,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "Lyca Mobile logo"
+          },
+          {
+            "kind": "img",
+            "src": "agl-logo",
+            "w": 75,
+            "h": 40,
+            "ratio": 1.88,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "AGL logo"
+          },
+          {
+            "kind": "img",
+            "src": "rewards-logo-optus",
+            "w": 75,
+            "h": 40,
+            "ratio": 1.88,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "Optus logo"
+          },
+          {
+            "kind": "img",
+            "src": "rewards-logo-optus",
+            "w": 75,
+            "h": 40,
+            "ratio": 1.88,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "Optus logo"
+          },
+          {
+            "kind": "img",
+            "src": "dodo-logo",
+            "w": 75,
+            "h": 40,
+            "ratio": 1.88,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "Dodo logo"
+          },
+          {
+            "kind": "img",
+            "src": "66175ed41fbe3.png?fit=1200",
+            "w": 75,
+            "h": 13,
+            "ratio": 5.81,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "InsureandGo Travel Insurance Deal logo"
+          },
+          {
+            "kind": "img",
+            "src": "6070029848ffa.png?fit=1200",
+            "w": 75,
+            "h": 30,
+            "ratio": 2.5,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "OurMoneyMarket Unsecured Low-Rate Person"
+          },
+          {
+            "kind": "img",
+            "src": "677f1086e0b3b.png?fit=1200",
+            "w": 75,
+            "h": 42,
+            "ratio": 1.8,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "Knose Pet Insurance Deal: Get 10% off yo"
+          },
+          {
+            "kind": "img",
+            "src": "601b39c3effcd.jpg?fit=1200",
+            "w": 75,
+            "h": 47,
+            "ratio": 1.6,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "Kogan Money Credit Card - Balance Transf"
+          },
+          {
+            "kind": "img",
+            "src": "EnergyHomePageDog_Supplied_1800x1000.jpg?fit=180",
+            "w": 603,
+            "h": 335,
+            "ratio": 1.8,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "Dog with heater on its back"
+          },
+          {
+            "kind": "img",
+            "src": "AppleWatchSeries12andUltraWatch4_450x250.jpg?fit",
+            "w": 160,
+            "h": 89,
+            "ratio": 1.8,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "Apple Watch Series 12 and Ultra 4: New h"
+          },
+          {
+            "kind": "img",
+            "src": "MariamGabajiF1_Finder_600x600.png?fit=600",
+            "w": 24,
+            "h": 24,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Mariam Gabaji's headshot"
+          },
+          {
+            "kind": "img",
+            "src": "SydneyUnits_450x250.jpg?fit=450",
+            "w": 160,
+            "h": 89,
+            "ratio": 1.8,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "Negative gearing: Are new units a good i"
+          },
+          {
+            "kind": "img",
+            "src": "RichardWhittenBG_Finder_600x600.png?fit=600",
+            "w": 24,
+            "h": 24,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Richard Whitten's headshot"
+          },
+          {
+            "kind": "img",
+            "src": "Suspicious-pet-dog_Unsplash_450x250.jpg?fit=450",
+            "w": 160,
+            "h": 89,
+            "ratio": 1.8,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "Some banks will pay you cash to give you"
+          },
+          {
+            "kind": "img",
+            "src": "SarahMegginsonBG_Finder_600x600.png?fit=600",
+            "w": 24,
+            "h": 24,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Sarah Megginson's headshot"
+          },
+          {
+            "kind": "img",
+            "src": "iPhoneDuo_450x250.jpg?fit=450",
+            "w": 160,
+            "h": 89,
+            "ratio": 1.8,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "iPhone Duo: Apple’s first foldable iPhon"
+          },
+          {
+            "kind": "img",
+            "src": "MariamGabajiF1_Finder_600x600.png?fit=600",
+            "w": 24,
+            "h": 24,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Mariam Gabaji's headshot"
+          },
+          {
+            "kind": "img",
+            "src": "StaffPhotoFinderBot_Finder_1800x1000.jpg?fit=180",
+            "w": 1160,
+            "h": 644,
+            "ratio": 1.8,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "The Finder crew celebrate 20 years of he"
+          },
+          {
+            "kind": "img",
+            "src": "Australia.png",
+            "w": 24,
+            "h": 24,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Australia flag"
+          },
+          {
+            "kind": "img",
+            "src": "australia.webp",
+            "w": 20,
+            "h": 20,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Australian flag"
+          },
+          {
+            "kind": "bg",
+            "src": "svg+xml;charset=utf-8,%3Csvg width=",
+            "w": 118,
+            "h": 70,
+            "ratio": 1.69,
+            "aboveFold": true,
+            "cls": "decorative",
+            "alt": ""
+          },
+          {
+            "kind": "bg",
+            "src": "finder-bot.f6af430209c90422190a1f55bae286b3.svg",
+            "w": 170,
+            "h": 170,
+            "ratio": 1,
+            "aboveFold": true,
+            "cls": "illustration",
+            "alt": ""
+          },
+          {
+            "kind": "bg",
+            "src": "rewards-icon.b39247d51ab5ad73f7b52f80e216629e.sv",
+            "w": 130,
+            "h": 108,
+            "ratio": 1.2,
+            "aboveFold": false,
+            "cls": "illustration",
+            "alt": ""
+          }
+        ],
+        "total": 37,
+        "aboveFold": 2,
+        "belowFold": 35,
+        "byClass": {
+          "icon": 8,
+          "logo": 20,
+          "photography": 6,
+          "decorative": 1,
+          "illustration": 2
+        },
+        "gradientElements": 31
+      },
+      "motion": [
+        {
+          "v": "color, -webkit-text-decoration, text-decoration, text-decoration-thickness, outline|0.1s, 0.1s, 0.1s, 0.1s, 0.1s|ease, ease, ease, ease, ease",
+          "n": 87
+        },
+        {
+          "v": "all|0.15s|cubic-bezier(0.4, 0, 0.2, 1)",
+          "n": 24
+        },
+        {
+          "v": "box-shadow, -webkit-box-shadow|0.3s, 0.3s|ease-in-out, ease-in-out",
+          "n": 23
+        },
+        {
+          "v": "box-shadow, filter|0.3s, 0.3s|ease, ease",
+          "n": 16
+        },
+        {
+          "v": "background-color|0.2s|ease",
+          "n": 16
+        },
+        {
+          "v": "@r|40s|linear",
+          "n": 8
+        },
+        {
+          "v": "@l|20s|linear",
+          "n": 8
+        },
+        {
+          "v": "all|0.2s|ease",
+          "n": 6
+        },
+        {
+          "v": "color, text-decoration-color|0.15s, 0.15s|ease, ease",
+          "n": 4
+        },
+        {
+          "v": "@rewards-card-flame-flicker|1.5s|ease-in-out",
+          "n": 3
+        },
+        {
+          "v": "@finder-assistant-fab-sparkle|2.4s|ease-in-out",
+          "n": 3
+        },
+        {
+          "v": "transform|0.15s|cubic-bezier(0.4, 0, 0.2, 1)",
+          "n": 2
+        },
+        {
+          "v": "transform|0.2s|ease",
+          "n": 2
+        },
+        {
+          "v": "@fb-eyes-open|4s|ease",
+          "n": 2
+        }
+      ],
+      "header": {
+        "at0": {
+          "h": 900,
+          "pos": "fixed",
+          "bg": "rgba(0, 0, 0, 0)",
+          "shadow": "none",
+          "top": 0
+        },
+        "at800": {
+          "h": 900,
+          "pos": "fixed",
+          "bg": "rgba(0, 0, 0, 0)",
+          "shadow": "none",
+          "top": 0
+        },
+        "consentDismissed": null
+      }
+    },
+    "m": {
+      "viewport": {
+        "vw": 390,
+        "vh": 844
+      },
+      "docHeight": 10224,
+      "type": {
+        "combos": [
+          {
+            "family": "Modern Era",
+            "size": 16,
+            "weight": 500,
+            "lineHeight": "24",
+            "letterSpacing": "normal",
+            "count": 144,
+            "sample": "Home"
+          },
+          {
+            "family": "Modern Era",
+            "size": 12,
+            "weight": 400,
+            "lineHeight": "18",
+            "letterSpacing": "normal",
+            "count": 32,
+            "sample": "Electricity & Gas"
+          },
+          {
+            "family": "Modern Era",
+            "size": 14,
+            "weight": 800,
+            "lineHeight": "21",
+            "letterSpacing": "normal",
+            "count": 23,
+            "sample": "Business insurance"
+          },
+          {
+            "family": "Modern Era",
+            "size": 14,
+            "weight": 400,
+            "lineHeight": "21",
+            "letterSpacing": "normal",
+            "count": 21,
+            "sample": "How we make money"
+          },
+          {
+            "family": "Modern Era",
+            "size": 16,
+            "weight": 400,
+            "lineHeight": "24",
+            "letterSpacing": "normal",
+            "count": 20,
+            "sample": "\"I absolutely love and appreciate Finder and all the service"
+          },
+          {
+            "family": "Modern Era",
+            "size": 10,
+            "weight": 900,
+            "lineHeight": "15",
+            "letterSpacing": "normal",
+            "count": 16,
+            "sample": "$1,000"
+          },
+          {
+            "family": "Modern Era",
+            "size": 12,
+            "weight": 400,
+            "lineHeight": "16",
+            "letterSpacing": "normal",
+            "count": 16,
+            "sample": "Refer for $50"
+          },
+          {
+            "family": "Modern Era",
+            "size": 14,
+            "weight": 800,
+            "lineHeight": "18",
+            "letterSpacing": "normal",
+            "count": 16,
+            "sample": "Get $75 with Aussie Broadband"
+          },
+          {
+            "family": "Modern Era",
+            "size": 16,
+            "weight": 700,
+            "lineHeight": "20",
+            "letterSpacing": "normal",
+            "count": 16,
+            "sample": "Angela"
+          },
+          {
+            "family": "Modern Era",
+            "size": 14,
+            "weight": 900,
+            "lineHeight": "16",
+            "letterSpacing": "-0.14px",
+            "count": 15,
+            "sample": "$1,000 REWARD"
+          },
+          {
+            "family": "Modern Era",
+            "size": 18,
+            "weight": 500,
+            "lineHeight": "27",
+            "letterSpacing": "normal",
+            "count": 10,
+            "sample": "Get a better deal for your electricity and gas."
+          },
+          {
+            "family": "Modern Era",
+            "size": 14,
+            "weight": 400,
+            "lineHeight": "20",
+            "letterSpacing": "normal",
+            "count": 10,
+            "sample": "Terms of service"
+          },
+          {
+            "family": "Modern Era",
+            "size": 14,
+            "weight": 500,
+            "lineHeight": "21",
+            "letterSpacing": "normal",
+            "count": 8,
+            "sample": "by Sarah Megginson"
+          },
+          {
+            "family": "Modern Era",
+            "size": 12,
+            "weight": 500,
+            "lineHeight": "21",
+            "letterSpacing": "normal",
+            "count": 6,
+            "sample": "Up to $1,000 rewards"
+          },
+          {
+            "family": "Modern Era",
+            "size": 12,
+            "weight": 900,
+            "lineHeight": "21",
+            "letterSpacing": "normal",
+            "count": 6,
+            "sample": "$1,000"
+          },
+          {
+            "family": "Modern Era",
+            "size": 14,
+            "weight": 500,
+            "lineHeight": "normal",
+            "letterSpacing": "normal",
+            "count": 6,
+            "sample": "Internet plans (5)"
+          },
+          {
+            "family": "Modern Era",
+            "size": 18,
+            "weight": 400,
+            "lineHeight": "27",
+            "letterSpacing": "normal",
+            "count": 6,
+            "sample": "You don't pay more when you compare through us - plus you ca"
+          },
+          {
+            "family": "Modern Era",
+            "size": 18,
+            "weight": 800,
+            "lineHeight": "28",
+            "letterSpacing": "normal",
+            "count": 5,
+            "sample": "Utilities"
+          },
+          {
+            "family": "Modern Era",
+            "size": 17,
+            "weight": 700,
+            "lineHeight": "25.5",
+            "letterSpacing": "normal",
+            "count": 4,
+            "sample": "TRAVEL INSURANCE"
+          },
+          {
+            "family": "Modern Era",
+            "size": 16,
+            "weight": 500,
+            "lineHeight": "22.4",
+            "letterSpacing": "normal",
+            "count": 4,
+            "sample": "OurMoneyMarket Unsecured Low-Rate Personal Loan ($20,000-$10"
+          },
+          {
+            "family": "Modern Era",
+            "size": 16,
+            "weight": 400,
+            "lineHeight": "22.4",
+            "letterSpacing": "normal",
+            "count": 4,
+            "sample": "Save with 0% p.a. for the first 18 months on balance transfe"
+          },
+          {
+            "family": "Modern Era",
+            "size": 16,
+            "weight": 800,
+            "lineHeight": "24",
+            "letterSpacing": "normal",
+            "count": 4,
+            "sample": "GO TO SITE"
+          },
+          {
+            "family": "Modern Era",
+            "size": 11,
+            "weight": 400,
+            "lineHeight": "15.4",
+            "letterSpacing": "normal",
+            "count": 4,
+            "sample": "T&Cs apply"
+          },
+          {
+            "family": "Modern Era",
+            "size": 12,
+            "weight": 800,
+            "lineHeight": "18",
+            "letterSpacing": "normal",
+            "count": 4,
+            "sample": "News"
+          },
+          {
+            "family": "Modern Era",
+            "size": 18.4,
+            "weight": 800,
+            "lineHeight": "28",
+            "letterSpacing": "normal",
+            "count": 4,
+            "sample": "Apple Watch Series 12 and Ultra 4: New health sensor, a read"
+          },
+          {
+            "family": "Modern Era",
+            "size": 16,
+            "weight": 700,
+            "lineHeight": "24",
+            "letterSpacing": "normal",
+            "count": 4,
+            "sample": "We compare"
+          },
+          {
+            "family": "Modern Era",
+            "size": 12,
+            "weight": 500,
+            "lineHeight": "16",
+            "letterSpacing": "-0.09px",
+            "count": 4,
+            "sample": "Credit Guide"
+          },
+          {
+            "family": "Modern Era",
+            "size": 10,
+            "weight": 700,
+            "lineHeight": "18",
+            "letterSpacing": "0.2px",
+            "count": 3,
+            "sample": "Popular"
+          },
+          {
+            "family": "Modern Era",
+            "size": 24,
+            "weight": 800,
+            "lineHeight": "30",
+            "letterSpacing": "0.12px",
+            "count": 3,
+            "sample": "We do the work for you"
+          },
+          {
+            "family": "Modern Era",
+            "size": 42,
+            "weight": 800,
+            "lineHeight": "46.2",
+            "letterSpacing": "-1.26px",
+            "count": 2,
+            "sample": "Find a better deal for you"
+          },
+          {
+            "family": "Modern Era",
+            "size": 20,
+            "weight": 800,
+            "lineHeight": "28",
+            "letterSpacing": "normal",
+            "count": 2,
+            "sample": "Members have claimed"
+          },
+          {
+            "family": "Modern Era",
+            "size": 36,
+            "weight": 800,
+            "lineHeight": "45",
+            "letterSpacing": "-0.54px",
+            "count": 2,
+            "sample": "Don't just take our word for it"
+          },
+          {
+            "family": "Modern Era",
+            "size": 30,
+            "weight": 800,
+            "lineHeight": "45",
+            "letterSpacing": "normal",
+            "count": 2,
+            "sample": "4.7"
+          },
+          {
+            "family": "Modern Era",
+            "size": 14,
+            "weight": 400,
+            "lineHeight": "16",
+            "letterSpacing": "-0.09px",
+            "count": 2,
+            "sample": "We acknowledge Aboriginal and Torres Strait Islander peoples"
+          },
+          {
+            "family": "Modern Era",
+            "size": 12,
+            "weight": 400,
+            "lineHeight": "16",
+            "letterSpacing": "-0.09px",
+            "count": 2,
+            "sample": "Finder is an information service that allows you to compare "
+          },
+          {
+            "family": "Modern Era",
+            "size": 12,
+            "weight": 700,
+            "lineHeight": "16",
+            "letterSpacing": "-0.09px",
+            "count": 2,
+            "sample": "CAR"
+          },
+          {
+            "family": "ui-sans-serif",
+            "size": 16,
+            "weight": 800,
+            "lineHeight": "24",
+            "letterSpacing": "normal",
+            "count": 1,
+            "sample": "Join"
+          },
+          {
+            "family": "Roboto",
+            "size": 14,
+            "weight": 700,
+            "lineHeight": "21",
+            "letterSpacing": "normal",
+            "count": 1,
+            "sample": "Compare"
+          },
+          {
+            "family": "Modern Era",
+            "size": 16,
+            "weight": 800,
+            "lineHeight": "22.5",
+            "letterSpacing": "normal",
+            "count": 1,
+            "sample": "Was this useful?"
+          },
+          {
+            "family": "Modern Era",
+            "size": 36,
+            "weight": 500,
+            "lineHeight": "45",
+            "letterSpacing": "-0.54px",
+            "count": 1,
+            "sample": "Top offers & exclusives"
+          }
+        ],
+        "distinctCombos": 51,
+        "distinctSizes": [
+          10,
+          11,
+          12,
+          14,
+          16,
+          17,
+          18,
+          18.4,
+          20,
+          24,
+          26,
+          30,
+          31.8,
+          36,
+          42
+        ],
+        "families": [
+          {
+            "v": "Modern Era",
+            "n": 1
+          },
+          {
+            "v": "ui-sans-serif",
+            "n": 1
+          },
+          {
+            "v": "Roboto",
+            "n": 1
+          },
+          {
+            "v": "Finder Front",
+            "n": 1
+          }
+        ],
+        "largestHeadlinePx": 42,
+        "largestHeadlineText": "Find a better deal for you",
+        "largestTextPx": 42,
+        "bodySizePx": 16,
+        "bodySizeCount": 23
+      },
+      "colour": {
+        "backgrounds": [
+          {
+            "color": "rgb(255,255,255)",
+            "count": 57,
+            "area": 1304081
+          },
+          {
+            "color": "rgb(245,244,239)",
+            "count": 32,
+            "area": 996027
+          },
+          {
+            "color": "rgb(29,83,255)",
+            "count": 6,
+            "area": 690493
+          },
+          {
+            "color": "rgb(35,32,33)",
+            "count": 1,
+            "area": 584439
+          },
+          {
+            "color": "rgb(9,38,115)",
+            "count": 1,
+            "area": 122216
+          },
+          {
+            "color": "rgb(229,247,255)",
+            "count": 1,
+            "area": 47435
+          },
+          {
+            "color": "rgb(230,229,224)",
+            "count": 1,
+            "area": 12888
+          },
+          {
+            "color": "rgb(0,0,0)",
+            "count": 1,
+            "area": 9348
+          },
+          {
+            "color": "rgb(35,35,32)",
+            "count": 2,
+            "area": 7037
+          },
+          {
+            "color": "rgb(10,65,238)",
+            "count": 3,
+            "area": 3888
+          },
+          {
+            "color": "rgb(255,243,224)",
+            "count": 3,
+            "area": 3713
+          },
+          {
+            "color": "rgb(0,178,255)",
+            "count": 4,
+            "area": 2304
+          }
+        ],
+        "inks": [
+          {
+            "color": "rgb(35,35,32)",
+            "count": 152,
+            "area": 962773
+          },
+          {
+            "color": "rgb(34,33,26)",
+            "count": 144,
+            "area": 1029120
+          },
+          {
+            "color": "rgb(255,255,255)",
+            "count": 61,
+            "area": 408253
+          },
+          {
+            "color": "rgb(65,64,59)",
+            "count": 35,
+            "area": 124286
+          },
+          {
+            "color": "rgb(9,38,115)",
+            "count": 28,
+            "area": 42856
+          },
+          {
+            "color": "rgb(29,83,255)",
+            "count": 13,
+            "area": 83819
+          },
+          {
+            "color": "rgb(116,115,110)",
+            "count": 5,
+            "area": 4289
+          },
+          {
+            "color": "rgb(0,0,0)",
+            "count": 4,
+            "area": 9645
+          },
+          {
+            "color": "rgb(181,48,0)",
+            "count": 3,
+            "area": 3713
+          },
+          {
+            "color": "rgb(34,33,28)",
+            "count": 1,
+            "area": 6975
+          },
+          {
+            "color": "rgb(17,17,17)",
+            "count": 1,
+            "area": 15552
+          }
+        ],
+        "accentColours": [
+          {
+            "color": "rgb(29,83,255)",
+            "count": 6,
+            "area": 690493
+          },
+          {
+            "color": "rgb(9,38,115)",
+            "count": 1,
+            "area": 122216
+          },
+          {
+            "color": "rgb(229,247,255)",
+            "count": 1,
+            "area": 47435
+          },
+          {
+            "color": "rgb(10,65,238)",
+            "count": 3,
+            "area": 3888
+          },
+          {
+            "color": "rgb(255,243,224)",
+            "count": 3,
+            "area": 3713
+          },
+          {
+            "color": "rgb(0,178,255)",
+            "count": 4,
+            "area": 2304
+          }
+        ],
+        "accentAreaPct": 21.82,
+        "paintedAreaPct": 94.9,
+        "docArea": 3987360
+      },
+      "depth": {
+        "shadows": [
+          {
+            "v": "rgb(34, 33, 28) 3px 4px 0px 0px",
+            "n": 2
+          },
+          {
+            "v": "rgb(34, 33, 28) 6px 8px 0px 0px",
+            "n": 1
+          },
+          {
+            "v": "rgba(0, 0, 0, 0.3) 0px 10px 20px 0px",
+            "n": 1
+          },
+          {
+            "v": "rgba(0, 0, 0, 0.1) 0px 4px 20px 0px",
+            "n": 1
+          }
+        ],
+        "distinctShadows": 4,
+        "radii": [
+          {
+            "v": "8px",
+            "n": 161
+          },
+          {
+            "v": "12px",
+            "n": 35
+          },
+          {
+            "v": "8px 8px 0px 0px",
+            "n": 32
+          },
+          {
+            "v": "9999px",
+            "n": 19
+          },
+          {
+            "v": "20px",
+            "n": 17
+          },
+          {
+            "v": "0px 0px 8px 8px",
+            "n": 16
+          },
+          {
+            "v": "4px",
+            "n": 8
+          },
+          {
+            "v": "16px",
+            "n": 6
+          },
+          {
+            "v": "4px 20px 20px",
+            "n": 6
+          },
+          {
+            "v": "24px",
+            "n": 6
+          },
+          {
+            "v": "10px",
+            "n": 4
+          },
+          {
+            "v": "99px",
+            "n": 4
+          }
+        ],
+        "distinctRadii": 14,
+        "borders": [
+          {
+            "v": "0px/none",
+            "n": 46
+          },
+          {
+            "v": "1px/solid",
+            "n": 39
+          },
+          {
+            "v": "2px/solid",
+            "n": 33
+          }
+        ]
+      },
+      "layout": {
+        "containers": [
+          {
+            "maxWidth": 1160,
+            "n": 1
+          },
+          {
+            "maxWidth": 1200,
+            "n": 1
+          }
+        ],
+        "gutter": 12,
+        "sections": [
+          {
+            "i": 0,
+            "tag": "DIV",
+            "cls": "f1-main-right-content f1-main-right-cont",
+            "height": 10224,
+            "paddingTop": 0,
+            "paddingBottom": 0,
+            "bg": "rgba(0,0,0,0)",
+            "heading": "Find a better deal for you",
+            "imgs": 39
+          },
+          {
+            "i": 1,
+            "tag": "DIV",
+            "cls": "gn-slideout__backdrop",
+            "height": 844,
+            "paddingTop": 0,
+            "paddingBottom": 0,
+            "bg": "rgba(0,0,0,0.4)",
+            "heading": null,
+            "imgs": 0
+          },
+          {
+            "i": 2,
+            "tag": "DIV",
+            "cls": "",
+            "height": 844,
+            "paddingTop": 0,
+            "paddingBottom": 0,
+            "bg": "rgba(0,0,0,0)",
+            "heading": null,
+            "imgs": 0
+          },
+          {
+            "i": 3,
+            "tag": "DIV",
+            "cls": "",
+            "height": 844,
+            "paddingTop": 0,
+            "paddingBottom": 0,
+            "bg": "rgba(0,0,0,0)",
+            "heading": null,
+            "imgs": 0
+          }
+        ],
+        "grids": [
+          {
+            "cols": 8,
+            "n": 2
+          },
+          {
+            "cols": 2,
+            "n": 1
+          }
+        ]
+      },
+      "imagery": {
+        "all": [
+          {
+            "kind": "img",
+            "src": "finder-bot-logo.svg",
+            "w": 32,
+            "h": 25,
+            "ratio": 1.28,
+            "aboveFold": true,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "Card-Image-3-1.png?fit=900",
+            "w": 70,
+            "h": 48,
+            "ratio": 1.46,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Finder Rewards card icon"
+          },
+          {
+            "kind": "img",
+            "src": "Finder-Eyes-No-Background.png?fit=900",
+            "w": 104,
+            "h": 66,
+            "ratio": 1.57,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Finder eyes"
+          },
+          {
+            "kind": "img",
+            "src": "agl-logo",
+            "w": 75,
+            "h": 40,
+            "ratio": 1.88,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "AGL logo"
+          },
+          {
+            "kind": "img",
+            "src": "unloan-logo",
+            "w": 75,
+            "h": 40,
+            "ratio": 1.88,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "Unloan logo"
+          },
+          {
+            "kind": "img",
+            "src": "agl-logo",
+            "w": 75,
+            "h": 40,
+            "ratio": 1.88,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "AGL logo"
+          },
+          {
+            "kind": "img",
+            "src": "rewards-logo-optus",
+            "w": 75,
+            "h": 40,
+            "ratio": 1.88,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "Optus logo"
+          },
+          {
+            "kind": "img",
+            "src": "rewards-logo-optus",
+            "w": 75,
+            "h": 40,
+            "ratio": 1.88,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "Optus logo"
+          },
+          {
+            "kind": "img",
+            "src": "aussie-broadband-logo",
+            "w": 75,
+            "h": 40,
+            "ratio": 1.88,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "Aussie Broadband logo"
+          },
+          {
+            "kind": "img",
+            "src": "dodo-logo",
+            "w": 75,
+            "h": 40,
+            "ratio": 1.88,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "Dodo logo"
+          },
+          {
+            "kind": "img",
+            "src": "tiger-brokers-provider-logo",
+            "w": 75,
+            "h": 40,
+            "ratio": 1.88,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "Tiger Brokers logo"
+          },
+          {
+            "kind": "img",
+            "src": "etoro-provider-logo",
+            "w": 75,
+            "h": 40,
+            "ratio": 1.88,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "eToro logo"
+          },
+          {
+            "kind": "img",
+            "src": "moomoo-provider-logo",
+            "w": 75,
+            "h": 40,
+            "ratio": 1.88,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "Moomoo logo"
+          },
+          {
+            "kind": "img",
+            "src": "webull-logo",
+            "w": 75,
+            "h": 40,
+            "ratio": 1.88,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "Webull logo"
+          },
+          {
+            "kind": "img",
+            "src": "lycamobile-logo",
+            "w": 75,
+            "h": 40,
+            "ratio": 1.88,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "Lyca Mobile logo"
+          },
+          {
+            "kind": "img",
+            "src": "agl-logo",
+            "w": 75,
+            "h": 40,
+            "ratio": 1.88,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "AGL logo"
+          },
+          {
+            "kind": "img",
+            "src": "rewards-logo-optus",
+            "w": 75,
+            "h": 40,
+            "ratio": 1.88,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "Optus logo"
+          },
+          {
+            "kind": "img",
+            "src": "rewards-logo-optus",
+            "w": 75,
+            "h": 40,
+            "ratio": 1.88,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "Optus logo"
+          },
+          {
+            "kind": "img",
+            "src": "dodo-logo",
+            "w": 75,
+            "h": 40,
+            "ratio": 1.88,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "Dodo logo"
+          },
+          {
+            "kind": "img",
+            "src": "66175ed41fbe3.png?fit=900",
+            "w": 75,
+            "h": 13,
+            "ratio": 5.81,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "InsureandGo Travel Insurance Deal logo"
+          },
+          {
+            "kind": "img",
+            "src": "6070029848ffa.png?fit=900",
+            "w": 75,
+            "h": 30,
+            "ratio": 2.5,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "OurMoneyMarket Unsecured Low-Rate Person"
+          },
+          {
+            "kind": "img",
+            "src": "677f1086e0b3b.png?fit=900",
+            "w": 75,
+            "h": 42,
+            "ratio": 1.8,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "Knose Pet Insurance Deal: Get 10% off yo"
+          },
+          {
+            "kind": "img",
+            "src": "601b39c3effcd.jpg?fit=900",
+            "w": 75,
+            "h": 47,
+            "ratio": 1.6,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "Kogan Money Credit Card - Balance Transf"
+          },
+          {
+            "kind": "img",
+            "src": "EnergyHomePageDog_Supplied_1800x1000.jpg?fit=900",
+            "w": 350,
+            "h": 194,
+            "ratio": 1.8,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "Dog with heater on its back"
+          },
+          {
+            "kind": "img",
+            "src": "AppleWatchSeries12andUltraWatch4_450x250.jpg?fit",
+            "w": 112,
+            "h": 62,
+            "ratio": 1.8,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Apple Watch Series 12 and Ultra 4: New h"
+          },
+          {
+            "kind": "img",
+            "src": "MariamGabajiF1_Finder_600x600.png?fit=600",
+            "w": 24,
+            "h": 24,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Mariam Gabaji's headshot"
+          },
+          {
+            "kind": "img",
+            "src": "SydneyUnits_450x250.jpg?fit=450",
+            "w": 112,
+            "h": 62,
+            "ratio": 1.8,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Negative gearing: Are new units a good i"
+          },
+          {
+            "kind": "img",
+            "src": "RichardWhittenBG_Finder_600x600.png?fit=600",
+            "w": 24,
+            "h": 24,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Richard Whitten's headshot"
+          },
+          {
+            "kind": "img",
+            "src": "Suspicious-pet-dog_Unsplash_450x250.jpg?fit=450",
+            "w": 112,
+            "h": 62,
+            "ratio": 1.8,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Some banks will pay you cash to give you"
+          },
+          {
+            "kind": "img",
+            "src": "SarahMegginsonBG_Finder_600x600.png?fit=600",
+            "w": 24,
+            "h": 24,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Sarah Megginson's headshot"
+          },
+          {
+            "kind": "img",
+            "src": "iPhoneDuo_450x250.jpg?fit=450",
+            "w": 112,
+            "h": 62,
+            "ratio": 1.8,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "iPhone Duo: Apple’s first foldable iPhon"
+          },
+          {
+            "kind": "img",
+            "src": "MariamGabajiF1_Finder_600x600.png?fit=600",
+            "w": 24,
+            "h": 24,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Mariam Gabaji's headshot"
+          },
+          {
+            "kind": "img",
+            "src": "StaffPhotoFinderBot_Finder_1800x1000.jpg?fit=900",
+            "w": 350,
+            "h": 194,
+            "ratio": 1.8,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "The Finder crew celebrate 20 years of he"
+          },
+          {
+            "kind": "img",
+            "src": "Australia.png",
+            "w": 24,
+            "h": 24,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Australia flag"
+          },
+          {
+            "kind": "img",
+            "src": "australia.webp",
+            "w": 20,
+            "h": 20,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Australian flag"
+          },
+          {
+            "kind": "bg",
+            "src": "svg+xml;charset=utf-8,%3Csvg width=",
+            "w": 83,
+            "h": 50,
+            "ratio": 1.65,
+            "aboveFold": true,
+            "cls": "decorative",
+            "alt": ""
+          },
+          {
+            "kind": "bg",
+            "src": "finder-bot.f6af430209c90422190a1f55bae286b3.svg",
+            "w": 110,
+            "h": 110,
+            "ratio": 1,
+            "aboveFold": true,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "bg",
+            "src": "rewards-icon.b39247d51ab5ad73f7b52f80e216629e.sv",
+            "w": 105,
+            "h": 108,
+            "ratio": 0.97,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          }
+        ],
+        "total": 38,
+        "aboveFold": 3,
+        "belowFold": 35,
+        "byClass": {
+          "icon": 15,
+          "logo": 20,
+          "photography": 2,
+          "decorative": 1
+        },
+        "gradientElements": 31
+      },
+      "motion": [
+        {
+          "v": "all|0.15s|cubic-bezier(0.4, 0, 0.2, 1)",
+          "n": 433
+        },
+        {
+          "v": "color, -webkit-text-decoration, text-decoration, text-decoration-thickness, outline|0.1s, 0.1s, 0.1s, 0.1s, 0.1s|ease, ease, ease, ease, ease",
+          "n": 108
+        },
+        {
+          "v": "opacity|0.2s|cubic-bezier(0.4, 0, 0.2, 1)",
+          "n": 29
+        },
+        {
+          "v": "box-shadow, -webkit-box-shadow|0.3s, 0.3s|ease-in-out, ease-in-out",
+          "n": 23
+        },
+        {
+          "v": "box-shadow, filter|0.3s, 0.3s|ease, ease",
+          "n": 16
+        },
+        {
+          "v": "background-color|0.2s|ease",
+          "n": 16
+        },
+        {
+          "v": "@r|40s|linear",
+          "n": 8
+        },
+        {
+          "v": "@l|20s|linear",
+          "n": 8
+        },
+        {
+          "v": "all|0.2s|ease",
+          "n": 6
+        },
+        {
+          "v": "color, text-decoration-color|0.15s, 0.15s|ease, ease",
+          "n": 4
+        },
+        {
+          "v": "@rewards-card-flame-flicker|1.5s|ease-in-out",
+          "n": 3
+        },
+        {
+          "v": "transform|0.2s|cubic-bezier(0.445, 0.05, 0.55, 0.95)",
+          "n": 1
+        },
+        {
+          "v": "@roll-in|2.5s|cubic-bezier(0.1, 0.7, 0.1, 1)",
+          "n": 1
+        },
+        {
+          "v": "@roll-in|3s|cubic-bezier(0.1, 0.7, 0.1, 1)",
+          "n": 1
+        }
+      ],
+      "header": {
+        "at0": {
+          "h": 0,
+          "pos": "fixed",
+          "bg": "rgba(0, 0, 0, 0)",
+          "shadow": "none",
+          "top": 0
+        },
+        "at800": {
+          "h": 0,
+          "pos": "fixed",
+          "bg": "rgba(0, 0, 0, 0)",
+          "shadow": "none",
+          "top": 0
+        },
+        "consentDismissed": null
+      }
+    }
+  }
+}

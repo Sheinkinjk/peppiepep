@@ -1,0 +1,457 @@
+/* =========================================================================
+   Style plate. Loaded only by src/app/preview/plate/page.tsx.
+
+   Every value here is derived from a Phase 1 measurement. The derivation is
+   named in the comment beside it and captioned on the page itself.
+
+   Additive: this file introduces `--rl-p-*` tokens and `.rl-p-*` classes and
+   overrides nothing in preview.css, so /preview/home-a and /preview/home-b
+   render exactly as they did before.
+   ========================================================================= */
+
+.rl-plate {
+  /* ---- Colour -----------------------------------------------------------
+     Two-tone accent. The old single #0E7C5A was not the wrong value, it was
+     the wrong deployment: a button colour asked to carry a brand at 0.31%
+     area. Splitting it gives a field colour that can be flooded and an action
+     colour that stays legible on white.
+
+     Measured: white on --rl-p-field 10.66:1 (target 7:1).
+               --rl-p-action on white 5.19:1 (target 4.5:1).
+     Green cannot go much brighter and hold AA: #0F8A64 measures 4.34:1.
+     ---------------------------------------------------------------------- */
+  --rl-p-canvas: #f4f7f5;
+  --rl-p-surface: #ffffff;
+  --rl-p-field: #0d4735;
+  --rl-p-field-deep: #0a3a2b;
+  --rl-p-action: #0e7c5a;
+  --rl-p-action-dk: #0a5c43;
+  --rl-p-ink: #10231c;
+  --rl-p-muted: #5a6b65;
+  --rl-p-rule: #e1e8e4;
+  --rl-p-rule-on-field: rgba(255, 255, 255, 0.18);
+  --rl-p-gold: #8f6a1c;           /* savings on white, 4.95:1 */
+  --rl-p-gold-field: #f2c14e;     /* savings on field, 6.35:1 */
+
+  /* ---- Type scale: 12 steps ---------------------------------------------
+     Phase 1 median was 12 distinct sizes (range 8 to 14); our old build had 5.
+     The shape copies the references rather than a fixed ratio: a dense ramp
+     through the small sizes (1.08x to 1.14x) then harder jumps into display
+     (1.17x to 1.25x). NerdWallet runs 10-11-12-13-14-16-18-20-24-28-36-40-52.
+     Top step 56px sits against a measured median hero of 52px.
+     ---------------------------------------------------------------------- */
+  --rl-p-t1: 0.75rem;    /* 12 */
+  --rl-p-t2: 0.8125rem;  /* 13 */
+  --rl-p-t3: 0.875rem;   /* 14 */
+  --rl-p-t4: 1rem;       /* 16  body, matches the 16px median exactly */
+  --rl-p-t5: 1.125rem;   /* 18 */
+  --rl-p-t6: 1.25rem;    /* 20 */
+  --rl-p-t7: 1.5rem;     /* 24  the step our old scale was missing */
+  --rl-p-t8: 1.75rem;    /* 28 */
+  --rl-p-t9: 2rem;       /* 32 */
+  --rl-p-t10: 2.5rem;    /* 40  the other missing step */
+  --rl-p-t11: 3rem;      /* 48 */
+  --rl-p-t12: 3.5rem;    /* 56 */
+
+  /* ---- Radii: 10 distinct ------------------------------------------------
+     Phase 1 median 10 (range 5 to 16); our old build had 3. Card radius 12px
+     is the measured median (NerdWallet 16, Finder 12, Bankrate 12, CTM 8,
+     Canstar 8).
+     ---------------------------------------------------------------------- */
+  --rl-p-r1: 2px;
+  --rl-p-r2: 4px;
+  --rl-p-r3: 6px;
+  --rl-p-r4: 8px;
+  --rl-p-r5: 10px;
+  --rl-p-r6: 12px;   /* card default, the median */
+  --rl-p-r7: 16px;   /* raised tray, NerdWallet's value */
+  --rl-p-r8: 20px;
+  --rl-p-r9: 24px;
+  --rl-p-rpill: 999px;
+
+  /* ---- Elevation: 2 levels, 4 shadow values -----------------------------
+     Phase 1 median 4 real shadows (range 1 to 6); our old build had 1, used
+     on everything. Level 1 derives from NerdWallet's most-used card shadow
+     (rgba 0.05, 0px 4px 16px, seen 35 times). Level 2 derives from its raised
+     tray (0px 20px 25px -5px). Tinted with --rl-p-field rather than black so
+     the shade belongs to the palette.
+     ---------------------------------------------------------------------- */
+  --rl-p-e1: 0 1px 2px rgba(13, 71, 53, 0.04), 0 4px 16px rgba(13, 71, 53, 0.06);
+  --rl-p-e1-hover: 0 2px 4px rgba(13, 71, 53, 0.06), 0 10px 22px rgba(13, 71, 53, 0.09);
+  --rl-p-e2: 0 8px 10px -6px rgba(13, 71, 53, 0.05), 0 20px 25px -5px rgba(13, 71, 53, 0.12);
+  --rl-p-e2-hover: 0 10px 14px -6px rgba(13, 71, 53, 0.07), 0 28px 34px -8px rgba(13, 71, 53, 0.16);
+
+  /* ---- Layout -----------------------------------------------------------
+     Container 1230px is the Phase 1 median (1152 to 1344); our old build was
+     1120px, the narrowest of seven pages measured. Gutter 24px is the median;
+     ours was 16px. Section padding 80px is CTM's dominant value, used on four
+     of its seven sections.
+     ---------------------------------------------------------------------- */
+  --rl-p-max: 1230px;
+  --rl-p-gutter: 24px;
+  --rl-p-section: 80px;
+
+  background: var(--rl-p-canvas);
+  color: var(--rl-p-ink);
+  font-size: var(--rl-p-t4);
+  line-height: 1.55;
+}
+
+@media (max-width: 720px) {
+  .rl-plate {
+    --rl-p-gutter: 16px;   /* Phase 1 mobile median */
+    --rl-p-section: 56px;
+  }
+}
+
+.rl-plate *,
+.rl-plate *::before,
+.rl-plate *::after { box-sizing: border-box; }
+
+/* Focus: carried forward unchanged. Phase 1 found ours stronger than every
+   reference; NerdWallet ships the browser default 1px auto. */
+.rl-plate a:focus-visible,
+.rl-plate button:focus-visible,
+.rl-plate [tabindex]:focus-visible {
+  outline: 2px solid var(--rl-p-ink);
+  outline-offset: 2px;
+  border-radius: var(--rl-p-r1);
+}
+.rl-p-field a:focus-visible,
+.rl-p-field button:focus-visible {
+  outline-color: #ffffff;
+}
+
+/* Motion: hover and focus only. Phase 1 found no scroll-triggered section
+   animation on any of the five references. */
+@media (prefers-reduced-motion: reduce) {
+  .rl-plate *, .rl-plate *::before, .rl-plate *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+/* ---- Structure --------------------------------------------------------- */
+
+.rl-p-wrap {
+  width: 100%;
+  max-width: var(--rl-p-max);
+  margin-inline: auto;
+  padding-inline: var(--rl-p-gutter);
+}
+.rl-p-shell { overflow-x: clip; }
+
+.rl-p-section { padding-block: var(--rl-p-section); }
+
+.rl-p-h {
+  font-size: var(--rl-p-t9);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+  text-wrap: balance;
+}
+.rl-p-sub { color: var(--rl-p-muted); margin: 0 0 2rem; max-width: 64ch; }
+
+/* Caption naming the measurement each element derives from. */
+.rl-p-cap {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: var(--rl-p-t1);
+  line-height: 1.5;
+  color: var(--rl-p-muted);
+  border-left: 2px solid var(--rl-p-action);
+  padding-left: 0.75rem;
+  margin: 0.85rem 0 0;
+  max-width: 62ch;
+}
+.rl-p-field .rl-p-cap { color: rgba(255, 255, 255, 0.72); border-left-color: var(--rl-p-gold-field); }
+
+/* ---- Flooded field band ------------------------------------------------
+   One of two flooded regions. Phase 1: 4 of 5 references flood the hero, and
+   the accent-coverage target of 12-18% is reached with exactly two bands.
+   ------------------------------------------------------------------------ */
+.rl-p-field {
+  background: var(--rl-p-field);
+  background-image: linear-gradient(135deg, var(--rl-p-field-deep) 0%, var(--rl-p-field) 62%);
+  color: #ffffff;
+}
+.rl-p-field .rl-p-sub { color: rgba(255, 255, 255, 0.86); }
+
+/* ---- Hero -------------------------------------------------------------- */
+
+.rl-p-hero { padding-block: clamp(3rem, 7vw, 5.5rem) 0; }
+.rl-p-hero__grid {
+  display: grid;
+  gap: clamp(2rem, 4vw, 3.5rem);
+  align-items: center;
+}
+@media (min-width: 940px) {
+  .rl-p-hero__grid { grid-template-columns: 1.02fr 0.98fr; }
+}
+.rl-p-hero__h1 {
+  font-size: clamp(2rem, 5.4vw, var(--rl-p-t12));
+  line-height: 1.03;
+  letter-spacing: -0.025em;
+  font-weight: 600;
+  margin: 0 0 1rem;
+  text-wrap: balance;
+}
+.rl-p-hero__h1 em {
+  font-style: normal;
+  color: var(--rl-p-gold-field);
+}
+.rl-p-hero__sub {
+  font-size: var(--rl-p-t5);
+  color: rgba(255, 255, 255, 0.86);
+  margin: 0 0 1.75rem;
+  max-width: 44ch;
+}
+.rl-p-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+
+/* the overlap: the tray pulls up over the band's bottom edge */
+.rl-p-overlap { margin-block-start: clamp(2.5rem, 5vw, 4rem); transform: translateY(clamp(40px, 6vw, 72px)); }
+.rl-p-overlap-spacer { height: clamp(40px, 6vw, 72px); }
+
+/* ---- Buttons ----------------------------------------------------------- */
+
+.rl-p-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 44px; padding-inline: 20px;
+  border-radius: var(--rl-p-r4);
+  font-size: var(--rl-p-t4); font-weight: 700;
+  text-decoration: none; border: 1px solid transparent; cursor: pointer;
+  transition: background-color 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+}
+.rl-p-btn--primary { background: var(--rl-p-action); color: #ffffff; box-shadow: var(--rl-p-e1); }
+.rl-p-btn--primary:hover { background: var(--rl-p-action-dk); box-shadow: var(--rl-p-e1-hover); }
+.rl-p-btn--secondary { background: transparent; color: var(--rl-p-ink); border-color: var(--rl-p-rule); }
+.rl-p-btn--secondary:hover { border-color: var(--rl-p-ink); background: var(--rl-p-surface); }
+.rl-p-field .rl-p-btn--secondary { color: #ffffff; border-color: var(--rl-p-rule-on-field); background: transparent; }
+.rl-p-field .rl-p-btn--secondary:hover { border-color: #ffffff; background: rgba(255, 255, 255, 0.08); }
+.rl-p-btn:disabled, .rl-p-btn[aria-disabled="true"] {
+  opacity: 0.45; cursor: not-allowed; box-shadow: none; pointer-events: none;
+}
+
+/* ---- Category tray: filled white cards on coloured ground -------------- */
+
+.rl-p-tray {
+  background: var(--rl-p-surface);
+  border-radius: var(--rl-p-r7);
+  box-shadow: var(--rl-p-e2);
+  padding: clamp(1rem, 2vw, 1.5rem);
+}
+.rl-p-tiles {
+  display: grid; gap: 0.75rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+@media (min-width: 900px) { .rl-p-tiles { grid-template-columns: repeat(5, 1fr); } }
+.rl-p-tile {
+  display: block; padding: 1rem;
+  background: var(--rl-p-surface);
+  border: 1px solid var(--rl-p-rule);
+  border-radius: var(--rl-p-r6);
+  text-decoration: none; color: var(--rl-p-ink);
+  box-shadow: var(--rl-p-e1);
+  transition: box-shadow 160ms ease, border-color 160ms ease;
+}
+.rl-p-tile:hover { box-shadow: var(--rl-p-e1-hover); border-color: var(--rl-p-action); }
+.rl-p-tile__l { display: block; font-weight: 600; font-size: var(--rl-p-t4); margin-bottom: 0.2rem; }
+.rl-p-tile__b { display: block; font-size: var(--rl-p-t2); color: var(--rl-p-muted); line-height: 1.45; }
+
+/* ---- Cards: two visibly distinct elevation levels ---------------------- */
+
+.rl-p-cardrow { display: grid; gap: 1.25rem; grid-template-columns: 1fr; align-items: start; }
+@media (min-width: 860px) { .rl-p-cardrow { grid-template-columns: 1fr 1fr; } }
+
+.rl-p-card {
+  background: var(--rl-p-surface);
+  border: 1px solid var(--rl-p-rule);
+  border-radius: var(--rl-p-r6);
+  box-shadow: var(--rl-p-e1);
+  padding: 1.25rem;
+  transition: box-shadow 160ms ease;
+}
+.rl-p-card:hover { box-shadow: var(--rl-p-e1-hover); }
+.rl-p-card--raised {
+  border-radius: var(--rl-p-r7);
+  box-shadow: var(--rl-p-e2);
+  border-color: transparent;
+}
+.rl-p-card--raised:hover { box-shadow: var(--rl-p-e2-hover); }
+
+.rl-p-card__top { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 0.75rem; }
+.rl-p-card__brand { font-weight: 600; margin: 0; font-size: var(--rl-p-t4); }
+.rl-p-card__cat { margin: 0; font-size: var(--rl-p-t2); color: var(--rl-p-muted); }
+.rl-p-saving {
+  font-size: var(--rl-p-t10); font-weight: 700; line-height: 1;
+  color: var(--rl-p-gold);
+  font-variant-numeric: tabular-nums lining-nums;
+  display: block; margin-bottom: 0.4rem;
+}
+.rl-p-card__offer { margin: 0 0 0.9rem; color: var(--rl-p-ink); }
+.rl-p-meta {
+  display: flex; flex-wrap: wrap; gap: 0.4rem 0.75rem; align-items: center;
+  padding-top: 0.85rem; border-top: 1px solid var(--rl-p-rule);
+  font-size: var(--rl-p-t2); color: var(--rl-p-muted);
+  font-variant-numeric: tabular-nums lining-nums;
+}
+.rl-p-code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  border: 1px dashed var(--rl-p-rule); border-radius: var(--rl-p-r3);
+  padding: 0.15rem 0.45rem; color: var(--rl-p-ink);
+}
+.rl-p-status { color: var(--rl-p-action-dk); font-weight: 600; }
+
+/* ---- Comparison row ---------------------------------------------------- */
+
+.rl-p-tablewrap {
+  background: var(--rl-p-surface);
+  border: 1px solid var(--rl-p-rule);
+  border-radius: var(--rl-p-r6);
+  box-shadow: var(--rl-p-e1);
+  overflow: hidden;
+}
+.rl-p-table { width: 100%; border-collapse: collapse; }
+.rl-p-table th, .rl-p-table td { padding: 1rem; text-align: start; border-bottom: 1px solid var(--rl-p-rule); }
+.rl-p-table thead th {
+  background: var(--rl-p-canvas); font-size: var(--rl-p-t2);
+  color: var(--rl-p-muted); font-weight: 600;
+}
+.rl-p-table tbody tr:last-child td { border-bottom: 0; }
+.rl-p-table tbody tr:hover { background: var(--rl-p-canvas); }
+.rl-p-prov { display: flex; align-items: center; gap: 0.6rem; font-weight: 600; }
+@media (max-width: 720px) {
+  .rl-p-table thead { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip-path: inset(50%); }
+  .rl-p-table tr, .rl-p-table td { display: block; width: 100%; }
+  .rl-p-table td { border-bottom: 0; display: grid; grid-template-columns: 7.5rem 1fr; gap: 0.5rem; padding-block: 0.3rem; }
+  .rl-p-table tr { border-bottom: 1px solid var(--rl-p-rule); padding-block: 0.6rem; }
+  .rl-p-cell-l { display: block; color: var(--rl-p-muted); font-size: var(--rl-p-t2); }
+}
+.rl-p-cell-l { display: none; }
+
+/* ---- Verified strip: the second flooded region ------------------------- */
+
+.rl-p-strip { background: var(--rl-p-field); color: #ffffff; }
+.rl-p-strip__g { display: grid; gap: 1.5rem; grid-template-columns: 1fr; padding-block: clamp(2rem, 4vw, 3rem); }
+@media (min-width: 760px) { .rl-p-strip__g { grid-template-columns: repeat(3, 1fr); } }
+.rl-p-fig {
+  display: block; font-size: var(--rl-p-t10); font-weight: 700; line-height: 1.05;
+  font-variant-numeric: tabular-nums lining-nums;
+}
+.rl-p-fig--gold { color: var(--rl-p-gold-field); }
+.rl-p-figl { display: block; font-size: var(--rl-p-t3); color: rgba(255, 255, 255, 0.82); margin-top: 0.3rem; }
+
+/* ---- Partner strip ----------------------------------------------------- */
+
+.rl-p-logos { display: flex; flex-wrap: wrap; align-items: center; gap: 1.5rem 2.5rem; }
+.rl-p-logos img { height: 28px; width: auto; filter: grayscale(1); opacity: 0.7; }
+
+/* ---- Imagery placeholder ----------------------------------------------- */
+
+.rl-p-imgslot {
+  position: relative;
+  border-radius: var(--rl-p-r7);
+  overflow: hidden;
+  background:
+    repeating-linear-gradient(135deg, rgba(255,255,255,0.06) 0 12px, rgba(255,255,255,0.02) 12px 24px),
+    var(--rl-p-field-deep);
+  border: 1px dashed rgba(255, 255, 255, 0.32);
+  display: flex; align-items: center; justify-content: center;
+  aspect-ratio: 4 / 3;
+}
+.rl-p-imgslot__t {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: var(--rl-p-t2); color: rgba(255, 255, 255, 0.86);
+  text-align: center; padding: 1.25rem; line-height: 1.6; max-width: 34ch;
+}
+
+/* ---- Type specimen ----------------------------------------------------- */
+
+.rl-p-spec { display: grid; gap: 0.5rem; }
+.rl-p-spec__row {
+  display: grid; grid-template-columns: 5.5rem 1fr; gap: 1rem; align-items: baseline;
+  padding-block: 0.5rem; border-bottom: 1px solid var(--rl-p-rule);
+}
+.rl-p-spec__k {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: var(--rl-p-t1); color: var(--rl-p-muted);
+  font-variant-numeric: tabular-nums;
+}
+.rl-p-spec__v { line-height: 1.15; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* ---- Readout ----------------------------------------------------------- */
+
+.rl-p-readout {
+  background: var(--rl-p-surface);
+  border: 1px solid var(--rl-p-rule);
+  border-radius: var(--rl-p-r6);
+  box-shadow: var(--rl-p-e1);
+  padding: 1.15rem 1.25rem;
+}
+.rl-p-readout__g { display: grid; gap: 1rem; grid-template-columns: repeat(2, 1fr); }
+@media (min-width: 760px) { .rl-p-readout__g { grid-template-columns: repeat(4, 1fr); } }
+.rl-p-readout__n {
+  display: block; font-size: var(--rl-p-t8); font-weight: 700; line-height: 1;
+  font-variant-numeric: tabular-nums lining-nums;
+}
+.rl-p-readout__l { display: block; font-size: var(--rl-p-t2); color: var(--rl-p-muted); margin-top: 0.25rem; }
+.rl-p-readout__d { font-size: var(--rl-p-t2); color: var(--rl-p-muted); margin: 0.9rem 0 0; }
+
+/* ---- Swatches ---------------------------------------------------------- */
+
+.rl-p-swatches { display: grid; gap: 0.75rem; grid-template-columns: repeat(2, 1fr); }
+@media (min-width: 760px) { .rl-p-swatches { grid-template-columns: repeat(4, 1fr); } }
+.rl-p-sw {
+  border-radius: var(--rl-p-r6); padding: 1rem; min-height: 92px;
+  border: 1px solid var(--rl-p-rule);
+  display: flex; flex-direction: column; justify-content: flex-end;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: var(--rl-p-t1);
+}
+.rl-p-sw b { display: block; font-weight: 600; }
+
+/* ---- Inset coloured panel (not a flooded band) -------------------------
+   Used only to demonstrate elevation against colour. The page floods exactly
+   two regions: the hero and the verified strip. A third full-bleed band would
+   have pushed accent coverage to 37%, well past the 12-18% target.
+   ------------------------------------------------------------------------ */
+.rl-p-inset {
+  background: var(--rl-p-field);
+  border-radius: var(--rl-p-r9);
+  padding: clamp(1.25rem, 3vw, 2.25rem);
+}
+.rl-p-inset .rl-p-cap { color: rgba(255, 255, 255, 0.72); border-left-color: var(--rl-p-gold-field); }
+
+/* ---- Ladders ----------------------------------------------------------- */
+.rl-p-ladder { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.rl-p-rung {
+  width: 96px; height: 72px;
+  background: var(--rl-p-surface);
+  border: 1px solid var(--rl-p-rule);
+  display: flex; align-items: flex-end; justify-content: center;
+  padding-bottom: 0.4rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: var(--rl-p-t1); color: var(--rl-p-muted);
+}
+.rl-p-rung--sh { border-color: transparent; border-radius: var(--rl-p-r6); width: 128px; }
+
+/* ---- Heading colour: override the global element rule ------------------
+   globals.css:35 sets --heading-color: #024b56 and applies it to h1, h2, h3
+   by element selector. An element selector setting `color` beats an inherited
+   value, so every heading inside .rl-plate was rendering #024b56 regardless of
+   the field it sat on. On the dark field that measured 1.09:1, effectively
+   invisible. globals.css is out of scope to edit, so the colour is set here
+   explicitly on the heading classes instead of relying on inheritance.
+   ------------------------------------------------------------------------ */
+.rl-plate h1, .rl-plate h2, .rl-plate h3 { color: var(--rl-p-ink); }
+.rl-p-field h1, .rl-p-field h2, .rl-p-field h3,
+.rl-p-strip h1, .rl-p-strip h2, .rl-p-strip h3,
+.rl-p-inset h1, .rl-p-inset h2, .rl-p-inset h3 { color: #ffffff; }
+.rl-plate .rl-p-hero__h1 em { color: var(--rl-p-gold-field); }
+
+/* ---- CLS: reserve the readout's space ---------------------------------
+   The live figures render after hydration. Without a reserved box the note
+   grows as the size list fills in, which measured CLS 0.0065.
+   ------------------------------------------------------------------------ */
+.rl-p-readout__n { min-height: 1.05em; }
+.rl-p-readout__d { min-height: 5.5em; }
+@media (max-width: 760px) { .rl-p-readout__d { min-height: 11em; } }

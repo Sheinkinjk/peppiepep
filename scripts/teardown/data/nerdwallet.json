@@ -1,0 +1,4232 @@
+{
+  "site": "nerdwallet",
+  "url": "https://www.nerdwallet.com/",
+  "capturedAt": "2026-09-10T08:40:17.913Z",
+  "breakpoints": {
+    "d": {
+      "viewport": {
+        "vw": 1440,
+        "vh": 900
+      },
+      "docHeight": 7218,
+      "type": {
+        "combos": [
+          {
+            "family": "Gotham",
+            "size": 24,
+            "weight": 900,
+            "lineHeight": "40",
+            "letterSpacing": "0.48px",
+            "count": 32,
+            "sample": "Let the nerds do the work"
+          },
+          {
+            "family": "Gotham",
+            "size": 12,
+            "weight": 400,
+            "lineHeight": "16",
+            "letterSpacing": "0.08px",
+            "count": 25,
+            "sample": "NerdWallet has engaged Atomic Invest LLC (“Atomic”), an SEC-"
+          },
+          {
+            "family": "Gotham",
+            "size": 16,
+            "weight": 400,
+            "lineHeight": "24",
+            "letterSpacing": "normal",
+            "count": 23,
+            "sample": "Quickly compare mortgages or banking rates and see how they "
+          },
+          {
+            "family": "Gotham",
+            "size": 14,
+            "weight": 400,
+            "lineHeight": "21",
+            "letterSpacing": "0.3px",
+            "count": 19,
+            "sample": "Do not sell or share my personal information"
+          },
+          {
+            "family": "GothamDisplay",
+            "size": 18,
+            "weight": 500,
+            "lineHeight": "22.5",
+            "letterSpacing": "normal",
+            "count": 18,
+            "sample": "Southwest Lounges and a New Premium Card Are Coming in 2027"
+          },
+          {
+            "family": "Gotham",
+            "size": 18,
+            "weight": 500,
+            "lineHeight": "24.8",
+            "letterSpacing": "-0.45px",
+            "count": 10,
+            "sample": "Financial Advisors"
+          },
+          {
+            "family": "Gotham",
+            "size": 14,
+            "weight": 400,
+            "lineHeight": "21",
+            "letterSpacing": "normal",
+            "count": 10,
+            "sample": "Compare travel credit cards and find the best travel deals"
+          },
+          {
+            "family": "Gotham",
+            "size": 16,
+            "weight": 300,
+            "lineHeight": "24",
+            "letterSpacing": "normal",
+            "count": 10,
+            "sample": "average star rating"
+          },
+          {
+            "family": "Gotham",
+            "size": 13,
+            "weight": 500,
+            "lineHeight": "24",
+            "letterSpacing": "0.08px",
+            "count": 9,
+            "sample": "Personal finance"
+          },
+          {
+            "family": "Gotham",
+            "size": 13,
+            "weight": 400,
+            "lineHeight": "19.5",
+            "letterSpacing": "normal",
+            "count": 9,
+            "sample": "Best HYSA rate on NerdWallet"
+          },
+          {
+            "family": "Gotham",
+            "size": 18,
+            "weight": 325,
+            "lineHeight": "25.2",
+            "letterSpacing": "-0.18px",
+            "count": 8,
+            "sample": "Financial advisors"
+          },
+          {
+            "family": "Gotham",
+            "size": 40,
+            "weight": 500,
+            "lineHeight": "48",
+            "letterSpacing": "-0.8px",
+            "count": 6,
+            "sample": "Track, save, and invest — all in one easy app"
+          },
+          {
+            "family": "Gotham",
+            "size": 24,
+            "weight": 500,
+            "lineHeight": "31.2",
+            "letterSpacing": "-0.2px",
+            "count": 6,
+            "sample": "1.71%"
+          },
+          {
+            "family": "Gotham",
+            "size": 16,
+            "weight": 325,
+            "lineHeight": "24",
+            "letterSpacing": "normal",
+            "count": 6,
+            "sample": "Boost your APY for 6 months with a Cash Account offered by A"
+          },
+          {
+            "family": "Gotham",
+            "size": 12,
+            "weight": 400,
+            "lineHeight": "18",
+            "letterSpacing": "0.08px",
+            "count": 4,
+            "sample": "NerdWallet USA"
+          },
+          {
+            "family": "Gotham",
+            "size": 20,
+            "weight": 500,
+            "lineHeight": "24",
+            "letterSpacing": "normal",
+            "count": 3,
+            "sample": "Money Market"
+          },
+          {
+            "family": "Gotham",
+            "size": 36,
+            "weight": 500,
+            "lineHeight": "34",
+            "letterSpacing": "-0.3px",
+            "count": 3,
+            "sample": "100k"
+          },
+          {
+            "family": "Gotham",
+            "size": 14,
+            "weight": 500,
+            "lineHeight": "22.8",
+            "letterSpacing": "normal",
+            "count": 3,
+            "sample": "\"Words cannot describe how much I love this app. I genuinely"
+          },
+          {
+            "family": "Gotham",
+            "size": 11,
+            "weight": 325,
+            "lineHeight": "16.5",
+            "letterSpacing": "normal",
+            "count": 3,
+            "sample": "— App Store Review, April 2025"
+          },
+          {
+            "family": "Gotham",
+            "size": 14,
+            "weight": 400,
+            "lineHeight": "21",
+            "letterSpacing": "0.08px",
+            "count": 3,
+            "sample": "Download the app"
+          },
+          {
+            "family": "Gotham",
+            "size": 12,
+            "weight": 500,
+            "lineHeight": "13.2",
+            "letterSpacing": "0.75px",
+            "count": 3,
+            "sample": "Help"
+          },
+          {
+            "family": "Gotham",
+            "size": 13,
+            "weight": 700,
+            "lineHeight": "11.7",
+            "letterSpacing": "1.76px",
+            "count": 2,
+            "sample": "Sign In"
+          },
+          {
+            "family": "Gotham",
+            "size": 52,
+            "weight": 700,
+            "lineHeight": "57.2",
+            "letterSpacing": "-0.52px",
+            "count": 2,
+            "sample": "Smart financial decisions start with NerdWallet"
+          },
+          {
+            "family": "GothamDisplay",
+            "size": 20,
+            "weight": 500,
+            "lineHeight": "25",
+            "letterSpacing": "normal",
+            "count": 2,
+            "sample": "Southwest Lounges and a New Premium Card Are Coming in 2027"
+          },
+          {
+            "family": "Gotham",
+            "size": 14,
+            "weight": 400,
+            "lineHeight": "14",
+            "letterSpacing": "normal",
+            "count": 2,
+            "sample": "Hanna Horvath (C)"
+          },
+          {
+            "family": "Gotham",
+            "size": 14,
+            "weight": 500,
+            "lineHeight": "18.7",
+            "letterSpacing": "normal",
+            "count": 2,
+            "sample": "Mortgages"
+          },
+          {
+            "family": "Gotham",
+            "size": 12,
+            "weight": 400,
+            "lineHeight": "18",
+            "letterSpacing": "normal",
+            "count": 2,
+            "sample": "Average rates are sourced from the FDIC. Terms apply and req"
+          },
+          {
+            "family": "Gotham",
+            "size": 12,
+            "weight": 325,
+            "lineHeight": "16",
+            "letterSpacing": "normal",
+            "count": 2,
+            "sample": "Showing our 5 star reviews. Based on ratings and reviews col"
+          },
+          {
+            "family": "Gotham",
+            "size": 10,
+            "weight": 400,
+            "lineHeight": "16",
+            "letterSpacing": "normal",
+            "count": 2,
+            "sample": "1Showing the best refinance rate for: Good (720-739), 30-yea"
+          },
+          {
+            "family": "Gotham",
+            "size": 14,
+            "weight": 700,
+            "lineHeight": "21",
+            "letterSpacing": "0.08px",
+            "count": 2,
+            "sample": "4.8"
+          },
+          {
+            "family": "Gotham",
+            "size": 16,
+            "weight": 400,
+            "lineHeight": "24",
+            "letterSpacing": "0.08px",
+            "count": 1,
+            "sample": "Skip to content"
+          },
+          {
+            "family": "Gotham",
+            "size": 20,
+            "weight": 400,
+            "lineHeight": "32.5",
+            "letterSpacing": "normal",
+            "count": 1,
+            "sample": "Navigate every money move with guidance you can trust."
+          },
+          {
+            "family": "Gotham",
+            "size": 16,
+            "weight": 400,
+            "lineHeight": "20",
+            "letterSpacing": "normal",
+            "count": 1,
+            "sample": "Ask me about"
+          },
+          {
+            "family": "Gotham",
+            "size": 14,
+            "weight": 500,
+            "lineHeight": "20",
+            "letterSpacing": "1.4px",
+            "count": 1,
+            "sample": "NerdWallet partners you know and trust"
+          },
+          {
+            "family": "GothamDisplay",
+            "size": 36,
+            "weight": 500,
+            "lineHeight": "40",
+            "letterSpacing": "-0.9px",
+            "count": 1,
+            "sample": "News That Impacts Your Wallet"
+          },
+          {
+            "family": "GothamDisplay",
+            "size": 14,
+            "weight": 700,
+            "lineHeight": "20",
+            "letterSpacing": "0.8px",
+            "count": 1,
+            "sample": "View All News"
+          },
+          {
+            "family": "GothamDisplay",
+            "size": 28,
+            "weight": 500,
+            "lineHeight": "35",
+            "letterSpacing": "normal",
+            "count": 1,
+            "sample": "Here’s Why Chicken Is So Expensive Now"
+          },
+          {
+            "family": "Gotham",
+            "size": 40,
+            "weight": 500,
+            "lineHeight": "48",
+            "letterSpacing": "-0.28px",
+            "count": 1,
+            "sample": "Find smarter rates today"
+          },
+          {
+            "family": "Gotham",
+            "size": 13,
+            "weight": 500,
+            "lineHeight": "19.5",
+            "letterSpacing": "normal",
+            "count": 1,
+            "sample": "Compare Now"
+          },
+          {
+            "family": "GothamDisplay",
+            "size": 40,
+            "weight": 500,
+            "lineHeight": "48",
+            "letterSpacing": "-0.8px",
+            "count": 1,
+            "sample": "Earn 3.9% APY on your cash"
+          }
+        ],
+        "distinctCombos": 50,
+        "distinctSizes": [
+          10,
+          11,
+          12,
+          13,
+          14,
+          16,
+          18,
+          20,
+          24,
+          24.6,
+          28,
+          36,
+          40,
+          52
+        ],
+        "families": [
+          {
+            "v": "Gotham",
+            "n": 1
+          },
+          {
+            "v": "GothamDisplay",
+            "n": 1
+          }
+        ],
+        "largestHeadlinePx": 40,
+        "largestHeadlineText": "Why millions trust NerdWallet",
+        "largestTextPx": 52,
+        "bodySizePx": 16,
+        "bodySizeCount": 28
+      },
+      "colour": {
+        "backgrounds": [
+          {
+            "color": "rgb(255,247,234)",
+            "count": 2,
+            "area": 4827420
+          },
+          {
+            "color": "rgb(255,255,255)",
+            "count": 31,
+            "area": 3317798
+          },
+          {
+            "color": "rgb(0,0,0)",
+            "count": 21,
+            "area": 1764552
+          },
+          {
+            "color": "rgb(239,252,248)",
+            "count": 5,
+            "area": 1468059
+          },
+          {
+            "color": "rgb(0,102,66)",
+            "count": 1,
+            "area": 720000
+          },
+          {
+            "color": "rgb(0,130,84)",
+            "count": 6,
+            "area": 181625
+          },
+          {
+            "color": "rgb(227,250,242)",
+            "count": 4,
+            "area": 142872
+          },
+          {
+            "color": "rgba(255,255,255,0.9)",
+            "count": 1,
+            "area": 17480
+          },
+          {
+            "color": "rgb(247,247,247)",
+            "count": 4,
+            "area": 9363
+          },
+          {
+            "color": "rgb(229,255,192)",
+            "count": 1,
+            "area": 3519
+          },
+          {
+            "color": "rgb(233,234,235)",
+            "count": 1,
+            "area": 286
+          },
+          {
+            "color": "oklch(0.7070.022261.325)",
+            "count": 1,
+            "area": 32
+          }
+        ],
+        "inks": [
+          {
+            "color": "rgb(0,0,0)",
+            "count": 73,
+            "area": 745905
+          },
+          {
+            "color": "rgb(255,255,255)",
+            "count": 65,
+            "area": 739242
+          },
+          {
+            "color": "rgb(0,130,84)",
+            "count": 40,
+            "area": 369118
+          },
+          {
+            "color": "rgb(100,102,106)",
+            "count": 31,
+            "area": 191039
+          },
+          {
+            "color": "rgb(0,95,185)",
+            "count": 17,
+            "area": 36278
+          },
+          {
+            "color": "rgb(61,64,69)",
+            "count": 15,
+            "area": 202707
+          },
+          {
+            "color": "rgb(139,140,143)",
+            "count": 3,
+            "area": 8944
+          },
+          {
+            "color": "oklch(0.5510.027264.364)",
+            "count": 2,
+            "area": 10488
+          },
+          {
+            "color": "rgba(0,0,0,0)",
+            "count": 1,
+            "area": 4132
+          },
+          {
+            "color": "oklch(0.8410.238128.85)",
+            "count": 1,
+            "area": 18255
+          },
+          {
+            "color": "oklch(0.9790.021166.113)",
+            "count": 1,
+            "area": 21515
+          },
+          {
+            "color": "oklab(0.9999940.00004556770.0000200868/0.8)",
+            "count": 1,
+            "area": 1107
+          },
+          {
+            "color": "oklch(0.4480.119151.328)",
+            "count": 1,
+            "area": 8617
+          }
+        ],
+        "accentColours": [
+          {
+            "color": "rgb(0,102,66)",
+            "count": 1,
+            "area": 720000
+          },
+          {
+            "color": "rgb(0,130,84)",
+            "count": 6,
+            "area": 181625
+          },
+          {
+            "color": "rgb(229,255,192)",
+            "count": 1,
+            "area": 3519
+          },
+          {
+            "color": "oklch(0.7070.022261.325)",
+            "count": 1,
+            "area": 32
+          }
+        ],
+        "accentAreaPct": 8.71,
+        "paintedAreaPct": 119.8,
+        "docArea": 10393920
+      },
+      "depth": {
+        "shadows": [
+          {
+            "v": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(100, 102, 106, 0.05) 0px 4px 16px 0px, rgba(100, 102, 104, 0.05) 0px 16px 40px 0px",
+            "n": 35
+          },
+          {
+            "v": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0 0 0 / 0.04) 0px 20px 25px -5px, oklab(0 0 0 / 0.04) 0px 8px 10px -6px",
+            "n": 3
+          },
+          {
+            "v": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(100, 102, 106, 0.05) 0px 4px 16px 0px",
+            "n": 2
+          },
+          {
+            "v": "rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.1) 0px 2px 4px -2px",
+            "n": 1
+          },
+          {
+            "v": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+            "n": 1
+          },
+          {
+            "v": "rgba(100, 102, 106, 0.05) 0px 4px 16px 0px, rgba(100, 102, 104, 0.05) 0px 16px 40px 0px",
+            "n": 1
+          },
+          {
+            "v": "rgba(100, 102, 106, 0.15) 0px 5.143px 20.571px 0px, rgba(100, 102, 104, 0.15) 0px 20.571px 51.429px 0px",
+            "n": 1
+          }
+        ],
+        "distinctShadows": 7,
+        "radii": [
+          {
+            "v": "16px",
+            "n": 26
+          },
+          {
+            "v": "8px",
+            "n": 17
+          },
+          {
+            "v": "12px",
+            "n": 13
+          },
+          {
+            "v": "3.35544e+07px",
+            "n": 12
+          },
+          {
+            "v": "6px",
+            "n": 6
+          },
+          {
+            "v": "10px",
+            "n": 4
+          },
+          {
+            "v": "2px",
+            "n": 2
+          },
+          {
+            "v": "64px",
+            "n": 2
+          },
+          {
+            "v": "9999px",
+            "n": 1
+          },
+          {
+            "v": "16px 16px 2px",
+            "n": 1
+          },
+          {
+            "v": "1000px",
+            "n": 1
+          }
+        ],
+        "distinctRadii": 11,
+        "borders": [
+          {
+            "v": "1px/solid",
+            "n": 30
+          },
+          {
+            "v": "2px/solid",
+            "n": 9
+          },
+          {
+            "v": "0px/solid",
+            "n": 5
+          }
+        ]
+      },
+      "layout": {
+        "containers": [
+          {
+            "maxWidth": 1152,
+            "n": 10
+          },
+          {
+            "maxWidth": 662,
+            "n": 2
+          },
+          {
+            "maxWidth": 1630,
+            "n": 1
+          }
+        ],
+        "gutter": 24,
+        "sections": [
+          {
+            "i": 0,
+            "tag": "SECTION",
+            "cls": "relative w-full bg-green-dark min-h-[420",
+            "height": 500,
+            "paddingTop": 0,
+            "paddingBottom": 0,
+            "bg": "rgb(0,102,66)",
+            "heading": "Smart financial decisions start with NerdWallet",
+            "imgs": 2
+          },
+          {
+            "i": 1,
+            "tag": "DIV",
+            "cls": "relative z-10 -mt-10 lg:-mt-18",
+            "height": 532,
+            "paddingTop": 0,
+            "paddingBottom": 0,
+            "bg": "rgba(0,0,0,0)",
+            "heading": null,
+            "imgs": 10
+          },
+          {
+            "i": 2,
+            "tag": "SECTION",
+            "cls": "nw-container overflow-x-hidden bg-white ",
+            "height": 526,
+            "paddingTop": 80,
+            "paddingBottom": 80,
+            "bg": "rgb(255,255,255)",
+            "heading": "Why millions trust NerdWallet",
+            "imgs": 41
+          },
+          {
+            "i": 3,
+            "tag": "SECTION",
+            "cls": "bg-white pb-16 md:pb-24",
+            "height": 752,
+            "paddingTop": 0,
+            "paddingBottom": 96,
+            "bg": "rgb(255,255,255)",
+            "heading": "News That Impacts Your Wallet",
+            "imgs": 22
+          },
+          {
+            "i": 4,
+            "tag": "SECTION",
+            "cls": "hp-market-rates-bg-gradient md:hp-market",
+            "height": 718,
+            "paddingTop": 64,
+            "paddingBottom": 64,
+            "bg": "rgb(239,252,248)",
+            "heading": "Find smarter rates today",
+            "imgs": 2
+          },
+          {
+            "i": 5,
+            "tag": "SECTION",
+            "cls": "relative flex min-h-56 flex-col items-ce",
+            "height": 224,
+            "paddingTop": 0,
+            "paddingBottom": 0,
+            "bg": "rgba(0,0,0,0)",
+            "heading": null,
+            "imgs": 0
+          },
+          {
+            "i": 6,
+            "tag": "SECTION",
+            "cls": "lg:py-0",
+            "height": 572,
+            "paddingTop": 0,
+            "paddingBottom": 0,
+            "bg": "rgba(0,0,0,0)",
+            "heading": "Earn 3.9% APY on your cash",
+            "imgs": 2
+          },
+          {
+            "i": 7,
+            "tag": "SECTION",
+            "cls": "py-8 lg:py-12",
+            "height": 784,
+            "paddingTop": 48,
+            "paddingBottom": 48,
+            "bg": "rgba(0,0,0,0)",
+            "heading": "More resources",
+            "imgs": 181
+          },
+          {
+            "i": 8,
+            "tag": "SECTION",
+            "cls": "bg-[linear-gradient(0deg,rgba(183,236,21",
+            "height": 821,
+            "paddingTop": 32,
+            "paddingBottom": 56,
+            "bg": "rgba(0,0,0,0)",
+            "heading": "Track, save, and invest — all in one easy app",
+            "imgs": 2
+          },
+          {
+            "i": 9,
+            "tag": "SECTION",
+            "cls": "bg-green w-full",
+            "height": 104,
+            "paddingTop": 0,
+            "paddingBottom": 0,
+            "bg": "rgb(0,130,84)",
+            "heading": null,
+            "imgs": 0
+          }
+        ],
+        "grids": [
+          {
+            "cols": 3,
+            "n": 4
+          },
+          {
+            "cols": 2,
+            "n": 3
+          },
+          {
+            "cols": 20,
+            "n": 1
+          },
+          {
+            "cols": 7,
+            "n": 1
+          }
+        ]
+      },
+      "imagery": {
+        "all": [
+          {
+            "kind": "img",
+            "src": "svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53M",
+            "w": 27,
+            "h": 24,
+            "ratio": 1.13,
+            "aboveFold": true,
+            "cls": "icon",
+            "alt": "Nerdwallet icon"
+          },
+          {
+            "kind": "img",
+            "src": "svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.",
+            "w": 115,
+            "h": 19,
+            "ratio": 6.05,
+            "aboveFold": true,
+            "cls": "logo",
+            "alt": "Nerdwallet logo"
+          },
+          {
+            "kind": "img",
+            "src": "svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.",
+            "w": 20,
+            "h": 20,
+            "ratio": 1,
+            "aboveFold": true,
+            "cls": "icon",
+            "alt": "Search"
+          },
+          {
+            "kind": "img",
+            "src": "svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53M",
+            "w": 22,
+            "h": 22,
+            "ratio": 1,
+            "aboveFold": true,
+            "cls": "icon",
+            "alt": "Close"
+          },
+          {
+            "kind": "img",
+            "src": "_image?href=https%3A%2F%2Fwww.nerdwallet.com%2Fc",
+            "w": 1440,
+            "h": 500,
+            "ratio": 2.88,
+            "aboveFold": true,
+            "cls": "unclassified",
+            "alt": "Hero background"
+          },
+          {
+            "kind": "img",
+            "src": "svg%3e",
+            "w": 80,
+            "h": 18,
+            "ratio": 4.44,
+            "aboveFold": true,
+            "cls": "unclassified",
+            "alt": "NerdAI"
+          },
+          {
+            "kind": "img",
+            "src": "_image?href=https%3A%2F%2Fwww.nerdwallet.com%2Ff",
+            "w": 72,
+            "h": 72,
+            "ratio": 1,
+            "aboveFold": true,
+            "cls": "unclassified",
+            "alt": "Credit cards"
+          },
+          {
+            "kind": "img",
+            "src": "_image?href=https%3A%2F%2Fwww.nerdwallet.com%2Ff",
+            "w": 72,
+            "h": 72,
+            "ratio": 1,
+            "aboveFold": true,
+            "cls": "unclassified",
+            "alt": "Insurance"
+          },
+          {
+            "kind": "img",
+            "src": "_image?href=https%3A%2F%2Fwww.nerdwallet.com%2Ff",
+            "w": 72,
+            "h": 72,
+            "ratio": 1,
+            "aboveFold": true,
+            "cls": "unclassified",
+            "alt": "Mortgages"
+          },
+          {
+            "kind": "img",
+            "src": "_image?href=https%3A%2F%2Fwww.nerdwallet.com%2Ff",
+            "w": 72,
+            "h": 72,
+            "ratio": 1,
+            "aboveFold": true,
+            "cls": "unclassified",
+            "alt": "Personal Loans"
+          },
+          {
+            "kind": "img",
+            "src": "_image?href=https%3A%2F%2Fwww.nerdwallet.com%2Ff",
+            "w": 72,
+            "h": 72,
+            "ratio": 1,
+            "aboveFold": true,
+            "cls": "unclassified",
+            "alt": "Small Business"
+          },
+          {
+            "kind": "img",
+            "src": "_image?href=https%3A%2F%2Fwww.nerdwallet.com%2Ff",
+            "w": 72,
+            "h": 72,
+            "ratio": 1,
+            "aboveFold": true,
+            "cls": "unclassified",
+            "alt": "Banking"
+          },
+          {
+            "kind": "img",
+            "src": "_image?href=https%3A%2F%2Fwww.nerdwallet.com%2Ff",
+            "w": 72,
+            "h": 72,
+            "ratio": 1,
+            "aboveFold": true,
+            "cls": "unclassified",
+            "alt": "Investing"
+          },
+          {
+            "kind": "img",
+            "src": "_image?href=https%3A%2F%2Fwww.nerdwallet.com%2Ff",
+            "w": 72,
+            "h": 72,
+            "ratio": 1,
+            "aboveFold": true,
+            "cls": "unclassified",
+            "alt": "Student Loans"
+          },
+          {
+            "kind": "img",
+            "src": "_image?href=https%3A%2F%2Fwww.nerdwallet.com%2Ff",
+            "w": 72,
+            "h": 72,
+            "ratio": 1,
+            "aboveFold": true,
+            "cls": "unclassified",
+            "alt": "Financial Advisors"
+          },
+          {
+            "kind": "img",
+            "src": "_image?href=https%3A%2F%2Fwww.nerdwallet.com%2Ff",
+            "w": 72,
+            "h": 72,
+            "ratio": 1,
+            "aboveFold": true,
+            "cls": "unclassified",
+            "alt": "Travel"
+          },
+          {
+            "kind": "img",
+            "src": "hpvalueprop_desktop_2x.webp",
+            "w": 299,
+            "h": 366,
+            "ratio": 0.82,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "Smiling person with tablet"
+          },
+          {
+            "kind": "img",
+            "src": "_image?href=https%3A%2F%2Fwww.nerdwallet.com%2Fc",
+            "w": 121,
+            "h": 22,
+            "ratio": 5.5,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "_image?href=https%3A%2F%2Fwww.nerdwallet.com%2Fc",
+            "w": 85,
+            "h": 30,
+            "ratio": 2.83,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "_image?href=https%3A%2F%2Fwww.nerdwallet.com%2Fc",
+            "w": 136,
+            "h": 33,
+            "ratio": 4.12,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "_image?href=https%3A%2F%2Fwww.nerdwallet.com%2Fc",
+            "w": 92,
+            "h": 35,
+            "ratio": 2.63,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "_image?href=https%3A%2F%2Fwww.nerdwallet.com%2Fc",
+            "w": 108,
+            "h": 30,
+            "ratio": 3.6,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "_image?href=https%3A%2F%2Fwww.nerdwallet.com%2Fc",
+            "w": 84,
+            "h": 30,
+            "ratio": 2.8,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "_image?href=https%3A%2F%2Fwww.nerdwallet.com%2Fc",
+            "w": 117,
+            "h": 28,
+            "ratio": 4.18,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "_image?href=https%3A%2F%2Fwww.nerdwallet.com%2Fc",
+            "w": 36,
+            "h": 35,
+            "ratio": 1.03,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "_image?href=https%3A%2F%2Fwww.nerdwallet.com%2Fc",
+            "w": 104,
+            "h": 32,
+            "ratio": 3.25,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "_image?href=https%3A%2F%2Fwww.nerdwallet.com%2Fc",
+            "w": 121,
+            "h": 28,
+            "ratio": 4.32,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "_image?href=https%3A%2F%2Fwww.nerdwallet.com%2Fc",
+            "w": 121,
+            "h": 22,
+            "ratio": 5.5,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "_image?href=https%3A%2F%2Fwww.nerdwallet.com%2Fc",
+            "w": 85,
+            "h": 30,
+            "ratio": 2.83,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "_image?href=https%3A%2F%2Fwww.nerdwallet.com%2Fc",
+            "w": 136,
+            "h": 33,
+            "ratio": 4.12,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "_image?href=https%3A%2F%2Fwww.nerdwallet.com%2Fc",
+            "w": 92,
+            "h": 35,
+            "ratio": 2.63,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "_image?href=https%3A%2F%2Fwww.nerdwallet.com%2Fc",
+            "w": 108,
+            "h": 30,
+            "ratio": 3.6,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "_image?href=https%3A%2F%2Fwww.nerdwallet.com%2Fc",
+            "w": 84,
+            "h": 30,
+            "ratio": 2.8,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "_image?href=https%3A%2F%2Fwww.nerdwallet.com%2Fc",
+            "w": 117,
+            "h": 28,
+            "ratio": 4.18,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "_image?href=https%3A%2F%2Fwww.nerdwallet.com%2Fc",
+            "w": 36,
+            "h": 35,
+            "ratio": 1.03,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "_image?href=https%3A%2F%2Fwww.nerdwallet.com%2Fc",
+            "w": 104,
+            "h": 32,
+            "ratio": 3.25,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "_image?href=https%3A%2F%2Fwww.nerdwallet.com%2Fc",
+            "w": 121,
+            "h": 28,
+            "ratio": 4.32,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "GettyImages-1162728.jpg?w=1200&q=60&webp=1&strip",
+            "w": 202,
+            "h": 354,
+            "ratio": 0.57,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "Looking Back at the Economic Aftershocks"
+          },
+          {
+            "kind": "img",
+            "src": "iStock_29330870_SMALL.jpg?w=1200&q=60&webp=1&str",
+            "w": 202,
+            "h": 354,
+            "ratio": 0.57,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "Here’s Why Chicken Is So Expensive Now"
+          },
+          {
+            "kind": "img",
+            "src": "Southwest-Airlines-Extends-Flight-Schedule-throu",
+            "w": 202,
+            "h": 354,
+            "ratio": 0.57,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "Southwest Lounges and a New Premium Card"
+          },
+          {
+            "kind": "img",
+            "src": "GettyImages-864643454.jpg?w=1200&q=60&webp=1&str",
+            "w": 202,
+            "h": 354,
+            "ratio": 0.57,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "Hyatt Is Ditching American Airlines For "
+          },
+          {
+            "kind": "img",
+            "src": "WEDNESDAY-MORTGAGE-RATES.jpg?w=1200&q=60&webp=1&",
+            "w": 202,
+            "h": 354,
+            "ratio": 0.57,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "Mortgage Rates Today, Wednesday, Septemb"
+          },
+          {
+            "kind": "img",
+            "src": "GettyImages-1162728.jpg?w=1200&q=60&webp=1&strip",
+            "w": 202,
+            "h": 354,
+            "ratio": 0.57,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "Looking Back at the Economic Aftershocks"
+          },
+          {
+            "kind": "img",
+            "src": "iStock_29330870_SMALL.jpg?w=1200&q=60&webp=1&str",
+            "w": 202,
+            "h": 354,
+            "ratio": 0.57,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "Here’s Why Chicken Is So Expensive Now"
+          },
+          {
+            "kind": "img",
+            "src": "Southwest-Airlines-Extends-Flight-Schedule-throu",
+            "w": 202,
+            "h": 354,
+            "ratio": 0.57,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "Southwest Lounges and a New Premium Card"
+          },
+          {
+            "kind": "img",
+            "src": "GettyImages-864643454.jpg?w=1200&q=60&webp=1&str",
+            "w": 202,
+            "h": 354,
+            "ratio": 0.57,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "Hyatt Is Ditching American Airlines For "
+          },
+          {
+            "kind": "img",
+            "src": "WEDNESDAY-MORTGAGE-RATES.jpg?w=1200&q=60&webp=1&",
+            "w": 202,
+            "h": 354,
+            "ratio": 0.57,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "Mortgage Rates Today, Wednesday, Septemb"
+          },
+          {
+            "kind": "img",
+            "src": "GettyImages-1162728.jpg?w=1200&q=60&webp=1&strip",
+            "w": 202,
+            "h": 402,
+            "ratio": 0.5,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "Looking Back at the Economic Aftershocks"
+          },
+          {
+            "kind": "img",
+            "src": "iStock_29330870_SMALL.jpg?w=1200&q=60&webp=1&str",
+            "w": 700,
+            "h": 450,
+            "ratio": 1.56,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "Here’s Why Chicken Is So Expensive Now"
+          },
+          {
+            "kind": "img",
+            "src": "nerdwallet-logo-70x70.jpg?w=96&q=60&webp=1&strip",
+            "w": 36,
+            "h": 36,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Hanna Horvath (C)"
+          },
+          {
+            "kind": "img",
+            "src": "Southwest-Airlines-Extends-Flight-Schedule-throu",
+            "w": 202,
+            "h": 402,
+            "ratio": 0.5,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "Southwest Lounges and a New Premium Card"
+          },
+          {
+            "kind": "img",
+            "src": "GettyImages-864643454.jpg?w=1200&q=60&webp=1&str",
+            "w": 202,
+            "h": 354,
+            "ratio": 0.57,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "Hyatt Is Ditching American Airlines For "
+          },
+          {
+            "kind": "img",
+            "src": "WEDNESDAY-MORTGAGE-RATES.jpg?w=1200&q=60&webp=1&",
+            "w": 202,
+            "h": 354,
+            "ratio": 0.57,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "Mortgage Rates Today, Wednesday, Septemb"
+          },
+          {
+            "kind": "img",
+            "src": "GettyImages-1162728.jpg?w=1200&q=60&webp=1&strip",
+            "w": 202,
+            "h": 354,
+            "ratio": 0.57,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "Looking Back at the Economic Aftershocks"
+          },
+          {
+            "kind": "img",
+            "src": "iStock_29330870_SMALL.jpg?w=1200&q=60&webp=1&str",
+            "w": 202,
+            "h": 354,
+            "ratio": 0.57,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "Here’s Why Chicken Is So Expensive Now"
+          },
+          {
+            "kind": "img",
+            "src": "Southwest-Airlines-Extends-Flight-Schedule-throu",
+            "w": 202,
+            "h": 354,
+            "ratio": 0.57,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "Southwest Lounges and a New Premium Card"
+          },
+          {
+            "kind": "img",
+            "src": "GettyImages-864643454.jpg?w=1200&q=60&webp=1&str",
+            "w": 202,
+            "h": 354,
+            "ratio": 0.57,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "Hyatt Is Ditching American Airlines For "
+          },
+          {
+            "kind": "img",
+            "src": "WEDNESDAY-MORTGAGE-RATES.jpg?w=1200&q=60&webp=1&",
+            "w": 202,
+            "h": 354,
+            "ratio": 0.57,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "Mortgage Rates Today, Wednesday, Septemb"
+          },
+          {
+            "kind": "img",
+            "src": "GettyImages-1162728.jpg?w=1200&q=60&webp=1&strip",
+            "w": 202,
+            "h": 354,
+            "ratio": 0.57,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "Looking Back at the Economic Aftershocks"
+          },
+          {
+            "kind": "img",
+            "src": "Handshake.svg",
+            "w": 24,
+            "h": 24,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ShieldCheck.svg",
+            "w": 24,
+            "h": 24,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "cash-action-ad-image-desktop-2x-20251120.webp",
+            "w": 564,
+            "h": 476,
+            "ratio": 1.18,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "Cash Account illustration showing 3.9% A"
+          },
+          {
+            "kind": "img",
+            "src": "ArrowRight.svg",
+            "w": 24,
+            "h": 24,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "credit-cards.webp",
+            "w": 250,
+            "h": 157,
+            "ratio": 1.59,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ArrowsLeftRightLight.onabIQ3U.svg",
+            "w": 24,
+            "h": 24,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ArrowNextForward.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ArrowNextForward.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ListChecksLight.Cwvr-jqa.svg",
+            "w": 24,
+            "h": 24,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ArrowNextForward.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ArrowNextForward.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "Link.svg",
+            "w": 24,
+            "h": 24,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ArrowNextForward.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ArrowNextForward.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "_image?href=https%3A%2F%2Fwww.nerdwallet.com%2Fc",
+            "w": 512,
+            "h": 456,
+            "ratio": 1.12,
+            "aboveFold": false,
+            "cls": "unclassified",
+            "alt": "NerdWallet mobile app desktop"
+          },
+          {
+            "kind": "img",
+            "src": "FloatingChatButton.Do3L46bz.svg",
+            "w": 56,
+            "h": 56,
+            "ratio": 1,
+            "aboveFold": true,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53M",
+            "w": 80,
+            "h": 80,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "NerdWallet Home Page"
+          },
+          {
+            "kind": "img",
+            "src": "svg+xml,%3Csvg%20height%3D%2240%22%20width%3D%22",
+            "w": 120,
+            "h": 40,
+            "ratio": 3,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "Download on the App Store"
+          },
+          {
+            "kind": "img",
+            "src": "svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.",
+            "w": 130,
+            "h": 40,
+            "ratio": 3.25,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "Get it on Google Play"
+          },
+          {
+            "kind": "img",
+            "src": "XhdugAAAABJRU5ErkJggg==",
+            "w": 150,
+            "h": 150,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "QR code for downloading the app"
+          },
+          {
+            "kind": "img",
+            "src": "svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.",
+            "w": 24,
+            "h": 24,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "US"
+          },
+          {
+            "kind": "img",
+            "src": "svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.",
+            "w": 24,
+            "h": 24,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "CA"
+          },
+          {
+            "kind": "img",
+            "src": "svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53M",
+            "w": 30,
+            "h": 30,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "X"
+          },
+          {
+            "kind": "img",
+            "src": "svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.",
+            "w": 30,
+            "h": 30,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "YouTube"
+          },
+          {
+            "kind": "img",
+            "src": "svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.",
+            "w": 30,
+            "h": 30,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Instagram"
+          },
+          {
+            "kind": "img",
+            "src": "svg+xml,%3Csvg%20width%3D%2230%22%20height%3D%22",
+            "w": 30,
+            "h": 30,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Apple Podcasts"
+          },
+          {
+            "kind": "img",
+            "src": "svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53M",
+            "w": 30,
+            "h": 30,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "TikTok"
+          }
+        ],
+        "total": 86,
+        "aboveFold": 17,
+        "belowFold": 69,
+        "byClass": {
+          "icon": 26,
+          "logo": 23,
+          "unclassified": 13,
+          "photography": 24
+        },
+        "gradientElements": 33
+      },
+      "motion": [
+        {
+          "v": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to|0.3s|cubic-bezier(0.4, 0, 0.2, 1)",
+          "n": 87
+        },
+        {
+          "v": "all|0.7s|cubic-bezier(0.22, 0.61, 0.36, 1)",
+          "n": 63
+        },
+        {
+          "v": "transform, translate, scale, rotate|0.3s|cubic-bezier(0.4, 0, 0.2, 1)",
+          "n": 29
+        },
+        {
+          "v": "width, height, opacity|0.7s, 0.7s, 0.7s|cubic-bezier(0.22, 0.61, 0.36, 1), cubic-bezier(0.22, 0.61, 0.36, 1), cubic-bezier(0.22, 0.61, 0.36, 1)",
+          "n": 21
+        },
+        {
+          "v": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to|0.15s|cubic-bezier(0.4, 0, 0.2, 1)",
+          "n": 19
+        },
+        {
+          "v": "@fadeInElement|0.6s|ease-in-out",
+          "n": 14
+        },
+        {
+          "v": "all|0.3s|cubic-bezier(0.4, 0, 0.2, 1)",
+          "n": 10
+        },
+        {
+          "v": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to|0.2s|linear",
+          "n": 9
+        },
+        {
+          "v": "all|0.2s|cubic-bezier(0.4, 0, 0.2, 1)",
+          "n": 3
+        },
+        {
+          "v": "transform|0.6s|ease-in-out",
+          "n": 3
+        },
+        {
+          "v": "opacity|0.7s|cubic-bezier(0.4, 0, 0.2, 1)",
+          "n": 2
+        },
+        {
+          "v": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to|0.2s|cubic-bezier(0.4, 0, 0.2, 1)",
+          "n": 2
+        },
+        {
+          "v": "all|0.2s|cubic-bezier(0, 0, 0.2, 1)",
+          "n": 2
+        },
+        {
+          "v": "@scroll|20s|linear",
+          "n": 2
+        }
+      ],
+      "header": {
+        "at0": {
+          "h": 82,
+          "pos": "relative",
+          "bg": "rgb(255, 255, 255)",
+          "shadow": "rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.1) 0px 2px 4px -2px",
+          "top": 0
+        },
+        "at800": {
+          "h": 82,
+          "pos": "relative",
+          "bg": "rgb(255, 255, 255)",
+          "shadow": "rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.1) 0px 2px 4px -2px",
+          "top": -800
+        },
+        "consentDismissed": "#onetrust-accept-btn-handler"
+      }
+    },
+    "m": {
+      "viewport": {
+        "vw": 390,
+        "vh": 844
+      },
+      "docHeight": 9802,
+      "type": {
+        "combos": [
+          {
+            "family": "Gotham",
+            "size": 16,
+            "weight": 325,
+            "lineHeight": "24",
+            "letterSpacing": "normal",
+            "count": 46,
+            "sample": "Boost your APY for 6 months with a Cash Account offered by A"
+          },
+          {
+            "family": "Gotham",
+            "size": 20,
+            "weight": 900,
+            "lineHeight": "40",
+            "letterSpacing": "0.48px",
+            "count": 32,
+            "sample": "Let the nerds do the work"
+          },
+          {
+            "family": "Gotham",
+            "size": 12,
+            "weight": 400,
+            "lineHeight": "16",
+            "letterSpacing": "0.08px",
+            "count": 25,
+            "sample": "NerdWallet has engaged Atomic Invest LLC (“Atomic”), an SEC-"
+          },
+          {
+            "family": "Gotham",
+            "size": 16,
+            "weight": 400,
+            "lineHeight": "24",
+            "letterSpacing": "normal",
+            "count": 23,
+            "sample": "Quickly compare mortgages or banking rates and see how they "
+          },
+          {
+            "family": "Gotham",
+            "size": 13,
+            "weight": 400,
+            "lineHeight": "19.5",
+            "letterSpacing": "normal",
+            "count": 19,
+            "sample": "Compare car insurance quotes in just minutes"
+          },
+          {
+            "family": "Gotham",
+            "size": 14,
+            "weight": 400,
+            "lineHeight": "21",
+            "letterSpacing": "0.3px",
+            "count": 19,
+            "sample": "Do not sell or share my personal information"
+          },
+          {
+            "family": "GothamDisplay",
+            "size": 16,
+            "weight": 500,
+            "lineHeight": "20",
+            "letterSpacing": "normal",
+            "count": 18,
+            "sample": "Southwest Lounges and a New Premium Card Are Coming in 2027"
+          },
+          {
+            "family": "Gotham",
+            "size": 16,
+            "weight": 500,
+            "lineHeight": "22",
+            "letterSpacing": "-0.4px",
+            "count": 10,
+            "sample": "Financial Advisors"
+          },
+          {
+            "family": "Gotham",
+            "size": 16,
+            "weight": 300,
+            "lineHeight": "24",
+            "letterSpacing": "normal",
+            "count": 10,
+            "sample": "average star rating"
+          },
+          {
+            "family": "Gotham",
+            "size": 16,
+            "weight": 500,
+            "lineHeight": "24",
+            "letterSpacing": "0.08px",
+            "count": 9,
+            "sample": "Personal finance"
+          },
+          {
+            "family": "Gotham",
+            "size": 18,
+            "weight": 500,
+            "lineHeight": "25.2",
+            "letterSpacing": "-0.18px",
+            "count": 9,
+            "sample": "Discover the best cash back credit cards"
+          },
+          {
+            "family": "Gotham",
+            "size": 14,
+            "weight": 700,
+            "lineHeight": "15",
+            "letterSpacing": "0.8125px",
+            "count": 9,
+            "sample": "Best cash back cards"
+          },
+          {
+            "family": "Gotham",
+            "size": 28,
+            "weight": 500,
+            "lineHeight": "34",
+            "letterSpacing": "-0.3px",
+            "count": 8,
+            "sample": "Why millions trust NerdWallet"
+          },
+          {
+            "family": "Gotham",
+            "size": 20,
+            "weight": 500,
+            "lineHeight": "26",
+            "letterSpacing": "-0.2px",
+            "count": 6,
+            "sample": "1.71%"
+          },
+          {
+            "family": "Gotham",
+            "size": 12,
+            "weight": 400,
+            "lineHeight": "18",
+            "letterSpacing": "0.08px",
+            "count": 4,
+            "sample": "NerdWallet USA"
+          },
+          {
+            "family": "Gotham",
+            "size": 18,
+            "weight": 500,
+            "lineHeight": "21.6",
+            "letterSpacing": "normal",
+            "count": 3,
+            "sample": "Money Market"
+          },
+          {
+            "family": "Gotham",
+            "size": 14,
+            "weight": 500,
+            "lineHeight": "22.8",
+            "letterSpacing": "normal",
+            "count": 3,
+            "sample": "\"Words cannot describe how much I love this app. I genuinely"
+          },
+          {
+            "family": "Gotham",
+            "size": 11,
+            "weight": 325,
+            "lineHeight": "16.5",
+            "letterSpacing": "normal",
+            "count": 3,
+            "sample": "— App Store Review, April 2025"
+          },
+          {
+            "family": "Gotham",
+            "size": 14,
+            "weight": 400,
+            "lineHeight": "21",
+            "letterSpacing": "0.08px",
+            "count": 3,
+            "sample": "Download the app"
+          },
+          {
+            "family": "Gotham",
+            "size": 12,
+            "weight": 500,
+            "lineHeight": "13.2",
+            "letterSpacing": "0.75px",
+            "count": 3,
+            "sample": "About"
+          },
+          {
+            "family": "Gotham",
+            "size": 13,
+            "weight": 700,
+            "lineHeight": "11.7",
+            "letterSpacing": "1.76px",
+            "count": 2,
+            "sample": "Sign In"
+          },
+          {
+            "family": "Gotham",
+            "size": 30,
+            "weight": 700,
+            "lineHeight": "36",
+            "letterSpacing": "-0.3px",
+            "count": 2,
+            "sample": "Smart financial decisions start with NerdWallet"
+          },
+          {
+            "family": "GothamDisplay",
+            "size": 18,
+            "weight": 500,
+            "lineHeight": "22.5",
+            "letterSpacing": "normal",
+            "count": 2,
+            "sample": "Mortgage Rates Today, Wednesday, September 9: A Little Highe"
+          },
+          {
+            "family": "Gotham",
+            "size": 13,
+            "weight": 400,
+            "lineHeight": "13",
+            "letterSpacing": "normal",
+            "count": 2,
+            "sample": "Anna Helhoski"
+          },
+          {
+            "family": "Gotham",
+            "size": 28,
+            "weight": 500,
+            "lineHeight": "33.6",
+            "letterSpacing": "-0.28px",
+            "count": 2,
+            "sample": "More resources"
+          },
+          {
+            "family": "Gotham",
+            "size": 12,
+            "weight": 500,
+            "lineHeight": "16",
+            "letterSpacing": "normal",
+            "count": 2,
+            "sample": "Mortgages"
+          },
+          {
+            "family": "Gotham",
+            "size": 12,
+            "weight": 400,
+            "lineHeight": "18",
+            "letterSpacing": "normal",
+            "count": 2,
+            "sample": "Average rates are sourced from the FDIC. Terms apply and req"
+          },
+          {
+            "family": "Gotham",
+            "size": 12,
+            "weight": 325,
+            "lineHeight": "16",
+            "letterSpacing": "normal",
+            "count": 2,
+            "sample": "Showing our 5 star reviews. Based on ratings and reviews col"
+          },
+          {
+            "family": "Gotham",
+            "size": 10,
+            "weight": 400,
+            "lineHeight": "16",
+            "letterSpacing": "normal",
+            "count": 2,
+            "sample": "2Savings APYs shown are current as of September 9, 2026. All"
+          },
+          {
+            "family": "Gotham",
+            "size": 14,
+            "weight": 700,
+            "lineHeight": "21",
+            "letterSpacing": "0.08px",
+            "count": 2,
+            "sample": "4.8"
+          },
+          {
+            "family": "Gotham",
+            "size": 16,
+            "weight": 400,
+            "lineHeight": "24",
+            "letterSpacing": "0.08px",
+            "count": 1,
+            "sample": "Skip to content"
+          },
+          {
+            "family": "Gotham",
+            "size": 16,
+            "weight": 400,
+            "lineHeight": "26",
+            "letterSpacing": "normal",
+            "count": 1,
+            "sample": "Navigate every money move with guidance you can trust."
+          },
+          {
+            "family": "Gotham",
+            "size": 14,
+            "weight": 400,
+            "lineHeight": "17.5",
+            "letterSpacing": "normal",
+            "count": 1,
+            "sample": "Ask me about"
+          },
+          {
+            "family": "Gotham",
+            "size": 14,
+            "weight": 700,
+            "lineHeight": "17.5",
+            "letterSpacing": "normal",
+            "count": 1,
+            "sample": "mortgages…"
+          },
+          {
+            "family": "Gotham",
+            "size": 14,
+            "weight": 500,
+            "lineHeight": "20",
+            "letterSpacing": "1.4px",
+            "count": 1,
+            "sample": "NerdWallet partners you know and trust"
+          },
+          {
+            "family": "GothamDisplay",
+            "size": 30,
+            "weight": 500,
+            "lineHeight": "36",
+            "letterSpacing": "-0.75px",
+            "count": 1,
+            "sample": "News That Impacts Your Wallet"
+          },
+          {
+            "family": "GothamDisplay",
+            "size": 14,
+            "weight": 700,
+            "lineHeight": "20",
+            "letterSpacing": "0.8px",
+            "count": 1,
+            "sample": "View All News"
+          },
+          {
+            "family": "GothamDisplay",
+            "size": 20,
+            "weight": 500,
+            "lineHeight": "25",
+            "letterSpacing": "normal",
+            "count": 1,
+            "sample": "Looking Back at the Economic Aftershocks of 9/11"
+          },
+          {
+            "family": "Gotham",
+            "size": 13,
+            "weight": 500,
+            "lineHeight": "19.5",
+            "letterSpacing": "normal",
+            "count": 1,
+            "sample": "Compare Now"
+          },
+          {
+            "family": "GothamDisplay",
+            "size": 28,
+            "weight": 500,
+            "lineHeight": "33.6",
+            "letterSpacing": "-0.28px",
+            "count": 1,
+            "sample": "Earn 3.9% APY on your cash"
+          }
+        ],
+        "distinctCombos": 48,
+        "distinctSizes": [
+          10,
+          11,
+          12,
+          13,
+          14,
+          16,
+          18,
+          19.8,
+          20,
+          28,
+          30
+        ],
+        "families": [
+          {
+            "v": "Gotham",
+            "n": 1
+          },
+          {
+            "v": "GothamDisplay",
+            "n": 1
+          }
+        ],
+        "largestHeadlinePx": 30,
+        "largestHeadlineText": "News That Impacts Your Wallet",
+        "largestTextPx": 30,
+        "bodySizePx": 16,
+        "bodySizeCount": 65
+      },
+      "colour": {
+        "backgrounds": [
+          {
+            "color": "rgb(255,255,255)",
+            "count": 40,
+            "area": 2717787
+          },
+          {
+            "color": "rgb(255,247,234)",
+            "count": 2,
+            "area": 2263962
+          },
+          {
+            "color": "rgb(0,0,0)",
+            "count": 24,
+            "area": 1319227
+          },
+          {
+            "color": "rgb(239,252,248)",
+            "count": 5,
+            "area": 667453
+          },
+          {
+            "color": "rgb(0,130,84)",
+            "count": 13,
+            "area": 229996
+          },
+          {
+            "color": "rgb(0,102,66)",
+            "count": 1,
+            "area": 163800
+          },
+          {
+            "color": "rgba(255,255,255,0.9)",
+            "count": 1,
+            "area": 17480
+          },
+          {
+            "color": "rgb(247,247,247)",
+            "count": 4,
+            "area": 9555
+          },
+          {
+            "color": "rgb(229,255,192)",
+            "count": 1,
+            "area": 3519
+          },
+          {
+            "color": "rgb(227,250,242)",
+            "count": 3,
+            "area": 3072
+          },
+          {
+            "color": "rgb(233,234,235)",
+            "count": 2,
+            "area": 120
+          }
+        ],
+        "inks": [
+          {
+            "color": "rgb(0,0,0)",
+            "count": 82,
+            "area": 735980
+          },
+          {
+            "color": "rgb(255,255,255)",
+            "count": 72,
+            "area": 758470
+          },
+          {
+            "color": "rgb(0,130,84)",
+            "count": 70,
+            "area": 696327
+          },
+          {
+            "color": "rgb(100,102,106)",
+            "count": 34,
+            "area": 281805
+          },
+          {
+            "color": "rgb(0,95,185)",
+            "count": 17,
+            "area": 42916
+          },
+          {
+            "color": "rgb(61,64,69)",
+            "count": 15,
+            "area": 206053
+          },
+          {
+            "color": "rgb(139,140,143)",
+            "count": 3,
+            "area": 6509
+          },
+          {
+            "color": "oklch(0.5510.027264.364)",
+            "count": 2,
+            "area": 3032
+          },
+          {
+            "color": "rgba(0,0,0,0)",
+            "count": 1,
+            "area": 4132
+          },
+          {
+            "color": "oklch(0.8410.238128.85)",
+            "count": 1,
+            "area": 6116
+          },
+          {
+            "color": "oklch(0.9790.021166.113)",
+            "count": 1,
+            "area": 18616
+          },
+          {
+            "color": "oklab(0.9999940.00004556770.0000200868/0.8)",
+            "count": 1,
+            "area": 1002
+          },
+          {
+            "color": "oklch(0.4480.119151.328)",
+            "count": 1,
+            "area": 8056
+          }
+        ],
+        "accentColours": [
+          {
+            "color": "rgb(0,130,84)",
+            "count": 13,
+            "area": 229996
+          },
+          {
+            "color": "rgb(0,102,66)",
+            "count": 1,
+            "area": 163800
+          },
+          {
+            "color": "rgb(229,255,192)",
+            "count": 1,
+            "area": 3519
+          }
+        ],
+        "accentAreaPct": 10.39,
+        "paintedAreaPct": 193.5,
+        "docArea": 3822780
+      },
+      "depth": {
+        "shadows": [
+          {
+            "v": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(100, 102, 106, 0.05) 0px 4px 16px 0px, rgba(100, 102, 104, 0.05) 0px 16px 40px 0px",
+            "n": 43
+          },
+          {
+            "v": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0 0 0 / 0.04) 0px 20px 25px -5px, oklab(0 0 0 / 0.04) 0px 8px 10px -6px",
+            "n": 3
+          },
+          {
+            "v": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(100, 102, 106, 0.05) 0px 4px 16px 0px",
+            "n": 2
+          },
+          {
+            "v": "rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.1) 0px 2px 4px -2px",
+            "n": 1
+          },
+          {
+            "v": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.1) 0px 2px 4px -2px",
+            "n": 1
+          },
+          {
+            "v": "rgba(100, 102, 106, 0.05) 0px 4px 16px 0px, rgba(100, 102, 104, 0.05) 0px 16px 40px 0px",
+            "n": 1
+          },
+          {
+            "v": "rgba(100, 102, 106, 0.15) 0px 5.143px 20.571px 0px, rgba(100, 102, 104, 0.15) 0px 20.571px 51.429px 0px",
+            "n": 1
+          }
+        ],
+        "distinctShadows": 7,
+        "radii": [
+          {
+            "v": "12px",
+            "n": 37
+          },
+          {
+            "v": "8px",
+            "n": 24
+          },
+          {
+            "v": "3.35544e+07px",
+            "n": 13
+          },
+          {
+            "v": "10px",
+            "n": 4
+          },
+          {
+            "v": "2px",
+            "n": 2
+          },
+          {
+            "v": "16px",
+            "n": 2
+          },
+          {
+            "v": "64px",
+            "n": 2
+          },
+          {
+            "v": "9999px",
+            "n": 1
+          },
+          {
+            "v": "16px 16px 2px",
+            "n": 1
+          },
+          {
+            "v": "1000px",
+            "n": 1
+          }
+        ],
+        "distinctRadii": 10,
+        "borders": [
+          {
+            "v": "1px/solid",
+            "n": 40
+          },
+          {
+            "v": "0px/solid",
+            "n": 16
+          }
+        ]
+      },
+      "layout": {
+        "containers": [
+          {
+            "maxWidth": 1152,
+            "n": 10
+          },
+          {
+            "maxWidth": 696,
+            "n": 2
+          },
+          {
+            "maxWidth": 900,
+            "n": 1
+          }
+        ],
+        "gutter": 14,
+        "sections": [
+          {
+            "i": 0,
+            "tag": "SECTION",
+            "cls": "relative w-full bg-green-dark min-h-[420",
+            "height": 420,
+            "paddingTop": 0,
+            "paddingBottom": 0,
+            "bg": "rgb(0,102,66)",
+            "heading": "Smart financial decisions start with NerdWallet",
+            "imgs": 2
+          },
+          {
+            "i": 1,
+            "tag": "DIV",
+            "cls": "relative z-10 -mt-10 lg:-mt-18",
+            "height": 955,
+            "paddingTop": 0,
+            "paddingBottom": 0,
+            "bg": "rgba(0,0,0,0)",
+            "heading": null,
+            "imgs": 10
+          },
+          {
+            "i": 2,
+            "tag": "SECTION",
+            "cls": "nw-container overflow-x-hidden bg-white ",
+            "height": 722,
+            "paddingTop": 48,
+            "paddingBottom": 48,
+            "bg": "rgb(255,255,255)",
+            "heading": "Why millions trust NerdWallet",
+            "imgs": 41
+          },
+          {
+            "i": 3,
+            "tag": "SECTION",
+            "cls": "bg-white pb-16 md:pb-24",
+            "height": 566,
+            "paddingTop": 0,
+            "paddingBottom": 64,
+            "bg": "rgb(255,255,255)",
+            "heading": "News That Impacts Your Wallet",
+            "imgs": 22
+          },
+          {
+            "i": 4,
+            "tag": "SECTION",
+            "cls": "hp-market-rates-bg-gradient md:hp-market",
+            "height": 698,
+            "paddingTop": 48,
+            "paddingBottom": 48,
+            "bg": "rgb(239,252,248)",
+            "heading": "Find smarter rates today",
+            "imgs": 2
+          },
+          {
+            "i": 5,
+            "tag": "SECTION",
+            "cls": "relative flex min-h-56 flex-col items-ce",
+            "height": 224,
+            "paddingTop": 0,
+            "paddingBottom": 0,
+            "bg": "rgba(0,0,0,0)",
+            "heading": null,
+            "imgs": 0
+          },
+          {
+            "i": 6,
+            "tag": "SECTION",
+            "cls": "lg:py-0",
+            "height": 602,
+            "paddingTop": 0,
+            "paddingBottom": 0,
+            "bg": "rgba(0,0,0,0)",
+            "heading": "Earn 3.9% APY on your cash",
+            "imgs": 2
+          },
+          {
+            "i": 7,
+            "tag": "SECTION",
+            "cls": "py-8 lg:py-12",
+            "height": 1219,
+            "paddingTop": 32,
+            "paddingBottom": 32,
+            "bg": "rgba(0,0,0,0)",
+            "heading": "More resources",
+            "imgs": 181
+          },
+          {
+            "i": 8,
+            "tag": "SECTION",
+            "cls": "bg-[linear-gradient(0deg,rgba(183,236,21",
+            "height": 1253,
+            "paddingTop": 32,
+            "paddingBottom": 56,
+            "bg": "rgba(0,0,0,0)",
+            "heading": "Track, save, and invest — all in one easy app",
+            "imgs": 2
+          },
+          {
+            "i": 9,
+            "tag": "SECTION",
+            "cls": "bg-green w-full",
+            "height": 216,
+            "paddingTop": 0,
+            "paddingBottom": 0,
+            "bg": "rgb(0,130,84)",
+            "heading": null,
+            "imgs": 0
+          }
+        ],
+        "grids": [
+          {
+            "cols": 2,
+            "n": 6
+          }
+        ]
+      },
+      "imagery": {
+        "all": [
+          {
+            "kind": "img",
+            "src": "svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53M",
+            "w": 27,
+            "h": 20,
+            "ratio": 1.35,
+            "aboveFold": true,
+            "cls": "icon",
+            "alt": "Nerdwallet icon"
+          },
+          {
+            "kind": "img",
+            "src": "svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.",
+            "w": 20,
+            "h": 20,
+            "ratio": 1,
+            "aboveFold": true,
+            "cls": "icon",
+            "alt": "Search"
+          },
+          {
+            "kind": "img",
+            "src": "_image?href=https%3A%2F%2Fwww.nerdwallet.com%2Fc",
+            "w": 390,
+            "h": 200,
+            "ratio": 1.95,
+            "aboveFold": true,
+            "cls": "unclassified",
+            "alt": "Hero background"
+          },
+          {
+            "kind": "img",
+            "src": "svg%3e",
+            "w": 80,
+            "h": 18,
+            "ratio": 4.44,
+            "aboveFold": true,
+            "cls": "unclassified",
+            "alt": "NerdAI"
+          },
+          {
+            "kind": "img",
+            "src": "_image?href=https%3A%2F%2Fwww.nerdwallet.com%2Ff",
+            "w": 40,
+            "h": 40,
+            "ratio": 1,
+            "aboveFold": true,
+            "cls": "icon",
+            "alt": "Credit cards"
+          },
+          {
+            "kind": "img",
+            "src": "_image?href=https%3A%2F%2Fwww.nerdwallet.com%2Ff",
+            "w": 40,
+            "h": 40,
+            "ratio": 1,
+            "aboveFold": true,
+            "cls": "icon",
+            "alt": "Insurance"
+          },
+          {
+            "kind": "img",
+            "src": "_image?href=https%3A%2F%2Fwww.nerdwallet.com%2Ff",
+            "w": 40,
+            "h": 40,
+            "ratio": 1,
+            "aboveFold": true,
+            "cls": "icon",
+            "alt": "Mortgages"
+          },
+          {
+            "kind": "img",
+            "src": "_image?href=https%3A%2F%2Fwww.nerdwallet.com%2Ff",
+            "w": 40,
+            "h": 40,
+            "ratio": 1,
+            "aboveFold": true,
+            "cls": "icon",
+            "alt": "Personal Loans"
+          },
+          {
+            "kind": "img",
+            "src": "_image?href=https%3A%2F%2Fwww.nerdwallet.com%2Ff",
+            "w": 40,
+            "h": 40,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Small Business"
+          },
+          {
+            "kind": "img",
+            "src": "_image?href=https%3A%2F%2Fwww.nerdwallet.com%2Ff",
+            "w": 40,
+            "h": 40,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Banking"
+          },
+          {
+            "kind": "img",
+            "src": "_image?href=https%3A%2F%2Fwww.nerdwallet.com%2Ff",
+            "w": 40,
+            "h": 40,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Investing"
+          },
+          {
+            "kind": "img",
+            "src": "_image?href=https%3A%2F%2Fwww.nerdwallet.com%2Ff",
+            "w": 40,
+            "h": 40,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Student Loans"
+          },
+          {
+            "kind": "img",
+            "src": "_image?href=https%3A%2F%2Fwww.nerdwallet.com%2Ff",
+            "w": 40,
+            "h": 40,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Financial Advisors"
+          },
+          {
+            "kind": "img",
+            "src": "_image?href=https%3A%2F%2Fwww.nerdwallet.com%2Ff",
+            "w": 40,
+            "h": 40,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Travel"
+          },
+          {
+            "kind": "img",
+            "src": "hpvalueprop_desktop_2x.webp",
+            "w": 147,
+            "h": 398,
+            "ratio": 0.37,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "Smiling person with tablet"
+          },
+          {
+            "kind": "img",
+            "src": "_image?href=https%3A%2F%2Fwww.nerdwallet.com%2Fc",
+            "w": 121,
+            "h": 22,
+            "ratio": 5.5,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "_image?href=https%3A%2F%2Fwww.nerdwallet.com%2Fc",
+            "w": 85,
+            "h": 30,
+            "ratio": 2.83,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "_image?href=https%3A%2F%2Fwww.nerdwallet.com%2Fc",
+            "w": 132,
+            "h": 32,
+            "ratio": 4.12,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "_image?href=https%3A%2F%2Fwww.nerdwallet.com%2Fc",
+            "w": 84,
+            "h": 32,
+            "ratio": 2.63,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "_image?href=https%3A%2F%2Fwww.nerdwallet.com%2Fc",
+            "w": 108,
+            "h": 30,
+            "ratio": 3.6,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "_image?href=https%3A%2F%2Fwww.nerdwallet.com%2Fc",
+            "w": 84,
+            "h": 30,
+            "ratio": 2.8,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "_image?href=https%3A%2F%2Fwww.nerdwallet.com%2Fc",
+            "w": 117,
+            "h": 28,
+            "ratio": 4.18,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "_image?href=https%3A%2F%2Fwww.nerdwallet.com%2Fc",
+            "w": 33,
+            "h": 32,
+            "ratio": 1.03,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "_image?href=https%3A%2F%2Fwww.nerdwallet.com%2Fc",
+            "w": 104,
+            "h": 32,
+            "ratio": 3.25,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "_image?href=https%3A%2F%2Fwww.nerdwallet.com%2Fc",
+            "w": 121,
+            "h": 28,
+            "ratio": 4.32,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "_image?href=https%3A%2F%2Fwww.nerdwallet.com%2Fc",
+            "w": 121,
+            "h": 22,
+            "ratio": 5.5,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "_image?href=https%3A%2F%2Fwww.nerdwallet.com%2Fc",
+            "w": 85,
+            "h": 30,
+            "ratio": 2.83,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "_image?href=https%3A%2F%2Fwww.nerdwallet.com%2Fc",
+            "w": 132,
+            "h": 32,
+            "ratio": 4.12,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "_image?href=https%3A%2F%2Fwww.nerdwallet.com%2Fc",
+            "w": 84,
+            "h": 32,
+            "ratio": 2.63,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "_image?href=https%3A%2F%2Fwww.nerdwallet.com%2Fc",
+            "w": 108,
+            "h": 30,
+            "ratio": 3.6,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "_image?href=https%3A%2F%2Fwww.nerdwallet.com%2Fc",
+            "w": 84,
+            "h": 30,
+            "ratio": 2.8,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "_image?href=https%3A%2F%2Fwww.nerdwallet.com%2Fc",
+            "w": 117,
+            "h": 28,
+            "ratio": 4.18,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "_image?href=https%3A%2F%2Fwww.nerdwallet.com%2Fc",
+            "w": 33,
+            "h": 32,
+            "ratio": 1.03,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "_image?href=https%3A%2F%2Fwww.nerdwallet.com%2Fc",
+            "w": 104,
+            "h": 32,
+            "ratio": 3.25,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "_image?href=https%3A%2F%2Fwww.nerdwallet.com%2Fc",
+            "w": 121,
+            "h": 28,
+            "ratio": 4.32,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "GettyImages-1162728.jpg?w=350&q=60&webp=1&strip=",
+            "w": 202,
+            "h": 300,
+            "ratio": 0.67,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "Looking Back at the Economic Aftershocks"
+          },
+          {
+            "kind": "img",
+            "src": "iStock_29330870_SMALL.jpg?w=350&q=60&webp=1&stri",
+            "w": 202,
+            "h": 300,
+            "ratio": 0.67,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "Here’s Why Chicken Is So Expensive Now"
+          },
+          {
+            "kind": "img",
+            "src": "Southwest-Airlines-Extends-Flight-Schedule-throu",
+            "w": 202,
+            "h": 300,
+            "ratio": 0.67,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "Southwest Lounges and a New Premium Card"
+          },
+          {
+            "kind": "img",
+            "src": "GettyImages-864643454.jpg?w=350&q=60&webp=1&stri",
+            "w": 202,
+            "h": 300,
+            "ratio": 0.67,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "Hyatt Is Ditching American Airlines For "
+          },
+          {
+            "kind": "img",
+            "src": "WEDNESDAY-MORTGAGE-RATES.jpg?w=350&q=60&webp=1&s",
+            "w": 202,
+            "h": 300,
+            "ratio": 0.67,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "Mortgage Rates Today, Wednesday, Septemb"
+          },
+          {
+            "kind": "img",
+            "src": "GettyImages-1162728.jpg?w=350&q=60&webp=1&strip=",
+            "w": 202,
+            "h": 300,
+            "ratio": 0.67,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "Looking Back at the Economic Aftershocks"
+          },
+          {
+            "kind": "img",
+            "src": "iStock_29330870_SMALL.jpg?w=350&q=60&webp=1&stri",
+            "w": 202,
+            "h": 300,
+            "ratio": 0.67,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "Here’s Why Chicken Is So Expensive Now"
+          },
+          {
+            "kind": "img",
+            "src": "Southwest-Airlines-Extends-Flight-Schedule-throu",
+            "w": 202,
+            "h": 300,
+            "ratio": 0.67,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "Southwest Lounges and a New Premium Card"
+          },
+          {
+            "kind": "img",
+            "src": "GettyImages-864643454.jpg?w=350&q=60&webp=1&stri",
+            "w": 202,
+            "h": 300,
+            "ratio": 0.67,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "Hyatt Is Ditching American Airlines For "
+          },
+          {
+            "kind": "img",
+            "src": "WEDNESDAY-MORTGAGE-RATES.jpg?w=350&q=60&webp=1&s",
+            "w": 272,
+            "h": 240,
+            "ratio": 1.13,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "Mortgage Rates Today, Wednesday, Septemb"
+          },
+          {
+            "kind": "img",
+            "src": "GettyImages-1162728.jpg?w=350&q=60&webp=1&strip=",
+            "w": 326,
+            "h": 300,
+            "ratio": 1.09,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "Looking Back at the Economic Aftershocks"
+          },
+          {
+            "kind": "img",
+            "src": "478926b2c5bd77edcfd00ebb19c137811aa1bd0f1e7b21f9",
+            "w": 32,
+            "h": 32,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Anna Helhoski"
+          },
+          {
+            "kind": "img",
+            "src": "iStock_29330870_SMALL.jpg?w=350&q=60&webp=1&stri",
+            "w": 272,
+            "h": 240,
+            "ratio": 1.13,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "Here’s Why Chicken Is So Expensive Now"
+          },
+          {
+            "kind": "img",
+            "src": "Southwest-Airlines-Extends-Flight-Schedule-throu",
+            "w": 202,
+            "h": 300,
+            "ratio": 0.67,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "Southwest Lounges and a New Premium Card"
+          },
+          {
+            "kind": "img",
+            "src": "GettyImages-864643454.jpg?w=350&q=60&webp=1&stri",
+            "w": 202,
+            "h": 300,
+            "ratio": 0.67,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "Hyatt Is Ditching American Airlines For "
+          },
+          {
+            "kind": "img",
+            "src": "WEDNESDAY-MORTGAGE-RATES.jpg?w=350&q=60&webp=1&s",
+            "w": 202,
+            "h": 300,
+            "ratio": 0.67,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "Mortgage Rates Today, Wednesday, Septemb"
+          },
+          {
+            "kind": "img",
+            "src": "GettyImages-1162728.jpg?w=350&q=60&webp=1&strip=",
+            "w": 202,
+            "h": 300,
+            "ratio": 0.67,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "Looking Back at the Economic Aftershocks"
+          },
+          {
+            "kind": "img",
+            "src": "iStock_29330870_SMALL.jpg?w=350&q=60&webp=1&stri",
+            "w": 202,
+            "h": 300,
+            "ratio": 0.67,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "Here’s Why Chicken Is So Expensive Now"
+          },
+          {
+            "kind": "img",
+            "src": "Southwest-Airlines-Extends-Flight-Schedule-throu",
+            "w": 202,
+            "h": 300,
+            "ratio": 0.67,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "Southwest Lounges and a New Premium Card"
+          },
+          {
+            "kind": "img",
+            "src": "GettyImages-864643454.jpg?w=350&q=60&webp=1&stri",
+            "w": 202,
+            "h": 300,
+            "ratio": 0.67,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "Hyatt Is Ditching American Airlines For "
+          },
+          {
+            "kind": "img",
+            "src": "WEDNESDAY-MORTGAGE-RATES.jpg?w=350&q=60&webp=1&s",
+            "w": 202,
+            "h": 300,
+            "ratio": 0.67,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "Mortgage Rates Today, Wednesday, Septemb"
+          },
+          {
+            "kind": "img",
+            "src": "GettyImages-1162728.jpg?w=350&q=60&webp=1&strip=",
+            "w": 202,
+            "h": 300,
+            "ratio": 0.67,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "Looking Back at the Economic Aftershocks"
+          },
+          {
+            "kind": "img",
+            "src": "Handshake.svg",
+            "w": 24,
+            "h": 24,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ShieldCheck.svg",
+            "w": 24,
+            "h": 24,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "cash-action-ad-image-mweb-2x-20251120.webp",
+            "w": 358,
+            "h": 190,
+            "ratio": 1.88,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "Cash Account illustration showing 3.9% A"
+          },
+          {
+            "kind": "img",
+            "src": "Minus.svg",
+            "w": 24,
+            "h": 24,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ArrowsLeftRightLight.onabIQ3U.svg",
+            "w": 24,
+            "h": 24,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ArrowNextForward.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ArrowNextForward.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ListChecksLight.Cwvr-jqa.svg",
+            "w": 24,
+            "h": 24,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ArrowNextForward.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ArrowNextForward.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "Link.svg",
+            "w": 24,
+            "h": 24,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ArrowNextForward.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ArrowNextForward.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "Plus.svg",
+            "w": 24,
+            "h": 24,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "HeartBeat.svg",
+            "w": 24,
+            "h": 24,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ArrowNextForward.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ArrowNextForward.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "PawPrint.svg",
+            "w": 24,
+            "h": 24,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ArrowNextForward.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ArrowNextForward.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ShieldPlus.svg",
+            "w": 24,
+            "h": 24,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ArrowNextForward.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ArrowNextForward.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "Plus.svg",
+            "w": 24,
+            "h": 24,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "Calculator.svg",
+            "w": 24,
+            "h": 24,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ArrowNextForward.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ArrowNextForward.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ChartLineUpLight.Da94UsKP.svg",
+            "w": 24,
+            "h": 24,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ArrowNextForward.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ArrowNextForward.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "House.svg",
+            "w": 24,
+            "h": 24,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ArrowNextForward.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ArrowNextForward.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "Plus.svg",
+            "w": 24,
+            "h": 24,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ArrowFatLineUp.svg",
+            "w": 24,
+            "h": 24,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ArrowNextForward.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ArrowNextForward.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "Calculator.svg",
+            "w": 24,
+            "h": 24,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ArrowNextForward.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ArrowNextForward.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "Scales.svg",
+            "w": 24,
+            "h": 24,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ArrowNextForward.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ArrowNextForward.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "Plus.svg",
+            "w": 24,
+            "h": 24,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "UserCircle.svg",
+            "w": 24,
+            "h": 24,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ArrowNextForward.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ArrowNextForward.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "LightBulb.svg",
+            "w": 24,
+            "h": 24,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ArrowNextForward.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ArrowNextForward.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "Coins.svg",
+            "w": 24,
+            "h": 24,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ArrowNextForward.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ArrowNextForward.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "Plus.svg",
+            "w": 24,
+            "h": 24,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "Medal.svg",
+            "w": 24,
+            "h": 24,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ArrowNextForward.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ArrowNextForward.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ListMagnifyingGlass.svg",
+            "w": 24,
+            "h": 24,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ArrowNextForward.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ArrowNextForward.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "PiggyBank.svg",
+            "w": 24,
+            "h": 24,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ArrowNextForward.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ArrowNextForward.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "Plus.svg",
+            "w": 24,
+            "h": 24,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "Calculator.svg",
+            "w": 24,
+            "h": 24,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ArrowNextForward.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ArrowNextForward.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "SealCheck.svg",
+            "w": 24,
+            "h": 24,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ArrowNextForward.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ArrowNextForward.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "Files.svg",
+            "w": 24,
+            "h": 24,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ArrowNextForward.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ArrowNextForward.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "Plus.svg",
+            "w": 24,
+            "h": 24,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "StudentLight.svg",
+            "w": 24,
+            "h": 24,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ArrowNextForward.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ArrowNextForward.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "Files.svg",
+            "w": 24,
+            "h": 24,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ArrowNextForward.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ArrowNextForward.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "GraduationCap.svg",
+            "w": 24,
+            "h": 24,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ArrowNextForward.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ArrowNextForward.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "Plus.svg",
+            "w": 24,
+            "h": 24,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "Percent.svg",
+            "w": 24,
+            "h": 24,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ArrowNextForward.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ArrowNextForward.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ChartLineUpLight.Da94UsKP.svg",
+            "w": 24,
+            "h": 24,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ArrowNextForward.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ArrowNextForward.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ListNumbers.svg",
+            "w": 24,
+            "h": 24,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ArrowNextForward.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "ArrowNextForward.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "_image?href=https%3A%2F%2Fwww.nerdwallet.com%2Fc",
+            "w": 358,
+            "h": 436,
+            "ratio": 0.82,
+            "aboveFold": false,
+            "cls": "unclassified",
+            "alt": "NerdWallet mobile app mobile"
+          },
+          {
+            "kind": "img",
+            "src": "FloatingChatButton.Do3L46bz.svg",
+            "w": 56,
+            "h": 56,
+            "ratio": 1,
+            "aboveFold": true,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53M",
+            "w": 80,
+            "h": 80,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "NerdWallet Home Page"
+          },
+          {
+            "kind": "img",
+            "src": "svg+xml,%3Csvg%20height%3D%2240%22%20width%3D%22",
+            "w": 120,
+            "h": 40,
+            "ratio": 3,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "Download on the App Store"
+          },
+          {
+            "kind": "img",
+            "src": "svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.",
+            "w": 130,
+            "h": 40,
+            "ratio": 3.25,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "Get it on Google Play"
+          },
+          {
+            "kind": "img",
+            "src": "svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.",
+            "w": 24,
+            "h": 24,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "US"
+          },
+          {
+            "kind": "img",
+            "src": "svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.",
+            "w": 24,
+            "h": 24,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "CA"
+          },
+          {
+            "kind": "img",
+            "src": "svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53M",
+            "w": 30,
+            "h": 30,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "X"
+          },
+          {
+            "kind": "img",
+            "src": "svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.",
+            "w": 30,
+            "h": 30,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "YouTube"
+          },
+          {
+            "kind": "img",
+            "src": "svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.",
+            "w": 30,
+            "h": 30,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Instagram"
+          },
+          {
+            "kind": "img",
+            "src": "svg+xml,%3Csvg%20width%3D%2230%22%20height%3D%22",
+            "w": 30,
+            "h": 30,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Apple Podcasts"
+          },
+          {
+            "kind": "img",
+            "src": "svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53M",
+            "w": 30,
+            "h": 30,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "TikTok"
+          }
+        ],
+        "total": 162,
+        "aboveFold": 9,
+        "belowFold": 153,
+        "byClass": {
+          "icon": 115,
+          "unclassified": 3,
+          "photography": 23,
+          "logo": 21
+        },
+        "gradientElements": 34
+      },
+      "motion": [
+        {
+          "v": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to|0.3s|cubic-bezier(0.4, 0, 0.2, 1)",
+          "n": 87
+        },
+        {
+          "v": "transform, translate, scale, rotate|0.3s|cubic-bezier(0.4, 0, 0.2, 1)",
+          "n": 77
+        },
+        {
+          "v": "all|0.7s|cubic-bezier(0.22, 0.61, 0.36, 1)",
+          "n": 63
+        },
+        {
+          "v": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to|0.15s|cubic-bezier(0.4, 0, 0.2, 1)",
+          "n": 51
+        },
+        {
+          "v": "width, height, opacity|0.7s, 0.7s, 0.7s|cubic-bezier(0.22, 0.61, 0.36, 1), cubic-bezier(0.22, 0.61, 0.36, 1), cubic-bezier(0.22, 0.61, 0.36, 1)",
+          "n": 21
+        },
+        {
+          "v": "@fadeInElement|0.6s|ease-in-out",
+          "n": 14
+        },
+        {
+          "v": "all|0.3s|cubic-bezier(0.4, 0, 0.2, 1)",
+          "n": 13
+        },
+        {
+          "v": "all|0.2s|cubic-bezier(0.4, 0, 0.2, 1)",
+          "n": 3
+        },
+        {
+          "v": "transform|0.6s|ease-in-out",
+          "n": 3
+        },
+        {
+          "v": "opacity|0.7s|cubic-bezier(0.4, 0, 0.2, 1)",
+          "n": 2
+        },
+        {
+          "v": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to|0.2s|cubic-bezier(0.4, 0, 0.2, 1)",
+          "n": 2
+        },
+        {
+          "v": "all|0.2s|cubic-bezier(0, 0, 0.2, 1)",
+          "n": 2
+        },
+        {
+          "v": "@scroll|20s|linear",
+          "n": 2
+        },
+        {
+          "v": "all|0.075s|cubic-bezier(0.4, 0, 0.2, 1)",
+          "n": 2
+        }
+      ],
+      "header": {
+        "at0": {
+          "h": 66,
+          "pos": "relative",
+          "bg": "rgb(255, 255, 255)",
+          "shadow": "rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.1) 0px 2px 4px -2px",
+          "top": 0
+        },
+        "at800": {
+          "h": 66,
+          "pos": "relative",
+          "bg": "rgb(255, 255, 255)",
+          "shadow": "rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.1) 0px 2px 4px -2px",
+          "top": -800
+        },
+        "consentDismissed": "#onetrust-accept-btn-handler"
+      }
+    }
+  }
+}

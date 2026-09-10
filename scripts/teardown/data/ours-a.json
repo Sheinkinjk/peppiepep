@@ -1,0 +1,1337 @@
+{
+  "site": "ours-a",
+  "url": "http://localhost:3000/preview/home-a",
+  "capturedAt": "2026-09-10T08:42:37.572Z",
+  "breakpoints": {
+    "d": {
+      "viewport": {
+        "vw": 1440,
+        "vh": 900
+      },
+      "docHeight": 3744,
+      "type": {
+        "combos": [
+          {
+            "family": "Public Sans",
+            "size": 13,
+            "weight": 400,
+            "lineHeight": "21.5",
+            "letterSpacing": "normal",
+            "count": 27,
+            "sample": "Health content on this site is general information only. It "
+          },
+          {
+            "family": "Public Sans",
+            "size": 13,
+            "weight": 400,
+            "lineHeight": "20.2",
+            "letterSpacing": "normal",
+            "count": 24,
+            "sample": "Business software"
+          },
+          {
+            "family": "Public Sans",
+            "size": 16,
+            "weight": 600,
+            "lineHeight": "24.8",
+            "letterSpacing": "normal",
+            "count": 21,
+            "sample": "Apollo Energy Group"
+          },
+          {
+            "family": "Public Sans",
+            "size": 16,
+            "weight": 400,
+            "lineHeight": "24.8",
+            "letterSpacing": "normal",
+            "count": 18,
+            "sample": "15% off pet care services, up from 12% (not the premium)"
+          },
+          {
+            "family": "Public Sans",
+            "size": 13,
+            "weight": 500,
+            "lineHeight": "20.2",
+            "letterSpacing": "normal",
+            "count": 9,
+            "sample": "For business"
+          },
+          {
+            "family": "Public Sans",
+            "size": 13,
+            "weight": 600,
+            "lineHeight": "20.2",
+            "letterSpacing": "normal",
+            "count": 6,
+            "sample": "Offer"
+          },
+          {
+            "family": "Public Sans",
+            "size": 16,
+            "weight": 400,
+            "lineHeight": "26.4",
+            "letterSpacing": "normal",
+            "count": 6,
+            "sample": "Rankings are never sold. No provider can pay to be placed hi"
+          },
+          {
+            "family": "ui-monospace",
+            "size": 13,
+            "weight": 400,
+            "lineHeight": "20.2",
+            "letterSpacing": "normal",
+            "count": 5,
+            "sample": "referlab2mf"
+          },
+          {
+            "family": "Public Sans",
+            "size": 13,
+            "weight": 400,
+            "lineHeight": "18.2",
+            "letterSpacing": "normal",
+            "count": 5,
+            "sample": "Benefit percentages, annual limits, excess and the waiting p"
+          },
+          {
+            "family": "Newsreader",
+            "size": 32,
+            "weight": 600,
+            "lineHeight": "36.8",
+            "letterSpacing": "-0.32px",
+            "count": 4,
+            "sample": "Current offers"
+          },
+          {
+            "family": "Public Sans",
+            "size": 16,
+            "weight": 600,
+            "lineHeight": "20.8",
+            "letterSpacing": "normal",
+            "count": 4,
+            "sample": "Who underwrites pet insurance in Australia"
+          },
+          {
+            "family": "Public Sans",
+            "size": 13,
+            "weight": 400,
+            "lineHeight": "18.9",
+            "letterSpacing": "normal",
+            "count": 4,
+            "sample": "Most published sources name the wrong insurer. Knose's own d"
+          },
+          {
+            "family": "Space Grotesk",
+            "size": 13,
+            "weight": 600,
+            "lineHeight": "15",
+            "letterSpacing": "-0.325px",
+            "count": 4,
+            "sample": "Categories"
+          },
+          {
+            "family": "Public Sans",
+            "size": 20,
+            "weight": 400,
+            "lineHeight": "33",
+            "letterSpacing": "normal",
+            "count": 3,
+            "sample": "Offers carrying a real discount. Free plans and free trials "
+          },
+          {
+            "family": "Public Sans",
+            "size": 16,
+            "weight": 500,
+            "lineHeight": "24.8",
+            "letterSpacing": "normal",
+            "count": 3,
+            "sample": "Browse current offers"
+          },
+          {
+            "family": "Public Sans",
+            "size": 16,
+            "weight": 600,
+            "lineHeight": "26.4",
+            "letterSpacing": "normal",
+            "count": 3,
+            "sample": "Apollo Energy Group"
+          },
+          {
+            "family": "Public Sans",
+            "size": 20,
+            "weight": 600,
+            "lineHeight": "31",
+            "letterSpacing": "normal",
+            "count": 3,
+            "sample": "$500"
+          },
+          {
+            "family": "Space Grotesk",
+            "size": 20,
+            "weight": 600,
+            "lineHeight": "23",
+            "letterSpacing": "-0.5px",
+            "count": 3,
+            "sample": "What we verify"
+          },
+          {
+            "family": "Newsreader",
+            "size": 20,
+            "weight": 600,
+            "lineHeight": "31",
+            "letterSpacing": "-0.2px",
+            "count": 1,
+            "sample": "Refer Labs"
+          },
+          {
+            "family": "Newsreader",
+            "size": 56,
+            "weight": 600,
+            "lineHeight": "58.8",
+            "letterSpacing": "-1.12px",
+            "count": 1,
+            "sample": "Independent comparisons, with the date we checked."
+          }
+        ],
+        "distinctCombos": 20,
+        "distinctSizes": [
+          13,
+          16,
+          20,
+          32,
+          56
+        ],
+        "families": [
+          {
+            "v": "ui-monospace",
+            "n": 5
+          },
+          {
+            "v": "Public Sans",
+            "n": 3
+          },
+          {
+            "v": "Space Grotesk",
+            "n": 3
+          },
+          {
+            "v": "Newsreader",
+            "n": 1
+          }
+        ],
+        "largestHeadlinePx": 56,
+        "largestHeadlineText": "Independent comparisons, with the date we checked.",
+        "largestTextPx": 56,
+        "bodySizePx": 13,
+        "bodySizeCount": 14
+      },
+      "colour": {
+        "backgrounds": [
+          {
+            "color": "rgb(244,247,245)",
+            "count": 7,
+            "area": 5445595
+          },
+          {
+            "color": "rgb(255,255,255)",
+            "count": 10,
+            "area": 2065349
+          },
+          {
+            "color": "rgb(14,124,90)",
+            "count": 2,
+            "area": 16895
+          },
+          {
+            "color": "rgb(28,28,28)",
+            "count": 1,
+            "area": 6205
+          }
+        ],
+        "inks": [
+          {
+            "color": "rgb(90,107,101)",
+            "count": 68,
+            "area": 704904
+          },
+          {
+            "color": "rgb(16,35,28)",
+            "count": 50,
+            "area": 227536
+          },
+          {
+            "color": "rgb(2,75,86)",
+            "count": 12,
+            "area": 293669
+          },
+          {
+            "color": "rgb(143,106,28)",
+            "count": 11,
+            "area": 33556
+          },
+          {
+            "color": "rgb(10,92,67)",
+            "count": 10,
+            "area": 11150
+          },
+          {
+            "color": "rgb(255,255,255)",
+            "count": 2,
+            "area": 16895
+          },
+          {
+            "color": "rgb(154,154,154)",
+            "count": 1,
+            "area": 1361
+          }
+        ],
+        "accentColours": [
+          {
+            "color": "rgb(14,124,90)",
+            "count": 2,
+            "area": 16895
+          }
+        ],
+        "accentAreaPct": 0.31,
+        "paintedAreaPct": 139.7,
+        "docArea": 5391360
+      },
+      "depth": {
+        "shadows": [
+          {
+            "v": "rgba(16, 35, 28, 0.04) 0px 1px 2px 0px, rgba(16, 35, 28, 0.06) 0px 8px 24px 0px",
+            "n": 1
+          }
+        ],
+        "distinctShadows": 1,
+        "radii": [
+          {
+            "v": "6px",
+            "n": 18
+          },
+          {
+            "v": "4px",
+            "n": 2
+          },
+          {
+            "v": "12px",
+            "n": 2
+          }
+        ],
+        "distinctRadii": 3,
+        "borders": [
+          {
+            "v": "0px/solid",
+            "n": 59
+          },
+          {
+            "v": "1px/solid",
+            "n": 23
+          },
+          {
+            "v": "1px/dashed",
+            "n": 4
+          }
+        ]
+      },
+      "layout": {
+        "containers": [
+          {
+            "maxWidth": 1120,
+            "n": 10
+          },
+          {
+            "maxWidth": 832,
+            "n": 2
+          },
+          {
+            "maxWidth": 666,
+            "n": 1
+          }
+        ],
+        "gutter": 16,
+        "sections": [
+          {
+            "i": 0,
+            "tag": "SECTION",
+            "cls": "rl-section",
+            "height": 474,
+            "paddingTop": 72,
+            "paddingBottom": 72,
+            "bg": "rgba(0,0,0,0)",
+            "heading": "Independent comparisons, with the date we checked.",
+            "imgs": 3
+          },
+          {
+            "i": 1,
+            "tag": "SECTION",
+            "cls": "rl-section rl-section--tight",
+            "height": 219,
+            "paddingTop": 44,
+            "paddingBottom": 44,
+            "bg": "rgba(0,0,0,0)",
+            "heading": null,
+            "imgs": 0
+          },
+          {
+            "i": 2,
+            "tag": "SECTION",
+            "cls": "rl-section rl-rule-top",
+            "height": 970,
+            "paddingTop": 72,
+            "paddingBottom": 72,
+            "bg": "rgba(0,0,0,0)",
+            "heading": "Current offers",
+            "imgs": 8
+          },
+          {
+            "i": 3,
+            "tag": "SECTION",
+            "cls": "rl-section rl-rule-top",
+            "height": 399,
+            "paddingTop": 72,
+            "paddingBottom": 72,
+            "bg": "rgba(0,0,0,0)",
+            "heading": "How we compare",
+            "imgs": 0
+          },
+          {
+            "i": 4,
+            "tag": "SECTION",
+            "cls": "rl-section rl-section--tight rl-rule-top",
+            "height": 199,
+            "paddingTop": 44,
+            "paddingBottom": 44,
+            "bg": "rgba(0,0,0,0)",
+            "heading": null,
+            "imgs": 6
+          },
+          {
+            "i": 5,
+            "tag": "SECTION",
+            "cls": "rl-section rl-rule-top",
+            "height": 400,
+            "paddingTop": 72,
+            "paddingBottom": 72,
+            "bg": "rgba(0,0,0,0)",
+            "heading": "Popular comparisons",
+            "imgs": 0
+          },
+          {
+            "i": 6,
+            "tag": "SECTION",
+            "cls": "rl-section rl-section--tight rl-rule-top",
+            "height": 142,
+            "paddingTop": 44,
+            "paddingBottom": 44,
+            "bg": "rgba(0,0,0,0)",
+            "heading": null,
+            "imgs": 0
+          },
+          {
+            "i": 7,
+            "tag": "SECTION",
+            "cls": "rl-section rl-section--tight rl-rule-top",
+            "height": 284,
+            "paddingTop": 44,
+            "paddingBottom": 44,
+            "bg": "rgba(0,0,0,0)",
+            "heading": "Get the re-checks",
+            "imgs": 0
+          }
+        ],
+        "grids": [
+          {
+            "cols": 3,
+            "n": 4
+          },
+          {
+            "cols": 4,
+            "n": 2
+          },
+          {
+            "cols": 2,
+            "n": 1
+          },
+          {
+            "cols": 5,
+            "n": 1
+          }
+        ]
+      },
+      "imagery": {
+        "all": [
+          {
+            "kind": "img",
+            "src": "image?url=%2Flogos%2Fapollo-energy.png&w=64&q=75",
+            "w": 32,
+            "h": 32,
+            "ratio": 1,
+            "aboveFold": true,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "knose.svg",
+            "w": 32,
+            "h": 12,
+            "ratio": 2.58,
+            "aboveFold": true,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "image?url=%2Flogos%2Fleadpages.png&w=64&q=75",
+            "w": 32,
+            "h": 32,
+            "ratio": 1,
+            "aboveFold": true,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "image?url=%2Flogos%2Fapollo-energy.png&w=64&q=75",
+            "w": 28,
+            "h": 28,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "knose.svg",
+            "w": 28,
+            "h": 28,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "image?url=%2Flogos%2Fleadpages.png&w=64&q=75",
+            "w": 28,
+            "h": 28,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "image?url=%2Flogos%2Funbounce.png&w=64&q=75",
+            "w": 28,
+            "h": 28,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "image?url=%2Flogos%2Fsuperfiliate.png&w=64&q=75",
+            "w": 28,
+            "h": 28,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "image?url=%2Flogos%2Fmoshy.png&w=64&q=75",
+            "w": 28,
+            "h": 28,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "image?url=%2Flogos%2Fmosh-tile.png&w=64&q=75",
+            "w": 28,
+            "h": 28,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "petsonme.svg",
+            "w": 28,
+            "h": 28,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "image?url=%2Flogos%2Fmoshy.png&w=256&q=75",
+            "w": 26,
+            "h": 26,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Moshy"
+          },
+          {
+            "kind": "img",
+            "src": "image?url=%2Flogos%2Fmosh-tile.png&w=256&q=75",
+            "w": 26,
+            "h": 26,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Mosh"
+          },
+          {
+            "kind": "img",
+            "src": "image?url=%2Flogos%2Fjuniper.png&w=256&q=75",
+            "w": 46,
+            "h": 26,
+            "ratio": 1.78,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "Juniper"
+          },
+          {
+            "kind": "img",
+            "src": "knose.svg",
+            "w": 67,
+            "h": 26,
+            "ratio": 2.57,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "Knose"
+          },
+          {
+            "kind": "img",
+            "src": "image?url=%2Flogos%2Fapollo-energy.png&w=256&q=7",
+            "w": 26,
+            "h": 26,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Apollo Energy Group"
+          },
+          {
+            "kind": "img",
+            "src": "image?url=%2Flogos%2Fsuperfiliate.png&w=256&q=75",
+            "w": 26,
+            "h": 26,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Superfiliate"
+          }
+        ],
+        "total": 17,
+        "aboveFold": 3,
+        "belowFold": 14,
+        "byClass": {
+          "icon": 15,
+          "logo": 2
+        },
+        "gradientElements": 0
+      },
+      "motion": [
+        {
+          "v": "background-color, border-color, color, box-shadow, opacity|0.18s|ease",
+          "n": 40
+        },
+        {
+          "v": "@section-rise|0.7s|ease",
+          "n": 8
+        },
+        {
+          "v": "background-color, border-color|0.12s, 0.12s|ease, ease",
+          "n": 8
+        }
+      ],
+      "header": {
+        "at0": {
+          "h": 0,
+          "pos": "fixed",
+          "bg": "rgba(0, 0, 0, 0)",
+          "shadow": "none",
+          "top": 0
+        },
+        "at800": {
+          "h": 0,
+          "pos": "fixed",
+          "bg": "rgba(0, 0, 0, 0)",
+          "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(4, 51, 61, 0.12) 0px 20px 55px 0px",
+          "top": 0
+        },
+        "consentDismissed": null
+      }
+    },
+    "m": {
+      "viewport": {
+        "vw": 390,
+        "vh": 844
+      },
+      "docHeight": 6970,
+      "type": {
+        "combos": [
+          {
+            "family": "Public Sans",
+            "size": 13,
+            "weight": 400,
+            "lineHeight": "20.2",
+            "letterSpacing": "normal",
+            "count": 68,
+            "sample": "Offer"
+          },
+          {
+            "family": "Public Sans",
+            "size": 13,
+            "weight": 400,
+            "lineHeight": "21.5",
+            "letterSpacing": "normal",
+            "count": 27,
+            "sample": "Health content on this site is general information only. It "
+          },
+          {
+            "family": "Public Sans",
+            "size": 16,
+            "weight": 600,
+            "lineHeight": "24.8",
+            "letterSpacing": "normal",
+            "count": 21,
+            "sample": "Apollo Energy Group"
+          },
+          {
+            "family": "Public Sans",
+            "size": 16,
+            "weight": 400,
+            "lineHeight": "24.8",
+            "letterSpacing": "normal",
+            "count": 17,
+            "sample": "15% off pet care services, up from 12% (not the premium)"
+          },
+          {
+            "family": "Public Sans",
+            "size": 13,
+            "weight": 500,
+            "lineHeight": "20.2",
+            "letterSpacing": "normal",
+            "count": 9,
+            "sample": "Active"
+          },
+          {
+            "family": "Public Sans",
+            "size": 13,
+            "weight": 600,
+            "lineHeight": "20.2",
+            "letterSpacing": "normal",
+            "count": 6,
+            "sample": "Last checked"
+          },
+          {
+            "family": "Public Sans",
+            "size": 16,
+            "weight": 400,
+            "lineHeight": "26.4",
+            "letterSpacing": "normal",
+            "count": 6,
+            "sample": "Rankings are never sold. No provider can pay to be placed hi"
+          },
+          {
+            "family": "ui-monospace",
+            "size": 13,
+            "weight": 400,
+            "lineHeight": "20.2",
+            "letterSpacing": "normal",
+            "count": 5,
+            "sample": "referlab2mf"
+          },
+          {
+            "family": "Public Sans",
+            "size": 13,
+            "weight": 400,
+            "lineHeight": "18.2",
+            "letterSpacing": "normal",
+            "count": 5,
+            "sample": "Telehealth weight management, compared on eligibility, proce"
+          },
+          {
+            "family": "Newsreader",
+            "size": 32,
+            "weight": 600,
+            "lineHeight": "36.8",
+            "letterSpacing": "-0.32px",
+            "count": 4,
+            "sample": "Current offers"
+          },
+          {
+            "family": "Public Sans",
+            "size": 16,
+            "weight": 600,
+            "lineHeight": "20.8",
+            "letterSpacing": "normal",
+            "count": 4,
+            "sample": "Who underwrites pet insurance in Australia"
+          },
+          {
+            "family": "Public Sans",
+            "size": 13,
+            "weight": 400,
+            "lineHeight": "18.9",
+            "letterSpacing": "normal",
+            "count": 4,
+            "sample": "Two weight-management platforms built differently, on eligib"
+          },
+          {
+            "family": "Space Grotesk",
+            "size": 13,
+            "weight": 600,
+            "lineHeight": "15",
+            "letterSpacing": "-0.325px",
+            "count": 4,
+            "sample": "Categories"
+          },
+          {
+            "family": "Public Sans",
+            "size": 20,
+            "weight": 400,
+            "lineHeight": "33",
+            "letterSpacing": "normal",
+            "count": 3,
+            "sample": "Offers carrying a real discount. Free plans and free trials "
+          },
+          {
+            "family": "Public Sans",
+            "size": 16,
+            "weight": 500,
+            "lineHeight": "24.8",
+            "letterSpacing": "normal",
+            "count": 3,
+            "sample": "Browse current offers"
+          },
+          {
+            "family": "Public Sans",
+            "size": 16,
+            "weight": 600,
+            "lineHeight": "26.4",
+            "letterSpacing": "normal",
+            "count": 3,
+            "sample": "Apollo Energy Group"
+          },
+          {
+            "family": "Public Sans",
+            "size": 20,
+            "weight": 600,
+            "lineHeight": "31",
+            "letterSpacing": "normal",
+            "count": 3,
+            "sample": "$500"
+          },
+          {
+            "family": "Space Grotesk",
+            "size": 20,
+            "weight": 600,
+            "lineHeight": "23",
+            "letterSpacing": "-0.5px",
+            "count": 3,
+            "sample": "What we verify"
+          },
+          {
+            "family": "Newsreader",
+            "size": 20,
+            "weight": 600,
+            "lineHeight": "31",
+            "letterSpacing": "-0.2px",
+            "count": 1,
+            "sample": "Refer Labs"
+          },
+          {
+            "family": "Newsreader",
+            "size": 36,
+            "weight": 600,
+            "lineHeight": "37.8",
+            "letterSpacing": "-0.72px",
+            "count": 1,
+            "sample": "Independent comparisons, with the date we checked."
+          }
+        ],
+        "distinctCombos": 20,
+        "distinctSizes": [
+          13,
+          16,
+          20,
+          32,
+          36
+        ],
+        "families": [
+          {
+            "v": "ui-monospace",
+            "n": 5
+          },
+          {
+            "v": "Public Sans",
+            "n": 3
+          },
+          {
+            "v": "Space Grotesk",
+            "n": 3
+          },
+          {
+            "v": "Newsreader",
+            "n": 1
+          }
+        ],
+        "largestHeadlinePx": 36,
+        "largestHeadlineText": "Independent comparisons, with the date we checked.",
+        "largestTextPx": 36,
+        "bodySizePx": 13,
+        "bodySizeCount": 14
+      },
+      "colour": {
+        "backgrounds": [
+          {
+            "color": "rgb(244,247,245)",
+            "count": 7,
+            "area": 2741605
+          },
+          {
+            "color": "rgb(255,255,255)",
+            "count": 10,
+            "area": 1555354
+          },
+          {
+            "color": "rgb(14,124,90)",
+            "count": 2,
+            "area": 16895
+          },
+          {
+            "color": "rgb(28,28,28)",
+            "count": 1,
+            "area": 6205
+          }
+        ],
+        "inks": [
+          {
+            "color": "rgb(90,107,101)",
+            "count": 117,
+            "area": 823144
+          },
+          {
+            "color": "rgb(16,35,28)",
+            "count": 44,
+            "area": 247331
+          },
+          {
+            "color": "rgb(2,75,86)",
+            "count": 12,
+            "area": 139379
+          },
+          {
+            "color": "rgb(143,106,28)",
+            "count": 11,
+            "area": 48251
+          },
+          {
+            "color": "rgb(10,92,67)",
+            "count": 10,
+            "area": 35566
+          },
+          {
+            "color": "rgb(255,255,255)",
+            "count": 2,
+            "area": 16895
+          },
+          {
+            "color": "rgb(154,154,154)",
+            "count": 1,
+            "area": 1361
+          }
+        ],
+        "accentColours": [
+          {
+            "color": "rgb(14,124,90)",
+            "count": 2,
+            "area": 16895
+          }
+        ],
+        "accentAreaPct": 0.62,
+        "paintedAreaPct": 158.9,
+        "docArea": 2718300
+      },
+      "depth": {
+        "shadows": [
+          {
+            "v": "rgba(16, 35, 28, 0.04) 0px 1px 2px 0px, rgba(16, 35, 28, 0.06) 0px 8px 24px 0px",
+            "n": 1
+          }
+        ],
+        "distinctShadows": 1,
+        "radii": [
+          {
+            "v": "6px",
+            "n": 18
+          },
+          {
+            "v": "4px",
+            "n": 2
+          },
+          {
+            "v": "12px",
+            "n": 2
+          }
+        ],
+        "distinctRadii": 3,
+        "borders": [
+          {
+            "v": "1px/solid",
+            "n": 23
+          },
+          {
+            "v": "0px/solid",
+            "n": 19
+          },
+          {
+            "v": "1px/dashed",
+            "n": 4
+          }
+        ]
+      },
+      "layout": {
+        "containers": [
+          {
+            "maxWidth": 1120,
+            "n": 10
+          },
+          {
+            "maxWidth": 832,
+            "n": 2
+          },
+          {
+            "maxWidth": 666,
+            "n": 1
+          }
+        ],
+        "gutter": 16,
+        "sections": [
+          {
+            "i": 0,
+            "tag": "SECTION",
+            "cls": "rl-section",
+            "height": 738,
+            "paddingTop": 40,
+            "paddingBottom": 40,
+            "bg": "rgba(0,0,0,0)",
+            "heading": "Independent comparisons, with the date we checked.",
+            "imgs": 3
+          },
+          {
+            "i": 1,
+            "tag": "SECTION",
+            "cls": "rl-section rl-section--tight",
+            "height": 576,
+            "paddingTop": 28,
+            "paddingBottom": 28,
+            "bg": "rgba(0,0,0,0)",
+            "heading": null,
+            "imgs": 0
+          },
+          {
+            "i": 2,
+            "tag": "SECTION",
+            "cls": "rl-section rl-rule-top",
+            "height": 2323,
+            "paddingTop": 40,
+            "paddingBottom": 40,
+            "bg": "rgba(0,0,0,0)",
+            "heading": "Current offers",
+            "imgs": 8
+          },
+          {
+            "i": 3,
+            "tag": "SECTION",
+            "cls": "rl-section rl-rule-top",
+            "height": 611,
+            "paddingTop": 40,
+            "paddingBottom": 40,
+            "bg": "rgba(0,0,0,0)",
+            "heading": "How we compare",
+            "imgs": 0
+          },
+          {
+            "i": 4,
+            "tag": "SECTION",
+            "cls": "rl-section rl-section--tight rl-rule-top",
+            "height": 260,
+            "paddingTop": 28,
+            "paddingBottom": 28,
+            "bg": "rgba(0,0,0,0)",
+            "heading": null,
+            "imgs": 6
+          },
+          {
+            "i": 5,
+            "tag": "SECTION",
+            "cls": "rl-section rl-rule-top",
+            "height": 741,
+            "paddingTop": 40,
+            "paddingBottom": 40,
+            "bg": "rgba(0,0,0,0)",
+            "heading": "Popular comparisons",
+            "imgs": 0
+          },
+          {
+            "i": 6,
+            "tag": "SECTION",
+            "cls": "rl-section rl-section--tight rl-rule-top",
+            "height": 136,
+            "paddingTop": 28,
+            "paddingBottom": 28,
+            "bg": "rgba(0,0,0,0)",
+            "heading": null,
+            "imgs": 0
+          },
+          {
+            "i": 7,
+            "tag": "SECTION",
+            "cls": "rl-section rl-section--tight rl-rule-top",
+            "height": 318,
+            "paddingTop": 28,
+            "paddingBottom": 28,
+            "bg": "rgba(0,0,0,0)",
+            "heading": "Get the re-checks",
+            "imgs": 0
+          }
+        ],
+        "grids": [
+          {
+            "cols": 2,
+            "n": 48
+          },
+          {
+            "cols": 3,
+            "n": 3
+          }
+        ]
+      },
+      "imagery": {
+        "all": [
+          {
+            "kind": "img",
+            "src": "image?url=%2Flogos%2Fapollo-energy.png&w=64&q=75",
+            "w": 32,
+            "h": 32,
+            "ratio": 1,
+            "aboveFold": true,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "knose.svg",
+            "w": 32,
+            "h": 12,
+            "ratio": 2.58,
+            "aboveFold": true,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "image?url=%2Flogos%2Fleadpages.png&w=64&q=75",
+            "w": 32,
+            "h": 32,
+            "ratio": 1,
+            "aboveFold": true,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "image?url=%2Flogos%2Fapollo-energy.png&w=64&q=75",
+            "w": 28,
+            "h": 28,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "knose.svg",
+            "w": 28,
+            "h": 28,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "image?url=%2Flogos%2Fleadpages.png&w=64&q=75",
+            "w": 28,
+            "h": 28,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "image?url=%2Flogos%2Funbounce.png&w=64&q=75",
+            "w": 28,
+            "h": 28,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "image?url=%2Flogos%2Fsuperfiliate.png&w=64&q=75",
+            "w": 28,
+            "h": 28,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "image?url=%2Flogos%2Fmoshy.png&w=64&q=75",
+            "w": 28,
+            "h": 28,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "image?url=%2Flogos%2Fmosh-tile.png&w=64&q=75",
+            "w": 28,
+            "h": 28,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "petsonme.svg",
+            "w": 28,
+            "h": 28,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "image?url=%2Flogos%2Fmoshy.png&w=256&q=75",
+            "w": 26,
+            "h": 26,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Moshy"
+          },
+          {
+            "kind": "img",
+            "src": "image?url=%2Flogos%2Fmosh-tile.png&w=256&q=75",
+            "w": 26,
+            "h": 26,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Mosh"
+          },
+          {
+            "kind": "img",
+            "src": "image?url=%2Flogos%2Fjuniper.png&w=256&q=75",
+            "w": 46,
+            "h": 26,
+            "ratio": 1.78,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "Juniper"
+          },
+          {
+            "kind": "img",
+            "src": "knose.svg",
+            "w": 67,
+            "h": 26,
+            "ratio": 2.57,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "Knose"
+          },
+          {
+            "kind": "img",
+            "src": "image?url=%2Flogos%2Fapollo-energy.png&w=256&q=7",
+            "w": 26,
+            "h": 26,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Apollo Energy Group"
+          },
+          {
+            "kind": "img",
+            "src": "image?url=%2Flogos%2Fsuperfiliate.png&w=256&q=75",
+            "w": 26,
+            "h": 26,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Superfiliate"
+          }
+        ],
+        "total": 17,
+        "aboveFold": 3,
+        "belowFold": 14,
+        "byClass": {
+          "icon": 15,
+          "logo": 2
+        },
+        "gradientElements": 0
+      },
+      "motion": [
+        {
+          "v": "background-color, border-color, color, box-shadow, opacity|0.18s|ease",
+          "n": 35
+        },
+        {
+          "v": "@section-rise|0.7s|ease",
+          "n": 8
+        },
+        {
+          "v": "background-color, border-color|0.12s, 0.12s|ease, ease",
+          "n": 8
+        }
+      ],
+      "header": {
+        "at0": {
+          "h": 0,
+          "pos": "fixed",
+          "bg": "rgba(0, 0, 0, 0)",
+          "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(4, 51, 61, 0.12) 0px 20px 55px 0px",
+          "top": 0
+        },
+        "at800": {
+          "h": 0,
+          "pos": "fixed",
+          "bg": "rgba(0, 0, 0, 0)",
+          "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(4, 51, 61, 0.12) 0px 20px 55px 0px",
+          "top": 0
+        },
+        "consentDismissed": null
+      }
+    }
+  }
+}

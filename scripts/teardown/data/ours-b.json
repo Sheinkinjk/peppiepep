@@ -1,0 +1,1315 @@
+{
+  "site": "ours-b",
+  "url": "http://localhost:3000/preview/home-b",
+  "capturedAt": "2026-09-10T08:42:58.394Z",
+  "breakpoints": {
+    "d": {
+      "viewport": {
+        "vw": 1440,
+        "vh": 900
+      },
+      "docHeight": 3746,
+      "type": {
+        "combos": [
+          {
+            "family": "Public Sans",
+            "size": 13,
+            "weight": 400,
+            "lineHeight": "20.2",
+            "letterSpacing": "normal",
+            "count": 41,
+            "sample": "categories with a verified offer"
+          },
+          {
+            "family": "Public Sans",
+            "size": 13,
+            "weight": 400,
+            "lineHeight": "21.5",
+            "letterSpacing": "normal",
+            "count": 30,
+            "sample": "Health content on this site is general information only. It "
+          },
+          {
+            "family": "Public Sans",
+            "size": 16,
+            "weight": 400,
+            "lineHeight": "26.4",
+            "letterSpacing": "normal",
+            "count": 14,
+            "sample": "Rankings are never sold. No provider can pay to be placed hi"
+          },
+          {
+            "family": "Public Sans",
+            "size": 13,
+            "weight": 500,
+            "lineHeight": "20.2",
+            "letterSpacing": "normal",
+            "count": 9,
+            "sample": "For business"
+          },
+          {
+            "family": "Public Sans",
+            "size": 16,
+            "weight": 600,
+            "lineHeight": "26.4",
+            "letterSpacing": "normal",
+            "count": 8,
+            "sample": "Apollo Energy Group"
+          },
+          {
+            "family": "Schibsted Grotesk",
+            "size": 32,
+            "weight": 600,
+            "lineHeight": "32",
+            "letterSpacing": "normal",
+            "count": 8,
+            "sample": "$500"
+          },
+          {
+            "family": "ui-monospace",
+            "size": 13,
+            "weight": 400,
+            "lineHeight": "20.2",
+            "letterSpacing": "normal",
+            "count": 5,
+            "sample": "referlab2mf"
+          },
+          {
+            "family": "Public Sans",
+            "size": 20,
+            "weight": 600,
+            "lineHeight": "31",
+            "letterSpacing": "normal",
+            "count": 5,
+            "sample": "Weight loss"
+          },
+          {
+            "family": "Public Sans",
+            "size": 13,
+            "weight": 400,
+            "lineHeight": "18.2",
+            "letterSpacing": "normal",
+            "count": 5,
+            "sample": "Benefit percentages, annual limits, excess and the waiting p"
+          },
+          {
+            "family": "Schibsted Grotesk",
+            "size": 24,
+            "weight": 600,
+            "lineHeight": "27.6",
+            "letterSpacing": "-0.48px",
+            "count": 4,
+            "sample": "Current offers"
+          },
+          {
+            "family": "Public Sans",
+            "size": 16,
+            "weight": 600,
+            "lineHeight": "20.8",
+            "letterSpacing": "normal",
+            "count": 4,
+            "sample": "Who underwrites pet insurance in Australia"
+          },
+          {
+            "family": "Public Sans",
+            "size": 13,
+            "weight": 400,
+            "lineHeight": "18.9",
+            "letterSpacing": "normal",
+            "count": 4,
+            "sample": "Most published sources name the wrong insurer. Knose's own d"
+          },
+          {
+            "family": "Space Grotesk",
+            "size": 13,
+            "weight": 600,
+            "lineHeight": "15",
+            "letterSpacing": "-0.325px",
+            "count": 4,
+            "sample": "Categories"
+          },
+          {
+            "family": "Public Sans",
+            "size": 20,
+            "weight": 400,
+            "lineHeight": "33",
+            "letterSpacing": "normal",
+            "count": 3,
+            "sample": "Offers carrying a real discount. Free plans and free trials "
+          },
+          {
+            "family": "Space Grotesk",
+            "size": 20,
+            "weight": 600,
+            "lineHeight": "23",
+            "letterSpacing": "-0.5px",
+            "count": 3,
+            "sample": "What we verify"
+          },
+          {
+            "family": "Schibsted Grotesk",
+            "size": 20,
+            "weight": 600,
+            "lineHeight": "31",
+            "letterSpacing": "-0.2px",
+            "count": 1,
+            "sample": "Refer Labs"
+          },
+          {
+            "family": "Schibsted Grotesk",
+            "size": 44,
+            "weight": 700,
+            "lineHeight": "47.5",
+            "letterSpacing": "-0.88px",
+            "count": 1,
+            "sample": "Compare it properly, before you buy."
+          },
+          {
+            "family": "Schibsted Grotesk",
+            "size": 32,
+            "weight": 600,
+            "lineHeight": "35.2",
+            "letterSpacing": "normal",
+            "count": 1,
+            "sample": "17 August 2026"
+          },
+          {
+            "family": "Public Sans",
+            "size": 16,
+            "weight": 500,
+            "lineHeight": "26.4",
+            "letterSpacing": "normal",
+            "count": 1,
+            "sample": "Browse current offers"
+          },
+          {
+            "family": "Public Sans",
+            "size": 16,
+            "weight": 400,
+            "lineHeight": "24.8",
+            "letterSpacing": "normal",
+            "count": 1,
+            "sample": "Email address"
+          },
+          {
+            "family": "Public Sans",
+            "size": 16,
+            "weight": 500,
+            "lineHeight": "24.8",
+            "letterSpacing": "normal",
+            "count": 1,
+            "sample": "Send me re-checks"
+          }
+        ],
+        "distinctCombos": 21,
+        "distinctSizes": [
+          13,
+          16,
+          20,
+          24,
+          32,
+          44
+        ],
+        "families": [
+          {
+            "v": "ui-monospace",
+            "n": 5
+          },
+          {
+            "v": "Space Grotesk",
+            "n": 3
+          },
+          {
+            "v": "Public Sans",
+            "n": 1
+          },
+          {
+            "v": "Schibsted Grotesk",
+            "n": 1
+          }
+        ],
+        "largestHeadlinePx": 44,
+        "largestHeadlineText": "Compare it properly, before you buy.",
+        "largestTextPx": 44,
+        "bodySizePx": 13,
+        "bodySizeCount": 14
+      },
+      "colour": {
+        "backgrounds": [
+          {
+            "color": "rgb(244,247,245)",
+            "count": 1,
+            "area": 5393678
+          },
+          {
+            "color": "rgb(255,255,255)",
+            "count": 21,
+            "area": 2060803
+          },
+          {
+            "color": "rgb(16,35,28)",
+            "count": 1,
+            "area": 201780
+          },
+          {
+            "color": "rgb(14,124,90)",
+            "count": 1,
+            "area": 8036
+          },
+          {
+            "color": "rgb(28,28,28)",
+            "count": 1,
+            "area": 6205
+          }
+        ],
+        "inks": [
+          {
+            "color": "rgb(90,107,101)",
+            "count": 75,
+            "area": 653053
+          },
+          {
+            "color": "rgb(16,35,28)",
+            "count": 38,
+            "area": 184147
+          },
+          {
+            "color": "rgb(10,92,67)",
+            "count": 14,
+            "area": 15210
+          },
+          {
+            "color": "rgb(2,75,86)",
+            "count": 12,
+            "area": 204862
+          },
+          {
+            "color": "rgb(143,106,28)",
+            "count": 8,
+            "area": 79360
+          },
+          {
+            "color": "rgba(255,255,255,0.78)",
+            "count": 3,
+            "area": 20946
+          },
+          {
+            "color": "rgb(255,255,255)",
+            "count": 2,
+            "area": 17561
+          },
+          {
+            "color": "rgb(154,154,154)",
+            "count": 1,
+            "area": 1361
+          }
+        ],
+        "accentColours": [
+          {
+            "color": "rgb(14,124,90)",
+            "count": 1,
+            "area": 8036
+          }
+        ],
+        "accentAreaPct": 0.15,
+        "paintedAreaPct": 142.2,
+        "docArea": 5394240
+      },
+      "depth": {
+        "shadows": [
+          {
+            "v": "rgba(16, 35, 28, 0.04) 0px 1px 2px 0px, rgba(16, 35, 28, 0.06) 0px 8px 24px 0px",
+            "n": 13
+          }
+        ],
+        "distinctShadows": 1,
+        "radii": [
+          {
+            "v": "12px",
+            "n": 13
+          },
+          {
+            "v": "6px",
+            "n": 12
+          },
+          {
+            "v": "4px",
+            "n": 2
+          }
+        ],
+        "distinctRadii": 3,
+        "borders": [
+          {
+            "v": "1px/solid",
+            "n": 35
+          },
+          {
+            "v": "0px/solid",
+            "n": 8
+          },
+          {
+            "v": "1px/dashed",
+            "n": 4
+          }
+        ]
+      },
+      "layout": {
+        "containers": [
+          {
+            "maxWidth": 1120,
+            "n": 10
+          },
+          {
+            "maxWidth": 832,
+            "n": 2
+          },
+          {
+            "maxWidth": 661,
+            "n": 1
+          },
+          {
+            "maxWidth": 666,
+            "n": 1
+          }
+        ],
+        "gutter": 16,
+        "sections": [
+          {
+            "i": 0,
+            "tag": "SECTION",
+            "cls": "rl-heroB",
+            "height": 454,
+            "paddingTop": 64,
+            "paddingBottom": 32,
+            "bg": "rgba(0,0,0,0)",
+            "heading": "Compare it properly, before you buy.",
+            "imgs": 0
+          },
+          {
+            "i": 1,
+            "tag": "SECTION",
+            "cls": "rl-strip",
+            "height": 140,
+            "paddingTop": 0,
+            "paddingBottom": 0,
+            "bg": "rgb(16,35,28)",
+            "heading": null,
+            "imgs": 0
+          },
+          {
+            "i": 2,
+            "tag": "SECTION",
+            "cls": "rl-section",
+            "height": 1130,
+            "paddingTop": 52,
+            "paddingBottom": 52,
+            "bg": "rgba(0,0,0,0)",
+            "heading": "Current offers",
+            "imgs": 8
+          },
+          {
+            "i": 3,
+            "tag": "SECTION",
+            "cls": "rl-section rl-rule-top",
+            "height": 350,
+            "paddingTop": 52,
+            "paddingBottom": 52,
+            "bg": "rgba(0,0,0,0)",
+            "heading": "How we compare",
+            "imgs": 0
+          },
+          {
+            "i": 4,
+            "tag": "SECTION",
+            "cls": "rl-section rl-section--tight rl-rule-top",
+            "height": 215,
+            "paddingTop": 52,
+            "paddingBottom": 52,
+            "bg": "rgba(0,0,0,0)",
+            "heading": null,
+            "imgs": 6
+          },
+          {
+            "i": 5,
+            "tag": "SECTION",
+            "cls": "rl-section rl-rule-top",
+            "height": 351,
+            "paddingTop": 52,
+            "paddingBottom": 52,
+            "bg": "rgba(0,0,0,0)",
+            "heading": "Popular comparisons",
+            "imgs": 0
+          },
+          {
+            "i": 6,
+            "tag": "SECTION",
+            "cls": "rl-section rl-section--tight rl-rule-top",
+            "height": 158,
+            "paddingTop": 52,
+            "paddingBottom": 52,
+            "bg": "rgba(0,0,0,0)",
+            "heading": null,
+            "imgs": 0
+          },
+          {
+            "i": 7,
+            "tag": "SECTION",
+            "cls": "rl-section rl-section--tight rl-rule-top",
+            "height": 291,
+            "paddingTop": 52,
+            "paddingBottom": 52,
+            "bg": "rgba(0,0,0,0)",
+            "heading": "Get the re-checks",
+            "imgs": 0
+          }
+        ],
+        "grids": [
+          {
+            "cols": 3,
+            "n": 3
+          },
+          {
+            "cols": 4,
+            "n": 2
+          },
+          {
+            "cols": 5,
+            "n": 1
+          }
+        ]
+      },
+      "imagery": {
+        "all": [
+          {
+            "kind": "img",
+            "src": "image?url=%2Flogos%2Fapollo-energy.png&w=64&q=75",
+            "w": 32,
+            "h": 32,
+            "ratio": 1,
+            "aboveFold": true,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "knose.svg",
+            "w": 32,
+            "h": 32,
+            "ratio": 1,
+            "aboveFold": true,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "image?url=%2Flogos%2Fleadpages.png&w=64&q=75",
+            "w": 32,
+            "h": 32,
+            "ratio": 1,
+            "aboveFold": true,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "image?url=%2Flogos%2Funbounce.png&w=64&q=75",
+            "w": 32,
+            "h": 32,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "image?url=%2Flogos%2Fsuperfiliate.png&w=64&q=75",
+            "w": 32,
+            "h": 32,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "image?url=%2Flogos%2Fmoshy.png&w=64&q=75",
+            "w": 32,
+            "h": 32,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "image?url=%2Flogos%2Fmosh-tile.png&w=64&q=75",
+            "w": 32,
+            "h": 32,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "petsonme.svg",
+            "w": 32,
+            "h": 32,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "image?url=%2Flogos%2Fmoshy.png&w=256&q=75",
+            "w": 26,
+            "h": 26,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Moshy"
+          },
+          {
+            "kind": "img",
+            "src": "image?url=%2Flogos%2Fmosh-tile.png&w=256&q=75",
+            "w": 26,
+            "h": 26,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Mosh"
+          },
+          {
+            "kind": "img",
+            "src": "image?url=%2Flogos%2Fjuniper.png&w=256&q=75",
+            "w": 46,
+            "h": 26,
+            "ratio": 1.78,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "Juniper"
+          },
+          {
+            "kind": "img",
+            "src": "knose.svg",
+            "w": 67,
+            "h": 26,
+            "ratio": 2.57,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "Knose"
+          },
+          {
+            "kind": "img",
+            "src": "image?url=%2Flogos%2Fapollo-energy.png&w=256&q=7",
+            "w": 26,
+            "h": 26,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Apollo Energy Group"
+          },
+          {
+            "kind": "img",
+            "src": "image?url=%2Flogos%2Fsuperfiliate.png&w=256&q=75",
+            "w": 26,
+            "h": 26,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Superfiliate"
+          }
+        ],
+        "total": 14,
+        "aboveFold": 3,
+        "belowFold": 11,
+        "byClass": {
+          "icon": 12,
+          "logo": 2
+        },
+        "gradientElements": 0
+      },
+      "motion": [
+        {
+          "v": "background-color, border-color, color, box-shadow, opacity|0.18s|ease",
+          "n": 44
+        },
+        {
+          "v": "@section-rise|0.7s|ease",
+          "n": 8
+        },
+        {
+          "v": "border-color|0.12s|ease",
+          "n": 5
+        },
+        {
+          "v": "background-color, border-color|0.12s, 0.12s|ease, ease",
+          "n": 2
+        }
+      ],
+      "header": {
+        "at0": {
+          "h": 0,
+          "pos": "fixed",
+          "bg": "rgba(0, 0, 0, 0)",
+          "shadow": "none",
+          "top": 0
+        },
+        "at800": {
+          "h": 0,
+          "pos": "fixed",
+          "bg": "rgba(0, 0, 0, 0)",
+          "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(4, 51, 61, 0.12) 0px 20px 55px 0px",
+          "top": 0
+        },
+        "consentDismissed": null
+      }
+    },
+    "m": {
+      "viewport": {
+        "vw": 390,
+        "vh": 844
+      },
+      "docHeight": 6765,
+      "type": {
+        "combos": [
+          {
+            "family": "Public Sans",
+            "size": 13,
+            "weight": 400,
+            "lineHeight": "20.2",
+            "letterSpacing": "normal",
+            "count": 37,
+            "sample": "offers with a discount we have verified"
+          },
+          {
+            "family": "Public Sans",
+            "size": 13,
+            "weight": 400,
+            "lineHeight": "21.5",
+            "letterSpacing": "normal",
+            "count": 30,
+            "sample": "Health content on this site is general information only. It "
+          },
+          {
+            "family": "Public Sans",
+            "size": 16,
+            "weight": 400,
+            "lineHeight": "26.4",
+            "letterSpacing": "normal",
+            "count": 14,
+            "sample": "Rankings are never sold. No provider can pay to be placed hi"
+          },
+          {
+            "family": "Public Sans",
+            "size": 13,
+            "weight": 500,
+            "lineHeight": "20.2",
+            "letterSpacing": "normal",
+            "count": 9,
+            "sample": "For business"
+          },
+          {
+            "family": "Public Sans",
+            "size": 16,
+            "weight": 600,
+            "lineHeight": "26.4",
+            "letterSpacing": "normal",
+            "count": 8,
+            "sample": "Apollo Energy Group"
+          },
+          {
+            "family": "Schibsted Grotesk",
+            "size": 32,
+            "weight": 600,
+            "lineHeight": "32",
+            "letterSpacing": "normal",
+            "count": 8,
+            "sample": "$500"
+          },
+          {
+            "family": "ui-monospace",
+            "size": 13,
+            "weight": 400,
+            "lineHeight": "20.2",
+            "letterSpacing": "normal",
+            "count": 5,
+            "sample": "referlab2mf"
+          },
+          {
+            "family": "Public Sans",
+            "size": 20,
+            "weight": 600,
+            "lineHeight": "31",
+            "letterSpacing": "normal",
+            "count": 5,
+            "sample": "Solar and energy"
+          },
+          {
+            "family": "Public Sans",
+            "size": 13,
+            "weight": 400,
+            "lineHeight": "18.2",
+            "letterSpacing": "normal",
+            "count": 5,
+            "sample": "Telehealth weight management, compared on eligibility, proce"
+          },
+          {
+            "family": "Schibsted Grotesk",
+            "size": 24,
+            "weight": 600,
+            "lineHeight": "27.6",
+            "letterSpacing": "-0.48px",
+            "count": 4,
+            "sample": "Current offers"
+          },
+          {
+            "family": "Public Sans",
+            "size": 16,
+            "weight": 600,
+            "lineHeight": "20.8",
+            "letterSpacing": "normal",
+            "count": 4,
+            "sample": "Who underwrites pet insurance in Australia"
+          },
+          {
+            "family": "Public Sans",
+            "size": 13,
+            "weight": 400,
+            "lineHeight": "18.9",
+            "letterSpacing": "normal",
+            "count": 4,
+            "sample": "Two weight-management platforms built differently, on eligib"
+          },
+          {
+            "family": "Space Grotesk",
+            "size": 13,
+            "weight": 600,
+            "lineHeight": "15",
+            "letterSpacing": "-0.325px",
+            "count": 4,
+            "sample": "Categories"
+          },
+          {
+            "family": "Public Sans",
+            "size": 20,
+            "weight": 400,
+            "lineHeight": "33",
+            "letterSpacing": "normal",
+            "count": 3,
+            "sample": "Offers carrying a real discount. Free plans and free trials "
+          },
+          {
+            "family": "Space Grotesk",
+            "size": 20,
+            "weight": 600,
+            "lineHeight": "23",
+            "letterSpacing": "-0.5px",
+            "count": 3,
+            "sample": "What we verify"
+          },
+          {
+            "family": "Schibsted Grotesk",
+            "size": 20,
+            "weight": 600,
+            "lineHeight": "31",
+            "letterSpacing": "-0.2px",
+            "count": 1,
+            "sample": "Refer Labs"
+          },
+          {
+            "family": "Schibsted Grotesk",
+            "size": 32,
+            "weight": 700,
+            "lineHeight": "34.6",
+            "letterSpacing": "-0.64px",
+            "count": 1,
+            "sample": "Compare it properly, before you buy."
+          },
+          {
+            "family": "Schibsted Grotesk",
+            "size": 32,
+            "weight": 600,
+            "lineHeight": "35.2",
+            "letterSpacing": "normal",
+            "count": 1,
+            "sample": "17 August 2026"
+          },
+          {
+            "family": "Public Sans",
+            "size": 16,
+            "weight": 500,
+            "lineHeight": "26.4",
+            "letterSpacing": "normal",
+            "count": 1,
+            "sample": "Browse current offers"
+          },
+          {
+            "family": "Public Sans",
+            "size": 16,
+            "weight": 500,
+            "lineHeight": "24.8",
+            "letterSpacing": "normal",
+            "count": 1,
+            "sample": "Send me re-checks"
+          }
+        ],
+        "distinctCombos": 20,
+        "distinctSizes": [
+          13,
+          16,
+          20,
+          24,
+          32
+        ],
+        "families": [
+          {
+            "v": "ui-monospace",
+            "n": 5
+          },
+          {
+            "v": "Space Grotesk",
+            "n": 3
+          },
+          {
+            "v": "Public Sans",
+            "n": 1
+          },
+          {
+            "v": "Schibsted Grotesk",
+            "n": 1
+          }
+        ],
+        "largestHeadlinePx": 32,
+        "largestHeadlineText": "Compare it properly, before you buy.",
+        "largestTextPx": 32,
+        "bodySizePx": 13,
+        "bodySizeCount": 14
+      },
+      "colour": {
+        "backgrounds": [
+          {
+            "color": "rgb(244,247,245)",
+            "count": 1,
+            "area": 2638338
+          },
+          {
+            "color": "rgb(255,255,255)",
+            "count": 21,
+            "area": 1547732
+          },
+          {
+            "color": "rgb(16,35,28)",
+            "count": 1,
+            "area": 110906
+          },
+          {
+            "color": "rgb(14,124,90)",
+            "count": 1,
+            "area": 8036
+          },
+          {
+            "color": "rgb(28,28,28)",
+            "count": 1,
+            "area": 6205
+          }
+        ],
+        "inks": [
+          {
+            "color": "rgb(90,107,101)",
+            "count": 76,
+            "area": 612296
+          },
+          {
+            "color": "rgb(16,35,28)",
+            "count": 32,
+            "area": 178255
+          },
+          {
+            "color": "rgb(10,92,67)",
+            "count": 14,
+            "area": 15210
+          },
+          {
+            "color": "rgb(2,75,86)",
+            "count": 12,
+            "area": 110342
+          },
+          {
+            "color": "rgb(143,106,28)",
+            "count": 8,
+            "area": 80896
+          },
+          {
+            "color": "rgba(255,255,255,0.78)",
+            "count": 3,
+            "area": 21631
+          },
+          {
+            "color": "rgb(255,255,255)",
+            "count": 2,
+            "area": 17561
+          },
+          {
+            "color": "rgb(154,154,154)",
+            "count": 1,
+            "area": 1361
+          }
+        ],
+        "accentColours": [
+          {
+            "color": "rgb(14,124,90)",
+            "count": 1,
+            "area": 8036
+          }
+        ],
+        "accentAreaPct": 0.3,
+        "paintedAreaPct": 163.4,
+        "docArea": 2638350
+      },
+      "depth": {
+        "shadows": [
+          {
+            "v": "rgba(16, 35, 28, 0.04) 0px 1px 2px 0px, rgba(16, 35, 28, 0.06) 0px 8px 24px 0px",
+            "n": 13
+          }
+        ],
+        "distinctShadows": 1,
+        "radii": [
+          {
+            "v": "12px",
+            "n": 13
+          },
+          {
+            "v": "6px",
+            "n": 12
+          },
+          {
+            "v": "4px",
+            "n": 2
+          }
+        ],
+        "distinctRadii": 3,
+        "borders": [
+          {
+            "v": "1px/solid",
+            "n": 35
+          },
+          {
+            "v": "1px/dashed",
+            "n": 4
+          },
+          {
+            "v": "0px/solid",
+            "n": 3
+          }
+        ]
+      },
+      "layout": {
+        "containers": [
+          {
+            "maxWidth": 1120,
+            "n": 10
+          },
+          {
+            "maxWidth": 832,
+            "n": 2
+          },
+          {
+            "maxWidth": 661,
+            "n": 1
+          },
+          {
+            "maxWidth": 666,
+            "n": 1
+          }
+        ],
+        "gutter": 16,
+        "sections": [
+          {
+            "i": 0,
+            "tag": "SECTION",
+            "cls": "rl-heroB",
+            "height": 814,
+            "paddingTop": 40,
+            "paddingBottom": 24,
+            "bg": "rgba(0,0,0,0)",
+            "heading": "Compare it properly, before you buy.",
+            "imgs": 0
+          },
+          {
+            "i": 1,
+            "tag": "SECTION",
+            "cls": "rl-strip",
+            "height": 284,
+            "paddingTop": 0,
+            "paddingBottom": 0,
+            "bg": "rgb(16,35,28)",
+            "heading": null,
+            "imgs": 0
+          },
+          {
+            "i": 2,
+            "tag": "SECTION",
+            "cls": "rl-section",
+            "height": 2369,
+            "paddingTop": 32,
+            "paddingBottom": 32,
+            "bg": "rgba(0,0,0,0)",
+            "heading": "Current offers",
+            "imgs": 8
+          },
+          {
+            "i": 3,
+            "tag": "SECTION",
+            "cls": "rl-section rl-rule-top",
+            "height": 586,
+            "paddingTop": 32,
+            "paddingBottom": 32,
+            "bg": "rgba(0,0,0,0)",
+            "heading": "How we compare",
+            "imgs": 0
+          },
+          {
+            "i": 4,
+            "tag": "SECTION",
+            "cls": "rl-section rl-section--tight rl-rule-top",
+            "height": 268,
+            "paddingTop": 32,
+            "paddingBottom": 32,
+            "bg": "rgba(0,0,0,0)",
+            "heading": null,
+            "imgs": 6
+          },
+          {
+            "i": 5,
+            "tag": "SECTION",
+            "cls": "rl-section rl-rule-top",
+            "height": 716,
+            "paddingTop": 32,
+            "paddingBottom": 32,
+            "bg": "rgba(0,0,0,0)",
+            "heading": "Popular comparisons",
+            "imgs": 0
+          },
+          {
+            "i": 6,
+            "tag": "SECTION",
+            "cls": "rl-section rl-section--tight rl-rule-top",
+            "height": 144,
+            "paddingTop": 32,
+            "paddingBottom": 32,
+            "bg": "rgba(0,0,0,0)",
+            "heading": null,
+            "imgs": 0
+          },
+          {
+            "i": 7,
+            "tag": "SECTION",
+            "cls": "rl-section rl-section--tight rl-rule-top",
+            "height": 317,
+            "paddingTop": 32,
+            "paddingBottom": 32,
+            "bg": "rgba(0,0,0,0)",
+            "heading": "Get the re-checks",
+            "imgs": 0
+          }
+        ],
+        "grids": [
+          {
+            "cols": 2,
+            "n": 1
+          }
+        ]
+      },
+      "imagery": {
+        "all": [
+          {
+            "kind": "img",
+            "src": "image?url=%2Flogos%2Fapollo-energy.png&w=64&q=75",
+            "w": 32,
+            "h": 32,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "knose.svg",
+            "w": 32,
+            "h": 32,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "image?url=%2Flogos%2Fleadpages.png&w=64&q=75",
+            "w": 32,
+            "h": 32,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "image?url=%2Flogos%2Funbounce.png&w=64&q=75",
+            "w": 32,
+            "h": 32,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "image?url=%2Flogos%2Fsuperfiliate.png&w=64&q=75",
+            "w": 32,
+            "h": 32,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "image?url=%2Flogos%2Fmoshy.png&w=64&q=75",
+            "w": 32,
+            "h": 32,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "image?url=%2Flogos%2Fmosh-tile.png&w=64&q=75",
+            "w": 32,
+            "h": 32,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "petsonme.svg",
+            "w": 32,
+            "h": 32,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "image?url=%2Flogos%2Fmoshy.png&w=256&q=75",
+            "w": 26,
+            "h": 26,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Moshy"
+          },
+          {
+            "kind": "img",
+            "src": "image?url=%2Flogos%2Fmosh-tile.png&w=256&q=75",
+            "w": 26,
+            "h": 26,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Mosh"
+          },
+          {
+            "kind": "img",
+            "src": "image?url=%2Flogos%2Fjuniper.png&w=256&q=75",
+            "w": 46,
+            "h": 26,
+            "ratio": 1.78,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "Juniper"
+          },
+          {
+            "kind": "img",
+            "src": "knose.svg",
+            "w": 67,
+            "h": 26,
+            "ratio": 2.57,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "Knose"
+          },
+          {
+            "kind": "img",
+            "src": "image?url=%2Flogos%2Fapollo-energy.png&w=256&q=7",
+            "w": 26,
+            "h": 26,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Apollo Energy Group"
+          },
+          {
+            "kind": "img",
+            "src": "image?url=%2Flogos%2Fsuperfiliate.png&w=256&q=75",
+            "w": 26,
+            "h": 26,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Superfiliate"
+          }
+        ],
+        "total": 14,
+        "aboveFold": 0,
+        "belowFold": 14,
+        "byClass": {
+          "icon": 12,
+          "logo": 2
+        },
+        "gradientElements": 0
+      },
+      "motion": [
+        {
+          "v": "background-color, border-color, color, box-shadow, opacity|0.18s|ease",
+          "n": 39
+        },
+        {
+          "v": "@section-rise|0.7s|ease",
+          "n": 8
+        },
+        {
+          "v": "border-color|0.12s|ease",
+          "n": 5
+        },
+        {
+          "v": "background-color, border-color|0.12s, 0.12s|ease, ease",
+          "n": 2
+        }
+      ],
+      "header": {
+        "at0": {
+          "h": 0,
+          "pos": "fixed",
+          "bg": "rgba(0, 0, 0, 0)",
+          "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(4, 51, 61, 0.12) 0px 20px 55px 0px",
+          "top": 0
+        },
+        "at800": {
+          "h": 0,
+          "pos": "fixed",
+          "bg": "rgba(0, 0, 0, 0)",
+          "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(4, 51, 61, 0.12) 0px 20px 55px 0px",
+          "top": 0
+        },
+        "consentDismissed": null
+      }
+    }
+  }
+}

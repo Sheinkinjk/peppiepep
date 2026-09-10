@@ -1,0 +1,2696 @@
+{
+  "site": "canstar",
+  "url": "https://www.canstar.com.au/",
+  "capturedAt": "2026-09-10T08:41:40.689Z",
+  "breakpoints": {
+    "d": {
+      "viewport": {
+        "vw": 1440,
+        "vh": 900
+      },
+      "docHeight": 3865,
+      "type": {
+        "combos": [
+          {
+            "family": "Figtree",
+            "size": 16,
+            "weight": 400,
+            "lineHeight": "24",
+            "letterSpacing": "normal",
+            "count": 17,
+            "sample": "I read most of their ratings about things that concern me or"
+          },
+          {
+            "family": "Figtree",
+            "size": 20,
+            "weight": 600,
+            "lineHeight": "28",
+            "letterSpacing": "normal",
+            "count": 12,
+            "sample": "Interest rate forecast 2026: when will rates go up in Austra"
+          },
+          {
+            "family": "Figtree",
+            "size": 12,
+            "weight": 100,
+            "lineHeight": "12",
+            "letterSpacing": "normal",
+            "count": 12,
+            "sample": "Star Ratings and Awards Methodologies"
+          },
+          {
+            "family": "Figtree",
+            "size": 14,
+            "weight": 100,
+            "lineHeight": "20",
+            "letterSpacing": "normal",
+            "count": 9,
+            "sample": "Health Insurance"
+          },
+          {
+            "family": "Figtree",
+            "size": 16,
+            "weight": 500,
+            "lineHeight": "28",
+            "letterSpacing": "normal",
+            "count": 8,
+            "sample": "Super & Investing"
+          },
+          {
+            "family": "Figtree",
+            "size": 32,
+            "weight": 600,
+            "lineHeight": "40",
+            "letterSpacing": "normal",
+            "count": 4,
+            "sample": "Latest Articles"
+          },
+          {
+            "family": "Figtree",
+            "size": 16,
+            "weight": 600,
+            "lineHeight": "24",
+            "letterSpacing": "normal",
+            "count": 4,
+            "sample": "Get rate alerts"
+          },
+          {
+            "family": "Figtree",
+            "size": 14,
+            "weight": 400,
+            "lineHeight": "18",
+            "letterSpacing": "normal",
+            "count": 4,
+            "sample": "Alasdair Duncan"
+          },
+          {
+            "family": "Figtree",
+            "size": 12,
+            "weight": 400,
+            "lineHeight": "24",
+            "letterSpacing": "normal",
+            "count": 4,
+            "sample": "September 10, 2026"
+          },
+          {
+            "family": "Figtree",
+            "size": 14,
+            "weight": 400,
+            "lineHeight": "24",
+            "letterSpacing": "normal",
+            "count": 3,
+            "sample": "Leonie. K"
+          },
+          {
+            "family": "Figtree",
+            "size": 11,
+            "weight": 400,
+            "lineHeight": "14.3",
+            "letterSpacing": "normal",
+            "count": 3,
+            "sample": "Any advice provided on this website is general and has not t"
+          },
+          {
+            "family": "Figtree",
+            "size": 14,
+            "weight": 400,
+            "lineHeight": "16",
+            "letterSpacing": "normal",
+            "count": 2,
+            "sample": "Log in"
+          },
+          {
+            "family": "Figtree",
+            "size": 20,
+            "weight": 400,
+            "lineHeight": "32",
+            "letterSpacing": "normal",
+            "count": 2,
+            "sample": "Our expert ratings uncover outstanding value, not just the l"
+          },
+          {
+            "family": "Figtree",
+            "size": 16,
+            "weight": 500,
+            "lineHeight": "18",
+            "letterSpacing": "normal",
+            "count": 2,
+            "sample": "Latest Star Ratings & Awards"
+          },
+          {
+            "family": "Figtree",
+            "size": 12,
+            "weight": 100,
+            "lineHeight": "20.4",
+            "letterSpacing": "normal",
+            "count": 2,
+            "sample": "Canstar View"
+          },
+          {
+            "family": "Figtree",
+            "size": 12,
+            "weight": 400,
+            "lineHeight": "20.4",
+            "letterSpacing": "normal",
+            "count": 2,
+            "sample": "© Copyright 2026 CANSTAR Pty Limited ABN 21 053 646 165 AR 4"
+          },
+          {
+            "family": "Figtree",
+            "size": 40,
+            "weight": 600,
+            "lineHeight": "48",
+            "letterSpacing": "normal",
+            "count": 1,
+            "sample": "Better financial decisions start with Canstar. Let our exper"
+          },
+          {
+            "family": "Figtree",
+            "size": 18,
+            "weight": 400,
+            "lineHeight": "24",
+            "letterSpacing": "normal",
+            "count": 1,
+            "sample": "As seen on"
+          }
+        ],
+        "distinctCombos": 18,
+        "distinctSizes": [
+          11,
+          12,
+          14,
+          16,
+          18,
+          20,
+          32,
+          40
+        ],
+        "families": [
+          {
+            "v": "Figtree",
+            "n": 1
+          }
+        ],
+        "largestHeadlinePx": 32,
+        "largestHeadlineText": "Latest Articles",
+        "largestTextPx": 40,
+        "bodySizePx": 20,
+        "bodySizeCount": 8
+      },
+      "colour": {
+        "backgrounds": [
+          {
+            "color": "rgb(255,248,239)",
+            "count": 2,
+            "area": 1166040
+          },
+          {
+            "color": "rgb(255,255,255)",
+            "count": 19,
+            "area": 942345
+          },
+          {
+            "color": "rgb(33,33,33)",
+            "count": 1,
+            "area": 511200
+          },
+          {
+            "color": "rgb(244,244,244)",
+            "count": 4,
+            "area": 187775
+          },
+          {
+            "color": "rgb(250,250,250)",
+            "count": 1,
+            "area": 83520
+          },
+          {
+            "color": "rgb(0,149,169)",
+            "count": 2,
+            "area": 13630
+          }
+        ],
+        "inks": [
+          {
+            "color": "rgb(33,33,33)",
+            "count": 23,
+            "area": 366996
+          },
+          {
+            "color": "rgb(255,255,255)",
+            "count": 20,
+            "area": 232336
+          },
+          {
+            "color": "rgb(0,117,128)",
+            "count": 19,
+            "area": 79670
+          },
+          {
+            "color": "rgb(0,149,169)",
+            "count": 10,
+            "area": 70540
+          },
+          {
+            "color": "rgb(68,68,68)",
+            "count": 9,
+            "area": 127413
+          },
+          {
+            "color": "rgb(0,0,0)",
+            "count": 4,
+            "area": 6899
+          },
+          {
+            "color": "rgb(118,118,118)",
+            "count": 4,
+            "area": 6024
+          },
+          {
+            "color": "rgb(0,122,135)",
+            "count": 2,
+            "area": 32724
+          },
+          {
+            "color": "rgb(31,174,143)",
+            "count": 1,
+            "area": 170240
+          }
+        ],
+        "accentColours": [
+          {
+            "color": "rgb(0,149,169)",
+            "count": 2,
+            "area": 13630
+          }
+        ],
+        "accentAreaPct": 0.24,
+        "paintedAreaPct": 52.2,
+        "docArea": 5565600
+      },
+      "depth": {
+        "shadows": [
+          {
+            "v": "rgba(12, 35, 64, 0.1) 0px 3px 8px 0px",
+            "n": 10
+          },
+          {
+            "v": "rgba(12, 35, 64, 0.15) 0px 2px 5px 0px",
+            "n": 4
+          },
+          {
+            "v": "rgb(246, 220, 188) 2px 2px 4px 0px",
+            "n": 3
+          },
+          {
+            "v": "rgba(12, 35, 64, 0.1) 0px 3px 5px 0px",
+            "n": 2
+          }
+        ],
+        "distinctShadows": 4,
+        "radii": [
+          {
+            "v": "8px",
+            "n": 31
+          },
+          {
+            "v": "50%",
+            "n": 9
+          },
+          {
+            "v": "20px",
+            "n": 2
+          },
+          {
+            "v": "9999px",
+            "n": 1
+          },
+          {
+            "v": "10px",
+            "n": 1
+          },
+          {
+            "v": "12px",
+            "n": 1
+          }
+        ],
+        "distinctRadii": 6,
+        "borders": [
+          {
+            "v": "1px/solid",
+            "n": 17
+          },
+          {
+            "v": "0px/none",
+            "n": 11
+          },
+          {
+            "v": "2px/solid",
+            "n": 5
+          },
+          {
+            "v": "5px/solid",
+            "n": 1
+          }
+        ]
+      },
+      "layout": {
+        "containers": [
+          {
+            "maxWidth": 1230,
+            "n": 8
+          },
+          {
+            "maxWidth": 1170,
+            "n": 1
+          }
+        ],
+        "gutter": 35,
+        "sections": [
+          {
+            "i": 0,
+            "tag": "CNS-ROOT",
+            "cls": "",
+            "height": 3865,
+            "paddingTop": 0,
+            "paddingBottom": 0,
+            "bg": "rgba(0,0,0,0)",
+            "heading": "Latest Articles",
+            "imgs": 129
+          }
+        ],
+        "grids": [
+          {
+            "cols": 12,
+            "n": 3
+          },
+          {
+            "cols": 4,
+            "n": 1
+          },
+          {
+            "cols": 3,
+            "n": 1
+          }
+        ]
+      },
+      "imagery": {
+        "all": [
+          {
+            "kind": "img",
+            "src": "canstar-gold-and-blue-logo.png",
+            "w": 100,
+            "h": 50,
+            "ratio": 2,
+            "aboveFold": true,
+            "cls": "logo",
+            "alt": "CANSTAR"
+          },
+          {
+            "kind": "img",
+            "src": "Search.svg",
+            "w": 20,
+            "h": 20,
+            "ratio": 1,
+            "aboveFold": true,
+            "cls": "icon",
+            "alt": "Search"
+          },
+          {
+            "kind": "img",
+            "src": "home-loans-icon@2x.svg",
+            "w": 32,
+            "h": 32,
+            "ratio": 1,
+            "aboveFold": true,
+            "cls": "icon",
+            "alt": "Compare home loans at Canstar"
+          },
+          {
+            "kind": "img",
+            "src": "personal-loans-icon@2x.svg",
+            "w": 32,
+            "h": 32,
+            "ratio": 1,
+            "aboveFold": true,
+            "cls": "icon",
+            "alt": "Compare personal loans at Canstar"
+          },
+          {
+            "kind": "img",
+            "src": "credit-card-icon@2x.svg",
+            "w": 32,
+            "h": 32,
+            "ratio": 1,
+            "aboveFold": true,
+            "cls": "icon",
+            "alt": "Compare credit cards at Canstar"
+          },
+          {
+            "kind": "img",
+            "src": "health-insurance-icon@2x.svg",
+            "w": 32,
+            "h": 32,
+            "ratio": 1,
+            "aboveFold": true,
+            "cls": "icon",
+            "alt": "Compare health insurance at Canstar"
+          },
+          {
+            "kind": "img",
+            "src": "car-insurance-icon@2x.svg",
+            "w": 32,
+            "h": 32,
+            "ratio": 1,
+            "aboveFold": true,
+            "cls": "icon",
+            "alt": "Compare car insurance at Canstar"
+          },
+          {
+            "kind": "img",
+            "src": "home-insurance-icon@2x.svg",
+            "w": 32,
+            "h": 32,
+            "ratio": 1,
+            "aboveFold": true,
+            "cls": "icon",
+            "alt": "Compare home insurance at Canstar"
+          },
+          {
+            "kind": "img",
+            "src": "superannuation-icon@2x.svg",
+            "w": 32,
+            "h": 32,
+            "ratio": 1,
+            "aboveFold": true,
+            "cls": "icon",
+            "alt": "Compare superannuation at Canstar"
+          },
+          {
+            "kind": "img",
+            "src": "bolt-32px-1.svg",
+            "w": 32,
+            "h": 32,
+            "ratio": 1,
+            "aboveFold": true,
+            "cls": "icon",
+            "alt": "Compare Energy Plans at Canstar"
+          },
+          {
+            "kind": "img",
+            "src": "Life-Insurance.svg",
+            "w": 32,
+            "h": 32,
+            "ratio": 1,
+            "aboveFold": true,
+            "cls": "icon",
+            "alt": "Compare Life Insurance at Canstar"
+          },
+          {
+            "kind": "img",
+            "src": "plane-32px-2.svg",
+            "w": 32,
+            "h": 32,
+            "ratio": 1,
+            "aboveFold": true,
+            "cls": "icon",
+            "alt": "Compare Travel insurance at Canstar"
+          },
+          {
+            "kind": "img",
+            "src": "Canstar-App-Interest-Rate-Alerts.png",
+            "w": 121,
+            "h": 120,
+            "ratio": 1.01,
+            "aboveFold": true,
+            "cls": "illustration-or-photo",
+            "alt": "Canstar App - Interest Rate Alerts"
+          },
+          {
+            "kind": "img",
+            "src": "arrow-right-white-circle.svg",
+            "w": 20,
+            "h": 20,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Icon for Carousel Card"
+          },
+          {
+            "kind": "img",
+            "src": "Canstar-Join-the-money-savvy-community-icon.png",
+            "w": 143,
+            "h": 120,
+            "ratio": 1.19,
+            "aboveFold": true,
+            "cls": "illustration-or-photo",
+            "alt": "Join Canstar community"
+          },
+          {
+            "kind": "img",
+            "src": "arrow-right-white-circle.svg",
+            "w": 20,
+            "h": 20,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Icon for Carousel Card"
+          },
+          {
+            "kind": "img",
+            "src": "Canstar-Free-credit-score-checks-icon.png",
+            "w": 123,
+            "h": 120,
+            "ratio": 1.02,
+            "aboveFold": true,
+            "cls": "illustration-or-photo",
+            "alt": "Canstar - Free credit score checks"
+          },
+          {
+            "kind": "img",
+            "src": "arrow-right-white-circle.svg",
+            "w": 20,
+            "h": 20,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Icon for Carousel Card"
+          },
+          {
+            "kind": "img",
+            "src": "Canstar-Download-the-app-icon.png",
+            "w": 119,
+            "h": 120,
+            "ratio": 0.99,
+            "aboveFold": true,
+            "cls": "illustration-or-photo",
+            "alt": "Canstar - Download the app"
+          },
+          {
+            "kind": "img",
+            "src": "arrow-right-white-circle.svg",
+            "w": 20,
+            "h": 20,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Icon for Carousel Card"
+          },
+          {
+            "kind": "img",
+            "src": "Canstar-value-based-ratings.png",
+            "w": 300,
+            "h": 300,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "illustration-or-photo",
+            "alt": "Canstar value-based expert ratings"
+          },
+          {
+            "kind": "img",
+            "src": "When-will-interest-rates-go-down-forecast-340x20",
+            "w": 280,
+            "h": 168,
+            "ratio": 1.67,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "When will interest rates go down in 2026"
+          },
+          {
+            "kind": "img",
+            "src": "Alasdair-Duncan-Canstar-1-100x100.jpg",
+            "w": 24,
+            "h": 24,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Alasdair Duncan|Deputy Finance Editor"
+          },
+          {
+            "kind": "img",
+            "src": "Cash-Rate-Forecast-2022-340x204.jpg",
+            "w": 280,
+            "h": 168,
+            "ratio": 1.67,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "Interest rate forecast and predictions f"
+          },
+          {
+            "kind": "img",
+            "src": "Alasdair-Duncan-Canstar-1-100x100.jpg",
+            "w": 24,
+            "h": 24,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Alasdair Duncan|Deputy Finance Editor"
+          },
+          {
+            "kind": "img",
+            "src": "More-mortgage-pain-if-interest-rates-rise-340x20",
+            "w": 280,
+            "h": 168,
+            "ratio": 1.67,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "Interest rate forecast 2026: when will r"
+          },
+          {
+            "kind": "img",
+            "src": "Alasdair-Duncan-Canstar-1-100x100.jpg",
+            "w": 24,
+            "h": 24,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Alasdair Duncan|Deputy Finance Editor"
+          },
+          {
+            "kind": "img",
+            "src": "Car-insurance-deals-and-offers-340x204.jpg",
+            "w": 280,
+            "h": 168,
+            "ratio": 1.67,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "Car insurance deals and offers"
+          },
+          {
+            "kind": "img",
+            "src": "Nick-Whiting-200x200px-100x100.png",
+            "w": 24,
+            "h": 24,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Nick Whiting|Finance Writer"
+          },
+          {
+            "kind": "img",
+            "src": "What-are-the-average-interest-rates-on-home-loan",
+            "w": 280,
+            "h": 165,
+            "ratio": 1.7,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "What are the average interest rates on h"
+          },
+          {
+            "kind": "img",
+            "src": "Sign-up-offer_icon.svg",
+            "w": 110,
+            "h": 40,
+            "ratio": 2.75,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Sign up offer icon"
+          },
+          {
+            "kind": "img",
+            "src": "Pick-the-health-insurance-that-suits-your-family",
+            "w": 280,
+            "h": 165,
+            "ratio": 1.7,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "A young family in a kitchen"
+          },
+          {
+            "kind": "img",
+            "src": "Sign-up-offer_icon.svg",
+            "w": 110,
+            "h": 40,
+            "ratio": 2.75,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Sign up offer icon"
+          },
+          {
+            "kind": "img",
+            "src": "Road_Trip.jpg",
+            "w": 280,
+            "h": 165,
+            "ratio": 1.7,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "Picturesque lookout at the beach with a "
+          },
+          {
+            "kind": "img",
+            "src": "Sign-up-offer_icon.svg",
+            "w": 110,
+            "h": 40,
+            "ratio": 2.75,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Sign up offer icon"
+          },
+          {
+            "kind": "img",
+            "src": "AGL-resized.jpg",
+            "w": 280,
+            "h": 165,
+            "ratio": 1.7,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "How to buy AGL shares"
+          },
+          {
+            "kind": "img",
+            "src": "Sign-up-offer_icon.svg",
+            "w": 110,
+            "h": 40,
+            "ratio": 2.75,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Sign up offer icon"
+          },
+          {
+            "kind": "img",
+            "src": "star-solid.svg",
+            "w": 16,
+            "h": 14,
+            "ratio": 1.13,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "star"
+          },
+          {
+            "kind": "img",
+            "src": "star-solid.svg",
+            "w": 16,
+            "h": 14,
+            "ratio": 1.13,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "star"
+          },
+          {
+            "kind": "img",
+            "src": "star-solid.svg",
+            "w": 16,
+            "h": 14,
+            "ratio": 1.13,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "star"
+          },
+          {
+            "kind": "img",
+            "src": "star-solid.svg",
+            "w": 16,
+            "h": 14,
+            "ratio": 1.13,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "star"
+          },
+          {
+            "kind": "img",
+            "src": "star-solid.svg",
+            "w": 16,
+            "h": 14,
+            "ratio": 1.13,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "star"
+          },
+          {
+            "kind": "img",
+            "src": "google-logo.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "google-logo"
+          },
+          {
+            "kind": "img",
+            "src": "star-solid.svg",
+            "w": 16,
+            "h": 14,
+            "ratio": 1.13,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "star"
+          },
+          {
+            "kind": "img",
+            "src": "star-solid.svg",
+            "w": 16,
+            "h": 14,
+            "ratio": 1.13,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "star"
+          },
+          {
+            "kind": "img",
+            "src": "star-solid.svg",
+            "w": 16,
+            "h": 14,
+            "ratio": 1.13,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "star"
+          },
+          {
+            "kind": "img",
+            "src": "star-solid.svg",
+            "w": 16,
+            "h": 14,
+            "ratio": 1.13,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "star"
+          },
+          {
+            "kind": "img",
+            "src": "star-solid.svg",
+            "w": 16,
+            "h": 14,
+            "ratio": 1.13,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "star"
+          },
+          {
+            "kind": "img",
+            "src": "google-logo.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "google-logo"
+          },
+          {
+            "kind": "img",
+            "src": "star-solid.svg",
+            "w": 16,
+            "h": 14,
+            "ratio": 1.13,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "star"
+          },
+          {
+            "kind": "img",
+            "src": "star-solid.svg",
+            "w": 16,
+            "h": 14,
+            "ratio": 1.13,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "star"
+          },
+          {
+            "kind": "img",
+            "src": "star-solid.svg",
+            "w": 16,
+            "h": 14,
+            "ratio": 1.13,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "star"
+          },
+          {
+            "kind": "img",
+            "src": "star-solid.svg",
+            "w": 16,
+            "h": 14,
+            "ratio": 1.13,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "star"
+          },
+          {
+            "kind": "img",
+            "src": "star-solid.svg",
+            "w": 16,
+            "h": 14,
+            "ratio": 1.13,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "star"
+          },
+          {
+            "kind": "img",
+            "src": "google-logo.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "google-logo"
+          },
+          {
+            "kind": "img",
+            "src": "Daily-Mail-Aus-Home-Page-Logo-Garden_lg.png",
+            "w": 141,
+            "h": 50,
+            "ratio": 2.82,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "Daily Mail Australia"
+          },
+          {
+            "kind": "img",
+            "src": "Sunrise-Home-Page-Logo-Garden.png",
+            "w": 141,
+            "h": 50,
+            "ratio": 2.82,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "Sunrise"
+          },
+          {
+            "kind": "img",
+            "src": "REA-Home-Page-Logo-Garden_lg.png",
+            "w": 141,
+            "h": 50,
+            "ratio": 2.82,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "realestate.com.au"
+          },
+          {
+            "kind": "img",
+            "src": "Domain-Home-Page-Logo-Garden.png",
+            "w": 141,
+            "h": 50,
+            "ratio": 2.82,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "Domain"
+          },
+          {
+            "kind": "img",
+            "src": "News.com_.au-Home-Page-Logo-Garden.png",
+            "w": 141,
+            "h": 50,
+            "ratio": 2.82,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "news.com.au"
+          },
+          {
+            "kind": "img",
+            "src": "SBS-Home-Page-Logo-Garden.png",
+            "w": 141,
+            "h": 50,
+            "ratio": 2.82,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "SBS"
+          },
+          {
+            "kind": "img",
+            "src": "10-NEWS-Home-Page-Logo-Garden_lg.png",
+            "w": 141,
+            "h": 50,
+            "ratio": 2.82,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "10 NEWS FIRST"
+          },
+          {
+            "kind": "img",
+            "src": "Sky-News-Home-Page-Logo-Garden.png",
+            "w": 141,
+            "h": 50,
+            "ratio": 2.82,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "Sky News"
+          },
+          {
+            "kind": "img",
+            "src": "AFR-Home-Page-Logo-Garden-1.png",
+            "w": 141,
+            "h": 50,
+            "ratio": 2.82,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "Australian Financial Review"
+          },
+          {
+            "kind": "img",
+            "src": "The-New-Daily-Home-Page-Logo-Garden_lg.png",
+            "w": 141,
+            "h": 50,
+            "ratio": 2.82,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "The New Daily"
+          },
+          {
+            "kind": "img",
+            "src": "ABC-Radio-Home-Page-Logo-Garden_lg.png",
+            "w": 141,
+            "h": 50,
+            "ratio": 2.82,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "ABC Radio"
+          },
+          {
+            "kind": "img",
+            "src": "ACA-Home-Page-Logo-Garden.png",
+            "w": 141,
+            "h": 50,
+            "ratio": 2.82,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "A Current Affair"
+          },
+          {
+            "kind": "img",
+            "src": "7.30-Home-Page-Logo-Garden.png",
+            "w": 141,
+            "h": 50,
+            "ratio": 2.82,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "7.30"
+          },
+          {
+            "kind": "img",
+            "src": "7-NEWS-Home-Page-Logo-Garden.png",
+            "w": 141,
+            "h": 50,
+            "ratio": 2.82,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "7 NEWS"
+          },
+          {
+            "kind": "img",
+            "src": "Today-Show-Home-Page-Logo-Garden.png",
+            "w": 141,
+            "h": 50,
+            "ratio": 2.82,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "Today Show"
+          },
+          {
+            "kind": "img",
+            "src": "Courier-Mail-Home-Page-Logo-Garden.png",
+            "w": 141,
+            "h": 50,
+            "ratio": 2.82,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "The Courier Mail"
+          },
+          {
+            "kind": "img",
+            "src": "The-Age-Home-Page-Logo-Garden.png",
+            "w": 141,
+            "h": 50,
+            "ratio": 2.82,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "The Age"
+          },
+          {
+            "kind": "img",
+            "src": "The-Project-Home-Page-Logo-Garden_lg.png",
+            "w": 141,
+            "h": 50,
+            "ratio": 2.82,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "The Project"
+          },
+          {
+            "kind": "img",
+            "src": "Yahoo-Finance-Home-Page-Logo-Garden.png",
+            "w": 141,
+            "h": 50,
+            "ratio": 2.82,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "Yahoo! Finance"
+          },
+          {
+            "kind": "img",
+            "src": "The-Daily-Telegraph-Home-Page-Logo-Garden.png",
+            "w": 141,
+            "h": 50,
+            "ratio": 2.82,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "The Daily Telegraph"
+          },
+          {
+            "kind": "img",
+            "src": "9-News-Home-Page-Logo-Garden.png",
+            "w": 141,
+            "h": 50,
+            "ratio": 2.82,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "9 NEWS"
+          },
+          {
+            "kind": "img",
+            "src": "SMH-Home-Page-Logo-Garden.png",
+            "w": 141,
+            "h": 50,
+            "ratio": 2.82,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "Sydney Morning Herald"
+          },
+          {
+            "kind": "img",
+            "src": "The-Australian-Home-Page-Logo-Garden.png",
+            "w": 141,
+            "h": 50,
+            "ratio": 2.82,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "The Australian"
+          },
+          {
+            "kind": "img",
+            "src": "Reuters-Home-Page-Logo-Garden.png",
+            "w": 141,
+            "h": 50,
+            "ratio": 2.82,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "Reuters"
+          },
+          {
+            "kind": "img",
+            "src": "canstar-gold-and-blue-logo.png",
+            "w": 100,
+            "h": 50,
+            "ratio": 2,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "Canstar Gold and Blue Icon"
+          },
+          {
+            "kind": "img",
+            "src": "facebook-f.svg",
+            "w": 8,
+            "h": 15,
+            "ratio": 0.53,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "facebook"
+          },
+          {
+            "kind": "img",
+            "src": "x-logo.svg",
+            "w": 14,
+            "h": 13,
+            "ratio": 1.08,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "twitter"
+          },
+          {
+            "kind": "img",
+            "src": "instagram.svg",
+            "w": 14,
+            "h": 13,
+            "ratio": 1.08,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "instagram"
+          },
+          {
+            "kind": "img",
+            "src": "youtube.svg",
+            "w": 16,
+            "h": 11,
+            "ratio": 1.45,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "youtube"
+          },
+          {
+            "kind": "img",
+            "src": "linkedIn.svg",
+            "w": 14,
+            "h": 13,
+            "ratio": 1.08,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "linkedin"
+          },
+          {
+            "kind": "bg",
+            "src": "Better-financial-decisions-start-with-Canstar-13",
+            "w": 1230,
+            "h": 558,
+            "ratio": 2.2,
+            "aboveFold": true,
+            "cls": "illustration-or-photo",
+            "alt": ""
+          },
+          {
+            "kind": "bg",
+            "src": "Sand-background.png",
+            "w": 1230,
+            "h": 587,
+            "ratio": 2.1,
+            "aboveFold": false,
+            "cls": "illustration-or-photo",
+            "alt": ""
+          }
+        ],
+        "total": 87,
+        "aboveFold": 17,
+        "belowFold": 70,
+        "byClass": {
+          "logo": 26,
+          "icon": 46,
+          "illustration-or-photo": 7,
+          "photography": 8
+        },
+        "gradientElements": 0
+      },
+      "motion": [
+        {
+          "v": "all|0.2s|ease-in-out",
+          "n": 63
+        },
+        {
+          "v": "background-color|0.2s|ease",
+          "n": 1
+        }
+      ],
+      "header": {
+        "at0": {
+          "h": 74,
+          "pos": "relative",
+          "bg": "rgb(255, 255, 255)",
+          "shadow": "none",
+          "top": 0
+        },
+        "at800": {
+          "h": 74,
+          "pos": "relative",
+          "bg": "rgb(255, 255, 255)",
+          "shadow": "none",
+          "top": -800
+        },
+        "consentDismissed": null
+      }
+    },
+    "m": {
+      "viewport": {
+        "vw": 390,
+        "vh": 844
+      },
+      "docHeight": 5995,
+      "type": {
+        "combos": [
+          {
+            "family": "Figtree",
+            "size": 16,
+            "weight": 400,
+            "lineHeight": "24",
+            "letterSpacing": "normal",
+            "count": 30,
+            "sample": "I read most of their ratings about things that concern me or"
+          },
+          {
+            "family": "Figtree",
+            "size": 16,
+            "weight": 600,
+            "lineHeight": "24",
+            "letterSpacing": "normal",
+            "count": 12,
+            "sample": "When will interest rates go down in 2026?"
+          },
+          {
+            "family": "Figtree",
+            "size": 12,
+            "weight": 100,
+            "lineHeight": "12",
+            "letterSpacing": "normal",
+            "count": 12,
+            "sample": "Star Ratings and Awards Methodologies"
+          },
+          {
+            "family": "Figtree",
+            "size": 24,
+            "weight": 600,
+            "lineHeight": "36",
+            "letterSpacing": "normal",
+            "count": 4,
+            "sample": "Our customers trust us when it comes to making important mon"
+          },
+          {
+            "family": "Figtree",
+            "size": 20,
+            "weight": 600,
+            "lineHeight": "28",
+            "letterSpacing": "normal",
+            "count": 4,
+            "sample": "Interest Rate Alerts"
+          },
+          {
+            "family": "Figtree",
+            "size": 14,
+            "weight": 400,
+            "lineHeight": "18",
+            "letterSpacing": "normal",
+            "count": 4,
+            "sample": "Alasdair Duncan"
+          },
+          {
+            "family": "Figtree",
+            "size": 12,
+            "weight": 400,
+            "lineHeight": "24",
+            "letterSpacing": "normal",
+            "count": 4,
+            "sample": "September 10, 2026"
+          },
+          {
+            "family": "Figtree",
+            "size": 11,
+            "weight": 400,
+            "lineHeight": "14.3",
+            "letterSpacing": "normal",
+            "count": 3,
+            "sample": "Any advice provided on this website is general and has not t"
+          },
+          {
+            "family": "Figtree",
+            "size": 20,
+            "weight": 400,
+            "lineHeight": "32",
+            "letterSpacing": "normal",
+            "count": 2,
+            "sample": "Our expert ratings uncover outstanding value, not just the l"
+          },
+          {
+            "family": "Figtree",
+            "size": 16,
+            "weight": 500,
+            "lineHeight": "18",
+            "letterSpacing": "normal",
+            "count": 2,
+            "sample": "Meet our researchers"
+          },
+          {
+            "family": "Figtree",
+            "size": 12,
+            "weight": 100,
+            "lineHeight": "20.4",
+            "letterSpacing": "normal",
+            "count": 2,
+            "sample": "Canstar View"
+          },
+          {
+            "family": "Figtree",
+            "size": 12,
+            "weight": 400,
+            "lineHeight": "20.4",
+            "letterSpacing": "normal",
+            "count": 2,
+            "sample": "© Copyright 2026 CANSTAR Pty Limited ABN 21 053 646 165 AR 4"
+          },
+          {
+            "family": "Figtree",
+            "size": 28,
+            "weight": 600,
+            "lineHeight": "36",
+            "letterSpacing": "normal",
+            "count": 1,
+            "sample": "Better financial decisions start with Canstar. Let our exper"
+          },
+          {
+            "family": "Arial",
+            "size": 12,
+            "weight": 600,
+            "lineHeight": "normal",
+            "letterSpacing": "normal",
+            "count": 1,
+            "sample": "More categories"
+          },
+          {
+            "family": "Figtree",
+            "size": 14,
+            "weight": 400,
+            "lineHeight": "24",
+            "letterSpacing": "normal",
+            "count": 1,
+            "sample": "Brian. S"
+          },
+          {
+            "family": "Figtree",
+            "size": 18,
+            "weight": 400,
+            "lineHeight": "24",
+            "letterSpacing": "normal",
+            "count": 1,
+            "sample": "As seen on"
+          }
+        ],
+        "distinctCombos": 16,
+        "distinctSizes": [
+          11,
+          12,
+          14,
+          16,
+          18,
+          20,
+          24,
+          28
+        ],
+        "families": [
+          {
+            "v": "Figtree",
+            "n": 1
+          },
+          {
+            "v": "Arial",
+            "n": 1
+          }
+        ],
+        "largestHeadlinePx": 24,
+        "largestHeadlineText": "Latest Articles",
+        "largestTextPx": 28,
+        "bodySizePx": 16,
+        "bodySizeCount": 11
+      },
+      "colour": {
+        "backgrounds": [
+          {
+            "color": "rgb(255,255,255)",
+            "count": 15,
+            "area": 828818
+          },
+          {
+            "color": "rgb(255,248,239)",
+            "count": 2,
+            "area": 541100
+          },
+          {
+            "color": "rgba(0,0,0,0.3)",
+            "count": 1,
+            "area": 329160
+          },
+          {
+            "color": "rgb(33,33,33)",
+            "count": 1,
+            "area": 245267
+          },
+          {
+            "color": "rgb(244,244,244)",
+            "count": 4,
+            "area": 59407
+          },
+          {
+            "color": "rgb(0,149,169)",
+            "count": 1,
+            "area": 14880
+          },
+          {
+            "color": "rgb(255,200,68)",
+            "count": 2,
+            "area": 800
+          }
+        ],
+        "inks": [
+          {
+            "color": "rgb(68,68,68)",
+            "count": 28,
+            "area": 160804
+          },
+          {
+            "color": "rgb(255,255,255)",
+            "count": 19,
+            "area": 166299
+          },
+          {
+            "color": "rgb(0,117,128)",
+            "count": 13,
+            "area": 66891
+          },
+          {
+            "color": "rgb(33,33,33)",
+            "count": 13,
+            "area": 181392
+          },
+          {
+            "color": "rgb(0,0,0)",
+            "count": 4,
+            "area": 6899
+          },
+          {
+            "color": "rgb(118,118,118)",
+            "count": 4,
+            "area": 6024
+          },
+          {
+            "color": "rgb(0,122,135)",
+            "count": 2,
+            "area": 3755
+          },
+          {
+            "color": "rgb(31,174,143)",
+            "count": 1,
+            "area": 168640
+          },
+          {
+            "color": "rgb(0,149,169)",
+            "count": 1,
+            "area": 14880
+          }
+        ],
+        "accentColours": [
+          {
+            "color": "rgb(0,149,169)",
+            "count": 1,
+            "area": 14880
+          },
+          {
+            "color": "rgb(255,200,68)",
+            "count": 2,
+            "area": 800
+          }
+        ],
+        "accentAreaPct": 0.67,
+        "paintedAreaPct": 86.4,
+        "docArea": 2338050
+      },
+      "depth": {
+        "shadows": [
+          {
+            "v": "rgba(12, 35, 64, 0.1) 0px 3px 8px 0px",
+            "n": 6
+          },
+          {
+            "v": "rgba(12, 35, 64, 0.15) 0px 2px 5px 0px",
+            "n": 4
+          },
+          {
+            "v": "rgba(12, 35, 64, 0.1) 0px 3px 5px 0px",
+            "n": 2
+          },
+          {
+            "v": "rgb(246, 220, 188) 2px 2px 4px 0px",
+            "n": 1
+          }
+        ],
+        "distinctShadows": 4,
+        "radii": [
+          {
+            "v": "8px",
+            "n": 25
+          },
+          {
+            "v": "50%",
+            "n": 11
+          },
+          {
+            "v": "9999px",
+            "n": 1
+          },
+          {
+            "v": "20px",
+            "n": 1
+          },
+          {
+            "v": "10px",
+            "n": 1
+          },
+          {
+            "v": "12px",
+            "n": 1
+          }
+        ],
+        "distinctRadii": 6,
+        "borders": [
+          {
+            "v": "0px/none",
+            "n": 40
+          },
+          {
+            "v": "1px/solid",
+            "n": 13
+          },
+          {
+            "v": "2px/solid",
+            "n": 5
+          },
+          {
+            "v": "5px/solid",
+            "n": 1
+          }
+        ]
+      },
+      "layout": {
+        "containers": [],
+        "gutter": 16,
+        "sections": [
+          {
+            "i": 0,
+            "tag": "CNS-ROOT",
+            "cls": "",
+            "height": 5995,
+            "paddingTop": 0,
+            "paddingBottom": 0,
+            "bg": "rgba(0,0,0,0)",
+            "heading": "Latest Articles",
+            "imgs": 129
+          }
+        ],
+        "grids": [
+          {
+            "cols": 4,
+            "n": 4
+          }
+        ]
+      },
+      "imagery": {
+        "all": [
+          {
+            "kind": "img",
+            "src": "arrow-down.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": true,
+            "cls": "icon",
+            "alt": "arrow"
+          },
+          {
+            "kind": "img",
+            "src": "arrow-down.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": true,
+            "cls": "icon",
+            "alt": "arrow"
+          },
+          {
+            "kind": "img",
+            "src": "arrow-down.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": true,
+            "cls": "icon",
+            "alt": "arrow"
+          },
+          {
+            "kind": "img",
+            "src": "arrow-down.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": true,
+            "cls": "icon",
+            "alt": "arrow"
+          },
+          {
+            "kind": "img",
+            "src": "arrow-down.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": true,
+            "cls": "icon",
+            "alt": "arrow"
+          },
+          {
+            "kind": "img",
+            "src": "arrow-down.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": true,
+            "cls": "icon",
+            "alt": "arrow"
+          },
+          {
+            "kind": "img",
+            "src": "arrow-down.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": true,
+            "cls": "icon",
+            "alt": "arrow"
+          },
+          {
+            "kind": "img",
+            "src": "arrow-down.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": true,
+            "cls": "icon",
+            "alt": "arrow"
+          },
+          {
+            "kind": "img",
+            "src": "arrow-down.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": true,
+            "cls": "icon",
+            "alt": "arrow"
+          },
+          {
+            "kind": "img",
+            "src": "arrow-down.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": true,
+            "cls": "icon",
+            "alt": "arrow"
+          },
+          {
+            "kind": "img",
+            "src": "arrow-down.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": true,
+            "cls": "icon",
+            "alt": "arrow"
+          },
+          {
+            "kind": "img",
+            "src": "arrow-down.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": true,
+            "cls": "icon",
+            "alt": "arrow"
+          },
+          {
+            "kind": "img",
+            "src": "arrow-down.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": true,
+            "cls": "icon",
+            "alt": "arrow"
+          },
+          {
+            "kind": "img",
+            "src": "arrow-down.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "arrow"
+          },
+          {
+            "kind": "img",
+            "src": "arrow-down.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "arrow"
+          },
+          {
+            "kind": "img",
+            "src": "arrow-down.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "arrow"
+          },
+          {
+            "kind": "img",
+            "src": "arrow-down.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "arrow"
+          },
+          {
+            "kind": "img",
+            "src": "arrow-down.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "arrow"
+          },
+          {
+            "kind": "img",
+            "src": "arrow-down.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "arrow"
+          },
+          {
+            "kind": "img",
+            "src": "canstar-gold-and-blue-logo.png",
+            "w": 100,
+            "h": 50,
+            "ratio": 2,
+            "aboveFold": true,
+            "cls": "logo",
+            "alt": "CANSTAR"
+          },
+          {
+            "kind": "img",
+            "src": "menu.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": true,
+            "cls": "icon",
+            "alt": "hamburger menu"
+          },
+          {
+            "kind": "img",
+            "src": "Search.svg",
+            "w": 20,
+            "h": 20,
+            "ratio": 1,
+            "aboveFold": true,
+            "cls": "icon",
+            "alt": "Search"
+          },
+          {
+            "kind": "img",
+            "src": "home-loans-icon@2x.svg",
+            "w": 32,
+            "h": 32,
+            "ratio": 1,
+            "aboveFold": true,
+            "cls": "icon",
+            "alt": "Compare home loans at Canstar"
+          },
+          {
+            "kind": "img",
+            "src": "personal-loans-icon@2x.svg",
+            "w": 32,
+            "h": 32,
+            "ratio": 1,
+            "aboveFold": true,
+            "cls": "icon",
+            "alt": "Compare personal loans at Canstar"
+          },
+          {
+            "kind": "img",
+            "src": "credit-card-icon@2x.svg",
+            "w": 32,
+            "h": 32,
+            "ratio": 1,
+            "aboveFold": true,
+            "cls": "icon",
+            "alt": "Compare credit cards at Canstar"
+          },
+          {
+            "kind": "img",
+            "src": "health-insurance-icon@2x.svg",
+            "w": 32,
+            "h": 32,
+            "ratio": 1,
+            "aboveFold": true,
+            "cls": "icon",
+            "alt": "Compare health insurance at Canstar"
+          },
+          {
+            "kind": "img",
+            "src": "car-insurance-icon@2x.svg",
+            "w": 32,
+            "h": 32,
+            "ratio": 1,
+            "aboveFold": true,
+            "cls": "icon",
+            "alt": "Compare car insurance at Canstar"
+          },
+          {
+            "kind": "img",
+            "src": "home-insurance-icon@2x.svg",
+            "w": 32,
+            "h": 32,
+            "ratio": 1,
+            "aboveFold": true,
+            "cls": "icon",
+            "alt": "Compare home insurance at Canstar"
+          },
+          {
+            "kind": "img",
+            "src": "chevron-down.svg",
+            "w": 11,
+            "h": 7,
+            "ratio": 1.57,
+            "aboveFold": true,
+            "cls": "icon",
+            "alt": "arrow-down"
+          },
+          {
+            "kind": "img",
+            "src": "Canstar-App-Interest-Rate-Alerts.png",
+            "w": 101,
+            "h": 100,
+            "ratio": 1.01,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Canstar App - Interest Rate Alerts"
+          },
+          {
+            "kind": "img",
+            "src": "arrow-right-white-circle.svg",
+            "w": 20,
+            "h": 20,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Icon for Carousel Card"
+          },
+          {
+            "kind": "img",
+            "src": "Canstar-Join-the-money-savvy-community-icon.png",
+            "w": 119,
+            "h": 100,
+            "ratio": 1.19,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Join Canstar community"
+          },
+          {
+            "kind": "img",
+            "src": "arrow-right-white-circle.svg",
+            "w": 20,
+            "h": 20,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Icon for Carousel Card"
+          },
+          {
+            "kind": "img",
+            "src": "Canstar-Free-credit-score-checks-icon.png",
+            "w": 102,
+            "h": 100,
+            "ratio": 1.02,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Canstar - Free credit score checks"
+          },
+          {
+            "kind": "img",
+            "src": "arrow-right-white-circle.svg",
+            "w": 20,
+            "h": 20,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Icon for Carousel Card"
+          },
+          {
+            "kind": "img",
+            "src": "Canstar-Download-the-app-icon.png",
+            "w": 99,
+            "h": 100,
+            "ratio": 0.99,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Canstar - Download the app"
+          },
+          {
+            "kind": "img",
+            "src": "arrow-right-white-circle.svg",
+            "w": 20,
+            "h": 20,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Icon for Carousel Card"
+          },
+          {
+            "kind": "img",
+            "src": "Canstar-value-based-ratings.png",
+            "w": 300,
+            "h": 300,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "illustration-or-photo",
+            "alt": "Canstar value-based expert ratings"
+          },
+          {
+            "kind": "img",
+            "src": "When-will-interest-rates-go-down-forecast-340x20",
+            "w": 158,
+            "h": 94,
+            "ratio": 1.67,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "When will interest rates go down in 2026"
+          },
+          {
+            "kind": "img",
+            "src": "Alasdair-Duncan-Canstar-1-100x100.jpg",
+            "w": 24,
+            "h": 24,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Alasdair Duncan|Deputy Finance Editor"
+          },
+          {
+            "kind": "img",
+            "src": "Cash-Rate-Forecast-2022-340x204.jpg",
+            "w": 158,
+            "h": 94,
+            "ratio": 1.67,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "Interest rate forecast and predictions f"
+          },
+          {
+            "kind": "img",
+            "src": "Alasdair-Duncan-Canstar-1-100x100.jpg",
+            "w": 24,
+            "h": 24,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Alasdair Duncan|Deputy Finance Editor"
+          },
+          {
+            "kind": "img",
+            "src": "More-mortgage-pain-if-interest-rates-rise-340x20",
+            "w": 158,
+            "h": 94,
+            "ratio": 1.67,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "Interest rate forecast 2026: when will r"
+          },
+          {
+            "kind": "img",
+            "src": "Alasdair-Duncan-Canstar-1-100x100.jpg",
+            "w": 24,
+            "h": 24,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Alasdair Duncan|Deputy Finance Editor"
+          },
+          {
+            "kind": "img",
+            "src": "Car-insurance-deals-and-offers-340x204.jpg",
+            "w": 158,
+            "h": 94,
+            "ratio": 1.67,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "Car insurance deals and offers"
+          },
+          {
+            "kind": "img",
+            "src": "Nick-Whiting-200x200px-100x100.png",
+            "w": 24,
+            "h": 24,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Nick Whiting|Finance Writer"
+          },
+          {
+            "kind": "img",
+            "src": "What-are-the-average-interest-rates-on-home-loan",
+            "w": 158,
+            "h": 165,
+            "ratio": 0.95,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "What are the average interest rates on h"
+          },
+          {
+            "kind": "img",
+            "src": "Sign-up-offer_icon.svg",
+            "w": 110,
+            "h": 40,
+            "ratio": 2.75,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Sign up offer icon"
+          },
+          {
+            "kind": "img",
+            "src": "Pick-the-health-insurance-that-suits-your-family",
+            "w": 158,
+            "h": 165,
+            "ratio": 0.95,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "A young family in a kitchen"
+          },
+          {
+            "kind": "img",
+            "src": "Sign-up-offer_icon.svg",
+            "w": 110,
+            "h": 40,
+            "ratio": 2.75,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Sign up offer icon"
+          },
+          {
+            "kind": "img",
+            "src": "Road_Trip.jpg",
+            "w": 158,
+            "h": 165,
+            "ratio": 0.95,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "Picturesque lookout at the beach with a "
+          },
+          {
+            "kind": "img",
+            "src": "Sign-up-offer_icon.svg",
+            "w": 110,
+            "h": 40,
+            "ratio": 2.75,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Sign up offer icon"
+          },
+          {
+            "kind": "img",
+            "src": "AGL-resized.jpg",
+            "w": 158,
+            "h": 165,
+            "ratio": 0.95,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "How to buy AGL shares"
+          },
+          {
+            "kind": "img",
+            "src": "Sign-up-offer_icon.svg",
+            "w": 110,
+            "h": 40,
+            "ratio": 2.75,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "Sign up offer icon"
+          },
+          {
+            "kind": "img",
+            "src": "star-solid.svg",
+            "w": 16,
+            "h": 14,
+            "ratio": 1.13,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "star"
+          },
+          {
+            "kind": "img",
+            "src": "star-solid.svg",
+            "w": 16,
+            "h": 14,
+            "ratio": 1.13,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "star"
+          },
+          {
+            "kind": "img",
+            "src": "star-solid.svg",
+            "w": 16,
+            "h": 14,
+            "ratio": 1.13,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "star"
+          },
+          {
+            "kind": "img",
+            "src": "star-solid.svg",
+            "w": 16,
+            "h": 14,
+            "ratio": 1.13,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "star"
+          },
+          {
+            "kind": "img",
+            "src": "star-solid.svg",
+            "w": 16,
+            "h": 14,
+            "ratio": 1.13,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "star"
+          },
+          {
+            "kind": "img",
+            "src": "google-logo.svg",
+            "w": 16,
+            "h": 16,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "google-logo"
+          },
+          {
+            "kind": "img",
+            "src": "chevron-left.svg",
+            "w": 10,
+            "h": 10,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "arrow-left"
+          },
+          {
+            "kind": "img",
+            "src": "circle-solid.svg",
+            "w": 8,
+            "h": 20,
+            "ratio": 0.4,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "page-identifier-dot"
+          },
+          {
+            "kind": "img",
+            "src": "circle.svg",
+            "w": 8,
+            "h": 20,
+            "ratio": 0.4,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "page-identifier-dot"
+          },
+          {
+            "kind": "img",
+            "src": "circle.svg",
+            "w": 8,
+            "h": 20,
+            "ratio": 0.4,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "page-identifier-dot"
+          },
+          {
+            "kind": "img",
+            "src": "chevron-right.svg",
+            "w": 10,
+            "h": 10,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "arrow-right"
+          },
+          {
+            "kind": "img",
+            "src": "Daily-Mail-Aus-Home-Page-Logo-Garden_lg.png",
+            "w": 141,
+            "h": 50,
+            "ratio": 2.82,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "Daily Mail Australia"
+          },
+          {
+            "kind": "img",
+            "src": "Sunrise-Home-Page-Logo-Garden.png",
+            "w": 141,
+            "h": 50,
+            "ratio": 2.82,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "Sunrise"
+          },
+          {
+            "kind": "img",
+            "src": "REA-Home-Page-Logo-Garden_lg.png",
+            "w": 141,
+            "h": 50,
+            "ratio": 2.82,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "realestate.com.au"
+          },
+          {
+            "kind": "img",
+            "src": "Domain-Home-Page-Logo-Garden.png",
+            "w": 141,
+            "h": 50,
+            "ratio": 2.82,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "Domain"
+          },
+          {
+            "kind": "img",
+            "src": "News.com_.au-Home-Page-Logo-Garden.png",
+            "w": 141,
+            "h": 50,
+            "ratio": 2.82,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "news.com.au"
+          },
+          {
+            "kind": "img",
+            "src": "SBS-Home-Page-Logo-Garden.png",
+            "w": 141,
+            "h": 50,
+            "ratio": 2.82,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "SBS"
+          },
+          {
+            "kind": "img",
+            "src": "10-NEWS-Home-Page-Logo-Garden_lg.png",
+            "w": 141,
+            "h": 50,
+            "ratio": 2.82,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "10 NEWS FIRST"
+          },
+          {
+            "kind": "img",
+            "src": "Sky-News-Home-Page-Logo-Garden.png",
+            "w": 141,
+            "h": 50,
+            "ratio": 2.82,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "Sky News"
+          },
+          {
+            "kind": "img",
+            "src": "AFR-Home-Page-Logo-Garden-1.png",
+            "w": 141,
+            "h": 50,
+            "ratio": 2.82,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "Australian Financial Review"
+          },
+          {
+            "kind": "img",
+            "src": "The-New-Daily-Home-Page-Logo-Garden_lg.png",
+            "w": 141,
+            "h": 50,
+            "ratio": 2.82,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "The New Daily"
+          },
+          {
+            "kind": "img",
+            "src": "ABC-Radio-Home-Page-Logo-Garden_lg.png",
+            "w": 141,
+            "h": 50,
+            "ratio": 2.82,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "ABC Radio"
+          },
+          {
+            "kind": "img",
+            "src": "ACA-Home-Page-Logo-Garden.png",
+            "w": 141,
+            "h": 50,
+            "ratio": 2.82,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "A Current Affair"
+          },
+          {
+            "kind": "img",
+            "src": "7.30-Home-Page-Logo-Garden.png",
+            "w": 141,
+            "h": 50,
+            "ratio": 2.82,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "7.30"
+          },
+          {
+            "kind": "img",
+            "src": "7-NEWS-Home-Page-Logo-Garden.png",
+            "w": 141,
+            "h": 50,
+            "ratio": 2.82,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "7 NEWS"
+          },
+          {
+            "kind": "img",
+            "src": "Today-Show-Home-Page-Logo-Garden.png",
+            "w": 141,
+            "h": 50,
+            "ratio": 2.82,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "Today Show"
+          },
+          {
+            "kind": "img",
+            "src": "Courier-Mail-Home-Page-Logo-Garden.png",
+            "w": 141,
+            "h": 50,
+            "ratio": 2.82,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "The Courier Mail"
+          },
+          {
+            "kind": "img",
+            "src": "The-Age-Home-Page-Logo-Garden.png",
+            "w": 141,
+            "h": 50,
+            "ratio": 2.82,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "The Age"
+          },
+          {
+            "kind": "img",
+            "src": "The-Project-Home-Page-Logo-Garden_lg.png",
+            "w": 141,
+            "h": 50,
+            "ratio": 2.82,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "The Project"
+          },
+          {
+            "kind": "img",
+            "src": "Yahoo-Finance-Home-Page-Logo-Garden.png",
+            "w": 141,
+            "h": 50,
+            "ratio": 2.82,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "Yahoo! Finance"
+          },
+          {
+            "kind": "img",
+            "src": "The-Daily-Telegraph-Home-Page-Logo-Garden.png",
+            "w": 141,
+            "h": 50,
+            "ratio": 2.82,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "The Daily Telegraph"
+          },
+          {
+            "kind": "img",
+            "src": "9-News-Home-Page-Logo-Garden.png",
+            "w": 141,
+            "h": 50,
+            "ratio": 2.82,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "9 NEWS"
+          },
+          {
+            "kind": "img",
+            "src": "SMH-Home-Page-Logo-Garden.png",
+            "w": 141,
+            "h": 50,
+            "ratio": 2.82,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "Sydney Morning Herald"
+          },
+          {
+            "kind": "img",
+            "src": "The-Australian-Home-Page-Logo-Garden.png",
+            "w": 141,
+            "h": 50,
+            "ratio": 2.82,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "The Australian"
+          },
+          {
+            "kind": "img",
+            "src": "Reuters-Home-Page-Logo-Garden.png",
+            "w": 141,
+            "h": 50,
+            "ratio": 2.82,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "Reuters"
+          },
+          {
+            "kind": "img",
+            "src": "canstar-gold-and-blue-logo.png",
+            "w": 100,
+            "h": 50,
+            "ratio": 2,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "Canstar Gold and Blue Icon"
+          },
+          {
+            "kind": "img",
+            "src": "facebook-f.svg",
+            "w": 8,
+            "h": 15,
+            "ratio": 0.53,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "facebook"
+          },
+          {
+            "kind": "img",
+            "src": "x-logo.svg",
+            "w": 14,
+            "h": 13,
+            "ratio": 1.08,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "twitter"
+          },
+          {
+            "kind": "img",
+            "src": "instagram.svg",
+            "w": 14,
+            "h": 13,
+            "ratio": 1.08,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "instagram"
+          },
+          {
+            "kind": "img",
+            "src": "youtube.svg",
+            "w": 16,
+            "h": 11,
+            "ratio": 1.45,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "youtube"
+          },
+          {
+            "kind": "img",
+            "src": "linkedIn.svg",
+            "w": 14,
+            "h": 13,
+            "ratio": 1.08,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "linkedin"
+          },
+          {
+            "kind": "bg",
+            "src": "Better-financial-decisions-start-with-Canstar-13",
+            "w": 390,
+            "h": 642,
+            "ratio": 0.61,
+            "aboveFold": true,
+            "cls": "illustration-or-photo",
+            "alt": ""
+          },
+          {
+            "kind": "bg",
+            "src": "Sand-background.png",
+            "w": 350,
+            "h": 556,
+            "ratio": 0.63,
+            "aboveFold": false,
+            "cls": "illustration-or-photo",
+            "alt": ""
+          }
+        ],
+        "total": 97,
+        "aboveFold": 24,
+        "belowFold": 73,
+        "byClass": {
+          "icon": 60,
+          "logo": 26,
+          "illustration-or-photo": 3,
+          "photography": 8
+        },
+        "gradientElements": 0
+      },
+      "motion": [
+        {
+          "v": "all|0.2s|ease-in-out",
+          "n": 50
+        },
+        {
+          "v": "transform|0.2s|ease-in",
+          "n": 1
+        },
+        {
+          "v": "background-color|0.2s|ease",
+          "n": 1
+        }
+      ],
+      "header": {
+        "at0": {
+          "h": 61,
+          "pos": "relative",
+          "bg": "rgb(255, 255, 255)",
+          "shadow": "none",
+          "top": -238
+        },
+        "at800": {
+          "h": 61,
+          "pos": "relative",
+          "bg": "rgb(255, 255, 255)",
+          "shadow": "none",
+          "top": -800
+        },
+        "consentDismissed": null
+      }
+    }
+  }
+}

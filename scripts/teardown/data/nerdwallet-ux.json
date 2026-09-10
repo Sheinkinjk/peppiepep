@@ -1,0 +1,397 @@
+{
+  "site": "nerdwallet",
+  "url": "https://www.nerdwallet.com/",
+  "header": {
+    "at0": {
+      "h": 82,
+      "top": 0,
+      "position": "relative",
+      "bg": "rgb(255, 255, 255)",
+      "shadow": "rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.1) 0px 2px 4px -2px",
+      "borderBottom": "0px rgb(0, 0, 0)",
+      "backdrop": "none"
+    },
+    "at800": {
+      "h": 82,
+      "top": -800,
+      "position": "relative",
+      "bg": "rgb(255, 255, 255)",
+      "shadow": "rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.1) 0px 2px 4px -2px",
+      "borderBottom": "0px rgb(0, 0, 0)",
+      "backdrop": "none"
+    },
+    "changed": true
+  },
+  "motion": [
+    {
+      "v": "transition transform, translate, scale, rotate 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+      "n": 131
+    },
+    {
+      "v": "transition color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1)",
+      "n": 97
+    },
+    {
+      "v": "transition color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+      "n": 93
+    },
+    {
+      "v": "transition all 0.7s cubic-bezier(0.22, 0.61, 0.36, 1)",
+      "n": 63
+    },
+    {
+      "v": "transition width, height, opacity 0.7s, 0.7s, 0.7s cubic-bezier(0.22, 0.61, 0.36, 1), cubic-bezier(0.22, 0.61, 0.36, 1), cubic-bezier(0.22, 0.61, 0.36, 1)",
+      "n": 21
+    },
+    {
+      "v": "transition all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+      "n": 16
+    },
+    {
+      "v": "animation fadeInElement 0.6s ease-in-out",
+      "n": 15
+    },
+    {
+      "v": "transition color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.2s linear",
+      "n": 9
+    },
+    {
+      "v": "transition grid-template-rows 0.2s cubic-bezier(0, 0, 0.2, 1)",
+      "n": 9
+    },
+    {
+      "v": "transition transform 0.6s ease-in-out",
+      "n": 6
+    },
+    {
+      "v": "transition opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1)",
+      "n": 4
+    },
+    {
+      "v": "animation scroll 20s linear",
+      "n": 4
+    }
+  ],
+  "ctas": [
+    {
+      "default": {
+        "text": "JoinSign Up",
+        "h": 44,
+        "w": 100,
+        "padX": "16px/16px",
+        "radius": "2px",
+        "fontSize": "13px",
+        "fontWeight": "700",
+        "bg": "rgb(0, 130, 84)",
+        "color": "rgb(255, 255, 255)",
+        "border": "0px rgb(0, 130, 84)",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "transition": "0.15s box-shadow",
+        "selector": "a.cursor-pointer.p-4"
+      },
+      "hover": {
+        "bg": "rgb(216, 217, 218)",
+        "color": "rgb(0, 130, 84)",
+        "shadow": "none",
+        "transform": "none",
+        "h": 44,
+        "textDecoration": "none",
+        "border": "rgb(0, 130, 84)"
+      },
+      "focus": {
+        "outline": "1px auto rgb(0, 95, 204)",
+        "offset": "1px",
+        "shadow": "none"
+      }
+    },
+    {
+      "default": {
+        "text": "Continue",
+        "h": 40,
+        "w": 130,
+        "padX": "10px/10px",
+        "radius": "2px",
+        "fontSize": "13.008px",
+        "fontWeight": "600",
+        "bg": "rgb(0, 130, 84)",
+        "color": "rgb(255, 255, 255)",
+        "border": "0px rgb(255, 255, 255)",
+        "shadow": "none",
+        "transition": "0.15s background-color",
+        "selector": "#onetrust-accept-btn-handler"
+      },
+      "hover": {
+        "bg": "rgb(0, 102, 66)",
+        "color": "rgb(255, 255, 255)",
+        "shadow": "none",
+        "transform": "none",
+        "h": 40,
+        "textDecoration": "none",
+        "border": "rgb(255, 255, 255)"
+      },
+      "focus": {
+        "outline": "1px solid rgb(100, 102, 106)",
+        "offset": "1px",
+        "shadow": "none"
+      }
+    }
+  ],
+  "cardHover": {
+    "before": {
+      "shadow": "rgba(0, 0, 0, 0.2) 0px 0px 18px 0px",
+      "transform": "none",
+      "border": "rgb(0, 0, 0)",
+      "bg": "rgb(255, 255, 255)",
+      "top": 709
+    },
+    "after": {
+      "shadow": "rgba(0, 0, 0, 0.2) 0px 0px 18px 0px",
+      "transform": "none",
+      "border": "rgb(0, 0, 0)",
+      "bg": "rgb(255, 255, 255)",
+      "top": 709
+    },
+    "changed": false
+  },
+  "keyboard": [
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "outline": "1px solid",
+      "outlineColor": "rgb(100, 102, 106)",
+      "offset": "0px",
+      "shadow": "no"
+    },
+    {
+      "tag": "A",
+      "text": "Skip to content",
+      "outline": "1px auto",
+      "outlineColor": "rgb(0, 95, 204)",
+      "offset": "1px",
+      "shadow": "no"
+    },
+    {
+      "tag": "A",
+      "text": "",
+      "outline": "1px auto",
+      "outlineColor": "rgb(0, 95, 204)",
+      "offset": "1px",
+      "shadow": "no"
+    },
+    {
+      "tag": "LABEL",
+      "text": "Credit cards",
+      "outline": "1px auto",
+      "outlineColor": "rgb(0, 0, 0)",
+      "offset": "0px",
+      "shadow": "no"
+    },
+    {
+      "tag": "LABEL",
+      "text": "Banking",
+      "outline": "1px auto",
+      "outlineColor": "rgb(0, 0, 0)",
+      "offset": "0px",
+      "shadow": "no"
+    },
+    {
+      "tag": "LABEL",
+      "text": "Home",
+      "outline": "1px auto",
+      "outlineColor": "rgb(0, 0, 0)",
+      "offset": "0px",
+      "shadow": "no"
+    },
+    {
+      "tag": "LABEL",
+      "text": "Loans",
+      "outline": "1px auto",
+      "outlineColor": "rgb(0, 0, 0)",
+      "offset": "0px",
+      "shadow": "no"
+    },
+    {
+      "tag": "LABEL",
+      "text": "Insurance",
+      "outline": "1px auto",
+      "outlineColor": "rgb(0, 0, 0)",
+      "offset": "0px",
+      "shadow": "no"
+    },
+    {
+      "tag": "LABEL",
+      "text": "Personal finance",
+      "outline": "1px auto",
+      "outlineColor": "rgb(0, 0, 0)",
+      "offset": "0px",
+      "shadow": "no"
+    },
+    {
+      "tag": "LABEL",
+      "text": "Investing",
+      "outline": "1px auto",
+      "outlineColor": "rgb(0, 0, 0)",
+      "offset": "0px",
+      "shadow": "no"
+    },
+    {
+      "tag": "LABEL",
+      "text": "Small business",
+      "outline": "1px auto",
+      "outlineColor": "rgb(0, 0, 0)",
+      "offset": "0px",
+      "shadow": "no"
+    }
+  ],
+  "asks": {
+    "formsAboveFold": 1,
+    "inputsAboveFold": [
+      {
+        "type": "radio",
+        "name": "navPanels",
+        "placeholder": null,
+        "label": null
+      },
+      {
+        "type": "radio",
+        "name": "navPanels",
+        "placeholder": null,
+        "label": null
+      },
+      {
+        "type": "radio",
+        "name": "navPanels",
+        "placeholder": null,
+        "label": null
+      },
+      {
+        "type": "radio",
+        "name": "navPanels",
+        "placeholder": null,
+        "label": null
+      },
+      {
+        "type": "radio",
+        "name": "navPanels",
+        "placeholder": null,
+        "label": null
+      },
+      {
+        "type": "checkbox",
+        "name": "navUserIsLoggedIn",
+        "placeholder": null,
+        "label": null
+      },
+      {
+        "type": "checkbox",
+        "name": "authButtonsCanShow",
+        "placeholder": null,
+        "label": null
+      },
+      {
+        "type": "radio",
+        "name": "navL1Item",
+        "placeholder": null,
+        "label": null
+      },
+      {
+        "type": "radio",
+        "name": "navL1Item",
+        "placeholder": null,
+        "label": "Credit cards"
+      },
+      {
+        "type": "radio",
+        "name": "navL1Item",
+        "placeholder": null,
+        "label": "Banking"
+      },
+      {
+        "type": "radio",
+        "name": "navL1Item",
+        "placeholder": null,
+        "label": "Home"
+      },
+      {
+        "type": "radio",
+        "name": "navL1Item",
+        "placeholder": null,
+        "label": "Loans"
+      },
+      {
+        "type": "radio",
+        "name": "navL1Item",
+        "placeholder": null,
+        "label": "Insurance"
+      },
+      {
+        "type": "radio",
+        "name": "navL1Item",
+        "placeholder": null,
+        "label": "Personal finance"
+      },
+      {
+        "type": "radio",
+        "name": "navL1Item",
+        "placeholder": null,
+        "label": "Investing"
+      },
+      {
+        "type": "radio",
+        "name": "navL1Item",
+        "placeholder": null,
+        "label": "Small business"
+      },
+      {
+        "type": "radio",
+        "name": "navL1Item",
+        "placeholder": null,
+        "label": "Taxes"
+      },
+      {
+        "type": "search",
+        "name": "q",
+        "placeholder": "Try \"Best savings account?\"",
+        "label": null
+      },
+      {
+        "type": "text",
+        "name": "nerd-ai-mini-prompt-bar-input",
+        "placeholder": null,
+        "label": null
+      },
+      {
+        "type": "text",
+        "name": "vendor-search-handler",
+        "placeholder": "Search…",
+        "label": null
+      },
+      {
+        "type": "checkbox",
+        "name": "chkbox-id",
+        "placeholder": null,
+        "label": "checkbox label"
+      },
+      {
+        "type": "checkbox",
+        "name": "select-all-hosts-groups-handler",
+        "placeholder": null,
+        "label": "checkbox label"
+      },
+      {
+        "type": "checkbox",
+        "name": "select-all-vendor-groups-handler",
+        "placeholder": null,
+        "label": "checkbox label"
+      },
+      {
+        "type": "checkbox",
+        "name": "select-all-vendor-leg-handler",
+        "placeholder": null,
+        "label": "checkbox label"
+      }
+    ],
+    "totalInputs": 26,
+    "hasEmailGate": false
+  }
+}

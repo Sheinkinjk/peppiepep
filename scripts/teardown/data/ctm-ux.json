@@ -1,0 +1,197 @@
+{
+  "site": "ctm",
+  "url": "https://www.comparethemarket.com.au/",
+  "header": {
+    "at0": {
+      "h": 72,
+      "top": 0,
+      "position": "fixed",
+      "bg": "rgba(0, 0, 0, 0)",
+      "shadow": "none",
+      "borderBottom": "0px rgb(0, 20, 100)",
+      "backdrop": "none"
+    },
+    "at800": {
+      "h": 72,
+      "top": 0,
+      "position": "fixed",
+      "bg": "rgba(0, 0, 0, 0)",
+      "shadow": "none",
+      "borderBottom": "0px rgb(0, 20, 100)",
+      "backdrop": "none"
+    },
+    "changed": false
+  },
+  "motion": [
+    {
+      "v": "transition all 0.2s ease",
+      "n": 15
+    },
+    {
+      "v": "transition all 0.35s ease",
+      "n": 6
+    },
+    {
+      "v": "transition color 0.4s ease",
+      "n": 6
+    },
+    {
+      "v": "transition height 0.3s ease",
+      "n": 5
+    },
+    {
+      "v": "transition color, background-color, border-color, box-shadow, border-radius 0.15s, 0.15s, 0.15s, 0.15s, 0.15s ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease",
+      "n": 4
+    },
+    {
+      "v": "transition height, margin-top 0.3s, 0.3s ease, ease",
+      "n": 1
+    },
+    {
+      "v": "transition transform 0.15s linear",
+      "n": 1
+    },
+    {
+      "v": "transition transform 0.2s ease-in",
+      "n": 1
+    },
+    {
+      "v": "transition all 0.2s ease-in",
+      "n": 1
+    },
+    {
+      "v": "transition max-height 0.3s ease",
+      "n": 1
+    },
+    {
+      "v": "animation animation-spin 1.5s ease",
+      "n": 1
+    },
+    {
+      "v": "transition all 0.15s linear",
+      "n": 1
+    }
+  ],
+  "ctas": [],
+  "cardHover": {
+    "before": {
+      "shadow": "rgb(180, 212, 248) 8px 8px 0px 0px",
+      "transform": "none",
+      "border": "rgb(180, 212, 248)",
+      "bg": "rgb(255, 255, 255)",
+      "top": 317
+    },
+    "after": {
+      "shadow": "rgb(180, 212, 248) 8px 8px 0px 0px",
+      "transform": "none",
+      "border": "rgb(180, 212, 248)",
+      "bg": "rgb(255, 255, 255)",
+      "top": 317
+    },
+    "changed": false
+  },
+  "keyboard": [
+    {
+      "tag": "A",
+      "text": "Insurance",
+      "outline": "1px auto",
+      "outlineColor": "rgb(0, 95, 204)",
+      "offset": "1px",
+      "shadow": "no"
+    },
+    {
+      "tag": "A",
+      "text": "Car Insurance",
+      "outline": "1px auto",
+      "outlineColor": "rgb(0, 95, 204)",
+      "offset": "1px",
+      "shadow": "no"
+    },
+    {
+      "tag": "A",
+      "text": "Home Insurance",
+      "outline": "1px auto",
+      "outlineColor": "rgb(0, 95, 204)",
+      "offset": "1px",
+      "shadow": "no"
+    },
+    {
+      "tag": "A",
+      "text": "Health Insurance",
+      "outline": "1px auto",
+      "outlineColor": "rgb(0, 95, 204)",
+      "offset": "1px",
+      "shadow": "no"
+    },
+    {
+      "tag": "A",
+      "text": "Travel Insurance",
+      "outline": "1px auto",
+      "outlineColor": "rgb(0, 95, 204)",
+      "offset": "1px",
+      "shadow": "no"
+    },
+    {
+      "tag": "A",
+      "text": "Pet Insurance",
+      "outline": "1px auto",
+      "outlineColor": "rgb(0, 95, 204)",
+      "offset": "1px",
+      "shadow": "no"
+    },
+    {
+      "tag": "A",
+      "text": "Landlord Insurance",
+      "outline": "1px auto",
+      "outlineColor": "rgb(0, 95, 204)",
+      "offset": "1px",
+      "shadow": "no"
+    },
+    {
+      "tag": "A",
+      "text": "Life Insurance",
+      "outline": "1px auto",
+      "outlineColor": "rgb(0, 95, 204)",
+      "offset": "1px",
+      "shadow": "no"
+    },
+    {
+      "tag": "A",
+      "text": "Income Protection Insurance",
+      "outline": "1px auto",
+      "outlineColor": "rgb(0, 95, 204)",
+      "offset": "1px",
+      "shadow": "no"
+    },
+    {
+      "tag": "A",
+      "text": "Business Insurance",
+      "outline": "1px auto",
+      "outlineColor": "rgb(0, 95, 204)",
+      "offset": "1px",
+      "shadow": "no"
+    },
+    {
+      "tag": "A",
+      "text": "CTP/Greenslip Insurance",
+      "outline": "1px auto",
+      "outlineColor": "rgb(0, 95, 204)",
+      "offset": "1px",
+      "shadow": "no"
+    },
+    {
+      "tag": "A",
+      "text": "Utilities",
+      "outline": "1px auto",
+      "outlineColor": "rgb(0, 95, 204)",
+      "offset": "1px",
+      "shadow": "no"
+    }
+  ],
+  "asks": {
+    "formsAboveFold": 0,
+    "inputsAboveFold": [],
+    "totalInputs": 0,
+    "hasEmailGate": false
+  }
+}

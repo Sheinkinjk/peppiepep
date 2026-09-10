@@ -1,0 +1,1456 @@
+{
+  "site": "bankrate",
+  "url": "https://www.bankrate.com/",
+  "capturedAt": "2026-09-10T08:42:00.014Z",
+  "breakpoints": {
+    "d": {
+      "viewport": {
+        "vw": 1440,
+        "vh": 900
+      },
+      "docHeight": 5211,
+      "type": {
+        "combos": [
+          {
+            "family": "Instrument Sans",
+            "size": 14,
+            "weight": 400,
+            "lineHeight": "23.8",
+            "letterSpacing": "normal",
+            "count": 23,
+            "sample": "Bankrate, LLC NMLS ID# 1427381 | NMLS Consumer Access BR Tec"
+          },
+          {
+            "family": "Instrument Sans",
+            "size": 14,
+            "weight": 600,
+            "lineHeight": "14",
+            "letterSpacing": "normal",
+            "count": 15,
+            "sample": "See your equity options"
+          },
+          {
+            "family": "RecifeText",
+            "size": 36,
+            "weight": 500,
+            "lineHeight": "43.2",
+            "letterSpacing": "normal",
+            "count": 12,
+            "sample": "The research banks don’t want you to read"
+          },
+          {
+            "family": "Instrument Sans",
+            "size": 16,
+            "weight": 400,
+            "lineHeight": "27.2",
+            "letterSpacing": "-0.25px",
+            "count": 10,
+            "sample": "Founded by a journalist to hold banks accountable"
+          },
+          {
+            "family": "Instrument Sans",
+            "size": 18,
+            "weight": 400,
+            "lineHeight": "30.6",
+            "letterSpacing": "-0.25px",
+            "count": 9,
+            "sample": "Your bank is a lender. It has a rate to protect. Bankrate is"
+          },
+          {
+            "family": "Instrument Sans",
+            "size": 16,
+            "weight": 400,
+            "lineHeight": "24",
+            "letterSpacing": "normal",
+            "count": 8,
+            "sample": "Mortgage rates"
+          },
+          {
+            "family": "RecifeText",
+            "size": 28,
+            "weight": 500,
+            "lineHeight": "33.6",
+            "letterSpacing": "normal",
+            "count": 8,
+            "sample": "The Hidden Homeownership Tax"
+          },
+          {
+            "family": "Instrument Sans",
+            "size": 12,
+            "weight": 700,
+            "lineHeight": "12",
+            "letterSpacing": "2.5px",
+            "count": 7,
+            "sample": "BANKRATE RESEARCH"
+          },
+          {
+            "family": "Instrument Sans",
+            "size": 16,
+            "weight": 600,
+            "lineHeight": "27.2",
+            "letterSpacing": "-0.25px",
+            "count": 6,
+            "sample": "News & Research"
+          },
+          {
+            "family": "Instrument Sans",
+            "size": 16,
+            "weight": 700,
+            "lineHeight": "27.2",
+            "letterSpacing": "-0.25px",
+            "count": 6,
+            "sample": "Legal"
+          },
+          {
+            "family": "Instrument Sans",
+            "size": 20,
+            "weight": 700,
+            "lineHeight": "34",
+            "letterSpacing": "normal",
+            "count": 4,
+            "sample": "About us"
+          },
+          {
+            "family": "Instrument Sans",
+            "size": 16,
+            "weight": 400,
+            "lineHeight": "27.2",
+            "letterSpacing": "normal",
+            "count": 4,
+            "sample": "For over 40 years, one job: show people what the market actu"
+          },
+          {
+            "family": "Instrument Sans",
+            "size": 16,
+            "weight": 700,
+            "lineHeight": "22",
+            "letterSpacing": "-0.25px",
+            "count": 3,
+            "sample": "Average saved by Bankrate mortgage users over 30 years"
+          },
+          {
+            "family": "Instrument Sans",
+            "size": 14,
+            "weight": 700,
+            "lineHeight": "14",
+            "letterSpacing": "1.8px",
+            "count": 3,
+            "sample": "Why Bankrate"
+          },
+          {
+            "family": "Instrument Sans",
+            "size": 18,
+            "weight": 700,
+            "lineHeight": "30.6",
+            "letterSpacing": "-0.25px",
+            "count": 3,
+            "sample": "$299k"
+          },
+          {
+            "family": "Instrument Sans",
+            "size": 16,
+            "weight": 400,
+            "lineHeight": "24",
+            "letterSpacing": "-0.25px",
+            "count": 3,
+            "sample": "The average cost: $3,656 a year — just by not shopping their"
+          },
+          {
+            "family": "RecifeText",
+            "size": 18,
+            "weight": 600,
+            "lineHeight": "21.6",
+            "letterSpacing": "-0.15px",
+            "count": 3,
+            "sample": "Lenders compete for your business"
+          },
+          {
+            "family": "RecifeText",
+            "size": 20,
+            "weight": 500,
+            "lineHeight": "24",
+            "letterSpacing": "normal",
+            "count": 3,
+            "sample": "Mortgage overpayment costs Americans thousands of dollars pe"
+          },
+          {
+            "family": "Instrument Sans",
+            "size": 14,
+            "weight": 400,
+            "lineHeight": "21",
+            "letterSpacing": "normal",
+            "count": 2,
+            "sample": "Rates Up IconPopular searches"
+          },
+          {
+            "family": "RecifeText",
+            "size": 48,
+            "weight": 500,
+            "lineHeight": "57.6",
+            "letterSpacing": "-0.15px",
+            "count": 2,
+            "sample": "9 out of 10 homebuyers overpay for their mortgage."
+          },
+          {
+            "family": "Instrument Sans",
+            "size": 14,
+            "weight": 700,
+            "lineHeight": "23.8",
+            "letterSpacing": "normal",
+            "count": 1,
+            "sample": "Log in or sign up"
+          },
+          {
+            "family": "Instrument Sans",
+            "size": 16,
+            "weight": 400,
+            "lineHeight": "27.2",
+            "letterSpacing": "-0.15px",
+            "count": 1,
+            "sample": "How mortgage overpayment is making housing and retirement le"
+          },
+          {
+            "family": "Instrument Sans",
+            "size": 16,
+            "weight": 400,
+            "lineHeight": "16",
+            "letterSpacing": "normal",
+            "count": 1,
+            "sample": "Bankrate logo"
+          },
+          {
+            "family": "Instrument Sans",
+            "size": 12,
+            "weight": 400,
+            "lineHeight": "20.4",
+            "letterSpacing": "normal",
+            "count": 1,
+            "sample": "© 2026 Bankrate, LLC. A Red Ventures company. All Rights Res"
+          }
+        ],
+        "distinctCombos": 24,
+        "distinctSizes": [
+          12,
+          14,
+          16,
+          18,
+          20,
+          28,
+          36,
+          48
+        ],
+        "families": [
+          {
+            "v": "RecifeText",
+            "n": 2
+          },
+          {
+            "v": "Instrument Sans",
+            "n": 1
+          }
+        ],
+        "largestHeadlinePx": 36,
+        "largestHeadlineText": "What's your next step?",
+        "largestTextPx": 48,
+        "bodySizePx": 16,
+        "bodySizeCount": 13
+      },
+      "colour": {
+        "backgrounds": [
+          {
+            "color": "rgb(250,248,245)",
+            "count": 2,
+            "area": 7061130
+          },
+          {
+            "color": "rgb(19,34,59)",
+            "count": 3,
+            "area": 2029860
+          },
+          {
+            "color": "rgb(255,255,255)",
+            "count": 18,
+            "area": 1910390
+          },
+          {
+            "color": "rgb(245,242,235)",
+            "count": 2,
+            "area": 465791
+          },
+          {
+            "color": "oklab(0.261206-0.03621740.0197269/0.4)",
+            "count": 1,
+            "area": 97344
+          },
+          {
+            "color": "rgb(0,97,254)",
+            "count": 7,
+            "area": 58043
+          },
+          {
+            "color": "rgb(242,247,255)",
+            "count": 3,
+            "area": 30240
+          }
+        ],
+        "inks": [
+          {
+            "color": "rgb(19,34,59)",
+            "count": 33,
+            "area": 400305
+          },
+          {
+            "color": "rgb(83,82,80)",
+            "count": 22,
+            "area": 472557
+          },
+          {
+            "color": "rgb(255,255,255)",
+            "count": 18,
+            "area": 220415
+          },
+          {
+            "color": "rgb(250,248,245)",
+            "count": 18,
+            "area": 133240
+          },
+          {
+            "color": "rgb(39,38,37)",
+            "count": 11,
+            "area": 33012
+          },
+          {
+            "color": "rgb(0,97,254)",
+            "count": 11,
+            "area": 61184
+          },
+          {
+            "color": "rgb(108,106,103)",
+            "count": 9,
+            "area": 53412
+          },
+          {
+            "color": "rgb(0,0,0)",
+            "count": 7,
+            "area": 99109
+          },
+          {
+            "color": "rgb(20,56,122)",
+            "count": 6,
+            "area": 31144
+          },
+          {
+            "color": "rgb(152,149,147)",
+            "count": 2,
+            "area": 25704
+          },
+          {
+            "color": "rgb(59,59,57)",
+            "count": 1,
+            "area": 11669
+          }
+        ],
+        "accentColours": [
+          {
+            "color": "rgb(19,34,59)",
+            "count": 3,
+            "area": 2029860
+          },
+          {
+            "color": "oklab(0.261206-0.03621740.0197269/0.4)",
+            "count": 1,
+            "area": 97344
+          },
+          {
+            "color": "rgb(0,97,254)",
+            "count": 7,
+            "area": 58043
+          }
+        ],
+        "accentAreaPct": 29.12,
+        "paintedAreaPct": 155.3,
+        "docArea": 7503840
+      },
+      "depth": {
+        "shadows": [
+          {
+            "v": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+            "n": 8
+          },
+          {
+            "v": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.269299 0.000906073 0.00218749 / 0.2) 5px 5px 15px -10px, oklab(0.269299 0.000906073 0.00218749 / 0.2) -5px 5px 15px -10px",
+            "n": 3
+          }
+        ],
+        "distinctShadows": 2,
+        "radii": [
+          {
+            "v": "12px",
+            "n": 19
+          },
+          {
+            "v": "24px",
+            "n": 12
+          },
+          {
+            "v": "8px",
+            "n": 7
+          },
+          {
+            "v": "16px",
+            "n": 5
+          },
+          {
+            "v": "32px",
+            "n": 4
+          },
+          {
+            "v": "14px",
+            "n": 3
+          },
+          {
+            "v": "3.35544e+07px",
+            "n": 3
+          },
+          {
+            "v": "20px",
+            "n": 3
+          },
+          {
+            "v": "4px",
+            "n": 1
+          },
+          {
+            "v": "26px",
+            "n": 1
+          }
+        ],
+        "distinctRadii": 10,
+        "borders": [
+          {
+            "v": "1px/solid",
+            "n": 13
+          },
+          {
+            "v": "0px/solid",
+            "n": 10
+          },
+          {
+            "v": "2px/solid",
+            "n": 1
+          }
+        ]
+      },
+      "layout": {
+        "containers": [
+          {
+            "maxWidth": 1280,
+            "n": 9
+          },
+          {
+            "maxWidth": 628,
+            "n": 4
+          },
+          {
+            "maxWidth": 778,
+            "n": 2
+          },
+          {
+            "maxWidth": 1440,
+            "n": 1
+          },
+          {
+            "maxWidth": 1184,
+            "n": 1
+          },
+          {
+            "maxWidth": 816,
+            "n": 1
+          }
+        ],
+        "gutter": 24,
+        "sections": [
+          {
+            "i": 0,
+            "tag": "DIV",
+            "cls": "bg-gray-50 pb-14",
+            "height": 4832,
+            "paddingTop": 0,
+            "paddingBottom": 56,
+            "bg": "rgb(250,248,245)",
+            "heading": "9 out of 10 homebuyers overpay for their mortgage. Y",
+            "imgs": 14
+          }
+        ],
+        "grids": [
+          {
+            "cols": 2,
+            "n": 5
+          },
+          {
+            "cols": 3,
+            "n": 2
+          },
+          {
+            "cols": 4,
+            "n": 2
+          }
+        ]
+      },
+      "imagery": {
+        "all": [
+          {
+            "kind": "img",
+            "src": "brush-background-desktop.2hbpi69_q03ab.png?width",
+            "w": 1280,
+            "h": 600,
+            "ratio": 2.13,
+            "aboveFold": true,
+            "cls": "logo",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "bankrate-people.2z8sjlcjvww9k.jpg?width=828&auto",
+            "w": 312,
+            "h": 312,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "A father and daughter smiling together"
+          },
+          {
+            "kind": "img",
+            "src": "play-button.00cas_mvz_18m.svg",
+            "w": 96,
+            "h": 98,
+            "ratio": 0.98,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "hht-featured.2h3q8jx1njawi.png?width=1920&auto=w",
+            "w": 602,
+            "h": 346,
+            "ratio": 1.74,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "The Hidden Homeownership Tax"
+          },
+          {
+            "kind": "img",
+            "src": "Homebuyers-overpaying-in-largest-metros-feature-",
+            "w": 135,
+            "h": 135,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "illustration-or-photo",
+            "alt": "Mortgage overpayment costs Americans tho"
+          },
+          {
+            "kind": "img",
+            "src": "The-seniority-tax-in-mortgage-refinancing-v4.jpg",
+            "w": 135,
+            "h": 135,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "The refinance ‘Seniority Tax’: How a fla"
+          },
+          {
+            "kind": "img",
+            "src": "community-article.jpg?width=750&auto=webp&optimi",
+            "w": 135,
+            "h": 135,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "3 homeowners, 6 refinances: Lessons lear"
+          },
+          {
+            "kind": "img",
+            "src": "wsj.1e15l0cq2625z.svg",
+            "w": 51,
+            "h": 28,
+            "ratio": 1.82,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "The Wall Street Journal"
+          },
+          {
+            "kind": "img",
+            "src": "usatoday.2cl0dwc4g45h6.svg",
+            "w": 130,
+            "h": 24,
+            "ratio": 5.42,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "USA Today"
+          },
+          {
+            "kind": "img",
+            "src": "abc.1mysp97gmwwr2.svg",
+            "w": 40,
+            "h": 40,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "ABC"
+          },
+          {
+            "kind": "img",
+            "src": "new-york-times.1eptfie9o0ni2.svg",
+            "w": 200,
+            "h": 29,
+            "ratio": 6.9,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "The New York Times"
+          },
+          {
+            "kind": "img",
+            "src": "cnn.2aenykybz5mak.svg",
+            "w": 62,
+            "h": 30,
+            "ratio": 2.07,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "CNN"
+          },
+          {
+            "kind": "img",
+            "src": "bloomberg.1ipdwew2umqs7.svg",
+            "w": 121,
+            "h": 24,
+            "ratio": 5.04,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "Bloomberg"
+          },
+          {
+            "kind": "bg",
+            "src": "who-we-are.0lgyyf38jcple.svg",
+            "w": 1280,
+            "h": 640,
+            "ratio": 2,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": ""
+          }
+        ],
+        "total": 14,
+        "aboveFold": 1,
+        "belowFold": 13,
+        "byClass": {
+          "logo": 9,
+          "illustration-or-photo": 1,
+          "photography": 2,
+          "icon": 2
+        },
+        "gradientElements": 0
+      },
+      "motion": [
+        {
+          "v": "transform, translate, scale, rotate|0.15s|cubic-bezier(0.4, 0, 0.2, 1)",
+          "n": 24
+        },
+        {
+          "v": "color, text-decoration-color|0.15s, 0.15s|ease-in, ease-in",
+          "n": 24
+        },
+        {
+          "v": "all|0.15s|cubic-bezier(0.4, 0, 0.2, 1)",
+          "n": 15
+        },
+        {
+          "v": "background-color, border-bottom, color|0.2s, 0.2s, 0.2s|ease-in-out, ease-in-out, ease-in-out",
+          "n": 6
+        },
+        {
+          "v": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to|0.15s|cubic-bezier(0.4, 0, 0.2, 1)",
+          "n": 4
+        },
+        {
+          "v": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to|0.2s|cubic-bezier(0.4, 0, 0.2, 1)",
+          "n": 1
+        },
+        {
+          "v": "opacity, visibility|0.2s, 0s|ease-in-out, linear",
+          "n": 1
+        },
+        {
+          "v": "border-bottom-color|0.2s|ease",
+          "n": 1
+        },
+        {
+          "v": "transform, translate, scale, rotate|0.2s|cubic-bezier(0.4, 0, 0.2, 1)",
+          "n": 1
+        }
+      ],
+      "header": {
+        "at0": {
+          "h": 72,
+          "pos": "relative",
+          "bg": "rgba(0, 0, 0, 0)",
+          "shadow": "none",
+          "top": 0
+        },
+        "at800": {
+          "h": 72,
+          "pos": "relative",
+          "bg": "rgba(0, 0, 0, 0)",
+          "shadow": "none",
+          "top": -800
+        },
+        "consentDismissed": null
+      }
+    },
+    "m": {
+      "viewport": {
+        "vw": 390,
+        "vh": 844
+      },
+      "docHeight": 10354,
+      "type": {
+        "combos": [
+          {
+            "family": "Instrument Sans",
+            "size": 14,
+            "weight": 400,
+            "lineHeight": "23.8",
+            "letterSpacing": "normal",
+            "count": 23,
+            "sample": "Bankrate, LLC NMLS ID# 1427381 | NMLS Consumer Access BR Tec"
+          },
+          {
+            "family": "Instrument Sans",
+            "size": 16,
+            "weight": 400,
+            "lineHeight": "24",
+            "letterSpacing": "normal",
+            "count": 18,
+            "sample": "Mortgage rates"
+          },
+          {
+            "family": "Instrument Sans",
+            "size": 20,
+            "weight": 400,
+            "lineHeight": "24",
+            "letterSpacing": "-0.25px",
+            "count": 17,
+            "sample": "PurchaseCaret Right Icon"
+          },
+          {
+            "family": "Instrument Sans",
+            "size": 14,
+            "weight": 600,
+            "lineHeight": "14",
+            "letterSpacing": "normal",
+            "count": 15,
+            "sample": "See your equity options"
+          },
+          {
+            "family": "RecifeText",
+            "size": 28,
+            "weight": 500,
+            "lineHeight": "33.6",
+            "letterSpacing": "normal",
+            "count": 12,
+            "sample": "The research banks don’t want you to read"
+          },
+          {
+            "family": "Instrument Sans",
+            "size": 16,
+            "weight": 400,
+            "lineHeight": "27.2",
+            "letterSpacing": "-0.25px",
+            "count": 10,
+            "sample": "Founded by a journalist to hold banks accountable"
+          },
+          {
+            "family": "Instrument Sans",
+            "size": 18,
+            "weight": 400,
+            "lineHeight": "30.6",
+            "letterSpacing": "-0.25px",
+            "count": 9,
+            "sample": "Your bank is a lender. It has a rate to protect. Bankrate is"
+          },
+          {
+            "family": "RecifeText",
+            "size": 24,
+            "weight": 500,
+            "lineHeight": "40.8",
+            "letterSpacing": "normal",
+            "count": 7,
+            "sample": "Buy a home"
+          },
+          {
+            "family": "Instrument Sans",
+            "size": 12,
+            "weight": 700,
+            "lineHeight": "12",
+            "letterSpacing": "2.5px",
+            "count": 7,
+            "sample": "BANKRATE RESEARCH"
+          },
+          {
+            "family": "Instrument Sans",
+            "size": 16,
+            "weight": 700,
+            "lineHeight": "27.2",
+            "letterSpacing": "-0.25px",
+            "count": 6,
+            "sample": "Legal"
+          },
+          {
+            "family": "RecifeText",
+            "size": 24,
+            "weight": 400,
+            "lineHeight": "30",
+            "letterSpacing": "normal",
+            "count": 5,
+            "sample": "Credit cards"
+          },
+          {
+            "family": "RecifeText",
+            "size": 24,
+            "weight": 400,
+            "lineHeight": "30",
+            "letterSpacing": "-0.25px",
+            "count": 5,
+            "sample": "Credit cards"
+          },
+          {
+            "family": "Instrument Sans",
+            "size": 16,
+            "weight": 400,
+            "lineHeight": "28",
+            "letterSpacing": "-0.25px",
+            "count": 5,
+            "sample": "Explore all credit cards resources Arrow Right Icon"
+          },
+          {
+            "family": "RecifeText",
+            "size": 20,
+            "weight": 500,
+            "lineHeight": "24",
+            "letterSpacing": "normal",
+            "count": 4,
+            "sample": "The refinance ‘Seniority Tax’: How a flawed system and aggre"
+          },
+          {
+            "family": "Instrument Sans",
+            "size": 20,
+            "weight": 700,
+            "lineHeight": "34",
+            "letterSpacing": "normal",
+            "count": 4,
+            "sample": "About us"
+          },
+          {
+            "family": "Instrument Sans",
+            "size": 16,
+            "weight": 400,
+            "lineHeight": "27.2",
+            "letterSpacing": "normal",
+            "count": 4,
+            "sample": "For over 40 years, one job: show people what the market actu"
+          },
+          {
+            "family": "Instrument Sans",
+            "size": 16,
+            "weight": 700,
+            "lineHeight": "22",
+            "letterSpacing": "-0.25px",
+            "count": 3,
+            "sample": "Average saved by Bankrate mortgage users over 30 years"
+          },
+          {
+            "family": "Instrument Sans",
+            "size": 14,
+            "weight": 700,
+            "lineHeight": "14",
+            "letterSpacing": "1.8px",
+            "count": 3,
+            "sample": "Why Bankrate"
+          },
+          {
+            "family": "Instrument Sans",
+            "size": 18,
+            "weight": 700,
+            "lineHeight": "30.6",
+            "letterSpacing": "-0.25px",
+            "count": 3,
+            "sample": "$299k"
+          },
+          {
+            "family": "Instrument Sans",
+            "size": 16,
+            "weight": 400,
+            "lineHeight": "24",
+            "letterSpacing": "-0.25px",
+            "count": 3,
+            "sample": "The average cost: $3,656 a year — just by not shopping their"
+          },
+          {
+            "family": "RecifeText",
+            "size": 18,
+            "weight": 600,
+            "lineHeight": "21.6",
+            "letterSpacing": "-0.15px",
+            "count": 3,
+            "sample": "Tell us about your loan"
+          },
+          {
+            "family": "Instrument Sans",
+            "size": 14,
+            "weight": 700,
+            "lineHeight": "23.8",
+            "letterSpacing": "normal",
+            "count": 2,
+            "sample": "Log in or sign up"
+          },
+          {
+            "family": "Instrument Sans",
+            "size": 14,
+            "weight": 400,
+            "lineHeight": "21",
+            "letterSpacing": "normal",
+            "count": 2,
+            "sample": "Rates Up IconPopular searches"
+          },
+          {
+            "family": "RecifeText",
+            "size": 36,
+            "weight": 500,
+            "lineHeight": "43.2",
+            "letterSpacing": "-0.15px",
+            "count": 2,
+            "sample": "9 out of 10 homebuyers overpay for their mortgage."
+          },
+          {
+            "family": "Instrument Sans",
+            "size": 16,
+            "weight": 600,
+            "lineHeight": "27.2",
+            "letterSpacing": "-0.25px",
+            "count": 1,
+            "sample": "News & Research"
+          },
+          {
+            "family": "Instrument Sans",
+            "size": 16,
+            "weight": 400,
+            "lineHeight": "27.2",
+            "letterSpacing": "-0.15px",
+            "count": 1,
+            "sample": "How mortgage overpayment is making housing and retirement le"
+          },
+          {
+            "family": "Instrument Sans",
+            "size": 16,
+            "weight": 400,
+            "lineHeight": "16",
+            "letterSpacing": "normal",
+            "count": 1,
+            "sample": "Bankrate logo"
+          },
+          {
+            "family": "Instrument Sans",
+            "size": 12,
+            "weight": 400,
+            "lineHeight": "20.4",
+            "letterSpacing": "normal",
+            "count": 1,
+            "sample": "© 2026 Bankrate, LLC. A Red Ventures company. All Rights Res"
+          }
+        ],
+        "distinctCombos": 28,
+        "distinctSizes": [
+          12,
+          14,
+          16,
+          18,
+          20,
+          24,
+          28,
+          36
+        ],
+        "families": [
+          {
+            "v": "RecifeText",
+            "n": 2
+          },
+          {
+            "v": "Instrument Sans",
+            "n": 1
+          }
+        ],
+        "largestHeadlinePx": 28,
+        "largestHeadlineText": "What's your next step?",
+        "largestTextPx": 36,
+        "bodySizePx": 16,
+        "bodySizeCount": 13
+      },
+      "colour": {
+        "backgrounds": [
+          {
+            "color": "rgb(250,248,245)",
+            "count": 8,
+            "area": 5652703
+          },
+          {
+            "color": "rgb(255,255,255)",
+            "count": 33,
+            "area": 3670412
+          },
+          {
+            "color": "rgb(19,34,59)",
+            "count": 3,
+            "area": 1277110
+          },
+          {
+            "color": "rgb(245,242,235)",
+            "count": 2,
+            "area": 325596
+          },
+          {
+            "color": "oklab(0.261206-0.03621740.0197269/0.4)",
+            "count": 1,
+            "area": 86436
+          },
+          {
+            "color": "rgb(0,97,254)",
+            "count": 8,
+            "area": 60811
+          },
+          {
+            "color": "rgb(242,247,255)",
+            "count": 3,
+            "area": 30240
+          },
+          {
+            "color": "rgb(0,0,0)",
+            "count": 1,
+            "area": 44
+          }
+        ],
+        "inks": [
+          {
+            "color": "rgb(19,34,59)",
+            "count": 33,
+            "area": 347752
+          },
+          {
+            "color": "rgb(0,0,0)",
+            "count": 30,
+            "area": 394163
+          },
+          {
+            "color": "rgb(83,82,80)",
+            "count": 27,
+            "area": 462814
+          },
+          {
+            "color": "rgb(39,38,37)",
+            "count": 20,
+            "area": 87398
+          },
+          {
+            "color": "rgb(255,255,255)",
+            "count": 19,
+            "area": 179228
+          },
+          {
+            "color": "rgb(250,248,245)",
+            "count": 18,
+            "area": 143533
+          },
+          {
+            "color": "rgb(0,97,254)",
+            "count": 11,
+            "area": 57845
+          },
+          {
+            "color": "rgb(108,106,103)",
+            "count": 9,
+            "area": 45249
+          },
+          {
+            "color": "rgb(20,56,122)",
+            "count": 6,
+            "area": 38732
+          },
+          {
+            "color": "rgb(152,149,147)",
+            "count": 2,
+            "area": 14364
+          },
+          {
+            "color": "rgb(59,59,57)",
+            "count": 1,
+            "area": 15516
+          }
+        ],
+        "accentColours": [
+          {
+            "color": "rgb(19,34,59)",
+            "count": 3,
+            "area": 1277110
+          },
+          {
+            "color": "oklab(0.261206-0.03621740.0197269/0.4)",
+            "count": 1,
+            "area": 86436
+          },
+          {
+            "color": "rgb(0,97,254)",
+            "count": 8,
+            "area": 60811
+          }
+        ],
+        "accentAreaPct": 35.27,
+        "paintedAreaPct": 275,
+        "docArea": 4038060
+      },
+      "depth": {
+        "shadows": [
+          {
+            "v": "oklab(0.269299 0.000906073 0.00218749 / 0.2) 5px 5px 15px -10px, oklab(0.269299 0.000906073 0.00218749 / 0.2) -5px 5px 15px -10px",
+            "n": 11
+          },
+          {
+            "v": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+            "n": 8
+          },
+          {
+            "v": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.269299 0.000906073 0.00218749 / 0.2) 5px 5px 15px -10px, oklab(0.269299 0.000906073 0.00218749 / 0.2) -5px 5px 15px -10px",
+            "n": 3
+          }
+        ],
+        "distinctShadows": 3,
+        "radii": [
+          {
+            "v": "12px",
+            "n": 19
+          },
+          {
+            "v": "24px",
+            "n": 13
+          },
+          {
+            "v": "8px",
+            "n": 8
+          },
+          {
+            "v": "16px",
+            "n": 5
+          },
+          {
+            "v": "14px",
+            "n": 3
+          },
+          {
+            "v": "3.35544e+07px",
+            "n": 3
+          },
+          {
+            "v": "20px",
+            "n": 3
+          },
+          {
+            "v": "32px",
+            "n": 3
+          },
+          {
+            "v": "4px",
+            "n": 1
+          },
+          {
+            "v": "26px",
+            "n": 1
+          }
+        ],
+        "distinctRadii": 10,
+        "borders": [
+          {
+            "v": "1px/solid",
+            "n": 18
+          },
+          {
+            "v": "0px/solid",
+            "n": 4
+          },
+          {
+            "v": "2px/solid",
+            "n": 2
+          }
+        ]
+      },
+      "layout": {
+        "containers": [
+          {
+            "maxWidth": 1280,
+            "n": 9
+          },
+          {
+            "maxWidth": 628,
+            "n": 4
+          },
+          {
+            "maxWidth": 1184,
+            "n": 1
+          },
+          {
+            "maxWidth": 816,
+            "n": 1
+          },
+          {
+            "maxWidth": 720,
+            "n": 1
+          }
+        ],
+        "gutter": 24,
+        "sections": [
+          {
+            "i": 0,
+            "tag": "DIV",
+            "cls": "bg-gray-50 pb-14",
+            "height": 9374,
+            "paddingTop": 0,
+            "paddingBottom": 56,
+            "bg": "rgb(250,248,245)",
+            "heading": "9 out of 10 homebuyers overpay for their mortgage. Y",
+            "imgs": 14
+          }
+        ],
+        "grids": [
+          {
+            "cols": 2,
+            "n": 1
+          }
+        ]
+      },
+      "imagery": {
+        "all": [
+          {
+            "kind": "img",
+            "src": "brush-background-mobile.0n2lgd3uml015.png?width=",
+            "w": 390,
+            "h": 640,
+            "ratio": 0.61,
+            "aboveFold": true,
+            "cls": "logo",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "bankrate-people.2z8sjlcjvww9k.jpg?width=828&auto",
+            "w": 294,
+            "h": 294,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "A father and daughter smiling together"
+          },
+          {
+            "kind": "img",
+            "src": "play-button.00cas_mvz_18m.svg",
+            "w": 96,
+            "h": 98,
+            "ratio": 0.98,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": ""
+          },
+          {
+            "kind": "img",
+            "src": "hht-featured.2h3q8jx1njawi.png?width=828&auto=we",
+            "w": 332,
+            "h": 187,
+            "ratio": 1.78,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "The Hidden Homeownership Tax"
+          },
+          {
+            "kind": "img",
+            "src": "Homebuyers-overpaying-in-largest-metros-feature-",
+            "w": 332,
+            "h": 187,
+            "ratio": 1.78,
+            "aboveFold": false,
+            "cls": "illustration-or-photo",
+            "alt": "Mortgage overpayment costs Americans tho"
+          },
+          {
+            "kind": "img",
+            "src": "The-seniority-tax-in-mortgage-refinancing-v4.jpg",
+            "w": 332,
+            "h": 187,
+            "ratio": 1.78,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "The refinance ‘Seniority Tax’: How a fla"
+          },
+          {
+            "kind": "img",
+            "src": "community-article.jpg?width=828&auto=webp&optimi",
+            "w": 332,
+            "h": 187,
+            "ratio": 1.78,
+            "aboveFold": false,
+            "cls": "photography",
+            "alt": "3 homeowners, 6 refinances: Lessons lear"
+          },
+          {
+            "kind": "img",
+            "src": "wsj.1e15l0cq2625z.svg",
+            "w": 51,
+            "h": 28,
+            "ratio": 1.82,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "The Wall Street Journal"
+          },
+          {
+            "kind": "img",
+            "src": "usatoday.2cl0dwc4g45h6.svg",
+            "w": 130,
+            "h": 24,
+            "ratio": 5.42,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "USA Today"
+          },
+          {
+            "kind": "img",
+            "src": "abc.1mysp97gmwwr2.svg",
+            "w": 40,
+            "h": 40,
+            "ratio": 1,
+            "aboveFold": false,
+            "cls": "icon",
+            "alt": "ABC"
+          },
+          {
+            "kind": "img",
+            "src": "new-york-times.1eptfie9o0ni2.svg",
+            "w": 200,
+            "h": 29,
+            "ratio": 6.9,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "The New York Times"
+          },
+          {
+            "kind": "img",
+            "src": "cnn.2aenykybz5mak.svg",
+            "w": 62,
+            "h": 30,
+            "ratio": 2.07,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "CNN"
+          },
+          {
+            "kind": "img",
+            "src": "bloomberg.1ipdwew2umqs7.svg",
+            "w": 121,
+            "h": 24,
+            "ratio": 5.04,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": "Bloomberg"
+          },
+          {
+            "kind": "bg",
+            "src": "who-we-are.0lgyyf38jcple.svg",
+            "w": 390,
+            "h": 1711,
+            "ratio": 0.23,
+            "aboveFold": false,
+            "cls": "logo",
+            "alt": ""
+          }
+        ],
+        "total": 14,
+        "aboveFold": 1,
+        "belowFold": 13,
+        "byClass": {
+          "logo": 9,
+          "illustration-or-photo": 1,
+          "photography": 2,
+          "icon": 2
+        },
+        "gradientElements": 0
+      },
+      "motion": [
+        {
+          "v": "transform, translate, scale, rotate|0.15s|cubic-bezier(0.4, 0, 0.2, 1)",
+          "n": 24
+        },
+        {
+          "v": "color, text-decoration-color|0.15s, 0.15s|ease-in, ease-in",
+          "n": 24
+        },
+        {
+          "v": "all|0.15s|cubic-bezier(0.4, 0, 0.2, 1)",
+          "n": 15
+        },
+        {
+          "v": "transform|0.2s|ease-in-out",
+          "n": 11
+        },
+        {
+          "v": "all|0.2s|ease-in-out",
+          "n": 5
+        },
+        {
+          "v": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to|0.15s|cubic-bezier(0.4, 0, 0.2, 1)",
+          "n": 4
+        },
+        {
+          "v": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to|0.2s|cubic-bezier(0.4, 0, 0.2, 1)",
+          "n": 2
+        },
+        {
+          "v": "opacity, visibility|0.2s, 0s|ease-in-out, linear",
+          "n": 1
+        },
+        {
+          "v": "top, transform, background-color|0.1s, 0.1s, 0s|ease, ease, ease",
+          "n": 1
+        },
+        {
+          "v": "border-bottom-color|0.2s|ease",
+          "n": 1
+        },
+        {
+          "v": "transform, translate, scale, rotate|0.2s|cubic-bezier(0.4, 0, 0.2, 1)",
+          "n": 1
+        }
+      ],
+      "header": {
+        "at0": {
+          "h": 56,
+          "pos": "relative",
+          "bg": "rgba(0, 0, 0, 0)",
+          "shadow": "none",
+          "top": 0
+        },
+        "at800": {
+          "h": 56,
+          "pos": "relative",
+          "bg": "rgba(0, 0, 0, 0)",
+          "shadow": "none",
+          "top": -800
+        },
+        "consentDismissed": null
+      }
+    }
+  }
+}

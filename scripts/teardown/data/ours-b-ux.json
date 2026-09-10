@@ -1,0 +1,193 @@
+{
+  "site": "ours-b",
+  "url": "http://localhost:3000/preview/home-b",
+  "header": {
+    "at0": {
+      "h": 0,
+      "top": 0,
+      "position": "fixed",
+      "bg": "rgba(0, 0, 0, 0)",
+      "shadow": "none",
+      "borderBottom": "1px rgb(225, 240, 244)",
+      "backdrop": "blur(24px)"
+    },
+    "at800": {
+      "h": 0,
+      "top": 0,
+      "position": "fixed",
+      "bg": "rgba(0, 0, 0, 0)",
+      "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(4, 51, 61, 0.12) 0px 20px 55px 0px",
+      "borderBottom": "1px rgb(217, 237, 242)",
+      "backdrop": "blur(24px)"
+    },
+    "changed": true
+  },
+  "motion": [
+    {
+      "v": "transition background-color, border-color, color, box-shadow, opacity 0.18s ease",
+      "n": 49
+    },
+    {
+      "v": "transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1)",
+      "n": 16
+    },
+    {
+      "v": "animation section-rise 0.7s ease",
+      "n": 8
+    },
+    {
+      "v": "transition color, background-color, border-color, text-decoration-color, fill, stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1)",
+      "n": 7
+    },
+    {
+      "v": "transition all 0.2s cubic-bezier(0.4, 0, 0.2, 1)",
+      "n": 5
+    },
+    {
+      "v": "transition border-color 0.12s ease",
+      "n": 5
+    },
+    {
+      "v": "animation atmosphere-drift 20s ease-in-out",
+      "n": 3
+    },
+    {
+      "v": "transition background-color, border-color 0.12s, 0.12s ease, ease",
+      "n": 2
+    },
+    {
+      "v": "transition all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+      "n": 1
+    },
+    {
+      "v": "transition opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1)",
+      "n": 1
+    },
+    {
+      "v": "transition transform 0.2s cubic-bezier(0.4, 0, 0.2, 1)",
+      "n": 1
+    }
+  ],
+  "ctas": [],
+  "cardHover": {
+    "before": {
+      "shadow": "rgba(16, 35, 28, 0.04) 0px 1px 2px 0px, rgba(16, 35, 28, 0.06) 0px 8px 24px 0px",
+      "transform": "none",
+      "border": "rgb(225, 232, 228)",
+      "bg": "rgb(255, 255, 255)",
+      "top": 644
+    },
+    "after": {
+      "shadow": "rgba(16, 35, 28, 0.04) 0px 1px 2px 0px, rgba(16, 35, 28, 0.06) 0px 8px 24px 0px",
+      "transform": "none",
+      "border": "rgb(225, 232, 228)",
+      "bg": "rgb(255, 255, 255)",
+      "top": 644
+    },
+    "changed": false
+  },
+  "keyboard": [
+    {
+      "tag": "BUTTON",
+      "text": "Dismiss",
+      "outline": "2px solid",
+      "outlineColor": "rgb(16, 35, 28)",
+      "offset": "2px",
+      "shadow": "yes"
+    },
+    {
+      "tag": "A",
+      "text": "A",
+      "outline": "2px solid",
+      "outlineColor": "rgb(255, 255, 255)",
+      "offset": "2px",
+      "shadow": "yes"
+    },
+    {
+      "tag": "A",
+      "text": "B",
+      "outline": "2px solid",
+      "outlineColor": "rgb(255, 255, 255)",
+      "offset": "2px",
+      "shadow": "yes"
+    },
+    {
+      "tag": "A",
+      "text": "Refer Labs",
+      "outline": "2px solid",
+      "outlineColor": "rgb(16, 35, 28)",
+      "offset": "2px",
+      "shadow": "yes"
+    },
+    {
+      "tag": "A",
+      "text": "Weight loss",
+      "outline": "2px solid",
+      "outlineColor": "rgb(16, 35, 28)",
+      "offset": "2px",
+      "shadow": "yes"
+    },
+    {
+      "tag": "A",
+      "text": "Hair loss",
+      "outline": "2px solid",
+      "outlineColor": "rgb(16, 35, 28)",
+      "offset": "2px",
+      "shadow": "yes"
+    },
+    {
+      "tag": "A",
+      "text": "Pet insurance",
+      "outline": "2px solid",
+      "outlineColor": "rgb(16, 35, 28)",
+      "offset": "2px",
+      "shadow": "yes"
+    },
+    {
+      "tag": "A",
+      "text": "Solar and energy",
+      "outline": "2px solid",
+      "outlineColor": "rgb(16, 35, 28)",
+      "offset": "2px",
+      "shadow": "yes"
+    },
+    {
+      "tag": "A",
+      "text": "Business software",
+      "outline": "2px solid",
+      "outlineColor": "rgb(16, 35, 28)",
+      "offset": "2px",
+      "shadow": "yes"
+    },
+    {
+      "tag": "A",
+      "text": "Deals",
+      "outline": "2px solid",
+      "outlineColor": "rgb(16, 35, 28)",
+      "offset": "2px",
+      "shadow": "yes"
+    },
+    {
+      "tag": "A",
+      "text": "For business",
+      "outline": "2px solid",
+      "outlineColor": "rgb(16, 35, 28)",
+      "offset": "2px",
+      "shadow": "yes"
+    },
+    {
+      "tag": "A",
+      "text": "Weight lossTelehealth weight",
+      "outline": "2px solid",
+      "outlineColor": "rgb(16, 35, 28)",
+      "offset": "2px",
+      "shadow": "yes"
+    }
+  ],
+  "asks": {
+    "formsAboveFold": 0,
+    "inputsAboveFold": [],
+    "totalInputs": 1,
+    "hasEmailGate": true
+  }
+}

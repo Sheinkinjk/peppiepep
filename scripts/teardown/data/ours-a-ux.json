@@ -1,0 +1,205 @@
+{
+  "site": "ours-a",
+  "url": "http://localhost:3000/preview/home-a",
+  "header": {
+    "at0": {
+      "h": 0,
+      "top": 0,
+      "position": "fixed",
+      "bg": "rgba(0, 0, 0, 0)",
+      "shadow": "none",
+      "borderBottom": "1px rgb(225, 240, 244)",
+      "backdrop": "blur(24px)"
+    },
+    "at800": {
+      "h": 0,
+      "top": 0,
+      "position": "fixed",
+      "bg": "rgba(0, 0, 0, 0)",
+      "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(4, 51, 61, 0.12) 0px 20px 55px 0px",
+      "borderBottom": "1px rgb(217, 237, 242)",
+      "backdrop": "blur(24px)"
+    },
+    "changed": true
+  },
+  "motion": [
+    {
+      "v": "transition background-color, border-color, color, box-shadow, opacity 0.18s ease",
+      "n": 45
+    },
+    {
+      "v": "transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1)",
+      "n": 16
+    },
+    {
+      "v": "animation section-rise 0.7s ease",
+      "n": 8
+    },
+    {
+      "v": "transition background-color, border-color 0.12s, 0.12s ease, ease",
+      "n": 8
+    },
+    {
+      "v": "transition color, background-color, border-color, text-decoration-color, fill, stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1)",
+      "n": 7
+    },
+    {
+      "v": "transition all 0.2s cubic-bezier(0.4, 0, 0.2, 1)",
+      "n": 5
+    },
+    {
+      "v": "animation atmosphere-drift 20s ease-in-out",
+      "n": 3
+    },
+    {
+      "v": "transition all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+      "n": 1
+    },
+    {
+      "v": "transition opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1)",
+      "n": 1
+    },
+    {
+      "v": "transition transform 0.2s cubic-bezier(0.4, 0, 0.2, 1)",
+      "n": 1
+    }
+  ],
+  "ctas": [
+    {
+      "default": {
+        "text": "Browse current offers",
+        "h": 44,
+        "w": 201,
+        "padX": "18.4px/18.4px",
+        "radius": "6px",
+        "fontSize": "16px",
+        "fontWeight": "500",
+        "bg": "rgb(14, 124, 90)",
+        "color": "rgb(255, 255, 255)",
+        "border": "1px rgba(0, 0, 0, 0)",
+        "shadow": "none",
+        "transition": "0.12s, 0.12s background-color, border-color",
+        "selector": "a.rl-btn.rl-btn--primary"
+      },
+      "hover": {
+        "bg": "rgb(10, 92, 67)",
+        "color": "rgb(255, 255, 255)",
+        "shadow": "none",
+        "transform": "none",
+        "h": 44,
+        "textDecoration": "none",
+        "border": "rgba(0, 0, 0, 0)"
+      },
+      "focus": {
+        "outline": "2px solid rgb(16, 35, 28)",
+        "offset": "2px",
+        "shadow": "rgba(0, 131, 143, 0.28) 0px 0px 0px 3px"
+      }
+    }
+  ],
+  "cardHover": null,
+  "keyboard": [
+    {
+      "tag": "A",
+      "text": "How we verify",
+      "outline": "2px solid",
+      "outlineColor": "rgb(16, 35, 28)",
+      "offset": "2px",
+      "shadow": "yes"
+    },
+    {
+      "tag": "A",
+      "text": "Weight lossTelehealth weight",
+      "outline": "2px solid",
+      "outlineColor": "rgb(16, 35, 28)",
+      "offset": "2px",
+      "shadow": "yes"
+    },
+    {
+      "tag": "A",
+      "text": "Hair lossPrescription telehe",
+      "outline": "2px solid",
+      "outlineColor": "rgb(16, 35, 28)",
+      "offset": "2px",
+      "shadow": "yes"
+    },
+    {
+      "tag": "A",
+      "text": "Pet insuranceBenefit percent",
+      "outline": "2px solid",
+      "outlineColor": "rgb(16, 35, 28)",
+      "offset": "2px",
+      "shadow": "yes"
+    },
+    {
+      "tag": "A",
+      "text": "Solar and energyHome batteri",
+      "outline": "2px solid",
+      "outlineColor": "rgb(16, 35, 28)",
+      "offset": "2px",
+      "shadow": "yes"
+    },
+    {
+      "tag": "A",
+      "text": "Business softwareCRMs, landi",
+      "outline": "2px solid",
+      "outlineColor": "rgb(16, 35, 28)",
+      "offset": "2px",
+      "shadow": "yes"
+    },
+    {
+      "tag": "A",
+      "text": "Apollo Energy Group",
+      "outline": "2px solid",
+      "outlineColor": "rgb(16, 35, 28)",
+      "offset": "2px",
+      "shadow": "yes"
+    },
+    {
+      "tag": "A",
+      "text": "Knose",
+      "outline": "2px solid",
+      "outlineColor": "rgb(16, 35, 28)",
+      "offset": "2px",
+      "shadow": "yes"
+    },
+    {
+      "tag": "A",
+      "text": "Leadpages",
+      "outline": "2px solid",
+      "outlineColor": "rgb(16, 35, 28)",
+      "offset": "2px",
+      "shadow": "yes"
+    },
+    {
+      "tag": "A",
+      "text": "Unbounce",
+      "outline": "2px solid",
+      "outlineColor": "rgb(16, 35, 28)",
+      "offset": "2px",
+      "shadow": "yes"
+    },
+    {
+      "tag": "A",
+      "text": "Superfiliate",
+      "outline": "2px solid",
+      "outlineColor": "rgb(16, 35, 28)",
+      "offset": "2px",
+      "shadow": "yes"
+    },
+    {
+      "tag": "A",
+      "text": "Moshy",
+      "outline": "2px solid",
+      "outlineColor": "rgb(16, 35, 28)",
+      "offset": "2px",
+      "shadow": "yes"
+    }
+  ],
+  "asks": {
+    "formsAboveFold": 0,
+    "inputsAboveFold": [],
+    "totalInputs": 1,
+    "hasEmailGate": true
+  }
+}
