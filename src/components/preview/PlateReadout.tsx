@@ -46,13 +46,12 @@ function measure(): Readout {
     const r = el.getBoundingClientRect();
 
     const bg = cs.backgroundColor.replace(/\s+/g, "");
-    if (bg && !bg.startsWith("rgba(0,0,0,0")) {
-      if (!isNeutral(parse(bg))) accentArea += Math.max(0, r.width) * Math.max(0, r.height);
-    }
-    // a gradient-filled band counts as accent too: it is the same flooded region
-    if (/gradient/.test(cs.backgroundImage) && el.classList.contains("rl-p-field")) {
-      accentArea += Math.max(0, r.width) * Math.max(0, r.height);
-    }
+    const painted = bg && !bg.startsWith("rgba(0,0,0,0") && !isNeutral(parse(bg));
+    const grad = /gradient/.test(cs.backgroundImage) && el.classList.contains("rl-p-field");
+    // Count each element once. A .rl-p-field carries a background-colour AND a
+    // gradient layered over it; adding both counted the same pixels twice and
+    // inflated the reading.
+    if (painted || grad) accentArea += Math.max(0, r.width) * Math.max(0, r.height);
     // the homepage-equivalent figure: the two full-bleed flooded bands only.
     // `.rl-p-inset` is a specimen device for showing elevation against colour
     // and has no homepage counterpart, so it is excluded from this figure and

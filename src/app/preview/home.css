@@ -1,0 +1,425 @@
+/* =========================================================================
+   Homepage design system, Phase 3.
+
+   Tokens are the approved plate tokens, unprefixed for use across both
+   variants. Every value traces to a Phase 1 measurement; the derivation is
+   named beside it.
+
+   Loaded by /preview/home-a and /preview/home-b only.
+   ========================================================================= */
+
+.rl-h {
+  /* Colour. Two-tone accent: a field colour that can be flooded and an action
+     colour that stays legible on white. Measured: white on field 10.66:1
+     (target 7:1); action on white 5.19:1 (target 4.5:1). */
+  --canvas: #f4f7f5;
+  --surface: #ffffff;
+  --field: #0d4735;
+  --field-deep: #0a3a2b;
+  --action: #0e7c5a;
+  --action-dk: #0a5c43;
+  --ink: #10231c;
+  --muted: #5a6b65;
+  --rule: #e1e8e4;
+  --rule-field: rgba(255, 255, 255, 0.18);
+  --gold: #8f6a1c;        /* savings on white, 4.95:1 */
+  --gold-field: #f2c14e;  /* savings on field, 6.35:1 */
+
+  /* Type: 12 steps against a measured median of 12. Dense through the small
+     sizes, harder jumps into display. 24px and 40px are the two steps the
+     previous build was missing. */
+  --t1: 0.75rem; --t2: 0.8125rem; --t3: 0.875rem; --t4: 1rem;
+  --t5: 1.125rem; --t6: 1.25rem; --t7: 1.5rem; --t8: 1.75rem;
+  --t9: 2rem; --t10: 2.5rem; --t11: 3rem; --t12: 3.5rem;
+
+  /* Radii: 10 distinct, median 10. Card 12px is the measured median. */
+  --r1: 2px; --r2: 4px; --r3: 6px; --r4: 8px; --r5: 10px;
+  --r6: 12px; --r7: 16px; --r8: 20px; --r9: 24px; --rpill: 999px;
+
+  /* Elevation: 2 levels, 4 values, median 4. Level 1 from NerdWallet's
+     most-used card shadow; level 2 from its raised tray. Tinted with the field
+     colour rather than black. */
+  --e1: 0 1px 2px rgba(13, 71, 53, 0.04), 0 4px 16px rgba(13, 71, 53, 0.06);
+  --e1h: 0 2px 4px rgba(13, 71, 53, 0.06), 0 10px 22px rgba(13, 71, 53, 0.09);
+  --e2: 0 8px 10px -6px rgba(13, 71, 53, 0.05), 0 20px 25px -5px rgba(13, 71, 53, 0.12);
+  --e2h: 0 10px 14px -6px rgba(13, 71, 53, 0.07), 0 28px 34px -8px rgba(13, 71, 53, 0.16);
+  /* Level 0 is BELOW the page, not above it. Three of the five references use a
+     recessed well to make a row of cards read as objects rather than as an
+     outlined list; with every card at the same elevation on the same white, the
+     tray was five invisible rectangles. */
+  --e0: inset 0 1px 3px rgba(13, 71, 53, 0.07), inset 0 0 0 1px rgba(13, 71, 53, 0.04);
+  --sunk: #eef3f0;
+
+  /* Layout: container 1230px and gutter 24px are the measured medians; the
+     previous build ran 1120px and 16px, the narrowest of seven pages. Section
+     80px is CTM's dominant value. */
+  --max: 1230px;
+  --gutter: 24px;
+  --sec: 96px;
+
+  background: var(--canvas);
+  color: var(--ink);
+  font-size: var(--t4);   /* 16px, the measured median; previous build was 13px */
+  line-height: 1.55;
+}
+
+@media (max-width: 720px) {
+  .rl-h { --gutter: 16px; --sec: 56px; }
+}
+
+.rl-h *, .rl-h *::before, .rl-h *::after { box-sizing: border-box; }
+.rl-h img { max-width: 100%; height: auto; }
+
+/* ---- Immunity from globals.css element selectors -----------------------
+   globals.css sets, by bare element selector:
+     h1,h2,h3,h4      { color: var(--heading-color) }   -> #024b56
+     h1..h6           { font-family, line-height, tracking-tight }
+     p, li            { line-height: 1.65 }
+   An element selector beats a value inherited from a wrapper, so all three
+   reached inside .rl-preview. The heading colour rendered at 1.09:1 on the
+   dark field. These rules restore control without editing globals.css.
+   ------------------------------------------------------------------------ */
+.rl-h h1, .rl-h h2, .rl-h h3, .rl-h h4, .rl-h h5, .rl-h h6 {
+  color: var(--ink);
+  font-family: inherit;
+  letter-spacing: normal;
+}
+.rl-field h1, .rl-field h2, .rl-field h3, .rl-field h4,
+.rl-strip h1, .rl-strip h2, .rl-strip h3, .rl-strip h4 { color: #ffffff; }
+.rl-h p, .rl-h li { line-height: inherit; }
+
+/* Focus: carried forward. Phase 1 found this stronger than every reference. */
+.rl-h a:focus-visible, .rl-h button:focus-visible, .rl-h input:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+  border-radius: var(--r1);
+}
+.rl-field a:focus-visible, .rl-field button:focus-visible,
+.rl-strip a:focus-visible, .rl-strip button:focus-visible { outline-color: #ffffff; }
+
+/* Motion: hover, focus and menus only. Phase 1 found no scroll-triggered
+   section animation on any of the five references. */
+@media (prefers-reduced-motion: reduce) {
+  .rl-h *, .rl-h *::before, .rl-h *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+/* ---- Structure --------------------------------------------------------- */
+
+.rl-shell2 { width: 100%; overflow-x: clip; }
+.rl-wrap2 { width: 100%; max-width: var(--max); margin-inline: auto; padding-inline: var(--gutter); }
+.rl-sec { padding-block: var(--sec); }
+.rl-sec--tight { padding-block: calc(var(--sec) * 0.6); }
+.rl-ruleTop { border-top: 1px solid var(--rule); }
+
+.rl-h2x {
+  font-size: var(--t9); line-height: 1.15; letter-spacing: -0.015em;
+  font-weight: 600; margin: 0 0 0.6rem; text-wrap: balance;
+}
+.rl-lede2 { color: var(--muted); font-size: var(--t5); margin: 0 0 2rem; max-width: 62ch; }
+.rl-field .rl-lede2, .rl-strip .rl-lede2 { color: rgba(255, 255, 255, 0.86); }
+
+/* ---- Flooded field: band one of two ------------------------------------ */
+
+.rl-field {
+  background: var(--field);
+  background-image: linear-gradient(135deg, var(--field-deep) 0%, var(--field) 60%);
+  color: #ffffff;
+}
+
+/* ---- Header ------------------------------------------------------------ */
+
+.rl-hdr {
+  position: sticky; inset-block-start: var(--rl-banner-h, 0px); z-index: 50;
+  height: 64px; display: flex; align-items: center;
+  background: var(--surface); border-bottom: 1px solid var(--rule);
+}
+.rl-hdr__in {
+  display: flex; align-items: center; gap: 1.4rem;
+  width: 100%; max-width: var(--max); margin-inline: auto; padding-inline: var(--gutter);
+}
+.rl-mark { font-size: var(--t6); font-weight: 700; letter-spacing: -0.02em; color: var(--ink); text-decoration: none; white-space: nowrap; }
+.rl-nav2 { display: none; align-items: center; gap: 1.15rem; }
+.rl-nav2 a, .rl-navR a {
+  color: var(--ink); text-decoration: none; font-size: var(--t3);
+  padding-block: 0.55rem; border-bottom: 2px solid transparent;
+}
+.rl-nav2 a:hover, .rl-navR a:hover { border-bottom-color: var(--action); }
+.rl-navR { display: flex; align-items: center; gap: 1.1rem; margin-inline-start: auto; }
+.rl-navR a:last-child { color: var(--action-dk); font-weight: 600; }
+@media (min-width: 920px) { .rl-nav2 { display: flex; } }
+
+/* ---- Buttons ----------------------------------------------------------- */
+
+.rl-btn2 {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 44px; padding-inline: 20px; border-radius: var(--r4);
+  font-size: var(--t4); font-weight: 700; text-decoration: none;
+  border: 1px solid transparent; cursor: pointer;
+  transition: background-color 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+}
+.rl-btn2--p { background: var(--action); color: #ffffff; box-shadow: var(--e1); }
+.rl-btn2--p:hover { background: var(--action-dk); box-shadow: var(--e1h); }
+.rl-btn2--s { background: transparent; color: var(--ink); border-color: var(--rule); }
+.rl-btn2--s:hover { border-color: var(--ink); background: var(--surface); }
+.rl-field .rl-btn2--s { color: #ffffff; border-color: var(--rule-field); }
+.rl-field .rl-btn2--s:hover { border-color: #ffffff; background: rgba(255, 255, 255, 0.08); }
+
+/* ---- Hero -------------------------------------------------------------- */
+
+.rl-hero2 { padding-block: clamp(1rem, 1.8vw, 1.15rem) 0; }
+.rl-hero2__grid {
+  display: grid; gap: clamp(2rem, 4vw, 3.25rem);
+  /* stretch, not start and not center. Centring produced 250px of dead green in
+     the Phase 2 plate; start left 80px of it under the shorter proof card. With
+     stretch both columns end on the same line and the band carries no gap. */
+  align-items: stretch;
+}
+@media (min-width: 940px) { .rl-hero2__grid { grid-template-columns: 1.05fr 0.95fr; } }
+
+.rl-hero2__h1 {
+  font-size: clamp(2rem, 5.2vw, var(--t12));
+  line-height: 1.03; letter-spacing: -0.025em; font-weight: 700;
+  margin: 0 0 0.7rem; text-wrap: balance;
+}
+.rl-hero2__h1 em { font-style: normal; color: var(--gold-field); }
+.rl-hero2__sub { font-size: var(--t5); color: rgba(255, 255, 255, 0.86); margin: 0 0 1.15rem; max-width: 42ch; }
+.rl-acts { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.rl-note { margin: 0.8rem 0 0; font-size: var(--t2); color: rgba(255, 255, 255, 0.72); max-width: 46ch; }
+
+/* the tray overlapping the band's bottom edge */
+.rl-overlap { margin-block-start: clamp(0.5rem, 1vw, 0.75rem); transform: translateY(clamp(36px, 5.5vw, 64px)); }
+.rl-overlap-sp { height: clamp(36px, 5.5vw, 64px); }
+
+/* ---- Popular comparisons, home-b's hero right column -------------------- */
+
+.rl-cmp {
+  background: var(--surface); border-radius: var(--r7);
+  box-shadow: var(--e2); overflow: hidden; align-self: start;
+}
+.rl-cmp__h {
+  padding: 0.7rem 1.1rem; border-bottom: 1px solid var(--rule);
+  font-size: var(--t1); font-weight: 600; letter-spacing: 0.02em; color: var(--muted);
+}
+.rl-cmp__a {
+  display: block; padding: 0.6rem 1.1rem; border-bottom: 1px solid var(--rule);
+  text-decoration: none; color: var(--ink);
+  transition: background-color 140ms ease;
+}
+.rl-cmp__a:last-child { border-bottom: 0; }
+.rl-cmp__a:hover { background: var(--sunk); }
+.rl-cmp__t { display: block; font-weight: 600; font-size: var(--t4); }
+.rl-cmp__l { display: block; font-size: var(--t2); color: var(--muted); line-height: 1.4; margin-top: 0.1rem; }
+.rl-cmp__d {
+  display: block; font-size: var(--t1); color: var(--muted); margin-top: 0.2rem;
+  font-variant-numeric: tabular-nums lining-nums;
+}
+
+/* ---- Category tray ----------------------------------------------------- */
+
+.rl-tray {
+  background: var(--surface); border-radius: var(--r7);
+  box-shadow: var(--e2); padding: clamp(0.55rem, 1vw, 0.8rem);
+}
+/* the recessed ground the tiles sit on. Without it the tray was white cards on
+   a white tray and the whole module read as a flat outlined list. */
+.rl-tray__well {
+  background: var(--sunk); border-radius: var(--r6);
+  box-shadow: var(--e0); padding: clamp(0.7rem, 1.4vw, 1rem);
+}
+.rl-tiles2 { display: grid; gap: 0.7rem; grid-template-columns: repeat(2, 1fr); }
+@media (min-width: 900px) { .rl-tiles2 { grid-template-columns: repeat(5, 1fr); } }
+.rl-tile2 {
+  display: block; padding: 1rem; background: var(--surface);
+  border: 1px solid var(--rule); border-radius: var(--r6);
+  text-decoration: none; color: var(--ink); box-shadow: var(--e1);
+  transition: box-shadow 160ms ease, border-color 160ms ease;
+}
+.rl-tile2:hover { box-shadow: var(--e1h); border-color: var(--action); transform: translateY(-1px); }
+.rl-tile2__l { display: block; font-weight: 600; margin-bottom: 0.2rem; }
+.rl-tile2__b { display: block; font-size: var(--t2); color: var(--muted); line-height: 1.45; }
+
+/* ---- Image slot -------------------------------------------------------- */
+
+.rl-slot {
+  /* Neutral, not brand colour. Filled with --field-deep the placeholder read as
+     a deliberate colour block and contributed 216,075px2 to accent coverage,
+     which is 3.7 percentage points of a budget meant for the two flooded bands.
+     A photograph would be neither. It should read as a missing asset. */
+  position: relative; border-radius: var(--r7); overflow: hidden;
+  background:
+    repeating-linear-gradient(135deg, rgba(16,35,28,0.035) 0 12px, rgba(16,35,28,0.012) 12px 24px),
+    var(--surface);
+  border: 1px dashed var(--rule);
+  display: flex; align-items: center; justify-content: center;
+  aspect-ratio: 4 / 3;
+}
+.rl-slot__t {
+  white-space: pre-line;   /* the note carries its own line breaks */
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: var(--t2); color: var(--muted);
+  text-align: center; padding: 1.25rem; line-height: 1.65; max-width: 32ch;
+}
+
+/* ---- Proof card (raised, level 2) -------------------------------------- */
+
+.rl-proof2 {
+  display: flex; flex-direction: column;
+  background: var(--surface); color: var(--ink);
+  border-radius: var(--r7); box-shadow: var(--e2); overflow: hidden;
+}
+.rl-proof2__h {
+  padding: 0.9rem 1.15rem; border-bottom: 1px solid var(--rule);
+  font-size: var(--t2); color: var(--muted);
+  font-variant-numeric: tabular-nums lining-nums;
+}
+.rl-proof2__r {
+  flex: 1;
+  display: grid; grid-template-columns: 32px 1fr auto; gap: 0.85rem;
+  align-items: center; padding: 0.95rem 1.15rem; border-bottom: 1px solid var(--rule);
+}
+.rl-proof2__r:last-child { border-bottom: 0; }
+.rl-brand { font-weight: 600; margin: 0; }
+.rl-cat { margin: 0.1rem 0 0; font-size: var(--t2); color: var(--muted); }
+.rl-sav {
+  color: var(--gold); font-weight: 700; font-size: var(--t8);
+  display: block; white-space: nowrap; text-align: end;
+  font-variant-numeric: tabular-nums lining-nums;
+}
+.rl-read2 {
+  display: block; color: var(--muted); font-size: var(--t1);
+  white-space: nowrap; text-align: end; margin-top: 0.1rem;
+  font-variant-numeric: tabular-nums lining-nums;
+}
+
+/* ---- Verified strip: band two of two ----------------------------------- */
+
+.rl-strip { background: var(--field); color: #ffffff; }
+.rl-strip__g { display: grid; gap: 1.25rem; grid-template-columns: 1fr; padding-block: clamp(1rem, 1.8vw, 1.2rem); }
+@media (min-width: 760px) { .rl-strip__g { grid-template-columns: repeat(3, 1fr); } }
+/* t9, not t10. At 40px "17 August 2026" was eleven characters wide against a
+   single digit and the least important of the three stats read as the loudest;
+   a date is a qualifier, not a headline number. */
+.rl-fig2 {
+  display: block; font-size: var(--t9); font-weight: 700; line-height: 1.05;
+  color: var(--gold-field); font-variant-numeric: tabular-nums lining-nums;
+}
+.rl-figl2 { display: block; font-size: var(--t3); color: rgba(255, 255, 255, 0.82); margin-top: 0.3rem; }
+
+/* ---- Offers table (variant A) ------------------------------------------ */
+
+.rl-tw {
+  background: var(--surface); border: 1px solid var(--rule);
+  border-radius: var(--r6); box-shadow: var(--e1); overflow: hidden;
+}
+.rl-tbl { width: 100%; border-collapse: collapse; }
+.rl-tbl th, .rl-tbl td { padding: 1rem; text-align: start; border-bottom: 1px solid var(--rule); vertical-align: middle; }
+.rl-tbl thead th { background: var(--canvas); font-size: var(--t2); color: var(--muted); font-weight: 600; }
+.rl-tbl tbody tr:last-child td { border-bottom: 0; }
+.rl-tbl tbody tr:hover { background: var(--canvas); }
+.rl-prov2 { display: flex; align-items: center; gap: 0.6rem; font-weight: 600; color: inherit; text-decoration: none; }
+.rl-prov2:hover { color: var(--action-dk); }
+.rl-code2 {
+  display: inline-block; font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: var(--t2); border: 1px dashed var(--rule); border-radius: var(--r3);
+  padding: 0.15rem 0.45rem; font-variant-numeric: tabular-nums;
+}
+.rl-status2 { color: var(--action-dk); font-weight: 600; font-size: var(--t3); }
+.rl-cl { display: none; }
+@media (max-width: 720px) {
+  .rl-tbl thead { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip-path: inset(50%); }
+  .rl-tbl tr, .rl-tbl td { display: block; width: 100%; }
+  .rl-tbl td { border-bottom: 0; display: grid; grid-template-columns: 7.5rem 1fr; gap: 0.5rem; padding-block: 0.32rem; }
+  .rl-tbl tr { border-bottom: 1px solid var(--rule); padding-block: 0.65rem; }
+  .rl-cl { display: block; color: var(--muted); font-size: var(--t2); }
+}
+
+/* ---- Offer cards (variant B) ------------------------------------------- */
+
+.rl-cards2 { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+@media (min-width: 720px) { .rl-cards2 { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1040px) { .rl-cards2 { grid-template-columns: repeat(3, 1fr); } }
+.rl-card2 {
+  display: flex; flex-direction: column; gap: 0.55rem; padding: 1.25rem;
+  background: var(--surface); border: 1px solid var(--rule);
+  border-radius: var(--r6); box-shadow: var(--e1);
+  transition: box-shadow 160ms ease, border-color 160ms ease;
+}
+.rl-card2:hover { box-shadow: var(--e1h); border-color: var(--action); }
+.rl-card2__t { display: flex; align-items: center; gap: 0.65rem; }
+.rl-card2__s {
+  font-size: var(--t10); font-weight: 700; line-height: 1; color: var(--gold);
+  font-variant-numeric: tabular-nums lining-nums;
+}
+.rl-card2__o { margin: 0; }
+.rl-card2__f {
+  display: flex; flex-wrap: wrap; gap: 0.45rem 0.75rem; align-items: center;
+  margin-block-start: auto; padding-block-start: 0.8rem; border-top: 1px solid var(--rule);
+  font-size: var(--t2); color: var(--muted);
+}
+.rl-copy2 {
+  display: inline-flex; align-items: center; gap: 0.4rem; min-height: 36px;
+  padding-inline: 0.6rem; background: transparent; border: 1px dashed var(--rule);
+  border-radius: var(--r3); font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: var(--t2); color: var(--ink); cursor: pointer;
+  font-variant-numeric: tabular-nums;
+}
+.rl-copy2:hover { border-style: solid; border-color: var(--ink); }
+.rl-copy2__s { color: var(--action-dk); font-family: inherit; font-weight: 600; }
+
+/* ---- Method columns ---------------------------------------------------- */
+
+.rl-cols { display: grid; gap: 1.75rem; grid-template-columns: 1fr; }
+@media (min-width: 840px) {
+  .rl-cols { grid-template-columns: repeat(3, 1fr); gap: 0; }
+  .rl-cols > * + * { border-inline-start: 1px solid var(--rule); padding-inline-start: 2rem; }
+  .rl-cols > *:not(:last-child) { padding-inline-end: 2rem; }
+}
+.rl-colH { font-size: var(--t6); font-weight: 600; margin: 0 0 0.5rem; }
+.rl-colP { margin: 0; color: var(--muted); }
+
+/* ---- Guides ------------------------------------------------------------ */
+
+.rl-guides2 { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+@media (min-width: 640px) { .rl-guides2 { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1040px) { .rl-guides2 { grid-template-columns: repeat(4, 1fr); } }
+.rl-guide2 {
+  display: block; padding: 1.25rem; background: var(--surface);
+  border: 1px solid var(--rule); border-radius: var(--r6);
+  box-shadow: var(--e1); text-decoration: none; color: var(--ink);
+  transition: box-shadow 160ms ease, border-color 160ms ease;
+}
+.rl-guide2:hover { box-shadow: var(--e1h); border-color: var(--action); }
+.rl-guide2__t { font-weight: 600; margin: 0 0 0.4rem; font-size: var(--t5); line-height: 1.3; }
+.rl-guide2__l { margin: 0 0 0.7rem; font-size: var(--t3); color: var(--muted); line-height: 1.5; }
+.rl-guide2__d { font-size: var(--t2); color: var(--muted); font-variant-numeric: tabular-nums; }
+
+/* ---- Partner strip ----------------------------------------------------- */
+
+.rl-logos2 { display: flex; flex-wrap: wrap; align-items: center; gap: 1.5rem 2.5rem; }
+.rl-logos2 img { height: 28px; width: auto; filter: grayscale(1); opacity: 0.7; }
+.rl-disc2 { margin: 1.4rem 0 0; font-size: var(--t3); color: var(--muted); max-width: 66ch; }
+
+/* ---- Newsletter -------------------------------------------------------- */
+
+.rl-news2 { display: flex; flex-wrap: wrap; gap: 0.6rem; max-width: 30rem; }
+.rl-news2 input {
+  flex: 1 1 14rem; min-height: 44px; padding-inline: 0.9rem;
+  border: 1px solid var(--rule); border-radius: var(--r4);
+  background: var(--surface); color: var(--ink); font: inherit;
+}
+
+/* ---- Footer ------------------------------------------------------------ */
+
+.rl-ft { background: var(--surface); border-top: 1px solid var(--rule); padding-block: clamp(2.75rem, 5vw, 3.75rem) 2rem; }
+.rl-ft__g { display: grid; gap: 2rem; grid-template-columns: 1fr; }
+@media (min-width: 620px) { .rl-ft__g { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 980px) { .rl-ft__g { grid-template-columns: repeat(4, 1fr); } }
+.rl-ft__h { font-size: var(--t3); font-weight: 700; margin: 0 0 0.85rem; }
+.rl-ft__l { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.55rem; }
+.rl-ft__l a { color: var(--muted); text-decoration: none; font-size: var(--t3); }
+.rl-ft__l a:hover { color: var(--ink); text-decoration: underline; }
+.rl-ft__legal { margin-block-start: 2.5rem; padding-block-start: 1.5rem; border-top: 1px solid var(--rule); display: grid; gap: 0.9rem; }
+.rl-ft__legal p { margin: 0; font-size: var(--t2); color: var(--muted); max-width: 76ch; }
