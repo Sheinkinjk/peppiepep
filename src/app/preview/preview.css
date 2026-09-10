@@ -1,0 +1,1042 @@
+/* =========================================================================
+   Design-preview stylesheet. Loaded ONLY by src/app/preview/layout.tsx, so
+   every rule below is confined to routes under /preview.
+
+   Two things this file has to do:
+   1. Define the variant tokens on .rl-preview.
+   2. Neutralise the global site chrome, which the root layout renders around
+      every route. ChromeGate decides that from a hard-coded route list in
+      src/components/ChromeGate.tsx, and the brief forbids editing it, so the
+      chrome is suppressed here with :has() instead of by registering /preview.
+      Nothing outside /preview is affected because this stylesheet is not
+      loaded there.
+   ========================================================================= */
+
+/* ---- 1. Suppress the global chrome on preview routes only -------------- */
+
+body:has(.rl-preview) {
+  background: var(--rl-canvas, #f4f7f5);
+}
+
+/* The root layout renders the legacy header, footer, atmosphere, chatbot,
+   toaster and cookie banner as siblings of the page. None of them belong to
+   either variant, and leaving them would make the preview a comparison of the
+   old design plus a new one. */
+body:has(.rl-preview) > *:not(:has(.rl-preview)) {
+  display: none !important;
+}
+/* Exclude the preview's own header and footer by class. Without the :not(),
+   `header` matches .rl-header too and the variant loses its own navigation. */
+body:has(.rl-preview) header:not(.rl-header),
+body:has(.rl-preview) footer:not(.rl-footer),
+body:has(.rl-preview) .site-atmosphere {
+  display: none !important;
+}
+/* Inside the flex column the root layout builds, hide every sibling that does
+   not contain the preview. This catches StickyHeader's layout spacer, which is
+   a bare <div className="h-[88px]"> at StickyHeader.tsx:218 rather than part of
+   the <header>, so hiding the header alone left 88px of dead space above the
+   page. Matching on structure rather than on the Tailwind class keeps this
+   working if that height changes. */
+body:has(.rl-preview) > div:has(.rl-preview) > *:not(:has(.rl-preview)) {
+  display: none !important;
+}
+
+/* The wrapper the root layout puts around {children} carries flex + min-height.
+   Reset it so the preview owns its own page box. */
+body:has(.rl-preview) > div:has(.rl-preview),
+body:has(.rl-preview) > div > div:has(.rl-preview) {
+  display: block;
+  min-height: 0;
+}
+
+/* ---- 2. Tokens --------------------------------------------------------- */
+
+.rl-preview[data-banner="off"] {
+  --rl-banner-h: 0rem;
+}
+
+.rl-preview {
+  --rl-canvas: #f4f7f5;
+  --rl-surface: #ffffff;
+  --rl-ink: #10231c;
+  --rl-muted: #5a6b65;
+  --rl-rule: #e1e8e4;
+  --rl-accent: #0e7c5a;
+  --rl-accent-dk: #0a5c43;
+
+  /* Brief specified #C8912B. Measured 2.78:1 on --rl-surface and 2.58:1 on
+     --rl-canvas, which fails WCAG AA (4.5:1) and also fails the 3:1 large-text
+     floor on canvas. Darkened along the same hue to 4.95:1 on surface and
+     4.59:1 on canvas. Reported back rather than shipped silently. */
+  --rl-gold: #8f6a1c;
+
+  --rl-radius-sm: 6px;
+  --rl-radius-md: 12px;
+  --rl-shadow: 0 1px 2px rgba(16, 35, 28, 0.04), 0 8px 24px rgba(16, 35, 28, 0.06);
+
+  --rl-s--1: 0.8125rem;
+  --rl-s-0: 1rem;
+  --rl-s-1: 1.25rem;
+  --rl-s-2: 1.5rem;
+  --rl-s-3: 2rem;
+  --rl-s-4: 2.75rem;
+  --rl-s-5: 3.5rem;
+
+  --rl-banner-h: 2.75rem;
+  --rl-gap: 1rem;
+  --rl-pad: 1.5rem;
+  --rl-max: 1120px;
+  --rl-measure: 68ch;
+
+  background: var(--rl-canvas);
+  color: var(--rl-ink);
+  font-family: var(--font-rl-body), ui-sans-serif, system-ui, sans-serif;
+  font-size: var(--rl-s-0);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+.rl-preview *,
+.rl-preview *::before,
+.rl-preview *::after {
+  box-sizing: border-box;
+}
+
+.rl-preview img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Numerals that line up wherever a figure is compared to another figure. */
+.rl-num,
+.rl-preview time,
+.rl-saving,
+.rl-code {
+  font-variant-numeric: tabular-nums lining-nums;
+}
+
+/* ---- 3. Focus, motion, measure ----------------------------------------- */
+
+.rl-preview a:focus-visible,
+.rl-preview button:focus-visible,
+.rl-preview input:focus-visible,
+.rl-preview [tabindex]:focus-visible {
+  outline: 2px solid var(--rl-ink);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rl-preview *,
+  .rl-preview *::before,
+  .rl-preview *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.rl-measure {
+  max-width: var(--rl-measure);
+}
+
+/* ---- 4. Layout primitives ---------------------------------------------- */
+
+.rl-shell {
+  width: 100%;
+  /* `clip`, not `hidden`. `overflow-x: hidden` makes this element a scroll
+     container, and a sticky descendant then offsets from IT rather than the
+     viewport, which pushed .rl-header down by the banner height twice over.
+     `clip` contains overflow without creating a scroll container. */
+  overflow-x: clip;
+}
+
+.rl-wrap {
+  width: 100%;
+  max-width: var(--rl-max);
+  margin-inline: auto;
+  padding-inline: var(--rl-gap);
+}
+
+.rl-section {
+  padding-block: clamp(2.5rem, 6vw, 4.5rem);
+}
+.rl-section--tight {
+  padding-block: clamp(1.75rem, 4vw, 2.75rem);
+}
+
+.rl-rule-top {
+  border-top: 1px solid var(--rl-rule);
+}
+
+.rl-h2 {
+  font-family: var(--font-rl-display), Georgia, serif;
+  font-size: var(--rl-s-3);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.75rem;
+  font-weight: 600;
+  text-wrap: balance;
+}
+
+.rl-lede {
+  color: var(--rl-muted);
+  font-size: var(--rl-s-1);
+  margin: 0;
+  max-width: var(--rl-measure);
+}
+
+.rl-eyebrow-free {
+  /* deliberately empty: the brief bans all-caps eyebrow labels. Kept as a note
+     so nobody reintroduces one. */
+}
+
+/* ---- 5. Preview tooling (not part of either design) --------------------- */
+
+.rl-banner {
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline: 0;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  height: var(--rl-banner-h);
+  padding-inline: 0.75rem;
+  background: #1c1c1c;
+  color: #ffffff;
+  font-size: var(--rl-s--1);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  letter-spacing: 0.01em;
+}
+.rl-banner__dismiss {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  color: #ffffff;
+  border-radius: var(--rl-radius-sm);
+  padding: 0.15rem 0.5rem;
+  font: inherit;
+  cursor: pointer;
+}
+.rl-banner__dismiss:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+.rl-banner-offset {
+  height: var(--rl-banner-h);
+}
+
+.rl-switch {
+  position: fixed;
+  inset-block-end: 1rem;
+  inset-inline-end: 1rem;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.3rem;
+  background: #1c1c1c;
+  border-radius: var(--rl-radius-sm);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: var(--rl-s--1);
+}
+.rl-switch__label {
+  color: #9a9a9a;
+  padding-inline: 0.4rem;
+}
+.rl-switch a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2rem;
+  min-height: 2rem;
+  padding: 0 0.5rem;
+  border-radius: 4px;
+  color: #d4d4d4;
+  text-decoration: none;
+}
+.rl-switch a:hover {
+  background: #333333;
+  color: #ffffff;
+}
+.rl-switch a[aria-current="page"] {
+  background: #ffffff;
+  color: #1c1c1c;
+}
+.rl-switch a:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+/* ---- 6. Header --------------------------------------------------------- */
+
+.rl-header {
+  position: sticky;
+  inset-block-start: var(--rl-banner-h);
+  z-index: 50;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  background: var(--rl-surface);
+  border-bottom: 1px solid var(--rl-rule);
+}
+.rl-header__inner {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  width: 100%;
+  max-width: var(--rl-max);
+  margin-inline: auto;
+  padding-inline: var(--rl-gap);
+}
+.rl-wordmark {
+  font-family: var(--font-rl-display), Georgia, serif;
+  font-size: var(--rl-s-1);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--rl-ink);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.rl-nav {
+  display: none;
+  align-items: center;
+  gap: 1.1rem;
+  margin-inline-start: 0.5rem;
+}
+.rl-nav a,
+.rl-nav-right a {
+  color: var(--rl-ink);
+  text-decoration: none;
+  font-size: var(--rl-s--1);
+  padding-block: 0.5rem;
+  border-bottom: 2px solid transparent;
+}
+.rl-nav a:hover,
+.rl-nav-right a:hover {
+  border-bottom-color: var(--rl-accent);
+}
+.rl-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-inline-start: auto;
+}
+.rl-nav-right a:last-child {
+  color: var(--rl-accent-dk);
+  font-weight: 500;
+}
+@media (min-width: 900px) {
+  .rl-nav {
+    display: flex;
+  }
+}
+
+/* ---- 7. Buttons -------------------------------------------------------- */
+
+.rl-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 1.15rem;
+  border-radius: var(--rl-radius-sm);
+  font-size: var(--rl-s-0);
+  font-weight: 500;
+  text-decoration: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background-color 120ms ease, border-color 120ms ease;
+}
+.rl-btn--primary {
+  background: var(--rl-accent);
+  color: #ffffff;
+}
+.rl-btn--primary:hover {
+  background: var(--rl-accent-dk);
+}
+.rl-btn--quiet {
+  background: transparent;
+  color: var(--rl-ink);
+  border-color: var(--rl-rule);
+}
+.rl-btn--quiet:hover {
+  border-color: var(--rl-ink);
+}
+
+/* ---- 8. Hero A --------------------------------------------------------- */
+
+.rl-heroA {
+  display: grid;
+  gap: clamp(1.75rem, 4vw, 3rem);
+  align-items: start;
+}
+@media (min-width: 940px) {
+  .rl-heroA {
+    grid-template-columns: 1.05fr 0.95fr;
+  }
+}
+.rl-heroA__h1 {
+  font-family: var(--font-rl-display), Georgia, serif;
+  font-size: clamp(2.25rem, 6vw, var(--rl-s-5));
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  margin: 0 0 1rem;
+  text-wrap: balance;
+}
+.rl-heroA__sub {
+  font-size: var(--rl-s-1);
+  color: var(--rl-muted);
+  margin: 0 0 1.75rem;
+  max-width: 46ch;
+}
+.rl-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* ---- 9. Proof panel ---------------------------------------------------- */
+
+.rl-proof {
+  background: var(--rl-surface);
+  border: 1px solid var(--rl-rule);
+  border-radius: var(--rl-radius-md);
+  box-shadow: var(--rl-shadow);
+  overflow: hidden;
+}
+.rl-proof__head {
+  padding: 0.9rem 1.15rem;
+  border-bottom: 1px solid var(--rl-rule);
+  font-size: var(--rl-s--1);
+  color: var(--rl-muted);
+}
+.rl-proof__row {
+  display: grid;
+  grid-template-columns: 32px 1fr auto;
+  gap: 0.85rem;
+  align-items: center;
+  padding: 0.95rem 1.15rem;
+  border-bottom: 1px solid var(--rl-rule);
+}
+.rl-proof__row:last-child {
+  border-bottom: 0;
+}
+.rl-proof__logo {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+.rl-proof__brand {
+  font-weight: 600;
+  font-size: var(--rl-s-0);
+  margin: 0;
+}
+.rl-proof__offer {
+  color: var(--rl-muted);
+  font-size: var(--rl-s--1);
+  margin: 0.1rem 0 0;
+}
+.rl-proof__meta {
+  text-align: end;
+}
+.rl-saving {
+  color: var(--rl-gold);
+  font-weight: 600;
+  font-size: var(--rl-s-1);
+  display: block;
+  white-space: nowrap;
+}
+.rl-read {
+  display: block;
+  color: var(--rl-muted);
+  font-size: var(--rl-s--1);
+  margin-block-start: 0.15rem;
+  white-space: nowrap;
+}
+
+/* ---- 10. Category chips (A) -------------------------------------------- */
+
+.rl-chips {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 620px) {
+  .rl-chips {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 980px) {
+  .rl-chips {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+.rl-chip {
+  display: block;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--rl-rule);
+  border-radius: var(--rl-radius-sm);
+  background: transparent;
+  text-decoration: none;
+  color: var(--rl-ink);
+  transition: background-color 120ms ease, border-color 120ms ease;
+}
+.rl-chip:hover {
+  background: var(--rl-surface);
+  border-color: var(--rl-ink);
+}
+.rl-chip__label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.15rem;
+}
+.rl-chip__blurb {
+  display: block;
+  font-size: var(--rl-s--1);
+  color: var(--rl-muted);
+  line-height: 1.4;
+}
+
+/* ---- 11. Category tiles (B) -------------------------------------------- */
+
+.rl-tiles {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+@media (min-width: 980px) {
+  .rl-tiles {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+.rl-tile {
+  display: block;
+  padding: 1.15rem 1rem;
+  background: var(--rl-surface);
+  border: 1px solid var(--rl-rule);
+  border-radius: var(--rl-radius-md);
+  box-shadow: var(--rl-shadow);
+  text-decoration: none;
+  color: var(--rl-ink);
+  text-align: start;
+  transition: border-color 120ms ease;
+}
+.rl-tile:hover {
+  border-color: var(--rl-accent);
+}
+.rl-tile__label {
+  display: block;
+  font-weight: 600;
+  font-size: var(--rl-s-1);
+  margin-bottom: 0.25rem;
+}
+.rl-tile__blurb {
+  display: block;
+  font-size: var(--rl-s--1);
+  color: var(--rl-muted);
+  line-height: 1.4;
+}
+
+/* ---- 12. Verified strip (B) -------------------------------------------- */
+
+.rl-strip {
+  background: var(--rl-ink);
+  color: #ffffff;
+}
+.rl-strip__grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+  padding-block: clamp(1.75rem, 4vw, 2.5rem);
+}
+@media (min-width: 720px) {
+  .rl-strip__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.rl-strip__fig {
+  display: block;
+  font-family: var(--font-rl-display), Georgia, serif;
+  font-size: var(--rl-s-3);
+  font-weight: 600;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums lining-nums;
+}
+.rl-strip__label {
+  display: block;
+  font-size: var(--rl-s--1);
+  color: rgba(255, 255, 255, 0.78);
+  margin-block-start: 0.3rem;
+}
+
+/* ---- 13. Offers table (A) ---------------------------------------------- */
+
+.rl-table-wrap {
+  background: var(--rl-surface);
+  border: 1px solid var(--rl-rule);
+  border-radius: var(--rl-radius-md);
+  overflow: hidden;
+}
+.rl-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: start;
+}
+.rl-table th,
+.rl-table td {
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid var(--rl-rule);
+  text-align: start;
+  vertical-align: middle;
+}
+.rl-table thead th {
+  font-size: var(--rl-s--1);
+  font-weight: 600;
+  color: var(--rl-muted);
+  background: var(--rl-canvas);
+}
+.rl-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+.rl-provider {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-weight: 600;
+}
+.rl-provider img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  flex: none;
+}
+.rl-code {
+  display: inline-block;
+  padding: 0.15rem 0.45rem;
+  border: 1px dashed var(--rl-rule);
+  border-radius: var(--rl-radius-sm);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: var(--rl-s--1);
+}
+.rl-status {
+  color: var(--rl-accent-dk);
+  font-weight: 500;
+  font-size: var(--rl-s--1);
+}
+.rl-recheck {
+  color: var(--rl-muted);
+  font-size: var(--rl-s--1);
+}
+.rl-cell-label {
+  display: none;
+}
+
+@media (max-width: 719px) {
+  .rl-table,
+  .rl-table tbody,
+  .rl-table tr,
+  .rl-table td {
+    display: block;
+    width: 100%;
+  }
+  /* Visually hidden without leaving the element outside the viewport: an
+     absolutely-positioned thead reports a bounding box wider than the
+     document, which reads as an overflow even when nothing scrolls. */
+  .rl-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+  .rl-table tr {
+    border-bottom: 1px solid var(--rl-rule);
+    padding-block: 0.5rem;
+  }
+  .rl-table tr:last-child {
+    border-bottom: 0;
+  }
+  .rl-table td {
+    border-bottom: 0;
+    display: grid;
+    grid-template-columns: 8.5rem 1fr;
+    gap: 0.5rem;
+    padding-block: 0.35rem;
+  }
+  .rl-cell-label {
+    display: block;
+    color: var(--rl-muted);
+    font-size: var(--rl-s--1);
+  }
+}
+
+/* ---- 14. Offer cards (B) ----------------------------------------------- */
+
+.rl-cards {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 720px) {
+  .rl-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1000px) {
+  .rl-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.rl-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1.25rem;
+  background: var(--rl-surface);
+  border: 1px solid var(--rl-rule);
+  border-radius: var(--rl-radius-md);
+  box-shadow: var(--rl-shadow);
+}
+.rl-card__top {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.rl-card__top img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  flex: none;
+}
+.rl-card__brand {
+  font-weight: 600;
+  margin: 0;
+}
+.rl-card__cat {
+  font-size: var(--rl-s--1);
+  color: var(--rl-muted);
+  margin: 0;
+}
+.rl-card__saving {
+  color: var(--rl-gold);
+  font-family: var(--font-rl-display), Georgia, serif;
+  font-size: var(--rl-s-3);
+  font-weight: 600;
+  line-height: 1;
+  font-variant-numeric: tabular-nums lining-nums;
+}
+.rl-card__offer {
+  margin: 0;
+  color: var(--rl-ink);
+}
+.rl-card__foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+  margin-block-start: auto;
+  padding-block-start: 0.75rem;
+  border-top: 1px solid var(--rl-rule);
+}
+.rl-copy {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 36px;
+  padding: 0 0.6rem;
+  background: transparent;
+  border: 1px dashed var(--rl-rule);
+  border-radius: var(--rl-radius-sm);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: var(--rl-s--1);
+  color: var(--rl-ink);
+  cursor: pointer;
+  font-variant-numeric: tabular-nums lining-nums;
+}
+.rl-copy:hover {
+  border-color: var(--rl-ink);
+  border-style: solid;
+}
+.rl-copy__state {
+  color: var(--rl-accent-dk);
+  font-family: var(--font-rl-body), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* ---- 15. How we compare ------------------------------------------------ */
+
+.rl-cols3 {
+  display: grid;
+  gap: 1.75rem;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 820px) {
+  .rl-cols3 {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+  }
+  .rl-cols3 > * + * {
+    border-inline-start: 1px solid var(--rl-rule);
+    padding-inline-start: 1.75rem;
+  }
+  .rl-cols3 > *:not(:last-child) {
+    padding-inline-end: 1.75rem;
+  }
+}
+.rl-col__h {
+  font-size: var(--rl-s-1);
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+}
+.rl-col__p {
+  margin: 0;
+  color: var(--rl-muted);
+}
+
+/* ---- 16. Partner strip ------------------------------------------------- */
+
+.rl-partners {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem 2.25rem;
+}
+.rl-partners img {
+  height: 26px;
+  width: auto;
+  filter: grayscale(1);
+  opacity: 0.68;
+}
+.rl-disclose {
+  margin: 1.25rem 0 0;
+  font-size: var(--rl-s--1);
+  color: var(--rl-muted);
+  max-width: var(--rl-measure);
+}
+
+/* ---- 17. Guide cards --------------------------------------------------- */
+
+.rl-guides {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 640px) {
+  .rl-guides {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1000px) {
+  .rl-guides {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.rl-guide {
+  display: block;
+  padding: 1.1rem;
+  border: 1px solid var(--rl-rule);
+  border-radius: var(--rl-radius-sm);
+  background: var(--rl-surface);
+  text-decoration: none;
+  color: var(--rl-ink);
+}
+.rl-guide:hover {
+  border-color: var(--rl-ink);
+}
+.rl-guide__t {
+  font-weight: 600;
+  margin: 0 0 0.35rem;
+  line-height: 1.3;
+}
+.rl-guide__l {
+  margin: 0 0 0.6rem;
+  font-size: var(--rl-s--1);
+  color: var(--rl-muted);
+  line-height: 1.45;
+}
+.rl-guide__d {
+  font-size: var(--rl-s--1);
+  color: var(--rl-muted);
+}
+
+/* ---- 18. Editorial line + newsletter ----------------------------------- */
+
+.rl-editorial {
+  max-width: var(--rl-measure);
+  color: var(--rl-muted);
+}
+.rl-editorial a {
+  color: var(--rl-accent-dk);
+}
+
+.rl-news {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-block-start: 1rem;
+  max-width: 30rem;
+}
+.rl-news input {
+  flex: 1 1 14rem;
+  min-height: 44px;
+  padding: 0 0.85rem;
+  border: 1px solid var(--rl-rule);
+  border-radius: var(--rl-radius-sm);
+  background: var(--rl-surface);
+  color: var(--rl-ink);
+  font: inherit;
+}
+.rl-news input::placeholder {
+  color: var(--rl-muted);
+}
+
+/* ---- 19. Footer -------------------------------------------------------- */
+
+.rl-footer {
+  background: var(--rl-surface);
+  border-top: 1px solid var(--rl-rule);
+  padding-block: clamp(2.5rem, 5vw, 3.5rem) 2rem;
+}
+.rl-footer__grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 620px) {
+  .rl-footer__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 960px) {
+  .rl-footer__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.rl-footer__h {
+  font-size: var(--rl-s--1);
+  font-weight: 600;
+  margin: 0 0 0.75rem;
+}
+.rl-footer__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+.rl-footer__list a {
+  color: var(--rl-muted);
+  text-decoration: none;
+  font-size: var(--rl-s--1);
+}
+.rl-footer__list a:hover {
+  color: var(--rl-ink);
+  text-decoration: underline;
+}
+.rl-footer__legal {
+  margin-block-start: 2.5rem;
+  padding-block-start: 1.5rem;
+  border-top: 1px solid var(--rl-rule);
+  display: grid;
+  gap: 0.9rem;
+}
+.rl-footer__legal p {
+  margin: 0;
+  font-size: var(--rl-s--1);
+  color: var(--rl-muted);
+  max-width: var(--rl-measure);
+}
+
+/* ---- 20. Preview index ------------------------------------------------- */
+
+.rl-index {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+  margin-block-start: 1.5rem;
+}
+@media (min-width: 720px) {
+  .rl-index {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.rl-index__card {
+  display: block;
+  padding: 1.5rem;
+  background: var(--rl-surface);
+  border: 1px solid var(--rl-rule);
+  border-radius: var(--rl-radius-md);
+  text-decoration: none;
+  color: var(--rl-ink);
+}
+.rl-index__card:hover {
+  border-color: var(--rl-ink);
+}
+
+/* ---- 21. Font wiring ---------------------------------------------------
+   Body face is shared. The display face is what separates the variants, so it
+   is set per variant rather than in the layout.
+   ------------------------------------------------------------------------ */
+
+.rl-preview {
+  --font-rl-body: var(--font-rl-public-sans);
+  --font-rl-display: var(--font-rl-public-sans);
+}
+.rl-variant-a {
+  --font-rl-display: var(--font-rl-newsreader);
+}
+.rl-variant-b {
+  --font-rl-display: var(--font-rl-schibsted);
+}
+
+/* Variant B leads with the tool, so its headline face is a grotesque set
+   tighter and its vertical rhythm is compressed against A. */
+.rl-variant-b .rl-h2 {
+  letter-spacing: -0.02em;
+  font-size: var(--rl-s-2);
+}
+.rl-variant-b .rl-section {
+  padding-block: clamp(2rem, 4.5vw, 3.25rem);
+}
+
+.rl-heroB {
+  text-align: center;
+  padding-block: clamp(2.5rem, 6vw, 4rem) clamp(1.5rem, 3vw, 2rem);
+}
+.rl-heroB__h1 {
+  font-family: var(--font-rl-display), ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(2rem, 5.5vw, var(--rl-s-4));
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  margin: 0 auto 0.9rem;
+  max-width: 18ch;
+  text-wrap: balance;
+}
+.rl-heroB__sub {
+  font-size: var(--rl-s-1);
+  color: var(--rl-muted);
+  margin: 0 auto clamp(1.5rem, 3vw, 2.25rem);
+  max-width: 54ch;
+}
+
+/* Shared visually-hidden helper. Kept out of the flow without pushing the
+   element past the document edge. */
+.rl-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
