@@ -1,0 +1,208 @@
+/* =========================================================================
+   D3 — THE EDITORIAL
+   A magazine that happens to compare things.
+
+   Layout logic: an asymmetric 12-column grid with a lead-story treatment.
+   Dramatic type contrast, very large display against very small body. Heavy
+   horizontal rules do the structuring; there is no card and no shadow on the
+   whole page. Generous white.
+
+   Palette family: VIOLET. Ground: light. Display: Instrument Serif.
+   ========================================================================= */
+
+.d3 {
+  --paper: #fbfaf8;
+  --ink: #191612;           /* on paper 16.1:1 */
+  --ink-2: #5b544c;         /* on paper 6.9:1  */
+  --ink-3: #8d857a;         /* on paper 3.6:1, decorative only, never body */
+  --violet: #4a2d8c;        /* on paper 10.0:1 */
+  --violet-2: #6d4bc9;      /* on paper 5.9:1  */
+  --rule: #191612;
+  --hair: #d8d3cb;
+
+  --max: 1240px; --gut: 24px;
+
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-d3-body), "Segoe UI", sans-serif;
+  font-size: 15px; line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.d3 h1, .d3 h2, .d3 h3, .d3 h4, .d3 h5, .d3 h6 {
+  color: var(--ink); font-family: var(--font-d3-display), Georgia, serif;
+  font-weight: 400; letter-spacing: -0.005em; line-height: 0.96; margin: 0;
+}
+.d3 p, .d3 li { line-height: inherit; }
+.d3 a:not([class]) { color: inherit; }
+.d3 *:focus-visible { outline: 2px solid var(--violet-2); outline-offset: 3px; }
+
+.d3-w { width: 100%; max-width: var(--max); margin-inline: auto; padding-inline: var(--gut); }
+.d3-hr { border: 0; border-top: 3px solid var(--rule); margin: 0; }
+.d3-hr--thin { border-top: 1px solid var(--hair); }
+
+/* small caps utility, used for the furniture only */
+.d3-sc {
+  font-family: var(--font-d3-body), sans-serif;
+  font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase;
+  font-weight: 600; color: var(--ink-2);
+}
+
+/* ---- masthead ----------------------------------------------------------- */
+
+.d3-hd { padding-block: 0.85rem; }
+.d3-hd__g { display: flex; align-items: baseline; gap: 1.25rem; }
+.d3-wm {
+  font-family: var(--font-d3-display), Georgia, serif;
+  font-size: 30px; text-decoration: none; letter-spacing: -0.01em; line-height: 1;
+}
+.d3-hd nav { display: none; gap: 1.1rem; margin-inline-start: auto; }
+@media (min-width: 860px) { .d3-hd nav { display: flex; } }
+.d3-hd nav a { text-decoration: none; }
+.d3-hd nav a:hover { color: var(--violet); }
+.d3-hd__d { margin-inline-start: auto; }
+@media (min-width: 860px) { .d3-hd__d { margin-inline-start: 0; } }
+
+/* ---- lead --------------------------------------------------------------- */
+
+.d3-lead { padding-block: clamp(1.5rem, 3vw, 2.5rem) clamp(1.5rem, 3vw, 2.25rem); }
+.d3-lead__g { display: grid; gap: clamp(1.25rem, 2.5vw, 2.25rem); }
+@media (min-width: 1000px) {
+  /* asymmetric on purpose: 7 / 3 / 2, not thirds */
+  .d3-lead__g { grid-template-columns: 7fr 3fr 2.4fr; align-items: start; }
+}
+.d3-h1 { font-size: clamp(44px, 8.4vw, 108px); letter-spacing: -0.025em; text-wrap: balance; }
+.d3-h1 em { font-style: italic; color: var(--violet); }
+.d3-stand {
+  font-size: 17px; line-height: 1.5; color: var(--ink-2); margin: 0;
+  border-top: 3px solid var(--rule); padding-top: 0.75rem;
+}
+.d3-stand b { color: var(--ink); font-weight: 600; }
+.d3-side { border-top: 3px solid var(--rule); padding-top: 0.75rem; }
+.d3-side p { margin: 0.5rem 0 0; font-size: 13px; color: var(--ink-2); }
+.d3 .dir-art { width: 100%; height: auto; display: block; margin-top: 0.75rem; }
+
+/* ---- editorial table ---------------------------------------------------- */
+
+.d3-sec { padding-block: clamp(1.75rem, 3.4vw, 2.75rem); }
+.d3-sech { display: flex; align-items: flex-end; justify-content: space-between; gap: 1rem; margin-bottom: 0.85rem; }
+.d3-sech h2 { font-size: clamp(28px, 4vw, 48px); letter-spacing: -0.02em; }
+
+.d3-tbl { width: 100%; border-collapse: collapse; }
+.d3-tbl thead th {
+  font-family: var(--font-d3-body), sans-serif; font-size: 10.5px;
+  letter-spacing: 0.16em; text-transform: uppercase; font-weight: 600; color: var(--ink-2);
+  text-align: start; padding: 0 0.75rem 0.5rem 0; border-bottom: 3px solid var(--rule);
+}
+.d3-tbl td { padding: 0.9rem 0.75rem 0.9rem 0; border-bottom: 1px solid var(--hair); vertical-align: baseline; }
+.d3-tbl td:last-child, .d3-tbl th:last-child { text-align: end; padding-inline-end: 0; }
+.d3-num {
+  font-family: var(--font-d3-display), Georgia, serif; font-size: 26px;
+  color: var(--ink-3); line-height: 1; width: 2.2rem;
+}
+.d3-bd { display: flex; align-items: center; gap: 0.6rem; }
+.d3-bd img { width: 26px; height: 26px; object-fit: contain; flex: none; }
+.d3-bd a {
+  font-family: var(--font-d3-display), Georgia, serif; font-size: 23px;
+  text-decoration: none; line-height: 1.05;
+}
+.d3-bd a:hover { color: var(--violet); }
+.d3-off { font-size: 14px; color: var(--ink-2); }
+.d3-sav { color: var(--violet); font-weight: 600; }
+.d3-code {
+  font-family: var(--font-d3-mono), ui-monospace, Menlo, monospace;
+  font-size: 12px; letter-spacing: 0.06em; border-bottom: 2px solid var(--violet-2);
+}
+.d3-when { font-size: 12px; color: var(--ink-2); white-space: nowrap; font-variant-numeric: tabular-nums; }
+
+@media (max-width: 780px) {
+  .d3-tbl, .d3-tbl tbody, .d3-tbl tr, .d3-tbl td { display: block; width: 100%; }
+  .d3-tbl thead { display: none; }
+  .d3-tbl tr { padding-block: 0.85rem; border-bottom: 1px solid var(--hair); }
+  .d3-tbl td { border: 0; padding: 0.1rem 0; text-align: start !important; }
+  .d3-num { display: none !important; }
+}
+
+/* ---- index -------------------------------------------------------------- */
+
+.d3-idx { display: grid; gap: 0; }
+@media (min-width: 720px) { .d3-idx { grid-template-columns: 1fr 1fr; column-gap: 3rem; } }
+.d3-idx a {
+  display: grid; grid-template-columns: 44px 1fr auto; gap: 0.9rem; align-items: baseline;
+  padding-block: 0.9rem; border-bottom: 1px solid var(--hair); text-decoration: none;
+}
+.d3-idx a:hover .d3-idx__l { color: var(--violet); }
+.d3-idx__l { font-family: var(--font-d3-display), Georgia, serif; font-size: 25px; line-height: 1.05; display: block; }
+.d3-idx__m { display: block; font-size: 12.5px; color: var(--ink-2); margin-top: 3px; }
+.d3-idx svg { align-self: center; }
+
+/* ---- wall as a run-in caption ------------------------------------------- */
+
+.d3-wall { display: flex; flex-wrap: wrap; align-items: center; gap: 1.1rem 2rem; padding-block: 1rem; }
+.d3-wall img { height: 24px; width: auto; max-width: 86px; object-fit: contain; filter: grayscale(1); opacity: 0.82; }
+
+/* ---- pull quote --------------------------------------------------------- */
+
+.d3-pull { display: grid; gap: 1.5rem; }
+@media (min-width: 900px) { .d3-pull { grid-template-columns: 5fr 4fr; } }
+.d3-q {
+  font-family: var(--font-d3-display), Georgia, serif;
+  font-size: clamp(26px, 3.4vw, 40px); line-height: 1.08; margin: 0;
+  letter-spacing: -0.015em;
+}
+.d3-q em { font-style: italic; color: var(--violet); }
+.d3-body { columns: 1; }
+@media (min-width: 620px) { .d3-body { columns: 2; column-gap: 2rem; } }
+.d3-body p { margin: 0 0 0.8rem; font-size: 14px; color: var(--ink-2); break-inside: avoid; }
+
+/* ---- comparisons -------------------------------------------------------- */
+
+.d3-cmp a { display: block; padding-block: 1rem; border-bottom: 1px solid var(--hair); text-decoration: none; }
+.d3-cmp a:hover .d3-cmp__t { color: var(--violet); }
+.d3-cmp__t { font-family: var(--font-d3-display), Georgia, serif; font-size: clamp(22px, 2.6vw, 32px); display: block; line-height: 1.05; }
+.d3-cmp__l { display: block; font-size: 14px; color: var(--ink-2); margin-top: 0.3rem; max-width: 66ch; }
+.d3-cmp__d { display: block; margin-top: 0.35rem; }
+
+/* ---- footer ------------------------------------------------------------- */
+
+.d3-ft { border-top: 3px solid var(--rule); padding-block: 1.5rem 2.5rem; }
+.d3-ft__g { display: grid; gap: 1.25rem; }
+@media (min-width: 780px) { .d3-ft__g { grid-template-columns: 2fr 1fr 1fr; } }
+.d3-ft p { margin: 0.5rem 0 0; font-size: 12.5px; color: var(--ink-2); max-width: 46ch; }
+.d3-ft a { display: block; text-decoration: none; font-size: 13px; padding-block: 0.2rem; color: var(--ink-2); }
+.d3-ft a:hover { color: var(--violet); }
+
+/* ---- lead-story treatment ----------------------------------------------
+   D1 already owns "one dense ledger". A magazine does not run a ledger: it
+   runs a lead story with a spot drawing, then the rest as a dense two-column
+   list. That is the structural difference between D1 and D3, not the ground
+   colour.
+   ------------------------------------------------------------------------ */
+
+.d3-feat { display: grid; gap: clamp(1.25rem, 2.5vw, 2rem); align-items: start; }
+@media (min-width: 940px) { .d3-feat { grid-template-columns: 5fr 6fr; } }
+.d3-feat__art { border-top: 3px solid var(--rule); padding-top: 1rem; }
+.d3-feat__t {
+  font-family: var(--font-d3-display), Georgia, serif;
+  font-size: clamp(34px, 4.6vw, 62px); line-height: 0.98; letter-spacing: -0.02em;
+  display: block; text-decoration: none; margin-block: 0.4rem 0.5rem;
+}
+.d3-feat a:hover .d3-feat__t { color: var(--violet); }
+.d3-feat__o { font-size: 17px; color: var(--ink-2); margin: 0 0 0.8rem; max-width: 46ch; }
+.d3-feat__o .d3-sav { font-size: 21px; }
+.d3-feat__m { display: flex; flex-wrap: wrap; gap: 0.4rem 1.5rem; align-items: center; padding-top: 0.7rem; border-top: 1px solid var(--hair); }
+.d3-feat img { height: 30px; width: auto; max-width: 92px; object-fit: contain; }
+
+/* the rest, as a dense two-column run rather than a table */
+.d3-run { columns: 1; column-gap: 3rem; }
+@media (min-width: 760px) { .d3-run { columns: 2; } }
+.d3-run a {
+  display: block; break-inside: avoid; text-decoration: none;
+  padding-block: 0.8rem; border-bottom: 1px solid var(--hair);
+}
+.d3-run a:hover .d3-run__b { color: var(--violet); }
+.d3-run__h { display: flex; align-items: baseline; gap: 0.5rem; }
+.d3-run__b { font-family: var(--font-d3-display), Georgia, serif; font-size: 22px; line-height: 1.05; }
+.d3-run__s { margin-inline-start: auto; color: var(--violet); font-weight: 600; font-size: 15px; white-space: nowrap; }
+.d3-run__o { display: block; font-size: 13px; color: var(--ink-2); margin-top: 0.2rem; }
+.d3-run__m { display: flex; flex-wrap: wrap; gap: 0.2rem 1rem; margin-top: 0.35rem; }

@@ -1,0 +1,131 @@
+/* =========================================================================
+   D4 — THE SPECIMEN
+   Extreme restraint. Objects on plain ground with enormous air.
+
+   Layout logic: ONE column, narrow, running down a very tall page. Nothing is
+   side by side; the reader descends rather than scans. No band, no card, no
+   shadow, no fill, and exactly two rules on the entire page. Type is small
+   everywhere except the one element that is not.
+
+   The unforgettable element, and the discipline of the direction: the oldest
+   reading set at 150px+ as the only large thing on the page. It is the site's
+   whole argument, so it gets the only piece of scale that exists here.
+
+   Palette family: NONE. Warm neutral only, one ink. Display: Jost.
+   ========================================================================= */
+
+.d4 {
+  --paper: #faf9f5;
+  --ink: #1a1a17;          /* on paper 15.4:1 */
+  --ink-2: #6a6862;        /* on paper 5.3:1  */
+  --ink-3: #a8a59d;        /* hairlines and furniture only, never body text */
+  --hair: #e3e0d8;
+
+  --max: 720px;            /* deliberately narrow; the page is tall, not wide */
+  --gut: 28px;
+
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-d4), "Segoe UI", sans-serif;
+  font-size: 14px; line-height: 1.72;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+
+.d4 h1, .d4 h2, .d4 h3, .d4 h4, .d4 h5, .d4 h6 {
+  color: var(--ink); font-family: var(--font-d4), sans-serif;
+  font-weight: 400; letter-spacing: 0.01em; line-height: 1.25; margin: 0;
+}
+.d4 p, .d4 li { line-height: inherit; }
+.d4 a:not([class]) { color: inherit; }
+.d4 *:focus-visible { outline: 1px solid var(--ink); outline-offset: 4px; }
+
+.d4-w { width: 100%; max-width: var(--max); margin-inline: auto; padding-inline: var(--gut); }
+.d4-wide { width: 100%; max-width: 1060px; margin-inline: auto; padding-inline: var(--gut); }
+
+/* the label: this page's only piece of furniture */
+.d4-l {
+  display: block; font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase;
+  color: var(--ink-3); margin-bottom: 1.4rem;
+}
+
+/* ---- header ------------------------------------------------------------- */
+
+.d4-hd { padding-block: clamp(2rem, 5vw, 3.5rem) 0; }
+.d4-hd__g { display: flex; align-items: baseline; justify-content: space-between; gap: 1.5rem; }
+.d4-wm { font-size: 15px; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; }
+.d4-hd nav { display: none; gap: 1.4rem; }
+@media (min-width: 720px) { .d4-hd nav { display: flex; } }
+.d4-hd nav a { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-2); text-decoration: none; }
+.d4-hd nav a:hover { color: var(--ink); }
+
+/* ---- the one large thing ------------------------------------------------ */
+
+.d4-open { padding-block: clamp(4.5rem, 14vw, 11rem) clamp(3rem, 8vw, 6rem); text-align: center; }
+.d4-open p { margin: 0; font-size: 14px; color: var(--ink-2); max-width: 42ch; margin-inline: auto; }
+.d4-date {
+  display: block; font-size: clamp(48px, 13.5vw, 156px);
+  line-height: 0.92; letter-spacing: -0.04em; font-weight: 300;
+  margin-block: 1.6rem 1.4rem; font-variant-numeric: lining-nums;
+}
+.d4-open__k { font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--ink-3); }
+
+/* ---- specimen rows ------------------------------------------------------ */
+
+.d4-sec { padding-block: clamp(3rem, 8vw, 6rem); }
+.d4-sec h2 { font-size: 19px; letter-spacing: 0.02em; margin-bottom: 0.5rem; }
+.d4-sec > .d4-w > p { margin: 0 0 2.6rem; color: var(--ink-2); max-width: 52ch; }
+
+.d4-row {
+  display: grid; grid-template-columns: 1fr auto; gap: 0.4rem 1.5rem;
+  align-items: baseline; padding-block: 1.9rem;
+}
+.d4-row + .d4-row { border-top: 1px solid var(--hair); }
+.d4-row__b { font-size: 17px; text-decoration: none; letter-spacing: 0.01em; }
+.d4-row__b:hover { text-decoration: underline; text-underline-offset: 4px; }
+.d4-row__o { grid-column: 1 / -1; color: var(--ink-2); max-width: 54ch; }
+.d4-row__m {
+  grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 0.3rem 1.4rem;
+  font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-3);
+  margin-top: 0.55rem;
+}
+.d4-row__s { font-size: 17px; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.d4-row img { height: 18px; width: auto; max-width: 62px; object-fit: contain; filter: grayscale(1); opacity: 0.55; }
+
+/* ---- index -------------------------------------------------------------- */
+
+.d4-idx a {
+  display: grid; grid-template-columns: 30px 1fr auto; gap: 1.2rem;
+  align-items: center; padding-block: 1.15rem; text-decoration: none;
+}
+.d4-idx a + a { border-top: 1px solid var(--hair); }
+.d4-idx__l { font-size: 15px; letter-spacing: 0.02em; }
+.d4-idx a:hover .d4-idx__l { text-decoration: underline; text-underline-offset: 4px; }
+.d4-idx__n { font-size: 10px; letter-spacing: 0.16em; color: var(--ink-3); }
+
+/* ---- wall --------------------------------------------------------------- */
+
+.d4-wall { display: flex; flex-wrap: wrap; gap: 2.2rem 3rem; align-items: center; justify-content: center; padding-block: 1rem; }
+.d4-wall img { height: 20px; width: auto; max-width: 76px; object-fit: contain; filter: grayscale(1); opacity: 0.5; }
+
+/* ---- notes -------------------------------------------------------------- */
+
+.d4-notes p { margin: 0 0 1.4rem; color: var(--ink-2); max-width: 56ch; }
+.d4-notes b { color: var(--ink); font-weight: 500; }
+.d4 .dir-art { width: 100%; height: auto; display: block; }
+.d4 .dir-empty { width: 160px; height: auto; margin-inline: auto; display: block; }
+
+.d4-cmp a { display: block; padding-block: 1.3rem; text-decoration: none; }
+.d4-cmp a + a { border-top: 1px solid var(--hair); }
+.d4-cmp b { display: block; font-size: 16px; font-weight: 400; letter-spacing: 0.01em; }
+.d4-cmp a:hover b { text-decoration: underline; text-underline-offset: 4px; }
+.d4-cmp span { display: block; color: var(--ink-2); margin-top: 0.25rem; }
+.d4-cmp em { display: block; font-style: normal; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-3); margin-top: 0.5rem; }
+
+/* ---- footer ------------------------------------------------------------- */
+
+.d4-ft { border-top: 1px solid var(--hair); padding-block: 3rem 4.5rem; }
+.d4-ft p { margin: 0 0 0.9rem; font-size: 12px; color: var(--ink-2); max-width: 50ch; }
+.d4-ft nav { display: flex; flex-wrap: wrap; gap: 0.6rem 1.6rem; margin-top: 1.4rem; }
+.d4-ft nav a { font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-3); text-decoration: none; }
+.d4-ft nav a:hover { color: var(--ink); }

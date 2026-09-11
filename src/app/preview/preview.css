@@ -27,8 +27,8 @@ body:has(.rl-preview) > *:not(:has(.rl-preview)) {
 }
 /* Exclude the preview's own header and footer by class. Without the :not(),
    `header` matches .rl-header too and the variant loses its own navigation. */
-body:has(.rl-preview) header:not(.rl-header),
-body:has(.rl-preview) footer:not(.rl-footer),
+body:has(.rl-preview) header:not(.rl-header):not(.rl-own),
+body:has(.rl-preview) footer:not(.rl-footer):not(.rl-own),
 body:has(.rl-preview) .site-atmosphere {
   display: none !important;
 }

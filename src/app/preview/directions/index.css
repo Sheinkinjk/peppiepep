@@ -1,0 +1,33 @@
+/* The chooser. Deliberately plain: it must not add a sixth aesthetic opinion
+   to the five it is presenting. */
+.dx { background: #0f1113; color: #e9eceb; min-height: 100vh;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; line-height: 1.6; }
+.dx h1, .dx h2, .dx h3 { color: #fff; font-family: inherit; letter-spacing: normal; margin: 0; }
+.dx p, .dx li { line-height: inherit; }
+.dx a { color: inherit; }
+.dx *:focus-visible { outline: 2px solid #7dd3a0; outline-offset: 2px; }
+.dx-w { max-width: 1180px; margin-inline: auto; padding-inline: 22px; }
+.dx-hd { padding-block: 2.5rem 1.5rem; border-bottom: 1px solid #262b2e; }
+.dx-hd h1 { font-size: 22px; margin-bottom: 0.6rem; }
+.dx-hd p { margin: 0; color: #99a3a6; max-width: 82ch; }
+.dx-g { display: grid; gap: 1px; background: #262b2e; border: 1px solid #262b2e; margin-block: 2rem 3rem; }
+@media (min-width: 900px) { .dx-g { grid-template-columns: repeat(2, 1fr); } }
+.dx-c { background: #14181a; padding: 1.4rem; display: flex; flex-direction: column; gap: 0.85rem; }
+.dx-c__t { display: flex; align-items: baseline; gap: 0.6rem; }
+.dx-c__id { color: #7dd3a0; font-weight: 700; }
+.dx-c__n { font-size: 17px; }
+.dx-c p { margin: 0; color: #99a3a6; }
+.dx-sw { display: flex; gap: 0; border-radius: 3px; overflow: hidden; height: 34px; }
+.dx-sw i { flex: 1; }
+.dx-meta { display: grid; grid-template-columns: auto 1fr; gap: 0.25rem 0.9rem; color: #99a3a6; }
+.dx-meta b { color: #e9eceb; font-weight: 400; }
+.dx-go {
+  align-self: flex-start; margin-top: auto; text-decoration: none;
+  background: #e9eceb; color: #0f1113; font-weight: 700;
+  padding: 0.55rem 0.9rem; border-radius: 3px;
+}
+.dx-go:hover { background: #7dd3a0; }
+.dx-note { border-top: 1px solid #262b2e; padding-block: 1.5rem 3rem; color: #99a3a6; }
+.dx-note b { color: #e9eceb; font-weight: 400; }
+.dx-note ul { margin: 0.6rem 0 0; padding-inline-start: 1.1rem; }
+.dx-note li { margin-bottom: 0.3rem; }
