@@ -1,0 +1,319 @@
+/* =========================================================================
+   FINAL — D5's visual language on the live site's information architecture.
+
+   THE STRUCTURAL IDEA: scale encodes who verified it. In every module the
+   largest type is the thing Refer Labs checked; whatever the merchant asserts
+   is set smaller. It is applied in five places, marked `SCALE RULE` below, so
+   it reads as a system rather than a flourish, and it survives a typeface
+   change because it is a rule about hierarchy, not about a face.
+
+   The three variants differ in ONE token pair and nothing else:
+     .fa  magenta      .fb  saffron      .fc  ultramarine
+   ========================================================================= */
+
+.fx {
+  --paper: #f7f4ee;
+  --paper-2: #efebe2;
+  --ink: #14120f;
+  --ink-2: #56504a;        /* on paper 7.4:1 */
+  --ink-3: #766f66;        /* 4.52:1 on paper. Used for the input placeholder,
+                              which is text, so it has to clear AA like anything else. */
+  --hair: #ded8cd;
+  --white: #ffffff;
+
+  --max: 1320px;
+  --gut: 22px;
+
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-fx-body), "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* the three accents. Everything else on the page is identical. */
+.fa { --accent: #d0126e; --accent-deep: #8e0a4a; --accent-soft: #fbe7f0; }
+/* saffron was #b4640a at 4.01:1, which fails as a hover TEXT colour. */
+.fb { --accent: #a85d09; --accent-deep: #7d4405; --accent-soft: #f9ecdc; }
+.fc { --accent: #2f3ad0; --accent-deep: #1f278f; --accent-soft: #e6e8fb; }
+
+/* globals.css sets h1-h4 colour, h1-h6 family/leading/tracking and p/li
+   line-height with element selectors, which beat inheritance. Neutralised
+   here; globals.css itself is never edited. */
+.fx h1, .fx h2, .fx h3, .fx h4, .fx h5, .fx h6 {
+  color: var(--ink);
+  font-family: var(--font-fx-display), "Segoe UI", sans-serif;
+  font-weight: 700; letter-spacing: -0.035em; line-height: 0.92; margin: 0;
+}
+.fx p, .fx li { line-height: inherit; }
+/* globals.css:287-291 applies `animation: section-rise 0.7s` to every
+   `main > section` and `main > header` under prefers-reduced-motion:
+   no-preference. That is exactly the fade-and-slide-up-on-entry this brief
+   bans, and it was firing on all eight sections here. Cancelled inside the
+   scope; globals.css itself is not edited. */
+.fx main > section, .fx main > header, .fx section, .fx header { animation: none !important; }
+/* scoped to unclassed links only: `.fx a` would be (0,1,1) and would beat
+   every single-class component rule, which is how D2 shipped white-on-white. */
+.fx a:not([class]) { color: inherit; }
+.fx *:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.fx img { max-width: 100%; }
+.fx path[stroke], .fx line[stroke], .fx circle[stroke] { fill: none; }
+
+.fx-w { width: 100%; max-width: var(--max); margin-inline: auto; padding-inline: var(--gut); }
+.fx-sec { padding-block: clamp(2.5rem, 5vw, 4.5rem); }
+
+/* ---- header ------------------------------------------------------------- */
+
+.fx-hd { border-bottom: 2px solid var(--ink); background: var(--paper); }
+.fx-hd__g { display: flex; align-items: center; gap: 0.9rem; min-height: 62px; }
+.fx-wm { font-family: var(--font-fx-display), sans-serif; font-size: 21px; font-weight: 700; letter-spacing: -0.045em; text-decoration: none; color: var(--ink); }
+.fx-nav { display: none; gap: 1.25rem; margin-inline-start: auto; }
+@media (min-width: 1040px) { .fx-nav { display: flex; } }
+.fx-nav a {
+  font-size: 14px; font-weight: 600; text-decoration: none; color: var(--ink);
+  position: relative; padding-block: 3px; white-space: nowrap;
+}
+.fx-nav a::after {
+  content: ""; position: absolute; inset-inline: 0 100%; inset-block-end: 0;
+  height: 2px; background: var(--accent); transition: inset-inline-end 170ms ease;
+}
+.fx-nav a:hover::after, .fx-nav a:focus-visible::after { inset-inline-end: 0; }
+.fx-hd__cta {
+  margin-inline-start: auto; font-size: 14px; font-weight: 700; text-decoration: none;
+  background: var(--ink); color: var(--paper); padding: 0.55rem 0.95rem;
+  border-radius: 2px; transition: background-color 140ms ease; white-space: nowrap;
+}
+@media (min-width: 1040px) { .fx-hd__cta { margin-inline-start: 1.25rem; } }
+.fx-hd__cta:hover { background: var(--accent); }
+/* the small-screen category strip, since the nav collapses */
+.fx-strip {
+  display: flex; gap: 1.1rem; overflow-x: auto; padding-block: 0.55rem;
+  border-bottom: 1px solid var(--hair); scrollbar-width: none;
+}
+.fx-strip::-webkit-scrollbar { display: none; }
+@media (min-width: 1040px) { .fx-strip { display: none; } }
+.fx-strip a {
+  font-size: 13px; font-weight: 600; text-decoration: none; white-space: nowrap;
+  color: var(--ink-2); min-height: 44px; display: inline-flex; align-items: center;
+}
+
+/* ---- hero --------------------------------------------------------------- */
+
+.fx-hero { padding-block: clamp(1.75rem, 4.5vw, 3.5rem) clamp(1.25rem, 2.5vw, 2rem); }
+.fx-h1 {
+  font-size: clamp(40px, 8.2vw, 112px); letter-spacing: -0.05em; line-height: 0.86;
+  text-wrap: balance; margin-bottom: clamp(1.5rem, 3.2vw, 2.75rem);
+}
+/* NO accent in the headline. The accent on this page means exactly one thing:
+   this figure is something we verified. Colouring a word for emphasis would
+   make it decoration and break that rule, so the H1 is a single ink colour and
+   the accent appears only on dates, savings, category markers and focus. */
+.fx-hero__g { display: grid; gap: 1.25rem; align-items: end; }
+@media (min-width: 900px) { .fx-hero__g { grid-template-columns: 1fr auto; } }
+.fx-hero p { margin: 0; font-size: clamp(16px, 1.7vw, 20px); color: var(--ink-2); max-width: 44ch; }
+
+/* SCALE RULE 2 of 5 — the proof strip.
+   The DATE we read is the largest thing here; the claim it qualifies is set
+   at body size beneath it. The date is ours, the claim is theirs. */
+.fx-proof { display: flex; gap: clamp(1.25rem, 3vw, 2.75rem); flex-wrap: wrap; }
+.fx-proof__i b {
+  display: block; font-family: var(--font-fx-display), sans-serif;
+  font-size: clamp(28px, 3.6vw, 44px); font-weight: 700; letter-spacing: -0.04em;
+  line-height: 1; font-variant-numeric: tabular-nums lining-nums;
+}
+.fx-proof__i span { display: block; font-size: 12.5px; font-weight: 600; color: var(--ink-2); margin-top: 8px; max-width: 20ch; }
+.fx-proof__i--date b { color: var(--accent-deep); }
+
+/* ---- the offer stack: SCALE RULE 1 of 5 --------------------------------
+   The brand name is the largest element in the row and the discount is set
+   smaller. Every other comparison site does the reverse, because it earns on
+   the click through to the promotion. We earn on being believed.
+   ------------------------------------------------------------------------ */
+
+.fx-stack { border-top: 2px solid var(--ink); }
+.fx-o {
+  display: block; text-decoration: none; position: relative;
+  padding-block: clamp(0.9rem, 1.7vw, 1.3rem);
+}
+.fx-o__g { display: grid; grid-template-columns: 1fr auto; gap: 0.4rem 1.5rem; align-items: baseline; }
+.fx-o__b {
+  font-family: var(--font-fx-display), sans-serif;
+  font-size: clamp(26px, 4.4vw, 56px); font-weight: 700; letter-spacing: -0.048em;
+  line-height: 0.95; display: block;
+  transition: color 140ms ease, transform 140ms ease;
+}
+.fx-o__s {
+  font-family: var(--font-fx-display), sans-serif;
+  font-size: clamp(17px, 2.1vw, 28px);   /* deliberately below the brand size */
+  font-weight: 700; letter-spacing: -0.03em; color: var(--accent-deep);
+  white-space: nowrap; font-variant-numeric: tabular-nums lining-nums;
+}
+.fx-o__m {
+  grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 0.35rem 1.4rem;
+  align-items: center; font-size: 13.5px; color: var(--ink-2); margin-top: 0.25rem;
+}
+.fx-o__m img { height: 20px; width: auto; max-width: 64px; object-fit: contain; }
+.fx-o__cat { font-weight: 600; color: var(--ink); }
+.fx-o__read { font-variant-numeric: tabular-nums; }
+.fx-o__stale { color: var(--accent-deep); font-weight: 600; }
+.fx-o:hover .fx-o__b, .fx-o:focus-visible .fx-o__b { color: var(--accent); transform: translateX(7px); }
+.fx-o::before {
+  content: ""; position: absolute; inset-block: 0; inset-inline-start: -12px;
+  width: 4px; background: var(--accent); opacity: 0; transition: opacity 140ms ease;
+}
+.fx-o:hover::before, .fx-o:focus-visible::before { opacity: 1; }
+
+/* The copy control sits OUTSIDE the row link, so the row has exactly one
+   destination and the code button is not a nested interactive element. */
+.fx-row {
+  display: grid; grid-template-columns: 1fr auto; gap: 0 1.25rem;
+  align-items: center; border-bottom: 1px solid var(--hair);
+}
+@media (max-width: 620px) {
+  .fx-row { grid-template-columns: 1fr; }
+  .fx-row .fx-copy { margin-block: 0 0.95rem; justify-self: start; }
+}
+.fx-copy {
+  display: inline-flex; align-items: center; gap: 7px; min-height: 34px;
+  font: inherit; font-size: 13px; font-weight: 700; letter-spacing: 0.06em;
+  background: none; border: 0; border-bottom: 2px solid var(--accent);
+  color: var(--ink); cursor: pointer; padding: 0 1px 2px;
+  transition: color 140ms ease, border-color 140ms ease;
+}
+.fx-copy:hover { color: var(--accent-deep); }
+.fx-copy[data-state="done"] { color: var(--accent-deep); border-color: var(--accent-deep); }
+.fx-copy[data-state="fail"] { color: var(--ink-2); border-style: dashed; }
+.fx-copy svg { flex: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .fx-o:hover .fx-o__b, .fx-o:focus-visible .fx-o__b { transform: none; }
+  .fx * { transition-duration: 1ms !important; }
+}
+
+/* 390px: the stack is already a stack. Only the meta row needs to breathe. */
+@media (max-width: 620px) {
+  .fx-o__g { grid-template-columns: 1fr; }
+  .fx-o__s { grid-row: 1; justify-self: start; }
+  .fx-o__m { gap: 0.3rem 1rem; font-size: 13px; }
+}
+
+/* ---- categories: SCALE RULE 4 of 5 -------------------------------------
+   Our taxonomy is the large type; the brands inside it are set small. The
+   category is our editorial judgement, the brand names are given.
+   ------------------------------------------------------------------------ */
+
+.fx-cats { display: grid; gap: 2px; background: var(--hair); border-block: 2px solid var(--ink); }
+@media (min-width: 700px) { .fx-cats { grid-template-columns: repeat(3, 1fr); } }
+.fx-cat {
+  background: var(--paper); padding: 1.35rem 1.15rem; text-decoration: none;
+  display: block; transition: background-color 140ms ease, color 140ms ease;
+}
+.fx-cat:hover, .fx-cat:focus-visible { background: var(--ink); color: var(--paper); }
+.fx-cat:hover .fx-cat__l, .fx-cat:focus-visible .fx-cat__l { color: var(--paper); }
+.fx-cat:hover .fx-mark-ink, .fx-cat:focus-visible .fx-mark-ink { fill: var(--paper); }
+.fx-cat__l {
+  display: block; font-family: var(--font-fx-display), sans-serif;
+  font-size: 24px; font-weight: 700; letter-spacing: -0.035em; margin-top: 0.75rem;
+  color: var(--ink);
+}
+.fx-cat__m { display: block; font-size: 13px; opacity: 0.74; margin-top: 0.3rem; }
+
+/* ---- ASYMMETRY: the methodology bleeds past the container --------------
+   One section breaks the grid, and it is the one the whole proposition rests
+   on. Everything else is contained.
+   ------------------------------------------------------------------------ */
+
+.fx-method { background: var(--ink); color: var(--paper); }
+.fx-method h2, .fx-method h3 { color: var(--paper); }
+.fx-method__g { display: grid; gap: clamp(1.5rem, 3vw, 2.5rem); }
+@media (min-width: 980px) { .fx-method__g { grid-template-columns: 5fr 6fr; align-items: start; } }
+/* the bleed: the artwork runs off the right edge of the viewport */
+.fx-bleed { margin-inline-end: calc(50% - 50vw); overflow: hidden; }
+.fx-bleed svg { width: 100%; height: auto; display: block; min-width: 620px; max-width: 1100px; }
+/* SCALE RULE 5 of 5 — the verification step is display-size, the benefit
+   it produces is body-size underneath it. */
+.fx-step + .fx-step { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(247,244,238,0.22); }
+.fx-step h3 { font-size: clamp(22px, 2.6vw, 32px); letter-spacing: -0.035em; margin-bottom: 0.4rem; }
+.fx-step p { margin: 0; font-size: 15px; color: #b6afa4; max-width: 54ch; }
+
+/* ---- partner wall ------------------------------------------------------- */
+
+.fx-wall { display: flex; flex-wrap: wrap; gap: 1.5rem 2.6rem; align-items: center; }
+.fx-wall figure { margin: 0; display: flex; align-items: center; gap: 0.6rem; }
+.fx-wall img { height: 30px; width: auto; max-width: 96px; object-fit: contain; }
+.fx-o__m img, .fx-wall img { display: block; }
+.fx-wall img[data-small="1"] { height: 22px; max-width: 60px; }
+.fx-wall figcaption { font-size: 13px; font-weight: 600; color: var(--ink-2); }
+
+/* ---- comparisons: SCALE RULE 3 of 5 ------------------------------------ */
+
+.fx-cmp a { display: block; padding-block: 1.15rem; border-bottom: 1px solid var(--hair); text-decoration: none; }
+.fx-cmp a:first-child { border-top: 2px solid var(--ink); }
+.fx-cmp b {
+  display: block; font-family: var(--font-fx-display), sans-serif;
+  font-size: clamp(21px, 2.9vw, 36px); font-weight: 700; letter-spacing: -0.038em;
+  line-height: 1.02; transition: color 140ms ease;
+}
+.fx-cmp a:hover b, .fx-cmp a:focus-visible b { color: var(--accent); }
+.fx-cmp span { display: block; font-size: 14.5px; color: var(--ink-2); margin-top: 0.35rem; max-width: 66ch; }
+.fx-cmp em {
+  display: block; font-style: normal; font-size: 12px; font-weight: 600;
+  letter-spacing: 0.09em; text-transform: uppercase; color: var(--ink-2); margin-top: 0.45rem;
+}
+
+/* ---- editorial line ----------------------------------------------------- */
+
+.fx-ed { border-block: 2px solid var(--ink); padding-block: clamp(1.5rem, 3vw, 2.25rem); }
+.fx-ed__g { display: grid; gap: 1.25rem; }
+@media (min-width: 820px) { .fx-ed__g { grid-template-columns: auto 1fr; align-items: center; } }
+.fx-ed__n { font-family: var(--font-fx-display), sans-serif; font-size: clamp(22px, 2.6vw, 30px); font-weight: 700; letter-spacing: -0.035em; }
+.fx-ed p { margin: 0.3rem 0 0; font-size: 14px; color: var(--ink-2); max-width: 76ch; }
+
+/* ---- newsletter --------------------------------------------------------- */
+
+.fx-news { background: var(--accent-soft); border-block: 2px solid var(--ink); }
+.fx-news__g { display: grid; gap: 1.25rem; align-items: center; }
+@media (min-width: 860px) { .fx-news__g { grid-template-columns: 1fr auto; } }
+.fx-news h2 { font-size: clamp(26px, 3.4vw, 44px); }
+.fx-news p { margin: 0.5rem 0 0; font-size: 15px; color: var(--ink-2); max-width: 48ch; }
+.fx-form { display: flex; gap: 8px; flex-wrap: wrap; }
+.fx-input {
+  font: inherit; font-size: 16px; min-height: 48px; min-width: min(260px, 100%);
+  padding: 0 0.85rem; border: 2px solid var(--ink); border-radius: 2px;
+  background: var(--white); color: var(--ink);
+}
+.fx-input::placeholder { color: var(--ink-3); }
+.fx-btn {
+  font: inherit; font-size: 15px; font-weight: 700; min-height: 48px;
+  padding: 0 1.15rem; border: 2px solid var(--ink); border-radius: 2px;
+  background: var(--ink); color: var(--paper); cursor: pointer;
+  transition: background-color 140ms ease, border-color 140ms ease;
+}
+.fx-btn:hover:not(:disabled) { background: var(--accent); border-color: var(--accent); }
+.fx-btn:disabled { opacity: 0.62; cursor: progress; }
+.fx-msg { margin: 0.6rem 0 0; font-size: 13.5px; font-weight: 600; }
+.fx-msg[data-tone="ok"] { color: var(--accent-deep); }
+.fx-msg[data-tone="err"] { color: #9a1616; }
+
+/* ---- empty state -------------------------------------------------------- */
+
+.fx-sr { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.fx-empty { border: 2px dashed var(--hair); padding: clamp(1.5rem, 3vw, 2.25rem); text-align: center; }
+.fx-empty svg { margin-inline: auto; display: block; width: 170px; height: auto; }
+.fx-empty p { margin: 0.9rem auto 0; font-size: 14.5px; color: var(--ink-2); max-width: 48ch; }
+
+/* ---- footer ------------------------------------------------------------- */
+
+.fx-ft { background: var(--ink); color: #b6afa4; padding-block: 2.5rem 3rem; }
+.fx-ft__g { display: grid; gap: 1.75rem; }
+@media (min-width: 700px) { .fx-ft__g { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1000px) { .fx-ft__g { grid-template-columns: 1.7fr 1fr 1fr 1fr; } }
+.fx-ft h3 { color: var(--paper); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.7rem; font-family: var(--font-fx-body), sans-serif; font-weight: 700; letter-spacing: 0.12em; }
+.fx-ft a { display: block; text-decoration: none; font-size: 14px; padding-block: 0.5rem; color: #b6afa4; }
+.fx-ft a:hover { color: var(--paper); }
+.fx-ft p { margin: 0 0 0.7rem; font-size: 13.5px; max-width: 46ch; }
+.fx-ft__wm { font-family: var(--font-fx-display), sans-serif; font-size: 22px; font-weight: 700; letter-spacing: -0.045em; color: var(--paper); display: block; margin-bottom: 0.6rem; }
+.fx-legal { border-top: 1px solid rgba(247,244,238,0.16); margin-top: 2rem; padding-top: 1.5rem; }
+.fx-legal p { font-size: 12.5px; max-width: 92ch; color: #a09a90; }
+.fx-legal b { color: var(--paper); font-weight: 600; }

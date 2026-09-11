@@ -1,0 +1,34 @@
+.fz { background: #0f1113; color: #e9eceb; min-height: 100vh;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; line-height: 1.6; }
+.fz h1, .fz h2, .fz h3 { color: #fff; font-family: inherit; letter-spacing: normal; margin: 0; }
+.fz p, .fz li { line-height: inherit; }
+.fz a { color: inherit; }
+.fz *:focus-visible { outline: 2px solid #7dd3a0; outline-offset: 2px; }
+.fz-w { max-width: 1240px; margin-inline: auto; padding-inline: 22px; }
+.fz-hd { padding-block: 2.5rem 1.5rem; border-bottom: 1px solid #262b2e; }
+.fz-hd h1 { font-size: 21px; margin-bottom: 0.6rem; }
+.fz-hd p { margin: 0 0 0.6rem; color: #99a3a6; max-width: 84ch; }
+.fz-s { padding-block: 2rem; border-bottom: 1px solid #262b2e; }
+.fz-s > h2 { font-size: 15px; margin-bottom: 0.4rem; }
+.fz-s > p { margin: 0 0 1.5rem; color: #99a3a6; max-width: 84ch; }
+/* the specimens: real H1 text at real size, on the real ground */
+.fz-spec { background: #f7f4ee; color: #14120f; padding: 1.4rem; margin-bottom: 10px; overflow: hidden; }
+.fz-spec__l { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #56504a; margin-bottom: 0.7rem; display: flex; gap: 0.8rem; flex-wrap: wrap; }
+.fz-spec__l b { color: #14120f; }
+.fz-spec__h { font-size: clamp(34px, 6.4vw, 88px); line-height: 0.88; letter-spacing: -0.05em; font-weight: 700; margin: 0; }
+.fz-b { font-family: var(--font-spec-bricolage), sans-serif; }
+.fz-a { font-family: var(--font-spec-archivo), sans-serif; }
+.fz-d { font-family: var(--font-spec-darker), sans-serif; font-weight: 800; letter-spacing: -0.03em; }
+.fz-v { display: grid; gap: 10px; }
+@media (min-width: 860px) { .fz-v { grid-template-columns: repeat(3, 1fr); } }
+.fz-c { background: #14181a; padding: 1.2rem; display: flex; flex-direction: column; gap: 0.8rem; }
+.fz-c h3 { font-size: 15px; }
+.fz-c p { margin: 0; color: #99a3a6; }
+.fz-sw { display: flex; height: 30px; border-radius: 3px; overflow: hidden; }
+.fz-sw i { flex: 1; }
+.fz-go { align-self: flex-start; margin-top: auto; text-decoration: none; background: #e9eceb; color: #0f1113; font-weight: 700; padding: 0.5rem 0.85rem; border-radius: 3px; }
+.fz-go:hover { background: #7dd3a0; }
+.fz-t { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+.fz-t th, .fz-t td { text-align: start; padding: 0.4rem 0.7rem 0.4rem 0; border-bottom: 1px solid #262b2e; }
+.fz-t th { color: #99a3a6; font-weight: 400; }
+.fz-ok { color: #7dd3a0; } .fz-no { color: #ef8080; }

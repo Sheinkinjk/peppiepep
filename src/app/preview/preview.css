@@ -27,6 +27,19 @@ body:has(.rl-preview) > *:not(:has(.rl-preview)) {
 }
 /* Exclude the preview's own header and footer by class. Without the :not(),
    `header` matches .rl-header too and the variant loses its own navigation. */
+/* The production skip link and the production header's "Refer Labs home"
+   anchors are `sr-only`, not display:none, so chrome suppression left them in
+   the accessibility tree and Lighthouse scored them against the preview.
+   They belong to a layout this brief may not edit, so they are removed here. */
+/* The production header's "Refer Labs home" anchors are sr-only rather than
+   display:none, so chrome suppression left them in the accessibility tree.
+   They belong to a layout this brief may not edit.
+
+   The skip link is deliberately NOT hidden. Hiding it is what makes Lighthouse
+   report "skip links are not focusable" — the fix is to give it a target, so
+   each preview page marks its own <main id="main-content">. */
+body:has(.rl-preview) a[aria-label="Refer Labs home"] { display: none !important; }
+
 body:has(.rl-preview) header:not(.rl-header):not(.rl-own),
 body:has(.rl-preview) footer:not(.rl-footer):not(.rl-own),
 body:has(.rl-preview) .site-atmosphere {
@@ -235,8 +248,8 @@ body:has(.rl-preview) > div > div:has(.rl-preview) {
   z-index: 60;
   display: flex;
   align-items: center;
-  gap: 0.25rem;
-  padding: 0.3rem;
+  gap: 0.45rem;
+  padding: 0.35rem;
   background: #1c1c1c;
   border-radius: var(--rl-radius-sm);
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
@@ -250,8 +263,8 @@ body:has(.rl-preview) > div > div:has(.rl-preview) {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 2rem;
-  min-height: 2rem;
+  min-width: 2.4rem;
+  min-height: 2.4rem;
   padding: 0 0.5rem;
   border-radius: 4px;
   color: #d4d4d4;
