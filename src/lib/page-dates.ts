@@ -1017,6 +1017,50 @@ export const PAGE_DATES: Record<string, PageDates> = {
   "/zapier": {
     "published": "2025-12-28",
     "updated": "2026-08-28"
+  },
+  "/preview/directions/d1": {
+    "published": "2026-09-11",
+    "updated": "2026-09-11"
+  },
+  "/preview/directions/d2": {
+    "published": "2026-09-11",
+    "updated": "2026-09-11"
+  },
+  "/preview/directions/d3": {
+    "published": "2026-09-11",
+    "updated": "2026-09-11"
+  },
+  "/preview/directions/d4": {
+    "published": "2026-09-11",
+    "updated": "2026-09-11"
+  },
+  "/preview/directions/d5": {
+    "published": "2026-09-11",
+    "updated": "2026-09-11"
+  },
+  "/preview/directions": {
+    "published": "2026-09-11",
+    "updated": "2026-09-11"
+  },
+  "/preview/home-a": {
+    "published": "2026-09-10",
+    "updated": "2026-09-11"
+  },
+  "/preview/home-b": {
+    "published": "2026-09-10",
+    "updated": "2026-09-11"
+  },
+  "/preview/identity": {
+    "published": "2026-09-11",
+    "updated": "2026-09-11"
+  },
+  "/preview": {
+    "published": "2026-09-10",
+    "updated": "2026-09-10"
+  },
+  "/preview/plate": {
+    "published": "2026-09-10",
+    "updated": "2026-09-10"
   }
 };
 

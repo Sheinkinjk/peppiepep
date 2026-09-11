@@ -1,0 +1,384 @@
+/* =========================================================================
+   REDESIGN — the live referlabs.com.au homepage, redrawn.
+
+   THE GRID, stated so the breaks are legible:
+     12 columns · 1320px max · 24px gutter · 84px column
+     (1320 - 2x24 page padding - 11x24 gaps) / 12 = 84px exactly.
+   Every element starts and ends on a column line. The three elements that
+   break it are marked BREAK and are the only ones.
+
+   OPTICAL, NOT MATHEMATICAL:
+     - display type carries negative tracking that increases with size
+     - the H1 is pulled left by its own optical sidebearing so the capital B
+       hangs past the rule above it and reads aligned
+     - punctuation hangs outside the measure
+     - logos are sized by optical weight, not by a uniform box
+
+   SAFFRON MARKS VERIFICATION ONLY. If it appears anywhere that is not a
+   checked figure, a read date, or the focus ring, that is a bug.
+   ========================================================================= */
+
+.rd {
+  --paper: #f7f4ee;
+  --paper-2: #f1ede4;
+  --white: #ffffff;
+  --ink: #14120f;          /* on paper 17.03:1 */
+  --ink-2: #56504a;        /* on paper  7.24:1 */
+  --ink-3: #766f66;        /* on paper  4.52:1 — placeholders and captions */
+  --rule: #14120f;
+  --hair: #ded8cd;
+  --hair-2: #e9e4da;
+
+  --saffron: #a85d09;      /* on paper 4.52:1 */
+  --saffron-deep: #7d4405; /* on paper 7.08:1 */
+  --saffron-soft: #f9ecdc;
+
+  --col: 84px;
+  --gut: 24px;
+  --max: 1320px;
+
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-rd-body), "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.52;
+  -webkit-font-smoothing: antialiased;
+  font-variant-numeric: lining-nums;
+}
+
+/* globals.css sets h1-h4 colour, h1-h6 family/leading/tracking and p/li
+   line-height with element selectors, which beat inheritance; and
+   globals.css:287 animates every `main > section`. All neutralised in scope.
+   globals.css itself is never edited. */
+.rd h1, .rd h2, .rd h3, .rd h4, .rd h5, .rd h6 {
+  color: var(--ink); font-family: var(--font-rd-display), "Segoe UI", sans-serif;
+  font-weight: 400; margin: 0; line-height: 0.94; letter-spacing: -0.03em;
+}
+.rd p, .rd li { line-height: inherit; }
+.rd a:not([class]) { color: inherit; }
+.rd main > section, .rd main > header, .rd section, .rd header { animation: none !important; }
+.rd *:focus-visible { outline: 3px solid var(--saffron); outline-offset: 3px; }
+.rd img { max-width: 100%; }
+.rd path[stroke], .rd line[stroke] { fill: none; }
+
+/* ---- the grid ----------------------------------------------------------- */
+
+.rd-w { width: 100%; max-width: var(--max); margin-inline: auto; padding-inline: var(--gut); }
+.rd-g { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--gut); }
+@media (max-width: 900px) { .rd-g { grid-template-columns: repeat(6, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .rd-g { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* column spans, named so the report can quote them */
+.c12 { grid-column: span 12; } .c9 { grid-column: span 9; } .c8 { grid-column: span 8; }
+.c7 { grid-column: span 7; } .c6 { grid-column: span 6; } .c5 { grid-column: span 5; }
+.c4 { grid-column: span 4; } .c3 { grid-column: span 3; }
+@media (max-width: 900px) {
+  .c9, .c8, .c7 { grid-column: span 6; } .c6, .c5 { grid-column: span 6; }
+  .c4 { grid-column: span 3; } .c3 { grid-column: span 3; }
+}
+@media (max-width: 560px) {
+  .c12, .c9, .c8, .c7, .c6, .c5, .c4, .c3 { grid-column: span 2; }
+}
+
+/* ---- type scale, optically tracked -------------------------------------
+   Tracking tightens as size grows. A display face set at 96px with the
+   tracking it needs at 16px looks loose; this is the correction. */
+
+.rd-d1 { font-family: var(--font-rd-display), sans-serif; font-size: clamp(44px, 7.4vw, 96px); letter-spacing: -0.045em; line-height: 0.88; }
+.rd-d2 { font-family: var(--font-rd-display), sans-serif; font-size: clamp(28px, 3.8vw, 52px); letter-spacing: -0.036em; line-height: 0.94; }
+.rd-d3 { font-family: var(--font-rd-display), sans-serif; font-size: clamp(21px, 2.2vw, 28px); letter-spacing: -0.028em; line-height: 1.02; }
+.rd-d4 { font-family: var(--font-rd-display), sans-serif; font-size: 19px; letter-spacing: -0.022em; line-height: 1.1; }
+
+/* optical margin alignment: the capital hangs left of the rule above it */
+.rd-optical { margin-inline-start: -0.048em; }
+.rd-hang { hanging-punctuation: first last; }
+
+.rd-lede { font-size: clamp(17px, 1.5vw, 20px); color: var(--ink-2); margin: 0; max-width: 56ch; }
+.rd-body { font-size: 15.5px; color: var(--ink-2); margin: 0; }
+.rd-cap {
+  font-size: 12px; letter-spacing: 0.02em; color: var(--ink-3);
+  font-variant-numeric: tabular-nums lining-nums;
+}
+/* the kicker. Sentence case, not tracked caps: tracked caps above a heading
+   is the eyebrow tell. This is a small-caps-weight label, set in the body
+   face at body size, and it names a category rather than decorating. */
+.rd-kicker { font-size: 12.5px; font-weight: 600; color: var(--saffron-deep); letter-spacing: 0; }
+.rd-sr { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+/* ---- rules: a real hierarchy, three weights ----------------------------- */
+
+.rd-rule-1 { border-top: 2px solid var(--rule); }    /* section boundary */
+.rd-rule-2 { border-top: 1px solid var(--hair); }    /* row separator */
+.rd-rule-3 { border-top: 1px solid var(--hair-2); }  /* sub-row, inside a group */
+
+/* ---- header: ONE responsive nav, not two trees -------------------------- */
+
+.rd-hd { background: var(--paper); border-bottom: 2px solid var(--rule); position: relative; z-index: 40; }
+.rd-hd__g { display: flex; align-items: center; gap: 1rem; min-height: 66px; }
+.rd-wm {
+  font-family: var(--font-rd-display), sans-serif; font-size: 20px;
+  letter-spacing: -0.045em; text-decoration: none; color: var(--ink); line-height: 1;
+}
+.rd-nav { display: none; margin-inline-start: auto; }
+@media (min-width: 1000px) { .rd-nav { display: flex; gap: 0.25rem; } }
+.rd-nav__t {
+  font: inherit; font-size: 14.5px; font-weight: 600; background: none; border: 0;
+  color: var(--ink); padding: 0.5rem 0.75rem; cursor: pointer; position: relative;
+}
+.rd-nav__t::after {
+  content: ""; position: absolute; inset-inline: 0.75rem 100%; inset-block-end: 0.2rem;
+  height: 2px; background: var(--ink); transition: inset-inline-end 170ms ease;
+}
+.rd-nav__t:hover::after, .rd-nav__t[aria-expanded="true"]::after { inset-inline-end: 0.75rem; }
+.rd-panel {
+  position: absolute; inset-inline: 0; inset-block-start: 100%;
+  background: var(--white); border-bottom: 2px solid var(--rule);
+  box-shadow: 0 18px 34px -22px rgba(20,18,15,0.4);
+}
+.rd-panel__g { padding-block: 1.5rem 1.75rem; }
+.rd-panel a { text-decoration: none; display: block; padding-block: 0.5rem; }
+.rd-panel a:hover .rd-panel__l { color: var(--saffron-deep); }
+.rd-panel__l { display: block; font-weight: 600; font-size: 15.5px; }
+.rd-panel__b { display: block; font-size: 13.5px; color: var(--ink-2); margin-top: 1px; }
+.rd-hd__cta {
+  margin-inline-start: auto; font-size: 14px; font-weight: 700; text-decoration: none;
+  background: var(--ink); color: var(--paper); padding: 0.6rem 1rem; border-radius: 2px;
+  white-space: nowrap; transition: background-color 140ms ease;
+}
+@media (min-width: 1000px) { .rd-hd__cta { margin-inline-start: 1rem; } }
+.rd-hd__cta:hover { background: var(--saffron-deep); }
+/* the same nav, below 1000px: a scrolling rail. One tree, not two. */
+.rd-rail { display: flex; gap: 1.25rem; overflow-x: auto; scrollbar-width: none; border-top: 1px solid var(--hair); }
+.rd-rail::-webkit-scrollbar { display: none; }
+@media (min-width: 1000px) { .rd-rail { display: none; } }
+.rd-rail a {
+  font-size: 14px; font-weight: 600; text-decoration: none; color: var(--ink);
+  white-space: nowrap; min-height: 46px; display: inline-flex; align-items: center;
+}
+
+/* ---- hero --------------------------------------------------------------- */
+
+.rd-hero { padding-block: clamp(2rem, 4.6vw, 3.75rem) clamp(1.5rem, 3vw, 2.5rem); }
+.rd-pop { display: flex; flex-wrap: wrap; gap: 0.5rem 1.15rem; align-items: baseline; margin-top: 1.5rem; }
+.rd-pop__l { font-size: 13px; color: var(--ink-3); }
+.rd-pop a { font-size: 14.5px; font-weight: 600; text-decoration: none; border-bottom: 1.5px solid var(--hair); padding-bottom: 1px; }
+.rd-pop a:hover { border-color: var(--ink); }
+.rd-biz { margin-top: 1.15rem; font-size: 14px; color: var(--ink-2); }
+.rd-biz a { font-weight: 600; color: var(--ink); text-decoration: none; border-bottom: 1.5px solid var(--hair); }
+.rd-biz a:hover { border-color: var(--ink); }
+
+/* ---- the Apollo feature ------------------------------------------------- */
+
+.rd-feat { background: var(--white); border: 2px solid var(--rule); }
+.rd-feat__g { display: grid; }
+@media (min-width: 820px) { .rd-feat__g { grid-template-columns: 1.25fr 1fr; } }
+.rd-feat__l { padding: clamp(1.25rem, 2.4vw, 1.85rem); }
+.rd-feat__hd { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.85rem; }
+.rd-feat__hd .rd-bd__well { width: 64px; height: 48px; }
+.rd-feat__cta {
+  display: inline-block; margin-top: 1.15rem; font-size: 14.5px; font-weight: 700;
+  text-decoration: none; background: var(--ink); color: var(--paper);
+  padding: 0.65rem 1.05rem; border-radius: 2px; transition: background-color 140ms ease;
+}
+.rd-feat__cta:hover { background: var(--saffron-deep); }
+/* the drawn artefact lives here */
+.rd-feat__r { border-top: 2px solid var(--rule); padding: clamp(1.25rem, 2.4vw, 1.85rem); background: var(--paper-2); }
+@media (min-width: 820px) { .rd-feat__r { border-top: 0; border-inline-start: 2px solid var(--rule); } }
+
+/* ---- trust bar ---------------------------------------------------------- */
+
+.rd-trust { border-block: 2px solid var(--rule); background: var(--white); }
+.rd-trust ul { list-style: none; margin: 0; padding: 0; display: grid; }
+@media (min-width: 700px) { .rd-trust ul { grid-template-columns: repeat(4, 1fr); } }
+.rd-trust li {
+  padding: 0.95rem 0; font-size: 14px; font-weight: 600;
+  display: flex; align-items: center; gap: 0.6rem;
+}
+@media (min-width: 700px) { .rd-trust li + li { border-inline-start: 1px solid var(--hair); padding-inline-start: 1.25rem; } }
+@media (max-width: 699px) { .rd-trust li + li { border-top: 1px solid var(--hair); } }
+.rd-trust svg { flex: none; }
+
+/* ---- THE TABLE: the hero object ----------------------------------------
+   Column proportions are chosen, not equal: the brand column is widest
+   because the brand is what we vouch for; the offer column is set in tabular
+   figures and is narrower than the brand column (the scale rule); the body
+   column carries the reasoning; the action column is fixed at its own width.
+   Rule hierarchy: 2px above the head, 1px between rows, none inside a row.
+   ------------------------------------------------------------------------ */
+
+.rd-tbl { width: 100%; border-collapse: collapse; }
+.rd-tbl thead th {
+  font-size: 12px; font-weight: 600; color: var(--ink-3); text-align: start;
+  padding: 0 var(--gut) 0.6rem 0; border-bottom: 2px solid var(--rule);
+  letter-spacing: 0;
+}
+.rd-tbl thead th:last-child, .rd-tbl td:last-child { padding-inline-end: 0; text-align: end; }
+.rd-tbl tbody td { padding: clamp(1rem, 1.9vw, 1.5rem) var(--gut) clamp(1rem, 1.9vw, 1.5rem) 0; vertical-align: top; border-bottom: 1px solid var(--hair); }
+.rd-tbl tbody tr:last-child td { border-bottom: 2px solid var(--rule); }
+.rd-tbl tbody tr:hover td { background: var(--white); }
+
+.rd-col-brand { width: 30%; }
+.rd-col-offer { width: 21%; }
+.rd-col-why   { width: 34%; }
+.rd-col-act   { width: 15%; }
+
+/* THE LOGO WELL. A fixed 56x40 box every mark is fitted into, so the brand
+   names align on one left edge no matter how wide the mark is. Knose is a
+   103px-wide wordmark and Moshy a 31px square; without the well the names
+   sat 70px apart and the column read ragged.
+
+   Inside the well each mark carries its own optical scale (see logoOptical
+   in live-home.ts): square icons are pulled down because they read heavy,
+   wordmarks are pushed up because a wordmark at an icon's height reads small.
+   `object-fit: contain` keeps every mark's own aspect. */
+.rd-bd { display: flex; align-items: center; gap: 0.9rem; }
+.rd-bd__well {
+  flex: none; width: 56px; height: 40px;
+  display: flex; align-items: center; justify-content: center;
+}
+.rd-bd__well img { max-width: 100%; max-height: 100%; object-fit: contain; display: block; }
+.rd-bd__n {
+  font-family: var(--font-rd-display), sans-serif; font-size: clamp(20px, 2.1vw, 27px);
+  letter-spacing: -0.03em; line-height: 1; text-decoration: none; display: block;
+  transition: color 140ms ease;
+}
+.rd-bd a:hover .rd-bd__n, .rd-bd a:focus-visible .rd-bd__n { color: var(--saffron-deep); }
+/* the offer: tabular, and smaller than the brand name it belongs to */
+.rd-offer {
+  font-family: var(--font-rd-display), sans-serif; font-size: clamp(15px, 1.35vw, 18px);
+  letter-spacing: -0.02em; color: var(--saffron-deep);
+  font-variant-numeric: tabular-nums lining-nums; line-height: 1.15;
+}
+.rd-why { font-size: 14.5px; color: var(--ink-2); }
+.rd-act {
+  display: inline-flex; align-items: center; min-height: 40px; padding: 0 0.85rem;
+  border: 2px solid var(--rule); border-radius: 2px; font-size: 13.5px; font-weight: 700;
+  text-decoration: none; color: var(--ink); transition: background-color 140ms ease, color 140ms ease;
+}
+.rd-act:hover, .rd-act:focus-visible { background: var(--ink); color: var(--paper); }
+.rd-copy {
+  display: inline-flex; align-items: center; gap: 6px; min-height: 34px;
+  font: inherit; font-size: 12.5px; font-weight: 700; letter-spacing: 0.04em;
+  background: none; border: 0; border-bottom: 2px solid var(--saffron);
+  color: var(--ink); cursor: pointer; padding: 0 1px 2px; margin-top: 0.5rem;
+}
+.rd-copy:hover { color: var(--saffron-deep); }
+.rd-copy[data-state="done"] { color: var(--saffron-deep); border-color: var(--saffron-deep); }
+.rd-copy[data-state="fail"] { border-style: dashed; color: var(--ink-2); }
+
+/* 390px: the table becomes stacked records with the same rule hierarchy */
+@media (max-width: 780px) {
+  .rd-tbl, .rd-tbl tbody, .rd-tbl tr, .rd-tbl td { display: block; width: 100%; }
+  .rd-tbl thead { display: none; }
+  .rd-tbl tbody tr { border-bottom: 1px solid var(--hair); padding-block: 1.15rem; }
+  .rd-tbl tbody tr:last-child { border-bottom: 2px solid var(--rule); }
+  .rd-tbl tbody td { border: 0; padding: 0.2rem 0; text-align: start !important; }
+  .rd-tbl tbody td:first-child { padding-top: 0; }
+}
+
+.rd-sechd { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+.rd-sechd a { font-size: 14px; font-weight: 600; text-decoration: none; border-bottom: 1.5px solid var(--hair); }
+.rd-sechd a:hover { border-color: var(--ink); }
+.rd-sec { padding-block: clamp(2.25rem, 4.2vw, 3.75rem); }
+
+/* ---- categories --------------------------------------------------------- */
+
+.rd-cats { display: grid; gap: 0; }
+@media (min-width: 760px) { .rd-cats { grid-template-columns: 1fr 1fr; column-gap: calc(var(--gut) * 2); } }
+.rd-cat { padding-block: 1.4rem; border-top: 1px solid var(--hair); }
+.rd-cat__h { text-decoration: none; display: inline-block; }
+.rd-cat__h:hover .rd-d3 { color: var(--saffron-deep); }
+.rd-cat__b { margin: 0.45rem 0 0.7rem; font-size: 14.5px; color: var(--ink-2); max-width: 46ch; }
+.rd-cat__l { display: flex; flex-wrap: wrap; gap: 0.4rem 1.1rem; }
+.rd-cat__l a { font-size: 13.5px; font-weight: 600; text-decoration: none; border-bottom: 1.5px solid var(--hair); padding-bottom: 1px; }
+.rd-cat__l a:hover { border-color: var(--ink); }
+
+/* ---- coming soon -------------------------------------------------------- */
+
+.rd-soon { background: var(--white); border: 2px solid var(--rule); padding: clamp(1.25rem, 2.4vw, 1.75rem); }
+.rd-soon__t { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.9rem; }
+.rd-soon__t a {
+  font-size: 13.5px; font-weight: 600; text-decoration: none;
+  border: 1px solid var(--hair); border-radius: 2px; padding: 0.4rem 0.7rem;
+  min-height: 38px; display: inline-flex; align-items: center;
+}
+.rd-soon__t a:hover { border-color: var(--ink); }
+
+/* ---- how we compare ----------------------------------------------------- */
+
+.rd-how p + p { margin-top: 0.85rem; }
+.rd-how ul { list-style: none; margin: 1.5rem 0 0; padding: 0; }
+.rd-how li { padding-block: 0.7rem; border-top: 1px solid var(--hair); font-size: 14.5px; font-weight: 600; }
+
+/* ---- comparisons -------------------------------------------------------- */
+
+.rd-cmp a { display: block; padding-block: 1.15rem; border-top: 1px solid var(--hair); text-decoration: none; }
+.rd-cmp a:last-child { border-bottom: 1px solid var(--hair); }
+.rd-cmp__t { display: block; margin-top: 0.3rem; transition: color 140ms ease; }
+.rd-cmp a:hover .rd-cmp__t, .rd-cmp a:focus-visible .rd-cmp__t { color: var(--saffron-deep); }
+
+/* ---- FAQ ---------------------------------------------------------------- */
+
+.rd-faq details { border-top: 1px solid var(--hair); }
+.rd-faq details:last-of-type { border-bottom: 1px solid var(--hair); }
+.rd-faq summary {
+  list-style: none; cursor: pointer; padding-block: 1.1rem;
+  display: flex; align-items: baseline; justify-content: space-between; gap: 1rem;
+}
+.rd-faq summary::-webkit-details-marker { display: none; }
+.rd-faq summary:hover .rd-d4 { color: var(--saffron-deep); }
+.rd-faq__i { flex: none; width: 14px; height: 14px; position: relative; }
+.rd-faq__i::before, .rd-faq__i::after {
+  content: ""; position: absolute; background: var(--ink);
+  inset-block-start: 6px; inset-inline: 0; height: 2px; transition: transform 160ms ease;
+}
+.rd-faq__i::after { transform: rotate(90deg); }
+.rd-faq details[open] .rd-faq__i::after { transform: rotate(0deg); }
+.rd-faq__a { margin: 0 0 1.15rem; font-size: 15px; color: var(--ink-2); max-width: 72ch; }
+
+/* ---- newsletter + partner ----------------------------------------------- */
+
+.rd-news { background: var(--saffron-soft); border-block: 2px solid var(--rule); }
+.rd-form { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 1.1rem; }
+.rd-input {
+  font: inherit; font-size: 16px; min-height: 48px; min-width: min(280px, 100%); flex: 1 1 240px;
+  padding: 0 0.85rem; border: 2px solid var(--rule); border-radius: 2px; background: var(--white); color: var(--ink);
+}
+.rd-input::placeholder { color: var(--ink-3); }
+.rd-btn {
+  font: inherit; font-size: 15px; font-weight: 700; min-height: 48px; padding: 0 1.2rem;
+  border: 2px solid var(--rule); border-radius: 2px; background: var(--ink); color: var(--paper);
+  cursor: pointer; transition: background-color 140ms ease;
+}
+.rd-btn:hover:not(:disabled) { background: var(--saffron-deep); border-color: var(--saffron-deep); }
+.rd-btn:disabled { opacity: 0.6; cursor: progress; }
+.rd-msg { margin: 0.65rem 0 0; font-size: 13.5px; font-weight: 600; min-height: 1.2em; }
+.rd-msg[data-tone="err"] { color: #8c1414; }
+.rd-msg[data-tone="ok"] { color: var(--saffron-deep); }
+
+.rd-partner { background: var(--ink); color: var(--paper); }
+.rd-partner h2 { color: var(--paper); }
+.rd-partner p { color: #b6afa4; font-size: 16px; max-width: 58ch; margin: 0.9rem 0 0; }
+.rd-partner__cta {
+  display: inline-block; margin-top: 1.5rem; background: var(--paper); color: var(--ink);
+  font-size: 15px; font-weight: 700; text-decoration: none; padding: 0.75rem 1.15rem;
+  border-radius: 2px; transition: background-color 140ms ease;
+}
+.rd-partner__cta:hover { background: var(--saffron-soft); }
+
+/* ---- footer ------------------------------------------------------------- */
+
+.rd-ft { background: var(--ink); color: #b6afa4; padding-block: 2.75rem 2.25rem; border-top: 2px solid var(--rule); }
+.rd-ft__wm { font-family: var(--font-rd-display), sans-serif; font-size: 22px; letter-spacing: -0.045em; color: var(--paper); display: block; }
+.rd-ft p { font-size: 13.5px; margin: 0.8rem 0 0; max-width: 44ch; }
+.rd-ft h3 { color: var(--paper); font-family: var(--font-rd-body), sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 0.65rem; }
+.rd-ft a { display: block; text-decoration: none; font-size: 14px; padding-block: 0.42rem; color: #b6afa4; }
+.rd-ft a:hover { color: var(--paper); }
+.rd-ft__soc { display: flex; gap: 0.8rem; margin-top: 1rem; }
+.rd-ft__soc a { display: inline-flex; align-items: center; min-height: 44px; font-size: 13.5px; border-bottom: 1px solid rgba(247,244,238,0.24); padding-block: 0; }
+.rd-legal { border-top: 1px solid rgba(247,244,238,0.16); margin-top: 2.25rem; padding-top: 1.4rem; }
+.rd-legal p { font-size: 12.5px; color: #a09a90; max-width: 92ch; }
+.rd-legal nav { display: flex; flex-wrap: wrap; gap: 0.3rem 1.1rem; margin-top: 0.7rem; }
+.rd-legal nav a { display: inline-flex; align-items: center; min-height: 40px; font-size: 12.5px; padding-block: 0; }
+
+@media (prefers-reduced-motion: reduce) { .rd * { transition-duration: 1ms !important; } }
