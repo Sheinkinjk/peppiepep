@@ -1,0 +1,161 @@
+/* =========================================================================
+   Phase 4 Part 1: the three signature concepts, side by side.
+
+   Loaded by /preview/identity only. Rides on the tokens home.css already
+   defines under .rl-h, so nothing new is introduced here except the layout
+   this comparison page needs.
+   ========================================================================= */
+
+.rl-i {
+  background: var(--canvas);
+  color: var(--ink);
+  min-height: 100vh;
+}
+
+/* A straight stroked line has no area, so a missing fill="none" is invisible
+   today and a filled blob the moment any path gains a curve. Guard it once. */
+.rl-i path[stroke] { fill: none; }
+.rl-i svg { display: block; }
+
+.rl-i-wrap { width: 100%; max-width: 1360px; margin-inline: auto; padding-inline: var(--gutter); }
+
+.rl-i-top { background: var(--field); color: #ffffff; padding-block: clamp(2rem, 4vw, 3rem); }
+.rl-i-top h1 { font-size: clamp(1.75rem, 3.6vw, var(--t11)); margin: 0 0 0.6rem; letter-spacing: -0.02em; }
+.rl-i-top p { margin: 0; max-width: 68ch; color: rgba(255, 255, 255, 0.86); font-size: var(--t5); }
+.rl-i-top code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  background: rgba(255, 255, 255, 0.12); padding: 0.1rem 0.35rem; border-radius: var(--r2);
+}
+
+/* ---- the three columns -------------------------------------------------- */
+
+.rl-i-cols { display: grid; gap: clamp(1.25rem, 2vw, 1.75rem); padding-block: clamp(2rem, 4vw, 3rem); }
+@media (min-width: 1080px) { .rl-i-cols { grid-template-columns: repeat(3, 1fr); align-items: start; } }
+
+.rl-i-col {
+  background: var(--surface); border-radius: var(--r7);
+  box-shadow: var(--e1); overflow: hidden;
+}
+.rl-i-col__h { padding: 1.1rem 1.25rem; border-bottom: 1px solid var(--rule); }
+.rl-i-col__k {
+  margin: 0 0 0.15rem; font-size: var(--t2); color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+.rl-i-col__n { margin: 0 0 0.4rem; font-size: var(--t8); letter-spacing: -0.015em; }
+.rl-i-col__i { margin: 0; color: var(--muted); font-size: var(--t3); line-height: 1.55; }
+
+.rl-i-block { padding: 1.25rem; border-bottom: 1px solid var(--rule); }
+.rl-i-block:last-child { border-bottom: 0; }
+.rl-i-block > h3 {
+  margin: 0 0 0.85rem; font-size: var(--t1); font-weight: 700;
+  color: var(--muted); letter-spacing: 0.04em; text-transform: uppercase;
+}
+.rl-i-block p { margin: 0; font-size: var(--t3); line-height: 1.6; color: var(--muted); }
+.rl-i-block p + p { margin-top: 0.6rem; }
+.rl-i-block strong { color: var(--ink); font-weight: 600; }
+
+/* ---- the three sizes, on one baseline ----------------------------------- */
+
+.rl-i-sizes { display: flex; align-items: flex-end; gap: 1.5rem; flex-wrap: wrap; }
+.rl-i-sz { text-align: center; }
+.rl-i-sz > span {
+  display: block; margin-top: 0.5rem; font-size: var(--t1); color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+/* the 16px test gets a ruled box the exact size of the mark, so "does it
+   muddy" is answered by looking rather than by me asserting it */
+.rl-i-sz--tiny > div {
+  display: inline-flex; padding: 6px; border: 1px dashed var(--rule); border-radius: var(--r2);
+}
+
+.rl-i-onfield { margin-top: 1rem; background: var(--field); border-radius: var(--r5); padding: 1rem; display: flex; gap: 1.25rem; align-items: center; }
+
+/* ---- lockups ------------------------------------------------------------ */
+
+.rl-i-lock { display: flex; align-items: center; gap: 0.7rem; }
+.rl-i-wm {
+  font-size: var(--t8); font-weight: 700; letter-spacing: -0.03em;
+  color: var(--field); white-space: nowrap;
+}
+.rl-i-lock__w { display: flex; flex-direction: column; gap: 0.3rem; }
+.rl-i-lock__rule { display: block; height: 3px; background: var(--rule); border-radius: var(--rpill); position: relative; }
+.rl-i-lock__rule i { position: absolute; inset-block: -1px; inset-inline-start: 0; background: var(--action); border-radius: var(--rpill); }
+
+/* the step lockup: the mark is the baseline, so the word cannot be set
+   without it */
+.rl-i-lock--step { position: relative; display: block; height: 54px; width: 200px; }
+.rl-i-lock__step { position: absolute; inset: 0; width: 100%; height: 100%; }
+.rl-i-wm--hi { position: absolute; inset-inline-start: 4px; bottom: 40px; font-size: var(--t7); line-height: 1; }
+.rl-i-wm--lo { position: absolute; inset-inline-start: 96px; bottom: 14px; font-size: var(--t7); line-height: 1; }
+
+/* the punch lockup: the hole is the word space */
+.rl-i-punch {
+  display: inline-block; width: 0.42em; height: 0.42em; margin-inline: 0.3em;
+  border-radius: 50% 0 0 50%; background: var(--field);
+  vertical-align: 0.06em;
+}
+
+/* ---- section markers ---------------------------------------------------- */
+
+.rl-i-rule { display: block; position: relative; height: 10px; }
+.rl-i-rule__hair { position: absolute; inset-block-start: 4px; inset-inline: 0; height: 2px; background: var(--rule); }
+.rl-i-rule__mark { position: absolute; inset-block-start: 0; inset-inline-start: 32%; width: 22%; height: 10px; background: var(--action); border-radius: var(--r1); }
+.rl-i-steprule { width: 100%; height: 14px; }
+.rl-i-punchrule { display: flex; align-items: center; gap: 8px; }
+.rl-i-punchrule i { flex: 1; height: 2px; background: var(--rule); }
+.rl-i-punchrule b {
+  width: 8px; height: 15px; border-radius: 999px 0 0 999px;
+  background: var(--field);
+}
+/* the rule is heavier up to the punch and hairline after it: the punch is
+   where reading stopped, not a handle sitting on a track */
+.rl-i-punchrule i:first-child { height: 4px; background: var(--field); border-radius: var(--rpill); flex: 0 0 34%; }
+
+/* ---- artwork ------------------------------------------------------------ */
+
+.rl-i-art { margin: 0; border: 1px solid var(--rule); border-radius: var(--r5); overflow: hidden; }
+.rl-i-art svg { width: 100%; height: auto; }
+.rl-i-og { width: 100%; height: auto; border: 1px solid var(--rule); border-radius: var(--r4); }
+
+.rl-i-empty {
+  border: 1px solid var(--rule); border-radius: var(--r5);
+  padding: 1.1rem; text-align: center; background: var(--canvas);
+}
+.rl-i-empty svg { width: 108px; height: auto; margin-inline: auto; }
+.rl-i-empty p { margin: 0.5rem 0 0; font-size: var(--t2); color: var(--muted); }
+
+/* ---- the favicon test --------------------------------------------------- */
+
+.rl-i-tabs { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.rl-i-tab {
+  display: flex; align-items: center; gap: 0.4rem;
+  background: var(--canvas); border: 1px solid var(--rule);
+  border-radius: var(--r4) var(--r4) 0 0; padding: 0.4rem 0.7rem;
+  font-size: var(--t1); color: var(--muted); max-width: 168px;
+}
+.rl-i-tab span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* ---- scale table -------------------------------------------------------- */
+
+.rl-i-scale { width: 100%; border-collapse: collapse; font-size: var(--t2); }
+.rl-i-scale th, .rl-i-scale td {
+  text-align: start; padding: 0.42rem 0.5rem; border-bottom: 1px solid var(--rule);
+  vertical-align: top; line-height: 1.5;
+}
+.rl-i-scale th { color: var(--muted); font-weight: 600; white-space: nowrap; width: 7.5rem; }
+.rl-i-scale tr:last-child th, .rl-i-scale tr:last-child td { border-bottom: 0; }
+
+/* ---- the failure mode --------------------------------------------------- */
+
+.rl-i-bad {
+  background: #fdf6ec; border: 1px solid #e8d7b8; border-radius: var(--r4);
+  padding: 0.85rem 1rem;
+}
+.rl-i-bad p { color: #6b4f18; }
+.rl-i-bad h3 { color: #6b4f18 !important; }
+
+@media (max-width: 500px) {
+  .rl-i-sizes { gap: 1rem; }
+  .rl-i-lock--step { width: 176px; }
+  .rl-i-wm--lo { inset-inline-start: 84px; }
+}
