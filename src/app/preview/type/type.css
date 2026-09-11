@@ -1,0 +1,38 @@
+.ty {
+  background: #f7f4ee; color: #14120f; min-height: 100vh;
+  font-family: var(--f-archivo), system-ui, sans-serif; font-size: 15px; line-height: 1.55;
+}
+.ty h1, .ty h2, .ty h3 { color: #14120f; font-family: inherit; letter-spacing: -0.02em; margin: 0; line-height: 1.1; }
+.ty p { line-height: inherit; }
+.ty main > section, .ty section { animation: none !important; }
+.ty *:focus-visible { outline: 3px solid #a85d09; outline-offset: 3px; }
+.ty-w { max-width: 1320px; margin-inline: auto; padding-inline: 24px; }
+.ty-hd { border-bottom: 2px solid #14120f; padding-block: 2.5rem 1.75rem; }
+.ty-hd h1 { font-size: 30px; margin-bottom: 0.7rem; }
+.ty-hd p { margin: 0; color: #56504a; max-width: 80ch; }
+.ty-s { padding-block: 2.75rem; border-bottom: 1px solid #ded8cd; }
+.ty-s--alt { background: #f1ede4; }
+.ty-meta { display: flex; gap: 1rem; align-items: baseline; margin-bottom: 1.5rem; }
+.ty-n { font-size: 13px; color: #766f66; font-variant-numeric: tabular-nums; }
+.ty-meta h2 { font-size: 22px; }
+.ty-by { margin: 0.25rem 0 0; color: #56504a; font-size: 13.5px; }
+.ty-spec { background: #ffffff; border: 2px solid #14120f; padding: clamp(1.25rem, 2.6vw, 2.25rem); }
+.ty-h1 {
+  font-size: clamp(38px, 6.6vw, 88px); line-height: 0.9; margin: 0 0 1.5rem;
+  text-wrap: balance;
+}
+.ty-para { font-size: 17px; color: #56504a; max-width: 62ch; margin: 0 0 1rem; }
+.ty-small { font-size: 14px; color: #56504a; max-width: 78ch; margin: 0 0 0.6rem; }
+.ty-notes { display: grid; gap: 1.25rem 2rem; margin-top: 1.5rem; }
+@media (min-width: 900px) { .ty-notes { grid-template-columns: repeat(3, 1fr); } }
+.ty-notes h3 { font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: #766f66; margin-bottom: 0.35rem; }
+.ty-notes p { margin: 0; font-size: 14px; color: #56504a; }
+.ty-comm { border-top: 1px solid #ded8cd; padding-block: 1.25rem; }
+.ty-comm h3 { font-size: 19px; }
+.ty-comm p { margin: 0.3rem 0 0; font-size: 14.5px; color: #56504a; max-width: 76ch; }
+.ty-price { color: #7d4405 !important; font-weight: 600; }
+.t-schibsted { font-family: var(--f-schibsted), sans-serif; }
+.t-instrument { font-family: var(--f-instrument), sans-serif; }
+.t-madefor { font-family: var(--f-madefor), sans-serif; }
+.t-fraunces { font-family: var(--f-fraunces), serif; font-variation-settings: "SOFT" 0, "WONK" 1; }
+.t-anybody { font-family: var(--f-anybody), sans-serif; font-variation-settings: "wdth" 100; }

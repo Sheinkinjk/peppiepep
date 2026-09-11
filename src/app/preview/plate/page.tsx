@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { publicSans } from "../legacy-font";
 import { Public_Sans } from "next/font/google";
 import "./plate.css";
 import { PlateReadout } from "@/components/preview/PlateReadout";

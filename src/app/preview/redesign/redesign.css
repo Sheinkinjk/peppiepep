@@ -95,10 +95,16 @@
 
 .rd-lede { font-size: clamp(17px, 1.5vw, 20px); color: var(--ink-2); margin: 0; max-width: 56ch; }
 .rd-body { font-size: 15.5px; color: var(--ink-2); margin: 0; }
+/* --ink-3 clears AA on --paper (4.52) but NOT on --paper-2, where the rebate
+   ladder's caption sits: 4.24. The caption is the one place .rd-cap lands on
+   the tinted ground, so the class carries the safe value and --ink-3 is left
+   for placeholders on --paper only. */
 .rd-cap {
-  font-size: 12px; letter-spacing: 0.02em; color: var(--ink-3);
+  font-size: 12px; letter-spacing: 0.02em; color: var(--ink-2);
   font-variant-numeric: tabular-nums lining-nums;
 }
+/* on the ink ground the light-ground value is 3.77; the footer has its own. */
+.rd-ft .rd-cap, .rd-legal .rd-cap { color: #b6afa4; }
 /* the kicker. Sentence case, not tracked caps: tracked caps above a heading
    is the eyebrow tell. This is a small-caps-weight label, set in the body
    face at body size, and it names a category rather than decorating. */
@@ -382,3 +388,120 @@
 .rd-legal nav a { display: inline-flex; align-items: center; min-height: 40px; font-size: 12.5px; padding-block: 0; }
 
 @media (prefers-reduced-motion: reduce) { .rd * { transition-duration: 1ms !important; } }
+
+/* the row header is a th, so it needs the td's typography rather than the
+   thead's */
+.rd-tbl tbody th {
+  font-weight: 400; text-align: start; vertical-align: top;
+  padding: clamp(1rem, 1.9vw, 1.5rem) var(--gut) clamp(1rem, 1.9vw, 1.5rem) 0;
+  border-bottom: 1px solid var(--hair);
+}
+.rd-tbl tbody tr:last-child th { border-bottom: 2px solid var(--rule); }
+@media (max-width: 780px) {
+  .rd-tbl tbody th { display: block; width: 100%; border: 0; padding: 0.2rem 0 0.5rem; }
+}
+
+/* =========================================================================
+   THE COMB
+   ========================================================================= */
+
+/* ---- grid: explicit column starts, only where the grid HAS that column ---
+   These were inline `gridColumnStart: 7` on three sections. Below 900px the
+   grid drops to 6 tracks and below 560px to 2, so column 7 does not exist and
+   the browser created implicit tracks — three headings measured 24px wide at
+   390px. Starts now apply only at the width where the column is real. */
+@media (min-width: 900px) {
+  .start7 { grid-column-start: 7; }
+  .start6 { grid-column-start: 6; }
+}
+
+/* ---- vertical rhythm: deliberate, not one value repeated -----------------
+   Before: eight of eleven sections ran 36/36 at 390 and 72/72 at 1440, which
+   is a cycle rather than a rhythm. Now the page breathes in and out — the
+   table is pulled tight to the hero above it, the two "think about it"
+   sections open up, and the closing pair tightens again. */
+.rd-sec--tight { padding-block: clamp(1.5rem, 2.8vw, 2.5rem); }
+.rd-sec--wide  { padding-block: clamp(3.25rem, 6vw, 5.5rem); }
+
+.rd-balance { text-wrap: balance; }
+/* every heading on the page balances, so no heading drops a single word */
+.rd h1, .rd h2, .rd h3 { text-wrap: balance; }
+
+/* ---- THE SCALE-RULE BREAK ------------------------------------------------ */
+.rd-feat__fig { margin: 0 0 0.9rem; display: flex; align-items: baseline; gap: 0.7rem; flex-wrap: wrap; }
+.rd-feat__amt {
+  font-family: var(--font-rd-display), sans-serif;
+  font-size: clamp(40px, 5vw, 64px);      /* larger than the 28px brand name */
+  letter-spacing: -0.045em; line-height: 0.9; color: var(--saffron-deep);
+  font-variant-numeric: tabular-nums lining-nums;
+}
+.rd-feat__amtl { font-size: 14.5px; color: var(--ink-2); max-width: 24ch; }
+
+/* ---- interaction: timing and easing chosen, not defaulted ---------------
+   Two curves, used consistently. Entering a state is quick and decelerating
+   (the reader caused it, so it should feel immediate); leaving is slower and
+   accelerating, so nothing snaps back. Nothing lifts. */
+.rd { --ease-in-: cubic-bezier(0.16, 0.84, 0.44, 1); --ease-out-: cubic-bezier(0.4, 0, 1, 1); }
+.rd-act, .rd-feat__cta, .rd-btn, .rd-hd__cta, .rd-partner__cta {
+  transition: background-color 260ms var(--ease-out-), color 260ms var(--ease-out-), border-color 260ms var(--ease-out-);
+}
+.rd-act:hover, .rd-feat__cta:hover, .rd-btn:hover:not(:disabled),
+.rd-hd__cta:hover, .rd-partner__cta:hover {
+  transition-duration: 120ms; transition-timing-function: var(--ease-in-);
+}
+.rd-act:active, .rd-feat__cta:active, .rd-btn:active,
+.rd-hd__cta:active, .rd-partner__cta:active { transform: translateY(1px); transition-duration: 40ms; }
+.rd-bd__n, .rd-cmp__t, .rd-cat__h .rd-d3 { transition: color 200ms var(--ease-out-); }
+.rd-bd a:hover .rd-bd__n, .rd-cmp a:hover .rd-cmp__t, .rd-cat__h:hover .rd-d3 { transition-duration: 90ms; }
+.rd-pop a, .rd-biz a, .rd-cat__l a, .rd-sechd a { transition: border-color 200ms var(--ease-out-); }
+.rd-pop a:hover, .rd-biz a:hover, .rd-cat__l a:hover, .rd-sechd a:hover { transition-duration: 90ms; }
+
+/* ---- THE TABLE AT 390: a designed record, not a stacked table -----------
+   Before: every cell became a full-width block, each record ran 470px tall,
+   and the saffron offer spanned the full measure so it out-shouted the brand
+   even though it was the smaller type. Now the record is a two-column grid —
+   the logo well and the identity on one line, the offer right-aligned against
+   the brand so the size relationship is legible, then the reasoning, then the
+   actions on one row.
+   ------------------------------------------------------------------------ */
+@media (max-width: 780px) {
+  .rd-tbl tbody tr {
+    display: grid; grid-template-columns: 56px 1fr auto;
+    column-gap: 0.9rem; row-gap: 0.5rem; align-items: baseline;
+    padding-block: 1.5rem;
+  }
+  .rd-tbl tbody th { display: contents; }
+  .rd-tbl tbody th .rd-bd { display: contents; }
+  .rd-tbl tbody th .rd-bd__well { grid-column: 1; grid-row: 1; align-self: center; }
+  .rd-tbl tbody th .rd-bd > a { grid-column: 2; grid-row: 1; }
+  .rd-tbl tbody td.rd-col-offer { grid-column: 3; grid-row: 1; text-align: end; justify-self: end; }
+  .rd-tbl tbody td.rd-col-offer .rd-offer { display: block; }
+  .rd-tbl tbody td.rd-col-why { grid-column: 1 / -1; grid-row: 2; }
+  .rd-tbl tbody td.rd-col-act { grid-column: 1 / -1; grid-row: 3; text-align: start; }
+  /* The copy control stays in the offer cell. An earlier pass hid it here and
+     expected it to reappear beside the CTA — CSS cannot move a node across
+     table cells, so it simply vanished at 390px, which is where discount
+     traffic actually needs it. It sits under the offer, right-aligned with it,
+     and keeps a 44px target. */
+  .rd-tbl tbody td.rd-col-act { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
+  .rd-tbl tbody td.rd-col-offer .rd-copy { margin-top: 0.5rem; min-height: 44px; }
+  /* one 2px rule at the foot of the object, not two stacked */
+  .rd-tbl tbody tr:last-child { border-bottom: 2px solid var(--rule); }
+  .rd-tbl tbody tr:last-child th, .rd-tbl tbody tr:last-child td { border-bottom: 0; }
+  .rd-offer { font-size: 16px; }
+  .rd-bd__n { font-size: 22px; }   /* brand still outranks the offer */
+}
+
+/* ---- the footer, designed rather than inherited -------------------------
+   It is the largest block of type on the page. Before it was four equal
+   columns of 14px links. Now the identity column is given real width and a
+   rule of its own, the link columns are set at 13.5px with tighter leading so
+   they read as an index rather than as navigation, and the legal block sits
+   on its own measure at the bottom.
+   ------------------------------------------------------------------------ */
+.rd-ft__id { border-bottom: 1px solid rgba(247,244,238,0.18); padding-bottom: 1.5rem; margin-bottom: 1.75rem; }
+@media (min-width: 860px) { .rd-ft__id { border-bottom: 0; border-inline-end: 1px solid rgba(247,244,238,0.18); padding-inline-end: 2rem; padding-bottom: 0; margin-bottom: 0; } }
+.rd-ft h3 { color: #8d867c; }
+.rd-ft a { font-size: 13.5px; padding-block: 0.34rem; }
+.rd-ft__wm { margin-bottom: 0.9rem; }
+.rd-legal { margin-top: 2.75rem; }

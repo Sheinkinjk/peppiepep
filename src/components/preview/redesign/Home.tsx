@@ -44,7 +44,7 @@ function Hero() {
           </h1>
         </div>
         <div className="c7">
-          <p className="rd-lede">{hero.lede}</p>
+          <p className="rd-lede rd-balance">{hero.lede}</p>
           <p className="rd-pop">
             <span className="rd-pop__l">{hero.popularLabel}</span>
             {hero.popular.map((p) => <Link key={p.href} href={p.href}>{p.label}</Link>)}
@@ -77,6 +77,17 @@ function Feature() {
                   <span className="rd-d3" style={{ display: "block" }}>{feature.brand}</span>
                 </span>
               </div>
+              {/* THE SCALE-RULE BREAK. Everywhere else the brand name outranks
+                  the offer, because the brand is what we vouch for and the
+                  offer is the merchant's claim. Here it is inverted: $500 is
+                  set larger than "Apollo Energy Group". Reasoning in the
+                  report — this card exists because of the number, the number
+                  is the thing that is ours rather than Apollo's, and obeying
+                  the rule buried it at 15.5px inside a paragraph. */}
+              <p className="rd-feat__fig">
+                <span className="rd-feat__amt">$500</span>
+                <span className="rd-feat__amtl">off your quote, on top of the federal rebate</span>
+              </p>
               <p className="rd-body" style={{ maxWidth: "48ch" }}>{feature.body}</p>
               <Link href={feature.href} className="rd-feat__cta">{feature.cta}</Link>
             </div>
@@ -102,7 +113,7 @@ function Trust() {
 
 function Picks({ lead }: { lead?: boolean }) {
   return (
-    <section className="rd-sec" aria-labelledby="rd-picks">
+    <section className="rd-sec rd-sec--tight" aria-labelledby="rd-picks">
       <div className="rd-w">
         <div className="rd-sechd">
           <h2 id="rd-picks" className={lead ? "rd-d2 rd-optical" : "rd-d2 rd-optical"}>{picks.heading}</h2>
@@ -119,7 +130,7 @@ function Picks({ lead }: { lead?: boolean }) {
 
 function Categories() {
   return (
-    <section className="rd-sec" aria-labelledby="rd-cats">
+    <section className="rd-sec rd-sec--wide" aria-labelledby="rd-cats">
       <div className="rd-w">
         <h2 id="rd-cats" className="rd-d2 rd-optical" style={{ marginBottom: "1.5rem" }}>{categories.heading}</h2>
         <div className="rd-cats">
@@ -159,12 +170,12 @@ function ComingSoon() {
 
 function How() {
   return (
-    <section className="rd-sec rd-rule-1" aria-labelledby="rd-how">
+    <section className="rd-sec rd-sec--wide rd-rule-1" aria-labelledby="rd-how">
       <div className="rd-w rd-g rd-how">
         <div className="c5">
           <h2 id="rd-how" className="rd-d2 rd-optical">{how.heading}</h2>
         </div>
-        <div className="c6" style={{ gridColumnStart: 7 }}>
+        <div className="c6 start7">
           {how.paras.map((p) => <p className="rd-body" key={p.slice(0, 24)} style={{ maxWidth: "62ch" }}>{p}</p>)}
           <ul>{how.bullets.map((b) => <li key={b}>{b}</li>)}</ul>
         </div>
@@ -175,7 +186,7 @@ function How() {
 
 function Comparisons() {
   return (
-    <section className="rd-sec" aria-labelledby="rd-cmp">
+    <section className="rd-sec rd-sec--tight" aria-labelledby="rd-cmp">
       <div className="rd-w">
         <div className="rd-sechd" style={{ marginBottom: "1.25rem" }}>
           <h2 id="rd-cmp" className="rd-d2 rd-optical">{comparisons.heading}</h2>
@@ -201,7 +212,7 @@ function Faqs() {
         <div className="c4">
           <h2 id="rd-faq" className="rd-d2 rd-optical">{faqs.heading}</h2>
         </div>
-        <div className="c7 rd-faq" style={{ gridColumnStart: 6 }}>
+        <div className="c7 rd-faq start6">
           {faqs.items.map((f) => (
             <details key={f.q}>
               <summary>
@@ -219,12 +230,12 @@ function Faqs() {
 
 function News() {
   return (
-    <section className="rd-news rd-sec" aria-labelledby="rd-news">
+    <section className="rd-news rd-sec rd-sec--wide" aria-labelledby="rd-news">
       <div className="rd-w rd-g">
         <div className="c6">
           <h2 id="rd-news" className="rd-d2 rd-optical">{newsletter.heading}</h2>
         </div>
-        <div className="c6" style={{ gridColumnStart: 7 }}>
+        <div className="c6 start7">
           <p className="rd-body" style={{ maxWidth: "54ch" }}>{newsletter.body}</p>
           <NewsletterRd />
         </div>

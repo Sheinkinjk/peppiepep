@@ -1061,6 +1061,30 @@ export const PAGE_DATES: Record<string, PageDates> = {
   "/preview/plate": {
     "published": "2026-09-10",
     "updated": "2026-09-10"
+  },
+  "/preview/final/a": {
+    "published": "2026-09-11",
+    "updated": "2026-09-11"
+  },
+  "/preview/final/b": {
+    "published": "2026-09-11",
+    "updated": "2026-09-11"
+  },
+  "/preview/final/c": {
+    "published": "2026-09-11",
+    "updated": "2026-09-11"
+  },
+  "/preview/final": {
+    "published": "2026-09-11",
+    "updated": "2026-09-11"
+  },
+  "/preview/redesign/a": {
+    "published": "2026-09-11",
+    "updated": "2026-09-11"
+  },
+  "/preview/redesign/b": {
+    "published": "2026-09-11",
+    "updated": "2026-09-11"
   }
 };
 

@@ -64,7 +64,7 @@ export function PicksTable() {
             <th scope="col" className="rd-col-brand">Provider</th>
             <th scope="col" className="rd-col-offer">Current offer</th>
             <th scope="col" className="rd-col-why">Why it is here</th>
-            <th scope="col" className="rd-col-act">&nbsp;</th>
+            <th scope="col" className="rd-col-act"><span className="rd-sr">Go to the offer page</span></th>
           </tr>
         </thead>
         <tbody>
@@ -73,7 +73,7 @@ export function PicksTable() {
             const s = code ? st[code] ?? "idle" : "idle";
             return (
               <tr key={p.brand}>
-                <td className="rd-col-brand">
+                <th scope="row" className="rd-col-brand">
                   <span className="rd-bd">
                     <span className="rd-bd__well">
                       {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -85,7 +85,7 @@ export function PicksTable() {
                       <span className="rd-bd__n">{p.brand}</span>
                     </Link>
                   </span>
-                </td>
+                </th>
                 <td className="rd-col-offer">
                   <span className="rd-offer">{p.offer}</span>
                   {code ? (

@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Public_Sans } from "next/font/google";
 import "./preview.css";
 import { PreviewTools } from "@/components/preview/PreviewTools";
 
@@ -13,12 +12,9 @@ import { PreviewTools } from "@/components/preview/PreviewTools";
  * affected.
  */
 
-const publicSans = Public_Sans({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-rl-public-sans",
-  weight: ["400", "500", "600"],
-});
+/* Public Sans moved to ./legacy-font and imported by the three routes that
+   render it. Loading it here preloaded 26KB on every preview route, including
+   the ones that never paint a glyph with it. */
 
 /* The display face is loaded per variant, in each variant's own page, so a
    reader on A never downloads B's grotesque and vice versa. */
@@ -34,7 +30,7 @@ export default function PreviewLayout({
 }) {
   return (
     <div
-      className={`rl-preview ${publicSans.variable}`}
+      className="rl-preview"
     >
       <PreviewTools />
       {children}

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { publicSans } from "../legacy-font";
 import Link from "next/link";
 import "../home.css";
 import {
@@ -23,6 +24,7 @@ export const metadata: Metadata = {
  */
 export default function HomeB() {
   return (
+    <div className={publicSans.variable}>
     <div className="rl-h rl-shell2">
       <Header2 />
 
@@ -99,6 +101,7 @@ export default function HomeB() {
       </main>
 
       <Footer2 />
+    </div>
     </div>
   );
 }

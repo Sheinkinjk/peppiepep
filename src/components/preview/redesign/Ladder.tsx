@@ -22,29 +22,38 @@
 export function Ladder() {
   return (
     <figure style={{ margin: 0 }}>
-      <svg viewBox="0 0 360 196" role="img"
-        aria-label="A quote, reduced first by the federal rebate and then by the $500 Refer Labs discount. Schematic, not to scale.">
-        {/* stage 1: the quote, whole */}
-        <text x="0" y="16" fontSize="11.5" fill="#766f66">Installed quote</text>
-        <rect x="0" y="24" width="360" height="26" fill="#14120f" />
+      <svg viewBox="0 0 360 230" role="img"
+        aria-label="One installed quote, cut twice: first by the federal rebate, then by the $500 Refer Labs discount. Schematic, not to scale.">
+        {/* ONE bar, cut twice. The earlier version drew three separate bars,
+            which read as a chart. A single bar losing two pieces reads as
+            something happening to your quote, which is what the copy says. */}
 
-        {/* stage 2: the federal rebate comes off */}
-        <text x="0" y="80" fontSize="11.5" fill="#766f66">After the federal rebate</text>
-        <rect x="0" y="88" width="246" height="26" fill="#14120f" />
-        <rect x="246" y="88" width="114" height="26" fill="none" stroke="#ded8cd" strokeWidth="1.5" strokeDasharray="3 3" />
-        <text x="252" y="105" fontSize="10.5" fill="#766f66">rebate</text>
+        {/* the quote, full width, with the two cuts marked on it */}
+        <text x="0" y="14" fontSize="11.5" fill="#56504a">Your installed quote</text>
+        <rect x="0" y="22" width="360" height="30" fill="#14120f" />
 
-        {/* stage 3: the $500, applied on top */}
-        <text x="0" y="144" fontSize="11.5" fill="#766f66">After the Refer Labs discount</text>
-        <rect x="0" y="152" width="196" height="26" fill="#14120f" />
-        <rect x="196" y="152" width="50" height="26" fill="#a85d09" />
-        <rect x="246" y="152" width="114" height="26" fill="none" stroke="#ded8cd" strokeWidth="1.5" strokeDasharray="3 3" />
-        <text x="200" y="169" fontSize="11.5" fill="#f7f4ee" fontWeight="700"
-          style={{ fontFamily: "var(--font-rd-display), sans-serif", letterSpacing: "-0.02em" }}>$500</text>
+        {/* cut 1 — the federal rebate. Ruled off, not coloured: it is not ours. */}
+        <line x1="246" y1="14" x2="246" y2="122" stroke="#14120f" strokeWidth="1" strokeDasharray="2 3" />
+        <text x="252" y="72" fontSize="11" fill="#56504a">less the</text>
+        <text x="252" y="86" fontSize="11" fill="#56504a">federal rebate</text>
 
-        {/* the cut line: where the second deduction begins, carried down */}
-        <line x1="246" y1="50" x2="246" y2="152" stroke="#ded8cd" strokeWidth="1" />
-        <line x1="196" y1="114" x2="196" y2="152" stroke="#a85d09" strokeWidth="1" />
+        {/* cut 2 — the $500. Saffron, because it is the figure we read. */}
+        <line x1="196" y1="92" x2="196" y2="160" stroke="#a85d09" strokeWidth="1.5" />
+
+        {/* what is left, with the two cuts lifted off and set beside it */}
+        <text x="0" y="114" fontSize="11.5" fill="#56504a">What you pay</text>
+        <rect x="0" y="122" width="196" height="30" fill="#14120f" />
+        <rect x="196" y="122" width="50" height="30" fill="#a85d09" />
+        <rect x="246" y="122" width="114" height="30" fill="none" stroke="#ded8cd" strokeWidth="1.5" strokeDasharray="3 3" />
+
+        {/* the amount, sitting on its own cut, with a tick that overshoots the
+            rule by 4px so the mark reads as drawn rather than snapped */}
+        <line x1="196" y1="160" x2="246" y2="160" stroke="#a85d09" strokeWidth="2" />
+        <line x1="196" y1="156" x2="196" y2="168" stroke="#a85d09" strokeWidth="2" />
+        <line x1="246" y1="156" x2="246" y2="168" stroke="#a85d09" strokeWidth="2" />
+        <text x="196" y="192" fontSize="30" fontWeight="700" fill="#a85d09"
+          style={{ fontFamily: "var(--font-rd-display), sans-serif", letterSpacing: "-0.035em" }}>$500</text>
+        <text x="196" y="212" fontSize="11" fill="#56504a">off, on top of the rebate</text>
       </svg>
       <figcaption className="rd-cap" style={{ marginTop: "0.7rem" }}>
         Schematic, not to scale. The rebate varies with system size; $500 is the
