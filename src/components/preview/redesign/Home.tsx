@@ -59,6 +59,55 @@ function Hero() {
   );
 }
 
+/* F2's lead: the H1 reduced to one line so the table clears the fold. Same
+   words, set smaller and on a single measure. */
+function HeroCompact() {
+  return (
+    <section className="rd-hero rd-hero--compact">
+      <div className="rd-w rd-g">
+        <div className="c7">
+          <h1 className="rd-d2 rd-optical rd-hang">{hero.h1a} {hero.h1b}</h1>
+          <p className="rd-lede rd-balance" style={{ marginTop: "0.9rem" }}>{hero.lede}</p>
+        </div>
+        <div className="c5 start8 rd-hero__aside">
+          <p className="rd-pop" style={{ marginTop: 0 }}>
+            <span className="rd-pop__l">{hero.popularLabel}</span>
+            {hero.popular.map((p) => <Link key={p.href} href={p.href}>{p.label}</Link>)}
+          </p>
+          <p className="rd-biz">
+            {hero.business.text} <Link href={hero.business.href}>{hero.business.linkText}</Link>
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* F3's lead: the proposition stated as a fact. The date is the largest thing
+   on the page and the sentence under it is the one the live page already runs
+   above the table. No new claim is made. */
+function DateLead() {
+  return (
+    <section className="rd-datelead">
+      <div className="rd-w rd-g">
+        <div className="c8">
+          <p className="rd-datelead__k">Oldest reading in the table below</p>
+          <p className="rd-datelead__d">{READ}</p>
+        </div>
+        <div className="c4 rd-datelead__s">
+          <p className="rd-body">
+            {picks.noteBefore.replace(/,\s*the oldest of them on\s*$/, ".")}
+          </p>
+          <p className="rd-pop" style={{ marginTop: "1rem" }}>
+            <span className="rd-pop__l">{hero.popularLabel}</span>
+            {hero.popular.map((p) => <Link key={p.href} href={p.href}>{p.label}</Link>)}
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Feature() {
   return (
     <section className="rd-sec" style={{ paddingBlockStart: 0 }}>
@@ -260,7 +309,7 @@ function Partner() {
 
 /* ---- page --------------------------------------------------------------- */
 
-export function Home({ variant }: { variant: "a" | "b" }) {
+export function Home({ variant, lead = "claim" }: { variant: "a" | "b"; lead?: "claim" | "table" | "date" }) {
   return (
     <div className="rd">
       <header className="rd-hd rl-own">
@@ -289,10 +338,12 @@ export function Home({ variant }: { variant: "a" | "b" }) {
           </>
         ) : (
           <>
-            {/* B's re-sequencing. Reasons are in the report, one per move. */}
-            <Hero />
-            <Trust />
-            <Picks lead />
+            {/* B's re-sequencing. Reasons are in the report, one per move.
+                `lead` changes only what the page opens with; every section is
+                still present and the copy is identical across all three. */}
+            {lead === "claim" ? <><Hero /><Trust /><Picks lead /></> : null}
+            {lead === "table" ? <><HeroCompact /><Picks lead /><Trust /></> : null}
+            {lead === "date" ? <><DateLead /><Picks lead /><Hero /><Trust /></> : null}
             <Feature />
             <Categories />
             <ComingSoon />

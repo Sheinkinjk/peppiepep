@@ -29,6 +29,22 @@
   --hair: #ded8cd;
   --hair-2: #e9e4da;
 
+  /* THE BRAND TEAL, sampled from public/logo.svg, which runs #00b7d4 at the
+     top of its gradient to #003647 at the bottom. Two jobs, kept apart:
+
+       --teal        identity. Links, rules, the header, the wordmark.
+       --saffron     verification ONLY. Dates and figures we checked.
+
+     The logo's own mid-tones are too light for text: #00b7d4 is 2.19:1 on
+     paper and #0088a6 is 3.77:1. --teal is that hue carried down to 4.54:1,
+     so it is the logo's colour and it is legible. --teal-bright is the
+     untouched logo cyan and is never used for text. */
+  --teal: #007a95;         /* on paper 4.54:1, white on it 4.98:1 */
+  --teal-deep: #003647;    /* flooded field, white on it 12.97:1 */
+  --teal-mid: #0088a6;     /* rules and fills only, never text */
+  --teal-bright: #00b7d4;  /* the logo cyan, decorative only */
+  --teal-soft: #e4f2f5;
+
   --saffron: #a85d09;      /* on paper 4.52:1 */
   --saffron-deep: #7d4405; /* on paper 7.08:1 */
   --saffron-soft: #f9ecdc;
@@ -104,7 +120,7 @@
   font-variant-numeric: tabular-nums lining-nums;
 }
 /* on the ink ground the light-ground value is 3.77; the footer has its own. */
-.rd-ft .rd-cap, .rd-legal .rd-cap { color: #b6afa4; }
+.rd-ft .rd-cap, .rd-legal .rd-cap { color: #a9c2c9; }
 /* the kicker. Sentence case, not tracked caps: tracked caps above a heading
    is the eyebrow tell. This is a small-caps-weight label, set in the body
    face at body size, and it names a category rather than decorating. */
@@ -123,7 +139,7 @@
 .rd-hd__g { display: flex; align-items: center; gap: 1rem; min-height: 66px; }
 .rd-wm {
   font-family: var(--font-rd-display), sans-serif; font-size: 20px;
-  letter-spacing: -0.045em; text-decoration: none; color: var(--ink); line-height: 1;
+  letter-spacing: -0.045em; text-decoration: none; color: var(--teal-deep); line-height: 1;
 }
 .rd-nav { display: none; margin-inline-start: auto; }
 @media (min-width: 1000px) { .rd-nav { display: flex; gap: 0.25rem; } }
@@ -133,7 +149,7 @@
 }
 .rd-nav__t::after {
   content: ""; position: absolute; inset-inline: 0.75rem 100%; inset-block-end: 0.2rem;
-  height: 2px; background: var(--ink); transition: inset-inline-end 170ms ease;
+  height: 2px; background: var(--teal); transition: inset-inline-end 170ms ease;
 }
 .rd-nav__t:hover::after, .rd-nav__t[aria-expanded="true"]::after { inset-inline-end: 0.75rem; }
 .rd-panel {
@@ -143,7 +159,7 @@
 }
 .rd-panel__g { padding-block: 1.5rem 1.75rem; }
 .rd-panel a { text-decoration: none; display: block; padding-block: 0.5rem; }
-.rd-panel a:hover .rd-panel__l { color: var(--saffron-deep); }
+.rd-panel a:hover .rd-panel__l { color: var(--teal); }
 .rd-panel__l { display: block; font-weight: 600; font-size: 15.5px; }
 .rd-panel__b { display: block; font-size: 13.5px; color: var(--ink-2); margin-top: 1px; }
 .rd-hd__cta {
@@ -152,7 +168,7 @@
   white-space: nowrap; transition: background-color 140ms ease;
 }
 @media (min-width: 1000px) { .rd-hd__cta { margin-inline-start: 1rem; } }
-.rd-hd__cta:hover { background: var(--saffron-deep); }
+.rd-hd__cta:hover { background: var(--teal); }
 /* the same nav, below 1000px: a scrolling rail. One tree, not two. */
 .rd-rail { display: flex; gap: 1.25rem; overflow-x: auto; scrollbar-width: none; border-top: 1px solid var(--hair); }
 .rd-rail::-webkit-scrollbar { display: none; }
@@ -186,7 +202,7 @@
   text-decoration: none; background: var(--ink); color: var(--paper);
   padding: 0.65rem 1.05rem; border-radius: 2px; transition: background-color 140ms ease;
 }
-.rd-feat__cta:hover { background: var(--saffron-deep); }
+.rd-feat__cta:hover { background: var(--teal); }
 /* the drawn artefact lives here */
 .rd-feat__r { border-top: 2px solid var(--rule); padding: clamp(1.25rem, 2.4vw, 1.85rem); background: var(--paper-2); }
 @media (min-width: 820px) { .rd-feat__r { border-top: 0; border-inline-start: 2px solid var(--rule); } }
@@ -248,7 +264,7 @@
   letter-spacing: -0.03em; line-height: 1; text-decoration: none; display: block;
   transition: color 140ms ease;
 }
-.rd-bd a:hover .rd-bd__n, .rd-bd a:focus-visible .rd-bd__n { color: var(--saffron-deep); }
+.rd-bd a:hover .rd-bd__n, .rd-bd a:focus-visible .rd-bd__n { color: var(--teal); }
 /* the offer: tabular, and smaller than the brand name it belongs to */
 .rd-offer {
   font-family: var(--font-rd-display), sans-serif; font-size: clamp(15px, 1.35vw, 18px);
@@ -293,7 +309,7 @@
 @media (min-width: 760px) { .rd-cats { grid-template-columns: 1fr 1fr; column-gap: calc(var(--gut) * 2); } }
 .rd-cat { padding-block: 1.4rem; border-top: 1px solid var(--hair); }
 .rd-cat__h { text-decoration: none; display: inline-block; }
-.rd-cat__h:hover .rd-d3 { color: var(--saffron-deep); }
+.rd-cat__h:hover .rd-d3 { color: var(--teal); }
 .rd-cat__b { margin: 0.45rem 0 0.7rem; font-size: 14.5px; color: var(--ink-2); max-width: 46ch; }
 .rd-cat__l { display: flex; flex-wrap: wrap; gap: 0.4rem 1.1rem; }
 .rd-cat__l a { font-size: 13.5px; font-weight: 600; text-decoration: none; border-bottom: 1.5px solid var(--hair); padding-bottom: 1px; }
@@ -321,7 +337,7 @@
 .rd-cmp a { display: block; padding-block: 1.15rem; border-top: 1px solid var(--hair); text-decoration: none; }
 .rd-cmp a:last-child { border-bottom: 1px solid var(--hair); }
 .rd-cmp__t { display: block; margin-top: 0.3rem; transition: color 140ms ease; }
-.rd-cmp a:hover .rd-cmp__t, .rd-cmp a:focus-visible .rd-cmp__t { color: var(--saffron-deep); }
+.rd-cmp a:hover .rd-cmp__t, .rd-cmp a:focus-visible .rd-cmp__t { color: var(--teal); }
 
 /* ---- FAQ ---------------------------------------------------------------- */
 
@@ -332,7 +348,7 @@
   display: flex; align-items: baseline; justify-content: space-between; gap: 1rem;
 }
 .rd-faq summary::-webkit-details-marker { display: none; }
-.rd-faq summary:hover .rd-d4 { color: var(--saffron-deep); }
+.rd-faq summary:hover .rd-d4 { color: var(--teal); }
 .rd-faq__i { flex: none; width: 14px; height: 14px; position: relative; }
 .rd-faq__i::before, .rd-faq__i::after {
   content: ""; position: absolute; background: var(--ink);
@@ -344,7 +360,7 @@
 
 /* ---- newsletter + partner ----------------------------------------------- */
 
-.rd-news { background: var(--saffron-soft); border-block: 2px solid var(--rule); }
+.rd-news { background: var(--teal-soft); border-block: 2px solid var(--rule); }
 .rd-form { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 1.1rem; }
 .rd-input {
   font: inherit; font-size: 16px; min-height: 48px; min-width: min(280px, 100%); flex: 1 1 240px;
@@ -356,25 +372,25 @@
   border: 2px solid var(--rule); border-radius: 2px; background: var(--ink); color: var(--paper);
   cursor: pointer; transition: background-color 140ms ease;
 }
-.rd-btn:hover:not(:disabled) { background: var(--saffron-deep); border-color: var(--saffron-deep); }
+.rd-btn:hover:not(:disabled) { background: var(--teal); border-color: var(--teal); }
 .rd-btn:disabled { opacity: 0.6; cursor: progress; }
 .rd-msg { margin: 0.65rem 0 0; font-size: 13.5px; font-weight: 600; min-height: 1.2em; }
 .rd-msg[data-tone="err"] { color: #8c1414; }
 .rd-msg[data-tone="ok"] { color: var(--saffron-deep); }
 
-.rd-partner { background: var(--ink); color: var(--paper); }
+.rd-partner { background: var(--teal-deep); color: var(--paper); }
 .rd-partner h2 { color: var(--paper); }
-.rd-partner p { color: #b6afa4; font-size: 16px; max-width: 58ch; margin: 0.9rem 0 0; }
+.rd-partner p { color: #a9c2c9; font-size: 16px; max-width: 58ch; margin: 0.9rem 0 0; }
 .rd-partner__cta {
   display: inline-block; margin-top: 1.5rem; background: var(--paper); color: var(--ink);
   font-size: 15px; font-weight: 700; text-decoration: none; padding: 0.75rem 1.15rem;
   border-radius: 2px; transition: background-color 140ms ease;
 }
-.rd-partner__cta:hover { background: var(--saffron-soft); }
+.rd-partner__cta:hover { background: var(--teal-soft); }
 
 /* ---- footer ------------------------------------------------------------- */
 
-.rd-ft { background: var(--ink); color: #b6afa4; padding-block: 2.75rem 2.25rem; border-top: 2px solid var(--rule); }
+.rd-ft { background: var(--teal-deep); color: #a9c2c9; padding-block: 2.75rem 2.25rem; border-top: 2px solid var(--rule); }
 .rd-ft__wm { font-family: var(--font-rd-display), sans-serif; font-size: 22px; letter-spacing: -0.045em; color: var(--paper); display: block; }
 .rd-ft p { font-size: 13.5px; margin: 0.8rem 0 0; max-width: 44ch; }
 .rd-ft h3 { color: var(--paper); font-family: var(--font-rd-body), sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 0.65rem; }
@@ -382,8 +398,8 @@
 .rd-ft a:hover { color: var(--paper); }
 .rd-ft__soc { display: flex; gap: 0.8rem; margin-top: 1rem; }
 .rd-ft__soc a { display: inline-flex; align-items: center; min-height: 44px; font-size: 13.5px; border-bottom: 1px solid rgba(247,244,238,0.24); padding-block: 0; }
-.rd-legal { border-top: 1px solid rgba(247,244,238,0.16); margin-top: 2.25rem; padding-top: 1.4rem; }
-.rd-legal p { font-size: 12.5px; color: #a09a90; max-width: 92ch; }
+.rd-legal { border-top: 1px solid rgba(228,242,245,0.2); margin-top: 2.25rem; padding-top: 1.4rem; }
+.rd-legal p { font-size: 12.5px; color: #93b0b8; max-width: 92ch; }
 .rd-legal nav { display: flex; flex-wrap: wrap; gap: 0.3rem 1.1rem; margin-top: 0.7rem; }
 .rd-legal nav a { display: inline-flex; align-items: center; min-height: 40px; font-size: 12.5px; padding-block: 0; }
 
@@ -410,9 +426,13 @@
    grid drops to 6 tracks and below 560px to 2, so column 7 does not exist and
    the browser created implicit tracks — three headings measured 24px wide at
    390px. Starts now apply only at the width where the column is real. */
+/* `.c6 { grid-column: span 6 }` sets start `span 6` and end `auto`. Adding
+   `grid-column-start: 7` replaced the start and left the end at auto, so the
+   element spanned ONE track: the "How Refer Labs compares services" body
+   measured 84px wide at 1440. The start and the span have to be set together. */
 @media (min-width: 900px) {
-  .start7 { grid-column-start: 7; }
-  .start6 { grid-column-start: 6; }
+  .start7 { grid-column: 7 / -1; }
+  .start6 { grid-column: 6 / -1; }
 }
 
 /* ---- vertical rhythm: deliberate, not one value repeated -----------------
@@ -499,9 +519,31 @@
    they read as an index rather than as navigation, and the legal block sits
    on its own measure at the bottom.
    ------------------------------------------------------------------------ */
-.rd-ft__id { border-bottom: 1px solid rgba(247,244,238,0.18); padding-bottom: 1.5rem; margin-bottom: 1.75rem; }
-@media (min-width: 860px) { .rd-ft__id { border-bottom: 0; border-inline-end: 1px solid rgba(247,244,238,0.18); padding-inline-end: 2rem; padding-bottom: 0; margin-bottom: 0; } }
-.rd-ft h3 { color: #8d867c; }
+.rd-ft__id { border-bottom: 1px solid rgba(228,242,245,0.22); padding-bottom: 1.5rem; margin-bottom: 1.75rem; }
+@media (min-width: 860px) { .rd-ft__id { border-bottom: 0; border-inline-end: 1px solid rgba(228,242,245,0.22); padding-inline-end: 2rem; padding-bottom: 0; margin-bottom: 0; } }
+.rd-ft h3 { color: #7fa3ac; }
 .rd-ft a { font-size: 13.5px; padding-block: 0.34rem; }
 .rd-ft__wm { margin-bottom: 0.9rem; }
 .rd-legal { margin-top: 2.75rem; }
+
+/* ---- F2: the compact lead ----------------------------------------------- */
+.rd-hero--compact { padding-block: clamp(1.5rem, 3vw, 2.25rem) clamp(1.25rem, 2vw, 1.75rem); }
+.rd-hero--compact .rd-d2 { font-size: clamp(26px, 3.4vw, 46px); }
+.rd-hero__aside { align-self: end; }
+@media (min-width: 900px) { .start8 { grid-column: 8 / -1; } }
+
+/* ---- F3: the date lead --------------------------------------------------
+   The date is set larger than anything else on the page, which is the scale
+   rule taken to its conclusion: the reading is the whole proposition. Saffron,
+   because saffron means verified. */
+.rd-datelead { padding-block: clamp(2rem, 5vw, 4rem) clamp(1.5rem, 3vw, 2.5rem); }
+.rd-datelead__k { margin: 0 0 0.75rem; font-size: 13px; font-weight: 600; color: var(--ink-2); }
+.rd-datelead__d {
+  margin: 0; font-family: var(--font-rd-display), sans-serif;
+  /* one line at every width. At 124px "17 August 2026" measured 830px in a
+     840px column and broke after "August", which read as a mistake. */
+  font-size: clamp(34px, 7.3vw, 104px); line-height: 0.9; letter-spacing: -0.05em;
+  color: var(--saffron-deep); font-variant-numeric: tabular-nums lining-nums;
+  margin-inline-start: -0.045em; white-space: nowrap;
+}
+.rd-datelead__s { align-self: end; border-top: 2px solid var(--rule); padding-top: 0.9rem; }
