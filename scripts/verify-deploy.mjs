@@ -62,7 +62,10 @@ const redirects = (() => {
     const body = code.slice(m.index, marks[i + 1]?.index ?? code.length);
     if (/\b(has|missing)\s*:/.test(body)) return;
     if (m[1].includes(":")) return; // patterned rules: not a single route to check
-    out.set(m[1], /permanent:\s*true/.test(body) ? 308 : 307);
+    // statusCode wins when set: the two 13 Sep 2026 merges use 301, and reading
+    // only `permanent` made this expect 307 and retry until it looked hung.
+    const explicitCode = body.match(/statusCode:\s*(\d{3})/)?.[1];
+    out.set(m[1], explicitCode ? Number(explicitCode) : /permanent:\s*true/.test(body) ? 308 : 307);
   });
   return out;
 })();
