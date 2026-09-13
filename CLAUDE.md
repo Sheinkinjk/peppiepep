@@ -148,7 +148,7 @@ Run this in order. Steps 1-3 are the ones that were repeatedly missed and cost r
 ### Measuring the site: two rules, both learned by getting them wrong
 
 **A surprisingly bad number gets checked against three pages by hand before it is
-reported.** Four measurement bugs have now produced numbers that were acted on:
+reported.** Five measurement bugs have now produced numbers that were acted on:
 
 | The number | What was actually wrong |
 |---|---|
@@ -156,6 +156,7 @@ reported.** Four measurement bugs have now produced numbers that were acted on:
 | "only 31% of pages are answer-first" | the window read h1-to-first-h2, so a page leading with the buyer's question as a heading scored zero. The real figure was 57% |
 | "31 dead affiliate links" | PartnerStack 404s on HEAD and 200s on a browser GET. Two were dead |
 | "68 pages fail answer-first" | the metric scored "pay nothing" and "no single price" as failures because they contain no digit, measuring punctuation rather than answers |
+| "Several pages compete for 'mosh review'" | GA4's page-title report lists a URL once for every title it carried inside the window. Titles were edited on 28 Aug and 5 Sep, so `/mosh-review` appeared as three "pages" and `/moshy-vs-juniper` as two. It read as cannibalisation. Run `git log -- src/lib/seo.ts` across the window before reading duplicate titles as competing pages |
 
 The tell is the same every time: the number is worse than the site feels. Three
 pages read by hand costs a few minutes and has caught every one of these.

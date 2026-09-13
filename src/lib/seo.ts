@@ -881,9 +881,16 @@ export const seoConfig = {
     keywords: ["retinol australia", "retinol vs prescription australia", "retinol strength australia", "prescription skincare australia", "how to get prescription skincare australia"],
   },
   ledFaceMask: {
-    title: "LED Face Masks Australia 2026: What They Cost, Compared | Refer Labs",
+    // SNIPPET FIX, 13 Sep 2026. Not part of the 5 Sep title test, which is seven
+    // other pages. Baseline in the GA4 export 14 Aug to 10 Sep: 515 impressions,
+    // 1 click, 0.19% CTR at position 6.7. The queries behind it ask for the
+    // Omnilux Contour Face price in Australian dollars, which this page carries
+    // (read at RY on 19 Aug 2026) and the old title did not. Caveat: many of those
+    // queries read like AI-mode fan-out ("price sale september 2026") that may not
+    // click whatever the title says. Measure on 13 Oct 2026: CTR at unchanged position.
+    title: "LED Face Masks Australia 2026: Omnilux Is AUD $470 Here | Refer Labs",
     description:
-      "LED face masks in Australia: the real AUD prices, why they cost more here than the US listing, what the wavelengths mean, and how to check a device is on the ARTG before buying.",
+      "The Omnilux Contour Face was AUD $470 at RY on 19 Aug 2026, against USD $395 on the brand's own site. Why the gap exists, and how to check the ARTG.",
     url: `${SITE_URL}/skin-and-beauty/led-face-mask-comparison-australia`,
     keywords: ["led face mask australia", "led face mask price australia", "omnilux australia price", "red light therapy mask australia", "best led face mask australia"],
   },

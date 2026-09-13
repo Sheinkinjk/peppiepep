@@ -3,6 +3,8 @@ import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
+import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
+import { BEEHIIV_URL, CARRD_URL } from "@/lib/affiliate-links";
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
 
 // Programs we've reviewed in depth, linked to our own pages (which carry the
@@ -396,6 +398,55 @@ export default function AffiliateProgramsAustraliaPage() {
               window is credited to you, and you are paid on the program's schedule, usually monthly once you clear a
               minimum threshold.
             </p>
+          </div>
+
+          {/* THE MONEY ACTION, added 13 Sep 2026. In the 28 days to 10 Sep this page
+              drew 2,762 impressions and 31 organic clicks, the largest pool on the
+              site, and every click was worth nothing: the only earning routes were a
+              review grid one hop away and an email signup. The paragraph above tells
+              the reader programs approve people who already have a newsletter or a
+              site, so the two tools that meet that requirement sit here, at the
+              moment the reader learns they need one. Direct tracked links from the
+              canonical constants, disclosure above them as check-disclosure-order
+              requires, and no price stated, so nothing here can go stale. The email
+              capture below stays: it serves the reader who already has a platform. */}
+          <div className="mt-8 rounded-2xl border border-[#e5e9e7] bg-white p-6 sm:p-7">
+            <h3 className="text-lg font-bold text-[#10251b]">No newsletter or site yet?</h3>
+            <p className="mt-2 text-[15px] leading-relaxed text-[#3d4b44]">
+              That is what a program checks first, so it is the thing to set up before you apply. These are the two tools
+              we have written up for exactly that job.
+            </p>
+            <AffiliateDisclosure compact partners={["beehiiv", "Carrd"]} className="mt-4" />
+            <div className="mt-5 grid gap-3 sm:grid-cols-2">
+              <div className="rounded-xl border border-[#e5e9e7] bg-[#fbfcfb] p-4">
+                <p className="text-sm font-bold text-[#10251b]">beehiiv</p>
+                <p className="mt-1 text-sm leading-relaxed text-[#3d4b44]">
+                  A newsletter platform. It also runs its own affiliate program, listed in the creator tools table below,
+                  so the list you build can earn from the tool it runs on.
+                </p>
+                <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2">
+                  <a href={BEEHIIV_URL} target="_blank" rel="nofollow sponsored" data-cta="hub-affiliate-beehiiv" className="nw-btn text-sm">
+                    Start a newsletter on beehiiv
+                    <ArrowRight className="h-4 w-4" />
+                  </a>
+                  <Link href="/beehiiv" className="nw-link text-sm">How beehiiv works</Link>
+                </div>
+              </div>
+              <div className="rounded-xl border border-[#e5e9e7] bg-[#fbfcfb] p-4">
+                <p className="text-sm font-bold text-[#10251b]">Carrd</p>
+                <p className="mt-1 text-sm leading-relaxed text-[#3d4b44]">
+                  A simple website builder, for a live site you can point an application at while the rest of your
+                  content catches up.
+                </p>
+                <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2">
+                  <a href={CARRD_URL} target="_blank" rel="nofollow sponsored" data-cta="hub-affiliate-carrd" className="nw-btn text-sm">
+                    Build a site on Carrd
+                    <ArrowRight className="h-4 w-4" />
+                  </a>
+                  <Link href="/carrd" className="nw-link text-sm">How Carrd works</Link>
+                </div>
+              </div>
+            </div>
           </div>
 
           <h2 className="mt-12 text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">

@@ -12,18 +12,21 @@ interface Program {
   category: string;
   commission: string;
   network: string;
+  /** Our own page about the product, which carries the tracked link. Set only
+   *  where a live, crediting link exists, checked on the rendered page 13 Sep 2026. */
+  href?: string;
 }
 
 const programs: Program[] = [
-  { name: "beehiiv", category: "Newsletter platform", commission: "Recurring share, commonly cited around 50% for the first year", network: "in-house" },
+  { name: "beehiiv", href: "/beehiiv", category: "Newsletter platform", commission: "Recurring share, commonly cited around 50% for the first year", network: "in-house" },
   { name: "Kit (formerly ConvertKit)", category: "Email / creator", commission: "Recurring share, commonly cited around 30% while the customer stays", network: "in-house" },
   { name: "ClickFunnels", category: "Funnel SaaS", commission: "Recurring share, commonly cited around 30%", network: "in-house" },
   { name: "Teachable", category: "Online courses", commission: "Recurring share, commonly cited around 30%", network: "Impact" },
   { name: "Thinkific", category: "Online courses", commission: "Recurring share, commonly cited around 30%", network: "PartnerStack" },
-  { name: "ActiveCampaign", category: "Marketing automation", commission: "Recurring share, commonly cited in the 20% to 30% range", network: "in-house" },
+  { name: "ActiveCampaign", href: "/activecampaign", category: "Marketing automation", commission: "Recurring share, commonly cited in the 20% to 30% range", network: "in-house" },
   { name: "GetResponse", category: "Email marketing", commission: "Recurring option commonly cited around 33%, or a one-off bounty", network: "in-house" },
   { name: "Systeme.io", category: "All-in-one SaaS", commission: "Recurring share, commonly cited around 40% to 60% for the life of the customer", network: "in-house" },
-  { name: "Leadpages", category: "Landing pages", commission: "Recurring share, commonly cited up to around 50%", network: "in-house / Impact" },
+  { name: "Leadpages", href: "/leadpages", category: "Landing pages", commission: "Recurring share, commonly cited up to around 50%", network: "in-house / Impact" },
   { name: "Cloudways", category: "Web hosting", commission: "Hybrid option with an ongoing recurring share on top of a slab", network: "in-house" },
   { name: "Fathom Analytics", category: "Privacy analytics", commission: "Recurring share, commonly cited around 25% for the life of the customer", network: "in-house" },
   { name: "NordVPN", category: "Security software", commission: "Recurring share on renewals, commonly cited around 30%", network: "in-house / Impact" },
@@ -153,7 +156,9 @@ export default function RecurringAffiliateProgramsPage() {
               <tbody>
                 {programs.map((p) => (
                   <tr key={p.name} className="border-b border-[#eef1ef] last:border-0 hover:bg-[#f5f8f6]">
-                    <td className="px-5 py-4 font-bold text-[#10251b]">{p.name}</td>
+                    <td className="px-5 py-4 font-bold text-[#10251b]">
+                      {p.href ? <Link href={p.href} className="nw-link">{p.name}</Link> : p.name}
+                    </td>
                     <td className="px-4 py-4 text-[#6e7b74]">{p.category}</td>
                     <td className="px-4 py-4 text-[#3d4b44]">{p.commission}</td>
                     <td className="px-5 py-4 text-[#6e7b74]">{p.network}</td>
@@ -236,9 +241,13 @@ export default function RecurringAffiliateProgramsPage() {
               </details>
             ))}
           </div>
+          {/* This line used to say the page "carries disclosed affiliate links". It
+              carried none. It now names the three programs whose rows link to a page
+              that does, which is the page's only earning route. */}
           <p className="mt-8 text-sm text-[#3d4b44]">
-            Refer Labs is independent and this page carries disclosed affiliate links. Program terms change, so verify
-            current details before relying on them.
+            Refer Labs may earn a commission from beehiiv, Leadpages and ActiveCampaign, three of the programs named
+            here, and their names link to our page about each. Program terms change, so verify current details before
+            relying on them.
           </p>
         </section>
       </main>
