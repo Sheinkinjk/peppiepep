@@ -33,7 +33,10 @@ import type { Fact, FactKind } from './types';
  * only where the URL belongs on the page as a public link. The three health
  * records read on 26 August were read off referral landing pages, so their URL
  * is named in the comment and left out of the field: it would render on /data
- * as an undisclosed affiliate link.
+ * as an undisclosed affiliate link. *
+ * NOT IN THIS LOG: claims awaiting verification. Those live in
+ * PENDING_VERIFICATION at the foot of this file, because they have no day a
+ * person read them, and a record without that day is not an observation.
  */
 export const FACTS: Fact[] = [
   // ── hair-loss ────────────────────────────────────────────────────────────
@@ -269,3 +272,64 @@ export function latest(subject: string, kind: FactKind): Fact | null {
 export function subjectsIn(hub: Fact['hub']): string[] {
   return Array.from(new Set(FACTS.filter((f) => f.hub === hub).map((f) => f.subject)));
 }
+
+// ─────────────────────────────────────────────────────────────────────────────
+
+/**
+ * NOT OBSERVATIONS. Claims the site makes that nobody at Refer Labs has read off
+ * a public page, logged so they are tracked rather than trusted.
+ *
+ * Kept out of FACTS on purpose. A Fact's `observedAt` is the day a person read
+ * the thing, and /data publishes FACTS as dated checks. These have no such day,
+ * so putting them in FACTS would publish an unverified claim as something we
+ * checked. Nothing imports this list: it is a register, not a source for any
+ * page, and it must stay that way.
+ *
+ * A claim leaves this list in one of three ways: verified against a public page
+ * (it becomes a Fact with a real `observedAt` and a `// Source:` comment),
+ * confirmed with the partner directly, or corrected on the pages making it.
+ *
+ * A missing public source is a sourcing gap, not proof an offer does not exist.
+ * The partner relationship is Jarred's to confirm; nothing on a page listed here
+ * changes until it is resolved.
+ */
+export interface PendingClaim {
+  id: string;
+  subject: string;
+  /** The claim as the site states it. */
+  claim: string;
+  /** Where the claim came from, and what it has not been verified against. */
+  source: string;
+  /** ISO date the claim was logged as pending. Not an observation date. */
+  loggedAt: string;
+  /** Pages making the claim at the time it was logged. */
+  pages: string[];
+  /** Places outside a page body that also make the claim: shared nav, metadata,
+   *  email templates. Found on rendered output and by search, not by page file. */
+  otherSurfaces?: string[];
+  /** Who is resolving it, and how. */
+  owner: string;
+}
+
+export const PENDING_VERIFICATION: PendingClaim[] = [
+  {
+    id: 'juniper-free-first-consultation-pending-2026-09-13',
+    subject: 'Juniper',
+    claim: 'Free first consultation when you start via our link.',
+    source: 'Juniper affiliate handbook, 6 August, not verified against a public page',
+    loggedAt: '2026-09-13',
+    pages: ['/best-weight-loss-telehealth-australia', '/juniper', '/moshy-alternatives', '/moshy-vs-juniper', '/weight-loss-guide'],
+    otherSurfaces: [
+      'src/lib/nav.ts: header nav note "Built for women, with a free first consultation", rendered on every page',
+      'src/lib/seo.ts: /juniper meta description, "A free first consultation for new patients through our link"',
+      'src/lib/weight-loss-guide-email.ts: the weight-loss guide email sent by /api/weight-loss-guide',
+    ],
+    owner: 'jarred, confirming with Juniper directly',
+    // Context, 13 Sep 2026. The claim entered /juniper on 6 Aug 2026 in commits
+    // 48f5eb6 and e2ee21f. A read of Juniper's public homepage on 13 Sep found
+    // the 30-day money-back guarantee, stated there for everyone, and no mention
+    // of a free consultation. The URL carrying the Refer Labs code could not be
+    // read by an automated browser, so what that link shows is unknown. /juniper
+    // is unchanged and stays in the 5 Sep title test while this is confirmed.
+  },
+];

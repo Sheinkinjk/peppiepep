@@ -161,6 +161,24 @@ reported.** Five measurement bugs have now produced numbers that were acted on:
 The tell is the same every time: the number is worse than the site feels. Three
 pages read by hand costs a few minutes and has caught every one of these.
 
+**Check what renders, not what the source says.** A shared template can already
+carry what you are about to add. One report on 13 Sep 2026 produced three wrong
+items from grepping page files. Eight solar pages "linking to no product page"
+render eight links each to `/apollo-energy-group` through the `ApolloGuide`
+shell, a fix chased for weeks that was already done. `/mens-health-telehealth-australia`
+"earning nothing" renders direct Moshy and Mosh links. The LED mask page "with no
+money action" routes through `/go/foreo-led-masks`, which a search for `_URL`
+constants never sees. Audit the rendered HTML: curl the live page, or read
+`.next/server/app` after a build.
+
+**A claim about a partner's real-world offer is not settled by what the repo does
+or does not contain.** The code only knows what someone typed into it. An offer
+that cannot be found on a public page is a sourcing gap, not proof it does not
+exist. Flag it and ask Jarred, who knows the partner. Log it in
+`PENDING_VERIFICATION` in `src/lib/facts/registry.ts`, never in `FACTS` (which
+`/data` publishes as dated checks), and change nothing on the page until it is
+resolved. First case: Juniper's free first consultation, 13 Sep 2026.
+
 **Before any before-and-after comparison, check whether the treatment group was
 touched inside the measurement window.** The Search Console join initially showed
 answer-first pages out-clicking the rest in three of four position bands. Then:
