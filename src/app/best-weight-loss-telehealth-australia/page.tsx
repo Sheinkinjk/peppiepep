@@ -14,8 +14,7 @@ import OfferSchema from "@/components/offers/OfferSchema";
 import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 export const metadata = generateSEOMetadata(seoConfig.bestWeightLossTelehealth);
 
-// No affiliate arrangement with Pilot, so it is a plain nofollow link. Juniper is an affiliate partner (sponsored) from July 2026.
-const PILOT_URL = "https://pilot.com.au/";
+// Juniper is an affiliate partner (sponsored) from July 2026; its link sits on /juniper only.
 
 const aff = (url: string, loc = "best-wl-telehealth") => ({
   href: url,
@@ -45,12 +44,11 @@ const itemListSchema = {
   "@context": "https://schema.org",
   "@type": "ItemList",
   name: "Best Weight Loss Telehealth Platforms Australia 2026",
-  description: "In-depth comparison of Australian weight loss telehealth platforms: Moshy, Juniper and Pilot. Treatment access, eligibility process and who each platform suits.",
-  numberOfItems: 3,
+  description: "In-depth comparison of Australian weight loss telehealth platforms: Moshy and Juniper. Treatment access, eligibility process and who each platform suits.",
+  numberOfItems: 2,
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Moshy", description: "Australian clinically-led telehealth weight management platform, open to anyone eligible. Online eligibility questionnaire, practitioner review, and treatment access where clinically appropriate. Subscription with home delivery.", url: `${SITE_URL}/moshy` },
     { "@type": "ListItem", position: 2, name: "Juniper", description: "Australian weight management program for women. Combines a medical program with health coaching and ongoing practitioner support. Premium subscription model.", url: `${SITE_URL}/juniper` },
-    { "@type": "ListItem", position: 3, name: "Pilot", description: "Men-focused telehealth from Eucalyptus, covering weight management alongside broader men's health.", url: PILOT_URL },
   ],
 };
 
@@ -267,12 +265,11 @@ function PlatformCard({
               alongside Moshy while carrying a link for Moshy alone, so the
               asymmetry is stated where the link is rather than as a banner
               above the article. */}
-          {isAffiliate && <EarningsBalanceNote earnFrom={name} noEarnFrom={["Juniper", "Pilot"]} /* PILOT-NON-PARTNER */ className="mt-1" />}
+          {isAffiliate && <EarningsBalanceNote earnFrom={name} noEarnFrom="Juniper" noEarnHref="/juniper" className="mt-1" />}
 
-          {/* PILOT-NON-PARTNER. Says where the button actually goes. We hold no
-              affiliate link for Pilot, so this is their home page rather than a
-              tracked or deep link, and a reader who expects to land on a
-              weight-management sign-up should know that before clicking. */}
+          {/* Says where the button actually goes, for any provider we hold no
+              affiliate link for: their home page rather than a tracked or deep
+              link, which a reader should know before clicking. */}
           {!isAffiliate && !deal && (
             <p className="text-xs leading-relaxed text-[#6e7b74]">
               We hold no affiliate arrangement with {name}, so this link goes to their home page
@@ -331,29 +328,6 @@ const platforms: PlatformCardProps[] = [
     extUrl: "/juniper",
     isAffiliate: false,
     ctaLabel: "Read our Juniper review",
-  },
-  {
-    id: "pilot",
-    index: "03",
-    name: "Pilot",
-    /* No deal, dealNote, or process description. Refer Labs holds no arrangement
-       with Pilot and has not verified their sign-up flow, so the page described a
-       quiz-then-phone-consult sequence it could not stand behind. Removed 3 Sep
-       2026 as misleading. Do not restore it without reading Pilot's own page and
-       dating the observation. */
-    tagline: "Men-focused telehealth from Eucalyptus, covering weight management alongside broader men's health. Weight management sits inside a wider men's health service rather than standing alone.",
-    pros: [
-      "Practitioner-assessed treatment where appropriate",
-      "Covers other men's health areas in the same account",
-      "Discreet packaging and free shipping, no lock-in contracts",
-    ],
-    cons: [
-      "Men only, not available for women",
-      "Weight management is one service among several, not the sole focus",
-    ],
-    extUrl: PILOT_URL,
-    isAffiliate: false,
-    ctaLabel: "Visit Pilot",
   },
 ];
 
@@ -490,7 +464,7 @@ export default function BestWeightLossTelehealthPage() {
             </p>
             <p className="text-xs text-[#6b7a72]">
               Sources: getmoshy.com.au/weight-loss (price as published) and Juniper (no public pricing at time of check),
-              21 July 2026. Pilot process, practitioner and breadth claims read off pilot.com.au on 28 August 2026.
+              21 July 2026.
             </p>
           </section>
 
@@ -552,27 +526,26 @@ export default function BestWeightLossTelehealthPage() {
               firstColLabel="Criteria"
               columns={[
                 /* No highlight, and alphabetical. The Moshy column was tinted green
-                   and placed first on a page that ranks three providers and carries a
+                   and placed first on a page that ranks two providers and carries a
                    link for one of them, which reads as the pick rather than as a
                    column heading. */
                 { name: "Juniper" },
                 { name: "Moshy" },
-                { name: "Pilot" },
               ]}
               rows={[
-                { label: "Available in Australia",     vals: [true , true , true]  },
+                { label: "Available in Australia",     vals: [true , true ]  },
                 // Moshy is open to anyone eligible, so it serves both. This row
                 // previously said Moshy had no women's programme, contradicting the
                 // rest of the page.
-                { label: "Men's programme",            vals: [false, true , true]  },
-                { label: "Women's programme",          vals: [true , true , false] },
-                { label: "Practitioner-assessed treatment",    vals: [true , true , true], note: "Subject to individual clinical eligibility" },
-                { label: "Online eligibility process", vals: [true , true , true]  },
-                { label: "No in-person GP required",   vals: [true , true , true]  },
-                { label: "Health coaching included",   vals: [true , false, false] },
-                { label: "Home delivery",              vals: [true , true , true]  },
-                { label: "Lifestyle programme",        vals: [true , false, false] },
-                { label: "Community discussion",       vals: [true , true , false] },
+                { label: "Men's programme",            vals: [false, true ]  },
+                { label: "Women's programme",          vals: [true , true ] },
+                { label: "Practitioner-assessed treatment",    vals: [true , true ], note: "Subject to individual clinical eligibility" },
+                { label: "Online eligibility process", vals: [true , true ]  },
+                { label: "No in-person GP required",   vals: [true , true ]  },
+                { label: "Health coaching included",   vals: [true , false] },
+                { label: "Home delivery",              vals: [true , true ]  },
+                { label: "Lifestyle programme",        vals: [true , false] },
+                { label: "Community discussion",       vals: [true , true ] },
               ]}
               footnote="Feature availability is based on publicly available information at time of publication and may change. This page does not constitute medical advice."
             />
@@ -641,7 +614,7 @@ export default function BestWeightLossTelehealthPage() {
             <EditorialMeta lastUpdated="2026-08-03" className="mb-4" />
             <AffiliateDisclosure partners={["Moshy", "Juniper"]} className="mb-3 max-w-2xl" />
             <p className="text-[#9aa39c] text-xs leading-relaxed max-w-2xl">
-              Pilot is linked without an affiliate arrangement. All content on this page is for informational purposes only and does not constitute medical advice. Suitability for any weight management programme depends on individual health factors. Consult a qualified health professional before starting any treatment.
+              All content on this page is for informational purposes only and does not constitute medical advice. Suitability for any weight management programme depends on individual health factors. Consult a qualified health professional before starting any treatment.
             </p>
             <div className="mt-4 flex flex-wrap gap-3">
               <Link href="/moshy" className="text-xs hover:opacity-80 transition-opacity" style={{ color: `${CYAN_LT}50` }}>

@@ -143,7 +143,7 @@ function resolve(a: Required<Answers>): Result {
     secondary: { label: "Read our full Moshy review", href: "/moshy-review" },
     also: woman
       ? "Want coaching and community alongside the clinical side? Juniper is built for women."
-      : "Want a broader men's-health service alongside it? Pilot is worth a look. We compare them in Moshy vs Pilot.",
+      : "Would rather keep it with your own doctor? We compare the two routes in Moshy vs your GP.",
   };
 }
 

@@ -31,8 +31,6 @@ const itemListSchema = {
   name: "Affordable Weight Loss Telehealth Australia 2026: Pricing Models Compared",
   description:
     "A comparison of Australian weight-loss telehealth pricing models, subscription versus pay-as-you-go, covering Moshy, Juniper and pay-per-consult alternatives.",
-  // PILOT-NON-PARTNER: Pilot's entry removed with the rest of its pricing on
-  // this page. Restore it, and numberOfItems, when Pilot approves.
   numberOfItems: 3,
   itemListElement: [
     {
@@ -167,7 +165,7 @@ export default function CheapestWeightLossTelehealthPage() {
               Check eligibility on Moshy
               <ArrowRight className="h-4 w-4" />
             </a>
-            <EarningsBalanceNote earnFrom="Moshy" noEarnFrom="Juniper" noEarnHref="/juniper" /* PILOT-NON-PARTNER: Pilot is no longer named on this page */ className="mt-4 max-w-2xl" />
+            <EarningsBalanceNote earnFrom="Moshy" noEarnFrom="Juniper" noEarnHref="/juniper" className="mt-4 max-w-2xl" />
           </section>
 
           {/* Answer-first: the buyer's question verbatim as an H2, then the liftable verdict. */}
@@ -331,8 +329,6 @@ export default function CheapestWeightLossTelehealthPage() {
             <div className="flex flex-wrap gap-3 mb-6">
               <Link href="/moshy" className="nw-link text-sm">Moshy</Link>
           <Link href="/moshy-review" className="nw-link text-sm">Moshy review</Link>
-              <span className="text-[#9aa39c]">·</span>
-              <Link href="/moshy-vs-pilot" className="nw-link text-sm">Moshy vs Pilot</Link>
               <span className="text-[#9aa39c]">·</span>
               <Link href="/moshy-vs-juniper" className="nw-link text-sm">Moshy vs Juniper</Link>
               <span className="text-[#9aa39c]">·</span>

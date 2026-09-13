@@ -38,6 +38,12 @@ const nextConfig: NextConfig = {
       // the code every crawler reads as such.
       { source: '/mens-health-telehealth-australia', destination: '/mens-health', statusCode: 301 },
       { source: '/online-weight-loss-programs-australia', destination: '/best-weight-loss-telehealth-australia', statusCode: 301 },
+      // Pilot retired (13 Sep 2026). pilot.com.au now reads "Pilot has joined the
+      // Hims & Hers group" and sends every click to a Hims quiz, so both pages
+      // compared a brand that no longer exists. Each goes to the roundup for the
+      // same Refer Labs partner the page was built around.
+      { source: '/moshy-vs-pilot', destination: '/best-weight-loss-telehealth-australia', statusCode: 301 },
+      { source: '/mosh-vs-pilot', destination: '/best-hair-loss-treatment-australia', statusCode: 301 },
       // CloudTalk retired (24 August 2026): get.cloudtalk.io/9mxppdbxerja returns
       // 404, so the page's only CTA was broken while the page stayed live and
       // indexed. Same fault and same remedy as Instapage in July. 301 to

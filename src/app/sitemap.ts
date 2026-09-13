@@ -216,13 +216,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/weight-loss-treatment-eligibility-australia`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.82 },
     { url: `${BASE}/best-hair-loss-treatment-australia`,    lastModified: TODAY,  changeFrequency: 'monthly', priority: 0.78 },
     { url: `${BASE}/moshy-vs-juniper`,                      lastModified: TODAY,  changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE}/moshy-vs-pilot`,                        lastModified: TODAY,  changeFrequency: 'monthly', priority: 0.85 },
     { url: `${BASE}/cheapest-weight-loss-telehealth-australia`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${BASE}/carrd-vs-durable`,                      lastModified: FRESH,  changeFrequency: 'monthly', priority: 0.74 },
     { url: `${BASE}/durable-vs-butternut`,                  lastModified: FRESH,  changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/carrd-vs-butternut`,                    lastModified: FRESH,  changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/mosh-vs-dense`,                         lastModified: TODAY,  changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE}/mosh-vs-pilot`,                         lastModified: TODAY,  changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/data`, lastModified: FRESH, changeFrequency: 'weekly', priority: 0.6 },
     // /authors/jarred is deliberately NOT here. It is noIndex until the bio is
     // written, and a noIndex URL in the sitemap tells Google to crawl a page we

@@ -21,17 +21,17 @@ import Link from "next/link";
  * asserting a partner's terms back at them. We hold the arrangement, not the
  * authority to characterise it.
  *
- * PILOT-NON-PARTNER. Three shapes, because the true sentence differs by who is
- * named, and the component used to have only the first:
+ * Three shapes, because the true sentence differs by who is named, and the
+ * component used to have only the first:
  *
  *   1. One name WITH a referral link elsewhere (Juniper). "Our Juniper referral
  *      link sits only on our Juniper review." True, and the strongest version.
- *   2. One name with NO arrangement at all (Pilot). The sentence above would be
- *      false: there is no Pilot referral link and no Pilot review. Says instead
- *      that no commercial arrangement exists.
- *   3. Several names (Juniper and Pilot). Neither pays us on that page, but the
- *      reasons differ, and stating one reason for both would be wrong. Says only
- *      what is true of all of them: we earn nothing from any of them here.
+ *   2. One name with NO arrangement at all. The sentence above would be false:
+ *      there is no referral link and no review. Says instead that no commercial
+ *      arrangement exists.
+ *   3. Several names, none paying us on that page, possibly for different
+ *      reasons. Stating one reason for all would be wrong, so it says only what
+ *      is true of all of them: we earn nothing from any of them here.
  *
  * Do not pass `noEarnHref` for a provider with no referral link anywhere. The
  * sentence it unlocks is a claim about a page that has to exist.
@@ -77,14 +77,12 @@ export default function EarningsBalanceNote({
   className?: string;
 }) {
   if (earnFromAll?.length) {
-    /* `earnFromAll` may be combined with `noEarnFrom`. Added 28 Aug 2026 for
-       /best-hair-loss-treatment-australia, which links Mosh AND Dense, both of
-       which pay us, while naming Pilot, which does not. Neither existing shape
-       could say that: earnFrom+noEarnFrom named one earner and silently dropped
-       the other, and earnFromAll alone would drop the Pilot statement the page
-       exists to make. The page had been shipping the first of those, telling a
-       reader we earn from Mosh and nothing from Pilot beside a Dense CTA that
-       also pays us. A disclosure that omits a payer is worse than none. */
+    /* `earnFromAll` may be combined with `noEarnFrom`. Added 28 Aug 2026 for a
+       page linking two brands that both pay us while naming a third that did
+       not. Neither existing shape could say that: earnFrom+noEarnFrom named one
+       earner and silently dropped the other, and earnFromAll alone would drop
+       the non-payer statement. A disclosure that omits a payer is worse than
+       none. */
     const others = noEarnFrom ? (Array.isArray(noEarnFrom) ? noEarnFrom : [noEarnFrom]) : [];
     return (
       <p className={`text-xs leading-relaxed text-[#6e7b74] ${className}`}>

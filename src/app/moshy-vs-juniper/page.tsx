@@ -53,8 +53,7 @@ const faqSchema = {
   mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
 };
 
-// The two providers this page compares, so the head-to-head is machine-readable
-// the same way /moshy-vs-pilot is.
+// The two providers this page compares, so the head-to-head is machine-readable.
 const itemListSchema = {
   "@context": "https://schema.org",
   "@type": "ItemList",

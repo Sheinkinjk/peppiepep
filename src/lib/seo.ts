@@ -1548,7 +1548,7 @@ export const seoConfig = {
     // stop competing for the same query.
     title: "Best Weight Loss Telehealth: Moshy vs Juniper",
     description:
-      "Moshy, Juniper and Pilot compared for Australians on eligibility, process and cost. Our link carries REFERRAL120: $120 off a first Moshy order.",
+      "Moshy and Juniper compared for Australians on eligibility, process and cost. Our link carries REFERRAL120: $120 off a first Moshy order.",
     url: `${SITE_URL}/best-weight-loss-telehealth-australia`,
     keywords: [
       "best weight loss telehealth australia 2026",
@@ -1587,28 +1587,6 @@ export const seoConfig = {
     ],
   },
 
-  moshyVsPilot: {
-    title: "Moshy vs Pilot 2026: Weight Loss Telehealth",
-    description:
-      "Pilot is men-focused, Moshy is open to anyone eligible. How each runs the assessment, and a first Moshy order costs $120 less with REFERRAL120.",
-    url: `${SITE_URL}/moshy-vs-pilot`,
-    keywords: [
-      "moshy vs pilot",
-      "moshy vs pilot 2026",
-      "moshy vs pilot australia",
-      "pilot vs moshy",
-      "moshy or pilot",
-      "pilot weight loss australia",
-      "pilot eucalyptus weight loss",
-      "moshy weight loss australia",
-      "mens weight loss telehealth australia",
-      "weight loss telehealth australia 2026",
-      "cheapest weight loss telehealth australia",
-      "weight loss telehealth australia",
-      "moshy review",
-      "pilot review australia",
-    ],
-  },
 
   cheapestWeightLossTelehealth: {
     title: "Cheapest Weight Loss Telehealth Australia 2026 Compared",
@@ -1625,7 +1603,7 @@ export const seoConfig = {
       "cheapest weight loss doctor australia",
       "cheapest online weight loss australia",
       "weight loss telehealth cost comparison australia",
-      "moshy vs juniper vs pilot price",
+      "moshy vs juniper price",
       "budget weight loss telehealth australia",
       "weight loss telehealth pricing australia 2026",
       "pay as you go weight loss doctor australia",
@@ -1960,26 +1938,6 @@ export const seoConfig = {
     ],
   },
 
-  moshVsPilot: {
-    title: "Mosh vs Pilot 2026: Hair Loss Telehealth",
-    description:
-      "55% off a first Mosh order, via REFERAL55 on our link. Where Mosh and Pilot differ on consult, treatment route and ongoing cost. Checked 17 Aug 2026.",
-    url: `${SITE_URL}/mosh-vs-pilot`,
-    keywords: [
-      "mosh vs pilot",
-      "mosh vs pilot hair loss",
-      "pilot vs mosh",
-      "mosh vs pilot 2026",
-      "mosh or pilot hair loss",
-      "mosh vs pilot cost",
-      "mens hair loss telehealth australia",
-      "hair loss treatment telehealth australia",
-      "best hair loss treatment australia",
-      "mosh hair review",
-      "pilot hair loss australia",
-      "online hair loss treatment australia",
-    ],
-  },
 
   juniper: {
         // TITLE TEST, set 5 September 2026. Baseline in the 92-day export to 2 Sep:
@@ -2613,6 +2571,9 @@ export const seoConfig = {
     // position 16.1) and /moshy-review (2.03% at 12.7), both rank WORSE than this
     // page and both carry a figure in the title. Testing whether the figure is the
     // cause. Measure on 5 October 2026: CTR at unchanged position is the read.
+    // CONFOUND, 13 Sep 2026: the page body changed mid-test when Pilot (retired,
+    // now Hims) was removed: one provider card, one table row, one FAQ. The title
+    // and description did not change. Read the 5 Oct result with that in mind.
     title: "Hair Loss Treatment 2026: Mosh 55% Off vs Dense",
     description:
       "REFERAL55 takes 55% off a first Mosh order. Mosh is prescription telehealth, Dense is a topical range off the shelf. What each route costs here.",

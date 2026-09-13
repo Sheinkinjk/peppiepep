@@ -69,7 +69,9 @@ No new page ships without a one-line answer to: **what search intent does it ser
 
 Measured over 115 AI answers across ChatGPT, Claude and Perplexity: the only Refer Labs
 pages both ranking in Google and getting cited were the **brand-pair comparisons**
-(`/moshy-vs-juniper` 7/15 citations at Google #6, `/mosh-vs-pilot` 7/12 at #6). Generic
+(`/moshy-vs-juniper` 7/15 citations at Google #6, `/mosh-vs-pilot` 7/12 at #6; that page
+301s since 13 Sep 2026, when Pilot was retired into Hims and every Pilot reference was
+removed from the site). Generic
 `best-X` pages carrying no brand pair were invisible (`/best-ai-sales-tools` 0/10, no
 impressions). Two conclusions, both load-bearing:
 

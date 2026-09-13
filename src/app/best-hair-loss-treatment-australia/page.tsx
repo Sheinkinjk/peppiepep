@@ -14,9 +14,6 @@ import EarningsBalanceNote from "@/components/consumer/EarningsBalanceNote";
 import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 export const metadata = generateSEOMetadata(seoConfig.bestHairLossTreatmentAustralia);
 
-// No affiliate arrangement with Pilot: plain nofollow link.
-const PILOT_URL = "https://pilot.com.au/";
-
 const aff = (url: string, loc = "best-hair-loss") => ({
   href: url,
   target: "_blank" as const,
@@ -41,11 +38,10 @@ const itemListSchema = {
   "@type": "ItemList",
   name: "Best Hair Loss Treatments Australia 2026",
   description: "Comparison of the best hair loss treatments and providers in Australia, Mosh, Dense Hair Experts, and telehealth options.",
-  numberOfItems: 3,
+  numberOfItems: 2,
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Mosh Hair Loss Treatment", description: "Australian telehealth platform offering clinically supervised hair loss treatment including prescription hair-loss treatments with online consultation.", url: `${SITE_URL}/moshhair` },
     { "@type": "ListItem", position: 2, name: "Dense Hair Experts", description: "Australian hair care brand specialising in density and thickness products, shampoos, conditioners, serums, and scalp treatments.", url: `${SITE_URL}/dense` },
-    { "@type": "ListItem", position: 3, name: "Pilot", description: "Men-focused telehealth from Eucalyptus offering prescription hair-loss treatment after a practitioner review, alongside weight, skin and sexual health. Free shipping Australia-wide.", url: PILOT_URL },
   ],
 };
 
@@ -63,15 +59,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      name: "Pilot vs Mosh for hair loss, which should I choose?",
-      acceptedAnswer: { "@type": "Answer", text: "Both are Australian men's telehealth platforms prescribing clinically backed hair loss treatment (prescription hair-loss treatments) after an online practitioner review. Mosh offers tiered plans (prevention only, prevention and regrowth, and a clinic plan) and shows the plan and price before you commit; Pilot offers hair loss treatment within a broader men's health service. Mosh's tiered plans make it the more flexible starting point; Pilot suits men who want hair loss handled alongside other men's health needs. Final Mosh pricing depends on what a practitioner assesses as appropriate and is shown on Mosh's own site." }
-    },
-    {
-      "@type": "Question",
       name: "How much does hair loss treatment cost per month in Australia?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Telehealth hair loss treatment in Australia is usually a monthly subscription that bundles treatment, practitioner oversight and delivery. Mosh offers tiered plans (prevention only, prevention and regrowth, and a clinic plan) and shows its price before you commit. Pilot offers hair loss treatment within a broader men's health service. Final pricing depends on the treatment prescribed after a practitioner consultation.",
+        text: "Telehealth hair loss treatment in Australia is usually a monthly subscription that bundles treatment, practitioner oversight and delivery. Mosh offers tiered plans (prevention only, prevention and regrowth, and a clinic plan) and shows its price before you commit. Final pricing depends on the treatment prescribed after a practitioner consultation.",
       },
     },
     {
@@ -166,26 +157,6 @@ const options = [
       "Topical products only, does not address underlying hair loss cause",
       "Less clinical evidence than prescription treatment",
       "Best as complementary support, not a standalone solution for significant hair loss",
-    ],
-  },
-  {
-    name: "Pilot",
-    badge: "Men Only",
-    badgeColor: "#0a7c42",
-    href: PILOT_URL,
-    internalHref: "/mosh-vs-pilot",
-    category: "Telehealth / Prescription",
-    tagline: "Men's telehealth from Eucalyptus, covering hair loss alongside weight, skin and sexual health",
-    pros: [
-      "Access to prescription hair-loss treatment after a practitioner review",
-      "Private phone consultation with an Australian practitioner is part of the process",
-      "Free shipping Australia-wide, discreet packaging, no lock-in contracts",
-      "One account also covers other men's health areas",
-    ],
-    cons: [
-      "Men only, not available for women",
-      "Hair loss is one service among several rather than the sole focus",
-      "Requires ongoing prescription, not a one-off purchase",
     ],
   },
   {
@@ -297,18 +268,13 @@ export default function BestHairLossTreatmentAustraliaPage() {
               Shop Dense Hair Experts
             </a>
           </div>
-          {/* PILOT-NON-PARTNER. This page named Pilot eight times, reached a verdict
-              favouring Mosh, and carried a Mosh affiliate link at word 117 without
-              ever saying we earn from Mosh and not from Pilot. It sits above the
-              verdict so a reader meets the asymmetry before the recommendation.
-              No noEarnHref: there is no Pilot referral link and no Pilot review,
-              so the sentence that prop unlocks would be false. Give it one when
-              Pilot becomes a partner.
-
-              earnFromAll, not earnFrom: this page links Dense as well as Mosh and
-              both pay us. It named Mosh alone until 28 Aug 2026, which disclosed
-              one payer beside the other payer's CTA. */}
-          <EarningsBalanceNote earnFromAll={["Mosh", "Dense"]} noEarnFrom="Pilot" className="mt-4 max-w-2xl" />
+          {/* Sits above the verdict so a reader meets what we earn before the
+              recommendation. earnFromAll, not earnFrom: this page links Dense as
+              well as Mosh and both pay us. It named Mosh alone until 28 Aug 2026,
+              which disclosed one payer beside the other payer's CTA. A third,
+              non-paying provider was removed on 13 Sep 2026 when its brand was
+              retired. */}
+          <EarningsBalanceNote earnFromAll={["Mosh", "Dense"]} className="mt-4 max-w-2xl" />
         </div>
 
         {/* Answer-first (GEO): the buyer's question verbatim as an H2 above the verdict. */}
@@ -320,7 +286,7 @@ export default function BestHairLossTreatmentAustraliaPage() {
             Quick Verdict
           </p>
           <p className="text-[#2b362f] text-sm sm:text-base leading-relaxed">
-            Refer Labs' August 2026 comparison of Australian men's hair-loss services found Mosh the most accessible telehealth option, online consultation, practitioner review, and delivery, with the plan and price shown before you commit. Pilot offers hair-loss treatment within a broader men's health service. Dense Hair Experts is a topical, non-prescription complement for density and scalp health. For significant or rapid hair loss, see a specialist. This is not medical advice.
+            Refer Labs' August 2026 comparison of Australian men's hair-loss services found Mosh the most accessible telehealth option, online consultation, practitioner review, and delivery, with the plan and price shown before you commit. Dense Hair Experts is a topical, non-prescription complement for density and scalp health. For significant or rapid hair loss, see a specialist. This is not medical advice.
           </p>
         </div>
 
@@ -351,15 +317,11 @@ export default function BestHairLossTreatmentAustraliaPage() {
                   <td className="px-4 py-3 text-[#2b362f]">Mosh, hair loss clinic plan</td>
                   <td className="px-4 py-3 text-[#2b362f]">For more established hair loss</td>
                 </tr>
-                <tr>
-                  <td className="px-4 py-3 text-[#2b362f]">Pilot, hair loss treatment</td>
-                  <td className="px-4 py-3 text-[#2b362f]">Hair loss within a broader men&apos;s health service</td>
-                </tr>
               </tbody>
             </table>
           </div>
           <p className="text-xs text-[#6b7a72] mt-3">
-            Sources: getmosh.com.au/hair-loss as published on 21 July 2026; pilot.com.au read on 28 August 2026.
+            Sources: getmosh.com.au/hair-loss as published on 21 July 2026.
           </p>
         </section>
 
@@ -491,11 +453,7 @@ export default function BestHairLossTreatmentAustraliaPage() {
               },
               {
                 q: "How much does hair loss treatment cost per month in Australia?",
-                a: "Telehealth hair-loss treatment is usually a monthly subscription that bundles treatment, practitioner oversight and delivery. Mosh offers tiered plans and shows its price before you commit; Pilot offers treatment within a broader men's health service. Final pricing depends on what a practitioner assesses as appropriate.",
-              },
-              {
-                q: "Pilot vs Mosh for hair loss, which should I choose?",
-                a: "Both are Australian men's telehealth platforms prescribing prescription hair-loss treatments after an online practitioner review. Mosh offers tiered plans (prevention only, prevention and regrowth, and a clinic plan) and shows the plan and price before you commit; Pilot offers treatment within a broader men's health service. Mosh's tiers make it the more flexible starting point; Pilot suits men who want hair loss handled alongside other men's health needs.",
+                a: "Telehealth hair-loss treatment is usually a monthly subscription that bundles treatment, practitioner oversight and delivery. Mosh offers tiered plans and shows its price before you commit. Final pricing depends on what a practitioner assesses as appropriate.",
               },
               {
                 q: "Is Mosh good for hair loss Australia?",
