@@ -1,11 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, BadgeCheck, Tag } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
-import { FEATURED_DEALS, OTHER_DEALS, DEALS } from "@/lib/offers";
-import OffersTable from "@/components/lending/OffersTable";
-import CodeAnswer from "@/components/offers/CodeAnswer";
+import { FEATURED_DEALS, OTHER_DEALS, DEALS, formatVerifiedFull } from "@/lib/offers";
 import OfferSchema from "@/components/offers/OfferSchema";
 import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 
@@ -35,7 +33,7 @@ const FAQS = [
   },
   {
     q: "Are these discount codes actually current?",
-    a: "Each offer in the table shows the date we last read it off that provider's own page, rather than one site-wide stamp, so you can see how current each individual code is. Offers change without notice, so treat the date as when we checked rather than a guarantee, and confirm the terms on the provider's site before you sign up.",
+    a: "Each offer in the table shows the date we last confirmed it, rather than one site-wide stamp, so you can see how current each individual code is. Offers change without notice, so treat the date as when we checked rather than a guarantee, and confirm the terms on the provider's site before you sign up.",
   },
   {
     q: "Does Refer Labs earn from these deals?",
@@ -81,6 +79,26 @@ const webPageSchema = {
   isPartOf: { "@id": `${SITE_URL}/#website` },
 };
 
+/**
+ * The summary beside the table heading, derived from the rows it describes so it
+ * cannot drift from them. Until 14 Sep 2026 this page stated each code four
+ * times in one screenful: a sentence per code above the fold, then a table, then
+ * a card grid repeating the table. One table now carries every offer once.
+ */
+const CODE_COUNT = FEATURED_DEALS.filter((d) => d.code).length;
+const CHECKED = FEATURED_DEALS.map((d) => d.verified).filter((v): v is string => Boolean(v)).sort();
+/** "17 Aug 2026" + "28 Aug 2026" -> "17 to 28 Aug 2026": the shared month and year once. */
+function checkedRange(dates: string[]): string | null {
+  if (dates.length === 0) return null;
+  const first = formatVerifiedFull(dates[0]);
+  const last = formatVerifiedFull(dates[dates.length - 1]);
+  if (first === last) return `checked ${first}`;
+  const [d1, ...rest1] = first.split(" ");
+  const [d2, ...rest2] = last.split(" ");
+  return rest1.join(" ") === rest2.join(" ") ? `checked ${d1} to ${d2} ${rest2.join(" ")}` : `checked ${first} to ${last}`;
+}
+const CHECKED_RANGE = checkedRange(CHECKED);
+
 export default function DealsPage() {
   return (
     <ConsumerShell>
@@ -88,6 +106,13 @@ export default function DealsPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      {/* Offer data for each code we hold. The visible sentence per code was
+          removed on 14 Sep 2026; the table and the FAQ below name every code,
+          and these carry the same facts as structured data. */}
+      <OfferSchema code="REFERRAL120" />
+      <OfferSchema code="REFERAL55" />
+      <OfferSchema code="referlab2mf" />
+      <OfferSchema code="REFERLABS" />
 
       <main id="main-content" className="mx-auto max-w-5xl px-5 py-12 sm:px-8 sm:py-16">
         <nav className="mb-8 flex items-center gap-2 text-sm text-[#9aa39c]">
@@ -100,95 +125,130 @@ export default function DealsPage() {
           Australian discount codes, each dated
         </h1>
         <p className="mt-5 max-w-2xl text-lg leading-relaxed text-[#3d4b44]">
-          The current offers on the providers we compare, each checked against the provider&apos;s own page. We only
-          list deals for brands we actually work with, and every one links to our full guide with the details.
-        </p>
-        <CodeAnswer code="REFERRAL120" hideDate className="mt-4">
-          Moshy&apos;s REFERRAL120 is the largest of the codes below: $120 off a new customer&apos;s first order, one use per customer.
-        </CodeAnswer>
-        <OfferSchema code="REFERRAL120" />
-        <CodeAnswer code="REFERAL55" hideDate className="mt-4">
-          Mosh&apos;s REFERAL55 is the largest percentage discount below: 55% off a new customer&apos;s first order.
-        </CodeAnswer>
-        <OfferSchema code="REFERAL55" />
-        <CodeAnswer code="referlab2mf" hideDate className="mt-4">
-          Of the codes Refer Labs holds, Knose&apos;s referlab2mf is the only one giving free cover time: 2 months free for new customers taking out a policy.
-        </CodeAnswer>
-        <OfferSchema code="referlab2mf" />
-        <CodeAnswer code="REFERLABS" hideDate className="mt-4">
-          PetsOnMe&apos;s REFERLABS is the one code below that does not touch the price of cover: it lifts pet care services from 12% to 15% once you hold a policy.
-        </CodeAnswer>
-        <OfferSchema code="REFERLABS" />
-
-        <p className="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-[#6e7b74]">
-            {/* A single month here contradicted the table underneath, which dates
-                every offer individually: the header claimed July while rows read
-                August. Per-row dating is the stronger claim anyway, so the header
-                points at it rather than competing with it. */}
-            <BadgeCheck className="h-4 w-4 text-[#0a7c42]" aria-hidden="true" /> Every offer below carries the
-            date we last checked it
+          Current offers from the providers we compare, each with the date we last confirmed it. We list only brands we
+          work with, and every offer links to our full guide.
         </p>
 
-        {/* Structured offers table (AI-extractable canonical source) */}
-        <section className="mt-10">
-          <h2 className="text-xl font-extrabold text-[#10251b]">Current offers at a glance</h2>
-          <div className="mt-5">
-            <OffersTable deals={FEATURED_DEALS} caption="Current verified discount codes and offers at Refer Labs" />
+        {/* One table for every featured offer. It replaced two sections showing the
+            same seven offers twice: a six-column table and a card grid. On phones
+            each row renders as a card from the same markup, so nothing is
+            duplicated for readers or crawlers. */}
+        <section aria-labelledby="current-offers" className="mt-12">
+          <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1">
+            <h2 id="current-offers" className="text-2xl font-extrabold tracking-[-0.01em] text-[#10251b]">
+              Current offers
+            </h2>
+            <p className="text-sm tabular-nums text-[#6e7b74]">
+              {FEATURED_DEALS.length} offers · {CODE_COUNT} codes{CHECKED_RANGE ? ` · ${CHECKED_RANGE}` : ""}
+            </p>
+          </div>
+
+          <div className="mt-5 overflow-hidden rounded-2xl border border-[#e5e9e7] bg-white shadow-[0_1px_2px_rgba(16,37,27,0.04),0_18px_40px_-28px_rgba(16,37,27,0.22)]">
+            <table className="w-full border-collapse text-left">
+              <caption className="sr-only">
+                Current discount codes and offers at Refer Labs, with the date each was last checked
+              </caption>
+              <thead className="hidden sm:table-header-group">
+                <tr className="bg-[#f8faf9] text-[11px] font-bold uppercase tracking-[0.1em] text-[#6e7b74]">
+                  <th scope="col" className="px-5 py-3">Provider</th>
+                  <th scope="col" className="px-5 py-3">Offer</th>
+                  <th scope="col" className="px-5 py-3">Code</th>
+                  <th scope="col" className="whitespace-nowrap px-5 py-3">Last checked</th>
+                  <th scope="col" className="px-5 py-3"><span className="sr-only">Guide</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                {FEATURED_DEALS.map((d) => (
+                  <tr
+                    key={d.brand}
+                    className="grid grid-cols-[1fr_auto] items-center gap-x-4 border-t border-[#eef1ef] px-5 py-5 first:border-t-0 sm:table-row sm:p-0 sm:first:border-t sm:transition-colors sm:hover:bg-[#f8faf9]"
+                  >
+                    <th scope="row" className="col-span-2 block text-left font-normal sm:table-cell sm:px-5 sm:py-4 sm:align-middle">
+                      <span className="flex items-center gap-3">
+                        <span className="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-[#eef1ef] bg-white">
+                          <Image src={d.logo} alt="" width={28} height={28} className="h-7 w-7 object-contain" />
+                        </span>
+                        <span className="min-w-0">
+                          <Link href={d.href} className="block font-bold leading-tight text-[#10251b] hover:text-[#0a7c42]">
+                            {d.brand}
+                          </Link>
+                          <span className="block text-xs text-[#6e7b74]">{d.category}</span>
+                        </span>
+                      </span>
+                    </th>
+                    <td className="col-span-2 mt-3 block text-[17px] font-bold leading-snug text-[#0a7c42] sm:mt-0 sm:table-cell sm:px-5 sm:py-4 sm:align-middle sm:text-[15px]">
+                      {d.offer}
+                    </td>
+                    <td className="col-span-2 mt-3 block sm:mt-0 sm:table-cell sm:px-5 sm:py-4 sm:align-middle">
+                      {d.code ? (
+                        <span className="inline-flex flex-wrap items-center gap-2">
+                          <code className="rounded-lg border border-dashed border-[#0a7c42]/45 bg-[#f2f8f4] px-2.5 py-1 font-mono text-[13px] font-semibold tracking-wide text-[#10251b]">
+                            {d.code}
+                          </code>
+                          {d.exclusive && (
+                            <span className="rounded-full bg-[#e8f5ee] px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.08em] text-[#0a7c42]">
+                              Refer Labs only
+                            </span>
+                          )}
+                        </span>
+                      ) : (
+                        <span className="whitespace-nowrap text-sm text-[#6e7b74]">No code needed</span>
+                      )}
+                    </td>
+                    <td className="mt-4 block text-xs tabular-nums text-[#6e7b74] sm:mt-0 sm:table-cell sm:whitespace-nowrap sm:px-5 sm:py-4 sm:align-middle sm:text-sm">
+                      <span className="sm:hidden">Checked </span>
+                      {d.verified ? formatVerifiedFull(d.verified) : "Not recorded"}
+                    </td>
+                    <td className="mt-4 block text-right sm:mt-0 sm:table-cell sm:px-5 sm:py-4 sm:align-middle">
+                      <Link
+                        href={d.href}
+                        aria-label={`${d.brand}: offer details and full guide`}
+                        className="group inline-flex items-center gap-1.5 whitespace-nowrap text-sm font-semibold text-[#0a7c42]"
+                      >
+                        View offer
+                        <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
+                      </Link>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            {/* The page's one "offers can change" caveat. It used to appear here
+                and again in a closing line under the disclosure. */}
+            <p className="border-t border-[#eef1ef] bg-[#f8faf9] px-5 py-3 text-xs leading-relaxed text-[#6e7b74]">
+              Each date is when we last confirmed that offer. Offers can change, so check the terms on the
+              provider&apos;s site before you sign up.
+            </p>
           </div>
         </section>
 
-        {/* Featured: real monetary discounts */}
-        <section className="mt-14">
-          <h2 className="text-xl font-extrabold text-[#10251b]">Best deals right now</h2>
-          <div className="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {FEATURED_DEALS.map((d) => (
-              <Link key={d.brand} href={d.href}
-                className="group flex flex-col rounded-2xl border border-[#0a7c42]/25 bg-[#0a7c42]/[0.04] p-6 transition-all hover:-translate-y-0.5 hover:border-[#0a7c42]/50 hover:shadow-[0_22px_50px_-28px_rgba(14,124,66,0.5)]">
-                <div className="flex items-center gap-3">
-                  <span className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl border border-[#eef1ef] bg-white">
-                    <Image src={d.logo} alt={`${d.brand} logo`} width={32} height={32} className="h-8 w-8 object-contain" />
+        {/* Free plans and trials: not discounts, so kept apart from the table. */}
+        <section aria-labelledby="more-offers" className="mt-14">
+          <h2 id="more-offers" className="text-2xl font-extrabold tracking-[-0.01em] text-[#10251b]">
+            More offers and free trials
+          </h2>
+          <ul className="mt-5 divide-y divide-[#eef1ef] overflow-hidden rounded-2xl border border-[#e5e9e7] bg-white">
+            {OTHER_DEALS.map((d) => (
+              <li key={d.brand}>
+                <Link href={d.href} className="group flex items-center gap-4 px-5 py-4 transition-colors hover:bg-[#f8faf9]">
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-[#eef1ef] bg-white">
+                    <Image src={d.logo} alt="" width={24} height={24} className="h-6 w-6 object-contain" />
                   </span>
-                  <div className="min-w-0">
-                    <h3 className="font-extrabold leading-tight text-[#10251b]">{d.brand}</h3>
-                    <span className="text-[11px] font-medium text-[#6e7b74]">{d.category}</span>
-                  </div>
-                </div>
-                <p className="mt-4 text-lg font-bold leading-snug text-[#0a7c42]">{d.offer}</p>
-                {d.code ? (
-                  <p className="mt-2 inline-flex items-center gap-1.5 text-[13px] font-medium text-[#3d4b44]">
-                    <Tag className="h-3.5 w-3.5 text-[#9aa39c]" aria-hidden="true" /> Code {d.code}, applied via our link
-                  </p>
-                ) : (
-                  <p className="mt-2 text-[13px] font-medium text-[#6e7b74]">Applied automatically via our link, no code</p>
-                )}
-                <span className="mt-auto inline-flex items-center gap-1.5 pt-5 text-sm font-semibold text-[#0a7c42]">
-                  Get the deal <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
-                </span>
-              </Link>
+                  <span className="min-w-0 flex-1 sm:flex sm:items-center sm:gap-4">
+                    <span className="block font-bold text-[#10251b] sm:w-36 sm:shrink-0">{d.brand}</span>
+                    <span className="block text-sm text-[#3d4b44]">{d.offer}</span>
+                  </span>
+                  <ArrowRight className="h-4 w-4 shrink-0 text-[#9aa39c] transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
+                </Link>
+              </li>
             ))}
-          </div>
+          </ul>
         </section>
 
-        {/* Other offers: free trials / plans */}
-        <section className="mt-14">
-          <h2 className="text-xl font-extrabold text-[#10251b]">More free trials &amp; offers</h2>
-          <div className="mt-5 overflow-hidden rounded-2xl border border-[#e5e9e7]">
-            {OTHER_DEALS.map((d, i) => (
-              <Link key={d.brand} href={d.href}
-                className={`flex items-center gap-4 px-5 py-4 transition-colors hover:bg-[#f5f8f6] ${i % 2 ? "bg-[#f8faf9]" : "bg-white"}`}>
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-[#eef1ef] bg-white">
-                  <Image src={d.logo} alt="" width={24} height={24} className="h-6 w-6 object-contain" />
-                </span>
-                <span className="w-32 shrink-0 font-bold text-[#10251b]">{d.brand}</span>
-                <span className="flex-1 text-sm text-[#3d4b44]">{d.offer}</span>
-                <ArrowRight className="h-4 w-4 shrink-0 text-[#9aa39c]" aria-hidden="true" />
-              </Link>
-            ))}
-          </div>
-        </section>
-
-        <section className="mt-14">
-          <h2 className="text-xl font-extrabold text-[#10251b]">Discount code questions</h2>
+        <section aria-labelledby="code-questions" className="mt-14">
+          <h2 id="code-questions" className="text-2xl font-extrabold tracking-[-0.01em] text-[#10251b]">
+            Discount code questions
+          </h2>
           <dl className="mt-5 divide-y divide-[#eef1ef] overflow-hidden rounded-2xl border border-[#e5e9e7] bg-white">
             {FAQS.map((f) => (
               <div key={f.q} className="px-5 py-5 sm:px-6">
@@ -209,10 +269,6 @@ export default function DealsPage() {
             </>
           }
         />
-        <p className="mt-3 max-w-2xl text-xs leading-relaxed text-[#6e7b74]">
-          Offers are the providers&apos; own current terms and can change; we recheck them regularly and show when we
-          last did.
-        </p>
       </main>
     </ConsumerShell>
   );
