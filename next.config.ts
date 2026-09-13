@@ -32,6 +32,12 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // Two merges (13 Sep 2026). Both pages sat below position 29 against SERPs
+      // with no publisher slot (clinics, CSIRO, CHOICE) and carried no fact of
+      // their own. 301 rather than 308 because the move is permanent and 301 is
+      // the code every crawler reads as such.
+      { source: '/mens-health-telehealth-australia', destination: '/mens-health', statusCode: 301 },
+      { source: '/online-weight-loss-programs-australia', destination: '/best-weight-loss-telehealth-australia', statusCode: 301 },
       // CloudTalk retired (24 August 2026): get.cloudtalk.io/9mxppdbxerja returns
       // 404, so the page's only CTA was broken while the page stayed live and
       // indexed. Same fault and same remedy as Instapage in July. 301 to

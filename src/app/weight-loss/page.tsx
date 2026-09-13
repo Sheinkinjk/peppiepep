@@ -26,9 +26,7 @@ const guides = [
   { href: "/moshy-vs-gp", title: "Telehealth vs your GP", desc: "Two doors to the same care. The practical trade." },
   { href: "/moshy-eligibility", title: "The eligibility check, explained", desc: "What the quiz asks and why some people are declined." },
   { href: "/moshy-alternatives", title: "Moshy alternatives", desc: "The shortlist, including your GP." },
-  { href: "/online-weight-loss-programs-australia", title: "Online programs, untangled", desc: "Medical telehealth vs coaching apps vs meal plans." },
   { href: "/weight-loss-telehealth-men-australia", title: "The men's guide", desc: "How men's services work and the pre-signup checklist." },
-  { href: "/mens-health-telehealth-australia", title: "Men's health telehealth", desc: "The wider category, and what online clinics can't do." },
   { href: "/moshy", title: "Moshy offer & referral link", desc: "$120 off your first order, applied automatically. No code to type." },
   { href: "/weight-loss-treatment-eligibility-australia", title: "Do you qualify?", desc: "The eligibility criteria practitioners use, and how to check where you stand." },
   { href: "/weight-loss-quiz", title: "Which pathway fits you?", desc: "A short matcher across the clinical, coaching and GP routes." },
@@ -199,8 +197,8 @@ export default function WeightLossHubPage() {
                 want structure and accountability rather than a clinical pathway.
               </p>
               <p className="mt-5 text-sm font-semibold">
-                <Link href="/online-weight-loss-programs-australia" className="text-[#0a7c42] hover:underline">
-                  How the program types differ →
+                <Link href="/best-weight-loss-telehealth-australia" className="text-[#0a7c42] hover:underline">
+                  Compare the providers →
                 </Link>
               </p>
             </div>

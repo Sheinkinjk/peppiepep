@@ -1770,6 +1770,7 @@ export const seoConfig = {
     description:
       "The three types of online weight loss programs available in Australia, how medical telehealth differs from coaching apps and meal plans, and how the main providers split up. Information only, not medical advice.",
     url: `${SITE_URL}/online-weight-loss-programs-australia`,
+    noIndex: true, // retired 13 Sep 2026, 301s in next.config.ts
     keywords: [
       "online weight loss programs australia",
       "online weight loss clinic australia",
@@ -1803,6 +1804,7 @@ export const seoConfig = {
     description:
       "How men's health telehealth works in Australia, what online clinics can and cannot do, how prescriptions are handled, and the main providers including Moshy and Mosh. Information only, not medical advice.",
     url: `${SITE_URL}/mens-health-telehealth-australia`,
+    noIndex: true, // retired 13 Sep 2026, 301s in next.config.ts
     keywords: [
       "mens health telehealth australia",
       "online mens health clinic australia",

@@ -209,7 +209,6 @@ export default function MensHealthHub() {
           <div className="max-w-2xl">
             <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">Other categories</h2>
             <ul className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold">
-              <li><Link href="/mens-health-telehealth-australia" className="text-[#0a7c42] hover:underline">Men&apos;s telehealth, generally</Link></li>
               <li><Link href="/hair-loss" className="text-[#0a7c42] hover:underline">Hair loss</Link></li>
               <li><Link href="/weight-loss" className="text-[#0a7c42] hover:underline">Weight loss</Link></li>
               <li><Link href="/sleep" className="text-[#0a7c42] hover:underline">Sleep</Link></li>

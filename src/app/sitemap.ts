@@ -135,8 +135,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/moshy-alternatives`,lastModified: TODAY, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/weight-loss-telehealth-men-australia`,   lastModified: TODAY, changeFrequency: 'monthly', priority: 0.82 },
     { url: `${BASE}/weight-loss-telehealth-women-australia`, lastModified: AUG13, changeFrequency: 'monthly', priority: 0.82 },
-    { url: `${BASE}/online-weight-loss-programs-australia`,  lastModified: TODAY, changeFrequency: 'monthly', priority: 0.82 },
-    { url: `${BASE}/mens-health-telehealth-australia`,       lastModified: TODAY, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/weight-loss-telehealth-cost-australia`,  lastModified: TODAY, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${BASE}/weight-loss-cost-calculator`,            lastModified: FRESH, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${BASE}/weight-loss-quiz`,                       lastModified: FRESH, changeFrequency: 'monthly', priority: 0.88 },

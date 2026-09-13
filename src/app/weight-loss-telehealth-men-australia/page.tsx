@@ -130,9 +130,9 @@ export default function WeightLossTelehealthMenPage() {
             Moshy runs a clinically-led telehealth pathway that is open to anyone eligible, and it passes the checklist
             above: AHPRA-registered practitioners, an eligibility step that genuinely screens, pricing disclosed inside
             the platform before any commitment, and Australian regulation. If you would rather have coaching wrapped
-            around clinical care, Juniper markets primarily to women, and we cover the wider field in our{" "}
-            <Link href="/online-weight-loss-programs-australia" className="underline decoration-[#cdd5cf] underline-offset-2 hover:text-[#10251b]" style={{ color: CYAN }}>
-              online weight loss programs guide
+            around clinical care, Juniper markets primarily to women, and we compare the main providers in our{" "}
+            <Link href="/best-weight-loss-telehealth-australia" className="underline decoration-[#cdd5cf] underline-offset-2 hover:text-[#10251b]" style={{ color: CYAN }}>
+              weight loss telehealth comparison
             </Link>.
           </p>
           <div className="rounded-xl border px-6 py-5 mt-6" style={{ borderColor: `${CYAN}40`, background: `${CYAN}0A` }}>
@@ -171,7 +171,7 @@ export default function WeightLossTelehealthMenPage() {
           <Link href="/moshy" style={{ color: CYAN }} className="hover:opacity-80">Moshy: how to start</Link>
           <Link href="/moshy-review" style={{ color: CYAN }} className="hover:opacity-80">Moshy review →</Link>
           <Link href="/moshy-vs-gp" style={{ color: CYAN }} className="hover:opacity-80">Moshy vs your GP →</Link>
-          <Link href="/mens-health-telehealth-australia" style={{ color: CYAN }} className="hover:opacity-80">Men&apos;s health telehealth →</Link>
+          <Link href="/mens-health" style={{ color: CYAN }} className="hover:opacity-80">Men&apos;s health →</Link>
           <Link href="/weight-loss-telehealth-women-australia" style={{ color: CYAN }} className="hover:opacity-80">Weight loss telehealth for women →</Link>
         </div>
 

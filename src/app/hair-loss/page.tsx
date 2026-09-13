@@ -22,7 +22,7 @@ const guides = [
   { href: "/early-signs-of-hair-loss-australia", title: "Early signs of hair loss", desc: "How to tell if you're going bald, what's normal, and when to act." },
   { href: "/how-to-stop-hair-loss-australia", title: "How to slow hair loss", desc: "The causes, what the evidence supports, and why acting early helps." },
   { href: "/online-hair-loss-treatment-australia", title: "Online hair-loss treatment", desc: "How the telehealth assessment works, and what you can and can't get online." },
-  { href: "/mens-health-telehealth-australia", title: "Men's health telehealth", desc: "The wider category, and what online clinics can and cannot do." },
+  { href: "/mens-health", title: "Men's health", desc: "The wider category: how the access routes differ and what each costs over a year." },
 ];
 
 const faqs = [

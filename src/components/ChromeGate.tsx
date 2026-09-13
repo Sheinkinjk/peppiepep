@@ -58,8 +58,6 @@ const STANDALONE_ROUTES = [
   "/moshy-vs-gp",
   "/moshy-alternatives",
   "/weight-loss-telehealth-men-australia",
-  "/online-weight-loss-programs-australia",
-  "/mens-health-telehealth-australia",
   // Comparison roundups + head-to-heads (not core business)
   "/moshy-vs-juniper",
   "/juniper",

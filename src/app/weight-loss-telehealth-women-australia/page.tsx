@@ -234,7 +234,7 @@ export default function WeightLossTelehealthWomenPage() {
           <Link href="/juniper" style={{ color: CYAN }} className="hover:opacity-80">Juniper review &rarr;</Link>
           <Link href="/moshy" style={{ color: CYAN }} className="hover:opacity-80">Start with Moshy</Link>
           <Link href="/moshy-review" style={{ color: CYAN }} className="hover:opacity-80">Moshy review &rarr;</Link>
-          <Link href="/online-weight-loss-programs-australia" style={{ color: CYAN }} className="hover:opacity-80">Online weight loss programs &rarr;</Link>
+          <Link href="/best-weight-loss-telehealth-australia" style={{ color: CYAN }} className="hover:opacity-80">Best weight loss telehealth &rarr;</Link>
         </div>
 
         <AffiliateDisclosure className="mt-8" />

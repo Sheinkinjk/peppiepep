@@ -14,7 +14,7 @@ export const metadata = generateSEOMetadata(seoConfig.wholeBodyMri);
 const faqs = [
   {
     q: "How much does a whole-body MRI cost in Australia?",
-    a: "Three providers publish a price on their own site, each read on 13 September 2026: OneMRI $2,990, Everlab $2,999 for members or $3,499 for non-members (its package adds a chest CT), and Full Body MRI in Perth $2,990. What is consistent is that you pay the whole amount: there is no Medicare rebate for imaging done as screening on someone without symptoms. Ask also what happens after, because follow-up imaging and specialist appointments prompted by the scan are billed separately and are where the total can grow.",
+    a: "Three providers publish a price on their own site, each read on 13 September 2026: OneMRI $2,990, Everlab $2,999 for members or $3,499 for non-members (its package adds a chest CT), and Full Body MRI in Perth $2,990. What is consistent is that you pay the whole amount: there is no Medicare rebate for imaging done as screening on someone without symptoms. Ask also what happens after: none of the three lists a follow-up scan or a specialist appointment in what its fee covers, and that is where the total can grow.",
   },
   {
     q: "Does Medicare cover whole-body MRI screening?",
@@ -26,7 +26,7 @@ const faqs = [
   },
   {
     q: "Why are Australian doctors cautious about whole-body MRI?",
-    a: "Because screening people without symptoms has to clear a high bar: it must find serious disease early enough to change the outcome, more often than it causes harm through false alarms and overdiagnosis. Established programs like bowel, breast and cervical screening were built on evidence that they clear it. Whole-body MRI as a general screen has not demonstrated the same, which is why it sits outside the subsidised system rather than inside it.",
+    a: "Because screening people without symptoms has to clear a high bar: it must find serious disease early enough to change the outcome, more often than it causes harm through false alarms and overdiagnosis. Established programs like bowel, breast and cervical screening were built on evidence that they clear it. Whole-body MRI as a general screen has not demonstrated the same, which is why it sits outside the subsidised system rather than inside it. The Royal Australian and New Zealand College of Radiologists does not recommend whole-body MRI screening for people without symptoms who have no previously diagnosed cancer or cancer predisposition syndrome (position statement v1.1, approved 4 July 2025).",
   },
   {
     q: "Is there any case for having one?",
@@ -42,7 +42,7 @@ export default function Page() {
       slug="/longevity/diagnostics/whole-body-mri-australia-cost"
       crumb="Whole-body MRI"
       h1={<>Whole-body MRI in Australia: <span className="italic text-[#0a7c42]">the cost, and the case against</span></>}
-      intro="These scans are marketed on the idea that finding things early is always better. Australian clinicians are cautious about that in people with no symptoms, and the reason is worth understanding before you spend."
+      intro="Three Australian providers publish a whole-body MRI price on their own sites, from $2,990 to $3,499, read 13 September 2026. Each fee covers the scan, a radiologist's report and a consultation on the result. None of the three lists the follow-up scan or specialist visit a finding can lead to, and Australia's college of radiologists recommends against the scan for people with no symptoms and no cancer history or predisposition."
       headline="Whole-body MRI in Australia: cost and the case against"
       description={seoConfig.wholeBodyMri.description}
       faqs={faqs}
@@ -132,6 +132,60 @@ export default function Page() {
           None of these attracts a Medicare rebate. Prices change, so confirm the fee with the provider, and ask
           specifically what it does not include.
         </p>
+      </section>
+
+      <section>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">What the fee covers, and what it leaves out</h2>
+        <p className="mt-3">
+          All three published fees cover the scan, a radiologist&apos;s report and a consultation on the result. None of
+          the three lists a follow-up scan or a specialist appointment as part of the fee. Each was read on the
+          provider&apos;s own site on 13 September 2026:
+        </p>
+        <ul className="mt-3 list-disc space-y-3 pl-5">
+          <li>
+            <strong>OneMRI</strong> lists the scan, a radiologist-reviewed report, a doctor consult on the results and
+            your images, under &ldquo;No surprise fees&rdquo;. Its next step after the results is &ldquo;If needed, follow
+            up with your GP.&rdquo; Source: OneMRI&apos;s{" "}
+            <a href="https://www.onemri.com.au/faq" target="_blank" rel="noopener noreferrer" className="font-semibold text-[#0a7c42] hover:underline">FAQ</a>{" "}
+            and{" "}
+            <a href="https://www.onemri.com.au/how-it-works" target="_blank" rel="noopener noreferrer" className="font-semibold text-[#0a7c42] hover:underline">how it works</a>{" "}
+            pages, read 13 September 2026.
+          </li>
+          <li>
+            <strong>Everlab</strong> lists the MRI and chest CT, review by a radiologist and an Everlab doctor, and
+            &ldquo;coordinated specialist referrals and a personalised follow-up plan&rdquo;. Its terms describe its role
+            as &ldquo;limited to referring you to an applicable third party Australian registered medical practitioner or
+            specialist&rdquo;. Source: Everlab&apos;s{" "}
+            <a href="https://www.everlab.com.au/how-it-works" target="_blank" rel="noopener noreferrer" className="font-semibold text-[#0a7c42] hover:underline">how it works</a>{" "}
+            page and{" "}
+            <a href="https://www.everlab.com.au/terms-conditions" target="_blank" rel="noopener noreferrer" className="font-semibold text-[#0a7c42] hover:underline">terms</a>,
+            read 13 September 2026.
+          </li>
+          <li>
+            <strong>Full Body MRI</strong> lists the scan, radiologist review, a written report and a doctor consultation,
+            with &ldquo;no hidden fees or add-ons&rdquo;. Its own FAQ says a finding may lead to &ldquo;a more targeted
+            follow-up scan&rdquo; or a referral &ldquo;to a specialist for further assessment&rdquo;; neither appears in
+            what it says the fee covers. Source: Full Body MRI&apos;s{" "}
+            <a href="https://fullbodymri.com.au/faqs/" target="_blank" rel="noopener noreferrer" className="font-semibold text-[#0a7c42] hover:underline">FAQ page</a>,
+            read 13 September 2026.
+          </li>
+        </ul>
+        <p className="mt-3">
+          The advertised price is the price of the scan and its explanation. What a finding costs after that is not in
+          any of the three. Follow-up that is now clinically indicated may attract a rebate, as the table above sets out.
+        </p>
+        <div className="mt-4 rounded-2xl border border-[#e5e9e7] bg-[#f8faf9] p-6">
+          <p className="text-[15px] font-semibold text-[#10251b]">What Australia&apos;s radiologists say</p>
+          <p className="mt-2 text-sm text-[#3d4b44]">
+            The Royal Australian and New Zealand College of Radiologists &ldquo;does not recommend performing whole body
+            MRI screening in asymptomatic patients who do not have a previously diagnosed malignancy or a cancer
+            predisposition syndrome.&rdquo; It gives the reason: incidental findings &ldquo;can lead to significant and
+            unnecessary patient anxiety, further investigation (including biopsy) and substantial downstream healthcare
+            costs.&rdquo; Source:{" "}
+            <a href="https://www.ranzcr.com/college/document-library/2024-position-statement-on-whole-body-mri" target="_blank" rel="noopener noreferrer" className="font-semibold text-[#0a7c42] hover:underline">RANZCR, Whole Body MRI Screening in Low-Risk Patients, position statement v1.1</a>,
+            approved 4 July 2025, read 13 September 2026.
+          </p>
+        </div>
       </section>
 
       <section>
