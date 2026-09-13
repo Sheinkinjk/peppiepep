@@ -179,7 +179,8 @@ that cannot be found on a public page is a sourcing gap, not proof it does not
 exist. Flag it and ask Jarred, who knows the partner. Log it in
 `PENDING_VERIFICATION` in `src/lib/facts/registry.ts`, never in `FACTS` (which
 `/data` publishes as dated checks), and change nothing on the page until it is
-resolved. First case: Juniper's free first consultation, 13 Sep 2026.
+resolved. First case: Juniper's free first consultation, logged 13 Sep 2026 and confirmed
+true by Jarred directly with Juniper on 14 Sep 2026, when it left the list.
 
 **Before any before-and-after comparison, check whether the treatment group was
 touched inside the measurement window.** The Search Console join initially showed

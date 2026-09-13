@@ -105,7 +105,7 @@ const webPageSchema = {
   url: seoConfig.cheapestWeightLossTelehealth.url,
   inLanguage: "en-AU",
   datePublished: "2026-07-06",
-  dateModified: "2026-08-14",
+  dateModified: "2026-09-10",
   isPartOf: { "@id": `${SITE_URL}/#website` },
   author: SCHEMA_AUTHOR,
   publisher: SCHEMA_PUBLISHER,
@@ -150,7 +150,7 @@ export default function CheapestWeightLossTelehealthPage() {
               separately on top of either. Annualise both against your own likely number of consults and the answer
               stops being a matter of opinion.
             </p>
-            <EditorialMeta lastUpdated="2026-08-14" className="mb-5" />
+            <EditorialMeta lastUpdated="2026-09-10" className="mb-5" />
             <p className="text-[#9aa39c] text-xs leading-relaxed max-w-2xl mb-7">
               Information only, not medical advice. Prices are approximate and change, so check current pricing on each
               provider. This page contains a disclosed affiliate link to Moshy.

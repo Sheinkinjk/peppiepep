@@ -180,19 +180,10 @@ export default function WeightLossTelehealthCostAustraliaPage() {
                   Because of this split, a low advertised service fee does not tell you the full story. When you compare two services,
                   you are really comparing the service fee plus any medicine cost together, and both can change over time.
                 </p>
-              </div>
-            </section>
-
-            <section>
-              <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#10251b]">
-                Why there is no single &ldquo;Moshy cost&rdquo; we can print
-              </h2>
-              <div className="mt-4 space-y-4 text-[15px] leading-relaxed text-[#3d4b44]">
                 <p>
                   People often search for an exact Moshy price, and it is a fair thing to want. There is no
                   single fixed figure that applies to everyone. The total depends on what a practitioner assesses as appropriate for
-                  your individual situation, and both service fees and medicine prices move over time. Any page confidently quoting one
-                  guaranteed dollar figure is likely to be out of date, or to be presenting an assumption as a fact.
+                  your individual situation, and both service fees and medicine prices move over time.
                 </p>
                 <p>
                   The reliable number is the one shown to you inside the Moshy flow itself, after the assessment and before you pay.

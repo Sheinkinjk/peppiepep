@@ -101,7 +101,7 @@ const webPageSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
   datePublished: "2026-07-05",
-  dateModified: "2026-08-14",
+  dateModified: "2026-09-10",
   name: seoConfig.bestHairLossTreatmentAustralia.title,
   description: seoConfig.bestHairLossTreatmentAustralia.description,
   url: `${SITE_URL}/best-hair-loss-treatment-australia`,
@@ -199,7 +199,7 @@ const articleSchema = comparisonArticleSchema({
   description: "Refer Labs compares Australian men's hair loss treatment services on treatments offered, plan structure and process.",
   url: "https://referlabs.com.au/best-hair-loss-treatment-australia",
   datePublished: "2026-07-05",
-  dateModified: "2026-08-14",
+  dateModified: "2026-09-10",
 });
 
 export default function BestHairLossTreatmentAustraliaPage() {
@@ -540,7 +540,7 @@ export default function BestHairLossTreatmentAustraliaPage() {
               signal, not an opening argument; it belongs next to the disclosure
               at the foot. The verification stamp stays above: that one is
               load-bearing for the attribution work. */}
-        <EditorialMeta lastUpdated="2026-08-14" className="mx-auto max-w-5xl px-5 pb-2 sm:px-8" />
+        <EditorialMeta lastUpdated="2026-09-10" className="mx-auto max-w-5xl px-5 pb-2 sm:px-8" />
         <AffiliateDisclosure className="mx-auto max-w-5xl px-5 pb-10 sm:px-8" />
 
       </main>

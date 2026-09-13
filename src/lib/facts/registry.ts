@@ -311,25 +311,13 @@ export interface PendingClaim {
   owner: string;
 }
 
-export const PENDING_VERIFICATION: PendingClaim[] = [
-  {
-    id: 'juniper-free-first-consultation-pending-2026-09-13',
-    subject: 'Juniper',
-    claim: 'Free first consultation when you start via our link.',
-    source: 'Juniper affiliate handbook, 6 August, not verified against a public page',
-    loggedAt: '2026-09-13',
-    pages: ['/best-weight-loss-telehealth-australia', '/juniper', '/moshy-alternatives', '/moshy-vs-juniper', '/weight-loss-guide'],
-    otherSurfaces: [
-      'src/lib/nav.ts: header nav note "Built for women, with a free first consultation", rendered on every page',
-      'src/lib/seo.ts: /juniper meta description, "A free first consultation for new patients through our link"',
-      'src/lib/weight-loss-guide-email.ts: the weight-loss guide email sent by /api/weight-loss-guide',
-    ],
-    owner: 'jarred, confirming with Juniper directly',
-    // Context, 13 Sep 2026. The claim entered /juniper on 6 Aug 2026 in commits
-    // 48f5eb6 and e2ee21f. A read of Juniper's public homepage on 13 Sep found
-    // the 30-day money-back guarantee, stated there for everyone, and no mention
-    // of a free consultation. The URL carrying the Refer Labs code could not be
-    // read by an automated browser, so what that link shows is unknown. /juniper
-    // is unchanged and stays in the 5 Sep title test while this is confirmed.
-  },
-];
+/*
+ * RESOLVED, 14 Sep 2026: 'juniper-free-first-consultation-pending-2026-09-13'.
+ * "Free first consultation when you start via our link" was logged on 13 Sep
+ * (source: Juniper affiliate handbook, 6 Aug, with no public page stating it).
+ * Jarred confirmed it with Juniper directly and it is true. It left this list by
+ * the second route above (confirmed with the partner), so it is NOT a Fact: no
+ * person read it off a public page, and /data must not publish it as a check.
+ * The pages and surfaces making the claim are unchanged.
+ */
+export const PENDING_VERIFICATION: PendingClaim[] = [];

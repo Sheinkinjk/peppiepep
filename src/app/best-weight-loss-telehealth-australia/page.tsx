@@ -121,7 +121,7 @@ const webPageSchema = {
   url: seoConfig.bestWeightLossTelehealth.url,
   inLanguage: "en-AU",
   datePublished: "2026-03-16",
-  dateModified: "2026-08-03",
+  dateModified: "2026-09-10",
   about: [
     { "@type": "Thing", name: "weight loss telehealth Australia 2026" },
     { "@type": "Thing", name: "Moshy vs Juniper Australia" },
@@ -338,7 +338,7 @@ const articleSchema = comparisonArticleSchema({
   description: "Refer Labs compares Australian weight-loss telehealth platforms on published pricing, eligibility process and program model.",
   url: "https://referlabs.com.au/best-weight-loss-telehealth-australia",
   datePublished: "2026-07-05",
-  dateModified: "2026-08-08",
+  dateModified: "2026-09-10",
 });
 
 export default function BestWeightLossTelehealthPage() {
@@ -611,7 +611,7 @@ export default function BestWeightLossTelehealthPage() {
               signal, not an opening argument; it belongs next to the disclosure
               at the foot. The verification stamp stays above: that one is
               load-bearing for the attribution work. */}
-            <EditorialMeta lastUpdated="2026-08-03" className="mb-4" />
+            <EditorialMeta lastUpdated="2026-09-10" className="mb-4" />
             <AffiliateDisclosure partners={["Moshy", "Juniper"]} className="mb-3 max-w-2xl" />
             <p className="text-[#9aa39c] text-xs leading-relaxed max-w-2xl">
               All content on this page is for informational purposes only and does not constitute medical advice. Suitability for any weight management programme depends on individual health factors. Consult a qualified health professional before starting any treatment.
