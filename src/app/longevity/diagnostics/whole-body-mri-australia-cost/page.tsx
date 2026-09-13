@@ -6,14 +6,15 @@ export const metadata = generateSEOMetadata(seoConfig.wholeBodyMri);
 /** The page that carries the criticism. Screening asymptomatic people with
  *  whole-body MRI is genuinely contested among Australian clinicians, chiefly
  *  because of the incidental-finding cascade. Omitting that to keep the page
- *  commercially friendly would make it advertising. No price is invented: the
- *  services publish little and we verified none, so the page explains the cost
- *  STRUCTURE, including why no rebate exists. */
+ *  commercially friendly would make it advertising. Prices are the three that
+ *  providers publish on their own sites, each read 13 Sep 2026. An earlier
+ *  version said providers "publish little and we verified none", which was
+ *  wrong. No commission is earned from any of them. */
 
 const faqs = [
   {
     q: "How much does a whole-body MRI cost in Australia?",
-    a: "It is a private, unsubsidised service and providers set their own fees, so ask the specific provider rather than relying on a figure quoted elsewhere. What is consistent is that you pay the whole amount: there is no Medicare rebate for imaging done as screening on someone without symptoms. Ask also what happens after, because follow-up imaging and specialist appointments prompted by the scan are billed separately and are where the total can grow.",
+    a: "Three providers publish a price on their own site, each read on 13 September 2026: OneMRI $2,990, Everlab $2,999 for members or $3,499 for non-members (its package adds a chest CT), and Full Body MRI in Perth $2,990. What is consistent is that you pay the whole amount: there is no Medicare rebate for imaging done as screening on someone without symptoms. Ask also what happens after, because follow-up imaging and specialist appointments prompted by the scan are billed separately and are where the total can grow.",
   },
   {
     q: "Does Medicare cover whole-body MRI screening?",
@@ -112,9 +113,24 @@ export default function Page() {
             </tbody>
           </table>
         </div>
+        <p className="mt-4">Three providers publish a price on their own site. Each was read on 13 September 2026:</p>
+        <ul className="mt-2 list-disc space-y-2 pl-5">
+          <li>
+            <strong>OneMRI</strong>: $2,990, no referral needed. Source:{" "}
+            <a href="https://www.onemri.com.au/pricing" target="_blank" rel="noopener noreferrer" className="font-semibold text-[#0a7c42] hover:underline">OneMRI&apos;s pricing page</a>, read 13 September 2026.
+          </li>
+          <li>
+            <strong>Everlab</strong>: $2,999 for members and $3,499 for non-members, for a full-body MRI plus a chest CT, with a referral required. Source:{" "}
+            <a href="https://www.everlab.com.au/medical-tests/full-body-mri-scan" target="_blank" rel="noopener noreferrer" className="font-semibold text-[#0a7c42] hover:underline">Everlab&apos;s full body MRI page</a>, read 13 September 2026.
+          </li>
+          <li>
+            <strong>Full Body MRI</strong> (a single clinic in Subiaco, Perth): $2,990 per person. Source:{" "}
+            <a href="https://fullbodymri.com.au/pricing/" target="_blank" rel="noopener noreferrer" className="font-semibold text-[#0a7c42] hover:underline">Full Body MRI&apos;s pricing page</a>, read 13 September 2026.
+          </li>
+        </ul>
         <p className="mt-3 text-xs text-[#6e7b74]">
-          We quote no scan price. Providers set their own fees and publish little, and we verified none, so ask the
-          provider directly and ask specifically what is not included.
+          None of these attracts a Medicare rebate. Prices change, so confirm the fee with the provider, and ask
+          specifically what it does not include.
         </p>
       </section>
 
