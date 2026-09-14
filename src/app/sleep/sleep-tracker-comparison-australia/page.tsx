@@ -95,7 +95,7 @@ export default function Page() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Where trackers genuinely help</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Where trackers help</h2>
         <p className="mt-3">
           The strongest use is the least glamorous one: consistency. Seeing that your bedtime moves by two hours across
           a week, or that disturbance rises on particular nights, is actionable in a way a single score is not.

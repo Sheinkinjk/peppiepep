@@ -24,7 +24,7 @@ const faqs = [
     a: "Yes. Mosh is an Australian men's health telehealth service operating under Australian health service regulations, and hair-loss enquiries are reviewed by registered Australian practitioners. It publishes its plans and prices openly and advertises a money-back guarantee, which are the markers of a real clinical service rather than a storefront.",
   },
   {
-    q: "Does Mosh actually work for hair loss?",
+    q: "Does Mosh work for hair loss?",
     a: "Mosh is a service rather than a treatment in itself: it provides access to a practitioner who decides whether prescription hair-loss treatment is appropriate for you. Evidence-based hair-loss treatment generally takes several months to show change and works while it is used. Outcomes vary between people, and suitability is a clinical decision. This is general information, not medical advice.",
   },
   {
@@ -110,7 +110,7 @@ export default function MoshReviewPage() {
         </h1>
         <p className="text-[#3d4b44] text-base sm:text-lg leading-relaxed mb-4 max-w-2xl">
           An independent look at Mosh, the Australian men&apos;s hair-loss telehealth service: whether it is a real
-          clinical service, what it costs, what people actually raise about it, and how to start.
+          clinical service, what it costs, what people raise about it, and how to start.
         </p>
         {/* Below the lead. The first paragraph after the h1 is the answer;
             a disclosure in that slot is what an engine lifts instead. Still
@@ -131,7 +131,7 @@ export default function MoshReviewPage() {
         </p>
 
         <section className="space-y-4 mb-10">
-          <h2 className="text-xl font-black">The short version</h2>
+          <h2 className="text-xl font-black">How Mosh works</h2>
           <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
             Mosh is an Australian men&apos;s health telehealth service, and hair loss is the reason most people come
             looking. You complete a questionnaire and photo assessment online, a registered Australian practitioner
@@ -190,7 +190,7 @@ export default function MoshReviewPage() {
         </section>
 
         <section className="space-y-4 mb-10">
-          <h2 className="text-xl font-black">What people actually raise</h2>
+          <h2 className="text-xl font-black">What people raise</h2>
           <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
             The most common points in Australian discussions are practical rather than about legitimacy: that it is a
             subscription, so it is an ongoing cost rather than a one-off; that hair-loss treatment takes months to show

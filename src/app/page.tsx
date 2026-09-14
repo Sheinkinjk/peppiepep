@@ -20,7 +20,7 @@ import { DEALS, formatVerifiedFull } from "@/lib/offers";
 // its slot on /deals; it simply is not one of three homepage picks.
 const picks = [
   { logo: "moshy", name: "Moshy", cat: "Weight loss", offer: "$120 off with code REFERRAL120", verdict: "Clinically-led weight-management telehealth, open to anyone eligible, with the plan set by a practitioner.", href: "/moshy" },
-  { logo: "knose", name: "Knose", cat: "Pets", offer: "First 2 months free", verdict: "Australian pet insurance with the cover, waiting periods and exclusions explained in plain English.", href: "/knose" },
+  { logo: "knose", name: "Knose", cat: "Pets", offer: "First 2 months free", verdict: "Australian pet insurance, with the cover, waiting periods and exclusions set out before you get a quote.", href: "/knose" },
   { logo: "superfiliate", name: "Superfiliate", cat: "Creator growth", offer: "15% off your monthly fee", verdict: "Creator-led affiliate and referral software: partner storefronts and code-based attribution in one place.", href: "/superfiliate" },
 ];
 
@@ -51,7 +51,7 @@ const comingSoonCategories = [
   {
     href: "/skin-and-beauty", icon: Sparkles, title: "Skin & Beauty",
     accent: "#7A5A8C", tint: "#F2ECF6",
-    note: "What the actives do, what devices really cost here, and how the prescription route differs.",
+    note: "What the actives do, what devices cost here, and how the prescription route differs.",
     links: [
       { h: "/skin-and-beauty/led-face-mask-comparison-australia", l: "LED masks: real prices" },
       { h: "/skin-and-beauty/acne-treatment-options-and-costs-australia", l: "Acne: routes and costs" },
@@ -60,7 +60,7 @@ const comingSoonCategories = [
   {
     href: "/sleep", icon: Moon, title: "Sleep",
     accent: "#3D5A80", tint: "#E9EFF6",
-    note: "Where sleep is clinical and where it is retail, and what each actually costs.",
+    note: "Where sleep is clinical and where it is retail, and what each costs.",
     links: [
       { h: "/sleep/do-i-have-sleep-apnoea", l: "How diagnosis works" },
       { h: "/sleep/cpap-machine-costs-australia", l: "CPAP: verified prices" },
@@ -108,7 +108,7 @@ const categoryCards = [
   {
     href: "/pet-insurance", icon: PawPrint, title: "Pets",
     accent: "#3E6B99", tint: "#E8F0F8",
-    note: "How pet insurance cover, waiting periods and exclusions actually work, plus current offers.",
+    note: "How pet insurance cover, waiting periods and exclusions work, plus current offers.",
     links: [
       { h: "/what-pet-insurance-covers-australia", l: "What it covers" },
     ],
@@ -454,7 +454,7 @@ export default function HomePage() {
             <h2 className="text-2xl font-black tracking-[-0.02em] text-[#10251b] sm:text-[2rem]">How Refer Labs compares services</h2>
             <p className="mt-6 text-[17px] leading-relaxed text-[#3d4b44]">
               Refer Labs is an independent Australian comparison publisher. We research the categories where the choice
-              is genuinely hard, from weight-loss and hair-loss telehealth to home batteries, pet insurance and the
+              is hard, from weight-loss and hair-loss telehealth to home batteries, pet insurance and the
               software that runs a business.
             </p>
             <p className="mt-4 text-[17px] leading-relaxed text-[#3d4b44]">

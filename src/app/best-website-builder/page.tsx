@@ -342,7 +342,7 @@ export default function BestWebsiteBuilderPage() {
                 above the first affiliate link, which is what it is for. */}
             <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
             <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl mb-4">
-              Below: what each platform is actually built for, current pricing, current offers, and a direct link to get started. No affiliate fluff, each verdict is based on what the product does well and who it will fail.
+              Below: what each platform is built for, current pricing, current offers, and a direct link to get started. No affiliate fluff, each verdict is based on what the product does well and who it will fail.
             </p>
             <p className="mb-7 text-sm">
               <Link href="/website-builder-quiz" className="font-semibold text-[#0a7c42] underline decoration-[#0a7c42]/30 underline-offset-4 hover:text-[#086536]">

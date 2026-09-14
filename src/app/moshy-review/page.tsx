@@ -126,7 +126,7 @@ export default function MoshyReviewPage() {
         </div>
 
         <section className="space-y-4 mb-10">
-          <h2 className="text-xl font-black">The short version</h2>
+          <h2 className="text-xl font-black">How Moshy works</h2>
           <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
             Moshy is an Australian telehealth service, and its weight-management program is the part most people come
             looking for. You complete a questionnaire online, a registered Australian practitioner reviews your answers,

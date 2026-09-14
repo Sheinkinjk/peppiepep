@@ -12,7 +12,7 @@ export const metadata = generateSEOMetadata(seoConfig.screeningCompared);
 const faqs = [
   {
     q: "What is the difference between Everlab, Prenuvo and i-screen?",
-    a: "Chiefly what they measure. Prenuvo is built around whole-body MRI imaging. Everlab is a broader preventive-health programme built largely around extensive pathology with clinician review. i-screen is a pathology testing service you can order without going through a GP first. Imaging and blood testing answer different questions, so the meaningful comparison is not price per service but which is looking at the thing you are actually worried about.",
+    a: "Chiefly what they measure. Prenuvo is built around whole-body MRI imaging. Everlab is a broader preventive-health programme built largely around extensive pathology with clinician review. i-screen is a pathology testing service you can order without going through a GP first. Imaging and blood testing answer different questions, so start with which one looks at what you want checked, and compare price after that.",
   },
   {
     q: "How much do these services cost in Australia?",
@@ -39,8 +39,8 @@ export default function Page() {
       sectionHref="/longevity/diagnostics"
       slug="/longevity/diagnostics/everlab-vs-prenuvo-vs-i-screen-australia"
       crumb="Screening services compared"
-      h1={<>Everlab, Prenuvo and i-screen: <span className="italic text-[#0a7c42]">what each is actually looking at</span></>}
-      intro="Three different tests, not three prices for one. Prenuvo is whole-body MRI imaging. i-screen is pathology you can order directly. Everlab is extensive pathology with clinician review, run as a programme. Comparing them on price compares things that are not substitutes, so the first question is which of the three questions you are actually asking."
+      h1={<>Everlab, Prenuvo and i-screen: <span className="italic text-[#0a7c42]">what each is looking at</span></>}
+      intro="Three different tests, not three prices for one. Prenuvo is whole-body MRI imaging. i-screen is pathology you can order directly. Everlab is extensive pathology with clinician review, run as a programme. Comparing them on price compares things that are not substitutes, so the first question is which of the three questions you are asking."
       headline="Everlab vs Prenuvo vs i-screen in Australia"
       description={seoConfig.screeningCompared.description}
       faqs={faqs}
@@ -88,7 +88,7 @@ export default function Page() {
           show in bloods, and plenty of things bloods pick up are invisible on imaging.
         </p>
         <p className="mt-3">
-          So &ldquo;which is better value&rdquo; is the wrong question. The better one is what you are actually worried
+          So &ldquo;which is better value&rdquo; is the wrong question. The better one is what you are worried
           about, and whether that concern is well founded, which is where a GP conversation beats a comparison table.
         </p>
       </section>
@@ -115,7 +115,7 @@ export default function Page() {
         <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">The step before any of them</h2>
         <p className="mt-3">
           Talk to a GP about what your actual risk factors are. Some people have a family history or a specific concern
-          that genuinely warrants investigation, and in those cases there may be a clinically indicated pathway that
+          that warrants investigation, and in those cases there may be a clinically indicated pathway that
           attracts a rebate rather than a private screen you pay for in full.
         </p>
         <p className="mt-3">

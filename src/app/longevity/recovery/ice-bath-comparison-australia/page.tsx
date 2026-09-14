@@ -26,7 +26,7 @@ const faqs = [
   },
   {
     q: "Does Refer Labs recommend a brand?",
-    a: "No. We have tested none of these and have no partner in the category, so a ranking would be guesswork. The criteria below are what we would use, and they work on whichever setups you are actually considering.",
+    a: "No. We have tested none of these and have no partner in the category, so a ranking would be guesswork. The criteria below are what we would use, and they work on whichever setups you are considering.",
   },
 ];
 
@@ -37,8 +37,8 @@ export default function Page() {
       sectionHref="/longevity/recovery"
       slug="/longevity/recovery/ice-bath-comparison-australia"
       crumb="Comparing ice baths"
-      h1={<>Comparing ice baths in Australia: <span className="italic text-[#0a7c42]">what you are actually paying for</span></>}
-      intro="The cold water is the same at every price point. What separates a few hundred dollars from ten thousand is how much effort the setup removes from your week, and whether that trade is worth it depends on how often you would really use it."
+      h1={<>Comparing ice baths in Australia: <span className="italic text-[#0a7c42]">what you are paying for</span></>}
+      intro="The cold water is the same at every price point. What separates a few hundred dollars from ten thousand is how much effort the setup removes from your week, and whether that trade is worth it depends on how often you would use it."
       headline="Ice baths in Australia: how to compare them"
       description={seoConfig.iceBathComparison.description}
       faqs={faqs}
@@ -55,7 +55,7 @@ export default function Page() {
         </p>
         <p className="mt-3">
           Once or twice a week, a simple tub and bagged ice is rational and costs very little to find out with. Four or
-          five times a week, the ice becomes both expensive and tedious enough that a chiller genuinely pays. The
+          five times a week, the ice becomes both expensive and tedious enough that a chiller pays. The
           expensive mistake is buying for the frequency you aspire to rather than the one you will hit.
         </p>
       </section>

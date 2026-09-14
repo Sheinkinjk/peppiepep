@@ -33,7 +33,7 @@ const faqs = [
   },
   {
     q: "Why does this page not rank specific clinics?",
-    a: "Because we have not verified any provider's current pricing in this category and have no partner in it, so a ranking would be either guesswork or steering. The comparison criteria below are the same ones we would apply, and they let you run the comparison yourself on whichever services you are actually considering.",
+    a: "Because we have not verified any provider's current pricing in this category and have no partner in it, so a ranking would be either guesswork or steering. The comparison criteria below are the same ones we would apply, and they let you run the comparison yourself on whichever services you are considering.",
   },
   {
     q: "Is a subscription or per-consult model better?",
@@ -48,7 +48,7 @@ export default function Page() {
       sectionHref="/mens-health"
       slug="/mens-health/online-mens-health-clinics-compared"
       crumb="Online clinics compared"
-      h1={<>Online men&apos;s health clinics: <span className="italic text-[#0a7c42]">what actually differs</span></>}
+      h1={<>Online men&apos;s health clinics: <span className="italic text-[#0a7c42]">what differs</span></>}
       intro="The clinical process is broadly the same at all of them: a form, then a practitioner registered with AHPRA who decides. One thing differs and it is the commercial model, which is where the entire cost difference lives. Two structures exist, per-consult and subscription, and they win in opposite situations. These are the criteria that separate them and the checks worth running before you enter a card."
       headline="Online men's health clinics in Australia, compared"
       description={seoConfig.mensClinicsCompared.description}
@@ -112,7 +112,7 @@ export default function Page() {
         </p>
         <p className="mt-3">
           The criteria above are what we would use ourselves. Run them against the two or three services you are
-          actually weighing up and the differences become obvious quickly.
+          weighing up and the differences become obvious quickly.
         </p>
       </section>
 

@@ -180,7 +180,7 @@ export const seoConfig = {
   petInsurance: {
     title: "Pet Insurance Australia: Cover & Offers | Refer Labs",
     description:
-      "Pet insurance in Australia explained in plain English: what cover types, waiting periods, exclusions and limits mean, plus current offers like 2 months free with Knose.",
+      "Pet insurance in Australia: what cover types, waiting periods, exclusions and limits mean, plus current offers like 2 months free with Knose.",
     url: `${SITE_URL}/pet-insurance`,
     keywords: ["pet insurance australia", "compare pet insurance australia", "dog insurance australia", "cat insurance australia", "pet insurance offers"],
   },
@@ -201,7 +201,7 @@ export const seoConfig = {
   bestPetInsurance: {
     title: "Best Pet Insurance in Australia 2026: How to Choose | Refer Labs",
     description:
-      "How to choose pet insurance in Australia: the benefit percentage, annual limits, excess, waiting periods and exclusions that decide what you actually get back, plus the providers we cover. Not financial advice.",
+      "How to choose pet insurance in Australia: the benefit percentage, annual limits, excess, waiting periods and exclusions that decide what you get back, plus the providers we cover. Not financial advice.",
     url: `${SITE_URL}/best-pet-insurance-australia`,
     keywords: ["best pet insurance australia", "best pet insurance", "compare pet insurance australia", "best dog insurance australia", "best cat insurance australia", "pet insurance comparison australia"],
   },
@@ -211,14 +211,14 @@ export const seoConfig = {
     // the title carried no matching phrase at all. The offer is unchanged.
     title: "Knose Promo Code 2026: 2 Months Free | Refer Labs",
     description:
-      "Knose promo code Australia: new customers get 2 months free with code referlab2mf through our link. What Knose pet insurance covers, in plain English. Not financial advice.",
+      "Knose promo code Australia: new customers get 2 months free with code referlab2mf through our link. What Knose pet insurance covers. Not financial advice.",
     url: `${SITE_URL}/knose`,
     keywords: ["knose pet insurance", "knose promo code", "knose 2 months free", "knose pet insurance review"],
   },
   ecoflow: {
     title: "EcoFlow Australia Review 2026: Real AUD Prices by Model | Refer Labs",
     description:
-      "EcoFlow's Australian range priced per model and per watt-hour, read off EcoFlow's own AU store: DELTA 3 Classic A$999 for 1024Wh up to DELTA Pro Ultra A$7,299. What each actually runs, and who it suits.",
+      "EcoFlow's Australian range priced per model and per watt-hour, read off EcoFlow's own AU store: DELTA 3 Classic A$999 for 1024Wh up to DELTA Pro Ultra A$7,299. What each runs, and who it suits.",
     url: `${SITE_URL}/ecoflow`,
     keywords: ["ecoflow australia", "ecoflow price australia", "ecoflow delta 3 price", "ecoflow portable power station", "ecoflow review australia"],
   },
@@ -246,7 +246,7 @@ export const seoConfig = {
   portablePowerStationAustralia: {
     title: "Portable Power Stations Australia 2026: What They Cost & What They Run | Refer Labs",
     description:
-      "What a portable power station actually costs in Australia and what it will run in a blackout, with real AUD prices per watt-hour from EcoFlow and Anker SOLIX. Written for renters and apartments, who cannot install a fixed battery.",
+      "What a portable power station costs in Australia and what it will run in a blackout, with real AUD prices per watt-hour from EcoFlow and Anker SOLIX. Written for renters and apartments, who cannot install a fixed battery.",
     url: `${SITE_URL}/portable-power-station-australia`,
     keywords: ["portable power station australia", "blackout backup renters australia", "power station for apartment", "backup power without solar", "best portable power station australia"],
   },
@@ -507,7 +507,7 @@ export const seoConfig = {
   pipedrive: {
     title: "Pipedrive Discount Code 2026: Is There One? Pricing & Free Trial | Refer Labs",
     description:
-      "Looking for a Pipedrive discount code, promo code or referral link? Pipedrive is a visual sales CRM with a 14-day free trial, no card, through our link. From US$14/seat/mo.",
+      "Looking for a Pipedrive discount code, promo code or referral link? Pipedrive is a visual sales CRM with a 14-day free trial, no card, through our link. From AU$19/seat/mo billed annually, read 5 Sep 2026.",
     url: `${SITE_URL}/pipedrive`,
     keywords: ["pipedrive discount code", "pipedrive promo code", "pipedrive coupon", "pipedrive referral link", "pipedrive review", "pipedrive pricing", "visual sales crm", "pipeline crm"],
   },
@@ -554,7 +554,7 @@ export const seoConfig = {
     keywords: ["apollo energy group review", "is apollo energy group legit", "apollo energy reviews", "apollo energy group australia", "apollo battery installer review", "home battery installer review australia"],
   },
   homeBatteryRebate: {
-    title: "Home Battery Rebate Australia 2026: What You Actually Get",
+    title: "Home Battery Rebate Australia 2026: What You Get",
     description:
       "The federal Cheaper Home Batteries rebate explained: what it pays per usable kWh, the taper above 14kWh, state VPP incentives, and worked examples.",
     url: `${SITE_URL}/home-battery-rebate-australia`,
@@ -584,7 +584,7 @@ export const seoConfig = {
   homeBatteryCost: {
     title: "Home Battery Cost Australia 2026 | Refer Labs",
     description:
-      "What a home battery really costs in Australia 2026: installed price ranges by size, what the federal rebate takes off, and realistic payback periods.",
+      "What a home battery costs in Australia 2026: installed price ranges by size, what the federal rebate takes off, and realistic payback periods.",
     url: `${SITE_URL}/home-battery-cost-australia`,
     keywords: ["home battery cost australia", "home battery price australia 2026", "how much does a home battery cost", "solar battery cost australia", "battery payback period australia", "tesla powerwall 3 price australia", "home battery installed cost"],
   },
@@ -606,7 +606,7 @@ export const seoConfig = {
   affiliateSoftware: {
     title: "Affiliate & Referral Software in Australia 2026: How to Choose | Refer Labs",
     description:
-      "Choosing software to run your own affiliate or referral program in Australia: what actually separates the platforms, why almost none publish a price, and the questions that make two quotes comparable.",
+      "Choosing software to run your own affiliate or referral program in Australia: what separates the platforms, why almost none publish a price, and the questions that make two quotes comparable.",
     url: `${SITE_URL}/affiliate-software-australia`,
     keywords: ["affiliate software australia", "referral software australia", "affiliate marketing software australia", "referral program software australia", "affiliate platform for brands australia", "how to run an affiliate program australia"],
   },
@@ -632,7 +632,7 @@ export const seoConfig = {
   longevityHub: {
     title: "Longevity in Australia 2026: What It Costs and What Holds Up | Refer Labs",
     description:
-      "Independent guides to the longevity market in Australia: recovery hardware and its running costs, what screening and diagnostics actually cost, and how to read the evidence behind supplements.",
+      "Independent guides to the longevity market in Australia: recovery hardware and its running costs, what screening and diagnostics cost, and how to read the evidence behind supplements.",
     url: `${SITE_URL}/longevity`,
     keywords: ["longevity australia", "longevity clinic australia", "biohacking australia", "longevity cost australia"],
   },
@@ -653,7 +653,7 @@ export const seoConfig = {
   iceBathRunningCosts: {
     title: "Ice Bath Running Costs in Australia 2026: The Real Numbers | Refer Labs",
     description:
-      "What an ice bath actually costs to run in Australia each year: chiller electricity worked from your own tariff, water, filtration and consumables, plus how it compares to buying bagged ice.",
+      "What an ice bath costs to run in Australia each year: chiller electricity worked from your own tariff, water, filtration and consumables, plus how it compares to buying bagged ice.",
     url: `${SITE_URL}/longevity/recovery/ice-bath-running-costs-australia`,
     keywords: ["ice bath running cost australia", "cold plunge electricity cost australia", "ice bath chiller running cost", "how much does an ice bath cost to run"],
   },
@@ -672,7 +672,7 @@ export const seoConfig = {
     keywords: ["home sauna cost australia", "sauna price australia", "sauna installation cost australia", "sauna running cost australia"],
   },
   contrastTherapy: {
-    title: "Contrast Therapy: What the Evidence Actually Says 2026 | Refer Labs",
+    title: "Contrast Therapy: What the Evidence Says 2026 | Refer Labs",
     description:
       "Hot and cold contrast therapy, assessed on evidence rather than marketing: what the research supports, where it is weak, and what that means before you spend.",
     url: `${SITE_URL}/longevity/recovery/contrast-therapy-what-the-evidence-says`,
@@ -695,7 +695,7 @@ export const seoConfig = {
   screeningCompared: {
     title: "Everlab vs Prenuvo vs i-screen in Australia 2026 | Refer Labs",
     description:
-      "How Australia's preventive screening services differ on what they actually measure, how each is priced, whether a doctor reviews the result, and what happens when something incidental shows up.",
+      "How Australia's preventive screening services differ on what they measure, how each is priced, whether a doctor reviews the result, and what happens when something incidental shows up.",
     url: `${SITE_URL}/longevity/diagnostics/everlab-vs-prenuvo-vs-i-screen-australia`,
     keywords: ["everlab australia", "prenuvo australia", "i-screen australia", "health screening compared australia", "preventive screening australia"],
   },
@@ -730,7 +730,7 @@ export const seoConfig = {
   supplementsEvidence: {
     title: "Longevity Supplements in Australia 2026: An Evidence Review | Refer Labs",
     description:
-      "How to read the evidence behind longevity supplements sold in Australia, what AUST L on the label actually means, and why almost none of the headline claims survive scrutiny.",
+      "How to read the evidence behind longevity supplements sold in Australia, what AUST L on the label means, and why almost none of the headline claims survive scrutiny.",
     url: `${SITE_URL}/longevity/supplements/longevity-supplements-evidence-review`,
     keywords: ["longevity supplements australia", "anti ageing supplements australia", "supplement evidence australia", "aust l meaning australia"],
   },
@@ -773,14 +773,14 @@ export const seoConfig = {
   telehealthVsGpMens: {
     title: "Telehealth or a GP for Men's Health: Which Is Cheaper? 2026 | Refer Labs",
     description:
-      "Comparing an online men's health service against your regular GP on total cost: consult fees, Medicare rebates, subscription structure and what each route actually includes over a year.",
+      "Comparing an online men's health service against your regular GP on total cost: consult fees, Medicare rebates, subscription structure and what each route includes over a year.",
     url: `${SITE_URL}/mens-health/is-telehealth-or-a-gp-cheaper-for-mens-health`,
     keywords: ["telehealth vs gp cost australia", "is telehealth cheaper than a gp", "mens health gp or online australia", "bulk billed mens health australia"],
   },
   onlineMedicalCertificate: {
     title: "Online Medical Certificate Australia: Cost 2026 | Refer Labs",
     description:
-      "What an online medical certificate costs in Australia: Midoc's four types from $18, issued 24/7, and the doctor's review you are actually paying for.",
+      "What an online medical certificate costs in Australia: Midoc's four types from $18, issued 24/7, and the doctor's review you are paying for.",
     url: `${SITE_URL}/mens-health/online-doctor-medical-certificate-australia`,
     keywords: ["online medical certificate australia", "medical certificate online cost", "sick certificate online australia", "telehealth medical certificate australia", "same day medical certificate online"],
   },
@@ -815,28 +815,28 @@ export const seoConfig = {
   sleep: {
     title: "Sleep in Australia 2026: What Better Sleep Costs | Refer Labs",
     description:
-      "Independent guides to sleep in Australia: what mattresses and trackers actually cost, how a sleep study works and what Medicare covers, and the real price of CPAP equipment.",
+      "Independent guides to sleep in Australia: what mattresses and trackers cost, how a sleep study works and what Medicare covers, and the real price of CPAP equipment.",
     url: `${SITE_URL}/sleep`,
     keywords: ["sleep australia", "better sleep australia", "sleep health australia", "sleep cost australia", "sleep guide australia 2026"],
   },
   mattressComparison: {
     title: "Mattress Buying in Australia 2026: How to Compare Properly | Refer Labs",
     description:
-      "How to compare mattresses in Australia without relying on marketing: what the specifications mean, how trial periods and returns really work, and where the money goes.",
+      "How to compare mattresses in Australia without relying on marketing: what the specifications mean, how trial periods and returns work, and where the money goes.",
     url: `${SITE_URL}/sleep/mattress-comparison-australia`,
     keywords: ["mattress comparison australia", "best mattress australia", "mattress buying guide australia", "mattress trial period australia", "how to choose a mattress australia"],
   },
   sleepTrackers: {
     title: "Sleep Trackers Australia 2026: What They Measure | Refer Labs",
     description:
-      "What sleep trackers actually measure in Australia, the difference between a consumer wearable and a clinical sleep study, and what the numbers can and cannot tell you.",
+      "What sleep trackers measure in Australia, the difference between a consumer wearable and a clinical sleep study, and what the numbers can and cannot tell you.",
     url: `${SITE_URL}/sleep/sleep-tracker-comparison-australia`,
     keywords: ["sleep tracker australia", "best sleep tracker australia", "sleep tracking accuracy", "wearable sleep tracker australia", "sleep tracker vs sleep study"],
   },
   sleepApnoeaPathway: {
     title: "Do I Have Sleep Apnoea? How Australians Get Answers 2026 | Refer Labs",
     description:
-      "How sleep apnoea is actually diagnosed in Australia: what a GP asks, how a sleep study is arranged, what Medicare covers, and how to prepare for the appointment.",
+      "How sleep apnoea is diagnosed in Australia: what a GP asks, how a sleep study is arranged, what Medicare covers, and how to prepare for the appointment.",
     url: `${SITE_URL}/sleep/do-i-have-sleep-apnoea`,
     keywords: ["do i have sleep apnoea", "sleep apnoea diagnosis australia", "sleep apnoea test australia", "sleep apnoea gp australia", "how to get tested for sleep apnoea australia"],
   },
@@ -855,9 +855,9 @@ export const seoConfig = {
     keywords: ["cpap machine cost australia", "cpap price australia", "resmed airsense 11 price australia", "cpap machine australia", "cpap consumables cost australia"],
   },
   costOfGoodSleep: {
-    title: "What Does Good Sleep Actually Cost in Australia? 2026 | Refer Labs",
+    title: "What Does Good Sleep Cost in Australia? 2026 | Refer Labs",
     description:
-      "Costing sleep honestly: what the free changes are worth trying first, where spending genuinely helps, and how to work out whether a purchase is worth it over its lifespan.",
+      "The free changes worth trying first, where spending helps, and how to work out whether a purchase is worth it over its lifespan.",
     url: `${SITE_URL}/sleep/how-much-does-good-sleep-cost`,
     keywords: ["cost of good sleep", "how much to spend on sleep australia", "sleep products worth it australia", "improve sleep australia cost"],
   },
@@ -888,6 +888,10 @@ export const seoConfig = {
     // (read at RY on 19 Aug 2026) and the old title did not. Caveat: many of those
     // queries read like AI-mode fan-out ("price sale september 2026") that may not
     // click whatever the title says. Measure on 13 Oct 2026: CTR at unchanged position.
+    // CONFOUND, 14 Sep 2026: body edited in an AI-slop sweep. One sentence in the
+    // price section rewritten ("What the local price buys is Australian consumer
+    // guarantees...") and filler words removed from the intro and one FAQ. Title,
+    // description and the AUD $470 figure unchanged.
     title: "LED Face Masks Australia 2026: Omnilux Is AUD $470 Here | Refer Labs",
     description:
       "The Omnilux Contour Face was AUD $470 at RY on 19 Aug 2026, against USD $395 on the brand's own site. Why the gap exists, and how to check the ARTG.",
@@ -909,7 +913,7 @@ export const seoConfig = {
     keywords: ["natural skincare australia", "organic skincare australia", "certified organic skincare australia", "aco certified skincare", "natural skincare brands australia"],
   },
   skincareCostPerUse: {
-    title: "Skincare Cost Per Use: What Australians Actually Pay 2026 | Refer Labs",
+    title: "Skincare Cost Per Use: What Australians Pay 2026 | Refer Labs",
     description:
       "Judging skincare by cost per use instead of sticker price. How to work it out, why a $90 serum can be cheaper than a $30 one, and where the maths misleads you.",
     url: `${SITE_URL}/skin-and-beauty/best-value-skincare-australia-cost-per-use`,
@@ -923,7 +927,7 @@ export const seoConfig = {
     keywords: ["acne treatment australia", "acne treatment cost australia", "how to treat acne australia", "dermatologist acne australia cost", "acne gp australia"],
   },
   antiAgeingCosts: {
-    title: "Anti-Ageing Treatments Australia: What They Actually Cost 2026 | Refer Labs",
+    title: "Anti-Ageing Treatments Australia: What They Cost 2026 | Refer Labs",
     description:
       "What anti-ageing treatments cost in Australia and why almost none publish a price. How clinics quote, what drives the number, and the questions to ask before you book.",
     url: `${SITE_URL}/skin-and-beauty/anti-ageing-treatments-what-they-cost`,
@@ -1369,6 +1373,8 @@ export const seoConfig = {
     // position 16.1) and /moshy-review (2.03% at 12.7), both rank WORSE than this
     // page and both carry a figure in the title. Testing whether the figure is the
     // cause. Measure on 5 October 2026: CTR at unchanged position is the read.
+    // CONFOUND, 14 Sep 2026: one filler word ("actually") removed from one body
+    // sentence in an AI-slop sweep. Title and description unchanged. Negligible.
     title: "Durable AI 2026: A Site in 30 Seconds, From $19 | Refer Labs",
     description:
       "A complete business website in 30 seconds with no account, then from $19 a month to publish. The CRM and invoicing are what you are paying for.",
@@ -1613,7 +1619,7 @@ export const seoConfig = {
   moshyReview: {
     title: "Moshy Review 2026: How It Works and the Cost",
     description:
-      "What sign-up, the practitioner review and the subscription actually involve. $120 off a first order with REFERRAL120, checked 17 Aug 2026.",
+      "What sign-up, the practitioner review and the subscription involve. $120 off a first order with REFERRAL120, checked 17 Aug 2026.",
     url: `${SITE_URL}/moshy-review`,
     keywords: [
       "moshy review",
@@ -1632,7 +1638,7 @@ export const seoConfig = {
   moshyEligibility: {
     title: "Moshy Eligibility Check Explained: What the Quiz Asks",
     description:
-      "What the Moshy eligibility check actually involves. The questions the online quiz asks, how long it takes, what the practitioner review looks at, and why some applications are declined. Information only.",
+      "What the Moshy eligibility check involves. The questions the online quiz asks, how long it takes, what the practitioner review looks at, and why some applications are declined. Information only.",
     url: `${SITE_URL}/moshy-eligibility`,
     keywords: [
       "moshy eligibility",
@@ -1945,6 +1951,9 @@ export const seoConfig = {
     // position 16.1) and /moshy-review (2.03% at 12.7), both rank WORSE than this
     // page and both carry a figure in the title. Testing whether the figure is the
     // cause. Measure on 5 October 2026: CTR at unchanged position is the read.
+    // CONFOUND, 14 Sep 2026: two FAQ questions lost the word "actually" ("Does
+    // Juniper work?"), which also changes the FAQPage JSON-LD. Title and
+    // description unchanged.
     title: "Juniper Review 2026: Free Consult, 30-Day Refund",
     description:
       "A free first consultation for new patients through our link, and Juniper states a 30-day money-back guarantee. What the coaching-led program includes.",
@@ -1968,6 +1977,10 @@ export const seoConfig = {
     // position 16.1) and /moshy-review (2.03% at 12.7), both rank WORSE than this
     // page and both carry a figure in the title. Testing whether the figure is the
     // cause. Measure on 5 October 2026: CTR at unchanged position is the read.
+    // CONFOUND, 14 Sep 2026: body edited mid-test in an AI-slop sweep. The h2 "The
+    // short version" became "How Mosh works", "What people actually raise" became
+    // "What people raise", and one FAQ question lost "actually". Title and
+    // description unchanged.
     title: "Mosh Review 2026: Is It Legit? Plus 55% Off",
     description:
       "A real clinical service, and REFERAL55 takes 55% off a first order. What the consult involves, what you pay monthly after, and who it does not suit.",
@@ -2003,7 +2016,7 @@ export const seoConfig = {
   weightLossCostCalculator: {
     title: "Weight Loss Telehealth Cost Calculator Australia: Find Your Pathway",
     description:
-      "Work out what weight-loss telehealth will cost you in Australia: compare subscription, coaching and GP pathways, what you actually pay for, and where your exact price is shown before you commit.",
+      "Work out what weight-loss telehealth will cost you in Australia: compare subscription, coaching and GP pathways, what you pay for, and where your exact price is shown before you commit.",
     url: `${SITE_URL}/weight-loss-cost-calculator`,
     keywords: [
       "weight loss telehealth cost calculator",
@@ -2294,6 +2307,8 @@ export const seoConfig = {
     // position 16.1) and /moshy-review (2.03% at 12.7), both rank WORSE than this
     // page and both carry a figure in the title. Testing whether the figure is the
     // cause. Measure on 5 October 2026: CTR at unchanged position is the read.
+    // CONFOUND, 14 Sep 2026: one filler word ("actually") removed from the intro
+    // sentence. Title and description unchanged. Negligible.
     title: "beehiiv vs Substack: 0% vs 10% of Your Revenue",
     description:
       "Substack takes 10% of paid subscription revenue; beehiiv and Kit take 0%. Free to 2,500 and 1,000 subscribers. What each costs as your list grows.",

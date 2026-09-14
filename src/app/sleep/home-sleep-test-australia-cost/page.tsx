@@ -41,7 +41,7 @@ export default function Page() {
       sectionHref="/sleep"
       slug="/sleep/home-sleep-test-australia-cost"
       crumb="Home sleep studies"
-      h1={<>Home sleep studies in Australia: <span className="italic text-[#0a7c42]">how the cost actually works</span></>}
+      h1={<>Home sleep studies in Australia: <span className="italic text-[#0a7c42]">how the cost works</span></>}
       intro="Many Australians pay nothing for a home sleep study and others pay several hundred dollars for the same test. The difference is almost never the provider: it is whether a valid referral and the eligibility conditions that unlock a Medicare rebate were in place before you started. Get that order wrong and you pay in full."
       headline="Home sleep study Australia: how it works and what it costs"
       description={seoConfig.homeSleepTestCost.description}
@@ -117,7 +117,7 @@ export default function Page() {
       <section>
         <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">The direct-to-consumer shortcut</h2>
         <p className="mt-3">
-          Services offering a test without going through a GP are genuinely faster, and for someone who has been
+          Services offering a test without going through a GP are faster, and for someone who has been
           waiting weeks for an appointment that has real value. The trade is that you generally pay the full cost, and
           you skip the step where a clinician considers whether something other than a sleep disorder explains your
           symptoms.

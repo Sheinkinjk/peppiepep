@@ -39,7 +39,7 @@ export const unbounceConfig: AffiliatePageConfig = {
   },
   sections: [
     {
-      heading: "What the offer actually is",
+      heading: "What the offer is",
       paragraphs: [
         "Two options, and you pick by choosing your billing term rather than by entering anything. On monthly billing you get 20% off your first three months. On an annual plan you get 35% off your first bill, covering the whole year.",
         "It is a new-customer offer, so it will not apply to an existing account. There is no code to type: Unbounce's invitation page carries the discount into the sign-up flow when you arrive through a referral link.",

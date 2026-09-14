@@ -45,7 +45,7 @@ export default function Page() {
       sectionHref="/mens-health"
       slug="/mens-health/is-telehealth-or-a-gp-cheaper-for-mens-health"
       crumb="Telehealth or a GP?"
-      h1={<>Telehealth or a GP for men&apos;s health: <span className="italic text-[#0a7c42]">which actually costs less</span></>}
+      h1={<>Telehealth or a GP for men&apos;s health: <span className="italic text-[#0a7c42]">which costs less</span></>}
       intro="Often not, once you annualise both. A bulk-billed GP appointment can cost nothing and a gap payment attracts a Medicare rebate, while most online subscriptions sit outside Medicare and charge every month whether you consult or not. Telehealth usually wins on speed and privacy. It wins on price only when you would consult often, or when your GP does not bulk bill."
       headline="Telehealth or a GP for men's health: which is cheaper?"
       description={seoConfig.telehealthVsGpMens.description}
@@ -88,7 +88,7 @@ export default function Page() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">What each route is actually buying you</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">What each route is buying you</h2>
         <div className="mt-4 overflow-x-auto rounded-2xl border border-[#e5e9e7]">
           <table className="w-full min-w-[560px] border-collapse text-left text-sm">
             <thead className="bg-[#f8faf9] text-[11px] uppercase tracking-[0.1em] text-[#9aa39c]">
@@ -127,7 +127,7 @@ export default function Page() {
           appointment that would otherwise never happen.
         </p>
         <p className="mt-3">
-          If that is you, paying a premium to actually get assessed is a sensible trade rather than a failure of
+          If that is you, paying a premium to get assessed is a sensible trade rather than a failure of
           budgeting. What is worth avoiding is paying the premium without realising you are paying it, which is what
           the monthly-versus-per-consult framing tends to produce.
         </p>

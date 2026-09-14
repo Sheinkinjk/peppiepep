@@ -5,7 +5,7 @@ export type FAQ = { q: string; a: string };
 export const aboutFAQs: FAQ[] = [
   {
     q: "What is Refer Labs?",
-    a: "Refer Labs is an independent Australian comparison publisher. We research categories where the choice is genuinely hard, across health, home energy, business finance and software, and write them up in plain language so you can choose the right option with confidence.",
+    a: "Refer Labs is an independent Australian comparison publisher. We research categories where the choice is hard, across health, home energy, business finance and software, and write them up in plain language so you can choose the right option with confidence.",
   },
   {
     q: "Is Refer Labs free to use?",

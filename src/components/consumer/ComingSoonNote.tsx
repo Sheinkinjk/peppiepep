@@ -61,35 +61,20 @@ export default function ComingSoonNote({
 }) {
   const v = variant ?? BY_CATEGORY[category] ?? "a";
 
+  /* Trimmed 14 Sep 2026 to one sentence each. The two-sentence bodies repeated
+     verbatim on 22 longevity and sleep pages; the facts stay (what is missing,
+     and that nothing pays us until it lands), the second sentence did not. */
   const body =
     v === "b" ? (
-      <>
-        {cap(what)} arrive here only after we have checked a provider ourselves, so they are not on
-        the page yet, and nothing here earns us a commission until they are.
-      </>
+      <>{cap(what)} come once we have checked a provider ourselves, and nothing here earns us a commission until then.</>
     ) : v === "c" ? (
-      <>
-        Missing so far: {what}. We add those only after checking a provider ourselves, and nothing on
-        this page pays us until we do.
-      </>
+      <>Missing so far: {what}, and nothing on this page pays us until they arrive.</>
     ) : v === "d" ? (
-      <>
-        {/* Not "No {what} yet": the default `what` contains "and any current
-            offers", which under a negative needs "or", and the fix reads worse
-            than avoiding the negative altogether. */}
-        {cap(what)} are not on the page yet. We add those once we have checked a provider ourselves,
-        and nothing here earns us a commission before then.
-      </>
+      <>{cap(what)} are not on the page yet, and nothing here earns us a commission before then.</>
     ) : v === "partnered" ? (
-      <>
-        The providers below are ones we have checked ourselves, and we earn a commission if you sign
-        up through them. More are being added, so this is a starting set rather than the full market.
-      </>
+      <>The providers below are ones we have checked ourselves, and we earn a commission if you sign up through them.</>
     ) : (
-      <>
-        What is not here yet is {what}, which we add only once we have checked a provider ourselves.
-        Until then nothing on this page earns us a commission.
-      </>
+      <>We add {what} once we have checked a provider ourselves; nothing on this page earns us a commission until then.</>
     );
 
   return (

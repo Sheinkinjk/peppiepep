@@ -19,7 +19,7 @@ export const capsuleConfig: AffiliatePageConfig = {
   ],
   hero: {
     h1Prefix: "Capsule:",
-    h1Highlight: "a simple CRM small teams actually keep using",
+    h1Highlight: "a simple CRM small teams keep using",
     subheading:
       "Most CRMs are abandoned because they are too heavy. Capsule keeps it to the essentials: contacts, a clear pipeline, tasks and email tracking. Here is what it does, who it suits, and how the free plan works.",
     trustBullets: ["Free plan up to 250 contacts", "Contacts, pipeline and tasks", "Integrates with your email"],
@@ -34,7 +34,7 @@ export const capsuleConfig: AffiliatePageConfig = {
       heading: "What Capsule does",
       paragraphs: [
         "Capsule is a customer relationship manager that keeps the essentials in one place: your contacts, the emails and notes you have exchanged, a visual sales pipeline of open opportunities, and the tasks that move each deal forward.",
-        "Its appeal is simplicity. It is quick to set up and easy enough that a small team will actually keep it up to date, which is the difference between a CRM that helps and one that gets abandoned.",
+        "Its appeal is simplicity. It is quick to set up and easy enough that a small team will keep it up to date, which is the difference between a CRM that helps and one that gets abandoned.",
       ],
     },
     {
@@ -87,7 +87,7 @@ export const capsuleConfig: AffiliatePageConfig = {
   ctas: {
     primary: "See Capsule",
     secondary: "Continue to Capsule",
-    midHeading: "Ready for a CRM your team will actually use?",
+    midHeading: "Ready for a CRM your team will use?",
     midBody: "Open Capsule through our referral link and start on the free plan.",
     midButton: "Try Capsule free",
     bottomHeading: "See Capsule organise your pipeline",

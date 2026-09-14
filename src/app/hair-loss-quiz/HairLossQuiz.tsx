@@ -69,7 +69,7 @@ const config: MatchConfig = {
   resolve,
   interest: (r) => `Hair loss (matched: ${r.key})`,
   newsletterHeading: "Want your result and any verified hair-loss offers emailed to you?",
-  newsletterSub: "We'll send your match plus any genuinely good, verified offers. No spam, no pay-to-rank.",
+  newsletterSub: "We'll send your match plus any good, verified offers. No spam, no pay-to-rank.",
   footnote: (
     <>
       A recommendation based on your preferences, not a medical assessment. Compare every option in the{" "}

@@ -20,7 +20,7 @@ const faqs = [
   },
   {
     q: "What is worth paying for to improve sleep?",
-    a: "Broadly, things that remove a specific obstacle you have actually identified. Blocking light if your room is bright, reducing noise if noise wakes you, or fixing temperature if you overheat. Those are targeted purchases against a known problem. Buying a category of product because it is marketed as sleep-improving, without knowing what is disrupting your sleep, is how people spend a lot for very little.",
+    a: "Broadly, things that remove a specific obstacle you have identified. Blocking light if your room is bright, reducing noise if noise wakes you, or fixing temperature if you overheat. Those are targeted purchases against a known problem. Buying a category of product because it is marketed as sleep-improving, without knowing what is disrupting your sleep, is how people spend a lot for very little.",
   },
   {
     q: "Should I fix my sleep before seeing a doctor?",
@@ -45,7 +45,7 @@ export default function Page() {
       crumb="What good sleep costs"
       h1={<>What does good sleep cost? <span className="italic text-[#0a7c42]">Start at zero</span></>}
       intro="The changes with the largest effect cost nothing: consistent timing including weekends, daylight early and dimmer light in the evening, caffeine earlier rather than less, and a cooler bedroom using bedding you already own. Equipment only starts earning its keep once those are in place, which is the opposite of the order most people buy in."
-      headline="What does good sleep actually cost in Australia?"
+      headline="What does good sleep cost in Australia?"
       description={seoConfig.costOfGoodSleep.description}
       faqs={faqs}
       related={[
@@ -98,7 +98,7 @@ export default function Page() {
         <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">When spending is justified</h2>
         <p className="mt-3">
           Once habits are consistent and the problem persists, purchases become reasonable, on one condition: you can
-          name the obstacle you are removing. Light in the room, noise, temperature, or a mattress that is genuinely
+          name the obstacle you are removing. Light in the room, noise, temperature, or a mattress that is
           past it are specific problems with specific solutions.
         </p>
         <p className="mt-3">

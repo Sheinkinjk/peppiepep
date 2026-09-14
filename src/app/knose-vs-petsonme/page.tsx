@@ -38,7 +38,7 @@ const faqs = [
   },
   {
     q: "What is the biggest practical difference between them?",
-    a: "Sub-limits. PetsOnMe caps hereditary conditions at $2,300 a year on Classic and $3,800 on Deluxe, and dental at $500 on Deluxe. Knose states it applies no sub-limits on eligible treatments, so the whole annual limit is available for any covered condition. If your breed carries a known hereditary risk, that single difference can matter more than the headline limit, because a sub-limit is the number you actually hit when you claim.",
+    a: "Sub-limits. PetsOnMe caps hereditary conditions at $2,300 a year on Classic and $3,800 on Deluxe, and dental at $500 on Deluxe. Knose states it applies no sub-limits on eligible treatments, so the whole annual limit is available for any covered condition. If your breed carries a known hereditary risk, that single difference can matter more than the headline limit, because a sub-limit is the number you hit when you claim.",
   },
   {
     q: "Which one pays more of the vet bill?",
@@ -46,10 +46,10 @@ const faqs = [
   },
   {
     q: "How do the excess options compare?",
-    a: "Knose offers $0, $100 or $200 per policy period. PetsOnMe offers $100, $200 or $300. A $0 excess is unusual in the Australian market and means you pay nothing before the benefit percentage applies, though it generally raises the premium. Choose the excess you could genuinely absorb on the day your pet needs surgery, not the one that makes the monthly figure look smallest.",
+    a: "Knose offers $0, $100 or $200 per policy period. PetsOnMe offers $100, $200 or $300. A $0 excess is unusual in the Australian market and means you pay nothing before the benefit percentage applies, though it generally raises the premium. Choose the excess you could absorb on the day your pet needs surgery, not the one that makes the monthly figure look smallest.",
   },
   {
-    q: "What do the offers actually give me?",
+    q: "What do the offers give me?",
     a: "They are different in kind, which is worth understanding before you compare them. The Knose code referlab2mf gives new customers 2 months free on the policy itself. The PetsOnMe code REFERLABS lifts the discount on their pet care services, meaning walking, minding, sitting, day care, house sitting and grooming, from 12% to 15%. The PetsOnMe code does not reduce the insurance premium.",
   },
   {

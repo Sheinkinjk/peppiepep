@@ -98,9 +98,9 @@ export default function AffiliateEarningsCalculatorPage() {
             </h2>
             <div className="space-y-4 text-[15px] leading-relaxed text-[#3d4b44] max-w-2xl">
               <p>
-                The spread between the low and high number is where the outcome is actually decided. The low end
+                The spread between the low and high number is where the outcome is decided. The low end
                 assumes ordinary click-through, ordinary conversion and the cheaper end of your niche&apos;s
-                commissions. The high end assumes everything is matched: offers your audience actually wants,
+                commissions. The high end assumes everything is matched: offers your audience wants,
                 placed where intent is highest. Same audience, several times the income.
               </p>
               <p>

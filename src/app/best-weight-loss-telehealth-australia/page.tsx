@@ -383,7 +383,7 @@ export default function BestWeightLossTelehealthPage() {
                 above the first affiliate link, which is what it is for. */}
             <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
             <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl mb-5">
-              Below: what each platform actually does, who it suits, and how to access each eligibility flow. This page does not constitute medical advice. Suitability is assessed individually by each platform&apos;s clinical team.
+              Below: what each platform does, who it suits, and how to access each eligibility flow. This page does not constitute medical advice. Suitability is assessed individually by each platform&apos;s clinical team.
             </p>
 
             <CodeAnswer code="REFERRAL120" className="mt-2 mb-7">
@@ -458,7 +458,7 @@ export default function BestWeightLossTelehealthPage() {
 
           {/* How pricing works (no specific figures; confirmed in the consult) */}
           <section id="cost" className="border-t border-[#e5e9e7] py-8">
-            <h2 className="text-xl sm:text-2xl font-black text-[#10251b] mb-3">What telehealth weight loss actually costs</h2>
+            <h2 className="text-xl sm:text-2xl font-black text-[#10251b] mb-3">What telehealth weight loss costs</h2>
             <p className="text-sm text-[#3d4b44] leading-relaxed max-w-2xl mb-4">
               Here is what makes this market hard to compare: <strong className="text-[#10251b]">most Australian providers confirm pricing after an online consultation</strong> rather than publishing a fixed figure. Expect a monthly subscription that bundles treatment, consultations and delivery, shown before you commit, with the final cost depending on the treatment prescribed. New Moshy customers get $120 off their first order through our link.
             </p>

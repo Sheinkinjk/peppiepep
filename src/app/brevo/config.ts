@@ -44,7 +44,7 @@ export const brevoConfig: AffiliatePageConfig = {
     h1Prefix: "Brevo:",
     h1Highlight: "the all-in-one email, automation and CRM platform",
     subheading:
-      "Weighing up Brevo for email marketing and want to know what it actually includes, who it suits, and how its pricing works before you start? This page covers the essentials and takes you directly to Brevo to see it yourself.",
+      "Weighing up Brevo for email marketing and want to know what it includes, who it suits, and how its pricing works before you start? This page covers the essentials and takes you directly to Brevo to see it yourself.",
     trustBullets: [
       "Direct access to Brevo",
       "Covers what Brevo does, who it suits, and how pricing works",
@@ -58,7 +58,7 @@ export const brevoConfig: AffiliatePageConfig = {
     {
       heading: "Access Brevo",
       paragraphs: [
-        "Brevo comes up a lot when marketers compare email platforms, and the practical questions are always the same: what's included, how the send-volume pricing works, and who it genuinely suits. Instead of assembling the answer from a dozen review sites, it covers what counts and links straight through to Brevo.",
+        "Brevo comes up a lot when marketers compare email platforms, and the practical questions are always the same: what's included, how the send-volume pricing works, and who it suits. Instead of assembling the answer from a dozen review sites, it covers what counts and links straight through to Brevo.",
         "Every button on the page goes straight to Brevo; nothing needs completing here beforehand.",
       ],
       hasCta: true,
@@ -75,7 +75,7 @@ export const brevoConfig: AffiliatePageConfig = {
     {
       heading: "Who Brevo is best for",
       paragraphs: [
-        "Brevo suits small and mid-sized businesses that want email, SMS, automation and a CRM in one platform rather than a stack of separate tools. It is a strong fit for e-commerce and service businesses that will actually use the automation and contact management, not just broadcast a newsletter.",
+        "Brevo suits small and mid-sized businesses that want email, SMS, automation and a CRM in one platform rather than a stack of separate tools. It is a strong fit for e-commerce and service businesses that will use the automation and contact management, not just broadcast a newsletter.",
         "Because pricing is by emails sent, it particularly suits businesses with a large contact list who send campaigns occasionally. Creators who want a discovery network and a purely newsletter-first experience may prefer a dedicated newsletter platform instead.",
       ],
     },

@@ -53,7 +53,7 @@ export const faqs = [
     a: "Often, yes. The federal Cheaper Home Batteries discount applies nationally, and some states add their own incentive on top. NSW, for example, pays a Virtual Power Plant (VPP) incentive of roughly $40 per usable kWh (capped at 28kWh, so up to about $1,100, and floating with certificate prices). What you can claim depends on your state, your battery, your retailer and the VPP terms, so confirm what applies to your address when you get the quote.",
   },
   {
-    q: "How much will a home battery actually save me?",
+    q: "How much will a home battery save me?",
     a: "That depends on your usage, your tariff, whether you have solar, and whether you join a VPP, so no page can promise a number. For reference, Apollo Energy Group's own site cites an average bill reduction of over 70% and gives an example of about $1,349 in estimated annual savings on a 16kWh system. Treat those as the provider's figures rather than a guarantee, and ask for a projection based on your own bills.",
   },
   {

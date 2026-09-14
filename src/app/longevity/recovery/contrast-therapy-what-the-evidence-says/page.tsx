@@ -27,7 +27,7 @@ const faqs = [
   },
   {
     q: "Why is the evidence so unclear?",
-    a: "Small studies, short durations, protocols that differ between them, and outcomes that are hard to measure objectively. Perceived recovery is easier to record than actual adaptation, which is part of why the supportive findings cluster there. It is a genuinely young area rather than a settled one being misrepresented, and a lot is not yet known.",
+    a: "Small studies, short durations, protocols that differ between them, and outcomes that are hard to measure objectively. Perceived recovery is easier to record than actual adaptation, which is part of why the supportive findings cluster there. It is a young area rather than a settled one being misrepresented, and a lot is not yet known.",
   },
 ];
 
@@ -38,9 +38,9 @@ export default function Page() {
       sectionHref="/longevity/recovery"
       slug="/longevity/recovery/contrast-therapy-what-the-evidence-says"
       crumb="Contrast therapy evidence"
-      h1={<>Contrast therapy: <span className="italic text-[#0a7c42]">what the evidence actually supports</span></>}
+      h1={<>Contrast therapy: <span className="italic text-[#0a7c42]">what the evidence supports</span></>}
       intro="This category is sold with more confidence than the research currently justifies. Here is what the evidence covers, where it thins out, and the one finding that should change how some people use it."
-      headline="Contrast therapy: what the evidence actually says"
+      headline="Contrast therapy: what the evidence says"
       description={seoConfig.contrastTherapy.description}
       faqs={faqs}
       related={[

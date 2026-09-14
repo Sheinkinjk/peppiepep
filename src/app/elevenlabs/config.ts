@@ -32,7 +32,7 @@ export const elevenlabsConfig: AffiliatePageConfig = {
     {
       heading: "What ElevenLabs does",
       paragraphs: [
-        "ElevenLabs is best known for text-to-speech that actually sounds human, used for narration, videos, podcasts, audiobooks, apps and accessibility. Beyond straight TTS it offers voice cloning, speech-to-text, AI dubbing that keeps a speaker's voice across languages, music generation and conversational voice agents.",
+        "ElevenLabs is best known for text-to-speech that sounds human, used for narration, videos, podcasts, audiobooks, apps and accessibility. Beyond straight TTS it offers voice cloning, speech-to-text, AI dubbing that keeps a speaker's voice across languages, music generation and conversational voice agents.",
         "For developers there's an API and SDKs, so the same voice technology can power in-product features, IVR, or an AI phone agent. For creators, the web app is enough to generate audio without any code.",
       ],
     },
@@ -50,7 +50,7 @@ export const elevenlabsConfig: AffiliatePageConfig = {
     { num: "3", heading: "Generate & export", body: "Paste your text, generate the audio, and download or use the API." },
   ],
   whyUseThis: [
-    "Text-to-speech that sounds genuinely natural",
+    "Text-to-speech that sounds natural",
     "Voice cloning, dubbing and speech-to-text in one place",
     "Thousands of voices across dozens of languages",
     "API and SDKs for developers, plus a no-code web app",

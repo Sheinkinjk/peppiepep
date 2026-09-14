@@ -50,7 +50,7 @@ export default function AboutPage() {
             <p className="mt-2 text-[15px] leading-relaxed text-[#2b362f]">
               We publish independent comparisons and guides across a growing set of categories, from weight-loss and
               hair-loss telehealth to website builders, newsletter platforms, AI sales tools and more. Each guide is
-              built to answer a real question: which option fits you, what it actually costs, and what the catch is. We
+              built to answer a real question: which option fits you, what it costs, and what the catch is. We
               cover Australians first, and note clearly when a product or service is only available in another region.
             </p>
           </section>
@@ -75,7 +75,7 @@ export default function AboutPage() {
             <h2 className="text-lg font-bold text-[#10251b]">How we rank</h2>
             <p className="mt-2 text-[15px] leading-relaxed text-[#2b362f]">
               When a page orders providers or names a first pick, the order comes from the same checklist every time:
-              published price and what the price includes; eligibility and who the provider actually serves; what is
+              published price and what the price includes; eligibility and who the provider serves; what is
               bundled versus billed separately; cancellation and refund terms; delivery, support and follow-up; and
               availability in Australia. We weigh those against who each provider suits, because the right pick for one
               reader is the wrong pick for another, and we say who each option fits rather than crowning one winner for

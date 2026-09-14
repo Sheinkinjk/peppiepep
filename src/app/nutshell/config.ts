@@ -19,7 +19,7 @@ export const nutshellConfig: AffiliatePageConfig = {
     h1Prefix: "Nutshell:",
     h1Highlight: "an easy sales CRM with marketing built in",
     subheading:
-      "A CRM that smaller sales teams actually use, pipeline and contact management, email sequences, web forms, landing pages and reporting in one place, without the cost or complexity of an enterprise platform.",
+      "A CRM that smaller sales teams use, pipeline and contact management, email sequences, web forms, landing pages and reporting in one place, without the cost or complexity of an enterprise platform.",
     trustBullets: ["14-day free trial", "No credit card to start", "CRM and marketing in one"],
   },
   banner: {
@@ -38,7 +38,7 @@ export const nutshellConfig: AffiliatePageConfig = {
     {
       heading: "Who it suits, and who it doesn't",
       paragraphs: [
-        "It fits SMB sales teams and founders who want a CRM that is quick to set up and genuinely gets used, with enough automation and reporting to run a pipeline properly. It is a strong middle ground between a bare contact list and a heavy platform.",
+        "It fits SMB sales teams and founders who want a CRM that is quick to set up and gets used, with enough automation and reporting to run a pipeline properly. It is a strong middle ground between a bare contact list and a heavy platform.",
         "It is less suited to very large sales orgs with complex, highly customised processes, where a heavier enterprise CRM may be warranted. Pricing is per user per month and scales with the plan, so pick the tier that matches the features you need.",
       ],
     },
@@ -69,7 +69,7 @@ export const nutshellConfig: AffiliatePageConfig = {
     },
     {
       q: "Is Nutshell good for a small team?",
-      a: "Yes, that is its sweet spot. It is built to be quick to set up and easy enough that a small sales team actually keeps it up to date, while still offering the automation and reporting to run a pipeline properly.",
+      a: "Yes, that is its sweet spot. It is built to be quick to set up and easy enough that a small sales team keeps it up to date, while still offering the automation and reporting to run a pipeline properly.",
     },
   ],
   relatedLinks: [

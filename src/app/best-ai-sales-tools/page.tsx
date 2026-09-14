@@ -257,7 +257,7 @@ export default function BestAiSalesToolsPage() {
             <span style={{ color: ACCENT_LT }}>GoHighLevel, AiSDR, Reply.io & FullEnrich</span>
           </h1>
           <p className="text-[#3d4b44] text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
-            Each of these four fixes a different bottleneck, so the right one depends on where your outbound actually
+            Each of these four fixes a different bottleneck, so the right one depends on where your outbound
             stalls. FullEnrich fixes bad contact data. Reply.io runs multichannel sequences you control. AiSDR replaces
             the outbound rep and books the meetings itself. GoHighLevel is the all-in-one for agencies running CRM,
             funnels and automation together. Buy for the bottleneck you have, not the longest feature list. Prices are
@@ -296,7 +296,7 @@ export default function BestAiSalesToolsPage() {
             booking meetings for you, <strong>Reply.io</strong> if your team runs its own
             sequences and needs a stronger engine, and <strong>FullEnrich</strong> when bad
             contact data is what kills your outreach. The full comparison, including what
-            each actually costs, is below.
+            each costs, is below.
           </p>
         </div>
 

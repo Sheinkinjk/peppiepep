@@ -36,7 +36,7 @@ const faqs = [
   },
   {
     q: "Do both have free trials?",
-    a: "Carrd has a genuinely free plan you can keep. Durable AI lets you generate and preview a site free with no account before subscribing. Both let you try before paying.",
+    a: "Carrd has a free plan you can keep. Durable AI lets you generate and preview a site free with no account before subscribing. Both let you try before paying.",
   },
 ];
 

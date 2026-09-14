@@ -47,7 +47,7 @@ export default function Page() {
       crumb="Anti-ageing pricing"
       h1={<>Anti-ageing treatments: <span className="italic text-[#0a7c42]">why nobody will tell you the price</span></>}
       intro="Almost no Australian clinic publishes a price for these treatments, and the reason is regulatory rather than evasive: many involve prescription-only medicines, and advertising those to the public is prohibited here, which extends to promoting them by price. So the question that gets you a usable number is not what it costs, it is what the quote includes."
-      headline="Anti-ageing treatments in Australia: what they actually cost"
+      headline="Anti-ageing treatments in Australia: what they cost"
       description={seoConfig.antiAgeingCosts.description}
       faqs={faqs}
       related={[

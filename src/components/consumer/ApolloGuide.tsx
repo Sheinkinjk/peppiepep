@@ -150,7 +150,7 @@ export default function ApolloGuide({ cfg }: { cfg: ApolloGuideConfig }) {
           <ApolloCta
             loc="bottom"
             heading="Get a quote sized to your home"
-            body="A battery is only worth it when it's sized to how you actually use power. Apollo sizes from your real usage and applies the federal rebate at the point of sale, plus $500 off through our link."
+            body="A battery is only worth it when it's sized to how you use power. Apollo sizes from your real usage and applies the federal rebate at the point of sale, plus $500 off through our link."
           />
         </div>
 

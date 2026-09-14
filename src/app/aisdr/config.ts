@@ -57,7 +57,7 @@ export const aisdrConfig: AffiliatePageConfig = {
     {
       heading: "Access AiSDR",
       paragraphs: [
-        "If you're a founder or revenue lead sizing up an AI SDR, three things decide it: what AiSDR actually automates, how its multi-channel outreach runs, and whether it slots into your HubSpot or Salesforce setup. Rather than trawling review sites for the details, it sets out what matters and sends you straight to AiSDR to see the platform yourself.",
+        "If you're a founder or revenue lead sizing up an AI SDR, three things decide it: what AiSDR automates, how its multi-channel outreach runs, and whether it slots into your HubSpot or Salesforce setup. Rather than trawling review sites for the details, it sets out what matters and sends you straight to AiSDR to see the platform yourself.",
         "Use any button here to reach AiSDR directly; you do not need to enter anything on this page first.",
       ],
       hasCta: true,
@@ -91,7 +91,7 @@ export const aisdrConfig: AffiliatePageConfig = {
       heading: "AiSDR pricing and contract",
       paragraphs: [
         "AiSDR starts from $250/month for the Solo plan, with the popular Explore plan $900/month billed quarterly, and includes unlimited seats with no long-term contract. These figures can change, so treat them as a guide and check the current pricing on the provider before you commit.",
-        "The way to judge value is against the fully loaded cost of a human SDR, which includes salary, tools, ramp time and the risk of turnover. For a team that needs consistent outbound volume, an AI rep priced this way can compare favourably, but only if you will actually feed it a clear target market and offer.",
+        "The way to judge value is against the fully loaded cost of a human SDR, which includes salary, tools, ramp time and the risk of turnover. For a team that needs consistent outbound volume, an AI rep priced this way can compare favourably, but only if you will feed it a clear target market and offer.",
         "Because there is no long-term contract and seats are unlimited, the commitment model is relatively flexible for a tool at this level, which lowers the risk of trying it against your own pipeline.",
       ],
     },

@@ -21,7 +21,7 @@ export const metadata = generateSEOMetadata(seoConfig.iceBathRunningCosts);
 const faqs = [
   {
     q: "How much does an ice bath cost to run in Australia?",
-    a: "It is set by four things: your electricity tariff in cents per kilowatt-hour, your chiller's power draw, how hard it has to work in your climate, and how well your tub is insulated. Because the first varies by state and retailer, a single national figure would be wrong for most people. The calculation below takes about a minute with your own bill and gives you a number that is actually yours.",
+    a: "It is set by four things: your electricity tariff in cents per kilowatt-hour, your chiller's power draw, how hard it has to work in your climate, and how well your tub is insulated. Because the first varies by state and retailer, a single national figure would be wrong for most people. The calculation below takes about a minute with your own bill and gives you a number that is yours.",
   },
   {
     q: "Is it cheaper to run a chiller or buy ice?",
@@ -36,7 +36,7 @@ const faqs = [
     a: "Water, which is replaced periodically. Filters and sanitiser on their own schedule. A cover, which has more influence on how hard the chiller works than anything else you buy. And standby draw, which continues in weeks you do not use it at all. None of these are large individually and together they are a meaningful share of the annual figure.",
   },
   {
-    q: "Does a cover really reduce running costs?",
+    q: "Does a cover reduce running costs?",
     a: "Yes, and it is the highest-return thing you can add. An uncovered tub loses cold continuously to the air, so the chiller cycles more often to hold temperature. This is also why the same chiller costs noticeably more to run in Darwin than in Hobart: ambient temperature sets how much heat it has to remove.",
   },
 ];
@@ -48,7 +48,7 @@ export default function Page() {
       sectionHref="/longevity/recovery"
       slug="/longevity/recovery/ice-bath-running-costs-australia"
       crumb="Ice bath running costs"
-      h1={<>What an ice bath actually costs to run: <span className="italic text-[#0a7c42]">work it out for your own bill</span></>}
+      h1={<>What an ice bath costs to run: <span className="italic text-[#0a7c42]">work it out for your own bill</span></>}
       intro="Every page answering this question gives you one number. That number cannot be right for you, because it depends on your tariff, your climate and your tub. Here is the calculation instead, with the working shown."
       headline="Ice bath running costs in Australia: the real numbers"
       description={seoConfig.iceBathRunningCosts.description}

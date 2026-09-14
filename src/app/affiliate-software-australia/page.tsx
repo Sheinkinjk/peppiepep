@@ -78,7 +78,7 @@ const articleSchema = comparisonArticleSchema({
 const CRITERIA = [
   ["Does it pay your partners, or only track them?", "Payouts across countries and currencies are the part that quietly eats hours. A tracking-only tool leaves that with you every month."],
   ["Affiliates, referrals, or both?", "Creators promoting for commission and customers introducing friends are different audiences. Buying for one when you need both is the common and expensive mistake."],
-  ["What does integration actually require?", "A native app for your store is a different proposition from a script and a developer. Ask what breaks at checkout, and who fixes it."],
+  ["What does integration require?", "A native app for your store is a different proposition from a script and a developer. Ask what breaks at checkout, and who fixes it."],
   ["Is attribution by link, code, or both?", "Codes work where links do not, particularly for creators talking to camera. If your partners are on video, code attribution is not optional."],
   ["What happens to your data if you leave?", "Partner relationships, historical performance and payout records. Ask before you sign, because it is a poor conversation to have afterwards."],
   ["What is the twelve-month total?", "Platform fee, per-transaction fees, payout fees and any onboarding charge. The monthly headline is the least useful number in the quote."],

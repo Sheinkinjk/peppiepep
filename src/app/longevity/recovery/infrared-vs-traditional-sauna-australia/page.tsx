@@ -15,7 +15,7 @@ const faqs = [
   },
   {
     q: "Which sauna is better?",
-    a: "They suit different constraints rather than one being superior. Infrared cabins are generally easier to install, run at lower power and are more tolerable if you dislike high heat. Traditional saunas deliver the experience most people picture, handle steam, and are what most of the frequently-cited research actually studied. If the evidence is why you are buying, that last point is the one that should decide it.",
+    a: "They suit different constraints rather than one being superior. Infrared cabins are generally easier to install, run at lower power and are more tolerable if you dislike high heat. Traditional saunas deliver the experience most people picture, handle steam, and are what most of the frequently-cited research studied. If the evidence is why you are buying, that last point is the one that should decide it.",
   },
   {
     q: "Does the sauna research apply to infrared?",
@@ -100,7 +100,7 @@ export default function Page() {
         <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Which constraints should decide it</h2>
         <ul className="mt-3 list-disc space-y-2 pl-5">
           <li><strong className="text-[#10251b]">Your switchboard.</strong> If a dedicated circuit is impractical or expensive at your place, that can settle it before preference does.</li>
-          <li><strong className="text-[#10251b]">Heat tolerance.</strong> If high heat is unpleasant for you, an infrared cabin is the one you will actually use.</li>
+          <li><strong className="text-[#10251b]">Heat tolerance.</strong> If high heat is unpleasant for you, an infrared cabin is the one you will use.</li>
           <li><strong className="text-[#10251b]">Space and ventilation.</strong> Traditional units are generally larger and have more demanding requirements.</li>
           <li><strong className="text-[#10251b]">Why you are buying.</strong> If it is the research, that argues for traditional. If it is enjoyment and consistency, pick whichever you will sit in.</li>
         </ul>

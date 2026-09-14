@@ -11,7 +11,7 @@ const offers = [
   {
     tag: "Get discovered",
     title: "Put your product in front of people choosing",
-    body: "Our comparisons reach Australians at the exact moment they are picking a provider in your category. If your product genuinely belongs in one we cover, we add it and disclose the relationship. Placement never buys a ranking, which is precisely why the traffic converts.",
+    body: "Our comparisons reach Australians at the exact moment they are picking a provider in your category. If your product belongs in one we cover, we add it and disclose the relationship. Placement never buys a ranking, which is precisely why the traffic converts.",
     cta: { label: "Enquire about being featured", href: "mailto:jarred@referlabs.com.au?subject=Get%20featured%20enquiry", external: true },
     links: [{ href: "/partner-with-refer-labs", label: "Apply to partner with us" }],
   },
@@ -55,7 +55,7 @@ export default function ForBusinessPage() {
               Customers who have already <span className="italic text-[#0a7c42]">done the research</span>
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#2b362f]">
-              Refer Labs helps Australians choose between providers. For businesses, that means two things: a place
+              Refer Labs helps Australians choose between providers. For businesses, it offers a place
               your product can be discovered by people ready to buy, and a team that builds referral and affiliate
               growth for a living.
             </p>

@@ -145,7 +145,7 @@ export default function DurableVsButternutPage() {
               yet they are built for slightly different jobs. Durable generates a business site in about 30 seconds and
               bundles a CRM and invoicing, so it leans toward service businesses. Butternut builds a fuller multi-page
               site from a single prompt in about 20 seconds and focuses on the website itself. Below we line them up on
-              setup speed, the free tier, what you actually get, pricing, and who each one suits.
+              setup speed, the free tier, what you get, pricing, and who each one suits.
             </p>
 
             {/* Below the lead. The first paragraph after the h1 is the answer;
@@ -234,7 +234,7 @@ export default function DurableVsButternutPage() {
               </p>
               <p>
                 The free tier works the same way on each. You can generate and preview a site with no account and no card,
-                which is genuinely useful, because it lets you judge the output before you commit. Publishing on a custom
+                which is useful, because it lets you judge the output before you commit. Publishing on a custom
                 domain and unlocking the full platform is where the paid subscription kicks in. The practical takeaway is
                 that there is no reason not to try both first, since neither charges you to see what it produces.
               </p>
@@ -244,7 +244,7 @@ export default function DurableVsButternutPage() {
           {/* Prose: what you get */}
           <section className="border-t border-[#e5e9e7] py-10">
             <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-[#10251b] mb-4">
-              What you actually get
+              What you get
             </h2>
             <div className="space-y-4 text-[15px] leading-relaxed text-[#3d4b44] max-w-2xl">
               <p>

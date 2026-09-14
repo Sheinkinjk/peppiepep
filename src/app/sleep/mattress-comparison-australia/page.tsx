@@ -16,10 +16,10 @@ export const metadata = generateSEOMetadata(seoConfig.mattressComparison);
 const faqs = [
   {
     q: "How do I compare mattresses in Australia?",
-    a: "Not by star ratings, and not by firmness numbers, which are unstandardised: one brand's medium is another's firm. Compare the things that are stated and verifiable: what the layers are made of and how thick each is, the density of any foam, the warranty and what it actually covers, and the full terms of the trial period. Then use the trial, because it is the only test that involves your body.",
+    a: "Not by star ratings, and not by firmness numbers, which are unstandardised: one brand's medium is another's firm. Compare the things that are stated and verifiable: what the layers are made of and how thick each is, the density of any foam, the warranty and what it covers, and the full terms of the trial period. Then use the trial, because it is the only test that involves your body.",
   },
   {
-    q: "Are mattress trial periods really risk-free?",
+    q: "Are mattress trial periods risk-free?",
     a: "Rarely entirely. Most have conditions: a minimum break-in period before you can return, a return or collection fee, a requirement that the mattress is unstained and undamaged, and sometimes a restocking charge. None of that makes a trial worthless, but read the terms before you rely on them, because the phrase used in the advertising and the conditions in the policy are often not the same thing.",
   },
   {
@@ -43,7 +43,7 @@ export default function Page() {
       sectionHref="/sleep"
       slug="/sleep/mattress-comparison-australia"
       crumb="Comparing mattresses"
-      h1={<>Comparing mattresses in Australia: <span className="italic text-[#0a7c42]">what is actually checkable</span></>}
+      h1={<>Comparing mattresses in Australia: <span className="italic text-[#0a7c42]">what is checkable</span></>}
       intro="Almost every mattress comparison online is a ranking assembled by someone who has not slept on any of them. This is the opposite: no list, no scores, just the specifications that are verifiable and the trial terms where people lose money."
       headline="Mattress buying in Australia: how to compare properly"
       description={seoConfig.mattressComparison.description}
@@ -78,7 +78,7 @@ export default function Page() {
             </thead>
             <tbody className="divide-y divide-[#eef1ef]">
               {[
-                ["Layer composition and thickness", "Tells you what you are actually buying rather than what it is called in the marketing."],
+                ["Layer composition and thickness", "Tells you what you are buying rather than what it is called in the marketing."],
                 ["Foam density, where published", "One of the better available signals of whether it will hold its shape."],
                 ["Support layer construction", "Coil type and count, or the base foam, is what carries the load over years."],
                 ["Warranty terms, not just length", "A long warranty covering only sagging beyond a set depth is narrower than it sounds."],

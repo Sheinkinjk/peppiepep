@@ -97,7 +97,7 @@ export default function WeightLossTelehealthWomenPage() {
         </h1>
         <p className="text-[#3d4b44] text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
           Most of the weight-loss telehealth marketing aimed at women leads with coaching and community. That suits some
-          people and not others. This page explains how the women&apos;s services actually work, the difference between a
+          people and not others. This page explains how the women&apos;s services work, the difference between a
           coaching-led program and a leaner clinical pathway, and the checklist worth running before you commit to any of
           them.
         </p>
@@ -127,7 +127,7 @@ export default function WeightLossTelehealthWomenPage() {
             a lower ongoing cost.
           </p>
           <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
-            Neither is better in the abstract. The question is what you actually want to pay for: the coaching wrap, or
+            Neither is better in the abstract. The question is what you want to pay for: the coaching wrap, or
             just the clinical pathway. Both keep a registered practitioner between your questionnaire and any treatment.
           </p>
         </section>
@@ -188,7 +188,7 @@ export default function WeightLossTelehealthWomenPage() {
           <h2 className="text-xl font-black">Where Moshy fits</h2>
           <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
             Moshy runs a clinically-led telehealth pathway that is open to anyone eligible, women included, and it passes
-            the checklist above: AHPRA-registered practitioners, an eligibility step that genuinely screens, pricing
+            the checklist above: AHPRA-registered practitioners, an eligibility step that screens, pricing
             disclosed inside the platform before any commitment, and Australian regulation. If you would rather have
             coaching wrapped around clinical care, Juniper is the women-focused option, and we compare the two directly in
             our{" "}

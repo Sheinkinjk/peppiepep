@@ -43,7 +43,7 @@ const guides = [
   {
     href: "/mens-health/online-doctor-medical-certificate-australia",
     title: "Online medical certificate: cost and speed",
-    desc: `From ${MIDOC.certificateSingleDay} for a single day (read ${MIDOC.readOnShort}), with what the review actually buys you.`,
+    desc: `From ${MIDOC.certificateSingleDay} for a single day (read ${MIDOC.readOnShort}), with what the review buys you.`,
   },
   {
     href: "/mens-health/online-prescription-australia",
@@ -81,7 +81,7 @@ const faqs = [
   },
   {
     q: "Does Refer Labs earn from this section?",
-    a: "Not yet. Men's health is being built before any partner is in place, so nothing in this section currently earns us a commission. When we add providers we will say so on the page and disclose it, as we do across the site.",
+    a: "Yes, from one partner. Midoc pays us a commission if you use a service through a Midoc link in this section, at no extra cost to you, and each page carrying one says so beside it. The mental health and erectile dysfunction pages carry no commercial link. Commissions do not change what we compare or conclude.",
   },
 ];
 

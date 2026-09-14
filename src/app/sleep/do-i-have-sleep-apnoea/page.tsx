@@ -32,7 +32,7 @@ const faqs = [
   },
   {
     q: "What should I tell my GP about my sleep?",
-    a: "Bring specifics rather than impressions. How long you sleep, how often you wake, what time you go to bed and get up, how you feel on waking, and whether you fall asleep unintentionally during the day. If you have a partner, what they have noticed at night is genuinely useful because most of the relevant symptoms happen while you are unconscious. A fortnight of rough notes will make the appointment far more productive.",
+    a: "Bring specifics rather than impressions. How long you sleep, how often you wake, what time you go to bed and get up, how you feel on waking, and whether you fall asleep unintentionally during the day. If you have a partner, what they have noticed at night is useful because most of the relevant symptoms happen while you are unconscious. A fortnight of rough notes will make the appointment far more productive.",
   },
   {
     q: "Do I need a referral for a sleep study?",
@@ -51,7 +51,7 @@ export default function Page() {
       sectionHref="/sleep"
       slug="/sleep/do-i-have-sleep-apnoea"
       crumb="Do I have sleep apnoea?"
-      h1={<>Do I have sleep apnoea? <span className="italic text-[#0a7c42]">How Australians actually find out</span></>}
+      h1={<>Do I have sleep apnoea? <span className="italic text-[#0a7c42]">How Australians find out</span></>}
       intro="We have not built a quiz that tells you the answer, because no website can honestly give you one. What we can do is show you exactly how the diagnosis happens here, and how to make the appointment that produces it worth your time."
       headline="Do I have sleep apnoea? How Australians get answers"
       description={seoConfig.sleepApnoeaPathway.description}

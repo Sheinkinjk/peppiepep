@@ -262,7 +262,7 @@ export default function HairLossTreatmentCostAustraliaPage() {
               <div className="mt-4 space-y-4 text-[15px] leading-relaxed text-[#3d4b44]">
                 <p>
                   The trap is comparing a single-active plan against a multi-active one on price alone. A cheaper plan
-                  that includes one active is not really cheaper than a dearer plan that includes two, if the two-active
+                  that includes one active is not cheaper than a dearer plan that includes two, if the two-active
                   plan is what a practitioner assigns you. Compare on what is included, not just the headline monthly
                   figure, and remember any introductory discount applies to the first order rather than the ongoing price.
                 </p>

@@ -77,7 +77,7 @@ export const goHighLevelConfig: AffiliatePageConfig = {
       paragraphs: [
         "GoHighLevel is strongest for digital marketing agencies. The platform is built around sub-accounts, so an agency can spin up a separate workspace for each client and manage all of them from one place. That structure, plus white-label options on higher tiers, is a large part of why agencies adopt it.",
         "It also suits SMBs that want to replace a stack of tools. If you are currently paying for a CRM, an email marketing tool, a landing page builder, a scheduling app and a review-request tool separately, GoHighLevel can fold most of that into a single subscription.",
-        "It is less suited to someone who only needs one narrow feature. If all you want is a simple newsletter tool or a single landing page, a focused single-purpose product will be lighter and quicker to set up. GoHighLevel rewards businesses that will actually use several of its modules.",
+        "It is less suited to someone who only needs one narrow feature. If all you want is a simple newsletter tool or a single landing page, a focused single-purpose product will be lighter and quicker to set up. GoHighLevel rewards businesses that will use several of its modules.",
       ],
     },
     {

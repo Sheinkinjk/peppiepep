@@ -61,7 +61,7 @@ export const ecoflowConfig: AffiliatePageConfig = {
     },
   ],
   steps: [
-    { num: "1", heading: "Work out your load", body: "Add up what you actually need running: a fridge averages about 100W, a laptop 60W, a router and phones about 20W." },
+    { num: "1", heading: "Work out your load", body: "Add up what you need running: a fridge averages about 100W, a laptop 60W, a router and phones about 20W." },
     { num: "2", heading: "Then check output, not just capacity", body: "Anything with a heating element or a compressor needs high continuous output and a surge headroom above that." },
     { num: "3", heading: "Compare per watt-hour", body: "Divide price by capacity. It is the only way two units of different sizes can be compared fairly." },
     { num: "4", heading: "Open EcoFlow through the link", body: "Prices move often in this category, so confirm the current figure on EcoFlow's own store before buying." },

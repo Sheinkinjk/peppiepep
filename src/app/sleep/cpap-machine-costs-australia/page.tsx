@@ -25,7 +25,7 @@ const faqs = [
   },
   {
     q: "Do you need a prescription for CPAP in Australia?",
-    a: "CPAP therapy follows a diagnosis and clinical guidance rather than being something to self-select. Pressure settings are determined for you, and using the wrong therapy for an undiagnosed problem wastes money and delays finding out what is actually going on. Suppliers generally work from a sleep study and clinical direction, and the sensible order is diagnosis first, equipment second.",
+    a: "CPAP therapy follows a diagnosis and clinical guidance rather than being something to self-select. Pressure settings are determined for you, and using the wrong therapy for an undiagnosed problem wastes money and delays finding out what is going on. Suppliers generally work from a sleep study and clinical direction, and the sensible order is diagnosis first, equipment second.",
   },
   {
     q: "What are the ongoing costs of CPAP?",
@@ -33,7 +33,7 @@ const faqs = [
   },
   {
     q: "Can you get help with CPAP costs in Australia?",
-    a: "It varies. Some private health policies provide benefits toward equipment depending on your cover and waiting periods, and some state and territory schemes assist eligible people. There is no single national subsidy that applies to everyone. Check your own policy for what it covers and ask your clinic what applies in your state, because the answer genuinely differs.",
+    a: "It varies. Some private health policies provide benefits toward equipment depending on your cover and waiting periods, and some state and territory schemes assist eligible people. There is no single national subsidy that applies to everyone. Check your own policy for what it covers and ask your clinic what applies in your state, because the answer differs.",
   },
 ];
 
@@ -63,7 +63,7 @@ export default function Page() {
         </p>
         <p className="mt-3">
           If you have not been through that process yet, the useful page is{" "}
-          <a href="/sleep/do-i-have-sleep-apnoea" className="font-semibold text-[#0a7c42] hover:underline">how diagnosis actually works</a>,
+          <a href="/sleep/do-i-have-sleep-apnoea" className="font-semibold text-[#0a7c42] hover:underline">how diagnosis works</a>,
           and this one is worth returning to afterwards.
         </p>
       </section>
@@ -115,7 +115,7 @@ export default function Page() {
         <p className="mt-3">
           That changes how you should compare suppliers. A shop that is slightly dearer on the machine and materially
           cheaper on your specific mask consumables is the better deal over the life of the therapy. Ask each supplier
-          for the annual consumables cost on the mask you will actually use, and compare that alongside the headline
+          for the annual consumables cost on the mask you will use, and compare that alongside the headline
           price rather than instead of it.
         </p>
       </section>

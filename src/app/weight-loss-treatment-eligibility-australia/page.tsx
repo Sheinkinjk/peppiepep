@@ -109,7 +109,7 @@ export default function WeightLossEligibilityPage() {
         <p className="text-[#3d4b44] text-base sm:text-lg leading-relaxed mb-4 max-w-2xl">
           There is no online form that decides this for you, but there are clear criteria a registered practitioner uses.
           This page explains what generally counts, what does not automatically qualify you, and the fastest way to find
-          out where you actually stand. It is general information, not medical advice.
+          out where you stand. It is general information, not medical advice.
         </p>
 
         {/* Below the lead. The first paragraph after the h1 is the answer;
@@ -123,7 +123,7 @@ export default function WeightLossEligibilityPage() {
         </p>
 
         <section className="space-y-4 mb-10">
-          <h2 className="text-xl font-black">How eligibility actually works</h2>
+          <h2 className="text-xl font-black">How eligibility works</h2>
           <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
             A medical weight-management program is not something you can select for yourself. You complete a health
             questionnaire, a registered Australian practitioner reviews it individually, and they decide whether a program

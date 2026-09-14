@@ -64,7 +64,7 @@ const faqs = [
   },
   {
     q: "Do Carrd and Butternut AI both have a free option?",
-    a: "Yes, in different ways. Carrd has a free plan that lets you build and publish up to three one-page sites on carrd.co subdomains with no card required, so it is genuinely free to run a simple site. Butternut AI lets you generate and preview a full website for free with no account, but publishing on a custom domain requires a paid subscription. You can test both at no cost before deciding.",
+    a: "Yes, in different ways. Carrd has a free plan that lets you build and publish up to three one-page sites on carrd.co subdomains with no card required, so it is free to run a simple site. Butternut AI lets you generate and preview a full website for free with no account, but publishing on a custom domain requires a paid subscription. You can test both at no cost before deciding.",
   },
   {
     q: "Which is cheaper, Carrd or Butternut AI?",
@@ -144,7 +144,7 @@ export default function CarrdVsButternutPage() {
               Carrd and Butternut AI both get you a website without a developer, but they take opposite routes. Carrd is a
               simple, low-cost one-page builder that you design yourself, and it does that one job extremely well.
               Butternut AI is an AI generator that produces a complete multi-page site from a single prompt in about 20
-              seconds, which you then edit. Below we line them up on approach, setup, the free tier, what you actually get,
+              seconds, which you then edit. Below we line them up on approach, setup, the free tier, what you get,
               pricing, and who each one suits.
             </p>
 
@@ -235,7 +235,7 @@ export default function CarrdVsButternutPage() {
                 Butternut AI works the other way round. You describe your business and the AI generates a complete
                 multi-page website, copy, layout, and structure included, in about 20 seconds. Instead of building a page,
                 you are editing a finished first draft. For anyone who wants a full site with several pages and would
-                rather refine than start from nothing, that is a genuinely different category of tool.
+                rather refine than start from nothing, that is a different category of tool.
               </p>
             </div>
           </section>
@@ -243,12 +243,12 @@ export default function CarrdVsButternutPage() {
           {/* Prose: free tier + what you get */}
           <section className="border-t border-[#e5e9e7] py-10">
             <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-[#10251b] mb-4">
-              Free tiers and what you actually get
+              Free tiers and what you get
             </h2>
             <div className="space-y-4 text-[15px] leading-relaxed text-[#3d4b44] max-w-2xl">
               <p>
                 Both let you start for free, in slightly different ways. Carrd's free plan lets you build and publish up to
-                three one-page sites on carrd.co subdomains with no card, so you can genuinely run a simple site at no
+                three one-page sites on carrd.co subdomains with no card, so you can run a simple site at no
                 cost, and Pro, from $9 a year, adds custom domains, forms, and more customisation. Butternut lets you
                 generate and preview a full site for free with no account, and a paid subscription is what unlocks
                 publishing on a custom domain and the wider platform.

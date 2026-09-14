@@ -33,7 +33,7 @@ const faqs = [
     a: `Yes, and it is the difference worth acting on. Certification is voluntary, but where a brand holds it, a third-party certifier has assessed the product against a published standard and lists it. ACO Certification maintains a public Product & Operator Search on aco.net.au, so the claim is checkable in about a minute rather than taken on trust. Checked on ${READ_ON}.`,
   },
   {
-    q: "How do I check a brand is actually certified?",
+    q: "How do I check a brand is certified?",
     a: "Look up the brand or the product in the certifier's own register rather than looking for a logo on the packaging. A logo is an image on a label; a register entry is the certifier saying so. If a brand appears in neither, that does not make the product bad, it makes the word on the front unverified.",
   },
   {
@@ -59,7 +59,7 @@ export default function Page() {
       crumb="Natural skincare"
       h1={<>Natural skincare in Australia: <span className="italic text-[#0a7c42]">what the label has to prove</span></>}
       intro={`"Natural" carries no certification requirement on an Australian cosmetic. "Certified organic" does, and the certifier publishes a searchable register, so one of the two words on a bottle can be checked in a minute and the other cannot. That is the whole practical difference, and it is the check to run before you compare anything else.`}
-      headline="Natural skincare in Australia: what the label actually commits to"
+      headline="Natural skincare in Australia: what the label commits to"
       description={seoConfig.naturalSkincareAustralia.description}
       updated="2026-09-04"
       faqs={faqs}
@@ -125,7 +125,7 @@ export default function Page() {
 
       <PartnerRoute
         heading="Where we send readers"
-        intro="Two Australian retailers we have a commercial arrangement with, listed with what each one actually is. Neither advertises organic certification on its own site, and we would rather say so than let the section imply otherwise."
+        intro="Two Australian retailers we have a commercial arrangement with, listed with what each one is. Neither advertises organic certification on its own site, and we would rather say so than let the section imply otherwise."
         providers={[
           {
             name: "Edible Beauty Australia",

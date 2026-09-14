@@ -23,7 +23,7 @@ export const databoxConfig: AffiliatePageConfig = {
     h1Prefix: "Databox discount code:",
     h1Highlight: `there isn't one, and the free plan is why`,
     subheading:
-      `People search for a Databox coupon every month and there is nothing to find. What there is: a free plan that does not expire, and ${d.annualSaving} off any paid tier for paying yearly. This page sets out what each plan actually costs and where the jump happens.`,
+      `People search for a Databox coupon every month and there is nothing to find. What there is: a free plan that does not expire, and ${d.annualSaving} off any paid tier for paying yearly. This page sets out what each plan costs and where the jump happens.`,
     trustBullets: [
       `Free plan: ${DATABOX_FACTS.freePlan.sources}, ${DATABOX_FACTS.freePlan.users}`,
       `Annual billing saves ${d.annualSaving}`,
@@ -39,8 +39,8 @@ export const databoxConfig: AffiliatePageConfig = {
     {
       heading: "Is there a Databox discount code?",
       paragraphs: [
-        "No. Databox publishes no coupon, we hold none, and the sites that rank for this query are mostly listing codes that do not exist. The honest answer is that the discount is structural rather than promotional.",
-        `Two things actually reduce what you pay. The free plan is permanent, not a fourteen-day tease, so a single person tracking ${DATABOX_FACTS.freePlan.sources.replace("data sources","sources")} pays nothing indefinitely. And annual billing takes ${d.annualSaving} off every paid tier, which is a larger saving than most coupon codes in this category ever offer.`,
+        "No. Databox publishes no coupon, we hold none, and the sites that rank for this query are mostly listing codes that do not exist. The saving on Databox is built into the plans rather than offered as a code.",
+        `The free plan is permanent, so a single person tracking ${DATABOX_FACTS.freePlan.sources.replace("data sources","sources")} pays nothing indefinitely. And annual billing takes ${d.annualSaving} off every paid tier, which is a larger saving than most coupon codes in this category ever offer.`,
       ],
     },
     {
@@ -50,7 +50,7 @@ export const databoxConfig: AffiliatePageConfig = {
       ],
     },
     {
-      heading: "Where the price actually jumps",
+      heading: "Where the price jumps",
       paragraphs: [
         `The gap that decides the bill is not ${DATABOX_FACTS.freePlan.price} to ${DATABOX_FACTS.cheapestPaid.price}. It is ${DATABOX_FACTS.cheapestPaid.price} to ${DATABOX_FACTS.teamEntry.price}, because that is where unlimited users start. Everything below it is a single-seat product.`,
         `So the question is not which features you want, it is whether more than one person needs to log in. If the answer is no, ${DATABOX_FACTS.cheapestPaid.name} at ${DATABOX_FACTS.cheapestPaid.price} covers it. If the answer is yes, the entry price is ${DATABOX_FACTS.teamEntry.price} regardless of how few people that is.`,
@@ -115,7 +115,7 @@ export const databoxConfig: AffiliatePageConfig = {
   relatedLinks: [
     { href: "/business-software", label: "All business software we cover", desc: "Every tool we compare, grouped by the job it does." },
     { href: "/compare/ai-tools", label: "AI and automation tools", desc: "What the automation layer costs and which tool suits which bottleneck." },
-    { href: "/pipedrive", label: "Pipedrive", desc: "The visual sales CRM, and what a seat actually costs." },
+    { href: "/pipedrive", label: "Pipedrive", desc: "The visual sales CRM, and what a seat costs." },
   ],
   disclaimer:
     `Pricing read off databox.com on ${d.readOnLabel} and can change, so confirm the current figure on Databox's own site before you buy. Figures are US dollars, as Databox publishes them.`,

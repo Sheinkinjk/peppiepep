@@ -67,7 +67,7 @@ const faqs = [
   },
   {
     q: "Is subscription or pay-as-you-go cheaper for weight loss telehealth?",
-    a: "Neither is automatically cheaper, they bill differently. A subscription bundles consults and support into one monthly fee, which suits people who want ongoing contact and predictable billing. Pay-as-you-go charges per consult, so if you only need occasional appointments the running cost can be lower, but there is no bundled support between visits. The cheapest model for you depends on how much ongoing contact you actually want and whether medication, billed separately in many cases, is involved.",
+    a: "Neither is automatically cheaper, they bill differently. A subscription bundles consults and support into one monthly fee, which suits people who want ongoing contact and predictable billing. Pay-as-you-go charges per consult, so if you only need occasional appointments the running cost can be lower, but there is no bundled support between visits. The cheapest model for you depends on how much ongoing contact you want and whether medication, billed separately in many cases, is involved.",
   },
   {
     q: "Does cheapest mean best for weight loss telehealth?",
@@ -180,7 +180,7 @@ export default function CheapestWeightLossTelehealthPage() {
               <p className="text-[#2b362f] text-sm sm:text-base leading-relaxed max-w-2xl">
                 There is no single cheapest service, because they bill differently. Subscription programs like Moshy,
                 and Juniper fold consults and support into a monthly fee, while a pay-as-you-go service like
-                Doctors for Weight Loss charges per consult and can look lower up front. The genuinely cheapest option for
+                Doctors for Weight Loss charges per consult and can look lower up front. The cheapest option for
                 you depends on how much ongoing support you want and whether medication is prescribed, since that is often
                 billed separately. Pricing is confirmed in the consult and can change, so check each provider directly.
                 Cheapest is not the same as best fit, and suitability is always practitioner-decided.
@@ -225,7 +225,7 @@ export default function CheapestWeightLossTelehealthPage() {
           {/* Prose: what cheapest really means */}
           <section className="border-t border-[#e5e9e7] py-10">
             <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-[#10251b] mb-4">
-              What &ldquo;cheapest&rdquo; actually means here
+              What &ldquo;cheapest&rdquo; means here
             </h2>
             <div className="space-y-4 text-[15px] leading-relaxed text-[#3d4b44] max-w-2xl">
               <p>

@@ -85,16 +85,16 @@ function resolve(a: Answers): Result {
   if (cheapGp && wantsPrivacy) {
     return {
       title: "Weigh a free consult against not going at all",
-      body: "On price a bulk-billing GP is hard to beat. But if privacy is the thing that would stop you booking, paying more for an online service that actually gets you assessed is a reasonable trade rather than a failure of budgeting. Worth knowing there is a middle option: a different GP at the same practice, or a telehealth appointment with a GP clinic.",
+      body: "On price a bulk-billing GP is hard to beat. But if privacy is the thing that would stop you booking, paying more for an online service that gets you assessed is a reasonable trade rather than a failure of budgeting. Worth knowing there is a middle option: a different GP at the same practice, or a telehealth appointment with a GP clinic.",
       next: [
         { href: "/mens-health/online-mens-health-clinics-compared", label: "What separates the online services" },
-        { href: "/mens-health/is-telehealth-or-a-gp-cheaper-for-mens-health", label: "What each route really costs" },
+        { href: "/mens-health/is-telehealth-or-a-gp-cheaper-for-mens-health", label: "What each route costs" },
       ],
     };
   }
   if (frequent) {
     return {
-      title: "A bundled subscription may genuinely work out cheaper",
+      title: "A bundled subscription may work out cheaper",
       body: "Subscriptions look expensive against a single consult and stop looking that way once you would consult often. Since your GP does not bulk bill, the comparison is a gap fee several times a year plus anything dispensed, against a bundled monthly figure. Annualise both before deciding, and check what the subscription excludes.",
       next: [
         { href: "/mens-health/online-mens-health-clinics-compared", label: "What to check before subscribing" },

@@ -27,7 +27,7 @@ const aff = { href: PETSONME_URL, target: "_blank" as const, rel: "nofollow spon
 
 const faqs = [
   {
-    q: "What does the REFERLABS code actually give me?",
+    q: "What does the REFERLABS code give me?",
     a: "It upgrades the discount on PetsOnMe's pet care services from the usual 12% to 15%, once you hold a policy. Those services are dog walking, dog minding, pet sitting, doggy day care, house sitting and grooming. It is worth being precise about this: the code is not a discount on the insurance premium itself. Enter REFERLABS when you take out the policy, and confirm the current terms with PetsOnMe.",
   },
   {
@@ -44,7 +44,7 @@ const faqs = [
   },
   {
     q: "Who underwrites PetsOnMe?",
-    a: "The product is underwritten by Pacific International Insurance Pty Ltd (ABN 83 169 311 193) and distributed by Pets On Me Insurance Pty Limited (ABN 42 650 975 554). The underwriter is the party that actually carries the risk and pays claims, which is worth knowing for any insurance product.",
+    a: "The product is underwritten by Pacific International Insurance Pty Ltd (ABN 83 169 311 193) and distributed by Pets On Me Insurance Pty Limited (ABN 42 650 975 554). The underwriter is the party that carries the risk and pays claims, which is worth knowing for any insurance product.",
   },
   {
     q: "Is Refer Labs recommending PetsOnMe?",

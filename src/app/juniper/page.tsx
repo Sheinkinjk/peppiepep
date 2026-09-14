@@ -80,7 +80,7 @@ const faqs = [
     a: "The wraparound care. Beyond the medical program, you get a care team available seven days a week for unlimited follow-up consultations, an award-winning app with tracking, recipes and a 24/7 in-app AI companion, optional 1:1 coaching from dietitians, and a 20,000-member patient community. A free first consultation lets you check whether it fits before committing.",
   },
   {
-    q: "What does the program actually involve?",
+    q: "What does the program involve?",
     a: "Juniper's Weight Reset Program is a practitioner-led medical weight-management program wrapped in ongoing support. The clinical specifics are decided individually by your treating practitioner in your consultation, not from a webpage, which is exactly why the free first consultation exists. This page is general information, not medical advice.",
   },
   {
@@ -96,7 +96,7 @@ const faqs = [
     a: "It depends on what you want from a program. Juniper's value is the wraparound: a practitioner-led program plus unlimited follow-ups seven days a week, coaching, an award-winning app and a large patient community, rather than a program on its own. Because it runs on an ongoing subscription, the value tracks how consistently you use it. The free first consultation for new patients is a no-commitment way to judge whether the fit is right before you pay for anything.",
   },
   {
-    q: "Does Juniper actually work?",
+    q: "Does Juniper work?",
     a: "Juniper is a program and support service rather than a one-off intervention, so whether it works comes down to the individual and is a clinical matter decided with your practitioner, not something a webpage can promise. What Juniper provides is structure: practitioner-led care, unlimited follow-ups, coaching, tracking and a patient community, all designed to help people stay consistent. Results vary between people and depend on suitability and how closely the program is followed. This is general information, not medical advice.",
   },
   {

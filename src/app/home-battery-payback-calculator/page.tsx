@@ -36,7 +36,7 @@ const faqs = [
   },
   {
     q: "Why does a bigger battery not always pay back faster?",
-    a: "Two reasons. The federal rebate pays the full rate only up to 14kWh, so extra capacity above that earns a smaller subsidy per kWh. And a battery only saves money on the energy it actually cycles most nights, so capacity beyond your evening and overnight use often sits idle. That is why sizing to your real usage, usually around 10 to 14kWh for most homes, tends to pay back better than oversizing.",
+    a: "Two reasons. The federal rebate pays the full rate only up to 14kWh, so extra capacity above that earns a smaller subsidy per kWh. And a battery only saves money on the energy it cycles most nights, so capacity beyond your evening and overnight use often sits idle. That is why sizing to your real usage, usually around 10 to 14kWh for most homes, tends to pay back better than oversizing.",
   },
   {
     q: "Is this calculator financial advice?",

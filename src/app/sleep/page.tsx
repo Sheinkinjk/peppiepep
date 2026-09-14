@@ -13,7 +13,7 @@ const guides = [
   {
     href: "/sleep/do-i-have-sleep-apnoea",
     title: "Do I have sleep apnoea?",
-    desc: "How it is actually diagnosed here, and how to make the GP appointment count.",
+    desc: "How it is diagnosed here, and how to make the GP appointment count.",
   },
   {
     href: "/sleep/home-sleep-test-australia-cost",
@@ -22,13 +22,13 @@ const guides = [
   },
   {
     href: "/sleep/cpap-machine-costs-australia",
-    title: "What CPAP really costs",
+    title: "What CPAP costs",
     desc: "Verified Australian prices, plus the ongoing consumables people forget.",
   },
   {
     href: "/sleep/mattress-comparison-australia",
     title: "Comparing mattresses properly",
-    desc: "What the specifications mean, and how trial periods actually work.",
+    desc: "What the specifications mean, and how trial periods work.",
   },
   {
     href: "/sleep/sleep-tracker-comparison-australia",
@@ -38,7 +38,7 @@ const guides = [
   {
     href: "/sleep/how-much-does-good-sleep-cost",
     title: "What good sleep costs",
-    desc: "The free changes worth trying first, and where spending genuinely helps.",
+    desc: "The free changes worth trying first, and where spending helps.",
   },
 ];
 

@@ -42,7 +42,7 @@ const GOHIGHLEVEL: MatchResult = {
 const NUTSHELL: MatchResult = {
   key: "nutshell",
   name: "Nutshell",
-  why: "You just need a CRM your team will actually use. Nutshell keeps your pipeline, contacts and follow-up in one easy tool, with email sequences and web forms built in, without enterprise cost or complexity.",
+  why: "You just need a CRM your team will use. Nutshell keeps your pipeline, contacts and follow-up in one easy tool, with email sequences and web forms built in, without enterprise cost or complexity.",
   primaryCta: { label: "Try Nutshell", href: NUTSHELL_URL, dataCta: "ai-quiz-nutshell" },
   secondary: { label: "Read our full review", href: "/nutshell" },
 };
@@ -81,7 +81,7 @@ const config: MatchConfig = {
   resolve,
   interest: (r) => `AI sales tools (matched: ${r.name})`,
   newsletterHeading: "Want your match and the best current deals emailed to you?",
-  newsletterSub: "We'll send your pick plus any genuinely good AI sales-tool offers we verify. No spam.",
+  newsletterSub: "We'll send your pick plus any good AI sales-tool offers we verify. No spam.",
   footnote: (
     <>
       A recommendation based on your answer, not the only option. Compare them all in the{" "}

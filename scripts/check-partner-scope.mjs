@@ -113,7 +113,10 @@ const PARTNERS = [
 ];
 
 /** Wording that asserts the page earns nothing. Must never sit beside a link. */
-const EARNS_NOTHING = /nothing (?:here|on this page) (?:earns us a commission|pays us)/i;
+// Widened 14 Sep 2026: /mens-health and /skin-and-beauty shipped "nothing in this
+// section currently earns us a commission" beside partner links for over a week,
+// because this matched only "nothing here" / "nothing on this page".
+const EARNS_NOTHING = /nothing (?:here|on this page|in this (?:section|category|hub))(?:,? (?:currently|yet))? (?:earns us (?:a )?commission|pays us)|\bwe earn nothing (?:here|from this section)\b/i;
 
 /**
  * Source with comments removed, for the denial checks.

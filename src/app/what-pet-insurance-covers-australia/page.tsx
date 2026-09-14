@@ -140,7 +140,7 @@ export default function WhatPetInsuranceCoversPage() {
             <h2 className="text-lg font-extrabold text-[#10251b]">The one thing to do before buying</h2>
             <p className="mt-2 text-[15px] leading-relaxed text-[#3d4b44]">
               Get a quote for your specific pet and read the insurer&apos;s PDS and Target Market Determination. That is
-              the only way to see the cover, waiting periods, exclusions, excess and limits that would actually apply.
+              the only way to see the cover, waiting periods, exclusions, excess and limits that would apply.
             </p>
             <Link href="/pet-insurance" className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-[#0a7c42] hover:text-[#086536]">
               See current pet insurance offers <ArrowRight className="h-3.5 w-3.5" />

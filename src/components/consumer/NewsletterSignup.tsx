@@ -17,7 +17,7 @@ export default function NewsletterSignup({
   variant = "band",
   source = "site",
   heading = "Know about the good offers first",
-  sub = "The best deals we've verified for Australians across health, tools and software, sent only when something's genuinely worth it. No spam, no pay-to-rank picks.",
+  sub = "Verified offers for Australians across health, tools and software, sent only when there is a new one worth knowing about. No spam, no pay-to-rank picks.",
   interest,
 }: {
   variant?: Variant;

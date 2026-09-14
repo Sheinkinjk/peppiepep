@@ -45,10 +45,10 @@ const faqs = [
   },
   {
     q: "What are the best recurring commission affiliate programs in 2026?",
-    a: "Creator and SaaS tools dominate because subscribers stay for years. beehiiv, Kit, ClickFunnels, Teachable, Thinkific, ActiveCampaign, GetResponse, Systeme.io and Leadpages all run recurring programs, and hosting like Cloudways offers a recurring option too. The best one for you is whichever tool your audience actually uses, because recommending software people abandon quickly kills the recurring benefit.",
+    a: "Creator and SaaS tools dominate because subscribers stay for years. beehiiv, Kit, ClickFunnels, Teachable, Thinkific, ActiveCampaign, GetResponse, Systeme.io and Leadpages all run recurring programs, and hosting like Cloudways offers a recurring option too. The best one for you is whichever tool your audience uses, because recommending software people abandon quickly kills the recurring benefit.",
   },
   {
-    q: "Are recurring commissions really better than one-off payments?",
+    q: "Are recurring commissions better than one-off payments?",
     a: "For subscription products, usually yes. A one-off bounty is paid once; a recurring commission compounds for as long as the customer stays. The catch is retention. If people churn after a month, a large one-off can win. So the recurring programs worth chasing are the ones for sticky products, the email tool a creator will not switch, the course platform a business is built on, the analytics they check daily.",
   },
   {
@@ -61,7 +61,7 @@ const faqs = [
   },
   {
     q: "How do I build a portfolio of recurring programs?",
-    a: "Pick a handful of sticky subscription products your audience genuinely relies on, and promote them within content that would be useful even without the link. Depth beats breadth: three programs you know well and can write about credibly will out-earn twenty you have barely used. Check the commission duration before you commit, since some programs stop paying after 12 months.",
+    a: "Pick a handful of sticky subscription products your audience relies on, and promote them within content that would be useful even without the link. Depth beats breadth: three programs you know well and can write about credibly will out-earn twenty you have barely used. Check the commission duration before you commit, since some programs stop paying after 12 months.",
   },
 ];
 
@@ -193,7 +193,7 @@ export default function RecurringAffiliateProgramsPage() {
               Check the recurring period, not just the rate
             </h3>
             <p>
-              What matters most here is how long the recurring commission actually lasts. Some programs pay for the
+              What matters most here is how long the recurring commission lasts. Some programs pay for the
               full lifetime of the customer, which is the gold standard. Others cap it at the first twelve months, after
               which payments stop even if the customer stays. A lifetime 25% can easily out-earn a capped 50%, so always
               read the recurring period in the terms before you judge a program by its headline percentage.

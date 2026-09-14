@@ -30,7 +30,7 @@ export function buildWeightLossGuideEmail(): string {
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:560px;background:#ffffff;border:1px solid #e5e9e7;border-radius:16px;overflow:hidden;">
         <tr><td style="padding:28px 28px 8px;">
           <p style="margin:0;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:${GREEN};font-family:${FONT};">Refer Labs</p>
-          <h1 style="margin:10px 0 6px;font-size:24px;line-height:1.25;font-weight:800;color:${INK};font-family:${FONT};">Your Australian weight-loss options, in plain English</h1>
+          <h1 style="margin:10px 0 6px;font-size:24px;line-height:1.25;font-weight:800;color:${INK};font-family:${FONT};">Your Australian weight-loss options</h1>
           <p style="margin:0;font-size:15px;line-height:1.65;color:${BODY};font-family:${FONT};">Here is the map of the main ways Australians approach weight loss, and who each one tends to suit. It is general information to help you narrow the field, not medical advice. Whether any option is right for you is decided by a registered Australian practitioner.</p>
         </td></tr>
         <tr><td style="padding:8px 28px 4px;">

@@ -24,7 +24,7 @@ export const trainualConfig: AffiliatePageConfig = {
   },
   banner: {
     heading: "See how Trainual works",
-    body: "Document your processes and build training your team actually uses. Check the current plan on Trainual.",
+    body: "Document your processes and build training your team uses. Check the current plan on Trainual.",
     buttonLabel: "See Trainual",
   },
   sections: [
@@ -84,7 +84,7 @@ export const trainualConfig: AffiliatePageConfig = {
     midBody: "Open Trainual through our referral link and start documenting how your business runs.",
     midButton: "See Trainual",
     bottomHeading: "Get your processes out of people's heads",
-    bottomBody: "Document, assign and track training your team actually uses.",
+    bottomBody: "Document, assign and track training your team uses.",
     bottomButton: "Continue to Trainual",
   },
   disclaimer:

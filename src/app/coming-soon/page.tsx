@@ -70,9 +70,9 @@ const SECTIONS = [
     tint: "#E9EFF6",
     title: "Sleep",
     live: "Six guides, live now",
-    body: "How sleep apnoea is actually diagnosed here, what a sleep study costs once Medicare is accounted for, verified CPAP prices, and how to compare a mattress on something other than marketing.",
+    body: "How sleep apnoea is diagnosed here, what a sleep study costs once Medicare is accounted for, verified CPAP prices, and how to compare a mattress on something other than marketing.",
     links: [
-      { h: "/sleep/do-i-have-sleep-apnoea", l: "How diagnosis actually works" },
+      { h: "/sleep/do-i-have-sleep-apnoea", l: "How diagnosis works" },
       { h: "/sleep/cpap-machine-costs-australia", l: "CPAP: verified prices" },
       { h: "/sleep/mattress-comparison-australia", l: "Comparing mattresses properly" },
     ],
@@ -90,7 +90,7 @@ const faqs = [
   },
   {
     q: "When will these sections be finished?",
-    a: "We are not giving a date, because it depends on finding providers we are prepared to put our name to rather than on a content schedule. We would rather be late than list someone we have not checked. Join the list below and you will hear when a section is genuinely ready.",
+    a: "We are not giving a date, because it depends on finding providers we are prepared to put our name to rather than on a content schedule. We would rather be late than list someone we have not checked. Join the list below and you will hear when a section is ready.",
   },
   {
     q: "What other categories are planned?",

@@ -96,7 +96,7 @@ export default function WeightLossTelehealthMenPage() {
           <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
             The uncomfortable statistic behind men&apos;s telehealth is that men see doctors less often, and later, than
             women. Weight sits high on the list of topics men avoid raising. Moving the first step online, into a
-            questionnaire you can fill in on the couch, removed the part most men were actually avoiding: the
+            questionnaire you can fill in on the couch, removed the part most men were avoiding: the
             face-to-face conversation that starts it.
           </p>
           <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
@@ -128,7 +128,7 @@ export default function WeightLossTelehealthMenPage() {
           <h2 className="text-xl font-black">Where Moshy fits</h2>
           <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
             Moshy runs a clinically-led telehealth pathway that is open to anyone eligible, and it passes the checklist
-            above: AHPRA-registered practitioners, an eligibility step that genuinely screens, pricing disclosed inside
+            above: AHPRA-registered practitioners, an eligibility step that screens, pricing disclosed inside
             the platform before any commitment, and Australian regulation. If you would rather have coaching wrapped
             around clinical care, Juniper markets primarily to women, and we compare the main providers in our{" "}
             <Link href="/best-weight-loss-telehealth-australia" className="underline decoration-[#cdd5cf] underline-offset-2 hover:text-[#10251b]" style={{ color: CYAN }}>

@@ -44,7 +44,7 @@ export const replyioConfig: AffiliatePageConfig = {
     h1Prefix: "Reply.io:",
     h1Highlight: "the AI sales engagement platform for multichannel outbound",
     subheading:
-      "Weighing up Reply.io for sales outreach and want to know what it actually does, who it suits, and how it compares before you start? This page covers the essentials and takes you directly to Reply.io to see it for yourself.",
+      "Weighing up Reply.io for sales outreach and want to know what it does, who it suits, and how it compares before you start? This page covers the essentials and takes you directly to Reply.io to see it for yourself.",
     trustBullets: [
       "Direct access to Reply.io",
       "Covers what Reply.io does, who it suits, and pricing",
@@ -68,7 +68,7 @@ export const replyioConfig: AffiliatePageConfig = {
       heading: "What is Reply.io?",
       paragraphs: [
         "Reply.io is an AI-first sales engagement platform. In practice it is the toolkit a sales team uses to run outbound at scale: you build sequences that reach a prospect across email, LinkedIn, calls and SMS, and the platform automates the timing, follow-ups and tracking so nothing falls through the cracks.",
-        "On top of the sequencing it layers AI SDR agents that can write and personalise messages, plus a stack of supporting tools: B2B contact data, an email finder, and deliverability features like inbox warm-up that help your emails actually land. Replies are centralised so your team can qualify and book meetings from one place.",
+        "On top of the sequencing it layers AI SDR agents that can write and personalise messages, plus a stack of supporting tools: B2B contact data, an email finder, and deliverability features like inbox warm-up that help your emails land. Replies are centralised so your team can qualify and book meetings from one place.",
         "It integrates with CRMs including HubSpot, Salesforce and Pipedrive, so it works alongside the pipeline your team already runs rather than becoming a separate silo.",
       ],
     },
@@ -77,7 +77,7 @@ export const replyioConfig: AffiliatePageConfig = {
       paragraphs: [
         "Reply.io is best for SMB and mid-market sales teams that want to run their own multichannel outbound and keep hands-on control of the sequences, messaging and data. If you have people who will own the outbound motion and want a platform that gives them sequencing, AI writing, data and deliverability in one login, that is the fit.",
         "It suits teams that already have a clear ideal customer profile and want to scale activity efficiently, as well as agencies running outreach for clients. Teams on HubSpot, Salesforce or Pipedrive get extra value from the native integrations.",
-        "It is less suited to someone who wants outbound fully done for them with no hands on the wheel; that is closer to a done-for-you AI SDR service. Reply.io rewards teams that will actually build, test and refine their sequences.",
+        "It is less suited to someone who wants outbound fully done for them with no hands on the wheel; that is closer to a done-for-you AI SDR service. Reply.io rewards teams that will build, test and refine their sequences.",
       ],
     },
     {

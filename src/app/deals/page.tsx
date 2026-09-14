@@ -32,7 +32,7 @@ const FAQS = [
     a: "The current PetsOnMe discount code is REFERLABS, which takes 15% off pet care services rather than off the insurance premium, up from the usual 12%. The distinction matters: it is a discount on services, not on the cost of cover. Read off PetsOnMe's own page on 17 August 2026. General information, not financial advice.",
   },
   {
-    q: "Are these discount codes actually current?",
+    q: "Are these discount codes current?",
     a: "Each offer in the table shows the date we last confirmed it, rather than one site-wide stamp, so you can see how current each individual code is. Offers change without notice, so treat the date as when we checked rather than a guarantee, and confirm the terms on the provider's site before you sign up.",
   },
   {

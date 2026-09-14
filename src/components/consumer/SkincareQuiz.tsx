@@ -109,7 +109,7 @@ function resolve(a: Answers): Result {
   }
   if (a.effort === "minimal") {
     return {
-      title: "Keep it to a baseline you will actually maintain",
+      title: "Keep it to a baseline you will maintain",
       body: "A short routine you follow beats an elaborate one you abandon in a fortnight, and the arithmetic backs that up: the cheapest product per use is the one in the drawer, and it is also worth nothing. Build from a small number of steps and add only when the current ones are habitual.",
       next: [
         { href: "/skin-and-beauty/best-value-skincare-australia-cost-per-use", label: "Judging value properly" },

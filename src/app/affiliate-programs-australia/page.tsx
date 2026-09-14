@@ -140,7 +140,7 @@ const spokes = [
 const faqs = [
   {
     q: "What are the best affiliate programs in Australia?",
-    a: "It depends on your audience. If you write about software, SaaS and hosting programs like Shopify, Semrush, Kinsta and WP Engine pay the most per referral. Creators and newsletter writers do best with recurring programs like beehiiv and Kit. Retail programs like Amazon Associates and the Commission Factory brands (THE ICONIC, Catch) are the easiest to join but pay the least per sale. There is no single best program, only the best fit for what your readers actually buy.",
+    a: "It depends on your audience. If you write about software, SaaS and hosting programs like Shopify, Semrush, Kinsta and WP Engine pay the most per referral. Creators and newsletter writers do best with recurring programs like beehiiv and Kit. Retail programs like Amazon Associates and the Commission Factory brands (THE ICONIC, Catch) are the easiest to join but pay the least per sale. There is no single best program, only the best fit for what your readers buy.",
   },
   {
     q: "Which affiliate networks operate in Australia?",
@@ -239,7 +239,7 @@ export default function AffiliateProgramsAustraliaPage() {
           </h1>
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-[#2b362f]">
             Affiliate marketing is one of the cleanest ways for Australians to earn from a website, a newsletter or a
-            YouTube channel. You recommend a product you actually rate, someone buys through your link, and the company
+            YouTube channel. You recommend a product you rate, someone buys through your link, and the company
             pays you a cut at no extra cost to the buyer. The hard part is knowing which of the hundreds of programs are worth your time. Below is a working shortlist of well-known programs relevant to
             Australians, grouped by category, with the commission structures and cookie windows they are commonly known
             for.
@@ -454,8 +454,8 @@ export default function AffiliateProgramsAustraliaPage() {
           </h2>
           <div className="mt-5 space-y-4 text-[15px] leading-relaxed text-[#3d4b44]">
             <p>
-              A high headline rate is the wrong thing to chase first. The programs that actually pay are the ones where
-              the product genuinely fits your audience, because a 3% commission on something people want beats a 40%
+              A high headline rate is the wrong thing to chase first. The programs that pay are the ones where
+              the product fits your audience, because a 3% commission on something people want beats a 40%
               commission on something they do not. Start there.
             </p>
             <p>

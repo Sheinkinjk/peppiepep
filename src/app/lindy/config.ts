@@ -38,7 +38,7 @@ export const lindyConfig: AffiliatePageConfig = {
     {
       heading: "Who it suits, and the catch",
       paragraphs: [
-        "It fits founders, sales and operations people, and anyone drowning in inbox and coordination work. The value depends on how much repetitive, rules-based admin you actually have, if your work is mostly ad-hoc and creative, an AI assistant helps less.",
+        "It fits founders, sales and operations people, and anyone drowning in inbox and coordination work. The value depends on how much repetitive, rules-based admin you have, if your work is mostly ad-hoc and creative, an AI assistant helps less.",
         "Plans are tiered by usage and connected inboxes, starting US$49.99/month, with higher tiers for more volume. Start on the free trial and confirm current pricing before you subscribe.",
       ],
     },
@@ -64,7 +64,7 @@ export const lindyConfig: AffiliatePageConfig = {
       a: "Paid plans start US$49.99/month, with higher tiers (US$99.99 and US$199.99) for more usage and connected inboxes, plus an enterprise option. Pricing changes, so confirm the current tiers on Lindy before subscribing.",
     },
     {
-      q: "What can Lindy actually do?",
+      q: "What can Lindy do?",
       a: "Repetitive, connected-app work: triaging and drafting emails, scheduling meetings, sending follow-ups and updating your CRM. It is designed to run defined tasks automatically rather than to hold open-ended conversations.",
     },
     {

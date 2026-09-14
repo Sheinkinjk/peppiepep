@@ -86,7 +86,7 @@ export default function MoshyEligibilityPage() {
           The Moshy eligibility check, <span style={{ color: CYAN_LT }}>explained before you start it</span>
         </h1>
         <p className="text-[#3d4b44] text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
-          Ten minutes, a questionnaire, and a practitioner on the other end. Here is what the Moshy quiz actually asks,
+          Ten minutes, a questionnaire, and a practitioner on the other end. Here is what the Moshy quiz asks,
           what happens after you hit submit, and why not everyone gets through.
         </p>
 
@@ -141,7 +141,7 @@ export default function MoshyEligibilityPage() {
           </p>
           <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
             Getting declined costs you nothing except the ten minutes. Getting approved means a practitioner has
-            actually looked at your case, which is precisely what you want from a health service.
+            looked at your case, which is precisely what you want from a health service.
           </p>
         </section>
 

@@ -38,9 +38,11 @@ const softwareSchema = {
   applicationCategory: "BusinessApplication",
   operatingSystem: "Web",
   description: "No-code landing-page builder for marketers, with a large template library, A/B testing, lead-capture forms and integrations.",
-  offers: { "@type": "Offer", price: "24", priceCurrency: "USD", description: "14-day free trial; paid plans from US$24/month.", availability: "https://schema.org/InStock" },
-  url: "https://landingi.com",
-  sameAs: ["https://landingi.com"],
+  // No price: the page deliberately quotes none ("We do not quote a figure here"),
+  // so a price in the markup would state one the page does not stand behind.
+  offers: { "@type": "Offer", description: "14-day free trial; plans and prices are published on Unbounce's own site.", availability: "https://schema.org/InStock" },
+  url: "https://unbounce.com",
+  sameAs: ["https://unbounce.com"],
 };
 
 export default function UnbouncePage() {

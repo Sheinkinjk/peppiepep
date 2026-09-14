@@ -5,7 +5,7 @@ export const metadata = generateSEOMetadata(seoConfig.diagnosticsHub);
 
 const guides = [
   { href: "/longevity/diagnostics/whole-body-mri-australia-cost", title: "Whole-body MRI: cost and criticism", desc: "What it costs here, why no rebate applies, and why clinicians are cautious about screening the well." },
-  { href: "/longevity/diagnostics/everlab-vs-prenuvo-vs-i-screen-australia", title: "The services, compared", desc: "What each actually measures, how each is priced, and who reviews the result." },
+  { href: "/longevity/diagnostics/everlab-vs-prenuvo-vs-i-screen-australia", title: "The services, compared", desc: "What each measures, how each is priced, and who reviews the result." },
   { href: "/longevity/diagnostics/biological-age-testing-australia", title: "Biological age testing", desc: "Why two tests can give different ages from one sample, and what that tells you." },
   { href: "/longevity/diagnostics/cgm-for-non-diabetics-australia", title: "Glucose monitors without diabetes", desc: "What they cost unsubsidised, how access works, and what the evidence supports." },
   { href: "/longevity/diagnostics/health-screening-quiz", title: "Is screening worth it for you?", desc: "Four questions on budget and how you would handle an uncertain result." },

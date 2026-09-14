@@ -55,7 +55,7 @@ const faqs = [
   },
   {
     q: "Is pet insurance tax deductible in Australia?",
-    a: "For a family pet, generally no. Pet insurance and vet bills are treated as a private expense. Costs may be deductible only where an animal genuinely helps earn income, such as a working farm dog, and the ATO applies its own tests. This is general information, not tax advice.",
+    a: "For a family pet, generally no. Pet insurance and vet bills are treated as a private expense. Costs may be deductible only where an animal helps earn income, such as a working farm dog, and the ATO applies its own tests. This is general information, not tax advice.",
   },
 ];
 
@@ -109,7 +109,7 @@ export default function PetInsurancePage() {
             <p className="mt-5 text-lg leading-relaxed text-[#3d4b44]">
               Far fewer insurers exist than brands: one underwriter, PetSure, sits behind more than twenty of the
               policies sold in Australia, so two brands you are comparing may be the same product with different
-              branding. Five things then decide what you actually get back, and all five live in the Product Disclosure
+              branding. Five things then decide what you get back, and all five live in the Product Disclosure
               Statement rather than the marketing: cover level, waiting periods, exclusions, excess and annual limit.
               General information, not advice and not a recommendation.
             </p>
@@ -132,7 +132,7 @@ export default function PetInsurancePage() {
               Weighing them up? See{" "}
               <Link href="/knose-vs-petsonme" className="nw-link">Knose vs PetsOnMe side by side</Link>, or our{" "}
               <Link href="/best-pet-insurance-australia" className="nw-link">guide to choosing pet insurance</Link>,
-              which sets out the six things that decide what you actually get back. Both are underwritten by the same
+              which sets out the six things that decide what you get back. Both are underwritten by the same
               insurer, which is worth knowing first:{" "}
               <Link href="/who-underwrites-pet-insurance-australia" className="nw-link">who underwrites which brand</Link>.
               Current offers across every category sit on <Link href="/deals" className="nw-link">the deals page</Link>.

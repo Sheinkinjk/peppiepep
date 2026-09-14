@@ -83,7 +83,7 @@ const config: MatchConfig = {
   resolve,
   interest: (r) => `Website builders (matched: ${r.name})`,
   newsletterHeading: "Want the result and the best current deals emailed to you?",
-  newsletterSub: "We'll send your match plus any genuinely good website-builder offers we verify. No spam.",
+  newsletterSub: "We'll send your match plus any good website-builder offers we verify. No spam.",
   footnote: (
     <>
       A recommendation based on your answers, not the only option. Compare all four in the{" "}

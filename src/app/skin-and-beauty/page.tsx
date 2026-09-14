@@ -14,7 +14,7 @@ const guides = [
   {
     href: "/skin-and-beauty/retinol-vs-prescription-strength-australia",
     title: "Retinol vs prescription-strength",
-    desc: "What the strength difference actually means, and how each route is accessed in Australia.",
+    desc: "What the strength difference means, and how each route is accessed in Australia.",
   },
   {
     href: "/skin-and-beauty/led-face-mask-comparison-australia",
@@ -56,7 +56,7 @@ const guides = [
 const faqs = [
   {
     q: "Does more expensive skincare work better?",
-    a: "Not reliably. Price reflects packaging, brand and formulation research as much as what the product does on your skin. The more useful question is what active ingredient a product contains, at what concentration, and whether you will actually use it consistently. Our cost-per-use guide sets out how to compare products on what you spend per application rather than what the bottle costs.",
+    a: "Not reliably. Price reflects packaging, brand and formulation research as much as what the product does on your skin. The more useful question is what active ingredient a product contains, at what concentration, and whether you will use it consistently. Our cost-per-use guide sets out how to compare products on what you spend per application rather than what the bottle costs.",
   },
   {
     q: "What skin treatments need a prescription in Australia?",
@@ -72,7 +72,7 @@ const faqs = [
   },
   {
     q: "Does Refer Labs earn from this section?",
-    a: "Not yet. Skin and beauty is being built before any partner is in place, so nothing in this section currently earns us a commission. When we add providers we will say so on the page and disclose it, as we do everywhere else on the site.",
+    a: "Yes, from three retail partners: Foreo, Edible Beauty Australia and Aussie Health Products, all through Commission Factory. We earn a commission if you buy through a link to one of them, at no extra cost to you, and each page carrying one says so beside it. Commissions do not change what we compare or conclude.",
   },
 ];
 
@@ -139,7 +139,7 @@ export default function SkinAndBeautyHub() {
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#2b362f]">
               The price on the shelf tells you very little in this category, because the same product can cost twice as
               much here as it lists for overseas, and the stronger topicals are prescription-only in Australia no matter
-              what they cost. These guides cover what the common actives actually do, what devices cost in Australian
+              what they cost. These guides cover what the common actives do, what devices cost in Australian
               dollars rather than converted, and where the prescription line falls.
             </p>
           </div>

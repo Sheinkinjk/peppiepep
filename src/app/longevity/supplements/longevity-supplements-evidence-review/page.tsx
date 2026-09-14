@@ -23,7 +23,7 @@ const faqs = [
   },
   {
     q: "Are supplements safe because they are natural?",
-    a: "Not automatically. Compounds active enough to do something are active enough to interact with medicines you take, and some affect liver function or bleeding risk. Tell your GP or pharmacist what you take, particularly before surgery or when starting a new prescription. If a product genuinely does nothing, it is safe and pointless; if it does something, it can interact.",
+    a: "Not automatically. Compounds active enough to do something are active enough to interact with medicines you take, and some affect liver function or bleeding risk. Tell your GP or pharmacist what you take, particularly before surgery or when starting a new prescription. If a product does nothing, it is safe and pointless; if it does something, it can interact.",
   },
   {
     q: "Does Refer Labs sell supplements?",
@@ -39,7 +39,7 @@ export default function Page() {
       slug="/longevity/supplements/longevity-supplements-evidence-review"
       crumb="Supplements, reviewed"
       h1={<>Longevity supplements: <span className="italic text-[#0a7c42]">how to read the evidence yourself</span></>}
-      intro="We name no products here, deliberately. What is more useful, and more durable as the fashionable compound changes each year, is knowing what the label actually certifies and how to tell a supportive study from a persuasive one."
+      intro="We name no products here, deliberately. What is more useful, and more durable as the fashionable compound changes each year, is knowing what the label certifies and how to tell a supportive study from a persuasive one."
       headline="Longevity supplements in Australia: an evidence review"
       description={seoConfig.supplementsEvidence.description}
       faqs={faqs}

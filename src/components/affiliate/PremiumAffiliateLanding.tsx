@@ -222,7 +222,7 @@ export default function PremiumAffiliateLanding({ config }: { config: AffiliateP
                     </a>
                   </li>
                 ))}
-                <li><a href="#bottom-line" className="text-[#6e7b74] transition-colors hover:text-[#0a7c42]">The bottom line</a></li>
+                <li><a href="#bottom-line" className="text-[#6e7b74] transition-colors hover:text-[#0a7c42]">Should you use {config.brand}?</a></li>
                 <li><a href="#faq" className="text-[#6e7b74] transition-colors hover:text-[#0a7c42]">FAQ</a></li>
               </ul>
             </div>
@@ -277,7 +277,7 @@ export default function PremiumAffiliateLanding({ config }: { config: AffiliateP
             {/* Bottom line */}
             <section id="bottom-line" className="mt-14 scroll-mt-24">
               <div className="nw-card rounded-2xl p-7 sm:p-8">
-                <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">The bottom line</h2>
+                <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">Should you use {config.brand}?</h2>
                 <p className="mt-4 text-[15.5px] leading-relaxed text-[#3d4b44]">
                   {config.verdict ?? config.quickAnswer ?? config.hero.subheading}
                 </p>

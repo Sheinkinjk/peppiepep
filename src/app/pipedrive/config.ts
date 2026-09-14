@@ -9,7 +9,7 @@ export const pipedriveConfig: AffiliatePageConfig = {
   eyebrow: "CRM & sales",
   affiliateUrl: PIPEDRIVE_URL,
   quickAnswer:
-    "Pipedrive is a sales CRM built around a visual pipeline: you drag deals through stages, log activities, and let automation handle the follow-up, so nothing stalls. New accounts get a 14-day free trial with no credit card; paid plans start at US$14 per seat per month billed annually.",
+    "Pipedrive is a sales CRM built around a visual pipeline: you drag deals through stages, log activities, and let automation handle the follow-up, so nothing stalls. New accounts get a 14-day free trial with no credit card; paid plans start at AU$19 per seat per month billed annually, read off Pipedrive's pricing page on 5 September 2026.",
   offer: "14-day free trial, no card required",
   atAGlance: [
     { k: "Type", v: "Sales CRM / pipeline" },
@@ -33,7 +33,7 @@ export const pipedriveConfig: AffiliatePageConfig = {
       heading: "What Pipedrive is for",
       paragraphs: [
         "Pipedrive is a customer-relationship manager designed first and foremost around the sales pipeline. Every deal is a card you move left to right through your stages, so anyone can see what is close, what is stuck, and what needs a nudge, without digging through notes.",
-        "On top of that it adds activity reminders, email sync, workflow automation and reporting, plus optional add-ons for lead capture and web forms. It suits teams that want a CRM their reps will actually keep up to date.",
+        "On top of that it adds activity reminders, email sync, workflow automation and reporting, plus optional add-ons for lead capture and web forms. It suits teams that want a CRM their reps will keep up to date.",
       ],
     },
     {
@@ -70,7 +70,7 @@ export const pipedriveConfig: AffiliatePageConfig = {
     midBody: "Start the 14-day free trial through our link, import your deals, and watch them move through your stages.",
     midButton: "Get started",
     bottomHeading: "Run your sales in one place",
-    bottomBody: "Set up your pipeline, switch on the follow-up reminders, and see what is actually closing.",
+    bottomBody: "Set up your pipeline, switch on the follow-up reminders, and see what is closing.",
     bottomButton: "Continue to Pipedrive",
   },
   disclaimer:

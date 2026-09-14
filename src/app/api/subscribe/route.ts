@@ -23,7 +23,7 @@ function welcomeHtml(unsubUrl: string): string {
     <p style="font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:#0E7C66;font-weight:700;margin:0 0 18px;">Refer Labs</p>
     <h1 style="font-size:24px;line-height:1.25;margin:0 0 16px;">You're in.</h1>
     <p style="font-size:16px;line-height:1.6;color:#3a4742;margin:0 0 16px;">
-      Thanks for subscribing. We'll email you when there's a genuinely good, verified offer worth knowing about across Australian health, tools and software, no spam, no pay-to-rank recommendations, unsubscribe any time.
+      Thanks for subscribing. We'll email you when there's a good, verified offer worth knowing about across Australian health, tools and software, no spam, no pay-to-rank recommendations, unsubscribe any time.
     </p>
     <p style="font-size:16px;line-height:1.6;color:#3a4742;margin:0 0 24px;">
       While you're here, our most-read guides right now are weight-loss telehealth and website builders.

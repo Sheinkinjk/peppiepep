@@ -59,7 +59,7 @@ function resolve(a: Record<string, string>): QuizResult {
   if (a.gp === "no") {
     return {
       title: "Talk to a GP before you book anything",
-      body: "Not as a gatekeeping step, but because your actual risk profile decides whether any of this is worth doing, and a comparison site cannot know it. Some people have a history that genuinely warrants investigation, in which case there may be a clinically indicated pathway that attracts a rebate. Most people who feel well and have no risk factors get less from a broad scan than the marketing implies.",
+      body: "Not as a gatekeeping step, but because your actual risk profile decides whether any of this is worth doing, and a comparison site cannot know it. Some people have a history that warrants investigation, in which case there may be a clinically indicated pathway that attracts a rebate. Most people who feel well and have no risk factors get less from a broad scan than the marketing implies.",
       next: [
         { href: "/longevity/diagnostics/whole-body-mri-australia-cost", label: "The case against screening the well" },
         { href: "/longevity/diagnostics/everlab-vs-prenuvo-vs-i-screen-australia", label: "How the services differ" },
@@ -69,7 +69,7 @@ function resolve(a: Record<string, string>): QuizResult {
   if (a.uncertain === "anxious" || a.uncertain === "unsure") {
     return {
       title: "Weigh the uncertainty seriously before you book",
-      body: "Detailed scans of healthy people frequently find something of unclear significance, and once found it usually cannot be ignored. That means repeat imaging, specialist appointments and often months of not knowing. If waiting would be genuinely hard for you, that is not a small consideration, and it is the part the marketing leaves out.",
+      body: "Detailed scans of healthy people frequently find something of unclear significance, and once found it usually cannot be ignored. That means repeat imaging, specialist appointments and often months of not knowing. If waiting would be hard for you, that is not a small consideration, and it is the part the marketing leaves out.",
       next: [
         { href: "/longevity/diagnostics/whole-body-mri-australia-cost", label: "The incidental-finding cascade" },
         { href: "/longevity/diagnostics/everlab-vs-prenuvo-vs-i-screen-australia", label: "Questions to ask a provider" },

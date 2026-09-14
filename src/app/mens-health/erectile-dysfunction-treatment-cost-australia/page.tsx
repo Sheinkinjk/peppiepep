@@ -114,7 +114,7 @@ export default function Page() {
         <p className="mt-3">
           Convert both to twelve months before deciding. A bulk-billed GP appointment twice a year plus dispensed cost
           is a very different annual figure from a subscription running every month, and which comes out ahead depends
-          on how often you would actually consult.
+          on how often you would consult.
         </p>
         <div className="mt-4 rounded-2xl border border-[#0a7c42]/25 bg-[#f5f8f6] p-6">
           <p className="text-[15px] font-semibold text-[#10251b]">The question to ask each provider</p>

@@ -15,7 +15,7 @@ const faqs = [
   },
   {
     q: "Why does the result usually point at a GP?",
-    a: "Because whether screening is worthwhile depends on your individual risk, and that is genuinely not knowable from four questions. A GP can also access clinically indicated pathways that attract a Medicare rebate, which private screening does not.",
+    a: "Because whether screening is worthwhile depends on your individual risk, and that is not knowable from four questions. A GP can also access clinically indicated pathways that attract a Medicare rebate, which private screening does not.",
   },
   {
     q: "Are you recommending against screening?",

@@ -110,7 +110,7 @@ export default function OnlineWeightLossDoctorAustraliaPage() {
           {/* Hero */}
           <header className="pt-9 pb-6">
             <h1 className="mt-4 text-3xl sm:text-4xl lg:text-[2.6rem] font-extrabold leading-[1.08] tracking-tight text-[#10251b]">
-              Online weight-loss doctor in Australia: how a telehealth consult really works
+              Online weight-loss doctor in Australia: how a telehealth consult works
             </h1>
             <p className="mt-5 text-base sm:text-lg leading-relaxed text-[#3d4b44]">
               The questionnaire is not the assessment. It is a screening form, and what follows is a review by a
@@ -151,7 +151,7 @@ export default function OnlineWeightLossDoctorAustraliaPage() {
 
             <section>
               <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#10251b]">
-                What an online weight-loss doctor actually is
+                What an online weight-loss doctor is
               </h2>
               <div className="mt-4 space-y-4 text-[15px] leading-relaxed text-[#3d4b44]">
                 <p>

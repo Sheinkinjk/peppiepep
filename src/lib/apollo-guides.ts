@@ -25,7 +25,7 @@ export const APOLLO_GUIDES: ApolloGuideEntry[] = [
     slug: "/best-home-battery-australia",
     crumb: "Best home battery",
     priority: 0.82,
-    h1: "Best home battery in Australia: how to actually choose one",
+    h1: "Best home battery in Australia: how to choose one",
     meta: {
       title: "Best Home Battery Australia 2026: How to Choose | Refer Labs",
       description:
@@ -36,7 +36,7 @@ export const APOLLO_GUIDES: ApolloGuideEntry[] = [
       "There is no single best home battery, because the right one depends on how much power you use, whether you have solar, and what you want the battery to do. The battery that suits a family running air-conditioning off a big rooftop solar system is not the one that suits a couple wanting blackout backup. Rather than chase a brand name, work out which capacity, chemistry and warranty fit your home, and, just as importantly, who installs it. Sizing and install quality decide more than the badge on the front.",
     sections: [
       {
-        h: "The factors that actually decide it",
+        h: "The factors that decide it",
         body: ["Six things separate a battery that pays its way from one that disappoints, and none of them is the logo on the front."],
         bullets: [
           "Usable capacity (kWh): enough to cover your evening and overnight use, without paying for capacity you never fill.",
@@ -64,8 +64,8 @@ export const APOLLO_GUIDES: ApolloGuideEntry[] = [
     ],
     faqs: [
       { q: "What is the best home battery brand in Australia?", a: "There isn't a single best brand, because the right battery depends on your usage, whether you have solar, and whether you want backup. What matters more is matching usable capacity, chemistry and warranty to your home, and using an accredited installer who sizes it from your real usage rather than a default package." },
-      { q: "How many kWh of battery do I need?", a: "Enough to cover your evening and overnight use, usually after your solar has charged it during the day. Oversizing past what you actually use adds cost you may not recover, and the federal rebate also tapers above 14kWh. A good installer sizes it from your usage data." },
-      { q: "Does the installer really matter?", a: "Yes, as much as the battery. A battery is high-value electrical equipment wired into your home, so accreditation (SAA), a valid electrical licence, and a workmanship warranty are worth checking. Correct sizing and a careful install do more for the result than extra kilowatt-hours." },
+      { q: "How many kWh of battery do I need?", a: "Enough to cover your evening and overnight use, usually after your solar has charged it during the day. Oversizing past what you use adds cost you may not recover, and the federal rebate also tapers above 14kWh. A good installer sizes it from your usage data." },
+      { q: "Does the installer matter?", a: "Yes, as much as the battery. A battery is high-value electrical equipment wired into your home, so accreditation (SAA), a valid electrical licence, and a workmanship warranty are worth checking. Correct sizing and a careful install do more for the result than extra kilowatt-hours." },
       { q: "Can I get money off a home battery?", a: "Yes. The federal Cheaper Home Batteries rebate reduces the cost at the point of sale, and some states add their own incentives. Refer Labs readers also get $500 off an Apollo Energy quote through our link. Figures are indicative and depend on your system and the current rebate terms." },
       { q: "How long does a home battery last?", a: "Most lithium iron phosphate home batteries are warranted for around ten years, and typically keep working beyond that, with capacity fading gradually rather than stopping suddenly. Heat, deep daily cycling and poor ventilation shorten that life, so placement, sizing and a solid throughput warranty matter. Check the manufacturer's warranty for the retained-capacity it guarantees." },
     ],
@@ -90,7 +90,7 @@ export const APOLLO_GUIDES: ApolloGuideEntry[] = [
         h: "Start with your usage, not a battery size",
         body: [
           "Look at your electricity bill for your average daily usage in kilowatt-hours, then think about how much of that happens after the sun goes down. A battery's job is mostly to shift your daytime solar into your evening and overnight use, so the number that matters is your off-solar consumption, not your total.",
-          "A rough way in: if you use 20kWh a day and roughly half of that is in the evening and overnight, a battery in the 10 to 12kWh usable range covers most of it. Bigger only helps if you actually use more after dark or want deeper backup.",
+          "A rough way in: if you use 20kWh a day and roughly half of that is in the evening and overnight, a battery in the 10 to 12kWh usable range covers most of it. Bigger only helps if you use more after dark or want deeper backup.",
         ],
       },
       {
@@ -105,7 +105,7 @@ export const APOLLO_GUIDES: ApolloGuideEntry[] = [
         body: ["Your goal changes the sizing as much as your usage does."],
         bullets: [
           "Mainly bill savings: size to your evening and overnight use, and stop there. Extra capacity you rarely fill rarely pays back.",
-          "Mainly backup: you may size a little larger and prioritise batteries and setups that actually run your home during an outage, which not all do.",
+          "Mainly backup: you may size a little larger and prioritise batteries and setups that run your home during an outage, which not all do.",
           "A bit of both: the common case, and where sizing from real usage data earns its keep.",
         ],
       },
@@ -119,7 +119,7 @@ export const APOLLO_GUIDES: ApolloGuideEntry[] = [
     ],
     faqs: [
       { q: "How many kWh battery do I need for my house?", a: "Enough to cover your evening and overnight electricity use, once your solar has charged it during the day. For many Australian homes that is roughly 10 to 14kWh of usable capacity, but it depends on your daily usage, your solar, and whether you want backup. Sizing from your bill and usage data is the accurate way to decide." },
-      { q: "Is a bigger home battery always better?", a: "No. Beyond the capacity you actually use after dark, extra size adds cost you may not recover, and the federal rebate tapers above around 14kWh of usable capacity. The best size is matched to your usage and your spare solar, not maximised." },
+      { q: "Is a bigger home battery always better?", a: "No. Beyond the capacity you use after dark, extra size adds cost you may not recover, and the federal rebate tapers above around 14kWh of usable capacity. The best size is matched to your usage and your spare solar, not maximised." },
       { q: "Does my solar system size affect the battery size?", a: "Yes. A battery can only store the surplus solar you generate, so a small solar system or high daytime use limits how much a large battery can usefully charge. Sizing balances your evening demand against your spare solar." },
       { q: "How do I get my home battery sized accurately?", a: "An accredited installer models it from your real usage data and solar, rather than selling a default package. Apollo Energy Group sizes from your usage and applies the federal rebate at the point of sale; Refer Labs readers get $500 off through our link." },
     ],
@@ -249,7 +249,7 @@ export const APOLLO_GUIDES: ApolloGuideEntry[] = [
       {
         h: "Sydney-specific things worth raising",
         body: [
-          "Sydney homes vary enormously, from apartments and terraces with tight switchboard space to larger homes in the outer suburbs with big rooftop solar. That affects which battery fits, whether backup is practical, and how much surplus solar you actually have to store. A quote built around your address and usage will answer these; a flat package price will not.",
+          "Sydney homes vary enormously, from apartments and terraces with tight switchboard space to larger homes in the outer suburbs with big rooftop solar. That affects which battery fits, whether backup is practical, and how much surplus solar you have to store. A quote built around your address and usage will answer these; a flat package price will not.",
           "If keeping the lights on during a storm-season outage matters to you, say so up front, because not every battery provides blackout backup and the ones that do may need extra hardware.",
         ],
       },
@@ -327,11 +327,11 @@ export const APOLLO_GUIDES: ApolloGuideEntry[] = [
     meta: {
       title: "Home Battery Blackout Backup Australia 2026: How It Works | Refer Labs",
       description:
-        "Not every home battery keeps your power on in a blackout. How backup actually works, what hardware it needs, how to size for it, and the rebate plus $500 off through Refer Labs.",
+        "Not every home battery keeps your power on in a blackout. How backup works, what hardware it needs, how to size for it, and the rebate plus $500 off through Refer Labs.",
       keywords: ["home battery backup", "home battery blackout backup australia", "battery backup power outage", "does a home battery work in a blackout"],
     },
     lead:
-      "One of the main reasons people buy a home battery is to keep the power on during an outage, but this is also the most misunderstood part. Not every battery provides blackout backup, and some that do only keep selected circuits running rather than the whole house. If backup is a priority, especially through storm season, it is worth understanding what backup actually requires before you buy, because it changes the hardware, the sizing and sometimes the price.",
+      "One of the main reasons people buy a home battery is to keep the power on during an outage, but this is also the most misunderstood part. Not every battery provides blackout backup, and some that do only keep selected circuits running rather than the whole house. If backup is a priority, especially through storm season, it is worth understanding what backup requires before you buy, because it changes the hardware, the sizing and sometimes the price.",
     sections: [
       {
         h: "Why not every battery backs up your home",
@@ -345,7 +345,7 @@ export const APOLLO_GUIDES: ApolloGuideEntry[] = [
         body: ["A battery sized to trim your bill is not automatically sized to run your home through an outage."],
         bullets: [
           "Backup capability: confirm the battery supports it, and whether it needs a backup gateway or similar hardware.",
-          "Whole-home vs essential circuits: decide what you actually need running, since whole-home backup costs more.",
+          "Whole-home vs essential circuits: decide what you need running, since whole-home backup costs more.",
           "Usable capacity for an outage: enough to cover your essential load for the length of blackout you want to ride through.",
           "Recharge during an outage: whether your solar can recharge the battery while the grid is down, which extends how long backup lasts.",
         ],
@@ -360,7 +360,7 @@ export const APOLLO_GUIDES: ApolloGuideEntry[] = [
     ],
     faqs: [
       { q: "Does a home battery work in a blackout?", a: "Only if it is designed for backup and has the extra hardware to run safely while the grid is down. Many batteries shut off in an outage along with the grid, because isolating your home from the network needs a backup gateway or similar. Confirm backup capability and what it covers before you buy." },
-      { q: "Does a battery back up my whole house or just some circuits?", a: "It depends on the battery, the hardware and the wiring. Whole-home backup keeps everything running within the battery's limits and costs more; essential-circuit backup keeps a chosen set of circuits alive, such as the fridge, lights and internet. Decide what you actually need and have the installer specify it." },
+      { q: "Does a battery back up my whole house or just some circuits?", a: "It depends on the battery, the hardware and the wiring. Whole-home backup keeps everything running within the battery's limits and costs more; essential-circuit backup keeps a chosen set of circuits alive, such as the fridge, lights and internet. Decide what you need and have the installer specify it." },
       { q: "How big a battery do I need for backup?", a: "Enough usable capacity to cover your essential load for the length of outage you want to ride through, which is a different calculation from sizing to cut your bill. If your solar can recharge the battery during the day, backup lasts longer. An installer can size it from your usage and the circuits you want protected." },
       { q: "Can I get a rebate on a battery with backup?", a: "Yes. The federal Cheaper Home Batteries rebate applies at the point of sale regardless of whether you include backup, and in NSW the VPP incentive can apply on top. Refer Labs readers also get $500 off an Apollo quote through our link. Backup adds hardware, so get the full price in writing." },
       { q: "Can I go off-grid with a home battery?", a: "A single grid-connected battery is sized for evening and overnight use, not for running your home through cloudy days with no grid, so going fully off-grid usually needs much larger battery and solar capacity and often a backup generator. For most homes, staying grid-connected with blackout backup is far cheaper and more practical. An installer can model what genuine off-grid would require." },
@@ -386,7 +386,7 @@ export const APOLLO_GUIDES: ApolloGuideEntry[] = [
         h: "Why sizing them together matters",
         body: [
           "A battery is only as useful as the surplus solar you have to fill it. If the panels are too small for your usage, there is little left over to charge the battery each day, and it sits half-empty. If the panels are large but the battery is small, you export the surplus cheaply instead of storing it. Buying them as a package lets an installer match the two to your actual usage, so neither is wasted.",
-          "This is also why adding a battery to an existing undersized solar system sometimes disappoints: the constraint is the solar, not the battery. A package sidesteps that by sizing both to what your home actually uses.",
+          "This is also why adding a battery to an existing undersized solar system sometimes disappoints: the constraint is the solar, not the battery. A package sidesteps that by sizing both to what your home uses.",
         ],
       },
       {
@@ -428,13 +428,13 @@ export const APOLLO_GUIDES: ApolloGuideEntry[] = [
       keywords: ["tesla powerwall alternatives australia", "powerwall alternative", "home battery vs powerwall", "best alternative to tesla powerwall"],
     },
     lead:
-      "The Tesla Powerwall is the battery most Australians have heard of, which makes it the benchmark people compare everything else against. That is a reasonable starting point, but the Powerwall is one option among many, and the right battery for your home depends on your usage, whether you want whole-home backup, and how the numbers land after the rebate rather than on the brand. Compare on the things that actually differ between batteries, then let an accredited installer size the choice to your home.",
+      "The Tesla Powerwall is the battery most Australians have heard of, which makes it the benchmark people compare everything else against. That is a reasonable starting point, but the Powerwall is one option among many, and the right battery for your home depends on your usage, whether you want whole-home backup, and how the numbers land after the rebate rather than on the brand. Compare on the things that differ between batteries, then let an accredited installer size the choice to your home.",
     sections: [
       {
         h: "What to compare, brand aside",
         body: ["Batteries differ on a handful of things that matter more than the logo. Compare alternatives on these."],
         bullets: [
-          "Usable capacity (kWh): the amount you can actually draw, matched to your evening and overnight use.",
+          "Usable capacity (kWh): the amount you can draw, matched to your evening and overnight use.",
           "Backup: whether it provides blackout backup at all, and whether that is whole-home or essential-circuits only.",
           "Warranty: the years plus the throughput or cycle guarantee, not just the headline figure.",
           "Chemistry and safety: most alternatives now use lithium iron phosphate (LFP), valued for safety and cycle life.",
@@ -446,7 +446,7 @@ export const APOLLO_GUIDES: ApolloGuideEntry[] = [
         h: "Why the installer matters as much as the battery",
         body: [
           "Whichever battery you choose, its performance and safety depend on how it is installed and sized. A well-installed alternative that is matched to your usage will out-perform a bigger-name battery that is oversized or fitted poorly. The markers to check are SAA accreditation, a valid electrical licence, and a workmanship warranty alongside the manufacturer's.",
-          "The other reason the installer matters is the rebate: an installer who applies the federal discount at the point of sale, and who can connect an eligible battery to a VPP for the NSW incentive, changes the after-rebate cost that actually decides the comparison.",
+          "The other reason the installer matters is the rebate: an installer who applies the federal discount at the point of sale, and who can connect an eligible battery to a VPP for the NSW incentive, changes the after-rebate cost that decides the comparison.",
         ],
       },
       {

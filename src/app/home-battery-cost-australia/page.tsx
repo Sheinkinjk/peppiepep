@@ -33,7 +33,7 @@ const faqs = [
   },
   {
     q: "What is the payback period on a home battery?",
-    a: "With the 2026 rebate, reputable Australian sources commonly cite payback in the range of about six to nine years in states with higher electricity prices, and sometimes shorter if you join a Virtual Power Plant and use most of your solar. It is genuinely variable, because payback depends on your usage pattern, your tariff, whether you already have solar, your feed-in rate and VPP participation. Treat any single number with caution and ask for a projection based on your own bills.",
+    a: "With the 2026 rebate, reputable Australian sources commonly cite payback in the range of about six to nine years in states with higher electricity prices, and sometimes shorter if you join a Virtual Power Plant and use most of your solar. It is variable, because payback depends on your usage pattern, your tariff, whether you already have solar, your feed-in rate and VPP participation. Treat any single number with caution and ask for a projection based on your own bills.",
   },
   {
     q: "Why do battery quotes vary so much?",
@@ -124,7 +124,7 @@ export default function HomeBatteryCostAustraliaPage() {
             <p className="mt-5 text-base sm:text-lg leading-relaxed text-[#3d4b44]">
               Battery prices are confusing because quotes mix up supply-only and installed, and before and after the
               rebate. This page sets out the real installed cost ranges for 2026 by size, what the federal rebate takes
-              off, what payback periods reputable sources actually cite, and why quotes vary so much. It is general
+              off, what payback periods reputable sources cite, and why quotes vary so much. It is general
               information to help you read a quote, not financial advice. For a figure specific to your home, get a quote.
             </p>
             <EditorialMeta lastUpdated="2026-08-13" className="mt-5" />
@@ -137,7 +137,7 @@ export default function HomeBatteryCostAustraliaPage() {
               <p className="text-[15.5px] leading-relaxed text-[#2b362f]">
                 Installed home batteries in Australia are commonly quoted around $600 to $1,300 per usable kWh before
                 rebates, with larger systems costing less per kWh. The federal Cheaper Home Batteries discount then takes
-                roughly 30% off at the point of sale, applied by your installer. What you actually pay depends on
+                roughly 30% off at the point of sale, applied by your installer. What you pay depends on
                 capacity, whether a new hybrid inverter is needed, and whether the quote is supply-only or fully
                 installed, which is why quotes vary so much. Use these ranges to sense-check a quote, then get a quote
                 for a figure specific to your home.
@@ -215,7 +215,7 @@ export default function HomeBatteryCostAustraliaPage() {
                   Turned into whole-system prices, industry examples in 2026 put a common household battery in a broad
                   band from around $4,000 up to $13,000 or more installed after the federal rebate, depending heavily on
                   the brand and your site. A popular 13.5kWh system, for instance, is often quoted around $10,000
-                  installed including its gateway. The spread is genuinely wide, which is why a single number is
+                  installed including its gateway. The spread is wide, which is why a single number is
                   misleading and a quote for your own home is the only figure worth acting on.
                 </p>
                 <p>
@@ -307,7 +307,7 @@ export default function HomeBatteryCostAustraliaPage() {
             <section>
               <h2 className="text-lg font-bold text-[#10251b]">Keep reading</h2>
               <ul className="mt-3 space-y-2 text-[15px]">
-                <li><Link href="/best-home-battery-australia" className="nw-link">Best home battery: how to actually choose one</Link></li>
+                <li><Link href="/best-home-battery-australia" className="nw-link">Best home battery: how to choose one</Link></li>
                 <li><Link href="/what-size-home-battery-do-i-need-australia" className="nw-link">What size home battery do I need?</Link></li>
                 <li><Link href="/home-battery-payback-calculator" className="nw-link">Home battery payback calculator</Link></li>
                 <li><Link href="/home-battery-rebate-australia" className="nw-link">The 2026 home battery rebate, explained</Link></li>

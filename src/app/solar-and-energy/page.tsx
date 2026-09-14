@@ -49,7 +49,7 @@ const GROUPS: {
   },
   {
     heading: "What the rebates pay",
-    question: "Start here if you want to know what you will actually be charged after incentives",
+    question: "Start here if you want to know what you will be charged after incentives",
     body:
       "The federal Cheaper Home Batteries discount is applied at the point of sale by the installer, and some states add their own on top. It tapers above 14kWh, which is why most quotes land near that mark.",
     links: [
@@ -63,7 +63,7 @@ const GROUPS: {
     heading: "Choosing a battery and an installer",
     question: "Start here if you have decided to install and are comparing quotes",
     body:
-      "The installer decides more about the outcome than the badge on the battery does: accreditation, the warranty that is actually honoured, and whether backup was specified at all.",
+      "The installer decides more about the outcome than the badge on the battery does: accreditation, the warranty that is honoured, and whether backup was specified at all.",
     links: [
       { href: "/apollo-energy-group", label: "Apollo Energy Group", desc: "The installer we work with, and $500 off your quote through our link." },
       { href: "/best-home-battery-australia", label: "How to choose a battery", desc: "Capacity, chemistry, warranty, backup and VPP-readiness." },

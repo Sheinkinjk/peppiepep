@@ -59,7 +59,7 @@ export default function MoshyLanding() {
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-[#3d4b44]">
               The current Moshy offer is <strong className="text-[#10251b]">$120 off your first order</strong>, applied
               automatically through our referral link (code REFERRAL120), so there is no code to type. Below is an
-              independent look at how Moshy actually works, what it costs, and how eligibility runs. Information only, and
+              independent look at how Moshy works, what it costs, and how eligibility runs. Information only, and
               a real, current offer, not an expired one.
             </p>
             <div className="mt-5">
@@ -141,10 +141,10 @@ export default function MoshyLanding() {
                 {[
                   ["code", "The discount code"],
                   ["official-site", "Is getmoshy.com.au official?"],
-                  ["what", "What Moshy actually is"],
+                  ["what", "What Moshy is"],
                   ["treatment", "Treatment and eligibility"],
                   ["start", "How to start"],
-                  ["bottom-line", "The bottom line"],
+                  ["bottom-line", "Should you use Moshy?"],
                   ["faq", "FAQ"],
                 ].map(([id, label]) => (
                   <li key={id}>
@@ -197,7 +197,7 @@ export default function MoshyLanding() {
 
             {/* What */}
             <section id="what" className="mt-12 scroll-mt-24">
-              <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">What Moshy actually is</h2>
+              <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">What Moshy is</h2>
               <div className="mt-4 space-y-4 text-[15.5px] leading-relaxed text-[#3d4b44]">
                 <p>
                   Moshy is a clinically-led Australian telehealth service, best known for its weight-management program
@@ -222,7 +222,7 @@ export default function MoshyLanding() {
             {/* Treatment and eligibility */}
             <section id="treatment" className="mt-12 scroll-mt-24">
               <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">
-                How treatment and eligibility actually work
+                How treatment and eligibility work
               </h2>
               <div className="mt-4 space-y-4 text-[15.5px] leading-relaxed text-[#3d4b44]">
                 <p>
@@ -269,9 +269,9 @@ export default function MoshyLanding() {
             {/* Bottom line */}
             <section id="bottom-line" className="mt-14 scroll-mt-24">
               <div className="nw-card rounded-2xl p-7 sm:p-8">
-                <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">The bottom line</h2>
+                <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">Should you use Moshy?</h2>
                 <p className="mt-4 text-[15.5px] leading-relaxed text-[#3d4b44]">
-                  As a service, Moshy is a credible, well-run option: the online process is genuinely fast, the
+                  As a service, Moshy is a credible, well-run option: the online process is fast, the
                   practitioner review is real, and it is transparent that any prescription medication is prescription-only
                   and assessed individually. Whether it is appropriate for you is a decision for you and a registered
                   practitioner. This page is information about the service, not medical advice.

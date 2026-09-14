@@ -15,12 +15,12 @@ export const metadata = generateSEOMetadata(seoConfig.weightLossHub);
 const aff = { href: MOSHY_URL, target: "_blank" as const, rel: "nofollow sponsored" as const };
 
 const guides = [
-  { href: "/moshy-review", title: "Moshy review", desc: "How the service actually runs, from application to subscription." },
+  { href: "/moshy-review", title: "Moshy review", desc: "How the service runs, from application to subscription." },
   { href: "/moshy-vs-juniper", title: "Moshy vs Juniper", desc: "The clinical and coaching platforms, split properly." },
   { href: "/juniper", title: "Juniper review", desc: "The women-focused, coaching-led program: cost, what's included, and how it compares to Moshy." },
   { href: "/best-weight-loss-telehealth-australia", title: "Best weight loss telehealth", desc: "Moshy and Juniper side by side." },
-  { href: "/cheapest-weight-loss-telehealth-australia", title: "Cheapest weight loss telehealth", desc: "Subscription vs pay-as-you-go, and what cheapest really means." },
-  { href: "/weight-loss-telehealth-cost-australia", title: "What it costs", desc: "How telehealth pricing and subscriptions actually work." },
+  { href: "/cheapest-weight-loss-telehealth-australia", title: "Cheapest weight loss telehealth", desc: "Subscription vs pay-as-you-go, and what cheapest means." },
+  { href: "/weight-loss-telehealth-cost-australia", title: "What it costs", desc: "How telehealth pricing and subscriptions work." },
   { href: "/online-weight-loss-doctor-australia", title: "Online weight loss doctor", desc: "How a telehealth consult and eligibility review runs." },
   { href: "/moshy-vs-gp", title: "Telehealth vs your GP", desc: "Two doors to the same care. The practical trade." },
   { href: "/moshy-eligibility", title: "The eligibility check, explained", desc: "What the quiz asks and why some people are declined." },
@@ -257,12 +257,12 @@ export default function WeightLossHubPage() {
               Telehealth, coaching and your GP: the practical difference
             </h3>
             <p>
-              The three pathways above are genuinely different products. Medical telehealth is the most structured
+              The three pathways above are different products. Medical telehealth is the most structured
               clinical route and is usually priced as a subscription. Coaching and lifestyle programs put habits and
               nutrition first, with practitioner support in the background, and suit people who want accountability more
               than a clinical pathway. Your GP sees you in person with your whole health picture in view, and Medicare
               offsets part of the cost, but it is slower to get moving. The right one is the one that fits how you
-              actually want to be supported, and what you are comfortable paying.
+              want to be supported, and what you are comfortable paying.
             </p>
             <h3 className="pt-2 text-xl font-bold text-[#10251b]">
               What to check before you sign up to any provider

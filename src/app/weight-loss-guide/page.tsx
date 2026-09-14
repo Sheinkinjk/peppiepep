@@ -22,7 +22,7 @@ export default function WeightLossGuidePage() {
         </h1>
         <p className="mt-5 text-lg leading-relaxed text-[#3d4b44]">
           Telehealth, coaching, meal plans, your GP. The options blur together and everyone is selling something. This
-          free guide lays out the main pathways in plain English and who each one actually suits, so you can choose with
+          free guide lays out the main pathways and who each one suits, so you can choose with
           your eyes open. We will email it to you now.
         </p>
 

@@ -61,7 +61,7 @@ export const CATALOG: Vertical[] = [
     h1Lead: "Website & landing-page builders in Australia:",
     h1Accent: "the shortlist",
     intro:
-      "From a free one-page site to an AI-generated business website in thirty seconds, plus dedicated landing-page builders for campaigns. This hub sorts them by what they are actually for, so you pick the right tool the first time.",
+      "From a free one-page site to an AI-generated business website in thirty seconds, plus dedicated landing-page builders for campaigns. This hub sorts them by what they are for, so you pick the right tool the first time.",
     metaTitle: "Best Website & Landing Page Builders 2026: Carrd, Durable AI, Butternut, Leadpages & More | Refer Labs",
     metaDescription:
       "Compare website and landing-page builders for 2026: Carrd for cheap one-page sites, Durable AI and Butternut AI for instant AI-built sites, Swipe Pages and Leadpages for high-converting landing pages. Independent, no pay-to-rank.",
@@ -248,7 +248,7 @@ export const CATALOG: Vertical[] = [
     h1Lead: "AI sales tools:",
     h1Accent: "matched to your stack",
     intro:
-      "These tools sit at different points in the sales stack, data, outreach, an AI rep, an all-in-one platform, and an easy CRM. This hub sorts them by the job you actually need doing, so you buy the right layer, not the loudest one.",
+      "These tools sit at different points in the sales stack, data, outreach, an AI rep, an all-in-one platform, and an easy CRM. This hub sorts them by the job you need doing, so you buy the right layer, not the loudest one.",
     metaTitle: "AI Sales Tools Compared 2026: Data, Outreach, AI SDR & CRM | Refer Labs",
     metaDescription:
       "Compare AI sales tools by role for 2026: FullEnrich and ZoomInfo for contact data, Reply.io for multichannel outreach, AiSDR for a done-for-you AI rep, and CRMs like Pipedrive, Nutshell and GoHighLevel. Independent, no pay-to-rank.",
@@ -331,11 +331,11 @@ export const CATALOG: Vertical[] = [
       {
         name: "Pipedrive",
         bestFor: "A visual pipeline CRM",
-        blurb: "A deal-first sales CRM built around a visual pipeline you drag deals through, with activity reminders, automation and reporting. Best for teams that want a CRM reps actually keep updated.",
+        blurb: "A deal-first sales CRM built around a visual pipeline you drag deals through, with activity reminders, automation and reporting. Best for teams that want a CRM reps keep updated.",
         facts: [
           { label: "Role", value: "Sales CRM / pipeline" },
           { label: "Best for", value: "SMB sales teams" },
-          { label: "Pricing", value: "No free plan; from US$14/seat/mo" },
+          { label: "Pricing", value: "No free plan; from AU$19/seat/mo billed annually (5 Sep 2026)" },
         ],
         affiliateUrl: PIPEDRIVE_URL,
         reviewHref: "/pipedrive",
@@ -381,11 +381,11 @@ export const CATALOG: Vertical[] = [
       {
         name: "Keap",
         bestFor: "CRM + automation for small business",
-        blurb: "An all-in-one CRM with sales and marketing automation for small businesses: pipeline, email and SMS, and automated follow-up in one platform, so leads are chased without manual work. Pricing scales with contacts.",
+        blurb: "An all-in-one CRM with sales and marketing automation for small businesses: pipeline, email and SMS, and automated follow-up in one platform, so leads are chased without manual work. One platform price rather than tiers.",
         facts: [
           { label: "Role", value: "CRM + marketing automation" },
           { label: "Best for", value: "Small businesses & solopreneurs" },
-          { label: "Pricing", value: "No free plan; from US$249/mo" },
+          { label: "Pricing", value: "No free plan; US$299/mo, one platform price (5 Sep 2026)" },
         ],
         affiliateUrl: KEAP_URL,
         reviewHref: "/keap",
@@ -614,7 +614,7 @@ export const CATALOG: Vertical[] = [
       },
     {
         q: "What should you look for in a cross-border payment tool?",
-        a: "Five things matter most: the total cost (transfer fees plus the currency-conversion margin, which is often the bigger cost), the currencies and countries supported, how fast payouts actually land, whether you can hold a multi-currency balance, and the provider's regulation and security. Compare the all-in cost on a real transfer amount, not just the headline fee, because conversion spreads vary a lot between providers.",
+        a: "Five things matter most: the total cost (transfer fees plus the currency-conversion margin, which is often the bigger cost), the currencies and countries supported, how fast payouts land, whether you can hold a multi-currency balance, and the provider's regulation and security. Compare the all-in cost on a real transfer amount, not just the headline fee, because conversion spreads vary a lot between providers.",
       },
       {
         q: "How long do international payments take?",
@@ -629,9 +629,9 @@ export const CATALOG: Vertical[] = [
     h1Accent: "calls, texts and numbers in one place",
     intro:
       "No handset, no PBX, no line rental: a cloud phone system runs calls through the browser and the mobile app, with virtual numbers replacing hardware entirely. That removes the up-front cost and makes the decision a question of who the software suits, from a lean remote team to a busier sales or support floor.",
-    metaTitle: "Business Phone Systems Compared 2026: CloudTalk vs KrispCall | Refer Labs",
+    metaTitle: "Cloud Business Phone Systems 2026: How They Work, and KrispCall | Refer Labs",
     metaDescription:
-      "Compare cloud business phone systems for 2026: CloudTalk for AI call-centre features and analytics, KrispCall for virtual numbers and a shared team inbox. Independent, no pay-to-rank.",
+      "How a cloud business phone system works for a small team: virtual numbers, number porting and a shared inbox, and where KrispCall fits. Independent, no pay-to-rank.",
     keywords: ["business phone system comparison", "best voip for business 2026", "cloud phone system", "virtual phone number for teams"],
     relatedCategory: "Software",
     providers: [
@@ -651,8 +651,8 @@ export const CATALOG: Vertical[] = [
     ],
     faqs: [
       {
-        q: "CloudTalk or KrispCall, which should I choose?",
-        a: "CloudTalk leans toward call-centre features and analytics for busier sales and support teams; KrispCall leans toward simple virtual numbers and a shared inbox for smaller and remote teams. Choose by call volume and how much reporting you need. Both run in the browser and mobile with a free trial to test.",
+        q: "Is KrispCall the right phone system for my team?",
+        a: "KrispCall suits smaller and remote teams whose main need is virtual local and international numbers and a shared inbox. A busy sales or support floor that needs detailed call-centre reporting should compare systems built for that before committing. KrispCall runs in the browser and on mobile.",
       },
       {
         q: "Do I need a business phone system or just a mobile?",
@@ -674,7 +674,7 @@ export const CATALOG: Vertical[] = [
     h1Lead: "AI tools:",
     h1Accent: "assistants, voice and meeting notes",
     intro:
-      "AI tools now cover very different jobs, from automating your admin to generating lifelike voice or summarising your meetings. This hub sorts a growing set by what they actually do, so you pick the one that fits the task rather than the loudest launch.",
+      "AI tools now cover very different jobs, from automating your admin to generating lifelike voice or summarising your meetings. This hub sorts a growing set by what they do, so you pick the one that fits the task rather than the loudest launch.",
     metaTitle: "Best AI Tools Compared 2026: Lindy, ElevenLabs & MeetGeek | Refer Labs",
     metaDescription:
       "Compare AI tools for 2026 by job: Lindy for automating inbox, scheduling and CRM work, ElevenLabs for AI voice, Beautiful.ai for AI presentations, MeetGeek for AI meeting notes. Independent, no pay-to-rank.",
@@ -736,7 +736,7 @@ export const CATALOG: Vertical[] = [
     ],
     faqs: [
       {
-        q: "Which AI tool do I actually need?",
+        q: "Which AI tool do I need?",
         a: "Start from the job. If you want to automate repetitive admin like inbox, scheduling and CRM updates, an AI assistant like Lindy fits. If you need voiceover, narration or dubbing, an AI voice tool like ElevenLabs fits. They solve different problems, so match the tool to the task.",
       },
       {

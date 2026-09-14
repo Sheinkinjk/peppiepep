@@ -170,7 +170,7 @@ export const beehiivConfig: AffiliatePageConfig = {
     {
       href: "/compare/newsletter-platforms",
       label: "Newsletter Platforms Compared",
-      desc: "beehiiv, Substack and Kit lined up by what each is actually built for.",
+      desc: "beehiiv, Substack and Kit lined up by what each is built for.",
     },
     {
       href: "/guides",

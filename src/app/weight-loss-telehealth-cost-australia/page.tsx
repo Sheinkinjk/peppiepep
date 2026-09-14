@@ -50,7 +50,7 @@ const faqs = [
     a: "Weight management is generally ongoing rather than a one-off, so most medical telehealth services run on a subscription or recurring model that includes practitioner support and follow-up. Any medicine is usually an additional, separate cost. Before committing, check the billing cycle, what is included, and how cancellation works, ideally before you sign up rather than after.",
   },
   {
-    q: "How do I find out what it will actually cost me?",
+    q: "How do I find out what it will cost me?",
     a: "Start the eligibility check with the service you are considering. A practitioner assesses your situation, and the applicable cost is confirmed to you before you commit. Moshy's eligibility check is free to complete, so you can see how the process works without paying anything up front. Completing it does not obligate you to proceed.",
   },
   {
@@ -110,7 +110,7 @@ export default function WeightLossTelehealthCostAustraliaPage() {
           {/* Hero */}
           <header className="pt-9 pb-6">
             <h1 className="mt-4 text-3xl sm:text-4xl lg:text-[2.6rem] font-extrabold leading-[1.08] tracking-tight text-[#10251b]">
-              Weight-loss telehealth cost in Australia: how the pricing actually works
+              Weight-loss telehealth cost in Australia: how the pricing works
             </h1>
             <p className="mt-5 text-base sm:text-lg leading-relaxed text-[#3d4b44]">
               There is no single price, and the reason matters: almost every online weight-management service bills in two
@@ -178,7 +178,7 @@ export default function WeightLossTelehealthCostAustraliaPage() {
                 </div>
                 <p>
                   Because of this split, a low advertised service fee does not tell you the full story. When you compare two services,
-                  you are really comparing the service fee plus any medicine cost together, and both can change over time.
+                  you are comparing the service fee plus any medicine cost together, and both can change over time.
                 </p>
                 <p>
                   People often search for an exact Moshy price, and it is a fair thing to want. There is no
@@ -187,7 +187,7 @@ export default function WeightLossTelehealthCostAustraliaPage() {
                 </p>
                 <p>
                   The reliable number is the one shown to you inside the Moshy flow itself, after the assessment and before you pay.
-                  That is by design: the cost is tied to what is actually suitable for you, not a one-size-fits-all sticker price. You
+                  That is by design: the cost is tied to what is suitable for you, not a one-size-fits-all sticker price. You
                   can read more about how the service runs end to end in our{" "}
                   <Link href="/moshy-review" className="nw-link">independent Moshy review</Link>, and see how Moshy sits against other
                   providers in our roundup of the{" "}
@@ -233,7 +233,7 @@ export default function WeightLossTelehealthCostAustraliaPage() {
               </h2>
               <div className="mt-4 space-y-4 text-[15px] leading-relaxed text-[#3d4b44]">
                 <p>
-                  The dependable way to find out what you would actually pay is to start the eligibility check with the service you are
+                  The dependable way to find out what you would pay is to start the eligibility check with the service you are
                   considering. A practitioner assesses your situation, and the applicable cost is confirmed to you before you commit.
                   With Moshy, the eligibility check is free to complete, so you can see the process and the numbers that apply to you
                   without paying anything up front, and without being obligated to proceed. If you would rather understand the

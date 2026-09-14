@@ -121,7 +121,7 @@ export const SEARCH_INDEX: SearchEntry[] = [
   { title: "ElevenLabs review", href: "/elevenlabs", category: "AI & sales", kind: "Guide", keywords: "elevenlabs ai voice text to speech tts voice cloning dubbing discount code" },
   { title: "Wing Assistant review", href: "/wing-assistant", category: "Software", kind: "Guide", keywords: "wing assistant managed virtual assistant va outsourcing admin support discount code" },
   { title: "Survicate review", href: "/survicate", category: "Software", kind: "Guide", keywords: "survicate survey customer feedback nps csat forms discount code" },
-  { title: "Business phone systems", href: "/compare/business-phone", category: "Software", kind: "Guide", keywords: "compare business phone voip cloudtalk krispcall cloud calling numbers hub" },
+  { title: "Business phone systems", href: "/compare/business-phone", category: "Software", kind: "Guide", keywords: "business phone voip krispcall cloud calling virtual numbers hub" },
   { title: "AI tools compared", href: "/compare/ai-tools", category: "AI & sales", kind: "Guide", keywords: "compare ai tools lindy elevenlabs assistant voice automation hub" },
 
   // E-commerce

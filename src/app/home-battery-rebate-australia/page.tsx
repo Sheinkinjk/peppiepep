@@ -35,11 +35,11 @@ const faqs = [
   },
   {
     q: "Is a home battery worth it after the rebate?",
-    a: "It depends on your usage, your tariff, whether you have solar and whether you join a VPP, so no page can promise you a payback figure. The rebate materially cuts the upfront cost, which shortens payback, but what matters is whether you actually consume enough power in expensive peak periods for a battery to shift. Ask any installer for a projection built on your real bills.",
+    a: "It depends on your usage, your tariff, whether you have solar and whether you join a VPP, so no page can promise you a payback figure. The rebate materially cuts the upfront cost, which shortens payback, but what matters is whether you consume enough power in expensive peak periods for a battery to shift. Ask any installer for a projection built on your real bills.",
   },
   {
     q: "What are the eligibility requirements for the battery rebate?",
-    a: "To qualify for the federal Cheaper Home Batteries discount the battery must be between 5kWh and 100kWh, with only the first 50kWh subsidised, and installed with new or existing rooftop solar. Both the battery and inverter must be on the Clean Energy Council approved list, your installer must be Solar Accreditation Australia accredited, and the battery must be capable of joining a Virtual Power Plant, though actually joining one is optional. Confirm the current terms when you get a quote.",
+    a: "To qualify for the federal Cheaper Home Batteries discount the battery must be between 5kWh and 100kWh, with only the first 50kWh subsidised, and installed with new or existing rooftop solar. Both the battery and inverter must be on the Clean Energy Council approved list, your installer must be Solar Accreditation Australia accredited, and the battery must be capable of joining a Virtual Power Plant, though joining one is optional. Confirm the current terms when you get a quote.",
   },
   {
     q: "Where can I get a quote with the rebate applied?",
@@ -63,7 +63,7 @@ const breadcrumbSchema = {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Home Battery Rebate Australia 2026: What You Actually Get",
+  headline: "Home Battery Rebate Australia 2026: What You Get",
   description: seoConfig.homeBatteryRebate.description,
   inLanguage: "en-AU",
   datePublished: "2026-07-15",
@@ -116,11 +116,11 @@ export default function HomeBatteryRebatePage() {
           </nav>
 
           <h1 className="mt-4 text-4xl font-bold leading-[1.07] tracking-[-0.01em] text-[#10251b] sm:text-5xl">
-            Home battery rebate Australia: what you actually get
+            Home battery rebate Australia: what you get
           </h1>
           <p className="mt-5 text-lg leading-relaxed text-[#2b362f]">
             The federal rebate takes roughly 30% off a home battery, and your installer applies it at the point of sale.
-            Above 14kWh the rate tapers, which changes what size actually makes sense. Here it is in plain terms, with
+            Above 14kWh the rate tapers, which changes what size makes sense. Here it is in plain terms, with
             worked numbers.
           </p>
 
@@ -144,7 +144,7 @@ export default function HomeBatteryRebatePage() {
 
           {/* What it is */}
           <section className="mt-12 border-t border-[#e5e9e7] pt-10">
-            <h2 className="text-2xl font-bold text-[#10251b]">What the rebate actually is</h2>
+            <h2 className="text-2xl font-bold text-[#10251b]">What the rebate is</h2>
             <div className="mt-4 space-y-4 text-[15.5px] leading-relaxed text-[#3d4b44]">
               <p>
                 It is called the <strong className="font-semibold text-[#2b362f]">Cheaper Home Batteries Program</strong>,
@@ -264,7 +264,7 @@ export default function HomeBatteryRebatePage() {
                 often and some have closed, so confirm what applies at your address when you get a quote.
               </p>
               <p>
-                What you can actually claim depends on your state, your battery, your retailer and the VPP terms, so
+                What you can claim depends on your state, your battery, your retailer and the VPP terms, so
                 treat this as a question for your installer rather than something to assume. For the full picture, see the{" "}
                 <Link href="/home-battery-rebate-by-state-australia" className="nw-link">home battery rebate by state</Link>,
                 which sets out which states add their own incentive on top in 2026 and which no longer do.

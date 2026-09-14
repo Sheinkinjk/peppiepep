@@ -19,7 +19,7 @@ export const blinqConfig: AffiliatePageConfig = {
   ],
   hero: {
     h1Prefix: "Blinq:",
-    h1Highlight: "a digital business card people can actually save",
+    h1Highlight: "a digital business card people can save",
     subheading:
       "Paper cards get lost and details go out of date. Blinq gives you a smart card you share by QR, link or NFC that saves straight to the recipient's phone. Here is what it does, who it suits, and how the free plan works.",
     trustBullets: ["Share by QR, link, email or NFC", "Recipient saves details instantly", "Free plan to start"],

@@ -236,7 +236,7 @@ export default function BestNewsletterPlatformPage() {
             <span style={{ color: CYAN_LT }}>beehiiv vs Substack vs ConvertKit</span>
           </h1>
           <p className="text-[#3d4b44] text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
-            We compared the three leading newsletter platforms on free plans, monetisation, growth tools, and what the community actually recommends. Our verdict is below.
+            We compared the three leading newsletter platforms on free plans, monetisation, growth tools, and what the community recommends. Our verdict is below.
           </p>
           {/* Below the lead. The first paragraph after the h1 is the answer;
               a disclosure in that slot is what an engine lifts instead. Still

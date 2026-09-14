@@ -55,7 +55,7 @@ const config: MatchConfig = {
   resolve,
   interest: (r) => `Newsletter platforms (matched: ${r.name})`,
   newsletterHeading: "Want your match and the best current deals emailed to you?",
-  newsletterSub: "We'll send your pick plus any genuinely good newsletter-tool offers we verify. No spam.",
+  newsletterSub: "We'll send your pick plus any good newsletter-tool offers we verify. No spam.",
   footnote: (
     <>
       A recommendation based on your answer, not the only option. Compare all three in the{" "}

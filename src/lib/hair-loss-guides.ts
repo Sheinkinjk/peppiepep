@@ -28,7 +28,7 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
     slug: "/online-hair-loss-treatment-australia",
     crumb: "Online hair-loss treatment",
     priority: 0.8,
-    h1: "Online hair-loss treatment in Australia: how it actually works",
+    h1: "Online hair-loss treatment in Australia: how it works",
     meta: {
       title: "Online Hair Loss Treatment Australia 2026: How It Works | Refer Labs",
       description:
@@ -66,7 +66,7 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
         h: "What a compliant service looks like",
         body: ["A few markers separate a legitimate online hair-loss service from a landing page with a checkout."],
         bullets: [
-          "A registered Australian practitioner genuinely reviews your case, and the service can decline you.",
+          "A registered Australian practitioner reviews your case, and the service can decline you.",
           "It does not promise a specific prescription medicine before the assessment.",
           "Pricing, including whether medicine is billed separately from the plan, is clear before you commit.",
           "There is a real cancellation and follow-up process, not just a subscription you have to fight to leave.",
@@ -88,9 +88,9 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
     slug: "/how-to-stop-hair-loss-australia",
     crumb: "How to stop hair loss",
     priority: 0.78,
-    h1: "How to stop hair loss: what actually helps",
+    h1: "How to stop hair loss: what helps",
     meta: {
-      title: "How to Stop Hair Loss (Australia 2026): What Actually Helps | Refer Labs",
+      title: "How to Stop Hair Loss (Australia 2026): What Helps | Refer Labs",
       description:
         "How to approach stopping male pattern hair loss in Australia: understanding the cause, among the most studied treatments, what the evidence does and doesn't support, and why acting early matters. Information only.",
       keywords: ["how to stop hair loss", "how to stop balding australia", "stop hair loss men", "hair loss treatment that works australia"],
@@ -110,14 +110,14 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
       "One step comes before any product: knowing which kind you have, because they do not respond to the same things. The most common form in men, male pattern hair loss, is largely genetic and driven by the hormone DHT, and it is gradual and progressive. Acting earlier gives you more to work with, since holding onto hair you still have is easier than recovering what is gone. What is right for you is a clinical decision, and this page is general information, not medical advice.",
     sections: [
       {
-        h: "Work out what is actually causing it",
+        h: "Work out what is causing it",
         body: [
           "Most male hair loss is androgenetic, the inherited 'male pattern' type, which shows up as a receding hairline or thinning crown and progresses slowly over years. It is driven by follicles' genetic sensitivity to DHT, not by anything you did wrong.",
           "Other causes exist, such as stress-related shedding, thyroid issues, nutritional gaps or medication effects, and these behave differently and sometimes reverse on their own. Because the cause changes what helps, the sensible starting point is an assessment rather than guessing, especially if the loss is sudden, patchy or unusual.",
         ],
       },
       {
-        h: "What the evidence actually supports",
+        h: "What the evidence supports",
         body: ["For male pattern hair loss specifically, two treatments carry the strongest evidence, and they work in different ways."],
         bullets: [
           "Prescription treatment: assessed and prescribed by a practitioner, it works on the hormonal driver behind the shrinking of follicles.",
@@ -128,12 +128,12 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
       {
         h: "What tends not to move the needle",
         body: [
-          "Plenty of products are marketed for hair loss without the evidence to match. Caffeine shampoos, most supplements, and low-cost devices may make hair look or feel thicker temporarily, but there is little to suggest they stop male pattern loss the way the two most-studied treatments can. That does not make them scams, but it does make them a poor substitute if actually halting the process is the goal.",
+          "Plenty of products are marketed for hair loss without the evidence to match. Caffeine shampoos, most supplements, and low-cost devices may make hair look or feel thicker temporarily, but there is little to suggest they stop male pattern loss the way the two most-studied treatments can. That does not make them scams, but it does make them a poor substitute if halting the process is the goal.",
           "The other common trap is waiting. Because the condition is progressive, the hair you keep is easier to hold than the hair you have already lost is to recover, so delaying rarely helps.",
         ],
       },
       {
-        h: "How to actually get started",
+        h: "How to get started",
         body: [
           "You have two mainstream routes. See your own GP, who can assess you in person and manage treatment with your whole health in view, or use an online telehealth service where a registered Australian practitioner reviews your case and prescribes if it is appropriate, usually with the medicine and delivery included in a plan.",
           "Either way, the step that matters is a genuine assessment. Mosh is one Australian men's telehealth service that runs this kind of review for hair loss, and you can compare it against your other options first.",
@@ -141,11 +141,11 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
       },
     ],
     faqs: [
-      { q: "Can you actually stop hair loss?", a: "For male pattern hair loss, among the most studied treatments, prescription hair-loss treatments, can slow further loss and, for some men, produce partial regrowth, while they are used. Neither guarantees an outcome, and whether either is appropriate for you is a clinical decision. Other causes of hair loss behave differently and need their own assessment." },
+      { q: "Can you stop hair loss?", a: "For male pattern hair loss, among the most studied treatments, prescription hair-loss treatments, can slow further loss and, for some men, produce partial regrowth, while they are used. Neither guarantees an outcome, and whether either is appropriate for you is a clinical decision. Other causes of hair loss behave differently and need their own assessment." },
       { q: "What is the most effective way to stop male pattern baldness?", a: "The strongest evidence sits with prescription treatment (assessed by a practitioner) and over-the-counter topical products, often used together. A practitioner assesses which, if any, suits you. Most shampoos, supplements and devices do not have comparable evidence for stopping the process." },
       { q: "Do hair-loss shampoos and supplements work?", a: "Most have little evidence for stopping male pattern hair loss specifically. They may temporarily improve how hair looks or feels, but they are a poor substitute for the most-studied treatments if halting the underlying process is your goal." },
       { q: "Does acting early make a difference?", a: "Generally yes. Male pattern hair loss is progressive, and it is easier to hold onto hair you still have than to recover hair that is already gone, so getting assessed sooner tends to give you more to work with." },
-      { q: "How do I know if I'm actually losing my hair, and when should I start?", a: "Early male pattern hair loss usually shows as gradual thinning at the crown or a hairline receding at the temples over years. A little extra hair in the shower is normal; a steady drop in density or a changing hairline is the signal to get assessed. Because the condition is progressive, acting sooner generally leaves more hair to protect, and a practitioner can confirm the cause." },
+      { q: "How do I know if I'm losing my hair, and when should I start?", a: "Early male pattern hair loss usually shows as gradual thinning at the crown or a hairline receding at the temples over years. A little extra hair in the shower is normal; a steady drop in density or a changing hairline is the signal to get assessed. Because the condition is progressive, acting sooner generally leaves more hair to protect, and a practitioner can confirm the cause." },
     ],
     related: [R.best, R.quiz, R.mosh, R.cost],
   },
@@ -154,7 +154,7 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
     slug: "/receding-hairline-treatment-australia",
     crumb: "Receding hairline",
     priority: 0.8,
-    h1: "Receding hairline treatment in Australia: what actually helps",
+    h1: "Receding hairline treatment in Australia: what helps",
     meta: {
       title: "Receding Hairline Treatment Australia 2026: What Helps | Refer Labs",
       description:
@@ -249,7 +249,7 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
       },
     ],
     faqs: [
-      { q: "How do I tell if I am actually going bald?", a: "Look for a pattern that progresses over months rather than a single heavy shed: a hairline receding at the temples, a thinning or see-through crown, and a widening part. Comparing photos a year or two apart is the clearest home check. If the signs are adding up, a practitioner can confirm the cause." },
+      { q: "How do I tell if I am going bald?", a: "Look for a pattern that progresses over months rather than a single heavy shed: a hairline receding at the temples, a thinning or see-through crown, and a widening part. Comparing photos a year or two apart is the clearest home check. If the signs are adding up, a practitioner can confirm the cause." },
       { q: "How much hair loss per day is normal?", a: "Commonly cited figures put normal shedding at roughly 50 to 100 hairs a day, and it varies with washing and styling. What matters is a sustained increase or a steady drop in density over months, not the count on any one day." },
       { q: "Are early signs of balding at 20 or 25 normal?", a: "A mature hairline settling slightly higher in your late teens or twenties is common and not the same as balding. Genuine early male pattern hair loss can also start young, so if the crown or hairline keeps changing over months it is worth getting assessed rather than waiting." },
       { q: "Can early hair loss be slowed if I catch it?", a: "Often the earlier it is assessed, the more options there are, because it is easier to hold onto existing hair than to recover hair that is already gone. Whether any treatment is appropriate for you is a clinical decision made by a registered practitioner after an assessment. This is general information, not medical advice." },

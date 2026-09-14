@@ -18,7 +18,7 @@ export const survicateConfig: AffiliatePageConfig = {
   ],
   hero: {
     h1Prefix: "Survicate:",
-    h1Highlight: "ask your customers and actually act on the answers",
+    h1Highlight: "ask your customers and act on the answers",
     subheading:
       "Run surveys on your website, in emails, in your app or over chat, collect feedback at the moments that matter, and let AI summarise the themes, then send the insights into your CRM and analytics.",
     trustBullets: ["Surveys across web, email & app", "AI-analysed responses", "Free plan to start"],
@@ -33,7 +33,7 @@ export const survicateConfig: AffiliatePageConfig = {
       heading: "What Survicate does",
       paragraphs: [
         "Survicate is built to capture customer feedback where it happens, an on-site survey, an email NPS, an in-product prompt after a key action, or a question in chat, rather than a once-a-year survey nobody remembers taking.",
-        "The responses feed a single view with AI-assisted analysis that surfaces themes, so product, marketing and CX teams can see what customers actually think and route it to the right place through 50-plus integrations with CRMs, help desks and analytics.",
+        "The responses feed a single view with AI-assisted analysis that surfaces themes, so product, marketing and CX teams can see what customers think and route it to the right place through 50-plus integrations with CRMs, help desks and analytics.",
       ],
     },
     {

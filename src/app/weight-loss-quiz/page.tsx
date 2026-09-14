@@ -9,7 +9,7 @@ export const metadata = generateSEOMetadata(seoConfig.weightLossQuiz);
 const faqs = [
   {
     q: "How do I choose a weight-loss program in Australia?",
-    a: "Start with what you actually want. A fast, clinically-led pathway you can start online points to a medical telehealth service. Wanting coaching, habits and accountability alongside, rather than medication first, points to a coaching-led program. Preferring the lowest cost and an in-person assessment points to your GP. This match asks two quick questions and points you to the pathway that fits, and why. A registered practitioner still decides whether any treatment is appropriate for you.",
+    a: "Start with what you want. A fast, clinically-led pathway you can start online points to a medical telehealth service. Wanting coaching, habits and accountability alongside, rather than medication first, points to a coaching-led program. Preferring the lowest cost and an in-person assessment points to your GP. This match asks two quick questions and points you to the pathway that fits, and why. A registered practitioner still decides whether any treatment is appropriate for you.",
   },
   {
     q: "Is telehealth or an in-person GP better for weight loss?",

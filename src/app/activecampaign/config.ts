@@ -48,7 +48,7 @@ export const activeCampaignConfig: AffiliatePageConfig = {
     { num: "2", heading: "Import and segment", body: "Bring in your contacts, add tags and build the segments you want to message differently." },
     { num: "3", heading: "Build an automation", body: "Use the visual builder to create a welcome or follow-up sequence, then send your first campaign." },
   ],
-  whyUseThis: ["A genuinely powerful visual automation builder","Email, segmentation and a CRM in one tool","Automations that react to each contact's behaviour","Scales from newsletters to full lifecycle marketing"],
+  whyUseThis: ["A powerful visual automation builder","Email, segmentation and a CRM in one tool","Automations that react to each contact's behaviour","Scales from newsletters to full lifecycle marketing"],
   faqs: [
     { q: "Is there an ActiveCampaign free trial or discount code?", a: "Yes to the trial: new accounts get a 14-day free trial, no credit card required. ActiveCampaign does not typically publish a public discount code; signing up through our referral link is the most reliable way to start, at no extra cost to you." },
     { q: "How much does ActiveCampaign cost?", a: "Pricing is by contact volume. The entry Starter plan begins at US$15/month for 1,000 contacts billed annually, with the popular Pro plan US$79/month; every plan's price rises as your list grows. Check the current tiers for your list size before committing." },

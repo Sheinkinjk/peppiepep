@@ -92,7 +92,7 @@ export const employmentHeroConfig: AffiliatePageConfig = {
       heading: "Employment Hero pricing",
       paragraphs: [
         "Employment Hero does not publish standard pricing publicly. Plans vary by business size, and enterprise pricing is available on request. That means there is no single figure we can quote here, and any page stating one as a fixed price would be guessing.",
-        "The practical approach is to request a quote scoped to your headcount and the modules you need, since what you pay depends on how many employees you have and which parts of the platform you use. Because the offering spans HR, payroll, hiring and benefits, it is worth being clear about which of those you actually need when you enquire.",
+        "The practical approach is to request a quote scoped to your headcount and the modules you need, since what you pay depends on how many employees you have and which parts of the platform you use. Because the offering spans HR, payroll, hiring and benefits, it is worth being clear about which of those you need when you enquire.",
         "Click through to Employment Hero to see the current plans and request pricing for your business.",
       ],
     },

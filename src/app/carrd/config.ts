@@ -35,11 +35,11 @@ export const carrdConfig: AffiliatePageConfig = {
     "No credit card to start",
   ],
   verdict:
-    "Carrd is the best value in simple websites, genuinely free to start and cheap to upgrade. It is the right pick for a one-page site, portfolio, or link-in-bio, but not for a large multi-page business site.",
+    "Carrd is the best value in simple websites, free to start and cheap to upgrade. It is the right pick for a one-page site, portfolio, or link-in-bio, but not for a large multi-page business site.",
 
   hero: {
     h1Prefix: "Carrd:",
-    h1Highlight: "The Simple Website Builder That Actually Works",
+    h1Highlight: "The Simple Website Builder That Works",
     subheading:
       "Looking for a Carrd discount code, Carrd Pro review, or how Carrd compares to alternatives like Squarespace or Webflow? This page covers everything and takes you directly to Carrd to get started.",
     trustBullets: [
@@ -73,7 +73,7 @@ export const carrdConfig: AffiliatePageConfig = {
       paragraphs: [
         "Carrd is one of the most affordable website builders on the market. The free plan lets you build up to three sites on carrd.co subdomains, making it a genuine option for testing the platform before committing to a paid plan.",
         "Carrd Pro plans, Pro Lite, Pro Standard, and Pro Plus, are priced annually and are significantly cheaper than competitors. This pricing model is a major reason Carrd is frequently recommended in communities discussing budget-friendly website tools. If you are looking for a Carrd discount code or promo code, our referral link gives you direct access to the current Carrd offer.",
-        "Carrd does not typically offer time-limited free trials of Pro features, but the free plan is genuinely functional and gives you a clear sense of the builder before upgrading. The referral link on this page takes you to Carrd where you can explore all current pricing and plan options.",
+        "Carrd does not typically offer time-limited free trials of Pro features, but the free plan is functional and gives you a clear sense of the builder before upgrading. The referral link on this page takes you to Carrd where you can explore all current pricing and plan options.",
       ],
     },
     {

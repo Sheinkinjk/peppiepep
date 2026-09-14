@@ -36,7 +36,7 @@ const criteria: { h: string; p: string }[] = [
   },
   {
     h: "The excess, and how it moves the premium",
-    p: "You usually choose from a small set of excess amounts. A higher excess lowers the monthly premium and raises what you pay per claim. Pick the one you could actually absorb on the day your pet needs surgery, not the one that makes the monthly figure look best.",
+    p: "You usually choose from a small set of excess amounts. A higher excess lowers the monthly premium and raises what you pay per claim. Pick the one you could absorb on the day your pet needs surgery, not the one that makes the monthly figure look best.",
   },
   {
     h: "Pre-existing conditions",
@@ -76,7 +76,7 @@ const faqs = [
   },
   {
     q: "Does Refer Labs rank pet insurers?",
-    a: "No, and we will not invent a ranking. We cover two providers, one of which publishes its cover levels and one of which does not, so a like-for-like table would tell you less than it appears to. We rank the decision criteria instead, because that is the part you can actually apply to your own pet. Refer Labs is not an insurer, broker or financial adviser.",
+    a: "No, and we will not invent a ranking. We cover two providers, one of which publishes its cover levels and one of which does not, so a like-for-like table would tell you less than it appears to. We rank the decision criteria instead, because that is the part you can apply to your own pet. Refer Labs is not an insurer, broker or financial adviser.",
   },
   {
     q: "How much does pet insurance cost in Australia?",
@@ -88,7 +88,7 @@ const faqs = [
   },
   {
     q: "What is the single biggest mistake when choosing pet insurance?",
-    a: "Comparing monthly premiums first. The premium is the one number that is easy to compare and the least useful on its own, because it says nothing about the annual limit, the benefit percentage or whether your breed's likely conditions are covered. Compare what the policy pays out in a bad year, then compare the price of the ones that would actually help.",
+    a: "Comparing monthly premiums first. The premium is the one number that is easy to compare and the least useful on its own, because it says nothing about the annual limit, the benefit percentage or whether your breed's likely conditions are covered. Compare what the policy pays out in a bad year, then compare the price of the ones that would help.",
   },
 ];
 
@@ -155,7 +155,7 @@ export default function BestPetInsuranceAustraliaPage() {
 
         <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#0a7c42]">Pet insurance · Australia</p>
         <h1 className="mt-4 text-3xl font-extrabold leading-[1.08] tracking-tight text-[#10251b] sm:text-4xl">
-          Best pet insurance in Australia: how to actually choose
+          Best pet insurance in Australia: how to choose
         </h1>
 
         {/* Answer-first */}
@@ -249,7 +249,7 @@ export default function BestPetInsuranceAustraliaPage() {
             about a financial product, not advice about one. */}
         <section className="mt-14">
           <h2 className="text-xl font-bold text-[#10251b] sm:text-2xl">
-            Why so many brands are really the same product
+            Why so many brands are the same product
           </h2>
           <p className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">
             Australian pet insurance has many more brands than it has insurers. PetSure names more than twenty pet

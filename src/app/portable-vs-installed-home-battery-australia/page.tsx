@@ -48,7 +48,7 @@ const faqs = [
   },
   {
     q: "Which one qualifies for the federal battery rebate?",
-    a: "Only the installed system. The Cheaper Home Batteries program applies to systems fitted by an accredited installer, not to a plug-in appliance. That single rule moves the arithmetic more than any brand difference, so if the rebate is central to your decision the comparison is really between installed systems, not between these two categories.",
+    a: "Only the installed system. The Cheaper Home Batteries program applies to systems fitted by an accredited installer, not to a plug-in appliance. That single rule moves the arithmetic more than any brand difference, so if the rebate is central to your decision the comparison is between installed systems, not between these two categories.",
   },
   {
     q: "I rent. What are my options?",

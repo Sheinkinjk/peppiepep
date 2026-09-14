@@ -109,7 +109,7 @@ export default function Page() {
           September 2026, where the page is dated 15 December 2025.
         </p>
         <p className="mt-3">
-          So the group this actually affects is smaller than it looks. If you hold a Medicare card
+          So the group this affects is smaller than it looks. If you hold a Medicare card
           you already have both. If you do not, the route is a form and certified documents rather
           than a closed door, and it is worth starting before you pay a consultation fee rather than
           after.

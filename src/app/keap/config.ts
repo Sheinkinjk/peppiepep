@@ -40,7 +40,7 @@ export const keapConfig: AffiliatePageConfig = {
     {
       heading: "Who it suits",
       paragraphs: [
-        "Keap fits small businesses, coaches, agencies and solopreneurs who are losing revenue to inconsistent follow-up and want the CRM and the automation in one system rather than stitched together. It is heavier than a simple contact list, so it rewards businesses that will actually use the automation.",
+        "Keap fits small businesses, coaches, agencies and solopreneurs who are losing revenue to inconsistent follow-up and want the CRM and the automation in one system rather than stitched together. It is heavier than a simple contact list, so it rewards businesses that will use the automation.",
         "Pricing scales with your number of contacts, so it is worth being clear about your list size when you compare plans.",
       ],
     },

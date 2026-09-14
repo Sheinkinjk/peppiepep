@@ -104,7 +104,7 @@ const tools = [
   { href: "/databox", label: "Databox", desc: "KPI dashboards over the tools you already use. Free plan, no expiry." },
   { href: "/pipedrive", label: "Pipedrive", desc: "Visual sales CRM with pipeline and automation." },
   { href: "/nutshell", label: "Nutshell", desc: "Easy sales CRM with email marketing built in." },
-  { href: "/capsule", label: "Capsule", desc: "A simple CRM small teams actually keep using." },
+  { href: "/capsule", label: "Capsule", desc: "A simple CRM small teams keep using." },
   { href: "/activecampaign", label: "ActiveCampaign", desc: "Email marketing with powerful automation and a CRM." },
   { href: "/keap", label: "Keap", desc: "Small-business CRM with sales and marketing automation." },
   { href: "/gohighlevel", label: "GoHighLevel", desc: "All-in-one CRM, marketing automation and funnels." },
@@ -126,10 +126,10 @@ const FAQS = [
   { q: "Is this pay-to-rank?", a: "No. Recommendations are based on your answers and our independent research, not on who pays. Some links are disclosed affiliate links: we may earn a commission if you sign up, at no extra cost to you, and it never changes what we recommend or the order tools appear in." },
   { q: "Do I have to give my email?", a: "No. The recommendations show on the page immediately. Entering your email is optional, it just sends you the shortlist and lets us give you a hand narrowing it down if you want." },
   { q: "Which software do you cover?", a: `We compare tools across websites and landing pages, newsletters, sales and CRM, outreach, HR and payroll, and payments. Browse the categories below, or use the finder to get matched. We add categories and tools as we review them.` },
-  { q: "What should I compare before choosing business software?", a: "Compare the total cost (including per-user pricing and any add-ons), the support model, how easy it is to set up, which tools it integrates with, the free trial or plan, and the cancellation terms. Also check it suits your business size and the way you actually work, rather than picking the longest feature list." },
+  { q: "What should I compare before choosing business software?", a: "Compare the total cost (including per-user pricing and any add-ons), the support model, how easy it is to set up, which tools it integrates with, the free trial or plan, and the cancellation terms. Also check it suits your business size and the way you work, rather than picking the longest feature list." },
   { q: "Which business software has the best support?", a: "There is no single answer, because support that suits a solo founder differs from what a 50-person team needs. Compare the support channels offered (email, chat, phone), the hours and whether they cover Australian time zones, and how quickly they respond. A free trial is the best test: send a real question during the trial and see how the reply lands. Onboarding help and a solid help centre matter as much as live support." },
   { q: "Does this software work for Australian businesses?", a: "It depends on the tool. For accounting, payroll and HR, check it handles Australian requirements such as GST, Single Touch Payroll and superannuation. For any tool, check whether pricing is in Australian dollars, whether support covers Australian hours, and where your data is stored. We note Australian fit where it is relevant on each tool's page." },
-  { q: "Can I try business software before paying?", a: "Usually yes. Many tools offer a free plan or a free trial, though the length and what is included vary. Use the trial to test the features you actually need and the quality of support, and confirm the cancellation terms before your card is charged." },
+  { q: "Can I try business software before paying?", a: "Usually yes. Many tools offer a free plan or a free trial, though the length and what is included vary. Use the trial to test the features you need and the quality of support, and confirm the cancellation terms before your card is charged." },
   { q: "How much does business software cost?", a: "Most tools charge a monthly or annual subscription, often per user, with higher tiers adding more features; some are priced by usage. Watch for the jump between plans, paid add-ons, and annual-only discounts. We list real, checked prices on each tool's page where the vendor publishes them." },
   { q: "How do I pick the right tool for my business?", a: "No single tool is best for everyone. The right fit depends on your size, your use case and the software you already run. Use the finder above to get matched to a shortlist, then compare those few on cost, support, integrations and trial before deciding." },
 ];
@@ -156,7 +156,7 @@ export default function BusinessSoftwarePage() {
                 Find the right software for your business in a minute
               </h1>
               <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#3d4b44]">
-                Answer three quick questions and we&apos;ll match you to the tools that fit what you&apos;re actually
+                Answer three quick questions and we&apos;ll match you to the tools that fit what you&apos;re
                 trying to do, with the reasoning, so you skip comparing everything. Independent research, disclosed
                 affiliate links, never sold placement.
               </p>

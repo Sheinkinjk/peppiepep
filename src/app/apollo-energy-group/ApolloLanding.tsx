@@ -140,13 +140,13 @@ export default function ApolloLanding() {
               <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[#9aa39c]">On this page</p>
               <ul className="space-y-2.5 text-sm">
                 {[
-                  ["what", "What Apollo actually is"],
+                  ["what", "What Apollo is"],
                   ["offer", "The $500 discount"],
                   ["rebate", "The 2026 battery rebate"],
                   ["savings", "What a battery saves"],
                   ["suits", "Who it suits"],
                   ["start", "How to start"],
-                  ["bottom-line", "The bottom line"],
+                  ["bottom-line", "Should you use Apollo Energy Group?"],
                   ["faq", "FAQ"],
                 ].map(([id, label]) => (
                   <li key={id}>
@@ -163,7 +163,7 @@ export default function ApolloLanding() {
           <article className="max-w-2xl">
             {/* What */}
             <section id="what" className="scroll-mt-24">
-              <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">What Apollo actually is</h2>
+              <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">What Apollo is</h2>
               <div className="mt-4 space-y-4 text-[15.5px] leading-relaxed text-[#3d4b44]">
                 <p>
                   Apollo Energy Group is a specialist in home battery storage. They install residential
@@ -185,7 +185,7 @@ export default function ApolloLanding() {
 
               <figure className="my-7 border-l-2 border-[#0a7c42] pl-5">
                 <blockquote className="text-xl font-semibold italic leading-snug text-[#2b362f]">
-                  &ldquo;The install is the easy part. The money question is what size you actually need, and what the
+                  &ldquo;The install is the easy part. The money question is what size you need, and what the
                   rebate does to the price.&rdquo;
                 </blockquote>
               </figure>
@@ -317,7 +317,7 @@ export default function ApolloLanding() {
             {/* Savings */}
             <section id="savings" className="mt-12 scroll-mt-24">
               <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">
-                What a battery actually saves
+                What a battery saves
               </h2>
               <div className="mt-4 space-y-4 text-[15.5px] leading-relaxed text-[#3d4b44]">
                 <p>
@@ -376,12 +376,12 @@ export default function ApolloLanding() {
             {/* Bottom line */}
             <section id="bottom-line" className="mt-14 scroll-mt-24">
               <div className="nw-card rounded-2xl p-7 sm:p-8">
-                <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">The bottom line</h2>
+                <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">Should you use Apollo Energy Group?</h2>
                 <p className="mt-4 text-[15.5px] leading-relaxed text-[#3d4b44]">
                   If you are already paying for peak power you could be storing, a battery is worth quoting
                   properly, and Apollo is a credible place to get that quote: accredited installers, a real licence, a
                   10-year battery warranty, and systems sized from your usage rather than a package off a shelf. The
-                  $500 through our link sits on top of the federal rebate, which is the part that actually moves the
+                  $500 through our link sits on top of the federal rebate, which is the part that moves the
                   price.
                 </p>
                 <ul className="mt-5 space-y-2">
@@ -458,7 +458,7 @@ export default function ApolloLanding() {
                     Home battery rebate Australia 2026
                   </h3>
                   <p className="mt-1.5 text-sm leading-relaxed text-[#3d4b44]">
-                    What the federal rebate actually pays, the 14kWh taper, and worked examples by size.
+                    What the federal rebate pays, the 14kWh taper, and worked examples by size.
                   </p>
                 </Link>
                 <Link

@@ -50,11 +50,11 @@ const faqs = [
   },
   {
     q: "Are high-paying finance affiliate programs worth it?",
-    a: "They can pay the most per action, but fintech is the most heavily regulated niche. Financial promotions have strict rules, many programs are geo-restricted, and some are not open to Australian audiences at all. Read the terms carefully, only promote what is genuinely relevant to your readers, and keep your messaging compliant. The payout is high because the compliance bar is high.",
+    a: "They can pay the most per action, but fintech is the most heavily regulated niche. Financial promotions have strict rules, many programs are geo-restricted, and some are not open to Australian audiences at all. Read the terms carefully, only promote what is relevant to your readers, and keep your messaging compliant. The payout is high because the compliance bar is high.",
   },
   {
     q: "Do I need a big audience to earn from high-ticket programs?",
-    a: "Less than you would think. Because each referral is worth so much, a small but well-matched audience can out-earn a large, generic one. A niche site about WordPress hosting or SEO tools with a few thousand genuinely interested readers can do very well, because the intent is high and the payout per conversion is large.",
+    a: "Less than you would think. Because each referral is worth so much, a small but well-matched audience can out-earn a large, generic one. A niche site about WordPress hosting or SEO tools with a few thousand interested readers can do very well, because the intent is high and the payout per conversion is large.",
   },
   {
     q: "How do I find high-paying programs that fit my niche?",
@@ -188,7 +188,7 @@ export default function HighPayingAffiliateProgramsPage() {
             <p>
               The single biggest mistake with high-paying programs is optimising the wrong number. A 45% commission
               looks better than 20%, but 20% recurring on a subscription someone keeps for two years dwarfs a one-off
-              45% on a cheaper product. What you actually earn per referral depends on the price, whether the commission
+              45% on a cheaper product. What you earn per referral depends on the price, whether the commission
               recurs, and how long people stay. That is why our{" "}
               <Link href="/recurring-affiliate-programs" className="nw-link">recurring commission programs guide</Link>{" "}
               is worth reading alongside this one.

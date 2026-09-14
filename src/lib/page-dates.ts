@@ -32,7 +32,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/affiliate-programs-australia": {
     "published": "2026-07-05",
-    "updated": "2026-08-25"
+    "updated": "2026-09-13"
   },
   "/affiliate-software-australia": {
     "published": "2026-08-21",
@@ -96,7 +96,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/best-hair-loss-treatment-australia": {
     "published": "2026-06-29",
-    "updated": "2026-09-05"
+    "updated": "2026-09-14"
   },
   "/best-home-battery-australia": {
     "published": "2026-07-22",
@@ -116,7 +116,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/best-weight-loss-telehealth-australia": {
     "published": "2026-06-29",
-    "updated": "2026-09-05"
+    "updated": "2026-09-14"
   },
   "/blinq": {
     "published": "2026-07-14",
@@ -188,7 +188,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/cheapest-weight-loss-telehealth-australia": {
     "published": "2026-07-06",
-    "updated": "2026-09-05"
+    "updated": "2026-09-14"
   },
   "/cloudtalk": {
     "published": "2026-07-09",
@@ -216,7 +216,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/deals": {
     "published": "2026-07-27",
-    "updated": "2026-08-28"
+    "updated": "2026-09-14"
   },
   "/dense": {
     "published": "2026-06-29",
@@ -296,11 +296,11 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/guides": {
     "published": "2026-06-29",
-    "updated": "2026-09-05"
+    "updated": "2026-09-13"
   },
   "/hair-loss": {
     "published": "2026-07-03",
-    "updated": "2026-09-05"
+    "updated": "2026-09-13"
   },
   "/hair-loss-quiz": {
     "published": "2026-07-08",
@@ -464,7 +464,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/longevity/diagnostics/whole-body-mri-australia-cost": {
     "published": "2026-08-20",
-    "updated": "2026-09-05"
+    "updated": "2026-09-13"
   },
   "/longevity": {
     "published": "2026-08-20",
@@ -540,7 +540,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/mens-health": {
     "published": "2026-08-20",
-    "updated": "2026-09-04"
+    "updated": "2026-09-13"
   },
   "/mens-health/premature-ejaculation-treatment-options-australia": {
     "published": "2026-08-20",
@@ -568,7 +568,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/mosh-vs-dense": {
     "published": "2026-07-06",
-    "updated": "2026-09-05"
+    "updated": "2026-09-13"
   },
   "/mosh-vs-pilot": {
     "published": "2026-07-06",
@@ -584,7 +584,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/moshy-alternatives": {
     "published": "2026-07-02",
-    "updated": "2026-09-05"
+    "updated": "2026-09-14"
   },
   "/moshy-eligibility": {
     "published": "2026-07-02",
@@ -600,7 +600,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/moshy-vs-juniper": {
     "published": "2026-06-30",
-    "updated": "2026-09-05"
+    "updated": "2026-09-13"
   },
   "/moshy-vs-pilot": {
     "published": "2026-07-06",
@@ -696,7 +696,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/recurring-affiliate-programs": {
     "published": "2026-07-05",
-    "updated": "2026-08-25"
+    "updated": "2026-09-13"
   },
   "/referral-partnerships": {
     "published": "2026-01-16",
@@ -932,7 +932,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/weight-loss": {
     "published": "2026-07-03",
-    "updated": "2026-09-05"
+    "updated": "2026-09-13"
   },
   "/weight-loss-cost-calculator": {
     "published": "2026-07-07",
@@ -948,15 +948,15 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/weight-loss-telehealth-cost-australia": {
     "published": "2026-07-05",
-    "updated": "2026-09-05"
+    "updated": "2026-09-14"
   },
   "/weight-loss-telehealth-men-australia": {
     "published": "2026-07-02",
-    "updated": "2026-08-26"
+    "updated": "2026-09-13"
   },
   "/weight-loss-telehealth-women-australia": {
     "published": "2026-07-24",
-    "updated": "2026-09-05"
+    "updated": "2026-09-13"
   },
   "/weight-loss-treatment-eligibility-australia": {
     "published": "2026-08-07",

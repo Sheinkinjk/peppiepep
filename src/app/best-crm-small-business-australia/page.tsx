@@ -24,7 +24,7 @@ const CRMS = [
     from: "AU$19",
     trial: "14-day free trial, no card",
     suits: "Sales teams that live in the pipeline",
-    body: "Pipedrive is built around a visual sales pipeline you drag deals through, which makes it the natural pick for a small team whose main job is chasing and closing deals. It is quick to set up and hard to lose track of a deal in. If you want a CRM that is really a marketing-and-everything suite, it is narrower than that by design.",
+    body: "Pipedrive is built around a visual sales pipeline you drag deals through, which makes it the natural pick for a small team whose main job is chasing and closing deals. It is quick to set up and hard to lose track of a deal in. If you want a CRM that doubles as a marketing-and-everything suite, it is narrower than that by design.",
     good: ["Visual, drag-and-drop pipeline", "Fast to set up and learn", "Strong for outbound sales follow-up"],
   },
   {
@@ -36,7 +36,7 @@ const CRMS = [
     trial: "Free plan for up to 250 contacts",
     suits: "Small teams wanting simple contact management",
     body: "Capsule keeps things deliberately simple: contacts, a light pipeline, and tasks, without the sprawl of a bigger platform. The free plan makes it an easy starting point for a very small business, and you step up to paid as your contact list grows. If you need deep automation or marketing, you may outgrow it.",
-    good: ["Genuinely free tier to start", "Clean and uncluttered", "Good for relationship tracking over heavy sales ops"],
+    good: ["Free tier to start", "Clean and uncluttered", "Good for relationship tracking over heavy sales ops"],
   },
   {
     name: "Nutshell",
@@ -140,7 +140,7 @@ export default function BestCrmSmallBusinessPage() {
         </h1>
         <p className="text-[#3d4b44] text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
           Pick by the job, not the feature list. Of these four, Pipedrive suits teams whose day is chasing and closing
-          deals, Capsule suits contact management and has a genuinely free tier up to 250 contacts, Nutshell sits at
+          deals, Capsule suits contact management and has a free tier up to 250 contacts, Nutshell sits at
           the low end on price, and Keap costs materially more because it is a marketing automation and payments suite
           with a CRM inside rather than a CRM alone. Starting prices are below, all
           four read off the vendors&rsquo; own pricing pages on 5 September 2026. Pipedrive quotes

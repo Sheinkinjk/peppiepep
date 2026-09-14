@@ -85,7 +85,7 @@ export const durableAiConfig: AffiliatePageConfig = {
     {
       heading: "Durable AI Reviews",
       paragraphs: [
-        "Durable AI has attracted attention from small business owners, solopreneurs, and people interested in AI tools since launching publicly. Reviews generally acknowledge the speed of the initial generation as genuinely impressive, the 30-second website claim is accurate for a first draft. The quality of the generated copy and layout varies by industry but is typically a solid starting point.",
+        "Durable AI has attracted attention from small business owners, solopreneurs, and people interested in AI tools since launching publicly. Reviews generally acknowledge the speed of the initial generation as impressive, the 30-second website claim is accurate for a first draft. The quality of the generated copy and layout varies by industry but is typically a solid starting point.",
         "Common feedback in Durable AI reviews covers: the AI generation being fast and useful for getting a first version online, the built-in CRM being a practical addition for service businesses, the editing tools being functional without requiring design skill, and the overall positioning making sense for solo operators and small teams who do not want to manage multiple software subscriptions.",
         "Critical reviews tend to focus on the limited design flexibility compared to Webflow or Squarespace, and the pricing relative to basic website builders for users who only need a simple site without CRM features. Whether Durable is good value depends heavily on whether you use the business tools, not just the website.",
       ],

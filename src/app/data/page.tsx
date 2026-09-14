@@ -63,7 +63,7 @@ export default function DataPage() {
     '@type': 'Dataset',
     name: 'Refer Labs observation log',
     description:
-      'Dated first-party observations of Australian provider offers and prices. Each record states the date it was read, the person who read it and the method used. Re-checks are intended weekly; the records are the log of what has actually been checked.',
+      'Dated first-party observations of Australian provider offers and prices. Each record states the date it was read, the person who read it and the method used. Re-checks are intended weekly; the records are the log of what has been checked.',
     url: `${SITE_URL}/data`,
     inLanguage: 'en-AU',
     isAccessibleForFree: true,
@@ -91,7 +91,7 @@ export default function DataPage() {
           Every entry below is a first-party observation: something a person at Refer Labs read on a
           provider&apos;s own page, on a stated date, recorded as it appeared. Each check is logged
           here rather than overwriting the last one, so a figure can be traced to the day it was
-          seen, and the dates below are the record of what has actually been checked and when.
+          seen, and the dates below are the record of what has been checked and when.
         </p>
 
         <p className="mt-4 text-[15px] leading-relaxed text-[#3d4b44]">

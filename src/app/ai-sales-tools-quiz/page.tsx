@@ -68,7 +68,7 @@ export default function AiSalesToolsQuizPage() {
 
           <section className="pt-9 pb-7 sm:pt-11">
             <h1 className="mb-4 max-w-3xl text-3xl font-extrabold leading-[1.08] tracking-tight text-[#10251b] sm:text-4xl lg:text-[2.6rem]">
-              Which AI sales tool do you actually need?
+              Which AI sales tool do you need?
             </h1>
             <div className="mb-6 max-w-2xl space-y-3 text-sm leading-relaxed text-[#3d4b44] sm:text-base">
               <p>

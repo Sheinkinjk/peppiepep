@@ -38,7 +38,7 @@ export default function Page() {
       sectionHref="/longevity/diagnostics"
       slug="/longevity/diagnostics/biological-age-testing-australia"
       crumb="Biological age testing"
-      h1={<>Biological age tests: <span className="italic text-[#0a7c42]">what the number actually is</span></>}
+      h1={<>Biological age tests: <span className="italic text-[#0a7c42]">what the number is</span></>}
       intro="These tests return a confident single figure. Understanding how that figure is produced changes what it is worth, and explains why two tests can hand you different ages from the same sample."
       headline="Biological age testing in Australia: does it mean anything?"
       description={seoConfig.biologicalAge.description}
@@ -116,7 +116,7 @@ export default function Page() {
         </p>
         <p className="mt-3">
           None produces a single memorable number, which is precisely why they are harder to sell. They are also what a
-          clinician can actually act on.
+          clinician can act on.
         </p>
         <p className="mt-3">
           General information for an Australian audience, not medical advice, and not a recommendation for or against

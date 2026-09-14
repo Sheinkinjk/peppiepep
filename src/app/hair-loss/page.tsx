@@ -98,7 +98,7 @@ export default function HairLossHubPage() {
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#2b362f]">
               Prescription telehealth, topical products, and everything marketed in between. This hub separates the
-              clinical route from the cosmetic one so you know which you are actually looking at.
+              clinical route from the cosmetic one so you know which you are looking at.
             </p>
             {/* Below the lead. The first paragraph after the h1 is the answer;
                 a disclosure in that slot is what an engine lifts instead. Still

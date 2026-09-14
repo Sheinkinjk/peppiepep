@@ -23,7 +23,7 @@ export const fullenrichConfig: AffiliatePageConfig = {
   atAGlance: [
     { k: "What it is", v: "Waterfall B2B contact enrichment (email + mobile)" },
     { k: "Best for", v: "Sales, RevOps and lead-gen teams feeding outbound" },
-    { k: "Price", v: "Free trial (50 credits); paid from US$55/mo" },
+    { k: "Price", v: "Free trial (50 credits); paid from US$55/mo (14 Sep 2026)" },
     { k: "Integrations", v: "HubSpot, Clay, Zapier, LinkedIn and more" },
   ],
   trustStrip: [
@@ -194,7 +194,7 @@ export const fullenrichConfig: AffiliatePageConfig = {
     secondary: "Continue to FullEnrich",
     midHeading: "Ready to Fix Your Contact Data?",
     midBody:
-      "Click below to go directly to FullEnrich via our affiliate link. See how waterfall enrichment finds verified emails and mobile numbers your outbound actually needs.",
+      "Click below to go directly to FullEnrich via our affiliate link. See how waterfall enrichment finds verified emails and mobile numbers your outbound needs.",
     midButton: "Try FullEnrich",
     bottomHeading: "See What Waterfall Enrichment Can Do",
     bottomBody:

@@ -15,7 +15,7 @@ interface Step {
 const steps: Step[] = [
   {
     n: 1,
-    title: "Choose a niche you can actually stick with",
+    title: "Choose a niche you can stick with",
     summary: "Pick a specific topic where you have genuine interest and where products get bought.",
     body: (
       <>
@@ -50,7 +50,7 @@ const steps: Step[] = [
           pay the least, so treat them as a supplement rather than the core.
         </p>
         <p>
-          Aim for a small handful of programs you would genuinely recommend, not a wall of links. Join directly on the
+          Aim for a small handful of programs you would recommend, not a wall of links. Join directly on the
           company's site or through a network like Commission Factory, Impact or Awin, get approved, and grab your
           tracking links. Now every piece of content you write has a natural, honest place to send readers.
         </p>
@@ -71,7 +71,7 @@ const steps: Step[] = [
           the rules overnight.
         </p>
         <p>
-          Keep the first build small. A homepage, an about page, a clear disclosure page, and a handful of genuinely
+          Keep the first build small. A homepage, an about page, a clear disclosure page, and a handful of
           useful articles is enough to start. You do not need a huge site, you need a few pages that answer a real
           question better than what is already ranking.
         </p>
@@ -114,7 +114,7 @@ const steps: Step[] = [
           which is why this kind of content punches well above its traffic.
         </p>
         <p>
-          Write for the reader first and the commission second. Be genuinely useful, be honest about downsides, and only
+          Write for the reader first and the commission second. Be useful, be honest about downsides, and only
           recommend things you would stand behind. That is what makes the recommendation
           credible enough to act on. The moment content reads like it exists only to place links, it stops converting.
         </p>
@@ -134,7 +134,7 @@ const steps: Step[] = [
           rather than spreading yourself thin across five.
         </p>
         <p>
-          Then pay attention to what actually earns. Most of your income will come from a small number of pages and
+          Then pay attention to what earns. Most of your income will come from a small number of pages and
           programs. Once you can see which they are, write more like them, improve the ones nearly working, and quietly
           retire the rest. Affiliate marketing rewards patience and iteration far more than a big launch.
         </p>
@@ -152,7 +152,7 @@ const spokes = [
 const faqs = [
   {
     q: "How do I start affiliate marketing in Australia as a beginner?",
-    a: "Choose a specific niche you can write about with authority, line up a few affiliate programs that fit it, build a website or newsletter you own, add a clear affiliate disclosure, and publish genuinely useful reviews, comparisons and how-to guides. Then drive traffic mostly through search, and double down on the pages and programs that actually earn. It is a slow build at first, then it compounds.",
+    a: "Choose a specific niche you can write about with authority, line up a few affiliate programs that fit it, build a website or newsletter you own, add a clear affiliate disclosure, and publish useful reviews, comparisons and how-to guides. Then drive traffic mostly through search, and double down on the pages and programs that earn. It is a slow build at first, then it compounds.",
   },
   {
     q: "Is affiliate marketing legal in Australia?",
@@ -172,7 +172,7 @@ const faqs = [
   },
   {
     q: "What is the fastest way to start without researching every program?",
-    a: "Start from a shortlist instead of the whole market. Pick one niche you already know, then check our guide to the best affiliate programs in Australia for the programs serving it. Two or three you understand well are enough to start; you can widen later once you know what your audience actually responds to.",
+    a: "Start from a shortlist instead of the whole market. Pick one niche you already know, then check our guide to the best affiliate programs in Australia for the programs serving it. Two or three you understand well are enough to start; you can widen later once you know what your audience responds to.",
   },
 ];
 

@@ -73,7 +73,7 @@ const faqs = [
   },
   {
     q: "Which VPP should I join?",
-    a: "Compare programs on the things that actually vary: the payment structure (an upfront incentive, ongoing credits or per-event export rates), how hard the battery is cycled and whether there are cycling caps and a guaranteed reserve, whether your battery brand is supported, and whether you keep full warranty cover. Check the exit terms too, since most plans are reversible. Confirm current provider terms before enrolling.",
+    a: "Compare programs on the things that vary: the payment structure (an upfront incentive, ongoing credits or per-event export rates), how hard the battery is cycled and whether there are cycling caps and a guaranteed reserve, whether your battery brand is supported, and whether you keep full warranty cover. Check the exit terms too, since most plans are reversible. Confirm current provider terms before enrolling.",
   },
 ];
 
@@ -158,7 +158,7 @@ export default function VirtualPowerPlantAustraliaPage() {
 
           {/* What a VPP is */}
           <section className="mt-9">
-            <h2 className="text-xl font-bold tracking-tight text-[#10251b] sm:text-2xl">What a VPP actually is</h2>
+            <h2 className="text-xl font-bold tracking-tight text-[#10251b] sm:text-2xl">What a VPP is</h2>
             <div className="mt-4 space-y-4 text-[15px] leading-relaxed text-[#3d4b44]">
               <p>
                 A virtual power plant, or VPP, is a network that coordinates thousands of home batteries, and sometimes

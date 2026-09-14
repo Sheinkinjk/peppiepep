@@ -35,7 +35,7 @@ const categories = [
     num: "01",
     label: "Weight loss & telehealth",
     intro:
-      "Online weight management in Australia has grown fast, and quality ranges from properly supervised clinical programs to little more than a landing page. We compare the providers Australians search for most, on how the care is actually delivered.",
+      "Online weight management in Australia has grown fast, and quality ranges from properly supervised clinical programs to little more than a landing page. We compare the providers Australians search for most, on how the care is delivered.",
     detail:
       "Medically supervised telehealth programs and the pathways around them. Information only, never medical advice, and any treatment is a decision for a registered practitioner. We do not name prescription medicines on this site.",
     eval: [
@@ -68,7 +68,7 @@ const categories = [
       "Accredited battery and solar installers, and portable power brands. We weight verifiable credentials over sales polish, and how transparently the federal and state rebates are applied.",
     eval: [
       "SAA accreditation and a current electrical licence",
-      "Warranty terms and what they actually cover",
+      "Warranty terms and what they cover",
       "Systems sized from real usage rather than sold as a package",
       "The rebate itemised and applied, not just implied",
     ],
@@ -77,7 +77,7 @@ const categories = [
     num: "04",
     label: "Pet insurance",
     intro:
-      "Pet cover is sold on monthly price and decided by the fine print: benefit percentage, annual limits, waiting periods and what counts as pre-existing. We publish what each policy document actually says, including who underwrites it.",
+      "Pet cover is sold on monthly price and decided by the fine print: benefit percentage, annual limits, waiting periods and what counts as pre-existing. We publish what each policy document says, including who underwrites it.",
     detail:
       "Australian pet insurers and the underwriters behind them. We state where two brands share an insurer, because that changes whether they are genuine alternatives.",
     eval: [
@@ -241,7 +241,7 @@ export default function PartnerWithReferLabsPage() {
 
         {/* Our approach */}
         <section className="mt-16 border-t border-[#e5e9e7] pt-12">
-          <SectionHead>What partnering actually involves</SectionHead>
+          <SectionHead>What partnering involves</SectionHead>
           <div className="mt-5 max-w-2xl space-y-4 text-[15px] leading-relaxed text-[#3d4b44]">
             <p>
               Each category carries a shortlist assessed on standards, transparency, pricing honesty and the experience

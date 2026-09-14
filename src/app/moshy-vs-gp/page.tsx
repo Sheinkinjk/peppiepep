@@ -172,7 +172,7 @@ export default function MoshyVsGpPage() {
           <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
             Telehealth trades continuity for convenience. Moshy will never know your history the way a GP you have seen
             for a decade does, and it is not trying to. What it offers instead is the removal of every small barrier
-            between deciding to act and actually acting: no booking lead time, no waiting room, no need to say anything
+            between deciding to act and acting: no booking lead time, no waiting room, no need to say anything
             out loud to anyone until a practitioner has already reviewed your details.
           </p>
           <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">

@@ -28,7 +28,7 @@ const faqs = [
     a: "We may receive a commission or referral fee from Knose if you take out a policy through our link, at no extra cost to you. This does not change what we publish, and we do not provide advice.",
   },
   {
-    q: "Where do I see what a Knose policy actually covers?",
+    q: "Where do I see what a Knose policy covers?",
     a: "In Knose's Product Disclosure Statement (PDS) and Target Market Determination (TMD), and in your quote. These set out the cover, waiting periods, exclusions, excess, benefit percentage and annual limits that would apply to your pet.",
   },
 ];

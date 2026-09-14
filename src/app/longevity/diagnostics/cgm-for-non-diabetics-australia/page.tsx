@@ -39,7 +39,7 @@ export default function Page() {
       slug="/longevity/diagnostics/cgm-for-non-diabetics-australia"
       crumb="CGM without diabetes"
       h1={<>Glucose monitors without diabetes: <span className="italic text-[#0a7c42]">cost, access and evidence</span></>}
-      intro="A device built and validated for managing diabetes is now marketed as a wellness tool. The technology is genuinely good at what it was designed for. Whether that transfers to people without diabetes is a separate question, and a much less settled one."
+      intro="A device built and validated for managing diabetes is now marketed as a wellness tool. The technology is good at what it was designed for. Whether that transfers to people without diabetes is a separate question, and a much less settled one."
       headline="CGM for non-diabetics in Australia: cost and evidence"
       description={seoConfig.cgmNonDiabetic.description}
       faqs={faqs}
@@ -107,7 +107,7 @@ export default function Page() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">If you are actually worried about diabetes</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">If you are worried about diabetes</h2>
         <p className="mt-3">
           See a GP and ask for the appropriate blood test. It is the validated diagnostic pathway, it attracts a
           Medicare rebate where indicated, and it gives you an answer a clinician can act on. A sensor bought online

@@ -27,7 +27,7 @@ const faqs = [
   },
   {
     q: "What should I check before signing with any battery installer?",
-    a: "Ask for the federal rebate to be itemised on the quote so you can see it applied. Confirm the battery brand and what the 10-year warranty actually covers. Confirm they service your address. And understand that the rebate tapers above 14kWh, so a bigger system does not earn a proportionally bigger discount. If a salesperson pushes size without explaining the taper, that is a flag.",
+    a: "Ask for the federal rebate to be itemised on the quote so you can see it applied. Confirm the battery brand and what the 10-year warranty covers. Confirm they service your address. And understand that the rebate tapers above 14kWh, so a bigger system does not earn a proportionally bigger discount. If a salesperson pushes size without explaining the taper, that is a flag.",
   },
   {
     q: "Does Apollo Energy Group cover my area?",
@@ -181,7 +181,7 @@ export default function ApolloEnergyReviewPage() {
               {[
                 ["Get the rebate itemised", "The federal Cheaper Home Batteries discount should appear on the quote, applied at the point of sale. If it is not itemised, ask for it to be."],
                 ["Understand the 14kWh taper", "The rebate pays the full rate only on the first 14kWh, then 60% up to 28kWh. A bigger battery does not earn a proportionally bigger discount. If size is pushed without this being explained, that is a flag."],
-                ["Pin down the warranty", "Confirm the battery brand and what the 10-year warranty actually covers: the cells, the inverter, labour, and what voids it."],
+                ["Pin down the warranty", "Confirm the battery brand and what the 10-year warranty covers: the cells, the inverter, labour, and what voids it."],
                 ["Confirm they cover your address", "Coverage is confirmed at quote stage. Put your postcode in and get it in writing before you plan around it."],
               ].map(([h, b], i) => (
                 <li key={h} className="flex gap-4">
@@ -232,7 +232,7 @@ export default function ApolloEnergyReviewPage() {
                 <Link href="/home-battery-rebate-australia" className="font-semibold text-[#0a7c42] hover:underline">
                   2026 battery rebate guide
                 </Link>{" "}
-                covers what you actually get.
+                covers what you get.
               </p>
             </div>
             <div className="mt-6">

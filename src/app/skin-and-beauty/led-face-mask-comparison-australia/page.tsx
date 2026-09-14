@@ -31,7 +31,7 @@ const faqs = [
   },
   {
     q: "What do the different light colours mean?",
-    a: "Devices are usually sold around wavelength rather than colour name, most commonly red and near-infrared, with some adding blue. The Omnilux Contour Face, for example, states 633nm red and 830nm near-infrared on the brand's own product page. What matters when comparing devices is that the wavelengths and the number of LEDs are actually published: a device that does not state them cannot be compared with one that does.",
+    a: "Devices are usually sold around wavelength rather than colour name, most commonly red and near-infrared, with some adding blue. The Omnilux Contour Face, for example, states 633nm red and 830nm near-infrared on the brand's own product page. What matters when comparing devices is that the wavelengths and the number of LEDs are published: a device that does not state them cannot be compared with one that does.",
   },
   {
     q: "Is a cheaper LED mask worth it?",
@@ -47,7 +47,7 @@ export default function Page() {
       slug="/skin-and-beauty/led-face-mask-comparison-australia"
       crumb="LED face masks"
       h1={<>LED face masks in Australia: <span className="italic text-[#0a7c42]">what they cost here</span></>}
-      intro="At-home LED devices are one of the few skincare categories where the Australian price gap is large, visible and easy to misread. Here is what the numbers actually are, and what to check on a listing before you spend several hundred dollars."
+      intro="At-home LED devices are one of the few skincare categories where the Australian price gap is large, visible and easy to misread. Here is what the numbers are, and what to check on a listing before you spend several hundred dollars."
       headline="LED face masks in Australia: what they cost"
       description={seoConfig.ledFaceMask.description}
       faqs={faqs}
@@ -104,8 +104,8 @@ export default function Page() {
           and most of the difference is accounted for before anyone has taken extra margin.
         </p>
         <p className="mt-3">
-          The part worth weighing is not the gap itself but what the local price buys you: Australian consumer guarantees,
-          a local warranty path, and a supplier the ACCC can reach. Importing to save the difference gives up all three,
+          What the local price buys is Australian consumer guarantees, a local warranty path, and a supplier the ACCC
+          can reach. Importing to save the difference gives up all three,
           which is a reasonable trade to make knowingly and a poor one to make by accident.
         </p>
       </section>

@@ -17,18 +17,18 @@ export const metadata = generateSEOMetadata(seoConfig.skincareCostPerUse);
 const faqs = [
   {
     q: "How do you work out skincare cost per use?",
-    a: "Divide the price by the number of applications the bottle holds. Applications are volume divided by how much you use each time, so a 30ml serum used at 0.5ml per application gives 60 uses. Illustratively, a $90 serum at 60 uses costs $1.50 per application. The figure only means something if you are honest about how much you actually dispense, which for most people is more than they think.",
+    a: "Divide the price by the number of applications the bottle holds. Applications are volume divided by how much you use each time, so a 30ml serum used at 0.5ml per application gives 60 uses. Illustratively, a $90 serum at 60 uses costs $1.50 per application. The figure only means something if you are honest about how much you dispense, which for most people is more than they think.",
   },
   {
     q: "Is expensive skincare worth it?",
-    a: "Sometimes, and cost per use is how you tell. A concentrated product used sparingly can cost less per application than a cheap one you get through in six weeks. What price never tells you is whether the formulation suits your skin, so treat cost per use as a way to compare two products you would genuinely consider, not as a way to pick between products you know nothing about.",
+    a: "Sometimes, and cost per use is how you tell. A concentrated product used sparingly can cost less per application than a cheap one you get through in six weeks. What price never tells you is whether the formulation suits your skin, so treat cost per use as a way to compare two products you would consider, not as a way to pick between products you know nothing about.",
   },
   {
     q: "Where does the cost-per-use calculation mislead you?",
-    a: "In three places. It rewards large bottles that expire before you finish them, particularly anything with an active that degrades once opened. It ignores whether you will actually keep using the product. And it flatters products you under-apply, which lowers cost per use while also lowering the chance of any result. A cheap number achieved by using too little is not a saving.",
+    a: "In three places. It rewards large bottles that expire before you finish them, particularly anything with an active that degrades once opened. It ignores whether you will keep using the product. And it flatters products you under-apply, which lowers cost per use while also lowering the chance of any result. A cheap number achieved by using too little is not a saving.",
   },
   {
-    q: "How much product should I actually be using?",
+    q: "How much product should I be using?",
     a: "Enough to cover the area evenly, which for a facial serum is commonly cited as around a pea-sized amount and for sunscreen is substantially more than most people apply. Under-applying sunscreen is the clearest example of a false economy: the bottle lasts longer, and the protection you are paying for is not what you get.",
   },
   {
@@ -46,7 +46,7 @@ export default function Page() {
       crumb="Cost per use"
       h1={<>Skincare value: <span className="italic text-[#0a7c42]">work in cost per use, not sticker price</span></>}
       intro="A $30 moisturiser you replace every six weeks is more expensive than a $90 one that lasts eight months. Sticker price hides that completely. Here is the arithmetic, and the three places it quietly lies to you."
-      headline="Skincare cost per use: what Australians actually pay"
+      headline="Skincare cost per use: what Australians pay"
       description={seoConfig.skincareCostPerUse.description}
       faqs={faqs}
       related={[

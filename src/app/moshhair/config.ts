@@ -64,7 +64,7 @@ export const moshHairConfig: AffiliatePageConfig = {
     h1Prefix: "Mosh discount code Australia:",
     h1Highlight: "55% off your first order",
     subheading:
-      "If you're weighing up Mosh for hair loss, here's what matters before you start: how the service actually works, what it really costs, and how it compares to a GP and to topical brands like Dense. Mosh's new-customer offer is 55% off your first order, which is what the code REFERAL55 applies, carried by the link so there is nothing to type.",
+      "If you're weighing up Mosh for hair loss, here's what matters before you start: how the service works, what it costs, and how it compares to a GP and to topical brands like Dense. Mosh's new-customer offer is 55% off your first order, which is what the code REFERAL55 applies, carried by the link so there is nothing to type.",
     trustBullets: [
       "How the Mosh service and practitioner review work",
       "How the cost and subscription model work",
@@ -90,7 +90,7 @@ export const moshHairConfig: AffiliatePageConfig = {
       ctaText: "Access the Mosh Referral Link",
     },
     {
-      heading: "What Mosh actually is",
+      heading: "What Mosh is",
       paragraphs: [
         "Mosh is an Australian men's-health telehealth service, and hair loss is one of its core categories. You fill in a questionnaire and upload a couple of photos, a registered Australian practitioner reviews your case, and, if it's appropriate, you're put on a subscription with treatment posted to your door. No waiting room, no GP appointment to get started.",
         "What makes it more than a vending machine is the review step. Not everyone who applies is suitable; the practitioner can decline or redirect you, which is exactly what you'd want a prescriber to do. The trade-off is that it's built for the common case, straightforward male-pattern thinning, rather than complex or unusual hair loss, where an in-person specialist is the better call.",
@@ -110,7 +110,7 @@ export const moshHairConfig: AffiliatePageConfig = {
         "Any treatment is prescription-only where relevant and depends on assessment by a registered practitioner. This page does not name or recommend any specific medicine and is not medical advice.",
     },
     {
-      heading: "What Mosh really costs",
+      heading: "What Mosh costs",
       paragraphs: [
         "There's no single Mosh price, and any page quoting you one exact figure is guessing. It's a subscription, and what you pay tracks the plan your consult lands on. The fee bundles any treatment, the practitioner oversight, and delivery.",
         "It's priced like an ongoing service rather than a one-off purchase, because that's what managing hair loss usually is: consistency matters. You'll see the actual numbers in the consult before you commit to anything, so you know exactly what you'd pay month to month before signing up.",
@@ -226,7 +226,7 @@ export const moshHairConfig: AffiliatePageConfig = {
     {
       href: "/mosh-review",
       label: "Mosh Review: Is It Legit & Worth It?",
-      desc: "An independent look at whether Mosh stacks up, what it costs, and what people actually raise.",
+      desc: "An independent look at whether Mosh stacks up, what it costs, and what people raise.",
     },
     {
       href: "/best-hair-loss-treatment-australia",

@@ -151,7 +151,7 @@ export default function Page() {
         </section>
 
         <section className="mt-12">
-          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">What will it actually run?</h2>
+          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">What will it run?</h2>
           <p className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">
             Divide capacity by draw and take roughly 15% off for inverter losses. A 1,000Wh unit against a 100W load is
             about eight hours on paper and closer to seven in practice.

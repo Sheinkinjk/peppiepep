@@ -11,7 +11,7 @@ const SLUG = "/longevity/recovery/recovery-setup-quiz";
 const faqs = [
   {
     q: "Does this quiz ask about my health?",
-    a: "No. It asks about how often you would use a setup, what space you have, your budget and your climate. Those are the four things that actually determine what suits you, and none of them requires knowing anything about your health.",
+    a: "No. It asks about how often you would use a setup, what space you have, your budget and your climate. Those are the four things that determine what suits you, and none of them requires knowing anything about your health.",
   },
   {
     q: "Does it recommend a brand?",

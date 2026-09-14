@@ -86,7 +86,7 @@ export default function MoshyAlternativesPage() {
         </h1>
         <p className="text-[#3d4b44] text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
           People search for Moshy alternatives for good reasons: comparing before committing, or the service was not
-          the right fit. The shortlist is genuinely short, and here it is without padding.
+          the right fit. The shortlist is short, and here it is without padding.
         </p>
         {/* Below the lead. The first paragraph after the h1 is the answer;
             a disclosure in that slot is what an engine lifts instead. Still
@@ -122,7 +122,7 @@ export default function MoshyAlternativesPage() {
           <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
             A GP can manage a weight pathway in person, sees your whole health picture,
             and Medicare offsets part of the cost. What you give up is convenience and, for some people, the willingness to
-            start at all. If you would genuinely book the appointment, this is a strong option. We compared the two
+            start at all. If you would book the appointment, this is a strong option. We compared the two
             routes properly in{" "}
             <Link href="/moshy-vs-gp" className="underline decoration-[#cdd5cf] underline-offset-2 hover:text-[#10251b]" style={{ color: CYAN }}>
               Moshy vs your GP

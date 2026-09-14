@@ -137,7 +137,7 @@ export default function MatchQuiz({ config }: { config: MatchConfig }) {
             source={config.source}
             interest={config.interest(result)}
             heading={config.newsletterHeading ?? "Want your result and the best current deals emailed to you?"}
-            sub={config.newsletterSub ?? "We'll send your match plus any genuinely good offers we verify. No spam."}
+            sub={config.newsletterSub ?? "We'll send your match plus any good offers we verify. No spam."}
           />
         </div>
 
