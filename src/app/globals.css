@@ -273,23 +273,7 @@
   }
 }
 
-@keyframes section-rise {
-  from {
-    opacity: 0;
-    transform: translateY(16px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 @media (prefers-reduced-motion: no-preference) {
-  main > section,
-  main > header {
-    animation: section-rise 0.7s ease both;
-  }
-
   :where(main) :is(.rounded-xl, .rounded-2xl, .rounded-3xl).border {
     transition-property: box-shadow, transform, border-color, background-color;
     transition-duration: 260ms;

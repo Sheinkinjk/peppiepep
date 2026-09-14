@@ -15,9 +15,10 @@ import { GROUPS, DIRECT } from "@/lib/nav";
  * same order.
  *
  * Tapping a category opens its links in a panel underneath rather than
- * navigating, which is what the chevron promises. Every link stays in the
- * server HTML and is hidden with CSS, so the crawler sees the whole category
- * tree from any page: that is a large part of what the header is for.
+ * navigating, which is what the chevron promises. The panel mounts only while
+ * open (14 Sep 2026): the desktop HeaderNav already puts every category link in
+ * the server HTML for crawlers, so rendering them a second time here shipped the
+ * whole nav twice on every page for no gain.
  */
 export default function MobileNav() {
   const [open, setOpen] = useState<string | null>(null);
@@ -56,19 +57,13 @@ export default function MobileNav() {
         ))}
       </nav>
 
-      {GROUPS.map((g) => {
-        const isOpen = open === g.label;
+      {GROUPS.filter((g) => g.label === open).map((g) => {
         return (
-          <div
-            key={g.label}
-            className={isOpen ? "mt-2 border-t border-[#eef1ef] pt-2" : "hidden"}
-            aria-hidden={!isOpen}
-          >
+          <div key={g.label} className="mt-2 border-t border-[#eef1ef] pt-2">
             {g.items.map((it) => (
               <Link
                 key={it.href}
                 href={it.href}
-                tabIndex={isOpen ? 0 : -1}
                 onClick={() => setOpen(null)}
                 className="block rounded-xl px-2.5 py-2.5 transition-colors active:bg-[#f2f4ee]"
               >
