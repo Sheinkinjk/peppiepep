@@ -5,14 +5,15 @@ import { ArrowRight } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import EditorialMeta from "@/components/consumer/EditorialMeta";
 import InsuranceDisclosure from "@/components/consumer/InsuranceDisclosure";
-import { checkedOn } from "@/lib/offers";
+import { checkedOn, DEALS } from "@/lib/offers";
+import OffersTable from "@/components/lending/OffersTable";
 import OfferSchema from "@/components/offers/OfferSchema";
 
 import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 export const metadata = generateSEOMetadata(seoConfig.knose);
 
 const SLUG = "/knose";
-const UPDATED = "2026-08-04";
+const UPDATED = "2026-09-14";
 
 const faqs = [
   {
@@ -121,6 +122,12 @@ export default function KnosePage() {
               </Link>
             </div>
           </header>
+
+          {/* Offer at a glance, the same structured table /moshy and /moshhair carry
+              under their hero (14 Sep 2026): code, what it gives, and its reading date. */}
+          <section className="mb-8">
+            <OffersTable deals={DEALS.filter((d) => d.brand === "Knose")} caption="Knose promo code and current offer, verified" />
+          </section>
 
           <InsuranceDisclosure className="mb-10" />
 

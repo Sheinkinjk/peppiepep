@@ -4,7 +4,8 @@ import { ArrowRight, Check } from "lucide-react";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import EditorialMeta from "@/components/consumer/EditorialMeta";
-import { checkedOn } from "@/lib/offers";
+import { checkedOn, DEALS } from "@/lib/offers";
+import OffersTable from "@/components/lending/OffersTable";
 import OfferSchema from "@/components/offers/OfferSchema";
 
 import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
@@ -12,7 +13,7 @@ export const metadata = generateSEOMetadata(seoConfig.petsonme);
 
 const SLUG = "/petsonme";
 const GREEN = "#0a7c42";
-const UPDATED = "2026-08-17";
+const UPDATED = "2026-09-14";
 
 // Every figure below is read off PetsOnMe's own compare-cover page (checked
 // 17 August 2026). Nothing is estimated. Premiums are NOT published, so none
@@ -112,12 +113,17 @@ export default function PetsOnMePage() {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="/logos/petsonme.svg" alt="PetsOnMe logo" width={161} height={45} className="mt-5 h-9 w-auto" />
         <h1 className="mt-4 text-3xl font-extrabold leading-[1.08] tracking-tight text-[#10251b] sm:text-4xl">
-          PetsOnMe pet insurance: the cover, and what the REFERLABS code gives you
+          PetsOnMe discount code <span className="text-[#0a7c42]">REFERLABS</span>: 15% off pet care services
         </h1>
+        {/* Offer-first, the /moshy and /moshhair pattern (14 Sep 2026). The object of the
+            discount stays in the h1 and the first sentence: it is the pet care services,
+            never the premium, and saying "15% off" alone would misdescribe it (ACL s29). */}
         <p className="mt-5 text-base leading-relaxed text-[#3d4b44] sm:text-lg">
-          PetsOnMe is an Australian pet insurance provider offering three levels of cover, all paying 80% of the
-          eligible vet bill less your excess. This page sets out what each plan includes, what the code does and does
-          not do, and what to check before you buy. It is general information, not financial advice.
+          The current PetsOnMe discount code is <strong className="text-[#10251b]">REFERLABS</strong>. Once you hold a
+          policy it takes the discount on PetsOnMe&apos;s pet care services from 12% to{" "}
+          <strong className="text-[#10251b]">15%</strong>; it does not reduce the insurance premium. PetsOnMe offers three
+          levels of cover, all paying 80% of the eligible vet bill less your excess. General information, not financial
+          advice.
         </p>
         {/* Below the lead. The first paragraph after the h1 is the answer;
             a disclosure in that slot is what an engine lifts instead. Still
@@ -139,10 +145,9 @@ export default function PetsOnMePage() {
           <h2 className="text-xl font-bold text-[#10251b] sm:text-2xl">What does the REFERLABS code give you?</h2>
           <div className="mt-4 rounded-xl border border-[#cfe6da] bg-[#e8f5ee] px-6 py-5">
             <p className="text-[15px] leading-relaxed text-[#2b362f]">
-              It upgrades the discount on PetsOnMe&apos;s pet care services from the usual 12% to 15% once you hold a
-              policy, covering dog walking, dog minding, pet sitting, doggy day care, house sitting and grooming. To be
-              precise, because it matters: this is a discount on those services, not on the insurance premium. Enter{" "}
-              <strong className="font-semibold text-[#10251b]">{PETSONME_CODE}</strong> when you take out the policy.
+              Enter <strong className="font-semibold text-[#10251b]">{PETSONME_CODE}</strong> when you take out the
+              policy. The 15% then applies to dog walking, dog minding, pet sitting, doggy day care, house sitting and
+              grooming booked through PetsOnMe, up from the 12% every policyholder gets. The premium is priced as normal.
             </p>
           </div>
         </section>
@@ -150,6 +155,11 @@ export default function PetsOnMePage() {
         <div className="mt-6">
           <Cta label={`Compare PetsOnMe cover (code ${PETSONME_CODE})`} loc="petsonme-hero" />
         </div>
+
+        {/* Offer at a glance, the same structured table /moshy and /moshhair carry. */}
+        <section className="mt-8">
+          <OffersTable deals={DEALS.filter((d) => d.brand === "PetsOnMe")} caption="PetsOnMe discount code and current offer, verified" />
+        </section>
 
         <p className="mt-6 rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] px-5 py-4 text-xs leading-relaxed text-[#3d4b44]">
           <span className="font-semibold text-[#2b362f]">General information only.</span> Refer Labs is not an insurer,
