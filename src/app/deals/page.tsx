@@ -6,6 +6,7 @@ import ConsumerShell from "@/components/consumer/ConsumerShell";
 import { FEATURED_DEALS, OTHER_DEALS, DEALS, formatVerifiedFull } from "@/lib/offers";
 import OfferSchema from "@/components/offers/OfferSchema";
 import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
+import { logoScale } from "@/lib/logo-optics";
 
 export const metadata = generateSEOMetadata(seoConfig.deals);
 
@@ -166,7 +167,7 @@ export default function DealsPage() {
                     <th scope="row" className="col-span-2 block text-left font-normal sm:table-cell sm:px-5 sm:py-4 sm:align-middle">
                       <span className="flex items-center gap-3">
                         <span className="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-[#eef1ef] bg-white">
-                          <Image src={d.logo} alt="" width={28} height={28} className="h-7 w-7 object-contain" />
+                          <Image src={d.logo} alt="" width={28} height={28} className="h-7 w-7 object-contain" style={{ transform: `scale(${logoScale(d.logo)})` }} />
                         </span>
                         <span className="min-w-0">
                           <Link href={d.href} className="block font-bold leading-tight text-[#10251b] hover:text-[#0a7c42]">

@@ -6,22 +6,20 @@
 # noindex tag. Disallowing a page that also carries noindex means Google can never
 # see the directive, so an already-indexed URL can never be dropped. Pages below
 # that carry noindex in their metadata are therefore deliberately NOT disallowed
-# here: /login, /referred,
-# /roi-calculator (301), /security, /integrations + children.
+# here: /login, /roi-calculator (301), /integrations + children.
+#
+# Pages that return 410 Gone (the retired SaaS: /status, /go-live, /analytics,
+# /calendly, /dashboard-test, the integration docs) are also left crawlable, so
+# crawlers can read the 410 and drop them.
 #
 User-agent: *
 Allow: /
 # Private / authenticated (no content to index; auth-redirects before render)
 Disallow: /dashboard/
-Disallow: /dashboard-test/
 Disallow: /api/
 Disallow: /auth/
 # Internal / utility pages (dev checklists, tools - no public SEO value)
-Disallow: /go-live
-Disallow: /status
-Disallow: /analytics
 Disallow: /application
-Disallow: /calendly
 # Personalised referral links (redirect out to affiliate destinations)
 Disallow: /go/
 Disallow: /r/
@@ -32,7 +30,7 @@ Disallow: /payment/
 # ── AI / generative answer engines (GEO) ──
 # Explicitly allowed to crawl and cite Refer Labs content. See /llms.txt for a curated index.
 # Disallow list is IDENTICAL to the `*` group above: the same private/utility paths,
-# and, like `*`, the noindex pages (/login, /referred) are deliberately left
+# and, like `*`, the noindex and 410 pages are deliberately left
 # crawlable so any
 # engine with an index can see the noindex and drop them, rather than being blind to it.
 User-agent: GPTBot
@@ -50,14 +48,9 @@ User-agent: Amazonbot
 User-agent: meta-externalagent
 Allow: /
 Disallow: /dashboard/
-Disallow: /dashboard-test/
 Disallow: /api/
 Disallow: /auth/
-Disallow: /go-live
-Disallow: /status
-Disallow: /analytics
 Disallow: /application
-Disallow: /calendly
 Disallow: /go/
 Disallow: /r/
 Disallow: /me/

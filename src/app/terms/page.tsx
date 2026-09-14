@@ -29,7 +29,7 @@ export default function Terms() {
           Terms of Service
         </h1>
         <p className="mt-4 text-sm text-[#9aa39c]">
-          Last updated: 25 August 2026
+          Last updated: 14 September 2026
         </p>
 
         <div className="mt-10 space-y-8">
@@ -328,7 +328,7 @@ export default function Terms() {
             <div>
               <h2 className="text-2xl font-bold text-[#10251b] mb-4">11. Third-Party Services and Integrations</h2>
               <p className="text-[#2b362f] mb-3">
-                The Service relies on third-party services including Resend (email), Supabase (database), Stripe (payments), and Vercel (hosting). We also link to the providers we compare; following an affiliate link takes you to their site, where their own terms apply.
+                The Service relies on third-party services including Resend (email), Supabase (database) and Vercel (hosting). We also link to the providers we compare; following an affiliate link takes you to their site, where their own terms apply.
               </p>
               <p className="text-[#2b362f]">
                 Pepform is not responsible for the availability, performance, or actions of third-party services. Any disputes with third-party providers are solely between you and that provider. Pepform disclaims all liability for third-party service failures or interruptions.
@@ -450,7 +450,7 @@ export default function Terms() {
 
               <h3 className="text-lg font-bold text-[#10251b] mb-2">18.1 Governing Law</h3>
               <p className="text-[#2b362f] mb-4">
-                These Terms shall be governed by and construed in accordance with the laws of New South Wales, Australia, without regard to conflict of law principles. The United Nations Convention on Contracts for the International Sale of Goods shall not apply.
+                These Terms shall be governed by and construed in accordance with the laws of Victoria, Australia, without regard to conflict of law principles. The United Nations Convention on Contracts for the International Sale of Goods shall not apply.
               </p>
 
               <h3 className="text-lg font-bold text-[#10251b] mb-2">18.2 Informal Dispute Resolution</h3>
@@ -460,7 +460,7 @@ export default function Terms() {
 
               <h3 className="text-lg font-bold text-[#10251b] mb-2">18.3 Jurisdiction and Venue</h3>
               <p className="text-[#2b362f] mb-4">
-                If informal resolution fails, any dispute arising from these Terms or the Service shall be resolved exclusively in the courts located in Sydney, New South Wales, Australia. You irrevocably submit to the exclusive jurisdiction of those courts and waive any objection to venue or inconvenient forum. Service of notices may be effected by email to jarred@referlabs.com.au; a postal address for formal service is available on request.
+                If informal resolution fails, any dispute arising from these Terms or the Service shall be resolved exclusively in the courts located in Melbourne, Victoria, Australia. You irrevocably submit to the exclusive jurisdiction of those courts and waive any objection to venue or inconvenient forum. Service of notices may be effected by email to jarred@referlabs.com.au; a postal address for formal service is available on request.
               </p>
 
               <h3 className="text-lg font-bold text-[#10251b] mb-2">18.4 Time Limit for Claims</h3>

@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono, Space_Grotesk } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { StickyHeader } from "@/components/StickyHeader";
 import Footer from "@/components/layout/Footer";
@@ -29,17 +29,12 @@ const geistSans = Geist({
   preload: true,
 });
 
-// Not preloaded: mono is rarely on-screen and the display face is legacy-theme
-// only. Preloading them competed with the primary Geist for the LCP text.
+// Not preloaded: mono is rarely on-screen. Preloading it competed with the
+// primary Geist for the LCP text. Space Grotesk was dropped on 14 Sep 2026: a
+// global h1-h6 rule forced it onto every heading, including the consumer shell,
+// whose design is Geist throughout; it cost a font download on every page.
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
-  subsets: ["latin"],
-  display: "swap",
-  preload: false,
-});
-
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-display",
   subsets: ["latin"],
   display: "swap",
   preload: false,
@@ -75,7 +70,7 @@ export default function RootLayout({
         <WebsiteSchema />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${spaceGrotesk.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <a
           href="#main-content"

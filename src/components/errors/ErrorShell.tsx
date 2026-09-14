@@ -102,17 +102,6 @@ export function ErrorShell({
             </Button>
           )}
 
-          <Button
-            asChild
-            variant="outline"
-            className="w-full border-2 border-gray-200 text-gray-700 font-semibold py-3 px-6 rounded-xl hover:bg-gray-50"
-          >
-            <Link href="/status">
-              <Activity className="mr-2 h-4 w-4" />
-              Status page
-            </Link>
-          </Button>
-
           {showLogin && (
             <Button
               asChild

@@ -48,6 +48,28 @@ const GONE = [
   // closest-live-page for "attorney referral fee rules by state" on a site
   // about Australian consumer comparisons, which is what 410 is for.
   '/blog/attorney-referral-fee-rules-state-guide',
+  // The rest of the retired referral SaaS (14 Sep 2026): integration docs that
+  // published the old capture-secret header name, the status and security pages,
+  // the go-live checklist, the ambassador join and stats pages, and a debug page.
+  // Same reasoning as the integration docs above: no live page answers them.
+  '/analytics',
+  '/api-guide',
+  '/dashboard-test',
+  '/go-live',
+  '/gtm',
+  '/hubspot',
+  '/meta-ads',
+  '/r/ambassador-join',
+  '/r/referral',
+  '/referred',
+  '/security',
+  '/servicem8',
+  '/shopify',
+  '/square',
+  '/status',
+  '/wix',
+  '/wordpress',
+  '/zapier',
 ]
 
 function isGone(pathname: string): boolean {

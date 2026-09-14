@@ -179,6 +179,8 @@ const nextConfig: NextConfig = {
       // The :path* rule catches all 17 sub-pages, so they 301 rather than 404.
       { source: '/services', destination: '/for-business', permanent: true },
       { source: '/services/:path*', destination: '/for-business', permanent: true },
+      // Retired SaaS partner-channel page (14 Sep 2026), closest live intent is the business door.
+      { source: '/referral-partnerships', destination: '/for-business', statusCode: 301 },
       // Apollo EOI merged into the main /apollo-energy-group page (data-capture-first).
       { source: '/apollo-energy-group-eoi', destination: '/apollo-energy-group', permanent: true },
       {

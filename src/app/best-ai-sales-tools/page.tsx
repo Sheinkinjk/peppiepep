@@ -2,6 +2,7 @@ import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, compariso
 import { CheckCircle2, XCircle, ArrowRight, ExternalLink } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { logoScale } from "@/lib/logo-optics";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
 import MatchPrompt from "@/components/consumer/MatchPrompt";
@@ -336,6 +337,7 @@ export default function BestAiSalesToolsPage() {
                       width={40}
                       height={40}
                       className="h-9 w-9 object-contain"
+                      style={{ transform: `scale(${logoScale(t.logo + ".png")})` }}
                     />
                   </span>
                   <div>

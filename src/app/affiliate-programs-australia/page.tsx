@@ -5,6 +5,7 @@ import ConsumerShell from "@/components/consumer/ConsumerShell";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 import { BEEHIIV_URL, CARRD_URL } from "@/lib/affiliate-links";
+import { logoScale } from "@/lib/logo-optics";
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
 
 // Programs we've reviewed in depth, linked to our own pages (which carry the
@@ -273,7 +274,7 @@ export default function AffiliateProgramsAustraliaPage() {
                   className="group flex items-center gap-3 rounded-xl border border-[#e5e9e7] bg-[#fbfcfb] p-3.5 transition-all hover:-translate-y-0.5 hover:border-[#0a7c42]/40 hover:bg-white"
                 >
                   <span className="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-[#eef1ef] bg-white">
-                    <Image src={`/logos/${r.logo}.png`} alt={`${r.name} logo`} width={32} height={32} className="h-7 w-7 object-contain" />
+                    <Image src={`/logos/${r.logo}.png`} alt={`${r.name} logo`} width={32} height={32} className="h-7 w-7 object-contain" style={{ transform: `scale(${logoScale(r.logo + ".png")})` }} />
                   </span>
                   <div className="min-w-0">
                     <p className="truncate text-sm font-bold text-[#10251b] transition-colors group-hover:text-[#0a7c42]">{r.name}</p>
