@@ -8,7 +8,6 @@ import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 import { SITE_URL } from "@/lib/seo";
 import BrandMark from "@/components/consumer/BrandMark";
 
-import { DEALS, formatVerifiedFull } from "@/lib/offers";
 // Top picks lead with the real brand logo, the single biggest thing that
 // makes a comparison site read as a real publication rather than a template.
 // The three shown are one health, one insurance, one software: a deliberate
@@ -23,16 +22,6 @@ const picks = [
   { logo: "knose", name: "Knose", cat: "Pets", offer: "First 2 months free", verdict: "Australian pet insurance, with the cover, waiting periods and exclusions set out before you get a quote.", href: "/knose" },
   { logo: "superfiliate", name: "Superfiliate", cat: "Creator growth", offer: "15% off your monthly fee", verdict: "Creator-led affiliate and referral software: partner storefronts and code-based attribution in one place.", href: "/superfiliate" },
 ];
-
-// Oldest reading date across the three picks above, so the homepage dates its
-// offer claims without hardcoding a date that could outlive the check.
-const picksOldestCheck = (() => {
-  const dates = picks
-    .map((p) => DEALS.find((d) => d.href === p.href)?.verified)
-    .filter((v): v is string => Boolean(v))
-    .sort();
-  return dates.length ? formatVerifiedFull(dates[0]) : "a date recorded on each provider page";
-})();
 
 // Six category cards that route link equity INWARD to the money hubs (mirrors
 // the header taxonomy). This replaced a wall of outbound affiliate logos: the
@@ -306,15 +295,6 @@ export default function HomePage() {
                 All current offers <ArrowRight className="h-3.5 w-3.5" />
               </Link>
             </div>
-            {/* These cards name codes and amounts, so they carry a reading date like
-                every other offer statement on the site. Derived from the DEALS rows
-                the cards come from, so it cannot drift from the offer it dates. The
-                oldest of the three is shown: it is the weakest claim of the set and
-                therefore the honest one to lead with. */}
-            <p className="-mt-4 mb-8 text-xs text-[#6e7b74]">
-              Each offer below was read off the provider&apos;s own page, the oldest of them on{" "}
-              {picksOldestCheck}.
-            </p>
             <div className="grid gap-5 sm:grid-cols-3">
               {picks.map((p) => (
                 <Link key={p.href} href={p.href} className="group flex flex-col rounded-2xl border border-[#e5e9e7] bg-white p-6 transition-all hover:-translate-y-0.5 hover:border-[#cfe6da] hover:shadow-[0_22px_50px_-26px_rgba(14,124,66,0.45)]">
@@ -514,7 +494,9 @@ export default function HomePage() {
         </section>
 
         {/* ── Newsletter CTA (audience acquisition) ── */}
-        <section className="mx-auto max-w-6xl px-5 pb-20 sm:px-8">
+        {/* pt added 14 Sep 2026: the FAQ above is a full-width white band, and with
+            no top padding the card's border sat flush on that band's bottom edge. */}
+        <section className="mx-auto max-w-6xl px-5 pb-20 pt-14 sm:px-8 sm:pt-16">
           <NewsletterSignup variant="band" source="home" />
         </section>
 
