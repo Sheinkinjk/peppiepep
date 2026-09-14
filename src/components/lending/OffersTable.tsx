@@ -24,10 +24,12 @@ export default function OffersTable({
   // Extract the dollar/percent saving from the offer string for a tight column.
   const saving = (o: string) => (o.match(/\$[\d,]+|\d+%/) || [o])[0];
   return (
-    <div className="overflow-x-auto rounded-2xl border border-[#e5e9e7]">
+    // Below sm each row stacks into a card rather than scrolling sideways, the same
+    // pattern as the /deals table (14 Sep 2026). Styling only: same cells, same order.
+    <div className="rounded-2xl border border-[#e5e9e7] sm:overflow-x-auto">
       <table className="w-full border-collapse text-left text-sm">
         {caption && <caption className="sr-only">{caption}</caption>}
-        <thead>
+        <thead className="hidden sm:table-header-group">
           <tr className="bg-[#f8faf9] text-[11px] font-bold uppercase tracking-[0.08em] text-[#6e7b74]">
             <th scope="col" className="px-4 py-3">Provider</th>
             <th scope="col" className="px-4 py-3">Best offer</th>
@@ -39,17 +41,18 @@ export default function OffersTable({
         </thead>
         <tbody className="text-[#3d4b44]">
           {deals.map((d) => (
-            <tr key={d.brand} className="border-t border-[#eef1ef]">
-              <th scope="row" className="px-4 py-3 font-semibold text-[#10251b]">
+            <tr key={d.brand} className="block border-t border-[#eef1ef] px-4 py-4 first:border-t-0 sm:table-row sm:p-0 sm:first:border-t">
+              <th scope="row" className="block text-[15px] font-semibold text-[#10251b] sm:table-cell sm:px-4 sm:py-3 sm:text-sm">
                 {d.href ? (
                   <Link href={d.href} className="hover:text-[#0a7c42] hover:underline">{d.brand}</Link>
                 ) : (
                   d.brand
                 )}
               </th>
-              <td className="px-4 py-3">{d.offer}</td>
-              <td className="px-4 py-3 font-semibold tabular-nums text-[#10251b]">{saving(d.offer)}</td>
-              <td className="px-4 py-3 font-mono text-[13px]">
+              <td className="mt-1 block sm:mt-0 sm:table-cell sm:px-4 sm:py-3">{d.offer}</td>
+              <td className="hidden px-4 py-3 font-semibold tabular-nums text-[#10251b] sm:table-cell">{saving(d.offer)}</td>
+              <td className="mt-3 block font-mono text-[13px] sm:mt-0 sm:table-cell sm:px-4 sm:py-3">
+                <span className="font-sans text-xs text-[#6e7b74] sm:hidden">Code </span>
                 {d.code ?? "No code needed"}
                 {d.exclusive && (
                   <span className="ml-2 rounded-full bg-[#e8f5ee] px-2 py-0.5 font-sans text-[10px] font-bold uppercase tracking-wide text-[#0a7c42]">
@@ -57,14 +60,15 @@ export default function OffersTable({
                   </span>
                 )}
               </td>
-              <td className="px-4 py-3"><span className="inline-flex items-center gap-1 font-medium text-[#0a7c42]">Active ✓</span></td>
+              <td className="mr-3 mt-3 inline-block sm:mr-0 sm:mt-0 sm:table-cell sm:px-4 sm:py-3"><span className="inline-flex items-center gap-1 font-medium text-[#0a7c42]">Active ✓</span></td>
               {/* No fallback to the global sweep date. The footnote below promises
                   each date is a reading of that provider's own page, and rows without
                   a per-offer `verified` were inheriting the site-wide stamp and
                   presenting it as such a reading. Pipedrive is the last such row:
                   its pricing page blocks automated fetching, so dating it needs a
                   manual visit. */}
-              <td className="px-4 py-3 whitespace-nowrap tabular-nums">
+              <td className="mt-3 inline-block whitespace-nowrap tabular-nums text-xs text-[#6e7b74] sm:mt-0 sm:table-cell sm:px-4 sm:py-3 sm:text-sm sm:text-[#3d4b44]">
+                <span className="sm:hidden">Checked </span>
                 {d.verified ? formatVerifiedFull(d.verified) : <span className="text-[#6e7b74]">Not recorded</span>}
               </td>
             </tr>
