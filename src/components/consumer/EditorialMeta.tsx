@@ -1,8 +1,10 @@
 import Link from "next/link";
 
-// Reusable editorial trust signal: a real "Last updated" date plus a link to the
-// standing independence/disclosure statement. No author byline (Refer Labs
-// deliberately does not use personal bylines). Pass a real ISO date
+// Reusable editorial trust signal: the editor, a real "Last updated" date, and
+// links to the standing independence/disclosure statements. The editor line
+// ("Jarred, Founder") was added 15 Sep 2026 at Jarred's request so the author
+// every page's schema already names (src/lib/entities/authors.ts) is visible to
+// readers too, rather than existing only in JSON-LD. Pass a real ISO date
 // (YYYY-MM-DD), never a fabricated one; it should match the page's schema
 // dateModified.
 //
@@ -37,6 +39,13 @@ export default function EditorialMeta({
 }) {
   return (
     <p className={`flex flex-wrap items-center gap-x-2 gap-y-1 text-[11px] leading-relaxed text-[#9aa39c] ${className}`}>
+      <span>
+        Editor{" "}
+        <Link href="/authors/jarred" className="text-[#6e7b74] transition-colors hover:text-[#3d4b44] hover:underline">
+          Jarred, Founder
+        </Link>
+      </span>
+      <span aria-hidden="true">·</span>
       <span>
         Last updated{" "}
         <time dateTime={lastUpdated} className="text-[#6e7b74]">

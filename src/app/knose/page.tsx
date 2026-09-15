@@ -175,6 +175,13 @@ export default function KnosePage() {
             </div>
           </section>
 
+          <div className="mb-10 flex flex-wrap gap-x-6 gap-y-2 border-t border-[#e5e9e7] pt-8 text-sm">
+            <Link href="/knose-vs-petsonme" className="nw-link">Knose vs PetsOnMe, compared</Link>
+            <Link href="/who-underwrites-pet-insurance-australia" className="nw-link">Who underwrites which pet insurer</Link>
+            <Link href="/best-pet-insurance-australia" className="nw-link">How to choose pet insurance</Link>
+            <Link href="/petsonme" className="nw-link">PetsOnMe: the offer</Link>
+          </div>
+
           <InsuranceDisclosure className="mb-16" />
         </div>
       </main>

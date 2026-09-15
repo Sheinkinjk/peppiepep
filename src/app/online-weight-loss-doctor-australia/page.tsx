@@ -295,6 +295,8 @@ export default function OnlineWeightLossDoctorAustraliaPage() {
                 <li><Link href="/moshy" className="nw-link">Moshy: the offer and how to start</Link></li>
                 <li><Link href="/moshy-review" className="nw-link">Our independent Moshy review</Link></li>
                 <li><Link href="/best-weight-loss-telehealth-australia" className="nw-link">Best weight-loss telehealth in Australia, compared</Link></li>
+                <li><Link href="/moshy-vs-juniper" className="nw-link">Moshy vs Juniper, side by side</Link></li>
+                <li><Link href="/cheapest-weight-loss-telehealth-australia" className="nw-link">The cheapest weight-loss telehealth routes</Link></li>
                 <li><Link href="/weight-loss" className="nw-link">The full weight-loss hub</Link></li>
               </ul>
             </section>

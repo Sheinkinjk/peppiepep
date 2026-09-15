@@ -176,8 +176,8 @@ export const moshyConfig: AffiliatePageConfig = {
 
   relatedLinks: [
     {
-      href: "/best-weight-loss-telehealth-australia",
-      label: "Best Weight Loss Telehealth Australia 2026",
+      href: "/moshy-vs-juniper",
+      label: "Moshy vs Juniper",
       desc: "Moshy vs Juniper compared: approach, eligibility, pricing, and our verdict.",
     },
     {
@@ -189,6 +189,11 @@ export const moshyConfig: AffiliatePageConfig = {
       href: "/best-weight-loss-telehealth-australia",
       label: "Best Weight Loss Telehealth in Australia",
       desc: "The leading Australian online weight-management providers, compared on model, cost and fit.",
+    },
+    {
+      href: "/cheapest-weight-loss-telehealth-australia",
+      label: "Cheapest Weight Loss Telehealth in Australia",
+      desc: "Subscription vs pay-as-you-go, and what the cheapest route actually costs.",
     },
     {
       href: "/guides",

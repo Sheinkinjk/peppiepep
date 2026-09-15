@@ -67,20 +67,9 @@ export const GROUPS: Group[] = [
       { href: "/for-business", label: "Partner with us", note: "Get discovered, generate leads, build distribution" },
     ],
   },
-  // Sections built ahead of their partners live together under one heading
-  // rather than as separate top-level groups. Two half-empty categories in the
-  // nav reads as an unfinished site; one honest "Coming soon" reads as a
-  // roadmap. Each becomes its own group when it has a checked provider.
-  {
-    label: "Coming Soon",
-    items: [
-      { href: "/coming-soon", label: "What's Coming", note: "The sections we're building, and when" },
-      { href: "/skin-and-beauty", label: "Skin & Beauty", note: "Actives, device prices, and the prescription route" },
-      { href: "/sleep", label: "Sleep", note: "Apnoea diagnosis, CPAP costs, mattresses" },
-      { href: "/mens-health", label: "Men's Health", note: "Access routes, costs and what is bulk-billed" },
-      { href: "/longevity", label: "Longevity", note: "Recovery, diagnostics and supplement evidence" },
-    ],
-  },
+  // "Coming Soon" left the header on 15 Sep 2026 at Jarred's request. The
+  // sections themselves stay live and linked from /coming-soon, /guides, the
+  // homepage and their hubs; only the header entry point was removed.
 ];
 
 /**

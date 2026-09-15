@@ -147,6 +147,12 @@ export default function WhatPetInsuranceCoversPage() {
             </Link>
           </section>
 
+          <div className="mb-12 flex flex-wrap gap-x-6 gap-y-2 text-sm">
+            <Link href="/who-underwrites-pet-insurance-australia" className="nw-link">Who underwrites which pet insurer</Link>
+            <Link href="/knose-vs-petsonme" className="nw-link">Knose vs PetsOnMe, compared</Link>
+            <Link href="/best-pet-insurance-australia" className="nw-link">How to choose pet insurance</Link>
+          </div>
+
           {/* Both partners, from the shared block used across the pet pages, so the
               offer and the wording about what each code discounts stay identical. */}
           <div className="mb-12">

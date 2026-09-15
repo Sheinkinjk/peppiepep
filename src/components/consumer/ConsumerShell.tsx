@@ -115,7 +115,7 @@ export default function ConsumerShell({ children }: { children: React.ReactNode 
           </div>
           <div className="mt-12 border-t border-[#e5e9e7] pt-6">
             <p className="text-xs text-[#9aa39c]">
-              © 2026 Refer Labs · Australia. Health content is general information only, not medical advice.
+              © 2026 Refer Labs · Australia · Editor: Jarred, Founder. Health content is general information only, not medical advice.
               Speak to a registered health practitioner about your own situation.
             </p>
           </div>
