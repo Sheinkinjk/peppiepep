@@ -21,7 +21,7 @@ const hubs = [
   { href: "/hair-loss", label: "Hair Loss", desc: "Clinical prescription treatment versus topical products." },
   { href: "/best-pet-insurance-australia", label: "Best Pet Insurance: How to Choose", desc: "The six things that decide what you get back: benefit percentage, annual limit, hereditary cover, waiting periods, excess and exclusions." },
   { href: "/knose-vs-petsonme", label: "Knose vs PetsOnMe", desc: "The two compared on published cover: benefit percentage, annual limits, excess and sub-limits." },
-  { href: "/petsonme", label: "PetsOnMe: Cover & Code", desc: `The Accidental, Classic and Deluxe plans, the 80% benefit, and what the REFERLABS code discounts. Read off PetsOnMe's own page on ${checkedOn("REFERLABS")}.` },
+  { href: "/petsonme", label: "PetsOnMe: Cover & Code", desc: `The Accidental, Classic and Deluxe plans, the 80% benefit, and what the REFERLABS code discounts. Confirmed directly with PetsOnMe on ${checkedOn("REFERLABS")}.` },
   { href: "/pet-insurance", label: "Pets", desc: "Cover types, waiting periods and exclusions explained, plus current offers. General information, not advice." },
   { href: "/coming-soon", label: "Coming Soon", desc: "The categories we are building before adding any provider, and what is already readable in each." },
   { href: "/skin-and-beauty", label: "Skin & Beauty", desc: "What skincare actives do, what devices cost here, and how the prescription route differs." },

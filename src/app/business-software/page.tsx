@@ -5,7 +5,7 @@ import ConsumerShell from "@/components/consumer/ConsumerShell";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 import SoftwareFinder, { type FinderGoal, type FinderProvider } from "@/components/consumer/SoftwareFinder";
 import { CATALOG } from "@/lib/catalog/catalog";
-import { DEALS, formatVerifiedFull } from "@/lib/offers";
+import { DEALS, formatVerifiedFull, checkMethod } from "@/lib/offers";
 
 export const metadata = generateSEOMetadata(seoConfig.businessSoftware);
 
@@ -209,7 +209,7 @@ export default function BusinessSoftwarePage() {
             <h2 className="text-2xl font-extrabold text-[#10251b]">Current offers</h2>
             <p className="mt-2 max-w-2xl text-sm leading-relaxed text-[#3d4b44]">
               Three of the tools we cover carry a real discount rather than a free trial anyone can
-              start direct. Each was read off the provider&apos;s own page on the date shown.
+              start direct. Each shows when we last checked it, and whether it was read off the provider&apos;s own page or confirmed directly with them.
             </p>
             <div className="mt-7 grid gap-4 sm:grid-cols-3">
               {featuredOffers.map((d) => (
@@ -222,7 +222,7 @@ export default function BusinessSoftwarePage() {
                   <p className="mt-2 text-[15px] font-bold leading-snug text-[#0a7c42]">{d.offer}</p>
                   {d.verified && (
                     <p className="mt-2 text-[11px] font-medium text-[#6e7b74]">
-                      Read off {d.brand}&apos;s own page on {formatVerifiedFull(d.verified)}.
+                      {checkMethod(d.brand, true)} on {formatVerifiedFull(d.verified)}.
                     </p>
                   )}
                   <span className="mt-auto inline-flex items-center gap-1.5 pt-5 text-sm font-semibold text-[#0a7c42]">

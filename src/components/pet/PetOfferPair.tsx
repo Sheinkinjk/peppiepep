@@ -35,7 +35,7 @@ export default function PetOfferPair({ ctaPrefix }: { ctaPrefix: string }) {
             periods, exclusions and limits are in Knose&apos;s PDS, so get a quote to see what would apply to your pet.
           </p>
           <p className="mt-2 text-[11px] font-medium text-[#6e7b74]">
-            Read off Knose&apos;s own page on 27 August 2026. Offers can change, so check the current terms before
+            Confirmed directly with Knose on 27 August 2026. Offers can change, so check the current terms before
             you sign up.
           </p>
           <div className="mt-6 flex flex-wrap items-center gap-3">

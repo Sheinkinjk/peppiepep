@@ -183,7 +183,7 @@ export default function Page() {
                 </Link>
               </div>
               <p className="mt-4 text-[11px] font-medium text-[#6e7b74]">
-                Read off Superfiliate&apos;s own partner page on 20 August 2026. Offers change; confirm current terms
+                Confirmed directly with Superfiliate on 20 August 2026. Offers change; confirm current terms
                 before you commit.
               </p>
             </div>

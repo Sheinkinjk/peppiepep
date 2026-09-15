@@ -74,25 +74,9 @@ export async function GET(request: NextRequest) {
       return NextResponse.redirect(`${requestUrl.origin}/login?error=${encodeURIComponent('Unable to establish a session. Please try again.')}`)
     }
 
-    const user = session.user
-
-    const { data: business, error: businessError } = await supabase
-      .from('businesses')
-      .select('id')
-      .eq('owner_id', user.id)
-      .maybeSingle()
-
-    if (businessError && businessError.code !== 'PGRST116') {
-      console.error('Business lookup error:', businessError)
-      return NextResponse.redirect(`${requestUrl.origin}/login?error=${encodeURIComponent('Unable to load your business profile')}`)
-    }
-
-    if (!business) {
-      return NextResponse.redirect(
-        `${requestUrl.origin}/login?needs_onboarding=true&next=${encodeURIComponent(nextPath)}`,
-      )
-    }
-
+    // The business-profile lookup and onboarding redirect went with the retired
+    // referral SaaS (15 Sep 2026): /login is staff sign-in only, and requiring a
+    // `businesses` row sent a signed-in admin back to a form that no longer exists.
     return NextResponse.redirect(`${requestUrl.origin}${nextPath}`)
   } catch (callbackError) {
     console.error('Unhandled auth callback error:', callbackError)

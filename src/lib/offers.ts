@@ -236,6 +236,24 @@ export function verifiedFor(code: string): string | undefined {
   return DEALS.find((d) => d.code === code)?.verified;
 }
 
+/**
+ * How an offer was checked, in words, derived from its DEALS row `source`.
+ *
+ * Added 15 Sep 2026. Every stamp used to say "read off <brand>'s own page",
+ * including for the five offers recorded here as `noPublicPage` (Apollo,
+ * Unbounce, Superfiliate, Knose, PetsOnMe): real offers, but agreed with the
+ * partner and published nowhere, so there was no page to read them off. The
+ * stamp now says what was actually done, and cannot drift from the record.
+ */
+export function checkMethod(brand: string, capitalise = false): string {
+  const deal = DEALS.find((d) => d.brand === brand);
+  const phrase =
+    deal?.source && "noPublicPage" in deal.source
+      ? `confirmed directly with ${brand}`
+      : `read off ${brand}'s own page`;
+  return capitalise ? phrase.charAt(0).toUpperCase() + phrase.slice(1) : phrase;
+}
+
 /** "2026-08-17" -> "17 August 2026", for a check date printed beside a code. */
 export function checkedOn(code: string): string | null {
   const v = verifiedFor(code);

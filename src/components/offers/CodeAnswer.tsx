@@ -1,4 +1,4 @@
-import { OFFER_FACTS, checkedOn } from "@/lib/offers";
+import { OFFER_FACTS, checkedOn, checkMethod } from "@/lib/offers";
 
 /**
  * The answer to "what is the <brand> discount code", stated so it survives being
@@ -79,7 +79,7 @@ export default function CodeAnswer({
            that has to sit beside the code; the caveat already appears once per
            page via the disclaimer, HubOffer, PetOfferPair or the offers table. */
         <p className="mt-2 text-[12px] font-medium text-[#5c6b63]">
-          Verified by Refer Labs on {checked}, read off {facts.brand}&apos;s own page.
+          Verified by Refer Labs on {checked}, {checkMethod(facts.brand)}.
         </p>
       ) : hideDate ? null : (
         /* Dormant since 27 August 2026: every code in OFFER_FACTS now carries a

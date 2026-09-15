@@ -2884,8 +2884,8 @@ export const seoConfig = {
   },
 
   login: {
-    title: "Login - Access your dashboard",
-    description: "Log in to your Refer Labs account to manage your program and track progress.",
+    title: "Staff Sign In | Refer Labs",
+    description: "Sign-in for the Refer Labs team. Readers do not need an account to use the site.",
     url: `${SITE_URL}/login`,
     noIndex: true,
   },

@@ -40,7 +40,7 @@ const faqs = [
   },
   {
     q: "Are the prices on Refer Labs guaranteed?",
-    a: "No. Every price and offer is read off the provider's own page and carries the date it was read. Providers change prices, terms and eligibility without telling us, so the figure on our page is a record of what was published on that date, not a quote. Confirm the current price with the provider before you buy.",
+    a: "No. Every price is read off the provider's own page, and every offer is either read off that page or, where it is specific to Refer Labs and published nowhere, confirmed directly with the provider. Each carries the date it was checked. Providers change prices, terms and eligibility without telling us, so the figure on our page is a record of what was published on that date, not a quote. Confirm the current price with the provider before you buy.",
   },
   {
     q: "Does Refer Labs earn from the links on its pages?",
@@ -123,8 +123,9 @@ export default function Disclaimer() {
 
           <Section n="4" title="Prices, offers and availability">
             <p>
-              Every price, discount code and offer on this site was read off the provider&apos;s own published page and
-              carries the date it was read. Providers change prices, terms, eligibility and availability without telling
+              Every price on this site was read off the provider&apos;s own published page. Discount codes and offers were
+              either read off that page or, where an offer is specific to Refer Labs and published nowhere, confirmed
+              directly with the provider. Each carries the date it was checked. Providers change prices, terms, eligibility and availability without telling
               us, and a code may expire or be withdrawn at any time. Treat what we publish as a dated record rather than
               a quote, and confirm the current terms with the provider before you commit.
             </p>

@@ -68,6 +68,15 @@ export default function DataPage() {
     inLanguage: 'en-AU',
     isAccessibleForFree: true,
     creator: { '@id': `${SITE_URL}/#organization` },
+    license: 'https://creativecommons.org/licenses/by/4.0/',
+    creditText: 'Refer Labs observation log',
+    distribution: [
+      {
+        '@type': 'DataDownload',
+        encodingFormat: 'text/csv',
+        contentUrl: `${SITE_URL}/data/observations.csv`,
+      },
+    ],
     ...(span
       ? {
           temporalCoverage: `${span.earliest}/${span.latest}`,
@@ -132,6 +141,42 @@ export default function DataPage() {
             </section>
           );
         })}
+
+        {/* Added 15 Sep 2026: a download and a stated licence, so the log can be
+            reused and credited rather than only read. The CSV is generated from
+            the same FACTS records as this page (src/app/data/observations.csv). */}
+        <section className="mt-14 border-t border-[#e5e9e7] pt-10">
+          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Using this data</h2>
+          <p className="mt-4 text-[15px] leading-relaxed text-[#3d4b44]">
+            The whole log is available as a spreadsheet:{' '}
+            <a href="/data/observations.csv" className="font-semibold text-[#0a7c42] underline-offset-2 hover:underline">
+              download the observation log (CSV)
+            </a>
+            . It is generated from the same records shown above, so the two cannot differ.
+          </p>
+          <p className="mt-4 text-[15px] leading-relaxed text-[#3d4b44]">
+            You may quote, reuse and republish these observations, including commercially, under the{' '}
+            <a
+              href="https://creativecommons.org/licenses/by/4.0/"
+              target="_blank"
+              rel="noopener"
+              className="text-[#0a7c42] underline-offset-2 hover:underline"
+            >
+              Creative Commons Attribution 4.0 licence
+            </a>
+            . Credit &ldquo;Refer Labs observation log&rdquo; with a link to referlabs.com.au/data, and keep the
+            observation date beside any figure you use: each record describes what a provider published on that day,
+            not what it charges today.
+          </p>
+          <p className="mt-4 text-[15px] leading-relaxed text-[#3d4b44]">
+            Each record names the date it was made, who made it and the method. Records are added rather than
+            overwritten, so a later check sits beside the earlier one. To report an error, email{' '}
+            <a href="mailto:jarred@referlabs.com.au" className="text-[#0a7c42] underline-offset-2 hover:underline">
+              jarred@referlabs.com.au
+            </a>
+            .
+          </p>
+        </section>
       </main>
     </ConsumerShell>
   );
