@@ -136,7 +136,7 @@ export default function MensHealthHub() {
 
       <main id="main-content">
         <section className="mx-auto max-w-6xl px-5 pt-10 sm:px-8">
-          <nav className="flex items-center gap-2 text-sm text-[#9aa39c]">
+          <nav className="flex items-center gap-2 text-sm text-[#627068]">
             <Link href="/" className="hover:text-[#0a7c42]">Refer Labs</Link>
             <span>/</span>
             <span className="text-[#2b362f]">Men&apos;s health</span>
@@ -181,7 +181,7 @@ export default function MensHealthHub() {
               </Link>
             ))}
           </div>
-          <p className="mt-6 max-w-2xl text-sm leading-relaxed text-[#6e7b74]">
+          <p className="mt-6 max-w-2xl text-sm leading-relaxed text-[#5a665f]">
             We also cover the non-prescription{" "}
             <Link href="/mens-health/sexual-wellness-products" className="font-semibold text-[#0a7c42] hover:underline">
               sexual wellness retail category

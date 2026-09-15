@@ -63,7 +63,7 @@ export default function BrevoPage() {
       <PremiumAffiliateLanding config={brevoConfig} />
       <div className="border-t border-[#e5e9e7] bg-white py-6">
         <div className="mx-auto max-w-3xl px-6 sm:px-8">
-          <p className="text-[#9aa39c] text-xs mb-1.5">Compare email &amp; newsletter tools</p>
+          <p className="text-[#627068] text-xs mb-1.5">Compare email &amp; newsletter tools</p>
           <Link href="/best-newsletter-platform" className="text-sm text-[#0a7c42] font-semibold hover:text-[#086536] transition-colors">
             See how the newsletter and email platforms compare &rarr;
           </Link>

@@ -58,10 +58,10 @@ function DeviceTable({ rows, caption, descriptionHeader }: { rows: readonly { na
   return (
     <div className="mt-4 overflow-x-auto rounded-2xl border border-[#e5e9e7]">
       <table className="w-full min-w-[560px] border-collapse text-left text-sm">
-        <caption className="px-4 py-3 text-left text-xs text-[#6e7b74]">
+        <caption className="px-4 py-3 text-left text-xs text-[#5a665f]">
           {caption}, read off foreo.com on {FOREO.readOnLabel}. Australian list prices, which change.
         </caption>
-        <thead className="bg-[#f8faf9] text-[11px] uppercase tracking-[0.1em] text-[#9aa39c]">
+        <thead className="bg-[#f8faf9] text-[11px] uppercase tracking-[0.1em] text-[#627068]">
           <tr>
             <th className="px-4 py-3 font-semibold">Device</th>
             <th className="px-4 py-3 font-semibold">
@@ -114,7 +114,7 @@ export default function Page() {
         </p>
         <div className="mt-4 grid gap-4 sm:grid-cols-2">
           <div className="rounded-2xl border border-[#e5e9e7] bg-white p-6">
-            <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#9aa39c]">LUNA</p>
+            <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#627068]">LUNA</p>
             <p className="mt-2 text-[15px] leading-relaxed text-[#10251b]">{FOREO.lunaWhatItIs}.</p>
             <p className="mt-3 text-sm text-[#3d4b44]">
               From {FOREO_ENTRY.luna.price} ({FOREO_ENTRY.luna.name}) to {FOREO_TOP.luna.price} ({FOREO_TOP.luna.name}),
@@ -122,7 +122,7 @@ export default function Page() {
             </p>
           </div>
           <div className="rounded-2xl border border-[#e5e9e7] bg-white p-6">
-            <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#9aa39c]">UFO</p>
+            <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#627068]">UFO</p>
             <p className="mt-2 text-[15px] leading-relaxed text-[#10251b]">{FOREO.ufoWhatItIs}.</p>
             <p className="mt-3 text-sm text-[#3d4b44]">
               From {FOREO_ENTRY.ufo.price} ({FOREO_ENTRY.ufo.name}) to {FOREO_TOP.ufo.price} ({FOREO_TOP.ufo.name}),

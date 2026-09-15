@@ -58,7 +58,7 @@ export default function HeaderNav() {
                     className="block rounded-xl px-3 py-2.5 transition-colors hover:bg-[#f2f4ee]"
                   >
                     <span className="block text-[14px] font-semibold text-[#10251b]">{it.label}</span>
-                    {it.note && <span className="mt-0.5 block text-[12.5px] text-[#6e7b74]">{it.note}</span>}
+                    {it.note && <span className="mt-0.5 block text-[12.5px] text-[#5a665f]">{it.note}</span>}
                   </Link>
                 ))}
               </div>

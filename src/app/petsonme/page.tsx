@@ -101,7 +101,7 @@ export default function PetsOnMePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
 
       <main id="main-content" className="mx-auto max-w-3xl px-5 pb-24 pt-10 sm:px-8 sm:pt-14">
-        <nav className="mb-7 flex flex-wrap items-center gap-2 text-sm text-[#6e7b74]">
+        <nav className="mb-7 flex flex-wrap items-center gap-2 text-sm text-[#5a665f]">
           <Link href="/" className="transition-colors hover:text-[#10251b]">Refer Labs</Link>
           <span>/</span>
           <Link href="/pet-insurance" className="transition-colors hover:text-[#10251b]">Pet insurance</Link>
@@ -195,7 +195,7 @@ export default function PetsOnMePage() {
               </tbody>
             </table>
           </div>
-          <p className="mt-3 text-xs leading-relaxed text-[#9aa39c]">
+          <p className="mt-3 text-xs leading-relaxed text-[#627068]">
             PetsOnMe does not publish premiums: the price depends on your pet&apos;s species, breed and age, your
             postcode and the excess you pick, so a quote is the only real figure. Limits and terms can change, so
             confirm current cover in the PDS.
@@ -261,7 +261,7 @@ export default function PetsOnMePage() {
         </div>
 
         <AffiliateDisclosure partners={["PetsOnMe"]} className="mt-8" />
-        <p className="mt-3 text-xs leading-relaxed text-[#9aa39c]">
+        <p className="mt-3 text-xs leading-relaxed text-[#627068]">
           The product is
           underwritten by Pacific International Insurance Pty Ltd (ABN 83 169 311 193) and distributed by Pets On Me
           Insurance Pty Limited (ABN 42 650 975 554). Cover details are from PetsOnMe&apos;s own compare-cover page,

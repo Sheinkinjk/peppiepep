@@ -92,7 +92,7 @@ export default function SectionHub({
 
       <main id="main-content">
         <section className="mx-auto max-w-6xl px-5 pt-10 sm:px-8">
-          <nav className="flex flex-wrap items-center gap-2 text-sm text-[#9aa39c]">
+          <nav className="flex flex-wrap items-center gap-2 text-sm text-[#627068]">
             <Link href="/" className="hover:text-[#0a7c42]">Refer Labs</Link>
             {crumbs.map((c) => (
               <span key={c.label} className="flex items-center gap-2">

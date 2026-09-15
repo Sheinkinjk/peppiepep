@@ -92,7 +92,7 @@ export default function Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
 
       <main id="main-content" className="mx-auto max-w-3xl px-5 pb-20 pt-10 sm:px-8">
-        <nav className="flex flex-wrap items-center gap-2 text-sm text-[#9aa39c]">
+        <nav className="flex flex-wrap items-center gap-2 text-sm text-[#627068]">
           <Link href="/" className="hover:text-[#0a7c42]">Refer Labs</Link>
           <span>/</span>
           <Link href="/business-software" className="hover:text-[#0a7c42]">Business software</Link>
@@ -112,7 +112,7 @@ export default function Page() {
             a disclosure in that slot is what an engine lifts instead. Still
             above the first affiliate link, which is what it is for. */}
         <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
-        <p className="mt-4 text-xs font-medium text-[#6e7b74]">Last checked by Refer Labs, 20 August 2026</p>
+        <p className="mt-4 text-xs font-medium text-[#5a665f]">Last checked by Refer Labs, 20 August 2026</p>
 
         <div className="mt-10 space-y-10 text-[15px] leading-relaxed text-[#3d4b44]">
           <section>
@@ -182,7 +182,7 @@ export default function Page() {
                   Read our Superfiliate review
                 </Link>
               </div>
-              <p className="mt-4 text-[11px] font-medium text-[#6e7b74]">
+              <p className="mt-4 text-[12px] font-medium text-[#5a665f]">
                 Confirmed directly with Superfiliate on 20 August 2026. Offers change; confirm current terms
                 before you commit.
               </p>
@@ -208,7 +208,7 @@ export default function Page() {
         </div>
 
         <section className="mt-12 border-t border-[#eef1ef] pt-8">
-          <h2 className="text-xs font-bold uppercase tracking-[0.12em] text-[#9aa39c]">Keep reading</h2>
+          <h2 className="text-xs font-bold uppercase tracking-[0.12em] text-[#627068]">Keep reading</h2>
           <ul className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-sm">
             <li><Link href="/superfiliate" className="font-semibold text-[#0a7c42] hover:underline">Superfiliate review</Link></li>
             <li><Link href="/affiliate-programs-australia" className="font-semibold text-[#0a7c42] hover:underline">Affiliate programs in Australia</Link></li>

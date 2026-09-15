@@ -63,7 +63,7 @@ export default function NewsletterSignup({
           <BellRing className="mt-0.5 h-4 w-4 shrink-0 text-[#0a7c42]" aria-hidden="true" />
           <div className="min-w-0 flex-1">
             <p className="text-sm font-bold text-[#10251b]">{heading}</p>
-            <p className="mt-0.5 text-xs leading-relaxed text-[#6e7b74]">{sub}</p>
+            <p className="mt-0.5 text-xs leading-relaxed text-[#5a665f]">{sub}</p>
             {state === "done" ? (
               <p className="mt-3 flex items-center gap-2 text-sm font-semibold text-[#0a7c42]">
                 <Check className="h-4 w-4" /> Done, we&apos;ll let you know.

@@ -228,7 +228,7 @@ export default function HowToStartAffiliateMarketingAustraliaPage() {
 
       <main id="main-content">
         <section className="mx-auto max-w-3xl px-5 pt-10 sm:px-8 sm:pt-14">
-          <nav className="mb-6 flex items-center gap-2 text-sm text-[#9aa39c]">
+          <nav className="mb-6 flex items-center gap-2 text-sm text-[#627068]">
             <Link href="/" className="hover:text-[#0a7c42]">Refer Labs</Link>
             <span>/</span>
             <Link href="/affiliate-programs-australia" className="hover:text-[#0a7c42]">Affiliate programs</Link>

@@ -30,7 +30,7 @@ export default function OffersTable({
       <table className="w-full border-collapse text-left text-sm">
         {caption && <caption className="sr-only">{caption}</caption>}
         <thead className="hidden sm:table-header-group">
-          <tr className="bg-[#f8faf9] text-[11px] font-bold uppercase tracking-[0.08em] text-[#6e7b74]">
+          <tr className="bg-[#f8faf9] text-[11px] font-bold uppercase tracking-[0.08em] text-[#5a665f]">
             <th scope="col" className="px-4 py-3">Provider</th>
             <th scope="col" className="px-4 py-3">Best offer</th>
             <th scope="col" className="px-4 py-3">Saving</th>
@@ -52,10 +52,10 @@ export default function OffersTable({
               <td className="mt-1 block sm:mt-0 sm:table-cell sm:px-4 sm:py-3">{d.offer}</td>
               <td className="hidden px-4 py-3 font-semibold tabular-nums text-[#10251b] sm:table-cell">{saving(d.offer)}</td>
               <td className="mt-3 block font-mono text-[13px] sm:mt-0 sm:table-cell sm:px-4 sm:py-3">
-                <span className="font-sans text-xs text-[#6e7b74] sm:hidden">Code </span>
+                <span className="font-sans text-xs text-[#5a665f] sm:hidden">Code </span>
                 {d.code ?? "No code needed"}
                 {d.exclusive && (
-                  <span className="ml-2 rounded-full bg-[#e8f5ee] px-2 py-0.5 font-sans text-[10px] font-bold uppercase tracking-wide text-[#0a7c42]">
+                  <span className="ml-2 rounded-full bg-[#e8f5ee] px-2 py-0.5 font-sans text-[11px] font-bold uppercase tracking-wide text-[#0a7c42]">
                     Refer Labs only
                   </span>
                 )}
@@ -67,15 +67,15 @@ export default function OffersTable({
                   presenting it as such a reading. Pipedrive is the last such row:
                   its pricing page blocks automated fetching, so dating it needs a
                   manual visit. */}
-              <td className="mt-3 inline-block whitespace-nowrap tabular-nums text-xs text-[#6e7b74] sm:mt-0 sm:table-cell sm:px-4 sm:py-3 sm:text-sm sm:text-[#3d4b44]">
+              <td className="mt-3 inline-block whitespace-nowrap tabular-nums text-xs text-[#5a665f] sm:mt-0 sm:table-cell sm:px-4 sm:py-3 sm:text-sm sm:text-[#3d4b44]">
                 <span className="sm:hidden">Checked </span>
-                {d.verified ? formatVerifiedFull(d.verified) : <span className="text-[#6e7b74]">Not recorded</span>}
+                {d.verified ? formatVerifiedFull(d.verified) : <span className="text-[#5a665f]">Not recorded</span>}
               </td>
             </tr>
           ))}
         </tbody>
       </table>
-      <p className="border-t border-[#eef1ef] bg-[#f8faf9] px-4 py-2.5 text-xs text-[#6e7b74]">
+      <p className="border-t border-[#eef1ef] bg-[#f8faf9] px-4 py-2.5 text-xs text-[#5a665f]">
         Each offer shows the date we last read it off that provider’s own page, rather than a single site-wide
         stamp, so you can see exactly how current each one is. &ldquo;Not recorded&rdquo; means we have not logged a
         reading date for that one yet. &ldquo;No code needed&rdquo; means the offer applies

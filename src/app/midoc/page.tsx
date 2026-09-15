@@ -88,7 +88,7 @@ export default function MidocPage() {
       ))}
 
       <main id="main-content" className="mx-auto max-w-3xl px-5 py-12 sm:px-8 sm:py-16">
-        <nav className="mb-8 flex flex-wrap items-center gap-2 text-sm text-[#9aa39c]">
+        <nav className="mb-8 flex flex-wrap items-center gap-2 text-sm text-[#627068]">
           <Link href="/" className="hover:text-[#0a7c42]">Refer Labs</Link>
           <span>/</span>
           <Link href="/mens-health" className="hover:text-[#0a7c42]">Men&apos;s Health</Link>
@@ -116,7 +116,7 @@ export default function MidocPage() {
         <AffiliateDisclosure compact partners={["Midoc"]} className="mt-4 max-w-2xl" />
         <EditorialMeta lastUpdated={UPDATED} className="mt-5" />
 
-        <p className="mt-6 rounded-xl border border-[#e5e9e7] bg-[#f8faf9] px-5 py-4 text-xs leading-relaxed text-[#6e7b74]">
+        <p className="mt-6 rounded-xl border border-[#e5e9e7] bg-[#f8faf9] px-5 py-4 text-xs leading-relaxed text-[#5a665f]">
           <span className="font-semibold text-[#3d4b44]">Information only.</span> This page describes a
           service and how to reach it. It is not medical advice and does not recommend any treatment.
           Prescription medicines in Australia are supplied only after an individual assessment by a
@@ -135,7 +135,7 @@ export default function MidocPage() {
               <div key={p.band} className="px-5 py-4 sm:px-6">
                 <dt className="text-[15px] font-bold text-[#10251b]">
                   {p.band}, {p.price}{" "}
-                  <span className="font-medium text-[#9aa39c]">({MIDOC.readOnShort})</span>
+                  <span className="font-medium text-[#627068]">({MIDOC.readOnShort})</span>
                 </dt>
                 <dd className="mt-1 text-sm leading-relaxed text-[#3d4b44]">{p.items}</dd>
               </div>

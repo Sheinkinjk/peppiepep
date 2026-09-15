@@ -41,7 +41,7 @@ export default function WeightLossGuidePage() {
           <GuideCapture source="weight-loss-guide" />
         </div>
 
-        <p className="mt-8 text-xs leading-relaxed text-[#9aa39c]">
+        <p className="mt-8 text-xs leading-relaxed text-[#627068]">
           Refer Labs is an independent Australian comparison publisher. This guide is general information, not medical
           advice, and does not recommend any treatment or imply suitability for any individual. Results vary between
           people, and suitability for any program is decided by a registered Australian practitioner. The guide contains

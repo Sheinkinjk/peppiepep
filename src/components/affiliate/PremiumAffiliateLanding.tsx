@@ -129,7 +129,7 @@ export default function PremiumAffiliateLanding({ config }: { config: AffiliateP
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-[#3d4b44]">{config.hero.subheading}</p>
 
             {config.showResearchNote && (
-              <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-[#6e7b74]">
+              <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-[#5a665f]">
                 <span className="font-semibold text-[#3d4b44]">Independent guide</span>
                 <span className="text-[#cdd5cf]">·</span>
                 <Link href="/about#how-we-research" className="nw-link !text-sm">How we research</Link>
@@ -148,7 +148,7 @@ export default function PremiumAffiliateLanding({ config }: { config: AffiliateP
                       no agent is a quotable unit with nobody to cite. Do not trim the
                       name back out as redundant with the site it sits on: the unit
                       gets lifted away from the site. */}
-                  <p className="mt-1.5 text-[11px] font-medium text-[#6e7b74]">Checked &amp; verified by Refer Labs, {verifiedStamp(config.brand)}</p>
+                  <p className="mt-1.5 text-[12px] font-medium text-[#5a665f]">Checked &amp; verified by Refer Labs, {verifiedStamp(config.brand)}</p>
                 </div>
               </div>
             )}
@@ -164,7 +164,7 @@ export default function PremiumAffiliateLanding({ config }: { config: AffiliateP
           {/* At-a-glance card */}
           <aside className="lg:pt-2">
             <div className="nw-card rounded-2xl p-6">
-              <span className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#9aa39c]">At a glance</span>
+              <span className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#627068]">At a glance</span>
               <dl className="mt-4 divide-y divide-[#eef1ef] text-sm">
                 {config.offer && (
                   <div className="flex gap-3 py-2.5">
@@ -174,7 +174,7 @@ export default function PremiumAffiliateLanding({ config }: { config: AffiliateP
                 )}
                 {(config.atAGlance ?? [{ k: "What it is", v: config.hero.h1Prefix }]).map((row) => (
                   <div key={row.k} className="flex gap-3 py-2.5">
-                    <dt className="w-24 shrink-0 text-[#9aa39c]">{row.k}</dt>
+                    <dt className="w-24 shrink-0 text-[#627068]">{row.k}</dt>
                     <dd className="text-[#2b362f]">{row.v}</dd>
                   </div>
                 ))}
@@ -213,17 +213,17 @@ export default function PremiumAffiliateLanding({ config }: { config: AffiliateP
         <div className="mt-16 grid gap-12 lg:grid-cols-[200px_1fr] lg:gap-16">
           <nav aria-label="On this page" className="hidden lg:block">
             <div className="sticky top-24">
-              <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[#9aa39c]">On this page</p>
+              <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[#627068]">On this page</p>
               <ul className="space-y-2.5 text-sm">
                 {bodySections.map((s) => (
                   <li key={s.heading}>
-                    <a href={`#${slugify(s.heading)}`} className="text-[#6e7b74] transition-colors hover:text-[#0a7c42]">
+                    <a href={`#${slugify(s.heading)}`} className="text-[#5a665f] transition-colors hover:text-[#0a7c42]">
                       {s.heading}
                     </a>
                   </li>
                 ))}
-                <li><a href="#bottom-line" className="text-[#6e7b74] transition-colors hover:text-[#0a7c42]">Should you use {config.brand}?</a></li>
-                <li><a href="#faq" className="text-[#6e7b74] transition-colors hover:text-[#0a7c42]">FAQ</a></li>
+                <li><a href="#bottom-line" className="text-[#5a665f] transition-colors hover:text-[#0a7c42]">Should you use {config.brand}?</a></li>
+                <li><a href="#faq" className="text-[#5a665f] transition-colors hover:text-[#0a7c42]">FAQ</a></li>
               </ul>
             </div>
           </nav>
@@ -245,7 +245,7 @@ export default function PremiumAffiliateLanding({ config }: { config: AffiliateP
                     <p key={j}>{p}</p>
                   ))}
                 </div>
-                {section.disclaimer && <p className="mt-3 text-xs leading-relaxed text-[#9aa39c]">{section.disclaimer}</p>}
+                {section.disclaimer && <p className="mt-3 text-xs leading-relaxed text-[#627068]">{section.disclaimer}</p>}
                 {section.hasCta && (
                   <div className="mt-6 rounded-xl border border-[#cfe6da] bg-[#e8f5ee] p-5">
                     <div>{cta(section.ctaText ?? continueLabel, `section-${slugify(section.heading)}`)}</div>
@@ -321,7 +321,7 @@ export default function PremiumAffiliateLanding({ config }: { config: AffiliateP
                   {config.relatedLinks.map((l) => (
                     <Link key={l.href} href={l.href} className="nw-card nw-card-hover group rounded-xl p-4">
                       <p className="text-sm font-bold text-[#10251b] group-hover:text-[#0a7c42]">{l.label}</p>
-                      <p className="mt-1 text-xs leading-relaxed text-[#6e7b74]">{l.desc}</p>
+                      <p className="mt-1 text-xs leading-relaxed text-[#5a665f]">{l.desc}</p>
                     </Link>
                   ))}
                 </div>

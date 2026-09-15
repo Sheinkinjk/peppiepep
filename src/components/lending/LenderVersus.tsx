@@ -42,7 +42,7 @@ export default function LenderVersus({ cfg }: { cfg: LenderComparison }) {
 
   return (
     <main className="mx-auto max-w-4xl px-5 py-12 sm:px-8 sm:py-16">
-      <nav className="mb-8 flex flex-wrap items-center gap-2 text-sm text-[#9aa39c]">
+      <nav className="mb-8 flex flex-wrap items-center gap-2 text-sm text-[#627068]">
         <Link href="/" className="hover:text-[#0a7c42]">Refer Labs</Link>
         <span>/</span>
         <Link href="/business-loans" className="hover:text-[#0a7c42]">Business loans</Link>
@@ -66,7 +66,7 @@ export default function LenderVersus({ cfg }: { cfg: LenderComparison }) {
         <div className="mt-5 overflow-x-auto rounded-2xl border border-[#e5e9e7]">
           <table className="w-full border-collapse text-left text-sm">
             <thead>
-              <tr className="bg-[#f8faf9] text-[11px] font-bold uppercase tracking-[0.08em] text-[#6e7b74]">
+              <tr className="bg-[#f8faf9] text-[11px] font-bold uppercase tracking-[0.08em] text-[#5a665f]">
                 <th scope="col" className="px-4 py-3">&nbsp;</th>
                 <th scope="col" className="px-4 py-3">{a.name}</th>
                 <th scope="col" className="px-4 py-3">{b.name}</th>
@@ -83,7 +83,7 @@ export default function LenderVersus({ cfg }: { cfg: LenderComparison }) {
             </tbody>
           </table>
         </div>
-        <p className="mt-3 text-xs leading-relaxed text-[#6e7b74]">
+        <p className="mt-3 text-xs leading-relaxed text-[#5a665f]">
           Advertised figures from each lender&apos;s own site, indicative only and not a quote. Your rate and limit depend
           on the lender&apos;s assessment of your business.
         </p>
@@ -113,7 +113,7 @@ export default function LenderVersus({ cfg }: { cfg: LenderComparison }) {
         <Link href="/business-loans" className="font-semibold text-[#0a7c42] hover:text-[#086536]">Compare all business lenders</Link>
         <Link href={`/business-loans/${a.slug}/review`} className="font-semibold text-[#0a7c42] hover:text-[#086536]">{a.name} review</Link>
         <Link href={`/business-loans/${b.slug}/review`} className="font-semibold text-[#0a7c42] hover:text-[#086536]">{b.name} review</Link>
-        <Link href="/true-cost-of-business-loans-australia" className="font-semibold text-[#6e7b74] hover:text-[#10251b]">The real cost of a business loan</Link>
+        <Link href="/true-cost-of-business-loans-australia" className="font-semibold text-[#5a665f] hover:text-[#10251b]">The real cost of a business loan</Link>
       </section>
     </main>
   );

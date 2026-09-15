@@ -160,7 +160,7 @@ export default function MoshVsDensePage() {
             </CodeAnswer>
             <OfferSchema code="REFERAL55" />
 
-            <p className="text-[#9aa39c] text-xs leading-relaxed max-w-2xl mb-7">
+            <p className="text-[#627068] text-xs leading-relaxed max-w-2xl mb-7">
               Information only, not medical advice. Prescription hair-loss treatment is available only after an individual
               assessment by a registered Australian practitioner, with suitability practitioner-decided and never
               guaranteed.
@@ -217,7 +217,7 @@ export default function MoshVsDensePage() {
               <table className="w-full min-w-[560px] text-sm">
                 <thead>
                   <tr className="border-b border-[#e5e9e7]">
-                    <th className="text-left pb-3 pr-4 text-[#9aa39c] font-semibold text-[11px] uppercase tracking-wider w-52"></th>
+                    <th className="text-left pb-3 pr-4 text-[#627068] font-semibold text-[11px] uppercase tracking-wider w-52"></th>
                     <th className="pb-3 px-3 text-left font-extrabold text-[#10251b] text-sm">Mosh</th>
                     <th className="pb-3 px-3 text-left font-extrabold text-[#10251b] text-sm">Dense</th>
                   </tr>
@@ -233,7 +233,7 @@ export default function MoshVsDensePage() {
                 </tbody>
               </table>
             </div>
-            <p className="text-[#9aa39c] text-[10px] mt-3 leading-relaxed">
+            <p className="text-[#627068] text-[10px] mt-3 leading-relaxed">
               Details are based on publicly available information and can change. Prescription
               medicines are subject to individual clinical assessment by a registered Australian practitioner.
             </p>
@@ -369,15 +369,15 @@ export default function MoshVsDensePage() {
             <h2 className="text-sm font-bold text-[#10251b] mb-3">Keep comparing</h2>
             <div className="flex flex-wrap gap-3 mb-6">
               <Link href="/moshhair" className="nw-link text-sm">Mosh review</Link>
-              <span className="text-[#9aa39c]">·</span>
+              <span className="text-[#627068]">·</span>
               <Link href="/dense" className="nw-link text-sm">Dense review</Link>
-              <span className="text-[#9aa39c]">·</span>
+              <span className="text-[#627068]">·</span>
               <Link href="/best-hair-loss-treatment-australia" className="nw-link text-sm">Best hair loss treatment Australia</Link>
-              <span className="text-[#9aa39c]">·</span>
+              <span className="text-[#627068]">·</span>
               <Link href="/guides" className="nw-link text-sm">All guides</Link>
             </div>
             <AffiliateDisclosure partners={["Mosh", "Dense"]} className="mb-3 max-w-2xl" />
-            <p className="text-[#9aa39c] text-xs leading-relaxed max-w-2xl">
+            <p className="text-[#627068] text-xs leading-relaxed max-w-2xl">
               We compare on
               category, model, and what is included, and we never sell rankings. All content is for informational purposes
               only and does not constitute medical advice. Prescription hair-loss treatment in Australia is available only

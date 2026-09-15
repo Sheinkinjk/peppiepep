@@ -55,7 +55,7 @@ export default function HowWeMakeMoney() {
           </ul>
         </Section>
 
-        <p className="mt-10 text-sm leading-relaxed text-[#6e7b74]">
+        <p className="mt-10 text-sm leading-relaxed text-[#5a665f]">
           Questions about any of this? Email{" "}
           <a href="mailto:jarred@referlabs.com.au" className="font-semibold text-[#0a7c42] underline">jarred@referlabs.com.au</a>.
           See also our <Link href="/about#how-we-research" className="font-semibold text-[#0a7c42] underline">research standards</Link> and{" "}

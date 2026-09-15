@@ -116,7 +116,7 @@ export default function DealsPage() {
       <OfferSchema code="REFERLABS" />
 
       <main id="main-content" className="mx-auto max-w-5xl px-5 py-12 sm:px-8 sm:py-16">
-        <nav className="mb-8 flex items-center gap-2 text-sm text-[#9aa39c]">
+        <nav className="mb-8 flex items-center gap-2 text-sm text-[#627068]">
           <Link href="/" className="hover:text-[#0a7c42]">Refer Labs</Link>
           <span>/</span>
           <span className="text-[#2b362f]">Deals</span>
@@ -139,7 +139,7 @@ export default function DealsPage() {
             <h2 id="current-offers" className="text-2xl font-extrabold tracking-[-0.01em] text-[#10251b]">
               Current offers
             </h2>
-            <p className="text-sm tabular-nums text-[#6e7b74]">
+            <p className="text-sm tabular-nums text-[#5a665f]">
               {FEATURED_DEALS.length} offers · {CODE_COUNT} codes{CHECKED_RANGE ? ` · ${CHECKED_RANGE}` : ""}
             </p>
           </div>
@@ -150,7 +150,7 @@ export default function DealsPage() {
                 Current discount codes and offers at Refer Labs, with the date each was last checked
               </caption>
               <thead className="hidden sm:table-header-group">
-                <tr className="bg-[#f8faf9] text-[11px] font-bold uppercase tracking-[0.1em] text-[#6e7b74]">
+                <tr className="bg-[#f8faf9] text-[11px] font-bold uppercase tracking-[0.1em] text-[#5a665f]">
                   <th scope="col" className="px-5 py-3">Provider</th>
                   <th scope="col" className="px-5 py-3">Offer</th>
                   <th scope="col" className="px-5 py-3">Code</th>
@@ -173,7 +173,7 @@ export default function DealsPage() {
                           <Link href={d.href} className="block font-bold leading-tight text-[#10251b] hover:text-[#0a7c42]">
                             {d.brand}
                           </Link>
-                          <span className="block text-xs text-[#6e7b74]">{d.category}</span>
+                          <span className="block text-xs text-[#5a665f]">{d.category}</span>
                         </span>
                       </span>
                     </th>
@@ -193,10 +193,10 @@ export default function DealsPage() {
                           )}
                         </span>
                       ) : (
-                        <span className="whitespace-nowrap text-sm text-[#6e7b74]">No code needed</span>
+                        <span className="whitespace-nowrap text-sm text-[#5a665f]">No code needed</span>
                       )}
                     </td>
-                    <td className="mt-4 block text-xs tabular-nums text-[#6e7b74] sm:mt-0 sm:table-cell sm:whitespace-nowrap sm:px-5 sm:py-4 sm:align-middle sm:text-sm">
+                    <td className="mt-4 block text-xs tabular-nums text-[#5a665f] sm:mt-0 sm:table-cell sm:whitespace-nowrap sm:px-5 sm:py-4 sm:align-middle sm:text-sm">
                       <span className="sm:hidden">Checked </span>
                       {d.verified ? formatVerifiedFull(d.verified) : "Not recorded"}
                     </td>
@@ -216,7 +216,7 @@ export default function DealsPage() {
             </table>
             {/* The page's one "offers can change" caveat. It used to appear here
                 and again in a closing line under the disclosure. */}
-            <p className="border-t border-[#eef1ef] bg-[#f8faf9] px-5 py-3 text-xs leading-relaxed text-[#6e7b74]">
+            <p className="border-t border-[#eef1ef] bg-[#f8faf9] px-5 py-3 text-xs leading-relaxed text-[#5a665f]">
               Each date is when we last confirmed that offer. Offers can change, so check the terms on the
               provider&apos;s site before you sign up.
             </p>
@@ -239,7 +239,7 @@ export default function DealsPage() {
                     <span className="block font-bold text-[#10251b] sm:w-36 sm:shrink-0">{d.brand}</span>
                     <span className="block text-sm text-[#3d4b44]">{d.offer}</span>
                   </span>
-                  <ArrowRight className="h-4 w-4 shrink-0 text-[#9aa39c] transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
+                  <ArrowRight className="h-4 w-4 shrink-0 text-[#627068] transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
                 </Link>
               </li>
             ))}

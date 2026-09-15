@@ -117,7 +117,7 @@ export default function RecurringAffiliateProgramsPage() {
 
       <main id="main-content">
         <section className="mx-auto max-w-4xl px-5 pt-10 sm:px-8 sm:pt-14">
-          <nav className="mb-6 flex items-center gap-2 text-sm text-[#9aa39c]">
+          <nav className="mb-6 flex items-center gap-2 text-sm text-[#627068]">
             <Link href="/" className="hover:text-[#0a7c42]">Refer Labs</Link>
             <span>/</span>
             <Link href="/affiliate-programs-australia" className="hover:text-[#0a7c42]">Affiliate programs</Link>
@@ -147,10 +147,10 @@ export default function RecurringAffiliateProgramsPage() {
             <table className="w-full min-w-[680px] text-sm">
               <thead>
                 <tr className="border-b border-[#e5e9e7] bg-[#f5f8f6]">
-                  <th className="px-5 py-3 text-left text-[11px] font-bold uppercase tracking-wider text-[#9aa39c]">Program</th>
-                  <th className="px-4 py-3 text-left text-[11px] font-bold uppercase tracking-wider text-[#9aa39c]">Category</th>
-                  <th className="px-4 py-3 text-left text-[11px] font-bold uppercase tracking-wider text-[#9aa39c]">Typical recurring commission</th>
-                  <th className="px-5 py-3 text-left text-[11px] font-bold uppercase tracking-wider text-[#9aa39c]">Network</th>
+                  <th className="px-5 py-3 text-left text-[11px] font-bold uppercase tracking-wider text-[#627068]">Program</th>
+                  <th className="px-4 py-3 text-left text-[11px] font-bold uppercase tracking-wider text-[#627068]">Category</th>
+                  <th className="px-4 py-3 text-left text-[11px] font-bold uppercase tracking-wider text-[#627068]">Typical recurring commission</th>
+                  <th className="px-5 py-3 text-left text-[11px] font-bold uppercase tracking-wider text-[#627068]">Network</th>
                 </tr>
               </thead>
               <tbody>
@@ -159,9 +159,9 @@ export default function RecurringAffiliateProgramsPage() {
                     <td className="px-5 py-4 font-bold text-[#10251b]">
                       {p.href ? <Link href={p.href} className="nw-link">{p.name}</Link> : p.name}
                     </td>
-                    <td className="px-4 py-4 text-[#6e7b74]">{p.category}</td>
+                    <td className="px-4 py-4 text-[#5a665f]">{p.category}</td>
                     <td className="px-4 py-4 text-[#3d4b44]">{p.commission}</td>
-                    <td className="px-5 py-4 text-[#6e7b74]">{p.network}</td>
+                    <td className="px-5 py-4 text-[#5a665f]">{p.network}</td>
                   </tr>
                 ))}
               </tbody>

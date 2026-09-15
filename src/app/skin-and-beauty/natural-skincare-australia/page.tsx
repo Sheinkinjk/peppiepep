@@ -73,7 +73,7 @@ export default function Page() {
         <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Two words, doing very different work</h2>
         <div className="mt-4 grid gap-4 sm:grid-cols-2">
           <div className="rounded-2xl border border-[#e5e9e7] bg-white p-6">
-            <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#9aa39c]">Natural</p>
+            <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#627068]">Natural</p>
             <p className="mt-2 text-[15px] leading-relaxed text-[#10251b]">
               No certifier, no register, no minimum ingredient share. A brand decides for itself what
               the word means on its own packaging.

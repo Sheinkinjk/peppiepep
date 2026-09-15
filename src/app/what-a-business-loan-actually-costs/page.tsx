@@ -70,7 +70,7 @@ export default function CostGuide() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
 
       <main className="mx-auto max-w-3xl px-5 py-10 sm:px-8 sm:py-14">
-        <nav className="text-xs text-[#6e7b74]">
+        <nav className="text-xs text-[#5a665f]">
           <Link href="/business-loans" className="hover:text-[#0a7c42]">Business loans</Link>
           <span className="px-1.5">/</span>
           <span className="text-[#3d4b44]">What a business loan actually costs</span>
@@ -114,7 +114,7 @@ export default function CostGuide() {
           <div className="my-4 overflow-x-auto rounded-2xl border border-[#e5e9e7]">
             <table className="w-full border-collapse text-left text-sm">
               <thead>
-                <tr className="bg-[#f8faf9] text-[11px] font-bold uppercase tracking-[0.08em] text-[#6e7b74]">
+                <tr className="bg-[#f8faf9] text-[11px] font-bold uppercase tracking-[0.08em] text-[#5a665f]">
                   <th scope="col" className="px-4 py-3">Lender</th>
                   <th scope="col" className="px-4 py-3">How it&apos;s quoted</th>
                   <th scope="col" className="px-4 py-3">Total repaid</th>
@@ -134,7 +134,7 @@ export default function CostGuide() {
               </tbody>
             </table>
           </div>
-          <p className="text-sm text-[#6e7b74]">
+          <p className="text-sm text-[#5a665f]">
             Illustrative figures only. Lender B&apos;s &ldquo;no interest&rdquo; pitch costs about $2,000 more here, even
             though it never quotes a percentage. The dollar total exposes the difference the headline hides.
           </p>

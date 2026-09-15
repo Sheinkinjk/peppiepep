@@ -78,7 +78,7 @@ export default function ApolloLanding() {
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <a href="#register" className="nw-btn">Register your interest <ArrowRight className="h-4 w-4" /></a>
             </div>
-            <p className="mt-4 text-xs text-[#9aa39c]">
+            <p className="mt-4 text-xs text-[#627068]">
               $500 off is applied to your quote through this enquiry. No code needed.
             </p>
           </div>
@@ -111,13 +111,13 @@ export default function ApolloLanding() {
         {/* ── At a glance ── */}
         <section className="mt-6 nw-card rounded-2xl p-6">
           <div className="flex flex-wrap items-center justify-between gap-4">
-            <span className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#9aa39c]">At a glance</span>
+            <span className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#627068]">At a glance</span>
             <ApolloCTA size="sm" loc="glance-card" />
           </div>
           <dl className="mt-4 grid gap-x-8 text-sm sm:grid-cols-2 lg:grid-cols-3">
             {glance.map(([k, v]) => (
               <div key={k} className="flex gap-3 border-b border-[#eef1ef] py-2">
-                <dt className="w-28 shrink-0 text-[#9aa39c]">{k}</dt>
+                <dt className="w-28 shrink-0 text-[#627068]">{k}</dt>
                 <dd className="text-[#2b362f]">{v}</dd>
               </div>
             ))}
@@ -125,7 +125,7 @@ export default function ApolloLanding() {
         </section>
 
         {/* ── Honesty notice ── */}
-        <p className="mt-8 rounded-xl border border-[#e5e9e7] bg-white px-5 py-4 text-xs leading-relaxed text-[#6e7b74]">
+        <p className="mt-8 rounded-xl border border-[#e5e9e7] bg-white px-5 py-4 text-xs leading-relaxed text-[#5a665f]">
           <span className="font-semibold text-[#3d4b44]">On savings figures.</span> What a battery saves depends on your
           usage, your tariff, whether you have solar and whether you join a VPP. Any percentages or dollar figures on
           this page are attributed to their source and are not a promise of what you will save. Rebate amounts and rules
@@ -137,7 +137,7 @@ export default function ApolloLanding() {
           {/* TOC */}
           <nav aria-label="On this page" className="hidden lg:block">
             <div className="sticky top-24">
-              <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[#9aa39c]">On this page</p>
+              <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[#627068]">On this page</p>
               <ul className="space-y-2.5 text-sm">
                 {[
                   ["what", "What Apollo is"],
@@ -150,7 +150,7 @@ export default function ApolloLanding() {
                   ["faq", "FAQ"],
                 ].map(([id, label]) => (
                   <li key={id}>
-                    <a href={`#${id}`} className="text-[#6e7b74] transition-colors hover:text-[#0a7c42]">
+                    <a href={`#${id}`} className="text-[#5a665f] transition-colors hover:text-[#0a7c42]">
                       {label}
                     </a>
                   </li>
@@ -287,10 +287,10 @@ export default function ApolloLanding() {
                 <table className="w-full min-w-[420px] border-collapse text-sm">
                   <thead>
                     <tr className="border-b border-[#e5e9e7]">
-                      <th className="pb-3 pr-4 text-left text-[11px] font-semibold uppercase tracking-widest text-[#9aa39c]">
+                      <th className="pb-3 pr-4 text-left text-[11px] font-semibold uppercase tracking-widest text-[#627068]">
                         Capacity band
                       </th>
-                      <th className="pb-3 text-left text-[11px] font-semibold uppercase tracking-widest text-[#9aa39c]">
+                      <th className="pb-3 text-left text-[11px] font-semibold uppercase tracking-widest text-[#627068]">
                         Rebate rate applied (from 1 May 2026)
                       </th>
                     </tr>
@@ -309,7 +309,7 @@ export default function ApolloLanding() {
                   </tbody>
                 </table>
               </div>
-              <p className="mt-3 text-xs text-[#9aa39c]">
+              <p className="mt-3 text-xs text-[#627068]">
                 Rebate rules and STC values change. Confirm current terms before committing.
               </p>
             </section>
@@ -398,7 +398,7 @@ export default function ApolloLanding() {
                 </ul>
                 <div className="mt-7 flex flex-wrap items-center gap-4">
                   <ApolloCTA label="Claim your $500 discount" size="lg" loc="bottom-line" />
-                  <span className="text-xs text-[#9aa39c]">Under 30 seconds · no obligation</span>
+                  <span className="text-xs text-[#627068]">Under 30 seconds · no obligation</span>
                 </div>
               </div>
             </section>

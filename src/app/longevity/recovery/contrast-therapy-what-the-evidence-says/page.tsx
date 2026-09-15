@@ -57,7 +57,7 @@ export default function Page() {
         </p>
         <div className="mt-4 overflow-x-auto rounded-2xl border border-[#e5e9e7]">
           <table className="w-full min-w-[560px] border-collapse text-left text-sm">
-            <thead className="bg-[#f8faf9] text-[11px] uppercase tracking-[0.1em] text-[#9aa39c]">
+            <thead className="bg-[#f8faf9] text-[11px] uppercase tracking-[0.1em] text-[#627068]">
               <tr>
                 <th className="px-4 py-3 font-semibold">Claim</th>
                 <th className="px-4 py-3 font-semibold">How the evidence looks</th>
@@ -79,7 +79,7 @@ export default function Page() {
             </tbody>
           </table>
         </div>
-        <p className="mt-3 text-xs text-[#6e7b74]">
+        <p className="mt-3 text-xs text-[#5a665f]">
           A summary of how the research landscape looks rather than a systematic review, and not a health claim about
           any product. Evidence in this area is actively changing.
         </p>

@@ -83,7 +83,7 @@ export default function HairLossGuide({ cfg }: { cfg: HairLossGuideConfig }) {
       ))}
 
       <main className="mx-auto max-w-3xl px-5 py-10 sm:px-8 sm:py-14">
-        <nav className="flex flex-wrap items-center gap-2 text-sm text-[#6e7b74]">
+        <nav className="flex flex-wrap items-center gap-2 text-sm text-[#5a665f]">
           <Link href="/" className="hover:text-[#10251b]">Refer Labs</Link>
           <span>/</span>
           <Link href="/hair-loss" className="hover:text-[#10251b]">Hair loss</Link>
@@ -168,7 +168,7 @@ export default function HairLossGuide({ cfg }: { cfg: HairLossGuideConfig }) {
         </section>
 
         {/* Bottom disclaimer */}
-        <p className="mt-10 flex items-start gap-2 text-xs leading-relaxed text-[#6e7b74]">
+        <p className="mt-10 flex items-start gap-2 text-xs leading-relaxed text-[#5a665f]">
           <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-[#0a7c42]" aria-hidden="true" />
           <span>
             Information only, not medical advice. Prescription medicines in Australia are supplied only after individual

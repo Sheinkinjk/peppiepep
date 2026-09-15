@@ -157,7 +157,7 @@ const webPageSchema = {
 const stacksTone: Record<string, string> = {
   Yes: "bg-[#e8f5ee] text-[#0a7c42]",
   "Loan, not a cash rebate": "bg-[#fdf6e3] text-[#8a6d1a]",
-  "Federal only": "bg-[#eef1ec] text-[#6e7b74]",
+  "Federal only": "bg-[#eef1ec] text-[#5a665f]",
 };
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
@@ -173,7 +173,7 @@ export default function HomeBatteryRebateByStatePage() {
       <main className="text-[#10251b]">
         <div className="mx-auto max-w-3xl px-6 sm:px-8">
           {/* Breadcrumb */}
-          <nav className="flex flex-wrap items-center gap-2 pt-8 text-sm text-[#6e7b74]">
+          <nav className="flex flex-wrap items-center gap-2 pt-8 text-sm text-[#5a665f]">
             <Link href="/" className="transition-colors hover:text-[#10251b]">Refer Labs</Link>
             <span>/</span>
             <Link href="/apollo-energy-group" className="transition-colors hover:text-[#10251b]">Home batteries</Link>
@@ -213,9 +213,9 @@ export default function HomeBatteryRebateByStatePage() {
               <table className="w-full border-collapse text-left text-sm">
                 <thead>
                   <tr className="border-b border-[#e5e9e7]">
-                    <th className="pb-3 pr-4 text-[11px] font-semibold uppercase tracking-widest text-[#9aa39c]">State / Territory</th>
-                    <th className="pb-3 pr-4 text-[11px] font-semibold uppercase tracking-widest text-[#9aa39c]">State scheme (2026)</th>
-                    <th className="pb-3 text-[11px] font-semibold uppercase tracking-widest text-[#9aa39c]">On top of federal?</th>
+                    <th className="pb-3 pr-4 text-[11px] font-semibold uppercase tracking-widest text-[#627068]">State / Territory</th>
+                    <th className="pb-3 pr-4 text-[11px] font-semibold uppercase tracking-widest text-[#627068]">State scheme (2026)</th>
+                    <th className="pb-3 text-[11px] font-semibold uppercase tracking-widest text-[#627068]">On top of federal?</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -224,7 +224,7 @@ export default function HomeBatteryRebateByStatePage() {
                       <td className="py-3 pr-4 font-semibold text-[#10251b]">{s.state}</td>
                       <td className="py-3 pr-4 text-[#3d4b44]">{s.scheme}</td>
                       <td className="py-3">
-                        <span className={`inline-block whitespace-nowrap rounded-full px-2.5 py-1 text-xs font-semibold ${stacksTone[s.stacks] ?? "bg-[#eef1ec] text-[#6e7b74]"}`}>
+                        <span className={`inline-block whitespace-nowrap rounded-full px-2.5 py-1 text-xs font-semibold ${stacksTone[s.stacks] ?? "bg-[#eef1ec] text-[#5a665f]"}`}>
                           {s.stacks}
                         </span>
                       </td>
@@ -233,7 +233,7 @@ export default function HomeBatteryRebateByStatePage() {
                 </tbody>
               </table>
             </div>
-            <p className="mt-3 text-xs leading-relaxed text-[#9aa39c]">
+            <p className="mt-3 text-xs leading-relaxed text-[#627068]">
               The federal Cheaper Home Batteries Program applies in every row above. &ldquo;Federal only&rdquo; means the
               state has no active battery-specific rebate of its own in 2026. Amounts for active state schemes vary by
               network and household, so confirm at quote.
@@ -263,7 +263,7 @@ export default function HomeBatteryRebateByStatePage() {
                 <div key={s.state} className="nw-card px-5 py-5">
                   <div className="flex flex-wrap items-center gap-3">
                     <h3 className="text-lg font-bold text-[#10251b]">{s.state}</h3>
-                    <span className={`inline-block rounded-full px-2.5 py-1 text-xs font-semibold ${stacksTone[s.stacks] ?? "bg-[#eef1ec] text-[#6e7b74]"}`}>
+                    <span className={`inline-block rounded-full px-2.5 py-1 text-xs font-semibold ${stacksTone[s.stacks] ?? "bg-[#eef1ec] text-[#5a665f]"}`}>
                       {s.scheme}
                     </span>
                   </div>
@@ -347,7 +347,7 @@ export default function HomeBatteryRebateByStatePage() {
 
           {/* Disclosure */}
           <section className="border-t border-[#e5e9e7] pt-6 pb-16">
-            <p className="text-xs leading-relaxed text-[#9aa39c]">
+            <p className="text-xs leading-relaxed text-[#627068]">
               Published by Refer Labs, an independent comparison publisher, and contains a disclosed affiliate link to
               Apollo Energy Group, which means we may earn a commission if you enquire or buy through our link, at no extra
               cost to you. Commissions never change what we write. Rebate figures are indicative, set by government programs,

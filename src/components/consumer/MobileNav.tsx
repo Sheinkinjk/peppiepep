@@ -27,7 +27,7 @@ export default function MobileNav() {
     <div className="lg:hidden">
       <nav
         aria-label="Categories"
-        className="-my-1 flex gap-1 overflow-x-auto text-[13px] font-medium text-[#3d4b44]"
+        className="-my-1 flex gap-1 overflow-x-auto pr-8 text-[13px] font-medium text-[#3d4b44] [mask-image:linear-gradient(to_right,black_82%,transparent)] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
       >
         {GROUPS.map((g) => {
           const isOpen = open === g.label;
@@ -37,7 +37,7 @@ export default function MobileNav() {
               type="button"
               onClick={() => setOpen(isOpen ? null : g.label)}
               aria-expanded={isOpen}
-              className={`inline-flex shrink-0 items-center gap-1 whitespace-nowrap rounded-lg px-2.5 py-2.5 transition-colors ${
+              className={`inline-flex min-h-[44px] shrink-0 items-center gap-1 whitespace-nowrap rounded-lg px-3 py-2.5 transition-colors ${
                 isOpen ? "bg-[#f0f5f2] text-[#0a7c42]" : "hover:bg-[#f5f8f6] hover:text-[#0a7c42]"
               }`}
             >
@@ -50,7 +50,7 @@ export default function MobileNav() {
           <Link
             key={it.href}
             href={it.href}
-            className="inline-flex shrink-0 items-center whitespace-nowrap rounded-lg px-2.5 py-2.5 transition-colors hover:bg-[#f5f8f6] hover:text-[#0a7c42]"
+            className="inline-flex min-h-[44px] shrink-0 items-center whitespace-nowrap rounded-lg px-3 py-2.5 transition-colors hover:bg-[#f5f8f6] hover:text-[#0a7c42]"
           >
             {it.label}
           </Link>
@@ -68,7 +68,7 @@ export default function MobileNav() {
                 className="block rounded-xl px-2.5 py-2.5 transition-colors active:bg-[#f2f4ee]"
               >
                 <span className="block text-[14px] font-semibold text-[#10251b]">{it.label}</span>
-                {it.note && <span className="mt-0.5 block text-[12.5px] leading-snug text-[#6e7b74]">{it.note}</span>}
+                {it.note && <span className="mt-0.5 block text-[12.5px] leading-snug text-[#5a665f]">{it.note}</span>}
               </Link>
             ))}
           </div>

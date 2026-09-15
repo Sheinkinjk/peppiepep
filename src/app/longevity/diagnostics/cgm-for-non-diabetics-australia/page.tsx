@@ -65,7 +65,7 @@ export default function Page() {
         <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">What the device is good at, and what it is not</h2>
         <div className="mt-4 overflow-x-auto rounded-2xl border border-[#e5e9e7]">
           <table className="w-full min-w-[540px] border-collapse text-left text-sm">
-            <thead className="bg-[#f8faf9] text-[11px] uppercase tracking-[0.1em] text-[#9aa39c]">
+            <thead className="bg-[#f8faf9] text-[11px] uppercase tracking-[0.1em] text-[#627068]">
               <tr>
                 <th className="px-4 py-3 font-semibold">Use</th>
                 <th className="px-4 py-3 font-semibold">How well established</th>
@@ -87,7 +87,7 @@ export default function Page() {
             </tbody>
           </table>
         </div>
-        <p className="mt-3 text-xs text-[#6e7b74]">
+        <p className="mt-3 text-xs text-[#5a665f]">
           Not a health claim about any device. CGMs are regulated therapeutic goods; check the ARTG for a specific
           product.
         </p>

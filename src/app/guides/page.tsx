@@ -289,7 +289,7 @@ export default function GuidesPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }} />
 
       <main id="main-content" className="mx-auto max-w-6xl px-5 pb-20 pt-12 sm:px-8 sm:pt-16">
-        <nav className="mb-7 flex items-center gap-2 text-sm text-[#9aa39c]">
+        <nav className="mb-7 flex items-center gap-2 text-sm text-[#627068]">
           <Link href="/" className="hover:text-[#0a7c42]">Refer Labs</Link>
           <span>/</span>
           <span className="text-[#2b362f]">Guides</span>
@@ -325,7 +325,7 @@ export default function GuidesPage() {
               <div className="grid gap-8 lg:grid-cols-[220px_1fr] lg:gap-14">
                 <div className="lg:pt-1">
                   <h2 className="text-xl font-bold text-[#10251b]">{section.label}</h2>
-                  <p className="mt-2 text-[13px] leading-relaxed text-[#9aa39c]">{section.description}</p>
+                  <p className="mt-2 text-[13px] leading-relaxed text-[#627068]">{section.description}</p>
                 </div>
                 <div className="grid gap-4 sm:grid-cols-2">
                   {section.guides.map((guide) => (

@@ -159,7 +159,7 @@ export default function BestCrmSmallBusinessPage() {
         <div className="mb-12 overflow-x-auto">
           <table className="w-full border-collapse text-sm">
             <thead>
-              <tr className="border-b border-[#e5e9e7] text-left text-[#6e7b74]">
+              <tr className="border-b border-[#e5e9e7] text-left text-[#5a665f]">
                 <th className="py-3 pr-4 font-semibold">CRM</th>
                 <th className="py-3 pr-4 font-semibold">From</th>
                 <th className="py-3 pr-4 font-semibold">Free trial</th>
@@ -185,7 +185,7 @@ export default function BestCrmSmallBusinessPage() {
             <section key={c.name} className="rounded-2xl border border-[#e5e9e7] p-6">
               <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
                 <h2 className="text-xl font-black text-[#10251b]">{c.name}</h2>
-                <span className="text-sm font-semibold text-[#6e7b74]">From {c.from}/user/mo &middot; {c.trial}</span>
+                <span className="text-sm font-semibold text-[#5a665f]">From {c.from}/user/mo &middot; {c.trial}</span>
               </div>
               <p className="mt-1 text-sm font-semibold" style={{ color: GREEN }}>{c.suits}</p>
               <p className="mt-3 text-sm sm:text-base leading-relaxed text-[#3d4b44]">{c.body}</p>
@@ -233,7 +233,7 @@ export default function BestCrmSmallBusinessPage() {
               <details key={f.q} className="group rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] px-5 py-4">
                 <summary className="cursor-pointer list-none font-semibold text-[#10251b] text-sm sm:text-base flex items-center justify-between gap-4">
                   {f.q}
-                  <span className="text-[#9aa39c] group-open:rotate-45 transition-transform text-lg leading-none">+</span>
+                  <span className="text-[#627068] group-open:rotate-45 transition-transform text-lg leading-none">+</span>
                 </summary>
                 <p className="text-[#3d4b44] text-sm leading-relaxed mt-3">{f.a}</p>
               </details>
@@ -241,7 +241,7 @@ export default function BestCrmSmallBusinessPage() {
           </div>
         </section>
 
-        <p className="text-[#9aa39c] text-xs mt-10 leading-relaxed">
+        <p className="text-[#627068] text-xs mt-10 leading-relaxed">
           This page is operated by Refer Labs and contains affiliate links. We may earn a commission if you sign up
           through one, at no extra cost to you, and it never changes how these are grouped or described. Prices are the
           vendors&apos; own published starting rates and can change; confirm current pricing before you commit.

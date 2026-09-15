@@ -109,7 +109,7 @@ export default function Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
 
       <main id="main-content" className="mx-auto max-w-3xl px-5 pb-20 pt-10 sm:px-8">
-        <nav className="flex flex-wrap items-center gap-2 text-sm text-[#9aa39c]">
+        <nav className="flex flex-wrap items-center gap-2 text-sm text-[#627068]">
           <Link href="/" className="hover:text-[#0a7c42]">Refer Labs</Link>
           <span>/</span>
           <Link href="/portable-power-station-australia" className="hover:text-[#0a7c42]">Portable power</Link>
@@ -164,7 +164,7 @@ export default function Page() {
                 Cheaper for the same capacity at 1,000Wh and 2,000Wh, and the largest single unit of the two.
                 Choose it if you are buying capacity per dollar, or want one unit that can grow.
               </p>
-              <p className="mt-3 text-[13px] text-[#6e7b74]">
+              <p className="mt-3 text-[13px] text-[#5a665f]">
                 Cheapest 1,000Wh: {P1K.eco.model} at {fmtAud(P1K.eco.aud)}
               </p>
               <a href={ECOFLOW_URL} {...aff} data-cta="vs-ecoflow" className="nw-btn mt-5 justify-center">
@@ -182,7 +182,7 @@ export default function Page() {
                 More continuous output at the 1,000Wh tier, 2,000W against 1,800W. Choose it if the point is running
                 high-draw appliances rather than storing the most energy per dollar.
               </p>
-              <p className="mt-3 text-[13px] text-[#6e7b74]">
+              <p className="mt-3 text-[13px] text-[#5a665f]">
                 Most output under A$2,000: {TOP_OUTPUT_UNDER_2K.model} at{" "}
                 {TOP_OUTPUT_UNDER_2K.watts.toLocaleString("en-AU")}W, {fmtAud(TOP_OUTPUT_UNDER_2K.aud)}
               </p>
@@ -250,7 +250,7 @@ export default function Page() {
         </section>
 
         <section className="mt-10 border-t border-[#eef1ef] pt-8">
-          <h2 className="text-xs font-bold uppercase tracking-[0.12em] text-[#9aa39c]">Keep reading</h2>
+          <h2 className="text-xs font-bold uppercase tracking-[0.12em] text-[#627068]">Keep reading</h2>
           <ul className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-sm">
             <li><Link href="/portable-power-station-australia" className="font-semibold text-[#0a7c42] hover:underline">What a portable power station costs and runs</Link></li>
             <li><Link href="/portable-vs-installed-home-battery-australia" className="font-semibold text-[#0a7c42] hover:underline">Portable vs installed</Link></li>

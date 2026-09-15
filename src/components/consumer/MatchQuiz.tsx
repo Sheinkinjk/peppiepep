@@ -97,7 +97,7 @@ export default function MatchQuiz({ config }: { config: MatchConfig }) {
           className="rounded-2xl border bg-white p-6 sm:p-8"
           style={{ borderColor: `${GREEN}40`, background: `${GREEN}06` }}
         >
-          <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#9aa39c]">
+          <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#627068]">
             {result.kicker ?? "Your match"}
           </p>
           <h2 className="mt-1 text-2xl font-extrabold text-[#10251b]">{result.name}</h2>
@@ -123,12 +123,12 @@ export default function MatchQuiz({ config }: { config: MatchConfig }) {
             <button
               type="button"
               onClick={reset}
-              className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#6e7b74] transition-colors hover:text-[#10251b]"
+              className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#5a665f] transition-colors hover:text-[#10251b]"
             >
               <RotateCcw className="h-3.5 w-3.5" aria-hidden="true" /> Start over
             </button>
           </div>
-          {result.note && <p className="mt-4 text-xs leading-relaxed text-[#9aa39c]">{result.note}</p>}
+          {result.note && <p className="mt-4 text-xs leading-relaxed text-[#627068]">{result.note}</p>}
         </div>
 
         <div className="mt-4">
@@ -141,7 +141,7 @@ export default function MatchQuiz({ config }: { config: MatchConfig }) {
           />
         </div>
 
-        {config.footnote && <p className="mt-3 text-xs leading-relaxed text-[#9aa39c]">{config.footnote}</p>}
+        {config.footnote && <p className="mt-3 text-xs leading-relaxed text-[#627068]">{config.footnote}</p>}
       </div>
     );
   }
@@ -152,7 +152,7 @@ export default function MatchQuiz({ config }: { config: MatchConfig }) {
     <div className="rounded-2xl border border-[#e5e9e7] bg-[#f5f8f6] p-6 sm:p-8">
       <fieldset>
         {visible.length > 1 && (
-          <legend className="mb-1 text-[11px] font-bold uppercase tracking-[0.14em] text-[#9aa39c]">
+          <legend className="mb-1 text-[11px] font-bold uppercase tracking-[0.14em] text-[#627068]">
             Step {stepNumber} of {visible.length}
           </legend>
         )}
@@ -161,7 +161,7 @@ export default function MatchQuiz({ config }: { config: MatchConfig }) {
           {current!.options.map((o) => (
             <button key={o.value} type="button" onClick={() => choose(current!.id, o.value)} className={optBtn}>
               <span className="block text-sm font-semibold text-[#10251b]">{o.title}</span>
-              {o.note && <span className="block text-xs text-[#6e7b74]">{o.note}</span>}
+              {o.note && <span className="block text-xs text-[#5a665f]">{o.note}</span>}
             </button>
           ))}
         </div>

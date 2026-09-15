@@ -152,8 +152,8 @@ function Pro({ text }: { text: string }) {
 
 function Con({ text }: { text: string }) {
   return (
-    <li className="flex items-start gap-2 text-sm text-[#9aa39c] leading-snug">
-      <XCircle className="h-3.5 w-3.5 flex-shrink-0 mt-0.5 text-[#9aa39c]" />
+    <li className="flex items-start gap-2 text-sm text-[#627068] leading-snug">
+      <XCircle className="h-3.5 w-3.5 flex-shrink-0 mt-0.5 text-[#627068]" />
       {text}
     </li>
   );
@@ -213,13 +213,13 @@ function PlatformCard({
 
           <div className="grid sm:grid-cols-2 gap-4">
             <div>
-              <p className="text-[10px] font-bold uppercase tracking-wider text-[#9aa39c] mb-2.5">Strengths</p>
+              <p className="text-[11px] font-bold uppercase tracking-wider text-[#627068] mb-2.5">Strengths</p>
               <ul className="space-y-2">
                 {pros.map((p) => <Pro key={p} text={p} />)}
               </ul>
             </div>
             <div>
-              <p className="text-[10px] font-bold uppercase tracking-wider text-[#9aa39c] mb-2.5">Limitations</p>
+              <p className="text-[11px] font-bold uppercase tracking-wider text-[#627068] mb-2.5">Limitations</p>
               <ul className="space-y-2">
                 {cons.map((c) => <Con key={c} text={c} />)}
               </ul>
@@ -234,7 +234,7 @@ function PlatformCard({
               className="rounded-xl p-5"
               style={{ background: `${CYAN}0D`, border: `1px solid ${CYAN}30` }}
             >
-              <p className="text-[10px] font-black uppercase tracking-widest mb-1.5" style={{ color: CYAN_LT }}>
+              <p className="text-[11px] font-black uppercase tracking-widest mb-1.5" style={{ color: CYAN_LT }}>
                 Current access
               </p>
               <p className="text-[#10251b] font-black text-base leading-snug mb-1">{deal}</p>
@@ -271,7 +271,7 @@ function PlatformCard({
               affiliate link for: their home page rather than a tracked or deep
               link, which a reader should know before clicking. */}
           {!isAffiliate && !deal && (
-            <p className="text-xs leading-relaxed text-[#6e7b74]">
+            <p className="text-xs leading-relaxed text-[#5a665f]">
               We hold no affiliate arrangement with {name}, so this link goes to their home page
               rather than a tracked or dedicated sign-up page, and we earn nothing if you use it.
             </p>
@@ -364,7 +364,7 @@ export default function BestWeightLossTelehealthPage() {
 
           {/* ── Hero ─────────────────────────────────────────────────────────── */}
           <section className="pt-10 pb-8 sm:pt-12">
-            <p className="text-[#9aa39c] text-xs mb-6">
+            <p className="text-[#627068] text-xs mb-6">
               Australia only &middot; Not medical advice
             </p>
 
@@ -425,7 +425,7 @@ export default function BestWeightLossTelehealthPage() {
               What is the best weight-loss telehealth in Australia?
             </h2>
             <div className="rounded-xl border px-6 py-5" style={{ borderColor: `${CYAN}40`, background: `${CYAN}0A` }}>
-              <p className="text-[10px] font-bold uppercase tracking-[0.18em] mb-2" style={{ color: CYAN_LT }}>
+              <p className="text-[11px] font-bold uppercase tracking-[0.18em] mb-2" style={{ color: CYAN_LT }}>
                 Quick Verdict
               </p>
               <p className="text-[#2b362f] text-sm sm:text-base leading-relaxed max-w-2xl">
@@ -462,7 +462,7 @@ export default function BestWeightLossTelehealthPage() {
             <p className="text-sm text-[#3d4b44] leading-relaxed max-w-2xl mb-4">
               Here is what makes this market hard to compare: <strong className="text-[#10251b]">most Australian providers confirm pricing after an online consultation</strong> rather than publishing a fixed figure. Expect a monthly subscription that bundles treatment, consultations and delivery, shown before you commit, with the final cost depending on the treatment prescribed. New Moshy customers get $120 off their first order through our link.
             </p>
-            <p className="text-xs text-[#6b7a72]">
+            <p className="text-xs text-[#5a665f]">
               Sources: getmoshy.com.au/weight-loss (price as published) and Juniper (no public pricing at time of check),
               21 July 2026.
             </p>
@@ -474,11 +474,11 @@ export default function BestWeightLossTelehealthPage() {
               <table className="w-full min-w-[540px] text-sm">
                 <thead>
                   <tr className="border-b border-[#e5e9e7]">
-                    <th className="text-left pb-3 pr-4 text-[#9aa39c] font-semibold text-[11px] uppercase tracking-wider w-36">Platform</th>
-                    <th className="pb-3 px-3 text-left text-[#9aa39c] font-semibold text-[11px] uppercase tracking-wider">Who it&apos;s for</th>
-                    <th className="pb-3 px-3 text-left text-[#9aa39c] font-semibold text-[11px] uppercase tracking-wider">Approach</th>
-                    <th className="pb-3 px-3 text-left text-[#9aa39c] font-semibold text-[11px] uppercase tracking-wider">Treatment access</th>
-                    <th className="pb-3 pl-3 text-right text-[#9aa39c] font-semibold text-[11px] uppercase tracking-wider"></th>
+                    <th className="text-left pb-3 pr-4 text-[#627068] font-semibold text-[11px] uppercase tracking-wider w-36">Platform</th>
+                    <th className="pb-3 px-3 text-left text-[#627068] font-semibold text-[11px] uppercase tracking-wider">Who it&apos;s for</th>
+                    <th className="pb-3 px-3 text-left text-[#627068] font-semibold text-[11px] uppercase tracking-wider">Approach</th>
+                    <th className="pb-3 px-3 text-left text-[#627068] font-semibold text-[11px] uppercase tracking-wider">Treatment access</th>
+                    <th className="pb-3 pl-3 text-right text-[#627068] font-semibold text-[11px] uppercase tracking-wider"></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -506,7 +506,7 @@ export default function BestWeightLossTelehealthPage() {
                 </tbody>
               </table>
             </div>
-            <p className="text-[#9aa39c] text-[10px] mt-3">
+            <p className="text-[#627068] text-[11px] mt-3">
               Treatment access is subject to individual clinical assessment by each platform&apos;s practitioners. This comparison does not constitute medical advice.
             </p>
           </section>
@@ -613,7 +613,7 @@ export default function BestWeightLossTelehealthPage() {
               load-bearing for the attribution work. */}
             <EditorialMeta lastUpdated="2026-09-10" className="mb-4" />
             <AffiliateDisclosure partners={["Moshy", "Juniper"]} className="mb-3 max-w-2xl" />
-            <p className="text-[#9aa39c] text-xs leading-relaxed max-w-2xl">
+            <p className="text-[#627068] text-xs leading-relaxed max-w-2xl">
               All content on this page is for informational purposes only and does not constitute medical advice. Suitability for any weight management programme depends on individual health factors. Consult a qualified health professional before starting any treatment.
             </p>
             <div className="mt-4 flex flex-wrap gap-3">

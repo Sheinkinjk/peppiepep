@@ -195,10 +195,10 @@ export default function BusinessLoansHub() {
             <div id="enquire" className="scroll-mt-24">
               <div className="mb-3 flex items-baseline justify-between">
                 <h2 className="text-lg font-extrabold tracking-tight text-[#10251b]">Compare &amp; enquire</h2>
-                <span className="text-[12px] font-medium text-[#6e7b74]">~1 minute · no uploads</span>
+                <span className="text-[12px] font-medium text-[#5a665f]">~1 minute · no uploads</span>
               </div>
               <LeadForm sourcePage="/business-loans" />
-              <p className="mt-3 text-xs leading-relaxed text-[#6e7b74]">
+              <p className="mt-3 text-xs leading-relaxed text-[#5a665f]">
                 With your consent we share your details only with the lenders and brokers relevant to your enquiry, and we
                 may be paid a commission if your loan settles, which never changes your rate. See our{" "}
                 <Link href="/privacy" className="underline hover:text-[#10251b]">Privacy Policy</Link> and{" "}
@@ -214,7 +214,7 @@ export default function BusinessLoansHub() {
             {STATS.map((s) => (
               <div key={s.l} className="bg-white px-5 py-6 text-center">
                 <div className="text-xl font-extrabold text-[#0a7c42] sm:text-2xl">{s.v}</div>
-                <div className="mt-1 text-[12px] leading-snug text-[#6e7b74]">{s.l}</div>
+                <div className="mt-1 text-[12px] leading-snug text-[#5a665f]">{s.l}</div>
               </div>
             ))}
           </section>
@@ -376,7 +376,7 @@ export default function BusinessLoansHub() {
             <Link href="/true-cost-of-business-loans-australia" className="font-semibold text-[#0a7c42] hover:text-[#086536]">The hidden cost of factor rates (analysis)</Link>
             <Link href="/business-loan-calculator" className="font-semibold text-[#0a7c42] hover:text-[#086536]">Repayment calculator</Link>
             <Link href="/equipment-finance-instant-asset-write-off" className="font-semibold text-[#0a7c42] hover:text-[#086536]">Equipment finance &amp; the write-off</Link>
-            <Link href="/how-we-make-money" className="font-semibold text-[#6e7b74] hover:text-[#10251b]">How we make money</Link>
+            <Link href="/how-we-make-money" className="font-semibold text-[#5a665f] hover:text-[#10251b]">How we make money</Link>
           </section>
         </div>
       </main>

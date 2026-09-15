@@ -146,7 +146,7 @@ export default function WeightLossCostCalculatorPage() {
                 <details key={f.q} className="group rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] px-5 py-4">
                   <summary className="cursor-pointer list-none font-semibold text-[#10251b] text-sm sm:text-base flex items-center justify-between gap-4">
                     {f.q}
-                    <span aria-hidden="true" className="text-[#9aa39c] group-open:rotate-45 transition-transform text-lg leading-none">+</span>
+                    <span aria-hidden="true" className="text-[#627068] group-open:rotate-45 transition-transform text-lg leading-none">+</span>
                   </summary>
                   <p className="text-[#3d4b44] text-sm leading-relaxed mt-3">{f.a}</p>
                 </details>
@@ -164,15 +164,15 @@ export default function WeightLossCostCalculatorPage() {
             <h2 className="text-sm font-bold text-[#10251b] mb-3">Keep researching</h2>
             <div className="flex flex-wrap gap-3 mb-6">
               <Link href="/weight-loss-telehealth-cost-australia" className="nw-link text-sm">How pricing works</Link>
-              <span className="text-[#9aa39c]">·</span>
+              <span className="text-[#627068]">·</span>
               <Link href="/best-weight-loss-telehealth-australia" className="nw-link text-sm">Best weight-loss telehealth</Link>
-              <span className="text-[#9aa39c]">·</span>
+              <span className="text-[#627068]">·</span>
               <Link href="/moshy" className="nw-link text-sm">Moshy: what it costs</Link>
           <Link href="/moshy-review" className="nw-link text-sm">Moshy, explained</Link>
-              <span className="text-[#9aa39c]">·</span>
+              <span className="text-[#627068]">·</span>
               <Link href="/weight-loss" className="nw-link text-sm">The full weight-loss hub</Link>
             </div>
-            <p className="text-[#9aa39c] text-xs leading-relaxed max-w-2xl">
+            <p className="text-[#627068] text-xs leading-relaxed max-w-2xl">
               This page is operated by Refer Labs and contains a disclosed affiliate referral link to Moshy. We
               may earn a commission if you sign up through it, at no extra cost to you, and it never changes a
               conclusion. All content is general information only and does not constitute medical or financial

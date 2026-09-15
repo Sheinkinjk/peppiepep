@@ -106,11 +106,11 @@ export default function SoftwareFinder({
       <div className={card}>
         <div className="flex items-center justify-between gap-4">
           <h2 className="text-xl font-extrabold tracking-tight text-[#10251b]">Your shortlist</h2>
-          <button type="button" onClick={reset} className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#6e7b74] hover:text-[#10251b]">
+          <button type="button" onClick={reset} className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#5a665f] hover:text-[#10251b]">
             <RotateCcw className="h-3.5 w-3.5" aria-hidden="true" /> Start over
           </button>
         </div>
-        <p className="mt-1.5 text-sm text-[#6e7b74]">
+        <p className="mt-1.5 text-sm text-[#5a665f]">
           Based on your answers ({priorityMeta.label.toLowerCase()}{size ? `, ${SIZES.find((s) => s.id === size)?.label.toLowerCase()}` : ""}). Independent picks, disclosed affiliate links, never sold placement.
         </p>
 
@@ -124,7 +124,7 @@ export default function SoftwareFinder({
                   <h3 className="text-lg font-extrabold text-[#10251b]">{goal.label}</h3>
                   <Link href={goal.hub} className="shrink-0 text-sm font-semibold text-[#0a7c42] hover:text-[#086536]">Compare all →</Link>
                 </div>
-                <p className="mt-1 text-sm text-[#6e7b74]">
+                <p className="mt-1 text-sm text-[#5a665f]">
                   For {goal.label.toLowerCase()}, with a focus on {priorityMeta.phrase}, we&apos;d start with:
                 </p>
                 <div className="mt-3 grid gap-3">
@@ -171,7 +171,7 @@ export default function SoftwareFinder({
                 </button>
               </div>
               {capErr && <p className="mt-2 text-sm font-medium text-[#c0392b]">{capErr}</p>}
-              <p className="mt-2 text-xs text-[#6e7b74]">No spam. We may email you occasional new picks; unsubscribe any time.</p>
+              <p className="mt-2 text-xs text-[#5a665f]">No spam. We may email you occasional new picks; unsubscribe any time.</p>
             </form>
           )}
         </div>
@@ -185,7 +185,7 @@ export default function SoftwareFinder({
   return (
     <div className={card}>
       <div className="mb-5">
-        <div className="flex items-center justify-between text-[11px] font-bold uppercase tracking-[0.12em] text-[#9aa39c]">
+        <div className="flex items-center justify-between text-[11px] font-bold uppercase tracking-[0.12em] text-[#627068]">
           <span>Step {step + 1} of 3</span>
           <span className="text-[#3d4b44]">{["What you need", "Your business", "What matters"][step]}</span>
         </div>
@@ -199,7 +199,7 @@ export default function SoftwareFinder({
       {step === 0 && (
         <>
           <h2 className="text-xl font-extrabold tracking-tight text-[#10251b]">What do you want to sort out?</h2>
-          <p className="mt-1 text-sm text-[#6e7b74]">Pick as many as apply.</p>
+          <p className="mt-1 text-sm text-[#5a665f]">Pick as many as apply.</p>
           <div className="mt-4 grid gap-2.5 sm:grid-cols-2">
             {goals.map((g) => {
               const active = selected.includes(g.id);
@@ -220,7 +220,7 @@ export default function SoftwareFinder({
       {step === 1 && (
         <>
           <h2 className="text-xl font-extrabold tracking-tight text-[#10251b]">How big is your business?</h2>
-          <p className="mt-1 text-sm text-[#6e7b74]">This helps us weight simplicity against scale.</p>
+          <p className="mt-1 text-sm text-[#5a665f]">This helps us weight simplicity against scale.</p>
           <div className="mt-4 flex flex-wrap gap-2.5">
             {SIZES.map((s) => (
               <button key={s.id} type="button" onClick={() => setSize(s.id)}
@@ -235,7 +235,7 @@ export default function SoftwareFinder({
       {step === 2 && (
         <>
           <h2 className="text-xl font-extrabold tracking-tight text-[#10251b]">What matters most right now?</h2>
-          <p className="mt-1 text-sm text-[#6e7b74]">We&apos;ll rank the shortlist accordingly.</p>
+          <p className="mt-1 text-sm text-[#5a665f]">We&apos;ll rank the shortlist accordingly.</p>
           <div className="mt-4 flex flex-wrap gap-2.5">
             {PRIORITIES.map((p) => (
               <button key={p.id} type="button" onClick={() => setPriority(p.id)}

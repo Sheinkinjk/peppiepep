@@ -75,7 +75,7 @@ export default async function AuthorPage({ params }: { params: Promise<{ id: str
         <h1 className="text-3xl font-bold leading-[1.1] tracking-[-0.01em] text-[#10251b] sm:text-4xl">
           {author.name}
         </h1>
-        <p className="mt-2 text-[15px] text-[#6e7b74]">{author.role}, Refer Labs</p>
+        <p className="mt-2 text-[15px] text-[#5a665f]">{author.role}, Refer Labs</p>
 
         <p className="mt-5 text-[15px] leading-relaxed text-[#3d4b44]">
           Observations recorded by {author.name} are listed in the{' '}

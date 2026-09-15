@@ -84,7 +84,7 @@ export default function Page() {
         <p className="mt-4">Three inputs, and all three are findable:</p>
         <div className="mt-4 overflow-x-auto rounded-2xl border border-[#e5e9e7]">
           <table className="w-full min-w-[560px] border-collapse text-left text-sm">
-            <thead className="bg-[#f8faf9] text-[11px] uppercase tracking-[0.1em] text-[#9aa39c]">
+            <thead className="bg-[#f8faf9] text-[11px] uppercase tracking-[0.1em] text-[#627068]">
               <tr>
                 <th className="px-4 py-3 font-semibold">Input</th>
                 <th className="px-4 py-3 font-semibold">Where to find it</th>
@@ -121,7 +121,7 @@ export default function Page() {
         </p>
         <div className="mt-4 overflow-x-auto rounded-2xl border border-[#e5e9e7]">
           <table className="w-full min-w-[520px] border-collapse text-left text-sm">
-            <thead className="bg-[#f8faf9] text-[11px] uppercase tracking-[0.1em] text-[#9aa39c]">
+            <thead className="bg-[#f8faf9] text-[11px] uppercase tracking-[0.1em] text-[#627068]">
               <tr>
                 <th className="px-4 py-3 font-semibold">Step</th>
                 <th className="px-4 py-3 font-semibold">Illustrative figure</th>
@@ -144,7 +144,7 @@ export default function Page() {
             </tbody>
           </table>
         </div>
-        <p className="mt-3 text-xs text-[#6e7b74]">
+        <p className="mt-3 text-xs text-[#5a665f]">
           Illustrative arithmetic, not a price claim. The tariff and running hours are placeholders: use the figures
           from your own bill and your own chiller&apos;s spec sheet.
         </p>

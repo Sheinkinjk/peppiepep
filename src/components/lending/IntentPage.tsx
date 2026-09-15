@@ -72,7 +72,7 @@ export default function IntentPage({ cfg }: { cfg: IntentConfig }) {
       ))}
 
       <main className="mx-auto max-w-3xl px-5 py-10 sm:px-8 sm:py-14">
-        <nav className="text-xs text-[#6e7b74]">
+        <nav className="text-xs text-[#5a665f]">
           <Link href="/business-loans" className="hover:text-[#0a7c42]">Business loans</Link>
           <span className="px-1.5">/</span>
           <span className="text-[#3d4b44]">{cfg.crumb}</span>

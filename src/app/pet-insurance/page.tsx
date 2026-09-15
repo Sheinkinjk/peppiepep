@@ -94,7 +94,7 @@ export default function PetInsurancePage() {
       <main className="text-[#10251b]">
         <div className="mx-auto max-w-3xl px-6 sm:px-8">
           {/* Breadcrumb */}
-          <nav className="flex flex-wrap items-center gap-2 pt-8 text-sm text-[#6e7b74]">
+          <nav className="flex flex-wrap items-center gap-2 pt-8 text-sm text-[#5a665f]">
             <Link href="/" className="transition-colors hover:text-[#10251b]">Refer Labs</Link>
             <span>/</span>
             <span className="text-[#10251b]">Pet insurance</span>
@@ -128,7 +128,7 @@ export default function PetInsurancePage() {
           {/* Hub-only: these cross-links point at the sibling pages, so they stay
               here rather than moving into the shared component. */}
           <section className="mb-10">
-            <p className="mt-4 text-[13px] text-[#6e7b74]">
+            <p className="mt-4 text-[13px] text-[#5a665f]">
               Weighing them up? See{" "}
               <Link href="/knose-vs-petsonme" className="nw-link">Knose vs PetsOnMe side by side</Link>, or our{" "}
               <Link href="/best-pet-insurance-australia" className="nw-link">guide to choosing pet insurance</Link>,

@@ -30,7 +30,7 @@ export default function FeatureMatrix({
         <table className="w-full min-w-[560px] border-collapse text-sm">
           <thead>
             <tr>
-              <th className="sticky left-0 z-20 w-44 border-b border-[#e5e9e7] bg-white px-4 py-4 text-left text-[11px] font-semibold uppercase tracking-wider text-[#9aa39c]">
+              <th className="sticky left-0 z-20 w-44 border-b border-[#e5e9e7] bg-white px-4 py-4 text-left text-[11px] font-semibold uppercase tracking-wider text-[#627068]">
                 {firstColLabel}
               </th>
               {columns.map((c, j) => (
@@ -62,7 +62,7 @@ export default function FeatureMatrix({
                   className="sticky left-0 z-10 bg-white px-4 py-3 text-left text-xs font-medium leading-snug text-[#3d4b44] transition-colors group-hover:bg-[#f5f8f6]"
                 >
                   {r.label}
-                  {r.note && <span className="mt-0.5 block text-[10px] font-normal text-[#9aa39c]">{r.note}</span>}
+                  {r.note && <span className="mt-0.5 block text-[11px] font-normal text-[#627068]">{r.note}</span>}
                 </th>
                 {r.vals.map((v, j) => (
                   <td
@@ -86,7 +86,7 @@ export default function FeatureMatrix({
           </tbody>
         </table>
       </div>
-      {footnote && <p className="mt-3 text-[10px] leading-relaxed text-[#9aa39c]">{footnote}</p>}
+      {footnote && <p className="mt-3 text-[11px] leading-relaxed text-[#627068]">{footnote}</p>}
     </div>
   );
 }

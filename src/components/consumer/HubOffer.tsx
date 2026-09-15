@@ -87,7 +87,7 @@ export default function HubOffer({
           </Link>
         </div>
 
-        <p className="mt-4 text-[11px] font-medium text-[#6e7b74]">
+        <p className="mt-4 text-[12px] font-medium text-[#5a665f]">
           Read off the provider&apos;s own page on {formatVerifiedFull(verified)}. Offers can change,
           so check the current terms before you sign up.
         </p>

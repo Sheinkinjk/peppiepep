@@ -17,7 +17,7 @@ export default function LenderTable({ lenders = LENDERS, caption }: { lenders?: 
       <table className="w-full border-collapse text-left text-sm">
         {caption && <caption className="sr-only">{caption}</caption>}
         <thead>
-          <tr className="bg-[#f8faf9] text-[11px] font-bold uppercase tracking-[0.08em] text-[#6e7b74]">
+          <tr className="bg-[#f8faf9] text-[11px] font-bold uppercase tracking-[0.08em] text-[#5a665f]">
             <th scope="col" className="px-4 py-3">Lender</th>
             <th scope="col" className="px-4 py-3">Advertised rate from</th>
             <th scope="col" className="px-4 py-3">Loan size</th>
@@ -45,7 +45,7 @@ export default function LenderTable({ lenders = LENDERS, caption }: { lenders?: 
           ))}
         </tbody>
       </table>
-      <p className="border-t border-[#eef1ef] bg-[#f8faf9] px-4 py-2.5 text-xs text-[#6e7b74]">
+      <p className="border-t border-[#eef1ef] bg-[#f8faf9] px-4 py-2.5 text-xs text-[#5a665f]">
         Terms as at {ratesAsAt()}, from each lender&apos;s own site. &ldquo;Quote-based&rdquo; means the lender prices each loan individually (Lumi quotes a total repayment; Prospa uses simple interest) rather than publishing a headline rate. Figures are indicative, not a quote; your rate depends on the lender&apos;s assessment. Verify current terms with the lender.
       </p>
     </div>

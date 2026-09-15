@@ -97,7 +97,7 @@ export default function ApolloEnergyReviewPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <ConsumerShell>
         <main id="main-content" className="mx-auto max-w-3xl px-5 pb-24 pt-12 sm:px-8 sm:pt-16">
-          <nav className="mb-7 flex items-center gap-2 text-sm text-[#9aa39c]">
+          <nav className="mb-7 flex items-center gap-2 text-sm text-[#627068]">
             <Link href="/" className="hover:text-[#0a7c42]">Refer Labs</Link>
             <span>/</span>
             <span className="text-[#2b362f]">Apollo Energy Group review</span>
@@ -256,7 +256,7 @@ export default function ApolloEnergyReviewPage() {
             </div>
           </section>
 
-          <p className="mt-10 text-xs leading-relaxed text-[#9aa39c]">
+          <p className="mt-10 text-xs leading-relaxed text-[#627068]">
             Apollo Energy Group credentials, ratings, warranty and savings figures are as published by Apollo and have
             not been independently audited by Refer Labs. Rebate figures reflect the federal Cheaper Home Batteries
             Program as at July 2026 and can change. This page contains a disclosed affiliate link: if you request a quote

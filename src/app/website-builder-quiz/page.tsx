@@ -109,7 +109,7 @@ export default function WebsiteBuilderQuizPage() {
                 <details key={f.q} className="group rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] px-5 py-4">
                   <summary className="cursor-pointer list-none font-semibold text-[#10251b] text-sm sm:text-base flex items-center justify-between gap-4">
                     {f.q}
-                    <span aria-hidden="true" className="text-[#9aa39c] group-open:rotate-45 transition-transform text-lg leading-none">+</span>
+                    <span aria-hidden="true" className="text-[#627068] group-open:rotate-45 transition-transform text-lg leading-none">+</span>
                   </summary>
                   <p className="text-[#3d4b44] text-sm leading-relaxed mt-3">{f.a}</p>
                 </details>
@@ -120,7 +120,7 @@ export default function WebsiteBuilderQuizPage() {
           <RelatedGuides category="Software" currentHref="/website-builder-quiz" limit={6} />
 
           <section className="border-t border-[#e5e9e7] py-8 pb-16">
-            <p className="text-[#9aa39c] text-xs leading-relaxed max-w-2xl">
+            <p className="text-[#627068] text-xs leading-relaxed max-w-2xl">
               This page recommends a builder based on your answers and contains disclosed affiliate links. We may earn
               a commission if you sign up through them, at no extra cost to you, and it never changes a conclusion. We
               never sell rankings.

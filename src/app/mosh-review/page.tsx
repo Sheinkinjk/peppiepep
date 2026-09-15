@@ -213,7 +213,7 @@ export default function MoshReviewPage() {
               <details key={f.q} className="group rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] px-5 py-4">
                 <summary className="cursor-pointer list-none font-semibold text-[#10251b] text-sm sm:text-base flex items-center justify-between gap-4">
                   {f.q}
-                  <span className="text-[#9aa39c] group-open:rotate-45 transition-transform text-lg leading-none">+</span>
+                  <span className="text-[#627068] group-open:rotate-45 transition-transform text-lg leading-none">+</span>
                 </summary>
                 <p className="text-[#3d4b44] text-sm leading-relaxed mt-3">{f.a}</p>
               </details>
@@ -252,11 +252,11 @@ export default function MoshReviewPage() {
         <FactHistory subject="Mosh" kind="offer_observation" hub="hair-loss" route="/mosh-review" />
 
         <AffiliateDisclosure className="mt-8" />
-        <p className="text-[#9aa39c] text-xs mt-8 leading-relaxed">
+        <p className="text-[#627068] text-xs mt-8 leading-relaxed">
           Nothing on this page is medical advice. Prescription hair-loss treatment in Australia is available only after assessment by a
           registered practitioner who decides suitability.
         </p>
-        <p className="text-[#9aa39c] text-xs mt-4">© 2026 Refer Labs · Australia · <Link href="/guides" className="hover:text-[#3d4b44]">All guides</Link></p>
+        <p className="text-[#627068] text-xs mt-4">© 2026 Refer Labs · Australia · <Link href="/guides" className="hover:text-[#3d4b44]">All guides</Link></p>
       </main>
       <StickyCta href={MOSH_HAIR_URL} product="Mosh · hair-loss telehealth" label="Start the consultation" />
     </ConsumerShell>

@@ -198,7 +198,7 @@ export default function CarrdVsButternutPage() {
               <table className="w-full min-w-[560px] text-sm">
                 <thead>
                   <tr className="border-b border-[#e5e9e7]">
-                    <th className="text-left pb-3 pr-4 text-[#9aa39c] font-semibold text-[11px] uppercase tracking-wider w-52"></th>
+                    <th className="text-left pb-3 pr-4 text-[#627068] font-semibold text-[11px] uppercase tracking-wider w-52"></th>
                     <th className="pb-3 px-3 text-left font-extrabold text-[#10251b] text-sm">Carrd</th>
                     <th className="pb-3 px-3 text-left font-extrabold text-[#10251b] text-sm">Butternut AI</th>
                   </tr>
@@ -214,7 +214,7 @@ export default function CarrdVsButternutPage() {
                 </tbody>
               </table>
             </div>
-            <p className="text-[#9aa39c] text-[10px] mt-3 leading-relaxed">
+            <p className="text-[#627068] text-[10px] mt-3 leading-relaxed">
               Details are based on publicly available information and can change, so check current
               features and pricing on each platform before you commit.
             </p>
@@ -346,18 +346,18 @@ export default function CarrdVsButternutPage() {
             <h2 className="text-sm font-bold text-[#10251b] mb-3">Keep comparing</h2>
             <div className="flex flex-wrap gap-3 mb-6">
               <Link href="/carrd" className="nw-link text-sm">Carrd review</Link>
-              <span className="text-[#9aa39c]">·</span>
+              <span className="text-[#627068]">·</span>
               <Link href="/butternut" className="nw-link text-sm">Butternut AI review</Link>
-              <span className="text-[#9aa39c]">·</span>
+              <span className="text-[#627068]">·</span>
               <Link href="/best-website-builder" className="nw-link text-sm">Best website builder 2026</Link>
-              <span className="text-[#9aa39c]">·</span>
+              <span className="text-[#627068]">·</span>
               <Link href="/carrd-vs-durable" className="nw-link text-sm">Carrd vs Durable AI</Link>
-              <span className="text-[#9aa39c]">·</span>
+              <span className="text-[#627068]">·</span>
               <Link href="/durable-vs-butternut" className="nw-link text-sm">Durable AI vs Butternut AI</Link>
-              <span className="text-[#9aa39c]">·</span>
+              <span className="text-[#627068]">·</span>
               <Link href="/guides" className="nw-link text-sm">All guides</Link>
             </div>
-            <p className="text-[#9aa39c] text-xs leading-relaxed max-w-2xl">
+            <p className="text-[#627068] text-xs leading-relaxed max-w-2xl">
               This page is operated by Refer Labs and contains disclosed affiliate referral links to both Carrd and
               Butternut AI. We may earn a commission if you sign up through them, at no extra cost to you. We compare on
               features, approach, and pricing, and we never sell rankings. Comparisons are based on publicly available

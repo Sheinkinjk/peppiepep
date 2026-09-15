@@ -38,17 +38,17 @@ export default function EditorialMeta({
   className?: string;
 }) {
   return (
-    <p className={`flex flex-wrap items-center gap-x-2 gap-y-1 text-[11px] leading-relaxed text-[#9aa39c] ${className}`}>
+    <p className={`flex flex-wrap items-center gap-x-2 gap-y-1 text-[12px] leading-relaxed text-[#627068] ${className}`}>
       <span>
         Editor{" "}
-        <Link href="/authors/jarred" className="text-[#6e7b74] transition-colors hover:text-[#3d4b44] hover:underline">
+        <Link href="/authors/jarred" className="text-[#5a665f] transition-colors hover:text-[#3d4b44] hover:underline">
           Jarred, Founder
         </Link>
       </span>
       <span aria-hidden="true">·</span>
       <span>
         Last updated{" "}
-        <time dateTime={lastUpdated} className="text-[#6e7b74]">
+        <time dateTime={lastUpdated} className="text-[#5a665f]">
           {formatAU(lastUpdated)}
         </time>
       </span>

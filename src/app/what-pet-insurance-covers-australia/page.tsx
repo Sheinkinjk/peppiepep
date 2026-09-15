@@ -85,7 +85,7 @@ export default function WhatPetInsuranceCoversPage() {
 
       <main className="text-[#10251b]">
         <div className="mx-auto max-w-3xl px-6 sm:px-8">
-          <nav className="flex flex-wrap items-center gap-2 pt-8 text-sm text-[#6e7b74]">
+          <nav className="flex flex-wrap items-center gap-2 pt-8 text-sm text-[#5a665f]">
             <Link href="/" className="transition-colors hover:text-[#10251b]">Refer Labs</Link>
             <span>/</span>
             <Link href="/pet-insurance" className="transition-colors hover:text-[#10251b]">Pet insurance</Link>

@@ -221,7 +221,7 @@ export default function BusinessSoftwarePage() {
                   <h3 className="text-lg font-extrabold text-[#10251b] group-hover:text-[#0a7c42]">{d.brand}</h3>
                   <p className="mt-2 text-[15px] font-bold leading-snug text-[#0a7c42]">{d.offer}</p>
                   {d.verified && (
-                    <p className="mt-2 text-[11px] font-medium text-[#6e7b74]">
+                    <p className="mt-2 text-[12px] font-medium text-[#5a665f]">
                       {checkMethod(d.brand, true)} on {formatVerifiedFull(d.verified)}.
                     </p>
                   )}
@@ -251,7 +251,7 @@ export default function BusinessSoftwarePage() {
             <div className="grid gap-8 lg:grid-cols-[220px_1fr] lg:gap-14">
               <div className="lg:pt-1">
                 <h2 className="text-xl font-extrabold text-[#10251b]">Popular tools</h2>
-                <p className="mt-2 text-[13px] leading-relaxed text-[#9aa39c]">Independent reviews of the tools people search for most.</p>
+                <p className="mt-2 text-[13px] leading-relaxed text-[#627068]">Independent reviews of the tools people search for most.</p>
               </div>
               <div className="grid gap-4 sm:grid-cols-2">
                 {tools.map((t) => (

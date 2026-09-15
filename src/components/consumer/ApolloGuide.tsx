@@ -91,7 +91,7 @@ export default function ApolloGuide({ cfg }: { cfg: ApolloGuideConfig }) {
       ))}
 
       <main className="mx-auto max-w-3xl px-5 py-10 sm:px-8 sm:py-14">
-        <nav className="flex flex-wrap items-center gap-2 text-sm text-[#6e7b74]">
+        <nav className="flex flex-wrap items-center gap-2 text-sm text-[#5a665f]">
           <Link href="/" className="hover:text-[#10251b]">Refer Labs</Link>
           <span>/</span>
           <Link href="/apollo-energy-group" className="hover:text-[#10251b]">Home batteries</Link>
@@ -186,7 +186,7 @@ export default function ApolloGuide({ cfg }: { cfg: ApolloGuideConfig }) {
         </section>
 
         {/* Disclaimer */}
-        <p className="mt-10 text-xs leading-relaxed text-[#6e7b74]">
+        <p className="mt-10 text-xs leading-relaxed text-[#5a665f]">
           Rebate and savings figures are indicative only and depend on your system size, usage, tariff, and the STC spot
           price, which floats. Confirm current rebate terms and your specific quote before committing. Some links are
           disclosed affiliate links, and commissions never change a comparison or a conclusion. Read our{" "}

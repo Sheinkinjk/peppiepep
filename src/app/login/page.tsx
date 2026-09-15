@@ -160,7 +160,7 @@ function LoginContent() {
         ) : (
           <>
             <h1 className="mt-4 text-2xl font-bold text-[#10251b]">Staff sign in</h1>
-            <p className="mt-2 text-sm text-[#6e7b74]">
+            <p className="mt-2 text-sm text-[#5a665f]">
               For the Refer Labs team. Readers do not need an account to use the site.
             </p>
 
@@ -205,7 +205,7 @@ function LoginContent() {
                 {loading ? "Signing in..." : "Sign in"}
               </button>
 
-              <div className="flex items-center gap-3 py-1 text-xs uppercase tracking-wide text-[#9aa39c]">
+              <div className="flex items-center gap-3 py-1 text-xs uppercase tracking-wide text-[#627068]">
                 <span className="h-px flex-1 bg-[#e5e9e7]" />
                 or
                 <span className="h-px flex-1 bg-[#e5e9e7]" />

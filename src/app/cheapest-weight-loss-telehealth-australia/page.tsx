@@ -151,7 +151,7 @@ export default function CheapestWeightLossTelehealthPage() {
               stops being a matter of opinion.
             </p>
             <EditorialMeta lastUpdated="2026-09-10" className="mb-5" />
-            <p className="text-[#9aa39c] text-xs leading-relaxed max-w-2xl mb-7">
+            <p className="text-[#627068] text-xs leading-relaxed max-w-2xl mb-7">
               Information only, not medical advice. Prices are approximate and change, so check current pricing on each
               provider. This page contains a disclosed affiliate link to Moshy.
             </p>
@@ -197,10 +197,10 @@ export default function CheapestWeightLossTelehealthPage() {
               <table className="w-full min-w-[620px] text-sm">
                 <thead>
                   <tr className="border-b border-[#e5e9e7]">
-                    <th className="text-left pb-3 pr-4 text-[#9aa39c] font-semibold text-[11px] uppercase tracking-wider w-44">Service</th>
-                    <th className="pb-3 px-3 text-left text-[#9aa39c] font-semibold text-[11px] uppercase tracking-wider">Model</th>
-                    <th className="pb-3 px-3 text-left text-[#9aa39c] font-semibold text-[11px] uppercase tracking-wider">Pricing</th>
-                    <th className="pb-3 px-3 text-left text-[#9aa39c] font-semibold text-[11px] uppercase tracking-wider">Who</th>
+                    <th className="text-left pb-3 pr-4 text-[#627068] font-semibold text-[11px] uppercase tracking-wider w-44">Service</th>
+                    <th className="pb-3 px-3 text-left text-[#627068] font-semibold text-[11px] uppercase tracking-wider">Model</th>
+                    <th className="pb-3 px-3 text-left text-[#627068] font-semibold text-[11px] uppercase tracking-wider">Pricing</th>
+                    <th className="pb-3 px-3 text-left text-[#627068] font-semibold text-[11px] uppercase tracking-wider">Who</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -215,7 +215,7 @@ export default function CheapestWeightLossTelehealthPage() {
                 </tbody>
               </table>
             </div>
-            <p className="text-[#9aa39c] text-[10px] mt-3 leading-relaxed">
+            <p className="text-[#627068] text-[10px] mt-3 leading-relaxed">
               Prices are approximate, based on publicly available information, and change often.
               Check current pricing on each provider. Medication, where prescribed, may be billed separately. Treatment
               access is subject to individual clinical assessment.
@@ -329,14 +329,14 @@ export default function CheapestWeightLossTelehealthPage() {
             <div className="flex flex-wrap gap-3 mb-6">
               <Link href="/moshy" className="nw-link text-sm">Moshy</Link>
           <Link href="/moshy-review" className="nw-link text-sm">Moshy review</Link>
-              <span className="text-[#9aa39c]">·</span>
+              <span className="text-[#627068]">·</span>
               <Link href="/moshy-vs-juniper" className="nw-link text-sm">Moshy vs Juniper</Link>
-              <span className="text-[#9aa39c]">·</span>
+              <span className="text-[#627068]">·</span>
               <Link href="/best-weight-loss-telehealth-australia" className="nw-link text-sm">Best weight loss telehealth</Link>
-              <span className="text-[#9aa39c]">·</span>
+              <span className="text-[#627068]">·</span>
               <Link href="/weight-loss" className="nw-link text-sm">Weight loss hub</Link>
             </div>
-            <p className="text-[#9aa39c] text-xs leading-relaxed max-w-2xl">
+            <p className="text-[#627068] text-xs leading-relaxed max-w-2xl">
               This page is operated by Refer Labs and contains a disclosed affiliate referral link to Moshy. Juniper
               and Doctors for Weight Loss are linked without affiliate arrangements. We compare on price, model and
               what is included, and we never sell rankings. All content is for informational purposes only and does not

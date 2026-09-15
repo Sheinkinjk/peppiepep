@@ -53,7 +53,7 @@ export default function CloudTalkPage() {
       <PremiumAffiliateLanding config={cloudtalkConfig} />
       <div className="border-t border-[#e5e9e7] bg-white py-6">
         <div className="mx-auto max-w-3xl px-6 sm:px-8">
-          <p className="text-[#9aa39c] text-xs mb-1.5">Compare business phone systems</p>
+          <p className="text-[#627068] text-xs mb-1.5">Compare business phone systems</p>
           <Link href="/compare/business-phone" className="text-sm text-[#0a7c42] font-semibold hover:text-[#086536] transition-colors">
             CloudTalk vs KrispCall in the business-phone hub &rarr;
           </Link>

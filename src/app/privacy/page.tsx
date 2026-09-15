@@ -75,7 +75,7 @@ export default function Privacy() {
     <ConsumerShell>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <main id="main-content" className="mx-auto max-w-3xl px-5 pb-20 pt-12 sm:px-8 sm:pt-16">
-        <nav className="mb-8 flex items-center gap-2 text-sm text-[#9aa39c]">
+        <nav className="mb-8 flex items-center gap-2 text-sm text-[#627068]">
           <Link href="/" className="hover:text-[#0a7c42]">Refer Labs</Link>
           <span>/</span>
           <span className="text-[#2b362f]">Privacy</span>
@@ -84,7 +84,7 @@ export default function Privacy() {
         <h1 className="mt-4 text-4xl font-bold leading-[1.07] tracking-[-0.01em] text-[#10251b] sm:text-5xl">
           Privacy Policy
         </h1>
-        <p className="mt-4 text-sm text-[#9aa39c]">Last updated: 15 September 2026 · Version 3.0</p>
+        <p className="mt-4 text-sm text-[#627068]">Last updated: 15 September 2026 · Version 3.0</p>
 
         <p className="mt-8 text-lg leading-relaxed text-[#2b362f]">
           You can read all of Refer Labs without giving us any personal information. We only collect details you choose

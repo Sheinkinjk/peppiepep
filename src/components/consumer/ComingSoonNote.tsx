@@ -79,7 +79,7 @@ export default function ComingSoonNote({
 
   return (
     <div className="flex items-start gap-3 rounded-2xl border border-[#e5e9e7] bg-[#f8faf9] px-5 py-4">
-      <Clock className="mt-0.5 h-4 w-4 shrink-0 text-[#6e7b74]" aria-hidden="true" />
+      <Clock className="mt-0.5 h-4 w-4 shrink-0 text-[#5a665f]" aria-hidden="true" />
       <p className="text-[13px] leading-relaxed text-[#3d4b44]">
         <strong className="font-semibold text-[#10251b]">{category} is still being built.</strong>{" "}
         {body}{" "}

@@ -122,7 +122,7 @@ export default function AffiliateEarningsCalculatorPage() {
                 <details key={f.q} className="group rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] px-5 py-4">
                   <summary className="cursor-pointer list-none font-semibold text-[#10251b] text-sm sm:text-base flex items-center justify-between gap-4">
                     {f.q}
-                    <span aria-hidden="true" className="text-[#9aa39c] group-open:rotate-45 transition-transform text-lg leading-none">+</span>
+                    <span aria-hidden="true" className="text-[#627068] group-open:rotate-45 transition-transform text-lg leading-none">+</span>
                   </summary>
                   <p className="text-[#3d4b44] text-sm leading-relaxed mt-3">{f.a}</p>
                 </details>
@@ -138,12 +138,12 @@ export default function AffiliateEarningsCalculatorPage() {
             <h2 className="text-sm font-bold text-[#10251b] mb-3">Keep going</h2>
             <div className="flex flex-wrap gap-3 mb-6">
               <Link href="/affiliate-programs-australia" className="nw-link text-sm">Best affiliate programs Australia</Link>
-              <span className="text-[#9aa39c]">·</span>
+              <span className="text-[#627068]">·</span>
               <Link href="/high-paying-affiliate-programs" className="nw-link text-sm">Highest-paying programs</Link>
-              <span className="text-[#9aa39c]">·</span>
+              <span className="text-[#627068]">·</span>
               <Link href="/how-to-start-affiliate-marketing-australia" className="nw-link text-sm">How to start from zero</Link>
             </div>
-            <p className="text-[#9aa39c] text-xs leading-relaxed max-w-2xl">
+            <p className="text-[#627068] text-xs leading-relaxed max-w-2xl">
               This calculator produces illustrative estimates from stated assumptions. It is not a prediction
               or promise of income, results vary widely and can be zero, and nothing on this page is financial
               advice.

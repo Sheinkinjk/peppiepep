@@ -189,7 +189,7 @@ const faqSchema = {
 
 export default function HomePage() {
   return (
-    <ConsumerShell>
+    <ConsumerShell hideMobileSearch>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
@@ -211,18 +211,23 @@ export default function HomePage() {
               <div className="mt-8">
                 <SiteSearch variant="hero" />
               </div>
-              <div className="mt-5 flex flex-wrap items-center gap-x-2 gap-y-1.5 text-[13px] text-[#6e7b74]">
-                <span className="font-medium text-[#3d4b44]">Popular:</span>
+              {/* Chips rather than dot-separated links (16 Sep 2026): on a phone the row
+                  wrapped with a stray "·" leading the second line. */}
+              <div className="mt-5 flex flex-wrap items-center gap-2 text-[13px]">
+                <span className="mr-1 font-medium text-[#3d4b44]">Popular:</span>
                 {[
                   { l: "Weight loss", h: "/weight-loss" },
                   { l: "Hair loss", h: "/hair-loss" },
                   { l: "Home batteries", h: "/apollo-energy-group" },
                   { l: "Portable power", h: "/portable-power-station-australia" },
-                ].map((p, i) => (
-                  <span key={p.h} className="flex items-center gap-2">
-                    {i > 0 && <span className="text-[#cdd5cf]">·</span>}
-                    <Link href={p.h} className="nw-link !text-[13px]">{p.l}</Link>
-                  </span>
+                ].map((p) => (
+                  <Link
+                    key={p.h}
+                    href={p.h}
+                    className="inline-flex min-h-[36px] items-center rounded-full border border-[#dfe5df] bg-white px-3.5 font-semibold text-[#0a7c42] transition-colors hover:border-[#0a7c42]/40 hover:bg-[#e8f5ee]"
+                  >
+                    {p.l}
+                  </Link>
                 ))}
               </div>
 
@@ -230,7 +235,7 @@ export default function HomePage() {
                 looking for a way in, and the only entry point used to be a dark
                 band at the very bottom of the page. A full CTA up here would
                 fight the consumer proposition, so it is a link, not a button. */}
-              <p className="mt-6 text-[13px] text-[#6e7b74]">
+              <p className="mt-6 text-[13px] text-[#5a665f]">
                 Run a business?{" "}
                 <Link href="/partner-with-refer-labs" className="font-semibold text-[#0a7c42] underline-offset-2 hover:underline">
                   Apply to partner with Refer Labs
@@ -256,7 +261,7 @@ export default function HomePage() {
                   </span>
                   <div>
                     <span className="text-[1.35rem] font-extrabold tracking-[-0.01em] text-[#10251b]">Apollo Energy Group</span>
-                    <p className="text-[13px] text-[#6e7b74]">Home batteries</p>
+                    <p className="text-[13px] text-[#5a665f]">Home batteries</p>
                   </div>
                 </div>
                 <p className="mt-4 text-[15px] leading-relaxed text-[#3d4b44]">
@@ -274,10 +279,10 @@ export default function HomePage() {
 
         {/* ── Trust strip: for a comparison site, trust is the product ── */}
         <section className="border-b border-[#e5e9e7] bg-white">
-          <ul className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-8 gap-y-2.5 px-5 py-4 sm:justify-between sm:px-8">
+          <ul className="mx-auto grid max-w-6xl grid-cols-2 gap-x-4 gap-y-3 px-5 py-4 sm:flex sm:flex-wrap sm:items-center sm:justify-between sm:px-8">
             {trust.map((t) => (
-              <li key={t} className="inline-flex items-center gap-2 text-[13px] font-medium text-[#3d4b44]">
-                <Check className="h-4 w-4 shrink-0 text-[#0a7c42]" strokeWidth={2.5} aria-hidden="true" />
+              <li key={t} className="flex items-start gap-2 text-[13px] font-medium leading-snug text-[#3d4b44] sm:items-center">
+                <Check className="mt-px h-4 w-4 shrink-0 text-[#0a7c42] sm:mt-0" strokeWidth={2.5} aria-hidden="true" />
                 {t}
               </li>
             ))}
@@ -306,7 +311,7 @@ export default function HomePage() {
                         <Image src={`/logos/${p.logo}.png`} alt={`${p.name} logo`} width={40} height={40} className="h-9 w-9 object-contain" />
                       )}
                     </span>
-                    <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#9aa39c]">{p.cat}</span>
+                    <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#627068]">{p.cat}</span>
                   </div>
                   <h3 className="mt-4 text-xl font-extrabold tracking-[-0.01em] text-[#10251b] group-hover:text-[#0a7c42]">{p.name}</h3>
                   <span className="mt-2.5 inline-flex w-fit items-center gap-1.5 rounded-full border border-[#cfe6da] bg-[#e8f5ee] px-3 py-1 text-[12.5px] font-bold text-[#0a7c42]">
@@ -353,7 +358,7 @@ export default function HomePage() {
                         <Link
                           key={l.h}
                           href={l.h}
-                          className="font-medium text-[#6e7b74] underline-offset-4 transition-colors hover:text-[color:var(--accent)] hover:underline"
+                          className="font-medium text-[#5a665f] underline-offset-4 transition-colors hover:text-[color:var(--accent)] hover:underline"
                         >
                           {l.l}
                         </Link>
@@ -376,7 +381,7 @@ export default function HomePage() {
               <details className="group flex flex-col rounded-2xl border border-dashed border-[#cfd6d1] bg-white/60 open:bg-[#f5f8f6]">
                 <summary className="flex cursor-pointer list-none flex-col p-6 [&::-webkit-details-marker]:hidden">
                   <div className="flex items-center gap-3.5">
-                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#eef1ef] text-[#6e7b74]">
+                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#eef1ef] text-[#5a665f]">
                       <Clock className="h-[1.35rem] w-[1.35rem]" strokeWidth={1.9} aria-hidden="true" />
                     </span>
                     <h3 className="text-lg font-extrabold leading-tight tracking-[-0.01em] text-[#10251b]">
@@ -411,7 +416,7 @@ export default function HomePage() {
                           >
                             {c.title}
                           </Link>
-                          <span className="mt-0.5 block text-[13px] leading-snug text-[#6e7b74]">{c.note}</span>
+                          <span className="mt-0.5 block text-[13px] leading-snug text-[#5a665f]">{c.note}</span>
                         </span>
                       </div>
                     );

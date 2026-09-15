@@ -51,7 +51,7 @@ export default function Page() {
       <PremiumAffiliateLanding config={blinqConfig} />
       <div className="border-t border-[#e5e9e7] bg-white py-6">
         <div className="mx-auto max-w-3xl px-6 sm:px-8">
-          <p className="text-[#9aa39c] text-xs mb-1.5">See all business software</p>
+          <p className="text-[#627068] text-xs mb-1.5">See all business software</p>
           <Link href="/business-software" className="text-sm text-[#0a7c42] font-semibold hover:text-[#086536] transition-colors">
             See all business software &rarr;
           </Link>

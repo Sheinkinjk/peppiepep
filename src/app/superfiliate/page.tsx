@@ -61,7 +61,7 @@ export default function SuperfiliatePage() {
       <PremiumAffiliateLanding config={superfiliateConfig} />
       <div className="border-t border-[#e5e9e7] bg-white py-6">
         <div className="mx-auto max-w-3xl px-6 sm:px-8">
-          <p className="text-[#9aa39c] text-xs mb-1.5">Looking for programs to promote instead?</p>
+          <p className="text-[#627068] text-xs mb-1.5">Looking for programs to promote instead?</p>
           <Link href="/affiliate-programs-australia" className="text-sm text-[#0a7c42] font-semibold hover:text-[#086536] transition-colors">
             See the best affiliate programs for Australians &rarr;
           </Link>

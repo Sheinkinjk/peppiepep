@@ -228,7 +228,7 @@ export default function AffiliateProgramsAustraliaPage() {
       <main id="main-content">
         {/* Hero */}
         <section className="mx-auto max-w-4xl px-5 pt-10 sm:px-8 sm:pt-14">
-          <nav className="mb-6 flex items-center gap-2 text-sm text-[#9aa39c]">
+          <nav className="mb-6 flex items-center gap-2 text-sm text-[#627068]">
             <Link href="/" className="hover:text-[#0a7c42]">Refer Labs</Link>
             <span>/</span>
             <Link href="/guides" className="hover:text-[#0a7c42]">Guides</Link>
@@ -262,7 +262,7 @@ export default function AffiliateProgramsAustraliaPage() {
         <section className="mx-auto max-w-4xl px-5 pt-12 sm:px-8">
           <div className="rounded-2xl border border-[#e5e9e7] bg-white p-6 sm:p-8">
             <h2 className="mt-2 text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Programs we&rsquo;ve looked at closely</h2>
-            <p className="mt-2 max-w-xl text-sm leading-relaxed text-[#6e7b74]">
+            <p className="mt-2 max-w-xl text-sm leading-relaxed text-[#5a665f]">
               These are the tools and services we&rsquo;ve tested and written up ourselves. Each links to our independent
               review with how it works, who it suits, and the current offer.
             </p>
@@ -278,12 +278,12 @@ export default function AffiliateProgramsAustraliaPage() {
                   </span>
                   <div className="min-w-0">
                     <p className="truncate text-sm font-bold text-[#10251b] transition-colors group-hover:text-[#0a7c42]">{r.name}</p>
-                    <p className="truncate text-[11px] text-[#9aa39c]">{r.cat}</p>
+                    <p className="truncate text-[11px] text-[#627068]">{r.cat}</p>
                   </div>
                 </Link>
               ))}
             </div>
-            <p className="mt-5 text-xs leading-relaxed text-[#9aa39c]">
+            <p className="mt-5 text-xs leading-relaxed text-[#627068]">
               The broader reference tables below cover well-known programs across every category, whether or not we&rsquo;ve reviewed them yet.
             </p>
           </div>
@@ -291,7 +291,7 @@ export default function AffiliateProgramsAustraliaPage() {
 
         {/* Category jump nav */}
         <section className="mx-auto max-w-4xl px-5 pt-10 sm:px-8">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#9aa39c]">Browse by category</p>
+          <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#627068]">Browse by category</p>
           <nav className="mt-3 flex flex-wrap gap-2">
             {categories.map((c) => (
               <a
@@ -320,10 +320,10 @@ export default function AffiliateProgramsAustraliaPage() {
               <table className="w-full min-w-[640px] text-sm">
                 <thead>
                   <tr className="border-b border-[#e5e9e7] bg-[#f5f8f6]">
-                    <th className="px-5 py-3 text-left text-[11px] font-bold uppercase tracking-wider text-[#9aa39c]">Program</th>
-                    <th className="px-4 py-3 text-left text-[11px] font-bold uppercase tracking-wider text-[#9aa39c]">Typical commission</th>
-                    <th className="px-4 py-3 text-left text-[11px] font-bold uppercase tracking-wider text-[#9aa39c]">Cookie window</th>
-                    <th className="px-5 py-3 text-left text-[11px] font-bold uppercase tracking-wider text-[#9aa39c]">Network</th>
+                    <th className="px-5 py-3 text-left text-[11px] font-bold uppercase tracking-wider text-[#627068]">Program</th>
+                    <th className="px-4 py-3 text-left text-[11px] font-bold uppercase tracking-wider text-[#627068]">Typical commission</th>
+                    <th className="px-4 py-3 text-left text-[11px] font-bold uppercase tracking-wider text-[#627068]">Cookie window</th>
+                    <th className="px-5 py-3 text-left text-[11px] font-bold uppercase tracking-wider text-[#627068]">Network</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -331,8 +331,8 @@ export default function AffiliateProgramsAustraliaPage() {
                     <tr key={p.name} className="border-b border-[#eef1ef] last:border-0 hover:bg-[#f5f8f6]">
                       <td className="px-5 py-4 font-bold text-[#10251b]">{p.name}</td>
                       <td className="px-4 py-4 text-[#3d4b44]">{p.commission}</td>
-                      <td className="px-4 py-4 text-[#6e7b74]">{p.cookie}</td>
-                      <td className="px-5 py-4 text-[#6e7b74]">{p.network}</td>
+                      <td className="px-4 py-4 text-[#5a665f]">{p.cookie}</td>
+                      <td className="px-5 py-4 text-[#5a665f]">{p.network}</td>
                     </tr>
                   ))}
                 </tbody>

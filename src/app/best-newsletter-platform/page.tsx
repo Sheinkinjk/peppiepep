@@ -309,15 +309,15 @@ export default function BestNewsletterPlatformPage() {
 
               <div className="grid sm:grid-cols-3 gap-4 mb-6 text-sm">
                 <div className="rounded-xl bg-[#f5f8f6] border border-[#e5e9e7] p-4">
-                  <p className="text-[10px] font-semibold uppercase tracking-widest text-[#9aa39c] mb-1">Free Plan</p>
+                  <p className="text-[10px] font-semibold uppercase tracking-widest text-[#627068] mb-1">Free Plan</p>
                   <p className="text-[#2b362f] font-medium">{p.free}</p>
                 </div>
                 <div className="rounded-xl bg-[#f5f8f6] border border-[#e5e9e7] p-4">
-                  <p className="text-[10px] font-semibold uppercase tracking-widest text-[#9aa39c] mb-1">Paid From</p>
+                  <p className="text-[10px] font-semibold uppercase tracking-widest text-[#627068] mb-1">Paid From</p>
                   <p className="text-[#2b362f] font-medium">{p.paid}</p>
                 </div>
                 <div className="rounded-xl bg-[#f5f8f6] border border-[#e5e9e7] p-4">
-                  <p className="text-[10px] font-semibold uppercase tracking-widest text-[#9aa39c] mb-1">Revenue Share</p>
+                  <p className="text-[10px] font-semibold uppercase tracking-widest text-[#627068] mb-1">Revenue Share</p>
                   <p className="text-[#2b362f] font-medium">{p.revenueShare}</p>
                 </div>
               </div>
@@ -357,7 +357,7 @@ export default function BestNewsletterPlatformPage() {
             <table className="w-full min-w-[560px] text-sm border-collapse">
               <thead>
                 <tr>
-                  <th className="text-left pb-3 pr-4 text-[11px] font-semibold uppercase tracking-widest text-[#9aa39c]">Feature</th>
+                  <th className="text-left pb-3 pr-4 text-[11px] font-semibold uppercase tracking-widest text-[#627068]">Feature</th>
                   {["beehiiv", "Substack", "ConvertKit"].map((col) => (
                     <th key={col} className="text-left pb-3 pr-4 text-[11px] font-semibold uppercase tracking-widest" style={{ color: col === "beehiiv" ? CYAN_LT : "rgba(255,255,255,0.3)" }}>
                       {col}
@@ -446,7 +446,7 @@ export default function BestNewsletterPlatformPage() {
 
           {/* Related guides */}
           <div className="mt-14 text-left max-w-2xl mx-auto">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#9aa39c] mb-5">Related Guides</p>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#627068] mb-5">Related Guides</p>
             <div className="grid sm:grid-cols-2 gap-3">
               {[
                 { href: "/best-website-builder", label: "Best Website Builder 2026" },
@@ -470,7 +470,7 @@ export default function BestNewsletterPlatformPage() {
         {/* Affiliate disclosure. Legally required (ACL), and this page compares a
             brand we earn on against two we do not, so the asymmetry is stated. */}
         <section className="mx-auto max-w-5xl border-t border-[#e5e9e7] px-5 py-8 pb-16 sm:px-8">
-          <p className="max-w-2xl text-xs leading-relaxed text-[#9aa39c]">
+          <p className="max-w-2xl text-xs leading-relaxed text-[#627068]">
             This page is operated by Refer Labs and contains an affiliate referral link to beehiiv. If you sign up
             through it we may earn a commission, at no extra cost to you. We do not have an affiliate arrangement with
             Substack or Kit, so we earn nothing if you choose either of them, and that has not changed what we say

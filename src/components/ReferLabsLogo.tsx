@@ -5,6 +5,8 @@ export function ReferLabsLogo({ className = "" }: { className?: string }) {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
+      aria-hidden="true"
+      focusable="false"
     >
       <defs>
         <linearGradient id="frame-gradient" x1="0" y1="0" x2="1" y2="1">

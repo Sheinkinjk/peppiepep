@@ -70,7 +70,7 @@ export default function CarrdVsDurablePage() {
           <span className="text-[#2b362f]">Carrd vs Durable AI</span>
         </nav>
 
-        <p className="text-[#9aa39c] text-xs mb-5">Comparison · Website builders</p>
+        <p className="text-[#627068] text-xs mb-5">Comparison · Website builders</p>
         <h1 className="text-3xl sm:text-4xl lg:text-[2.7rem] font-black leading-[1.08] tracking-tight mb-4">
           Carrd vs Durable AI:{" "}
           <span style={{ color: CYAN_LT }}>cheap-and-simple vs AI-built business site</span>
@@ -163,7 +163,7 @@ export default function CarrdVsDurablePage() {
               <details key={f.q} className="group rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] px-5 py-4">
                 <summary className="cursor-pointer list-none font-semibold text-[#10251b] text-sm sm:text-base flex items-center justify-between gap-4">
                   {f.q}
-                  <span className="text-[#9aa39c] group-open:rotate-45 transition-transform text-lg leading-none">+</span>
+                  <span className="text-[#627068] group-open:rotate-45 transition-transform text-lg leading-none">+</span>
                 </summary>
                 <p className="text-[#3d4b44] text-sm leading-relaxed mt-3">{f.a}</p>
               </details>
@@ -176,7 +176,7 @@ export default function CarrdVsDurablePage() {
           <Link href="/guides" style={{ color: CYAN }} className="hover:opacity-80">All guides →</Link>
         </div>
 
-        <p className="text-[#9aa39c] text-xs mt-8 leading-relaxed">
+        <p className="text-[#627068] text-xs mt-8 leading-relaxed">
           This page contains affiliate links, we may earn a commission if you sign up through them, at no extra cost to you.
         </p>
       </main>

@@ -264,7 +264,7 @@ export default function LeadForm({ sourcePage }: { sourcePage?: string }) {
           <Link href="/business-loans" className="text-sm font-semibold text-[#0a7c42] hover:text-[#086536]">
             Back to business loans
           </Link>
-          <Link href="/how-we-make-money" className="text-sm font-semibold text-[#6e7b74] hover:text-[#10251b]">
+          <Link href="/how-we-make-money" className="text-sm font-semibold text-[#5a665f] hover:text-[#10251b]">
             How we make money
           </Link>
         </div>
@@ -291,7 +291,7 @@ export default function LeadForm({ sourcePage }: { sourcePage?: string }) {
           <h2 ref={headingRef} tabIndex={-1} className="text-xl font-extrabold text-[#10251b] outline-none">
             What are you looking to borrow?
           </h2>
-          <p className="mt-1 text-sm text-[#6e7b74]">Rough figures are fine. It takes about a minute.</p>
+          <p className="mt-1 text-sm text-[#5a665f]">Rough figures are fine. It takes about a minute.</p>
 
           <Chips label="How much do you need?" name="amount_requested" required error={errors.amount_requested}
             options={AMOUNT_BANDS.map((b) => ({ value: b, title: AMOUNT_DISPLAY[b] }))}
@@ -322,7 +322,7 @@ export default function LeadForm({ sourcePage }: { sourcePage?: string }) {
           <h2 ref={headingRef} tabIndex={-1} className="text-xl font-extrabold text-[#10251b] outline-none">
             Tell us about the business
           </h2>
-          <p className="mt-1 text-sm text-[#6e7b74]">Only the business name and monthly revenue are required.</p>
+          <p className="mt-1 text-sm text-[#5a665f]">Only the business name and monthly revenue are required.</p>
 
           <div className="grid gap-4 sm:grid-cols-2">
             <TextField label="Business name" name="business_name" required error={errors.business_name} maxLength={160}
@@ -384,7 +384,7 @@ export default function LeadForm({ sourcePage }: { sourcePage?: string }) {
           <h2 ref={headingRef} tabIndex={-1} className="text-xl font-extrabold text-[#10251b] outline-none">
             Where should we reach you?
           </h2>
-          <p className="mt-1 text-sm text-[#6e7b74]">A person reviews your enquiry and gets back to you within one business day.</p>
+          <p className="mt-1 text-sm text-[#5a665f]">A person reviews your enquiry and gets back to you within one business day.</p>
 
           <div className="grid gap-4 sm:grid-cols-2">
             <TextField label="First name" name="first_name" required error={errors.first_name} maxLength={80}
@@ -413,7 +413,7 @@ export default function LeadForm({ sourcePage }: { sourcePage?: string }) {
             </Consent>
           </div>
 
-          <p className="mt-4 flex items-start gap-2 text-xs leading-relaxed text-[#6e7b74]">
+          <p className="mt-4 flex items-start gap-2 text-xs leading-relaxed text-[#5a665f]">
             <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0" style={{ color: GREEN }} aria-hidden="true" />
             We never ask for bank statements, ID documents or logins on this form. Refer Labs is a referrer, not a lender or credit provider.{" "}
             <Link href="/how-we-make-money" className="underline hover:text-[#10251b]">How we make money</Link>.
@@ -458,7 +458,7 @@ function Progress({ step }: { step: number }) {
   const labels = ["What you need", "Your business", "Your details"];
   return (
     <div className="mb-6">
-      <div className="flex items-center justify-between text-[11px] font-bold uppercase tracking-[0.12em] text-[#9aa39c]">
+      <div className="flex items-center justify-between text-[11px] font-bold uppercase tracking-[0.12em] text-[#627068]">
         <span>Step {step + 1} of 3</span>
         <span className="text-[#3d4b44]">{labels[step]}</span>
       </div>

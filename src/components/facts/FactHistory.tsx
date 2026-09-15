@@ -72,7 +72,7 @@ export default function FactHistory({
       <div className="mt-4 overflow-x-auto rounded-2xl border border-[#e5e9e7]">
         <table className="w-full min-w-[520px] border-collapse text-left text-sm">
           <thead>
-            <tr className="border-b border-[#e5e9e7] bg-[#f8faf9] text-[#6e7b74]">
+            <tr className="border-b border-[#e5e9e7] bg-[#f8faf9] text-[#5a665f]">
               <th className="px-4 py-3 font-semibold">Observed</th>
               <th className="px-4 py-3 font-semibold">Claim</th>
               <th className="px-4 py-3 font-semibold">Changed</th>

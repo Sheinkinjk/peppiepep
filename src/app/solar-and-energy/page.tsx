@@ -183,7 +183,7 @@ export default function Page() {
             >
               Get an Apollo quote, $500 off <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
-            <p className="mt-2 text-[12px] text-[#9aa39c]">Apollo pays us when you enquire. The $500 is yours either way.</p>
+            <p className="mt-2 text-[12px] text-[#627068]">Apollo pays us when you enquire. The $500 is yours either way.</p>
           </div>
           <div className="rounded-2xl border border-[#e5e9e7] bg-white p-6">
             <p className="text-[15px] font-bold text-[#10251b]">If you rent, or cannot install</p>
@@ -198,7 +198,7 @@ export default function Page() {
         {GROUPS.map((g) => (
           <section key={g.heading} className="mt-12">
             <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">{g.heading}</h2>
-            <p className="mt-1.5 text-[14px] font-medium text-[#6e7b74]">{g.question}</p>
+            <p className="mt-1.5 text-[14px] font-medium text-[#5a665f]">{g.question}</p>
             <p className="mt-3 max-w-3xl text-[15px] leading-relaxed text-[#3d4b44]">{g.body}</p>
             <div className="mt-5 grid gap-3 sm:grid-cols-2">
               {g.links.map((l) => (

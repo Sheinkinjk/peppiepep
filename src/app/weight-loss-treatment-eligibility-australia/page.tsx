@@ -176,7 +176,7 @@ export default function WeightLossEligibilityPage() {
               <details key={f.q} className="group rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] px-5 py-4">
                 <summary className="cursor-pointer list-none font-semibold text-[#10251b] text-sm sm:text-base flex items-center justify-between gap-4">
                   {f.q}
-                  <span className="text-[#9aa39c] group-open:rotate-45 transition-transform text-lg leading-none">+</span>
+                  <span className="text-[#627068] group-open:rotate-45 transition-transform text-lg leading-none">+</span>
                 </summary>
                 <p className="text-[#3d4b44] text-sm leading-relaxed mt-3">{f.a}</p>
               </details>
@@ -213,13 +213,13 @@ export default function WeightLossEligibilityPage() {
           <Link href="/weight-loss" style={{ color: CYAN }} className="hover:opacity-80">The full weight-loss hub →</Link>
         </div>
 
-        <p className="text-[#9aa39c] text-xs mt-8 leading-relaxed">
+        <p className="text-[#627068] text-xs mt-8 leading-relaxed">
           This page is operated by Refer Labs and contains a disclosed affiliate referral link. We may earn a commission
           if you sign up through it, at no extra cost to you. Commissions never change what we write. Nothing on this page
           is medical advice, and eligibility for any program is decided by a registered Australian practitioner after an
           individual assessment.
         </p>
-        <p className="text-[#9aa39c] text-xs mt-4">© 2026 Refer Labs · Australia · <Link href="/guides" className="hover:text-[#3d4b44]">All guides</Link></p>
+        <p className="text-[#627068] text-xs mt-4">© 2026 Refer Labs · Australia · <Link href="/guides" className="hover:text-[#3d4b44]">All guides</Link></p>
       </main>
       <StickyCta href={MOSHY_URL} product="Moshy · weight-loss telehealth" label="Check eligibility" />
     </ConsumerShell>

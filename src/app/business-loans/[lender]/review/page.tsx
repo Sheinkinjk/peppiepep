@@ -142,7 +142,7 @@ export default async function LenderReviewPage({ params }: { params: Promise<{ l
       />
 
       <main className="mx-auto max-w-3xl px-5 py-10 sm:px-8 sm:py-14">
-        <nav className="text-xs text-[#6e7b74]">
+        <nav className="text-xs text-[#5a665f]">
           <Link href="/business-loans" className="hover:text-[#0a7c42]">Business loans</Link>
           <span className="px-1.5">/</span>
           <Link href={`/business-loans/${l.slug}`} className="hover:text-[#0a7c42]">{l.name}</Link>
@@ -152,7 +152,7 @@ export default async function LenderReviewPage({ params }: { params: Promise<{ l
 
         <h1 className="mt-3 text-4xl font-extrabold leading-[1.1] text-[#10251b]">{l.name} review</h1>
         <p className="mt-4 text-lg leading-relaxed text-[#3d4b44]">{l.overview}</p>
-        <p className="mt-3 text-sm leading-relaxed text-[#6e7b74]">
+        <p className="mt-3 text-sm leading-relaxed text-[#5a665f]">
           This is an independent overview to help you decide whether to enquire. We don&apos;t publish our own star
           ratings, and no lender can pay to be framed more favourably.
         </p>
@@ -180,15 +180,15 @@ export default async function LenderReviewPage({ params }: { params: Promise<{ l
         </section>
 
         <section className="mt-10 rounded-2xl border border-[#e5e9e7] bg-[#f8faf9] p-5">
-          <h2 className="text-xs font-bold uppercase tracking-[0.12em] text-[#9aa39c]">The facts</h2>
+          <h2 className="text-xs font-bold uppercase tracking-[0.12em] text-[#627068]">The facts</h2>
           <div className="mt-3 grid gap-x-6 gap-y-2 text-sm sm:grid-cols-2">
-            <p className="text-[#3d4b44]"><span className="text-[#6e7b74]">Rate:</span> <strong className="text-[#10251b]">{l.advertisedRateFrom}</strong></p>
-            <p className="text-[#3d4b44]"><span className="text-[#6e7b74]">Loan size:</span> <strong className="text-[#10251b]">{money(l.minAmount)}–{money(l.maxAmount)}</strong></p>
-            <p className="text-[#3d4b44]"><span className="text-[#6e7b74]">Typical speed:</span> <strong className="text-[#10251b]">{l.speed}</strong></p>
-            <p className="text-[#3d4b44]"><span className="text-[#6e7b74]">Products:</span> <strong className="text-[#10251b]">{l.products.map((p) => label(p)).join(", ")}</strong></p>
-            {l.establishmentFee ? <p className="text-[#3d4b44]"><span className="text-[#6e7b74]">Establishment fee:</span> <strong className="text-[#10251b]">{l.establishmentFee}</strong></p> : null}
+            <p className="text-[#3d4b44]"><span className="text-[#5a665f]">Rate:</span> <strong className="text-[#10251b]">{l.advertisedRateFrom}</strong></p>
+            <p className="text-[#3d4b44]"><span className="text-[#5a665f]">Loan size:</span> <strong className="text-[#10251b]">{money(l.minAmount)}–{money(l.maxAmount)}</strong></p>
+            <p className="text-[#3d4b44]"><span className="text-[#5a665f]">Typical speed:</span> <strong className="text-[#10251b]">{l.speed}</strong></p>
+            <p className="text-[#3d4b44]"><span className="text-[#5a665f]">Products:</span> <strong className="text-[#10251b]">{l.products.map((p) => label(p)).join(", ")}</strong></p>
+            {l.establishmentFee ? <p className="text-[#3d4b44]"><span className="text-[#5a665f]">Establishment fee:</span> <strong className="text-[#10251b]">{l.establishmentFee}</strong></p> : null}
           </div>
-          <p className="mt-3 text-xs text-[#6e7b74]">
+          <p className="mt-3 text-xs text-[#5a665f]">
             Verify current terms on <a href={l.homepage} target="_blank" rel="nofollow noopener" className="underline hover:text-[#10251b]">{l.name}&apos;s own site</a>.
           </p>
         </section>
@@ -222,7 +222,7 @@ export default async function LenderReviewPage({ params }: { params: Promise<{ l
         </section>
 
         <section className="mt-12 rounded-2xl border border-[#e5e9e7] bg-[#f8faf9] p-6">
-          <h2 className="text-xs font-bold uppercase tracking-[0.12em] text-[#9aa39c]">Keep comparing</h2>
+          <h2 className="text-xs font-bold uppercase tracking-[0.12em] text-[#627068]">Keep comparing</h2>
 
           {headToHeads.length > 0 && (
             <ul className="mt-3 space-y-2 text-sm">

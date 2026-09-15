@@ -79,7 +79,7 @@ export default function GoHighLevelPage() {
       <PremiumAffiliateLanding config={goHighLevelConfig} />
       <div className="border-t border-[#e5e9e7] bg-white py-6">
         <div className="mx-auto max-w-3xl px-6 sm:px-8">
-          <p className="text-[#9aa39c] text-xs mb-1.5">Compare AI sales tools</p>
+          <p className="text-[#627068] text-xs mb-1.5">Compare AI sales tools</p>
           <Link
             href="/best-ai-sales-tools"
             className="text-sm text-[#0a7c42] font-semibold hover:text-[#086536] transition-colors"

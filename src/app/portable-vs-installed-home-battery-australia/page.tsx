@@ -108,7 +108,7 @@ export default function Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
 
       <main id="main-content" className="mx-auto max-w-3xl px-5 pb-20 pt-10 sm:px-8">
-        <nav className="flex flex-wrap items-center gap-2 text-sm text-[#9aa39c]">
+        <nav className="flex flex-wrap items-center gap-2 text-sm text-[#627068]">
           <Link href="/" className="hover:text-[#0a7c42]">Refer Labs</Link>
           <span>/</span>
           <Link href="/apollo-energy-group" className="hover:text-[#0a7c42]">Home &amp; energy</Link>
@@ -148,7 +148,7 @@ export default function Page() {
           <div className="mt-5 overflow-x-auto rounded-2xl border border-[#e5e9e7]">
             <table className="w-full min-w-[620px] border-collapse text-left text-sm">
               <thead>
-                <tr className="border-b border-[#e5e9e7] bg-[#f8faf9] text-[#6e7b74]">
+                <tr className="border-b border-[#e5e9e7] bg-[#f8faf9] text-[#5a665f]">
                   <th className="px-4 py-3 font-semibold"> </th>
                   <th className="px-4 py-3 font-semibold">Portable power station</th>
                   <th className="px-4 py-3 font-semibold">Installed home battery</th>
@@ -165,7 +165,7 @@ export default function Page() {
               </tbody>
             </table>
           </div>
-          <p className="mt-3 text-[13px] leading-relaxed text-[#6e7b74]">
+          <p className="mt-3 text-[13px] leading-relaxed text-[#5a665f]">
             Portable prices read off EcoFlow&apos;s and Anker SOLIX&apos;s own Australian stores on {PRICES_READ_ON}.
             Installed pricing varies by system size, switchboard and site, which is why it is a range rather than a
             figure: a quote is the only accurate number.
@@ -188,7 +188,7 @@ export default function Page() {
               See Anker SOLIX prices <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </a>
           </div>
-          <p className="mt-3 text-[13px] text-[#6e7b74]">Both are affiliate links; we earn from either.</p>
+          <p className="mt-3 text-[13px] text-[#5a665f]">Both are affiliate links; we earn from either.</p>
         </section>
 
         <section className="mt-12">
@@ -204,7 +204,7 @@ export default function Page() {
               Get an Apollo quote, $500 off <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
           </div>
-          <p className="mt-3 text-[13px] leading-relaxed text-[#6e7b74]">
+          <p className="mt-3 text-[13px] leading-relaxed text-[#5a665f]">
             Apollo Energy Group is the installer we work with, and they pay us on enquiries. EcoFlow and Anker SOLIX
             also sell installed systems, the OCEAN 2 range and the SOLIX X1, and we earn from them too. We have not
             ranked those against Apollo here, because we do not have the same first-hand basis for it that we have on
@@ -225,7 +225,7 @@ export default function Page() {
         </section>
 
         <section className="mt-10 border-t border-[#eef1ef] pt-8">
-          <h2 className="text-xs font-bold uppercase tracking-[0.12em] text-[#9aa39c]">Keep reading</h2>
+          <h2 className="text-xs font-bold uppercase tracking-[0.12em] text-[#627068]">Keep reading</h2>
           <ul className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-sm">
             <li><Link href="/portable-power-station-australia" className="font-semibold text-[#0a7c42] hover:underline">What portable units cost and run</Link></li>
             <li><Link href="/ecoflow-vs-anker-solix" className="font-semibold text-[#0a7c42] hover:underline">EcoFlow vs Anker SOLIX</Link></li>

@@ -87,7 +87,7 @@ export default function EarningsCalc() {
               {CHANNELS.map((c) => (
                 <button key={c.key} type="button" className={selBtn(ch.key === c.key)} onClick={() => setCh(c)}>
                   <span className="text-xs font-semibold text-[#10251b] block">{c.label}</span>
-                  <span className="text-[11px] text-[#6e7b74]">{c.note}</span>
+                  <span className="text-[11px] text-[#5a665f]">{c.note}</span>
                 </button>
               ))}
             </div>
@@ -99,7 +99,7 @@ export default function EarningsCalc() {
               {NICHES.map((n) => (
                 <button key={n.key} type="button" className={selBtn(niche.key === n.key)} onClick={() => setNiche(n)}>
                   <span className="text-xs font-semibold text-[#10251b] block">{n.label}</span>
-                  <span className="text-[11px] text-[#6e7b74]">{n.note}</span>
+                  <span className="text-[11px] text-[#5a665f]">{n.note}</span>
                 </button>
               ))}
             </div>
@@ -108,13 +108,13 @@ export default function EarningsCalc() {
 
         <div className="flex flex-col">
           <div className="rounded-2xl border bg-white p-6 sm:p-7" style={{ borderColor: `${GREEN}30` }}>
-            <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#9aa39c] mb-2">
+            <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#627068] mb-2">
               Illustrative monthly range
             </p>
             <p className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#10251b] tabular-nums">
-              {fmt(lo)} <span className="text-[#9aa39c] font-semibold text-xl">to</span> {fmt(hi)}
+              {fmt(lo)} <span className="text-[#627068] font-semibold text-xl">to</span> {fmt(hi)}
             </p>
-            <p className="mt-1 text-xs text-[#6e7b74] tabular-nums">
+            <p className="mt-1 text-xs text-[#5a665f] tabular-nums">
               Roughly {fmt(lo * 12)} to {fmt(hi * 12)} a year, if performance held.
             </p>
 
@@ -130,7 +130,7 @@ export default function EarningsCalc() {
               </ul>
             </details>
 
-            <p className="mt-4 text-[11px] leading-relaxed text-[#9aa39c]">
+            <p className="mt-4 text-[11px] leading-relaxed text-[#627068]">
               An illustrative estimate from the assumptions above, not a prediction or promise of income.
               Real results vary widely and can be zero. Not financial advice.
             </p>

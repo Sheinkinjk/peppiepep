@@ -150,7 +150,7 @@ export default function ApolloEoiPage() {
                 <span className="flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-[#e5e9e7] bg-white">
                   <Image src="/logos/apollo-energy.png" alt="Apollo Energy Group" width={34} height={34} className="h-8 w-8 object-contain" />
                 </span>
-                <p className="text-[13px] leading-snug text-[#6e7b74]">
+                <p className="text-[13px] leading-snug text-[#5a665f]">
                   In partnership with <span className="font-semibold text-[#10251b]">Apollo Energy Group</span>. On Apollo&apos;s
                   own site, voted SBC&apos;s #1 NSW battery installer.
                 </p>
@@ -174,7 +174,7 @@ export default function ApolloEoiPage() {
             {STATS.map((s) => (
               <div key={s.l} className="nw-card p-5 text-center">
                 <div className="text-2xl font-extrabold text-[#0a7c42]">{s.v}</div>
-                <div className="mt-1 text-[12px] leading-snug text-[#6e7b74]">{s.l}</div>
+                <div className="mt-1 text-[12px] leading-snug text-[#5a665f]">{s.l}</div>
               </div>
             ))}
           </section>
@@ -239,7 +239,7 @@ export default function ApolloEoiPage() {
 
           {/* ── Referrer disclosure ── */}
           <section className="mt-14 rounded-2xl border border-[#e3e7e2] bg-white p-6 sm:p-7">
-            <p className="text-[13px] leading-relaxed text-[#6e7b74]">
+            <p className="text-[13px] leading-relaxed text-[#5a665f]">
               Refer Labs is an independent referrer, not Apollo Energy Group and not the installer. With your consent we
               introduce your enquiry to Apollo; they assess it and make any offer to you directly. We may be paid a
               commission if you proceed, at no extra cost to you, and it never changes what you are quoted. The $500 is the

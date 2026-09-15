@@ -65,7 +65,7 @@ export default function Page() {
         </p>
         <div className="mt-4 overflow-x-auto rounded-2xl border border-[#e5e9e7]">
           <table className="w-full min-w-[560px] border-collapse text-left text-sm">
-            <thead className="bg-[#f8faf9] text-[11px] uppercase tracking-[0.1em] text-[#9aa39c]">
+            <thead className="bg-[#f8faf9] text-[11px] uppercase tracking-[0.1em] text-[#627068]">
               <tr>
                 <th className="px-4 py-3 font-semibold">Device</th>
                 <th className="px-4 py-3 font-semibold">Listing</th>
@@ -90,7 +90,7 @@ export default function Page() {
             </tbody>
           </table>
         </div>
-        <p className="mt-3 text-xs text-[#6e7b74]">
+        <p className="mt-3 text-xs text-[#5a665f]">
           Other brands sell into Australia at a range of prices. We have not listed them because we could not read a
           current figure off a live listing, and a table padded with estimates would defeat the point of the page.
         </p>

@@ -35,7 +35,7 @@ export default function FAQPage() {
               >
                 <h3 className="text-[15px] font-semibold text-[#10251b] leading-relaxed pr-2">{faq.q}</h3>
                 <ChevronDown
-                  className={`h-5 w-5 text-[#9aa39c] flex-shrink-0 mt-0.5 transition-transform duration-200 ${
+                  className={`h-5 w-5 text-[#627068] flex-shrink-0 mt-0.5 transition-transform duration-200 ${
                     isExpanded ? "rotate-180" : ""
                   }`}
                   aria-hidden="true"
@@ -58,7 +58,7 @@ export default function FAQPage() {
   return (
     <ConsumerShell>
       <main id="main-content" className="mx-auto max-w-3xl px-5 sm:px-8 pb-20 pt-12 sm:pt-16">
-        <nav className="mb-8 flex items-center gap-2 text-sm text-[#9aa39c]">
+        <nav className="mb-8 flex items-center gap-2 text-sm text-[#627068]">
           <Link href="/" className="hover:text-[#0a7c42]">Refer Labs</Link>
           <span>/</span>
           <span className="text-[#2b362f]">FAQ</span>

@@ -46,7 +46,7 @@ export default function PartnerRoute({
       <p className="mt-2 text-[15px] leading-relaxed text-[#3d4b44]">{intro}</p>
 
       {providers.length === 0 ? (
-        <p className="mt-4 text-sm leading-relaxed text-[#6e7b74]">{reservedNote}</p>
+        <p className="mt-4 text-sm leading-relaxed text-[#5a665f]">{reservedNote}</p>
       ) : (
         <>
           <ul className="mt-5 space-y-4">
@@ -55,7 +55,7 @@ export default function PartnerRoute({
                 <p className="text-[15px] font-bold text-[#10251b]">{p.name}</p>
                 <p className="mt-1 text-sm leading-relaxed text-[#3d4b44]">{p.what}</p>
                 {p.checked && (
-                  <p className="mt-2 text-[11px] font-medium text-[#6e7b74]">
+                  <p className="mt-2 text-[12px] font-medium text-[#5a665f]">
                     Read off {p.name}
                     {p.name.endsWith("s") ? <>&apos;</> : <>&apos;s</>} own site on {p.checked}.
                   </p>
@@ -72,7 +72,7 @@ export default function PartnerRoute({
               </li>
             ))}
           </ul>
-          <p className="mt-4 text-xs leading-relaxed text-[#6e7b74]">
+          <p className="mt-4 text-xs leading-relaxed text-[#5a665f]">
             Refer Labs is an independent Australian comparison publisher. The links above are
             affiliate links: if you sign up through one we may earn a commission at no extra cost to
             you, and it never changes what we publish.{" "}

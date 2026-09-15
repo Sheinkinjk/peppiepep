@@ -85,7 +85,7 @@ export default function EarningsBalanceNote({
        none. */
     const others = noEarnFrom ? (Array.isArray(noEarnFrom) ? noEarnFrom : [noEarnFrom]) : [];
     return (
-      <p className={`text-xs leading-relaxed text-[#6e7b74] ${className}`}>
+      <p className={`text-xs leading-relaxed text-[#5a665f] ${className}`}>
         We earn a commission if you sign up through the {list(earnFromAll, "or")} link
         {earnFromAll.length > 1 ? "s" : ""} on this page, at no extra cost to you. We earn from{" "}
         {WORD[earnFromAll.length] ?? "each"} of them
@@ -106,7 +106,7 @@ export default function EarningsBalanceNote({
   const single = names.length === 1 && noEarnHref;
 
   return (
-    <p className={`text-xs leading-relaxed text-[#6e7b74] ${className}`}>
+    <p className={`text-xs leading-relaxed text-[#5a665f] ${className}`}>
       We earn a commission if you sign up through the {earnFrom} link above, at no extra cost to you.{" "}
       {names.length === 0 ? null : single ? (
         <>

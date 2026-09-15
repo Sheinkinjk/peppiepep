@@ -94,8 +94,8 @@ function Pro({ text }: { text: string }) {
 
 function Con({ text }: { text: string }) {
   return (
-    <li className="flex items-start gap-2 text-sm text-[#9aa39c] leading-snug">
-      <XCircle className="h-3.5 w-3.5 flex-shrink-0 mt-0.5 text-[#9aa39c]" />
+    <li className="flex items-start gap-2 text-sm text-[#627068] leading-snug">
+      <XCircle className="h-3.5 w-3.5 flex-shrink-0 mt-0.5 text-[#627068]" />
       {text}
     </li>
   );
@@ -152,13 +152,13 @@ function PlatformCard({
           {/* Pros / Cons */}
           <div className="grid sm:grid-cols-2 gap-4">
             <div>
-              <p className="text-[10px] font-bold uppercase tracking-wider text-[#9aa39c] mb-2.5">Strengths</p>
+              <p className="text-[10px] font-bold uppercase tracking-wider text-[#627068] mb-2.5">Strengths</p>
               <ul className="space-y-2">
                 {pros.map((p) => <Pro key={p} text={p} />)}
               </ul>
             </div>
             <div>
-              <p className="text-[10px] font-bold uppercase tracking-wider text-[#9aa39c] mb-2.5">Limitations</p>
+              <p className="text-[10px] font-bold uppercase tracking-wider text-[#627068] mb-2.5">Limitations</p>
               <ul className="space-y-2">
                 {cons.map((c) => <Con key={c} text={c} />)}
               </ul>
@@ -179,7 +179,7 @@ function PlatformCard({
             <p className="text-[#10251b] font-black text-base leading-snug mb-1">{deal}</p>
             <p className="text-[#3d4b44] text-xs leading-snug">{dealNote}</p>
             <div className="mt-3 pt-3 border-t border-[#e5e9e7]">
-              <p className="text-[11px] text-[#9aa39c]">
+              <p className="text-[11px] text-[#627068]">
                 <span className="text-[#3d4b44] font-medium">Pricing: </span>{pricing}
               </p>
             </div>
@@ -388,11 +388,11 @@ export default function BestWebsiteBuilderPage() {
               <table className="w-full min-w-[540px] text-sm">
                 <thead>
                   <tr className="border-b border-[#e5e9e7]">
-                    <th className="text-left pb-3 pr-4 text-[#9aa39c] font-semibold text-[11px] uppercase tracking-wider w-36">Platform</th>
-                    <th className="pb-3 px-3 text-left text-[#9aa39c] font-semibold text-[11px] uppercase tracking-wider">Best for</th>
-                    <th className="pb-3 px-3 text-left text-[#9aa39c] font-semibold text-[11px] uppercase tracking-wider">Offer / Trial</th>
-                    <th className="pb-3 px-3 text-left text-[#9aa39c] font-semibold text-[11px] uppercase tracking-wider">Pricing</th>
-                    <th className="pb-3 pl-3 text-right text-[#9aa39c] font-semibold text-[11px] uppercase tracking-wider"></th>
+                    <th className="text-left pb-3 pr-4 text-[#627068] font-semibold text-[11px] uppercase tracking-wider w-36">Platform</th>
+                    <th className="pb-3 px-3 text-left text-[#627068] font-semibold text-[11px] uppercase tracking-wider">Best for</th>
+                    <th className="pb-3 px-3 text-left text-[#627068] font-semibold text-[11px] uppercase tracking-wider">Offer / Trial</th>
+                    <th className="pb-3 px-3 text-left text-[#627068] font-semibold text-[11px] uppercase tracking-wider">Pricing</th>
+                    <th className="pb-3 pl-3 text-right text-[#627068] font-semibold text-[11px] uppercase tracking-wider"></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -408,7 +408,7 @@ export default function BestWebsiteBuilderPage() {
                       </td>
                       <td className="py-3 px-3 text-[#3d4b44] text-xs">{row.bestFor}</td>
                       <td className="py-3 px-3 text-xs font-semibold" style={{ color: CYAN_LT }}>{row.offer}</td>
-                      <td className="py-3 px-3 text-[#9aa39c] text-xs">{row.price}</td>
+                      <td className="py-3 px-3 text-[#627068] text-xs">{row.price}</td>
                       <td className="py-3 pl-3 text-right">
                         <a
                           {...aff(row.affUrl)}
@@ -513,7 +513,7 @@ export default function BestWebsiteBuilderPage() {
 
           {/* ── Disclaimer + internal links ───────────────────────────────────── */}
           <section className="border-t border-[#e5e9e7] py-8 pb-16">
-            <p className="text-[#9aa39c] text-xs leading-relaxed max-w-2xl">
+            <p className="text-[#627068] text-xs leading-relaxed max-w-2xl">
               This page is operated by Refer Labs and contains affiliate referral links to Carrd, Durable AI, Butternut AI, and Swipe Pages. Comparisons are based on publicly available information at time of publication and may change.
             </p>
             <div className="mt-4 flex flex-wrap gap-3">

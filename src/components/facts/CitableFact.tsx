@@ -35,7 +35,7 @@ export default function CitableFact({ fact }: { fact: Fact }) {
       className="rounded-2xl border border-[#e5e9e7] bg-white p-5"
     >
       <p className="text-[15px] leading-relaxed text-[#2b362f]">{fact.claim}</p>
-      <figcaption className="mt-2 text-[13px] leading-relaxed text-[#6e7b74]">
+      <figcaption className="mt-2 text-[13px] leading-relaxed text-[#5a665f]">
         Observed by{' '}
         {author ? (
           <Link href={`/authors/${author.id}`} className="text-[#0a7c42] underline-offset-2 hover:underline">

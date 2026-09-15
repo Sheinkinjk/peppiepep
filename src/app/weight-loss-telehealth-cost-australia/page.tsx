@@ -99,7 +99,7 @@ export default function WeightLossTelehealthCostAustraliaPage() {
         <div className="mx-auto max-w-3xl px-6 sm:px-8">
 
           {/* Breadcrumb */}
-          <nav className="flex flex-wrap items-center gap-2 pt-8 text-sm text-[#6e7b74]">
+          <nav className="flex flex-wrap items-center gap-2 pt-8 text-sm text-[#5a665f]">
             <Link href="/" className="hover:text-[#10251b] transition-colors">Refer Labs</Link>
             <span>/</span>
             <Link href="/weight-loss" className="hover:text-[#10251b] transition-colors">Weight loss</Link>
@@ -297,7 +297,7 @@ export default function WeightLossTelehealthCostAustraliaPage() {
 
             {/* Disclosure */}
             <section className="border-t border-[#e5e9e7] pt-6 pb-16">
-              <p className="text-xs leading-relaxed text-[#9aa39c]">
+              <p className="text-xs leading-relaxed text-[#627068]">
                 This page is published by Refer Labs, an independent comparison publisher, and contains a disclosed affiliate link to
                 Moshy, which means we may earn a commission if you sign up through our link. Commissions never change what we write.
                 All content is for general information only and does not constitute medical or financial advice. Prices vary between

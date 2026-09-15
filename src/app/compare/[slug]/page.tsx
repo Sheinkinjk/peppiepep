@@ -42,7 +42,7 @@ function ProviderCard({ p }: { p: Provider }) {
       <dl className="mt-4 divide-y divide-[#e5e9e7] text-sm">
         {p.facts.map((f) => (
           <div key={f.label} className="flex gap-3 py-2">
-            <dt className="w-20 shrink-0 text-[#9aa39c]">{f.label}</dt>
+            <dt className="w-20 shrink-0 text-[#627068]">{f.label}</dt>
             <dd className="text-[#10251b]">{f.value}</dd>
           </div>
         ))}
@@ -109,7 +109,7 @@ export default async function ComparePage({ params }: { params: Promise<{ slug: 
 
       <main id="main-content">
         <section className="mx-auto max-w-6xl px-5 pt-12 sm:px-8 sm:pt-16">
-          <nav className="mb-7 flex items-center gap-2 text-sm text-[#9aa39c]">
+          <nav className="mb-7 flex items-center gap-2 text-sm text-[#627068]">
             <Link href="/" className="hover:text-[#0a7c42]">Refer Labs</Link>
             <span>/</span>
             <Link href="/guides" className="hover:text-[#0a7c42]">Compare</Link>

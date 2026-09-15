@@ -119,7 +119,7 @@ export default function Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
 
       <main id="main-content" className="mx-auto max-w-3xl px-5 pb-20 pt-10 sm:px-8">
-        <nav className="flex flex-wrap items-center gap-2 text-sm text-[#9aa39c]">
+        <nav className="flex flex-wrap items-center gap-2 text-sm text-[#627068]">
           <Link href="/" className="hover:text-[#0a7c42]">Refer Labs</Link>
           <span>/</span>
           <Link href="/pet-insurance" className="hover:text-[#0a7c42]">Pet insurance</Link>
@@ -160,7 +160,7 @@ export default function Page() {
           <div className="mt-5 overflow-x-auto">
             <table className="w-full min-w-[560px] border-collapse text-left text-sm">
               <thead>
-                <tr className="border-b border-[#e5e9e7] text-[#6e7b74]">
+                <tr className="border-b border-[#e5e9e7] text-[#5a665f]">
                   <th className="py-2 pr-4 font-semibold">Brand</th>
                   <th className="py-2 pr-4 font-semibold">What its own disclosure says</th>
                   <th className="py-2 font-semibold">Source</th>
@@ -171,7 +171,7 @@ export default function Page() {
                   <tr key={r.brand} className="border-b border-[#eef1ef] align-top">
                     <td className="py-3 pr-4 font-semibold text-[#10251b]">{r.brand}</td>
                     <td className="py-3 pr-4 text-[#3d4b44]">{r.detail}</td>
-                    <td className="py-3 text-[13px] text-[#6e7b74]">{r.src}</td>
+                    <td className="py-3 text-[13px] text-[#5a665f]">{r.src}</td>
                   </tr>
                 ))}
               </tbody>
@@ -193,7 +193,7 @@ export default function Page() {
                 <p className="text-base font-bold text-[#10251b]">{r.brand}</p>
                 <p className="mt-1 text-sm font-semibold text-[#0a7c42]">{r.underwriter}</p>
                 <p className="mt-2 text-sm leading-relaxed text-[#3d4b44]">{r.detail}</p>
-                <p className="mt-2 text-[13px] text-[#6e7b74]">Read off {r.src}, 22 August 2026</p>
+                <p className="mt-2 text-[13px] text-[#5a665f]">Read off {r.src}, 22 August 2026</p>
               </div>
             ))}
           </div>
@@ -271,7 +271,7 @@ export default function Page() {
         <InsuranceDisclosure className="mt-10" />
 
         <section className="mt-10 border-t border-[#eef1ef] pt-8">
-          <h2 className="text-xs font-bold uppercase tracking-[0.12em] text-[#9aa39c]">Keep reading</h2>
+          <h2 className="text-xs font-bold uppercase tracking-[0.12em] text-[#627068]">Keep reading</h2>
           <ul className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-sm">
             <li><Link href="/best-pet-insurance-australia" className="font-semibold text-[#0a7c42] hover:underline">How to choose pet insurance</Link></li>
             <li><Link href="/what-pet-insurance-covers-australia" className="font-semibold text-[#0a7c42] hover:underline">What pet insurance covers</Link></li>

@@ -160,7 +160,7 @@ export default function JuniperPage() {
 
       <main id="main-content" className="mx-auto max-w-5xl px-5 pb-24 sm:px-8 text-[#10251b]">
         {/* Breadcrumb */}
-        <nav className="flex flex-wrap items-center gap-2 pt-8 text-sm text-[#6e7b74]">
+        <nav className="flex flex-wrap items-center gap-2 pt-8 text-sm text-[#5a665f]">
           <Link href="/" className="transition-colors hover:text-[#10251b]">Refer Labs</Link>
           <span>/</span>
           <Link href="/weight-loss" className="transition-colors hover:text-[#10251b]">Weight loss</Link>
@@ -209,11 +209,11 @@ export default function JuniperPage() {
           {/* At-a-glance card */}
           <aside className="lg:pt-2">
             <div className="nw-card rounded-2xl p-6">
-              <span className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#9aa39c]">At a glance</span>
+              <span className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#627068]">At a glance</span>
               <dl className="mt-4 divide-y divide-[#eef1ef] text-sm">
                 {glance.map(([k, v]) => (
                   <div key={k} className="flex gap-3 py-2.5">
-                    <dt className="w-24 shrink-0 text-[#9aa39c]">{k}</dt>
+                    <dt className="w-24 shrink-0 text-[#627068]">{k}</dt>
                     <dd className="text-[#2b362f]">{v}</dd>
                   </div>
                 ))}
@@ -221,7 +221,7 @@ export default function JuniperPage() {
               <div className="mt-5">
                 <JuniperCTA loc="glance-card" block />
               </div>
-              <p className="mt-3 text-center text-[11px] text-[#9aa39c]">Opens myjuniper.com · AU only</p>
+              <p className="mt-3 text-center text-[11px] text-[#627068]">Opens myjuniper.com · AU only</p>
             </div>
           </aside>
         </section>
@@ -237,7 +237,7 @@ export default function JuniperPage() {
         </section>
 
         {/* ── Compliance notice ── */}
-        <p className="mt-8 rounded-xl border border-[#e5e9e7] bg-white px-5 py-4 text-xs leading-relaxed text-[#6e7b74]">
+        <p className="mt-8 rounded-xl border border-[#e5e9e7] bg-white px-5 py-4 text-xs leading-relaxed text-[#5a665f]">
           <span className="font-semibold text-[#3d4b44]">Information only.</span> This page describes Juniper&apos;s
           program as a service and is not medical advice. Suitability for any program is decided individually by a
           registered Australian practitioner in a consultation. Always consult a qualified health professional before
@@ -249,11 +249,11 @@ export default function JuniperPage() {
           {/* TOC */}
           <nav aria-label="On this page" className="hidden lg:block">
             <div className="sticky top-24">
-              <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[#9aa39c]">On this page</p>
+              <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[#627068]">On this page</p>
               <ul className="space-y-2.5 text-sm">
                 {toc.map(([id, label]) => (
                   <li key={id}>
-                    <a href={`#${id}`} className="text-[#6e7b74] transition-colors hover:text-[#0a7c42]">{label}</a>
+                    <a href={`#${id}`} className="text-[#5a665f] transition-colors hover:text-[#0a7c42]">{label}</a>
                   </li>
                 ))}
               </ul>

@@ -192,7 +192,7 @@ export default function PathwayQuiz() {
       <div className="flex items-center justify-between gap-4">
         <p className="nw-kicker">{done ? "Your match" : `Pathway matcher · step ${answered + 1} of ${QUESTIONS.length}`}</p>
         {answered > 0 && (
-          <button onClick={reset} className="inline-flex items-center gap-1.5 text-xs font-medium text-[#9aa39c] hover:text-[#0a7c42]">
+          <button onClick={reset} className="inline-flex items-center gap-1.5 text-xs font-medium text-[#627068] hover:text-[#0a7c42]">
             <RotateCcw className="h-3 w-3" /> Restart
           </button>
         )}
@@ -219,9 +219,9 @@ export default function PathwayQuiz() {
               >
                 <span>
                   <span className="block text-[15px] font-semibold text-[#10251b]">{o.label}</span>
-                  {o.note && <span className="block text-[13px] text-[#6e7b74]">{o.note}</span>}
+                  {o.note && <span className="block text-[13px] text-[#5a665f]">{o.note}</span>}
                 </span>
-                <ArrowRight className="h-4 w-4 shrink-0 text-[#9aa39c] transition-transform group-hover:translate-x-0.5 group-hover:text-[#0a7c42]" />
+                <ArrowRight className="h-4 w-4 shrink-0 text-[#627068] transition-transform group-hover:translate-x-0.5 group-hover:text-[#0a7c42]" />
               </button>
             ))}
           </div>
@@ -230,7 +230,7 @@ export default function PathwayQuiz() {
 
       {done && result && (
         <div className="mt-4">
-          <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#9aa39c]">Your result</p>
+          <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#627068]">Your result</p>
           <h3 className="mt-2 text-2xl font-bold tracking-[-0.01em] text-[#10251b]">{result.title}</h3>
           {result.offer && (
             <span className="mt-3 inline-flex w-fit items-center gap-1.5 rounded-full border border-[#cfe6da] bg-[#e8f5ee] px-3 py-1 text-[12.5px] font-bold text-[#0a7c42]">
@@ -283,7 +283,7 @@ export default function PathwayQuiz() {
             </div>
           )}
 
-          <p className="mt-5 text-xs leading-relaxed text-[#9aa39c]">
+          <p className="mt-5 text-xs leading-relaxed text-[#627068]">
             This is general information to help you narrow the field, not medical advice. Suitability for any program is
             assessed individually by registered practitioners.
           </p>

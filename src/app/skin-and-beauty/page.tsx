@@ -127,7 +127,7 @@ export default function SkinAndBeautyHub() {
 
       <main id="main-content">
         <section className="mx-auto max-w-6xl px-5 pt-10 sm:px-8">
-          <nav className="flex items-center gap-2 text-sm text-[#9aa39c]">
+          <nav className="flex items-center gap-2 text-sm text-[#627068]">
             <Link href="/" className="hover:text-[#0a7c42]">Refer Labs</Link>
             <span>/</span>
             <span className="text-[#2b362f]">Skin &amp; beauty</span>

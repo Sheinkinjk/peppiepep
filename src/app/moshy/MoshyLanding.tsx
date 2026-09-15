@@ -79,7 +79,7 @@ export default function MoshyLanding() {
           {/* At-a-glance card */}
           <aside className="lg:pt-2">
             <div className="nw-card rounded-2xl p-6">
-              <span className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#9aa39c]">At a glance</span>
+              <span className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#627068]">At a glance</span>
               <dl className="mt-4 divide-y divide-[#eef1ef] text-sm">
                 {[
                   ["What it is", "Australian weight-management telehealth"],
@@ -90,7 +90,7 @@ export default function MoshyLanding() {
                   ["Discount code", "REFERRAL120, for $120 off your first order, via our link"],
                 ].map(([k, v]) => (
                   <div key={k} className="flex gap-3 py-2.5">
-                    <dt className="w-28 shrink-0 text-[#9aa39c]">{k}</dt>
+                    <dt className="w-28 shrink-0 text-[#627068]">{k}</dt>
                     <dd className="text-[#2b362f]">{v}</dd>
                   </div>
                 ))}
@@ -98,7 +98,7 @@ export default function MoshyLanding() {
               <div className="mt-5">
                 <MoshyCTA block loc="glance-card" />
               </div>
-              <p className="mt-3 text-center text-[11px] text-[#9aa39c]">Opens getmoshy.com.au · AU only</p>
+              <p className="mt-3 text-center text-[11px] text-[#627068]">Opens getmoshy.com.au · AU only</p>
             </div>
           </aside>
         </section>
@@ -124,7 +124,7 @@ export default function MoshyLanding() {
         </section>
 
         {/* ── Compliance notice ── */}
-        <p className="mt-8 rounded-xl border border-[#e5e9e7] bg-white px-5 py-4 text-xs leading-relaxed text-[#6e7b74]">
+        <p className="mt-8 rounded-xl border border-[#e5e9e7] bg-white px-5 py-4 text-xs leading-relaxed text-[#5a665f]">
           <span className="font-semibold text-[#3d4b44]">Information only.</span> This page describes Moshy as a service
           and is not medical advice. It does not recommend any treatment or imply suitability for any individual.
           Prescription medicines in Australia are available only after assessment by a registered practitioner. Always
@@ -136,7 +136,7 @@ export default function MoshyLanding() {
           {/* TOC */}
           <nav aria-label="On this page" className="hidden lg:block">
             <div className="sticky top-24">
-              <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[#9aa39c]">On this page</p>
+              <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[#627068]">On this page</p>
               <ul className="space-y-2.5 text-sm">
                 {[
                   ["code", "The discount code"],
@@ -148,7 +148,7 @@ export default function MoshyLanding() {
                   ["faq", "FAQ"],
                 ].map(([id, label]) => (
                   <li key={id}>
-                    <a href={`#${id}`} className="text-[#6e7b74] transition-colors hover:text-[#0a7c42]">
+                    <a href={`#${id}`} className="text-[#5a665f] transition-colors hover:text-[#0a7c42]">
                       {label}
                     </a>
                   </li>
@@ -290,7 +290,7 @@ export default function MoshyLanding() {
                 </ul>
                 <div className="mt-7 flex flex-wrap items-center gap-4">
                   <MoshyCTA label="Continue to Moshy" size="lg" loc="bottom-line" />
-                  <span className="text-xs text-[#9aa39c]">Opens getmoshy.com.au · referral applied automatically</span>
+                  <span className="text-xs text-[#627068]">Opens getmoshy.com.au · referral applied automatically</span>
                 </div>
               </div>
             </section>

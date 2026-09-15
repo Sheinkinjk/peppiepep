@@ -103,7 +103,7 @@ export default function RepaymentCalculator() {
         <Stat label="Effective rate (incl. fees)" value={effective != null ? `${effective.toFixed(1)}% p.a.` : "n/a"} emphasis />
       </div>
 
-      <p className="mt-4 rounded-xl bg-[#f8faf9] px-4 py-3 text-xs leading-relaxed text-[#6e7b74]">
+      <p className="mt-4 rounded-xl bg-[#f8faf9] px-4 py-3 text-xs leading-relaxed text-[#5a665f]">
         The <strong className="text-[#10251b]">effective rate</strong> folds the establishment and ongoing fees into a single
         annual figure, the same way an Australian comparison rate is calculated, so it sits above the nominal rate whenever
         there are fees. It still can&apos;t capture <strong className="text-[#10251b]">factor-rate</strong> pricing, which
@@ -111,7 +111,7 @@ export default function RepaymentCalculator() {
         lender&apos;s real fees above to see their true rate.
       </p>
 
-      <p className="mt-3 text-xs text-[#6e7b74]">
+      <p className="mt-3 text-xs text-[#5a665f]">
         Indicative only, not a quote or an offer of credit.{" "}
         <Link href="/what-a-business-loan-actually-costs" className="underline hover:text-[#10251b]">How business loan pricing really works</Link>.
       </p>
@@ -130,7 +130,7 @@ export default function RepaymentCalculator() {
 function Stat({ label, value, emphasis }: { label: string; value: string; emphasis?: boolean }) {
   return (
     <div className="rounded-xl border p-4" style={{ borderColor: emphasis ? `${GREEN}40` : "#e5e9e7", background: emphasis ? `${GREEN}08` : "#fff" }}>
-      <p className="text-[11px] font-bold uppercase tracking-[0.1em] text-[#9aa39c]">{label}</p>
+      <p className="text-[11px] font-bold uppercase tracking-[0.1em] text-[#627068]">{label}</p>
       <p className="mt-1 text-2xl font-extrabold tabular-nums text-[#10251b]">{value}</p>
     </div>
   );

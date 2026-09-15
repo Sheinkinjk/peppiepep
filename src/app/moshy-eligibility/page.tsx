@@ -168,7 +168,7 @@ export default function MoshyEligibilityPage() {
               <details key={f.q} className="group rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] px-5 py-4">
                 <summary className="cursor-pointer list-none font-semibold text-[#10251b] text-sm sm:text-base flex items-center justify-between gap-4">
                   {f.q}
-                  <span className="text-[#9aa39c] group-open:rotate-45 transition-transform text-lg leading-none">+</span>
+                  <span className="text-[#627068] group-open:rotate-45 transition-transform text-lg leading-none">+</span>
                 </summary>
                 <p className="text-[#3d4b44] text-sm leading-relaxed mt-3">{f.a}</p>
               </details>
@@ -186,12 +186,12 @@ export default function MoshyEligibilityPage() {
             exists so the series appears here the moment the next re-check lands. */}
         <FactHistory subject="Moshy" kind="offer_observation" hub="weight-loss" route="/moshy-eligibility" />
 
-        <p className="text-[#9aa39c] text-xs mt-8 leading-relaxed">
+        <p className="text-[#627068] text-xs mt-8 leading-relaxed">
           This page is operated by Refer Labs and contains an affiliate referral link. We may earn a commission if you
           sign up through it, at no extra cost to you. Nothing here is medical advice. Prescription medicines in
           Australia are available only after individual assessment by a registered practitioner.
         </p>
-        <p className="text-[#9aa39c] text-xs mt-4">© 2026 Refer Labs · Australia · <Link href="/guides" className="hover:text-[#3d4b44]">All guides</Link></p>
+        <p className="text-[#627068] text-xs mt-4">© 2026 Refer Labs · Australia · <Link href="/guides" className="hover:text-[#3d4b44]">All guides</Link></p>
       </main>
       <StickyCta href={MOSHY_URL} product="Moshy weight-loss telehealth" label="Check eligibility" />
     </ConsumerShell>

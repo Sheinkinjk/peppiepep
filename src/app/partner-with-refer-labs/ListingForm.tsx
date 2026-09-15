@@ -27,7 +27,7 @@ interface FormState {
 const inputClass =
   "w-full rounded-xl border border-[#e5e9e7] bg-white px-4 py-3 text-sm text-[#10251b] placeholder:text-[#9aa39c] transition-colors focus:border-[#0a7c42] focus:outline-none focus:ring-1 focus:ring-[#0a7c42]";
 
-const labelClass = "block text-xs font-semibold uppercase tracking-[0.14em] text-[#6e7b74] mb-2";
+const labelClass = "block text-xs font-semibold uppercase tracking-[0.14em] text-[#5a665f] mb-2";
 
 export default function ListingForm() {
   const [form, setForm] = useState<FormState>({
@@ -147,7 +147,7 @@ export default function ListingForm() {
         <textarea required value={form.description} onChange={(e) => update("description", e.target.value)} rows={5}
           placeholder="What you offer, who your customers are, what makes you worth featuring, and any relevant credentials or clinical oversight."
           className={`${inputClass} resize-none`} />
-        <p className="mt-1.5 text-xs text-[#9aa39c]">Be specific. This is what we use to assess your fit for the platform.</p>
+        <p className="mt-1.5 text-xs text-[#627068]">Be specific. This is what we use to assess your fit for the platform.</p>
       </div>
 
       {errorMsg && <p className="text-sm font-medium text-[#c0392b]">{errorMsg}</p>}

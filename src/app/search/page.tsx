@@ -24,12 +24,12 @@ export default async function SearchPage({
         <h1 className="text-3xl font-black tracking-[-0.02em] text-[#10251b] sm:text-4xl">Search</h1>
 
         {query ? (
-          <p className="mt-3 text-[15px] text-[#6e7b74]">
+          <p className="mt-3 text-[15px] text-[#5a665f]">
             {results.length} result{results.length === 1 ? "" : "s"} for{" "}
             <span className="font-semibold text-[#10251b]">&ldquo;{query}&rdquo;</span>
           </p>
         ) : (
-          <p className="mt-3 text-[15px] text-[#6e7b74]">
+          <p className="mt-3 text-[15px] text-[#5a665f]">
             Search our comparisons, guides and deals across Australian health, home energy, business finance and software.
           </p>
         )}
@@ -50,7 +50,7 @@ export default async function SearchPage({
                     <span className="block text-[17px] font-bold leading-snug text-[#10251b] transition-colors group-hover:text-[#0a7c42]">
                       {r.title}
                     </span>
-                    <span className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[#9aa39c]">{r.category}</span>
+                    <span className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[#627068]">{r.category}</span>
                   </span>
                   <ArrowRight className="h-4 w-4 shrink-0 text-[#0a7c42] transition-transform group-hover:translate-x-0.5" />
                 </Link>

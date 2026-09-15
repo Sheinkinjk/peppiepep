@@ -78,7 +78,7 @@ export default function SwipePagesPage() {
       <PremiumAffiliateLanding config={swipePagesConfig} />
       <div className="border-t border-[#e5e9e7] bg-white py-6">
         <div className="mx-auto max-w-3xl px-6 sm:px-8">
-          <p className="text-[#9aa39c] text-xs mb-1.5">Compare landing page and website builders</p>
+          <p className="text-[#627068] text-xs mb-1.5">Compare landing page and website builders</p>
           <Link
             href="/best-website-builder"
             className="text-sm text-[#0a7c42] font-semibold hover:text-[#086536] transition-colors"

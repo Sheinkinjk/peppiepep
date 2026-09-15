@@ -34,7 +34,7 @@ export default function PetOfferPair({ ctaPrefix }: { ctaPrefix: string }) {
             Use the code <strong className="text-[#10251b]">referlab2mf</strong> through our link. Cover, waiting
             periods, exclusions and limits are in Knose&apos;s PDS, so get a quote to see what would apply to your pet.
           </p>
-          <p className="mt-2 text-[11px] font-medium text-[#6e7b74]">
+          <p className="mt-2 text-[12px] font-medium text-[#5a665f]">
             Confirmed directly with Knose on 27 August 2026. Offers can change, so check the current terms before
             you sign up.
           </p>
@@ -72,7 +72,7 @@ export default function PetOfferPair({ ctaPrefix }: { ctaPrefix: string }) {
             $500). All three pay 80% of the eligible vet bill less a $100, $200 or $300 excess. Underwritten by
             Pacific International Insurance.
           </p>
-          <p className="mt-2 text-[11px] font-medium text-[#6e7b74]">
+          <p className="mt-2 text-[12px] font-medium text-[#5a665f]">
             Figures are from PetsOnMe&apos;s own compare-cover page, checked 17 August 2026. Offers can change, so
             check the current terms before you sign up.
           </p>

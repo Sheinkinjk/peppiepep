@@ -180,7 +180,7 @@ export default function MensHealthQuiz() {
     const q = QUESTIONS[step];
     return (
       <div className="rounded-2xl border border-[#e5e9e7] bg-white p-6 sm:p-8">
-        <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#9aa39c]">
+        <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#627068]">
           Question {step + 1} of {QUESTIONS.length}
         </p>
         <h2 className="mt-3 text-xl font-bold text-[#10251b] sm:text-2xl">{q.q}</h2>
@@ -193,7 +193,7 @@ export default function MensHealthQuiz() {
               className="group rounded-xl border border-[#e5e9e7] bg-white px-5 py-4 text-left transition-colors hover:border-[#0a7c42] hover:bg-[#f5f8f6]"
             >
               <span className="block text-[15px] font-semibold text-[#10251b] group-hover:text-[#0a7c42]">{o.label}</span>
-              {o.note && <span className="mt-0.5 block text-sm text-[#6e7b74]">{o.note}</span>}
+              {o.note && <span className="mt-0.5 block text-sm text-[#5a665f]">{o.note}</span>}
             </button>
           ))}
         </div>
@@ -201,7 +201,7 @@ export default function MensHealthQuiz() {
           <button
             type="button"
             onClick={() => setStep((s) => s - 1)}
-            className="mt-5 text-sm font-semibold text-[#6e7b74] hover:text-[#10251b]"
+            className="mt-5 text-sm font-semibold text-[#5a665f] hover:text-[#10251b]"
           >
             Back
           </button>
@@ -237,7 +237,7 @@ export default function MensHealthQuiz() {
             <label htmlFor="mhq-email" className="block text-sm font-semibold text-[#10251b]">
               Want to know when we&apos;ve compared providers in this category?
             </label>
-            <p className="mt-1 text-sm text-[#6e7b74]">
+            <p className="mt-1 text-sm text-[#5a665f]">
               One email when men&apos;s health goes live. We do not record your answers against your address.
             </p>
             <div className="mt-3 flex flex-wrap gap-2">
@@ -276,12 +276,12 @@ export default function MensHealthQuiz() {
       <button
         type="button"
         onClick={restart}
-        className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-[#6e7b74] hover:text-[#10251b]"
+        className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-[#5a665f] hover:text-[#10251b]"
       >
         <RotateCcw className="h-3.5 w-3.5" aria-hidden="true" /> Start again
       </button>
 
-      <p className="mt-6 text-xs leading-relaxed text-[#6e7b74]">
+      <p className="mt-6 text-xs leading-relaxed text-[#5a665f]">
         This quiz asks only about cost, privacy and how you prefer to consult. It collects no health information, makes
         no assessment of you, and is general information rather than medical advice. Anything prescription-only in
         Australia is supplied after an individual assessment by a registered practitioner.

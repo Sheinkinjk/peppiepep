@@ -101,7 +101,7 @@ export default function HairLossTreatmentCostAustraliaPage() {
         <div className="mx-auto max-w-3xl px-6 sm:px-8">
 
           {/* Breadcrumb */}
-          <nav className="flex flex-wrap items-center gap-2 pt-8 text-sm text-[#6e7b74]">
+          <nav className="flex flex-wrap items-center gap-2 pt-8 text-sm text-[#5a665f]">
             <Link href="/" className="hover:text-[#10251b] transition-colors">Refer Labs</Link>
             <span>/</span>
             <Link href="/hair-loss" className="hover:text-[#10251b] transition-colors">Hair loss</Link>
@@ -234,7 +234,7 @@ export default function HairLossTreatmentCostAustraliaPage() {
                   </tbody>
                 </table>
               </div>
-              <p className="mt-3 text-xs leading-relaxed text-[#9aa39c]">
+              <p className="mt-3 text-xs leading-relaxed text-[#627068]">
                 Plans include free, discreet delivery, and Mosh advertises a money-back guarantee. New customers get 55%
                 off their first order through our link. You see the current plan and price on Mosh before you commit.
               </p>
@@ -324,7 +324,7 @@ export default function HairLossTreatmentCostAustraliaPage() {
 
             {/* Disclosure */}
             <section className="border-t border-[#e5e9e7] pt-6 pb-16">
-              <p className="text-xs leading-relaxed text-[#9aa39c]">
+              <p className="text-xs leading-relaxed text-[#627068]">
                 This page is published by Refer Labs, an independent comparison publisher, and contains a disclosed
                 affiliate link to Mosh, which means we may earn a commission if you sign up through our link. Commissions
                 never change what we write. Prices shown are the providers&apos; own published figures and can change, so

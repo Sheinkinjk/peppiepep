@@ -184,7 +184,7 @@ export default function ApolloEoiForm() {
         <textarea id="notes" rows={2} className={field} value={v.notes || ""} onChange={(e) => set("notes", e.target.value)} placeholder="e.g. battery size you have in mind, blackout backup, etc." />
       </div>
 
-      <label className="mt-5 flex cursor-pointer items-start gap-3 text-[13px] leading-relaxed text-[#6e7b74]">
+      <label className="mt-5 flex cursor-pointer items-start gap-3 text-[13px] leading-relaxed text-[#5a665f]">
         <input type="checkbox" checked={v.consent === "yes"} onChange={(e) => set("consent", e.target.checked ? "yes" : "")} className="mt-0.5 h-4 w-4 shrink-0 rounded border-[#cfd6d1] accent-[#0a7c42]" />
         <span>I agree to Refer Labs sharing my details with Apollo Energy Group, and to both contacting me by phone, email or SMS.</span>
       </label>
@@ -195,7 +195,7 @@ export default function ApolloEoiForm() {
       <button type="submit" disabled={submitting} className="nw-btn mt-6 w-full justify-center py-4 text-[15px] disabled:opacity-70">
         {submitting ? <><Loader2 className="h-4 w-4 animate-spin" /> Sending…</> : <>Register my interest <ArrowRight className="h-4 w-4" /></>}
       </button>
-      <p className="mt-3 flex items-center justify-center gap-1.5 text-center text-[12px] text-[#9aa39c]">
+      <p className="mt-3 flex items-center justify-center gap-1.5 text-center text-[12px] text-[#627068]">
         <ShieldCheck className="h-3.5 w-3.5 text-[#0a7c42]" aria-hidden="true" /> Contacted within 2 business days · no documents · no obligation
       </p>
     </form>

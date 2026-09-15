@@ -76,7 +76,7 @@ export default function GuideCapture({ source = "weight-loss-guide" }: { source?
       </label>
       <div className="flex flex-col gap-3 sm:flex-row">
         <div className="relative flex-1">
-          <Mail className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-[#9aa39c]" aria-hidden="true" />
+          <Mail className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-[#627068]" aria-hidden="true" />
           <input
             id="guide_email"
             type="email"
@@ -101,7 +101,7 @@ export default function GuideCapture({ source = "weight-loss-guide" }: { source?
         </button>
       </div>
       {err && <p role="alert" className="mt-2 text-sm text-[#c0392b]">{err}</p>}
-      <p className="mt-3 text-[12px] leading-relaxed text-[#9aa39c]">
+      <p className="mt-3 text-[12px] leading-relaxed text-[#627068]">
         Free, one email. No spam. Unsubscribe anytime. By requesting the guide you agree to receive it and the occasional
         Refer Labs update. General information, not medical advice.
       </p>

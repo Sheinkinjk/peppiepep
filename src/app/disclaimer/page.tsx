@@ -70,7 +70,7 @@ export default function Disclaimer() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <main id="main-content" className="mx-auto max-w-3xl px-5 pb-20 pt-12 sm:px-8 sm:pt-16">
-        <nav className="mb-8 flex items-center gap-2 text-sm text-[#9aa39c]">
+        <nav className="mb-8 flex items-center gap-2 text-sm text-[#627068]">
           <Link href="/" className="hover:text-[#0a7c42]">Refer Labs</Link>
           <span>/</span>
           <span className="text-[#2b362f]">Disclaimer</span>
@@ -86,7 +86,7 @@ export default function Disclaimer() {
           compare. Prices and offers are recorded on the date shown on the page and change without notice.
         </p>
 
-        <p className="mt-4 text-sm text-[#9aa39c]">Last updated: {UPDATED}</p>
+        <p className="mt-4 text-sm text-[#627068]">Last updated: {UPDATED}</p>
 
         <div className="mt-10 space-y-8">
           <Section n="1" title="General information only">
@@ -201,7 +201,7 @@ export default function Disclaimer() {
           </dl>
         </section>
 
-        <p className="mt-10 text-sm text-[#6e7b74]">
+        <p className="mt-10 text-sm text-[#5a665f]">
           Pepform Pty Ltd trading as Refer Labs, ABN 32 660 008 159.
         </p>
       </main>

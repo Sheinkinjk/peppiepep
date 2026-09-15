@@ -91,7 +91,7 @@ export default function Page() {
         <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">What the total can include</h2>
         <div className="mt-4 overflow-x-auto rounded-2xl border border-[#e5e9e7]">
           <table className="w-full min-w-[540px] border-collapse text-left text-sm">
-            <thead className="bg-[#f8faf9] text-[11px] uppercase tracking-[0.1em] text-[#9aa39c]">
+            <thead className="bg-[#f8faf9] text-[11px] uppercase tracking-[0.1em] text-[#627068]">
               <tr>
                 <th className="px-4 py-3 font-semibold">Cost</th>
                 <th className="px-4 py-3 font-semibold">Rebate</th>
@@ -128,7 +128,7 @@ export default function Page() {
             <a href="https://fullbodymri.com.au/pricing/" target="_blank" rel="noopener noreferrer" className="font-semibold text-[#0a7c42] hover:underline">Full Body MRI&apos;s pricing page</a>, read 13 September 2026.
           </li>
         </ul>
-        <p className="mt-3 text-xs text-[#6e7b74]">
+        <p className="mt-3 text-xs text-[#5a665f]">
           None of these attracts a Medicare rebate. Prices change, so confirm the fee with the provider, and ask
           specifically what it does not include.
         </p>

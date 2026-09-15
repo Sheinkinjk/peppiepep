@@ -126,7 +126,7 @@ export default function VirtualPowerPlantAustraliaPage() {
       <main className="text-[#10251b]">
         <div className="mx-auto max-w-3xl px-6 sm:px-8">
           {/* Breadcrumb */}
-          <nav className="flex flex-wrap items-center gap-2 pt-8 text-sm text-[#6e7b74]">
+          <nav className="flex flex-wrap items-center gap-2 pt-8 text-sm text-[#5a665f]">
             <Link href="/" className="transition-colors hover:text-[#10251b]">Refer Labs</Link>
             <span>/</span>
             <Link href="/apollo-energy-group" className="transition-colors hover:text-[#10251b]">Home batteries</Link>
@@ -180,9 +180,9 @@ export default function VirtualPowerPlantAustraliaPage() {
               <table className="w-full border-collapse text-left text-sm">
                 <thead>
                   <tr className="border-b border-[#e5e9e7]">
-                    <th className="pb-3 pr-4 text-[11px] font-semibold uppercase tracking-widest text-[#9aa39c]">Model</th>
-                    <th className="pb-3 pr-4 text-[11px] font-semibold uppercase tracking-widest text-[#9aa39c]">How you are paid</th>
-                    <th className="pb-3 text-[11px] font-semibold uppercase tracking-widest text-[#9aa39c]">Example</th>
+                    <th className="pb-3 pr-4 text-[11px] font-semibold uppercase tracking-widest text-[#627068]">Model</th>
+                    <th className="pb-3 pr-4 text-[11px] font-semibold uppercase tracking-widest text-[#627068]">How you are paid</th>
+                    <th className="pb-3 text-[11px] font-semibold uppercase tracking-widest text-[#627068]">Example</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -190,13 +190,13 @@ export default function VirtualPowerPlantAustraliaPage() {
                     <tr key={m.model} className="border-b border-[#eef1ec] align-top">
                       <td className="py-3 pr-4 font-semibold text-[#10251b]">{m.model}</td>
                       <td className="py-3 pr-4 text-[#3d4b44]">{m.paid}</td>
-                      <td className="py-3 text-[#6e7b74]">{m.example}</td>
+                      <td className="py-3 text-[#5a665f]">{m.example}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
-            <p className="mt-3 text-xs leading-relaxed text-[#9aa39c]">
+            <p className="mt-3 text-xs leading-relaxed text-[#627068]">
               Brands are named to illustrate each model, not as a ranking. What any provider pays changes with the market,
               so compare current offers before you commit.
             </p>
@@ -306,7 +306,7 @@ export default function VirtualPowerPlantAustraliaPage() {
 
           {/* Disclosure */}
           <section className="border-t border-[#e5e9e7] pt-6 pb-16">
-            <p className="text-xs leading-relaxed text-[#9aa39c]">
+            <p className="text-xs leading-relaxed text-[#627068]">
               Published by Refer Labs, an independent comparison publisher, and contains a disclosed affiliate link to
               Apollo Energy Group, which means we may earn a commission if you enquire or buy through our link, at no extra
               cost to you. Commissions never change what we write. VPP payments and incentives are indicative, vary by

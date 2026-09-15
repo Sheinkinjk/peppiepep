@@ -221,7 +221,7 @@ export default function WeightLossTelehealthWomenPage() {
               <details key={f.q} className="group rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] px-5 py-4">
                 <summary className="cursor-pointer list-none font-semibold text-[#10251b] text-sm sm:text-base flex items-center justify-between gap-4">
                   {f.q}
-                  <span className="text-[#9aa39c] group-open:rotate-45 transition-transform text-lg leading-none">+</span>
+                  <span className="text-[#627068] group-open:rotate-45 transition-transform text-lg leading-none">+</span>
                 </summary>
                 <p className="text-[#3d4b44] text-sm leading-relaxed mt-3">{f.a}</p>
               </details>
@@ -238,11 +238,11 @@ export default function WeightLossTelehealthWomenPage() {
         </div>
 
         <AffiliateDisclosure className="mt-8" />
-        <p className="text-[#9aa39c] text-xs mt-3 leading-relaxed">
+        <p className="text-[#627068] text-xs mt-3 leading-relaxed">
           Nothing here is medical advice. Always consult a qualified health
           professional before making health decisions.
         </p>
-        <p className="text-[#9aa39c] text-xs mt-4">&copy; 2026 Refer Labs &middot; Australia &middot; <Link href="/guides" className="hover:text-[#3d4b44]">All guides</Link></p>
+        <p className="text-[#627068] text-xs mt-4">&copy; 2026 Refer Labs &middot; Australia &middot; <Link href="/guides" className="hover:text-[#3d4b44]">All guides</Link></p>
       </main>
       <StickyCta href={MOSHY_URL} product="Moshy weight-loss telehealth" label="Check eligibility" />
     </ConsumerShell>

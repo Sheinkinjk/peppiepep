@@ -97,7 +97,7 @@ export default function Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
 
       <main id="main-content" className="mx-auto max-w-3xl px-5 pb-20 pt-10 sm:px-8">
-        <nav className="flex flex-wrap items-center gap-2 text-sm text-[#9aa39c]">
+        <nav className="flex flex-wrap items-center gap-2 text-sm text-[#627068]">
           <Link href="/" className="hover:text-[#0a7c42]">Refer Labs</Link>
           <span>/</span>
           <Link href="/apollo-energy-group" className="hover:text-[#0a7c42]">Home &amp; energy</Link>
@@ -159,7 +159,7 @@ export default function Page() {
           <div className="mt-5 overflow-x-auto rounded-2xl border border-[#e5e9e7]">
             <table className="w-full min-w-[600px] border-collapse text-left text-sm">
               <thead>
-                <tr className="border-b border-[#e5e9e7] bg-[#f8faf9] text-[#6e7b74]">
+                <tr className="border-b border-[#e5e9e7] bg-[#f8faf9] text-[#5a665f]">
                   <th className="px-4 py-3 font-semibold">Appliance</th>
                   <th className="px-4 py-3 font-semibold">Typical draw</th>
                   <th className="px-4 py-3 font-semibold">On a 1,000Wh unit</th>
@@ -174,13 +174,13 @@ export default function Page() {
                     <td className="px-4 py-3 tabular-nums text-[#3d4b44]">
                       {r.watts > 900 ? "Minutes, if output allows" : `about ${Math.floor((1024 * 0.85) / r.watts)} hours`}
                     </td>
-                    <td className="px-4 py-3 text-[13px] text-[#6e7b74]">{r.note}</td>
+                    <td className="px-4 py-3 text-[13px] text-[#5a665f]">{r.note}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
-          <p className="mt-3 text-[13px] leading-relaxed text-[#6e7b74]">
+          <p className="mt-3 text-[13px] leading-relaxed text-[#5a665f]">
             Draw figures are typical Australian appliance averages, not measurements of your appliance. A fridge cycles,
             so it draws far less over an hour than its nameplate suggests. Anything with a heating element or a
             compressor draws a large surge at start-up: check the unit&apos;s surge rating as well as its continuous
@@ -210,7 +210,7 @@ export default function Page() {
               </a>
             </div>
           </div>
-          <p className="mt-4 text-[13px] leading-relaxed text-[#6e7b74]">
+          <p className="mt-4 text-[13px] leading-relaxed text-[#5a665f]">
             Both links are affiliate links and we earn from either, at no extra cost to you. The comparison rests on each
             brand&apos;s published prices.{" "}
             <Link href="/ecoflow-vs-anker-solix" className="underline hover:text-[#3d4b44]">The full head-to-head</Link>{" "}
@@ -232,7 +232,7 @@ export default function Page() {
         </section>
 
         <section className="mt-10 border-t border-[#eef1ef] pt-8">
-          <h2 className="text-xs font-bold uppercase tracking-[0.12em] text-[#9aa39c]">Keep reading</h2>
+          <h2 className="text-xs font-bold uppercase tracking-[0.12em] text-[#627068]">Keep reading</h2>
           <ul className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-sm">
             <li><Link href="/ecoflow-vs-anker-solix" className="font-semibold text-[#0a7c42] hover:underline">EcoFlow vs Anker SOLIX</Link></li>
             <li><Link href="/portable-vs-installed-home-battery-australia" className="font-semibold text-[#0a7c42] hover:underline">Portable vs installed</Link></li>

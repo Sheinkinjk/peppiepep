@@ -109,7 +109,7 @@ export default function HomeBatteryRebatePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <ConsumerShell>
         <main id="main-content" className="mx-auto max-w-3xl px-5 pb-24 pt-12 sm:px-8 sm:pt-16">
-          <nav className="mb-7 flex items-center gap-2 text-sm text-[#9aa39c]">
+          <nav className="mb-7 flex items-center gap-2 text-sm text-[#627068]">
             <Link href="/" className="hover:text-[#0a7c42]">Refer Labs</Link>
             <span>/</span>
             <span className="text-[#2b362f]">Home battery rebate</span>
@@ -189,9 +189,9 @@ export default function HomeBatteryRebatePage() {
               <table className="w-full min-w-[440px] border-collapse text-sm">
                 <thead>
                   <tr className="border-b border-[#e5e9e7]">
-                    <th className="pb-3 pr-4 text-left text-[11px] font-semibold uppercase tracking-widest text-[#9aa39c]">Capacity band</th>
-                    <th className="pb-3 pr-4 text-left text-[11px] font-semibold uppercase tracking-widest text-[#9aa39c]">Rate applied</th>
-                    <th className="pb-3 text-left text-[11px] font-semibold uppercase tracking-widest text-[#9aa39c]">Roughly per kWh</th>
+                    <th className="pb-3 pr-4 text-left text-[11px] font-semibold uppercase tracking-widest text-[#627068]">Capacity band</th>
+                    <th className="pb-3 pr-4 text-left text-[11px] font-semibold uppercase tracking-widest text-[#627068]">Rate applied</th>
+                    <th className="pb-3 text-left text-[11px] font-semibold uppercase tracking-widest text-[#627068]">Roughly per kWh</th>
                   </tr>
                 </thead>
                 <tbody className="text-[#3d4b44]">
@@ -209,7 +209,7 @@ export default function HomeBatteryRebatePage() {
                 </tbody>
               </table>
             </div>
-            <p className="mt-3 text-xs text-[#9aa39c]">
+            <p className="mt-3 text-xs text-[#627068]">
               Per-kWh figures are derived from the ~$252 base rate and rounded. Indicative only.
             </p>
           </section>
@@ -225,9 +225,9 @@ export default function HomeBatteryRebatePage() {
               <table className="w-full min-w-[440px] border-collapse text-sm">
                 <thead>
                   <tr className="border-b border-[#e5e9e7]">
-                    <th className="pb-3 pr-4 text-left text-[11px] font-semibold uppercase tracking-widest text-[#9aa39c]">Battery size</th>
-                    <th className="pb-3 pr-4 text-left text-[11px] font-semibold uppercase tracking-widest text-[#9aa39c]">Approx. rebate</th>
-                    <th className="pb-3 text-left text-[11px] font-semibold uppercase tracking-widest text-[#9aa39c]">How it stacks up</th>
+                    <th className="pb-3 pr-4 text-left text-[11px] font-semibold uppercase tracking-widest text-[#627068]">Battery size</th>
+                    <th className="pb-3 pr-4 text-left text-[11px] font-semibold uppercase tracking-widest text-[#627068]">Approx. rebate</th>
+                    <th className="pb-3 text-left text-[11px] font-semibold uppercase tracking-widest text-[#627068]">How it stacks up</th>
                   </tr>
                 </thead>
                 <tbody className="text-[#3d4b44]">
@@ -339,7 +339,7 @@ export default function HomeBatteryRebatePage() {
           </section>
 
           <section className="mt-12 border-t border-[#e5e9e7] pt-8">
-            <h2 className="text-xs font-bold uppercase tracking-[0.12em] text-[#9aa39c]">More on home batteries</h2>
+            <h2 className="text-xs font-bold uppercase tracking-[0.12em] text-[#627068]">More on home batteries</h2>
             <ul className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-sm">
               <li><Link href="/solar-and-battery-package-australia" className="font-semibold text-[#0a7c42] hover:underline">Buying solar and a battery together</Link></li>
               <li><Link href="/tesla-powerwall-alternatives-australia" className="font-semibold text-[#0a7c42] hover:underline">Powerwall alternatives</Link></li>
@@ -349,7 +349,7 @@ export default function HomeBatteryRebatePage() {
             </ul>
           </section>
 
-          <p className="mt-10 text-xs leading-relaxed text-[#9aa39c]">
+          <p className="mt-10 text-xs leading-relaxed text-[#627068]">
             Rebate figures reflect the federal Cheaper Home Batteries Program and state incentives as at July 2026 and
             are indicative only. STC prices move, and scheme rules change, so confirm current terms and your own
             eligibility before committing. This page contains a disclosed affiliate link: if you request a quote through

@@ -128,7 +128,7 @@ export default function MoshyVsJuniperPage() {
         </nav>
 
         {/* Hero */}
-        <p className="text-[#9aa39c] text-xs mb-5">Australia · Weight-loss telehealth</p>
+        <p className="text-[#627068] text-xs mb-5">Australia · Weight-loss telehealth</p>
         <h1 className="text-3xl sm:text-4xl lg:text-[2.7rem] font-black leading-[1.08] tracking-tight mb-4">
           Moshy vs Juniper:{" "}
           <span style={{ color: CYAN_LT }}>which one is built for you?</span>
@@ -151,7 +151,7 @@ export default function MoshyVsJuniperPage() {
         {/* Answer-first: the buyer's question verbatim as an H2, then a liftable answer. */}
         <h2 className="text-xl sm:text-2xl font-black text-[#10251b] mb-3">Is Moshy or Juniper better for weight loss in Australia?</h2>
         <div className="rounded-xl border px-6 py-5 mb-10" style={{ borderColor: `${CYAN}40`, background: `${CYAN}0A` }}>
-          <p className="text-[10px] font-bold uppercase tracking-[0.18em] mb-2" style={{ color: CYAN_LT }}>Quick Verdict</p>
+          <p className="text-[11px] font-bold uppercase tracking-[0.18em] mb-2" style={{ color: CYAN_LT }}>Quick Verdict</p>
           <p className="text-[#2b362f] text-sm sm:text-base leading-relaxed">
             Refer Labs compared Moshy and Juniper in August 2026, and the difference is the style of support. If you
             want a focused, clinically-led pathway with a fast online eligibility check, Moshy is a natural starting
@@ -192,7 +192,7 @@ export default function MoshyVsJuniperPage() {
         {/* Dual CTA */}
         <div className="grid sm:grid-cols-2 gap-4 mb-12">
           <div className="rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] p-6">
-            <p className="text-[10px] font-bold uppercase tracking-[0.18em] mb-2" style={{ color: CYAN_LT }}>The clinical pathway</p>
+            <p className="text-[11px] font-bold uppercase tracking-[0.18em] mb-2" style={{ color: CYAN_LT }}>The clinical pathway</p>
             <h3 className="text-lg font-bold mb-2">Start with Moshy</h3>
             <p className="text-[#3d4b44] text-sm leading-relaxed mb-4">
               Fast online eligibility check, practitioner-reviewed, delivered. The discount code is REFERRAL120, applied automatically through this link so there is nothing to type.
@@ -213,7 +213,7 @@ export default function MoshyVsJuniperPage() {
             <EarningsBalanceNote earnFrom="Moshy" noEarnFrom="Juniper" noEarnHref="/juniper" className="mt-4" />
           </div>
           <div className="rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] p-6">
-            <p className="text-[10px] font-bold uppercase tracking-[0.18em] mb-2 text-[#3d4b44]">Designed for women</p>
+            <p className="text-[11px] font-bold uppercase tracking-[0.18em] mb-2 text-[#3d4b44]">Designed for women</p>
             <h3 className="text-lg font-bold mb-2">Consider Juniper</h3>
             <p className="text-[#3d4b44] text-sm leading-relaxed mb-4">
               A structured coaching and community program designed for women, with a free first consultation.
@@ -262,7 +262,7 @@ export default function MoshyVsJuniperPage() {
               <details key={f.q} className="group rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] px-5 py-4">
                 <summary className="cursor-pointer list-none font-semibold text-[#10251b] text-sm sm:text-base flex items-center justify-between gap-4">
                   {f.q}
-                  <span className="text-[#9aa39c] group-open:rotate-45 transition-transform text-lg leading-none">+</span>
+                  <span className="text-[#627068] group-open:rotate-45 transition-transform text-lg leading-none">+</span>
                 </summary>
                 <p className="text-[#3d4b44] text-sm leading-relaxed mt-3">{f.a}</p>
               </details>
@@ -285,7 +285,7 @@ export default function MoshyVsJuniperPage() {
         <FactHistory subject="Moshy" kind="offer_observation" hub="weight-loss" route="/moshy-vs-juniper" />
 
         <AffiliateDisclosure partners={["Moshy", "Juniper"]} className="mt-8" />
-        <p className="text-[#9aa39c] text-xs mt-3 leading-relaxed">
+        <p className="text-[#627068] text-xs mt-3 leading-relaxed">
           This page does not constitute medical advice. Treatment
           suitability is decided by a registered Australian practitioner. Consult a qualified health professional
           before making health decisions.

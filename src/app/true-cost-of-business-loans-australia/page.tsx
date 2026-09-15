@@ -95,7 +95,7 @@ export default function FactorRateStudy() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
 
       <main className="mx-auto max-w-3xl px-5 py-10 sm:px-8 sm:py-14">
-        <nav className="text-xs text-[#6e7b74]">
+        <nav className="text-xs text-[#5a665f]">
           <Link href="/business-loans" className="hover:text-[#0a7c42]">Business loans</Link>
           <span className="px-1.5">/</span>
           <span className="text-[#3d4b44]">The hidden cost of factor rates</span>
@@ -156,7 +156,7 @@ export default function FactorRateStudy() {
             <table className="w-full border-collapse text-left text-sm">
               <caption className="sr-only">Effective annual rate by factor rate and loan term</caption>
               <thead>
-                <tr className="bg-[#f8faf9] text-[11px] font-bold uppercase tracking-[0.08em] text-[#6e7b74]">
+                <tr className="bg-[#f8faf9] text-[11px] font-bold uppercase tracking-[0.08em] text-[#5a665f]">
                   <th scope="col" className="px-4 py-3">Factor rate</th>
                   {TERMS.map((t) => <th key={t} scope="col" className="px-4 py-3 text-right">{t} months</th>)}
                 </tr>
@@ -173,7 +173,7 @@ export default function FactorRateStudy() {
               </tbody>
             </table>
           </div>
-          <p className="text-sm text-[#6e7b74]">
+          <p className="text-sm text-[#5a665f]">
             Effective annual rate (nominal, comparison-rate convention). Figures assume equal monthly repayments and no
             additional fees; real products often add establishment or ongoing fees, which push the true cost higher still.
           </p>
@@ -240,7 +240,7 @@ export default function FactorRateStudy() {
           </dl>
         </section>
 
-        <p className="mt-10 text-xs leading-relaxed text-[#6e7b74]">
+        <p className="mt-10 text-xs leading-relaxed text-[#5a665f]">
           This analysis is general information, not financial advice, and is provided so borrowers and journalists can
           reproduce the figures. You are welcome to cite it with a link to this page. Refer Labs is an independent
           referrer, not a lender. Read our{" "}

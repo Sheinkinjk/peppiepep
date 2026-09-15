@@ -82,10 +82,10 @@ export default function BatteryCalc() {
 
           <div>
             <label className="block text-sm font-semibold text-[#10251b]">
-              Have a quote? Enter the installed price after rebate <span className="font-normal text-[#9aa39c]">(optional)</span>
+              Have a quote? Enter the installed price after rebate <span className="font-normal text-[#627068]">(optional)</span>
             </label>
             <div className="mt-2 flex items-center gap-2">
-              <span className="text-[#9aa39c]">$</span>
+              <span className="text-[#627068]">$</span>
               <input
                 type="text"
                 inputMode="numeric"
@@ -95,10 +95,10 @@ export default function BatteryCalc() {
                 className="w-full rounded-lg border border-[#e5e9e7] px-3 py-2 text-sm focus:border-[#0a7c42] focus:outline-none"
               />
             </div>
-            <p className="mt-1.5 text-xs text-[#9aa39c]">Leave blank to use our indicative estimate for this size.</p>
+            <p className="mt-1.5 text-xs text-[#627068]">Leave blank to use our indicative estimate for this size.</p>
           </div>
 
-          <button onClick={reset} className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#6e7b74] hover:text-[#10251b]">
+          <button onClick={reset} className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#5a665f] hover:text-[#10251b]">
             <RotateCcw className="h-3.5 w-3.5" /> Reset
           </button>
         </div>
@@ -145,10 +145,10 @@ export default function BatteryCalc() {
           >
             Turn this estimate into a real quote, $500 off <ArrowRight className="h-4 w-4" />
           </Link>
-          <p className="mt-2.5 text-center text-xs text-[#6e7b74]">
+          <p className="mt-2.5 text-center text-xs text-[#5a665f]">
             Registers your interest with Apollo Energy through us; they quote from your actual usage.
           </p>
-          <p className="mt-3 text-xs leading-relaxed text-[#6e7b74]">
+          <p className="mt-3 text-xs leading-relaxed text-[#5a665f]">
             Illustrative only, from your inputs and stated assumptions. It is not a quote, a guarantee, or financial
             advice. Rebate and prices are indicative and move with the market. Your real figure depends on your home,
             usage and tariff. See the full method in our{" "}
@@ -176,7 +176,7 @@ function Slider({ label, value, min, max, step, unit, onChange, hint }: {
         className="mt-2 w-full accent-[#0a7c42]"
         aria-label={label}
       />
-      <p className="mt-1 text-xs leading-relaxed text-[#9aa39c]">{hint}</p>
+      <p className="mt-1 text-xs leading-relaxed text-[#627068]">{hint}</p>
     </div>
   );
 }

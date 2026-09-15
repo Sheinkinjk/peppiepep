@@ -87,7 +87,7 @@ export default function HairLossHubPage() {
 
       <main id="main-content">
         <section className="mx-auto max-w-6xl px-5 pt-12 sm:px-8 sm:pt-16">
-          <nav className="mb-7 flex items-center gap-2 text-sm text-[#9aa39c]">
+          <nav className="mb-7 flex items-center gap-2 text-sm text-[#627068]">
             <Link href="/" className="hover:text-[#0a7c42]">Refer Labs</Link>
             <span>/</span>
             <span className="text-[#2b362f]">Hair loss</span>
@@ -146,7 +146,7 @@ export default function HairLossHubPage() {
               </div>
             </div>
             <div className="rounded-2xl border border-[#e5e9e7] bg-[#f5f8f6] p-7">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#9aa39c]">Cosmetic</p>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#627068]">Cosmetic</p>
               <h3 className="mt-3 text-xl font-bold text-[#10251b]">
                 Topical products
               </h3>
@@ -158,7 +158,7 @@ export default function HairLossHubPage() {
                 <a href={DENSE_URL} target="_blank" rel="nofollow sponsored" data-cta="hair-hub-dense" className="inline-flex items-center gap-1.5 text-[#0a7c42] hover:underline">
                   Visit Dense Hair Experts <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
                 </a>
-                <Link href="/dense" className="font-medium text-[#6e7b74] hover:text-[#0a7c42] hover:underline">Read our review</Link>
+                <Link href="/dense" className="font-medium text-[#5a665f] hover:text-[#0a7c42] hover:underline">Read our review</Link>
               </p>
             </div>
           </div>

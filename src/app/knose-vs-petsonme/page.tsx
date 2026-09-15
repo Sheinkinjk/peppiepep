@@ -108,7 +108,7 @@ export default function KnoseVsPetsOnMePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
 
       <main id="main-content" className="mx-auto max-w-3xl px-5 pb-24 pt-10 sm:px-8 sm:pt-14">
-        <nav className="mb-7 flex flex-wrap items-center gap-2 text-sm text-[#6e7b74]">
+        <nav className="mb-7 flex flex-wrap items-center gap-2 text-sm text-[#5a665f]">
           <Link href="/" className="transition-colors hover:text-[#10251b]">Refer Labs</Link>
           <span>/</span>
           <Link href="/pet-insurance" className="transition-colors hover:text-[#10251b]">Pet insurance</Link>
@@ -170,7 +170,7 @@ export default function KnoseVsPetsOnMePage() {
               </tbody>
             </table>
           </div>
-          <p className="mt-3 text-xs leading-relaxed text-[#9aa39c]">
+          <p className="mt-3 text-xs leading-relaxed text-[#627068]">
             Every figure is taken from each provider&apos;s own published pages and was checked on 17 August 2026.
             Neither publishes premiums, because pricing depends on your pet&apos;s species, breed and age, your postcode
             and the excess you choose. Terms change: confirm current cover in each Product Disclosure Statement.
@@ -229,7 +229,7 @@ export default function KnoseVsPetsOnMePage() {
         </div>
 
         <AffiliateDisclosure partners={["Knose", "PetsOnMe"]} earnsFromAll noStarRatings className="mt-8" />
-        <p className="mt-3 text-xs leading-relaxed text-[#9aa39c]">
+        <p className="mt-3 text-xs leading-relaxed text-[#627068]">
           A provider cannot pay to be described more
           favourably than the facts support. Cover details are from each provider&apos;s own pages, checked 17 August
           2026, and can change: confirm current cover, limits, exclusions and waiting periods in the Product Disclosure

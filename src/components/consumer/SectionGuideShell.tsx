@@ -103,7 +103,7 @@ export default function SectionGuideShell({
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
 
       <main id="main-content" className="mx-auto max-w-3xl px-5 pb-20 pt-10 sm:px-8">
-        <nav className="flex flex-wrap items-center gap-2 text-sm text-[#9aa39c]">
+        <nav className="flex flex-wrap items-center gap-2 text-sm text-[#627068]">
           <Link href="/" className="hover:text-[#0a7c42]">Refer Labs</Link>
           <span>/</span>
           <Link href={sectionHref} className="hover:text-[#0a7c42]">{section}</Link>
@@ -116,7 +116,7 @@ export default function SectionGuideShell({
         {/* Named verifier, matching the brand-page offer stamp. A bare "Last
             checked <date>" is liftable but uncreditable; see the note in
             PremiumAffiliateLanding. */}
-        <p className="mt-4 text-xs font-medium text-[#6e7b74]">
+        <p className="mt-4 text-xs font-medium text-[#5a665f]">
           {checked ? "Last checked by Refer Labs, " : "Last updated "}
           {new Date(`${checked ?? modified}T00:00:00`).toLocaleDateString("en-AU", {
             day: "numeric",
@@ -144,7 +144,7 @@ export default function SectionGuideShell({
         </section>
 
         <section className="mt-12 border-t border-[#eef1ef] pt-8">
-          <h2 className="text-xs font-bold uppercase tracking-[0.12em] text-[#9aa39c]">Keep reading</h2>
+          <h2 className="text-xs font-bold uppercase tracking-[0.12em] text-[#627068]">Keep reading</h2>
           <ul className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-sm">
             {related.map((r) => (
               <li key={r.href}>
@@ -159,7 +159,7 @@ export default function SectionGuideShell({
           </ul>
         </section>
 
-        <p className="mt-10 text-xs leading-relaxed text-[#6e7b74]">
+        <p className="mt-10 text-xs leading-relaxed text-[#5a665f]">
           General information for an Australian audience, not medical advice and not a diagnosis. Circumstances differ
           from person to person, and anything prescription-only is supplied in Australia only after an individual
           assessment by a registered practitioner who decides whether it is appropriate. Prices change; each figure

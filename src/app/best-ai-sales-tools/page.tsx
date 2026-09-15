@@ -359,15 +359,15 @@ export default function BestAiSalesToolsPage() {
 
               <div className="grid sm:grid-cols-3 gap-4 mb-6 text-sm">
                 <div className="rounded-xl bg-white border border-[#e5e9e7] p-4">
-                  <p className="text-[10px] font-semibold uppercase tracking-widest text-[#9aa39c] mb-1">Best For</p>
+                  <p className="text-[10px] font-semibold uppercase tracking-widest text-[#627068] mb-1">Best For</p>
                   <p className="text-[#2b362f] font-medium">{t.bestFor}</p>
                 </div>
                 <div className="rounded-xl bg-white border border-[#e5e9e7] p-4">
-                  <p className="text-[10px] font-semibold uppercase tracking-widest text-[#9aa39c] mb-1">Price</p>
+                  <p className="text-[10px] font-semibold uppercase tracking-widest text-[#627068] mb-1">Price</p>
                   <p className="text-[#2b362f] font-medium">{t.price}</p>
                 </div>
                 <div className="rounded-xl bg-white border border-[#e5e9e7] p-4">
-                  <p className="text-[10px] font-semibold uppercase tracking-widest text-[#9aa39c] mb-1">Terms</p>
+                  <p className="text-[10px] font-semibold uppercase tracking-widest text-[#627068] mb-1">Terms</p>
                   <p className="text-[#2b362f] font-medium">{t.trial}</p>
                 </div>
               </div>
@@ -417,7 +417,7 @@ export default function BestAiSalesToolsPage() {
             <table className="w-full min-w-[560px] text-sm border-collapse">
               <thead>
                 <tr>
-                  <th className="text-left pb-3 pr-4 text-[11px] font-semibold uppercase tracking-widest text-[#9aa39c]">Feature</th>
+                  <th className="text-left pb-3 pr-4 text-[11px] font-semibold uppercase tracking-widest text-[#627068]">Feature</th>
                   {["GoHighLevel", "AiSDR"].map((col) => (
                     <th key={col} className="text-left pb-3 pr-4 text-[11px] font-semibold uppercase tracking-widest" style={{ color: ACCENT_LT }}>
                       {col}
@@ -524,7 +524,7 @@ export default function BestAiSalesToolsPage() {
 
           {/* Related guides */}
           <div className="mt-14 text-left max-w-2xl mx-auto">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#9aa39c] mb-5">Related</p>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#627068] mb-5">Related</p>
             <div className="grid sm:grid-cols-2 gap-3">
               {[
                 { href: "/gohighlevel", label: "GoHighLevel Review 2026" },
@@ -550,7 +550,7 @@ export default function BestAiSalesToolsPage() {
         {/* Affiliate disclosure. Legally required on any page carrying affiliate
             links (ACL), and the trust layer this whole site trades on. */}
         <section className="mx-auto max-w-5xl border-t border-[#e5e9e7] px-5 py-8 pb-16 sm:px-8">
-          <p className="max-w-2xl text-xs leading-relaxed text-[#9aa39c]">
+          <p className="max-w-2xl text-xs leading-relaxed text-[#627068]">
             This page is operated by Refer Labs and contains affiliate referral links to GoHighLevel, AiSDR, Reply.io
             and FullEnrich. If you sign up through one of them we may earn a commission, at no extra cost to you. It
             does not change what we say about them, and rankings are never sold. Comparisons are based on publicly

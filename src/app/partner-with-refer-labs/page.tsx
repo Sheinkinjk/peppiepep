@@ -159,7 +159,7 @@ export default function PartnerWithReferLabsPage() {
 
       <main id="main-content" className="mx-auto max-w-4xl px-5 pb-24 sm:px-8">
         {/* Breadcrumb */}
-        <nav className="flex items-center gap-2 pt-8 text-sm text-[#6e7b74]">
+        <nav className="flex items-center gap-2 pt-8 text-sm text-[#5a665f]">
           <Link href="/" className="transition-colors hover:text-[#10251b]">Refer Labs</Link>
           <span>/</span>
           <span className="text-[#10251b]">Partner with us</span>
@@ -306,7 +306,7 @@ export default function PartnerWithReferLabsPage() {
             queue, and you will get an answer either way.
           </p>
           <a href="#apply" className="nw-btn mt-6">Apply to partner with us <ArrowRight className="h-4 w-4" /></a>
-          <p className="mt-5 text-xs text-[#6e7b74]">{contactEmail}</p>
+          <p className="mt-5 text-xs text-[#5a665f]">{contactEmail}</p>
         </section>
       </main>
     </ConsumerShell>

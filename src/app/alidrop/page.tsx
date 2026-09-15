@@ -63,7 +63,7 @@ export default function AliDropPage() {
       <PremiumAffiliateLanding config={alidropConfig} />
       <div className="border-t border-[#e5e9e7] bg-white py-6">
         <div className="mx-auto max-w-3xl px-6 sm:px-8">
-          <p className="text-[#9aa39c] text-xs mb-1.5">Building an online business?</p>
+          <p className="text-[#627068] text-xs mb-1.5">Building an online business?</p>
           <Link href="/guides" className="text-sm text-[#0a7c42] font-semibold hover:text-[#086536] transition-colors">
             Browse our guides to tools, income and building online &rarr;
           </Link>

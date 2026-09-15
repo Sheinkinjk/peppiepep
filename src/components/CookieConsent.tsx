@@ -103,9 +103,9 @@ export function CookieConsent() {
   if (!showBanner) return null;
 
   const btnPrimary =
-    "rounded-lg bg-[#0a7c42] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#086b39]";
+    "min-h-[44px] rounded-lg bg-[#0a7c42] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#086b39]";
   const btnGhost =
-    "rounded-lg px-5 py-2.5 text-sm font-semibold text-[#3d4b44] transition-colors hover:bg-[#f2f4ee]";
+    "min-h-[44px] rounded-lg px-5 py-2.5 text-sm font-semibold text-[#3d4b44] transition-colors hover:bg-[#f2f4ee]";
 
   return (
     // Slim bottom bar. No page overlay, no blur: the site stays readable while you decide.
@@ -140,7 +140,7 @@ export function CookieConsent() {
           <div className="space-y-4 py-1">
             <div>
               <h2 className="text-base font-bold text-[#10251b]">Cookie preferences</h2>
-              <p className="mt-1 text-[13px] text-[#6e7b74]">
+              <p className="mt-1 text-[13px] text-[#5a665f]">
                 Necessary cookies are always on. Choose what else you are happy with.
               </p>
             </div>
@@ -154,7 +154,7 @@ export function CookieConsent() {
                     Always on
                   </span>
                 </div>
-                <p className="mt-1.5 text-[12.5px] leading-relaxed text-[#6e7b74]">
+                <p className="mt-1.5 text-[12.5px] leading-relaxed text-[#5a665f]">
                   Security, session handling and referral attribution. The site does not work without these.
                 </p>
               </div>
@@ -177,7 +177,7 @@ export function CookieConsent() {
                     />
                   </button>
                 </div>
-                <p className="mt-1.5 text-[12.5px] leading-relaxed text-[#6e7b74]">
+                <p className="mt-1.5 text-[12.5px] leading-relaxed text-[#5a665f]">
                   Google Analytics, so we can see which guides are useful. Aggregated, never sold.
                 </p>
               </div>
@@ -200,7 +200,7 @@ export function CookieConsent() {
                     />
                   </button>
                 </div>
-                <p className="mt-1.5 text-[12.5px] leading-relaxed text-[#6e7b74]">
+                <p className="mt-1.5 text-[12.5px] leading-relaxed text-[#5a665f]">
                   Not currently used. Off unless we ever add advertising, and we would tell you first.
                 </p>
               </div>
@@ -213,7 +213,7 @@ export function CookieConsent() {
               <button onClick={() => setShowPreferences(false)} className={btnGhost}>
                 Back
               </button>
-              <span className="ml-auto text-[12px] text-[#9aa39c]">
+              <span className="ml-auto text-[12px] text-[#627068]">
                 <a href="/privacy" className="hover:underline">
                   Privacy
                 </a>{" "}

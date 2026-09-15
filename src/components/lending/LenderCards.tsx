@@ -31,22 +31,22 @@ export default function LenderCards({ lenders = LENDERS }: { lenders?: Lender[] 
                     <ShieldCheck className="h-3.5 w-3.5" strokeWidth={2} aria-hidden="true" /> AFIA Code signatory
                   </span>
                 ) : (
-                  <span className="mt-0.5 block text-[11px] font-medium text-[#9aa39c]">Non-bank lender</span>
+                  <span className="mt-0.5 block text-[11px] font-medium text-[#627068]">Non-bank lender</span>
                 )}
               </div>
             </div>
 
             <dl className="mt-5 space-y-2.5 text-sm">
               <div className="flex items-baseline justify-between gap-3">
-                <dt className="text-[#6e7b74]">Loan size</dt>
+                <dt className="text-[#5a665f]">Loan size</dt>
                 <dd className="text-right font-semibold tabular-nums text-[#10251b]">{money(l.minAmount)} – {money(l.maxAmount)}</dd>
               </div>
               <div className="flex items-baseline justify-between gap-3">
-                <dt className="text-[#6e7b74]">Rate from</dt>
+                <dt className="text-[#5a665f]">Rate from</dt>
                 <dd className="text-right font-semibold tabular-nums text-[#10251b]">{l.advertisedRateFrom}</dd>
               </div>
               <div className="flex items-baseline justify-between gap-3">
-                <dt className="text-[#6e7b74]">Funding</dt>
+                <dt className="text-[#5a665f]">Funding</dt>
                 <dd className="text-right font-semibold text-[#10251b]">{l.speed}</dd>
               </div>
             </dl>
@@ -70,8 +70,8 @@ export default function LenderCards({ lenders = LENDERS }: { lenders?: Lender[] 
           </div>
         ))}
       </div>
-      <p className="mt-4 flex items-start gap-2 text-xs leading-relaxed text-[#6e7b74]">
-        <Zap className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#9aa39c]" aria-hidden="true" />
+      <p className="mt-4 flex items-start gap-2 text-xs leading-relaxed text-[#5a665f]">
+        <Zap className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#627068]" aria-hidden="true" />
         Advertised &ldquo;from&rdquo; rates and loan sizes as at {ratesAsAt()}, from each lender&apos;s own site. &ldquo;Quote-based&rdquo; means the lender prices each loan individually rather than publishing a headline rate. Figures are indicative, not a quote; your rate depends on the lender&apos;s assessment.
       </p>
     </div>

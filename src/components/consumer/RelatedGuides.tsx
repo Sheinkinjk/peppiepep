@@ -23,7 +23,7 @@ export default function RelatedGuides({
 
   return (
     <section className="border-t border-[#e5e9e7] py-9">
-      <h2 className="mb-5 text-sm font-bold uppercase tracking-[0.14em] text-[#9aa39c]">{heading}</h2>
+      <h2 className="mb-5 text-sm font-bold uppercase tracking-[0.14em] text-[#627068]">{heading}</h2>
       <div className="grid gap-3 sm:grid-cols-2">
         {items.map((g) => (
           <Link
@@ -33,7 +33,7 @@ export default function RelatedGuides({
           >
             <span className="min-w-0">
               <span className="block text-[15px] font-bold text-[#10251b] group-hover:text-[#0a7c42]">{g.title}</span>
-              <span className="block text-xs text-[#9aa39c]">{g.category}</span>
+              <span className="block text-xs text-[#627068]">{g.category}</span>
             </span>
             <ArrowRight className="h-4 w-4 shrink-0 text-[#0a7c42] transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
           </Link>

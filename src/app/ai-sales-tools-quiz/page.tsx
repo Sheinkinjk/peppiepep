@@ -103,7 +103,7 @@ export default function AiSalesToolsQuizPage() {
                 <details key={f.q} className="group rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] px-5 py-4">
                   <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-sm font-semibold text-[#10251b] sm:text-base">
                     {f.q}
-                    <span aria-hidden="true" className="text-lg leading-none text-[#9aa39c] transition-transform group-open:rotate-45">+</span>
+                    <span aria-hidden="true" className="text-lg leading-none text-[#627068] transition-transform group-open:rotate-45">+</span>
                   </summary>
                   <p className="mt-3 text-sm leading-relaxed text-[#3d4b44]">{f.a}</p>
                 </details>
@@ -112,7 +112,7 @@ export default function AiSalesToolsQuizPage() {
           </section>
 
           <section className="border-t border-[#e5e9e7] py-8 pb-16">
-            <p className="max-w-2xl text-xs leading-relaxed text-[#9aa39c]">
+            <p className="max-w-2xl text-xs leading-relaxed text-[#627068]">
               This page recommends a tool based on your answer and contains disclosed affiliate links. We may earn a
               commission if you sign up through them, at no extra cost to you, and it never changes a conclusion. We
               never sell rankings.

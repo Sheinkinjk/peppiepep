@@ -75,7 +75,7 @@ export default function AffiliateDisclosure({
 
   if (compact) {
     return (
-      <p className={`text-[13px] leading-relaxed text-[#6e7b74] ${className}`} data-affiliate-disclosure>
+      <p className={`text-[13px] leading-relaxed text-[#5a665f] ${className}`} data-affiliate-disclosure>
         Refer Labs may earn a commission if you sign up or buy through the links on this page
         {named}, at no extra cost to you. It never changes a comparison or a conclusion.
       </p>
@@ -94,10 +94,10 @@ export default function AffiliateDisclosure({
           "...publisher. If you sign up through a link we may earn a commission"
           and turn the entity statement into a monetisation statement. A paragraph
           boundary puts the span edge where it belongs. Do not merge these two. */}
-      <p className="text-[13px] leading-relaxed text-[#6e7b74]">
+      <p className="text-[13px] leading-relaxed text-[#5a665f]">
         Refer Labs is an independent Australian comparison publisher.
       </p>
-      <p className="mt-1.5 text-[13px] leading-relaxed text-[#6e7b74]">
+      <p className="mt-1.5 text-[13px] leading-relaxed text-[#5a665f]">
       Some links on this page are affiliate links{named}. If you sign up or buy through one, Refer Labs may earn a
       commission at no extra cost to you, and it never changes a comparison or a conclusion.
       {priceUnaffected ? " It never changes what you pay." : null}

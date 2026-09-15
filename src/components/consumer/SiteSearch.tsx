@@ -103,7 +103,7 @@ export default function SiteSearch({ variant = "hero" }: { variant?: "hero" | "h
   return (
     <div ref={wrapRef} className={`relative ${big ? "w-full max-w-xl" : "w-full max-w-xs"}`}>
       <div className={`nw-search ${big ? "" : "!py-2 !px-4"}`}>
-        <Search className={`shrink-0 text-[#6e7b74] ${big ? "h-5 w-5" : "h-4 w-4"}`} />
+        <Search className={`shrink-0 text-[#5a665f] ${big ? "h-5 w-5" : "h-4 w-4"}`} />
         <input
           value={q}
           onChange={(e) => { setQ(e.target.value); setOpen(true); setActive(0); }}
@@ -126,7 +126,7 @@ export default function SiteSearch({ variant = "hero" }: { variant?: "hero" | "h
                 return (
                   <li key={r.href}>
                     {showHeader && (
-                      <p className="px-4 pb-1 pt-2.5 text-[11px] font-bold uppercase tracking-[0.14em] text-[#9aa39c]">
+                      <p className="px-4 pb-1 pt-2.5 text-[11px] font-bold uppercase tracking-[0.14em] text-[#627068]">
                         {KIND_LABEL[r.kind]}
                       </p>
                     )}
@@ -140,7 +140,7 @@ export default function SiteSearch({ variant = "hero" }: { variant?: "hero" | "h
                       </span>
                       <span className="min-w-0 flex-1">
                         <span className="block truncate text-sm font-semibold text-[#10251b]">{highlight(r.title, q)}</span>
-                        <span className="text-xs text-[#6e7b74]">{r.category}</span>
+                        <span className="text-xs text-[#5a665f]">{r.category}</span>
                       </span>
                       <ArrowRight className={`h-4 w-4 shrink-0 transition-opacity ${i === active ? "text-[#0a7c42] opacity-100" : "opacity-0"}`} />
                     </button>
@@ -176,7 +176,7 @@ export default function SiteSearch({ variant = "hero" }: { variant?: "hero" | "h
           {/* ── Empty state (no query): browse shortcuts ── */}
           {!hasQuery && (
             <div className="px-4 py-3.5">
-              <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#9aa39c]">Browse</p>
+              <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#627068]">Browse</p>
               <div className="mt-2 grid grid-cols-2 gap-1">
                 {BROWSE.map((b) => {
                   const t = tileFor(b.cat, "Category");
@@ -196,7 +196,7 @@ export default function SiteSearch({ variant = "hero" }: { variant?: "hero" | "h
 
           {/* ── Footer: keyboard hints + all guides ── */}
           <div className="flex items-center justify-between border-t border-[#eef1ef] bg-[#fafcfb] px-4 py-2">
-            <span className="hidden items-center gap-3 text-[11px] text-[#9aa39c] sm:flex">
+            <span className="hidden items-center gap-3 text-[11px] text-[#627068] sm:flex">
               <span className="inline-flex items-center gap-1"><kbd className="rounded border border-[#e5e9e7] bg-white px-1 font-sans text-[10px]">↑</kbd><kbd className="rounded border border-[#e5e9e7] bg-white px-1 font-sans text-[10px]">↓</kbd> navigate</span>
               <span className="inline-flex items-center gap-1"><kbd className="rounded border border-[#e5e9e7] bg-white px-1 font-sans text-[10px]"><CornerDownLeft className="h-2.5 w-2.5" /></kbd> open</span>
             </span>

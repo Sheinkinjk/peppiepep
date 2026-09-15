@@ -81,7 +81,7 @@ export default function HomeBatteryPaybackCalculatorPage() {
         <div className="mx-auto max-w-4xl px-6 sm:px-8">
 
           {/* Breadcrumb */}
-          <nav className="flex flex-wrap items-center gap-2 pt-8 text-sm text-[#6e7b74]">
+          <nav className="flex flex-wrap items-center gap-2 pt-8 text-sm text-[#5a665f]">
             <Link href="/" className="hover:text-[#10251b] transition-colors">Refer Labs</Link>
             <span>/</span>
             <Link href="/apollo-energy-group" className="hover:text-[#10251b] transition-colors">Home batteries</Link>
@@ -176,7 +176,7 @@ export default function HomeBatteryPaybackCalculatorPage() {
 
             {/* Disclosure */}
             <section className="border-t border-[#e5e9e7] pt-6 pb-16">
-              <p className="text-xs leading-relaxed text-[#9aa39c]">
+              <p className="text-xs leading-relaxed text-[#627068]">
                 This page is published by Refer Labs, an independent comparison publisher, and contains a disclosed
                 commercial referral arrangement with Apollo Energy Group, which means we may earn a commission if you request a quote
                 through our link. Commissions never change what we write or what the calculator computes. All figures are

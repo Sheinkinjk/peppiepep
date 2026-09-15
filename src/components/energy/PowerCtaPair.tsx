@@ -42,7 +42,7 @@ export default function PowerCtaPair({
           See Anker SOLIX prices
         </a>
       </div>
-      <p className="mt-2 text-[12px] text-[#9aa39c]">{note}</p>
+      <p className="mt-2 text-[12px] text-[#627068]">{note}</p>
     </div>
   );
 }

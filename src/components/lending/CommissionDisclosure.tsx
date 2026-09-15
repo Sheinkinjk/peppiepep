@@ -12,7 +12,7 @@ import Link from "next/link";
 export default function CommissionDisclosure({ variant = "box" }: { variant?: "box" | "inline" }) {
   if (variant === "inline") {
     return (
-      <p className="text-xs leading-relaxed text-[#6e7b74]">
+      <p className="text-xs leading-relaxed text-[#5a665f]">
         If your loan settles, Refer Labs may be paid a share of the broker's commission, or a commission from the lender. This never changes what you pay, and we are not paid to rank one lender above another.{" "}
         <Link href="/how-we-make-money" className="underline hover:text-[#10251b]">How we make money</Link>.
       </p>
