@@ -203,7 +203,7 @@ export default function DealsPage() {
                     <td className="mt-4 block text-right sm:mt-0 sm:table-cell sm:px-5 sm:py-4 sm:align-middle">
                       <Link
                         href={d.href}
-                        aria-label={`${d.brand}: offer details and full guide`}
+                        aria-label={`View offer for ${d.brand}: details and full guide`}
                         className="group inline-flex items-center gap-1.5 whitespace-nowrap text-sm font-semibold text-[#0a7c42]"
                       >
                         View offer

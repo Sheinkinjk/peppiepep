@@ -140,7 +140,7 @@ export default function PremiumAffiliateLanding({ config }: { config: AffiliateP
               <div className="mt-7 flex items-start gap-3 rounded-2xl border border-[#0a7c42]/30 bg-[#0a7c42]/[0.08] px-5 py-4">
                 <Gift className="mt-0.5 h-5 w-5 shrink-0 text-[#0a7c42]" strokeWidth={1.9} />
                 <div>
-                  <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#0a7c42]">Current offer via our link</p>
+                  <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#086536]">Current offer via our link</p>
                   <p className="mt-1 text-[15px] font-bold leading-snug text-[#10251b]">{config.offer}</p>
                   {/* Names the publisher, for the same measured reason CodeAnswer's
                       stamp does: Perplexity attributed our code as "one coupon site
@@ -342,7 +342,7 @@ export default function PremiumAffiliateLanding({ config }: { config: AffiliateP
               <ArrowRight className="h-4 w-4" />
             </a>
           </div>
-          <p className="mx-auto mt-6 max-w-lg text-xs leading-relaxed text-white/45">{config.disclaimer}</p>
+          <p className="mx-auto mt-6 max-w-lg text-xs leading-relaxed text-white/60">{config.disclaimer}</p>
         </section>
       </main>
 

@@ -138,7 +138,7 @@ export default function PreferenceQuiz({
 
   return (
     <div className="rounded-2xl border border-[#0a7c42]/30 bg-[#f5f8f6] p-6 sm:p-8">
-      <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#0a7c42]">Your result</p>
+      <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#086536]">Your result</p>
       <h2 className="mt-3 text-2xl font-bold leading-snug text-[#10251b]">{result!.title}</h2>
       <p className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">{result!.body}</p>
 

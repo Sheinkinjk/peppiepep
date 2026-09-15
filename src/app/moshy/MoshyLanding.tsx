@@ -329,7 +329,7 @@ export default function MoshyLanding() {
               <ArrowRight className="h-4 w-4" />
             </a>
           </div>
-          <p className="mx-auto mt-6 max-w-lg text-xs leading-relaxed text-white/45">
+          <p className="mx-auto mt-6 max-w-lg text-xs leading-relaxed text-white/60">
             You&apos;ll be taken to getmoshy.com.au. This page is operated by Refer Labs and contains an affiliate
             referral link. It does not constitute medical advice; consult a qualified health professional before making
             any health decision.

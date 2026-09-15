@@ -509,7 +509,7 @@ export default function ApolloLanding() {
         </section>
 
         {/* Disclosure */}
-        <p className="mt-10 text-xs leading-relaxed text-[#9aa39c]">
+        <p className="mt-10 text-xs leading-relaxed text-[#627068]">
           This page is operated by Refer Labs and contains a disclosed affiliate link. If you request a quote through it
           we may earn a commission at no extra cost to you, and it never changes our assessment. Apollo Energy Group
           credentials, warranty and savings figures are as published by Apollo. Rebate figures reflect the federal

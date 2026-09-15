@@ -255,7 +255,7 @@ function PlatformCard({
             <Link
               href={internalUrl}
               className="inline-flex items-center justify-center gap-1.5 text-xs transition-colors hover:opacity-80"
-              style={{ color: `${CYAN_LT}60` }}
+              style={{ color: "#5a665f" }}
             >
               {reviewLabel} <ExternalLink className="h-3 w-3" />
             </Link>
@@ -617,10 +617,10 @@ export default function BestWeightLossTelehealthPage() {
               All content on this page is for informational purposes only and does not constitute medical advice. Suitability for any weight management programme depends on individual health factors. Consult a qualified health professional before starting any treatment.
             </p>
             <div className="mt-4 flex flex-wrap gap-3">
-              <Link href="/moshy" className="text-xs hover:opacity-80 transition-opacity" style={{ color: `${CYAN_LT}50` }}>
+              <Link href="/moshy" className="text-xs hover:opacity-80 transition-opacity" style={{ color: "#5a665f" }}>
                 Moshy discount code &amp; full review
               </Link>
-              <Link href="/moshhair" className="text-xs hover:opacity-80 transition-opacity" style={{ color: `${CYAN_LT}50` }}>
+              <Link href="/moshhair" className="text-xs hover:opacity-80 transition-opacity" style={{ color: "#5a665f" }}>
                 Mosh hair loss review
               </Link>
             </div>

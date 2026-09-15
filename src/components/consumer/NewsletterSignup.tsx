@@ -79,7 +79,7 @@ export default function NewsletterSignup({
                   aria-label="Email address for offer alerts"
                   className="min-w-0 flex-1 rounded-full border border-[#e5e9e7] bg-white px-4 py-2.5 text-sm text-[#10251b] placeholder:text-[#9aa39c] outline-none transition-colors focus:border-[#0a7c42] focus:ring-4 focus:ring-[#0a7c42]/12"
                 />
-                <button type="submit" disabled={state === "loading"} className="nw-btn shrink-0 justify-center !px-5 !py-2.5 !text-[13px]">
+                <button type="submit" disabled={state === "loading"} className="nw-btn min-h-[44px] shrink-0 justify-center !px-5 !py-2.5 !text-[13px]">
                   {state === "loading" ? "…" : "Notify me"}
                 </button>
               </form>
@@ -104,7 +104,7 @@ export default function NewsletterSignup({
           <div className="flex gap-2">
             <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@email.com" aria-label="Email address"
               className="min-w-0 flex-1 rounded-full border border-[#e5e9e7] bg-white px-4 py-2 text-sm text-[#10251b] placeholder:text-[#9aa39c] outline-none focus:border-[#0a7c42]" />
-            <button type="submit" disabled={state === "loading"} className="nw-btn shrink-0 !px-4 !py-2 !text-[13px]">
+            <button type="submit" disabled={state === "loading"} className="nw-btn min-h-[44px] shrink-0 !px-4 !py-2 !text-[13px]">
               {state === "loading" ? "…" : "Subscribe"}
             </button>
           </div>
@@ -136,7 +136,7 @@ export default function NewsletterSignup({
           </form>
         )}
         {state === "error" && <p className={`mt-2 text-xs text-red-600 ${isBand ? "text-center" : ""}`}>Something went wrong. Try again.</p>}
-        {isBand && !done && <p className="mt-3 text-[12px] text-[#8a938c]">No spam. Unsubscribe anytime.</p>}
+        {isBand && !done && <p className="mt-3 text-[12px] text-[#5a665f]">No spam. Unsubscribe anytime.</p>}
       </div>
     </div>
   );

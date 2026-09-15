@@ -443,11 +443,11 @@ export default function JuniperPage() {
               Start with a free consultation <ArrowRight className="h-4 w-4" />
             </a>
           </div>
-          <p className="mx-auto mt-6 max-w-lg text-xs leading-relaxed text-white/45">
+          <p className="mx-auto mt-6 max-w-lg text-xs leading-relaxed text-white/60">
             This post contains affiliate links. If you are a new Juniper patient and make a purchase through these links,
             I may earn a small commission at no extra cost to you.
           </p>
-          <p className="mx-auto mt-3 max-w-lg text-xs leading-relaxed text-white/45">
+          <p className="mx-auto mt-3 max-w-lg text-xs leading-relaxed text-white/60">
             Content is general information, not medical advice, and suitability for any program is decided by a registered Australian practitioner. Juniper&apos;s inclusions and pricing are drawn from Juniper&apos;s own site and can change, so confirm current terms before you commit.
           </p>
         </section>

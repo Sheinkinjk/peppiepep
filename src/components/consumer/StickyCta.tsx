@@ -65,7 +65,7 @@ export default function StickyCta({
             ? {}
             : { target: "_blank", rel: sponsored ? "nofollow sponsored" : "nofollow" })}
           data-cta="mobile-sticky"
-          className="nw-btn shrink-0 !px-4 !py-2.5 !text-[13px]"
+          className="nw-btn min-h-[44px] shrink-0 !px-4 !py-2.5 !text-[13px]"
         >
           {label}
           <ArrowRight className="h-4 w-4" />

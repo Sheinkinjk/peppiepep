@@ -164,7 +164,7 @@ export default function Page() {
           <section>
             <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">The one we do have an offer on</h2>
             <div className="mt-4 rounded-2xl border border-[#0a7c42]/30 bg-[#e8f5ee] p-6">
-              <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#0a7c42]">Current offer via our link</p>
+              <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#086536]">Current offer via our link</p>
               <p className="mt-2 text-xl font-black leading-snug text-[#10251b]">
                 15% off your monthly Superfiliate SaaS fee
               </p>

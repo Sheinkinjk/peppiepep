@@ -105,7 +105,7 @@ export default function BatteryCalc() {
 
         {/* Result */}
         <div className="rounded-xl border border-[#0a7c42]/20 bg-[#e8f5ee] p-6">
-          <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#0a7c42]">Estimated payback</p>
+          <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#086536]">Estimated payback</p>
           <p className="mt-2 text-4xl font-black text-[#10251b]">
             {paybackYears > 0 ? `${paybackYears.toFixed(1)} yrs` : "—"}
           </p>

@@ -25,8 +25,9 @@ export default function ConsumerShell({
       {/* Header */}
       <header className="sticky top-0 z-50 border-b border-[#e5e9e7] bg-white">
         <div className="mx-auto flex max-w-6xl items-center gap-5 px-5 py-3 sm:px-8">
-          <Link href="/" className="flex shrink-0 items-center" aria-label="Refer Labs home">
+          <Link href="/" className="flex shrink-0 items-center">
             <ReferLabsLogo className="h-9 w-auto" />
+            <span className="sr-only">Refer Labs home</span>
           </Link>
           <HeaderNav />
           <div className="ml-auto hidden md:block">
