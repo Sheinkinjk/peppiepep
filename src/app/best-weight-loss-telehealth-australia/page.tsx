@@ -234,7 +234,7 @@ function PlatformCard({
               className="rounded-xl p-5"
               style={{ background: `${CYAN}0D`, border: `1px solid ${CYAN}30` }}
             >
-              <p className="text-[11px] font-black uppercase tracking-widest mb-1.5" style={{ color: CYAN_LT }}>
+              <p className="text-[11px] font-black uppercase tracking-widest mb-1.5" style={{ color: "#086536" }}>
                 Current access
               </p>
               <p className="text-[#10251b] font-black text-base leading-snug mb-1">{deal}</p>
@@ -478,7 +478,7 @@ export default function BestWeightLossTelehealthPage() {
                     <th className="pb-3 px-3 text-left text-[#627068] font-semibold text-[11px] uppercase tracking-wider">Who it&apos;s for</th>
                     <th className="pb-3 px-3 text-left text-[#627068] font-semibold text-[11px] uppercase tracking-wider">Approach</th>
                     <th className="pb-3 px-3 text-left text-[#627068] font-semibold text-[11px] uppercase tracking-wider">Treatment access</th>
-                    <th className="pb-3 pl-3 text-right text-[#627068] font-semibold text-[11px] uppercase tracking-wider"></th>
+                    <th className="pb-3 pl-3 text-right text-[#627068] font-semibold text-[11px] uppercase tracking-wider"><span className="sr-only">Link</span></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -487,9 +487,9 @@ export default function BestWeightLossTelehealthPage() {
                     { name: "Juniper",      audience: "Women (Australia)",        approach: "Coaching + medical program", treatment: "Yes (subject to eligibility)", href: "#juniper",     url: "/juniper",  cta: "Juniper review",     isAff: false },
                   ].map((row) => (
                     <tr key={row.name} className="border-b border-[#e5e9e7] hover:bg-[#f5f8f6] transition-colors">
-                      <td className="py-3 pr-4">
+                      <th scope="row" className="py-3 pr-4 text-left font-normal">
                         <a href={row.href} className="text-[#10251b] font-bold text-sm hover:opacity-80 transition-opacity">{row.name}</a>
-                      </td>
+                      </th>
                       <td className="py-3 px-3 text-[#3d4b44] text-xs">{row.audience}</td>
                       <td className="py-3 px-3 text-[#3d4b44] text-xs">{row.approach}</td>
                       <td className="py-3 px-3 text-xs font-semibold" style={{ color: CYAN_LT }}>{row.treatment}</td>

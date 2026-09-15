@@ -207,7 +207,7 @@ export default function PathwayQuiz() {
       {!done && current && (
         <div className="mt-5">
           {answered === 0 && (
-            <h3 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Which weight-loss pathway fits you?</h3>
+            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Which weight-loss pathway fits you?</h2>
           )}
           <p className={`${answered === 0 ? "mt-3" : ""} text-lg font-semibold text-[#10251b]`}>{current.q}</p>
           <div className="mt-5 grid gap-3">
