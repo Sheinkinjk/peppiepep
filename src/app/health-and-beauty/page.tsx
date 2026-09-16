@@ -37,16 +37,6 @@ const guides = [
     desc: "Why a pricier serum can work out cheaper per application than a budget one, and where that maths misleads you.",
   },
   {
-    href: "/health-and-beauty/acne-treatment-options-and-costs-australia",
-    title: "Acne: the routes and the costs",
-    desc: "Over-the-counter, GP and dermatologist pathways, what Medicare covers, and what you pay.",
-  },
-  {
-    href: "/health-and-beauty/anti-ageing-treatments-what-they-cost",
-    title: "Anti-ageing treatments and pricing",
-    desc: "Why almost no clinic publishes a price, how they quote, and what to ask before booking.",
-  },
-  {
     href: "/health-and-beauty/skincare-quiz",
     title: "Which routine fits you?",
     desc: "A short matcher across budget, effort and priority. No health questions.",

@@ -109,7 +109,7 @@ const categoryCards = [
     note: "What the actives do, what devices cost here, and how the prescription route differs.",
     links: [
       { h: "/health-and-beauty/led-face-mask-comparison-australia", l: "LED masks: real prices" },
-      { h: "/health-and-beauty/acne-treatment-options-and-costs-australia", l: "Acne: routes and costs" },
+      { h: "/health-and-beauty/retinol-vs-prescription-strength-australia", l: "Retinol vs prescription-strength" },
     ],
   },
     {

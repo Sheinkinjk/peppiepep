@@ -496,11 +496,11 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/longevity/recovery/recovery-setup-quiz": {
     "published": "2026-08-20",
-    "updated": "2026-09-15"
+    "updated": "2026-09-16"
   },
   "/longevity/supplements/longevity-supplements-evidence-review": {
     "published": "2026-08-20",
-    "updated": "2026-09-15"
+    "updated": "2026-09-16"
   },
   "/low-doc-business-loans-australia": {
     "published": "2026-07-21",
@@ -836,11 +836,11 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/sleep/how-much-does-good-sleep-cost": {
     "published": "2026-08-20",
-    "updated": "2026-09-14"
+    "updated": "2026-09-16"
   },
   "/sleep/mattress-comparison-australia": {
     "published": "2026-08-20",
-    "updated": "2026-09-15"
+    "updated": "2026-09-16"
   },
   "/sleep": {
     "published": "2026-08-20",

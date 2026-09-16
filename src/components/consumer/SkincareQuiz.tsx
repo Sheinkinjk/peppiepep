@@ -72,7 +72,7 @@ function resolve(a: Answers): Result {
       title: "Start with an assessment, not another product",
       body: "Persistent breakouts are the case where cycling through over-the-counter products tends to cost more than getting assessed. A GP consult is the cheaper first step and is also the gateway to a specialist referral, which is what makes a Medicare rebate available on a dermatologist appointment.",
       next: [
-        { href: "/health-and-beauty/acne-treatment-options-and-costs-australia", label: "Acne: the routes and costs" },
+        { href: "/health-and-beauty/retinol-vs-prescription-strength-australia", label: "Over-the-counter vs prescription-strength" },
         { href: "/health-and-beauty/retinol-vs-prescription-strength-australia", label: "Over-the-counter vs prescription-strength" },
       ],
     };
@@ -82,7 +82,7 @@ function resolve(a: Answers): Result {
       title: "Over-the-counter first, with a deadline",
       body: "Since you would rather handle it yourself, give an over-the-counter approach a genuine run, which means consistent use over months rather than weeks. Set yourself a review point. If nothing has shifted by then, an assessment costs less than the next three products you would otherwise try.",
       next: [
-        { href: "/health-and-beauty/acne-treatment-options-and-costs-australia", label: "When to stop buying and get assessed" },
+        { href: "/health-and-beauty/retinol-vs-prescription-strength-australia", label: "Over-the-counter vs prescription-strength" },
         { href: "/health-and-beauty/best-value-skincare-australia-cost-per-use", label: "What your routine costs per use" },
       ],
     };
@@ -92,7 +92,7 @@ function resolve(a: Answers): Result {
       title: "Work out the annual figure before you book anything",
       body: "At this budget both at-home devices and clinic treatments are on the table, and they are priced completely differently. A device is one payment; clinic treatments are usually maintenance. Comparing them means converting both to a twelve-month cost, which is the number almost nobody asks for.",
       next: [
-        { href: "/health-and-beauty/anti-ageing-treatments-what-they-cost", label: "Why clinics won't quote a price" },
+        { href: "/foreo", label: "Foreo: Australian device prices" },
         { href: "/health-and-beauty/led-face-mask-comparison-australia", label: "What LED devices cost here" },
       ],
     };

@@ -32,6 +32,14 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // Retired 16 Sep 2026 (Jarred: not relevant to our offering). Both were
+      // "what it costs" pages carrying no cost: 1,000 words each and zero prices,
+      // because neither Australian cosmetic clinics nor acne pathways publish one.
+      // A title that promises a number the body cannot deliver is the worst shape
+      // a comparison page can take. 301 to the hub, the closest live page by
+      // intent, so the equity consolidates rather than dying in a 404.
+      { source: '/health-and-beauty/acne-treatment-options-and-costs-australia', destination: '/health-and-beauty', statusCode: 301 },
+      { source: '/health-and-beauty/anti-ageing-treatments-what-they-cost', destination: '/health-and-beauty', statusCode: 301 },
       // Renamed 16 Sep 2026: /skin-and-beauty became /health-and-beauty when the
       // hub widened past skincare to cover nutrition and health products, and a
       // fourth partner (OptiSlim) that sells neither skin nor beauty. The slug

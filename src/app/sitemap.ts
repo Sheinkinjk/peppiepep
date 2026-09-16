@@ -76,8 +76,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/health-and-beauty/retinol-vs-prescription-strength-australia`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE}/health-and-beauty/led-face-mask-comparison-australia`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE}/health-and-beauty/best-value-skincare-australia-cost-per-use`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE}/health-and-beauty/acne-treatment-options-and-costs-australia`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE}/health-and-beauty/anti-ageing-treatments-what-they-cost`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE}/health-and-beauty/foreo-luna-vs-ufo`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.72 },
     { url: `${BASE}/health-and-beauty/natural-skincare-australia`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.72 },
     { url: `${BASE}/health-and-beauty/skincare-quiz`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.65 },

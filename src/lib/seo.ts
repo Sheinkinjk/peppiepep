@@ -967,6 +967,9 @@ export const seoConfig = {
       "Acne treatment routes in Australia, from over-the-counter products to GP and dermatologist referral: how each pathway works, what Medicare covers, and what you pay.",
     url: `${SITE_URL}/health-and-beauty/acne-treatment-options-and-costs-australia`,
     keywords: ["acne treatment australia", "acne treatment cost australia", "how to treat acne australia", "dermatologist acne australia cost", "acne gp australia"],
+    // Retired 16 Sep 2026, 301 to /health-and-beauty. noIndex is defensive:
+    // removing the redirect must not silently republish the page.
+    noIndex: true,
   },
   antiAgeingCosts: {
     title: "Anti-Ageing Treatments Australia: What They Cost 2026 | Refer Labs",
@@ -974,6 +977,9 @@ export const seoConfig = {
       "What anti-ageing treatments cost in Australia and why almost none publish a price. How clinics quote, what drives the number, and the questions to ask before you book.",
     url: `${SITE_URL}/health-and-beauty/anti-ageing-treatments-what-they-cost`,
     keywords: ["anti ageing treatment cost australia", "anti wrinkle cost australia", "skin treatment prices australia", "cosmetic treatment cost australia", "laser skin treatment cost australia"],
+    // Retired 16 Sep 2026, 301 to /health-and-beauty. noIndex is defensive:
+    // removing the redirect must not silently republish the page.
+    noIndex: true,
   },
   skincareQuiz: {
     title: "Skincare Quiz: Which Routine Fits You? | Refer Labs",

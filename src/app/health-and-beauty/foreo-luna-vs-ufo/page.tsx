@@ -100,7 +100,7 @@ export default function Page() {
       related={[
         { href: "/health-and-beauty/led-face-mask-comparison-australia", label: "LED face masks compared" },
         { href: "/health-and-beauty/best-value-skincare-australia-cost-per-use", label: "Cost per use, not sticker price" },
-        { href: "/health-and-beauty/anti-ageing-treatments-what-they-cost", label: "Anti-ageing treatment pricing" },
+        { href: "/health-and-beauty/led-face-mask-comparison-australia", label: "What LED devices cost here" },
       ]}
     >
       <section>

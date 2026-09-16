@@ -19,7 +19,7 @@ const INITIAL_MESSAGE: ChatMessage = {
   id: "welcome",
   role: "assistant",
   content:
-    "Hey! I'm the Refer Labs assistant. Curious about our market expansion services, pilot structure, or how we build partner channels? Ask anything and I'll point you in the right direction.",
+    "Hi, I'm the Refer Labs assistant. Refer Labs is an independent Australian comparison publisher. Ask about getting featured, lead generation, or having a referral program built. Rankings are never sold, so that is one thing I cannot help with.",
 };
 
 const SUGGESTIONS = [

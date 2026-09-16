@@ -1,4 +1,6 @@
 import SectionGuideShell from "@/components/consumer/SectionGuideShell";
+import PartnerRoute from "@/components/consumer/PartnerRoute";
+import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
 
 export const metadata = generateSEOMetadata(seoConfig.mattressComparison);
@@ -32,7 +34,7 @@ const faqs = [
   },
   {
     q: "Does Refer Labs recommend a mattress brand?",
-    a: "No. We have not tested mattresses, so we have no basis for a ranking. We do have one mattress partner in this section, Emma Sleep, which is disclosed on the pages that link to it, and this page carries no link to it. What you get here is the comparison method instead.",
+    a: "No. We have not tested mattresses, so we have no basis for a ranking and this page does not give you one. We do have one mattress partner, Emma Sleep, linked at the foot of this page and disclosed beside the link. Everything above it is the comparison method, which is written the same way whether or not you use that link.",
   },
 ];
 
@@ -45,7 +47,7 @@ export default function Page() {
       crumb="Comparing mattresses"
       h1={<>Comparing mattresses in Australia: <span className="italic text-[#0a7c42]">what is checkable</span></>}
       intro="Almost every mattress comparison online is a ranking assembled by someone who has not slept on any of them. This is the opposite: no list, no scores, just the specifications that are verifiable and the trial terms where people lose money."
-      headline="Mattress buying in Australia: how to compare properly"
+      headline="Mattress buying in Australia: what is checkable before you buy"
       description={seoConfig.mattressComparison.description}
       faqs={faqs}
       related={[
@@ -53,6 +55,7 @@ export default function Page() {
         { href: "/sleep/sleep-tracker-comparison-australia", label: "What trackers measure" },
       ]}
     >
+      <AffiliateDisclosure compact className="mb-8" />
       <section>
         <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Why there is no ranking here</h2>
         <p className="mt-3">
@@ -127,6 +130,19 @@ export default function Page() {
           not how long the materials last. That is what the trial is for.
         </p>
       </section>
+      <PartnerRoute
+        className="mt-12"
+        heading="The mattress brand we have an arrangement with"
+        intro="One brand, and the only mattress link on this page. It does not affect anything above: we have slept on none of these and still will not rank them."
+        providers={[
+          {
+            name: "Emma Sleep",
+            href: "/go/emma-mattress-comparison",
+            what: "Mattresses from $569 with a 150-night trial. Every mattress was listed at a discount when we read the site on 16 September 2026, so compare the price you pay rather than the struck-through one.",
+            checked: "16 September 2026",
+          },
+        ]}
+      />
     </SectionGuideShell>
   );
 }

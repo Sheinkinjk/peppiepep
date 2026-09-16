@@ -61,8 +61,6 @@ const hubs = [
   { href: "/health-and-beauty/foreo-luna-vs-ufo", label: "Foreo Luna vs UFO", desc: "Two different device lines, not two versions of one. Australian list prices for both." },
   { href: "/health-and-beauty/natural-skincare-australia", label: "Natural vs Certified Organic Skincare", desc: "Only one of those two words can be checked in a public register. How to run the check." },
   { href: "/health-and-beauty/best-value-skincare-australia-cost-per-use", label: "Skincare Cost Per Use", desc: "Why a $90 serum can be cheaper than a $30 one." },
-  { href: "/health-and-beauty/acne-treatment-options-and-costs-australia", label: "Acne: Routes and Costs", desc: "Over-the-counter, GP and dermatologist pathways, and where Medicare applies." },
-  { href: "/health-and-beauty/anti-ageing-treatments-what-they-cost", label: "Anti-Ageing Treatment Pricing", desc: "Why clinics will not publish a price, and how to compare quotes." },
   { href: "/portable-power-station-australia", label: "Portable Power", desc: "What a portable power station costs in Australia, and what each size runs." },
   { href: "/apollo-energy-group", label: "Home Batteries", desc: "Battery sizing, the federal rebate, and what a quote should include." },
   { href: "/business-software", label: "Business Software", desc: "A finder that matches you to the right tools by use case, size and budget, plus the full directory." },

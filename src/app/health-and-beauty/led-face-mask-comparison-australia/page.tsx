@@ -52,7 +52,7 @@ export default function Page() {
       description={seoConfig.ledFaceMask.description}
       faqs={faqs}
       related={[
-        { href: "/health-and-beauty/anti-ageing-treatments-what-they-cost", label: "Clinic treatment pricing" },
+        { href: "/foreo", label: "Foreo: Australian device prices" },
         { href: "/health-and-beauty/best-value-skincare-australia-cost-per-use", label: "Cost per use" },
         { href: "/health-and-beauty/foreo-luna-vs-ufo", label: "Foreo Luna vs UFO" },
       ]}

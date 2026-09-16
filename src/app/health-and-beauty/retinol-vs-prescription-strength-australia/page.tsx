@@ -49,7 +49,7 @@ export default function Page() {
       description={seoConfig.retinolVsPrescription.description}
       faqs={faqs}
       related={[
-        { href: "/health-and-beauty/acne-treatment-options-and-costs-australia", label: "Acne: routes and costs" },
+        { href: "/health-and-beauty/best-value-skincare-australia-cost-per-use", label: "What a routine costs per use" },
         { href: "/health-and-beauty/best-value-skincare-australia-cost-per-use", label: "Cost per use" },
         { href: "/health-and-beauty/skincare-quiz", label: "Which routine fits you?" },
       ]}
