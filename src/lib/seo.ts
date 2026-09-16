@@ -873,6 +873,20 @@ export const seoConfig = {
     url: `${SITE_URL}/health-and-beauty`,
     keywords: ["health and beauty australia", "skincare australia", "meal replacement australia", "vlcd australia", "skin care costs australia"],
   },
+  emmaSleep: {
+    title: "Emma Sleep Australia 2026: Real Prices and the Discount Test | Refer Labs",
+    description:
+      "Emma mattresses from $569 in Australia, every one listed at a discount when we read it. What the ACCC says about was/now pricing, and why you should compare the price you pay, not the struck-through one.",
+    url: `${SITE_URL}/emma-sleep`,
+    keywords: ["emma sleep australia", "emma mattress price australia", "emma mattress review", "emma sleep discount", "mattress sale australia"],
+  },
+  technogym: {
+    title: "Technogym Australia 2026: Published Prices, $4,460 to $20,490 | Refer Labs",
+    description:
+      "Technogym's Australian prices read off its own site: the Bench from A$4,460 to the Run at A$20,490. A four-fold spread within one brand, and what to settle before ordering equipment at this price.",
+    url: `${SITE_URL}/technogym`,
+    keywords: ["technogym australia", "technogym price australia", "technogym bench price", "home gym equipment australia", "technogym run treadmill price"],
+  },
   optislim: {
     title: "OptiSlim Australia 2026: Price Per Meal and the VLED Rules | Refer Labs",
     description:

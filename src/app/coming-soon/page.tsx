@@ -21,6 +21,10 @@ const SLUG = "/coming-soon";
  */
 
 const SECTIONS = [
+  // Sleep (Emma) and Longevity (Technogym) left this list on 16 Sep 2026 too,
+  // for the same reason: each has a commercial partner, so describing them as
+  // sections with nothing that pays us was false. Neither joined the header
+  // (Jarred's call); both stay reachable from /guides, the homepage and search.
   // Health & Beauty left this list on 16 Sep 2026. It went live with four
   // commercial partners (OptiSlim, Foreo, Edible Beauty, Aussie Health
   // Products) and a nav group of its own, so listing it as a section we are
@@ -37,34 +41,6 @@ const SECTIONS = [
       { h: "/mens-health/erectile-dysfunction-treatment-cost-australia", l: "What the routes cost" },
       { h: "/mens-health/online-prescription-australia", l: "Online prescription: cost and Medicare" },
       { h: "/mens-health/online-doctor-medical-certificate-australia", l: "Medical certificate: cost and speed" },
-    ],
-  },
-  {
-    href: "/longevity",
-    icon: Activity,
-    accent: "#8A6A3B",
-    tint: "#F5EFE4",
-    title: "Longevity",
-    live: "Eleven guides, live now",
-    body: "Recovery hardware costed over three years rather than at the checkout, and the screening pages that carry what Australian clinicians say about scanning people who feel well. No health claim is made for anything.",
-    links: [
-      { h: "/longevity/recovery/ice-bath-running-costs-australia", l: "What an ice bath costs to run" },
-      { h: "/longevity/diagnostics/whole-body-mri-australia-cost", l: "Whole-body MRI: the case against" },
-      { h: "/longevity/supplements/longevity-supplements-evidence-review", l: "Supplements, reviewed" },
-    ],
-  },
-  {
-    href: "/sleep",
-    icon: Moon,
-    accent: "#3D5A80",
-    tint: "#E9EFF6",
-    title: "Sleep",
-    live: "Six guides, live now",
-    body: "How sleep apnoea is diagnosed here, what a sleep study costs once Medicare is accounted for, verified CPAP prices, and how to compare a mattress on something other than marketing.",
-    links: [
-      { h: "/sleep/do-i-have-sleep-apnoea", l: "How diagnosis works" },
-      { h: "/sleep/cpap-machine-costs-australia", l: "CPAP: verified prices" },
-      { h: "/sleep/mattress-comparison-australia", l: "Comparing mattresses properly" },
     ],
   },
 ];

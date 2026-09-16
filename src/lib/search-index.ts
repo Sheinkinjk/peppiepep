@@ -16,6 +16,8 @@ export const SEARCH_INDEX: SearchEntry[] = [
   { title: "Who underwrites pet insurance in Australia", href: "/who-underwrites-pet-insurance-australia", category: "Insurance", kind: "Guide", keywords: "who underwrites pet insurance petsure hollard pacific international knose petsonme trupanion bow wow underwriter issuer australia" },
   { title: "Pet insurance", href: "/pet-insurance", category: "Insurance", kind: "Category", keywords: "pet insurance australia dog cat cover waiting period exclusions excess annual limit knose offers referrer" },
   { title: "Health & beauty", href: "/health-and-beauty", category: "Health & beauty", kind: "Category", keywords: "health beauty australia skincare meal replacement vlcd devices acne led mask" },
+  { title: "Emma Sleep", href: "/emma-sleep", category: "Sleep", kind: "Review", keywords: "emma sleep australia mattress price discount trial was now pricing accc" },
+  { title: "Technogym", href: "/technogym", category: "Longevity", kind: "Review", keywords: "technogym australia price home gym bench run bike treadmill reformer" },
   { title: "OptiSlim", href: "/optislim", category: "Health & beauty", kind: "Review", keywords: "optislim australia vlcd meal replacement shake price per meal very low energy diet" },
   { title: "Foreo", href: "/foreo", category: "Health & beauty", kind: "Review", keywords: "foreo australia luna ufo price artg cosmetic device led" },
   { title: "Edible Beauty Australia", href: "/edible-beauty", category: "Health & beauty", kind: "Review", keywords: "edible beauty australia natural skincare price certified organic naturopath" },

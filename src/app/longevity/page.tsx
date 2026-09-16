@@ -1,4 +1,6 @@
 import SectionHub from "@/components/consumer/SectionHub";
+import PartnerRoute from "@/components/consumer/PartnerRoute";
+import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
 
 export const metadata = generateSEOMetadata(seoConfig.longevityHub);
@@ -24,7 +26,7 @@ const faqs = [
   },
   {
     q: "Does Refer Labs earn from this section?",
-    a: "Not yet. Longevity is being built before any partner is in place, so nothing here currently earns us a commission and no product is recommended. When we add providers we will say so on the page and disclose it, as we do across the site.",
+    a: "Yes, from one: Technogym, through Commission Factory, since 16 September 2026. We earn a commission if you buy through our link, at no extra cost to you, and the page carrying that link says so beside it. We hold no Technogym discount code. It is the premium end of the market and much cheaper equipment exists that we earn nothing from, which these guides say plainly. Technogym is kept off the diagnostics pages, where equipment beside a test result would read as a prescription for one.",
   },
 ];
 
@@ -36,7 +38,27 @@ export default function LongevityHub() {
       h1={<>Longevity in Australia: <span className="italic text-[#0a7c42]">what it costs, and what holds up</span></>}
       intro="A category where the marketing is confident and the evidence is uneven. These guides cover what the hardware and testing cost in Australia, and are equally clear about where the case for spending is weak."
       note={<><strong className="font-semibold text-[#10251b]">On claims.</strong> We make no health claim for any product or service here. Where something is regulated as a therapeutic good we point you at the ARTG to check it yourself, and where the evidence is thin we say so rather than leaving it out.</>}
-      comingSoonFor="Longevity"
+      disclosure={<AffiliateDisclosure compact />}
+      partner={
+        /* Technogym is the first commercial partner in this section
+           (16 Sep 2026), which is why the Coming Soon note is gone: it told
+           readers nothing here pays us. check-partner-scope denies Technogym on
+           /longevity/diagnostics, where equipment beside a test result would
+           read as a prescription for one. */
+        <PartnerRoute
+          className="mt-10"
+          heading="The retailer we have an arrangement with"
+          intro="One equipment brand, and the only thing in this section we earn from. It is the premium end of the market: cheaper equipment exists, we earn nothing from it, and for most people it is the sensible comparison."
+          providers={[
+            {
+              name: "Technogym",
+              href: "/go/technogym-longevity-hub",
+              what: "Home exercise equipment with published Australian prices, from A$4,460 for the Bench to A$20,490 for the Run, read 16 September 2026. We make no claim that any of it extends life or prevents disease.",
+              checked: "16 September 2026",
+            },
+          ]}
+        />
+      }
       guides={guides}
       faqs={faqs}
       otherLinks={[

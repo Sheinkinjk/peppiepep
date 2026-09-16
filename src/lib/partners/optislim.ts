@@ -43,8 +43,21 @@
  * without re-reading.
  */
 
-export const readOn = "2026-09-16";
-export const source = "https://www.optislim.com.au/collections/vlcd";
+/**
+ * Read by scripts/check-partner-freshness.mjs, which matches the FIRST
+ * `readOn:`/`source:` in the file. It must therefore be this object and not a
+ * date nested inside a quoted regulator rule further down, which is what it
+ * was accidentally matching before 16 Sep 2026.
+ */
+export const META = {
+  readOn: "2026-09-16",
+  readOnLabel: "16 September 2026",
+  source: "https://www.optislim.com.au/collections/vlcd",
+} as const;
+
+export const { readOn, readOnLabel, source } = META;
+
+
 
 /** FSANZ's own words. Quoted, never paraphrased into something softer. */
 export const VLED_RULE = {

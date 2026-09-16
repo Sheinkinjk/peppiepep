@@ -67,6 +67,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // partner with its own page for the first time; before this they existed
     // only as /go/ redirects and had nothing to rank.
     { url: `${BASE}/optislim`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.8 },
+    // First commercial partners for /sleep and /longevity (16 Sep 2026).
+    { url: `${BASE}/emma-sleep`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/technogym`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.78 },
     { url: `${BASE}/foreo`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/edible-beauty`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.78 },
     { url: `${BASE}/aussie-health-products`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.78 },

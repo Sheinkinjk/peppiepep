@@ -19,6 +19,8 @@ export default function SectionHub({
   intro,
   note,
   comingSoonFor,
+  partner,
+  disclosure,
   guides,
   faqs,
   otherLinks,
@@ -31,7 +33,16 @@ export default function SectionHub({
   h1: React.ReactNode;
   intro: string;
   note?: React.ReactNode;
-  comingSoonFor: string;
+  /**
+   * Omit once the section has a commercial partner: the note tells readers
+   * nothing here pays us, which stops being true the moment one lands, and
+   * check-partner-scope fails the build on that.
+   */
+  comingSoonFor?: string;
+  /** Rendered under the hero. The partner placement for a live section. */
+  partner?: React.ReactNode;
+  /** Disclosure, required whenever `partner` is passed. */
+  disclosure?: React.ReactNode;
   guides: { href: string; title: string; desc: string }[];
   faqs: { q: string; a: string }[];
   otherLinks: { href: string; label: string }[];
@@ -114,10 +125,15 @@ export default function SectionHub({
               <p className="text-[13px] leading-relaxed text-[#3d4b44]">{note}</p>
             </div>
           )}
-          <div className="mt-4 max-w-3xl">
-            <ComingSoonNote category={comingSoonFor} />
-          </div>
+          {disclosure && <div className="mt-4 max-w-3xl">{disclosure}</div>}
+          {comingSoonFor && (
+            <div className="mt-4 max-w-3xl">
+              <ComingSoonNote category={comingSoonFor} />
+            </div>
+          )}
         </section>
+
+        {partner}
 
         <section className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
           <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">Start here</h2>

@@ -50,6 +50,8 @@ const hubs = [
   { href: "/sleep/mattress-comparison-australia", label: "Comparing Mattresses", desc: "The specifications that mean something, and trial terms worth reading." },
   { href: "/sleep/sleep-tracker-comparison-australia", label: "Sleep Trackers", desc: "What they estimate versus what a clinical study measures." },
   { href: "/sleep/how-much-does-good-sleep-cost", label: "What Good Sleep Costs", desc: "The free changes first, and when spending is justified." },
+  { href: "/emma-sleep", label: "Emma Sleep", desc: "Mattress prices, the 150-night trial, and how to read a permanent discount." },
+  { href: "/technogym", label: "Technogym", desc: "Published Australian prices, from A$4,460 to A$20,490 within one brand." },
   { href: "/optislim", label: "OptiSlim", desc: "$2.14 a meal, and the food regulator's rule that its own shop page leaves out." },
   { href: "/foreo", label: "Foreo", desc: "Australian-dollar prices, and the therapeutic registration Foreo cancelled." },
   { href: "/edible-beauty", label: "Edible Beauty Australia", desc: "What the range costs, and what the word natural does not certify." },

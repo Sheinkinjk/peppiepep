@@ -92,6 +92,30 @@ const PARTNERS = [
   // links every page on the site by name, so a brand label there is an internal
   // link into allowlisted territory, not a placement on a rival's page. Same
   // reasoning as the Foreo token note further down.
+  // Emma Sleep is a mattress brand. The deny list is the point: /sleep also holds
+  // clinical pages on sleep apnoea, home sleep testing and CPAP costs, and a
+  // mattress commission link beside those would imply a mattress is a response to
+  // a diagnosed condition. It is not, and we will not let the placement suggest it.
+  {
+    name: "Emma Sleep",
+    tokens: ["emma-sleep", "t/70242"],
+    allow: ["/sleep", "/emma-sleep", "/guides", "/coming-soon"],
+    denyRoutes: [
+      "/sleep/do-i-have-sleep-apnoea",
+      "/sleep/home-sleep-test-australia-cost",
+      "/sleep/cpap-machine-costs-australia",
+    ],
+  },
+  // Technogym is exercise equipment, placed in two sections by Jarred on
+  // 16 Sep 2026. Denied on the diagnostics cluster: those pages are about
+  // screening and testing, and gym equipment beside them would read as a response
+  // to a test result.
+  {
+    name: "Technogym",
+    tokens: ["technogym", "t/89154"],
+    allow: ["/longevity", "/health-and-beauty", "/technogym", "/guides", "/coming-soon"],
+    denyRoutes: ["/longevity/diagnostics"],
+  },
   // OptiSlim sells weight-loss meal replacements. It is deliberately NOT allowed
   // under /weight-loss: that hub is practitioner-assessed telehealth, and a food
   // product sitting beside it would imply the two are alternatives (Jarred,
@@ -191,7 +215,11 @@ for (const file of pages(APP)) {
     }
   }
   // Belt and braces: the literal claim, beside a link, whatever produced it.
-  if (hasPartnerLink && EARNS_NOTHING.test(src)) {
+  // Comments are stripped first. On 16 Sep 2026 this fired on /sleep and
+  // /longevity for comments that EXPLAINED why the coming-soon note had been
+  // removed, which is the opposite of the fault it exists to catch. What a
+  // reader sees is the claim; a comment is not.
+  if (hasPartnerLink && EARNS_NOTHING.test(withoutComments(src))) {
     errors.push(`${route}: carries a partner link and also states it earns nothing.`);
   }
 
@@ -220,6 +248,21 @@ for (const file of pages(APP)) {
       src,
     );
     if (!p.tokens.some((t) => scoped.includes(t))) continue;
+    // A denied route wins over an allowed prefix. `allow` is prefix-based, so
+    // "/sleep" necessarily covers every guide beneath it; this is how a section
+    // says "the hub, but not these pages". Added 16 Sep 2026 for Emma Sleep,
+    // which may sit on /sleep but must never appear beside the apnoea, sleep
+    // study or CPAP pages: a mattress is not a response to a diagnosis, and a
+    // commission link there would imply it is.
+    const deniedRoute = (p.denyRoutes ?? []).find((d) => route === d || route.startsWith(d + "/"));
+    if (deniedRoute) {
+      errors.push(
+        `${route}: references partner "${p.name}", which is denied on ${deniedRoute}. ` +
+        `An allowed prefix does not re-open a denied route. Remove the reference, or ` +
+        `remove the route from denyRoutes in scripts/check-partner-scope.mjs if that is deliberate.`,
+      );
+      continue;
+    }
     if (p.allow.some((a) => route === a || route.startsWith(a + "/"))) {
       if (hasPartnerLink) linkedRoutes.get(route)?.add(p.name);
       continue;

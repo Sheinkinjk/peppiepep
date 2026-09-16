@@ -46,6 +46,8 @@ const STANDALONE_ROUTES = [
   "/foreo",
   "/edible-beauty",
   "/aussie-health-products",
+  "/emma-sleep",
+  "/technogym",
   "/sleep",
   "/for-business",
   "/compare",

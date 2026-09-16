@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
-import ComingSoonNote from "@/components/consumer/ComingSoonNote";
+import PartnerRoute from "@/components/consumer/PartnerRoute";
+import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
 
@@ -61,7 +62,7 @@ const faqs = [
   },
   {
     q: "Does Refer Labs earn from this section?",
-    a: "Not yet. Sleep is being built before any partner is in place, so nothing here currently earns us a commission and no product is being recommended to you. When we add providers we will say so on the page and disclose it, as we do across the site.",
+    a: "Yes, from one: Emma Sleep, through Commission Factory, since 16 September 2026. We earn a commission if you buy a mattress after following our link, at no extra cost to you, and the page carrying that link says so beside it. We hold no Emma discount code. Emma is deliberately kept off the clinical pages in this section, covering sleep apnoea, home sleep testing and CPAP costs, because a mattress is not a response to a diagnosis and a commission link there would imply it is. What we earn changes nothing about what these guides say.",
   },
 ];
 
@@ -131,10 +132,29 @@ export default function SleepHub() {
               where the prices are high and the claims are loose. These guides separate the two.
             </p>
           </div>
-          <div className="mt-8 max-w-3xl">
-            <ComingSoonNote category="Sleep" />
-          </div>
+          <AffiliateDisclosure compact className="mt-4 max-w-3xl" />
         </section>
+
+        {/* Emma is the first commercial partner in this section (16 Sep 2026),
+            which is why the Coming Soon note is gone: it told readers nothing
+            here pays us, and that stopped being true. The placement sits in the
+            retail half of the hub on purpose. check-partner-scope denies Emma on
+            /sleep/do-i-have-sleep-apnoea, /sleep/home-sleep-test-australia-cost
+            and /sleep/cpap-machine-costs-australia, because a mattress link
+            beside a clinical page would imply a mattress answers a diagnosis. */}
+        <PartnerRoute
+          className="mt-10"
+          heading="The retailer we have an arrangement with"
+          intro="One mattress brand, and the only one in this section we earn from. It sits on the retail side of the split above: if you think something clinical is going on, a mattress is not the answer and no link here changes that."
+          providers={[
+            {
+              name: "Emma Sleep",
+              href: "/go/emma-sleep-hub",
+              what: "Mattresses and bundles from $569, with a 150-night trial. Every mattress was listed at a discount when we read the site on 16 September 2026, so compare the price you pay rather than the struck-through one.",
+              checked: "16 September 2026",
+            },
+          ]}
+        />
 
         <section className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
           <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">Start here</h2>

@@ -36,6 +36,12 @@ const MIDOC_HOME = "https://www.midoc.com.au/?ref=ytvpnchm";
 // rather than a deep link: no server response was checked proving a deep link
 // keeps the referral, and the same caution applies here as to Midoc.
 const OPTISLIM = "https://t.cfjump.com/94361/t/77632?Url=https%3a%2f%2fwww.optislim.com.au%2f";
+// Emma Sleep (Commission Factory, merchant 70242) and Technogym Australia
+// (merchant 89154), added 16 Sep 2026. Homepage destinations for both: no server
+// response was checked proving a deep link keeps the referral, same caution as
+// Midoc and OptiSlim.
+const EMMA = "https://t.cfjump.com/94361/t/70242?Url=https%3a%2f%2fwww.emma-sleep.com.au%2f";
+const TECHNOGYM = "https://t.cfjump.com/94361/t/89154?Url=https%3a%2f%2fwww.technogym.com%2fen-AU";
 const EDIBLE_BEAUTY = "https://t.cfjump.com/94361/t/76712";
 const AUSSIE_HEALTH = "https://t.cfjump.com/94361/t/14839";
 
@@ -77,6 +83,12 @@ export const GO_DESTINATIONS: Record<string, string> = {
   "edible-beauty-cost-per-use": EDIBLE_BEAUTY,
   "edible-beauty-retinol-otc": EDIBLE_BEAUTY,
   "optislim-health-hub": OPTISLIM,
+  "emma-sleep-hub": EMMA,
+  "emma-sleep-brand": EMMA,
+  "emma-mattress-comparison": EMMA,
+  "technogym-longevity-hub": TECHNOGYM,
+  "technogym-health-hub": TECHNOGYM,
+  "technogym-brand": TECHNOGYM,
   "optislim-brand": OPTISLIM,
   "edible-beauty-skin-hub": EDIBLE_BEAUTY,
   "edible-beauty-skincare-quiz": EDIBLE_BEAUTY,

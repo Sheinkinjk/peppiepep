@@ -153,7 +153,7 @@ export default function SkinAndBeautyHub() {
           className="pt-4"
           ctaPrefix="health-beauty-hub"
           heading="The partners we cover"
-          intro="Four Australian retail partners, answering the same four questions. We earn a commission from all four and hold a discount code for none of them, so there is no code on this page to type."
+          intro="Five Australian retail partners, answering the same four questions. We earn a commission from all five and hold a discount code for none of them, so there is no code on this page to type."
           providers={[
             {
               name: "Aussie Health Products",
@@ -188,6 +188,18 @@ export default function SkinAndBeautyHub() {
               cost: "From A$169 for the LUNA 4 go, read 4 September 2026.",
               visitHref: "/go/foreo-skin-hub",
               visitLabel: "View Foreo pricing",
+              earns: true,
+              earnAction: "buy from",
+            },
+            {
+              name: "Technogym",
+              href: "/technogym",
+              hrefLabel: "Read our Technogym guide",
+              suits: "Buyers at the premium end of home exercise equipment who want the price before the showroom.",
+              how: "Sells home equipment direct, with Australian prices published on its own site.",
+              cost: "A$4,460 for the Bench to A$20,490 for the Run, read 16 September 2026.",
+              visitHref: "/go/technogym-health-hub",
+              visitLabel: "View Technogym pricing",
               earns: true,
               earnAction: "buy from",
             },
