@@ -33,7 +33,7 @@ const brand: RetailerBrand = {
   ),
   facts: PRODUCTS.map((p) => ({
     label: p.name.replace("Technogym ", ""),
-    value: `${p.from ? "from " : ""}${money(p.price)} — ${p.what}`,
+    value: `${p.from ? "from " : ""}${money(p.price)}. ${p.what}`,
   })).concat([{ label: "Prices read", value: readOnLabel }]),
   factsNote: (
     <>
@@ -65,8 +65,8 @@ const brand: RetailerBrand = {
         </>,
         <>
           The case for spending at this level is build quality, servicing and resale rather than anything the
-          equipment does to your body that a cheaper one does not. Judge it as furniture you will use daily, because
-          that is the honest version of the decision.
+          equipment does to your body that a cheaper one does not. Judge it as furniture you will use daily, and
+          price it against how often you will actually use it.
         </>,
       ],
     },

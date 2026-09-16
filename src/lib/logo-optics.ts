@@ -7,6 +7,13 @@
  * Re-derive if a logo file is replaced.
  */
 const SCALE: Record<string, number> = {
+  // Health & Beauty / Sleep partners, added 16 Sep 2026 with the files
+  // themselves. The Foreo and Emma marks are wide wordmarks, so they read small
+  // in a uniform well and are scaled up; Aussie Health ships a square tile that
+  // already fills it.
+  "aussie-health-products.png": 1.0,
+  "emma-sleep.svg": 1.3,
+  "foreo.svg": 1.42,
   "activecampaign.png": 0.94,
   "aisdr.png": 1.18,
   "alohi.png": 1.36,

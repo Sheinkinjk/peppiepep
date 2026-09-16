@@ -3,6 +3,8 @@ import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 import { SITE_URL, SCHEMA_AUTHOR, SCHEMA_PUBLISHER } from "@/lib/seo";
+import { partnerLogo } from "@/lib/partner-logos";
+import { logoScale } from "@/lib/logo-optics";
 
 /**
  * The shared shape for a Health & Beauty retail partner's own page.
@@ -60,7 +62,11 @@ export type RetailerBrand = {
    * clicking, so they are chosen, not sliced, wherever the order differs.
    */
   headlineFacts?: BrandFact[];
-  /** /logos/<slug>.png once supplied. Falls back to a monogram. */
+  /**
+   * Overrides the shared registry. Normally left unset: the logo is looked up
+   * from src/lib/partner-logos.ts by slug, so a hub card and this page cannot
+   * show different marks for the same brand.
+   */
   logo?: string;
   factsNote: React.ReactNode;
   /** What we could not verify. Required, and never empty. */
@@ -110,6 +116,7 @@ export default function RetailerBrandPage({ brand }: { brand: RetailerBrand }) {
 
   const headline = brand.headlineFacts ?? brand.facts.slice(0, 3);
   const monogram = brand.name.replace(/[^A-Za-z ]/g, "").split(" ").filter(Boolean).slice(0, 2).map((w) => w[0]).join("");
+  const logo = brand.logo ?? partnerLogo(brand.slug);
 
   return (
     <ConsumerShell>
@@ -145,9 +152,16 @@ export default function RetailerBrandPage({ brand }: { brand: RetailerBrand }) {
             <aside className="rounded-2xl border border-[#e5e9e7] bg-white p-6 shadow-[0_1px_2px_rgba(16,37,27,0.05)] sm:p-7">
               <div className="flex items-center gap-3">
                 <span className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-[#eef1ef] bg-[#f8faf9]">
-                  {brand.logo ? (
+                  {logo ? (
                     /* eslint-disable-next-line @next/next/no-img-element */
-                    <img src={brand.logo} alt="" width={32} height={32} className="h-8 w-8 object-contain" />
+                    <img
+                      src={logo}
+                      alt=""
+                      width={32}
+                      height={32}
+                      className="h-8 w-8 object-contain"
+                      style={{ transform: `scale(${logoScale(logo)})` }}
+                    />
                   ) : (
                     <span className="text-[15px] font-bold tracking-tight text-[#0a7c42]">{monogram}</span>
                   )}

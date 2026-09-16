@@ -3,6 +3,7 @@ import Link from "next/link";
 import { OFFER_FACTS, checkedOn } from "@/lib/offers";
 import { logoScale } from "@/lib/logo-optics";
 import { requiredDisclosureFor } from "@/lib/partner-disclosures";
+import { partnerLogo } from "@/lib/partner-logos";
 
 /**
  * The providers a hub covers, presented on identical terms.
@@ -101,39 +102,19 @@ export default function HubProviders({
   className?: string;
 }) {
   const hasOffer = (p: HubProvider) => Boolean(p.offerCode || p.offerText);
-  const rows = (p: HubProvider) => [
-    { k: "Who it suits", v: <>{p.suits}</> },
-    { k: "How it works", v: <>{p.how}</> },
-    { k: "What it costs", v: <>{p.cost}</> },
-    hasOffer(p)
-      ? { k: "Current offer", v: <OfferLine p={p} /> }
-      : { k: "Good to know", v: <>{p.highlight ?? p.cost}</> },
-  ];
 
   /*
-   * Cards line up row by row rather than each flowing to its own height: every
-   * card spans the same 7 grid rows and inherits them with `grid-rows-subgrid`,
-   * so "What it costs" sits at the same y in every column and the reader can
-   * compare across instead of down. Without it the rows drifted apart by a line
-   * or two and the section read as two ads side by side (16 Sep 2026).
-   *
-   * Spacing inside a card is padding, never margin, because the same markup is
-   * a plain block below sm, where the subgrid does not apply.
+   * Alphabetical, computed once and reused by both the table and the guide
+   * list below it, so the two can never fall into different orders.
    */
-  const ROW_COUNT = 7;
+  const ordered = [...providers].sort((a, b) => a.name.localeCompare(b.name));
+
   /*
-   * Four providers wrap to two pairs below lg and line up as one row at lg.
-   * The row spans are explicit, so a wrapped pair still aligns with its own
-   * partner even when all four do not share a single row.
+   * The fourth column is headed for what it actually holds. Where nobody has an
+   * offer, heading it "Current offer" and printing "No Refer Labs offer" five
+   * times was a column of nothing.
    */
-  const columns =
-    providers.length >= 5
-      ? "sm:grid-cols-2 lg:grid-cols-3"
-      : providers.length === 4
-        ? "sm:grid-cols-2 lg:grid-cols-4"
-        : providers.length === 3
-          ? "sm:grid-cols-3"
-          : "sm:grid-cols-2";
+  const offerHeading = ordered.some(hasOffer) ? "Current offer" : "Good to know";
 
   return (
     <section className={`mx-auto max-w-6xl px-5 sm:px-8 ${className}`}>
@@ -142,108 +123,131 @@ export default function HubProviders({
         {intro} Listed alphabetically, not ranked.
       </p>
 
-      <div
-        className={`mt-7 grid gap-4 sm:gap-y-0 ${columns}`}
-        style={{ gridTemplateRows: `repeat(${ROW_COUNT}, auto)` }}
-      >
-        {[...providers]
-          .sort((a, b) => a.name.localeCompare(b.name))
-          .map((p) => (
+      {/* A comparison table, not a wall of cards. Five providers as five cards
+          three-across read as five adverts side by side; as rows answering the
+          same columns they read as a comparison, which is what the page is for
+          (Jarred, 16 Sep 2026).
+
+          One DOM, two layouts: below lg each provider is a stacked card, and at
+          lg `lg:contents` dissolves the card so its cells become grid items in a
+          shared five-column grid. That keeps columns aligned across every row
+          without duplicating the markup into a separate mobile block. */}
+      <div className="mt-7 grid gap-4 lg:grid-cols-[1.15fr_1fr_1fr_1.05fr_auto] lg:gap-0">
+        <div className="hidden lg:contents">
+          {["Provider", "Who it suits", "What it costs", offerHeading, ""].map((h, i) => (
+            <div
+              key={i}
+              className="hidden border-b border-[#dfe5e1] px-4 pb-3 text-[12px] font-semibold uppercase tracking-[0.05em] text-[#5a665f] lg:block"
+            >
+              {h}
+            </div>
+          ))}
+        </div>
+
+        {ordered.map((p) => {
+          const logo = partnerLogo(p.href);
+          const required = p.earns ? requiredDisclosureFor(p.visitHref) : undefined;
+          const fourth = hasOffer(p) ? <OfferLine p={p} /> : <>{p.highlight ?? p.cost}</>;
+          return (
             <div
               key={p.name}
-              className="rounded-2xl border border-[#e5e9e7] bg-white p-6 shadow-[0_1px_2px_rgba(16,37,27,0.05)] sm:grid sm:[grid-template-rows:subgrid]"
-              style={{ gridRow: `span ${ROW_COUNT} / span ${ROW_COUNT}` }}
+              className="rounded-2xl border border-[#e5e9e7] bg-white p-6 shadow-[0_1px_2px_rgba(16,37,27,0.05)] lg:contents"
             >
-              <div className="flex items-center gap-3 pb-5">
-                {p.logo && (
+              <div className="lg:border-b lg:border-[#eef1ef] lg:px-4 lg:py-5">
+                <div className="flex items-center gap-3">
                   <span className="flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-[#eef1ef] bg-white">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={p.logo}
-                      alt=""
-                      width={32}
-                      height={32}
-                      className="h-8 w-8 object-contain"
-                      style={{ transform: `scale(${logoScale(p.logo)})` }}
-                    />
+                    {logo ? (
+                      /* eslint-disable-next-line @next/next/no-img-element */
+                      <img
+                        src={logo}
+                        alt=""
+                        width={32}
+                        height={32}
+                        className="h-8 w-8 object-contain"
+                        style={{ transform: `scale(${logoScale(logo)})` }}
+                      />
+                    ) : (
+                      <span className="text-[13px] font-bold tracking-tight text-[#0a7c42]">
+                        {p.name.replace(/[^A-Za-z ]/g, "").split(" ").filter(Boolean).slice(0, 2).map((w) => w[0]).join("")}
+                      </span>
+                    )}
                   </span>
-                )}
-                <h3 className="text-xl font-bold text-[#10251b]">{p.name}</h3>
+                  <h3 className="text-[17px] font-bold leading-tight text-[#10251b]">{p.name}</h3>
+                </div>
+                <p className="mt-3 text-[14px] leading-relaxed text-[#5a665f]">{p.how}</p>
               </div>
 
-              {/* One list per card, nested as its own subgrid so the four rows
-                  still take their heights from the parent and line up across
-                  providers. Each row was briefly a separate <dl> holding a
-                  single pair, which rendered the same but described the card as
-                  four unrelated lists. */}
-              <dl
-                className="sm:grid sm:[grid-template-rows:subgrid]"
-                style={{ gridRow: `span ${rows(p).length} / span ${rows(p).length}` }}
-              >
-                {rows(p).map((r) => (
-                  <div
-                    key={r.k}
-                    className="flex flex-col gap-1 border-t border-[#eef1ef] py-3.5 text-[15px] leading-relaxed"
-                  >
-                    {/* Label above the value, not beside it. A side-by-side label
-                        column keyed off the viewport crushed the value into a thin
-                        strip wherever a hub renders the cards inside a narrow
-                        centre column, as /pet-insurance does. */}
-                    <dt className="text-[13px] font-semibold uppercase tracking-[0.04em] text-[#5a665f]">
-                      {r.k}
-                    </dt>
-                    <dd className="text-[#3d4b44]">{r.v}</dd>
-                  </div>
-                ))}
-              </dl>
+              <div className="mt-4 border-t border-[#eef1ef] pt-4 lg:mt-0 lg:border-b lg:border-t-0 lg:px-4 lg:py-5">
+                <span className="text-[12px] font-semibold uppercase tracking-[0.05em] text-[#5a665f] lg:hidden">
+                  Who it suits
+                </span>
+                <p className="mt-1 text-[15px] leading-relaxed text-[#3d4b44] lg:mt-0">{p.suits}</p>
+              </div>
 
-              {/* The outbound link is a button, and the same button on every
-                  card. A quiet grey text link asked the reader to work out that
-                  it was the action. Identical treatment across providers is what
-                  keeps this neutral: nobody gets a louder button than anybody. */}
-              <div className="flex flex-col gap-3 border-t border-[#eef1ef] pt-5">
+              <div className="mt-4 border-t border-[#eef1ef] pt-4 lg:mt-0 lg:border-b lg:border-t-0 lg:px-4 lg:py-5">
+                <span className="text-[12px] font-semibold uppercase tracking-[0.05em] text-[#5a665f] lg:hidden">
+                  What it costs
+                </span>
+                <p className="mt-1 text-[15px] leading-relaxed text-[#3d4b44] [font-variant-numeric:tabular-nums] lg:mt-0">
+                  {p.cost}
+                </p>
+              </div>
+
+              <div className="mt-4 border-t border-[#eef1ef] pt-4 lg:mt-0 lg:border-b lg:border-t-0 lg:px-4 lg:py-5">
+                <span className="text-[12px] font-semibold uppercase tracking-[0.05em] text-[#5a665f] lg:hidden">
+                  {hasOffer(p) ? "Current offer" : "Good to know"}
+                </span>
+                <p className="mt-1 text-[15px] leading-relaxed text-[#3d4b44] lg:mt-0">{fourth}</p>
+              </div>
+
+              {/* One action per row, and it goes to the provider. Our own guide
+                  is linked from its own section below: two links side by side,
+                  one outbound and one internal, read as a choice between two
+                  destinations rather than one clear action. */}
+              <div className="mt-5 lg:mt-0 lg:border-b lg:border-[#eef1ef] lg:px-4 lg:py-5">
                 {p.visitHref && (
                   <a
                     href={p.visitHref}
                     target="_blank"
                     rel="nofollow sponsored"
                     data-cta={`${ctaPrefix}-${p.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
-                    className="flex w-full items-center justify-center rounded-full bg-[#0a7c42] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#086536]"
+                    className="flex w-full items-center justify-center rounded-full bg-[#0a7c42] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#086536] lg:w-auto lg:whitespace-nowrap"
                   >
                     {p.visitLabel ?? `Visit ${p.name}`}
                   </a>
                 )}
-                <Link
-                  href={p.href}
-                  className="text-center text-sm font-semibold text-[#0a7c42] hover:underline"
-                >
-                  {p.hrefLabel}
-                </Link>
-              </div>
-
-              {/* Where a partner requires its own wording, that wording IS the
-                  disclosure: printed verbatim, in readable contrast, beside the
-                  link it belongs to. Our generic line would otherwise say the
-                  same thing in words the partner did not agree to. */}
-              {(() => {
-                const required = p.earns ? requiredDisclosureFor(p.visitHref) : undefined;
-                if (required) {
-                  return (
-                    <p className="mt-3 rounded-xl border border-[#e5e9e7] bg-[#f8faf9] px-4 py-3 text-[13px] leading-relaxed text-[#3d4b44]">
-                      {required.text}
-                    </p>
-                  );
-                }
-                return (
-                  <p className="pt-3 text-[12px] leading-relaxed text-[#5a665f]">
+                {required ? (
+                  <p className="mt-3 rounded-xl border border-[#e5e9e7] bg-[#f8faf9] px-3 py-2 text-[12px] leading-relaxed text-[#3d4b44] lg:max-w-[16rem]">
+                    {required.text}
+                  </p>
+                ) : (
+                  <p className="mt-3 text-[12px] leading-relaxed text-[#5a665f] lg:max-w-[14rem]">
                     {p.earns
-                      ? `We earn a commission if you ${p.earnAction ?? "sign up with"} ${p.name} through our link, at no extra cost to you.`
+                      ? `We earn a commission if you ${p.earnAction ?? "sign up with"} ${p.name} through this link, at no extra cost to you.`
                       : `We earn nothing from ${p.name}.`}
                   </p>
-                );
-              })()}
+                )}
+              </div>
             </div>
+          );
+        })}
+      </div>
+
+      {/* Our own coverage, kept away from the action column above. */}
+      <div className="mt-8 rounded-2xl border border-[#e5e9e7] bg-[#f8faf9] p-6 sm:p-7">
+        <h3 className="text-[17px] font-bold text-[#10251b]">Our guide to each of them</h3>
+        <p className="mt-1.5 text-sm leading-relaxed text-[#3d4b44]">
+          What each one costs, and what we could not verify about it.
+        </p>
+        <ul className="mt-4 flex flex-wrap gap-x-6 gap-y-2">
+          {ordered.map((p) => (
+            <li key={p.name}>
+              <Link href={p.href} className="text-sm font-semibold text-[#0a7c42] hover:underline">
+                {p.hrefLabel} →
+              </Link>
+            </li>
           ))}
+        </ul>
       </div>
     </section>
   );
