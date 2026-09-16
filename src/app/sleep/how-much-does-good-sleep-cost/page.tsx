@@ -32,7 +32,7 @@ const faqs = [
   },
   {
     q: "Does Refer Labs sell sleep products?",
-    a: "No, and we have no partner in this category as things stand, so nothing here earns us a commission. This page argues that the first steps are free, which we would still say once we do have partners. If that changes we will disclose it on the page.",
+    a: "No. We have one partner in this category, Emma Sleep, but no link to it on this page, so nothing here earns us a commission. This page argues that the first steps are free, which we would still say once we do have partners. If that changes we will disclose it on the page.",
   },
 ];
 

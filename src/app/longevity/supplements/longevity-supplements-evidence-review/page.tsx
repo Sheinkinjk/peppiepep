@@ -27,7 +27,7 @@ const faqs = [
   },
   {
     q: "Does Refer Labs sell supplements?",
-    a: "No, and we have no partner in this category, so nothing here earns us anything. We do not name products, both because we are not recommending any and because naming a compound alongside a health benefit is advertising a therapeutic claim. This page is about how to read the evidence yourself.",
+    a: "No, and we have no supplement partner, so nothing here earns us anything., We do not name products, both because we are not recommending any and because naming a compound alongside a health benefit is advertising a therapeutic claim. This page is about how to read the evidence yourself.",
   },
 ];
 

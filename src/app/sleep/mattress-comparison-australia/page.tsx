@@ -32,7 +32,7 @@ const faqs = [
   },
   {
     q: "Does Refer Labs recommend a mattress brand?",
-    a: "No. We have not tested mattresses and we have no partner in this category, so we have no basis for a ranking and nothing to gain from one. This page gives you the comparison method instead. If we add providers later we will disclose it on the page.",
+    a: "No. We have not tested mattresses, so we have no basis for a ranking. We do have one mattress partner in this section, Emma Sleep, which is disclosed on the pages that link to it, and this page carries no link to it. What you get here is the comparison method instead.",
   },
 ];
 

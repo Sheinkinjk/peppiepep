@@ -15,7 +15,7 @@ const faqs = [
   },
   {
     q: "Does it recommend a brand?",
-    a: "No. We have tested no ice baths or saunas and have no partner in this category, so there is nothing we earn from and no list to steer you toward. The result points at our own guides on cost and comparison criteria.",
+    a: "No. We have tested no ice baths or saunas and have no partner selling either, so there is nothing we earn from and no list to steer you toward., The result points at our own guides on cost and comparison criteria.",
   },
   {
     q: "Is cold or heat exposure safe for everyone?",

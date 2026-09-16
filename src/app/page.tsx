@@ -36,25 +36,17 @@ const picks = [
 // on demand, so a reader browsing categories can still find them and the pages
 // keep their inbound link from the homepage. Native <details>, so it needs no
 // client JS and the content is in the DOM for crawlers either way.
+/**
+ * Sections still being built out. Health & Beauty, Sleep and Longevity left this
+ * list on 16 Sep 2026: each went live with a commercial partner, and advertising
+ * a live partnered section as "coming soon" told readers and Google it was
+ * unfinished. They moved into categoryCards above.
+ *
+ * Men's health stays because it is genuinely still being built, even though it
+ * has its first partner. The copy below says that rather than claiming nothing
+ * here earns, which stopped being true.
+ */
 const comingSoonCategories = [
-  {
-    href: "/health-and-beauty", icon: Sparkles, title: "Health & Beauty",
-    accent: "#7A5A8C", tint: "#F2ECF6",
-    note: "What the actives do, what devices cost here, and how the prescription route differs.",
-    links: [
-      { h: "/health-and-beauty/led-face-mask-comparison-australia", l: "LED masks: real prices" },
-      { h: "/health-and-beauty/acne-treatment-options-and-costs-australia", l: "Acne: routes and costs" },
-    ],
-  },
-  {
-    href: "/sleep", icon: Moon, title: "Sleep",
-    accent: "#3D5A80", tint: "#E9EFF6",
-    note: "Where sleep is clinical and where it is retail, and what each costs.",
-    links: [
-      { h: "/sleep/do-i-have-sleep-apnoea", l: "How diagnosis works" },
-      { h: "/sleep/cpap-machine-costs-australia", l: "CPAP: verified prices" },
-    ],
-  },
   {
     href: "/mens-health", icon: Stethoscope, title: "Men's Health",
     accent: "#2F6E5A", tint: "#E7F1EC",
@@ -62,15 +54,6 @@ const comingSoonCategories = [
     links: [
       { h: "/mens-health/erectile-dysfunction-treatment-cost-australia", l: "What the routes cost" },
       { h: "/mens-health/is-telehealth-or-a-gp-cheaper-for-mens-health", l: "Telehealth or a GP?" },
-    ],
-  },
-  {
-    href: "/longevity", icon: Activity, title: "Longevity",
-    accent: "#8A6A3B", tint: "#F5EFE4",
-    note: "Recovery hardware costed over three years, and what clinicians say about screening people who feel well.",
-    links: [
-      { h: "/longevity/recovery/ice-bath-running-costs-australia", l: "What an ice bath costs to run" },
-      { h: "/longevity/diagnostics/whole-body-mri-australia-cost", l: "Whole-body MRI: the case against" },
     ],
   },
 ];
@@ -120,6 +103,33 @@ const categoryCards = [
       { h: "/best-ai-sales-tools", l: "Sales, CRM & outreach" },
     ],
   },
+  {
+    href: "/health-and-beauty", icon: Sparkles, title: "Health & Beauty",
+    accent: "#7A5A8C", tint: "#F2ECF6",
+    note: "What the actives do, what devices cost here, and how the prescription route differs.",
+    links: [
+      { h: "/health-and-beauty/led-face-mask-comparison-australia", l: "LED masks: real prices" },
+      { h: "/health-and-beauty/acne-treatment-options-and-costs-australia", l: "Acne: routes and costs" },
+    ],
+  },
+    {
+    href: "/sleep", icon: Moon, title: "Sleep",
+    accent: "#3D5A80", tint: "#E9EFF6",
+    note: "Where sleep is clinical and where it is retail, and what each costs.",
+    links: [
+      { h: "/sleep/do-i-have-sleep-apnoea", l: "How diagnosis works" },
+      { h: "/sleep/cpap-machine-costs-australia", l: "CPAP: verified prices" },
+    ],
+  },
+    {
+    href: "/longevity", icon: Activity, title: "Longevity",
+    accent: "#8A6A3B", tint: "#F5EFE4",
+    note: "Recovery hardware costed over three years, and what clinicians say about screening people who feel well.",
+    links: [
+      { h: "/longevity/recovery/ice-bath-running-costs-australia", l: "What an ice bath costs to run" },
+      { h: "/longevity/diagnostics/whole-body-mri-australia-cost", l: "Whole-body MRI: the case against" },
+    ],
+  }
 ];
 
 // The head-to-head format is what ranks and what AI engines cite, so the
@@ -389,8 +399,8 @@ export default function HomePage() {
                     </h3>
                   </div>
                   <p className="mt-4 text-sm leading-relaxed text-[#3d4b44]">
-                    {comingSoonCategories.length} more categories. The guides are finished and free to read; the provider
-                    comparison is not, so nothing there earns us a commission yet.
+                    {comingSoonCategories.length} more category still being built out. The guides in it are finished
+                    and free to read, and the provider comparison is still being assembled.
                   </p>
                   <span className="mt-4 inline-flex items-center gap-1.5 border-t border-[#e5e9e7] pt-4 text-sm font-semibold text-[#0a7c42]">
                     <span className="group-open:hidden">See what we&apos;re building</span>

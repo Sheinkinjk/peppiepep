@@ -23,7 +23,7 @@ const hubs = [
   { href: "/knose-vs-petsonme", label: "Knose vs PetsOnMe", desc: "The two compared on published cover: benefit percentage, annual limits, excess and sub-limits." },
   { href: "/petsonme", label: "PetsOnMe: Cover & Code", desc: `The Accidental, Classic and Deluxe plans, the 80% benefit, and what the REFERLABS code discounts. Confirmed directly with PetsOnMe on ${checkedOn("REFERLABS")}.` },
   { href: "/pet-insurance", label: "Pets", desc: "Cover types, waiting periods and exclusions explained, plus current offers. General information, not advice." },
-  { href: "/coming-soon", label: "Coming Soon", desc: "The categories we are building before adding any provider, and what is already readable in each." },
+  { href: "/coming-soon", label: "Coming Soon", desc: "The category still being built out, and what is already readable in it." },
   { href: "/health-and-beauty", label: "Health & Beauty", desc: "Skincare, devices and meal replacements: what each costs here, and which claims survive a check." },
   { href: "/sleep", label: "Sleep", desc: "Sleep apnoea diagnosis, CPAP costs, mattresses and trackers, separated properly." },
   { href: "/mens-health", label: "Men's Health", desc: "Access routes and costs for men's health in Australia, with no medicines named." },
@@ -242,9 +242,9 @@ const sections = [
   },
   {
     label: "Coming Soon Categories",
-    description: "Sections we are researching before adding any provider. The guides are complete; nothing in them earns a commission yet.",
+    description: "Sections still being built out. The guides in them are complete and free to read.",
     guides: [
-      { href: "/coming-soon", label: "What We're Building", desc: "The four categories in progress, and what is readable in each." },
+      { href: "/coming-soon", label: "What We're Building", desc: "What is still in progress, and what is readable today." },
       { href: "/health-and-beauty/skincare-quiz", label: "Skincare Quiz", desc: "Four questions on budget, effort and priority." },
       { href: "/mens-health/mens-health-quiz", label: "Men's Health Quiz", desc: "Cost, privacy and consult preference. No health questions." },
       { href: "/mens-health/sexual-wellness-products", label: "Sexual Wellness Products", desc: "The non-prescription retail category, kept separate from the clinical guides." },

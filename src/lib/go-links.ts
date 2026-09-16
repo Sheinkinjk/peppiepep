@@ -85,7 +85,6 @@ export const GO_DESTINATIONS: Record<string, string> = {
   "optislim-health-hub": OPTISLIM,
   "emma-sleep-hub": EMMA,
   "emma-sleep-brand": EMMA,
-  "emma-mattress-comparison": EMMA,
   "technogym-longevity-hub": TECHNOGYM,
   "technogym-health-hub": TECHNOGYM,
   "technogym-brand": TECHNOGYM,

@@ -63,7 +63,7 @@ const faqs = [
     // "Longevity is under consideration and has not started" until 3 Sep 2026,
     // directly below a section listing the live longevity guides. Fifteen
     // longevity URLs are in the sitemap, eleven of them guides.
-    a: "Longevity has started: recovery, diagnostics and supplement evidence are live, and you can read them now. It carries no partners yet, so nothing in that section earns us a commission. Men\'s health has started too, and it is written entirely around access pathways and costs because advertising prescription medicines to the public is prohibited in Australia, so no medicine is named on any of those pages.",
+    a: "Longevity, sleep and health & beauty have all left this list: each went live with a commercial partner during September 2026, disclosed on every page that links to one. Men\'s health is what remains, and it is written entirely around access pathways and costs because advertising prescription medicines to the public is prohibited in Australia, so no medicine is named on any of those pages.",
   },
 ];
 
@@ -128,7 +128,7 @@ export default function ComingSoonPage() {
               What we&apos;re <span className="italic text-[#0a7c42]">building next</span>
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#2b362f]">
-              Four new categories are underway. The guides in each are finished and free to read today. What is still
+              One category is still underway here. The guides in each are finished and free to read today. What is still
               missing is the provider comparison, which we add only once we have checked someone ourselves, so nothing
               in these sections earns us a commission yet.
             </p>
