@@ -24,7 +24,7 @@
     "check-partner-scope": "node scripts/check-partner-scope.mjs",
     "prebuild": "node scripts/generate-page-dates.mjs && node scripts/check-partner-scope.mjs && node scripts/check-partner-freshness.mjs && node scripts/check-redirect-order.mjs && node scripts/check-offer-wiring.mjs",
     "check-freshness": "node scripts/check-partner-freshness.mjs",
-    "postbuild": "node scripts/check-price-provenance.mjs && node scripts/check-tga-classes.mjs && node scripts/check-disclosure-order.mjs && node scripts/check-answer-slot.mjs && node scripts/check-aeo.mjs",
+    "postbuild": "node scripts/check-price-provenance.mjs && node scripts/check-tga-classes.mjs && node scripts/check-disclosure-order.mjs && node scripts/check-answer-slot.mjs && node scripts/check-aeo.mjs && node scripts/check-required-disclosure.mjs",
     "check-prices": "node scripts/check-price-provenance.mjs",
     "check-tga": "node scripts/check-tga-classes.mjs",
     "check-disclosure": "node scripts/check-disclosure-order.mjs",

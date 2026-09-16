@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { OFFER_FACTS, checkedOn } from "@/lib/offers";
 import { logoScale } from "@/lib/logo-optics";
+import { requiredDisclosureFor } from "@/lib/partner-disclosures";
 
 /**
  * The providers a hub covers, presented on identical terms.
@@ -184,11 +185,27 @@ export default function HubProviders({
                 )}
               </div>
 
-              <p className="pt-3 text-[12px] leading-relaxed text-[#5a665f]">
-                {p.earns
-                  ? `We earn a commission if you sign up with ${p.name} through our link, at no extra cost to you.`
-                  : `We earn nothing from ${p.name}.`}
-              </p>
+              {/* Where a partner requires its own wording, that wording IS the
+                  disclosure: printed verbatim, in readable contrast, beside the
+                  link it belongs to. Our generic line would otherwise say the
+                  same thing in words the partner did not agree to. */}
+              {(() => {
+                const required = p.earns ? requiredDisclosureFor(p.visitHref) : undefined;
+                if (required) {
+                  return (
+                    <p className="mt-3 rounded-xl border border-[#e5e9e7] bg-[#f8faf9] px-4 py-3 text-[13px] leading-relaxed text-[#3d4b44]">
+                      {required.text}
+                    </p>
+                  );
+                }
+                return (
+                  <p className="pt-3 text-[12px] leading-relaxed text-[#5a665f]">
+                    {p.earns
+                      ? `We earn a commission if you sign up with ${p.name} through our link, at no extra cost to you.`
+                      : `We earn nothing from ${p.name}.`}
+                  </p>
+                );
+              })()}
             </div>
           ))}
       </div>
