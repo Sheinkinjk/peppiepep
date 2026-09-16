@@ -93,7 +93,7 @@ export default function HairLossHubPage() {
           </nav>
           <div className="max-w-2xl">
             <h1 className="mt-4 text-4xl font-bold leading-[1.06] tracking-[-0.01em] text-[#10251b] sm:text-5xl">
-              Hair loss in Australia: <span className="italic text-[#0a7c42]">the options, compared properly</span>
+              Hair loss in Australia: <span className="italic text-[#0a7c42]">the options compared</span>
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#2b362f]">
               Prescription telehealth, topical products, and everything marketed in between. This hub separates the
@@ -154,7 +154,7 @@ export default function HairLossHubPage() {
         <HubProviders
           className="pb-10"
           heading="The providers we cover"
-          intro="One prescription telehealth service and one topical range, on the same four points. We earn from both, and neither can pay to be described more favourably."
+          intro="One prescription telehealth service and one topical range, answering the same four questions."
           providers={[
             {
               name: "Mosh",

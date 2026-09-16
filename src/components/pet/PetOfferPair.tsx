@@ -27,7 +27,7 @@ export default function PetOfferPair({ ctaPrefix }: { ctaPrefix: string }) {
       className="mb-10 !px-0"
       ctaPrefix={ctaPrefix}
       heading="The two insurers we cover"
-      intro="Both are underwritten by Pacific International Insurance, so they are two products carried by one insurer rather than independent alternatives. Cover, waiting periods, exclusions and limits sit in each provider's PDS and Target Market Determination, which is what to read before you buy. We earn a commission from both."
+      intro="Both are underwritten by Pacific International Insurance, so they are two products carried by one insurer rather than independent alternatives. Cover, waiting periods, exclusions and limits sit in each provider's PDS and Target Market Determination, which is what to read before you buy."
       providers={[
         {
           name: "Knose",

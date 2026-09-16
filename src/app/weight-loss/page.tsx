@@ -13,7 +13,7 @@ export const metadata = generateSEOMetadata(seoConfig.weightLossHub);
 
 const guides = [
   { href: "/moshy-review", title: "Moshy review", desc: "How the service runs, from application to subscription." },
-  { href: "/moshy-vs-juniper", title: "Moshy vs Juniper", desc: "The clinical and coaching platforms, split properly." },
+  { href: "/moshy-vs-juniper", title: "Moshy vs Juniper", desc: "How the clinical pathway and the coaching program differ." },
   { href: "/juniper", title: "Juniper review", desc: "The women-focused, coaching-led program: cost, what's included, and how it compares to Moshy." },
   { href: "/best-weight-loss-telehealth-australia", title: "Best weight loss telehealth", desc: "Moshy and Juniper side by side." },
   { href: "/cheapest-weight-loss-telehealth-australia", title: "Cheapest weight loss telehealth", desc: "Subscription vs pay-as-you-go, and what cheapest means." },
@@ -48,7 +48,7 @@ const faqs = [
   },
   {
     q: "Is a weight loss telehealth service the same as a weight loss clinic?",
-    a: "The care is similar, the format differs. An online clinic runs the assessment and follow-up remotely, while a traditional clinic sees you in person. Both use registered practitioners. Telehealth tends to be faster to start and more flexible; in-person care adds a physical exam and whole-of-health context. Our telehealth vs GP guide covers the trade properly.",
+    a: "The care is similar, the format differs. An online clinic runs the assessment and follow-up remotely, while a traditional clinic sees you in person. Both use registered practitioners. Telehealth tends to be faster to start and more flexible; in-person care adds a physical exam and whole-of-health context. Our telehealth vs GP guide sets out the trade.",
   },
   {
     q: "Where should I start if I'm comparing weight loss options in Australia?",
@@ -127,7 +127,7 @@ export default function WeightLossHubPage() {
           <div className="grid items-start gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
             <div>
               <h1 className="text-4xl font-bold leading-[1.06] tracking-[-0.01em] text-[#10251b] sm:text-5xl">
-                Weight loss telehealth in Australia: <span className="italic text-[#0a7c42]">online programs, compared properly</span>
+                Weight loss telehealth in Australia: <span className="italic text-[#0a7c42]">online programs compared</span>
               </h1>
               <p className="mt-5 text-lg leading-relaxed text-[#2b362f]">
                 Online weight loss telehealth lets you start without waiting weeks for an appointment: you complete an
@@ -146,20 +146,34 @@ export default function WeightLossHubPage() {
           </div>
         </section>
 
-        {/* Three pathways */}
+        {/* Where telehealth sits among the routes to care.
+            Was three equal cards headed "The three routes, compared". The
+            middle one, "Lifestyle programs", described a category we carry no
+            provider for and its "Compare the providers" link pointed at the
+            telehealth comparison, so it was a dead end wearing the same clothes
+            as a real route. Named in the lead instead, which is the honest
+            version: we say the category exists and that we do not cover it.
+            The GP card kept its link, which runs to /moshy-vs-gp, but lost
+            "for plenty of people the right place to begin": that was us making
+            a clinical recommendation we cannot support for an unseen reader. */}
         <section className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
           <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">
-            The three routes, compared
+            Where telehealth fits
           </h2>
-          <div className="mt-7 grid gap-4 lg:grid-cols-3">
+          <p className="mt-3 max-w-3xl text-[15px] leading-relaxed text-[#3d4b44]">
+            Two routes start with a practitioner assessing you: an online service, or your own GP. This hub compares
+            the online route. Non-clinical coaching and lifestyle programs are a separate market, and we do not compare
+            them here.
+          </p>
+          <div className="mt-7 grid gap-4 lg:grid-cols-2">
             <div className="rounded-2xl border border-[#0a7c42]/30 bg-[#f5f8f6] p-7">
-              <h3 className="mt-3 text-xl font-bold text-[#10251b]">
-                Medical telehealth
+              <h3 className="text-xl font-bold text-[#10251b]">
+                Online telehealth
               </h3>
               <p className="mt-2.5 text-sm leading-relaxed text-[#3d4b44]">
                 A registered practitioner assesses you individually before anything starts, and some applicants are
-                declined. Moshy runs a lean clinical pathway open to anyone eligible, Juniper adds coaching and markets
-                to women. The most structured route, priced as a subscription.
+                declined. Moshy runs a lean clinical pathway open to anyone eligible; Juniper adds coaching and markets
+                to women. Priced as a subscription.
               </p>
               <div className="mt-5 space-y-2 text-sm font-semibold">
                 <p><Link href="/best-weight-loss-telehealth-australia" className="text-[#0a7c42] hover:underline">Compare the providers →</Link></p>
@@ -168,29 +182,16 @@ export default function WeightLossHubPage() {
               </div>
             </div>
             <div className="rounded-2xl border border-[#e5e9e7] bg-[#f5f8f6] p-7">
-              <h3 className="mt-3 text-xl font-bold text-[#10251b]">
-                Lifestyle programs
-              </h3>
-              <p className="mt-2.5 text-sm leading-relaxed text-[#3d4b44]">
-                Coaching, habits and nutrition first, with practitioner support in the background. Suits people who
-                want structure and accountability rather than a clinical pathway.
-              </p>
-              <p className="mt-5 text-sm font-semibold">
-                <Link href="/best-weight-loss-telehealth-australia" className="text-[#0a7c42] hover:underline">
-                  Compare the providers →
-                </Link>
-              </p>
-            </div>
-            <div className="rounded-2xl border border-[#e5e9e7] bg-[#f5f8f6] p-7">
-              <h3 className="mt-3 text-xl font-bold text-[#10251b]">
+              <h3 className="text-xl font-bold text-[#10251b]">
                 Your GP
               </h3>
               <p className="mt-2.5 text-sm leading-relaxed text-[#3d4b44]">
-                In-person assessment, whole-of-health context, and Medicare offsets part of the cost. Slower to start
-                than an online service, and for plenty of people the right place to begin.
+                An in-person assessment with your whole health picture in view, and Medicare offsets part of the
+                consultation fee. Slower to start than an online service, and the only one of the two that includes a
+                physical examination.
               </p>
               <p className="mt-5 text-sm font-semibold">
-                <Link href="/moshy-vs-gp" className="text-[#0a7c42] hover:underline">Telehealth vs GP, compared →</Link>
+                <Link href="/moshy-vs-gp" className="text-[#0a7c42] hover:underline">Telehealth and your GP, side by side →</Link>
               </p>
             </div>
           </div>
@@ -200,7 +201,7 @@ export default function WeightLossHubPage() {
 
         <HubProviders
           heading="The providers we cover"
-          intro="Two Australian telehealth services, on the same four points. Both pay us a commission, and neither can pay to be described more favourably."
+          intro="Two Australian telehealth services, answering the same four questions."
           providers={[
             {
               name: "Moshy",

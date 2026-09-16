@@ -121,7 +121,7 @@ export default function HubProviders({
           .map((p) => (
             <div
               key={p.name}
-              className="rounded-2xl border border-[#e5e9e7] bg-white p-6 sm:grid sm:[grid-template-rows:subgrid]"
+              className="rounded-2xl border border-[#e5e9e7] bg-white p-6 shadow-[0_1px_2px_rgba(16,37,27,0.05)] sm:grid sm:[grid-template-rows:subgrid]"
               style={{ gridRow: `span ${ROW_COUNT} / span ${ROW_COUNT}` }}
             >
               <div className="flex items-center gap-3 pb-5">
@@ -141,21 +141,31 @@ export default function HubProviders({
                 <h3 className="text-xl font-bold text-[#10251b]">{p.name}</h3>
               </div>
 
-              {rows(p).map((r) => (
-                <dl
-                  key={r.k}
-                  className="flex flex-col gap-1 border-t border-[#eef1ef] py-3.5 text-[15px] leading-relaxed"
-                >
-                  {/* Label above the value, not beside it. A side-by-side label
-                      column keyed off the viewport crushed the value into a thin
-                      strip wherever a hub renders the cards inside a narrow
-                      centre column, as /pet-insurance does. */}
-                  <dt className="text-[13px] font-semibold uppercase tracking-[0.04em] text-[#5a665f]">
-                    {r.k}
-                  </dt>
-                  <dd className="text-[#3d4b44]">{r.v}</dd>
-                </dl>
-              ))}
+              {/* One list per card, nested as its own subgrid so the four rows
+                  still take their heights from the parent and line up across
+                  providers. Each row was briefly a separate <dl> holding a
+                  single pair, which rendered the same but described the card as
+                  four unrelated lists. */}
+              <dl
+                className="sm:grid sm:[grid-template-rows:subgrid]"
+                style={{ gridRow: `span ${rows(p).length} / span ${rows(p).length}` }}
+              >
+                {rows(p).map((r) => (
+                  <div
+                    key={r.k}
+                    className="flex flex-col gap-1 border-t border-[#eef1ef] py-3.5 text-[15px] leading-relaxed"
+                  >
+                    {/* Label above the value, not beside it. A side-by-side label
+                        column keyed off the viewport crushed the value into a thin
+                        strip wherever a hub renders the cards inside a narrow
+                        centre column, as /pet-insurance does. */}
+                    <dt className="text-[13px] font-semibold uppercase tracking-[0.04em] text-[#5a665f]">
+                      {r.k}
+                    </dt>
+                    <dd className="text-[#3d4b44]">{r.v}</dd>
+                  </div>
+                ))}
+              </dl>
 
               <div className="flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-[#eef1ef] pt-5 text-sm font-semibold">
                 <Link href={p.href} className="text-[#0a7c42] hover:underline">

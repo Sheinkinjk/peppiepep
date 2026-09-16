@@ -116,7 +116,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/best-weight-loss-telehealth-australia": {
     "published": "2026-06-29",
-    "updated": "2026-09-15"
+    "updated": "2026-09-16"
   },
   "/blinq": {
     "published": "2026-07-14",
@@ -188,7 +188,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/cheapest-weight-loss-telehealth-australia": {
     "published": "2026-07-06",
-    "updated": "2026-09-15"
+    "updated": "2026-09-16"
   },
   "/cloudtalk": {
     "published": "2026-07-09",
@@ -300,7 +300,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/hair-loss": {
     "published": "2026-07-03",
-    "updated": "2026-09-15"
+    "updated": "2026-09-16"
   },
   "/hair-loss-quiz": {
     "published": "2026-07-08",
@@ -584,7 +584,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/moshy-alternatives": {
     "published": "2026-07-02",
-    "updated": "2026-09-15"
+    "updated": "2026-09-16"
   },
   "/moshy-eligibility": {
     "published": "2026-07-02",
@@ -600,7 +600,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/moshy-vs-juniper": {
     "published": "2026-06-30",
-    "updated": "2026-09-15"
+    "updated": "2026-09-16"
   },
   "/moshy-vs-pilot": {
     "published": "2026-07-06",
@@ -932,7 +932,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/weight-loss": {
     "published": "2026-07-03",
-    "updated": "2026-09-15"
+    "updated": "2026-09-16"
   },
   "/weight-loss-cost-calculator": {
     "published": "2026-07-07",
@@ -956,7 +956,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/weight-loss-telehealth-women-australia": {
     "published": "2026-07-24",
-    "updated": "2026-09-15"
+    "updated": "2026-09-16"
   },
   "/weight-loss-treatment-eligibility-australia": {
     "published": "2026-08-07",
