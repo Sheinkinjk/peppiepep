@@ -99,7 +99,7 @@ const brand: RetailerBrand = {
   goPath: "/go/emma-sleep-brand",
   ctaLabel: "View Emma's current pricing",
   commissionNote:
-    "We earn a commission if you buy through that link, at no extra cost to you. We hold no Emma discount code, so the price you see is the public one and there is nothing we can claim saves you money.",
+    "We earn a commission if you buy through that link, at no extra cost to you. The price you see is the public one: we have no code, and no arrangement that makes a mattress cheaper for you than it already is.",
   faqs: [
     {
       q: "How much does an Emma mattress cost in Australia?",
@@ -115,7 +115,7 @@ const brand: RetailerBrand = {
     },
     {
       q: "Does Refer Labs earn money from this page?",
-      a: "Yes, through Commission Factory, if you buy after following our link, at no extra cost to you. It does not change what this page says, including the part about struck-through pricing.",
+      a: "Yes, through Commission Factory, if you buy after following our link. We hold no Emma code, so we cannot claim to get you a better price than the site already shows. The section telling you to ignore the struck-through figure is the part a paying brand would most want removed, and it stays.",
     },
   ],
   disclaimer: (

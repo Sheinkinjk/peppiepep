@@ -79,7 +79,7 @@ const brand: RetailerBrand = {
   goPath: "/go/aussie-health-skin-hub",
   ctaLabel: "Browse Aussie Health Products",
   commissionNote:
-    "We earn a commission if you buy through that link, at no extra cost to you. We hold no Aussie Health Products discount code, so there is nothing to type and no saving we can claim on your behalf.",
+    "We earn a commission if you buy through that link, at no extra cost to you. We have assessed none of the 300 brands it carries, and this page does not pretend otherwise.",
   faqs: [
     {
       q: "What does Aussie Health Products sell?",
@@ -95,7 +95,7 @@ const brand: RetailerBrand = {
     },
     {
       q: "Does Refer Labs earn money from this page?",
-      a: "Yes, through Commission Factory, if you buy after following our link, at no extra cost to you. It does not change what this page says, and we have not assessed any individual product the retailer carries.",
+      a: "Yes, through Commission Factory, if you buy after following our link. We hold no code here. Because it is a marketplace, a commission on the shop tells you nothing about the product you put in the basket, and neither do we.",
     },
   ],
   disclaimer: (

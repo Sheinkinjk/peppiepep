@@ -88,7 +88,7 @@ const brand: RetailerBrand = {
   goPath: "/go/edible-beauty-skin-hub",
   ctaLabel: "View Edible Beauty's current pricing",
   commissionNote:
-    "We earn a commission if you buy through that link, at no extra cost to you. We hold no Edible Beauty discount code, so there is nothing to type and no saving we can claim on your behalf.",
+    "We earn a commission if you buy through that link, at no extra cost to you. We still say on this page that we could find no organic certification, which is the fact a paying brand would least want stated.",
   faqs: [
     {
       q: "How much does Edible Beauty cost?",
@@ -104,7 +104,7 @@ const brand: RetailerBrand = {
     },
     {
       q: "Does Refer Labs earn money from this page?",
-      a: "Yes, through Commission Factory, if you buy after following our link, at no extra cost to you. It does not change what this page says, including the part about certification.",
+      a: "Yes, through Commission Factory, if you buy after following our link. We hold no Edible Beauty code, so there is no saving we can claim. The certification section stays exactly as written, which is the point: a commission does not buy a softer sentence.",
     },
   ],
   disclaimer: (

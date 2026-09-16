@@ -93,7 +93,7 @@ const brand: RetailerBrand = {
   goPath: "/go/foreo-skin-hub",
   ctaLabel: "View Foreo's current Australian pricing",
   commissionNote:
-    "We earn a commission if you buy through that link, at no extra cost to you. We hold no Foreo discount code, so there is nothing to type and no saving we can claim on your behalf.",
+    "We earn a commission if you buy through that link, at no extra cost to you. It did not buy the paragraph above about the cancelled registration, which is the least flattering thing on this page.",
   faqs: [
     {
       q: "How much do Foreo devices cost in Australia?",
@@ -109,7 +109,7 @@ const brand: RetailerBrand = {
     },
     {
       q: "Does Refer Labs earn money from this page?",
-      a: "Yes, through Commission Factory, if you buy after following our link, at no extra cost to you. It does not change what this page says, and we hold no Foreo discount code.",
+      a: "Yes, through Commission Factory, if you buy after following our link. We hold no Foreo discount code, so the price you see is the public one. The regulatory section above is the test of whether that commission bought anything: it did not.",
     },
   ],
   disclaimer: (

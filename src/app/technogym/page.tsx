@@ -83,7 +83,7 @@ const brand: RetailerBrand = {
   goPath: "/go/technogym-brand",
   ctaLabel: "View Technogym's current Australian pricing",
   commissionNote:
-    "We earn a commission if you buy through that link, at no extra cost to you. We hold no Technogym discount code, so there is nothing to type and no saving we can claim on your behalf.",
+    "We earn a commission if you buy through that link, at no extra cost to you. It is why the paragraph recommending cheaper equipment we earn nothing from is worth reading twice.",
   faqs: [
     {
       q: "How much does Technogym equipment cost in Australia?",
@@ -99,7 +99,7 @@ const brand: RetailerBrand = {
     },
     {
       q: "Does Refer Labs earn money from this page?",
-      a: "Yes, through Commission Factory, if you buy after following our link, at no extra cost to you. It does not change what this page says.",
+      a: "Yes, through Commission Factory, if you buy after following our link, and this is the most expensive thing we link to anywhere. That is precisely why the page says cheaper equipment exists and that we earn nothing from it.",
     },
   ],
   disclaimer: (

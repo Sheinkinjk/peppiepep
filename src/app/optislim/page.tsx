@@ -45,7 +45,7 @@ const faqs = [
   },
   {
     q: "Does Refer Labs earn money from this page?",
-    a: "Yes. If you buy through our link we may earn a commission, at no extra cost to you, through Commission Factory. It does not change what this page says. We hold no discount code for OptiSlim, so there is nothing to type and no saving we can claim.",
+    a: "Yes, through Commission Factory, if you buy after following our link. We hold no OptiSlim code. The commission did not stop this page telling you the regulator expects a doctor and a dietitian to be supervising you, which is not a sentence that sells shakes.",
   },
 ];
 
@@ -221,8 +221,9 @@ export default function OptislimPage() {
             </Link>
           </div>
           <p className="mt-3 text-[13px] leading-relaxed text-[#5a665f]">
-            We earn a commission if you buy through that link, at no extra cost to you. We hold no OptiSlim discount
-            code, so there is nothing to type and no saving we can claim on your behalf.
+            We earn a commission if you buy through that link, at no extra cost to you. We hold no OptiSlim code.
+            The commission did not stop this page opening with the regulator&apos;s view that a doctor and a dietitian
+            should be supervising you.
           </p>
         </section>
 

@@ -1033,6 +1033,14 @@ export const PAGE_DATES: Record<string, PageDates> = {
   "/optislim": {
     "published": "2026-09-16",
     "updated": "2026-09-16"
+  },
+  "/emma-sleep": {
+    "published": "2026-09-16",
+    "updated": "2026-09-16"
+  },
+  "/technogym": {
+    "published": "2026-09-16",
+    "updated": "2026-09-16"
   }
 };
 

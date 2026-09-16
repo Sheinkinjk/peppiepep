@@ -14,10 +14,20 @@ import { SITE_URL, SCHEMA_AUTHOR, SCHEMA_PUBLISHER } from "@/lib/seo";
  *
  * It is a shared component rather than three copies because the SHAPE is the
  * same every time (what they sell, what it costs, what we could not verify, the
- * disclosure, the FAQ) while the CONTENT is entirely per-brand. Copying the
- * shape three times is how sibling pages end up sharing a sentence skeleton with
- * the nouns swapped, which this repo greps for. The shape is here; every word a
- * reader sees is passed in.
+ * disclosure, the FAQ) while the CONTENT is entirely per-brand. The shape is
+ * here; every word a reader sees is passed in.
+ *
+ * That last sentence was aspirational when it was first written, and the pages
+ * did not honour it. Five of them shipped on 16 Sep 2026 with the same
+ * disclosure tail ("nothing to type and no saving we can claim on your behalf")
+ * and the same answer to "does Refer Labs earn money from this page?", nouns
+ * swapped. A shared shell makes that easy: the props look filled in even when
+ * the words are a template. Fixed the same day.
+ *
+ * So, for the next partner: `commissionNote` and the earnings FAQ must say what
+ * the commission did NOT buy on THIS page, naming the specific unflattering
+ * thing the page still states. If the sentence would read identically on
+ * another brand's page, it is not finished.
  *
  * `unverified` is required and may not be empty. Every one of these pages earns
  * a commission, so each states plainly what we could NOT confirm about the
