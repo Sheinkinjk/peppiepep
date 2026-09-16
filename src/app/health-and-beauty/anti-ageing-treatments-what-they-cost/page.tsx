@@ -41,9 +41,9 @@ const faqs = [
 export default function Page() {
   return (
     <SectionGuideShell
-      section="Skin and beauty"
-      sectionHref="/skin-and-beauty"
-      slug="/skin-and-beauty/anti-ageing-treatments-what-they-cost"
+      section="Health and beauty"
+      sectionHref="/health-and-beauty"
+      slug="/health-and-beauty/anti-ageing-treatments-what-they-cost"
       crumb="Anti-ageing pricing"
       h1={<>Anti-ageing treatments: <span className="italic text-[#0a7c42]">why nobody will tell you the price</span></>}
       intro="Almost no Australian clinic publishes a price for these treatments, and the reason is regulatory rather than evasive: many involve prescription-only medicines, and advertising those to the public is prohibited here, which extends to promoting them by price. So the question that gets you a usable number is not what it costs, it is what the quote includes."
@@ -51,9 +51,9 @@ export default function Page() {
       description={seoConfig.antiAgeingCosts.description}
       faqs={faqs}
       related={[
-        { href: "/skin-and-beauty/led-face-mask-comparison-australia", label: "LED face masks" },
-        { href: "/skin-and-beauty/retinol-vs-prescription-strength-australia", label: "Retinol vs prescription-strength" },
-        { href: "/skin-and-beauty/foreo-luna-vs-ufo", label: "Foreo Luna vs UFO" },
+        { href: "/health-and-beauty/led-face-mask-comparison-australia", label: "LED face masks" },
+        { href: "/health-and-beauty/retinol-vs-prescription-strength-australia", label: "Retinol vs prescription-strength" },
+        { href: "/health-and-beauty/foreo-luna-vs-ufo", label: "Foreo Luna vs UFO" },
       ]}
     >
       <section>

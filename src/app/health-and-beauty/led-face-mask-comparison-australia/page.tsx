@@ -42,9 +42,9 @@ const faqs = [
 export default function Page() {
   return (
     <SectionGuideShell
-      section="Skin and beauty"
-      sectionHref="/skin-and-beauty"
-      slug="/skin-and-beauty/led-face-mask-comparison-australia"
+      section="Health and beauty"
+      sectionHref="/health-and-beauty"
+      slug="/health-and-beauty/led-face-mask-comparison-australia"
       crumb="LED face masks"
       h1={<>LED face masks in Australia: <span className="italic text-[#0a7c42]">what they cost here</span></>}
       intro="At-home LED devices are one of the few skincare categories where the Australian price gap is large, visible and easy to misread. Here is what the numbers are, and what to check on a listing before you spend several hundred dollars."
@@ -52,9 +52,9 @@ export default function Page() {
       description={seoConfig.ledFaceMask.description}
       faqs={faqs}
       related={[
-        { href: "/skin-and-beauty/anti-ageing-treatments-what-they-cost", label: "Clinic treatment pricing" },
-        { href: "/skin-and-beauty/best-value-skincare-australia-cost-per-use", label: "Cost per use" },
-        { href: "/skin-and-beauty/foreo-luna-vs-ufo", label: "Foreo Luna vs UFO" },
+        { href: "/health-and-beauty/anti-ageing-treatments-what-they-cost", label: "Clinic treatment pricing" },
+        { href: "/health-and-beauty/best-value-skincare-australia-cost-per-use", label: "Cost per use" },
+        { href: "/health-and-beauty/foreo-luna-vs-ufo", label: "Foreo Luna vs UFO" },
       ]}
     >
       <section>

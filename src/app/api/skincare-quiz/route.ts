@@ -47,7 +47,7 @@ export async function POST(request: Request) {
       <p>Thanks for your interest in our skin and beauty section.</p>
       <p>We're building it now. You'll hear from us once we've researched providers in the category and have something worth reading, and not before. We don't send filler.</p>
       <p>In the meantime the guides are live and free to read: what over-the-counter and prescription-strength routes involve, what LED devices cost in Australia, and how to judge skincare on cost per use.</p>
-      <p><a href="https://referlabs.com.au/skin-and-beauty" style="color:#0a7c42;">Read the skin &amp; beauty guides</a></p>
+      <p><a href="https://referlabs.com.au/health-and-beauty" style="color:#0a7c42;">Read the skin &amp; beauty guides</a></p>
       <p style="color:#6e7b74;font-size:13px;">General information for an Australian audience, not medical advice.</p>
     </div>`,
     to: email,
@@ -57,7 +57,7 @@ export async function POST(request: Request) {
   }
 
   await sendAdminNotification({
-    subject: `🧴 Skin & beauty waitlist: ${email}`,
+    subject: `🧴 Health & beauty waitlist: ${email}`,
     html: `<p style="font-family:Arial,sans-serif;">New skin &amp; beauty signup: <strong>${esc(email)}</strong> (source: ${esc(source)}${result ? `, quiz result: ${esc(result)}` : ""}).${stored ? "" : " <strong style=\"color:#c0392b;\">NOT stored in the database (add this email to your list manually).</strong>"}</p>`,
   });
 

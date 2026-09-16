@@ -1,13 +1,13 @@
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import SkincareQuiz from "@/components/consumer/SkincareQuiz";
-import ComingSoonNote from "@/components/consumer/ComingSoonNote";
+import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
 
 import PartnerRoute from "@/components/consumer/PartnerRoute";
 export const metadata = generateSEOMetadata(seoConfig.skincareQuiz);
 
-const SLUG = "/skin-and-beauty/skincare-quiz";
+const SLUG = "/health-and-beauty/skincare-quiz";
 
 const faqs = [
   {
@@ -29,7 +29,7 @@ const breadcrumbSchema = {
   "@type": "BreadcrumbList",
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Refer Labs", item: SITE_URL },
-    { "@type": "ListItem", position: 2, name: "Skin & Beauty", item: `${SITE_URL}/skin-and-beauty` },
+    { "@type": "ListItem", position: 2, name: "Health & Beauty", item: `${SITE_URL}/health-and-beauty` },
     { "@type": "ListItem", position: 3, name: "Skincare quiz", item: `${SITE_URL}${SLUG}` },
   ],
 };
@@ -65,7 +65,7 @@ export default function SkincareQuizPage() {
         <nav className="flex flex-wrap items-center gap-2 text-sm text-[#627068]">
           <Link href="/" className="hover:text-[#0a7c42]">Refer Labs</Link>
           <span>/</span>
-          <Link href="/skin-and-beauty" className="hover:text-[#0a7c42]">Skin &amp; beauty</Link>
+          <Link href="/health-and-beauty" className="hover:text-[#0a7c42]">Skin &amp; beauty</Link>
           <span>/</span>
           <span className="text-[#2b362f]">Skincare quiz</span>
         </nav>
@@ -77,6 +77,10 @@ export default function SkincareQuizPage() {
           Four questions about what you want and what you will realistically keep up. No health questions, no email
           wall, and the result points at guidance rather than a product.
         </p>
+        {/* This page used to take its disclosure from ComingSoonNote, which was
+            removed on 16 Sep 2026 when the section went live. The note is gone;
+            the duty to disclose above the first affiliate link is not. */}
+        <AffiliateDisclosure compact className="mt-4 max-w-3xl" />
 
         <div className="mt-8">
           <SkincareQuiz />
@@ -94,9 +98,6 @@ export default function SkincareQuizPage() {
           </dl>
         </section>
 
-        <div className="mt-10">
-          <ComingSoonNote category="Skin and beauty" />
-        </div>
         <PartnerRoute
           className="mt-12"
           heading="Where to go next"

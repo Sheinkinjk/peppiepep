@@ -38,12 +38,12 @@ const picks = [
 // client JS and the content is in the DOM for crawlers either way.
 const comingSoonCategories = [
   {
-    href: "/skin-and-beauty", icon: Sparkles, title: "Skin & Beauty",
+    href: "/health-and-beauty", icon: Sparkles, title: "Health & Beauty",
     accent: "#7A5A8C", tint: "#F2ECF6",
     note: "What the actives do, what devices cost here, and how the prescription route differs.",
     links: [
-      { h: "/skin-and-beauty/led-face-mask-comparison-australia", l: "LED masks: real prices" },
-      { h: "/skin-and-beauty/acne-treatment-options-and-costs-australia", l: "Acne: routes and costs" },
+      { h: "/health-and-beauty/led-face-mask-comparison-australia", l: "LED masks: real prices" },
+      { h: "/health-and-beauty/acne-treatment-options-and-costs-australia", l: "Acne: routes and costs" },
     ],
   },
   {

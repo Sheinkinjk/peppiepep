@@ -32,6 +32,16 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // Renamed 16 Sep 2026: /skin-and-beauty became /health-and-beauty when the
+      // hub widened past skincare to cover nutrition and health products, and a
+      // fourth partner (OptiSlim) that sells neither skin nor beauty. The slug
+      // is the section's name in every SERP and AI citation, so leaving it as
+      // "skin" would have described the hub wrongly for as long as it ranked.
+      // 301, not 308: permanent, and 301 is the code every crawler reads as
+      // such. Each guide moves with the hub rather than being stranded under a
+      // section path that no longer exists.
+      { source: '/skin-and-beauty', destination: '/health-and-beauty', statusCode: 301 },
+      { source: '/skin-and-beauty/:path*', destination: '/health-and-beauty/:path*', statusCode: 301 },
       // Two merges (13 Sep 2026). Both pages sat below position 29 against SERPs
       // with no publisher slot (clinics, CSIRO, CHOICE) and carried no fact of
       // their own. 301 rather than 308 because the move is permanent and 301 is

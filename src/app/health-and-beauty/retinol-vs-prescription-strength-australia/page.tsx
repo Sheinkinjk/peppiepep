@@ -39,9 +39,9 @@ const faqs = [
 export default function Page() {
   return (
     <SectionGuideShell
-      section="Skin and beauty"
-      sectionHref="/skin-and-beauty"
-      slug="/skin-and-beauty/retinol-vs-prescription-strength-australia"
+      section="Health and beauty"
+      sectionHref="/health-and-beauty"
+      slug="/health-and-beauty/retinol-vs-prescription-strength-australia"
       crumb="Retinol vs prescription-strength"
       h1={<>Retinol vs prescription-strength: <span className="italic text-[#0a7c42]">what separates them</span></>}
       intro="You can buy one off a shelf today and the other only after a practitioner assesses you. Both are vitamin A derivatives, but in Australia the stronger topicals are prescription-only, and that regulatory line, not the chemistry, is what decides which route is open to you and how carefully the product needs to be used."
@@ -49,9 +49,9 @@ export default function Page() {
       description={seoConfig.retinolVsPrescription.description}
       faqs={faqs}
       related={[
-        { href: "/skin-and-beauty/acne-treatment-options-and-costs-australia", label: "Acne: routes and costs" },
-        { href: "/skin-and-beauty/best-value-skincare-australia-cost-per-use", label: "Cost per use" },
-        { href: "/skin-and-beauty/skincare-quiz", label: "Which routine fits you?" },
+        { href: "/health-and-beauty/acne-treatment-options-and-costs-australia", label: "Acne: routes and costs" },
+        { href: "/health-and-beauty/best-value-skincare-australia-cost-per-use", label: "Cost per use" },
+        { href: "/health-and-beauty/skincare-quiz", label: "Which routine fits you?" },
       ]}
     >
       <section>

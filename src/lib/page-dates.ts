@@ -786,39 +786,39 @@ export const PAGE_DATES: Record<string, PageDates> = {
     "published": "2025-12-28",
     "updated": "2026-08-28"
   },
-  "/skin-and-beauty/acne-treatment-options-and-costs-australia": {
+  "/health-and-beauty/acne-treatment-options-and-costs-australia": {
     "published": "2026-08-20",
     "updated": "2026-09-15"
   },
-  "/skin-and-beauty/anti-ageing-treatments-what-they-cost": {
+  "/health-and-beauty/anti-ageing-treatments-what-they-cost": {
     "published": "2026-08-20",
     "updated": "2026-09-14"
   },
-  "/skin-and-beauty/best-value-skincare-australia-cost-per-use": {
+  "/health-and-beauty/best-value-skincare-australia-cost-per-use": {
     "published": "2026-08-20",
     "updated": "2026-09-15"
   },
-  "/skin-and-beauty/foreo-luna-vs-ufo": {
+  "/health-and-beauty/foreo-luna-vs-ufo": {
     "published": "2026-09-04",
     "updated": "2026-09-15"
   },
-  "/skin-and-beauty/led-face-mask-comparison-australia": {
+  "/health-and-beauty/led-face-mask-comparison-australia": {
     "published": "2026-08-20",
     "updated": "2026-09-15"
   },
-  "/skin-and-beauty/natural-skincare-australia": {
+  "/health-and-beauty/natural-skincare-australia": {
     "published": "2026-09-04",
     "updated": "2026-09-15"
   },
-  "/skin-and-beauty": {
+  "/health-and-beauty": {
     "published": "2026-08-20",
     "updated": "2026-09-15"
   },
-  "/skin-and-beauty/retinol-vs-prescription-strength-australia": {
+  "/health-and-beauty/retinol-vs-prescription-strength-australia": {
     "published": "2026-08-20",
     "updated": "2026-09-15"
   },
-  "/skin-and-beauty/skincare-quiz": {
+  "/health-and-beauty/skincare-quiz": {
     "published": "2026-08-20",
     "updated": "2026-09-15"
   },

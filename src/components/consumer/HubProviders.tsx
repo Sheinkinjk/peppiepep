@@ -104,7 +104,17 @@ export default function HubProviders({
    * a plain block below sm, where the subgrid does not apply.
    */
   const ROW_COUNT = 7;
-  const columns = providers.length >= 3 ? "sm:grid-cols-3" : "sm:grid-cols-2";
+  /*
+   * Four providers wrap to two pairs below lg and line up as one row at lg.
+   * The row spans are explicit, so a wrapped pair still aligns with its own
+   * partner even when all four do not share a single row.
+   */
+  const columns =
+    providers.length >= 4
+      ? "sm:grid-cols-2 lg:grid-cols-4"
+      : providers.length === 3
+        ? "sm:grid-cols-3"
+        : "sm:grid-cols-2";
 
   return (
     <section className={`mx-auto max-w-6xl px-5 sm:px-8 ${className}`}>

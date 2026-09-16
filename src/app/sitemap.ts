@@ -61,16 +61,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/sleep/mattress-comparison-australia`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE}/sleep/sleep-tracker-comparison-australia`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE}/sleep/how-much-does-good-sleep-cost`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.68 },
-    // Skin & beauty (19 Aug 2026). Category live and indexed ahead of partners.
-    { url: `${BASE}/skin-and-beauty`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.85 },
-    { url: `${BASE}/skin-and-beauty/retinol-vs-prescription-strength-australia`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE}/skin-and-beauty/led-face-mask-comparison-australia`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE}/skin-and-beauty/best-value-skincare-australia-cost-per-use`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE}/skin-and-beauty/acne-treatment-options-and-costs-australia`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE}/skin-and-beauty/anti-ageing-treatments-what-they-cost`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE}/skin-and-beauty/foreo-luna-vs-ufo`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.72 },
-    { url: `${BASE}/skin-and-beauty/natural-skincare-australia`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.72 },
-    { url: `${BASE}/skin-and-beauty/skincare-quiz`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.65 },
+    // Health & beauty (19 Aug 2026). Category live and indexed ahead of partners.
+    { url: `${BASE}/health-and-beauty`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.85 },
+    // The four Health & Beauty brand pages (16 Sep 2026). Each is a commercial
+    // partner with its own page for the first time; before this they existed
+    // only as /go/ redirects and had nothing to rank.
+    { url: `${BASE}/optislim`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/foreo`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/edible-beauty`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.78 },
+    { url: `${BASE}/aussie-health-products`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.78 },
+    { url: `${BASE}/health-and-beauty/retinol-vs-prescription-strength-australia`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE}/health-and-beauty/led-face-mask-comparison-australia`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE}/health-and-beauty/best-value-skincare-australia-cost-per-use`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE}/health-and-beauty/acne-treatment-options-and-costs-australia`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE}/health-and-beauty/anti-ageing-treatments-what-they-cost`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE}/health-and-beauty/foreo-luna-vs-ufo`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.72 },
+    { url: `${BASE}/health-and-beauty/natural-skincare-australia`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.72 },
+    { url: `${BASE}/health-and-beauty/skincare-quiz`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.65 },
     { url: `${BASE}/for-business`,       lastModified: FRESH,  changeFrequency: 'monthly', priority: 0.7 },
     // Programmatic category hubs (auto-generated from the catalog)
     ...CATALOG.map((v) => ({

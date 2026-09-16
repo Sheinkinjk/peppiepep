@@ -53,9 +53,9 @@ const faqs = [
 export default function Page() {
   return (
     <SectionGuideShell
-      section="Skin and beauty"
-      sectionHref="/skin-and-beauty"
-      slug="/skin-and-beauty/natural-skincare-australia"
+      section="Health and beauty"
+      sectionHref="/health-and-beauty"
+      slug="/health-and-beauty/natural-skincare-australia"
       crumb="Natural skincare"
       h1={<>Natural skincare in Australia: <span className="italic text-[#0a7c42]">what the label has to prove</span></>}
       intro={`"Natural" carries no certification requirement on an Australian cosmetic. "Certified organic" does, and the certifier publishes a searchable register, so one of the two words on a bottle can be checked in a minute and the other cannot. That is the whole practical difference, and it is the check to run before you compare anything else.`}
@@ -64,9 +64,9 @@ export default function Page() {
       updated="2026-09-04"
       faqs={faqs}
       related={[
-        { href: "/skin-and-beauty/best-value-skincare-australia-cost-per-use", label: "Cost per use, not sticker price" },
-        { href: "/skin-and-beauty/retinol-vs-prescription-strength-australia", label: "Retinol vs prescription strength" },
-        { href: "/skin-and-beauty/acne-treatment-options-and-costs-australia", label: "Acne: the routes and the costs" },
+        { href: "/health-and-beauty/best-value-skincare-australia-cost-per-use", label: "Cost per use, not sticker price" },
+        { href: "/health-and-beauty/retinol-vs-prescription-strength-australia", label: "Retinol vs prescription strength" },
+        { href: "/health-and-beauty/acne-treatment-options-and-costs-australia", label: "Acne: the routes and the costs" },
       ]}
     >
       <section>
@@ -157,7 +157,7 @@ export default function Page() {
           sets its at $110 and Aussie Health Products at $99, both read on {READ_ON}, so a small
           order can carry a delivery cost that outweighs the price difference you were comparing.
           Our{" "}
-          <a href="/skin-and-beauty/best-value-skincare-australia-cost-per-use" className="font-semibold text-[#0a7c42] underline">
+          <a href="/health-and-beauty/best-value-skincare-australia-cost-per-use" className="font-semibold text-[#0a7c42] underline">
             cost-per-use page
           </a>{" "}
           takes that further.

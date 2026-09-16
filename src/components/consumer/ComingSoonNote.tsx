@@ -42,7 +42,7 @@ const BY_CATEGORY: Record<string, Variant> = {
   // wording promised "nothing here earns us a commission", which went false the
   // moment a partner landed.
   "Men's health": "partnered",
-  "Skin and beauty": "partnered",
+  "Health and beauty": "partnered",
   // Sits under men's health, so it takes that hub's wording.
   "This page": "d",
 };

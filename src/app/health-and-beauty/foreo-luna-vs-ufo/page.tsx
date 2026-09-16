@@ -87,9 +87,9 @@ function DeviceTable({ rows, caption, descriptionHeader }: { rows: readonly { na
 export default function Page() {
   return (
     <SectionGuideShell
-      section="Skin and beauty"
-      sectionHref="/skin-and-beauty"
-      slug="/skin-and-beauty/foreo-luna-vs-ufo"
+      section="Health and beauty"
+      sectionHref="/health-and-beauty"
+      slug="/health-and-beauty/foreo-luna-vs-ufo"
       crumb="Foreo Luna vs UFO"
       h1={<>Foreo Luna vs UFO: <span className="italic text-[#0a7c42]">they are not alternatives</span></>}
       intro={`They are not alternatives. The LUNA is ${FOREO.lunaWhatItIs}, ${FOREO_ENTRY.luna.price} to ${FOREO_TOP.luna.price}. The UFO is ${FOREO.ufoWhatItIs}, ${FOREO_ENTRY.ufo.price} to ${FOREO_TOP.ufo.price}. Separate product lines that share a brand, so the choice is which of two different jobs you want done, not which device is better. Australian list prices read off foreo.com on ${FOREO.readOnLabel}.`}
@@ -98,9 +98,9 @@ export default function Page() {
       updated={FOREO.readOn}
       faqs={faqs}
       related={[
-        { href: "/skin-and-beauty/led-face-mask-comparison-australia", label: "LED face masks compared" },
-        { href: "/skin-and-beauty/best-value-skincare-australia-cost-per-use", label: "Cost per use, not sticker price" },
-        { href: "/skin-and-beauty/anti-ageing-treatments-what-they-cost", label: "Anti-ageing treatment pricing" },
+        { href: "/health-and-beauty/led-face-mask-comparison-australia", label: "LED face masks compared" },
+        { href: "/health-and-beauty/best-value-skincare-australia-cost-per-use", label: "Cost per use, not sticker price" },
+        { href: "/health-and-beauty/anti-ageing-treatments-what-they-cost", label: "Anti-ageing treatment pricing" },
       ]}
     >
       <section>
@@ -201,7 +201,7 @@ export default function Page() {
           It is also why the UFO table above describes each model by what it emits rather than
           repeating the marketing name. We are not in a position to say these devices do anything
           therapeutic, so we do not describe them as though they do. The same reasoning is why our{" "}
-          <a href="/skin-and-beauty/led-face-mask-comparison-australia" className="font-semibold text-[#0a7c42] underline">
+          <a href="/health-and-beauty/led-face-mask-comparison-australia" className="font-semibold text-[#0a7c42] underline">
             LED face mask page
           </a>{" "}
           tells you to search the register there too.

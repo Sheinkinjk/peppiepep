@@ -72,8 +72,8 @@ function resolve(a: Answers): Result {
       title: "Start with an assessment, not another product",
       body: "Persistent breakouts are the case where cycling through over-the-counter products tends to cost more than getting assessed. A GP consult is the cheaper first step and is also the gateway to a specialist referral, which is what makes a Medicare rebate available on a dermatologist appointment.",
       next: [
-        { href: "/skin-and-beauty/acne-treatment-options-and-costs-australia", label: "Acne: the routes and costs" },
-        { href: "/skin-and-beauty/retinol-vs-prescription-strength-australia", label: "Over-the-counter vs prescription-strength" },
+        { href: "/health-and-beauty/acne-treatment-options-and-costs-australia", label: "Acne: the routes and costs" },
+        { href: "/health-and-beauty/retinol-vs-prescription-strength-australia", label: "Over-the-counter vs prescription-strength" },
       ],
     };
   }
@@ -82,8 +82,8 @@ function resolve(a: Answers): Result {
       title: "Over-the-counter first, with a deadline",
       body: "Since you would rather handle it yourself, give an over-the-counter approach a genuine run, which means consistent use over months rather than weeks. Set yourself a review point. If nothing has shifted by then, an assessment costs less than the next three products you would otherwise try.",
       next: [
-        { href: "/skin-and-beauty/acne-treatment-options-and-costs-australia", label: "When to stop buying and get assessed" },
-        { href: "/skin-and-beauty/best-value-skincare-australia-cost-per-use", label: "What your routine costs per use" },
+        { href: "/health-and-beauty/acne-treatment-options-and-costs-australia", label: "When to stop buying and get assessed" },
+        { href: "/health-and-beauty/best-value-skincare-australia-cost-per-use", label: "What your routine costs per use" },
       ],
     };
   }
@@ -92,8 +92,8 @@ function resolve(a: Answers): Result {
       title: "Work out the annual figure before you book anything",
       body: "At this budget both at-home devices and clinic treatments are on the table, and they are priced completely differently. A device is one payment; clinic treatments are usually maintenance. Comparing them means converting both to a twelve-month cost, which is the number almost nobody asks for.",
       next: [
-        { href: "/skin-and-beauty/anti-ageing-treatments-what-they-cost", label: "Why clinics won't quote a price" },
-        { href: "/skin-and-beauty/led-face-mask-comparison-australia", label: "What LED devices cost here" },
+        { href: "/health-and-beauty/anti-ageing-treatments-what-they-cost", label: "Why clinics won't quote a price" },
+        { href: "/health-and-beauty/led-face-mask-comparison-australia", label: "What LED devices cost here" },
       ],
     };
   }
@@ -102,8 +102,8 @@ function resolve(a: Answers): Result {
       title: "A consistent topical routine, judged on cost per use",
       body: "At this budget the topical route is where the value is, and consistency matters more than potency. The trap is buying progressively stronger products hoping to close the gap to prescription strength, which is a regulatory threshold rather than a shelf you can climb.",
       next: [
-        { href: "/skin-and-beauty/retinol-vs-prescription-strength-australia", label: "Retinol vs prescription-strength" },
-        { href: "/skin-and-beauty/best-value-skincare-australia-cost-per-use", label: "Cost per use" },
+        { href: "/health-and-beauty/retinol-vs-prescription-strength-australia", label: "Retinol vs prescription-strength" },
+        { href: "/health-and-beauty/best-value-skincare-australia-cost-per-use", label: "Cost per use" },
       ],
     };
   }
@@ -112,8 +112,8 @@ function resolve(a: Answers): Result {
       title: "Keep it to a baseline you will maintain",
       body: "A short routine you follow beats an elaborate one you abandon in a fortnight, and the arithmetic backs that up: the cheapest product per use is the one in the drawer, and it is also worth nothing. Build from a small number of steps and add only when the current ones are habitual.",
       next: [
-        { href: "/skin-and-beauty/best-value-skincare-australia-cost-per-use", label: "Judging value properly" },
-        { href: "/skin-and-beauty/retinol-vs-prescription-strength-australia", label: "What the actives do" },
+        { href: "/health-and-beauty/best-value-skincare-australia-cost-per-use", label: "Judging value properly" },
+        { href: "/health-and-beauty/retinol-vs-prescription-strength-australia", label: "What the actives do" },
       ],
     };
   }
@@ -121,8 +121,8 @@ function resolve(a: Answers): Result {
     title: "Build the routine, then check what it costs you a year",
     body: "With no specific complaint and some appetite for effort, the useful discipline is costing your routine annually rather than per bottle. That figure is what tells you whether to keep buying products or spend the same money on an assessment.",
     next: [
-      { href: "/skin-and-beauty/best-value-skincare-australia-cost-per-use", label: "Cost per use, and the annual view" },
-      { href: "/skin-and-beauty/led-face-mask-comparison-australia", label: "Whether a device is worth it" },
+      { href: "/health-and-beauty/best-value-skincare-australia-cost-per-use", label: "Cost per use, and the annual view" },
+      { href: "/health-and-beauty/led-face-mask-comparison-australia", label: "Whether a device is worth it" },
     ],
   };
 }

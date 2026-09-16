@@ -1,53 +1,53 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
-import ComingSoonNote from "@/components/consumer/ComingSoonNote";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
 
-import PartnerRoute from "@/components/consumer/PartnerRoute";
-export const metadata = generateSEOMetadata(seoConfig.skinAndBeauty);
+import HubProviders from "@/components/consumer/HubProviders";
+import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
+export const metadata = generateSEOMetadata(seoConfig.healthAndBeauty);
 
-const SLUG = "/skin-and-beauty";
+const SLUG = "/health-and-beauty";
 
 const guides = [
   {
-    href: "/skin-and-beauty/retinol-vs-prescription-strength-australia",
+    href: "/health-and-beauty/retinol-vs-prescription-strength-australia",
     title: "Retinol vs prescription-strength",
     desc: "What the strength difference means, and how each route is accessed in Australia.",
   },
   {
-    href: "/skin-and-beauty/led-face-mask-comparison-australia",
+    href: "/health-and-beauty/led-face-mask-comparison-australia",
     title: "LED face masks, compared",
     desc: "Real Australian prices, why they are higher than the US listing, and how to check the ARTG.",
   },
   {
-    href: "/skin-and-beauty/foreo-luna-vs-ufo",
+    href: "/health-and-beauty/foreo-luna-vs-ufo",
     title: "Foreo Luna vs UFO",
     desc: "Two separate device lines rather than two versions of one, with Australian list prices for both.",
   },
   {
-    href: "/skin-and-beauty/natural-skincare-australia",
+    href: "/health-and-beauty/natural-skincare-australia",
     title: "Natural vs certified organic",
     desc: "One of those words is checkable in a public register and the other is not. Which, and how.",
   },
   {
-    href: "/skin-and-beauty/best-value-skincare-australia-cost-per-use",
+    href: "/health-and-beauty/best-value-skincare-australia-cost-per-use",
     title: "Cost per use, not sticker price",
     desc: "Why a pricier serum can work out cheaper per application than a budget one, and where that maths misleads you.",
   },
   {
-    href: "/skin-and-beauty/acne-treatment-options-and-costs-australia",
+    href: "/health-and-beauty/acne-treatment-options-and-costs-australia",
     title: "Acne: the routes and the costs",
     desc: "Over-the-counter, GP and dermatologist pathways, what Medicare covers, and what you pay.",
   },
   {
-    href: "/skin-and-beauty/anti-ageing-treatments-what-they-cost",
+    href: "/health-and-beauty/anti-ageing-treatments-what-they-cost",
     title: "Anti-ageing treatments and pricing",
     desc: "Why almost no clinic publishes a price, how they quote, and what to ask before booking.",
   },
   {
-    href: "/skin-and-beauty/skincare-quiz",
+    href: "/health-and-beauty/skincare-quiz",
     title: "Which routine fits you?",
     desc: "A short matcher across budget, effort and priority. No health questions.",
   },
@@ -72,7 +72,7 @@ const faqs = [
   },
   {
     q: "Does Refer Labs earn from this section?",
-    a: "Yes, from three retail partners: Foreo, Edible Beauty Australia and Aussie Health Products, all through Commission Factory. We earn a commission if you buy through a link to one of them, at no extra cost to you, and each page carrying one says so beside it. Commissions do not change what we compare or conclude.",
+    a: "Yes, from four retail partners: OptiSlim, Foreo, Edible Beauty Australia and Aussie Health Products, all through Commission Factory. We earn a commission if you buy through a link to one of them, at no extra cost to you, and each page carrying one says so beside it. We hold no discount code for any of the four, so there is nothing on this page we can claim saves you money. Commissions do not change what we compare or conclude.",
   },
 ];
 
@@ -81,14 +81,14 @@ const breadcrumbSchema = {
   "@type": "BreadcrumbList",
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Refer Labs", item: SITE_URL },
-    { "@type": "ListItem", position: 2, name: "Skin & Beauty", item: `${SITE_URL}${SLUG}` },
+    { "@type": "ListItem", position: 2, name: "Health & Beauty", item: `${SITE_URL}${SLUG}` },
   ],
 };
 
 const itemListSchema = {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  name: "Skin and beauty guides",
+  name: "Health and beauty guides",
   itemListElement: guides.map((g, i) => ({
     "@type": "ListItem",
     position: i + 1,
@@ -110,8 +110,8 @@ const faqSchema = {
 const webPageSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  name: seoConfig.skinAndBeauty.title,
-  description: seoConfig.skinAndBeauty.description,
+  name: seoConfig.healthAndBeauty.title,
+  description: seoConfig.healthAndBeauty.description,
   url: `${SITE_URL}${SLUG}`,
   inLanguage: "en-AU",
   isPartOf: { "@id": `${SITE_URL}/#website` },
@@ -130,50 +130,89 @@ export default function SkinAndBeautyHub() {
           <nav className="flex items-center gap-2 text-sm text-[#627068]">
             <Link href="/" className="hover:text-[#0a7c42]">Refer Labs</Link>
             <span>/</span>
-            <span className="text-[#2b362f]">Skin &amp; beauty</span>
+            <span className="text-[#2b362f]">Health &amp; beauty</span>
           </nav>
-          <div className="max-w-2xl">
+          <div className="max-w-3xl">
             <h1 className="mt-4 text-4xl font-bold leading-[1.06] tracking-[-0.01em] text-[#10251b] sm:text-5xl">
-              Skin and beauty in Australia: <span className="italic text-[#0a7c42]">what works, and what it costs</span>
+              Health and beauty in Australia: <span className="italic text-[#0a7c42]">what it costs, and which claims you can check</span>
             </h1>
-            <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#2b362f]">
-              The price on the shelf tells you very little in this category, because the same product can cost twice as
-              much here as it lists for overseas, and the stronger topicals are prescription-only in Australia no matter
-              what they cost. These guides cover what the common actives do, what devices cost in Australian
-              dollars rather than converted, and where the prescription line falls.
+            {/* The answer, directly under the h1. Nothing between: check-answer-slot. */}
+            <p className="mt-5 text-lg leading-relaxed text-[#2b362f]">
+              Two words do most of the selling in this category and only one of them means anything you can verify.
+              &ldquo;Certified organic&rdquo; is checkable in a public register; &ldquo;natural&rdquo; is not. A
+              cosmetic device is not a therapeutic one. And a meal-replacement shake sold as a very low energy diet is,
+              by the food regulator&apos;s own rule, meant to be used under medical supervision. These guides cover
+              what each thing costs in Australian dollars and which of its claims survive a check.
             </p>
-          </div>
-          <div className="mt-8 max-w-3xl">
-            <ComingSoonNote category="Skin and beauty" />
+            <AffiliateDisclosure compact className="mt-4" />
           </div>
         </section>
 
 
-        <PartnerRoute
-          className="mt-10"
-          heading="Retailers in this section"
-          intro="Three retailers we have a commercial arrangement with. More are being added, so this is a starting set rather than the full market."
+        <HubProviders
+          className="pt-4"
+          ctaPrefix="health-beauty-hub"
+          heading="The partners we cover"
+          intro="Four Australian retail partners, answering the same four questions. We earn a commission from all four and hold a discount code for none of them, so there is no code on this page to type."
           providers={[
             {
-              name: "Foreo",
-              href: "/go/foreo-skin-hub",
-              what: "Sells LED skincare devices direct in Australia. Check the listed price in Australian dollars and the shipping terms to an Australian address at checkout.",
-            },
-            {
-              name: "Edible Beauty Australia",
-              href: "/go/edible-beauty-skin-hub",
-              what: "An Australian natural skincare range, priced in Australian dollars and shipped domestically.",
-            },
-            {
               name: "Aussie Health Products",
-              href: "/go/aussie-health-skin-hub",
-              what: "An Australian retailer carrying health and skincare ranges, priced in Australian dollars.",
+              href: "/aussie-health-products",
+              hrefLabel: "Read our Aussie Health guide",
+              suits: "Shoppers who already know the brand they want and are choosing where to buy it.",
+              how: "A multi-brand marketplace stating it carries over 300 natural and ethical brands.",
+              cost: "Priced per product by brand. Free shipping over $99, read 4 September 2026.",
+              visitHref: "/go/aussie-health-skin-hub",
+              visitLabel: "Browse Aussie Health Products",
+              earns: true,
+            },
+            {
+              name: "Edible Beauty",
+              href: "/edible-beauty",
+              hrefLabel: "Read our Edible Beauty guide",
+              suits: "Buyers who want an Australian natural range and understand what that word does not certify.",
+              how: "Its own skincare range, sold direct. Products described as approved by certified naturopaths.",
+              cost: "$44 to $88 a product, read 16 September 2026. Free shipping over $110, read 4 September 2026.",
+              visitHref: "/go/edible-beauty-skin-hub",
+              visitLabel: "View Edible Beauty pricing",
+              earns: true,
+            },
+            {
+              name: "Foreo",
+              href: "/foreo",
+              hrefLabel: "Read our Foreo guide",
+              suits: "Buyers comparing cleansing and LED devices on Australian prices rather than converted ones.",
+              how: "Sells its LUNA and UFO device lines direct, priced in Australian dollars on its own site.",
+              cost: "From A$169 for the LUNA 4 go, read 4 September 2026.",
+              visitHref: "/go/foreo-skin-hub",
+              visitLabel: "View Foreo pricing",
+              earns: true,
+            },
+            {
+              name: "OptiSlim",
+              href: "/optislim",
+              hrefLabel: "Read our OptiSlim guide",
+              suits: "People whose doctor has already put a very low energy diet on the table.",
+              how: "Meal-replacement shakes, bars and soups. The VLCD range is a food for special medical purposes.",
+              cost: "$44.99 for 21 meals, or $2.14 a meal, read 16 September 2026.",
+              visitHref: "/go/optislim-health-hub",
+              visitLabel: "View OptiSlim pricing",
+              earns: true,
             },
           ]}
         />
 
+        {/* Was a flat list of eight headed "Start here", which stopped describing
+            the section once it covered nutrition as well as skincare. Grouped by
+            the decision each guide serves, so a reader can find their question
+            rather than reading all eight titles. No guide was removed. */}
         <section className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
-          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">Start here</h2>
+          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">Every guide in this section</h2>
+          <p className="mt-3 max-w-3xl text-[15px] leading-relaxed text-[#3d4b44]">
+            Grouped by what each one decides. The nutrition side of this section is covered on the{" "}
+            <Link href="/optislim" className="font-semibold text-[#0a7c42] hover:underline">OptiSlim page</Link>, which
+            sets out what the food regulator requires of a very low energy diet.
+          </p>
           <div className="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {guides.map((g) => (
               <Link

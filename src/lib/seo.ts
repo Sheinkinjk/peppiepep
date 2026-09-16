@@ -862,22 +862,50 @@ export const seoConfig = {
     keywords: ["cost of good sleep", "how much to spend on sleep australia", "sleep products worth it australia", "improve sleep australia cost"],
   },
 
-  // ─── Skin & beauty (Aug 2026) ────────────────────────────────────────────────
+  // ─── Health & beauty (Aug 2026) ────────────────────────────────────────────────
   // Category built ahead of any partner. Note there is no "tretinoin" page: that
   // molecule is Schedule 4 in Australia, so the comparison is framed as
   // over-the-counter vs prescription-strength without naming the medicine.
-  skinAndBeauty: {
-    title: "Skin & Beauty Australia 2026: What Works and What It Costs | Refer Labs",
+  healthAndBeauty: {
+    title: "Health & Beauty Australia 2026: Prices, Rules and What They Certify | Refer Labs",
     description:
-      "Independent guides to skincare and skin treatments in Australia: what over-the-counter actives do, what LED masks cost here, how to judge value per use, and what clinic treatments are priced at.",
-    url: `${SITE_URL}/skin-and-beauty`,
-    keywords: ["skincare australia", "skin treatments australia", "beauty australia 2026", "skincare guide australia", "skin care costs australia"],
+      "Independent guides to skincare, devices and meal replacements in Australia: what each costs in Australian dollars, which claims are checkable in a public register, and what the regulator says about very low energy diets.",
+    url: `${SITE_URL}/health-and-beauty`,
+    keywords: ["health and beauty australia", "skincare australia", "meal replacement australia", "vlcd australia", "skin care costs australia"],
+  },
+  optislim: {
+    title: "OptiSlim Australia 2026: Price Per Meal and the VLED Rules | Refer Labs",
+    description:
+      "OptiSlim VLCD shakes cost $2.14 a meal, read off its own site. Australia's food regulator classes a very low energy diet as a food for special medical purposes, to be used under medical supervision for up to 12 weeks.",
+    url: `${SITE_URL}/optislim`,
+    keywords: ["optislim", "optislim review australia", "optislim price", "vlcd australia", "meal replacement shakes australia"],
+  },
+  foreo: {
+    title: "Foreo Australia 2026: A$ Prices and the Registration It Cancelled | Refer Labs",
+    description:
+      "Foreo LUNA and UFO devices priced in Australian dollars off Foreo's own storefront. Foreo Oceania held ARTG entry 288695 and cancelled it at its own request, so these are sold here as cosmetic devices.",
+    url: `${SITE_URL}/foreo`,
+    keywords: ["foreo australia", "foreo luna price australia", "foreo ufo australia", "foreo tga", "led skincare device australia"],
+  },
+  edibleBeauty: {
+    title: "Edible Beauty Australia 2026: Prices, and What Natural Certifies | Refer Labs",
+    description:
+      "Edible Beauty Australia products run $44 to $88, read off its own site. The brand sells on natural and lists no organic certification, and only one of those words is checkable in a public register.",
+    url: `${SITE_URL}/edible-beauty`,
+    keywords: ["edible beauty australia", "edible beauty review", "natural skincare australia", "certified organic skincare australia"],
+  },
+  aussieHealthProducts: {
+    title: "Aussie Health Products 2026: A Marketplace, Not a Brand | Refer Labs",
+    description:
+      "Aussie Health Products is an Australian retailer stating it carries over 300 natural brands across food, supplements, sports nutrition and beauty. What a marketplace decides, and what it does not.",
+    url: `${SITE_URL}/aussie-health-products`,
+    keywords: ["aussie health products", "aussie health products review", "natural health retailer australia", "australian supplements online"],
   },
   retinolVsPrescription: {
     title: "Retinol vs Prescription-Strength: The Australian Guide 2026 | Refer Labs",
     description:
       "How over-the-counter retinol differs from prescription-strength skin treatment in Australia: how each is accessed, what the strength difference means, and how to decide which route to explore.",
-    url: `${SITE_URL}/skin-and-beauty/retinol-vs-prescription-strength-australia`,
+    url: `${SITE_URL}/health-and-beauty/retinol-vs-prescription-strength-australia`,
     keywords: ["retinol australia", "retinol vs prescription australia", "retinol strength australia", "prescription skincare australia", "how to get prescription skincare australia"],
   },
   ledFaceMask: {
@@ -895,49 +923,49 @@ export const seoConfig = {
     title: "LED Face Masks Australia 2026: Omnilux Is AUD $470 Here | Refer Labs",
     description:
       "The Omnilux Contour Face was AUD $470 at RY on 19 Aug 2026, against USD $395 on the brand's own site. Why the gap exists, and how to check the ARTG.",
-    url: `${SITE_URL}/skin-and-beauty/led-face-mask-comparison-australia`,
+    url: `${SITE_URL}/health-and-beauty/led-face-mask-comparison-australia`,
     keywords: ["led face mask australia", "led face mask price australia", "omnilux australia price", "red light therapy mask australia", "best led face mask australia"],
   },
   foreoLunaVsUfo: {
     title: "Foreo Luna vs UFO: Two Different Devices | Refer Labs",
     description:
       "Foreo's LUNA and UFO are separate lines, not alternatives: one cleanses, one emits LED light. Australian list prices for every model in both.",
-    url: `${SITE_URL}/skin-and-beauty/foreo-luna-vs-ufo`,
+    url: `${SITE_URL}/health-and-beauty/foreo-luna-vs-ufo`,
     keywords: ["foreo luna vs ufo", "foreo luna australia price", "foreo ufo 3 australia", "foreo luna 4 price australia", "which foreo device"],
   },
   naturalSkincareAustralia: {
     title: "Natural vs Certified Organic Skincare Australia | Refer Labs",
     description:
       "\"Natural\" needs no certification on an Australian cosmetic. \"Certified organic\" is checkable in a public register. How to run that check before you buy.",
-    url: `${SITE_URL}/skin-and-beauty/natural-skincare-australia`,
+    url: `${SITE_URL}/health-and-beauty/natural-skincare-australia`,
     keywords: ["natural skincare australia", "organic skincare australia", "certified organic skincare australia", "aco certified skincare", "natural skincare brands australia"],
   },
   skincareCostPerUse: {
     title: "Skincare Cost Per Use: What Australians Pay 2026 | Refer Labs",
     description:
       "Judging skincare by cost per use instead of sticker price. How to work it out, why a $90 serum can be cheaper than a $30 one, and where the maths misleads you.",
-    url: `${SITE_URL}/skin-and-beauty/best-value-skincare-australia-cost-per-use`,
+    url: `${SITE_URL}/health-and-beauty/best-value-skincare-australia-cost-per-use`,
     keywords: ["best value skincare australia", "skincare cost per use", "affordable skincare australia", "is expensive skincare worth it", "skincare value australia"],
   },
   acneTreatmentCosts: {
     title: "Acne Treatment in Australia 2026: The Options and What They Cost | Refer Labs",
     description:
       "Acne treatment routes in Australia, from over-the-counter products to GP and dermatologist referral: how each pathway works, what Medicare covers, and what you pay.",
-    url: `${SITE_URL}/skin-and-beauty/acne-treatment-options-and-costs-australia`,
+    url: `${SITE_URL}/health-and-beauty/acne-treatment-options-and-costs-australia`,
     keywords: ["acne treatment australia", "acne treatment cost australia", "how to treat acne australia", "dermatologist acne australia cost", "acne gp australia"],
   },
   antiAgeingCosts: {
     title: "Anti-Ageing Treatments Australia: What They Cost 2026 | Refer Labs",
     description:
       "What anti-ageing treatments cost in Australia and why almost none publish a price. How clinics quote, what drives the number, and the questions to ask before you book.",
-    url: `${SITE_URL}/skin-and-beauty/anti-ageing-treatments-what-they-cost`,
+    url: `${SITE_URL}/health-and-beauty/anti-ageing-treatments-what-they-cost`,
     keywords: ["anti ageing treatment cost australia", "anti wrinkle cost australia", "skin treatment prices australia", "cosmetic treatment cost australia", "laser skin treatment cost australia"],
   },
   skincareQuiz: {
     title: "Skincare Quiz: Which Routine Fits You? | Refer Labs",
     description:
       "A short quiz that matches you to a skincare approach based on your priorities, budget and how much effort you want to spend. General information, not medical advice.",
-    url: `${SITE_URL}/skin-and-beauty/skincare-quiz`,
+    url: `${SITE_URL}/health-and-beauty/skincare-quiz`,
     keywords: ["skincare quiz", "skincare routine quiz australia", "which skincare is right for me", "skincare routine builder australia"],
   },
 

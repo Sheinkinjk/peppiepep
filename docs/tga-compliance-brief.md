@@ -153,7 +153,7 @@ Every page listed above was checked live. All of the following are present on
    identifying the medicine?** Two live examples, both on pages carrying an
    affiliate CTA, both surfaced by our own audit on 27 August 2026:
 
-   a. `/skin-and-beauty/anti-ageing-treatments-what-they-cost` says "many
+   a. `/health-and-beauty/anti-ageing-treatments-what-they-cost` says "many
       cosmetic injectable treatments involve prescription-only medicines, and
       advertising prescription medicines to the public is prohibited in
       Australia". That is a statement of the regulatory position and names no

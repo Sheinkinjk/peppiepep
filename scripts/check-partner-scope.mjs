@@ -88,15 +88,26 @@ const PARTNERS = [
       },
     ],
   },
-  { name: "Edible Beauty",  tokens: ["edible-beauty", "ediblebeauty"], allow: ["/skin-and-beauty", "/coming-soon"] },
-  { name: "Aussie Health",  tokens: ["aussie-health", "aussiehealthproducts"], allow: ["/skin-and-beauty", "/coming-soon"] },
+  // "/guides" is on each allow list below because it is the master index: it
+  // links every page on the site by name, so a brand label there is an internal
+  // link into allowlisted territory, not a placement on a rival's page. Same
+  // reasoning as the Foreo token note further down.
+  // OptiSlim sells weight-loss meal replacements. It is deliberately NOT allowed
+  // under /weight-loss: that hub is practitioner-assessed telehealth, and a food
+  // product sitting beside it would imply the two are alternatives (Jarred,
+  // 16 Sep 2026). Health & Beauty only.
+  { name: "OptiSlim",      tokens: ["optislim", "t/77632"], allow: ["/health-and-beauty", "/optislim", "/guides", "/coming-soon"] },
+  { name: "Edible Beauty",  tokens: ["edible-beauty", "ediblebeauty"], allow: ["/health-and-beauty", "/edible-beauty", "/guides", "/coming-soon"] },
+  { name: "Aussie Health",  tokens: ["aussie-health", "aussiehealthproducts"], allow: ["/health-and-beauty", "/aussie-health-products", "/guides", "/coming-soon"] },
   {
     name: "Foreo",
     // "foreo-" not "Foreo": every page that links Foreo contains a /go/foreo-<slug>,
     // and the bare brand name appears in index-page link labels like "Foreo Luna vs
     // UFO", which are internal links into allowlisted territory, not placements.
     tokens: ["foreo-", "t/60709"],
-    allow: ["/skin-and-beauty", "/coming-soon"],
+    // "/foreo" added 16 Sep 2026 with the brand page. It is a prefix match, so it
+    // also covers "/foreo-..." should another Foreo route ever be added.
+    allow: ["/health-and-beauty", "/foreo", "/coming-soon"],
     deny: [
       {
         pattern: /red[- ]light therap|light therapy (?:range|device)/i,
@@ -113,7 +124,7 @@ const PARTNERS = [
 ];
 
 /** Wording that asserts the page earns nothing. Must never sit beside a link. */
-// Widened 14 Sep 2026: /mens-health and /skin-and-beauty shipped "nothing in this
+// Widened 14 Sep 2026: /mens-health and /health-and-beauty shipped "nothing in this
 // section currently earns us a commission" beside partner links for over a week,
 // because this matched only "nothing here" / "nothing on this page".
 const EARNS_NOTHING = /nothing (?:here|on this page|in this (?:section|category|hub))(?:,? (?:currently|yet))? (?:earns us (?:a )?commission|pays us)|\bwe earn nothing (?:here|from this section)\b/i;
@@ -199,7 +210,7 @@ for (const file of pages(APP)) {
   // ── 2. partner tokens may only appear under an allowlisted prefix ─────────
   for (const p of PARTNERS) {
     // An index page has to be able to LINK to a partner page whose own slug
-    // carries the brand: /guides names "/skin-and-beauty/foreo-luna-vs-ufo",
+    // carries the brand: /guides names "/health-and-beauty/foreo-luna-vs-ufo",
     // and so do sitemap, search and the hubs. Those are internal hrefs into
     // allowlisted territory with no affiliate link attached, so they are
     // stripped before matching. A /go/<partner> slug or a cfjump URL is not

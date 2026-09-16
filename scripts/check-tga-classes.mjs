@@ -20,7 +20,7 @@
  *
  *   /mens-health/online-prescription-australia priced an "antibiotic request"
  *   /midoc listed "COVID-19 antivirals" as a consultation line
- *   /skin-and-beauty/anti-ageing said "cosmetic injectable treatments"
+ *   /health-and-beauty/anti-ageing said "cosmetic injectable treatments"
  *
  * WHAT IS STILL ALLOWED, and why this list is terms and not topics: the TGA's
  * own general guide is that promoting the CONDITIONS a service covers, without

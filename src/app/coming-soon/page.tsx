@@ -21,20 +21,10 @@ const SLUG = "/coming-soon";
  */
 
 const SECTIONS = [
-  {
-    href: "/skin-and-beauty",
-    icon: Sparkles,
-    accent: "#7A5A8C",
-    tint: "#F2ECF6",
-    title: "Skin & Beauty",
-    live: "Eight guides, live now",
-    body: "What over-the-counter actives do and how the prescription route differs, verified Australian device prices against the US listing, and why cosmetic clinics will not publish a price.",
-    links: [
-      { h: "/skin-and-beauty/led-face-mask-comparison-australia", l: "LED masks: the real AUD prices" },
-      { h: "/skin-and-beauty/foreo-luna-vs-ufo", l: "Foreo Luna vs UFO" },
-      { h: "/skin-and-beauty/natural-skincare-australia", l: "Natural vs certified organic" },
-    ],
-  },
+  // Health & Beauty left this list on 16 Sep 2026. It went live with four
+  // commercial partners (OptiSlim, Foreo, Edible Beauty, Aussie Health
+  // Products) and a nav group of its own, so listing it as a section we are
+  // still building was false. Its pages are unchanged and still indexed.
   {
     href: "/mens-health",
     icon: Stethoscope,

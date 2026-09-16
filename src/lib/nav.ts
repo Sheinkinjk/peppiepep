@@ -39,6 +39,21 @@ export const GROUPS: Group[] = [
       { href: "/hair-loss-quiz", label: "Which option fits you?", note: "A 30-second match" },
     ],
   },
+  // Third from 16 Sep 2026, at Jarred's request, when the hub went live: it
+  // left Coming Soon, gained a fourth partner and now carries four brand pages.
+  // Ahead of Solar & Energy because it has four commercial partners against
+  // that section's two, and behind the two health hubs that earn the revenue.
+  {
+    label: "Health & Beauty",
+    items: [
+      { href: "/health-and-beauty", label: "Start here", note: "Every guide, and what each one decides" },
+      { href: "/optislim", label: "OptiSlim", note: "Meal replacements, priced per meal" },
+      { href: "/foreo", label: "Foreo", note: "LED and cleansing devices, in Australian dollars" },
+      { href: "/edible-beauty", label: "Edible Beauty", note: "Australian natural skincare" },
+      { href: "/aussie-health-products", label: "Aussie Health Products", note: "Australian health and skincare retailer" },
+      { href: "/health-and-beauty/skincare-quiz", label: "Which routine fits you?", note: "A short match, no health questions" },
+    ],
+  },
   {
     label: "Solar & Energy",
     items: [

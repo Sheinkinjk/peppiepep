@@ -40,9 +40,9 @@ const faqs = [
 export default function Page() {
   return (
     <SectionGuideShell
-      section="Skin and beauty"
-      sectionHref="/skin-and-beauty"
-      slug="/skin-and-beauty/best-value-skincare-australia-cost-per-use"
+      section="Health and beauty"
+      sectionHref="/health-and-beauty"
+      slug="/health-and-beauty/best-value-skincare-australia-cost-per-use"
       crumb="Cost per use"
       h1={<>Skincare value: <span className="italic text-[#0a7c42]">work in cost per use, not sticker price</span></>}
       intro="A $30 moisturiser you replace every six weeks is more expensive than a $90 one that lasts eight months. Sticker price hides that completely. Here is the arithmetic, and the three places it quietly lies to you."
@@ -50,10 +50,10 @@ export default function Page() {
       description={seoConfig.skincareCostPerUse.description}
       faqs={faqs}
       related={[
-        { href: "/skin-and-beauty/retinol-vs-prescription-strength-australia", label: "Retinol vs prescription-strength" },
-        { href: "/skin-and-beauty/led-face-mask-comparison-australia", label: "LED face masks" },
-        { href: "/skin-and-beauty/natural-skincare-australia", label: "Natural vs certified organic" },
-        { href: "/skin-and-beauty/skincare-quiz", label: "Which routine fits you?" },
+        { href: "/health-and-beauty/retinol-vs-prescription-strength-australia", label: "Retinol vs prescription-strength" },
+        { href: "/health-and-beauty/led-face-mask-comparison-australia", label: "LED face masks" },
+        { href: "/health-and-beauty/natural-skincare-australia", label: "Natural vs certified organic" },
+        { href: "/health-and-beauty/skincare-quiz", label: "Which routine fits you?" },
       ]}
     >
       <section>

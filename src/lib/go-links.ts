@@ -32,6 +32,10 @@ const MIDOC_HOME = "https://www.midoc.com.au/?ref=ytvpnchm";
  *
  * Destinations verified 4 Sep 2026: both resolve 200 with CF tracking intact.
  */
+// OptiSlim (Commission Factory, merchant 77632), added 16 Sep 2026. Homepage
+// rather than a deep link: no server response was checked proving a deep link
+// keeps the referral, and the same caution applies here as to Midoc.
+const OPTISLIM = "https://t.cfjump.com/94361/t/77632?Url=https%3a%2f%2fwww.optislim.com.au%2f";
 const EDIBLE_BEAUTY = "https://t.cfjump.com/94361/t/76712";
 const AUSSIE_HEALTH = "https://t.cfjump.com/94361/t/14839";
 
@@ -72,6 +76,8 @@ export const GO_DESTINATIONS: Record<string, string> = {
   "edible-beauty-acne": EDIBLE_BEAUTY,
   "edible-beauty-cost-per-use": EDIBLE_BEAUTY,
   "edible-beauty-retinol-otc": EDIBLE_BEAUTY,
+  "optislim-health-hub": OPTISLIM,
+  "optislim-brand": OPTISLIM,
   "edible-beauty-skin-hub": EDIBLE_BEAUTY,
   "edible-beauty-skincare-quiz": EDIBLE_BEAUTY,
   "aussie-health-cost-per-use": AUSSIE_HEALTH,

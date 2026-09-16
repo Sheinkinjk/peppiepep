@@ -41,7 +41,7 @@ export default function LongevityHub() {
       faqs={faqs}
       otherLinks={[
         { href: "/sleep", label: "Sleep" },
-        { href: "/skin-and-beauty", label: "Skin & beauty" },
+        { href: "/health-and-beauty", label: "Health & beauty" },
         { href: "/mens-health", label: "Men's health" },
       ]}
       listName="Longevity guides"

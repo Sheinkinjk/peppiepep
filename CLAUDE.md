@@ -232,7 +232,7 @@ the path you actually used.
 
 **When a build fails, look at what the failing step sits DOWNSTREAM of before
 fixing what the message names.** The error said undated prices on
-`/skin-and-beauty/best-value-skincare-australia-cost-per-use`. The fault was
+`/health-and-beauty/best-value-skincare-australia-cost-per-use`. The fault was
 `generate-page-dates` writing an empty file three steps earlier, in `prebuild`,
 because a `vercel deploy` tarball carries no `.git` and every `git log` returned
 "fatal: not a git repository". The prices had never been dated by anything except

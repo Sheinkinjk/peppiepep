@@ -42,9 +42,9 @@ const faqs = [
 export default function Page() {
   return (
     <SectionGuideShell
-      section="Skin and beauty"
-      sectionHref="/skin-and-beauty"
-      slug="/skin-and-beauty/acne-treatment-options-and-costs-australia"
+      section="Health and beauty"
+      sectionHref="/health-and-beauty"
+      slug="/health-and-beauty/acne-treatment-options-and-costs-australia"
       crumb="Acne: routes and costs"
       h1={<>Acne treatment in Australia: <span className="italic text-[#0a7c42]">the routes, and what each costs</span></>}
       intro="Acne is treated through three different access routes in Australia, and they differ more in cost structure than most people expect. This sets out how each works, where Medicare applies, and what to ask before you commit to a private fee."
@@ -52,9 +52,9 @@ export default function Page() {
       description={seoConfig.acneTreatmentCosts.description}
       faqs={faqs}
       related={[
-        { href: "/skin-and-beauty/retinol-vs-prescription-strength-australia", label: "Retinol vs prescription-strength" },
-        { href: "/skin-and-beauty/best-value-skincare-australia-cost-per-use", label: "Cost per use" },
-        { href: "/skin-and-beauty/natural-skincare-australia", label: "Natural vs certified organic" },
+        { href: "/health-and-beauty/retinol-vs-prescription-strength-australia", label: "Retinol vs prescription-strength" },
+        { href: "/health-and-beauty/best-value-skincare-australia-cost-per-use", label: "Cost per use" },
+        { href: "/health-and-beauty/natural-skincare-australia", label: "Natural vs certified organic" },
       ]}
     >
       <section>
