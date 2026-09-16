@@ -52,3 +52,7 @@ supabase/.temp/
 
 # Network conversion exports: commercial data, not source
 reports/conversions/*.csv
+
+# Scratch audit outputs (kept locally, not part of the repo record)
+audit-pages.csv
+audit-report.md
