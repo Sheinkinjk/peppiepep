@@ -165,7 +165,7 @@ export default function CheapestWeightLossTelehealthPage() {
               Check eligibility on Moshy
               <ArrowRight className="h-4 w-4" />
             </a>
-            <EarningsBalanceNote earnFrom="Moshy" noEarnFrom="Juniper" noEarnHref="/juniper" className="mt-4 max-w-2xl" />
+            <EarningsBalanceNote earnFromAll={["Moshy", "Juniper"]} className="mt-4 max-w-2xl" />
           </section>
 
           {/* Answer-first: the buyer's question verbatim as an H2, then the liftable verdict. */}

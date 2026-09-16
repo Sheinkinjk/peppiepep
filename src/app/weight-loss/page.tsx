@@ -1,18 +1,15 @@
 import Link from "next/link";
-import HubOffer from "@/components/consumer/HubOffer";
-import { ArrowRight } from "lucide-react";
+import HubProviders from "@/components/consumer/HubProviders";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 import PathwayQuiz from "@/components/consumer/PathwayQuiz";
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, SCHEMA_AUTHOR, SCHEMA_PUBLISHER } from "@/lib/seo";
-import { MOSHY_URL } from "@/lib/affiliate-links";
+import { MOSHY_URL, JUNIPER_URL } from "@/lib/affiliate-links";
 import OfferSchema from "@/components/offers/OfferSchema";
 
-import EarningsBalanceNote from "@/components/consumer/EarningsBalanceNote";
 import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 export const metadata = generateSEOMetadata(seoConfig.weightLossHub);
 
-const aff = { href: MOSHY_URL, target: "_blank" as const, rel: "nofollow sponsored" as const };
 
 const guides = [
   { href: "/moshy-review", title: "Moshy review", desc: "How the service runs, from application to subscription." },
@@ -114,56 +111,39 @@ export default function WeightLossHubPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <main id="main-content">
-        {/* Hero */}
+        {/* Hero.
+            Two columns from lg: the answer on the left, the matcher on the right.
+            The matcher used to sit in its own centred max-w-3xl section directly
+            under a max-w-2xl hero, so the two blocks started at different x
+            positions and the right half of the page was empty (16 Sep 2026).
+            Keeping the text column first in the DOM also keeps the lead in the
+            slot check-answer-slot guards. */}
         <section className="mx-auto max-w-6xl px-5 pt-12 sm:px-8 sm:pt-16">
           <nav className="mb-7 flex items-center gap-2 text-sm text-[#627068]">
             <Link href="/" className="hover:text-[#0a7c42]">Refer Labs</Link>
             <span>/</span>
             <span className="text-[#2b362f]">Weight loss</span>
           </nav>
-          <div className="max-w-2xl">
-            <h1 className="text-4xl font-bold leading-[1.06] tracking-[-0.01em] text-[#10251b] sm:text-5xl">
-              Weight loss telehealth in Australia: <span className="italic text-[#0a7c42]">online programs, compared properly</span>
-            </h1>
-            <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#2b362f]">
-              Online weight loss telehealth lets you start without waiting weeks for an appointment: you complete an
-              assessment, a registered practitioner reviews it, and a plan follows if you&apos;re suitable. This hub
-              compares the online programs and clinics available in Australia across three clear pathways, with
-              independent research for each.
-            </p>
-            {/* Below the lead. The first paragraph after the h1 is the answer;
-                a disclosure in that slot is what an engine lifts instead. Still
-                above the first affiliate link, which is what it is for. */}
-            <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
-            <OfferSchema code="REFERRAL120" />
+          <div className="grid items-start gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
+            <div>
+              <h1 className="text-4xl font-bold leading-[1.06] tracking-[-0.01em] text-[#10251b] sm:text-5xl">
+                Weight loss telehealth in Australia: <span className="italic text-[#0a7c42]">online programs, compared properly</span>
+              </h1>
+              <p className="mt-5 text-lg leading-relaxed text-[#2b362f]">
+                Online weight loss telehealth lets you start without waiting weeks for an appointment: you complete an
+                assessment, a registered practitioner reviews it, and a plan follows if you&apos;re suitable. This hub
+                compares the online programs and clinics available in Australia across three clear pathways, with
+                independent research for each.
+              </p>
+              {/* Below the lead. The first paragraph after the h1 is the answer;
+                  a disclosure in that slot is what an engine lifts instead. Still
+                  above the first affiliate link, which is what it is for. */}
+              <AffiliateDisclosure compact className="mt-4" />
+              <OfferSchema code="REFERRAL120" />
+            </div>
 
+            <PathwayQuiz />
           </div>
-        </section>
-
-        <HubOffer
-          logo="/logos/moshy.png"
-          logoAlt="Moshy logo"
-          badge="$120 off"
-          headline="New customers: $120 off your first Moshy order"
-          code="REFERRAL120"
-          appliesTo="Moshy states it applies to new customers on a practitioner-assigned weight-loss program, one use per customer, with a minimum three-month commitment, and excludes dietitian, over-the-counter and meal-replacement plans."
-          href={MOSHY_URL}
-          ctaLabel="Check eligibility on Moshy ($120 off)"
-          dataCta="hub-weight-loss-offer"
-          moreHref="/moshy"
-          moreLabel="More about the Moshy offer"
-          verified="2026-08-17"
-        />
-        <EarningsBalanceNote
-          earnFrom="Moshy"
-          noEarnFrom="Juniper"
-          noEarnHref="/juniper"
-          className="mx-auto max-w-3xl px-5 pt-3 sm:px-8"
-        />
-
-        {/* Quiz */}
-        <section className="mx-auto max-w-3xl px-5 pt-6 sm:px-8">
-          <PathwayQuiz />
         </section>
 
         {/* Three pathways */}
@@ -215,30 +195,52 @@ export default function WeightLossHubPage() {
             </div>
           </div>
 
-          {/* Flagship CTA */}
-          <div className="mt-8 flex flex-col items-start justify-between gap-5 rounded-2xl border border-[#0a7c42]/20 bg-[#0a7c42]/[0.05] px-7 py-6 sm:flex-row sm:items-center">
-            <p className="max-w-xl text-[15px] leading-relaxed text-[#10251b]">
-              If you are leaning toward the telehealth pathway, Moshy&apos;s eligibility check is the usual starting
-              point. About ten minutes and no commitment, and new customers get $120 off their first order with code
-              REFERRAL120, applied automatically through our link.
-            </p>
-            <a
-              {...aff}
-              data-cta="hub-weight-loss"
-              className="group inline-flex shrink-0 items-center gap-2 rounded-full bg-[#0a7c42] px-6 py-3 text-sm font-semibold text-white shadow-[0_10px_30px_-8px_rgba(14,124,102,0.6)] transition-all hover:-translate-y-0.5 hover:bg-[#0a7c42]"
-            >
-              Check eligibility on Moshy ($120 off)
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-            </a>
-          </div>
         </section>
 
-        {/* Editorial: how it works */}
-        <section className="mx-auto max-w-3xl px-5 pb-4 sm:px-8">
+
+        <HubProviders
+          heading="The providers we cover"
+          intro="Two Australian telehealth services, on the same four points. Both pay us a commission, and neither can pay to be described more favourably."
+          providers={[
+            {
+              name: "Moshy",
+              logo: "/logos/moshy.png",
+              href: "/moshy",
+              hrefLabel: "Read our Moshy guide",
+              suits: "Anyone eligible in Australia, without a coaching wrap.",
+              how: "Online assessment, then a registered practitioner reviews it and sets the plan if you are suitable.",
+              cost: "A subscription, confirmed in the consult.",
+              offerCode: "REFERRAL120",
+              visitHref: MOSHY_URL,
+              visitLabel: "Check eligibility on Moshy",
+              earns: true,
+            },
+            {
+              name: "Juniper",
+              logo: "/logos/juniper.png",
+              href: "/juniper",
+              hrefLabel: "Read our Juniper guide",
+              suits: "Women who want coaching and habit support alongside the clinical program.",
+              how: "Online assessment with practitioner oversight, plus coaching and app-based tracking.",
+              cost: "Juniper publishes no price publicly; we checked on 21 July 2026.",
+              offerText: "A free first consultation for new patients through our link, and no discount code.",
+              offerNote: "Confirmed with Juniper, 14 September 2026.",
+              visitHref: JUNIPER_URL,
+              visitLabel: "Check eligibility on Juniper",
+              earns: true,
+            },
+          ]}
+        />
+
+        {/* Editorial: how it works.
+            Same max-w-6xl gutter as every other section, with the prose measure
+            set inside it. A centred max-w-3xl section here started the text at a
+            different x from the headings above and below it. */}
+        <section className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
           <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">
             How online weight loss telehealth works in Australia
           </h2>
-          <div className="mt-5 space-y-4 text-[15px] leading-relaxed text-[#3d4b44]">
+          <div className="mt-5 max-w-3xl space-y-4 text-[15px] leading-relaxed text-[#3d4b44]">
             <p>
               A weight loss telehealth service is an online clinic. The assessment, the practitioner review and the
               follow-ups all happen remotely, usually through a secure portal or app rather than a waiting room. For a

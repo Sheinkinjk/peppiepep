@@ -261,11 +261,12 @@ function PlatformCard({
             </Link>
           )}
 
-          {/* Only the card we actually earn from. This page ranks Juniper
-              alongside Moshy while carrying a link for Moshy alone, so the
-              asymmetry is stated where the link is rather than as a banner
-              above the article. */}
-          {isAffiliate && <EarningsBalanceNote earnFrom={name} noEarnFrom="Juniper" noEarnHref="/juniper" className="mt-1" />}
+          {/* Stated on the card that carries the link, rather than as a banner
+              above the article. Corrected 16 Sep 2026: this said we earned from
+              Moshy and not from Juniper, which was wrong. Juniper has been a
+              commission-only partner since July 2026 (no customer discount), so
+              both cards carry a paying link and both say so. */}
+          {isAffiliate && <EarningsBalanceNote earnFrom={name} className="mt-1" />}
 
           {/* Says where the button actually goes, for any provider we hold no
               affiliate link for: their home page rather than a tracked or deep
