@@ -20,6 +20,7 @@ const READ_ON = "16 September 2026";
 const brand: RetailerBrand = {
   name: "Edible Beauty Australia",
   slug: "/edible-beauty",
+  section: { href: "/health-and-beauty", label: "Health & Beauty" },
   tagline: "natural, and what that word does not certify",
   lead: (
     <>

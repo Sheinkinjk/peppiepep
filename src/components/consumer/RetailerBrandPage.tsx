@@ -40,6 +40,14 @@ export type BrandFact = { label: string; value: string };
 export type RetailerBrand = {
   name: string;
   slug: string;
+  /**
+   * The section this brand belongs to. Was hardcoded to Health & Beauty, which
+   * was right for the four partners the shell was written for and wrong the
+   * moment it was reused: Emma Sleep sits in /sleep and Technogym in /longevity,
+   * and both shipped a breadcrumb, a BreadcrumbList and a "compare every
+   * partner" link pointing at a section they are not in. Caught 16 Sep 2026.
+   */
+  section: { href: string; label: string };
   /** The italic half of the h1. Says what the page settles. */
   tagline: string;
   /** The answer, rendered directly under the h1 with nothing between. */
@@ -64,7 +72,7 @@ export default function RetailerBrandPage({ brand }: { brand: RetailerBrand }) {
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Refer Labs", item: SITE_URL },
-      { "@type": "ListItem", position: 2, name: "Health & Beauty", item: `${SITE_URL}/health-and-beauty` },
+      { "@type": "ListItem", position: 2, name: brand.section.label, item: `${SITE_URL}${brand.section.href}` },
       { "@type": "ListItem", position: 3, name: brand.name, item: `${SITE_URL}${brand.slug}` },
     ],
   };
@@ -103,7 +111,7 @@ export default function RetailerBrandPage({ brand }: { brand: RetailerBrand }) {
           <nav className="mb-7 flex items-center gap-2 text-sm text-[#627068]">
             <Link href="/" className="hover:text-[#0a7c42]">Refer Labs</Link>
             <span>/</span>
-            <Link href="/health-and-beauty" className="hover:text-[#0a7c42]">Health &amp; beauty</Link>
+            <Link href={brand.section.href} className="hover:text-[#0a7c42]">{brand.section.label}</Link>
             <span>/</span>
             <span className="text-[#2b362f]">{brand.name}</span>
           </nav>
@@ -161,8 +169,8 @@ export default function RetailerBrandPage({ brand }: { brand: RetailerBrand }) {
             >
               {brand.ctaLabel}
             </a>
-            <Link href="/health-and-beauty" className="text-sm font-semibold text-[#0a7c42] hover:underline">
-              Compare every Health &amp; Beauty partner →
+            <Link href={brand.section.href} className="text-sm font-semibold text-[#0a7c42] hover:underline">
+              Compare every {brand.section.label} partner →
             </Link>
           </div>
           <p className="mt-3 text-[13px] leading-relaxed text-[#5a665f]">{brand.commissionNote}</p>
@@ -188,8 +196,8 @@ export default function RetailerBrandPage({ brand }: { brand: RetailerBrand }) {
           </p>
           <p className="mt-6 text-sm leading-relaxed text-[#3d4b44]">
             More in this section:{" "}
-            <Link href="/health-and-beauty" className="font-semibold text-[#0a7c42] hover:underline">
-              Health &amp; Beauty
+            <Link href={brand.section.href} className="font-semibold text-[#0a7c42] hover:underline">
+              {brand.section.label}
             </Link>
             .
           </p>

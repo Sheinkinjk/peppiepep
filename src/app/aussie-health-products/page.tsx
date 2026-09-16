@@ -18,6 +18,7 @@ const READ_ON = "16 September 2026";
 const brand: RetailerBrand = {
   name: "Aussie Health Products",
   slug: "/aussie-health-products",
+  section: { href: "/health-and-beauty", label: "Health & Beauty" },
   tagline: "a marketplace, not a brand",
   lead: (
     <>

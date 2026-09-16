@@ -23,6 +23,7 @@ const cheapest = cheapestMattress();
 const brand: RetailerBrand = {
   name: "Emma Sleep",
   slug: "/emma-sleep",
+  section: { href: "/sleep", label: "Sleep" },
   tagline: "what you pay, and what the struck-through price is worth",
   lead: (
     <>

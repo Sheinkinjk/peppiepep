@@ -24,6 +24,7 @@ const cheapestUfo = [...FOREO.ufo].sort((a, b) => Number(a.price.replace(/[^0-9]
 const brand: RetailerBrand = {
   name: "Foreo",
   slug: "/foreo",
+  section: { href: "/health-and-beauty", label: "Health & Beauty" },
   tagline: "Australian prices, and the registration it gave up",
   lead: (
     <>

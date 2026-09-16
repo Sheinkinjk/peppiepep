@@ -21,6 +21,7 @@ const high = dearest();
 const brand: RetailerBrand = {
   name: "Technogym",
   slug: "/technogym",
+  section: { href: "/longevity", label: "Longevity" },
   tagline: "one brand, and a four-fold spread in price",
   lead: (
     <>
