@@ -46,6 +46,12 @@ export type HubProvider = {
   visitLabel?: string;
   /** Whether that outbound link earns us a commission. */
   earns?: boolean;
+  /**
+   * How a reader converts, so the earnings line uses the right verb. Telehealth
+   * providers are signed up with; retailers are bought from. Default suits a
+   * service.
+   */
+  earnAction?: string;
 };
 
 function OfferLine({ p }: { p: HubProvider }) {
@@ -211,7 +217,7 @@ export default function HubProviders({
                 return (
                   <p className="pt-3 text-[12px] leading-relaxed text-[#5a665f]">
                     {p.earns
-                      ? `We earn a commission if you sign up with ${p.name} through our link, at no extra cost to you.`
+                      ? `We earn a commission if you ${p.earnAction ?? "sign up with"} ${p.name} through our link, at no extra cost to you.`
                       : `We earn nothing from ${p.name}.`}
                   </p>
                 );

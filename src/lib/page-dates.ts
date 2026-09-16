@@ -196,7 +196,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/coming-soon": {
     "published": "2026-08-20",
-    "updated": "2026-09-15"
+    "updated": "2026-09-16"
   },
   "/contact": {
     "published": "2025-11-25",
@@ -296,7 +296,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/guides": {
     "published": "2026-06-29",
-    "updated": "2026-09-15"
+    "updated": "2026-09-16"
   },
   "/hair-loss": {
     "published": "2026-07-03",
@@ -468,7 +468,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/longevity": {
     "published": "2026-08-20",
-    "updated": "2026-09-14"
+    "updated": "2026-09-16"
   },
   "/longevity/recovery/contrast-therapy-what-the-evidence-says": {
     "published": "2026-08-20",
@@ -636,7 +636,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/": {
     "published": "2025-11-22",
-    "updated": "2026-09-15"
+    "updated": "2026-09-16"
   },
   "/pandadoc": {
     "published": "2026-07-14",
@@ -787,40 +787,40 @@ export const PAGE_DATES: Record<string, PageDates> = {
     "updated": "2026-08-28"
   },
   "/health-and-beauty/acne-treatment-options-and-costs-australia": {
-    "published": "2026-08-20",
-    "updated": "2026-09-15"
+    "published": "2026-09-16",
+    "updated": "2026-09-16"
   },
   "/health-and-beauty/anti-ageing-treatments-what-they-cost": {
-    "published": "2026-08-20",
-    "updated": "2026-09-14"
+    "published": "2026-09-16",
+    "updated": "2026-09-16"
   },
   "/health-and-beauty/best-value-skincare-australia-cost-per-use": {
-    "published": "2026-08-20",
-    "updated": "2026-09-15"
+    "published": "2026-09-16",
+    "updated": "2026-09-16"
   },
   "/health-and-beauty/foreo-luna-vs-ufo": {
-    "published": "2026-09-04",
-    "updated": "2026-09-15"
+    "published": "2026-09-16",
+    "updated": "2026-09-16"
   },
   "/health-and-beauty/led-face-mask-comparison-australia": {
-    "published": "2026-08-20",
-    "updated": "2026-09-15"
+    "published": "2026-09-16",
+    "updated": "2026-09-16"
   },
   "/health-and-beauty/natural-skincare-australia": {
-    "published": "2026-09-04",
-    "updated": "2026-09-15"
+    "published": "2026-09-16",
+    "updated": "2026-09-16"
   },
   "/health-and-beauty": {
-    "published": "2026-08-20",
-    "updated": "2026-09-15"
+    "published": "2026-09-16",
+    "updated": "2026-09-16"
   },
   "/health-and-beauty/retinol-vs-prescription-strength-australia": {
-    "published": "2026-08-20",
-    "updated": "2026-09-15"
+    "published": "2026-09-16",
+    "updated": "2026-09-16"
   },
   "/health-and-beauty/skincare-quiz": {
-    "published": "2026-08-20",
-    "updated": "2026-09-15"
+    "published": "2026-09-16",
+    "updated": "2026-09-16"
   },
   "/sleep/cpap-machine-costs-australia": {
     "published": "2026-08-20",
@@ -844,7 +844,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/sleep": {
     "published": "2026-08-20",
-    "updated": "2026-09-15"
+    "updated": "2026-09-16"
   },
   "/sleep/sleep-tracker-comparison-australia": {
     "published": "2026-08-20",
@@ -1017,6 +1017,22 @@ export const PAGE_DATES: Record<string, PageDates> = {
   "/zapier": {
     "published": "2025-12-28",
     "updated": "2026-08-28"
+  },
+  "/aussie-health-products": {
+    "published": "2026-09-16",
+    "updated": "2026-09-16"
+  },
+  "/edible-beauty": {
+    "published": "2026-09-16",
+    "updated": "2026-09-16"
+  },
+  "/foreo": {
+    "published": "2026-09-16",
+    "updated": "2026-09-16"
+  },
+  "/optislim": {
+    "published": "2026-09-16",
+    "updated": "2026-09-16"
   }
 };
 

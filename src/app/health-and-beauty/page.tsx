@@ -165,6 +165,7 @@ export default function SkinAndBeautyHub() {
               visitHref: "/go/aussie-health-skin-hub",
               visitLabel: "Browse Aussie Health Products",
               earns: true,
+              earnAction: "buy from",
             },
             {
               name: "Edible Beauty",
@@ -176,6 +177,7 @@ export default function SkinAndBeautyHub() {
               visitHref: "/go/edible-beauty-skin-hub",
               visitLabel: "View Edible Beauty pricing",
               earns: true,
+              earnAction: "buy from",
             },
             {
               name: "Foreo",
@@ -187,6 +189,7 @@ export default function SkinAndBeautyHub() {
               visitHref: "/go/foreo-skin-hub",
               visitLabel: "View Foreo pricing",
               earns: true,
+              earnAction: "buy from",
             },
             {
               name: "OptiSlim",
@@ -198,6 +201,7 @@ export default function SkinAndBeautyHub() {
               visitHref: "/go/optislim-health-hub",
               visitLabel: "View OptiSlim pricing",
               earns: true,
+              earnAction: "buy from",
             },
           ]}
         />
