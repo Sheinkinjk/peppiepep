@@ -72,7 +72,7 @@ const faqs = [
   },
   {
     q: "Does Refer Labs earn from this section?",
-    a: "Yes, from four retail partners: OptiSlim, Foreo, Edible Beauty Australia and Aussie Health Products, all through Commission Factory. We earn a commission if you buy through a link to one of them, at no extra cost to you, and each page carrying one says so beside it. We hold no discount code for any of the four, so there is nothing on this page we can claim saves you money. Commissions do not change what we compare or conclude.",
+    a: "Yes, from five retail partners: OptiSlim, Technogym, Foreo, Edible Beauty Australia and Aussie Health Products, all through Commission Factory. We earn a commission if you buy through a link to one of them, at no extra cost to you, and each page carrying one says so beside it. We hold no discount code for any of the five, so there is nothing on this page we can claim saves you money. Commissions do not change what we compare or conclude.",
   },
 ];
 
@@ -153,7 +153,7 @@ export default function SkinAndBeautyHub() {
           className="pt-4"
           ctaPrefix="health-beauty-hub"
           heading="The partners we cover"
-          intro="Five Australian retail partners, answering the same four questions. We earn a commission from all five and hold a discount code for none of them, so there is no code on this page to type."
+          intro="Five Australian retail partners, answering the same four questions. We earn a commission from all five, hold a discount code for none of them, and none of them can pay to be described more favourably."
           providers={[
             {
               name: "Aussie Health Products",
@@ -161,8 +161,9 @@ export default function SkinAndBeautyHub() {
               hrefLabel: "Read our Aussie Health guide",
               suits: "Shoppers who already know the brand they want and are choosing where to buy it.",
               how: "A multi-brand marketplace stating it carries over 300 natural and ethical brands.",
-              cost: "Priced per product by brand. Free shipping over $99, read 4 September 2026.",
+              cost: "Priced per product by the brand you choose, not by the retailer.",
               visitHref: "/go/aussie-health-skin-hub",
+              highlight: "Free shipping over $99, read 4 September 2026. Over 300 brands in one checkout.",
               visitLabel: "Browse Aussie Health Products",
               earns: true,
               earnAction: "buy from",
@@ -173,8 +174,9 @@ export default function SkinAndBeautyHub() {
               hrefLabel: "Read our Edible Beauty guide",
               suits: "Buyers who want an Australian natural range and understand what that word does not certify.",
               how: "Its own skincare range, sold direct. Products described as approved by certified naturopaths.",
-              cost: "$44 to $88 a product, read 16 September 2026. Free shipping over $110, read 4 September 2026.",
+              cost: "$44 to $88 a product, read 16 September 2026.",
               visitHref: "/go/edible-beauty-skin-hub",
+              highlight: "Free shipping over $110, read 4 September 2026. A starter set was listed at $58.50.",
               visitLabel: "View Edible Beauty pricing",
               earns: true,
               earnAction: "buy from",
@@ -187,6 +189,7 @@ export default function SkinAndBeautyHub() {
               how: "Sells its LUNA and UFO device lines direct, priced in Australian dollars on its own site.",
               cost: "From A$169 for the LUNA 4 go, read 4 September 2026.",
               visitHref: "/go/foreo-skin-hub",
+              highlight: "Sold direct in Australia and priced in A$, so the figure you see is the figure you pay.",
               visitLabel: "View Foreo pricing",
               earns: true,
               earnAction: "buy from",
@@ -199,6 +202,7 @@ export default function SkinAndBeautyHub() {
               how: "Sells home equipment direct, with Australian prices published on its own site.",
               cost: "A$4,460 for the Bench to A$20,490 for the Run, read 16 September 2026.",
               visitHref: "/go/technogym-health-hub",
+              highlight: "Prices are published, so you can compare without booking a showroom visit.",
               visitLabel: "View Technogym pricing",
               earns: true,
               earnAction: "buy from",
@@ -211,6 +215,7 @@ export default function SkinAndBeautyHub() {
               how: "Meal-replacement shakes, bars and soups. The VLCD range is a food for special medical purposes.",
               cost: "$44.99 for 21 meals, or $2.14 a meal, read 16 September 2026.",
               visitHref: "/go/optislim-health-hub",
+              highlight: "Nine flavours in the Classic line and three in Platinum, all in 21-meal boxes.",
               visitLabel: "View OptiSlim pricing",
               earns: true,
               earnAction: "buy from",
@@ -268,7 +273,7 @@ export default function SkinAndBeautyHub() {
               Other categories
             </h2>
             <p className="mt-2 text-sm leading-relaxed text-[#3d4b44]">
-              Sleep is being built alongside this one. The rest already have their comparisons and current offers in place.
+              Every one of these has its comparisons in place. Sleep and longevity each gained their first partner in September 2026.
             </p>
             <ul className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold">
               <li><Link href="/sleep" className="text-[#0a7c42] hover:underline">Sleep</Link></li>

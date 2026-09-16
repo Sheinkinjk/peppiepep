@@ -41,6 +41,14 @@ export type HubProvider = {
   /** For a real offer with no code. State its source and date in `offerNote`. */
   offerText?: string;
   offerNote?: string;
+  /**
+   * Shown in the fourth row when this provider has no offer. The row used to
+   * print "No Refer Labs offer." which, on a hub where nobody has one, is four
+   * identical lines of nothing (Jarred, 16 Sep 2026). A reader gets a fact they
+   * can act on instead; the absence of a code is still stated, once, in the
+   * section intro rather than five times in the grid.
+   */
+  highlight?: string;
   /** The provider's own site, where we link to it. */
   visitHref?: string;
   visitLabel?: string;
@@ -92,11 +100,14 @@ export default function HubProviders({
   ctaPrefix?: string;
   className?: string;
 }) {
+  const hasOffer = (p: HubProvider) => Boolean(p.offerCode || p.offerText);
   const rows = (p: HubProvider) => [
     { k: "Who it suits", v: <>{p.suits}</> },
     { k: "How it works", v: <>{p.how}</> },
     { k: "What it costs", v: <>{p.cost}</> },
-    { k: "Current offer", v: <OfferLine p={p} /> },
+    hasOffer(p)
+      ? { k: "Current offer", v: <OfferLine p={p} /> }
+      : { k: "Good to know", v: <>{p.highlight ?? p.cost}</> },
   ];
 
   /*
@@ -116,11 +127,13 @@ export default function HubProviders({
    * partner even when all four do not share a single row.
    */
   const columns =
-    providers.length >= 4
-      ? "sm:grid-cols-2 lg:grid-cols-4"
-      : providers.length === 3
-        ? "sm:grid-cols-3"
-        : "sm:grid-cols-2";
+    providers.length >= 5
+      ? "sm:grid-cols-2 lg:grid-cols-3"
+      : providers.length === 4
+        ? "sm:grid-cols-2 lg:grid-cols-4"
+        : providers.length === 3
+          ? "sm:grid-cols-3"
+          : "sm:grid-cols-2";
 
   return (
     <section className={`mx-auto max-w-6xl px-5 sm:px-8 ${className}`}>
@@ -184,21 +197,28 @@ export default function HubProviders({
                 ))}
               </dl>
 
-              <div className="flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-[#eef1ef] pt-5 text-sm font-semibold">
-                <Link href={p.href} className="text-[#0a7c42] hover:underline">
-                  {p.hrefLabel}
-                </Link>
+              {/* The outbound link is a button, and the same button on every
+                  card. A quiet grey text link asked the reader to work out that
+                  it was the action. Identical treatment across providers is what
+                  keeps this neutral: nobody gets a louder button than anybody. */}
+              <div className="flex flex-col gap-3 border-t border-[#eef1ef] pt-5">
                 {p.visitHref && (
                   <a
                     href={p.visitHref}
                     target="_blank"
                     rel="nofollow sponsored"
                     data-cta={`${ctaPrefix}-${p.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
-                    className="font-medium text-[#5a665f] hover:text-[#0a7c42] hover:underline"
+                    className="flex w-full items-center justify-center rounded-full bg-[#0a7c42] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#086536]"
                   >
                     {p.visitLabel ?? `Visit ${p.name}`}
                   </a>
                 )}
+                <Link
+                  href={p.href}
+                  className="text-center text-sm font-semibold text-[#0a7c42] hover:underline"
+                >
+                  {p.hrefLabel}
+                </Link>
               </div>
 
               {/* Where a partner requires its own wording, that wording IS the

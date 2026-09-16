@@ -54,6 +54,14 @@ export type RetailerBrand = {
   lead: React.ReactNode;
   /** Dated facts, each already carrying its own read date in the value. */
   facts: BrandFact[];
+  /**
+   * The two or three facts worth putting in the hero card beside the CTA.
+   * Defaults to the first three. These are what a reader weighs before
+   * clicking, so they are chosen, not sliced, wherever the order differs.
+   */
+  headlineFacts?: BrandFact[];
+  /** /logos/<slug>.png once supplied. Falls back to a monogram. */
+  logo?: string;
   factsNote: React.ReactNode;
   /** What we could not verify. Required, and never empty. */
   unverified: React.ReactNode;
@@ -100,6 +108,9 @@ export default function RetailerBrandPage({ brand }: { brand: RetailerBrand }) {
     publisher: SCHEMA_PUBLISHER,
   };
 
+  const headline = brand.headlineFacts ?? brand.facts.slice(0, 3);
+  const monogram = brand.name.replace(/[^A-Za-z ]/g, "").split(" ").filter(Boolean).slice(0, 2).map((w) => w[0]).join("");
+
   return (
     <ConsumerShell>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
@@ -107,36 +118,83 @@ export default function RetailerBrandPage({ brand }: { brand: RetailerBrand }) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
 
       <main id="main-content">
-        <section className="mx-auto max-w-6xl px-5 pt-12 sm:px-8 sm:pt-16">
+        {/* Hero. Two columns from lg: the answer on the left, the decision card
+            on the right. It was a single max-w-3xl column with the CTA five
+            sections below the fold, which left half the screen empty and made a
+            commercial page read like a memo (16 Sep 2026). The text column is
+            first in the DOM, so the lead still follows the h1 with nothing
+            between it, and the disclosure still sits above the first link. */}
+        <section className="mx-auto max-w-6xl px-5 pt-10 sm:px-8 sm:pt-14">
           <nav className="mb-7 flex items-center gap-2 text-sm text-[#627068]">
             <Link href="/" className="hover:text-[#0a7c42]">Refer Labs</Link>
-            <span>/</span>
+            <span aria-hidden="true">/</span>
             <Link href={brand.section.href} className="hover:text-[#0a7c42]">{brand.section.label}</Link>
-            <span>/</span>
+            <span aria-hidden="true">/</span>
             <span className="text-[#2b362f]">{brand.name}</span>
           </nav>
 
-          <div className="max-w-3xl">
-            <h1 className="text-4xl font-bold leading-[1.06] tracking-[-0.01em] text-[#10251b] sm:text-5xl">
-              {brand.name}: <span className="italic text-[#0a7c42]">{brand.tagline}</span>
-            </h1>
-            {/* The answer sits here, directly after the h1. Guarded by check-answer-slot. */}
-            <p className="mt-5 text-lg leading-relaxed text-[#2b362f]">{brand.lead}</p>
-            <AffiliateDisclosure compact className="mt-4" />
+          <div className="grid items-start gap-10 lg:grid-cols-[1.12fr_0.88fr] lg:gap-14">
+            <div>
+              <h1 className="text-4xl font-bold leading-[1.06] tracking-[-0.01em] text-[#10251b] sm:text-5xl">
+                {brand.name}: <span className="italic text-[#0a7c42]">{brand.tagline}</span>
+              </h1>
+              <p className="mt-5 text-lg leading-relaxed text-[#2b362f]">{brand.lead}</p>
+              <AffiliateDisclosure compact className="mt-4" />
+            </div>
+
+            <aside className="rounded-2xl border border-[#e5e9e7] bg-white p-6 shadow-[0_1px_2px_rgba(16,37,27,0.05)] sm:p-7">
+              <div className="flex items-center gap-3">
+                <span className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-[#eef1ef] bg-[#f8faf9]">
+                  {brand.logo ? (
+                    /* eslint-disable-next-line @next/next/no-img-element */
+                    <img src={brand.logo} alt="" width={32} height={32} className="h-8 w-8 object-contain" />
+                  ) : (
+                    <span className="text-[15px] font-bold tracking-tight text-[#0a7c42]">{monogram}</span>
+                  )}
+                </span>
+                <div>
+                  <p className="text-[17px] font-bold leading-tight text-[#10251b]">{brand.name}</p>
+                  <p className="text-[13px] text-[#5a665f]">{brand.section.label}</p>
+                </div>
+              </div>
+
+              <dl className="mt-6 space-y-4">
+                {headline.map((f) => (
+                  <div key={f.label} className="border-t border-[#eef1ef] pt-4 first:border-t-0 first:pt-0">
+                    <dt className="text-[12px] font-semibold uppercase tracking-[0.05em] text-[#5a665f]">{f.label}</dt>
+                    <dd className="mt-1 text-[15px] leading-relaxed text-[#2b362f] [font-variant-numeric:tabular-nums]">
+                      {f.value}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+
+              <a
+                href={brand.goPath}
+                target="_blank"
+                rel="nofollow sponsored"
+                data-cta={`${brand.slug.replace(/^\//, "")}-hero`}
+                className="mt-6 flex w-full items-center justify-center rounded-full bg-[#0a7c42] px-6 py-3.5 text-[15px] font-semibold text-white transition-colors hover:bg-[#086536]"
+              >
+                {brand.ctaLabel}
+              </a>
+              <p className="mt-3 text-[12px] leading-relaxed text-[#5a665f]">{brand.commissionNote}</p>
+            </aside>
           </div>
         </section>
 
+        {/* Facts as a two-column panel rather than a thin stacked list. */}
         <section className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
           <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">
             What {brand.name} sells, and what it costs
           </h2>
-          <dl className="mt-7 max-w-3xl divide-y divide-[#eef1ef] border-y border-[#eef1ef]">
+          <dl className="mt-7 grid gap-x-10 gap-y-0 rounded-2xl border border-[#e5e9e7] bg-white p-6 sm:grid-cols-2 sm:p-8">
             {brand.facts.map((f) => (
-              <div key={f.label} className="flex flex-col gap-1 py-3.5 sm:flex-row sm:gap-6">
-                <dt className="shrink-0 text-[13px] font-semibold uppercase tracking-[0.04em] text-[#5a665f] sm:w-44">
-                  {f.label}
-                </dt>
-                <dd className="text-[15px] leading-relaxed text-[#3d4b44] [font-variant-numeric:tabular-nums]">{f.value}</dd>
+              <div key={f.label} className="border-b border-[#eef1ef] py-4 last:border-b-0 sm:[&:nth-last-child(2)]:border-b-0">
+                <dt className="text-[12px] font-semibold uppercase tracking-[0.05em] text-[#5a665f]">{f.label}</dt>
+                <dd className="mt-1.5 text-[15px] leading-relaxed text-[#2b362f] [font-variant-numeric:tabular-nums]">
+                  {f.value}
+                </dd>
               </div>
             ))}
           </dl>
@@ -154,26 +212,13 @@ export default function RetailerBrandPage({ brand }: { brand: RetailerBrand }) {
           </section>
         ))}
 
-        {/* Required, and deliberately above the CTA rather than buried under it. */}
+        {/* Required, and given its own panel so it reads as a finding rather
+            than small print. Every one of these pages earns a commission. */}
         <section className="mx-auto max-w-6xl px-5 pb-14 sm:px-8">
-          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">What we could not verify</h2>
-          <div className="mt-5 max-w-3xl text-[15px] leading-relaxed text-[#3d4b44]">{brand.unverified}</div>
-
-          <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
-            <a
-              href={brand.goPath}
-              target="_blank"
-              rel="nofollow sponsored"
-              data-cta={`${brand.slug.replace(/^\//, "")}-primary`}
-              className="inline-flex items-center rounded-full bg-[#0a7c42] px-6 py-3 text-[15px] font-semibold text-white transition-colors hover:bg-[#086536]"
-            >
-              {brand.ctaLabel}
-            </a>
-            <Link href={brand.section.href} className="text-sm font-semibold text-[#0a7c42] hover:underline">
-              Compare every {brand.section.label} partner →
-            </Link>
+          <div className="max-w-3xl rounded-2xl border border-[#e5e9e7] bg-[#f8faf9] p-6 sm:p-8">
+            <h2 className="text-xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-2xl">What we could not verify</h2>
+            <div className="mt-4 text-[15px] leading-relaxed text-[#3d4b44]">{brand.unverified}</div>
           </div>
-          <p className="mt-3 text-[13px] leading-relaxed text-[#5a665f]">{brand.commissionNote}</p>
         </section>
 
         <section className="border-y border-[#e5e9e7] bg-[#f5f8f6]">
@@ -190,16 +235,33 @@ export default function RetailerBrandPage({ brand }: { brand: RetailerBrand }) {
           </div>
         </section>
 
+        {/* Closing action, for a reader who scrolled rather than clicked. */}
         <section className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
-          <p className="max-w-3xl rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] px-5 py-4 text-xs leading-relaxed text-[#3d4b44]">
+          <div className="flex flex-col gap-5 rounded-2xl border border-[#cfe6da] bg-[#e8f5ee] p-7 sm:flex-row sm:items-center sm:justify-between sm:p-8">
+            <div className="max-w-xl">
+              <p className="text-[17px] font-bold text-[#10251b]">Ready to look at {brand.name} yourself?</p>
+              <p className="mt-1.5 text-sm leading-relaxed text-[#3d4b44]">
+                Prices and terms change. Check the current ones on their own site before you decide.
+              </p>
+            </div>
+            <div className="flex flex-col items-start gap-2 sm:items-end">
+              <a
+                href={brand.goPath}
+                target="_blank"
+                rel="nofollow sponsored"
+                data-cta={`${brand.slug.replace(/^\//, "")}-closing`}
+                className="inline-flex shrink-0 items-center rounded-full bg-[#0a7c42] px-6 py-3 text-[15px] font-semibold text-white transition-colors hover:bg-[#086536]"
+              >
+                {brand.ctaLabel}
+              </a>
+              <Link href={brand.section.href} className="text-sm font-semibold text-[#0a7c42] hover:underline">
+                Compare every {brand.section.label} partner →
+              </Link>
+            </div>
+          </div>
+
+          <p className="mt-8 max-w-3xl rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] px-5 py-4 text-xs leading-relaxed text-[#3d4b44]">
             {brand.disclaimer}
-          </p>
-          <p className="mt-6 text-sm leading-relaxed text-[#3d4b44]">
-            More in this section:{" "}
-            <Link href={brand.section.href} className="font-semibold text-[#0a7c42] hover:underline">
-              {brand.section.label}
-            </Link>
-            .
           </p>
         </section>
       </main>

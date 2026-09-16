@@ -179,6 +179,7 @@ export default function HairLossHubPage() {
               cost: "Per product, priced on their own site.",
               visitHref: DENSE_URL,
               visitLabel: "Visit Dense Hair Experts",
+              highlight: "Bought direct as a routine, with no prescription and no consultation to book.",
               earns: true,
             },
           ]}
