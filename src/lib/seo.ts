@@ -50,7 +50,19 @@ export function generateMetadata(config: SEOConfig): Metadata {
     noIndex = false,
   } = config;
 
-  const fullTitle = title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`;
+  /*
+   * The site name is appended only when there is room for it.
+   *
+   * Google truncates a title around 60 characters, and " | Refer Labs" costs
+   * 13 of them. On 17 Sep 2026 the suffix was stripped from 94 over-length
+   * titles in seoConfig and nothing changed on the live site, because this line
+   * put it straight back: the configs got shorter and the rendered titles did
+   * not. A brand suffix that pushes the actual message out of the SERP costs
+   * more than the brand recognition earns, so it now yields to the message.
+   */
+  const SUFFIX = ` | ${SITE_NAME}`;
+  const fullTitle =
+    title.includes(SITE_NAME) || title.length + SUFFIX.length > 60 ? title : `${title}${SUFFIX}`;
   const canonicalUrl = url || SITE_URL;
   // Each page gets a unique, branded OG card built from its title unless an
   // explicit image is supplied — lifts social/SERP click-through site-wide.

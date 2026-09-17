@@ -27,7 +27,7 @@ export const INTENT_PAGES: IntentEntry[] = [
     crumb: "Unsecured business loans",
     h1: "Unsecured business loans in Australia",
     meta: {
-      title: "Unsecured Business Loans Australia: Compare Lenders (2026) | Refer Labs",
+      title: "Unsecured Business Loans Australia: Compare Lenders (2026)",
       description: "Unsecured business loans need no property or asset as security, fund faster and cost more than secured debt. Compare Australian lenders and check your options in one enquiry.",
       keywords: ["unsecured business loans australia", "unsecured business finance", "no collateral business loan australia"],
     },
@@ -50,7 +50,7 @@ export const INTENT_PAGES: IntentEntry[] = [
     crumb: "Bad-credit business loans",
     h1: "Business loans with bad credit in Australia",
     meta: {
-      title: "Business Loans for Bad Credit Australia: What's Realistic (2026) | Refer Labs",
+      title: "Business Loans for Bad Credit Australia: What's Realistic (2026)",
       description: "A past default or judgement doesn't automatically rule out business finance in Australia, but it narrows your options and raises the rate. What lenders actually weigh, and what helps.",
       keywords: ["business loans bad credit australia", "bad credit business finance", "business loan with defaults australia"],
     },
@@ -75,7 +75,7 @@ export const INTENT_PAGES: IntentEntry[] = [
     crumb: "Fast business loans",
     h1: "Fast business loans in Australia",
     meta: {
-      title: "Fast Business Loans Australia: Same-Day & 24-Hour Options (2026) | Refer Labs",
+      title: "Fast Business Loans Australia: Same-Day & 24-Hour Options (2026)",
       description: "Some Australian lenders can approve and fund a business loan within 24 hours, occasionally same day. What makes funding fast, what slows it down, and how to be ready.",
       keywords: ["fast business loans australia", "same day business loan australia", "quick business finance australia"],
     },
@@ -99,7 +99,7 @@ export const INTENT_PAGES: IntentEntry[] = [
     crumb: "Small business loans",
     h1: "Small business loans in Australia",
     meta: {
-      title: "Small Business Loans Australia: Compare Lenders & Options (2026) | Refer Labs",
+      title: "Small Business Loans Australia: Compare Lenders & Options (2026)",
       description: "A plain guide to small business loans in Australia: the main loan types, what they cost, what lenders look for, and how to compare offers. Refer Labs is a referrer, not a lender.",
       keywords: ["small business loans australia", "small business finance australia", "compare small business loans"],
     },
@@ -122,7 +122,7 @@ export const INTENT_PAGES: IntentEntry[] = [
     crumb: "Business line of credit",
     h1: "Business line of credit in Australia",
     meta: {
-      title: "Business Line of Credit Australia: How It Works & Who Offers It | Refer Labs",
+      title: "Business Line of Credit Australia: How It Works & Who Offers It",
       description: "A business line of credit gives you a revolving limit to draw on as needed, paying interest only on what you use. How it compares to a term loan, and which of the lenders we compare offer one.",
       keywords: ["business line of credit australia", "revolving business credit", "business overdraft alternative australia"],
     },
@@ -145,7 +145,7 @@ export const INTENT_PAGES: IntentEntry[] = [
     crumb: "Working capital loans",
     h1: "Working capital loans in Australia",
     meta: {
-      title: "Working Capital Loans Australia: Funding Day-to-Day Cash Flow | Refer Labs",
+      title: "Working Capital Loans Australia: Funding Day-to-Day Cash Flow",
       description: "Working capital finance covers the everyday gap between money out and money in: wages, stock, rent, a slow season. The options in Australia and how to choose between them.",
       keywords: ["working capital loans australia", "cash flow finance australia", "working capital finance"],
     },
@@ -168,7 +168,7 @@ export const INTENT_PAGES: IntentEntry[] = [
     crumb: "Low-doc business loans",
     h1: "Low-doc business loans in Australia",
     meta: {
-      title: "Low-Doc Business Loans Australia: How They Work (2026) | Refer Labs",
+      title: "Low-Doc Business Loans Australia: How They Work (2026)",
       description: "Low-doc business loans assess you from bank-transaction data rather than full financials, so they suit newer businesses or those without up-to-date tax returns. The trade-offs, explained.",
       keywords: ["low doc business loans australia", "low doc business finance", "business loan without financials australia"],
     },
@@ -192,7 +192,7 @@ export const INTENT_PAGES: IntentEntry[] = [
     crumb: "Startup business loans",
     h1: "Startup business loans in Australia",
     meta: {
-      title: "Startup Business Loans Australia: Realistic Options (2026) | Refer Labs",
+      title: "Startup Business Loans Australia: Realistic Options (2026)",
       description: "Most business lenders want six to twelve months of trading, which leaves genuine startups with fewer options. What's realistic for a new Australian business in the first months.",
       keywords: ["startup business loans australia", "new business loans australia", "finance for new business australia"],
     },
@@ -216,7 +216,7 @@ export const INTENT_PAGES: IntentEntry[] = [
     crumb: "Sole trader business loans",
     h1: "Business loans for sole traders in Australia",
     meta: {
-      title: "Business Loans for Sole Traders Australia (2026) | Refer Labs",
+      title: "Business Loans for Sole Traders Australia (2026)",
       description: "Sole traders can access the same business finance as companies, but with the whole application resting on one person. What that means for liability, assessment and the options.",
       keywords: ["business loans sole traders australia", "sole trader finance australia", "self employed business loan australia"],
     },
@@ -239,7 +239,7 @@ export const INTENT_PAGES: IntentEntry[] = [
     crumb: "Hospitality business loans",
     h1: "Business loans for cafes, restaurants and hospitality",
     meta: {
-      title: "Hospitality Business Loans Australia: Cafes & Restaurants (2026) | Refer Labs",
+      title: "Hospitality Business Loans Australia: Cafes & Restaurants (2026)",
       description: "Hospitality has thin margins, seasonal swings and heavy equipment costs, which shapes what finance fits. Loan options for Australian cafes, restaurants and food businesses.",
       keywords: ["hospitality business loans australia", "cafe business loan australia", "restaurant finance australia"],
     },
@@ -264,7 +264,7 @@ export const INTENT_PAGES: IntentEntry[] = [
     crumb: "Secured vs unsecured",
     h1: "Secured vs unsecured business loans",
     meta: {
-      title: "Secured vs Unsecured Business Loans: Which Is Right? (Australia) | Refer Labs",
+      title: "Secured vs Unsecured Business Loans: Which Is Right? (Australia)",
       description: "Secured loans are cheaper but put an asset on the line; unsecured loans are faster and dearer. How to choose in Australia, with the trade-offs laid out plainly.",
       keywords: ["secured vs unsecured business loan", "secured business loan australia", "unsecured business loan comparison"],
     },
@@ -289,7 +289,7 @@ export const INTENT_PAGES: IntentEntry[] = [
     crumb: "How to get a business loan",
     h1: "How to get a business loan in Australia",
     meta: {
-      title: "How to Get a Business Loan in Australia: Step by Step (2026) | Refer Labs",
+      title: "How to Get a Business Loan in Australia: Step by Step (2026)",
       description: "A practical walk-through of getting a business loan in Australia: working out what you need, getting your finances ready, comparing lenders, and applying without denting your credit.",
       keywords: ["how to get a business loan australia", "business loan application australia", "apply for business loan australia"],
     },
@@ -313,7 +313,7 @@ export const INTENT_PAGES: IntentEntry[] = [
     crumb: "What lenders look at",
     h1: "Business loan eligibility: what lenders actually look at",
     meta: {
-      title: "Business Loan Eligibility Australia: What Lenders Look At (2026) | Refer Labs",
+      title: "Business Loan Eligibility Australia: What Lenders Look At (2026)",
       description: "Time in business, revenue, credit profile and ATO position, the four things that most decide a business loan in Australia, and how each one moves the decision.",
       keywords: ["business loan eligibility australia", "business loan requirements australia", "how lenders assess business loans"],
     },

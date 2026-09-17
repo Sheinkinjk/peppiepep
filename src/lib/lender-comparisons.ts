@@ -22,7 +22,7 @@ export const LENDER_COMPARISONS: LenderComparison[] = [
   {
     slug: "prospa-vs-lumi",
     a: "prospa", b: "lumi",
-    title: "Prospa vs Lumi (2026): Which Business Lender Fits You? | Refer Labs",
+    title: "Prospa vs Lumi (2026): Which Business Lender Fits You?",
     description:
       "Prospa vs Lumi for an Australian business loan: speed, loan size, how each prices, and who each suits. Prospa funds within an hour on a clean file; Lumi quotes a total repayment and lends up to $1M. Independent, no paid rankings.",
     keywords: ["prospa vs lumi", "lumi vs prospa", "prospa or lumi business loan", "prospa lumi comparison australia"],
@@ -35,7 +35,7 @@ export const LENDER_COMPARISONS: LenderComparison[] = [
   {
     slug: "prospa-vs-moula",
     a: "prospa", b: "moula",
-    title: "Prospa vs Moula (2026): Which Business Lender Fits You? | Refer Labs",
+    title: "Prospa vs Moula (2026): Which Business Lender Fits You?",
     description:
       "Prospa vs Moula for an Australian business loan: how each assesses you, speed, loan size and pricing. Prospa prices on simple interest and funds fast; Moula publishes a from-rate and assesses largely on your bank and accounting data. No paid rankings.",
     keywords: ["prospa vs moula", "moula vs prospa", "prospa or moula", "prospa moula comparison australia"],
@@ -48,7 +48,7 @@ export const LENDER_COMPARISONS: LenderComparison[] = [
   {
     slug: "lumi-vs-moula",
     a: "lumi", b: "moula",
-    title: "Lumi vs Moula (2026): Which Business Lender Fits You? | Refer Labs",
+    title: "Lumi vs Moula (2026): Which Business Lender Fits You?",
     description:
       "Lumi vs Moula for an Australian business loan: loan size, pricing transparency, speed and how each assesses you. Lumi funds up to $1M and quotes a total repayment; Moula publishes a from-rate and reads your bank data. Independent, no paid rankings.",
     keywords: ["lumi vs moula", "moula vs lumi", "lumi or moula business loan", "lumi moula comparison australia"],

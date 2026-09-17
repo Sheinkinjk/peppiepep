@@ -62,7 +62,7 @@ export const CATALOG: Vertical[] = [
     h1Accent: "the shortlist",
     intro:
       "From a free one-page site to an AI-generated business website in thirty seconds, plus dedicated landing-page builders for campaigns. This hub sorts them by what they are for, so you pick the right tool the first time.",
-    metaTitle: "Best Website & Landing Page Builders 2026: Carrd, Durable AI, Butternut, Leadpages & More | Refer Labs",
+    metaTitle: "Website Builders Compared: Carrd, Durable AI & Butternut",
     metaDescription:
       "Compare website and landing-page builders for 2026: Carrd for cheap one-page sites, Durable AI and Butternut AI for instant AI-built sites, Swipe Pages and Leadpages for high-converting landing pages. Independent, no pay-to-rank.",
     keywords: [
@@ -179,7 +179,7 @@ export const CATALOG: Vertical[] = [
     h1Accent: "where to build your audience",
     intro:
       "Where you start an email list shapes how much you keep and how fast you grow. This hub compares the platforms on free plans, monetisation and growth tools.",
-    metaTitle: "Best Newsletter Platform 2026: beehiiv vs Substack vs ConvertKit | Refer Labs",
+    metaTitle: "Newsletter Platforms: beehiiv vs Substack vs ConvertKit",
     metaDescription:
       "Compare newsletter platforms for 2026: beehiiv for growth and monetisation, Substack for discovery, ConvertKit for automation. Free plans and revenue share compared.",
     keywords: [
@@ -249,7 +249,7 @@ export const CATALOG: Vertical[] = [
     h1Accent: "matched to your stack",
     intro:
       "These tools sit at different points in the sales stack, data, outreach, an AI rep, an all-in-one platform, and an easy CRM. This hub sorts them by the job you need doing, so you buy the right layer, not the loudest one.",
-    metaTitle: "AI Sales Tools Compared 2026: Data, Outreach, AI SDR & CRM | Refer Labs",
+    metaTitle: "AI Sales Tools Compared 2026: Data, Outreach, AI SDR & CRM",
     metaDescription:
       "Compare AI sales tools by role for 2026: FullEnrich and ZoomInfo for contact data, Reply.io for multichannel outreach, AiSDR for a done-for-you AI rep, and CRMs like Pipedrive, Nutshell and GoHighLevel. Independent, no pay-to-rank.",
     keywords: [
@@ -423,7 +423,7 @@ export const CATALOG: Vertical[] = [
     h1Accent: "pay and manage your team",
     intro:
       "Software that runs payroll, onboarding and people admin in one place. This hub compares the main platforms by who they suit and where they operate, so you pick one built for your team, not the loudest brand.",
-    metaTitle: "HR & Payroll Software Compared 2026: Employment Hero vs Gusto | Refer Labs",
+    metaTitle: "HR & Payroll Software: Employment Hero vs Gusto",
     metaDescription:
       "Compare HR and payroll platforms for 2026: Employment Hero for Australian and NZ teams, Gusto for US teams. Independent comparison, no pay-to-rank.",
     keywords: [
@@ -489,7 +489,7 @@ export const CATALOG: Vertical[] = [
     h1Accent: "find leads and reach them",
     intro:
       "Tools for building a prospect list and running outreach across email and other channels. This is the outreach layer, distinct from a full CRM, so this hub sorts them by how hands-on you want to be and what you can spend.",
-    metaTitle: "Sales Outreach Tools Compared 2026: Snov.io vs Reply.io | Refer Labs",
+    metaTitle: "Sales Outreach Tools Compared 2026: Snov.io vs Reply.io",
     metaDescription:
       "Compare sales outreach tools for 2026: Snov.io for budget prospecting plus email, Reply.io for AI-first multichannel sequences. Independent, no pay-to-rank.",
     keywords: [
@@ -554,7 +554,7 @@ export const CATALOG: Vertical[] = [
     h1Accent: "get paid, and keep the books straight",
     intro:
       "Three jobs, three different tools, and no one product does all three well: receiving cross-border payments, paying vendors, and the bookkeeping that keeps it reconcilable. Sorting which of the three is your actual bottleneck decides the choice, and it matters most for freelancers, creators and online businesses working with overseas clients, marketplaces and affiliate programs.",
-    metaTitle: "Payments & Finance Tools Compared 2026: Payoneer, Dext & Melio | Refer Labs",
+    metaTitle: "Payments & Finance Tools: Payoneer, Dext & Melio",
     metaDescription:
       "Payments and finance tools for 2026: Payoneer for cross-border payments and multi-currency accounts, Dext for bookkeeping automation, and Melio for US business bill pay. Independent, no pay-to-rank.",
     keywords: [
@@ -629,7 +629,7 @@ export const CATALOG: Vertical[] = [
     h1Accent: "calls, texts and numbers in one place",
     intro:
       "No handset, no PBX, no line rental: a cloud phone system runs calls through the browser and the mobile app, with virtual numbers replacing hardware entirely. That removes the up-front cost and makes the decision a question of who the software suits, from a lean remote team to a busier sales or support floor.",
-    metaTitle: "Cloud Business Phone Systems 2026: How They Work, and KrispCall | Refer Labs",
+    metaTitle: "Cloud Business Phone Systems: How They Work, and KrispCall",
     metaDescription:
       "How a cloud business phone system works for a small team: virtual numbers, number porting and a shared inbox, and where KrispCall fits. Independent, no pay-to-rank.",
     keywords: ["business phone system comparison", "best voip for business 2026", "cloud phone system", "virtual phone number for teams"],
@@ -675,7 +675,7 @@ export const CATALOG: Vertical[] = [
     h1Accent: "assistants, voice and meeting notes",
     intro:
       "AI tools now cover very different jobs, from automating your admin to generating lifelike voice or summarising your meetings. This hub sorts a growing set by what they do, so you pick the one that fits the task rather than the loudest launch.",
-    metaTitle: "Best AI Tools Compared 2026: Lindy, ElevenLabs & MeetGeek | Refer Labs",
+    metaTitle: "Best AI Tools Compared 2026: Lindy, ElevenLabs & MeetGeek",
     metaDescription:
       "Compare AI tools for 2026 by job: Lindy for automating inbox, scheduling and CRM work, ElevenLabs for AI voice, Beautiful.ai for AI presentations, MeetGeek for AI meeting notes. Independent, no pay-to-rank.",
     keywords: ["best ai tools 2026", "lindy ai review", "elevenlabs review", "ai automation tools", "ai voice generator"],
@@ -760,7 +760,7 @@ export const CATALOG: Vertical[] = [
     h1Accent: "turn attention into leads",
     intro:
       "Traffic is wasted if visitors leave without a trace. These tools capture and convert with on-site popups, interactive quizzes and calculators, and tests and assessments, sorted by how you want to turn attention into leads. For dedicated landing-page builders, see the website builders hub.",
-    metaTitle: "Best Popup, Quiz & Lead-Capture Tools 2026: Hello Bar, Outgrow, FlexiQuiz | Refer Labs",
+    metaTitle: "Popup & Quiz Tools: Hello Bar vs Outgrow vs FlexiQuiz",
     metaDescription:
       "Compare lead-capture tools for 2026: Hello Bar for on-site popups and bars, Outgrow for interactive quizzes and calculators, FlexiQuiz for tests and assessments. Independent, no pay-to-rank.",
     keywords: ["lead capture tools", "website popup tool", "interactive content tool", "quiz maker for lead gen", "best popup tool"],

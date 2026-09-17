@@ -78,7 +78,7 @@ export const APOLLO_GUIDES: ApolloGuideEntry[] = [
     priority: 0.8,
     h1: "What size home battery do I need?",
     meta: {
-      title: "What Size Home Battery Do I Need? (Australia 2026) | Refer Labs",
+      title: "What Size Home Battery Do I Need? (Australia 2026)",
       description:
         "How to size a home battery in Australia: work from your evening and overnight usage, your solar, and your goal (bill savings vs backup), and note the rebate tapers above 14kWh. Indicative figures only.",
       keywords: ["what size home battery do i need", "home battery sizing australia", "how many kwh battery", "home battery size calculator australia"],
@@ -132,7 +132,7 @@ export const APOLLO_GUIDES: ApolloGuideEntry[] = [
     priority: 0.8,
     h1: "NSW home battery rebate 2026: what you can stack",
     meta: {
-      title: "NSW Home Battery Rebate 2026: Federal + NSW Incentives | Refer Labs",
+      title: "NSW Home Battery Rebate 2026: Federal + NSW Incentives",
       description:
         "What NSW households can get on a home battery in 2026: the federal Cheaper Home Batteries rebate applied at sale, plus the NSW VPP incentive on top. How they stack, and what's indicative. Not financial advice.",
       keywords: ["nsw home battery rebate 2026", "nsw battery rebate", "home battery rebate nsw", "nsw vpp incentive battery"],
@@ -227,7 +227,7 @@ export const APOLLO_GUIDES: ApolloGuideEntry[] = [
     priority: 0.78,
     h1: "Home battery installers in Sydney: how to choose",
     meta: {
-      title: "Home Battery Installer Sydney 2026: What to Check | Refer Labs",
+      title: "Home Battery Installer Sydney 2026: What to Check",
       description:
         "Choosing a home battery installer in Sydney: SAA accreditation, electrical licensing, warranties, and who applies the federal rebate and connects you to a NSW VPP. Plus $500 off through Refer Labs.",
       keywords: ["home battery installer sydney", "solar battery installer sydney", "battery installation sydney", "home battery sydney"],
@@ -325,7 +325,7 @@ export const APOLLO_GUIDES: ApolloGuideEntry[] = [
     priority: 0.78,
     h1: "Home batteries and blackout backup: what you need to know",
     meta: {
-      title: "Home Battery Blackout Backup Australia 2026: How It Works | Refer Labs",
+      title: "Home Battery Blackout Backup Australia 2026: How It Works",
       description:
         "Not every home battery keeps your power on in a blackout. How backup works, what hardware it needs, how to size for it, and the rebate plus $500 off through Refer Labs.",
       keywords: ["home battery backup", "home battery blackout backup australia", "battery backup power outage", "does a home battery work in a blackout"],
@@ -374,7 +374,7 @@ export const APOLLO_GUIDES: ApolloGuideEntry[] = [
     priority: 0.8,
     h1: "Solar and battery packages in Australia: buying them together",
     meta: {
-      title: "Solar and Battery Package Australia 2026: Costs & Rebates | Refer Labs",
+      title: "Solar and Battery Package Australia 2026: Costs & Rebates",
       description:
         "Buying solar and a battery together in Australia: how the two work as one system, what the federal rebate covers, why sizing them together matters, and the $500 Refer Labs discount. Indicative figures only.",
       keywords: ["solar and battery package australia", "solar battery package", "solar and battery bundle", "solar plus storage australia"],
@@ -422,7 +422,7 @@ export const APOLLO_GUIDES: ApolloGuideEntry[] = [
     priority: 0.78,
     h1: "Tesla Powerwall alternatives in Australia: how to weigh them up",
     meta: {
-      title: "Tesla Powerwall Alternatives Australia 2026: How to Compare | Refer Labs",
+      title: "Tesla Powerwall Alternatives Australia 2026: How to Compare",
       description:
         "Weighing up alternatives to the Tesla Powerwall in Australia: what to compare on capacity, backup, warranty and VPP-readiness, and why the installer matters as much as the brand. Plus $500 off through Refer Labs.",
       keywords: ["tesla powerwall alternatives australia", "powerwall alternative", "home battery vs powerwall", "best alternative to tesla powerwall"],

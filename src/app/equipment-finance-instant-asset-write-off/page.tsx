@@ -5,7 +5,7 @@ import ConsumerShell from "@/components/consumer/ConsumerShell";
 const URL = `${SITE_URL}/equipment-finance-instant-asset-write-off`;
 
 export const metadata = generateSEOMetadata({
-  title: "Equipment Finance & the Instant Asset Write-Off (Australia) | Refer Labs",
+  title: "Equipment Finance & the Instant Asset Write-Off (Australia)",
   description:
     "How equipment finance works alongside the instant asset write-off in Australia: chattel mortgage vs lease, what you can claim, and why the threshold changes. General information, not tax advice.",
   url: URL,

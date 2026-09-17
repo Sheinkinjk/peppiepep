@@ -5,7 +5,7 @@ import ConsumerShell from "@/components/consumer/ConsumerShell";
 const URL = `${SITE_URL}/true-cost-of-business-loans-australia`;
 
 export const metadata = generateSEOMetadata({
-  title: "The Hidden Cost of Factor Rates: What Business Loans Really Cost (Australia 2026 Analysis) | Refer Labs",
+  title: "The Hidden Cost of Factor Rates: What Business Loans Really Cost (Australia 2026 Analysis)",
   description:
     "A 1.2 factor-rate business loan costs about 35% a year, not 20%, and 66% over six months. Our analysis converts common factor rates into their true annual cost, with the method shown in full.",
   url: URL,

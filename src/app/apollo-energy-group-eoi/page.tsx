@@ -13,7 +13,7 @@ const URL = `${SITE_URL}/apollo-energy-group-eoi`;
 // review by targeting transactional intent ("enquiry", "quote", "$500 off", "register
 // interest") with its own canonical, so the two complement rather than cannibalise.
 export const metadata: Metadata = {
-  title: "Home Battery Quote + $500 Off | Apollo Energy Group Enquiry | Refer Labs",
+  title: "Home Battery Quote + $500 Off | Apollo Energy Group Enquiry",
   description:
     "Register your interest in a home battery with Apollo Energy Group and get $500 off your quote through Refer Labs, on top of the government rebate. A person contacts you within 2 business days. No documents, no obligation.",
   keywords: [

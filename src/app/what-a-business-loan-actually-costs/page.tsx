@@ -5,7 +5,7 @@ import ConsumerShell from "@/components/consumer/ConsumerShell";
 const URL = `${SITE_URL}/what-a-business-loan-actually-costs`;
 
 export const metadata = generateSEOMetadata({
-  title: "What a Business Loan Actually Costs in Australia (2026 Guide) | Refer Labs",
+  title: "What a Business Loan Actually Costs in Australia (2026 Guide)",
   description:
     "Nominal rate, factor rate, fees and comparison rate explained plainly, with a worked example, so you can compare the true cost of an Australian business loan instead of the headline number.",
   url: URL,
