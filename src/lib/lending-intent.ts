@@ -28,7 +28,7 @@ export const INTENT_PAGES: IntentEntry[] = [
     h1: "Unsecured business loans in Australia",
     meta: {
       title: "Unsecured Business Loans Australia: Compare Lenders (2026)",
-      description: "Unsecured business loans need no property or asset as security, fund faster and cost more than secured debt. Compare Australian lenders and check your options in one enquiry.",
+      description: "Unsecured business loans need no property or asset as security, fund faster and cost more than secured debt.",
       keywords: ["unsecured business loans australia", "unsecured business finance", "no collateral business loan australia"],
     },
     lead: "An unsecured business loan is finance you don't have to back with property or a specific asset. Because the lender can't fall back on collateral, approval leans on your trading history and cash flow, funding is usually faster, and the rate is higher than a secured bank loan. In Australia most online business lenders, including the ones we compare, are unsecured, which is why they can fund in days rather than weeks.",
@@ -51,7 +51,7 @@ export const INTENT_PAGES: IntentEntry[] = [
     h1: "Business loans with bad credit in Australia",
     meta: {
       title: "Business Loans for Bad Credit Australia: What's Realistic (2026)",
-      description: "A past default or judgement doesn't automatically rule out business finance in Australia, but it narrows your options and raises the rate. What lenders actually weigh, and what helps.",
+      description: "A past default or judgement doesn't automatically rule out business finance in Australia, but it narrows your options and raises the rate.",
       keywords: ["business loans bad credit australia", "bad credit business finance", "business loan with defaults australia"],
     },
     lead: "A patchy credit file makes business finance harder in Australia, but not always impossible. Lenders vary widely in how they treat defaults, judgements and late payments: some decline outright, others look past an old, paid default if your current cash flow is strong. There's no guaranteed approval, and anyone promising it is a warning sign. What helps most is a clear, recent record of money moving through the business.",
@@ -76,7 +76,7 @@ export const INTENT_PAGES: IntentEntry[] = [
     h1: "Fast business loans in Australia",
     meta: {
       title: "Fast Business Loans Australia: Same-Day & 24-Hour Options (2026)",
-      description: "Some Australian lenders can approve and fund a business loan within 24 hours, occasionally same day. What makes funding fast, what slows it down, and how to be ready.",
+      description: "Some Australian lenders can approve and fund a business loan within 24 hours, occasionally same day.",
       keywords: ["fast business loans australia", "same day business loan australia", "quick business finance australia"],
     },
     lead: "When cash flow can't wait, some Australian online lenders approve and fund a business loan within 24 hours, and occasionally the same day. Speed comes from unsecured lending and automated assessment of your bank-transaction data, rather than manual review of documents. The fastest outcomes go to businesses that are ready: clean bank data, a clear purpose, and no surprises on the credit file.",
@@ -100,7 +100,7 @@ export const INTENT_PAGES: IntentEntry[] = [
     h1: "Small business loans in Australia",
     meta: {
       title: "Small Business Loans Australia: Compare Lenders & Options (2026)",
-      description: "A plain guide to small business loans in Australia: the main loan types, what they cost, what lenders look for, and how to compare offers. Refer Labs is a referrer, not a lender.",
+      description: "A plain guide to small business loans in Australia: the main loan types, what they cost, what lenders look for, and how to compare offers.",
       keywords: ["small business loans australia", "small business finance australia", "compare small business loans"],
     },
     lead: "A small business loan in Australia is finance sized for the everyday needs of a small operator: covering a slow month, buying stock, hiring, or funding a piece of equipment. The main choices are a term loan (a lump sum repaid over a fixed period), a line of credit (a revolving limit you draw as needed), or equipment finance tied to a specific asset. Which one fits depends on whether your need is one-off or ongoing.",
@@ -123,7 +123,7 @@ export const INTENT_PAGES: IntentEntry[] = [
     h1: "Business line of credit in Australia",
     meta: {
       title: "Business Line of Credit Australia: How It Works & Who Offers It",
-      description: "A business line of credit gives you a revolving limit to draw on as needed, paying interest only on what you use. How it compares to a term loan, and which of the lenders we compare offer one.",
+      description: "A business line of credit gives you a revolving limit to draw on as needed, paying interest only on what you use.",
       keywords: ["business line of credit australia", "revolving business credit", "business overdraft alternative australia"],
     },
     lead: "A business line of credit is a pre-approved limit you can draw down, repay, and draw again, paying interest only on the balance you actually use. It suits lumpy or seasonal cash flow, where a lump-sum term loan would leave you paying interest on money sitting idle. Think of it as a flexible buffer for the gaps between money going out and coming in, rather than finance for a single planned purchase.",
@@ -146,7 +146,7 @@ export const INTENT_PAGES: IntentEntry[] = [
     h1: "Working capital loans in Australia",
     meta: {
       title: "Working Capital Loans Australia: Funding Day-to-Day Cash Flow",
-      description: "Working capital finance covers the everyday gap between money out and money in: wages, stock, rent, a slow season. The options in Australia and how to choose between them.",
+      description: "Working capital finance covers the everyday gap between money out and money in: wages, stock, rent, a slow season.",
       keywords: ["working capital loans australia", "cash flow finance australia", "working capital finance"],
     },
     lead: "Working capital finance covers the ordinary running costs of a business, wages, stock, rent, supplier bills, when the timing of money coming in doesn't line up with money going out. It suits keeping the lights on through a slow month or a growth spurt that ties up cash. For buying a big asset, equipment finance usually fits better. The right product depends on whether the gap is a one-off or a recurring pattern.",
@@ -193,7 +193,7 @@ export const INTENT_PAGES: IntentEntry[] = [
     h1: "Startup business loans in Australia",
     meta: {
       title: "Startup Business Loans Australia: Realistic Options (2026)",
-      description: "Most business lenders want six to twelve months of trading, which leaves genuine startups with fewer options. What's realistic for a new Australian business in the first months.",
+      description: "Most business lenders want six to twelve months of trading, which leaves genuine startups with fewer options.",
       keywords: ["startup business loans australia", "new business loans australia", "finance for new business australia"],
     },
     lead: "Finance for a genuine startup is harder to find than the ads suggest. Most business lenders, including those we compare, want to see six to twelve months of trading and consistent revenue before they'll lend, because they assess from cash-flow history that a brand-new business doesn't have yet. That doesn't leave you with nothing, but it does mean being realistic about which doors are actually open in the first few months.",
@@ -217,7 +217,7 @@ export const INTENT_PAGES: IntentEntry[] = [
     h1: "Business loans for sole traders in Australia",
     meta: {
       title: "Business Loans for Sole Traders Australia (2026)",
-      description: "Sole traders can access the same business finance as companies, but with the whole application resting on one person. What that means for liability, assessment and the options.",
+      description: "Sole traders can access the same business finance as companies, but with the whole application resting on one person.",
       keywords: ["business loans sole traders australia", "sole trader finance australia", "self employed business loan australia"],
     },
     lead: "As a sole trader you can access most of the same business finance a company can, term loans, lines of credit, equipment finance, but the whole application rests on you personally. There's no separate legal entity, so your personal and business finances are effectively one, and the loan is your direct responsibility. That simplicity is an advantage in some ways and a risk to be clear-eyed about in others.",
@@ -240,7 +240,7 @@ export const INTENT_PAGES: IntentEntry[] = [
     h1: "Business loans for cafes, restaurants and hospitality",
     meta: {
       title: "Hospitality Business Loans Australia: Cafes & Restaurants (2026)",
-      description: "Hospitality has thin margins, seasonal swings and heavy equipment costs, which shapes what finance fits. Loan options for Australian cafes, restaurants and food businesses.",
+      description: "Hospitality has thin margins, seasonal swings and heavy equipment costs, which shapes what finance fits.",
       keywords: ["hospitality business loans australia", "cafe business loan australia", "restaurant finance australia"],
     },
     lead: "Hospitality businesses, cafes, restaurants, bars and food vans, borrow for a few recurring reasons: fitting out or refurbishing a venue, buying kitchen equipment, and smoothing the seasonal and weekly swings in trade. Thin margins and lumpy cash flow shape what fits: equipment finance for the gear, a line of credit for the swings, and a term loan for a defined project like a fit-out. Card-based takings also make some lenders comfortable, because daily revenue is visible.",

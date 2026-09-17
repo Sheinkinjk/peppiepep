@@ -68,7 +68,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/apollo-energy-group-eoi": {
     "published": "2026-07-28",
-    "updated": "2026-09-15"
+    "updated": "2026-09-17"
   },
   "/apollo-energy-review": {
     "published": "2026-07-15",
@@ -260,7 +260,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/equipment-finance-instant-asset-write-off": {
     "published": "2026-07-21",
-    "updated": "2026-09-15"
+    "updated": "2026-09-17"
   },
   "/faq": {
     "published": "2025-12-10",
@@ -908,7 +908,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/true-cost-of-business-loans-australia": {
     "published": "2026-07-22",
-    "updated": "2026-09-15"
+    "updated": "2026-09-17"
   },
   "/unbounce": {
     "published": "2026-08-21",
@@ -964,7 +964,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/what-a-business-loan-actually-costs": {
     "published": "2026-07-21",
-    "updated": "2026-09-15"
+    "updated": "2026-09-17"
   },
   "/what-pet-insurance-covers-australia": {
     "published": "2026-08-04",

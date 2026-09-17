@@ -32,7 +32,7 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
     meta: {
       title: "Online Hair Loss Treatment Australia 2026: How It Works",
       description:
-        "How online hair-loss treatment works in Australia: the telehealth assessment, what a compliant service looks like, what you can and can't get online, and how it compares to your GP. Information only.",
+        "How online hair-loss treatment works in Australia: the assessment, what a compliant service looks like, and how it compares to your GP.",
       keywords: ["online hair loss treatment australia", "hair loss telehealth australia", "online hair loss doctor australia", "hair loss treatment online"],
     },
     lead:
@@ -92,7 +92,7 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
     meta: {
       title: "How to Stop Hair Loss (Australia 2026): What Helps",
       description:
-        "How to approach stopping male pattern hair loss in Australia: understanding the cause, among the most studied treatments, what the evidence does and doesn't support, and why acting early matters. Information only.",
+        "How to approach male pattern hair loss in Australia: the cause, what the evidence does and does not support, and why acting early matters.",
       keywords: ["how to stop hair loss", "how to stop balding australia", "stop hair loss men", "hair loss treatment that works australia"],
     },
     lead:
@@ -158,7 +158,7 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
     meta: {
       title: "Receding Hairline Treatment Australia 2026: What Helps",
       description:
-        "A receding hairline in Australia: what causes it, which treatments have real evidence, why acting early matters, and how an online practitioner assessment works. Information only, not medical advice.",
+        "A receding hairline in Australia: what causes it, which treatments have real evidence, and how an online practitioner assessment works.",
       keywords: ["receding hairline treatment australia", "receding hairline", "how to fix a receding hairline", "receding hairline men australia"],
     },
     lead:
@@ -206,7 +206,7 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
     meta: {
       title: "Early Signs of Hair Loss in Men, Australia: How to Tell",
       description:
-        "The early signs of male pattern hair loss and how to tell if you are going bald: a receding hairline, a thinning crown, a widening part and extra shedding. What is normal, when to act, and how to check yourself. Information only.",
+        "The early signs of male pattern hair loss and how to tell if you are going bald: a receding hairline, a thinning crown, a widening part and extra shedding.",
       keywords: ["early signs of hair loss", "how to tell if you are going bald", "am i going bald", "signs of balding men", "thinning crown", "early signs of balding australia"],
     },
     lead:

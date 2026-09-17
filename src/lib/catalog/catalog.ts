@@ -64,7 +64,7 @@ export const CATALOG: Vertical[] = [
       "From a free one-page site to an AI-generated business website in thirty seconds, plus dedicated landing-page builders for campaigns. This hub sorts them by what they are for, so you pick the right tool the first time.",
     metaTitle: "Website Builders Compared: Carrd, Durable AI & Butternut",
     metaDescription:
-      "Compare website and landing-page builders for 2026: Carrd for cheap one-page sites, Durable AI and Butternut AI for instant AI-built sites, Swipe Pages and Leadpages for high-converting landing pages. Independent, no pay-to-rank.",
+      "Website and landing-page builders compared: Carrd, Durable AI, Butternut AI, Swipe Pages and Leadpages, on what each is for and what it costs.",
     keywords: [
       "best website builder 2026",
       "website builder comparison",
@@ -181,7 +181,7 @@ export const CATALOG: Vertical[] = [
       "Where you start an email list shapes how much you keep and how fast you grow. This hub compares the platforms on free plans, monetisation and growth tools.",
     metaTitle: "Newsletter Platforms: beehiiv vs Substack vs ConvertKit",
     metaDescription:
-      "Compare newsletter platforms for 2026: beehiiv for growth and monetisation, Substack for discovery, ConvertKit for automation. Free plans and revenue share compared.",
+      "Compare newsletter platforms for 2026: beehiiv for growth and monetisation, Substack for discovery, ConvertKit for automation.",
     keywords: [
       "best newsletter platform 2026",
       "beehiiv vs substack",
@@ -251,7 +251,7 @@ export const CATALOG: Vertical[] = [
       "These tools sit at different points in the sales stack, data, outreach, an AI rep, an all-in-one platform, and an easy CRM. This hub sorts them by the job you need doing, so you buy the right layer, not the loudest one.",
     metaTitle: "AI Sales Tools Compared 2026: Data, Outreach, AI SDR & CRM",
     metaDescription:
-      "Compare AI sales tools by role for 2026: FullEnrich and ZoomInfo for contact data, Reply.io for multichannel outreach, AiSDR for a done-for-you AI rep, and CRMs like Pipedrive, Nutshell and GoHighLevel. Independent, no pay-to-rank.",
+      "AI sales tools compared by role: FullEnrich and ZoomInfo for data, Reply.io for outreach, AiSDR for an AI rep, Pipedrive and Nutshell for CRM.",
     keywords: [
       "ai sales tools comparison",
       "best ai sales tools 2026",
@@ -556,7 +556,7 @@ export const CATALOG: Vertical[] = [
       "Three jobs, three different tools, and no one product does all three well: receiving cross-border payments, paying vendors, and the bookkeeping that keeps it reconcilable. Sorting which of the three is your actual bottleneck decides the choice, and it matters most for freelancers, creators and online businesses working with overseas clients, marketplaces and affiliate programs.",
     metaTitle: "Payments & Finance Tools: Payoneer, Dext & Melio",
     metaDescription:
-      "Payments and finance tools for 2026: Payoneer for cross-border payments and multi-currency accounts, Dext for bookkeeping automation, and Melio for US business bill pay. Independent, no pay-to-rank.",
+      "Payments and finance tools compared: Payoneer for cross-border payments, Dext for bookkeeping automation, and Melio for US business bill pay.",
     keywords: [
       "payoneer review",
       "cross border payment tools",
@@ -631,7 +631,7 @@ export const CATALOG: Vertical[] = [
       "No handset, no PBX, no line rental: a cloud phone system runs calls through the browser and the mobile app, with virtual numbers replacing hardware entirely. That removes the up-front cost and makes the decision a question of who the software suits, from a lean remote team to a busier sales or support floor.",
     metaTitle: "Cloud Business Phone Systems: How They Work, and KrispCall",
     metaDescription:
-      "How a cloud business phone system works for a small team: virtual numbers, number porting and a shared inbox, and where KrispCall fits. Independent, no pay-to-rank.",
+      "How a cloud business phone system works for a small team: virtual numbers, number porting and a shared inbox, and where KrispCall fits.",
     keywords: ["business phone system comparison", "best voip for business 2026", "cloud phone system", "virtual phone number for teams"],
     relatedCategory: "Software",
     providers: [
@@ -677,7 +677,7 @@ export const CATALOG: Vertical[] = [
       "AI tools now cover very different jobs, from automating your admin to generating lifelike voice or summarising your meetings. This hub sorts a growing set by what they do, so you pick the one that fits the task rather than the loudest launch.",
     metaTitle: "Best AI Tools Compared 2026: Lindy, ElevenLabs & MeetGeek",
     metaDescription:
-      "Compare AI tools for 2026 by job: Lindy for automating inbox, scheduling and CRM work, ElevenLabs for AI voice, Beautiful.ai for AI presentations, MeetGeek for AI meeting notes. Independent, no pay-to-rank.",
+      "AI tools compared by job: Lindy for inbox and CRM automation, ElevenLabs for voice, Beautiful.ai for decks, MeetGeek for meeting notes.",
     keywords: ["best ai tools 2026", "lindy ai review", "elevenlabs review", "ai automation tools", "ai voice generator"],
     relatedCategory: "AI & sales",
     providers: [
@@ -762,7 +762,7 @@ export const CATALOG: Vertical[] = [
       "Traffic is wasted if visitors leave without a trace. These tools capture and convert with on-site popups, interactive quizzes and calculators, and tests and assessments, sorted by how you want to turn attention into leads. For dedicated landing-page builders, see the website builders hub.",
     metaTitle: "Popup & Quiz Tools: Hello Bar vs Outgrow vs FlexiQuiz",
     metaDescription:
-      "Compare lead-capture tools for 2026: Hello Bar for on-site popups and bars, Outgrow for interactive quizzes and calculators, FlexiQuiz for tests and assessments. Independent, no pay-to-rank.",
+      "Lead-capture tools compared: Hello Bar for popups and bars, Outgrow for quizzes and calculators, FlexiQuiz for tests and assessments.",
     keywords: ["lead capture tools", "website popup tool", "interactive content tool", "quiz maker for lead gen", "best popup tool"],
     relatedCategory: "Software",
     providers: [
