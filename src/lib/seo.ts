@@ -185,23 +185,23 @@ export const seoConfig = {
     keywords: ["pet insurance australia", "compare pet insurance australia", "dog insurance australia", "cat insurance australia", "pet insurance offers"],
   },
   petsonme: {
-    title: "PetsOnMe Discount Code 2026: 15% Off Pet Care Services | Refer Labs",
+    title: "PetsOnMe Discount Code 2026: 15% Off Pet Care Services",
     description:
-      "PetsOnMe pet insurance: the REFERLABS code takes 15% off pet care services, not the premium. Accidental, Classic and Deluxe plans compared. Not financial advice.",
+      "PetsOnMe pet insurance: the REFERLABS code takes 15% off pet care services, not the premium. Accidental, Classic and Deluxe plans compared.",
     url: `${SITE_URL}/petsonme`,
     keywords: ["petsonme", "pets on me pet insurance", "petsonme review", "petsonme pet insurance australia", "petsonme referral code", "pets on me insurance"],
   },
   knoseVsPetsonme: {
     title: "Knose vs PetsOnMe 2026: Which Pet Insurance? | Refer Labs",
     description:
-      "Knose vs PetsOnMe compared on published cover: 90% vs 80% of the vet bill, $25,000 vs $20,000 annual limits, excess from $0 vs $100, and sub-limits. Not financial advice.",
+      "Knose vs PetsOnMe compared on published cover: 90% vs 80% of the vet bill, $25,000 vs $20,000 annual limits, excess from $0 vs $100, and sub-limits.",
     url: `${SITE_URL}/knose-vs-petsonme`,
     keywords: ["knose vs petsonme", "petsonme vs knose", "knose or petsonme", "compare knose petsonme pet insurance", "best pet insurance australia comparison"],
   },
   bestPetInsurance: {
-    title: "Best Pet Insurance in Australia 2026: How to Choose | Refer Labs",
+    title: "Best Pet Insurance in Australia 2026: How to Choose",
     description:
-      "How to choose pet insurance in Australia: the benefit percentage, annual limits, excess, waiting periods and exclusions that decide what you get back, plus the providers we cover. Not financial advice.",
+      "How to choose pet insurance in Australia: the benefit percentage, annual limits, excess, waiting periods and exclusions that decide what you get back.",
     url: `${SITE_URL}/best-pet-insurance-australia`,
     keywords: ["best pet insurance australia", "best pet insurance", "compare pet insurance australia", "best dog insurance australia", "best cat insurance australia", "pet insurance comparison australia"],
   },
@@ -216,52 +216,52 @@ export const seoConfig = {
     keywords: ["knose pet insurance", "knose promo code", "knose 2 months free", "knose pet insurance review"],
   },
   ecoflow: {
-    title: "EcoFlow Australia Review 2026: Real AUD Prices by Model | Refer Labs",
+    title: "EcoFlow Australia Review 2026: Real AUD Prices by Model",
     description:
-      "EcoFlow's Australian range priced per model and per watt-hour, read off EcoFlow's own AU store: DELTA 3 Classic A$999 for 1024Wh up to DELTA Pro Ultra A$7,299. What each runs, and who it suits.",
+      "EcoFlow's Australian range priced per model and per watt-hour, read off its own AU store: DELTA 3 Classic A$999 for 1024Wh up to DELTA Pro Ultra A$7,299.",
     url: `${SITE_URL}/ecoflow`,
     keywords: ["ecoflow australia", "ecoflow price australia", "ecoflow delta 3 price", "ecoflow portable power station", "ecoflow review australia"],
   },
   ankerSolix: {
-    title: "Anker SOLIX Australia Review 2026: Real AUD Prices by Model | Refer Labs",
+    title: "Anker SOLIX Australia Review 2026: Real AUD Prices by Model",
     description:
-      "Anker SOLIX's Australian range priced per model and per watt-hour, read off Anker's own AU store: C300 A$449 for 288Wh up to F3800 A$5,399 for 3840Wh. What each runs, and who it suits.",
+      "Anker SOLIX's Australian range priced per model and per watt-hour, read off Anker's own AU store: C300 A$449 for 288Wh up to F3800 A$5,399 for 3840Wh.",
     url: `${SITE_URL}/anker-solix`,
     keywords: ["anker solix australia", "anker solix price australia", "anker c1000 price", "anker solix f3800", "anker solix review australia"],
   },
   ecoflowVsAnkerSolix: {
-    title: "EcoFlow vs Anker SOLIX 2026: Priced Per Watt-Hour in AUD | Refer Labs",
+    title: "EcoFlow vs Anker SOLIX 2026: Priced Per Watt-Hour in AUD",
     description:
-      "EcoFlow vs Anker SOLIX compared on the number that decides it: cost per watt-hour in Australian dollars, at matching capacities, read off both companies' own AU stores and dated.",
+      "EcoFlow vs Anker SOLIX on the number that decides it: cost per watt-hour in A$, at matching capacities, read off both companies' own AU stores.",
     url: `${SITE_URL}/ecoflow-vs-anker-solix`,
     keywords: ["ecoflow vs anker solix", "anker solix vs ecoflow", "best portable power station australia", "ecoflow or anker", "portable power station comparison australia"],
   },
   solarAndEnergy: {
-    title: "Solar & Energy Australia: Batteries, Rebates and Portable Power | Refer Labs",
+    title: "Solar & Energy Australia: Batteries, Rebates, Portable Power",
     description:
-      "The Australian energy decisions in the order they matter: whether a home battery pays back on your usage, what the federal and state rebates leave you paying, who installs it, and what to do instead if you rent. Real prices, dated.",
+      "The Australian energy decisions in order: whether a home battery pays back on your usage, what the rebates leave you paying, and who installs it. Dated prices.",
     url: `${SITE_URL}/solar-and-energy`,
     keywords: ["solar and energy australia", "home battery guide australia", "home battery rebate 2026", "battery payback australia", "portable power for renters australia"],
   },
   portablePowerStationAustralia: {
-    title: "Portable Power Stations Australia 2026: What They Cost & What They Run | Refer Labs",
+    title: "Portable Power Stations Australia: What They Cost and Run",
     description:
-      "What a portable power station costs in Australia and what it will run in a blackout, with real AUD prices per watt-hour from EcoFlow and Anker SOLIX. Written for renters and apartments, who cannot install a fixed battery.",
+      "What a portable power station costs in Australia and what it will run in a blackout, with real AUD prices per watt-hour from EcoFlow and Anker SOLIX.",
     url: `${SITE_URL}/portable-power-station-australia`,
     keywords: ["portable power station australia", "blackout backup renters australia", "power station for apartment", "backup power without solar", "best portable power station australia"],
   },
   portableVsInstalledBattery: {
-    title: "Portable Power Station vs Installed Home Battery: Which Do You Need? | Refer Labs",
+    title: "Portable Power Station vs Installed Home Battery: Which?",
     description:
-      "A portable power station and an installed home battery solve different problems at roughly ten times the price difference. Where each one wins, with real AUD figures and the rebate rules that only apply to one of them.",
+      "A portable power station and an installed home battery solve different problems at roughly ten times the price difference.",
     url: `${SITE_URL}/portable-vs-installed-home-battery-australia`,
     keywords: ["portable power station vs home battery", "do i need a home battery or generator", "home battery vs power station australia", "cheapest blackout backup australia"],
   },
 
   whoUnderwritesPetInsurance: {
-    title: "Who Underwrites Pet Insurance in Australia? 2026 List | Refer Labs",
+    title: "Who Underwrites Pet Insurance in Australia? 2026 List",
     description:
-      "PetSure issues or administers 20+ Australian pet insurance brands, including Trupanion since March 2026. Knose and PetsOnMe are underwritten by Pacific International. Read off each company's own disclosure, dated.",
+      "PetSure issues or administers 20+ Australian pet insurance brands, including Trupanion since March 2026.",
     url: `${SITE_URL}/who-underwrites-pet-insurance-australia`,
     keywords: ["who underwrites pet insurance australia", "is trupanion underwritten by petsure", "who underwrites knose", "petsure brands list", "pet insurance underwriter australia", "petsonme underwriter"],
   },
@@ -302,7 +302,7 @@ export const seoConfig = {
   weightLossHub: {
     title: "Weight Loss Telehealth Australia 2026 | Refer Labs",
     description:
-      "Compare weight-loss telehealth in Australia: clinics, coaching and the GP pathway, with independent guides to Moshy and Juniper and the current offer on each. Info only.",
+      "Compare weight-loss telehealth in Australia: clinics, coaching and the GP pathway, with independent guides to Moshy and Juniper. Information only.",
     url: `${SITE_URL}/weight-loss`,
     keywords: [
       "weight loss telehealth australia",
@@ -319,7 +319,7 @@ export const seoConfig = {
   forBusiness: {
     title: "For Business: Partner With Refer Labs",
     description:
-      "Get your product featured in Refer Labs comparisons, or work with our team on referral programs, affiliate distribution and Australian market entry. Partnerships disclosed, rankings never sold.",
+      "Get your product featured in Refer Labs comparisons, or work with our team on referral programs, affiliate distribution and Australian market entry.",
     url: `${SITE_URL}/for-business`,
     keywords: [
       "partner with refer labs",
@@ -384,7 +384,7 @@ export const seoConfig = {
 
   whoItsFor: {
     noIndex: true,
-    title: "Who It's For: B2B & B2C Businesses Ready to Scale | Refer Labs",
+    title: "Who It's For: B2B & B2C Businesses Ready to Scale",
     description:
       "Refer Labs works with SMBs, eCommerce brands, SaaS companies, and global operators who want to build referral programs, activate distribution channels, and scale through structured growth.",
     url: `${SITE_URL}/who-its-for`,
@@ -412,9 +412,9 @@ export const seoConfig = {
   },
 
   about: {
-    title: "About Refer Labs: Australia's Independent Comparison Platform",
+    title: "About Refer Labs: Australia's Independent Comparison Site",
     description:
-      "Refer Labs helps Australians choose between health services, software and tools through independent, disclosed comparisons, and helps businesses reach qualified buyers. Rankings are never sold.",
+      "Refer Labs helps Australians choose between health services, software and tools through independent, disclosed comparisons. Rankings are never sold.",
     url: `${SITE_URL}/about`,
     keywords: [
       "about refer labs",
@@ -428,65 +428,65 @@ export const seoConfig = {
     // Retired 24 Aug 2026: the affiliate link 404s. Defensive noIndex so
     // deleting the redirect cannot silently republish the page.
     noIndex: true,
-    title: "CloudTalk Discount Code 2026: Is There One? Pricing & Free Trial | Refer Labs",
+    title: "CloudTalk Discount Code 2026: Is There One? Pricing & Free Trial",
     description:
-      "Looking for a CloudTalk discount code, promo code or referral link? CloudTalk is an AI call-centre and business phone system. Start with a 14-day free trial plus free AI-voice test minutes through our link.",
+      "Looking for a CloudTalk discount code, promo code or referral link? CloudTalk is an AI call-centre and business phone system.",
     url: `${SITE_URL}/cloudtalk`,
     keywords: ["cloudtalk discount code", "cloudtalk promo code", "cloudtalk coupon", "cloudtalk referral link", "cloudtalk review", "cloudtalk pricing", "cloudtalk free trial", "business phone system"],
   },
   krispcall: {
-    title: "KrispCall Discount Code 2026: Is There One? Pricing & Plans | Refer Labs",
+    title: "KrispCall Discount Code 2026: No Code, Free Trial Available",
     description:
-      "Looking for a KrispCall discount code, promo code or referral link? KrispCall is a cloud phone system with virtual numbers and a shared team inbox. See the current plan and start via our link.",
+      "Looking for a KrispCall discount code, promo code or referral link? KrispCall is a cloud phone system with virtual numbers and a shared team inbox.",
     url: `${SITE_URL}/krispcall`,
     keywords: ["krispcall discount code", "krispcall promo code", "krispcall coupon", "krispcall referral link", "krispcall review", "krispcall pricing", "virtual phone number", "cloud phone system"],
   },
   dext: {
-    title: "Dext Discount Code 2026: Is There One? Pricing & Free Trial | Refer Labs",
+    title: "Dext Discount Code 2026: No Code, 14-Day Free Trial",
     description:
-      "Looking for a Dext discount code, promo code or referral link? Dext automates bookkeeping, capturing receipts and invoices and syncing to Xero, QuickBooks and Sage. Start free with a 14-day trial through our link.",
+      "Looking for a Dext discount code, promo code or referral link?",
     url: `${SITE_URL}/dext`,
     keywords: ["dext discount code", "dext promo code", "dext coupon", "dext referral link", "dext review", "dext pricing", "receiptbank dext", "bookkeeping automation software"],
   },
   trainual: {
-    title: "Trainual Discount Code 2026: Is There One? Pricing & Free Trial | Refer Labs",
+    title: "Trainual Discount Code 2026: No Code, 7-Day Free Trial",
     description:
-      "Looking for a Trainual discount code, promo code or referral link? Trainual documents processes, onboarding and SOPs in one place. See the current plan and start via our link.",
+      "Looking for a Trainual discount code, promo code or referral link? Trainual documents processes, onboarding and SOPs in one place.",
     url: `${SITE_URL}/trainual`,
     keywords: ["trainual discount code", "trainual promo code", "trainual coupon", "trainual referral link", "trainual review", "trainual pricing", "employee onboarding software", "sop software"],
   },
   lindy: {
-    title: "Lindy Discount Code 2026: Is There One? Pricing & Free Trial | Refer Labs",
+    title: "Lindy Discount Code 2026: No Code, 7-Day Free Trial",
     description:
-      "Looking for a Lindy discount code, promo code or referral link? Lindy is an AI assistant that automates inbox, scheduling and CRM work. Try it free for 7 days through our link.",
+      "Looking for a Lindy discount code, promo code or referral link? Lindy is an AI assistant that automates inbox, scheduling and CRM work.",
     url: `${SITE_URL}/lindy`,
     keywords: ["lindy discount code", "lindy ai promo code", "lindy coupon", "lindy referral link", "lindy ai review", "lindy pricing", "ai work assistant", "ai automation tool"],
   },
   elevenlabs: {
-    title: "ElevenLabs Discount Code 2026: Is There One? Free Plan & Pricing | Refer Labs",
+    title: "ElevenLabs Discount Code 2026: No Code, Free 10,000 Credits",
     description:
-      "Looking for an ElevenLabs discount code, promo code or referral link? ElevenLabs is an AI voice and text-to-speech platform with voice cloning and dubbing. Start on the free plan via our link.",
+      "Looking for an ElevenLabs discount code, promo code or referral link? ElevenLabs is an AI voice and text-to-speech platform with voice cloning and dubbing.",
     url: `${SITE_URL}/elevenlabs`,
     keywords: ["elevenlabs discount code", "elevenlabs promo code", "elevenlabs coupon", "elevenlabs referral link", "elevenlabs review", "elevenlabs pricing", "ai voice generator", "text to speech ai"],
   },
   wingAssistant: {
-    title: "Wing Assistant Discount Code 2026: Is There One? What It Costs | Refer Labs",
+    title: "Wing Assistant Discount Code 2026: No Code, Free Consult",
     description:
-      "Looking for a Wing Assistant discount code, promo code or referral link? Wing is a managed virtual-assistant service with dedicated assistants across many roles. Book a free consultation via our link.",
+      "Looking for a Wing Assistant discount code, promo code or referral link?",
     url: `${SITE_URL}/wing-assistant`,
     keywords: ["wing assistant discount code", "wing assistant promo code", "wing assistant referral link", "wing assistant review", "wing assistant pricing", "managed virtual assistant", "virtual assistant service"],
   },
   survicate: {
-    title: "Survicate Discount Code 2026: Is There One? Free Plan & Pricing | Refer Labs",
+    title: "Survicate Discount Code 2026: No Code, Free Plan to Start",
     description:
-      "Looking for a Survicate discount code, promo code or referral link? Survicate runs customer-feedback surveys across web, email and app with AI analysis. Start on the free plan via our link.",
+      "Looking for a Survicate discount code, promo code or referral link? Survicate runs customer-feedback surveys across web, email and app with AI analysis.",
     url: `${SITE_URL}/survicate`,
     keywords: ["survicate discount code", "survicate promo code", "survicate coupon", "survicate referral link", "survicate review", "survicate pricing", "customer feedback software", "survey tool"],
   },
   nutshell: {
-    title: "Nutshell Discount Code 2026: Is There One? Pricing & Free Trial | Refer Labs",
+    title: "Nutshell Discount Code 2026: No Code, 14-Day Free Trial",
     description:
-      "Looking for a Nutshell discount code, promo code or referral link? Nutshell is an easy sales CRM with email marketing built in. Start with a 14-day free trial, no card, through our link. From US$13/user/mo.",
+      "Looking for a Nutshell discount code, promo code or referral link? Nutshell is an easy sales CRM with email marketing built in.",
     url: `${SITE_URL}/nutshell`,
     keywords: ["nutshell discount code", "nutshell promo code", "nutshell coupon", "nutshell crm referral link", "nutshell crm review", "nutshell pricing", "easy sales crm", "small business crm"],
   },
@@ -498,58 +498,58 @@ export const seoConfig = {
     keywords: ["business software comparison", "best crm australia", "best business phone system", "hr payroll software australia", "ai business tools", "small business software 2026"],
   },
   databox: {
-    title: "Databox Discount Code 2026: Is There One? | Refer Labs",
+    title: "Databox Discount Code 2026: No Code, Free Plan Available",
     description:
-      "No Databox coupon exists and nobody holds one. The free plan is permanent (3 data sources, 1 user) and annual billing takes 20% off. Every plan priced, read 5 September 2026.",
+      "No Databox coupon exists and nobody holds one. The free plan is permanent (3 data sources, 1 user) and annual billing takes 20% off.",
     url: `${SITE_URL}/databox`,
     keywords: ["databox discount code", "databox coupon", "databox promo code", "databox pricing", "databox free plan", "databox cost australia"],
   },
   pipedrive: {
-    title: "Pipedrive Discount Code 2026: Is There One? Pricing & Free Trial | Refer Labs",
+    title: "Pipedrive Discount Code 2026: No Code, 14-Day Free Trial",
     description:
-      "Looking for a Pipedrive discount code, promo code or referral link? Pipedrive is a visual sales CRM with a 14-day free trial, no card, through our link. From AU$19/seat/mo billed annually, read 5 Sep 2026.",
+      "Looking for a Pipedrive discount code, promo code or referral link? Pipedrive is a visual sales CRM with a 14-day free trial, no card, through our link.",
     url: `${SITE_URL}/pipedrive`,
     keywords: ["pipedrive discount code", "pipedrive promo code", "pipedrive coupon", "pipedrive referral link", "pipedrive review", "pipedrive pricing", "visual sales crm", "pipeline crm"],
   },
   activeCampaign: {
-    title: "ActiveCampaign Discount Code 2026: Is There One? Pricing & Trial | Refer Labs",
+    title: "ActiveCampaign Discount Code 2026: No Code, 14-Day Trial",
     description:
-      "Looking for an ActiveCampaign discount code, promo code or referral link? Email marketing plus a powerful automation builder and CRM, with a 14-day free trial through our link. From US$15/mo.",
+      "Looking for an ActiveCampaign discount code, promo code or referral link?",
     url: `${SITE_URL}/activecampaign`,
     keywords: ["activecampaign discount code", "activecampaign promo code", "activecampaign coupon", "activecampaign referral link", "activecampaign review", "activecampaign pricing", "email marketing automation", "marketing automation crm"],
   },
   helloBar: {
-    title: "Hello Bar Discount Code 2026: Is There One? Free Plan & Pricing | Refer Labs",
+    title: "Hello Bar Discount Code 2026: No Code, Free Plan to Start",
     description:
-      "Looking for a Hello Bar discount code or referral link? Hello Bar adds no-code popups and bars to capture emails and lift conversions. Free plan; paid from US$29/mo. Start via our link.",
+      "Looking for a Hello Bar discount code or referral link? Hello Bar adds no-code popups and bars to capture emails and lift conversions.",
     url: `${SITE_URL}/hellobar`,
     keywords: ["hello bar discount code", "hellobar referral link", "hello bar review", "hello bar pricing", "website popup tool", "email capture popup", "notification bar"],
   },
   outgrow: {
-    title: "Outgrow Discount Code 2026: Is There One? Free Plan & Pricing | Refer Labs",
+    title: "Outgrow Discount Code 2026: No Code, Free Plan Available",
     description:
-      "Looking for an Outgrow discount code or referral link? Outgrow builds no-code calculators, quizzes and assessments that capture qualified leads. Free plan plus a 7-day trial. From US$14/mo, via our link.",
+      "Looking for an Outgrow discount code or referral link? Outgrow builds no-code calculators, quizzes and assessments that capture qualified leads.",
     url: `${SITE_URL}/outgrow`,
     keywords: ["outgrow discount code", "outgrow referral link", "outgrow review", "outgrow pricing", "interactive content tool", "quiz funnel builder", "lead generation calculator"],
   },
   flexiQuiz: {
-    title: "FlexiQuiz Discount Code 2026: Is There One? Free Plan & Pricing | Refer Labs",
+    title: "FlexiQuiz Discount Code 2026: No Code, Free Plan to Start",
     description:
-      "Looking for a FlexiQuiz discount code or referral link? FlexiQuiz builds online quizzes, tests and assessments with auto-marking and certificates. Free plan; paid from US$17/mo. Start via our link.",
+      "Looking for a FlexiQuiz discount code or referral link? FlexiQuiz builds online quizzes, tests and assessments with auto-marking and certificates.",
     url: `${SITE_URL}/flexiquiz`,
     keywords: ["flexiquiz discount code", "flexiquiz referral link", "flexiquiz review", "flexiquiz pricing", "online quiz maker", "online test maker", "assessment software"],
   },
   landingi: {
-    title: "Landingi Discount Code 2026: Is There One? Pricing & Free Trial | Refer Labs",
+    title: "Landingi Discount Code 2026: No Code, 14-Day Free Trial",
     description:
-      "Looking for a Landingi discount code or referral link? Landingi is a no-code landing-page builder with A/B testing and a 14-day free trial through our link. From US$24/mo.",
+      "Looking for a Landingi discount code or referral link?",
     url: `${SITE_URL}/landingi`,
     keywords: ["landingi discount code", "landingi referral link", "landingi review", "landingi pricing", "landing page builder", "no-code landing page", "ab testing landing page"],
   },
   apolloEnergyReview: {
     title: "Apollo Energy Group Review 2026: Is It Legit? ($500 Off)",
     description:
-      "An independent Apollo Energy Group review: the credentials you can check (SAA accreditation, Electrical Licence 400672, ABN, 10-year warranty), what to look at before you sign, and the exclusive $500 off your battery quote through Refer Labs.",
+      "An independent Apollo Energy Group review: the credentials you can check, what to look at before you sign, and the exclusive $500 off your battery quote.",
     url: `${SITE_URL}/apollo-energy-review`,
     keywords: ["apollo energy group review", "is apollo energy group legit", "apollo energy reviews", "apollo energy group australia", "apollo battery installer review", "home battery installer review australia"],
   },
@@ -563,7 +563,7 @@ export const seoConfig = {
   homeBatteryRebateByState: {
     title: "Home Battery Rebate by State 2026 | Refer Labs",
     description:
-      "Home battery rebates by state for 2026: the federal Cheaper Home Batteries rebate applies everywhere, and only WA and NSW add a meaningful state incentive on top.",
+      "Home battery rebates by state for 2026: the federal Cheaper Home Batteries rebate applies everywhere, and only WA and NSW add a state incentive.",
     url: `${SITE_URL}/home-battery-rebate-by-state-australia`,
     keywords: ["home battery rebate by state", "home battery rebate nsw", "home battery rebate victoria", "home battery rebate qld", "home battery rebate wa", "home battery rebate sa", "solar battery rebate by state australia", "state battery incentives australia 2026"],
   },
@@ -593,7 +593,7 @@ export const seoConfig = {
   comingSoon: {
     title: "What We're Building Next | Refer Labs",
     description:
-      "The categories Refer Labs is researching before adding any provider: skin and beauty, and sleep. The guides are live and free to read; the comparisons follow once we have checked a provider ourselves.",
+      "The categories Refer Labs is researching before adding any provider: skin and beauty, and sleep.",
     url: `${SITE_URL}/coming-soon`,
     keywords: ["refer labs new sections", "refer labs coming soon", "australian comparison guides"],
   },
@@ -604,9 +604,9 @@ export const seoConfig = {
   // ranking, because Superfiliate is the only tool in the category we have checked
   // and ranking tools we have not verified would be invented authority.
   affiliateSoftware: {
-    title: "Affiliate & Referral Software in Australia 2026: How to Choose | Refer Labs",
+    title: "Affiliate & Referral Software Australia 2026: How to Choose",
     description:
-      "Choosing software to run your own affiliate or referral program in Australia: what separates the platforms, why almost none publish a price, and the questions that make two quotes comparable.",
+      "Choosing software to run an affiliate or referral program in Australia: what separates the platforms, why almost none publish a price, and what to ask.",
     url: `${SITE_URL}/affiliate-software-australia`,
     keywords: ["affiliate software australia", "referral software australia", "affiliate marketing software australia", "referral program software australia", "affiliate platform for brands australia", "how to run an affiliate program australia"],
   },
@@ -616,9 +616,9 @@ export const seoConfig = {
   // pattern /moshy, /moshhair and /superfiliate use, and it is what someone
   // searching "unbounce discount code" is looking for.
   unbounce: {
-    title: "Unbounce Discount Code 2026: 20% Off 3 Months or 35% Off a Year | Refer Labs",
+    title: "Unbounce Discount Code 2026: 20% Off 3 Months or 35% Off a Year",
     description:
-      "The current Unbounce offer: 20% off your first three months, or 35% off your first full year on annual billing. New customers only, applied through our link with no code to type. Verified on Unbounce's own page, 20 August 2026.",
+      "The current Unbounce offer: 20% off your first three months, or 35% off your first full year on annual billing.",
     url: `${SITE_URL}/unbounce`,
     keywords: ["unbounce discount code", "unbounce promo code", "unbounce coupon", "unbounce discount australia", "unbounce free trial", "unbounce pricing discount", "unbounce landing page builder"],
   },
@@ -630,42 +630,42 @@ export const seoConfig = {
   // rather than the marketing. Supplements makes no therapeutic claim at all,
   // because claims on listed medicines are what the TGA polices hardest here.
   longevityHub: {
-    title: "Longevity in Australia 2026: What It Costs and What Holds Up | Refer Labs",
+    title: "Longevity in Australia 2026: What It Costs and What Holds Up",
     description:
-      "Independent guides to the longevity market in Australia: recovery hardware and its running costs, what screening and diagnostics cost, and how to read the evidence behind supplements.",
+      "Independent guides to longevity in Australia: recovery hardware and its running costs, what diagnostics cost, and the evidence behind supplements.",
     url: `${SITE_URL}/longevity`,
     keywords: ["longevity australia", "longevity clinic australia", "biohacking australia", "longevity cost australia"],
   },
   recoveryHub: {
-    title: "Recovery in Australia 2026: Ice Baths, Saunas and Real Costs | Refer Labs",
+    title: "Recovery in Australia 2026: Ice Baths, Saunas and Real Costs",
     description:
       "Ice baths and saunas in Australia: what the units cost, what they cost to run each year, and what the evidence does and does not support.",
     url: `${SITE_URL}/longevity/recovery`,
     keywords: ["ice bath australia", "home sauna australia", "recovery australia", "cold plunge australia"],
   },
   iceBathComparison: {
-    title: "Ice Baths in Australia 2026: How to Compare Them | Refer Labs",
+    title: "Ice Baths in Australia 2026: How to Compare Them",
     description:
       "Comparing ice baths and cold plunges in Australia: chiller capacity, insulation, filtration and what separates a $1,000 setup from a $10,000 one.",
     url: `${SITE_URL}/longevity/recovery/ice-bath-comparison-australia`,
     keywords: ["ice bath australia", "cold plunge australia", "best ice bath australia", "ice bath comparison australia", "ice bath chiller australia"],
   },
   iceBathRunningCosts: {
-    title: "Ice Bath Running Costs in Australia 2026: The Real Numbers | Refer Labs",
+    title: "Ice Bath Running Costs in Australia 2026: The Real Numbers",
     description:
-      "What an ice bath costs to run in Australia each year: chiller electricity worked from your own tariff, water, filtration and consumables, plus how it compares to buying bagged ice.",
+      "What an ice bath costs to run in Australia each year: chiller electricity from your own tariff, water, filtration and consumables, versus bagged ice.",
     url: `${SITE_URL}/longevity/recovery/ice-bath-running-costs-australia`,
     keywords: ["ice bath running cost australia", "cold plunge electricity cost australia", "ice bath chiller running cost", "how much does an ice bath cost to run"],
   },
   saunaComparison: {
     title: "Infrared vs Traditional Sauna in Australia 2026 | Refer Labs",
     description:
-      "How infrared and traditional saunas differ in Australia on installation, electrical requirements, running cost and what the evidence supports, without the marketing.",
+      "How infrared and traditional saunas differ in Australia on installation, electrical requirements, running cost and what the evidence supports.",
     url: `${SITE_URL}/longevity/recovery/infrared-vs-traditional-sauna-australia`,
     keywords: ["infrared vs traditional sauna", "infrared sauna australia", "traditional sauna australia", "which sauna is better australia"],
   },
   homeSaunaCost: {
-    title: "Home Sauna Cost in Australia 2026: Purchase and Running | Refer Labs",
+    title: "Home Sauna Cost in Australia 2026: Purchase and Running",
     description:
       "What a home sauna costs in Australia: unit price, the electrical work most quotes exclude, installation, and what it adds to your power bill each year.",
     url: `${SITE_URL}/longevity/recovery/home-sauna-cost-australia`,
@@ -679,58 +679,58 @@ export const seoConfig = {
     keywords: ["contrast therapy evidence", "hot cold therapy australia", "contrast therapy benefits", "does contrast therapy work"],
   },
   recoveryQuiz: {
-    title: "Recovery Setup Quiz: What Fits Your Space and Budget | Refer Labs",
+    title: "Recovery Setup Quiz: What Fits Your Space and Budget",
     description:
       "A short quiz matching you to a recovery setup based on space, budget, climate and how often you would use it. General information, not medical advice.",
     url: `${SITE_URL}/longevity/recovery/recovery-setup-quiz`,
     keywords: ["recovery setup quiz", "ice bath or sauna", "home recovery australia"],
   },
   diagnosticsHub: {
-    title: "Health Diagnostics in Australia 2026: What They Cost and What They Find | Refer Labs",
+    title: "Health Diagnostics Australia 2026: Costs and What They Find",
     description:
-      "Preventive screening and diagnostics in Australia: what whole-body MRI, biological-age testing and continuous glucose monitoring cost, and what the medical community says about each.",
+      "Preventive screening in Australia: what whole-body MRI, biological-age testing and glucose monitoring cost, and what the medical community says.",
     url: `${SITE_URL}/longevity/diagnostics`,
     keywords: ["health screening australia", "preventive health australia", "health diagnostics australia cost"],
   },
   screeningCompared: {
-    title: "Everlab vs Prenuvo vs i-screen in Australia 2026 | Refer Labs",
+    title: "Everlab vs Prenuvo vs i-screen in Australia 2026",
     description:
-      "How Australia's preventive screening services differ on what they measure, how each is priced, whether a doctor reviews the result, and what happens when something incidental shows up.",
+      "How Australia's preventive screening services differ on what they measure, how each is priced, and whether a doctor reviews the result.",
     url: `${SITE_URL}/longevity/diagnostics/everlab-vs-prenuvo-vs-i-screen-australia`,
     keywords: ["everlab australia", "prenuvo australia", "i-screen australia", "health screening compared australia", "preventive screening australia"],
   },
   wholeBodyMri: {
-    title: "Whole-Body MRI in Australia 2026: Cost and the Case Against | Refer Labs",
+    title: "Whole-Body MRI in Australia 2026: Cost and the Case Against",
     description:
-      "What whole-body MRI screening costs in Australia, why no Medicare rebate applies, and why Australian medical bodies are cautious about screening people with no symptoms.",
+      "What whole-body MRI screening costs in Australia, why no Medicare rebate applies, and why medical bodies are cautious about screening the well.",
     url: `${SITE_URL}/longevity/diagnostics/whole-body-mri-australia-cost`,
     keywords: ["whole body mri australia cost", "prenuvo cost australia", "full body scan australia", "whole body mri medicare"],
   },
   biologicalAge: {
-    title: "Biological Age Testing in Australia 2026: Does It Mean Anything? | Refer Labs",
+    title: "Biological Age Testing Australia: Does It Mean Anything?",
     description:
-      "What biological age tests measure in Australia, why two tests can give you different ages from the same sample, and what the science does and does not currently support.",
+      "What biological age tests measure in Australia, why two tests can give different ages from one sample, and what the science does not support.",
     url: `${SITE_URL}/longevity/diagnostics/biological-age-testing-australia`,
     keywords: ["biological age test australia", "epigenetic age test australia", "biological age testing cost", "dna methylation test australia"],
   },
   cgmNonDiabetic: {
-    title: "CGM for Non-Diabetics in Australia 2026: Cost and Evidence | Refer Labs",
+    title: "CGM for Non-Diabetics in Australia 2026: Cost and Evidence",
     description:
-      "Continuous glucose monitors for people without diabetes in Australia: what they cost without a subsidy, how access works, and what the evidence supports for non-diabetic use.",
+      "Continuous glucose monitors for people without diabetes in Australia: what they cost unsubsidised, how access works, and what the evidence supports.",
     url: `${SITE_URL}/longevity/diagnostics/cgm-for-non-diabetics-australia`,
     keywords: ["cgm for non diabetics australia", "continuous glucose monitor australia cost", "cgm without diabetes", "glucose monitor australia price"],
   },
   screeningQuiz: {
-    title: "Health Screening Quiz: Is Preventive Screening Worth It For You? | Refer Labs",
+    title: "Health Screening Quiz: Is Preventive Screening Worth It?",
     description:
-      "A short quiz on whether preventive screening suits your situation, based on budget and how you would handle an uncertain result. No health questions. Not medical advice.",
+      "A short quiz on whether preventive screening suits your situation, based on budget and how you would handle an uncertain result. No health questions.",
     url: `${SITE_URL}/longevity/diagnostics/health-screening-quiz`,
     keywords: ["health screening quiz", "should i get a full body scan", "preventive screening worth it australia"],
   },
   supplementsEvidence: {
-    title: "Longevity Supplements in Australia 2026: An Evidence Review | Refer Labs",
+    title: "Longevity Supplements in Australia 2026: An Evidence Review",
     description:
-      "How to read the evidence behind longevity supplements sold in Australia, what AUST L on the label means, and why almost none of the headline claims survive scrutiny.",
+      "How to read the evidence behind longevity supplements sold in Australia, what AUST L on the label means, and why headline claims rarely survive.",
     url: `${SITE_URL}/longevity/supplements/longevity-supplements-evidence-review`,
     keywords: ["longevity supplements australia", "anti ageing supplements australia", "supplement evidence australia", "aust l meaning australia"],
   },
@@ -743,37 +743,37 @@ export const seoConfig = {
   // model, price and inclusions, never products. Adult-retail links are confined
   // to /mens-health/sexual-wellness-products and are not live yet.
   mensHealthHub: {
-    title: "Men's Health in Australia 2026: Costs and How Access Works | Refer Labs",
+    title: "Men's Health in Australia 2026: Costs and How Access Works",
     description:
-      "Independent guides to men's health services in Australia: how online clinics and GPs differ on cost and consult model, what is bulk-billed, and what to ask before subscribing.",
+      "Independent guides to men's health in Australia: how online clinics and GPs differ on cost and consult model, and what is bulk-billed.",
     url: `${SITE_URL}/mens-health`,
     keywords: ["mens health australia", "mens health telehealth australia", "mens health clinic australia", "mens health cost australia"],
   },
   edTreatmentCost: {
-    title: "Erectile Dysfunction Treatment Cost in Australia 2026 | Refer Labs",
+    title: "Erectile Dysfunction Treatment Cost in Australia 2026",
     description:
-      "What treatment for erectile dysfunction costs in Australia: how GP, telehealth and subscription models are priced differently, where Medicare applies, and the questions that reveal the real annual cost.",
+      "What erectile dysfunction treatment costs in Australia: how GP, telehealth and subscription models are priced, and where Medicare applies.",
     url: `${SITE_URL}/mens-health/erectile-dysfunction-treatment-cost-australia`,
     keywords: ["erectile dysfunction treatment cost australia", "ed treatment cost australia", "erectile dysfunction australia", "ed clinic cost australia", "erectile dysfunction gp australia"],
   },
   peTreatmentOptions: {
-    title: "Premature Ejaculation Treatment in Australia 2026: The Options | Refer Labs",
+    title: "Premature Ejaculation Treatment Australia 2026: The Options",
     description:
-      "The routes to treatment for premature ejaculation in Australia: what a GP, a psychologist and an online clinic each offer, how they are priced, and where Medicare applies.",
+      "Routes to treatment for premature ejaculation in Australia: what a GP, a psychologist and an online clinic offer, and where Medicare applies.",
     url: `${SITE_URL}/mens-health/premature-ejaculation-treatment-options-australia`,
     keywords: ["premature ejaculation treatment australia", "premature ejaculation options australia", "premature ejaculation gp australia", "premature ejaculation cost australia"],
   },
   mensClinicsCompared: {
-    title: "Online Men's Health Clinics in Australia 2026, Compared | Refer Labs",
+    title: "Online Men's Health Clinics in Australia 2026, Compared",
     description:
-      "How Australian online men's health clinics differ on consult model, subscription structure, what is included and what is billed separately, plus the checks to run before you sign up.",
+      "How Australian online men's health clinics differ on consult model, subscription structure, and what is included versus billed separately.",
     url: `${SITE_URL}/mens-health/online-mens-health-clinics-compared`,
     keywords: ["online mens health clinic australia", "mens health telehealth compared australia", "best mens health clinic australia", "mens health subscription australia"],
   },
   telehealthVsGpMens: {
-    title: "Telehealth or a GP for Men's Health: Which Is Cheaper? 2026 | Refer Labs",
+    title: "Telehealth or a GP for Men's Health: Which Is Cheaper? 2026",
     description:
-      "Comparing an online men's health service against your regular GP on total cost: consult fees, Medicare rebates, subscription structure and what each route includes over a year.",
+      "Comparing an online men's health service against your GP on total cost: consult fees, Medicare rebates and what each route includes over a year.",
     url: `${SITE_URL}/mens-health/is-telehealth-or-a-gp-cheaper-for-mens-health`,
     keywords: ["telehealth vs gp cost australia", "is telehealth cheaper than a gp", "mens health gp or online australia", "bulk billed mens health australia"],
   },
@@ -792,7 +792,7 @@ export const seoConfig = {
     keywords: ["online prescription australia", "online script australia cost", "escript australia", "repeat prescription online australia", "telehealth prescription australia"],
   },
   sexualWellnessProducts: {
-    title: "Sexual Wellness Products in Australia: What to Know | Refer Labs",
+    title: "Sexual Wellness Products in Australia: What to Know",
     description:
       "General information on the non-prescription sexual wellness retail category in Australia, kept separate from our clinical men's health guides. For adults.",
     url: `${SITE_URL}/mens-health/sexual-wellness-products`,
@@ -801,7 +801,7 @@ export const seoConfig = {
   mensHealthQuiz: {
     title: "Men's Health: Which Route Fits You? | Refer Labs",
     description:
-      "A short quiz matching you to a men's health access route based on cost, discretion and how you prefer to consult. Asks no health questions. General information, not medical advice.",
+      "A short quiz matching you to a men's health access route based on cost, discretion and how you prefer to consult. Asks no health questions.",
     url: `${SITE_URL}/mens-health/mens-health-quiz`,
     keywords: ["mens health quiz australia", "online clinic or gp quiz", "mens health options australia"],
   },
@@ -813,44 +813,44 @@ export const seoConfig = {
   // regulated medical device in Australia, and the TGA lists software-as-a-
   // medical-device among its priority enforcement areas for 2026-27.
   sleep: {
-    title: "Sleep in Australia 2026: What Better Sleep Costs | Refer Labs",
+    title: "Sleep in Australia 2026: What Better Sleep Costs",
     description:
-      "Independent guides to sleep in Australia: what mattresses and trackers cost, how a sleep study works and what Medicare covers, and the real price of CPAP equipment.",
+      "Independent guides to sleep in Australia: what mattresses and trackers cost, how a sleep study works and what Medicare covers, and CPAP prices.",
     url: `${SITE_URL}/sleep`,
     keywords: ["sleep australia", "better sleep australia", "sleep health australia", "sleep cost australia", "sleep guide australia 2026"],
   },
   mattressComparison: {
-    title: "Mattress Buying in Australia 2026: How to Compare Properly | Refer Labs",
+    title: "Mattress Buying in Australia 2026: How to Compare Properly",
     description:
       "How to compare mattresses in Australia without relying on marketing: what the specifications mean, how trial periods and returns work, and where the money goes.",
     url: `${SITE_URL}/sleep/mattress-comparison-australia`,
     keywords: ["mattress comparison australia", "best mattress australia", "mattress buying guide australia", "mattress trial period australia", "how to choose a mattress australia"],
   },
   sleepTrackers: {
-    title: "Sleep Trackers Australia 2026: What They Measure | Refer Labs",
+    title: "Sleep Trackers Australia 2026: What They Measure",
     description:
       "What sleep trackers measure in Australia, the difference between a consumer wearable and a clinical sleep study, and what the numbers can and cannot tell you.",
     url: `${SITE_URL}/sleep/sleep-tracker-comparison-australia`,
     keywords: ["sleep tracker australia", "best sleep tracker australia", "sleep tracking accuracy", "wearable sleep tracker australia", "sleep tracker vs sleep study"],
   },
   sleepApnoeaPathway: {
-    title: "Do I Have Sleep Apnoea? How Australians Get Answers 2026 | Refer Labs",
+    title: "Do I Have Sleep Apnoea? How Australians Get Answers 2026",
     description:
       "How sleep apnoea is diagnosed in Australia: what a GP asks, how a sleep study is arranged, what Medicare covers, and how to prepare for the appointment.",
     url: `${SITE_URL}/sleep/do-i-have-sleep-apnoea`,
     keywords: ["do i have sleep apnoea", "sleep apnoea diagnosis australia", "sleep apnoea test australia", "sleep apnoea gp australia", "how to get tested for sleep apnoea australia"],
   },
   homeSleepTestCost: {
-    title: "Home Sleep Study Australia 2026: How It Works and What It Costs | Refer Labs",
+    title: "Home Sleep Study Australia 2026: How It Works and Costs",
     description:
-      "Home sleep studies in Australia: how the referral works, the difference between home and lab testing, where Medicare rebates apply, and what you can be left out of pocket.",
+      "Home sleep studies in Australia: how the referral works, home versus lab testing, where Medicare rebates apply, and what you pay out of pocket.",
     url: `${SITE_URL}/sleep/home-sleep-test-australia-cost`,
     keywords: ["home sleep study australia", "home sleep test cost australia", "sleep study cost australia", "sleep study medicare australia", "sleep study bulk billed australia"],
   },
   cpapCosts: {
     title: "CPAP Costs in Australia 2026: Verified Prices | Refer Labs",
     description:
-      "What CPAP equipment costs in Australia, with prices read off the manufacturer's own store and an Australian retailer, plus the ongoing consumable costs people miss.",
+      "What CPAP equipment costs in Australia, with prices read off the manufacturer's own store and an Australian retailer, plus ongoing consumables.",
     url: `${SITE_URL}/sleep/cpap-machine-costs-australia`,
     keywords: ["cpap machine cost australia", "cpap price australia", "resmed airsense 11 price australia", "cpap machine australia", "cpap consumables cost australia"],
   },
@@ -867,58 +867,58 @@ export const seoConfig = {
   // molecule is Schedule 4 in Australia, so the comparison is framed as
   // over-the-counter vs prescription-strength without naming the medicine.
   healthAndBeauty: {
-    title: "Health & Beauty Australia 2026: Prices, Rules and What They Certify | Refer Labs",
+    title: "Health & Beauty Australia: Prices and What They Certify",
     description:
-      "Independent guides to skincare, devices and meal replacements in Australia: what each costs in Australian dollars, which claims are checkable in a public register, and what the regulator says about very low energy diets.",
+      "Independent guides to skincare, devices and meal replacements in Australia: what each costs here, and which claims are checkable in a public register.",
     url: `${SITE_URL}/health-and-beauty`,
     keywords: ["health and beauty australia", "skincare australia", "meal replacement australia", "vlcd australia", "skin care costs australia"],
   },
   emmaSleep: {
-    title: "Emma Sleep Australia 2026: Real Prices and the Discount Test | Refer Labs",
+    title: "Emma Sleep Australia 2026: Real Prices and the Discount Test",
     description:
-      "Emma mattresses from $569 in Australia, every one listed at a discount when we read it. What the ACCC says about was/now pricing, and why you should compare the price you pay, not the struck-through one.",
+      "Emma mattresses from $569 in Australia, every one listed at a discount when we read it.",
     url: `${SITE_URL}/emma-sleep`,
     keywords: ["emma sleep australia", "emma mattress price australia", "emma mattress review", "emma sleep discount", "mattress sale australia"],
   },
   technogym: {
-    title: "Technogym Australia 2026: Published Prices, $4,460 to $20,490 | Refer Labs",
+    title: "Technogym Australia: Published Prices, $4,460 to $20,490",
     description:
-      "Technogym's Australian prices read off its own site: the Bench from A$4,460 to the Run at A$20,490. A four-fold spread within one brand, and what to settle before ordering equipment at this price.",
+      "Technogym's Australian prices read off its own site: the Bench from A$4,460 to the Run at A$20,490.",
     url: `${SITE_URL}/technogym`,
     keywords: ["technogym australia", "technogym price australia", "technogym bench price", "home gym equipment australia", "technogym run treadmill price"],
   },
   optislim: {
-    title: "OptiSlim Australia 2026: Price Per Meal and the VLED Rules | Refer Labs",
+    title: "OptiSlim Australia 2026: Price Per Meal and the VLED Rules",
     description:
-      "OptiSlim VLCD shakes cost $2.14 a meal, read off its own site. Australia's food regulator classes a very low energy diet as a food for special medical purposes, to be used under medical supervision for up to 12 weeks.",
+      "OptiSlim VLCD shakes cost $2.14 a meal, read off its own site.",
     url: `${SITE_URL}/optislim`,
     keywords: ["optislim", "optislim review australia", "optislim price", "vlcd australia", "meal replacement shakes australia"],
   },
   foreo: {
-    title: "Foreo Australia 2026: A$ Prices and the Registration It Cancelled | Refer Labs",
+    title: "Foreo Australia: A$ Prices and a Cancelled Registration",
     description:
-      "Foreo LUNA and UFO devices priced in Australian dollars off Foreo's own storefront. Foreo Oceania held ARTG entry 288695 and cancelled it at its own request, so these are sold here as cosmetic devices.",
+      "Foreo LUNA and UFO devices priced in Australian dollars off Foreo's own storefront.",
     url: `${SITE_URL}/foreo`,
     keywords: ["foreo australia", "foreo luna price australia", "foreo ufo australia", "foreo tga", "led skincare device australia"],
   },
   edibleBeauty: {
-    title: "Edible Beauty Australia 2026: Prices, and What Natural Certifies | Refer Labs",
+    title: "Edible Beauty Australia: Prices, and What Natural Certifies",
     description:
-      "Edible Beauty Australia products run $44 to $88, read off its own site. The brand sells on natural and lists no organic certification, and only one of those words is checkable in a public register.",
+      "Edible Beauty Australia products run $44 to $88, read off its own site.",
     url: `${SITE_URL}/edible-beauty`,
     keywords: ["edible beauty australia", "edible beauty review", "natural skincare australia", "certified organic skincare australia"],
   },
   aussieHealthProducts: {
-    title: "Aussie Health Products 2026: A Marketplace, Not a Brand | Refer Labs",
+    title: "Aussie Health Products 2026: A Marketplace, Not a Brand",
     description:
-      "Aussie Health Products is an Australian retailer stating it carries over 300 natural brands across food, supplements, sports nutrition and beauty. What a marketplace decides, and what it does not.",
+      "Aussie Health Products is an Australian retailer stating it carries over 300 natural brands across food, supplements, sports nutrition and beauty.",
     url: `${SITE_URL}/aussie-health-products`,
     keywords: ["aussie health products", "aussie health products review", "natural health retailer australia", "australian supplements online"],
   },
   retinolVsPrescription: {
-    title: "Retinol vs Prescription-Strength: The Australian Guide 2026 | Refer Labs",
+    title: "Retinol vs Prescription-Strength: The Australian Guide 2026",
     description:
-      "How over-the-counter retinol differs from prescription-strength skin treatment in Australia: how each is accessed, what the strength difference means, and how to decide which route to explore.",
+      "How over-the-counter retinol differs from prescription-strength skin treatment in Australia: how each is accessed, and what the strength difference means.",
     url: `${SITE_URL}/health-and-beauty/retinol-vs-prescription-strength-australia`,
     keywords: ["retinol australia", "retinol vs prescription australia", "retinol strength australia", "prescription skincare australia", "how to get prescription skincare australia"],
   },
@@ -934,7 +934,7 @@ export const seoConfig = {
     // price section rewritten ("What the local price buys is Australian consumer
     // guarantees...") and filler words removed from the intro and one FAQ. Title,
     // description and the AUD $470 figure unchanged.
-    title: "LED Face Masks Australia 2026: Omnilux Is AUD $470 Here | Refer Labs",
+    title: "LED Face Masks Australia 2026: Omnilux Is AUD $470 Here",
     description:
       "The Omnilux Contour Face was AUD $470 at RY on 19 Aug 2026, against USD $395 on the brand's own site. Why the gap exists, and how to check the ARTG.",
     url: `${SITE_URL}/health-and-beauty/led-face-mask-comparison-australia`,
@@ -955,14 +955,14 @@ export const seoConfig = {
     keywords: ["natural skincare australia", "organic skincare australia", "certified organic skincare australia", "aco certified skincare", "natural skincare brands australia"],
   },
   skincareCostPerUse: {
-    title: "Skincare Cost Per Use: What Australians Pay 2026 | Refer Labs",
+    title: "Skincare Cost Per Use: What Australians Pay 2026",
     description:
       "Judging skincare by cost per use instead of sticker price. How to work it out, why a $90 serum can be cheaper than a $30 one, and where the maths misleads you.",
     url: `${SITE_URL}/health-and-beauty/best-value-skincare-australia-cost-per-use`,
     keywords: ["best value skincare australia", "skincare cost per use", "affordable skincare australia", "is expensive skincare worth it", "skincare value australia"],
   },
   acneTreatmentCosts: {
-    title: "Acne Treatment in Australia 2026: The Options and What They Cost | Refer Labs",
+    title: "Acne Treatment in Australia 2026: The Options and What They Cost",
     description:
       "Acne treatment routes in Australia, from over-the-counter products to GP and dermatologist referral: how each pathway works, what Medicare covers, and what you pay.",
     url: `${SITE_URL}/health-and-beauty/acne-treatment-options-and-costs-australia`,
@@ -972,9 +972,9 @@ export const seoConfig = {
     noIndex: true,
   },
   antiAgeingCosts: {
-    title: "Anti-Ageing Treatments Australia: What They Cost 2026 | Refer Labs",
+    title: "Anti-Ageing Treatments Australia: What They Cost 2026",
     description:
-      "What anti-ageing treatments cost in Australia and why almost none publish a price. How clinics quote, what drives the number, and the questions to ask before you book.",
+      "What anti-ageing treatments cost in Australia and why almost none publish a price.",
     url: `${SITE_URL}/health-and-beauty/anti-ageing-treatments-what-they-cost`,
     keywords: ["anti ageing treatment cost australia", "anti wrinkle cost australia", "skin treatment prices australia", "cosmetic treatment cost australia", "laser skin treatment cost australia"],
     // Retired 16 Sep 2026, 301 to /health-and-beauty. noIndex is defensive:
@@ -984,7 +984,7 @@ export const seoConfig = {
   skincareQuiz: {
     title: "Skincare Quiz: Which Routine Fits You? | Refer Labs",
     description:
-      "A short quiz that matches you to a skincare approach based on your priorities, budget and how much effort you want to spend. General information, not medical advice.",
+      "A short quiz that matches you to a skincare approach based on your priorities, budget and how much effort you want to spend.",
     url: `${SITE_URL}/health-and-beauty/skincare-quiz`,
     keywords: ["skincare quiz", "skincare routine quiz australia", "which skincare is right for me", "skincare routine builder australia"],
   },
@@ -1049,30 +1049,30 @@ export const seoConfig = {
     // Leads with verification because that is the actual differentiator: most
     // "[brand] discount code" results publish expired or invented codes. Every
     // code here is read off the provider's own page and shows its own date.
-    title: "Verified Discount Codes Australia 2026: Every Code Dated | Refer Labs",
+    title: "Verified Discount Codes Australia 2026: Every Code Dated",
     description:
-      "Verified Australian discount codes, each showing the date we last read it off the provider's own page: Moshy REFERRAL120 for $120 off, Mosh REFERAL55 for 55% off, Knose, PetsOnMe and more. No expired or invented codes.",
+      "Verified Australian discount codes, each dated from the provider's own page: Moshy REFERRAL120 for $120 off, Mosh REFERAL55 for 55% off, Knose and PetsOnMe.",
     url: `${SITE_URL}/deals`,
     keywords: ["discount codes australia", "verified discount codes australia", "promo codes australia", "deals australia", "refer labs deals", "moshy discount code", "mosh discount code", "australian coupon codes"],
   },
   apolloEnergy: {
     title: "Apollo Energy Group: $500 Off a Home Battery | Refer Labs",
     description:
-      "Apollo Energy Group: a Sydney-based, SAA-accredited solar battery installer (9-54kWh home systems). $500 off your quote via Refer Labs, on top of the federal rebate.",
+      "Apollo Energy Group: a Sydney-based, SAA-accredited solar battery installer (9-54kWh home systems).",
     url: `${SITE_URL}/apollo-energy-group`,
     keywords: ["best solar battery company australia", "best solar battery company sydney", "solar battery company sydney", "solar battery government rebate sydney", "apollo energy group", "apollo energy group review", "solar battery installer sydney", "home battery australia", "cheaper home batteries program", "battery installer sydney"],
   },
   keap: {
-    title: "Keap Discount Code 2026: Is There One? Pricing & Free Trial | Refer Labs",
+    title: "Keap Discount Code 2026: No Code, 14-Day Free Trial",
     description:
-      "Keap is an all-in-one CRM with sales and marketing automation for small businesses: pipeline, email and SMS, and automated follow-up. See the 14-day free trial and pricing via our link.",
+      "Keap is an all-in-one CRM with sales and marketing automation for small businesses: pipeline, email and SMS, and automated follow-up.",
     url: `${SITE_URL}/keap`,
     keywords: ["keap crm","keap pricing","keap referral link","keap review","infusionsoft keap","small business crm automation","sales follow up automation"],
   },
   capsule: {
-    title: "Capsule CRM Discount Code 2026: Is There One? Free Plan & Pricing | Refer Labs",
+    title: "Capsule CRM Discount Code 2026: No Code, Free 250 Contacts",
     description:
-      "Capsule is a simple CRM for small businesses: contacts, a visual sales pipeline, tasks and email tracking. Free for up to 250 contacts. See pricing and start via our link.",
+      "Capsule is a simple CRM for small businesses: contacts, a visual sales pipeline, tasks and email tracking. Free for up to 250 contacts.",
     url: `${SITE_URL}/capsule`,
     keywords: ["capsule crm","capsule crm pricing","capsule crm review","capsule referral link","simple crm small business","free crm","sales pipeline software"],
   },
@@ -1081,28 +1081,28 @@ export const seoConfig = {
     // get.instapage.io has no DNS record. Excluded rather than sending readers
     // to an error page. Restore if a working affiliate link is obtained.
     noIndex: true,
-    title: "Instapage Referral Link & Pricing 2026: Landing Pages for Ad Conversion | Refer Labs",
+    title: "Instapage Referral Link & Pricing 2026: Landing Pages for Ad Conversion",
     description:
-      "Instapage is a landing-page platform for advertisers: drag-and-drop builder, A/B testing, heatmaps and ad-to-page personalisation. See the 14-day free trial and pricing via our link.",
+      "Instapage is a landing-page platform for advertisers: drag-and-drop builder, A/B testing, heatmaps and ad-to-page personalisation.",
     url: `${SITE_URL}/instapage`,
     keywords: ["instapage pricing","instapage referral link","instapage review","landing page builder for ads","instapage vs leadpages","ppc landing pages","conversion landing page platform"],
   },
   beautifulai: {
-    title: "Beautiful.ai Discount Code 2026: Is There One? Pricing & Trial | Refer Labs",
+    title: "Beautiful.ai Discount Code 2026: No Code, Free Trial",
     description:
-      "Beautiful.ai designs your slides automatically as you build them, with smart templates and an AI deck generator. See the free trial and Pro pricing via our link.",
+      "Beautiful.ai designs your slides automatically as you build them, with smart templates and an AI deck generator.",
     url: `${SITE_URL}/beautifulai`,
     keywords: ["beautiful.ai pricing","beautiful ai referral link","beautiful.ai review","ai presentation software","ai slide generator","presentation maker ai","beautiful.ai vs canva"],
   },
   pandadoc: {
-    title: "PandaDoc Discount Code 2026: Is There One? Free eSign & Pricing | Refer Labs",
+    title: "PandaDoc Discount Code 2026: No Code, Free eSign Plan",
     description:
-      "PandaDoc automates proposals, quotes and contracts with built-in e-signatures, templates and real-time tracking. See the free eSign plan and pricing via our link.",
+      "PandaDoc automates proposals, quotes and contracts with built-in e-signatures, templates and real-time tracking.",
     url: `${SITE_URL}/pandadoc`,
     keywords: ["pandadoc pricing","pandadoc referral link","pandadoc review","proposal software","e-signature software","contract management","pandadoc free plan"],
   },
   blinq: {
-    title: "Blinq Discount Code 2026: Is There One? Free Plan & Pricing | Refer Labs",
+    title: "Blinq Discount Code 2026: No Code, Free Plan Available",
     description:
       "Blinq is a digital business card you share by QR, link or NFC, and recipients save your details in one tap. See the free plan and pricing via our link.",
     url: `${SITE_URL}/blinq`,
@@ -1112,7 +1112,7 @@ export const seoConfig = {
   hairLossHub: {
     title: "Hair Loss Treatments Australia 2026 | Refer Labs",
     description:
-      "The hair loss decision, organised. Compare Australia's clinical telehealth and topical products, with independent guides to Mosh, Dense and more. Information only, not medical advice.",
+      "The hair loss decision, organised. Compare Australia's clinical telehealth and topical products, with independent guides to Mosh, Dense and more.",
     url: `${SITE_URL}/hair-loss`,
     keywords: [
       "hair loss australia",
@@ -1140,7 +1140,7 @@ export const seoConfig = {
   faq: {
     title: "Refer Labs FAQ: How Our Comparisons Work",
     description:
-      "How Refer Labs works: what we do, how we stay independent, how our comparisons are researched and priced, and how we make money. Independent Australian comparisons.",
+      "How Refer Labs works: what we do, how we stay independent, how our comparisons are researched and priced, and how we make money.",
     url: `${SITE_URL}/faq`,
     keywords: [
       "refer labs faq",
@@ -1257,15 +1257,15 @@ export const seoConfig = {
     noIndex: true,
     title: "Influencer Activation: Creator Partnerships | Refer Labs",
     description:
-      "We find and activate consultants, strategic advisors, and relevant creators as ongoing distribution channels. Commercial terms, tracked performance, compounding reach.",
+      "We find and activate consultants, strategic advisors, and relevant creators as ongoing distribution channels.",
     url: `${SITE_URL}/services/influencer-activation`,
     keywords: ["partner activation", "consultant partnerships", "strategic partners", "influencer marketing", "network activation"],
   },
 
   partnerActivation: {
-    title: "Partner Activation: Consultants & Strategic Partners | Refer Labs",
+    title: "Partner Activation: Consultants & Strategic Partners",
     description:
-      "We find and activate consultants, advisors, operators, and relevant creators as ongoing distribution channels. Structured commercial terms, attribution tracking, and compounding partner reach.",
+      "We find and activate consultants, advisors, operators, and relevant creators as ongoing distribution channels.",
     url: `${SITE_URL}/services/partner-activation`,
     keywords: ["partner activation", "consultant distribution", "strategic partner marketing", "B2B partner program", "influencer partnerships"],
   },
@@ -1302,7 +1302,7 @@ export const seoConfig = {
   productDistribution: {
     title: "Co-Found a Distribution-First Business | Refer Labs",
     description:
-      "We co-found businesses built to grow through affiliates and strategic partners. Multiple successful ventures launched. Enquire if you have an idea but need the GTM execution.",
+      "We co-found businesses built to grow through affiliates and strategic partners. Multiple successful ventures launched.",
     url: `${SITE_URL}/services/product-distribution`,
     keywords: ["co-founder GTM", "distribution-first business", "affiliate-led growth", "business co-founding", "GTM strategy partner"],
   },
@@ -1338,7 +1338,7 @@ export const seoConfig = {
   swipePages: {
     title: "Swipe Pages Review 2026: AMP Landing Pages | Refer Labs",
     description:
-      "Swipe Pages review 2026: AMP landing pages that load in under 1 second, A/B testing, dynamic text replacement. 14-day free trial, no credit card. Compare vs Unbounce, Leadpages, and Instapage.",
+      "Swipe Pages review 2026: AMP landing pages that load in under 1 second, A/B testing, dynamic text replacement. 14-day free trial, no credit card.",
     url: `${SITE_URL}/swipepages`,
     keywords: [
       "swipe pages review 2026",
@@ -1365,7 +1365,7 @@ export const seoConfig = {
   butternut: {
     title: "Butternut AI Review 2026: Free Website Builder | Refer Labs",
     description:
-      "Butternut AI review 2026: full website generated from a prompt in 20 seconds, free to try with no account. Compare Butternut AI vs Durable AI, Wix, Squarespace. Pricing, discount, and free trial link inside.",
+      "Butternut AI review 2026: full website generated from a prompt in 20 seconds, free to try with no account.",
     url: `${SITE_URL}/butternut`,
     keywords: [
       "butternut ai review 2026",
@@ -1479,7 +1479,7 @@ export const seoConfig = {
   incomeLab: {
     title: "How to Make Money With AI in 2026: Real Side Hustles That Work",
     description:
-      "Looking for the best AI side hustle ideas in 2026, AI passive income strategies, or a clear-eyed take on making money with AI? This page covers AI tools, business ideas, and automated income models, and takes you directly to Income Lab.",
+      "Looking for the best AI side hustle ideas in 2026, AI passive income strategies, or a clear-eyed take on making money with AI?",
     url: `${SITE_URL}/incomelab`,
     keywords: [
       "AI side hustle",
@@ -1540,9 +1540,9 @@ export const seoConfig = {
   },
 
   dense: {
-    title: "Dense Hair Discount Code Australia: Is There One? What It Costs | Refer Labs",
+    title: "Dense Hair Discount Code Australia: No Code, What It Costs",
     description:
-      "Looking for a Dense discount code, promo code, or coupon? Access the current Dense Hair Experts offer through our affiliate link and shop their range of topical hair-density products.",
+      "Looking for a Dense discount code, promo code, or coupon?",
     url: `${SITE_URL}/dense`,
     keywords: [
       "dense discount code",
@@ -1708,7 +1708,7 @@ export const seoConfig = {
     noIndex: true,
     title: "getmoshy.com.au: The Official Moshy Site & How to Start",
     description:
-      "getmoshy.com.au is the official website of Moshy, the Australian telehealth weight-management service. What the site is, how the referral link works, and where the eligibility check lives.",
+      "getmoshy.com.au is the official website of Moshy, the Australian telehealth weight-management service.",
     url: `${SITE_URL}/getmoshy`,
     keywords: [
       "getmoshy",
@@ -1725,7 +1725,7 @@ export const seoConfig = {
 
   weightLossTelehealthWomen: {
 
-    title: "Weight Loss Telehealth for Women in Australia 2026 | Refer Labs",
+    title: "Weight Loss Telehealth for Women in Australia 2026",
 
     description:
 
@@ -1781,9 +1781,9 @@ export const seoConfig = {
   },
 
   weightLossTelehealthMen: {
-    title: "Weight Loss Telehealth for Men in Australia 2026 | Refer Labs",
+    title: "Weight Loss Telehealth for Men in Australia 2026",
     description:
-      "How weight-loss telehealth works for men in Australia. Why some services market to men, what to check before signing up with any provider, and where Moshy fits as a clinical pathway open to anyone eligible. Information only, not medical advice.",
+      "How weight-loss telehealth works for men in Australia.",
     url: `${SITE_URL}/weight-loss-telehealth-men-australia`,
     keywords: [
       "weight loss telehealth men australia",
@@ -1890,7 +1890,7 @@ export const seoConfig = {
   onlineWeightLossDoctor: {
     title: "Online Weight Loss Doctor Australia 2026: How It Works",
     description:
-      "How seeing a weight-loss doctor online works in Australia. The eligibility questionnaire model, what a registered practitioner reviews, and how a weight-loss prescription online is handled. Information only, not medical advice.",
+      "How seeing a weight-loss doctor online works in Australia.",
     url: `${SITE_URL}/online-weight-loss-doctor-australia`,
     keywords: [
       "online weight loss doctor australia",
@@ -1906,9 +1906,9 @@ export const seoConfig = {
   },
 
   carrdVsDurable: {
-    title: "Carrd vs Durable AI 2026: Which Website Builder Should You Use? | Refer Labs",
+    title: "Carrd vs Durable AI 2026: Which Website Builder?",
     description:
-      "Carrd vs Durable AI compared for 2026: Carrd is the cheapest one-page builder; Durable AI generates a full business site with CRM in 30 seconds. Pricing, AI, free plans, and which to pick.",
+      "Carrd vs Durable AI compared for 2026: Carrd is the cheapest one-page builder; Durable AI generates a full business site with CRM in 30 seconds.",
     url: `${SITE_URL}/carrd-vs-durable`,
     keywords: [
       "carrd vs durable",
@@ -1925,9 +1925,9 @@ export const seoConfig = {
   },
 
   durableVsButternut: {
-    title: "Durable AI vs Butternut AI (2026): Which AI Website Builder Wins? | Refer Labs",
+    title: "Durable AI vs Butternut AI 2026: Which Site Builder Wins?",
     description:
-      "Durable AI vs Butternut AI (2026): Durable builds a site in ~30 seconds with CRM and invoicing; Butternut generates a full multi-page site from one prompt. Which to pick.",
+      "Durable AI vs Butternut AI (2026): Durable builds a site in ~30 seconds with CRM and invoicing; Butternut generates a full multi-page site from one prompt.",
     url: `${SITE_URL}/durable-vs-butternut`,
     keywords: [
       "durable vs butternut",
@@ -1946,9 +1946,9 @@ export const seoConfig = {
   },
 
   carrdVsButternut: {
-    title: "Carrd vs Butternut AI 2026: Simple Builder or AI Site Generator? | Refer Labs",
+    title: "Carrd vs Butternut AI 2026: Simple Builder or AI Generator?",
     description:
-      "Carrd vs Butternut AI (2026): Carrd is a simple one-page builder (free; Pro $19/yr); Butternut generates a full multi-page site from one prompt. Pricing and which to pick.",
+      "Carrd vs Butternut AI (2026): Carrd is a simple one-page builder (free; Pro $19/yr); Butternut generates a full multi-page site from one prompt.",
     url: `${SITE_URL}/carrd-vs-butternut`,
     keywords: [
       "carrd vs butternut",
@@ -2014,7 +2014,7 @@ export const seoConfig = {
     noIndex: true,
     title: "Free Australian Weight-Loss Options Guide | Refer Labs",
     description:
-      "A free, plain-English guide to the main weight-loss pathways in Australia: medical telehealth, coaching-led programs and the GP route, and who each suits. Emailed to you.",
+      "A free, plain-English guide to the main weight-loss pathways in Australia: medical telehealth, coaching-led programs and the GP route, and who each suits.",
     url: `${SITE_URL}/weight-loss-guide`,
     keywords: ["weight loss options australia", "weight loss guide australia", "weight loss telehealth guide"],
   },
@@ -2036,18 +2036,18 @@ export const seoConfig = {
     keywords: ["mosh review", "is mosh legit", "is mosh worth it", "does mosh work", "mosh hair loss review australia", "mosh reviews"],
   },
   weightLossEligibility: {
-    title: "Do You Qualify for Weight-Loss Treatment in Australia? | Refer Labs",
+    title: "Do You Qualify for Weight-Loss Treatment in Australia?",
     description:
-      "The eligibility criteria for weight-loss treatment in Australia: the BMI thresholds practitioners generally consider, what does not automatically qualify you, and how to check. Information only.",
+      "The eligibility criteria for weight-loss treatment in Australia: the BMI thresholds practitioners generally consider, and what does not qualify you.",
     url: `${SITE_URL}/weight-loss-treatment-eligibility-australia`,
     keywords: ["weight loss treatment eligibility australia", "do i qualify for weight loss medication", "weight loss eligibility criteria australia", "what bmi for weight loss treatment", "am i eligible for weight loss treatment"],
   },
 
 
   affiliateEarningsCalculator: {
-    title: "Affiliate Marketing Earnings Calculator: What Could You Make?",
+    title: "Affiliate Earnings Calculator: What Could You Make?",
     description:
-      "Estimate what your audience could earn from affiliate marketing. Set audience size, channel and niche, see a realistic range with every assumption shown, then find programs that fit.",
+      "Estimate what your audience could earn from affiliate marketing.",
     url: `${SITE_URL}/affiliate-earnings-calculator`,
     keywords: [
       "affiliate marketing earnings calculator",
@@ -2062,9 +2062,9 @@ export const seoConfig = {
   },
 
   weightLossCostCalculator: {
-    title: "Weight Loss Telehealth Cost Calculator Australia: Find Your Pathway",
+    title: "Weight Loss Telehealth Cost Calculator Australia",
     description:
-      "Work out what weight-loss telehealth will cost you in Australia: compare subscription, coaching and GP pathways, what you pay for, and where your exact price is shown before you commit.",
+      "Work out what weight-loss telehealth costs in Australia: compare subscription, coaching and GP pathways, and where your exact price is shown.",
     url: `${SITE_URL}/weight-loss-cost-calculator`,
     keywords: [
       "weight loss telehealth cost calculator",
@@ -2095,6 +2095,11 @@ export const seoConfig = {
       "polymarket us vs international",
       "how does polymarket work",
     ],
+    // Polymarket was removed (illegal for Australians to trade). The routes are
+    // gone: /polymarket 410s and its children 404. noIndex is defensive, per the
+    // repo rule that a retired route's seoConfig entry cannot silently republish
+    // it. Added 17 Sep 2026.
+    noIndex: true,
   },
 
   polymarketMarkets: {
@@ -2115,6 +2120,11 @@ export const seoConfig = {
       "prediction market implied probability",
       "polymarket 2026",
     ],
+    // Polymarket was removed (illegal for Australians to trade). The routes are
+    // gone: /polymarket 410s and its children 404. noIndex is defensive, per the
+    // repo rule that a retired route's seoConfig entry cannot silently republish
+    // it. Added 17 Sep 2026.
+    noIndex: true,
   },
 
   polymarketRegister: {
@@ -2135,6 +2145,11 @@ export const seoConfig = {
       "polymarket account requirements",
       "do i need crypto for polymarket",
     ],
+    // Polymarket was removed (illegal for Australians to trade). The routes are
+    // gone: /polymarket 410s and its children 404. noIndex is defensive, per the
+    // repo rule that a retired route's seoConfig entry cannot silently republish
+    // it. Added 17 Sep 2026.
+    noIndex: true,
   },
 
   polymarketProfitCalculator: {
@@ -2153,12 +2168,17 @@ export const seoConfig = {
       "how to calculate polymarket profit",
       "polymarket edge calculator",
     ],
+    // Polymarket was removed (illegal for Australians to trade). The routes are
+    // gone: /polymarket 410s and its children 404. noIndex is defensive, per the
+    // repo rule that a retired route's seoConfig entry cannot silently republish
+    // it. Added 17 Sep 2026.
+    noIndex: true,
   },
 
   hairLossQuiz: {
-    title: "Which Hair-Loss Option Fits You? 30-Second Match | Refer Labs",
+    title: "Which Hair-Loss Option Fits You? 30-Second Match",
     description:
-      "Answer one or two quick questions and see which hair-loss route fits you, clinical telehealth, a topical routine, or your GP, and why. Information only, not medical advice.",
+      "Answer one or two quick questions and see which hair-loss route fits you, clinical telehealth, a topical routine, or your GP, and why.",
     url: `${SITE_URL}/hair-loss-quiz`,
     keywords: [
       "which hair loss treatment is right for me",
@@ -2170,7 +2190,7 @@ export const seoConfig = {
   },
 
   newsletterPlatformQuiz: {
-    title: "Which Newsletter Platform Should You Use? 30-Second Match | Refer Labs",
+    title: "Which Newsletter Platform Should You Use? 30-Second Match",
     description:
       "Answer one quick question and see which newsletter platform fits your goal, beehiiv, Substack or Kit, and why.",
     url: `${SITE_URL}/newsletter-platform-quiz`,
@@ -2184,7 +2204,7 @@ export const seoConfig = {
   },
 
   aiSalesToolsQuiz: {
-    title: "Which AI Sales Tool Do You Need? 30-Second Match | Refer Labs",
+    title: "Which AI Sales Tool Do You Need? 30-Second Match",
     description:
       "Answer one or two quick questions and see which AI sales tool fits your bottleneck, FullEnrich, Reply.io, AiSDR or GoHighLevel, and why.",
     url: `${SITE_URL}/ai-sales-tools-quiz`,
@@ -2199,9 +2219,9 @@ export const seoConfig = {
   },
 
   weightLossQuiz: {
-    title: "Which Weight-Loss Option Fits You? 30-Second Match | Refer Labs",
+    title: "Which Weight-Loss Option Fits You? 30-Second Match",
     description:
-      "Answer two quick questions and see which weight-loss route fits you, an online telehealth program or an in-person GP, and why. Information only, not medical advice.",
+      "Answer two quick questions and see which weight-loss route fits you, an online telehealth program or an in-person GP, and why.",
     url: `${SITE_URL}/weight-loss-quiz`,
     keywords: [
       "which weight loss program is right for me",
@@ -2246,6 +2266,11 @@ export const seoConfig = {
       "automated polymarket trading strategy",
       "polymarket liquidity rewards bot",
     ],
+    // Polymarket was removed (illegal for Australians to trade). The routes are
+    // gone: /polymarket 410s and its children 404. noIndex is defensive, per the
+    // repo rule that a retired route's seoConfig entry cannot silently republish
+    // it. Added 17 Sep 2026.
+    noIndex: true,
   },
 
   polymarketBots: {
@@ -2266,6 +2291,11 @@ export const seoConfig = {
       "prediction market trading bot 2026",
       "polymarket liquidity rewards bot",
     ],
+    // Polymarket was removed (illegal for Australians to trade). The routes are
+    // gone: /polymarket 410s and its children 404. noIndex is defensive, per the
+    // repo rule that a retired route's seoConfig entry cannot silently republish
+    // it. Added 17 Sep 2026.
+    noIndex: true,
   },
 
   polymarketEdge: {
@@ -2286,6 +2316,11 @@ export const seoConfig = {
       "polymarket trading edge 2026",
       "measuring trading edge",
     ],
+    // Polymarket was removed (illegal for Australians to trade). The routes are
+    // gone: /polymarket 410s and its children 404. noIndex is defensive, per the
+    // repo rule that a retired route's seoConfig entry cannot silently republish
+    // it. Added 17 Sep 2026.
+    noIndex: true,
   },
 
   // Retired Aug 2026 and 308ing to /. The entry stays as the defensive guard the
@@ -2303,9 +2338,9 @@ export const seoConfig = {
   // providers published is the one thing on this site a competitor cannot copy
   // without doing the work, and it is what an answer engine can cite.
   data: {
-    title: "Observation Log: Dated Checks of Australian Provider Offers | Refer Labs",
+    title: "Observation Log: Dated Checks of Australian Provider Offers",
     description:
-      "A dated log of first-party observations of Australian provider offers and prices. Each entry names the date it was read, who read it and the method, so any figure can be traced to the day it was seen. New, and short: the dates are the record of what has been checked so far.",
+      "A dated log of first-party observations of Australian provider offers and prices.",
     url: `${SITE_URL}/data`,
     keywords: [
       "refer labs observation log",
@@ -2319,7 +2354,7 @@ export const seoConfig = {
   disclaimer: {
     title: "Disclaimer | Refer Labs",
     description:
-      "Refer Labs publishes general information to help Australians compare providers. Not medical, financial or legal advice; we are not the provider of anything we compare; prices are dated and change. Your Australian Consumer Law rights are unaffected.",
+      "Refer Labs publishes general information to help Australians compare providers.",
     url: `${SITE_URL}/disclaimer`,
     keywords: ["refer labs disclaimer", "general information not advice australia", "comparison site disclaimer"],
   },
@@ -2327,7 +2362,7 @@ export const seoConfig = {
   partnerWithReferLabs: {
     title: "Partner with Refer Labs: Apply to Be Compared | Refer Labs",
     description:
-      "Apply to partner with Refer Labs, an independent Australian comparison publisher across health, solar and energy, pet insurance and business software. Placement is earned against published criteria and is never sold.",
+      "Apply to partner with Refer Labs, an independent Australian comparison publisher across health, solar and energy, pet insurance and business software.",
     url: `${SITE_URL}/partner-with-refer-labs`,
     keywords: [
       "partner with refer labs",
@@ -2379,7 +2414,7 @@ export const seoConfig = {
   },
 
   goHighLevel: {
-    title: "GoHighLevel Discount Code 2026: Is There One? Pricing & Trial | Refer Labs",
+    title: "GoHighLevel Discount Code 2026: No Code, 14-Day Free Trial",
     description:
       "GoHighLevel discount code, referral link and offer: the AI all-in-one CRM, marketing automation and funnels platform. From $97/month, 14-day free trial.",
     url: `${SITE_URL}/gohighlevel`,
@@ -2406,7 +2441,7 @@ export const seoConfig = {
   },
 
   aisdr: {
-    title: "AiSDR Discount Code 2026: Is There One? What It Costs | Refer Labs",
+    title: "AiSDR Discount Code 2026: No Code, What It Costs",
     description:
       "AiSDR discount code, referral link and pricing: the AI SDR that automates B2B outbound across email, LinkedIn and phone, and books meetings. From $250/month.",
     url: `${SITE_URL}/aisdr`,
@@ -2433,9 +2468,9 @@ export const seoConfig = {
   },
 
   replyio: {
-    title: "Reply.io Discount Code 2026: Is There One? Pricing & Free Trial | Refer Labs",
+    title: "Reply.io Discount Code 2026: No Code, 14-Day Free Trial",
     description:
-      "Reply.io discount code, referral link and pricing: the AI-first sales engagement platform for multichannel outbound across email, LinkedIn, calls and SMS. Free trial.",
+      "Reply.io discount code, referral link and pricing: the AI-first sales engagement platform for multichannel outbound across email, LinkedIn, calls and SMS.",
     url: `${SITE_URL}/replyio`,
     keywords: [
       "reply.io discount code",
@@ -2460,9 +2495,9 @@ export const seoConfig = {
   },
 
   fullenrich: {
-    title: "FullEnrich Discount Code 2026: Is There One? Free Credits & Cost | Refer Labs",
+    title: "FullEnrich Discount Code 2026: No Code, 50 Free Credits",
     description:
-      "FullEnrich referral link and pricing: waterfall B2B contact enrichment across 15+ sources for verified emails and mobile numbers. Credit-based, with free credits to start.",
+      "FullEnrich referral link and pricing: waterfall B2B contact enrichment across 15+ sources for verified emails and mobile numbers.",
     url: `${SITE_URL}/fullenrich`,
     keywords: [
       "fullenrich discount code",
@@ -2488,9 +2523,9 @@ export const seoConfig = {
   },
 
   brevo: {
-    title: "Brevo Discount Code 2026: Is There One? Free Plan & Pricing | Refer Labs",
+    title: "Brevo Discount Code 2026: No Code, Free Plan Forever",
     description:
-      "Looking for a Brevo discount code, promo code or referral link? The all-in-one platform for email marketing, SMS, automation and a sales CRM, priced by emails sent, not list size. Free plan; who it suits and how pricing works.",
+      "Looking for a Brevo discount code, promo code or referral link?",
     url: `${SITE_URL}/brevo`,
     keywords: [
       "brevo discount code",
@@ -2511,9 +2546,9 @@ export const seoConfig = {
   },
 
   alidrop: {
-    title: "AliDrop Discount Code 2026: US$1 for a 7-Day Trial | Refer Labs",
+    title: "AliDrop Discount Code 2026: US$1 for a 7-Day Trial",
     description:
-      "The current AliDrop offer: US$1 for a 7-day trial through our referral link. The dropshipping tool for sourcing from AliExpress and Temu into Shopify, with pricing and what it does explained.",
+      "The current AliDrop offer: US$1 for a 7-day trial through our referral link.",
     url: `${SITE_URL}/alidrop`,
     keywords: [
       "alidrop discount code",
@@ -2534,9 +2569,9 @@ export const seoConfig = {
   },
 
   leadpages: {
-    title: "Leadpages Discount Code 2026: 20% Off Annual Billing | Refer Labs",
+    title: "Leadpages Discount Code 2026: 20% Off Annual Billing",
     description:
-      "Leadpages offer: a 7-day free trial, and 20% off if you pay annually, via our link. A lead-focused landing-page builder with A/B testing and a big template library.",
+      "Leadpages offer: a 7-day free trial, and 20% off if you pay annually, via our link.",
     url: `${SITE_URL}/leadpages`,
     keywords: [
       "leadpages discount code",
@@ -2557,7 +2592,7 @@ export const seoConfig = {
   },
 
   superfiliate: {
-    title: "Superfiliate Discount Code 2026: 15% Off Monthly Fee | Refer Labs",
+    title: "Superfiliate Discount Code 2026: 15% Off Monthly Fee",
     description:
       "Superfiliate offer: new subscribers get 15% off the monthly fee via our link. A creator-led platform for brands to run affiliate, referral and creator programs.",
     url: `${SITE_URL}/superfiliate`,
@@ -2580,9 +2615,9 @@ export const seoConfig = {
   },
 
   employmentHero: {
-    title: "Employment Hero Discount Code Australia 2026: Is There One? | Refer Labs",
+    title: "Employment Hero Discount Code 2026: No Code, Free Demo",
     description:
-      "Employment Hero discount code and referral link: the Australian-built all-in-one HR, payroll and employment platform. ATO-certified STP payroll; quote-based pricing.",
+      "Employment Hero discount code and referral link: the Australian-built all-in-one HR, payroll and employment platform.",
     url: `${SITE_URL}/employmenthero`,
     keywords: [
       "employment hero discount code",
@@ -2658,9 +2693,9 @@ export const seoConfig = {
   },
 
   guides: {
-    title: "Guides & Comparisons 2026: Software, Tools & Health | Refer Labs",
+    title: "Guides & Comparisons 2026: Software, Tools & Health",
     description:
-      "Every independent comparison and review on Refer Labs in one place: website builders, CRMs, AI tools, email marketing, payments, plus weight-loss and hair-loss telehealth. Never pay-to-rank.",
+      "Every independent comparison and review on Refer Labs in one place: website builders, CRMs, AI tools, email marketing, weight-loss and hair-loss telehealth.",
     url: `${SITE_URL}/guides`,
     keywords: [
       "comparison guides australia",
@@ -2790,7 +2825,7 @@ export const seoConfig = {
     noIndex: true,
     title: "Referral & Affiliate Partnerships - Build Your Australian Partner Channel",
     description:
-      "We source, activate, and manage referral and affiliate partners across Australia. Agencies, consultants, creators, and strategic allies - all tracked and managed end-to-end.",
+      "We source, activate, and manage referral and affiliate partners across Australia.",
     url: `${SITE_URL}/referral-partnerships`,
     keywords: [
       "referral partnerships Australia",
@@ -2817,7 +2852,7 @@ export const seoConfig = {
     // Route is retired and 301s (see next.config.ts). noIndex is defensive: if the
     // redirect is ever removed, this must not silently become an indexable page.
     noIndex: true,
-    title: "Referral Growth Blueprint: Affiliate Program List & Strategy Australia | Refer Labs",
+    title: "Referral Growth Blueprint: Affiliate Program List & Strategy Australia",
     description:
       "Refer Labs' in-house referral marketing blueprint: a 250+ affiliate program list for Australia plus a personalised referral growth strategy written by our team. $799 AUD, delivered in 48 hours.",
     url: `${SITE_URL}/referral-blueprint`,
@@ -2870,9 +2905,9 @@ export const seoConfig = {
   },
 
   highPayingAffiliatePrograms: {
-    title: "Highest Paying Affiliate Programs 2026 (High-Commission Niches)",
+    title: "Highest Paying Affiliate Programs in Australia 2026",
     description:
-      "The highest paying affiliate programs in 2026, focused on high-commission niches, SaaS, web hosting, finance and online courses. Twelve high-payout programs with typical commission structures and the networks that run them.",
+      "The highest paying affiliate programs in 2026, focused on high-commission niches, SaaS, web hosting, finance and online courses.",
     url: `${SITE_URL}/high-paying-affiliate-programs`,
     keywords: [
       "highest paying affiliate programs 2026",
@@ -2891,7 +2926,7 @@ export const seoConfig = {
   recurringAffiliatePrograms: {
     title: "Best Recurring Commission Affiliate Programs 2026",
     description:
-      "The best recurring commission affiliate programs for 2026, subscription and SaaS programs that pay you every month a customer stays. Twelve recurring-revenue programs with typical commission structures and how they pay.",
+      "The best recurring commission affiliate programs for 2026, subscription and SaaS programs that pay you every month a customer stays.",
     url: `${SITE_URL}/recurring-affiliate-programs`,
     keywords: [
       "best recurring commission affiliate programs",
@@ -2907,9 +2942,9 @@ export const seoConfig = {
   },
 
   howToStartAffiliateMarketingAustralia: {
-    title: "How to Start Affiliate Marketing in Australia (2026 Beginner Guide)",
+    title: "How to Start Affiliate Marketing in Australia (2026 Guide)",
     description:
-      "A step-by-step beginner guide to starting affiliate marketing in Australia in 2026. Choose a niche, pick programs, build a platform, disclose properly, keep the ATO in mind, and drive traffic. General information, not financial or tax advice.",
+      "A step-by-step beginner guide to starting affiliate marketing in Australia in 2026.",
     url: `${SITE_URL}/how-to-start-affiliate-marketing-australia`,
     keywords: [
       "how to start affiliate marketing australia",

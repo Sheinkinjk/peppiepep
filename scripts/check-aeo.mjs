@@ -61,6 +61,10 @@ for (const f of pageFiles()) {
   }
 }
 
+// A title may ask whether a code exists, or say outright that none does. Both
+// are honest; only an unbacked assertion is not. See the note on rule 2.
+const DENIES_CODE = /\bno (discount )?code\b|\bthere is(n.t| not) one\b/i;
+
 // ── 2. A title promising a discount code needs an h1 that agrees ─────────────
 // Parse seoConfig into url -> title properly. Matching a brace-block by regex
 // grabbed neighbouring entries and reported pages whose titles say nothing of
@@ -82,6 +86,14 @@ for (const slug of slugDirs) {
   const title = SEO.get(`/${slug}`) || "";
   if (!/discount code/i.test(title)) continue;
   if (/\bis there (one|a)\b|\?/i.test(title)) continue; // question form: answered by an FAQ, not the h1
+  // Explicit denial is the third honest form, added 17 Sep 2026. This rule
+  // exists to stop a title PROMISING a code the page cannot deliver. "No code"
+  // promises the opposite, so it cannot mislead, and requiring the h1 to repeat
+  // "discount code" for such a title forced 27 sibling pages onto one shared
+  // "Is There One?" skeleton, which the repetition rule bans. A title may now
+  // deny a code outright instead of asking a question. It still may not assert
+  // one the h1 does not back.
+  if (DENIES_CODE.test(title)) continue;
 
   const src = read(join("src/app", slug, "page.tsx")) + read(join("src/app", slug, "config.ts"));
   const h1 =
@@ -130,7 +142,7 @@ for (const slug of slugDirs) {
   const offer = (src.match(/^\s*offer:\s*"([^"]+)"/m) || [, ""])[1];
   const dealRow = offers.match(new RegExp(`\\{[^}]*href: "/${slug}"[^}]*\\}`));
   const dealOffer = dealRow ? (dealRow[0].match(/offer: "([^"]+)"/) || [, ""])[1] : "";
-  const asksRatherThanClaims = /\bis there (one|a)\b|\?/i.test(title);
+  const asksRatherThanClaims = /\bis there (one|a)\b|\?/i.test(title) || DENIES_CODE.test(title);
   if (!REAL_DISCOUNT.test(offer) && !REAL_DISCOUNT.test(dealOffer) && !REAL_DISCOUNT.test(title) && !asksRatherThanClaims) {
     add(`/${slug}`, `title asserts a discount code but none exists (offer: "${offer || "none"}"). Either name the real offer or pose it as a question the page answers.`);
   }
