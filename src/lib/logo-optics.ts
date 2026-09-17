@@ -8,13 +8,17 @@
  */
 const SCALE: Record<string, number> = {
   // Health & Beauty / Sleep partners, added 16 Sep 2026 with the files
-  // themselves. The Foreo and Emma marks are wide wordmarks, so they read small
-  // in a uniform well and are scaled up; Aussie Health ships a square tile that
-  // already fills it.
+  // themselves. These are wide wordmarks, so they read small in a uniform well
+  // and are scaled up; Aussie Health ships a square tile that already fills it.
+  //
+  // CAP AT ~1.2 FOR THESE. The well is 44px around a 32px mark, so a scale past
+  // roughly 1.25 pushes the artwork wider than its container and the well clips
+  // it. Foreo shipped at 1.42 on 16 Sep and rendered as "FOREC SWEDEN" with the
+  // last letter cut off. Look at the logo after changing a scale.
   "aussie-health-products.png": 1.0,
-  "emma-sleep.svg": 1.3,
-  "optislim.svg": 1.38,
-  "foreo.svg": 1.42,
+  "emma-sleep.svg": 1.18,
+  "optislim.svg": 1.2,
+  "foreo.svg": 1.12,
   "activecampaign.png": 0.94,
   "aisdr.png": 1.18,
   "alohi.png": 1.36,

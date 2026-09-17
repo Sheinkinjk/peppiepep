@@ -155,7 +155,7 @@ export default function HubProviders({
             >
               <div className="lg:border-b lg:border-[#eef1ef] lg:px-4 lg:py-5">
                 <div className="flex items-center gap-3">
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-[#eef1ef] bg-white">
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-[#eef1ef] bg-white">
                     {logo ? (
                       /* eslint-disable-next-line @next/next/no-img-element */
                       <img

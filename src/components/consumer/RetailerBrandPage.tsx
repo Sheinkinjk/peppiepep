@@ -151,7 +151,7 @@ export default function RetailerBrandPage({ brand }: { brand: RetailerBrand }) {
 
             <aside className="rounded-2xl border border-[#e5e9e7] bg-white p-6 shadow-[0_1px_2px_rgba(16,37,27,0.05)] sm:p-7">
               <div className="flex items-center gap-3">
-                <span className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-[#eef1ef] bg-[#f8faf9]">
+                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-[#eef1ef] bg-[#f8faf9]">
                   {logo ? (
                     /* eslint-disable-next-line @next/next/no-img-element */
                     <img
