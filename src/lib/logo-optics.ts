@@ -13,6 +13,7 @@ const SCALE: Record<string, number> = {
   // already fills it.
   "aussie-health-products.png": 1.0,
   "emma-sleep.svg": 1.3,
+  "optislim.svg": 1.38,
   "foreo.svg": 1.42,
   "activecampaign.png": 0.94,
   "aisdr.png": 1.18,

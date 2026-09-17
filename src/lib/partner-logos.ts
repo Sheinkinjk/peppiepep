@@ -8,13 +8,14 @@
  *
  * Pulled from each vendor's own site on 16 Sep 2026 rather than recreated, per
  * the onboarding rule. Three are still outstanding because the brand does not
- * serve its mark as a file we could fetch: Technogym and OptiSlim render theirs
- * as inline SVG or a CSS background, and Edible Beauty's only square asset was a
- * 16px favicon. To add one, drop the file in public/logos using EXACTLY these
- * names and add the line here:
+ * serve its mark as a file we could fetch. OptiSlim's was found on 17 Sep 2026 in
+ * its Shopify header srcset and is now in. Two remain: Technogym's asset host
+ * returns 403 to everything, and Edible Beauty publishes no logo file we could
+ * find (the only square asset in its header is a rotating promo banner, checked
+ * and rejected rather than shipped). To add one, drop the file in public/logos
+ * using EXACTLY these names and add the line here:
  *
  *   public/logos/technogym.png
- *   public/logos/optislim.png
  *   public/logos/edible-beauty.png
  *
  * Square, transparent, about 256px. Edible Beauty's supplied artwork is white
@@ -25,6 +26,7 @@ const LOGOS: Record<string, string> = {
   "/foreo": "/logos/foreo.svg",
   "/emma-sleep": "/logos/emma-sleep.svg",
   "/aussie-health-products": "/logos/aussie-health-products.png",
+  "/optislim": "/logos/optislim.svg",
 };
 
 /** Accepts the brand's own route, e.g. "/foreo". */
