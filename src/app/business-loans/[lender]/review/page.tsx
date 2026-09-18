@@ -142,60 +142,60 @@ export default async function LenderReviewPage({ params }: { params: Promise<{ l
       />
 
       <main className="mx-auto max-w-3xl px-5 py-10 sm:px-8 sm:py-14">
-        <nav className="text-xs text-[#5a665f]">
-          <Link href="/business-loans" className="hover:text-[#0a7c42]">Business loans</Link>
+        <nav className="text-xs text-[#56504a]">
+          <Link href="/business-loans" className="hover:text-[#007a95]">Business loans</Link>
           <span className="px-1.5">/</span>
-          <Link href={`/business-loans/${l.slug}`} className="hover:text-[#0a7c42]">{l.name}</Link>
+          <Link href={`/business-loans/${l.slug}`} className="hover:text-[#007a95]">{l.name}</Link>
           <span className="px-1.5">/</span>
-          <span className="text-[#3d4b44]">Review</span>
+          <span className="text-[#56504a]">Review</span>
         </nav>
 
-        <h1 className="mt-3 text-4xl font-extrabold leading-[1.1] text-[#10251b]">{l.name} review</h1>
-        <p className="mt-4 text-lg leading-relaxed text-[#3d4b44]">{l.overview}</p>
-        <p className="mt-3 text-sm leading-relaxed text-[#5a665f]">
+        <h1 className="mt-3 text-4xl font-extrabold leading-[1.1] text-[#14120f]">{l.name} review</h1>
+        <p className="mt-4 text-lg leading-relaxed text-[#56504a]">{l.overview}</p>
+        <p className="mt-3 text-sm leading-relaxed text-[#56504a]">
           This is an independent overview to help you decide whether to enquire. We don&apos;t publish our own star
           ratings, and no lender can pay to be framed more favourably.
         </p>
 
         <section className="mt-10">
-          <h2 className="text-xl font-extrabold text-[#10251b]">Who {l.name} tends to suit</h2>
+          <h2 className="text-xl font-extrabold text-[#14120f]">Who {l.name} tends to suit</h2>
           <ul className="mt-4 space-y-2.5">
             {suitsWho(l).map((s) => (
-              <li key={s} className="flex gap-2.5 text-sm leading-relaxed text-[#3d4b44]">
-                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#0a7c42]" aria-hidden="true" />{s}
+              <li key={s} className="flex gap-2.5 text-sm leading-relaxed text-[#56504a]">
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#007a95]" aria-hidden="true" />{s}
               </li>
             ))}
           </ul>
         </section>
 
         <section className="mt-10">
-          <h2 className="text-xl font-extrabold text-[#10251b]">What to check before you apply</h2>
+          <h2 className="text-xl font-extrabold text-[#14120f]">What to check before you apply</h2>
           <ul className="mt-4 space-y-2.5">
             {whatToCheck(l).map((s) => (
-              <li key={s} className="flex gap-2.5 text-sm leading-relaxed text-[#3d4b44]">
-                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#0a7c42]" aria-hidden="true" />{s}
+              <li key={s} className="flex gap-2.5 text-sm leading-relaxed text-[#56504a]">
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#007a95]" aria-hidden="true" />{s}
               </li>
             ))}
           </ul>
         </section>
 
-        <section className="mt-10 rounded-2xl border border-[#e5e9e7] bg-[#f8faf9] p-5">
-          <h2 className="text-xs font-bold uppercase tracking-[0.12em] text-[#627068]">The facts</h2>
+        <section className="mt-10 rounded-2xl border border-[#ded8cd] bg-[#f7f4ee] p-5">
+          <h2 className="text-xs font-bold uppercase tracking-[0.12em] text-[#56504a]">The facts</h2>
           <div className="mt-3 grid gap-x-6 gap-y-2 text-sm sm:grid-cols-2">
-            <p className="text-[#3d4b44]"><span className="text-[#5a665f]">Rate:</span> <strong className="text-[#10251b]">{l.advertisedRateFrom}</strong></p>
-            <p className="text-[#3d4b44]"><span className="text-[#5a665f]">Loan size:</span> <strong className="text-[#10251b]">{money(l.minAmount)}–{money(l.maxAmount)}</strong></p>
-            <p className="text-[#3d4b44]"><span className="text-[#5a665f]">Typical speed:</span> <strong className="text-[#10251b]">{l.speed}</strong></p>
-            <p className="text-[#3d4b44]"><span className="text-[#5a665f]">Products:</span> <strong className="text-[#10251b]">{l.products.map((p) => label(p)).join(", ")}</strong></p>
-            {l.establishmentFee ? <p className="text-[#3d4b44]"><span className="text-[#5a665f]">Establishment fee:</span> <strong className="text-[#10251b]">{l.establishmentFee}</strong></p> : null}
+            <p className="text-[#56504a]"><span className="text-[#56504a]">Rate:</span> <strong className="text-[#14120f]">{l.advertisedRateFrom}</strong></p>
+            <p className="text-[#56504a]"><span className="text-[#56504a]">Loan size:</span> <strong className="text-[#14120f]">{money(l.minAmount)}–{money(l.maxAmount)}</strong></p>
+            <p className="text-[#56504a]"><span className="text-[#56504a]">Typical speed:</span> <strong className="text-[#14120f]">{l.speed}</strong></p>
+            <p className="text-[#56504a]"><span className="text-[#56504a]">Products:</span> <strong className="text-[#14120f]">{l.products.map((p) => label(p)).join(", ")}</strong></p>
+            {l.establishmentFee ? <p className="text-[#56504a]"><span className="text-[#56504a]">Establishment fee:</span> <strong className="text-[#14120f]">{l.establishmentFee}</strong></p> : null}
           </div>
-          <p className="mt-3 text-xs text-[#5a665f]">
-            Verify current terms on <a href={l.homepage} target="_blank" rel="nofollow noopener" className="underline hover:text-[#10251b]">{l.name}&apos;s own site</a>.
+          <p className="mt-3 text-xs text-[#56504a]">
+            Verify current terms on <a href={l.homepage} target="_blank" rel="nofollow noopener" className="underline hover:text-[#14120f]">{l.name}&apos;s own site</a>.
           </p>
         </section>
 
         <section className="mt-12">
-          <h2 className="text-2xl font-extrabold text-[#10251b]">See if {l.name} fits your business</h2>
-          <p className="mt-2 text-sm leading-relaxed text-[#3d4b44]">
+          <h2 className="text-2xl font-extrabold text-[#14120f]">See if {l.name} fits your business</h2>
+          <p className="mt-2 text-sm leading-relaxed text-[#56504a]">
             One short enquiry. We&apos;ll tell you whether {l.name} looks like a plausible fit and introduce you if it is.
           </p>
           <div className="mt-5">
@@ -210,25 +210,25 @@ export default async function LenderReviewPage({ params }: { params: Promise<{ l
             site linked to them and they linked nowhere. Both lists are derived from
             the registries, so they stay correct as lenders and pairings change. */}
         <section className="mt-12">
-          <h2 className="text-2xl font-extrabold text-[#10251b]">Common questions</h2>
-          <dl className="mt-5 divide-y divide-[#eef1ef] rounded-2xl border border-[#e5e9e7] bg-white">
+          <h2 className="text-2xl font-extrabold text-[#14120f]">Common questions</h2>
+          <dl className="mt-5 divide-y divide-[#f1ede4] rounded-2xl border border-[#ded8cd] bg-white">
             {faqs.map((f) => (
               <div key={f.q} className="px-5 py-5">
-                <dt className="text-[15px] font-bold text-[#10251b]">{f.q}</dt>
-                <dd className="mt-2 text-sm leading-relaxed text-[#3d4b44]">{f.a}</dd>
+                <dt className="text-[15px] font-bold text-[#14120f]">{f.q}</dt>
+                <dd className="mt-2 text-sm leading-relaxed text-[#56504a]">{f.a}</dd>
               </div>
             ))}
           </dl>
         </section>
 
-        <section className="mt-12 rounded-2xl border border-[#e5e9e7] bg-[#f8faf9] p-6">
-          <h2 className="text-xs font-bold uppercase tracking-[0.12em] text-[#627068]">Keep comparing</h2>
+        <section className="mt-12 rounded-2xl border border-[#ded8cd] bg-[#f7f4ee] p-6">
+          <h2 className="text-xs font-bold uppercase tracking-[0.12em] text-[#56504a]">Keep comparing</h2>
 
           {headToHeads.length > 0 && (
             <ul className="mt-3 space-y-2 text-sm">
               {headToHeads.map((c) => (
                 <li key={c.slug}>
-                  <Link href={`/compare-business-lenders/${c.slug}`} className="font-semibold text-[#0a7c42] hover:underline">
+                  <Link href={`/compare-business-lenders/${c.slug}`} className="font-semibold text-[#007a95] hover:underline">
                     {getLender(c.a)?.name} vs {getLender(c.b)?.name}
                   </Link>
                 </li>
@@ -237,10 +237,10 @@ export default async function LenderReviewPage({ params }: { params: Promise<{ l
           )}
 
           <ul className="mt-4 flex flex-wrap gap-x-4 gap-y-2 text-sm">
-            <li><Link href="/business-loans" className="font-semibold text-[#0a7c42] hover:underline">All business lenders</Link></li>
+            <li><Link href="/business-loans" className="font-semibold text-[#007a95] hover:underline">All business lenders</Link></li>
             {siblings.map((o) => (
               <li key={o.slug}>
-                <Link href={`/business-loans/${o.slug}/review`} className="text-[#3d4b44] hover:text-[#0a7c42] hover:underline">
+                <Link href={`/business-loans/${o.slug}/review`} className="text-[#56504a] hover:text-[#007a95] hover:underline">
                   {o.name} review
                 </Link>
               </li>

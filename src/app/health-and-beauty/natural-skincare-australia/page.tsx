@@ -57,7 +57,7 @@ export default function Page() {
       sectionHref="/health-and-beauty"
       slug="/health-and-beauty/natural-skincare-australia"
       crumb="Natural skincare"
-      h1={<>Natural skincare in Australia: <span className="italic text-[#0a7c42]">what the label has to prove</span></>}
+      h1={<>Natural skincare in Australia: <span className="italic text-[#007a95]">what the label has to prove</span></>}
       intro={`"Natural" carries no certification requirement on an Australian cosmetic. "Certified organic" does, and the certifier publishes a searchable register, so one of the two words on a bottle can be checked in a minute and the other cannot. That is the whole practical difference, and it is the check to run before you compare anything else.`}
       headline="Natural skincare in Australia: what the label commits to"
       description={seoConfig.naturalSkincareAustralia.description}
@@ -70,23 +70,23 @@ export default function Page() {
       ]}
     >
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Two words, doing very different work</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Two words, doing very different work</h2>
         <div className="mt-4 grid gap-4 sm:grid-cols-2">
-          <div className="rounded-2xl border border-[#e5e9e7] bg-white p-6">
-            <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#627068]">Natural</p>
-            <p className="mt-2 text-[15px] leading-relaxed text-[#10251b]">
+          <div className="rounded-2xl border border-[#ded8cd] bg-white p-6">
+            <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#56504a]">Natural</p>
+            <p className="mt-2 text-[15px] leading-relaxed text-[#14120f]">
               No certifier, no register, no minimum ingredient share. A brand decides for itself what
               the word means on its own packaging.
             </p>
-            <p className="mt-3 text-sm text-[#3d4b44]">Nothing to look up.</p>
+            <p className="mt-3 text-sm text-[#56504a]">Nothing to look up.</p>
           </div>
-          <div className="rounded-2xl border border-[#0a7c42]/25 bg-[#f5f8f6] p-6">
-            <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#0a7c42]">Certified organic</p>
-            <p className="mt-2 text-[15px] leading-relaxed text-[#10251b]">
+          <div className="rounded-2xl border border-[#007a95]/25 bg-[#f7f4ee] p-6">
+            <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#007a95]">Certified organic</p>
+            <p className="mt-2 text-[15px] leading-relaxed text-[#14120f]">
               Voluntary, but where a brand holds it, a certifier has assessed it against a published
               standard and lists it publicly.
             </p>
-            <p className="mt-3 text-sm text-[#3d4b44]">
+            <p className="mt-3 text-sm text-[#56504a]">
               ACO Certification runs a Product &amp; Operator Search on aco.net.au, alongside a list
               of suspended and decertified operators. Checked on {READ_ON}.
             </p>
@@ -102,7 +102,7 @@ export default function Page() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">The check, in about a minute</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">The check, in about a minute</h2>
         <ol className="mt-4 space-y-3">
           {[
             ["Find the certifier's name, not the logo", "A certification mark should name who issued it. If the packaging carries a leaf and nothing else, there is nothing to look up."],
@@ -110,13 +110,13 @@ export default function Page() {
             ["Check what is certified", "A brand can hold certification on part of a range. The entry tells you which products, which is the detail a front-of-pack logo tends to blur."],
             ["Read the ingredient list anyway", "Certification says the standard was met. It does not say whether a particular ingredient suits your skin, which is a separate question and yours to answer."],
           ].map(([t, d], i) => (
-            <li key={t} className="flex gap-4 rounded-xl border border-[#e5e9e7] bg-white p-5">
-              <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#0a7c42] text-xs font-bold text-white tabular-nums">
+            <li key={t} className="flex gap-4 rounded-xl border border-[#ded8cd] bg-white p-5">
+              <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#007a95] text-xs font-bold text-white tabular-nums">
                 {i + 1}
               </span>
               <div>
-                <p className="text-[15px] font-bold text-[#10251b]">{t}</p>
-                <p className="mt-1 text-sm leading-relaxed text-[#3d4b44]">{d}</p>
+                <p className="text-[15px] font-bold text-[#14120f]">{t}</p>
+                <p className="mt-1 text-sm leading-relaxed text-[#56504a]">{d}</p>
               </div>
             </li>
           ))}
@@ -145,7 +145,7 @@ export default function Page() {
       />
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">A brand and a retailer are different purchases</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">A brand and a retailer are different purchases</h2>
         <p className="mt-3">
           It is worth separating the two, because a review that criticises a brand&apos;s store for a
           narrow range is criticising it for being a brand. A single-brand store gives you one
@@ -157,7 +157,7 @@ export default function Page() {
           sets its at $110 and Aussie Health Products at $99, both read on {READ_ON}, so a small
           order can carry a delivery cost that outweighs the price difference you were comparing.
           Our{" "}
-          <a href="/health-and-beauty/best-value-skincare-australia-cost-per-use" className="font-semibold text-[#0a7c42] underline">
+          <a href="/health-and-beauty/best-value-skincare-australia-cost-per-use" className="font-semibold text-[#007a95] underline">
             cost-per-use page
           </a>{" "}
           takes that further.
@@ -165,14 +165,14 @@ export default function Page() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">What this page does not say</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">What this page does not say</h2>
         <p className="mt-3">
           It does not say that a natural or certified product treats, reduces or clears anything. A
           cosmetic sold on that basis in Australia is making a therapeutic claim, which is a
           different regulatory category from the one most of these products sit in, and we are not in
           a position to assess it either way.
         </p>
-        <p className="mt-3 text-sm text-[#3d4b44]">
+        <p className="mt-3 text-sm text-[#56504a]">
           Company facts read off each company&apos;s own site on {READ_ON}, and the ACO register
           checked the same day. Prices, thresholds and certifications change, so verify before you
           buy. General information for an Australian audience.

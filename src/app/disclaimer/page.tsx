@@ -56,10 +56,10 @@ const faqSchema = {
 function Section({ n, title, children }: { n: string; title: string; children: React.ReactNode }) {
   return (
     <div>
-      <h2 className="mb-3 text-2xl font-bold text-[#10251b]">
+      <h2 className="mb-3 text-2xl font-bold text-[#14120f]">
         {n}. {title}
       </h2>
-      <div className="space-y-3 text-[15px] leading-relaxed text-[#2b362f]">{children}</div>
+      <div className="space-y-3 text-[15px] leading-relaxed text-[#14120f]">{children}</div>
     </div>
   );
 }
@@ -70,23 +70,23 @@ export default function Disclaimer() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <main id="main-content" className="mx-auto max-w-3xl px-5 pb-20 pt-12 sm:px-8 sm:pt-16">
-        <nav className="mb-8 flex items-center gap-2 text-sm text-[#627068]">
-          <Link href="/" className="hover:text-[#0a7c42]">Refer Labs</Link>
+        <nav className="mb-8 flex items-center gap-2 text-sm text-[#56504a]">
+          <Link href="/" className="hover:text-[#007a95]">Refer Labs</Link>
           <span>/</span>
-          <span className="text-[#2b362f]">Disclaimer</span>
+          <span className="text-[#14120f]">Disclaimer</span>
         </nav>
 
-        <h1 className="mt-4 text-4xl font-bold leading-[1.07] tracking-[-0.01em] text-[#10251b] sm:text-5xl">
+        <h1 className="mt-4 text-4xl font-bold leading-[1.07] tracking-[-0.01em] text-[#14120f] sm:text-5xl">
           Disclaimer
         </h1>
 
-        <p className="mt-5 text-lg leading-relaxed text-[#2b362f]">
+        <p className="mt-5 text-lg leading-relaxed text-[#14120f]">
           Refer Labs publishes general information to help Australians compare providers. It is not medical, financial,
           legal or tax advice, it is not tailored to your circumstances, and we are not the provider of anything we
           compare. Prices and offers are recorded on the date shown on the page and change without notice.
         </p>
 
-        <p className="mt-4 text-sm text-[#627068]">Last updated: {UPDATED}</p>
+        <p className="mt-4 text-sm text-[#56504a]">Last updated: {UPDATED}</p>
 
         <div className="mt-10 space-y-8">
           <Section n="1" title="General information only">
@@ -150,7 +150,7 @@ export default function Disclaimer() {
               Where a reader signs up, buys or has an enquiry taken up, the provider may pay us a commission or referral
               fee, at no extra cost to you. We do not sell rankings, we do not accept payment for placement, and we
               publish no star ratings or testimonials of our own.{" "}
-              <Link href="/how-we-make-money" className="font-semibold text-[#0a7c42] hover:underline">
+              <Link href="/how-we-make-money" className="font-semibold text-[#007a95] hover:underline">
                 How we make money
               </Link>{" "}
               sets out the arrangements in full.
@@ -171,8 +171,8 @@ export default function Disclaimer() {
               Australian Consumer Law or any other law that cannot lawfully be excluded. Where a law implies a guarantee
               that cannot be excluded, our liability is limited to the extent the law permits. This disclaimer sits
               alongside our{" "}
-              <Link href="/terms" className="font-semibold text-[#0a7c42] hover:underline">Terms of Service</Link> and{" "}
-              <Link href="/privacy" className="font-semibold text-[#0a7c42] hover:underline">Privacy Policy</Link>, and
+              <Link href="/terms" className="font-semibold text-[#007a95] hover:underline">Terms of Service</Link> and{" "}
+              <Link href="/privacy" className="font-semibold text-[#007a95] hover:underline">Privacy Policy</Link>, and
               does not replace them.
             </p>
           </Section>
@@ -180,7 +180,7 @@ export default function Disclaimer() {
           <Section n="9" title="Corrections">
             <p>
               If something here is wrong, tell us and we will fix it. Email{" "}
-              <a href="mailto:jarred@referlabs.com.au" className="font-semibold text-[#0a7c42] hover:underline">
+              <a href="mailto:jarred@referlabs.com.au" className="font-semibold text-[#007a95] hover:underline">
                 jarred@referlabs.com.au
               </a>{" "}
               with the page and what is inaccurate. We correct errors of fact on the page itself rather than quietly,
@@ -189,19 +189,19 @@ export default function Disclaimer() {
           </Section>
         </div>
 
-        <section className="mt-12 border-t border-[#e5e9e7] pt-8">
-          <h2 className="text-2xl font-bold text-[#10251b]">Common questions</h2>
-          <dl className="mt-5 divide-y divide-[#eef1ef] rounded-2xl border border-[#e5e9e7] bg-white">
+        <section className="mt-12 border-t border-[#ded8cd] pt-8">
+          <h2 className="text-2xl font-bold text-[#14120f]">Common questions</h2>
+          <dl className="mt-5 divide-y divide-[#f1ede4] rounded-2xl border border-[#ded8cd] bg-white">
             {faqs.map((f) => (
               <div key={f.q} className="px-5 py-5">
-                <dt className="text-[15px] font-bold text-[#10251b]">{f.q}</dt>
-                <dd className="mt-2 text-sm leading-relaxed text-[#3d4b44]">{f.a}</dd>
+                <dt className="text-[15px] font-bold text-[#14120f]">{f.q}</dt>
+                <dd className="mt-2 text-sm leading-relaxed text-[#56504a]">{f.a}</dd>
               </div>
             ))}
           </dl>
         </section>
 
-        <p className="mt-10 text-sm text-[#5a665f]">
+        <p className="mt-10 text-sm text-[#56504a]">
           Pepform Pty Ltd trading as Refer Labs, ABN 32 660 008 159.
         </p>
       </main>

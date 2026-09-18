@@ -69,33 +69,33 @@ export default function WeightLossCostCalculatorPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <main className="text-[#10251b]">
+      <main className="text-[#14120f]">
         <div className="mx-auto max-w-3xl px-6 sm:px-8 lg:px-12">
           {/* Breadcrumb */}
-          <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2 pt-8 text-sm text-[#3d4b44]">
-            <Link href="/" className="hover:text-[#0a7c42] transition-colors">Refer Labs</Link>
+          <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2 pt-8 text-sm text-[#56504a]">
+            <Link href="/" className="hover:text-[#007a95] transition-colors">Refer Labs</Link>
             <span aria-hidden="true">/</span>
-            <Link href="/weight-loss" className="hover:text-[#0a7c42] transition-colors">Weight loss</Link>
+            <Link href="/weight-loss" className="hover:text-[#007a95] transition-colors">Weight loss</Link>
             <span aria-hidden="true">/</span>
-            <span className="text-[#2b362f]">Cost calculator</span>
+            <span className="text-[#14120f]">Cost calculator</span>
           </nav>
 
           {/* Hero */}
           <section className="pt-9 pb-7 sm:pt-11">
-            <h1 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-extrabold leading-[1.08] tracking-tight text-[#10251b] mb-4 max-w-3xl">
+            <h1 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-extrabold leading-[1.08] tracking-tight text-[#14120f] mb-4 max-w-3xl">
               What will weight-loss telehealth cost you? Find your pathway
             </h1>
-            <div className="text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl mb-5 space-y-3">
+            <div className="text-[#56504a] text-sm sm:text-base leading-relaxed max-w-2xl mb-5 space-y-3">
               <p>
                 Nobody can quote you an honest fixed price for weight-loss care, because the figure depends on
                 the plan a practitioner approves for you. What we can do is show you exactly{" "}
-                <strong className="font-semibold text-[#10251b]">what each pathway charges for</strong>, what
+                <strong className="font-semibold text-[#14120f]">what each pathway charges for</strong>, what
                 moves the price, and where your real number gets revealed before you commit a cent.
               </p>
               <p>Three quick preference questions. No health questions, and nothing is stored.</p>
             </div>
-            <p className="mb-6 rounded-lg border border-[#e5e9e7] bg-[#f5f8f6] px-4 py-3 text-xs leading-relaxed text-[#3d4b44]">
-              <span className="font-semibold text-[#2b362f]">Information only.</span> This tool compares pricing
+            <p className="mb-6 rounded-lg border border-[#ded8cd] bg-[#f7f4ee] px-4 py-3 text-xs leading-relaxed text-[#56504a]">
+              <span className="font-semibold text-[#14120f]">Information only.</span> This tool compares pricing
               structures, not medical suitability. It is not medical or financial advice and does not recommend
               any treatment. Prescription medicines in Australia are available only after assessment by a
               registered practitioner. This page contains a disclosed affiliate link.
@@ -108,11 +108,11 @@ export default function WeightLossCostCalculatorPage() {
           </section>
 
           {/* Why no dollar figures */}
-          <section className="border-t border-[#e5e9e7] mt-8 py-9">
-            <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-[#10251b] mb-4">
+          <section className="border-t border-[#ded8cd] mt-8 py-9">
+            <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-[#14120f] mb-4">
               Why we don&apos;t publish exact prices
             </h2>
-            <div className="space-y-4 text-[15px] leading-relaxed text-[#3d4b44] max-w-2xl">
+            <div className="space-y-4 text-[15px] leading-relaxed text-[#56504a] max-w-2xl">
               <p>
                 Most &ldquo;cost&rdquo; pages in this category publish a number to win the click, and the number
                 is either out of date or was never true for anyone in particular. Subscription pricing in
@@ -125,11 +125,11 @@ export default function WeightLossCostCalculatorPage() {
                 their own flow before you commit. The free eligibility check is how you turn &ldquo;roughly
                 what&rdquo; into &ldquo;exactly this, for me&rdquo; without spending anything. For the wider
                 pricing landscape, see our guide to{" "}
-                <Link href="/weight-loss-telehealth-cost-australia" className="text-[#0a7c42] underline underline-offset-2">
+                <Link href="/weight-loss-telehealth-cost-australia" className="text-[#007a95] underline underline-offset-2">
                   how weight-loss telehealth pricing works
                 </Link>{" "}
                 and the{" "}
-                <Link href="/cheapest-weight-loss-telehealth-australia" className="text-[#0a7c42] underline underline-offset-2">
+                <Link href="/cheapest-weight-loss-telehealth-australia" className="text-[#007a95] underline underline-offset-2">
                   cheapest-options comparison
                 </Link>.
               </p>
@@ -137,42 +137,42 @@ export default function WeightLossCostCalculatorPage() {
           </section>
 
           {/* FAQ */}
-          <section className="border-t border-[#e5e9e7] py-9">
-            <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-[#10251b] mb-6">
+          <section className="border-t border-[#ded8cd] py-9">
+            <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-[#14120f] mb-6">
               Frequently asked questions
             </h2>
             <div className="space-y-3">
               {faqs.map((f) => (
-                <details key={f.q} className="group rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] px-5 py-4">
-                  <summary className="cursor-pointer list-none font-semibold text-[#10251b] text-sm sm:text-base flex items-center justify-between gap-4">
+                <details key={f.q} className="group rounded-xl border border-[#ded8cd] bg-[#f7f4ee] px-5 py-4">
+                  <summary className="cursor-pointer list-none font-semibold text-[#14120f] text-sm sm:text-base flex items-center justify-between gap-4">
                     {f.q}
-                    <span aria-hidden="true" className="text-[#627068] group-open:rotate-45 transition-transform text-lg leading-none">+</span>
+                    <span aria-hidden="true" className="text-[#56504a] group-open:rotate-45 transition-transform text-lg leading-none">+</span>
                   </summary>
-                  <p className="text-[#3d4b44] text-sm leading-relaxed mt-3">{f.a}</p>
+                  <p className="text-[#56504a] text-sm leading-relaxed mt-3">{f.a}</p>
                 </details>
               ))}
             </div>
           </section>
 
           {/* Email capture */}
-          <section className="border-t border-[#e5e9e7] py-9">
+          <section className="border-t border-[#ded8cd] py-9">
             <NewsletterSignup variant="band" source="cost-calculator" />
           </section>
 
           {/* Related + disclosure */}
-          <section className="border-t border-[#e5e9e7] py-8 pb-16">
-            <h2 className="text-sm font-bold text-[#10251b] mb-3">Keep researching</h2>
+          <section className="border-t border-[#ded8cd] py-8 pb-16">
+            <h2 className="text-sm font-bold text-[#14120f] mb-3">Keep researching</h2>
             <div className="flex flex-wrap gap-3 mb-6">
               <Link href="/weight-loss-telehealth-cost-australia" className="nw-link text-sm">How pricing works</Link>
-              <span className="text-[#627068]">·</span>
+              <span className="text-[#56504a]">·</span>
               <Link href="/best-weight-loss-telehealth-australia" className="nw-link text-sm">Best weight-loss telehealth</Link>
-              <span className="text-[#627068]">·</span>
+              <span className="text-[#56504a]">·</span>
               <Link href="/moshy" className="nw-link text-sm">Moshy: what it costs</Link>
           <Link href="/moshy-review" className="nw-link text-sm">Moshy, explained</Link>
-              <span className="text-[#627068]">·</span>
+              <span className="text-[#56504a]">·</span>
               <Link href="/weight-loss" className="nw-link text-sm">The full weight-loss hub</Link>
             </div>
-            <p className="text-[#627068] text-xs leading-relaxed max-w-2xl">
+            <p className="text-[#56504a] text-xs leading-relaxed max-w-2xl">
               This page is operated by Refer Labs and contains a disclosed affiliate referral link to Moshy. We
               may earn a commission if you sign up through it, at no extra cost to you, and it never changes a
               conclusion. All content is general information only and does not constitute medical or financial

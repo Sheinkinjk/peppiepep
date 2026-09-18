@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SiteFooterBar, SiteHeader } from "@/components/brand/SiteChrome";
 import { HomeLogo } from "@/components/home/HomeLogo";
 import { Nav, NavRail } from "@/components/home/HomeNav";
 import {
@@ -42,16 +43,6 @@ function said(r: { figure: string | null; offer: string }): string {
   return /free/i.test(fig) ? fig : `${fig} off`;
 }
 
-/* The footer as the 11 Sep homepage had it, plus the three hubs that went live
-   after: Health & Beauty, Sleep and Longevity. Sleep and Longevity have no card
-   on this page, so the footer is what keeps a homepage link into each. */
-const footerColumns = footer.columns.map((col, i) => i !== 0 ? col : {
-  ...col,
-  links: col.links.flatMap((l) =>
-    l.href === "/hair-loss" ? [l, { label: "Health & Beauty", href: "/health-and-beauty" }]
-    : l.href === "/solar-and-energy" ? [l, { label: "Sleep", href: "/sleep" }, { label: "Longevity", href: "/longevity" }]
-    : [l]),
-});
 
 /** Display headings on this page carry no closing full stop. */
 const noStop = (t: string) => t.replace(/\.\s*$/, "");
@@ -61,20 +52,6 @@ function Mark({ of, size = 18 }: { of: string; size?: number }) {
   return k ? <HubObject kind={k} size={size} className="hy-obj hy-obj--inline" /> : null;
 }
 
-function Header() {
-  return (
-    <header className="rd-hd rl-own hy-hd">
-      <div className="rd-w rd-hd__g">
-        <Link href="/" className="hy-logo" aria-label="Refer Labs, home">
-          <HomeLogo className="hy-logo__svg" />
-        </Link>
-        <Nav groups={hybridNav} />
-        <HeroSearch />
-      </div>
-      <NavRail groups={hybridNav} />
-    </header>
-  );
-}
 
 /* ---- the hero: six hub cards ------------------------------------------- */
 
@@ -332,7 +309,7 @@ function News() {
 export function HomePage() {
   return (
     <div className="rd hy">
-      <Header />
+      <SiteHeader />
       <main id="main-content">
         <Hero />
         <Trust />
@@ -345,7 +322,7 @@ export function HomePage() {
         <News />
         <Partner />
       </main>
-      <SiteFooter columns={footerColumns} brand={<HomeLogo className="hy-logo__svg hy-logo__svg--ft" />} />
+      <SiteFooterBar />
     </div>
   );
 }

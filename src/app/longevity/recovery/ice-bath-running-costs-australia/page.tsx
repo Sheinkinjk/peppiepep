@@ -48,7 +48,7 @@ export default function Page() {
       sectionHref="/longevity/recovery"
       slug="/longevity/recovery/ice-bath-running-costs-australia"
       crumb="Ice bath running costs"
-      h1={<>What an ice bath costs to run: <span className="italic text-[#0a7c42]">work it out for your own bill</span></>}
+      h1={<>What an ice bath costs to run: <span className="italic text-[#007a95]">work it out for your own bill</span></>}
       intro="Every page answering this question gives you one number. That number cannot be right for you, because it depends on your tariff, your climate and your tub. Here is the calculation instead, with the working shown."
       headline="Ice bath running costs in Australia: the real numbers"
       description={seoConfig.iceBathRunningCosts.description}
@@ -59,7 +59,7 @@ export default function Page() {
       ]}
     >
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Why nobody can give you one number</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Why nobody can give you one number</h2>
         <p className="mt-3">
           A chiller&apos;s job is removing heat from water. How much heat it has to remove depends on how warm the air
           is, how well the tub holds cold, and how far below ambient you want the water. Those differ between Cairns and
@@ -72,33 +72,33 @@ export default function Page() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">The calculation</h2>
-        <div className="mt-4 rounded-2xl border border-[#0a7c42]/25 bg-[#f5f8f6] p-6">
-          <p className="text-[15px] font-semibold text-[#10251b]">
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">The calculation</h2>
+        <div className="mt-4 rounded-2xl border border-[#007a95]/25 bg-[#f7f4ee] p-6">
+          <p className="text-[15px] font-semibold text-[#14120f]">
             Daily cost = chiller power (kW) × hours running per day × your tariff ($/kWh)
           </p>
-          <p className="mt-3 text-sm text-[#3d4b44]">
+          <p className="mt-3 text-sm text-[#56504a]">
             Annual cost = daily cost × 365, then add water, filters and sanitiser.
           </p>
         </div>
         <p className="mt-4">Three inputs, and all three are findable:</p>
-        <div className="mt-4 overflow-x-auto rounded-2xl border border-[#e5e9e7]">
+        <div className="mt-4 overflow-x-auto rounded-2xl border border-[#ded8cd]">
           <table className="w-full min-w-[560px] border-collapse text-left text-sm">
-            <thead className="bg-[#f8faf9] text-[11px] uppercase tracking-[0.1em] text-[#627068]">
+            <thead className="bg-[#f7f4ee] text-[11px] uppercase tracking-[0.1em] text-[#56504a]">
               <tr>
                 <th className="px-4 py-3 font-semibold">Input</th>
                 <th className="px-4 py-3 font-semibold">Where to find it</th>
                 <th className="px-4 py-3 font-semibold">Watch for</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-[#eef1ef]">
+            <tbody className="divide-y divide-[#f1ede4]">
               {[
                 ["Chiller power draw", "The product spec sheet, in watts or horsepower", "Rated power is the maximum, not the average"],
                 ["Hours running per day", "The chiller cycles rather than running flat out", "Ambient temperature drives this more than anything"],
                 ["Your tariff", "Your electricity bill, in cents per kWh", "Peak and off-peak differ if you are on a time-of-use plan"],
               ].map((r) => (
                 <tr key={r[0]}>
-                  <td className="px-4 py-3 font-semibold text-[#10251b]">{r[0]}</td>
+                  <td className="px-4 py-3 font-semibold text-[#14120f]">{r[0]}</td>
                   <td className="px-4 py-3">{r[1]}</td>
                   <td className="px-4 py-3">{r[2]}</td>
                 </tr>
@@ -114,20 +114,20 @@ export default function Page() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">A worked example</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">A worked example</h2>
         <p className="mt-3">
           Using round numbers to show the method rather than to describe your setup. Substitute your own three inputs
           and the answer changes accordingly.
         </p>
-        <div className="mt-4 overflow-x-auto rounded-2xl border border-[#e5e9e7]">
+        <div className="mt-4 overflow-x-auto rounded-2xl border border-[#ded8cd]">
           <table className="w-full min-w-[520px] border-collapse text-left text-sm">
-            <thead className="bg-[#f8faf9] text-[11px] uppercase tracking-[0.1em] text-[#627068]">
+            <thead className="bg-[#f7f4ee] text-[11px] uppercase tracking-[0.1em] text-[#56504a]">
               <tr>
                 <th className="px-4 py-3 font-semibold">Step</th>
                 <th className="px-4 py-3 font-semibold">Illustrative figure</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-[#eef1ef]">
+            <tbody className="divide-y divide-[#f1ede4]">
               {[
                 ["Chiller power", "0.5 kW"],
                 ["Running 8 hours a day (cycling)", "0.5 × 8 = 4 kWh/day"],
@@ -137,14 +137,14 @@ export default function Page() {
                 ["Water, filters, sanitiser", "Add your own, commonly one to two hundred dollars"],
               ].map((r) => (
                 <tr key={r[0]}>
-                  <td className="px-4 py-3 font-semibold text-[#10251b]">{r[0]}</td>
+                  <td className="px-4 py-3 font-semibold text-[#14120f]">{r[0]}</td>
                   <td className="px-4 py-3 tabular-nums">{r[1]}</td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
-        <p className="mt-3 text-xs text-[#5a665f]">
+        <p className="mt-3 text-xs text-[#56504a]">
           Illustrative arithmetic, not a price claim. The tariff and running hours are placeholders: use the figures
           from your own bill and your own chiller&apos;s spec sheet.
         </p>
@@ -155,7 +155,7 @@ export default function Page() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Chiller against bagged ice</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Chiller against bagged ice</h2>
         <p className="mt-3">
           The comparison that decides most purchases. A chiller is a large one-off plus a modest daily draw. Ice is a
           cost per session that never stops and scales with how often you plunge.
@@ -173,18 +173,18 @@ export default function Page() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Cutting the running cost</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Cutting the running cost</h2>
         <ul className="mt-3 list-disc space-y-2 pl-5">
-          <li><strong className="text-[#10251b]">Use a proper cover.</strong> The largest single influence on how often the chiller cycles, and the cheapest thing to fix.</li>
-          <li><strong className="text-[#10251b]">Keep the tub out of direct sun.</strong> Shade materially reduces the heat load in an Australian summer.</li>
-          <li><strong className="text-[#10251b]">Insulate the tub and the lines.</strong> Uninsulated hoses lose cold on every circuit.</li>
-          <li><strong className="text-[#10251b]">Reconsider your target temperature.</strong> Every degree colder costs more to hold, continuously.</li>
-          <li><strong className="text-[#10251b]">Check your tariff structure.</strong> On a time-of-use plan, when the chiller does most of its work matters.</li>
+          <li><strong className="text-[#14120f]">Use a proper cover.</strong> The largest single influence on how often the chiller cycles, and the cheapest thing to fix.</li>
+          <li><strong className="text-[#14120f]">Keep the tub out of direct sun.</strong> Shade materially reduces the heat load in an Australian summer.</li>
+          <li><strong className="text-[#14120f]">Insulate the tub and the lines.</strong> Uninsulated hoses lose cold on every circuit.</li>
+          <li><strong className="text-[#14120f]">Reconsider your target temperature.</strong> Every degree colder costs more to hold, continuously.</li>
+          <li><strong className="text-[#14120f]">Check your tariff structure.</strong> On a time-of-use plan, when the chiller does most of its work matters.</li>
         </ul>
         <p className="mt-4">
           This page is about cost rather than benefit. We make no health claim for cold water immersion; what the
           research does and does not support is covered on our{" "}
-          <a href="/longevity/recovery/contrast-therapy-what-the-evidence-says" className="font-semibold text-[#0a7c42] hover:underline">
+          <a href="/longevity/recovery/contrast-therapy-what-the-evidence-says" className="font-semibold text-[#007a95] hover:underline">
             contrast therapy evidence page
           </a>.
         </p>

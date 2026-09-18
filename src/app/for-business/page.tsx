@@ -45,16 +45,16 @@ export default function ForBusinessPage() {
 
       <main id="main-content">
         <section className="mx-auto max-w-6xl px-5 pt-12 sm:px-8 sm:pt-16">
-          <nav className="mb-7 flex items-center gap-2 text-sm text-[#627068]">
-            <Link href="/" className="hover:text-[#0a7c42]">Refer Labs</Link>
+          <nav className="mb-7 flex items-center gap-2 text-sm text-[#56504a]">
+            <Link href="/" className="hover:text-[#007a95]">Refer Labs</Link>
             <span>/</span>
-            <span className="text-[#2b362f]">For business</span>
+            <span className="text-[#14120f]">For business</span>
           </nav>
           <div className="max-w-2xl">
-            <h1 className="mt-4 text-4xl font-bold leading-[1.06] tracking-[-0.01em] text-[#10251b] sm:text-5xl">
-              Customers who have already <span className="italic text-[#0a7c42]">done the research</span>
+            <h1 className="mt-4 text-4xl font-bold leading-[1.06] tracking-[-0.01em] text-[#14120f] sm:text-5xl">
+              Customers who have already <span className="italic text-[#007a95]">done the research</span>
             </h1>
-            <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#2b362f]">
+            <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#14120f]">
               Refer Labs helps Australians choose between providers. For businesses, it offers a place
               your product can be discovered by people ready to buy, and a team that builds referral and affiliate
               growth for a living.
@@ -64,14 +64,14 @@ export default function ForBusinessPage() {
                 href={CALENDLY}
                 target="_blank"
                 rel="noopener"
-                className="group inline-flex items-center gap-2 rounded-full bg-[#0a7c42] px-7 py-3.5 text-[15px] font-semibold text-white shadow-[0_10px_30px_-8px_rgba(14,124,102,0.6)] transition-all hover:-translate-y-0.5 hover:bg-[#0a7c42]"
+                className="group inline-flex items-center gap-2 rounded-full bg-[#007a95] px-7 py-3.5 text-[15px] font-semibold text-white shadow-[0_10px_30px_-8px_rgba(14,124,102,0.6)] transition-all hover:-translate-y-0.5 hover:bg-[#007a95]"
               >
                 Book a call
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </a>
               <a
                 href="mailto:jarred@referlabs.com.au"
-                className="text-sm font-semibold text-[#10251b] underline decoration-[#cdd5cf] underline-offset-4 hover:decoration-[#0a7c42]"
+                className="text-sm font-semibold text-[#14120f] underline decoration-[#ded8cd] underline-offset-4 hover:decoration-[#007a95]"
               >
                 jarred@referlabs.com.au
               </a>
@@ -82,17 +82,17 @@ export default function ForBusinessPage() {
         <section className="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-16">
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {offers.map((o) => (
-              <div key={o.title} className="flex flex-col rounded-2xl border border-[#e5e9e7] bg-[#f5f8f6] p-7 shadow-[0_2px_24px_-16px_rgba(0,0,0,0.2)]">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#0a7c42]">{o.tag}</p>
-                <h2 className="mt-3 text-xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-2xl">
+              <div key={o.title} className="flex flex-col rounded-2xl border border-[#ded8cd] bg-[#f7f4ee] p-7 shadow-[0_2px_24px_-16px_rgba(0,0,0,0.2)]">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#007a95]">{o.tag}</p>
+                <h2 className="mt-3 text-xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-2xl">
                   {o.title}
                 </h2>
-                <p className="mt-2.5 flex-1 text-sm leading-relaxed text-[#3d4b44] sm:text-[15px]">{o.body}</p>
+                <p className="mt-2.5 flex-1 text-sm leading-relaxed text-[#56504a] sm:text-[15px]">{o.body}</p>
                 {o.links && (
                   <ul className="mt-4 space-y-1.5 text-sm">
                     {o.links.map((l) => (
                       <li key={l.href}>
-                        <Link href={l.href} className="text-[#2b362f] underline decoration-[#cdd5cf] underline-offset-4 hover:text-[#0a7c42]">
+                        <Link href={l.href} className="text-[#14120f] underline decoration-[#ded8cd] underline-offset-4 hover:text-[#007a95]">
                           {l.label}
                         </Link>
                       </li>
@@ -101,12 +101,12 @@ export default function ForBusinessPage() {
                 )}
                 <div className="mt-6">
                   {o.cta.external ? (
-                    <a href={o.cta.href} className="group inline-flex items-center gap-1.5 text-sm font-semibold text-[#0a7c42]">
+                    <a href={o.cta.href} className="group inline-flex items-center gap-1.5 text-sm font-semibold text-[#007a95]">
                       {o.cta.label}
                       <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
                     </a>
                   ) : (
-                    <Link href={o.cta.href} className="group inline-flex items-center gap-1.5 text-sm font-semibold text-[#0a7c42]">
+                    <Link href={o.cta.href} className="group inline-flex items-center gap-1.5 text-sm font-semibold text-[#007a95]">
                       {o.cta.label}
                       <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
                     </Link>
@@ -116,11 +116,11 @@ export default function ForBusinessPage() {
             ))}
           </div>
 
-          <p className="mt-6 max-w-2xl text-sm leading-relaxed text-[#3d4b44]">
+          <p className="mt-6 max-w-2xl text-sm leading-relaxed text-[#56504a]">
             One thing we will not sell: a ranking. Editorial conclusions on Refer Labs are never part of a commercial
             deal, and every partnership is disclosed to readers. That separation is what makes the audience worth
             reaching. The full policy is at{" "}
-            <Link href="/about" className="font-semibold text-[#0a7c42] underline decoration-[#0a7c42]/30 underline-offset-4">
+            <Link href="/about" className="font-semibold text-[#007a95] underline decoration-[#007a95]/30 underline-offset-4">
               how we research
             </Link>
             .

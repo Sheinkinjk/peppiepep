@@ -63,10 +63,10 @@ export function hairLossGuideSchemas(cfg: HairLossGuideConfig) {
 /** Service-focused Mosh CTA (assessment, not medicine). Reused top and bottom. */
 function MoshCta({ heading, body, loc }: { heading: string; body: string; loc: string }) {
   return (
-    <div className="flex flex-col items-start gap-3 rounded-2xl border border-[#0a7c42]/25 bg-[#e8f5ee] px-6 py-5 sm:flex-row sm:items-center sm:justify-between">
+    <div className="flex flex-col items-start gap-3 rounded-2xl border border-[#007a95]/25 bg-[#e4f2f5] px-6 py-5 sm:flex-row sm:items-center sm:justify-between">
       <div className="max-w-md">
-        <p className="font-bold text-[#10251b]">{heading}</p>
-        <p className="mt-1 text-[14px] leading-relaxed text-[#10251b]">{body}</p>
+        <p className="font-bold text-[#14120f]">{heading}</p>
+        <p className="mt-1 text-[14px] leading-relaxed text-[#14120f]">{body}</p>
       </div>
       <a href={MOSH_HAIR_URL} target="_blank" rel="nofollow sponsored" data-cta={`hairloss-${loc}`} className="nw-btn shrink-0 whitespace-nowrap">
         Start a Mosh assessment <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -83,24 +83,24 @@ export default function HairLossGuide({ cfg }: { cfg: HairLossGuideConfig }) {
       ))}
 
       <main className="mx-auto max-w-3xl px-5 py-10 sm:px-8 sm:py-14">
-        <nav className="flex flex-wrap items-center gap-2 text-sm text-[#5a665f]">
-          <Link href="/" className="hover:text-[#10251b]">Refer Labs</Link>
+        <nav className="flex flex-wrap items-center gap-2 text-sm text-[#56504a]">
+          <Link href="/" className="hover:text-[#14120f]">Refer Labs</Link>
           <span>/</span>
-          <Link href="/hair-loss" className="hover:text-[#10251b]">Hair loss</Link>
+          <Link href="/hair-loss" className="hover:text-[#14120f]">Hair loss</Link>
           <span>/</span>
-          <span className="text-[#10251b]">{cfg.crumb}</span>
+          <span className="text-[#14120f]">{cfg.crumb}</span>
         </nav>
 
-        <h1 className="mt-4 text-3xl font-extrabold leading-[1.08] tracking-tight text-[#10251b] sm:text-4xl">{cfg.h1}</h1>
-        <p className="mt-5 text-lg leading-relaxed text-[#3d4b44]">{cfg.lead}</p>
+        <h1 className="mt-4 text-3xl font-extrabold leading-[1.08] tracking-tight text-[#14120f] sm:text-4xl">{cfg.h1}</h1>
+        <p className="mt-5 text-lg leading-relaxed text-[#56504a]">{cfg.lead}</p>
         {/* Below the lead, never between it and the h1. The first thing after
             the h1 is the answer; a meta strip in that slot is what an engine
             lifts instead. */}
         <EditorialMeta lastUpdated="2026-09-02" className="mt-4" />
 
         {/* Information-only notice */}
-        <div className="nw-card mt-6 px-5 py-4 text-sm leading-relaxed text-[#3d4b44]">
-          <span className="font-bold text-[#10251b]">Information only.</span> Nothing here is medical advice or a
+        <div className="nw-card mt-6 px-5 py-4 text-sm leading-relaxed text-[#56504a]">
+          <span className="font-bold text-[#14120f]">Information only.</span> Nothing here is medical advice or a
           recommendation of any treatment. Prescription hair-loss treatment in Australia is supplied only after an
           individual assessment by a registered practitioner who decides suitability. This page contains a disclosed
           affiliate link to Mosh.
@@ -118,14 +118,14 @@ export default function HairLossGuide({ cfg }: { cfg: HairLossGuideConfig }) {
         <article className="mt-10 space-y-9">
           {cfg.sections.map((s) => (
             <section key={s.h}>
-              <h2 className="text-xl font-bold tracking-tight text-[#10251b] sm:text-2xl">{s.h}</h2>
-              <div className="mt-4 space-y-4 text-[15px] leading-relaxed text-[#3d4b44]">
+              <h2 className="text-xl font-bold tracking-tight text-[#14120f] sm:text-2xl">{s.h}</h2>
+              <div className="mt-4 space-y-4 text-[15px] leading-relaxed text-[#56504a]">
                 {s.body.map((p, i) => <p key={i}>{p}</p>)}
                 {s.bullets && (
                   <ul className="space-y-2">
                     {s.bullets.map((b) => (
                       <li key={b} className="flex gap-2.5 leading-relaxed">
-                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#0a7c42]" aria-hidden="true" />{b}
+                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#007a95]" aria-hidden="true" />{b}
                       </li>
                     ))}
                   </ul>
@@ -146,30 +146,30 @@ export default function HairLossGuide({ cfg }: { cfg: HairLossGuideConfig }) {
 
         {/* FAQ */}
         <section className="mt-14">
-          <h2 className="text-2xl font-bold tracking-tight text-[#10251b]">Common questions</h2>
-          <div className="mt-6 divide-y divide-[#e5e9e7] border-y border-[#e5e9e7]">
+          <h2 className="text-2xl font-bold tracking-tight text-[#14120f]">Common questions</h2>
+          <div className="mt-6 divide-y divide-[#ded8cd] border-y border-[#ded8cd]">
             {cfg.faqs.map((f) => (
               <details key={f.q} className="group py-4">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-[#10251b]">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-[#14120f]">
                   {f.q}
-                  <span className="text-xl leading-none text-[#0a7c42] transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+                  <span className="text-xl leading-none text-[#007a95] transition-transform group-open:rotate-45" aria-hidden="true">+</span>
                 </summary>
-                <p className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">{f.a}</p>
+                <p className="mt-3 text-[15px] leading-relaxed text-[#56504a]">{f.a}</p>
               </details>
             ))}
           </div>
         </section>
 
         {/* Related */}
-        <section className="mt-12 flex flex-wrap gap-x-6 gap-y-2 border-t border-[#eef1ef] pt-8 text-sm">
+        <section className="mt-12 flex flex-wrap gap-x-6 gap-y-2 border-t border-[#f1ede4] pt-8 text-sm">
           {cfg.related.map((r) => (
-            <Link key={r.href} href={r.href} className="font-semibold text-[#0a7c42] hover:text-[#086536]">{r.label}</Link>
+            <Link key={r.href} href={r.href} className="font-semibold text-[#007a95] hover:text-[#003647]">{r.label}</Link>
           ))}
         </section>
 
         {/* Bottom disclaimer */}
-        <p className="mt-10 flex items-start gap-2 text-xs leading-relaxed text-[#5a665f]">
-          <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-[#0a7c42]" aria-hidden="true" />
+        <p className="mt-10 flex items-start gap-2 text-xs leading-relaxed text-[#56504a]">
+          <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-[#007a95]" aria-hidden="true" />
           <span>
             Information only, not medical advice. Prescription medicines in Australia are supplied only after individual
             assessment by a registered practitioner. Some links are disclosed affiliate links, and commissions never change

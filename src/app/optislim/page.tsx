@@ -87,20 +87,20 @@ export default function OptislimPage() {
 
       <main id="main-content">
         <section className="mx-auto max-w-6xl px-5 pt-12 sm:px-8 sm:pt-16">
-          <nav className="mb-7 flex items-center gap-2 text-sm text-[#627068]">
-            <Link href="/" className="hover:text-[#0a7c42]">Refer Labs</Link>
+          <nav className="mb-7 flex items-center gap-2 text-sm text-[#56504a]">
+            <Link href="/" className="hover:text-[#007a95]">Refer Labs</Link>
             <span>/</span>
-            <Link href="/health-and-beauty" className="hover:text-[#0a7c42]">Health &amp; beauty</Link>
+            <Link href="/health-and-beauty" className="hover:text-[#007a95]">Health &amp; beauty</Link>
             <span>/</span>
-            <span className="text-[#2b362f]">OptiSlim</span>
+            <span className="text-[#14120f]">OptiSlim</span>
           </nav>
 
           <div className="max-w-3xl">
-            <h1 className="text-4xl font-bold leading-[1.06] tracking-[-0.01em] text-[#10251b] sm:text-5xl">
-              OptiSlim in Australia: <span className="italic text-[#0a7c42]">what a meal costs, and the rule that governs it</span>
+            <h1 className="text-4xl font-bold leading-[1.06] tracking-[-0.01em] text-[#14120f] sm:text-5xl">
+              OptiSlim in Australia: <span className="italic text-[#007a95]">what a meal costs, and the rule that governs it</span>
             </h1>
             {/* The answer, in the slot check-answer-slot guards. Nothing above it. */}
-            <p className="mt-5 text-lg leading-relaxed text-[#2b362f]">
+            <p className="mt-5 text-lg leading-relaxed text-[#14120f]">
               OptiSlim sells meal-replacement shakes, bars and soups, with its cheapest very low calorie diet
               shake working out at {cheapestPerMeal()} a meal, read off its own site on {READ_ON_LABEL}. The part its
               own shop page does not mention is that
@@ -114,21 +114,21 @@ export default function OptislimPage() {
 
         {/* The owned fact, first, because it changes whether you should buy at all. */}
         <section className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
-          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">
+          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">
             Do you need a doctor to use a VLCD?
           </h2>
-          <div className="mt-5 max-w-3xl space-y-4 text-[15px] leading-relaxed text-[#3d4b44]">
+          <div className="mt-5 max-w-3xl space-y-4 text-[15px] leading-relaxed text-[#56504a]">
             <p>
               Yes, according to the regulator. Food Standards Australia New Zealand sets the rules for what may be
               sold as a very low energy diet in Australia, and it is unambiguous about how they are meant to be used.
             </p>
-            <blockquote className="rounded-2xl border border-[#e5e9e7] bg-white p-6">
-              <p className="text-[15px] leading-relaxed text-[#2b362f]">&ldquo;{VLED_RULE.what}&rdquo;</p>
-              <p className="mt-3 text-[15px] leading-relaxed text-[#2b362f]">&ldquo;{VLED_RULE.supervision}&rdquo;</p>
-              <p className="mt-3 text-[15px] leading-relaxed text-[#2b362f]">&ldquo;{VLED_RULE.duration}&rdquo;</p>
-              <footer className="mt-4 text-[13px] text-[#5a665f]">
+            <blockquote className="rounded-2xl border border-[#ded8cd] bg-white p-6">
+              <p className="text-[15px] leading-relaxed text-[#14120f]">&ldquo;{VLED_RULE.what}&rdquo;</p>
+              <p className="mt-3 text-[15px] leading-relaxed text-[#14120f]">&ldquo;{VLED_RULE.supervision}&rdquo;</p>
+              <p className="mt-3 text-[15px] leading-relaxed text-[#14120f]">&ldquo;{VLED_RULE.duration}&rdquo;</p>
+              <footer className="mt-4 text-[13px] text-[#56504a]">
                 Food Standards Australia New Zealand, {VLED_RULE.standard}. Read on {READ_ON_LABEL} at{" "}
-                <a href={VLED_RULE.source} target="_blank" rel="noopener noreferrer" className="text-[#0a7c42] hover:underline">
+                <a href={VLED_RULE.source} target="_blank" rel="noopener noreferrer" className="text-[#007a95] hover:underline">
                   foodstandards.gov.au
                 </a>.
               </footer>
@@ -147,10 +147,10 @@ export default function OptislimPage() {
 
         {/* Prices, every one dated, derived from the partner file. */}
         <section className="mx-auto max-w-6xl px-5 pb-14 sm:px-8">
-          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">
+          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">
             How much does OptiSlim cost?
           </h2>
-          <p className="mt-3 max-w-3xl text-[15px] leading-relaxed text-[#3d4b44]">
+          <p className="mt-3 max-w-3xl text-[15px] leading-relaxed text-[#56504a]">
             List prices on OptiSlim&apos;s own VLCD collection page, read on {READ_ON_LABEL}. Cost per meal is the box
             price divided by the meals in it, which is the figure worth comparing against anything else you are
             considering.
@@ -158,30 +158,30 @@ export default function OptislimPage() {
           <div className="mt-7 overflow-x-auto">
             <table className="w-full min-w-[34rem] border-collapse text-left text-[15px]">
               <thead>
-                <tr className="border-b border-[#e5e9e7]">
-                  <th scope="col" className="py-3 pr-4 font-semibold text-[#10251b]">Range</th>
-                  <th scope="col" className="py-3 pr-4 font-semibold text-[#10251b]">Box</th>
-                  <th scope="col" className="py-3 pr-4 font-semibold text-[#10251b]">Meals</th>
-                  <th scope="col" className="py-3 pr-4 font-semibold text-[#10251b]">Per meal</th>
-                  <th scope="col" className="py-3 font-semibold text-[#10251b]">Flavours</th>
+                <tr className="border-b border-[#ded8cd]">
+                  <th scope="col" className="py-3 pr-4 font-semibold text-[#14120f]">Range</th>
+                  <th scope="col" className="py-3 pr-4 font-semibold text-[#14120f]">Box</th>
+                  <th scope="col" className="py-3 pr-4 font-semibold text-[#14120f]">Meals</th>
+                  <th scope="col" className="py-3 pr-4 font-semibold text-[#14120f]">Per meal</th>
+                  <th scope="col" className="py-3 font-semibold text-[#14120f]">Flavours</th>
                 </tr>
               </thead>
               <tbody className="[font-variant-numeric:tabular-nums]">
                 {RANGES.map((r) => (
-                  <tr key={r.name} className="border-b border-[#eef1ef]">
-                    <th scope="row" className="py-3 pr-4 font-semibold text-[#2b362f]">{r.name}</th>
-                    <td className="py-3 pr-4 text-[#3d4b44]">{boxPrice(r)}</td>
-                    <td className="py-3 pr-4 text-[#3d4b44]">{r.meals}</td>
-                    <td className="py-3 pr-4 text-[#3d4b44]">{perMeal(r)}</td>
-                    <td className="py-3 text-[#3d4b44]">{r.flavours}</td>
+                  <tr key={r.name} className="border-b border-[#f1ede4]">
+                    <th scope="row" className="py-3 pr-4 font-semibold text-[#14120f]">{r.name}</th>
+                    <td className="py-3 pr-4 text-[#56504a]">{boxPrice(r)}</td>
+                    <td className="py-3 pr-4 text-[#56504a]">{r.meals}</td>
+                    <td className="py-3 pr-4 text-[#56504a]">{perMeal(r)}</td>
+                    <td className="py-3 text-[#56504a]">{r.flavours}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
-          <p className="mt-4 max-w-3xl text-[13px] leading-relaxed text-[#5a665f]">
+          <p className="mt-4 max-w-3xl text-[13px] leading-relaxed text-[#56504a]">
             Prices can change without notice. View the current pricing on{" "}
-            <a href={source} target="_blank" rel="noopener noreferrer" className="text-[#0a7c42] hover:underline">
+            <a href={source} target="_blank" rel="noopener noreferrer" className="text-[#007a95] hover:underline">
               OptiSlim&apos;s own site
             </a>{" "}
             before you commit. Last read {READ_ON_LABEL}.
@@ -189,10 +189,10 @@ export default function OptislimPage() {
         </section>
 
         <section className="mx-auto max-w-6xl px-5 pb-14 sm:px-8">
-          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">
+          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">
             What OptiSlim sells
           </h2>
-          <div className="mt-5 max-w-3xl space-y-4 text-[15px] leading-relaxed text-[#3d4b44]">
+          <div className="mt-5 max-w-3xl space-y-4 text-[15px] leading-relaxed text-[#56504a]">
             <p>
               Four lines, read off the brand&apos;s own site on {READ_ON_LABEL}: a VLCD range of meal-replacement
               shakes, an LCD range, low-calorie snacks including bars and soups, and a wellness range that had not
@@ -212,29 +212,29 @@ export default function OptislimPage() {
               target="_blank"
               rel="nofollow sponsored"
               data-cta="optislim-brand-primary"
-              className="inline-flex items-center rounded-full bg-[#0a7c42] px-6 py-3 text-[15px] font-semibold text-white transition-colors hover:bg-[#086536]"
+              className="inline-flex items-center rounded-full bg-[#007a95] px-6 py-3 text-[15px] font-semibold text-white transition-colors hover:bg-[#003647]"
             >
               View OptiSlim&apos;s current pricing
             </a>
-            <Link href="/health-and-beauty" className="text-sm font-semibold text-[#0a7c42] hover:underline">
+            <Link href="/health-and-beauty" className="text-sm font-semibold text-[#007a95] hover:underline">
               Compare every Health &amp; Beauty partner →
             </Link>
           </div>
-          <p className="mt-3 text-[13px] leading-relaxed text-[#5a665f]">
+          <p className="mt-3 text-[13px] leading-relaxed text-[#56504a]">
             We earn a commission if you buy through that link, at no extra cost to you. We hold no OptiSlim code.
             The commission did not stop this page opening with the regulator&apos;s view that a doctor and a dietitian
             should be supervising you.
           </p>
         </section>
 
-        <section className="border-y border-[#e5e9e7] bg-[#f5f8f6]">
+        <section className="border-y border-[#ded8cd] bg-[#f7f4ee]">
           <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
-            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">Common questions</h2>
-            <dl className="mt-7 max-w-3xl divide-y divide-[#e5e9e7]">
+            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">Common questions</h2>
+            <dl className="mt-7 max-w-3xl divide-y divide-[#ded8cd]">
               {faqs.map((f) => (
                 <div key={f.q} className="py-5">
-                  <dt className="text-[15px] font-bold text-[#10251b]">{f.q}</dt>
-                  <dd className="mt-2 text-sm leading-relaxed text-[#3d4b44]">{f.a}</dd>
+                  <dt className="text-[15px] font-bold text-[#14120f]">{f.q}</dt>
+                  <dd className="mt-2 text-sm leading-relaxed text-[#56504a]">{f.a}</dd>
                 </div>
               ))}
             </dl>
@@ -242,15 +242,15 @@ export default function OptislimPage() {
         </section>
 
         <section className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
-          <p className="max-w-3xl rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] px-5 py-4 text-xs leading-relaxed text-[#3d4b44]">
-            <span className="font-semibold text-[#2b362f]">General information only.</span> Nothing here is medical or
+          <p className="max-w-3xl rounded-xl border border-[#ded8cd] bg-[#f7f4ee] px-5 py-4 text-xs leading-relaxed text-[#56504a]">
+            <span className="font-semibold text-[#14120f]">General information only.</span> Nothing here is medical or
             dietary advice, or a recommendation that a very low energy diet suits you. Australia&apos;s food regulator
             says these products are to be used under the supervision of a medical practitioner and dietitian. Speak to
             yours before starting one. Figures were read on {READ_ON_LABEL} and can change.
           </p>
-          <p className="mt-6 text-sm leading-relaxed text-[#3d4b44]">
+          <p className="mt-6 text-sm leading-relaxed text-[#56504a]">
             More in this section:{" "}
-            <Link href="/health-and-beauty" className="font-semibold text-[#0a7c42] hover:underline">
+            <Link href="/health-and-beauty" className="font-semibold text-[#007a95] hover:underline">
               Health &amp; Beauty
             </Link>
             .

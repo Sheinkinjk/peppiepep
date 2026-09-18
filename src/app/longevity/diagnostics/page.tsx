@@ -35,9 +35,9 @@ export default function DiagnosticsHub() {
     <SectionHub
       slug="/longevity/diagnostics"
       crumbs={[{ href: "/longevity", label: "Longevity" }, { label: "Diagnostics" }]}
-      h1={<>Screening and diagnostics: <span className="italic text-[#0a7c42]">the cost, and the case against</span></>}
+      h1={<>Screening and diagnostics: <span className="italic text-[#007a95]">the cost, and the case against</span></>}
       intro="This is the part of the longevity market where the gap between price and demonstrated benefit is widest. These guides carry what the services cost in Australia and what Australian clinicians say about screening people who feel well."
-      note={<><strong className="font-semibold text-[#10251b]">Not a recommendation.</strong> Nothing here suggests you should or should not have a test. Whether screening is appropriate for you depends on your history and risk, which is a conversation for a practitioner who knows both.</>}
+      note={<><strong className="font-semibold text-[#14120f]">Not a recommendation.</strong> Nothing here suggests you should or should not have a test. Whether screening is appropriate for you depends on your history and risk, which is a conversation for a practitioner who knows both.</>}
       comingSoonFor="Diagnostics"
       guides={guides}
       faqs={faqs}

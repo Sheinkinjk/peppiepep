@@ -13,11 +13,11 @@ const money = (n: number) => `$${n.toLocaleString("en-AU")}`;
  */
 export default function LenderTable({ lenders = LENDERS, caption }: { lenders?: Lender[]; caption?: string }) {
   return (
-    <div className="overflow-x-auto rounded-2xl border border-[#e5e9e7]">
+    <div className="overflow-x-auto rounded-2xl border border-[#ded8cd]">
       <table className="w-full border-collapse text-left text-sm">
         {caption && <caption className="sr-only">{caption}</caption>}
         <thead>
-          <tr className="bg-[#f8faf9] text-[11px] font-bold uppercase tracking-[0.08em] text-[#5a665f]">
+          <tr className="bg-[#f7f4ee] text-[11px] font-bold uppercase tracking-[0.08em] text-[#56504a]">
             <th scope="col" className="px-4 py-3">Lender</th>
             <th scope="col" className="px-4 py-3">Advertised rate from</th>
             <th scope="col" className="px-4 py-3">Loan size</th>
@@ -26,11 +26,11 @@ export default function LenderTable({ lenders = LENDERS, caption }: { lenders?: 
             <th scope="col" className="px-4 py-3">Industry code</th>
           </tr>
         </thead>
-        <tbody className="text-[#3d4b44]">
+        <tbody className="text-[#56504a]">
           {lenders.map((l) => (
-            <tr key={l.slug} className="border-t border-[#eef1ef]">
-              <th scope="row" className="px-4 py-3 font-semibold text-[#10251b]">
-                <Link href={`/business-loans/${l.slug}`} className="flex items-center gap-2.5 hover:text-[#0a7c42] hover:underline">
+            <tr key={l.slug} className="border-t border-[#f1ede4]">
+              <th scope="row" className="px-4 py-3 font-semibold text-[#14120f]">
+                <Link href={`/business-loans/${l.slug}`} className="flex items-center gap-2.5 hover:text-[#007a95] hover:underline">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <LenderLogo src={l.logo} name={l.name} size={28} className="rounded-md" />
                   {l.name}
@@ -45,7 +45,7 @@ export default function LenderTable({ lenders = LENDERS, caption }: { lenders?: 
           ))}
         </tbody>
       </table>
-      <p className="border-t border-[#eef1ef] bg-[#f8faf9] px-4 py-2.5 text-xs text-[#5a665f]">
+      <p className="border-t border-[#f1ede4] bg-[#f7f4ee] px-4 py-2.5 text-xs text-[#56504a]">
         Terms as at {ratesAsAt()}, from each lender&apos;s own site. &ldquo;Quote-based&rdquo; means the lender prices each loan individually (Lumi quotes a total repayment; Prospa uses simple interest) rather than publishing a headline rate. Figures are indicative, not a quote; your rate depends on the lender&apos;s assessment. Verify current terms with the lender.
       </p>
     </div>

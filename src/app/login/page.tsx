@@ -102,30 +102,30 @@ function LoginContent() {
   };
 
   const inputClass =
-    "mt-1 w-full rounded-xl border border-[#dfe5df] bg-white px-4 py-3 text-[15px] text-[#10251b] outline-none transition-colors focus:border-[#0a7c42]";
-  const labelClass = "text-sm font-semibold text-[#10251b]";
+    "mt-1 w-full rounded-xl border border-[#ded8cd] bg-white px-4 py-3 text-[15px] text-[#14120f] outline-none transition-colors focus:border-[#007a95]";
+  const labelClass = "text-sm font-semibold text-[#14120f]";
   const primaryButton =
-    "w-full rounded-full bg-[#0a7c42] px-6 py-3 text-[15px] font-semibold text-white transition-colors hover:bg-[#086536] disabled:cursor-not-allowed disabled:opacity-60";
+    "w-full rounded-full bg-[#007a95] px-6 py-3 text-[15px] font-semibold text-white transition-colors hover:bg-[#003647] disabled:cursor-not-allowed disabled:opacity-60";
   const secondaryButton =
-    "w-full rounded-full border border-[#dfe5df] bg-white px-6 py-3 text-[15px] font-semibold text-[#10251b] transition-colors hover:bg-[#f2f4ee] disabled:cursor-not-allowed disabled:opacity-60";
+    "w-full rounded-full border border-[#ded8cd] bg-white px-6 py-3 text-[15px] font-semibold text-[#14120f] transition-colors hover:bg-[#f7f4ee] disabled:cursor-not-allowed disabled:opacity-60";
 
   return (
     <main
       id="main-content"
-      className="flex min-h-screen items-center justify-center bg-[#f2f4ee] px-4 py-12"
+      className="flex min-h-screen items-center justify-center bg-[#f7f4ee] px-4 py-12"
       aria-label="Refer Labs staff sign in"
     >
-      <div className="w-full max-w-md rounded-2xl border border-[#e5e9e7] bg-white p-8 shadow-[0_1px_2px_rgba(16,37,27,0.05)]">
-        <Link href="/" className="text-sm font-semibold text-[#0a7c42] hover:text-[#086536]">
+      <div className="w-full max-w-md rounded-2xl border border-[#ded8cd] bg-white p-8 shadow-[0_1px_2px_rgba(20,18,15,0.05)]">
+        <Link href="/" className="text-sm font-semibold text-[#007a95] hover:text-[#003647]">
           Refer Labs
         </Link>
 
         {view === "forgot-password" ? (
           <>
-            <h1 className="mt-4 text-2xl font-bold text-[#10251b]">Reset your password</h1>
+            <h1 className="mt-4 text-2xl font-bold text-[#14120f]">Reset your password</h1>
             {resetEmailSent ? (
               <div className="mt-6 space-y-4">
-                <p className="rounded-xl border border-[#cfe6da] bg-[#e8f5ee] px-4 py-3 text-sm text-[#2b362f]" role="status">
+                <p className="rounded-xl border border-[#b9e3eb] bg-[#e4f2f5] px-4 py-3 text-sm text-[#14120f]" role="status">
                   If an account exists for <strong>{email}</strong>, a reset link is on its way. Check your spam folder if
                   it does not arrive.
                 </p>
@@ -151,7 +151,7 @@ function LoginContent() {
                 <button type="button" onClick={handleForgotPassword} disabled={loading || !email} className={primaryButton}>
                   {loading ? "Sending..." : "Send reset link"}
                 </button>
-                <button type="button" className="w-full text-sm font-semibold text-[#3d4b44] hover:text-[#10251b]" onClick={() => { setView("signin"); setError(""); }}>
+                <button type="button" className="w-full text-sm font-semibold text-[#56504a] hover:text-[#14120f]" onClick={() => { setView("signin"); setError(""); }}>
                   Back to sign in
                 </button>
               </div>
@@ -159,8 +159,8 @@ function LoginContent() {
           </>
         ) : (
           <>
-            <h1 className="mt-4 text-2xl font-bold text-[#10251b]">Staff sign in</h1>
-            <p className="mt-2 text-sm text-[#5a665f]">
+            <h1 className="mt-4 text-2xl font-bold text-[#14120f]">Staff sign in</h1>
+            <p className="mt-2 text-sm text-[#56504a]">
               For the Refer Labs team. Readers do not need an account to use the site.
             </p>
 
@@ -183,7 +183,7 @@ function LoginContent() {
                   <button
                     type="button"
                     onClick={() => { setView("forgot-password"); setError(""); }}
-                    className="text-xs font-semibold text-[#0a7c42] hover:text-[#086536]"
+                    className="text-xs font-semibold text-[#007a95] hover:text-[#003647]"
                   >
                     Forgot password?
                   </button>
@@ -205,10 +205,10 @@ function LoginContent() {
                 {loading ? "Signing in..." : "Sign in"}
               </button>
 
-              <div className="flex items-center gap-3 py-1 text-xs uppercase tracking-wide text-[#627068]">
-                <span className="h-px flex-1 bg-[#e5e9e7]" />
+              <div className="flex items-center gap-3 py-1 text-xs uppercase tracking-wide text-[#56504a]">
+                <span className="h-px flex-1 bg-[#ded8cd]" />
                 or
-                <span className="h-px flex-1 bg-[#e5e9e7]" />
+                <span className="h-px flex-1 bg-[#ded8cd]" />
               </div>
 
               <button type="button" onClick={handleGoogleSignIn} disabled={loading} className={secondaryButton}>
@@ -224,7 +224,7 @@ function LoginContent() {
 
 export default function LoginPage() {
   return (
-    <Suspense fallback={<div className="flex min-h-screen items-center justify-center bg-[#f2f4ee]">Loading...</div>}>
+    <Suspense fallback={<div className="flex min-h-screen items-center justify-center bg-[#f7f4ee]">Loading...</div>}>
       <LoginContent />
     </Suspense>
   );

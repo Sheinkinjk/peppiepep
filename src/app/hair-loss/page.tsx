@@ -7,6 +7,9 @@ import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, SCHEMA_AUTHOR, SCHEMA_PUBLISHER } from "@/lib/seo";
 import { MOSH_HAIR_URL, DENSE_URL } from "@/lib/affiliate-links";
 import OfferSchema from "@/components/offers/OfferSchema";
+import { EdgeObject } from "@/components/brand/EdgeObject";
+import { GuideGrid } from "@/components/brand/GuideGrid";
+import { HubObject } from "@/components/home/Objects";
 
 import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 export const metadata = generateSEOMetadata(seoConfig.hairLossHub);
@@ -16,7 +19,7 @@ const guides = [
   { href: "/best-hair-loss-treatment-australia", title: "Best hair loss treatment", desc: "Clinical telehealth versus topical products, side by side." },
   { href: "/moshhair", title: "Mosh review & offer", desc: "How the men's hair-loss telehealth service works, plus 55% off your first order." },
   { href: "/mosh-review", title: "Is Mosh legit & worth it?", desc: "An independent look at whether Mosh stacks up, what it costs, and what people raise." },
-  { href: "/dense", title: "Dense Hair Experts", desc: "The topical, non-prescription route for density and scalp health." },
+  { href: "/dense", kind: "review" as const, title: "Dense Hair Experts", desc: "The topical, non-prescription route for density and scalp health." },
   { href: "/hair-loss-treatment-cost-australia", title: "What treatment costs", desc: "Over-the-counter options vs telehealth plans, with Mosh\u2019s published prices." },
   { href: "/early-signs-of-hair-loss-australia", title: "Early signs of hair loss", desc: "How to tell if you're going bald, what's normal, and when to act." },
   { href: "/how-to-stop-hair-loss-australia", title: "How to slow hair loss", desc: "The causes, what the evidence supports, and why acting early helps." },
@@ -86,16 +89,17 @@ export default function HairLossHubPage() {
 
       <main id="main-content">
         <section className="mx-auto max-w-6xl px-5 pt-12 sm:px-8 sm:pt-16">
-          <nav className="mb-7 flex items-center gap-2 text-sm text-[#627068]">
-            <Link href="/" className="hover:text-[#0a7c42]">Refer Labs</Link>
+          <nav className="mb-7 flex items-center gap-2 text-sm text-[#56504a]">
+            <Link href="/" className="hover:text-[#007a95]">Refer Labs</Link>
             <span>/</span>
-            <span className="text-[#2b362f]">Hair loss</span>
+            <span className="text-[#14120f]">Hair loss</span>
           </nav>
+          <div className="grid items-start gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
           <div className="max-w-2xl">
-            <h1 className="mt-4 text-4xl font-bold leading-[1.06] tracking-[-0.01em] text-[#10251b] sm:text-5xl">
-              Hair loss in Australia: <span className="italic text-[#0a7c42]">the options compared</span>
+            <h1 className="mt-4 text-4xl font-bold leading-[1.06] tracking-[-0.01em] text-[#14120f] sm:text-5xl">
+              Hair loss in Australia: the options compared
             </h1>
-            <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#2b362f]">
+            <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#14120f]">
               Prescription telehealth, topical products, and everything marketed in between. This hub separates the
               clinical route from the cosmetic one so you know which you are looking at.
             </p>
@@ -104,46 +108,60 @@ export default function HairLossHubPage() {
                 above the first affiliate link, which is what it is for. */}
             <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
             <OfferSchema code="REFERAL55" />
-
+          </div>
+          {/* The matcher, moved up from below the guides so the hero has its
+              second column, as the weight-loss hub does. */}
+          <EdgeObject kind="comb">
+            <MatchPrompt
+              stacked
+              href="/hair-loss-quiz"
+              title="Not sure which hair-loss route fits you?"
+              sub="Answer one or two quick questions and get the option that fits, clinical, topical, or your GP, and why."
+              cta="Take the 30-second match"
+              dataCta="hair-match-prompt"
+            />
+          </EdgeObject>
           </div>
         </section>
 
 
         <section className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
-          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">
+          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">
             First, which route are you on?
           </h2>
           <div className="mt-7 grid gap-4 lg:grid-cols-2">
-            <div className="rounded-2xl border border-[#0a7c42]/30 bg-[#f5f8f6] p-7">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#0a7c42]">Clinical</p>
-              <h3 className="mt-3 text-xl font-bold text-[#10251b]">
+            <div className="rounded-2xl border border-[#007a95]/30 bg-white p-7">
+              <HubObject kind="phone" size={64} className="hy-obj mb-4" />
+              <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#007a95]">Clinical</p>
+              <h3 className="mt-3 text-xl font-bold text-[#14120f]">
                 Telehealth &amp; prescription
               </h3>
-              <p className="mt-2.5 text-sm leading-relaxed text-[#3d4b44]">
+              <p className="mt-2.5 text-sm leading-relaxed text-[#56504a]">
                 A registered practitioner assesses you and, where appropriate, prescribes the treatments that act on the
                 cause of hair loss. Mosh is the main Australian men&apos;s service. This is the route for active or
                 progressing loss.
               </p>
               <div className="mt-5 space-y-2 text-sm font-semibold">
-                <p><Link href="/best-hair-loss-treatment-australia" className="text-[#0a7c42] hover:underline">Compare treatments →</Link></p>
-                <p><Link href="/moshhair" className="text-[#0a7c42] hover:underline">Read the Mosh guide →</Link></p>
-                <p><Link href="/receding-hairline-treatment-australia" className="text-[#0a7c42] hover:underline">Receding hairline: the options →</Link></p>
+                <p><Link href="/best-hair-loss-treatment-australia" className="text-[#007a95] hover:underline">Compare treatments →</Link></p>
+                <p><Link href="/moshhair" className="text-[#007a95] hover:underline">Read the Mosh guide →</Link></p>
+                <p><Link href="/receding-hairline-treatment-australia" className="text-[#007a95] hover:underline">Receding hairline: the options →</Link></p>
               </div>
             </div>
-            <div className="rounded-2xl border border-[#e5e9e7] bg-[#f5f8f6] p-7">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#627068]">Cosmetic</p>
-              <h3 className="mt-3 text-xl font-bold text-[#10251b]">
+            <div className="rounded-2xl border border-[#ded8cd] bg-white p-7">
+              <HubObject kind="comb" size={64} className="hy-obj mb-4" />
+              <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#56504a]">Cosmetic</p>
+              <h3 className="mt-3 text-xl font-bold text-[#14120f]">
                 Topical products
               </h3>
-              <p className="mt-2.5 text-sm leading-relaxed text-[#3d4b44]">
+              <p className="mt-2.5 text-sm leading-relaxed text-[#56504a]">
                 Non-prescription shampoos, serums and scalp treatments for density and condition. Dense Hair Experts is
                 the main Australian name. Best as a routine, and best paired with realistic expectations.
               </p>
               <p className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm font-semibold">
-                <a href={DENSE_URL} target="_blank" rel="nofollow sponsored" data-cta="hair-hub-dense" className="inline-flex items-center gap-1.5 text-[#0a7c42] hover:underline">
+                <a href={DENSE_URL} target="_blank" rel="nofollow sponsored" data-cta="hair-hub-dense" className="inline-flex items-center gap-1.5 text-[#007a95] hover:underline">
                   Visit Dense Hair Experts <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
                 </a>
-                <Link href="/dense" className="font-medium text-[#5a665f] hover:text-[#0a7c42] hover:underline">Read our review</Link>
+                <Link href="/dense" className="font-medium text-[#56504a] hover:text-[#007a95] hover:underline">Read our review</Link>
               </p>
             </div>
           </div>
@@ -185,58 +203,43 @@ export default function HairLossHubPage() {
           ]}
         />
 
-        <section className="border-y border-[#e5e9e7] bg-[#f5f8f6]">
+        <section className="border-y border-[#ded8cd] bg-[#f7f4ee]">
           <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
-            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">
+            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">
               Every guide in this hub
             </h2>
-            <div className="mt-7 grid gap-4 sm:grid-cols-2">
-              {guides.map((g) => (
-                <Link key={g.href} href={g.href} className="group rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] p-5 transition-all hover:-translate-y-0.5 hover:border-[#0a7c42]/40">
-                  <h3 className="text-[15px] font-bold text-[#10251b] group-hover:text-[#0a7c42]">{g.title}</h3>
-                  <p className="mt-1.5 text-sm leading-relaxed text-[#3d4b44]">{g.desc}</p>
-                </Link>
-              ))}
-            </div>
+            <GuideGrid guides={guides} />
           </div>
         </section>
 
         <section className="mx-auto max-w-6xl px-5 py-8 sm:px-8">
-          <MatchPrompt
-            href="/hair-loss-quiz"
-            title="Not sure which hair-loss route fits you?"
-            sub="Answer one or two quick questions and get the option that fits, clinical, topical, or your GP, and why."
-            cta="Take the 30-second match"
-            dataCta="hair-match-prompt"
-          />
-
           <NewsletterSignup variant="band" source="hair-loss-hub" />
         </section>
 
         <section className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
-          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">
+          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">
             Before you start
           </h2>
-          <div className="mt-6 max-w-3xl divide-y divide-[#e5e9e7] border-y border-[#e5e9e7]">
+          <div className="mt-6 max-w-3xl divide-y divide-[#ded8cd] border-y border-[#ded8cd]">
             {faqs.map((f) => (
               <details key={f.q} className="group py-4">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-[#10251b]">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-[#14120f]">
                   {f.q}
-                  <span className="text-xl leading-none text-[#0a7c42] transition-transform group-open:rotate-45">+</span>
+                  <span className="text-xl leading-none text-[#007a95] transition-transform group-open:rotate-45">+</span>
                 </summary>
-                <p className="mt-3 text-[15px] leading-relaxed text-[#2b362f]">{f.a}</p>
+                <p className="mt-3 text-[15px] leading-relaxed text-[#14120f]">{f.a}</p>
               </details>
             ))}
           </div>
-          <p className="mt-8 max-w-3xl rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] px-5 py-4 text-xs leading-relaxed text-[#3d4b44]">
-            <span className="font-semibold text-[#2b362f]">Information only.</span> Nothing here is medical advice or a
+          <p className="mt-8 max-w-3xl rounded-xl border border-[#ded8cd] bg-[#f7f4ee] px-5 py-4 text-xs leading-relaxed text-[#56504a]">
+            <span className="font-semibold text-[#14120f]">Information only.</span> Nothing here is medical advice or a
             recommendation of any treatment. Prescription medicines in Australia are available only after individual
             assessment by a registered practitioner.
           </p>
           <AffiliateDisclosure className="mt-3 max-w-3xl" />
-          <p className="mt-6 text-sm leading-relaxed text-[#3d4b44]">
+          <p className="mt-6 text-sm leading-relaxed text-[#56504a]">
             Every current offer we hold, with the date each one was checked, is on{" "}
-            <Link href="/deals" className="font-semibold text-[#0a7c42] hover:underline">the deals page</Link>.
+            <Link href="/deals" className="font-semibold text-[#007a95] hover:underline">the deals page</Link>.
           </p>
         </section>
       </main>

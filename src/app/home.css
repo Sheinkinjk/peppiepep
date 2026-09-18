@@ -856,3 +856,16 @@
   color: color-mix(in oklab, var(--paper) 78%, var(--teal-deep)); }
 .rd-ft__cookie button:hover { color: var(--paper); }
 .rd-ft__cookie button:focus-visible { outline: 2px solid var(--teal-bright); outline-offset: 2px; }
+
+/* ---- shared chrome outside the homepage ---------------------------------- */
+.rd.rd-chrome { background: transparent; }
+.rd-chrome .rd-hd { background: var(--paper); }
+.rd-ft__news { margin-top: 1.4rem; max-width: 360px; }
+.rd-ft__newsk { margin: 0 0 0.2rem; color: var(--paper); font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+.rd-form--compact { margin-top: 0.6rem; gap: 6px; }
+.rd-form--compact .rd-input { flex: 1 1 180px; min-height: 44px; font-size: 16px; }
+.rd-form--compact .rd-btn { min-height: 44px; padding-inline: 16px; font-size: 14px; background: var(--teal); border-color: var(--teal); color: var(--white); }
+.rd-form--compact .rd-btn:hover:not(:disabled) { background: var(--teal-bright); border-color: var(--teal-bright); color: var(--teal-deep); }
+.rd-ft .rd-form--compact .rd-msg { color: color-mix(in oklab, var(--paper) 72%, var(--teal-deep)); font-size: 12.5px; }
+.rd-ft .rd-form--compact .rd-msg[data-tone="err"] { color: var(--saffron-soft); }
+.rd-ft .rd-form--compact .rd-msg[data-tone="ok"] { color: var(--paper); }

@@ -1,6 +1,6 @@
 import { Check, Minus } from "lucide-react";
 
-const GREEN = "#0a7c42";
+const GREEN = "#007a95";
 const TINT = `${GREEN}0A`;
 
 export type MatrixCol = { name: string; highlight?: boolean; badge?: string };
@@ -26,17 +26,17 @@ export default function FeatureMatrix({
 }) {
   return (
     <div>
-      <div className="overflow-x-auto rounded-2xl border border-[#e5e9e7] bg-white shadow-[0_1px_2px_rgba(16,37,27,0.04),0_8px_24px_rgba(16,37,27,0.05)]">
+      <div className="overflow-x-auto rounded-2xl border border-[#ded8cd] bg-white shadow-[0_1px_2px_rgba(20,18,15,0.04),0_8px_24px_rgba(20,18,15,0.05)]">
         <table className="w-full min-w-[560px] border-collapse text-sm">
           <thead>
             <tr>
-              <th className="sticky left-0 z-20 w-44 border-b border-[#e5e9e7] bg-white px-4 py-4 text-left text-[11px] font-semibold uppercase tracking-wider text-[#627068]">
+              <th className="sticky left-0 z-20 w-44 border-b border-[#ded8cd] bg-white px-4 py-4 text-left text-[11px] font-semibold uppercase tracking-wider text-[#56504a]">
                 {firstColLabel}
               </th>
               {columns.map((c, j) => (
                 <th
                   key={j}
-                  className="border-b border-[#e5e9e7] px-4 py-4 text-center align-bottom"
+                  className="border-b border-[#ded8cd] px-4 py-4 text-center align-bottom"
                   style={c.highlight ? { background: TINT } : undefined}
                 >
                   {c.badge && (
@@ -47,7 +47,7 @@ export default function FeatureMatrix({
                       {c.badge}
                     </span>
                   )}
-                  <span className={`block text-sm font-extrabold ${c.highlight ? "text-[#0a7c42]" : "text-[#10251b]"}`}>
+                  <span className={`block text-sm font-extrabold ${c.highlight ? "text-[#007a95]" : "text-[#14120f]"}`}>
                     {c.name}
                   </span>
                 </th>
@@ -56,18 +56,18 @@ export default function FeatureMatrix({
           </thead>
           <tbody>
             {rows.map((r, i) => (
-              <tr key={i} className="group border-b border-[#e5e9e7] last:border-0">
+              <tr key={i} className="group border-b border-[#ded8cd] last:border-0">
                 <th
                   scope="row"
-                  className="sticky left-0 z-10 bg-white px-4 py-3 text-left text-xs font-medium leading-snug text-[#3d4b44] transition-colors group-hover:bg-[#f5f8f6]"
+                  className="sticky left-0 z-10 bg-white px-4 py-3 text-left text-xs font-medium leading-snug text-[#56504a] transition-colors group-hover:bg-[#f7f4ee]"
                 >
                   {r.label}
-                  {r.note && <span className="mt-0.5 block text-[11px] font-normal text-[#627068]">{r.note}</span>}
+                  {r.note && <span className="mt-0.5 block text-[11px] font-normal text-[#56504a]">{r.note}</span>}
                 </th>
                 {r.vals.map((v, j) => (
                   <td
                     key={j}
-                    className="px-4 py-3 text-center transition-colors group-hover:bg-[#f5f8f6]"
+                    className="px-4 py-3 text-center transition-colors group-hover:bg-[#f7f4ee]"
                     style={columns[j]?.highlight ? { background: TINT } : undefined}
                   >
                     {typeof v === "boolean" ? (
@@ -77,7 +77,7 @@ export default function FeatureMatrix({
                         <Minus className="mx-auto h-3.5 w-3.5 text-[#c7cec9]" aria-label="No" />
                       )
                     ) : (
-                      <span className="text-xs text-[#3d4b44]">{v}</span>
+                      <span className="text-xs text-[#56504a]">{v}</span>
                     )}
                   </td>
                 ))}
@@ -86,7 +86,7 @@ export default function FeatureMatrix({
           </tbody>
         </table>
       </div>
-      {footnote && <p className="mt-3 text-[11px] leading-relaxed text-[#627068]">{footnote}</p>}
+      {footnote && <p className="mt-3 text-[11px] leading-relaxed text-[#56504a]">{footnote}</p>}
     </div>
   );
 }

@@ -56,12 +56,12 @@ const faqs = [
  */
 function DeviceTable({ rows, caption, descriptionHeader }: { rows: readonly { name: string; price: string; blurb: string }[]; caption: string; descriptionHeader: string }) {
   return (
-    <div className="mt-4 overflow-x-auto rounded-2xl border border-[#e5e9e7]">
+    <div className="mt-4 overflow-x-auto rounded-2xl border border-[#ded8cd]">
       <table className="w-full min-w-[560px] border-collapse text-left text-sm">
-        <caption className="px-4 py-3 text-left text-xs text-[#5a665f]">
+        <caption className="px-4 py-3 text-left text-xs text-[#56504a]">
           {caption}, read off foreo.com on {FOREO.readOnLabel}. Australian list prices, which change.
         </caption>
-        <thead className="bg-[#f8faf9] text-[11px] uppercase tracking-[0.1em] text-[#627068]">
+        <thead className="bg-[#f7f4ee] text-[11px] uppercase tracking-[0.1em] text-[#56504a]">
           <tr>
             <th className="px-4 py-3 font-semibold">Device</th>
             <th className="px-4 py-3 font-semibold">
@@ -70,10 +70,10 @@ function DeviceTable({ rows, caption, descriptionHeader }: { rows: readonly { na
             <th className="px-4 py-3 font-semibold">{descriptionHeader}</th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-[#eef1ef]">
+        <tbody className="divide-y divide-[#f1ede4]">
           {rows.map((d) => (
             <tr key={d.name}>
-              <td className="px-4 py-3 font-semibold text-[#10251b]">{d.name}</td>
+              <td className="px-4 py-3 font-semibold text-[#14120f]">{d.name}</td>
               <td className="px-4 py-3 font-semibold tabular-nums">{d.price}</td>
               <td className="px-4 py-3">{d.blurb}</td>
             </tr>
@@ -91,7 +91,7 @@ export default function Page() {
       sectionHref="/health-and-beauty"
       slug="/health-and-beauty/foreo-luna-vs-ufo"
       crumb="Foreo Luna vs UFO"
-      h1={<>Foreo Luna vs UFO: <span className="italic text-[#0a7c42]">they are not alternatives</span></>}
+      h1={<>Foreo Luna vs UFO: <span className="italic text-[#007a95]">they are not alternatives</span></>}
       intro={`They are not alternatives. The LUNA is ${FOREO.lunaWhatItIs}, ${FOREO_ENTRY.luna.price} to ${FOREO_TOP.luna.price}. The UFO is ${FOREO.ufoWhatItIs}, ${FOREO_ENTRY.ufo.price} to ${FOREO_TOP.ufo.price}. Separate product lines that share a brand, so the choice is which of two different jobs you want done, not which device is better. Australian list prices read off foreo.com on ${FOREO.readOnLabel}.`}
       headline="Foreo Luna vs UFO: what each device does and what it costs"
       description={seoConfig.foreoLunaVsUfo.description}
@@ -104,7 +104,7 @@ export default function Page() {
       ]}
     >
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">The comparison most pages get wrong</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">The comparison most pages get wrong</h2>
         <p className="mt-3">
           Search results for this question rank the two against each other and declare a winner. That
           framing only works for devices that do the same job, and these do not. One is used while
@@ -113,18 +113,18 @@ export default function Page() {
           they wanted.
         </p>
         <div className="mt-4 grid gap-4 sm:grid-cols-2">
-          <div className="rounded-2xl border border-[#e5e9e7] bg-white p-6">
-            <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#627068]">LUNA</p>
-            <p className="mt-2 text-[15px] leading-relaxed text-[#10251b]">{FOREO.lunaWhatItIs}.</p>
-            <p className="mt-3 text-sm text-[#3d4b44]">
+          <div className="rounded-2xl border border-[#ded8cd] bg-white p-6">
+            <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#56504a]">LUNA</p>
+            <p className="mt-2 text-[15px] leading-relaxed text-[#14120f]">{FOREO.lunaWhatItIs}.</p>
+            <p className="mt-3 text-sm text-[#56504a]">
               From {FOREO_ENTRY.luna.price} ({FOREO_ENTRY.luna.name}) to {FOREO_TOP.luna.price} ({FOREO_TOP.luna.name}),
               read on {FOREO.readOnLabel}.
             </p>
           </div>
-          <div className="rounded-2xl border border-[#e5e9e7] bg-white p-6">
-            <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#627068]">UFO</p>
-            <p className="mt-2 text-[15px] leading-relaxed text-[#10251b]">{FOREO.ufoWhatItIs}.</p>
-            <p className="mt-3 text-sm text-[#3d4b44]">
+          <div className="rounded-2xl border border-[#ded8cd] bg-white p-6">
+            <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#56504a]">UFO</p>
+            <p className="mt-2 text-[15px] leading-relaxed text-[#14120f]">{FOREO.ufoWhatItIs}.</p>
+            <p className="mt-3 text-sm text-[#56504a]">
               From {FOREO_ENTRY.ufo.price} ({FOREO_ENTRY.ufo.name}) to {FOREO_TOP.ufo.price} ({FOREO_TOP.ufo.name}),
               read on {FOREO.readOnLabel}.
             </p>
@@ -140,9 +140,9 @@ export default function Page() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">The LUNA line and what it costs</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">The LUNA line and what it costs</h2>
         <DeviceTable rows={FOREO.luna} caption="Foreo LUNA devices and Australian list prices" descriptionHeader="Foreo's own description" />
-        <p className="mt-3 text-sm text-[#3d4b44]">
+        <p className="mt-3 text-sm text-[#56504a]">
           Foreo states {FOREO.lunaBattery}, and {FOREO.lunaMaterial}. Note that{" "}
           {LUNA_SHARED_PRICE.count} separate devices sat at {LUNA_SHARED_PRICE.price} on{" "}
           {FOREO.readOnLabel}: the face
@@ -152,9 +152,9 @@ export default function Page() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">The UFO line and what it costs</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">The UFO line and what it costs</h2>
         <DeviceTable rows={FOREO.ufo} caption="Foreo UFO devices and Australian list prices" descriptionHeader="What it is, in our words" />
-        <p className="mt-3 text-sm text-[#3d4b44]">
+        <p className="mt-3 text-sm text-[#56504a]">
           On {FOREO.readOnLabel} the line ran from {FOREO_ENTRY.ufo.price} to {FOREO_TOP.ufo.price},
           and Foreo&apos;s own descriptions do not explain what the extra {UFO_SPREAD} buys beyond
           size and portability. Nor do they state {FOREO.notPublished[0]} or{" "}
@@ -164,7 +164,7 @@ export default function Page() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Prices are Australian, which is not a given here</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Prices are Australian, which is not a given here</h2>
         <p className="mt-3">
           Foreo shows Australian visitors prices marked A$ on its own site, so the figures above are
           local list prices rather than a US number converted at whatever the rate was that day.
@@ -179,7 +179,7 @@ export default function Page() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">
           Foreo held an Australian therapeutic-goods registration and gave it up
         </h2>
         <p className="mt-3">
@@ -201,7 +201,7 @@ export default function Page() {
           It is also why the UFO table above describes each model by what it emits rather than
           repeating the marketing name. We are not in a position to say these devices do anything
           therapeutic, so we do not describe them as though they do. The same reasoning is why our{" "}
-          <a href="/health-and-beauty/led-face-mask-comparison-australia" className="font-semibold text-[#0a7c42] underline">
+          <a href="/health-and-beauty/led-face-mask-comparison-australia" className="font-semibold text-[#007a95] underline">
             LED face mask page
           </a>{" "}
           tells you to search the register there too.
@@ -222,7 +222,7 @@ export default function Page() {
       />
 
       <section>
-        <p className="text-sm leading-relaxed text-[#3d4b44]">
+        <p className="text-sm leading-relaxed text-[#56504a]">
           This page describes what these devices are and what they cost. It does not say what any of
           them treats, reduces or clears, because that is a claim we are not in a position to make.
           The LUNA descriptions are Foreo&apos;s own words about its own products, which we neither

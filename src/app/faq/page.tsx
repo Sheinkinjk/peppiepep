@@ -21,21 +21,21 @@ export default function FAQPage() {
 
   const renderFAQSection = (title: string, faqs: FAQ[], offset: number) => (
     <section className="mb-10">
-      <h2 className="text-xl font-extrabold text-[#10251b] mb-4">{title}</h2>
+      <h2 className="text-xl font-extrabold text-[#14120f] mb-4">{title}</h2>
       <div className="space-y-3">
         {faqs.map((faq, rawIdx) => {
           const idx = rawIdx + offset;
           const isExpanded = expandedQuestions.includes(idx);
           return (
-            <div key={idx} className="rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] overflow-hidden">
+            <div key={idx} className="rounded-xl border border-[#ded8cd] bg-[#f7f4ee] overflow-hidden">
               <button
                 onClick={() => toggleQuestion(idx)}
                 aria-expanded={isExpanded}
                 className="w-full text-left px-5 py-4 flex items-start justify-between gap-4"
               >
-                <h3 className="text-[15px] font-semibold text-[#10251b] leading-relaxed pr-2">{faq.q}</h3>
+                <h3 className="text-[15px] font-semibold text-[#14120f] leading-relaxed pr-2">{faq.q}</h3>
                 <ChevronDown
-                  className={`h-5 w-5 text-[#627068] flex-shrink-0 mt-0.5 transition-transform duration-200 ${
+                  className={`h-5 w-5 text-[#56504a] flex-shrink-0 mt-0.5 transition-transform duration-200 ${
                     isExpanded ? "rotate-180" : ""
                   }`}
                   aria-hidden="true"
@@ -46,7 +46,7 @@ export default function FAQPage() {
                   isExpanded ? "pb-5 max-h-[600px]" : "max-h-0"
                 }`}
               >
-                <p className="text-sm text-[#3d4b44] leading-relaxed">{faq.a}</p>
+                <p className="text-sm text-[#56504a] leading-relaxed">{faq.a}</p>
               </div>
             </div>
           );
@@ -58,25 +58,25 @@ export default function FAQPage() {
   return (
     <ConsumerShell>
       <main id="main-content" className="mx-auto max-w-3xl px-5 sm:px-8 pb-20 pt-12 sm:pt-16">
-        <nav className="mb-8 flex items-center gap-2 text-sm text-[#627068]">
-          <Link href="/" className="hover:text-[#0a7c42]">Refer Labs</Link>
+        <nav className="mb-8 flex items-center gap-2 text-sm text-[#56504a]">
+          <Link href="/" className="hover:text-[#007a95]">Refer Labs</Link>
           <span>/</span>
-          <span className="text-[#2b362f]">FAQ</span>
+          <span className="text-[#14120f]">FAQ</span>
         </nav>
 
         <header className="mb-12">
-          <h1 className="mt-4 text-4xl font-bold leading-[1.07] tracking-[-0.01em] text-[#10251b] sm:text-5xl">
+          <h1 className="mt-4 text-4xl font-bold leading-[1.07] tracking-[-0.01em] text-[#14120f] sm:text-5xl">
             Frequently asked questions
           </h1>
-          <p className="mt-5 text-lg leading-relaxed text-[#2b362f] max-w-2xl">
+          <p className="mt-5 text-lg leading-relaxed text-[#14120f] max-w-2xl">
             Three questions come up most: how Refer Labs makes money, whether that changes what we publish, and who
             writes it. The short answers are affiliate commissions on some links, no, and one person. Every question
             below is answered in full.
           </p>
           <div className="mt-6 flex gap-4 text-sm font-semibold">
-            <button onClick={expandAll} className="text-[#0a7c42] hover:text-[#086536]">Expand all</button>
-            <span className="text-[#cdd5cf]">|</span>
-            <button onClick={collapseAll} className="text-[#0a7c42] hover:text-[#086536]">Collapse all</button>
+            <button onClick={expandAll} className="text-[#007a95] hover:text-[#003647]">Expand all</button>
+            <span className="text-[#ded8cd]">|</span>
+            <button onClick={collapseAll} className="text-[#007a95] hover:text-[#003647]">Collapse all</button>
           </div>
         </header>
 
@@ -85,21 +85,21 @@ export default function FAQPage() {
         {renderFAQSection("How we make money", pricingFAQs, aboutFAQs.length + servicesFAQs.length)}
 
         <section className="mt-4">
-          <div className="rounded-2xl border border-[#0a7c42]/20 bg-[#0a7c42]/[0.05] p-8 sm:p-10 text-center">
-            <h2 className="text-2xl font-extrabold text-[#10251b] mb-3">Still have questions?</h2>
-            <p className="text-[#3d4b44] mb-6 max-w-md mx-auto">
+          <div className="rounded-2xl border border-[#007a95]/20 bg-[#007a95]/[0.05] p-8 sm:p-10 text-center">
+            <h2 className="text-2xl font-extrabold text-[#14120f] mb-3">Still have questions?</h2>
+            <p className="text-[#56504a] mb-6 max-w-md mx-auto">
               See how we research and rank, or browse the guides. Businesses can find us on the For Business page.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link
                 href="/about"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#0a7c42] text-sm font-bold text-white transition-colors hover:bg-[#086536]"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#007a95] text-sm font-bold text-white transition-colors hover:bg-[#003647]"
               >
                 How we research
               </Link>
               <Link
                 href="/guides"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-[#e5e9e7] bg-white text-sm font-bold text-[#10251b] hover:bg-[#f5f8f6] transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-[#ded8cd] bg-white text-sm font-bold text-[#14120f] hover:bg-[#f7f4ee] transition-colors"
               >
                 Browse the guides
               </Link>

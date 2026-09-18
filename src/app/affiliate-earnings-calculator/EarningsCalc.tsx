@@ -16,7 +16,7 @@ import { ArrowRight } from "lucide-react";
  * - The conversion goal is the affiliate-programs cluster; the calculator is the top of that funnel.
  */
 
-const GREEN = "#0a7c42";
+const GREEN = "#007a95";
 
 const AUDIENCES = [
   { key: "tiny", label: "Under 1,000", mid: 600 },
@@ -62,44 +62,44 @@ export default function EarningsCalc() {
   }, [aud, ch, niche]);
 
   const selBtn = (active: boolean) =>
-    `rounded-xl border px-4 py-3 text-left transition-all hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0a7c42] ${
-      active ? "border-[#0a7c42] bg-white shadow-sm" : "border-[#e5e9e7] bg-white/60"
+    `rounded-xl border px-4 py-3 text-left transition-all hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#007a95] ${
+      active ? "border-[#007a95] bg-white shadow-sm" : "border-[#ded8cd] bg-white/60"
     }`;
 
   return (
-    <div className="rounded-2xl border border-[#e5e9e7] bg-[#f5f8f6] p-6 sm:p-8">
+    <div className="rounded-2xl border border-[#ded8cd] bg-[#f7f4ee] p-6 sm:p-8">
       <div className="grid gap-6 lg:grid-cols-2">
         <div className="space-y-6">
           <fieldset>
-            <legend className="text-sm font-bold text-[#10251b] mb-3">Monthly audience (visitors, subscribers or engaged followers)</legend>
+            <legend className="text-sm font-bold text-[#14120f] mb-3">Monthly audience (visitors, subscribers or engaged followers)</legend>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
               {AUDIENCES.map((a) => (
                 <button key={a.key} type="button" className={selBtn(aud.key === a.key)} onClick={() => setAud(a)}>
-                  <span className="text-xs font-semibold text-[#10251b]">{a.label}</span>
+                  <span className="text-xs font-semibold text-[#14120f]">{a.label}</span>
                 </button>
               ))}
             </div>
           </fieldset>
 
           <fieldset>
-            <legend className="text-sm font-bold text-[#10251b] mb-3">Main channel</legend>
+            <legend className="text-sm font-bold text-[#14120f] mb-3">Main channel</legend>
             <div className="grid gap-2">
               {CHANNELS.map((c) => (
                 <button key={c.key} type="button" className={selBtn(ch.key === c.key)} onClick={() => setCh(c)}>
-                  <span className="text-xs font-semibold text-[#10251b] block">{c.label}</span>
-                  <span className="text-[11px] text-[#5a665f]">{c.note}</span>
+                  <span className="text-xs font-semibold text-[#14120f] block">{c.label}</span>
+                  <span className="text-[11px] text-[#56504a]">{c.note}</span>
                 </button>
               ))}
             </div>
           </fieldset>
 
           <fieldset>
-            <legend className="text-sm font-bold text-[#10251b] mb-3">Niche</legend>
+            <legend className="text-sm font-bold text-[#14120f] mb-3">Niche</legend>
             <div className="grid gap-2">
               {NICHES.map((n) => (
                 <button key={n.key} type="button" className={selBtn(niche.key === n.key)} onClick={() => setNiche(n)}>
-                  <span className="text-xs font-semibold text-[#10251b] block">{n.label}</span>
-                  <span className="text-[11px] text-[#5a665f]">{n.note}</span>
+                  <span className="text-xs font-semibold text-[#14120f] block">{n.label}</span>
+                  <span className="text-[11px] text-[#56504a]">{n.note}</span>
                 </button>
               ))}
             </div>
@@ -108,21 +108,21 @@ export default function EarningsCalc() {
 
         <div className="flex flex-col">
           <div className="rounded-2xl border bg-white p-6 sm:p-7" style={{ borderColor: `${GREEN}30` }}>
-            <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#627068] mb-2">
+            <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#56504a] mb-2">
               Illustrative monthly range
             </p>
-            <p className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#10251b] tabular-nums">
-              {fmt(lo)} <span className="text-[#627068] font-semibold text-xl">to</span> {fmt(hi)}
+            <p className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#14120f] tabular-nums">
+              {fmt(lo)} <span className="text-[#56504a] font-semibold text-xl">to</span> {fmt(hi)}
             </p>
-            <p className="mt-1 text-xs text-[#5a665f] tabular-nums">
+            <p className="mt-1 text-xs text-[#56504a] tabular-nums">
               Roughly {fmt(lo * 12)} to {fmt(hi * 12)} a year, if performance held.
             </p>
 
-            <details className="mt-5 rounded-lg border border-[#e5e9e7] bg-[#f5f8f6] px-4 py-3">
-              <summary className="cursor-pointer list-none text-xs font-bold text-[#10251b]">
+            <details className="mt-5 rounded-lg border border-[#ded8cd] bg-[#f7f4ee] px-4 py-3">
+              <summary className="cursor-pointer list-none text-xs font-bold text-[#14120f]">
                 The assumptions behind this number +
               </summary>
-              <ul className="list-disc pl-4 mt-2 space-y-1 text-[11px] leading-relaxed text-[#3d4b44]">
+              <ul className="list-disc pl-4 mt-2 space-y-1 text-[11px] leading-relaxed text-[#56504a]">
                 <li>Audience midpoint: {aud.mid.toLocaleString("en-AU")} per month</li>
                 <li>Click-through to offers ({ch.label.toLowerCase()}): {(ch.ctr * 100).toFixed(1)}%</li>
                 <li>Conversion on the partner site: {CONV_LO * 100}% to {CONV_HI * 100}%</li>
@@ -130,14 +130,14 @@ export default function EarningsCalc() {
               </ul>
             </details>
 
-            <p className="mt-4 text-[11px] leading-relaxed text-[#627068]">
+            <p className="mt-4 text-[11px] leading-relaxed text-[#56504a]">
               An illustrative estimate from the assumptions above, not a prediction or promise of income.
               Real results vary widely and can be zero. Not financial advice.
             </p>
           </div>
 
           <div className="mt-4 rounded-2xl border px-5 py-5" style={{ borderColor: `${GREEN}25`, background: `${GREEN}0A` }}>
-            <p className="text-sm leading-relaxed text-[#10251b] mb-3">
+            <p className="text-sm leading-relaxed text-[#14120f] mb-3">
               The maths only works with programs that fit your audience. Start from the ones worth
               your time.
             </p>
@@ -145,7 +145,7 @@ export default function EarningsCalc() {
               <Link
                 href="/affiliate-programs-australia"
                 data-cta="earnings-calc-programs"
-                className="inline-flex items-center gap-2 rounded-xl px-5 py-3 text-sm font-bold text-white transition-all hover:-translate-y-0.5 shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0a7c42]"
+                className="inline-flex items-center gap-2 rounded-xl px-5 py-3 text-sm font-bold text-white transition-all hover:-translate-y-0.5 shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#007a95]"
                 style={{ background: GREEN, boxShadow: `0 8px 24px ${GREEN}25` }}
               >
                 Browse affiliate programs

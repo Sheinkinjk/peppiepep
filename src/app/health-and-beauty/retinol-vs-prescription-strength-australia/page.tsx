@@ -43,7 +43,7 @@ export default function Page() {
       sectionHref="/health-and-beauty"
       slug="/health-and-beauty/retinol-vs-prescription-strength-australia"
       crumb="Retinol vs prescription-strength"
-      h1={<>Retinol vs prescription-strength: <span className="italic text-[#0a7c42]">what separates them</span></>}
+      h1={<>Retinol vs prescription-strength: <span className="italic text-[#007a95]">what separates them</span></>}
       intro="You can buy one off a shelf today and the other only after a practitioner assesses you. Both are vitamin A derivatives, but in Australia the stronger topicals are prescription-only, and that regulatory line, not the chemistry, is what decides which route is open to you and how carefully the product needs to be used."
       headline="Retinol vs prescription-strength: the Australian guide"
       description={seoConfig.retinolVsPrescription.description}
@@ -55,7 +55,7 @@ export default function Page() {
       ]}
     >
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">The distinction is regulatory, not marketing</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">The distinction is regulatory, not marketing</h2>
         <p className="mt-3">
           Products in this family sit on either side of a line drawn by the Poisons Standard. On one side are cosmetic
           strengths you can put in a basket at a pharmacy or order online. On the other are concentrations classified as
@@ -70,17 +70,17 @@ export default function Page() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">What each route asks of you</h2>
-        <div className="mt-4 overflow-x-auto rounded-2xl border border-[#e5e9e7]">
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">What each route asks of you</h2>
+        <div className="mt-4 overflow-x-auto rounded-2xl border border-[#ded8cd]">
           <table className="w-full min-w-[520px] border-collapse text-left text-sm">
-            <thead className="bg-[#f8faf9] text-[11px] uppercase tracking-[0.1em] text-[#627068]">
+            <thead className="bg-[#f7f4ee] text-[11px] uppercase tracking-[0.1em] text-[#56504a]">
               <tr>
                 <th className="px-4 py-3 font-semibold">&nbsp;</th>
                 <th className="px-4 py-3 font-semibold">Over the counter</th>
                 <th className="px-4 py-3 font-semibold">Prescription-strength</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-[#eef1ef]">
+            <tbody className="divide-y divide-[#f1ede4]">
               {[
                 ["How you get it", "Buy it yourself, no assessment", "Practitioner assessment first"],
                 ["Who decides suitability", "You do", "A registered practitioner"],
@@ -90,7 +90,7 @@ export default function Page() {
                 ["Adjusting if it irritates", "Trial and error, on your own", "Reviewed and changed by the practitioner"],
               ].map(([k, a, b]) => (
                 <tr key={k}>
-                  <td className="px-4 py-3 font-semibold text-[#10251b]">{k}</td>
+                  <td className="px-4 py-3 font-semibold text-[#14120f]">{k}</td>
                   <td className="px-4 py-3">{a}</td>
                   <td className="px-4 py-3">{b}</td>
                 </tr>
@@ -101,7 +101,7 @@ export default function Page() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Where people waste money</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Where people waste money</h2>
         <p className="mt-3">
           The common pattern is buying progressively stronger over-the-counter products hoping to close the gap to
           prescription strength. It rarely works, because the gap is a regulatory threshold rather than a shelf you can
@@ -115,7 +115,7 @@ export default function Page() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">What to check before you buy anything</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">What to check before you buy anything</h2>
         <ul className="mt-3 list-disc space-y-2 pl-5">
           <li>The active and its concentration, which should be stated on the packaging or the product page.</li>
           <li>Bottle size against how much you use, since that determines what it costs you per application.</li>

@@ -78,12 +78,12 @@ export default function ComingSoonNote({
     );
 
   return (
-    <div className="flex items-start gap-3 rounded-2xl border border-[#e5e9e7] bg-[#f8faf9] px-5 py-4">
-      <Clock className="mt-0.5 h-4 w-4 shrink-0 text-[#5a665f]" aria-hidden="true" />
-      <p className="text-[13px] leading-relaxed text-[#3d4b44]">
-        <strong className="font-semibold text-[#10251b]">{category} is still being built.</strong>{" "}
+    <div className="flex items-start gap-3 rounded-2xl border border-[#ded8cd] bg-[#f7f4ee] px-5 py-4">
+      <Clock className="mt-0.5 h-4 w-4 shrink-0 text-[#56504a]" aria-hidden="true" />
+      <p className="text-[13px] leading-relaxed text-[#56504a]">
+        <strong className="font-semibold text-[#14120f]">{category} is still being built.</strong>{" "}
         {body}{" "}
-        <Link href="/how-we-make-money" className="underline hover:text-[#10251b]">
+        <Link href="/how-we-make-money" className="underline hover:text-[#14120f]">
           How we make money
         </Link>
         .

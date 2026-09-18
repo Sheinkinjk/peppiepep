@@ -61,21 +61,21 @@ export default function WebsiteBuilderQuizPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <main className="text-[#10251b]">
+      <main className="text-[#14120f]">
         <div className="mx-auto max-w-3xl px-6 sm:px-8 lg:px-12">
-          <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2 pt-8 text-sm text-[#3d4b44]">
-            <Link href="/" className="hover:text-[#0a7c42] transition-colors">Refer Labs</Link>
+          <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2 pt-8 text-sm text-[#56504a]">
+            <Link href="/" className="hover:text-[#007a95] transition-colors">Refer Labs</Link>
             <span aria-hidden="true">/</span>
-            <Link href="/best-website-builder" className="hover:text-[#0a7c42] transition-colors">Website builders</Link>
+            <Link href="/best-website-builder" className="hover:text-[#007a95] transition-colors">Website builders</Link>
             <span aria-hidden="true">/</span>
-            <span className="text-[#2b362f]">Which builder quiz</span>
+            <span className="text-[#14120f]">Which builder quiz</span>
           </nav>
 
           <section className="pt-9 pb-7 sm:pt-11">
-            <h1 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-extrabold leading-[1.08] tracking-tight text-[#10251b] mb-4 max-w-3xl">
+            <h1 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-extrabold leading-[1.08] tracking-tight text-[#14120f] mb-4 max-w-3xl">
               Which website builder is right for you?
             </h1>
-            <div className="text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl mb-6 space-y-3">
+            <div className="text-[#56504a] text-sm sm:text-base leading-relaxed max-w-2xl mb-6 space-y-3">
               <p>
                 Four good builders, four different jobs. Answer two or three quick questions and get the one that fits
                 what you&apos;re making, and why. About 30 seconds.
@@ -87,31 +87,31 @@ export default function WebsiteBuilderQuizPage() {
             <BuilderQuiz />
           </section>
 
-          <section className="border-t border-[#e5e9e7] mt-8 py-9">
-            <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-[#10251b] mb-4">
+          <section className="border-t border-[#ded8cd] mt-8 py-9">
+            <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-[#14120f] mb-4">
               Prefer the full picture?
             </h2>
-            <div className="space-y-4 text-[15px] leading-relaxed text-[#3d4b44] max-w-2xl">
+            <div className="space-y-4 text-[15px] leading-relaxed text-[#56504a] max-w-2xl">
               <p>
                 The quiz points you to the best fit, but if you want to see the trade-offs yourself, the{" "}
-                <Link href="/best-website-builder" className="text-[#0a7c42] underline underline-offset-2">full website-builder comparison</Link>{" "}
+                <Link href="/best-website-builder" className="text-[#007a95] underline underline-offset-2">full website-builder comparison</Link>{" "}
                 lays out all four side by side, and the{" "}
-                <Link href="/compare/website-builders" className="text-[#0a7c42] underline underline-offset-2">category hub</Link>{" "}
+                <Link href="/compare/website-builders" className="text-[#007a95] underline underline-offset-2">category hub</Link>{" "}
                 sorts them by use-case.
               </p>
             </div>
           </section>
 
-          <section className="border-t border-[#e5e9e7] py-9">
-            <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-[#10251b] mb-6">Frequently asked questions</h2>
+          <section className="border-t border-[#ded8cd] py-9">
+            <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-[#14120f] mb-6">Frequently asked questions</h2>
             <div className="space-y-3">
               {faqs.map((f) => (
-                <details key={f.q} className="group rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] px-5 py-4">
-                  <summary className="cursor-pointer list-none font-semibold text-[#10251b] text-sm sm:text-base flex items-center justify-between gap-4">
+                <details key={f.q} className="group rounded-xl border border-[#ded8cd] bg-[#f7f4ee] px-5 py-4">
+                  <summary className="cursor-pointer list-none font-semibold text-[#14120f] text-sm sm:text-base flex items-center justify-between gap-4">
                     {f.q}
-                    <span aria-hidden="true" className="text-[#627068] group-open:rotate-45 transition-transform text-lg leading-none">+</span>
+                    <span aria-hidden="true" className="text-[#56504a] group-open:rotate-45 transition-transform text-lg leading-none">+</span>
                   </summary>
-                  <p className="text-[#3d4b44] text-sm leading-relaxed mt-3">{f.a}</p>
+                  <p className="text-[#56504a] text-sm leading-relaxed mt-3">{f.a}</p>
                 </details>
               ))}
             </div>
@@ -119,8 +119,8 @@ export default function WebsiteBuilderQuizPage() {
 
           <RelatedGuides category="Software" currentHref="/website-builder-quiz" limit={6} />
 
-          <section className="border-t border-[#e5e9e7] py-8 pb-16">
-            <p className="text-[#627068] text-xs leading-relaxed max-w-2xl">
+          <section className="border-t border-[#ded8cd] py-8 pb-16">
+            <p className="text-[#56504a] text-xs leading-relaxed max-w-2xl">
               This page recommends a builder based on your answers and contains disclosed affiliate links. We may earn
               a commission if you sign up through them, at no extra cost to you, and it never changes a conclusion. We
               never sell rankings.

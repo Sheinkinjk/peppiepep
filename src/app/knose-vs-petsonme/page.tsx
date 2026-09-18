@@ -108,24 +108,24 @@ export default function KnoseVsPetsOnMePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
 
       <main id="main-content" className="mx-auto max-w-3xl px-5 pb-24 pt-10 sm:px-8 sm:pt-14">
-        <nav className="mb-7 flex flex-wrap items-center gap-2 text-sm text-[#5a665f]">
-          <Link href="/" className="transition-colors hover:text-[#10251b]">Refer Labs</Link>
+        <nav className="mb-7 flex flex-wrap items-center gap-2 text-sm text-[#56504a]">
+          <Link href="/" className="transition-colors hover:text-[#14120f]">Refer Labs</Link>
           <span>/</span>
-          <Link href="/pet-insurance" className="transition-colors hover:text-[#10251b]">Pet insurance</Link>
+          <Link href="/pet-insurance" className="transition-colors hover:text-[#14120f]">Pet insurance</Link>
           <span>/</span>
-          <span className="text-[#10251b]">Knose vs PetsOnMe</span>
+          <span className="text-[#14120f]">Knose vs PetsOnMe</span>
         </nav>
 
-        <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#0a7c42]">Pet insurance · Australia</p>
-        <h1 className="mt-4 text-3xl font-extrabold leading-[1.08] tracking-tight text-[#10251b] sm:text-4xl">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#007a95]">Pet insurance · Australia</p>
+        <h1 className="mt-4 text-3xl font-extrabold leading-[1.08] tracking-tight text-[#14120f] sm:text-4xl">
           Knose vs PetsOnMe: the two compared on published cover
         </h1>
 
         {/* Answer-first */}
         <section className="mt-6">
-          <h2 className="text-xl font-bold text-[#10251b] sm:text-2xl">Is Knose or PetsOnMe better?</h2>
-          <div className="mt-4 rounded-xl border border-[#cfe6da] bg-[#e8f5ee] px-6 py-5">
-            <p className="text-[15px] leading-relaxed text-[#2b362f]">
+          <h2 className="text-xl font-bold text-[#14120f] sm:text-2xl">Is Knose or PetsOnMe better?</h2>
+          <div className="mt-4 rounded-xl border border-[#b9e3eb] bg-[#e4f2f5] px-6 py-5">
+            <p className="text-[15px] leading-relaxed text-[#14120f]">
               On the published numbers Knose is the stronger headline product: up to 90% of the bill against
               PetsOnMe&apos;s 80%, an annual limit up to $25,000, a $0 excess option, and no sub-limits, so the full
               limit is available for any covered condition. PetsOnMe&apos;s strength is clarity: three plainly tiered
@@ -141,36 +141,36 @@ export default function KnoseVsPetsOnMePage() {
           </div>
         </section>
 
-        <p className="mt-6 rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] px-5 py-4 text-xs leading-relaxed text-[#3d4b44]">
-          <span className="font-semibold text-[#2b362f]">General information only.</span> Refer Labs is not an insurer,
+        <p className="mt-6 rounded-xl border border-[#ded8cd] bg-[#f7f4ee] px-5 py-4 text-xs leading-relaxed text-[#56504a]">
+          <span className="font-semibold text-[#14120f]">General information only.</span> Refer Labs is not an insurer,
           broker or financial adviser, and this is not a recommendation or personal financial advice. Read each Product Disclosure Statement and
           Target Market Determination before deciding.
         </p>
 
         {/* Table */}
         <section className="mt-12">
-          <h2 className="text-xl font-bold text-[#10251b] sm:text-2xl">Side by side</h2>
-          <div className="mt-5 overflow-x-auto rounded-xl border border-[#e5e9e7]">
+          <h2 className="text-xl font-bold text-[#14120f] sm:text-2xl">Side by side</h2>
+          <div className="mt-5 overflow-x-auto rounded-xl border border-[#ded8cd]">
             <table className="w-full min-w-[640px] text-sm">
               <thead>
-                <tr className="bg-[#f5f8f6]">
-                  <th className="w-40 px-4 py-3 text-left font-semibold text-[#3d4b44]"></th>
-                  <th className="px-4 py-3 text-left font-black text-[#10251b]">Knose</th>
-                  <th className="px-4 py-3 text-left font-black text-[#10251b]">PetsOnMe</th>
+                <tr className="bg-[#f7f4ee]">
+                  <th className="w-40 px-4 py-3 text-left font-semibold text-[#56504a]"></th>
+                  <th className="px-4 py-3 text-left font-black text-[#14120f]">Knose</th>
+                  <th className="px-4 py-3 text-left font-black text-[#14120f]">PetsOnMe</th>
                 </tr>
               </thead>
               <tbody>
                 {rows.map((r) => (
-                  <tr key={r.label} className="border-t border-[#e5e9e7] align-top">
-                    <td className="px-4 py-3 font-medium text-[#3d4b44]">{r.label}</td>
-                    <td className="px-4 py-3 text-[#2b362f]">{r.knose}</td>
-                    <td className="px-4 py-3 text-[#2b362f]">{r.pom}</td>
+                  <tr key={r.label} className="border-t border-[#ded8cd] align-top">
+                    <td className="px-4 py-3 font-medium text-[#56504a]">{r.label}</td>
+                    <td className="px-4 py-3 text-[#14120f]">{r.knose}</td>
+                    <td className="px-4 py-3 text-[#14120f]">{r.pom}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
-          <p className="mt-3 text-xs leading-relaxed text-[#627068]">
+          <p className="mt-3 text-xs leading-relaxed text-[#56504a]">
             Every figure is taken from each provider&apos;s own published pages and was checked on 17 August 2026.
             Neither publishes premiums, because pricing depends on your pet&apos;s species, breed and age, your postcode
             and the excess you choose. Terms change: confirm current cover in each Product Disclosure Statement.
@@ -179,9 +179,9 @@ export default function KnoseVsPetsOnMePage() {
 
         {/* Who each suits */}
         <section className="mt-12 grid gap-5 sm:grid-cols-2">
-          <div className="rounded-2xl border border-[#e5e9e7] bg-[#f5f8f6] p-6">
-            <h3 className="text-lg font-extrabold text-[#10251b]">Knose suits you if</h3>
-            <p className="mt-2 text-[15px] leading-relaxed text-[#3d4b44]">
+          <div className="rounded-2xl border border-[#ded8cd] bg-[#f7f4ee] p-6">
+            <h3 className="text-lg font-extrabold text-[#14120f]">Knose suits you if</h3>
+            <p className="mt-2 text-[15px] leading-relaxed text-[#56504a]">
               You want the highest share of the bill covered, you would rather not meet a sub-limit at claim time, or a
               $0 excess appeals. It is also the one to look at if your breed carries hereditary risk, since the full
               annual limit stays available for those conditions.
@@ -190,9 +190,9 @@ export default function KnoseVsPetsOnMePage() {
               Get a Knose quote (2 months free) <ArrowRight className="h-4 w-4" />
             </a>
           </div>
-          <div className="rounded-2xl border border-[#e5e9e7] bg-[#f5f8f6] p-6">
-            <h3 className="text-lg font-extrabold text-[#10251b]">PetsOnMe suits you if</h3>
-            <p className="mt-2 text-[15px] leading-relaxed text-[#3d4b44]">
+          <div className="rounded-2xl border border-[#ded8cd] bg-[#f7f4ee] p-6">
+            <h3 className="text-lg font-extrabold text-[#14120f]">PetsOnMe suits you if</h3>
+            <p className="mt-2 text-[15px] leading-relaxed text-[#56504a]">
               You want clearly separated tiers, or you are starting with accident-only cover and want a defined entry
               point. The pet care services discount is worth something on top if you regularly
               use walking, minding or grooming.
@@ -200,27 +200,27 @@ export default function KnoseVsPetsOnMePage() {
             <a href={PETSONME_URL} target="_blank" rel="nofollow sponsored" data-cta="kvp-petsonme" className="nw-btn mt-5 justify-center">
               Compare PetsOnMe cover <ArrowRight className="h-4 w-4" />
             </a>
-            <p className="mt-3 text-center text-xs font-semibold text-[#0a7c42]">Use code {PETSONME_CODE} at quote</p>
+            <p className="mt-3 text-center text-xs font-semibold text-[#007a95]">Use code {PETSONME_CODE} at quote</p>
           </div>
         </section>
 
         {/* FAQ */}
         <section className="mt-14">
-          <h2 className="text-xl font-bold text-[#10251b] sm:text-2xl">Common questions</h2>
-          <div className="mt-5 divide-y divide-[#e5e9e7] border-y border-[#e5e9e7]">
+          <h2 className="text-xl font-bold text-[#14120f] sm:text-2xl">Common questions</h2>
+          <div className="mt-5 divide-y divide-[#ded8cd] border-y border-[#ded8cd]">
             {faqs.map((f) => (
               <details key={f.q} className="group py-4">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-[#10251b]">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-[#14120f]">
                   {f.q}
-                  <span className="text-xl leading-none text-[#0a7c42] transition-transform group-open:rotate-45">+</span>
+                  <span className="text-xl leading-none text-[#007a95] transition-transform group-open:rotate-45">+</span>
                 </summary>
-                <p className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">{f.a}</p>
+                <p className="mt-3 text-[15px] leading-relaxed text-[#56504a]">{f.a}</p>
               </details>
             ))}
           </div>
         </section>
 
-        <div className="mt-10 flex flex-wrap gap-x-6 gap-y-2 border-t border-[#e5e9e7] pt-8 text-sm">
+        <div className="mt-10 flex flex-wrap gap-x-6 gap-y-2 border-t border-[#ded8cd] pt-8 text-sm">
           <Link href="/best-pet-insurance-australia" className="nw-link">How to choose pet insurance</Link>
           <Link href="/petsonme" className="nw-link">PetsOnMe: cover &amp; code</Link>
           <Link href="/knose" className="nw-link">Knose: 2 months free</Link>
@@ -229,7 +229,7 @@ export default function KnoseVsPetsOnMePage() {
         </div>
 
         <AffiliateDisclosure partners={["Knose", "PetsOnMe"]} earnsFromAll noStarRatings className="mt-8" />
-        <p className="mt-3 text-xs leading-relaxed text-[#627068]">
+        <p className="mt-3 text-xs leading-relaxed text-[#56504a]">
           A provider cannot pay to be described more
           favourably than the facts support. Cover details are from each provider&apos;s own pages, checked 17 August
           2026, and can change: confirm current cover, limits, exclusions and waiting periods in the Product Disclosure

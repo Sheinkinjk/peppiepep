@@ -41,21 +41,21 @@ export default function PartnerRoute({
   className?: string;
 }) {
   return (
-    <section className={`rounded-2xl border border-[#e5e9e7] bg-[#f8faf9] p-6 ${className}`}>
-      <h2 className="text-xl font-bold tracking-[-0.01em] text-[#10251b]">{heading}</h2>
-      <p className="mt-2 text-[15px] leading-relaxed text-[#3d4b44]">{intro}</p>
+    <section className={`rounded-2xl border border-[#ded8cd] bg-[#f7f4ee] p-6 ${className}`}>
+      <h2 className="text-xl font-bold tracking-[-0.01em] text-[#14120f]">{heading}</h2>
+      <p className="mt-2 text-[15px] leading-relaxed text-[#56504a]">{intro}</p>
 
       {providers.length === 0 ? (
-        <p className="mt-4 text-sm leading-relaxed text-[#5a665f]">{reservedNote}</p>
+        <p className="mt-4 text-sm leading-relaxed text-[#56504a]">{reservedNote}</p>
       ) : (
         <>
           <ul className="mt-5 space-y-4">
             {providers.map((p) => (
-              <li key={p.name} className="rounded-xl border border-[#e5e9e7] bg-white p-5">
-                <p className="text-[15px] font-bold text-[#10251b]">{p.name}</p>
-                <p className="mt-1 text-sm leading-relaxed text-[#3d4b44]">{p.what}</p>
+              <li key={p.name} className="rounded-xl border border-[#ded8cd] bg-white p-5">
+                <p className="text-[15px] font-bold text-[#14120f]">{p.name}</p>
+                <p className="mt-1 text-sm leading-relaxed text-[#56504a]">{p.what}</p>
                 {p.checked && (
-                  <p className="mt-2 text-[12px] font-medium text-[#5a665f]">
+                  <p className="mt-2 text-[12px] font-medium text-[#56504a]">
                     Read off {p.name}
                     {p.name.endsWith("s") ? <>&apos;</> : <>&apos;s</>} own site on {p.checked}.
                   </p>
@@ -65,18 +65,18 @@ export default function PartnerRoute({
                   target="_blank"
                   rel="nofollow sponsored"
                   data-cta={`partner-route-${p.name.toLowerCase().replace(/\s+/g, "-")}`}
-                  className="mt-4 inline-flex items-center gap-2 rounded-xl bg-[#0a7c42] px-5 py-2.5 text-sm font-bold text-white transition-all hover:-translate-y-0.5"
+                  className="mt-4 inline-flex items-center gap-2 rounded-xl bg-[#007a95] px-5 py-2.5 text-sm font-bold text-white transition-all hover:-translate-y-0.5"
                 >
                   Visit {p.name}
                 </a>
               </li>
             ))}
           </ul>
-          <p className="mt-4 text-xs leading-relaxed text-[#5a665f]">
+          <p className="mt-4 text-xs leading-relaxed text-[#56504a]">
             Refer Labs is an independent Australian comparison publisher. The links above are
             affiliate links: if you sign up through one we may earn a commission at no extra cost to
             you, and it never changes what we publish.{" "}
-            <Link href="/how-we-make-money" className="underline hover:text-[#3d4b44]">
+            <Link href="/how-we-make-money" className="underline hover:text-[#56504a]">
               How we make money
             </Link>
             .

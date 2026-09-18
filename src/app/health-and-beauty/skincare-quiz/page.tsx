@@ -62,18 +62,18 @@ export default function SkincareQuizPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
 
       <main id="main-content" className="mx-auto max-w-3xl px-5 pb-20 pt-10 sm:px-8">
-        <nav className="flex flex-wrap items-center gap-2 text-sm text-[#627068]">
-          <Link href="/" className="hover:text-[#0a7c42]">Refer Labs</Link>
+        <nav className="flex flex-wrap items-center gap-2 text-sm text-[#56504a]">
+          <Link href="/" className="hover:text-[#007a95]">Refer Labs</Link>
           <span>/</span>
-          <Link href="/health-and-beauty" className="hover:text-[#0a7c42]">Skin &amp; beauty</Link>
+          <Link href="/health-and-beauty" className="hover:text-[#007a95]">Skin &amp; beauty</Link>
           <span>/</span>
-          <span className="text-[#2b362f]">Skincare quiz</span>
+          <span className="text-[#14120f]">Skincare quiz</span>
         </nav>
 
-        <h1 className="mt-5 text-3xl font-bold leading-[1.1] tracking-[-0.01em] text-[#10251b] sm:text-4xl">
-          Which skincare approach <span className="italic text-[#0a7c42]">fits you?</span>
+        <h1 className="mt-5 text-3xl font-bold leading-[1.1] tracking-[-0.01em] text-[#14120f] sm:text-4xl">
+          Which skincare approach <span className="italic text-[#007a95]">fits you?</span>
         </h1>
-        <p className="mt-5 text-lg leading-relaxed text-[#2b362f]">
+        <p className="mt-5 text-lg leading-relaxed text-[#14120f]">
           Four questions about what you want and what you will realistically keep up. No health questions, no email
           wall, and the result points at guidance rather than a product.
         </p>
@@ -87,12 +87,12 @@ export default function SkincareQuizPage() {
         </div>
 
         <section className="mt-12">
-          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">About this quiz</h2>
-          <dl className="mt-5 divide-y divide-[#eef1ef] rounded-2xl border border-[#e5e9e7] bg-white">
+          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">About this quiz</h2>
+          <dl className="mt-5 divide-y divide-[#f1ede4] rounded-2xl border border-[#ded8cd] bg-white">
             {faqs.map((f) => (
               <div key={f.q} className="px-5 py-5">
-                <dt className="text-[15px] font-bold text-[#10251b]">{f.q}</dt>
-                <dd className="mt-2 text-sm leading-relaxed text-[#3d4b44]">{f.a}</dd>
+                <dt className="text-[15px] font-bold text-[#14120f]">{f.q}</dt>
+                <dd className="mt-2 text-sm leading-relaxed text-[#56504a]">{f.a}</dd>
               </div>
             ))}
           </dl>

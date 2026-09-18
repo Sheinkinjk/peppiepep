@@ -72,14 +72,14 @@ export default async function AuthorPage({ params }: { params: Promise<{ id: str
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
       />
       <main id="main-content" className="mx-auto max-w-3xl px-5 pb-20 pt-10 sm:px-8">
-        <h1 className="text-3xl font-bold leading-[1.1] tracking-[-0.01em] text-[#10251b] sm:text-4xl">
+        <h1 className="text-3xl font-bold leading-[1.1] tracking-[-0.01em] text-[#14120f] sm:text-4xl">
           {author.name}
         </h1>
-        <p className="mt-2 text-[15px] text-[#5a665f]">{author.role}, Refer Labs</p>
+        <p className="mt-2 text-[15px] text-[#56504a]">{author.role}, Refer Labs</p>
 
-        <p className="mt-5 text-[15px] leading-relaxed text-[#3d4b44]">
+        <p className="mt-5 text-[15px] leading-relaxed text-[#56504a]">
           Observations recorded by {author.name} are listed in the{' '}
-          <a href="/data" className="font-semibold text-[#0a7c42] hover:underline">
+          <a href="/data" className="font-semibold text-[#007a95] hover:underline">
             observation log
           </a>
           , each with the date it was made and the method used.

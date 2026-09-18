@@ -26,7 +26,7 @@ export default function HeaderNav() {
   }, []);
 
   return (
-    <nav ref={ref} className="hidden items-center gap-1 text-[14px] font-medium text-[#3d4b44] lg:flex">
+    <nav ref={ref} className="hidden items-center gap-1 text-[14px] font-medium text-[#56504a] lg:flex">
       {GROUPS.map((g) => {
         const isOpen = open === g.label;
         return (
@@ -34,7 +34,7 @@ export default function HeaderNav() {
             <button
               onClick={() => setOpen(isOpen ? null : g.label)}
               aria-expanded={isOpen}
-              className={`flex items-center gap-1 rounded-lg px-3 py-2 transition-colors hover:text-[#0a7c42] ${isOpen ? "text-[#0a7c42]" : ""}`}
+              className={`flex items-center gap-1 rounded-lg px-3 py-2 transition-colors hover:text-[#007a95] ${isOpen ? "text-[#007a95]" : ""}`}
             >
               {g.label}
               <ChevronDown className={`h-3.5 w-3.5 transition-transform ${isOpen ? "rotate-180" : ""}`} />
@@ -48,17 +48,17 @@ export default function HeaderNav() {
                 isOpen ? "visible opacity-100" : "invisible opacity-0 pointer-events-none"
               }`}
             >
-              <div className="overflow-hidden rounded-2xl border border-[#e5e9e7] bg-white p-1.5 shadow-[0_20px_50px_-20px_rgba(16,37,27,0.35)]">
+              <div className="overflow-hidden rounded-2xl border border-[#ded8cd] bg-white p-1.5 shadow-[0_20px_50px_-20px_rgba(20,18,15,0.35)]">
                 {g.items.map((it) => (
                   <Link
                     key={it.href}
                     href={it.href}
                     tabIndex={isOpen ? 0 : -1}
                     onClick={() => setOpen(null)}
-                    className="block rounded-xl px-3 py-2.5 transition-colors hover:bg-[#f2f4ee]"
+                    className="block rounded-xl px-3 py-2.5 transition-colors hover:bg-[#f7f4ee]"
                   >
-                    <span className="block text-[14px] font-semibold text-[#10251b]">{it.label}</span>
-                    {it.note && <span className="mt-0.5 block text-[12.5px] text-[#5a665f]">{it.note}</span>}
+                    <span className="block text-[14px] font-semibold text-[#14120f]">{it.label}</span>
+                    {it.note && <span className="mt-0.5 block text-[12.5px] text-[#56504a]">{it.note}</span>}
                   </Link>
                 ))}
               </div>
@@ -67,7 +67,7 @@ export default function HeaderNav() {
         );
       })}
       {DIRECT.map((it) => (
-        <Link key={it.href} href={it.href} className="rounded-lg px-3 py-2 transition-colors hover:text-[#0a7c42]">
+        <Link key={it.href} href={it.href} className="rounded-lg px-3 py-2 transition-colors hover:text-[#007a95]">
           {it.label}
         </Link>
       ))}

@@ -109,20 +109,20 @@ export default function Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
 
       <main id="main-content" className="mx-auto max-w-3xl px-5 pb-20 pt-10 sm:px-8">
-        <nav className="flex flex-wrap items-center gap-2 text-sm text-[#627068]">
-          <Link href="/" className="hover:text-[#0a7c42]">Refer Labs</Link>
+        <nav className="flex flex-wrap items-center gap-2 text-sm text-[#56504a]">
+          <Link href="/" className="hover:text-[#007a95]">Refer Labs</Link>
           <span>/</span>
-          <Link href="/portable-power-station-australia" className="hover:text-[#0a7c42]">Portable power</Link>
+          <Link href="/portable-power-station-australia" className="hover:text-[#007a95]">Portable power</Link>
           <span>/</span>
-          <span className="text-[#2b362f]">EcoFlow vs Anker SOLIX</span>
+          <span className="text-[#14120f]">EcoFlow vs Anker SOLIX</span>
         </nav>
 
-        <h1 className="mt-5 text-3xl font-bold leading-[1.1] tracking-[-0.01em] text-[#10251b] sm:text-4xl">
-          EcoFlow vs Anker SOLIX: <span className="text-[#0a7c42]">priced per watt-hour, in AUD</span>
+        <h1 className="mt-5 text-3xl font-bold leading-[1.1] tracking-[-0.01em] text-[#14120f] sm:text-4xl">
+          EcoFlow vs Anker SOLIX: <span className="text-[#007a95]">priced per watt-hour, in AUD</span>
         </h1>
 
         {/* The answer, first. Nothing above it. */}
-        <p className="mt-5 text-lg leading-relaxed text-[#2b362f]">
+        <p className="mt-5 text-lg leading-relaxed text-[#14120f]">
           <strong>EcoFlow is cheaper per watt-hour at the 1,000Wh and 2,000Wh tiers, where most buyers land.</strong> At about
           1,000Wh that is {fmtPerWh(P1K.eco)} against {fmtPerWh(P1K.ank)}; at about 2,000Wh, {fmtPerWh(P2K.eco)} against{" "}
           {fmtPerWh(P2K.ank)}. Anker answers with output rather than price: its C1000 Gen 2 delivers 2,000W where
@@ -137,17 +137,17 @@ export default function Page() {
 
         <EditorialMeta lastUpdated={UPDATED} className="mt-5" />
 
-        <div className="mt-6 rounded-xl border border-[#e5e9e7] bg-[#f8faf9] px-5 py-4 text-sm leading-relaxed text-[#3d4b44]">
+        <div className="mt-6 rounded-xl border border-[#ded8cd] bg-[#f7f4ee] px-5 py-4 text-sm leading-relaxed text-[#56504a]">
           Every price below was read off each brand&apos;s own Australian store on {PRICES_READ_ON}, not converted from
           US pricing and not taken from a retailer. Several EcoFlow models were on sale when read, and the regular price
           is shown beside them so a discount is not mistaken for the standing price.
         </div>
 
         <section className="mt-12">
-          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">
+          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">
             Is EcoFlow or Anker SOLIX cheaper in Australia?
           </h2>
-          <p className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">
+          <p className="mt-3 text-[15px] leading-relaxed text-[#56504a]">
             Cost per watt-hour is the only figure that makes different capacities comparable, and it is simple
             arithmetic on a published price. Sorted that way the two ranges interleave, with EcoFlow holding the cheaper slot at 1,000Wh and
             2,000Wh and the pair level at the 290Wh entry tier.
@@ -156,33 +156,33 @@ export default function Page() {
         </section>
 
         <section className="mt-12">
-          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Where each one wins</h2>
+          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Where each one wins</h2>
           <div className="mt-5 grid gap-5 sm:grid-cols-2">
-            <div className="rounded-2xl border border-[#e5e9e7] bg-white p-6">
-              <p className="text-lg font-bold text-[#10251b]">EcoFlow</p>
-              <p className="mt-2 text-sm leading-relaxed text-[#3d4b44]">
+            <div className="rounded-2xl border border-[#ded8cd] bg-white p-6">
+              <p className="text-lg font-bold text-[#14120f]">EcoFlow</p>
+              <p className="mt-2 text-sm leading-relaxed text-[#56504a]">
                 Cheaper for the same capacity at 1,000Wh and 2,000Wh, and the largest single unit of the two.
                 Choose it if you are buying capacity per dollar, or want one unit that can grow.
               </p>
-              <p className="mt-3 text-[13px] text-[#5a665f]">
+              <p className="mt-3 text-[13px] text-[#56504a]">
                 Cheapest 1,000Wh: {P1K.eco.model} at {fmtAud(P1K.eco.aud)}
               </p>
               <a href={ECOFLOW_URL} {...aff} data-cta="vs-ecoflow" className="nw-btn mt-5 justify-center">
                 See EcoFlow prices <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </a>
               <p className="mt-3">
-                <Link href="/ecoflow" className="text-xs text-[#3d4b44] underline underline-offset-2 hover:text-[#10251b]">
+                <Link href="/ecoflow" className="text-xs text-[#56504a] underline underline-offset-2 hover:text-[#14120f]">
                   Read our EcoFlow breakdown
                 </Link>
               </p>
             </div>
-            <div className="rounded-2xl border border-[#e5e9e7] bg-white p-6">
-              <p className="text-lg font-bold text-[#10251b]">Anker SOLIX</p>
-              <p className="mt-2 text-sm leading-relaxed text-[#3d4b44]">
+            <div className="rounded-2xl border border-[#ded8cd] bg-white p-6">
+              <p className="text-lg font-bold text-[#14120f]">Anker SOLIX</p>
+              <p className="mt-2 text-sm leading-relaxed text-[#56504a]">
                 More continuous output at the 1,000Wh tier, 2,000W against 1,800W. Choose it if the point is running
                 high-draw appliances rather than storing the most energy per dollar.
               </p>
-              <p className="mt-3 text-[13px] text-[#5a665f]">
+              <p className="mt-3 text-[13px] text-[#56504a]">
                 Most output under A$2,000: {TOP_OUTPUT_UNDER_2K.model} at{" "}
                 {TOP_OUTPUT_UNDER_2K.watts.toLocaleString("en-AU")}W, {fmtAud(TOP_OUTPUT_UNDER_2K.aud)}
               </p>
@@ -190,7 +190,7 @@ export default function Page() {
                 See Anker SOLIX prices <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </a>
               <p className="mt-3">
-                <Link href="/anker-solix" className="text-xs text-[#3d4b44] underline underline-offset-2 hover:text-[#10251b]">
+                <Link href="/anker-solix" className="text-xs text-[#56504a] underline underline-offset-2 hover:text-[#14120f]">
                   Read our Anker SOLIX breakdown
                 </Link>
               </p>
@@ -199,10 +199,10 @@ export default function Page() {
         </section>
 
         <section className="mt-12">
-          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">
+          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">
             Output, not capacity, is what stops a unit working
           </h2>
-          <p className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">
+          <p className="mt-3 text-[15px] leading-relaxed text-[#56504a]">
             Capacity in watt-hours tells you how long something runs. Output in watts tells you whether it runs at all.
             A 2,000Wh unit rated at 1,800W will refuse a 2,400W appliance no matter how full it is. If your reason for buying is a kettle, a microwave, a power tool or a
             portable air conditioner, read the output column first and the capacity column second.
@@ -210,52 +210,52 @@ export default function Page() {
         </section>
 
         <section className="mt-12">
-          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">What we earn, on both sides</h2>
-          <div className="mt-4 rounded-2xl border border-[#e5e9e7] bg-[#f8faf9] p-6">
-            <p className="text-[15px] leading-relaxed text-[#3d4b44]">
+          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">What we earn, on both sides</h2>
+          <div className="mt-4 rounded-2xl border border-[#ded8cd] bg-[#f7f4ee] p-6">
+            <p className="text-[15px] leading-relaxed text-[#56504a]">
               Links to EcoFlow and to Anker SOLIX are both affiliate links, so we earn either way and have no reason to
               prefer one. That is why this page turns on cost per watt-hour: it is arithmetic on prices published by the
               companies themselves, which you can check in a minute and a commission cannot move. We also earn from{" "}
-              <Link href="/apollo-energy-group" className="font-semibold text-[#0a7c42] hover:underline">Apollo Energy Group</Link>{" "}
+              <Link href="/apollo-energy-group" className="font-semibold text-[#007a95] hover:underline">Apollo Energy Group</Link>{" "}
               on installed home batteries, and both of these brands sell installed systems that compete with Apollo.
               Our{" "}
-              <Link href="/portable-vs-installed-home-battery-australia" className="font-semibold text-[#0a7c42] hover:underline">
+              <Link href="/portable-vs-installed-home-battery-australia" className="font-semibold text-[#007a95] hover:underline">
                 portable versus installed
               </Link>{" "}
               page sets out that overlap.{" "}
-              <Link href="/how-we-make-money" className="underline hover:text-[#10251b]">How we make money</Link>.
+              <Link href="/how-we-make-money" className="underline hover:text-[#14120f]">How we make money</Link>.
             </p>
           </div>
         </section>
 
         <section className="mt-12">
-          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Common questions</h2>
-          <dl className="mt-5 divide-y divide-[#eef1ef] rounded-2xl border border-[#e5e9e7] bg-white">
+          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Common questions</h2>
+          <dl className="mt-5 divide-y divide-[#f1ede4] rounded-2xl border border-[#ded8cd] bg-white">
             {faqs.map((f) => (
               <div key={f.q} className="px-5 py-5">
-                <dt className="text-[15px] font-bold text-[#10251b]">{f.q}</dt>
-                <dd className="mt-2 text-sm leading-relaxed text-[#3d4b44]">{f.a}</dd>
+                <dt className="text-[15px] font-bold text-[#14120f]">{f.q}</dt>
+                <dd className="mt-2 text-sm leading-relaxed text-[#56504a]">{f.a}</dd>
               </div>
             ))}
           </dl>
         </section>
 
-        <section className="mt-12 rounded-2xl border border-[#e5e9e7] bg-[#f8faf9] p-6">
-          <h2 className="text-lg font-bold text-[#10251b]">Check the current price on the one you have picked</h2>
-          <p className="mt-2 text-[15px] leading-relaxed text-[#3d4b44]">
+        <section className="mt-12 rounded-2xl border border-[#ded8cd] bg-[#f7f4ee] p-6">
+          <h2 className="text-lg font-bold text-[#14120f]">Check the current price on the one you have picked</h2>
+          <p className="mt-2 text-[15px] leading-relaxed text-[#56504a]">
             Both ranges move on sale pricing, so the figures above are a snapshot dated {UPDATED_LABEL}. Open whichever
             store matches your decision and confirm what the model costs today.
           </p>
           <PowerCtaPair location="vs-bottom" className="mt-5" />
         </section>
 
-        <section className="mt-10 border-t border-[#eef1ef] pt-8">
-          <h2 className="text-xs font-bold uppercase tracking-[0.12em] text-[#627068]">Keep reading</h2>
+        <section className="mt-10 border-t border-[#f1ede4] pt-8">
+          <h2 className="text-xs font-bold uppercase tracking-[0.12em] text-[#56504a]">Keep reading</h2>
           <ul className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-sm">
-            <li><Link href="/portable-power-station-australia" className="font-semibold text-[#0a7c42] hover:underline">What a portable power station costs and runs</Link></li>
-            <li><Link href="/portable-vs-installed-home-battery-australia" className="font-semibold text-[#0a7c42] hover:underline">Portable vs installed</Link></li>
-            <li><Link href="/home-battery-blackout-backup-australia" className="text-[#3d4b44] hover:text-[#0a7c42] hover:underline">Blackout backup</Link></li>
-            <li><Link href="/apollo-energy-group" className="text-[#3d4b44] hover:text-[#0a7c42] hover:underline">Installed batteries with Apollo</Link></li>
+            <li><Link href="/portable-power-station-australia" className="font-semibold text-[#007a95] hover:underline">What a portable power station costs and runs</Link></li>
+            <li><Link href="/portable-vs-installed-home-battery-australia" className="font-semibold text-[#007a95] hover:underline">Portable vs installed</Link></li>
+            <li><Link href="/home-battery-blackout-backup-australia" className="text-[#56504a] hover:text-[#007a95] hover:underline">Blackout backup</Link></li>
+            <li><Link href="/apollo-energy-group" className="text-[#56504a] hover:text-[#007a95] hover:underline">Installed batteries with Apollo</Link></li>
           </ul>
         </section>
       </main>

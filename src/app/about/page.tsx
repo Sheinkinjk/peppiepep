@@ -28,16 +28,16 @@ export default function AboutPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutSchema) }} />
 
       <main id="main-content" className="mx-auto max-w-3xl px-5 pb-20 pt-12 sm:px-8 sm:pt-16">
-        <nav className="mb-8 flex items-center gap-2 text-sm text-[#627068]">
-          <Link href="/" className="hover:text-[#0a7c42]">Refer Labs</Link>
+        <nav className="mb-8 flex items-center gap-2 text-sm text-[#56504a]">
+          <Link href="/" className="hover:text-[#007a95]">Refer Labs</Link>
           <span>/</span>
-          <span className="text-[#2b362f]">About</span>
+          <span className="text-[#14120f]">About</span>
         </nav>
 
-        <h1 className="mt-4 text-4xl font-bold leading-[1.07] tracking-[-0.01em] text-[#10251b] sm:text-5xl">
+        <h1 className="mt-4 text-4xl font-bold leading-[1.07] tracking-[-0.01em] text-[#14120f] sm:text-5xl">
           About Refer Labs
         </h1>
-        <p className="mt-5 text-lg leading-relaxed text-[#2b362f]">
+        <p className="mt-5 text-lg leading-relaxed text-[#14120f]">
           Refer Labs is an independent Australian comparison platform, run by one person and trading since
           16 August 2022. We compare health services, software and tools by reading each provider&apos;s own page,
           recording the date we read it, and publishing what we find in plain language. Some links earn a commission and
@@ -46,8 +46,8 @@ export default function AboutPage() {
 
         <div className="mt-12 space-y-8">
           <section>
-            <h2 className="text-lg font-bold text-[#10251b]">What we do</h2>
-            <p className="mt-2 text-[15px] leading-relaxed text-[#2b362f]">
+            <h2 className="text-lg font-bold text-[#14120f]">What we do</h2>
+            <p className="mt-2 text-[15px] leading-relaxed text-[#14120f]">
               We publish independent comparisons and guides across a growing set of categories, from weight-loss and
               hair-loss telehealth to website builders, newsletter platforms, AI sales tools and more. Each guide is
               built to answer a real question: which option fits you, what it costs, and what the catch is. We
@@ -60,8 +60,8 @@ export default function AboutPage() {
               first: this is the page whose whole job is trust, and an overstated
               claim here is the same exposure as a fabricated testimonial. */}
           <section id="how-we-research">
-            <h2 className="text-lg font-bold text-[#10251b]">How we research</h2>
-            <p className="mt-2 text-[15px] leading-relaxed text-[#2b362f]">
+            <h2 className="text-lg font-bold text-[#14120f]">How we research</h2>
+            <p className="mt-2 text-[15px] leading-relaxed text-[#14120f]">
               Prices, plan tiers, fees and eligibility come from the provider&apos;s own live pages and published terms,
               checked when we last reviewed the page. We do not take figures from aggregators, directories or press releases.
               This is desk research: we do not test or personally use most of what we cover, and we do not claim to. For
@@ -72,8 +72,8 @@ export default function AboutPage() {
           </section>
 
           <section id="how-we-rank">
-            <h2 className="text-lg font-bold text-[#10251b]">How we rank</h2>
-            <p className="mt-2 text-[15px] leading-relaxed text-[#2b362f]">
+            <h2 className="text-lg font-bold text-[#14120f]">How we rank</h2>
+            <p className="mt-2 text-[15px] leading-relaxed text-[#14120f]">
               When a page orders providers or names a first pick, the order comes from the same checklist every time:
               published price and what the price includes; eligibility and who the provider serves; what is
               bundled versus billed separately; cancellation and refund terms; delivery, support and follow-up; and
@@ -85,8 +85,8 @@ export default function AboutPage() {
           </section>
 
           <section>
-            <h2 className="text-lg font-bold text-[#10251b]">How we are paid</h2>
-            <p className="mt-2 text-[15px] leading-relaxed text-[#2b362f]">
+            <h2 className="text-lg font-bold text-[#14120f]">How we are paid</h2>
+            <p className="mt-2 text-[15px] leading-relaxed text-[#14120f]">
               Many pages contain affiliate links. If you sign up or buy through one, we may earn a commission at no extra
               cost to you. That is how the research is funded. A brand cannot pay to rank higher, to be added to a
               comparison, or to have a criticism removed, and commercial relationships never change the order of a list
@@ -96,8 +96,8 @@ export default function AboutPage() {
           </section>
 
           <section>
-            <h2 className="text-lg font-bold text-[#10251b]">What we do not publish</h2>
-            <p className="mt-2 text-[15px] leading-relaxed text-[#2b362f]">
+            <h2 className="text-lg font-bold text-[#14120f]">What we do not publish</h2>
+            <p className="mt-2 text-[15px] leading-relaxed text-[#14120f]">
               We do not score products out of five, award badges, or publish customer testimonials, case studies or
               invented statistics. Where a rating or figure appears it belongs to a third party and is attributed to
               them so you can weigh the source. If something we have published is out of date or wrong, we correct it,
@@ -106,8 +106,8 @@ export default function AboutPage() {
           </section>
 
           <section>
-            <h2 className="text-lg font-bold text-[#10251b]">Who this is for</h2>
-            <p className="mt-2 text-[15px] leading-relaxed text-[#2b362f]">
+            <h2 className="text-lg font-bold text-[#14120f]">Who this is for</h2>
+            <p className="mt-2 text-[15px] leading-relaxed text-[#14120f]">
               Anyone weighing up a decision who wants the pricing, the trade-offs and the fine print in one place. For
               health topics, everything here is general information, not medical advice, and prescription treatments in
               Australia are only available after assessment by a registered practitioner.
@@ -115,8 +115,8 @@ export default function AboutPage() {
           </section>
 
           <section>
-            <h2 className="text-lg font-bold text-[#10251b]">Who we are</h2>
-            <p className="mt-2 text-[15px] leading-relaxed text-[#2b362f]">
+            <h2 className="text-lg font-bold text-[#14120f]">Who we are</h2>
+            <p className="mt-2 text-[15px] leading-relaxed text-[#14120f]">
               Refer Labs is a small independent Australian publisher, operated by Pepform Pty Ltd trading as Refer Labs,
               ABN 32 660 008 159, registered on the Australian Business Register since 16 August 2022. It is
               founded and run by Jarred Krowitz, who researches and writes the comparisons
@@ -132,11 +132,11 @@ export default function AboutPage() {
               nothing in particular is worth less than no property at all. Describes
               what actually happens, with no commitment we do not already meet. */}
           <section id="corrections">
-            <h2 className="text-lg font-bold text-[#10251b]">Corrections</h2>
-            <p className="mt-2 text-[15px] leading-relaxed text-[#2b362f]">
+            <h2 className="text-lg font-bold text-[#14120f]">Corrections</h2>
+            <p className="mt-2 text-[15px] leading-relaxed text-[#14120f]">
               Prices, plan inclusions and offer terms change, and pages here go out of date between checks. If something
               is wrong, email{" "}
-              <a href="mailto:jarred@referlabs.com.au" className="font-semibold text-[#0a7c42] underline decoration-[#0a7c42]/40 underline-offset-4">
+              <a href="mailto:jarred@referlabs.com.au" className="font-semibold text-[#007a95] underline decoration-[#007a95]/40 underline-offset-4">
                 jarred@referlabs.com.au
               </a>{" "}
               and say which page and which figure. Every claim gets re-checked against the provider&apos;s own published
@@ -144,17 +144,17 @@ export default function AboutPage() {
               place: comparison pages carry the date they were last checked, and offers carry the date each one was
               verified, so you can see how current a figure is before you rely on it.
             </p>
-            <p className="mt-3 text-[15px] leading-relaxed text-[#2b362f]">
+            <p className="mt-3 text-[15px] leading-relaxed text-[#14120f]">
               A provider disputing something we have published gets the same process, and no more weight than a reader.
               A commercial relationship is not grounds for removing a criticism.
             </p>
           </section>
 
           <section>
-            <h2 className="text-lg font-bold text-[#10251b]">Get in touch</h2>
-            <p className="mt-2 text-[15px] leading-relaxed text-[#2b362f]">
+            <h2 className="text-lg font-bold text-[#14120f]">Get in touch</h2>
+            <p className="mt-2 text-[15px] leading-relaxed text-[#14120f]">
               Found an error, want to suggest something to compare, or want to partner with us? Email{" "}
-              <a href="mailto:jarred@referlabs.com.au" className="font-semibold text-[#0a7c42] underline decoration-[#0a7c42]/40 underline-offset-4">
+              <a href="mailto:jarred@referlabs.com.au" className="font-semibold text-[#007a95] underline decoration-[#007a95]/40 underline-offset-4">
                 jarred@referlabs.com.au
               </a>
               .
@@ -162,8 +162,8 @@ export default function AboutPage() {
           </section>
         </div>
 
-        <div className="mt-10 border-t border-[#e5e9e7] pt-8">
-          <Link href="/guides" className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#0a7c42]">
+        <div className="mt-10 border-t border-[#ded8cd] pt-8">
+          <Link href="/guides" className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#007a95]">
             Browse all guides &amp; comparisons &rarr;
           </Link>
         </div>

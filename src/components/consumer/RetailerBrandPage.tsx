@@ -132,26 +132,26 @@ export default function RetailerBrandPage({ brand }: { brand: RetailerBrand }) {
             first in the DOM, so the lead still follows the h1 with nothing
             between it, and the disclosure still sits above the first link. */}
         <section className="mx-auto max-w-6xl px-5 pt-10 sm:px-8 sm:pt-14">
-          <nav className="mb-7 flex items-center gap-2 text-sm text-[#627068]">
-            <Link href="/" className="hover:text-[#0a7c42]">Refer Labs</Link>
+          <nav className="mb-7 flex items-center gap-2 text-sm text-[#56504a]">
+            <Link href="/" className="hover:text-[#007a95]">Refer Labs</Link>
             <span aria-hidden="true">/</span>
-            <Link href={brand.section.href} className="hover:text-[#0a7c42]">{brand.section.label}</Link>
+            <Link href={brand.section.href} className="hover:text-[#007a95]">{brand.section.label}</Link>
             <span aria-hidden="true">/</span>
-            <span className="text-[#2b362f]">{brand.name}</span>
+            <span className="text-[#14120f]">{brand.name}</span>
           </nav>
 
           <div className="grid items-start gap-10 lg:grid-cols-[1.12fr_0.88fr] lg:gap-14">
             <div>
-              <h1 className="text-4xl font-bold leading-[1.06] tracking-[-0.01em] text-[#10251b] sm:text-5xl">
-                {brand.name}: <span className="italic text-[#0a7c42]">{brand.tagline}</span>
+              <h1 className="text-4xl font-bold leading-[1.06] tracking-[-0.01em] text-[#14120f] sm:text-5xl">
+                {brand.name}: <span className="italic text-[#007a95]">{brand.tagline}</span>
               </h1>
-              <p className="mt-5 text-lg leading-relaxed text-[#2b362f]">{brand.lead}</p>
+              <p className="mt-5 text-lg leading-relaxed text-[#14120f]">{brand.lead}</p>
               <AffiliateDisclosure compact className="mt-4" />
             </div>
 
-            <aside className="rounded-2xl border border-[#e5e9e7] bg-white p-6 shadow-[0_1px_2px_rgba(16,37,27,0.05)] sm:p-7">
+            <aside className="rounded-2xl border border-[#ded8cd] bg-white p-6 shadow-[0_1px_2px_rgba(20,18,15,0.05)] sm:p-7">
               <div className="flex items-center gap-3">
-                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-[#eef1ef] bg-[#f8faf9]">
+                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-[#f1ede4] bg-[#f7f4ee]">
                   {logo ? (
                     /* eslint-disable-next-line @next/next/no-img-element */
                     <img
@@ -163,20 +163,20 @@ export default function RetailerBrandPage({ brand }: { brand: RetailerBrand }) {
                       style={{ transform: `scale(${logoScale(logo)})` }}
                     />
                   ) : (
-                    <span className="text-[15px] font-bold tracking-tight text-[#0a7c42]">{monogram}</span>
+                    <span className="text-[15px] font-bold tracking-tight text-[#007a95]">{monogram}</span>
                   )}
                 </span>
                 <div>
-                  <p className="text-[17px] font-bold leading-tight text-[#10251b]">{brand.name}</p>
-                  <p className="text-[13px] text-[#5a665f]">{brand.section.label}</p>
+                  <p className="text-[17px] font-bold leading-tight text-[#14120f]">{brand.name}</p>
+                  <p className="text-[13px] text-[#56504a]">{brand.section.label}</p>
                 </div>
               </div>
 
               <dl className="mt-6 space-y-4">
                 {headline.map((f) => (
-                  <div key={f.label} className="border-t border-[#eef1ef] pt-4 first:border-t-0 first:pt-0">
-                    <dt className="text-[12px] font-semibold uppercase tracking-[0.05em] text-[#5a665f]">{f.label}</dt>
-                    <dd className="mt-1 text-[15px] leading-relaxed text-[#2b362f] [font-variant-numeric:tabular-nums]">
+                  <div key={f.label} className="border-t border-[#f1ede4] pt-4 first:border-t-0 first:pt-0">
+                    <dt className="text-[12px] font-semibold uppercase tracking-[0.05em] text-[#56504a]">{f.label}</dt>
+                    <dd className="mt-1 text-[15px] leading-relaxed text-[#14120f] [font-variant-numeric:tabular-nums]">
                       {f.value}
                     </dd>
                   </div>
@@ -188,37 +188,37 @@ export default function RetailerBrandPage({ brand }: { brand: RetailerBrand }) {
                 target="_blank"
                 rel="nofollow sponsored"
                 data-cta={`${brand.slug.replace(/^\//, "")}-hero`}
-                className="mt-6 flex w-full items-center justify-center rounded-full bg-[#0a7c42] px-6 py-3.5 text-[15px] font-semibold text-white transition-colors hover:bg-[#086536]"
+                className="mt-6 flex w-full items-center justify-center rounded-full bg-[#007a95] px-6 py-3.5 text-[15px] font-semibold text-white transition-colors hover:bg-[#003647]"
               >
                 {brand.ctaLabel}
               </a>
-              <p className="mt-3 text-[12px] leading-relaxed text-[#5a665f]">{brand.commissionNote}</p>
+              <p className="mt-3 text-[12px] leading-relaxed text-[#56504a]">{brand.commissionNote}</p>
             </aside>
           </div>
         </section>
 
         {/* Facts as a two-column panel rather than a thin stacked list. */}
         <section className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
-          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">
+          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">
             What {brand.name} sells, and what it costs
           </h2>
-          <dl className="mt-7 grid gap-x-10 gap-y-0 rounded-2xl border border-[#e5e9e7] bg-white p-6 sm:grid-cols-2 sm:p-8">
+          <dl className="mt-7 grid gap-x-10 gap-y-0 rounded-2xl border border-[#ded8cd] bg-white p-6 sm:grid-cols-2 sm:p-8">
             {brand.facts.map((f) => (
-              <div key={f.label} className="border-b border-[#eef1ef] py-4 last:border-b-0 sm:[&:nth-last-child(2)]:border-b-0">
-                <dt className="text-[12px] font-semibold uppercase tracking-[0.05em] text-[#5a665f]">{f.label}</dt>
-                <dd className="mt-1.5 text-[15px] leading-relaxed text-[#2b362f] [font-variant-numeric:tabular-nums]">
+              <div key={f.label} className="border-b border-[#f1ede4] py-4 last:border-b-0 sm:[&:nth-last-child(2)]:border-b-0">
+                <dt className="text-[12px] font-semibold uppercase tracking-[0.05em] text-[#56504a]">{f.label}</dt>
+                <dd className="mt-1.5 text-[15px] leading-relaxed text-[#14120f] [font-variant-numeric:tabular-nums]">
                   {f.value}
                 </dd>
               </div>
             ))}
           </dl>
-          <p className="mt-4 max-w-3xl text-[13px] leading-relaxed text-[#5a665f]">{brand.factsNote}</p>
+          <p className="mt-4 max-w-3xl text-[13px] leading-relaxed text-[#56504a]">{brand.factsNote}</p>
         </section>
 
         {brand.body.map((s) => (
           <section key={s.heading} className="mx-auto max-w-6xl px-5 pb-14 sm:px-8">
-            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">{s.heading}</h2>
-            <div className="mt-5 max-w-3xl space-y-4 text-[15px] leading-relaxed text-[#3d4b44]">
+            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">{s.heading}</h2>
+            <div className="mt-5 max-w-3xl space-y-4 text-[15px] leading-relaxed text-[#56504a]">
               {s.paras.map((p, i) => (
                 <p key={i}>{p}</p>
               ))}
@@ -229,20 +229,20 @@ export default function RetailerBrandPage({ brand }: { brand: RetailerBrand }) {
         {/* Required, and given its own panel so it reads as a finding rather
             than small print. Every one of these pages earns a commission. */}
         <section className="mx-auto max-w-6xl px-5 pb-14 sm:px-8">
-          <div className="max-w-3xl rounded-2xl border border-[#e5e9e7] bg-[#f8faf9] p-6 sm:p-8">
-            <h2 className="text-xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-2xl">What we could not verify</h2>
-            <div className="mt-4 text-[15px] leading-relaxed text-[#3d4b44]">{brand.unverified}</div>
+          <div className="max-w-3xl rounded-2xl border border-[#ded8cd] bg-[#f7f4ee] p-6 sm:p-8">
+            <h2 className="text-xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-2xl">What we could not verify</h2>
+            <div className="mt-4 text-[15px] leading-relaxed text-[#56504a]">{brand.unverified}</div>
           </div>
         </section>
 
-        <section className="border-y border-[#e5e9e7] bg-[#f5f8f6]">
+        <section className="border-y border-[#ded8cd] bg-[#f7f4ee]">
           <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
-            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">Common questions</h2>
-            <dl className="mt-7 max-w-3xl divide-y divide-[#e5e9e7]">
+            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">Common questions</h2>
+            <dl className="mt-7 max-w-3xl divide-y divide-[#ded8cd]">
               {brand.faqs.map((f) => (
                 <div key={f.q} className="py-5">
-                  <dt className="text-[15px] font-bold text-[#10251b]">{f.q}</dt>
-                  <dd className="mt-2 text-sm leading-relaxed text-[#3d4b44]">{f.a}</dd>
+                  <dt className="text-[15px] font-bold text-[#14120f]">{f.q}</dt>
+                  <dd className="mt-2 text-sm leading-relaxed text-[#56504a]">{f.a}</dd>
                 </div>
               ))}
             </dl>
@@ -251,10 +251,10 @@ export default function RetailerBrandPage({ brand }: { brand: RetailerBrand }) {
 
         {/* Closing action, for a reader who scrolled rather than clicked. */}
         <section className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
-          <div className="flex flex-col gap-5 rounded-2xl border border-[#cfe6da] bg-[#e8f5ee] p-7 sm:flex-row sm:items-center sm:justify-between sm:p-8">
+          <div className="flex flex-col gap-5 rounded-2xl border border-[#b9e3eb] bg-[#e4f2f5] p-7 sm:flex-row sm:items-center sm:justify-between sm:p-8">
             <div className="max-w-xl">
-              <p className="text-[17px] font-bold text-[#10251b]">Ready to look at {brand.name} yourself?</p>
-              <p className="mt-1.5 text-sm leading-relaxed text-[#3d4b44]">
+              <p className="text-[17px] font-bold text-[#14120f]">Ready to look at {brand.name} yourself?</p>
+              <p className="mt-1.5 text-sm leading-relaxed text-[#56504a]">
                 Prices and terms change. Check the current ones on their own site before you decide.
               </p>
             </div>
@@ -264,17 +264,17 @@ export default function RetailerBrandPage({ brand }: { brand: RetailerBrand }) {
                 target="_blank"
                 rel="nofollow sponsored"
                 data-cta={`${brand.slug.replace(/^\//, "")}-closing`}
-                className="inline-flex shrink-0 items-center rounded-full bg-[#0a7c42] px-6 py-3 text-[15px] font-semibold text-white transition-colors hover:bg-[#086536]"
+                className="inline-flex shrink-0 items-center rounded-full bg-[#007a95] px-6 py-3 text-[15px] font-semibold text-white transition-colors hover:bg-[#003647]"
               >
                 {brand.ctaLabel}
               </a>
-              <Link href={brand.section.href} className="text-sm font-semibold text-[#0a7c42] hover:underline">
+              <Link href={brand.section.href} className="text-sm font-semibold text-[#007a95] hover:underline">
                 Compare every {brand.section.label} partner →
               </Link>
             </div>
           </div>
 
-          <p className="mt-8 max-w-3xl rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] px-5 py-4 text-xs leading-relaxed text-[#3d4b44]">
+          <p className="mt-8 max-w-3xl rounded-xl border border-[#ded8cd] bg-[#f7f4ee] px-5 py-4 text-xs leading-relaxed text-[#56504a]">
             {brand.disclaimer}
           </p>
         </section>

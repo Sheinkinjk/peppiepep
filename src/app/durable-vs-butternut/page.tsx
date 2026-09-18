@@ -10,7 +10,7 @@ import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 import { pageDates } from "@/lib/page-dates";
 export const metadata = generateSEOMetadata(seoConfig.durableVsButternut);
 
-const GREEN = "#0a7c42";
+const GREEN = "#007a95";
 
 const durable = { href: DURABLE_URL, target: "_blank" as const, rel: "nofollow sponsored" as const };
 const butternut = { href: BUTTERNUT_URL, target: "_blank" as const, rel: "nofollow sponsored" as const };
@@ -123,24 +123,24 @@ export default function DurableVsButternutPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
 
-      <main className="text-[#10251b]">
+      <main className="text-[#14120f]">
         <div className="mx-auto max-w-4xl px-6 sm:px-8 lg:px-12">
 
           {/* Breadcrumb */}
-          <nav className="flex flex-wrap items-center gap-2 pt-8 text-sm text-[#3d4b44]">
-            <Link href="/" className="hover:text-[#0a7c42] transition-colors">Refer Labs</Link>
+          <nav className="flex flex-wrap items-center gap-2 pt-8 text-sm text-[#56504a]">
+            <Link href="/" className="hover:text-[#007a95] transition-colors">Refer Labs</Link>
             <span>/</span>
-            <Link href="/best-website-builder" className="hover:text-[#0a7c42] transition-colors">Website builders</Link>
+            <Link href="/best-website-builder" className="hover:text-[#007a95] transition-colors">Website builders</Link>
             <span>/</span>
-            <span className="text-[#2b362f]">Durable AI vs Butternut AI</span>
+            <span className="text-[#14120f]">Durable AI vs Butternut AI</span>
           </nav>
 
           {/* Hero */}
           <section className="pt-10 pb-8 sm:pt-12">
-            <h1 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-extrabold leading-[1.08] tracking-tight text-[#10251b] mb-4 max-w-3xl">
+            <h1 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-extrabold leading-[1.08] tracking-tight text-[#14120f] mb-4 max-w-3xl">
               Durable AI vs Butternut AI (2026)
             </h1>
-            <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl mb-3">
+            <p className="text-[#56504a] text-sm sm:text-base leading-relaxed max-w-2xl mb-3">
               Durable AI and Butternut AI are two of the fastest AI website builders around, and they overlap heavily,
               yet they are built for slightly different jobs. Durable generates a business site in about 30 seconds and
               bundles a CRM and invoicing, so it leans toward service businesses. Butternut builds a fuller multi-page
@@ -180,7 +180,7 @@ export default function DurableVsButternutPage() {
               <p className="text-[10px] font-bold uppercase tracking-[0.18em] mb-2" style={{ color: GREEN }}>
                 Quick verdict
               </p>
-              <p className="text-[#2b362f] text-sm sm:text-base leading-relaxed max-w-2xl">
+              <p className="text-[#14120f] text-sm sm:text-base leading-relaxed max-w-2xl">
                 Pick Durable AI if you run a service business and want a working site plus a CRM and invoicing in one
                 subscription. Pick Butternut AI if you want the richest multi-page site generated from a single prompt
                 and you are happy to edit and grow it yourself. Both are free to generate and preview with no account, so
@@ -190,42 +190,42 @@ export default function DurableVsButternutPage() {
           </section>
 
           {/* Comparison table */}
-          <section className="border-t border-[#e5e9e7] mt-8 py-8">
-            <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-[#10251b] mb-6">
+          <section className="border-t border-[#ded8cd] mt-8 py-8">
+            <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-[#14120f] mb-6">
               Durable AI vs Butternut AI at a glance
             </h2>
             <div className="overflow-x-auto -mx-2 px-2">
               <table className="w-full min-w-[560px] text-sm">
                 <thead>
-                  <tr className="border-b border-[#e5e9e7]">
-                    <th className="text-left pb-3 pr-4 text-[#627068] font-semibold text-[11px] uppercase tracking-wider w-52"></th>
-                    <th className="pb-3 px-3 text-left font-extrabold text-[#10251b] text-sm">Durable AI</th>
-                    <th className="pb-3 px-3 text-left font-extrabold text-[#10251b] text-sm">Butternut AI</th>
+                  <tr className="border-b border-[#ded8cd]">
+                    <th className="text-left pb-3 pr-4 text-[#56504a] font-semibold text-[11px] uppercase tracking-wider w-52"></th>
+                    <th className="pb-3 px-3 text-left font-extrabold text-[#14120f] text-sm">Durable AI</th>
+                    <th className="pb-3 px-3 text-left font-extrabold text-[#14120f] text-sm">Butternut AI</th>
                   </tr>
                 </thead>
                 <tbody>
                   {rows.map((r) => (
-                    <tr key={r.label} className="border-b border-[#e5e9e7] hover:bg-[#f5f8f6] transition-colors align-top">
-                      <td className="py-3 pr-4 text-[#3d4b44] text-xs font-medium leading-snug">{r.label}</td>
-                      <td className="py-3 px-3 text-[#3d4b44] text-xs leading-snug">{r.durable}</td>
-                      <td className="py-3 px-3 text-[#3d4b44] text-xs leading-snug">{r.butternut}</td>
+                    <tr key={r.label} className="border-b border-[#ded8cd] hover:bg-[#f7f4ee] transition-colors align-top">
+                      <td className="py-3 pr-4 text-[#56504a] text-xs font-medium leading-snug">{r.label}</td>
+                      <td className="py-3 px-3 text-[#56504a] text-xs leading-snug">{r.durable}</td>
+                      <td className="py-3 px-3 text-[#56504a] text-xs leading-snug">{r.butternut}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
-            <p className="text-[#627068] text-[10px] mt-3 leading-relaxed">
+            <p className="text-[#56504a] text-[10px] mt-3 leading-relaxed">
               Details are based on publicly available information and can change, so check current
               features and pricing on each platform before you commit.
             </p>
           </section>
 
           {/* Prose: setup + free tier */}
-          <section className="border-t border-[#e5e9e7] py-10">
-            <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-[#10251b] mb-4">
+          <section className="border-t border-[#ded8cd] py-10">
+            <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-[#14120f] mb-4">
               Setup speed and the free tier
             </h2>
-            <div className="space-y-4 text-[15px] leading-relaxed text-[#3d4b44] max-w-2xl">
+            <div className="space-y-4 text-[15px] leading-relaxed text-[#56504a] max-w-2xl">
               <p>
                 On raw speed the two are almost identical. Butternut advertises a full multi-page site in about 20
                 seconds, Durable a complete business site in about 30. You describe your business, the AI does the rest,
@@ -242,11 +242,11 @@ export default function DurableVsButternutPage() {
           </section>
 
           {/* Prose: what you get */}
-          <section className="border-t border-[#e5e9e7] py-10">
-            <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-[#10251b] mb-4">
+          <section className="border-t border-[#ded8cd] py-10">
+            <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-[#14120f] mb-4">
               What you get
             </h2>
-            <div className="space-y-4 text-[15px] leading-relaxed text-[#3d4b44] max-w-2xl">
+            <div className="space-y-4 text-[15px] leading-relaxed text-[#56504a] max-w-2xl">
               <p>
                 This is where the two separate. Durable is built for service businesses, so alongside the generated site
                 it bundles a CRM for tracking leads, invoicing, an AI assistant for editing content, and Google Business
@@ -262,7 +262,7 @@ export default function DurableVsButternutPage() {
               </p>
             </div>
             <div className="mt-6 flex flex-col items-start gap-4 rounded-2xl border px-6 py-5 sm:flex-row sm:items-center sm:justify-between" style={{ borderColor: `${GREEN}25`, background: `${GREEN}0A` }}>
-              <p className="max-w-lg text-sm leading-relaxed text-[#10251b]">
+              <p className="max-w-lg text-sm leading-relaxed text-[#14120f]">
                 Running a service business and want the site plus a CRM in one place? Durable&apos;s free generation is the
                 quickest way to see what it builds for your trade. No account, no card, about half a minute.
               </p>
@@ -279,11 +279,11 @@ export default function DurableVsButternutPage() {
           </section>
 
           {/* Prose: pricing + who each is for */}
-          <section className="border-t border-[#e5e9e7] py-10">
-            <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-[#10251b] mb-4">
+          <section className="border-t border-[#ded8cd] py-10">
+            <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-[#14120f] mb-4">
               Pricing and who each one is for
             </h2>
-            <div className="space-y-4 text-[15px] leading-relaxed text-[#3d4b44] max-w-2xl">
+            <div className="space-y-4 text-[15px] leading-relaxed text-[#56504a] max-w-2xl">
               <p>
                 Both are subscriptions billed monthly or annually, with annual billing lowering the effective monthly
                 rate. Durable is priced like a small-business tool because you are paying for the CRM and invoicing as
@@ -303,60 +303,60 @@ export default function DurableVsButternutPage() {
           </section>
 
           {/* Pick cards */}
-          <section className="border-t border-[#e5e9e7] py-10">
+          <section className="border-t border-[#ded8cd] py-10">
             <div className="grid sm:grid-cols-2 gap-4">
-              <div className="rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] p-6">
+              <div className="rounded-xl border border-[#ded8cd] bg-[#f7f4ee] p-6">
                 <h3 className="text-lg font-bold mb-2">Go with Durable AI</h3>
-                <p className="text-[#3d4b44] text-sm leading-relaxed mb-4">Business site in ~30s, plus a built-in CRM and invoicing. Best for service businesses.</p>
+                <p className="text-[#56504a] text-sm leading-relaxed mb-4">Business site in ~30s, plus a built-in CRM and invoicing. Best for service businesses.</p>
                 <a {...durable} data-cta="durable-vs-butternut-card-durable" className="inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-bold text-white transition-all hover:-translate-y-0.5 shadow-md" style={{ background: GREEN, boxShadow: `0 8px 24px ${GREEN}25` }}>
                   Try Durable AI free <ArrowRight className="h-4 w-4" />
                 </a>
-                <p className="mt-3"><Link href="/durableai" className="text-xs text-[#3d4b44] underline decoration-[#cdd5cf] underline-offset-2 hover:text-[#2b362f]">Read our Durable AI review →</Link></p>
+                <p className="mt-3"><Link href="/durableai" className="text-xs text-[#56504a] underline decoration-[#ded8cd] underline-offset-2 hover:text-[#14120f]">Read our Durable AI review →</Link></p>
               </div>
-              <div className="rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] p-6">
+              <div className="rounded-xl border border-[#ded8cd] bg-[#f7f4ee] p-6">
                 <h3 className="text-lg font-bold mb-2">Go with Butternut AI</h3>
-                <p className="text-[#3d4b44] text-sm leading-relaxed mb-4">Full multi-page site from one prompt in ~20s. Best for the richest generated site.</p>
+                <p className="text-[#56504a] text-sm leading-relaxed mb-4">Full multi-page site from one prompt in ~20s. Best for the richest generated site.</p>
                 <a {...butternut} data-cta="durable-vs-butternut-card-butternut" className="inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-bold text-white transition-all hover:-translate-y-0.5 shadow-md" style={{ background: GREEN, boxShadow: `0 8px 24px ${GREEN}25` }}>
                   Try Butternut AI free <ArrowRight className="h-4 w-4" />
                 </a>
-                <p className="mt-3"><Link href="/butternut" className="text-xs text-[#3d4b44] underline decoration-[#cdd5cf] underline-offset-2 hover:text-[#2b362f]">Read our Butternut AI review →</Link></p>
+                <p className="mt-3"><Link href="/butternut" className="text-xs text-[#56504a] underline decoration-[#ded8cd] underline-offset-2 hover:text-[#14120f]">Read our Butternut AI review →</Link></p>
               </div>
             </div>
           </section>
 
           {/* FAQ */}
-          <section className="border-t border-[#e5e9e7] py-10">
-            <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-[#10251b] mb-8">
+          <section className="border-t border-[#ded8cd] py-10">
+            <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-[#14120f] mb-8">
               Durable AI vs Butternut AI: frequently asked questions
             </h2>
             <div className="space-y-6">
               {faqs.map((f) => (
-                <div key={f.q} className="border-b border-[#e5e9e7] pb-6">
-                  <h3 className="text-sm font-bold text-[#10251b] mb-2 flex items-start gap-2">
+                <div key={f.q} className="border-b border-[#ded8cd] pb-6">
+                  <h3 className="text-sm font-bold text-[#14120f] mb-2 flex items-start gap-2">
                     <CheckCircle2 className="h-4 w-4 flex-shrink-0 mt-0.5" style={{ color: GREEN }} />
                     {f.q}
                   </h3>
-                  <p className="text-sm text-[#3d4b44] leading-relaxed">{f.a}</p>
+                  <p className="text-sm text-[#56504a] leading-relaxed">{f.a}</p>
                 </div>
               ))}
             </div>
           </section>
 
           {/* Related + disclosure */}
-          <section className="border-t border-[#e5e9e7] py-8 pb-16">
-            <h2 className="text-sm font-bold text-[#10251b] mb-3">Keep comparing</h2>
+          <section className="border-t border-[#ded8cd] py-8 pb-16">
+            <h2 className="text-sm font-bold text-[#14120f] mb-3">Keep comparing</h2>
             <div className="flex flex-wrap gap-3 mb-6">
               <Link href="/durableai" className="nw-link text-sm">Durable AI review</Link>
-              <span className="text-[#627068]">·</span>
+              <span className="text-[#56504a]">·</span>
               <Link href="/butternut" className="nw-link text-sm">Butternut AI review</Link>
-              <span className="text-[#627068]">·</span>
+              <span className="text-[#56504a]">·</span>
               <Link href="/best-website-builder" className="nw-link text-sm">Best website builder 2026</Link>
-              <span className="text-[#627068]">·</span>
+              <span className="text-[#56504a]">·</span>
               <Link href="/carrd-vs-durable" className="nw-link text-sm">Carrd vs Durable AI</Link>
-              <span className="text-[#627068]">·</span>
+              <span className="text-[#56504a]">·</span>
               <Link href="/guides" className="nw-link text-sm">All guides</Link>
             </div>
-            <p className="text-[#627068] text-xs leading-relaxed max-w-2xl">
+            <p className="text-[#56504a] text-xs leading-relaxed max-w-2xl">
               This page is operated by Refer Labs and contains disclosed affiliate referral links to both Durable AI and
               Butternut AI. We may earn a commission if you sign up through them, at no extra cost to you. We compare on
               features, speed, and pricing, and we never sell rankings. Comparisons are based on publicly available

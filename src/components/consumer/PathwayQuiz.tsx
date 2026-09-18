@@ -192,36 +192,36 @@ export default function PathwayQuiz() {
       <div className="flex items-center justify-between gap-4">
         <p className="nw-kicker">{done ? "Your match" : `Pathway matcher · step ${answered + 1} of ${QUESTIONS.length}`}</p>
         {answered > 0 && (
-          <button onClick={reset} className="inline-flex items-center gap-1.5 text-xs font-medium text-[#627068] hover:text-[#0a7c42]">
+          <button onClick={reset} className="inline-flex items-center gap-1.5 text-xs font-medium text-[#56504a] hover:text-[#007a95]">
             <RotateCcw className="h-3 w-3" /> Restart
           </button>
         )}
       </div>
 
       {!done && (
-        <div className="mt-4 h-1.5 w-full overflow-hidden rounded-full bg-[#eef1ef]" aria-hidden="true">
-          <div className="h-full rounded-full bg-[#0a7c42] transition-all duration-300" style={{ width: `${(answered / QUESTIONS.length) * 100}%` }} />
+        <div className="mt-4 h-1.5 w-full overflow-hidden rounded-full bg-[#f1ede4]" aria-hidden="true">
+          <div className="h-full rounded-full bg-[#007a95] transition-all duration-300" style={{ width: `${(answered / QUESTIONS.length) * 100}%` }} />
         </div>
       )}
 
       {!done && current && (
         <div className="mt-5">
           {answered === 0 && (
-            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Which weight-loss pathway fits you?</h2>
+            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Which weight-loss pathway fits you?</h2>
           )}
-          <p className={`${answered === 0 ? "mt-3" : ""} text-lg font-semibold text-[#10251b]`}>{current.q}</p>
+          <p className={`${answered === 0 ? "mt-3" : ""} text-lg font-semibold text-[#14120f]`}>{current.q}</p>
           <div className="mt-5 grid gap-3">
             {current.options.map((o) => (
               <button
                 key={o.value}
                 onClick={() => choose(current.key, o.value)}
-                className="group flex items-center justify-between gap-4 rounded-xl border border-[#e5e9e7] bg-white px-5 py-4 text-left transition-all hover:-translate-y-0.5 hover:border-[#0a7c42] hover:bg-[#e8f5ee]"
+                className="group flex items-center justify-between gap-4 rounded-xl border border-[#ded8cd] bg-white px-5 py-4 text-left transition-all hover:-translate-y-0.5 hover:border-[#007a95] hover:bg-[#e4f2f5]"
               >
                 <span>
-                  <span className="block text-[15px] font-semibold text-[#10251b]">{o.label}</span>
-                  {o.note && <span className="block text-[13px] text-[#5a665f]">{o.note}</span>}
+                  <span className="block text-[15px] font-semibold text-[#14120f]">{o.label}</span>
+                  {o.note && <span className="block text-[13px] text-[#56504a]">{o.note}</span>}
                 </span>
-                <ArrowRight className="h-4 w-4 shrink-0 text-[#627068] transition-transform group-hover:translate-x-0.5 group-hover:text-[#0a7c42]" />
+                <ArrowRight className="h-4 w-4 shrink-0 text-[#56504a] transition-transform group-hover:translate-x-0.5 group-hover:text-[#007a95]" />
               </button>
             ))}
           </div>
@@ -230,17 +230,17 @@ export default function PathwayQuiz() {
 
       {done && result && (
         <div className="mt-4">
-          <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#627068]">Your result</p>
-          <h3 className="mt-2 text-2xl font-bold tracking-[-0.01em] text-[#10251b]">{result.title}</h3>
+          <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#56504a]">Your result</p>
+          <h3 className="mt-2 text-2xl font-bold tracking-[-0.01em] text-[#14120f]">{result.title}</h3>
           {result.offer && (
-            <span className="mt-3 inline-flex w-fit items-center gap-1.5 rounded-full border border-[#cfe6da] bg-[#e8f5ee] px-3 py-1 text-[12.5px] font-bold text-[#0a7c42]">
+            <span className="mt-3 inline-flex w-fit items-center gap-1.5 rounded-full border border-[#b9e3eb] bg-[#e4f2f5] px-3 py-1 text-[12.5px] font-bold text-[#007a95]">
               <Check className="h-3.5 w-3.5" strokeWidth={2.5} aria-hidden="true" /> {result.offer}
             </span>
           )}
-          <p className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">{result.body}</p>
+          <p className="mt-3 text-[15px] leading-relaxed text-[#56504a]">{result.body}</p>
           {result.also && (
-            <p className="mt-4 rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] px-4 py-3 text-[14px] leading-relaxed text-[#3d4b44]">
-              <span className="font-semibold text-[#10251b]">Also worth knowing: </span>{result.also}
+            <p className="mt-4 rounded-xl border border-[#ded8cd] bg-[#f7f4ee] px-4 py-3 text-[14px] leading-relaxed text-[#56504a]">
+              <span className="font-semibold text-[#14120f]">Also worth knowing: </span>{result.also}
             </p>
           )}
           <div className="mt-6 flex flex-wrap items-center gap-4">
@@ -258,16 +258,16 @@ export default function PathwayQuiz() {
               </a>
             )}
             {result.secondary && (
-              <Link href={result.secondary.href} className="text-sm font-semibold text-[#10251b] underline decoration-[#cdd5cf] underline-offset-4 hover:decoration-[#0a7c42]">
+              <Link href={result.secondary.href} className="text-sm font-semibold text-[#14120f] underline decoration-[#ded8cd] underline-offset-4 hover:decoration-[#007a95]">
                 {result.secondary.label}
               </Link>
             )}
           </div>
 
-          <div className="mt-6 border-t border-[#eef1ef] pt-4">
+          <div className="mt-6 border-t border-[#f1ede4] pt-4">
             <button
               onClick={share}
-              className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#0a7c42] transition-colors hover:text-[#086536]"
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#007a95] transition-colors hover:text-[#003647]"
             >
               <Share2 className="h-4 w-4" aria-hidden="true" /> {shared ? "Link copied" : "Share this match"}
             </button>
@@ -283,7 +283,7 @@ export default function PathwayQuiz() {
             </div>
           )}
 
-          <p className="mt-5 text-xs leading-relaxed text-[#627068]">
+          <p className="mt-5 text-xs leading-relaxed text-[#56504a]">
             This is general information to help you narrow the field, not medical advice. Suitability for any program is
             assessed individually by registered practitioners.
           </p>

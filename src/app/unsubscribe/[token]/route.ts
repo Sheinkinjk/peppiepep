@@ -47,13 +47,13 @@ function page(title: string, body: string): Response {
 <meta name="robots" content="noindex,nofollow">
 <title>${title} | Refer Labs</title>
 <style>
-  body{margin:0;background:#f6f5f1;color:#16201c;
+  body{margin:0;background:#f6f5f1;color:#14120f;
        font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
   main{max-width:34rem;margin:12vh auto;padding:0 1.25rem}
   h1{font-size:1.6rem;line-height:1.2;margin:0 0 .75rem}
-  p{color:#3d4b44;margin:0 0 1rem}
-  a{color:#0a7c42}
-  .meta{font-size:.8rem;color:#6e7b74;margin-top:2rem}
+  p{color:#56504a;margin:0 0 1rem}
+  a{color:#007a95}
+  .meta{font-size:.8rem;color:#766f66;margin-top:2rem}
 </style></head>
 <body><main>
 <h1>${title}</h1>

@@ -25,7 +25,9 @@ import { useId, type ReactNode } from "react";
 export type ObjectKind =
   | "scale" | "comb" | "tag" | "solar" | "battery" | "power" | "browser"
   | "envelope" | "bottle" | "pillow" | "pulse" | "hourglass" | "lens"
-  | "checklist" | "document" | "balance";
+  | "checklist" | "document" | "balance"
+  | "phone" | "clinic" | "calculator" | "offer"
+  | "funnel" | "send" | "badge" | "card" | "chip";
 
 const D = "var(--il-deep)", M = "var(--il-mid)", B = "var(--il-bright)", S = "var(--il-soft)", F = "var(--il-face)";
 
@@ -246,6 +248,117 @@ const ART: Record<ObjectKind, ReactNode> = {
       </g>
       <path d="M3 26 H14 A5.5 4 0 0 1 3 26 Z" fill={B} />
       <path d="M34 26 H45 A5.5 4 0 0 1 34 26 Z" fill={B} />
+    </>
+  ),
+  /* telehealth: the phone the consult happens on */
+  phone: (
+    <>
+      <rect x="13" y="3" width="22" height="42" rx="4" fill={D} />
+      <rect x="15.5" y="7" width="17" height="31.5" rx="1.5" fill={F} />
+      <rect x="17.5" y="11" width="10" height="5" rx="2" fill={S} />
+      <rect x="20.5" y="19" width="10" height="5" rx="2" fill={B} />
+      <rect x="17.5" y="27" width="8" height="5" rx="2" fill={S} />
+      <rect x="21" y="41" width="6" height="1.4" rx="0.7" fill={F} />
+    </>
+  ),
+  /* your GP: the clinic, with the cross on its roof */
+  clinic: (
+    <>
+      <rect x="8" y="18" width="32" height="25" fill={M} />
+      <polygon points="5,19.5 24,7 43,19.5" fill={D} />
+      <rect x="20" y="31" width="8" height="12" fill={D} />
+      <rect x="11.5" y="23.5" width="6" height="5" rx="0.6" fill={F} />
+      <rect x="30.5" y="23.5" width="6" height="5" rx="0.6" fill={F} />
+      <circle cx="24" cy="15.4" r="4.3" fill={B} />
+      <rect x="23" y="12.6" width="2" height="5.6" rx="0.4" fill={F} />
+      <rect x="21.2" y="14.4" width="5.6" height="2" rx="0.4" fill={F} />
+      <rect x="4" y="43" width="40" height="1.8" rx="0.9" fill={D} />
+    </>
+  ),
+  /* cost guides and calculators */
+  calculator: (
+    <>
+      <rect x="10" y="4" width="28" height="40" rx="3" fill={D} />
+      <rect x="13.5" y="8" width="21" height="8.5" rx="1" fill={F} />
+      <rect x="24" y="11" width="8" height="2.4" rx="1.2" fill={M} />
+      {[0, 1, 2].map((c) => [0, 1, 2, 3].map((r) => (
+        <rect key={`${c}${r}`} x={13.5 + c * 7.4} y={20 + r * 5.8} width="5.8" height="4.4" rx="0.9"
+          fill={c === 2 && r === 3 ? B : c === 2 ? M : S} />
+      )))}
+    </>
+  ),
+  /* an offer: the swing tag, with a percent sign on it */
+  offer: (
+    <>
+      <g transform="rotate(-20 24 24)">
+        <path d="M10 13 H30 L39 24 L30 35 H10 Z" fill={B} />
+        <circle cx="31.5" cy="24" r="2" fill={F} />
+        <circle cx="16" cy="19.5" r="2.1" fill={F} />
+        <circle cx="23" cy="28.5" r="2.1" fill={F} />
+        <rect x="18.6" y="16" width="1.8" height="16" rx="0.9" fill={F} transform="rotate(35 19.5 24)" />
+      </g>
+      <path d="M36 12 C 40 8, 44 10, 43 15" stroke={D} strokeWidth="1.4" fill="none" strokeLinecap="round" />
+    </>
+  ),
+  /* sales and CRM: the pipeline narrowing to what closes */
+  funnel: (
+    <>
+      <polygon points="5,8 43,8 30,25 18,25" fill={M} />
+      <rect x="5" y="8" width="38" height="4" fill={D} />
+      <rect x="19" y="25" width="10" height="13" fill={D} />
+      <rect x="21" y="38" width="6" height="5" rx="1" fill={B} />
+      <circle cx="16" cy="15.5" r="2" fill={F} />
+      <circle cx="24" cy="17" r="2" fill={F} />
+      <circle cx="32" cy="15.5" r="2" fill={F} />
+      <circle cx="24" cy="22" r="1.8" fill={B} />
+    </>
+  ),
+  /* outreach: the message on its way */
+  send: (
+    <>
+      <polygon points="4,24 44,6 30,42 23,29" fill={M} />
+      <polygon points="23,29 44,6 26,35" fill={D} />
+      <polygon points="23,29 30,42 26,35" fill={D} />
+      <path d="M4 40 C 10 36, 12 44, 18 40" stroke={B} strokeWidth="1.6" fill="none" strokeLinecap="round" />
+    </>
+  ),
+  /* HR and payroll: the staff badge on its lanyard */
+  badge: (
+    <>
+      <path d="M17 4 L24 14 L31 4" stroke={D} strokeWidth="2.2" fill="none" strokeLinejoin="round" />
+      <rect x="21" y="12" width="6" height="5" rx="1" fill={D} />
+      <rect x="10" y="16" width="28" height="28" rx="3" fill={F} />
+      <rect x="10" y="16" width="28" height="7" rx="3" fill={M} />
+      <rect x="10" y="20" width="28" height="3" fill={M} />
+      <rect x="15" y="27" width="9" height="11" rx="1.5" fill={B} />
+      <rect x="27" y="28" width="7" height="1.8" rx="0.9" fill={M} />
+      <rect x="27" y="32" width="6" height="1.8" rx="0.9" fill={S} />
+      <rect x="27" y="36" width="5" height="1.8" rx="0.9" fill={S} />
+    </>
+  ),
+  /* payments and bookkeeping: the card */
+  card: (
+    <>
+      <rect x="4" y="11" width="40" height="27" rx="3" fill={M} />
+      <rect x="4" y="16" width="40" height="5" fill={D} />
+      <rect x="8.5" y="25" width="8" height="6" rx="1" fill={B} />
+      <rect x="24" y="30.5" width="15" height="2" rx="1" fill={F} />
+      <rect x="30" y="25.5" width="9" height="2" rx="1" fill={S} />
+    </>
+  ),
+  /* AI tools: the chip */
+  chip: (
+    <>
+      {[14, 20, 26, 32].map((v) => (
+        <g key={v} fill={D}>
+          <rect x={v - 1} y="4" width="2" height="6" rx="1" /><rect x={v - 1} y="38" width="2" height="6" rx="1" />
+          <rect x="4" y={v - 1} width="6" height="2" rx="1" /><rect x="38" y={v - 1} width="6" height="2" rx="1" />
+        </g>
+      ))}
+      <rect x="9" y="9" width="30" height="30" rx="3" fill={M} />
+      <rect x="15" y="15" width="18" height="18" rx="2" fill={D} />
+      <circle cx="24" cy="24" r="4.2" fill={B} />
+      <circle cx="12.5" cy="12.5" r="1.3" fill={F} />
     </>
   ),
 };

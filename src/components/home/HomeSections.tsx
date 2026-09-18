@@ -63,13 +63,14 @@ export function Faqs() {
   );
 }
 
-export function SiteFooter({ brand, columns = footer.columns }: { brand?: React.ReactNode; columns?: typeof footer.columns }) {
+export function SiteFooter({ brand, columns = footer.columns, extra }: { brand?: React.ReactNode; columns?: typeof footer.columns; extra?: React.ReactNode }) {
   return (
     <footer className="rd-ft rl-own">
       <div className="rd-w rd-g">
         <div className="c4">
           {brand}
           <p>{footer.blurb}</p>
+          {extra}
           <nav className="rd-ft__soc" aria-label="Social">
             {footer.social.map((s) => (
               <a key={s.href} href={s.href} rel="noopener nofollow">{s.label}</a>

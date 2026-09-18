@@ -21,7 +21,7 @@ type Lead = Record<string, unknown>;
 type Submission = Record<string, unknown> & { id: string; lender: string; outcome: string };
 
 const inputCls = "w-full rounded-lg border border-[#d7ddd9] bg-white px-3 py-2 text-sm";
-const btn = "rounded-lg bg-[#0a7c42] px-4 py-2 text-sm font-bold text-white hover:bg-[#086536]";
+const btn = "rounded-lg bg-[#007a95] px-4 py-2 text-sm font-bold text-white hover:bg-[#003647]";
 
 export default async function LeadDetail({ params }: { params: Promise<{ id: string }> }) {
   await requireAdmin();
@@ -50,15 +50,15 @@ export default async function LeadDetail({ params }: { params: Promise<{ id: str
   const submittedLenders = new Set(subs.map((s) => s.lender.toLowerCase()));
 
   return (
-    <div className="min-h-screen bg-[#f6f7f6] text-[#10251b]">
+    <div className="min-h-screen bg-[#f7f4ee] text-[#14120f]">
       <div className="mx-auto max-w-5xl px-5 py-8 sm:px-8">
-        <Link href="/admin/leads" className="text-sm font-semibold text-[#0a7c42] hover:underline">← All leads</Link>
+        <Link href="/admin/leads" className="text-sm font-semibold text-[#007a95] hover:underline">← All leads</Link>
 
         <div className="mt-3 flex flex-wrap items-center gap-3">
           <h1 className="text-2xl font-extrabold">{String(lead.business_name)}</h1>
           <span className="rounded-full px-2.5 py-1 text-xs font-bold" style={{ background: tone.bg, color: tone.fg }}>{status}</span>
         </div>
-        <p className="mt-1 text-sm text-[#5a665f]">
+        <p className="mt-1 text-sm text-[#56504a]">
           Received {dt(String(lead.created_at))} · Operator notified {lead.notified_at ? dt(String(lead.notified_at)) : <span className="font-semibold text-amber-600">not sent</span>}
         </p>
 
@@ -95,8 +95,8 @@ export default async function LeadDetail({ params }: { params: Promise<{ id: str
 
             <Card title="Contact">
               <Row k="Name" v={`${String(lead.first_name)} ${String(lead.last_name)}`} />
-              <Row k="Email" v={<a href={`mailto:${String(lead.email)}`} className="text-[#0a7c42] hover:underline">{String(lead.email)}</a>} />
-              <Row k="Phone" v={<a href={`tel:${String(lead.phone)}`} className="text-[#0a7c42] hover:underline">{String(lead.phone)}</a>} />
+              <Row k="Email" v={<a href={`mailto:${String(lead.email)}`} className="text-[#007a95] hover:underline">{String(lead.email)}</a>} />
+              <Row k="Phone" v={<a href={`tel:${String(lead.phone)}`} className="text-[#007a95] hover:underline">{String(lead.phone)}</a>} />
               <Row k="Preferred time" v={label(lead.preferred_contact as string)} />
             </Card>
 
@@ -112,33 +112,33 @@ export default async function LeadDetail({ params }: { params: Promise<{ id: str
 
             {/* Submission tracker */}
             <Card title="Lender submissions">
-              {subs.length === 0 && <p className="text-sm text-[#5a665f]">No submissions logged yet.</p>}
+              {subs.length === 0 && <p className="text-sm text-[#56504a]">No submissions logged yet.</p>}
               <div className="space-y-4">
                 {subs.map((s) => (
-                  <form key={s.id} action={updateSubmission} className="rounded-xl border border-[#e5e9e7] p-3">
+                  <form key={s.id} action={updateSubmission} className="rounded-xl border border-[#ded8cd] p-3">
                     <input type="hidden" name="submission_id" value={s.id} />
                     <input type="hidden" name="lead_id" value={id} />
                     <div className="flex items-center justify-between gap-2">
                       <p className="font-bold">{s.lender}</p>
-                      <span className="text-xs text-[#5a665f]">{dt(String(s.submitted_at))}</span>
+                      <span className="text-xs text-[#56504a]">{dt(String(s.submitted_at))}</span>
                     </div>
                     <div className="mt-2 grid gap-2 sm:grid-cols-2">
-                      <label className="text-xs font-semibold text-[#5a665f]">Outcome
+                      <label className="text-xs font-semibold text-[#56504a]">Outcome
                         <select name="outcome" defaultValue={s.outcome} className={`mt-1 ${inputCls}`}>
                           {SUBMISSION_OUTCOMES.map((o) => <option key={o} value={o}>{o}</option>)}
                         </select>
                       </label>
-                      <label className="text-xs font-semibold text-[#5a665f]">Lender ref
+                      <label className="text-xs font-semibold text-[#56504a]">Lender ref
                         <input name="lender_ref" defaultValue={(s.lender_ref as string) || ""} className={`mt-1 ${inputCls}`} />
                       </label>
-                      <label className="text-xs font-semibold text-[#5a665f]">Offer amount
+                      <label className="text-xs font-semibold text-[#56504a]">Offer amount
                         <input name="offer_amount" inputMode="decimal" defaultValue={(s.offer_amount as number | null) ?? ""} className={`mt-1 ${inputCls}`} />
                       </label>
-                      <label className="text-xs font-semibold text-[#5a665f]">Offer rate
+                      <label className="text-xs font-semibold text-[#56504a]">Offer rate
                         <input name="offer_rate" defaultValue={(s.offer_rate as string) || ""} placeholder="e.g. 16.9% p.a." className={`mt-1 ${inputCls}`} />
                       </label>
                     </div>
-                    <label className="mt-2 block text-xs font-semibold text-[#5a665f]">Notes
+                    <label className="mt-2 block text-xs font-semibold text-[#56504a]">Notes
                       <input name="notes" defaultValue={(s.notes as string) || ""} className={`mt-1 ${inputCls}`} />
                     </label>
                     <div className="mt-2 flex items-center gap-3">
@@ -150,19 +150,19 @@ export default async function LeadDetail({ params }: { params: Promise<{ id: str
               </div>
 
               {/* Add a submission */}
-              <form action={addSubmission} className="mt-4 rounded-xl border border-dashed border-[#c7cfc9] p-3">
+              <form action={addSubmission} className="mt-4 rounded-xl border border-dashed border-[#ded8cd] p-3">
                 <input type="hidden" name="lead_id" value={id} />
-                <p className="text-xs font-bold uppercase tracking-[0.1em] text-[#627068]">Log a new submission</p>
+                <p className="text-xs font-bold uppercase tracking-[0.1em] text-[#56504a]">Log a new submission</p>
                 <div className="mt-2 grid gap-2 sm:grid-cols-2">
-                  <label className="text-xs font-semibold text-[#5a665f]">Lender
+                  <label className="text-xs font-semibold text-[#56504a]">Lender
                     <input name="lender" list="panel-lenders" required placeholder="Lender name" className={`mt-1 ${inputCls}`} />
                     <datalist id="panel-lenders">{LENDERS.map((l) => <option key={l.slug} value={l.name} />)}</datalist>
                   </label>
-                  <label className="text-xs font-semibold text-[#5a665f]">Lender ref (optional)
+                  <label className="text-xs font-semibold text-[#56504a]">Lender ref (optional)
                     <input name="lender_ref" className={`mt-1 ${inputCls}`} />
                   </label>
                 </div>
-                <label className="mt-2 block text-xs font-semibold text-[#5a665f]">Notes (optional)
+                <label className="mt-2 block text-xs font-semibold text-[#56504a]">Notes (optional)
                   <input name="notes" className={`mt-1 ${inputCls}`} />
                 </label>
                 <button type="submit" className={`mt-3 ${btn}`}>Add submission</button>
@@ -183,14 +183,14 @@ export default async function LeadDetail({ params }: { params: Promise<{ id: str
             </Card>
 
             <Card title="Suggested lenders">
-              {matched.length === 0 && <p className="text-sm text-[#5a665f]">No lenders matched the stated criteria — review manually.</p>}
+              {matched.length === 0 && <p className="text-sm text-[#56504a]">No lenders matched the stated criteria — review manually.</p>}
               <ul className="space-y-1.5 text-sm">
                 {matched.map((l) => (
                   <li key={l.slug} className="flex items-center justify-between">
                     <span>{l.name}{l.afiaCodeSignatory ? " (AFIA)" : ""}</span>
                     {submittedLenders.has(l.name.toLowerCase())
-                      ? <span className="text-xs font-semibold text-[#0a7c42]">submitted</span>
-                      : <span className="text-xs text-[#627068]">not yet</span>}
+                      ? <span className="text-xs font-semibold text-[#007a95]">submitted</span>
+                      : <span className="text-xs text-[#56504a]">not yet</span>}
                   </li>
                 ))}
               </ul>
@@ -199,13 +199,13 @@ export default async function LeadDetail({ params }: { params: Promise<{ id: str
             <Card title="Commercials">
               <form action={updateCommercials} className="space-y-2">
                 <input type="hidden" name="lead_id" value={id} />
-                <label className="block text-xs font-semibold text-[#5a665f]">Settled amount
+                <label className="block text-xs font-semibold text-[#56504a]">Settled amount
                   <input name="settled_amount" inputMode="decimal" defaultValue={(lead.settled_amount as number | null) ?? ""} className={`mt-1 ${inputCls}`} />
                 </label>
-                <label className="block text-xs font-semibold text-[#5a665f]">Commission expected
+                <label className="block text-xs font-semibold text-[#56504a]">Commission expected
                   <input name="commission_expected" inputMode="decimal" defaultValue={(lead.commission_expected as number | null) ?? ""} className={`mt-1 ${inputCls}`} />
                 </label>
-                <label className="block text-xs font-semibold text-[#5a665f]">Commission received
+                <label className="block text-xs font-semibold text-[#56504a]">Commission received
                   <input name="commission_received" inputMode="decimal" defaultValue={(lead.commission_received as number | null) ?? ""} className={`mt-1 ${inputCls}`} />
                 </label>
                 <button type="submit" className={`${btn} w-full`}>Save commercials</button>
@@ -228,8 +228,8 @@ export default async function LeadDetail({ params }: { params: Promise<{ id: str
 
 function Card({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <section className="rounded-2xl border border-[#e5e9e7] bg-white p-5">
-      <h2 className="text-xs font-bold uppercase tracking-[0.12em] text-[#627068]">{title}</h2>
+    <section className="rounded-2xl border border-[#ded8cd] bg-white p-5">
+      <h2 className="text-xs font-bold uppercase tracking-[0.12em] text-[#56504a]">{title}</h2>
       <div className="mt-3">{children}</div>
     </section>
   );
@@ -238,8 +238,8 @@ function Card({ title, children }: { title: string; children: React.ReactNode })
 function Row({ k, v }: { k: string; v: React.ReactNode }) {
   return (
     <div className="grid grid-cols-[130px_1fr] gap-3 border-b border-[#f1f4f2] py-1.5 text-sm last:border-0">
-      <span className="text-[#5a665f]">{k}</span>
-      <span className="font-medium text-[#10251b]">{v}</span>
+      <span className="text-[#56504a]">{k}</span>
+      <span className="font-medium text-[#14120f]">{v}</span>
     </div>
   );
 }

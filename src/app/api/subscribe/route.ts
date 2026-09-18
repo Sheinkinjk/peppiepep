@@ -22,22 +22,22 @@ function welcomeHtml(unsubUrl: string): string {
   <div style="max-width:560px;margin:0 auto;padding:32px 20px;">
     <p style="font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:#0E7C66;font-weight:700;margin:0 0 18px;">Refer Labs</p>
     <h1 style="font-size:24px;line-height:1.25;margin:0 0 16px;">You're in.</h1>
-    <p style="font-size:16px;line-height:1.6;color:#3a4742;margin:0 0 16px;">
+    <p style="font-size:16px;line-height:1.6;color:#56504a;margin:0 0 16px;">
       Thanks for subscribing. We'll email you when there's a good, verified offer worth knowing about across Australian health, tools and software, no spam, no pay-to-rank recommendations, unsubscribe any time.
     </p>
-    <p style="font-size:16px;line-height:1.6;color:#3a4742;margin:0 0 24px;">
+    <p style="font-size:16px;line-height:1.6;color:#56504a;margin:0 0 24px;">
       While you're here, our most-read guides right now are weight-loss telehealth and website builders.
     </p>
     <p style="margin:0 0 28px;">
       <a href="https://referlabs.com.au/guides" style="display:inline-block;background:#0E7C66;color:#fff;text-decoration:none;font-family:Arial,sans-serif;font-weight:700;font-size:15px;padding:14px 28px;border-radius:999px;">Browse the guides →</a>
     </p>
-    <p style="font-size:13px;line-height:1.6;color:#6b756f;margin:0 0 6px;">
+    <p style="font-size:13px;line-height:1.6;color:#766f66;margin:0 0 6px;">
       You are receiving this because you subscribed at referlabs.com.au.
-      <a href="${unsubUrl}" style="color:#6b756f;">Unsubscribe</a>.
+      <a href="${unsubUrl}" style="color:#766f66;">Unsubscribe</a>.
     </p>
-    <p style="font-size:13px;line-height:1.6;color:#6b756f;margin:0;">
+    <p style="font-size:13px;line-height:1.6;color:#766f66;margin:0;">
       Pepform Pty Ltd, ABN 32 660 008 159, trading as Refer Labs.
-      Contact <a href="mailto:jarred@referlabs.com.au" style="color:#6b756f;">jarred@referlabs.com.au</a>.
+      Contact <a href="mailto:jarred@referlabs.com.au" style="color:#766f66;">jarred@referlabs.com.au</a>.
     </p>
   </div>
 </body></html>`;

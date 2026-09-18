@@ -293,17 +293,17 @@ export default function GuidesPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }} />
 
       <main id="main-content" className="mx-auto max-w-6xl px-5 pb-20 pt-12 sm:px-8 sm:pt-16">
-        <nav className="mb-7 flex items-center gap-2 text-sm text-[#627068]">
-          <Link href="/" className="hover:text-[#0a7c42]">Refer Labs</Link>
+        <nav className="mb-7 flex items-center gap-2 text-sm text-[#56504a]">
+          <Link href="/" className="hover:text-[#007a95]">Refer Labs</Link>
           <span>/</span>
-          <span className="text-[#2b362f]">Guides</span>
+          <span className="text-[#14120f]">Guides</span>
         </nav>
 
         <div className="max-w-2xl">
-          <h1 className="mt-4 text-4xl font-bold leading-[1.06] tracking-[-0.01em] text-[#10251b] sm:text-5xl">
+          <h1 className="mt-4 text-4xl font-bold leading-[1.06] tracking-[-0.01em] text-[#14120f] sm:text-5xl">
             Every guide, in one place
           </h1>
-          <p className="mt-5 text-lg leading-relaxed text-[#2b362f]">
+          <p className="mt-5 text-lg leading-relaxed text-[#14120f]">
             Comparisons and guides across health, software and business tools. Researched by people, disclosed on
             every page, and never sold to the highest bidder.
           </p>
@@ -312,12 +312,12 @@ export default function GuidesPage() {
         {/* Category hubs */}
         <div className="mt-10 grid gap-4 sm:grid-cols-2">
           {hubs.map((h) => (
-            <Link key={h.href} href={h.href} className="group rounded-2xl border border-[#0a7c42]/25 bg-[#f5f8f6] p-6 transition-all hover:-translate-y-0.5 hover:shadow-[0_10px_30px_-16px_rgba(0,0,0,0.25)]">
+            <Link key={h.href} href={h.href} className="group rounded-2xl border border-[#007a95]/25 bg-[#f7f4ee] p-6 transition-all hover:-translate-y-0.5 hover:shadow-[0_10px_30px_-16px_rgba(0,0,0,0.25)]">
               <div className="flex items-center justify-between">
-                <ArrowRight className="h-4 w-4 text-[#0a7c42] transition-transform group-hover:translate-x-0.5" />
+                <ArrowRight className="h-4 w-4 text-[#007a95] transition-transform group-hover:translate-x-0.5" />
               </div>
-              <h2 className="mt-3 text-xl font-bold text-[#10251b] group-hover:text-[#0a7c42]">{h.label}</h2>
-              <p className="mt-1.5 text-sm leading-relaxed text-[#3d4b44]">{h.desc}</p>
+              <h2 className="mt-3 text-xl font-bold text-[#14120f] group-hover:text-[#007a95]">{h.label}</h2>
+              <p className="mt-1.5 text-sm leading-relaxed text-[#56504a]">{h.desc}</p>
             </Link>
           ))}
         </div>
@@ -325,17 +325,17 @@ export default function GuidesPage() {
         {/* Sections */}
         <div className="mt-6 space-y-0">
           {sections.map((section) => (
-            <section key={section.label} className="border-t border-[#e5e9e7] py-12">
+            <section key={section.label} className="border-t border-[#ded8cd] py-12">
               <div className="grid gap-8 lg:grid-cols-[220px_1fr] lg:gap-14">
                 <div className="lg:pt-1">
-                  <h2 className="text-xl font-bold text-[#10251b]">{section.label}</h2>
-                  <p className="mt-2 text-[13px] leading-relaxed text-[#627068]">{section.description}</p>
+                  <h2 className="text-xl font-bold text-[#14120f]">{section.label}</h2>
+                  <p className="mt-2 text-[13px] leading-relaxed text-[#56504a]">{section.description}</p>
                 </div>
                 <div className="grid gap-4 sm:grid-cols-2">
                   {section.guides.map((guide) => (
-                    <Link key={guide.href} href={guide.href} className="group rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] p-5 transition-all hover:-translate-y-0.5 hover:border-[#0a7c42]/40">
-                      <h3 className="text-[15px] font-bold text-[#10251b] group-hover:text-[#0a7c42]">{guide.label}</h3>
-                      <p className="mt-1.5 text-sm leading-relaxed text-[#3d4b44]">{guide.desc}</p>
+                    <Link key={guide.href} href={guide.href} className="group rounded-xl border border-[#ded8cd] bg-[#f7f4ee] p-5 transition-all hover:-translate-y-0.5 hover:border-[#007a95]/40">
+                      <h3 className="text-[15px] font-bold text-[#14120f] group-hover:text-[#007a95]">{guide.label}</h3>
+                      <p className="mt-1.5 text-sm leading-relaxed text-[#56504a]">{guide.desc}</p>
                     </Link>
                   ))}
                 </div>
@@ -344,12 +344,12 @@ export default function GuidesPage() {
           ))}
         </div>
 
-        <div className="border-t border-[#e5e9e7] pt-10">
+        <div className="border-t border-[#ded8cd] pt-10">
           <NewsletterSignup variant="band" source="guides" />
           {/* Not the shared AffiliateDisclosure: that says "some links on this page",
               and this index carries none. Same three clauses, same subject, scoped
               to the pages it links to rather than to itself. */}
-          <p className="mt-8 max-w-2xl text-sm leading-relaxed text-[#3d4b44]">
+          <p className="mt-8 max-w-2xl text-sm leading-relaxed text-[#56504a]">
             Some pages linked from this index carry affiliate links. Where they do, Refer Labs may earn a commission at
             no extra cost to you, and it never changes a comparison or a conclusion.
           </p>

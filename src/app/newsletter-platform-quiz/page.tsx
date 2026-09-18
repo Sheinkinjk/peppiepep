@@ -56,21 +56,21 @@ export default function NewsletterPlatformQuizPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <main className="text-[#10251b]">
+      <main className="text-[#14120f]">
         <div className="mx-auto max-w-3xl px-6 sm:px-8 lg:px-12">
-          <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2 pt-8 text-sm text-[#3d4b44]">
-            <Link href="/" className="transition-colors hover:text-[#0a7c42]">Refer Labs</Link>
+          <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2 pt-8 text-sm text-[#56504a]">
+            <Link href="/" className="transition-colors hover:text-[#007a95]">Refer Labs</Link>
             <span aria-hidden="true">/</span>
-            <Link href="/best-newsletter-platform" className="transition-colors hover:text-[#0a7c42]">Newsletter platforms</Link>
+            <Link href="/best-newsletter-platform" className="transition-colors hover:text-[#007a95]">Newsletter platforms</Link>
             <span aria-hidden="true">/</span>
-            <span className="text-[#2b362f]">Which platform should you use</span>
+            <span className="text-[#14120f]">Which platform should you use</span>
           </nav>
 
           <section className="pt-9 pb-7 sm:pt-11">
-            <h1 className="mb-4 max-w-3xl text-3xl font-extrabold leading-[1.08] tracking-tight text-[#10251b] sm:text-4xl lg:text-[2.6rem]">
+            <h1 className="mb-4 max-w-3xl text-3xl font-extrabold leading-[1.08] tracking-tight text-[#14120f] sm:text-4xl lg:text-[2.6rem]">
               Which newsletter platform should you use?
             </h1>
-            <div className="mb-6 max-w-2xl space-y-3 text-sm leading-relaxed text-[#3d4b44] sm:text-base">
+            <div className="mb-6 max-w-2xl space-y-3 text-sm leading-relaxed text-[#56504a] sm:text-base">
               <p>
                 beehiiv, Substack and Kit each win at a different job, growth and monetisation, a simple start, or
                 automation. Answer one quick question and get the one that fits your goal, and why.
@@ -83,36 +83,36 @@ export default function NewsletterPlatformQuizPage() {
             <NewsletterQuiz />
           </section>
 
-          <section className="mt-8 border-t border-[#e5e9e7] py-9">
-            <h2 className="mb-4 text-xl font-extrabold tracking-tight text-[#10251b] sm:text-2xl">Prefer the full picture?</h2>
-            <div className="max-w-2xl space-y-4 text-[15px] leading-relaxed text-[#3d4b44]">
+          <section className="mt-8 border-t border-[#ded8cd] py-9">
+            <h2 className="mb-4 text-xl font-extrabold tracking-tight text-[#14120f] sm:text-2xl">Prefer the full picture?</h2>
+            <div className="max-w-2xl space-y-4 text-[15px] leading-relaxed text-[#56504a]">
               <p>
                 The match points you to the best fit, but if you want the trade-offs yourself, the{" "}
-                <Link href="/best-newsletter-platform" className="text-[#0a7c42] underline underline-offset-2">full roundup</Link>{" "}
+                <Link href="/best-newsletter-platform" className="text-[#007a95] underline underline-offset-2">full roundup</Link>{" "}
                 lays all three out side by side, and the{" "}
-                <Link href="/compare/newsletter-platforms" className="text-[#0a7c42] underline underline-offset-2">category hub</Link>{" "}
+                <Link href="/compare/newsletter-platforms" className="text-[#007a95] underline underline-offset-2">category hub</Link>{" "}
                 sorts them by use-case.
               </p>
             </div>
           </section>
 
-          <section className="border-t border-[#e5e9e7] py-9">
-            <h2 className="mb-6 text-xl font-extrabold tracking-tight text-[#10251b] sm:text-2xl">Frequently asked questions</h2>
+          <section className="border-t border-[#ded8cd] py-9">
+            <h2 className="mb-6 text-xl font-extrabold tracking-tight text-[#14120f] sm:text-2xl">Frequently asked questions</h2>
             <div className="space-y-3">
               {faqs.map((f) => (
-                <details key={f.q} className="group rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] px-5 py-4">
-                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-sm font-semibold text-[#10251b] sm:text-base">
+                <details key={f.q} className="group rounded-xl border border-[#ded8cd] bg-[#f7f4ee] px-5 py-4">
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-sm font-semibold text-[#14120f] sm:text-base">
                     {f.q}
-                    <span aria-hidden="true" className="text-lg leading-none text-[#627068] transition-transform group-open:rotate-45">+</span>
+                    <span aria-hidden="true" className="text-lg leading-none text-[#56504a] transition-transform group-open:rotate-45">+</span>
                   </summary>
-                  <p className="mt-3 text-sm leading-relaxed text-[#3d4b44]">{f.a}</p>
+                  <p className="mt-3 text-sm leading-relaxed text-[#56504a]">{f.a}</p>
                 </details>
               ))}
             </div>
           </section>
 
-          <section className="border-t border-[#e5e9e7] py-8 pb-16">
-            <p className="max-w-2xl text-xs leading-relaxed text-[#627068]">
+          <section className="border-t border-[#ded8cd] py-8 pb-16">
+            <p className="max-w-2xl text-xs leading-relaxed text-[#56504a]">
               This page recommends a platform based on your answer and contains a disclosed affiliate link where we're
               affiliated (beehiiv). We may earn a commission if you sign up through it, at no extra cost to you, and it
               never changes a conclusion. We never sell rankings.

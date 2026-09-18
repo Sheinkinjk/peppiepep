@@ -25,9 +25,9 @@ interface FormState {
 }
 
 const inputClass =
-  "w-full rounded-xl border border-[#e5e9e7] bg-white px-4 py-3 text-sm text-[#10251b] placeholder:text-[#9aa39c] transition-colors focus:border-[#0a7c42] focus:outline-none focus:ring-1 focus:ring-[#0a7c42]";
+  "w-full rounded-xl border border-[#ded8cd] bg-white px-4 py-3 text-sm text-[#14120f] placeholder:text-[#766f66] transition-colors focus:border-[#007a95] focus:outline-none focus:ring-1 focus:ring-[#007a95]";
 
-const labelClass = "block text-xs font-semibold uppercase tracking-[0.14em] text-[#5a665f] mb-2";
+const labelClass = "block text-xs font-semibold uppercase tracking-[0.14em] text-[#56504a] mb-2";
 
 export default function ListingForm() {
   const [form, setForm] = useState<FormState>({
@@ -90,12 +90,12 @@ export default function ListingForm() {
 
   if (status === "success") {
     return (
-      <div className="rounded-2xl border border-[#0a7c42]/30 bg-[#e6f3ec] p-10 text-center">
+      <div className="rounded-2xl border border-[#007a95]/30 bg-[#e4f2f5] p-10 text-center">
         <div className="mb-5 flex justify-center">
-          <CheckCircle2 className="h-10 w-10 text-[#0a7c42]" />
+          <CheckCircle2 className="h-10 w-10 text-[#007a95]" />
         </div>
-        <h3 className="mb-3 text-xl font-extrabold text-[#10251b]">Enquiry received</h3>
-        <p className="mx-auto max-w-sm text-sm leading-relaxed text-[#3d4b44]">
+        <h3 className="mb-3 text-xl font-extrabold text-[#14120f]">Enquiry received</h3>
+        <p className="mx-auto max-w-sm text-sm leading-relaxed text-[#56504a]">
           We&apos;ll review your business against the platform criteria and follow up directly. Expect a response within
           3 to 5 business days.
         </p>
@@ -147,7 +147,7 @@ export default function ListingForm() {
         <textarea required value={form.description} onChange={(e) => update("description", e.target.value)} rows={5}
           placeholder="What you offer, who your customers are, what makes you worth featuring, and any relevant credentials or clinical oversight."
           className={`${inputClass} resize-none`} />
-        <p className="mt-1.5 text-xs text-[#627068]">Be specific. This is what we use to assess your fit for the platform.</p>
+        <p className="mt-1.5 text-xs text-[#56504a]">Be specific. This is what we use to assess your fit for the platform.</p>
       </div>
 
       {errorMsg && <p className="text-sm font-medium text-[#c0392b]">{errorMsg}</p>}

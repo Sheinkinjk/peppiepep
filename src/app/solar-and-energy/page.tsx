@@ -8,6 +8,9 @@ import { STATIONS, fmtAud } from "@/lib/portable-power";
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, SCHEMA_AUTHOR, SCHEMA_PUBLISHER } from "@/lib/seo";
 
 import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
+import { GuideGrid } from "@/components/brand/GuideGrid";
+import { StepTrack } from "@/components/brand/StepTrack";
+import { HubObject, type ObjectKind } from "@/components/home/Objects";
 export const metadata = generateSEOMetadata(seoConfig.solarAndEnergy);
 
 const SLUG = "/solar-and-energy";
@@ -30,12 +33,14 @@ const UPDATED = "2026-08-25";
 const cheapestAny = [...STATIONS].sort((a, b) => a.aud - b.aud)[0];
 
 const GROUPS: {
+  object: ObjectKind;
   heading: string;
   question: string;
   body: string;
   links: { href: string; label: string; desc: string }[];
 }[] = [
   {
+    object: "calculator",
     heading: "Should I get a battery at all?",
     question: "Start here if you have solar, or a big evening bill, and are not sure a battery pays for itself",
     body:
@@ -48,6 +53,7 @@ const GROUPS: {
     ],
   },
   {
+    object: "offer",
     heading: "What the rebates pay",
     question: "Start here if you want to know what you will be charged after incentives",
     body:
@@ -60,6 +66,7 @@ const GROUPS: {
     ],
   },
   {
+    object: "solar",
     heading: "Choosing a battery and an installer",
     question: "Start here if you have decided to install and are comparing quotes",
     body:
@@ -72,6 +79,7 @@ const GROUPS: {
     ],
   },
   {
+    object: "battery",
     heading: "Solar, blackouts and backup",
     question: "Start here if the reason you are looking is an outage, not a bill",
     body:
@@ -149,13 +157,13 @@ export default function Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
 
-      <main id="main-content" className="mx-auto max-w-4xl px-5 pb-20 pt-10 sm:px-8">
-        <h1 className="mt-2 text-3xl font-bold leading-[1.1] tracking-[-0.01em] text-[#10251b] sm:text-[2.6rem]">
-          Solar &amp; energy: <span className="text-[#0a7c42]">what to decide, in the order it matters</span>
+      <main id="main-content" className="mx-auto max-w-6xl px-5 pb-20 pt-10 sm:px-8">
+        <h1 className="mt-2 text-3xl font-bold leading-[1.1] tracking-[-0.01em] text-[#14120f] sm:text-[2.6rem]">
+          Solar &amp; energy: what to decide, in the order it matters
         </h1>
 
         {/* The answer, first. */}
-        <p className="mt-5 max-w-3xl text-lg leading-relaxed text-[#2b362f]">
+        <p className="mt-5 max-w-3xl text-lg leading-relaxed text-[#14120f]">
           Three decisions sit behind almost every energy question we get asked, and they come in order:{" "}
           <strong>does a battery pay back on your usage</strong>, <strong>what the rebates leave you paying</strong>,
           and <strong>who installs it</strong>. If you rent or live in an apartment, none of those are open to you and
@@ -169,25 +177,36 @@ export default function Page() {
         <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
         <EditorialMeta lastUpdated={UPDATED} className="mt-5" />
 
+        {/* The lead's three decisions, in the order it gives them. */}
+        <div style={{ ["--n" as string]: 3 }}>
+          <StepTrack steps={[
+            { title: "Does a battery pay back?", object: "calculator", body: "On your own usage, the gap between what you export for and what you buy at." },
+            { title: "What the rebates leave you paying", object: "offer", body: "The federal discount is applied by the installer at the point of sale, and some states add their own." },
+            { title: "Who installs it", object: "solar", body: "Accreditation, the warranty that is honoured, and whether backup was specified at all." },
+          ]} />
+        </div>
+
         <div className="mt-8 grid gap-4 sm:grid-cols-2">
-          <div className="rounded-2xl border border-[#e5e9e7] bg-white p-6">
-            <p className="text-[15px] font-bold text-[#10251b]">If you own the home</p>
-            <p className="mt-2 text-[15px] leading-relaxed text-[#3d4b44]">
+          <div className="rounded-2xl border border-[#ded8cd] bg-white p-6">
+            <HubObject kind="battery" size={60} className="hy-obj mb-4" />
+            <p className="text-[15px] font-bold text-[#14120f]">If you own the home</p>
+            <p className="mt-2 text-[15px] leading-relaxed text-[#56504a]">
               An installed battery cuts your bill year-round and is the only option the federal rebate applies to.
               Apollo Energy Group sizes it from your real usage, and our readers get $500 off the quote.
             </p>
             <Link
               href={APOLLO_ENERGY_LEAD_HREF}
               data-cta="solar-hub-apollo"
-              className="mt-5 inline-flex items-center gap-2 rounded-full bg-[#0a7c42] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#086536]"
+              className="mt-5 inline-flex items-center gap-2 rounded-full bg-[#007a95] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#003647]"
             >
               Get an Apollo quote, $500 off <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
-            <p className="mt-2 text-[12px] text-[#627068]">Apollo pays us when you enquire. The $500 is yours either way.</p>
+            <p className="mt-2 text-[12px] text-[#56504a]">Apollo pays us when you enquire. The $500 is yours either way.</p>
           </div>
-          <div className="rounded-2xl border border-[#e5e9e7] bg-white p-6">
-            <p className="text-[15px] font-bold text-[#10251b]">If you rent, or cannot install</p>
-            <p className="mt-2 text-[15px] leading-relaxed text-[#3d4b44]">
+          <div className="rounded-2xl border border-[#ded8cd] bg-white p-6">
+            <HubObject kind="power" size={60} className="hy-obj mb-4" />
+            <p className="text-[15px] font-bold text-[#14120f]">If you rent, or cannot install</p>
+            <p className="mt-2 text-[15px] leading-relaxed text-[#56504a]">
               A portable power station needs no electrician, no roof and no landlord conversation. It will hold a fridge
               and devices through an outage, and it moves house with you.
             </p>
@@ -197,55 +216,39 @@ export default function Page() {
 
         {GROUPS.map((g) => (
           <section key={g.heading} className="mt-12">
-            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">{g.heading}</h2>
-            <p className="mt-1.5 text-[14px] font-medium text-[#5a665f]">{g.question}</p>
-            <p className="mt-3 max-w-3xl text-[15px] leading-relaxed text-[#3d4b44]">{g.body}</p>
-            <div className="mt-5 grid gap-3 sm:grid-cols-2">
-              {g.links.map((l) => (
-                <Link
-                  key={l.href}
-                  href={l.href}
-                  className="group rounded-2xl border border-[#e5e9e7] bg-white p-5 transition-colors hover:border-[#0a7c42]"
-                >
-                  <p className="text-[15px] font-bold text-[#10251b] group-hover:text-[#0a7c42]">{l.label}</p>
-                  <p className="mt-1.5 text-sm leading-relaxed text-[#3d4b44]">{l.desc}</p>
-                </Link>
-              ))}
+            <div className="flex items-center gap-4">
+              <HubObject kind={g.object} size={52} className="hy-obj" />
+              <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">{g.heading}</h2>
             </div>
+            <p className="mt-1.5 text-[14px] font-medium text-[#56504a]">{g.question}</p>
+            <p className="mt-3 max-w-3xl text-[15px] leading-relaxed text-[#56504a]">{g.body}</p>
+            <GuideGrid guides={g.links.map((l) => ({ href: l.href, title: l.label, desc: l.desc, kind: l.href === "/apollo-energy-group" ? "offer" as const : undefined }))} />
           </section>
         ))}
 
         <section className="mt-12">
-          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Portable power, priced per watt-hour</h2>
-          <p className="mt-3 max-w-3xl text-[15px] leading-relaxed text-[#3d4b44]">
+          <div className="flex items-center gap-4">
+            <HubObject kind="power" size={52} className="hy-obj" />
+            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Portable power, priced per watt-hour</h2>
+          </div>
+          <p className="mt-3 max-w-3xl text-[15px] leading-relaxed text-[#56504a]">
             The two ranges we hold links for are EcoFlow and Anker SOLIX, and their Australian prices are set out
             together so different capacities can be compared on one number.
           </p>
-          <div className="mt-5 grid gap-3 sm:grid-cols-3">
-            {[
-              { href: "/portable-power-station-australia", label: "What they cost and run", desc: "Prices, runtimes and who each size suits." },
-              { href: "/ecoflow-vs-anker-solix", label: "EcoFlow vs Anker SOLIX", desc: "Both ranges at matching capacities." },
-              { href: "/ecoflow", label: "EcoFlow Australia", desc: "The range from A$299 to A$7,299." },
-            ].map((l) => (
-              <Link
-                key={l.href}
-                href={l.href}
-                className="group rounded-2xl border border-[#e5e9e7] bg-white p-5 transition-colors hover:border-[#0a7c42]"
-              >
-                <p className="text-[15px] font-bold text-[#10251b] group-hover:text-[#0a7c42]">{l.label}</p>
-                <p className="mt-1.5 text-sm leading-relaxed text-[#3d4b44]">{l.desc}</p>
-              </Link>
-            ))}
-          </div>
+          <GuideGrid guides={[
+            { href: "/portable-power-station-australia", title: "What they cost and run", desc: "Prices, runtimes and who each size suits.", kind: "cost" },
+            { href: "/ecoflow-vs-anker-solix", title: "EcoFlow vs Anker SOLIX", desc: "Both ranges at matching capacities." },
+            { href: "/ecoflow", title: "EcoFlow Australia", desc: "The range from A$299 to A$7,299.", kind: "review" },
+          ]} />
         </section>
 
         <section className="mt-12">
-          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Common questions</h2>
-          <dl className="mt-5 divide-y divide-[#eef1ef] rounded-2xl border border-[#e5e9e7] bg-white">
+          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Common questions</h2>
+          <dl className="mt-5 divide-y divide-[#f1ede4] rounded-2xl border border-[#ded8cd] bg-white">
             {faqs.map((f) => (
               <div key={f.q} className="px-5 py-5">
-                <dt className="text-[15px] font-bold text-[#10251b]">{f.q}</dt>
-                <dd className="mt-2 text-sm leading-relaxed text-[#3d4b44]">{f.a}</dd>
+                <dt className="text-[15px] font-bold text-[#14120f]">{f.q}</dt>
+                <dd className="mt-2 text-sm leading-relaxed text-[#56504a]">{f.a}</dd>
               </div>
             ))}
           </dl>

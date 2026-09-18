@@ -118,16 +118,16 @@ export default function ComingSoonPage() {
 
       <main id="main-content">
         <section className="mx-auto max-w-6xl px-5 pt-10 sm:px-8">
-          <nav className="flex items-center gap-2 text-sm text-[#627068]">
-            <Link href="/" className="hover:text-[#0a7c42]">Refer Labs</Link>
+          <nav className="flex items-center gap-2 text-sm text-[#56504a]">
+            <Link href="/" className="hover:text-[#007a95]">Refer Labs</Link>
             <span>/</span>
-            <span className="text-[#2b362f]">Coming soon</span>
+            <span className="text-[#14120f]">Coming soon</span>
           </nav>
           <div className="max-w-2xl">
-            <h1 className="mt-4 text-4xl font-bold leading-[1.06] tracking-[-0.01em] text-[#10251b] sm:text-5xl">
-              What we&apos;re <span className="italic text-[#0a7c42]">building next</span>
+            <h1 className="mt-4 text-4xl font-bold leading-[1.06] tracking-[-0.01em] text-[#14120f] sm:text-5xl">
+              What we&apos;re <span className="italic text-[#007a95]">building next</span>
             </h1>
-            <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#2b362f]">
+            <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#14120f]">
               One category is still underway here. The guides in each are finished and free to read today. What is still
               missing is the provider comparison, which we add only once we have checked someone ourselves, so nothing
               in these sections earns us a commission yet.
@@ -140,7 +140,7 @@ export default function ComingSoonPage() {
             {SECTIONS.map((s) => {
               const Icon = s.icon;
               return (
-                <div key={s.href} className="rounded-2xl border border-[#e5e9e7] bg-white p-7">
+                <div key={s.href} className="rounded-2xl border border-[#ded8cd] bg-white p-7">
                   <div className="flex items-center gap-3">
                     <span
                       className="flex h-10 w-10 items-center justify-center rounded-xl"
@@ -149,21 +149,21 @@ export default function ComingSoonPage() {
                       <Icon className="h-5 w-5" style={{ color: s.accent }} aria-hidden="true" />
                     </span>
                     <div>
-                      <h2 className="text-xl font-bold text-[#10251b]">{s.title}</h2>
-                      <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#0a7c42]">{s.live}</p>
+                      <h2 className="text-xl font-bold text-[#14120f]">{s.title}</h2>
+                      <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#007a95]">{s.live}</p>
                     </div>
                   </div>
-                  <p className="mt-4 text-sm leading-relaxed text-[#3d4b44]">{s.body}</p>
+                  <p className="mt-4 text-sm leading-relaxed text-[#56504a]">{s.body}</p>
                   <ul className="mt-5 space-y-2 text-sm">
                     {s.links.map((l) => (
                       <li key={l.h}>
-                        <Link href={l.h} className="font-semibold text-[#0a7c42] hover:underline">{l.l}</Link>
+                        <Link href={l.h} className="font-semibold text-[#007a95] hover:underline">{l.l}</Link>
                       </li>
                     ))}
                   </ul>
                   <Link
                     href={s.href}
-                    className="mt-6 inline-flex items-center gap-1.5 text-sm font-bold text-[#10251b] hover:text-[#0a7c42]"
+                    className="mt-6 inline-flex items-center gap-1.5 text-sm font-bold text-[#14120f] hover:text-[#007a95]"
                   >
                     All {s.title.toLowerCase()} guides <ArrowRight className="h-4 w-4" aria-hidden="true" />
                   </Link>
@@ -173,16 +173,16 @@ export default function ComingSoonPage() {
           </div>
         </section>
 
-        <section className="border-y border-[#e5e9e7] bg-[#f5f8f6]">
+        <section className="border-y border-[#ded8cd] bg-[#f7f4ee]">
           <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
-            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">
+            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">
               How this works
             </h2>
-            <dl className="mt-7 max-w-3xl divide-y divide-[#e5e9e7]">
+            <dl className="mt-7 max-w-3xl divide-y divide-[#ded8cd]">
               {faqs.map((f) => (
                 <div key={f.q} className="py-5">
-                  <dt className="text-[15px] font-bold text-[#10251b]">{f.q}</dt>
-                  <dd className="mt-2 text-sm leading-relaxed text-[#3d4b44]">{f.a}</dd>
+                  <dt className="text-[15px] font-bold text-[#14120f]">{f.q}</dt>
+                  <dd className="mt-2 text-sm leading-relaxed text-[#56504a]">{f.a}</dd>
                 </div>
               ))}
             </dl>
@@ -191,17 +191,17 @@ export default function ComingSoonPage() {
 
         <section className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
           <div className="max-w-2xl">
-            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">
+            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">
               Categories that are already live
             </h2>
-            <p className="mt-2 text-sm leading-relaxed text-[#3d4b44]">
+            <p className="mt-2 text-sm leading-relaxed text-[#56504a]">
               These have the comparisons and current offers in place.
             </p>
             <ul className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold">
-              <li><Link href="/weight-loss" className="text-[#0a7c42] hover:underline">Weight loss</Link></li>
-              <li><Link href="/hair-loss" className="text-[#0a7c42] hover:underline">Hair loss</Link></li>
-              <li><Link href="/pet-insurance" className="text-[#0a7c42] hover:underline">Pets</Link></li>
-              <li><Link href="/deals" className="text-[#0a7c42] hover:underline">All current offers</Link></li>
+              <li><Link href="/weight-loss" className="text-[#007a95] hover:underline">Weight loss</Link></li>
+              <li><Link href="/hair-loss" className="text-[#007a95] hover:underline">Hair loss</Link></li>
+              <li><Link href="/pet-insurance" className="text-[#007a95] hover:underline">Pets</Link></li>
+              <li><Link href="/deals" className="text-[#007a95] hover:underline">All current offers</Link></li>
             </ul>
           </div>
           <div className="mt-10 max-w-2xl">

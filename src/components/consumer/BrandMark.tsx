@@ -22,7 +22,7 @@ export default function BrandMark({
   const [failed, setFailed] = useState(false);
   if (failed) {
     return (
-      <span className={`flex items-center justify-center font-black text-[#0a7c42] ${className}`} aria-label={alt}>
+      <span className={`flex items-center justify-center font-black text-[#007a95] ${className}`} aria-label={alt}>
         {monogram}
       </span>
     );

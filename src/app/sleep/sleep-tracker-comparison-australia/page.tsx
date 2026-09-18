@@ -44,7 +44,7 @@ export default function Page() {
       sectionHref="/sleep"
       slug="/sleep/sleep-tracker-comparison-australia"
       crumb="Sleep trackers"
-      h1={<>Sleep trackers: <span className="italic text-[#0a7c42]">what the numbers can and cannot tell you</span></>}
+      h1={<>Sleep trackers: <span className="italic text-[#007a95]">what the numbers can and cannot tell you</span></>}
       intro="A tracker gives you a confident-looking number every morning. Knowing how that number is produced changes what it is worth, and changes whether it belongs in a conversation with your GP."
       headline="Sleep trackers in Australia: what they measure"
       description={seoConfig.sleepTrackers.description}
@@ -55,7 +55,7 @@ export default function Page() {
       ]}
     >
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Estimating versus measuring</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Estimating versus measuring</h2>
         <p className="mt-3">
           A wearable does not observe your sleep. It records movement and heart rate, and infers the rest from patterns
           in that data. That is a genuine achievement from a wrist or a ring, and it is a fundamentally different
@@ -65,16 +65,16 @@ export default function Page() {
           The practical consequence: the broad strokes are usually about right, and the granular detail is an estimate
           presented with more confidence than it has earned.
         </p>
-        <div className="mt-4 overflow-x-auto rounded-2xl border border-[#e5e9e7]">
+        <div className="mt-4 overflow-x-auto rounded-2xl border border-[#ded8cd]">
           <table className="w-full min-w-[540px] border-collapse text-left text-sm">
-            <thead className="bg-[#f8faf9] text-[11px] uppercase tracking-[0.1em] text-[#627068]">
+            <thead className="bg-[#f7f4ee] text-[11px] uppercase tracking-[0.1em] text-[#56504a]">
               <tr>
                 <th className="px-4 py-3 font-semibold">&nbsp;</th>
                 <th className="px-4 py-3 font-semibold">Consumer tracker</th>
                 <th className="px-4 py-3 font-semibold">Clinical sleep study</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-[#eef1ef]">
+            <tbody className="divide-y divide-[#f1ede4]">
               {[
                 ["How it works", "Infers from movement and heart rate", "Measures directly with sensors"],
                 ["Time asleep", "Reasonable estimate", "Measured"],
@@ -84,7 +84,7 @@ export default function Page() {
                 ["Best used for", "Noticing your own trends", "Answering a clinical question"],
               ].map(([k, a, b]) => (
                 <tr key={k}>
-                  <td className="px-4 py-3 font-semibold text-[#10251b]">{k}</td>
+                  <td className="px-4 py-3 font-semibold text-[#14120f]">{k}</td>
                   <td className="px-4 py-3">{a}</td>
                   <td className="px-4 py-3">{b}</td>
                 </tr>
@@ -95,7 +95,7 @@ export default function Page() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Where trackers help</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Where trackers help</h2>
         <p className="mt-3">
           The strongest use is the least glamorous one: consistency. Seeing that your bedtime moves by two hours across
           a week, or that disturbance rises on particular nights, is actionable in a way a single score is not.
@@ -108,7 +108,7 @@ export default function Page() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Where they cause harm</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Where they cause harm</h2>
         <p className="mt-3">
           Anxiety about the score is a real effect. If you wake feeling fine, check an app, see a poor number and then
           feel tired, the device has cost you something. If you recognise that pattern in yourself, turning the nightly
@@ -121,13 +121,13 @@ export default function Page() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Before you buy</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Before you buy</h2>
         <ul className="mt-3 list-disc space-y-2 pl-5">
-          <li><strong className="text-[#10251b]">Charging schedule.</strong> A device that charges overnight records nothing.</li>
-          <li><strong className="text-[#10251b]">Subscription cost.</strong> Several platforms put the analysis behind one, so the device price is not the whole price.</li>
-          <li><strong className="text-[#10251b]">Comfort.</strong> An unworn tracker has no accuracy at all.</li>
-          <li><strong className="text-[#10251b]">Data export.</strong> Whether you can get your own data out if you switch.</li>
-          <li><strong className="text-[#10251b]">Health claims.</strong> If a device claims to detect a condition, check whether it appears on the ARTG.</li>
+          <li><strong className="text-[#14120f]">Charging schedule.</strong> A device that charges overnight records nothing.</li>
+          <li><strong className="text-[#14120f]">Subscription cost.</strong> Several platforms put the analysis behind one, so the device price is not the whole price.</li>
+          <li><strong className="text-[#14120f]">Comfort.</strong> An unworn tracker has no accuracy at all.</li>
+          <li><strong className="text-[#14120f]">Data export.</strong> Whether you can get your own data out if you switch.</li>
+          <li><strong className="text-[#14120f]">Health claims.</strong> If a device claims to detect a condition, check whether it appears on the ARTG.</li>
         </ul>
       </section>
     </SectionGuideShell>

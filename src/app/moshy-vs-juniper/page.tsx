@@ -12,8 +12,8 @@ import OfferSchema from "@/components/offers/OfferSchema";
 import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 export const metadata = generateSEOMetadata(seoConfig.moshyVsJuniper);
 
-const CYAN = "#0a7c42";
-const CYAN_LT = "#0a7c42";
+const CYAN = "#007a95";
+const CYAN_LT = "#007a95";
 
 const aff = (url: string) => ({ href: url, target: "_blank" as const, rel: "nofollow sponsored" as const });
 
@@ -119,23 +119,23 @@ export default function MoshyVsJuniperPage() {
 
       <main id="main-content" className="relative mx-auto max-w-3xl px-5 sm:px-8 lg:px-12 pb-24 pt-12 sm:pt-16">
         {/* Breadcrumb */}
-        <nav className="mb-8 flex flex-wrap items-center gap-2 text-sm text-[#3d4b44]">
-          <Link href="/" className="hover:text-[#2b362f] transition-colors">Refer Labs</Link>
+        <nav className="mb-8 flex flex-wrap items-center gap-2 text-sm text-[#56504a]">
+          <Link href="/" className="hover:text-[#14120f] transition-colors">Refer Labs</Link>
           <span>/</span>
-          <Link href="/weight-loss" className="hover:text-[#2b362f] transition-colors">Weight loss</Link>
+          <Link href="/weight-loss" className="hover:text-[#14120f] transition-colors">Weight loss</Link>
           <span>/</span>
-          <span className="text-[#2b362f]">Moshy vs Juniper</span>
+          <span className="text-[#14120f]">Moshy vs Juniper</span>
         </nav>
 
         {/* Hero */}
-        <p className="text-[#627068] text-xs mb-5">Australia · Weight-loss telehealth</p>
+        <p className="text-[#56504a] text-xs mb-5">Australia · Weight-loss telehealth</p>
         <h1 className="text-3xl sm:text-4xl lg:text-[2.7rem] font-black leading-[1.08] tracking-tight mb-4">
           Moshy vs Juniper:{" "}
           <span style={{ color: CYAN_LT }}>which one is built for you?</span>
         </h1>
-        <p className="text-[#3d4b44] text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
+        <p className="text-[#56504a] text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
           Australia&apos;s two most-compared weight-management telehealth platforms answer the same problem in different
-          ways. <strong className="text-[#2b362f]">Moshy runs a lean clinical pathway, Juniper wraps clinical care in a
+          ways. <strong className="text-[#14120f]">Moshy runs a lean clinical pathway, Juniper wraps clinical care in a
           coaching program</strong>. Moshy is gender-neutral and carries REFERRAL120, $120 off a first order; Juniper
           markets primarily to women and gives a free first consultation instead of a code.
         </p>
@@ -149,10 +149,10 @@ export default function MoshyVsJuniperPage() {
         <OfferSchema code="REFERRAL120" />
 
         {/* Answer-first: the buyer's question verbatim as an H2, then a liftable answer. */}
-        <h2 className="text-xl sm:text-2xl font-black text-[#10251b] mb-3">Is Moshy or Juniper better for weight loss in Australia?</h2>
+        <h2 className="text-xl sm:text-2xl font-black text-[#14120f] mb-3">Is Moshy or Juniper better for weight loss in Australia?</h2>
         <div className="rounded-xl border px-6 py-5 mb-10" style={{ borderColor: `${CYAN}40`, background: `${CYAN}0A` }}>
           <p className="text-[11px] font-bold uppercase tracking-[0.18em] mb-2" style={{ color: CYAN_LT }}>Quick Verdict</p>
-          <p className="text-[#2b362f] text-sm sm:text-base leading-relaxed">
+          <p className="text-[#14120f] text-sm sm:text-base leading-relaxed">
             Refer Labs compared Moshy and Juniper in August 2026, and the difference is the style of support. If you
             want a focused, clinically-led pathway with a fast online eligibility check, Moshy is a natural starting
             point and is open to anyone eligible. If you want coaching and accountability wrapped around your care,
@@ -162,27 +162,27 @@ export default function MoshyVsJuniperPage() {
         </div>
 
         <EditorialMeta lastUpdated="2026-08-13" className="mb-6" />
-        <p className="mb-8 rounded-lg border border-[#e5e9e7] bg-[#f5f8f6] px-4 py-3 text-xs leading-relaxed text-[#3d4b44]">
-          <span className="font-semibold text-[#2b362f]">Information only.</span> This page compares two telehealth services and is not medical advice. It does not recommend any treatment or imply suitability for any individual. Suitability for any program is decided by a registered Australian practitioner.
+        <p className="mb-8 rounded-lg border border-[#ded8cd] bg-[#f7f4ee] px-4 py-3 text-xs leading-relaxed text-[#56504a]">
+          <span className="font-semibold text-[#14120f]">Information only.</span> This page compares two telehealth services and is not medical advice. It does not recommend any treatment or imply suitability for any individual. Suitability for any program is decided by a registered Australian practitioner.
         </p>
 
         {/* Comparison table */}
         <h2 className="text-xl font-black mb-4">Moshy vs Juniper at a glance</h2>
-        <div className="overflow-x-auto rounded-xl border border-[#e5e9e7] mb-10">
+        <div className="overflow-x-auto rounded-xl border border-[#ded8cd] mb-10">
           <table className="w-full min-w-[560px] text-sm">
             <thead>
-              <tr className="bg-[#f5f8f6]">
-                <th className="text-left font-semibold text-[#3d4b44] px-4 py-3 w-1/4"></th>
-                <th className="text-left font-black text-[#10251b] px-4 py-3">Moshy</th>
-                <th className="text-left font-black text-[#10251b] px-4 py-3">Juniper</th>
+              <tr className="bg-[#f7f4ee]">
+                <th className="text-left font-semibold text-[#56504a] px-4 py-3 w-1/4"></th>
+                <th className="text-left font-black text-[#14120f] px-4 py-3">Moshy</th>
+                <th className="text-left font-black text-[#14120f] px-4 py-3">Juniper</th>
               </tr>
             </thead>
             <tbody>
               {rows.map((r) => (
-                <tr key={r.label} className="border-t border-[#e5e9e7] align-top">
-                  <td className="px-4 py-3 text-[#3d4b44] font-medium">{r.label}</td>
-                  <td className="px-4 py-3 text-[#2b362f]">{r.moshy}</td>
-                  <td className="px-4 py-3 text-[#2b362f]">{r.juniper}</td>
+                <tr key={r.label} className="border-t border-[#ded8cd] align-top">
+                  <td className="px-4 py-3 text-[#56504a] font-medium">{r.label}</td>
+                  <td className="px-4 py-3 text-[#14120f]">{r.moshy}</td>
+                  <td className="px-4 py-3 text-[#14120f]">{r.juniper}</td>
                 </tr>
               ))}
             </tbody>
@@ -191,10 +191,10 @@ export default function MoshyVsJuniperPage() {
 
         {/* Dual CTA */}
         <div className="grid sm:grid-cols-2 gap-4 mb-12">
-          <div className="rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] p-6">
+          <div className="rounded-xl border border-[#ded8cd] bg-[#f7f4ee] p-6">
             <p className="text-[11px] font-bold uppercase tracking-[0.18em] mb-2" style={{ color: CYAN_LT }}>The clinical pathway</p>
             <h3 className="text-lg font-bold mb-2">Start with Moshy</h3>
-            <p className="text-[#3d4b44] text-sm leading-relaxed mb-4">
+            <p className="text-[#56504a] text-sm leading-relaxed mb-4">
               Fast online eligibility check, practitioner-reviewed, delivered. The discount code is REFERRAL120, applied automatically through this link so there is nothing to type.
             </p>
             <a
@@ -206,16 +206,16 @@ export default function MoshyVsJuniperPage() {
               <ArrowRight className="h-4 w-4" />
             </a>
             <p className="mt-3">
-              <Link href="/moshy-review" className="text-xs text-[#3d4b44] underline decoration-[#cdd5cf] underline-offset-2 hover:text-[#2b362f]">
+              <Link href="/moshy-review" className="text-xs text-[#56504a] underline decoration-[#ded8cd] underline-offset-2 hover:text-[#14120f]">
                 Read our full Moshy review →
               </Link>
             </p>
             <EarningsBalanceNote earnFromAll={["Moshy", "Juniper"]} className="mt-4" />
           </div>
-          <div className="rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] p-6">
-            <p className="text-[11px] font-bold uppercase tracking-[0.18em] mb-2 text-[#3d4b44]">Designed for women</p>
+          <div className="rounded-xl border border-[#ded8cd] bg-[#f7f4ee] p-6">
+            <p className="text-[11px] font-bold uppercase tracking-[0.18em] mb-2 text-[#56504a]">Designed for women</p>
             <h3 className="text-lg font-bold mb-2">Consider Juniper</h3>
-            <p className="text-[#3d4b44] text-sm leading-relaxed mb-4">
+            <p className="text-[#56504a] text-sm leading-relaxed mb-4">
               A structured coaching and community program designed for women, with a free first consultation.
             </p>
             <Link
@@ -227,7 +227,7 @@ export default function MoshyVsJuniperPage() {
               <ArrowRight className="h-4 w-4" />
             </Link>
             <p className="mt-3">
-              <Link href="/weight-loss-telehealth-women-australia" className="text-xs text-[#3d4b44] underline decoration-[#cdd5cf] underline-offset-2 hover:text-[#2b362f]">
+              <Link href="/weight-loss-telehealth-women-australia" className="text-xs text-[#56504a] underline decoration-[#ded8cd] underline-offset-2 hover:text-[#14120f]">
                 Weight-loss telehealth for women &rarr;
               </Link>
             </p>
@@ -237,18 +237,18 @@ export default function MoshyVsJuniperPage() {
         {/* Prose */}
         <section className="space-y-4 mb-10">
           <h2 className="text-xl font-black">The real difference</h2>
-          <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
+          <p className="text-[#56504a] text-sm sm:text-base leading-relaxed">
             The most useful distinction is philosophy. Moshy keeps the experience deliberately lean: complete the
             eligibility questionnaire, have a practitioner review your case, and if appropriate, proceed with a treatment
             plan delivered to your door. For a lot of people who simply want to get started without friction, that focus
             is the appeal.
           </p>
-          <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
+          <p className="text-[#56504a] text-sm sm:text-base leading-relaxed">
             Juniper wraps that clinical care inside a broader program: coaching, habit tracking, and a community, and
             positions weight management as a longer behavioural project rather than a one-off. If accountability
             and structure are what tend to make or break your results, that is a meaningful advantage.
           </p>
-          <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
+          <p className="text-[#56504a] text-sm sm:text-base leading-relaxed">
             Outcomes from weight-management programs depend on clinical
             suitability, adherence, and individual factors far more than on which logo is on the box.
           </p>
@@ -259,19 +259,19 @@ export default function MoshyVsJuniperPage() {
           <h2 className="text-xl font-black mb-5">Moshy vs Juniper, FAQ</h2>
           <div className="space-y-3">
             {faqs.map((f) => (
-              <details key={f.q} className="group rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] px-5 py-4">
-                <summary className="cursor-pointer list-none font-semibold text-[#10251b] text-sm sm:text-base flex items-center justify-between gap-4">
+              <details key={f.q} className="group rounded-xl border border-[#ded8cd] bg-[#f7f4ee] px-5 py-4">
+                <summary className="cursor-pointer list-none font-semibold text-[#14120f] text-sm sm:text-base flex items-center justify-between gap-4">
                   {f.q}
-                  <span className="text-[#627068] group-open:rotate-45 transition-transform text-lg leading-none">+</span>
+                  <span className="text-[#56504a] group-open:rotate-45 transition-transform text-lg leading-none">+</span>
                 </summary>
-                <p className="text-[#3d4b44] text-sm leading-relaxed mt-3">{f.a}</p>
+                <p className="text-[#56504a] text-sm leading-relaxed mt-3">{f.a}</p>
               </details>
             ))}
           </div>
         </section>
 
         {/* Related */}
-        <div className="border-t border-[#e5e9e7] mt-12 pt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm">
+        <div className="border-t border-[#ded8cd] mt-12 pt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm">
           <Link href="/best-weight-loss-telehealth-australia" style={{ color: CYAN }} className="hover:opacity-80">
             Best Weight Loss Telehealth Australia →
           </Link>
@@ -285,7 +285,7 @@ export default function MoshyVsJuniperPage() {
         <FactHistory subject="Moshy" kind="offer_observation" hub="weight-loss" route="/moshy-vs-juniper" />
 
         <AffiliateDisclosure partners={["Moshy", "Juniper"]} className="mt-8" />
-        <p className="text-[#627068] text-xs mt-3 leading-relaxed">
+        <p className="text-[#56504a] text-xs mt-3 leading-relaxed">
           This page does not constitute medical advice. Treatment
           suitability is decided by a registered Australian practitioner. Consult a qualified health professional
           before making health decisions.

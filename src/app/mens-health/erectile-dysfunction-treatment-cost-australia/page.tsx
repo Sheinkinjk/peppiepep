@@ -45,7 +45,7 @@ export default function Page() {
       sectionHref="/mens-health"
       slug="/mens-health/erectile-dysfunction-treatment-cost-australia"
       crumb="Erectile dysfunction costs"
-      h1={<>Erectile dysfunction treatment in Australia: <span className="italic text-[#0a7c42]">what the routes cost</span></>}
+      h1={<>Erectile dysfunction treatment in Australia: <span className="italic text-[#007a95]">what the routes cost</span></>}
       intro="Three routes, priced on three different models, which is why the advertised numbers cannot be compared directly. A GP consultation may be bulk billed or carry a gap with a Medicare rebate against it. A per-consult telehealth service charges each time. A subscription charges every month whether you consult or not. Annualise all three before you choose."
       headline="Erectile dysfunction treatment cost in Australia"
       description={seoConfig.edTreatmentCost.description}
@@ -56,7 +56,7 @@ export default function Page() {
       ]}
     >
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Why this page names no medicines</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Why this page names no medicines</h2>
         <p className="mt-3">
           Advertising a prescription medicine to the public is prohibited in Australia. That restriction is why you will
           not find a product name, a molecule or a brand anywhere here, and why any site that does list them alongside
@@ -70,10 +70,10 @@ export default function Page() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Three routes, priced differently</h2>
-        <div className="mt-4 overflow-x-auto rounded-2xl border border-[#e5e9e7]">
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Three routes, priced differently</h2>
+        <div className="mt-4 overflow-x-auto rounded-2xl border border-[#ded8cd]">
           <table className="w-full min-w-[620px] border-collapse text-left text-sm">
-            <thead className="bg-[#f8faf9] text-[11px] uppercase tracking-[0.1em] text-[#627068]">
+            <thead className="bg-[#f7f4ee] text-[11px] uppercase tracking-[0.1em] text-[#56504a]">
               <tr>
                 <th className="px-4 py-3 font-semibold">Route</th>
                 <th className="px-4 py-3 font-semibold">How you pay</th>
@@ -81,14 +81,14 @@ export default function Page() {
                 <th className="px-4 py-3 font-semibold">Recurring?</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-[#eef1ef]">
+            <tbody className="divide-y divide-[#f1ede4]">
               {[
                 ["Your regular GP", "Per appointment, bulk-billed or with a gap", "Rebate on the consult", "Only when you book"],
                 ["Online clinic, subscription", "Monthly, bundling consult, supply and support", "Usually none", "Yes, every month"],
                 ["Online clinic, per consult", "Per consultation, supply billed separately", "Varies by service", "Only when you consult"],
               ].map((r) => (
                 <tr key={r[0]}>
-                  <td className="px-4 py-3 font-semibold text-[#10251b]">{r[0]}</td>
+                  <td className="px-4 py-3 font-semibold text-[#14120f]">{r[0]}</td>
                   <td className="px-4 py-3">{r[1]}</td>
                   <td className="px-4 py-3">{r[2]}</td>
                   <td className="px-4 py-3">{r[3]}</td>
@@ -97,7 +97,7 @@ export default function Page() {
             </tbody>
           </table>
         </div>
-        <p className="mt-3 text-xs text-[#5a665f]">
+        <p className="mt-3 text-xs text-[#56504a]">
           Structure rather than a quote. We state no consult fee in dollars: practitioner fees are set individually and
           Medicare rebate amounts are revised, so a figure published here would go stale without notice. Ask the
           provider for its fee and the item number, then check the current rebate on MBS Online.
@@ -105,7 +105,7 @@ export default function Page() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">The comparison people get wrong</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">The comparison people get wrong</h2>
         <p className="mt-3">
           A monthly subscription figure and a one-off consult fee are not comparable numbers, and they are routinely
           placed side by side as though they were. The subscription continues in months when you would not have booked
@@ -116,9 +116,9 @@ export default function Page() {
           is a very different annual figure from a subscription running every month, and which comes out ahead depends
           on how often you would consult.
         </p>
-        <div className="mt-4 rounded-2xl border border-[#0a7c42]/25 bg-[#f5f8f6] p-6">
-          <p className="text-[15px] font-semibold text-[#10251b]">The question to ask each provider</p>
-          <p className="mt-2 text-sm text-[#3d4b44]">
+        <div className="mt-4 rounded-2xl border border-[#007a95]/25 bg-[#f7f4ee] p-6">
+          <p className="text-[15px] font-semibold text-[#14120f]">The question to ask each provider</p>
+          <p className="mt-2 text-sm text-[#56504a]">
             &ldquo;What will I have paid you twelve months from now, including everything dispensed, if my situation
             does not change?&rdquo; A service that cannot answer that plainly is one whose pricing you do not yet
             understand.
@@ -127,7 +127,7 @@ export default function Page() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Why a GP is often the better first step</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Why a GP is often the better first step</h2>
         <p className="mt-3">
           Beyond cost, there is a clinical reason. Erectile dysfunction can be an early indicator of other health
           issues, including cardiovascular ones, and a GP who knows your history is positioned to consider that. A

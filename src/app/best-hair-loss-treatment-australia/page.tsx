@@ -111,8 +111,8 @@ const webPageSchema = {
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
-const CYAN    = "#0a7c42";
-const CYAN_LT = "#0a7c42";
+const CYAN    = "#007a95";
+const CYAN_LT = "#007a95";
 
 
 const options = [
@@ -141,7 +141,7 @@ const options = [
   {
     name: "Dense Hair Experts",
     badge: "Topical Support",
-    badgeColor: "#0a7c42",
+    badgeColor: "#007a95",
     href: DENSE_URL,
     internalHref: "/dense",
     category: "Topical Hair Care",
@@ -162,7 +162,7 @@ const options = [
   {
     name: "GP / Specialist Referral",
     badge: "Full Clinical",
-    badgeColor: "#0a7c42",
+    badgeColor: "#007a95",
     href: "#faq",
     internalHref: null,
     category: "In-Person or Telehealth GP",
@@ -221,22 +221,22 @@ export default function BestHairLossTreatmentAustraliaPage() {
       <main id="main-content" className="relative mx-auto max-w-5xl px-5 sm:px-8 lg:px-12 pb-24 pt-14 sm:pt-18">
 
         {/* Breadcrumb */}
-        <nav className="mb-10 flex items-center gap-2 text-sm text-[#3d4b44]">
-          <Link href="/" className="hover:text-[#2b362f] transition-colors">Refer Labs</Link>
+        <nav className="mb-10 flex items-center gap-2 text-sm text-[#56504a]">
+          <Link href="/" className="hover:text-[#14120f] transition-colors">Refer Labs</Link>
           <span>/</span>
-          <Link href="/guides" className="hover:text-[#2b362f] transition-colors">Guides</Link>
+          <Link href="/guides" className="hover:text-[#14120f] transition-colors">Guides</Link>
           <span>/</span>
-          <span className="text-[#2b362f]">Best Hair Loss Treatment Australia 2026</span>
+          <span className="text-[#14120f]">Best Hair Loss Treatment Australia 2026</span>
         </nav>
 
 
         {/* Hero */}
         <div className="mb-16 sm:mb-20 max-w-3xl">
-          <h1 className="text-4xl sm:text-5xl lg:text-[3.25rem] font-black leading-[1.07] text-[#10251b] mb-5 tracking-tight">
+          <h1 className="text-4xl sm:text-5xl lg:text-[3.25rem] font-black leading-[1.07] text-[#14120f] mb-5 tracking-tight">
             Best Hair Loss Treatment Australia 2026:{" "}
             <span style={{ color: CYAN_LT }}>Mosh vs Dense vs Telehealth</span>
           </h1>
-          <p className="text-[#3d4b44] text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
+          <p className="text-[#56504a] text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
             A practical comparison of the most accessible hair loss options for Australians, prescription telehealth, topical products, and when to see a specialist.
           </p>
           {/* Below the lead. The first paragraph after the h1 is the answer;
@@ -248,7 +248,7 @@ export default function BestHairLossTreatmentAustraliaPage() {
           </CodeAnswer>
           <OfferSchema code="REFERAL55" />
 
-          <p className="text-[#627068] text-xs mb-8">
+          <p className="text-[#56504a] text-xs mb-8">
             This does not constitute medical advice, consult a registered healthcare professional before starting any hair loss treatment.
           </p>
           <div className="flex flex-wrap gap-3">
@@ -262,7 +262,7 @@ export default function BestHairLossTreatmentAustraliaPage() {
             </a>
             <a
               {...aff(DENSE_URL)}
-              className="inline-flex items-center gap-2 rounded-xl border px-6 py-3 text-sm font-semibold text-[#2b362f] transition-all hover:text-[#10251b]"
+              className="inline-flex items-center gap-2 rounded-xl border px-6 py-3 text-sm font-semibold text-[#14120f] transition-all hover:text-[#14120f]"
               style={{ borderColor: `${CYAN}30` }}
             >
               Shop Dense Hair Experts
@@ -278,65 +278,65 @@ export default function BestHairLossTreatmentAustraliaPage() {
         </div>
 
         {/* Answer-first (GEO): the buyer's question verbatim as an H2 above the verdict. */}
-        <h2 className="max-w-3xl text-xl sm:text-2xl font-black text-[#10251b] mb-4">
+        <h2 className="max-w-3xl text-xl sm:text-2xl font-black text-[#14120f] mb-4">
           What is the best hair-loss treatment in Australia?
         </h2>
         <div className="mb-16 sm:mb-20 max-w-3xl rounded-xl border px-6 py-5" style={{ borderColor: `${CYAN}40`, background: `${CYAN}0A` }}>
           <p className="text-[10px] font-bold uppercase tracking-[0.18em] mb-2" style={{ color: CYAN_LT }}>
             Quick Verdict
           </p>
-          <p className="text-[#2b362f] text-sm sm:text-base leading-relaxed">
+          <p className="text-[#14120f] text-sm sm:text-base leading-relaxed">
             Refer Labs' August 2026 comparison of Australian men's hair-loss services found Mosh the most accessible telehealth option, online consultation, practitioner review, and delivery, with the plan and price shown before you commit. Dense Hair Experts is a topical, non-prescription complement for density and scalp health. For significant or rapid hair loss, see a specialist. This is not medical advice.
           </p>
         </div>
 
         {/* How the plans compare (no specific prices; shown on each provider's site before you commit) */}
         <section id="cost" className="mb-16 sm:mb-20 max-w-3xl">
-          <h2 className="text-xl sm:text-2xl font-black text-[#10251b] mb-3">How the plans compare</h2>
-          <p className="text-sm text-[#3d4b44] leading-relaxed mb-5 max-w-2xl">
+          <h2 className="text-xl sm:text-2xl font-black text-[#14120f] mb-3">How the plans compare</h2>
+          <p className="text-sm text-[#56504a] leading-relaxed mb-5 max-w-2xl">
             How each provider structures its plans. We do not quote specific prices here because they are shown on each provider&apos;s own site before you commit and can change; your actual price depends on the treatment prescribed after consultation.
           </p>
-          <div className="overflow-x-auto rounded-xl border border-[#e5e9e7]">
+          <div className="overflow-x-auto rounded-xl border border-[#ded8cd]">
             <table className="w-full text-sm">
               <thead>
-                <tr className="bg-[#f5f8f6] text-left">
-                  <th className="px-4 py-3 font-bold text-[#10251b]">Provider &amp; plan</th>
-                  <th className="px-4 py-3 font-bold text-[#10251b]">What it&apos;s for</th>
+                <tr className="bg-[#f7f4ee] text-left">
+                  <th className="px-4 py-3 font-bold text-[#14120f]">Provider &amp; plan</th>
+                  <th className="px-4 py-3 font-bold text-[#14120f]">What it&apos;s for</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-[#e5e9e7]">
+              <tbody className="divide-y divide-[#ded8cd]">
                 <tr>
-                  <td className="px-4 py-3 text-[#2b362f]">Mosh, prevention only</td>
-                  <td className="px-4 py-3 text-[#2b362f]">Entry tier, for early thinning or a receding hairline</td>
+                  <td className="px-4 py-3 text-[#14120f]">Mosh, prevention only</td>
+                  <td className="px-4 py-3 text-[#14120f]">Entry tier, for early thinning or a receding hairline</td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-3 text-[#2b362f]">Mosh, prevention &amp; regrowth</td>
-                  <td className="px-4 py-3 text-[#2b362f]">The combination approach, Mosh&apos;s most popular</td>
+                  <td className="px-4 py-3 text-[#14120f]">Mosh, prevention &amp; regrowth</td>
+                  <td className="px-4 py-3 text-[#14120f]">The combination approach, Mosh&apos;s most popular</td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-3 text-[#2b362f]">Mosh, hair loss clinic plan</td>
-                  <td className="px-4 py-3 text-[#2b362f]">For more established hair loss</td>
+                  <td className="px-4 py-3 text-[#14120f]">Mosh, hair loss clinic plan</td>
+                  <td className="px-4 py-3 text-[#14120f]">For more established hair loss</td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <p className="text-xs text-[#5a665f] mt-3">
+          <p className="text-xs text-[#56504a] mt-3">
             Sources: getmosh.com.au/hair-loss as published on 21 July 2026.
           </p>
         </section>
 
                   {/* Structured offer table */}
-          <section className="border-t border-[#0a7c42]/10 py-12 sm:py-14">
-            <h2 className="text-xl sm:text-2xl font-black text-[#10251b] mb-5">The offer at a glance</h2>
+          <section className="border-t border-[#007a95]/10 py-12 sm:py-14">
+            <h2 className="text-xl sm:text-2xl font-black text-[#14120f] mb-5">The offer at a glance</h2>
             <div className="max-w-2xl">
               <OffersTable deals={DEALS.filter((d) => d.brand === "Mosh")} caption="Mosh hair-loss offer, verified" />
             </div>
           </section>
 
 {/* Overview */}
-        <section id="comparison" className="border-t border-[#0a7c42]/10 py-12 sm:py-14">
-          <h2 className="text-xl sm:text-2xl font-black text-[#10251b] mb-5">Clinical vs topical</h2>
-          <div className="space-y-4 text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl">
+        <section id="comparison" className="border-t border-[#007a95]/10 py-12 sm:py-14">
+          <h2 className="text-xl sm:text-2xl font-black text-[#14120f] mb-5">Clinical vs topical</h2>
+          <div className="space-y-4 text-[#56504a] text-sm sm:text-base leading-relaxed max-w-2xl">
             <p>
               Hair loss treatment in Australia splits into two broad approaches: prescription medicines that address the underlying cause, and topical products that support scalp health and density. The right choice depends on the type, severity, and stage of hair loss.
             </p>
@@ -350,24 +350,24 @@ export default function BestHairLossTreatmentAustraliaPage() {
         </section>
 
         {/* Option Cards */}
-        <section className="border-t border-[#0a7c42]/10 py-12 sm:py-14 space-y-8">
+        <section className="border-t border-[#007a95]/10 py-12 sm:py-14 space-y-8">
           {options.map((opt) => (
             <div
               key={opt.name}
-              className="rounded-2xl border border-[#e5e9e7] bg-[#f5f8f6] p-7 sm:p-8"
+              className="rounded-2xl border border-[#ded8cd] bg-[#f7f4ee] p-7 sm:p-8"
             >
               <div className="flex flex-wrap items-start justify-between gap-4 mb-5">
                 <div>
                   <div className="flex items-center gap-3 mb-1">
-                    <h3 className="text-xl font-black text-[#10251b]">{opt.name}</h3>
+                    <h3 className="text-xl font-black text-[#14120f]">{opt.name}</h3>
                   </div>
-                  <p className="text-[#627068] text-xs mb-1">{opt.category}</p>
-                  <p className="text-[#3d4b44] text-sm">{opt.tagline}</p>
+                  <p className="text-[#56504a] text-xs mb-1">{opt.category}</p>
+                  <p className="text-[#56504a] text-sm">{opt.tagline}</p>
                 </div>
                 {opt.internalHref && (
                   <Link
                     href={opt.internalHref}
-                    className="inline-flex items-center gap-1.5 rounded-xl px-4 py-2 text-xs font-semibold text-[#10251b] transition-all hover:opacity-90"
+                    className="inline-flex items-center gap-1.5 rounded-xl px-4 py-2 text-xs font-semibold text-[#14120f] transition-all hover:opacity-90"
                     style={{ background: CYAN }}
                   >
                     View {opt.name}
@@ -381,7 +381,7 @@ export default function BestHairLossTreatmentAustraliaPage() {
                   <p className="text-xs font-semibold uppercase tracking-widest mb-3" style={{ color: CYAN_LT }}>Pros</p>
                   <ul className="space-y-2">
                     {opt.pros.map((item) => (
-                      <li key={item} className="flex items-start gap-2.5 text-sm text-[#2b362f]">
+                      <li key={item} className="flex items-start gap-2.5 text-sm text-[#14120f]">
                         <CheckCircle2 className="h-4 w-4 flex-shrink-0 mt-0.5" style={{ color: CYAN_LT }} />
                         {item}
                       </li>
@@ -392,7 +392,7 @@ export default function BestHairLossTreatmentAustraliaPage() {
                   <p className="text-xs font-semibold uppercase tracking-widest text-red-400/70 mb-3">Cons</p>
                   <ul className="space-y-2">
                     {opt.cons.map((item) => (
-                      <li key={item} className="flex items-start gap-2.5 text-sm text-[#2b362f]">
+                      <li key={item} className="flex items-start gap-2.5 text-sm text-[#14120f]">
                         <XCircle className="h-4 w-4 flex-shrink-0 mt-0.5 text-red-400/50" />
                         {item}
                       </li>
@@ -405,13 +405,13 @@ export default function BestHairLossTreatmentAustraliaPage() {
         </section>
 
         {/* Feature Table */}
-        <section id="feature-table" className="border-t border-[#0a7c42]/10 py-12 sm:py-14">
-          <h2 className="text-xl sm:text-2xl font-black text-[#10251b] mb-8">Side-by-Side Comparison</h2>
+        <section id="feature-table" className="border-t border-[#007a95]/10 py-12 sm:py-14">
+          <h2 className="text-xl sm:text-2xl font-black text-[#14120f] mb-8">Side-by-Side Comparison</h2>
           <div className="overflow-x-auto -mx-5 px-5 sm:mx-0 sm:px-0">
             <table className="w-full min-w-[580px] text-sm border-collapse">
               <thead>
                 <tr>
-                  <th className="text-left pb-3 pr-4 text-[11px] font-semibold uppercase tracking-widest text-[#627068]">Feature</th>
+                  <th className="text-left pb-3 pr-4 text-[11px] font-semibold uppercase tracking-widest text-[#56504a]">Feature</th>
                   {["Mosh", "Dense", "GP / Specialist"].map((col) => (
                     <th key={col} className="text-left pb-3 pr-4 text-[11px] font-semibold uppercase tracking-widest" style={{ color: col === "Mosh" ? CYAN_LT : "rgba(255,255,255,0.3)" }}>
                       {col}
@@ -421,11 +421,11 @@ export default function BestHairLossTreatmentAustraliaPage() {
               </thead>
               <tbody>
                 {features.map((row, i) => (
-                  <tr key={row.label} className={i % 2 === 0 ? "bg-[#f5f8f6]" : ""}>
-                    <td className="py-3 pr-4 text-[#3d4b44] font-medium">{row.label}</td>
-                    <td className="py-3 pr-4 text-[#2b362f] font-medium">{row.mosh}</td>
-                    <td className="py-3 pr-4 text-[#3d4b44]">{row.dense}</td>
-                    <td className="py-3 pr-4 text-[#3d4b44]">{row.gp}</td>
+                  <tr key={row.label} className={i % 2 === 0 ? "bg-[#f7f4ee]" : ""}>
+                    <td className="py-3 pr-4 text-[#56504a] font-medium">{row.label}</td>
+                    <td className="py-3 pr-4 text-[#14120f] font-medium">{row.mosh}</td>
+                    <td className="py-3 pr-4 text-[#56504a]">{row.dense}</td>
+                    <td className="py-3 pr-4 text-[#56504a]">{row.gp}</td>
                   </tr>
                 ))}
               </tbody>
@@ -434,17 +434,17 @@ export default function BestHairLossTreatmentAustraliaPage() {
         </section>
 
         {/* Disclaimer */}
-        <section className="border-t border-[#0a7c42]/10 py-10">
-          <div className="rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] p-6 max-w-2xl">
-            <p className="text-xs text-[#627068] leading-relaxed">
-              <strong className="text-[#3d4b44]">Medical disclaimer:</strong> This page is for informational purposes only and does not constitute medical advice. Hair loss has multiple causes and the appropriate treatment varies by individual. Consult a registered Australian healthcare professional before starting any hair loss treatment, particularly prescription treatments. Individual results vary.
+        <section className="border-t border-[#007a95]/10 py-10">
+          <div className="rounded-xl border border-[#ded8cd] bg-[#f7f4ee] p-6 max-w-2xl">
+            <p className="text-xs text-[#56504a] leading-relaxed">
+              <strong className="text-[#56504a]">Medical disclaimer:</strong> This page is for informational purposes only and does not constitute medical advice. Hair loss has multiple causes and the appropriate treatment varies by individual. Consult a registered Australian healthcare professional before starting any hair loss treatment, particularly prescription treatments. Individual results vary.
             </p>
           </div>
         </section>
 
         {/* FAQ */}
-        <section id="faq" className="border-t border-[#0a7c42]/10 py-12 sm:py-14">
-          <h2 className="text-xl sm:text-2xl font-black text-[#10251b] mb-8">Frequently Asked Questions</h2>
+        <section id="faq" className="border-t border-[#007a95]/10 py-12 sm:py-14">
+          <h2 className="text-xl sm:text-2xl font-black text-[#14120f] mb-8">Frequently Asked Questions</h2>
           <div className="space-y-6 max-w-2xl">
             {[
               {
@@ -468,21 +468,21 @@ export default function BestHairLossTreatmentAustraliaPage() {
                 a: "Yes. Prescription hair-loss treatment can be prescribed through online telehealth consultations. Platforms like Mosh allow you to complete a questionnaire and photo assessment reviewed by a registered Australian doctor. A practitioner consultation, in person or online, is required before starting any prescription treatment.",
               },
             ].map(({ q, a }, i) => (
-              <div key={i} className="border-b border-[#e5e9e7] pb-6">
-                <h3 className="text-sm font-bold text-[#10251b] mb-2">{q}</h3>
-                <p className="text-sm text-[#3d4b44] leading-relaxed">{a}</p>
+              <div key={i} className="border-b border-[#ded8cd] pb-6">
+                <h3 className="text-sm font-bold text-[#14120f] mb-2">{q}</h3>
+                <p className="text-sm text-[#56504a] leading-relaxed">{a}</p>
               </div>
             ))}
           </div>
         </section>
 
         {/* Bottom CTA */}
-        <section className="border-t border-[#0a7c42]/10 pt-14 sm:pt-16 text-center">
-          <h2 className="text-2xl sm:text-3xl font-black text-[#10251b] mb-3">
+        <section className="border-t border-[#007a95]/10 pt-14 sm:pt-16 text-center">
+          <h2 className="text-2xl sm:text-3xl font-black text-[#14120f] mb-3">
             Start With a{" "}
             <span style={{ color: CYAN_LT }}>Clinical Assessment.</span>
           </h2>
-          <p className="text-[#3d4b44] text-sm max-w-md mx-auto mb-7 leading-relaxed">
+          <p className="text-[#56504a] text-sm max-w-md mx-auto mb-7 leading-relaxed">
             Access online consultation and prescription for hair loss treatment in Australia through Mosh.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
@@ -496,7 +496,7 @@ export default function BestHairLossTreatmentAustraliaPage() {
             </a>
             <a
               {...aff(DENSE_URL)}
-              className="inline-flex items-center justify-center gap-2 rounded-xl border px-7 py-3.5 text-sm font-semibold text-[#2b362f] transition-all hover:text-[#10251b]"
+              className="inline-flex items-center justify-center gap-2 rounded-xl border px-7 py-3.5 text-sm font-semibold text-[#14120f] transition-all hover:text-[#14120f]"
               style={{ borderColor: `${CYAN}30` }}
             >
               Shop Dense Hair Experts
@@ -505,7 +505,7 @@ export default function BestHairLossTreatmentAustraliaPage() {
 
           {/* Related guides */}
           <div className="mt-14 text-left max-w-2xl mx-auto">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#627068] mb-5">Related Guides</p>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#56504a] mb-5">Related Guides</p>
             <div className="grid sm:grid-cols-2 gap-3">
               {[
                 { href: "/mosh-vs-dense", label: "Mosh vs Dense: Hair Loss Compared" },
@@ -517,7 +517,7 @@ export default function BestHairLossTreatmentAustraliaPage() {
                 <Link
                   key={href}
                   href={href}
-                  className="flex items-center gap-2 text-sm text-[#3d4b44] hover:text-[#2b362f] transition-colors"
+                  className="flex items-center gap-2 text-sm text-[#56504a] hover:text-[#14120f] transition-colors"
                 >
                   <ArrowRight className="h-3.5 w-3.5 flex-shrink-0" style={{ color: CYAN }} />
                   {label}

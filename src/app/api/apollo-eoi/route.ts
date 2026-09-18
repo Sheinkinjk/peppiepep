@@ -59,7 +59,7 @@ export async function POST(req: NextRequest) {
 
   const operatorHtml = `
     <div style="font-family:system-ui,sans-serif;max-width:560px">
-      <h2 style="color:#0a7c42;margin:0 0 4px">New Apollo Energy EOI</h2>
+      <h2 style="color:#007a95;margin:0 0 4px">New Apollo Energy EOI</h2>
       <p style="color:#6b7280;margin:0 0 16px">Home battery interest via ${esc(d.source_page || "/apollo-energy-group-eoi")}. Contact within 2 business days.</p>
       <table style="border-collapse:collapse;font-size:14px">
         ${row("Name", d.full_name)}${row("Email", d.email)}${row("Phone", d.phone)}${row("Postcode", d.postcode)}

@@ -70,16 +70,16 @@ export default function CostGuide() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
 
       <main className="mx-auto max-w-3xl px-5 py-10 sm:px-8 sm:py-14">
-        <nav className="text-xs text-[#5a665f]">
-          <Link href="/business-loans" className="hover:text-[#0a7c42]">Business loans</Link>
+        <nav className="text-xs text-[#56504a]">
+          <Link href="/business-loans" className="hover:text-[#007a95]">Business loans</Link>
           <span className="px-1.5">/</span>
-          <span className="text-[#3d4b44]">What a business loan actually costs</span>
+          <span className="text-[#56504a]">What a business loan actually costs</span>
         </nav>
 
-        <h1 className="mt-3 text-4xl font-extrabold leading-[1.1] text-[#10251b]">What a business loan actually costs</h1>
+        <h1 className="mt-3 text-4xl font-extrabold leading-[1.1] text-[#14120f]">What a business loan actually costs</h1>
 
         {/* First 100 words: direct answer for AEO/GEO. */}
-        <p className="mt-4 text-lg leading-relaxed text-[#3d4b44]">
+        <p className="mt-4 text-lg leading-relaxed text-[#56504a]">
           The headline rate on a business loan rarely tells you the real cost. In Australia, business finance is priced
           three main ways: a nominal interest rate on a reducing balance, a fixed factor rate on the original amount, or a
           flat fee structure. On top of that sit establishment fees, ongoing fees and early-repayment fees. To compare two
@@ -89,19 +89,19 @@ export default function CostGuide() {
 
         <Section h="The three ways business loans are priced">
           <p>
-            <strong className="text-[#10251b]">Nominal interest rate.</strong> An annual percentage charged on your
+            <strong className="text-[#14120f]">Nominal interest rate.</strong> An annual percentage charged on your
             outstanding balance. As you repay principal, the interest portion shrinks. This is how most bank term loans and
             many online lenders quote.
           </p>
           <p>
-            <strong className="text-[#10251b]">Factor rate.</strong> A multiplier on the amount borrowed. A $50,000 loan at
+            <strong className="text-[#14120f]">Factor rate.</strong> A multiplier on the amount borrowed. A $50,000 loan at
             a factor of 1.2 means you repay $60,000 in total, no matter how quickly you clear it. Factor rates are common on
             short-term and merchant cash advance products, and they can translate to a very high annualised cost: our{" "}
-            <Link href="/true-cost-of-business-loans-australia" className="font-semibold text-[#0a7c42] underline">factor-rate analysis</Link>{" "}
+            <Link href="/true-cost-of-business-loans-australia" className="font-semibold text-[#007a95] underline">factor-rate analysis</Link>{" "}
             shows a 1.2 factor rate works out to about 35% a year over 12 months, not 20%.
           </p>
           <p>
-            <strong className="text-[#10251b]">Flat or fixed fee.</strong> A set dollar cost for the finance, sometimes
+            <strong className="text-[#14120f]">Flat or fixed fee.</strong> A set dollar cost for the finance, sometimes
             framed as &ldquo;cents in the dollar&rdquo;. As with factor rates, converting it to an annual figure is the only
             way to compare it against a normal rate.
           </p>
@@ -111,30 +111,30 @@ export default function CostGuide() {
           <p>
             Say two lenders both offer you $50,000 for 12 months.
           </p>
-          <div className="my-4 overflow-x-auto rounded-2xl border border-[#e5e9e7]">
+          <div className="my-4 overflow-x-auto rounded-2xl border border-[#ded8cd]">
             <table className="w-full border-collapse text-left text-sm">
               <thead>
-                <tr className="bg-[#f8faf9] text-[11px] font-bold uppercase tracking-[0.08em] text-[#5a665f]">
+                <tr className="bg-[#f7f4ee] text-[11px] font-bold uppercase tracking-[0.08em] text-[#56504a]">
                   <th scope="col" className="px-4 py-3">Lender</th>
                   <th scope="col" className="px-4 py-3">How it&apos;s quoted</th>
                   <th scope="col" className="px-4 py-3">Total repaid</th>
                 </tr>
               </thead>
-              <tbody className="text-[#3d4b44]">
-                <tr className="border-t border-[#eef1ef]">
-                  <th scope="row" className="px-4 py-3 font-semibold text-[#10251b]">Lender A</th>
+              <tbody className="text-[#56504a]">
+                <tr className="border-t border-[#f1ede4]">
+                  <th scope="row" className="px-4 py-3 font-semibold text-[#14120f]">Lender A</th>
                   <td className="px-4 py-3">18% p.a. nominal + $500 establishment fee</td>
                   <td className="px-4 py-3 tabular-nums">≈ $55,500</td>
                 </tr>
-                <tr className="border-t border-[#eef1ef]">
-                  <th scope="row" className="px-4 py-3 font-semibold text-[#10251b]">Lender B</th>
+                <tr className="border-t border-[#f1ede4]">
+                  <th scope="row" className="px-4 py-3 font-semibold text-[#14120f]">Lender B</th>
                   <td className="px-4 py-3">1.15 factor rate, &ldquo;no interest&rdquo;</td>
                   <td className="px-4 py-3 tabular-nums">$57,500</td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <p className="text-sm text-[#5a665f]">
+          <p className="text-sm text-[#56504a]">
             Illustrative figures only. Lender B&apos;s &ldquo;no interest&rdquo; pitch costs about $2,000 more here, even
             though it never quotes a percentage. The dollar total exposes the difference the headline hides.
           </p>
@@ -158,30 +158,30 @@ export default function CostGuide() {
               "Direct-debit and dishonour fees",
             ].map((x) => (
               <li key={x} className="flex gap-2.5 leading-relaxed">
-                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#0a7c42]" aria-hidden="true" />{x}
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#007a95]" aria-hidden="true" />{x}
               </li>
             ))}
           </ul>
         </Section>
 
-        <div className="mt-10 rounded-2xl border p-6" style={{ borderColor: "#0a7c4240", background: "#0a7c4208" }}>
-          <h2 className="text-xl font-extrabold text-[#10251b]">Compare on the dollar total, then enquire</h2>
-          <p className="mt-2 text-sm leading-relaxed text-[#3d4b44]">
+        <div className="mt-10 rounded-2xl border p-6" style={{ borderColor: "#007a9540", background: "#007a9508" }}>
+          <h2 className="text-xl font-extrabold text-[#14120f]">Compare on the dollar total, then enquire</h2>
+          <p className="mt-2 text-sm leading-relaxed text-[#56504a]">
             Use the calculator to sanity-check a quote, then let a person walk you through the lenders that fit.
           </p>
           <div className="mt-4 flex flex-wrap gap-3">
-            <Link href="/business-loan-calculator" className="inline-flex items-center rounded-xl border border-[#0a7c42] px-5 py-3 text-sm font-bold text-[#0a7c42] hover:bg-[#0a7c4210]">Open the calculator</Link>
-            <Link href="/business-loans#enquire" className="inline-flex items-center rounded-xl px-5 py-3 text-sm font-bold text-white shadow-md hover:-translate-y-0.5" style={{ background: "#0a7c42", boxShadow: "0 8px 24px #0a7c4225" }}>Check my options</Link>
+            <Link href="/business-loan-calculator" className="inline-flex items-center rounded-xl border border-[#007a95] px-5 py-3 text-sm font-bold text-[#007a95] hover:bg-[#007a9510]">Open the calculator</Link>
+            <Link href="/business-loans#enquire" className="inline-flex items-center rounded-xl px-5 py-3 text-sm font-bold text-white shadow-md hover:-translate-y-0.5" style={{ background: "#007a95", boxShadow: "0 8px 24px #007a9525" }}>Check my options</Link>
           </div>
         </div>
 
         <section className="mt-14">
-          <h2 className="text-2xl font-extrabold text-[#10251b]">Common questions</h2>
-          <dl className="mt-6 divide-y divide-[#eef1ef] border-t border-[#eef1ef]">
+          <h2 className="text-2xl font-extrabold text-[#14120f]">Common questions</h2>
+          <dl className="mt-6 divide-y divide-[#f1ede4] border-t border-[#f1ede4]">
             {faqs.map((f) => (
               <div key={f.q} className="py-5">
-                <dt className="font-bold text-[#10251b]">{f.q}</dt>
-                <dd className="mt-1.5 text-sm leading-relaxed text-[#3d4b44]">{f.a}</dd>
+                <dt className="font-bold text-[#14120f]">{f.q}</dt>
+                <dd className="mt-1.5 text-sm leading-relaxed text-[#56504a]">{f.a}</dd>
               </div>
             ))}
           </dl>
@@ -194,8 +194,8 @@ export default function CostGuide() {
 function Section({ h, children }: { h: string; children: React.ReactNode }) {
   return (
     <section className="mt-10">
-      <h2 className="text-2xl font-extrabold text-[#10251b]">{h}</h2>
-      <div className="mt-3 space-y-3 text-[15px] leading-relaxed text-[#3d4b44]">{children}</div>
+      <h2 className="text-2xl font-extrabold text-[#14120f]">{h}</h2>
+      <div className="mt-3 space-y-3 text-[15px] leading-relaxed text-[#56504a]">{children}</div>
     </section>
   );
 }

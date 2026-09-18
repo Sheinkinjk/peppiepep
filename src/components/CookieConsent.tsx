@@ -103,19 +103,19 @@ export function CookieConsent() {
   if (!showBanner) return null;
 
   const btnPrimary =
-    "min-h-[44px] rounded-lg bg-[#0a7c42] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#086b39]";
+    "min-h-[44px] rounded-lg bg-[#007a95] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#003647]";
   const btnGhost =
-    "min-h-[44px] rounded-lg px-5 py-2.5 text-sm font-semibold text-[#3d4b44] transition-colors hover:bg-[#f2f4ee]";
+    "min-h-[44px] rounded-lg px-5 py-2.5 text-sm font-semibold text-[#56504a] transition-colors hover:bg-[#f7f4ee]";
 
   return (
     // Slim bottom bar. No page overlay, no blur: the site stays readable while you decide.
-    <div className="fixed bottom-0 left-0 right-0 z-[9999] border-t border-[#e5e9e7] bg-white shadow-[0_-8px_30px_-12px_rgba(16,37,27,0.15)]">
+    <div className="fixed bottom-0 left-0 right-0 z-[9999] border-t border-[#ded8cd] bg-white shadow-[0_-8px_30px_-12px_rgba(20,18,15,0.15)]">
       <div className="mx-auto max-w-6xl px-5 py-4 sm:px-8">
         {!showPreferences ? (
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
-            <p className="text-[13px] leading-relaxed text-[#3d4b44]">
+            <p className="text-[13px] leading-relaxed text-[#56504a]">
               We use essential cookies to make the site work, and analytics cookies only if you agree. See our{" "}
-              <a href="/privacy" className="font-semibold text-[#0a7c42] hover:underline">
+              <a href="/privacy" className="font-semibold text-[#007a95] hover:underline">
                 Privacy Policy
               </a>
               .
@@ -139,34 +139,34 @@ export function CookieConsent() {
         ) : (
           <div className="space-y-4 py-1">
             <div>
-              <h2 className="text-base font-bold text-[#10251b]">Cookie preferences</h2>
-              <p className="mt-1 text-[13px] text-[#5a665f]">
+              <h2 className="text-base font-bold text-[#14120f]">Cookie preferences</h2>
+              <p className="mt-1 text-[13px] text-[#56504a]">
                 Necessary cookies are always on. Choose what else you are happy with.
               </p>
             </div>
 
             <div className="grid gap-3 sm:grid-cols-3">
               {/* Necessary */}
-              <div className="rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] p-4">
+              <div className="rounded-xl border border-[#ded8cd] bg-[#f7f4ee] p-4">
                 <div className="flex items-center justify-between gap-2">
-                  <h3 className="text-sm font-semibold text-[#10251b]">Necessary</h3>
-                  <span className="rounded-full bg-[#e8f5ee] px-2 py-0.5 text-[11px] font-medium text-[#0a7c42]">
+                  <h3 className="text-sm font-semibold text-[#14120f]">Necessary</h3>
+                  <span className="rounded-full bg-[#e4f2f5] px-2 py-0.5 text-[11px] font-medium text-[#007a95]">
                     Always on
                   </span>
                 </div>
-                <p className="mt-1.5 text-[12.5px] leading-relaxed text-[#5a665f]">
+                <p className="mt-1.5 text-[12.5px] leading-relaxed text-[#56504a]">
                   Security, session handling and referral attribution. The site does not work without these.
                 </p>
               </div>
 
               {/* Analytics */}
-              <div className="rounded-xl border border-[#e5e9e7] p-4">
+              <div className="rounded-xl border border-[#ded8cd] p-4">
                 <div className="flex items-center justify-between gap-2">
-                  <h3 className="text-sm font-semibold text-[#10251b]">Analytics</h3>
+                  <h3 className="text-sm font-semibold text-[#14120f]">Analytics</h3>
                   <button
                     onClick={() => setPreferences({ ...preferences, analytics: !preferences.analytics })}
                     className={`h-6 w-11 flex-shrink-0 rounded-full transition-colors ${
-                      preferences.analytics ? "bg-[#0a7c42]" : "bg-[#d7dcd8]"
+                      preferences.analytics ? "bg-[#007a95]" : "bg-[#ded8cd]"
                     }`}
                     aria-label="Toggle analytics cookies"
                   >
@@ -177,19 +177,19 @@ export function CookieConsent() {
                     />
                   </button>
                 </div>
-                <p className="mt-1.5 text-[12.5px] leading-relaxed text-[#5a665f]">
+                <p className="mt-1.5 text-[12.5px] leading-relaxed text-[#56504a]">
                   Google Analytics, so we can see which guides are useful. Aggregated, never sold.
                 </p>
               </div>
 
               {/* Marketing */}
-              <div className="rounded-xl border border-[#e5e9e7] p-4">
+              <div className="rounded-xl border border-[#ded8cd] p-4">
                 <div className="flex items-center justify-between gap-2">
-                  <h3 className="text-sm font-semibold text-[#10251b]">Marketing</h3>
+                  <h3 className="text-sm font-semibold text-[#14120f]">Marketing</h3>
                   <button
                     onClick={() => setPreferences({ ...preferences, marketing: !preferences.marketing })}
                     className={`h-6 w-11 flex-shrink-0 rounded-full transition-colors ${
-                      preferences.marketing ? "bg-[#0a7c42]" : "bg-[#d7dcd8]"
+                      preferences.marketing ? "bg-[#007a95]" : "bg-[#ded8cd]"
                     }`}
                     aria-label="Toggle marketing cookies"
                   >
@@ -200,7 +200,7 @@ export function CookieConsent() {
                     />
                   </button>
                 </div>
-                <p className="mt-1.5 text-[12.5px] leading-relaxed text-[#5a665f]">
+                <p className="mt-1.5 text-[12.5px] leading-relaxed text-[#56504a]">
                   Not currently used. Off unless we ever add advertising, and we would tell you first.
                 </p>
               </div>
@@ -213,7 +213,7 @@ export function CookieConsent() {
               <button onClick={() => setShowPreferences(false)} className={btnGhost}>
                 Back
               </button>
-              <span className="ml-auto text-[12px] text-[#627068]">
+              <span className="ml-auto text-[12px] text-[#56504a]">
                 <a href="/privacy" className="hover:underline">
                   Privacy
                 </a>{" "}

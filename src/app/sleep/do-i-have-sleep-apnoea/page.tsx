@@ -51,7 +51,7 @@ export default function Page() {
       sectionHref="/sleep"
       slug="/sleep/do-i-have-sleep-apnoea"
       crumb="Do I have sleep apnoea?"
-      h1={<>Do I have sleep apnoea? <span className="italic text-[#0a7c42]">How Australians find out</span></>}
+      h1={<>Do I have sleep apnoea? <span className="italic text-[#007a95]">How Australians find out</span></>}
       intro="We have not built a quiz that tells you the answer, because no website can honestly give you one. What we can do is show you exactly how the diagnosis happens here, and how to make the appointment that produces it worth your time."
       headline="Do I have sleep apnoea? How Australians get answers"
       description={seoConfig.sleepApnoeaPathway.description}
@@ -62,7 +62,7 @@ export default function Page() {
       ]}
     >
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Why there is no checker on this page</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Why there is no checker on this page</h2>
         <p className="mt-3">
           Most sites answering this question hand you a short questionnaire and a verdict. We have deliberately not
           done that, for two reasons.
@@ -81,7 +81,7 @@ export default function Page() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">The pathway, start to finish</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">The pathway, start to finish</h2>
         <ol className="mt-4 space-y-3">
           {[
             ["GP appointment", "You describe your sleep and your daytime function. The GP considers sleep apnoea alongside other explanations for the same symptoms, which is a distinction a quiz cannot make."],
@@ -90,8 +90,8 @@ export default function Page() {
             ["Interpretation", "A sleep physician reads the results. This is the point at which a diagnosis exists, and not before."],
             ["Treatment discussion", "If something is found, options are discussed with you. Any device or therapy follows the diagnosis rather than preceding it."],
           ].map(([h, b], i) => (
-            <li key={i} className="rounded-2xl border border-[#e5e9e7] bg-white p-5">
-              <p className="font-semibold text-[#10251b]">{i + 1}. {h}</p>
+            <li key={i} className="rounded-2xl border border-[#ded8cd] bg-white p-5">
+              <p className="font-semibold text-[#14120f]">{i + 1}. {h}</p>
               <p className="mt-1.5 text-sm">{b}</p>
             </li>
           ))}
@@ -99,7 +99,7 @@ export default function Page() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Making the appointment count</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Making the appointment count</h2>
         <p className="mt-3">
           The single most useful thing you can do is arrive with two weeks of notes. Clinicians work from specifics, and
           &ldquo;I&apos;m tired all the time&rdquo; is the least specific thing you can say. Worth writing down:
@@ -119,7 +119,7 @@ export default function Page() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Reasons not to put it off</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Reasons not to put it off</h2>
         <p className="mt-3">
           Untreated sleep disorders affect more than how tired you feel, and daytime sleepiness carries a real risk if
           you drive or operate machinery. If you are falling asleep unintentionally during the day, that is a reason to

@@ -95,24 +95,24 @@ export default function WeightLossTelehealthCostAustraliaPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
 
-      <main className="text-[#10251b]">
+      <main className="text-[#14120f]">
         <div className="mx-auto max-w-3xl px-6 sm:px-8">
 
           {/* Breadcrumb */}
-          <nav className="flex flex-wrap items-center gap-2 pt-8 text-sm text-[#5a665f]">
-            <Link href="/" className="hover:text-[#10251b] transition-colors">Refer Labs</Link>
+          <nav className="flex flex-wrap items-center gap-2 pt-8 text-sm text-[#56504a]">
+            <Link href="/" className="hover:text-[#14120f] transition-colors">Refer Labs</Link>
             <span>/</span>
-            <Link href="/weight-loss" className="hover:text-[#10251b] transition-colors">Weight loss</Link>
+            <Link href="/weight-loss" className="hover:text-[#14120f] transition-colors">Weight loss</Link>
             <span>/</span>
-            <span className="text-[#10251b]">Telehealth cost</span>
+            <span className="text-[#14120f]">Telehealth cost</span>
           </nav>
 
           {/* Hero */}
           <header className="pt-9 pb-6">
-            <h1 className="mt-4 text-3xl sm:text-4xl lg:text-[2.6rem] font-extrabold leading-[1.08] tracking-tight text-[#10251b]">
+            <h1 className="mt-4 text-3xl sm:text-4xl lg:text-[2.6rem] font-extrabold leading-[1.08] tracking-tight text-[#14120f]">
               Weight-loss telehealth cost in Australia: how the pricing works
             </h1>
-            <p className="mt-5 text-base sm:text-lg leading-relaxed text-[#3d4b44]">
+            <p className="mt-5 text-base sm:text-lg leading-relaxed text-[#56504a]">
               There is no single price, and the reason matters: almost every online weight-management service bills in two
               parts, a program or subscription fee and the medicine, and the second is usually charged separately by the
               pharmacy. A service that advertises one number is quoting the first part. Add both, multiply by twelve, and
@@ -122,15 +122,15 @@ export default function WeightLossTelehealthCostAustraliaPage() {
           </header>
 
           {/* Info-only note */}
-          <div className="nw-card px-5 py-4 text-sm leading-relaxed text-[#3d4b44]">
-            <span className="font-bold text-[#10251b]">Information only.</span> Nothing here is medical or financial advice.
+          <div className="nw-card px-5 py-4 text-sm leading-relaxed text-[#56504a]">
+            <span className="font-bold text-[#14120f]">Information only.</span> Nothing here is medical or financial advice.
             Prices vary between services, change over time, and are confirmed during your consult after a practitioner has assessed
             what is appropriate for you. This page contains a disclosed affiliate link to Moshy.
           </div>
 
           {/* First CTA */}
-          <div className="mt-7 flex flex-col items-start gap-3 rounded-2xl border border-[#0a7c42]/25 bg-[#e8f5ee] px-6 py-5 sm:flex-row sm:items-center sm:justify-between">
-            <p className="max-w-md text-[15px] leading-relaxed text-[#10251b]">
+          <div className="mt-7 flex flex-col items-start gap-3 rounded-2xl border border-[#007a95]/25 bg-[#e4f2f5] px-6 py-5 sm:flex-row sm:items-center sm:justify-between">
+            <p className="max-w-md text-[15px] leading-relaxed text-[#14120f]">
               Want the real number for your situation? Moshy&apos;s eligibility check is free to complete, and the applicable cost
               is confirmed to you inside the flow before you commit to anything.
             </p>
@@ -150,26 +150,26 @@ export default function WeightLossTelehealthCostAustraliaPage() {
           <article className="mt-10 space-y-9">
 
             <section>
-              <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#10251b]">
+              <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#14120f]">
                 The two parts of the cost
               </h2>
-              <div className="mt-4 space-y-4 text-[15px] leading-relaxed text-[#3d4b44]">
+              <div className="mt-4 space-y-4 text-[15px] leading-relaxed text-[#56504a]">
                 <p>
                   The most useful thing to understand is that weight-loss telehealth pricing in Australia almost always splits into two
                   separate parts, and many people only notice the first one when they compare services.
                 </p>
                 <div className="grid gap-4 sm:grid-cols-2">
                   <div className="nw-card px-5 py-5">
-                    <h3 className="text-lg font-bold text-[#10251b]">The service fee</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-[#3d4b44]">
+                    <h3 className="text-lg font-bold text-[#14120f]">The service fee</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-[#56504a]">
                       A consultation fee or an ongoing subscription that covers the practitioner assessment, follow-ups and ongoing
                       support. Medical telehealth is usually structured as a subscription because weight management is ongoing rather
                       than a single visit.
                     </p>
                   </div>
                   <div className="nw-card px-5 py-5">
-                    <h3 className="text-lg font-bold text-[#10251b]">Any medicine, separately</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-[#3d4b44]">
+                    <h3 className="text-lg font-bold text-[#14120f]">Any medicine, separately</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-[#56504a]">
                       If a practitioner assesses that a prescription medicine is appropriate, it is typically billed separately by the
                       pharmacy that dispenses it. This is not included in the headline service fee, so it is the part that is easiest
                       to overlook when comparing.
@@ -197,10 +197,10 @@ export default function WeightLossTelehealthCostAustraliaPage() {
             </section>
 
             <section>
-              <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#10251b]">
+              <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#14120f]">
                 What drives the price up or down
               </h2>
-              <div className="mt-4 space-y-4 text-[15px] leading-relaxed text-[#3d4b44]">
+              <div className="mt-4 space-y-4 text-[15px] leading-relaxed text-[#56504a]">
                 <p>
                   A few factors shape what you end up paying, and understanding them helps you compare like with like:
                 </p>
@@ -213,8 +213,8 @@ export default function WeightLossTelehealthCostAustraliaPage() {
                     ["Medicare and insurance", "Depending on your circumstances, a consult may attract a rebate, but subscriptions and medicines are typically not fully covered. Coverage is individual."],
                   ].map(([title, body]) => (
                     <li key={title} className="flex gap-3">
-                      <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#e8f5ee] text-xs font-bold text-[#0a7c42]">•</span>
-                      <span><span className="font-semibold text-[#10251b]">{title}.</span> {body}</span>
+                      <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#e4f2f5] text-xs font-bold text-[#007a95]">•</span>
+                      <span><span className="font-semibold text-[#14120f]">{title}.</span> {body}</span>
                     </li>
                   ))}
                 </ul>
@@ -228,10 +228,10 @@ export default function WeightLossTelehealthCostAustraliaPage() {
             </section>
 
             <section>
-              <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#10251b]">
+              <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#14120f]">
                 How to get an accurate cost for you
               </h2>
-              <div className="mt-4 space-y-4 text-[15px] leading-relaxed text-[#3d4b44]">
+              <div className="mt-4 space-y-4 text-[15px] leading-relaxed text-[#56504a]">
                 <p>
                   The dependable way to find out what you would pay is to start the eligibility check with the service you are
                   considering. A practitioner assesses your situation, and the applicable cost is confirmed to you before you commit.
@@ -245,9 +245,9 @@ export default function WeightLossTelehealthCostAustraliaPage() {
             </section>
 
             {/* Second CTA */}
-            <section className="rounded-2xl border border-[#e5e9e7] bg-[#eef1ec] px-6 py-6">
-              <h2 className="text-lg font-bold text-[#10251b]">See the cost that applies to you</h2>
-              <p className="mt-2 text-[15px] leading-relaxed text-[#3d4b44]">
+            <section className="rounded-2xl border border-[#ded8cd] bg-[#f1ede4] px-6 py-6">
+              <h2 className="text-lg font-bold text-[#14120f]">See the cost that applies to you</h2>
+              <p className="mt-2 text-[15px] leading-relaxed text-[#56504a]">
                 Rather than guessing from a generic figure, complete Moshy&apos;s free eligibility check and the applicable cost is
                 confirmed to you inside the flow, after a practitioner assessment and before you pay. About ten minutes, no obligation.
               </p>
@@ -266,15 +266,15 @@ export default function WeightLossTelehealthCostAustraliaPage() {
 
             {/* FAQ */}
             <section>
-              <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#10251b]">Frequently asked questions</h2>
-              <div className="mt-5 divide-y divide-[#e5e9e7] border-y border-[#e5e9e7]">
+              <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#14120f]">Frequently asked questions</h2>
+              <div className="mt-5 divide-y divide-[#ded8cd] border-y border-[#ded8cd]">
                 {faqs.map((f) => (
                   <details key={f.q} className="group py-4">
-                    <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-[#10251b]">
+                    <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-[#14120f]">
                       {f.q}
-                      <span className="text-xl leading-none text-[#0a7c42] transition-transform group-open:rotate-45">+</span>
+                      <span className="text-xl leading-none text-[#007a95] transition-transform group-open:rotate-45">+</span>
                     </summary>
-                    <p className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">{f.a}</p>
+                    <p className="mt-3 text-[15px] leading-relaxed text-[#56504a]">{f.a}</p>
                   </details>
                 ))}
               </div>
@@ -282,7 +282,7 @@ export default function WeightLossTelehealthCostAustraliaPage() {
 
             {/* Related */}
             <section>
-              <h2 className="text-lg font-bold text-[#10251b]">Keep reading</h2>
+              <h2 className="text-lg font-bold text-[#14120f]">Keep reading</h2>
               <ul className="mt-3 space-y-2 text-[15px]">
                 <li><Link href="/weight-loss-cost-calculator" className="nw-link">Try the cost planner: find your pathway in three questions</Link></li>
                 <li><Link href="/moshy" className="nw-link">Moshy: the offer and how to start</Link></li>
@@ -296,8 +296,8 @@ export default function WeightLossTelehealthCostAustraliaPage() {
             </section>
 
             {/* Disclosure */}
-            <section className="border-t border-[#e5e9e7] pt-6 pb-16">
-              <p className="text-xs leading-relaxed text-[#627068]">
+            <section className="border-t border-[#ded8cd] pt-6 pb-16">
+              <p className="text-xs leading-relaxed text-[#56504a]">
                 This page is published by Refer Labs, an independent comparison publisher, and contains a disclosed affiliate link to
                 Moshy, which means we may earn a commission if you sign up through our link. Commissions never change what we write.
                 All content is for general information only and does not constitute medical or financial advice. Prices vary between

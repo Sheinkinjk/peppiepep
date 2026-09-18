@@ -38,7 +38,7 @@ export default function Page() {
       sectionHref="/longevity/diagnostics"
       slug="/longevity/diagnostics/cgm-for-non-diabetics-australia"
       crumb="CGM without diabetes"
-      h1={<>Glucose monitors without diabetes: <span className="italic text-[#0a7c42]">cost, access and evidence</span></>}
+      h1={<>Glucose monitors without diabetes: <span className="italic text-[#007a95]">cost, access and evidence</span></>}
       intro="A device built and validated for managing diabetes is now marketed as a wellness tool. The technology is good at what it was designed for. Whether that transfers to people without diabetes is a separate question, and a much less settled one."
       headline="CGM for non-diabetics in Australia: cost and evidence"
       description={seoConfig.cgmNonDiabetic.description}
@@ -49,7 +49,7 @@ export default function Page() {
       ]}
     >
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">The subsidy does not follow you</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">The subsidy does not follow you</h2>
         <p className="mt-3">
           Continuous glucose monitoring is subsidised in Australia for eligible people with diabetes through the
           National Diabetes Services Scheme. That support is tied to a diagnosis and eligibility criteria.
@@ -62,16 +62,16 @@ export default function Page() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">What the device is good at, and what it is not</h2>
-        <div className="mt-4 overflow-x-auto rounded-2xl border border-[#e5e9e7]">
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">What the device is good at, and what it is not</h2>
+        <div className="mt-4 overflow-x-auto rounded-2xl border border-[#ded8cd]">
           <table className="w-full min-w-[540px] border-collapse text-left text-sm">
-            <thead className="bg-[#f8faf9] text-[11px] uppercase tracking-[0.1em] text-[#627068]">
+            <thead className="bg-[#f7f4ee] text-[11px] uppercase tracking-[0.1em] text-[#56504a]">
               <tr>
                 <th className="px-4 py-3 font-semibold">Use</th>
                 <th className="px-4 py-3 font-semibold">How well established</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-[#eef1ef]">
+            <tbody className="divide-y divide-[#f1ede4]">
               {[
                 ["Managing diagnosed diabetes", "Well established. This is what it was built and validated for"],
                 ["Showing your glucose moves after meals", "Accurate enough, and also true of everyone"],
@@ -80,21 +80,21 @@ export default function Page() {
                 ["Improving long-term health in healthy people", "Not established"],
               ].map((r) => (
                 <tr key={r[0]}>
-                  <td className="px-4 py-3 font-semibold text-[#10251b]">{r[0]}</td>
+                  <td className="px-4 py-3 font-semibold text-[#14120f]">{r[0]}</td>
                   <td className="px-4 py-3">{r[1]}</td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
-        <p className="mt-3 text-xs text-[#5a665f]">
+        <p className="mt-3 text-xs text-[#56504a]">
           Not a health claim about any device. CGMs are regulated therapeutic goods; check the ARTG for a specific
           product.
         </p>
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Normal variation reads as a problem</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Normal variation reads as a problem</h2>
         <p className="mt-3">
           Glucose rises after eating. It moves with sleep, stress and exercise. In a person without diabetes that is
           physiology working, not a fault being detected.
@@ -107,7 +107,7 @@ export default function Page() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">If you are worried about diabetes</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">If you are worried about diabetes</h2>
         <p className="mt-3">
           See a GP and ask for the appropriate blood test. It is the validated diagnostic pathway, it attracts a
           Medicare rebate where indicated, and it gives you an answer a clinician can act on. A sensor bought online

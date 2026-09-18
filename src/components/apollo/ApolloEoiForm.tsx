@@ -10,8 +10,8 @@ const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 type V = Record<string, string>;
 
 const field =
-  "w-full rounded-xl border border-[#e3e7e2] bg-white px-4 py-3 text-[15px] text-[#10251b] placeholder:text-[#9aa39c] transition-colors focus:border-[#0a7c42] focus:outline-none focus:ring-1 focus:ring-[#0a7c42]";
-const lbl = "mb-1.5 block text-[13px] font-semibold text-[#10251b]";
+  "w-full rounded-xl border border-[#ded8cd] bg-white px-4 py-3 text-[15px] text-[#14120f] placeholder:text-[#766f66] transition-colors focus:border-[#007a95] focus:outline-none focus:ring-1 focus:ring-[#007a95]";
+const lbl = "mb-1.5 block text-[13px] font-semibold text-[#14120f]";
 const errCls = "mt-1 text-sm text-[#c0392b]";
 
 export default function ApolloEoiForm() {
@@ -96,14 +96,14 @@ export default function ApolloEoiForm() {
   if (done) {
     return (
       <div className="nw-card p-7 text-center sm:p-8">
-        <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-[#e6f3ec]">
-          <Check className="h-6 w-6 text-[#0a7c42]" strokeWidth={2.5} aria-hidden="true" />
+        <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-[#e4f2f5]">
+          <Check className="h-6 w-6 text-[#007a95]" strokeWidth={2.5} aria-hidden="true" />
         </div>
-        <h3 className="mt-4 text-xl font-extrabold tracking-tight text-[#10251b]">
+        <h3 className="mt-4 text-xl font-extrabold tracking-tight text-[#14120f]">
           You&apos;re in{v.full_name ? `, ${v.full_name.split(" ")[0]}` : ""}.
         </h3>
-        <p className="mt-2 text-[15px] leading-relaxed text-[#3d4b44]">
-          Someone will be in touch <strong className="text-[#10251b]">within 2 business days</strong> to talk through
+        <p className="mt-2 text-[15px] leading-relaxed text-[#56504a]">
+          Someone will be in touch <strong className="text-[#14120f]">within 2 business days</strong> to talk through
           your home battery options and your $500 discount, applied on top of the government rebate. Check your inbox
           for a confirmation.
         </p>
@@ -120,8 +120,8 @@ export default function ApolloEoiForm() {
         onClick={() => set(name, val)}
         className={`rounded-xl border px-4 py-2.5 text-sm font-medium transition-colors ${
           active
-            ? "border-[#0a7c42] bg-[#e6f3ec] text-[#0a7c42]"
-            : "border-[#e3e7e2] bg-white text-[#3d4b44] hover:border-[#bfe0cf]"
+            ? "border-[#007a95] bg-[#e4f2f5] text-[#007a95]"
+            : "border-[#ded8cd] bg-white text-[#56504a] hover:border-[#b9e3eb]"
         }`}
       >
         {label}
@@ -184,8 +184,8 @@ export default function ApolloEoiForm() {
         <textarea id="notes" rows={2} className={field} value={v.notes || ""} onChange={(e) => set("notes", e.target.value)} placeholder="e.g. battery size you have in mind, blackout backup, etc." />
       </div>
 
-      <label className="mt-5 flex cursor-pointer items-start gap-3 text-[13px] leading-relaxed text-[#5a665f]">
-        <input type="checkbox" checked={v.consent === "yes"} onChange={(e) => set("consent", e.target.checked ? "yes" : "")} className="mt-0.5 h-4 w-4 shrink-0 rounded border-[#cfd6d1] accent-[#0a7c42]" />
+      <label className="mt-5 flex cursor-pointer items-start gap-3 text-[13px] leading-relaxed text-[#56504a]">
+        <input type="checkbox" checked={v.consent === "yes"} onChange={(e) => set("consent", e.target.checked ? "yes" : "")} className="mt-0.5 h-4 w-4 shrink-0 rounded border-[#ded8cd] accent-[#007a95]" />
         <span>I agree to Refer Labs sharing my details with Apollo Energy Group, and to both contacting me by phone, email or SMS.</span>
       </label>
       {errors.consent && <p className="mt-1 pl-7 text-sm text-[#c0392b]">{errors.consent}</p>}
@@ -195,8 +195,8 @@ export default function ApolloEoiForm() {
       <button type="submit" disabled={submitting} className="nw-btn mt-6 w-full justify-center py-4 text-[15px] disabled:opacity-70">
         {submitting ? <><Loader2 className="h-4 w-4 animate-spin" /> Sending…</> : <>Register my interest <ArrowRight className="h-4 w-4" /></>}
       </button>
-      <p className="mt-3 flex items-center justify-center gap-1.5 text-center text-[12px] text-[#627068]">
-        <ShieldCheck className="h-3.5 w-3.5 text-[#0a7c42]" aria-hidden="true" /> Contacted within 2 business days · no documents · no obligation
+      <p className="mt-3 flex items-center justify-center gap-1.5 text-center text-[12px] text-[#56504a]">
+        <ShieldCheck className="h-3.5 w-3.5 text-[#007a95]" aria-hidden="true" /> Contacted within 2 business days · no documents · no obligation
       </p>
     </form>
   );

@@ -95,24 +95,24 @@ export default function OnlineWeightLossDoctorAustraliaPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
 
-      <main className="text-[#10251b]">
+      <main className="text-[#14120f]">
         <div className="mx-auto max-w-3xl px-6 sm:px-8">
 
           {/* Breadcrumb */}
-          <nav className="flex flex-wrap items-center gap-2 pt-8 text-sm text-[#5a665f]">
-            <Link href="/" className="hover:text-[#10251b] transition-colors">Refer Labs</Link>
+          <nav className="flex flex-wrap items-center gap-2 pt-8 text-sm text-[#56504a]">
+            <Link href="/" className="hover:text-[#14120f] transition-colors">Refer Labs</Link>
             <span>/</span>
-            <Link href="/weight-loss" className="hover:text-[#10251b] transition-colors">Weight loss</Link>
+            <Link href="/weight-loss" className="hover:text-[#14120f] transition-colors">Weight loss</Link>
             <span>/</span>
-            <span className="text-[#10251b]">Online weight-loss doctor</span>
+            <span className="text-[#14120f]">Online weight-loss doctor</span>
           </nav>
 
           {/* Hero */}
           <header className="pt-9 pb-6">
-            <h1 className="mt-4 text-3xl sm:text-4xl lg:text-[2.6rem] font-extrabold leading-[1.08] tracking-tight text-[#10251b]">
+            <h1 className="mt-4 text-3xl sm:text-4xl lg:text-[2.6rem] font-extrabold leading-[1.08] tracking-tight text-[#14120f]">
               Online weight-loss doctor in Australia: how a telehealth consult works
             </h1>
-            <p className="mt-5 text-base sm:text-lg leading-relaxed text-[#3d4b44]">
+            <p className="mt-5 text-base sm:text-lg leading-relaxed text-[#56504a]">
               The questionnaire is not the assessment. It is a screening form, and what follows is a review by a
               practitioner registered with AHPRA who decides whether treatment is appropriate for you, which means the
               outcome is never guaranteed by completing it. Medicines in this category are prescription-only in
@@ -122,15 +122,15 @@ export default function OnlineWeightLossDoctorAustraliaPage() {
           </header>
 
           {/* Info-only note */}
-          <div className="nw-card px-5 py-4 text-sm leading-relaxed text-[#3d4b44]">
-            <span className="font-bold text-[#10251b]">Information only.</span> Nothing here is medical advice or a recommendation
+          <div className="nw-card px-5 py-4 text-sm leading-relaxed text-[#56504a]">
+            <span className="font-bold text-[#14120f]">Information only.</span> Nothing here is medical advice or a recommendation
             of any treatment. Any prescription in Australia is issued only after individual assessment by a registered practitioner,
             who decides suitability. This page contains a disclosed affiliate link to Moshy.
           </div>
 
           {/* First CTA */}
-          <div className="mt-7 flex flex-col items-start gap-3 rounded-2xl border border-[#0a7c42]/25 bg-[#e8f5ee] px-6 py-5 sm:flex-row sm:items-center sm:justify-between">
-            <p className="max-w-md text-[15px] leading-relaxed text-[#10251b]">
+          <div className="mt-7 flex flex-col items-start gap-3 rounded-2xl border border-[#007a95]/25 bg-[#e4f2f5] px-6 py-5 sm:flex-row sm:items-center sm:justify-between">
+            <p className="max-w-md text-[15px] leading-relaxed text-[#14120f]">
               Ready to be assessed? Moshy&apos;s online eligibility check is reviewed by registered Australian practitioners, is free
               to complete, and takes about ten minutes with no obligation to proceed.
             </p>
@@ -150,10 +150,10 @@ export default function OnlineWeightLossDoctorAustraliaPage() {
           <article className="mt-10 space-y-9">
 
             <section>
-              <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#10251b]">
+              <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#14120f]">
                 What an online weight-loss doctor is
               </h2>
-              <div className="mt-4 space-y-4 text-[15px] leading-relaxed text-[#3d4b44]">
+              <div className="mt-4 space-y-4 text-[15px] leading-relaxed text-[#56504a]">
                 <p>
                   An online weight-loss doctor is, in practice, a registered health practitioner who assesses you through a telehealth
                   service rather than in a physical consulting room. The care is delivered remotely, through a secure portal or app,
@@ -172,10 +172,10 @@ export default function OnlineWeightLossDoctorAustraliaPage() {
             </section>
 
             <section>
-              <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#10251b]">
+              <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#14120f]">
                 The eligibility questionnaire model
               </h2>
-              <div className="mt-4 space-y-4 text-[15px] leading-relaxed text-[#3d4b44]">
+              <div className="mt-4 space-y-4 text-[15px] leading-relaxed text-[#56504a]">
                 <p>
                   Almost every online weight-loss service in Australia starts with an eligibility questionnaire. This is the screening
                   layer, and it exists so the practitioner has the information they need to make a safe assessment. It usually takes
@@ -189,8 +189,8 @@ export default function OnlineWeightLossDoctorAustraliaPage() {
                     ["Your goals", "What you are hoping to achieve, so any plan is oriented around that."],
                   ].map(([title, body]) => (
                     <li key={title} className="flex gap-3">
-                      <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#e8f5ee] text-xs font-bold text-[#0a7c42]">✓</span>
-                      <span><span className="font-semibold text-[#10251b]">{title}.</span> {body}</span>
+                      <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#e4f2f5] text-xs font-bold text-[#007a95]">✓</span>
+                      <span><span className="font-semibold text-[#14120f]">{title}.</span> {body}</span>
                     </li>
                   ))}
                 </ul>
@@ -203,10 +203,10 @@ export default function OnlineWeightLossDoctorAustraliaPage() {
             </section>
 
             <section>
-              <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#10251b]">
+              <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#14120f]">
                 What the practitioner reviews
               </h2>
-              <div className="mt-4 space-y-4 text-[15px] leading-relaxed text-[#3d4b44]">
+              <div className="mt-4 space-y-4 text-[15px] leading-relaxed text-[#56504a]">
                 <p>
                   Once your questionnaire is submitted, a registered Australian practitioner reviews it. They are weighing up whether a
                   weight-management plan is appropriate for you and, if any medicine could be part of it, whether that would be
@@ -226,10 +226,10 @@ export default function OnlineWeightLossDoctorAustraliaPage() {
             </section>
 
             <section>
-              <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#10251b]">
+              <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#14120f]">
                 How to choose a service, and what it costs
               </h2>
-              <div className="mt-4 space-y-4 text-[15px] leading-relaxed text-[#3d4b44]">
+              <div className="mt-4 space-y-4 text-[15px] leading-relaxed text-[#56504a]">
                 <p>
                   When you are comparing online weight-loss services, a few checks separate a serious one from a storefront. Confirm
                   that a registered Australian practitioner reviews your case, and that some applicants are declined. Read the full
@@ -251,9 +251,9 @@ export default function OnlineWeightLossDoctorAustraliaPage() {
             </section>
 
             {/* Second CTA */}
-            <section className="rounded-2xl border border-[#e5e9e7] bg-[#eef1ec] px-6 py-6">
-              <h2 className="text-lg font-bold text-[#10251b]">The process starts with the assessment</h2>
-              <p className="mt-2 text-[15px] leading-relaxed text-[#3d4b44]">
+            <section className="rounded-2xl border border-[#ded8cd] bg-[#f1ede4] px-6 py-6">
+              <h2 className="text-lg font-bold text-[#14120f]">The process starts with the assessment</h2>
+              <p className="mt-2 text-[15px] leading-relaxed text-[#56504a]">
                 The only way to know whether a plan is appropriate for you is to be assessed by a practitioner. Moshy&apos;s online
                 eligibility check is free, reviewed by registered Australian practitioners, and takes about ten minutes. Completing it
                 does not commit you to anything.
@@ -273,15 +273,15 @@ export default function OnlineWeightLossDoctorAustraliaPage() {
 
             {/* FAQ */}
             <section>
-              <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#10251b]">Frequently asked questions</h2>
-              <div className="mt-5 divide-y divide-[#e5e9e7] border-y border-[#e5e9e7]">
+              <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#14120f]">Frequently asked questions</h2>
+              <div className="mt-5 divide-y divide-[#ded8cd] border-y border-[#ded8cd]">
                 {faqs.map((f) => (
                   <details key={f.q} className="group py-4">
-                    <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-[#10251b]">
+                    <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-[#14120f]">
                       {f.q}
-                      <span className="text-xl leading-none text-[#0a7c42] transition-transform group-open:rotate-45">+</span>
+                      <span className="text-xl leading-none text-[#007a95] transition-transform group-open:rotate-45">+</span>
                     </summary>
-                    <p className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">{f.a}</p>
+                    <p className="mt-3 text-[15px] leading-relaxed text-[#56504a]">{f.a}</p>
                   </details>
                 ))}
               </div>
@@ -289,7 +289,7 @@ export default function OnlineWeightLossDoctorAustraliaPage() {
 
             {/* Related */}
             <section>
-              <h2 className="text-lg font-bold text-[#10251b]">Keep reading</h2>
+              <h2 className="text-lg font-bold text-[#14120f]">Keep reading</h2>
               <ul className="mt-3 space-y-2 text-[15px]">
                 <li><Link href="/weight-loss-telehealth-cost-australia" className="nw-link">How much weight-loss telehealth costs in Australia</Link></li>
                 <li><Link href="/moshy" className="nw-link">Moshy: the offer and how to start</Link></li>
@@ -302,8 +302,8 @@ export default function OnlineWeightLossDoctorAustraliaPage() {
             </section>
 
             {/* Disclosure */}
-            <section className="border-t border-[#e5e9e7] pt-6 pb-16">
-              <p className="text-xs leading-relaxed text-[#627068]">
+            <section className="border-t border-[#ded8cd] pt-6 pb-16">
+              <p className="text-xs leading-relaxed text-[#56504a]">
                 This page is published by Refer Labs, an independent comparison publisher, and contains a disclosed affiliate link to
                 Moshy, which means we may earn a commission if you sign up through our link. Commissions never change what we write.
                 All content is for general information only and does not constitute medical advice. Any prescription in Australia is

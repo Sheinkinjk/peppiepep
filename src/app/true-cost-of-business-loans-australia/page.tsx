@@ -95,30 +95,30 @@ export default function FactorRateStudy() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
 
       <main className="mx-auto max-w-3xl px-5 py-10 sm:px-8 sm:py-14">
-        <nav className="text-xs text-[#5a665f]">
-          <Link href="/business-loans" className="hover:text-[#0a7c42]">Business loans</Link>
+        <nav className="text-xs text-[#56504a]">
+          <Link href="/business-loans" className="hover:text-[#007a95]">Business loans</Link>
           <span className="px-1.5">/</span>
-          <span className="text-[#3d4b44]">The hidden cost of factor rates</span>
+          <span className="text-[#56504a]">The hidden cost of factor rates</span>
         </nav>
 
-        <h1 className="mt-4 text-4xl font-extrabold leading-[1.05] text-[#10251b]">
+        <h1 className="mt-4 text-4xl font-extrabold leading-[1.05] text-[#14120f]">
           The hidden cost of factor rates: what a business loan really costs
         </h1>
 
         {/* First 100 words: the finding, citable */}
-        <p className="mt-5 text-lg leading-relaxed text-[#3d4b44]">
+        <p className="mt-5 text-lg leading-relaxed text-[#56504a]">
           A &ldquo;1.2 factor rate&rdquo; is a 20% markup on what you borrow, and quoted that way it sounds modest. The
           catch is that a factor rate is not an annual rate. Over twelve months that same 1.2 works out to about{" "}
-          <strong className="text-[#10251b]">{pct(e12)} a year</strong>, and over six months to about{" "}
-          <strong className="text-[#10251b]">{pct(e6)}</strong>, for the same total dollars either way. We took the factor
+          <strong className="text-[#14120f]">{pct(e12)} a year</strong>, and over six months to about{" "}
+          <strong className="text-[#14120f]">{pct(e6)}</strong>, for the same total dollars either way. We took the factor
           rates Australian small businesses are commonly quoted and worked out the annual cost they actually carry, with
           the method shown in full so you can check every figure.
         </p>
 
         {/* Key findings */}
-        <div className="mt-8 rounded-2xl border p-6" style={{ borderColor: "#0a7c4240", background: "#0a7c4208" }}>
-          <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-[#0a7c42]">Key findings</p>
-          <ul className="mt-3 space-y-2.5 text-[15px] leading-relaxed text-[#10251b]">
+        <div className="mt-8 rounded-2xl border p-6" style={{ borderColor: "#007a9540", background: "#007a9508" }}>
+          <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-[#007a95]">Key findings</p>
+          <ul className="mt-3 space-y-2.5 text-[15px] leading-relaxed text-[#14120f]">
             {[
               `A 1.2 factor rate equals roughly ${pct(e12)} a year over 12 months, not the 20% the multiplier implies.`,
               `The same 1.2 factor rate costs about ${pct(e6)} a year if the loan is repaid over six months.`,
@@ -126,7 +126,7 @@ export default function FactorRateStudy() {
               "A factor rate cannot be compared like for like against a bank's advertised annual rate without converting it first.",
             ].map((f) => (
               <li key={f} className="flex gap-2.5">
-                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#0a7c42]" aria-hidden="true" />{f}
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#007a95]" aria-hidden="true" />{f}
               </li>
             ))}
           </ul>
@@ -152,19 +152,19 @@ export default function FactorRateStudy() {
             instalments over the term shown. Read down a column to see how the same factor rate costs far more over a
             shorter term.
           </p>
-          <div className="my-5 overflow-x-auto rounded-2xl border border-[#e5e9e7]">
+          <div className="my-5 overflow-x-auto rounded-2xl border border-[#ded8cd]">
             <table className="w-full border-collapse text-left text-sm">
               <caption className="sr-only">Effective annual rate by factor rate and loan term</caption>
               <thead>
-                <tr className="bg-[#f8faf9] text-[11px] font-bold uppercase tracking-[0.08em] text-[#5a665f]">
+                <tr className="bg-[#f7f4ee] text-[11px] font-bold uppercase tracking-[0.08em] text-[#56504a]">
                   <th scope="col" className="px-4 py-3">Factor rate</th>
                   {TERMS.map((t) => <th key={t} scope="col" className="px-4 py-3 text-right">{t} months</th>)}
                 </tr>
               </thead>
-              <tbody className="text-[#3d4b44]">
+              <tbody className="text-[#56504a]">
                 {FACTORS.map((f) => (
-                  <tr key={f} className="border-t border-[#eef1ef]">
-                    <th scope="row" className="px-4 py-3 font-semibold text-[#10251b]">{f.toFixed(2)}</th>
+                  <tr key={f} className="border-t border-[#f1ede4]">
+                    <th scope="row" className="px-4 py-3 font-semibold text-[#14120f]">{f.toFixed(2)}</th>
                     {TERMS.map((t) => (
                       <td key={t} className="px-4 py-3 text-right tabular-nums">{pct(effectiveFromFactor(f, t))}</td>
                     ))}
@@ -173,7 +173,7 @@ export default function FactorRateStudy() {
               </tbody>
             </table>
           </div>
-          <p className="text-sm text-[#5a665f]">
+          <p className="text-sm text-[#56504a]">
             Effective annual rate (nominal, comparison-rate convention). Figures assume equal monthly repayments and no
             additional fees; real products often add establishment or ongoing fees, which push the true cost higher still.
           </p>
@@ -183,8 +183,8 @@ export default function FactorRateStudy() {
           <p>
             Take a $50,000 loan at a 1.2 factor rate over 12 months. You repay $60,000 in total, so the cost of the finance
             is $10,000. Because that $10,000 is paid on a balance that shrinks as you repay, the effective annual rate is
-            about <strong className="text-[#10251b]">{pct(e12)}</strong>, not 20%. Compress the same loan into six months
-            and the effective rate roughly doubles to about <strong className="text-[#10251b]">{pct(e6)}</strong>, even
+            about <strong className="text-[#14120f]">{pct(e12)}</strong>, not 20%. Compress the same loan into six months
+            and the effective rate roughly doubles to about <strong className="text-[#14120f]">{pct(e6)}</strong>, even
             though the total dollars repaid are identical, because you have the money for half as long.
           </p>
         </Section>
@@ -197,8 +197,8 @@ export default function FactorRateStudy() {
               "Watch the term. A short repayment period makes a modest-looking factor rate very expensive in annual terms.",
               "Add the fees. Establishment and ongoing fees sit on top of the factor rate and lift the true cost further.",
             ].map((x) => (
-              <li key={x} className="flex gap-2.5 text-[15px] leading-relaxed text-[#3d4b44]">
-                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#0a7c42]" aria-hidden="true" />{x}
+              <li key={x} className="flex gap-2.5 text-[15px] leading-relaxed text-[#56504a]">
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#007a95]" aria-hidden="true" />{x}
               </li>
             ))}
           </ul>
@@ -216,35 +216,35 @@ export default function FactorRateStudy() {
           </p>
         </Section>
 
-        <div className="mt-10 rounded-2xl border p-6" style={{ borderColor: "#0a7c4240", background: "#0a7c4208" }}>
-          <h2 className="text-xl font-extrabold text-[#10251b]">Check a real quote against this</h2>
-          <p className="mt-2 text-sm leading-relaxed text-[#3d4b44]">
+        <div className="mt-10 rounded-2xl border p-6" style={{ borderColor: "#007a9540", background: "#007a9508" }}>
+          <h2 className="text-xl font-extrabold text-[#14120f]">Check a real quote against this</h2>
+          <p className="mt-2 text-sm leading-relaxed text-[#56504a]">
             Enter a lender&apos;s rate and fees into our calculator to see the effective rate on your loan, then compare
             Australian lenders in one short enquiry.
           </p>
           <div className="mt-4 flex flex-wrap gap-3">
-            <Link href="/business-loan-calculator" className="inline-flex items-center rounded-xl border border-[#0a7c42] px-5 py-3 text-sm font-bold text-[#0a7c42] hover:bg-[#0a7c4210]">Open the calculator</Link>
-            <Link href="/business-loans" className="inline-flex items-center rounded-xl px-5 py-3 text-sm font-bold text-white shadow-md hover:-translate-y-0.5" style={{ background: "#0a7c42", boxShadow: "0 8px 24px #0a7c4225" }}>Compare lenders</Link>
+            <Link href="/business-loan-calculator" className="inline-flex items-center rounded-xl border border-[#007a95] px-5 py-3 text-sm font-bold text-[#007a95] hover:bg-[#007a9510]">Open the calculator</Link>
+            <Link href="/business-loans" className="inline-flex items-center rounded-xl px-5 py-3 text-sm font-bold text-white shadow-md hover:-translate-y-0.5" style={{ background: "#007a95", boxShadow: "0 8px 24px #007a9525" }}>Compare lenders</Link>
           </div>
         </div>
 
         <section className="mt-14">
-          <h2 className="text-2xl font-extrabold text-[#10251b]">Common questions</h2>
-          <dl className="mt-6 divide-y divide-[#eef1ef] border-t border-[#eef1ef]">
+          <h2 className="text-2xl font-extrabold text-[#14120f]">Common questions</h2>
+          <dl className="mt-6 divide-y divide-[#f1ede4] border-t border-[#f1ede4]">
             {faqs.map((f) => (
               <div key={f.q} className="py-5">
-                <dt className="font-bold text-[#10251b]">{f.q}</dt>
-                <dd className="mt-1.5 text-sm leading-relaxed text-[#3d4b44]">{f.a}</dd>
+                <dt className="font-bold text-[#14120f]">{f.q}</dt>
+                <dd className="mt-1.5 text-sm leading-relaxed text-[#56504a]">{f.a}</dd>
               </div>
             ))}
           </dl>
         </section>
 
-        <p className="mt-10 text-xs leading-relaxed text-[#5a665f]">
+        <p className="mt-10 text-xs leading-relaxed text-[#56504a]">
           This analysis is general information, not financial advice, and is provided so borrowers and journalists can
           reproduce the figures. You are welcome to cite it with a link to this page. Refer Labs is an independent
           referrer, not a lender. Read our{" "}
-          <Link href="/about#how-we-research" className="underline hover:text-[#10251b]">editorial standards</Link>.
+          <Link href="/about#how-we-research" className="underline hover:text-[#14120f]">editorial standards</Link>.
         </p>
       </main>
     </ConsumerShell>
@@ -254,8 +254,8 @@ export default function FactorRateStudy() {
 function Section({ h, children }: { h: string; children: React.ReactNode }) {
   return (
     <section className="mt-10">
-      <h2 className="text-2xl font-extrabold text-[#10251b]">{h}</h2>
-      <div className="mt-3 space-y-3 text-[15px] leading-relaxed text-[#3d4b44]">{children}</div>
+      <h2 className="text-2xl font-extrabold text-[#14120f]">{h}</h2>
+      <div className="mt-3 space-y-3 text-[15px] leading-relaxed text-[#56504a]">{children}</div>
     </section>
   );
 }

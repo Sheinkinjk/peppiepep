@@ -3,6 +3,10 @@ import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
+import { EdgeObject } from "@/components/brand/EdgeObject";
+import { GuideGrid } from "@/components/brand/GuideGrid";
+import { LogoGrid } from "@/components/brand/LogoGrid";
+import { HubObject, type ObjectKind } from "@/components/home/Objects";
 import SoftwareFinder, { type FinderGoal, type FinderProvider } from "@/components/consumer/SoftwareFinder";
 import { CATALOG } from "@/lib/catalog/catalog";
 import { DEALS, formatVerifiedFull, checkMethod } from "@/lib/offers";
@@ -61,14 +65,14 @@ const breadcrumbSchema = {
 };
 
 const hubs = [
-  { href: "/compare/website-builders", label: "Websites & landing pages", desc: "One-page sites, AI-built business sites, and landing pages that convert." },
-  { href: "/compare/newsletter-platforms", label: "Newsletters & email", desc: "Grow and monetise an email list without a revenue cut." },
-  { href: "/compare/ai-sales-tools", label: "Sales & CRM", desc: "Contact data, outreach, AI reps and CRMs, sorted by the job you need done." },
-  { href: "/compare/sales-outreach", label: "Sales & outreach", desc: "Find leads and reach them across email, LinkedIn and more." },
-  { href: "/compare/hr-payroll", label: "HR & payroll", desc: "Run pay, hiring, training and people admin from one place." },
-  { href: "/compare/payments", label: "Payments & bookkeeping", desc: "Get paid across borders, and keep the books straight." },
-  { href: "/compare/business-phone", label: "Business phone", desc: "Cloud calling and virtual numbers for sales and support teams." },
-  { href: "/compare/ai-tools", label: "AI tools", desc: "AI assistants, voice and branding, sorted by what they do." },
+  { object: "browser" as ObjectKind, href: "/compare/website-builders", label: "Websites & landing pages", desc: "One-page sites, AI-built business sites, and landing pages that convert." },
+  { object: "envelope" as ObjectKind, href: "/compare/newsletter-platforms", label: "Newsletters & email", desc: "Grow and monetise an email list without a revenue cut." },
+  { object: "funnel" as ObjectKind, href: "/compare/ai-sales-tools", label: "Sales & CRM", desc: "Contact data, outreach, AI reps and CRMs, sorted by the job you need done." },
+  { object: "send" as ObjectKind, href: "/compare/sales-outreach", label: "Sales & outreach", desc: "Find leads and reach them across email, LinkedIn and more." },
+  { object: "badge" as ObjectKind, href: "/compare/hr-payroll", label: "HR & payroll", desc: "Run pay, hiring, training and people admin from one place." },
+  { object: "card" as ObjectKind, href: "/compare/payments", label: "Payments & bookkeeping", desc: "Get paid across borders, and keep the books straight." },
+  { object: "phone" as ObjectKind, href: "/compare/business-phone", label: "Business phone", desc: "Cloud calling and virtual numbers for sales and support teams." },
+  { object: "chip" as ObjectKind, href: "/compare/ai-tools", label: "AI tools", desc: "AI assistants, voice and branding, sorted by what they do." },
 ];
 
 /**
@@ -149,23 +153,24 @@ export default function BusinessSoftwarePage() {
 
       <main id="main-content">
         {/* Hero + finder */}
-        <section className="border-b border-[#e5e9e7] bg-[#f5f8f6]">
+        <section className="border-b border-[#ded8cd] bg-[#f7f4ee]">
           <div className="mx-auto grid max-w-6xl items-start gap-10 px-5 py-12 sm:px-8 sm:py-16 lg:grid-cols-[1fr_1.05fr] lg:gap-14">
             <div className="lg:pt-4">
-              <h1 className="mt-3 text-4xl font-extrabold leading-[1.05] tracking-[-0.02em] text-[#10251b] sm:text-5xl">
+              <h1 className="mt-3 text-4xl font-extrabold leading-[1.05] tracking-[-0.02em] text-[#14120f] sm:text-5xl">
                 Find the right software for your business in a minute
               </h1>
-              <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#3d4b44]">
+              <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#56504a]">
                 Answer three quick questions and we&apos;ll match you to the tools that fit what you&apos;re
                 trying to do, with the reasoning, so you skip comparing everything. Independent research, disclosed
                 affiliate links, never sold placement.
               </p>
-              <ul className="mt-7 grid gap-2.5 text-[15px] font-medium text-[#10251b] sm:grid-cols-2">
+              <ul className="mt-7 grid gap-2.5 text-[15px] font-medium text-[#14120f] sm:grid-cols-2">
                 {["Personalised to your goals", "Reasoning on every pick", "Free, no obligation", "Email optional"].map((t) => (
                   <li key={t} className="flex items-center gap-2.5">
-                    <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#e6f3ec]">
-                      <ArrowRight className="h-3 w-3 text-[#0a7c42]" strokeWidth={2.5} aria-hidden="true" />
-                    </span>
+                    <svg width="20" height="20" viewBox="0 0 22 22" aria-hidden="true" className="shrink-0">
+                      <circle cx="11" cy="11" r="11" fill="#e4f2f5" />
+                      <path d="M6.5 11.4 L9.6 14.3 L15.6 7.9" fill="none" stroke="#007a95" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
                     {t}
                   </li>
                 ))}
@@ -176,7 +181,7 @@ export default function BusinessSoftwarePage() {
             </div>
 
             <div id="finder" className="scroll-mt-24">
-              <SoftwareFinder goals={GOALS} providers={providerByName} />
+              <EdgeObject kind="browser" className="br-edge--left"><SoftwareFinder goals={GOALS} providers={providerByName} /></EdgeObject>
             </div>
           </div>
         </section>
@@ -184,19 +189,20 @@ export default function BusinessSoftwarePage() {
         <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
           {/* Category directory (SEO + browse) */}
           <section id="browse" className="scroll-mt-24">
-            <h2 className="text-2xl font-extrabold text-[#10251b]">Browse every category</h2>
-            <p className="mt-2 max-w-2xl text-sm leading-relaxed text-[#3d4b44]">
+            <h2 className="text-2xl font-extrabold text-[#14120f]">Browse every category</h2>
+            <p className="mt-2 max-w-2xl text-sm leading-relaxed text-[#56504a]">
               Prefer to look yourself? Every category we compare, sorted by the job you need done. Researched by people,
               disclosed on every page, never sold to the highest bidder.
             </p>
             <div className="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {hubs.map((h) => (
                 <Link key={h.href} href={h.href} className="nw-card nw-card-hover group flex flex-col rounded-2xl p-6">
-                  <div className="flex items-center justify-between">
-                    <ArrowRight className="h-4 w-4 text-[#0a7c42] transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
+                  <div className="flex items-start justify-between">
+                    <HubObject kind={h.object} size={56} className="hy-obj transition-transform duration-300 group-hover:-rotate-6" />
+                    <ArrowRight className="h-4 w-4 text-[#007a95] transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
                   </div>
-                  <h3 className="mt-3 text-xl font-bold text-[#10251b] group-hover:text-[#0a7c42]">{h.label}</h3>
-                  <p className="mt-1.5 text-sm leading-relaxed text-[#3d4b44]">{h.desc}</p>
+                  <h3 className="mt-3 text-xl font-bold text-[#14120f] group-hover:text-[#007a95]">{h.label}</h3>
+                  <p className="mt-1.5 text-sm leading-relaxed text-[#56504a]">{h.desc}</p>
                 </Link>
               ))}
             </div>
@@ -205,9 +211,9 @@ export default function BusinessSoftwarePage() {
           {/* Current offers: the three tools we hold a real discount on. Placed
               above "Popular tools" because a discount is the only reason a reader
               has to start here rather than at the vendor's own site. */}
-          <section className="mt-14 border-t border-[#e5e9e7] pt-12">
-            <h2 className="text-2xl font-extrabold text-[#10251b]">Current offers</h2>
-            <p className="mt-2 max-w-2xl text-sm leading-relaxed text-[#3d4b44]">
+          <section className="mt-14 border-t border-[#ded8cd] pt-12">
+            <h2 className="text-2xl font-extrabold text-[#14120f]">Current offers</h2>
+            <p className="mt-2 max-w-2xl text-sm leading-relaxed text-[#56504a]">
               Three of the tools we cover carry a real discount rather than a free trial anyone can
               start direct. Each shows when we last checked it, and whether it was read off the provider&apos;s own page or confirmed directly with them.
             </p>
@@ -216,16 +222,25 @@ export default function BusinessSoftwarePage() {
                 <Link
                   key={d.brand}
                   href={d.href}
-                  className="group flex flex-col rounded-2xl border border-[#0a7c42]/25 bg-[#0a7c42]/[0.04] p-6 transition-all hover:-translate-y-0.5 hover:border-[#0a7c42]/50"
+                  className="group flex flex-col rounded-2xl border border-[#ded8cd] bg-white p-6 transition-all hover:-translate-y-0.5 hover:border-[#14120f]"
                 >
-                  <h3 className="text-lg font-extrabold text-[#10251b] group-hover:text-[#0a7c42]">{d.brand}</h3>
-                  <p className="mt-2 text-[15px] font-bold leading-snug text-[#0a7c42]">{d.offer}</p>
+                  <div className="flex items-center gap-3">
+                    {d.logo && (
+                      <span className="grid h-12 w-12 shrink-0 place-items-center overflow-hidden rounded-lg bg-white">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img src={d.logo} alt="" width={32} height={32} className="h-8 w-8 object-contain" />
+                      </span>
+                    )}
+                    <h3 className="text-lg font-extrabold text-[#14120f] group-hover:text-[#007a95]">{d.brand}</h3>
+                  </div>
+                  {/* Saffron: a figure we checked, as on the homepage. */}
+                  <p className="mt-3 text-[15px] font-bold leading-snug text-[#a85d09]">{d.offer}</p>
                   {d.verified && (
-                    <p className="mt-2 text-[12px] font-medium text-[#5a665f]">
+                    <p className="mt-2 text-[12px] font-medium text-[#56504a]">
                       {checkMethod(d.brand, true)} on {formatVerifiedFull(d.verified)}.
                     </p>
                   )}
-                  <span className="mt-auto inline-flex items-center gap-1.5 pt-5 text-sm font-semibold text-[#0a7c42]">
+                  <span className="mt-auto inline-flex items-center gap-1.5 pt-5 text-sm font-semibold text-[#007a95]">
                     See the offer <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
                   </span>
                 </Link>
@@ -234,59 +249,45 @@ export default function BusinessSoftwarePage() {
           </section>
 
           {/* In-depth guides. None of these was reachable from this hub before. */}
-          <section className="mt-14 border-t border-[#e5e9e7] pt-12">
-            <h2 className="text-2xl font-extrabold text-[#10251b]">In-depth comparisons</h2>
-            <div className="mt-7 grid gap-4 sm:grid-cols-2">
-              {guides.map((g) => (
-                <Link key={g.href} href={g.href} className="group rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] p-5 transition-all hover:-translate-y-0.5 hover:border-[#0a7c42]/40">
-                  <h3 className="text-[15px] font-bold text-[#10251b] group-hover:text-[#0a7c42]">{g.label}</h3>
-                  <p className="mt-1.5 text-sm leading-relaxed text-[#3d4b44]">{g.desc}</p>
-                </Link>
-              ))}
-            </div>
+          <section className="mt-14 border-t border-[#ded8cd] pt-12">
+            <h2 className="text-2xl font-extrabold text-[#14120f]">In-depth comparisons</h2>
+            <GuideGrid guides={guides.map((g) => ({ href: g.href, title: g.label, desc: g.desc, kind: "compare" as const }))} />
           </section>
 
           {/* Popular tools */}
-          <section className="mt-14 border-t border-[#e5e9e7] pt-12">
+          <section className="mt-14 border-t border-[#ded8cd] pt-12">
             <div className="grid gap-8 lg:grid-cols-[220px_1fr] lg:gap-14">
               <div className="lg:pt-1">
-                <h2 className="text-xl font-extrabold text-[#10251b]">Popular tools</h2>
-                <p className="mt-2 text-[13px] leading-relaxed text-[#627068]">Independent reviews of the tools people search for most.</p>
+                <h2 className="text-xl font-extrabold text-[#14120f]">Popular tools</h2>
+                <p className="mt-2 text-[13px] leading-relaxed text-[#56504a]">Independent reviews of the tools people search for most.</p>
               </div>
-              <div className="grid gap-4 sm:grid-cols-2">
-                {tools.map((t) => (
-                  <Link key={t.href} href={t.href} className="group rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] p-5 transition-all hover:-translate-y-0.5 hover:border-[#0a7c42]/40">
-                    <h3 className="text-[15px] font-bold text-[#10251b] group-hover:text-[#0a7c42]">{t.label}</h3>
-                    <p className="mt-1.5 text-sm leading-relaxed text-[#3d4b44]">{t.desc}</p>
-                  </Link>
-                ))}
-              </div>
+              <LogoGrid items={tools.map((t) => ({ ...t, logo: `/logos${t.href}.png` }))} />
             </div>
           </section>
 
           {/* FAQ */}
-          <section className="mt-14 max-w-3xl border-t border-[#e5e9e7] pt-12">
-            <h2 className="text-2xl font-extrabold text-[#10251b]">Common questions</h2>
-            <div className="mt-6 divide-y divide-[#eef1ef] border-t border-[#eef1ef]">
+          <section className="mt-14 max-w-3xl border-t border-[#ded8cd] pt-12">
+            <h2 className="text-2xl font-extrabold text-[#14120f]">Common questions</h2>
+            <div className="mt-6 divide-y divide-[#f1ede4] border-t border-[#f1ede4]">
               {FAQS.map((f) => (
                 <div key={f.q} className="py-5">
-                  <h3 className="font-bold text-[#10251b]">{f.q}</h3>
-                  <p className="mt-1.5 text-sm leading-relaxed text-[#3d4b44]">{f.a}</p>
+                  <h3 className="font-bold text-[#14120f]">{f.q}</h3>
+                  <p className="mt-1.5 text-sm leading-relaxed text-[#56504a]">{f.a}</p>
                 </div>
               ))}
             </div>
           </section>
 
-          <div className="mt-14 border-t border-[#e5e9e7] pt-10">
+          <div className="mt-14 border-t border-[#ded8cd] pt-10">
             <NewsletterSignup variant="band" source="business-software" />
-            <p className="mt-8 max-w-2xl text-sm leading-relaxed text-[#3d4b44]">
+            <p className="mt-8 max-w-2xl text-sm leading-relaxed text-[#56504a]">
               Some pages contain affiliate links, disclosed on the page. We may earn a commission if you buy through them,
               at no extra cost to you, and it never changes a recommendation.
             </p>
-            <p className="mt-4 max-w-2xl text-sm leading-relaxed text-[#3d4b44]">
+            <p className="mt-4 max-w-2xl text-sm leading-relaxed text-[#56504a]">
               Only a handful of these carry a genuine discount rather than a free trial. Those are listed, with the date
               each was checked, on{" "}
-              <Link href="/deals" className="font-semibold text-[#0a7c42] hover:underline">the deals page</Link>.
+              <Link href="/deals" className="font-semibold text-[#007a95] hover:underline">the deals page</Link>.
             </p>
           </div>
         </div>

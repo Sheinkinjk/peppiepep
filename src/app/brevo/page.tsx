@@ -61,10 +61,10 @@ export default function BrevoPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }} />
       <PremiumAffiliateLanding config={brevoConfig} />
-      <div className="border-t border-[#e5e9e7] bg-white py-6">
+      <div className="border-t border-[#ded8cd] bg-white py-6">
         <div className="mx-auto max-w-3xl px-6 sm:px-8">
-          <p className="text-[#627068] text-xs mb-1.5">Compare email &amp; newsletter tools</p>
-          <Link href="/best-newsletter-platform" className="text-sm text-[#0a7c42] font-semibold hover:text-[#086536] transition-colors">
+          <p className="text-[#56504a] text-xs mb-1.5">Compare email &amp; newsletter tools</p>
+          <Link href="/best-newsletter-platform" className="text-sm text-[#007a95] font-semibold hover:text-[#003647] transition-colors">
             See how the newsletter and email platforms compare &rarr;
           </Link>
         </div>

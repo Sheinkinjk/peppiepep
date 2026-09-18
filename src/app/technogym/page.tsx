@@ -105,7 +105,7 @@ const brand: RetailerBrand = {
   ],
   disclaimer: (
     <>
-      <span className="font-semibold text-[#2b362f]">General information only.</span> Nothing here is medical advice or
+      <span className="font-semibold text-[#14120f]">General information only.</span> Nothing here is medical advice or
       a claim that any equipment prevents disease or extends life. Speak to a health professional before starting a
       new exercise programme. Prices were read on {readOnLabel} and can change.
     </>

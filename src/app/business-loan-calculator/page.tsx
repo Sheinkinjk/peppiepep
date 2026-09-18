@@ -51,14 +51,14 @@ export default function CalculatorPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       <main className="mx-auto max-w-3xl px-5 py-10 sm:px-8 sm:py-14">
-        <nav className="text-xs text-[#5a665f]">
-          <Link href="/business-loans" className="hover:text-[#0a7c42]">Business loans</Link>
+        <nav className="text-xs text-[#56504a]">
+          <Link href="/business-loans" className="hover:text-[#007a95]">Business loans</Link>
           <span className="px-1.5">/</span>
-          <span className="text-[#3d4b44]">Repayment calculator</span>
+          <span className="text-[#56504a]">Repayment calculator</span>
         </nav>
 
-        <h1 className="mt-3 text-4xl font-extrabold leading-[1.1] text-[#10251b]">Business loan repayment calculator</h1>
-        <p className="mt-4 text-lg leading-relaxed text-[#3d4b44]">
+        <h1 className="mt-3 text-4xl font-extrabold leading-[1.1] text-[#14120f]">Business loan repayment calculator</h1>
+        <p className="mt-4 text-lg leading-relaxed text-[#56504a]">
           Enter an amount, a nominal rate and a term to estimate monthly repayments, total cost and the effective rate. Add
           a lender&apos;s establishment and ongoing fees to see the true, comparison-style rate. It runs in your browser,
           with no sign-up and no credit check. Treat the result as a starting point, not a quote.
@@ -69,12 +69,12 @@ export default function CalculatorPage() {
         </div>
 
         <section className="mt-14">
-          <h2 className="text-2xl font-extrabold text-[#10251b]">Common questions</h2>
-          <dl className="mt-6 divide-y divide-[#eef1ef] border-t border-[#eef1ef]">
+          <h2 className="text-2xl font-extrabold text-[#14120f]">Common questions</h2>
+          <dl className="mt-6 divide-y divide-[#f1ede4] border-t border-[#f1ede4]">
             {faqs.map((f) => (
               <div key={f.q} className="py-5">
-                <dt className="font-bold text-[#10251b]">{f.q}</dt>
-                <dd className="mt-1.5 text-sm leading-relaxed text-[#3d4b44]">{f.a}</dd>
+                <dt className="font-bold text-[#14120f]">{f.q}</dt>
+                <dd className="mt-1.5 text-sm leading-relaxed text-[#56504a]">{f.a}</dd>
               </div>
             ))}
           </dl>

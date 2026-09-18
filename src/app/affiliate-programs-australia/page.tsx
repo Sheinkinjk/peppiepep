@@ -228,17 +228,17 @@ export default function AffiliateProgramsAustraliaPage() {
       <main id="main-content">
         {/* Hero */}
         <section className="mx-auto max-w-4xl px-5 pt-10 sm:px-8 sm:pt-14">
-          <nav className="mb-6 flex items-center gap-2 text-sm text-[#627068]">
-            <Link href="/" className="hover:text-[#0a7c42]">Refer Labs</Link>
+          <nav className="mb-6 flex items-center gap-2 text-sm text-[#56504a]">
+            <Link href="/" className="hover:text-[#007a95]">Refer Labs</Link>
             <span>/</span>
-            <Link href="/guides" className="hover:text-[#0a7c42]">Guides</Link>
+            <Link href="/guides" className="hover:text-[#007a95]">Guides</Link>
             <span>/</span>
-            <span className="text-[#2b362f]">Affiliate programs Australia</span>
+            <span className="text-[#14120f]">Affiliate programs Australia</span>
           </nav>
-          <h1 className="mt-4 text-4xl font-bold leading-[1.07] tracking-[-0.01em] text-[#10251b] sm:text-5xl">
-            Best affiliate programs in Australia <span className="italic text-[#0a7c42]">(2026)</span>
+          <h1 className="mt-4 text-4xl font-bold leading-[1.07] tracking-[-0.01em] text-[#14120f] sm:text-5xl">
+            Best affiliate programs in Australia <span className="italic text-[#007a95]">(2026)</span>
           </h1>
-          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-[#2b362f]">
+          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-[#14120f]">
             Affiliate marketing is one of the cleanest ways for Australians to earn from a website, a newsletter or a
             YouTube channel. You recommend a product you rate, someone buys through your link, and the company
             pays you a cut at no extra cost to the buyer. The hard part is knowing which of the hundreds of programs are worth your time. Below is a working shortlist of well-known programs relevant to
@@ -250,8 +250,8 @@ export default function AffiliateProgramsAustraliaPage() {
               Jump to the highest paying programs →
             </Link>
           </div>
-          <p className="mt-8 max-w-3xl rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] px-5 py-4 text-xs leading-relaxed text-[#3d4b44]">
-            <span className="font-semibold text-[#2b362f]">A note on the numbers.</span> Commission rates, cookie
+          <p className="mt-8 max-w-3xl rounded-xl border border-[#ded8cd] bg-[#f7f4ee] px-5 py-4 text-xs leading-relaxed text-[#56504a]">
+            <span className="font-semibold text-[#14120f]">A note on the numbers.</span> Commission rates, cookie
             windows and network details change often and vary by region and promotion. Everything here is a widely
             published, general structure to help you compare, not a live quote. Always confirm current terms with the
             program before you rely on a figure. This is business and marketing education, not financial or tax advice.
@@ -260,9 +260,9 @@ export default function AffiliateProgramsAustraliaPage() {
 
         {/* Programs we've reviewed — our own coverage, clickable, on-brand */}
         <section className="mx-auto max-w-4xl px-5 pt-12 sm:px-8">
-          <div className="rounded-2xl border border-[#e5e9e7] bg-white p-6 sm:p-8">
-            <h2 className="mt-2 text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Programs we&rsquo;ve looked at closely</h2>
-            <p className="mt-2 max-w-xl text-sm leading-relaxed text-[#5a665f]">
+          <div className="rounded-2xl border border-[#ded8cd] bg-white p-6 sm:p-8">
+            <h2 className="mt-2 text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Programs we&rsquo;ve looked at closely</h2>
+            <p className="mt-2 max-w-xl text-sm leading-relaxed text-[#56504a]">
               These are the tools and services we&rsquo;ve tested and written up ourselves. Each links to our independent
               review with how it works, who it suits, and the current offer.
             </p>
@@ -271,19 +271,19 @@ export default function AffiliateProgramsAustraliaPage() {
                 <Link
                   key={r.href}
                   href={r.href}
-                  className="group flex items-center gap-3 rounded-xl border border-[#e5e9e7] bg-[#fbfcfb] p-3.5 transition-all hover:-translate-y-0.5 hover:border-[#0a7c42]/40 hover:bg-white"
+                  className="group flex items-center gap-3 rounded-xl border border-[#ded8cd] bg-[#f7f4ee] p-3.5 transition-all hover:-translate-y-0.5 hover:border-[#007a95]/40 hover:bg-white"
                 >
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-[#eef1ef] bg-white">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-[#f1ede4] bg-white">
                     <Image src={`/logos/${r.logo}.png`} alt={`${r.name} logo`} width={32} height={32} className="h-7 w-7 object-contain" style={{ transform: `scale(${logoScale(r.logo + ".png")})` }} />
                   </span>
                   <div className="min-w-0">
-                    <p className="truncate text-sm font-bold text-[#10251b] transition-colors group-hover:text-[#0a7c42]">{r.name}</p>
-                    <p className="truncate text-[11px] text-[#627068]">{r.cat}</p>
+                    <p className="truncate text-sm font-bold text-[#14120f] transition-colors group-hover:text-[#007a95]">{r.name}</p>
+                    <p className="truncate text-[11px] text-[#56504a]">{r.cat}</p>
                   </div>
                 </Link>
               ))}
             </div>
-            <p className="mt-5 text-xs leading-relaxed text-[#627068]">
+            <p className="mt-5 text-xs leading-relaxed text-[#56504a]">
               The broader reference tables below cover well-known programs across every category, whether or not we&rsquo;ve reviewed them yet.
             </p>
           </div>
@@ -291,13 +291,13 @@ export default function AffiliateProgramsAustraliaPage() {
 
         {/* Category jump nav */}
         <section className="mx-auto max-w-4xl px-5 pt-10 sm:px-8">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#627068]">Browse by category</p>
+          <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#56504a]">Browse by category</p>
           <nav className="mt-3 flex flex-wrap gap-2">
             {categories.map((c) => (
               <a
                 key={c.name}
                 href={`#${c.name.toLowerCase().replace(/[^a-z]+/g, "-")}`}
-                className="rounded-full border border-[#e5e9e7] bg-white px-4 py-2 text-xs font-semibold text-[#3d4b44] transition-colors hover:border-[#0a7c42]/40 hover:text-[#0a7c42]"
+                className="rounded-full border border-[#ded8cd] bg-white px-4 py-2 text-xs font-semibold text-[#56504a] transition-colors hover:border-[#007a95]/40 hover:text-[#007a95]"
               >
                 {c.name}
               </a>
@@ -312,27 +312,27 @@ export default function AffiliateProgramsAustraliaPage() {
             id={cat.name.toLowerCase().replace(/[^a-z]+/g, "-")}
             className="mx-auto max-w-4xl scroll-mt-24 px-5 pt-12 sm:px-8"
           >
-            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">
+            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">
               {cat.name}
             </h2>
-            <p className="mt-3 max-w-2xl text-[15px] leading-relaxed text-[#3d4b44]">{cat.blurb}</p>
-            <div className="mt-6 overflow-x-auto rounded-2xl border border-[#e5e9e7] bg-white">
+            <p className="mt-3 max-w-2xl text-[15px] leading-relaxed text-[#56504a]">{cat.blurb}</p>
+            <div className="mt-6 overflow-x-auto rounded-2xl border border-[#ded8cd] bg-white">
               <table className="w-full min-w-[640px] text-sm">
                 <thead>
-                  <tr className="border-b border-[#e5e9e7] bg-[#f5f8f6]">
-                    <th className="px-5 py-3 text-left text-[11px] font-bold uppercase tracking-wider text-[#627068]">Program</th>
-                    <th className="px-4 py-3 text-left text-[11px] font-bold uppercase tracking-wider text-[#627068]">Typical commission</th>
-                    <th className="px-4 py-3 text-left text-[11px] font-bold uppercase tracking-wider text-[#627068]">Cookie window</th>
-                    <th className="px-5 py-3 text-left text-[11px] font-bold uppercase tracking-wider text-[#627068]">Network</th>
+                  <tr className="border-b border-[#ded8cd] bg-[#f7f4ee]">
+                    <th className="px-5 py-3 text-left text-[11px] font-bold uppercase tracking-wider text-[#56504a]">Program</th>
+                    <th className="px-4 py-3 text-left text-[11px] font-bold uppercase tracking-wider text-[#56504a]">Typical commission</th>
+                    <th className="px-4 py-3 text-left text-[11px] font-bold uppercase tracking-wider text-[#56504a]">Cookie window</th>
+                    <th className="px-5 py-3 text-left text-[11px] font-bold uppercase tracking-wider text-[#56504a]">Network</th>
                   </tr>
                 </thead>
                 <tbody>
                   {cat.programs.map((p) => (
-                    <tr key={p.name} className="border-b border-[#eef1ef] last:border-0 hover:bg-[#f5f8f6]">
-                      <td className="px-5 py-4 font-bold text-[#10251b]">{p.name}</td>
-                      <td className="px-4 py-4 text-[#3d4b44]">{p.commission}</td>
-                      <td className="px-4 py-4 text-[#5a665f]">{p.cookie}</td>
-                      <td className="px-5 py-4 text-[#5a665f]">{p.network}</td>
+                    <tr key={p.name} className="border-b border-[#f1ede4] last:border-0 hover:bg-[#f7f4ee]">
+                      <td className="px-5 py-4 font-bold text-[#14120f]">{p.name}</td>
+                      <td className="px-4 py-4 text-[#56504a]">{p.commission}</td>
+                      <td className="px-4 py-4 text-[#56504a]">{p.cookie}</td>
+                      <td className="px-5 py-4 text-[#56504a]">{p.network}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -343,11 +343,11 @@ export default function AffiliateProgramsAustraliaPage() {
 
         {/* For-business band */}
         <section className="mx-auto max-w-4xl px-5 pt-14 sm:px-8">
-          <div className="rounded-2xl border border-[#0a7c42]/25 bg-[#0a7c42]/[0.05] px-7 py-8">
-            <h2 className="mt-3 text-2xl font-bold text-[#10251b] sm:text-[1.75rem]">
+          <div className="rounded-2xl border border-[#007a95]/25 bg-[#007a95]/[0.05] px-7 py-8">
+            <h2 className="mt-3 text-2xl font-bold text-[#14120f] sm:text-[1.75rem]">
               Run a program you want in front of the right audience?
             </h2>
-            <p className="mt-3 max-w-2xl text-[15px] leading-relaxed text-[#3d4b44]">
+            <p className="mt-3 max-w-2xl text-[15px] leading-relaxed text-[#56504a]">
               We design, launch and distribute referral and affiliate programs for Australian and international
               businesses, and we take on featured partnerships where the fit is genuine. Placement is earned against
               published criteria, never sold.
@@ -377,19 +377,19 @@ export default function AffiliateProgramsAustraliaPage() {
 
         {/* Editorial: how to join + what makes a good program */}
         <section className="mx-auto max-w-3xl px-5 pt-16 sm:px-8">
-          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">
+          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">
             How to join an affiliate program
           </h2>
-          <div className="mt-5 space-y-4 text-[15px] leading-relaxed text-[#3d4b44]">
+          <div className="mt-5 space-y-4 text-[15px] leading-relaxed text-[#56504a]">
             <p>
               There are two doors into most programs, and they lead to the same place. The first is direct: a company
               like Shopify, Kinsta or beehiiv runs its own affiliate program, and you apply on their site. The second
               is through a network. Australian affiliates lean heavily on{" "}
-              <span className="font-semibold text-[#2b362f]">Commission Factory</span> for local retail brands, and on{" "}
-              <span className="font-semibold text-[#2b362f]">Impact</span>,{" "}
-              <span className="font-semibold text-[#2b362f]">Awin</span>,{" "}
-              <span className="font-semibold text-[#2b362f]">Rakuten Advertising</span> and{" "}
-              <span className="font-semibold text-[#2b362f]">CJ</span> for everything else. You join the network once,
+              <span className="font-semibold text-[#14120f]">Commission Factory</span> for local retail brands, and on{" "}
+              <span className="font-semibold text-[#14120f]">Impact</span>,{" "}
+              <span className="font-semibold text-[#14120f]">Awin</span>,{" "}
+              <span className="font-semibold text-[#14120f]">Rakuten Advertising</span> and{" "}
+              <span className="font-semibold text-[#14120f]">CJ</span> for everything else. You join the network once,
               for free, then apply to individual programs inside it.
             </p>
             <p>
@@ -411,17 +411,17 @@ export default function AffiliateProgramsAustraliaPage() {
               canonical constants, disclosure above them as check-disclosure-order
               requires, and no price stated, so nothing here can go stale. The email
               capture below stays: it serves the reader who already has a platform. */}
-          <div className="mt-8 rounded-2xl border border-[#e5e9e7] bg-white p-6 sm:p-7">
-            <h3 className="text-lg font-bold text-[#10251b]">No newsletter or site yet?</h3>
-            <p className="mt-2 text-[15px] leading-relaxed text-[#3d4b44]">
+          <div className="mt-8 rounded-2xl border border-[#ded8cd] bg-white p-6 sm:p-7">
+            <h3 className="text-lg font-bold text-[#14120f]">No newsletter or site yet?</h3>
+            <p className="mt-2 text-[15px] leading-relaxed text-[#56504a]">
               That is what a program checks first, so it is the thing to set up before you apply. These are the two tools
               we have written up for exactly that job.
             </p>
             <AffiliateDisclosure compact partners={["beehiiv", "Carrd"]} className="mt-4" />
             <div className="mt-5 grid gap-3 sm:grid-cols-2">
-              <div className="rounded-xl border border-[#e5e9e7] bg-[#fbfcfb] p-4">
-                <p className="text-sm font-bold text-[#10251b]">beehiiv</p>
-                <p className="mt-1 text-sm leading-relaxed text-[#3d4b44]">
+              <div className="rounded-xl border border-[#ded8cd] bg-[#f7f4ee] p-4">
+                <p className="text-sm font-bold text-[#14120f]">beehiiv</p>
+                <p className="mt-1 text-sm leading-relaxed text-[#56504a]">
                   A newsletter platform. It also runs its own affiliate program, listed in the creator tools table below,
                   so the list you build can earn from the tool it runs on.
                 </p>
@@ -433,9 +433,9 @@ export default function AffiliateProgramsAustraliaPage() {
                   <Link href="/beehiiv" className="nw-link text-sm">How beehiiv works</Link>
                 </div>
               </div>
-              <div className="rounded-xl border border-[#e5e9e7] bg-[#fbfcfb] p-4">
-                <p className="text-sm font-bold text-[#10251b]">Carrd</p>
-                <p className="mt-1 text-sm leading-relaxed text-[#3d4b44]">
+              <div className="rounded-xl border border-[#ded8cd] bg-[#f7f4ee] p-4">
+                <p className="text-sm font-bold text-[#14120f]">Carrd</p>
+                <p className="mt-1 text-sm leading-relaxed text-[#56504a]">
                   A simple website builder, for a live site you can point an application at while the rest of your
                   content catches up.
                 </p>
@@ -450,22 +450,22 @@ export default function AffiliateProgramsAustraliaPage() {
             </div>
           </div>
 
-          <h2 className="mt-12 text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">
+          <h2 className="mt-12 text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">
             What makes a good affiliate program
           </h2>
-          <div className="mt-5 space-y-4 text-[15px] leading-relaxed text-[#3d4b44]">
+          <div className="mt-5 space-y-4 text-[15px] leading-relaxed text-[#56504a]">
             <p>
               A high headline rate is the wrong thing to chase first. The programs that pay are the ones where
               the product fits your audience, because a 3% commission on something people want beats a 40%
               commission on something they do not. Start there.
             </p>
             <p>
-              After fit, the things worth weighing are these. <span className="font-semibold text-[#2b362f]">Commission model:</span> a{" "}
+              After fit, the things worth weighing are these. <span className="font-semibold text-[#14120f]">Commission model:</span> a{" "}
               <Link href="/recurring-affiliate-programs" className="nw-link">recurring commission</Link> on software
-              people keep for years usually beats a slightly larger one-off payment. <span className="font-semibold text-[#2b362f]">Cookie window:</span>{" "}
-              longer is better, since most people do not buy on the first click. <span className="font-semibold text-[#2b362f]">Payout reliability:</span>{" "}
+              people keep for years usually beats a slightly larger one-off payment. <span className="font-semibold text-[#14120f]">Cookie window:</span>{" "}
+              longer is better, since most people do not buy on the first click. <span className="font-semibold text-[#14120f]">Payout reliability:</span>{" "}
               established networks and well-known brands pay on time and track properly. And{" "}
-              <span className="font-semibold text-[#2b362f]">average order value:</span> a small percentage of a large
+              <span className="font-semibold text-[#14120f]">average order value:</span> a small percentage of a large
               purchase, like <Link href="/high-paying-affiliate-programs" className="nw-link">web hosting or a SaaS plan</Link>,
               often out-earns a big percentage of a cheap one.
             </p>
@@ -478,9 +478,9 @@ export default function AffiliateProgramsAustraliaPage() {
         </section>
 
         {/* Spokes */}
-        <section className="border-y border-[#e5e9e7] bg-[#f5f8f6] mt-16">
+        <section className="border-y border-[#ded8cd] bg-[#f7f4ee] mt-16">
           <div className="mx-auto max-w-4xl px-5 py-14 sm:px-8">
-            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">
+            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">
               Go deeper
             </h2>
             <div className="mt-7 grid gap-4 sm:grid-cols-3">
@@ -490,8 +490,8 @@ export default function AffiliateProgramsAustraliaPage() {
                   href={s.href}
                   className="nw-card nw-card-hover group block p-6"
                 >
-                  <h3 className="text-[15px] font-bold text-[#10251b] group-hover:text-[#0a7c42]">{s.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-[#3d4b44]">{s.desc}</p>
+                  <h3 className="text-[15px] font-bold text-[#14120f] group-hover:text-[#007a95]">{s.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-[#56504a]">{s.desc}</p>
                 </Link>
               ))}
             </div>
@@ -500,21 +500,21 @@ export default function AffiliateProgramsAustraliaPage() {
 
         {/* FAQ */}
         <section className="mx-auto max-w-3xl px-5 py-14 sm:px-8">
-          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">
+          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">
             Frequently asked questions
           </h2>
-          <div className="mt-6 divide-y divide-[#e5e9e7] border-y border-[#e5e9e7]">
+          <div className="mt-6 divide-y divide-[#ded8cd] border-y border-[#ded8cd]">
             {faqs.map((f) => (
               <details key={f.q} className="group py-4">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-[#10251b]">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-[#14120f]">
                   {f.q}
-                  <span className="text-xl leading-none text-[#0a7c42] transition-transform group-open:rotate-45">+</span>
+                  <span className="text-xl leading-none text-[#007a95] transition-transform group-open:rotate-45">+</span>
                 </summary>
-                <p className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">{f.a}</p>
+                <p className="mt-3 text-[15px] leading-relaxed text-[#56504a]">{f.a}</p>
               </details>
             ))}
           </div>
-          <p className="mt-8 text-sm text-[#3d4b44]">
+          <p className="mt-8 text-sm text-[#56504a]">
             Refer Labs is independent and this page carries disclosed affiliate links. Program terms change, so verify
             current details before relying on them.
           </p>

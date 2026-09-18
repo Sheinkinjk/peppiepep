@@ -38,26 +38,26 @@ export default function EditorialMeta({
   className?: string;
 }) {
   return (
-    <p className={`flex flex-wrap items-center gap-x-2 gap-y-1 text-[12px] leading-relaxed text-[#627068] ${className}`}>
+    <p className={`flex flex-wrap items-center gap-x-2 gap-y-1 text-[12px] leading-relaxed text-[#56504a] ${className}`}>
       <span>
         Editor{" "}
-        <Link href="/authors/jarred" className="text-[#5a665f] transition-colors hover:text-[#3d4b44] hover:underline">
+        <Link href="/authors/jarred" className="text-[#56504a] transition-colors hover:text-[#56504a] hover:underline">
           Jarred, Founder
         </Link>
       </span>
       <span aria-hidden="true">·</span>
       <span>
         Last updated{" "}
-        <time dateTime={lastUpdated} className="text-[#5a665f]">
+        <time dateTime={lastUpdated} className="text-[#56504a]">
           {formatAU(lastUpdated)}
         </time>
       </span>
       <span aria-hidden="true">·</span>
-      <Link href="/about" className="transition-colors hover:text-[#3d4b44] hover:underline">
+      <Link href="/about" className="transition-colors hover:text-[#56504a] hover:underline">
         How we compare
       </Link>
       <span aria-hidden="true">·</span>
-      <Link href="/how-we-make-money" className="transition-colors hover:text-[#3d4b44] hover:underline">
+      <Link href="/how-we-make-money" className="transition-colors hover:text-[#56504a] hover:underline">
         How we make money
       </Link>
     </p>

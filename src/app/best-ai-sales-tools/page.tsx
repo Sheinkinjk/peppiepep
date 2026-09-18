@@ -109,8 +109,8 @@ const webPageSchema = {
 
 // ─── Palette ──────────────────────────────────────────────────────────────────
 
-const ACCENT    = "#0a7c42";
-const ACCENT_LT = "#0a7c42";
+const ACCENT    = "#007a95";
+const ACCENT_LT = "#007a95";
 
 // ─── Comparison data ──────────────────────────────────────────────────────────
 
@@ -142,7 +142,7 @@ const tools = [
     name: "AiSDR",
     logo: "aisdr",
     badge: "Best AI Outbound SDR",
-    badgeColor: "#0a7c42",
+    badgeColor: "#007a95",
     href: AISDR_URL,
     internalHref: "/aisdr",
     tagline: "An AI sales rep that builds pipeline without hiring",
@@ -165,7 +165,7 @@ const tools = [
     name: "Reply.io",
     logo: "replyio",
     badge: "Best Sales Engagement Platform",
-    badgeColor: "#0a7c42",
+    badgeColor: "#007a95",
     href: REPLY_IO_URL,
     internalHref: "/replyio",
     tagline: "Run your own multichannel outbound, powered by AI",
@@ -188,7 +188,7 @@ const tools = [
     name: "FullEnrich",
     logo: "fullenrich",
     badge: "Best for Contact Data",
-    badgeColor: "#0a7c42",
+    badgeColor: "#007a95",
     href: FULLENRICH_URL,
     internalHref: "/fullenrich",
     tagline: "Waterfall enrichment for verified emails and mobile numbers",
@@ -241,23 +241,23 @@ export default function BestAiSalesToolsPage() {
       <main id="main-content" className="relative mx-auto max-w-5xl px-5 sm:px-8 lg:px-12 pb-24 pt-14 sm:pt-18">
 
         {/* Breadcrumb */}
-        <nav className="mb-10 flex items-center gap-2 text-sm text-[#3d4b44]">
-          <Link href="/" className="hover:text-[#2b362f] transition-colors">Refer Labs</Link>
+        <nav className="mb-10 flex items-center gap-2 text-sm text-[#56504a]">
+          <Link href="/" className="hover:text-[#14120f] transition-colors">Refer Labs</Link>
           <span>/</span>
-          <Link href="/guides" className="hover:text-[#2b362f] transition-colors">Guides</Link>
+          <Link href="/guides" className="hover:text-[#14120f] transition-colors">Guides</Link>
           <span>/</span>
-          <span className="text-[#2b362f]">Best AI Sales Tools 2026</span>
+          <span className="text-[#14120f]">Best AI Sales Tools 2026</span>
         </nav>
 
 
         {/* Hero */}
         <div className="mb-16 sm:mb-20 max-w-3xl">
           <p className="nw-kicker mb-4">AI Sales & Automation</p>
-          <h1 className="text-4xl sm:text-5xl lg:text-[3.25rem] font-black leading-[1.07] text-[#10251b] mb-5 tracking-tight">
+          <h1 className="text-4xl sm:text-5xl lg:text-[3.25rem] font-black leading-[1.07] text-[#14120f] mb-5 tracking-tight">
             Best AI Sales Tools in 2026:{" "}
             <span style={{ color: ACCENT_LT }}>GoHighLevel, AiSDR, Reply.io & FullEnrich</span>
           </h1>
-          <p className="text-[#3d4b44] text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
+          <p className="text-[#56504a] text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
             Each of these four fixes a different bottleneck, so the right one depends on where your outbound
             stalls. FullEnrich fixes bad contact data. Reply.io runs multichannel sequences you control. AiSDR replaces
             the outbound rep and books the meetings itself. GoHighLevel is the all-in-one for agencies running CRM,
@@ -285,11 +285,11 @@ export default function BestAiSalesToolsPage() {
         {/* Answer-first verdict: the direct answer an engine can lift. The heading
             is the buyer's question verbatim, because engines match headings to
             questions before they read the prose beneath. */}
-        <div className="mb-14 rounded-2xl border border-[#0a7c42]/15 bg-[#f4f9f6] px-6 sm:px-8 py-6 max-w-3xl">
-          <h2 className="text-xl sm:text-2xl font-black text-[#10251b] mb-3">
+        <div className="mb-14 rounded-2xl border border-[#007a95]/15 bg-[#e4f2f5] px-6 sm:px-8 py-6 max-w-3xl">
+          <h2 className="text-xl sm:text-2xl font-black text-[#14120f] mb-3">
             What are the best AI sales tools for an Australian small business?
           </h2>
-          <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
+          <p className="text-[#56504a] text-sm sm:text-base leading-relaxed">
             For most Australian small businesses, <strong>GoHighLevel</strong> is the best
             starting point: one subscription replaces the CRM, funnels, follow-up and
             reviews stack, which is where small teams lose the most hours. Choose{" "}
@@ -302,12 +302,12 @@ export default function BestAiSalesToolsPage() {
         </div>
 
         {/* Our Picks */}
-        <section id="comparison" className="border-t border-[#0a7c42]/10 py-12 sm:py-14">
-          <h2 className="text-2xl sm:text-3xl font-black text-[#10251b] mb-3">Our Four Picks</h2>
-          <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl mb-6">
+        <section id="comparison" className="border-t border-[#007a95]/10 py-12 sm:py-14">
+          <h2 className="text-2xl sm:text-3xl font-black text-[#14120f] mb-3">Our Four Picks</h2>
+          <p className="text-[#56504a] text-sm sm:text-base leading-relaxed max-w-2xl mb-6">
             These tools sit at different points in the sales stack. FullEnrich is the data layer that finds verified emails and mobile numbers. Reply.io is the sales engagement platform your team drives to run multichannel outbound. AiSDR is the done-for-you AI rep that generates conversations and books meetings. GoHighLevel is the all-in-one platform to run and automate your CRM, marketing and follow-up. Plenty of teams use more than one for different jobs.
           </p>
-          <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl mb-8">
+          <p className="text-[#56504a] text-sm sm:text-base leading-relaxed max-w-2xl mb-8">
             Pricing below is indicative and correct. Providers can change their plans, so verify the current figures before you commit.
           </p>
           <a
@@ -321,16 +321,16 @@ export default function BestAiSalesToolsPage() {
         </section>
 
         {/* Tool Cards */}
-        <section className="border-t border-[#0a7c42]/10 py-12 sm:py-14 space-y-8">
+        <section className="border-t border-[#007a95]/10 py-12 sm:py-14 space-y-8">
           {tools.map((t) => (
             <div
               key={t.name}
               id={t.name.toLowerCase().replace(/[^a-z]/g, "")}
-              className="rounded-2xl border border-[#e5e9e7] bg-[#f5f8f6] p-7 sm:p-8"
+              className="rounded-2xl border border-[#ded8cd] bg-[#f7f4ee] p-7 sm:p-8"
             >
               <div className="flex flex-wrap items-start justify-between gap-4 mb-5">
                 <div className="flex items-start gap-4">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-xl border border-[#e5e9e7] bg-white p-1.5 flex-shrink-0">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-xl border border-[#ded8cd] bg-white p-1.5 flex-shrink-0">
                     <Image
                       src={`/logos/${t.logo}.png`}
                       alt={`${t.name} logo`}
@@ -342,9 +342,9 @@ export default function BestAiSalesToolsPage() {
                   </span>
                   <div>
                     <div className="flex items-center gap-3 mb-1">
-                      <h3 className="text-xl font-black text-[#10251b]">{t.name}</h3>
+                      <h3 className="text-xl font-black text-[#14120f]">{t.name}</h3>
                     </div>
-                    <p className="text-[#3d4b44] text-sm">{t.tagline}</p>
+                    <p className="text-[#56504a] text-sm">{t.tagline}</p>
                   </div>
                 </div>
                 <a
@@ -358,17 +358,17 @@ export default function BestAiSalesToolsPage() {
               </div>
 
               <div className="grid sm:grid-cols-3 gap-4 mb-6 text-sm">
-                <div className="rounded-xl bg-white border border-[#e5e9e7] p-4">
-                  <p className="text-[10px] font-semibold uppercase tracking-widest text-[#627068] mb-1">Best For</p>
-                  <p className="text-[#2b362f] font-medium">{t.bestFor}</p>
+                <div className="rounded-xl bg-white border border-[#ded8cd] p-4">
+                  <p className="text-[10px] font-semibold uppercase tracking-widest text-[#56504a] mb-1">Best For</p>
+                  <p className="text-[#14120f] font-medium">{t.bestFor}</p>
                 </div>
-                <div className="rounded-xl bg-white border border-[#e5e9e7] p-4">
-                  <p className="text-[10px] font-semibold uppercase tracking-widest text-[#627068] mb-1">Price</p>
-                  <p className="text-[#2b362f] font-medium">{t.price}</p>
+                <div className="rounded-xl bg-white border border-[#ded8cd] p-4">
+                  <p className="text-[10px] font-semibold uppercase tracking-widest text-[#56504a] mb-1">Price</p>
+                  <p className="text-[#14120f] font-medium">{t.price}</p>
                 </div>
-                <div className="rounded-xl bg-white border border-[#e5e9e7] p-4">
-                  <p className="text-[10px] font-semibold uppercase tracking-widest text-[#627068] mb-1">Terms</p>
-                  <p className="text-[#2b362f] font-medium">{t.trial}</p>
+                <div className="rounded-xl bg-white border border-[#ded8cd] p-4">
+                  <p className="text-[10px] font-semibold uppercase tracking-widest text-[#56504a] mb-1">Terms</p>
+                  <p className="text-[#14120f] font-medium">{t.trial}</p>
                 </div>
               </div>
 
@@ -377,7 +377,7 @@ export default function BestAiSalesToolsPage() {
                   <p className="text-xs font-semibold uppercase tracking-widest mb-3" style={{ color: ACCENT_LT }}>Strengths</p>
                   <ul className="space-y-2">
                     {t.pros.map((item) => (
-                      <li key={item} className="flex items-start gap-2.5 text-sm text-[#2b362f]">
+                      <li key={item} className="flex items-start gap-2.5 text-sm text-[#14120f]">
                         <CheckCircle2 className="h-4 w-4 flex-shrink-0 mt-0.5" style={{ color: ACCENT_LT }} />
                         {item}
                       </li>
@@ -388,7 +388,7 @@ export default function BestAiSalesToolsPage() {
                   <p className="text-xs font-semibold uppercase tracking-widest text-red-400/70 mb-3">Trade-offs</p>
                   <ul className="space-y-2">
                     {t.cons.map((item) => (
-                      <li key={item} className="flex items-start gap-2.5 text-sm text-[#2b362f]">
+                      <li key={item} className="flex items-start gap-2.5 text-sm text-[#14120f]">
                         <XCircle className="h-4 w-4 flex-shrink-0 mt-0.5 text-red-400/50" />
                         {item}
                       </li>
@@ -400,7 +400,7 @@ export default function BestAiSalesToolsPage() {
               <div className="mt-6">
                 <Link
                   href={t.internalHref}
-                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#0a7c42] hover:text-[#086536] transition-colors"
+                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#007a95] hover:text-[#003647] transition-colors"
                 >
                   Read the full {t.name} review
                   <ArrowRight className="h-3.5 w-3.5" />
@@ -411,13 +411,13 @@ export default function BestAiSalesToolsPage() {
         </section>
 
         {/* Feature Table */}
-        <section id="feature-table" className="border-t border-[#0a7c42]/10 py-12 sm:py-14">
-          <h2 className="text-xl sm:text-2xl font-black text-[#10251b] mb-8">Side-by-Side Comparison</h2>
+        <section id="feature-table" className="border-t border-[#007a95]/10 py-12 sm:py-14">
+          <h2 className="text-xl sm:text-2xl font-black text-[#14120f] mb-8">Side-by-Side Comparison</h2>
           <div className="overflow-x-auto -mx-5 px-5 sm:mx-0 sm:px-0">
             <table className="w-full min-w-[560px] text-sm border-collapse">
               <thead>
                 <tr>
-                  <th className="text-left pb-3 pr-4 text-[11px] font-semibold uppercase tracking-widest text-[#627068]">Feature</th>
+                  <th className="text-left pb-3 pr-4 text-[11px] font-semibold uppercase tracking-widest text-[#56504a]">Feature</th>
                   {["GoHighLevel", "AiSDR"].map((col) => (
                     <th key={col} className="text-left pb-3 pr-4 text-[11px] font-semibold uppercase tracking-widest" style={{ color: ACCENT_LT }}>
                       {col}
@@ -427,10 +427,10 @@ export default function BestAiSalesToolsPage() {
               </thead>
               <tbody>
                 {features.map((row, i) => (
-                  <tr key={row.label} className={i % 2 === 0 ? "bg-[#f5f8f6]" : ""}>
-                    <td className="py-3 pr-4 text-[#3d4b44] font-medium">{row.label}</td>
-                    <td className="py-3 pr-4 text-[#2b362f] font-medium">{row.ghl}</td>
-                    <td className="py-3 pr-4 text-[#3d4b44]">{row.aisdr}</td>
+                  <tr key={row.label} className={i % 2 === 0 ? "bg-[#f7f4ee]" : ""}>
+                    <td className="py-3 pr-4 text-[#56504a] font-medium">{row.label}</td>
+                    <td className="py-3 pr-4 text-[#14120f] font-medium">{row.ghl}</td>
+                    <td className="py-3 pr-4 text-[#56504a]">{row.aisdr}</td>
                   </tr>
                 ))}
               </tbody>
@@ -439,9 +439,9 @@ export default function BestAiSalesToolsPage() {
         </section>
 
         {/* How to choose */}
-        <section className="border-t border-[#0a7c42]/10 py-12 sm:py-14">
-          <h2 className="text-xl sm:text-2xl font-black text-[#10251b] mb-5">How to Choose</h2>
-          <div className="space-y-4 text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl">
+        <section className="border-t border-[#007a95]/10 py-12 sm:py-14">
+          <h2 className="text-xl sm:text-2xl font-black text-[#14120f] mb-5">How to Choose</h2>
+          <div className="space-y-4 text-[#56504a] text-sm sm:text-base leading-relaxed max-w-2xl">
             <p>
               Start with your bottleneck. If the problem is that your tools are scattered and follow-up falls through the cracks, GoHighLevel is the pick: one platform for CRM, automation, funnels and reputation management, with a 14-day free trial to test it. It is especially well suited to agencies managing multiple clients through sub-accounts.
             </p>
@@ -466,8 +466,8 @@ export default function BestAiSalesToolsPage() {
         />
 
         {/* FAQ */}
-        <section id="faq" className="border-t border-[#0a7c42]/10 py-12 sm:py-14">
-          <h2 className="text-xl sm:text-2xl font-black text-[#10251b] mb-8">Frequently Asked Questions</h2>
+        <section id="faq" className="border-t border-[#007a95]/10 py-12 sm:py-14">
+          <h2 className="text-xl sm:text-2xl font-black text-[#14120f] mb-8">Frequently Asked Questions</h2>
           <div className="space-y-6 max-w-2xl">
             {[
               {
@@ -487,21 +487,21 @@ export default function BestAiSalesToolsPage() {
                 a: "Yes. GoHighLevel offers a 14-day free trial and does not require a credit card to start. It is the recommended way to explore the CRM, automation, funnels and AI features and decide whether the all-in-one approach fits your business.",
               },
             ].map(({ q, a }, i) => (
-              <div key={i} className="border-b border-[#e5e9e7] pb-6">
-                <h3 className="text-sm font-bold text-[#10251b] mb-2">{q}</h3>
-                <p className="text-sm text-[#3d4b44] leading-relaxed">{a}</p>
+              <div key={i} className="border-b border-[#ded8cd] pb-6">
+                <h3 className="text-sm font-bold text-[#14120f] mb-2">{q}</h3>
+                <p className="text-sm text-[#56504a] leading-relaxed">{a}</p>
               </div>
             ))}
           </div>
         </section>
 
         {/* Bottom CTA */}
-        <section className="border-t border-[#0a7c42]/10 pt-14 sm:pt-16 text-center">
-          <h2 className="text-2xl sm:text-3xl font-black text-[#10251b] mb-3">
+        <section className="border-t border-[#007a95]/10 pt-14 sm:pt-16 text-center">
+          <h2 className="text-2xl sm:text-3xl font-black text-[#14120f] mb-3">
             Ready to Add AI to Your Sales?{" "}
             <span style={{ color: ACCENT_LT }}>Start with GoHighLevel.</span>
           </h2>
-          <p className="text-[#3d4b44] text-sm max-w-md mx-auto mb-7 leading-relaxed">
+          <p className="text-[#56504a] text-sm max-w-md mx-auto mb-7 leading-relaxed">
             14-day free trial, no credit card. Or read the full reviews to compare GoHighLevel, AiSDR, Reply.io and FullEnrich in detail.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
@@ -515,7 +515,7 @@ export default function BestAiSalesToolsPage() {
             </a>
             <a
               {...aff(AISDR_URL)}
-              className="inline-flex items-center justify-center gap-2 rounded-xl border px-7 py-3.5 text-sm font-semibold text-[#2b362f] transition-all hover:text-[#10251b]"
+              className="inline-flex items-center justify-center gap-2 rounded-xl border px-7 py-3.5 text-sm font-semibold text-[#14120f] transition-all hover:text-[#14120f]"
               style={{ borderColor: `${ACCENT}30` }}
             >
               See AiSDR
@@ -524,7 +524,7 @@ export default function BestAiSalesToolsPage() {
 
           {/* Related guides */}
           <div className="mt-14 text-left max-w-2xl mx-auto">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#627068] mb-5">Related</p>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#56504a] mb-5">Related</p>
             <div className="grid sm:grid-cols-2 gap-3">
               {[
                 { href: "/gohighlevel", label: "GoHighLevel Review 2026" },
@@ -537,7 +537,7 @@ export default function BestAiSalesToolsPage() {
                 <Link
                   key={href}
                   href={href}
-                  className="flex items-center gap-2 text-sm text-[#3d4b44] hover:text-[#2b362f] transition-colors"
+                  className="flex items-center gap-2 text-sm text-[#56504a] hover:text-[#14120f] transition-colors"
                 >
                   <ArrowRight className="h-3.5 w-3.5 flex-shrink-0" style={{ color: ACCENT }} />
                   {label}
@@ -549,8 +549,8 @@ export default function BestAiSalesToolsPage() {
 
         {/* Affiliate disclosure. Legally required on any page carrying affiliate
             links (ACL), and the trust layer this whole site trades on. */}
-        <section className="mx-auto max-w-5xl border-t border-[#e5e9e7] px-5 py-8 pb-16 sm:px-8">
-          <p className="max-w-2xl text-xs leading-relaxed text-[#627068]">
+        <section className="mx-auto max-w-5xl border-t border-[#ded8cd] px-5 py-8 pb-16 sm:px-8">
+          <p className="max-w-2xl text-xs leading-relaxed text-[#56504a]">
             This page is operated by Refer Labs and contains affiliate referral links to GoHighLevel, AiSDR, Reply.io
             and FullEnrich. If you sign up through one of them we may earn a commission, at no extra cost to you. It
             does not change what we say about them, and rankings are never sold. Comparisons are based on publicly

@@ -123,23 +123,23 @@ export default function VirtualPowerPlantAustraliaPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
 
-      <main className="text-[#10251b]">
+      <main className="text-[#14120f]">
         <div className="mx-auto max-w-3xl px-6 sm:px-8">
           {/* Breadcrumb */}
-          <nav className="flex flex-wrap items-center gap-2 pt-8 text-sm text-[#5a665f]">
-            <Link href="/" className="transition-colors hover:text-[#10251b]">Refer Labs</Link>
+          <nav className="flex flex-wrap items-center gap-2 pt-8 text-sm text-[#56504a]">
+            <Link href="/" className="transition-colors hover:text-[#14120f]">Refer Labs</Link>
             <span>/</span>
-            <Link href="/apollo-energy-group" className="transition-colors hover:text-[#10251b]">Home batteries</Link>
+            <Link href="/apollo-energy-group" className="transition-colors hover:text-[#14120f]">Home batteries</Link>
             <span>/</span>
-            <span className="text-[#10251b]">Virtual power plant</span>
+            <span className="text-[#14120f]">Virtual power plant</span>
           </nav>
 
           {/* Hero */}
           <header className="pt-9 pb-6">
-            <h1 className="mt-4 text-3xl font-extrabold leading-[1.08] tracking-tight text-[#10251b] sm:text-4xl lg:text-[2.6rem]">
+            <h1 className="mt-4 text-3xl font-extrabold leading-[1.08] tracking-tight text-[#14120f] sm:text-4xl lg:text-[2.6rem]">
               Virtual power plant (VPP) in Australia: how the payments work, and is it worth it
             </h1>
-            <p className="mt-5 text-base leading-relaxed text-[#3d4b44] sm:text-lg">
+            <p className="mt-5 text-base leading-relaxed text-[#56504a] sm:text-lg">
               A virtual power plant links thousands of home batteries so they can act like one power station, sending a
               share of your stored energy to the grid at peak times in exchange for a payment. Industry estimates put the
               return at roughly $200 to $1,500 a year, which for most homes means a few hundred dollars on top of what the
@@ -149,8 +149,8 @@ export default function VirtualPowerPlantAustraliaPage() {
           </header>
 
           {/* Info-only note */}
-          <div className="nw-card px-5 py-4 text-sm leading-relaxed text-[#3d4b44]">
-            <span className="font-bold text-[#10251b]">Indicative only, updated {UPDATED}.</span> VPP payments vary by
+          <div className="nw-card px-5 py-4 text-sm leading-relaxed text-[#56504a]">
+            <span className="font-bold text-[#14120f]">Indicative only, updated {UPDATED}.</span> VPP payments vary by
             battery, state, wholesale market and program, and terms change. Figures here are illustrative; confirm current
             rates and warranty cover with the provider and your installer. Nothing here is financial advice. This page
             contains a disclosed commercial referral arrangement with Apollo Energy Group.
@@ -158,8 +158,8 @@ export default function VirtualPowerPlantAustraliaPage() {
 
           {/* What a VPP is */}
           <section className="mt-9">
-            <h2 className="text-xl font-bold tracking-tight text-[#10251b] sm:text-2xl">What a VPP is</h2>
-            <div className="mt-4 space-y-4 text-[15px] leading-relaxed text-[#3d4b44]">
+            <h2 className="text-xl font-bold tracking-tight text-[#14120f] sm:text-2xl">What a VPP is</h2>
+            <div className="mt-4 space-y-4 text-[15px] leading-relaxed text-[#56504a]">
               <p>
                 A virtual power plant, or VPP, is a network that coordinates thousands of home batteries, and sometimes
                 solar, EV chargers and hot-water systems, so they can be dispatched together like a single large generator.
@@ -175,36 +175,36 @@ export default function VirtualPowerPlantAustraliaPage() {
 
           {/* Payment models table (the citable asset) */}
           <section className="mt-10">
-            <h2 className="text-xl font-bold tracking-tight text-[#10251b] sm:text-2xl">The three ways a VPP pays you</h2>
+            <h2 className="text-xl font-bold tracking-tight text-[#14120f] sm:text-2xl">The three ways a VPP pays you</h2>
             <div className="mt-4 overflow-x-auto">
               <table className="w-full border-collapse text-left text-sm">
                 <thead>
-                  <tr className="border-b border-[#e5e9e7]">
-                    <th className="pb-3 pr-4 text-[11px] font-semibold uppercase tracking-widest text-[#627068]">Model</th>
-                    <th className="pb-3 pr-4 text-[11px] font-semibold uppercase tracking-widest text-[#627068]">How you are paid</th>
-                    <th className="pb-3 text-[11px] font-semibold uppercase tracking-widest text-[#627068]">Example</th>
+                  <tr className="border-b border-[#ded8cd]">
+                    <th className="pb-3 pr-4 text-[11px] font-semibold uppercase tracking-widest text-[#56504a]">Model</th>
+                    <th className="pb-3 pr-4 text-[11px] font-semibold uppercase tracking-widest text-[#56504a]">How you are paid</th>
+                    <th className="pb-3 text-[11px] font-semibold uppercase tracking-widest text-[#56504a]">Example</th>
                   </tr>
                 </thead>
                 <tbody>
                   {MODELS.map((m) => (
-                    <tr key={m.model} className="border-b border-[#eef1ec] align-top">
-                      <td className="py-3 pr-4 font-semibold text-[#10251b]">{m.model}</td>
-                      <td className="py-3 pr-4 text-[#3d4b44]">{m.paid}</td>
-                      <td className="py-3 text-[#5a665f]">{m.example}</td>
+                    <tr key={m.model} className="border-b border-[#f1ede4] align-top">
+                      <td className="py-3 pr-4 font-semibold text-[#14120f]">{m.model}</td>
+                      <td className="py-3 pr-4 text-[#56504a]">{m.paid}</td>
+                      <td className="py-3 text-[#56504a]">{m.example}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
-            <p className="mt-3 text-xs leading-relaxed text-[#627068]">
+            <p className="mt-3 text-xs leading-relaxed text-[#56504a]">
               Brands are named to illustrate each model, not as a ranking. What any provider pays changes with the market,
               so compare current offers before you commit.
             </p>
           </section>
 
           {/* First CTA */}
-          <div className="mt-8 flex flex-col items-start gap-3 rounded-2xl border border-[#0a7c42]/25 bg-[#e8f5ee] px-6 py-5 sm:flex-row sm:items-center sm:justify-between">
-            <p className="max-w-md text-[15px] leading-relaxed text-[#10251b]">
+          <div className="mt-8 flex flex-col items-start gap-3 rounded-2xl border border-[#007a95]/25 bg-[#e4f2f5] px-6 py-5 sm:flex-row sm:items-center sm:justify-between">
+            <p className="max-w-md text-[15px] leading-relaxed text-[#14120f]">
               A VPP needs a battery first. Apollo Energy Group sizes a system from your usage, applies the federal rebate,
               and can connect an eligible battery to a VPP. Refer Labs readers get $500 off the quote.
             </p>
@@ -219,8 +219,8 @@ export default function VirtualPowerPlantAustraliaPage() {
 
           {/* Earnings reality */}
           <section className="mt-11">
-            <h2 className="text-xl font-bold tracking-tight text-[#10251b] sm:text-2xl">What you can realistically earn</h2>
-            <div className="mt-4 space-y-4 text-[15px] leading-relaxed text-[#3d4b44]">
+            <h2 className="text-xl font-bold tracking-tight text-[#14120f] sm:text-2xl">What you can realistically earn</h2>
+            <div className="mt-4 space-y-4 text-[15px] leading-relaxed text-[#56504a]">
               <p>
                 Industry estimates put typical residential VPP returns at roughly $200 to $1,500 a year. The spread is
                 wide because it depends on your battery size, how volatile wholesale prices are in your state, and the
@@ -241,21 +241,21 @@ export default function VirtualPowerPlantAustraliaPage() {
 
           {/* Trade-offs */}
           <section className="mt-11">
-            <h2 className="text-xl font-bold tracking-tight text-[#10251b] sm:text-2xl">What you give up</h2>
+            <h2 className="text-xl font-bold tracking-tight text-[#14120f] sm:text-2xl">What you give up</h2>
             <div className="mt-5 space-y-4">
               {TRADEOFFS.map((t) => (
                 <div key={t.h} className="nw-card px-5 py-5">
-                  <h3 className="text-lg font-bold text-[#10251b]">{t.h}</h3>
-                  <p className="mt-2 text-[15px] leading-relaxed text-[#3d4b44]">{t.p}</p>
+                  <h3 className="text-lg font-bold text-[#14120f]">{t.h}</h3>
+                  <p className="mt-2 text-[15px] leading-relaxed text-[#56504a]">{t.p}</p>
                 </div>
               ))}
             </div>
           </section>
 
           {/* Second CTA */}
-          <section className="mt-11 rounded-2xl border border-[#e5e9e7] bg-[#eef1ec] px-6 py-6">
-            <h2 className="text-lg font-bold text-[#10251b]">Get a VPP-ready battery, sized to your home</h2>
-            <p className="mt-2 text-[15px] leading-relaxed text-[#3d4b44]">
+          <section className="mt-11 rounded-2xl border border-[#ded8cd] bg-[#f1ede4] px-6 py-6">
+            <h2 className="text-lg font-bold text-[#14120f]">Get a VPP-ready battery, sized to your home</h2>
+            <p className="mt-2 text-[15px] leading-relaxed text-[#56504a]">
               Apollo Energy Group is a Sydney-based, SAA-accredited installer that sizes a system from your real usage,
               applies the federal rebate at the point of sale, and can set you up for a VPP where it stacks. Refer Labs
               readers get an exclusive $500 off. Prefer a callback first? Register your interest and someone gets in touch
@@ -277,15 +277,15 @@ export default function VirtualPowerPlantAustraliaPage() {
 
           {/* FAQ */}
           <section className="mt-11">
-            <h2 className="text-xl font-bold tracking-tight text-[#10251b] sm:text-2xl">Frequently asked questions</h2>
-            <div className="mt-5 divide-y divide-[#e5e9e7] border-y border-[#e5e9e7]">
+            <h2 className="text-xl font-bold tracking-tight text-[#14120f] sm:text-2xl">Frequently asked questions</h2>
+            <div className="mt-5 divide-y divide-[#ded8cd] border-y border-[#ded8cd]">
               {faqs.map((f) => (
                 <details key={f.q} className="group py-4">
-                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-[#10251b]">
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-[#14120f]">
                     {f.q}
-                    <span className="text-xl leading-none text-[#0a7c42] transition-transform group-open:rotate-45">+</span>
+                    <span className="text-xl leading-none text-[#007a95] transition-transform group-open:rotate-45">+</span>
                   </summary>
-                  <p className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">{f.a}</p>
+                  <p className="mt-3 text-[15px] leading-relaxed text-[#56504a]">{f.a}</p>
                 </details>
               ))}
             </div>
@@ -293,7 +293,7 @@ export default function VirtualPowerPlantAustraliaPage() {
 
           {/* Related */}
           <section className="mt-11">
-            <h2 className="text-lg font-bold text-[#10251b]">Keep reading</h2>
+            <h2 className="text-lg font-bold text-[#14120f]">Keep reading</h2>
             <ul className="mt-3 space-y-2 text-[15px]">
               <li><Link href="/home-battery-rebate-by-state-australia" className="nw-link">Home battery rebate by state, 2026</Link></li>
               <li><Link href="/nsw-home-battery-rebate-2026" className="nw-link">NSW home battery rebate and VPP incentive</Link></li>
@@ -305,8 +305,8 @@ export default function VirtualPowerPlantAustraliaPage() {
           </section>
 
           {/* Disclosure */}
-          <section className="border-t border-[#e5e9e7] pt-6 pb-16">
-            <p className="text-xs leading-relaxed text-[#627068]">
+          <section className="border-t border-[#ded8cd] pt-6 pb-16">
+            <p className="text-xs leading-relaxed text-[#56504a]">
               Published by Refer Labs, an independent comparison publisher, and contains a disclosed affiliate link to
               Apollo Energy Group, which means we may earn a commission if you enquire or buy through our link, at no extra
               cost to you. Commissions never change what we write. VPP payments and incentives are indicative, vary by

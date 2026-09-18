@@ -108,19 +108,19 @@ export default function Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
 
       <main id="main-content" className="mx-auto max-w-3xl px-5 pb-20 pt-10 sm:px-8">
-        <nav className="flex flex-wrap items-center gap-2 text-sm text-[#627068]">
-          <Link href="/" className="hover:text-[#0a7c42]">Refer Labs</Link>
+        <nav className="flex flex-wrap items-center gap-2 text-sm text-[#56504a]">
+          <Link href="/" className="hover:text-[#007a95]">Refer Labs</Link>
           <span>/</span>
-          <Link href="/apollo-energy-group" className="hover:text-[#0a7c42]">Home &amp; energy</Link>
+          <Link href="/apollo-energy-group" className="hover:text-[#007a95]">Home &amp; energy</Link>
           <span>/</span>
-          <span className="text-[#2b362f]">Portable vs installed</span>
+          <span className="text-[#14120f]">Portable vs installed</span>
         </nav>
 
-        <h1 className="mt-5 text-3xl font-bold leading-[1.1] tracking-[-0.01em] text-[#10251b] sm:text-4xl">
-          Portable power station or installed home battery: <span className="text-[#0a7c42]">which do you need?</span>
+        <h1 className="mt-5 text-3xl font-bold leading-[1.1] tracking-[-0.01em] text-[#14120f] sm:text-4xl">
+          Portable power station or installed home battery: <span className="text-[#007a95]">which do you need?</span>
         </h1>
 
-        <p className="mt-5 text-lg leading-relaxed text-[#2b362f]">
+        <p className="mt-5 text-lg leading-relaxed text-[#14120f]">
           They answer different questions. A portable unit, {fmtAud(299)} for a small one
           and <strong>{fmtAud(cheapest1k.aud)}</strong> for one that will hold a fridge, gets you through a blackout with
           no electrician and moves house with you, but it will not lower your power bill. An installed battery costs
@@ -137,18 +137,18 @@ export default function Page() {
         <EditorialMeta lastUpdated={UPDATED} className="mt-5" />
 
         {/* The conflict, up front rather than buried at the bottom. */}
-        <div className="mt-6 rounded-xl border border-[#e5e9e7] bg-[#f8faf9] px-5 py-4 text-sm leading-relaxed text-[#3d4b44]">
-          <strong className="font-semibold text-[#10251b]">We are paid on both sides of this page.</strong> EcoFlow and
+        <div className="mt-6 rounded-xl border border-[#ded8cd] bg-[#f7f4ee] px-5 py-4 text-sm leading-relaxed text-[#56504a]">
+          <strong className="font-semibold text-[#14120f]">We are paid on both sides of this page.</strong> EcoFlow and
           Anker SOLIX pay us on purchases; Apollo Energy Group pays us on quote enquiries. The comparison below rests on two things you
           can check without us: the rebate rule, and each brand&apos;s own published prices.
         </div>
 
         <section className="mt-12">
-          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">The two, side by side</h2>
-          <div className="mt-5 overflow-x-auto rounded-2xl border border-[#e5e9e7]">
+          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">The two, side by side</h2>
+          <div className="mt-5 overflow-x-auto rounded-2xl border border-[#ded8cd]">
             <table className="w-full min-w-[620px] border-collapse text-left text-sm">
               <thead>
-                <tr className="border-b border-[#e5e9e7] bg-[#f8faf9] text-[#5a665f]">
+                <tr className="border-b border-[#ded8cd] bg-[#f7f4ee] text-[#56504a]">
                   <th className="px-4 py-3 font-semibold"> </th>
                   <th className="px-4 py-3 font-semibold">Portable power station</th>
                   <th className="px-4 py-3 font-semibold">Installed home battery</th>
@@ -156,16 +156,16 @@ export default function Page() {
               </thead>
               <tbody>
                 {ROWS.map((r) => (
-                  <tr key={r.label} className="border-b border-[#eef1ef] last:border-0 align-top">
-                    <td className="px-4 py-3 font-semibold text-[#10251b]">{r.label}</td>
-                    <td className="px-4 py-3 text-[#3d4b44]">{r.portable}</td>
-                    <td className="px-4 py-3 text-[#3d4b44]">{r.installed}</td>
+                  <tr key={r.label} className="border-b border-[#f1ede4] last:border-0 align-top">
+                    <td className="px-4 py-3 font-semibold text-[#14120f]">{r.label}</td>
+                    <td className="px-4 py-3 text-[#56504a]">{r.portable}</td>
+                    <td className="px-4 py-3 text-[#56504a]">{r.installed}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
-          <p className="mt-3 text-[13px] leading-relaxed text-[#5a665f]">
+          <p className="mt-3 text-[13px] leading-relaxed text-[#56504a]">
             Portable prices read off EcoFlow&apos;s and Anker SOLIX&apos;s own Australian stores on {PRICES_READ_ON}.
             Installed pricing varies by system size, switchboard and site, which is why it is a range rather than a
             figure: a quote is the only accurate number.
@@ -173,8 +173,8 @@ export default function Page() {
         </section>
 
         <section className="mt-12">
-          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Choose portable if</h2>
-          <ul className="mt-4 space-y-2.5 text-[15px] leading-relaxed text-[#3d4b44]">
+          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Choose portable if</h2>
+          <ul className="mt-4 space-y-2.5 text-[15px] leading-relaxed text-[#56504a]">
             <li>You rent, or live in an apartment, and cannot have anything installed.</li>
             <li>The goal is getting through outages rather than lowering a bill.</li>
             <li>You want it for camping or a caravan as well as the house.</li>
@@ -188,12 +188,12 @@ export default function Page() {
               See Anker SOLIX prices <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </a>
           </div>
-          <p className="mt-3 text-[13px] text-[#5a665f]">Both are affiliate links; we earn from either.</p>
+          <p className="mt-3 text-[13px] text-[#56504a]">Both are affiliate links; we earn from either.</p>
         </section>
 
         <section className="mt-12">
-          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Choose an installed battery if</h2>
-          <ul className="mt-4 space-y-2.5 text-[15px] leading-relaxed text-[#3d4b44]">
+          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Choose an installed battery if</h2>
+          <ul className="mt-4 space-y-2.5 text-[15px] leading-relaxed text-[#56504a]">
             <li>You own the home and want the power bill down, not just the lights on.</li>
             <li>You have rooftop solar, or are adding it, and want to store what it makes.</li>
             <li>You want the changeover to happen without you doing anything.</li>
@@ -204,7 +204,7 @@ export default function Page() {
               Get an Apollo quote, $500 off <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
           </div>
-          <p className="mt-3 text-[13px] leading-relaxed text-[#5a665f]">
+          <p className="mt-3 text-[13px] leading-relaxed text-[#56504a]">
             Apollo Energy Group is the installer we work with, and they pay us on enquiries. EcoFlow and Anker SOLIX
             also sell installed systems, the OCEAN 2 range and the SOLIX X1, and we earn from them too. We have not
             ranked those against Apollo here, because we do not have the same first-hand basis for it that we have on
@@ -213,24 +213,24 @@ export default function Page() {
         </section>
 
         <section className="mt-12">
-          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Common questions</h2>
-          <dl className="mt-5 divide-y divide-[#eef1ef] rounded-2xl border border-[#e5e9e7] bg-white">
+          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Common questions</h2>
+          <dl className="mt-5 divide-y divide-[#f1ede4] rounded-2xl border border-[#ded8cd] bg-white">
             {faqs.map((f) => (
               <div key={f.q} className="px-5 py-5">
-                <dt className="text-[15px] font-bold text-[#10251b]">{f.q}</dt>
-                <dd className="mt-2 text-sm leading-relaxed text-[#3d4b44]">{f.a}</dd>
+                <dt className="text-[15px] font-bold text-[#14120f]">{f.q}</dt>
+                <dd className="mt-2 text-sm leading-relaxed text-[#56504a]">{f.a}</dd>
               </div>
             ))}
           </dl>
         </section>
 
-        <section className="mt-10 border-t border-[#eef1ef] pt-8">
-          <h2 className="text-xs font-bold uppercase tracking-[0.12em] text-[#627068]">Keep reading</h2>
+        <section className="mt-10 border-t border-[#f1ede4] pt-8">
+          <h2 className="text-xs font-bold uppercase tracking-[0.12em] text-[#56504a]">Keep reading</h2>
           <ul className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-sm">
-            <li><Link href="/portable-power-station-australia" className="font-semibold text-[#0a7c42] hover:underline">What portable units cost and run</Link></li>
-            <li><Link href="/ecoflow-vs-anker-solix" className="font-semibold text-[#0a7c42] hover:underline">EcoFlow vs Anker SOLIX</Link></li>
-            <li><Link href="/home-battery-rebate-australia" className="text-[#3d4b44] hover:text-[#0a7c42] hover:underline">The federal rebate</Link></li>
-            <li><Link href="/is-a-home-battery-worth-it-australia" className="text-[#3d4b44] hover:text-[#0a7c42] hover:underline">Is a home battery worth it?</Link></li>
+            <li><Link href="/portable-power-station-australia" className="font-semibold text-[#007a95] hover:underline">What portable units cost and run</Link></li>
+            <li><Link href="/ecoflow-vs-anker-solix" className="font-semibold text-[#007a95] hover:underline">EcoFlow vs Anker SOLIX</Link></li>
+            <li><Link href="/home-battery-rebate-australia" className="text-[#56504a] hover:text-[#007a95] hover:underline">The federal rebate</Link></li>
+            <li><Link href="/is-a-home-battery-worth-it-australia" className="text-[#56504a] hover:text-[#007a95] hover:underline">Is a home battery worth it?</Link></li>
           </ul>
         </section>
       </main>

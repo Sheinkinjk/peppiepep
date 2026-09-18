@@ -85,7 +85,7 @@ export default function EarningsBalanceNote({
        none. */
     const others = noEarnFrom ? (Array.isArray(noEarnFrom) ? noEarnFrom : [noEarnFrom]) : [];
     return (
-      <p className={`text-xs leading-relaxed text-[#5a665f] ${className}`}>
+      <p className={`text-xs leading-relaxed text-[#56504a] ${className}`}>
         We earn a commission if you sign up through the {list(earnFromAll, "or")} link
         {earnFromAll.length > 1 ? "s" : ""} on this page, at no extra cost to you. We earn from{" "}
         {WORD[earnFromAll.length] ?? "each"} of them
@@ -93,7 +93,7 @@ export default function EarningsBalanceNote({
           <>, and nothing from {list(others, "or")}: we have no commercial arrangement with them</>
         ) : null}
         .{" "}
-        <Link href="/how-we-make-money" className="underline hover:text-[#3d4b44]">
+        <Link href="/how-we-make-money" className="underline hover:text-[#56504a]">
           How we make money
         </Link>
         .
@@ -106,12 +106,12 @@ export default function EarningsBalanceNote({
   const single = names.length === 1 && noEarnHref;
 
   return (
-    <p className={`text-xs leading-relaxed text-[#5a665f] ${className}`}>
+    <p className={`text-xs leading-relaxed text-[#56504a] ${className}`}>
       We earn a commission if you sign up through the {earnFrom} link above, at no extra cost to you.{" "}
       {names.length === 0 ? null : single ? (
         <>
           We earn nothing from {listed} here: our {listed} referral link sits only on our{" "}
-          <Link href={noEarnHref} className="underline hover:text-[#3d4b44]">
+          <Link href={noEarnHref} className="underline hover:text-[#56504a]">
             {listed} review
           </Link>
           .
@@ -121,7 +121,7 @@ export default function EarningsBalanceNote({
       ) : (
         <>We earn nothing from {listed} here.</>
       )}{" "}
-      <Link href="/how-we-make-money" className="underline hover:text-[#3d4b44]">
+      <Link href="/how-we-make-money" className="underline hover:text-[#56504a]">
         How we make money
       </Link>
       .

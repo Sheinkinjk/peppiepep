@@ -17,10 +17,10 @@ export default function WeightLossGuidePage() {
   return (
     <ConsumerShell>
       <main id="main-content" className="mx-auto max-w-2xl px-5 pb-24 pt-12 sm:px-8 sm:pt-16">
-        <h1 className="mt-3 text-3xl font-black leading-[1.1] tracking-tight text-[#10251b] sm:text-[2.6rem]">
+        <h1 className="mt-3 text-3xl font-black leading-[1.1] tracking-tight text-[#14120f] sm:text-[2.6rem]">
           Weight loss in Australia, without the confusion
         </h1>
-        <p className="mt-5 text-lg leading-relaxed text-[#3d4b44]">
+        <p className="mt-5 text-lg leading-relaxed text-[#56504a]">
           Telehealth, coaching, meal plans, your GP. The options blur together and everyone is selling something. This
           free guide lays out the main pathways and who each one suits, so you can choose with
           your eyes open. We will email it to you now.
@@ -28,9 +28,9 @@ export default function WeightLossGuidePage() {
 
         <ul className="mt-8 grid gap-3">
           {inside.map((t) => (
-            <li key={t} className="flex items-start gap-2.5 text-[15px] leading-relaxed text-[#2b362f]">
-              <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#e6f3ec]">
-                <Check className="h-3.5 w-3.5 text-[#0a7c42]" strokeWidth={2.5} aria-hidden="true" />
+            <li key={t} className="flex items-start gap-2.5 text-[15px] leading-relaxed text-[#14120f]">
+              <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#e4f2f5]">
+                <Check className="h-3.5 w-3.5 text-[#007a95]" strokeWidth={2.5} aria-hidden="true" />
               </span>
               {t}
             </li>
@@ -41,7 +41,7 @@ export default function WeightLossGuidePage() {
           <GuideCapture source="weight-loss-guide" />
         </div>
 
-        <p className="mt-8 text-xs leading-relaxed text-[#627068]">
+        <p className="mt-8 text-xs leading-relaxed text-[#56504a]">
           Refer Labs is an independent Australian comparison publisher. This guide is general information, not medical
           advice, and does not recommend any treatment or imply suitability for any individual. Results vary between
           people, and suitability for any program is decided by a registered Australian practitioner. The guide contains
@@ -49,7 +49,7 @@ export default function WeightLossGuidePage() {
           never changes what we write.
         </p>
 
-        <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 border-t border-[#e5e9e7] pt-6 text-sm">
+        <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 border-t border-[#ded8cd] pt-6 text-sm">
           <Link href="/weight-loss-quiz" className="nw-link">Prefer the 60-second quiz?</Link>
           <Link href="/weight-loss" className="nw-link">The full weight-loss hub</Link>
         </div>

@@ -71,12 +71,12 @@ export default function EmploymentHeroPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }} />
       <PremiumAffiliateLanding config={employmentHeroConfig} />
-      <div className="border-t border-[#e5e9e7] bg-white py-6">
+      <div className="border-t border-[#ded8cd] bg-white py-6">
         <div className="mx-auto max-w-3xl px-6 sm:px-8">
-          <p className="text-[#627068] text-xs mb-1.5">More business tools</p>
+          <p className="text-[#56504a] text-xs mb-1.5">More business tools</p>
           <Link
             href="/best-ai-sales-tools"
-            className="text-sm text-[#0a7c42] font-semibold hover:text-[#086536] transition-colors"
+            className="text-sm text-[#007a95] font-semibold hover:text-[#003647] transition-colors"
           >
             See the best AI sales and automation tools for 2026 &rarr;
           </Link>

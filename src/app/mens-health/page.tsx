@@ -136,24 +136,24 @@ export default function MensHealthHub() {
 
       <main id="main-content">
         <section className="mx-auto max-w-6xl px-5 pt-10 sm:px-8">
-          <nav className="flex items-center gap-2 text-sm text-[#627068]">
-            <Link href="/" className="hover:text-[#0a7c42]">Refer Labs</Link>
+          <nav className="flex items-center gap-2 text-sm text-[#56504a]">
+            <Link href="/" className="hover:text-[#007a95]">Refer Labs</Link>
             <span>/</span>
-            <span className="text-[#2b362f]">Men&apos;s health</span>
+            <span className="text-[#14120f]">Men&apos;s health</span>
           </nav>
           <div className="max-w-2xl">
-            <h1 className="mt-4 text-4xl font-bold leading-[1.06] tracking-[-0.01em] text-[#10251b] sm:text-5xl">
-              Men&apos;s health in Australia: <span className="italic text-[#0a7c42]">what access costs</span>
+            <h1 className="mt-4 text-4xl font-bold leading-[1.06] tracking-[-0.01em] text-[#14120f] sm:text-5xl">
+              Men&apos;s health in Australia: <span className="italic text-[#007a95]">what access costs</span>
             </h1>
-            <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#2b362f]">
+            <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#14120f]">
               This is a category where the marketing is loud and the pricing is hard to compare. These guides set out
               how the access routes differ, what each costs over a year rather than at the first appointment, and what
               to ask before committing to a subscription.
             </p>
           </div>
-          <div className="mt-8 max-w-3xl rounded-2xl border border-[#e5e9e7] bg-[#f8faf9] px-5 py-4">
-            <p className="text-[13px] leading-relaxed text-[#3d4b44]">
-              <strong className="font-semibold text-[#10251b]">On medicines.</strong> These pages never name a
+          <div className="mt-8 max-w-3xl rounded-2xl border border-[#ded8cd] bg-[#f7f4ee] px-5 py-4">
+            <p className="text-[13px] leading-relaxed text-[#56504a]">
+              <strong className="font-semibold text-[#14120f]">On medicines.</strong> These pages never name a
               prescription medicine. Advertising one to the public is prohibited in Australia, and what is appropriate
               for you is a decision for a registered practitioner after an individual assessment. We compare providers
               on consult model, price, inclusions and whether anything is bulk-billed.
@@ -165,25 +165,25 @@ export default function MensHealthHub() {
         </section>
 
         <section className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
-          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">Start here</h2>
+          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">Start here</h2>
           <div className="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {guides.map((g) => (
               <Link
                 key={g.href}
                 href={g.href}
-                className="group rounded-2xl border border-[#e5e9e7] bg-white p-6 transition-colors hover:border-[#0a7c42]/40"
+                className="group rounded-2xl border border-[#ded8cd] bg-white p-6 transition-colors hover:border-[#007a95]/40"
               >
-                <h3 className="text-[15px] font-bold text-[#10251b] group-hover:text-[#0a7c42]">{g.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-[#3d4b44]">{g.desc}</p>
-                <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[#0a7c42]">
+                <h3 className="text-[15px] font-bold text-[#14120f] group-hover:text-[#007a95]">{g.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-[#56504a]">{g.desc}</p>
+                <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[#007a95]">
                   Read <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
                 </span>
               </Link>
             ))}
           </div>
-          <p className="mt-6 max-w-2xl text-sm leading-relaxed text-[#5a665f]">
+          <p className="mt-6 max-w-2xl text-sm leading-relaxed text-[#56504a]">
             We also cover the non-prescription{" "}
-            <Link href="/mens-health/sexual-wellness-products" className="font-semibold text-[#0a7c42] hover:underline">
+            <Link href="/mens-health/sexual-wellness-products" className="font-semibold text-[#007a95] hover:underline">
               sexual wellness retail category
             </Link>{" "}
             on a single separate page, kept apart from the clinical guides above. That page is for adults and carries
@@ -191,14 +191,14 @@ export default function MensHealthHub() {
           </p>
         </section>
 
-        <section className="border-y border-[#e5e9e7] bg-[#f5f8f6]">
+        <section className="border-y border-[#ded8cd] bg-[#f7f4ee]">
           <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
-            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">Common questions</h2>
-            <dl className="mt-7 max-w-3xl divide-y divide-[#e5e9e7]">
+            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">Common questions</h2>
+            <dl className="mt-7 max-w-3xl divide-y divide-[#ded8cd]">
               {faqs.map((f) => (
                 <div key={f.q} className="py-5">
-                  <dt className="text-[15px] font-bold text-[#10251b]">{f.q}</dt>
-                  <dd className="mt-2 text-sm leading-relaxed text-[#3d4b44]">{f.a}</dd>
+                  <dt className="text-[15px] font-bold text-[#14120f]">{f.q}</dt>
+                  <dd className="mt-2 text-sm leading-relaxed text-[#56504a]">{f.a}</dd>
                 </div>
               ))}
             </dl>
@@ -207,12 +207,12 @@ export default function MensHealthHub() {
 
         <section className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
           <div className="max-w-2xl">
-            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">Other categories</h2>
+            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">Other categories</h2>
             <ul className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold">
-              <li><Link href="/hair-loss" className="text-[#0a7c42] hover:underline">Hair loss</Link></li>
-              <li><Link href="/weight-loss" className="text-[#0a7c42] hover:underline">Weight loss</Link></li>
-              <li><Link href="/sleep" className="text-[#0a7c42] hover:underline">Sleep</Link></li>
-              <li><Link href="/guides" className="text-[#3d4b44] hover:text-[#0a7c42] hover:underline">All guides</Link></li>
+              <li><Link href="/hair-loss" className="text-[#007a95] hover:underline">Hair loss</Link></li>
+              <li><Link href="/weight-loss" className="text-[#007a95] hover:underline">Weight loss</Link></li>
+              <li><Link href="/sleep" className="text-[#007a95] hover:underline">Sleep</Link></li>
+              <li><Link href="/guides" className="text-[#56504a] hover:text-[#007a95] hover:underline">All guides</Link></li>
             </ul>
           </div>
           <div className="mt-10 max-w-2xl">

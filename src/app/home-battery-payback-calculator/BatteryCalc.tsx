@@ -17,7 +17,7 @@ import { APOLLO_ENERGY_LEAD_HREF } from "@/lib/affiliate-links";
  *   home. Not financial advice.
  */
 
-const GREEN = "#0a7c42";
+const GREEN = "#007a95";
 
 // Federal Cheaper Home Batteries rebate, indicative $/usable kWh (floats with the
 // STC spot price). Full rate to 14kWh, 60% 14-28kWh, 15% 28-50kWh. Kept in sync
@@ -64,7 +64,7 @@ export default function BatteryCalc() {
   const reset = () => { setSize(13); setShifted(10); setPeak(40); setFeedin(5); setCustom(""); };
 
   return (
-    <div className="rounded-2xl border border-[#e5e9e7] bg-white p-6 sm:p-8">
+    <div className="rounded-2xl border border-[#ded8cd] bg-white p-6 sm:p-8">
       <div className="grid gap-8 lg:grid-cols-[1fr_1fr]">
         {/* Inputs */}
         <div className="space-y-6">
@@ -81,39 +81,39 @@ export default function BatteryCalc() {
             onChange={setFeedin} hint="What you get for exporting solar. The lower this is, the more a battery is worth." />
 
           <div>
-            <label className="block text-sm font-semibold text-[#10251b]">
-              Have a quote? Enter the installed price after rebate <span className="font-normal text-[#627068]">(optional)</span>
+            <label className="block text-sm font-semibold text-[#14120f]">
+              Have a quote? Enter the installed price after rebate <span className="font-normal text-[#56504a]">(optional)</span>
             </label>
             <div className="mt-2 flex items-center gap-2">
-              <span className="text-[#627068]">$</span>
+              <span className="text-[#56504a]">$</span>
               <input
                 type="text"
                 inputMode="numeric"
                 value={custom}
                 onChange={(e) => setCustom(e.target.value)}
                 placeholder={estNet.toLocaleString("en-AU")}
-                className="w-full rounded-lg border border-[#e5e9e7] px-3 py-2 text-sm focus:border-[#0a7c42] focus:outline-none"
+                className="w-full rounded-lg border border-[#ded8cd] px-3 py-2 text-sm focus:border-[#007a95] focus:outline-none"
               />
             </div>
-            <p className="mt-1.5 text-xs text-[#627068]">Leave blank to use our indicative estimate for this size.</p>
+            <p className="mt-1.5 text-xs text-[#56504a]">Leave blank to use our indicative estimate for this size.</p>
           </div>
 
-          <button onClick={reset} className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#5a665f] hover:text-[#10251b]">
+          <button onClick={reset} className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#56504a] hover:text-[#14120f]">
             <RotateCcw className="h-3.5 w-3.5" /> Reset
           </button>
         </div>
 
         {/* Result */}
-        <div className="rounded-xl border border-[#0a7c42]/20 bg-[#e8f5ee] p-6">
-          <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#086536]">Estimated payback</p>
-          <p className="mt-2 text-4xl font-black text-[#10251b]">
+        <div className="rounded-xl border border-[#007a95]/20 bg-[#e4f2f5] p-6">
+          <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#003647]">Estimated payback</p>
+          <p className="mt-2 text-4xl font-black text-[#14120f]">
             {paybackYears > 0 ? `${paybackYears.toFixed(1)} yrs` : "—"}
           </p>
-          <p className="mt-1 text-sm text-[#3d4b44]">
+          <p className="mt-1 text-sm text-[#56504a]">
             on an estimated {fmt(netCost)} net cost{!custom && " (after an indicative federal rebate)"}.
           </p>
 
-          <dl className="mt-6 space-y-3 border-t border-[#0a7c42]/15 pt-5 text-sm">
+          <dl className="mt-6 space-y-3 border-t border-[#007a95]/15 pt-5 text-sm">
             {!custom && (
               <>
                 <Row k="Installed cost (before rebate)" v={fmt(grossCost)} />
@@ -145,10 +145,10 @@ export default function BatteryCalc() {
           >
             Turn this estimate into a real quote, $500 off <ArrowRight className="h-4 w-4" />
           </Link>
-          <p className="mt-2.5 text-center text-xs text-[#5a665f]">
+          <p className="mt-2.5 text-center text-xs text-[#56504a]">
             Registers your interest with Apollo Energy through us; they quote from your actual usage.
           </p>
-          <p className="mt-3 text-xs leading-relaxed text-[#5a665f]">
+          <p className="mt-3 text-xs leading-relaxed text-[#56504a]">
             Illustrative only, from your inputs and stated assumptions. It is not a quote, a guarantee, or financial
             advice. Rebate and prices are indicative and move with the market. Your real figure depends on your home,
             usage and tariff. See the full method in our{" "}
@@ -167,16 +167,16 @@ function Slider({ label, value, min, max, step, unit, onChange, hint }: {
   return (
     <div>
       <div className="flex items-baseline justify-between">
-        <label className="text-sm font-semibold text-[#10251b]">{label}</label>
-        <span className="text-sm font-bold text-[#0a7c42]">{value} {unit}</span>
+        <label className="text-sm font-semibold text-[#14120f]">{label}</label>
+        <span className="text-sm font-bold text-[#007a95]">{value} {unit}</span>
       </div>
       <input
         type="range" min={min} max={max} step={step} value={value}
         onChange={(e) => onChange(Number(e.target.value))}
-        className="mt-2 w-full accent-[#0a7c42]"
+        className="mt-2 w-full accent-[#007a95]"
         aria-label={label}
       />
-      <p className="mt-1 text-xs leading-relaxed text-[#627068]">{hint}</p>
+      <p className="mt-1 text-xs leading-relaxed text-[#56504a]">{hint}</p>
     </div>
   );
 }
@@ -184,8 +184,8 @@ function Slider({ label, value, min, max, step, unit, onChange, hint }: {
 function Row({ k, v, bold, accent }: { k: string; v: string; bold?: boolean; accent?: boolean }) {
   return (
     <div className="flex items-center justify-between gap-4">
-      <dt className="text-[#3d4b44]">{k}</dt>
-      <dd className={`${bold ? "font-bold" : "font-semibold"} ${accent ? "text-[#0a7c42]" : "text-[#10251b]"}`}>{v}</dd>
+      <dt className="text-[#56504a]">{k}</dt>
+      <dd className={`${bold ? "font-bold" : "font-semibold"} ${accent ? "text-[#007a95]" : "text-[#14120f]"}`}>{v}</dd>
     </div>
   );
 }

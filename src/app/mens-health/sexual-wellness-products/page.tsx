@@ -83,26 +83,26 @@ export default function SexualWellnessProductsPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
 
       <main id="main-content" className="mx-auto max-w-3xl px-5 pb-20 pt-10 sm:px-8">
-        <nav className="flex flex-wrap items-center gap-2 text-sm text-[#627068]">
-          <Link href="/" className="hover:text-[#0a7c42]">Refer Labs</Link>
+        <nav className="flex flex-wrap items-center gap-2 text-sm text-[#56504a]">
+          <Link href="/" className="hover:text-[#007a95]">Refer Labs</Link>
           <span>/</span>
-          <Link href="/mens-health" className="hover:text-[#0a7c42]">Men&apos;s health</Link>
+          <Link href="/mens-health" className="hover:text-[#007a95]">Men&apos;s health</Link>
           <span>/</span>
-          <span className="text-[#2b362f]">Sexual wellness products</span>
+          <span className="text-[#14120f]">Sexual wellness products</span>
         </nav>
 
-        <h1 className="mt-5 text-3xl font-bold leading-[1.1] tracking-[-0.01em] text-[#10251b] sm:text-4xl">
+        <h1 className="mt-5 text-3xl font-bold leading-[1.1] tracking-[-0.01em] text-[#14120f] sm:text-4xl">
           Sexual wellness products in Australia
         </h1>
-        <p className="mt-5 text-lg leading-relaxed text-[#2b362f]">
+        <p className="mt-5 text-lg leading-relaxed text-[#14120f]">
           This page covers the non-prescription retail category, and it is the only page in our men&apos;s health
           section where retailer links will appear. It is written for adults and kept deliberately separate from our
           guides on conditions and treatment costs.
         </p>
 
-        <div className="mt-7 rounded-2xl border border-[#e5e9e7] bg-[#f8faf9] px-5 py-4">
-          <p className="text-[13px] leading-relaxed text-[#3d4b44]">
-            <strong className="font-semibold text-[#10251b]">For adults.</strong> General information about a retail
+        <div className="mt-7 rounded-2xl border border-[#ded8cd] bg-[#f7f4ee] px-5 py-4">
+          <p className="text-[13px] leading-relaxed text-[#56504a]">
+            <strong className="font-semibold text-[#14120f]">For adults.</strong> General information about a retail
             category. Nothing here is medical advice, and no product described in this market is a substitute for a
             clinical assessment.
           </p>
@@ -122,9 +122,9 @@ export default function SexualWellnessProductsPage() {
           <ComingSoonNote category="This page" variant="partnered" />
         </div>
 
-        <div className="mt-10 space-y-10 text-[15px] leading-relaxed text-[#3d4b44]">
+        <div className="mt-10 space-y-10 text-[15px] leading-relaxed text-[#56504a]">
           <section>
-            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Why this page is on its own</h2>
+            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Why this page is on its own</h2>
             <p className="mt-3">
               Our guides on erectile dysfunction, premature ejaculation and clinic pricing carry no commercial links and
               are not intended to. This page is where retail links will sit, and it exists separately so that the line
@@ -133,39 +133,39 @@ export default function SexualWellnessProductsPage() {
             </p>
             <p className="mt-3">
               If you arrived here looking for what treatment costs, the{" "}
-              <Link href="/mens-health" className="font-semibold text-[#0a7c42] hover:underline">clinical guides</Link>{" "}
+              <Link href="/mens-health" className="font-semibold text-[#007a95] hover:underline">clinical guides</Link>{" "}
               are the more useful place to be.
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">What to check in this market</h2>
+            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">What to check in this market</h2>
             <ul className="mt-3 list-disc space-y-2 pl-5">
               <li>
-                <strong className="text-[#10251b]">Therapeutic claims.</strong> An item claiming to treat a condition
+                <strong className="text-[#14120f]">Therapeutic claims.</strong> An item claiming to treat a condition
                 may be a regulated therapeutic good. Search the ARTG for it rather than taking the listing at its word.
               </li>
               <li>
-                <strong className="text-[#10251b]">Materials and standards.</strong> Where a product goes on or in the
+                <strong className="text-[#14120f]">Materials and standards.</strong> Where a product goes on or in the
                 body, what it is made from matters, and reputable retailers state it.
               </li>
               <li>
-                <strong className="text-[#10251b]">Australian retailer or overseas.</strong> Consumer guarantees,
+                <strong className="text-[#14120f]">Australian retailer or overseas.</strong> Consumer guarantees,
                 returns and who you can reach if something is wrong all differ.
               </li>
               <li>
-                <strong className="text-[#10251b]">Discreet delivery and billing.</strong> Retailers vary in how
+                <strong className="text-[#14120f]">Discreet delivery and billing.</strong> Retailers vary in how
                 packaging and statement descriptors appear, and it is worth checking rather than assuming.
               </li>
               <li>
-                <strong className="text-[#10251b]">Return policy on intimate items.</strong> Hygiene rules mean returns
+                <strong className="text-[#14120f]">Return policy on intimate items.</strong> Hygiene rules mean returns
                 are often restricted, which is lawful and worth knowing before you order.
               </li>
             </ul>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">When a purchase is not the answer</h2>
+            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">When a purchase is not the answer</h2>
             <p className="mt-3">
               If something has persisted, is causing distress, or has changed noticeably, that is a reason to speak to a
               practitioner rather than to buy something. Retail products do not diagnose and are not a treatment
@@ -174,27 +174,27 @@ export default function SexualWellnessProductsPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Common questions</h2>
-            <dl className="mt-5 divide-y divide-[#eef1ef] rounded-2xl border border-[#e5e9e7] bg-white">
+            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Common questions</h2>
+            <dl className="mt-5 divide-y divide-[#f1ede4] rounded-2xl border border-[#ded8cd] bg-white">
               {faqs.map((f) => (
                 <div key={f.q} className="px-5 py-5">
-                  <dt className="text-[15px] font-bold text-[#10251b]">{f.q}</dt>
-                  <dd className="mt-2 text-sm leading-relaxed text-[#3d4b44]">{f.a}</dd>
+                  <dt className="text-[15px] font-bold text-[#14120f]">{f.q}</dt>
+                  <dd className="mt-2 text-sm leading-relaxed text-[#56504a]">{f.a}</dd>
                 </div>
               ))}
             </dl>
           </section>
         </div>
 
-        <section className="mt-12 border-t border-[#eef1ef] pt-8">
+        <section className="mt-12 border-t border-[#f1ede4] pt-8">
           <ul className="flex flex-wrap gap-x-5 gap-y-2 text-sm">
             <li>
-              <Link href="/mens-health" className="font-semibold text-[#0a7c42] hover:underline">
+              <Link href="/mens-health" className="font-semibold text-[#007a95] hover:underline">
                 Back to men&apos;s health
               </Link>
             </li>
             <li>
-              <Link href="/how-we-make-money" className="text-[#3d4b44] hover:text-[#0a7c42] hover:underline">
+              <Link href="/how-we-make-money" className="text-[#56504a] hover:text-[#007a95] hover:underline">
                 How we make money
               </Link>
             </li>

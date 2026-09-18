@@ -1,0 +1,43 @@
+/* ==========================================================================
+   SITE THEME, 18 Sep 2026: every consumer page onto the homepage's system.
+   Scoped to .nw-root (ConsumerShell), so the legacy dark B2B pages, which do
+   not use that shell, are untouched. Colours were migrated at source by
+   scripts/theme-remap.py; this file carries what a colour swap cannot:
+   type, corners and measure.
+   ========================================================================== */
+
+.nw-root {
+  --paper: #f7f4ee; --paper-2: #f1ede4; --white: #ffffff;
+  --ink: #14120f; --ink-2: #56504a; --ink-3: #766f66; --hair: #ded8cd;
+  --teal: #007a95; --teal-deep: #003647; --teal-mid: #0088a6; --teal-bright: #00b7d4; --teal-soft: #e4f2f5;
+  --saffron: #a85d09; --saffron-soft: #f9ecdc;
+  --il-deep: var(--teal-deep); --il-mid: var(--teal-mid); --il-bright: var(--teal-bright);
+  --il-soft: var(--teal-soft); --il-face: var(--white);
+  --il-shadow: color-mix(in oklab, var(--teal-deep) 18%, var(--paper));
+  background: var(--paper);
+}
+
+/* TYPE. globals.css sets h1-h6 in the legacy display face (Space Grotesk);
+   the homepage and every page after it is Geist throughout. */
+.nw-root h1, .nw-root h2, .nw-root h3, .nw-root h4, .nw-root h5, .nw-root h6 {
+  font-family: var(--font-geist-sans), "Segoe UI", system-ui, sans-serif;
+  letter-spacing: -0.022em;
+}
+.nw-root h1 { letter-spacing: -0.03em; }
+
+/* CORNERS. The homepage draws every card, button and field square with a 2px
+   radius. Pills that are genuinely round (dots, avatars, icon discs, which are
+   all small and square-sized) keep rounded-full; anything wider does not. */
+.nw-root :is(.rounded-sm, .rounded-md, .rounded-lg, .rounded-xl, .rounded-2xl, .rounded-3xl, .rounded-\[2rem\]) { border-radius: 2px; }
+.nw-root :is(a, button, input, select, textarea, label, summary).rounded-full { border-radius: 2px; }
+.nw-root .rounded-t-2xl, .nw-root .rounded-t-xl { border-top-left-radius: 2px; border-top-right-radius: 2px; }
+
+/* MEASURE. Page content runs in max-w-6xl (1152px) with a 20/32px gutter; the
+   shared header and footer run at the same width here, so the logo, the h1 and
+   the footer columns share one left edge on every inner page. */
+.nw-root .rd-chrome .rd-w { max-width: 72rem; padding-inline: 20px; }
+@media (min-width: 640px) { .nw-root .rd-chrome .rd-w { padding-inline: 32px; } }
+
+/* Shared buttons from globals.css (.nw-btn, .nw-btn-ghost) carried a pill and
+   a green glow; square and flat, as on the homepage. */
+.nw-root .nw-btn, .nw-root .nw-btn-ghost { border-radius: 2px; box-shadow: none; }

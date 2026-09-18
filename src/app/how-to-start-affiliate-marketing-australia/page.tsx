@@ -228,24 +228,24 @@ export default function HowToStartAffiliateMarketingAustraliaPage() {
 
       <main id="main-content">
         <section className="mx-auto max-w-3xl px-5 pt-10 sm:px-8 sm:pt-14">
-          <nav className="mb-6 flex items-center gap-2 text-sm text-[#627068]">
-            <Link href="/" className="hover:text-[#0a7c42]">Refer Labs</Link>
+          <nav className="mb-6 flex items-center gap-2 text-sm text-[#56504a]">
+            <Link href="/" className="hover:text-[#007a95]">Refer Labs</Link>
             <span>/</span>
-            <Link href="/affiliate-programs-australia" className="hover:text-[#0a7c42]">Affiliate programs</Link>
+            <Link href="/affiliate-programs-australia" className="hover:text-[#007a95]">Affiliate programs</Link>
             <span>/</span>
-            <span className="text-[#2b362f]">How to start</span>
+            <span className="text-[#14120f]">How to start</span>
           </nav>
-          <h1 className="mt-4 text-4xl font-bold leading-[1.07] tracking-[-0.01em] text-[#10251b] sm:text-5xl">
-            How to start affiliate marketing <span className="italic text-[#0a7c42]">in Australia</span>
+          <h1 className="mt-4 text-4xl font-bold leading-[1.07] tracking-[-0.01em] text-[#14120f] sm:text-5xl">
+            How to start affiliate marketing <span className="italic text-[#007a95]">in Australia</span>
           </h1>
-          <p className="mt-5 text-lg leading-relaxed text-[#2b362f]">
+          <p className="mt-5 text-lg leading-relaxed text-[#14120f]">
             Affiliate marketing is one of the most accessible ways for Australians to build an online income. No product
             to make, no inventory, no customer service. You recommend things you rate, and you earn a cut when people
             buy through your link. It is not a get-rich-quick scheme, it is a real asset that takes months to build and
             then keeps working. This is the step-by-step path, start to first traffic.
           </p>
-          <p className="mt-8 rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] px-5 py-4 text-xs leading-relaxed text-[#3d4b44]">
-            <span className="font-semibold text-[#2b362f]">General information only.</span> This guide is business and
+          <p className="mt-8 rounded-xl border border-[#ded8cd] bg-[#f7f4ee] px-5 py-4 text-xs leading-relaxed text-[#56504a]">
+            <span className="font-semibold text-[#14120f]">General information only.</span> This guide is business and
             marketing education, not financial, legal or tax advice. Tax and consumer-law obligations depend on your
             circumstances, so check the ATO and ACCC guidance or speak to a registered professional before you rely on
             anything here.
@@ -256,16 +256,16 @@ export default function HowToStartAffiliateMarketingAustraliaPage() {
         <section className="mx-auto max-w-3xl px-5 pt-12 sm:px-8">
           <div className="space-y-10">
             {steps.map((s) => (
-              <article key={s.n} className="border-t border-[#e5e9e7] pt-8">
+              <article key={s.n} className="border-t border-[#ded8cd] pt-8">
                 <div className="flex items-baseline gap-4">
-                  <span className="text-3xl font-bold text-[#0a7c42] tabular-nums">
+                  <span className="text-3xl font-bold text-[#007a95] tabular-nums">
                     {s.n}
                   </span>
-                  <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">
+                  <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">
                     {s.title}
                   </h2>
                 </div>
-                <div className="mt-4 space-y-4 text-[15px] leading-relaxed text-[#3d4b44]">{s.body}</div>
+                <div className="mt-4 space-y-4 text-[15px] leading-relaxed text-[#56504a]">{s.body}</div>
               </article>
             ))}
           </div>
@@ -273,16 +273,16 @@ export default function HowToStartAffiliateMarketingAustraliaPage() {
 
 
         {/* Spokes */}
-        <section className="border-y border-[#e5e9e7] bg-[#f5f8f6] mt-16">
+        <section className="border-y border-[#ded8cd] bg-[#f7f4ee] mt-16">
           <div className="mx-auto max-w-4xl px-5 py-14 sm:px-8">
-            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">
+            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">
               Next steps
             </h2>
             <div className="mt-7 grid gap-4 sm:grid-cols-3">
               {spokes.map((sp) => (
                 <Link key={sp.href} href={sp.href} className="nw-card nw-card-hover group block p-6">
-                  <h3 className="text-[15px] font-bold text-[#10251b] group-hover:text-[#0a7c42]">{sp.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-[#3d4b44]">{sp.desc}</p>
+                  <h3 className="text-[15px] font-bold text-[#14120f] group-hover:text-[#007a95]">{sp.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-[#56504a]">{sp.desc}</p>
                 </Link>
               ))}
             </div>
@@ -291,17 +291,17 @@ export default function HowToStartAffiliateMarketingAustraliaPage() {
 
         {/* FAQ */}
         <section className="mx-auto max-w-3xl px-5 py-14 sm:px-8">
-          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">
+          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">
             Frequently asked questions
           </h2>
-          <div className="mt-6 divide-y divide-[#e5e9e7] border-y border-[#e5e9e7]">
+          <div className="mt-6 divide-y divide-[#ded8cd] border-y border-[#ded8cd]">
             {faqs.map((f) => (
               <details key={f.q} className="group py-4">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-[#10251b]">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-[#14120f]">
                   {f.q}
-                  <span className="text-xl leading-none text-[#0a7c42] transition-transform group-open:rotate-45">+</span>
+                  <span className="text-xl leading-none text-[#007a95] transition-transform group-open:rotate-45">+</span>
                 </summary>
-                <p className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">{f.a}</p>
+                <p className="mt-3 text-[15px] leading-relaxed text-[#56504a]">{f.a}</p>
               </details>
             ))}
           </div>
@@ -322,7 +322,7 @@ export default function HowToStartAffiliateMarketingAustraliaPage() {
             />
           </div>
 
-          <p className="mt-8 text-sm text-[#3d4b44]">
+          <p className="mt-8 text-sm text-[#56504a]">
             Refer Labs is an independent Australian comparison publisher. Some pages carry disclosed affiliate links.
           </p>
         </section>

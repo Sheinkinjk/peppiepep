@@ -45,11 +45,11 @@ export default function GuideCapture({ source = "weight-loss-guide" }: { source?
   if (done) {
     return (
       <div className="nw-card p-7 text-center sm:p-8">
-        <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-[#e6f3ec]">
-          <Check className="h-6 w-6 text-[#0a7c42]" strokeWidth={2.5} aria-hidden="true" />
+        <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-[#e4f2f5]">
+          <Check className="h-6 w-6 text-[#007a95]" strokeWidth={2.5} aria-hidden="true" />
         </div>
-        <h3 className="mt-4 text-xl font-extrabold tracking-tight text-[#10251b]">Check your inbox.</h3>
-        <p className="mt-2 text-[15px] leading-relaxed text-[#3d4b44]">
+        <h3 className="mt-4 text-xl font-extrabold tracking-tight text-[#14120f]">Check your inbox.</h3>
+        <p className="mt-2 text-[15px] leading-relaxed text-[#56504a]">
           Your weight-loss options guide is on its way. If it is not there in a minute, check your spam or promotions
           folder.
         </p>
@@ -71,12 +71,12 @@ export default function GuideCapture({ source = "weight-loss-guide" }: { source?
         />
       </div>
 
-      <label htmlFor="guide_email" className="mb-1.5 block text-[13px] font-semibold text-[#10251b]">
+      <label htmlFor="guide_email" className="mb-1.5 block text-[13px] font-semibold text-[#14120f]">
         Where should we send it?
       </label>
       <div className="flex flex-col gap-3 sm:flex-row">
         <div className="relative flex-1">
-          <Mail className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-[#627068]" aria-hidden="true" />
+          <Mail className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-[#56504a]" aria-hidden="true" />
           <input
             id="guide_email"
             type="email"
@@ -85,7 +85,7 @@ export default function GuideCapture({ source = "weight-loss-guide" }: { source?
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="you@email.com"
-            className="w-full rounded-xl border border-[#e3e7e2] bg-white py-3 pl-10 pr-4 text-[15px] text-[#10251b] placeholder:text-[#9aa39c] transition-colors focus:border-[#0a7c42] focus:outline-none focus:ring-1 focus:ring-[#0a7c42]"
+            className="w-full rounded-xl border border-[#ded8cd] bg-white py-3 pl-10 pr-4 text-[15px] text-[#14120f] placeholder:text-[#766f66] transition-colors focus:border-[#007a95] focus:outline-none focus:ring-1 focus:ring-[#007a95]"
           />
         </div>
         <button
@@ -101,7 +101,7 @@ export default function GuideCapture({ source = "weight-loss-guide" }: { source?
         </button>
       </div>
       {err && <p role="alert" className="mt-2 text-sm text-[#c0392b]">{err}</p>}
-      <p className="mt-3 text-[12px] leading-relaxed text-[#627068]">
+      <p className="mt-3 text-[12px] leading-relaxed text-[#56504a]">
         Free, one email. No spam. Unsubscribe anytime. By requesting the guide you agree to receive it and the occasional
         Refer Labs update. General information, not medical advice.
       </p>

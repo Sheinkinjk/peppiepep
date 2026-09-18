@@ -119,20 +119,20 @@ export default function Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
 
       <main id="main-content" className="mx-auto max-w-3xl px-5 pb-20 pt-10 sm:px-8">
-        <nav className="flex flex-wrap items-center gap-2 text-sm text-[#627068]">
-          <Link href="/" className="hover:text-[#0a7c42]">Refer Labs</Link>
+        <nav className="flex flex-wrap items-center gap-2 text-sm text-[#56504a]">
+          <Link href="/" className="hover:text-[#007a95]">Refer Labs</Link>
           <span>/</span>
-          <Link href="/pet-insurance" className="hover:text-[#0a7c42]">Pet insurance</Link>
+          <Link href="/pet-insurance" className="hover:text-[#007a95]">Pet insurance</Link>
           <span>/</span>
-          <span className="text-[#2b362f]">Who underwrites it</span>
+          <span className="text-[#14120f]">Who underwrites it</span>
         </nav>
 
-        <h1 className="mt-5 text-3xl font-bold leading-[1.1] tracking-[-0.01em] text-[#10251b] sm:text-4xl">
+        <h1 className="mt-5 text-3xl font-bold leading-[1.1] tracking-[-0.01em] text-[#14120f] sm:text-4xl">
           Who underwrites pet insurance in Australia?
         </h1>
 
         {/* Answer first, in the position an engine reads as the answer. */}
-        <p className="mt-5 text-lg leading-relaxed text-[#2b362f]">
+        <p className="mt-5 text-lg leading-relaxed text-[#14120f]">
           Far fewer companies than there are brands. <strong>PetSure (Australia) Pty Ltd</strong> issues or administers
           more than twenty of the pet insurance brands sold here, including cover badged by banks, health funds,
           retailers and motoring clubs. <strong>Knose</strong> and <strong>PetsOnMe</strong> are among the exceptions:
@@ -142,17 +142,17 @@ export default function Page() {
 
         <EditorialMeta lastUpdated={UPDATED} className="mt-5" />
 
-        <div className="mt-6 rounded-xl border border-[#e5e9e7] bg-[#f8faf9] px-5 py-4 text-sm leading-relaxed text-[#3d4b44]">
+        <div className="mt-6 rounded-xl border border-[#ded8cd] bg-[#f7f4ee] px-5 py-4 text-sm leading-relaxed text-[#56504a]">
           Every row below is read off the named company&apos;s own website or disclosure documents on 22 August 2026, not
           from an aggregator. Underwriting arrangements change, and several of these changed recently, so confirm the
           issuer named in the current Product Disclosure Statement before you buy.
         </div>
 
         <section className="mt-12">
-          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">
+          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">
             Which brands are issued or administered by PetSure?
           </h2>
-          <p className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">
+          <p className="mt-3 text-[15px] leading-relaxed text-[#56504a]">
             PetSure (Australia) Pty Ltd, ABN 95 075 949 923, AFSL 420183. Policies written before its licence took
             effect, and their renewals, are issued by The Hollard Insurance Company Pty Ltd, ABN 78 090 584 473, AFSL
             241436. PetSure names its partner brands on its own site.
@@ -160,7 +160,7 @@ export default function Page() {
           <div className="mt-5 overflow-x-auto">
             <table className="w-full min-w-[560px] border-collapse text-left text-sm">
               <thead>
-                <tr className="border-b border-[#e5e9e7] text-[#5a665f]">
+                <tr className="border-b border-[#ded8cd] text-[#56504a]">
                   <th className="py-2 pr-4 font-semibold">Brand</th>
                   <th className="py-2 pr-4 font-semibold">What its own disclosure says</th>
                   <th className="py-2 font-semibold">Source</th>
@@ -168,10 +168,10 @@ export default function Page() {
               </thead>
               <tbody>
                 {PETSURE_ISSUED.map((r) => (
-                  <tr key={r.brand} className="border-b border-[#eef1ef] align-top">
-                    <td className="py-3 pr-4 font-semibold text-[#10251b]">{r.brand}</td>
-                    <td className="py-3 pr-4 text-[#3d4b44]">{r.detail}</td>
-                    <td className="py-3 text-[13px] text-[#5a665f]">{r.src}</td>
+                  <tr key={r.brand} className="border-b border-[#f1ede4] align-top">
+                    <td className="py-3 pr-4 font-semibold text-[#14120f]">{r.brand}</td>
+                    <td className="py-3 pr-4 text-[#56504a]">{r.detail}</td>
+                    <td className="py-3 text-[13px] text-[#56504a]">{r.src}</td>
                   </tr>
                 ))}
               </tbody>
@@ -180,36 +180,36 @@ export default function Page() {
         </section>
 
         <section className="mt-12">
-          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">
+          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">
             Which brands are underwritten by someone else?
           </h2>
-          <p className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">
+          <p className="mt-3 text-[15px] leading-relaxed text-[#56504a]">
             Fewer than the market&apos;s brand count suggests. These two name a different insurer in their own
             disclosure, and they name the same one as each other.
           </p>
           <div className="mt-5 space-y-4">
             {OTHER_ISSUED.map((r) => (
-              <div key={r.brand} className="rounded-2xl border border-[#e5e9e7] bg-white p-5">
-                <p className="text-base font-bold text-[#10251b]">{r.brand}</p>
-                <p className="mt-1 text-sm font-semibold text-[#0a7c42]">{r.underwriter}</p>
-                <p className="mt-2 text-sm leading-relaxed text-[#3d4b44]">{r.detail}</p>
-                <p className="mt-2 text-[13px] text-[#5a665f]">Read off {r.src}, 22 August 2026</p>
+              <div key={r.brand} className="rounded-2xl border border-[#ded8cd] bg-white p-5">
+                <p className="text-base font-bold text-[#14120f]">{r.brand}</p>
+                <p className="mt-1 text-sm font-semibold text-[#007a95]">{r.underwriter}</p>
+                <p className="mt-2 text-sm leading-relaxed text-[#56504a]">{r.detail}</p>
+                <p className="mt-2 text-[13px] text-[#56504a]">Read off {r.src}, 22 August 2026</p>
               </div>
             ))}
           </div>
         </section>
 
         <section className="mt-12">
-          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">
+          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">
             Is Trupanion still the independent alternative?
           </h2>
-          <p className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">
+          <p className="mt-3 text-[15px] leading-relaxed text-[#56504a]">
             Not on its current policies. Trupanion is widely described as the one major brand outside the PetSure group,
             and that description is out of date: Trupanion&apos;s own site states that policies entered into for the
             first time on or after 23 March 2026, and subsequent renewals of those policies, are issued by PetSure and
             promoted and distributed by Trupanion as PetSure&apos;s authorised representative.
           </p>
-          <p className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">
+          <p className="mt-3 text-[15px] leading-relaxed text-[#56504a]">
             This is the kind of detail that goes stale quietly. A comparison written in 2024 can still read as current
             and be describing an arrangement that no longer exists, which is why every row here carries the date it was
             checked and points you at the current PDS.
@@ -217,33 +217,33 @@ export default function Page() {
         </section>
 
         <section className="mt-12">
-          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">
+          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">
             What this changes when you compare
           </h2>
-          <p className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">
+          <p className="mt-3 text-[15px] leading-relaxed text-[#56504a]">
             Brands sharing an issuer tend to share the parts of a policy that decide a claim: the wording, the waiting
             periods, and how pre-existing conditions are treated. Those sit in documents the issuer writes. What still
             differs between them is benefit percentage, annual limit, sub-limits, excess options and price, and those
             differences can be large.
           </p>
-          <p className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">
+          <p className="mt-3 text-[15px] leading-relaxed text-[#56504a]">
             So the underwriter does not settle which policy suits you. It tells you which columns of a comparison table
             are doing real work and which are decoration, and it explains why a second quote from another brand
             sometimes is not a second opinion at all.
           </p>
-          <div className="mt-5 rounded-2xl border border-[#e5e9e7] bg-[#f8faf9] p-6">
-            <p className="text-[15px] font-bold text-[#10251b]">Where we earn, and what that means here</p>
-            <p className="mt-2 text-[15px] leading-relaxed text-[#3d4b44]">
+          <div className="mt-5 rounded-2xl border border-[#ded8cd] bg-[#f7f4ee] p-6">
+            <p className="text-[15px] font-bold text-[#14120f]">Where we earn, and what that means here</p>
+            <p className="mt-2 text-[15px] leading-relaxed text-[#56504a]">
               Refer Labs earns a commission if you take out a policy with Knose or PetsOnMe through our links. Those are
               also the two this page shows are carried by the same insurer, so choosing between them is a choice between
               two products from one insurer rather than a spread across two. That is the least convenient fact on the
               page and it is the reason the page is worth reading.
             </p>
             <div className="mt-4 flex flex-wrap items-center gap-4 text-sm">
-              <Link href="/pet-insurance" className="font-semibold text-[#0a7c42] hover:underline">
+              <Link href="/pet-insurance" className="font-semibold text-[#007a95] hover:underline">
                 Compare cover, waiting periods and current offers
               </Link>
-              <Link href="/knose-vs-petsonme" className="font-semibold text-[#0a7c42] hover:underline">
+              <Link href="/knose-vs-petsonme" className="font-semibold text-[#007a95] hover:underline">
                 Knose vs PetsOnMe, side by side <ArrowRight className="inline h-3.5 w-3.5" aria-hidden="true" />
               </Link>
             </div>
@@ -251,12 +251,12 @@ export default function Page() {
         </section>
 
         <section className="mt-12">
-          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Common questions</h2>
-          <dl className="mt-5 divide-y divide-[#eef1ef] rounded-2xl border border-[#e5e9e7] bg-white">
+          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Common questions</h2>
+          <dl className="mt-5 divide-y divide-[#f1ede4] rounded-2xl border border-[#ded8cd] bg-white">
             {faqs.map((f) => (
               <div key={f.q} className="px-5 py-5">
-                <dt className="text-[15px] font-bold text-[#10251b]">{f.q}</dt>
-                <dd className="mt-2 text-sm leading-relaxed text-[#3d4b44]">{f.a}</dd>
+                <dt className="text-[15px] font-bold text-[#14120f]">{f.q}</dt>
+                <dd className="mt-2 text-sm leading-relaxed text-[#56504a]">{f.a}</dd>
               </div>
             ))}
           </dl>
@@ -270,13 +270,13 @@ export default function Page() {
 
         <InsuranceDisclosure className="mt-10" />
 
-        <section className="mt-10 border-t border-[#eef1ef] pt-8">
-          <h2 className="text-xs font-bold uppercase tracking-[0.12em] text-[#627068]">Keep reading</h2>
+        <section className="mt-10 border-t border-[#f1ede4] pt-8">
+          <h2 className="text-xs font-bold uppercase tracking-[0.12em] text-[#56504a]">Keep reading</h2>
           <ul className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-sm">
-            <li><Link href="/best-pet-insurance-australia" className="font-semibold text-[#0a7c42] hover:underline">How to choose pet insurance</Link></li>
-            <li><Link href="/what-pet-insurance-covers-australia" className="font-semibold text-[#0a7c42] hover:underline">What pet insurance covers</Link></li>
-            <li><Link href="/knose-vs-petsonme" className="text-[#3d4b44] hover:text-[#0a7c42] hover:underline">Knose vs PetsOnMe</Link></li>
-            <li><Link href="/pet-insurance" className="text-[#3d4b44] hover:text-[#0a7c42] hover:underline">All pet insurance</Link></li>
+            <li><Link href="/best-pet-insurance-australia" className="font-semibold text-[#007a95] hover:underline">How to choose pet insurance</Link></li>
+            <li><Link href="/what-pet-insurance-covers-australia" className="font-semibold text-[#007a95] hover:underline">What pet insurance covers</Link></li>
+            <li><Link href="/knose-vs-petsonme" className="text-[#56504a] hover:text-[#007a95] hover:underline">Knose vs PetsOnMe</Link></li>
+            <li><Link href="/pet-insurance" className="text-[#56504a] hover:text-[#007a95] hover:underline">All pet insurance</Link></li>
           </ul>
         </section>
       </main>

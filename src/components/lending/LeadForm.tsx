@@ -20,7 +20,7 @@ import { matchLenders, LENDERS } from "@/lib/lenders";
 // schema, so this can stay lightweight.
 // ─────────────────────────────────────────────────────────────────────────────
 
-const GREEN = "#0a7c42";
+const GREEN = "#007a95";
 const STORAGE_KEY = "rl_lending_lead_v1";
 
 type Values = Record<string, string | string[]>;
@@ -245,26 +245,26 @@ export default function LeadForm({ sourcePage }: { sourcePage?: string }) {
         <div className="flex h-12 w-12 items-center justify-center rounded-full" style={{ background: `${GREEN}18` }}>
           <Check className="h-6 w-6" style={{ color: GREEN }} aria-hidden="true" />
         </div>
-        <h2 ref={headingRef} tabIndex={-1} className="mt-4 text-2xl font-extrabold text-[#10251b] outline-none">
+        <h2 ref={headingRef} tabIndex={-1} className="mt-4 text-2xl font-extrabold text-[#14120f] outline-none">
           Thanks{firstName ? `, ${firstName}` : ""}. Your enquiry is in.
         </h2>
-        <p className="mt-2 max-w-xl text-sm leading-relaxed text-[#3d4b44]">
+        <p className="mt-2 max-w-xl text-sm leading-relaxed text-[#56504a]">
           {result.names.length > 0 ? (
             <>Based on what you told us, your enquiry looks like a plausible fit for{" "}
-              <strong className="text-[#10251b]">{result.names.length} of the {result.total}</strong> lenders we compare
+              <strong className="text-[#14120f]">{result.names.length} of the {result.total}</strong> lenders we compare
               {result.names.length <= 4 ? <> ({result.names.join(", ")})</> : null}. This is indicative only. A person still assesses every enquiry.</>
           ) : (
             <>We&apos;ve received your enquiry. A person reviews every enquiry individually, including ones that don&apos;t obviously fit the panel filters.</>
           )}
         </p>
-        <p className="mt-3 max-w-xl text-sm leading-relaxed text-[#3d4b44]">
-          Jarred from Refer Labs will be in touch <strong className="text-[#10251b]">within one business day</strong> to talk through your options. We&apos;ve emailed you a copy of what happens next.
+        <p className="mt-3 max-w-xl text-sm leading-relaxed text-[#56504a]">
+          Jarred from Refer Labs will be in touch <strong className="text-[#14120f]">within one business day</strong> to talk through your options. We&apos;ve emailed you a copy of what happens next.
         </p>
         <div className="mt-5 flex flex-wrap gap-3">
-          <Link href="/business-loans" className="text-sm font-semibold text-[#0a7c42] hover:text-[#086536]">
+          <Link href="/business-loans" className="text-sm font-semibold text-[#007a95] hover:text-[#003647]">
             Back to business loans
           </Link>
-          <Link href="/how-we-make-money" className="text-sm font-semibold text-[#5a665f] hover:text-[#10251b]">
+          <Link href="/how-we-make-money" className="text-sm font-semibold text-[#56504a] hover:text-[#14120f]">
             How we make money
           </Link>
         </div>
@@ -273,7 +273,7 @@ export default function LeadForm({ sourcePage }: { sourcePage?: string }) {
   }
 
   return (
-    <form onSubmit={submit} noValidate className="rounded-2xl border border-[#e5e9e7] bg-white p-5 sm:p-8">
+    <form onSubmit={submit} noValidate className="rounded-2xl border border-[#ded8cd] bg-white p-5 sm:p-8">
       <Progress step={step} />
 
       {/* Honeypot: hidden from humans, tempting to bots. Must stay empty. */}
@@ -288,10 +288,10 @@ export default function LeadForm({ sourcePage }: { sourcePage?: string }) {
       {step === 0 && (
         <fieldset className="border-0 p-0">
           <legend className="sr-only">What you need</legend>
-          <h2 ref={headingRef} tabIndex={-1} className="text-xl font-extrabold text-[#10251b] outline-none">
+          <h2 ref={headingRef} tabIndex={-1} className="text-xl font-extrabold text-[#14120f] outline-none">
             What are you looking to borrow?
           </h2>
-          <p className="mt-1 text-sm text-[#5a665f]">Rough figures are fine. It takes about a minute.</p>
+          <p className="mt-1 text-sm text-[#56504a]">Rough figures are fine. It takes about a minute.</p>
 
           <Chips label="How much do you need?" name="amount_requested" required error={errors.amount_requested}
             options={AMOUNT_BANDS.map((b) => ({ value: b, title: AMOUNT_DISPLAY[b] }))}
@@ -319,10 +319,10 @@ export default function LeadForm({ sourcePage }: { sourcePage?: string }) {
       {step === 1 && (
         <fieldset className="border-0 p-0">
           <legend className="sr-only">About the business</legend>
-          <h2 ref={headingRef} tabIndex={-1} className="text-xl font-extrabold text-[#10251b] outline-none">
+          <h2 ref={headingRef} tabIndex={-1} className="text-xl font-extrabold text-[#14120f] outline-none">
             Tell us about the business
           </h2>
-          <p className="mt-1 text-sm text-[#5a665f]">Only the business name and monthly revenue are required.</p>
+          <p className="mt-1 text-sm text-[#56504a]">Only the business name and monthly revenue are required.</p>
 
           <div className="grid gap-4 sm:grid-cols-2">
             <TextField label="Business name" name="business_name" required error={errors.business_name} maxLength={160}
@@ -381,10 +381,10 @@ export default function LeadForm({ sourcePage }: { sourcePage?: string }) {
       {step === 2 && (
         <fieldset className="border-0 p-0">
           <legend className="sr-only">Your contact details and consent</legend>
-          <h2 ref={headingRef} tabIndex={-1} className="text-xl font-extrabold text-[#10251b] outline-none">
+          <h2 ref={headingRef} tabIndex={-1} className="text-xl font-extrabold text-[#14120f] outline-none">
             Where should we reach you?
           </h2>
-          <p className="mt-1 text-sm text-[#5a665f]">A person reviews your enquiry and gets back to you within one business day.</p>
+          <p className="mt-1 text-sm text-[#56504a]">A person reviews your enquiry and gets back to you within one business day.</p>
 
           <div className="grid gap-4 sm:grid-cols-2">
             <TextField label="First name" name="first_name" required error={errors.first_name} maxLength={80}
@@ -405,7 +405,7 @@ export default function LeadForm({ sourcePage }: { sourcePage?: string }) {
             <Consent name="consent_privacy" checked={str(values.consent_privacy) === "yes"} error={errors.consent_privacy}
               onChange={(c) => set("consent_privacy", c ? "yes" : "")}>
               {CONSENT_PRIVACY_LABEL}{" "}
-              See our <Link href="/privacy" className="underline hover:text-[#10251b]" target="_blank">Privacy Policy</Link>.
+              See our <Link href="/privacy" className="underline hover:text-[#14120f]" target="_blank">Privacy Policy</Link>.
             </Consent>
             <Consent name="consent_contact" checked={str(values.consent_contact) === "yes"} error={errors.consent_contact}
               onChange={(c) => set("consent_contact", c ? "yes" : "")}>
@@ -413,10 +413,10 @@ export default function LeadForm({ sourcePage }: { sourcePage?: string }) {
             </Consent>
           </div>
 
-          <p className="mt-4 flex items-start gap-2 text-xs leading-relaxed text-[#5a665f]">
+          <p className="mt-4 flex items-start gap-2 text-xs leading-relaxed text-[#56504a]">
             <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0" style={{ color: GREEN }} aria-hidden="true" />
             We never ask for bank statements, ID documents or logins on this form. Refer Labs is a referrer, not a lender or credit provider.{" "}
-            <Link href="/how-we-make-money" className="underline hover:text-[#10251b]">How we make money</Link>.
+            <Link href="/how-we-make-money" className="underline hover:text-[#14120f]">How we make money</Link>.
           </p>
 
           {submitError && (
@@ -429,20 +429,20 @@ export default function LeadForm({ sourcePage }: { sourcePage?: string }) {
       <div className="mt-8 flex items-center justify-between gap-3">
         {step > 0 ? (
           <button type="button" onClick={back}
-            className="inline-flex items-center gap-1.5 rounded-xl px-4 py-3 text-sm font-semibold text-[#3d4b44] transition-colors hover:bg-[#f5f8f6] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0a7c42]">
+            className="inline-flex items-center gap-1.5 rounded-xl px-4 py-3 text-sm font-semibold text-[#56504a] transition-colors hover:bg-[#f7f4ee] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#007a95]">
             <ArrowLeft className="h-4 w-4" aria-hidden="true" /> Back
           </button>
         ) : <span />}
 
         {step < 2 ? (
           <button type="button" onClick={next}
-            className="inline-flex items-center gap-2 rounded-xl px-6 py-3 text-sm font-bold text-white shadow-md transition-all hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0a7c42]"
+            className="inline-flex items-center gap-2 rounded-xl px-6 py-3 text-sm font-bold text-white shadow-md transition-all hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#007a95]"
             style={{ background: GREEN, boxShadow: `0 8px 24px ${GREEN}25` }}>
             Continue <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </button>
         ) : (
           <button type="submit" disabled={submitting}
-            className="inline-flex items-center gap-2 rounded-xl px-6 py-3 text-sm font-bold text-white shadow-md transition-all hover:-translate-y-0.5 disabled:opacity-70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0a7c42]"
+            className="inline-flex items-center gap-2 rounded-xl px-6 py-3 text-sm font-bold text-white shadow-md transition-all hover:-translate-y-0.5 disabled:opacity-70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#007a95]"
             style={{ background: GREEN, boxShadow: `0 8px 24px ${GREEN}25` }}>
             {submitting ? <><Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" /> Sending…</> : <>See my options <ArrowRight className="h-4 w-4" aria-hidden="true" /></>}
           </button>
@@ -458,14 +458,14 @@ function Progress({ step }: { step: number }) {
   const labels = ["What you need", "Your business", "Your details"];
   return (
     <div className="mb-6">
-      <div className="flex items-center justify-between text-[11px] font-bold uppercase tracking-[0.12em] text-[#627068]">
+      <div className="flex items-center justify-between text-[11px] font-bold uppercase tracking-[0.12em] text-[#56504a]">
         <span>Step {step + 1} of 3</span>
-        <span className="text-[#3d4b44]">{labels[step]}</span>
+        <span className="text-[#56504a]">{labels[step]}</span>
       </div>
       <div className="mt-2 flex gap-1.5" aria-hidden="true">
         {labels.map((_, i) => (
           <div key={i} className="h-1.5 flex-1 rounded-full transition-colors"
-            style={{ background: i <= step ? GREEN : "#e5e9e7" }} />
+            style={{ background: i <= step ? GREEN : "#ded8cd" }} />
         ))}
       </div>
     </div>
@@ -477,8 +477,8 @@ function FieldShell({ label, required, error, htmlFor, children }: {
 }) {
   return (
     <div className="mt-4">
-      <label htmlFor={htmlFor} className="block text-sm font-semibold text-[#10251b]">
-        {label}{required && <span className="text-[#0a7c42]"> *</span>}
+      <label htmlFor={htmlFor} className="block text-sm font-semibold text-[#14120f]">
+        {label}{required && <span className="text-[#007a95]"> *</span>}
       </label>
       <div className="mt-1.5">{children}</div>
       {error && <p className="mt-1.5 text-sm font-medium text-red-600">{error}</p>}
@@ -487,7 +487,7 @@ function FieldShell({ label, required, error, htmlFor, children }: {
 }
 
 const inputCls =
-  "w-full rounded-xl border bg-white px-4 py-3 text-sm text-[#10251b] placeholder:text-[#9aa39c] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0a7c42] focus-visible:border-[#0a7c42]";
+  "w-full rounded-xl border bg-white px-4 py-3 text-sm text-[#14120f] placeholder:text-[#766f66] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#007a95] focus-visible:border-[#007a95]";
 
 function TextField({ label, name, value, onChange, required, error, type = "text", placeholder, inputMode, autoComplete, maxLength }: {
   label: string; name: string; value: string; onChange: (v: string) => void; required?: boolean; error?: string;
@@ -498,7 +498,7 @@ function TextField({ label, name, value, onChange, required, error, type = "text
       <input id={name} name={name} type={type} value={value} placeholder={placeholder} inputMode={inputMode}
         autoComplete={autoComplete} maxLength={maxLength} aria-required={required} aria-invalid={!!error}
         onChange={(e) => onChange(e.target.value)}
-        className={inputCls} style={{ borderColor: error ? "#dc2626" : "#e5e9e7" }} />
+        className={inputCls} style={{ borderColor: error ? "#dc2626" : "#ded8cd" }} />
     </FieldShell>
   );
 }
@@ -509,7 +509,7 @@ function TextArea({ label, name, value, onChange, placeholder, maxLength }: {
   return (
     <FieldShell label={label} htmlFor={name}>
       <textarea id={name} name={name} value={value} placeholder={placeholder} rows={3} maxLength={maxLength}
-        onChange={(e) => onChange(e.target.value)} className={inputCls} style={{ borderColor: "#e5e9e7" }} />
+        onChange={(e) => onChange(e.target.value)} className={inputCls} style={{ borderColor: "#ded8cd" }} />
     </FieldShell>
   );
 }
@@ -521,7 +521,7 @@ function SelectField({ label, name, value, onChange, options, placeholder, requi
   return (
     <FieldShell label={label} required={required} error={error} htmlFor={name}>
       <select id={name} name={name} value={value} aria-required={required} aria-invalid={!!error}
-        onChange={(e) => onChange(e.target.value)} className={inputCls} style={{ borderColor: error ? "#dc2626" : "#e5e9e7" }}>
+        onChange={(e) => onChange(e.target.value)} className={inputCls} style={{ borderColor: error ? "#dc2626" : "#ded8cd" }}>
         <option value="">{placeholder || "Select"}</option>
         {options.map((o) => <option key={o.value} value={o.value}>{o.label}</option>)}
       </select>
@@ -541,10 +541,10 @@ function Chips({ label, name, options, value, onSelect, required, error }: {
           return (
             <button key={o.value} type="button" role="radio" aria-checked={active} name={name}
               onClick={() => onSelect(o.value)}
-              className="rounded-xl border px-4 py-2.5 text-sm font-medium transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0a7c42]"
+              className="rounded-xl border px-4 py-2.5 text-sm font-medium transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#007a95]"
               style={active
-                ? { borderColor: GREEN, background: `${GREEN}10`, color: "#10251b" }
-                : { borderColor: "#e5e9e7", background: "#fff", color: "#3d4b44" }}>
+                ? { borderColor: GREEN, background: `${GREEN}10`, color: "#14120f" }
+                : { borderColor: "#ded8cd", background: "#fff", color: "#56504a" }}>
               {o.title}
             </button>
           );
@@ -566,10 +566,10 @@ function MultiChips({ label, name, options, values, onToggle }: {
           return (
             <button key={o.value} type="button" role="checkbox" aria-checked={active} name={name}
               onClick={() => onToggle(o.value)}
-              className="inline-flex items-center gap-1.5 rounded-xl border px-4 py-2.5 text-sm font-medium transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0a7c42]"
+              className="inline-flex items-center gap-1.5 rounded-xl border px-4 py-2.5 text-sm font-medium transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#007a95]"
               style={active
-                ? { borderColor: GREEN, background: `${GREEN}10`, color: "#10251b" }
-                : { borderColor: "#e5e9e7", background: "#fff", color: "#3d4b44" }}>
+                ? { borderColor: GREEN, background: `${GREEN}10`, color: "#14120f" }
+                : { borderColor: "#ded8cd", background: "#fff", color: "#56504a" }}>
               {active && <Check className="h-3.5 w-3.5" style={{ color: GREEN }} aria-hidden="true" />}
               {o.title}
             </button>
@@ -594,10 +594,10 @@ function Consent({ name, checked, error, onChange, children }: {
 }) {
   return (
     <div>
-      <label htmlFor={name} className="flex cursor-pointer items-start gap-3 text-sm leading-relaxed text-[#3d4b44]">
+      <label htmlFor={name} className="flex cursor-pointer items-start gap-3 text-sm leading-relaxed text-[#56504a]">
         <input id={name} name={name} type="checkbox" checked={checked} aria-invalid={!!error}
           onChange={(e) => onChange(e.target.checked)}
-          className="mt-0.5 h-4 w-4 shrink-0 rounded border-[#c7cfc9] text-[#0a7c42] focus:ring-[#0a7c42]" />
+          className="mt-0.5 h-4 w-4 shrink-0 rounded border-[#ded8cd] text-[#007a95] focus:ring-[#007a95]" />
         <span>{children}</span>
       </label>
       {error && <p className="mt-1 pl-7 text-sm font-medium text-red-600">{error}</p>}

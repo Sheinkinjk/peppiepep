@@ -49,22 +49,22 @@ export default function ApolloLanding() {
               alt="Apollo Energy Group logo"
               width={64}
               height={64}
-              className="mb-5 h-16 w-16 rounded-2xl shadow-[0_10px_28px_-16px_rgba(16,37,27,0.35)]"
+              className="mb-5 h-16 w-16 rounded-2xl shadow-[0_10px_28px_-16px_rgba(20,18,15,0.35)]"
             />
-            <h1 className="mt-4 text-4xl font-extrabold leading-[1.06] tracking-[-0.02em] text-[#10251b] sm:text-5xl lg:text-[3.1rem]">
+            <h1 className="mt-4 text-4xl font-extrabold leading-[1.06] tracking-[-0.02em] text-[#14120f] sm:text-5xl lg:text-[3.1rem]">
               Apollo Energy Group: a Sydney solar battery company,{" "}
-              <span className="text-[#0a7c42]">$500 off through Refer Labs.</span>
+              <span className="text-[#007a95]">$500 off through Refer Labs.</span>
             </h1>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-[#3d4b44]">
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-[#56504a]">
               Apollo Energy Group is a Sydney-based, SAA-accredited solar battery (home battery) company. Register your
               interest below and a specialist gets in touch within 2 business days, with $500 off your quote on top of the
               federal and NSW government rebates. No hype, no invented savings figures.
             </p>
-            <ul className="mt-7 grid gap-2.5 text-[15px] font-medium text-[#10251b]">
+            <ul className="mt-7 grid gap-2.5 text-[15px] font-medium text-[#14120f]">
               {["$500 off, on top of the government rebate", "SAA-accredited, 10-year battery warranty", "No obligation, contacted within 2 business days"].map((t) => (
                 <li key={t} className="flex items-center gap-2.5">
-                  <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#e6f3ec]">
-                    <Check className="h-3.5 w-3.5 text-[#0a7c42]" strokeWidth={2.5} aria-hidden="true" />
+                  <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#e4f2f5]">
+                    <Check className="h-3.5 w-3.5 text-[#007a95]" strokeWidth={2.5} aria-hidden="true" />
                   </span>
                   {t}
                 </li>
@@ -78,7 +78,7 @@ export default function ApolloLanding() {
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <a href="#register" className="nw-btn">Register your interest <ArrowRight className="h-4 w-4" /></a>
             </div>
-            <p className="mt-4 text-xs text-[#627068]">
+            <p className="mt-4 text-xs text-[#56504a]">
               $500 off is applied to your quote through this enquiry. No code needed.
             </p>
           </div>
@@ -86,15 +86,15 @@ export default function ApolloLanding() {
           {/* Data capture, primary */}
           <div id="register" className="scroll-mt-24 lg:pt-2">
             <div className="mb-3 flex items-baseline justify-between">
-              <h2 className="text-lg font-extrabold tracking-tight text-[#10251b]">Register your interest</h2>
-              <span className="text-[12px] font-medium text-[#0a7c42]">$500 off · 2 business days</span>
+              <h2 className="text-lg font-extrabold tracking-tight text-[#14120f]">Register your interest</h2>
+              <span className="text-[12px] font-medium text-[#007a95]">$500 off · 2 business days</span>
             </div>
             <ApolloEoiForm />
           </div>
         </section>
 
         {/* ── Trust strip ── */}
-        <section className="mt-14 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-[#e5e9e7] bg-[#e5e9e7] sm:grid-cols-4">
+        <section className="mt-14 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-[#ded8cd] bg-[#ded8cd] sm:grid-cols-4">
           {[
             { icon: BadgeCheck, label: "SAA-accredited installers" },
             { icon: ShieldCheck, label: "10-year battery warranty" },
@@ -102,8 +102,8 @@ export default function ApolloLanding() {
             { icon: Wrench, label: "Sized from your real usage" },
           ].map(({ icon: Icon, label }) => (
             <div key={label} className="flex items-center gap-3 bg-white px-5 py-5">
-              <Icon className="h-5 w-5 shrink-0 text-[#0a7c42]" strokeWidth={1.7} />
-              <span className="text-[13px] font-medium leading-snug text-[#3d4b44]">{label}</span>
+              <Icon className="h-5 w-5 shrink-0 text-[#007a95]" strokeWidth={1.7} />
+              <span className="text-[13px] font-medium leading-snug text-[#56504a]">{label}</span>
             </div>
           ))}
         </section>
@@ -111,22 +111,22 @@ export default function ApolloLanding() {
         {/* ── At a glance ── */}
         <section className="mt-6 nw-card rounded-2xl p-6">
           <div className="flex flex-wrap items-center justify-between gap-4">
-            <span className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#627068]">At a glance</span>
+            <span className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#56504a]">At a glance</span>
             <ApolloCTA size="sm" loc="glance-card" />
           </div>
           <dl className="mt-4 grid gap-x-8 text-sm sm:grid-cols-2 lg:grid-cols-3">
             {glance.map(([k, v]) => (
-              <div key={k} className="flex gap-3 border-b border-[#eef1ef] py-2">
-                <dt className="w-28 shrink-0 text-[#627068]">{k}</dt>
-                <dd className="text-[#2b362f]">{v}</dd>
+              <div key={k} className="flex gap-3 border-b border-[#f1ede4] py-2">
+                <dt className="w-28 shrink-0 text-[#56504a]">{k}</dt>
+                <dd className="text-[#14120f]">{v}</dd>
               </div>
             ))}
           </dl>
         </section>
 
         {/* ── Honesty notice ── */}
-        <p className="mt-8 rounded-xl border border-[#e5e9e7] bg-white px-5 py-4 text-xs leading-relaxed text-[#5a665f]">
-          <span className="font-semibold text-[#3d4b44]">On savings figures.</span> What a battery saves depends on your
+        <p className="mt-8 rounded-xl border border-[#ded8cd] bg-white px-5 py-4 text-xs leading-relaxed text-[#56504a]">
+          <span className="font-semibold text-[#56504a]">On savings figures.</span> What a battery saves depends on your
           usage, your tariff, whether you have solar and whether you join a VPP. Any percentages or dollar figures on
           this page are attributed to their source and are not a promise of what you will save. Rebate amounts and rules
           change, so confirm current terms before you commit.
@@ -137,7 +137,7 @@ export default function ApolloLanding() {
           {/* TOC */}
           <nav aria-label="On this page" className="hidden lg:block">
             <div className="sticky top-24">
-              <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[#627068]">On this page</p>
+              <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[#56504a]">On this page</p>
               <ul className="space-y-2.5 text-sm">
                 {[
                   ["what", "What Apollo is"],
@@ -150,7 +150,7 @@ export default function ApolloLanding() {
                   ["faq", "FAQ"],
                 ].map(([id, label]) => (
                   <li key={id}>
-                    <a href={`#${id}`} className="text-[#5a665f] transition-colors hover:text-[#0a7c42]">
+                    <a href={`#${id}`} className="text-[#56504a] transition-colors hover:text-[#007a95]">
                       {label}
                     </a>
                   </li>
@@ -163,8 +163,8 @@ export default function ApolloLanding() {
           <article className="max-w-2xl">
             {/* What */}
             <section id="what" className="scroll-mt-24">
-              <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">What Apollo is</h2>
-              <div className="mt-4 space-y-4 text-[15.5px] leading-relaxed text-[#3d4b44]">
+              <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">What Apollo is</h2>
+              <div className="mt-4 space-y-4 text-[15.5px] leading-relaxed text-[#56504a]">
                 <p>
                   Apollo Energy Group is a specialist in home battery storage. They install residential
                   and commercial battery systems from 9kWh up to 54kWh, engineered around your actual electricity usage
@@ -183,8 +183,8 @@ export default function ApolloLanding() {
                 </p>
               </div>
 
-              <figure className="my-7 border-l-2 border-[#0a7c42] pl-5">
-                <blockquote className="text-xl font-semibold italic leading-snug text-[#2b362f]">
+              <figure className="my-7 border-l-2 border-[#007a95] pl-5">
+                <blockquote className="text-xl font-semibold italic leading-snug text-[#14120f]">
                   &ldquo;The install is the easy part. The money question is what size you need, and what the
                   rebate does to the price.&rdquo;
                 </blockquote>
@@ -193,10 +193,10 @@ export default function ApolloLanding() {
 
             {/* Choosing a solar battery company */}
             <section id="choosing" className="mt-12 scroll-mt-24">
-              <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">
+              <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">
                 How to choose the best solar battery company in Australia
               </h2>
-              <div className="mt-4 space-y-4 text-[15.5px] leading-relaxed text-[#3d4b44]">
+              <div className="mt-4 space-y-4 text-[15.5px] leading-relaxed text-[#56504a]">
                 <p>
                   There is no single &ldquo;best&rdquo; solar battery company, because the right installer depends on
                   where you live, the system you need, and who does the workmanship. A solar battery (also called a home
@@ -214,7 +214,7 @@ export default function ApolloLanding() {
                     "No high-pressure sales, and a quote that shows the price after every rebate.",
                   ].map((t) => (
                     <li key={t} className="flex gap-2.5">
-                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#0a7c42]" aria-hidden="true" />{t}
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#007a95]" aria-hidden="true" />{t}
                     </li>
                   ))}
                 </ul>
@@ -229,13 +229,13 @@ export default function ApolloLanding() {
 
             {/* Offer */}
             <section id="offer" className="mt-12 scroll-mt-24">
-              <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">
+              <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">
                 The $500 discount, and how it works
               </h2>
-              <div className="mt-4 space-y-4 text-[15.5px] leading-relaxed text-[#3d4b44]">
+              <div className="mt-4 space-y-4 text-[15.5px] leading-relaxed text-[#56504a]">
                 <p>
                   Apollo runs a dedicated landing page for Refer Labs readers offering{" "}
-                  <strong className="font-semibold text-[#2b362f]">$500 off your home battery quote</strong>, applied
+                  <strong className="font-semibold text-[#14120f]">$500 off your home battery quote</strong>, applied
                   directly to the system. This is a genuine exclusive rather than a public sale, which is why there is no
                   code to hunt for: the discount is attached to the link on this page.
                 </p>
@@ -245,8 +245,8 @@ export default function ApolloLanding() {
                   the $500 already off and any rebate you qualify for applied on top.
                 </p>
               </div>
-              <div className="mt-6 rounded-xl border border-[#cfe6da] bg-[#e8f5ee] p-5">
-                <p className="text-sm leading-relaxed text-[#2b362f]">
+              <div className="mt-6 rounded-xl border border-[#b9e3eb] bg-[#e4f2f5] p-5">
+                <p className="text-sm leading-relaxed text-[#14120f]">
                   The $500 comes off the quote on top of the federal rebate. It is not instead of it.
                 </p>
                 <div className="mt-4">
@@ -257,13 +257,13 @@ export default function ApolloLanding() {
 
             {/* Rebate */}
             <section id="rebate" className="mt-12 scroll-mt-24">
-              <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">
+              <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">
                 The 2026 battery rebate, in plain terms
               </h2>
-              <div className="mt-4 space-y-4 text-[15.5px] leading-relaxed text-[#3d4b44]">
+              <div className="mt-4 space-y-4 text-[15.5px] leading-relaxed text-[#56504a]">
                 <p>
                   This is the part that moves the price most, and it changed on 1 May 2026. The federal{" "}
-                  <strong className="font-semibold text-[#2b362f]">Cheaper Home Batteries Program</strong> discounts
+                  <strong className="font-semibold text-[#14120f]">Cheaper Home Batteries Program</strong> discounts
                   roughly 30% of the upfront cost of an eligible battery, for systems between 5kWh and 100kWh. You do not
                   claim it yourself: the installer applies it at the point of sale.
                 </p>
@@ -286,40 +286,40 @@ export default function ApolloLanding() {
               <div className="mt-6 overflow-x-auto">
                 <table className="w-full min-w-[420px] border-collapse text-sm">
                   <thead>
-                    <tr className="border-b border-[#e5e9e7]">
-                      <th className="pb-3 pr-4 text-left text-[11px] font-semibold uppercase tracking-widest text-[#627068]">
+                    <tr className="border-b border-[#ded8cd]">
+                      <th className="pb-3 pr-4 text-left text-[11px] font-semibold uppercase tracking-widest text-[#56504a]">
                         Capacity band
                       </th>
-                      <th className="pb-3 text-left text-[11px] font-semibold uppercase tracking-widest text-[#627068]">
+                      <th className="pb-3 text-left text-[11px] font-semibold uppercase tracking-widest text-[#56504a]">
                         Rebate rate applied (from 1 May 2026)
                       </th>
                     </tr>
                   </thead>
-                  <tbody className="text-[#3d4b44]">
+                  <tbody className="text-[#56504a]">
                     {[
                       ["First 14kWh", "100% of the rate"],
                       ["14kWh to 28kWh", "60% of the rate"],
                       ["28kWh to 50kWh", "15% of the rate"],
                     ].map(([band, rate]) => (
-                      <tr key={band} className="border-b border-[#eef1ef]">
-                        <td className="py-3 pr-4 font-medium text-[#2b362f]">{band}</td>
+                      <tr key={band} className="border-b border-[#f1ede4]">
+                        <td className="py-3 pr-4 font-medium text-[#14120f]">{band}</td>
                         <td className="py-3">{rate}</td>
                       </tr>
                     ))}
                   </tbody>
                 </table>
               </div>
-              <p className="mt-3 text-xs text-[#627068]">
+              <p className="mt-3 text-xs text-[#56504a]">
                 Rebate rules and STC values change. Confirm current terms before committing.
               </p>
             </section>
 
             {/* Savings */}
             <section id="savings" className="mt-12 scroll-mt-24">
-              <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">
+              <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">
                 What a battery saves
               </h2>
-              <div className="mt-4 space-y-4 text-[15.5px] leading-relaxed text-[#3d4b44]">
+              <div className="mt-4 space-y-4 text-[15.5px] leading-relaxed text-[#56504a]">
                 <p>
                   No one can quote you a savings number from a web page, because it turns entirely on your
                   usage, your tariff, whether you already have solar, and whether you join a VPP. What a battery does is
@@ -340,8 +340,8 @@ export default function ApolloLanding() {
 
             {/* Who it suits */}
             <section id="suits" className="mt-12 scroll-mt-24">
-              <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">Who it suits</h2>
-              <div className="mt-4 space-y-4 text-[15.5px] leading-relaxed text-[#3d4b44]">
+              <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">Who it suits</h2>
+              <div className="mt-4 space-y-4 text-[15.5px] leading-relaxed text-[#56504a]">
                 <p>
                   It fits homeowners with existing solar and meaningful evening or overnight consumption, where a
                   battery has something to store and somewhere expensive to discharge into. It also fits households
@@ -357,16 +357,16 @@ export default function ApolloLanding() {
 
             {/* Steps */}
             <section id="start" className="mt-12 scroll-mt-24">
-              <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">How to start</h2>
+              <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">How to start</h2>
               <ol className="mt-6 space-y-5">
                 {steps.map((s) => (
                   <li key={s.num} className="flex gap-4">
-                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#e8f5ee] text-sm font-bold text-[#0a7c42]">
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#e4f2f5] text-sm font-bold text-[#007a95]">
                       {s.num}
                     </span>
                     <div>
-                      <p className="font-bold text-[#10251b]">{s.heading}</p>
-                      <p className="mt-1 text-sm leading-relaxed text-[#3d4b44]">{s.body}</p>
+                      <p className="font-bold text-[#14120f]">{s.heading}</p>
+                      <p className="mt-1 text-sm leading-relaxed text-[#56504a]">{s.body}</p>
                     </div>
                   </li>
                 ))}
@@ -376,8 +376,8 @@ export default function ApolloLanding() {
             {/* Bottom line */}
             <section id="bottom-line" className="mt-14 scroll-mt-24">
               <div className="nw-card rounded-2xl p-7 sm:p-8">
-                <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">Should you use Apollo Energy Group?</h2>
-                <p className="mt-4 text-[15.5px] leading-relaxed text-[#3d4b44]">
+                <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">Should you use Apollo Energy Group?</h2>
+                <p className="mt-4 text-[15.5px] leading-relaxed text-[#56504a]">
                   If you are already paying for peak power you could be storing, a battery is worth quoting
                   properly, and Apollo is a credible place to get that quote: accredited installers, a real licence, a
                   10-year battery warranty, and systems sized from your usage rather than a package off a shelf. The
@@ -390,15 +390,15 @@ export default function ApolloLanding() {
                     "Federal rebate applied at the point of sale, not claimed back later",
                     "Sized from your real usage, and the rebate taper above 14kWh explained in full",
                   ].map((point) => (
-                    <li key={point} className="flex items-start gap-2.5 text-sm text-[#2b362f]">
-                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#0a7c42]" />
+                    <li key={point} className="flex items-start gap-2.5 text-sm text-[#14120f]">
+                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#007a95]" />
                       {point}
                     </li>
                   ))}
                 </ul>
                 <div className="mt-7 flex flex-wrap items-center gap-4">
                   <ApolloCTA label="Claim your $500 discount" size="lg" loc="bottom-line" />
-                  <span className="text-xs text-[#627068]">Under 30 seconds · no obligation</span>
+                  <span className="text-xs text-[#56504a]">Under 30 seconds · no obligation</span>
                 </div>
               </div>
             </section>
@@ -407,7 +407,7 @@ export default function ApolloLanding() {
 
             <section className="mt-14 scroll-mt-24">
 
-              <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">The offer at a glance</h2>
+              <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">The offer at a glance</h2>
 
               <div className="mt-5">
 
@@ -419,17 +419,17 @@ export default function ApolloLanding() {
 
             {/* FAQ */}
             <section id="faq" className="mt-14 scroll-mt-24">
-              <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">
+              <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">
                 Frequently asked questions
               </h2>
-              <div className="mt-6 divide-y divide-[#e5e9e7] border-y border-[#e5e9e7]">
+              <div className="mt-6 divide-y divide-[#ded8cd] border-y border-[#ded8cd]">
                 {faqs.map((f) => (
                   <details key={f.q} className="group py-4">
-                    <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-[#10251b]">
+                    <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-[#14120f]">
                       {f.q}
-                      <span className="text-xl leading-none text-[#0a7c42] transition-transform group-open:rotate-45">+</span>
+                      <span className="text-xl leading-none text-[#007a95] transition-transform group-open:rotate-45">+</span>
                     </summary>
-                    <p className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">{f.a}</p>
+                    <p className="mt-3 text-[15px] leading-relaxed text-[#56504a]">{f.a}</p>
                   </details>
                 ))}
               </div>
@@ -437,38 +437,38 @@ export default function ApolloLanding() {
 
             {/* Related reading (cluster) */}
             <section className="mt-14">
-              <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">Related reading</h2>
+              <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">Related reading</h2>
               <div className="mt-6 grid gap-4 sm:grid-cols-2">
                 <Link
                   href="/apollo-energy-review"
-                  className="group rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] p-5 transition-all hover:-translate-y-0.5 hover:border-[#0a7c42]/40"
+                  className="group rounded-xl border border-[#ded8cd] bg-[#f7f4ee] p-5 transition-all hover:-translate-y-0.5 hover:border-[#007a95]/40"
                 >
-                  <h3 className="text-[15px] font-bold text-[#10251b] group-hover:text-[#0a7c42]">
+                  <h3 className="text-[15px] font-bold text-[#14120f] group-hover:text-[#007a95]">
                     Apollo Energy Group review: is it legit?
                   </h3>
-                  <p className="mt-1.5 text-sm leading-relaxed text-[#3d4b44]">
+                  <p className="mt-1.5 text-sm leading-relaxed text-[#56504a]">
                     Their accreditation, warranty and credentials, and the things worth checking before you sign.
                   </p>
                 </Link>
                 <Link
                   href="/home-battery-rebate-australia"
-                  className="group rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] p-5 transition-all hover:-translate-y-0.5 hover:border-[#0a7c42]/40"
+                  className="group rounded-xl border border-[#ded8cd] bg-[#f7f4ee] p-5 transition-all hover:-translate-y-0.5 hover:border-[#007a95]/40"
                 >
-                  <h3 className="text-[15px] font-bold text-[#10251b] group-hover:text-[#0a7c42]">
+                  <h3 className="text-[15px] font-bold text-[#14120f] group-hover:text-[#007a95]">
                     Home battery rebate Australia 2026
                   </h3>
-                  <p className="mt-1.5 text-sm leading-relaxed text-[#3d4b44]">
+                  <p className="mt-1.5 text-sm leading-relaxed text-[#56504a]">
                     What the federal rebate pays, the 14kWh taper, and worked examples by size.
                   </p>
                 </Link>
                 <Link
                   href="/home-battery-cost-australia"
-                  className="group rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] p-5 transition-all hover:-translate-y-0.5 hover:border-[#0a7c42]/40"
+                  className="group rounded-xl border border-[#ded8cd] bg-[#f7f4ee] p-5 transition-all hover:-translate-y-0.5 hover:border-[#007a95]/40"
                 >
-                  <h3 className="text-[15px] font-bold text-[#10251b] group-hover:text-[#0a7c42]">
+                  <h3 className="text-[15px] font-bold text-[#14120f] group-hover:text-[#007a95]">
                     How much a home battery costs
                   </h3>
-                  <p className="mt-1.5 text-sm leading-relaxed text-[#3d4b44]">
+                  <p className="mt-1.5 text-sm leading-relaxed text-[#56504a]">
                     Installed price ranges by size, what the rebate takes off, and realistic payback periods.
                   </p>
                 </Link>
@@ -482,10 +482,10 @@ export default function ApolloLanding() {
                   <Link
                     key={r.href}
                     href={r.href}
-                    className="group rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] p-5 transition-all hover:-translate-y-0.5 hover:border-[#0a7c42]/40"
+                    className="group rounded-xl border border-[#ded8cd] bg-[#f7f4ee] p-5 transition-all hover:-translate-y-0.5 hover:border-[#007a95]/40"
                   >
-                    <h3 className="text-[15px] font-bold text-[#10251b] group-hover:text-[#0a7c42]">{r.title}</h3>
-                    <p className="mt-1.5 text-sm leading-relaxed text-[#3d4b44]">{r.desc}</p>
+                    <h3 className="text-[15px] font-bold text-[#14120f] group-hover:text-[#007a95]">{r.title}</h3>
+                    <p className="mt-1.5 text-sm leading-relaxed text-[#56504a]">{r.desc}</p>
                   </Link>
                 ))}
               </div>
@@ -494,7 +494,7 @@ export default function ApolloLanding() {
         </div>
 
         {/* ── Final CTA band ── */}
-        <section className="mt-20 overflow-hidden rounded-3xl bg-[#10251b] px-7 py-12 text-center sm:px-12 sm:py-16">
+        <section className="mt-20 overflow-hidden rounded-3xl bg-[#14120f] px-7 py-12 text-center sm:px-12 sm:py-16">
           <h2 className="mx-auto max-w-xl text-3xl font-bold leading-tight text-white sm:text-4xl">
             Get $500 off your home battery quote
           </h2>
@@ -509,7 +509,7 @@ export default function ApolloLanding() {
         </section>
 
         {/* Disclosure */}
-        <p className="mt-10 text-xs leading-relaxed text-[#627068]">
+        <p className="mt-10 text-xs leading-relaxed text-[#56504a]">
           This page is operated by Refer Labs and contains a disclosed affiliate link. If you request a quote through it
           we may earn a commission at no extra cost to you, and it never changes our assessment. Apollo Energy Group
           credentials, warranty and savings figures are as published by Apollo. Rebate figures reflect the federal

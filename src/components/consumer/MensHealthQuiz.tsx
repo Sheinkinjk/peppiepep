@@ -179,21 +179,21 @@ export default function MensHealthQuiz() {
   if (!finished) {
     const q = QUESTIONS[step];
     return (
-      <div className="rounded-2xl border border-[#e5e9e7] bg-white p-6 sm:p-8">
-        <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#627068]">
+      <div className="rounded-2xl border border-[#ded8cd] bg-white p-6 sm:p-8">
+        <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#56504a]">
           Question {step + 1} of {QUESTIONS.length}
         </p>
-        <h2 className="mt-3 text-xl font-bold text-[#10251b] sm:text-2xl">{q.q}</h2>
+        <h2 className="mt-3 text-xl font-bold text-[#14120f] sm:text-2xl">{q.q}</h2>
         <div className="mt-5 grid gap-2.5">
           {q.options.map((o) => (
             <button
               key={o.value}
               type="button"
               onClick={() => choose(q.key, o.value)}
-              className="group rounded-xl border border-[#e5e9e7] bg-white px-5 py-4 text-left transition-colors hover:border-[#0a7c42] hover:bg-[#f5f8f6]"
+              className="group rounded-xl border border-[#ded8cd] bg-white px-5 py-4 text-left transition-colors hover:border-[#007a95] hover:bg-[#f7f4ee]"
             >
-              <span className="block text-[15px] font-semibold text-[#10251b] group-hover:text-[#0a7c42]">{o.label}</span>
-              {o.note && <span className="mt-0.5 block text-sm text-[#5a665f]">{o.note}</span>}
+              <span className="block text-[15px] font-semibold text-[#14120f] group-hover:text-[#007a95]">{o.label}</span>
+              {o.note && <span className="mt-0.5 block text-sm text-[#56504a]">{o.note}</span>}
             </button>
           ))}
         </div>
@@ -201,7 +201,7 @@ export default function MensHealthQuiz() {
           <button
             type="button"
             onClick={() => setStep((s) => s - 1)}
-            className="mt-5 text-sm font-semibold text-[#5a665f] hover:text-[#10251b]"
+            className="mt-5 text-sm font-semibold text-[#56504a] hover:text-[#14120f]"
           >
             Back
           </button>
@@ -211,33 +211,33 @@ export default function MensHealthQuiz() {
   }
 
   return (
-    <div className="rounded-2xl border border-[#0a7c42]/30 bg-[#f5f8f6] p-6 sm:p-8">
-      <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#086536]">Your result</p>
-      <h2 className="mt-3 text-2xl font-bold leading-snug text-[#10251b]">{result!.title}</h2>
-      <p className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">{result!.body}</p>
+    <div className="rounded-2xl border border-[#007a95]/30 bg-[#f7f4ee] p-6 sm:p-8">
+      <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#003647]">Your result</p>
+      <h2 className="mt-3 text-2xl font-bold leading-snug text-[#14120f]">{result!.title}</h2>
+      <p className="mt-3 text-[15px] leading-relaxed text-[#56504a]">{result!.body}</p>
 
       <ul className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm">
         {result!.next.map((n) => (
           <li key={n.href}>
-            <Link href={n.href} className="inline-flex items-center gap-1.5 font-semibold text-[#0a7c42] hover:underline">
+            <Link href={n.href} className="inline-flex items-center gap-1.5 font-semibold text-[#007a95] hover:underline">
               {n.label} <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
             </Link>
           </li>
         ))}
       </ul>
 
-      <div className="mt-7 border-t border-[#d9e5df] pt-6">
+      <div className="mt-7 border-t border-[#ded8cd] pt-6">
         {done ? (
-          <p className="flex items-center gap-2 text-sm font-semibold text-[#0a7c42]">
+          <p className="flex items-center gap-2 text-sm font-semibold text-[#007a95]">
             <Check className="h-4 w-4" aria-hidden="true" /> You&apos;re on the list. We&apos;ll email you when the
             section is live.
           </p>
         ) : (
           <form onSubmit={submit}>
-            <label htmlFor="mhq-email" className="block text-sm font-semibold text-[#10251b]">
+            <label htmlFor="mhq-email" className="block text-sm font-semibold text-[#14120f]">
               Want to know when we&apos;ve compared providers in this category?
             </label>
-            <p className="mt-1 text-sm text-[#5a665f]">
+            <p className="mt-1 text-sm text-[#56504a]">
               One email when men&apos;s health goes live. We do not record your answers against your address.
             </p>
             <div className="mt-3 flex flex-wrap gap-2">
@@ -248,7 +248,7 @@ export default function MensHealthQuiz() {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="you@example.com"
                 autoComplete="email"
-                className="min-w-0 flex-1 rounded-xl border border-[#d9e5df] bg-white px-4 py-3 text-sm text-[#10251b] outline-none focus:border-[#0a7c42]"
+                className="min-w-0 flex-1 rounded-xl border border-[#ded8cd] bg-white px-4 py-3 text-sm text-[#14120f] outline-none focus:border-[#007a95]"
               />
               <input
                 type="text"
@@ -262,7 +262,7 @@ export default function MensHealthQuiz() {
               <button
                 type="submit"
                 disabled={sending}
-                className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-[#0a7c42] px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-[#086536] disabled:opacity-60"
+                className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-[#007a95] px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-[#003647] disabled:opacity-60"
               >
                 {sending ? <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" /> : null}
                 Notify me
@@ -276,12 +276,12 @@ export default function MensHealthQuiz() {
       <button
         type="button"
         onClick={restart}
-        className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-[#5a665f] hover:text-[#10251b]"
+        className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-[#56504a] hover:text-[#14120f]"
       >
         <RotateCcw className="h-3.5 w-3.5" aria-hidden="true" /> Start again
       </button>
 
-      <p className="mt-6 text-xs leading-relaxed text-[#5a665f]">
+      <p className="mt-6 text-xs leading-relaxed text-[#56504a]">
         This quiz asks only about cost, privacy and how you prefer to consult. It collects no health information, makes
         no assessment of you, and is general information rather than medical advice. Anything prescription-only in
         Australia is supplied after an individual assessment by a registered practitioner.

@@ -38,7 +38,7 @@ export default function Page() {
       sectionHref="/longevity"
       slug="/longevity/supplements/longevity-supplements-evidence-review"
       crumb="Supplements, reviewed"
-      h1={<>Longevity supplements: <span className="italic text-[#0a7c42]">how to read the evidence yourself</span></>}
+      h1={<>Longevity supplements: <span className="italic text-[#007a95]">how to read the evidence yourself</span></>}
       intro="We name no products here, deliberately. What is more useful, and more durable as the fashionable compound changes each year, is knowing what the label certifies and how to tell a supportive study from a persuasive one."
       headline="Longevity supplements in Australia: an evidence review"
       description={seoConfig.supplementsEvidence.description}
@@ -49,21 +49,21 @@ export default function Page() {
       ]}
     >
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">AUST L is not a tick for efficacy</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">AUST L is not a tick for efficacy</h2>
         <p className="mt-3">
           Almost every supplement sold in Australia carries an AUST L number, and it is widely read as government
           approval that the product works. It is not that.
         </p>
-        <div className="mt-4 overflow-x-auto rounded-2xl border border-[#e5e9e7]">
+        <div className="mt-4 overflow-x-auto rounded-2xl border border-[#ded8cd]">
           <table className="w-full min-w-[540px] border-collapse text-left text-sm">
-            <thead className="bg-[#f8faf9] text-[11px] uppercase tracking-[0.1em] text-[#627068]">
+            <thead className="bg-[#f7f4ee] text-[11px] uppercase tracking-[0.1em] text-[#56504a]">
               <tr>
                 <th className="px-4 py-3 font-semibold">&nbsp;</th>
                 <th className="px-4 py-3 font-semibold">AUST L, listed</th>
                 <th className="px-4 py-3 font-semibold">AUST R, registered</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-[#eef1ef]">
+            <tbody className="divide-y divide-[#f1ede4]">
               {[
                 ["Ingredients", "From a permitted low-risk list", "Individually assessed"],
                 ["Efficacy assessed by the TGA", "No", "Yes"],
@@ -71,7 +71,7 @@ export default function Page() {
                 ["Typical products", "Most vitamins and supplements", "Prescription and many over-the-counter medicines"],
               ].map(([k, a, b]) => (
                 <tr key={k}>
-                  <td className="px-4 py-3 font-semibold text-[#10251b]">{k}</td>
+                  <td className="px-4 py-3 font-semibold text-[#14120f]">{k}</td>
                   <td className="px-4 py-3">{a}</td>
                   <td className="px-4 py-3">{b}</td>
                 </tr>
@@ -86,7 +86,7 @@ export default function Page() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Four questions for any study you are shown</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Four questions for any study you are shown</h2>
         <ol className="mt-4 space-y-3">
           {[
             ["Humans, or cells and animals?", "Most striking longevity findings come from cell cultures or short-lived animals. That is legitimate early science and it is not evidence about people."],
@@ -94,8 +94,8 @@ export default function Page() {
             ["Did it measure an outcome or a marker?", "A shift in a blood marker is not the same as living longer or getting sick less. Marker changes are far easier to produce."],
             ["Who paid for it?", "Industry funding does not make research wrong, and it is context. Independent replication is what turns a finding into a fact."],
           ].map(([q, why], i) => (
-            <li key={i} className="rounded-2xl border border-[#e5e9e7] bg-white p-5">
-              <p className="font-semibold text-[#10251b]">{i + 1}. {q}</p>
+            <li key={i} className="rounded-2xl border border-[#ded8cd] bg-white p-5">
+              <p className="font-semibold text-[#14120f]">{i + 1}. {q}</p>
               <p className="mt-1.5 text-sm">{why}</p>
             </li>
           ))}
@@ -107,7 +107,7 @@ export default function Page() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Natural does not mean inert</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Natural does not mean inert</h2>
         <p className="mt-3">
           A compound with a real biological effect can interact with prescribed medicines, affect bleeding risk, or
           place load on the liver. Tell your GP or pharmacist everything you take, especially before surgery or when
@@ -120,7 +120,7 @@ export default function Page() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Where the money is better spent</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Where the money is better spent</h2>
         <p className="mt-3">
           The interventions with the strongest evidence for living longer and better are unglamorous and mostly free:
           not smoking, moving regularly, sleeping enough, moderating alcohol, and taking part in the national screening

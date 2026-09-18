@@ -20,7 +20,7 @@ import NewsletterSignup from "@/components/consumer/NewsletterSignup";
  * /about.
  */
 
-const GREEN = "#0a7c42";
+const GREEN = "#007a95";
 
 export type MatchAnswers = Record<string, string>;
 
@@ -66,7 +66,7 @@ export type MatchConfig = {
 };
 
 const optBtn =
-  "w-full text-left rounded-xl border border-[#e5e9e7] bg-white px-5 py-4 transition-all hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0a7c42]";
+  "w-full text-left rounded-xl border border-[#ded8cd] bg-white px-5 py-4 transition-all hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#007a95]";
 
 export default function MatchQuiz({ config }: { config: MatchConfig }) {
   const [answers, setAnswers] = useState<MatchAnswers>({});
@@ -97,11 +97,11 @@ export default function MatchQuiz({ config }: { config: MatchConfig }) {
           className="rounded-2xl border bg-white p-6 sm:p-8"
           style={{ borderColor: `${GREEN}40`, background: `${GREEN}06` }}
         >
-          <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#627068]">
+          <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#56504a]">
             {result.kicker ?? "Your match"}
           </p>
-          <h2 className="mt-1 text-2xl font-extrabold text-[#10251b]">{result.name}</h2>
-          <p className="mt-2 max-w-xl text-sm leading-relaxed text-[#3d4b44]">{result.why}</p>
+          <h2 className="mt-1 text-2xl font-extrabold text-[#14120f]">{result.name}</h2>
+          <p className="mt-2 max-w-xl text-sm leading-relaxed text-[#56504a]">{result.why}</p>
           <div className="mt-5 flex flex-wrap items-center gap-3">
             {result.primaryCta && (
               <a
@@ -116,19 +116,19 @@ export default function MatchQuiz({ config }: { config: MatchConfig }) {
               </a>
             )}
             {result.secondary && (
-              <Link href={result.secondary.href} className="text-sm font-semibold text-[#0a7c42] hover:text-[#086536]">
+              <Link href={result.secondary.href} className="text-sm font-semibold text-[#007a95] hover:text-[#003647]">
                 {result.secondary.label}
               </Link>
             )}
             <button
               type="button"
               onClick={reset}
-              className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#5a665f] transition-colors hover:text-[#10251b]"
+              className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#56504a] transition-colors hover:text-[#14120f]"
             >
               <RotateCcw className="h-3.5 w-3.5" aria-hidden="true" /> Start over
             </button>
           </div>
-          {result.note && <p className="mt-4 text-xs leading-relaxed text-[#627068]">{result.note}</p>}
+          {result.note && <p className="mt-4 text-xs leading-relaxed text-[#56504a]">{result.note}</p>}
         </div>
 
         <div className="mt-4">
@@ -141,7 +141,7 @@ export default function MatchQuiz({ config }: { config: MatchConfig }) {
           />
         </div>
 
-        {config.footnote && <p className="mt-3 text-xs leading-relaxed text-[#627068]">{config.footnote}</p>}
+        {config.footnote && <p className="mt-3 text-xs leading-relaxed text-[#56504a]">{config.footnote}</p>}
       </div>
     );
   }
@@ -149,19 +149,19 @@ export default function MatchQuiz({ config }: { config: MatchConfig }) {
   const stepNumber = visible.findIndex((q) => q.id === current!.id) + 1;
 
   return (
-    <div className="rounded-2xl border border-[#e5e9e7] bg-[#f5f8f6] p-6 sm:p-8">
+    <div className="rounded-2xl border border-[#ded8cd] bg-[#f7f4ee] p-6 sm:p-8">
       <fieldset>
         {visible.length > 1 && (
-          <legend className="mb-1 text-[11px] font-bold uppercase tracking-[0.14em] text-[#627068]">
+          <legend className="mb-1 text-[11px] font-bold uppercase tracking-[0.14em] text-[#56504a]">
             Step {stepNumber} of {visible.length}
           </legend>
         )}
-        <p className="mb-4 text-base font-bold text-[#10251b] sm:text-lg">{current!.legend}</p>
+        <p className="mb-4 text-base font-bold text-[#14120f] sm:text-lg">{current!.legend}</p>
         <div className="grid gap-3">
           {current!.options.map((o) => (
             <button key={o.value} type="button" onClick={() => choose(current!.id, o.value)} className={optBtn}>
-              <span className="block text-sm font-semibold text-[#10251b]">{o.title}</span>
-              {o.note && <span className="block text-xs text-[#5a665f]">{o.note}</span>}
+              <span className="block text-sm font-semibold text-[#14120f]">{o.title}</span>
+              {o.note && <span className="block text-xs text-[#56504a]">{o.note}</span>}
             </button>
           ))}
         </div>

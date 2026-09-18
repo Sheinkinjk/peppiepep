@@ -52,7 +52,7 @@ export default function HubOffer({
 }) {
   return (
     <section className="mx-auto max-w-6xl px-5 pt-2 sm:px-8">
-      <div className="rounded-2xl border border-[#0a7c42]/30 bg-[#e8f5ee] p-6 sm:p-8">
+      <div className="rounded-2xl border border-[#007a95]/30 bg-[#e4f2f5] p-6 sm:p-8">
         <div className="flex flex-wrap items-center justify-between gap-4">
           {logo ? (
             /* eslint-disable-next-line @next/next/no-img-element */
@@ -60,17 +60,17 @@ export default function HubOffer({
           ) : (
             <span />
           )}
-          <span className="rounded-full bg-[#0a7c42] px-4 py-1.5 text-sm font-bold text-white">{badge}</span>
+          <span className="rounded-full bg-[#007a95] px-4 py-1.5 text-sm font-bold text-white">{badge}</span>
         </div>
 
-        <p className="mt-5 text-2xl font-black leading-tight tracking-[-0.01em] text-[#10251b] sm:text-[1.7rem]">
+        <p className="mt-5 text-2xl font-black leading-tight tracking-[-0.01em] text-[#14120f] sm:text-[1.7rem]">
           {headline}
         </p>
 
-        <p className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">
+        <p className="mt-3 text-[15px] leading-relaxed text-[#56504a]">
           {code ? (
             <>
-              Use the code <strong className="text-[#10251b]">{code}</strong>, applied automatically through our link.{" "}
+              Use the code <strong className="text-[#14120f]">{code}</strong>, applied automatically through our link.{" "}
             </>
           ) : (
             <>Applied automatically through our link. </>
@@ -82,12 +82,12 @@ export default function HubOffer({
           <a href={href} target="_blank" rel="nofollow sponsored" data-cta={dataCta} className="nw-btn">
             {ctaLabel} <ArrowRight className="h-4 w-4" />
           </a>
-          <Link href={moreHref} className="text-sm font-semibold text-[#0a7c42] hover:text-[#086536]">
+          <Link href={moreHref} className="text-sm font-semibold text-[#007a95] hover:text-[#003647]">
             {moreLabel}
           </Link>
         </div>
 
-        <p className="mt-4 text-[12px] font-medium text-[#5a665f]">
+        <p className="mt-4 text-[12px] font-medium text-[#56504a]">
           Read off the provider&apos;s own page on {formatVerifiedFull(verified)}. Offers can change,
           so check the current terms before you sign up.
         </p>

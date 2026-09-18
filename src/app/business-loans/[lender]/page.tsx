@@ -110,19 +110,19 @@ export default async function LenderPage({ params }: { params: Promise<{ lender:
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
 
       <main className="mx-auto max-w-5xl px-5 py-10 sm:px-8 sm:py-14">
-        <nav className="text-xs text-[#5a665f]">
-          <Link href="/business-loans" className="hover:text-[#0a7c42]">Business loans</Link>
+        <nav className="text-xs text-[#56504a]">
+          <Link href="/business-loans" className="hover:text-[#007a95]">Business loans</Link>
           <span className="px-1.5">/</span>
-          <span className="text-[#3d4b44]">{l.name}</span>
+          <span className="text-[#56504a]">{l.name}</span>
         </nav>
 
         <div className="mt-3 flex items-center gap-3">
-          <LenderLogo src={l.logo} name={l.name} size={48} className="rounded-xl ring-1 ring-[#e5e9e7]" />
-          <h1 className="text-4xl font-extrabold leading-[1.1] text-[#10251b] sm:text-5xl">{l.name} business loans</h1>
+          <LenderLogo src={l.logo} name={l.name} size={48} className="rounded-xl ring-1 ring-[#ded8cd]" />
+          <h1 className="text-4xl font-extrabold leading-[1.1] text-[#14120f] sm:text-5xl">{l.name} business loans</h1>
         </div>
         {/* First 100 words answer the query directly for AEO/GEO. */}
-        <p className="mt-4 max-w-2xl text-lg leading-relaxed text-[#3d4b44]">{l.overview}</p>
-        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-[#5a665f]">
+        <p className="mt-4 max-w-2xl text-lg leading-relaxed text-[#56504a]">{l.overview}</p>
+        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-[#56504a]">
           Refer Labs is an independent referrer, not {l.name} and not a lender. If {l.name} fits what you need, we can
           introduce your enquiry to them; they assess it and make any offer directly to you. Refer Labs is free to use.
         </p>
@@ -132,7 +132,7 @@ export default async function LenderPage({ params }: { params: Promise<{ lender:
           {[`${money(l.minAmount)} – ${money(l.maxAmount)}`, l.speed, l.afiaCodeSignatory ? "AFIA Code signatory" : null]
             .filter(Boolean)
             .map((chip) => (
-              <span key={chip as string} className="inline-flex items-center rounded-full border border-[#e5e9e7] bg-white px-3.5 py-1.5 text-[13px] font-semibold text-[#3d4b44] shadow-[0_1px_2px_rgba(16,37,27,0.05)]">
+              <span key={chip as string} className="inline-flex items-center rounded-full border border-[#ded8cd] bg-white px-3.5 py-1.5 text-[13px] font-semibold text-[#56504a] shadow-[0_1px_2px_rgba(20,18,15,0.05)]">
                 {chip}
               </span>
             ))}
@@ -140,26 +140,26 @@ export default async function LenderPage({ params }: { params: Promise<{ lender:
 
         {/* Key facts */}
         <section className="mt-8">
-          <h2 className="text-xs font-bold uppercase tracking-[0.12em] text-[#627068]">{l.name} at a glance</h2>
-          <dl className="mt-4 overflow-hidden rounded-2xl border border-[#e5e9e7]">
+          <h2 className="text-xs font-bold uppercase tracking-[0.12em] text-[#56504a]">{l.name} at a glance</h2>
+          <dl className="mt-4 overflow-hidden rounded-2xl border border-[#ded8cd]">
             {facts(l).map((f, i) => (
-              <div key={f.k} className={`grid grid-cols-[160px_1fr] gap-4 px-4 py-3 sm:grid-cols-[220px_1fr] ${i % 2 ? "bg-[#f8faf9]" : "bg-white"}`}>
-                <dt className="text-sm text-[#5a665f]">{f.k}</dt>
-                <dd className="text-sm font-medium text-[#10251b]">{f.v}</dd>
+              <div key={f.k} className={`grid grid-cols-[160px_1fr] gap-4 px-4 py-3 sm:grid-cols-[220px_1fr] ${i % 2 ? "bg-[#f7f4ee]" : "bg-white"}`}>
+                <dt className="text-sm text-[#56504a]">{f.k}</dt>
+                <dd className="text-sm font-medium text-[#14120f]">{f.v}</dd>
               </div>
             ))}
           </dl>
-          <p className="mt-2 text-xs text-[#5a665f]">
+          <p className="mt-2 text-xs text-[#56504a]">
             Figures are {l.name}&apos;s advertised terms and can change. Verify current rates and eligibility on{" "}
-            <a href={l.homepage} target="_blank" rel="nofollow noopener" className="underline hover:text-[#10251b]">{l.name}&apos;s own site</a>.
+            <a href={l.homepage} target="_blank" rel="nofollow noopener" className="underline hover:text-[#14120f]">{l.name}&apos;s own site</a>.
           </p>
         </section>
 
         {/* CTA + form */}
         <section className="mt-12 grid gap-8 lg:grid-cols-[minmax(0,1fr)_340px]">
           <div>
-            <h2 className="text-2xl font-extrabold text-[#10251b]">Check whether {l.name} fits</h2>
-            <p className="mt-2 text-sm leading-relaxed text-[#3d4b44]">
+            <h2 className="text-2xl font-extrabold text-[#14120f]">Check whether {l.name} fits</h2>
+            <p className="mt-2 text-sm leading-relaxed text-[#56504a]">
               Tell us what you need. We&apos;ll tell you whether {l.name} looks like a plausible fit, and which
               other lenders we compare might suit better. One short form, no documents.
             </p>
@@ -168,12 +168,12 @@ export default async function LenderPage({ params }: { params: Promise<{ lender:
             </div>
           </div>
           <aside className="space-y-4">
-            <div className="rounded-2xl border border-[#e5e9e7] bg-[#f8faf9] p-5 text-sm leading-relaxed text-[#3d4b44]">
-              <h3 className="text-[11px] font-bold uppercase tracking-[0.12em] text-[#627068]">Read next</h3>
+            <div className="rounded-2xl border border-[#ded8cd] bg-[#f7f4ee] p-5 text-sm leading-relaxed text-[#56504a]">
+              <h3 className="text-[11px] font-bold uppercase tracking-[0.12em] text-[#56504a]">Read next</h3>
               <ul className="mt-3 space-y-2">
-                <li><Link href={`/business-loans/${l.slug}/review`} className="font-semibold text-[#0a7c42] hover:text-[#086536]">{l.name} review</Link></li>
-                <li><Link href="/business-loans" className="font-semibold text-[#0a7c42] hover:text-[#086536]">Compare the whole panel</Link></li>
-                <li><Link href="/what-a-business-loan-actually-costs" className="font-semibold text-[#0a7c42] hover:text-[#086536]">What a business loan actually costs</Link></li>
+                <li><Link href={`/business-loans/${l.slug}/review`} className="font-semibold text-[#007a95] hover:text-[#003647]">{l.name} review</Link></li>
+                <li><Link href="/business-loans" className="font-semibold text-[#007a95] hover:text-[#003647]">Compare the whole panel</Link></li>
+                <li><Link href="/what-a-business-loan-actually-costs" className="font-semibold text-[#007a95] hover:text-[#003647]">What a business loan actually costs</Link></li>
               </ul>
             </div>
             <CommissionDisclosure variant="inline" />
@@ -182,12 +182,12 @@ export default async function LenderPage({ params }: { params: Promise<{ lender:
 
         {/* FAQ */}
         <section className="mt-16 max-w-3xl">
-          <h2 className="text-2xl font-extrabold text-[#10251b]">{l.name} business loans: common questions</h2>
-          <dl className="mt-6 divide-y divide-[#eef1ef] border-t border-[#eef1ef]">
+          <h2 className="text-2xl font-extrabold text-[#14120f]">{l.name} business loans: common questions</h2>
+          <dl className="mt-6 divide-y divide-[#f1ede4] border-t border-[#f1ede4]">
             {faqs.map((f) => (
               <div key={f.q} className="py-5">
-                <dt className="font-bold text-[#10251b]">{f.q}</dt>
-                <dd className="mt-1.5 text-sm leading-relaxed text-[#3d4b44]">{f.a}</dd>
+                <dt className="font-bold text-[#14120f]">{f.q}</dt>
+                <dd className="mt-1.5 text-sm leading-relaxed text-[#56504a]">{f.a}</dd>
               </div>
             ))}
           </dl>

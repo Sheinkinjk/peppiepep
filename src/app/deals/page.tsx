@@ -116,16 +116,16 @@ export default function DealsPage() {
       <OfferSchema code="REFERLABS" />
 
       <main id="main-content" className="mx-auto max-w-5xl px-5 py-12 sm:px-8 sm:py-16">
-        <nav className="mb-8 flex items-center gap-2 text-sm text-[#627068]">
-          <Link href="/" className="hover:text-[#0a7c42]">Refer Labs</Link>
+        <nav className="mb-8 flex items-center gap-2 text-sm text-[#56504a]">
+          <Link href="/" className="hover:text-[#007a95]">Refer Labs</Link>
           <span>/</span>
-          <span className="text-[#2b362f]">Deals</span>
+          <span className="text-[#14120f]">Deals</span>
         </nav>
 
-        <h1 className="mt-4 text-4xl font-black leading-[1.05] tracking-[-0.02em] text-[#10251b] sm:text-5xl">
+        <h1 className="mt-4 text-4xl font-black leading-[1.05] tracking-[-0.02em] text-[#14120f] sm:text-5xl">
           Australian discount codes, each dated
         </h1>
-        <p className="mt-5 max-w-2xl text-lg leading-relaxed text-[#3d4b44]">
+        <p className="mt-5 max-w-2xl text-lg leading-relaxed text-[#56504a]">
           Current offers from the providers we compare, each with the date we last confirmed it. We list only brands we
           work with, and every offer links to our full guide.
         </p>
@@ -136,21 +136,21 @@ export default function DealsPage() {
             duplicated for readers or crawlers. */}
         <section aria-labelledby="current-offers" className="mt-12">
           <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1">
-            <h2 id="current-offers" className="text-2xl font-extrabold tracking-[-0.01em] text-[#10251b]">
+            <h2 id="current-offers" className="text-2xl font-extrabold tracking-[-0.01em] text-[#14120f]">
               Current offers
             </h2>
-            <p className="text-sm tabular-nums text-[#5a665f]">
+            <p className="text-sm tabular-nums text-[#56504a]">
               {FEATURED_DEALS.length} offers · {CODE_COUNT} codes{CHECKED_RANGE ? ` · ${CHECKED_RANGE}` : ""}
             </p>
           </div>
 
-          <div className="mt-5 overflow-hidden rounded-2xl border border-[#e5e9e7] bg-white shadow-[0_1px_2px_rgba(16,37,27,0.04),0_18px_40px_-28px_rgba(16,37,27,0.22)]">
+          <div className="mt-5 overflow-hidden rounded-2xl border border-[#ded8cd] bg-white shadow-[0_1px_2px_rgba(20,18,15,0.04),0_18px_40px_-28px_rgba(20,18,15,0.22)]">
             <table className="w-full border-collapse text-left">
               <caption className="sr-only">
                 Current discount codes and offers at Refer Labs, with the date each was last checked
               </caption>
               <thead className="hidden sm:table-header-group">
-                <tr className="bg-[#f8faf9] text-[11px] font-bold uppercase tracking-[0.1em] text-[#5a665f]">
+                <tr className="bg-[#f7f4ee] text-[11px] font-bold uppercase tracking-[0.1em] text-[#56504a]">
                   <th scope="col" className="px-5 py-3">Provider</th>
                   <th scope="col" className="px-5 py-3">Offer</th>
                   <th scope="col" className="px-5 py-3">Code</th>
@@ -162,41 +162,41 @@ export default function DealsPage() {
                 {FEATURED_DEALS.map((d) => (
                   <tr
                     key={d.brand}
-                    className="grid grid-cols-[1fr_auto] items-center gap-x-4 border-t border-[#eef1ef] px-5 py-5 first:border-t-0 sm:table-row sm:p-0 sm:first:border-t sm:transition-colors sm:hover:bg-[#f8faf9]"
+                    className="grid grid-cols-[1fr_auto] items-center gap-x-4 border-t border-[#f1ede4] px-5 py-5 first:border-t-0 sm:table-row sm:p-0 sm:first:border-t sm:transition-colors sm:hover:bg-[#f7f4ee]"
                   >
                     <th scope="row" className="col-span-2 block text-left font-normal sm:table-cell sm:px-5 sm:py-4 sm:align-middle">
                       <span className="flex items-center gap-3">
-                        <span className="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-[#eef1ef] bg-white">
+                        <span className="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-[#f1ede4] bg-white">
                           <Image src={d.logo} alt="" width={28} height={28} className="h-7 w-7 object-contain" style={{ transform: `scale(${logoScale(d.logo)})` }} />
                         </span>
                         <span className="min-w-0">
-                          <Link href={d.href} className="block font-bold leading-tight text-[#10251b] hover:text-[#0a7c42]">
+                          <Link href={d.href} className="block font-bold leading-tight text-[#14120f] hover:text-[#007a95]">
                             {d.brand}
                           </Link>
-                          <span className="block text-xs text-[#5a665f]">{d.category}</span>
+                          <span className="block text-xs text-[#56504a]">{d.category}</span>
                         </span>
                       </span>
                     </th>
-                    <td className="col-span-2 mt-3 block text-[17px] font-bold leading-snug text-[#0a7c42] sm:mt-0 sm:table-cell sm:px-5 sm:py-4 sm:align-middle sm:text-[15px]">
+                    <td className="col-span-2 mt-3 block text-[17px] font-bold leading-snug text-[#007a95] sm:mt-0 sm:table-cell sm:px-5 sm:py-4 sm:align-middle sm:text-[15px]">
                       {d.offer}
                     </td>
                     <td className="col-span-2 mt-3 block sm:mt-0 sm:table-cell sm:px-5 sm:py-4 sm:align-middle">
                       {d.code ? (
                         <span className="inline-flex flex-wrap items-center gap-2">
-                          <code className="rounded-lg border border-dashed border-[#0a7c42]/45 bg-[#f2f8f4] px-2.5 py-1 font-mono text-[13px] font-semibold tracking-wide text-[#10251b]">
+                          <code className="rounded-lg border border-dashed border-[#007a95]/45 bg-[#f2f8f4] px-2.5 py-1 font-mono text-[13px] font-semibold tracking-wide text-[#14120f]">
                             {d.code}
                           </code>
                           {d.exclusive && (
-                            <span className="rounded-full bg-[#e8f5ee] px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.08em] text-[#0a7c42]">
+                            <span className="rounded-full bg-[#e4f2f5] px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.08em] text-[#007a95]">
                               Refer Labs only
                             </span>
                           )}
                         </span>
                       ) : (
-                        <span className="whitespace-nowrap text-sm text-[#5a665f]">No code needed</span>
+                        <span className="whitespace-nowrap text-sm text-[#56504a]">No code needed</span>
                       )}
                     </td>
-                    <td className="mt-4 block text-xs tabular-nums text-[#5a665f] sm:mt-0 sm:table-cell sm:whitespace-nowrap sm:px-5 sm:py-4 sm:align-middle sm:text-sm">
+                    <td className="mt-4 block text-xs tabular-nums text-[#56504a] sm:mt-0 sm:table-cell sm:whitespace-nowrap sm:px-5 sm:py-4 sm:align-middle sm:text-sm">
                       <span className="sm:hidden">Checked </span>
                       {d.verified ? formatVerifiedFull(d.verified) : "Not recorded"}
                     </td>
@@ -204,7 +204,7 @@ export default function DealsPage() {
                       <Link
                         href={d.href}
                         aria-label={`View offer for ${d.brand}: details and full guide`}
-                        className="group inline-flex items-center gap-1.5 whitespace-nowrap text-sm font-semibold text-[#0a7c42]"
+                        className="group inline-flex items-center gap-1.5 whitespace-nowrap text-sm font-semibold text-[#007a95]"
                       >
                         View offer
                         <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
@@ -216,7 +216,7 @@ export default function DealsPage() {
             </table>
             {/* The page's one "offers can change" caveat. It used to appear here
                 and again in a closing line under the disclosure. */}
-            <p className="border-t border-[#eef1ef] bg-[#f8faf9] px-5 py-3 text-xs leading-relaxed text-[#5a665f]">
+            <p className="border-t border-[#f1ede4] bg-[#f7f4ee] px-5 py-3 text-xs leading-relaxed text-[#56504a]">
               Each date is when we last confirmed that offer. Offers can change, so check the terms on the
               provider&apos;s site before you sign up.
             </p>
@@ -225,21 +225,21 @@ export default function DealsPage() {
 
         {/* Free plans and trials: not discounts, so kept apart from the table. */}
         <section aria-labelledby="more-offers" className="mt-14">
-          <h2 id="more-offers" className="text-2xl font-extrabold tracking-[-0.01em] text-[#10251b]">
+          <h2 id="more-offers" className="text-2xl font-extrabold tracking-[-0.01em] text-[#14120f]">
             More offers and free trials
           </h2>
-          <ul className="mt-5 divide-y divide-[#eef1ef] overflow-hidden rounded-2xl border border-[#e5e9e7] bg-white">
+          <ul className="mt-5 divide-y divide-[#f1ede4] overflow-hidden rounded-2xl border border-[#ded8cd] bg-white">
             {OTHER_DEALS.map((d) => (
               <li key={d.brand}>
-                <Link href={d.href} className="group flex items-center gap-4 px-5 py-4 transition-colors hover:bg-[#f8faf9]">
-                  <span className="flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-[#eef1ef] bg-white">
+                <Link href={d.href} className="group flex items-center gap-4 px-5 py-4 transition-colors hover:bg-[#f7f4ee]">
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-[#f1ede4] bg-white">
                     <Image src={d.logo} alt="" width={24} height={24} className="h-6 w-6 object-contain" />
                   </span>
                   <span className="min-w-0 flex-1 sm:flex sm:items-center sm:gap-4">
-                    <span className="block font-bold text-[#10251b] sm:w-36 sm:shrink-0">{d.brand}</span>
-                    <span className="block text-sm text-[#3d4b44]">{d.offer}</span>
+                    <span className="block font-bold text-[#14120f] sm:w-36 sm:shrink-0">{d.brand}</span>
+                    <span className="block text-sm text-[#56504a]">{d.offer}</span>
                   </span>
-                  <ArrowRight className="h-4 w-4 shrink-0 text-[#627068] transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
+                  <ArrowRight className="h-4 w-4 shrink-0 text-[#56504a] transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
                 </Link>
               </li>
             ))}
@@ -247,14 +247,14 @@ export default function DealsPage() {
         </section>
 
         <section aria-labelledby="code-questions" className="mt-14">
-          <h2 id="code-questions" className="text-2xl font-extrabold tracking-[-0.01em] text-[#10251b]">
+          <h2 id="code-questions" className="text-2xl font-extrabold tracking-[-0.01em] text-[#14120f]">
             Discount code questions
           </h2>
-          <dl className="mt-5 divide-y divide-[#eef1ef] overflow-hidden rounded-2xl border border-[#e5e9e7] bg-white">
+          <dl className="mt-5 divide-y divide-[#f1ede4] overflow-hidden rounded-2xl border border-[#ded8cd] bg-white">
             {FAQS.map((f) => (
               <div key={f.q} className="px-5 py-5 sm:px-6">
-                <dt className="text-[15px] font-bold text-[#10251b]">{f.q}</dt>
-                <dd className="mt-2 text-sm leading-relaxed text-[#3d4b44]">{f.a}</dd>
+                <dt className="text-[15px] font-bold text-[#14120f]">{f.q}</dt>
+                <dd className="mt-2 text-sm leading-relaxed text-[#56504a]">{f.a}</dd>
               </div>
             ))}
           </dl>
@@ -266,7 +266,7 @@ export default function DealsPage() {
           extra={
             <>
               See{" "}
-              <Link href="/how-we-make-money" className="underline hover:text-[#10251b]">how we make money</Link>.
+              <Link href="/how-we-make-money" className="underline hover:text-[#14120f]">how we make money</Link>.
             </>
           }
         />

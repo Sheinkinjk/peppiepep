@@ -48,7 +48,7 @@ export default function Page() {
       sectionHref="/mens-health"
       slug="/mens-health/online-mens-health-clinics-compared"
       crumb="Online clinics compared"
-      h1={<>Online men&apos;s health clinics: <span className="italic text-[#0a7c42]">what differs</span></>}
+      h1={<>Online men&apos;s health clinics: <span className="italic text-[#007a95]">what differs</span></>}
       intro="The clinical process is broadly the same at all of them: a form, then a practitioner registered with AHPRA who decides. One thing differs and it is the commercial model, which is where the entire cost difference lives. Two structures exist, per-consult and subscription, and they win in opposite situations. These are the criteria that separate them and the checks worth running before you enter a card."
       headline="Online men's health clinics in Australia, compared"
       description={seoConfig.mensClinicsCompared.description}
@@ -60,7 +60,7 @@ export default function Page() {
       ]}
     >
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">The safety check that comes first</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">The safety check that comes first</h2>
         <p className="mt-3">
           Before any comparison of price: a practitioner consultation must happen before anything prescription-only is
           supplied. That is a legal requirement in Australia, not a service feature, and it is what an assessment is
@@ -74,16 +74,16 @@ export default function Page() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">The criteria that separate services</h2>
-        <div className="mt-4 overflow-x-auto rounded-2xl border border-[#e5e9e7]">
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">The criteria that separate services</h2>
+        <div className="mt-4 overflow-x-auto rounded-2xl border border-[#ded8cd]">
           <table className="w-full min-w-[620px] border-collapse text-left text-sm">
-            <thead className="bg-[#f8faf9] text-[11px] uppercase tracking-[0.1em] text-[#627068]">
+            <thead className="bg-[#f7f4ee] text-[11px] uppercase tracking-[0.1em] text-[#56504a]">
               <tr>
                 <th className="px-4 py-3 font-semibold">What to compare</th>
                 <th className="px-4 py-3 font-semibold">Why it changes the cost</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-[#eef1ef]">
+            <tbody className="divide-y divide-[#f1ede4]">
               {[
                 ["Subscription or per consult", "Decides whether you pay in months you would not have booked."],
                 ["What the subscription bundles", "Consult, supply, delivery and support are sometimes separate line items."],
@@ -94,7 +94,7 @@ export default function Page() {
                 ["What happens if you are found unsuitable", "Whether you are charged, and whether you are directed to a GP."],
               ].map((r) => (
                 <tr key={r[0]}>
-                  <td className="px-4 py-3 font-semibold text-[#10251b]">{r[0]}</td>
+                  <td className="px-4 py-3 font-semibold text-[#14120f]">{r[0]}</td>
                   <td className="px-4 py-3">{r[1]}</td>
                 </tr>
               ))}
@@ -104,7 +104,7 @@ export default function Page() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Why there is no ranked table here</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Why there is no ranked table here</h2>
         <p className="mt-3">
           We have not verified any provider&apos;s current pricing in this category and have no commercial relationship
           with any of them. A ranked list assembled on that basis would be guesswork dressed as research, and this
@@ -117,12 +117,12 @@ export default function Page() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">The one number worth extracting</h2>
-        <div className="mt-4 rounded-2xl border border-[#0a7c42]/25 bg-[#f5f8f6] p-6">
-          <p className="text-[15px] font-semibold text-[#10251b]">
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">The one number worth extracting</h2>
+        <div className="mt-4 rounded-2xl border border-[#007a95]/25 bg-[#f7f4ee] p-6">
+          <p className="text-[15px] font-semibold text-[#14120f]">
             &ldquo;What will I have paid twelve months from now, including everything, if nothing changes?&rdquo;
           </p>
-          <p className="mt-2 text-sm text-[#3d4b44]">
+          <p className="mt-2 text-sm text-[#56504a]">
             Ask each service in those words. A monthly figure and a per-consult fee only become comparable once both are
             annualised, and a provider that cannot answer plainly has pricing you do not yet understand.
           </p>

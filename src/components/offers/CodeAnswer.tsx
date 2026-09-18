@@ -69,8 +69,8 @@ export default function CodeAnswer({
   const checked = checkedOn(code);
 
   return (
-    <div className={`rounded-2xl border border-[#cfe6da] bg-[#e8f5ee] px-5 py-4 ${className}`} data-code-answer={code}>
-      <p className="text-[15px] leading-relaxed text-[#2b362f]">{children}</p>
+    <div className={`rounded-2xl border border-[#b9e3eb] bg-[#e4f2f5] px-5 py-4 ${className}`} data-code-answer={code}>
+      <p className="text-[15px] leading-relaxed text-[#14120f]">{children}</p>
       {checked && !hideDate ? (
         /* Date only, no "offers can change" caveat. CLAUDE.md gives that caveat a
            single home per page, the disclaimer, and /deals stacks four of these
@@ -78,7 +78,7 @@ export default function CodeAnswer({
            repetition rule breaking inside the fix for it. The date is the part
            that has to sit beside the code; the caveat already appears once per
            page via the disclaimer, HubOffer, PetOfferPair or the offers table. */
-        <p className="mt-2 text-[12px] font-medium text-[#5c6b63]">
+        <p className="mt-2 text-[12px] font-medium text-[#56504a]">
           Verified by Refer Labs on {checked}, {checkMethod(facts.brand)}.
         </p>
       ) : hideDate ? null : (
@@ -91,7 +91,7 @@ export default function CodeAnswer({
            as the day we verified the offer. A borrowed date is a worse claim than
            no date. If a future code arrives undated, this names the gap instead
            of letting the stamp stand in again. Do not delete it to tidy up. */
-        <p className="mt-2 text-[12px] font-medium text-[#5c6b63]">
+        <p className="mt-2 text-[12px] font-medium text-[#56504a]">
           We have not recorded a date for reading this offer off {facts.brand}&apos;s own page. Any date shown
           elsewhere on this page is when the page was updated, not when the offer was checked.
         </p>

@@ -6,9 +6,9 @@
 
 export default function InsuranceDisclosure({ className = "" }: { className?: string }) {
   return (
-    <div className={`rounded-2xl border border-[#e5e9e7] bg-[#f5f8f6] p-5 ${className}`}>
-      <p className="text-[13px] font-bold uppercase tracking-[0.12em] text-[#0a7c42]">General information, not financial advice</p>
-      <p className="mt-2 text-[13px] leading-relaxed text-[#3d4b44]">
+    <div className={`rounded-2xl border border-[#ded8cd] bg-[#f7f4ee] p-5 ${className}`}>
+      <p className="text-[13px] font-bold uppercase tracking-[0.12em] text-[#007a95]">General information, not financial advice</p>
+      <p className="mt-2 text-[13px] leading-relaxed text-[#56504a]">
         Refer Labs is not an insurer, broker or financial adviser, and nothing here is a recommendation or personal
         financial advice. We provide general information and refer you to the provider. We may receive a commission or
         referral fee if you take up an offer through our links, at no extra cost to you. Whether a policy suits you

@@ -27,8 +27,8 @@ export default function HowWeMakeMoney() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       <main className="mx-auto max-w-3xl px-5 py-10 sm:px-8 sm:py-14">
-        <h1 className="text-4xl font-extrabold leading-[1.1] text-[#10251b]">How we make money</h1>
-        <p className="mt-4 text-lg leading-relaxed text-[#3d4b44]">
+        <h1 className="text-4xl font-extrabold leading-[1.1] text-[#14120f]">How we make money</h1>
+        <p className="mt-4 text-lg leading-relaxed text-[#56504a]">
           Refer Labs is free to use. We keep the lights on two ways, and we&apos;d rather you know exactly how than wonder.
           Neither one lets a company buy a better ranking or a softer review.
         </p>
@@ -49,17 +49,17 @@ export default function HowWeMakeMoney() {
               "We disclose commercial relationships on the pages they apply to, not buried in the footer.",
             ].map((x) => (
               <li key={x} className="flex gap-2.5 leading-relaxed">
-                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#0a7c42]" aria-hidden="true" />{x}
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#007a95]" aria-hidden="true" />{x}
               </li>
             ))}
           </ul>
         </Section>
 
-        <p className="mt-10 text-sm leading-relaxed text-[#5a665f]">
+        <p className="mt-10 text-sm leading-relaxed text-[#56504a]">
           Questions about any of this? Email{" "}
-          <a href="mailto:jarred@referlabs.com.au" className="font-semibold text-[#0a7c42] underline">jarred@referlabs.com.au</a>.
-          See also our <Link href="/about#how-we-research" className="font-semibold text-[#0a7c42] underline">research standards</Link> and{" "}
-          <Link href="/privacy" className="font-semibold text-[#0a7c42] underline">Privacy Policy</Link>.
+          <a href="mailto:jarred@referlabs.com.au" className="font-semibold text-[#007a95] underline">jarred@referlabs.com.au</a>.
+          See also our <Link href="/about#how-we-research" className="font-semibold text-[#007a95] underline">research standards</Link> and{" "}
+          <Link href="/privacy" className="font-semibold text-[#007a95] underline">Privacy Policy</Link>.
         </p>
       </main>
     </ConsumerShell>
@@ -69,8 +69,8 @@ export default function HowWeMakeMoney() {
 function Section({ h, children }: { h: string; children: React.ReactNode }) {
   return (
     <section className="mt-10">
-      <h2 className="text-2xl font-extrabold text-[#10251b]">{h}</h2>
-      <div className="mt-3 space-y-3 text-[15px] leading-relaxed text-[#3d4b44]">{children}</div>
+      <h2 className="text-2xl font-extrabold text-[#14120f]">{h}</h2>
+      <div className="mt-3 space-y-3 text-[15px] leading-relaxed text-[#56504a]">{children}</div>
     </section>
   );
 }

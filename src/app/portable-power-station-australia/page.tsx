@@ -97,19 +97,19 @@ export default function Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
 
       <main id="main-content" className="mx-auto max-w-3xl px-5 pb-20 pt-10 sm:px-8">
-        <nav className="flex flex-wrap items-center gap-2 text-sm text-[#627068]">
-          <Link href="/" className="hover:text-[#0a7c42]">Refer Labs</Link>
+        <nav className="flex flex-wrap items-center gap-2 text-sm text-[#56504a]">
+          <Link href="/" className="hover:text-[#007a95]">Refer Labs</Link>
           <span>/</span>
-          <Link href="/apollo-energy-group" className="hover:text-[#0a7c42]">Home &amp; energy</Link>
+          <Link href="/apollo-energy-group" className="hover:text-[#007a95]">Home &amp; energy</Link>
           <span>/</span>
-          <span className="text-[#2b362f]">Portable power stations</span>
+          <span className="text-[#14120f]">Portable power stations</span>
         </nav>
 
-        <h1 className="mt-5 text-3xl font-bold leading-[1.1] tracking-[-0.01em] text-[#10251b] sm:text-4xl">
-          Portable power stations in Australia: <span className="text-[#0a7c42]">what they cost, and what they run</span>
+        <h1 className="mt-5 text-3xl font-bold leading-[1.1] tracking-[-0.01em] text-[#14120f] sm:text-4xl">
+          Portable power stations in Australia: <span className="text-[#007a95]">what they cost, and what they run</span>
         </h1>
 
-        <p className="mt-5 text-lg leading-relaxed text-[#2b362f]">
+        <p className="mt-5 text-lg leading-relaxed text-[#14120f]">
           Australian prices run from <strong>{fmtAud(cheapestAny.aud)}</strong> for a {cheapestAny.wh}Wh unit that keeps
           a router and phones alive, to <strong>{fmtAud(7299)}</strong> for 6,144Wh that will carry a fridge for a day
           or more. The useful middle sits around 1,000Wh from <strong>{fmtAud(cheapest1k.aud)}</strong>. None of them
@@ -125,25 +125,25 @@ export default function Page() {
         <EditorialMeta lastUpdated={UPDATED} className="mt-5" />
 
         <section className="mt-12">
-          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">
+          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">
             Can I use one if I rent or live in an apartment?
           </h2>
-          <p className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">
+          <p className="mt-3 text-[15px] leading-relaxed text-[#56504a]">
             Yes. A portable station charges from
             a normal power point and powers appliances from its own outlets. No switchboard work, no roof, no accredited
             installer, no landlord conversation. Every other page in this section assumes you own the building and can
             have someone wire a battery into it. The ABS put the renting share of Australian households at 31% in its
             Housing Occupancy and Costs release for 2019-20, its latest, read 25 August 2026.
           </p>
-          <p className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">
+          <p className="mt-3 text-[15px] leading-relaxed text-[#56504a]">
             The trade is scale. You are powering selected appliances through a plug, not the circuits of a house, and
             you charge it back up from a wall socket rather than from a roof.
           </p>
         </section>
 
         <section className="mt-12">
-          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">What a portable power station costs</h2>
-          <p className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">
+          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">What a portable power station costs</h2>
+          <p className="mt-3 text-[15px] leading-relaxed text-[#56504a]">
             Compare on cost per watt-hour rather than on the sticker, because capacity varies far more widely than
             price does. Both ranges below are shown together and sorted that way.
           </p>
@@ -151,15 +151,15 @@ export default function Page() {
         </section>
 
         <section className="mt-12">
-          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">What will it run?</h2>
-          <p className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">
+          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">What will it run?</h2>
+          <p className="mt-3 text-[15px] leading-relaxed text-[#56504a]">
             Divide capacity by draw and take roughly 15% off for inverter losses. A 1,000Wh unit against a 100W load is
             about eight hours on paper and closer to seven in practice.
           </p>
-          <div className="mt-5 overflow-x-auto rounded-2xl border border-[#e5e9e7]">
+          <div className="mt-5 overflow-x-auto rounded-2xl border border-[#ded8cd]">
             <table className="w-full min-w-[600px] border-collapse text-left text-sm">
               <thead>
-                <tr className="border-b border-[#e5e9e7] bg-[#f8faf9] text-[#5a665f]">
+                <tr className="border-b border-[#ded8cd] bg-[#f7f4ee] text-[#56504a]">
                   <th className="px-4 py-3 font-semibold">Appliance</th>
                   <th className="px-4 py-3 font-semibold">Typical draw</th>
                   <th className="px-4 py-3 font-semibold">On a 1,000Wh unit</th>
@@ -168,19 +168,19 @@ export default function Page() {
               </thead>
               <tbody>
                 {RUNS.map((r) => (
-                  <tr key={r.appliance} className="border-b border-[#eef1ef] last:border-0 align-top">
-                    <td className="px-4 py-3 font-semibold text-[#10251b]">{r.appliance}</td>
-                    <td className="px-4 py-3 tabular-nums text-[#3d4b44]">{r.watts}W</td>
-                    <td className="px-4 py-3 tabular-nums text-[#3d4b44]">
+                  <tr key={r.appliance} className="border-b border-[#f1ede4] last:border-0 align-top">
+                    <td className="px-4 py-3 font-semibold text-[#14120f]">{r.appliance}</td>
+                    <td className="px-4 py-3 tabular-nums text-[#56504a]">{r.watts}W</td>
+                    <td className="px-4 py-3 tabular-nums text-[#56504a]">
                       {r.watts > 900 ? "Minutes, if output allows" : `about ${Math.floor((1024 * 0.85) / r.watts)} hours`}
                     </td>
-                    <td className="px-4 py-3 text-[13px] text-[#5a665f]">{r.note}</td>
+                    <td className="px-4 py-3 text-[13px] text-[#56504a]">{r.note}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
-          <p className="mt-3 text-[13px] leading-relaxed text-[#5a665f]">
+          <p className="mt-3 text-[13px] leading-relaxed text-[#56504a]">
             Draw figures are typical Australian appliance averages, not measurements of your appliance. A fridge cycles,
             so it draws far less over an hour than its nameplate suggests. Anything with a heating element or a
             compressor draws a large surge at start-up: check the unit&apos;s surge rating as well as its continuous
@@ -189,20 +189,20 @@ export default function Page() {
         </section>
 
         <section className="mt-12">
-          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Which brand, and what we earn</h2>
+          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Which brand, and what we earn</h2>
           <div className="mt-4 grid gap-5 sm:grid-cols-2">
-            <div className="rounded-2xl border border-[#e5e9e7] bg-white p-6">
-              <p className="text-lg font-bold text-[#10251b]">EcoFlow</p>
-              <p className="mt-2 text-sm leading-relaxed text-[#3d4b44]">
+            <div className="rounded-2xl border border-[#ded8cd] bg-white p-6">
+              <p className="text-lg font-bold text-[#14120f]">EcoFlow</p>
+              <p className="mt-2 text-sm leading-relaxed text-[#56504a]">
                 Cheaper per watt-hour at the 1,000Wh and 2,000Wh tiers, and the widest range at both ends.
               </p>
               <a href={ECOFLOW_URL} {...aff} data-cta="pps-ecoflow" className="nw-btn mt-5 justify-center">
                 See EcoFlow prices <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </a>
             </div>
-            <div className="rounded-2xl border border-[#e5e9e7] bg-white p-6">
-              <p className="text-lg font-bold text-[#10251b]">Anker SOLIX</p>
-              <p className="mt-2 text-sm leading-relaxed text-[#3d4b44]">
+            <div className="rounded-2xl border border-[#ded8cd] bg-white p-6">
+              <p className="text-lg font-bold text-[#14120f]">Anker SOLIX</p>
+              <p className="mt-2 text-sm leading-relaxed text-[#56504a]">
                 More continuous output at the 1,000Wh tier, which decides whether high-draw appliances run.
               </p>
               <a href={ANKER_SOLIX_URL} {...aff} data-cta="pps-anker" className="nw-btn mt-5 justify-center">
@@ -210,35 +210,35 @@ export default function Page() {
               </a>
             </div>
           </div>
-          <p className="mt-4 text-[13px] leading-relaxed text-[#5a665f]">
+          <p className="mt-4 text-[13px] leading-relaxed text-[#56504a]">
             Both links are affiliate links and we earn from either, at no extra cost to you. The comparison rests on each
             brand&apos;s published prices.{" "}
-            <Link href="/ecoflow-vs-anker-solix" className="underline hover:text-[#3d4b44]">The full head-to-head</Link>{" "}
+            <Link href="/ecoflow-vs-anker-solix" className="underline hover:text-[#56504a]">The full head-to-head</Link>{" "}
             sets them out at matching capacities.{" "}
-            <Link href="/how-we-make-money" className="underline hover:text-[#3d4b44]">How we make money</Link>.
+            <Link href="/how-we-make-money" className="underline hover:text-[#56504a]">How we make money</Link>.
           </p>
         </section>
 
         <section className="mt-12">
-          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Common questions</h2>
-          <dl className="mt-5 divide-y divide-[#eef1ef] rounded-2xl border border-[#e5e9e7] bg-white">
+          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Common questions</h2>
+          <dl className="mt-5 divide-y divide-[#f1ede4] rounded-2xl border border-[#ded8cd] bg-white">
             {faqs.map((f) => (
               <div key={f.q} className="px-5 py-5">
-                <dt className="text-[15px] font-bold text-[#10251b]">{f.q}</dt>
-                <dd className="mt-2 text-sm leading-relaxed text-[#3d4b44]">{f.a}</dd>
+                <dt className="text-[15px] font-bold text-[#14120f]">{f.q}</dt>
+                <dd className="mt-2 text-sm leading-relaxed text-[#56504a]">{f.a}</dd>
               </div>
             ))}
           </dl>
         </section>
 
-        <section className="mt-10 border-t border-[#eef1ef] pt-8">
-          <h2 className="text-xs font-bold uppercase tracking-[0.12em] text-[#627068]">Keep reading</h2>
+        <section className="mt-10 border-t border-[#f1ede4] pt-8">
+          <h2 className="text-xs font-bold uppercase tracking-[0.12em] text-[#56504a]">Keep reading</h2>
           <ul className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-sm">
-            <li><Link href="/ecoflow-vs-anker-solix" className="font-semibold text-[#0a7c42] hover:underline">EcoFlow vs Anker SOLIX</Link></li>
-            <li><Link href="/portable-vs-installed-home-battery-australia" className="font-semibold text-[#0a7c42] hover:underline">Portable vs installed</Link></li>
-            <li><Link href="/ecoflow" className="text-[#3d4b44] hover:text-[#0a7c42] hover:underline">EcoFlow prices</Link></li>
-            <li><Link href="/anker-solix" className="text-[#3d4b44] hover:text-[#0a7c42] hover:underline">Anker SOLIX prices</Link></li>
-            <li><Link href="/home-battery-rebate-australia" className="text-[#3d4b44] hover:text-[#0a7c42] hover:underline">The battery rebate</Link></li>
+            <li><Link href="/ecoflow-vs-anker-solix" className="font-semibold text-[#007a95] hover:underline">EcoFlow vs Anker SOLIX</Link></li>
+            <li><Link href="/portable-vs-installed-home-battery-australia" className="font-semibold text-[#007a95] hover:underline">Portable vs installed</Link></li>
+            <li><Link href="/ecoflow" className="text-[#56504a] hover:text-[#007a95] hover:underline">EcoFlow prices</Link></li>
+            <li><Link href="/anker-solix" className="text-[#56504a] hover:text-[#007a95] hover:underline">Anker SOLIX prices</Link></li>
+            <li><Link href="/home-battery-rebate-australia" className="text-[#56504a] hover:text-[#007a95] hover:underline">The battery rebate</Link></li>
           </ul>
         </section>
       </main>

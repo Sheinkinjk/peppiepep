@@ -8,6 +8,10 @@ import { MOSHY_URL, JUNIPER_URL } from "@/lib/affiliate-links";
 import OfferSchema from "@/components/offers/OfferSchema";
 
 import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
+import { EdgeObject } from "@/components/brand/EdgeObject";
+import { GuideGrid } from "@/components/brand/GuideGrid";
+import { StepTrack } from "@/components/brand/StepTrack";
+import { HubObject } from "@/components/home/Objects";
 export const metadata = generateSEOMetadata(seoConfig.weightLossHub);
 
 
@@ -119,17 +123,17 @@ export default function WeightLossHubPage() {
             Keeping the text column first in the DOM also keeps the lead in the
             slot check-answer-slot guards. */}
         <section className="mx-auto max-w-6xl px-5 pt-12 sm:px-8 sm:pt-16">
-          <nav className="mb-7 flex items-center gap-2 text-sm text-[#627068]">
-            <Link href="/" className="hover:text-[#0a7c42]">Refer Labs</Link>
+          <nav className="mb-7 flex items-center gap-2 text-sm text-[#56504a]">
+            <Link href="/" className="hover:text-[#007a95]">Refer Labs</Link>
             <span>/</span>
-            <span className="text-[#2b362f]">Weight loss</span>
+            <span className="text-[#14120f]">Weight loss</span>
           </nav>
           <div className="grid items-start gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
             <div>
-              <h1 className="text-4xl font-bold leading-[1.06] tracking-[-0.01em] text-[#10251b] sm:text-5xl">
-                Weight loss telehealth in Australia: <span className="italic text-[#0a7c42]">online programs compared</span>
+              <h1 className="text-4xl font-bold leading-[1.06] tracking-[-0.01em] text-[#14120f] sm:text-5xl">
+                Weight loss telehealth in Australia: online programs compared
               </h1>
-              <p className="mt-5 text-lg leading-relaxed text-[#2b362f]">
+              <p className="mt-5 text-lg leading-relaxed text-[#14120f]">
                 Online weight loss telehealth lets you start without waiting weeks for an appointment: you complete an
                 assessment, a registered practitioner reviews it, and a plan follows if you&apos;re suitable. This hub
                 compares the online programs and clinics available in Australia across three clear pathways, with
@@ -142,7 +146,7 @@ export default function WeightLossHubPage() {
               <OfferSchema code="REFERRAL120" />
             </div>
 
-            <PathwayQuiz />
+            <EdgeObject kind="scale"><PathwayQuiz /></EdgeObject>
           </div>
         </section>
 
@@ -157,41 +161,43 @@ export default function WeightLossHubPage() {
             "for plenty of people the right place to begin": that was us making
             a clinical recommendation we cannot support for an unseen reader. */}
         <section className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
-          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">
+          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">
             Where telehealth fits
           </h2>
-          <p className="mt-3 max-w-3xl text-[15px] leading-relaxed text-[#3d4b44]">
+          <p className="mt-3 max-w-3xl text-[15px] leading-relaxed text-[#56504a]">
             Two routes start with a practitioner assessing you: an online service, or your own GP. This hub compares
             the online route. Non-clinical coaching and lifestyle programs are a separate market, and we do not compare
             them here.
           </p>
           <div className="mt-7 grid gap-4 lg:grid-cols-2">
-            <div className="rounded-2xl border border-[#0a7c42]/30 bg-[#f5f8f6] p-7">
-              <h3 className="text-xl font-bold text-[#10251b]">
+            <div className="rounded-2xl border border-[#007a95]/30 bg-white p-7">
+              <HubObject kind="phone" size={64} className="hy-obj mb-4" />
+              <h3 className="text-xl font-bold text-[#14120f]">
                 Online telehealth
               </h3>
-              <p className="mt-2.5 text-sm leading-relaxed text-[#3d4b44]">
+              <p className="mt-2.5 text-sm leading-relaxed text-[#56504a]">
                 A registered practitioner assesses you individually before anything starts, and some applicants are
                 declined. Moshy runs a lean clinical pathway open to anyone eligible; Juniper adds coaching and markets
                 to women. Priced as a subscription.
               </p>
               <div className="mt-5 space-y-2 text-sm font-semibold">
-                <p><Link href="/best-weight-loss-telehealth-australia" className="text-[#0a7c42] hover:underline">Compare the providers →</Link></p>
-                <p><Link href="/moshy" className="text-[#0a7c42] hover:underline">Learn more about Moshy →</Link></p>
-                <p><Link href="/juniper" className="text-[#0a7c42] hover:underline">Learn more about Juniper →</Link></p>
+                <p><Link href="/best-weight-loss-telehealth-australia" className="text-[#007a95] hover:underline">Compare the providers →</Link></p>
+                <p><Link href="/moshy" className="text-[#007a95] hover:underline">Learn more about Moshy →</Link></p>
+                <p><Link href="/juniper" className="text-[#007a95] hover:underline">Learn more about Juniper →</Link></p>
               </div>
             </div>
-            <div className="rounded-2xl border border-[#e5e9e7] bg-[#f5f8f6] p-7">
-              <h3 className="text-xl font-bold text-[#10251b]">
+            <div className="rounded-2xl border border-[#ded8cd] bg-white p-7">
+              <HubObject kind="clinic" size={64} className="hy-obj mb-4" />
+              <h3 className="text-xl font-bold text-[#14120f]">
                 Your GP
               </h3>
-              <p className="mt-2.5 text-sm leading-relaxed text-[#3d4b44]">
+              <p className="mt-2.5 text-sm leading-relaxed text-[#56504a]">
                 An in-person assessment with your whole health picture in view, and Medicare offsets part of the
                 consultation fee. Slower to start than an online service, and the only one of the two that includes a
                 physical examination.
               </p>
               <p className="mt-5 text-sm font-semibold">
-                <Link href="/moshy-vs-gp" className="text-[#0a7c42] hover:underline">Telehealth and your GP, side by side →</Link>
+                <Link href="/moshy-vs-gp" className="text-[#007a95] hover:underline">Telehealth and your GP, side by side →</Link>
               </p>
             </div>
           </div>
@@ -238,10 +244,16 @@ export default function WeightLossHubPage() {
             set inside it. A centred max-w-3xl section here started the text at a
             different x from the headings above and below it. */}
         <section className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
-          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">
+          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">
             How online weight loss telehealth works in Australia
           </h2>
-          <div className="mt-5 max-w-3xl space-y-4 text-[15px] leading-relaxed text-[#3d4b44]">
+          {/* The sequence the second paragraph below describes, drawn. Same words. */}
+          <StepTrack steps={[
+            { title: "A health questionnaire", object: "checklist", body: "You answer a detailed health questionnaire online, in your own time." },
+            { title: "A practitioner reviews it", object: "phone", body: "A registered practitioner reviews your answers remotely. Some applicants are declined." },
+            { title: "A plan, if you are suitable", object: "document", body: "Only if you are considered suitable does a plan get discussed. Follow-ups happen remotely too." },
+          ]} />
+          <div className="mt-5 max-w-3xl space-y-4 text-[15px] leading-relaxed text-[#56504a]">
             <p>
               A weight loss telehealth service is an online clinic. The assessment, the practitioner review and the
               follow-ups all happen remotely, usually through a secure portal or app rather than a waiting room. For a
@@ -256,7 +268,7 @@ export default function WeightLossHubPage() {
               applicants are declined. That screening step is the single most useful thing to look for. A service that
               promises a specific medicine before anyone has looked at your history is the kind to walk away from.
             </p>
-            <h3 className="pt-2 text-xl font-bold text-[#10251b]">
+            <h3 className="pt-2 text-xl font-bold text-[#14120f]">
               Telehealth, coaching and your GP: the practical difference
             </h3>
             <p>
@@ -267,7 +279,7 @@ export default function WeightLossHubPage() {
               offsets part of the cost, but it is slower to get moving. The right one is the one that fits how you
               want to be supported, and what you are comfortable paying.
             </p>
-            <h3 className="pt-2 text-xl font-bold text-[#10251b]">
+            <h3 className="pt-2 text-xl font-bold text-[#14120f]">
               What to check before you sign up to any provider
             </h3>
             <p>
@@ -283,23 +295,12 @@ export default function WeightLossHubPage() {
         </section>
 
         {/* All guides */}
-        <section className="border-y border-[#e5e9e7] bg-[#f5f8f6]">
+        <section className="border-y border-[#ded8cd] bg-[#f7f4ee]">
           <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
-            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">
+            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">
               Every guide in this hub
             </h2>
-            <div className="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {guides.map((g) => (
-                <Link
-                  key={g.href}
-                  href={g.href}
-                  className="group rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] p-5 transition-all hover:-translate-y-0.5 hover:border-[#0a7c42]/40"
-                >
-                  <h3 className="text-[15px] font-bold text-[#10251b] group-hover:text-[#0a7c42]">{g.title}</h3>
-                  <p className="mt-1.5 text-sm leading-relaxed text-[#3d4b44]">{g.desc}</p>
-                </Link>
-              ))}
-            </div>
+            <GuideGrid guides={guides} />
           </div>
         </section>
 
@@ -315,29 +316,29 @@ export default function WeightLossHubPage() {
 
         {/* FAQ */}
         <section className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
-          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">
+          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">
             Common questions
           </h2>
-          <div className="mt-6 max-w-3xl divide-y divide-[#e5e9e7] border-y border-[#e5e9e7]">
+          <div className="mt-6 max-w-3xl divide-y divide-[#ded8cd] border-y border-[#ded8cd]">
             {faqs.map((f) => (
               <details key={f.q} className="group py-4">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-[#10251b]">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-[#14120f]">
                   {f.q}
-                  <span className="text-xl leading-none text-[#0a7c42] transition-transform group-open:rotate-45">+</span>
+                  <span className="text-xl leading-none text-[#007a95] transition-transform group-open:rotate-45">+</span>
                 </summary>
-                <p className="mt-3 text-[15px] leading-relaxed text-[#2b362f]">{f.a}</p>
+                <p className="mt-3 text-[15px] leading-relaxed text-[#14120f]">{f.a}</p>
               </details>
             ))}
           </div>
-          <p className="mt-8 max-w-3xl rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] px-5 py-4 text-xs leading-relaxed text-[#3d4b44]">
-            <span className="font-semibold text-[#2b362f]">Information only.</span> Nothing in this hub is medical advice
+          <p className="mt-8 max-w-3xl rounded-xl border border-[#ded8cd] bg-[#f7f4ee] px-5 py-4 text-xs leading-relaxed text-[#56504a]">
+            <span className="font-semibold text-[#14120f]">Information only.</span> Nothing in this hub is medical advice
             or a recommendation of any treatment. Prescription medicines in Australia are available only after individual
             assessment by a registered practitioner.
           </p>
           <AffiliateDisclosure partners={["Moshy", "Juniper"]} className="mt-3 max-w-3xl" />
-          <p className="mt-6 text-sm leading-relaxed text-[#3d4b44]">
+          <p className="mt-6 text-sm leading-relaxed text-[#56504a]">
             Every current offer we hold, with the date each one was checked, is on{" "}
-            <Link href="/deals" className="font-semibold text-[#0a7c42] hover:underline">the deals page</Link>.
+            <Link href="/deals" className="font-semibold text-[#007a95] hover:underline">the deals page</Link>.
           </p>
         </section>
       </main>

@@ -64,15 +64,15 @@ export default function FactHistory({
 
   return (
     <section data-series-subject={subject} data-series-kind={kind} className="mt-8">
-      <p className="text-[15px] leading-relaxed text-[#2b362f]">
+      <p className="text-[15px] leading-relaxed text-[#14120f]">
         Refer Labs has checked this {series.length} times since {earliest}. It has changed{' '}
         {changes} {changes === 1 ? 'time' : 'times'}.
       </p>
 
-      <div className="mt-4 overflow-x-auto rounded-2xl border border-[#e5e9e7]">
+      <div className="mt-4 overflow-x-auto rounded-2xl border border-[#ded8cd]">
         <table className="w-full min-w-[520px] border-collapse text-left text-sm">
           <thead>
-            <tr className="border-b border-[#e5e9e7] bg-[#f8faf9] text-[#5a665f]">
+            <tr className="border-b border-[#ded8cd] bg-[#f7f4ee] text-[#56504a]">
               <th className="px-4 py-3 font-semibold">Observed</th>
               <th className="px-4 py-3 font-semibold">Claim</th>
               <th className="px-4 py-3 font-semibold">Changed</th>
@@ -82,12 +82,12 @@ export default function FactHistory({
             {series.map((fact, i) => {
               const changed = i > 0 && fact.claim !== series[i - 1].claim;
               return (
-                <tr key={fact.id} className="border-b border-[#eef1ef] last:border-0">
-                  <td className="px-4 py-3 whitespace-nowrap text-[#3d4b44]">
+                <tr key={fact.id} className="border-b border-[#f1ede4] last:border-0">
+                  <td className="px-4 py-3 whitespace-nowrap text-[#56504a]">
                     <time dateTime={fact.observedAt}>{formatObserved(fact.observedAt)}</time>
                   </td>
-                  <td className="px-4 py-3 text-[#2b362f]">{fact.claim}</td>
-                  <td className="px-4 py-3 text-[#3d4b44]">
+                  <td className="px-4 py-3 text-[#14120f]">{fact.claim}</td>
+                  <td className="px-4 py-3 text-[#56504a]">
                     {i === 0 ? 'First check' : changed ? 'Yes' : 'No'}
                   </td>
                 </tr>

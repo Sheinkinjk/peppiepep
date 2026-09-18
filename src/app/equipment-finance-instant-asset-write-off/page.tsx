@@ -65,15 +65,15 @@ export default function EquipmentFinanceGuide() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
 
       <main className="mx-auto max-w-3xl px-5 py-10 sm:px-8 sm:py-14">
-        <nav className="text-xs text-[#5a665f]">
-          <Link href="/business-loans" className="hover:text-[#0a7c42]">Business loans</Link>
+        <nav className="text-xs text-[#56504a]">
+          <Link href="/business-loans" className="hover:text-[#007a95]">Business loans</Link>
           <span className="px-1.5">/</span>
-          <span className="text-[#3d4b44]">Equipment finance & the write-off</span>
+          <span className="text-[#56504a]">Equipment finance & the write-off</span>
         </nav>
 
-        <h1 className="mt-3 text-4xl font-extrabold leading-[1.1] text-[#10251b]">Equipment finance and the instant asset write-off</h1>
+        <h1 className="mt-3 text-4xl font-extrabold leading-[1.1] text-[#14120f]">Equipment finance and the instant asset write-off</h1>
 
-        <p className="mt-4 text-lg leading-relaxed text-[#3d4b44]">
+        <p className="mt-4 text-lg leading-relaxed text-[#56504a]">
           Equipment finance lets a business acquire vehicles, machinery or fit-out and pay for it over time instead of up
           front. The instant asset write-off is a separate tax measure that lets eligible businesses deduct the cost of a
           qualifying asset sooner rather than depreciating it over years. The two often work together, but the tax rules
@@ -87,17 +87,17 @@ export default function EquipmentFinanceGuide() {
 
         <Section h="How equipment finance is usually structured">
           <p>
-            <strong className="text-[#10251b]">Chattel mortgage.</strong> You own the asset from the start and the financier
+            <strong className="text-[#14120f]">Chattel mortgage.</strong> You own the asset from the start and the financier
             takes security over it. It sits on your balance sheet, and you may be able to claim depreciation and the
             interest portion of repayments. This is the structure most often paired with the write-off.
           </p>
           <p>
-            <strong className="text-[#10251b]">Finance lease.</strong> The financier owns the asset and you pay to use it,
+            <strong className="text-[#14120f]">Finance lease.</strong> The financier owns the asset and you pay to use it,
             usually claiming the lease payments as a deduction rather than depreciation. Ownership may transfer at the end
             depending on the contract.
           </p>
           <p>
-            <strong className="text-[#10251b]">Rental / operating lease.</strong> Closest to renting: you use the asset, hand
+            <strong className="text-[#14120f]">Rental / operating lease.</strong> Closest to renting: you use the asset, hand
             it back at the end, and typically deduct the rental payments. No write-off, because you never own it.
           </p>
         </Section>
@@ -123,29 +123,29 @@ export default function EquipmentFinanceGuide() {
               "Check the balloon or residual payment on leases and chattel mortgages, if any.",
             ].map((x) => (
               <li key={x} className="flex gap-2.5 leading-relaxed">
-                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#0a7c42]" aria-hidden="true" />{x}
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#007a95]" aria-hidden="true" />{x}
               </li>
             ))}
           </ul>
         </Section>
 
-        <div className="mt-10 rounded-2xl border p-6" style={{ borderColor: "#0a7c4240", background: "#0a7c4208" }}>
-          <h2 className="text-xl font-extrabold text-[#10251b]">Looking at equipment finance?</h2>
-          <p className="mt-2 text-sm leading-relaxed text-[#3d4b44]">
+        <div className="mt-10 rounded-2xl border p-6" style={{ borderColor: "#007a9540", background: "#007a9508" }}>
+          <h2 className="text-xl font-extrabold text-[#14120f]">Looking at equipment finance?</h2>
+          <p className="mt-2 text-sm leading-relaxed text-[#56504a]">
             Tell us what you need. A person will talk you through the lenders that fund equipment and asset finance.
           </p>
           <div className="mt-4">
-            <Link href="/business-loans#enquire" className="inline-flex items-center rounded-xl px-5 py-3 text-sm font-bold text-white shadow-md hover:-translate-y-0.5" style={{ background: "#0a7c42", boxShadow: "0 8px 24px #0a7c4225" }}>Check my options</Link>
+            <Link href="/business-loans#enquire" className="inline-flex items-center rounded-xl px-5 py-3 text-sm font-bold text-white shadow-md hover:-translate-y-0.5" style={{ background: "#007a95", boxShadow: "0 8px 24px #007a9525" }}>Check my options</Link>
           </div>
         </div>
 
         <section className="mt-14">
-          <h2 className="text-2xl font-extrabold text-[#10251b]">Common questions</h2>
-          <dl className="mt-6 divide-y divide-[#eef1ef] border-t border-[#eef1ef]">
+          <h2 className="text-2xl font-extrabold text-[#14120f]">Common questions</h2>
+          <dl className="mt-6 divide-y divide-[#f1ede4] border-t border-[#f1ede4]">
             {faqs.map((f) => (
               <div key={f.q} className="py-5">
-                <dt className="font-bold text-[#10251b]">{f.q}</dt>
-                <dd className="mt-1.5 text-sm leading-relaxed text-[#3d4b44]">{f.a}</dd>
+                <dt className="font-bold text-[#14120f]">{f.q}</dt>
+                <dd className="mt-1.5 text-sm leading-relaxed text-[#56504a]">{f.a}</dd>
               </div>
             ))}
           </dl>
@@ -158,8 +158,8 @@ export default function EquipmentFinanceGuide() {
 function Section({ h, children }: { h: string; children: React.ReactNode }) {
   return (
     <section className="mt-10">
-      <h2 className="text-2xl font-extrabold text-[#10251b]">{h}</h2>
-      <div className="mt-3 space-y-3 text-[15px] leading-relaxed text-[#3d4b44]">{children}</div>
+      <h2 className="text-2xl font-extrabold text-[#14120f]">{h}</h2>
+      <div className="mt-3 space-y-3 text-[15px] leading-relaxed text-[#56504a]">{children}</div>
     </section>
   );
 }

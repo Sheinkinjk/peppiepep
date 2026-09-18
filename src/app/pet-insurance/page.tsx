@@ -91,22 +91,22 @@ export default function PetInsurancePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <main className="text-[#10251b]">
+      <main className="text-[#14120f]">
         <div className="mx-auto max-w-3xl px-6 sm:px-8">
           {/* Breadcrumb */}
-          <nav className="flex flex-wrap items-center gap-2 pt-8 text-sm text-[#5a665f]">
-            <Link href="/" className="transition-colors hover:text-[#10251b]">Refer Labs</Link>
+          <nav className="flex flex-wrap items-center gap-2 pt-8 text-sm text-[#56504a]">
+            <Link href="/" className="transition-colors hover:text-[#14120f]">Refer Labs</Link>
             <span>/</span>
-            <span className="text-[#10251b]">Pet insurance</span>
+            <span className="text-[#14120f]">Pet insurance</span>
           </nav>
 
           {/* Hero */}
           <header className="pt-9 pb-6">
             <p className="nw-kicker">Australia · General information</p>
-            <h1 className="mt-4 text-3xl font-extrabold leading-[1.08] tracking-tight text-[#10251b] sm:text-4xl">
+            <h1 className="mt-4 text-3xl font-extrabold leading-[1.08] tracking-tight text-[#14120f] sm:text-4xl">
               Pet insurance in Australia
             </h1>
-            <p className="mt-5 text-lg leading-relaxed text-[#3d4b44]">
+            <p className="mt-5 text-lg leading-relaxed text-[#56504a]">
               Far fewer insurers exist than brands: one underwriter, PetSure, sits behind more than twenty of the
               policies sold in Australia, so two brands you are comparing may be the same product with different
               branding. Five things then decide what you get back, and all five live in the Product Disclosure
@@ -128,7 +128,7 @@ export default function PetInsurancePage() {
           {/* Hub-only: these cross-links point at the sibling pages, so they stay
               here rather than moving into the shared component. */}
           <section className="mb-10">
-            <p className="mt-4 text-[13px] text-[#5a665f]">
+            <p className="mt-4 text-[13px] text-[#56504a]">
               Weighing them up? See{" "}
               <Link href="/knose-vs-petsonme" className="nw-link">Knose vs PetsOnMe side by side</Link>, or our{" "}
               <Link href="/best-pet-insurance-australia" className="nw-link">guide to choosing pet insurance</Link>,
@@ -143,34 +143,34 @@ export default function PetInsurancePage() {
 
           {/* What policies differ on (factual) */}
           <section className="mb-12">
-            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">What pet policies differ on</h2>
-            <p className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">
+            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">What pet policies differ on</h2>
+            <p className="mt-3 text-[15px] leading-relaxed text-[#56504a]">
               These are the things to read and compare in any insurer&apos;s PDS. They are explained here so the terms
               are clear, not to steer you toward any particular policy.
             </p>
             <div className="mt-6 space-y-5">
               {DIMENSIONS.map((d) => (
-                <div key={d.h} className="border-t border-[#e5e9e7] pt-5">
-                  <h3 className="flex items-center gap-2 text-[17px] font-bold text-[#10251b]">
-                    <Check className="h-4 w-4 shrink-0 text-[#0a7c42]" aria-hidden="true" /> {d.h}
+                <div key={d.h} className="border-t border-[#ded8cd] pt-5">
+                  <h3 className="flex items-center gap-2 text-[17px] font-bold text-[#14120f]">
+                    <Check className="h-4 w-4 shrink-0 text-[#007a95]" aria-hidden="true" /> {d.h}
                   </h3>
-                  <p className="mt-1.5 text-[15px] leading-relaxed text-[#3d4b44]">{d.p}</p>
+                  <p className="mt-1.5 text-[15px] leading-relaxed text-[#56504a]">{d.p}</p>
                 </div>
               ))}
             </div>
-            <Link href="/what-pet-insurance-covers-australia" className="mt-7 inline-flex items-center gap-1 text-sm font-semibold text-[#0a7c42] hover:text-[#086536]">
+            <Link href="/what-pet-insurance-covers-australia" className="mt-7 inline-flex items-center gap-1 text-sm font-semibold text-[#007a95] hover:text-[#003647]">
               Read the full explainer on what pet insurance covers <ArrowRight className="h-3.5 w-3.5" />
             </Link>
           </section>
 
           {/* FAQ */}
           <section className="mb-14">
-            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Common questions</h2>
-            <div className="mt-6 divide-y divide-[#e5e9e7] border-t border-[#e5e9e7]">
+            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Common questions</h2>
+            <div className="mt-6 divide-y divide-[#ded8cd] border-t border-[#ded8cd]">
               {faqs.map((f) => (
                 <div key={f.q} className="py-5">
-                  <h3 className="font-bold text-[#10251b]">{f.q}</h3>
-                  <p className="mt-1.5 text-[15px] leading-relaxed text-[#3d4b44]">{f.a}</p>
+                  <h3 className="font-bold text-[#14120f]">{f.q}</h3>
+                  <p className="mt-1.5 text-[15px] leading-relaxed text-[#56504a]">{f.a}</p>
                 </div>
               ))}
             </div>

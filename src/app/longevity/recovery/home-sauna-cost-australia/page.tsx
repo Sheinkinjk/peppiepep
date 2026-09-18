@@ -38,7 +38,7 @@ export default function Page() {
       sectionHref="/longevity/recovery"
       slug="/longevity/recovery/home-sauna-cost-australia"
       crumb="Home sauna costs"
-      h1={<>What a home sauna costs in Australia: <span className="italic text-[#0a7c42]">including the line quotes leave out</span></>}
+      h1={<>What a home sauna costs in Australia: <span className="italic text-[#007a95]">including the line quotes leave out</span></>}
       intro="The advertised price is one of five numbers. The total is the cabin, plus delivery, plus a base to stand it on, plus an electrician where the heater needs a dedicated circuit, plus a running cost that continues for as long as you own it. Quotes that name only the first are not wrong, they are incomplete."
       headline="Home sauna cost in Australia: purchase and running"
       description={seoConfig.homeSaunaCost.description}
@@ -49,16 +49,16 @@ export default function Page() {
       ]}
     >
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">The five lines of a real quote</h2>
-        <div className="mt-4 overflow-x-auto rounded-2xl border border-[#e5e9e7]">
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">The five lines of a real quote</h2>
+        <div className="mt-4 overflow-x-auto rounded-2xl border border-[#ded8cd]">
           <table className="w-full min-w-[560px] border-collapse text-left text-sm">
-            <thead className="bg-[#f8faf9] text-[11px] uppercase tracking-[0.1em] text-[#627068]">
+            <thead className="bg-[#f7f4ee] text-[11px] uppercase tracking-[0.1em] text-[#56504a]">
               <tr>
                 <th className="px-4 py-3 font-semibold">Line</th>
                 <th className="px-4 py-3 font-semibold">Usually in the advertised price?</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-[#eef1ef]">
+            <tbody className="divide-y divide-[#f1ede4]">
               {[
                 ["The cabin or kit", "Yes"],
                 ["Delivery, and getting it into position", "Sometimes, and access charges are common"],
@@ -67,21 +67,21 @@ export default function Page() {
                 ["Assembly, if you are not doing it", "Sometimes"],
               ].map((r) => (
                 <tr key={r[0]}>
-                  <td className="px-4 py-3 font-semibold text-[#10251b]">{r[0]}</td>
+                  <td className="px-4 py-3 font-semibold text-[#14120f]">{r[0]}</td>
                   <td className="px-4 py-3">{r[1]}</td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
-        <p className="mt-3 text-xs text-[#5a665f]">
+        <p className="mt-3 text-xs text-[#56504a]">
           We quote no unit prices here. The market spans a wide range and we could not verify current figures off live
           listings, so a range invented for the sake of completeness would be worse than none.
         </p>
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Get the electrical quote first</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Get the electrical quote first</h2>
         <p className="mt-3">
           The order most people use is: choose a sauna, buy it, then discover what wiring it needs. Reverse that. Find
           the specification for the unit you want, send it to an electrician, and have them look at your actual
@@ -95,12 +95,12 @@ export default function Page() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Costing the running figure</h2>
-        <div className="mt-4 rounded-2xl border border-[#0a7c42]/25 bg-[#f5f8f6] p-6">
-          <p className="text-[15px] font-semibold text-[#10251b]">
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Costing the running figure</h2>
+        <div className="mt-4 rounded-2xl border border-[#007a95]/25 bg-[#f7f4ee] p-6">
+          <p className="text-[15px] font-semibold text-[#14120f]">
             Annual running cost = heater power (kW) × hours per week (including heat-up) × your tariff ($/kWh) × 52
           </p>
-          <p className="mt-3 text-sm text-[#3d4b44]">
+          <p className="mt-3 text-sm text-[#56504a]">
             Heater power is on the specification. Your tariff is on your electricity bill. Heat-up time is the part
             people leave out, and it is longer for traditional units than infrared.
           </p>
@@ -113,7 +113,7 @@ export default function Page() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Before ordering</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Before ordering</h2>
         <ul className="mt-3 list-disc space-y-2 pl-5">
           <li>Check your local council&apos;s requirements yourself rather than relying on the supplier.</li>
           <li>Confirm the base can take the loaded weight, particularly on a deck or suspended floor.</li>

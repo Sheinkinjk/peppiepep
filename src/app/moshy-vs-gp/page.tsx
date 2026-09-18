@@ -11,8 +11,8 @@ import OfferSchema from "@/components/offers/OfferSchema";
 import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 export const metadata = generateSEOMetadata(seoConfig.moshyVsGp);
 
-const CYAN = "#0a7c42";
-const CYAN_LT = "#0a7c42";
+const CYAN = "#007a95";
+const CYAN_LT = "#007a95";
 const aff = { href: MOSHY_URL, target: "_blank" as const, rel: "nofollow sponsored" as const };
 
 const faqs = [
@@ -80,18 +80,18 @@ export default function MoshyVsGpPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
 
       <main id="main-content" className="relative mx-auto max-w-3xl px-5 sm:px-8 lg:px-12 pb-24 pt-12 sm:pt-16">
-        <nav className="mb-8 flex flex-wrap items-center gap-2 text-sm text-[#3d4b44]">
-          <Link href="/" className="hover:text-[#2b362f] transition-colors">Refer Labs</Link>
+        <nav className="mb-8 flex flex-wrap items-center gap-2 text-sm text-[#56504a]">
+          <Link href="/" className="hover:text-[#14120f] transition-colors">Refer Labs</Link>
           <span>/</span>
-          <Link href="/guides" className="hover:text-[#2b362f] transition-colors">Guides</Link>
+          <Link href="/guides" className="hover:text-[#14120f] transition-colors">Guides</Link>
           <span>/</span>
-          <span className="text-[#2b362f]">Moshy vs GP</span>
+          <span className="text-[#14120f]">Moshy vs GP</span>
         </nav>
 
         <h1 className="text-3xl sm:text-4xl lg:text-[2.7rem] font-black leading-[1.08] tracking-tight mb-5">
           Moshy vs your GP: <span style={{ color: CYAN_LT }}>two doors to the same kind of care</span>
         </h1>
-        <p className="text-[#3d4b44] text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
+        <p className="text-[#56504a] text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
           Both routes end with a qualified practitioner making an individual decision about you. The differences are
           practical: speed, format, continuity, and what kind of case each one handles best.
         </p>
@@ -105,8 +105,8 @@ export default function MoshyVsGpPage() {
         <OfferSchema code="REFERRAL120" />
 
 
-        <p className="mb-10 rounded-lg border border-[#e5e9e7] bg-[#f5f8f6] px-4 py-3 text-xs leading-relaxed text-[#3d4b44]">
-          <span className="font-semibold text-[#2b362f]">Information only.</span> This page compares two ways of
+        <p className="mb-10 rounded-lg border border-[#ded8cd] bg-[#f7f4ee] px-4 py-3 text-xs leading-relaxed text-[#56504a]">
+          <span className="font-semibold text-[#14120f]">Information only.</span> This page compares two ways of
           accessing care. It is not medical advice, does not recommend either pathway for any individual, and both are
           legitimate.
         </p>
@@ -114,8 +114,8 @@ export default function MoshyVsGpPage() {
         {/* Answer-first: the question verbatim, then a liftable answer, before the table. */}
         <section className="mb-10">
           <h2 className="text-xl font-black mb-3">Should you use Moshy or see your GP for weight loss?</h2>
-          <div className="rounded-xl border border-[#cfe6da] bg-[#e8f5ee] px-6 py-5">
-            <p className="text-[#2b362f] text-sm sm:text-base leading-relaxed max-w-2xl">
+          <div className="rounded-xl border border-[#b9e3eb] bg-[#e4f2f5] px-6 py-5">
+            <p className="text-[#14120f] text-sm sm:text-base leading-relaxed max-w-2xl">
               Both are legitimate, and the right one depends on what you want from the process. Your GP is the cheaper
               route because Medicare offsets part of the consult, already knows your history, and can manage weight
               alongside the rest of your health, but it is slower to begin and depends on appointment availability.
@@ -129,21 +129,21 @@ export default function MoshyVsGpPage() {
 
         <section className="mb-10">
           <h2 className="text-xl font-black mb-4">Side by side</h2>
-          <div className="overflow-x-auto rounded-xl border border-[#e5e9e7]">
+          <div className="overflow-x-auto rounded-xl border border-[#ded8cd]">
               <table className="w-full min-w-[560px] text-sm">
               <thead>
-                <tr className="bg-[#f5f8f6]">
-                  <th className="text-left font-semibold text-[#3d4b44] px-4 py-3 w-1/4"></th>
-                  <th className="text-left font-black text-[#10251b] px-4 py-3">Moshy</th>
-                  <th className="text-left font-black text-[#10251b] px-4 py-3">Your GP</th>
+                <tr className="bg-[#f7f4ee]">
+                  <th className="text-left font-semibold text-[#56504a] px-4 py-3 w-1/4"></th>
+                  <th className="text-left font-black text-[#14120f] px-4 py-3">Moshy</th>
+                  <th className="text-left font-black text-[#14120f] px-4 py-3">Your GP</th>
                 </tr>
               </thead>
               <tbody>
                 {rows.map(([k, m, g]) => (
-                  <tr key={k} className="border-t border-[#e5e9e7] align-top">
-                    <td className="px-4 py-3 text-[#3d4b44] font-medium">{k}</td>
-                    <td className="px-4 py-3 text-[#2b362f]">{m}</td>
-                    <td className="px-4 py-3 text-[#2b362f]">{g}</td>
+                  <tr key={k} className="border-t border-[#ded8cd] align-top">
+                    <td className="px-4 py-3 text-[#56504a] font-medium">{k}</td>
+                    <td className="px-4 py-3 text-[#14120f]">{m}</td>
+                    <td className="px-4 py-3 text-[#14120f]">{g}</td>
                   </tr>
                 ))}
               </tbody>
@@ -152,7 +152,7 @@ export default function MoshyVsGpPage() {
         </section>
 
         <div className="rounded-xl border px-6 py-5 mb-12" style={{ borderColor: `${CYAN}40`, background: `${CYAN}0A` }}>
-          <p className="text-[#2b362f] text-sm sm:text-base leading-relaxed mb-4">
+          <p className="text-[#14120f] text-sm sm:text-base leading-relaxed mb-4">
             If the telehealth route suits your situation, Moshy&apos;s eligibility check is the starting point. Ten
             minutes, no commitment, referral applied automatically.
           </p>
@@ -169,13 +169,13 @@ export default function MoshyVsGpPage() {
 
         <section className="space-y-4 mb-10">
           <h2 className="text-xl font-black">The trade-off</h2>
-          <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
+          <p className="text-[#56504a] text-sm sm:text-base leading-relaxed">
             Telehealth trades continuity for convenience. Moshy will never know your history the way a GP you have seen
             for a decade does, and it is not trying to. What it offers instead is the removal of every small barrier
             between deciding to act and acting: no booking lead time, no waiting room, no need to say anything
             out loud to anyone until a practitioner has already reviewed your details.
           </p>
-          <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed">
+          <p className="text-[#56504a] text-sm sm:text-base leading-relaxed">
             For plenty of men, that difference is the difference between starting and not starting. For others, the
             GP&apos;s office is the better room. Anything urgent, unusual, or layered on top of other conditions belongs
             with a doctor in person, full stop.
@@ -186,18 +186,18 @@ export default function MoshyVsGpPage() {
           <h2 className="text-xl font-black mb-5">Common questions</h2>
           <div className="space-y-3">
             {faqs.map((f) => (
-              <details key={f.q} className="group rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] px-5 py-4">
-                <summary className="cursor-pointer list-none font-semibold text-[#10251b] text-sm sm:text-base flex items-center justify-between gap-4">
+              <details key={f.q} className="group rounded-xl border border-[#ded8cd] bg-[#f7f4ee] px-5 py-4">
+                <summary className="cursor-pointer list-none font-semibold text-[#14120f] text-sm sm:text-base flex items-center justify-between gap-4">
                   {f.q}
-                  <span className="text-[#627068] group-open:rotate-45 transition-transform text-lg leading-none">+</span>
+                  <span className="text-[#56504a] group-open:rotate-45 transition-transform text-lg leading-none">+</span>
                 </summary>
-                <p className="text-[#3d4b44] text-sm leading-relaxed mt-3">{f.a}</p>
+                <p className="text-[#56504a] text-sm leading-relaxed mt-3">{f.a}</p>
               </details>
             ))}
           </div>
         </section>
 
-        <div className="border-t border-[#e5e9e7] pt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm">
+        <div className="border-t border-[#ded8cd] pt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm">
           <Link href="/moshy" style={{ color: CYAN }} className="hover:opacity-80">Moshy: the offer</Link>
           <Link href="/moshy-review" style={{ color: CYAN }} className="hover:opacity-80">Moshy review →</Link>
           <Link href="/moshy-eligibility" style={{ color: CYAN }} className="hover:opacity-80">The eligibility check →</Link>
@@ -209,11 +209,11 @@ export default function MoshyVsGpPage() {
         <FactHistory subject="Moshy" kind="offer_observation" hub="weight-loss" route="/moshy-vs-gp" />
 
         <AffiliateDisclosure className="mt-8" />
-        <p className="text-[#627068] text-xs mt-3 leading-relaxed">
+        <p className="text-[#56504a] text-xs mt-3 leading-relaxed">
           Nothing here is medical advice. Always consult a qualified health
           professional about your own circumstances.
         </p>
-        <p className="text-[#627068] text-xs mt-4">© 2026 Refer Labs · Australia · <Link href="/guides" className="hover:text-[#3d4b44]">All guides</Link></p>
+        <p className="text-[#56504a] text-xs mt-4">© 2026 Refer Labs · Australia · <Link href="/guides" className="hover:text-[#56504a]">All guides</Link></p>
       </main>
       <StickyCta href={MOSHY_URL} product="Moshy weight-loss telehealth" label="Check eligibility" />
     </ConsumerShell>

@@ -43,7 +43,7 @@ export default function Page() {
       sectionHref="/sleep"
       slug="/sleep/how-much-does-good-sleep-cost"
       crumb="What good sleep costs"
-      h1={<>What does good sleep cost? <span className="italic text-[#0a7c42]">Start at zero</span></>}
+      h1={<>What does good sleep cost? <span className="italic text-[#007a95]">Start at zero</span></>}
       intro="The changes with the largest effect cost nothing: consistent timing including weekends, daylight early and dimmer light in the evening, caffeine earlier rather than less, and a cooler bedroom using bedding you already own. Equipment only starts earning its keep once those are in place, which is the opposite of the order most people buy in."
       headline="What does good sleep cost in Australia?"
       description={seoConfig.costOfGoodSleep.description}
@@ -54,7 +54,7 @@ export default function Page() {
       ]}
     >
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">First, rule out the clinical question</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">First, rule out the clinical question</h2>
         <p className="mt-3">
           Everything below assumes there is nothing medical going on. If any of these apply, the right first step is a
           GP appointment rather than a purchase:
@@ -67,13 +67,13 @@ export default function Page() {
         </ul>
         <p className="mt-3">
           No product on any list treats a sleep disorder, and buying one first mostly delays the answer. Our guide to{" "}
-          <a href="/sleep/do-i-have-sleep-apnoea" className="font-semibold text-[#0a7c42] hover:underline">how diagnosis works</a>{" "}
+          <a href="/sleep/do-i-have-sleep-apnoea" className="font-semibold text-[#007a95] hover:underline">how diagnosis works</a>{" "}
           covers what that appointment involves.
         </p>
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">The free tier, which is most of the value</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">The free tier, which is most of the value</h2>
         <div className="mt-4 space-y-4">
           {[
             ["Consistent timing", "Going to bed and getting up at similar times, including weekends. Unglamorous, free, and the change most people skip on the way to buying something."],
@@ -82,8 +82,8 @@ export default function Page() {
             ["Alcohol", "It shortens the time to fall asleep and degrades the sleep that follows, which is why a nightcap feels like it helps and does not."],
             ["Bedroom temperature", "Cooler generally helps. Adjusting bedding you already own is free before it becomes a purchase."],
           ].map(([h, b]) => (
-            <div key={h} className="rounded-2xl border border-[#e5e9e7] bg-white p-5">
-              <p className="font-semibold text-[#10251b]">{h}</p>
+            <div key={h} className="rounded-2xl border border-[#ded8cd] bg-white p-5">
+              <p className="font-semibold text-[#14120f]">{h}</p>
               <p className="mt-1.5 text-sm">{b}</p>
             </div>
           ))}
@@ -95,7 +95,7 @@ export default function Page() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">When spending is justified</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">When spending is justified</h2>
         <p className="mt-3">
           Once habits are consistent and the problem persists, purchases become reasonable, on one condition: you can
           name the obstacle you are removing. Light in the room, noise, temperature, or a mattress that is
@@ -109,7 +109,7 @@ export default function Page() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Costing a purchase honestly</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Costing a purchase honestly</h2>
         <p className="mt-3">
           Divide the price by the years you will use it, then ask whether you would pay that annual figure for the
           specific improvement you expect. A mattress used for a decade is a modest annual cost. A subscription is a

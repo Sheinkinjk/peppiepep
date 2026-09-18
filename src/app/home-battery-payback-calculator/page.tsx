@@ -77,24 +77,24 @@ export default function HomeBatteryPaybackCalculatorPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
 
-      <main className="text-[#10251b]">
+      <main className="text-[#14120f]">
         <div className="mx-auto max-w-4xl px-6 sm:px-8">
 
           {/* Breadcrumb */}
-          <nav className="flex flex-wrap items-center gap-2 pt-8 text-sm text-[#5a665f]">
-            <Link href="/" className="hover:text-[#10251b] transition-colors">Refer Labs</Link>
+          <nav className="flex flex-wrap items-center gap-2 pt-8 text-sm text-[#56504a]">
+            <Link href="/" className="hover:text-[#14120f] transition-colors">Refer Labs</Link>
             <span>/</span>
-            <Link href="/apollo-energy-group" className="hover:text-[#10251b] transition-colors">Home batteries</Link>
+            <Link href="/apollo-energy-group" className="hover:text-[#14120f] transition-colors">Home batteries</Link>
             <span>/</span>
-            <span className="text-[#10251b]">Payback calculator</span>
+            <span className="text-[#14120f]">Payback calculator</span>
           </nav>
 
           {/* Hero */}
           <header className="pt-9 pb-6 max-w-3xl">
-            <h1 className="mt-4 text-3xl sm:text-4xl lg:text-[2.6rem] font-extrabold leading-[1.08] tracking-tight text-[#10251b]">
+            <h1 className="mt-4 text-3xl sm:text-4xl lg:text-[2.6rem] font-extrabold leading-[1.08] tracking-tight text-[#14120f]">
               Home battery payback calculator
             </h1>
-            <p className="mt-5 text-base sm:text-lg leading-relaxed text-[#3d4b44]">
+            <p className="mt-5 text-base sm:text-lg leading-relaxed text-[#56504a]">
               Four inputs and you get a payback period: your usage, your tariff, the battery size and your state. The
               calculator estimates the federal rebate, subtracts it to a net cost, works out the annual saving and
               divides one by the other. Every number is built from your inputs and stated assumptions, so treat it as a
@@ -107,8 +107,8 @@ export default function HomeBatteryPaybackCalculatorPage() {
 
           <article className="mt-12 max-w-3xl space-y-9">
             <section>
-              <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#10251b]">How the estimate works</h2>
-              <div className="mt-4 space-y-4 text-[15px] leading-relaxed text-[#3d4b44]">
+              <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#14120f]">How the estimate works</h2>
+              <div className="mt-4 space-y-4 text-[15px] leading-relaxed text-[#56504a]">
                 <p>
                   The saving from a battery is mostly arbitrage: you store cheap or free solar during the day and use it
                   at night instead of buying power at the peak rate. So each kWh you shift is worth the peak rate you
@@ -131,9 +131,9 @@ export default function HomeBatteryPaybackCalculatorPage() {
             </section>
 
             {/* CTA */}
-            <section className="rounded-2xl border border-[#e5e9e7] bg-[#eef1ec] px-6 py-6">
-              <h2 className="text-lg font-bold text-[#10251b]">Turn the estimate into a real number</h2>
-              <p className="mt-2 text-[15px] leading-relaxed text-[#3d4b44]">
+            <section className="rounded-2xl border border-[#ded8cd] bg-[#f1ede4] px-6 py-6">
+              <h2 className="text-lg font-bold text-[#14120f]">Turn the estimate into a real number</h2>
+              <p className="mt-2 text-[15px] leading-relaxed text-[#56504a]">
                 Apollo Energy Group sizes a battery from your actual usage and applies the federal rebate at the quote,
                 so you get a real payback figure for your home. You get $500 off your quote through our link, no code
                 needed, and it commits you to nothing.
@@ -149,15 +149,15 @@ export default function HomeBatteryPaybackCalculatorPage() {
 
             {/* FAQ */}
             <section>
-              <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#10251b]">Frequently asked questions</h2>
-              <div className="mt-5 divide-y divide-[#e5e9e7] border-y border-[#e5e9e7]">
+              <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#14120f]">Frequently asked questions</h2>
+              <div className="mt-5 divide-y divide-[#ded8cd] border-y border-[#ded8cd]">
                 {faqs.map((f) => (
                   <details key={f.q} className="group py-4">
-                    <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-[#10251b]">
+                    <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-[#14120f]">
                       {f.q}
-                      <span className="text-xl leading-none text-[#0a7c42] transition-transform group-open:rotate-45">+</span>
+                      <span className="text-xl leading-none text-[#007a95] transition-transform group-open:rotate-45">+</span>
                     </summary>
-                    <p className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">{f.a}</p>
+                    <p className="mt-3 text-[15px] leading-relaxed text-[#56504a]">{f.a}</p>
                   </details>
                 ))}
               </div>
@@ -165,7 +165,7 @@ export default function HomeBatteryPaybackCalculatorPage() {
 
             {/* Related */}
             <section>
-              <h2 className="text-lg font-bold text-[#10251b]">Keep reading</h2>
+              <h2 className="text-lg font-bold text-[#14120f]">Keep reading</h2>
               <ul className="mt-3 space-y-2 text-[15px]">
                 <li><Link href="/home-battery-cost-australia" className="nw-link">How much a home battery costs in Australia</Link></li>
                 <li><Link href="/home-battery-rebate-australia" className="nw-link">The 2026 home battery rebate, explained</Link></li>
@@ -175,8 +175,8 @@ export default function HomeBatteryPaybackCalculatorPage() {
             </section>
 
             {/* Disclosure */}
-            <section className="border-t border-[#e5e9e7] pt-6 pb-16">
-              <p className="text-xs leading-relaxed text-[#627068]">
+            <section className="border-t border-[#ded8cd] pt-6 pb-16">
+              <p className="text-xs leading-relaxed text-[#56504a]">
                 This page is published by Refer Labs, an independent comparison publisher, and contains a disclosed
                 commercial referral arrangement with Apollo Energy Group, which means we may earn a commission if you request a quote
                 through our link. Commissions never change what we write or what the calculator computes. All figures are

@@ -42,7 +42,7 @@ export async function POST(req: NextRequest) {
   const row = (k: string, v: string) => v ? `<tr><td style="padding:4px 12px 4px 0;color:#6b7280">${esc(k)}</td><td style="padding:4px 0;color:#111827;font-weight:600">${esc(v)}</td></tr>` : "";
   const operatorHtml = `
     <div style="font-family:system-ui,sans-serif;max-width:560px">
-      <h2 style="color:#0a7c42;margin:0 0 4px">Business software shortlist request</h2>
+      <h2 style="color:#007a95;margin:0 0 4px">Business software shortlist request</h2>
       <p style="color:#6b7280;margin:0 0 16px">From the /business-software recommender.</p>
       <table style="border-collapse:collapse;font-size:14px">
         ${row("Email", d.email)}${row("Business", d.business_name || "")}${row("Goals", d.goals.join(", "))}

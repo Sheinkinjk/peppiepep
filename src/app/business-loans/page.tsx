@@ -163,23 +163,23 @@ export default function BusinessLoansHub() {
 
       <main>
         {/* ── Hero (form-first) ── */}
-        <section className="border-b border-[#e5e9e7] bg-[#f5f8f6]">
+        <section className="border-b border-[#ded8cd] bg-[#f7f4ee]">
           <div className="mx-auto grid max-w-6xl items-start gap-10 px-5 py-12 sm:px-8 sm:py-16 lg:grid-cols-[1fr_1.05fr] lg:gap-14">
             <div className="lg:pt-4">
-              <span className="text-[12px] font-bold uppercase tracking-[0.16em] text-[#0a7c42]">Business loans, Australia</span>
-              <h1 className="mt-3 text-4xl font-extrabold leading-[1.05] tracking-[-0.02em] text-[#10251b] sm:text-5xl">
+              <span className="text-[12px] font-bold uppercase tracking-[0.16em] text-[#007a95]">Business loans, Australia</span>
+              <h1 className="mt-3 text-4xl font-extrabold leading-[1.05] tracking-[-0.02em] text-[#14120f] sm:text-5xl">
                 Compare business lenders and get matched in a minute
               </h1>
-              <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#3d4b44]">
+              <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#56504a]">
                 Tell us what you need and a person matches your enquiry to the {LENDERS.length} Australian lenders most
                 likely to fund it. It&apos;s free, there&apos;s nothing to upload, and enquiring won&apos;t touch your
                 credit score. Refer Labs is a referrer, not a lender, with no partnership with any lender here.
               </p>
-              <ul className="mt-7 grid gap-2.5 text-[15px] font-medium text-[#10251b] sm:grid-cols-2">
+              <ul className="mt-7 grid gap-2.5 text-[15px] font-medium text-[#14120f] sm:grid-cols-2">
                 {["Free to use, no obligation", "No document uploads", "No credit impact to enquire", "A person reviews every enquiry"].map((t) => (
                   <li key={t} className="flex items-center gap-2.5">
-                    <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#e6f3ec]">
-                      <Check className="h-3.5 w-3.5 text-[#0a7c42]" strokeWidth={2.5} aria-hidden="true" />
+                    <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#e4f2f5]">
+                      <Check className="h-3.5 w-3.5 text-[#007a95]" strokeWidth={2.5} aria-hidden="true" />
                     </span>
                     {t}
                   </li>
@@ -194,15 +194,15 @@ export default function BusinessLoansHub() {
             {/* The enquiry form, above the fold */}
             <div id="enquire" className="scroll-mt-24">
               <div className="mb-3 flex items-baseline justify-between">
-                <h2 className="text-lg font-extrabold tracking-tight text-[#10251b]">Compare &amp; enquire</h2>
-                <span className="text-[12px] font-medium text-[#5a665f]">~1 minute · no uploads</span>
+                <h2 className="text-lg font-extrabold tracking-tight text-[#14120f]">Compare &amp; enquire</h2>
+                <span className="text-[12px] font-medium text-[#56504a]">~1 minute · no uploads</span>
               </div>
               <LeadForm sourcePage="/business-loans" />
-              <p className="mt-3 text-xs leading-relaxed text-[#5a665f]">
+              <p className="mt-3 text-xs leading-relaxed text-[#56504a]">
                 With your consent we share your details only with the lenders and brokers relevant to your enquiry, and we
                 may be paid a commission if your loan settles, which never changes your rate. See our{" "}
-                <Link href="/privacy" className="underline hover:text-[#10251b]">Privacy Policy</Link> and{" "}
-                <Link href="/how-we-make-money" className="underline hover:text-[#10251b]">how we make money</Link>.
+                <Link href="/privacy" className="underline hover:text-[#14120f]">Privacy Policy</Link> and{" "}
+                <Link href="/how-we-make-money" className="underline hover:text-[#14120f]">how we make money</Link>.
               </p>
             </div>
           </div>
@@ -210,21 +210,21 @@ export default function BusinessLoansHub() {
 
         <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
           {/* By the numbers (honest) */}
-          <section className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-[#e5e9e7] bg-[#e5e9e7] lg:grid-cols-4">
+          <section className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-[#ded8cd] bg-[#ded8cd] lg:grid-cols-4">
             {STATS.map((s) => (
               <div key={s.l} className="bg-white px-5 py-6 text-center">
-                <div className="text-xl font-extrabold text-[#0a7c42] sm:text-2xl">{s.v}</div>
-                <div className="mt-1 text-[12px] leading-snug text-[#5a665f]">{s.l}</div>
+                <div className="text-xl font-extrabold text-[#007a95] sm:text-2xl">{s.v}</div>
+                <div className="mt-1 text-[12px] leading-snug text-[#56504a]">{s.l}</div>
               </div>
             ))}
           </section>
 
           {/* Trust strip */}
-          <section className="mt-6 grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-[#e5e9e7] bg-[#e5e9e7] sm:grid-cols-2 lg:grid-cols-4">
+          <section className="mt-6 grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-[#ded8cd] bg-[#ded8cd] sm:grid-cols-2 lg:grid-cols-4">
             {TRUST.map(({ icon: Icon, label }) => (
               <div key={label} className="flex items-center gap-3 bg-white px-5 py-5">
-                <Icon className="h-5 w-5 shrink-0 text-[#0a7c42]" strokeWidth={1.7} aria-hidden="true" />
-                <span className="text-[13px] font-medium leading-snug text-[#3d4b44]">{label}</span>
+                <Icon className="h-5 w-5 shrink-0 text-[#007a95]" strokeWidth={1.7} aria-hidden="true" />
+                <span className="text-[13px] font-medium leading-snug text-[#56504a]">{label}</span>
               </div>
             ))}
           </section>
@@ -233,20 +233,20 @@ export default function BusinessLoansHub() {
 
           {/* What we help fund (use-cases -> intent pages) */}
           <section className="mt-16">
-            <h2 className="text-2xl font-extrabold text-[#10251b]">What we can help fund</h2>
-            <p className="mt-2 max-w-2xl text-sm leading-relaxed text-[#3d4b44]">
+            <h2 className="text-2xl font-extrabold text-[#14120f]">What we can help fund</h2>
+            <p className="mt-2 max-w-2xl text-sm leading-relaxed text-[#56504a]">
               Whatever the reason for borrowing, the enquiry is the same one minute. Pick the closest fit to read the
               detail, or just start the form above and we&apos;ll point you to the lenders that suit.
             </p>
             <div className="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {PRODUCTS.map(({ icon: Icon, title, desc, href }) => (
                 <Link key={href} href={href} className="nw-card nw-card-hover group flex flex-col rounded-2xl p-6">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#e6f3ec]">
-                    <Icon className="h-5 w-5 text-[#0a7c42]" strokeWidth={1.9} aria-hidden="true" />
+                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#e4f2f5]">
+                    <Icon className="h-5 w-5 text-[#007a95]" strokeWidth={1.9} aria-hidden="true" />
                   </span>
-                  <h3 className="mt-4 font-extrabold text-[#10251b] group-hover:text-[#0a7c42]">{title}</h3>
-                  <p className="mt-1.5 flex-1 text-sm leading-relaxed text-[#3d4b44]">{desc}</p>
-                  <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[#0a7c42]">
+                  <h3 className="mt-4 font-extrabold text-[#14120f] group-hover:text-[#007a95]">{title}</h3>
+                  <p className="mt-1.5 flex-1 text-sm leading-relaxed text-[#56504a]">{desc}</p>
+                  <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[#007a95]">
                     Read more <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
                   </span>
                 </Link>
@@ -256,20 +256,20 @@ export default function BusinessLoansHub() {
 
           {/* How to compare (answer-first for unbranded "how to compare business finance" queries) */}
           <section id="how-to-compare" className="mt-16 max-w-3xl scroll-mt-24">
-            <h2 className="text-2xl font-extrabold text-[#10251b]">How to compare business lenders in Australia</h2>
-            <p className="mt-2 text-sm leading-relaxed text-[#3d4b44]">
+            <h2 className="text-2xl font-extrabold text-[#14120f]">How to compare business lenders in Australia</h2>
+            <p className="mt-2 text-sm leading-relaxed text-[#56504a]">
               There is no single best lender; the right fit depends on your business. Compare on these before you apply:
             </p>
-            <ul className="mt-5 space-y-2.5 text-sm text-[#3d4b44]">
-              <li><strong className="text-[#10251b]">Loan size and product type.</strong> A term loan, line of credit, unsecured loan or equipment finance each suit different needs.</li>
-              <li><strong className="text-[#10251b]">Fees and total cost.</strong> Look past the headline rate to establishment and ongoing fees, and whether cost is quoted as an interest rate or a factor rate. A factor rate can look cheaper than it works out to be.</li>
-              <li><strong className="text-[#10251b]">Speed to funding.</strong> Some lenders fund same-day by reading your bank data; others take longer.</li>
-              <li><strong className="text-[#10251b]">Eligibility.</strong> Minimum trading time, monthly revenue and credit profile vary widely by lender.</li>
-              <li><strong className="text-[#10251b]">Repayment flexibility.</strong> Check the term, repayment frequency and any early-repayment fees.</li>
-              <li><strong className="text-[#10251b]">Security.</strong> Unsecured loans need no property or asset; secured options can cost less but put an asset at risk.</li>
-              <li><strong className="text-[#10251b]">Suitability by stage.</strong> Startups, established small businesses, short cash-flow gaps and larger businesses are often served by different lenders.</li>
+            <ul className="mt-5 space-y-2.5 text-sm text-[#56504a]">
+              <li><strong className="text-[#14120f]">Loan size and product type.</strong> A term loan, line of credit, unsecured loan or equipment finance each suit different needs.</li>
+              <li><strong className="text-[#14120f]">Fees and total cost.</strong> Look past the headline rate to establishment and ongoing fees, and whether cost is quoted as an interest rate or a factor rate. A factor rate can look cheaper than it works out to be.</li>
+              <li><strong className="text-[#14120f]">Speed to funding.</strong> Some lenders fund same-day by reading your bank data; others take longer.</li>
+              <li><strong className="text-[#14120f]">Eligibility.</strong> Minimum trading time, monthly revenue and credit profile vary widely by lender.</li>
+              <li><strong className="text-[#14120f]">Repayment flexibility.</strong> Check the term, repayment frequency and any early-repayment fees.</li>
+              <li><strong className="text-[#14120f]">Security.</strong> Unsecured loans need no property or asset; secured options can cost less but put an asset at risk.</li>
+              <li><strong className="text-[#14120f]">Suitability by stage.</strong> Startups, established small businesses, short cash-flow gaps and larger businesses are often served by different lenders.</li>
             </ul>
-            <p className="mt-5 text-sm leading-relaxed text-[#3d4b44]">
+            <p className="mt-5 text-sm leading-relaxed text-[#56504a]">
               Always check the lender&apos;s terms and disclosure before applying. Refer Labs is a referrer, not a lender:
               we do not approve applications or set rates.
             </p>
@@ -277,8 +277,8 @@ export default function BusinessLoansHub() {
 
           {/* Lenders compared */}
           <section id="lenders" className="mt-16 scroll-mt-24">
-            <h2 className="text-2xl font-extrabold text-[#10251b]">Compare {LENDERS.length} Australian business lenders</h2>
-            <p className="mt-2 max-w-2xl text-sm leading-relaxed text-[#3d4b44]">
+            <h2 className="text-2xl font-extrabold text-[#14120f]">Compare {LENDERS.length} Australian business lenders</h2>
+            <p className="mt-2 max-w-2xl text-sm leading-relaxed text-[#56504a]">
               Browse the lenders we compare, then open one for the full detail or get matched to the ones that fit through
               the enquiry above. No partnership or paid placement: each is submitted individually and assessed on its own
               criteria.
@@ -290,13 +290,13 @@ export default function BusinessLoansHub() {
 
           {/* How it works */}
           <section id="how" className="mt-16 scroll-mt-24">
-            <h2 className="text-2xl font-extrabold text-[#10251b]">How it works</h2>
+            <h2 className="text-2xl font-extrabold text-[#14120f]">How it works</h2>
             <ol className="mt-6 grid gap-5 sm:grid-cols-3">
               {STEPS.map((s, i) => (
                 <li key={s.h} className="nw-card rounded-2xl p-6">
-                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-[#0a7c42] text-sm font-bold text-white shadow-[0_8px_20px_-8px_rgba(10,124,66,0.5)]">{i + 1}</span>
-                  <h3 className="mt-4 font-bold text-[#10251b]">{s.h}</h3>
-                  <p className="mt-1.5 text-sm leading-relaxed text-[#3d4b44]">{s.p}</p>
+                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-[#007a95] text-sm font-bold text-white shadow-[0_8px_20px_-8px_rgba(0,122,149,0.5)]">{i + 1}</span>
+                  <h3 className="mt-4 font-bold text-[#14120f]">{s.h}</h3>
+                  <p className="mt-1.5 text-sm leading-relaxed text-[#56504a]">{s.p}</p>
                 </li>
               ))}
             </ol>
@@ -304,8 +304,8 @@ export default function BusinessLoansHub() {
 
           {/* Full side-by-side comparison table */}
           <section className="mt-16">
-            <h2 className="text-2xl font-extrabold text-[#10251b]">Side-by-side comparison</h2>
-            <p className="mt-2 max-w-2xl text-sm leading-relaxed text-[#3d4b44]">
+            <h2 className="text-2xl font-extrabold text-[#14120f]">Side-by-side comparison</h2>
+            <p className="mt-2 max-w-2xl text-sm leading-relaxed text-[#56504a]">
               The full detail on every lender we compare, in one table. Refer Labs has no partnership, panel arrangement or
               accreditation with any of them: each enquiry is submitted individually and the lender decides on its own criteria.
             </p>
@@ -319,15 +319,15 @@ export default function BusinessLoansHub() {
 
           {/* Guides */}
           <section className="mt-16">
-            <h2 className="text-2xl font-extrabold text-[#10251b]">Business lending guides</h2>
-            <p className="mt-2 max-w-2xl text-sm leading-relaxed text-[#3d4b44]">
+            <h2 className="text-2xl font-extrabold text-[#14120f]">Business lending guides</h2>
+            <p className="mt-2 max-w-2xl text-sm leading-relaxed text-[#56504a]">
               Everything we&apos;ve researched on borrowing for a business: what it really costs, which loan type fits, and
               what lenders look at before they say yes.
             </p>
             <ul className="mt-6 grid gap-x-8 gap-y-3 sm:grid-cols-2 lg:grid-cols-3">
               {GUIDE_LINKS.map((g) => (
                 <li key={g.href}>
-                  <Link href={g.href} className="text-sm font-semibold leading-snug text-[#0a7c42] hover:text-[#086536] hover:underline">
+                  <Link href={g.href} className="text-sm font-semibold leading-snug text-[#007a95] hover:text-[#003647] hover:underline">
                     {g.label}
                   </Link>
                 </li>
@@ -337,46 +337,46 @@ export default function BusinessLoansHub() {
 
           {/* FAQ */}
           <section className="mt-16 max-w-3xl">
-            <h2 className="text-2xl font-extrabold text-[#10251b]">Common questions</h2>
-            <dl className="mt-6 divide-y divide-[#eef1ef] border-t border-[#eef1ef]">
+            <h2 className="text-2xl font-extrabold text-[#14120f]">Common questions</h2>
+            <dl className="mt-6 divide-y divide-[#f1ede4] border-t border-[#f1ede4]">
               {FAQS.map((f) => (
                 <div key={f.q} className="py-5">
-                  <dt className="font-bold text-[#10251b]">{f.q}</dt>
-                  <dd className="mt-1.5 text-sm leading-relaxed text-[#3d4b44]">{f.a}</dd>
+                  <dt className="font-bold text-[#14120f]">{f.q}</dt>
+                  <dd className="mt-1.5 text-sm leading-relaxed text-[#56504a]">{f.a}</dd>
                 </div>
               ))}
             </dl>
           </section>
 
           {/* Official resources (authoritative government references, E-E-A-T) */}
-          <section className="mt-14 max-w-3xl border-t border-[#eef1ef] pt-8">
-            <h2 className="text-lg font-extrabold text-[#10251b]">Official resources</h2>
-            <p className="mt-2 text-sm leading-relaxed text-[#3d4b44]">
+          <section className="mt-14 max-w-3xl border-t border-[#f1ede4] pt-8">
+            <h2 className="text-lg font-extrabold text-[#14120f]">Official resources</h2>
+            <p className="mt-2 text-sm leading-relaxed text-[#56504a]">
               Independent, government-run references worth checking before you borrow:
             </p>
-            <ul className="mt-3 space-y-1.5 text-sm text-[#3d4b44]">
+            <ul className="mt-3 space-y-1.5 text-sm text-[#56504a]">
               <li>
-                <a href="https://business.gov.au/finance" target="_blank" rel="noopener" className="font-semibold text-[#0a7c42] hover:text-[#086536]">business.gov.au: Finance and funding</a>.
+                <a href="https://business.gov.au/finance" target="_blank" rel="noopener" className="font-semibold text-[#007a95] hover:text-[#003647]">business.gov.au: Finance and funding</a>.
                 {" "}Finance options, grants and funding basics for Australian businesses.
               </li>
               <li>
-                <a href="https://moneysmart.gov.au/loans" target="_blank" rel="noopener" className="font-semibold text-[#0a7c42] hover:text-[#086536]">ASIC MoneySmart: Loans</a>.
+                <a href="https://moneysmart.gov.au/loans" target="_blank" rel="noopener" className="font-semibold text-[#007a95] hover:text-[#003647]">ASIC MoneySmart: Loans</a>.
                 {" "}The regulator&apos;s free guidance on interest, fees and comparing credit.
               </li>
               <li>
-                <a href="https://asic.gov.au/for-finance-professionals/credit-licensees/" target="_blank" rel="noopener" className="font-semibold text-[#0a7c42] hover:text-[#086536]">ASIC credit licensees</a>.
+                <a href="https://asic.gov.au/for-finance-professionals/credit-licensees/" target="_blank" rel="noopener" className="font-semibold text-[#007a95] hover:text-[#003647]">ASIC credit licensees</a>.
                 {" "}Check whether a lender or broker holds an Australian credit licence.
               </li>
             </ul>
           </section>
 
           {/* Related */}
-          <section className="mt-14 flex flex-wrap gap-x-6 gap-y-2 border-t border-[#eef1ef] pt-8 text-sm">
-            <Link href="/what-a-business-loan-actually-costs" className="font-semibold text-[#0a7c42] hover:text-[#086536]">What a business loan actually costs</Link>
-            <Link href="/true-cost-of-business-loans-australia" className="font-semibold text-[#0a7c42] hover:text-[#086536]">The hidden cost of factor rates (analysis)</Link>
-            <Link href="/business-loan-calculator" className="font-semibold text-[#0a7c42] hover:text-[#086536]">Repayment calculator</Link>
-            <Link href="/equipment-finance-instant-asset-write-off" className="font-semibold text-[#0a7c42] hover:text-[#086536]">Equipment finance &amp; the write-off</Link>
-            <Link href="/how-we-make-money" className="font-semibold text-[#5a665f] hover:text-[#10251b]">How we make money</Link>
+          <section className="mt-14 flex flex-wrap gap-x-6 gap-y-2 border-t border-[#f1ede4] pt-8 text-sm">
+            <Link href="/what-a-business-loan-actually-costs" className="font-semibold text-[#007a95] hover:text-[#003647]">What a business loan actually costs</Link>
+            <Link href="/true-cost-of-business-loans-australia" className="font-semibold text-[#007a95] hover:text-[#003647]">The hidden cost of factor rates (analysis)</Link>
+            <Link href="/business-loan-calculator" className="font-semibold text-[#007a95] hover:text-[#003647]">Repayment calculator</Link>
+            <Link href="/equipment-finance-instant-asset-write-off" className="font-semibold text-[#007a95] hover:text-[#003647]">Equipment finance &amp; the write-off</Link>
+            <Link href="/how-we-make-money" className="font-semibold text-[#56504a] hover:text-[#14120f]">How we make money</Link>
           </section>
         </div>
       </main>

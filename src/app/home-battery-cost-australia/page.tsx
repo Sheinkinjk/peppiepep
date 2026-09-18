@@ -104,24 +104,24 @@ export default function HomeBatteryCostAustraliaPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
 
-      <main className="text-[#10251b]">
+      <main className="text-[#14120f]">
         <div className="mx-auto max-w-3xl px-6 sm:px-8">
 
           {/* Breadcrumb */}
-          <nav className="flex flex-wrap items-center gap-2 pt-8 text-sm text-[#5a665f]">
-            <Link href="/" className="hover:text-[#10251b] transition-colors">Refer Labs</Link>
+          <nav className="flex flex-wrap items-center gap-2 pt-8 text-sm text-[#56504a]">
+            <Link href="/" className="hover:text-[#14120f] transition-colors">Refer Labs</Link>
             <span>/</span>
-            <Link href="/apollo-energy-group" className="hover:text-[#10251b] transition-colors">Home batteries</Link>
+            <Link href="/apollo-energy-group" className="hover:text-[#14120f] transition-colors">Home batteries</Link>
             <span>/</span>
-            <span className="text-[#10251b]">Cost</span>
+            <span className="text-[#14120f]">Cost</span>
           </nav>
 
           {/* Hero */}
           <header className="pt-9 pb-6">
-            <h1 className="mt-4 text-3xl sm:text-4xl lg:text-[2.6rem] font-extrabold leading-[1.08] tracking-tight text-[#10251b]">
+            <h1 className="mt-4 text-3xl sm:text-4xl lg:text-[2.6rem] font-extrabold leading-[1.08] tracking-tight text-[#14120f]">
               How much a home battery costs in Australia
             </h1>
-            <p className="mt-5 text-base sm:text-lg leading-relaxed text-[#3d4b44]">
+            <p className="mt-5 text-base sm:text-lg leading-relaxed text-[#56504a]">
               Battery prices are confusing because quotes mix up supply-only and installed, and before and after the
               rebate. This page sets out the real installed cost ranges for 2026 by size, what the federal rebate takes
               off, what payback periods reputable sources cite, and why quotes vary so much. It is general
@@ -132,9 +132,9 @@ export default function HomeBatteryCostAustraliaPage() {
 
           {/* Answer-first: the exact buyer question as an H2, then a liftable answer for engines. */}
           <section className="pb-2">
-            <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#10251b]">How much does it cost to install a home battery in Australia?</h2>
+            <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#14120f]">How much does it cost to install a home battery in Australia?</h2>
             <div className="mt-4 nw-card px-6 py-5">
-              <p className="text-[15.5px] leading-relaxed text-[#2b362f]">
+              <p className="text-[15.5px] leading-relaxed text-[#14120f]">
                 Installed home batteries in Australia are commonly quoted around $600 to $1,300 per usable kWh before
                 rebates, with larger systems costing less per kWh. The federal Cheaper Home Batteries discount then takes
                 roughly 30% off at the point of sale, applied by your installer. What you pay depends on
@@ -146,15 +146,15 @@ export default function HomeBatteryCostAustraliaPage() {
           </section>
 
           {/* Info-only note */}
-          <div className="nw-card px-5 py-4 text-sm leading-relaxed text-[#3d4b44]">
-            <span className="font-bold text-[#10251b]">Indicative ranges.</span> The figures below are researched
+          <div className="nw-card px-5 py-4 text-sm leading-relaxed text-[#56504a]">
+            <span className="font-bold text-[#14120f]">Indicative ranges.</span> The figures below are researched
             industry ranges, not fixed prices, and battery costs move with the market. Use them to sense-check a quote,
             not as a promise. This page contains a disclosed commercial referral arrangement with Apollo Energy Group.
           </div>
 
           {/* First CTA */}
-          <div className="mt-7 flex flex-col items-start gap-3 rounded-2xl border border-[#0a7c42]/25 bg-[#e8f5ee] px-6 py-5 sm:flex-row sm:items-center sm:justify-between">
-            <p className="max-w-md text-[15px] leading-relaxed text-[#10251b]">
+          <div className="mt-7 flex flex-col items-start gap-3 rounded-2xl border border-[#007a95]/25 bg-[#e4f2f5] px-6 py-5 sm:flex-row sm:items-center sm:justify-between">
+            <p className="max-w-md text-[15px] leading-relaxed text-[#14120f]">
               The only price that matters is the one for your home. Apollo Energy Group sizes a battery from your actual
               usage and applies the federal rebate at the quote. You get $500 off your quote through our link, no code
               needed.
@@ -172,45 +172,45 @@ export default function HomeBatteryCostAustraliaPage() {
           <article className="mt-10 space-y-9">
 
             <section>
-              <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#10251b]">
+              <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#14120f]">
                 Installed cost by size
               </h2>
-              <p className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">
+              <p className="mt-3 text-[15px] leading-relaxed text-[#56504a]">
                 Installed battery cost is usually quoted per usable kWh, and bigger systems cost less per kWh. These
                 bands are from industry price tracking in 2026. They are before any state incentive, and whether the
                 federal rebate is already applied depends on the quote.
               </p>
-              <div className="mt-5 overflow-x-auto rounded-xl border border-[#e5e9e7]">
+              <div className="mt-5 overflow-x-auto rounded-xl border border-[#ded8cd]">
                 <table className="w-full min-w-[520px] text-sm">
                   <thead>
-                    <tr className="bg-[#f5f8f6] text-left">
-                      <th className="px-4 py-3 font-semibold text-[#10251b]">Battery size</th>
-                      <th className="px-4 py-3 font-semibold text-[#10251b]">Installed cost</th>
-                      <th className="px-4 py-3 font-semibold text-[#10251b]">Notes</th>
+                    <tr className="bg-[#f7f4ee] text-left">
+                      <th className="px-4 py-3 font-semibold text-[#14120f]">Battery size</th>
+                      <th className="px-4 py-3 font-semibold text-[#14120f]">Installed cost</th>
+                      <th className="px-4 py-3 font-semibold text-[#14120f]">Notes</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-[#e5e9e7]">
+                  <tbody className="divide-y divide-[#ded8cd]">
                     {bands.map((b) => (
                       <tr key={b.size}>
-                        <td className="px-4 py-3 font-semibold text-[#10251b] whitespace-nowrap">{b.size}</td>
-                        <td className="px-4 py-3 whitespace-nowrap font-semibold text-[#0a7c42]">{b.perKwh}</td>
-                        <td className="px-4 py-3 text-[#3d4b44]">{b.note}</td>
+                        <td className="px-4 py-3 font-semibold text-[#14120f] whitespace-nowrap">{b.size}</td>
+                        <td className="px-4 py-3 whitespace-nowrap font-semibold text-[#007a95]">{b.perKwh}</td>
+                        <td className="px-4 py-3 text-[#56504a]">{b.note}</td>
                       </tr>
                     ))}
                   </tbody>
                 </table>
               </div>
-              <p className="mt-3 text-xs leading-relaxed text-[#627068]">
+              <p className="mt-3 text-xs leading-relaxed text-[#56504a]">
                 Ranges based on Australian industry price tracking (SolarQuotes battery cost guide, updated May 2026).
                 Indicative only, before state incentives. A new hybrid inverter, if needed, adds cost.
               </p>
             </section>
 
             <section>
-              <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#10251b]">
+              <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#14120f]">
                 What that looks like in dollars
               </h2>
-              <div className="mt-4 space-y-4 text-[15px] leading-relaxed text-[#3d4b44]">
+              <div className="mt-4 space-y-4 text-[15px] leading-relaxed text-[#56504a]">
                 <p>
                   Turned into whole-system prices, industry examples in 2026 put a common household battery in a broad
                   band from around $4,000 up to $13,000 or more installed after the federal rebate, depending heavily on
@@ -229,10 +229,10 @@ export default function HomeBatteryCostAustraliaPage() {
             </section>
 
             <section>
-              <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#10251b]">
+              <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#14120f]">
                 Payback: a range, not a number
               </h2>
-              <div className="mt-4 space-y-4 text-[15px] leading-relaxed text-[#3d4b44]">
+              <div className="mt-4 space-y-4 text-[15px] leading-relaxed text-[#56504a]">
                 <p>
                   With the 2026 rebate, reputable Australian sources commonly cite payback of about six to nine years in
                   states with higher electricity prices, and shorter, closer to five to seven years, if you join a
@@ -251,10 +251,10 @@ export default function HomeBatteryCostAustraliaPage() {
             </section>
 
             <section>
-              <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#10251b]">
+              <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#14120f]">
                 Reading a quote without getting caught out
               </h2>
-              <div className="mt-4 space-y-4 text-[15px] leading-relaxed text-[#3d4b44]">
+              <div className="mt-4 space-y-4 text-[15px] leading-relaxed text-[#56504a]">
                 <p>
                   Three checks save most of the confusion. Is the price supply-only or fully installed? Is it before or
                   after the federal rebate? And does it include a new inverter if your setup needs one? Get quotes on a
@@ -271,9 +271,9 @@ export default function HomeBatteryCostAustraliaPage() {
             </section>
 
             {/* Second CTA */}
-            <section className="rounded-2xl border border-[#e5e9e7] bg-[#eef1ec] px-6 py-6">
-              <h2 className="text-lg font-bold text-[#10251b]">Get a price for your actual home</h2>
-              <p className="mt-2 text-[15px] leading-relaxed text-[#3d4b44]">
+            <section className="rounded-2xl border border-[#ded8cd] bg-[#f1ede4] px-6 py-6">
+              <h2 className="text-lg font-bold text-[#14120f]">Get a price for your actual home</h2>
+              <p className="mt-2 text-[15px] leading-relaxed text-[#56504a]">
                 Ranges only get you so far. Apollo Energy Group sizes a battery from your real usage and applies the
                 federal rebate at the quote, so you see a real number for your home. You get $500 off your quote through
                 our link, no code needed, and it commits you to nothing.
@@ -289,15 +289,15 @@ export default function HomeBatteryCostAustraliaPage() {
 
             {/* FAQ */}
             <section>
-              <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#10251b]">Frequently asked questions</h2>
-              <div className="mt-5 divide-y divide-[#e5e9e7] border-y border-[#e5e9e7]">
+              <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#14120f]">Frequently asked questions</h2>
+              <div className="mt-5 divide-y divide-[#ded8cd] border-y border-[#ded8cd]">
                 {faqs.map((f) => (
                   <details key={f.q} className="group py-4">
-                    <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-[#10251b]">
+                    <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-[#14120f]">
                       {f.q}
-                      <span className="text-xl leading-none text-[#0a7c42] transition-transform group-open:rotate-45">+</span>
+                      <span className="text-xl leading-none text-[#007a95] transition-transform group-open:rotate-45">+</span>
                     </summary>
-                    <p className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">{f.a}</p>
+                    <p className="mt-3 text-[15px] leading-relaxed text-[#56504a]">{f.a}</p>
                   </details>
                 ))}
               </div>
@@ -305,7 +305,7 @@ export default function HomeBatteryCostAustraliaPage() {
 
             {/* Related */}
             <section>
-              <h2 className="text-lg font-bold text-[#10251b]">Keep reading</h2>
+              <h2 className="text-lg font-bold text-[#14120f]">Keep reading</h2>
               <ul className="mt-3 space-y-2 text-[15px]">
                 <li><Link href="/best-home-battery-australia" className="nw-link">Best home battery: how to choose one</Link></li>
                 <li><Link href="/what-size-home-battery-do-i-need-australia" className="nw-link">What size home battery do I need?</Link></li>
@@ -316,8 +316,8 @@ export default function HomeBatteryCostAustraliaPage() {
             </section>
 
             {/* Disclosure */}
-            <section className="border-t border-[#e5e9e7] pt-6 pb-16">
-              <p className="text-xs leading-relaxed text-[#627068]">
+            <section className="border-t border-[#ded8cd] pt-6 pb-16">
+              <p className="text-xs leading-relaxed text-[#56504a]">
                 This page is published by Refer Labs, an independent comparison publisher, and contains a disclosed
                 commercial referral arrangement with Apollo Energy Group, which means we may earn a commission if you request a quote through
                 our link. Commissions never change what we write. Prices are researched industry ranges, indicative only

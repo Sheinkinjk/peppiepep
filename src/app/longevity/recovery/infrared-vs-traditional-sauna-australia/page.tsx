@@ -38,7 +38,7 @@ export default function Page() {
       sectionHref="/longevity/recovery"
       slug="/longevity/recovery/infrared-vs-traditional-sauna-australia"
       crumb="Infrared vs traditional"
-      h1={<>Infrared or traditional sauna: <span className="italic text-[#0a7c42]">the differences that decide it</span></>}
+      h1={<>Infrared or traditional sauna: <span className="italic text-[#007a95]">the differences that decide it</span></>}
       intro="Two different appliances, not two versions of one. Infrared uses radiant heat to warm your body directly, and a smaller cabin can sometimes run from a standard outlet, though often not. A traditional sauna heats the air around you, runs far hotter, and usually needs a dedicated circuit and often hard wiring. That electrical difference decides more purchases than the research does."
       headline="Infrared vs traditional sauna in Australia"
       description={seoConfig.saunaComparison.description}
@@ -49,17 +49,17 @@ export default function Page() {
       ]}
     >
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Side by side</h2>
-        <div className="mt-4 overflow-x-auto rounded-2xl border border-[#e5e9e7]">
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Side by side</h2>
+        <div className="mt-4 overflow-x-auto rounded-2xl border border-[#ded8cd]">
           <table className="w-full min-w-[580px] border-collapse text-left text-sm">
-            <thead className="bg-[#f8faf9] text-[11px] uppercase tracking-[0.1em] text-[#627068]">
+            <thead className="bg-[#f7f4ee] text-[11px] uppercase tracking-[0.1em] text-[#56504a]">
               <tr>
                 <th className="px-4 py-3 font-semibold">&nbsp;</th>
                 <th className="px-4 py-3 font-semibold">Infrared</th>
                 <th className="px-4 py-3 font-semibold">Traditional</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-[#eef1ef]">
+            <tbody className="divide-y divide-[#f1ede4]">
               {[
                 ["How it heats", "Radiant heat, warms the body directly", "Heats the air around you"],
                 ["Air temperature", "Considerably lower", "High"],
@@ -70,7 +70,7 @@ export default function Page() {
                 ["Research base", "Less extensive", "What most widely-cited studies used"],
               ].map(([k, a, b]) => (
                 <tr key={k}>
-                  <td className="px-4 py-3 font-semibold text-[#10251b]">{k}</td>
+                  <td className="px-4 py-3 font-semibold text-[#14120f]">{k}</td>
                   <td className="px-4 py-3">{a}</td>
                   <td className="px-4 py-3">{b}</td>
                 </tr>
@@ -81,7 +81,7 @@ export default function Page() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">The evidence point worth understanding</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">The evidence point worth understanding</h2>
         <p className="mt-3">
           When you see sauna use linked to long-term health outcomes, check what was studied. Much of that work looked
           at traditional Finnish sauna use in populations who used it regularly over years.
@@ -97,17 +97,17 @@ export default function Page() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Which constraints should decide it</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Which constraints should decide it</h2>
         <ul className="mt-3 list-disc space-y-2 pl-5">
-          <li><strong className="text-[#10251b]">Your switchboard.</strong> If a dedicated circuit is impractical or expensive at your place, that can settle it before preference does.</li>
-          <li><strong className="text-[#10251b]">Heat tolerance.</strong> If high heat is unpleasant for you, an infrared cabin is the one you will use.</li>
-          <li><strong className="text-[#10251b]">Space and ventilation.</strong> Traditional units are generally larger and have more demanding requirements.</li>
-          <li><strong className="text-[#10251b]">Why you are buying.</strong> If it is the research, that argues for traditional. If it is enjoyment and consistency, pick whichever you will sit in.</li>
+          <li><strong className="text-[#14120f]">Your switchboard.</strong> If a dedicated circuit is impractical or expensive at your place, that can settle it before preference does.</li>
+          <li><strong className="text-[#14120f]">Heat tolerance.</strong> If high heat is unpleasant for you, an infrared cabin is the one you will use.</li>
+          <li><strong className="text-[#14120f]">Space and ventilation.</strong> Traditional units are generally larger and have more demanding requirements.</li>
+          <li><strong className="text-[#14120f]">Why you are buying.</strong> If it is the research, that argues for traditional. If it is enjoyment and consistency, pick whichever you will sit in.</li>
         </ul>
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Safety</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Safety</h2>
         <p className="mt-3">
           Heat exposure raises heart rate and can affect blood pressure. If you have a heart condition, are pregnant, or
           take medicines affecting temperature regulation or blood pressure, speak to a practitioner before starting.

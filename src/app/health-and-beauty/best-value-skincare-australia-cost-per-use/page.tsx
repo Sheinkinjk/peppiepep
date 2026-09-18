@@ -44,7 +44,7 @@ export default function Page() {
       sectionHref="/health-and-beauty"
       slug="/health-and-beauty/best-value-skincare-australia-cost-per-use"
       crumb="Cost per use"
-      h1={<>Skincare value: <span className="italic text-[#0a7c42]">work in cost per use, not sticker price</span></>}
+      h1={<>Skincare value: <span className="italic text-[#007a95]">work in cost per use, not sticker price</span></>}
       intro="A $30 moisturiser you replace every six weeks is more expensive than a $90 one that lasts eight months. Sticker price hides that completely. Here is the arithmetic, and the three places it quietly lies to you."
       headline="Skincare cost per use: what Australians pay"
       description={seoConfig.skincareCostPerUse.description}
@@ -57,28 +57,28 @@ export default function Page() {
       ]}
     >
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">The calculation</h2>
-        <div className="mt-4 rounded-2xl border border-[#0a7c42]/25 bg-[#f5f8f6] p-6">
-          <p className="text-[15px] font-semibold text-[#10251b]">
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">The calculation</h2>
+        <div className="mt-4 rounded-2xl border border-[#007a95]/25 bg-[#f7f4ee] p-6">
+          <p className="text-[15px] font-semibold text-[#14120f]">
             Cost per use = price ÷ (bottle volume ÷ amount used per application)
           </p>
-          <p className="mt-3 text-sm text-[#3d4b44]">
+          <p className="mt-3 text-sm text-[#56504a]">
             Every input is on the packaging except the last one, and the last one is the only one people get wrong.
           </p>
         </div>
         <p className="mt-4">
           Two illustrative products, using round numbers to show the method rather than to describe anything real:
         </p>
-        <div className="mt-4 overflow-x-auto rounded-2xl border border-[#e5e9e7]">
+        <div className="mt-4 overflow-x-auto rounded-2xl border border-[#ded8cd]">
           <table className="w-full min-w-[520px] border-collapse text-left text-sm">
-            <thead className="bg-[#f8faf9] text-[11px] uppercase tracking-[0.1em] text-[#627068]">
+            <thead className="bg-[#f7f4ee] text-[11px] uppercase tracking-[0.1em] text-[#56504a]">
               <tr>
                 <th className="px-4 py-3 font-semibold">&nbsp;</th>
                 <th className="px-4 py-3 font-semibold">Product A</th>
                 <th className="px-4 py-3 font-semibold">Product B</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-[#eef1ef]">
+            <tbody className="divide-y divide-[#f1ede4]">
               {[
                 ["Price", "$30", "$90"],
                 ["Volume", "50ml", "30ml"],
@@ -88,7 +88,7 @@ export default function Page() {
                 ["Bottle lasts (nightly)", "About 5 weeks", "About 8.5 weeks"],
               ].map(([k, a, b]) => (
                 <tr key={k}>
-                  <td className="px-4 py-3 font-semibold text-[#10251b]">{k}</td>
+                  <td className="px-4 py-3 font-semibold text-[#14120f]">{k}</td>
                   <td className="px-4 py-3 tabular-nums">{a}</td>
                   <td className="px-4 py-3 tabular-nums">{b}</td>
                 </tr>
@@ -96,7 +96,7 @@ export default function Page() {
             </tbody>
           </table>
         </div>
-        <p className="mt-3 text-xs text-[#5a665f]">
+        <p className="mt-3 text-xs text-[#56504a]">
           Illustrative figures chosen to demonstrate the arithmetic. They do not describe any specific product.
         </p>
         <p className="mt-4">
@@ -107,26 +107,26 @@ export default function Page() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Where the number lies to you</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Where the number lies to you</h2>
         <div className="mt-4 space-y-4">
-          <div className="rounded-2xl border border-[#e5e9e7] bg-white p-5">
-            <p className="font-semibold text-[#10251b]">It ignores shelf life once opened</p>
+          <div className="rounded-2xl border border-[#ded8cd] bg-white p-5">
+            <p className="font-semibold text-[#14120f]">It ignores shelf life once opened</p>
             <p className="mt-1.5 text-sm">
               A large bottle of something that degrades after opening can expire with a third left in it. Cost per use
               assumes you finish the bottle. Check the period-after-opening symbol, the small jar icon with a number
               and an M, and divide by that instead if it will run out first.
             </p>
           </div>
-          <div className="rounded-2xl border border-[#e5e9e7] bg-white p-5">
-            <p className="font-semibold text-[#10251b]">It rewards under-application</p>
+          <div className="rounded-2xl border border-[#ded8cd] bg-white p-5">
+            <p className="font-semibold text-[#14120f]">It rewards under-application</p>
             <p className="mt-1.5 text-sm">
               Halve the amount you use and cost per use halves too, which looks like a saving and is often just a
               weaker routine. This matters most for sunscreen, where the gap between the labelled protection and what
               you get from a thin layer is large.
             </p>
           </div>
-          <div className="rounded-2xl border border-[#e5e9e7] bg-white p-5">
-            <p className="font-semibold text-[#10251b]">It says nothing about whether you will keep going</p>
+          <div className="rounded-2xl border border-[#ded8cd] bg-white p-5">
+            <p className="font-semibold text-[#14120f]">It says nothing about whether you will keep going</p>
             <p className="mt-1.5 text-sm">
               The cheapest product per use is the one sitting unopened in a drawer, and it is also worth nothing. If a
               texture or scent means you will skip it, the arithmetic is irrelevant.
@@ -136,7 +136,7 @@ export default function Page() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">A more useful annual view</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">A more useful annual view</h2>
         <p className="mt-3">
           Cost per use is easy to compare but hard to feel. Multiply it out instead. A product at $1.50 per application
           used nightly is roughly $550 a year; at $0.91 it is about $330. Seeing the annual figure is what usually

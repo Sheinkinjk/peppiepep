@@ -88,20 +88,20 @@ export default function MidocPage() {
       ))}
 
       <main id="main-content" className="mx-auto max-w-3xl px-5 py-12 sm:px-8 sm:py-16">
-        <nav className="mb-8 flex flex-wrap items-center gap-2 text-sm text-[#627068]">
-          <Link href="/" className="hover:text-[#0a7c42]">Refer Labs</Link>
+        <nav className="mb-8 flex flex-wrap items-center gap-2 text-sm text-[#56504a]">
+          <Link href="/" className="hover:text-[#007a95]">Refer Labs</Link>
           <span>/</span>
-          <Link href="/mens-health" className="hover:text-[#0a7c42]">Men&apos;s Health</Link>
+          <Link href="/mens-health" className="hover:text-[#007a95]">Men&apos;s Health</Link>
           <span>/</span>
-          <span className="text-[#2b362f]">Midoc</span>
+          <span className="text-[#14120f]">Midoc</span>
         </nav>
 
-        <h1 className="text-3xl font-extrabold leading-[1.08] tracking-tight text-[#10251b] sm:text-4xl">
+        <h1 className="text-3xl font-extrabold leading-[1.08] tracking-tight text-[#14120f] sm:text-4xl">
           Midoc: what it costs and how the access route works
         </h1>
 
         {/* Answer-first. Nothing goes above this paragraph. */}
-        <p className="mt-5 text-lg leading-relaxed text-[#3d4b44]">
+        <p className="mt-5 text-lg leading-relaxed text-[#56504a]">
           Midoc is an Australian telehealth service. You fill in a short form, a doctor registered with
           AHPRA calls you by phone or video usually within 5 to 60 minutes, and where it is
           appropriate they can issue a prescription, a medical certificate or a specialist referral.
@@ -116,54 +116,54 @@ export default function MidocPage() {
         <AffiliateDisclosure compact partners={["Midoc"]} className="mt-4 max-w-2xl" />
         <EditorialMeta lastUpdated={UPDATED} className="mt-5" />
 
-        <p className="mt-6 rounded-xl border border-[#e5e9e7] bg-[#f8faf9] px-5 py-4 text-xs leading-relaxed text-[#5a665f]">
-          <span className="font-semibold text-[#3d4b44]">Information only.</span> This page describes a
+        <p className="mt-6 rounded-xl border border-[#ded8cd] bg-[#f7f4ee] px-5 py-4 text-xs leading-relaxed text-[#56504a]">
+          <span className="font-semibold text-[#56504a]">Information only.</span> This page describes a
           service and how to reach it. It is not medical advice and does not recommend any treatment.
           Prescription medicines in Australia are supplied only after an individual assessment by a
           registered practitioner, who decides what is appropriate.
         </p>
 
         <section className="mt-12">
-          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">What a Midoc consultation costs</h2>
-          <p className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">
+          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">What a Midoc consultation costs</h2>
+          <p className="mt-3 text-[15px] leading-relaxed text-[#56504a]">
             Midoc publishes its prices rather than quoting after an assessment, and states there is no
             membership fee. Every figure below was read off midoc.com.au on {MIDOC.readOnLabel} and can
             change, so confirm the current price on their site before you book.
           </p>
-          <dl className="mt-6 divide-y divide-[#eef1ef] overflow-hidden rounded-2xl border border-[#e5e9e7] bg-white">
+          <dl className="mt-6 divide-y divide-[#f1ede4] overflow-hidden rounded-2xl border border-[#ded8cd] bg-white">
             {MIDOC.bands.map((p) => (
               <div key={p.band} className="px-5 py-4 sm:px-6">
-                <dt className="text-[15px] font-bold text-[#10251b]">
+                <dt className="text-[15px] font-bold text-[#14120f]">
                   {p.band}, {p.price}{" "}
-                  <span className="font-medium text-[#627068]">({MIDOC.readOnShort})</span>
+                  <span className="font-medium text-[#56504a]">({MIDOC.readOnShort})</span>
                 </dt>
-                <dd className="mt-1 text-sm leading-relaxed text-[#3d4b44]">{p.items}</dd>
+                <dd className="mt-1 text-sm leading-relaxed text-[#56504a]">{p.items}</dd>
               </div>
             ))}
           </dl>
         </section>
 
         <section className="mt-12">
-          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">How the access route works</h2>
-          <ol className="mt-4 space-y-3 text-[15px] leading-relaxed text-[#3d4b44]">
-            <li><span className="font-semibold text-[#10251b]">1.</span> Pick the service and complete a short health form.</li>
-            <li><span className="font-semibold text-[#10251b]">2.</span> An AHPRA-registered doctor calls you, by phone or video depending on the service, usually within 5 to 60 minutes.</li>
-            <li><span className="font-semibold text-[#10251b]">3.</span> If it is clinically appropriate, they issue what you need: a prescription, a certificate, or a referral. A Medicare card is required for a prescription, though not for the consultation itself.</li>
+          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">How the access route works</h2>
+          <ol className="mt-4 space-y-3 text-[15px] leading-relaxed text-[#56504a]">
+            <li><span className="font-semibold text-[#14120f]">1.</span> Pick the service and complete a short health form.</li>
+            <li><span className="font-semibold text-[#14120f]">2.</span> An AHPRA-registered doctor calls you, by phone or video depending on the service, usually within 5 to 60 minutes.</li>
+            <li><span className="font-semibold text-[#14120f]">3.</span> If it is clinically appropriate, they issue what you need: a prescription, a certificate, or a referral. A Medicare card is required for a prescription, though not for the consultation itself.</li>
           </ol>
-          <p className="mt-4 text-[15px] leading-relaxed text-[#3d4b44]">
+          <p className="mt-4 text-[15px] leading-relaxed text-[#56504a]">
             Hours vary by service. Most run {MIDOC.hoursMost}, with {MIDOC.hoursExceptions}.
           </p>
         </section>
 
         <section className="mt-12">
-          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Who it suits, and who it does not</h2>
-          <p className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">
+          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Who it suits, and who it does not</h2>
+          <p className="mt-3 text-[15px] leading-relaxed text-[#56504a]">
             It suits someone who wants a decision quickly, outside standard clinic hours, on something
             they already understand: a certificate, a repeat script, a referral, or a first
             conversation about a subject they have been putting off. Published pricing and no
             membership fee make the cost knowable before you start.
           </p>
-          <p className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">
+          <p className="mt-3 text-[15px] leading-relaxed text-[#56504a]">
             It does not suit anyone who needs a physical examination, ongoing continuity with a GP who
             knows their history, or emergency care. It also will not work if you need a prescription
             and do not hold a Medicare card, which is the check worth doing before you book rather
@@ -186,25 +186,25 @@ export default function MidocPage() {
         />
 
         <section className="mt-14">
-          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Common questions</h2>
-          <dl className="mt-5 divide-y divide-[#eef1ef] overflow-hidden rounded-2xl border border-[#e5e9e7] bg-white">
+          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Common questions</h2>
+          <dl className="mt-5 divide-y divide-[#f1ede4] overflow-hidden rounded-2xl border border-[#ded8cd] bg-white">
             {FAQS.map((f) => (
               <div key={f.q} className="px-5 py-5 sm:px-6">
-                <dt className="text-[15px] font-bold text-[#10251b]">{f.q}</dt>
-                <dd className="mt-2 text-sm leading-relaxed text-[#3d4b44]">{f.a}</dd>
+                <dt className="text-[15px] font-bold text-[#14120f]">{f.q}</dt>
+                <dd className="mt-2 text-sm leading-relaxed text-[#56504a]">{f.a}</dd>
               </div>
             ))}
           </dl>
         </section>
 
         <section className="mt-12">
-          <h2 className="text-xl font-bold text-[#10251b]">Related reading</h2>
+          <h2 className="text-xl font-bold text-[#14120f]">Related reading</h2>
           <ul className="mt-4 space-y-2 text-[15px]">
-            <li><Link href="/mens-health/is-telehealth-or-a-gp-cheaper-for-mens-health" className="text-[#0a7c42] hover:underline">Is telehealth or a GP cheaper for men&apos;s health?</Link></li>
-            <li><Link href="/mens-health/online-mens-health-clinics-compared" className="text-[#0a7c42] hover:underline">Online men&apos;s health clinics compared</Link></li>
-            <li><Link href="/mens-health/online-prescription-australia" className="text-[#0a7c42] hover:underline">Online prescriptions in Australia: cost and Medicare</Link></li>
-            <li><Link href="/mens-health/online-doctor-medical-certificate-australia" className="text-[#0a7c42] hover:underline">Online medical certificates: cost and turnaround</Link></li>
-            <li><Link href="/mens-health" className="text-[#0a7c42] hover:underline">All men&apos;s health guides</Link></li>
+            <li><Link href="/mens-health/is-telehealth-or-a-gp-cheaper-for-mens-health" className="text-[#007a95] hover:underline">Is telehealth or a GP cheaper for men&apos;s health?</Link></li>
+            <li><Link href="/mens-health/online-mens-health-clinics-compared" className="text-[#007a95] hover:underline">Online men&apos;s health clinics compared</Link></li>
+            <li><Link href="/mens-health/online-prescription-australia" className="text-[#007a95] hover:underline">Online prescriptions in Australia: cost and Medicare</Link></li>
+            <li><Link href="/mens-health/online-doctor-medical-certificate-australia" className="text-[#007a95] hover:underline">Online medical certificates: cost and turnaround</Link></li>
+            <li><Link href="/mens-health" className="text-[#007a95] hover:underline">All men&apos;s health guides</Link></li>
           </ul>
         </section>
 

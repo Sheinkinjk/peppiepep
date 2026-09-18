@@ -27,6 +27,16 @@ const LOGOS: Record<string, string> = {
   "/emma-sleep": "/logos/emma-sleep.svg",
   "/aussie-health-products": "/logos/aussie-health-products.png",
   "/optislim": "/logos/optislim.svg",
+  // Added 18 Sep 2026 for the hub redesign: these files were already in
+  // public/logos (the homepage and /deals use them) but the hubs, reading only
+  // this map, showed monograms for every health and pets partner.
+  "/moshy": "/logos/moshy.png",
+  "/juniper": "/logos/juniper.png",
+  "/moshhair": "/logos/mosh-tile.png",
+  "/dense": "/logos/dense.png",
+  "/knose": "/logos/knose.svg",
+  "/petsonme": "/logos/petsonme.svg",
+  "/apollo-energy-group": "/logos/apollo-energy.png",
 };
 
 /** Accepts the brand's own route, e.g. "/foreo". */

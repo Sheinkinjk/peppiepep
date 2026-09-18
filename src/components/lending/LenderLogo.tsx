@@ -31,7 +31,7 @@ export default function LenderLogo({
     return (
       <span
         aria-hidden="true"
-        className={`inline-flex shrink-0 items-center justify-center rounded-md bg-[#e8f0ec] font-bold text-[#0a7c42] ${className}`}
+        className={`inline-flex shrink-0 items-center justify-center rounded-md bg-[#e8f0ec] font-bold text-[#007a95] ${className}`}
         style={{ width: size, height: size, fontSize: Math.round(size * 0.42) }}
       >
         {name.trim().charAt(0).toUpperCase()}

@@ -111,8 +111,8 @@ const webPageSchema = {
 
 // ─── Comparison data ──────────────────────────────────────────────────────────
 
-const CYAN    = "#0a7c42";
-const CYAN_LT = "#0a7c42";
+const CYAN    = "#007a95";
+const CYAN_LT = "#007a95";
 
 const platforms = [
   {
@@ -142,7 +142,7 @@ const platforms = [
   {
     name: "Substack",
     badge: "Best for Discovery",
-    badgeColor: "#0a7c42",
+    badgeColor: "#007a95",
     href: "https://substack.com",
     internalHref: null,
     tagline: "Simplest path to a paid newsletter",
@@ -165,7 +165,7 @@ const platforms = [
   {
     name: "ConvertKit (Kit)",
     badge: "Best for Automation",
-    badgeColor: "#0a7c42",
+    badgeColor: "#007a95",
     href: "https://kit.com",
     internalHref: null,
     tagline: "Advanced email marketing for product businesses",
@@ -219,23 +219,23 @@ export default function BestNewsletterPlatformPage() {
       <main id="main-content" className="relative mx-auto max-w-5xl px-5 sm:px-8 lg:px-12 pb-24 pt-14 sm:pt-18">
 
         {/* Breadcrumb */}
-        <nav className="mb-10 flex items-center gap-2 text-sm text-[#3d4b44]">
-          <Link href="/" className="hover:text-[#2b362f] transition-colors">Refer Labs</Link>
+        <nav className="mb-10 flex items-center gap-2 text-sm text-[#56504a]">
+          <Link href="/" className="hover:text-[#14120f] transition-colors">Refer Labs</Link>
           <span>/</span>
-          <Link href="/guides" className="hover:text-[#2b362f] transition-colors">Guides</Link>
+          <Link href="/guides" className="hover:text-[#14120f] transition-colors">Guides</Link>
           <span>/</span>
-          <span className="text-[#2b362f]">Best Newsletter Platform 2026</span>
+          <span className="text-[#14120f]">Best Newsletter Platform 2026</span>
         </nav>
 
 
         {/* Hero */}
         <div className="mb-16 sm:mb-20 max-w-3xl">
           <p className="nw-kicker mb-4">Comparison guide</p>
-          <h1 className="text-4xl sm:text-5xl lg:text-[3.25rem] font-black leading-[1.07] text-[#10251b] mb-5 tracking-tight">
+          <h1 className="text-4xl sm:text-5xl lg:text-[3.25rem] font-black leading-[1.07] text-[#14120f] mb-5 tracking-tight">
             Best Newsletter Platform 2026:{" "}
             <span style={{ color: CYAN_LT }}>beehiiv vs Substack vs ConvertKit</span>
           </h1>
-          <p className="text-[#3d4b44] text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
+          <p className="text-[#56504a] text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
             We compared the three leading newsletter platforms on free plans, monetisation, growth tools, and what the community recommends. Our verdict is below.
           </p>
           {/* Below the lead. The first paragraph after the h1 is the answer;
@@ -253,12 +253,12 @@ export default function BestNewsletterPlatformPage() {
         </div>
 
         {/* Our Pick */}
-        <section id="comparison" className="border-t border-[#0a7c42]/10 py-12 sm:py-14">
-          <h2 className="text-2xl sm:text-3xl font-black text-[#10251b] mb-3">Our Pick: beehiiv</h2>
-          <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl mb-6">
+        <section id="comparison" className="border-t border-[#007a95]/10 py-12 sm:py-14">
+          <h2 className="text-2xl sm:text-3xl font-black text-[#14120f] mb-3">Our Pick: beehiiv</h2>
+          <p className="text-[#56504a] text-sm sm:text-base leading-relaxed max-w-2xl mb-6">
             For newsletter creators focused on growing an audience and monetising without giving up revenue, beehiiv is the strongest platform available in 2026. The built-in referral program, ad network, and 0% revenue share on paid subscriptions put it well ahead of alternatives once you are past the earliest stage.
           </p>
-          <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl mb-8">
+          <p className="text-[#56504a] text-sm sm:text-base leading-relaxed max-w-2xl mb-8">
             Substack is a legitimate starting point for its discovery network and zero monthly fee, but the 10% revenue cut becomes a real cost at scale. ConvertKit is better for product businesses with complex email sequences than for newsletter-first creators.
           </p>
           <a
@@ -272,24 +272,24 @@ export default function BestNewsletterPlatformPage() {
         </section>
 
         {/* Platform Cards */}
-        <section className="border-t border-[#0a7c42]/10 py-12 sm:py-14 space-y-8">
+        <section className="border-t border-[#007a95]/10 py-12 sm:py-14 space-y-8">
           {platforms.map((p) => (
             <div
               key={p.name}
               id={p.name.toLowerCase().replace(/[^a-z]/g, "")}
-              className="rounded-2xl border border-[#e5e9e7] bg-[#f5f8f6] p-7 sm:p-8"
+              className="rounded-2xl border border-[#ded8cd] bg-[#f7f4ee] p-7 sm:p-8"
             >
               <div className="flex flex-wrap items-start justify-between gap-4 mb-5">
                 <div>
                   <div className="flex items-center gap-3 mb-1">
-                    <h3 className="text-xl font-black text-[#10251b]">{p.name}</h3>
+                    <h3 className="text-xl font-black text-[#14120f]">{p.name}</h3>
                   </div>
-                  <p className="text-[#3d4b44] text-sm">{p.tagline}</p>
+                  <p className="text-[#56504a] text-sm">{p.tagline}</p>
                 </div>
                 {p.internalHref ? (
                   <Link
                     href={p.internalHref}
-                    className="inline-flex items-center gap-1.5 rounded-xl px-4 py-2 text-xs font-semibold text-[#10251b] transition-all hover:opacity-90"
+                    className="inline-flex items-center gap-1.5 rounded-xl px-4 py-2 text-xs font-semibold text-[#14120f] transition-all hover:opacity-90"
                     style={{ background: CYAN }}
                   >
                     Try {p.name}
@@ -298,7 +298,7 @@ export default function BestNewsletterPlatformPage() {
                 ) : (
                   <a
                     {...aff(p.href)}
-                    className="inline-flex items-center gap-1.5 rounded-xl border px-4 py-2 text-xs font-semibold text-[#2b362f] transition-all hover:text-[#10251b]"
+                    className="inline-flex items-center gap-1.5 rounded-xl border px-4 py-2 text-xs font-semibold text-[#14120f] transition-all hover:text-[#14120f]"
                     style={{ borderColor: `${CYAN}30` }}
                   >
                     Visit {p.name}
@@ -308,17 +308,17 @@ export default function BestNewsletterPlatformPage() {
               </div>
 
               <div className="grid sm:grid-cols-3 gap-4 mb-6 text-sm">
-                <div className="rounded-xl bg-[#f5f8f6] border border-[#e5e9e7] p-4">
-                  <p className="text-[10px] font-semibold uppercase tracking-widest text-[#627068] mb-1">Free Plan</p>
-                  <p className="text-[#2b362f] font-medium">{p.free}</p>
+                <div className="rounded-xl bg-[#f7f4ee] border border-[#ded8cd] p-4">
+                  <p className="text-[10px] font-semibold uppercase tracking-widest text-[#56504a] mb-1">Free Plan</p>
+                  <p className="text-[#14120f] font-medium">{p.free}</p>
                 </div>
-                <div className="rounded-xl bg-[#f5f8f6] border border-[#e5e9e7] p-4">
-                  <p className="text-[10px] font-semibold uppercase tracking-widest text-[#627068] mb-1">Paid From</p>
-                  <p className="text-[#2b362f] font-medium">{p.paid}</p>
+                <div className="rounded-xl bg-[#f7f4ee] border border-[#ded8cd] p-4">
+                  <p className="text-[10px] font-semibold uppercase tracking-widest text-[#56504a] mb-1">Paid From</p>
+                  <p className="text-[#14120f] font-medium">{p.paid}</p>
                 </div>
-                <div className="rounded-xl bg-[#f5f8f6] border border-[#e5e9e7] p-4">
-                  <p className="text-[10px] font-semibold uppercase tracking-widest text-[#627068] mb-1">Revenue Share</p>
-                  <p className="text-[#2b362f] font-medium">{p.revenueShare}</p>
+                <div className="rounded-xl bg-[#f7f4ee] border border-[#ded8cd] p-4">
+                  <p className="text-[10px] font-semibold uppercase tracking-widest text-[#56504a] mb-1">Revenue Share</p>
+                  <p className="text-[#14120f] font-medium">{p.revenueShare}</p>
                 </div>
               </div>
 
@@ -327,7 +327,7 @@ export default function BestNewsletterPlatformPage() {
                   <p className="text-xs font-semibold uppercase tracking-widest mb-3" style={{ color: CYAN_LT }}>Pros</p>
                   <ul className="space-y-2">
                     {p.pros.map((item) => (
-                      <li key={item} className="flex items-start gap-2.5 text-sm text-[#2b362f]">
+                      <li key={item} className="flex items-start gap-2.5 text-sm text-[#14120f]">
                         <CheckCircle2 className="h-4 w-4 flex-shrink-0 mt-0.5" style={{ color: CYAN_LT }} />
                         {item}
                       </li>
@@ -338,7 +338,7 @@ export default function BestNewsletterPlatformPage() {
                   <p className="text-xs font-semibold uppercase tracking-widest text-red-400/70 mb-3">Cons</p>
                   <ul className="space-y-2">
                     {p.cons.map((item) => (
-                      <li key={item} className="flex items-start gap-2.5 text-sm text-[#2b362f]">
+                      <li key={item} className="flex items-start gap-2.5 text-sm text-[#14120f]">
                         <XCircle className="h-4 w-4 flex-shrink-0 mt-0.5 text-red-400/50" />
                         {item}
                       </li>
@@ -351,13 +351,13 @@ export default function BestNewsletterPlatformPage() {
         </section>
 
         {/* Feature Table */}
-        <section id="feature-table" className="border-t border-[#0a7c42]/10 py-12 sm:py-14">
-          <h2 className="text-xl sm:text-2xl font-black text-[#10251b] mb-8">Side-by-Side Comparison</h2>
+        <section id="feature-table" className="border-t border-[#007a95]/10 py-12 sm:py-14">
+          <h2 className="text-xl sm:text-2xl font-black text-[#14120f] mb-8">Side-by-Side Comparison</h2>
           <div className="overflow-x-auto -mx-5 px-5 sm:mx-0 sm:px-0">
             <table className="w-full min-w-[560px] text-sm border-collapse">
               <thead>
                 <tr>
-                  <th className="text-left pb-3 pr-4 text-[11px] font-semibold uppercase tracking-widest text-[#627068]">Feature</th>
+                  <th className="text-left pb-3 pr-4 text-[11px] font-semibold uppercase tracking-widest text-[#56504a]">Feature</th>
                   {["beehiiv", "Substack", "ConvertKit"].map((col) => (
                     <th key={col} className="text-left pb-3 pr-4 text-[11px] font-semibold uppercase tracking-widest" style={{ color: col === "beehiiv" ? CYAN_LT : "rgba(255,255,255,0.3)" }}>
                       {col}
@@ -367,11 +367,11 @@ export default function BestNewsletterPlatformPage() {
               </thead>
               <tbody>
                 {features.map((row, i) => (
-                  <tr key={row.label} className={i % 2 === 0 ? "bg-[#f5f8f6]" : ""}>
-                    <td className="py-3 pr-4 text-[#3d4b44] font-medium">{row.label}</td>
-                    <td className="py-3 pr-4 text-[#2b362f] font-medium">{row.beehiiv}</td>
-                    <td className="py-3 pr-4 text-[#3d4b44]">{row.substack}</td>
-                    <td className="py-3 pr-4 text-[#3d4b44]">{row.convertkit}</td>
+                  <tr key={row.label} className={i % 2 === 0 ? "bg-[#f7f4ee]" : ""}>
+                    <td className="py-3 pr-4 text-[#56504a] font-medium">{row.label}</td>
+                    <td className="py-3 pr-4 text-[#14120f] font-medium">{row.beehiiv}</td>
+                    <td className="py-3 pr-4 text-[#56504a]">{row.substack}</td>
+                    <td className="py-3 pr-4 text-[#56504a]">{row.convertkit}</td>
                   </tr>
                 ))}
               </tbody>
@@ -388,8 +388,8 @@ export default function BestNewsletterPlatformPage() {
         />
 
         {/* FAQ */}
-        <section id="faq" className="border-t border-[#0a7c42]/10 py-12 sm:py-14">
-          <h2 className="text-xl sm:text-2xl font-black text-[#10251b] mb-8">Frequently Asked Questions</h2>
+        <section id="faq" className="border-t border-[#007a95]/10 py-12 sm:py-14">
+          <h2 className="text-xl sm:text-2xl font-black text-[#14120f] mb-8">Frequently Asked Questions</h2>
           <div className="space-y-6 max-w-2xl">
             {[
               {
@@ -409,21 +409,21 @@ export default function BestNewsletterPlatformPage() {
                 a: "beehiiv offers the most generous free plan for newsletter creators, free up to 2,500 subscribers with access to core publishing features, analytics, and custom domains. Substack is free with no subscriber cap but takes 10% of paid revenue. ConvertKit is free up to 1,000 subscribers.",
               },
             ].map(({ q, a }, i) => (
-              <div key={i} className="border-b border-[#e5e9e7] pb-6">
-                <h3 className="text-sm font-bold text-[#10251b] mb-2">{q}</h3>
-                <p className="text-sm text-[#3d4b44] leading-relaxed">{a}</p>
+              <div key={i} className="border-b border-[#ded8cd] pb-6">
+                <h3 className="text-sm font-bold text-[#14120f] mb-2">{q}</h3>
+                <p className="text-sm text-[#56504a] leading-relaxed">{a}</p>
               </div>
             ))}
           </div>
         </section>
 
         {/* Bottom CTA */}
-        <section className="border-t border-[#0a7c42]/10 pt-14 sm:pt-16 text-center">
-          <h2 className="text-2xl sm:text-3xl font-black text-[#10251b] mb-3">
+        <section className="border-t border-[#007a95]/10 pt-14 sm:pt-16 text-center">
+          <h2 className="text-2xl sm:text-3xl font-black text-[#14120f] mb-3">
             Ready to Start Your Newsletter?{" "}
             <span style={{ color: CYAN_LT }}>Try beehiiv Free.</span>
           </h2>
-          <p className="text-[#3d4b44] text-sm max-w-md mx-auto mb-7 leading-relaxed">
+          <p className="text-[#56504a] text-sm max-w-md mx-auto mb-7 leading-relaxed">
             Free up to 2,500 subscribers. 14-day trial of paid features. No credit card required.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
@@ -437,7 +437,7 @@ export default function BestNewsletterPlatformPage() {
             </a>
             <Link
               href="/beehiiv"
-              className="inline-flex items-center justify-center gap-2 rounded-xl border px-7 py-3.5 text-sm font-semibold text-[#2b362f] transition-all hover:text-[#10251b]"
+              className="inline-flex items-center justify-center gap-2 rounded-xl border px-7 py-3.5 text-sm font-semibold text-[#14120f] transition-all hover:text-[#14120f]"
               style={{ borderColor: `${CYAN}30` }}
             >
               Full beehiiv Review
@@ -446,7 +446,7 @@ export default function BestNewsletterPlatformPage() {
 
           {/* Related guides */}
           <div className="mt-14 text-left max-w-2xl mx-auto">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#627068] mb-5">Related Guides</p>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#56504a] mb-5">Related Guides</p>
             <div className="grid sm:grid-cols-2 gap-3">
               {[
                 { href: "/best-website-builder", label: "Best Website Builder 2026" },
@@ -457,7 +457,7 @@ export default function BestNewsletterPlatformPage() {
                 <Link
                   key={href}
                   href={href}
-                  className="flex items-center gap-2 text-sm text-[#3d4b44] hover:text-[#2b362f] transition-colors"
+                  className="flex items-center gap-2 text-sm text-[#56504a] hover:text-[#14120f] transition-colors"
                 >
                   <ArrowRight className="h-3.5 w-3.5 flex-shrink-0" style={{ color: CYAN }} />
                   {label}
@@ -469,8 +469,8 @@ export default function BestNewsletterPlatformPage() {
 
         {/* Affiliate disclosure. Legally required (ACL), and this page compares a
             brand we earn on against two we do not, so the asymmetry is stated. */}
-        <section className="mx-auto max-w-5xl border-t border-[#e5e9e7] px-5 py-8 pb-16 sm:px-8">
-          <p className="max-w-2xl text-xs leading-relaxed text-[#627068]">
+        <section className="mx-auto max-w-5xl border-t border-[#ded8cd] px-5 py-8 pb-16 sm:px-8">
+          <p className="max-w-2xl text-xs leading-relaxed text-[#56504a]">
             This page is operated by Refer Labs and contains an affiliate referral link to beehiiv. If you sign up
             through it we may earn a commission, at no extra cost to you. We do not have an affiliate arrangement with
             Substack or Kit, so we earn nothing if you choose either of them, and that has not changed what we say

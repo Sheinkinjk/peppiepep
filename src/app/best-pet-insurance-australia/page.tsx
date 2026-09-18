@@ -145,24 +145,24 @@ export default function BestPetInsuranceAustraliaPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
 
       <main id="main-content" className="mx-auto max-w-3xl px-5 pb-24 pt-10 sm:px-8 sm:pt-14">
-        <nav className="mb-7 flex flex-wrap items-center gap-2 text-sm text-[#5a665f]">
-          <Link href="/" className="transition-colors hover:text-[#10251b]">Refer Labs</Link>
+        <nav className="mb-7 flex flex-wrap items-center gap-2 text-sm text-[#56504a]">
+          <Link href="/" className="transition-colors hover:text-[#14120f]">Refer Labs</Link>
           <span>/</span>
-          <Link href="/pet-insurance" className="transition-colors hover:text-[#10251b]">Pet insurance</Link>
+          <Link href="/pet-insurance" className="transition-colors hover:text-[#14120f]">Pet insurance</Link>
           <span>/</span>
-          <span className="text-[#10251b]">Best pet insurance</span>
+          <span className="text-[#14120f]">Best pet insurance</span>
         </nav>
 
-        <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#0a7c42]">Pet insurance · Australia</p>
-        <h1 className="mt-4 text-3xl font-extrabold leading-[1.08] tracking-tight text-[#10251b] sm:text-4xl">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#007a95]">Pet insurance · Australia</p>
+        <h1 className="mt-4 text-3xl font-extrabold leading-[1.08] tracking-tight text-[#14120f] sm:text-4xl">
           Best pet insurance in Australia: how to choose
         </h1>
 
         {/* Answer-first */}
         <section className="mt-6">
-          <h2 className="text-xl font-bold text-[#10251b] sm:text-2xl">What is the best pet insurance in Australia?</h2>
-          <div className="mt-4 rounded-xl border border-[#cfe6da] bg-[#e8f5ee] px-6 py-5">
-            <p className="text-[15px] leading-relaxed text-[#2b362f]">
+          <h2 className="text-xl font-bold text-[#14120f] sm:text-2xl">What is the best pet insurance in Australia?</h2>
+          <div className="mt-4 rounded-xl border border-[#b9e3eb] bg-[#e4f2f5] px-6 py-5">
+            <p className="text-[15px] leading-relaxed text-[#14120f]">
               There is no single best policy, and a page that names one without knowing your pet is guessing. What
               decides it is your pet&apos;s breed and age, whether hereditary conditions are a realistic risk, the
               annual limit you would need in a bad year, and the excess you could absorb on the day. Compare on the same
@@ -185,8 +185,8 @@ export default function BestPetInsuranceAustraliaPage() {
           </div>
         </section>
 
-        <p className="mt-6 rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] px-5 py-4 text-xs leading-relaxed text-[#3d4b44]">
-          <span className="font-semibold text-[#2b362f]">General information only.</span> Refer Labs is not an insurer,
+        <p className="mt-6 rounded-xl border border-[#ded8cd] bg-[#f7f4ee] px-5 py-4 text-xs leading-relaxed text-[#56504a]">
+          <span className="font-semibold text-[#14120f]">General information only.</span> Refer Labs is not an insurer,
           broker or financial adviser. Nothing here is a recommendation or personal financial advice, and we publish no
           star ratings of our own. Read each Product Disclosure Statement and Target Market Determination before
           deciding.
@@ -194,8 +194,8 @@ export default function BestPetInsuranceAustraliaPage() {
 
         {/* Providers */}
         <section className="mt-14">
-          <h2 className="text-xl font-bold text-[#10251b] sm:text-2xl">The providers we cover</h2>
-          <p className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">
+          <h2 className="text-xl font-bold text-[#14120f] sm:text-2xl">The providers we cover</h2>
+          <p className="mt-3 text-[15px] leading-relaxed text-[#56504a]">
             Two, both Australian, and they differ in ways that matter. On the published numbers Knose pays a higher
             share of the bill and carries no sub-limits, while PetsOnMe sets out three clearly-tiered plans with
             sub-limits on hereditary and dental cover. Neither is better in the abstract, because the right one depends
@@ -203,17 +203,17 @@ export default function BestPetInsuranceAustraliaPage() {
           </p>
           <div className="mt-6 grid gap-5">
             {providers.map((p) => (
-              <div key={p.name} className="rounded-2xl border border-[#e5e9e7] bg-[#f5f8f6] p-6">
-                <h3 className="text-lg font-extrabold text-[#10251b]">{p.name}</h3>
-                <p className="mt-2 text-[15px] leading-relaxed text-[#3d4b44]">{p.published}</p>
-                <p className="mt-3 rounded-lg border border-[#cfe6da] bg-[#e8f5ee] px-4 py-3 text-sm leading-relaxed text-[#2b362f]">
-                  <span className="font-semibold text-[#10251b]">Current offer. </span>{p.offer}
+              <div key={p.name} className="rounded-2xl border border-[#ded8cd] bg-[#f7f4ee] p-6">
+                <h3 className="text-lg font-extrabold text-[#14120f]">{p.name}</h3>
+                <p className="mt-2 text-[15px] leading-relaxed text-[#56504a]">{p.published}</p>
+                <p className="mt-3 rounded-lg border border-[#b9e3eb] bg-[#e4f2f5] px-4 py-3 text-sm leading-relaxed text-[#14120f]">
+                  <span className="font-semibold text-[#14120f]">Current offer. </span>{p.offer}
                 </p>
                 <div className="mt-5 flex flex-wrap items-center gap-4">
                   <a href={p.cta.href} target="_blank" rel="nofollow sponsored" data-cta={`best-pet-${p.name.toLowerCase()}`} className="nw-btn justify-center">
                     {p.cta.label} <ArrowRight className="h-4 w-4" />
                   </a>
-                  <Link href={p.href} className="text-sm font-semibold text-[#10251b] underline decoration-[#cdd5cf] underline-offset-4 hover:decoration-[#0a7c42]">
+                  <Link href={p.href} className="text-sm font-semibold text-[#14120f] underline decoration-[#ded8cd] underline-offset-4 hover:decoration-[#007a95]">
                     Read our {p.name} page
                   </Link>
                 </div>
@@ -225,14 +225,14 @@ export default function BestPetInsuranceAustraliaPage() {
 
         {/* Criteria */}
         <section className="mt-12">
-          <h2 className="text-xl font-bold text-[#10251b] sm:text-2xl">The six things that decide what you get back</h2>
+          <h2 className="text-xl font-bold text-[#14120f] sm:text-2xl">The six things that decide what you get back</h2>
           <div className="mt-6 space-y-7">
             {criteria.map((c, i) => (
               <div key={c.h}>
-                <h3 className="text-[17px] font-bold text-[#10251b]">
-                  <span className="mr-2 text-[#0a7c42]">{i + 1}.</span>{c.h}
+                <h3 className="text-[17px] font-bold text-[#14120f]">
+                  <span className="mr-2 text-[#007a95]">{i + 1}.</span>{c.h}
                 </h3>
-                <p className="mt-2 text-[15px] leading-relaxed text-[#3d4b44]">{c.p}</p>
+                <p className="mt-2 text-[15px] leading-relaxed text-[#56504a]">{c.p}</p>
               </div>
             ))}
           </div>
@@ -248,10 +248,10 @@ export default function BestPetInsuranceAustraliaPage() {
             would omit. Stating who carries the risk is a factual disclosure
             about a financial product, not advice about one. */}
         <section className="mt-14">
-          <h2 className="text-xl font-bold text-[#10251b] sm:text-2xl">
+          <h2 className="text-xl font-bold text-[#14120f] sm:text-2xl">
             Why so many brands are the same product
           </h2>
-          <p className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">
+          <p className="mt-3 text-[15px] leading-relaxed text-[#56504a]">
             Australian pet insurance has many more brands than it has insurers. PetSure names more than twenty pet
             insurance brands it administers or issues on its own partners page, including the ones sold under bank,
             health fund, retailer and motoring club names. Those policies are issued by The Hollard Insurance Company
@@ -259,24 +259,24 @@ export default function BestPetInsuranceAustraliaPage() {
             Line up ten of those brands and you are largely comparing distribution, pricing and packaging of the same
             underlying product.
           </p>
-          <p className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">
+          <p className="mt-3 text-[15px] leading-relaxed text-[#56504a]">
             That is worth knowing before you spend an evening on a comparison table, because it explains why so many
             policies share the same exclusions, the same waiting periods and the same wording about pre-existing
             conditions. It also means a &ldquo;second opinion&rdquo; quote from another brand is often not a second
             opinion at all.
           </p>
-          <div className="mt-5 rounded-2xl border border-[#e5e9e7] bg-[#f8faf9] p-6">
-            <p className="text-[15px] font-bold text-[#10251b]">Where the two providers we cover sit</p>
-            <p className="mt-2 text-[15px] leading-relaxed text-[#3d4b44]">
+          <div className="mt-5 rounded-2xl border border-[#ded8cd] bg-[#f7f4ee] p-6">
+            <p className="text-[15px] font-bold text-[#14120f]">Where the two providers we cover sit</p>
+            <p className="mt-2 text-[15px] leading-relaxed text-[#56504a]">
               Neither Knose nor PetsOnMe appears on PetSure&apos;s partner list. Both are underwritten by Pacific
               International Insurance Pty Ltd (ABN 83 169 311 193, AFSL 523921), so they sit outside the PetSure group,
               but they also sit alongside each other. If you are weighing Knose against PetsOnMe, you are choosing
               between two products carried by the same insurer, not diversifying across two. We earn from both, and
               that is exactly why it is stated here rather than left out.
             </p>
-            <p className="mt-3 text-[13px] leading-relaxed text-[#5a665f]">
+            <p className="mt-3 text-[13px] leading-relaxed text-[#56504a]">
               Read off PetSure&apos;s, Knose&apos;s and PetsOnMe&apos;s own disclosure statements on 21 August 2026. The{" "}
-              <Link href="/who-underwrites-pet-insurance-australia" className="underline hover:text-[#3d4b44]">
+              <Link href="/who-underwrites-pet-insurance-australia" className="underline hover:text-[#56504a]">
                 full list of who underwrites which brand
               </Link>{" "}
               covers the rest of the market.
@@ -288,21 +288,21 @@ export default function BestPetInsuranceAustraliaPage() {
 
         {/* FAQ */}
         <section className="mt-14">
-          <h2 className="text-xl font-bold text-[#10251b] sm:text-2xl">Common questions</h2>
-          <div className="mt-5 divide-y divide-[#e5e9e7] border-y border-[#e5e9e7]">
+          <h2 className="text-xl font-bold text-[#14120f] sm:text-2xl">Common questions</h2>
+          <div className="mt-5 divide-y divide-[#ded8cd] border-y border-[#ded8cd]">
             {faqs.map((f) => (
               <details key={f.q} className="group py-4">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-[#10251b]">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-[#14120f]">
                   {f.q}
-                  <span className="text-xl leading-none text-[#0a7c42] transition-transform group-open:rotate-45">+</span>
+                  <span className="text-xl leading-none text-[#007a95] transition-transform group-open:rotate-45">+</span>
                 </summary>
-                <p className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">{f.a}</p>
+                <p className="mt-3 text-[15px] leading-relaxed text-[#56504a]">{f.a}</p>
               </details>
             ))}
           </div>
         </section>
 
-        <div className="mt-10 flex flex-wrap gap-x-6 gap-y-2 border-t border-[#e5e9e7] pt-8 text-sm">
+        <div className="mt-10 flex flex-wrap gap-x-6 gap-y-2 border-t border-[#ded8cd] pt-8 text-sm">
           <Link href="/knose-vs-petsonme" className="nw-link">Knose vs PetsOnMe, side by side</Link>
           <Link href="/what-pet-insurance-covers-australia" className="nw-link">What pet insurance covers</Link>
           <Link href="/petsonme" className="nw-link">PetsOnMe: cover &amp; code</Link>
@@ -319,7 +319,7 @@ export default function BestPetInsuranceAustraliaPage() {
               load-bearing for the attribution work. */}
         <EditorialMeta lastUpdated={UPDATED} className="mt-8" />
         <AffiliateDisclosure partners={["PetsOnMe", "Knose"]} earnsFromAll className="mt-8" />
-        <p className="mt-3 text-xs leading-relaxed text-[#627068]">
+        <p className="mt-3 text-xs leading-relaxed text-[#56504a]">
           A provider cannot pay to be described more favourably than the facts support. Cover details are
           taken from each provider&apos;s own published pages and were checked on 17 August 2026; terms change, so
           confirm current cover, limits and waiting periods in the Product Disclosure Statement before you buy.

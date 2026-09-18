@@ -53,7 +53,7 @@ export default function Page() {
       sectionHref="/mens-health"
       slug="/mens-health/online-doctor-medical-certificate-australia"
       crumb="Online medical certificate"
-      h1={<>Online medical certificate in Australia: <span className="italic text-[#0a7c42]">cost and turnaround</span></>}
+      h1={<>Online medical certificate in Australia: <span className="italic text-[#007a95]">cost and turnaround</span></>}
       intro={`Midoc lists ${MIDOC.certificateSingleDay} for a single day and ${MIDOC.certificateWeek} for multiple days, carer certificates at the same prices, requested ${MIDOC.certificateHours} and ${MIDOC.certificateDelivery} ${MIDOC.certificateTurnaround}. Read off Midoc's own site on ${MIDOC.readOnLabel}. The certificate is issued after a doctor's review, so what you pay for is the assessment rather than the document.`}
       headline="Online medical certificate in Australia: what it costs and how fast it arrives"
       description={seoConfig.onlineMedicalCertificate.description}
@@ -79,33 +79,33 @@ export default function Page() {
       />
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">What it costs</h2>
-        <div className="mt-4 overflow-x-auto rounded-2xl border border-[#e5e9e7]">
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">What it costs</h2>
+        <div className="mt-4 overflow-x-auto rounded-2xl border border-[#ded8cd]">
           <table className="w-full min-w-[520px] border-collapse text-left text-sm">
-            <thead className="bg-[#f8faf9] text-[11px] uppercase tracking-[0.1em] text-[#627068]">
+            <thead className="bg-[#f7f4ee] text-[11px] uppercase tracking-[0.1em] text-[#56504a]">
               <tr>
                 <th className="px-4 py-3 font-semibold">Certificate</th>
                 <th className="px-4 py-3 font-semibold">Midoc price</th>
                 <th className="px-4 py-3 font-semibold">Available</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-[#eef1ef]">
+            <tbody className="divide-y divide-[#f1ede4]">
               {MIDOC.certificateTypes.map((c) => (
                 <tr key={c.type}>
-                  <td className="px-4 py-3 font-semibold text-[#10251b]">{c.type}</td>
+                  <td className="px-4 py-3 font-semibold text-[#14120f]">{c.type}</td>
                   <td className="px-4 py-3 font-semibold tabular-nums">{c.price}</td>
                   <td className="px-4 py-3">{MIDOC.certificateHours}</td>
                 </tr>
               ))}
               <tr>
-                <td className="px-4 py-3 font-semibold text-[#10251b]">Bulk-billed GP</td>
+                <td className="px-4 py-3 font-semibold text-[#14120f]">Bulk-billed GP</td>
                 <td className="px-4 py-3 font-semibold">Nothing</td>
                 <td className="px-4 py-3">Whenever they can fit you in, which is the part that decides it.</td>
               </tr>
             </tbody>
           </table>
         </div>
-        <p className="mt-3 text-sm text-[#3d4b44]">
+        <p className="mt-3 text-sm text-[#56504a]">
           Read off midoc.com.au on {MIDOC.readOnLabel}. Pricing can change, so check the current
           figure before you pay. If your practice bulk bills and can see you today, that is the
           cheaper route, and both halves of that sentence have to be true for it to help you.
@@ -113,7 +113,7 @@ export default function Page() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">How long does it take to get a medical certificate online?</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">How long does it take to get a medical certificate online?</h2>
         <p className="mt-3">
           Midoc runs the certificate line {MIDOC.certificateHours}, wider than the{" "}
           {MIDOC.hoursMost} its general telehealth line keeps, and it operates {MIDOC.coverage}. That
@@ -128,7 +128,7 @@ export default function Page() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">What you are paying for</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">What you are paying for</h2>
         <p className="mt-3">
           Not the document. You are paying a registered practitioner to review your situation and
           decide whether a certificate is appropriate, which is the part that makes the certificate
@@ -143,7 +143,7 @@ export default function Page() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">When this is the wrong route</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">When this is the wrong route</h2>
         <ul className="mt-4 space-y-3">
           {[
             ["You need examining, not certifying", "If someone needs to physically look at you, start with a GP or an emergency service. A certificate is documentation, not care."],
@@ -151,14 +151,14 @@ export default function Page() {
             ["The day has already passed", "A practitioner is being asked to attest to something they did not observe. It is a clinical judgement, often declined, and some services do not offer it at all."],
             ["You are not sure it is the right certificate", "Personal-illness and carer certificates are different documents. Midoc lists both, at the same prices, so pick the right one at the point of request rather than assuming one fee covers the other."],
           ].map(([t, d]) => (
-            <li key={t} className="rounded-xl border border-[#e5e9e7] bg-white p-5">
-              <p className="text-[15px] font-bold text-[#10251b]">{t}</p>
-              <p className="mt-1 text-sm leading-relaxed text-[#3d4b44]">{d}</p>
+            <li key={t} className="rounded-xl border border-[#ded8cd] bg-white p-5">
+              <p className="text-[15px] font-bold text-[#14120f]">{t}</p>
+              <p className="mt-1 text-sm leading-relaxed text-[#56504a]">{d}</p>
             </li>
           ))}
         </ul>
-        <p className="mt-4 text-sm text-[#3d4b44]">{MIDOC.platformNote}</p>
-        <p className="mt-3 text-sm text-[#3d4b44]">
+        <p className="mt-4 text-sm text-[#56504a]">{MIDOC.platformNote}</p>
+        <p className="mt-3 text-sm text-[#56504a]">
           General information for an Australian audience, not medical advice.
         </p>
       </section>

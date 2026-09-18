@@ -147,7 +147,7 @@ const faqSchema = {
 };
 
 function SectionHead({ children }: { children: React.ReactNode }) {
-  return <h2 className="text-2xl font-extrabold tracking-tight text-[#10251b] sm:text-3xl">{children}</h2>;
+  return <h2 className="text-2xl font-extrabold tracking-tight text-[#14120f] sm:text-3xl">{children}</h2>;
 }
 
 export default function PartnerWithReferLabsPage() {
@@ -159,27 +159,27 @@ export default function PartnerWithReferLabsPage() {
 
       <main id="main-content" className="mx-auto max-w-4xl px-5 pb-24 sm:px-8">
         {/* Breadcrumb */}
-        <nav className="flex items-center gap-2 pt-8 text-sm text-[#5a665f]">
-          <Link href="/" className="transition-colors hover:text-[#10251b]">Refer Labs</Link>
+        <nav className="flex items-center gap-2 pt-8 text-sm text-[#56504a]">
+          <Link href="/" className="transition-colors hover:text-[#14120f]">Refer Labs</Link>
           <span>/</span>
-          <span className="text-[#10251b]">Partner with us</span>
+          <span className="text-[#14120f]">Partner with us</span>
         </nav>
 
         {/* Hero */}
         <header className="pt-9">
-          <h1 className=" text-4xl font-extrabold leading-[1.05] tracking-[-0.02em] text-[#10251b] sm:text-5xl">
+          <h1 className=" text-4xl font-extrabold leading-[1.05] tracking-[-0.02em] text-[#14120f] sm:text-5xl">
             Apply to partner with{" "}
-            <span className="text-[#0a7c42]">Refer Labs</span>
+            <span className="text-[#007a95]">Refer Labs</span>
           </h1>
-          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-[#3d4b44]">
+          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-[#56504a]">
             We compare providers across health, solar and energy, pet insurance and business software, and reach
             Australians at the point they are choosing. Placement is earned against published criteria and is never
             sold, which is what makes the traffic worth having.
           </p>
-          <div className="mt-7 flex flex-wrap gap-x-6 gap-y-2.5 text-[14px] font-medium text-[#10251b]">
+          <div className="mt-7 flex flex-wrap gap-x-6 gap-y-2.5 text-[14px] font-medium text-[#14120f]">
             {["Independent research", "Australian audience", "Rankings are never sold"].map((tag) => (
               <span key={tag} className="inline-flex items-center gap-1.5">
-                <Check className="h-4 w-4 text-[#0a7c42]" strokeWidth={2.5} aria-hidden="true" /> {tag}
+                <Check className="h-4 w-4 text-[#007a95]" strokeWidth={2.5} aria-hidden="true" /> {tag}
               </span>
             ))}
           </div>
@@ -190,9 +190,9 @@ export default function PartnerWithReferLabsPage() {
         </header>
 
         {/* What it is */}
-        <section className="mt-16 border-t border-[#e5e9e7] pt-12">
+        <section className="mt-16 border-t border-[#ded8cd] pt-12">
           <SectionHead>The independent alternative to a pay-to-rank directory</SectionHead>
-          <div className="mt-5 max-w-2xl space-y-4 text-[15px] leading-relaxed text-[#3d4b44]">
+          <div className="mt-5 max-w-2xl space-y-4 text-[15px] leading-relaxed text-[#56504a]">
             <p>
               There are more providers than ever across health, energy and business software, and the marketing budgets
               of the loudest players have no relationship to the quality of what they offer.
@@ -212,24 +212,24 @@ export default function PartnerWithReferLabsPage() {
         </section>
 
         {/* Categories */}
-        <section className="mt-16 border-t border-[#e5e9e7] pt-12">
+        <section className="mt-16 border-t border-[#ded8cd] pt-12">
           <SectionHead>What we compare, and what we assess</SectionHead>
           <div className="mt-8 space-y-5">
             {categories.map((cat) => (
               <div key={cat.label} className="nw-card rounded-2xl p-6 sm:p-7">
                 <div className="flex items-baseline gap-3">
                   <span className="select-none text-2xl font-black tabular-nums text-[#cfe0d6]">{cat.num}</span>
-                  <h3 className="text-lg font-extrabold text-[#10251b]">{cat.label}</h3>
+                  <h3 className="text-lg font-extrabold text-[#14120f]">{cat.label}</h3>
                 </div>
-                <div className="mt-3 space-y-3 text-[15px] leading-relaxed text-[#3d4b44]">
+                <div className="mt-3 space-y-3 text-[15px] leading-relaxed text-[#56504a]">
                   <p>{cat.intro}</p>
                   <p>{cat.detail}</p>
                 </div>
-                <p className="mt-5 text-[11px] font-bold uppercase tracking-[0.14em] text-[#0a7c42]">What we evaluate</p>
+                <p className="mt-5 text-[11px] font-bold uppercase tracking-[0.14em] text-[#007a95]">What we evaluate</p>
                 <ul className="mt-2.5 grid gap-2 sm:grid-cols-2">
                   {cat.eval.map((item) => (
-                    <li key={item} className="flex items-start gap-2 text-sm text-[#3d4b44]">
-                      <Check className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#0a7c42]" strokeWidth={2.5} aria-hidden="true" />
+                    <li key={item} className="flex items-start gap-2 text-sm text-[#56504a]">
+                      <Check className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#007a95]" strokeWidth={2.5} aria-hidden="true" />
                       {item}
                     </li>
                   ))}
@@ -240,9 +240,9 @@ export default function PartnerWithReferLabsPage() {
         </section>
 
         {/* Our approach */}
-        <section className="mt-16 border-t border-[#e5e9e7] pt-12">
+        <section className="mt-16 border-t border-[#ded8cd] pt-12">
           <SectionHead>What partnering involves</SectionHead>
-          <div className="mt-5 max-w-2xl space-y-4 text-[15px] leading-relaxed text-[#3d4b44]">
+          <div className="mt-5 max-w-2xl space-y-4 text-[15px] leading-relaxed text-[#56504a]">
             <p>
               Each category carries a shortlist assessed on standards, transparency, pricing honesty and the experience
               a real customer would have. The list stays small on purpose: a page listing everything is a directory, and
@@ -256,8 +256,8 @@ export default function PartnerWithReferLabsPage() {
             </p>
             <ul className="space-y-3 pt-1">
               {APPROACH.map((item) => (
-                <li key={item} className="flex items-start gap-3 text-[15px] text-[#3d4b44]">
-                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#0a7c42]" aria-hidden="true" /> {item}
+                <li key={item} className="flex items-start gap-3 text-[15px] text-[#56504a]">
+                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#007a95]" aria-hidden="true" /> {item}
                 </li>
               ))}
             </ul>
@@ -265,9 +265,9 @@ export default function PartnerWithReferLabsPage() {
         </section>
 
         {/* List your business */}
-        <section id="apply" className="mt-16 scroll-mt-24 border-t border-[#e5e9e7] pt-12">
+        <section id="apply" className="mt-16 scroll-mt-24 border-t border-[#ded8cd] pt-12">
           <SectionHead>Apply to partner with us</SectionHead>
-          <div className="mt-5 max-w-2xl space-y-4 text-[15px] leading-relaxed text-[#3d4b44]">
+          <div className="mt-5 max-w-2xl space-y-4 text-[15px] leading-relaxed text-[#56504a]">
             <p>
               If you run a business in one of the categories above, apply below. Tell us what you sell, what an
               Australian customer pays, and what you can offer our readers that they cannot get by going direct. We
@@ -284,29 +284,29 @@ export default function PartnerWithReferLabsPage() {
           </div>
         </section>
 
-        <section className="mt-16 border-t border-[#e5e9e7] pt-12">
-          <h2 className="text-2xl font-extrabold tracking-tight text-[#10251b] sm:text-3xl">Common questions</h2>
-          <dl className="mt-6 divide-y divide-[#eef1ef] rounded-2xl border border-[#e5e9e7] bg-white">
+        <section className="mt-16 border-t border-[#ded8cd] pt-12">
+          <h2 className="text-2xl font-extrabold tracking-tight text-[#14120f] sm:text-3xl">Common questions</h2>
+          <dl className="mt-6 divide-y divide-[#f1ede4] rounded-2xl border border-[#ded8cd] bg-white">
             {faqs.map((f) => (
               <div key={f.q} className="px-5 py-5">
-                <dt className="text-[15px] font-bold text-[#10251b]">{f.q}</dt>
-                <dd className="mt-2 text-sm leading-relaxed text-[#3d4b44]">{f.a}</dd>
+                <dt className="text-[15px] font-bold text-[#14120f]">{f.q}</dt>
+                <dd className="mt-2 text-sm leading-relaxed text-[#56504a]">{f.a}</dd>
               </div>
             ))}
           </dl>
         </section>
 
         {/* Bottom CTA */}
-        <section className="mt-16 rounded-2xl border border-[#cfe6da] bg-[#e6f3ec] px-6 py-10 text-center sm:px-10">
-          <h2 className="text-2xl font-extrabold tracking-tight text-[#10251b] sm:text-3xl">
+        <section className="mt-16 rounded-2xl border border-[#b9e3eb] bg-[#e4f2f5] px-6 py-10 text-center sm:px-10">
+          <h2 className="text-2xl font-extrabold tracking-tight text-[#14120f] sm:text-3xl">
             Ready to apply?
           </h2>
-          <p className="mx-auto mt-3 max-w-lg text-[15px] leading-relaxed text-[#28453a]">
+          <p className="mx-auto mt-3 max-w-lg text-[15px] leading-relaxed text-[#14120f]">
             We are assessing providers across every category above. Applications are read by Jarred, not a form
             queue, and you will get an answer either way.
           </p>
           <a href="#apply" className="nw-btn mt-6">Apply to partner with us <ArrowRight className="h-4 w-4" /></a>
-          <p className="mt-5 text-xs text-[#5a665f]">{contactEmail}</p>
+          <p className="mt-5 text-xs text-[#56504a]">{contactEmail}</p>
         </section>
       </main>
     </ConsumerShell>

@@ -20,58 +20,58 @@ export default function LenderCards({ lenders = LENDERS }: { lenders?: Lender[] 
         {lenders.map((l) => (
           <div
             key={l.slug}
-            className="group flex flex-col rounded-2xl border border-[#e5e9e7] bg-white p-6 transition-all hover:-translate-y-0.5 hover:border-[#cfe6da] hover:shadow-[0_22px_50px_-28px_rgba(14,124,66,0.4)]"
+            className="group flex flex-col rounded-2xl border border-[#ded8cd] bg-white p-6 transition-all hover:-translate-y-0.5 hover:border-[#b9e3eb] hover:shadow-[0_22px_50px_-28px_rgba(0,122,149,0.4)]"
           >
             <div className="flex items-center gap-3">
-              <LenderLogo src={l.logo} name={l.name} size={44} className="rounded-xl ring-1 ring-[#eef1ef]" />
+              <LenderLogo src={l.logo} name={l.name} size={44} className="rounded-xl ring-1 ring-[#f1ede4]" />
               <div className="min-w-0">
-                <h3 className="text-lg font-extrabold leading-tight text-[#10251b]">{l.name}</h3>
+                <h3 className="text-lg font-extrabold leading-tight text-[#14120f]">{l.name}</h3>
                 {l.afiaCodeSignatory ? (
-                  <span className="mt-0.5 inline-flex items-center gap-1 text-[11px] font-semibold text-[#0a7c42]">
+                  <span className="mt-0.5 inline-flex items-center gap-1 text-[11px] font-semibold text-[#007a95]">
                     <ShieldCheck className="h-3.5 w-3.5" strokeWidth={2} aria-hidden="true" /> AFIA Code signatory
                   </span>
                 ) : (
-                  <span className="mt-0.5 block text-[11px] font-medium text-[#627068]">Non-bank lender</span>
+                  <span className="mt-0.5 block text-[11px] font-medium text-[#56504a]">Non-bank lender</span>
                 )}
               </div>
             </div>
 
             <dl className="mt-5 space-y-2.5 text-sm">
               <div className="flex items-baseline justify-between gap-3">
-                <dt className="text-[#5a665f]">Loan size</dt>
-                <dd className="text-right font-semibold tabular-nums text-[#10251b]">{money(l.minAmount)} – {money(l.maxAmount)}</dd>
+                <dt className="text-[#56504a]">Loan size</dt>
+                <dd className="text-right font-semibold tabular-nums text-[#14120f]">{money(l.minAmount)} – {money(l.maxAmount)}</dd>
               </div>
               <div className="flex items-baseline justify-between gap-3">
-                <dt className="text-[#5a665f]">Rate from</dt>
-                <dd className="text-right font-semibold tabular-nums text-[#10251b]">{l.advertisedRateFrom}</dd>
+                <dt className="text-[#56504a]">Rate from</dt>
+                <dd className="text-right font-semibold tabular-nums text-[#14120f]">{l.advertisedRateFrom}</dd>
               </div>
               <div className="flex items-baseline justify-between gap-3">
-                <dt className="text-[#5a665f]">Funding</dt>
-                <dd className="text-right font-semibold text-[#10251b]">{l.speed}</dd>
+                <dt className="text-[#56504a]">Funding</dt>
+                <dd className="text-right font-semibold text-[#14120f]">{l.speed}</dd>
               </div>
             </dl>
 
             <p className="mt-4 flex flex-wrap gap-1.5">
               {l.products.slice(0, 3).map((p) => (
-                <span key={p} className="rounded-md bg-[#f5f8f6] px-2 py-1 text-[11px] font-medium text-[#3d4b44]">{label(p)}</span>
+                <span key={p} className="rounded-md bg-[#f7f4ee] px-2 py-1 text-[11px] font-medium text-[#56504a]">{label(p)}</span>
               ))}
             </p>
 
             <div className="mt-auto flex items-center gap-3 pt-5">
               <Link
                 href={`/business-loans/${l.slug}`}
-                className="inline-flex items-center gap-1.5 rounded-xl bg-[#0a7c42] px-4 py-2.5 text-sm font-bold text-white transition-all group-hover:-translate-y-0 hover:bg-[#086536]"
+                className="inline-flex items-center gap-1.5 rounded-xl bg-[#007a95] px-4 py-2.5 text-sm font-bold text-white transition-all group-hover:-translate-y-0 hover:bg-[#003647]"
               >
                 See {l.name} <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
-              <Link href={`/business-loans/${l.slug}/review`} className="text-sm font-semibold text-[#0a7c42] hover:text-[#086536]">Read the review</Link>
-              <a href="#enquire" className="text-sm font-semibold text-[#0a7c42] hover:text-[#086536]">Check eligibility</a>
+              <Link href={`/business-loans/${l.slug}/review`} className="text-sm font-semibold text-[#007a95] hover:text-[#003647]">Read the review</Link>
+              <a href="#enquire" className="text-sm font-semibold text-[#007a95] hover:text-[#003647]">Check eligibility</a>
             </div>
           </div>
         ))}
       </div>
-      <p className="mt-4 flex items-start gap-2 text-xs leading-relaxed text-[#5a665f]">
-        <Zap className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#627068]" aria-hidden="true" />
+      <p className="mt-4 flex items-start gap-2 text-xs leading-relaxed text-[#56504a]">
+        <Zap className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#56504a]" aria-hidden="true" />
         Advertised &ldquo;from&rdquo; rates and loan sizes as at {ratesAsAt()}, from each lender&apos;s own site. &ldquo;Quote-based&rdquo; means the lender prices each loan individually rather than publishing a headline rate. Figures are indicative, not a quote; your rate depends on the lender&apos;s assessment.
       </p>
     </div>

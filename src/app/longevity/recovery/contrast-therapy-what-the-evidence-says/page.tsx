@@ -38,7 +38,7 @@ export default function Page() {
       sectionHref="/longevity/recovery"
       slug="/longevity/recovery/contrast-therapy-what-the-evidence-says"
       crumb="Contrast therapy evidence"
-      h1={<>Contrast therapy: <span className="italic text-[#0a7c42]">what the evidence supports</span></>}
+      h1={<>Contrast therapy: <span className="italic text-[#007a95]">what the evidence supports</span></>}
       intro="This category is sold with more confidence than the research currently justifies. Here is what the evidence covers, where it thins out, and the one finding that should change how some people use it."
       headline="Contrast therapy: what the evidence says"
       description={seoConfig.contrastTherapy.description}
@@ -49,21 +49,21 @@ export default function Page() {
       ]}
     >
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Separate the claims before judging them</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Separate the claims before judging them</h2>
         <p className="mt-3">
           &ldquo;Does it work&rdquo; is unanswerable because it bundles very different claims together. Feeling less
           sore tomorrow, adapting better over a training block, and living longer are three questions with three
           different bodies of evidence behind them, and they are routinely marketed as one.
         </p>
-        <div className="mt-4 overflow-x-auto rounded-2xl border border-[#e5e9e7]">
+        <div className="mt-4 overflow-x-auto rounded-2xl border border-[#ded8cd]">
           <table className="w-full min-w-[560px] border-collapse text-left text-sm">
-            <thead className="bg-[#f8faf9] text-[11px] uppercase tracking-[0.1em] text-[#627068]">
+            <thead className="bg-[#f7f4ee] text-[11px] uppercase tracking-[0.1em] text-[#56504a]">
               <tr>
                 <th className="px-4 py-3 font-semibold">Claim</th>
                 <th className="px-4 py-3 font-semibold">How the evidence looks</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-[#eef1ef]">
+            <tbody className="divide-y divide-[#f1ede4]">
               {[
                 ["Feeling less sore afterwards", "The most supported of the claims, though partly subjective and hard to separate from expectation"],
                 ["Perceived recovery between sessions", "Reasonably supported in short-term studies"],
@@ -72,21 +72,21 @@ export default function Page() {
                 ["Longevity", "Not established. This claim runs well ahead of the research"],
               ].map((r) => (
                 <tr key={r[0]}>
-                  <td className="px-4 py-3 font-semibold text-[#10251b]">{r[0]}</td>
+                  <td className="px-4 py-3 font-semibold text-[#14120f]">{r[0]}</td>
                   <td className="px-4 py-3">{r[1]}</td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
-        <p className="mt-3 text-xs text-[#5a665f]">
+        <p className="mt-3 text-xs text-[#56504a]">
           A summary of how the research landscape looks rather than a systematic review, and not a health claim about
           any product. Evidence in this area is actively changing.
         </p>
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">The finding sellers leave out</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">The finding sellers leave out</h2>
         <p className="mt-3">
           There is research indicating that regular cold immersion immediately after resistance training may reduce
           some of the adaptation the training was meant to produce. If your goal is building strength or muscle, that
@@ -99,7 +99,7 @@ export default function Page() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">What feeling better is worth</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">What feeling better is worth</h2>
         <p className="mt-3">
           Enjoying it, feeling alert afterwards, and having a routine you look forward to are legitimate reasons to
           spend money, and they do not need a research paper to justify them. The problem is not people buying ice
@@ -112,7 +112,7 @@ export default function Page() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Safety</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Safety</h2>
         <p className="mt-3">
           Cold immersion is a genuine cardiovascular stressor. If you have a heart condition, high blood pressure, are
           pregnant, or have a condition affecting circulation or cold sensitivity, speak to a practitioner before

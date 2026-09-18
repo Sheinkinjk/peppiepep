@@ -37,7 +37,7 @@ export default function Page() {
       sectionHref="/longevity/recovery"
       slug="/longevity/recovery/ice-bath-comparison-australia"
       crumb="Comparing ice baths"
-      h1={<>Comparing ice baths in Australia: <span className="italic text-[#0a7c42]">what you are paying for</span></>}
+      h1={<>Comparing ice baths in Australia: <span className="italic text-[#007a95]">what you are paying for</span></>}
       intro="The cold water is the same at every price point. What separates a few hundred dollars from ten thousand is how much effort the setup removes from your week, and whether that trade is worth it depends on how often you would use it."
       headline="Ice baths in Australia: how to compare them"
       description={seoConfig.iceBathComparison.description}
@@ -48,7 +48,7 @@ export default function Page() {
       ]}
     >
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Start with frequency, not product</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Start with frequency, not product</h2>
         <p className="mt-3">
           The single question that determines what you should buy is how many times a week you will realistically get
           in. Answer it honestly before looking at any listing, because it changes the right answer completely.
@@ -61,16 +61,16 @@ export default function Page() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">What to compare</h2>
-        <div className="mt-4 overflow-x-auto rounded-2xl border border-[#e5e9e7]">
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">What to compare</h2>
+        <div className="mt-4 overflow-x-auto rounded-2xl border border-[#ded8cd]">
           <table className="w-full min-w-[600px] border-collapse text-left text-sm">
-            <thead className="bg-[#f8faf9] text-[11px] uppercase tracking-[0.1em] text-[#627068]">
+            <thead className="bg-[#f7f4ee] text-[11px] uppercase tracking-[0.1em] text-[#56504a]">
               <tr>
                 <th className="px-4 py-3 font-semibold">Component</th>
                 <th className="px-4 py-3 font-semibold">What matters</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-[#eef1ef]">
+            <tbody className="divide-y divide-[#f1ede4]">
               {[
                 ["Chiller capacity", "Must hold your target temperature in your climate, at your tub volume. Undersized units run constantly and still miss."],
                 ["Insulation", "Decides how hard the chiller works, and therefore your running cost for as long as you own it."],
@@ -81,7 +81,7 @@ export default function Page() {
                 ["Warranty on the chiller", "The chiller is the part that fails and the part that costs. Warranty length on it matters more than on the tub."],
               ].map((r) => (
                 <tr key={r[0]}>
-                  <td className="px-4 py-3 font-semibold text-[#10251b]">{r[0]}</td>
+                  <td className="px-4 py-3 font-semibold text-[#14120f]">{r[0]}</td>
                   <td className="px-4 py-3">{r[1]}</td>
                 </tr>
               ))}
@@ -91,7 +91,7 @@ export default function Page() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Filled weight is the one people miss</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Filled weight is the one people miss</h2>
         <p className="mt-3">
           Water weighs a kilogram per litre. A modest tub holding several hundred litres is several hundred kilograms
           once filled, before anyone gets in. On a balcony, a deck or a suspended floor that is worth checking rather
@@ -100,7 +100,7 @@ export default function Page() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Total cost, not purchase price</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Total cost, not purchase price</h2>
         <p className="mt-3">
           A cheaper setup with a less efficient chiller and no cover can cost more across three years than a dearer one
           that holds temperature easily. Purchase price is the number on the listing; the number that matters is
@@ -108,7 +108,7 @@ export default function Page() {
         </p>
         <p className="mt-3">
           Our{" "}
-          <a href="/longevity/recovery/ice-bath-running-costs-australia" className="font-semibold text-[#0a7c42] hover:underline">running-costs guide</a>{" "}
+          <a href="/longevity/recovery/ice-bath-running-costs-australia" className="font-semibold text-[#007a95] hover:underline">running-costs guide</a>{" "}
           gives you the formula to put a real figure on the second half of that.
         </p>
       </section>

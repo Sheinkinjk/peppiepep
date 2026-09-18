@@ -121,7 +121,7 @@ const brand: RetailerBrand = {
   ],
   disclaimer: (
     <>
-      <span className="font-semibold text-[#2b362f]">General information only.</span> A mattress is not a treatment for
+      <span className="font-semibold text-[#14120f]">General information only.</span> A mattress is not a treatment for
       any sleep disorder. If you think you may have sleep apnoea, speak to a doctor rather than shopping for bedding.
       Prices were read on {readOnLabel} and change often.
     </>

@@ -315,7 +315,7 @@
    form fields fell back to the browser default. :where() keeps specificity at
    zero, so a component's own focus:ring-* styling still wins. */
 :where(a, button, [role="button"], input, select, textarea, summary, [tabindex]:not([tabindex="-1"])):focus-visible {
-  outline: 2px solid #0a7c42;
+  outline: 2px solid #007a95;
   outline-offset: 2px;
 }
 
@@ -824,17 +824,17 @@
    ═══════════════════════════════════════════════════════════════════════════ */
 
 .nw-root {
-  --nw-ink: #10251b;
-  --nw-body: #3d4b44;
-  --nw-muted: #5a665f;
-  --nw-faint: #627068;
-  --nw-green: #0a7c42;
-  --nw-green-hover: #086536;
-  --nw-green-bright: #12a05b;
-  --nw-tint: #e6f3ec;
-  --nw-border: #e3e7e2;
-  --nw-alt: #eef1ec;
-  --nw-page: #f2f4ee;
+  --nw-ink: #14120f;
+  --nw-body: #56504a;
+  --nw-muted: #56504a;
+  --nw-faint: #56504a;
+  --nw-green: #007a95;
+  --nw-green-hover: #003647;
+  --nw-green-bright: #0088a6;
+  --nw-tint: #e4f2f5;
+  --nw-border: #ded8cd;
+  --nw-alt: #f1ede4;
+  --nw-page: #f7f4ee;
   background: var(--nw-page);
   color: var(--nw-ink);
   font-family: var(--font-geist-sans), "Segoe UI", system-ui, sans-serif;
@@ -846,13 +846,13 @@
   background: #ffffff;
   border: 1px solid var(--nw-border);
   border-radius: 16px;
-  box-shadow: 0 1px 2px rgba(16, 37, 27, 0.05);
+  box-shadow: 0 1px 2px rgba(20, 18, 15, 0.05);
   transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s, border-color 0.28s;
 }
 .nw-card-hover:hover {
   transform: translateY(-3px);
-  border-color: #cfe6da;
-  box-shadow: 0 2px 4px rgba(16, 37, 27, 0.05), 0 20px 44px -22px rgba(16, 37, 27, 0.3);
+  border-color: #b9e3eb;
+  box-shadow: 0 2px 4px rgba(20, 18, 15, 0.05), 0 20px 44px -22px rgba(20, 18, 15, 0.3);
 }
 
 /* Buttons */
@@ -866,10 +866,10 @@
   font-size: 15px;
   color: #fff;
   background: var(--nw-green);
-  box-shadow: 0 8px 20px -8px rgba(10, 124, 66, 0.5);
+  box-shadow: 0 8px 20px -8px rgba(0, 122, 149, 0.5);
   transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
 }
-.nw-btn:hover { background: var(--nw-green-hover); transform: translateY(-1px); box-shadow: 0 12px 26px -8px rgba(10, 124, 66, 0.55); }
+.nw-btn:hover { background: var(--nw-green-hover); transform: translateY(-1px); box-shadow: 0 12px 26px -8px rgba(0, 122, 149, 0.55); }
 .nw-btn-ghost {
   display: inline-flex;
   align-items: center;
@@ -883,7 +883,7 @@
   background: #fff;
   transition: border-color 0.2s, background 0.2s, transform 0.2s;
 }
-.nw-btn-ghost:hover { border-color: #bfe0cf; background: var(--nw-tint); transform: translateY(-1px); }
+.nw-btn-ghost:hover { border-color: #b9e3eb; background: var(--nw-tint); transform: translateY(-1px); }
 
 /* Eyebrow / category label — small, restrained, NOT a pill */
 /* Category label above a page title, on pages with no visible breadcrumb. It is
@@ -895,7 +895,7 @@
   font-weight: 500;
   letter-spacing: 0;
   text-transform: none;
-  color: var(--nw-ink-soft, #5a665f);
+  color: var(--nw-ink-soft, #56504a);
 }
 
 /* Search field */
@@ -908,15 +908,15 @@
   border: 1px solid var(--nw-border);
   background: #fff;
   padding: 0.85rem 1.25rem;
-  box-shadow: 0 1px 2px rgba(16, 37, 27, 0.05);
+  box-shadow: 0 1px 2px rgba(20, 18, 15, 0.05);
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 .nw-search:focus-within {
   border-color: var(--nw-green);
-  box-shadow: 0 0 0 4px rgba(10, 124, 66, 0.12);
+  box-shadow: 0 0 0 4px rgba(0, 122, 149, 0.12);
 }
 .nw-search input { flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; font-size: 15px; color: var(--nw-ink); }
-.nw-search input::placeholder { color: #9aa39c; }
+.nw-search input::placeholder { color: #766f66; }
 
 /* Green underline hover for links */
 .nw-link { color: var(--nw-green); font-weight: 600; }
@@ -926,8 +926,8 @@
 .nw-hero-wash {
   background:
     radial-gradient(48rem 30rem at 84% -12%, rgba(18, 160, 91, 0.16), transparent 60%),
-    radial-gradient(40rem 28rem at 2% 0%, rgba(10, 124, 66, 0.10), transparent 58%),
-    linear-gradient(180deg, #e9f2ec 0%, #f2f4ee 72%);
+    radial-gradient(40rem 28rem at 2% 0%, rgba(0, 122, 149, 0.10), transparent 58%),
+    linear-gradient(180deg, #e9f2ec 0%, #f7f4ee 72%);
 }
 
 /* Subtle entrance */

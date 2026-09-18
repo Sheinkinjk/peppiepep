@@ -155,9 +155,9 @@ const webPageSchema = {
 };
 
 const stacksTone: Record<string, string> = {
-  Yes: "bg-[#e8f5ee] text-[#0a7c42]",
+  Yes: "bg-[#e4f2f5] text-[#007a95]",
   "Loan, not a cash rebate": "bg-[#fdf6e3] text-[#8a6d1a]",
-  "Federal only": "bg-[#eef1ec] text-[#5a665f]",
+  "Federal only": "bg-[#f1ede4] text-[#56504a]",
 };
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
@@ -170,35 +170,35 @@ export default function HomeBatteryRebateByStatePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(datasetSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
 
-      <main className="text-[#10251b]">
+      <main className="text-[#14120f]">
         <div className="mx-auto max-w-3xl px-6 sm:px-8">
           {/* Breadcrumb */}
-          <nav className="flex flex-wrap items-center gap-2 pt-8 text-sm text-[#5a665f]">
-            <Link href="/" className="transition-colors hover:text-[#10251b]">Refer Labs</Link>
+          <nav className="flex flex-wrap items-center gap-2 pt-8 text-sm text-[#56504a]">
+            <Link href="/" className="transition-colors hover:text-[#14120f]">Refer Labs</Link>
             <span>/</span>
-            <Link href="/apollo-energy-group" className="transition-colors hover:text-[#10251b]">Home batteries</Link>
+            <Link href="/apollo-energy-group" className="transition-colors hover:text-[#14120f]">Home batteries</Link>
             <span>/</span>
-            <span className="text-[#10251b]">Rebate by state</span>
+            <span className="text-[#14120f]">Rebate by state</span>
           </nav>
 
           {/* Hero */}
           <header className="pt-9 pb-6">
-            <h1 className="mt-4 text-3xl font-extrabold leading-[1.08] tracking-tight text-[#10251b] sm:text-4xl lg:text-[2.6rem]">
+            <h1 className="mt-4 text-3xl font-extrabold leading-[1.08] tracking-tight text-[#14120f] sm:text-4xl lg:text-[2.6rem]">
               Home battery rebate by state in Australia (2026)
             </h1>
-            <p className="mt-5 text-base leading-relaxed text-[#3d4b44] sm:text-lg">
+            <p className="mt-5 text-base leading-relaxed text-[#56504a] sm:text-lg">
               The federal Cheaper Home Batteries Program is the main home battery rebate in every Australian state and
               territory, worth about $272 per usable kWh (around $252 after typical costs) and stepping down every six
-              months. On top of it, only <strong className="font-semibold text-[#10251b]">Western Australia</strong> and{" "}
-              <strong className="font-semibold text-[#10251b]">New South Wales</strong> currently add a meaningful state
-              battery incentive, the <strong className="font-semibold text-[#10251b]">ACT</strong> offers an interest-free
+              months. On top of it, only <strong className="font-semibold text-[#14120f]">Western Australia</strong> and{" "}
+              <strong className="font-semibold text-[#14120f]">New South Wales</strong> currently add a meaningful state
+              battery incentive, the <strong className="font-semibold text-[#14120f]">ACT</strong> offers an interest-free
               loan, and most other states no longer run their own battery rebate. Here is the full picture, state by state.
             </p>
           </header>
 
           {/* Info-only note */}
-          <div className="nw-card px-5 py-4 text-sm leading-relaxed text-[#3d4b44]">
-            <span className="font-bold text-[#10251b]">Indicative only, updated {UPDATED}.</span> Rebate amounts are set
+          <div className="nw-card px-5 py-4 text-sm leading-relaxed text-[#56504a]">
+            <span className="font-bold text-[#14120f]">Indicative only, updated {UPDATED}.</span> Rebate amounts are set
             by government programs, move with certificate markets, and change often. State schemes open and close. Confirm
             the current figure for your address and battery when you get a quote. Nothing here is financial advice. This
             page contains a disclosed commercial referral arrangement with Apollo Energy Group.
@@ -206,25 +206,25 @@ export default function HomeBatteryRebateByStatePage() {
 
           {/* The by-state table (the asset) */}
           <section className="mt-9">
-            <h2 className="text-xl font-bold tracking-tight text-[#10251b] sm:text-2xl">
+            <h2 className="text-xl font-bold tracking-tight text-[#14120f] sm:text-2xl">
               Home battery rebates by state, at a glance
             </h2>
             <div className="mt-4 overflow-x-auto">
               <table className="w-full border-collapse text-left text-sm">
                 <thead>
-                  <tr className="border-b border-[#e5e9e7]">
-                    <th className="pb-3 pr-4 text-[11px] font-semibold uppercase tracking-widest text-[#627068]">State / Territory</th>
-                    <th className="pb-3 pr-4 text-[11px] font-semibold uppercase tracking-widest text-[#627068]">State scheme (2026)</th>
-                    <th className="pb-3 text-[11px] font-semibold uppercase tracking-widest text-[#627068]">On top of federal?</th>
+                  <tr className="border-b border-[#ded8cd]">
+                    <th className="pb-3 pr-4 text-[11px] font-semibold uppercase tracking-widest text-[#56504a]">State / Territory</th>
+                    <th className="pb-3 pr-4 text-[11px] font-semibold uppercase tracking-widest text-[#56504a]">State scheme (2026)</th>
+                    <th className="pb-3 text-[11px] font-semibold uppercase tracking-widest text-[#56504a]">On top of federal?</th>
                   </tr>
                 </thead>
                 <tbody>
                   {STATES.map((s) => (
-                    <tr key={s.state} className="border-b border-[#eef1ec] align-top">
-                      <td className="py-3 pr-4 font-semibold text-[#10251b]">{s.state}</td>
-                      <td className="py-3 pr-4 text-[#3d4b44]">{s.scheme}</td>
+                    <tr key={s.state} className="border-b border-[#f1ede4] align-top">
+                      <td className="py-3 pr-4 font-semibold text-[#14120f]">{s.state}</td>
+                      <td className="py-3 pr-4 text-[#56504a]">{s.scheme}</td>
                       <td className="py-3">
-                        <span className={`inline-block whitespace-nowrap rounded-full px-2.5 py-1 text-xs font-semibold ${stacksTone[s.stacks] ?? "bg-[#eef1ec] text-[#5a665f]"}`}>
+                        <span className={`inline-block whitespace-nowrap rounded-full px-2.5 py-1 text-xs font-semibold ${stacksTone[s.stacks] ?? "bg-[#f1ede4] text-[#56504a]"}`}>
                           {s.stacks}
                         </span>
                       </td>
@@ -233,7 +233,7 @@ export default function HomeBatteryRebateByStatePage() {
                 </tbody>
               </table>
             </div>
-            <p className="mt-3 text-xs leading-relaxed text-[#627068]">
+            <p className="mt-3 text-xs leading-relaxed text-[#56504a]">
               The federal Cheaper Home Batteries Program applies in every row above. &ldquo;Federal only&rdquo; means the
               state has no active battery-specific rebate of its own in 2026. Amounts for active state schemes vary by
               network and household, so confirm at quote.
@@ -241,8 +241,8 @@ export default function HomeBatteryRebateByStatePage() {
           </section>
 
           {/* First CTA */}
-          <div className="mt-8 flex flex-col items-start gap-3 rounded-2xl border border-[#0a7c42]/25 bg-[#e8f5ee] px-6 py-5 sm:flex-row sm:items-center sm:justify-between">
-            <p className="max-w-md text-[15px] leading-relaxed text-[#10251b]">
+          <div className="mt-8 flex flex-col items-start gap-3 rounded-2xl border border-[#007a95]/25 bg-[#e4f2f5] px-6 py-5 sm:flex-row sm:items-center sm:justify-between">
+            <p className="max-w-md text-[15px] leading-relaxed text-[#14120f]">
               Whichever state you are in, the federal rebate is applied at the point of sale. Through Refer Labs, Apollo
               Energy Group takes an extra $500 off your quote on top of it, with no code to enter.
             </p>
@@ -257,17 +257,17 @@ export default function HomeBatteryRebateByStatePage() {
 
           {/* Per-state detail */}
           <section className="mt-11">
-            <h2 className="text-xl font-bold tracking-tight text-[#10251b] sm:text-2xl">Every state and territory, in detail</h2>
+            <h2 className="text-xl font-bold tracking-tight text-[#14120f] sm:text-2xl">Every state and territory, in detail</h2>
             <div className="mt-5 space-y-5">
               {STATES.map((s) => (
                 <div key={s.state} className="nw-card px-5 py-5">
                   <div className="flex flex-wrap items-center gap-3">
-                    <h3 className="text-lg font-bold text-[#10251b]">{s.state}</h3>
-                    <span className={`inline-block rounded-full px-2.5 py-1 text-xs font-semibold ${stacksTone[s.stacks] ?? "bg-[#eef1ec] text-[#5a665f]"}`}>
+                    <h3 className="text-lg font-bold text-[#14120f]">{s.state}</h3>
+                    <span className={`inline-block rounded-full px-2.5 py-1 text-xs font-semibold ${stacksTone[s.stacks] ?? "bg-[#f1ede4] text-[#56504a]"}`}>
                       {s.scheme}
                     </span>
                   </div>
-                  <p className="mt-2.5 text-[15px] leading-relaxed text-[#3d4b44]">{s.detail}</p>
+                  <p className="mt-2.5 text-[15px] leading-relaxed text-[#56504a]">{s.detail}</p>
                 </div>
               ))}
             </div>
@@ -275,8 +275,8 @@ export default function HomeBatteryRebateByStatePage() {
 
           {/* Federal explainer link (avoid duplicating the mechanics page) */}
           <section className="mt-11">
-            <h2 className="text-xl font-bold tracking-tight text-[#10251b] sm:text-2xl">How the federal rebate works everywhere</h2>
-            <div className="mt-4 space-y-4 text-[15px] leading-relaxed text-[#3d4b44]">
+            <h2 className="text-xl font-bold tracking-tight text-[#14120f] sm:text-2xl">How the federal rebate works everywhere</h2>
+            <div className="mt-4 space-y-4 text-[15px] leading-relaxed text-[#56504a]">
               <p>
                 The federal Cheaper Home Batteries Program is national, so it is the one constant no matter your postcode.
                 It discounts about 30% of an eligible battery, works out at roughly $272 per usable kWh before costs (around
@@ -294,9 +294,9 @@ export default function HomeBatteryRebateByStatePage() {
           </section>
 
           {/* Second CTA */}
-          <section className="mt-10 rounded-2xl border border-[#e5e9e7] bg-[#eef1ec] px-6 py-6">
-            <h2 className="text-lg font-bold text-[#10251b]">Get your rebate applied and $500 off the quote</h2>
-            <p className="mt-2 text-[15px] leading-relaxed text-[#3d4b44]">
+          <section className="mt-10 rounded-2xl border border-[#ded8cd] bg-[#f1ede4] px-6 py-6">
+            <h2 className="text-lg font-bold text-[#14120f]">Get your rebate applied and $500 off the quote</h2>
+            <p className="mt-2 text-[15px] leading-relaxed text-[#56504a]">
               Apollo Energy Group is a Sydney-based, SAA-accredited installer that applies the federal rebate at the point
               of sale and takes an exclusive $500 off for Refer Labs readers. Prefer a callback first? Register your
               interest and someone gets in touch within 2 business days.
@@ -317,15 +317,15 @@ export default function HomeBatteryRebateByStatePage() {
 
           {/* FAQ */}
           <section className="mt-11">
-            <h2 className="text-xl font-bold tracking-tight text-[#10251b] sm:text-2xl">Frequently asked questions</h2>
-            <div className="mt-5 divide-y divide-[#e5e9e7] border-y border-[#e5e9e7]">
+            <h2 className="text-xl font-bold tracking-tight text-[#14120f] sm:text-2xl">Frequently asked questions</h2>
+            <div className="mt-5 divide-y divide-[#ded8cd] border-y border-[#ded8cd]">
               {faqs.map((f) => (
                 <details key={f.q} className="group py-4">
-                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-[#10251b]">
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-[#14120f]">
                     {f.q}
-                    <span className="text-xl leading-none text-[#0a7c42] transition-transform group-open:rotate-45">+</span>
+                    <span className="text-xl leading-none text-[#007a95] transition-transform group-open:rotate-45">+</span>
                   </summary>
-                  <p className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">{f.a}</p>
+                  <p className="mt-3 text-[15px] leading-relaxed text-[#56504a]">{f.a}</p>
                 </details>
               ))}
             </div>
@@ -333,7 +333,7 @@ export default function HomeBatteryRebateByStatePage() {
 
           {/* Related */}
           <section className="mt-11">
-            <h2 className="text-lg font-bold text-[#10251b]">Keep reading</h2>
+            <h2 className="text-lg font-bold text-[#14120f]">Keep reading</h2>
             <ul className="mt-3 space-y-2 text-[15px]">
               <li><Link href="/home-battery-rebate-australia" className="nw-link">The federal home battery rebate, in full: rate, taper and examples</Link></li>
               <li><Link href="/nsw-home-battery-rebate-2026" className="nw-link">NSW home battery rebate 2026, explained</Link></li>
@@ -346,8 +346,8 @@ export default function HomeBatteryRebateByStatePage() {
           </section>
 
           {/* Disclosure */}
-          <section className="border-t border-[#e5e9e7] pt-6 pb-16">
-            <p className="text-xs leading-relaxed text-[#627068]">
+          <section className="border-t border-[#ded8cd] pt-6 pb-16">
+            <p className="text-xs leading-relaxed text-[#56504a]">
               Published by Refer Labs, an independent comparison publisher, and contains a disclosed affiliate link to
               Apollo Energy Group, which means we may earn a commission if you enquire or buy through our link, at no extra
               cost to you. Commissions never change what we write. Rebate figures are indicative, set by government programs,

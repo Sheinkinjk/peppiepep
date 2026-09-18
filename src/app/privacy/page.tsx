@@ -29,10 +29,10 @@ const breadcrumbSchema = {
 function Section({ n, title, children }: { n: string; title: string; children: React.ReactNode }) {
   return (
     <section id={`s${n}`} className="scroll-mt-24">
-      <h2 className="mb-4 text-2xl font-bold text-[#10251b]">
+      <h2 className="mb-4 text-2xl font-bold text-[#14120f]">
         {n}. {title}
       </h2>
-      <div className="space-y-3 text-[#2b362f]">{children}</div>
+      <div className="space-y-3 text-[#14120f]">{children}</div>
     </section>
   );
 }
@@ -51,8 +51,8 @@ function Processor({
   policy?: string;
 }) {
   return (
-    <div className="rounded-lg bg-[#f5f8f6] p-4">
-      <p className="mb-1 font-semibold text-[#10251b]">{name}</p>
+    <div className="rounded-lg bg-[#f7f4ee] p-4">
+      <p className="mb-1 font-semibold text-[#14120f]">{name}</p>
       <ul className="list-disc space-y-0.5 pl-5 text-sm">
         <li><strong>What:</strong> {what}</li>
         <li><strong>Why:</strong> {why}</li>
@@ -60,7 +60,7 @@ function Processor({
         {policy && (
           <li>
             <strong>Their policy:</strong>{" "}
-            <a href={policy} className="text-[#0a7c42] hover:underline" target="_blank" rel="noopener">
+            <a href={policy} className="text-[#007a95] hover:underline" target="_blank" rel="noopener">
               {policy.replace(/^https:\/\//, "")}
             </a>
           </li>
@@ -75,36 +75,36 @@ export default function Privacy() {
     <ConsumerShell>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <main id="main-content" className="mx-auto max-w-3xl px-5 pb-20 pt-12 sm:px-8 sm:pt-16">
-        <nav className="mb-8 flex items-center gap-2 text-sm text-[#627068]">
-          <Link href="/" className="hover:text-[#0a7c42]">Refer Labs</Link>
+        <nav className="mb-8 flex items-center gap-2 text-sm text-[#56504a]">
+          <Link href="/" className="hover:text-[#007a95]">Refer Labs</Link>
           <span>/</span>
-          <span className="text-[#2b362f]">Privacy</span>
+          <span className="text-[#14120f]">Privacy</span>
         </nav>
 
-        <h1 className="mt-4 text-4xl font-bold leading-[1.07] tracking-[-0.01em] text-[#10251b] sm:text-5xl">
+        <h1 className="mt-4 text-4xl font-bold leading-[1.07] tracking-[-0.01em] text-[#14120f] sm:text-5xl">
           Privacy Policy
         </h1>
-        <p className="mt-4 text-sm text-[#627068]">Last updated: 15 September 2026 · Version 3.0</p>
+        <p className="mt-4 text-sm text-[#56504a]">Last updated: 15 September 2026 · Version 3.0</p>
 
-        <p className="mt-8 text-lg leading-relaxed text-[#2b362f]">
+        <p className="mt-8 text-lg leading-relaxed text-[#14120f]">
           You can read all of Refer Labs without giving us any personal information. We only collect details you choose
           to send us, such as an email address for the newsletter or an enquiry form, plus basic site usage. We do not
           sell personal information. This policy explains what we collect, why, who handles it, and your rights under
           the Privacy Act 1988 (Cth) and the Australian Privacy Principles.
         </p>
 
-        <div className="mt-8 rounded-lg border border-[#cfe6da] bg-[#e8f5ee] p-4 text-[#2b362f]">
-          <p className="font-semibold text-[#10251b]">Who we are</p>
+        <div className="mt-8 rounded-lg border border-[#b9e3eb] bg-[#e4f2f5] p-4 text-[#14120f]">
+          <p className="font-semibold text-[#14120f]">Who we are</p>
           <p>Pepform Pty Ltd trading as Refer Labs · ABN 32 660 008 159 · Melbourne, Victoria</p>
           <p>
             Privacy contact:{" "}
-            <a href="mailto:jarred@referlabs.com.au" className="text-[#0a7c42] hover:underline">jarred@referlabs.com.au</a>
+            <a href="mailto:jarred@referlabs.com.au" className="text-[#007a95] hover:underline">jarred@referlabs.com.au</a>
           </p>
         </div>
 
         <div className="mt-12 space-y-10">
           <Section n="1" title="What we collect">
-            <h3 className="text-lg font-semibold text-[#10251b]">Information you give us</h3>
+            <h3 className="text-lg font-semibold text-[#14120f]">Information you give us</h3>
             <ul className="list-disc space-y-2 pl-5">
               <li>
                 <strong>Newsletter and guide sign-ups:</strong> your email address, the page you signed up from, and, for
@@ -131,7 +131,7 @@ export default function Privacy() {
               </li>
             </ul>
 
-            <h3 className="pt-2 text-lg font-semibold text-[#10251b]">Information collected when you use the site</h3>
+            <h3 className="pt-2 text-lg font-semibold text-[#14120f]">Information collected when you use the site</h3>
             <ul className="list-disc space-y-2 pl-5">
               <li>
                 <strong>Server logs:</strong> your IP address, browser and the pages requested, kept by our hosting
@@ -316,13 +316,13 @@ export default function Privacy() {
             </ul>
             <p>
               Email{" "}
-              <a href="mailto:jarred@referlabs.com.au" className="text-[#0a7c42] hover:underline">jarred@referlabs.com.au</a>{" "}
+              <a href="mailto:jarred@referlabs.com.au" className="text-[#007a95] hover:underline">jarred@referlabs.com.au</a>{" "}
               with &ldquo;Privacy request&rdquo; in the subject line. We will respond within 30 days.
             </p>
             <p>
               If you are unhappy with how we handled your information or a request, tell us first so we can try to fix it.
               You can also complain to the Office of the Australian Information Commissioner at{" "}
-              <a href="https://www.oaic.gov.au" className="text-[#0a7c42] hover:underline" target="_blank" rel="noopener">oaic.gov.au</a>.
+              <a href="https://www.oaic.gov.au" className="text-[#007a95] hover:underline" target="_blank" rel="noopener">oaic.gov.au</a>.
             </p>
             <p>
               If you live outside Australia, you may have additional rights under your local law, such as in the European
@@ -346,12 +346,12 @@ export default function Privacy() {
           </Section>
 
           <Section n="13" title="Contact">
-            <div className="rounded-lg bg-[#e8f5ee] p-4">
+            <div className="rounded-lg bg-[#e4f2f5] p-4">
               <p className="font-semibold">Pepform Pty Ltd trading as Refer Labs</p>
               <p>ABN 32 660 008 159 · Melbourne, Victoria</p>
               <p>
                 Email:{" "}
-                <a href="mailto:jarred@referlabs.com.au" className="text-[#0a7c42] hover:underline">jarred@referlabs.com.au</a>
+                <a href="mailto:jarred@referlabs.com.au" className="text-[#007a95] hover:underline">jarred@referlabs.com.au</a>
               </p>
             </div>
           </Section>

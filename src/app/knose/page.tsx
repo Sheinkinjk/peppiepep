@@ -77,15 +77,15 @@ export default function KnosePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <main className="text-[#10251b]">
+      <main className="text-[#14120f]">
         <div className="mx-auto max-w-3xl px-6 sm:px-8">
           {/* Breadcrumb */}
-          <nav className="flex flex-wrap items-center gap-2 pt-8 text-sm text-[#5a665f]">
-            <Link href="/" className="transition-colors hover:text-[#10251b]">Refer Labs</Link>
+          <nav className="flex flex-wrap items-center gap-2 pt-8 text-sm text-[#56504a]">
+            <Link href="/" className="transition-colors hover:text-[#14120f]">Refer Labs</Link>
             <span>/</span>
-            <Link href="/pet-insurance" className="transition-colors hover:text-[#10251b]">Pet insurance</Link>
+            <Link href="/pet-insurance" className="transition-colors hover:text-[#14120f]">Pet insurance</Link>
             <span>/</span>
-            <span className="text-[#10251b]">Knose</span>
+            <span className="text-[#14120f]">Knose</span>
           </nav>
 
           {/* Hero */}
@@ -93,12 +93,12 @@ export default function KnosePage() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/logos/knose.svg" alt="Knose logo" width={160} height={62} className="mb-5 h-11 w-auto" />
             <p className="nw-kicker">Pet insurance · Current offer</p>
-            <h1 className="mt-4 text-3xl font-extrabold leading-[1.08] tracking-tight text-[#10251b] sm:text-4xl">
-              Knose promo code <span className="text-[#0a7c42]">referlab2mf</span>: 2 months free for new customers
+            <h1 className="mt-4 text-3xl font-extrabold leading-[1.08] tracking-tight text-[#14120f] sm:text-4xl">
+              Knose promo code <span className="text-[#007a95]">referlab2mf</span>: 2 months free for new customers
             </h1>
-            <p className="mt-5 text-lg leading-relaxed text-[#3d4b44]">
-              Knose is an Australian pet insurance provider. New customers can get <strong className="text-[#10251b]">2
-              months free</strong> when they take out a policy using the code <strong className="text-[#10251b]">referlab2mf</strong> through
+            <p className="mt-5 text-lg leading-relaxed text-[#56504a]">
+              Knose is an Australian pet insurance provider. New customers can get <strong className="text-[#14120f]">2
+              months free</strong> when they take out a policy using the code <strong className="text-[#14120f]">referlab2mf</strong> through
               our link. This page is general information and a referral, not financial advice or a recommendation.
             </p>
             {/* Below the lead. The first paragraph after the h1 is the answer;
@@ -108,7 +108,7 @@ export default function KnosePage() {
             {/* The sentence that sat here duplicated the paragraph above it. The date
                 stays: it is the only reading date on this page, and without it the nearest
                 date to the code is the "Last updated" stamp, which reads as verification. */}
-            <p className="mt-4 text-[12px] font-medium text-[#5c6b63]">
+            <p className="mt-4 text-[12px] font-medium text-[#56504a]">
               Verified by Refer Labs on {checkedOn("referlab2mf")}, {checkMethod("Knose")}. Offers can change, so check the current terms
               before you sign up.
             </p>
@@ -117,7 +117,7 @@ export default function KnosePage() {
             <EditorialMeta lastUpdated={UPDATED} className="mt-4" />
             <div className="mt-6 flex flex-wrap items-center gap-3">
               <KnoseCta label="Get a Knose quote (2 months free)" loc="hero" />
-              <Link href="/pet-insurance" className="text-sm font-semibold text-[#0a7c42] hover:text-[#086536]">
+              <Link href="/pet-insurance" className="text-sm font-semibold text-[#007a95] hover:text-[#003647]">
                 Back to pet insurance
               </Link>
             </div>
@@ -136,8 +136,8 @@ export default function KnosePage() {
               cannot be built from. Worded differently from the FAQ entry below on
               purpose: same facts, not the same sentence twice on one page. */}
           <section className="mb-12">
-            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">What is the current Knose promo code?</h2>
-            <p className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">
+            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">What is the current Knose promo code?</h2>
+            <p className="mt-3 text-[15px] leading-relaxed text-[#56504a]">
               referlab2mf, worth 2 months free for new customers taking out a policy. What the policy itself covers, and
               the waiting periods, exclusions and limits that apply, sit in Knose&apos;s PDS rather than in the offer, so
               get a quote to see what would apply to your pet.
@@ -146,12 +146,12 @@ export default function KnosePage() {
 
           {/* What to check (factual pointers, not advice) */}
           <section className="mb-12">
-            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Before you take up the offer</h2>
-            <p className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">
+            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Before you take up the offer</h2>
+            <p className="mt-3 text-[15px] leading-relaxed text-[#56504a]">
               Whether any policy is right for you depends on your pet and your circumstances, so it&apos;s worth reading
               the detail rather than the headline:
             </p>
-            <ul className="mt-5 space-y-2.5 text-[15px] leading-relaxed text-[#3d4b44]">
+            <ul className="mt-5 space-y-2.5 text-[15px] leading-relaxed text-[#56504a]">
               <li>Get a quote for your specific pet, so the price and terms reflect its species, breed and age.</li>
               <li>Read Knose&apos;s Product Disclosure Statement (PDS) and Target Market Determination (TMD) for exactly what is and isn&apos;t covered.</li>
               <li>Check the waiting periods, exclusions (including pre-existing conditions), excess, benefit percentage and annual limits.</li>
@@ -164,18 +164,18 @@ export default function KnosePage() {
 
           {/* FAQ */}
           <section className="mb-14">
-            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Common questions</h2>
-            <div className="mt-6 divide-y divide-[#e5e9e7] border-t border-[#e5e9e7]">
+            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Common questions</h2>
+            <div className="mt-6 divide-y divide-[#ded8cd] border-t border-[#ded8cd]">
               {faqs.map((f) => (
                 <div key={f.q} className="py-5">
-                  <h3 className="font-bold text-[#10251b]">{f.q}</h3>
-                  <p className="mt-1.5 text-[15px] leading-relaxed text-[#3d4b44]">{f.a}</p>
+                  <h3 className="font-bold text-[#14120f]">{f.q}</h3>
+                  <p className="mt-1.5 text-[15px] leading-relaxed text-[#56504a]">{f.a}</p>
                 </div>
               ))}
             </div>
           </section>
 
-          <div className="mb-10 flex flex-wrap gap-x-6 gap-y-2 border-t border-[#e5e9e7] pt-8 text-sm">
+          <div className="mb-10 flex flex-wrap gap-x-6 gap-y-2 border-t border-[#ded8cd] pt-8 text-sm">
             <Link href="/knose-vs-petsonme" className="nw-link">Knose vs PetsOnMe, compared</Link>
             <Link href="/who-underwrites-pet-insurance-australia" className="nw-link">Who underwrites which pet insurer</Link>
             <Link href="/best-pet-insurance-australia" className="nw-link">How to choose pet insurance</Link>

@@ -19,6 +19,9 @@ const SCALE: Record<string, number> = {
   "emma-sleep.svg": 1.18,
   "optislim.svg": 1.2,
   "foreo.svg": 1.12,
+  // Hub partners, 18 Sep 2026, matched by eye to the homepage's optical sizes
+  // (src/lib/home/content.ts logoOptical) and kept under the 1.2 cap above.
+  "apollo-energy.png": 0.86,
   "activecampaign.png": 0.94,
   "aisdr.png": 1.18,
   "alohi.png": 1.36,

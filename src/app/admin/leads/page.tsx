@@ -37,12 +37,12 @@ export default async function LeadsAdmin({ searchParams }: { searchParams: Promi
   const bankedCommission = all.reduce((s, l) => s + (l.commission_received ?? 0), 0);
 
   return (
-    <div className="min-h-screen bg-[#f6f7f6] text-[#10251b]">
+    <div className="min-h-screen bg-[#f7f4ee] text-[#14120f]">
       <div className="mx-auto max-w-6xl px-5 py-8 sm:px-8">
         <div className="flex flex-wrap items-end justify-between gap-3">
           <div>
             <h1 className="text-2xl font-extrabold">Lending leads</h1>
-            <p className="mt-1 text-sm text-[#5a665f]">{all.length} total · showing {leads.length}{status ? ` with status “${status}”` : ""}</p>
+            <p className="mt-1 text-sm text-[#56504a]">{all.length} total · showing {leads.length}{status ? ` with status “${status}”` : ""}</p>
           </div>
           <div className="flex gap-3 text-right">
             <Counter label="Pipeline commission" value={`$${pipelineCommission.toLocaleString("en-AU")}`} />
@@ -58,10 +58,10 @@ export default async function LeadsAdmin({ searchParams }: { searchParams: Promi
           ))}
         </div>
 
-        <div className="mt-5 overflow-x-auto rounded-2xl border border-[#e5e9e7] bg-white">
+        <div className="mt-5 overflow-x-auto rounded-2xl border border-[#ded8cd] bg-white">
           <table className="w-full border-collapse text-left text-sm">
             <thead>
-              <tr className="bg-[#f8faf9] text-[11px] font-bold uppercase tracking-[0.08em] text-[#5a665f]">
+              <tr className="bg-[#f7f4ee] text-[11px] font-bold uppercase tracking-[0.08em] text-[#56504a]">
                 <th scope="col" className="px-4 py-3">Received</th>
                 <th scope="col" className="px-4 py-3">Business</th>
                 <th scope="col" className="px-4 py-3">Amount</th>
@@ -73,31 +73,31 @@ export default async function LeadsAdmin({ searchParams }: { searchParams: Promi
             </thead>
             <tbody>
               {leads.length === 0 && (
-                <tr><td colSpan={7} className="px-4 py-10 text-center text-[#5a665f]">No leads{status ? " with this status" : " yet"}.</td></tr>
+                <tr><td colSpan={7} className="px-4 py-10 text-center text-[#56504a]">No leads{status ? " with this status" : " yet"}.</td></tr>
               )}
               {leads.map((l) => {
                 const tone = statusTone(l.status);
                 return (
-                  <tr key={l.id} className="border-t border-[#eef1ef] hover:bg-[#f8faf9]">
-                    <td className="whitespace-nowrap px-4 py-3 text-[#5a665f]">{dt(l.created_at)}</td>
+                  <tr key={l.id} className="border-t border-[#f1ede4] hover:bg-[#f7f4ee]">
+                    <td className="whitespace-nowrap px-4 py-3 text-[#56504a]">{dt(l.created_at)}</td>
                     <th scope="row" className="px-4 py-3 font-semibold">
-                      <Link href={`/admin/leads/${l.id}`} className="text-[#0a7c42] hover:underline">{l.business_name}</Link>
-                      <span className="block text-xs font-normal text-[#5a665f]">{l.first_name} {l.last_name}</span>
+                      <Link href={`/admin/leads/${l.id}`} className="text-[#007a95] hover:underline">{l.business_name}</Link>
+                      <span className="block text-xs font-normal text-[#56504a]">{l.first_name} {l.last_name}</span>
                     </th>
                     <td className="whitespace-nowrap px-4 py-3 tabular-nums">{AMOUNT_SHORT[l.amount_requested as keyof typeof AMOUNT_SHORT] ?? l.amount_requested}</td>
-                    <td className="px-4 py-3 text-[#3d4b44]">{[l.industry, l.state].filter(Boolean).join(" · ") || "—"}</td>
-                    <td className="px-4 py-3 text-[#3d4b44]">{label(l.urgency)}</td>
+                    <td className="px-4 py-3 text-[#56504a]">{[l.industry, l.state].filter(Boolean).join(" · ") || "—"}</td>
+                    <td className="px-4 py-3 text-[#56504a]">{label(l.urgency)}</td>
                     <td className="px-4 py-3">
                       <span className="inline-block rounded-full px-2.5 py-1 text-xs font-bold" style={{ background: tone.bg, color: tone.fg }}>{l.status}</span>
                     </td>
-                    <td className="px-4 py-3 text-xs text-[#5a665f]">{l.notified_at ? "✓" : <span className="text-amber-600">not sent</span>}</td>
+                    <td className="px-4 py-3 text-xs text-[#56504a]">{l.notified_at ? "✓" : <span className="text-amber-600">not sent</span>}</td>
                   </tr>
                 );
               })}
             </tbody>
           </table>
         </div>
-        <p className="mt-4 text-xs text-[#627068]">Internal · not indexed. Showing up to 500 most-recent leads.</p>
+        <p className="mt-4 text-xs text-[#56504a]">Internal · not indexed. Showing up to 500 most-recent leads.</p>
       </div>
     </div>
   );
@@ -105,8 +105,8 @@ export default async function LeadsAdmin({ searchParams }: { searchParams: Promi
 
 function Counter({ label, value }: { label: string; value: string }) {
   return (
-    <div className="rounded-xl border border-[#e5e9e7] bg-white px-4 py-2">
-      <p className="text-[10px] font-bold uppercase tracking-[0.1em] text-[#627068]">{label}</p>
+    <div className="rounded-xl border border-[#ded8cd] bg-white px-4 py-2">
+      <p className="text-[10px] font-bold uppercase tracking-[0.1em] text-[#56504a]">{label}</p>
       <p className="text-lg font-extrabold tabular-nums">{value}</p>
     </div>
   );
@@ -117,8 +117,8 @@ function FilterChip({ href, active, label, tone }: { href: string; active: boole
     <Link href={href}
       className="rounded-full border px-3 py-1.5 text-xs font-semibold transition-colors"
       style={active
-        ? { borderColor: "#0a7c42", background: "#0a7c42", color: "#fff" }
-        : { borderColor: "#e5e9e7", background: tone?.bg ?? "#fff", color: tone?.fg ?? "#3d4b44" }}>
+        ? { borderColor: "#007a95", background: "#007a95", color: "#fff" }
+        : { borderColor: "#ded8cd", background: tone?.bg ?? "#fff", color: tone?.fg ?? "#56504a" }}>
       {label}
     </Link>
   );

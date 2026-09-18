@@ -97,24 +97,24 @@ export default function HairLossTreatmentCostAustraliaPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
 
-      <main className="text-[#10251b]">
+      <main className="text-[#14120f]">
         <div className="mx-auto max-w-3xl px-6 sm:px-8">
 
           {/* Breadcrumb */}
-          <nav className="flex flex-wrap items-center gap-2 pt-8 text-sm text-[#5a665f]">
-            <Link href="/" className="hover:text-[#10251b] transition-colors">Refer Labs</Link>
+          <nav className="flex flex-wrap items-center gap-2 pt-8 text-sm text-[#56504a]">
+            <Link href="/" className="hover:text-[#14120f] transition-colors">Refer Labs</Link>
             <span>/</span>
-            <Link href="/hair-loss" className="hover:text-[#10251b] transition-colors">Hair loss</Link>
+            <Link href="/hair-loss" className="hover:text-[#14120f] transition-colors">Hair loss</Link>
             <span>/</span>
-            <span className="text-[#10251b]">Treatment cost</span>
+            <span className="text-[#14120f]">Treatment cost</span>
           </nav>
 
           {/* Hero */}
           <header className="pt-9 pb-6">
-            <h1 className="mt-4 text-3xl sm:text-4xl lg:text-[2.6rem] font-extrabold leading-[1.08] tracking-tight text-[#10251b]">
+            <h1 className="mt-4 text-3xl sm:text-4xl lg:text-[2.6rem] font-extrabold leading-[1.08] tracking-tight text-[#14120f]">
               What hair-loss treatment costs in Australia
             </h1>
-            <p className="mt-5 text-base sm:text-lg leading-relaxed text-[#3d4b44]">
+            <p className="mt-5 text-base sm:text-lg leading-relaxed text-[#56504a]">
               There are two routes and they are priced on different models, which is why a single figure does not exist.
               An over-the-counter topical is a one-off purchase that varies by pharmacy. A telehealth plan is a monthly
               subscription that continues whether you consult or not, and nothing in this category attracts a Medicare
@@ -125,15 +125,15 @@ export default function HairLossTreatmentCostAustraliaPage() {
           </header>
 
           {/* Info-only note */}
-          <div className="nw-card px-5 py-4 text-sm leading-relaxed text-[#3d4b44]">
-            <span className="font-bold text-[#10251b]">Prices change.</span> The figures below are the providers&apos; own
+          <div className="nw-card px-5 py-4 text-sm leading-relaxed text-[#56504a]">
+            <span className="font-bold text-[#14120f]">Prices change.</span> The figures below are the providers&apos; own
             published prices, which can change, so verify current pricing on each provider before you
             commit. This page contains a disclosed affiliate link to Mosh.
           </div>
 
           {/* First CTA */}
-          <div className="mt-7 flex flex-col items-start gap-3 rounded-2xl border border-[#0a7c42]/25 bg-[#e8f5ee] px-6 py-5 sm:flex-row sm:items-center sm:justify-between">
-            <p className="max-w-md text-[15px] leading-relaxed text-[#10251b]">
+          <div className="mt-7 flex flex-col items-start gap-3 rounded-2xl border border-[#007a95]/25 bg-[#e4f2f5] px-6 py-5 sm:flex-row sm:items-center sm:justify-between">
+            <p className="max-w-md text-[15px] leading-relaxed text-[#14120f]">
               New customers get 55% off their first order through our link, with free delivery. The plan and price are
               shown on Mosh and confirmed after a practitioner assessment.
             </p>
@@ -163,11 +163,11 @@ export default function HairLossTreatmentCostAustraliaPage() {
                 quote numbers we cannot honestly match, so this states the cost
                 STRUCTURE and the one figure that is verified. */}
             <section>
-              <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#10251b]">
+              <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#14120f]">
                 How much does hair-loss treatment cost per month in Australia?
               </h2>
-              <div className="mt-4 rounded-xl border border-[#cfe6da] bg-[#e8f5ee] px-6 py-5">
-                <p className="text-[15px] leading-relaxed text-[#2b362f]">
+              <div className="mt-4 rounded-xl border border-[#b9e3eb] bg-[#e4f2f5] px-6 py-5">
+                <p className="text-[15px] leading-relaxed text-[#14120f]">
                   There are two cost structures, and they are not comparable on a single number. An over-the-counter
                   topical product is a one-off purchase you repeat, priced by the pharmacy and paid for entirely by you.
                   A telehealth plan is a monthly subscription that bundles the practitioner assessment, ongoing review
@@ -175,28 +175,28 @@ export default function HairLossTreatmentCostAustraliaPage() {
                   route attracts a Medicare rebate or a PBS subsidy for cosmetic hair loss, so the price you see is the
                   price you pay.
                 </p>
-                <p className="mt-3 text-[15px] leading-relaxed text-[#2b362f]">
+                <p className="mt-3 text-[15px] leading-relaxed text-[#14120f]">
                   Mosh does not publish its plan prices, because the plan is assigned after the assessment and shown to
                   you before you commit. Rather than quote a figure that would be a guess, this page explains what sits
                   inside each route so you can compare the quote you are given. Refer Labs readers get{" "}
-                  <strong className="font-semibold text-[#10251b]">55% off a first order</strong> through our link
+                  <strong className="font-semibold text-[#14120f]">55% off a first order</strong> through our link
                   (verified on Mosh&apos;s own page, 17 August 2026).
                 </p>
               </div>
             </section>
             <section>
-              <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#10251b]">
+              <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#14120f]">
                 The two cost routes
               </h2>
-              <div className="mt-4 space-y-4 text-[15px] leading-relaxed text-[#3d4b44]">
+              <div className="mt-4 space-y-4 text-[15px] leading-relaxed text-[#56504a]">
                 <p>
-                  <span className="font-semibold text-[#10251b]">Buy over the counter.</span> Some topical products are
+                  <span className="font-semibold text-[#14120f]">Buy over the counter.</span> Some topical products are
                   available at a pharmacy without a prescription. The cost is a one-off product price that varies by
                   pharmacy, brand and pack size, and you manage it yourself. It is often the cheapest single route, but it
                   only covers over-the-counter options, not prescription treatment.
                 </p>
                 <p>
-                  <span className="font-semibold text-[#10251b]">A telehealth plan.</span> Services bundle treatment,
+                  <span className="font-semibold text-[#14120f]">A telehealth plan.</span> Services bundle treatment,
                   practitioner oversight and delivery into a monthly subscription. This is how you access prescription
                   treatment where a practitioner assesses it as appropriate, and how most combined plans are sold. The
                   rest of this page uses Mosh&apos;s published prices as the worked example, because it publishes them
@@ -206,45 +206,45 @@ export default function HairLossTreatmentCostAustraliaPage() {
             </section>
 
             <section>
-              <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#10251b]">
+              <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#14120f]">
                 Mosh hair-loss plans, by tier
               </h2>
-              <p className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">
+              <p className="mt-3 text-[15px] leading-relaxed text-[#56504a]">
                 Mosh offers tiered plans, with the exact plan assigned after a practitioner assessment. You see the plan
                 and price inside Mosh&apos;s own flow before you commit, which is why we point you there rather than quote
                 a figure that can change.
               </p>
-              <div className="mt-5 overflow-x-auto rounded-xl border border-[#e5e9e7]">
+              <div className="mt-5 overflow-x-auto rounded-xl border border-[#ded8cd]">
                 <table className="w-full min-w-[520px] text-sm">
                   <thead>
-                    <tr className="bg-[#f5f8f6] text-left">
-                      <th className="px-4 py-3 font-semibold text-[#10251b]">Plan</th>
-                      <th className="px-4 py-3 font-semibold text-[#10251b]">Tier</th>
-                      <th className="px-4 py-3 font-semibold text-[#10251b]">Best for</th>
+                    <tr className="bg-[#f7f4ee] text-left">
+                      <th className="px-4 py-3 font-semibold text-[#14120f]">Plan</th>
+                      <th className="px-4 py-3 font-semibold text-[#14120f]">Tier</th>
+                      <th className="px-4 py-3 font-semibold text-[#14120f]">Best for</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-[#e5e9e7]">
+                  <tbody className="divide-y divide-[#ded8cd]">
                     {plans.map((p) => (
                       <tr key={p.name}>
-                        <td className="px-4 py-3 font-semibold text-[#10251b]">{p.name}</td>
-                        <td className="px-4 py-3 whitespace-nowrap font-semibold text-[#0a7c42]">{p.tier}</td>
-                        <td className="px-4 py-3 text-[#3d4b44]">{p.note}</td>
+                        <td className="px-4 py-3 font-semibold text-[#14120f]">{p.name}</td>
+                        <td className="px-4 py-3 whitespace-nowrap font-semibold text-[#007a95]">{p.tier}</td>
+                        <td className="px-4 py-3 text-[#56504a]">{p.note}</td>
                       </tr>
                     ))}
                   </tbody>
                 </table>
               </div>
-              <p className="mt-3 text-xs leading-relaxed text-[#627068]">
+              <p className="mt-3 text-xs leading-relaxed text-[#56504a]">
                 Plans include free, discreet delivery, and Mosh advertises a money-back guarantee. New customers get 55%
                 off their first order through our link. You see the current plan and price on Mosh before you commit.
               </p>
             </section>
 
             <section>
-              <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#10251b]">
+              <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#14120f]">
                 What is, and is not, subsidised
               </h2>
-              <div className="mt-4 space-y-4 text-[15px] leading-relaxed text-[#3d4b44]">
+              <div className="mt-4 space-y-4 text-[15px] leading-relaxed text-[#56504a]">
                 <p>
                   For cosmetic hair loss, expect to pay privately. Prescription treatment for male pattern hair
                   loss is not subsidised on the PBS, and over-the-counter products are not subsidised either. A telehealth
@@ -256,10 +256,10 @@ export default function HairLossTreatmentCostAustraliaPage() {
             </section>
 
             <section>
-              <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#10251b]">
+              <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#14120f]">
                 How to compare like with like
               </h2>
-              <div className="mt-4 space-y-4 text-[15px] leading-relaxed text-[#3d4b44]">
+              <div className="mt-4 space-y-4 text-[15px] leading-relaxed text-[#56504a]">
                 <p>
                   The trap is comparing a single-active plan against a multi-active one on price alone. A cheaper plan
                   that includes one active is not cheaper than a dearer plan that includes two, if the two-active
@@ -276,9 +276,9 @@ export default function HairLossTreatmentCostAustraliaPage() {
             </section>
 
             {/* Second CTA */}
-            <section className="rounded-2xl border border-[#e5e9e7] bg-[#eef1ec] px-6 py-6">
-              <h2 className="text-lg font-bold text-[#10251b]">See the plan and price for you</h2>
-              <p className="mt-2 text-[15px] leading-relaxed text-[#3d4b44]">
+            <section className="rounded-2xl border border-[#ded8cd] bg-[#f1ede4] px-6 py-6">
+              <h2 className="text-lg font-bold text-[#14120f]">See the plan and price for you</h2>
+              <p className="mt-2 text-[15px] leading-relaxed text-[#56504a]">
                 The exact plan and price are confirmed after a practitioner assessment. Mosh runs a men&apos;s hair-loss
                 assessment online, reviewed by registered Australian practitioners, with free delivery and 55% off your
                 first order through our link.
@@ -296,15 +296,15 @@ export default function HairLossTreatmentCostAustraliaPage() {
 
             {/* FAQ */}
             <section>
-              <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#10251b]">Frequently asked questions</h2>
-              <div className="mt-5 divide-y divide-[#e5e9e7] border-y border-[#e5e9e7]">
+              <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#14120f]">Frequently asked questions</h2>
+              <div className="mt-5 divide-y divide-[#ded8cd] border-y border-[#ded8cd]">
                 {faqs.map((f) => (
                   <details key={f.q} className="group py-4">
-                    <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-[#10251b]">
+                    <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-[#14120f]">
                       {f.q}
-                      <span className="text-xl leading-none text-[#0a7c42] transition-transform group-open:rotate-45">+</span>
+                      <span className="text-xl leading-none text-[#007a95] transition-transform group-open:rotate-45">+</span>
                     </summary>
-                    <p className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">{f.a}</p>
+                    <p className="mt-3 text-[15px] leading-relaxed text-[#56504a]">{f.a}</p>
                   </details>
                 ))}
               </div>
@@ -312,7 +312,7 @@ export default function HairLossTreatmentCostAustraliaPage() {
 
             {/* Related */}
             <section>
-              <h2 className="text-lg font-bold text-[#10251b]">Keep reading</h2>
+              <h2 className="text-lg font-bold text-[#14120f]">Keep reading</h2>
               <ul className="mt-3 space-y-2 text-[15px]">
                 <li><Link href="/best-hair-loss-treatment-australia" className="nw-link">Best hair-loss treatment in Australia, compared</Link></li>
                 <li><Link href="/how-to-stop-hair-loss-australia" className="nw-link">How to slow hair loss, and what the evidence supports</Link></li>
@@ -323,8 +323,8 @@ export default function HairLossTreatmentCostAustraliaPage() {
             </section>
 
             {/* Disclosure */}
-            <section className="border-t border-[#e5e9e7] pt-6 pb-16">
-              <p className="text-xs leading-relaxed text-[#627068]">
+            <section className="border-t border-[#ded8cd] pt-6 pb-16">
+              <p className="text-xs leading-relaxed text-[#56504a]">
                 This page is published by Refer Labs, an independent comparison publisher, and contains a disclosed
                 affiliate link to Mosh, which means we may earn a commission if you sign up through our link. Commissions
                 never change what we write. Prices shown are the providers&apos; own published figures and can change, so

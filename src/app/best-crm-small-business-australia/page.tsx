@@ -7,7 +7,7 @@ import ConsumerShell from "@/components/consumer/ConsumerShell";
 import { pageDates } from "@/lib/page-dates";
 export const metadata = generateSEOMetadata(seoConfig.bestCrmSmallBusiness);
 
-const GREEN = "#0a7c42";
+const GREEN = "#007a95";
 
 // Real "from" pricing taken from each vendor's own pricing page (per user / month,
 // billed annually), verified via the individual brand pages. Prices in USD as the
@@ -127,18 +127,18 @@ export default function BestCrmSmallBusinessPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
 
       <main id="main-content" className="mx-auto max-w-4xl px-5 sm:px-8 pb-20 pt-12 sm:pt-16">
-        <nav className="mb-8 flex flex-wrap items-center gap-2 text-sm text-[#3d4b44]">
-          <Link href="/" className="hover:text-[#2b362f]">Refer Labs</Link>
+        <nav className="mb-8 flex flex-wrap items-center gap-2 text-sm text-[#56504a]">
+          <Link href="/" className="hover:text-[#14120f]">Refer Labs</Link>
           <span>/</span>
-          <Link href="/guides" className="hover:text-[#2b362f]">Guides</Link>
+          <Link href="/guides" className="hover:text-[#14120f]">Guides</Link>
           <span>/</span>
-          <span className="text-[#2b362f]">Best CRM for small business</span>
+          <span className="text-[#14120f]">Best CRM for small business</span>
         </nav>
 
-        <h1 className="text-3xl sm:text-4xl font-black leading-[1.08] tracking-tight text-[#10251b] mb-5">
+        <h1 className="text-3xl sm:text-4xl font-black leading-[1.08] tracking-tight text-[#14120f] mb-5">
           Best CRM for small business in Australia
         </h1>
-        <p className="text-[#3d4b44] text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
+        <p className="text-[#56504a] text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
           Pick by the job, not the feature list. Of these four, Pipedrive suits teams whose day is chasing and closing
           deals, Capsule suits contact management and has a free tier up to 250 contacts, Nutshell sits at
           the low end on price, and Keap costs materially more because it is a marketing automation and payments suite
@@ -148,8 +148,8 @@ export default function BestCrmSmallBusinessPage() {
           USD, which is worth knowing before you compare the numbers directly.
         </p>
 
-        <p className="mb-10 rounded-lg border border-[#e5e9e7] bg-[#f5f8f6] px-4 py-3 text-xs leading-relaxed text-[#3d4b44]">
-          <span className="font-semibold text-[#2b362f]">How this is ranked:</span> it is not. These are grouped by who
+        <p className="mb-10 rounded-lg border border-[#ded8cd] bg-[#f7f4ee] px-4 py-3 text-xs leading-relaxed text-[#56504a]">
+          <span className="font-semibold text-[#14120f]">How this is ranked:</span> it is not. These are grouped by who
           each suits, not scored, and no vendor can pay for placement. Some links are affiliate links, so we may earn a
           commission if you sign up, at no extra cost to you. Prices are the vendor&apos;s own published starting rates in
           USD and can change, so confirm current pricing before you commit.
@@ -159,7 +159,7 @@ export default function BestCrmSmallBusinessPage() {
         <div className="mb-12 overflow-x-auto">
           <table className="w-full border-collapse text-sm">
             <thead>
-              <tr className="border-b border-[#e5e9e7] text-left text-[#5a665f]">
+              <tr className="border-b border-[#ded8cd] text-left text-[#56504a]">
                 <th className="py-3 pr-4 font-semibold">CRM</th>
                 <th className="py-3 pr-4 font-semibold">From</th>
                 <th className="py-3 pr-4 font-semibold">Free trial</th>
@@ -168,11 +168,11 @@ export default function BestCrmSmallBusinessPage() {
             </thead>
             <tbody>
               {CRMS.map((c, i) => (
-                <tr key={c.name} className={i % 2 ? "bg-[#f8faf9]" : "bg-white"}>
-                  <td className="py-3 pr-4 font-bold text-[#10251b]">{c.name}</td>
-                  <td className="py-3 pr-4 text-[#3d4b44]">{c.from}/user/mo</td>
-                  <td className="py-3 pr-4 text-[#3d4b44]">{c.trial}</td>
-                  <td className="py-3 text-[#3d4b44]">{c.suits}</td>
+                <tr key={c.name} className={i % 2 ? "bg-[#f7f4ee]" : "bg-white"}>
+                  <td className="py-3 pr-4 font-bold text-[#14120f]">{c.name}</td>
+                  <td className="py-3 pr-4 text-[#56504a]">{c.from}/user/mo</td>
+                  <td className="py-3 pr-4 text-[#56504a]">{c.trial}</td>
+                  <td className="py-3 text-[#56504a]">{c.suits}</td>
                 </tr>
               ))}
             </tbody>
@@ -182,16 +182,16 @@ export default function BestCrmSmallBusinessPage() {
         {/* Per-CRM detail */}
         <div className="space-y-8">
           {CRMS.map((c) => (
-            <section key={c.name} className="rounded-2xl border border-[#e5e9e7] p-6">
+            <section key={c.name} className="rounded-2xl border border-[#ded8cd] p-6">
               <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-                <h2 className="text-xl font-black text-[#10251b]">{c.name}</h2>
-                <span className="text-sm font-semibold text-[#5a665f]">From {c.from}/user/mo &middot; {c.trial}</span>
+                <h2 className="text-xl font-black text-[#14120f]">{c.name}</h2>
+                <span className="text-sm font-semibold text-[#56504a]">From {c.from}/user/mo &middot; {c.trial}</span>
               </div>
               <p className="mt-1 text-sm font-semibold" style={{ color: GREEN }}>{c.suits}</p>
-              <p className="mt-3 text-sm sm:text-base leading-relaxed text-[#3d4b44]">{c.body}</p>
+              <p className="mt-3 text-sm sm:text-base leading-relaxed text-[#56504a]">{c.body}</p>
               <ul className="mt-4 space-y-2">
                 {c.good.map((g) => (
-                  <li key={g} className="flex items-start gap-2.5 text-sm text-[#2b362f] leading-relaxed">
+                  <li key={g} className="flex items-start gap-2.5 text-sm text-[#14120f] leading-relaxed">
                     <Check className="h-4 w-4 shrink-0 mt-0.5" style={{ color: GREEN }} /> {g}
                   </li>
                 ))}
@@ -216,8 +216,8 @@ export default function BestCrmSmallBusinessPage() {
         </div>
 
         <section className="mt-14">
-          <h2 className="text-2xl font-black text-[#10251b] mb-5">How to choose</h2>
-          <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl">
+          <h2 className="text-2xl font-black text-[#14120f] mb-5">How to choose</h2>
+          <p className="text-[#56504a] text-sm sm:text-base leading-relaxed max-w-2xl">
             Start from your main job rather than the feature list. If it is closing deals, prioritise the pipeline and
             look at Pipedrive. If it is keeping track of relationships simply and cheaply, Capsule. If you want sales and
             email marketing in one low-cost tool, Nutshell. If you are ready to automate a lot of an established business,
@@ -227,21 +227,21 @@ export default function BestCrmSmallBusinessPage() {
         </section>
 
         <section className="mt-14">
-          <h2 className="text-2xl font-black text-[#10251b] mb-5">Common questions</h2>
+          <h2 className="text-2xl font-black text-[#14120f] mb-5">Common questions</h2>
           <div className="space-y-3">
             {faqs.map((f) => (
-              <details key={f.q} className="group rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] px-5 py-4">
-                <summary className="cursor-pointer list-none font-semibold text-[#10251b] text-sm sm:text-base flex items-center justify-between gap-4">
+              <details key={f.q} className="group rounded-xl border border-[#ded8cd] bg-[#f7f4ee] px-5 py-4">
+                <summary className="cursor-pointer list-none font-semibold text-[#14120f] text-sm sm:text-base flex items-center justify-between gap-4">
                   {f.q}
-                  <span className="text-[#627068] group-open:rotate-45 transition-transform text-lg leading-none">+</span>
+                  <span className="text-[#56504a] group-open:rotate-45 transition-transform text-lg leading-none">+</span>
                 </summary>
-                <p className="text-[#3d4b44] text-sm leading-relaxed mt-3">{f.a}</p>
+                <p className="text-[#56504a] text-sm leading-relaxed mt-3">{f.a}</p>
               </details>
             ))}
           </div>
         </section>
 
-        <p className="text-[#627068] text-xs mt-10 leading-relaxed">
+        <p className="text-[#56504a] text-xs mt-10 leading-relaxed">
           This page is operated by Refer Labs and contains affiliate links. We may earn a commission if you sign up
           through one, at no extra cost to you, and it never changes how these are grouped or described. Prices are the
           vendors&apos; own published starting rates and can change; confirm current pricing before you commit.

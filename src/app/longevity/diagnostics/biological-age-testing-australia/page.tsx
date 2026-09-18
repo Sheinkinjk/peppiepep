@@ -38,7 +38,7 @@ export default function Page() {
       sectionHref="/longevity/diagnostics"
       slug="/longevity/diagnostics/biological-age-testing-australia"
       crumb="Biological age testing"
-      h1={<>Biological age tests: <span className="italic text-[#0a7c42]">what the number is</span></>}
+      h1={<>Biological age tests: <span className="italic text-[#007a95]">what the number is</span></>}
       intro="These tests return a confident single figure. Understanding how that figure is produced changes what it is worth, and explains why two tests can hand you different ages from the same sample."
       headline="Biological age testing in Australia: does it mean anything?"
       description={seoConfig.biologicalAge.description}
@@ -49,7 +49,7 @@ export default function Page() {
       ]}
     >
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">A model output, not a measurement</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">A model output, not a measurement</h2>
         <p className="mt-3">
           Your chronological age is a fact. Your biological age is an estimate produced by running a biological sample
           through a model trained on population data. Those are different kinds of number, and reporting the second one
@@ -63,16 +63,16 @@ export default function Page() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Where the marketing overreaches</h2>
-        <div className="mt-4 overflow-x-auto rounded-2xl border border-[#e5e9e7]">
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Where the marketing overreaches</h2>
+        <div className="mt-4 overflow-x-auto rounded-2xl border border-[#ded8cd]">
           <table className="w-full min-w-[540px] border-collapse text-left text-sm">
-            <thead className="bg-[#f8faf9] text-[11px] uppercase tracking-[0.1em] text-[#627068]">
+            <thead className="bg-[#f7f4ee] text-[11px] uppercase tracking-[0.1em] text-[#56504a]">
               <tr>
                 <th className="px-4 py-3 font-semibold">The claim</th>
                 <th className="px-4 py-3 font-semibold">Where it stands</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-[#eef1ef]">
+            <tbody className="divide-y divide-[#f1ede4]">
               {[
                 ["Ageing markers can be measured", "Reasonable. This is an active and legitimate research field"],
                 ["Those markers relate to health at population level", "Supported in research populations"],
@@ -81,21 +81,21 @@ export default function Page() {
                 ["Product X lowers your biological age", "A marketing claim rather than a demonstrated outcome"],
               ].map((r) => (
                 <tr key={r[0]}>
-                  <td className="px-4 py-3 font-semibold text-[#10251b]">{r[0]}</td>
+                  <td className="px-4 py-3 font-semibold text-[#14120f]">{r[0]}</td>
                   <td className="px-4 py-3">{r[1]}</td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
-        <p className="mt-3 text-xs text-[#5a665f]">
+        <p className="mt-3 text-xs text-[#56504a]">
           A summary of where the field sits rather than a systematic review, and not a claim about any specific
           product. This is a moving area.
         </p>
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">The commercial pattern worth noticing</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">The commercial pattern worth noticing</h2>
         <p className="mt-3">
           A test returns a number implying you are older than your years. The same company, or a partner, sells
           something to improve it. A retest later shows improvement.
@@ -108,7 +108,7 @@ export default function Page() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">What is better validated, and cheaper</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">What is better validated, and cheaper</h2>
         <p className="mt-3">
           If the underlying question is how healthy you are, the boring measures have decades of evidence behind them
           and are mostly available through a GP: blood pressure, lipids, blood glucose, weight, smoking status,

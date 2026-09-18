@@ -19,7 +19,7 @@ import { MOSHY_URL } from "@/lib/affiliate-links";
  *   treatment is decided by a registered practitioner.
  */
 
-const GREEN = "#0a7c42";
+const GREEN = "#007a95";
 
 type Pay = "bundle" | "per-visit" | "unsure";
 type Support = "clinical" | "coaching" | "gp";
@@ -111,7 +111,7 @@ function rank(pay: Pay, support: Support): PathwayKey[] {
 }
 
 const btn =
-  "w-full text-left rounded-xl border px-5 py-4 transition-all hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0a7c42]";
+  "w-full text-left rounded-xl border px-5 py-4 transition-all hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#007a95]";
 
 export default function CostPlanner() {
   const [pay, setPay] = useState<Pay | null>(null);
@@ -140,25 +140,25 @@ export default function CostPlanner() {
 
   if (!done) {
     return (
-      <div className="rounded-2xl border border-[#e5e9e7] bg-[#f5f8f6] p-6 sm:p-8">
+      <div className="rounded-2xl border border-[#ded8cd] bg-[#f7f4ee] p-6 sm:p-8">
         {pay === null && (
           <fieldset>
-            <legend className="text-base sm:text-lg font-bold text-[#10251b] mb-1">
+            <legend className="text-base sm:text-lg font-bold text-[#14120f] mb-1">
               1 of 3: How would you rather pay?
             </legend>
-            <p className="text-sm text-[#5a665f] mb-5">This is about structure, not amounts.</p>
+            <p className="text-sm text-[#56504a] mb-5">This is about structure, not amounts.</p>
             <div className="grid gap-3">
-              <button type="button" className={`${btn} border-[#e5e9e7] bg-white`} onClick={() => choose(setPay, "bundle" as Pay)}>
-                <span className="font-semibold text-[#10251b] block text-sm">One subscription that bundles everything</span>
-                <span className="text-xs text-[#5a665f]">Practitioner oversight, treatment and delivery in one fee</span>
+              <button type="button" className={`${btn} border-[#ded8cd] bg-white`} onClick={() => choose(setPay, "bundle" as Pay)}>
+                <span className="font-semibold text-[#14120f] block text-sm">One subscription that bundles everything</span>
+                <span className="text-xs text-[#56504a]">Practitioner oversight, treatment and delivery in one fee</span>
               </button>
-              <button type="button" className={`${btn} border-[#e5e9e7] bg-white`} onClick={() => choose(setPay, "per-visit" as Pay)}>
-                <span className="font-semibold text-[#10251b] block text-sm">Pay per appointment as I go</span>
-                <span className="text-xs text-[#5a665f]">Consult fees and pharmacy prices, no program fee</span>
+              <button type="button" className={`${btn} border-[#ded8cd] bg-white`} onClick={() => choose(setPay, "per-visit" as Pay)}>
+                <span className="font-semibold text-[#14120f] block text-sm">Pay per appointment as I go</span>
+                <span className="text-xs text-[#56504a]">Consult fees and pharmacy prices, no program fee</span>
               </button>
-              <button type="button" className={`${btn} border-[#e5e9e7] bg-white`} onClick={() => choose(setPay, "unsure" as Pay)}>
-                <span className="font-semibold text-[#10251b] block text-sm">Not sure yet</span>
-                <span className="text-xs text-[#5a665f]">Show me how each structure works</span>
+              <button type="button" className={`${btn} border-[#ded8cd] bg-white`} onClick={() => choose(setPay, "unsure" as Pay)}>
+                <span className="font-semibold text-[#14120f] block text-sm">Not sure yet</span>
+                <span className="text-xs text-[#56504a]">Show me how each structure works</span>
               </button>
             </div>
           </fieldset>
@@ -166,22 +166,22 @@ export default function CostPlanner() {
 
         {pay !== null && support === null && (
           <fieldset>
-            <legend className="text-base sm:text-lg font-bold text-[#10251b] mb-1">
+            <legend className="text-base sm:text-lg font-bold text-[#14120f] mb-1">
               2 of 3: What kind of support do you want around it?
             </legend>
-            <p className="text-sm text-[#5a665f] mb-5">A preference, not a medical question.</p>
+            <p className="text-sm text-[#56504a] mb-5">A preference, not a medical question.</p>
             <div className="grid gap-3">
-              <button type="button" className={`${btn} border-[#e5e9e7] bg-white`} onClick={() => choose(setSupport, "clinical" as Support)}>
-                <span className="font-semibold text-[#10251b] block text-sm">A focused clinical pathway, online</span>
-                <span className="text-xs text-[#5a665f]">Practitioner-led, minimal extras</span>
+              <button type="button" className={`${btn} border-[#ded8cd] bg-white`} onClick={() => choose(setSupport, "clinical" as Support)}>
+                <span className="font-semibold text-[#14120f] block text-sm">A focused clinical pathway, online</span>
+                <span className="text-xs text-[#56504a]">Practitioner-led, minimal extras</span>
               </button>
-              <button type="button" className={`${btn} border-[#e5e9e7] bg-white`} onClick={() => choose(setSupport, "coaching" as Support)}>
-                <span className="font-semibold text-[#10251b] block text-sm">Coaching and community built in</span>
-                <span className="text-xs text-[#5a665f]">Accountability and structure alongside the clinical side</span>
+              <button type="button" className={`${btn} border-[#ded8cd] bg-white`} onClick={() => choose(setSupport, "coaching" as Support)}>
+                <span className="font-semibold text-[#14120f] block text-sm">Coaching and community built in</span>
+                <span className="text-xs text-[#56504a]">Accountability and structure alongside the clinical side</span>
               </button>
-              <button type="button" className={`${btn} border-[#e5e9e7] bg-white`} onClick={() => choose(setSupport, "gp" as Support)}>
-                <span className="font-semibold text-[#10251b] block text-sm">Face-to-face with my own doctor</span>
-                <span className="text-xs text-[#5a665f]">In person, through standard appointments</span>
+              <button type="button" className={`${btn} border-[#ded8cd] bg-white`} onClick={() => choose(setSupport, "gp" as Support)}>
+                <span className="font-semibold text-[#14120f] block text-sm">Face-to-face with my own doctor</span>
+                <span className="text-xs text-[#56504a]">In person, through standard appointments</span>
               </button>
             </div>
           </fieldset>
@@ -189,16 +189,16 @@ export default function CostPlanner() {
 
         {pay !== null && support !== null && medicare === null && (
           <fieldset>
-            <legend className="text-base sm:text-lg font-bold text-[#10251b] mb-1">
+            <legend className="text-base sm:text-lg font-bold text-[#14120f] mb-1">
               3 of 3: Do you have a Medicare card?
             </legend>
-            <p className="text-sm text-[#5a665f] mb-5">It only changes the GP-pathway notes below.</p>
+            <p className="text-sm text-[#56504a] mb-5">It only changes the GP-pathway notes below.</p>
             <div className="grid gap-3 sm:grid-cols-2">
-              <button type="button" className={`${btn} border-[#e5e9e7] bg-white`} onClick={() => choose(setMedicare, "yes" as Medicare, true)}>
-                <span className="font-semibold text-[#10251b] text-sm">Yes</span>
+              <button type="button" className={`${btn} border-[#ded8cd] bg-white`} onClick={() => choose(setMedicare, "yes" as Medicare, true)}>
+                <span className="font-semibold text-[#14120f] text-sm">Yes</span>
               </button>
-              <button type="button" className={`${btn} border-[#e5e9e7] bg-white`} onClick={() => choose(setMedicare, "no" as Medicare, true)}>
-                <span className="font-semibold text-[#10251b] text-sm">No</span>
+              <button type="button" className={`${btn} border-[#ded8cd] bg-white`} onClick={() => choose(setMedicare, "no" as Medicare, true)}>
+                <span className="font-semibold text-[#14120f] text-sm">No</span>
               </button>
             </div>
           </fieldset>
@@ -210,13 +210,13 @@ export default function CostPlanner() {
   return (
     <div>
       <div className="mb-5 flex items-center justify-between gap-4">
-        <p className="text-sm font-semibold text-[#10251b]">
+        <p className="text-sm font-semibold text-[#14120f]">
           Your pathways, ordered by fit with how you want to pay and be supported:
         </p>
         <button
           type="button"
           onClick={reset}
-          className="inline-flex shrink-0 items-center gap-1.5 text-xs font-semibold text-[#5a665f] hover:text-[#10251b] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0a7c42]"
+          className="inline-flex shrink-0 items-center gap-1.5 text-xs font-semibold text-[#56504a] hover:text-[#14120f] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#007a95]"
         >
           <RotateCcw className="h-3.5 w-3.5" aria-hidden="true" />
           Start over
@@ -231,7 +231,7 @@ export default function CostPlanner() {
             <div
               key={key}
               className="rounded-2xl border bg-white p-6 sm:p-7"
-              style={{ borderColor: lead ? `${GREEN}40` : "#e5e9e7", background: lead ? `${GREEN}06` : undefined }}
+              style={{ borderColor: lead ? `${GREEN}40` : "#ded8cd", background: lead ? `${GREEN}06` : undefined }}
             >
               <div className="flex flex-wrap items-center gap-3 mb-2">
                 {lead && (
@@ -239,23 +239,23 @@ export default function CostPlanner() {
                     Closest fit
                   </span>
                 )}
-                <h3 className="text-lg font-bold text-[#10251b]">{p.title}</h3>
-                <span className="text-xs font-semibold text-[#627068]">{p.tag}</span>
+                <h3 className="text-lg font-bold text-[#14120f]">{p.title}</h3>
+                <span className="text-xs font-semibold text-[#56504a]">{p.tag}</span>
               </div>
-              <p className="text-sm leading-relaxed text-[#3d4b44] max-w-2xl mb-4">{p.summary}</p>
+              <p className="text-sm leading-relaxed text-[#56504a] max-w-2xl mb-4">{p.summary}</p>
 
               <div className="grid gap-4 sm:grid-cols-2 mb-4">
                 <div>
-                  <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-[#627068] mb-2">What you pay for</p>
+                  <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-[#56504a] mb-2">What you pay for</p>
                   <ul className="space-y-1.5">
                     {p.payFor.map((x) => (
-                      <li key={x} className="flex gap-2 text-xs leading-relaxed text-[#3d4b44]">
+                      <li key={x} className="flex gap-2 text-xs leading-relaxed text-[#56504a]">
                         <CheckCircle2 className="h-3.5 w-3.5 shrink-0 mt-0.5" style={{ color: GREEN }} aria-hidden="true" />
                         {x}
                       </li>
                     ))}
                     {key === "gp" && (
-                      <li className="flex gap-2 text-xs leading-relaxed text-[#3d4b44]">
+                      <li className="flex gap-2 text-xs leading-relaxed text-[#56504a]">
                         <CheckCircle2 className="h-3.5 w-3.5 shrink-0 mt-0.5" style={{ color: GREEN }} aria-hidden="true" />
                         {medicare === "yes"
                           ? "With a Medicare card, eligible consults may attract a rebate; ask if the practice bulk-bills"
@@ -265,29 +265,29 @@ export default function CostPlanner() {
                   </ul>
                 </div>
                 <div>
-                  <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-[#627068] mb-2">What determines your price</p>
+                  <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-[#56504a] mb-2">What determines your price</p>
                   <ul className="list-disc pl-4 space-y-1.5">
                     {p.determines.map((x) => (
-                      <li key={x} className="text-xs leading-relaxed text-[#3d4b44]">{x}</li>
+                      <li key={x} className="text-xs leading-relaxed text-[#56504a]">{x}</li>
                     ))}
                   </ul>
                 </div>
               </div>
 
-              <details className="mb-4 rounded-lg border border-[#e5e9e7] bg-[#f5f8f6] px-4 py-3">
-                <summary className="cursor-pointer list-none text-xs font-bold text-[#10251b]">
+              <details className="mb-4 rounded-lg border border-[#ded8cd] bg-[#f7f4ee] px-4 py-3">
+                <summary className="cursor-pointer list-none text-xs font-bold text-[#14120f]">
                   Questions to ask before paying +
                 </summary>
                 <ul className="list-disc pl-4 mt-2 space-y-1">
                   {p.ask.map((x) => (
-                    <li key={x} className="text-xs leading-relaxed text-[#3d4b44]">{x}</li>
+                    <li key={x} className="text-xs leading-relaxed text-[#56504a]">{x}</li>
                   ))}
                 </ul>
               </details>
 
               {key === "clinical" ? (
                 <div>
-                  <p className="text-xs leading-relaxed text-[#3d4b44] mb-3">
+                  <p className="text-xs leading-relaxed text-[#56504a] mb-3">
                     The only way to see your exact price is inside the consultation, shown before you commit.
                     New customers can currently receive $120 off their first treatment, applied automatically
                     through our referral link.
@@ -297,7 +297,7 @@ export default function CostPlanner() {
                     target="_blank"
                     rel="nofollow sponsored"
                     data-cta="cost-planner-clinical"
-                    className="inline-flex items-center gap-2 rounded-xl px-5 py-3 text-sm font-bold text-white transition-all hover:-translate-y-0.5 shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0a7c42]"
+                    className="inline-flex items-center gap-2 rounded-xl px-5 py-3 text-sm font-bold text-white transition-all hover:-translate-y-0.5 shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#007a95]"
                     style={{ background: GREEN, boxShadow: `0 8px 24px ${GREEN}25` }}
                   >
                     Check eligibility on Moshy, see your price
@@ -305,12 +305,12 @@ export default function CostPlanner() {
                   </a>
                 </div>
               ) : key === "coaching" ? (
-                <Link href="/moshy-vs-juniper" className="inline-flex items-center gap-2 text-sm font-semibold text-[#0a7c42] hover:text-[#086536]">
+                <Link href="/moshy-vs-juniper" className="inline-flex items-center gap-2 text-sm font-semibold text-[#007a95] hover:text-[#003647]">
                   Compare the clinical and coaching pathways side by side
                   <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </Link>
               ) : (
-                <Link href="/moshy-vs-gp" className="inline-flex items-center gap-2 text-sm font-semibold text-[#0a7c42] hover:text-[#086536]">
+                <Link href="/moshy-vs-gp" className="inline-flex items-center gap-2 text-sm font-semibold text-[#007a95] hover:text-[#003647]">
                   Read: telehealth versus your GP, the practical trade-offs
                   <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </Link>
@@ -320,7 +320,7 @@ export default function CostPlanner() {
         })}
       </div>
 
-      <p className="mt-5 text-xs leading-relaxed text-[#627068] max-w-2xl">
+      <p className="mt-5 text-xs leading-relaxed text-[#56504a] max-w-2xl">
         This planner compares pricing structures and preferences only. It is not medical or financial
         advice, it does not assess suitability for any treatment, and it does not recommend any medicine.
         Whether any treatment is appropriate for you is decided by a registered Australian practitioner

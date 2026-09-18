@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 
-const GREEN = "#0a7c42";
+const GREEN = "#007a95";
 
 // Standard amortised repayment (the textbook PMT formula). This is a definition:
 // M = P·r·(1+r)^n / ((1+r)^n − 1), with r the periodic rate.
@@ -49,7 +49,7 @@ const money = (n: number) =>
   n.toLocaleString("en-AU", { style: "currency", currency: "AUD", maximumFractionDigits: 0 });
 
 const inputCls =
-  "w-full rounded-xl border border-[#e5e9e7] bg-white px-4 py-3 text-sm text-[#10251b] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0a7c42] focus-visible:border-[#0a7c42]";
+  "w-full rounded-xl border border-[#ded8cd] bg-white px-4 py-3 text-sm text-[#14120f] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#007a95] focus-visible:border-[#007a95]";
 
 export default function RepaymentCalculator() {
   const [amount, setAmount] = useState(50000);
@@ -64,20 +64,20 @@ export default function RepaymentCalculator() {
   const effective = effectiveRate(amount, rate, months, estFee, monthlyFee);
 
   return (
-    <div className="rounded-2xl border border-[#e5e9e7] bg-white p-5 sm:p-7">
+    <div className="rounded-2xl border border-[#ded8cd] bg-white p-5 sm:p-7">
       <div className="grid gap-5 sm:grid-cols-3">
         <label className="block">
-          <span className="text-sm font-semibold text-[#10251b]">Loan amount</span>
+          <span className="text-sm font-semibold text-[#14120f]">Loan amount</span>
           <input type="number" min={1000} step={1000} value={amount} className={`mt-1.5 ${inputCls} tabular-nums`}
             onChange={(e) => setAmount(Number(e.target.value))} inputMode="numeric" aria-label="Loan amount in dollars" />
         </label>
         <label className="block">
-          <span className="text-sm font-semibold text-[#10251b]">Nominal rate (% p.a.)</span>
+          <span className="text-sm font-semibold text-[#14120f]">Nominal rate (% p.a.)</span>
           <input type="number" min={0} step={0.1} value={rate} className={`mt-1.5 ${inputCls} tabular-nums`}
             onChange={(e) => setRate(Number(e.target.value))} inputMode="decimal" aria-label="Nominal annual interest rate" />
         </label>
         <label className="block">
-          <span className="text-sm font-semibold text-[#10251b]">Term (months)</span>
+          <span className="text-sm font-semibold text-[#14120f]">Term (months)</span>
           <input type="number" min={1} max={120} step={1} value={months} className={`mt-1.5 ${inputCls} tabular-nums`}
             onChange={(e) => setMonths(Number(e.target.value))} inputMode="numeric" aria-label="Loan term in months" />
         </label>
@@ -85,12 +85,12 @@ export default function RepaymentCalculator() {
 
       <div className="mt-4 grid gap-5 sm:grid-cols-2">
         <label className="block">
-          <span className="text-sm font-semibold text-[#10251b]">Establishment fee ($, one-off)</span>
+          <span className="text-sm font-semibold text-[#14120f]">Establishment fee ($, one-off)</span>
           <input type="number" min={0} step={50} value={estFee} className={`mt-1.5 ${inputCls} tabular-nums`}
             onChange={(e) => setEstFee(Number(e.target.value))} inputMode="numeric" aria-label="One-off establishment fee in dollars" />
         </label>
         <label className="block">
-          <span className="text-sm font-semibold text-[#10251b]">Ongoing fee ($/month)</span>
+          <span className="text-sm font-semibold text-[#14120f]">Ongoing fee ($/month)</span>
           <input type="number" min={0} step={5} value={monthlyFee} className={`mt-1.5 ${inputCls} tabular-nums`}
             onChange={(e) => setMonthlyFee(Number(e.target.value))} inputMode="numeric" aria-label="Ongoing monthly fee in dollars" />
         </label>
@@ -103,17 +103,17 @@ export default function RepaymentCalculator() {
         <Stat label="Effective rate (incl. fees)" value={effective != null ? `${effective.toFixed(1)}% p.a.` : "n/a"} emphasis />
       </div>
 
-      <p className="mt-4 rounded-xl bg-[#f8faf9] px-4 py-3 text-xs leading-relaxed text-[#5a665f]">
-        The <strong className="text-[#10251b]">effective rate</strong> folds the establishment and ongoing fees into a single
+      <p className="mt-4 rounded-xl bg-[#f7f4ee] px-4 py-3 text-xs leading-relaxed text-[#56504a]">
+        The <strong className="text-[#14120f]">effective rate</strong> folds the establishment and ongoing fees into a single
         annual figure, the same way an Australian comparison rate is calculated, so it sits above the nominal rate whenever
-        there are fees. It still can&apos;t capture <strong className="text-[#10251b]">factor-rate</strong> pricing, which
+        there are fees. It still can&apos;t capture <strong className="text-[#14120f]">factor-rate</strong> pricing, which
         isn&apos;t an interest rate at all, so for those products ask the lender for the total cost in dollars. Enter a
         lender&apos;s real fees above to see their true rate.
       </p>
 
-      <p className="mt-3 text-xs text-[#5a665f]">
+      <p className="mt-3 text-xs text-[#56504a]">
         Indicative only, not a quote or an offer of credit.{" "}
-        <Link href="/what-a-business-loan-actually-costs" className="underline hover:text-[#10251b]">How business loan pricing really works</Link>.
+        <Link href="/what-a-business-loan-actually-costs" className="underline hover:text-[#14120f]">How business loan pricing really works</Link>.
       </p>
 
       <div className="mt-6">
@@ -129,9 +129,9 @@ export default function RepaymentCalculator() {
 
 function Stat({ label, value, emphasis }: { label: string; value: string; emphasis?: boolean }) {
   return (
-    <div className="rounded-xl border p-4" style={{ borderColor: emphasis ? `${GREEN}40` : "#e5e9e7", background: emphasis ? `${GREEN}08` : "#fff" }}>
-      <p className="text-[11px] font-bold uppercase tracking-[0.1em] text-[#627068]">{label}</p>
-      <p className="mt-1 text-2xl font-extrabold tabular-nums text-[#10251b]">{value}</p>
+    <div className="rounded-xl border p-4" style={{ borderColor: emphasis ? `${GREEN}40` : "#ded8cd", background: emphasis ? `${GREEN}08` : "#fff" }}>
+      <p className="text-[11px] font-bold uppercase tracking-[0.1em] text-[#56504a]">{label}</p>
+      <p className="mt-1 text-2xl font-extrabold tabular-nums text-[#14120f]">{value}</p>
     </div>
   );
 }

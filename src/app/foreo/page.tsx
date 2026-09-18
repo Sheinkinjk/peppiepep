@@ -115,7 +115,7 @@ const brand: RetailerBrand = {
   ],
   disclaimer: (
     <>
-      <span className="font-semibold text-[#2b362f]">General information only.</span> Nothing here is medical advice or
+      <span className="font-semibold text-[#14120f]">General information only.</span> Nothing here is medical advice or
       a claim that any device treats a condition. Prices were read on {FOREO.readOnLabel} and can change.
     </>
   ),

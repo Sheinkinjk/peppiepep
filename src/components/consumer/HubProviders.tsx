@@ -118,8 +118,8 @@ export default function HubProviders({
 
   return (
     <section className={`mx-auto max-w-6xl px-5 sm:px-8 ${className}`}>
-      <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">{heading}</h2>
-      <p className="mt-3 max-w-3xl text-[15px] leading-relaxed text-[#3d4b44]">
+      <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">{heading}</h2>
+      <p className="mt-3 max-w-3xl text-[15px] leading-relaxed text-[#56504a]">
         {intro} Listed alphabetically, not ranked.
       </p>
 
@@ -137,7 +137,7 @@ export default function HubProviders({
           {["Provider", "Who it suits", "What it costs", offerHeading, ""].map((h, i) => (
             <div
               key={i}
-              className="hidden border-b border-[#dfe5e1] px-4 pb-3 text-[12px] font-semibold uppercase tracking-[0.05em] text-[#5a665f] lg:block"
+              className="hidden border-b border-[#dfe5e1] px-4 pb-3 text-[12px] font-semibold uppercase tracking-[0.05em] text-[#56504a] lg:block"
             >
               {h}
             </div>
@@ -151,11 +151,11 @@ export default function HubProviders({
           return (
             <div
               key={p.name}
-              className="rounded-2xl border border-[#e5e9e7] bg-white p-6 shadow-[0_1px_2px_rgba(16,37,27,0.05)] lg:contents"
+              className="rounded-2xl border border-[#ded8cd] bg-white p-6 shadow-[0_1px_2px_rgba(20,18,15,0.05)] lg:contents"
             >
-              <div className="lg:border-b lg:border-[#eef1ef] lg:px-4 lg:py-5">
+              <div className="lg:border-b lg:border-[#f1ede4] lg:px-4 lg:py-5">
                 <div className="flex items-center gap-3">
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-[#eef1ef] bg-white">
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-[#f1ede4] bg-white">
                     {logo ? (
                       /* eslint-disable-next-line @next/next/no-img-element */
                       <img
@@ -167,61 +167,61 @@ export default function HubProviders({
                         style={{ transform: `scale(${logoScale(logo)})` }}
                       />
                     ) : (
-                      <span className="text-[13px] font-bold tracking-tight text-[#0a7c42]">
+                      <span className="text-[13px] font-bold tracking-tight text-[#007a95]">
                         {p.name.replace(/[^A-Za-z ]/g, "").split(" ").filter(Boolean).slice(0, 2).map((w) => w[0]).join("")}
                       </span>
                     )}
                   </span>
-                  <h3 className="text-[17px] font-bold leading-tight text-[#10251b]">{p.name}</h3>
+                  <h3 className="text-[17px] font-bold leading-tight text-[#14120f]">{p.name}</h3>
                 </div>
-                <p className="mt-3 text-[14px] leading-relaxed text-[#5a665f]">{p.how}</p>
+                <p className="mt-3 text-[14px] leading-relaxed text-[#56504a]">{p.how}</p>
               </div>
 
-              <div className="mt-4 border-t border-[#eef1ef] pt-4 lg:mt-0 lg:border-b lg:border-t-0 lg:px-4 lg:py-5">
-                <span className="text-[12px] font-semibold uppercase tracking-[0.05em] text-[#5a665f] lg:hidden">
+              <div className="mt-4 border-t border-[#f1ede4] pt-4 lg:mt-0 lg:border-b lg:border-t-0 lg:px-4 lg:py-5">
+                <span className="text-[12px] font-semibold uppercase tracking-[0.05em] text-[#56504a] lg:hidden">
                   Who it suits
                 </span>
-                <p className="mt-1 text-[15px] leading-relaxed text-[#3d4b44] lg:mt-0">{p.suits}</p>
+                <p className="mt-1 text-[15px] leading-relaxed text-[#56504a] lg:mt-0">{p.suits}</p>
               </div>
 
-              <div className="mt-4 border-t border-[#eef1ef] pt-4 lg:mt-0 lg:border-b lg:border-t-0 lg:px-4 lg:py-5">
-                <span className="text-[12px] font-semibold uppercase tracking-[0.05em] text-[#5a665f] lg:hidden">
+              <div className="mt-4 border-t border-[#f1ede4] pt-4 lg:mt-0 lg:border-b lg:border-t-0 lg:px-4 lg:py-5">
+                <span className="text-[12px] font-semibold uppercase tracking-[0.05em] text-[#56504a] lg:hidden">
                   What it costs
                 </span>
-                <p className="mt-1 text-[15px] leading-relaxed text-[#3d4b44] [font-variant-numeric:tabular-nums] lg:mt-0">
+                <p className="mt-1 text-[15px] leading-relaxed text-[#56504a] [font-variant-numeric:tabular-nums] lg:mt-0">
                   {p.cost}
                 </p>
               </div>
 
-              <div className="mt-4 border-t border-[#eef1ef] pt-4 lg:mt-0 lg:border-b lg:border-t-0 lg:px-4 lg:py-5">
-                <span className="text-[12px] font-semibold uppercase tracking-[0.05em] text-[#5a665f] lg:hidden">
+              <div className="mt-4 border-t border-[#f1ede4] pt-4 lg:mt-0 lg:border-b lg:border-t-0 lg:px-4 lg:py-5">
+                <span className="text-[12px] font-semibold uppercase tracking-[0.05em] text-[#56504a] lg:hidden">
                   {hasOffer(p) ? "Current offer" : "Good to know"}
                 </span>
-                <p className="mt-1 text-[15px] leading-relaxed text-[#3d4b44] lg:mt-0">{fourth}</p>
+                <p className="mt-1 text-[15px] leading-relaxed text-[#56504a] lg:mt-0">{fourth}</p>
               </div>
 
               {/* One action per row, and it goes to the provider. Our own guide
                   is linked from its own section below: two links side by side,
                   one outbound and one internal, read as a choice between two
                   destinations rather than one clear action. */}
-              <div className="mt-5 lg:mt-0 lg:border-b lg:border-[#eef1ef] lg:px-4 lg:py-5">
+              <div className="mt-5 lg:mt-0 lg:border-b lg:border-[#f1ede4] lg:px-4 lg:py-5">
                 {p.visitHref && (
                   <a
                     href={p.visitHref}
                     target="_blank"
                     rel="nofollow sponsored"
                     data-cta={`${ctaPrefix}-${p.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
-                    className="flex w-full items-center justify-center rounded-full bg-[#0a7c42] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#086536] lg:w-auto lg:whitespace-nowrap"
+                    className="flex w-full items-center justify-center rounded-full bg-[#007a95] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#003647] lg:w-auto lg:whitespace-nowrap"
                   >
                     {p.visitLabel ?? `Visit ${p.name}`}
                   </a>
                 )}
                 {required ? (
-                  <p className="mt-3 rounded-xl border border-[#e5e9e7] bg-[#f8faf9] px-3 py-2 text-[12px] leading-relaxed text-[#3d4b44] lg:max-w-[16rem]">
+                  <p className="mt-3 rounded-xl border border-[#ded8cd] bg-[#f7f4ee] px-3 py-2 text-[12px] leading-relaxed text-[#56504a] lg:max-w-[16rem]">
                     {required.text}
                   </p>
                 ) : (
-                  <p className="mt-3 text-[12px] leading-relaxed text-[#5a665f] lg:max-w-[14rem]">
+                  <p className="mt-3 text-[12px] leading-relaxed text-[#56504a] lg:max-w-[14rem]">
                     {p.earns
                       ? `We earn a commission if you ${p.earnAction ?? "sign up with"} ${p.name} through this link, at no extra cost to you.`
                       : `We earn nothing from ${p.name}.`}
@@ -234,15 +234,15 @@ export default function HubProviders({
       </div>
 
       {/* Our own coverage, kept away from the action column above. */}
-      <div className="mt-8 rounded-2xl border border-[#e5e9e7] bg-[#f8faf9] p-6 sm:p-7">
-        <h3 className="text-[17px] font-bold text-[#10251b]">Our guide to each of them</h3>
-        <p className="mt-1.5 text-sm leading-relaxed text-[#3d4b44]">
+      <div className="mt-8 rounded-2xl border border-[#ded8cd] bg-[#f7f4ee] p-6 sm:p-7">
+        <h3 className="text-[17px] font-bold text-[#14120f]">Our guide to each of them</h3>
+        <p className="mt-1.5 text-sm leading-relaxed text-[#56504a]">
           What each one costs, and what we could not verify about it.
         </p>
         <ul className="mt-4 flex flex-wrap gap-x-6 gap-y-2">
           {ordered.map((p) => (
             <li key={p.name}>
-              <Link href={p.href} className="text-sm font-semibold text-[#0a7c42] hover:underline">
+              <Link href={p.href} className="text-sm font-semibold text-[#007a95] hover:underline">
                 {p.hrefLabel} →
               </Link>
             </li>

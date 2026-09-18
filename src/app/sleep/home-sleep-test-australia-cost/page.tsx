@@ -41,7 +41,7 @@ export default function Page() {
       sectionHref="/sleep"
       slug="/sleep/home-sleep-test-australia-cost"
       crumb="Home sleep studies"
-      h1={<>Home sleep studies in Australia: <span className="italic text-[#0a7c42]">how the cost works</span></>}
+      h1={<>Home sleep studies in Australia: <span className="italic text-[#007a95]">how the cost works</span></>}
       intro="Many Australians pay nothing for a home sleep study and others pay several hundred dollars for the same test. The difference is almost never the provider: it is whether a valid referral and the eligibility conditions that unlock a Medicare rebate were in place before you started. Get that order wrong and you pay in full."
       headline="Home sleep study Australia: how it works and what it costs"
       description={seoConfig.homeSleepTestCost.description}
@@ -52,7 +52,7 @@ export default function Page() {
       ]}
     >
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Why we do not print a price</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Why we do not print a price</h2>
         <p className="mt-3">
           Two reasons, and both are about not misleading you. Providers set their own fees, so there is no single
           national number to quote. And Medicare rebate amounts are revised, so a figure published today would quietly
@@ -65,17 +65,17 @@ export default function Page() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">What determines whether you pay</h2>
-        <div className="mt-4 overflow-x-auto rounded-2xl border border-[#e5e9e7]">
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">What determines whether you pay</h2>
+        <div className="mt-4 overflow-x-auto rounded-2xl border border-[#ded8cd]">
           <table className="w-full min-w-[560px] border-collapse text-left text-sm">
-            <thead className="bg-[#f8faf9] text-[11px] uppercase tracking-[0.1em] text-[#627068]">
+            <thead className="bg-[#f7f4ee] text-[11px] uppercase tracking-[0.1em] text-[#56504a]">
               <tr>
                 <th className="px-4 py-3 font-semibold">Your situation</th>
                 <th className="px-4 py-3 font-semibold">Rebate</th>
                 <th className="px-4 py-3 font-semibold">Likely out of pocket</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-[#eef1ef]">
+            <tbody className="divide-y divide-[#f1ede4]">
               {[
                 ["Referred, eligible, provider bulk bills", "Applies", "Often nothing"],
                 ["Referred, eligible, provider bills privately", "Applies", "The gap between fee and rebate"],
@@ -83,7 +83,7 @@ export default function Page() {
                 ["Referred but eligibility criteria not met", "Not for that item", "The full fee"],
               ].map((r) => (
                 <tr key={r[0]}>
-                  <td className="px-4 py-3 font-semibold text-[#10251b]">{r[0]}</td>
+                  <td className="px-4 py-3 font-semibold text-[#14120f]">{r[0]}</td>
                   <td className="px-4 py-3">{r[1]}</td>
                   <td className="px-4 py-3">{r[2]}</td>
                 </tr>
@@ -91,14 +91,14 @@ export default function Page() {
             </tbody>
           </table>
         </div>
-        <p className="mt-3 text-xs text-[#5a665f]">
+        <p className="mt-3 text-xs text-[#56504a]">
           General structure, not a quote. Eligibility rules and rebate amounts are set in the Medicare Benefits
           Schedule and change; confirm the current position for your item on MBS Online.
         </p>
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Four questions that get you a real number</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Four questions that get you a real number</h2>
         <ol className="mt-4 space-y-3">
           {[
             ["Do you bulk bill this study?", "The fastest way to establish whether you will pay anything at all."],
@@ -106,8 +106,8 @@ export default function Page() {
             ["Is the physician's reporting fee included, or billed separately?", "This is the most common source of an unexpected second charge."],
             ["What happens if the study is inconclusive?", "Repeat studies and escalation to a lab study can carry their own cost, and it is better to know before than after."],
           ].map(([q, why], i) => (
-            <li key={i} className="rounded-2xl border border-[#e5e9e7] bg-white p-5">
-              <p className="font-semibold text-[#10251b]">{i + 1}. {q}</p>
+            <li key={i} className="rounded-2xl border border-[#ded8cd] bg-white p-5">
+              <p className="font-semibold text-[#14120f]">{i + 1}. {q}</p>
               <p className="mt-1.5 text-sm">{why}</p>
             </li>
           ))}
@@ -115,7 +115,7 @@ export default function Page() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">The direct-to-consumer shortcut</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">The direct-to-consumer shortcut</h2>
         <p className="mt-3">
           Services offering a test without going through a GP are faster, and for someone who has been
           waiting weeks for an appointment that has real value. The trade is that you generally pay the full cost, and

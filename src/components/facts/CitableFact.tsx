@@ -32,13 +32,13 @@ export default function CitableFact({ fact }: { fact: Fact }) {
   return (
     <figure
       data-fact-id={fact.id}
-      className="rounded-2xl border border-[#e5e9e7] bg-white p-5"
+      className="rounded-2xl border border-[#ded8cd] bg-white p-5"
     >
-      <p className="text-[15px] leading-relaxed text-[#2b362f]">{fact.claim}</p>
-      <figcaption className="mt-2 text-[13px] leading-relaxed text-[#5a665f]">
+      <p className="text-[15px] leading-relaxed text-[#14120f]">{fact.claim}</p>
+      <figcaption className="mt-2 text-[13px] leading-relaxed text-[#56504a]">
         Observed by{' '}
         {author ? (
-          <Link href={`/authors/${author.id}`} className="text-[#0a7c42] underline-offset-2 hover:underline">
+          <Link href={`/authors/${author.id}`} className="text-[#007a95] underline-offset-2 hover:underline">
             {authorName}
           </Link>
         ) : (
@@ -54,7 +54,7 @@ export default function CitableFact({ fact }: { fact: Fact }) {
               href={fact.sourceUrl}
               target="_blank"
               rel="nofollow noopener"
-              className="text-[#0a7c42] underline-offset-2 hover:underline"
+              className="text-[#007a95] underline-offset-2 hover:underline"
             >
               Source
             </a>

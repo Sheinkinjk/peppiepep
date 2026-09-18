@@ -43,12 +43,12 @@ export async function POST(request: Request) {
 
   const confirmation = await sendAdminNotification({
     subject: "You're on the list: Refer Labs skin & beauty",
-    html: `<div style="font-family:Arial,sans-serif;font-size:15px;line-height:1.6;color:#16201C;">
+    html: `<div style="font-family:Arial,sans-serif;font-size:15px;line-height:1.6;color:#14120f;">
       <p>Thanks for your interest in our skin and beauty section.</p>
       <p>We're building it now. You'll hear from us once we've researched providers in the category and have something worth reading, and not before. We don't send filler.</p>
       <p>In the meantime the guides are live and free to read: what over-the-counter and prescription-strength routes involve, what LED devices cost in Australia, and how to judge skincare on cost per use.</p>
-      <p><a href="https://referlabs.com.au/health-and-beauty" style="color:#0a7c42;">Read the skin &amp; beauty guides</a></p>
-      <p style="color:#6e7b74;font-size:13px;">General information for an Australian audience, not medical advice.</p>
+      <p><a href="https://referlabs.com.au/health-and-beauty" style="color:#007a95;">Read the skin &amp; beauty guides</a></p>
+      <p style="color:#766f66;font-size:13px;">General information for an Australian audience, not medical advice.</p>
     </div>`,
     to: email,
   });

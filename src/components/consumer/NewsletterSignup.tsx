@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { HubObject } from "@/components/home/Objects";
 import { ArrowRight, Check, BellRing } from "lucide-react";
 
 type Variant = "band" | "inline" | "footer" | "alert";
@@ -58,14 +59,14 @@ export default function NewsletterSignup({
   // Compact high-intent capture for money pages.
   if (variant === "alert") {
     return (
-      <div className="rounded-xl border border-[#cfe6da] bg-[#f5f8f6] px-5 py-4">
+      <div className="rounded-xl border border-[#b9e3eb] bg-[#f7f4ee] px-5 py-4">
         <div className="flex items-start gap-3">
-          <BellRing className="mt-0.5 h-4 w-4 shrink-0 text-[#0a7c42]" aria-hidden="true" />
+          <BellRing className="mt-0.5 h-4 w-4 shrink-0 text-[#007a95]" aria-hidden="true" />
           <div className="min-w-0 flex-1">
-            <p className="text-sm font-bold text-[#10251b]">{heading}</p>
-            <p className="mt-0.5 text-xs leading-relaxed text-[#5a665f]">{sub}</p>
+            <p className="text-sm font-bold text-[#14120f]">{heading}</p>
+            <p className="mt-0.5 text-xs leading-relaxed text-[#56504a]">{sub}</p>
             {state === "done" ? (
-              <p className="mt-3 flex items-center gap-2 text-sm font-semibold text-[#0a7c42]">
+              <p className="mt-3 flex items-center gap-2 text-sm font-semibold text-[#007a95]">
                 <Check className="h-4 w-4" /> Done, we&apos;ll let you know.
               </p>
             ) : (
@@ -77,7 +78,7 @@ export default function NewsletterSignup({
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="you@email.com"
                   aria-label="Email address for offer alerts"
-                  className="min-w-0 flex-1 rounded-full border border-[#e5e9e7] bg-white px-4 py-2.5 text-sm text-[#10251b] placeholder:text-[#9aa39c] outline-none transition-colors focus:border-[#0a7c42] focus:ring-4 focus:ring-[#0a7c42]/12"
+                  className="min-w-0 flex-1 rounded-full border border-[#ded8cd] bg-white px-4 py-2.5 text-sm text-[#14120f] placeholder:text-[#766f66] outline-none transition-colors focus:border-[#007a95] focus:ring-4 focus:ring-[#007a95]/12"
                 />
                 <button type="submit" disabled={state === "loading"} className="nw-btn min-h-[44px] shrink-0 justify-center !px-5 !py-2.5 !text-[13px]">
                   {state === "loading" ? "…" : "Notify me"}
@@ -93,17 +94,17 @@ export default function NewsletterSignup({
 
   const done = state === "done";
   const input =
-    "min-w-0 flex-1 rounded-full border border-[#e5e9e7] bg-white px-5 py-3 text-sm text-[#10251b] placeholder:text-[#9aa39c] outline-none transition-colors focus:border-[#0a7c42] focus:ring-4 focus:ring-[#0a7c42]/12";
+    "min-w-0 flex-1 rounded-full border border-[#ded8cd] bg-white px-5 py-3 text-sm text-[#14120f] placeholder:text-[#766f66] outline-none transition-colors focus:border-[#007a95] focus:ring-4 focus:ring-[#007a95]/12";
 
   if (variant === "footer") {
     return (
       <form onSubmit={submit} className="mt-3">
         {done ? (
-          <p className="flex items-center gap-2 text-sm font-semibold text-[#0a7c42]"><Check className="h-4 w-4" /> You&apos;re subscribed.</p>
+          <p className="flex items-center gap-2 text-sm font-semibold text-[#007a95]"><Check className="h-4 w-4" /> You&apos;re subscribed.</p>
         ) : (
           <div className="flex gap-2">
             <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@email.com" aria-label="Email address"
-              className="min-w-0 flex-1 rounded-full border border-[#e5e9e7] bg-white px-4 py-2 text-sm text-[#10251b] placeholder:text-[#9aa39c] outline-none focus:border-[#0a7c42]" />
+              className="min-w-0 flex-1 rounded-full border border-[#ded8cd] bg-white px-4 py-2 text-sm text-[#14120f] placeholder:text-[#766f66] outline-none focus:border-[#007a95]" />
             <button type="submit" disabled={state === "loading"} className="nw-btn min-h-[44px] shrink-0 !px-4 !py-2 !text-[13px]">
               {state === "loading" ? "…" : "Subscribe"}
             </button>
@@ -116,18 +117,46 @@ export default function NewsletterSignup({
 
   const isBand = variant === "band";
 
+  if (isBand) {
+    // The homepage's newsletter composition (18 Sep 2026): the envelope and the
+    // promise on the left, the form on the right, on the soft teal ground. The
+    // blurred radial blob it replaces was decoration standing in for design.
+    return (
+      <div className="nl-band">
+        <div className="nl-band__l">
+          <HubObject kind="envelope" size={72} className="hy-obj nl-band__obj" />
+          <h2 className="nl-band__h">{heading}</h2>
+        </div>
+        <div className="nl-band__r">
+          <p className="nl-band__sub">{sub}</p>
+          {done ? (
+            <p className="nl-band__ok"><Check className="h-4 w-4" aria-hidden="true" /> You&apos;re subscribed, check your inbox.</p>
+          ) : (
+            <form onSubmit={submit} className="nl-band__form">
+              <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@email.com" aria-label="Email address" className="nl-band__in" />
+              <button type="submit" disabled={state === "loading"} className="nl-band__btn">
+                {state === "loading" ? "Subscribing…" : "Subscribe"}
+              </button>
+            </form>
+          )}
+          {state === "error" && <p className="nl-band__err">Something went wrong. Try again.</p>}
+          {!done && <p className="nl-band__note">No spam. Unsubscribe anytime.</p>}
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div className={isBand ? "relative overflow-hidden rounded-3xl border border-[#cfe6da] bg-[#e8f5ee] px-6 py-12 text-center sm:px-12 sm:py-14" : "nw-card rounded-2xl px-6 py-6"}>
-      {isBand && <div className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-[radial-gradient(closest-side,rgba(10,124,66,0.14),transparent)] blur-2xl" aria-hidden="true" />}
-      <div className={`relative ${isBand ? "mx-auto flex max-w-lg flex-col items-center" : ""}`}>
-        <h2 className={`font-bold leading-snug tracking-[-0.01em] text-[#10251b] ${isBand ? "text-2xl sm:text-[1.9rem]" : "text-xl"}`}>{heading}</h2>
-        <p className={`mt-3 text-[15px] leading-relaxed text-[#3d4b44] ${isBand ? "max-w-md" : ""}`}>{sub}</p>
+    <div className="nw-card rounded-2xl px-6 py-6">
+      <div className="relative">
+        <h2 className="text-xl font-bold leading-snug tracking-[-0.01em] text-[#14120f]">{heading}</h2>
+        <p className="mt-3 text-[15px] leading-relaxed text-[#56504a]">{sub}</p>
         {done ? (
-          <p className={`mt-7 flex items-center gap-2 text-sm font-semibold text-[#0a7c42] ${isBand ? "justify-center" : ""}`}>
+          <p className="mt-7 flex items-center gap-2 text-sm font-semibold text-[#007a95]">
             <Check className="h-4 w-4" /> You&apos;re subscribed, check your inbox.
           </p>
         ) : (
-          <form onSubmit={submit} className={`mt-7 flex flex-col gap-2.5 sm:flex-row sm:items-center ${isBand ? "w-full max-w-md" : ""}`}>
+          <form onSubmit={submit} className="mt-7 flex flex-col gap-2.5 sm:flex-row sm:items-center">
             <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@email.com" aria-label="Email address" className={input} />
             <button type="submit" disabled={state === "loading"} className="nw-btn group shrink-0 justify-center">
               {state === "loading" ? "Subscribing…" : "Subscribe"}
@@ -135,8 +164,7 @@ export default function NewsletterSignup({
             </button>
           </form>
         )}
-        {state === "error" && <p className={`mt-2 text-xs text-red-600 ${isBand ? "text-center" : ""}`}>Something went wrong. Try again.</p>}
-        {isBand && !done && <p className="mt-3 text-[12px] text-[#5a665f]">No spam. Unsubscribe anytime.</p>}
+        {state === "error" && <p className="mt-2 text-xs text-red-600">Something went wrong. Try again.</p>}
       </div>
     </div>
   );

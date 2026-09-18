@@ -72,26 +72,26 @@ export default function IntentPage({ cfg }: { cfg: IntentConfig }) {
       ))}
 
       <main className="mx-auto max-w-3xl px-5 py-10 sm:px-8 sm:py-14">
-        <nav className="text-xs text-[#5a665f]">
-          <Link href="/business-loans" className="hover:text-[#0a7c42]">Business loans</Link>
+        <nav className="text-xs text-[#56504a]">
+          <Link href="/business-loans" className="hover:text-[#007a95]">Business loans</Link>
           <span className="px-1.5">/</span>
-          <span className="text-[#3d4b44]">{cfg.crumb}</span>
+          <span className="text-[#56504a]">{cfg.crumb}</span>
         </nav>
 
-        <h1 className="mt-3 text-4xl font-extrabold leading-[1.1] text-[#10251b]">{cfg.h1}</h1>
+        <h1 className="mt-3 text-4xl font-extrabold leading-[1.1] text-[#14120f]">{cfg.h1}</h1>
         <EditorialMeta lastUpdated={LENDING_LAST_UPDATED} className="mt-3" />
-        <p className="mt-4 text-lg leading-relaxed text-[#3d4b44]">{cfg.lead}</p>
-        {cfg.intro?.map((p, i) => <p key={i} className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">{p}</p>)}
+        <p className="mt-4 text-lg leading-relaxed text-[#56504a]">{cfg.lead}</p>
+        {cfg.intro?.map((p, i) => <p key={i} className="mt-3 text-[15px] leading-relaxed text-[#56504a]">{p}</p>)}
 
         {cfg.sections.map((s) => (
           <section key={s.h} className="mt-10">
-            <h2 className="text-2xl font-extrabold text-[#10251b]">{s.h}</h2>
-            {s.body.map((p, i) => <p key={i} className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">{p}</p>)}
+            <h2 className="text-2xl font-extrabold text-[#14120f]">{s.h}</h2>
+            {s.body.map((p, i) => <p key={i} className="mt-3 text-[15px] leading-relaxed text-[#56504a]">{p}</p>)}
             {s.bullets && (
               <ul className="mt-3 space-y-2">
                 {s.bullets.map((b) => (
-                  <li key={b} className="flex gap-2.5 text-[15px] leading-relaxed text-[#3d4b44]">
-                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#0a7c42]" aria-hidden="true" />{b}
+                  <li key={b} className="flex gap-2.5 text-[15px] leading-relaxed text-[#56504a]">
+                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#007a95]" aria-hidden="true" />{b}
                   </li>
                 ))}
               </ul>
@@ -101,7 +101,7 @@ export default function IntentPage({ cfg }: { cfg: IntentConfig }) {
 
         {showPanel && (
           <section className="mt-12">
-            <h2 className="text-2xl font-extrabold text-[#10251b]">
+            <h2 className="text-2xl font-extrabold text-[#14120f]">
               {cfg.filterProducts?.length ? "Lenders that may fit" : "The lenders we compare"}
             </h2>
             <div className="mt-5">
@@ -112,13 +112,13 @@ export default function IntentPage({ cfg }: { cfg: IntentConfig }) {
         )}
 
         {/* CTA */}
-        <div className="mt-12 rounded-2xl border p-6" style={{ borderColor: "#0a7c4240", background: "#0a7c4208" }}>
-          <h2 className="text-xl font-extrabold text-[#10251b]">Check your options in about a minute</h2>
-          <p className="mt-2 text-sm leading-relaxed text-[#3d4b44]">
+        <div className="mt-12 rounded-2xl border p-6" style={{ borderColor: "#007a9540", background: "#007a9508" }}>
+          <h2 className="text-xl font-extrabold text-[#14120f]">Check your options in about a minute</h2>
+          <p className="mt-2 text-sm leading-relaxed text-[#56504a]">
             Tell us what you need. A person reviews every enquiry and introduces you to the lenders that fit. No documents to upload.
           </p>
           <div className="mt-4">
-            <Link href="/business-loans#enquire" className="inline-flex items-center rounded-xl px-5 py-3 text-sm font-bold text-white shadow-md hover:-translate-y-0.5" style={{ background: "#0a7c42", boxShadow: "0 8px 24px #0a7c4225" }}>
+            <Link href="/business-loans#enquire" className="inline-flex items-center rounded-xl px-5 py-3 text-sm font-bold text-white shadow-md hover:-translate-y-0.5" style={{ background: "#007a95", boxShadow: "0 8px 24px #007a9525" }}>
               Start my enquiry
             </Link>
           </div>
@@ -126,21 +126,21 @@ export default function IntentPage({ cfg }: { cfg: IntentConfig }) {
 
         {/* FAQ */}
         <section className="mt-14">
-          <h2 className="text-2xl font-extrabold text-[#10251b]">Common questions</h2>
-          <dl className="mt-6 divide-y divide-[#eef1ef] border-t border-[#eef1ef]">
+          <h2 className="text-2xl font-extrabold text-[#14120f]">Common questions</h2>
+          <dl className="mt-6 divide-y divide-[#f1ede4] border-t border-[#f1ede4]">
             {cfg.faqs.map((f) => (
               <div key={f.q} className="py-5">
-                <dt className="font-bold text-[#10251b]">{f.q}</dt>
-                <dd className="mt-1.5 text-sm leading-relaxed text-[#3d4b44]">{f.a}</dd>
+                <dt className="font-bold text-[#14120f]">{f.q}</dt>
+                <dd className="mt-1.5 text-sm leading-relaxed text-[#56504a]">{f.a}</dd>
               </div>
             ))}
           </dl>
         </section>
 
         {/* Related */}
-        <section className="mt-12 flex flex-wrap gap-x-6 gap-y-2 border-t border-[#eef1ef] pt-8 text-sm">
+        <section className="mt-12 flex flex-wrap gap-x-6 gap-y-2 border-t border-[#f1ede4] pt-8 text-sm">
           {cfg.related.map((r) => (
-            <Link key={r.href} href={r.href} className="font-semibold text-[#0a7c42] hover:text-[#086536]">{r.label}</Link>
+            <Link key={r.href} href={r.href} className="font-semibold text-[#007a95] hover:text-[#003647]">{r.label}</Link>
           ))}
         </section>
       </main>

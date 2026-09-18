@@ -158,33 +158,33 @@ export default function JuniperPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
 
-      <main id="main-content" className="mx-auto max-w-5xl px-5 pb-24 sm:px-8 text-[#10251b]">
+      <main id="main-content" className="mx-auto max-w-5xl px-5 pb-24 sm:px-8 text-[#14120f]">
         {/* Breadcrumb */}
-        <nav className="flex flex-wrap items-center gap-2 pt-8 text-sm text-[#5a665f]">
-          <Link href="/" className="transition-colors hover:text-[#10251b]">Refer Labs</Link>
+        <nav className="flex flex-wrap items-center gap-2 pt-8 text-sm text-[#56504a]">
+          <Link href="/" className="transition-colors hover:text-[#14120f]">Refer Labs</Link>
           <span>/</span>
-          <Link href="/weight-loss" className="transition-colors hover:text-[#10251b]">Weight loss</Link>
+          <Link href="/weight-loss" className="transition-colors hover:text-[#14120f]">Weight loss</Link>
           <span>/</span>
-          <span className="text-[#10251b]">Juniper</span>
+          <span className="text-[#14120f]">Juniper</span>
         </nav>
 
         {/* ── Hero ── */}
         <section className="grid gap-10 pt-8 sm:pt-10 lg:grid-cols-[1.55fr_1fr] lg:gap-14">
           <div>
-            <span className="mb-5 inline-flex h-16 w-16 items-center justify-center overflow-hidden rounded-2xl border border-[#e5e9e7] bg-white shadow-[0_10px_28px_-16px_rgba(16,37,27,0.35)]">
+            <span className="mb-5 inline-flex h-16 w-16 items-center justify-center overflow-hidden rounded-2xl border border-[#ded8cd] bg-white shadow-[0_10px_28px_-16px_rgba(20,18,15,0.35)]">
               <Image src="/logos/juniper.png" alt="Juniper logo" width={52} height={52} className="h-12 w-12 object-contain" />
             </span>
-            <h1 className="mt-4 text-4xl font-extrabold leading-[1.06] tracking-[-0.02em] text-[#10251b] sm:text-5xl lg:text-[3.2rem]">
-              Juniper Australia: <span className="text-[#0a7c42]">a free first consultation for new patients</span>
+            <h1 className="mt-4 text-4xl font-extrabold leading-[1.06] tracking-[-0.02em] text-[#14120f] sm:text-5xl lg:text-[3.2rem]">
+              Juniper Australia: <span className="text-[#007a95]">a free first consultation for new patients</span>
             </h1>
-            <p className="mt-5 inline-flex items-center gap-2 rounded-full border border-[#cfe6da] bg-[#e8f5ee] px-4 py-1.5 text-[13px] font-bold text-[#0a7c42]">
+            <p className="mt-5 inline-flex items-center gap-2 rounded-full border border-[#b9e3eb] bg-[#e4f2f5] px-4 py-1.5 text-[13px] font-bold text-[#007a95]">
               <ShieldCheck className="h-4 w-4" aria-hidden="true" /> New patients get a free first consultation through our link
             </p>
             {/* Below the lead. The first paragraph after the h1 is the answer;
                 a disclosure in that slot is what an engine lifts instead. Still
                 above the first affiliate link, which is what it is for. */}
             <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
-            <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#3d4b44]">
+            <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#56504a]">
               Juniper is an Australian medical weight-management program designed for women. Its Weight Reset Program
               pairs online consultations with Australian-registered practitioners with a full wraparound of care:
               structured coaching, unlimited follow-ups, an award-winning app and a 20,000-member patient community. Start
@@ -200,7 +200,7 @@ export default function JuniperPage() {
                   the hero CTA would never reach. This is the exact wording, in
                   readable contrast, beside the CTA. Do not reword, abbreviate or
                   append to this sentence. */}
-              <p className="mt-5 max-w-xl rounded-xl border border-[#e5e9e7] bg-[#f8faf9] px-4 py-3 text-[13px] leading-relaxed text-[#3d4b44]">
+              <p className="mt-5 max-w-xl rounded-xl border border-[#ded8cd] bg-[#f7f4ee] px-4 py-3 text-[13px] leading-relaxed text-[#56504a]">
                 This post contains affiliate links. If you are a new Juniper patient and make a purchase through these
                 links, I may earn a small commission at no extra cost to you.
               </p>
@@ -209,36 +209,36 @@ export default function JuniperPage() {
           {/* At-a-glance card */}
           <aside className="lg:pt-2">
             <div className="nw-card rounded-2xl p-6">
-              <span className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#627068]">At a glance</span>
-              <dl className="mt-4 divide-y divide-[#eef1ef] text-sm">
+              <span className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#56504a]">At a glance</span>
+              <dl className="mt-4 divide-y divide-[#f1ede4] text-sm">
                 {glance.map(([k, v]) => (
                   <div key={k} className="flex gap-3 py-2.5">
-                    <dt className="w-24 shrink-0 text-[#627068]">{k}</dt>
-                    <dd className="text-[#2b362f]">{v}</dd>
+                    <dt className="w-24 shrink-0 text-[#56504a]">{k}</dt>
+                    <dd className="text-[#14120f]">{v}</dd>
                   </div>
                 ))}
               </dl>
               <div className="mt-5">
                 <JuniperCTA loc="glance-card" block />
               </div>
-              <p className="mt-3 text-center text-[11px] text-[#627068]">Opens myjuniper.com · AU only</p>
+              <p className="mt-3 text-center text-[11px] text-[#56504a]">Opens myjuniper.com · AU only</p>
             </div>
           </aside>
         </section>
 
         {/* ── Trust strip ── */}
-        <section className="mt-14 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-[#e5e9e7] bg-[#e5e9e7] sm:grid-cols-4">
+        <section className="mt-14 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-[#ded8cd] bg-[#ded8cd] sm:grid-cols-4">
           {trust.map(({ icon: Icon, label }) => (
             <div key={label} className="flex items-center gap-3 bg-white px-5 py-5">
-              <Icon className="h-5 w-5 shrink-0 text-[#0a7c42]" strokeWidth={1.7} aria-hidden="true" />
-              <span className="text-[13px] font-medium leading-snug text-[#3d4b44]">{label}</span>
+              <Icon className="h-5 w-5 shrink-0 text-[#007a95]" strokeWidth={1.7} aria-hidden="true" />
+              <span className="text-[13px] font-medium leading-snug text-[#56504a]">{label}</span>
             </div>
           ))}
         </section>
 
         {/* ── Compliance notice ── */}
-        <p className="mt-8 rounded-xl border border-[#e5e9e7] bg-white px-5 py-4 text-xs leading-relaxed text-[#5a665f]">
-          <span className="font-semibold text-[#3d4b44]">Information only.</span> This page describes Juniper&apos;s
+        <p className="mt-8 rounded-xl border border-[#ded8cd] bg-white px-5 py-4 text-xs leading-relaxed text-[#56504a]">
+          <span className="font-semibold text-[#56504a]">Information only.</span> This page describes Juniper&apos;s
           program as a service and is not medical advice. Suitability for any program is decided individually by a
           registered Australian practitioner in a consultation. Always consult a qualified health professional before
           making any health decision.
@@ -249,11 +249,11 @@ export default function JuniperPage() {
           {/* TOC */}
           <nav aria-label="On this page" className="hidden lg:block">
             <div className="sticky top-24">
-              <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[#627068]">On this page</p>
+              <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[#56504a]">On this page</p>
               <ul className="space-y-2.5 text-sm">
                 {toc.map(([id, label]) => (
                   <li key={id}>
-                    <a href={`#${id}`} className="text-[#5a665f] transition-colors hover:text-[#0a7c42]">{label}</a>
+                    <a href={`#${id}`} className="text-[#56504a] transition-colors hover:text-[#007a95]">{label}</a>
                   </li>
                 ))}
               </ul>
@@ -264,8 +264,8 @@ export default function JuniperPage() {
           <article className="max-w-2xl">
             {/* What */}
             <section id="what" className="scroll-mt-24">
-              <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">What Juniper is</h2>
-              <div className="mt-4 space-y-4 text-[15.5px] leading-relaxed text-[#3d4b44]">
+              <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">What Juniper is</h2>
+              <div className="mt-4 space-y-4 text-[15.5px] leading-relaxed text-[#56504a]">
                 <p>
                   Juniper is a clinically-led Australian weight-management program designed for women, built around its
                   Weight Reset Program. You complete a health questionnaire online, an Australian-registered practitioner
@@ -278,7 +278,7 @@ export default function JuniperPage() {
                   built for people who want structure and a whole care team in their corner, not just a program.
                 </p>
               </div>
-              <p className="my-7 border-l-2 border-[#0a7c42] pl-5 text-[15px] leading-relaxed text-[#3d4b44]">
+              <p className="my-7 border-l-2 border-[#007a95] pl-5 text-[15px] leading-relaxed text-[#56504a]">
                 The coaching and community are the draw, but the practitioner review is the part that matters: every
                 application is assessed individually, and some are declined.
               </p>
@@ -286,16 +286,16 @@ export default function JuniperPage() {
 
             {/* Included */}
             <section id="included" className="mt-12 scroll-mt-24">
-              <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">What the Weight Reset Program includes</h2>
-              <p className="mt-4 text-[15.5px] leading-relaxed text-[#3d4b44]">
+              <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">What the Weight Reset Program includes</h2>
+              <p className="mt-4 text-[15.5px] leading-relaxed text-[#56504a]">
                 Juniper positions itself as more than a program: it wraps clinical care in ongoing support. Based on
                 Juniper&apos;s own site, a plan includes:
               </p>
               <ul className="mt-5 grid gap-2.5">
                 {included.map((t) => (
-                  <li key={t} className="flex items-start gap-2.5 text-[15px] leading-relaxed text-[#3d4b44]">
-                    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#e6f3ec]">
-                      <Check className="h-3.5 w-3.5 text-[#0a7c42]" strokeWidth={2.5} aria-hidden="true" />
+                  <li key={t} className="flex items-start gap-2.5 text-[15px] leading-relaxed text-[#56504a]">
+                    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#e4f2f5]">
+                      <Check className="h-3.5 w-3.5 text-[#007a95]" strokeWidth={2.5} aria-hidden="true" />
                     </span>
                     {t}
                   </li>
@@ -305,22 +305,22 @@ export default function JuniperPage() {
 
             {/* How it works */}
             <section id="start" className="mt-12 scroll-mt-24">
-              <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">How it works</h2>
+              <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">How it works</h2>
               <ol className="mt-6 space-y-5">
                 {steps.map((s) => (
                   <li key={s.num} className="flex gap-4">
-                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#e8f5ee] text-sm font-bold text-[#0a7c42]">
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#e4f2f5] text-sm font-bold text-[#007a95]">
                       {s.num}
                     </span>
                     <div>
-                      <p className="font-bold text-[#10251b]">{s.heading}</p>
-                      <p className="mt-1 text-sm leading-relaxed text-[#3d4b44]">{s.body}</p>
+                      <p className="font-bold text-[#14120f]">{s.heading}</p>
+                      <p className="mt-1 text-sm leading-relaxed text-[#56504a]">{s.body}</p>
                     </div>
                   </li>
                 ))}
               </ol>
-              <div className="mt-7 rounded-xl border border-[#cfe6da] bg-[#e8f5ee] p-5">
-                <p className="text-sm leading-relaxed text-[#2b362f]">
+              <div className="mt-7 rounded-xl border border-[#b9e3eb] bg-[#e4f2f5] p-5">
+                <p className="text-sm leading-relaxed text-[#14120f]">
                   Want to see if Juniper is a fit? The online eligibility check takes a few minutes and commits you to
                   nothing, and new patients get a free first consultation with a practitioner through our link.
                 </p>
@@ -332,8 +332,8 @@ export default function JuniperPage() {
 
             {/* Cost */}
             <section id="cost" className="mt-12 scroll-mt-24">
-              <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">What Juniper costs</h2>
-              <div className="mt-4 space-y-4 text-[15.5px] leading-relaxed text-[#3d4b44]">
+              <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">What Juniper costs</h2>
+              <div className="mt-4 space-y-4 text-[15.5px] leading-relaxed text-[#56504a]">
                 <p>
                   Juniper runs as a monthly subscription that its own site says covers the program, unlimited
                   consultations and delivery, with optional 1:1 health coaching as a paid add-on and a 30-day money-back
@@ -350,8 +350,8 @@ export default function JuniperPage() {
 
             {/* Legit & worth it (review intent) */}
             <section id="verdict" className="mt-12 scroll-mt-24">
-              <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">Is Juniper legit, and is it worth it?</h2>
-              <div className="mt-4 space-y-4 text-[15.5px] leading-relaxed text-[#3d4b44]">
+              <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">Is Juniper legit, and is it worth it?</h2>
+              <div className="mt-4 space-y-4 text-[15.5px] leading-relaxed text-[#56504a]">
                 <p>
                   On the markers that matter, Juniper is a real clinical service, not a storefront. Applications are
                   reviewed individually by AHPRA-registered practitioners, some applicants are declined, the inclusions
@@ -367,7 +367,7 @@ export default function JuniperPage() {
                   choice too.
                 </p>
               </div>
-              <p className="my-7 border-l-2 border-[#0a7c42] pl-5 text-[15px] leading-relaxed text-[#3d4b44]">
+              <p className="my-7 border-l-2 border-[#007a95] pl-5 text-[15px] leading-relaxed text-[#56504a]">
                 The free first consultation exists for exactly this question: it is a no-commitment way to talk to a
                 practitioner and judge the fit before you pay for anything.
               </p>
@@ -376,8 +376,8 @@ export default function JuniperPage() {
             {/* Bottom line */}
             <section id="bottom-line" className="mt-14 scroll-mt-24">
               <div className="nw-card rounded-2xl p-7 sm:p-8">
-                <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">Why Juniper</h2>
-                <p className="mt-4 text-[15.5px] leading-relaxed text-[#3d4b44]">
+                <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">Why Juniper</h2>
+                <p className="mt-4 text-[15.5px] leading-relaxed text-[#56504a]">
                   Juniper is built for women who want a whole care team in their corner, not just a program: coaching,
                   community, an award-winning app, and unlimited follow-ups seven days a week. The free first consultation
                   is the low-stakes way to check whether it fits, with a 30-day money-back window on eligible first orders.
@@ -389,8 +389,8 @@ export default function JuniperPage() {
                     "Registered Australian practitioners; not everyone is approved",
                     "Free first consultation via our link, no commitment",
                   ].map((point) => (
-                    <li key={point} className="flex items-start gap-2.5 text-sm text-[#2b362f]">
-                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#0a7c42]" aria-hidden="true" />
+                    <li key={point} className="flex items-start gap-2.5 text-sm text-[#14120f]">
+                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#007a95]" aria-hidden="true" />
                       {point}
                     </li>
                   ))}
@@ -403,15 +403,15 @@ export default function JuniperPage() {
 
             {/* FAQ */}
             <section id="faq" className="mt-14 scroll-mt-24">
-              <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">Frequently asked questions</h2>
-              <div className="mt-6 divide-y divide-[#e5e9e7] border-y border-[#e5e9e7]">
+              <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">Frequently asked questions</h2>
+              <div className="mt-6 divide-y divide-[#ded8cd] border-y border-[#ded8cd]">
                 {faqs.map((f) => (
                   <details key={f.q} className="group py-4">
-                    <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-[#10251b]">
+                    <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-[#14120f]">
                       {f.q}
-                      <span className="text-xl leading-none text-[#0a7c42] transition-transform group-open:rotate-45">+</span>
+                      <span className="text-xl leading-none text-[#007a95] transition-transform group-open:rotate-45">+</span>
                     </summary>
-                    <p className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">{f.a}</p>
+                    <p className="mt-3 text-[15px] leading-relaxed text-[#56504a]">{f.a}</p>
                   </details>
                 ))}
               </div>
@@ -419,7 +419,7 @@ export default function JuniperPage() {
 
             {/* Related */}
             <section className="mt-12">
-              <h2 className="text-lg font-bold text-[#10251b]">Keep reading</h2>
+              <h2 className="text-lg font-bold text-[#14120f]">Keep reading</h2>
               <ul className="mt-3 space-y-2 text-[15px]">
                 <li><Link href="/weight-loss-telehealth-women-australia" className="nw-link">Weight-loss telehealth for women, explained</Link></li>
                 <li><Link href="/weight-loss-telehealth-cost-australia" className="nw-link">What weight-loss telehealth costs</Link></li>
@@ -430,7 +430,7 @@ export default function JuniperPage() {
         </div>
 
         {/* ── Final CTA band ── */}
-        <section className="mt-20 overflow-hidden rounded-3xl bg-[#10251b] px-7 py-12 text-center sm:px-12 sm:py-16">
+        <section className="mt-20 overflow-hidden rounded-3xl bg-[#14120f] px-7 py-12 text-center sm:px-12 sm:py-16">
           <h2 className="mx-auto max-w-xl text-3xl font-bold leading-tight text-white sm:text-4xl">
             See where you stand with Juniper
           </h2>
@@ -439,7 +439,7 @@ export default function JuniperPage() {
             practitioner through our link, and you see the cost before you commit.
           </p>
           <div className="mt-8 flex justify-center">
-            <a {...juniperAff} data-cta="final-band" className="nw-btn justify-center !bg-white !text-[#0a7c42] px-8 py-4 text-base hover:!bg-[#e8f5ee]">
+            <a {...juniperAff} data-cta="final-band" className="nw-btn justify-center !bg-white !text-[#007a95] px-8 py-4 text-base hover:!bg-[#e4f2f5]">
               Start with a free consultation <ArrowRight className="h-4 w-4" />
             </a>
           </div>

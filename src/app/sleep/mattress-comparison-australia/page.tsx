@@ -45,7 +45,7 @@ export default function Page() {
       sectionHref="/sleep"
       slug="/sleep/mattress-comparison-australia"
       crumb="Comparing mattresses"
-      h1={<>Comparing mattresses in Australia: <span className="italic text-[#0a7c42]">what is checkable</span></>}
+      h1={<>Comparing mattresses in Australia: <span className="italic text-[#007a95]">what is checkable</span></>}
       intro="Almost every mattress comparison online is a ranking assembled by someone who has not slept on any of them. This is the opposite: no list, no scores, just the specifications that are verifiable and the trial terms where people lose money."
       headline="Mattress buying in Australia: what is checkable before you buy"
       description={seoConfig.mattressComparison.description}
@@ -57,7 +57,7 @@ export default function Page() {
     >
       <AffiliateDisclosure compact className="mb-8" />
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Why there is no ranking here</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Why there is no ranking here</h2>
         <p className="mt-3">
           A mattress is the one purchase where the only meaningful test is your own body over several weeks. We have
           not slept on these mattresses. Neither, in most cases, has whoever wrote the list you were reading before
@@ -70,16 +70,16 @@ export default function Page() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Specifications that mean something</h2>
-        <div className="mt-4 overflow-x-auto rounded-2xl border border-[#e5e9e7]">
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Specifications that mean something</h2>
+        <div className="mt-4 overflow-x-auto rounded-2xl border border-[#ded8cd]">
           <table className="w-full min-w-[560px] border-collapse text-left text-sm">
-            <thead className="bg-[#f8faf9] text-[11px] uppercase tracking-[0.1em] text-[#627068]">
+            <thead className="bg-[#f7f4ee] text-[11px] uppercase tracking-[0.1em] text-[#56504a]">
               <tr>
                 <th className="px-4 py-3 font-semibold">What to look for</th>
                 <th className="px-4 py-3 font-semibold">Why it matters</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-[#eef1ef]">
+            <tbody className="divide-y divide-[#f1ede4]">
               {[
                 ["Layer composition and thickness", "Tells you what you are buying rather than what it is called in the marketing."],
                 ["Foam density, where published", "One of the better available signals of whether it will hold its shape."],
@@ -89,7 +89,7 @@ export default function Page() {
                 ["Firmness described in context", "Unstandardised across brands, so only useful alongside your weight and sleeping position."],
               ].map((r) => (
                 <tr key={r[0]}>
-                  <td className="px-4 py-3 font-semibold text-[#10251b]">{r[0]}</td>
+                  <td className="px-4 py-3 font-semibold text-[#14120f]">{r[0]}</td>
                   <td className="px-4 py-3">{r[1]}</td>
                 </tr>
               ))}
@@ -99,7 +99,7 @@ export default function Page() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Read the trial terms before you rely on them</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Read the trial terms before you rely on them</h2>
         <p className="mt-3">
           A hundred-night trial is the standard pitch, and the conditions attached vary far more than the headline
           suggests. Before you treat a trial as your safety net, find out:
@@ -119,7 +119,7 @@ export default function Page() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Cost per year, not cost</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Cost per year, not cost</h2>
         <p className="mt-3">
           Divide the price by the years you realistically expect from it. A dearer mattress that lasts well can cost
           less per year than replacing a cheap one twice over the same period, and that comparison is the one worth

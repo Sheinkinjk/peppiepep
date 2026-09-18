@@ -25,10 +25,10 @@ const breadcrumbSchema = {
 function Section({ n, title, children }: { n: string; title: string; children: React.ReactNode }) {
   return (
     <section id={`s${n}`} className="scroll-mt-24">
-      <h2 className="mb-4 text-2xl font-bold text-[#10251b]">
+      <h2 className="mb-4 text-2xl font-bold text-[#14120f]">
         {n}. {title}
       </h2>
-      <div className="space-y-3 text-[#2b362f]">{children}</div>
+      <div className="space-y-3 text-[#14120f]">{children}</div>
     </section>
   );
 }
@@ -38,18 +38,18 @@ export default function Terms() {
     <ConsumerShell>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <main id="main-content" className="mx-auto max-w-3xl px-5 pb-20 pt-12 sm:px-8 sm:pt-16">
-        <nav className="mb-8 flex items-center gap-2 text-sm text-[#627068]">
-          <Link href="/" className="hover:text-[#0a7c42]">Refer Labs</Link>
+        <nav className="mb-8 flex items-center gap-2 text-sm text-[#56504a]">
+          <Link href="/" className="hover:text-[#007a95]">Refer Labs</Link>
           <span>/</span>
-          <span className="text-[#2b362f]">Terms</span>
+          <span className="text-[#14120f]">Terms</span>
         </nav>
 
-        <h1 className="mt-4 text-4xl font-bold leading-[1.07] tracking-[-0.01em] text-[#10251b] sm:text-5xl">
+        <h1 className="mt-4 text-4xl font-bold leading-[1.07] tracking-[-0.01em] text-[#14120f] sm:text-5xl">
           Terms of Use
         </h1>
-        <p className="mt-4 text-sm text-[#627068]">Last updated: 15 September 2026</p>
+        <p className="mt-4 text-sm text-[#56504a]">Last updated: 15 September 2026</p>
 
-        <p className="mt-8 text-lg leading-relaxed text-[#2b362f]">
+        <p className="mt-8 text-lg leading-relaxed text-[#14120f]">
           These terms apply when you use referlabs.com.au. Reading the site is free and needs no account. The site is
           published by Pepform Pty Ltd (ABN 32 660 008 159) trading as Refer Labs (&ldquo;Refer Labs&rdquo;,
           &ldquo;we&rdquo;, &ldquo;us&rdquo;). By using the site you agree to these terms. If you do not agree, please do
@@ -66,7 +66,7 @@ export default function Terms() {
             </p>
             <p>
               We also offer services to businesses, described on our{" "}
-              <Link href="/for-business" className="text-[#0a7c42] hover:underline">for-business</Link> pages, and an
+              <Link href="/for-business" className="text-[#007a95] hover:underline">for-business</Link> pages, and an
               optional email newsletter.
             </p>
           </Section>
@@ -91,7 +91,7 @@ export default function Terms() {
               </li>
             </ul>
             <p>
-              Our <Link href="/disclaimer" className="text-[#0a7c42] hover:underline">Disclaimer</Link> explains this in
+              Our <Link href="/disclaimer" className="text-[#007a95] hover:underline">Disclaimer</Link> explains this in
               more detail and forms part of these terms.
             </p>
           </Section>
@@ -106,7 +106,7 @@ export default function Terms() {
             </p>
             <p>
               We work to keep the site accurate and we correct errors when we find them or when you tell us. Email{" "}
-              <a href="mailto:jarred@referlabs.com.au" className="text-[#0a7c42] hover:underline">jarred@referlabs.com.au</a>{" "}
+              <a href="mailto:jarred@referlabs.com.au" className="text-[#007a95] hover:underline">jarred@referlabs.com.au</a>{" "}
               if something looks wrong.
             </p>
           </Section>
@@ -124,7 +124,7 @@ export default function Terms() {
               </li>
               <li>
                 We disclose commercial relationships on the pages that carry them. How we earn is set out on{" "}
-                <Link href="/how-we-make-money" className="text-[#0a7c42] hover:underline">How we make money</Link>.
+                <Link href="/how-we-make-money" className="text-[#007a95] hover:underline">How we make money</Link>.
               </li>
               <li>
                 When you follow a link to a provider, you leave our site. The provider&apos;s own terms and privacy policy
@@ -137,7 +137,7 @@ export default function Terms() {
             <p>
               When you submit a form, take a quiz that asks for your email, or subscribe to the newsletter, please give
               accurate details and only your own. We handle what you send under our{" "}
-              <Link href="/privacy" className="text-[#0a7c42] hover:underline">Privacy Policy</Link>. Where a form offers
+              <Link href="/privacy" className="text-[#007a95] hover:underline">Privacy Policy</Link>. Where a form offers
               to pass your enquiry to a provider, we only do so with your consent, and the provider then deals with you
               under its own terms.
             </p>
@@ -203,7 +203,7 @@ export default function Terms() {
             <ul className="list-disc space-y-2 pl-5">
               <li>You may quote short extracts, with credit to Refer Labs and a link to the page.</li>
               <li>
-                The observation log at <Link href="/data" className="text-[#0a7c42] hover:underline">/data</Link> is
+                The observation log at <Link href="/data" className="text-[#007a95] hover:underline">/data</Link> is
                 licensed more openly, under Creative Commons Attribution 4.0. The terms are stated on that page.
               </li>
               <li>Anything else needs our written permission.</li>
@@ -241,7 +241,7 @@ export default function Terms() {
 
           <Section n="12" title="Privacy">
             <p>
-              Our <Link href="/privacy" className="text-[#0a7c42] hover:underline">Privacy Policy</Link> explains what
+              Our <Link href="/privacy" className="text-[#007a95] hover:underline">Privacy Policy</Link> explains what
               personal information we collect, how we use it, and your rights.
             </p>
           </Section>
@@ -256,7 +256,7 @@ export default function Terms() {
           <Section n="14" title="Governing law and disputes">
             <p>
               These terms are governed by the laws of Victoria, Australia. If you have a complaint, please email us first
-              at <a href="mailto:jarred@referlabs.com.au" className="text-[#0a7c42] hover:underline">jarred@referlabs.com.au</a>{" "}
+              at <a href="mailto:jarred@referlabs.com.au" className="text-[#007a95] hover:underline">jarred@referlabs.com.au</a>{" "}
               and we will try to resolve it within 30 days. If it cannot be resolved, it may be taken to the courts of
               Victoria, sitting in Melbourne, or to any court or tribunal that has jurisdiction under law that cannot be
               excluded.
@@ -271,13 +271,13 @@ export default function Terms() {
           </Section>
 
           <Section n="16" title="Contact">
-            <div className="rounded-lg bg-[#e8f5ee] p-4">
+            <div className="rounded-lg bg-[#e4f2f5] p-4">
               <p className="font-semibold">Pepform Pty Ltd trading as Refer Labs</p>
               <p>ABN 32 660 008 159</p>
               <p>Melbourne, Victoria</p>
               <p>
                 Email:{" "}
-                <a href="mailto:jarred@referlabs.com.au" className="text-[#0a7c42] hover:underline">jarred@referlabs.com.au</a>
+                <a href="mailto:jarred@referlabs.com.au" className="text-[#007a95] hover:underline">jarred@referlabs.com.au</a>
               </p>
             </div>
           </Section>

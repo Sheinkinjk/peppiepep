@@ -65,21 +65,21 @@ export default function AffiliateEarningsCalculatorPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <main className="text-[#10251b]">
+      <main className="text-[#14120f]">
         <div className="mx-auto max-w-4xl px-6 sm:px-8 lg:px-12">
-          <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2 pt-8 text-sm text-[#3d4b44]">
-            <Link href="/" className="hover:text-[#0a7c42] transition-colors">Refer Labs</Link>
+          <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2 pt-8 text-sm text-[#56504a]">
+            <Link href="/" className="hover:text-[#007a95] transition-colors">Refer Labs</Link>
             <span aria-hidden="true">/</span>
-            <Link href="/affiliate-programs-australia" className="hover:text-[#0a7c42] transition-colors">Affiliate programs</Link>
+            <Link href="/affiliate-programs-australia" className="hover:text-[#007a95] transition-colors">Affiliate programs</Link>
             <span aria-hidden="true">/</span>
-            <span className="text-[#2b362f]">Earnings calculator</span>
+            <span className="text-[#14120f]">Earnings calculator</span>
           </nav>
 
           <section className="pt-9 pb-7 sm:pt-11">
-            <h1 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-extrabold leading-[1.08] tracking-tight text-[#10251b] mb-4 max-w-3xl">
+            <h1 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-extrabold leading-[1.08] tracking-tight text-[#14120f] mb-4 max-w-3xl">
               Affiliate earnings calculator: what could your audience make?
             </h1>
-            <div className="text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl mb-6 space-y-3">
+            <div className="text-[#56504a] text-sm sm:text-base leading-relaxed max-w-2xl mb-6 space-y-3">
               <p>
                 Three inputs decide most affiliate income: how many people you reach, how many of them click,
                 and what a sale pays in your niche. Set the three below and see a range, with every
@@ -92,11 +92,11 @@ export default function AffiliateEarningsCalculatorPage() {
             <EarningsCalc />
           </section>
 
-          <section className="border-t border-[#e5e9e7] mt-8 py-9">
-            <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-[#10251b] mb-4">
+          <section className="border-t border-[#ded8cd] mt-8 py-9">
+            <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-[#14120f] mb-4">
               How to read the range
             </h2>
-            <div className="space-y-4 text-[15px] leading-relaxed text-[#3d4b44] max-w-2xl">
+            <div className="space-y-4 text-[15px] leading-relaxed text-[#56504a] max-w-2xl">
               <p>
                 The spread between the low and high number is where the outcome is decided. The low end
                 assumes ordinary click-through, ordinary conversion and the cheaper end of your niche&apos;s
@@ -105,45 +105,45 @@ export default function AffiliateEarningsCalculatorPage() {
               </p>
               <p>
                 Matching is the lever you control. Our free{" "}
-                <Link href="/affiliate-programs-australia" className="text-[#0a7c42] underline underline-offset-2">guide to the best affiliate programs in Australia</Link>{" "}
+                <Link href="/affiliate-programs-australia" className="text-[#007a95] underline underline-offset-2">guide to the best affiliate programs in Australia</Link>{" "}
                 sorts the options by category, and the{" "}
-                <Link href="/recurring-affiliate-programs" className="text-[#0a7c42] underline underline-offset-2">recurring-commission programs</Link>{" "}
+                <Link href="/recurring-affiliate-programs" className="text-[#007a95] underline underline-offset-2">recurring-commission programs</Link>{" "}
                 are how small audiences compound.
               </p>
             </div>
           </section>
 
-          <section className="border-t border-[#e5e9e7] py-9">
-            <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-[#10251b] mb-6">
+          <section className="border-t border-[#ded8cd] py-9">
+            <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-[#14120f] mb-6">
               Frequently asked questions
             </h2>
             <div className="space-y-3">
               {faqs.map((f) => (
-                <details key={f.q} className="group rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] px-5 py-4">
-                  <summary className="cursor-pointer list-none font-semibold text-[#10251b] text-sm sm:text-base flex items-center justify-between gap-4">
+                <details key={f.q} className="group rounded-xl border border-[#ded8cd] bg-[#f7f4ee] px-5 py-4">
+                  <summary className="cursor-pointer list-none font-semibold text-[#14120f] text-sm sm:text-base flex items-center justify-between gap-4">
                     {f.q}
-                    <span aria-hidden="true" className="text-[#627068] group-open:rotate-45 transition-transform text-lg leading-none">+</span>
+                    <span aria-hidden="true" className="text-[#56504a] group-open:rotate-45 transition-transform text-lg leading-none">+</span>
                   </summary>
-                  <p className="text-[#3d4b44] text-sm leading-relaxed mt-3">{f.a}</p>
+                  <p className="text-[#56504a] text-sm leading-relaxed mt-3">{f.a}</p>
                 </details>
               ))}
             </div>
           </section>
 
-          <section className="border-t border-[#e5e9e7] py-9">
+          <section className="border-t border-[#ded8cd] py-9">
             <NewsletterSignup variant="band" source="earnings-calculator" />
           </section>
 
-          <section className="border-t border-[#e5e9e7] py-8 pb-16">
-            <h2 className="text-sm font-bold text-[#10251b] mb-3">Keep going</h2>
+          <section className="border-t border-[#ded8cd] py-8 pb-16">
+            <h2 className="text-sm font-bold text-[#14120f] mb-3">Keep going</h2>
             <div className="flex flex-wrap gap-3 mb-6">
               <Link href="/affiliate-programs-australia" className="nw-link text-sm">Best affiliate programs Australia</Link>
-              <span className="text-[#627068]">·</span>
+              <span className="text-[#56504a]">·</span>
               <Link href="/high-paying-affiliate-programs" className="nw-link text-sm">Highest-paying programs</Link>
-              <span className="text-[#627068]">·</span>
+              <span className="text-[#56504a]">·</span>
               <Link href="/how-to-start-affiliate-marketing-australia" className="nw-link text-sm">How to start from zero</Link>
             </div>
-            <p className="text-[#627068] text-xs leading-relaxed max-w-2xl">
+            <p className="text-[#56504a] text-xs leading-relaxed max-w-2xl">
               This calculator produces illustrative estimates from stated assumptions. It is not a prediction
               or promise of income, results vary widely and can be zero, and nothing on this page is financial
               advice.

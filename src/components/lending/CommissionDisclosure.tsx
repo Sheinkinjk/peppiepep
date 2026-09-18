@@ -12,17 +12,17 @@ import Link from "next/link";
 export default function CommissionDisclosure({ variant = "box" }: { variant?: "box" | "inline" }) {
   if (variant === "inline") {
     return (
-      <p className="text-xs leading-relaxed text-[#5a665f]">
+      <p className="text-xs leading-relaxed text-[#56504a]">
         If your loan settles, Refer Labs may be paid a share of the broker's commission, or a commission from the lender. This never changes what you pay, and we are not paid to rank one lender above another.{" "}
-        <Link href="/how-we-make-money" className="underline hover:text-[#10251b]">How we make money</Link>.
+        <Link href="/how-we-make-money" className="underline hover:text-[#14120f]">How we make money</Link>.
       </p>
     );
   }
   return (
-    <div className="rounded-xl border border-[#e5e9e7] bg-white p-4 text-sm leading-relaxed text-[#3d4b44]">
+    <div className="rounded-xl border border-[#ded8cd] bg-white p-4 text-sm leading-relaxed text-[#56504a]">
       <p>
-        <strong className="text-[#10251b]">How we&apos;re paid.</strong> Enquiries are submitted to lenders either directly or through a finance broker. If a loan settles, Refer Labs may be paid a share of that broker&apos;s commission, or a commission from the lender. It never changes the rate or fees you&apos;re offered, and the amount does not decide the order lenders appear in. We&apos;re a referrer, not a lender and not a credit provider.{" "}
-        <Link href="/how-we-make-money" className="font-semibold text-[#0a7c42] underline">Full detail here</Link>.
+        <strong className="text-[#14120f]">How we&apos;re paid.</strong> Enquiries are submitted to lenders either directly or through a finance broker. If a loan settles, Refer Labs may be paid a share of that broker&apos;s commission, or a commission from the lender. It never changes the rate or fees you&apos;re offered, and the amount does not decide the order lenders appear in. We&apos;re a referrer, not a lender and not a credit provider.{" "}
+        <Link href="/how-we-make-money" className="font-semibold text-[#007a95] underline">Full detail here</Link>.
       </p>
     </div>
   );

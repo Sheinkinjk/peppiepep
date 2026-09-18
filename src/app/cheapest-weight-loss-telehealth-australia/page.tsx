@@ -9,7 +9,7 @@ import StickyCta from "@/components/consumer/StickyCta";
 
 export const metadata = generateSEOMetadata(seoConfig.cheapestWeightLossTelehealth);
 
-const GREEN = "#0a7c42";
+const GREEN = "#007a95";
 const DFWL_URL = "https://www.doctorsforweightloss.com.au/";
 
 const aff = { href: MOSHY_URL, target: "_blank" as const, rel: "nofollow sponsored" as const };
@@ -126,24 +126,24 @@ export default function CheapestWeightLossTelehealthPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
 
-      <main className="text-[#10251b]">
+      <main className="text-[#14120f]">
         <div className="mx-auto max-w-4xl px-6 sm:px-8 lg:px-12">
 
           {/* Breadcrumb */}
-          <nav className="flex flex-wrap items-center gap-2 pt-8 text-sm text-[#3d4b44]">
-            <Link href="/" className="hover:text-[#0a7c42] transition-colors">Refer Labs</Link>
+          <nav className="flex flex-wrap items-center gap-2 pt-8 text-sm text-[#56504a]">
+            <Link href="/" className="hover:text-[#007a95] transition-colors">Refer Labs</Link>
             <span>/</span>
-            <Link href="/weight-loss" className="hover:text-[#0a7c42] transition-colors">Weight loss</Link>
+            <Link href="/weight-loss" className="hover:text-[#007a95] transition-colors">Weight loss</Link>
             <span>/</span>
-            <span className="text-[#2b362f]">Cheapest weight loss telehealth</span>
+            <span className="text-[#14120f]">Cheapest weight loss telehealth</span>
           </nav>
 
           {/* Hero */}
           <section className="pt-10 pb-8 sm:pt-12">
-            <h1 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-extrabold leading-[1.08] tracking-tight text-[#10251b] mb-4 max-w-3xl">
+            <h1 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-extrabold leading-[1.08] tracking-tight text-[#14120f] mb-4 max-w-3xl">
               Cheapest weight loss telehealth in Australia: affordable options compared
             </h1>
-            <p className="text-[#3d4b44] text-sm sm:text-base leading-relaxed max-w-2xl mb-3">
+            <p className="text-[#56504a] text-sm sm:text-base leading-relaxed max-w-2xl mb-3">
               No service is cheapest for everyone, because there are two billing models and they win in opposite
               situations. A subscription charges a flat monthly fee whether you consult or not, so it wins if you
               consult often. Pay-as-you-go charges per consult, so it wins if you rarely do. Medicine is usually billed
@@ -151,7 +151,7 @@ export default function CheapestWeightLossTelehealthPage() {
               stops being a matter of opinion.
             </p>
             <EditorialMeta lastUpdated="2026-09-10" className="mb-5" />
-            <p className="text-[#627068] text-xs leading-relaxed max-w-2xl mb-7">
+            <p className="text-[#56504a] text-xs leading-relaxed max-w-2xl mb-7">
               Information only, not medical advice. Prices are approximate and change, so check current pricing on each
               provider. This page contains a disclosed affiliate link to Moshy.
             </p>
@@ -170,14 +170,14 @@ export default function CheapestWeightLossTelehealthPage() {
 
           {/* Answer-first: the buyer's question verbatim as an H2, then the liftable verdict. */}
           <section className="pb-2">
-            <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-[#10251b] mb-4">
+            <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-[#14120f] mb-4">
               What is the cheapest weight-loss telehealth in Australia?
             </h2>
             <div className="rounded-xl border px-6 py-5" style={{ borderColor: `${GREEN}40`, background: `${GREEN}0A` }}>
               <p className="text-[10px] font-bold uppercase tracking-[0.18em] mb-2" style={{ color: GREEN }}>
                 The verdict
               </p>
-              <p className="text-[#2b362f] text-sm sm:text-base leading-relaxed max-w-2xl">
+              <p className="text-[#14120f] text-sm sm:text-base leading-relaxed max-w-2xl">
                 There is no single cheapest service, because they bill differently. Subscription programs like Moshy,
                 and Juniper fold consults and support into a monthly fee, while a pay-as-you-go service like
                 Doctors for Weight Loss charges per consult and can look lower up front. The cheapest option for
@@ -189,33 +189,33 @@ export default function CheapestWeightLossTelehealthPage() {
           </section>
 
           {/* Price table */}
-          <section className="border-t border-[#e5e9e7] mt-8 py-8">
-            <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-[#10251b] mb-6">
+          <section className="border-t border-[#ded8cd] mt-8 py-8">
+            <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-[#14120f] mb-6">
               Weight loss telehealth pricing compared
             </h2>
             <div className="overflow-x-auto -mx-2 px-2">
               <table className="w-full min-w-[620px] text-sm">
                 <thead>
-                  <tr className="border-b border-[#e5e9e7]">
-                    <th className="text-left pb-3 pr-4 text-[#627068] font-semibold text-[11px] uppercase tracking-wider w-44">Service</th>
-                    <th className="pb-3 px-3 text-left text-[#627068] font-semibold text-[11px] uppercase tracking-wider">Model</th>
-                    <th className="pb-3 px-3 text-left text-[#627068] font-semibold text-[11px] uppercase tracking-wider">Pricing</th>
-                    <th className="pb-3 px-3 text-left text-[#627068] font-semibold text-[11px] uppercase tracking-wider">Who</th>
+                  <tr className="border-b border-[#ded8cd]">
+                    <th className="text-left pb-3 pr-4 text-[#56504a] font-semibold text-[11px] uppercase tracking-wider w-44">Service</th>
+                    <th className="pb-3 px-3 text-left text-[#56504a] font-semibold text-[11px] uppercase tracking-wider">Model</th>
+                    <th className="pb-3 px-3 text-left text-[#56504a] font-semibold text-[11px] uppercase tracking-wider">Pricing</th>
+                    <th className="pb-3 px-3 text-left text-[#56504a] font-semibold text-[11px] uppercase tracking-wider">Who</th>
                   </tr>
                 </thead>
                 <tbody>
                   {priceRows.map((r) => (
-                    <tr key={r.name} className="border-b border-[#e5e9e7] hover:bg-[#f5f8f6] transition-colors align-top">
-                      <td className="py-3 pr-4 font-bold text-sm" style={{ color: r.highlight ? GREEN : "#10251b" }}>{r.name}</td>
-                      <td className="py-3 px-3 text-[#3d4b44] text-xs">{r.model}</td>
-                      <td className="py-3 px-3 text-[#3d4b44] text-xs leading-snug">{r.price}</td>
-                      <td className="py-3 px-3 text-[#3d4b44] text-xs">{r.who}</td>
+                    <tr key={r.name} className="border-b border-[#ded8cd] hover:bg-[#f7f4ee] transition-colors align-top">
+                      <td className="py-3 pr-4 font-bold text-sm" style={{ color: r.highlight ? GREEN : "#14120f" }}>{r.name}</td>
+                      <td className="py-3 px-3 text-[#56504a] text-xs">{r.model}</td>
+                      <td className="py-3 px-3 text-[#56504a] text-xs leading-snug">{r.price}</td>
+                      <td className="py-3 px-3 text-[#56504a] text-xs">{r.who}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
-            <p className="text-[#627068] text-[10px] mt-3 leading-relaxed">
+            <p className="text-[#56504a] text-[10px] mt-3 leading-relaxed">
               Prices are approximate, based on publicly available information, and change often.
               Check current pricing on each provider. Medication, where prescribed, may be billed separately. Treatment
               access is subject to individual clinical assessment.
@@ -223,11 +223,11 @@ export default function CheapestWeightLossTelehealthPage() {
           </section>
 
           {/* Prose: what cheapest really means */}
-          <section className="border-t border-[#e5e9e7] py-10">
-            <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-[#10251b] mb-4">
+          <section className="border-t border-[#ded8cd] py-10">
+            <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-[#14120f] mb-4">
               What &ldquo;cheapest&rdquo; means here
             </h2>
-            <div className="space-y-4 text-[15px] leading-relaxed text-[#3d4b44] max-w-2xl">
+            <div className="space-y-4 text-[15px] leading-relaxed text-[#56504a] max-w-2xl">
               <p>
                 The trap with cheapest is that a weight-loss telehealth bill has moving parts. There is the consult or
                 subscription fee, and then, separately in many cases, the cost of any medication that a practitioner
@@ -247,11 +247,11 @@ export default function CheapestWeightLossTelehealthPage() {
           </section>
 
           {/* Prose: Moshy as low-cost subscription */}
-          <section className="border-t border-[#e5e9e7] py-10">
-            <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-[#10251b] mb-4">
+          <section className="border-t border-[#ded8cd] py-10">
+            <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-[#14120f] mb-4">
               Moshy: a gender-neutral subscription option
             </h2>
-            <div className="space-y-4 text-[15px] leading-relaxed text-[#3d4b44] max-w-2xl">
+            <div className="space-y-4 text-[15px] leading-relaxed text-[#56504a] max-w-2xl">
               <p>
                 If you want the subscription model, Moshy is one to look at. It is gender-neutral and open to anyone
                 eligible, rather than aimed at one audience, and it keeps the experience focused on the weight-management
@@ -268,7 +268,7 @@ export default function CheapestWeightLossTelehealthPage() {
               </p>
             </div>
             <div className="mt-6 flex flex-col items-start gap-4 rounded-2xl border px-6 py-5 sm:flex-row sm:items-center sm:justify-between" style={{ borderColor: `${GREEN}25`, background: `${GREEN}0A` }}>
-              <p className="max-w-lg text-sm leading-relaxed text-[#10251b]">
+              <p className="max-w-lg text-sm leading-relaxed text-[#14120f]">
                 Want to see if the subscription route is open to you? Moshy&apos;s eligibility check takes
                 about ten minutes, with no commitment, and the referral applies automatically through our link.
               </p>
@@ -285,11 +285,11 @@ export default function CheapestWeightLossTelehealthPage() {
           </section>
 
           {/* Prose: cheapest is not always best fit */}
-          <section className="border-t border-[#e5e9e7] py-10">
-            <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-[#10251b] mb-4">
+          <section className="border-t border-[#ded8cd] py-10">
+            <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-[#14120f] mb-4">
               Why cheapest is not always the best fit
             </h2>
-            <div className="space-y-4 text-[15px] leading-relaxed text-[#3d4b44] max-w-2xl">
+            <div className="space-y-4 text-[15px] leading-relaxed text-[#56504a] max-w-2xl">
               <p>
                 Chasing the lowest number can backfire. If you specifically want coaching and unlimited consults, a
                 program that bundles them, like Juniper, may suit you better even at a higher monthly price than a leaner
@@ -306,37 +306,37 @@ export default function CheapestWeightLossTelehealthPage() {
           </section>
 
           {/* FAQ */}
-          <section className="border-t border-[#e5e9e7] py-10">
-            <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-[#10251b] mb-8">
+          <section className="border-t border-[#ded8cd] py-10">
+            <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-[#14120f] mb-8">
               Cheapest weight loss telehealth: frequently asked questions
             </h2>
             <div className="space-y-6">
               {faqs.map((f) => (
-                <div key={f.q} className="border-b border-[#e5e9e7] pb-6">
-                  <h3 className="text-sm font-bold text-[#10251b] mb-2 flex items-start gap-2">
+                <div key={f.q} className="border-b border-[#ded8cd] pb-6">
+                  <h3 className="text-sm font-bold text-[#14120f] mb-2 flex items-start gap-2">
                     <CheckCircle2 className="h-4 w-4 flex-shrink-0 mt-0.5" style={{ color: GREEN }} />
                     {f.q}
                   </h3>
-                  <p className="text-sm text-[#3d4b44] leading-relaxed">{f.a}</p>
+                  <p className="text-sm text-[#56504a] leading-relaxed">{f.a}</p>
                 </div>
               ))}
             </div>
           </section>
 
           {/* Related + disclosure */}
-          <section className="border-t border-[#e5e9e7] py-8 pb-16">
-            <h2 className="text-sm font-bold text-[#10251b] mb-3">Keep comparing</h2>
+          <section className="border-t border-[#ded8cd] py-8 pb-16">
+            <h2 className="text-sm font-bold text-[#14120f] mb-3">Keep comparing</h2>
             <div className="flex flex-wrap gap-3 mb-6">
               <Link href="/moshy" className="nw-link text-sm">Moshy</Link>
           <Link href="/moshy-review" className="nw-link text-sm">Moshy review</Link>
-              <span className="text-[#627068]">·</span>
+              <span className="text-[#56504a]">·</span>
               <Link href="/moshy-vs-juniper" className="nw-link text-sm">Moshy vs Juniper</Link>
-              <span className="text-[#627068]">·</span>
+              <span className="text-[#56504a]">·</span>
               <Link href="/best-weight-loss-telehealth-australia" className="nw-link text-sm">Best weight loss telehealth</Link>
-              <span className="text-[#627068]">·</span>
+              <span className="text-[#56504a]">·</span>
               <Link href="/weight-loss" className="nw-link text-sm">Weight loss hub</Link>
             </div>
-            <p className="text-[#627068] text-xs leading-relaxed max-w-2xl">
+            <p className="text-[#56504a] text-xs leading-relaxed max-w-2xl">
               This page is operated by Refer Labs and contains a disclosed affiliate referral link to Moshy. Juniper
               and Doctors for Weight Loss are linked without affiliate arrangements. We compare on price, model and
               what is included, and we never sell rankings. All content is for informational purposes only and does not

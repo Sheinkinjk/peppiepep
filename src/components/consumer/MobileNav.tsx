@@ -27,7 +27,7 @@ export default function MobileNav() {
     <div className="lg:hidden">
       <nav
         aria-label="Categories"
-        className="-my-1 flex gap-1 overflow-x-auto pr-8 text-[13px] font-medium text-[#3d4b44] [mask-image:linear-gradient(to_right,black_82%,transparent)] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        className="-my-1 flex gap-1 overflow-x-auto pr-8 text-[13px] font-medium text-[#56504a] [mask-image:linear-gradient(to_right,black_82%,transparent)] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
       >
         {GROUPS.map((g) => {
           const isOpen = open === g.label;
@@ -38,7 +38,7 @@ export default function MobileNav() {
               onClick={() => setOpen(isOpen ? null : g.label)}
               aria-expanded={isOpen}
               className={`inline-flex min-h-[44px] shrink-0 items-center gap-1 whitespace-nowrap rounded-lg px-3 py-2.5 transition-colors ${
-                isOpen ? "bg-[#f0f5f2] text-[#0a7c42]" : "hover:bg-[#f5f8f6] hover:text-[#0a7c42]"
+                isOpen ? "bg-[#f0f5f2] text-[#007a95]" : "hover:bg-[#f7f4ee] hover:text-[#007a95]"
               }`}
             >
               {g.label}
@@ -50,7 +50,7 @@ export default function MobileNav() {
           <Link
             key={it.href}
             href={it.href}
-            className="inline-flex min-h-[44px] shrink-0 items-center whitespace-nowrap rounded-lg px-3 py-2.5 transition-colors hover:bg-[#f5f8f6] hover:text-[#0a7c42]"
+            className="inline-flex min-h-[44px] shrink-0 items-center whitespace-nowrap rounded-lg px-3 py-2.5 transition-colors hover:bg-[#f7f4ee] hover:text-[#007a95]"
           >
             {it.label}
           </Link>
@@ -59,16 +59,16 @@ export default function MobileNav() {
 
       {GROUPS.filter((g) => g.label === open).map((g) => {
         return (
-          <div key={g.label} className="mt-2 border-t border-[#eef1ef] pt-2">
+          <div key={g.label} className="mt-2 border-t border-[#f1ede4] pt-2">
             {g.items.map((it) => (
               <Link
                 key={it.href}
                 href={it.href}
                 onClick={() => setOpen(null)}
-                className="block rounded-xl px-2.5 py-2.5 transition-colors active:bg-[#f2f4ee]"
+                className="block rounded-xl px-2.5 py-2.5 transition-colors active:bg-[#f7f4ee]"
               >
-                <span className="block text-[14px] font-semibold text-[#10251b]">{it.label}</span>
-                {it.note && <span className="mt-0.5 block text-[12.5px] leading-snug text-[#5a665f]">{it.note}</span>}
+                <span className="block text-[14px] font-semibold text-[#14120f]">{it.label}</span>
+                {it.note && <span className="mt-0.5 block text-[12.5px] leading-snug text-[#56504a]">{it.note}</span>}
               </Link>
             ))}
           </div>

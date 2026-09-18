@@ -101,7 +101,7 @@ const brand: RetailerBrand = {
   ],
   disclaimer: (
     <>
-      <span className="font-semibold text-[#2b362f]">General information only.</span> Nothing here is medical or
+      <span className="font-semibold text-[#14120f]">General information only.</span> Nothing here is medical or
       dietary advice, and listing a retailer is not an endorsement of the products it carries. Details were read on{" "}
       {READ_ON} and can change.
     </>

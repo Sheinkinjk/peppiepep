@@ -63,10 +63,10 @@ export default function Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }} />
       <PremiumAffiliateLanding config={ecoflowConfig} />
-      <div className="border-t border-[#e5e9e7] bg-white py-6">
+      <div className="border-t border-[#ded8cd] bg-white py-6">
         <div className="mx-auto max-w-3xl px-6 sm:px-8">
-          <p className="mb-1.5 text-xs text-[#627068]">Compare the two ranges</p>
-          <Link href="/ecoflow-vs-anker-solix" className="text-sm font-semibold text-[#0a7c42] transition-colors hover:text-[#086536]">
+          <p className="mb-1.5 text-xs text-[#56504a]">Compare the two ranges</p>
+          <Link href="/ecoflow-vs-anker-solix" className="text-sm font-semibold text-[#007a95] transition-colors hover:text-[#003647]">
             See EcoFlow next to the other range, priced per watt-hour &rarr;
           </Link>
         </div>

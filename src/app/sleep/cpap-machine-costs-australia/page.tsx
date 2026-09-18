@@ -44,7 +44,7 @@ export default function Page() {
       sectionHref="/sleep"
       slug="/sleep/cpap-machine-costs-australia"
       crumb="CPAP costs"
-      h1={<>CPAP costs in Australia: <span className="italic text-[#0a7c42]">the prices we could verify</span></>}
+      h1={<>CPAP costs in Australia: <span className="italic text-[#007a95]">the prices we could verify</span></>}
       intro="The ResMed AirSense 11 AutoSet listed at AUD $1,699 on ResMed's own Australian store and AUD $1,425 at retailer CPAP Online Australia, both checked on 19 August 2026. Buying direct from the manufacturer is the common assumption and on those two listings it was the dearer option. The consumables are the cost most comparisons leave out."
       headline="CPAP costs in Australia: verified prices"
       description={seoConfig.cpapCosts.description}
@@ -55,7 +55,7 @@ export default function Page() {
       ]}
     >
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Equipment comes after a diagnosis</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Equipment comes after a diagnosis</h2>
         <p className="mt-3">
           Worth stating before any prices: CPAP follows a sleep study and clinical guidance. The pressure settings are
           determined for your situation, and buying a machine to treat a problem nobody has confirmed is both an
@@ -63,16 +63,16 @@ export default function Page() {
         </p>
         <p className="mt-3">
           If you have not been through that process yet, the useful page is{" "}
-          <a href="/sleep/do-i-have-sleep-apnoea" className="font-semibold text-[#0a7c42] hover:underline">how diagnosis works</a>,
+          <a href="/sleep/do-i-have-sleep-apnoea" className="font-semibold text-[#007a95] hover:underline">how diagnosis works</a>,
           and this one is worth returning to afterwards.
         </p>
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">What we found on live listings</h2>
-        <div className="mt-4 overflow-x-auto rounded-2xl border border-[#e5e9e7]">
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">What we found on live listings</h2>
+        <div className="mt-4 overflow-x-auto rounded-2xl border border-[#ded8cd]">
           <table className="w-full min-w-[560px] border-collapse text-left text-sm">
-            <thead className="bg-[#f8faf9] text-[11px] uppercase tracking-[0.1em] text-[#627068]">
+            <thead className="bg-[#f7f4ee] text-[11px] uppercase tracking-[0.1em] text-[#56504a]">
               <tr>
                 <th className="px-4 py-3 font-semibold">Model</th>
                 <th className="px-4 py-3 font-semibold">Seller</th>
@@ -80,13 +80,13 @@ export default function Page() {
                 <th className="px-4 py-3 font-semibold">Checked</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-[#eef1ef]">
+            <tbody className="divide-y divide-[#f1ede4]">
               {[
                 ["ResMed AirSense 11 AutoSet", "ResMed, manufacturer's own AU store", "AUD $1,699", "19 Aug 2026"],
                 ["ResMed AirSense 11 AutoSet", "CPAP Online Australia, retailer", "AUD $1,425", "19 Aug 2026"],
               ].map((r, i) => (
                 <tr key={i}>
-                  <td className="px-4 py-3 font-semibold text-[#10251b]">{r[0]}</td>
+                  <td className="px-4 py-3 font-semibold text-[#14120f]">{r[0]}</td>
                   <td className="px-4 py-3">{r[1]}</td>
                   <td className="px-4 py-3 whitespace-nowrap tabular-nums">{r[2]}</td>
                   <td className="px-4 py-3 whitespace-nowrap tabular-nums">{r[3]}</td>
@@ -95,7 +95,7 @@ export default function Page() {
             </tbody>
           </table>
         </div>
-        <p className="mt-3 text-xs text-[#5a665f]">
+        <p className="mt-3 text-xs text-[#56504a]">
           Two listings for one model, read directly off each seller&apos;s page. Other models and sellers exist at other
           prices; we have not listed figures we could not verify.
         </p>
@@ -107,7 +107,7 @@ export default function Page() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">The cost people forget</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">The cost people forget</h2>
         <p className="mt-3">
           The machine is a one-off. Consumables are not. Mask cushions, the mask, tubing and filters all have
           replacement schedules, and across a few years the total can approach what the machine cost.
@@ -121,7 +121,7 @@ export default function Page() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Questions worth asking before you buy</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Questions worth asking before you buy</h2>
         <ul className="mt-3 list-disc space-y-2 pl-5">
           <li>What does a year of consumables cost for this specific mask?</li>
           <li>What is the warranty, and who services the machine if it fails?</li>

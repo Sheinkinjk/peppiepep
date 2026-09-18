@@ -12,7 +12,7 @@ import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 export const metadata = generateSEOMetadata(seoConfig.petsonme);
 
 const SLUG = "/petsonme";
-const GREEN = "#0a7c42";
+const GREEN = "#007a95";
 const UPDATED = "2026-09-14";
 
 // Every figure below is read off PetsOnMe's own compare-cover page (checked
@@ -101,27 +101,27 @@ export default function PetsOnMePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
 
       <main id="main-content" className="mx-auto max-w-3xl px-5 pb-24 pt-10 sm:px-8 sm:pt-14">
-        <nav className="mb-7 flex flex-wrap items-center gap-2 text-sm text-[#5a665f]">
-          <Link href="/" className="transition-colors hover:text-[#10251b]">Refer Labs</Link>
+        <nav className="mb-7 flex flex-wrap items-center gap-2 text-sm text-[#56504a]">
+          <Link href="/" className="transition-colors hover:text-[#14120f]">Refer Labs</Link>
           <span>/</span>
-          <Link href="/pet-insurance" className="transition-colors hover:text-[#10251b]">Pet insurance</Link>
+          <Link href="/pet-insurance" className="transition-colors hover:text-[#14120f]">Pet insurance</Link>
           <span>/</span>
-          <span className="text-[#10251b]">PetsOnMe</span>
+          <span className="text-[#14120f]">PetsOnMe</span>
         </nav>
 
-        <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#0a7c42]">Pet insurance · Australia</p>
+        <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#007a95]">Pet insurance · Australia</p>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="/logos/petsonme.svg" alt="PetsOnMe logo" width={161} height={45} className="mt-5 h-9 w-auto" />
-        <h1 className="mt-4 text-3xl font-extrabold leading-[1.08] tracking-tight text-[#10251b] sm:text-4xl">
-          PetsOnMe discount code <span className="text-[#0a7c42]">REFERLABS</span>: 15% off pet care services
+        <h1 className="mt-4 text-3xl font-extrabold leading-[1.08] tracking-tight text-[#14120f] sm:text-4xl">
+          PetsOnMe discount code <span className="text-[#007a95]">REFERLABS</span>: 15% off pet care services
         </h1>
         {/* Offer-first, the /moshy and /moshhair pattern (14 Sep 2026). The object of the
             discount stays in the h1 and the first sentence: it is the pet care services,
             never the premium, and saying "15% off" alone would misdescribe it (ACL s29). */}
-        <p className="mt-5 text-base leading-relaxed text-[#3d4b44] sm:text-lg">
-          The current PetsOnMe discount code is <strong className="text-[#10251b]">REFERLABS</strong>. Once you hold a
+        <p className="mt-5 text-base leading-relaxed text-[#56504a] sm:text-lg">
+          The current PetsOnMe discount code is <strong className="text-[#14120f]">REFERLABS</strong>. Once you hold a
           policy it takes the discount on PetsOnMe&apos;s pet care services from 12% to{" "}
-          <strong className="text-[#10251b]">15%</strong>; it does not reduce the insurance premium. PetsOnMe offers three
+          <strong className="text-[#14120f]">15%</strong>; it does not reduce the insurance premium. PetsOnMe offers three
           levels of cover, all paying 80% of the eligible vet bill less your excess. General information, not financial
           advice.
         </p>
@@ -132,7 +132,7 @@ export default function PetsOnMePage() {
         {/* The sentence that sat here duplicated the paragraph above it. The date
             stays: it is the only reading date on this page, and without it the nearest
             date to the code is the "Last updated" stamp, which reads as verification. */}
-        <p className="mt-4 text-[12px] font-medium text-[#5c6b63]">
+        <p className="mt-4 text-[12px] font-medium text-[#56504a]">
           Verified by Refer Labs on {checkedOn("REFERLABS")}, {checkMethod("PetsOnMe")}. Offers can change, so check the current terms
           before you sign up.
         </p>
@@ -142,10 +142,10 @@ export default function PetsOnMePage() {
 
         {/* Answer-first: what the code gives, stated precisely. */}
         <section className="mt-8">
-          <h2 className="text-xl font-bold text-[#10251b] sm:text-2xl">What does the REFERLABS code give you?</h2>
-          <div className="mt-4 rounded-xl border border-[#cfe6da] bg-[#e8f5ee] px-6 py-5">
-            <p className="text-[15px] leading-relaxed text-[#2b362f]">
-              Enter <strong className="font-semibold text-[#10251b]">{PETSONME_CODE}</strong> when you take out the
+          <h2 className="text-xl font-bold text-[#14120f] sm:text-2xl">What does the REFERLABS code give you?</h2>
+          <div className="mt-4 rounded-xl border border-[#b9e3eb] bg-[#e4f2f5] px-6 py-5">
+            <p className="text-[15px] leading-relaxed text-[#14120f]">
+              Enter <strong className="font-semibold text-[#14120f]">{PETSONME_CODE}</strong> when you take out the
               policy. The 15% then applies to dog walking, dog minding, pet sitting, doggy day care, house sitting and
               grooming booked through PetsOnMe, up from the 12% every policyholder gets. The premium is priced as normal.
             </p>
@@ -161,41 +161,41 @@ export default function PetsOnMePage() {
           <OffersTable deals={DEALS.filter((d) => d.brand === "PetsOnMe")} caption="PetsOnMe discount code and current offer, verified" />
         </section>
 
-        <p className="mt-6 rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] px-5 py-4 text-xs leading-relaxed text-[#3d4b44]">
-          <span className="font-semibold text-[#2b362f]">General information only.</span> Refer Labs is not an insurer,
+        <p className="mt-6 rounded-xl border border-[#ded8cd] bg-[#f7f4ee] px-5 py-4 text-xs leading-relaxed text-[#56504a]">
+          <span className="font-semibold text-[#14120f]">General information only.</span> Refer Labs is not an insurer,
           broker or financial adviser, and nothing here is a recommendation or personal financial advice. Read the
           Product Disclosure Statement and Target Market Determination before deciding.
         </p>
 
         {/* Plans */}
         <section className="mt-12">
-          <h2 className="text-xl font-bold text-[#10251b] sm:text-2xl">The three PetsOnMe plans</h2>
-          <p className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">
+          <h2 className="text-xl font-bold text-[#14120f] sm:text-2xl">The three PetsOnMe plans</h2>
+          <p className="mt-3 text-[15px] leading-relaxed text-[#56504a]">
             All three pay 80% of the eligible vet bill less your chosen excess, with excess options of $100, $200 or
             $300. What changes between them is the annual limit and what sits inside it. Figures are from
             PetsOnMe&apos;s own compare-cover page, checked 17 August 2026.
           </p>
-          <div className="mt-6 overflow-x-auto rounded-xl border border-[#e5e9e7]">
+          <div className="mt-6 overflow-x-auto rounded-xl border border-[#ded8cd]">
             <table className="w-full min-w-[520px] text-sm">
               <thead>
-                <tr className="bg-[#f5f8f6]">
-                  <th className="px-4 py-3 text-left font-semibold text-[#3d4b44]">Plan</th>
-                  <th className="px-4 py-3 text-left font-semibold text-[#3d4b44]">Annual benefit limit</th>
-                  <th className="px-4 py-3 text-left font-semibold text-[#3d4b44]">What it adds</th>
+                <tr className="bg-[#f7f4ee]">
+                  <th className="px-4 py-3 text-left font-semibold text-[#56504a]">Plan</th>
+                  <th className="px-4 py-3 text-left font-semibold text-[#56504a]">Annual benefit limit</th>
+                  <th className="px-4 py-3 text-left font-semibold text-[#56504a]">What it adds</th>
                 </tr>
               </thead>
               <tbody>
                 {plans.map((p) => (
-                  <tr key={p.name} className="border-t border-[#e5e9e7] align-top">
-                    <td className="px-4 py-3 font-bold text-[#10251b]">{p.name}</td>
-                    <td className="px-4 py-3 text-[#2b362f]">{p.limit}</td>
-                    <td className="px-4 py-3 text-[#3d4b44]">{p.extra}</td>
+                  <tr key={p.name} className="border-t border-[#ded8cd] align-top">
+                    <td className="px-4 py-3 font-bold text-[#14120f]">{p.name}</td>
+                    <td className="px-4 py-3 text-[#14120f]">{p.limit}</td>
+                    <td className="px-4 py-3 text-[#56504a]">{p.extra}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
-          <p className="mt-3 text-xs leading-relaxed text-[#627068]">
+          <p className="mt-3 text-xs leading-relaxed text-[#56504a]">
             PetsOnMe does not publish premiums: the price depends on your pet&apos;s species, breed and age, your
             postcode and the excess you pick, so a quote is the only real figure. Limits and terms can change, so
             confirm current cover in the PDS.
@@ -204,7 +204,7 @@ export default function PetsOnMePage() {
 
         {/* What to check */}
         <section className="mt-12">
-          <h2 className="text-xl font-bold text-[#10251b] sm:text-2xl">What to check before you buy</h2>
+          <h2 className="text-xl font-bold text-[#14120f] sm:text-2xl">What to check before you buy</h2>
           <ul className="mt-4 grid gap-2.5">
             {[
               "The benefit percentage. PetsOnMe pays 80% of the eligible bill, so you carry the remaining 20% plus the excess.",
@@ -213,9 +213,9 @@ export default function PetsOnMePage() {
               "Waiting periods in the PDS, and whether yours are waived because you are switching with 12 months of continuous cover.",
               "Pre-existing conditions, which are excluded by every Australian pet insurer and are the most common reason a claim is declined.",
             ].map((t) => (
-              <li key={t} className="flex items-start gap-2.5 text-[15px] leading-relaxed text-[#3d4b44]">
-                <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#e6f3ec]">
-                  <Check className="h-3.5 w-3.5 text-[#0a7c42]" strokeWidth={2.5} aria-hidden="true" />
+              <li key={t} className="flex items-start gap-2.5 text-[15px] leading-relaxed text-[#56504a]">
+                <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#e4f2f5]">
+                  <Check className="h-3.5 w-3.5 text-[#007a95]" strokeWidth={2.5} aria-hidden="true" />
                 </span>
                 {t}
               </li>
@@ -225,25 +225,25 @@ export default function PetsOnMePage() {
 
         {/* FAQ */}
         <section className="mt-12">
-          <h2 className="text-xl font-bold text-[#10251b] sm:text-2xl">Common questions</h2>
-          <div className="mt-5 divide-y divide-[#e5e9e7] border-y border-[#e5e9e7]">
+          <h2 className="text-xl font-bold text-[#14120f] sm:text-2xl">Common questions</h2>
+          <div className="mt-5 divide-y divide-[#ded8cd] border-y border-[#ded8cd]">
             {faqs.map((f) => (
               <details key={f.q} className="group py-4">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-[#10251b]">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-[#14120f]">
                   {f.q}
-                  <span className="text-xl leading-none text-[#0a7c42] transition-transform group-open:rotate-45">+</span>
+                  <span className="text-xl leading-none text-[#007a95] transition-transform group-open:rotate-45">+</span>
                 </summary>
-                <p className="mt-3 text-[15px] leading-relaxed text-[#3d4b44]">{f.a}</p>
+                <p className="mt-3 text-[15px] leading-relaxed text-[#56504a]">{f.a}</p>
               </details>
             ))}
           </div>
         </section>
 
         <div className="mt-10 rounded-2xl border px-6 py-7 text-center" style={{ borderColor: `${GREEN}30`, background: `${GREEN}08` }}>
-          <h2 className="text-lg font-bold text-[#10251b] sm:text-xl">Get a PetsOnMe quote</h2>
-          <p className="mx-auto mt-2 max-w-md text-sm leading-relaxed text-[#3d4b44]">
+          <h2 className="text-lg font-bold text-[#14120f] sm:text-xl">Get a PetsOnMe quote</h2>
+          <p className="mx-auto mt-2 max-w-md text-sm leading-relaxed text-[#56504a]">
             Premiums depend on your pet and postcode, so a quote is the only real figure. Enter code{" "}
-            <strong className="text-[#10251b]">{PETSONME_CODE}</strong> when you take out the policy for the upgraded
+            <strong className="text-[#14120f]">{PETSONME_CODE}</strong> when you take out the policy for the upgraded
             15% pet care services discount.
           </p>
           <div className="mt-5 flex justify-center">
@@ -251,7 +251,7 @@ export default function PetsOnMePage() {
           </div>
         </div>
 
-        <div className="mt-10 flex flex-wrap gap-x-6 gap-y-2 border-t border-[#e5e9e7] pt-8 text-sm">
+        <div className="mt-10 flex flex-wrap gap-x-6 gap-y-2 border-t border-[#ded8cd] pt-8 text-sm">
           <Link href="/knose-vs-petsonme" className="nw-link">PetsOnMe vs Knose, compared</Link>
           <Link href="/who-underwrites-pet-insurance-australia" className="nw-link">Who underwrites which pet insurer</Link>
           <Link href="/best-pet-insurance-australia" className="nw-link">How to choose pet insurance</Link>
@@ -261,7 +261,7 @@ export default function PetsOnMePage() {
         </div>
 
         <AffiliateDisclosure partners={["PetsOnMe"]} className="mt-8" />
-        <p className="mt-3 text-xs leading-relaxed text-[#627068]">
+        <p className="mt-3 text-xs leading-relaxed text-[#56504a]">
           The product is
           underwritten by Pacific International Insurance Pty Ltd (ABN 83 169 311 193) and distributed by Pets On Me
           Insurance Pty Limited (ABN 42 650 975 554). Cover details are from PetsOnMe&apos;s own compare-cover page,

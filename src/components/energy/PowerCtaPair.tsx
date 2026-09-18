@@ -28,7 +28,7 @@ export default function PowerCtaPair({
           target="_blank"
           rel="nofollow sponsored"
           data-cta={`${location}-ecoflow`}
-          className={`${base} bg-[#0a7c42] text-white hover:bg-[#086536]`}
+          className={`${base} bg-[#007a95] text-white hover:bg-[#003647]`}
         >
           See EcoFlow prices
         </a>
@@ -37,12 +37,12 @@ export default function PowerCtaPair({
           target="_blank"
           rel="nofollow sponsored"
           data-cta={`${location}-anker`}
-          className={`${base} border border-[#cfd8d3] bg-white text-[#10251b] hover:border-[#0a7c42] hover:text-[#0a7c42]`}
+          className={`${base} border border-[#cfd8d3] bg-white text-[#14120f] hover:border-[#007a95] hover:text-[#007a95]`}
         >
           See Anker SOLIX prices
         </a>
       </div>
-      <p className="mt-2 text-[12px] text-[#627068]">{note}</p>
+      <p className="mt-2 text-[12px] text-[#56504a]">{note}</p>
     </div>
   );
 }

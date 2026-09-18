@@ -45,7 +45,7 @@ export default function Page() {
       sectionHref="/mens-health"
       slug="/mens-health/is-telehealth-or-a-gp-cheaper-for-mens-health"
       crumb="Telehealth or a GP?"
-      h1={<>Telehealth or a GP for men&apos;s health: <span className="italic text-[#0a7c42]">which costs less</span></>}
+      h1={<>Telehealth or a GP for men&apos;s health: <span className="italic text-[#007a95]">which costs less</span></>}
       intro="Often not, once you annualise both. A bulk-billed GP appointment can cost nothing and a gap payment attracts a Medicare rebate, while most online subscriptions sit outside Medicare and charge every month whether you consult or not. Telehealth usually wins on speed and privacy. It wins on price only when you would consult often, or when your GP does not bulk bill."
       headline="Telehealth or a GP for men's health: which is cheaper?"
       description={seoConfig.telehealthVsGpMens.description}
@@ -57,25 +57,25 @@ export default function Page() {
       ]}
     >
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">The calculation</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">The calculation</h2>
         <p className="mt-3">
           We do not publish consult fees or rebate amounts, because practitioners set their own fees and Medicare
           rebates are revised, so any figure here would go stale without warning. What does not go stale is the method.
           Fill in your own numbers:
         </p>
         <div className="mt-4 space-y-4">
-          <div className="rounded-2xl border border-[#0a7c42]/25 bg-[#f5f8f6] p-6">
-            <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#0a7c42]">Online subscription, per year</p>
-            <p className="mt-2 text-[15px] font-semibold text-[#10251b]">
+          <div className="rounded-2xl border border-[#007a95]/25 bg-[#f7f4ee] p-6">
+            <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#007a95]">Online subscription, per year</p>
+            <p className="mt-2 text-[15px] font-semibold text-[#14120f]">
               (monthly fee × 12) + anything billed separately + review appointments
             </p>
           </div>
-          <div className="rounded-2xl border border-[#e5e9e7] bg-white p-6">
-            <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#627068]">GP route, per year</p>
-            <p className="mt-2 text-[15px] font-semibold text-[#10251b]">
+          <div className="rounded-2xl border border-[#ded8cd] bg-white p-6">
+            <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#56504a]">GP route, per year</p>
+            <p className="mt-2 text-[15px] font-semibold text-[#14120f]">
               (out-of-pocket per appointment × appointments you would book) + anything dispensed
             </p>
-            <p className="mt-2 text-sm text-[#3d4b44]">
+            <p className="mt-2 text-sm text-[#56504a]">
               Out-of-pocket is zero if the practice bulk bills, and the fee minus the rebate if it does not.
             </p>
           </div>
@@ -88,17 +88,17 @@ export default function Page() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">What each route is buying you</h2>
-        <div className="mt-4 overflow-x-auto rounded-2xl border border-[#e5e9e7]">
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">What each route is buying you</h2>
+        <div className="mt-4 overflow-x-auto rounded-2xl border border-[#ded8cd]">
           <table className="w-full min-w-[560px] border-collapse text-left text-sm">
-            <thead className="bg-[#f8faf9] text-[11px] uppercase tracking-[0.1em] text-[#627068]">
+            <thead className="bg-[#f7f4ee] text-[11px] uppercase tracking-[0.1em] text-[#56504a]">
               <tr>
                 <th className="px-4 py-3 font-semibold">&nbsp;</th>
                 <th className="px-4 py-3 font-semibold">Your GP</th>
                 <th className="px-4 py-3 font-semibold">Online service</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-[#eef1ef]">
+            <tbody className="divide-y divide-[#f1ede4]">
               {[
                 ["Medicare", "Rebate on the consult; may bulk bill", "Usually none"],
                 ["Charged when you do not consult", "No", "Yes, on a subscription"],
@@ -109,7 +109,7 @@ export default function Page() {
                 ["Considers other causes", "Yes, as part of general care", "Focused on the presenting issue"],
               ].map(([k, a, b]) => (
                 <tr key={k}>
-                  <td className="px-4 py-3 font-semibold text-[#10251b]">{k}</td>
+                  <td className="px-4 py-3 font-semibold text-[#14120f]">{k}</td>
                   <td className="px-4 py-3">{a}</td>
                   <td className="px-4 py-3">{b}</td>
                 </tr>
@@ -120,7 +120,7 @@ export default function Page() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">When paying more is the right call</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">When paying more is the right call</h2>
         <p className="mt-3">
           Price is not the only thing being bought here. A significant number of men delay seeking help on these
           subjects for years, and a service that removes the waiting room sometimes converts intention into an

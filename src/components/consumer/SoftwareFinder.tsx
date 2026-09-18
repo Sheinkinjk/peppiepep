@@ -105,12 +105,12 @@ export default function SoftwareFinder({
     return (
       <div className={card}>
         <div className="flex items-center justify-between gap-4">
-          <h2 className="text-xl font-extrabold tracking-tight text-[#10251b]">Your shortlist</h2>
-          <button type="button" onClick={reset} className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#5a665f] hover:text-[#10251b]">
+          <h2 className="text-xl font-extrabold tracking-tight text-[#14120f]">Your shortlist</h2>
+          <button type="button" onClick={reset} className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#56504a] hover:text-[#14120f]">
             <RotateCcw className="h-3.5 w-3.5" aria-hidden="true" /> Start over
           </button>
         </div>
-        <p className="mt-1.5 text-sm text-[#5a665f]">
+        <p className="mt-1.5 text-sm text-[#56504a]">
           Based on your answers ({priorityMeta.label.toLowerCase()}{size ? `, ${SIZES.find((s) => s.id === size)?.label.toLowerCase()}` : ""}). Independent picks, disclosed affiliate links, never sold placement.
         </p>
 
@@ -121,28 +121,28 @@ export default function SoftwareFinder({
             return (
               <div key={goal.id}>
                 <div className="flex items-baseline justify-between gap-3">
-                  <h3 className="text-lg font-extrabold text-[#10251b]">{goal.label}</h3>
-                  <Link href={goal.hub} className="shrink-0 text-sm font-semibold text-[#0a7c42] hover:text-[#086536]">Compare all →</Link>
+                  <h3 className="text-lg font-extrabold text-[#14120f]">{goal.label}</h3>
+                  <Link href={goal.hub} className="shrink-0 text-sm font-semibold text-[#007a95] hover:text-[#003647]">Compare all →</Link>
                 </div>
-                <p className="mt-1 text-sm text-[#5a665f]">
+                <p className="mt-1 text-sm text-[#56504a]">
                   For {goal.label.toLowerCase()}, with a focus on {priorityMeta.phrase}, we&apos;d start with:
                 </p>
                 <div className="mt-3 grid gap-3">
                   {picks.map((p) => (
-                    <div key={p.name} className="rounded-xl border border-[#e5e9e7] bg-[#f5f8f6] p-5">
+                    <div key={p.name} className="rounded-xl border border-[#ded8cd] bg-[#f7f4ee] p-5">
                       <div className="flex flex-wrap items-baseline gap-x-2.5 gap-y-1">
-                        <span className="text-base font-extrabold text-[#10251b]">{p.name}</span>
-                        <span className="text-[13px] font-semibold text-[#0a7c42]">{p.bestFor}</span>
+                        <span className="text-base font-extrabold text-[#14120f]">{p.name}</span>
+                        <span className="text-[13px] font-semibold text-[#007a95]">{p.bestFor}</span>
                       </div>
-                      <p className="mt-1.5 text-sm leading-relaxed text-[#3d4b44]">{p.blurb}</p>
+                      <p className="mt-1.5 text-sm leading-relaxed text-[#56504a]">{p.blurb}</p>
                       {p.external ? (
                         <a href={p.href} target="_blank" rel="nofollow sponsored" data-cta={`finder-${p.name}`}
-                          className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-[#0a7c42] hover:text-[#086536]">
+                          className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-[#007a95] hover:text-[#003647]">
                           {p.cta} <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
                         </a>
                       ) : (
                         <Link href={p.href} data-cta={`finder-${p.name}`}
-                          className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-[#0a7c42] hover:text-[#086536]">
+                          className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-[#007a95] hover:text-[#003647]">
                           {p.cta} <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
                         </Link>
                       )}
@@ -155,23 +155,23 @@ export default function SoftwareFinder({
         </div>
 
         {/* Optional capture */}
-        <div className="mt-8 rounded-2xl border border-[#cfe6da] bg-[#e6f3ec] p-6">
+        <div className="mt-8 rounded-2xl border border-[#b9e3eb] bg-[#e4f2f5] p-6">
           {sent ? (
-            <p className="flex items-center gap-2 text-sm font-medium text-[#10251b]">
-              <Check className="h-4 w-4 text-[#0a7c42]" strokeWidth={2.5} aria-hidden="true" /> Sent. Check your inbox for the shortlist.
+            <p className="flex items-center gap-2 text-sm font-medium text-[#14120f]">
+              <Check className="h-4 w-4 text-[#007a95]" strokeWidth={2.5} aria-hidden="true" /> Sent. Check your inbox for the shortlist.
             </p>
           ) : (
             <form onSubmit={submitCapture}>
-              <p className="text-sm font-semibold text-[#10251b]">Want this shortlist emailed, and a hand narrowing it down?</p>
+              <p className="text-sm font-semibold text-[#14120f]">Want this shortlist emailed, and a hand narrowing it down?</p>
               <div className="mt-3 flex flex-col gap-2 sm:flex-row">
                 <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@business.com.au"
-                  className="w-full rounded-xl border border-[#cfe6da] bg-white px-4 py-3 text-sm text-[#10251b] placeholder:text-[#9aa39c] focus:border-[#0a7c42] focus:outline-none focus:ring-1 focus:ring-[#0a7c42]" />
+                  className="w-full rounded-xl border border-[#b9e3eb] bg-white px-4 py-3 text-sm text-[#14120f] placeholder:text-[#766f66] focus:border-[#007a95] focus:outline-none focus:ring-1 focus:ring-[#007a95]" />
                 <button type="submit" disabled={sending} className="nw-btn shrink-0 justify-center disabled:opacity-70">
                   {sending ? <><Loader2 className="h-4 w-4 animate-spin" /> Sending…</> : <>Email it to me</>}
                 </button>
               </div>
               {capErr && <p className="mt-2 text-sm font-medium text-[#c0392b]">{capErr}</p>}
-              <p className="mt-2 text-xs text-[#5a665f]">No spam. We may email you occasional new picks; unsubscribe any time.</p>
+              <p className="mt-2 text-xs text-[#56504a]">No spam. We may email you occasional new picks; unsubscribe any time.</p>
             </form>
           )}
         </div>
@@ -185,28 +185,28 @@ export default function SoftwareFinder({
   return (
     <div className={card}>
       <div className="mb-5">
-        <div className="flex items-center justify-between text-[11px] font-bold uppercase tracking-[0.12em] text-[#627068]">
+        <div className="flex items-center justify-between text-[11px] font-bold uppercase tracking-[0.12em] text-[#56504a]">
           <span>Step {step + 1} of 3</span>
-          <span className="text-[#3d4b44]">{["What you need", "Your business", "What matters"][step]}</span>
+          <span className="text-[#56504a]">{["What you need", "Your business", "What matters"][step]}</span>
         </div>
         <div className="mt-2 flex gap-1.5" aria-hidden="true">
           {[0, 1, 2].map((i) => (
-            <div key={i} className="h-1.5 flex-1 rounded-full" style={{ background: i <= step ? "#0a7c42" : "#e5e9e7" }} />
+            <div key={i} className="h-1.5 flex-1 rounded-full" style={{ background: i <= step ? "#007a95" : "#ded8cd" }} />
           ))}
         </div>
       </div>
 
       {step === 0 && (
         <>
-          <h2 className="text-xl font-extrabold tracking-tight text-[#10251b]">What do you want to sort out?</h2>
-          <p className="mt-1 text-sm text-[#5a665f]">Pick as many as apply.</p>
+          <h2 className="text-xl font-extrabold tracking-tight text-[#14120f]">What do you want to sort out?</h2>
+          <p className="mt-1 text-sm text-[#56504a]">Pick as many as apply.</p>
           <div className="mt-4 grid gap-2.5 sm:grid-cols-2">
             {goals.map((g) => {
               const active = selected.includes(g.id);
               return (
                 <button key={g.id} type="button" onClick={() => toggleGoal(g.id)}
-                  className={`${chipBase} flex items-center gap-2.5 ${active ? "border-[#0a7c42] bg-[#e6f3ec] text-[#10251b]" : "border-[#e5e9e7] bg-white text-[#3d4b44] hover:border-[#bfe0cf]"}`}>
-                  <span className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-md border ${active ? "border-[#0a7c42] bg-[#0a7c42]" : "border-[#cfd6d1]"}`}>
+                  className={`${chipBase} flex items-center gap-2.5 ${active ? "border-[#007a95] bg-[#e4f2f5] text-[#14120f]" : "border-[#ded8cd] bg-white text-[#56504a] hover:border-[#b9e3eb]"}`}>
+                  <span className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-md border ${active ? "border-[#007a95] bg-[#007a95]" : "border-[#ded8cd]"}`}>
                     {active && <Check className="h-3.5 w-3.5 text-white" strokeWidth={3} aria-hidden="true" />}
                   </span>
                   {g.label}
@@ -219,12 +219,12 @@ export default function SoftwareFinder({
 
       {step === 1 && (
         <>
-          <h2 className="text-xl font-extrabold tracking-tight text-[#10251b]">How big is your business?</h2>
-          <p className="mt-1 text-sm text-[#5a665f]">This helps us weight simplicity against scale.</p>
+          <h2 className="text-xl font-extrabold tracking-tight text-[#14120f]">How big is your business?</h2>
+          <p className="mt-1 text-sm text-[#56504a]">This helps us weight simplicity against scale.</p>
           <div className="mt-4 flex flex-wrap gap-2.5">
             {SIZES.map((s) => (
               <button key={s.id} type="button" onClick={() => setSize(s.id)}
-                className={`${chipBase} ${size === s.id ? "border-[#0a7c42] bg-[#e6f3ec] text-[#10251b]" : "border-[#e5e9e7] bg-white text-[#3d4b44] hover:border-[#bfe0cf]"}`}>
+                className={`${chipBase} ${size === s.id ? "border-[#007a95] bg-[#e4f2f5] text-[#14120f]" : "border-[#ded8cd] bg-white text-[#56504a] hover:border-[#b9e3eb]"}`}>
                 {s.label}
               </button>
             ))}
@@ -234,12 +234,12 @@ export default function SoftwareFinder({
 
       {step === 2 && (
         <>
-          <h2 className="text-xl font-extrabold tracking-tight text-[#10251b]">What matters most right now?</h2>
-          <p className="mt-1 text-sm text-[#5a665f]">We&apos;ll rank the shortlist accordingly.</p>
+          <h2 className="text-xl font-extrabold tracking-tight text-[#14120f]">What matters most right now?</h2>
+          <p className="mt-1 text-sm text-[#56504a]">We&apos;ll rank the shortlist accordingly.</p>
           <div className="mt-4 flex flex-wrap gap-2.5">
             {PRIORITIES.map((p) => (
               <button key={p.id} type="button" onClick={() => setPriority(p.id)}
-                className={`${chipBase} ${priority === p.id ? "border-[#0a7c42] bg-[#e6f3ec] text-[#10251b]" : "border-[#e5e9e7] bg-white text-[#3d4b44] hover:border-[#bfe0cf]"}`}>
+                className={`${chipBase} ${priority === p.id ? "border-[#007a95] bg-[#e4f2f5] text-[#14120f]" : "border-[#ded8cd] bg-white text-[#56504a] hover:border-[#b9e3eb]"}`}>
                 {p.label}
               </button>
             ))}
@@ -249,7 +249,7 @@ export default function SoftwareFinder({
 
       <div className="mt-8 flex items-center justify-between gap-3">
         {step > 0 ? (
-          <button type="button" onClick={() => setStep((s) => s - 1)} className="inline-flex items-center gap-1.5 rounded-xl px-4 py-3 text-sm font-semibold text-[#3d4b44] transition-colors hover:bg-[#f5f8f6]">
+          <button type="button" onClick={() => setStep((s) => s - 1)} className="inline-flex items-center gap-1.5 rounded-xl px-4 py-3 text-sm font-semibold text-[#56504a] transition-colors hover:bg-[#f7f4ee]">
             <ArrowLeft className="h-4 w-4" aria-hidden="true" /> Back
           </button>
         ) : <span />}

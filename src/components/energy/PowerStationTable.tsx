@@ -28,10 +28,10 @@ export default function PowerStationTable({
   const rows = [...STATIONS].filter(filter ?? (() => true)).sort((a, b) => perWh(a) - perWh(b));
   return (
     <figure className="mt-5">
-      <div className="overflow-x-auto rounded-2xl border border-[#e5e9e7]">
+      <div className="overflow-x-auto rounded-2xl border border-[#ded8cd]">
         <table className="w-full min-w-[720px] border-collapse text-left text-sm">
           <thead>
-            <tr className="border-b border-[#e5e9e7] bg-[#f8faf9] text-[#5a665f]">
+            <tr className="border-b border-[#ded8cd] bg-[#f7f4ee] text-[#56504a]">
               <th className="px-4 py-3 font-semibold">Model</th>
               <th className="px-4 py-3 font-semibold">Capacity</th>
               <th className="px-4 py-3 font-semibold">Output</th>
@@ -42,25 +42,25 @@ export default function PowerStationTable({
           </thead>
           <tbody>
             {rows.map((s) => (
-              <tr key={s.brand + s.model} className="border-b border-[#eef1ef] last:border-0">
+              <tr key={s.brand + s.model} className="border-b border-[#f1ede4] last:border-0">
                 <td className="px-4 py-3">
-                  <span className="font-semibold text-[#10251b]">{s.model}</span>
-                  <span className="ml-2 text-[12px] text-[#5a665f]">{s.brand}</span>
+                  <span className="font-semibold text-[#14120f]">{s.model}</span>
+                  <span className="ml-2 text-[12px] text-[#56504a]">{s.brand}</span>
                 </td>
-                <td className="px-4 py-3 tabular-nums text-[#3d4b44]">{s.wh.toLocaleString("en-AU")}Wh</td>
-                <td className="px-4 py-3 tabular-nums text-[#3d4b44]">{s.watts.toLocaleString("en-AU")}W</td>
-                <td className="px-4 py-3 tabular-nums text-[#3d4b44]">
+                <td className="px-4 py-3 tabular-nums text-[#56504a]">{s.wh.toLocaleString("en-AU")}Wh</td>
+                <td className="px-4 py-3 tabular-nums text-[#56504a]">{s.watts.toLocaleString("en-AU")}W</td>
+                <td className="px-4 py-3 tabular-nums text-[#56504a]">
                   {fmtAud(s.aud)}
-                  {s.wasAud ? <span className="ml-1.5 text-[12px] text-[#627068]">was {fmtAud(s.wasAud)}</span> : null}
+                  {s.wasAud ? <span className="ml-1.5 text-[12px] text-[#56504a]">was {fmtAud(s.wasAud)}</span> : null}
                 </td>
-                <td className="px-4 py-3 font-semibold tabular-nums text-[#10251b]">{fmtPerWh(s)}</td>
+                <td className="px-4 py-3 font-semibold tabular-nums text-[#14120f]">{fmtPerWh(s)}</td>
                 <td className="px-4 py-3 text-right whitespace-nowrap">
                   <a
                     href={AFF[s.brand]}
                     target="_blank"
                     rel="nofollow sponsored"
                     data-cta={`table-${s.brand === "EcoFlow" ? "ecoflow" : "anker"}`}
-                    className="text-[13px] font-semibold text-[#0a7c42] underline-offset-2 hover:underline"
+                    className="text-[13px] font-semibold text-[#007a95] underline-offset-2 hover:underline"
                   >
                     Check price
                   </a>
@@ -70,7 +70,7 @@ export default function PowerStationTable({
           </tbody>
         </table>
       </div>
-      <figcaption className="mt-2.5 text-[13px] leading-relaxed text-[#5a665f]">
+      <figcaption className="mt-2.5 text-[13px] leading-relaxed text-[#56504a]">
         {caption ?? "Australian range, sorted by cost per watt-hour."} Read off each brand&apos;s own Australian store
         on {PRICES_READ_ON}. Where a struck-through price was shown it is recorded, so a sale is not mistaken for the
         standing price. Prices change often in this category: check the current figure before you buy. The

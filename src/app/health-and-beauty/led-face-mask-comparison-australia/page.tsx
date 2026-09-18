@@ -46,7 +46,7 @@ export default function Page() {
       sectionHref="/health-and-beauty"
       slug="/health-and-beauty/led-face-mask-comparison-australia"
       crumb="LED face masks"
-      h1={<>LED face masks in Australia: <span className="italic text-[#0a7c42]">what they cost here</span></>}
+      h1={<>LED face masks in Australia: <span className="italic text-[#007a95]">what they cost here</span></>}
       intro="At-home LED devices are one of the few skincare categories where the Australian price gap is large, visible and easy to misread. Here is what the numbers are, and what to check on a listing before you spend several hundred dollars."
       headline="LED face masks in Australia: what they cost"
       description={seoConfig.ledFaceMask.description}
@@ -58,14 +58,14 @@ export default function Page() {
       ]}
     >
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">The prices we could verify</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">The prices we could verify</h2>
         <p className="mt-3">
           We only list a figure where we opened the listing ourselves. Everything below was read on 19 August 2026, and
           prices move, so treat these as what we saw rather than what you will pay.
         </p>
-        <div className="mt-4 overflow-x-auto rounded-2xl border border-[#e5e9e7]">
+        <div className="mt-4 overflow-x-auto rounded-2xl border border-[#ded8cd]">
           <table className="w-full min-w-[560px] border-collapse text-left text-sm">
-            <thead className="bg-[#f8faf9] text-[11px] uppercase tracking-[0.1em] text-[#627068]">
+            <thead className="bg-[#f7f4ee] text-[11px] uppercase tracking-[0.1em] text-[#56504a]">
               <tr>
                 <th className="px-4 py-3 font-semibold">Device</th>
                 <th className="px-4 py-3 font-semibold">Listing</th>
@@ -73,7 +73,7 @@ export default function Page() {
                 <th className="px-4 py-3 font-semibold">Checked</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-[#eef1ef]">
+            <tbody className="divide-y divide-[#f1ede4]">
               {[
                 ["Omnilux Contour Face", "Omnilux, brand site", "USD $395", "19 Aug 2026"],
                 ["Omnilux Contour Face", "RY, Australian retailer", "AUD $470", "19 Aug 2026"],
@@ -81,7 +81,7 @@ export default function Page() {
                 ["Omnilux Clear", "RY, Australian retailer", "AUD $470", "19 Aug 2026"],
               ].map((r, i) => (
                 <tr key={i}>
-                  <td className="px-4 py-3 font-semibold text-[#10251b]">{r[0]}</td>
+                  <td className="px-4 py-3 font-semibold text-[#14120f]">{r[0]}</td>
                   <td className="px-4 py-3">{r[1]}</td>
                   <td className="px-4 py-3 whitespace-nowrap tabular-nums">{r[2]}</td>
                   <td className="px-4 py-3 whitespace-nowrap tabular-nums">{r[3]}</td>
@@ -90,14 +90,14 @@ export default function Page() {
             </tbody>
           </table>
         </div>
-        <p className="mt-3 text-xs text-[#5a665f]">
+        <p className="mt-3 text-xs text-[#56504a]">
           Other brands sell into Australia at a range of prices. We have not listed them because we could not read a
           current figure off a live listing, and a table padded with estimates would defeat the point of the page.
         </p>
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Reading the Australian price gap properly</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Reading the Australian price gap properly</h2>
         <p className="mt-3">
           On the same device, the brand&apos;s own site shows USD $395 and an Australian retailer shows AUD $470. At a
           glance that looks like a heavy local markup. Convert the US figure and add GST, freight and local distribution,
@@ -111,13 +111,13 @@ export default function Page() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">What to check on a listing</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">What to check on a listing</h2>
         <ul className="mt-3 list-disc space-y-2 pl-5">
-          <li><strong className="text-[#10251b]">Wavelengths, stated in nanometres.</strong> A listing that says only &ldquo;red light&rdquo; cannot be compared to one that specifies 633nm.</li>
-          <li><strong className="text-[#10251b]">LED count and coverage.</strong> Both determine how much of your face is treated and for how long a session runs.</li>
-          <li><strong className="text-[#10251b]">ARTG inclusion.</strong> Search the register yourself by brand or sponsor rather than taking a marketing line at face value.</li>
-          <li><strong className="text-[#10251b]">Session time and frequency.</strong> A device needing long daily sessions is one most people quietly stop using.</li>
-          <li><strong className="text-[#10251b]">Warranty and who honours it.</strong> An Australian seller and an overseas one are not the same proposition if the device fails.</li>
+          <li><strong className="text-[#14120f]">Wavelengths, stated in nanometres.</strong> A listing that says only &ldquo;red light&rdquo; cannot be compared to one that specifies 633nm.</li>
+          <li><strong className="text-[#14120f]">LED count and coverage.</strong> Both determine how much of your face is treated and for how long a session runs.</li>
+          <li><strong className="text-[#14120f]">ARTG inclusion.</strong> Search the register yourself by brand or sponsor rather than taking a marketing line at face value.</li>
+          <li><strong className="text-[#14120f]">Session time and frequency.</strong> A device needing long daily sessions is one most people quietly stop using.</li>
+          <li><strong className="text-[#14120f]">Warranty and who honours it.</strong> An Australian seller and an overseas one are not the same proposition if the device fails.</li>
         </ul>
       </section>
 

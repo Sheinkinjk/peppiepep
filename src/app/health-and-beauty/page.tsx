@@ -1,11 +1,14 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
 
 import HubProviders from "@/components/consumer/HubProviders";
 import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
+import MatchPrompt from "@/components/consumer/MatchPrompt";
+import { EdgeObject } from "@/components/brand/EdgeObject";
+import { GuideGrid } from "@/components/brand/GuideGrid";
+import { HubObject, type ObjectKind } from "@/components/home/Objects";
 export const metadata = generateSEOMetadata(seoConfig.healthAndBeauty);
 
 const SLUG = "/health-and-beauty";
@@ -41,6 +44,13 @@ const guides = [
     title: "Which routine fits you?",
     desc: "A short matcher across budget, effort and priority. No health questions.",
   },
+];
+
+const OTHER: { href: string; label: string; object: ObjectKind }[] = [
+  { href: "/sleep", label: "Sleep", object: "pillow" },
+  { href: "/weight-loss", label: "Weight loss", object: "scale" },
+  { href: "/hair-loss", label: "Hair loss", object: "comb" },
+  { href: "/pet-insurance", label: "Pets", object: "tag" },
 ];
 
 const faqs = [
@@ -117,17 +127,18 @@ export default function SkinAndBeautyHub() {
 
       <main id="main-content">
         <section className="mx-auto max-w-6xl px-5 pt-10 sm:px-8">
-          <nav className="flex items-center gap-2 text-sm text-[#627068]">
-            <Link href="/" className="hover:text-[#0a7c42]">Refer Labs</Link>
+          <nav className="flex items-center gap-2 text-sm text-[#56504a]">
+            <Link href="/" className="hover:text-[#007a95]">Refer Labs</Link>
             <span>/</span>
-            <span className="text-[#2b362f]">Health &amp; beauty</span>
+            <span className="text-[#14120f]">Health &amp; beauty</span>
           </nav>
+          <div className="grid items-start gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
           <div className="max-w-3xl">
-            <h1 className="mt-4 text-4xl font-bold leading-[1.06] tracking-[-0.01em] text-[#10251b] sm:text-5xl">
-              Health and beauty in Australia: <span className="italic text-[#0a7c42]">what it costs, and which claims you can check</span>
+            <h1 className="mt-4 text-4xl font-bold leading-[1.06] tracking-[-0.01em] text-[#14120f] sm:text-5xl">
+              Health and beauty in Australia: what it costs, and which claims you can check
             </h1>
             {/* The answer, directly under the h1. Nothing between: check-answer-slot. */}
-            <p className="mt-5 text-lg leading-relaxed text-[#2b362f]">
+            <p className="mt-5 text-lg leading-relaxed text-[#14120f]">
               Two words do most of the selling in this category and only one of them means anything you can verify.
               &ldquo;Certified organic&rdquo; is checkable in a public register; &ldquo;natural&rdquo; is not. A
               cosmetic device is not a therapeutic one. And a meal-replacement shake sold as a very low energy diet is,
@@ -136,11 +147,22 @@ export default function SkinAndBeautyHub() {
             </p>
             <AffiliateDisclosure compact className="mt-4" />
           </div>
+          <EdgeObject kind="bottle" className="lg:mt-14">
+            <MatchPrompt
+              stacked
+              href="/health-and-beauty/skincare-quiz"
+              title="Which routine fits you?"
+              sub="A short matcher across budget, effort and priority. No health questions."
+              cta="Start the routine match"
+              dataCta="health-beauty-hero-quiz"
+            />
+          </EdgeObject>
+          </div>
         </section>
 
 
         <HubProviders
-          className="pt-4"
+          className="pt-16"
           ctaPrefix="health-beauty-hub"
           heading="The partners we cover"
           intro="Five Australian retail partners, answering the same four questions. We earn a commission from all five, hold a discount code for none of them, and none of them can pay to be described more favourably."
@@ -218,39 +240,25 @@ export default function SkinAndBeautyHub() {
             the decision each guide serves, so a reader can find their question
             rather than reading all eight titles. No guide was removed. */}
         <section className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
-          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">Every guide in this section</h2>
-          <p className="mt-3 max-w-3xl text-[15px] leading-relaxed text-[#3d4b44]">
+          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">Every guide in this section</h2>
+          <p className="mt-3 max-w-3xl text-[15px] leading-relaxed text-[#56504a]">
             Grouped by what each one decides. The nutrition side of this section is covered on the{" "}
-            <Link href="/optislim" className="font-semibold text-[#0a7c42] hover:underline">OptiSlim page</Link>, which
+            <Link href="/optislim" className="font-semibold text-[#007a95] hover:underline">OptiSlim page</Link>, which
             sets out what the food regulator requires of a very low energy diet.
           </p>
-          <div className="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {guides.map((g) => (
-              <Link
-                key={g.href}
-                href={g.href}
-                className="group rounded-2xl border border-[#e5e9e7] bg-white p-6 transition-colors hover:border-[#0a7c42]/40"
-              >
-                <h3 className="text-[15px] font-bold text-[#10251b] group-hover:text-[#0a7c42]">{g.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-[#3d4b44]">{g.desc}</p>
-                <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[#0a7c42]">
-                  Read <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
-                </span>
-              </Link>
-            ))}
-          </div>
+          <GuideGrid guides={guides} />
         </section>
 
-        <section className="border-y border-[#e5e9e7] bg-[#f5f8f6]">
+        <section className="border-y border-[#ded8cd] bg-[#f7f4ee]">
           <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
-            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">
+            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">
               Common questions
             </h2>
-            <dl className="mt-7 max-w-3xl divide-y divide-[#e5e9e7]">
+            <dl className="mt-7 max-w-3xl divide-y divide-[#ded8cd]">
               {faqs.map((f) => (
                 <div key={f.q} className="py-5">
-                  <dt className="text-[15px] font-bold text-[#10251b]">{f.q}</dt>
-                  <dd className="mt-2 text-sm leading-relaxed text-[#3d4b44]">{f.a}</dd>
+                  <dt className="text-[15px] font-bold text-[#14120f]">{f.q}</dt>
+                  <dd className="mt-2 text-sm leading-relaxed text-[#56504a]">{f.a}</dd>
                 </div>
               ))}
             </dl>
@@ -258,23 +266,29 @@ export default function SkinAndBeautyHub() {
         </section>
 
         <section className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
-          <div className="max-w-2xl">
-            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b] sm:text-3xl">
+          <div className="max-w-3xl">
+            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">
               Other categories
             </h2>
-            <p className="mt-2 text-sm leading-relaxed text-[#3d4b44]">
+            <p className="mt-2 text-sm leading-relaxed text-[#56504a]">
               Every one of these has its comparisons in place. Sleep and longevity each gained their first partner in September 2026.
             </p>
-            <ul className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold">
-              <li><Link href="/sleep" className="text-[#0a7c42] hover:underline">Sleep</Link></li>
-              <li><Link href="/weight-loss" className="text-[#0a7c42] hover:underline">Weight loss</Link></li>
-              <li><Link href="/hair-loss" className="text-[#0a7c42] hover:underline">Hair loss</Link></li>
-              <li><Link href="/pet-insurance" className="text-[#0a7c42] hover:underline">Pets</Link></li>
-              <li><Link href="/guides" className="text-[#3d4b44] hover:text-[#0a7c42] hover:underline">All guides</Link></li>
+            <ul className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4">
+              {OTHER.map((o) => (
+                <li key={o.href}>
+                  <Link href={o.href} className="group flex items-center gap-3 rounded-xl border border-[#ded8cd] bg-white p-3 text-sm font-semibold text-[#14120f] transition-colors hover:border-[#14120f] hover:text-[#007a95]">
+                    <HubObject kind={o.object} size={36} className="hy-obj" />
+                    {o.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
+            <p className="mt-4 text-sm">
+              <Link href="/guides" className="font-semibold text-[#56504a] hover:text-[#007a95] hover:underline">All guides</Link>
+            </p>
           </div>
-          <div className="mt-10 max-w-2xl">
-            <NewsletterSignup />
+          <div className="mt-12">
+            <NewsletterSignup variant="band" />
           </div>
         </section>
       </main>

@@ -92,18 +92,18 @@ export default function Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
 
       <main id="main-content" className="mx-auto max-w-3xl px-5 pb-20 pt-10 sm:px-8">
-        <nav className="flex flex-wrap items-center gap-2 text-sm text-[#627068]">
-          <Link href="/" className="hover:text-[#0a7c42]">Refer Labs</Link>
+        <nav className="flex flex-wrap items-center gap-2 text-sm text-[#56504a]">
+          <Link href="/" className="hover:text-[#007a95]">Refer Labs</Link>
           <span>/</span>
-          <Link href="/business-software" className="hover:text-[#0a7c42]">Business software</Link>
+          <Link href="/business-software" className="hover:text-[#007a95]">Business software</Link>
           <span>/</span>
-          <span className="text-[#2b362f]">Affiliate &amp; referral software</span>
+          <span className="text-[#14120f]">Affiliate &amp; referral software</span>
         </nav>
 
-        <h1 className="mt-5 text-3xl font-bold leading-[1.1] tracking-[-0.01em] text-[#10251b] sm:text-4xl">
-          Affiliate and referral software: <span className="italic text-[#0a7c42]">how to choose one</span>
+        <h1 className="mt-5 text-3xl font-bold leading-[1.1] tracking-[-0.01em] text-[#14120f] sm:text-4xl">
+          Affiliate and referral software: <span className="italic text-[#007a95]">how to choose one</span>
         </h1>
-        <p className="mt-5 text-lg leading-relaxed text-[#2b362f]">
+        <p className="mt-5 text-lg leading-relaxed text-[#14120f]">
           Almost nobody in this category publishes a price, so comparing platforms means getting quotes and making them
           comparable. These are the six questions that do that, from a business that runs affiliate programs rather than
           only writing about them.
@@ -112,11 +112,11 @@ export default function Page() {
             a disclosure in that slot is what an engine lifts instead. Still
             above the first affiliate link, which is what it is for. */}
         <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
-        <p className="mt-4 text-xs font-medium text-[#5a665f]">Last checked by Refer Labs, 20 August 2026</p>
+        <p className="mt-4 text-xs font-medium text-[#56504a]">Last checked by Refer Labs, 20 August 2026</p>
 
-        <div className="mt-10 space-y-10 text-[15px] leading-relaxed text-[#3d4b44]">
+        <div className="mt-10 space-y-10 text-[15px] leading-relaxed text-[#56504a]">
           <section>
-            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">First, do you need it yet?</h2>
+            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">First, do you need it yet?</h2>
             <p className="mt-3">
               Running a program with a handful of partners on a spreadsheet is entirely reasonable, and plenty of brands
               spend money on tooling before they have anyone to track. The threshold worth using is simple: when you can
@@ -124,7 +124,7 @@ export default function Page() {
             </p>
             <p className="mt-3">
               If you are not there, the useful next step is recruiting partners rather than buying software. Our guide to{" "}
-              <Link href="/affiliate-programs-australia" className="font-semibold text-[#0a7c42] hover:underline">
+              <Link href="/affiliate-programs-australia" className="font-semibold text-[#007a95] hover:underline">
                 affiliate programs in Australia
               </Link>{" "}
               is written from the other side of that relationship, which is a useful thing to understand before you build
@@ -133,11 +133,11 @@ export default function Page() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">The six questions</h2>
+            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">The six questions</h2>
             <ol className="mt-4 space-y-3">
               {CRITERIA.map(([q, why], i) => (
-                <li key={i} className="rounded-2xl border border-[#e5e9e7] bg-white p-5">
-                  <p className="font-semibold text-[#10251b]">{i + 1}. {q}</p>
+                <li key={i} className="rounded-2xl border border-[#ded8cd] bg-white p-5">
+                  <p className="font-semibold text-[#14120f]">{i + 1}. {q}</p>
                   <p className="mt-1.5 text-sm">{why}</p>
                 </li>
               ))}
@@ -149,7 +149,7 @@ export default function Page() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Why there is no ranking here</h2>
+            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Why there is no ranking here</h2>
             <p className="mt-3">
               We have a relationship with one platform in this category, Superfiliate, and we have not used the
               alternatives. A ranked list built on that basis would be steering dressed as research, and this category
@@ -162,13 +162,13 @@ export default function Page() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">The one we do have an offer on</h2>
-            <div className="mt-4 rounded-2xl border border-[#0a7c42]/30 bg-[#e8f5ee] p-6">
-              <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#086536]">Current offer via our link</p>
-              <p className="mt-2 text-xl font-black leading-snug text-[#10251b]">
+            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">The one we do have an offer on</h2>
+            <div className="mt-4 rounded-2xl border border-[#007a95]/30 bg-[#e4f2f5] p-6">
+              <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#003647]">Current offer via our link</p>
+              <p className="mt-2 text-xl font-black leading-snug text-[#14120f]">
                 15% off your monthly Superfiliate SaaS fee
               </p>
-              <p className="mt-3 text-sm leading-relaxed text-[#3d4b44]">
+              <p className="mt-3 text-sm leading-relaxed text-[#56504a]">
                 Superfiliate is a creator-led growth platform: affiliates, ambassadors and paid partners in one place,
                 with creator storefronts and code-based attribution. The discount applies to the monthly SaaS fee, not to
                 commission you pay partners. Their claim page is an enquiry form rather than a self-serve signup, so
@@ -178,11 +178,11 @@ export default function Page() {
                 <a href={SUPERFILIATE_URL} target="_blank" rel="nofollow sponsored" data-cta="affiliate-software-superfiliate" className="nw-btn">
                   Claim 15% off Superfiliate <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </a>
-                <Link href="/superfiliate" className="text-sm font-semibold text-[#0a7c42] hover:text-[#086536]">
+                <Link href="/superfiliate" className="text-sm font-semibold text-[#007a95] hover:text-[#003647]">
                   Read our Superfiliate review
                 </Link>
               </div>
-              <p className="mt-4 text-[12px] font-medium text-[#5a665f]">
+              <p className="mt-4 text-[12px] font-medium text-[#56504a]">
                 Confirmed directly with Superfiliate on 20 August 2026. Offers change; confirm current terms
                 before you commit.
               </p>
@@ -190,29 +190,29 @@ export default function Page() {
             <p className="mt-4">
               This is an affiliate link, so we earn if you subscribe, at no extra cost to you. That is exactly why the
               six questions above are not written around Superfiliate&apos;s strengths.{" "}
-              <Link href="/how-we-make-money" className="underline hover:text-[#10251b]">How we make money</Link>.
+              <Link href="/how-we-make-money" className="underline hover:text-[#14120f]">How we make money</Link>.
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#10251b]">Common questions</h2>
-            <dl className="mt-5 divide-y divide-[#eef1ef] rounded-2xl border border-[#e5e9e7] bg-white">
+            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Common questions</h2>
+            <dl className="mt-5 divide-y divide-[#f1ede4] rounded-2xl border border-[#ded8cd] bg-white">
               {faqs.map((f) => (
                 <div key={f.q} className="px-5 py-5">
-                  <dt className="text-[15px] font-bold text-[#10251b]">{f.q}</dt>
-                  <dd className="mt-2 text-sm leading-relaxed text-[#3d4b44]">{f.a}</dd>
+                  <dt className="text-[15px] font-bold text-[#14120f]">{f.q}</dt>
+                  <dd className="mt-2 text-sm leading-relaxed text-[#56504a]">{f.a}</dd>
                 </div>
               ))}
             </dl>
           </section>
         </div>
 
-        <section className="mt-12 border-t border-[#eef1ef] pt-8">
-          <h2 className="text-xs font-bold uppercase tracking-[0.12em] text-[#627068]">Keep reading</h2>
+        <section className="mt-12 border-t border-[#f1ede4] pt-8">
+          <h2 className="text-xs font-bold uppercase tracking-[0.12em] text-[#56504a]">Keep reading</h2>
           <ul className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-sm">
-            <li><Link href="/superfiliate" className="font-semibold text-[#0a7c42] hover:underline">Superfiliate review</Link></li>
-            <li><Link href="/affiliate-programs-australia" className="font-semibold text-[#0a7c42] hover:underline">Affiliate programs in Australia</Link></li>
-            <li><Link href="/business-software" className="text-[#3d4b44] hover:text-[#0a7c42] hover:underline">All business software</Link></li>
+            <li><Link href="/superfiliate" className="font-semibold text-[#007a95] hover:underline">Superfiliate review</Link></li>
+            <li><Link href="/affiliate-programs-australia" className="font-semibold text-[#007a95] hover:underline">Affiliate programs in Australia</Link></li>
+            <li><Link href="/business-software" className="text-[#56504a] hover:text-[#007a95] hover:underline">All business software</Link></li>
           </ul>
         </section>
 
