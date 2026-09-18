@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SectionMark } from "@/components/brand/SectionMark";
 import { ArrowRight } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import EditorialMeta from "@/components/consumer/EditorialMeta";
@@ -115,10 +116,10 @@ export default function Page() {
           <Link href="/portable-power-station-australia" className="hover:text-[#007a95]">Portable power</Link>
           <span>/</span>
           <span className="text-[#14120f]">EcoFlow vs Anker SOLIX</span>
-        </nav>
+        <SectionMark kind="power" size={56} /></nav>
 
         <h1 className="mt-5 text-3xl font-bold leading-[1.1] tracking-[-0.01em] text-[#14120f] sm:text-4xl">
-          EcoFlow vs Anker SOLIX: <span className="text-[#007a95]">priced per watt-hour, in AUD</span>
+          EcoFlow vs Anker SOLIX: <span>priced per watt-hour, in AUD</span>
         </h1>
 
         {/* The answer, first. Nothing above it. */}

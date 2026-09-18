@@ -128,7 +128,7 @@ export default function ApolloEoiPage() {
               </span>
               <h1 className="mt-4 text-4xl font-extrabold leading-[1.06] tracking-[-0.02em] text-[#14120f] sm:text-5xl lg:text-[3.1rem]">
                 $500 off a home battery,{" "}
-                <span className="text-[#007a95]">on top of the government rebate.</span>
+                <span>on top of the government rebate.</span>
               </h1>
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-[#56504a]">
                 Refer Labs readers get an exclusive $500 off a home battery quote from Apollo Energy Group, a Sydney-based,

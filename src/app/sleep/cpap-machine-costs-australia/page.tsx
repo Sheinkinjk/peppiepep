@@ -44,7 +44,7 @@ export default function Page() {
       sectionHref="/sleep"
       slug="/sleep/cpap-machine-costs-australia"
       crumb="CPAP costs"
-      h1={<>CPAP costs in Australia: <span className="italic text-[#007a95]">the prices we could verify</span></>}
+      h1={<>CPAP costs in Australia: <span>the prices we could verify</span></>}
       intro="The ResMed AirSense 11 AutoSet listed at AUD $1,699 on ResMed's own Australian store and AUD $1,425 at retailer CPAP Online Australia, both checked on 19 August 2026. Buying direct from the manufacturer is the common assumption and on those two listings it was the dearer option. The consumables are the cost most comparisons leave out."
       headline="CPAP costs in Australia: verified prices"
       description={seoConfig.cpapCosts.description}

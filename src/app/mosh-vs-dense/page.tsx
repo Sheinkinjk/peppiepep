@@ -1,4 +1,5 @@
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, SCHEMA_AUTHOR, SCHEMA_PUBLISHER } from "@/lib/seo";
+import { SectionMark } from "@/components/brand/SectionMark";
 import { MOSH_HAIR_URL, DENSE_URL } from "@/lib/affiliate-links";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 import Link from "next/link";
@@ -137,7 +138,7 @@ export default function MoshVsDensePage() {
             <Link href="/best-hair-loss-treatment-australia" className="hover:text-[#007a95] transition-colors">Hair loss</Link>
             <span>/</span>
             <span className="text-[#14120f]">Mosh vs Dense</span>
-          </nav>
+          <SectionMark kind="comb" size={56} /></nav>
 
           {/* Hero */}
           <section className="pt-10 pb-8 sm:pt-12">

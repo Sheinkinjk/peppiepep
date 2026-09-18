@@ -1,4 +1,5 @@
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, comparisonArticleSchema } from "@/lib/seo";
+import { SectionMark } from "@/components/brand/SectionMark";
 import EarningsBalanceNote from "@/components/consumer/EarningsBalanceNote";
 import EditorialMeta from "@/components/consumer/EditorialMeta";
 import { MOSHY_URL } from "@/lib/affiliate-links";
@@ -361,7 +362,7 @@ export default function BestWeightLossTelehealthPage() {
             <Link href="/guides" className="hover:text-[#14120f] transition-colors">Guides</Link>
             <span>/</span>
             <span className="text-[#14120f]">Best Weight Loss Telehealth</span>
-          </nav>
+          <SectionMark kind="scale" size={56} /></nav>
 
           {/* ── Hero ─────────────────────────────────────────────────────────── */}
           <section className="pt-10 pb-8 sm:pt-12">

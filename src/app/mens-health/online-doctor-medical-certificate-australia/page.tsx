@@ -53,7 +53,7 @@ export default function Page() {
       sectionHref="/mens-health"
       slug="/mens-health/online-doctor-medical-certificate-australia"
       crumb="Online medical certificate"
-      h1={<>Online medical certificate in Australia: <span className="italic text-[#007a95]">cost and turnaround</span></>}
+      h1={<>Online medical certificate in Australia: <span>cost and turnaround</span></>}
       intro={`Midoc lists ${MIDOC.certificateSingleDay} for a single day and ${MIDOC.certificateWeek} for multiple days, carer certificates at the same prices, requested ${MIDOC.certificateHours} and ${MIDOC.certificateDelivery} ${MIDOC.certificateTurnaround}. Read off Midoc's own site on ${MIDOC.readOnLabel}. The certificate is issued after a doctor's review, so what you pay for is the assessment rather than the document.`}
       headline="Online medical certificate in Australia: what it costs and how fast it arrives"
       description={seoConfig.onlineMedicalCertificate.description}

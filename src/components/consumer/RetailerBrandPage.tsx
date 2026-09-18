@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { SectionMark } from "@/components/brand/SectionMark";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 import { SITE_URL, SCHEMA_AUTHOR, SCHEMA_PUBLISHER } from "@/lib/seo";
@@ -138,12 +139,13 @@ export default function RetailerBrandPage({ brand }: { brand: RetailerBrand }) {
             <Link href={brand.section.href} className="hover:text-[#007a95]">{brand.section.label}</Link>
             <span aria-hidden="true">/</span>
             <span className="text-[#14120f]">{brand.name}</span>
+            <SectionMark href={brand.section.href} />
           </nav>
 
           <div className="grid items-start gap-10 lg:grid-cols-[1.12fr_0.88fr] lg:gap-14">
             <div>
               <h1 className="text-4xl font-bold leading-[1.06] tracking-[-0.01em] text-[#14120f] sm:text-5xl">
-                {brand.name}: <span className="italic text-[#007a95]">{brand.tagline}</span>
+                {brand.name}: <span>{brand.tagline}</span>
               </h1>
               <p className="mt-5 text-lg leading-relaxed text-[#14120f]">{brand.lead}</p>
               <AffiliateDisclosure compact className="mt-4" />

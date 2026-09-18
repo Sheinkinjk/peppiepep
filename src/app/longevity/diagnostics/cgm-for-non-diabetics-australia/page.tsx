@@ -38,7 +38,7 @@ export default function Page() {
       sectionHref="/longevity/diagnostics"
       slug="/longevity/diagnostics/cgm-for-non-diabetics-australia"
       crumb="CGM without diabetes"
-      h1={<>Glucose monitors without diabetes: <span className="italic text-[#007a95]">cost, access and evidence</span></>}
+      h1={<>Glucose monitors without diabetes: <span>cost, access and evidence</span></>}
       intro="A device built and validated for managing diabetes is now marketed as a wellness tool. The technology is good at what it was designed for. Whether that transfers to people without diabetes is a separate question, and a much less settled one."
       headline="CGM for non-diabetics in Australia: cost and evidence"
       description={seoConfig.cgmNonDiabetic.description}

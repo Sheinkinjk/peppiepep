@@ -38,7 +38,7 @@ export default function Page() {
       sectionHref="/longevity/diagnostics"
       slug="/longevity/diagnostics/biological-age-testing-australia"
       crumb="Biological age testing"
-      h1={<>Biological age tests: <span className="italic text-[#007a95]">what the number is</span></>}
+      h1={<>Biological age tests: <span>what the number is</span></>}
       intro="These tests return a confident single figure. Understanding how that figure is produced changes what it is worth, and explains why two tests can hand you different ages from the same sample."
       headline="Biological age testing in Australia: does it mean anything?"
       description={seoConfig.biologicalAge.description}

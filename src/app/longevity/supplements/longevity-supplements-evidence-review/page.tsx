@@ -38,7 +38,7 @@ export default function Page() {
       sectionHref="/longevity"
       slug="/longevity/supplements/longevity-supplements-evidence-review"
       crumb="Supplements, reviewed"
-      h1={<>Longevity supplements: <span className="italic text-[#007a95]">how to read the evidence yourself</span></>}
+      h1={<>Longevity supplements: <span>how to read the evidence yourself</span></>}
       intro="We name no products here, deliberately. What is more useful, and more durable as the fashionable compound changes each year, is knowing what the label certifies and how to tell a supportive study from a persuasive one."
       headline="Longevity supplements in Australia: an evidence review"
       description={seoConfig.supplementsEvidence.description}

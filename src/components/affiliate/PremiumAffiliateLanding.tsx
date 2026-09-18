@@ -8,6 +8,8 @@ import OffersTable from "@/components/lending/OffersTable";
 import type { AffiliatePageConfig } from "./types";
 
 import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
+import { EdgeObject } from "@/components/brand/EdgeObject";
+import { objectForBrand } from "@/lib/home/hubs";
 // Pull a typed code out of an offer string like "55% off your first order (code REFERAL55)".
 function offerCode(offer: string): string | undefined {
   const m = offer.match(/\(code\s+([A-Za-z0-9]+)\)/i);
@@ -124,7 +126,7 @@ export default function PremiumAffiliateLanding({ config }: { config: AffiliateP
             )}
             <p className="nw-kicker">{config.eyebrow ?? config.badgeText}</p>
             <h1 className="mt-4 text-4xl font-extrabold leading-[1.05] tracking-[-0.02em] text-[#14120f] sm:text-5xl lg:text-[3.1rem]">
-              {config.hero.h1Prefix} <span className="text-[#007a95]">{config.hero.h1Highlight}</span>
+              {config.hero.h1Prefix} <span>{config.hero.h1Highlight}</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-[#56504a]">{config.hero.subheading}</p>
 
@@ -163,6 +165,7 @@ export default function PremiumAffiliateLanding({ config }: { config: AffiliateP
 
           {/* At-a-glance card */}
           <aside className="lg:pt-2">
+            <EdgeObject kind={objectForBrand(config.brand)}>
             <div className="nw-card rounded-2xl p-6">
               <span className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#56504a]">At a glance</span>
               <dl className="mt-4 divide-y divide-[#f1ede4] text-sm">
@@ -181,6 +184,7 @@ export default function PremiumAffiliateLanding({ config }: { config: AffiliateP
               </dl>
               <div className="mt-5">{cta(continueLabel, "glance-card", "md", true)}</div>
             </div>
+            </EdgeObject>
           </aside>
         </section>
 

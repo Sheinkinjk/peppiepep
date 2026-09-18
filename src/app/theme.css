@@ -41,3 +41,9 @@
 /* Shared buttons from globals.css (.nw-btn, .nw-btn-ghost) carried a pill and
    a green glow; square and flat, as on the homepage. */
 .nw-root .nw-btn, .nw-root .nw-btn-ghost { border-radius: 2px; box-shadow: none; }
+
+/* PHONES. A comparison table set wider than the screen scrolls inside its own
+   container, never the page (five pages scrolled sideways at 390px before
+   18 Sep 2026). A button told never to wrap may wrap below 480px. */
+.nw-root main :where(div, section):has(> table) { overflow-x: auto; position: relative; }
+@media (max-width: 480px) { .nw-root .whitespace-nowrap:is(.nw-btn, a, button) { white-space: normal; } }

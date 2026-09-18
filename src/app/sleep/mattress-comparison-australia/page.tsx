@@ -45,7 +45,7 @@ export default function Page() {
       sectionHref="/sleep"
       slug="/sleep/mattress-comparison-australia"
       crumb="Comparing mattresses"
-      h1={<>Comparing mattresses in Australia: <span className="italic text-[#007a95]">what is checkable</span></>}
+      h1={<>Comparing mattresses in Australia: <span>what is checkable</span></>}
       intro="Almost every mattress comparison online is a ranking assembled by someone who has not slept on any of them. This is the opposite: no list, no scores, just the specifications that are verifiable and the trial terms where people lose money."
       headline="Mattress buying in Australia: what is checkable before you buy"
       description={seoConfig.mattressComparison.description}

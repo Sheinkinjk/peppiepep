@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { HubObject } from "@/components/home/Objects";
 import { generateMetadata as generateSEOMetadata, SITE_URL } from "@/lib/seo";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 
@@ -27,6 +28,7 @@ export default function HowWeMakeMoney() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       <main className="mx-auto max-w-3xl px-5 py-10 sm:px-8 sm:py-14">
+        <HubObject kind="balance" size={64} className="hy-obj mb-5" />
         <h1 className="text-4xl font-extrabold leading-[1.1] text-[#14120f]">How we make money</h1>
         <p className="mt-4 text-lg leading-relaxed text-[#56504a]">
           Refer Labs is free to use. We keep the lights on two ways, and we&apos;d rather you know exactly how than wonder.

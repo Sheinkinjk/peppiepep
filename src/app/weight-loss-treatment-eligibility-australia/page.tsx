@@ -1,4 +1,5 @@
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, SCHEMA_AUTHOR, SCHEMA_PUBLISHER } from "@/lib/seo";
+import { SectionMark } from "@/components/brand/SectionMark";
 import { MOSHY_URL } from "@/lib/affiliate-links";
 import { ArrowRight, Check } from "lucide-react";
 import Link from "next/link";
@@ -101,10 +102,10 @@ export default function WeightLossEligibilityPage() {
           <Link href="/weight-loss" className="hover:text-[#14120f] transition-colors">Weight loss</Link>
           <span>/</span>
           <span className="text-[#14120f]">Treatment eligibility</span>
-        </nav>
+        <SectionMark kind="scale" size={56} /></nav>
 
         <h1 className="text-3xl sm:text-4xl lg:text-[2.7rem] font-black leading-[1.08] tracking-tight mb-5">
-          Do you qualify for weight-loss treatment in Australia? <span style={{ color: CYAN }}>The eligibility criteria, explained</span>
+          Do you qualify for weight-loss treatment in Australia? <span>The eligibility criteria, explained</span>
         </h1>
         <p className="text-[#56504a] text-base sm:text-lg leading-relaxed mb-4 max-w-2xl">
           There is no online form that decides this for you, but there are clear criteria a registered practitioner uses.

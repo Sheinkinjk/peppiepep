@@ -1,4 +1,5 @@
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, SCHEMA_AUTHOR, SCHEMA_PUBLISHER } from "@/lib/seo";
+import { SectionMark } from "@/components/brand/SectionMark";
 import { APOLLO_ENERGY_LEAD_HREF } from "@/lib/affiliate-links";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
@@ -114,7 +115,7 @@ export default function HomeBatteryCostAustraliaPage() {
             <Link href="/apollo-energy-group" className="hover:text-[#14120f] transition-colors">Home batteries</Link>
             <span>/</span>
             <span className="text-[#14120f]">Cost</span>
-          </nav>
+          <SectionMark kind="battery" size={56} /></nav>
 
           {/* Hero */}
           <header className="pt-9 pb-6">

@@ -35,7 +35,7 @@ export default function LongevityHub() {
     <SectionHub
       slug="/longevity"
       crumbs={[{ label: "Longevity" }]}
-      h1={<>Longevity in Australia: <span className="italic text-[#007a95]">what it costs, and what holds up</span></>}
+      h1={<>Longevity in Australia: <span>what it costs, and what holds up</span></>}
       intro="A category where the marketing is confident and the evidence is uneven. These guides cover what the hardware and testing cost in Australia, and are equally clear about where the case for spending is weak."
       note={<><strong className="font-semibold text-[#14120f]">On claims.</strong> We make no health claim for any product or service here. Where something is regulated as a therapeutic good we point you at the ARTG to check it yourself, and where the evidence is thin we say so rather than leaving it out.</>}
       disclosure={<AffiliateDisclosure compact />}

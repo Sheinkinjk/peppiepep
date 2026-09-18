@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SectionMark } from "@/components/brand/SectionMark";
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import EditorialMeta from "@/components/consumer/EditorialMeta";
@@ -94,7 +95,7 @@ export default function MidocPage() {
           <Link href="/mens-health" className="hover:text-[#007a95]">Men&apos;s Health</Link>
           <span>/</span>
           <span className="text-[#14120f]">Midoc</span>
-        </nav>
+        <SectionMark kind="pulse" size={56} /></nav>
 
         <h1 className="text-3xl font-extrabold leading-[1.08] tracking-tight text-[#14120f] sm:text-4xl">
           Midoc: what it costs and how the access route works

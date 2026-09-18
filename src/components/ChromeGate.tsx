@@ -69,6 +69,9 @@ const STANDALONE_ROUTES = [
   // Comparison roundups + head-to-heads (not core business)
   "/moshy-vs-juniper",
   "/juniper",
+  // Midoc's page renders its own ConsumerShell and was missing here, so it
+  // carried the legacy fixed header on top of the site header (18 Sep 2026).
+  "/midoc",
   "/carrd-vs-durable",
   "/best-weight-loss-telehealth-australia",
   "/best-hair-loss-treatment-australia",

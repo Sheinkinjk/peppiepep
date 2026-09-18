@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SectionMark } from "@/components/brand/SectionMark";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
@@ -234,9 +235,9 @@ export default function HowToStartAffiliateMarketingAustraliaPage() {
             <Link href="/affiliate-programs-australia" className="hover:text-[#007a95]">Affiliate programs</Link>
             <span>/</span>
             <span className="text-[#14120f]">How to start</span>
-          </nav>
+          <SectionMark kind="offer" size={56} /></nav>
           <h1 className="mt-4 text-4xl font-bold leading-[1.07] tracking-[-0.01em] text-[#14120f] sm:text-5xl">
-            How to start affiliate marketing <span className="italic text-[#007a95]">in Australia</span>
+            How to start affiliate marketing <span>in Australia</span>
           </h1>
           <p className="mt-5 text-lg leading-relaxed text-[#14120f]">
             Affiliate marketing is one of the most accessible ways for Australians to build an online income. No product

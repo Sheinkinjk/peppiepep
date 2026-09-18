@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { SectionMark } from "@/components/brand/SectionMark";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, SCHEMA_AUTHOR, SCHEMA_PUBLISHER } from "@/lib/seo";
@@ -93,11 +94,11 @@ export default function OptislimPage() {
             <Link href="/health-and-beauty" className="hover:text-[#007a95]">Health &amp; beauty</Link>
             <span>/</span>
             <span className="text-[#14120f]">OptiSlim</span>
-          </nav>
+          <SectionMark kind="bottle" size={56} /></nav>
 
           <div className="max-w-3xl">
             <h1 className="text-4xl font-bold leading-[1.06] tracking-[-0.01em] text-[#14120f] sm:text-5xl">
-              OptiSlim in Australia: <span className="italic text-[#007a95]">what a meal costs, and the rule that governs it</span>
+              OptiSlim in Australia: <span>what a meal costs, and the rule that governs it</span>
             </h1>
             {/* The answer, in the slot check-answer-slot guards. Nothing above it. */}
             <p className="mt-5 text-lg leading-relaxed text-[#14120f]">

@@ -41,7 +41,7 @@ export default function Page() {
       sectionHref="/longevity/diagnostics"
       slug="/longevity/diagnostics/whole-body-mri-australia-cost"
       crumb="Whole-body MRI"
-      h1={<>Whole-body MRI in Australia: <span className="italic text-[#007a95]">the cost, and the case against</span></>}
+      h1={<>Whole-body MRI in Australia: <span>the cost, and the case against</span></>}
       intro="Three Australian providers publish a whole-body MRI price on their own sites, from $2,990 to $3,499, read 13 September 2026. Each fee covers the scan, a radiologist's report and a consultation on the result. None of the three lists the follow-up scan or specialist visit a finding can lead to, and Australia's college of radiologists recommends against the scan for people with no symptoms and no cancer history or predisposition."
       headline="Whole-body MRI in Australia: cost and the case against"
       description={seoConfig.wholeBodyMri.description}

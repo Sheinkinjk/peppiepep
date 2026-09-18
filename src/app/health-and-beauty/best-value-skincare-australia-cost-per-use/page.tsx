@@ -44,7 +44,7 @@ export default function Page() {
       sectionHref="/health-and-beauty"
       slug="/health-and-beauty/best-value-skincare-australia-cost-per-use"
       crumb="Cost per use"
-      h1={<>Skincare value: <span className="italic text-[#007a95]">work in cost per use, not sticker price</span></>}
+      h1={<>Skincare value: <span>work in cost per use, not sticker price</span></>}
       intro="A $30 moisturiser you replace every six weeks is more expensive than a $90 one that lasts eight months. Sticker price hides that completely. Here is the arithmetic, and the three places it quietly lies to you."
       headline="Skincare cost per use: what Australians pay"
       description={seoConfig.skincareCostPerUse.description}

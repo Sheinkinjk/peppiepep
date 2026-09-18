@@ -1,4 +1,5 @@
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, SCHEMA_AUTHOR, SCHEMA_PUBLISHER } from "@/lib/seo";
+import { SectionMark } from "@/components/brand/SectionMark";
 import EarningsBalanceNote from "@/components/consumer/EarningsBalanceNote";
 import { MOSHY_URL } from "@/lib/affiliate-links";
 import { CheckCircle2, ArrowRight } from "lucide-react";
@@ -136,7 +137,7 @@ export default function CheapestWeightLossTelehealthPage() {
             <Link href="/weight-loss" className="hover:text-[#007a95] transition-colors">Weight loss</Link>
             <span>/</span>
             <span className="text-[#14120f]">Cheapest weight loss telehealth</span>
-          </nav>
+          <SectionMark kind="scale" size={56} /></nav>
 
           {/* Hero */}
           <section className="pt-10 pb-8 sm:pt-12">

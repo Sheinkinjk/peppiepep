@@ -1,4 +1,5 @@
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
+import { SectionMark } from "@/components/brand/SectionMark";
 import { DURABLE_URL, BUTTERNUT_URL } from "@/lib/affiliate-links";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 import Link from "next/link";
@@ -133,7 +134,7 @@ export default function DurableVsButternutPage() {
             <Link href="/best-website-builder" className="hover:text-[#007a95] transition-colors">Website builders</Link>
             <span>/</span>
             <span className="text-[#14120f]">Durable AI vs Butternut AI</span>
-          </nav>
+          <SectionMark kind="browser" size={56} /></nav>
 
           {/* Hero */}
           <section className="pt-10 pb-8 sm:pt-12">

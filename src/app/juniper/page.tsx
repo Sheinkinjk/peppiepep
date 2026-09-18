@@ -1,4 +1,5 @@
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, SCHEMA_AUTHOR, SCHEMA_PUBLISHER } from "@/lib/seo";
+import { SectionMark } from "@/components/brand/SectionMark";
 import { JUNIPER_URL } from "@/lib/affiliate-links";
 import { ArrowRight, Check, ShieldCheck, Stethoscope, Truck, Users } from "lucide-react";
 import Image from "next/image";
@@ -166,7 +167,7 @@ export default function JuniperPage() {
           <Link href="/weight-loss" className="transition-colors hover:text-[#14120f]">Weight loss</Link>
           <span>/</span>
           <span className="text-[#14120f]">Juniper</span>
-        </nav>
+        <SectionMark kind="scale" size={56} /></nav>
 
         {/* ── Hero ── */}
         <section className="grid gap-10 pt-8 sm:pt-10 lg:grid-cols-[1.55fr_1fr] lg:gap-14">
@@ -175,7 +176,7 @@ export default function JuniperPage() {
               <Image src="/logos/juniper.png" alt="Juniper logo" width={52} height={52} className="h-12 w-12 object-contain" />
             </span>
             <h1 className="mt-4 text-4xl font-extrabold leading-[1.06] tracking-[-0.02em] text-[#14120f] sm:text-5xl lg:text-[3.2rem]">
-              Juniper Australia: <span className="text-[#007a95]">a free first consultation for new patients</span>
+              Juniper Australia: <span>a free first consultation for new patients</span>
             </h1>
             <p className="mt-5 inline-flex items-center gap-2 rounded-full border border-[#b9e3eb] bg-[#e4f2f5] px-4 py-1.5 text-[13px] font-bold text-[#007a95]">
               <ShieldCheck className="h-4 w-4" aria-hidden="true" /> New patients get a free first consultation through our link
@@ -275,7 +276,7 @@ export default function JuniperPage() {
                 <p>
                   What sets it apart is the wraparound: unlimited follow-ups seven days a week, health tracking through an
                   award-winning app, a 20,000-member patient community, and optional 1:1 coaching from dietitians. It is
-                  built for people who want structure and a whole care team in their corner, not just a program.
+                  built for people who want structure and a whole care team in their corner.
                 </p>
               </div>
               <p className="my-7 border-l-2 border-[#007a95] pl-5 text-[15px] leading-relaxed text-[#56504a]">
@@ -378,7 +379,7 @@ export default function JuniperPage() {
               <div className="nw-card rounded-2xl p-7 sm:p-8">
                 <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">Why Juniper</h2>
                 <p className="mt-4 text-[15.5px] leading-relaxed text-[#56504a]">
-                  Juniper is built for women who want a whole care team in their corner, not just a program: coaching,
+                  Juniper is built for women who want a whole care team in their corner: coaching,
                   community, an award-winning app, and unlimited follow-ups seven days a week. The free first consultation
                   is the low-stakes way to check whether it fits, with a 30-day money-back window on eligible first orders.
                 </p>

@@ -22,6 +22,8 @@ export const HUB_OBJECT: Record<string, ObjectKind> = {
   "/sleep": "pillow",
   "/mens-health": "pulse",
   "/longevity": "hourglass",
+  "/longevity/recovery": "thermo",
+  "/longevity/diagnostics": "lens",
 };
 
 /** Kickers are words, not hrefs; they file to the same objects. */
@@ -37,4 +39,43 @@ const KICKER: Record<string, ObjectKind> = {
 
 export function objectFor(hrefOrKicker: string): ObjectKind | undefined {
   return HUB_OBJECT[hrefOrKicker] ?? KICKER[hrefOrKicker.toLowerCase()];
+}
+
+/**
+ * Brand pages built on PremiumAffiliateLanding, each drawn with what the
+ * product does rather than a generic "business" mark, so a CRM and a phone
+ * system do not wear the same picture. Keyed by the config's `brand`.
+ */
+const BRAND_OBJECT: Record<string, ObjectKind> = {
+  // CRM and sales pipeline
+  Capsule: "funnel", Pipedrive: "funnel", Keap: "funnel", Nutshell: "funnel", GoHighLevel: "funnel",
+  // email and newsletters
+  ActiveCampaign: "envelope", Brevo: "envelope", beehiiv: "envelope",
+  // outreach and prospecting
+  "Reply.io": "send", AiSDR: "send", FullEnrich: "send",
+  // websites, landing pages and on-site conversion
+  Unbounce: "browser", Leadpages: "browser", Landingi: "browser", "Swipe Pages": "browser", Instapage: "browser",
+  Carrd: "browser", "Durable AI": "browser", "Butternut AI": "browser", "Hello Bar": "browser", Databox: "browser",
+  // calling
+  CloudTalk: "phone", KrispCall: "phone",
+  // people and training
+  "Employment Hero": "badge", Trainual: "badge",
+  // money, cards and commerce
+  Dext: "card", Blinq: "card", AliDrop: "card",
+  // AI assistants and generators
+  ElevenLabs: "chip", Lindy: "chip", "Wing Assistant": "chip", "Beautiful.ai": "chip",
+  // forms, quizzes and surveys
+  FlexiQuiz: "checklist", Outgrow: "checklist", Survicate: "checklist",
+  // documents
+  PandaDoc: "document",
+  // affiliate and referral
+  Superfiliate: "offer",
+  // hair
+  Mosh: "comb", "Dense Hair Experts": "comb",
+  // portable power
+  EcoFlow: "power", "Anker SOLIX": "power",
+};
+
+export function objectForBrand(brand: string): ObjectKind {
+  return BRAND_OBJECT[brand] ?? "lens";
 }

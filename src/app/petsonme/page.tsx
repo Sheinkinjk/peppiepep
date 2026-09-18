@@ -1,4 +1,5 @@
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
+import { SectionMark } from "@/components/brand/SectionMark";
 import { PETSONME_URL, PETSONME_CODE } from "@/lib/affiliate-links";
 import { ArrowRight, Check } from "lucide-react";
 import Link from "next/link";
@@ -107,13 +108,13 @@ export default function PetsOnMePage() {
           <Link href="/pet-insurance" className="transition-colors hover:text-[#14120f]">Pet insurance</Link>
           <span>/</span>
           <span className="text-[#14120f]">PetsOnMe</span>
-        </nav>
+        <SectionMark kind="tag" size={56} /></nav>
 
         <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#007a95]">Pet insurance · Australia</p>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="/logos/petsonme.svg" alt="PetsOnMe logo" width={161} height={45} className="mt-5 h-9 w-auto" />
         <h1 className="mt-4 text-3xl font-extrabold leading-[1.08] tracking-tight text-[#14120f] sm:text-4xl">
-          PetsOnMe discount code <span className="text-[#007a95]">REFERLABS</span>: 15% off pet care services
+          PetsOnMe discount code <span>REFERLABS</span>: 15% off pet care services
         </h1>
         {/* Offer-first, the /moshy and /moshhair pattern (14 Sep 2026). The object of the
             discount stays in the h1 and the first sentence: it is the pet care services,

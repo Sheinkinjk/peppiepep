@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SectionMark } from "@/components/brand/SectionMark";
 import { ArrowRight } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import EditorialMeta from "@/components/consumer/EditorialMeta";
@@ -103,10 +104,10 @@ export default function Page() {
           <Link href="/apollo-energy-group" className="hover:text-[#007a95]">Home &amp; energy</Link>
           <span>/</span>
           <span className="text-[#14120f]">Portable power stations</span>
-        </nav>
+        <SectionMark kind="power" size={56} /></nav>
 
         <h1 className="mt-5 text-3xl font-bold leading-[1.1] tracking-[-0.01em] text-[#14120f] sm:text-4xl">
-          Portable power stations in Australia: <span className="text-[#007a95]">what they cost, and what they run</span>
+          Portable power stations in Australia: <span>what they cost, and what they run</span>
         </h1>
 
         <p className="mt-5 text-lg leading-relaxed text-[#14120f]">

@@ -107,7 +107,7 @@ export default function BatteryCalc() {
         <div className="rounded-xl border border-[#007a95]/20 bg-[#e4f2f5] p-6">
           <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#003647]">Estimated payback</p>
           <p className="mt-2 text-4xl font-black text-[#14120f]">
-            {paybackYears > 0 ? `${paybackYears.toFixed(1)} yrs` : "—"}
+            {paybackYears > 0 ? `${paybackYears.toFixed(1)} yrs` : "No payback"}
           </p>
           <p className="mt-1 text-sm text-[#56504a]">
             on an estimated {fmt(netCost)} net cost{!custom && " (after an indicative federal rebate)"}.

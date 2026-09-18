@@ -1,4 +1,5 @@
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, SCHEMA_AUTHOR, SCHEMA_PUBLISHER } from "@/lib/seo";
+import { SectionMark } from "@/components/brand/SectionMark";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import HairLossQuiz from "./HairLossQuiz";
@@ -70,7 +71,7 @@ export default function HairLossQuizPage() {
             <Link href="/hair-loss" className="transition-colors hover:text-[#007a95]">Hair loss</Link>
             <span aria-hidden="true">/</span>
             <span className="text-[#14120f]">Which option fits you</span>
-          </nav>
+          <SectionMark kind="comb" size={56} /></nav>
 
           <section className="pt-9 pb-7 sm:pt-11">
             <h1 className="mb-4 max-w-3xl text-3xl font-extrabold leading-[1.08] tracking-tight text-[#14120f] sm:text-4xl lg:text-[2.6rem]">

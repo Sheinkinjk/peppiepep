@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SectionMark } from "@/components/brand/SectionMark";
 import { ArrowRight, Sparkles, Moon, Stethoscope, Activity } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
@@ -122,10 +123,10 @@ export default function ComingSoonPage() {
             <Link href="/" className="hover:text-[#007a95]">Refer Labs</Link>
             <span>/</span>
             <span className="text-[#14120f]">Coming soon</span>
-          </nav>
+          <SectionMark kind="hourglass" size={56} /></nav>
           <div className="max-w-2xl">
             <h1 className="mt-4 text-4xl font-bold leading-[1.06] tracking-[-0.01em] text-[#14120f] sm:text-5xl">
-              What we&apos;re <span className="italic text-[#007a95]">building next</span>
+              What we&apos;re <span>building next</span>
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#14120f]">
               One category is still underway here. The guides in each are finished and free to read today. What is still

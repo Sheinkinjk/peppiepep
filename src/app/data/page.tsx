@@ -1,4 +1,5 @@
 import ConsumerShell from '@/components/consumer/ConsumerShell';
+import { HubObject } from "@/components/home/Objects";
 import CitableFact from '@/components/facts/CitableFact';
 import { FACTS } from '@/lib/facts/registry';
 import type { Fact } from '@/lib/facts/types';
@@ -92,6 +93,7 @@ export default function DataPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(datasetSchema) }}
       />
       <main id="main-content" className="mx-auto max-w-3xl px-5 pb-20 pt-10 sm:px-8">
+        <HubObject kind="document" size={64} className="hy-obj mb-5" />
         <h1 className="text-3xl font-bold leading-[1.1] tracking-[-0.01em] text-[#14120f] sm:text-4xl">
           Observation log
         </h1>

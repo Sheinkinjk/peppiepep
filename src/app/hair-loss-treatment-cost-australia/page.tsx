@@ -1,4 +1,5 @@
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, comparisonArticleSchema } from "@/lib/seo";
+import { SectionMark } from "@/components/brand/SectionMark";
 import { MOSH_HAIR_URL } from "@/lib/affiliate-links";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
@@ -107,7 +108,7 @@ export default function HairLossTreatmentCostAustraliaPage() {
             <Link href="/hair-loss" className="hover:text-[#14120f] transition-colors">Hair loss</Link>
             <span>/</span>
             <span className="text-[#14120f]">Treatment cost</span>
-          </nav>
+          <SectionMark kind="comb" size={56} /></nav>
 
           {/* Hero */}
           <header className="pt-9 pb-6">

@@ -1,4 +1,5 @@
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, comparisonArticleSchema } from "@/lib/seo";
+import { SectionMark } from "@/components/brand/SectionMark";
 import { MOSH_HAIR_URL, DENSE_URL } from "@/lib/affiliate-links";
 import { CheckCircle2, XCircle, ArrowRight, ExternalLink } from "lucide-react";
 import Link from "next/link";
@@ -214,8 +215,6 @@ export default function BestHairLossTreatmentAustraliaPage() {
 
       {/* Background */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_center,rgba(10,167,181,0.12),transparent_55%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(34,192,205,0.04),transparent_55%)]" />
       </div>
 
       <main id="main-content" className="relative mx-auto max-w-5xl px-5 sm:px-8 lg:px-12 pb-24 pt-14 sm:pt-18">
@@ -227,14 +226,14 @@ export default function BestHairLossTreatmentAustraliaPage() {
           <Link href="/guides" className="hover:text-[#14120f] transition-colors">Guides</Link>
           <span>/</span>
           <span className="text-[#14120f]">Best Hair Loss Treatment Australia 2026</span>
-        </nav>
+        <SectionMark kind="comb" size={56} /></nav>
 
 
         {/* Hero */}
         <div className="mb-16 sm:mb-20 max-w-3xl">
           <h1 className="text-4xl sm:text-5xl lg:text-[3.25rem] font-black leading-[1.07] text-[#14120f] mb-5 tracking-tight">
             Best Hair Loss Treatment Australia 2026:{" "}
-            <span style={{ color: CYAN_LT }}>Mosh vs Dense vs Telehealth</span>
+            <span>Mosh vs Dense vs Telehealth</span>
           </h1>
           <p className="text-[#56504a] text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
             A practical comparison of the most accessible hair loss options for Australians, prescription telehealth, topical products, and when to see a specialist.

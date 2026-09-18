@@ -796,7 +796,7 @@ export const CATALOG: Vertical[] = [
       {
         name: "FlexiQuiz",
         bestFor: "Tests & assessments",
-        blurb: "An online quiz, test and assessment maker with automatic marking, certificates and reporting. Best when you need real assessments for training or hiring, not just a marketing quiz.",
+        blurb: "An online quiz, test and assessment maker with automatic marking, certificates and reporting. Best when you need graded assessments for training or hiring.",
         facts: [
           { label: "Role", value: "Quiz & test maker" },
           { label: "Best for", value: "Trainers & assessments" },

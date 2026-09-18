@@ -1,4 +1,5 @@
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, SCHEMA_AUTHOR, SCHEMA_PUBLISHER } from "@/lib/seo";
+import { SectionMark } from "@/components/brand/SectionMark";
 import { MOSHY_URL } from "@/lib/affiliate-links";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
@@ -80,10 +81,10 @@ export default function MoshyEligibilityPage() {
           <Link href="/guides" className="hover:text-[#14120f] transition-colors">Guides</Link>
           <span>/</span>
           <span className="text-[#14120f]">Moshy Eligibility</span>
-        </nav>
+        <SectionMark kind="scale" size={56} /></nav>
 
         <h1 className="text-3xl sm:text-4xl lg:text-[2.7rem] font-black leading-[1.08] tracking-tight mb-5">
-          The Moshy eligibility check, <span style={{ color: CYAN_LT }}>explained before you start it</span>
+          The Moshy eligibility check, <span>explained before you start it</span>
         </h1>
         <p className="text-[#56504a] text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
           Ten minutes, a questionnaire, and a practitioner on the other end. Here is what the Moshy quiz asks,

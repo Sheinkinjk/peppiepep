@@ -119,7 +119,7 @@ export default async function ComparePage({ params }: { params: Promise<{ slug: 
           <div className="max-w-2xl">
             <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#007a95]">{v.eyebrow}</p>
             <h1 className="mt-4 text-4xl font-bold leading-[1.06] tracking-[-0.01em] text-[#14120f] sm:text-5xl">
-              {v.h1Lead} <span className="italic text-[#007a95]">{v.h1Accent}</span>
+              {v.h1Lead} <span>{v.h1Accent}</span>
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#14120f]">{v.intro}</p>
             {/* Above the provider cards, which carry the first affiliate links. */}

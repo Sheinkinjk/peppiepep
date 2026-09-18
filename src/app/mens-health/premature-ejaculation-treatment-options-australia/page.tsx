@@ -45,7 +45,7 @@ export default function Page() {
       sectionHref="/mens-health"
       slug="/mens-health/premature-ejaculation-treatment-options-australia"
       crumb="Premature ejaculation options"
-      h1={<>Premature ejaculation in Australia: <span className="italic text-[#007a95]">the options, and what each involves</span></>}
+      h1={<>Premature ejaculation in Australia: <span>the options, and what each involves</span></>}
       intro="This category is marketed as a purchase, and it is one of the few where the most subsidised support available in Australia is not a product at all. Here are the routes, how each is arranged, and where Medicare reaches."
       headline="Premature ejaculation treatment in Australia: the options"
       description={seoConfig.peTreatmentOptions.description}

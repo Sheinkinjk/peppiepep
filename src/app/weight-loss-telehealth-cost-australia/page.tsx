@@ -1,4 +1,5 @@
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, SCHEMA_AUTHOR, SCHEMA_PUBLISHER } from "@/lib/seo";
+import { SectionMark } from "@/components/brand/SectionMark";
 import { MOSHY_URL } from "@/lib/affiliate-links";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
@@ -105,7 +106,7 @@ export default function WeightLossTelehealthCostAustraliaPage() {
             <Link href="/weight-loss" className="hover:text-[#14120f] transition-colors">Weight loss</Link>
             <span>/</span>
             <span className="text-[#14120f]">Telehealth cost</span>
-          </nav>
+          <SectionMark kind="scale" size={56} /></nav>
 
           {/* Hero */}
           <header className="pt-9 pb-6">

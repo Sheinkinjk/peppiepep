@@ -57,7 +57,7 @@ export default function Page() {
       sectionHref="/health-and-beauty"
       slug="/health-and-beauty/natural-skincare-australia"
       crumb="Natural skincare"
-      h1={<>Natural skincare in Australia: <span className="italic text-[#007a95]">what the label has to prove</span></>}
+      h1={<>Natural skincare in Australia: <span>what the label has to prove</span></>}
       intro={`"Natural" carries no certification requirement on an Australian cosmetic. "Certified organic" does, and the certifier publishes a searchable register, so one of the two words on a bottle can be checked in a minute and the other cannot. That is the whole practical difference, and it is the check to run before you compare anything else.`}
       headline="Natural skincare in Australia: what the label commits to"
       description={seoConfig.naturalSkincareAustralia.description}

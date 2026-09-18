@@ -62,7 +62,7 @@ export const butternutConfig: AffiliatePageConfig = {
       paragraphs: [
         "Butternut AI is an AI-powered website builder that generates a complete, publish-ready website from a text prompt. You describe your business, and Butternut's AI produces a full multi-page website, with copy, layout, images, and structure, in approximately 20 seconds. No templates to configure, no drag-and-drop editing required before you have something live.",
         "The platform is designed for small business owners, freelancers, entrepreneurs, and creators who want a professional website without the time cost of traditional builders or the expense of hiring a developer. Butternut generates the site, then lets you edit and customise the output using a straightforward editor before publishing.",
-        "Beyond the initial generation, Butternut AI includes tools for ongoing site management, SEO configuration, blog publishing, and domain connection. It is positioned as a complete website solution, not just a generation tool, you can continue using Butternut to update and grow your site after launch.",
+        "Beyond the initial generation, Butternut AI includes tools for ongoing site management, SEO configuration, blog publishing, and domain connection. It is positioned as a complete website solution: you can keep using Butternut to update and grow your site after launch.",
       ],
     },
     {

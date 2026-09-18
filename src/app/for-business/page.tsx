@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SectionMark } from "@/components/brand/SectionMark";
 import { ArrowRight } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
@@ -49,10 +50,10 @@ export default function ForBusinessPage() {
             <Link href="/" className="hover:text-[#007a95]">Refer Labs</Link>
             <span>/</span>
             <span className="text-[#14120f]">For business</span>
-          </nav>
+          <SectionMark kind="funnel" size={56} /></nav>
           <div className="max-w-2xl">
             <h1 className="mt-4 text-4xl font-bold leading-[1.06] tracking-[-0.01em] text-[#14120f] sm:text-5xl">
-              Customers who have already <span className="italic text-[#007a95]">done the research</span>
+              Customers who have already <span>done the research</span>
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#14120f]">
               Refer Labs helps Australians choose between providers. For businesses, it offers a place

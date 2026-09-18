@@ -38,7 +38,7 @@ export default function Page() {
       sectionHref="/longevity/recovery"
       slug="/longevity/recovery/contrast-therapy-what-the-evidence-says"
       crumb="Contrast therapy evidence"
-      h1={<>Contrast therapy: <span className="italic text-[#007a95]">what the evidence supports</span></>}
+      h1={<>Contrast therapy: <span>what the evidence supports</span></>}
       intro="This category is sold with more confidence than the research currently justifies. Here is what the evidence covers, where it thins out, and the one finding that should change how some people use it."
       headline="Contrast therapy: what the evidence says"
       description={seoConfig.contrastTherapy.description}

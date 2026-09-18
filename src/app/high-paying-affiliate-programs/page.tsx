@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SectionMark } from "@/components/brand/SectionMark";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
 
@@ -120,9 +121,9 @@ export default function HighPayingAffiliateProgramsPage() {
             <Link href="/affiliate-programs-australia" className="hover:text-[#007a95]">Affiliate programs</Link>
             <span>/</span>
             <span className="text-[#14120f]">Highest paying</span>
-          </nav>
+          <SectionMark kind="offer" size={56} /></nav>
           <h1 className="mt-4 text-4xl font-bold leading-[1.07] tracking-[-0.01em] text-[#14120f] sm:text-5xl">
-            Highest paying affiliate programs <span className="italic text-[#007a95]">2026</span>
+            Highest paying affiliate programs <span>2026</span>
           </h1>
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-[#14120f]">
             Four niches pay far more per referral than retail does: web hosting, business SaaS, online courses and

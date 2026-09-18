@@ -1,4 +1,5 @@
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, SCHEMA_AUTHOR, SCHEMA_PUBLISHER } from "@/lib/seo";
+import { SectionMark } from "@/components/brand/SectionMark";
 import { MOSHY_URL } from "@/lib/affiliate-links";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
@@ -78,7 +79,7 @@ export default function WeightLossCostCalculatorPage() {
             <Link href="/weight-loss" className="hover:text-[#007a95] transition-colors">Weight loss</Link>
             <span aria-hidden="true">/</span>
             <span className="text-[#14120f]">Cost calculator</span>
-          </nav>
+          <SectionMark kind="calculator" size={56} /></nav>
 
           {/* Hero */}
           <section className="pt-9 pb-7 sm:pt-11">

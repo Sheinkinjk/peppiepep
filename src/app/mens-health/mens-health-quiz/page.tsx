@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SectionMark } from "@/components/brand/SectionMark";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import MensHealthQuiz from "@/components/consumer/MensHealthQuiz";
 import ComingSoonNote from "@/components/consumer/ComingSoonNote";
@@ -69,10 +70,10 @@ export default function MensHealthQuizPage() {
           <Link href="/mens-health" className="hover:text-[#007a95]">Men&apos;s health</Link>
           <span>/</span>
           <span className="text-[#14120f]">Quiz</span>
-        </nav>
+        <SectionMark kind="pulse" size={56} /></nav>
 
         <h1 className="mt-5 text-3xl font-bold leading-[1.1] tracking-[-0.01em] text-[#14120f] sm:text-4xl">
-          Which men&apos;s health route <span className="italic text-[#007a95]">fits you?</span>
+          Which men&apos;s health route <span>fits you?</span>
         </h1>
         <p className="mt-5 text-lg leading-relaxed text-[#14120f]">
           Four questions about cost, privacy and how you prefer to consult. No health questions, no email wall, and the

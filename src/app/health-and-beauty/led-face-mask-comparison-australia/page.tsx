@@ -46,7 +46,7 @@ export default function Page() {
       sectionHref="/health-and-beauty"
       slug="/health-and-beauty/led-face-mask-comparison-australia"
       crumb="LED face masks"
-      h1={<>LED face masks in Australia: <span className="italic text-[#007a95]">what they cost here</span></>}
+      h1={<>LED face masks in Australia: <span>what they cost here</span></>}
       intro="At-home LED devices are one of the few skincare categories where the Australian price gap is large, visible and easy to misread. Here is what the numbers are, and what to check on a listing before you spend several hundred dollars."
       headline="LED face masks in Australia: what they cost"
       description={seoConfig.ledFaceMask.description}

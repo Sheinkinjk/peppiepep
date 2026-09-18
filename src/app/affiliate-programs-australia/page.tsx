@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SectionMark } from "@/components/brand/SectionMark";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
@@ -234,9 +235,9 @@ export default function AffiliateProgramsAustraliaPage() {
             <Link href="/guides" className="hover:text-[#007a95]">Guides</Link>
             <span>/</span>
             <span className="text-[#14120f]">Affiliate programs Australia</span>
-          </nav>
+          <SectionMark kind="offer" size={56} /></nav>
           <h1 className="mt-4 text-4xl font-bold leading-[1.07] tracking-[-0.01em] text-[#14120f] sm:text-5xl">
-            Best affiliate programs in Australia <span className="italic text-[#007a95]">(2026)</span>
+            Best affiliate programs in Australia <span>(2026)</span>
           </h1>
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-[#14120f]">
             Affiliate marketing is one of the cleanest ways for Australians to earn from a website, a newsletter or a

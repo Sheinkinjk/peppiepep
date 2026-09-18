@@ -1,4 +1,5 @@
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, comparisonArticleSchema } from "@/lib/seo";
+import { SectionMark } from "@/components/brand/SectionMark";
 import EarningsBalanceNote from "@/components/consumer/EarningsBalanceNote";
 import { MOSHY_URL } from "@/lib/affiliate-links";
 import { CheckCircle2, ArrowRight } from "lucide-react";
@@ -125,13 +126,13 @@ export default function MoshyVsJuniperPage() {
           <Link href="/weight-loss" className="hover:text-[#14120f] transition-colors">Weight loss</Link>
           <span>/</span>
           <span className="text-[#14120f]">Moshy vs Juniper</span>
-        </nav>
+        <SectionMark kind="scale" size={56} /></nav>
 
         {/* Hero */}
         <p className="text-[#56504a] text-xs mb-5">Australia · Weight-loss telehealth</p>
         <h1 className="text-3xl sm:text-4xl lg:text-[2.7rem] font-black leading-[1.08] tracking-tight mb-4">
           Moshy vs Juniper:{" "}
-          <span style={{ color: CYAN_LT }}>which one is built for you?</span>
+          <span>which one is built for you?</span>
         </h1>
         <p className="text-[#56504a] text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
           Australia&apos;s two most-compared weight-management telehealth platforms answer the same problem in different

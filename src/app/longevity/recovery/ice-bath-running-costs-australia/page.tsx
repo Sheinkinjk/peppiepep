@@ -48,7 +48,7 @@ export default function Page() {
       sectionHref="/longevity/recovery"
       slug="/longevity/recovery/ice-bath-running-costs-australia"
       crumb="Ice bath running costs"
-      h1={<>What an ice bath costs to run: <span className="italic text-[#007a95]">work it out for your own bill</span></>}
+      h1={<>What an ice bath costs to run: <span>work it out for your own bill</span></>}
       intro="Every page answering this question gives you one number. That number cannot be right for you, because it depends on your tariff, your climate and your tub. Here is the calculation instead, with the working shown."
       headline="Ice bath running costs in Australia: the real numbers"
       description={seoConfig.iceBathRunningCosts.description}

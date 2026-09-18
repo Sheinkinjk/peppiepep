@@ -37,7 +37,7 @@ export default function Page() {
       sectionHref="/longevity/recovery"
       slug="/longevity/recovery/ice-bath-comparison-australia"
       crumb="Comparing ice baths"
-      h1={<>Comparing ice baths in Australia: <span className="italic text-[#007a95]">what you are paying for</span></>}
+      h1={<>Comparing ice baths in Australia: <span>what you are paying for</span></>}
       intro="The cold water is the same at every price point. What separates a few hundred dollars from ten thousand is how much effort the setup removes from your week, and whether that trade is worth it depends on how often you would use it."
       headline="Ice baths in Australia: how to compare them"
       description={seoConfig.iceBathComparison.description}

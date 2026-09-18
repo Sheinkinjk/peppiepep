@@ -1,4 +1,5 @@
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
+import { SectionMark } from "@/components/brand/SectionMark";
 import { CARRD_URL, DURABLE_URL } from "@/lib/affiliate-links";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
@@ -68,12 +69,12 @@ export default function CarrdVsDurablePage() {
           <Link href="/guides" className="hover:text-[#14120f] transition-colors">Guides</Link>
           <span>/</span>
           <span className="text-[#14120f]">Carrd vs Durable AI</span>
-        </nav>
+        <SectionMark kind="browser" size={56} /></nav>
 
         <p className="text-[#56504a] text-xs mb-5">Comparison · Website builders</p>
         <h1 className="text-3xl sm:text-4xl lg:text-[2.7rem] font-black leading-[1.08] tracking-tight mb-4">
           Carrd vs Durable AI:{" "}
-          <span style={{ color: CYAN_LT }}>cheap-and-simple vs AI-built business site</span>
+          <span>cheap-and-simple vs AI-built business site</span>
         </h1>
         <p className="text-[#56504a] text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
           Both are excellent, for different jobs. <strong className="text-[#14120f]">Carrd</strong> is the cheapest way to

@@ -1,4 +1,5 @@
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, SCHEMA_AUTHOR, SCHEMA_PUBLISHER } from "@/lib/seo";
+import { SectionMark } from "@/components/brand/SectionMark";
 import { MOSH_HAIR_URL } from "@/lib/affiliate-links";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
@@ -103,10 +104,10 @@ export default function MoshReviewPage() {
           <Link href="/hair-loss" className="hover:text-[#14120f] transition-colors">Hair loss</Link>
           <span>/</span>
           <span className="text-[#14120f]">Mosh Review</span>
-        </nav>
+        <SectionMark kind="comb" size={56} /></nav>
 
         <h1 className="text-3xl sm:text-4xl lg:text-[2.7rem] font-black leading-[1.08] tracking-tight mb-5">
-          Mosh review: <span style={{ color: CYAN }}>is it legit, and is it worth it?</span>
+          Mosh review: <span>is it legit, and is it worth it?</span>
         </h1>
         <p className="text-[#56504a] text-base sm:text-lg leading-relaxed mb-4 max-w-2xl">
           An independent look at Mosh, the Australian men&apos;s hair-loss telehealth service: whether it is a real

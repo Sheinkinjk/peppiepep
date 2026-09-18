@@ -1,4 +1,5 @@
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, SCHEMA_AUTHOR, SCHEMA_PUBLISHER } from "@/lib/seo";
+import { SectionMark } from "@/components/brand/SectionMark";
 import { MOSHY_URL } from "@/lib/affiliate-links";
 import { ArrowRight, Check } from "lucide-react";
 import Link from "next/link";
@@ -74,10 +75,10 @@ export default function WeightLossTelehealthMenPage() {
           <Link href="/guides" className="hover:text-[#14120f] transition-colors">Guides</Link>
           <span>/</span>
           <span className="text-[#14120f]">Weight Loss Telehealth for Men</span>
-        </nav>
+        <SectionMark kind="scale" size={56} /></nav>
 
         <h1 className="text-3xl sm:text-4xl lg:text-[2.7rem] font-black leading-[1.08] tracking-tight mb-5">
-          Weight loss telehealth for men in Australia: <span style={{ color: CYAN_LT }}>how it works and what to check</span>
+          Weight loss telehealth for men in Australia: <span>how it works and what to check</span>
         </h1>
         <p className="text-[#56504a] text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
           Men are famously bad at booking the appointment. Telehealth exists to remove that excuse. This page covers

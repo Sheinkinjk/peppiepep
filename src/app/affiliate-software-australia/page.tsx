@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SectionMark } from "@/components/brand/SectionMark";
 import { ArrowRight } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
@@ -98,10 +99,10 @@ export default function Page() {
           <Link href="/business-software" className="hover:text-[#007a95]">Business software</Link>
           <span>/</span>
           <span className="text-[#14120f]">Affiliate &amp; referral software</span>
-        </nav>
+        <SectionMark kind="offer" size={56} /></nav>
 
         <h1 className="mt-5 text-3xl font-bold leading-[1.1] tracking-[-0.01em] text-[#14120f] sm:text-4xl">
-          Affiliate and referral software: <span className="italic text-[#007a95]">how to choose one</span>
+          Affiliate and referral software: <span>how to choose one</span>
         </h1>
         <p className="mt-5 text-lg leading-relaxed text-[#14120f]">
           Almost nobody in this category publishes a price, so comparing platforms means getting quotes and making them

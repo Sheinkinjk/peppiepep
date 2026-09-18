@@ -1,4 +1,5 @@
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
+import { SectionMark } from "@/components/brand/SectionMark";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
@@ -125,7 +126,7 @@ export default function Page() {
           <Link href="/pet-insurance" className="hover:text-[#007a95]">Pet insurance</Link>
           <span>/</span>
           <span className="text-[#14120f]">Who underwrites it</span>
-        </nav>
+        <SectionMark kind="tag" size={56} /></nav>
 
         <h1 className="mt-5 text-3xl font-bold leading-[1.1] tracking-[-0.01em] text-[#14120f] sm:text-4xl">
           Who underwrites pet insurance in Australia?

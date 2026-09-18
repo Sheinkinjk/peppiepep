@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SectionMark } from "@/components/brand/SectionMark";
 import { ArrowRight } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import ComingSoonNote from "@/components/consumer/ComingSoonNote";
@@ -140,10 +141,10 @@ export default function MensHealthHub() {
             <Link href="/" className="hover:text-[#007a95]">Refer Labs</Link>
             <span>/</span>
             <span className="text-[#14120f]">Men&apos;s health</span>
-          </nav>
+          <SectionMark kind="pulse" size={88} /></nav>
           <div className="max-w-2xl">
             <h1 className="mt-4 text-4xl font-bold leading-[1.06] tracking-[-0.01em] text-[#14120f] sm:text-5xl">
-              Men&apos;s health in Australia: <span className="italic text-[#007a95]">what access costs</span>
+              Men&apos;s health in Australia: <span>what access costs</span>
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#14120f]">
               This is a category where the marketing is loud and the pricing is hard to compare. These guides set out

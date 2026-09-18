@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SectionMark } from "@/components/brand/SectionMark";
 import { ArrowRight } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import PartnerRoute from "@/components/consumer/PartnerRoute";
@@ -121,10 +122,10 @@ export default function SleepHub() {
             <Link href="/" className="hover:text-[#007a95]">Refer Labs</Link>
             <span>/</span>
             <span className="text-[#14120f]">Sleep</span>
-          </nav>
+          <SectionMark kind="pillow" size={88} /></nav>
           <div className="max-w-2xl">
             <h1 className="mt-4 text-4xl font-bold leading-[1.06] tracking-[-0.01em] text-[#14120f] sm:text-5xl">
-              Sleep in Australia: <span className="italic text-[#007a95]">the medical route and the retail one</span>
+              Sleep in Australia: <span>the medical route and the retail one</span>
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#14120f]">
               Sleep splits cleanly into two problems that get treated as one. If something clinical is going on, the

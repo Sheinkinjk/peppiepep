@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SectionMark } from "@/components/brand/SectionMark";
 import { ArrowRight, BadgeCheck, ShieldCheck, Wrench } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
@@ -97,6 +98,7 @@ export default function ApolloGuide({ cfg }: { cfg: ApolloGuideConfig }) {
           <Link href="/apollo-energy-group" className="hover:text-[#14120f]">Home batteries</Link>
           <span>/</span>
           <span className="text-[#14120f]">{cfg.crumb}</span>
+          <SectionMark href="/home-battery-rebate-australia" />
         </nav>
 
         <h1 className="mt-4 text-3xl font-extrabold leading-[1.08] tracking-tight text-[#14120f] sm:text-4xl">{cfg.h1}</h1>

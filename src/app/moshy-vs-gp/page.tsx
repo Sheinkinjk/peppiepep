@@ -1,4 +1,5 @@
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, SCHEMA_AUTHOR, SCHEMA_PUBLISHER } from "@/lib/seo";
+import { SectionMark } from "@/components/brand/SectionMark";
 import { MOSHY_URL } from "@/lib/affiliate-links";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
@@ -86,10 +87,10 @@ export default function MoshyVsGpPage() {
           <Link href="/guides" className="hover:text-[#14120f] transition-colors">Guides</Link>
           <span>/</span>
           <span className="text-[#14120f]">Moshy vs GP</span>
-        </nav>
+        <SectionMark kind="scale" size={56} /></nav>
 
         <h1 className="text-3xl sm:text-4xl lg:text-[2.7rem] font-black leading-[1.08] tracking-tight mb-5">
-          Moshy vs your GP: <span style={{ color: CYAN_LT }}>two doors to the same kind of care</span>
+          Moshy vs your GP: <span>two doors to the same kind of care</span>
         </h1>
         <p className="text-[#56504a] text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
           Both routes end with a qualified practitioner making an individual decision about you. The differences are

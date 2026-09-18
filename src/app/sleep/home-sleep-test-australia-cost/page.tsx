@@ -41,7 +41,7 @@ export default function Page() {
       sectionHref="/sleep"
       slug="/sleep/home-sleep-test-australia-cost"
       crumb="Home sleep studies"
-      h1={<>Home sleep studies in Australia: <span className="italic text-[#007a95]">how the cost works</span></>}
+      h1={<>Home sleep studies in Australia: <span>how the cost works</span></>}
       intro="Many Australians pay nothing for a home sleep study and others pay several hundred dollars for the same test. The difference is almost never the provider: it is whether a valid referral and the eligibility conditions that unlock a Medicare rebate were in place before you started. Get that order wrong and you pay in full."
       headline="Home sleep study Australia: how it works and what it costs"
       description={seoConfig.homeSleepTestCost.description}

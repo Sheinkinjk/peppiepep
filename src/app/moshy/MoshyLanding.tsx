@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { EdgeObject } from "@/components/brand/EdgeObject";
 import VerifiedStamp from "@/components/consumer/VerifiedStamp";
 import OffersTable from "@/components/lending/OffersTable";
 import { MOSHY_OFFER, DEALS } from "@/lib/offers";
@@ -54,7 +55,7 @@ export default function MoshyLanding() {
             </span>
             <h1 className="mt-4 text-4xl font-extrabold leading-[1.06] tracking-[-0.02em] text-[#14120f] sm:text-5xl lg:text-[3.3rem]">
               Moshy discount code Australia:{" "}
-              <span className="text-[#007a95]">$120 off your first order.</span>
+              <span>$120 off your first order.</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-[#56504a]">
               The current Moshy offer is <strong className="text-[#14120f]">$120 off your first order</strong>, applied
@@ -78,6 +79,7 @@ export default function MoshyLanding() {
 
           {/* At-a-glance card */}
           <aside className="lg:pt-2">
+            <EdgeObject kind="scale">
             <div className="nw-card rounded-2xl p-6">
               <span className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#56504a]">At a glance</span>
               <dl className="mt-4 divide-y divide-[#f1ede4] text-sm">
@@ -100,6 +102,7 @@ export default function MoshyLanding() {
               </div>
               <p className="mt-3 text-center text-[11px] text-[#56504a]">Opens getmoshy.com.au · AU only</p>
             </div>
+            </EdgeObject>
           </aside>
         </section>
 

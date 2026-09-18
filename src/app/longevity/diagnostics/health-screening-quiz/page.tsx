@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SectionMark } from "@/components/brand/SectionMark";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import ComingSoonNote from "@/components/consumer/ComingSoonNote";
 import ScreeningQuizClient from "./ScreeningQuizClient";
@@ -70,10 +71,10 @@ export default function Page() {
           <Link href="/longevity/diagnostics" className="hover:text-[#007a95]">Diagnostics</Link>
           <span>/</span>
           <span className="text-[#14120f]">Screening quiz</span>
-        </nav>
+        <SectionMark kind="lens" size={56} /></nav>
 
         <h1 className="mt-5 text-3xl font-bold leading-[1.1] tracking-[-0.01em] text-[#14120f] sm:text-4xl">
-          Is preventive screening <span className="italic text-[#007a95]">worth it for you?</span>
+          Is preventive screening <span>worth it for you?</span>
         </h1>
         <p className="mt-5 text-lg leading-relaxed text-[#14120f]">
           Four questions about what prompted your interest and how you would handle an uncertain result. It asks nothing about your symptoms or history, and most answers point back to a GP.

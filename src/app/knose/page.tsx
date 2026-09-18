@@ -1,4 +1,5 @@
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
+import { SectionMark } from "@/components/brand/SectionMark";
 import { KNOSE_URL } from "@/lib/affiliate-links";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
@@ -86,7 +87,7 @@ export default function KnosePage() {
             <Link href="/pet-insurance" className="transition-colors hover:text-[#14120f]">Pet insurance</Link>
             <span>/</span>
             <span className="text-[#14120f]">Knose</span>
-          </nav>
+          <SectionMark kind="tag" size={56} /></nav>
 
           {/* Hero */}
           <header className="pt-9 pb-6">
@@ -94,7 +95,7 @@ export default function KnosePage() {
             <img src="/logos/knose.svg" alt="Knose logo" width={160} height={62} className="mb-5 h-11 w-auto" />
             <p className="nw-kicker">Pet insurance · Current offer</p>
             <h1 className="mt-4 text-3xl font-extrabold leading-[1.08] tracking-tight text-[#14120f] sm:text-4xl">
-              Knose promo code <span className="text-[#007a95]">referlab2mf</span>: 2 months free for new customers
+              Knose promo code <span>referlab2mf</span>: 2 months free for new customers
             </h1>
             <p className="mt-5 text-lg leading-relaxed text-[#56504a]">
               Knose is an Australian pet insurance provider. New customers can get <strong className="text-[#14120f]">2

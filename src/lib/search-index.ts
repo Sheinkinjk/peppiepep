@@ -22,7 +22,7 @@ export const SEARCH_INDEX: SearchEntry[] = [
   { title: "Foreo", href: "/foreo", category: "Health & beauty", kind: "Review", keywords: "foreo australia luna ufo price artg cosmetic device led" },
   { title: "Edible Beauty Australia", href: "/edible-beauty", category: "Health & beauty", kind: "Review", keywords: "edible beauty australia natural skincare price certified organic naturopath" },
   { title: "Aussie Health Products", href: "/aussie-health-products", category: "Health & beauty", kind: "Review", keywords: "aussie health products retailer australia supplements natural brands shipping" },
-  { title: "Coming soon: what we are building", href: "/coming-soon", category: "Refer Labs", kind: "Guide", keywords: "coming soon new sections skin beauty sleep refer labs" },
+  { title: "Coming soon: what we are building", href: "/coming-soon", category: "Refer Labs", kind: "Guide", keywords: "coming soon new sections men's health refer labs" },
   { title: "Longevity", href: "/longevity", category: "Longevity", kind: "Category", keywords: "longevity australia biohacking recovery diagnostics supplements" },
   { title: "Recovery: ice baths and saunas", href: "/longevity/recovery", category: "Longevity", kind: "Category", keywords: "ice bath sauna australia recovery cold plunge" },
   { title: "Ice bath running costs", href: "/longevity/recovery/ice-bath-running-costs-australia", category: "Longevity", kind: "Guide", keywords: "ice bath running cost australia chiller electricity cold plunge" },

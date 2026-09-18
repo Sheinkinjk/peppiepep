@@ -1,4 +1,5 @@
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
+import { SectionMark } from "@/components/brand/SectionMark";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
@@ -297,7 +298,7 @@ export default function GuidesPage() {
           <Link href="/" className="hover:text-[#007a95]">Refer Labs</Link>
           <span>/</span>
           <span className="text-[#14120f]">Guides</span>
-        </nav>
+        <SectionMark kind="lens" size={56} /></nav>
 
         <div className="max-w-2xl">
           <h1 className="mt-4 text-4xl font-bold leading-[1.06] tracking-[-0.01em] text-[#14120f] sm:text-5xl">

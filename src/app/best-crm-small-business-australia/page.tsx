@@ -1,4 +1,5 @@
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
+import { SectionMark } from "@/components/brand/SectionMark";
 import { PIPEDRIVE_URL, CAPSULE_URL, NUTSHELL_URL, KEAP_URL } from "@/lib/affiliate-links";
 import { ArrowRight, Check } from "lucide-react";
 import Link from "next/link";
@@ -133,7 +134,7 @@ export default function BestCrmSmallBusinessPage() {
           <Link href="/guides" className="hover:text-[#14120f]">Guides</Link>
           <span>/</span>
           <span className="text-[#14120f]">Best CRM for small business</span>
-        </nav>
+        <SectionMark kind="funnel" size={56} /></nav>
 
         <h1 className="text-3xl sm:text-4xl font-black leading-[1.08] tracking-tight text-[#14120f] mb-5">
           Best CRM for small business in Australia

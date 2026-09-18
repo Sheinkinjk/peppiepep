@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SectionMark } from "@/components/brand/SectionMark";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
@@ -120,7 +121,7 @@ export default function DealsPage() {
           <Link href="/" className="hover:text-[#007a95]">Refer Labs</Link>
           <span>/</span>
           <span className="text-[#14120f]">Deals</span>
-        </nav>
+        <SectionMark kind="offer" size={56} /></nav>
 
         <h1 className="mt-4 text-4xl font-black leading-[1.05] tracking-[-0.02em] text-[#14120f] sm:text-5xl">
           Australian discount codes, each dated

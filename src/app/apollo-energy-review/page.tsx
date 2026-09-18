@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SectionMark } from "@/components/brand/SectionMark";
 import { ArrowRight, Check } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
@@ -101,7 +102,7 @@ export default function ApolloEnergyReviewPage() {
             <Link href="/" className="hover:text-[#007a95]">Refer Labs</Link>
             <span>/</span>
             <span className="text-[#14120f]">Apollo Energy Group review</span>
-          </nav>
+          <SectionMark kind="battery" size={56} /></nav>
 
           <h1 className="mt-4 text-4xl font-bold leading-[1.07] tracking-[-0.01em] text-[#14120f] sm:text-5xl">
             Apollo Energy Group review: is it legit?
@@ -175,7 +176,7 @@ export default function ApolloEnergyReviewPage() {
           <section className="mt-10 border-t border-[#ded8cd] pt-10">
             <h2 className="text-2xl font-bold text-[#14120f]">Four things to check before you sign</h2>
             <p className="mt-4 text-[15.5px] leading-relaxed text-[#56504a]">
-              Worth doing with any installer, not just Apollo:
+              Worth doing with any installer, Apollo included:
             </p>
             <ol className="mt-6 space-y-5">
               {[

@@ -71,7 +71,7 @@ export default function Page() {
       sectionHref="/mens-health"
       slug="/mens-health/online-prescription-australia"
       crumb="Online prescription"
-      h1={<>Online prescription in Australia: <span className="italic text-[#007a95]">cost, speed and the Medicare catch</span></>}
+      h1={<>Online prescription in Australia: <span>cost, speed and the Medicare catch</span></>}
       intro={`Midoc lists ${MIDOC.scriptRepeat} for a repeat and ${MIDOC.scriptNew} for a new script, available ${MIDOC.scriptsHours}. The part that decides whether you get what you paid for is the identifier: their FAQ states you need ${MIDOC.scriptIdentifier}. Read off midoc.com.au/instantscripts on 4 September 2026.`}
       headline="Online prescription in Australia: what it costs and what you need"
       description={seoConfig.onlinePrescription.description}

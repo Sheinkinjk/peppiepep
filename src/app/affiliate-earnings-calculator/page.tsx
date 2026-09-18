@@ -1,4 +1,5 @@
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
+import { SectionMark } from "@/components/brand/SectionMark";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
@@ -73,7 +74,7 @@ export default function AffiliateEarningsCalculatorPage() {
             <Link href="/affiliate-programs-australia" className="hover:text-[#007a95] transition-colors">Affiliate programs</Link>
             <span aria-hidden="true">/</span>
             <span className="text-[#14120f]">Earnings calculator</span>
-          </nav>
+          <SectionMark kind="calculator" size={56} /></nav>
 
           <section className="pt-9 pb-7 sm:pt-11">
             <h1 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-extrabold leading-[1.08] tracking-tight text-[#14120f] mb-4 max-w-3xl">

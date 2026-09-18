@@ -1,11 +1,20 @@
-import { Mail, Calendar, ArrowRight, MapPin, Clock, FileCheck2 } from "lucide-react";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
+import { HubObject, type ObjectKind } from "@/components/home/Objects";
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
 
 export const metadata = generateSEOMetadata(seoConfig.contact);
 
-const calendlyUrl = "https://calendly.com/jarred-referlabs/30min?month=2026-01";
+/*
+ * Rewritten 18 Sep 2026. The page it replaces was written for the retired
+ * growth-services offer ("building your distribution system"), carried two
+ * identical "Email Us" cards, promised a 15-minute call that the linked 30-minute
+ * Calendly slot contradicted, and pinned that link to January 2026. It now says
+ * what is true: one inbox, read by the person who writes the site, and a
+ * separate door for businesses.
+ */
+const EMAIL = "jarred@referlabs.com.au";
+const CALENDLY = "https://calendly.com/jarred-referlabs/30min";
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -16,191 +25,66 @@ const breadcrumbSchema = {
   ],
 };
 
+const ROUTES: { object: ObjectKind; title: string; body: string; action: { label: string; href: string; external?: boolean } }[] = [
+  {
+    object: "lens",
+    title: "Something on a page is wrong",
+    body: "Prices, plan inclusions and offer terms change between our checks. Tell us the page and what you saw on the provider's own site, and the page is corrected or the claim removed.",
+    action: { label: "Report a correction", href: `mailto:${EMAIL}?subject=Correction` },
+  },
+  {
+    object: "envelope",
+    title: "A question about a comparison",
+    body: "Ask about anything we compare, or about how a page was researched. We cannot give medical, financial or legal advice about your own situation.",
+    action: { label: "Email a question", href: `mailto:${EMAIL}` },
+  },
+  {
+    object: "funnel",
+    title: "A business that wants to be featured",
+    body: "Partnerships are always disclosed and rankings are never sold. Apply with your details, or book a 30-minute call.",
+    action: { label: "Apply to partner with us", href: "/partner-with-refer-labs" },
+  },
+];
+
 export default function Contact() {
   return (
     <ConsumerShell>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <main id="main-content" className="mx-auto max-w-5xl px-6 pb-24 pt-16 sm:px-8 lg:px-12">
-        {/* Header */}
-        <header className="text-center space-y-6 mb-16 rounded-[2rem] px-6 py-12 sm:px-10 sm:py-14">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.08] text-[#14120f] tracking-tight max-w-3xl mx-auto">
-            Book a 15-min <span className="text-[#007a95]">Discovery Call</span>
-          </h1>
-          <p className="text-lg sm:text-xl text-[#14120f] leading-relaxed max-w-2xl mx-auto">
-            Tell us about your company and your growth goals. We will recommend an approach and scope the right engagement.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <a
-              href={calendlyUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#007a95] px-6 py-3 text-sm font-bold text-white transition-all hover:-translate-y-0.5 hover:bg-[#003647]"
-            >
-              <Calendar className="h-4 w-4" />
-              Partner With Us
-            </a>
-            <Link
-              href="/partner-with-refer-labs"
-              className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#ded8cd] bg-white px-6 py-3 text-sm font-semibold text-[#14120f] hover:border-[#007a95]/40"
-            >
-              Apply Now
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
-        </header>
+      <main id="main-content" className="mx-auto max-w-6xl px-5 pb-24 pt-10 sm:px-8">
+        <nav className="flex items-center gap-2 text-sm text-[#56504a]">
+          <Link href="/" className="hover:text-[#007a95]">Refer Labs</Link>
+          <span>/</span>
+          <span className="text-[#14120f]">Contact</span>
+        </nav>
+        <h1 className="mt-5 text-4xl font-bold leading-[1.06] text-[#14120f] sm:text-5xl">Contact Refer Labs</h1>
+        <p className="mt-5 max-w-2xl text-lg leading-relaxed text-[#14120f]">
+          Email <a href={`mailto:${EMAIL}`} className="font-semibold text-[#007a95] underline underline-offset-4">{EMAIL}</a>.
+          It goes to the person who researches and writes the site, and you will usually hear back within one business day.
+        </p>
 
-        {/* Contact Options */}
-        <section className="grid md:grid-cols-2 xl:grid-cols-4 gap-6 mb-16 max-w-6xl mx-auto" aria-label="Contact options">
-          {/* Schedule a Call - Primary */}
-          <a
-            href={calendlyUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group relative overflow-hidden rounded-3xl border border-[#007a95]/25 bg-white p-8 shadow-sm transition-all hover:border-[#007a95]/45"
-            data-lift="true"
-          >
-            <div className="absolute top-0 right-0 w-64 h-64 bg-[#e4f2f5] rounded-full blur-3xl" />
-            <div className="relative">
-              <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#e4f2f5] border border-[#b9e3eb] mb-6">
-                <Calendar className="h-7 w-7 text-[#007a95]" />
-              </div>
-              <h2 className="text-2xl font-bold text-[#14120f] mb-3">Book a Call</h2>
-              <p className="text-[#14120f] leading-relaxed mb-6">
-                15-minute call to discuss your growth goals, product, and timeline. We will recommend the right engagement on the call.
+        <ul className="mt-14 grid gap-4 lg:grid-cols-3">
+          {ROUTES.map((r) => (
+            <li key={r.title} className="flex flex-col rounded-2xl border border-[#ded8cd] bg-white p-7">
+              <HubObject kind={r.object} size={64} className="hy-obj mb-5" />
+              <h2 className="text-xl font-bold text-[#14120f]">{r.title}</h2>
+              <p className="mt-2.5 text-[15px] leading-relaxed text-[#56504a]">{r.body}</p>
+              <p className="mt-auto pt-6">
+                <a href={r.action.href} className="nw-btn">{r.action.label}</a>
               </p>
-              <div className="flex items-center gap-4 text-sm text-[#14120f] mb-6">
-                <span className="flex items-center gap-2">
-                  <Clock className="h-4 w-4 text-[#007a95]" />
-                  15 minutes
-                </span>
-                <span className="flex items-center gap-2">
-                  <MapPin className="h-4 w-4 text-[#007a95]" />
-                  Video call
-                </span>
-              </div>
-              <div className="inline-flex items-center gap-2 text-[#007a95] font-semibold group-hover:text-[#003647] transition-colors">
-                Book your call
-                <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-              </div>
-            </div>
+            </li>
+          ))}
+        </ul>
+
+        <p className="mt-8 max-w-2xl text-sm leading-relaxed text-[#56504a]">
+          Businesses can also{" "}
+          <a href={CALENDLY} target="_blank" rel="noopener noreferrer" className="font-semibold text-[#007a95] underline underline-offset-4">
+            book a 30-minute call
           </a>
-
-          {/* Apply */}
-          <Link
-            href="/partner-with-refer-labs"
-            className="group relative overflow-hidden rounded-3xl border border-[#007a95]/25 bg-white p-8 shadow-sm transition-all hover:border-[#007a95]/45"
-            data-lift="true"
-          >
-            <div className="relative">
-              <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#e4f2f5] border border-[#b9e3eb] mb-6">
-                <FileCheck2 className="h-7 w-7 text-[#007a95]" />
-              </div>
-              <h2 className="text-2xl font-bold text-[#14120f] mb-3">Apply</h2>
-              <p className="text-[#14120f] leading-relaxed mb-6">
-                Submit your company profile and expansion goals. We review every application and respond in 1-2 business days.
-              </p>
-              <div className="inline-flex items-center gap-2 text-[#007a95] font-semibold group-hover:text-[#003647] transition-colors">
-                Open application
-                <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-              </div>
-            </div>
-          </Link>
-
-          {/* Email Us */}
-          <a
-            href="mailto:jarred@referlabs.com.au"
-            className="group relative overflow-hidden rounded-3xl border border-[#ded8cd] bg-white p-8 shadow-sm transition-all hover:border-[#007a95]/35"
-            data-lift="true"
-          >
-            <div className="relative">
-              <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#f7f4ee] border border-[#ded8cd] mb-6">
-                <Mail className="h-7 w-7 text-[#14120f]" />
-              </div>
-              <h2 className="text-2xl font-bold text-[#14120f] mb-3">Email Us</h2>
-              <p className="text-[#14120f] leading-relaxed mb-6">
-                Prefer email? Tell us about your company, what you sell, and your growth goals. We will respond within 24 hours.
-              </p>
-              <div className="text-sm text-[#14120f] mb-6 font-semibold">
-                jarred@referlabs.com.au
-              </div>
-              <div className="inline-flex items-center gap-2 text-[#007a95] font-semibold group-hover:text-[#003647] transition-colors">
-                Send email
-                <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-              </div>
-            </div>
-          </a>
-
-          {/* Email Us */}
-          <a
-            href="mailto:jarred@referlabs.com.au"
-            className="group relative overflow-hidden rounded-3xl border border-[#ded8cd] bg-white p-8 shadow-sm transition-all hover:border-[#007a95]/35"
-            data-lift="true"
-          >
-            <div className="relative">
-              <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#f7f4ee] border border-[#ded8cd] mb-6">
-                <Mail className="h-7 w-7 text-[#14120f]" />
-              </div>
-              <h2 className="text-2xl font-bold text-[#14120f] mb-3">Email Us</h2>
-              <p className="text-[#14120f] leading-relaxed mb-6">
-                Email is the fastest way to reach us. Send through your details and we will get back to you, usually within one business day.
-              </p>
-              <div className="text-sm text-[#14120f] mb-6 font-semibold">
-                jarred@referlabs.com.au
-              </div>
-              <div className="inline-flex items-center gap-2 text-[#007a95] font-semibold group-hover:text-[#003647] transition-colors">
-                Send an email
-                <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-              </div>
-            </div>
-          </a>
-        </section>
-
-        {/* What to Include */}
-        <section className="max-w-4xl mx-auto mb-16" aria-labelledby="what-to-include">
-          <div className="text-center mb-10">
-            <h2 id="what-to-include" className="text-2xl sm:text-3xl font-bold text-[#14120f] mb-3">What to Tell Us</h2>
-            <p className="text-[#14120f]">Include these details so we can prepare a relevant recommendation.</p>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {[
-              "Your name and company",
-              "Your website",
-              "Where you are based",
-              "What you sell",
-              "Your growth goal",
-              "Your timeline",
-            ].map((item) => (
-              <div key={item} className="text-center p-5 rounded-2xl border border-[#ded8cd] bg-white shadow-xs">
-                <p className="text-sm text-[#14120f] font-medium">{item}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* What to Expect */}
-        <section className="max-w-4xl mx-auto" aria-labelledby="what-to-expect">
-          <div className="text-center mb-10">
-            <h2 id="what-to-expect" className="text-2xl sm:text-3xl font-bold text-[#14120f] mb-3">What Happens Next</h2>
-          </div>
-
-          <div className="grid sm:grid-cols-3 gap-6">
-            {[
-              { title: "Discovery Call", copy: "We learn about your product, market, and growth goals" },
-              { title: "Engagement Plan", copy: "We recommend the right services, channel approach, and engagement scope" },
-              { title: "Kick Off", copy: "If it is a fit, we finalise commercial terms and begin building your distribution system" },
-            ].map((item, idx) => (
-              <div key={item.title} className="text-center p-6 rounded-2xl border border-[#ded8cd] bg-white shadow-xs">
-                <div className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#e4f2f5] border border-[#b9e3eb] mb-4">
-                  <span className="text-xl font-bold text-[#007a95]">{idx + 1}</span>
-                </div>
-                <h3 className="text-lg font-semibold text-[#14120f] mb-2">{item.title}</h3>
-                <p className="text-sm text-[#14120f]">{item.copy}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
+          . How corrections are handled is set out on the{" "}
+          <Link href="/about" className="font-semibold text-[#007a95] underline underline-offset-4">about page</Link>, and how the site is
+          funded on{" "}
+          <Link href="/how-we-make-money" className="font-semibold text-[#007a95] underline underline-offset-4">how we make money</Link>.
+        </p>
       </main>
     </ConsumerShell>
   );

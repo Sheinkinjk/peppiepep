@@ -1,4 +1,5 @@
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
+import { SectionMark } from "@/components/brand/SectionMark";
 import { CheckCircle2, XCircle, ArrowRight, ExternalLink } from "lucide-react";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
@@ -324,14 +325,14 @@ export default function BestWebsiteBuilderPage() {
             <Link href="/guides" className="hover:text-[#14120f] transition-colors">Guides</Link>
             <span>/</span>
             <span className="text-[#14120f]">Best Website Builder</span>
-          </nav>
+          <SectionMark kind="browser" size={56} /></nav>
 
           {/* ── Hero ─────────────────────────────────────────────────────────── */}
           <section className="pt-10 pb-8 sm:pt-12">
 
             <h1 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-black leading-[1.08] tracking-tight text-[#14120f] mb-4 max-w-3xl">
               Best Website Builder 2026:{" "}
-              <span style={{ color: CYAN_LT }}>Four Platforms. One Clear Answer.</span>
+              <span>Four Platforms. One Clear Answer.</span>
             </h1>
 
             <p className="text-[#56504a] text-sm sm:text-base leading-relaxed max-w-2xl mb-3">

@@ -51,7 +51,7 @@ export default function Page() {
       sectionHref="/sleep"
       slug="/sleep/do-i-have-sleep-apnoea"
       crumb="Do I have sleep apnoea?"
-      h1={<>Do I have sleep apnoea? <span className="italic text-[#007a95]">How Australians find out</span></>}
+      h1={<>Do I have sleep apnoea? <span>How Australians find out</span></>}
       intro="We have not built a quiz that tells you the answer, because no website can honestly give you one. What we can do is show you exactly how the diagnosis happens here, and how to make the appointment that produces it worth your time."
       headline="Do I have sleep apnoea? How Australians get answers"
       description={seoConfig.sleepApnoeaPathway.description}

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { HubObject } from "@/components/home/Objects";
 import { APOLLO_ENERGY_LEAD_HREF, glance, steps, faqs } from "./config";
 import { ArrowRight, Check, ShieldCheck, BatteryCharging, BadgeCheck, Wrench } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
@@ -53,7 +54,7 @@ export default function ApolloLanding() {
             />
             <h1 className="mt-4 text-4xl font-extrabold leading-[1.06] tracking-[-0.02em] text-[#14120f] sm:text-5xl lg:text-[3.1rem]">
               Apollo Energy Group: a Sydney solar battery company,{" "}
-              <span className="text-[#007a95]">$500 off through Refer Labs.</span>
+              <span>$500 off through Refer Labs.</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-[#56504a]">
               Apollo Energy Group is a Sydney-based, SAA-accredited solar battery (home battery) company. Register your
@@ -85,8 +86,11 @@ export default function ApolloLanding() {
 
           {/* Data capture, primary */}
           <div id="register" className="scroll-mt-24 lg:pt-2">
-            <div className="mb-3 flex items-baseline justify-between">
-              <h2 className="text-lg font-extrabold tracking-tight text-[#14120f]">Register your interest</h2>
+            <div className="mb-3 flex items-center justify-between">
+              <h2 className="flex items-center gap-3 text-lg font-extrabold tracking-tight text-[#14120f]">
+                <HubObject kind="battery" size={44} className="hy-obj" />
+                Register your interest
+              </h2>
               <span className="text-[12px] font-medium text-[#007a95]">$500 off · 2 business days</span>
             </div>
             <ApolloEoiForm />
@@ -160,7 +164,7 @@ export default function ApolloLanding() {
           </nav>
 
           {/* Article */}
-          <article className="max-w-2xl">
+          <article className="min-w-0 max-w-2xl">
             {/* What */}
             <section id="what" className="scroll-mt-24">
               <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">What Apollo is</h2>

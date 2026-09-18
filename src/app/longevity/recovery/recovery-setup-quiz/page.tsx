@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SectionMark } from "@/components/brand/SectionMark";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import ComingSoonNote from "@/components/consumer/ComingSoonNote";
 import RecoveryQuizClient from "./RecoveryQuizClient";
@@ -70,10 +71,10 @@ export default function Page() {
           <Link href="/longevity/recovery" className="hover:text-[#007a95]">Recovery</Link>
           <span>/</span>
           <span className="text-[#14120f]">Setup quiz</span>
-        </nav>
+        <SectionMark kind="thermo" size={56} /></nav>
 
         <h1 className="mt-5 text-3xl font-bold leading-[1.1] tracking-[-0.01em] text-[#14120f] sm:text-4xl">
-          What recovery setup <span className="italic text-[#007a95]">fits your place?</span>
+          What recovery setup <span>fits your place?</span>
         </h1>
         <p className="mt-5 text-lg leading-relaxed text-[#14120f]">
           Four questions about frequency, space, budget and climate. No health questions, and the result points at cost guidance rather than a product.

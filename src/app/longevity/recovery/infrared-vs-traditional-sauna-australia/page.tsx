@@ -38,7 +38,7 @@ export default function Page() {
       sectionHref="/longevity/recovery"
       slug="/longevity/recovery/infrared-vs-traditional-sauna-australia"
       crumb="Infrared vs traditional"
-      h1={<>Infrared or traditional sauna: <span className="italic text-[#007a95]">the differences that decide it</span></>}
+      h1={<>Infrared or traditional sauna: <span>the differences that decide it</span></>}
       intro="Two different appliances, not two versions of one. Infrared uses radiant heat to warm your body directly, and a smaller cabin can sometimes run from a standard outlet, though often not. A traditional sauna heats the air around you, runs far hotter, and usually needs a dedicated circuit and often hard wiring. That electrical difference decides more purchases than the research does."
       headline="Infrared vs traditional sauna in Australia"
       description={seoConfig.saunaComparison.description}

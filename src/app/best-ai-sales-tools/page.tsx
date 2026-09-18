@@ -1,4 +1,5 @@
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, comparisonArticleSchema } from "@/lib/seo";
+import { SectionMark } from "@/components/brand/SectionMark";
 import { CheckCircle2, XCircle, ArrowRight, ExternalLink } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -234,8 +235,6 @@ export default function BestAiSalesToolsPage() {
 
       {/* Background */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_center,rgba(10,167,181,0.12),transparent_55%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(34,192,205,0.04),transparent_55%)]" />
       </div>
 
       <main id="main-content" className="relative mx-auto max-w-5xl px-5 sm:px-8 lg:px-12 pb-24 pt-14 sm:pt-18">
@@ -247,7 +246,7 @@ export default function BestAiSalesToolsPage() {
           <Link href="/guides" className="hover:text-[#14120f] transition-colors">Guides</Link>
           <span>/</span>
           <span className="text-[#14120f]">Best AI Sales Tools 2026</span>
-        </nav>
+        <SectionMark kind="send" size={56} /></nav>
 
 
         {/* Hero */}
@@ -255,7 +254,7 @@ export default function BestAiSalesToolsPage() {
           <p className="nw-kicker mb-4">AI Sales & Automation</p>
           <h1 className="text-4xl sm:text-5xl lg:text-[3.25rem] font-black leading-[1.07] text-[#14120f] mb-5 tracking-tight">
             Best AI Sales Tools in 2026:{" "}
-            <span style={{ color: ACCENT_LT }}>GoHighLevel, AiSDR, Reply.io & FullEnrich</span>
+            <span>GoHighLevel, AiSDR, Reply.io & FullEnrich</span>
           </h1>
           <p className="text-[#56504a] text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
             Each of these four fixes a different bottleneck, so the right one depends on where your outbound

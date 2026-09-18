@@ -1,4 +1,5 @@
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
+import { SectionMark } from "@/components/brand/SectionMark";
 import { KNOSE_URL, PETSONME_URL, PETSONME_CODE } from "@/lib/affiliate-links";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
@@ -114,7 +115,7 @@ export default function KnoseVsPetsOnMePage() {
           <Link href="/pet-insurance" className="transition-colors hover:text-[#14120f]">Pet insurance</Link>
           <span>/</span>
           <span className="text-[#14120f]">Knose vs PetsOnMe</span>
-        </nav>
+        <SectionMark kind="tag" size={56} /></nav>
 
         <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#007a95]">Pet insurance · Australia</p>
         <h1 className="mt-4 text-3xl font-extrabold leading-[1.08] tracking-tight text-[#14120f] sm:text-4xl">

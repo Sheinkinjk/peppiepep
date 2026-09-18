@@ -1,4 +1,5 @@
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
+import { SectionMark } from "@/components/brand/SectionMark";
 import { KNOSE_URL, PETSONME_URL, PETSONME_CODE } from "@/lib/affiliate-links";
 import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
@@ -98,7 +99,7 @@ export default function PetInsurancePage() {
             <Link href="/" className="transition-colors hover:text-[#14120f]">Refer Labs</Link>
             <span>/</span>
             <span className="text-[#14120f]">Pet insurance</span>
-          </nav>
+          <SectionMark kind="tag" size={88} /></nav>
 
           {/* Hero */}
           <header className="pt-9 pb-6">

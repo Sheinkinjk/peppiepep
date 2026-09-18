@@ -36,7 +36,7 @@ export default function RecoveryHub() {
     <SectionHub
       slug="/longevity/recovery"
       crumbs={[{ href: "/longevity", label: "Longevity" }, { label: "Recovery" }]}
-      h1={<>Recovery hardware: <span className="italic text-[#007a95]">what it costs to buy, and to keep</span></>}
+      h1={<>Recovery hardware: <span>what it costs to buy, and to keep</span></>}
       intro="Ice baths and saunas are sold on a purchase price. The number that decides whether you keep using one is the annual running cost, and it is almost never in the listing. These guides put both together."
       comingSoonFor="Recovery"
       guides={guides}

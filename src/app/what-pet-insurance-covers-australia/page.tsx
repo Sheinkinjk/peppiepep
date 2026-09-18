@@ -5,6 +5,7 @@ import {
   SCHEMA_AUTHOR,
   SCHEMA_PUBLISHER,
 } from "@/lib/seo";
+import { SectionMark } from "@/components/brand/SectionMark";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
@@ -91,7 +92,7 @@ export default function WhatPetInsuranceCoversPage() {
             <Link href="/pet-insurance" className="transition-colors hover:text-[#14120f]">Pet insurance</Link>
             <span>/</span>
             <span className="text-[#14120f]">What it covers</span>
-          </nav>
+          <SectionMark kind="tag" size={56} /></nav>
 
           <header className="pt-9 pb-6">
             <p className="nw-kicker">Australia · General information</p>

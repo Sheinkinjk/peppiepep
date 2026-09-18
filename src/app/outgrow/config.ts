@@ -32,7 +32,7 @@ export const outgrowConfig: AffiliatePageConfig = {
       heading: "What Outgrow is for",
       paragraphs: [
         "Outgrow lets you build interactive content, calculators, quizzes, assessments, polls, chatbots and forms, without code, then embed it on your site, in emails or on social. Because people engage with it and answer questions, you capture better-qualified leads and learn what each person needs.",
-        "A pricing calculator, a 'which product is right for you' quiz or a readiness assessment turns a passive visit into a conversation. It suits marketers who want engagement and lead quality, not just a static form.",
+        "A pricing calculator, a 'which product is right for you' quiz or a readiness assessment turns a passive visit into a conversation. It suits marketers who want more engagement and better-qualified leads than a static form gets.",
       ],
     },
     {

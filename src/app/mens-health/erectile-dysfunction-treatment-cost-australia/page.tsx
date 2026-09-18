@@ -45,7 +45,7 @@ export default function Page() {
       sectionHref="/mens-health"
       slug="/mens-health/erectile-dysfunction-treatment-cost-australia"
       crumb="Erectile dysfunction costs"
-      h1={<>Erectile dysfunction treatment in Australia: <span className="italic text-[#007a95]">what the routes cost</span></>}
+      h1={<>Erectile dysfunction treatment in Australia: <span>what the routes cost</span></>}
       intro="Three routes, priced on three different models, which is why the advertised numbers cannot be compared directly. A GP consultation may be bulk billed or carry a gap with a Medicare rebate against it. A per-consult telehealth service charges each time. A subscription charges every month whether you consult or not. Annualise all three before you choose."
       headline="Erectile dysfunction treatment cost in Australia"
       description={seoConfig.edTreatmentCost.description}

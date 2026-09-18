@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SectionMark } from "@/components/brand/SectionMark";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
 
@@ -123,9 +124,9 @@ export default function RecurringAffiliateProgramsPage() {
             <Link href="/affiliate-programs-australia" className="hover:text-[#007a95]">Affiliate programs</Link>
             <span>/</span>
             <span className="text-[#14120f]">Recurring commission</span>
-          </nav>
+          <SectionMark kind="offer" size={56} /></nav>
           <h1 className="mt-4 text-4xl font-bold leading-[1.07] tracking-[-0.01em] text-[#14120f] sm:text-5xl">
-            Best recurring commission <span className="italic text-[#007a95]">affiliate programs</span>
+            Best recurring commission <span>affiliate programs</span>
           </h1>
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-[#14120f]">
             One-off bounties pay you once. Recurring programs pay you every single month a customer stays subscribed,

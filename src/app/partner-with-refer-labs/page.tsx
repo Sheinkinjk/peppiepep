@@ -1,4 +1,5 @@
 import { ArrowRight, CheckCircle2, Check } from "lucide-react";
+import { SectionMark } from "@/components/brand/SectionMark";
 import Link from "next/link";
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
@@ -40,7 +41,7 @@ const categories = [
       "Medically supervised telehealth programs and the pathways around them. Information only, never medical advice, and any treatment is a decision for a registered practitioner. We do not name prescription medicines on this site.",
     eval: [
       "Registered-practitioner assessment before any treatment",
-      "Monitoring and follow-up, not just a prescription",
+      "Monitoring and follow-up after the first consultation",
       "What is included in the subscription, and what costs extra",
       "Claims that are accurate and not misleading (no guaranteed outcomes)",
     ],
@@ -163,13 +164,13 @@ export default function PartnerWithReferLabsPage() {
           <Link href="/" className="transition-colors hover:text-[#14120f]">Refer Labs</Link>
           <span>/</span>
           <span className="text-[#14120f]">Partner with us</span>
-        </nav>
+        <SectionMark kind="send" size={56} /></nav>
 
         {/* Hero */}
         <header className="pt-9">
           <h1 className=" text-4xl font-extrabold leading-[1.05] tracking-[-0.02em] text-[#14120f] sm:text-5xl">
             Apply to partner with{" "}
-            <span className="text-[#007a95]">Refer Labs</span>
+            <span>Refer Labs</span>
           </h1>
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-[#56504a]">
             We compare providers across health, solar and energy, pet insurance and business software, and reach

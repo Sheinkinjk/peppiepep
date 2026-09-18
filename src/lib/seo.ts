@@ -605,7 +605,7 @@ export const seoConfig = {
   comingSoon: {
     title: "What We're Building Next | Refer Labs",
     description:
-      "The categories Refer Labs is researching before adding any provider: skin and beauty, and sleep.",
+      "The section Refer Labs is still building: men's health. Its guides are finished and free to read; the provider comparison is still being assembled.",
     url: `${SITE_URL}/coming-soon`,
     keywords: ["refer labs new sections", "refer labs coming soon", "australian comparison guides"],
   },
@@ -1137,15 +1137,15 @@ export const seoConfig = {
   },
 
   contact: {
-    title: "Contact Refer Labs: Partner With Us",
+    title: "Contact Refer Labs",
     description:
-      "Get in touch with Refer Labs. Book a call to discuss referral programs, affiliate distribution, influencer activation, APAC expansion, or product distribution.",
+      "Email Refer Labs about a comparison, a price or offer that has changed, or a partnership. Every message goes to the person who researches and writes the site.",
     url: `${SITE_URL}/contact`,
     keywords: [
       "contact refer labs",
-      "book a call refer labs",
-      "referral program consultation",
-      "affiliate distribution enquiry",
+      "refer labs email",
+      "report a price change",
+      "partner with refer labs",
     ],
   },
 

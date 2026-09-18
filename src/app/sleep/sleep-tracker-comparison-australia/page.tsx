@@ -44,7 +44,7 @@ export default function Page() {
       sectionHref="/sleep"
       slug="/sleep/sleep-tracker-comparison-australia"
       crumb="Sleep trackers"
-      h1={<>Sleep trackers: <span className="italic text-[#007a95]">what the numbers can and cannot tell you</span></>}
+      h1={<>Sleep trackers: <span>what the numbers can and cannot tell you</span></>}
       intro="A tracker gives you a confident-looking number every morning. Knowing how that number is produced changes what it is worth, and changes whether it belongs in a conversation with your GP."
       headline="Sleep trackers in Australia: what they measure"
       description={seoConfig.sleepTrackers.description}

@@ -1,5 +1,7 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { GuideGrid } from "@/components/brand/GuideGrid";
+import { HubObject } from "@/components/home/Objects";
+import { objectFor } from "@/lib/home/hubs";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import ComingSoonNote from "@/components/consumer/ComingSoonNote";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
@@ -116,9 +118,17 @@ export default function SectionHub({
               </span>
             ))}
           </nav>
-          <div className="max-w-2xl">
-            <h1 className="mt-4 text-4xl font-bold leading-[1.06] tracking-[-0.01em] text-[#14120f] sm:text-5xl">{h1}</h1>
-            <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#14120f]">{intro}</p>
+          <div className="grid items-center gap-8 lg:grid-cols-[1fr_auto]">
+            <div className="max-w-2xl">
+              <h1 className="mt-4 text-4xl font-bold leading-[1.06] tracking-[-0.01em] text-[#14120f] sm:text-5xl">{h1}</h1>
+              <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#14120f]">{intro}</p>
+            </div>
+            {/* The section's own drawing, large: after the lead in the DOM, so
+                the answer slot stays clear. Hidden on phones, where it would
+                push the lead below the fold. */}
+            {objectFor(`/${slug}`) && (
+              <HubObject kind={objectFor(`/${slug}`)!} size={176} className="hy-obj hidden lg:block lg:mr-10" />
+            )}
           </div>
           {note && (
             <div className="mt-8 max-w-3xl rounded-2xl border border-[#ded8cd] bg-[#f7f4ee] px-5 py-4">
@@ -137,21 +147,7 @@ export default function SectionHub({
 
         <section className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
           <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">Start here</h2>
-          <div className="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {guides.map((g) => (
-              <Link
-                key={g.href}
-                href={g.href}
-                className="group rounded-2xl border border-[#ded8cd] bg-white p-6 transition-colors hover:border-[#007a95]/40"
-              >
-                <h3 className="text-[15px] font-bold text-[#14120f] group-hover:text-[#007a95]">{g.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-[#56504a]">{g.desc}</p>
-                <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[#007a95]">
-                  Read <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
-                </span>
-              </Link>
-            ))}
-          </div>
+          <GuideGrid guides={guides} />
         </section>
 
         <section className="border-y border-[#ded8cd] bg-[#f7f4ee]">
@@ -171,10 +167,13 @@ export default function SectionHub({
         <section className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
           <div className="max-w-2xl">
             <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">Elsewhere on Refer Labs</h2>
-            <ul className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold">
+            <ul className="mt-5 flex flex-wrap gap-3 text-sm font-semibold">
               {otherLinks.map((l) => (
                 <li key={l.href}>
-                  <Link href={l.href} className="text-[#007a95] hover:underline">{l.label}</Link>
+                  <Link href={l.href} className="flex items-center gap-2.5 rounded-xl border border-[#ded8cd] bg-white py-2 pl-2.5 pr-4 text-[#14120f] transition-colors hover:border-[#14120f] hover:text-[#007a95]">
+                    {objectFor(l.href) && <HubObject kind={objectFor(l.href)!} size={30} className="hy-obj" />}
+                    {l.label}
+                  </Link>
                 </li>
               ))}
               <li><Link href="/guides" className="text-[#56504a] hover:text-[#007a95] hover:underline">All guides</Link></li>

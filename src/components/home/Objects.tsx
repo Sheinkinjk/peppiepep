@@ -27,7 +27,7 @@ export type ObjectKind =
   | "envelope" | "bottle" | "pillow" | "pulse" | "hourglass" | "lens"
   | "checklist" | "document" | "balance"
   | "phone" | "clinic" | "calculator" | "offer"
-  | "funnel" | "send" | "badge" | "card" | "chip";
+  | "funnel" | "send" | "badge" | "card" | "chip" | "thermo";
 
 const D = "var(--il-deep)", M = "var(--il-mid)", B = "var(--il-bright)", S = "var(--il-soft)", F = "var(--il-face)";
 
@@ -359,6 +359,16 @@ const ART: Record<ObjectKind, ReactNode> = {
       <rect x="15" y="15" width="18" height="18" rx="2" fill={D} />
       <circle cx="24" cy="24" r="4.2" fill={B} />
       <circle cx="12.5" cy="12.5" r="1.3" fill={F} />
+    </>
+  ),
+  /* recovery: the thermometer, hot at the bulb and cold up the scale */
+  thermo: (
+    <>
+      <rect x="19" y="4" width="10" height="30" rx="5" fill={F} />
+      <circle cx="24" cy="36" r="8" fill={M} />
+      <rect x="22" y="14" width="4" height="22" rx="2" fill={M} />
+      {[10, 15, 20, 25].map((y) => <rect key={y} x="31" y={y} width={y % 10 === 0 ? 7 : 4.5} height="1.6" rx="0.8" fill={D} />)}
+      <circle cx="21" cy="33.5" r="1.8" fill={B} />
     </>
   ),
 };

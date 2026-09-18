@@ -43,7 +43,7 @@ export default function Page() {
       sectionHref="/health-and-beauty"
       slug="/health-and-beauty/retinol-vs-prescription-strength-australia"
       crumb="Retinol vs prescription-strength"
-      h1={<>Retinol vs prescription-strength: <span className="italic text-[#007a95]">what separates them</span></>}
+      h1={<>Retinol vs prescription-strength: <span>what separates them</span></>}
       intro="You can buy one off a shelf today and the other only after a practitioner assesses you. Both are vitamin A derivatives, but in Australia the stronger topicals are prescription-only, and that regulatory line, not the chemistry, is what decides which route is open to you and how carefully the product needs to be used."
       headline="Retinol vs prescription-strength: the Australian guide"
       description={seoConfig.retinolVsPrescription.description}

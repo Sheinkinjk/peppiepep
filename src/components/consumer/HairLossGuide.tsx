@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SectionMark } from "@/components/brand/SectionMark";
 import { ArrowRight, ShieldCheck } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
@@ -89,6 +90,7 @@ export default function HairLossGuide({ cfg }: { cfg: HairLossGuideConfig }) {
           <Link href="/hair-loss" className="hover:text-[#14120f]">Hair loss</Link>
           <span>/</span>
           <span className="text-[#14120f]">{cfg.crumb}</span>
+          <SectionMark href="/hair-loss" />
         </nav>
 
         <h1 className="mt-4 text-3xl font-extrabold leading-[1.08] tracking-tight text-[#14120f] sm:text-4xl">{cfg.h1}</h1>
