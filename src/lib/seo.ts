@@ -1058,10 +1058,12 @@ export const seoConfig = {
   },
 
   deals: {
-    // Leads with verification because that is the actual differentiator: most
-    // "[brand] discount code" results publish expired or invented codes. Every
-    // code here is read off the provider's own page and shows its own date.
-    title: "Verified Discount Codes Australia 2026: Every Code Dated",
+    // Names the four codes we actually hold. The generic "Verified Discount
+    // Codes Australia" title drew 1,034 impressions and 0 clicks in 28 days
+    // (Search Console, 21 Aug to 17 Sep 2026), mostly for brands we do not
+    // cover (Vush, KIC, RespectHealth): Google was filing it as a coupon
+    // directory. Every code here is read off the provider's own page and dated.
+    title: "Moshy, Mosh, Knose & PetsOnMe Discount Codes, Dated",
     description:
       "Verified Australian discount codes, each dated from the provider's own page: Moshy REFERRAL120 for $120 off, Mosh REFERAL55 for 55% off, Knose and PetsOnMe.",
     url: `${SITE_URL}/deals`,
