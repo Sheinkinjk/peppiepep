@@ -28,8 +28,17 @@ import {
  * the offer lines, which are computed from offers.ts.
  */
 
-/** "$120 off", "55% off", "2 months free": the saving as a reader would say it. */
-function said(fig: string): string {
+/**
+ * The saving as a reader would say it: "$120 off", "55% off", "2 months free".
+ * If the offer on record only applies under a condition (Leadpages' 20% is on
+ * annual billing), the condition comes with it: dropping it would overstate the
+ * offer, which is an ACL s29 problem, not a style choice.
+ */
+const CONDITION = /annual|yearly|first year|billing|months? of|\bfor \d+ months\b/i;
+function said(r: { figure: string | null; offer: string }): string {
+  const fig = r.figure ?? "";
+  const clause = r.offer.split(";").map((c) => c.trim()).find((c) => c.includes(fig)) ?? "";
+  if (CONDITION.test(clause)) return clause;
   return /free/i.test(fig) ? fig : `${fig} off`;
 }
 
@@ -80,7 +89,7 @@ function Tile({ c }: { c: HomeCategory }) {
         <span className="hy-tile__plate">{k && <HubObject kind={k} size={64} className="hy-obj hy-tile__obj" />}</span>
         <span className="hy-tile__n">{c.label}</span>
         <span className="hy-tile__o">
-          {r?.figure ? said(r.figure) : "Compare options"}
+          {r?.figure ? said(r) : "Compare options"}
         </span>
         <svg className="hy-tile__arr" width="18" height="18" viewBox="0 0 18 18" aria-hidden="true">
           <path d="M3 9 H14 M9.5 4.5 L14 9 L9.5 13.5" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
@@ -186,7 +195,7 @@ function Categories() {
         <ul className="hy-cc-grid">
           {categoryCards.map((c) => {
             const r = homeCategories.find((h) => h.href === c.href)?.latest;
-            return <CategoryCardView key={c.href} c={c} offer={r?.figure ? `${said(r.figure)} at ${r.brand}` : undefined} />;
+            return <CategoryCardView key={c.href} c={c} offer={r?.figure ? `${said(r)} at ${r.brand}` : undefined} />;
           })}
           <CategoryCardView c={comingSoonCard} soon />
         </ul>
