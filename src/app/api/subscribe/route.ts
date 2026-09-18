@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextRequest, NextResponse, after } from "next/server";
 import { sendAdminNotification, escapeHtml } from "@/lib/email-notifications";
 import { createApiLogger } from "@/lib/api-logger";
 import { SITE_URL } from "@/lib/seo";
@@ -18,18 +18,15 @@ const REPLY_TO = process.env.RESEND_REPLY_TO?.trim() || "jarred@referlabs.com.au
 function welcomeHtml(unsubUrl: string): string {
   return `<!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
-<body style="margin:0;padding:0;background:#f0f4f5;font-family:Georgia,serif;color:#1b2420;">
+<body style="margin:0;padding:0;background:#f7f4ee;font-family:Helvetica,Arial,sans-serif;color:#14120f;">
   <div style="max-width:560px;margin:0 auto;padding:32px 20px;">
-    <p style="font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:#0E7C66;font-weight:700;margin:0 0 18px;">Refer Labs</p>
-    <h1 style="font-size:24px;line-height:1.25;margin:0 0 16px;">You're in.</h1>
+    <p style="font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#007a95;font-weight:700;margin:0 0 18px;">Refer Labs</p>
+    <h1 style="font-size:24px;line-height:1.25;margin:0 0 16px;">You're subscribed.</h1>
     <p style="font-size:16px;line-height:1.6;color:#56504a;margin:0 0 16px;">
-      Thanks for subscribing. We'll email you when there's a good, verified offer worth knowing about across Australian health, tools and software, no spam, no pay-to-rank recommendations, unsubscribe any time.
-    </p>
-    <p style="font-size:16px;line-height:1.6;color:#56504a;margin:0 0 24px;">
-      While you're here, our most-read guides right now are weight-loss telehealth and website builders.
+      We'll email you when there's a verified offer worth knowing about across Australian health, home energy and business software. Each offer is dated with the day we checked it on the provider's own site.
     </p>
     <p style="margin:0 0 28px;">
-      <a href="https://referlabs.com.au/guides" style="display:inline-block;background:#0E7C66;color:#fff;text-decoration:none;font-family:Arial,sans-serif;font-weight:700;font-size:15px;padding:14px 28px;border-radius:999px;">Browse the guides →</a>
+      <a href="https://referlabs.com.au/deals" style="display:inline-block;background:#14120f;color:#ffffff;text-decoration:none;font-weight:700;font-size:15px;padding:14px 24px;border-radius:2px;">See the current offers</a>
     </p>
     <p style="font-size:13px;line-height:1.6;color:#766f66;margin:0 0 6px;">
       You are receiving this because you subscribed at referlabs.com.au.
@@ -82,36 +79,42 @@ export async function POST(request: NextRequest) {
 
     const apiKey = process.env.RESEND_API_KEY?.trim();
 
-    // Best-effort: add to audience, welcome the subscriber, notify admin. None blocks the response.
+    // After the response, but awaited inside after(): a bare un-awaited fetch
+    // was dropped when the serverless function froze on return, so signups were
+    // stored but no welcome email or admin notice went out (found 19 Sep 2026).
     if (apiKey) {
-      const added = await addToAudience(email, apiKey);
-
-      const unsubUrl = unsubscribeUrl(email, SITE_URL);
-      fetch("https://api.resend.com/emails", {
-        method: "POST",
-        headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
-        body: JSON.stringify({
-          from: FROM,
-          to: [email],
-          reply_to: REPLY_TO,
-          subject: "Welcome to Refer Labs",
-          html: welcomeHtml(unsubUrl),
-          // RFC 8058: lets a mail client show its own unsubscribe button and
-          // post to it directly, which is what Gmail and Apple Mail act on.
-          headers: {
-            "List-Unsubscribe": `<${unsubUrl}>`,
-            "List-Unsubscribe-Post": "List-Unsubscribe=One-Click",
-          },
-        }),
-      }).catch((err) => logger.error("welcome email failed", { error: err }));
-
-      // Fallback capture so a lead is never lost even without an Audience configured.
-      if (!added) {
-        sendAdminNotification({
-          subject: interest ? `New deal-alert signup: ${interest}` : `New subscriber: ${email}`,
-          html: `<p>New ${interest ? "deal-alert" : "newsletter"} subscriber</p><p><strong>Email:</strong> ${escapeHtml(email)}</p><p><strong>Source:</strong> ${escapeHtml(source) || "unknown"}</p>${interest ? `<p><strong>Wants alerts about:</strong> ${escapeHtml(interest)}</p>` : ""}<p>Note: RESEND_AUDIENCE_ID is not set, so add this contact to your list manually or configure an Audience.</p>`,
-        }).catch((err) => logger.error("admin notify failed", { error: err }));
-      }
+      after(async () => {
+        const added = await addToAudience(email, apiKey);
+        const unsubUrl = unsubscribeUrl(email, SITE_URL);
+        try {
+          const res = await fetch("https://api.resend.com/emails", {
+            method: "POST",
+            headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
+            body: JSON.stringify({
+              from: FROM,
+              to: [email],
+              reply_to: REPLY_TO,
+              subject: "Welcome to Refer Labs",
+              html: welcomeHtml(unsubUrl),
+              // RFC 8058: lets a mail client show its own unsubscribe button.
+              headers: {
+                "List-Unsubscribe": `<${unsubUrl}>`,
+                "List-Unsubscribe-Post": "List-Unsubscribe=One-Click",
+              },
+            }),
+          });
+          if (!res.ok) logger.error("welcome email rejected", { status: res.status, body: (await res.text()).slice(0, 300) });
+        } catch (err) {
+          logger.error("welcome email failed", { error: err });
+        }
+        // Fallback capture so a lead is never lost even without an Audience configured.
+        if (!added) {
+          await sendAdminNotification({
+            subject: interest ? `New deal-alert signup: ${interest}` : `New subscriber: ${email}`,
+            html: `<p>New ${interest ? "deal-alert" : "newsletter"} subscriber</p><p><strong>Email:</strong> ${escapeHtml(email)}</p><p><strong>Source:</strong> ${escapeHtml(source) || "unknown"}</p>${interest ? `<p><strong>Wants alerts about:</strong> ${escapeHtml(interest)}</p>` : ""}<p>Note: RESEND_AUDIENCE_ID is not set in Production, so add this contact to your list manually or configure an Audience.</p>`,
+          }).catch((err) => logger.error("admin notify failed", { error: err }));
+        }
+      });
     } else {
       logger.error("RESEND_API_KEY not configured, subscriber not captured", { email });
     }
