@@ -103,9 +103,9 @@ export function CookieConsent() {
   if (!showBanner) return null;
 
   const btnPrimary =
-    "min-h-[44px] rounded-lg bg-[#007a95] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#003647]";
+    "min-h-[44px] rounded-[2px] bg-[#007a95] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#003647]";
   const btnGhost =
-    "min-h-[44px] rounded-lg px-5 py-2.5 text-sm font-semibold text-[#56504a] transition-colors hover:bg-[#f7f4ee]";
+    "min-h-[44px] rounded-[2px] px-5 py-2.5 text-sm font-semibold text-[#56504a] transition-colors hover:bg-[#f7f4ee]";
 
   return (
     // Slim bottom bar. No page overlay, no blur: the site stays readable while you decide.
@@ -147,7 +147,7 @@ export function CookieConsent() {
 
             <div className="grid gap-3 sm:grid-cols-3">
               {/* Necessary */}
-              <div className="rounded-xl border border-[#ded8cd] bg-[#f7f4ee] p-4">
+              <div className="rounded-[2px] border border-[#ded8cd] bg-[#f7f4ee] p-4">
                 <div className="flex items-center justify-between gap-2">
                   <h3 className="text-sm font-semibold text-[#14120f]">Necessary</h3>
                   <span className="rounded-full bg-[#e4f2f5] px-2 py-0.5 text-[11px] font-medium text-[#007a95]">
@@ -160,7 +160,7 @@ export function CookieConsent() {
               </div>
 
               {/* Analytics */}
-              <div className="rounded-xl border border-[#ded8cd] p-4">
+              <div className="rounded-[2px] border border-[#ded8cd] p-4">
                 <div className="flex items-center justify-between gap-2">
                   <h3 className="text-sm font-semibold text-[#14120f]">Analytics</h3>
                   <button
@@ -183,7 +183,7 @@ export function CookieConsent() {
               </div>
 
               {/* Marketing */}
-              <div className="rounded-xl border border-[#ded8cd] p-4">
+              <div className="rounded-[2px] border border-[#ded8cd] p-4">
                 <div className="flex items-center justify-between gap-2">
                   <h3 className="text-sm font-semibold text-[#14120f]">Marketing</h3>
                   <button

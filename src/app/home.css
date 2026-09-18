@@ -869,3 +869,97 @@
 .rd-ft .rd-form--compact .rd-msg { color: color-mix(in oklab, var(--paper) 72%, var(--teal-deep)); font-size: 12.5px; }
 .rd-ft .rd-form--compact .rd-msg[data-tone="err"] { color: var(--saffron-soft); }
 .rd-ft .rd-form--compact .rd-msg[data-tone="ok"] { color: var(--paper); }
+
+/* ==========================================================================
+   PHONE LAYOUT (max 640px), 19 Sep 2026. The desktop composition stacked
+   straight down on a phone: a 2x2 grid of boxes in the hero, three full-height
+   pick cards, six tall category cards with drawings hanging off their edges,
+   about 11,000px in all. Each section below is recomposed for a narrow
+   screen rather than shrunk. Desktop is untouched.
+   ========================================================================== */
+
+/* the category row in the header scrolls; the fade says so */
+.rd-rail { mask-image: linear-gradient(to right, #000 82%, transparent); -webkit-mask-image: linear-gradient(to right, #000 82%, transparent); padding-right: 32px; }
+
+@media (max-width: 640px) {
+  .rd.hy { --gut: 18px; }
+
+  /* ---- hero: headline, lede, then the categories as one list ---- */
+  .rd.hy .hy-hero-sec { padding-block: 28px 8px; }
+  .rd.hy .hy-hero { row-gap: 22px; }
+  .rd.hy .rd-d1 { font-size: 40px; line-height: 1.02; }
+  .rd.hy .hy-hero__text .rd-lede { margin-top: 14px; font-size: 16.5px; }
+  .rd.hy .rd-biz { margin-top: 14px; font-size: 14px; }
+
+  .hy-tiles { display: block; padding: 0; background: var(--white); border: 1px solid var(--hair); border-radius: 2px; }
+  .hy-tile, .hy-tile:nth-child(3n + 2) { transform: none; }
+  .hy-tile + .hy-tile { border-top: 1px solid var(--hair); }
+  .hy-tile__a {
+    display: grid; grid-template-columns: 48px 1fr auto; grid-template-rows: auto auto; column-gap: 14px; align-items: center;
+    padding: 12px 14px; border: 0; border-radius: 0; background: transparent;
+  }
+  .hy-tile__plate { grid-row: 1 / 3; width: 48px; height: 48px; margin: 0; }
+  .hy-tile__plate svg { width: 38px; height: 38px; }
+  .hy-tile__n { grid-column: 2; align-self: end; font-size: 15.5px; }
+  .hy-tile__o { grid-column: 2; align-self: start; margin-top: 1px; font-size: 14.5px; font-weight: 600; letter-spacing: 0; }
+  .hy-tile__arr { position: static; grid-column: 3; grid-row: 1 / 3; }
+  .hy-tile__a:hover, .hy-tile__a:focus-visible { transform: none; box-shadow: none; background: var(--paper); }
+  .hy-tile__a:hover .hy-tile__obj, .hy-tile__a:focus-visible .hy-tile__obj { transform: none; }
+
+  /* ---- trust: four short lines, left-aligned, two to a row ---- */
+  .rd.hy .hy-trust { padding-top: 18px; }
+  .hy-trust__bar li { flex-direction: row; justify-content: flex-start; gap: 8px; padding: 12px; font-size: 13.5px; text-align: left; line-height: 1.3; }
+  .hy-trust__i { width: 18px; height: 18px; }
+
+  /* ---- top picks: a row you swipe, the next card peeking in ---- */
+  .hy-picks {
+    display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none;
+    margin-inline: calc(-1 * var(--gut)); padding: 2px var(--gut) 6px; scroll-padding-inline: var(--gut);
+  }
+  .hy-picks::-webkit-scrollbar { display: none; }
+  .hy-pick { flex: 0 0 84%; scroll-snap-align: start; padding: 20px; }
+  .hy-pick__o { margin-top: 16px; font-size: 19px; }
+  .hy-pick__w { font-size: 14.5px; margin-bottom: 18px; }
+  .rd.hy .rd-sechd { flex-wrap: wrap; align-items: baseline; gap: 6px 16px; }
+
+  /* ---- categories: drawing beside the title, no overhang ---- */
+  .hy-cats-sec { padding-block: 48px; }
+  .hy-cc-grid { margin-top: 22px; gap: 12px; }
+  .hy-cc { display: grid; grid-template-columns: 56px 1fr; column-gap: 14px; padding: 18px 18px 0; }
+  .hy-cc__obj { position: static; grid-row: 1 / 3; width: 56px; height: 56px; align-self: center; }
+  .hy-cc__t { grid-column: 2; align-self: end; font-size: 19px; }
+  .hy-cc__o { grid-column: 2; margin-top: 3px; font-size: 14px; }
+  .hy-cc:not(:has(.hy-cc__o)) .hy-cc__t { grid-row: 1 / 3; align-self: center; }
+  .hy-cc__b, .hy-cc__l, .hy-cc__cta { grid-column: 1 / -1; }
+  .hy-cc__b { margin-top: 12px; font-size: 14.5px; }
+  .hy-cc__l { margin-top: 8px; }
+  .hy-cc__cta { margin: 14px -18px 0; padding: 14px 18px; }
+  .hy-cc:hover { transform: none; box-shadow: none; }
+  .hy-cc:hover .hy-cc__obj { transform: none; }
+
+  /* ---- comparisons: tighter cards ---- */
+  .hy-vs__art { padding: 12px; }
+  .hy-vs__t { font-size: 18px; }
+
+  /* ---- method: smaller drawings on the timeline ---- */
+  .hy-how { padding-block: 48px; }
+  .rd.hy .hy-steps { margin-top: 32px; gap: 30px; }
+  .hy-step__obj { width: 56px; height: 56px; }
+  .rd.hy .hy-step__t { margin-top: 10px; font-size: 19px; }
+  .hy-step__node { top: 22px; }
+
+  /* ---- newsletter: field and button share one row ---- */
+  .rd.hy .rd-news .rd-form { flex-wrap: wrap; }
+  .rd.hy .rd-news .rd-input { flex: 1 1 60%; min-width: 0; }
+  .rd.hy .hy-sec-obj { width: 52px; height: 52px; margin-bottom: 12px; }
+
+  /* ---- partner card ---- */
+  .hy-partner { padding-block: 44px; }
+  .hy-partner__card { padding: 28px 20px; }
+
+  /* ---- footer: link columns two across instead of one long list ---- */
+  .rd.hy .rd-ft .rd-g { grid-template-columns: 1fr 1fr; row-gap: 28px; }
+  .rd.hy .rd-ft .rd-g > .c4 { grid-column: 1 / -1; }
+  .rd.hy .rd-ft .rd-g > .c3, .rd.hy .rd-ft .rd-g > .c2 { grid-column: span 1 !important; }
+  .rd.hy .rd-ft a { padding-block: 0.32rem; font-size: 13.5px; }
+}
