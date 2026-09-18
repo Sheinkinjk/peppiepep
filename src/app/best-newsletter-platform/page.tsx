@@ -358,7 +358,7 @@ export default function BestNewsletterPlatformPage() {
                 <tr>
                   <th className="text-left pb-3 pr-4 text-[11px] font-semibold uppercase tracking-widest text-[#56504a]">Feature</th>
                   {["beehiiv", "Substack", "ConvertKit"].map((col) => (
-                    <th key={col} className="text-left pb-3 pr-4 text-[11px] font-semibold uppercase tracking-widest" style={{ color: col === "beehiiv" ? CYAN_LT : "rgba(255,255,255,0.3)" }}>
+                    <th key={col} className="text-left pb-3 pr-4 text-[11px] font-semibold uppercase tracking-widest" style={{ color: col === "beehiiv" ? CYAN_LT : "#56504a" }}>
                       {col}
                     </th>
                   ))}

@@ -447,56 +447,56 @@ export const seoConfig = {
     keywords: ["cloudtalk discount code", "cloudtalk promo code", "cloudtalk coupon", "cloudtalk referral link", "cloudtalk review", "cloudtalk pricing", "cloudtalk free trial", "business phone system"],
   },
   krispcall: {
-    title: "KrispCall Discount Code 2026: No Code, Free Trial Available",
+    title: "KrispCall Review 2026: Free Trial Available",
     description:
       "Looking for a KrispCall discount code, promo code or referral link? KrispCall is a cloud phone system with virtual numbers and a shared team inbox.",
     url: `${SITE_URL}/krispcall`,
     keywords: ["krispcall discount code", "krispcall promo code", "krispcall coupon", "krispcall referral link", "krispcall review", "krispcall pricing", "virtual phone number", "cloud phone system"],
   },
   dext: {
-    title: "Dext Discount Code 2026: No Code, 14-Day Free Trial",
+    title: "Dext Review 2026: 14-Day Free Trial",
     description:
       "Looking for a Dext discount code, promo code or referral link?",
     url: `${SITE_URL}/dext`,
     keywords: ["dext discount code", "dext promo code", "dext coupon", "dext referral link", "dext review", "dext pricing", "receiptbank dext", "bookkeeping automation software"],
   },
   trainual: {
-    title: "Trainual Discount Code 2026: No Code, 7-Day Free Trial",
+    title: "Trainual Review 2026: 7-Day Free Trial",
     description:
       "Looking for a Trainual discount code, promo code or referral link? Trainual documents processes, onboarding and SOPs in one place.",
     url: `${SITE_URL}/trainual`,
     keywords: ["trainual discount code", "trainual promo code", "trainual coupon", "trainual referral link", "trainual review", "trainual pricing", "employee onboarding software", "sop software"],
   },
   lindy: {
-    title: "Lindy Discount Code 2026: No Code, 7-Day Free Trial",
+    title: "Lindy Review 2026: 7-Day Free Trial",
     description:
       "Looking for a Lindy discount code, promo code or referral link? Lindy is an AI assistant that automates inbox, scheduling and CRM work.",
     url: `${SITE_URL}/lindy`,
     keywords: ["lindy discount code", "lindy ai promo code", "lindy coupon", "lindy referral link", "lindy ai review", "lindy pricing", "ai work assistant", "ai automation tool"],
   },
   elevenlabs: {
-    title: "ElevenLabs Discount Code 2026: No Code, Free 10,000 Credits",
+    title: "ElevenLabs Review 2026: Free 10,000 Credits",
     description:
       "Looking for an ElevenLabs discount code, promo code or referral link? ElevenLabs is an AI voice and text-to-speech platform with voice cloning and dubbing.",
     url: `${SITE_URL}/elevenlabs`,
     keywords: ["elevenlabs discount code", "elevenlabs promo code", "elevenlabs coupon", "elevenlabs referral link", "elevenlabs review", "elevenlabs pricing", "ai voice generator", "text to speech ai"],
   },
   wingAssistant: {
-    title: "Wing Assistant Discount Code 2026: No Code, Free Consult",
+    title: "Wing Assistant Review 2026: Free Consult",
     description:
       "Looking for a Wing Assistant discount code, promo code or referral link?",
     url: `${SITE_URL}/wing-assistant`,
     keywords: ["wing assistant discount code", "wing assistant promo code", "wing assistant referral link", "wing assistant review", "wing assistant pricing", "managed virtual assistant", "virtual assistant service"],
   },
   survicate: {
-    title: "Survicate Discount Code 2026: No Code, Free Plan to Start",
+    title: "Survicate Review 2026: Free Plan to Start",
     description:
       "Looking for a Survicate discount code, promo code or referral link? Survicate runs customer-feedback surveys across web, email and app with AI analysis.",
     url: `${SITE_URL}/survicate`,
     keywords: ["survicate discount code", "survicate promo code", "survicate coupon", "survicate referral link", "survicate review", "survicate pricing", "customer feedback software", "survey tool"],
   },
   nutshell: {
-    title: "Nutshell Discount Code 2026: No Code, 14-Day Free Trial",
+    title: "Nutshell Review 2026: 14-Day Free Trial",
     description:
       "Looking for a Nutshell discount code, promo code or referral link? Nutshell is an easy sales CRM with email marketing built in.",
     url: `${SITE_URL}/nutshell`,
@@ -510,49 +510,49 @@ export const seoConfig = {
     keywords: ["business software comparison", "best crm australia", "best business phone system", "hr payroll software australia", "ai business tools", "small business software 2026"],
   },
   databox: {
-    title: "Databox Discount Code 2026: No Code, Free Plan Available",
+    title: "Databox Review 2026: Free Plan Available",
     description:
       "No Databox coupon exists and nobody holds one. The free plan is permanent (3 data sources, 1 user) and annual billing takes 20% off.",
     url: `${SITE_URL}/databox`,
     keywords: ["databox discount code", "databox coupon", "databox promo code", "databox pricing", "databox free plan", "databox cost australia"],
   },
   pipedrive: {
-    title: "Pipedrive Discount Code 2026: No Code, 14-Day Free Trial",
+    title: "Pipedrive Review 2026: 14-Day Free Trial",
     description:
       "Looking for a Pipedrive discount code, promo code or referral link? Pipedrive is a visual sales CRM with a 14-day free trial, no card, through our link.",
     url: `${SITE_URL}/pipedrive`,
     keywords: ["pipedrive discount code", "pipedrive promo code", "pipedrive coupon", "pipedrive referral link", "pipedrive review", "pipedrive pricing", "visual sales crm", "pipeline crm"],
   },
   activeCampaign: {
-    title: "ActiveCampaign Discount Code 2026: No Code, 14-Day Trial",
+    title: "ActiveCampaign Review 2026: 14-Day Trial",
     description:
       "Looking for an ActiveCampaign discount code, promo code or referral link?",
     url: `${SITE_URL}/activecampaign`,
     keywords: ["activecampaign discount code", "activecampaign promo code", "activecampaign coupon", "activecampaign referral link", "activecampaign review", "activecampaign pricing", "email marketing automation", "marketing automation crm"],
   },
   helloBar: {
-    title: "Hello Bar Discount Code 2026: No Code, Free Plan to Start",
+    title: "Hello Bar Review 2026: Free Plan to Start",
     description:
       "Looking for a Hello Bar discount code or referral link? Hello Bar adds no-code popups and bars to capture emails and lift conversions.",
     url: `${SITE_URL}/hellobar`,
     keywords: ["hello bar discount code", "hellobar referral link", "hello bar review", "hello bar pricing", "website popup tool", "email capture popup", "notification bar"],
   },
   outgrow: {
-    title: "Outgrow Discount Code 2026: No Code, Free Plan Available",
+    title: "Outgrow Review 2026: Free Plan Available",
     description:
       "Looking for an Outgrow discount code or referral link? Outgrow builds no-code calculators, quizzes and assessments that capture qualified leads.",
     url: `${SITE_URL}/outgrow`,
     keywords: ["outgrow discount code", "outgrow referral link", "outgrow review", "outgrow pricing", "interactive content tool", "quiz funnel builder", "lead generation calculator"],
   },
   flexiQuiz: {
-    title: "FlexiQuiz Discount Code 2026: No Code, Free Plan to Start",
+    title: "FlexiQuiz Review 2026: Free Plan to Start",
     description:
       "Looking for a FlexiQuiz discount code or referral link? FlexiQuiz builds online quizzes, tests and assessments with auto-marking and certificates.",
     url: `${SITE_URL}/flexiquiz`,
     keywords: ["flexiquiz discount code", "flexiquiz referral link", "flexiquiz review", "flexiquiz pricing", "online quiz maker", "online test maker", "assessment software"],
   },
   landingi: {
-    title: "Landingi Discount Code 2026: No Code, 14-Day Free Trial",
+    title: "Landingi Review 2026: 14-Day Free Trial",
     description:
       "Looking for a Landingi discount code or referral link?",
     url: `${SITE_URL}/landingi`,
@@ -1075,14 +1075,14 @@ export const seoConfig = {
     keywords: ["best solar battery company australia", "best solar battery company sydney", "solar battery company sydney", "solar battery government rebate sydney", "apollo energy group", "apollo energy group review", "solar battery installer sydney", "home battery australia", "cheaper home batteries program", "battery installer sydney"],
   },
   keap: {
-    title: "Keap Discount Code 2026: No Code, 14-Day Free Trial",
+    title: "Keap Review 2026: 14-Day Free Trial",
     description:
       "Keap is an all-in-one CRM with sales and marketing automation for small businesses: pipeline, email and SMS, and automated follow-up.",
     url: `${SITE_URL}/keap`,
     keywords: ["keap crm","keap pricing","keap referral link","keap review","infusionsoft keap","small business crm automation","sales follow up automation"],
   },
   capsule: {
-    title: "Capsule CRM Discount Code 2026: No Code, Free 250 Contacts",
+    title: "Capsule CRM Review 2026: Free 250 Contacts",
     description:
       "Capsule is a simple CRM for small businesses: contacts, a visual sales pipeline, tasks and email tracking. Free for up to 250 contacts.",
     url: `${SITE_URL}/capsule`,
@@ -1100,21 +1100,21 @@ export const seoConfig = {
     keywords: ["instapage pricing","instapage referral link","instapage review","landing page builder for ads","instapage vs leadpages","ppc landing pages","conversion landing page platform"],
   },
   beautifulai: {
-    title: "Beautiful.ai Discount Code 2026: No Code, Free Trial",
+    title: "Beautiful.ai Review 2026: Free Trial",
     description:
       "Beautiful.ai designs your slides automatically as you build them, with smart templates and an AI deck generator.",
     url: `${SITE_URL}/beautifulai`,
     keywords: ["beautiful.ai pricing","beautiful ai referral link","beautiful.ai review","ai presentation software","ai slide generator","presentation maker ai","beautiful.ai vs canva"],
   },
   pandadoc: {
-    title: "PandaDoc Discount Code 2026: No Code, Free eSign Plan",
+    title: "PandaDoc Review 2026: Free eSign Plan",
     description:
       "PandaDoc automates proposals, quotes and contracts with built-in e-signatures, templates and real-time tracking.",
     url: `${SITE_URL}/pandadoc`,
     keywords: ["pandadoc pricing","pandadoc referral link","pandadoc review","proposal software","e-signature software","contract management","pandadoc free plan"],
   },
   blinq: {
-    title: "Blinq Discount Code 2026: No Code, Free Plan Available",
+    title: "Blinq Review 2026: Free Plan Available",
     description:
       "Blinq is a digital business card you share by QR, link or NFC, and recipients save your details in one tap. See the free plan and pricing via our link.",
     url: `${SITE_URL}/blinq`,
@@ -1552,7 +1552,7 @@ export const seoConfig = {
   },
 
   dense: {
-    title: "Dense Hair Discount Code Australia: No Code, What It Costs",
+    title: "Dense Hair Experts Review 2026: What It Costs",
     description:
       "Looking for a Dense discount code, promo code, or coupon?",
     url: `${SITE_URL}/dense`,
@@ -1612,7 +1612,7 @@ export const seoConfig = {
     // This is the roundup; /moshy-vs-juniper owns the head-to-head. The title and
     // keywords deliberately no longer claim "moshy vs juniper", so the two pages
     // stop competing for the same query.
-    title: "Best Weight Loss Telehealth: Moshy vs Juniper",
+    title: "Best Weight Loss Telehealth Australia 2026: How to Choose",
     description:
       "Moshy and Juniper compared for Australians on eligibility, process and cost. Our link carries REFERRAL120: $120 off a first Moshy order.",
     url: `${SITE_URL}/best-weight-loss-telehealth-australia`,
@@ -1984,7 +1984,7 @@ export const seoConfig = {
     // position 16.1) and /moshy-review (2.03% at 12.7), both rank WORSE than this
     // page and both carry a figure in the title. Testing whether the figure is the
     // cause. Measure on 5 October 2026: CTR at unchanged position is the read.
-    title: "Mosh vs Dense: Script vs Topical, 55% Off Mosh | Refer Labs",
+    title: "Mosh vs Dense 2026: Prescription vs Topical Hair Loss",
     description:
       "One needs a practitioner, one does not. Mosh is prescription telehealth, 55% off a first order with REFERAL55; Dense is a non-prescription topical.",
     url: `${SITE_URL}/mosh-vs-dense`,
@@ -2041,7 +2041,7 @@ export const seoConfig = {
     // short version" became "How Mosh works", "What people actually raise" became
     // "What people raise", and one FAQ question lost "actually". Title and
     // description unchanged.
-    title: "Mosh Review 2026: Is It Legit? Plus 55% Off",
+    title: "Mosh Review 2026: Is It Legit, and Does It Work?",
     description:
       "A real clinical service, and REFERAL55 takes 55% off a first order. What the consult involves, what you pay monthly after, and who it does not suit.",
     url: `${SITE_URL}/mosh-review`,
@@ -2426,7 +2426,7 @@ export const seoConfig = {
   },
 
   goHighLevel: {
-    title: "GoHighLevel Discount Code 2026: No Code, 14-Day Free Trial",
+    title: "GoHighLevel Review 2026: 14-Day Free Trial",
     description:
       "GoHighLevel discount code, referral link and offer: the AI all-in-one CRM, marketing automation and funnels platform. From $97/month, 14-day free trial.",
     url: `${SITE_URL}/gohighlevel`,
@@ -2453,7 +2453,7 @@ export const seoConfig = {
   },
 
   aisdr: {
-    title: "AiSDR Discount Code 2026: No Code, What It Costs",
+    title: "AiSDR Review 2026: What It Costs",
     description:
       "AiSDR discount code, referral link and pricing: the AI SDR that automates B2B outbound across email, LinkedIn and phone, and books meetings. From $250/month.",
     url: `${SITE_URL}/aisdr`,
@@ -2480,7 +2480,7 @@ export const seoConfig = {
   },
 
   replyio: {
-    title: "Reply.io Discount Code 2026: No Code, 14-Day Free Trial",
+    title: "Reply.io Review 2026: 14-Day Free Trial",
     description:
       "Reply.io discount code, referral link and pricing: the AI-first sales engagement platform for multichannel outbound across email, LinkedIn, calls and SMS.",
     url: `${SITE_URL}/replyio`,
@@ -2507,7 +2507,7 @@ export const seoConfig = {
   },
 
   fullenrich: {
-    title: "FullEnrich Discount Code 2026: No Code, 50 Free Credits",
+    title: "FullEnrich Review 2026: 50 Free Credits",
     description:
       "FullEnrich referral link and pricing: waterfall B2B contact enrichment across 15+ sources for verified emails and mobile numbers.",
     url: `${SITE_URL}/fullenrich`,
@@ -2535,7 +2535,7 @@ export const seoConfig = {
   },
 
   brevo: {
-    title: "Brevo Discount Code 2026: No Code, Free Plan Forever",
+    title: "Brevo Review 2026: Free Plan Forever",
     description:
       "Looking for a Brevo discount code, promo code or referral link?",
     url: `${SITE_URL}/brevo`,
@@ -2627,7 +2627,7 @@ export const seoConfig = {
   },
 
   employmentHero: {
-    title: "Employment Hero Discount Code 2026: No Code, Free Demo",
+    title: "Employment Hero Review 2026: Free Demo",
     description:
       "Employment Hero discount code and referral link: the Australian-built all-in-one HR, payroll and employment platform.",
     url: `${SITE_URL}/employmenthero`,
@@ -2684,7 +2684,7 @@ export const seoConfig = {
     // CONFOUND, 13 Sep 2026: the page body changed mid-test when Pilot (retired,
     // now Hims) was removed: one provider card, one table row, one FAQ. The title
     // and description did not change. Read the 5 Oct result with that in mind.
-    title: "Hair Loss Treatment 2026: Mosh 55% Off vs Dense",
+    title: "Best Hair Loss Treatment Australia 2026: How to Choose",
     description:
       "REFERAL55 takes 55% off a first Mosh order. Mosh is prescription telehealth, Dense is a topical range off the shelf. What each route costs here.",
     url: `${SITE_URL}/best-hair-loss-treatment-australia`,

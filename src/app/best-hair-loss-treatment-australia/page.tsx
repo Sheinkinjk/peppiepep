@@ -412,7 +412,7 @@ export default function BestHairLossTreatmentAustraliaPage() {
                 <tr>
                   <th className="text-left pb-3 pr-4 text-[11px] font-semibold uppercase tracking-widest text-[#56504a]">Feature</th>
                   {["Mosh", "Dense", "GP / Specialist"].map((col) => (
-                    <th key={col} className="text-left pb-3 pr-4 text-[11px] font-semibold uppercase tracking-widest" style={{ color: col === "Mosh" ? CYAN_LT : "rgba(255,255,255,0.3)" }}>
+                    <th key={col} className="text-left pb-3 pr-4 text-[11px] font-semibold uppercase tracking-widest" style={{ color: col === "Mosh" ? CYAN_LT : "#56504a" }}>
                       {col}
                     </th>
                   ))}
@@ -430,6 +430,20 @@ export default function BestHairLossTreatmentAustraliaPage() {
               </tbody>
             </table>
           </div>
+        </section>
+
+        {/* "Mosh vs Pilot" still drew about 230 impressions a week at positions 4 to 7
+            after /mosh-vs-pilot was retired into this page on 13 Sep 2026. This
+            answers that search with the one fact that changed. No link: neither
+            Pilot nor Hims is a partner. */}
+        <section id="mosh-vs-pilot" className="border-t border-[#007a95]/10 py-12 sm:py-14">
+          <h2 className="text-xl sm:text-2xl font-black text-[#14120f] mb-4">Mosh vs Pilot: what changed</h2>
+          <p className="max-w-2xl text-[15px] leading-relaxed text-[#56504a]">
+            Pilot, the men&apos;s health telehealth brand most often compared with Mosh, has joined the Hims &amp; Hers
+            group. Its site now says so and sends visitors to a Hims quiz (read on pilot.com.au, 19 September 2026). So a
+            Mosh vs Pilot comparison no longer has a Pilot side: this page compares Mosh with the topical route and with
+            your GP instead. Hims is not one of the services we compare.
+          </p>
         </section>
 
         {/* Disclaimer */}
