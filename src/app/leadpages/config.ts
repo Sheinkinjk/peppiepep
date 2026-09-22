@@ -104,7 +104,7 @@ export const leadpagesConfig: AffiliatePageConfig = {
   faqs: [
     {
       q: "Is there a Leadpages discount code?",
-      a: "Leadpages doesn't rely on a typed code. The current offer is a 7-day free trial, and Leadpages publishes 20% off when you pay annually, applied when you start through the link on this page. Other codes circulating on coupon sites are frequently expired or unofficial; this is the current, verified offer via our link. Offers can change, so treat this as the current new-customer offer.",
+      a: "Leadpages doesn't rely on a typed code. The current offer is a 7-day free trial, and Leadpages publishes 20% off when you pay annually, applied when you start through the link on this page. Offers can change, so treat this as the current new-customer offer.",
     },
     {
       q: "What is Leadpages?",

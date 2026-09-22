@@ -31,8 +31,9 @@ export default function HowWeMakeMoney() {
         <HubObject kind="balance" size={64} className="hy-obj mb-5" />
         <h1 className="text-4xl font-extrabold leading-[1.1] text-[#14120f]">How we make money</h1>
         <p className="mt-4 text-lg leading-relaxed text-[#56504a]">
-          Refer Labs is free to use. We keep the lights on two ways, and we&apos;d rather you know exactly how than wonder.
-          Neither one lets a company buy a better ranking or a softer review.
+          Refer Labs is free to use. Two things pay for it: commissions when you act on a recommendation, and paid
+          work for businesses on the other side of the site. Neither one lets a company buy a better ranking or a
+          softer review.
         </p>
 
         <Section h="Affiliate links">
@@ -40,6 +41,15 @@ export default function HowWeMakeMoney() {
             On most of the site, when you click through to a product we recommend and sign up, the provider may pay us a
             commission. It costs you nothing extra, and sometimes gets you a better deal than going direct. We only earn if
             you act on a recommendation, which is exactly why the recommendation has to be honest to be worth anything.
+          </p>
+        </Section>
+
+        <Section h="Paid work for businesses">
+          <p>
+            The business side of the site sells services: building and running referral and affiliate programs for
+            companies that want one. That is client work, billed to the client, and it is kept apart from everything
+            you read on the consumer side. Being listed, reviewed or compared here is free, and no client can buy it.
+            Where a company we do paid work for also appears in a comparison, the page says so.
           </p>
         </Section>
 

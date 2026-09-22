@@ -130,8 +130,8 @@ export interface Deal {
 export const DEALS: Deal[] = [
   // readOff: the partner landing page our link resolves to, where the offer is
   // visible. Read live on 26 Aug 2026 per src/lib/facts/registry.ts.
-  { brand: "Moshy", logo: "/logos/moshy.png", href: "/moshy", offer: "$120 off your first order", code: "REFERRAL120", category: "Weight loss", featured: true, verified: "2026-08-17", exclusive: true, source: { readOff: "https://www.getmoshy.com.au/start/eligibility-check-moshy" } },
-  { brand: "Mosh", logo: "/logos/mosh-tile.png", href: "/moshhair", offer: "55% off your first order", code: "REFERAL55", category: "Hair loss", featured: true, verified: "2026-08-17", exclusive: true, source: { readOff: "https://www.getmosh.com.au/start/referlabs" } },
+  { brand: "Moshy", logo: "/logos/moshy.png", href: "/moshy", offer: "$120 off your first order", code: "REFERRAL120", category: "Weight loss", featured: true, verified: "2026-09-23", exclusive: true, source: { readOff: "https://www.getmoshy.com.au/start/eligibility-check-moshy" } },
+  { brand: "Mosh", logo: "/logos/mosh-tile.png", href: "/moshhair", offer: "55% off your first order", code: "REFERAL55", category: "Hair loss", featured: true, verified: "2026-09-23", exclusive: true, source: { readOff: "https://www.getmosh.com.au/start/referlabs" } },
   // Read on Apollo's page on 28 Aug 2026: the $500 is current and unchanged,
   // eligibility is the only stated condition, and the offer is not publicly
   // stated anywhere. It applies to applications made through our link.

@@ -127,8 +127,8 @@ export const moshHairConfig: AffiliatePageConfig = {
     {
       heading: "Mosh Codes & Offers",
       paragraphs: [
-        'Searches for "Mosh hair discount code", "Mosh promo code", "Mosh coupon", and "Mosh sale" reflect the number of Australians who want to access Mosh at the best available price before committing to a subscription.',
-        "Mosh's current new-customer offer is 55% off your first order, applied through the code REFERAL55. Other codes circulating on coupon sites are frequently expired or unofficial; this is the current, verified offer via our link. You don't need to hunt for a code or type anything at checkout: start through the link on this page and the offer is carried into the Mosh sign-up page automatically. Offers change over time, so treat 55% as the current new-customer rate, confirmed on Mosh's own sign-up page, rather than a permanent price.",
+        'Searches for "Mosh hair discount code", "Mosh promo code", "Mosh coupon", and "Mosh sale" reflect how many Australians look for a code before committing to a subscription.',
+        "The offer on this page is 55% off your first order, applied through the code REFERAL55, confirmed on the Mosh sign-up page it links to on 23 September 2026. You don't need to hunt for a code or type anything at checkout: start through the link on this page and the offer is carried into the Mosh sign-up page automatically. Mosh also runs its own promotions, which change independently of this one, and lists them on its promotions terms page at getmosh.com.au. Compare the two before you start, and treat 55% as the current rate on this page rather than a permanent price.",
         "If you have been searching for a Mosh hair discount, a Mosh discount Australia, or the best way to get started with Mosh, clicking through this page is the straightforward path.",
       ],
     },
@@ -168,7 +168,7 @@ export const moshHairConfig: AffiliatePageConfig = {
   faqs: [
     {
       q: "What is the current Mosh hair discount code?",
-      a: "Mosh's current new-customer offer is 55% off your first order, applied through the code REFERAL55. You don't need to enter it: every button on this page carries it into the Mosh sign-up page at getmosh.com.au automatically. Other codes circulating on coupon sites are frequently expired or unofficial; this is the current, verified offer. Offers can change, so this reflects the current new-customer discount, confirmed on Mosh's own sign-up page.",
+      a: "The offer on this page is 55% off your first order, applied through the code REFERAL55, confirmed on the Mosh sign-up page it links to on 23 September 2026. You don't need to enter it: every button on this page carries it into the Mosh sign-up page at getmosh.com.au automatically. Mosh runs its own promotions as well, on its own schedule, and publishes them on its promotions terms page. Worth comparing the two before you start, because whichever is larger is the one to use. Offers can change, so this reflects the rate on this page rather than a permanent price.",
     },
     {
       q: "Is the Mosh discount only for your first order?",
