@@ -32,7 +32,8 @@
     "check-answer-slot": "node scripts/check-answer-slot.mjs",
     "verify:deploy": "node scripts/verify-deploy.mjs",
     "check-redirect-order": "node scripts/check-redirect-order.mjs",
-    "reconcile": "node scripts/reconcile-conversions.mjs"
+    "reconcile": "node scripts/reconcile-conversions.mjs",
+    "check-ga4": "node scripts/check-ga4-tag.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.71.2",
