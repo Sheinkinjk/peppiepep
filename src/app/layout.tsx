@@ -1,4 +1,3 @@
-import { Suspense } from "react";
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -12,7 +11,6 @@ import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
 import { OrganizationSchema, WebsiteSchema, SiteNavigationSchema } from "@/components/StructuredData";
 import { GoogleAnalytics, GoogleTagManager, MetaPixel, LinkedInInsight } from "@/components/Analytics";
 import { AffiliateClickTracker } from "@/components/AffiliateClickTracker";
-import { PageViewTracker } from "@/components/PageViewTracker";
 import { AiReferralTracker } from "@/components/AiReferralTracker";
 import { ChromeGate } from "@/components/ChromeGate";
 // Cookieless, consent-independent pageview counting, so real traffic is visible
@@ -93,9 +91,6 @@ export default function RootLayout({
         <LinkedInInsight />
         <Analytics />
         <AffiliateClickTracker />
-        <Suspense fallback={null}>
-          <PageViewTracker />
-        </Suspense>
         <AiReferralTracker />
         <div className="relative z-10 flex min-h-screen flex-col">
           <ChromeGate>

@@ -4,7 +4,11 @@
  *
  *   node scripts/google-data.mjs auth                 one-time browser sign-in
  *   node scripts/google-data.mjs gsc <start> <end> <dim>   rows as JSON (dim: page | query | date | page,query)
- *   node scripts/google-data.mjs ga4 <propertyId> <start> <end>   page views by path and date
+ *   node scripts/google-data.mjs ga4 <start> <end> [report]      report: channel | event | page | landing
+ *
+ * The GA4 property id lives in ~/.config/referlabs/ga4.json so it does not have to be
+ * retyped, and so a reader cannot quietly point at the wrong property. Pass one as the
+ * last argument to override it.
  *
  * Credentials live OUTSIDE the repo in ~/.config/referlabs/ and are never committed:
  *   oauth-client.json   the "claude-local" Desktop OAuth client (Google Auth Platform)
@@ -22,6 +26,7 @@ import { execFile } from "node:child_process";
 const DIR = path.join(os.homedir(), ".config", "referlabs");
 const CLIENT = path.join(DIR, "oauth-client.json");
 const TOKEN = path.join(DIR, "google-token.json");
+const GA4 = path.join(DIR, "ga4.json");
 const SITE = "sc-domain:referlabs.com.au";
 const SCOPES = [
   "https://www.googleapis.com/auth/webmasters.readonly",
@@ -104,24 +109,54 @@ async function sites() {
   return r.json();
 }
 
-async function ga4(property, start, end) {
+/**
+ * GA4 reports. `newUsers` is the metric the operator watches, and it is NOT the same as
+ * totalUsers: GA4 counts a user as new the first time it sees their client id, so a
+ * consent-denied visitor is invisible here however many times they come back. On this
+ * property analytics_storage defaults to denied until the banner is accepted, so every
+ * figure below is consented traffic only, a subset of real visitors.
+ */
+const REPORTS = {
+  channel: { dims: ["date", "sessionDefaultChannelGroup"], mets: ["newUsers", "totalUsers", "sessions", "screenPageViews"] },
+  event:   { dims: ["date", "eventName"],                  mets: ["eventCount"] },
+  page:    { dims: ["pagePath"],                           mets: ["screenPageViews", "sessions", "newUsers"] },
+  landing: { dims: ["landingPage"],                        mets: ["sessions", "newUsers", "screenPageViews"] },
+};
+
+function propertyId(override) {
+  if (override) return override;
+  if (fs.existsSync(GA4)) return JSON.parse(fs.readFileSync(GA4, "utf8")).propertyId;
+  throw new Error(`No property id. Pass one, or write {"propertyId":"..."} to ${GA4}`);
+}
+
+async function ga4(start, end, report = "channel", property) {
+  const spec = REPORTS[report];
+  if (!spec) throw new Error(`Unknown report "${report}". One of: ${Object.keys(REPORTS).join(", ")}`);
   const token = await accessToken();
-  const r = await fetch(`https://analyticsdata.googleapis.com/v1beta/properties/${property}:runReport`, {
+  const r = await fetch(`https://analyticsdata.googleapis.com/v1beta/properties/${propertyId(property)}:runReport`, {
     method: "POST",
     headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
     body: JSON.stringify({
       dateRanges: [{ startDate: start, endDate: end }],
-      dimensions: [{ name: "date" }, { name: "sessionDefaultChannelGroup" }],
-      metrics: [{ name: "screenPageViews" }, { name: "sessions" }, { name: "totalUsers" }],
+      dimensions: spec.dims.map((name) => ({ name })),
+      metrics: spec.mets.map((name) => ({ name })),
       limit: 100000,
     }),
   });
-  return r.json();
+  const j = await r.json();
+  if (j.error) throw new Error(JSON.stringify(j.error));
+  // Flatten to plain rows so callers do not have to walk dimensionValues/metricValues.
+  return (j.rows ?? []).map((row) => {
+    const o = {};
+    spec.dims.forEach((d, i) => (o[d] = row.dimensionValues[i].value));
+    spec.mets.forEach((m, i) => (o[m] = Number(row.metricValues[i].value)));
+    return o;
+  });
 }
 
 const [cmd, ...a] = process.argv.slice(2);
 if (cmd === "auth") await auth();
 else if (cmd === "sites") console.log(JSON.stringify(await sites(), null, 1));
 else if (cmd === "gsc") console.log(JSON.stringify(await gsc(a[0], a[1], a[2] ?? "page", a[3])));
-else if (cmd === "ga4") console.log(JSON.stringify(await ga4(a[0], a[1], a[2])));
-else console.log("usage: auth | sites | gsc <start> <end> <dims> [site] | ga4 <propertyId> <start> <end>");
+else if (cmd === "ga4") console.log(JSON.stringify(await ga4(a[0], a[1], a[2], a[3])));
+else console.log("usage: auth | sites | gsc <start> <end> <dims> [site] | ga4 <start> <end> [channel|event|page|landing] [propertyId]");

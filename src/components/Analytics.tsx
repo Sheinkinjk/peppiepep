@@ -70,6 +70,18 @@ export function GoogleAnalytics() {
           var __dbg = false;
           try { __dbg = new URLSearchParams(window.location.search).get('ga_debug') === '1'; } catch (e) {}
 
+          /* Client-side navigation page_views come from GA4 enhanced measurement
+             ("Page changes based on browser history events", Admin > Data streams >
+             Enhanced measurement). This app used to ALSO send its own page_view on
+             every route change, from components/PageViewTracker.tsx. Both fired, so
+             every client-side navigation was counted twice: a browser test on the
+             live site on 22 Sep 2026 recorded two page_view hits for one click.
+             Pageviews and pages-per-session were inflated for as long as both ran;
+             users and sessions were not. The tracker was removed rather than the
+             GA4 setting, because the setting is the one Google supports and the one
+             that was already working. If that toggle is ever switched off, client-side
+             navigations stop being recorded: turn it back on, do not re-add a second
+             sender here. Verify with the browser test, not by reading this file. */
           gtag('config', '${measurementId}', {
             send_page_view: true,
             debug_mode: __dbg

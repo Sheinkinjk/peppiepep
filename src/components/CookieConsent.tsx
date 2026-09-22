@@ -68,6 +68,23 @@ export function CookieConsent() {
         ad_user_data: prefs.marketing ? "granted" : "denied",
         ad_personalization: prefs.marketing ? "granted" : "denied",
       });
+
+      // Re-send the page_view for the page they are standing on. The first one went
+      // out before they answered, so it carried consent denied (gcs=G100) and GA4
+      // drops those from reports on a property this size, which has no behavioural
+      // modelling. Without this, the entry page of every consenting visit is missing
+      // from GA4, and a visitor who accepts and leaves before user_engagement fires
+      // is never counted at all. Measured on the live site on 22 Sep 2026: GA4 saw
+      // 20% to 40% of the Google clicks Search Console reported.
+      // This is not double counting. The denied hit was never in the reports, so the
+      // page ends up with exactly one counted page_view. Only on a grant: re-sending
+      // after "Necessary only" would send a hit the visitor just refused.
+      if (prefs.analytics) {
+        gtag("event", "page_view", {
+          page_location: window.location.href,
+          page_title: document.title,
+        });
+      }
     }
 
     setShowBanner(false);
