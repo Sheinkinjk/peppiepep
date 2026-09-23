@@ -320,4 +320,18 @@ export interface PendingClaim {
  * person read it off a public page, and /data must not publish it as a check.
  * The pages and surfaces making the claim are unchanged.
  */
-export const PENDING_VERIFICATION: PendingClaim[] = [];
+export const PENDING_VERIFICATION: PendingClaim[] = [
+  {
+    id: 'juniper-jarredkfc-value-2026-09-23',
+    subject: 'Juniper',
+    claim:
+      'The code JARREDKFC is worth $89 at checkout and waives the initial Juniper consultation, making it larger than the $50 Juniper promotes itself.',
+    source:
+      "Jarred, 23 Sep 2026. NOT published on any Juniper page found. Checked that day: myjuniper.com rendered in a browser with the code in the query string still shows only the banner 'Save $50 with code START50'; Juniper's Bundle & Save terms on help.myjuniper.com describe START50 as $50 off the first month and name a $249 initial payment; Juniper's Discount Terms article names no code values and states codes cannot be combined with other offers; a help-centre search for '89' returns nothing. The claim also contradicts the note beside JUNIPER_URL in affiliate-links.ts, recorded in July 2026, which states JARREDKFC gives the customer NO discount and that Juniper must therefore never carry an '$X off' offer under ACL s29. One of the two is out of date; the code itself is unchanged in the URL.",
+    loggedAt: '2026-09-23',
+    pages: [],
+    otherSurfaces: [],
+    owner:
+      "Jarred, with Juniper. Settled by either a checkout showing the code applied and what it deducts, or Juniper confirming in writing the code's value, whether it waives the initial consultation, and whether publishing it on a comparison site with a deals page is permitted under the Hims partner terms. Publish nothing until then: an unverified '$89 off' on a money page is the same misrepresentation removed from /moshhair on 23 Sep 2026.",
+  },
+];
