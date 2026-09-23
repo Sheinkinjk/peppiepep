@@ -75,7 +75,7 @@ export async function POST(request: NextRequest) {
     // Failure here never blocks the subscription; the Resend path below is
     // unchanged and still runs.
     const sourcePath = typeof body?.source_path === "string" ? body.source_path.slice(0, 200) : undefined;
-    await recordSubscriber(email, { source, sourcePath, hub: hubForPath(sourcePath) });
+    const stored = await recordSubscriber(email, { source, sourcePath, hub: hubForPath(sourcePath) });
 
     const apiKey = process.env.RESEND_API_KEY?.trim();
 
@@ -107,13 +107,44 @@ export async function POST(request: NextRequest) {
         } catch (err) {
           logger.error("welcome email failed", { error: err });
         }
-        // Fallback capture so a lead is never lost even without an Audience configured.
-        if (!added) {
-          await sendAdminNotification({
-            subject: interest ? `New deal-alert signup: ${interest}` : `New subscriber: ${email}`,
-            html: `<p>New ${interest ? "deal-alert" : "newsletter"} subscriber</p><p><strong>Email:</strong> ${escapeHtml(email)}</p><p><strong>Source:</strong> ${escapeHtml(source) || "unknown"}</p>${interest ? `<p><strong>Wants alerts about:</strong> ${escapeHtml(interest)}</p>` : ""}<p>Note: RESEND_AUDIENCE_ID is not set in Production, so add this contact to your list manually or configure an Audience.</p>`,
-          }).catch((err) => logger.error("admin notify failed", { error: err }));
-        }
+        /*
+         * Tell the operator about EVERY subscriber, not only the ones the Audience
+         * add failed on.
+         *
+         * This used to sit behind `if (!added)`. RESEND_AUDIENCE_ID *is* set in
+         * Production, so `added` was true every time and the notification never
+         * fired once. The operator reported "the newsletter is not sending
+         * automated emails on a new subscription" on 24 Sep 2026 and was right:
+         * the subscriber got their welcome email and nobody told him it had
+         * happened. The note this used to print, saying the Audience was not
+         * configured, was also false.
+         *
+         * It now also reports where the subscriber was actually stored, because
+         * that is the part that can fail silently. On 24 Sep 2026 every insert was
+         * failing with "TypeError: fetch failed": the Supabase project
+         * uzjecvufsabxbqxnebba returns NXDOMAIN, so the list exists only in Resend
+         * and the database copy is being lost. A log line nobody reads is not a
+         * warning; an email is.
+         */
+        const where = [
+          added ? "added to the Resend Audience" : "NOT added to the Resend Audience",
+          stored.stored
+            ? stored.alreadyPresent
+              ? "already in the database"
+              : "saved to the database"
+            : `NOT saved to the database (${escapeHtml(stored.error)})`,
+        ];
+        await sendAdminNotification({
+          subject: interest ? `New deal-alert signup: ${interest}` : `New subscriber: ${email}`,
+          html:
+            `<p>New ${interest ? "deal-alert" : "newsletter"} subscriber</p>` +
+            `<p><strong>Email:</strong> ${escapeHtml(email)}</p>` +
+            `<p><strong>Source:</strong> ${escapeHtml(source) || "unknown"}</p>` +
+            (sourcePath ? `<p><strong>Page:</strong> ${escapeHtml(sourcePath)}</p>` : "") +
+            (interest ? `<p><strong>Wants alerts about:</strong> ${escapeHtml(interest)}</p>` : "") +
+            `<p><strong>Stored:</strong> ${where.join("; ")}.</p>` +
+            (stored.stored ? "" : "<p>The database write failed, so this address exists only in Resend. If that keeps happening, the Supabase project is unreachable and needs attention.</p>"),
+        }).catch((err) => logger.error("admin notify failed", { error: err }));
       });
     } else {
       logger.error("RESEND_API_KEY not configured, subscriber not captured", { email });
