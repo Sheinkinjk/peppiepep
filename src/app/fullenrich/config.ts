@@ -44,7 +44,7 @@ export const fullenrichConfig: AffiliatePageConfig = {
     h1Prefix: "FullEnrich:",
     h1Highlight: "waterfall enrichment for verified emails and mobile numbers",
     subheading:
-      "Considering FullEnrich to fix patchy contact data and want to know how waterfall enrichment works, who it suits, and what it costs before you start? This page covers the essentials and takes you directly to FullEnrich to see it for yourself.",
+      "FullEnrich runs waterfall enrichment: rather than trusting one data provider, it queries fifteen or more in sequence until it finds a verified email and, more usefully, a mobile number. It suits an outbound team whose lists are patchy. The trial gives 50 credits with no card.",
     trustBullets: [
       "Direct access to FullEnrich",
       "Covers what FullEnrich does, who it suits, and pricing",
@@ -58,7 +58,7 @@ export const fullenrichConfig: AffiliatePageConfig = {
     {
       heading: "Access FullEnrich",
       paragraphs: [
-        "Choosing a contact-data tool usually turns on a few questions, and this covers each for FullEnrich: what it does, how waterfall enrichment digs out emails and mobile numbers, and how it drops into a HubSpot, Clay or CSV workflow. Rather than hunting the specifics across review roundups, it covers the essentials and takes you straight to FullEnrich to try it yourself.",
+        "FullEnrich charges per credit, and a credit is only spent when it finds something, which is the difference that matters when you are comparing it with a flat-rate database. It drops into HubSpot, Clay or a CSV workflow.",
         "Any button opens FullEnrich directly, with nothing to complete on this page first.",
       ],
       hasCta: true,

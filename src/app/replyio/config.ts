@@ -44,7 +44,7 @@ export const replyioConfig: AffiliatePageConfig = {
     h1Prefix: "Reply.io:",
     h1Highlight: "the AI sales engagement platform for multichannel outbound",
     subheading:
-      "Weighing up Reply.io for sales outreach and want to know what it does, who it suits, and how it compares before you start? This page covers the essentials and takes you directly to Reply.io to see it for yourself.",
+      "Reply.io runs multichannel outbound across email, LinkedIn, calls and SMS, with AI agents that write and personalise the messages and a B2B database behind them. It suits a team already doing outbound that wants the sequencing handled. 14-day trial, no card.",
     trustBullets: [
       "Direct access to Reply.io",
       "Covers what Reply.io does, who it suits, and pricing",

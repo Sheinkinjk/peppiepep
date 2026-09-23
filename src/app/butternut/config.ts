@@ -38,7 +38,7 @@ export const butternutConfig: AffiliatePageConfig = {
     h1Prefix: "Butternut AI:",
     h1Highlight: "Build a Website in 20 Seconds With AI",
     subheading:
-      "Looking for a Butternut AI discount code, Butternut AI review, or how Butternut compares to Durable, Wix, or Squarespace? This page covers Butternut AI pricing, features, and alternatives, and takes you directly to the platform.",
+      "Butternut AI writes a full multi-page website from a single text prompt in about twenty seconds, free to try without an account. It suits a small business that would rather react to a complete draft than start from a blank page.",
     trustBullets: [
       "Direct access to Butternut AI via our referral link",
       "Covers Butternut AI pricing, free plan, and paid tiers",

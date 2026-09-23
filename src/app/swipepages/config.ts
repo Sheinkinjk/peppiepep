@@ -38,7 +38,7 @@ export const swipePagesConfig: AffiliatePageConfig = {
     h1Prefix: "Swipe Pages:",
     h1Highlight: "The Fastest Landing Page Builder for Paid Ads",
     subheading:
-      "Looking for a Swipe Pages discount code, Swipe Pages review, or how Swipe Pages compares to Unbounce, Leadpages, or Instapage? This page covers Swipe Pages pricing, features, and alternatives, and takes you directly to the platform.",
+      "Swipe Pages builds AMP landing pages that load in under a second, with A/B testing and dynamic text replacement. Speed is the point: on paid traffic a slow page loses the click before anyone reads it. The trial runs 14 days.",
     trustBullets: [
       "Direct access to Swipe Pages via our referral link",
       "Covers Swipe Pages pricing, free trial, and plan tiers",

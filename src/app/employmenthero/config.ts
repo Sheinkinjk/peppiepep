@@ -44,7 +44,7 @@ export const employmentHeroConfig: AffiliatePageConfig = {
     h1Prefix: "Employment Hero (Australia):",
     h1Highlight: "all-in-one HR, payroll and compliance for Australian SMEs",
     subheading:
-      "Looking at HR software or payroll software for your Australian business and want to know what Employment Hero does, who it suits, and how pricing works before you enquire? This page covers the essentials and takes you directly to Employment Hero.",
+      "Employment Hero is Australian-built and combines HR, ATO-certified Single Touch Payroll, recruitment and employee benefits in one platform. It suits an Australian employer running payroll and HR in separate systems. Pricing is by quote and the demo is free.",
     trustBullets: [
       "Direct access to Employment Hero",
       "Covers what the platform does and who it suits",

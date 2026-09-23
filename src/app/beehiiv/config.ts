@@ -38,7 +38,7 @@ export const beehiivConfig: AffiliatePageConfig = {
     h1Prefix: "beehiiv:",
     h1Highlight: "The Newsletter Platform Built for Growth",
     subheading:
-      "Looking for a beehiiv discount, beehiiv vs Substack comparison, or the current beehiiv free trial offer? This page covers everything and takes you directly to beehiiv to claim the 14-day trial.",
+      "beehiiv is free up to 2,500 subscribers and includes an ad network, a referral programme, a website and paid subscriptions. That mix suits a writer who intends to earn from the list rather than only send to it.",
     trustBullets: [
       "Access the current beehiiv 14-day free trial offer",
       "Covers beehiiv pricing, free plan, and paid tiers",
@@ -52,7 +52,7 @@ export const beehiivConfig: AffiliatePageConfig = {
     {
       heading: "Access the beehiiv 14-Day Trial",
       paragraphs: [
-        "This page is built for people searching for a beehiiv discount, the current beehiiv free trial, or how beehiiv compares to Substack, ConvertKit, or Mailchimp before signing up. Our link gives you direct access to beehiiv's 14-day trial offer, which lets you test the full platform before committing to a paid plan.",
+        "beehiiv publishes no discount code. Our link gives you direct access to beehiiv's 14-day trial offer, which lets you test the full platform before committing to a paid plan.",
         "Click any button on this page to be taken directly to beehiiv. The trial is applied automatically through our referral link.",
       ],
       hasCta: true,

@@ -38,7 +38,7 @@ export const durableAiConfig: AffiliatePageConfig = {
     h1Prefix: "Durable AI:",
     h1Highlight: "Build a Business Website With AI in 30 Seconds",
     subheading:
-      "Looking for a Durable AI discount, Durable AI review, or how Durable compares to Wix, Squarespace, or other AI website builders? This page covers everything and takes you directly to the Durable platform.",
+      "Durable AI generates a working business website in about thirty seconds and ships with a CRM, invoicing and Google Business integration. It suits a service business or solo operator who needs the admin around the site as much as the site.",
     trustBullets: [
       "Direct access to Durable AI via our referral link",
       "Covers Durable AI pricing, free trial, and plans",
@@ -52,7 +52,7 @@ export const durableAiConfig: AffiliatePageConfig = {
     {
       heading: "Access Durable AI",
       paragraphs: [
-        "This page is built for people searching for a Durable AI discount code, Durable AI review, or how Durable compares to other website builders before signing up. Click any button on this page to be taken directly to the Durable platform via our referral link.",
+        "Durable publishes no discount code. What it does offer is a full site generated in about thirty seconds, free to look at before you pay, so you can judge the output rather than the pitch.",
         "No information is required on this page. Click through to Durable, generate your website in 30 seconds, and explore the platform before committing to a plan.",
       ],
       hasCta: true,

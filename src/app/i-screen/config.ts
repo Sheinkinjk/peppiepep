@@ -73,7 +73,7 @@ export const iScreenConfig: AffiliatePageConfig = {
     // for a different one sends Google to the wrong page of ours.
     h1Prefix: "i-screen discount code Australia:",
     h1Highlight: `${money(DISCOUNT_AUD)} off your first test`,
-    subheading: `The code ${I_SCREEN_CODE} takes ${money(DISCOUNT_AUD)} off a first i-screen test, entered at checkout. This page prices the catalogue, says what that discount is actually worth at each end of it, and covers the thing i-screen does not lead with: none of its services are Medicare-rebatable.`,
+    subheading: `The code ${I_SCREEN_CODE} takes ${money(DISCOUNT_AUD)} off your first i-screen test, entered at checkout. i-screen sells pathology directly, with no GP referral, from ${money(low.price)} for a single marker to ${money(high.price)} for its largest panel. The part worth knowing before you order: none of it is Medicare-rebatable, while a test your GP considers necessary is frequently bulk billed.`,
     trustBullets: [
       "What the tests cost, read off i-screen's own catalogue",
       "What $20 off is worth on a $39 test and on a $1,099 panel",
@@ -104,7 +104,7 @@ export const iScreenConfig: AffiliatePageConfig = {
       paragraphs: [
         `A slice of the catalogue rather than all of it, chosen to show the range. i-screen lists ${ACCESS.catalogueSize} tests in total. Read on ${readOnLabel}.`,
         TESTS.map((t) => `${t.name}, ${money(t.price)}, ${t.markers} marker${t.markers === 1 ? "" : "s"}`).join("; ") + ".",
-        `That is a spread of about ${spread()} inside one provider, so "an i-screen test" is not one price and the brand name alone tells you nothing about what you will pay.`,
+        `So the test you choose decides the cost far more than the provider does: there is about ${spread()} between the cheapest and the dearest on that list.`,
       ],
     },
     {

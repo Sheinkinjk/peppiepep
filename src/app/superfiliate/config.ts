@@ -46,7 +46,7 @@ export const superfiliateConfig: AffiliatePageConfig = {
     h1Prefix: "Superfiliate discount:",
     h1Highlight: "15% off the monthly fee on the creator-led platform",
     subheading:
-      "Running a brand and considering Superfiliate to power affiliate, referral and creator programs? This page covers what it does, who it suits, and how to get pricing, then takes you directly to Superfiliate.",
+      "Superfiliate runs affiliate, referral and creator programs for e-commerce brands in one place, giving each creator their own landing page rather than a bare link. New subscribers get 15% off the monthly SaaS fee through the link on this page.",
     trustBullets: [
       "Direct access to Superfiliate",
       "Covers what Superfiliate does and who it suits",

@@ -25,10 +25,10 @@ const brand: RetailerBrand = {
   tagline: "one brand, and a four-fold spread in price",
   lead: (
     <>
-      Technogym publishes its Australian prices, and they run from {money(low.price)} for the{" "}
-      {low.name.replace("Technogym ", "")} to {money(high.price)} for the {high.name.replace("Technogym ", "")}, a
-      spread of about {spread()} across a single brand. Read on {readOnLabel}. Treating &ldquo;a Technogym&rdquo; as
-      one price point is the quickest way to compare the wrong two things.
+      Technogym publishes Australian dollar prices for its home equipment, so you can compare before you enquire.
+      They run from {money(low.price)} for the {low.name.replace("Technogym ", "")} to {money(high.price)} for the{" "}
+      {high.name.replace("Technogym ", "")}, read on {readOnLabel}. The machine you pick decides the cost far more
+      than the brand does: the dearest is about {spread()} the price of the cheapest.
     </>
   ),
   facts: PRODUCTS.map((p) => ({

@@ -242,7 +242,7 @@ export default function HowToStartAffiliateMarketingAustraliaPage() {
           <p className="mt-5 text-lg leading-relaxed text-[#14120f]">
             Affiliate marketing is one of the most accessible ways for Australians to build an online income. No product
             to make, no inventory, no customer service. You recommend things you rate, and you earn a cut when people
-            buy through your link. It is not a get-rich-quick scheme, it is a real asset that takes months to build and
+            buy through your link. It takes months to build and
             then keeps working. This is the step-by-step path, start to first traffic.
           </p>
           <p className="mt-8 rounded-xl border border-[#ded8cd] bg-[#f7f4ee] px-5 py-4 text-xs leading-relaxed text-[#56504a]">

@@ -44,7 +44,7 @@ export const goHighLevelConfig: AffiliatePageConfig = {
     h1Prefix: "GoHighLevel:",
     h1Highlight: "the all-in-one platform agencies use to replace their stack",
     subheading:
-      "Looking at GoHighLevel for your agency or business and want to know what it does, who it suits, and what it costs before you start the free trial? This page covers the essentials and takes you directly to GoHighLevel to try it for yourself.",
+      "GoHighLevel bundles a CRM, funnels, landing pages, marketing automation and reputation management into one platform, built mainly for agencies that resell it to their own clients. The 14-day trial needs no card.",
     trustBullets: [
       "Direct access to the GoHighLevel free trial",
       "Covers what GoHighLevel is, who it suits, and pricing",

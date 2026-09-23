@@ -49,7 +49,7 @@ export const leadpagesConfig: AffiliatePageConfig = {
     h1Prefix: "Leadpages discount:",
     h1Highlight: "20% off annual billing on the landing-page builder",
     subheading:
-      "Considering Leadpages for landing pages and lead generation and want to know what it does, who it suits, and how pricing works before you start? This page covers the essentials and takes you directly to Leadpages.",
+      "Leadpages builds landing pages from templates, with A/B testing, pop-ups and form capture, then connects to your email tool or CRM. It suits someone running campaigns who needs pages faster than a developer can build them. Seven-day trial, and 20% off if you pay annually.",
     trustBullets: [
       "Direct access to Leadpages",
       "Covers what Leadpages does, who it suits, and pricing",

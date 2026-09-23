@@ -54,7 +54,7 @@ export const denseConfig: AffiliatePageConfig = {
       heading: "Current Offer",
       paragraphs: [
         "This page is built for people searching for a Dense discount code, Dense promo code, Dense Hair Experts code, or a Dense coupon in Australia. Instead of chasing a generic code that has often already expired, our affiliate link takes you straight to the Dense Hair Experts store with the current offer applied through our referral path.",
-        "The button below takes you directly to the Dense Hair Experts website. No code needs to be entered on this page and no additional steps are required before you land on their store.",
+        "The button below opens the Dense Hair Experts store with the referral already applied. There is no code to type.",
       ],
       hasCta: true,
       ctaText: "Access the Dense Referral Link",
@@ -74,7 +74,7 @@ export const denseConfig: AffiliatePageConfig = {
       paragraphs: [
         'Search traffic for terms like "Dense discount code", "Dense promo code", "Dense Hair Experts code", "Dense coupon", and "Dense sale" reflects the growing number of Australians looking to purchase Dense products and wanting to find the best available deal before completing their order.',
         "Dense does not always publish a widely circulated promotional code. The most reliable way to access a current Dense offer or discounted rate is through an affiliate referral link - which is exactly what this page provides. If you have been searching for a Dense hair discount, a Dense offer Australia, or simply the best way to place your first Dense order, clicking through this page is the recommended path.",
-        "Our link takes you directly to the Dense Hair Experts store with our affiliate referral applied at the link level. No manual code entry is required.",
+        "The referral is carried by the link itself, so nothing needs entering at checkout.",
       ],
     },
   ],

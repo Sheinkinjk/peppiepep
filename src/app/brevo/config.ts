@@ -44,7 +44,7 @@ export const brevoConfig: AffiliatePageConfig = {
     h1Prefix: "Brevo:",
     h1Highlight: "the all-in-one email, automation and CRM platform",
     subheading:
-      "Weighing up Brevo for email marketing and want to know what it includes, who it suits, and how its pricing works before you start? This page covers the essentials and takes you directly to Brevo to see it yourself.",
+      "Brevo, formerly Sendinblue, puts email, SMS and WhatsApp campaigns, automation, a sales CRM and transactional email in one tool. Its free plan has no card and no expiry, which makes it a common starting point for a small business running three tools that could be one.",
     trustBullets: [
       "Direct access to Brevo",
       "Covers what Brevo does, who it suits, and how pricing works",

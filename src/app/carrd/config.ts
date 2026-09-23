@@ -41,7 +41,7 @@ export const carrdConfig: AffiliatePageConfig = {
     h1Prefix: "Carrd:",
     h1Highlight: "The Simple Website Builder That Works",
     subheading:
-      "Looking for a Carrd discount code, Carrd Pro review, or how Carrd compares to alternatives like Squarespace or Webflow? This page covers everything and takes you directly to Carrd to get started.",
+      "Carrd builds one-page sites: a portfolio, a link-in-bio, a simple landing page. The free plan is permanent and Pro starts at US$19 a year, so it is usually the cheapest way to get something live within the hour.",
     trustBullets: [
       "Direct access to the Carrd sign-up page",
       "Covers Carrd pricing, free plan, and Pro tiers",
@@ -54,8 +54,8 @@ export const carrdConfig: AffiliatePageConfig = {
     {
       heading: "Access Carrd",
       paragraphs: [
-        "This page is built for people searching for a Carrd discount code, Carrd Pro pricing, or how Carrd compares to alternatives before signing up. Instead of comparing a dozen review pages, it covers what matters and takes you directly to Carrd to explore for yourself.",
-        "Each button here opens Carrd directly; there is nothing to fill in before you arrive.",
+        "Carrd has no discount code, and it does not need one: the free plan is permanent and Pro is US$19 a year, which is less than most builders charge in a month. The buttons here open Carrd with nothing to fill in first.",
+        "Start on the free plan and upgrade later if you want a custom domain or forms. Nothing is lost by beginning there.",
       ],
       hasCta: true,
       ctaText: "Try Carrd",
