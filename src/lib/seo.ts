@@ -1063,11 +1063,11 @@ export const seoConfig = {
     // (Search Console, 21 Aug to 17 Sep 2026), mostly for brands we do not
     // cover (Vush, KIC, RespectHealth): Google was filing it as a coupon
     // directory. Every code here is read off the provider's own page and dated.
-    title: "Moshy, Mosh, Knose & PetsOnMe Discount Codes, Dated",
+    title: "Moshy, Mosh, Juniper, Knose & PetsOnMe Discount Codes",
     description:
-      "Verified Australian discount codes, each dated from the provider's own page: Moshy REFERRAL120 for $120 off, Mosh REFERAL55 for 55% off, Knose and PetsOnMe.",
+      "Verified Australian discount codes, each dated: Moshy REFERRAL120 for $120 off, Mosh REFERAL55 for 55% off, Juniper JARREDKFC for a waived $89 consultation, Knose and PetsOnMe.",
     url: `${SITE_URL}/deals`,
-    keywords: ["discount codes australia", "verified discount codes australia", "promo codes australia", "deals australia", "refer labs deals", "moshy discount code", "mosh discount code", "australian coupon codes"],
+    keywords: ["discount codes australia", "verified discount codes australia", "promo codes australia", "deals australia", "refer labs deals", "moshy discount code", "mosh discount code", "juniper discount code", "australian coupon codes"],
   },
   apolloEnergy: {
     title: "Apollo Energy Group: $500 Off a Home Battery | Refer Labs",
