@@ -1063,9 +1063,9 @@ export const seoConfig = {
     // (Search Console, 21 Aug to 17 Sep 2026), mostly for brands we do not
     // cover (Vush, KIC, RespectHealth): Google was filing it as a coupon
     // directory. Every code here is read off the provider's own page and dated.
-    title: "Moshy, Mosh, Juniper, Knose & PetsOnMe Discount Codes",
+    title: "Discount Codes: Moshy, Mosh, Juniper, i-screen, Knose",
     description:
-      "Verified Australian discount codes, each dated: Moshy REFERRAL120 for $120 off, Mosh REFERAL55 for 55% off, Juniper JARREDKFC for a waived $89 consultation, Knose and PetsOnMe.",
+      "Verified Australian discount codes, each dated: Moshy REFERRAL120 for $120 off, Mosh REFERAL55 for 55% off, Juniper JARREDKFC for a waived $89 consultation, i-screen referlabs for $20 off, Knose and PetsOnMe.",
     url: `${SITE_URL}/deals`,
     keywords: ["discount codes australia", "verified discount codes australia", "promo codes australia", "deals australia", "refer labs deals", "moshy discount code", "mosh discount code", "juniper discount code", "australian coupon codes"],
   },
