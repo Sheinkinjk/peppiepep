@@ -37,10 +37,23 @@ export const DENSE_URL =
   "https://densehairexperts.myshopify.com?sca_ref=10755034.xwTupm6fuv&utm_source=affiliate-jarred-krowitz&utm_medium=affiliate-jarred-krowitz&utm_campaign=affiliate";
 
 // ── Weight-loss: Juniper (affiliate partner from July 2026) ──────────────────
-// Commission-only tracking link. The code JARREDKFC gives the customer NO
-// discount, so Juniper must never be presented with an "$X off" offer (ACL s29).
+// JARREDKFC waives the initial Juniper consultation, which Juniper values at $89,
+// so a new patient pays $0 to be assessed. Confirmed by Jarred from the Juniper
+// affiliate handbook, 23 September 2026.
+//
+// It takes NOTHING off the treatment itself, which is what the original note here
+// meant when it said the code gives no discount. The two are not in conflict, and
+// the distinction is the ACL s29 one: state the object of the discount every time
+// the offer appears. Write "the initial consultation, valued at $89, is waived".
+// Never "$89 off", which would claim money off the program. Same trap as PetsOnMe,
+// where REFERLABS discounts pet care services and not the premium.
+//
+// Juniper promotes START50 on its own site, $50 off the first month, and its own
+// terms say codes cannot be combined, so a reader picks one. Ours is the larger of
+// the two by Juniper's own valuation; show both figures rather than asserting it.
+//
 // myjuniper.com is the live site; myjuniper.com.au is a parked domain.
-// Confirmed tracking URL supplied by Jarred (July 2026).
+export const JUNIPER_CODE = "JARREDKFC";
 export const JUNIPER_URL =
   "https://www.myjuniper.com/?utm_source=affiliate&utm_campaign=jarred_k&discountCode=JARREDKFC";
 

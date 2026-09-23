@@ -320,18 +320,24 @@ export interface PendingClaim {
  * person read it off a public page, and /data must not publish it as a check.
  * The pages and surfaces making the claim are unchanged.
  */
-export const PENDING_VERIFICATION: PendingClaim[] = [
-  {
-    id: 'juniper-jarredkfc-value-2026-09-23',
-    subject: 'Juniper',
-    claim:
-      'The code JARREDKFC waives the initial Juniper consultation, valued at $89, so a new patient pays $0 to be assessed. Juniper promotes $50 off the first month via START50 on its own site.',
-    source:
-      "Jarred, 23 Sep 2026. The SUBSTANCE is already confirmed and published: 'Juniper gives new patients a free first consultation' was confirmed by Jarred with Juniper on 14 Sep 2026 (see the resolved note above). Two things are not: the $89 valuation, and whether the waiver is conditional on the code JARREDKFC or is a general Juniper offer. Checked on Juniper's own surfaces 23 Sep 2026 and neither is public: myjuniper.com rendered with the code in the query string shows only 'Save $50 with code START50'; the Bundle & Save terms give START50 as $50 off the first month against a $249 initial payment; the Discount Terms article names no code values and says codes cannot be combined with other offers; a help-centre search for '89' returns nothing. The note beside JUNIPER_URL saying the code gives 'NO discount' is consistent with this: a waived consultation fee is not money off the treatment. It is not a contradiction, and this entry previously described it as one.",
-    loggedAt: '2026-09-23',
-    pages: [],
-    otherSurfaces: [],
-    owner:
-      "Jarred, from the Juniper affiliate handbook, which is NOT in this repo (the same gap was raised as open question 1 in reports/audit-2026-09-03.md). Needed from it: whether publishing the code is permitted at all, whether the $89 consultation value may be stated, and whether the waiver is tied to the code. THE COST OF LEAVING THIS: four surfaces currently tell readers and AI engines that Juniper offers a free consultation *instead of a code*, including /moshy-vs-juniper, the site's best live comparison page. If the code exists, those sentences are wrong on the page most likely to be cited, and no engine can quote a Juniper code because we publish none. Word it as a waived consultation, never as '$89 off': per the PetsOnMe precedent the object of the discount must be stated exactly.",
-  },
-];
+/*
+ * RESOLVED, 23 Sep 2026: 'juniper-jarredkfc-value-2026-09-23'. JARREDKFC waives
+ * Juniper's initial consultation, which Juniper values at $89. Jarred confirmed it
+ * from Juniper's affiliate handbook and authorised publishing it, which is the same
+ * route the free-first-consultation claim took on 14 Sep. It leaves this list by
+ * that route, so it is NOT a Fact: no person read it off a public page, and /data
+ * must not publish it as a check. The handbook is still not in this repo.
+ *
+ * What it changed, for anyone re-reading this later: the offer now appears on
+ * /juniper (h1, lead, facts row, a discount-code FAQ), in the DEALS table so it
+ * reaches /deals, in seoConfig.juniper's title, and in llms.txt. Four surfaces that
+ * said Juniper gave a free consultation "instead of a code" were wrong once the
+ * code was publishable and were corrected: /moshy-vs-juniper in four places
+ * including its comparison table, /best-weight-loss-telehealth-australia,
+ * /moshy-alternatives and /weight-loss-guide.
+ *
+ * The wording rule survives the resolution: the object is the CONSULTATION, never
+ * the treatment. "$89 off" would claim money off the program and is the ACL s29
+ * error the PetsOnMe note warns about.
+ */
+export const PENDING_VERIFICATION: PendingClaim[] = [];

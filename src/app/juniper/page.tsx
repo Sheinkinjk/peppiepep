@@ -27,7 +27,7 @@ const glance: [string, string][] = [
   ["Format", "Online eligibility → practitioner review → program & delivery"],
   ["Included", "Unlimited follow-ups, app tracking, patient community"],
   ["Pricing", "Monthly subscription, two program options, confirmed in the consult"],
-  ["Referral", "Free first consultation when you start via our link"],
+  ["Referral", "Code JARREDKFC waives the initial consultation, valued at $89"],
 ];
 
 const trust = [
@@ -64,6 +64,10 @@ const toc: [string, string][] = [
 ];
 
 const faqs = [
+  {
+    q: "What is the current Juniper discount code?",
+    a: "The current Juniper discount code is JARREDKFC. It waives Juniper's initial consultation, which Juniper values at $89, so a new patient pays nothing to be assessed. It is applied automatically when you start through the link on this page, so there is nothing to type. It takes nothing off the program itself: Juniper runs as a monthly subscription and the price that applies to you is confirmed inside Juniper's own flow before you commit. Juniper separately promotes START50 on its own site, worth $50 off the first month, and Juniper's terms state that codes cannot be combined, so you use one or the other. Confirmed from Juniper's affiliate handbook on 23 September 2026.",
+  },
   {
     q: "What is Juniper?",
     a: "Juniper is an Australian medical weight-management program designed for women. Its Weight Reset Program pairs online consultations with Australian-registered practitioners with a full wraparound of care: unlimited follow-ups, health tracking through an award-winning app with June AI, a 20,000-member patient community, and optional 1:1 health coaching from dietitians as a paid add-on.",
@@ -176,23 +180,25 @@ export default function JuniperPage() {
               <Image src="/logos/juniper.png" alt="Juniper logo" width={52} height={52} className="h-12 w-12 object-contain" />
             </span>
             <h1 className="mt-4 text-4xl font-extrabold leading-[1.06] tracking-[-0.02em] text-[#14120f] sm:text-5xl lg:text-[3.2rem]">
-              Juniper Australia: <span>a free first consultation for new patients</span>
+              Juniper Australia: <span>first consultation waived, worth $89</span>
             </h1>
             <p className="mt-5 inline-flex items-center gap-2 rounded-full border border-[#b9e3eb] bg-[#e4f2f5] px-4 py-1.5 text-[13px] font-bold text-[#007a95]">
-              <ShieldCheck className="h-4 w-4" aria-hidden="true" /> New patients get a free first consultation through our link
+              <ShieldCheck className="h-4 w-4" aria-hidden="true" /> Code JARREDKFC, applied through our link
             </p>
             {/* Below the lead. The first paragraph after the h1 is the answer;
                 a disclosure in that slot is what an engine lifts instead. Still
                 above the first affiliate link, which is what it is for. */}
             <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#56504a]">
-              Juniper is an Australian medical weight-management program designed for women. Its Weight Reset Program
-              pairs online consultations with Australian-registered practitioners with a full wraparound of care:
-              structured coaching, unlimited follow-ups, an award-winning app and a 20,000-member patient community. Start
-              with a free first consultation to check whether it fits, no commitment.
+              Starting through this page applies the code JARREDKFC, which waives Juniper&apos;s initial consultation,
+              valued at $89, so a new patient pays nothing to be assessed. Juniper is an Australian medical
+              weight-management program designed for women: its Weight Reset Program pairs online consultations with
+              Australian-registered practitioners with structured coaching, unlimited follow-ups, an award-winning app
+              and a 20,000-member patient community. The code takes nothing off the program itself, which is billed
+              monthly and confirmed inside Juniper&apos;s own flow before you commit.
             </p>
             <div className="mt-6">
-              <JuniperCTA label="Start with a free consultation" loc="hero" size="lg" />
+              <JuniperCTA label="Start with the consultation waived" loc="hero" size="lg" />
             </div>
               {/* Juniper's handbook requires one of two disclosure statements
                   word-for-word AND prominently displayed, benchmarked against a

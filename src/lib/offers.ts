@@ -140,6 +140,7 @@ export const DEALS: Deal[] = [
   { brand: "Leadpages", logo: "/logos/leadpages.png", href: "/leadpages", offer: "7-day free trial; 20% off annual billing", category: "Landing pages", featured: true, verified: "2026-08-25" },
   { brand: "Superfiliate", logo: "/logos/superfiliate.png", href: "/superfiliate", offer: "15% off your monthly SaaS fee", category: "Creator growth", featured: true, verified: "2026-08-20", source: { noPublicPage: "Partner-specific, stated on no public page. Recorded in the 25 Aug 2026 sweep note at the top of this file; re-confirm with the partner, not by searching." } },
 
+  { brand: "Juniper", logo: "/logos/juniper.png", href: "/juniper", offer: "Initial consultation waived, valued at $89", code: "JARREDKFC", category: "Weight loss", featured: true, verified: "2026-09-23", exclusive: true, source: { noPublicPage: "Juniper's affiliate handbook, confirmed by Jarred 23 September 2026. Checked the same day that no public Juniper page states it: myjuniper.com rendered with the code in the query string shows only its own START50 banner, and the help-centre Discount Terms article names no code values. Re-confirm with Juniper, not by searching." } },
   { brand: "Knose", logo: "/logos/knose.svg", href: "/knose", offer: "2 months free for new customers", code: "referlab2mf", category: "Pets", featured: true, verified: "2026-08-27", source: { noPublicPage: "Partner-specific, stated on no public page. Recorded in the 25 Aug 2026 sweep note at the top of this file; re-confirm with the partner, not by searching." } },
   { brand: "PetsOnMe", logo: "/logos/petsonme.svg", href: "/petsonme", offer: "15% off pet care services, up from 12% (not the premium)", code: "REFERLABS", category: "Pets", featured: false, verified: "2026-08-17", source: { noPublicPage: "Partner-specific, stated on no public page. Recorded in the 25 Aug 2026 sweep note at the top of this file; re-confirm with the partner, not by searching." } },
 
@@ -201,6 +202,16 @@ export const OFFER_FACTS: Record<string, OfferFacts> = {
     brand: "Mosh", code: "REFERAL55", amount: "55% off",
     object: "a new customer's first order",
     newCustomer: true,
+  },
+  // amount + object: the Juniper DEALS row above. The object is the consultation,
+  // NOT the treatment, and the wording has to keep saying so: Juniper takes nothing
+  // off the program itself. verified: Jarred confirmed it from Juniper's affiliate
+  // handbook on 23 September 2026, which is the only source; no public page states
+  // it, so there is nothing to re-read and `noPublicPage` says so.
+  JARREDKFC: {
+    brand: "Juniper", code: "JARREDKFC", amount: "Initial consultation waived, valued at $89",
+    object: "the initial consultation for a new patient",
+    newCustomer: true, oneUse: true,
   },
   // amount + newCustomer: the Knose DEALS row above.
   // object: src/app/knose/page.tsx:21 ("when they take out a policy").

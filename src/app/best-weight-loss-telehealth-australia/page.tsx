@@ -378,7 +378,7 @@ export default function BestWeightLossTelehealthPage() {
               Moshy and Juniper are the two most-used weight-management platforms in Australia and they are built
               differently. Moshy runs a lean clinical pathway open to anyone eligible, and Refer Labs holds REFERRAL120,
               $120 off a new customer&apos;s first order. Juniper wraps clinical care in a coaching program, markets
-              primarily to women, and offers a free first consultation instead of a code.
+              primarily to women, and carries JARREDKFC, which waives its initial consultation, valued at $89.
             </p>
             {/* Below the lead. The first paragraph after the h1 is the answer;
                 a disclosure in that slot is what an engine lifts instead. Still

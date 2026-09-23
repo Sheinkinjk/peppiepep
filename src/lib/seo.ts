@@ -2016,11 +2016,18 @@ export const seoConfig = {
     // CONFOUND, 14 Sep 2026: two FAQ questions lost the word "actually" ("Does
     // Juniper work?"), which also changes the FAQPage JSON-LD. Title and
     // description unchanged.
-    title: "Juniper Review 2026: Free Consult, 30-Day Refund",
+    // TITLE TEST ENDED EARLY, 23 September 2026, and its 5 October read is VOID.
+    // The title changed before the measurement date, so the CTR on 5 Oct compares a
+    // title Google saw for 18 days against one it saw for 12, which is the mistake
+    // CLAUDE.md records under checking whether the treatment group was touched
+    // inside the window. Do not report it. The reason for ending it: the offer
+    // became publishable, and a real offer belongs in the title, which is the
+    // stronger of the two effects the test was trying to isolate anyway.
+    title: "Juniper Review 2026: First Consult Waived, Worth $89",
     description:
-      "A free first consultation for new patients through our link, and Juniper states a 30-day money-back guarantee. What the coaching-led program includes.",
+      "New patients get the initial Juniper consultation waived, valued at $89, with the code JARREDKFC through our link. What the coaching-led program includes, and the 30-day money-back window.",
     url: `${SITE_URL}/juniper`,
-    keywords: ["juniper australia", "juniper weight loss", "juniper review australia", "is juniper legit", "is juniper worth it", "does juniper work", "juniper weight reset program", "juniper cost australia", "myjuniper", "juniper program australia"],
+    keywords: ["juniper australia", "juniper weight loss", "juniper review australia", "juniper discount code", "juniper promo code", "juniper coupon code", "is juniper legit", "is juniper worth it", "does juniper work", "juniper weight reset program", "juniper cost australia", "myjuniper", "juniper program australia"],
   },
 
   weightLossGuide: {

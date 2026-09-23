@@ -97,7 +97,7 @@ const rows: { label: string; moshy: string; juniper: string }[] = [
   { label: "Model", moshy: "Clinical, practitioner-led pathway", juniper: "Practitioner-led care + structured coaching & community" },
   { label: "Process", moshy: "Online eligibility → practitioner review → delivery", juniper: "Online eligibility → practitioner review → program + delivery" },
   { label: "Pricing", moshy: "Subscription, shown in eligibility flow", juniper: "Subscription, shown in eligibility flow" },
-  { label: "New-patient offer", moshy: "Referral discount via our link", juniper: "Free first consultation" },
+  { label: "New-patient offer", moshy: "REFERRAL120, $120 off the first order", juniper: "JARREDKFC, initial consultation waived, valued at $89" },
   { label: "Best if you want", moshy: "A focused, no-friction clinical pathway", juniper: "Coaching and accountability alongside clinical care" },
 ];
 
@@ -138,14 +138,14 @@ export default function MoshyVsJuniperPage() {
           Australia&apos;s two most-compared weight-management telehealth platforms answer the same problem in different
           ways. <strong className="text-[#14120f]">Moshy runs a lean clinical pathway, Juniper wraps clinical care in a
           coaching program</strong>. Moshy is gender-neutral and carries REFERRAL120, $120 off a first order; Juniper
-          markets primarily to women and gives a free first consultation instead of a code.
+          markets primarily to women and carries JARREDKFC, which waives its initial consultation, valued at $89.
         </p>
         {/* Below the lead. The first paragraph after the h1 is the answer;
             a disclosure in that slot is what an engine lifts instead. Still
             above the first affiliate link, which is what it is for. */}
         <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
         <CodeAnswer code="REFERRAL120" className="mt-6">
-          Juniper&apos;s incentive is a free first consultation rather than a code, while Moshy&apos;s is REFERRAL120, the code Refer Labs holds for Moshy: $120 off a new customer&apos;s first order, one use per customer.
+          Refer Labs holds a code for both. Moshy&apos;s is REFERRAL120, $120 off a new customer&apos;s first order, one use per customer. Juniper&apos;s is JARREDKFC, which waives the initial consultation Juniper values at $89, so you pay nothing to be assessed. Juniper&apos;s takes nothing off the program itself; Moshy&apos;s comes off the order.
         </CodeAnswer>
         <OfferSchema code="REFERRAL120" />
 
@@ -157,7 +157,7 @@ export default function MoshyVsJuniperPage() {
             Refer Labs compared Moshy and Juniper in August 2026, and the difference is the style of support. If you
             want a focused, clinically-led pathway with a fast online eligibility check, Moshy is a natural starting
             point and is open to anyone eligible. If you want coaching and accountability wrapped around your care,
-            Juniper is built for that, is designed for women, and offers new patients a free first consultation. Both
+            Juniper is built for that, is designed for women, and waives the initial consultation for new patients through JARREDKFC. Both
             assess suitability individually through registered Australian practitioners.
           </p>
         </div>
@@ -217,7 +217,7 @@ export default function MoshyVsJuniperPage() {
             <p className="text-[11px] font-bold uppercase tracking-[0.18em] mb-2 text-[#56504a]">Designed for women</p>
             <h3 className="text-lg font-bold mb-2">Consider Juniper</h3>
             <p className="text-[#56504a] text-sm leading-relaxed mb-4">
-              A structured coaching and community program designed for women, with a free first consultation.
+              A structured coaching and community program designed for women, with the initial consultation waived.
             </p>
             <Link
               href="/juniper"
