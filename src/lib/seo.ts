@@ -2030,6 +2030,14 @@ export const seoConfig = {
     keywords: ["juniper australia", "juniper weight loss", "juniper review australia", "juniper discount code", "juniper promo code", "juniper coupon code", "is juniper legit", "is juniper worth it", "does juniper work", "juniper weight reset program", "juniper cost australia", "myjuniper", "juniper program australia"],
   },
 
+  iScreen: {
+    title: "i-screen Review 2026: $20 Off Code, and No Medicare Rebate",
+    description:
+      "The i-screen discount code referlabs takes $20 off your first test. Tests run $39 to $1,099, read 23 September 2026, and i-screen's own terms say none of it is Medicare-rebatable.",
+    url: `${SITE_URL}/i-screen`,
+    keywords: ["i-screen", "i-screen review", "i-screen discount code", "iscreen australia", "private blood test australia", "blood test without referral australia", "online pathology australia", "i-screen cost", "private blood tests online"],
+  },
+
   weightLossGuide: {
     // Social / lead-capture landing, not a search page: noindex avoids a thin-content signal.
     noIndex: true,

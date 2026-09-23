@@ -70,6 +70,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // First commercial partners for /sleep and /longevity (16 Sep 2026).
     { url: `${BASE}/emma-sleep`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/technogym`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.78 },
+    { url: `${BASE}/i-screen`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/foreo`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/edible-beauty`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.78 },
     { url: `${BASE}/aussie-health-products`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.78 },

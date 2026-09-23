@@ -40,7 +40,7 @@ export default function Page() {
       slug="/longevity/diagnostics/everlab-vs-prenuvo-vs-i-screen-australia"
       crumb="Screening services compared"
       h1={<>Everlab, Prenuvo and i-screen: <span>what each is looking at</span></>}
-      intro="Three different tests, not three prices for one. Prenuvo is whole-body MRI imaging. i-screen is pathology you can order directly. Everlab is extensive pathology with clinician review, run as a programme. Comparing them on price compares things that are not substitutes, so the first question is which of the three questions you are asking."
+      intro="Three different tests, not three prices for one. Prenuvo is whole-body MRI imaging. i-screen is pathology you can order directly. Everlab is extensive pathology with clinician review, run as a programme. Comparing them on price compares things that are not substitutes, so the first question is which of the three questions you are asking. We have an arrangement with i-screen and none with Everlab or Prenuvo, which is stated here rather than at the foot of the page because it is the thing a reader should weigh when reading the row about i-screen."
       headline="Everlab vs Prenuvo vs i-screen in Australia"
       description={seoConfig.screeningCompared.description}
       faqs={faqs}
@@ -64,7 +64,7 @@ export default function Page() {
               {[
                 ["Prenuvo", "Whole-body MRI imaging", "Is there a structural abnormality somewhere"],
                 ["Everlab", "Extensive pathology with clinician review, as a programme", "What do a wide set of biomarkers say, and what should I do about them"],
-                ["i-screen", "Pathology tests you can order directly", "I want specific blood tests without going through a GP first"],
+                ["i-screen", "Pathology tests you can order directly, listed A$39 to A$1,099 (read 23 Sep 2026)", "I want specific blood tests without going through a GP first"],
               ].map((r) => (
                 <tr key={r[0]}>
                   <td className="px-4 py-3 font-semibold text-[#14120f]">{r[0]}</td>
@@ -77,7 +77,11 @@ export default function Page() {
         </div>
         <p className="mt-3 text-xs text-[#56504a]">
           A structural description of each model, current as at 19 August 2026. Offerings change; confirm what is
-          included directly with the provider. We quote no prices because we verified none off a live listing.
+          included directly with the provider. The i-screen range was read off its own catalogue on 23 September 2026.
+          We quote no prices for Everlab or Prenuvo because we have verified none off a live listing, and we earn
+          nothing from either. We do earn from i-screen, and only when a reader enters its code at checkout, so the
+          fair warning belongs here: none of i-screen is Medicare-rebatable, and a test a GP considers clinically
+          indicated is frequently bulk billed instead. See our <a href="/i-screen">i-screen review</a>.
         </p>
       </section>
 

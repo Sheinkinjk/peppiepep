@@ -60,6 +60,52 @@ const linkedRoutes = new Map(); // route -> Set(partner name)
  */
 const PARTNERS = [
   {
+    name: "i-screen",
+    tokens: ["i-screen", "iscreen", "referlabs coupon"],
+    // Longevity is where screening sits, plus its own brand page and the deals
+    // hub. Deliberately NOT allowed on /weight-loss or /mens-health: a pathology
+    // upsell beside a telehealth partner we earn more from would be us choosing
+    // which of our own partners a reader meets, which is the thing hub neutrality
+    // exists to stop.
+    allow: ["/longevity", "/i-screen", "/deals", "/guides", "/coming-soon"],
+    deny: [
+      /*
+       * Both patterns were narrowed before shipping, because the first drafts
+       * failed on this page's own correct copy. "prevents disease" matched the
+       * disclaimer sentence saying we make NO such claim, and "bulk billed"
+       * matched the true statement that a GP-ordered test frequently IS bulk
+       * billed, which is the argument against buying and the most useful line on
+       * the page. Both are the negation-and-context false positives CLAUDE.md
+       * warns about. These versions require i-screen or a test to be the SUBJECT
+       * of the claim, which is the thing actually worth denying.
+       */
+      {
+        pattern: /(i-?screen|the test|this test|a test)[^.]{0,50}\b(detects?|catches?|prevents?|rules? out)\b[^.]{0,30}\b(cancer|disease|illness|condition)/i,
+        reason:
+          "no page may assert that an i-screen test detects, catches or prevents cancer or disease. " +
+          "It is pathology testing and that is a therapeutic claim we have no basis for. A sentence " +
+          "saying we make no such claim is fine and is what this pattern is written to allow",
+      },
+      {
+        /*
+         * Third version. The first two failed on correct copy: the quoted term
+         * "none of its services are Medicare-rebatable" is the exact sentence the
+         * page is built on, and "a GP-ordered test is frequently bulk billed" is
+         * the argument against buying. The lookbehind drops any clause carrying a
+         * negation. Verified against both sets before shipping: the four true
+         * sentences pass and "i-screen tests are bulk billed through Medicare",
+         * "i-screen is Medicare-rebatable for most panels" and "it is rebatable"
+         * are all caught.
+         */
+        pattern: /i-?screen[^.]{0,70}(?<!\b(?:not|none|no|never|nor|without)\b[^.]{0,30})\b(?:is|are)\s+(?:bulk ?billed|medicare[- ]rebatable|rebatable|claimable)/i,
+        reason:
+          "i-screen's own terms say none of its services are Medicare-rebatable, so no page may " +
+          "assert i-screen itself is bulk billed or rebatable. Saying a GP-ordered test often is, " +
+          "which is the comparison the reader needs, does not trip this",
+      },
+    ],
+  },
+  {
     name: "Midoc",
     tokens: ["midoc", "Midoc"],
     allow: ["/mens-health", "/midoc", "/coming-soon"],

@@ -18,6 +18,7 @@ export const SEARCH_INDEX: SearchEntry[] = [
   { title: "Health & beauty", href: "/health-and-beauty", category: "Health & beauty", kind: "Category", keywords: "health beauty australia skincare meal replacement vlcd devices acne led mask" },
   { title: "Emma Sleep", href: "/emma-sleep", category: "Sleep", kind: "Review", keywords: "emma sleep australia mattress price discount trial was now pricing accc" },
   { title: "Technogym", href: "/technogym", category: "Longevity", kind: "Review", keywords: "technogym australia price home gym bench run bike treadmill reformer" },
+  { title: "i-screen", href: "/i-screen", category: "Longevity", kind: "Review", keywords: "i-screen iscreen australia private blood test online pathology no referral discount code referlabs medicare rebate biological age" },
   { title: "OptiSlim", href: "/optislim", category: "Health & beauty", kind: "Review", keywords: "optislim australia vlcd meal replacement shake price per meal very low energy diet" },
   { title: "Foreo", href: "/foreo", category: "Health & beauty", kind: "Review", keywords: "foreo australia luna ufo price artg cosmetic device led" },
   { title: "Edible Beauty Australia", href: "/edible-beauty", category: "Health & beauty", kind: "Review", keywords: "edible beauty australia natural skincare price certified organic naturopath" },

@@ -25,6 +25,7 @@
 const LOGOS: Record<string, string> = {
   "/foreo": "/logos/foreo.svg",
   "/emma-sleep": "/logos/emma-sleep.svg",
+  "/i-screen": "/logos/i-screen.svg",
   "/aussie-health-products": "/logos/aussie-health-products.png",
   "/optislim": "/logos/optislim.svg",
   // Added 18 Sep 2026 for the hub redesign: these files were already in

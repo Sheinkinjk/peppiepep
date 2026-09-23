@@ -1,0 +1,1396 @@
+{
+ "generated": "2026-09-19",
+ "file": "data/volume-sweep-B1.json",
+ "method": {
+  "formula": "annual revenue = monthly query volume x capture rate x redemption rate x payout x 12",
+  "capture_rate": "0.10 (assumption: share of searches where Refer Labs' code is the one seen, for a new page reaching page 1 within 6 months)",
+  "redemption_rate": "0.05 (assumption: share of those who then buy with the code)",
+  "anchor_code": "Moshy code queries = 100 searches/month (Search Console: 106 impressions in 28 days to 17 Sep 2026 at avg position 5.7; 255 in 90 days from 20 Jun; band 85 to 115)",
+  "anchor_review": "Moshy review/vs/legit queries = 350 searches/month (Search Console: 347 impressions in 28 days, 978 in 90 days, avg position 8.2; a floor, since page-1 positions 8 to 10 under-count)",
+  "scaling": "Google Trends AU, past 12 months, weekly: brand-name interest relative to 'moshy' (14 batches, every batch includes 'moshy' and 'marley spoon'; the marley/moshy ratio held at 4.15 to 4.53 across batches). Code intensity measured where the brand's code family ('<brand> code + <brand> discount') was non-zero in 26+ of 53 weeks, relative to the median of those brands (0.74, Moshy assumed median). Review family not measured (Trends rate-limited after ~30 requests); review volume = 350 x brand ratio.",
+  "uncertainty": "Measured code intensity: x0.5 to x2. Unmeasured: x0.33 to x3, or a range from the sparse Trends reading to Moshy-like intensity. All volumes are estimates, not keyword-tool figures.",
+  "calibration_note": "On the anchor the formula predicts about 7.7 sales/month for Moshy plus Mosh (code + review searches x 0.5%), against about 69 transactions/month observed across Moshy, Mosh and Juniper. The observed business runs roughly 9x the formula, because revenue comes from code display on category and comparison queries and AI answers, not brand queries. The multiplier is applied to no row; it would scale every row equally and does not change the order."
+ },
+ "rows": [
+  {
+   "brand": "HelloFresh AU (Ambassador program)",
+   "key": "hellofresh",
+   "category": "Meal kits",
+   "network": "Upfluence (in-house ambassador program); separately Impact for the link-based affiliate program",
+   "merchant_id": "Upfluence slug au-hellofresh-ambassador-program; Impact brand HelloFresh-AU",
+   "payout_aud": 80,
+   "payout_quote": "\"For every follower who uses your code to purchase their first box, you'll earn a commission of $80.\"",
+   "payout_source": "https://capture.upfluence.co/au-hellofresh-ambassador-program (linked from https://www.hellofresh.com.au/about/influencer-program)",
+   "payout_read": "2026-09-19",
+   "screen": "CONDITIONAL PASS",
+   "code_credited_without_click": "yes (by the program's own wording; UNVERIFIED in a signed contract)",
+   "code_evidence": "\"you'll receive a personalised discount code\"; commission \"for every follower who uses your code to purchase their first box\". The FAQ also says \"using your link\", so both routes are described.",
+   "coupon_exclusion": "HelloFresh T&Cs 13.2: a Voucher may not be \"published either directly or indirectly in any form ... without our prior written approval\"; 13.8: referral vouchers and credits \"not valid if used inappropriately, such as being published on deal sites or bargain sites\". 13.8 is written for customer referral codes; whether either clause reaches an ambassador code on a comparison page is UNVERIFIED and must be asked in writing.",
+   "cookie": "Upfluence: not stated. Impact affiliate program: \"30 day cookie window\"",
+   "apply_url": "https://ambassador.upfluence.co/au-hellofresh-ambassador-program",
+   "tga": "None (food). Fit: meal kits are outside the site's current consumer tabs; needs a revenue-first case.",
+   "volume_code_monthly": {
+    "central": 2630,
+    "low": 1315,
+    "high": 5260,
+    "method": "Trends brand ratio 16.75x Moshy x code intensity 1.57 (code family measured, 30/53 weeks non-zero)",
+    "reliable": true
+   },
+   "volume_review_monthly": {
+    "central": 5863,
+    "low": 1954,
+    "high": 17589,
+    "method": "Trends brand ratio 16.75x Moshy x Moshy review share (review family not measured in Trends; rate-limited)"
+   },
+   "annual_code_aud": 12624,
+   "annual_review_aud": 28142,
+   "annual_code_range_aud": [
+    6312,
+    25248
+   ],
+   "annual_review_range_aud": [
+    9379,
+    84427
+   ],
+   "revenue_note": ""
+  },
+  {
+   "brand": "EveryPlate AU (Ambassador program)",
+   "key": "everyplate",
+   "category": "Meal kits",
+   "network": "Upfluence ambassador program; separately Impact",
+   "merchant_id": "Upfluence slug cpa-program-ao-everyplate-ambassador-program; Impact brand EveryPlate-Australia",
+   "payout_aud": 80,
+   "payout_quote": "\"For every follower who uses your code to purchase their first box, you'll earn a commission of $80.\"",
+   "payout_source": "https://capture.upfluence.co/cpa-program-ao-everyplate-ambassador-program",
+   "payout_read": "2026-09-19",
+   "screen": "CONDITIONAL PASS",
+   "code_credited_without_click": "yes (by the program's own wording; UNVERIFIED in a signed contract)",
+   "code_evidence": "Same template as HelloFresh: personalised discount code, commission per first box bought with the code.",
+   "coupon_exclusion": "EveryPlate terms 13.2 (no publishing of Vouchers without prior written approval) and 13.7 (referral vouchers void if \"published on deal sites or bargain sites\"). Applicability to an ambassador code UNVERIFIED.",
+   "cookie": "Impact affiliate program: \"30 day cookie window\"",
+   "apply_url": "https://ambassador.upfluence.co/cpa-program-ao-everyplate-ambassador-program",
+   "tga": "None (food).",
+   "volume_code_monthly": {
+    "central": 1107,
+    "low": 554,
+    "high": 2214,
+    "method": "Trends brand ratio 3.80x Moshy x code intensity 2.92 (code family measured, 26/53 weeks non-zero)",
+    "reliable": true
+   },
+   "volume_review_monthly": {
+    "central": 1328,
+    "low": 443,
+    "high": 3985,
+    "method": "Trends brand ratio 3.80x Moshy x Moshy review share (review family not measured in Trends; rate-limited)"
+   },
+   "annual_code_aud": 5314,
+   "annual_review_aud": 6374,
+   "annual_code_range_aud": [
+    2659,
+    10627
+   ],
+   "annual_review_range_aud": [
+    2126,
+    19128
+   ],
+   "revenue_note": ""
+  },
+  {
+   "brand": "Moshy",
+   "key": "moshy",
+   "category": "Weight-management telehealth (anchor)",
+   "network": "Direct agreement",
+   "merchant_id": null,
+   "payout_aud": 300,
+   "payout_quote": "A$300 per sale (operator-reported direct agreement; no public primary page)",
+   "payout_source": "Operator; reports/attribution-gap-2026-10.md",
+   "payout_read": "2026-08-20 (operator confirmation)",
+   "screen": "PASS",
+   "code_credited_without_click": "yes",
+   "code_evidence": "REFERRAL120 is unique to Refer Labs and paid whenever the code is used, with or without our link (Jarred, 20 Aug 2026)",
+   "coupon_exclusion": "None known; Moshy promotions T&Cs reserve the right to refuse limited or exclusive affiliate offers",
+   "cookie": "n/a (code-attributed)",
+   "apply_url": null,
+   "tga": "Weight-loss medications are a TGA 2026-27 priority focus area; site sells the service, never the medicine",
+   "volume_code_monthly": {
+    "central": 100,
+    "low": 85,
+    "high": 115,
+    "method": "Search Console anchor: moshy code queries, 106 impressions in 28 days at avg position 5.7; 255 in 90 days",
+    "reliable": true
+   },
+   "volume_review_monthly": {
+    "central": 350,
+    "low": 330,
+    "high": 380,
+    "method": "Search Console anchor: 22 moshy review/vs/legit queries, 978 impressions in 90 days (avg position 8.2), 347 in 28 days"
+   },
+   "annual_code_aud": 1800,
+   "annual_review_aud": 6300,
+   "annual_code_range_aud": [
+    1530,
+    2070
+   ],
+   "annual_review_range_aud": [
+    5940,
+    6840
+   ],
+   "revenue_note": ""
+  },
+  {
+   "brand": "Marley Spoon AU",
+   "key": "marley spoon",
+   "category": "Meal kits",
+   "network": "Awin",
+   "merchant_id": "104515",
+   "payout_aud": 30,
+   "payout_quote": "\"$30 commission per sale\"",
+   "payout_source": "https://ui.awin.com/merchant-profile/104515",
+   "payout_read": "2026-09-19",
+   "screen": "UNVERIFIED",
+   "code_credited_without_click": "UNVERIFIED",
+   "code_evidence": "\"Variety of promo codes available; exclusively for each partner\" but \"Cookie lifetime: 30 days post-click\"; Awin Voucher Attribution (code-only tracking) is an advertiser opt-in and is not stated",
+   "coupon_exclusion": "\"if any other vouchers than the ones in the program will be used in affiliates' traffic sources, commissions may be rejected\"",
+   "cookie": "30 days post-click",
+   "apply_url": "https://ui.awin.com/merchant-profile/104515",
+   "tga": "None.",
+   "volume_code_monthly": {
+    "central": 226,
+    "low": 115,
+    "high": 445,
+    "method": "Trends brand ratio 4.45x Moshy; code family below Trends reliability threshold (8 non-zero weeks), so range runs from the sparse code reading (intensity 0.26) to Moshy-like intensity (1.0); central is the geometric mean",
+    "reliable": false
+   },
+   "volume_review_monthly": {
+    "central": 1559,
+    "low": 520,
+    "high": 4676,
+    "method": "Trends brand ratio 4.45x Moshy x Moshy review share (review family not measured in Trends; rate-limited)"
+   },
+   "annual_code_aud": 407,
+   "annual_review_aud": 2806,
+   "annual_code_range_aud": [
+    207,
+    801
+   ],
+   "annual_review_range_aud": [
+    936,
+    8417
+   ],
+   "revenue_note": "Conditional: counts only if code-only credit is confirmed; otherwise A$0 via no-click"
+  },
+  {
+   "brand": "Dinnerly AU",
+   "key": "dinnerly",
+   "category": "Meal kits",
+   "network": "Awin",
+   "merchant_id": "104513",
+   "payout_aud": 15,
+   "payout_quote": "\"$15 commission per sale\"; \"Average basket size of $75\"",
+   "payout_source": "https://ui.awin.com/merchant-profile/104513",
+   "payout_read": "2026-09-19",
+   "screen": "UNVERIFIED",
+   "code_credited_without_click": "UNVERIFIED",
+   "code_evidence": "\"All affiliates will be granted with vouchers\"; post-click cookie; Voucher Attribution not stated",
+   "coupon_exclusion": "Non-program vouchers may be rejected",
+   "cookie": "30 days post-click",
+   "apply_url": "https://ui.awin.com/merchant-profile/104513",
+   "tga": "None.",
+   "volume_code_monthly": {
+    "central": 198,
+    "low": 66,
+    "high": 593,
+    "method": "Trends brand ratio 1.98x Moshy x assumed Moshy-like code intensity (code family not measured)",
+    "reliable": false
+   },
+   "volume_review_monthly": {
+    "central": 692,
+    "low": 231,
+    "high": 2075,
+    "method": "Trends brand ratio 1.98x Moshy x Moshy review share (review family not measured in Trends; rate-limited)"
+   },
+   "annual_code_aud": 178,
+   "annual_review_aud": 623,
+   "annual_code_range_aud": [
+    59,
+    534
+   ],
+   "annual_review_range_aud": [
+    208,
+    1868
+   ],
+   "revenue_note": "Conditional: counts only if code-only credit is confirmed; otherwise A$0 via no-click"
+  },
+  {
+   "brand": "Kic",
+   "key": "kic",
+   "category": "Fitness app",
+   "network": "Commission Factory",
+   "merchant_id": "89048",
+   "payout_aud": 20,
+   "payout_quote": "\"AU$20.00 per sale\"; \"$20 AUD commission on the sale value\"; a new paid subscriber must pass any free trial",
+   "payout_source": "https://www.commissionfactory.com/advertiser-directory/kic-affiliate-program/89048",
+   "payout_read": "2026-09-19",
+   "screen": "PASS (capability)",
+   "code_credited_without_click": "capability yes; issuance UNVERIFIED",
+   "code_evidence": "Listing carries CF's \"Clickless tracking\" feature. CF defines it as \"exclusive coupon code assigned to individual affiliate to match the transaction to the affiliate, instead of a click\" (help.commissionfactory.com/clickless-tracking). Kic has not stated it will assign one; ask partnerships@kicwellness.com.",
+   "coupon_exclusion": "None on the listing",
+   "cookie": "30 days tracking, 30 days validation",
+   "apply_url": "https://www.commissionfactory.com/advertiser-directory/kic-affiliate-program/89048",
+   "tga": "None (app).",
+   "volume_code_monthly": {
+    "central": 98,
+    "low": 98,
+    "high": 300,
+    "method": "GSC floor: \"kic discount code\" 90 impressions in 28 days at position 37.7 (Kic brand term in Trends is ambiguous, so the Trends ratio is not used)",
+    "reliable": false
+   },
+   "volume_review_monthly": {
+    "central": 43,
+    "low": 14,
+    "high": 129,
+    "method": "Trends brand ratio 0.12x Moshy x Moshy review share (review family not measured in Trends; rate-limited)"
+   },
+   "annual_code_aud": 118,
+   "annual_review_aud": 52,
+   "annual_code_range_aud": [
+    118,
+    360
+   ],
+   "annual_review_range_aud": [
+    17,
+    155
+   ],
+   "revenue_note": ""
+  },
+  {
+   "brand": "Petzyo",
+   "key": "petzyo",
+   "category": "Dog food",
+   "network": "Commission Factory",
+   "merchant_id": "77509",
+   "payout_aud": 12,
+   "payout_floor": true,
+   "payout_quote": "\"15% Commission for new customers, and 2% for returning customers\"; \"High $AOV (over $80)\" so at least A$12 on a new-customer order at the published floor",
+   "payout_source": "https://www.commissionfactory.com/advertiser-directory/petzyo-affiliate-program/77509",
+   "payout_read": "2026-09-19",
+   "screen": "PASS (capability)",
+   "code_credited_without_click": "capability yes; issuance UNVERIFIED",
+   "code_evidence": "\"Clickless tracking\" feature on the listing; \"Coupons not in the program are non-commissionable\" (a code assigned to us in the program is in the program).",
+   "coupon_exclusion": "Only non-program coupons are excluded",
+   "cookie": "30 days tracking, 45 days validation",
+   "apply_url": "https://www.commissionfactory.com/advertiser-directory/petzyo-affiliate-program/77509",
+   "tga": "None.",
+   "volume_code_monthly": {
+    "central": 29,
+    "low": 10,
+    "high": 86,
+    "method": "Trends brand ratio 0.29x Moshy x assumed Moshy-like code intensity (code family not measured)",
+    "reliable": false
+   },
+   "volume_review_monthly": {
+    "central": 101,
+    "low": 34,
+    "high": 302,
+    "method": "Trends brand ratio 0.29x Moshy x Moshy review share (review family not measured in Trends; rate-limited)"
+   },
+   "annual_code_aud": 21,
+   "annual_review_aud": 73,
+   "annual_code_range_aud": [
+    7,
+    62
+   ],
+   "annual_review_range_aud": [
+    24,
+    217
+   ],
+   "revenue_note": ""
+  },
+  {
+   "brand": "The Healthy Mummy",
+   "key": "healthy mummy",
+   "category": "Women's weight-loss nutrition",
+   "network": "Commission Factory",
+   "merchant_id": "45613",
+   "payout_aud": 6.75,
+   "payout_quote": "\"7.5% commission on the sale value\"; \"High AOV (circa $90)\" = about A$6.75",
+   "payout_source": "https://www.commissionfactory.com/advertiser-directory/the-healthy-mummy-affiliate-program/45613",
+   "payout_read": "2026-09-19",
+   "screen": "PASS (capability)",
+   "code_credited_without_click": "capability yes; issuance UNVERIFIED",
+   "code_evidence": "\"Clickless tracking\" feature on the listing; no code statement.",
+   "coupon_exclusion": "None on coupons; bans PPC, Facebook ads and post-view tracking",
+   "cookie": "30 days tracking, 45 days validation",
+   "apply_url": "https://www.commissionfactory.com/advertiser-directory/the-healthy-mummy-affiliate-program/45613",
+   "tga": "Weight-loss positioning; some products may be listed medicines (not checked). Weight loss is a TGA focus area.",
+   "volume_code_monthly": {
+    "central": 8,
+    "low": 0,
+    "high": 60,
+    "method": "Trends brand ratio 0.60x Moshy; code family below Trends reliability threshold (0 non-zero weeks), so range runs from the sparse code reading (intensity 0.00) to Moshy-like intensity (1.0); central is the geometric mean",
+    "reliable": false
+   },
+   "volume_review_monthly": {
+    "central": 209,
+    "low": 70,
+    "high": 626,
+    "method": "Trends brand ratio 0.60x Moshy x Moshy review share (review family not measured in Trends; rate-limited)"
+   },
+   "annual_code_aud": 3,
+   "annual_review_aud": 85,
+   "annual_code_range_aud": [
+    0,
+    24
+   ],
+   "annual_review_range_aud": [
+    28,
+    254
+   ],
+   "revenue_note": ""
+  },
+  {
+   "brand": "Tropeaka",
+   "key": "tropeaka",
+   "category": "Supplements",
+   "network": "Commission Factory",
+   "merchant_id": "67104",
+   "payout_aud": null,
+   "payout_quote": "\"6% commission rate (1% commission for coupon sites)\"; AOV not published",
+   "payout_source": "https://www.commissionfactory.com/advertiser-directory/tropeaka-affiliate-program/67104",
+   "payout_read": "2026-09-19",
+   "screen": "RATE-CUT",
+   "code_credited_without_click": "capability yes",
+   "code_evidence": "\"Clickless tracking\".",
+   "coupon_exclusion": "Coupon sites cut to 1% (not zero; a code page would likely be classed as a coupon site)",
+   "cookie": "30 days",
+   "apply_url": "https://www.commissionfactory.com/advertiser-directory/tropeaka-affiliate-program/67104",
+   "tga": "Supplements.",
+   "volume_code_monthly": {
+    "central": 86,
+    "low": 37,
+    "high": 203,
+    "method": "Trends brand ratio 2.03x Moshy; code family below Trends reliability threshold (3 non-zero weeks), so range runs from the sparse code reading (intensity 0.18) to Moshy-like intensity (1.0); central is the geometric mean",
+    "reliable": false
+   },
+   "volume_review_monthly": {
+    "central": 711,
+    "low": 237,
+    "high": 2134,
+    "method": "Trends brand ratio 2.03x Moshy x Moshy review share (review family not measured in Trends; rate-limited)"
+   },
+   "annual_code_aud": 0,
+   "annual_review_aud": 0,
+   "revenue_note": "Fails the screen: A$0 via the no-click mechanism"
+  },
+  {
+   "brand": "My Muscle Chef",
+   "key": "my muscle chef",
+   "category": "Prepared meals",
+   "network": "Commission Factory",
+   "merchant_id": "69088",
+   "payout_aud": 9.6,
+   "payout_quote": "\"6% commission on sales for all new customers\"; \"Average order value of $160\" = A$9.60",
+   "payout_source": "https://www.commissionfactory.com/advertiser-directory/my-muscle-chef-affiliate-program/69088",
+   "payout_read": "2026-09-19",
+   "screen": "FAIL",
+   "code_credited_without_click": "no (coded orders zero-rated)",
+   "code_evidence": "Clickless badge present, but see exclusion",
+   "coupon_exclusion": "\"0% commission will be issued to any order that includes a referral coupon code\"; also corporate codes and repeat subscription orders",
+   "cookie": "30 days",
+   "apply_url": "https://www.commissionfactory.com/advertiser-directory/my-muscle-chef-affiliate-program/69088",
+   "tga": "None.",
+   "volume_code_monthly": {
+    "central": 191,
+    "low": 63,
+    "high": 581,
+    "method": "Trends brand ratio 5.81x Moshy; code family below Trends reliability threshold (4 non-zero weeks), so range runs from the sparse code reading (intensity 0.11) to Moshy-like intensity (1.0); central is the geometric mean",
+    "reliable": false
+   },
+   "volume_review_monthly": {
+    "central": 2032,
+    "low": 677,
+    "high": 6097,
+    "method": "Trends brand ratio 5.81x Moshy x Moshy review share (review family not measured in Trends; rate-limited)"
+   },
+   "annual_code_aud": 0,
+   "annual_review_aud": 0,
+   "revenue_note": "Fails the screen: A$0 via the no-click mechanism"
+  },
+  {
+   "brand": "Beer Cartel",
+   "key": "beer cartel",
+   "category": "Craft beer",
+   "network": "Commission Factory",
+   "merchant_id": "60466",
+   "payout_aud": null,
+   "payout_quote": "\"5% commission (0% coupons)\"",
+   "payout_source": "https://www.commissionfactory.com/advertiser-directory/beer-cartel-affiliate-program/60466",
+   "payout_read": "2026-09-19",
+   "screen": "FAIL",
+   "code_credited_without_click": "no",
+   "code_evidence": "",
+   "coupon_exclusion": "\"0% coupons\"",
+   "cookie": "30 days",
+   "apply_url": "https://www.commissionfactory.com/advertiser-directory/beer-cartel-affiliate-program/60466",
+   "tga": "Alcohol.",
+   "volume_code_monthly": {
+    "central": 2,
+    "low": 0,
+    "high": 6,
+    "method": "Trends brand ratio 0.06x Moshy; code family below Trends reliability threshold (0 non-zero weeks), so range runs from the sparse code reading (intensity 0.00) to Moshy-like intensity (1.0); central is the geometric mean",
+    "reliable": false
+   },
+   "volume_review_monthly": {
+    "central": 21,
+    "low": 7,
+    "high": 64,
+    "method": "Trends brand ratio 0.06x Moshy x Moshy review share (review family not measured in Trends; rate-limited)"
+   },
+   "annual_code_aud": 0,
+   "annual_review_aud": 0,
+   "revenue_note": "Fails the screen: A$0 via the no-click mechanism"
+  },
+  {
+   "brand": "The Whisky Club",
+   "key": null,
+   "category": "Whisky subscription",
+   "network": "Commission Factory",
+   "merchant_id": "75983",
+   "payout_aud": 15,
+   "payout_quote": "\"Default Commission: $15 per sign up\"",
+   "payout_source": "https://www.commissionfactory.com/advertiser-directory/the-whisky-club-affiliate-program/75983",
+   "payout_read": "2026-09-19",
+   "screen": "FAIL",
+   "code_credited_without_click": "n/a",
+   "code_evidence": "",
+   "coupon_exclusion": "\"Open to all promotional methods (except for PPC and coupon)\"",
+   "cookie": "30 days",
+   "apply_url": "https://www.commissionfactory.com/advertiser-directory/the-whisky-club-affiliate-program/75983",
+   "tga": "Alcohol.",
+   "volume_code_monthly": "UNVERIFIED",
+   "volume_review_monthly": "UNVERIFIED",
+   "annual_code_aud": 0,
+   "annual_review_aud": 0,
+   "revenue_note": "Fails the screen: A$0 via the no-click mechanism"
+  },
+  {
+   "brand": "iHerb Rewards",
+   "key": "iherb",
+   "category": "Supplements retailer",
+   "network": "In-house Rewards",
+   "merchant_id": null,
+   "payout_aud": null,
+   "payout_quote": "\"10% in Rewards for new iHerb customers. 5% in Rewards for returning customers.\" Cash-out for Australians UNVERIFIED",
+   "payout_source": "iHerb help article 50355989882644 (updated 17 Sep 2026)",
+   "payout_read": "2026-09-19",
+   "screen": "FAIL",
+   "code_credited_without_click": "yes",
+   "code_evidence": "\"You earn Rewards every time someone shops using your personalized Rewards link or code\"",
+   "coupon_exclusion": "\"You cannot promote your link or code through paid advertising, coupon/deal websites\"",
+   "cookie": "n/a",
+   "apply_url": null,
+   "tga": "Offshore retailer of listed-medicine-type products.",
+   "volume_code_monthly": {
+    "central": 1610,
+    "low": 805,
+    "high": 3221,
+    "method": "Trends brand ratio 22.69x Moshy x code intensity 0.71 (code family measured, 47/53 weeks non-zero)",
+    "reliable": true
+   },
+   "volume_review_monthly": {
+    "central": 7942,
+    "low": 2647,
+    "high": 23827,
+    "method": "Trends brand ratio 22.69x Moshy x Moshy review share (review family not measured in Trends; rate-limited)"
+   },
+   "annual_code_aud": 0,
+   "annual_review_aud": 0,
+   "revenue_note": "Fails the screen: A$0 via the no-click mechanism"
+  },
+  {
+   "brand": "AG1",
+   "key": "ag1",
+   "category": "Supplement",
+   "network": "Superfiliate (in-house)",
+   "merchant_id": null,
+   "payout_aud": null,
+   "payout_quote": "\"as shown on Your Superfiliate Portal\" UNVERIFIED",
+   "payout_source": "https://drinkag1.com/affiliate-terms (Wayback 10 Apr 2026)",
+   "payout_read": "2026-09-19",
+   "screen": "FAIL",
+   "code_credited_without_click": "yes",
+   "code_evidence": "Qualifying Transaction includes a customer who \"uses Your Superfiliate-assigned code\"",
+   "coupon_exclusion": "\"prohibition on posting affiliate links or codes to discount-aggregation or coupon sites\"",
+   "cookie": "portal",
+   "apply_url": null,
+   "tga": "AU listed status UNVERIFIED.",
+   "volume_code_monthly": {
+    "central": 17,
+    "low": 0,
+    "high": 295,
+    "method": "Trends brand ratio 2.95x Moshy; code family below Trends reliability threshold (0 non-zero weeks), so range runs from the sparse code reading (intensity 0.00) to Moshy-like intensity (1.0); central is the geometric mean",
+    "reliable": false
+   },
+   "volume_review_monthly": {
+    "central": 1031,
+    "low": 344,
+    "high": 3094,
+    "method": "Trends brand ratio 2.95x Moshy x Moshy review share (review family not measured in Trends; rate-limited)"
+   },
+   "annual_code_aud": 0,
+   "annual_review_aud": 0,
+   "revenue_note": "Fails the screen: A$0 via the no-click mechanism"
+  },
+  {
+   "brand": "Vitable",
+   "key": "vitable",
+   "screen": "FAIL",
+   "notes": "No publisher program found; customer referral is $15 store credit, \"cannot be redeemed for cash\"",
+   "volume_code_monthly": {
+    "central": 6,
+    "low": 0,
+    "high": 32,
+    "method": "Trends brand ratio 0.32x Moshy; code family below Trends reliability threshold (0 non-zero weeks), so range runs from the sparse code reading (intensity 0.00) to Moshy-like intensity (1.0); central is the geometric mean",
+    "reliable": false
+   },
+   "volume_review_monthly": {
+    "central": 111,
+    "low": 37,
+    "high": 332,
+    "method": "Trends brand ratio 0.32x Moshy x Moshy review share (review family not measured in Trends; rate-limited)"
+   },
+   "annual_code_aud": 0,
+   "annual_review_aud": 0,
+   "revenue_note": "Fails the screen: A$0 via the no-click mechanism",
+   "payout_read": "2026-09-19"
+  },
+  {
+   "brand": "Bulk Nutrients",
+   "key": "bulk nutrients",
+   "screen": "FAIL",
+   "notes": "No publisher program; ambassador (5,000+ followers) reward unstated; referral pays 1% store credit",
+   "volume_code_monthly": {
+    "central": 617,
+    "low": 328,
+    "high": 1162,
+    "method": "Trends brand ratio 11.62x Moshy; code family below Trends reliability threshold (17 non-zero weeks), so range runs from the sparse code reading (intensity 0.28) to Moshy-like intensity (1.0); central is the geometric mean",
+    "reliable": false
+   },
+   "volume_review_monthly": {
+    "central": 4068,
+    "low": 1356,
+    "high": 12204,
+    "method": "Trends brand ratio 11.62x Moshy x Moshy review share (review family not measured in Trends; rate-limited)"
+   },
+   "annual_code_aud": 0,
+   "annual_review_aud": 0,
+   "revenue_note": "Fails the screen: A$0 via the no-click mechanism",
+   "payout_read": "2026-09-19"
+  },
+  {
+   "brand": "Huel",
+   "key": "huel",
+   "screen": "FAIL",
+   "notes": "Awin 23972: \"closed and available to UK publishers by invitation only\"; no AU store",
+   "volume_code_monthly": {
+    "central": 6,
+    "low": 0,
+    "high": 33,
+    "method": "Trends brand ratio 0.33x Moshy; code family below Trends reliability threshold (0 non-zero weeks), so range runs from the sparse code reading (intensity 0.00) to Moshy-like intensity (1.0); central is the geometric mean",
+    "reliable": false
+   },
+   "volume_review_monthly": {
+    "central": 116,
+    "low": 39,
+    "high": 348,
+    "method": "Trends brand ratio 0.33x Moshy x Moshy review share (review family not measured in Trends; rate-limited)"
+   },
+   "annual_code_aud": 0,
+   "annual_review_aud": 0,
+   "revenue_note": "Fails the screen: A$0 via the no-click mechanism",
+   "payout_read": "2026-09-19"
+  },
+  {
+   "brand": "Sweat",
+   "key": "sweat",
+   "screen": "FAIL",
+   "notes": "No affiliate program; referral is link-only subscription credit",
+   "volume_code_monthly": {
+    "central": 38,
+    "low": 23,
+    "high": 65,
+    "method": "Trends brand ratio 0.65x Moshy; code family below Trends reliability threshold (1 non-zero weeks), so range runs from the sparse code reading (intensity 0.35) to Moshy-like intensity (1.0); central is the geometric mean",
+    "reliable": false
+   },
+   "volume_review_monthly": {
+    "central": 229,
+    "low": 76,
+    "high": 686,
+    "method": "Trends brand ratio 0.65x Moshy x Moshy review share (review family not measured in Trends; rate-limited)"
+   },
+   "annual_code_aud": 0,
+   "annual_review_aud": 0,
+   "revenue_note": "Fails the screen: A$0 via the no-click mechanism",
+   "payout_read": "2026-09-19"
+  },
+  {
+   "brand": "F45",
+   "key": "f45",
+   "screen": "FAIL",
+   "notes": "No publisher program; member referral $25 autopay discount",
+   "volume_code_monthly": {
+    "central": 142,
+    "low": 23,
+    "high": 892,
+    "method": "Trends brand ratio 8.92x Moshy; code family below Trends reliability threshold (2 non-zero weeks), so range runs from the sparse code reading (intensity 0.03) to Moshy-like intensity (1.0); central is the geometric mean",
+    "reliable": false
+   },
+   "volume_review_monthly": {
+    "central": 3121,
+    "low": 1040,
+    "high": 9364,
+    "method": "Trends brand ratio 8.92x Moshy x Moshy review share (review family not measured in Trends; rate-limited)"
+   },
+   "annual_code_aud": 0,
+   "annual_review_aud": 0,
+   "revenue_note": "Fails the screen: A$0 via the no-click mechanism",
+   "payout_read": "2026-09-19"
+  },
+  {
+   "brand": "Fitstop",
+   "key": "fitstop",
+   "screen": "FAIL",
+   "notes": "No program; member referral earns a free week",
+   "volume_code_monthly": {
+    "central": 18,
+    "low": 0,
+    "high": 316,
+    "method": "Trends brand ratio 3.16x Moshy; code family below Trends reliability threshold (0 non-zero weeks), so range runs from the sparse code reading (intensity 0.00) to Moshy-like intensity (1.0); central is the geometric mean",
+    "reliable": false
+   },
+   "volume_review_monthly": {
+    "central": 1107,
+    "low": 369,
+    "high": 3322,
+    "method": "Trends brand ratio 3.16x Moshy x Moshy review share (review family not measured in Trends; rate-limited)"
+   },
+   "annual_code_aud": 0,
+   "annual_review_aud": 0,
+   "revenue_note": "Fails the screen: A$0 via the no-click mechanism",
+   "payout_read": "2026-09-19"
+  },
+  {
+   "brand": "Vinomofo",
+   "key": "vinomofo",
+   "screen": "FAIL",
+   "notes": "No current program found; referral terms: codes shared \"on a website\" are invalidated",
+   "volume_code_monthly": {
+    "central": 70,
+    "low": 25,
+    "high": 197,
+    "method": "Trends brand ratio 1.97x Moshy; code family below Trends reliability threshold (2 non-zero weeks), so range runs from the sparse code reading (intensity 0.13) to Moshy-like intensity (1.0); central is the geometric mean",
+    "reliable": false
+   },
+   "volume_review_monthly": {
+    "central": 689,
+    "low": 230,
+    "high": 2067,
+    "method": "Trends brand ratio 1.97x Moshy x Moshy review share (review family not measured in Trends; rate-limited)"
+   },
+   "annual_code_aud": 0,
+   "annual_review_aud": 0,
+   "revenue_note": "Fails the screen: A$0 via the no-click mechanism",
+   "payout_read": "2026-09-19"
+  },
+  {
+   "brand": "Scratch",
+   "key": "scratch",
+   "screen": "FAIL",
+   "notes": "Affiliate terms page now 404 (Wayback to 30 Mar 2025); archived terms allowed termination for \"Continual promotion of coupon code on coupon websites\"",
+   "volume_code_monthly": {
+    "central": 142,
+    "low": 47,
+    "high": 426,
+    "method": "Trends brand ratio 1.42x Moshy x assumed Moshy-like code intensity (code family not measured)",
+    "reliable": false
+   },
+   "volume_review_monthly": {
+    "central": 497,
+    "low": 166,
+    "high": 1490,
+    "method": "Trends brand ratio 1.42x Moshy x Moshy review share (review family not measured in Trends; rate-limited)"
+   },
+   "annual_code_aud": 0,
+   "annual_review_aud": 0,
+   "revenue_note": "Fails the screen: A$0 via the no-click mechanism",
+   "payout_read": "2026-09-19"
+  },
+  {
+   "brand": "Budget Pet Products",
+   "key": "budget pet products",
+   "screen": "FAIL",
+   "notes": "CF listing 57967 now 404 (delisted); site behind Cloudflare",
+   "volume_code_monthly": {
+    "central": 45,
+    "low": 10,
+    "high": 204,
+    "method": "Trends brand ratio 2.04x Moshy; code family below Trends reliability threshold (2 non-zero weeks), so range runs from the sparse code reading (intensity 0.05) to Moshy-like intensity (1.0); central is the geometric mean",
+    "reliable": false
+   },
+   "volume_review_monthly": {
+    "central": 713,
+    "low": 238,
+    "high": 2140,
+    "method": "Trends brand ratio 2.04x Moshy x Moshy review share (review family not measured in Trends; rate-limited)"
+   },
+   "annual_code_aud": 0,
+   "annual_review_aud": 0,
+   "revenue_note": "Fails the screen: A$0 via the no-click mechanism",
+   "payout_read": "2026-09-19"
+  },
+  {
+   "brand": "Petbarn",
+   "key": "petbarn",
+   "screen": "FAIL",
+   "notes": "No program found on primary sources",
+   "volume_code_monthly": {
+    "central": 898,
+    "low": 449,
+    "high": 1795,
+    "method": "Trends brand ratio 76.30x Moshy x code intensity 0.12 (code family measured, 35/53 weeks non-zero)",
+    "reliable": true
+   },
+   "volume_review_monthly": {
+    "central": 26706,
+    "low": 8902,
+    "high": 80117,
+    "method": "Trends brand ratio 76.30x Moshy x Moshy review share (review family not measured in Trends; rate-limited)"
+   },
+   "annual_code_aud": 0,
+   "annual_review_aud": 0,
+   "revenue_note": "Fails the screen: A$0 via the no-click mechanism",
+   "payout_read": "2026-09-19"
+  },
+  {
+   "brand": "Jimmy Brings",
+   "key": "jimmy brings",
+   "screen": "FAIL",
+   "notes": "Defunct: domain 301s to Woolworths MilkRun",
+   "volume_code_monthly": {
+    "central": 56,
+    "low": 28,
+    "high": 114,
+    "method": "Trends brand ratio 1.14x Moshy; code family below Trends reliability threshold (1 non-zero weeks), so range runs from the sparse code reading (intensity 0.24) to Moshy-like intensity (1.0); central is the geometric mean",
+    "reliable": false
+   },
+   "volume_review_monthly": {
+    "central": 400,
+    "low": 133,
+    "high": 1199,
+    "method": "Trends brand ratio 1.14x Moshy x Moshy review share (review family not measured in Trends; rate-limited)"
+   },
+   "annual_code_aud": 0,
+   "annual_review_aud": 0,
+   "revenue_note": "Fails the screen: A$0 via the no-click mechanism",
+   "payout_read": "2026-09-19"
+  },
+  {
+   "brand": "Brew Cartel",
+   "key": null,
+   "screen": "FAIL",
+   "notes": "Does not exist as an AU retailer (brewcartel.com.au NXDOMAIN); almost certainly Beer Cartel",
+   "volume_code_monthly": "UNVERIFIED",
+   "volume_review_monthly": "UNVERIFIED",
+   "annual_code_aud": 0,
+   "annual_review_aud": 0,
+   "revenue_note": "Fails the screen: A$0 via the no-click mechanism",
+   "payout_read": "2026-09-19"
+  },
+  {
+   "brand": "Pet Circle",
+   "key": "pet circle",
+   "category": "Pet supplies retailer",
+   "network": "Commission Factory",
+   "merchant_id": "50288",
+   "payout_aud": null,
+   "payout_quote": "Headline \"6.50% per sale\"; body \"New customers will receive 5% CPA & Existing customers will receive 2% CPA\". AOV not published, so A$ per sale UNVERIFIED",
+   "payout_source": "https://www.commissionfactory.com/advertiser-directory/pet-circle-affiliate-program/50288",
+   "payout_read": "2026-09-19",
+   "screen": "PASS (capability); payout UNVERIFIED",
+   "code_credited_without_click": "capability yes; issuance UNVERIFIED",
+   "code_evidence": "\"Clickless tracking\" feature on the listing.",
+   "coupon_exclusion": "None stated (\"Open to all promotional methods except PPC\")",
+   "cookie": "30 days tracking, 60 days validation",
+   "apply_url": "https://www.commissionfactory.com/advertiser-directory/pet-circle-affiliate-program/50288",
+   "tga": "Sells pet medicines; APVMA not TGA.",
+   "volume_code_monthly": {
+    "central": 1986,
+    "low": 993,
+    "high": 3972,
+    "method": "Trends brand ratio 19.88x Moshy x code intensity 1.00 (code family measured, 52/53 weeks non-zero)",
+    "reliable": true
+   },
+   "volume_review_monthly": {
+    "central": 6958,
+    "low": 2319,
+    "high": 20875,
+    "method": "Trends brand ratio 19.88x Moshy x Moshy review share (review family not measured in Trends; rate-limited)"
+   },
+   "annual_code_aud": "UNVERIFIED",
+   "annual_review_aud": "UNVERIFIED",
+   "revenue_note": "Payout per sale not published in A$; each A$1 of payout is worth A$119/yr (code basis) and A$417/yr (review basis)"
+  },
+  {
+   "brand": "Chefgood",
+   "key": "chefgood",
+   "category": "Prepared meals",
+   "network": "Commission Factory",
+   "merchant_id": "71670",
+   "payout_aud": null,
+   "payout_quote": "\"10% New Customer, 0% Return Customer\"; AOV not published (meals \"starting from just $9.95\")",
+   "payout_source": "https://www.commissionfactory.com/advertiser-directory/chefgood-affiliate-program/71670",
+   "payout_read": "2026-09-19",
+   "screen": "PASS (capability); payout UNVERIFIED",
+   "code_credited_without_click": "capability yes; issuance UNVERIFIED",
+   "code_evidence": "\"Clickless tracking\" feature on the listing.",
+   "coupon_exclusion": "None stated",
+   "cookie": "30 days",
+   "apply_url": "https://www.commissionfactory.com/advertiser-directory/chefgood-affiliate-program/71670",
+   "tga": "None.",
+   "volume_code_monthly": {
+    "central": 21,
+    "low": 5,
+    "high": 78,
+    "method": "Trends brand ratio 0.78x Moshy; code family below Trends reliability threshold (2 non-zero weeks), so range runs from the sparse code reading (intensity 0.07) to Moshy-like intensity (1.0); central is the geometric mean",
+    "reliable": false
+   },
+   "volume_review_monthly": {
+    "central": 272,
+    "low": 91,
+    "high": 817,
+    "method": "Trends brand ratio 0.78x Moshy x Moshy review share (review family not measured in Trends; rate-limited)"
+   },
+   "annual_code_aud": "UNVERIFIED",
+   "annual_review_aud": "UNVERIFIED",
+   "revenue_note": "Payout per sale not published in A$; each A$1 of payout is worth A$1/yr (code basis) and A$16/yr (review basis)"
+  },
+  {
+   "brand": "Craft Cartel Liquor",
+   "key": "craft cartel",
+   "category": "Craft beer",
+   "network": "Commission Factory",
+   "merchant_id": "36793",
+   "payout_aud": null,
+   "payout_quote": "\"Up to 5% commission rate\"; AOV not published (Craft Beer Club from $59)",
+   "payout_source": "https://www.commissionfactory.com/advertiser-directory/craft-cartel-liquor-affiliate-program/36793",
+   "payout_read": "2026-09-19",
+   "screen": "PASS (capability); payout UNVERIFIED",
+   "code_credited_without_click": "capability yes; vanity codes offered",
+   "code_evidence": "\"Coupons available - including vanity codes\" plus \"Clickless tracking\".",
+   "coupon_exclusion": "None stated",
+   "cookie": "30 days",
+   "apply_url": "https://www.commissionfactory.com/advertiser-directory/craft-cartel-liquor-affiliate-program/36793",
+   "tga": "Alcohol: ABAC and state liquor rules apply.",
+   "volume_code_monthly": {
+    "central": 1,
+    "low": 0,
+    "high": 0,
+    "method": "Trends brand ratio 0.00x Moshy; code family below Trends reliability threshold (0 non-zero weeks), so range runs from the sparse code reading (intensity 0.00) to Moshy-like intensity (1.0); central is the geometric mean",
+    "reliable": false
+   },
+   "volume_review_monthly": {
+    "central": 1,
+    "low": 0,
+    "high": 3,
+    "method": "Trends brand ratio 0.00x Moshy x Moshy review share (review family not measured in Trends; rate-limited)"
+   },
+   "annual_code_aud": "UNVERIFIED",
+   "annual_review_aud": "UNVERIFIED",
+   "revenue_note": "Payout per sale not published in A$; each A$1 of payout is worth A$0/yr (code basis) and A$0/yr (review basis)"
+  },
+  {
+   "brand": "Musashi",
+   "key": "musashi",
+   "category": "Sports nutrition",
+   "network": "Commission Factory",
+   "merchant_id": "86391",
+   "payout_aud": null,
+   "payout_quote": "\"up to 8% commission\"; AOV not published",
+   "payout_source": "https://www.commissionfactory.com/advertiser-directory/musashi-affiliate-program/86391",
+   "payout_read": "2026-09-19",
+   "screen": "PASS (capability); payout UNVERIFIED",
+   "code_credited_without_click": "capability yes; issuance UNVERIFIED",
+   "code_evidence": "\"Clickless tracking\".",
+   "coupon_exclusion": "None stated",
+   "cookie": "30 days",
+   "apply_url": "https://www.commissionfactory.com/advertiser-directory/musashi-affiliate-program/86391",
+   "tga": "Sports foods; some supplements may be listed medicines (not checked).",
+   "volume_code_monthly": {
+    "central": 134,
+    "low": 11,
+    "high": 1648,
+    "method": "Trends brand ratio 16.48x Moshy; code family below Trends reliability threshold (3 non-zero weeks), so range runs from the sparse code reading (intensity 0.01) to Moshy-like intensity (1.0); central is the geometric mean",
+    "reliable": false
+   },
+   "volume_review_monthly": {
+    "central": 5769,
+    "low": 1923,
+    "high": 17308,
+    "method": "Trends brand ratio 16.48x Moshy x Moshy review share (review family not measured in Trends; rate-limited)"
+   },
+   "annual_code_aud": "UNVERIFIED",
+   "annual_review_aud": "UNVERIFIED",
+   "revenue_note": "Payout per sale not published in A$; each A$1 of payout is worth A$8/yr (code basis) and A$346/yr (review basis)"
+  },
+  {
+   "brand": "True Protein",
+   "key": "true protein",
+   "category": "Sports nutrition",
+   "network": "Commission Factory",
+   "merchant_id": "60474",
+   "payout_aud": null,
+   "payout_quote": "\"6.5% commission\"; AOV not published",
+   "payout_source": "https://www.commissionfactory.com/advertiser-directory/true-protein-affiliate-program/60474",
+   "payout_read": "2026-09-19",
+   "screen": "PASS (capability); payout UNVERIFIED",
+   "code_credited_without_click": "capability yes; issuance UNVERIFIED",
+   "code_evidence": "\"Clickless tracking\".",
+   "coupon_exclusion": "None stated",
+   "cookie": "30 days tracking, 45 validation",
+   "apply_url": "https://www.commissionfactory.com/advertiser-directory/true-protein-affiliate-program/60474",
+   "tga": "Sports foods.",
+   "volume_code_monthly": {
+    "central": 296,
+    "low": 126,
+    "high": 694,
+    "method": "Trends brand ratio 6.94x Moshy; code family below Trends reliability threshold (7 non-zero weeks), so range runs from the sparse code reading (intensity 0.18) to Moshy-like intensity (1.0); central is the geometric mean",
+    "reliable": false
+   },
+   "volume_review_monthly": {
+    "central": 2430,
+    "low": 810,
+    "high": 7290,
+    "method": "Trends brand ratio 6.94x Moshy x Moshy review share (review family not measured in Trends; rate-limited)"
+   },
+   "annual_code_aud": "UNVERIFIED",
+   "annual_review_aud": "UNVERIFIED",
+   "revenue_note": "Payout per sale not published in A$; each A$1 of payout is worth A$18/yr (code basis) and A$146/yr (review basis)"
+  },
+  {
+   "brand": "Centr",
+   "key": "centr",
+   "category": "Fitness app",
+   "network": "Awin; Superfiliate portal (partners.centr.com)",
+   "merchant_id": "Awin 60093",
+   "payout_aud": null,
+   "payout_quote": "\"$5 per free trial or 5% on shop.centr.com sales\" (currency not stated)",
+   "payout_source": "https://ui.awin.com/merchant-profile/60093",
+   "payout_read": "2026-09-19",
+   "screen": "UNVERIFIED",
+   "code_credited_without_click": "UNVERIFIED",
+   "code_evidence": "\"invite others to train with Centr using an exclusive discount code, and earn with every sign-up\"; terms behind login",
+   "coupon_exclusion": "UNVERIFIED",
+   "cookie": "30 days",
+   "apply_url": "https://centr.com/p/centr-strength-society",
+   "tga": "None.",
+   "volume_code_monthly": {
+    "central": 27,
+    "low": 2,
+    "high": 428,
+    "method": "Trends brand ratio 4.28x Moshy; code family below Trends reliability threshold (1 non-zero weeks), so range runs from the sparse code reading (intensity 0.00) to Moshy-like intensity (1.0); central is the geometric mean",
+    "reliable": false
+   },
+   "volume_review_monthly": {
+    "central": 1499,
+    "low": 500,
+    "high": 4496,
+    "method": "Trends brand ratio 4.28x Moshy x Moshy review share (review family not measured in Trends; rate-limited)"
+   },
+   "annual_code_aud": "UNVERIFIED",
+   "annual_review_aud": "UNVERIFIED",
+   "revenue_note": "Payout per sale not published in A$; each A$1 of payout is worth A$2/yr (code basis) and A$90/yr (review basis)"
+  },
+  {
+   "brand": "Youfoodz",
+   "key": "youfoodz",
+   "category": "Prepared meals",
+   "network": "Impact",
+   "merchant_id": "Youfoodz.brand",
+   "payout_aud": null,
+   "payout_quote": "\"Earn competitive commissions on orders you drive!\" UNVERIFIED",
+   "payout_source": "https://www.youfoodz.com/about/affiliates",
+   "payout_read": "2026-09-19",
+   "screen": "UNVERIFIED",
+   "code_credited_without_click": "UNVERIFIED",
+   "code_evidence": "\"Strong offers and codes provided to promote the brand\"; no no-click statement; no Upfluence ambassador program found (/about/influencer-program 404)",
+   "coupon_exclusion": "Terms 13.7: referral vouchers void if \"published on deal sites or bargain sites\"",
+   "cookie": "30 days",
+   "apply_url": "https://www.youfoodz.com/about/affiliates",
+   "tga": "None.",
+   "volume_code_monthly": {
+    "central": 1594,
+    "low": 797,
+    "high": 3188,
+    "method": "Trends brand ratio 11.80x Moshy x code intensity 1.35 (code family measured, 28/53 weeks non-zero)",
+    "reliable": true
+   },
+   "volume_review_monthly": {
+    "central": 4128,
+    "low": 1376,
+    "high": 12385,
+    "method": "Trends brand ratio 11.80x Moshy x Moshy review share (review family not measured in Trends; rate-limited)"
+   },
+   "annual_code_aud": "UNVERIFIED",
+   "annual_review_aud": "UNVERIFIED",
+   "revenue_note": "Payout per sale not published in A$; each A$1 of payout is worth A$96/yr (code basis) and A$248/yr (review basis)"
+  },
+  {
+   "brand": "Lyka",
+   "key": "lyka",
+   "category": "Fresh dog food",
+   "network": "Impact; in-house Ambassador and Breeder programs",
+   "merchant_id": "Lyka-Pet-Food-Pty-Ltd.brand",
+   "payout_aud": null,
+   "payout_quote": "Ambassador: \"every time someone uses your code you'll be remunerated\"; amount UNVERIFIED",
+   "payout_source": "https://lyka.com.au/ambassador",
+   "payout_read": "2026-09-19",
+   "screen": "UNVERIFIED (payout); code-based",
+   "code_credited_without_click": "yes by wording (ambassador); program aimed at vets, walkers, groomers, breeders",
+   "code_evidence": "\"we'll give you a unique code to share with your clients ... every time someone uses your code you'll be remunerated\"",
+   "coupon_exclusion": "Refer-a-friend terms: codes \"must not be shared in a way that is misleading, spam, unlawful or inconsistent with Lyka's brand\"; no explicit deal-site ban",
+   "cookie": "not published",
+   "apply_url": "https://lyka.com.au/ambassador-signup",
+   "tga": "None.",
+   "volume_code_monthly": {
+    "central": 936,
+    "low": 312,
+    "high": 2807,
+    "method": "Trends brand ratio 9.36x Moshy x assumed Moshy-like code intensity (code family not measured)",
+    "reliable": false
+   },
+   "volume_review_monthly": {
+    "central": 3275,
+    "low": 1092,
+    "high": 9825,
+    "method": "Trends brand ratio 9.36x Moshy x Moshy review share (review family not measured in Trends; rate-limited)"
+   },
+   "annual_code_aud": "UNVERIFIED",
+   "annual_review_aud": "UNVERIFIED",
+   "revenue_note": "Payout per sale not published in A$; each A$1 of payout is worth A$56/yr (code basis) and A$197/yr (review basis)"
+  },
+  {
+   "brand": "Lite n' Easy",
+   "key": "lite n easy",
+   "category": "Prepared meals",
+   "network": "None found",
+   "merchant_id": null,
+   "payout_aud": null,
+   "payout_quote": "No primary program page (affiliate paths 404, not on CF or Impact). A$40 tier appears only on wealthyaffiliate (aggregator, not a source)",
+   "payout_source": null,
+   "payout_read": "2026-09-19",
+   "screen": "UNVERIFIED (no program found)",
+   "code_credited_without_click": "UNVERIFIED",
+   "code_evidence": "n/a",
+   "coupon_exclusion": "Aggregator claims \"except PPC and coupon sites\" (not a source)",
+   "cookie": "UNVERIFIED",
+   "apply_url": null,
+   "tga": "None.",
+   "volume_code_monthly": {
+    "central": 557,
+    "low": 146,
+    "high": 2128,
+    "method": "Trends brand ratio 21.28x Moshy; code family below Trends reliability threshold (8 non-zero weeks), so range runs from the sparse code reading (intensity 0.07) to Moshy-like intensity (1.0); central is the geometric mean",
+    "reliable": false
+   },
+   "volume_review_monthly": {
+    "central": 7449,
+    "low": 2483,
+    "high": 22348,
+    "method": "Trends brand ratio 21.28x Moshy x Moshy review share (review family not measured in Trends; rate-limited)"
+   },
+   "annual_code_aud": "UNVERIFIED",
+   "annual_review_aud": "UNVERIFIED",
+   "revenue_note": "Payout per sale not published in A$; each A$1 of payout is worth A$33/yr (code basis) and A$447/yr (review basis)"
+  },
+  {
+   "brand": "Wine Selectors",
+   "key": "wine selectors",
+   "category": "Wine",
+   "network": "Commission Factory",
+   "merchant_id": "32549",
+   "payout_aud": null,
+   "payout_quote": "\"10.00% per sale\"; AOV not published",
+   "payout_source": "https://www.commissionfactory.com/advertiser-directory/wine-selectors-affiliate-program/32549",
+   "payout_read": "2026-09-19",
+   "screen": "PASS (capability); payout UNVERIFIED",
+   "code_credited_without_click": "capability yes; issuance UNVERIFIED",
+   "code_evidence": "\"Clickless tracking\".",
+   "coupon_exclusion": "None stated",
+   "cookie": "30 days",
+   "apply_url": "https://www.commissionfactory.com/advertiser-directory/wine-selectors-affiliate-program/32549",
+   "tga": "Alcohol.",
+   "volume_code_monthly": {
+    "central": 3,
+    "low": 0,
+    "high": 12,
+    "method": "Trends brand ratio 0.12x Moshy; code family below Trends reliability threshold (0 non-zero weeks), so range runs from the sparse code reading (intensity 0.00) to Moshy-like intensity (1.0); central is the geometric mean",
+    "reliable": false
+   },
+   "volume_review_monthly": {
+    "central": 42,
+    "low": 14,
+    "high": 127,
+    "method": "Trends brand ratio 0.12x Moshy x Moshy review share (review family not measured in Trends; rate-limited)"
+   },
+   "annual_code_aud": "UNVERIFIED",
+   "annual_review_aud": "UNVERIFIED",
+   "revenue_note": "Payout per sale not published in A$; each A$1 of payout is worth A$0/yr (code basis) and A$3/yr (review basis)"
+  },
+  {
+   "brand": "Optislim",
+   "key": null,
+   "category": "Weight-loss shakes",
+   "network": "Commission Factory",
+   "merchant_id": "77632",
+   "payout_aud": 15,
+   "payout_quote": "\"10% commission on the sale value\"; \"High AOV - $150\" = A$15",
+   "payout_source": "https://www.commissionfactory.com/advertiser-directory/optislim-affiliate-program/77632",
+   "payout_read": "2026-09-19",
+   "screen": "PASS (capability)",
+   "code_credited_without_click": "capability yes; issuance UNVERIFIED",
+   "code_evidence": "\"Clickless tracking\"; \"Please view our current coupons and promotions\"",
+   "coupon_exclusion": "None stated (except PPC)",
+   "cookie": "30 days",
+   "apply_url": "https://www.commissionfactory.com/advertiser-directory/optislim-affiliate-program/77632",
+   "tga": "Weight loss is a TGA focus area; any listed-medicine SKUs fall under the listed-medicine advertising priority. Already a CF partner on the Health & Beauty hub per project memory.",
+   "volume_code_monthly": "UNVERIFIED",
+   "volume_review_monthly": "UNVERIFIED",
+   "annual_code_aud": "UNVERIFIED",
+   "annual_review_aud": "UNVERIFIED",
+   "revenue_note": "Volume not measured"
+  },
+  {
+   "brand": "Yes Chef Meals",
+   "key": "yes chef meals",
+   "category": "Prepared meals",
+   "network": "Commission Factory",
+   "merchant_id": "93555",
+   "payout_aud": null,
+   "payout_quote": "\"24% for new customers, 4% for existing customers\"; AOV not published",
+   "payout_source": "https://www.commissionfactory.com/advertiser-directory/yes-chef-meals-affiliate-program/93555",
+   "payout_read": "2026-09-19",
+   "screen": "PASS (capability); payout UNVERIFIED",
+   "code_credited_without_click": "capability yes; issuance UNVERIFIED",
+   "code_evidence": "\"Clickless tracking\".",
+   "coupon_exclusion": "None stated",
+   "cookie": "30 days",
+   "apply_url": "https://www.commissionfactory.com/advertiser-directory/yes-chef-meals-affiliate-program/93555",
+   "tga": "None.",
+   "volume_code_monthly": {
+    "central": 3,
+    "low": 1,
+    "high": 9,
+    "method": "Trends brand ratio 0.03x Moshy x assumed Moshy-like code intensity (code family not measured)",
+    "reliable": false
+   },
+   "volume_review_monthly": {
+    "central": 11,
+    "low": 4,
+    "high": 33,
+    "method": "Trends brand ratio 0.03x Moshy x Moshy review share (review family not measured in Trends; rate-limited)"
+   },
+   "annual_code_aud": "UNVERIFIED",
+   "annual_review_aud": "UNVERIFIED",
+   "revenue_note": "Payout per sale not published in A$; each A$1 of payout is worth A$0/yr (code basis) and A$1/yr (review basis)"
+  },
+  {
+   "brand": "Eimele",
+   "key": "eimele",
+   "screen": "UNVERIFIED",
+   "notes": "CF 79475 now 404; GoAffPro in-house (eimele.goaffpro.com), payout and code policy UNVERIFIED; products are ARTG listed medicines",
+   "volume_code_monthly": {
+    "central": 1,
+    "low": 0,
+    "high": 2,
+    "method": "Trends brand ratio 0.02x Moshy; code family below Trends reliability threshold (0 non-zero weeks), so range runs from the sparse code reading (intensity 0.00) to Moshy-like intensity (1.0); central is the geometric mean",
+    "reliable": false
+   },
+   "volume_review_monthly": {
+    "central": 7,
+    "low": 2,
+    "high": 21,
+    "method": "Trends brand ratio 0.02x Moshy x Moshy review share (review family not measured in Trends; rate-limited)"
+   },
+   "annual_code_aud": "UNVERIFIED",
+   "annual_review_aud": "UNVERIFIED",
+   "revenue_note": "Program exists or may exist but payout and code policy are not public: revenue UNVERIFIED",
+   "payout_read": "2026-09-19"
+  },
+  {
+   "brand": "Swisse",
+   "key": "swisse",
+   "screen": "UNVERIFIED",
+   "notes": "Partnerize campaign 1011l1288 (pixel on site); terms not public: UNVERIFIED; 935 ARTG entries (listed medicines)",
+   "volume_code_monthly": {
+    "central": 220,
+    "low": 28,
+    "high": 1708,
+    "method": "Trends brand ratio 17.08x Moshy; code family below Trends reliability threshold (3 non-zero weeks), so range runs from the sparse code reading (intensity 0.02) to Moshy-like intensity (1.0); central is the geometric mean",
+    "reliable": false
+   },
+   "volume_review_monthly": {
+    "central": 5976,
+    "low": 1992,
+    "high": 17929,
+    "method": "Trends brand ratio 17.08x Moshy x Moshy review share (review family not measured in Trends; rate-limited)"
+   },
+   "annual_code_aud": "UNVERIFIED",
+   "annual_review_aud": "UNVERIFIED",
+   "revenue_note": "Program exists or may exist but payout and code policy are not public: revenue UNVERIFIED",
+   "payout_read": "2026-09-19"
+  },
+  {
+   "brand": "JSHealth Vitamins",
+   "key": "jshealth",
+   "screen": "UNVERIFIED",
+   "notes": "Impact (per impact.com 2022 case study); affiliates page 403; UNVERIFIED; 139 ARTG entries",
+   "volume_code_monthly": {
+    "central": 133,
+    "low": 30,
+    "high": 588,
+    "method": "Trends brand ratio 5.88x Moshy; code family below Trends reliability threshold (4 non-zero weeks), so range runs from the sparse code reading (intensity 0.05) to Moshy-like intensity (1.0); central is the geometric mean",
+    "reliable": false
+   },
+   "volume_review_monthly": {
+    "central": 2060,
+    "low": 687,
+    "high": 6179,
+    "method": "Trends brand ratio 5.88x Moshy x Moshy review share (review family not measured in Trends; rate-limited)"
+   },
+   "annual_code_aud": "UNVERIFIED",
+   "annual_review_aud": "UNVERIFIED",
+   "revenue_note": "Program exists or may exist but payout and code policy are not public: revenue UNVERIFIED",
+   "payout_read": "2026-09-19"
+  },
+  {
+   "brand": "Myprotein AU",
+   "key": "myprotein",
+   "screen": "UNVERIFIED",
+   "notes": "Awin 19155, \"Exclusive Affiliate Promotions\", terms behind login: UNVERIFIED",
+   "volume_code_monthly": {
+    "central": 2468,
+    "low": 1234,
+    "high": 4935,
+    "method": "Trends brand ratio 14.40x Moshy x code intensity 1.71 (code family measured, 39/53 weeks non-zero)",
+    "reliable": true
+   },
+   "volume_review_monthly": {
+    "central": 5039,
+    "low": 1680,
+    "high": 15117,
+    "method": "Trends brand ratio 14.40x Moshy x Moshy review share (review family not measured in Trends; rate-limited)"
+   },
+   "annual_code_aud": "UNVERIFIED",
+   "annual_review_aud": "UNVERIFIED",
+   "revenue_note": "Program exists or may exist but payout and code policy are not public: revenue UNVERIFIED",
+   "payout_read": "2026-09-19"
+  },
+  {
+   "brand": "Naked Wines AU",
+   "key": "naked wines",
+   "screen": "UNVERIFIED",
+   "notes": "Impact, AU payout UNVERIFIED ($25 figure is the US program); customer referral pays $30 account credit",
+   "volume_code_monthly": {
+    "central": 15,
+    "low": 0,
+    "high": 232,
+    "method": "Trends brand ratio 2.32x Moshy; code family below Trends reliability threshold (0 non-zero weeks), so range runs from the sparse code reading (intensity 0.00) to Moshy-like intensity (1.0); central is the geometric mean",
+    "reliable": false
+   },
+   "volume_review_monthly": {
+    "central": 813,
+    "low": 271,
+    "high": 2438,
+    "method": "Trends brand ratio 2.32x Moshy x Moshy review share (review family not measured in Trends; rate-limited)"
+   },
+   "annual_code_aud": "UNVERIFIED",
+   "annual_review_aud": "UNVERIFIED",
+   "revenue_note": "Program exists or may exist but payout and code policy are not public: revenue UNVERIFIED",
+   "payout_read": "2026-09-19"
+  },
+  {
+   "brand": "Good Pair Days",
+   "key": "good pair days",
+   "screen": "UNVERIFIED",
+   "notes": "Impact, payout UNVERIFIED; referral rewards are codes, gifts or points",
+   "volume_code_monthly": {
+    "central": 51,
+    "low": 24,
+    "high": 109,
+    "method": "Trends brand ratio 1.09x Moshy; code family below Trends reliability threshold (1 non-zero weeks), so range runs from the sparse code reading (intensity 0.22) to Moshy-like intensity (1.0); central is the geometric mean",
+    "reliable": false
+   },
+   "volume_review_monthly": {
+    "central": 381,
+    "low": 127,
+    "high": 1142,
+    "method": "Trends brand ratio 1.09x Moshy x Moshy review share (review family not measured in Trends; rate-limited)"
+   },
+   "annual_code_aud": "UNVERIFIED",
+   "annual_review_aud": "UNVERIFIED",
+   "revenue_note": "Program exists or may exist but payout and code policy are not public: revenue UNVERIFIED",
+   "payout_read": "2026-09-19"
+  },
+  {
+   "brand": "Petstock",
+   "key": "petstock",
+   "screen": "UNVERIFIED",
+   "notes": "Partnerize (per Partnerize blog, 14 Aug 2023); site returned 429; UNVERIFIED",
+   "volume_code_monthly": {
+    "central": 390,
+    "low": 43,
+    "high": 3508,
+    "method": "Trends brand ratio 35.08x Moshy; code family below Trends reliability threshold (4 non-zero weeks), so range runs from the sparse code reading (intensity 0.01) to Moshy-like intensity (1.0); central is the geometric mean",
+    "reliable": false
+   },
+   "volume_review_monthly": {
+    "central": 12276,
+    "low": 4092,
+    "high": 36829,
+    "method": "Trends brand ratio 35.08x Moshy x Moshy review share (review family not measured in Trends; rate-limited)"
+   },
+   "annual_code_aud": "UNVERIFIED",
+   "annual_review_aud": "UNVERIFIED",
+   "revenue_note": "Program exists or may exist but payout and code policy are not public: revenue UNVERIFIED",
+   "payout_read": "2026-09-19"
+  }
+ ],
+ "cf_clickless_census": {
+  "programs_in_public_directory": 554,
+  "showing_clickless_tracking_feature": 536,
+  "not_showing": [
+   "Spicers Retreats",
+   "BYOjet",
+   "Ruggable Australia",
+   "Autobarn",
+   "Superloop",
+   "AGL",
+   "Pure Milford",
+   "Priceline Pharmacy",
+   "Mater Lotteries",
+   "Thrill Experiences",
+   "XHunter Australia",
+   "CoolThings Australia",
+   "PetsOnMe Pet Insurance",
+   "JUCY",
+   "Fantastic Furniture",
+   "Aunt Betty",
+   "yourtown Prize Homes",
+   "Tyroola"
+  ],
+  "definition": "\"A form of tracking that does not require a click to be the source of the transaction. Uses exclusive coupon code assigned to individual affiliate to match the transaction to the affiliate, instead of a click.\" https://help.commissionfactory.com/clickless-tracking",
+  "caveat": "The badge shows the advertiser's integration can do it; the advertiser still has to assign a code to us (https://help.commissionfactory.com/clickless-codes).",
+  "read": "2026-09-19"
+ }
+}

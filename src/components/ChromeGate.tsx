@@ -48,6 +48,7 @@ const STANDALONE_ROUTES = [
   "/aussie-health-products",
   "/emma-sleep",
   "/technogym",
+  "/i-screen",
   "/sleep",
   "/for-business",
   "/compare",

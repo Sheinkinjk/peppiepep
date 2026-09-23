@@ -1,0 +1,897 @@
+[
+  {
+    "rank": 1,
+    "tier": "A: payout verified >= A$100",
+    "brand": "Star RV",
+    "parent_group": "JUCY Group (listing contact travviagroup.com)",
+    "category": "Motorhome / campervan rental",
+    "network": "Commission Factory 86430",
+    "payout": "\"5% commission on full rental / booking value\" with \"High average order value of AUD $3,000\" = A$150 per booking on the advertiser's own published inputs",
+    "payout_source_url": "https://www.commissionfactory.com/advertiser-directory/star-rv-affiliate-program/86430",
+    "payout_date_read": "2026-09-19",
+    "publisher_specific_codes": "Yes: \"opportunities for: Unique discount codes\"",
+    "coupon_cashback_policy": "\"Open to other promotional methods (except PPC)\"; no coupon or cashback exclusion stated",
+    "cookie_window": "90-day referral window",
+    "application_url": "https://www.commissionfactory.com/advertiser-directory/star-rv-affiliate-program/86430",
+    "demand_evidence": {
+      "strength": "medium",
+      "proxy": "Google AU autocomplete: 8 code-intent suggestions, 2 Australia-qualified ('star rv promo code australia', 'star rv australia discount code')",
+      "search_console": "none",
+      "shopback": "not listed"
+    },
+    "regulatory_notes": "None specific. Travel, not a financial product.",
+    "score": {
+      "payout": 3,
+      "code": 1,
+      "demand": 2,
+      "regulatory": 1,
+      "total": 6.0
+    },
+    "unverified": [],
+    "notes": "Outside every current site vertical; a code page needs a travel / road-trip home to pass the revenue-first rule."
+  },
+  {
+    "rank": 2,
+    "tier": "A: payout verified >= A$100",
+    "brand": "EcoFlow AU",
+    "parent_group": "EcoFlow Inc.",
+    "category": "Portable power stations / home batteries",
+    "network": "Commission Factory 88567 (also Awin 59181, CJ; UpPromote and ReferralCandy on site)",
+    "payout": "\"Commission Rate: 8% Average order value: AUD 2,000\" = A$160 per sale on published inputs",
+    "payout_source_url": "https://www.commissionfactory.com/advertiser-directory/ecoflow-affiliate-program/88567",
+    "payout_date_read": "2026-09-19",
+    "publisher_specific_codes": "Not stated on the CF listing. A code EFAUAFF6 ('6% off') appears on OzBargain per a subagent read; that it is an affiliate code is an inference from the string.",
+    "coupon_cashback_policy": "None stated. EcoFlow's own page reverses commission when \"The same order appears on multiple affiliate platforms\".",
+    "cookie_window": "CF listing: 30 days. EcoFlow's own affiliate page: 7 days. The two conflict.",
+    "application_url": "https://dashboard.commissionfactory.com/Affiliate/Register/88567/",
+    "demand_evidence": {
+      "strength": "medium",
+      "proxy": "Autocomplete: 21 code-intent suggestions, 1 Australia-qualified ('ecoflow discount code australia')",
+      "search_console": "none",
+      "shopback": "not checked",
+      "ozbargain": "deals page with 1 active, 16 expired (subagent via WebFetch)"
+    },
+    "regulatory_notes": "Home battery rebate copy already has its own rules on the site.",
+    "score": {
+      "payout": 3,
+      "code": 0.5,
+      "demand": 2,
+      "regulatory": 1,
+      "total": 3.0
+    },
+    "unverified": [
+      "publisher_specific_codes",
+      "cookie_window"
+    ],
+    "notes": "Refer Labs already holds a live CF link (src/lib/affiliate-links.ts ECOFLOW_URL, publisher 94361) and has /ecoflow, but no code. Cheapest win on this list: ask for a personalised code."
+  },
+  {
+    "rank": 3,
+    "tier": "A: payout verified >= A$100",
+    "brand": "Lekker Bikes",
+    "parent_group": "LEKKER Bikes",
+    "category": "E-bikes",
+    "network": "Commission Factory 55098",
+    "payout": "\"5% Default Commission on eBike Sales\" with \"High average order value (over $2.800)\" = A$140 per sale on published inputs",
+    "payout_source_url": "https://www.commissionfactory.com/advertiser-directory/lekker-bikes-affiliate-program/55098",
+    "payout_date_read": "2026-09-19",
+    "publisher_specific_codes": "Yes: \"Possibility of creating exclusive Coupon codes on request\"",
+    "coupon_cashback_policy": "\"Open to promotional methods such as Cashback, Coupon and offer affiliates and others will be added on a case-by-case basis\"; PPC, retargeting, social, display and price comparison publishers not allowed; in-store sales non-commissionable",
+    "cookie_window": "30 days",
+    "application_url": "https://www.commissionfactory.com/advertiser-directory/lekker-bikes-affiliate-program/55098",
+    "demand_evidence": {
+      "strength": "weak",
+      "proxy": "Autocomplete: 1 brand-specific suggestion ('lekker bikes discount code'); other 'lekker' completions are unrelated (including a gambling brand)",
+      "search_console": "none",
+      "ozbargain": "8 deals, all expired, latest 8 Mar 2025 (subagent)"
+    },
+    "regulatory_notes": "None specific.",
+    "score": {
+      "payout": 3,
+      "code": 1,
+      "demand": 1,
+      "regulatory": 1,
+      "total": 3.0
+    },
+    "unverified": [],
+    "notes": "The listing bars 'Price Comparison' publishers. Whether an editorial comparison site counts as one needs asking before applying."
+  },
+  {
+    "rank": 4,
+    "tier": "A: payout verified >= A$100",
+    "brand": "Carbar",
+    "parent_group": "Carbar",
+    "category": "Car subscription",
+    "network": "Commission Factory 92226",
+    "payout": "\"AU$100.00 per lead\" paid once the subscriber passes the affordability assessment and the vehicle is delivered. The same page also says \"$500 per conversion is a standout rate\"; the two figures conflict.",
+    "payout_source_url": "https://www.commissionfactory.com/advertiser-directory/carbar-affiliate-program/92226",
+    "payout_date_read": "2026-09-19",
+    "publisher_specific_codes": "Yes: \"you'll get a unique referral link/code\"",
+    "coupon_cashback_policy": "Not stated",
+    "cookie_window": "30 days tracking, 30 days validation",
+    "application_url": "https://www.commissionfactory.com/advertiser-directory/carbar-affiliate-program/92226",
+    "demand_evidence": {
+      "strength": "weak",
+      "proxy": "Autocomplete: 2 suggestions ('carbar promo code')",
+      "search_console": "none",
+      "ozbargain": "6 deals, all expired, latest 4 Aug 2026 (subagent)"
+    },
+    "regulatory_notes": "An 'affordability assessment' makes this credit-adjacent. Confirm the product is not a credit contract before building (site rule excludes credit).",
+    "score": {
+      "payout": 3,
+      "code": 1,
+      "demand": 1,
+      "regulatory": 0.7,
+      "total": 2.1
+    },
+    "unverified": [
+      "payout (A$100 vs A$500 conflict on one page)"
+    ],
+    "notes": ""
+  },
+  {
+    "rank": 5,
+    "tier": "A: payout verified >= A$100 (borderline)",
+    "brand": "Springfree Trampoline AU",
+    "parent_group": "Springfree Trampoline",
+    "category": "Trampolines",
+    "network": "Commission Factory 87128",
+    "payout": "\"Earn a 5% commission on every sale\" with \"average order of $1999+\" = A$99.95 at the published floor, a cent under the A$100 bar",
+    "payout_source_url": "https://www.commissionfactory.com/advertiser-directory/springfree-trampoline-au-affiliate-program/87128",
+    "payout_date_read": "2026-09-19",
+    "publisher_specific_codes": "Not stated",
+    "coupon_cashback_policy": "\"Open to all promotional methods (except PPC)\"",
+    "cookie_window": "30 days",
+    "application_url": "https://www.commissionfactory.com/advertiser-directory/springfree-trampoline-au-affiliate-program/87128",
+    "demand_evidence": {
+      "strength": "medium",
+      "proxy": "Autocomplete: 16 code-intent suggestions, 2 Australia-qualified",
+      "search_console": "none",
+      "ozbargain": "18+ deals, all expired, latest 21 Aug 2026 (subagent)"
+    },
+    "regulatory_notes": "None specific.",
+    "score": {
+      "payout": 1.5,
+      "code": 0.5,
+      "demand": 2,
+      "regulatory": 1,
+      "total": 1.5
+    },
+    "unverified": [
+      "publisher_specific_codes"
+    ],
+    "notes": ""
+  },
+  {
+    "rank": 6,
+    "tier": "A: payout verified >= A$100 (borderline)",
+    "brand": "Coolzy",
+    "parent_group": "Coolzy",
+    "category": "Portable air-conditioners",
+    "network": "Commission Factory 90368",
+    "payout": "\"12.5% default commission on every sale (subject to approval)\" with \"AOV of over $800\" = just over A$100",
+    "payout_source_url": "https://www.commissionfactory.com/advertiser-directory/coolzy-affiliate-program/90368",
+    "payout_date_read": "2026-09-19",
+    "publisher_specific_codes": "Not stated",
+    "coupon_cashback_policy": "\"all promotional methods, except PPC\"",
+    "cookie_window": "30 days",
+    "application_url": "https://www.commissionfactory.com/advertiser-directory/coolzy-affiliate-program/90368",
+    "demand_evidence": {
+      "strength": "weak",
+      "proxy": "Autocomplete: 2 suggestions ('coolzy discount code')",
+      "search_console": "none"
+    },
+    "regulatory_notes": "None specific.",
+    "score": {
+      "payout": 3,
+      "code": 0.5,
+      "demand": 1,
+      "regulatory": 1,
+      "total": 1.5
+    },
+    "unverified": [
+      "publisher_specific_codes"
+    ],
+    "notes": "Seasonal product (summer)."
+  },
+  {
+    "rank": 7,
+    "tier": "A: payout verified >= A$100",
+    "brand": "Hims (Australia, ex-Pilot)",
+    "parent_group": "Hims & Hers Health, Inc. (Hims Australia Pty Ltd)",
+    "category": "Men's telehealth (weight, hair, ED)",
+    "network": "Direct (in-house Partner Program, Typeform application, Partner Dashboard)",
+    "payout": "\"$75 to $200 per referral depending on which plan they sign up to. Referrals to the Weight Treatment Plan earn $200, all others earn $75. Plus a volume bonus ... $500 every 10 referrals to the Weight Treatment Plan, $250 every 10 referrals to the Hair and/or ED Treatment Plans.\"",
+    "payout_source_url": "https://hims.com.au/partner-program",
+    "payout_date_read": "2026-09-19",
+    "publisher_specific_codes": "Yes, a unique Partner Code; \"We will only pay Commission if your Partner Code is applied at checkout\"",
+    "coupon_cashback_policy": "EXCLUDED as written: partners must not distribute the code or link \"on any promotional code, coupon, cashback, review-aggregator, comparison, or other third-party promotional website\" (Partner Terms, 'Last updated August 2026', https://hims.com.au/partner-program-terms-and-conditions)",
+    "cookie_window": "Not stated; attribution is by code at checkout",
+    "application_url": "https://hims.com.au/partner-program",
+    "demand_evidence": {
+      "strength": "strong",
+      "proxy": "Search Console 21 Aug-17 Sep 2026: 'pilot discount code australia' 29 impressions pos 16, plus 'pilot weight loss discount code' 9, 'pilot health discount code' 4; autocomplete 'pilot' 24 code suggestions, 3 Australia-qualified; 'hims' 19 but none Australia-qualified",
+      "shopback": "not listed",
+      "ozbargain_referral_wiki": "Pilot listed"
+    },
+    "regulatory_notes": "TGA priority focus areas name both 'Weight loss medications' and 'Erectile dysfunction medications'. Describe the service only. Hims also publishes its own public codes START50 and HAIR50 (hims.com.au/discount-codes) which compete with any partner code; 'Mates Rates' customer codes may not be used 'for SEO or public advertising purposes'.",
+    "score": {
+      "payout": 3,
+      "code": 0.3,
+      "demand": 3,
+      "regulatory": 0.5,
+      "total": 1.35
+    },
+    "unverified": [],
+    "notes": "The operator reports a code-attributed Hims & Hers agreement. If it is the standard Partner Terms, the comparison-site clause applies to Refer Labs. Check the signed agreement before building any Hims code page."
+  },
+  {
+    "rank": 8,
+    "tier": "A: payout verified >= A$100",
+    "brand": "Carly Australia",
+    "parent_group": "Carly",
+    "category": "Car subscription",
+    "network": "Commission Factory 67365",
+    "payout": "\"AU$100.00 per lead\", same conditions as Carbar (affordability assessment passed, vehicle delivered)",
+    "payout_source_url": "https://www.commissionfactory.com/advertiser-directory/carly-australia-affiliate-program/67365",
+    "payout_date_read": "2026-09-19",
+    "publisher_specific_codes": "Yes: \"unique referral link/code\"",
+    "coupon_cashback_policy": "Not stated",
+    "cookie_window": "30 days tracking, 45 days validation",
+    "application_url": "https://www.commissionfactory.com/advertiser-directory/carly-australia-affiliate-program/67365",
+    "demand_evidence": {
+      "strength": "none measurable",
+      "proxy": "'carly car subscription discount code' returned no suggestions; 'carly discount code' suggestions belong to an unrelated OBD app"
+    },
+    "regulatory_notes": "Credit-adjacent (affordability assessment), as Carbar.",
+    "score": {
+      "payout": 3,
+      "code": 1,
+      "demand": 0.5,
+      "regulatory": 0.7,
+      "total": 1.05
+    },
+    "unverified": [],
+    "notes": ""
+  },
+  {
+    "rank": 9,
+    "tier": "B: payout UNVERIFIED",
+    "brand": "Youfoodz",
+    "parent_group": "HelloFresh SE",
+    "category": "Prepared meals",
+    "network": "Impact (run by agency Silverbean)",
+    "payout": "UNVERIFIED (\"Earn competitive commissions\")",
+    "payout_source_url": null,
+    "payout_date_read": null,
+    "publisher_specific_codes": "Yes: \"Strong offers and codes provided to promote the brand\" (https://www.youfoodz.com/about/affiliates)",
+    "coupon_cashback_policy": "Customer referral vouchers void if \"published on deal sites or bargain sites\" (youfoodz.com/terms cl 13.6-13.7); affiliate coupon policy UNVERIFIED",
+    "cookie_window": "30 days (\"30 day cookie period\", merchant page)",
+    "application_url": "https://app.impact.com/advertiser-advertiser-info/Youfoodz.brand",
+    "demand_evidence": {
+      "strength": "strong",
+      "proxy": "Autocomplete: 17 code-intent suggestions, 3 Australia-qualified; ShopBack listed; OzBargain referral wiki lists two Youfoodz referral offers"
+    },
+    "regulatory_notes": "None specific (avoid weight-loss outcome claims).",
+    "score": {
+      "payout": "UNVERIFIED",
+      "code": 1,
+      "demand": 3,
+      "regulatory": 1,
+      "total_ex_payout": 3.0
+    },
+    "unverified": [
+      "payout",
+      "coupon_cashback_policy"
+    ],
+    "notes": "Sibling-program pattern: HelloFresh-group meal commissions are typically new-customer rates; not confirmed here."
+  },
+  {
+    "rank": 10,
+    "tier": "B: payout UNVERIFIED",
+    "brand": "HelloFresh AU",
+    "parent_group": "HelloFresh SE",
+    "category": "Meal kits",
+    "network": "Impact",
+    "payout": "UNVERIFIED (\"Competitive commission on validated new and past customer subscriptions\")",
+    "payout_source_url": null,
+    "payout_date_read": null,
+    "publisher_specific_codes": "Yes: \"Exclusive voucher codes for your audience\" (https://www.hellofresh.com.au/about/affiliates)",
+    "coupon_cashback_policy": "Affiliate coupon policy UNVERIFIED; customer referral vouchers void on \"deal sites or bargain sites\"",
+    "cookie_window": "30 days (merchant page)",
+    "application_url": "https://app.impact.com/advertiser-advertiser-info/HelloFresh-AU.brand",
+    "demand_evidence": {
+      "strength": "medium",
+      "proxy": "Autocomplete: 28 suggestions, 2 Australia-qualified; ShopBack listed; OzBargain referral wiki lists 'HelloFresh - $115-$125 off 1st Box'"
+    },
+    "regulatory_notes": "None specific.",
+    "score": {
+      "payout": "UNVERIFIED",
+      "code": 1,
+      "demand": 2,
+      "regulatory": 1,
+      "total_ex_payout": 2.0
+    },
+    "unverified": [
+      "payout",
+      "coupon_cashback_policy"
+    ],
+    "notes": ""
+  },
+  {
+    "rank": 11,
+    "tier": "B: payout UNVERIFIED",
+    "brand": "EveryPlate AU",
+    "parent_group": "HelloFresh SE",
+    "category": "Meal kits",
+    "network": "Impact",
+    "payout": "UNVERIFIED (\"Competitive commission on new customer subscriptions\")",
+    "payout_source_url": null,
+    "payout_date_read": null,
+    "publisher_specific_codes": "Yes: \"Exclusive voucher codes for your audience\" (https://www.everyplate.com.au/about/affiliates)",
+    "coupon_cashback_policy": "UNVERIFIED",
+    "cookie_window": "30 days (merchant page)",
+    "application_url": "https://app.impact.com/advertiser-advertiser-info/EveryPlate-Australia.brand",
+    "demand_evidence": {
+      "strength": "medium",
+      "proxy": "Autocomplete: 23 suggestions, 1 Australia-qualified; ShopBack listed"
+    },
+    "regulatory_notes": "None specific.",
+    "score": {
+      "payout": "UNVERIFIED",
+      "code": 1,
+      "demand": 2,
+      "regulatory": 1,
+      "total_ex_payout": 2.0
+    },
+    "unverified": [
+      "payout",
+      "coupon_cashback_policy"
+    ],
+    "notes": ""
+  },
+  {
+    "rank": 12,
+    "tier": "B: payout UNVERIFIED",
+    "brand": "Lyka",
+    "parent_group": "Lyka Pet Food Pty Ltd",
+    "category": "Fresh dog food",
+    "network": "Impact; also in-house Ambassador program",
+    "payout": "UNVERIFIED (Impact page publishes no rate; ambassador amount unpublished)",
+    "payout_source_url": null,
+    "payout_date_read": null,
+    "publisher_specific_codes": "Yes via Ambassador program: \"we'll give you a unique code to share ... every time someone uses your code you'll be remunerated\" (https://lyka.com.au/ambassador)",
+    "coupon_cashback_policy": "UNVERIFIED",
+    "cookie_window": "UNVERIFIED",
+    "application_url": "https://lyka.com.au/ambassador",
+    "demand_evidence": {
+      "strength": "medium",
+      "proxy": "Autocomplete: 13 suggestions incl. 'lyka dog food referral code', 1 Australia-qualified; ShopBack listed; OzBargain referral wiki lists Lyka (customer referral 50% off first order, per OzBargain node 927805)"
+    },
+    "regulatory_notes": "None specific.",
+    "score": {
+      "payout": "UNVERIFIED",
+      "code": 1,
+      "demand": 2,
+      "regulatory": 1,
+      "total_ex_payout": 2.0
+    },
+    "unverified": [
+      "payout",
+      "cookie_window",
+      "coupon_cashback_policy"
+    ],
+    "notes": ""
+  },
+  {
+    "rank": 13,
+    "tier": "B: payout UNVERIFIED",
+    "brand": "Koala",
+    "parent_group": "Koala (AU)",
+    "category": "Mattresses / furniture",
+    "network": "Impact tag and Social Snowball on site",
+    "payout": "UNVERIFIED",
+    "payout_source_url": null,
+    "payout_date_read": null,
+    "publisher_specific_codes": "Probable but unconfirmed: Social Snowball issues per-affiliate codes; no terms readable",
+    "coupon_cashback_policy": "UNVERIFIED",
+    "cookie_window": "UNVERIFIED",
+    "application_url": "UNVERIFIED",
+    "demand_evidence": {
+      "strength": "strong",
+      "proxy": "Autocomplete: 24 suggestions, 4 Australia-qualified incl. 'koala discount code influencer'; ShopBack listed; OzBargain referral wiki lists Koala"
+    },
+    "regulatory_notes": "None specific.",
+    "score": {
+      "payout": "UNVERIFIED",
+      "code": 0.5,
+      "demand": 3,
+      "regulatory": 1,
+      "total_ex_payout": 1.5
+    },
+    "unverified": [
+      "payout",
+      "publisher_specific_codes",
+      "cookie_window",
+      "application_url",
+      "coupon_cashback_policy"
+    ],
+    "notes": ""
+  },
+  {
+    "rank": 14,
+    "tier": "B: payout UNVERIFIED",
+    "brand": "Eufy AU",
+    "parent_group": "Anker Innovations",
+    "category": "Robot vacuums / home security",
+    "network": "Impact",
+    "payout": "Rate verified, AOV unpublished: \"10%~15% commission on all approved sales\"; A$ per sale UNVERIFIED",
+    "payout_source_url": "https://www.eufy.com/au/affiliate",
+    "payout_date_read": "2026-09-19",
+    "publisher_specific_codes": "Not stated",
+    "coupon_cashback_policy": "Not stated",
+    "cookie_window": "30 days",
+    "application_url": "https://app.impact.com/campaign-campaign-info-v2/Eufy-AU.brand",
+    "demand_evidence": {
+      "strength": "medium",
+      "proxy": "Autocomplete: 23 suggestions, 1 Australia-qualified"
+    },
+    "regulatory_notes": "None specific.",
+    "score": {
+      "payout": "UNVERIFIED (rate only)",
+      "code": 0.5,
+      "demand": 2,
+      "regulatory": 1,
+      "total_ex_payout": 1.0
+    },
+    "unverified": [
+      "payout (no AOV)",
+      "publisher_specific_codes"
+    ],
+    "notes": ""
+  },
+  {
+    "rank": 15,
+    "tier": "B: payout UNVERIFIED",
+    "brand": "Breville AU",
+    "parent_group": "Breville Group",
+    "category": "Kitchen appliances",
+    "network": "Impact (ID 1268155)",
+    "payout": "Rate verified, AOV unpublished: \"Earn up to 8% commission of the order value\"",
+    "payout_source_url": "https://www.breville.com/en-au/learn-more/breville-affiliates-program",
+    "payout_date_read": "2026-09-19",
+    "publisher_specific_codes": "Not stated",
+    "coupon_cashback_policy": "Not stated",
+    "cookie_window": "30 days",
+    "application_url": "https://www.breville.com/en-au/learn-more/breville-affiliates-program",
+    "demand_evidence": {
+      "strength": "medium",
+      "proxy": "Autocomplete: 17 suggestions, 2 Australia-qualified"
+    },
+    "regulatory_notes": "None specific.",
+    "score": {
+      "payout": "UNVERIFIED (rate only)",
+      "code": 0.5,
+      "demand": 2,
+      "regulatory": 1,
+      "total_ex_payout": 1.0
+    },
+    "unverified": [
+      "payout (no AOV)",
+      "publisher_specific_codes"
+    ],
+    "notes": ""
+  },
+  {
+    "rank": 16,
+    "tier": "B: payout UNVERIFIED",
+    "brand": "eharmony AU",
+    "parent_group": "Parship Group",
+    "category": "Dating",
+    "network": "Awin 18235",
+    "payout": "Rate verified, price unpublished: \"Earn 35% commissions!\"; \"commissions are not paid on customer renewals\"",
+    "payout_source_url": "https://ui.awin.com/merchant-profile/18235",
+    "payout_date_read": "2026-09-19",
+    "publisher_specific_codes": "Not stated",
+    "coupon_cashback_policy": "Not stated",
+    "cookie_window": "30 days",
+    "application_url": "https://ui.awin.com/merchant-profile/18235",
+    "demand_evidence": {
+      "strength": "medium",
+      "proxy": "Autocomplete: 13 suggestions, 1 Australia-qualified"
+    },
+    "regulatory_notes": "None specific.",
+    "score": {
+      "payout": "UNVERIFIED (rate only)",
+      "code": 0.5,
+      "demand": 2,
+      "regulatory": 1,
+      "total_ex_payout": 1.0
+    },
+    "unverified": [
+      "payout (no price)",
+      "publisher_specific_codes"
+    ],
+    "notes": ""
+  },
+  {
+    "rank": 17,
+    "tier": "B: payout UNVERIFIED",
+    "brand": "Castlery AU",
+    "parent_group": "Castlery",
+    "category": "Furniture",
+    "network": "Impact",
+    "payout": "UNVERIFIED (\"competitive commission rate\")",
+    "payout_source_url": "https://www.castlery.com/au/affiliate-program",
+    "payout_date_read": "2026-09-19",
+    "publisher_specific_codes": "Not stated",
+    "coupon_cashback_policy": "Not stated",
+    "cookie_window": "\"minimum of 30-day tracking window\"",
+    "application_url": "https://www.castlery.com/au/affiliate-program",
+    "demand_evidence": {
+      "strength": "medium",
+      "proxy": "Autocomplete: 26 suggestions, 2 Australia-qualified; ShopBack listed"
+    },
+    "regulatory_notes": "None specific. Customer referral: $100 voucher on a first order over $1,000 (castlery.com/au/referral-terms).",
+    "score": {
+      "payout": "UNVERIFIED",
+      "code": 0.5,
+      "demand": 2,
+      "regulatory": 1,
+      "total_ex_payout": 1.0
+    },
+    "unverified": [
+      "payout",
+      "publisher_specific_codes"
+    ],
+    "notes": ""
+  },
+  {
+    "rank": 18,
+    "tier": "B: payout UNVERIFIED",
+    "brand": "Clearly AU",
+    "parent_group": "UNVERIFIED",
+    "category": "Glasses / contact lenses",
+    "network": "Current network UNVERIFIED (historic CJ, Rakuten, CF, Impact per Wayback)",
+    "payout": "UNVERIFIED",
+    "payout_source_url": null,
+    "payout_date_read": null,
+    "publisher_specific_codes": "Not stated",
+    "coupon_cashback_policy": "UNVERIFIED",
+    "cookie_window": "UNVERIFIED",
+    "application_url": "UNVERIFIED",
+    "demand_evidence": {
+      "strength": "medium",
+      "proxy": "Autocomplete: 29 suggestions, 2 Australia-qualified; ShopBack listed; OzBargain referral wiki lists Clearly"
+    },
+    "regulatory_notes": "Customer referral via Mention Me: \"$20 off each\" (clearly.com.au/en-au/c/refer).",
+    "score": {
+      "payout": "UNVERIFIED",
+      "code": 0.5,
+      "demand": 2,
+      "regulatory": 1,
+      "total_ex_payout": 1.0
+    },
+    "unverified": [
+      "payout",
+      "network",
+      "publisher_specific_codes",
+      "cookie_window",
+      "application_url",
+      "parent_group"
+    ],
+    "notes": ""
+  },
+  {
+    "rank": 19,
+    "tier": "B: payout UNVERIFIED",
+    "brand": "Vinomofo",
+    "parent_group": "Vinomofo",
+    "category": "Wine DTC",
+    "network": "Sub-networks only (Sovrn/VigLink, Skimlinks); CF NZ 27340 now 404",
+    "payout": "UNVERIFIED",
+    "payout_source_url": null,
+    "payout_date_read": null,
+    "publisher_specific_codes": "Not stated",
+    "coupon_cashback_policy": "UNVERIFIED",
+    "cookie_window": "UNVERIFIED",
+    "application_url": "UNVERIFIED",
+    "demand_evidence": {
+      "strength": "medium",
+      "proxy": "Autocomplete: 14 suggestions, 2 Australia-qualified; OzBargain referral wiki lists Vinomofo; not on ShopBack"
+    },
+    "regulatory_notes": "Alcohol: age-gating and responsible-service wording.",
+    "score": {
+      "payout": "UNVERIFIED",
+      "code": 0.5,
+      "demand": 2,
+      "regulatory": 0.8,
+      "total_ex_payout": 0.8
+    },
+    "unverified": [
+      "payout",
+      "network",
+      "publisher_specific_codes",
+      "cookie_window",
+      "application_url"
+    ],
+    "notes": ""
+  },
+  {
+    "rank": 20,
+    "tier": "B: payout UNVERIFIED",
+    "brand": "Good Pair Days",
+    "parent_group": "Good Pair Days",
+    "category": "Wine subscription",
+    "network": "UNVERIFIED (affiliate page JS-only)",
+    "payout": "UNVERIFIED",
+    "payout_source_url": null,
+    "payout_date_read": null,
+    "publisher_specific_codes": "Not stated",
+    "coupon_cashback_policy": "UNVERIFIED",
+    "cookie_window": "UNVERIFIED",
+    "application_url": "https://goodpairdays.com/au/affiliates/",
+    "demand_evidence": {
+      "strength": "medium",
+      "proxy": "Autocomplete: 25 suggestions, 1 Australia-qualified; OzBargain referral wiki lists it"
+    },
+    "regulatory_notes": "Alcohol.",
+    "score": {
+      "payout": "UNVERIFIED",
+      "code": 0.5,
+      "demand": 2,
+      "regulatory": 0.8,
+      "total_ex_payout": 0.8
+    },
+    "unverified": [
+      "payout",
+      "network",
+      "publisher_specific_codes",
+      "cookie_window"
+    ],
+    "notes": ""
+  },
+  {
+    "rank": 21,
+    "tier": "B: payout UNVERIFIED",
+    "brand": "Respect Health",
+    "parent_group": "UNVERIFIED",
+    "category": "Men's health products / telehealth",
+    "network": "Impact historically (Wayback, Jul 2024 affiliate UTMs); no current tag",
+    "payout": "UNVERIFIED",
+    "payout_source_url": null,
+    "payout_date_read": null,
+    "publisher_specific_codes": "Not stated",
+    "coupon_cashback_policy": "UNVERIFIED",
+    "cookie_window": "UNVERIFIED",
+    "application_url": "UNVERIFIED",
+    "demand_evidence": {
+      "strength": "strong",
+      "proxy": "Search Console: 'respecthealth discount code' 63 impressions, 0 clicks, pos 27 (21 Aug-17 Sep 2026); ShopBack listed"
+    },
+    "regulatory_notes": "If the service involves prescription treatment, the TGA ED-medication focus area applies.",
+    "score": {
+      "payout": "UNVERIFIED",
+      "code": 0.5,
+      "demand": 3,
+      "regulatory": 0.5,
+      "total_ex_payout": 0.75
+    },
+    "unverified": [
+      "payout",
+      "parent_group",
+      "network",
+      "publisher_specific_codes",
+      "cookie_window",
+      "application_url"
+    ],
+    "notes": ""
+  },
+  {
+    "rank": 22,
+    "tier": "B: payout UNVERIFIED",
+    "brand": "Lite n' Easy",
+    "parent_group": "Lite n' Easy",
+    "category": "Prepared meals",
+    "network": "UNVERIFIED (no CF directory listing, no on-site tag)",
+    "payout": "UNVERIFIED. A$40 per new order (tier 1) appears only on third-party listings (wealthyaffiliate, getlasso), which do not count as sources.",
+    "payout_source_url": null,
+    "payout_date_read": null,
+    "publisher_specific_codes": "Not stated",
+    "coupon_cashback_policy": "Third-party listing says \"except PPC and coupon sites\"; unconfirmed from a primary source",
+    "cookie_window": "UNVERIFIED",
+    "application_url": "UNVERIFIED",
+    "demand_evidence": {
+      "strength": "strong",
+      "proxy": "Autocomplete: 28 suggestions, 8 Australia-qualified (the highest of any brand tested)"
+    },
+    "regulatory_notes": "Avoid weight-loss outcome claims.",
+    "score": {
+      "payout": "UNVERIFIED",
+      "code": 0.2,
+      "demand": 3,
+      "regulatory": 1,
+      "total_ex_payout": 0.6
+    },
+    "unverified": [
+      "payout",
+      "network",
+      "coupon_cashback_policy",
+      "cookie_window",
+      "application_url"
+    ],
+    "notes": ""
+  },
+  {
+    "rank": 23,
+    "tier": "B: payout UNVERIFIED",
+    "brand": "Naked Wines AU",
+    "parent_group": "Naked Wines plc",
+    "category": "Wine DTC",
+    "network": "Impact",
+    "payout": "UNVERIFIED (the $25 figure in search results is the US program)",
+    "payout_source_url": null,
+    "payout_date_read": null,
+    "publisher_specific_codes": "Not stated",
+    "coupon_cashback_policy": "UNVERIFIED",
+    "cookie_window": "UNVERIFIED",
+    "application_url": "https://app.impact.com/advertiser-advertiser-info/Naked-Wines-Australia.brand",
+    "demand_evidence": {
+      "strength": "weak",
+      "proxy": "Autocomplete: 4 suggestions incl. 'naked wines $100 voucher'; ShopBack listed"
+    },
+    "regulatory_notes": "Alcohol.",
+    "score": {
+      "payout": "UNVERIFIED",
+      "code": 0.5,
+      "demand": 1,
+      "regulatory": 0.8,
+      "total_ex_payout": 0.4
+    },
+    "unverified": [
+      "payout",
+      "publisher_specific_codes",
+      "cookie_window"
+    ],
+    "notes": ""
+  },
+  {
+    "rank": 24,
+    "tier": "B: payout UNVERIFIED",
+    "brand": "Powershop",
+    "parent_group": "Shell Energy",
+    "category": "Electricity retail",
+    "network": "Commission Factory 93046 (tag on site; directory page 404, so private)",
+    "payout": "UNVERIFIED",
+    "payout_source_url": null,
+    "payout_date_read": null,
+    "publisher_specific_codes": "Not stated",
+    "coupon_cashback_policy": "UNVERIFIED",
+    "cookie_window": "UNVERIFIED",
+    "application_url": "UNVERIFIED (private program)",
+    "demand_evidence": {
+      "strength": "weak",
+      "proxy": "Autocomplete: 8 suggestions, 0 Australia-qualified"
+    },
+    "regulatory_notes": "Customer referral $75 each to 31 Dec 2026 (powershop.com.au/switch-your-mates-terms-and-conditions).",
+    "score": {
+      "payout": "UNVERIFIED",
+      "code": 0.5,
+      "demand": 1,
+      "regulatory": 1,
+      "total_ex_payout": 0.5
+    },
+    "unverified": [
+      "payout",
+      "publisher_specific_codes",
+      "cookie_window",
+      "application_url"
+    ],
+    "notes": ""
+  },
+  {
+    "rank": 25,
+    "tier": "B: payout UNVERIFIED",
+    "brand": "Kin Fertility",
+    "parent_group": "Eucalyptus (Hims & Hers)",
+    "category": "Women's health telehealth",
+    "network": "FirstPromoter (open signup kinfertility.firstpromoter.com) plus Rewardful tag",
+    "payout": "UNVERIFIED",
+    "payout_source_url": null,
+    "payout_date_read": null,
+    "publisher_specific_codes": "Not stated",
+    "coupon_cashback_policy": "UNVERIFIED",
+    "cookie_window": "UNVERIFIED",
+    "application_url": "https://kinfertility.firstpromoter.com",
+    "demand_evidence": {
+      "strength": "weak",
+      "proxy": "Autocomplete: 3 suggestions ('kin fertility discount code')"
+    },
+    "regulatory_notes": "Some Kin services are prescription-based; describe the service only.",
+    "score": {
+      "payout": "UNVERIFIED",
+      "code": 0.5,
+      "demand": 1,
+      "regulatory": 0.5,
+      "total_ex_payout": 0.25
+    },
+    "unverified": [
+      "payout",
+      "publisher_specific_codes",
+      "cookie_window",
+      "coupon_cashback_policy"
+    ],
+    "notes": ""
+  },
+  {
+    "rank": null,
+    "tier": "Baseline: already contracted, not a new candidate",
+    "brand": "Moshy",
+    "parent_group": "Mosh group",
+    "category": "Weight-loss telehealth",
+    "network": "Direct",
+    "payout": "Operator-reported A$300/sale; no public primary source",
+    "payout_source_url": null,
+    "payout_date_read": null,
+    "publisher_specific_codes": "Yes, REFERRAL120 (in src/lib/offers.ts)",
+    "coupon_cashback_policy": "Promotions T&Cs: Moshy \"reserves the right to refuse limited or exclusive promotions, including but not limited to select ambassador, affiliate offers\" (getmoshy.com.au/promotions-terms-and-conditions)",
+    "cookie_window": "UNVERIFIED",
+    "application_url": null,
+    "demand_evidence": {
+      "search_console": "'moshy discount code' 98 impressions, 4 clicks, pos 5.6"
+    },
+    "regulatory_notes": "TGA: weight loss medications focus area",
+    "unverified": [
+      "payout (operator-reported only)",
+      "cookie_window"
+    ]
+  },
+  {
+    "rank": null,
+    "tier": "Baseline: already contracted, not a new candidate",
+    "brand": "Mosh",
+    "parent_group": "Mosh group",
+    "category": "Hair-loss / men's telehealth",
+    "network": "Direct",
+    "payout": "Operator-reported A$200/sale; no public primary source",
+    "payout_source_url": null,
+    "payout_date_read": null,
+    "publisher_specific_codes": "Yes, REFERAL55",
+    "coupon_cashback_policy": "Same promotions T&C wording as Moshy",
+    "cookie_window": "UNVERIFIED",
+    "application_url": null,
+    "demand_evidence": {
+      "search_console": "'mosh discount code' 172 impressions, 2 clicks, pos 12"
+    },
+    "regulatory_notes": "TGA: ED medications focus area if ED services are promoted",
+    "unverified": [
+      "payout (operator-reported only)",
+      "cookie_window"
+    ]
+  },
+  {
+    "rank": null,
+    "tier": "Baseline: already contracted, not a new candidate",
+    "brand": "Juniper",
+    "parent_group": "Eucalyptus (Hims & Hers since 2 Jun 2026)",
+    "category": "Women's weight-management telehealth",
+    "network": "Direct",
+    "payout": "Operator-reported A$200/sale; AU affiliate terms UNVERIFIED (myjuniper.com 403)",
+    "payout_source_url": null,
+    "payout_date_read": null,
+    "publisher_specific_codes": "Link carries JARREDKFC, which gives the customer no discount",
+    "coupon_cashback_policy": "UNVERIFIED for the affiliate program",
+    "cookie_window": "UNVERIFIED",
+    "application_url": null,
+    "demand_evidence": {
+      "autocomplete": "25 suggestions, 7 Australia-qualified",
+      "search_console": "'juniper discount code australia' 5 impressions"
+    },
+    "regulatory_notes": "TGA: weight loss medications focus area. Juniper's handbook mandates verbatim disclosure wording.",
+    "unverified": [
+      "payout",
+      "coupon_cashback_policy",
+      "cookie_window"
+    ]
+  }
+]

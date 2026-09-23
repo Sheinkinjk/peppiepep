@@ -47,6 +47,7 @@ export default function Page() {
       description={seoConfig.wholeBodyMri.description}
       faqs={faqs}
       related={[
+        { href: "/i-screen", label: "i-screen: private pathology prices" },
         { href: "/longevity/diagnostics/everlab-vs-prenuvo-vs-i-screen-australia", label: "The services compared" },
         { href: "/longevity/diagnostics/health-screening-quiz", label: "Is screening right for you?" },
       ]}

@@ -64,7 +64,26 @@ const FOREO_UFO =
 const FOREO_LUNA =
   "https://t.cfjump.com/94361/t/60709?Url=https%3a%2f%2fwww.foreo.com%2fluna-collection";
 
+/**
+ * i-screen (direct arrangement, added 23 Sep 2026). Attribution is the COUPON,
+ * not the link: i-screen supplied the code `referlabs` and nothing in the URL
+ * carries it. That makes the typed code the thing that pays us, so every page
+ * must tell the reader to enter it rather than rely on the click.
+ *
+ * Homepage, not a deep link into the catalogue or a checkout: no server response
+ * was checked proving a parameter survives the hop, and the same caution applies
+ * here as to Midoc, OptiSlim, Emma and Technogym. The catalogue link on our own
+ * pages does the work of pointing at the right test.
+ */
+const I_SCREEN = "https://www.i-screen.com.au/";
+
 export const GO_DESTINATIONS: Record<string, string> = {
+  "i-screen-brand": I_SCREEN,
+  "i-screen-longevity-hub": I_SCREEN,
+  "i-screen-diagnostics-hub": I_SCREEN,
+  "i-screen-services-compared": I_SCREEN,
+  "i-screen-screening-quiz": I_SCREEN,
+  "i-screen-biological-age": I_SCREEN,
   "midoc-telehealth-vs-gp": MIDOC_HOME,
   "midoc-mens-health-hub": MIDOC_HOME,
   "midoc-clinics-compared": MIDOC_HOME,

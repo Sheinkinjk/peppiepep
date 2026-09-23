@@ -26,7 +26,7 @@ const faqs = [
   },
   {
     q: "Does Refer Labs earn from this section?",
-    a: "Yes, from one: Technogym, through Commission Factory, since 16 September 2026. We earn a commission if you buy through our link, at no extra cost to you, and the page carrying that link says so beside it. We hold no Technogym discount code. It is the premium end of the market and much cheaper equipment exists that we earn nothing from, which these guides say plainly. Technogym is kept off the diagnostics pages, where equipment beside a test result would read as a prescription for one.",
+    a: "Yes, from two. Technogym, through Commission Factory since 16 September 2026: we earn a commission if you buy through our link, at no extra cost to you, we hold no Technogym discount code, and it is the premium end of the market with much cheaper equipment we earn nothing from, which these guides say plainly. Technogym is kept off the diagnostics pages, where equipment beside a test result would read as a prescription for one. And i-screen, directly, since 23 September 2026: it gave us the coupon referlabs for $20 off a first test, and that coupon is the only thing that pays us, so a reader who clicks without typing it earns us nothing. The i-screen pages say that a GP-ordered test is frequently bulk billed while i-screen is not Medicare-rebatable at all, which is the argument against the purchase and is on the page for that reason.",
   },
 ];
 
@@ -40,16 +40,28 @@ export default function LongevityHub() {
       note={<><strong className="font-semibold text-[#14120f]">On claims.</strong> We make no health claim for any product or service here. Where something is regulated as a therapeutic good we point you at the ARTG to check it yourself, and where the evidence is thin we say so rather than leaving it out.</>}
       disclosure={<AffiliateDisclosure compact />}
       partner={
-        /* Technogym is the first commercial partner in this section
-           (16 Sep 2026), which is why the Coming Soon note is gone: it told
-           readers nothing here pays us. check-partner-scope denies Technogym on
-           /longevity/diagnostics, where equipment beside a test result would
-           read as a prescription for one. */
+        /* Two partners since 23 Sep 2026, listed alphabetically and given
+           identical rows, per the hub neutrality rule: a hub opens with the
+           comparison, never with one partner's offer.
+
+           Technogym came first (16 Sep 2026), which is why the Coming Soon note
+           is gone: it told readers nothing here pays us. check-partner-scope
+           denies Technogym on /longevity/diagnostics, where equipment beside a
+           test result would read as a prescription for one. i-screen is the
+           opposite case: diagnostics is exactly where it belongs, and it is
+           denied on the hubs where a telehealth partner we earn more from would
+           make the pairing our choice rather than the reader's. */
         <PartnerRoute
           className="mt-10"
-          heading="The retailer we have an arrangement with"
-          intro="One equipment brand, and the only thing in this section we earn from. It is the premium end of the market: cheaper equipment exists, we earn nothing from it, and for most people it is the sensible comparison."
+          heading="The two companies we have an arrangement with"
+          intro="Everything else in this section pays us nothing. Both of these are the expensive option in their category: cheaper equipment and the GP route exist, we earn nothing from either, and for most readers they are the sensible comparison."
           providers={[
+            {
+              name: "i-screen",
+              href: "/go/i-screen-longevity-hub",
+              what: "Private pathology tests ordered without a GP referral, listed from A$39 to A$1,099, read 23 September 2026. The code referlabs takes A$20 off a first test and is the only thing that pays us. None of it is Medicare-rebatable, while a GP-ordered test often is.",
+              checked: "23 September 2026",
+            },
             {
               name: "Technogym",
               href: "/go/technogym-longevity-hub",

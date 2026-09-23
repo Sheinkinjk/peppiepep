@@ -57,6 +57,16 @@ export const JUNIPER_CODE = "JARREDKFC";
 export const JUNIPER_URL =
   "https://www.myjuniper.com/?utm_source=affiliate&utm_campaign=jarred_k&discountCode=JARREDKFC";
 
+// ── Longevity: i-screen (direct arrangement from September 2026) ─────────────
+// The coupon IS the attribution. i-screen issued `referlabs` and no tracking
+// parameter exists, so a reader who clicks but does not type the code earns us
+// nothing. Every placement routes through /go/i-screen-* for page attribution and
+// every page states the code.
+//
+// It discounts the FIRST TEST by A$20. Not a subscription, not a consultation,
+// not an ongoing saving. State the object every time, per PetsOnMe and Juniper.
+export const I_SCREEN_CODE = "referlabs";
+
 // ── Home & energy: portable power (Commission Factory) ───────────────────────
 // Both brands sell portable power stations AND installed whole-home batteries.
 // The whole-home half competes with Apollo Energy Group, which pays us on a

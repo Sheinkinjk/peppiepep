@@ -41,17 +41,33 @@ const offerText = (cfg) => (cfg.match(/^\s*offer:\s*"([^"]+)"/m) || [, ""])[1];
 const isRealDiscount = (t) =>
   /\d+\s*%\s*off|\$\d[\d,]*\s*off|off your first (order|month)|months? free|US\$\d for a/i.test(t);
 
+/*
+ * Brand pages come in two shapes and only one was being checked.
+ *
+ * The original shape is a `config.ts` beside a page. The newer partner pages
+ * (Technogym, Emma Sleep, OptiSlim, Foreo, i-screen) are a single page.tsx
+ * exporting a RetailerBrand object, and this script skipped every one of them,
+ * silently, because it discovered pages by looking for config.ts. i-screen shipped
+ * a live coupon on 23 Sep 2026 and the check reported "43 brand pages, all fully
+ * wired" without ever opening it. That is the failure mode CLAUDE.md describes as
+ * a guard that passes because nothing reached it.
+ */
+const isBrandDir = (name) =>
+  existsSync(join("src/app", name, "config.ts")) ||
+  /RetailerBrandPage/.test(read(join("src/app", name, "page.tsx")));
+
 const slugs = process.argv.slice(2).length
   ? process.argv.slice(2)
   : readdirSync("src/app", { withFileTypes: true })
-      .filter((d) => d.isDirectory() && existsSync(join("src/app", d.name, "config.ts")))
+      .filter((d) => d.isDirectory() && isBrandDir(d.name))
       .map((d) => d.name);
 
 let problems = 0;
 const rows = [];
 
 for (const slug of slugs) {
-  const cfg = read(join("src/app", slug, "config.ts"));
+  // config.ts where there is one, the page itself for a RetailerBrandPage partner.
+  const cfg = read(join("src/app", slug, "config.ts")) || read(join("src/app", slug, "page.tsx"));
   if (!cfg) continue;
   if (isRetired(slug)) continue;
   const miss = [];
@@ -76,8 +92,13 @@ for (const slug of slugs) {
     }
   }
 
-  if (hasOffer(cfg)) {
-    const text = offerText(cfg);
+  // A RetailerBrandPage states its offer in the DEALS row rather than in an
+  // `offer:` field, so read it from there when the page has no field of its own.
+  const dealRow = (offers.match(new RegExp(`\\{[^}]*href: "/${slug}"[^}]*\\}`)) || [""])[0];
+  const dealOffer = (dealRow.match(/offer: "([^"]+)"/) || [, ""])[1];
+
+  if (hasOffer(cfg) || dealOffer) {
+    const text = offerText(cfg) || dealOffer;
     // Only a genuine monetary discount belongs on /deals. A free trial anyone can
     // start direct from the vendor is not a deal, and listing them all would bury
     // the offers that actually differentiate us.
@@ -101,7 +122,7 @@ for (const slug of slugs) {
 
   if (miss.length) {
     problems++;
-    rows.push([slug, offerText(cfg) || "(no offer)", miss.join(", ")]);
+    rows.push([slug, offerText(cfg) || dealOffer || "(no offer)", miss.join(", ")]);
   }
 }
 
