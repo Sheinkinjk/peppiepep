@@ -392,7 +392,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/knose-vs-petsonme": {
     "published": "2026-08-17",
-    "updated": "2026-09-18"
+    "updated": "2026-09-23"
   },
   "/krispcall": {
     "published": "2026-07-09",

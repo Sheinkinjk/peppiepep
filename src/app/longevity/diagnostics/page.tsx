@@ -61,6 +61,7 @@ export default function DiagnosticsHub() {
               href: "/go/i-screen-diagnostics-hub",
               what: "Pathology ordered without a GP referral, listed from A$39 to A$1,099, read 23 September 2026. The code referlabs takes A$20 off a first test and is the only thing we are paid on. None of it is Medicare-rebatable, on i-screen's own terms, while a test a GP considers clinically indicated is frequently bulk billed.",
               checked: "23 September 2026",
+              review: { href: "/i-screen", label: "Read our i-screen review" },
             },
           ]}
         />

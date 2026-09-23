@@ -67,6 +67,10 @@ export const JUNIPER_URL =
 // not an ongoing saving. State the object every time, per PetsOnMe and Juniper.
 export const I_SCREEN_CODE = "referlabs";
 
+// Page-level attribution runs through /go, per src/lib/go-links.ts: i-screen
+// cannot tell our pages apart, and the slug is the only signal we get.
+export const I_SCREEN_GO_PATH = "/go/i-screen-brand";
+
 // ── Home & energy: portable power (Commission Factory) ───────────────────────
 // Both brands sell portable power stations AND installed whole-home batteries.
 // The whole-home half competes with Apollo Energy Group, which pays us on a

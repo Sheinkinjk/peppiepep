@@ -25,6 +25,17 @@ export type PartnerRouteProvider = {
   what: string;
   /** Set only where we have read the terms ourselves, with the date. */
   checked?: string;
+  /**
+   * Our own page about this partner, shown beside the outbound button.
+   *
+   * Added 23 Sep 2026 because every hub carrying this block sent readers straight
+   * out to the partner with no route to what we had written about it. /longevity
+   * linked /go/technogym-longevity-hub and /go/i-screen-longevity-hub and neither
+   * /technogym nor /i-screen, so the money pages were unreachable from the hub
+   * they belong to. That is the inbound-link step of the partner checklist, and it
+   * had been missed on every partner, not just the new one.
+   */
+  review?: { href: string; label: string };
 };
 
 export default function PartnerRoute({
@@ -69,6 +80,14 @@ export default function PartnerRoute({
                 >
                   Visit {p.name}
                 </a>
+                {p.review && (
+                  <Link
+                    href={p.review.href}
+                    className="ml-3 inline-flex items-center text-sm font-semibold text-[#007a95] underline underline-offset-2"
+                  >
+                    {p.review.label}
+                  </Link>
+                )}
               </li>
             ))}
           </ul>

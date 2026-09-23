@@ -2031,7 +2031,7 @@ export const seoConfig = {
   },
 
   iScreen: {
-    title: "i-screen Review 2026: $20 Off Code, and No Medicare Rebate",
+    title: "i-screen Discount Code 2026: $20 Off Your First Test",
     description:
       "The i-screen discount code referlabs takes $20 off your first test. Tests run $39 to $1,099, read 23 September 2026, and i-screen's own terms say none of it is Medicare-rebatable.",
     url: `${SITE_URL}/i-screen`,

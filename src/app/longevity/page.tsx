@@ -61,12 +61,14 @@ export default function LongevityHub() {
               href: "/go/i-screen-longevity-hub",
               what: "Private pathology tests ordered without a GP referral, listed from A$39 to A$1,099, read 23 September 2026. The code referlabs takes A$20 off a first test and is the only thing that pays us. None of it is Medicare-rebatable, while a GP-ordered test often is.",
               checked: "23 September 2026",
+              review: { href: "/i-screen", label: "Read our i-screen review" },
             },
             {
               name: "Technogym",
               href: "/go/technogym-longevity-hub",
               what: "Home exercise equipment with published Australian prices, from A$4,460 for the Bench to A$20,490 for the Run, read 16 September 2026. We make no claim that any of it extends life or prevents disease.",
               checked: "16 September 2026",
+              review: { href: "/technogym", label: "Read our Technogym page" },
             },
           ]}
         />
