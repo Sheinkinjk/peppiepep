@@ -296,7 +296,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/guides": {
     "published": "2026-06-29",
-    "updated": "2026-09-18"
+    "updated": "2026-09-23"
   },
   "/hair-loss": {
     "published": "2026-07-03",
@@ -452,7 +452,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/longevity/diagnostics/everlab-vs-prenuvo-vs-i-screen-australia": {
     "published": "2026-08-20",
-    "updated": "2026-09-18"
+    "updated": "2026-09-23"
   },
   "/longevity/diagnostics/health-screening-quiz": {
     "published": "2026-08-20",
@@ -460,15 +460,15 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/longevity/diagnostics": {
     "published": "2026-08-20",
-    "updated": "2026-09-18"
+    "updated": "2026-09-23"
   },
   "/longevity/diagnostics/whole-body-mri-australia-cost": {
     "published": "2026-08-20",
-    "updated": "2026-09-18"
+    "updated": "2026-09-23"
   },
   "/longevity": {
     "published": "2026-08-20",
-    "updated": "2026-09-18"
+    "updated": "2026-09-23"
   },
   "/longevity/recovery/contrast-therapy-what-the-evidence-says": {
     "published": "2026-08-20",
@@ -1041,6 +1041,10 @@ export const PAGE_DATES: Record<string, PageDates> = {
   "/technogym": {
     "published": "2026-09-16",
     "updated": "2026-09-18"
+  },
+  "/i-screen": {
+    "published": "2026-09-23",
+    "updated": "2026-09-23"
   }
 };
 

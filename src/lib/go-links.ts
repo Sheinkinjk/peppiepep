@@ -78,12 +78,16 @@ const FOREO_LUNA =
 const I_SCREEN = "https://www.i-screen.com.au/";
 
 export const GO_DESTINATIONS: Record<string, string> = {
+  // No screening-quiz placement and no biological-age placement, both
+  // deliberately. The quiz exists to tell a reader whether screening is worth it
+  // for them, and a partner link beside that answer would make the answer look
+  // bought. The biological-age guide says these tests are consistent enough to
+  // sell and not yet validated enough to act on; i-screen sells one at A$59, and
+  // linking it from that page would sell the thing the page just advised against.
   "i-screen-brand": I_SCREEN,
   "i-screen-longevity-hub": I_SCREEN,
   "i-screen-diagnostics-hub": I_SCREEN,
   "i-screen-services-compared": I_SCREEN,
-  "i-screen-screening-quiz": I_SCREEN,
-  "i-screen-biological-age": I_SCREEN,
   "midoc-telehealth-vs-gp": MIDOC_HOME,
   "midoc-mens-health-hub": MIDOC_HOME,
   "midoc-clinics-compared": MIDOC_HOME,

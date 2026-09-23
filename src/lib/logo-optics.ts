@@ -17,6 +17,9 @@ const SCALE: Record<string, number> = {
   // last letter cut off. Look at the logo after changing a scale.
   "aussie-health-products.png": 1.0,
   "emma-sleep.svg": 1.18,
+  // i-screen, 23 Sep 2026. Their own 1280x191 wordmark, about 6.7:1 and the widest
+  // mark on the site, so it sits at the 1.2 cap rather than above it.
+  "i-screen.svg": 1.2,
   "optislim.svg": 1.2,
   "foreo.svg": 1.12,
   // Hub partners, 18 Sep 2026, matched by eye to the homepage's optical sizes

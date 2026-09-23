@@ -1,4 +1,6 @@
 import SectionHub from "@/components/consumer/SectionHub";
+import PartnerRoute from "@/components/consumer/PartnerRoute";
+import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
 
 export const metadata = generateSEOMetadata(seoConfig.diagnosticsHub);
@@ -13,6 +15,10 @@ const guides = [
 ];
 
 const faqs = [
+  {
+    q: "Does Refer Labs earn from these pages?",
+    a: "From one company, i-screen, since 23 September 2026. It gave us the code referlabs, worth $20 off a first test, and that code is the only thing we are paid on: a reader who clicks through and buys without entering it earns us nothing. We earn nothing from Everlab, Prenuvo, or any imaging or pathology provider named in these guides. The argument against paying for a test when you have no symptoms is unchanged on every page here, and i-screen's own terms confirm none of its services are Medicare-rebatable, while a test a GP considers clinically indicated is frequently bulk billed.",
+  },
   {
     q: "Is preventive health screening worth it in Australia?",
     a: "It depends on the test and on you, and the answer is less flattering to the industry than its marketing implies. Targeted screening with an evidence base, such as the national bowel, breast and cervical programs, is well supported and often free or subsidised. Broad scanning of people with no symptoms is contested, mainly because of what it finds by accident. Our guides set out both sides rather than assuming you have already decided.",
@@ -39,7 +45,26 @@ export default function DiagnosticsHub() {
       h1={<>Screening and diagnostics: <span>the cost, and the case against</span></>}
       intro="This is the part of the longevity market where the gap between price and demonstrated benefit is widest. These guides carry what the services cost in Australia and what Australian clinicians say about screening people who feel well."
       note={<><strong className="font-semibold text-[#14120f]">Not a recommendation.</strong> Nothing here suggests you should or should not have a test. Whether screening is appropriate for you depends on your history and risk, which is a conversation for a practitioner who knows both.</>}
-      comingSoonFor="Diagnostics"
+      disclosure={<AffiliateDisclosure compact />}
+      partner={
+        /* The Coming Soon note came off on 23 Sep 2026: it told readers nothing
+           in this section pays us, which stopped being true when i-screen landed.
+           Technogym is denied here by check-partner-scope, so this section has
+           exactly one partner and the block says so. */
+        <PartnerRoute
+          className="mt-10"
+          heading="The company we have an arrangement with"
+          intro="One, and everything else in this section pays us nothing. The case against paying for a test you have no symptoms for is on these pages unchanged, and it is the first thing to read."
+          providers={[
+            {
+              name: "i-screen",
+              href: "/go/i-screen-diagnostics-hub",
+              what: "Pathology ordered without a GP referral, listed from A$39 to A$1,099, read 23 September 2026. The code referlabs takes A$20 off a first test and is the only thing we are paid on. None of it is Medicare-rebatable, on i-screen's own terms, while a test a GP considers clinically indicated is frequently bulk billed.",
+              checked: "23 September 2026",
+            },
+          ]}
+        />
+      }
       guides={guides}
       faqs={faqs}
       otherLinks={[

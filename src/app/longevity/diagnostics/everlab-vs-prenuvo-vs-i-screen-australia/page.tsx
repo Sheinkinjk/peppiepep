@@ -79,10 +79,39 @@ export default function Page() {
           A structural description of each model, current as at 19 August 2026. Offerings change; confirm what is
           included directly with the provider. The i-screen range was read off its own catalogue on 23 September 2026.
           We quote no prices for Everlab or Prenuvo because we have verified none off a live listing, and we earn
-          nothing from either. We do earn from i-screen, and only when a reader enters its code at checkout, so the
-          fair warning belongs here: none of i-screen is Medicare-rebatable, and a test a GP considers clinically
-          indicated is frequently bulk billed instead. See our <a href="/i-screen">i-screen review</a>.
+          nothing from either.
         </p>
+
+        {/* The only commercial link on this page. Disclosure sits above it, per
+            Ahpra's "easily found" test and the ACCC's position: a reader who
+            clicks never reaches a disclosure printed underneath. The warning
+            against buying sits above it too, which is the point of putting it
+            here rather than only on the brand page. */}
+        <div className="mt-6 rounded-2xl border border-[#ded8cd] bg-[#f7f4ee] p-5">
+          <p className="text-[13px] leading-relaxed text-[#56504a]">
+            <strong className="font-semibold text-[#14120f]">Our commercial arrangement.</strong> Refer Labs has a
+            commercial arrangement with i-screen and none with Everlab or Prenuvo. i-screen gave us the code{" "}
+            <strong className="font-semibold text-[#14120f]">referlabs</strong>, worth A$20 off a first test, and that
+            code is the only thing we are paid on, so a click alone earns us nothing. Before you use it: none of
+            i-screen is Medicare-rebatable, on i-screen&apos;s own terms, while a test a GP considers clinically
+            indicated is frequently bulk billed. Ask a GP first if the test you want might be indicated.
+          </p>
+          <p className="mt-3 text-[13px]">
+            <a
+              href="/go/i-screen-services-compared"
+              rel="nofollow sponsored"
+              data-cta="i-screen-services-compared"
+              className="font-semibold text-[#007a95] underline"
+            >
+              Browse i-screen&apos;s tests
+            </a>{" "}
+            <span className="text-[#56504a]">or read our full</span>{" "}
+            <a href="/i-screen" className="font-semibold text-[#007a95] underline">
+              i-screen review
+            </a>
+            <span className="text-[#56504a]">, which prices the range and says who it does not suit.</span>
+          </p>
+        </div>
       </section>
 
       <section>

@@ -35,7 +35,7 @@ const rows: { label: string; knose: string; pom: string }[] = [
 const faqs = [
   {
     q: "Is Knose or PetsOnMe better?",
-    a: "On the published numbers Knose is the stronger headline product: it claims back up to 90% of the bill against PetsOnMe's 80%, carries a higher annual limit at up to $25,000, offers a $0 excess option, and states it applies no sub-limits, so the full annual limit is available for any covered condition. PetsOnMe's advantage is clarity of structure: three plainly tiered plans and published limits, which makes it easy to see exactly what you are buying. Both are underwritten by the same company, Pacific International Insurance (ABN 83 169 311 193), so this is a choice between two products from one insurer rather than a spread across two. Neither is better for everyone, because premiums are quote-based and neither publishes them, so the provider that looks better on paper can still cost more for your pet.",
+    a: "On the published numbers the two differ mainly in headline figures. Knose claims back up to 90% of the bill against PetsOnMe's 80%, carries a higher annual limit at up to $25,000, offers a $0 excess option, and states it applies no sub-limits, so the full annual limit is available for any covered condition. PetsOnMe's advantage is clarity of structure: three plainly tiered plans and published limits, which makes it easy to see exactly what you are buying. Both are underwritten by the same company, Pacific International Insurance (ABN 83 169 311 193), so this is a choice between two products from one insurer rather than a spread across two. Neither is better for everyone, because premiums are quote-based and neither publishes them, so the provider that looks better on paper can still cost more for your pet.",
   },
   {
     q: "What is the biggest practical difference between them?",
@@ -127,9 +127,9 @@ export default function KnoseVsPetsOnMePage() {
           <h2 className="text-xl font-bold text-[#14120f] sm:text-2xl">Is Knose or PetsOnMe better?</h2>
           <div className="mt-4 rounded-xl border border-[#b9e3eb] bg-[#e4f2f5] px-6 py-5">
             <p className="text-[15px] leading-relaxed text-[#14120f]">
-              On the published numbers Knose is the stronger headline product: up to 90% of the bill against
-              PetsOnMe&apos;s 80%, an annual limit up to $25,000, a $0 excess option, and no sub-limits, so the full
-              limit is available for any covered condition. PetsOnMe&apos;s strength is clarity: three plainly tiered
+              On the published numbers the two differ mainly in headline figures. Knose states up to 90% of the bill
+              against PetsOnMe&apos;s 80%, an annual limit up to $25,000, a $0 excess option, and no sub-limits, so the
+              full limit is available for any covered condition. PetsOnMe&apos;s strength is clarity: three plainly tiered
               plans with published limits, so you can see exactly what you are buying. Both are underwritten by the same company, Pacific International Insurance (ABN 83 169 311 193), so this is a choice between two products from one insurer rather than a spread across two. Neither
               wins outright, because neither publishes premiums and the one that looks better on paper can still cost
               more for your pet. The sub-limit difference is the one most likely to decide it in a real claim.
