@@ -82,7 +82,7 @@ const faqs = [
   },
   {
     q: "What makes Juniper different?",
-    a: "The wraparound care. Beyond the medical program, you get a care team available seven days a week for unlimited follow-up consultations, an award-winning app with tracking, recipes and a 24/7 in-app AI companion, optional 1:1 coaching from dietitians, and a 20,000-member patient community. A waived initial consultation, with the code JARREDKFC, lets you check whether it fits before committing.",
+    a: "The wraparound care. Beyond the medical program, you get a care team available seven days a week for unlimited follow-up consultations, an award-winning app with tracking, recipes and a 24/7 in-app AI companion, optional 1:1 coaching from dietitians, and a 20,000-member patient community. A waived $89 initial consultation, with the code JARREDKFC, lets you check whether it fits before committing.",
   },
   {
     q: "What does the program involve?",
@@ -90,7 +90,7 @@ const faqs = [
   },
   {
     q: "How do I start with Juniper?",
-    a: "You complete an online questionnaire, an Australian-registered practitioner reviews it, and if you are suitable your program is discussed with you. Some applicants are declined at review. You can begin from the link on this page, and new patients have the initial consultation waived with the code JARREDKFC.",
+    a: "You complete an online questionnaire, an Australian-registered practitioner reviews it, and if you are suitable your program is discussed with you. Some applicants are declined at review. You can begin from the link on this page, and new patients have the $89 initial consultation waived with the code JARREDKFC.",
   },
   {
     q: "Is Juniper legit?",
@@ -98,7 +98,7 @@ const faqs = [
   },
   {
     q: "Is Juniper worth it?",
-    a: "It depends on what you want from a program. Juniper's value is the wraparound: a practitioner-led program plus unlimited follow-ups seven days a week, coaching, an award-winning app and a large patient community, rather than a program on its own. Because it runs on an ongoing subscription, the value tracks how consistently you use it. The waived initial consultation for new patients, with the code JARREDKFC, is a no-commitment way to judge whether the fit is right before you pay for anything.",
+    a: "It depends on what you want from a program. Juniper's value is the wraparound: a practitioner-led program plus unlimited follow-ups seven days a week, coaching, an award-winning app and a large patient community, rather than a program on its own. Because it runs on an ongoing subscription, the value tracks how consistently you use it. The waived $89 initial consultation for new patients, with the code JARREDKFC, is a no-commitment way to judge whether the fit is right before you pay for anything.",
   },
   {
     q: "Does Juniper work?",
@@ -329,7 +329,7 @@ export default function JuniperPage() {
               <div className="mt-7 rounded-xl border border-[#b9e3eb] bg-[#e4f2f5] p-5">
                 <p className="text-sm leading-relaxed text-[#14120f]">
                   Want to see if Juniper is a fit? The online eligibility check takes a few minutes and commits you to
-                  nothing, and new patients have the initial consultation waived through our link with the code JARREDKFC.
+                  nothing, and new patients have the initial consultation, valued by Juniper at $89, waived through our link with the code JARREDKFC.
                 </p>
                 <div className="mt-4">
                   <JuniperCTA label="Start the Juniper eligibility check" loc="start" />
@@ -348,7 +348,7 @@ export default function JuniperPage() {
                   confirmed inside Juniper&apos;s own flow before you commit to anything.
                 </p>
                 <p>
-                  New patients who start through our Juniper link have the initial consultation waived, applied with the code JARREDKFC when you use our
+                  New patients who start through our Juniper link have the $89 initial consultation waived, applied with the code JARREDKFC when you use our
                   link at checkout. It is a no-cost, no-commitment way to talk to a practitioner and find out whether the
                   program suits you.
                 </p>
@@ -394,7 +394,7 @@ export default function JuniperPage() {
                     "Wraparound care: unlimited follow-ups, coaching, app and a 20,000-member community",
                     "Designed for and marketed to women",
                     "Registered Australian practitioners; not everyone is approved",
-                    "Initial consultation waived with JARREDKFC via our link, no commitment",
+                    "$89 initial consultation waived with JARREDKFC via our link, no commitment",
                   ].map((point) => (
                     <li key={point} className="flex items-start gap-2.5 text-sm text-[#14120f]">
                       <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#007a95]" aria-hidden="true" />
@@ -442,7 +442,7 @@ export default function JuniperPage() {
             See where you stand with Juniper
           </h2>
           <p className="mx-auto mt-4 max-w-md text-[15px] leading-relaxed text-white/70">
-            A few minutes and no obligation. New patients have the initial consultation waived (code JARREDKFC) with an Australian-registered
+            A few minutes and no obligation. New patients have the $89 initial consultation waived (code JARREDKFC) with an Australian-registered
             practitioner through our link, and you see the cost before you commit.
           </p>
           <div className="mt-8 flex justify-center">

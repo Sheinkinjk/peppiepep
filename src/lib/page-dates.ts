@@ -376,7 +376,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/juniper": {
     "published": "2026-07-29",
-    "updated": "2026-09-23"
+    "updated": "2026-09-24"
   },
   "/keap": {
     "published": "2026-07-14",
@@ -600,7 +600,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/moshy-vs-juniper": {
     "published": "2026-06-30",
-    "updated": "2026-09-23"
+    "updated": "2026-09-24"
   },
   "/moshy-vs-pilot": {
     "published": "2026-07-06",

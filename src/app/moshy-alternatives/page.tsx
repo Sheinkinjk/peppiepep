@@ -107,7 +107,7 @@ export default function MoshyAlternativesPage() {
               There are two realistic alternatives, and which suits you depends on what Moshy is missing for you.
               Your GP is the cheapest route and the best fit if you want weight managed alongside the rest of your
               health. Juniper is the closest like-for-like online option and is built for women, wrapping coaching, an
-              app and a patient community around the clinical care, with the initial consultation waived for new patients through JARREDKFC.
+              app and a patient community around the clinical care, with the $89 initial consultation waived for new patients through JARREDKFC.
               Suitability for any of them is decided individually by a registered Australian practitioner.
             </p>
           </div>
