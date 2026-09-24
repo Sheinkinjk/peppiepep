@@ -20,6 +20,10 @@ import { newsletter } from "@/lib/home/content";
  *  - never shows to someone who has subscribed anywhere on the site, which
  *    HomeNewsletter records on success;
  *  - never on the unsubscribe or login routes;
+ *  - never while the cookie banner is still unanswered. Found on the first live
+ *    test, 24 Sep 2026: on a phone both are fixed to the bottom, the banner sits
+ *    above the popup, and it covered the popup's own buttons. One overlay at a
+ *    time; the banner comes first because the law says so.
  *  - closes on the button, the backdrop or Escape, and traps nothing: the page
  *    behind stays scrollable and readable.
  *
@@ -48,6 +52,7 @@ export default function NewsletterPopup() {
   useEffect(() => {
     if (!pathname || SKIP.test(pathname)) return;
     if (read(SUBSCRIBED_KEY)) return;
+    if (!read("referlabs_cookie_consent")) return;
     const dismissed = Number(read(DISMISSED_KEY) || 0);
     if (dismissed && Date.now() - dismissed < QUIET_DAYS * 24 * 3600 * 1000) return;
 
