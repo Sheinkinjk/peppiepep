@@ -193,7 +193,16 @@ const PARTNERS = [
   },
 ];
 
-/** Wording that asserts the page earns nothing. Must never sit beside a link. */
+/**
+ * Wording that asserts the page earns nothing. Must never sit beside a link.
+ *
+ * The rendered half of this check lives in scripts/check-earns-claim.mjs and runs
+ * in POSTBUILD, not here. It was briefly added to this file on 24 Sep 2026 and
+ * that was wrong: this script runs in `prebuild`, so anything it reads out of
+ * .next/server/app is the PREVIOUS build. It failed on a fault that had already
+ * been fixed, and would have passed one just introduced. A check that reads build
+ * output has to run after the build.
+ */
 // Widened 14 Sep 2026: /mens-health and /health-and-beauty shipped "nothing in this
 // section currently earns us a commission" beside partner links for over a week,
 // because this matched only "nothing here" / "nothing on this page".

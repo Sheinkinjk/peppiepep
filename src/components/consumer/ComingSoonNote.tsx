@@ -30,13 +30,19 @@ import { Clock } from "lucide-react";
  * as the sentence removed above, in new clothes. Say what is missing; do not
  * tell the reader the rest is good.
  */
-type Variant = "a" | "b" | "c" | "d" | "partnered";
+type Variant = "a" | "b" | "c" | "d" | "partnered" | "partneredSection";
 
 const BY_CATEGORY: Record<string, Variant> = {
   Longevity: "a",
-  Diagnostics: "a",
+  // Diagnostics and Sleep each gained a partner while their note still promised
+  // the opposite. On 24 Sep 2026 /longevity/diagnostics/everlab-vs-prenuvo-vs-i-screen-australia
+  // carried a paid i-screen link under "nothing on this page earns us a
+  // commission", and /sleep/mattress-comparison-australia did the same beside
+  // Emma. They take the section wording, which is true on every page in the
+  // cluster whether or not that page links anything.
+  Diagnostics: "partneredSection",
   Recovery: "a",
-  Sleep: "b",
+  Sleep: "partneredSection",
   // Hubs that now carry live partners. "Coming soon" here means the category is
   // still being built out, NOT that it carries no commercial links: the earlier
   // wording promised "nothing here earns us a commission", which went false the
@@ -71,6 +77,8 @@ export default function ComingSoonNote({
       <>Missing so far: {what}, and nothing on this page pays us until they arrive.</>
     ) : v === "d" ? (
       <>{cap(what)} are not on the page yet, and nothing here earns us a commission before then.</>
+    ) : v === "partneredSection" ? (
+      <>Where a page here links a company that pays us, it says so beside that link, and nothing else on these pages earns us anything.</>
     ) : v === "partnered" ? (
       <>The providers below are ones we have checked ourselves, and we earn a commission if you sign up through them.</>
     ) : (

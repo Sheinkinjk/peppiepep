@@ -352,7 +352,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/how-to-start-affiliate-marketing-australia": {
     "published": "2026-07-05",
-    "updated": "2026-09-18"
+    "updated": "2026-09-24"
   },
   "/how-to-stop-hair-loss-australia": {
     "published": "2026-07-22",
@@ -1040,7 +1040,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/technogym": {
     "published": "2026-09-16",
-    "updated": "2026-09-18"
+    "updated": "2026-09-24"
   },
   "/i-screen": {
     "published": "2026-09-23",

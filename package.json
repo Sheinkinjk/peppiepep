@@ -24,7 +24,7 @@
     "check-partner-scope": "node scripts/check-partner-scope.mjs",
     "prebuild": "node scripts/generate-page-dates.mjs && node scripts/check-partner-scope.mjs && node scripts/check-partner-freshness.mjs && node scripts/check-redirect-order.mjs && node scripts/check-offer-wiring.mjs",
     "check-freshness": "node scripts/check-partner-freshness.mjs",
-    "postbuild": "node scripts/check-price-provenance.mjs && node scripts/check-tga-classes.mjs && node scripts/check-disclosure-order.mjs && node scripts/check-answer-slot.mjs && node scripts/check-aeo.mjs && node scripts/check-required-disclosure.mjs",
+    "postbuild": "node scripts/check-price-provenance.mjs && node scripts/check-tga-classes.mjs && node scripts/check-disclosure-order.mjs && node scripts/check-answer-slot.mjs && node scripts/check-aeo.mjs && node scripts/check-required-disclosure.mjs && node scripts/check-earns-claim.mjs",
     "check-prices": "node scripts/check-price-provenance.mjs",
     "check-tga": "node scripts/check-tga-classes.mjs",
     "check-disclosure": "node scripts/check-disclosure-order.mjs",
@@ -33,7 +33,8 @@
     "verify:deploy": "node scripts/verify-deploy.mjs",
     "check-redirect-order": "node scripts/check-redirect-order.mjs",
     "reconcile": "node scripts/reconcile-conversions.mjs",
-    "check-ga4": "node scripts/check-ga4-tag.mjs"
+    "check-ga4": "node scripts/check-ga4-tag.mjs",
+    "check-earns": "node scripts/check-earns-claim.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.71.2",
