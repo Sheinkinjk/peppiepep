@@ -40,7 +40,7 @@ const faqs = [
   },
   {
     q: "Is Moshy or Juniper better for women?",
-    a: "Juniper is designed and marketed specifically for women, with coaching, an app and a 20,000-member community built around what women experience with weight, plus a free first consultation for new patients. Moshy is open to anyone eligible and keeps the pathway lean. Either way, suitability is decided individually by a registered Australian practitioner. This page is general information, not medical advice.",
+    a: "Juniper is designed and marketed specifically for women, with coaching, an app and a 20,000-member community built around what women experience with weight, plus an initial consultation waived for new patients with the code JARREDKFC. Moshy is open to anyone eligible and keeps the pathway lean. Either way, suitability is decided individually by a registered Australian practitioner. This page is general information, not medical advice.",
   },
   {
     q: "How much do Moshy and Juniper cost?",
@@ -224,7 +224,7 @@ export default function MoshyVsJuniperPage() {
               className="inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-bold text-white transition-all hover:-translate-y-0.5 shadow-md"
               style={{ background: CYAN, boxShadow: `0 8px 24px ${CYAN}25` }}
             >
-              See Juniper: free first consult
+              See Juniper: consult waived with JARREDKFC
               <ArrowRight className="h-4 w-4" />
             </Link>
             <p className="mt-3">

@@ -417,7 +417,7 @@ export default function BestWeightLossTelehealthPage() {
                 hrefLabel: "Read our Juniper guide",
                 suits: "Women who want coaching and habit support alongside the clinical program.",
                 how: "Online assessment with practitioner oversight, plus coaching and app-based tracking.",
-                cost: "Juniper publishes no price publicly; the figure is confirmed inside its own flow before you commit.",
+                cost: "Juniper's own Bundle & Save terms name a $249 initial payment and a $942 minimum total on its three-month bundle, with the monthly price depending on the treatment and the bundle length, read 23 September 2026. The exact figure is confirmed inside its flow before you commit.",
                 offerText: "The initial consultation is waived with the code JARREDKFC, which Juniper values at $89. Nothing comes off the program itself.",
                 offerNote: "Confirmed from Juniper's affiliate handbook, 23 September 2026.",
                 visitHref: JUNIPER_URL,
