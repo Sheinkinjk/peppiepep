@@ -963,3 +963,16 @@
   .rd.hy .rd-ft .rd-g > .c3, .rd.hy .rd-ft .rd-g > .c2 { grid-column: span 1 !important; }
   .rd.hy .rd-ft a { padding-block: 0.32rem; font-size: 13.5px; }
 }
+
+/* ---- newsletter popup (NewsletterPopup.tsx) -------------------------------- */
+.nw-pop { position: fixed; inset: 0; z-index: 9000; display: flex; align-items: flex-end; justify-content: center; padding: 16px; background: rgba(20, 18, 15, 0.42); }
+.nw-pop__card { position: relative; width: 100%; max-width: 480px; background: var(--paper); border: 2px solid var(--rule); border-radius: 4px; padding: 26px 24px 20px; box-shadow: 0 24px 60px -24px rgba(20,18,15,0.5); }
+.nw-pop__x { position: absolute; top: 10px; right: 10px; width: 36px; height: 36px; border: 0; background: transparent; color: var(--ink-3); font-size: 26px; line-height: 1; cursor: pointer; border-radius: 4px; }
+.nw-pop__x:hover { background: var(--paper-2); color: var(--ink); }
+.nw-pop__k { margin: 0 0 8px; font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); }
+.nw-pop__t { margin: 0; font-family: var(--font-rd-display), sans-serif; font-size: 24px; line-height: 1.15; letter-spacing: -0.02em; color: var(--ink); }
+.nw-pop__b { margin: 10px 0 0; font-size: 15px; line-height: 1.55; color: var(--ink-2); }
+.nw-pop .rd-form { margin-top: 14px; }
+.nw-pop__no { margin-top: 12px; border: 0; background: transparent; color: var(--ink-3); font-size: 13px; text-decoration: underline; cursor: pointer; padding: 6px 0; }
+@media (min-width: 640px) { .nw-pop { align-items: center; } }
+@media (prefers-reduced-motion: no-preference) { .nw-pop__card { animation: nw-pop-in 220ms cubic-bezier(.2,.7,.2,1); } @keyframes nw-pop-in { from { transform: translateY(12px); opacity: 0; } to { transform: none; opacity: 1; } } }

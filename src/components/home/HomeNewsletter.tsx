@@ -32,6 +32,8 @@ export function HomeNewsletter({ source = "home", compact = false }: { source?: 
       if (!res.ok) throw new Error(String(res.status));
       setS("ok"); setM("You're subscribed. We'll email you when there's an offer worth knowing about.");
       window.gtag?.("event", "newsletter_subscribe", { source });
+      // Read by NewsletterPopup so it never asks someone who has already subscribed.
+      try { localStorage.setItem("referlabs_subscribed", "1"); } catch {}
     } catch {
       setS("err"); setM("Something went wrong on our side. Try again in a moment.");
     }

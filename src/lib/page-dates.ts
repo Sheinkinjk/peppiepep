@@ -116,7 +116,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/best-weight-loss-telehealth-australia": {
     "published": "2026-06-29",
-    "updated": "2026-09-23"
+    "updated": "2026-09-24"
   },
   "/blinq": {
     "published": "2026-07-14",
@@ -540,7 +540,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/mens-health": {
     "published": "2026-08-20",
-    "updated": "2026-09-18"
+    "updated": "2026-09-24"
   },
   "/mens-health/premature-ejaculation-treatment-options-australia": {
     "published": "2026-08-20",
@@ -548,7 +548,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/mens-health/sexual-wellness-products": {
     "published": "2026-08-20",
-    "updated": "2026-09-18"
+    "updated": "2026-09-24"
   },
   "/mens-health-telehealth-australia": {
     "published": "2026-07-02",
@@ -932,7 +932,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/weight-loss": {
     "published": "2026-07-03",
-    "updated": "2026-09-18"
+    "updated": "2026-09-24"
   },
   "/weight-loss-cost-calculator": {
     "published": "2026-07-07",

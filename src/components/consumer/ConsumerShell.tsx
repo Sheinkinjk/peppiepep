@@ -2,6 +2,7 @@ import "@/app/home.css";
 import "@/app/theme.css";
 import "@/app/brand.css";
 import { SiteFooterBar, SiteHeader } from "@/components/brand/SiteChrome";
+import NewsletterPopup from "@/components/consumer/NewsletterPopup";
 
 /**
  * The consumer page shell: the same header and footer as the homepage
@@ -23,6 +24,7 @@ export default function ConsumerShell({
       <SiteHeader />
       {children}
       <SiteFooterBar newsletter />
+      <NewsletterPopup />
     </div>
   );
 }

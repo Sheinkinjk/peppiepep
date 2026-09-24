@@ -17,25 +17,26 @@ export const metadata = generateSEOMetadata(seoConfig.deals);
  * requires and which is also what makes an answer citable.
  */
 const FAQS = [
+  /*
+   * No "What is the current <brand> code?" question here, deliberately. Until
+   * 24 Sep 2026 this list asked four of them in FAQPage JSON-LD, word for word
+   * the question each brand page answers, so Google split the brand's own code
+   * query between two Refer Labs pages: "moshy discount code" showed this page
+   * 99 times at position 8 against /moshy 211 times at 6.4, and "knose promo
+   * code" split 130/153 with /knose to zero clicks on either. The brand page
+   * owns its code query; this page answers questions about the list.
+   */
   {
-    q: "What is the current Moshy discount code?",
-    a: "The current Moshy discount code is REFERRAL120, worth $120 off a new customer's first order. Moshy states it applies to a practitioner-assigned weight-loss program, one use per customer, with a minimum three-month commitment, and excludes dietitian, over-the-counter and meal-replacement plans. It applies automatically through our link, so there is nothing to type. Read off Moshy's own sign-up page on 17 August 2026.",
-  },
-  {
-    q: "What is the current Mosh discount code?",
-    a: "The current Mosh discount code is REFERAL55, worth 55% off a new customer's first order. It applies to that first order rather than to later renewals, and Mosh runs as a subscription after that. It applies automatically through our link. Read off Mosh's own page on 17 August 2026.",
-  },
-  {
-    q: "What is the current Knose promo code?",
-    a: "The current Knose promo code is referlab2mf, which gives new customers 2 months free on Knose pet insurance. What the policy covers, along with waiting periods, exclusions and limits, is set out in Knose's PDS, so get a quote to see what would apply to your pet. This is general information, not financial advice.",
-  },
-  {
-    q: "What is the current PetsOnMe discount code?",
-    a: "The current PetsOnMe discount code is REFERLABS, which takes 15% off pet care services rather than off the insurance premium, up from the usual 12%. The distinction matters: it is a discount on services, not on the cost of cover. Read off PetsOnMe's own page on 17 August 2026. General information, not financial advice.",
+    q: "Which discount codes does Refer Labs hold?",
+    a: "Six, each unique to Refer Labs and each dated in the table above: Moshy (REFERRAL120), Mosh (REFERAL55), Juniper (JARREDKFC), i-screen (referlabs), Knose (referlab2mf) and PetsOnMe (REFERLABS). What each one discounts, and what it does not, is set out on the brand's own page, linked from its row.",
   },
   {
     q: "Are these discount codes current?",
     a: "Each offer in the table shows the date we last confirmed it, rather than one site-wide stamp, so you can see how current each individual code is. Offers change without notice, so treat the date as when we checked rather than a guarantee, and confirm the terms on the provider's site before you sign up.",
+  },
+  {
+    q: "Why is a code sometimes not a discount on the price?",
+    a: "Because a code discounts a specific thing, and it is not always the headline price. PetsOnMe's REFERLABS takes 15% off pet care services, not off the insurance premium. Juniper's JARREDKFC waives the initial consultation and takes nothing off the program. Each row and each brand page states the object of the discount for that reason.",
   },
   {
     q: "Does Refer Labs earn from these deals?",
