@@ -1,66 +1,100 @@
 import Link from "next/link";
-import { SectionMark } from "@/components/brand/SectionMark";
-import { ArrowRight } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
-import ComingSoonNote from "@/components/consumer/ComingSoonNote";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
 
-import PartnerRoute from "@/components/consumer/PartnerRoute";
+import HubProviders from "@/components/consumer/HubProviders";
+import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
+import MatchPrompt from "@/components/consumer/MatchPrompt";
+import { EdgeObject } from "@/components/brand/EdgeObject";
+import { GuideGrid, type GuideLink } from "@/components/brand/GuideGrid";
+import { HubObject, type ObjectKind } from "@/components/home/Objects";
 import { MIDOC } from "@/lib/partners/midoc";
+
 export const metadata = generateSEOMetadata(seoConfig.mensHealthHub);
 
 const SLUG = "/mens-health";
 
-/**
- * Clinical register throughout, no imagery, and no adult-retail link anywhere in
- * this hub or the clinical guides. The retail category is confined to a single
- * page which this hub links to plainly and which carries no products yet.
+/*
+ * Rebuilt 24 Sep 2026 on the pattern /health-and-beauty uses, after Jarred read
+ * the old version and found it static, with a boxed regulatory notice sitting at
+ * the top of the page before anything a reader came for.
+ *
+ * What moved. The medicines statement is a fact about how these pages are
+ * written, not the answer to the reader's question, so it now sits at the head of
+ * the questions band where the FAQ on the same subject already lives. The
+ * coming-soon box is gone from the hero: its one fact, that Midoc is the only
+ * partner so far, is stated in the providers intro where it is useful. The route
+ * matcher moves into the hero in a drawn-object frame, which is the element that
+ * makes the other hubs feel like tools rather than lists. Midoc gets the same
+ * provider card every hub uses, so the day a second provider lands it is one
+ * more object in an array and not a redesign.
+ *
+ * Clinical register throughout, no imagery of people, and no adult-retail link
+ * anywhere in this hub or the clinical guides. The retail category is confined
+ * to a single page which this hub links to plainly.
+ *
+ * TGA: nothing here names a prescription medicine, and the guard in
+ * scripts/check-partner-scope.mjs denies the ED and hair-loss molecules beside
+ * any Mosh link, so a future placement cannot bring one in by accident.
  */
 
-const guides = [
+const guides: GuideLink[] = [
   {
-    // The provider page, listed first: it is the only page in this hub that
-    // states what a consultation actually costs.
     href: "/midoc",
     title: "Midoc: what it costs and how access works",
     desc: `Consultations from ${MIDOC.consultStandard}, certificates from ${MIDOC.certificateSingleDay}, and who the service does not suit. Prices read ${MIDOC.readOnShort}.`,
+    kind: "review",
   },
   {
     href: "/mens-health/erectile-dysfunction-treatment-cost-australia",
     title: "Erectile dysfunction: what treatment costs",
     desc: "How GP, telehealth and subscription pricing differ, and where Medicare applies.",
+    kind: "cost",
   },
   {
     href: "/mens-health/premature-ejaculation-treatment-options-australia",
     title: "Premature ejaculation: the routes",
     desc: "What a GP, a psychologist and an online clinic each offer, and how each is priced.",
+    kind: "explainer",
   },
   {
     href: "/mens-health/online-mens-health-clinics-compared",
     title: "Online clinics, compared",
     desc: "Consult models, subscription structures, and what is billed separately.",
-  },
-  {
-    href: "/mens-health/online-doctor-medical-certificate-australia",
-    title: "Online medical certificate: cost and speed",
-    desc: `From ${MIDOC.certificateSingleDay} for a single day (read ${MIDOC.readOnShort}), with what the review buys you.`,
-  },
-  {
-    href: "/mens-health/online-prescription-australia",
-    title: "Online prescription: cost and Medicare",
-    desc: `${MIDOC.scriptRepeat} for a repeat and ${MIDOC.scriptNew} for a new script (read ${MIDOC.readOnShort}), plus the identifier that decides whether you get one.`,
+    kind: "compare",
   },
   {
     href: "/mens-health/is-telehealth-or-a-gp-cheaper-for-mens-health",
     title: "Telehealth or a GP: which is cheaper?",
     desc: "The same question costed over a year rather than a single appointment.",
+    kind: "compare",
+  },
+  {
+    href: "/mens-health/online-doctor-medical-certificate-australia",
+    title: "Online medical certificate: cost and speed",
+    desc: `From ${MIDOC.certificateSingleDay} for a single day (read ${MIDOC.readOnShort}), with what the review buys you.`,
+    kind: "cost",
+  },
+  {
+    href: "/mens-health/online-prescription-australia",
+    title: "Online prescription: cost and Medicare",
+    desc: `${MIDOC.scriptRepeat} for a repeat and ${MIDOC.scriptNew} for a new script (read ${MIDOC.readOnShort}), plus the identifier that decides whether you get one.`,
+    kind: "cost",
   },
   {
     href: "/mens-health/mens-health-quiz",
     title: "Which route fits you?",
     desc: "Four questions on cost, discretion and preference. No health questions.",
+    kind: "quiz",
   },
+];
+
+const OTHER: { href: string; label: string; object: ObjectKind }[] = [
+  { href: "/hair-loss", label: "Hair loss", object: "comb" },
+  { href: "/weight-loss", label: "Weight loss", object: "scale" },
+  { href: "/sleep", label: "Sleep", object: "pillow" },
+  { href: "/longevity", label: "Longevity", object: "hourglass" },
 ];
 
 const faqs = [
@@ -141,60 +175,80 @@ export default function MensHealthHub() {
             <Link href="/" className="hover:text-[#007a95]">Refer Labs</Link>
             <span>/</span>
             <span className="text-[#14120f]">Men&apos;s health</span>
-          <SectionMark kind="pulse" size={88} /></nav>
-          <div className="max-w-2xl">
-            <h1 className="mt-4 text-4xl font-bold leading-[1.06] tracking-[-0.01em] text-[#14120f] sm:text-5xl">
-              Men&apos;s health telehealth in Australia: <span>what access costs</span>
-            </h1>
-            <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#14120f]">
-              This is a category where the marketing is loud and the pricing is hard to compare. These guides set out
-              how the access routes differ, what each costs over a year rather than at the first appointment, and what
-              to ask before committing to a subscription.
-            </p>
-          </div>
-          <div className="mt-8 max-w-3xl rounded-2xl border border-[#ded8cd] bg-[#f7f4ee] px-5 py-4">
-            <p className="text-[13px] leading-relaxed text-[#56504a]">
-              <strong className="font-semibold text-[#14120f]">On medicines.</strong> These pages never name a
-              prescription medicine. Advertising one to the public is prohibited in Australia, and what is appropriate
-              for you is a decision for a registered practitioner after an individual assessment. We compare providers
-              on consult model, price, inclusions and whether anything is bulk-billed.
-            </p>
-          </div>
-          <div className="mt-4 max-w-3xl">
-            <ComingSoonNote category="Men's health" />
+          </nav>
+          <div className="grid items-start gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
+            <div className="max-w-3xl">
+              <h1 className="mt-4 text-4xl font-bold leading-[1.06] tracking-[-0.01em] text-[#14120f] sm:text-5xl">
+                Men&apos;s health telehealth in Australia: <span>what access costs</span>
+              </h1>
+              {/* The answer, directly under the h1. Nothing between: check-answer-slot. */}
+              <p className="mt-5 text-lg leading-relaxed text-[#14120f]">
+                An online clinic and a GP charge for the same thing on different models, and the advertised numbers
+                cannot be compared directly. One bills a subscription every month whether you consult or not; the
+                other bills per appointment, often with a Medicare rebate and sometimes bulk-billed. These guides put
+                both on a twelve-month footing, say what each route includes and what is billed separately, and price
+                the parts you can actually check, from a consultation to a certificate to a repeat script.
+              </p>
+              <AffiliateDisclosure compact className="mt-4" />
+            </div>
+            <EdgeObject kind="pulse" className="lg:mt-14">
+              <MatchPrompt
+                stacked
+                href="/mens-health/mens-health-quiz"
+                title="Which route fits you?"
+                sub="Four questions on cost, discretion and how you prefer to consult. No health questions, no assessment."
+                cta="Find your route"
+                dataCta="mens-health-hero-quiz"
+              />
+            </EdgeObject>
           </div>
         </section>
 
+        <HubProviders
+          className="pt-16"
+          ctaPrefix="mens-health-hub"
+          heading="The provider we cover"
+          intro="One Australian telehealth provider so far, with the same four questions answered that every provider on this site gets. We earn a commission if you sign up through the link, hold no discount code for it, and it cannot pay to be described more favourably. More providers are being added; this is a starting set, not the market."
+          providers={[
+            {
+              name: "Midoc",
+              href: "/midoc",
+              hrefLabel: "Read our Midoc guide",
+              suits: "Someone who wants a consultation, a certificate or a repeat script quickly, without booking a clinic visit.",
+              how: `Online consultations with ${MIDOC.practitioners}, ${MIDOC.waitTime}. Certificates and scripts are separate lines with their own prices.`,
+              cost: `Standard consultation ${MIDOC.consultStandard}, specialist ${MIDOC.consultSpecialist}, certificates from ${MIDOC.certificateSingleDay}, read ${MIDOC.readOnLabel}.`,
+              visitHref: "/go/midoc-mens-health-hub",
+              highlight: `Mental health care plans and reviews are ${MIDOC.mentalHealth}, read ${MIDOC.readOnLabel}. That is the one line here that Medicare covers in full.`,
+              visitLabel: "Visit Midoc",
+              earns: true,
+              earnAction: "sign up with",
+            },
+          ]}
+        />
+
         <section className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
-          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">Start here</h2>
-          <div className="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {guides.map((g) => (
-              <Link
-                key={g.href}
-                href={g.href}
-                className="group rounded-2xl border border-[#ded8cd] bg-white p-6 transition-colors hover:border-[#007a95]/40"
-              >
-                <h3 className="text-[15px] font-bold text-[#14120f] group-hover:text-[#007a95]">{g.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-[#56504a]">{g.desc}</p>
-                <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[#007a95]">
-                  Read <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
-                </span>
-              </Link>
-            ))}
-          </div>
-          <p className="mt-6 max-w-2xl text-sm leading-relaxed text-[#56504a]">
-            We also cover the non-prescription{" "}
+          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">Every guide in this section</h2>
+          <p className="mt-3 max-w-3xl text-[15px] leading-relaxed text-[#56504a]">
+            Labelled by what each one does: a cost breakdown, a comparison, a review or a tool. The non-prescription{" "}
             <Link href="/mens-health/sexual-wellness-products" className="font-semibold text-[#007a95] hover:underline">
               sexual wellness retail category
             </Link>{" "}
-            on a single separate page, kept apart from the clinical guides above. That page is for adults and carries
-            no products at present.
+            sits on its own page, kept apart from these clinical guides.
           </p>
+          <GuideGrid guides={guides} />
         </section>
 
         <section className="border-y border-[#ded8cd] bg-[#f7f4ee]">
           <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
             <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">Common questions</h2>
+            {/* The medicines statement lives here, beside the question it answers,
+                rather than boxed at the top of the page ahead of the content. */}
+            <p className="mt-3 max-w-3xl text-[15px] leading-relaxed text-[#56504a]">
+              <strong className="font-semibold text-[#14120f]">On medicines.</strong> These pages never name a
+              prescription medicine, because advertising one to the public is prohibited in Australia and what is
+              appropriate for you is a practitioner&apos;s decision after an individual assessment. We compare
+              providers on consult model, price, inclusions and whether anything is bulk-billed.
+            </p>
             <dl className="mt-7 max-w-3xl divide-y divide-[#ded8cd]">
               {faqs.map((f) => (
                 <div key={f.q} className="py-5">
@@ -207,32 +261,32 @@ export default function MensHealthHub() {
         </section>
 
         <section className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
-          <div className="max-w-2xl">
+          <div className="max-w-3xl">
             <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">Other categories</h2>
-            <ul className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold">
-              <li><Link href="/hair-loss" className="text-[#007a95] hover:underline">Hair loss</Link></li>
-              <li><Link href="/weight-loss" className="text-[#007a95] hover:underline">Weight loss</Link></li>
-              <li><Link href="/sleep" className="text-[#007a95] hover:underline">Sleep</Link></li>
-              <li><Link href="/guides" className="text-[#56504a] hover:text-[#007a95] hover:underline">All guides</Link></li>
+            <p className="mt-2 text-sm leading-relaxed text-[#56504a]">
+              Hair loss and weight loss are the two categories next to this one that run on the same telehealth model.
+            </p>
+            <ul className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4">
+              {OTHER.map((o) => (
+                <li key={o.href}>
+                  <Link
+                    href={o.href}
+                    className="group flex items-center gap-3 rounded-xl border border-[#ded8cd] bg-white p-3 text-sm font-semibold text-[#14120f] transition-colors hover:border-[#14120f] hover:text-[#007a95]"
+                  >
+                    <HubObject kind={o.object} size={36} className="hy-obj" />
+                    {o.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
+            <p className="mt-4 text-sm">
+              <Link href="/guides" className="font-semibold text-[#56504a] hover:text-[#007a95] hover:underline">All guides</Link>
+            </p>
           </div>
-          <div className="mt-10 max-w-2xl">
-            <NewsletterSignup />
+          <div className="mt-12">
+            <NewsletterSignup variant="band" />
           </div>
         </section>
-        <PartnerRoute
-          className="mt-12"
-          heading="Providers in this section"
-          intro="Midoc is the first partner here. More are being added, so this is a starting set rather than the full market."
-          providers={[
-            {
-              name: "Midoc",
-              href: "/go/midoc-mens-health-hub",
-              what: `Australian telehealth with ${MIDOC.practitioners}. Standard consultations ${MIDOC.consultStandard}, specialist ${MIDOC.consultSpecialist}, certificates from ${MIDOC.certificateSingleDay}, ${MIDOC.waitTime}. Read our full Midoc page for what it costs and who it suits.`,
-              checked: MIDOC.readOnLabel,
-            },
-          ]}
-        />
       </main>
     </ConsumerShell>
   );

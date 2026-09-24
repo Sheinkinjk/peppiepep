@@ -105,6 +105,64 @@ const PARTNERS = [
       },
     ],
   },
+  /*
+   * Mosh, added 24 Sep 2026. Live as the hair-loss partner since July, but it had
+   * no entry here, so nothing policed where its link went or what sat beside it.
+   * Tokens are LINK-SHAPED on purpose: the guard matches with plain string
+   * includes, so a token of "Mosh" would also match Moshy, moshhair and every
+   * /moshy-vs-juniper page, and "hims" would match "Hims & Hers" on the Pilot
+   * section and the Juniper pages Hims owns. The eight routes in `allow` are
+   * where those tokens actually appear today, read from a grep of src/app, plus
+   * /mens-health, allow-listed now so the day a Mosh men's-health placement lands
+   * the guard needs no change. The medicine denials mirror the TGA class list:
+   * erectile dysfunction medicines are a TGA 2026-27 priority focus area.
+   */
+  {
+    name: "Mosh",
+    tokens: ["getmosh.com.au", "MOSH_HAIR_URL", "REFERAL55", "/go/mosh-"],
+    allow: [
+      "/hair-loss", "/moshhair", "/mosh-review", "/mosh-vs-dense",
+      "/best-hair-loss-treatment-australia", "/hair-loss-treatment-cost-australia",
+      "/mens-health", "/deals", "/guides", "/coming-soon",
+    ],
+    deny: [
+      {
+        pattern: /\b(sildenafil|tadalafil|vardenafil|avanafil|viagra|cialis|levitra|PDE-?5)\b/i,
+        reason:
+          "no page linking Mosh may name an erectile dysfunction medicine, molecule or brand: " +
+          "every such page carries a commission, so none can claim the editorial exemption, " +
+          "and ED medicines are a TGA 2026-27 priority focus area. Describe the service",
+      },
+      {
+        pattern: /\b(finasteride|minoxidil|dutasteride)\b/i,
+        reason: "no page linking Mosh may name a hair-loss medicine; same rule, same statute",
+      },
+    ],
+  },
+  /*
+   * Hims, added 24 Sep 2026 as an INERT entry: Hims is not live and must not be
+   * mentioned on the site, and none of these tokens exists anywhere yet. The entry
+   * is here so that the first Hims link lands inside an allow list with the
+   * medicine denials already attached, rather than unguarded. Hims' own partner
+   * terms (read 24 Sep 2026) bar its code or link on comparison and coupon sites
+   * outside an Approved Channel, and bar paid ads on any channel; both are
+   * conditions on going live, not things this guard can check.
+   */
+  {
+    name: "Hims",
+    tokens: ["hims.com.au", "HIMS_", "/go/hims-"],
+    allow: ["/mens-health", "/weight-loss", "/juniper", "/deals", "/guides", "/coming-soon"],
+    deny: [
+      {
+        pattern: /\b(sildenafil|tadalafil|vardenafil|avanafil|viagra|cialis|levitra|PDE-?5)\b/i,
+        reason: "no page linking Hims may name an erectile dysfunction medicine, molecule or brand",
+      },
+      {
+        pattern: /\b(semaglutide|tirzepatide|liraglutide|GLP-?1|ozempic|wegovy|mounjaro|saxenda)\b/i,
+        reason: "no page linking Hims may name a weight-management medicine, molecule or brand",
+      },
+    ],
+  },
   {
     name: "Midoc",
     tokens: ["midoc", "Midoc"],
