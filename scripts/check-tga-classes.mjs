@@ -68,16 +68,25 @@ if (!existsSync(BUILT)) {
   process.exit(0);
 }
 
-function earningRoutes(dir = APP, acc = []) {
+/*
+ * Which pages are advertisements is decided from the RENDERED html, not the
+ * page source. Until 24 Sep 2026 this grepped page.tsx for `href="/go/`, so any
+ * hub passing its partner link through a prop (HubProviders takes `visitHref`)
+ * was invisible: /weight-loss, /hair-loss, /health-and-beauty and, once rebuilt
+ * on that component, /mens-health all carried commission links and were never
+ * checked. The count fell from 21 to 20 on the rebuild, which is how it was
+ * noticed. A page is an advertisement if what it SERVES contains a partner link;
+ * `rel="sponsored"` is included because /weight-loss and /hair-loss link their
+ * partners directly rather than through /go/.
+ */
+const EARNING = /href="\/go\/|rel="[^"]*sponsored|t\.cfjump\.com/;
+function earningRoutes(dir = BUILT, acc = []) {
   for (const e of readdirSync(dir, { withFileTypes: true })) {
     const p = join(dir, e.name);
     if (e.isDirectory()) earningRoutes(p, acc);
-    else if (e.name === "page.tsx") {
-      const src = readFileSync(p, "utf8");
-      if (/href:\s*"\/go\/|href="\/go\/|t\.cfjump\.com/.test(src)) {
-        const r = "/" + dir.slice(APP.length + 1);
-        if (!r.includes("[")) acc.push(r === "/" ? "/index" : r);
-      }
+    else if (e.name.endsWith(".html") && EARNING.test(readFileSync(p, "utf8"))) {
+      const r = p.slice(BUILT.length).replace(/\.html$/, "");
+      if (!r.includes("[")) acc.push(r === "/index" ? "/" : r);
     }
   }
   return acc;
@@ -86,7 +95,7 @@ function earningRoutes(dir = APP, acc = []) {
 const errors = [];
 let checked = 0;
 for (const route of earningRoutes()) {
-  const file = join(BUILT, `${route.replace(/^\//, "")}.html`);
+  const file = join(BUILT, `${route === "/" ? "index" : route.replace(/^\//, "")}.html`);
   if (!existsSync(file)) continue;
   checked++;
   const html = readFileSync(file, "utf8");
