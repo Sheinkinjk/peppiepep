@@ -51,18 +51,25 @@ export default function NewsletterPopup() {
 
   useEffect(() => {
     if (!pathname || SKIP.test(pathname)) return;
-    if (read(SUBSCRIBED_KEY)) return;
-    if (!read("referlabs_cookie_consent")) return;
-    const dismissed = Number(read(DISMISSED_KEY) || 0);
-    if (dismissed && Date.now() - dismissed < QUIET_DAYS * 24 * 3600 * 1000) return;
-
-    // Count this page once, even if the effect re-runs.
+    // Count this page once, even if the effect re-runs. Counting happens before
+    // any of the gates below, so a page read while the cookie banner was still
+    // open still counts toward five; only the SHOWING waits on the answer. The
+    // first version gated the count as well, which put the ask on the sixth
+    // page for anyone who answered the banner on their first page, which is
+    // most people.
     const seen = (read(PV_KEY) || "").split("|").filter(Boolean);
     if (!seen.includes(pathname)) {
       seen.push(pathname);
       write(PV_KEY, seen.slice(-50).join("|"));
     }
-    if (seen.length !== SHOW_ON_PAGE) return;
+
+    if (read(SUBSCRIBED_KEY)) return;
+    if (!read("referlabs_cookie_consent")) return;
+    const dismissed = Number(read(DISMISSED_KEY) || 0);
+    if (dismissed && Date.now() - dismissed < QUIET_DAYS * 24 * 3600 * 1000) return;
+    if (seen.length < SHOW_ON_PAGE) return;
+    // From the fifth page on, until answered. Exactly-five would skip anyone
+    // whose fifth page was read with the banner still open.
 
     const t = setTimeout(() => {
       setOpen(true);

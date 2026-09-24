@@ -1,3 +1,4 @@
+import NewsletterPopup from "@/components/consumer/NewsletterPopup";
 import Link from "next/link";
 import { SiteFooterBar, SiteHeader } from "@/components/brand/SiteChrome";
 import { HomeLogo } from "@/components/home/HomeLogo";
@@ -322,6 +323,7 @@ export function HomePage() {
         <News />
         <Partner />
       </main>
+      <NewsletterPopup />
       <SiteFooterBar />
     </div>
   );
