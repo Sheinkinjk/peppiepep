@@ -26,9 +26,18 @@ import { join } from "node:path";
 
 const ROOT = ".next/server/app";
 
-/** Kept in step with EARNS_NOTHING in scripts/check-partner-scope.mjs. */
+/**
+ * Kept in step with EARNS_NOTHING in scripts/check-partner-scope.mjs.
+ *
+ * Widened 24 Sep 2026. /mens-health/sexual-wellness-products carried a Midoc link
+ * beneath "Right now no links are live and nothing here earns us anything", and the
+ * pattern required "commission" or "pays us", so it passed. "earns us anything",
+ * "earns us nothing" and "no links are live" are now caught. Tested against the four
+ * correct sentences the site uses ("nothing ELSE here earns us anything", "we earn
+ * nothing from Everlab") before shipping: none trips it.
+ */
 const EARNS_NOTHING =
-  /nothing (?:here|on this page|in this (?:section|category|hub))(?:,? (?:currently|yet))? (?:earns us (?:a )?commission|pays us)|\bwe earn nothing (?:here|from this section)\b/i;
+  /nothing (?:here|on this page|on these pages|in this (?:section|category|hub))(?:,? (?:currently|yet|right now))? (?:earns us (?:a )?(?:commission|anything|nothing)|pays us|earns us)|\bwe earn nothing (?:here|from this section)\b|\bno links are live\b/i;
 
 const EARNS_LINK = /href="\/go\/|rel="[^"]*sponsored/;
 

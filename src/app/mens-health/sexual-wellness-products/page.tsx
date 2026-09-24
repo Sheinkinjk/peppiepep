@@ -38,7 +38,7 @@ const faqs = [
   },
   {
     q: "Will Refer Labs earn commission on this page?",
-    a: "On this page, eventually yes, and it will be disclosed here when it happens. It is the only page in our men's health section where retail links will appear, which is deliberate: our guides on conditions and costs stay free of commercial links so the advice on them cannot be shaped by what pays. Right now no links are live and nothing here earns us anything.",
+    a: "Yes, on one link. The Midoc consultation link on this page pays us a commission if you use the service, and it is disclosed beside it. No retail product is linked yet; this is the only page in the men's health section where retail links will appear when they do, kept apart from the clinical guides. Where any guide in this section links a company that pays us, it says so beside that link.",
   },
   {
     q: "Why is this page separate from the clinical guides?",

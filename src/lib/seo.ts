@@ -755,9 +755,14 @@ export const seoConfig = {
   // model, price and inclusions, never products. Adult-retail links are confined
   // to /mens-health/sexual-wellness-products and are not live yet.
   mensHealthHub: {
-    title: "Men's Health in Australia 2026: Costs and How Access Works",
+    // Retitled 24 Sep 2026. This hub is the 301 target of /mens-health-telehealth-australia,
+    // and every query that URL still ranks for is a telehealth query ("telehealth mens
+    // health australia" 200 impressions, "mens health telehealth consultations australia"
+    // 210). The old URL sat at position 19 to 42 on them; this page sat at 67 to 97, because
+    // its title did not say telehealth. Same page, now targeting the demand it inherited.
+    title: "Men's Health Telehealth in Australia 2026: Costs and How Access Works",
     description:
-      "Independent guides to men's health in Australia: how online clinics and GPs differ on cost and consult model, and what is bulk-billed.",
+      "Independent guides to men's health telehealth in Australia: how online clinics and GPs differ on cost and consult model, and what is bulk-billed.",
     url: `${SITE_URL}/mens-health`,
     keywords: ["mens health australia", "mens health telehealth australia", "mens health clinic australia", "mens health cost australia"],
   },
