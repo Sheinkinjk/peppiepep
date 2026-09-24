@@ -375,23 +375,27 @@ export default function BestWeightLossTelehealthPage() {
             </h1>
 
             <p className="text-[#56504a] text-sm sm:text-base leading-relaxed max-w-2xl mb-3">
-              Moshy and Juniper are the two most-used weight-management platforms in Australia and they are built
-              differently. Moshy runs a lean clinical pathway open to anyone eligible, and Refer Labs holds REFERRAL120,
-              $120 off a new customer&apos;s first order. Juniper wraps clinical care in a coaching program, markets
-              primarily to women, and carries JARREDKFC, which waives its initial consultation, valued at $89.
+              Moshy and Juniper are the two most-used weight-management telehealth services in Australia, and they
+              are built differently. Moshy is a lean clinical pathway open to anyone eligible. Juniper wraps the
+              clinical care in a coaching program and markets to women. Both assess suitability individually through
+              a registered practitioner, and Refer Labs holds a code for each.
             </p>
             {/* Below the lead. The first paragraph after the h1 is the answer;
                 a disclosure in that slot is what an engine lifts instead. Still
                 above the first affiliate link, which is what it is for. */}
             <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
-            <p className="text-[#56504a] text-sm sm:text-base leading-relaxed max-w-2xl mb-5">
-              Below: what each platform does, who it suits, and how to access each eligibility flow. This page does not constitute medical advice. Suitability is assessed individually by each platform&apos;s clinical team.
-            </p>
 
-            <CodeAnswer code="REFERRAL120" className="mt-2 mb-7">
-              Of the providers compared here, only Moshy carries a Refer Labs code: REFERRAL120, worth $120 off a new customer&apos;s first order, one use per customer.
+            {/* One statement of both codes. Until 24 Sep 2026 this said "only Moshy
+                carries a Refer Labs code", which had been false since JARREDKFC was
+                published on 23 Sep, and it sat directly under a lead that named
+                both. */}
+            <CodeAnswer code="REFERRAL120" className="mt-5 mb-7">
+              Moshy&apos;s code is REFERRAL120, $120 off a new customer&apos;s first order, one use per customer.
+              Juniper&apos;s is JARREDKFC, which waives the initial consultation Juniper values at $89 and takes
+              nothing off the program itself. Both are applied through the links on this page.
             </CodeAnswer>
             <OfferSchema code="REFERRAL120" />
+            <OfferSchema code="JARREDKFC" />
 
 
             {/* A VerifiedStamp and a one-row OffersTable stood here until 2 Sep 2026,
@@ -427,11 +431,13 @@ export default function BestWeightLossTelehealthPage() {
               What is the best weight-loss telehealth in Australia?
             </h2>
             <div className="rounded-xl border px-6 py-5" style={{ borderColor: `${CYAN}40`, background: `${CYAN}0A` }}>
-              <p className="text-[11px] font-bold uppercase tracking-[0.18em] mb-2" style={{ color: CYAN_LT }}>
-                Quick Verdict
-              </p>
               <p className="text-[#14120f] text-sm sm:text-base leading-relaxed max-w-2xl">
-                Refer Labs&apos; August 2026 comparison of Australian weight-loss telehealth found Moshy (a lean clinical pathway, open to anyone eligible) and Juniper (a coaching-led program marketed to women) the leading weight-management platforms. Eligibility and suitability are assessed individually by each platform&apos;s clinical team. This page does not constitute medical advice.
+                There is no single best service, because the two are built for different people. Moshy suits someone
+                who wants the clinical pathway with the least around it: an online assessment, a practitioner review,
+                and delivery if a program is appropriate. Juniper suits someone who wants coaching, an app and a
+                patient community around the same clinical step, and it markets to women. Neither is cheaper on paper
+                in a way that survives the first month, so compare what each includes over a year. Both decide
+                suitability individually, and some applicants are declined.
               </p>
             </div>
           </section>
