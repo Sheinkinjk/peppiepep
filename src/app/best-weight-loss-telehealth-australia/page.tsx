@@ -2,14 +2,16 @@ import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, compariso
 import { SectionMark } from "@/components/brand/SectionMark";
 import EarningsBalanceNote from "@/components/consumer/EarningsBalanceNote";
 import EditorialMeta from "@/components/consumer/EditorialMeta";
-import { MOSHY_URL } from "@/lib/affiliate-links";
+import { MOSHY_URL, JUNIPER_URL } from "@/lib/affiliate-links";
+import HubProviders from "@/components/consumer/HubProviders";
+import MatchPrompt from "@/components/consumer/MatchPrompt";
+import { EdgeObject } from "@/components/brand/EdgeObject";
 import { CheckCircle2, XCircle, ArrowRight, ExternalLink } from "lucide-react";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 import FeatureMatrix from "@/components/consumer/FeatureMatrix";
-import CodeAnswer from "@/components/offers/CodeAnswer";
 import OfferSchema from "@/components/offers/OfferSchema";
 
 import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
@@ -364,82 +366,92 @@ export default function BestWeightLossTelehealthPage() {
             <span className="text-[#14120f]">Best Weight Loss Telehealth</span>
           <SectionMark kind="scale" size={56} /></nav>
 
-          {/* ── Hero ─────────────────────────────────────────────────────────── */}
-          <section className="pt-10 pb-8 sm:pt-12">
-            <p className="text-[#56504a] text-xs mb-6">
-              Australia only &middot; Not medical advice
-            </p>
-
-            <h1 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-black leading-[1.08] tracking-tight text-[#14120f] mb-4 max-w-3xl">
-              Best Weight Loss Telehealth Australia 2026
-            </h1>
-
-            <p className="text-[#56504a] text-sm sm:text-base leading-relaxed max-w-2xl mb-3">
-              Moshy and Juniper are the two most-used weight-management telehealth services in Australia, and they
-              are built differently. Moshy is a lean clinical pathway open to anyone eligible. Juniper wraps the
-              clinical care in a coaching program and markets to women. Both assess suitability individually through
-              a registered practitioner, and Refer Labs holds a code for each.
-            </p>
-            {/* Below the lead. The first paragraph after the h1 is the answer;
-                a disclosure in that slot is what an engine lifts instead. Still
-                above the first affiliate link, which is what it is for. */}
-            <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
-
-            {/* One statement of both codes. Until 24 Sep 2026 this said "only Moshy
-                carries a Refer Labs code", which had been false since JARREDKFC was
-                published on 23 Sep, and it sat directly under a lead that named
-                both. */}
-            <CodeAnswer code="REFERRAL120" className="mt-5 mb-7">
-              Moshy&apos;s code is REFERRAL120, $120 off a new customer&apos;s first order, one use per customer.
-              Juniper&apos;s is JARREDKFC, which waives the initial consultation Juniper values at $89 and takes
-              nothing off the program itself. Both are applied through the links on this page.
-            </CodeAnswer>
+          {/* ── Hero ─────────────────────────────────────────────────────────
+              Rebuilt 24 Sep 2026 on the pattern the hubs use, after Jarred read
+              the previous version: four paragraphs of prose stacked under the
+              h1 (lead, disclosure, a code statement, a verification stamp). The
+              codes and their dates now live in the provider cards, where every
+              provider gets the same rows, and the hero carries the answer, the
+              disclosure and the route matcher. ── */}
+          <section className="pt-10 pb-4 sm:pt-12">
+            <div className="grid items-start gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
+              <div className="max-w-3xl">
+                <h1 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-black leading-[1.08] tracking-tight text-[#14120f] mb-4">
+                  Best Weight Loss Telehealth Australia 2026
+                </h1>
+                {/* The answer, directly under the h1. Nothing between: check-answer-slot. */}
+                <p className="text-[#14120f] text-base sm:text-lg leading-relaxed">
+                  Moshy and Juniper are the two most-used weight-management telehealth services in Australia, built
+                  for different people. Moshy is the clinical pathway with the least around it, open to anyone
+                  eligible. Juniper wraps the same clinical step in coaching, an app and a patient community, and
+                  markets to women. Both decide suitability through a registered practitioner, and some applicants
+                  are declined.
+                </p>
+                <AffiliateDisclosure compact className="mt-4" />
+              </div>
+              <EdgeObject kind="scale" className="lg:mt-14">
+                <MatchPrompt
+                  stacked
+                  href="/weight-loss-quiz"
+                  title="Not sure which fits you?"
+                  sub="Two questions on what you want around the clinical step. No health questions, no assessment."
+                  cta="Take the 30-second match"
+                  dataCta="best-wl-telehealth-hero-quiz"
+                />
+              </EdgeObject>
+            </div>
             <OfferSchema code="REFERRAL120" />
             <OfferSchema code="JARREDKFC" />
-
-
-            {/* A VerifiedStamp and a one-row OffersTable stood here until 2 Sep 2026,
-                restating the $120/REFERRAL120 fact the CodeAnswer above had already
-                given, three times in one screenful. The table was worse than
-                redundant: filtered to Moshy on a page comparing three providers, it
-                rendered a "Provider / Best offer / Saving" header with a single row,
-                and dragged in four lines of footnotes about "Not recorded" and "No
-                code needed" that describe states no row on it could have. One
-                statement of the code, with its date, is the whole of what is needed. */}
-
-            {/* Jump nav */}
-            <nav aria-label="Jump to section" className="flex flex-wrap gap-2">
-              {[
-                { href: "#moshy",       label: "Moshy" },
-                { href: "#juniper",     label: "Juniper" },
-              ].map(({ href, label }) => (
-                <a
-                  key={href}
-                  href={href}
-                  className="inline-flex items-center gap-1.5 rounded-sm px-4 py-2 text-xs font-bold transition-all hover:opacity-80"
-                  style={{ color: CYAN_LT, border: `1px solid ${CYAN}40`, background: `${CYAN}08` }}
-                >
-                  {label}
-                </a>
-              ))}
-            </nav>
           </section>
 
-          {/* ── Quick Verdict (answer-first, GEO): the buyer's question as an H2 so engines match it ── */}
-          <section className="pb-2">
+          <HubProviders
+            className="pt-10"
+            ctaPrefix="best-wl-telehealth"
+            heading="The two providers, on the same terms"
+            intro="Both answer the same four questions, in alphabetical order. We earn a commission from both and hold a code for each; neither can pay to be described more favourably."
+            providers={[
+              {
+                name: "Juniper",
+                logo: "/logos/juniper.png",
+                href: "/juniper",
+                hrefLabel: "Read our Juniper guide",
+                suits: "Women who want coaching and habit support alongside the clinical program.",
+                how: "Online assessment with practitioner oversight, plus coaching and app-based tracking.",
+                cost: "Juniper publishes no price publicly; the figure is confirmed inside its own flow before you commit.",
+                offerText: "The initial consultation is waived with the code JARREDKFC, which Juniper values at $89. Nothing comes off the program itself.",
+                offerNote: "Confirmed from Juniper's affiliate handbook, 23 September 2026.",
+                visitHref: JUNIPER_URL,
+                visitLabel: "Check eligibility on Juniper",
+                earns: true,
+              },
+              {
+                name: "Moshy",
+                logo: "/logos/moshy.png",
+                href: "/moshy",
+                hrefLabel: "Read our Moshy guide",
+                suits: "Anyone eligible in Australia who wants the clinical pathway without a coaching wrap.",
+                how: "Online assessment, then a registered practitioner reviews it and sets the plan if you are suitable.",
+                cost: "A subscription, confirmed in the consult.",
+                offerCode: "REFERRAL120",
+                visitHref: MOSHY_URL,
+                visitLabel: "Check eligibility on Moshy",
+                earns: true,
+              },
+            ]}
+          />
+
+          {/* ── The buyer's question as an H2, with a liftable answer beneath it ── */}
+          <section className="pt-12 pb-2">
             <h2 className="text-xl sm:text-2xl font-black text-[#14120f] mb-4">
               What is the best weight-loss telehealth in Australia?
             </h2>
-            <div className="rounded-xl border px-6 py-5" style={{ borderColor: `${CYAN}40`, background: `${CYAN}0A` }}>
-              <p className="text-[#14120f] text-sm sm:text-base leading-relaxed max-w-2xl">
-                There is no single best service, because the two are built for different people. Moshy suits someone
-                who wants the clinical pathway with the least around it: an online assessment, a practitioner review,
-                and delivery if a program is appropriate. Juniper suits someone who wants coaching, an app and a
-                patient community around the same clinical step, and it markets to women. Neither is cheaper on paper
-                in a way that survives the first month, so compare what each includes over a year. Both decide
-                suitability individually, and some applicants are declined.
-              </p>
-            </div>
+            <p className="text-[#14120f] text-sm sm:text-base leading-relaxed max-w-3xl">
+              There is no single best service, because the two are built for different people. Moshy suits someone
+              who wants the clinical pathway with the least around it: an online assessment, a practitioner review,
+              and delivery if a program is appropriate. Juniper suits someone who wants coaching, an app and a patient
+              community around the same clinical step. Neither is cheaper on paper in a way that survives the first
+              month, so compare what each includes over a year.
+            </p>
           </section>
 
           {/* ── Where to start / how to compare (answer-first for unbranded queries) ── */}
