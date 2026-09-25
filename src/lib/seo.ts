@@ -2028,9 +2028,13 @@ export const seoConfig = {
     // inside the window. Do not report it. The reason for ending it: the offer
     // became publishable, and a real offer belongs in the title, which is the
     // stronger of the two effects the test was trying to isolate anyway.
-    title: "Juniper Review 2026: First Consult Waived, Worth $89",
+    // Retitled 26 Sep 2026 onto the code query, the pattern /moshy and /moshhair
+    // earn on. The few "juniper discount code" searches that existed were landing on
+    // /deals, because this title was the only code page without the words in it,
+    // and Jarred is about to drive that query with grassroots marketing.
+    title: "Juniper Discount Code 2026: JARREDKFC Waives the $89 Consult",
     description:
-      "New patients get the initial Juniper consultation waived, valued at $89, with the code JARREDKFC through our link. What the coaching-led program includes, and the 30-day money-back window.",
+      "The Juniper discount code is JARREDKFC: it waives the initial consultation, valued at $89, through our link. What the coaching-led program includes, what it costs, and the 30-day money-back window.",
     url: `${SITE_URL}/juniper`,
     keywords: ["juniper australia", "juniper weight loss", "juniper review australia", "juniper discount code", "juniper promo code", "juniper coupon code", "is juniper legit", "is juniper worth it", "does juniper work", "juniper weight reset program", "juniper cost australia", "myjuniper", "juniper program australia"],
   },

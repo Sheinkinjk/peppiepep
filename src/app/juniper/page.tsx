@@ -78,7 +78,7 @@ const faqs = [
   },
   {
     q: "How much does Juniper cost?",
-    a: "Juniper runs as a monthly subscription that its own site says includes the program, unlimited consultations and delivery, plus optional 1:1 health coaching as a paid add-on and a 30-day money-back window. Juniper offers two program options at different price points, so the figure that applies to you is confirmed inside Juniper's own flow before you commit.",
+    a: "Juniper runs as a monthly subscription that its own site says includes the program, unlimited consultations and delivery, plus optional 1:1 health coaching as a paid add-on and a 30-day money-back window. Juniper's own Bundle & Save terms, read 23 September 2026, name a $249 initial payment and a $942 minimum total on the three-month bundle, with the monthly figure depending on the treatment and whether you bundle three, six or twelve months. The exact price that applies to you is confirmed inside Juniper's own flow before you commit, and JARREDKFC waives the $89 initial consultation on top.",
   },
   {
     q: "What makes Juniper different?",
@@ -180,7 +180,7 @@ export default function JuniperPage() {
               <Image src="/logos/juniper.png" alt="Juniper logo" width={52} height={52} className="h-12 w-12 object-contain" />
             </span>
             <h1 className="mt-4 text-4xl font-extrabold leading-[1.06] tracking-[-0.02em] text-[#14120f] sm:text-5xl lg:text-[3.2rem]">
-              Juniper Australia: <span>first consultation waived, worth $89</span>
+              Juniper discount code Australia: <span>JARREDKFC waives the $89 consultation</span>
             </h1>
             <p className="mt-5 inline-flex items-center gap-2 rounded-full border border-[#b9e3eb] bg-[#e4f2f5] px-4 py-1.5 text-[13px] font-bold text-[#007a95]">
               <ShieldCheck className="h-4 w-4" aria-hidden="true" /> Code JARREDKFC, applied through our link
