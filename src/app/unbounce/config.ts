@@ -9,8 +9,8 @@ export const unbounceConfig: AffiliatePageConfig = {
   eyebrow: "Landing pages",
   affiliateUrl: UNBOUNCE_URL,
   quickAnswer:
-    "Unbounce is a landing-page and conversion platform for marketers running paid traffic. Through the link on this page new customers get 20% off their first three months, or 35% off the first full year on an annual plan. There is no code to type: the referral link carries the offer into sign-up. Verified on Unbounce's own invitation page, 20 August 2026.",
-  // Read verbatim off the Unbounce invitation page on 20 August 2026:
+    "Unbounce is a landing-page and conversion platform for marketers running paid traffic. Through the link on this page new customers get 20% off their first three months, or 35% off the first full year on an annual plan. There is no code to type: the referral link carries the offer into sign-up. Verified on Unbounce's own invitation page, 27 September 2026.",
+  // Read verbatim off the Unbounce invitation page on 27 September 2026:
   // "You've just scored 20% off your first three months (or 35% off your first
   // full year) with Unbounce! ... New customers only."
   offer: "20% off your first three months, or 35% off your first full year",
@@ -29,7 +29,7 @@ export const unbounceConfig: AffiliatePageConfig = {
       "20% off your first three months",
       "Or 35% off your first full year on annual billing",
       "New customers only, no code to type",
-      "Verified on Unbounce's own page, 20 August 2026",
+      "Verified on Unbounce's own page, 27 September 2026",
     ],
   },
   banner: {
@@ -74,7 +74,7 @@ export const unbounceConfig: AffiliatePageConfig = {
   faqs: [
     {
       q: "Is there an Unbounce discount code?",
-      a: "There is no code to type. The current offer is 20% off your first three months, or 35% off your first full year if you choose annual billing, and it is applied automatically when you start through the referral link on this page. Unbounce states it on its own invitation page, where we verified it on 20 August 2026. It is for new customers only.",
+      a: "There is no code to type. The current offer is 20% off your first three months, or 35% off your first full year if you choose annual billing, and it is applied automatically when you start through the referral link on this page. Unbounce states it on its own invitation page, where we verified it on 27 September 2026. It is for new customers only.",
     },
     {
       q: "Should I take the 20% or the 35% Unbounce offer?",
@@ -109,5 +109,5 @@ export const unbounceConfig: AffiliatePageConfig = {
     bottomButton: "Continue to Unbounce",
   },
   disclaimer:
-    "This page contains a disclosed affiliate link. If you sign up through it we may earn a commission at no extra cost to you, and it never changes our assessment. The offer was read off Unbounce's own invitation page on 20 August 2026 and is for new customers only; pricing and offers change, so check current terms on Unbounce before committing.",
+    "This page contains a disclosed affiliate link. If you sign up through it we may earn a commission at no extra cost to you, and it never changes our assessment. The offer was read off Unbounce's own invitation page on 27 September 2026 and is for new customers only; pricing and offers change, so check current terms on Unbounce before committing.",
 };

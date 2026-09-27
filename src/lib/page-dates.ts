@@ -568,7 +568,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/mosh-vs-dense": {
     "published": "2026-07-06",
-    "updated": "2026-09-18"
+    "updated": "2026-09-27"
   },
   "/mosh-vs-pilot": {
     "published": "2026-07-06",
@@ -816,7 +816,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/health-and-beauty/retinol-vs-prescription-strength-australia": {
     "published": "2026-09-16",
-    "updated": "2026-09-18"
+    "updated": "2026-09-27"
   },
   "/health-and-beauty/skincare-quiz": {
     "published": "2026-09-16",
