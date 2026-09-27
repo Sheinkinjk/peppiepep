@@ -90,7 +90,7 @@ export const hero = {
   h1b: "compared properly.",
   /* Verbatim. No double space was present in the live string. */
   lede:
-    "Independent comparisons across Australian health, solar and energy, pet insurance and business software, so you can choose the right one with confidence.",
+    "Independent comparisons across Australian health, longevity, solar and energy and business software, so you can choose the right one with confidence.",
   popularLabel: "Popular:",
   popular: [
     { label: "Weight loss", href: "/weight-loss" },
@@ -138,9 +138,9 @@ export const picks = {
       cta: "See the offer",
     },
     {
-      kicker: "Pets", brand: "Knose", href: "/knose", logo: "/logos/knose.svg",
-      offer: "First 2 months free",
-      body: "Australian pet insurance, with the cover, waiting periods and exclusions set out before you get a quote.",
+      kicker: "Longevity", brand: "i-screen", href: "/i-screen", logo: "/logos/i-screen.png",
+      offer: "$20 off your first test with code referlabs",
+      body: "Private blood and pathology tests ordered online, with no GP referral, and the results sent to you.",
       cta: "See the offer",
     },
     {
@@ -172,11 +172,6 @@ export const categories = {
         { label: "Mosh: the offer", href: "/moshhair" },
         { label: "Best treatment, compared", href: "/best-hair-loss-treatment-australia" },
       ],
-    },
-    {
-      label: "Pets", href: "/pet-insurance",
-      body: "How pet insurance cover, waiting periods and exclusions actually work, plus current offers.",
-      links: [{ label: "What it covers", href: "/what-pet-insurance-covers-australia" }],
     },
     {
       label: "Solar & Energy", href: "/solar-and-energy",
@@ -219,7 +214,7 @@ export const how = {
      the trust bullets, the bullets below, the FAQ and the footer. */
   paras: [
     "Refer Labs is an independent Australian comparison publisher.",
-    "We research the categories where the choice is genuinely hard, from weight-loss and hair-loss telehealth to home batteries, pet insurance and the software that runs a business.",
+    "We research the categories where the choice is genuinely hard, from weight-loss and hair-loss telehealth to home batteries, health screening and the software that runs a business.",
     "When we compare providers we look at pricing, eligibility, inclusions, trade-offs, availability in Australia and who each option suits, then write it up in plain language.",
   ],
   bullets: [
@@ -317,7 +312,7 @@ export const footer = {
         { label: "Best Newsletter Platform", href: "/best-newsletter-platform" },
         { label: "Home Battery Rebate 2026", href: "/home-battery-rebate-australia" },
         { label: "Best Home Battery", href: "/best-home-battery-australia" },
-        { label: "Pets", href: "/pet-insurance" },
+        { label: "Everlab vs Prenuvo vs i-screen", href: "/longevity/diagnostics/everlab-vs-prenuvo-vs-i-screen-australia" },
       ],
     },
     {
@@ -361,6 +356,7 @@ export const logoOptical: Record<string, { scale: number; note: string }> = {
   "/logos/petsonme.svg": { scale: 1.12, note: "Wordmark plus device, wide; enlarged." },
   "/logos/unbounce.png": { scale: 1.05, note: "Wide wordmark; slightly enlarged." },
   "/logos/leadpages.png": { scale: 0.94, note: "Square tile; slightly reduced." },
+  "/logos/i-screen.png": { scale: 1.6, note: "Thin wide wordmark on a square canvas; enlarged so it reads beside the others." },
 };
 
 export function opticalHeight(logo: string, nominal: number): number {

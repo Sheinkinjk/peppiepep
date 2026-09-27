@@ -56,7 +56,7 @@ export function HeroSearch() {
 
       {show && (
         <ul id={`${id}-lb`} role="listbox" className="hy-search__lb" aria-label="Results">
-          {results.length === 0 && <li className="hy-search__none">No match. Try a provider name, like Moshy or Knose.</li>}
+          {results.length === 0 && <li className="hy-search__none">No match. Try a provider name, like Moshy or Juniper.</li>}
           {results.map((r, i) => (
             <li key={r.href} id={`${id}-o${i}`} role="option" aria-selected={i === active}
               className={i === active ? "hy-search__o is-on" : "hy-search__o"}

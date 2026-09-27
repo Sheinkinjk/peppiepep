@@ -37,7 +37,7 @@ const categories: { href: string; label: string; object: ObjectKind }[] = [
   { href: "/mens-health", label: "Men's health", object: "pulse" },
   { href: "/sleep", label: "Sleep", object: "pillow" },
   { href: "/longevity", label: "Longevity", object: "hourglass" },
-  { href: "/pet-insurance", label: "Pet insurance", object: "tag" },
+  { href: "/business-software", label: "Business software", object: "browser" },
   { href: "/home-battery-cost-australia", label: "Home batteries", object: "battery" },
 ];
 
@@ -88,7 +88,7 @@ export default function AboutPage() {
               </h1>
               <p className="mt-5 text-lg leading-relaxed text-[#14120f]">
                 Refer Labs compares the services Australians pay for and find hard to price: telehealth, health and
-                beauty, sleep, longevity, pet insurance and home batteries. Every figure is read from the provider&apos;s
+                beauty, sleep, longevity and home batteries. Every figure is read from the provider&apos;s
                 own published page and carries the date it was read. Where a link pays a commission, the page says so
                 beside it, and no provider can pay for its position.
               </p>

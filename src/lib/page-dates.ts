@@ -96,7 +96,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/best-hair-loss-treatment-australia": {
     "published": "2026-06-29",
-    "updated": "2026-09-19"
+    "updated": "2026-09-28"
   },
   "/best-home-battery-australia": {
     "published": "2026-07-22",
@@ -116,7 +116,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/best-weight-loss-telehealth-australia": {
     "published": "2026-06-29",
-    "updated": "2026-09-24"
+    "updated": "2026-09-28"
   },
   "/blinq": {
     "published": "2026-07-14",
@@ -300,7 +300,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/hair-loss": {
     "published": "2026-07-03",
-    "updated": "2026-09-18"
+    "updated": "2026-09-28"
   },
   "/hair-loss-quiz": {
     "published": "2026-07-08",
@@ -568,7 +568,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/mosh-vs-dense": {
     "published": "2026-07-06",
-    "updated": "2026-09-27"
+    "updated": "2026-09-28"
   },
   "/mosh-vs-pilot": {
     "published": "2026-07-06",
@@ -1020,15 +1020,15 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/aussie-health-products": {
     "published": "2026-09-16",
-    "updated": "2026-09-18"
+    "updated": "2026-09-28"
   },
   "/edible-beauty": {
     "published": "2026-09-16",
-    "updated": "2026-09-18"
+    "updated": "2026-09-28"
   },
   "/foreo": {
     "published": "2026-09-16",
-    "updated": "2026-09-18"
+    "updated": "2026-09-28"
   },
   "/optislim": {
     "published": "2026-09-16",
@@ -1036,11 +1036,11 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/emma-sleep": {
     "published": "2026-09-16",
-    "updated": "2026-09-18"
+    "updated": "2026-09-28"
   },
   "/technogym": {
     "published": "2026-09-16",
-    "updated": "2026-09-24"
+    "updated": "2026-09-28"
   },
   "/i-screen": {
     "published": "2026-09-23",

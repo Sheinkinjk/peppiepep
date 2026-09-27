@@ -29,7 +29,7 @@ export type Reading = {
   noPage: string | null;
 };
 
-export type CategoryKey = "weight-loss" | "hair-loss" | "pets" | "energy" | "business" | "health-beauty";
+export type CategoryKey = "weight-loss" | "hair-loss" | "longevity" | "energy" | "business" | "health-beauty";
 
 export type HomeCategory = {
   key: CategoryKey;
@@ -47,7 +47,7 @@ export type HomeCategory = {
 const FILE: Record<string, CategoryKey> = {
   "Weight loss": "weight-loss",
   "Hair loss": "hair-loss",
-  Pets: "pets",
+  "Health testing": "longevity",
   "Home batteries": "energy",
   "Landing pages": "business",
   "Creator growth": "business",
@@ -77,7 +77,9 @@ export const readings: Reading[] = verifiedOffers.map((d) => {
 const HOME: Omit<HomeCategory, "readings" | "latest">[] = [
   { key: "weight-loss", label: "Weight loss", short: "WL", href: "/weight-loss", slot: 0 },
   { key: "hair-loss", label: "Hair loss", short: "HL", href: "/hair-loss", slot: 1 },
-  { key: "pets", label: "Pet insurance", short: "PI", href: "/pet-insurance", slot: 2 },
+  // Longevity took the pets slot on 28 Sep 2026 (Jarred: pet pages stay live and
+  // indexed, but nothing pet-related on the homepage, header or footer).
+  { key: "longevity", label: "Longevity", short: "LG", href: "/longevity", slot: 2 },
   { key: "energy", label: "Solar and energy", short: "SE", href: "/solar-and-energy", slot: 3 },
   { key: "business", label: "Business software", short: "BS", href: "/business-software", slot: 4 },
   { key: "health-beauty", label: "Health and beauty", short: "HB", href: "/health-and-beauty", slot: 5 },

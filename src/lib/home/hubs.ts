@@ -31,6 +31,7 @@ const KICKER: Record<string, ObjectKind> = {
   "weight loss": "scale",
   "hair loss": "comb",
   pets: "tag",
+  longevity: "hourglass",
   "solar & energy": "solar",
   "home batteries": "battery",
   "creator tools": "envelope",

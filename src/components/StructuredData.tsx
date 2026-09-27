@@ -53,7 +53,7 @@ export function OrganizationSchema() {
       "Weight Management Telehealth Australia",
       "Hair Loss Telehealth Australia",
       "Telehealth Services Australia",
-      "Pet Insurance Australia",
+      "Longevity and Health Screening Australia",
       "Home Batteries and Solar Rebates Australia",
       "Website Builders and Landing Page Software",
       "Email Marketing and Newsletter Platforms",
@@ -147,7 +147,7 @@ export function SiteNavigationSchema() {
   const nav = [
     { name: "Weight loss & telehealth", url: "https://referlabs.com.au/weight-loss" },
     { name: "Hair loss treatment", url: "https://referlabs.com.au/hair-loss" },
-    { name: "Pet insurance", url: "https://referlabs.com.au/pet-insurance" },
+    { name: "Longevity", url: "https://referlabs.com.au/longevity" },
     { name: "Home batteries", url: "https://referlabs.com.au/apollo-energy-group" },
     { name: "Business software", url: "https://referlabs.com.au/business-software" },
     { name: "Deals & discount codes", url: "https://referlabs.com.au/deals" },

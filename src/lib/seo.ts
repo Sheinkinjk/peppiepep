@@ -309,7 +309,7 @@ export const seoConfig = {
   home: {
     title: "Refer Labs: Independent Australian Comparisons",
     description:
-      "Compare Australian health, solar and energy, pet insurance and business software with independent reviews, real pricing and no paid rankings.",
+      "Compare Australian health, longevity, solar and energy and business software with independent reviews, real pricing and no paid rankings.",
     url: SITE_URL,
     keywords: [
       "comparison site australia",

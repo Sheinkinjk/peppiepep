@@ -59,7 +59,7 @@ export const comparisonCards = comparisons.items.map((c) => {
 /** The method, in the order it is done. Wording from the live section. */
 export const howSteps: { n: number; title: string; body: string; object: ObjectKind; chips?: string[] }[] = [
   { n: 1, title: "Research", object: "lens",
-    body: "We research the categories where the choice is genuinely hard, from weight-loss and hair-loss telehealth to home batteries, pet insurance and the software that runs a business." },
+    body: "We research the categories where the choice is genuinely hard, from weight-loss and hair-loss telehealth to home batteries, health screening and the software that runs a business." },
   { n: 2, title: "Compare", object: "checklist",
     body: "When we compare providers, we look at the same six things.",
     chips: ["Pricing", "Eligibility", "Inclusions", "Trade-offs", "Availability in Australia", "Who each option suits"] },
