@@ -408,7 +408,7 @@ export default function BestWeightLossTelehealthPage() {
             className="pt-10"
             ctaPrefix="best-wl-telehealth"
             heading="The two providers, on the same terms"
-            intro="Both answer the same four questions, in alphabetical order. We earn a commission from both and hold a code for each; neither can pay to be described more favourably."
+            intro="Both answer the same four questions. We earn a commission from both and hold a code for each; neither can pay to be described more favourably."
             providers={[
               {
                 name: "Juniper",

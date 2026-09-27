@@ -34,7 +34,7 @@ const faqs = [
   },
   {
     q: "Is topical treatment enough on its own?",
-    a: "For early or mild thinning, a consistent topical routine can help. For active, progressing hair loss, the treatments that address the underlying cause are prescription-only, which is why the clinical pathway exists. A practitioner assessment is the way to know which applies to you.",
+    a: "It depends on the kind of hair loss, which is why the answer starts with an assessment. Hair-loss medicines are prescription-only in Australia, so for active or progressing loss a registered practitioner decides whether any treatment is appropriate. A cosmetic routine can sit alongside that, and is not a treatment on its own.",
   },
   {
     q: "How does the telehealth route work?",
@@ -137,9 +137,8 @@ export default function HairLossHubPage() {
                 Telehealth &amp; prescription
               </h3>
               <p className="mt-2.5 text-sm leading-relaxed text-[#56504a]">
-                A registered practitioner assesses you and, where appropriate, prescribes the treatments that act on the
-                cause of hair loss. Mosh is the main Australian men&apos;s service. This is the route for active or
-                progressing loss.
+                A registered practitioner assesses you and decides whether any treatment is appropriate. Mosh is one
+                Australian men&apos;s service that runs this online. This is the route for active or progressing loss.
               </p>
               <div className="mt-5 space-y-2 text-sm font-semibold">
                 <p><Link href="/best-hair-loss-treatment-australia" className="text-[#007a95] hover:underline">Compare treatments →</Link></p>

@@ -2730,6 +2730,8 @@ export const seoConfig = {
     ],
   },
 
+  // CONFOUND, 28 Sep 2026: body rebuilt (hero, provider cards, TGA rewrite of
+  // garbled prescription wording). Title and h1 unchanged. Weigh the 5 Oct read.
   bestHairLossTreatmentAustralia: {
         // TITLE TEST, set 5 September 2026. Baseline in the 92-day export to 2 Sep:
     // 3,710 impressions, 27 clicks, 0.73% CTR at position 10.4. The two pages that convert best on this site, /moshy (2.50% at

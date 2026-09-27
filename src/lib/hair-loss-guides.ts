@@ -108,6 +108,10 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
       // claim with no source on file. The mechanism sentence stays: describing
       // the condition is not advertising a medicine.
       "One step comes before any product: knowing which kind you have, because they do not respond to the same things. The most common form in men, male pattern hair loss, is largely genetic and driven by the hormone DHT, and it is gradual and progressive. Acting earlier gives you more to work with, since holding onto hair you still have is easier than recovering what is gone. What is right for you is a clinical decision, and this page is general information, not medical advice.",
+    // 28 Sep 2026 (TGA): "two treatments carry the strongest evidence", one
+    // "working on the hormonal driver", used "alongside" an OTC topical, identified
+    // both medicines for male pattern loss without naming them, on a page carrying
+    // the Mosh offer. The treatment question is now the practitioner's, stated once.
     sections: [
       {
         h: "Work out what is causing it",
@@ -117,18 +121,18 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
         ],
       },
       {
-        h: "What the evidence supports",
-        body: ["For male pattern hair loss specifically, two treatments carry the strongest evidence, and they work in different ways."],
+        h: "What a practitioner decides",
+        body: ["Hair-loss medicines are prescription-only in Australia, so the treatment question is answered by a registered practitioner after an assessment, not by a product page. Refer Labs does not name or compare medicines."],
         bullets: [
-          "Prescription treatment: assessed and prescribed by a practitioner, it works on the hormonal driver behind the shrinking of follicles.",
-          "Over-the-counter topical products: available without a prescription, they act on the follicle and are often used alongside a prescribed treatment.",
-          "Both only work while used, so stopping generally means the loss resumes. Neither guarantees regrowth; for many men the realistic aim is slowing further loss.",
+          "The assessment: your history, the pattern of the loss and, online, photos, reviewed by a registered practitioner who decides whether any treatment is appropriate.",
+          "Over-the-counter products: pharmacy products sold without a prescription state their active ingredient and strength on the pack, so you can check what you are buying.",
+          "Expectations: for many men the realistic aim is slowing further loss, and no treatment guarantees an outcome.",
         ],
       },
       {
         h: "What tends not to move the needle",
         body: [
-          "Plenty of products are marketed for hair loss without the evidence to match. Caffeine shampoos, most supplements, and low-cost devices may make hair look or feel thicker temporarily, but there is little to suggest they stop male pattern loss the way the two most-studied treatments can. That does not make them scams, but it does make them a poor substitute if halting the process is the goal.",
+          "Plenty of products are marketed for hair loss without the evidence to match. Caffeine shampoos, most supplements, and low-cost devices may make hair look or feel thicker temporarily, but there is little evidence that they stop male pattern loss. That does not make them scams, but it does make them a poor substitute if halting the process is the goal.",
           "The other common trap is waiting. Because the condition is progressive, the hair you keep is easier to hold than the hair you have already lost is to recover, so delaying rarely helps.",
         ],
       },
@@ -141,9 +145,9 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
       },
     ],
     faqs: [
-      { q: "Can you stop hair loss?", a: "For male pattern hair loss, among the most studied treatments, prescription hair-loss treatments, can slow further loss and, for some men, produce partial regrowth, while they are used. Neither guarantees an outcome, and whether either is appropriate for you is a clinical decision. Other causes of hair loss behave differently and need their own assessment." },
-      { q: "What is the most effective way to stop male pattern baldness?", a: "The strongest evidence sits with prescription treatment (assessed by a practitioner) and over-the-counter topical products, often used together. A practitioner assesses which, if any, suits you. Most shampoos, supplements and devices do not have comparable evidence for stopping the process." },
-      { q: "Do hair-loss shampoos and supplements work?", a: "Most have little evidence for stopping male pattern hair loss specifically. They may temporarily improve how hair looks or feels, but they are a poor substitute for the most-studied treatments if halting the underlying process is your goal." },
+      { q: "Can you stop hair loss?", a: "Male pattern hair loss is progressive, and for many men the realistic aim is slowing further loss rather than reversing it. Whether any treatment is appropriate for you is decided by a registered practitioner after an assessment, and none guarantees an outcome. Other causes of hair loss behave differently and need their own assessment." },
+      { q: "What is the most effective way to stop male pattern baldness?", a: "There is no answer that holds for everyone, which is why it starts with an assessment. A registered practitioner decides whether any treatment suits you, and hair-loss medicines are prescription-only in Australia. Most shampoos, supplements and devices have little evidence for stopping the process itself." },
+      { q: "Do hair-loss shampoos and supplements work?", a: "Most have little evidence for stopping male pattern hair loss specifically. They may temporarily improve how hair looks or feels, but they are not a substitute for an assessment if halting the underlying process is your goal." },
       { q: "Does acting early make a difference?", a: "Generally yes. Male pattern hair loss is progressive, and it is easier to hold onto hair you still have than to recover hair that is already gone, so getting assessed sooner tends to give you more to work with." },
       { q: "How do I know if I'm losing my hair, and when should I start?", a: "Early male pattern hair loss usually shows as gradual thinning at the crown or a hairline receding at the temples over years. A little extra hair in the shower is normal; a steady drop in density or a changing hairline is the signal to get assessed. Because the condition is progressive, acting sooner generally leaves more hair to protect, and a practitioner can confirm the cause." },
     ],
@@ -162,7 +166,7 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
       keywords: ["receding hairline treatment australia", "receding hairline", "how to fix a receding hairline", "receding hairline men australia"],
     },
     lead:
-      "A receding hairline, where the hair retreats at the temples and along the front, is one of the earliest and most common signs of male pattern hair loss. Because it is driven by the same underlying process as thinning on the crown, the treatments with the strongest evidence are the same: prescription hair-loss treatments. The thing that most affects the result is not which product you pick but how early you act, because it is easier to hold onto the hairline you still have than to recover ground already lost. Whether any treatment suits you is a clinical decision made after an assessment.",
+      "A receding hairline, where the hair retreats at the temples and along the front, is one of the earliest and most common signs of male pattern hair loss. Because it is driven by the same underlying process as thinning on the crown, the assessment and the options are the same. The thing that most affects the result is not which product you pick but how early you act, because it is easier to hold onto the hairline you still have than to recover ground already lost. Whether any treatment suits you is a clinical decision made after an assessment.",
     sections: [
       {
         h: "Why a hairline recedes",
@@ -172,11 +176,9 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
         ],
       },
       {
-        h: "What the evidence supports",
-        body: ["For male pattern hair loss driving a receding hairline, two treatments have the strongest evidence, and they are often used together."],
+        h: "What a practitioner decides",
+        body: ["Hair-loss medicines are prescription-only in Australia, so whether any treatment suits a receding hairline is decided by a registered practitioner after an assessment. Refer Labs does not name or compare medicines."],
         bullets: [
-          "Prescription treatment: assessed and prescribed by a practitioner, it works on the hormonal driver and is the most-studied route for slowing the process.",
-          "Over-the-counter topical products: available without a prescription, they support the follicles and are often combined with a prescribed treatment.",
           "Early action: because the loss is progressive, starting sooner generally leaves more hair to protect.",
           "Most shampoos, supplements and devices lack comparable evidence for stopping the underlying process, whatever they do for appearance.",
         ],
@@ -190,8 +192,8 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
       },
     ],
     faqs: [
-      { q: "Can a receding hairline be reversed?", a: "Sometimes partially, but it is more realistic to slow further loss and protect what you have than to fully reverse a receded hairline. Prescription hair-loss treatments have the strongest evidence for male pattern hair loss, and results are better the earlier you start. Whether either suits you is a clinical decision made after an assessment. Neither guarantees an outcome." },
-      { q: "What is the best treatment for a receding hairline?", a: "For male pattern hair loss, the most-studied options are prescription treatment (assessed by a practitioner) and over-the-counter topical products, often used together. A practitioner assesses which, if any, is appropriate for you. Most shampoos and supplements lack comparable evidence for stopping the underlying process." },
+      { q: "Can a receding hairline be reversed?", a: "It is more realistic to slow further loss and protect what you have than to fully reverse a receded hairline. Whether any treatment suits you is a clinical decision made by a registered practitioner after an assessment, and none guarantees an outcome." },
+      { q: "What is the best treatment for a receding hairline?", a: "No single treatment is right for everyone. A registered practitioner assesses whether any option is appropriate for you, and hair-loss medicines are prescription-only in Australia. Most shampoos and supplements lack evidence for stopping the underlying process." },
       { q: "Is a receding hairline always male pattern baldness?", a: "No. A mature hairline settling slightly higher in your twenties is normal, and other causes of hair loss behave differently and need their own assessment. That is one reason a practitioner review matters before assuming a treatment is right for you." },
       { q: "How do I get prescription treatment for a receding hairline in Australia?", a: "Prescription treatment requires an assessment by a registered practitioner. Telehealth services run this online: you complete a consultation with photos, a practitioner reviews it, and if appropriate it is prescribed and delivered. Mosh is one such service; Refer Labs readers get 55% off a first order through our link. Some applicants are declined." },
     ],

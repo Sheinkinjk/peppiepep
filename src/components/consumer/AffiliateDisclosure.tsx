@@ -77,7 +77,7 @@ export default function AffiliateDisclosure({
     return (
       <p className={`text-[13px] leading-relaxed text-[#56504a] ${className}`} data-affiliate-disclosure>
         Refer Labs may earn a commission if you sign up or buy through the links on this page
-        {named}, at no extra cost to you. It never changes a comparison or a conclusion.
+        {named}, at no extra cost to you.
       </p>
     );
   }

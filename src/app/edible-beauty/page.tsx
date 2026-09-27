@@ -89,7 +89,7 @@ const brand: RetailerBrand = {
   goPath: "/go/edible-beauty-skin-hub",
   ctaLabel: "View Edible Beauty's current pricing",
   commissionNote:
-    "We earn a commission if you buy through that link, at no extra cost to you. We still say on this page that we could find no organic certification, which is the fact a paying brand would least want stated.",
+    "We earn a commission if you buy through that link, at no extra cost to you.",
   faqs: [
     {
       q: "How much does Edible Beauty cost?",

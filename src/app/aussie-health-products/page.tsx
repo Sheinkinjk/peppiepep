@@ -80,7 +80,7 @@ const brand: RetailerBrand = {
   goPath: "/go/aussie-health-skin-hub",
   ctaLabel: "Browse Aussie Health Products",
   commissionNote:
-    "We earn a commission if you buy through that link, at no extra cost to you. We have assessed none of the 300 brands it carries, and this page does not pretend otherwise.",
+    "We earn a commission if you buy through that link, at no extra cost to you. We have assessed none of the 300 brands it carries.",
   faqs: [
     {
       q: "What does Aussie Health Products sell?",

@@ -29,7 +29,7 @@ const brand: RetailerBrand = {
     <>
       Emma sells mattresses and bundles in Australia from {money(cheapest.price)} for the{" "}
       {cheapest.name.replace("Emma ", "")}, with a {TERMS.trialNights}-night trial. Every mattress we saw on{" "}
-      {readOnLabel} was listed at a discount, between {percentOff(PRODUCTS[2])} and {percentOff(PRODUCTS[1])} off a
+      {readOnLabel} was listed at a discount, between {percentOff(PRODUCTS[2])} and {percentOff(PRODUCTS[1])} a
       struck-through price. The number worth comparing against other mattresses is the one you pay, not the one with
       the line through it.
     </>
@@ -100,7 +100,7 @@ const brand: RetailerBrand = {
   goPath: "/go/emma-sleep-brand",
   ctaLabel: "View Emma's current pricing",
   commissionNote:
-    "We earn a commission if you buy through that link, at no extra cost to you. The price you see is the public one: we have no code, and no arrangement that makes a mattress cheaper for you than it already is.",
+    "We earn a commission if you buy through that link, at no extra cost to you. We hold no code for Emma, so the price you see is the public one.",
   faqs: [
     {
       q: "How much does an Emma mattress cost in Australia?",

@@ -40,7 +40,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/ai-sales-tools-quiz": {
     "published": "2026-07-08",
-    "updated": "2026-09-18"
+    "updated": "2026-09-28"
   },
   "/aisdr": {
     "published": "2026-07-06",
@@ -196,7 +196,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/coming-soon": {
     "published": "2026-08-20",
-    "updated": "2026-09-18"
+    "updated": "2026-09-28"
   },
   "/contact": {
     "published": "2025-11-25",
@@ -608,7 +608,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/newsletter-platform-quiz": {
     "published": "2026-07-08",
-    "updated": "2026-09-18"
+    "updated": "2026-09-28"
   },
   "/nsw-home-battery-rebate-2026": {
     "published": "2026-07-22",
@@ -928,7 +928,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/website-builder-quiz": {
     "published": "2026-07-08",
-    "updated": "2026-09-18"
+    "updated": "2026-09-28"
   },
   "/weight-loss": {
     "published": "2026-07-03",

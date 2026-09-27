@@ -84,7 +84,7 @@ const brand: RetailerBrand = {
   goPath: "/go/technogym-brand",
   ctaLabel: "View Technogym's current Australian pricing",
   commissionNote:
-    "We earn a commission if you buy through that link, at no extra cost to you. It is why the paragraph recommending cheaper equipment we earn nothing from is worth reading twice.",
+    "We earn a commission if you buy through that link, at no extra cost to you.",
   faqs: [
     {
       q: "How much does Technogym equipment cost in Australia?",

@@ -94,7 +94,7 @@ const brand: RetailerBrand = {
   goPath: "/go/foreo-skin-hub",
   ctaLabel: "View Foreo's current Australian pricing",
   commissionNote:
-    "We earn a commission if you buy through that link, at no extra cost to you. It did not buy the paragraph above about the cancelled registration, which is the least flattering thing on this page.",
+    "We earn a commission if you buy through that link, at no extra cost to you.",
   faqs: [
     {
       q: "How much do Foreo devices cost in Australia?",
