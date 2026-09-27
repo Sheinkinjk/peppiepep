@@ -208,7 +208,7 @@ export default function MensHealthHub() {
           className="pt-16"
           ctaPrefix="mens-health-hub"
           heading="The provider we cover"
-          intro="One Australian telehealth provider so far, with the same four questions answered that every provider on this site gets. We earn a commission if you sign up through the link, hold no discount code for it, and it cannot pay to be described more favourably. More providers are being added; this is a starting set, not the market."
+          intro="Every provider on this site answers the same four questions, and the one covered here is no exception. We earn a commission if you sign up through the link, hold no discount code for it, and it cannot pay to be described more favourably."
           providers={[
             {
               name: "Midoc",

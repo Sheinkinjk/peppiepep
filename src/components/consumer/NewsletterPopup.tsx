@@ -106,7 +106,6 @@ export default function NewsletterPopup() {
         <button type="button" className="nw-pop__x" onClick={dismiss} aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-        <p className="nw-pop__k">You have read a few of our pages</p>
         <h2 id="nw-pop-title" className="nw-pop__t">{newsletter.heading}</h2>
         <p className="nw-pop__b">{newsletter.body}</p>
         <HomeNewsletter source="popup-5th-page" compact />

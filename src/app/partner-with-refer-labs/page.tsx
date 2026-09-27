@@ -134,7 +134,7 @@ const faqs = [
   },
   {
     q: "How long does an application take?",
-    a: "Applications are read by Jarred rather than a queue, and you will get an answer either way. If we take it forward, we will come back with what we need to verify and where the page would sit.",
+    a: "Applications are read by a person rather than sorted by a form, and you will get an answer either way. If we take it forward, we will come back with what we need to verify and where the page would sit.",
   },
   {
     q: "What categories are you accepting?",
@@ -303,7 +303,7 @@ export default function PartnerWithReferLabsPage() {
             Ready to apply?
           </h2>
           <p className="mx-auto mt-3 max-w-lg text-[15px] leading-relaxed text-[#14120f]">
-            We are assessing providers across every category above. Applications are read by Jarred, not a form
+            We are assessing providers across every category above. Applications are read by a person, not a form
             queue, and you will get an answer either way.
           </p>
           <a href="#apply" className="nw-btn mt-6">Apply to partner with us <ArrowRight className="h-4 w-4" /></a>

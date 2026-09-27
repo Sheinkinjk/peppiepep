@@ -175,7 +175,7 @@ export default function MidocPage() {
         <PartnerRoute
           className="mt-12"
           heading="Start with Midoc"
-          intro="Midoc is the first partner in this section. More are being added."
+          intro="Midoc is the partner in this section."
           providers={[
             {
               name: "Midoc",

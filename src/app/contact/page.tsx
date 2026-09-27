@@ -59,7 +59,7 @@ export default function Contact() {
         <h1 className="mt-5 text-4xl font-bold leading-[1.06] text-[#14120f] sm:text-5xl">Contact Refer Labs</h1>
         <p className="mt-5 max-w-2xl text-lg leading-relaxed text-[#14120f]">
           Email <a href={`mailto:${EMAIL}`} className="font-semibold text-[#007a95] underline underline-offset-4">{EMAIL}</a>.
-          It goes to the person who researches and writes the site, and you will usually hear back within one business day.
+          It is read by the editorial team, and you will usually hear back within one business day.
         </p>
 
         <ul className="mt-14 grid gap-4 lg:grid-cols-3">

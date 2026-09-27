@@ -116,8 +116,7 @@ export default function DataPage() {
           {span ? `This log began on ${formatObserved(span.earliest)}.` : 'This log has just begun.'}{' '}
           We record what we see on a provider&apos;s own site, on the day we see it, and we record it
           again when nothing has changed: an unchanged figure on a new date is evidence that it held.
-          The log is short because it is new. Weekly re-checks are what we are aiming for; the dates
-          above are what has happened so far.
+          Each row carries the date it was read, so the age of any figure is visible before it is relied on.
         </p>
 
         {HUB_ORDER.map((hub) => {

@@ -376,7 +376,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/juniper": {
     "published": "2026-07-29",
-    "updated": "2026-09-24"
+    "updated": "2026-09-26"
   },
   "/keap": {
     "published": "2026-07-14",
@@ -584,7 +584,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/moshy-alternatives": {
     "published": "2026-07-02",
-    "updated": "2026-09-23"
+    "updated": "2026-09-24"
   },
   "/moshy-eligibility": {
     "published": "2026-07-02",
