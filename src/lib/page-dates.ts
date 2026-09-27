@@ -216,7 +216,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/deals": {
     "published": "2026-07-27",
-    "updated": "2026-09-24"
+    "updated": "2026-09-27"
   },
   "/dense": {
     "published": "2026-06-29",
@@ -376,7 +376,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/juniper": {
     "published": "2026-07-29",
-    "updated": "2026-09-26"
+    "updated": "2026-09-27"
   },
   "/keap": {
     "published": "2026-07-14",
@@ -592,7 +592,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/moshy-review": {
     "published": "2026-07-02",
-    "updated": "2026-09-18"
+    "updated": "2026-09-27"
   },
   "/moshy-vs-gp": {
     "published": "2026-07-02",
@@ -624,7 +624,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/online-weight-loss-doctor-australia": {
     "published": "2026-07-05",
-    "updated": "2026-09-18"
+    "updated": "2026-09-27"
   },
   "/online-weight-loss-programs-australia": {
     "published": "2026-07-02",
@@ -948,7 +948,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/weight-loss-telehealth-cost-australia": {
     "published": "2026-07-05",
-    "updated": "2026-09-18"
+    "updated": "2026-09-27"
   },
   "/weight-loss-telehealth-men-australia": {
     "published": "2026-07-02",

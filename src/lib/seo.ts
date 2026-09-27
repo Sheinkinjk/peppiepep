@@ -949,6 +949,9 @@ export const seoConfig = {
     keywords: ["aussie health products", "aussie health products review", "natural health retailer australia", "australian supplements online"],
   },
   retinolVsPrescription: {
+    // CONFOUND, 27 Sep 2026: body and one FAQ answer edited for TGA (two
+    // benefit claims about the prescription category removed). Title and
+    // description unchanged. Weigh the 13 Oct read with that in mind.
     title: "Retinol vs Prescription-Strength: The Australian Guide 2026",
     description:
       "How over-the-counter retinol differs from prescription-strength skin treatment in Australia: how each is accessed, and what the strength difference means.",
@@ -2008,6 +2011,9 @@ export const seoConfig = {
     ],
   },
 
+  // CONFOUND, 27 Sep 2026: two in-body links relabelled ("Mosh review" to
+  // "Mosh discount code") and one link to /mosh-review added. Title, description
+  // and copy unchanged.
   moshVsDense: {
         // TITLE TEST, set 5 September 2026. Baseline in the 92-day export to 2 Sep:
     // 644 impressions, 3 clicks, 0.47% CTR at position 11.5. The two pages that convert best on this site, /moshy (2.50% at

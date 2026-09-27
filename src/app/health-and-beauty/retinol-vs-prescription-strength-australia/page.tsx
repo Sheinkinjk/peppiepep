@@ -13,10 +13,15 @@ export const metadata = generateSEOMetadata(seoConfig.retinolVsPrescription);
  * both lawful and more useful to a reader deciding what to do next.
  */
 
+// 27 Sep 2026 (TGA): two sentences credited the prescription category with a
+// benefit ("do more", "act faster"). With a vitamin A derivative named, that
+// identifies a prescription medicine class, and a benefit claim beside an
+// affiliate link reads as advertising it. The page states only the regulatory
+// line and the side-effect reason for it. Keep it that way.
 const faqs = [
   {
     q: "What is the difference between retinol and prescription-strength skin treatment?",
-    a: "Retinol is a vitamin A derivative sold over the counter in cosmetic products. Prescription-strength topical treatments in the same family are more concentrated and act faster, which is also why they are prescription-only: they need a practitioner to judge whether they suit your skin and to manage the irritation that often comes with them. The practical difference for you is not just potency, it is that one you can buy this afternoon and the other requires an assessment first.",
+    a: "Retinol is a vitamin A derivative sold over the counter in cosmetic products. Higher-concentration topicals in the same family are prescription-only in Australia, so a practitioner judges whether one suits your skin and manages the irritation that often comes with it. The practical difference for you is access: one you can buy this afternoon, and the other requires an assessment first.",
   },
   {
     q: "Can I buy prescription-strength skincare over the counter in Australia?",
@@ -63,8 +68,8 @@ export default function Page() {
           practitioner and dispensed by a pharmacy.
         </p>
         <p className="mt-3">
-          That line exists because the stronger versions do more, and doing more includes a higher chance of irritation,
-          peeling and sun sensitivity. The prescription requirement is there so someone qualified decides whether the
+          That line exists because higher concentrations carry a higher chance of irritation, peeling and sun
+          sensitivity. The prescription requirement is there so someone qualified decides whether the
           trade-off makes sense for your skin, and adjusts if it does not.
         </p>
       </section>

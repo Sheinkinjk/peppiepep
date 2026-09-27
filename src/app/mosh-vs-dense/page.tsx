@@ -334,7 +334,7 @@ export default function MoshVsDensePage() {
                 <a {...mosh} data-cta="mosh-vs-dense-card-mosh" className="inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-bold text-white transition-all hover:-translate-y-0.5 shadow-md" style={{ background: GREEN, boxShadow: `0 8px 24px ${GREEN}25` }}>
                   Check eligibility on Mosh <ArrowRight className="h-4 w-4" />
                 </a>
-                <p className="mt-3"><Link href="/moshhair" className="text-xs text-[#56504a] underline decoration-[#ded8cd] underline-offset-2 hover:text-[#14120f]">Read our Mosh review →</Link></p>
+                <p className="mt-3"><Link href="/moshhair" className="text-xs text-[#56504a] underline decoration-[#ded8cd] underline-offset-2 hover:text-[#14120f]">Mosh discount code and how the service works →</Link></p>
               </div>
               <div className="rounded-xl border border-[#ded8cd] bg-[#f7f4ee] p-6">
                 <h3 className="text-lg font-bold mb-2">Go with Dense</h3>
@@ -369,7 +369,12 @@ export default function MoshVsDensePage() {
           <section className="border-t border-[#ded8cd] py-8 pb-16">
             <h2 className="text-sm font-bold text-[#14120f] mb-3">Keep comparing</h2>
             <div className="flex flex-wrap gap-3 mb-6">
-              <Link href="/moshhair" className="nw-link text-sm">Mosh review</Link>
+              {/* 27 Sep 2026: both /moshhair links here said "Mosh review", but the
+                  review is /mosh-review. /moshhair is the code page, and "mosh discount
+                  code" sat at position 13.6 on 405 impressions (GSC, 90 days). */}
+              <Link href="/moshhair" className="nw-link text-sm">Mosh discount code</Link>
+              <span className="text-[#56504a]">·</span>
+              <Link href="/mosh-review" className="nw-link text-sm">Mosh review</Link>
               <span className="text-[#56504a]">·</span>
               <Link href="/dense" className="nw-link text-sm">Dense review</Link>
               <span className="text-[#56504a]">·</span>
