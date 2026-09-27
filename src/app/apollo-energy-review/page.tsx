@@ -12,11 +12,11 @@ export const metadata = generateSEOMetadata(seoConfig.apolloEnergyReview);
 const faqs = [
   {
     q: "Is Apollo Energy Group legit?",
-    a: "Apollo Energy Group publishes an Electrical Licence number (400672) and an ABN (55697998208), installs using SAA-accredited installers, lists a 10-year battery warranty, and operates from a physical address at 5 Martin Place, Sydney. All of that is checkable, which is more than a lot of energy sales operations offer. No review can vouch for the quality of your specific install, so treat the credentials as a reason to get a quote rather than a guarantee.",
+    a: "Apollo Energy Group publishes an Electrical Licence number (400672C) and an ABN (55697998208), installs using SAA-accredited installers, lists a 10-year battery warranty, and operates from a physical address at 5 Martin Place, Sydney. All of that is checkable, which is more than a lot of energy sales operations offer. No review can vouch for the quality of your specific install, so treat the credentials as a reason to get a quote rather than a guarantee.",
   },
   {
     q: "What do Apollo Energy Group reviews say?",
-    a: "Apollo's own site cites a 4.9 out of 5 Google rating and says it was voted SBC's number one battery installer. Those are the company's published figures rather than ours. As with any installer, read recent reviews yourself and weight the ones that describe the install and the after-sales service, not just the sales experience.",
+    a: "Apollo's own site cites a 4.9 out of 5 Google rating and says it was voted SBC's number one battery installer. Those are the company's published figures rather than ours. Check the name before you read further: the Apollo pages on SolarQuotes and Solar Choice belong to Apollo Energy Solutions, a Newcastle installer with a different ABN, and most US review sites list Apollo Energy of Denver. As with any installer, read recent reviews yourself and weight the ones that describe the install and the after-sales service, not just the sales experience.",
   },
   {
     q: "Is there an Apollo Energy Group discount?",
@@ -141,7 +141,7 @@ export default function ApolloEnergyReviewPage() {
             </p>
             <ul className="mt-4 space-y-2">
               {[
-                "Electrical Licence 400672",
+                "Electrical Licence 400672C",
                 "ABN 55697998208",
                 "SAA-accredited installers",
                 "10-year battery warranty",
@@ -170,6 +170,36 @@ export default function ApolloEnergyReviewPage() {
                 bills.
               </p>
             </div>
+          </section>
+
+          {/* Which reviews are about this company. Added 27 Sep 2026: the query
+              "apollo energy reviews and listings" drew 307 impressions at position
+              8.9 and no clicks. Every profile below was read on the review site
+              itself that day. Third-party figures only, attributed: never carried
+              into this page's schema as a rating. */}
+          <section className="mt-10 border-t border-[#ded8cd] pt-10">
+            <h2 className="text-2xl font-bold text-[#14120f]">Where are Apollo Energy Group&apos;s reviews?</h2>
+            <p className="mt-4 text-[15.5px] leading-relaxed text-[#56504a]">
+              Several businesses trade as Apollo, and the review sites list them separately. Most third-party
+              &ldquo;Apollo&rdquo; profiles are not about Apollo Energy Group. Checked on each site on 27 September 2026:
+            </p>
+            <ul className="mt-5 space-y-4">
+              {[
+                ["Apollo Energy Group, the company on this page", "ABN 55 697 998 208, Electrical Licence 400672C, 5 Martin Place, Sydney. Its own site shows a Google rating widget reading 4.9 out of 5. A search of ProductReview.com.au for \u201capollo energy\u201d returned no listing for it."],
+                ["Apollo Energy Solutions Pty Ltd, a different installer", "ABN 92 645 078 584, NSW licence 373750, serving Newcastle, the Hunter and the Central Coast. SolarQuotes shows it at 4.9 from 24 ratings and Solar Choice at 4.69 from 13. Those reviews describe this company, not Apollo Energy Group."],
+                ["Apollo Solar and Electrical, also different", "A separate SolarQuotes listing, at 4.4 from 9 ratings."],
+                ["Apollo Energy of Denver, Colorado", "A US solar company. It is the Apollo Energy behind most results on US review sites such as BBB, EnergySage and SolarReviews."],
+              ].map(([h, b]) => (
+                <li key={h} className="rounded-xl border border-[#ded8cd] bg-white p-4">
+                  <p className="font-bold text-[#14120f]">{h}</p>
+                  <p className="mt-1 text-sm leading-relaxed text-[#56504a]">{b}</p>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-5 text-[15.5px] leading-relaxed text-[#56504a]">
+              To be sure a review is about the installer quoting you, match the ABN or licence number on your quote to
+              the one on the review profile. Ratings above belong to the sites named, not to Refer Labs.
+            </p>
           </section>
 
           {/* What to check */}

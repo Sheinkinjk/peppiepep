@@ -2,6 +2,18 @@ import { Metadata } from "next";
 
 import { MIDOC } from "@/lib/partners/midoc";
 import { pageDates } from "./page-dates";
+import { DEALS } from "./offers";
+
+// The date an offer was last confirmed, read from its DEALS row so a meta
+// description can never print an older check than the page itself. Both
+// Moshy descriptions said "17 Aug 2026" for a month after the 23 Sep re-check.
+const MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+function offerCheckedOn(code: string): string {
+  const row = DEALS.find((d) => d.code === code);
+  if (!row?.verified) throw new Error(`seo.ts: no verified date for ${code} in DEALS`);
+  const [y, m, d] = row.verified.split("-").map(Number);
+  return `${d} ${MONTHS[m - 1]} ${y}`;
+}
 export interface SEOConfig {
   title: string;
   description: string;
@@ -559,11 +571,15 @@ export const seoConfig = {
     keywords: ["landingi discount code", "landingi referral link", "landingi review", "landingi pricing", "landing page builder", "no-code landing page", "ab testing landing page"],
   },
   apolloEnergyReview: {
-    title: "Apollo Energy Group Review 2026: Is It Legit? ($500 Off)",
+    // Retitled 27 Sep 2026. "apollo energy reviews and listings" drew 307
+    // impressions at position 8.9 and no clicks (GSC, 30 Aug to 26 Sep). The page
+    // gained a section on which Apollo review profiles are about this company.
+    // Read on 27 Oct: clicks on that query at unchanged position.
+    title: "Apollo Energy Group Reviews 2026: Is It Legit? ($500 Off)",
     description:
-      "An independent Apollo Energy Group review: the credentials you can check, what to look at before you sign, and the exclusive $500 off your battery quote.",
+      "Which Apollo reviews are actually about Apollo Energy Group, the credentials you can check before you sign, and the exclusive $500 off your battery quote.",
     url: `${SITE_URL}/apollo-energy-review`,
-    keywords: ["apollo energy group review", "is apollo energy group legit", "apollo energy reviews", "apollo energy group australia", "apollo battery installer review", "home battery installer review australia"],
+    keywords: ["apollo energy group review", "apollo energy group reviews", "is apollo energy group legit", "apollo energy reviews", "apollo energy reviews and listings", "apollo energy group australia", "apollo battery installer review", "home battery installer review australia"],
   },
   homeBatteryRebate: {
     title: "Home Battery Rebate Australia 2026: What You Get",
@@ -951,6 +967,9 @@ export const seoConfig = {
     // price section rewritten ("What the local price buys is Australian consumer
     // guarantees...") and filler words removed from the intro and one FAQ. Title,
     // description and the AUD $470 figure unchanged.
+    // RE-READ 27 Sep 2026: RY still lists the Omnilux Contour Face at A$470
+    // (compare-at A$595), so the title is true. The description's 19 Aug date
+    // is left alone so the 13 Oct CTR read is not confounded.
     title: "LED Face Masks Australia 2026: Omnilux Is AUD $470 Here",
     description:
       "The Omnilux Contour Face was AUD $470 at RY on 19 Aug 2026, against USD $395 on the brand's own site. Why the gap exists, and how to check the ARTG.",
@@ -1580,7 +1599,7 @@ export const seoConfig = {
   moshy: {
     title: "Moshy Discount Code Australia 2026: $120 Off | Refer Labs",
     description:
-      "The current Moshy discount code is REFERRAL120. It applies through our link for $120 off a first order, read off Moshy's own page on 17 Aug 2026.",
+      `The current Moshy discount code is REFERRAL120. It applies through our link for $120 off a first order, read off Moshy's own page on ${offerCheckedOn("REFERRAL120")}.`,
     url: `${SITE_URL}/moshy`,
     keywords: [
       "moshy discount code",
@@ -1684,9 +1703,13 @@ export const seoConfig = {
   },
 
   moshyReview: {
-    title: "Moshy Review 2026: How It Works and the Cost",
+    // Retitled 27 Sep 2026. "is moshy legit" drew 114 impressions at position 5.6
+    // and 2 clicks (GSC, 30 Aug to 26 Sep) on a title that never used the word,
+    // though the h1 and an FAQ both answer it. Read on 27 Oct: clicks on that
+    // query at unchanged position. Nothing else on the page changed.
+    title: "Moshy Review 2026: Is It Legit, and What Does It Cost?",
     description:
-      "What sign-up, the practitioner review and the subscription involve. $120 off a first order with REFERRAL120, checked 17 Aug 2026.",
+      `Is Moshy legit, what sign-up and the practitioner review involve, and what the subscription costs. $120 off a first order with REFERRAL120, checked ${offerCheckedOn("REFERRAL120")}.`,
     url: `${SITE_URL}/moshy-review`,
     keywords: [
       "moshy review",

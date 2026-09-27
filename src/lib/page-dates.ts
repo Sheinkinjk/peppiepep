@@ -12,7 +12,7 @@ export type PageDates = { published: string; updated: string };
 export const PAGE_DATES: Record<string, PageDates> = {
   "/about": {
     "published": "2025-11-22",
-    "updated": "2026-09-18"
+    "updated": "2026-09-27"
   },
   "/activecampaign": {
     "published": "2026-07-11",
@@ -200,7 +200,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/contact": {
     "published": "2025-11-25",
-    "updated": "2026-09-18"
+    "updated": "2026-09-27"
   },
   "/dashboard-test": {
     "published": "2026-01-13",
@@ -208,7 +208,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/data": {
     "published": "2026-08-26",
-    "updated": "2026-09-18"
+    "updated": "2026-09-27"
   },
   "/databox": {
     "published": "2026-07-13",
@@ -264,7 +264,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/faq": {
     "published": "2025-12-10",
-    "updated": "2026-09-18"
+    "updated": "2026-09-27"
   },
   "/fast-business-loans-australia": {
     "published": "2026-07-21",
@@ -540,7 +540,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/mens-health": {
     "published": "2026-08-20",
-    "updated": "2026-09-24"
+    "updated": "2026-09-27"
   },
   "/mens-health/premature-ejaculation-treatment-options-australia": {
     "published": "2026-08-20",
@@ -560,7 +560,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/midoc": {
     "published": "2026-09-04",
-    "updated": "2026-09-18"
+    "updated": "2026-09-27"
   },
   "/mosh-review": {
     "published": "2026-08-07",
@@ -644,7 +644,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/partner-with-refer-labs": {
     "published": "2026-08-25",
-    "updated": "2026-09-18"
+    "updated": "2026-09-27"
   },
   "/payment/cancel": {
     "published": "2025-12-18",
