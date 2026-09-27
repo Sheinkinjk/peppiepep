@@ -18,7 +18,7 @@ const faqs = [
   },
   {
     q: "Is the recommendation independent?",
-    a: "Yes. The result is based only on your answer, and we never sell rankings. We're affiliated with beehiiv, so its page carries a disclosed affiliate link and we may earn a commission if you sign up through it, at no extra cost to you. We're not affiliated with Substack or Kit, and we still recommend them when they fit better, that's the point.",
+    a: "Yes. The result is based only on your answer, and we never sell rankings. We're affiliated with beehiiv, so its page carries a disclosed affiliate link and we may earn a commission if you sign up through it, at no extra cost to you. We're not affiliated with Substack or Kit, and the quiz recommends them when they fit your answer.",
   },
 ];
 

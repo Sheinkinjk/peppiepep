@@ -102,8 +102,8 @@ export default function ScreeningQuizClient() {
       questions={QUESTIONS}
       resolve={resolve}
       source="health-screening-quiz"
-      captureLabel="Want to know when we've compared providers in this category?"
-      captureNote="One email when diagnostics goes live. We do not record your answers against your address."
+      captureLabel="Want to hear when a comparison or verified offer in health screening changes?"
+      captureNote="Only when something changes. We do not record your answers against your address."
       disclaimer="This quiz asks about cost and how you would handle an uncertain result. It collects no symptoms, no history and no health data, makes no assessment of your risk, and is general information rather than medical advice. Whether screening is appropriate for you is a conversation for a practitioner who knows your history."
     />
   );

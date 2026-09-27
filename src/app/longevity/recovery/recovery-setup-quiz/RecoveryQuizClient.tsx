@@ -104,7 +104,7 @@ export default function RecoveryQuizClient() {
       resolve={resolve}
       source="recovery-setup-quiz"
       captureLabel="Want to know when we've compared providers in this category?"
-      captureNote="One email when recovery goes live. Nothing else, and no recommendation until we have checked someone ourselves."
+      captureNote="One email when we add a provider comparison to recovery. Nothing else, and no recommendation until we have checked someone ourselves."
       disclaimer="This quiz asks only about space, budget, climate and how often you would use a setup. It collects no health information and is general information rather than medical advice. Cold and heat exposure carry real risks for some people; speak to a practitioner before starting if you have a heart condition, high blood pressure, are pregnant, or have a condition affecting circulation."
       sendResult
     />

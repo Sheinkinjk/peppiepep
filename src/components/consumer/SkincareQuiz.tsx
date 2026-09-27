@@ -72,7 +72,7 @@ function resolve(a: Answers): Result {
       title: "Start with an assessment, not another product",
       body: "Persistent breakouts are the case where cycling through over-the-counter products tends to cost more than getting assessed. A GP consult is the cheaper first step and is also the gateway to a specialist referral, which is what makes a Medicare rebate available on a dermatologist appointment.",
       next: [
-        { href: "/health-and-beauty/retinol-vs-prescription-strength-australia", label: "Over-the-counter vs prescription-strength" },
+        { href: "/health-and-beauty/acne-treatment-options-and-costs-australia", label: "Acne treatment options and what they cost" },
         { href: "/health-and-beauty/retinol-vs-prescription-strength-australia", label: "Over-the-counter vs prescription-strength" },
       ],
     };
@@ -166,7 +166,8 @@ export default function SkincareQuiz() {
         body: JSON.stringify({
           email: email.trim(),
           source: "skincare-quiz",
-          result: result?.title.slice(0, 120),
+          // No result (28 Sep 2026): a skin-concern result tied to an email is
+          // health information, which the privacy policy says we do not collect.
           company_website_confirm: honeypot,
         }),
       });
@@ -239,11 +240,10 @@ export default function SkincareQuiz() {
         ) : (
           <form onSubmit={submit}>
             <label htmlFor="skinq-email" className="block text-sm font-semibold text-[#14120f]">
-              Want to know when we&apos;ve researched providers in this category?
+              Want to hear when a comparison or verified offer in skin and beauty changes?
             </label>
             <p className="mt-1 text-sm text-[#56504a]">
-              One email when skin and beauty goes live. Nothing else, and no recommendation until we have checked
-              someone ourselves.
+              Only when something changes. We do not record your answers against your address.
             </p>
             <div className="mt-3 flex flex-wrap gap-2">
               <input

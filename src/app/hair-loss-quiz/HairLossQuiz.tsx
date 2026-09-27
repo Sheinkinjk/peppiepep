@@ -14,7 +14,7 @@ import { MOSH_HAIR_URL, DENSE_URL } from "@/lib/affiliate-links";
 const MOSH: MatchResult = {
   key: "mosh",
   name: "The clinical route, via Mosh",
-  why: "You want the prescription-based approach. Mosh runs a men's hair-loss consult entirely online; if a registered practitioner finds treatment appropriate, it is managed and delivered from home. Note Mosh's hair service is for men, if that is not you, a GP is the better first step.",
+  why: "You want a practitioner-assessed approach, done online. Mosh runs a men's hair-loss consult entirely online; if a registered practitioner finds treatment appropriate, it is managed and delivered from home.",
   primaryCta: { label: "Check your options with Mosh", href: MOSH_HAIR_URL, dataCta: "hair-quiz-mosh" },
   secondary: { label: "Read our full Mosh review", href: "/moshhair" },
   note: "Prescription treatments in Australia are only available after assessment by a registered practitioner, who decides whether they are appropriate for you. General information, not medical advice.",
@@ -37,10 +37,25 @@ const GP: MatchResult = {
   note: "General information, not medical advice. A registered health professional should assess your individual situation.",
 };
 
+/*
+ * 28 Sep 2026. The quiz never asked who the treatment was for, so a woman choosing
+ * the clinical route online was sent to Mosh, a men's service, and told so only in
+ * the result. It now asks first, and a woman on the clinical route is matched to a
+ * GP, which earns nothing. The clinical option is described as practitioner-assessed
+ * rather than "prescription-based": the TGA treats promoting a service as a way to
+ * obtain prescription medicine as advertising that medicine.
+ */
+const GP_WOMEN: MatchResult = {
+  ...GP,
+  key: "gp-women",
+  why: "You want a clinical, practitioner-assessed approach. The online hair-loss service we cover is for men, so a GP is the better first step: they can assess the likely cause, talk through options and refer you on.",
+};
+
 function resolve(a: MatchAnswers): MatchResult {
   if (a.pref === "topical") return DENSE;
   if (a.pref === "unsure") return GP;
   // clinical
+  if (a.who === "woman") return GP_WOMEN;
   return a.consult === "no" ? GP : MOSH;
 }
 
@@ -48,10 +63,18 @@ const config: MatchConfig = {
   source: "hair-loss-quiz",
   questions: [
     {
+      id: "who",
+      legend: "Who is this for?",
+      options: [
+        { value: "man", title: "A man" },
+        { value: "woman", title: "A woman" },
+      ],
+    },
+    {
       id: "pref",
       legend: "How would you prefer to treat it?",
       options: [
-        { value: "clinical", title: "A clinical, prescription-based approach", note: "Practitioner-assessed, medication if appropriate" },
+        { value: "clinical", title: "A clinical, practitioner-assessed approach", note: "Any treatment is decided by the practitioner" },
         { value: "topical", title: "Topical, non-prescription products", note: "A cosmetic routine, no consult" },
         { value: "unsure", title: "I'm not sure, I'd rather ask someone first", note: "See a doctor before deciding" },
       ],
@@ -59,7 +82,7 @@ const config: MatchConfig = {
     {
       id: "consult",
       legend: "Are you comfortable doing the assessment online?",
-      skipIf: (a) => a.pref !== "clinical",
+      skipIf: (a) => a.pref !== "clinical" || a.who === "woman",
       options: [
         { value: "yes", title: "Yes, online is fine", note: "Handled from home" },
         { value: "no", title: "No, I'd rather be seen in person", note: "Prefer a face-to-face GP" },
@@ -67,9 +90,12 @@ const config: MatchConfig = {
     },
   ],
   resolve,
-  interest: (r) => `Hair loss (matched: ${r.key})`,
-  newsletterHeading: "Want your result and any verified hair-loss offers emailed to you?",
-  newsletterSub: "We'll send your match plus any good, verified offers. No spam, no pay-to-rank.",
+  // Topic only. The matched result tied a health condition to an email address and
+  // went to GA4 as an event parameter, while the privacy policy says we do not
+  // knowingly collect health information.
+  interest: () => "Hair-loss offers",
+  newsletterHeading: "Want verified hair-loss offers emailed to you?",
+  newsletterSub: "Only offers we have verified. We do not record your answers against your address. No spam, no pay-to-rank.",
   footnote: (
     <>
       A recommendation based on your preferences, not a medical assessment. Compare every option in the{" "}

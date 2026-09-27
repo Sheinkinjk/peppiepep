@@ -49,7 +49,7 @@ const SECTIONS = [
 const faqs = [
   {
     q: "What does coming soon mean on Refer Labs?",
-    a: "The guides in these sections are finished and free to read. What is coming is the provider comparison and any current offers, which we add only after we have checked a provider ourselves. Until then nothing in those sections earns us a commission, and we are not recommending anything to you.",
+    a: "The guides in these sections are finished and free to read. What is coming is the rest of the provider comparison and any current offers, which we add only after we have checked a provider ourselves. Where a provider in the section already pays us a commission, the page linking to it says so beside that link.",
   },
   {
     q: "Why publish the guides before the comparisons?",
@@ -129,9 +129,9 @@ export default function ComingSoonPage() {
               What we&apos;re <span>building next</span>
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#14120f]">
-              One category is still underway here. The guides in each are finished and free to read today. What is still
-              missing is the provider comparison, which we add only once we have checked someone ourselves, so nothing
-              in these sections earns us a commission yet.
+              Men&apos;s health is the one section still being built out. Its guides are finished and free to read today.
+              Its provider comparison is not: one provider in it pays us a commission, disclosed beside that link, and
+              others are added only once we have checked them ourselves.
             </p>
           </div>
         </section>

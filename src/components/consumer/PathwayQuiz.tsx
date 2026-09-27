@@ -123,8 +123,11 @@ function resolve(a: Required<Answers>): Result {
     };
   }
 
-  // Habits-first, lighter support -> GP/dietitian habits plan (non-earning, capture the lead)
-  if (a.approach === "coaching" && a.support !== "high") {
+  // Habits-first -> GP/dietitian habits plan (non-earning, capture the lead).
+  // 28 Sep 2026: a man choosing coaching with high support used to fall through
+  // to the Moshy result, whose copy told him he wanted a clinical pathway. Juniper
+  // is for women, so for him the habits-first plan is the result that matches.
+  if (a.approach === "coaching" && (a.support !== "high" || !woman)) {
     return {
       title: "A habits-first plan is your starting point",
       body: "You want coaching and habits at the centre rather than a clinical pathway first. A GP or dietitian can build a plan around nutrition and lifestyle. If you later want the clinical route, Moshy runs that pathway online.",
@@ -134,10 +137,19 @@ function resolve(a: Required<Answers>): Result {
     };
   }
 
-  // Default: clinical / online / unsure -> Moshy (clinical pathway, open to anyone eligible)
+  // Default: clinical / online / unsure -> Moshy (clinical pathway, open to anyone eligible).
+  // The opening sentence restates only what the reader chose. It used to say
+  // "You want a fast, clinically-led pathway done online" to everyone landing
+  // here, including people who answered "not sure" or "no preference".
+  const wants =
+    medicationLed && a.channel === "online"
+      ? "You want a clinically-led pathway done online, and Moshy runs that"
+      : medicationLed
+        ? "You want a clinically-led pathway, and Moshy runs one entirely online"
+        : "You are still weighing up the approach, and Moshy is a practitioner-led option you can explore online first";
   return {
-    title: "Moshy is the natural starting point",
-    body: `You want a fast, clinically-led pathway done online, and Moshy runs exactly that, open to anyone eligible. The eligibility check takes about ten minutes and commits you to nothing${speed ? ", so you can start straight away" : ""}.`,
+    title: medicationLed ? "Moshy is the natural starting point" : "Moshy is one place to start",
+    body: `${wants}, open to anyone eligible. The eligibility check takes about ten minutes and commits you to nothing${speed ? ", so you can start straight away" : ""}. A GP can run the same pathway in person if you would rather.`,
     offer: "$120 off your first order via our link",
     cta: { label: "Check your eligibility on Moshy", href: MOSHY_URL, sponsored: true, loc: "quiz-moshy" },
     secondary: { label: "Read our full Moshy review", href: "/moshy-review" },

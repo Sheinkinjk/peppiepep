@@ -23,7 +23,7 @@ const faqs = [
   },
   {
     q: "Is the recommendation independent?",
-    a: "Yes. The result is based only on your answers, and we never sell rankings. The pages contain disclosed affiliate links, so we may earn a commission if you sign up through them, at no extra cost to you, and it never changes a conclusion.",
+    a: "The result depends only on your answers, and no builder pays for its place. It chooses from the four builders we have reviewed (Carrd, Durable, Butternut AI and Swipe Pages), and every one of them pays us a commission if you sign up through our link, at no extra cost to you. Wix, Squarespace and others are not in it, so treat the result as a shortlist rather than the whole market.",
   },
 ];
 
@@ -124,7 +124,7 @@ export default function WebsiteBuilderQuizPage() {
             <p className="text-[#56504a] text-xs leading-relaxed max-w-2xl">
               This page recommends a builder based on your answers and contains disclosed affiliate links. We may earn
               a commission if you sign up through them, at no extra cost to you, and it never changes a conclusion. We
-              never sell rankings.
+              never sell rankings. The quiz chooses only from the four builders we have reviewed, all of which pay us.
             </p>
           </section>
         </div>

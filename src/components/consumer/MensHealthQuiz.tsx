@@ -235,10 +235,10 @@ export default function MensHealthQuiz() {
         ) : (
           <form onSubmit={submit}>
             <label htmlFor="mhq-email" className="block text-sm font-semibold text-[#14120f]">
-              Want to know when we&apos;ve compared providers in this category?
+              Want to hear when a comparison or verified offer in men&apos;s health changes?
             </label>
             <p className="mt-1 text-sm text-[#56504a]">
-              One email when men&apos;s health goes live. We do not record your answers against your address.
+              Only when something changes. We do not record your answers against your address.
             </p>
             <div className="mt-3 flex flex-wrap gap-2">
               <input

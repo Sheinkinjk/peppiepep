@@ -18,7 +18,7 @@ const faqs = [
   },
   {
     q: "Is the recommendation independent?",
-    a: "Yes. The result is based only on your answer, and we never sell rankings. The pages contain disclosed affiliate links, so we may earn a commission if you sign up through them, at no extra cost to you, and it never changes a conclusion.",
+    a: "The result depends only on your answer, and no tool pays for its place. It chooses from the five tools we have reviewed, and every one of them pays us a commission if you sign up through our link, at no extra cost to you. So it is a shortlist of our partners, not the whole market, and a tool we do not cover may suit you better.",
   },
 ];
 
@@ -116,7 +116,7 @@ export default function AiSalesToolsQuizPage() {
             <p className="max-w-2xl text-xs leading-relaxed text-[#56504a]">
               This page recommends a tool based on your answer and contains disclosed affiliate links. We may earn a
               commission if you sign up through them, at no extra cost to you, and it never changes a conclusion. We
-              never sell rankings.
+              never sell rankings. The quiz chooses only from the five tools we have reviewed, all of which pay us.
             </p>
           </section>
         </div>
