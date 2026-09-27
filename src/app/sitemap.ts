@@ -42,6 +42,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/longevity/diagnostics/cgm-for-non-diabetics-australia`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.72 },
     { url: `${BASE}/longevity/diagnostics/health-screening-quiz`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.62 },
     { url: `${BASE}/longevity/supplements/longevity-supplements-evidence-review`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
+    // Women's health (28 Sep 2026). Coming soon: guides only, no provider links.
+    { url: `${BASE}/womens-health`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/womens-health/menopause-care-cost-australia`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.72 },
+    { url: `${BASE}/womens-health/contraception-without-a-gp-australia`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.72 },
+    { url: `${BASE}/womens-health/uti-treatment-without-a-gp-australia`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.72 },
     // Men's health (19 Aug 2026). Clinical guides carry no commercial links.
     { url: `${BASE}/mens-health`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${BASE}/midoc`,               lastModified: TODAY, changeFrequency: 'monthly', priority: 0.78 },

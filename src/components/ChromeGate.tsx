@@ -39,6 +39,7 @@ const STANDALONE_ROUTES = [
   "/affiliate-software-australia",
   "/longevity",
   "/mens-health",
+  "/womens-health",
   "/health-and-beauty",
   // The four Health & Beauty brand pages (16 Sep 2026). Top-level slugs, so the
   // "/health-and-beauty" prefix above does not cover them and each must be listed.

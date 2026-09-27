@@ -12,7 +12,7 @@ export type PageDates = { published: string; updated: string };
 export const PAGE_DATES: Record<string, PageDates> = {
   "/about": {
     "published": "2025-11-22",
-    "updated": "2026-09-27"
+    "updated": "2026-09-28"
   },
   "/activecampaign": {
     "published": "2026-07-11",

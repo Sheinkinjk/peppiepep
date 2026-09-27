@@ -621,7 +621,7 @@ export const seoConfig = {
   comingSoon: {
     title: "What We're Building Next | Refer Labs",
     description:
-      "The section Refer Labs is still building: men's health. Its guides are finished and free to read; the provider comparison is still being assembled.",
+      "The sections Refer Labs is still building: men's health and women's health. Their guides are published and free to read; the provider comparisons are still being assembled.",
     url: `${SITE_URL}/coming-soon`,
     keywords: ["refer labs new sections", "refer labs coming soon", "australian comparison guides"],
   },
@@ -761,6 +761,38 @@ export const seoConfig = {
       "How to read the evidence behind longevity supplements sold in Australia, what AUST L on the label means, and why headline claims rarely survive.",
     url: `${SITE_URL}/longevity/supplements/longevity-supplements-evidence-review`,
     keywords: ["longevity supplements australia", "anti ageing supplements australia", "supplement evidence australia", "aust l meaning australia"],
+  },
+
+  // ─── Women's health (28 Sep 2026) ─────────────────────────────────────────
+  // Coming-soon section: guides published, no provider yet. No medicine named
+  // anywhere, including keywords; conditions and services only.
+  womensHealthHub: {
+    title: "Women's Health in Australia 2026: Access Routes and Costs",
+    description:
+      "Where a pharmacist can treat a UTI or resupply contraception, what online consults cost, and the Medicare menopause assessment. State by state, dated.",
+    url: `${SITE_URL}/womens-health`,
+    keywords: ["womens health australia", "womens health telehealth australia", "online womens health clinic australia", "womens health without a gp"],
+  },
+  whMenopause: {
+    title: "Menopause Care Cost Australia 2026: GP, Telehealth, Medicare",
+    description:
+      "The Medicare menopause assessment pays $104.55, in person, once every 12 months. What private telehealth menopause services charge after the rebate.",
+    url: `${SITE_URL}/womens-health/menopause-care-cost-australia`,
+    keywords: ["menopause clinic cost australia", "menopause medicare item", "menopause health assessment medicare", "menopause telehealth australia cost", "perimenopause doctor australia"],
+  },
+  whContraception: {
+    title: "Contraception Without a GP in Australia 2026: State by State",
+    description:
+      "Where a pharmacist can resupply or start contraception, which online consults Medicare rebates, and why pharmacy-supplied contraception can cost more.",
+    url: `${SITE_URL}/womens-health/contraception-without-a-gp-australia`,
+    keywords: ["contraception without a gp australia", "pharmacist contraception resupply", "online contraception prescription australia", "contraception telehealth medicare"],
+  },
+  whUti: {
+    title: "UTI Treatment Without a GP in Australia 2026: State by State",
+    description:
+      "A pharmacist can treat an uncomplicated UTI in women 18 to 65. Victoria is the only state where the consultation is free; elsewhere the pharmacy sets the fee.",
+    url: `${SITE_URL}/womens-health/uti-treatment-without-a-gp-australia`,
+    keywords: ["uti treatment without gp", "pharmacist uti treatment australia", "uti pharmacy cost", "chemist care now uti", "online uti doctor australia"],
   },
 
   // ─── Men's health (Aug 2026) ─────────────────────────────────────────────────

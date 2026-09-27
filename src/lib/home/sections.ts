@@ -39,8 +39,8 @@ export const comingSoonCard = {
   label: "Coming soon",
   href: "/coming-soon",
   object: "pulse" as ObjectKind,
-  body: "1 more category still being built out. The guides in it are finished and free to read, and the provider comparison is still being assembled.",
-  links: [{ label: "Men's Health", href: "/mens-health" }],
+  body: "2 categories still being built out. Their guides are published and free to read, and the provider comparisons are still being assembled.",
+  links: [{ label: "Men's Health", href: "/mens-health" }, { label: "Women's Health", href: "/womens-health" }],
   cta: "See what we're building",
 };
 

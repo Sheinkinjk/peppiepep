@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { SectionMark } from "@/components/brand/SectionMark";
-import { ArrowRight, Sparkles, Moon, Stethoscope, Activity } from "lucide-react";
+import { ArrowRight, Sparkles, Moon, Stethoscope, Activity, HeartPulse } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
@@ -44,6 +44,22 @@ const SECTIONS = [
       { h: "/mens-health/online-doctor-medical-certificate-australia", l: "Medical certificate: cost and speed" },
     ],
   },
+  // Added 28 Sep 2026 with no provider. Partners are expected within weeks and are
+  // not named here until an agreement is live.
+  {
+    href: "/womens-health",
+    icon: HeartPulse,
+    accent: "#8A3B5C",
+    tint: "#F6E9EF",
+    title: "Women's Health",
+    live: "Three guides, live now",
+    body: "Where a pharmacist can treat a UTI or resupply contraception, state by state, and what menopause care costs with and without Medicare. No provider has been added yet.",
+    links: [
+      { h: "/womens-health/uti-treatment-without-a-gp-australia", l: "UTI treatment without a GP" },
+      { h: "/womens-health/contraception-without-a-gp-australia", l: "Contraception without a GP" },
+      { h: "/womens-health/menopause-care-cost-australia", l: "Menopause care: what it costs" },
+    ],
+  },
 ];
 
 const faqs = [
@@ -64,7 +80,7 @@ const faqs = [
     // "Longevity is under consideration and has not started" until 3 Sep 2026,
     // directly below a section listing the live longevity guides. Fifteen
     // longevity URLs are in the sitemap, eleven of them guides.
-    a: "Longevity, sleep and health & beauty have all left this list: each went live with a commercial partner during September 2026, disclosed on every page that links to one. Men\'s health is what remains, and it is written entirely around access pathways and costs because advertising prescription medicines to the public is prohibited in Australia, so no medicine is named on any of those pages.",
+    a: "Longevity, sleep and health & beauty have all left this list: each went live with a commercial partner during September 2026, disclosed on every page that links to one. Men\'s health and women\'s health remain. Both are written around access routes and costs, because advertising prescription medicines to the public is prohibited in Australia, so no medicine is named on any of those pages.",
   },
 ];
 
@@ -129,9 +145,10 @@ export default function ComingSoonPage() {
               What we&apos;re <span>building next</span>
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#14120f]">
-              Men&apos;s health is the one section still being built out. Its guides are finished and free to read today.
-              Its provider comparison is not: one provider in it pays us a commission, disclosed beside that link, and
-              others are added only once we have checked them ourselves.
+              Two sections are still being built out, and their guides are published and free to read today. Men&apos;s
+              health has one provider that pays us a commission, disclosed beside its link. Women&apos;s health has no
+              provider yet, so nothing in it earns us anything. Providers are added only once we have checked them
+              ourselves.
             </p>
           </div>
         </section>

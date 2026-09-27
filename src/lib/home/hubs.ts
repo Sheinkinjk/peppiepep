@@ -21,6 +21,7 @@ export const HUB_OBJECT: Record<string, ObjectKind> = {
   "/skin-and-beauty": "bottle",
   "/sleep": "pillow",
   "/mens-health": "pulse",
+  "/womens-health": "phone",
   "/longevity": "hourglass",
   "/longevity/recovery": "thermo",
   "/longevity/diagnostics": "lens",

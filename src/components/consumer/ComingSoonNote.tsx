@@ -48,6 +48,9 @@ const BY_CATEGORY: Record<string, Variant> = {
   // wording promised "nothing here earns us a commission", which went false the
   // moment a partner landed.
   "Men's health": "partnered",
+  // No partner yet (28 Sep 2026). Switch to "partnered" in the same commit that
+  // adds the first partner link, or this note becomes false on every guide.
+  "Women's health": "a",
   "Health and beauty": "partnered",
   // Sits under men's health, so it takes that hub's wording.
   "This page": "d",
