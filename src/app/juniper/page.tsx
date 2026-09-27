@@ -182,7 +182,7 @@ export default function JuniperPage() {
             <h1 className="mt-4 text-4xl font-extrabold leading-[1.06] tracking-[-0.02em] text-[#14120f] sm:text-5xl lg:text-[3.2rem]">
               Juniper discount code Australia: <span>JARREDKFC waives the $89 consultation</span>
             </h1>
-            <p className="mt-5 inline-flex items-center gap-2 rounded-full border border-[#b9e3eb] bg-[#e4f2f5] px-4 py-1.5 text-[13px] font-bold text-[#007a95]">
+            <p className="mt-5 inline-flex items-center gap-2 rounded-full border border-[#b9e3eb] bg-[#e4f2f5] px-4 py-1.5 text-[13px] font-bold text-[#00748e]">
               <ShieldCheck className="h-4 w-4" aria-hidden="true" /> Code JARREDKFC, applied through our link
             </p>
             {/* Below the lead. The first paragraph after the h1 is the answer;
@@ -316,7 +316,7 @@ export default function JuniperPage() {
               <ol className="mt-6 space-y-5">
                 {steps.map((s) => (
                   <li key={s.num} className="flex gap-4">
-                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#e4f2f5] text-sm font-bold text-[#007a95]">
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#e4f2f5] text-sm font-bold text-[#00748e]">
                       {s.num}
                     </span>
                     <div>
@@ -446,7 +446,7 @@ export default function JuniperPage() {
             practitioner through our link, and you see the cost before you commit.
           </p>
           <div className="mt-8 flex justify-center">
-            <a {...juniperAff} data-cta="final-band" className="nw-btn justify-center !bg-white !text-[#007a95] px-8 py-4 text-base hover:!bg-[#e4f2f5]">
+            <a {...juniperAff} data-cta="final-band" className="nw-btn justify-center !bg-white !text-[#00748e] px-8 py-4 text-base hover:!bg-[#e4f2f5]">
               Start with a free consultation <ArrowRight className="h-4 w-4" />
             </a>
           </div>

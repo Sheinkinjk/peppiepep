@@ -265,7 +265,7 @@ export default function PremiumAffiliateLanding({ config }: { config: AffiliateP
                 <ol className="mt-6 space-y-5">
                   {config.steps.map((s) => (
                     <li key={s.num} className="flex gap-4">
-                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#e4f2f5] text-sm font-bold text-[#007a95]">
+                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#e4f2f5] text-sm font-bold text-[#00748e]">
                         {s.num}
                       </span>
                       <div>
@@ -341,7 +341,7 @@ export default function PremiumAffiliateLanding({ config }: { config: AffiliateP
           </h2>
           <p className="mx-auto mt-4 max-w-md text-[15px] leading-relaxed text-white/70">{config.ctas.bottomBody}</p>
           <div className="mt-8 flex justify-center">
-            <a href={url} target="_blank" rel="nofollow sponsored" data-cta="final-band" className="nw-btn justify-center !bg-white !text-[#007a95] px-8 py-4 text-base hover:!bg-[#e4f2f5]">
+            <a href={url} target="_blank" rel="nofollow sponsored" data-cta="final-band" className="nw-btn justify-center !bg-white !text-[#00748e] px-8 py-4 text-base hover:!bg-[#e4f2f5]">
               {continueLabel}
               <ArrowRight className="h-4 w-4" />
             </a>

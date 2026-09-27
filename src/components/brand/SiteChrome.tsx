@@ -30,8 +30,9 @@ export function SiteHeader() {
     <div className="rd hy rd-chrome">
       <header className="rd-hd rl-own hy-hd">
         <div className="rd-w rd-hd__g">
-          <Link href="/" className="hy-logo" aria-label="Refer Labs, home">
-            <HomeLogo className="hy-logo__svg" />
+          <Link href="/" className="hy-logo">
+            <HomeLogo className="hy-logo__svg" decorative />
+            <span className="sr-only">Refer Labs</span>
           </Link>
           <Nav groups={hybridNav} />
           <HeroSearch />

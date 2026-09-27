@@ -216,7 +216,7 @@ export default function ApolloEnergyReviewPage() {
                 ["Confirm they cover your address", "Coverage is confirmed at quote stage. Put your postcode in and get it in writing before you plan around it."],
               ].map(([h, b], i) => (
                 <li key={h} className="flex gap-4">
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#e4f2f5] text-sm font-bold text-[#007a95]">
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#e4f2f5] text-sm font-bold text-[#00748e]">
                     {i + 1}
                   </span>
                   <div>

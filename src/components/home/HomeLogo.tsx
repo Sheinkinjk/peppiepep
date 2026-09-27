@@ -6,7 +6,11 @@ import { useId } from "react";
  * also exist inside a hidden header elsewhere in the DOM, and a gradient
  * defined inside a hidden element paints nothing.
  */
-export function HomeLogo({ className = "", title = "Refer Labs" }: { className?: string; title?: string }) {
+// `decorative`: inside a link that names itself with visible-hidden text. The
+// svg's "REFER" and "LABS" text nodes read as "REFER\nLABS", which never matches
+// an aria-label, so Lighthouse failed label-content-name-mismatch on every page
+// (27 Sep 2026). Hiding the svg and naming the link with sr-only text clears it.
+export function HomeLogo({ className = "", title = "Refer Labs", decorative = false }: { className?: string; title?: string; decorative?: boolean }) {
   const u = useId().replace(/:/g, "");
   return (
     <svg
@@ -14,8 +18,7 @@ export function HomeLogo({ className = "", title = "Refer Labs" }: { className?:
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
-      role="img"
-      aria-label={title}
+      {...(decorative ? { "aria-hidden": true, focusable: "false" } : { role: "img", "aria-label": title })}
     >
       <defs>
         <linearGradient id={`fg${u}`} x1="0" y1="0" x2="1" y2="1">

@@ -2,7 +2,7 @@ import Image from "next/image";
 import { EdgeObject } from "@/components/brand/EdgeObject";
 import VerifiedStamp from "@/components/consumer/VerifiedStamp";
 import OffersTable from "@/components/lending/OffersTable";
-import { MOSHY_OFFER, DEALS } from "@/lib/offers";
+import { MOSHY_OFFER, DEALS, verifiedFor } from "@/lib/offers";
 import OfferSchema from "@/components/offers/OfferSchema";
 import { moshyConfig, MOSHY_URL } from "./config";
 import { ArrowRight, Check, ShieldCheck, Stethoscope, Truck, ClipboardList } from "lucide-react";
@@ -64,7 +64,7 @@ export default function MoshyLanding() {
               a real, current offer, not an expired one.
             </p>
             <div className="mt-5">
-              <VerifiedStamp date={MOSHY_OFFER.verified} label="$120-off offer verified" />
+              <VerifiedStamp date={verifiedFor(MOSHY_OFFER.code) ?? ""} label="$120-off offer verified" />
             </div>
 
             {/* The site's biggest money page carried only a four-word label,
@@ -257,7 +257,7 @@ export default function MoshyLanding() {
               <ol className="mt-6 space-y-5">
                 {moshyConfig.steps.map((s) => (
                   <li key={s.num} className="flex gap-4">
-                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#e4f2f5] text-sm font-bold text-[#007a95]">
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#e4f2f5] text-sm font-bold text-[#00748e]">
                       {s.num}
                     </span>
                     <div>
@@ -327,7 +327,7 @@ export default function MoshyLanding() {
             A few minutes, no obligation, and no code to enter. The referral is applied automatically through the link.
           </p>
           <div className="mt-8 flex justify-center">
-            <a href={MOSHY_URL} target="_blank" rel="nofollow sponsored" data-cta="final-band" className="nw-btn justify-center !bg-white !text-[#007a95] px-8 py-4 text-base hover:!bg-[#e4f2f5]">
+            <a href={MOSHY_URL} target="_blank" rel="nofollow sponsored" data-cta="final-band" className="nw-btn justify-center !bg-white !text-[#00748e] px-8 py-4 text-base hover:!bg-[#e4f2f5]">
               Continue to Moshy
               <ArrowRight className="h-4 w-4" />
             </a>

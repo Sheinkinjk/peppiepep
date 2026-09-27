@@ -55,7 +55,7 @@ export default function OffersTable({
                 <span className="font-sans text-xs text-[#56504a] sm:hidden">Code </span>
                 {d.code ?? "No code needed"}
                 {d.exclusive && (
-                  <span className="ml-2 rounded-full bg-[#e4f2f5] px-2 py-0.5 font-sans text-[11px] font-bold uppercase tracking-wide text-[#007a95]">
+                  <span className="ml-2 rounded-full bg-[#e4f2f5] px-2 py-0.5 font-sans text-[11px] font-bold uppercase tracking-wide text-[#00748e]">
                     Refer Labs only
                   </span>
                 )}

@@ -190,7 +190,7 @@ export default function OnlineWeightLossDoctorAustraliaPage() {
                     ["Your goals", "What you are hoping to achieve, so any plan is oriented around that."],
                   ].map(([title, body]) => (
                     <li key={title} className="flex gap-3">
-                      <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#e4f2f5] text-xs font-bold text-[#007a95]">✓</span>
+                      <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#e4f2f5] text-xs font-bold text-[#00748e]">✓</span>
                       <span><span className="font-semibold text-[#14120f]">{title}.</span> {body}</span>
                     </li>
                   ))}

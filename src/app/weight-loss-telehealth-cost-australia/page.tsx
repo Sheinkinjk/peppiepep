@@ -214,7 +214,7 @@ export default function WeightLossTelehealthCostAustraliaPage() {
                     ["Medicare and insurance", "Depending on your circumstances, a consult may attract a rebate, but subscriptions and medicines are typically not fully covered. Coverage is individual."],
                   ].map(([title, body]) => (
                     <li key={title} className="flex gap-3">
-                      <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#e4f2f5] text-xs font-bold text-[#007a95]">•</span>
+                      <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#e4f2f5] text-xs font-bold text-[#00748e]">•</span>
                       <span><span className="font-semibold text-[#14120f]">{title}.</span> {body}</span>
                     </li>
                   ))}

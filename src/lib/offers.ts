@@ -61,11 +61,10 @@ export const VERIFIED_FULL = formatVerifiedFull(VERIFIED_DATE);
 export const MOSHY_OFFER = {
   amount: "$120 off",
   code: "REFERRAL120",
-  // The Moshy DEALS row below, not the global sweep. This read VERIFIED_DATE
-  // (28 July), so /moshy, /moshy-review and /best-weight-loss-telehealth-australia
-  // printed "verified July 2026" for the same offer /deals dated 17 August: one
-  // fact with two dates on the same site.
-  verified: "2026-08-17",
+  // No date here. This object carried its own copy of the check date twice and
+  // it drifted both times: "July 2026" against /deals' 17 August, then "August
+  // 2026" on the /moshy and /moshy-review stamps for a month after the 23 Sep
+  // re-check. Read it from the DEALS row with verifiedFor(MOSHY_OFFER.code).
 };
 
 export interface Deal {
@@ -143,7 +142,7 @@ export const DEALS: Deal[] = [
   { brand: "i-screen", logo: "/logos/i-screen.svg", href: "/i-screen", offer: "$20 off your first test", code: "referlabs", category: "Health testing", featured: true, verified: "2026-09-23", exclusive: true, source: { noPublicPage: "Supplied by i-screen directly, 23 September 2026. Checked the same day that i-screen's own terms and FAQ name no coupon codes, so there is no page to re-read it off. Re-confirm with i-screen, not by searching." } },
   { brand: "Juniper", logo: "/logos/juniper.png", href: "/juniper", offer: "Initial consultation waived, valued at $89", code: "JARREDKFC", category: "Weight loss", featured: true, verified: "2026-09-23", exclusive: true, source: { noPublicPage: "Juniper's affiliate handbook, confirmed by Jarred 23 September 2026. Checked the same day that no public Juniper page states it: myjuniper.com rendered with the code in the query string shows only its own START50 banner, and the help-centre Discount Terms article names no code values. Re-confirm with Juniper, not by searching." } },
   { brand: "Knose", logo: "/logos/knose.svg", href: "/knose", offer: "2 months free for new customers", code: "referlab2mf", category: "Pets", featured: true, verified: "2026-08-27", source: { noPublicPage: "Partner-specific, stated on no public page. Recorded in the 25 Aug 2026 sweep note at the top of this file; re-confirm with the partner, not by searching." } },
-  { brand: "PetsOnMe", logo: "/logos/petsonme.svg", href: "/petsonme", offer: "15% off pet care services, up from 12% (not the premium)", code: "REFERLABS", category: "Pets", featured: false, verified: "2026-08-17", source: { noPublicPage: "Partner-specific, stated on no public page. Recorded in the 25 Aug 2026 sweep note at the top of this file; re-confirm with the partner, not by searching." } },
+  { brand: "PetsOnMe", logo: "/logos/petsonme.svg", href: "/petsonme", offer: "15% off pet care services, up from 12% (not the premium)", code: "REFERLABS", category: "Pets", featured: false, verified: "2026-09-27", source: { noPublicPage: "Partner-specific, stated on no public page. Recorded in the 25 Aug 2026 sweep note at the top of this file; re-confirm with the partner, not by searching." } },
 
   { brand: "Carrd", logo: "/logos/carrd.png", href: "/carrd", offer: "Free plan forever; Pro from US$19/yr", category: "Website builders", verified: "2026-08-25" },
   { brand: "beehiiv", logo: "/logos/beehiiv.png", href: "/best-newsletter-platform", offer: "Free plan, no revenue cut", category: "Newsletters", verified: "2026-08-25" },

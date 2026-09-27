@@ -167,7 +167,7 @@ export function CookieConsent() {
               <div className="rounded-[2px] border border-[#ded8cd] bg-[#f7f4ee] p-4">
                 <div className="flex items-center justify-between gap-2">
                   <h3 className="text-sm font-semibold text-[#14120f]">Necessary</h3>
-                  <span className="rounded-full bg-[#e4f2f5] px-2 py-0.5 text-[11px] font-medium text-[#007a95]">
+                  <span className="rounded-full bg-[#e4f2f5] px-2 py-0.5 text-[11px] font-medium text-[#00748e]">
                     Always on
                   </span>
                 </div>

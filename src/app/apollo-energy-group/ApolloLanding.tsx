@@ -365,7 +365,7 @@ export default function ApolloLanding() {
               <ol className="mt-6 space-y-5">
                 {steps.map((s) => (
                   <li key={s.num} className="flex gap-4">
-                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#e4f2f5] text-sm font-bold text-[#007a95]">
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#e4f2f5] text-sm font-bold text-[#00748e]">
                       {s.num}
                     </span>
                     <div>

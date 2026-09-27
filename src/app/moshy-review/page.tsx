@@ -7,7 +7,7 @@ import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 import VerifiedStamp from "@/components/consumer/VerifiedStamp";
-import { MOSHY_OFFER } from "@/lib/offers";
+import { MOSHY_OFFER, verifiedFor } from "@/lib/offers";
 import FactHistory from "@/components/facts/FactHistory";
 import CodeAnswer from "@/components/offers/CodeAnswer";
 import OfferSchema from "@/components/offers/OfferSchema";
@@ -123,7 +123,7 @@ export default function MoshyReviewPage() {
         <OfferSchema code="REFERRAL120" />
 
         <div className="mb-6">
-          <VerifiedStamp date={MOSHY_OFFER.verified} label={`${MOSHY_OFFER.amount} for new customers · verified`} />
+          <VerifiedStamp date={verifiedFor(MOSHY_OFFER.code) ?? ""} label={`${MOSHY_OFFER.amount} for new customers · verified`} />
         </div>
 
         <section className="space-y-4 mb-10">

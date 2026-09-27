@@ -189,7 +189,7 @@ export default function DealsPage() {
                             {d.code}
                           </code>
                           {d.exclusive && (
-                            <span className="rounded-full bg-[#e4f2f5] px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.08em] text-[#007a95]">
+                            <span className="rounded-full bg-[#e4f2f5] px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.08em] text-[#00748e]">
                               Refer Labs only
                             </span>
                           )}

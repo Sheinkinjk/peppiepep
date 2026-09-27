@@ -72,7 +72,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/apollo-energy-review": {
     "published": "2026-07-15",
-    "updated": "2026-09-18"
+    "updated": "2026-09-27"
   },
   "/auth/reset-password": {
     "published": "2025-12-11",

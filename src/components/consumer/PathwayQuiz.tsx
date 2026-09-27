@@ -233,7 +233,7 @@ export default function PathwayQuiz() {
           <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#56504a]">Your result</p>
           <h3 className="mt-2 text-2xl font-bold tracking-[-0.01em] text-[#14120f]">{result.title}</h3>
           {result.offer && (
-            <span className="mt-3 inline-flex w-fit items-center gap-1.5 rounded-full border border-[#b9e3eb] bg-[#e4f2f5] px-3 py-1 text-[12.5px] font-bold text-[#007a95]">
+            <span className="mt-3 inline-flex w-fit items-center gap-1.5 rounded-full border border-[#b9e3eb] bg-[#e4f2f5] px-3 py-1 text-[12.5px] font-bold text-[#00748e]">
               <Check className="h-3.5 w-3.5" strokeWidth={2.5} aria-hidden="true" /> {result.offer}
             </span>
           )}
