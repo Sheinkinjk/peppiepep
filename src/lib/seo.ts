@@ -1146,7 +1146,7 @@ export const seoConfig = {
   contact: {
     title: "Contact Refer Labs",
     description:
-      "Email Refer Labs about a comparison, a price or offer that has changed, or a partnership. Every message goes to the person who researches and writes the site.",
+      "Email Refer Labs about a comparison, a price or offer that has changed, or a partnership. Every message is read by the editorial team and answered within one business day.",
     url: `${SITE_URL}/contact`,
     keywords: [
       "contact refer labs",
