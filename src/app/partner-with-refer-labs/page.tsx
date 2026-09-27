@@ -30,7 +30,9 @@ const webPageSchema = {
 };
 
 // The categories Refer Labs actually compares today, across health, home energy
-// and business. A business only gets featured if it stands up to the criteria.
+// and business. Health & beauty, sleep & longevity and women's health added 28 Sep
+// 2026: brands deciding whether to partner read this list, and three live
+// categories were missing from it. A business only gets featured if it stands up to the criteria.
 const categories = [
   {
     num: "01",
@@ -62,6 +64,48 @@ const categories = [
   },
   {
     num: "03",
+    label: "Women's health",
+    intro:
+      "Women's telehealth now covers contraception, UTIs, menopause and more, and how each service is billed varies more than its marketing suggests. We compare access routes and costs, including where Medicare applies. Provider comparisons are being added now.",
+    detail:
+      "Telehealth services and clinics for women's health. Information only, not medical advice, and no prescription medicine is named on this site.",
+    eval: [
+      "Registered-practitioner assessment before anything is prescribed",
+      "Which consultations Medicare rebates, and which are private fees",
+      "What a subscription includes, and what is billed separately",
+      "Claims that are accurate and not misleading",
+    ],
+  },
+  {
+    num: "04",
+    label: "Health & beauty",
+    intro:
+      "Skincare, devices and meal replacements, where the Australian price and the product's claims both need checking before a reader spends. We publish what an item costs here in Australian dollars, dated.",
+    detail:
+      "Devices, skincare ranges and meal-replacement brands sold to Australians.",
+    eval: [
+      "Australian pricing in AUD, read and dated",
+      "Claims that match the product's registration where one applies",
+      "Returns, warranty and delivery terms",
+      "Certifications stated only where the certifier lists them",
+    ],
+  },
+  {
+    num: "05",
+    label: "Sleep & longevity",
+    intro:
+      "Sleep testing, mattresses, health screening and recovery hardware: categories where prices are high and the evidence behind the marketing is uneven. We compare what each option costs and what it can actually tell or do for you.",
+    detail:
+      "Sleep services and products, diagnostic and screening providers, and recovery equipment.",
+    eval: [
+      "Published Australian prices and what they include",
+      "Medicare, referral and rebate rules stated accurately",
+      "Claims matched to evidence rather than marketing",
+      "Running costs as well as the purchase price",
+    ],
+  },
+  {
+    num: "06",
     label: "Solar & energy",
     intro:
       "Home batteries are a high-ticket category where marketing spend has no relationship to install quality, and the rebate arithmetic is where most buyers get lost. We compare installers on what is checkable, and portable power for the third of households who rent.",
@@ -75,7 +119,7 @@ const categories = [
     ],
   },
   {
-    num: "04",
+    num: "07",
     label: "Pet insurance",
     intro:
       "Pet cover is sold on monthly price and decided by the fine print: benefit percentage, annual limits, waiting periods and what counts as pre-existing. We publish what each policy document says, including who underwrites it.",
@@ -89,7 +133,7 @@ const categories = [
     ],
   },
   {
-    num: "05",
+    num: "08",
     label: "Business software",
     intro:
       "The software that runs a business, CRM, websites and landing pages, email, HR and payroll, payments, is a maze of near-identical tools. We sort them by the job you need done and recommend on fit, not on who pays the most.",
@@ -206,8 +250,7 @@ export default function PartnerWithReferLabsPage() {
             </p>
             <p>
               It follows that we publish things partners would rather we did not. Where two brands we earn from share an
-              underwriter, we say so. Where a partner is more expensive than its rival, the table shows it. That is the
-              reason readers act on what they read here.
+              underwriter, we say so. Where a partner is more expensive than its rival, the table shows it.
             </p>
           </div>
         </section>

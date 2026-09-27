@@ -15,8 +15,8 @@ export const metadata = generateSEOMetadata(seoConfig.whUti);
  * TGA: no treatment is named. The service is described, and "prescription-only
  * treatment" is the furthest the copy goes.
  *
- * The fact this page owns: Victoria is the only state where the pharmacist
- * consultation is free by rule. Everywhere else the pharmacy sets the fee and no
+ * The fact this page owns: Victoria is the one state we found where the pharmacist
+ * consultation is free by rule. NSW, SA, WA and the ACT let the pharmacy set the fee and no
  * state publishes an amount, so any article quoting a national "pharmacy UTI
  * fee" is guessing.
  */
@@ -41,7 +41,7 @@ const faqs = [
   },
   {
     q: "How much does it cost to get a UTI treated at a pharmacy?",
-    a: "In Victoria the consultation is free: pharmacies are not permitted to charge for it, and the state pays them instead. In every other state the pharmacy sets its own consultation fee, and no state publishes an amount, so ask before the consult. The treatment itself is paid for separately everywhere.",
+    a: "In Victoria the consultation is free: pharmacies are not permitted to charge for it, and the state pays them instead. New South Wales, South Australia, Western Australia and the ACT let the pharmacy charge its own fee, and none of them publishes an amount; Queensland and Tasmania publish no fee either. Ask before the consult. The treatment itself is paid for separately everywhere.",
   },
   {
     q: "Is a pharmacy UTI consultation covered by Medicare?",
@@ -61,7 +61,7 @@ export default function Page() {
       slug="/womens-health/uti-treatment-without-a-gp-australia"
       crumb="UTI treatment without a GP"
       h1={<>UTI treatment without a GP in Australia: <span>what each state allows and charges</span></>}
-      intro="A trained pharmacist can assess and treat an uncomplicated urinary tract infection in women aged 18 to 65 in every state whose rules we could read. What it costs depends on where you live. In Victoria the consultation is free by rule. Everywhere else the pharmacy sets its own fee, and no state publishes the amount. The treatment is paid for separately in every state."
+      intro="A trained pharmacist can assess and treat an uncomplicated urinary tract infection in women aged 18 to 65 in every state whose rules we could read. What it costs depends on where you live. In Victoria the consultation is free by rule. In the other states we could read, the pharmacy sets its own fee, and none publishes the amount. The treatment is paid for separately in every state."
       headline="UTI treatment without a GP in Australia"
       description={seoConfig.whUti.description}
       faqs={faqs}
@@ -117,8 +117,9 @@ export default function Page() {
           without a Medicare card, though it does not count towards the PBS Safety Net.
         </p>
         <p className="mt-3">
-          <strong className="font-semibold text-[#14120f]">At a pharmacy in any other state</strong>, the pharmacy sets
-          its own consultation fee. None of the state pages we read gives an amount, and South Australia notes that the
+          <strong className="font-semibold text-[#14120f]">At a pharmacy in New South Wales, South Australia, Western
+          Australia or the ACT</strong>, the pharmacy sets its own consultation fee, and Queensland and Tasmania publish
+          no fee either. None of the state pages we read gives an amount, and South Australia notes that the
           treatment supplied through its service is not PBS-funded. Ask what the consultation and the treatment will
           cost before you start: South Australia and the ACT both say the pharmacist should tell you first.
         </p>

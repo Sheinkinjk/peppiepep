@@ -296,7 +296,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/guides": {
     "published": "2026-06-29",
-    "updated": "2026-09-23"
+    "updated": "2026-09-28"
   },
   "/hair-loss": {
     "published": "2026-07-03",
@@ -1045,6 +1045,22 @@ export const PAGE_DATES: Record<string, PageDates> = {
   "/i-screen": {
     "published": "2026-09-23",
     "updated": "2026-09-23"
+  },
+  "/womens-health/contraception-without-a-gp-australia": {
+    "published": "2026-09-28",
+    "updated": "2026-09-28"
+  },
+  "/womens-health/menopause-care-cost-australia": {
+    "published": "2026-09-28",
+    "updated": "2026-09-28"
+  },
+  "/womens-health": {
+    "published": "2026-09-28",
+    "updated": "2026-09-28"
+  },
+  "/womens-health/uti-treatment-without-a-gp-australia": {
+    "published": "2026-09-28",
+    "updated": "2026-09-28"
   }
 };
 

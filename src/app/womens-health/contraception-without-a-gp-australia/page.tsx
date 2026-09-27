@@ -27,7 +27,7 @@ const READ = "28 September 2026";
 const STATES: [string, string, string, string][] = [
   ["New South Wales", "Resupply of an existing prescription, permanent since 28 September 2024. Starting contraception at a pharmacy from June 2026 for low-risk women aged 18 to 39.", "Resupply 18 to 49", "Pharmacy sets the fee. For starting contraception, the first 5,000 consultations were state-funded and later ones are expected to cost $20 to $60."],
   ["Victoria", "Resupply, and starting contraception from July 2026, through Chemist Care Now.", "Resupply 16 to 50, starting 18 to 50", "Consultation free"],
-  ["Queensland", "Starting, changing and continuing contraception; announced as permanent on 21 March 2025.", "Not stated in the statement we read", "Not published"],
+  ["Queensland", "Prescribing by trained pharmacists (from a 2024 pilot), announced as permanent on 21 March 2025.", "16 and over", "Not published"],
   ["South Australia", "Resupply only, from 6 May 2024.", "17 to 50", "The pharmacy may charge, amount not published"],
   ["Western Australia", "Resupply only, run as a pilot.", "16 to 39", "Fees apply, amount not published"],
   ["ACT", "Resupply only, regular practice since 27 February 2025.", "18 to 49", "The pharmacy may charge, amount not published"],
@@ -101,7 +101,7 @@ export default function Page() {
         </div>
         <p className="mt-3 text-xs text-[#56504a]">
           Read on {READ} from NSW Health and the NSW Government releases of 26 September 2024 and 15 April 2026, Better
-          Health Victoria, the Queensland ministerial statement of 21 March 2025, SA Health, WA Health, the ACT Government
+          Health Victoria, the Queensland ministerial statements of 21 March 2024 and 21 March 2025, SA Health, WA Health, the ACT Government
           release of 27 February 2025 and Tasmania&apos;s Department of Health. Resupply services generally require that
           you have used the same contraception for a set period under a doctor&apos;s prescription; the state pages give
           the exact rule.

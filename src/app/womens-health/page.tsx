@@ -47,7 +47,7 @@ const guides: GuideLink[] = [
   {
     href: "/womens-health/uti-treatment-without-a-gp-australia",
     title: "UTI treatment without a GP",
-    desc: "Pharmacist UTI services state by state, and the one state where the consultation is free.",
+    desc: "Pharmacist UTI services state by state, and the one state we found where the consultation is free.",
     kind: "compare",
   },
   {

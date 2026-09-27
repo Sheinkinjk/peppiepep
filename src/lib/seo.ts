@@ -790,7 +790,7 @@ export const seoConfig = {
   whUti: {
     title: "UTI Treatment Without a GP in Australia 2026: State by State",
     description:
-      "A pharmacist can treat an uncomplicated UTI in women 18 to 65. Victoria is the only state where the consultation is free; elsewhere the pharmacy sets the fee.",
+      "A pharmacist can treat an uncomplicated UTI in women 18 to 65. Victoria is the one state we found where the consultation is free by rule; elsewhere pharmacies may charge.",
     url: `${SITE_URL}/womens-health/uti-treatment-without-a-gp-australia`,
     keywords: ["uti treatment without gp", "pharmacist uti treatment australia", "uti pharmacy cost", "chemist care now uti", "online uti doctor australia"],
   },
@@ -2461,7 +2461,7 @@ export const seoConfig = {
   partnerWithReferLabs: {
     title: "Partner with Refer Labs: Apply to Be Compared | Refer Labs",
     description:
-      "Apply to partner with Refer Labs, an independent Australian comparison publisher across health, solar and energy, pet insurance and business software.",
+      "Apply to partner with Refer Labs, an independent Australian comparison publisher across health, women's and men's health, sleep, longevity, solar and energy and business software.",
     url: `${SITE_URL}/partner-with-refer-labs`,
     keywords: [
       "partner with refer labs",

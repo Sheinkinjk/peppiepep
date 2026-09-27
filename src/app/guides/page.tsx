@@ -42,7 +42,7 @@ const hubs = [
   { href: "/longevity/supplements/longevity-supplements-evidence-review", label: "Longevity Supplements Reviewed", desc: "What AUST L certifies, and four questions for any study you are shown." },
   { href: "/womens-health/menopause-care-cost-australia", label: "Menopause Care Costs", desc: "The Medicare menopause assessment, and what private telehealth services charge after the rebate." },
   { href: "/womens-health/contraception-without-a-gp-australia", label: "Contraception Without a GP", desc: "What a pharmacist can do in each state, and which online consults Medicare rebates." },
-  { href: "/womens-health/uti-treatment-without-a-gp-australia", label: "UTI Treatment Without a GP", desc: "Pharmacist UTI services by state, and the one state where the consultation is free." },
+  { href: "/womens-health/uti-treatment-without-a-gp-australia", label: "UTI Treatment Without a GP", desc: "Pharmacist UTI services by state, and the one state we found where the consultation is free." },
   { href: "/mens-health/erectile-dysfunction-treatment-cost-australia", label: "Erectile Dysfunction Costs", desc: "How GP, telehealth and subscription pricing differ, and where Medicare applies." },
   { href: "/mens-health/premature-ejaculation-treatment-options-australia", label: "Premature Ejaculation Options", desc: "Behavioural, psychological and clinical routes, and the rebated pathway most miss." },
   { href: "/mens-health/online-mens-health-clinics-compared", label: "Online Men's Clinics Compared", desc: "The criteria that separate them, and the safety check that comes first." },
