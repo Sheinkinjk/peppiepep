@@ -79,10 +79,11 @@ const FAQS: { q: string; a: string }[] = [
                   q: "Are online weight loss clinics in Australia legit?",
                   a: "The established platforms operate as regulated telehealth services: questionnaires reviewed by Australian-registered practitioners, and any medicine prescribed only after individual clinical assessment, because they are prescription-only. Check for a practitioner consultation before any prescription, an Australian business entity, and published contact details. A service offering prescription medication without practitioner review is the red flag.",
                 },
-                {
-                  q: "Is Moshy or Juniper better?",
-                  a: "Moshy and Juniper take different approaches. Moshy runs a lean clinical pathway, open to anyone eligible. Juniper adds health coaching to its programme and markets primarily to Australian women. If you want a focused clinical pathway, Moshy is the relevant option. If you want coaching alongside clinical care, Juniper is worth a look. Both require individual clinical eligibility assessment.",
-                },
+                // "Is Moshy or Juniper better?" removed 29 Sep 2026. It sat in this
+                // page's FAQPage schema while /moshy-vs-juniper owns that question,
+                // and "moshy vs juniper" split about 440 impressions across the two
+                // pages (GSC, 90 days), the pair page converting 2.1% to this one's
+                // 1.4%. The head-to-head is linked from the answer section instead.
                 {
                   q: "How do these platforms handle treatment access?",
                   a: "Both Moshy and Juniper operate practitioner-supervised weight-management pathways that can involve treatment that a registered practitioner assesses as appropriate. Weight-management medicines are prescription-only in Australia and are prescribed only after an individual assessment by a registered practitioner, who decides suitability. Whether any specific medicine is appropriate is a clinical decision, not something a platform promises in advance, and not everyone who applies is prescribed medication. This page does not constitute medical advice.",
@@ -127,10 +128,8 @@ const webPageSchema = {
   dateModified: "2026-09-10",
   about: [
     { "@type": "Thing", name: "weight loss telehealth Australia 2026" },
-    { "@type": "Thing", name: "Moshy vs Juniper Australia" },
     { "@type": "Thing", name: "practitioner-assessed treatment telehealth Australia" },
     { "@type": "Thing", name: "online weight management Australia" },
-    { "@type": "Thing", name: "prescription weight-loss medication Australia" },
     { "@type": "Thing", name: "Moshy weight loss review" },
     { "@type": "Thing", name: "Juniper weight loss Australia" },
   ],
@@ -451,6 +450,12 @@ export default function BestWeightLossTelehealthPage() {
               and delivery if a program is appropriate. Juniper suits someone who wants coaching, an app and a patient
               community around the same clinical step. Neither is cheaper on paper in a way that survives the first
               month, so compare what each includes over a year.
+            </p>
+            <p className="mt-3 text-sm sm:text-base max-w-3xl">
+              <Link href="/moshy-vs-juniper" className="font-semibold text-[#007a95] hover:underline">
+                Moshy vs Juniper: the two side by side
+              </Link>{" "}
+              <span className="text-[#56504a]">covers cost, who each suits and what each includes, question by question.</span>
             </p>
           </section>
 

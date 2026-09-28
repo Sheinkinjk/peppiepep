@@ -48,7 +48,7 @@ export default function Page() {
       faqs={faqs}
       related={[
         { href: "/i-screen", label: "i-screen: private pathology prices" },
-        { href: "/longevity/diagnostics/everlab-vs-prenuvo-vs-i-screen-australia", label: "The services compared" },
+        { href: "/longevity/diagnostics/everlab-vs-prenuvo-vs-i-screen-australia", label: "Everlab vs Prenuvo vs i-screen" },
         { href: "/longevity/diagnostics/health-screening-quiz", label: "Is screening right for you?" },
       ]}
     >

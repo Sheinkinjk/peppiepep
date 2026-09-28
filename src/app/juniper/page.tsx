@@ -339,7 +339,7 @@ export default function JuniperPage() {
 
             {/* Cost */}
             <section id="cost" className="mt-12 scroll-mt-24">
-              <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">What Juniper costs</h2>
+              <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">How much does Juniper cost?</h2>
               <div className="mt-4 space-y-4 text-[15.5px] leading-relaxed text-[#56504a]">
                 <p>
                   Juniper runs as a monthly subscription that its own site says covers the program, unlimited

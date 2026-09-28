@@ -44,6 +44,7 @@ export default function Page() {
       description={seoConfig.biologicalAge.description}
       faqs={faqs}
       related={[
+        { href: "/longevity/diagnostics/everlab-vs-prenuvo-vs-i-screen-australia", label: "Everlab vs Prenuvo vs i-screen" },
         { href: "/longevity/diagnostics/whole-body-mri-australia-cost", label: "Whole-body MRI" },
         { href: "/longevity/supplements/longevity-supplements-evidence-review", label: "Supplements, reviewed" },
       ]}

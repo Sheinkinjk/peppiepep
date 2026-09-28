@@ -276,7 +276,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/for-business": {
     "published": "2026-07-03",
-    "updated": "2026-09-18"
+    "updated": "2026-09-28"
   },
   "/fullenrich": {
     "published": "2026-07-07",
@@ -644,7 +644,7 @@ export const PAGE_DATES: Record<string, PageDates> = {
   },
   "/partner-with-refer-labs": {
     "published": "2026-08-25",
-    "updated": "2026-09-27"
+    "updated": "2026-09-28"
   },
   "/payment/cancel": {
     "published": "2025-12-18",
