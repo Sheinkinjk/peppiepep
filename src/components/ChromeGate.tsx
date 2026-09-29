@@ -40,6 +40,15 @@ const STANDALONE_ROUTES = [
   "/longevity",
   "/mens-health",
   "/womens-health",
+  // Hims page set (preview only, 29 Sep 2026). Rendered inside ConsumerShell by
+  // src/lib/hims/render.tsx, so the global chrome must stand aside here.
+  "/hims",
+  "/hims-hair-loss",
+  "/hims-ed",
+  "/hims-vs-mosh",
+  "/best-mens-weight-loss-program-australia",
+  "/best-hair-loss-treatment-online-australia",
+  "/best-online-ed-treatment-australia",
   "/health-and-beauty",
   // The four Health & Beauty brand pages (16 Sep 2026). Top-level slugs, so the
   // "/health-and-beauty" prefix above does not cover them and each must be listed.

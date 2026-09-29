@@ -6,6 +6,7 @@
     "dev": "next dev",
     "dev:env": "set -a && source .env.local && npm run dev",
     "build": "next build",
+    "lint:hims": "node scripts/lint-hims-copy.mjs",
     "start": "next start",
     "indexnow": "node scripts/indexnow.mjs",
     "check-offers": "node scripts/check-offer-wiring.mjs",

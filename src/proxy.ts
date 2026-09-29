@@ -1,6 +1,7 @@
 import { createServerClient } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
 import { logger } from '@/lib/logger'
+import { himsPreviewMiddleware } from '@/lib/hims/middleware'
 
 /**
  * Permanently withdrawn content with no equivalent live page.
@@ -99,6 +100,14 @@ async function runProxy(request: NextRequest) {
       headers: { 'content-type': 'text/html; charset=utf-8', 'x-robots-tag': 'noindex' },
     })
   }
+
+  // Hims page set, preview only (29 Sep 2026). Returns null for every other path,
+  // and for the seven Hims slugs once HIMS_PAGES_LIVE=true. While in preview it
+  // sets noindex, no-store and the preview-key cookie. The pages themselves 404
+  // without the key, so this is defence in depth. Existing matcher already covers
+  // these paths.
+  const hims = himsPreviewMiddleware(request)
+  if (hims) return hims
 
   // Create a response that we'll update with cookies
   const response = NextResponse.next({

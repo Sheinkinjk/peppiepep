@@ -124,6 +124,9 @@ const PARTNERS = [
       "/hair-loss", "/moshhair", "/mosh-review", "/mosh-vs-dense",
       "/best-hair-loss-treatment-australia", "/hair-loss-treatment-cost-australia",
       "/mens-health", "/deals", "/guides", "/coming-soon",
+      // Named on the Hims comparison pages (preview only, 29 Sep 2026).
+      "/hims-vs-mosh", "/best-mens-weight-loss-program-australia",
+      "/best-hair-loss-treatment-online-australia", "/best-online-ed-treatment-australia",
     ],
     deny: [
       {
@@ -151,7 +154,12 @@ const PARTNERS = [
   {
     name: "Hims",
     tokens: ["hims.com.au", "HIMS_", "/go/hims-"],
-    allow: ["/mens-health", "/weight-loss", "/juniper", "/deals", "/guides", "/coming-soon"],
+    allow: [
+      "/mens-health", "/weight-loss", "/juniper", "/deals", "/guides", "/coming-soon",
+      // Hims page set, preview only (29 Sep 2026).
+      "/hims", "/hims-hair-loss", "/hims-ed", "/hims-vs-mosh",
+      "/best-mens-weight-loss-program-australia", "/best-hair-loss-treatment-online-australia", "/best-online-ed-treatment-australia",
+    ],
     deny: [
       {
         pattern: /\b(sildenafil|tadalafil|vardenafil|avanafil|viagra|cialis|levitra|PDE-?5)\b/i,
