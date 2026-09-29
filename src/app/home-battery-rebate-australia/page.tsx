@@ -1,4 +1,5 @@
 import Link from "next/link";
+import BatteryDeadlineNote from "@/components/consumer/BatteryDeadlineNote";
 import { SectionMark } from "@/components/brand/SectionMark";
 import { ArrowRight, Check } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
@@ -127,6 +128,7 @@ export default function HomeBatteryRebatePage() {
 
           <div className="mt-8">
             <Offer loc="rebate-hero" />
+            <BatteryDeadlineNote className="mt-3" />
           </div>
 
           {/* Answer-first: the exact buyer question as an H2, then a liftable answer for engines. */}

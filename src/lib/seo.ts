@@ -1063,7 +1063,7 @@ export const seoConfig = {
   hairLossTreatmentCost: {
     title: "Hair Loss Treatment Cost Australia 2026 | Refer Labs",
     description:
-      "What hair-loss treatment costs in Australia 2026: over-the-counter options vs telehealth plans, using Mosh's published prices, and what is subsidised.",
+      "What hair-loss treatment costs in Australia: over-the-counter vs telehealth plans, Mosh's three hair plans, what is subsidised, and Mosh code REFERAL55 (55% off).",
     url: `${SITE_URL}/hair-loss-treatment-cost-australia`,
     keywords: ["hair loss treatment cost australia", "mosh hair loss cost", "prescription hair loss treatment cost", "hair loss telehealth cost australia", "hair loss telehealth cost", "how much does hair loss treatment cost"],
   },
@@ -1122,9 +1122,9 @@ export const seoConfig = {
     // (Search Console, 21 Aug to 17 Sep 2026), mostly for brands we do not
     // cover (Vush, KIC, RespectHealth): Google was filing it as a coupon
     // directory. Every code here is read off the provider's own page and dated.
-    title: "Discount Codes: Moshy, Mosh, Juniper, i-screen, Knose",
+    title: "Discount Codes: Moshy, Mosh, Juniper and i-screen",
     description:
-      "Verified Australian discount codes, each dated: Moshy REFERRAL120 for $120 off, Mosh REFERAL55 for 55% off, Juniper JARREDKFC for a waived $89 consultation, i-screen referlabs for $20 off, Knose and PetsOnMe.",
+      "Verified Australian discount codes, each dated: Moshy REFERRAL120 for $120 off, Mosh REFERAL55 for 55% off, Juniper JARREDKFC for a waived $89 consultation, i-screen referlabs for $20 off, plus pet insurance offers.",
     url: `${SITE_URL}/deals`,
     keywords: ["discount codes australia", "verified discount codes australia", "promo codes australia", "deals australia", "refer labs deals", "moshy discount code", "mosh discount code", "juniper discount code", "australian coupon codes"],
   },
@@ -1696,7 +1696,7 @@ export const seoConfig = {
   moshyVsJuniper: {
     title: "Moshy vs Juniper 2026: Cost and Who Each Suits",
     description:
-      "Juniper wraps coaching around clinical care and is built for women; Moshy is open to anyone eligible. Our Moshy link applies REFERRAL120 for $120 off.",
+      "Moshy keeps to a lean clinical pathway; Juniper adds coaching and community for women. Codes: REFERRAL120 ($120 off Moshy), JARREDKFC (Juniper consult waived).",
     url: `${SITE_URL}/moshy-vs-juniper`,
     keywords: [
       "moshy vs juniper",
@@ -1718,7 +1718,7 @@ export const seoConfig = {
   cheapestWeightLossTelehealth: {
     title: "Cheapest Weight Loss Telehealth Australia 2026 Compared",
     description:
-      "The cheapest weight-loss telehealth in Australia, compared: how subscription vs pay-per-consult pricing differs across Moshy and Juniper. Info only.",
+      "Subscription vs pay-per-consult weight-loss telehealth in Australia: Moshy, Juniper and Doctors for Weight Loss compared. Moshy code REFERRAL120 takes $120 off.",
     url: `${SITE_URL}/cheapest-weight-loss-telehealth-australia`,
     keywords: [
       "cheapest weight loss telehealth australia",

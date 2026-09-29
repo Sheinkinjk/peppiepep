@@ -1,4 +1,5 @@
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, SCHEMA_AUTHOR, SCHEMA_PUBLISHER } from "@/lib/seo";
+import BatteryDeadlineNote from "@/components/consumer/BatteryDeadlineNote";
 import { SectionMark } from "@/components/brand/SectionMark";
 import { APOLLO_ENERGY_LEAD_HREF } from "@/lib/affiliate-links";
 import { ArrowRight } from "lucide-react";
@@ -168,6 +169,7 @@ export default function HomeBatteryCostAustraliaPage() {
               Get $500 off a quote <ArrowRight className="h-4 w-4" />
             </a>
           </div>
+          <BatteryDeadlineNote className="mt-3" />
 
           {/* Body */}
           <article className="mt-10 space-y-9">

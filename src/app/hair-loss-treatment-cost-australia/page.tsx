@@ -6,6 +6,8 @@ import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
 import EditorialMeta from "@/components/consumer/EditorialMeta";
+import CodeAnswer from "@/components/offers/CodeAnswer";
+import OfferSchema from "@/components/offers/OfferSchema";
 
 export const metadata = generateSEOMetadata(seoConfig.hairLossTreatmentCost);
 
@@ -34,11 +36,11 @@ const breadcrumbSchema = {
 const faqs = [
   {
     q: "How much does hair-loss treatment cost in Australia?",
-    a: "It depends on the route. Buying an over-the-counter topical product is a one-off cost that varies by pharmacy. A telehealth plan is usually a monthly subscription that bundles treatment, practitioner oversight and delivery: Mosh, for example, offers tiered plans with free delivery, and shows the plan and price before you commit. The exact plan a practitioner assigns is confirmed during the assessment, so check the current figure on the provider's own site.",
+    a: "It depends on the route. Buying an over-the-counter topical product is a one-off cost that varies by pharmacy. A telehealth plan is usually a monthly subscription that bundles treatment, practitioner oversight and delivery: Mosh, for example, lists three hair plans on its own pricing page, and the assessment confirms which one applies before you commit. New Mosh customers get 55% off a first order with the code REFERAL55.",
   },
   {
     q: "Why is telehealth hair-loss treatment priced as a subscription?",
-    a: "Because the treatments are ongoing rather than one-off. Prescription hair-loss treatments only keep working while you keep using them, so services bundle the medicine, practitioner oversight and delivery into a monthly plan. The upside is convenience and included review; the thing to check is that you are comparing like plans, since a single-active plan and a multi-active plan are priced differently.",
+    a: "Because hair-loss treatment is ongoing rather than one-off, services bundle the treatment, practitioner oversight and delivery into a monthly plan. The upside is convenience and included review; the thing to check is that you are comparing like plans, since plans for early and advanced hair loss are priced differently.",
   },
   {
     q: "Is hair-loss treatment covered by Medicare or the PBS?",
@@ -49,8 +51,8 @@ const faqs = [
     a: "For an over-the-counter topical alone, buying it at a pharmacy can be the cheapest route, since it does not need a prescription. The trade-off is that you are managing it yourself with no practitioner assessment, and prescription treatment is not available that way. Many people who want a combined, assessed plan find the convenience of a telehealth subscription worth the price. It comes down to whether you want a full plan or a single product.",
   },
   {
-    q: "What does the Mosh hair-loss offer include?",
-    a: "New customers get 55% off their first order through the link on this page, and plans include free, discreet delivery. Mosh does not publish its plan prices publicly: the plan and price are set by the assessment and shown to you before you commit. Two things Mosh does publish are worth knowing if you are comparing on cost. It advertises a 180-day money-back guarantee, and a price-match guarantee on substantially comparable programs, so a cheaper like-for-like plan elsewhere is worth raising with them directly. Checked on Mosh's own site, 14 August 2026; terms can change, so verify before you commit.",
+    q: "What is the Mosh discount code for hair loss?",
+    a: "Through Refer Labs, the Mosh code is REFERAL55, worth 55% off a new customer's first order; it applies once, to that first order. The link on this page carries it automatically. Plans include free, discreet delivery, and Mosh advertises a 180-day money-back guarantee and a price-match guarantee on substantially comparable programs. Code checked on the Mosh sign-up page 23 September 2026; guarantees checked on Mosh's own site 14 August 2026.",
   },
   {
     q: "Does Refer Labs earn money from this page?",
@@ -72,7 +74,7 @@ const webPageSchema = {
   url: seoConfig.hairLossTreatmentCost.url,
   inLanguage: "en-AU",
   datePublished: "2026-07-17",
-  dateModified: "2026-08-14",
+  dateModified: "2026-09-30",
   about: [
     { "@type": "Thing", name: "hair loss treatment cost Australia" },
     { "@type": "Thing", name: "Mosh hair loss cost" },
@@ -82,12 +84,13 @@ const webPageSchema = {
   isPartOf: { "@id": `${SITE_URL}/#website` },
 };
 
-// Mosh's plan tiers. We deliberately do not quote specific plan prices: they are
-// shown on Mosh's own site before you commit, and pricing can change.
-const plans: { name: string; tier: string; note: string }[] = [
-  { name: "Single-active plan", tier: "Entry", note: "One active. Positioned for early thinning or a receding hairline." },
-  { name: "Two-active plan", tier: "Most popular", note: "Two actives combined, the combination approach clinical reviews rate highest." },
-  { name: "Advanced plan", tier: "Most comprehensive", note: "Multiple actives, for more established hair loss." },
+// Mosh's own plan names and "best for" lines, read off getmosh.com.au/pricing on
+// 30 Sep 2026. Prices are deliberately not printed (Jarred, 27 Sep 2026): Mosh
+// lists them on that page, and readers see them after the click.
+const plans: { name: string; note: string }[] = [
+  { name: "Prevention Plan", note: "Mosh lists it as best for receding hairlines." },
+  { name: "Prevention & Regrowth", note: "Mosh lists it as best for thinning and receding hair." },
+  { name: "Hair Loss", note: "Mosh lists it as best for advanced hair loss." },
 ];
 
 export default function HairLossTreatmentCostAustraliaPage() {
@@ -97,6 +100,7 @@ export default function HairLossTreatmentCostAustraliaPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
+      <OfferSchema code="REFERAL55" />
 
       <main className="text-[#14120f]">
         <div className="mx-auto max-w-3xl px-6 sm:px-8">
@@ -122,21 +126,19 @@ export default function HairLossTreatmentCostAustraliaPage() {
               rebate on the product itself. Annualise both before comparing them. General information about cost, not
               medical or financial advice.
             </p>
-            <EditorialMeta lastUpdated="2026-08-14" className="mt-5" />
+            <EditorialMeta lastUpdated="2026-09-30" className="mt-5" />
           </header>
 
-          {/* Info-only note */}
-          <div className="nw-card px-5 py-4 text-sm leading-relaxed text-[#56504a]">
-            <span className="font-bold text-[#14120f]">Prices change.</span> The figures below are the providers&apos; own
-            published prices, which can change, so verify current pricing on each provider before you
-            commit. This page contains a disclosed affiliate link to Mosh.
-          </div>
+          <CodeAnswer code="REFERAL55">
+            The Mosh discount code through Refer Labs is REFERAL55, worth 55% off a new customer&apos;s first order. It
+            applies automatically through the Mosh links on this page. This page contains a disclosed affiliate link to Mosh.
+          </CodeAnswer>
 
           {/* First CTA */}
           <div className="mt-7 flex flex-col items-start gap-3 rounded-2xl border border-[#007a95]/25 bg-[#e4f2f5] px-6 py-5 sm:flex-row sm:items-center sm:justify-between">
             <p className="max-w-md text-[15px] leading-relaxed text-[#14120f]">
-              New customers get 55% off their first order through our link, with free delivery. The plan and price are
-              shown on Mosh and confirmed after a practitioner assessment.
+              See Mosh&apos;s three hair plans. Our link applies the code, delivery is free, and a practitioner
+              assessment confirms which plan applies.
             </p>
             <a
               href={MOSH_HAIR_URL}
@@ -177,11 +179,10 @@ export default function HairLossTreatmentCostAustraliaPage() {
                   price you pay.
                 </p>
                 <p className="mt-3 text-[15px] leading-relaxed text-[#14120f]">
-                  Mosh does not publish its plan prices, because the plan is assigned after the assessment and shown to
-                  you before you commit. Rather than quote a figure that would be a guess, this page explains what sits
-                  inside each route so you can compare the quote you are given. Refer Labs readers get{" "}
-                  <strong className="font-semibold text-[#14120f]">55% off a first order</strong> through our link
-                  (verified on Mosh&apos;s own page, 17 August 2026).
+                  Mosh lists its three hair plans on its own pricing page, and the assessment confirms which one applies
+                  to you before you commit. Refer Labs readers get{" "}
+                  <strong className="font-semibold text-[#14120f]">55% off a first order with the code REFERAL55</strong>{" "}
+                  through our link (verified on the Mosh sign-up page, 23 September 2026).
                 </p>
               </div>
             </section>
@@ -199,9 +200,8 @@ export default function HairLossTreatmentCostAustraliaPage() {
                 <p>
                   <span className="font-semibold text-[#14120f]">A telehealth plan.</span> Services bundle treatment,
                   practitioner oversight and delivery into a monthly subscription. This is how you access prescription
-                  treatment where a practitioner assesses it as appropriate, and how most combined plans are sold. The
-                  rest of this page uses Mosh&apos;s published prices as the worked example, because it publishes them
-                  openly.
+                  treatment where a practitioner assesses it as appropriate. The rest of this page uses Mosh&apos;s plans
+                  as the worked example.
                 </p>
               </div>
             </section>
@@ -211,16 +211,14 @@ export default function HairLossTreatmentCostAustraliaPage() {
                 Mosh hair-loss plans, by tier
               </h2>
               <p className="mt-3 text-[15px] leading-relaxed text-[#56504a]">
-                Mosh offers tiered plans, with the exact plan assigned after a practitioner assessment. You see the plan
-                and price inside Mosh&apos;s own flow before you commit, which is why we point you there rather than quote
-                a figure that can change.
+                Mosh offers three hair plans, and a practitioner assessment decides which one applies. Mosh lists each
+                plan&apos;s price on its own pricing page.
               </p>
               <div className="mt-5 overflow-x-auto rounded-xl border border-[#ded8cd]">
                 <table className="w-full min-w-[520px] text-sm">
                   <thead>
                     <tr className="bg-[#f7f4ee] text-left">
                       <th className="px-4 py-3 font-semibold text-[#14120f]">Plan</th>
-                      <th className="px-4 py-3 font-semibold text-[#14120f]">Tier</th>
                       <th className="px-4 py-3 font-semibold text-[#14120f]">Best for</th>
                     </tr>
                   </thead>
@@ -228,7 +226,6 @@ export default function HairLossTreatmentCostAustraliaPage() {
                     {plans.map((p) => (
                       <tr key={p.name}>
                         <td className="px-4 py-3 font-semibold text-[#14120f]">{p.name}</td>
-                        <td className="px-4 py-3 whitespace-nowrap font-semibold text-[#007a95]">{p.tier}</td>
                         <td className="px-4 py-3 text-[#56504a]">{p.note}</td>
                       </tr>
                     ))}
@@ -236,8 +233,8 @@ export default function HairLossTreatmentCostAustraliaPage() {
                 </table>
               </div>
               <p className="mt-3 text-xs leading-relaxed text-[#56504a]">
-                Plans include free, discreet delivery, and Mosh advertises a money-back guarantee. New customers get 55%
-                off their first order through our link. You see the current plan and price on Mosh before you commit.
+                Plans include free, discreet delivery, and Mosh advertises a 180-day money-back guarantee. Plan names and
+                descriptions read off Mosh&apos;s pricing page, 30 September 2026.
               </p>
             </section>
 
@@ -262,10 +259,9 @@ export default function HairLossTreatmentCostAustraliaPage() {
               </h2>
               <div className="mt-4 space-y-4 text-[15px] leading-relaxed text-[#56504a]">
                 <p>
-                  The trap is comparing a single-active plan against a multi-active one on price alone. A cheaper plan
-                  that includes one active is not cheaper than a dearer plan that includes two, if the two-active
-                  plan is what a practitioner assigns you. Compare on what is included, not just the headline monthly
-                  figure, and remember any introductory discount applies to the first order rather than the ongoing price.
+                  Compare plans at the same stage: a plan for a receding hairline and a plan for advanced hair loss are
+                  priced differently, and the practitioner decides which applies. Remember that a first-order discount
+                  such as REFERAL55 comes off the first order, not every month after it.
                 </p>
                 <p>
                   For the routes themselves, our{" "}
@@ -282,7 +278,7 @@ export default function HairLossTreatmentCostAustraliaPage() {
               <p className="mt-2 text-[15px] leading-relaxed text-[#56504a]">
                 The exact plan and price are confirmed after a practitioner assessment. Mosh runs a men&apos;s hair-loss
                 assessment online, reviewed by registered Australian practitioners, with free delivery and 55% off your
-                first order through our link.
+                first order with the code REFERAL55 through our link.
               </p>
               <a
                 href={MOSH_HAIR_URL}
@@ -328,8 +324,8 @@ export default function HairLossTreatmentCostAustraliaPage() {
               <p className="text-xs leading-relaxed text-[#56504a]">
                 This page is published by Refer Labs, an independent comparison publisher, and contains a disclosed
                 affiliate link to Mosh, which means we may earn a commission if you sign up through our link. Commissions
-                never change what we write. Prices shown are the providers&apos; own published figures and can change, so
-                verify current pricing before you commit. Content is general information, not medical or financial advice.
+                never change what we write. This page prints no plan prices; Mosh lists its own, which can change, so
+                verify current pricing on the provider&apos;s own site before you commit. Content is general information, not medical or financial advice.
               </p>
             </section>
           </article>

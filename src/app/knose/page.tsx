@@ -22,8 +22,8 @@ const faqs = [
     a: "No. Refer Labs is not an insurer, broker or financial adviser. We provide general information and refer you to Knose. This page is not a recommendation or personal financial advice, and whether a Knose policy suits you depends on your own circumstances.",
   },
   {
-    q: "What is the Knose offer?",
-    a: "New customers get 2 months free when they take out a policy using the code referlab2mf through our link. The offer is provided by Knose and subject to their terms; confirm the current offer and terms during the quote.",
+    q: "What is the Knose promo code?",
+    a: "The Knose promo code through Refer Labs is referlab2mf: new customers get 2 months free when they take out a policy using it through our link. The offer is provided by Knose and subject to their terms; confirm the current offer and terms during the quote.",
   },
   {
     q: "How does Refer Labs make money from this?",

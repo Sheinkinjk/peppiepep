@@ -32,7 +32,7 @@ export default function OffersTable({
         <thead className="hidden sm:table-header-group">
           <tr className="bg-[#f7f4ee] text-[11px] font-bold uppercase tracking-[0.08em] text-[#56504a]">
             <th scope="col" className="px-4 py-3">Provider</th>
-            <th scope="col" className="px-4 py-3">Best offer</th>
+            <th scope="col" className="px-4 py-3">Offer</th>
             <th scope="col" className="px-4 py-3">Saving</th>
             <th scope="col" className="px-4 py-3">Code</th>
             <th scope="col" className="px-4 py-3">Status</th>

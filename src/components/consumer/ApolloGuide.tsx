@@ -1,4 +1,5 @@
 import Link from "next/link";
+import BatteryDeadlineNote from "@/components/consumer/BatteryDeadlineNote";
 import { SectionMark } from "@/components/brand/SectionMark";
 import { ArrowRight, BadgeCheck, ShieldCheck, Wrench } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
@@ -125,6 +126,7 @@ export default function ApolloGuide({ cfg }: { cfg: ApolloGuideConfig }) {
             heading="Want it sized and quoted properly?"
             body="Apollo Energy Group is an SAA-accredited Australian installer (Electrical Licence 400672, 10-year battery warranty). Refer Labs readers get $500 off their quote, on top of the federal rebate."
           />
+          <BatteryDeadlineNote className="mt-3" />
         </div>
 
         <article className="mt-10 space-y-9">

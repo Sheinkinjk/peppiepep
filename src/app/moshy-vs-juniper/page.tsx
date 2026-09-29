@@ -1,24 +1,93 @@
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, comparisonArticleSchema } from "@/lib/seo";
-import { SectionMark } from "@/components/brand/SectionMark";
-import EarningsBalanceNote from "@/components/consumer/EarningsBalanceNote";
-import { MOSHY_URL } from "@/lib/affiliate-links";
-import { CheckCircle2, ArrowRight } from "lucide-react";
+import { MOSHY_URL, JUNIPER_URL } from "@/lib/affiliate-links";
+import { requiredDisclosureFor } from "@/lib/partner-disclosures";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import EditorialMeta from "@/components/consumer/EditorialMeta";
 import FactHistory from "@/components/facts/FactHistory";
 import CodeAnswer from "@/components/offers/CodeAnswer";
 import OfferSchema from "@/components/offers/OfferSchema";
-
 import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
+import ProviderPair, { type PairProvider } from "@/components/consumer/ProviderPair";
+
 export const metadata = generateSEOMetadata(seoConfig.moshyVsJuniper);
 
-const CYAN = "#007a95";
-const CYAN_LT = "#007a95";
+// Rebuilt 30 Sep 2026: both providers get the same card, the same direct button
+// and the same number of lines, in the hero and again at the close. The old page
+// sent Moshy straight out and Juniper through /juniper, and described Moshy as
+// "gender-neutral", which Moshy's own site does not say (its home page title reads
+// "... for Women"). The difference drawn here is the support model, which both
+// providers' own pages state.
 
-const aff = (url: string) => ({ href: url, target: "_blank" as const, rel: "nofollow sponsored" as const });
+const JUNIPER_REQUIRED = requiredDisclosureFor(JUNIPER_URL);
 
-// ── JSON-LD ──────────────────────────────────────────────────────────────────
+const providers: PairProvider[] = [
+  {
+    name: "Moshy",
+    logo: "/logos/moshy.png",
+    bestIf: "Best if you want a focused clinical pathway and a fast start.",
+    points: [
+      "Free online eligibility check, then a practitioner review",
+      "Subscription with delivery if a plan is appropriate",
+      "Mosh's sister brand, also covering hair regrowth and skin care",
+    ],
+    offer: { text: "$120 off your first order", code: "REFERRAL120" },
+    href: MOSHY_URL,
+    cta: "Continue to Moshy",
+    loc: "mvj-hero-moshy",
+  },
+  {
+    name: "Juniper",
+    logo: "/logos/juniper.png",
+    logoAspect: 16 / 9,
+    bestIf: "Best if you want coaching and a community around your care.",
+    points: [
+      "Practitioner-led care with structured health coaching",
+      "Designed and marketed for women",
+      "Subscription program with its own app",
+    ],
+    offer: { text: "Initial consultation waived, valued at $89,", code: "JARREDKFC" },
+    href: JUNIPER_URL,
+    cta: "Continue to Juniper",
+    loc: "mvj-hero-juniper",
+  },
+];
+
+const closing = providers.map((p) => ({ ...p, loc: p.loc.replace("hero", "close") }));
+
+const rows: { label: string; moshy: string; juniper: string }[] = [
+  { label: "Care model", moshy: "Clinical pathway: eligibility check, practitioner review, delivery", juniper: "Clinical care plus structured coaching and community" },
+  { label: "Built for", moshy: "Anyone who passes the eligibility check", juniper: "Women" },
+  { label: "How you start", moshy: "Free online eligibility check", juniper: "Online assessment, then an initial consultation" },
+  { label: "Pricing", moshy: "Subscription, shown in the eligibility flow before you pay", juniper: "Subscription, shown in the sign-up flow before you pay" },
+  { label: "Refer Labs code", moshy: "REFERRAL120: $120 off the first order", juniper: "JARREDKFC: initial consultation waived, valued at $89" },
+];
+
+const faqs = [
+  {
+    q: "Is Moshy or Juniper better for weight loss?",
+    a: "Neither is better for everyone. Both are Australian telehealth services where a registered practitioner decides whether treatment is appropriate. Moshy keeps to a lean clinical pathway; Juniper adds structured coaching and a community, and is designed for women. Pick on the kind of support you want.",
+  },
+  {
+    q: "What are the Moshy and Juniper discount codes?",
+    a: "Through Refer Labs, Moshy's code is REFERRAL120, which takes $120 off a new customer's first order. Juniper's is JARREDKFC, which waives the initial consultation, valued by Juniper at $89; it does not take money off the program itself. Each applies automatically through the links on this page.",
+  },
+  {
+    q: "How much do Moshy and Juniper cost?",
+    a: "Both run as subscriptions, and each shows its current price in its own sign-up flow before you pay. The plan a practitioner recommends sets what you pay, so compare the figure you are shown rather than a headline number.",
+  },
+  {
+    q: "Can I switch from one to the other?",
+    a: "Yes. You would start with the other provider as a new patient. Tell the new practitioner about any plan you are currently on so they can assess you properly.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+};
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -29,54 +98,15 @@ const breadcrumbSchema = {
   ],
 };
 
-const faqs = [
-  {
-    q: "Is Moshy or Juniper better for weight loss?",
-    a: "They take different approaches. Moshy runs a lean, clinically-led telehealth pathway open to anyone eligible; Juniper pairs practitioner-led care with a structured coaching and habit program and is designed and marketed primarily for women. The right choice depends on how much coaching support you want alongside the clinical side. Both assess suitability individually through registered Australian practitioners.",
-  },
-  {
-    q: "How do I choose between Moshy and Juniper?",
-    a: "Think about the kind of support you want. Moshy keeps the experience focused on the clinical pathway: eligibility check, practitioner review, and delivery if appropriate. Juniper wraps that clinical care inside a broader coaching and community program, which it designs and markets for women. If neither fits your situation, a GP is always a valid starting point.",
-  },
-  {
-    q: "Is Moshy or Juniper better for women?",
-    a: "Juniper is designed and marketed specifically for women, with coaching, an app and a 20,000-member community built around what women experience with weight, plus an $89 initial consultation waived for new patients with the code JARREDKFC. Moshy is open to anyone eligible and keeps the pathway lean. Either way, suitability is decided individually by a registered Australian practitioner. This page is general information, not medical advice.",
-  },
-  {
-    q: "How much do Moshy and Juniper cost?",
-    a: "Both run subscription models, and the cost depends on the plan determined during the clinical consultation rather than a single fixed price. Each platform shows current pricing during its eligibility flow before any commitment, so you see the exact figure for your plan before signing up.",
-  },
-];
-
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
-};
-
-// The two providers this page compares, so the head-to-head is machine-readable.
 const itemListSchema = {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  name: "Moshy vs Juniper: Weight Loss Telehealth Compared 2026",
-  description:
-    "Moshy and Juniper compared on approach, eligibility, care model, pricing and who each suits. Moshy runs a lean clinical pathway open to anyone eligible; Juniper pairs practitioner-led care with structured coaching and markets primarily to women.",
+  name: "Moshy vs Juniper: weight-loss telehealth compared",
+  description: "Moshy and Juniper compared on care model, who each is built for, how you start and the Refer Labs code for each.",
   numberOfItems: 2,
   itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Moshy",
-      description: "Australian clinically-led telehealth weight management, open to anyone eligible. Online eligibility questionnaire, practitioner review, subscription with home delivery.",
-      url: `${SITE_URL}/moshy`,
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Juniper",
-      description: "Australian weight management program marketed primarily to women. Pairs practitioner-led care with structured health coaching and community support.",
-      url: `${SITE_URL}/juniper`,
-    },
+    { "@type": "ListItem", position: 1, name: "Moshy", url: `${SITE_URL}/moshy` },
+    { "@type": "ListItem", position: 2, name: "Juniper", url: `${SITE_URL}/juniper` },
   ],
 };
 
@@ -88,25 +118,16 @@ const webPageSchema = {
   url: seoConfig.moshyVsJuniper.url,
   inLanguage: "en-AU",
   datePublished: "2026-07-05",
-  dateModified: "2026-08-13",
+  dateModified: "2026-09-30",
   isPartOf: { "@id": `${SITE_URL}/#website` },
 };
 
-const rows: { label: string; moshy: string; juniper: string }[] = [
-  { label: "Approach", moshy: "Clinical pathway, open to anyone eligible", juniper: "Coaching-led, marketed for women" },
-  { label: "Model", moshy: "Clinical, practitioner-led pathway", juniper: "Practitioner-led care + structured coaching & community" },
-  { label: "Process", moshy: "Online eligibility → practitioner review → delivery", juniper: "Online eligibility → practitioner review → program + delivery" },
-  { label: "Pricing", moshy: "Subscription, shown in eligibility flow", juniper: "Subscription, shown in eligibility flow" },
-  { label: "New-patient offer", moshy: "REFERRAL120, $120 off the first order", juniper: "JARREDKFC, initial consultation waived, valued at $89" },
-  { label: "Best if you want", moshy: "A focused, no-friction clinical pathway", juniper: "Coaching and accountability alongside clinical care" },
-];
-
 const articleSchema = comparisonArticleSchema({
   headline: "Moshy vs Juniper: Refer Labs' Australian weight-loss telehealth comparison",
-  description: "Refer Labs compares Moshy and Juniper on approach, process and published pricing for Australian weight-loss telehealth.",
+  description: "Refer Labs compares Moshy and Juniper on care model, who each is built for, and the Refer Labs code for each.",
   url: "https://referlabs.com.au/moshy-vs-juniper",
   datePublished: "2026-07-05",
-  dateModified: "2026-08-13",
+  dateModified: "2026-09-30",
 });
 
 export default function MoshyVsJuniperPage() {
@@ -117,180 +138,137 @@ export default function MoshyVsJuniperPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
+      <OfferSchema code="REFERRAL120" />
+      <OfferSchema code="JARREDKFC" />
 
-      <main id="main-content" className="relative mx-auto max-w-3xl px-5 sm:px-8 lg:px-12 pb-24 pt-12 sm:pt-16">
-        {/* Breadcrumb */}
-        <nav className="mb-8 flex flex-wrap items-center gap-2 text-sm text-[#56504a]">
-          <Link href="/" className="hover:text-[#14120f] transition-colors">Refer Labs</Link>
-          <span>/</span>
-          <Link href="/weight-loss" className="hover:text-[#14120f] transition-colors">Weight loss</Link>
-          <span>/</span>
+      <main id="main-content" className="mx-auto max-w-4xl px-5 pb-24 pt-8 sm:px-8">
+        <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2 text-sm text-[#56504a]">
+          <Link href="/" className="transition-colors hover:text-[#14120f]">Refer Labs</Link>
+          <span aria-hidden>/</span>
+          <Link href="/weight-loss" className="transition-colors hover:text-[#14120f]">Weight loss</Link>
+          <span aria-hidden>/</span>
           <span className="text-[#14120f]">Moshy vs Juniper</span>
-        <SectionMark kind="scale" size={56} /></nav>
+        </nav>
 
-        {/* Hero */}
-        <p className="text-[#56504a] text-xs mb-5">Australia · Weight-loss telehealth</p>
-        <h1 className="text-3xl sm:text-4xl lg:text-[2.7rem] font-black leading-[1.08] tracking-tight mb-4">
-          Moshy vs Juniper:{" "}
-          <span>which one is built for you?</span>
+        <p className="nw-kicker mt-8">Weight-loss telehealth · Australia</p>
+        <h1 className="mt-3 max-w-3xl text-3xl font-extrabold leading-[1.08] tracking-[-0.02em] text-[#14120f] sm:text-4xl lg:text-[2.7rem]">
+          Moshy vs Juniper: which one is built for you?
         </h1>
-        <p className="text-[#56504a] text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
-          Australia&apos;s two most-compared weight-management telehealth platforms answer the same problem in different
-          ways. <strong className="text-[#14120f]">Moshy runs a lean clinical pathway, Juniper wraps clinical care in a
-          coaching program</strong>. Moshy is gender-neutral and carries REFERRAL120, $120 off a first order; Juniper
-          markets primarily to women and carries JARREDKFC, which waives its initial consultation, valued at $89.
-        </p>
-        {/* Below the lead. The first paragraph after the h1 is the answer;
-            a disclosure in that slot is what an engine lifts instead. Still
-            above the first affiliate link, which is what it is for. */}
-        <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
-        <CodeAnswer code="REFERRAL120" className="mt-6">
-          Refer Labs holds a code for both. Moshy&apos;s is REFERRAL120, $120 off a new customer&apos;s first order, one use per customer. Juniper&apos;s is JARREDKFC, which waives the initial consultation Juniper values at $89, so you pay nothing to be assessed. Juniper&apos;s takes nothing off the program itself; Moshy&apos;s comes off the order.
-        </CodeAnswer>
-        <OfferSchema code="REFERRAL120" />
-
-        {/* Answer-first: the buyer's question verbatim as an H2, then a liftable answer. */}
-        <h2 className="text-xl sm:text-2xl font-black text-[#14120f] mb-3">Is Moshy or Juniper better for weight loss in Australia?</h2>
-        <div className="rounded-xl border px-6 py-5 mb-10" style={{ borderColor: `${CYAN}40`, background: `${CYAN}0A` }}>
-          <p className="text-[11px] font-bold uppercase tracking-[0.18em] mb-2" style={{ color: CYAN_LT }}>Quick Verdict</p>
-          <p className="text-[#14120f] text-sm sm:text-base leading-relaxed">
-            Refer Labs compared Moshy and Juniper in August 2026, and the difference is the style of support. If you
-            want a focused, clinically-led pathway with a fast online eligibility check, Moshy is a natural starting
-            point and is open to anyone eligible. If you want coaching and accountability wrapped around your care,
-            Juniper is built for that, is designed for women, and waives the $89 initial consultation for new patients through JARREDKFC. Both
-            assess suitability individually through registered Australian practitioners.
-          </p>
-        </div>
-
-        <EditorialMeta lastUpdated="2026-08-13" className="mb-6" />
-        <p className="mb-8 rounded-lg border border-[#ded8cd] bg-[#f7f4ee] px-4 py-3 text-xs leading-relaxed text-[#56504a]">
-          <span className="font-semibold text-[#14120f]">Information only.</span> This page compares two telehealth services and is not medical advice. It does not recommend any treatment or imply suitability for any individual. Suitability for any program is decided by a registered Australian practitioner.
+        <p className="mt-5 max-w-2xl text-base leading-relaxed text-[#56504a] sm:text-lg">
+          Moshy and Juniper are both Australian weight-management telehealth services where a registered practitioner
+          decides whether treatment is appropriate. The difference is the support around that decision: Moshy keeps to a
+          lean clinical pathway, and Juniper adds structured coaching and a community, designed for women. Moshy&apos;s
+          code REFERRAL120 takes $120 off a first order; Juniper&apos;s JARREDKFC waives the initial consultation, which
+          Juniper values at $89.
         </p>
 
-        {/* Comparison table */}
-        <h2 className="text-xl font-black mb-4">Moshy vs Juniper at a glance</h2>
-        <div className="overflow-x-auto rounded-xl border border-[#ded8cd] mb-10">
-          <table className="w-full min-w-[560px] text-sm">
-            <thead>
-              <tr className="bg-[#f7f4ee]">
-                <th className="text-left font-semibold text-[#56504a] px-4 py-3 w-1/4"></th>
-                <th className="text-left font-black text-[#14120f] px-4 py-3">Moshy</th>
-                <th className="text-left font-black text-[#14120f] px-4 py-3">Juniper</th>
-              </tr>
-            </thead>
-            <tbody>
-              {rows.map((r) => (
-                <tr key={r.label} className="border-t border-[#ded8cd] align-top">
-                  <td className="px-4 py-3 text-[#56504a] font-medium">{r.label}</td>
-                  <td className="px-4 py-3 text-[#14120f]">{r.moshy}</td>
-                  <td className="px-4 py-3 text-[#14120f]">{r.juniper}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <div className="mt-6 max-w-2xl space-y-2">
+          <AffiliateDisclosure compact partners={["Moshy", "Juniper"]} />
+          {JUNIPER_REQUIRED ? <p className="text-[13px] leading-relaxed text-[#56504a]">{JUNIPER_REQUIRED.text}</p> : null}
         </div>
 
-        {/* Dual CTA */}
-        <div className="grid sm:grid-cols-2 gap-4 mb-12">
-          <div className="rounded-xl border border-[#ded8cd] bg-[#f7f4ee] p-6">
-            <p className="text-[11px] font-bold uppercase tracking-[0.18em] mb-2" style={{ color: CYAN_LT }}>The clinical pathway</p>
-            <h3 className="text-lg font-bold mb-2">Start with Moshy</h3>
-            <p className="text-[#56504a] text-sm leading-relaxed mb-4">
-              Fast online eligibility check, practitioner-reviewed, delivered. The discount code is REFERRAL120, applied automatically through this link so there is nothing to type.
-            </p>
-            <a
-              {...aff(MOSHY_URL)}
-              className="inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-bold text-white transition-all hover:-translate-y-0.5 shadow-md"
-              style={{ background: CYAN, boxShadow: `0 8px 24px ${CYAN}25` }}
-            >
-              Continue to Moshy ($120 off first order)
-              <ArrowRight className="h-4 w-4" />
-            </a>
-            <p className="mt-3">
-              <Link href="/moshy-review" className="text-xs text-[#56504a] underline decoration-[#ded8cd] underline-offset-2 hover:text-[#14120f]">
-                Read our full Moshy review →
-              </Link>
-            </p>
-            <EarningsBalanceNote earnFromAll={["Moshy", "Juniper"]} className="mt-4" />
-          </div>
-          <div className="rounded-xl border border-[#ded8cd] bg-[#f7f4ee] p-6">
-            <p className="text-[11px] font-bold uppercase tracking-[0.18em] mb-2 text-[#56504a]">Designed for women</p>
-            <h3 className="text-lg font-bold mb-2">Consider Juniper</h3>
-            <p className="text-[#56504a] text-sm leading-relaxed mb-4">
-              A structured coaching and community program designed for women, with the initial consultation waived.
-            </p>
-            <Link
-              href="/juniper"
-              className="inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-bold text-white transition-all hover:-translate-y-0.5 shadow-md"
-              style={{ background: CYAN, boxShadow: `0 8px 24px ${CYAN}25` }}
-            >
-              See Juniper: $89 consult waived with JARREDKFC
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-            <p className="mt-3">
-              <Link href="/weight-loss-telehealth-women-australia" className="text-xs text-[#56504a] underline decoration-[#ded8cd] underline-offset-2 hover:text-[#14120f]">
-                Weight-loss telehealth for women &rarr;
-              </Link>
-            </p>
-          </div>
-        </div>
+        <ProviderPair providers={providers} className="mt-8" />
 
-        {/* Prose */}
-        <section className="space-y-4 mb-10">
-          <h2 className="text-xl font-black">The real difference</h2>
-          <p className="text-[#56504a] text-sm sm:text-base leading-relaxed">
-            The most useful distinction is philosophy. Moshy keeps the experience deliberately lean: complete the
-            eligibility questionnaire, have a practitioner review your case, and if appropriate, proceed with a treatment
-            plan delivered to your door. For a lot of people who simply want to get started without friction, that focus
-            is the appeal.
+        <section className="mt-14 max-w-3xl">
+          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">
+            Is Moshy or Juniper better for weight loss in Australia?
+          </h2>
+          <p className="mt-4 text-[15.5px] leading-relaxed text-[#56504a]">
+            It depends on what you want alongside the clinical side. If you want to get assessed quickly and keep things
+            simple, Moshy is built for that. If accountability and coaching are what keep you going, Juniper builds its
+            program around them. Both assess suitability individually, both run as subscriptions, and both show the price
+            before you pay.
           </p>
-          <p className="text-[#56504a] text-sm sm:text-base leading-relaxed">
-            Juniper wraps that clinical care inside a broader program: coaching, habit tracking, and a community, and
-            positions weight management as a longer behavioural project rather than a one-off. If accountability
-            and structure are what tend to make or break your results, that is a meaningful advantage.
-          </p>
-          <p className="text-[#56504a] text-sm sm:text-base leading-relaxed">
-            Outcomes from weight-management programs depend on clinical
-            suitability, adherence, and individual factors far more than on which logo is on the box.
-          </p>
+          <CodeAnswer code="REFERRAL120" className="mt-5">
+            Refer Labs holds a code for both. Moshy&apos;s is REFERRAL120, $120 off a new customer&apos;s first order, one
+            use per customer. Juniper&apos;s is JARREDKFC, which waives the initial consultation Juniper values at $89, so
+            you pay nothing to be assessed; it takes nothing off the program itself.
+          </CodeAnswer>
         </section>
 
-        {/* FAQ */}
-        <section>
-          <h2 className="text-xl font-black mb-5">Moshy vs Juniper, FAQ</h2>
-          <div className="space-y-3">
+        <section className="mt-14">
+          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">Moshy vs Juniper at a glance</h2>
+          <div className="mt-5 overflow-x-auto rounded-xl border border-[#ded8cd] bg-white">
+            <table className="w-full min-w-[560px] text-left text-sm leading-relaxed">
+              <thead>
+                <tr className="bg-[#f7f4ee]">
+                  <th scope="col" className="w-40 px-4 py-3 font-semibold text-[#56504a]"><span className="sr-only">Feature</span></th>
+                  <th scope="col" className="px-4 py-3 font-black text-[#14120f]">Moshy</th>
+                  <th scope="col" className="px-4 py-3 font-black text-[#14120f]">Juniper</th>
+                </tr>
+              </thead>
+              <tbody>
+                {rows.map((r) => (
+                  <tr key={r.label} className="border-t border-[#ded8cd] align-top">
+                    <th scope="row" className="px-4 py-3 font-medium text-[#56504a]">{r.label}</th>
+                    <td className="px-4 py-3 text-[#14120f]">{r.moshy}</td>
+                    <td className="px-4 py-3 text-[#14120f]">{r.juniper}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section className="mt-14 grid gap-4 sm:grid-cols-2">
+          <div className="rounded-2xl border border-[#ded8cd] bg-[#f7f4ee] p-6">
+            <h2 className="text-lg font-bold text-[#14120f]">Choose Moshy if</h2>
+            <ul className="mt-3 space-y-2 text-[15px] leading-relaxed text-[#56504a]">
+              <li>You want an eligibility answer quickly, without a longer program attached.</li>
+              <li>You would rather manage food and exercise yourself.</li>
+              <li>You may want hair or skin care from the same brand later.</li>
+            </ul>
+          </div>
+          <div className="rounded-2xl border border-[#ded8cd] bg-[#f7f4ee] p-6">
+            <h2 className="text-lg font-bold text-[#14120f]">Choose Juniper if</h2>
+            <ul className="mt-3 space-y-2 text-[15px] leading-relaxed text-[#56504a]">
+              <li>You want regular coaching and someone checking in on your habits.</li>
+              <li>A community of people on the same program would help you stick with it.</li>
+              <li>You want a program designed around women&apos;s experience of weight.</li>
+            </ul>
+          </div>
+        </section>
+
+        <p className="mt-8 max-w-3xl rounded-xl border border-[#ded8cd] bg-white px-5 py-4 text-[13px] leading-relaxed text-[#56504a]">
+          Information only, not medical advice. Neither service is suitable for everyone, and a registered Australian
+          practitioner decides whether any treatment is appropriate for you.
+        </p>
+
+        <section className="mt-14 max-w-3xl">
+          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">Moshy vs Juniper: common questions</h2>
+          <div className="mt-5 divide-y divide-[#ded8cd] border-y border-[#ded8cd]">
             {faqs.map((f) => (
-              <details key={f.q} className="group rounded-xl border border-[#ded8cd] bg-[#f7f4ee] px-5 py-4">
-                <summary className="cursor-pointer list-none font-semibold text-[#14120f] text-sm sm:text-base flex items-center justify-between gap-4">
+              <details key={f.q} className="group py-4">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-[#14120f]">
                   {f.q}
-                  <span className="text-[#56504a] group-open:rotate-45 transition-transform text-lg leading-none">+</span>
+                  <span aria-hidden className="text-xl leading-none text-[#007a95] transition-transform group-open:rotate-45">+</span>
                 </summary>
-                <p className="text-[#56504a] text-sm leading-relaxed mt-3">{f.a}</p>
+                <p className="mt-3 text-[15px] leading-relaxed text-[#56504a]">{f.a}</p>
               </details>
             ))}
           </div>
         </section>
 
-        {/* Related */}
-        <div className="border-t border-[#ded8cd] mt-12 pt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm">
-          <Link href="/best-weight-loss-telehealth-australia" style={{ color: CYAN }} className="hover:opacity-80">
-            Best Weight Loss Telehealth Australia →
-          </Link>
-          <Link href="/moshy" style={{ color: CYAN }} className="hover:opacity-80">Moshy</Link>
-          <Link href="/juniper" style={{ color: CYAN }} className="hover:opacity-80">Juniper review →</Link>
-          <Link href="/guides" style={{ color: CYAN }} className="hover:opacity-80">All guides →</Link>
-        </div>
+        <section className="mt-14">
+          <h2 className="text-xl font-bold text-[#14120f]">Ready to start?</h2>
+          <p className="mt-2 max-w-2xl text-[15px] leading-relaxed text-[#56504a]">
+            Both links apply the Refer Labs code automatically.
+          </p>
+          <ProviderPair providers={closing} className="mt-5" />
+        </section>
 
-        {/* Renders nothing until this subject has a third observation. The slot
-            exists so the series appears here the moment the next re-check lands. */}
+        <nav aria-label="Related" className="mt-12 flex flex-wrap gap-x-6 gap-y-2 border-t border-[#ded8cd] pt-8 text-sm">
+          <Link href="/moshy-review" className="nw-link">Moshy review</Link>
+          <Link href="/juniper" className="nw-link">Juniper review</Link>
+          <Link href="/best-weight-loss-telehealth-australia" className="nw-link">Best weight-loss telehealth</Link>
+          <Link href="/cheapest-weight-loss-telehealth-australia" className="nw-link">Cheapest weight-loss telehealth</Link>
+          <Link href="/guides" className="nw-link">All guides</Link>
+        </nav>
+
         <FactHistory subject="Moshy" kind="offer_observation" hub="weight-loss" route="/moshy-vs-juniper" />
 
-        <AffiliateDisclosure partners={["Moshy", "Juniper"]} className="mt-8" />
-        <p className="text-[#56504a] text-xs mt-3 leading-relaxed">
-          This page does not constitute medical advice. Treatment
-          suitability is decided by a registered Australian practitioner. Consult a qualified health professional
-          before making health decisions.
-        </p>
+        <EditorialMeta lastUpdated="2026-09-30" className="mt-8" />
+        <AffiliateDisclosure partners={["Moshy", "Juniper"]} earnsFromAll className="mt-6" />
       </main>
     </ConsumerShell>
   );

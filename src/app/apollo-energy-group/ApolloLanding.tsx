@@ -1,4 +1,5 @@
 import Link from "next/link";
+import BatteryDeadlineNote from "@/components/consumer/BatteryDeadlineNote";
 import { HubObject } from "@/components/home/Objects";
 import { APOLLO_ENERGY_LEAD_HREF, glance, steps, faqs } from "./config";
 import { ArrowRight, Check, ShieldCheck, BatteryCharging, BadgeCheck, Wrench } from "lucide-react";
@@ -79,6 +80,7 @@ export default function ApolloLanding() {
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <a href="#register" className="nw-btn">Register your interest <ArrowRight className="h-4 w-4" /></a>
             </div>
+            <BatteryDeadlineNote className="mt-4 max-w-md" />
             <p className="mt-4 text-xs text-[#56504a]">
               $500 off is applied to your quote through this enquiry. No code needed.
             </p>

@@ -163,8 +163,9 @@ export default function WeightLossEligibilityPage() {
           <div className="rounded-xl border px-6 py-5 mt-6" style={{ borderColor: `${CYAN}40`, background: `${CYAN}0A` }}>
             <p className="text-[#14120f] text-sm sm:text-base leading-relaxed mb-4">
               The quickest way to find out where you stand is a free online eligibility check reviewed by a registered
-              Australian practitioner. It takes a few minutes and commits you to nothing. Moshy is one gender-neutral
-              Australian service that runs this check, and new customers get $120 off their first order through our link.
+              Australian practitioner. It takes a few minutes and commits you to nothing. Moshy is one
+              Australian service that runs this check, and new customers get $120 off their first order with the code
+              REFERRAL120, applied through our link.
             </p>
             <Cta label="Check your eligibility with Moshy" loc="mid-cta" />
           </div>

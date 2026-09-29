@@ -41,8 +41,6 @@ export const moshHairConfig: AffiliatePageConfig = {
     "Subscription with home delivery",
     "Code REFERAL55, applied automatically via the link",
   ],
-  pullQuote:
-    "Hair-loss treatment works best early and consistently, the real value of telehealth is removing the friction that delays men for years.",
   verdict:
     "For Australian men who want a credible, low-friction route to a clinically-supervised hair-loss service, Mosh is a legitimate starting point. The online consult is fast, any treatment is decided only after a genuine practitioner review, and pricing is clear before you commit. As with any subscription health service, results and value come down to consistency and your individual case.",
   verdictPoints: [
@@ -83,8 +81,6 @@ export const moshHairConfig: AffiliatePageConfig = {
       heading: "What is the current Mosh discount code?",
       paragraphs: [
         "REFERAL55, worth 55% off a first order. It applies to that first order rather than to later renewals, and Mosh runs as a subscription from there. Every button on this page carries it into Mosh's sign-up page, so there is nothing to enter.",
-        "This page is built for Australians searching for a Mosh hair discount code, Mosh promo code, or the current Mosh sale. Rather than searching for a code that may have expired, our referral link gives you direct access to the Mosh sign-up page with our partner link applied automatically.",
-        "Click any button on this page to be taken directly to the Mosh hair treatment platform. No code needs to be entered manually and no information is required on this page before you arrive.",
       ],
       hasCta: true,
       ctaText: "Access the Mosh Referral Link",
@@ -112,24 +108,22 @@ export const moshHairConfig: AffiliatePageConfig = {
     {
       heading: "What Mosh costs",
       paragraphs: [
-        "There's no single Mosh price, and any page quoting you one exact figure is guessing. It's a subscription, and what you pay tracks the plan your consult lands on. The fee bundles any treatment, the practitioner oversight, and delivery.",
-        "It's priced like an ongoing service rather than a one-off purchase, because that's what managing hair loss usually is: consistency matters. You'll see the actual numbers in the consult before you commit to anything, so you know exactly what you'd pay month to month before signing up.",
+        "Mosh runs as a subscription, and what you pay tracks the plan your consult lands on. Mosh lists its plans on its own pricing page. The fee bundles any treatment, the practitioner oversight, and delivery.",
+        "It's priced as an ongoing service. The consult confirms the plan and the monthly amount before you commit to anything.",
       ],
     },
     {
       heading: "Mosh vs a GP vs topical brands",
       paragraphs: [
-        "Against a topical-only brand like Dense Hair Experts, the difference is category, not quality: Dense is non-prescription scalp and density care, while Mosh is a clinical service where a practitioner assesses whether prescription treatment is appropriate. Early or mild thinning can do well on topicals; active, progressing loss usually calls for a clinical assessment.",
-        "Against your own GP, Mosh trades continuity for speed. A GP knows your history and may be cheaper; Mosh is faster, fully online, and removes the awkwardness that keeps a lot of men from ever booking the appointment, which, given hair loss rewards starting early, is the real argument for it.",
+        "Dense Hair Experts sells non-prescription scalp and density care. Mosh is a clinical service where a practitioner assesses whether prescription treatment is appropriate. If your hair loss is progressing, a clinical assessment is the place to start.",
+        "Against your own GP, Mosh trades continuity for speed. A GP knows your history and may be cheaper; Mosh is faster, fully online, and you don't have to book an appointment in person.",
         "For the full landscape, clinical telehealth versus topical products, side by side with pricing, see our Best Hair Loss Treatment Australia comparison linked below.",
       ],
     },
     {
       heading: "Mosh Codes & Offers",
       paragraphs: [
-        'Searches for "Mosh hair discount code", "Mosh promo code", "Mosh coupon", and "Mosh sale" reflect how many Australians look for a code before committing to a subscription.',
-        "The offer on this page is 55% off your first order, applied through the code REFERAL55, confirmed on the Mosh sign-up page it links to on 23 September 2026. You don't need to hunt for a code or type anything at checkout: start through the link on this page and the offer is carried into the Mosh sign-up page automatically. Mosh also runs its own promotions, which change independently of this one, and lists them on its promotions terms page at getmosh.com.au. Compare the two before you start, and treat 55% as the current rate on this page rather than a permanent price.",
-        "If you have been searching for a Mosh hair discount, a Mosh discount Australia, or the best way to get started with Mosh, clicking through this page is the straightforward path.",
+        "The offer on this page is 55% off your first order, applied through the code REFERAL55, confirmed on the Mosh sign-up page it links to on 23 September 2026. Start through the link on this page and the code is carried into the Mosh sign-up page automatically. Offers can change, so treat 55% as the current rate rather than a permanent price.",
       ],
     },
   ],
@@ -168,7 +162,7 @@ export const moshHairConfig: AffiliatePageConfig = {
   faqs: [
     {
       q: "What is the current Mosh hair discount code?",
-      a: "The offer on this page is 55% off your first order, applied through the code REFERAL55, confirmed on the Mosh sign-up page it links to on 23 September 2026. You don't need to enter it: every button on this page carries it into the Mosh sign-up page at getmosh.com.au automatically. Mosh runs its own promotions as well, on its own schedule, and publishes them on its promotions terms page. Worth comparing the two before you start, because whichever is larger is the one to use. Offers can change, so this reflects the rate on this page rather than a permanent price.",
+      a: "The Mosh discount code on this page is REFERAL55, worth 55% off your first order, confirmed on the Mosh sign-up page it links to on 23 September 2026. You don't need to enter it: every button on this page carries it into the Mosh sign-up page at getmosh.com.au automatically. Offers can change, so this reflects the rate on this page rather than a permanent price.",
     },
     {
       q: "Is the Mosh discount only for your first order?",
@@ -192,7 +186,7 @@ export const moshHairConfig: AffiliatePageConfig = {
     },
     {
       q: "How much does Mosh cost for hair loss in Australia?",
-      a: "Mosh runs on a subscription model and the cost depends on the plan determined through your online consultation. Mosh does not publish plan prices publicly: pricing covers any treatment, practitioner oversight and home delivery, and is shown to you in the consultation flow before you commit. If you are comparing on cost, two published terms matter: Mosh advertises a 180-day money-back guarantee, and a price-match guarantee on substantially comparable programs, so a cheaper like-for-like plan elsewhere is worth raising with them. Checked on Mosh's own site, 14 August 2026.* This page does not provide medical advice. *Terms are indicative and subject to change: view the latest pricing and terms on Mosh's own site before you commit.",
+      a: "Mosh runs on a subscription, and the cost depends on the plan set through your online consultation. Mosh lists its plans on its own pricing page, and the consult confirms your plan and price before you commit. Two published terms matter if you are comparing: Mosh advertises a 180-day money-back guarantee and a price-match guarantee on substantially comparable programs. Checked on Mosh's own site, 14 August 2026.* This page does not provide medical advice. *Terms are indicative and subject to change: view the latest pricing and terms on Mosh's own site before you commit.",
     },
     {
       q: "Does Mosh handle hair-loss treatment online?",
@@ -200,7 +194,7 @@ export const moshHairConfig: AffiliatePageConfig = {
     },
     {
       q: "How long does hair-loss treatment take to work?",
-      a: "In general, evidence-based hair-loss treatments take several months to show noticeable change, with clinical guidance often pointing to around 3 to 6 months for early signs and up to 12 months for fuller results. Outcomes vary by individual and depend on consistency and the stage of hair loss. Any treatment through Mosh is decided by a practitioner and includes structured follow-up.",
+      a: "Hair-loss treatment is assessed over months rather than weeks, and how it goes varies from person to person. Mosh's practitioner explains what to expect for your plan on the consult and follows up while you're on it.",
     },
     {
       q: "Mosh vs Dense Hair Experts: which suits hair loss?",
