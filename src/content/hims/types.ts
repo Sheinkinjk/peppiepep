@@ -56,13 +56,20 @@ export type HimsPageContent = {
   kind: "review" | "versus" | "best";
   seoTitle: string;
   metaDescription: string;
+  /** Small category label above the H1, e.g. "Men's weight loss telehealth · Australia". */
+  eyebrow: string;
   h1: string;
+  /** The first paragraph after the H1. It answers the page's query; nothing sits above it. */
   standfirst: string;
-  /** Short verdict shown directly under the H1. Plain, no hype. */
+  /** The hub this page belongs to, for the breadcrumb. */
+  hub: { label: string; href: string };
+  /** The buyer's question, verbatim, asked as the H2 over the verdict. */
+  verdictQuestion: string;
+  /** Short verdict answering verdictQuestion. Plain, no hype. */
   verdict: string[];
   blocks: Block[];
   sources: Source[];
   /** Other partners named with an affiliate relationship on this page (for the disclosure box). */
   otherPartnersOnPage?: string[];
-  related: { label: string; href: string }[];
+  related: { label: string; href: string; desc?: string }[];
 };

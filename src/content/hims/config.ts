@@ -1,9 +1,14 @@
-// Hims page set — single source of truth.
+// Hims page set: single source of truth.
 // Change codes, links and facts HERE, never inside page copy.
 // Anything marked PLACEHOLDER or verify:true renders a visible amber flag while the
 // pages are in preview mode, so Hims' reviewers can see exactly what is unconfirmed.
+//
+// No partner prices (Jarred, 29 Sep 2026): these pages do not print Hims' or Mosh's
+// prices or fees. The reader sees the price on the provider's own site after the click.
+// lint:hims fails on any dollar figure in this folder.
 
 import type { Vertical } from "./types";
+import { HIMS_URL, MOSH_HAIR_URL } from "@/lib/affiliate-links";
 
 export const SITE_URL = "https://referlabs.com.au";
 
@@ -13,16 +18,17 @@ export const FACTS_CHECKED_ON = "29 September 2026";
 export const AUTHOR = "Jarred - Founder";
 
 /**
- * Handbook V3 disclosure, option 2, word for word. Do not edit, shorten or restyle.
- * Option 2 is used because it refers to "this content" and the affiliate code, which fits a
- * web page and matches how Hims attributes (code is the source of truth). Option 1 says "this post".
+ * Hims handbook disclosure (option 2), with the publisher named in place of "I".
+ * Every disclosure on the site names Refer Labs as the one who may earn (see
+ * src/components/consumer/AffiliateDisclosure.tsx for why first person was removed
+ * sitewide). Changed at Jarred's instruction, 29 Sep 2026; Hims sees it in review.
  */
 export const DISCLOSURE =
-  "If you're a new patient to Hims and make a purchase with the affiliate code shared in this content, I may earn a small commission at no extra cost to you.";
+  "If you're a new patient to Hims and make a purchase with the affiliate code shared in this content, Refer Labs may earn a small commission at no extra cost to you.";
 
-/** ReferLabs' own disclosure for other partners named on comparison pages (ACCC). */
+/** Refer Labs' own disclosure for other partners named on comparison pages (ACCC). */
 export const SITE_DISCLOSURE =
-  "ReferLabs is paid by some of the providers on this page when a new customer signs up using our code or link. Commission rates differ between providers. They do not decide what we write, and we have not compared every provider in Australia.";
+  "Refer Labs is paid by some of the providers on this page when a new customer signs up using our code or link. Commission rates differ between providers. They do not decide what we write, and we have not compared every provider in Australia.";
 
 type Offer = {
   code: string;
@@ -36,7 +42,15 @@ type Offer = {
   ctaIsPlaceholder: boolean;
 };
 
-// PLACEHOLDERS: codes, headlines and links are not issued yet.
+const TERMS = [
+  "New Hims patients living in Australia only. Current and previous Hims or Pilot patients are not eligible.",
+  "Our link applies the code automatically at checkout. You can also enter it yourself. One use per patient.",
+  "Cannot be combined with any other Hims offer.",
+  "Treatment is only supplied if an Australian practitioner decides it is clinically appropriate.",
+  "Hims may change or withdraw this offer. Full terms at hims.com.au/terms-and-conditions.",
+];
+
+// Link: real, supplied by Hims. Code and headline: PLACEHOLDERS until Hims issues them.
 // Attribution is by code, so the code must be exactly what Hims issues.
 export const OFFERS: Record<Vertical, Offer> = {
   weight: {
@@ -44,57 +58,39 @@ export const OFFERS: Record<Vertical, Offer> = {
     codeIsPlaceholder: true,
     headline: "Free initial consult for new Hims patients",
     headlineIsPlaceholder: true,
-    terms: [
-      "New Hims patients living in Australia only. Current and previous Hims or Pilot patients are not eligible.",
-      "Our link applies the code automatically at checkout. You can also enter it yourself. One use per patient.",
-      "Cannot be combined with any other Hims offer.",
-      "Treatment is only supplied if an Australian practitioner decides it is clinically appropriate.",
-      "Hims may change or withdraw this offer. Full terms at hims.com.au/terms-and-conditions.",
-    ],
+    terms: TERMS,
     ctaLabel: "Start the free Hims quiz",
-    ctaHref: "#hims-weight-link-pending",
-    ctaIsPlaceholder: true,
+    ctaHref: HIMS_URL,
+    ctaIsPlaceholder: false,
   },
   hair: {
     code: "REFERLABS89",
     codeIsPlaceholder: true,
     headline: "Free initial consult for new Hims patients",
     headlineIsPlaceholder: true,
-    terms: [
-      "New Hims patients living in Australia only. Current and previous Hims or Pilot patients are not eligible.",
-      "Our link applies the code automatically at checkout. You can also enter it yourself. One use per patient.",
-      "Cannot be combined with any other Hims offer.",
-      "Treatment is only supplied if an Australian practitioner decides it is clinically appropriate.",
-      "Hims may change or withdraw this offer. Full terms at hims.com.au/terms-and-conditions.",
-    ],
+    terms: TERMS,
     ctaLabel: "Start the free Hims quiz",
-    ctaHref: "#hims-hair-link-pending",
-    ctaIsPlaceholder: true,
+    ctaHref: HIMS_URL,
+    ctaIsPlaceholder: false,
   },
   ed: {
     code: "REFERLABS89",
     codeIsPlaceholder: true,
     headline: "Free initial consult for new Hims patients",
     headlineIsPlaceholder: true,
-    terms: [
-      "New Hims patients living in Australia only. Current and previous Hims or Pilot patients are not eligible.",
-      "Our link applies the code automatically at checkout. You can also enter it yourself. One use per patient.",
-      "Cannot be combined with any other Hims offer.",
-      "Treatment is only supplied if an Australian practitioner decides it is clinically appropriate.",
-      "Hims may change or withdraw this offer. Full terms at hims.com.au/terms-and-conditions.",
-    ],
+    terms: TERMS,
     ctaLabel: "Start the free Hims quiz",
-    ctaHref: "#hims-ed-link-pending",
-    ctaIsPlaceholder: true,
+    ctaHref: HIMS_URL,
+    ctaIsPlaceholder: false,
   },
 };
 
-/** Mosh appears on comparison pages. Existing partner; code and link below are placeholders too. */
+/** Mosh appears on comparison pages. Existing partner; the link is the one every Mosh page uses. */
 export const MOSH = {
   name: "Mosh",
   ctaLabel: "Start the free Mosh quiz",
-  ctaHref: "#mosh-link-pending",
-  ctaIsPlaceholder: true,
+  ctaHref: MOSH_HAIR_URL,
+  ctaIsPlaceholder: false,
 };
 
 /**
@@ -108,13 +104,12 @@ export const FACTS = {
     menOnly: true,
     quiz: "Free online quiz, about 2 minutes",
     consult: "Phone consult with an Australian practitioner",
-    consultFee: "$20, refundable if you're not eligible or decide the recommended plan isn't for you",
+    consultRefund: "Consult fee refunded if you're not eligible or decide not to proceed (Hims FAQ)",
     practitioners: "AHPRA-registered practitioners working across Australia",
-    support: "Unlimited practitioner check-ins and 24/7 access to the Care Team (nurses, pharmacists and clinicians)",
+    support: "Unlimited practitioner check-ins and 24-hour access to the Care Team (nurses, pharmacists and clinicians)",
     delivery: "Free Australia-wide, discreet unmarked packaging, Australia Post tracking",
     weight: {
-      entry: "$199 first payment with Hims' public new-patient code",
-      commitment: "Pay-upfront option with a twelve-month commitment and a minimum total payment of $2,988",
+      commitment: "Advertised starting offer is a pay-upfront option with a twelve-month commitment",
       shipping: "Shipped monthly",
       refund: "Full refund if you contact Hims within 30 days of starting the program (T&Cs apply)",
       cancel: "Hims' weight loss page says you can change or cancel at any time",
@@ -125,26 +120,23 @@ export const FACTS = {
       guarantee: "180-day money-back guarantee on hair plans (T&Cs apply)",
       delivery: "Subscription deliveries every 2 or 3 months depending on plan",
       cancel: "Cancel any time before the next order is processed, no cancellation fee",
-      price: "Not published on Hims' public hair page; shown after the consult",
     },
     ed: {
       plans: "ED Stamina, ED Performance and a third combined plan",
       popular: "Hims says ED Stamina is preferred by most men on Hims",
       cancel: "Pause or cancel any time, no lock-in contracts",
-      price: "Not published on Hims' public ED page; shown after the consult",
       publicCode: "No public ED code shown on Hims' ED page",
     },
   },
   mosh: {
-    related: "Lists Moshy and The Healthy Mummy as sister brands",
-    consult: "Free practitioner review before you pay for a hair plan",
-    hairPrices: "Prevention Plan from $24/month, Prevention & Regrowth from $44/month, advanced Hair Loss plan from $56/month",
+    related: "Lists Moshy among its brands",
+    consult: "Free consultation to start (Mosh pricing page)",
+    hairPlans: "Prevention, Prevention & Regrowth, and an advanced plan; 85+ plan variations",
     hairGuarantee: "180-day money-back guarantee on hair subscription programs (T&Cs apply)",
-    priceMatch: "Price match guarantee across hair and weight programs, subject to an eligibility form",
-    weightEntry: "Month one from $249 with Mosh's public intro code, $100 off month one",
+    priceMatch: "Price match guarantee on substantially comparable products, subject to an eligibility form",
     weightCommitment: "Minimum commitment period of 3 months on the intro offer",
-    dietitian: "Optional dietitian add-on, $50 per one-hour session",
-    edPrice: "ED plan from $1.50 per day",
-    support: "Unlimited follow-ups included with treatment plans",
+    dietitian: "Optional dietitian add-on sessions",
+    edDelivery: "ED plan with your choice of delivery frequency",
+    support: "Unlimited practitioner support included with treatment plans",
   },
 } as const;

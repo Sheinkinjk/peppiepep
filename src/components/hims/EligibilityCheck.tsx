@@ -27,31 +27,31 @@ export function EligibilityCheck({ programLabel }: { programLabel: string }) {
     } else if (answers.new === "no") {
       result = {
         tone: "info",
-        text: "You can still use Hims, but new-patient offers, including the ReferLabs code, won't apply to your account.",
+        text: "You can still use Hims, but new-patient offers, including the Refer Labs code, won't apply to your account.",
       };
     } else {
       result = {
         tone: "ok",
-        text: `You can use the ReferLabs code. The Hims quiz and practitioner decide whether the ${programLabel} program suits you.`,
+        text: `You can use the Refer Labs code. The Hims quiz and practitioner decide whether the ${programLabel} program suits you.`,
       };
     }
   }
 
   const toneClass =
     result?.tone === "ok"
-      ? "border-[#0F5E4E] bg-[#E6F1EE]"
+      ? "border-[#007a95] bg-[#e4f2f5]"
       : result?.tone === "info"
         ? "border-[#8A6A00] bg-[#FCF3D6]"
         : "border-[#9B2C2C] bg-[#FBE9E9]";
 
   return (
-    <div className="rounded-lg border border-[#C9D3D6] bg-white p-5 sm:p-7">
-      <h2 className="text-2xl font-semibold text-[#17222B]">Can you use the ReferLabs code?</h2>
-      <p className="mt-2 text-[#56636E]">Three questions. Your answers stay in your browser and aren&rsquo;t saved or sent anywhere.</p>
+    <div className="nw-card rounded-2xl p-6 sm:p-8">
+      <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">Can you use the Refer Labs code?</h2>
+      <p className="mt-2 text-[15px] text-[#56504a]">Three questions. Your answers stay in your browser and aren&rsquo;t saved or sent anywhere.</p>
       <div className="mt-5 space-y-5">
         {QUESTIONS.map((q) => (
           <fieldset key={q.key}>
-            <legend className="font-semibold text-[#17222B]">{q.text}</legend>
+            <legend className="font-semibold text-[#14120f]">{q.text}</legend>
             <div className="mt-2 flex gap-3">
               {(["yes", "no"] as const).map((v) => {
                 const id = `${groupId}-${q.key}-${v}`;
@@ -60,8 +60,8 @@ export function EligibilityCheck({ programLabel }: { programLabel: string }) {
                   <label
                     key={v}
                     htmlFor={id}
-                    className={`cursor-pointer rounded-md border px-5 py-2 text-base font-semibold capitalize focus-within:outline focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-[#0F5E4E] ${
-                      checked ? "border-[#0F5E4E] bg-[#0F5E4E] text-white" : "border-[#C9D3D6] text-[#17222B] hover:border-[#0F5E4E]"
+                    className={`cursor-pointer rounded-full border px-6 py-2 text-[15px] font-semibold capitalize transition-colors focus-within:outline focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-[#007a95] ${
+                      checked ? "border-[#007a95] bg-[#007a95] text-white" : "border-[#ded8cd] bg-white text-[#14120f] hover:border-[#007a95]"
                     }`}
                   >
                     <input
@@ -82,7 +82,7 @@ export function EligibilityCheck({ programLabel }: { programLabel: string }) {
         ))}
       </div>
       <div aria-live="polite">
-        {result && <p className={`mt-6 rounded-md border-l-4 p-4 text-[#17222B] motion-safe:transition-colors ${toneClass}`}>{result.text}</p>}
+        {result && <p className={`mt-6 rounded-xl border-l-4 p-4 text-[15px] text-[#14120f] motion-safe:transition-colors ${toneClass}`}>{result.text}</p>}
       </div>
     </div>
   );

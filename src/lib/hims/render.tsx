@@ -22,7 +22,7 @@ export async function himsMetadata(slug: string): Promise<Metadata> {
       ? { index: true, follow: true }
       : { index: false, follow: false, nocache: true, googleBot: { index: false, follow: false } },
     openGraph: live
-      ? { title: page.seoTitle, description: page.metaDescription, url, type: "article", siteName: "ReferLabs" }
+      ? { title: page.seoTitle, description: page.metaDescription, url, type: "article", siteName: "Refer Labs" }
       : undefined,
   };
 }

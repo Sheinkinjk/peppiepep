@@ -14,8 +14,10 @@ const ROOT = process.cwd();
 const CONTENT_DIR = join(ROOT, "src/content/hims");
 const COMPONENT_DIR = join(ROOT, "src/components/hims");
 
+// Handbook V3 option 2 with the publisher named in place of "I" (Jarred, 29 Sep 2026):
+// every disclosure on the site names Refer Labs as the one who may earn.
 const HANDBOOK_DISCLOSURE =
-  "If you're a new patient to Hims and make a purchase with the affiliate code shared in this content, I may earn a small commission at no extra cost to you.";
+  "If you're a new patient to Hims and make a purchase with the affiliate code shared in this content, Refer Labs may earn a small commission at no extra cost to you.";
 
 // Banned anywhere in page copy. Case-insensitive, whole word.
 const BANNED = [
@@ -46,7 +48,7 @@ const BANNED = [
 ];
 
 // Checked case-sensitively (short tokens that would false-positive in lowercase).
-const BANNED_CASE_SENSITIVE = ["PE", "Dr"];
+const BANNED_CASE_SENSITIVE = ["PE", "Dr", "ReferLabs"];
 
 // Competitors must not appear on the three single-brand review pages.
 const REVIEW_FILES = ["pages/weight.ts", "pages/hair.ts", "pages/ed.ts"];
@@ -78,6 +80,8 @@ function scanText(file, text, { competitors }) {
     for (const t of BANNED) if (wordRe(t, "i").test(line)) errors.push(`${file}:${i + 1}  banned term "${t}"`);
     for (const t of BANNED_CASE_SENSITIVE) if (wordRe(t, "").test(line)) errors.push(`${file}:${i + 1}  banned term "${t}"`);
     if (/\d\s?%/.test(line)) errors.push(`${file}:${i + 1}  percentage (outcome statistic?)`);
+    // No partner prices on these pages (Jarred, 29 Sep 2026): readers see prices on the provider's site.
+    if (/\$\s?\d/.test(line)) errors.push(`${file}:${i + 1}  dollar figure (partner prices are not printed on Hims pages)`);
     if (competitors) for (const c of COMPETITORS) if (wordRe(c, "i").test(line)) errors.push(`${file}:${i + 1}  competitor "${c}" on a single-brand review page`);
   });
 }

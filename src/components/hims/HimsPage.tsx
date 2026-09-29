@@ -1,21 +1,68 @@
-import { Public_Sans } from "next/font/google";
+import Image from "next/image";
+import Link from "next/link";
+import { Check, Gift, Minus } from "lucide-react";
 import type { Block, HimsPageContent, LedgerRow, Vertical } from "@/content/hims/types";
 import { AUTHOR, DISCLOSURE, FACTS_CHECKED_ON, MOSH, OFFERS, SITE_DISCLOSURE, SITE_URL } from "@/content/hims/config";
+import { SCHEMA_AUTHOR, SCHEMA_PUBLISHER } from "@/lib/seo";
+import StickyCta from "@/components/consumer/StickyCta";
 import { CopyCode } from "./CopyCode";
 import { EligibilityCheck } from "./EligibilityCheck";
 import { CtaLink, Disclosure, Flag } from "./ui";
 
-// One family, two weights. Plain and civic: this is a consumer guide, not a sales page.
-const sans = Public_Sans({ subsets: ["latin"], weight: ["400", "600"], display: "swap" });
+// Layout follows the site's brand and comparison templates (29 Sep 2026):
+// review pages take the /moshhair hero (logo, lead, offer callout, at-a-glance card),
+// versus and best pages take the /moshy-vs-juniper lead (logo pair, verdict box).
+// The answer is the first paragraph after the H1; nothing sits between them.
 
 const PROGRAM_LABEL: Record<Vertical, string> = { weight: "weight loss", hair: "hair loss", ed: "ED" };
 
 type Ctx = { preview: boolean; linkSuffix: string; vertical: Vertical };
 
+const H2_CLASS = "scroll-mt-24 text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl";
+const BODY = "text-[15.5px] leading-relaxed text-[#56504a]";
+
+function HimsLogo({ size = "md" }: { size?: "sm" | "md" }) {
+  return (
+    <span
+      className={`inline-flex items-center justify-center overflow-hidden rounded-2xl border border-[#ded8cd] bg-white shadow-[0_10px_28px_-16px_rgba(20,18,15,0.35)] ${
+        size === "md" ? "h-16 px-5" : "h-11 px-3.5"
+      }`}
+    >
+      <Image src="/logos/hims.png" alt="Hims logo" width={816} height={280} className={size === "md" ? "h-8 w-auto" : "h-5 w-auto"} />
+    </span>
+  );
+}
+
+function MoshLogo({ size = "md" }: { size?: "sm" | "md" }) {
+  const px = size === "md" ? 64 : 44;
+  return (
+    <Image
+      src="/logos/mosh-tile.png"
+      alt="Mosh logo"
+      width={px}
+      height={px}
+      className={`${size === "md" ? "h-16 w-16" : "h-11 w-11"} rounded-2xl object-cover shadow-[0_10px_28px_-16px_rgba(20,18,15,0.35)]`}
+    />
+  );
+}
+
 export function HimsPage({ content, preview, linkSuffix }: { content: HimsPageContent; preview: boolean; linkSuffix: string }) {
   const ctx: Ctx = { preview, linkSuffix, vertical: content.vertical };
   const offer = OFFERS[content.vertical];
+  const isReview = content.kind === "review";
   const faq = content.blocks.find((b): b is Extract<Block, { type: "faq" }> => b.type === "faq");
+  const glance = isReview
+    ? content.blocks.find((b): b is Extract<Block, { type: "ledger" }> => b.type === "ledger" && b.id === "at-a-glance")
+    : undefined;
+  const bodyBlocks = content.blocks.filter((b) => b !== glance);
+  const toc = bodyBlocks.filter((b) => "heading" in b && b.heading) as Extract<Block, { heading: string }>[];
+  const url = `${SITE_URL}/${content.slug}`;
+
+  const breadcrumb = [
+    { name: "Refer Labs", item: SITE_URL },
+    { name: content.hub.label, item: `${SITE_URL}${content.hub.href}` },
+    { name: content.h1.split(":")[0], item: url },
+  ];
 
   const jsonLd = [
     {
@@ -23,11 +70,46 @@ export function HimsPage({ content, preview, linkSuffix }: { content: HimsPageCo
       "@type": "Article",
       headline: content.h1,
       description: content.metaDescription,
+      datePublished: "2026-09-29",
       dateModified: "2026-09-29",
-      author: { "@type": "Person", name: "Jarred", jobTitle: "Founder" },
-      publisher: { "@type": "Organization", name: "ReferLabs", url: SITE_URL },
-      mainEntityOfPage: `${SITE_URL}/${content.slug}`,
+      author: SCHEMA_AUTHOR,
+      publisher: SCHEMA_PUBLISHER,
+      mainEntityOfPage: url,
+      inLanguage: "en-AU",
     },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: breadcrumb.map((b, i) => ({ "@type": "ListItem", position: i + 1, name: b.name, item: b.item })),
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      name: content.seoTitle,
+      description: content.metaDescription,
+      url,
+      inLanguage: "en-AU",
+      isPartOf: { "@id": `${SITE_URL}/#website` },
+    },
+    isReview
+      ? {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "Hims",
+          alternateName: "Pilot",
+          url: "https://hims.com.au",
+          description: "Men's telehealth service in Australia, formerly Pilot, part of the Hims & Hers group.",
+          areaServed: { "@type": "Country", name: "Australia" },
+        }
+      : {
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          name: content.h1,
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Hims", url: `${SITE_URL}/hims` },
+            { "@type": "ListItem", position: 2, name: "Mosh", url: `${SITE_URL}/moshhair` },
+          ],
+        },
     faq && {
       "@context": "https://schema.org",
       "@type": "FAQPage",
@@ -35,137 +117,224 @@ export function HimsPage({ content, preview, linkSuffix }: { content: HimsPageCo
     },
   ].filter(Boolean);
 
+  const byline = (
+    <p className="mt-5 text-[13px] text-[#56504a]">
+      By {AUTHOR} · Facts checked on each provider&rsquo;s own site, {FACTS_CHECKED_ON}
+    </p>
+  );
+
   return (
-    <div className={`${sans.className} min-h-screen bg-[#F4F6F5] text-[#17222B] antialiased`}>
+    <>
       {preview && (
-        <div role="status" className="sticky top-0 z-20 border-b border-[#E3C766] bg-[#FCEFC7] px-4 py-2 text-center text-sm text-[#4A3700]">
+        <div role="status" className="sticky top-0 z-50 border-b border-[#E3C766] bg-[#FCEFC7] px-4 py-2 text-center text-sm text-[#4A3700]">
           Draft for Hims review. This page is not public and is not indexed. Amber tags mark codes, links and facts still to be confirmed.
         </div>
       )}
 
-      <article className="mx-auto max-w-5xl px-5 pb-24 pt-12 sm:px-8 sm:pt-16">
-        <header className="max-w-[68ch]">
-          <h1 className="text-[2.1rem] font-semibold leading-[1.12] tracking-[-0.015em] sm:text-5xl">{content.h1}</h1>
-          <p className="mt-5 text-lg leading-relaxed text-[#3A4650] sm:text-xl">{content.standfirst}</p>
-          <p className="mt-5 text-sm text-[#56636E]">
-            By {AUTHOR}. Facts checked {FACTS_CHECKED_ON}.
-          </p>
-        </header>
+      <main id="main-content" className="mx-auto max-w-5xl px-5 pb-24 sm:px-8">
+        <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2 pt-8 text-sm text-[#56504a]">
+          <Link href="/" className="transition-colors hover:text-[#14120f]">Refer Labs</Link>
+          <span aria-hidden>/</span>
+          <Link href={content.hub.href} className="transition-colors hover:text-[#14120f]">{content.hub.label}</Link>
+          <span aria-hidden>/</span>
+          <span className="text-[#14120f]">{breadcrumb[2].name}</span>
+        </nav>
 
-        <div className="mt-8 max-w-[68ch]">
-          <Disclosure text={DISCLOSURE} />
-          {content.otherPartnersOnPage?.length ? (
-            <div className="mt-3">
+        {isReview ? (
+          <section className="grid gap-10 pt-8 lg:grid-cols-[1.55fr_1fr] lg:gap-14">
+            <div>
+              <HimsLogo />
+              <p className="nw-kicker mt-5">{content.eyebrow}</p>
+              <h1 className="mt-3 text-4xl font-extrabold leading-[1.05] tracking-[-0.02em] text-[#14120f] sm:text-5xl lg:text-[3.1rem]">{content.h1}</h1>
+              <p className="mt-6 max-w-xl text-lg leading-relaxed text-[#56504a]">{content.standfirst}</p>
+              {byline}
+
+              <div className="mt-7 flex items-start gap-3 rounded-2xl border border-[#007a95]/30 bg-[#007a95]/[0.08] px-5 py-4">
+                <Gift className="mt-0.5 h-5 w-5 shrink-0 text-[#007a95]" strokeWidth={1.9} aria-hidden />
+                <div>
+                  <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#003647]">Refer Labs code for new Hims patients</p>
+                  <p className="mt-1 text-[15px] font-bold leading-snug text-[#14120f]">
+                    {offer.headline} (code {offer.code})
+                    <Flag show={preview && (offer.headlineIsPlaceholder || offer.codeIsPlaceholder)}>Offer and code to confirm</Flag>
+                  </p>
+                  <p className="mt-1.5 text-[12px] font-medium text-[#56504a]">Checked by Refer Labs, {FACTS_CHECKED_ON}</p>
+                </div>
+              </div>
+
+              <div className="mt-6 max-w-xl">
+                <Disclosure text={DISCLOSURE} />
+              </div>
+              <div className="mt-7">
+                <CtaLink href={offer.ctaHref} label={offer.ctaLabel} placeholder={offer.ctaIsPlaceholder} preview={preview} loc="hero" size="lg" />
+              </div>
+            </div>
+
+            {glance && (
+              <aside className="lg:pt-2">
+                <div className="nw-card rounded-2xl p-6">
+                  <span className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#56504a]">At a glance</span>
+                  <dl className="mt-4 divide-y divide-[#f1ede4] text-sm">
+                    <div className="flex gap-3 py-2.5">
+                      <dt className="w-24 shrink-0 font-semibold text-[#007a95]">Offer</dt>
+                      <dd className="font-semibold text-[#14120f]">{offer.headline}</dd>
+                    </div>
+                    {glance.rows.map((r) => (
+                      <div key={r.label} className="flex gap-3 py-2.5">
+                        <dt className="w-24 shrink-0 text-[#56504a]">{r.label}</dt>
+                        <dd className="text-[#14120f]">
+                          {r.value}
+                          <Flag show={preview && !!r.verify} />
+                          {r.note && preview ? <span className="mt-1 block text-xs text-[#6B4F00]">{r.note}</span> : null}
+                        </dd>
+                      </div>
+                    ))}
+                  </dl>
+                  {glance.intro && <p className="mt-3 text-xs text-[#56504a]">{glance.intro}</p>}
+                  <div className="mt-5">
+                    <CtaLink href={offer.ctaHref} label="Continue to Hims" placeholder={offer.ctaIsPlaceholder} preview={preview} loc="glance-card" block />
+                  </div>
+                </div>
+              </aside>
+            )}
+          </section>
+        ) : (
+          <section className="max-w-3xl pt-8">
+            <div className="flex items-center gap-3">
+              <HimsLogo />
+              <span className="text-sm font-semibold text-[#56504a]">vs</span>
+              <MoshLogo />
+            </div>
+            <p className="nw-kicker mt-5">{content.eyebrow}</p>
+            <h1 className="mt-3 text-3xl font-black leading-[1.08] tracking-tight text-[#14120f] sm:text-4xl lg:text-[2.7rem]">{content.h1}</h1>
+            <p className="mt-5 text-base leading-relaxed text-[#56504a] sm:text-lg">{content.standfirst}</p>
+            {byline}
+            <div className="mt-5 space-y-2">
+              <Disclosure text={DISCLOSURE} />
+              {content.otherPartnersOnPage?.length ? <Disclosure text={SITE_DISCLOSURE} /> : null}
+            </div>
+          </section>
+        )}
+
+        <section aria-labelledby="verdict" className={`mt-12 ${isReview ? "max-w-3xl" : "max-w-3xl"}`}>
+          <h2 id="verdict" className={H2_CLASS}>
+            {content.verdictQuestion}
+          </h2>
+          <div className="mt-4 rounded-2xl border border-[#007a95]/25 bg-[#007a95]/[0.05] px-6 py-5">
+            <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#007a95]">Quick verdict</p>
+            <div className="mt-2 space-y-3">
+              {content.verdict.map((p, i) => (
+                <p key={i} className="text-[15.5px] leading-relaxed text-[#14120f]">
+                  {p}
+                </p>
+              ))}
+            </div>
+            <div className="mt-5">
+              <CtaLink href={offer.ctaHref} label={offer.ctaLabel} placeholder={offer.ctaIsPlaceholder} preview={preview} loc="verdict" />
+            </div>
+          </div>
+          {isReview && content.otherPartnersOnPage?.length ? (
+            <div className="mt-4">
               <Disclosure text={SITE_DISCLOSURE} />
             </div>
           ) : null}
-        </div>
-
-        <section aria-labelledby="verdict" className="mt-12 max-w-[68ch] border-t-2 border-[#17222B] pt-6">
-          <h2 id="verdict" className="text-xl font-semibold">
-            The short answer
-          </h2>
-          {content.verdict.map((p, i) => (
-            <p key={i} className="mt-4 text-lg leading-[1.7]">
-              {p}
-            </p>
-          ))}
-          <div className="mt-7">
-            <CtaLink href={offer.ctaHref} label={offer.ctaLabel} placeholder={offer.ctaIsPlaceholder} preview={preview} />
-          </div>
         </section>
 
-        <nav aria-label="On this page" className="mt-12 max-w-[68ch]">
-          <h2 className="text-sm font-semibold text-[#56636E]">On this page</h2>
-          <ul className="mt-2 flex flex-wrap gap-x-5 gap-y-1 text-[15px]">
-            {content.blocks
-              .filter((b) => "heading" in b && b.heading)
-              .map((b) => (
-                <li key={b.id}>
-                  <a className="text-[#0F5E4E] underline decoration-[#0F5E4E]/30 underline-offset-4 hover:decoration-[#0F5E4E]" href={`#${b.id}`}>
-                    {"heading" in b ? b.heading : ""}
-                  </a>
-                </li>
-              ))}
-          </ul>
-        </nav>
+        <div className="mt-14 grid gap-12 lg:grid-cols-[200px_minmax(0,1fr)] lg:gap-14">
+          <nav aria-label="On this page" className="hidden lg:block">
+            <div className="sticky top-24">
+              <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[#56504a]">On this page</p>
+              <ul className="space-y-2.5 text-sm">
+                {toc.map((b) => (
+                  <li key={b.id}>
+                    <a href={`#${b.id}`} className="text-[#56504a] transition-colors hover:text-[#007a95]">
+                      {b.heading}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </nav>
 
-        <div className="mt-6">
-          {content.blocks.map((block) => (
-            <BlockView key={block.id} block={block} ctx={ctx} />
-          ))}
-        </div>
-
-        <section aria-labelledby="sources" className="mt-16 max-w-[68ch] border-t border-[#D5DCDF] pt-6">
-          <h2 id="sources" className="text-xl font-semibold">
-            Sources
-          </h2>
-          <p className="mt-2 text-[15px] text-[#56636E]">Each read on {FACTS_CHECKED_ON}.</p>
-          <ul className="mt-3 space-y-2 text-[15px]">
-            {content.sources.map((s) => (
-              <li key={s.url}>
-                <a href={s.url} rel="nofollow noopener" target="_blank" className="text-[#0F5E4E] underline underline-offset-4">
-                  {s.label}
-                </a>
-              </li>
+          <article className="min-w-0">
+            {bodyBlocks.map((block, i) => (
+              <div key={block.id} className={i === 0 ? "" : "mt-14"}>
+                <BlockView block={block} ctx={ctx} />
+              </div>
             ))}
-          </ul>
-        </section>
 
-        <section aria-labelledby="next" className="mt-16 max-w-[68ch] border-t-2 border-[#17222B] pt-6">
-          <h2 id="next" className="text-2xl font-semibold">
-            Ready to see if Hims suits you?
+            <section aria-labelledby="sources" className="mt-14 border-t border-[#ded8cd] pt-6">
+              <h2 id="sources" className="text-lg font-bold text-[#14120f]">
+                Sources
+              </h2>
+              <p className="mt-1 text-[13px] text-[#56504a]">Each read on {FACTS_CHECKED_ON}.</p>
+              <ul className="mt-3 space-y-1.5 text-sm">
+                {content.sources.map((s) => (
+                  <li key={s.url}>
+                    <a href={s.url} rel="nofollow noopener" target="_blank" className="nw-link">
+                      {s.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </section>
+
+            <section aria-labelledby="related" className="mt-14">
+              <h2 id="related" className="text-xl font-bold text-[#14120f]">
+                Related reading
+              </h2>
+              <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                {content.related.map((r) => (
+                  <Link key={r.href} href={`${r.href}${ctx.linkSuffix}`} className="nw-card nw-card-hover group rounded-xl p-4">
+                    <p className="text-sm font-bold text-[#14120f] group-hover:text-[#007a95]">{r.label}</p>
+                    {r.desc && <p className="mt-1 text-xs leading-relaxed text-[#56504a]">{r.desc}</p>}
+                  </Link>
+                ))}
+              </div>
+            </section>
+          </article>
+        </div>
+
+        <section aria-labelledby="next" className="mt-20 overflow-hidden rounded-3xl bg-[#14120f] px-7 py-12 text-center sm:px-12 sm:py-16">
+          <h2 id="next" className="mx-auto max-w-xl text-3xl font-bold leading-tight text-white sm:text-4xl">
+            See if Hims suits you
           </h2>
-          <p className="mt-3 text-lg leading-relaxed">
-            The quiz is free and takes about two minutes. The ReferLabs link applies the code at checkout, or you can enter it yourself.
+          <p className="mx-auto mt-4 max-w-md text-[15px] leading-relaxed text-white/70">
+            The quiz is free and takes about two minutes. Our link applies the Refer Labs code at checkout, or you can enter it yourself.
           </p>
-          <p className="mt-4 text-lg">
-            Code: <span className="font-semibold tracking-[0.06em]">{offer.code}</span>
+          <p className="mt-5 text-white">
+            Code <span className="font-mono text-lg font-bold tracking-[0.08em]">{offer.code}</span>
             <Flag show={preview && offer.codeIsPlaceholder}>Placeholder code</Flag>
           </p>
-          <div className="mt-6">
-            <CtaLink href={offer.ctaHref} label={offer.ctaLabel} placeholder={offer.ctaIsPlaceholder} preview={preview} />
+          <div className="mt-7 flex justify-center">
+            <CtaLink href={offer.ctaHref} label={offer.ctaLabel} placeholder={offer.ctaIsPlaceholder} preview={preview} loc="final-band" variant="inverse" size="lg" />
           </div>
-          <div className="mt-8">
-            <Disclosure text={DISCLOSURE} />
+          <div className="mx-auto mt-7 max-w-lg">
+            <Disclosure text={DISCLOSURE} tone="dark" />
           </div>
         </section>
 
-        <section aria-labelledby="related" className="mt-14 max-w-[68ch]">
-          <h2 id="related" className="text-lg font-semibold">
-            Related guides
-          </h2>
-          <ul className="mt-3 space-y-2">
-            {content.related.map((r) => (
-              <li key={r.href}>
-                <a href={`${r.href}${ctx.linkSuffix}`} className="text-[#0F5E4E] underline underline-offset-4">
-                  {r.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </section>
-
-        <footer className="mt-14 max-w-[68ch] border-t border-[#D5DCDF] pt-6 text-sm leading-relaxed text-[#56636E]">
+        <footer className="mt-12 max-w-3xl space-y-3 text-xs leading-relaxed text-[#56504a]">
           <p>
-            General information only, not medical advice. ReferLabs is not a healthcare provider and does not assess anyone for
+            General information only, not medical advice. Refer Labs is not a healthcare provider and does not assess anyone for
             treatment. Any treatment plan is only supplied if a registered practitioner decides it is clinically appropriate for you.
-            Prices, offers and terms were checked on {FACTS_CHECKED_ON} and can change, so confirm them with the provider before you pay.
+            Offers and terms were checked on {FACTS_CHECKED_ON} and can change, so confirm them with the provider before you pay.
           </p>
-          <p className="mt-3">
+          <p>
             Program details on this page are taken from Hims&rsquo; public website and are Hims&rsquo; to confirm. For anything about your own
             situation or plan, ask your practitioner on the consult or contact Hims directly.
           </p>
-          <p className="mt-3">
-            Hims is a trademark of Hims, Inc. ReferLabs is independent and is not owned by or part of Hims or any other provider named on this page.
+          <p>
+            Hims is a trademark of Hims, Inc. Refer Labs is independent and is not owned by or part of Hims or any other provider named on this page.
           </p>
         </footer>
-      </article>
+      </main>
+
+      <StickyCta href={offer.ctaHref} product="Hims" label="Start the quiz" offer={offer.headline} />
 
       {jsonLd.map((j, i) => (
         <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(j) }} />
       ))}
-    </div>
+    </>
   );
 }
 
@@ -173,7 +342,7 @@ export function HimsPage({ content, preview, linkSuffix }: { content: HimsPageCo
 
 function H2({ id, children }: { id: string; children: React.ReactNode }) {
   return (
-    <h2 id={id} className="scroll-mt-16 text-2xl font-semibold leading-snug sm:text-[1.75rem]">
+    <h2 id={id} className={H2_CLASS}>
       {children}
     </h2>
   );
@@ -181,11 +350,11 @@ function H2({ id, children }: { id: string; children: React.ReactNode }) {
 
 function Ledger({ rows, preview }: { rows: LedgerRow[]; preview: boolean }) {
   return (
-    <dl className="mt-5 divide-y divide-[#D5DCDF] border-y border-[#D5DCDF]">
+    <dl className="mt-5 divide-y divide-[#ded8cd] border-y border-[#ded8cd]">
       {rows.map((r) => (
-        <div key={r.label} className="grid gap-1 py-3.5 sm:grid-cols-[13rem_1fr] sm:gap-6">
-          <dt className="font-semibold text-[#17222B]">{r.label}</dt>
-          <dd className="leading-relaxed">
+        <div key={r.label} className="grid gap-1 py-3.5 sm:grid-cols-[11rem_1fr] sm:gap-6">
+          <dt className="text-[15px] font-semibold text-[#14120f]">{r.label}</dt>
+          <dd className="text-[15px] leading-relaxed text-[#56504a]">
             {r.value}
             <Flag show={preview && !!r.verify} />
             {r.note && preview ? <span className="mt-1 block text-sm text-[#6B4F00]">{r.note}</span> : null}
@@ -196,44 +365,49 @@ function Ledger({ rows, preview }: { rows: LedgerRow[]; preview: boolean }) {
   );
 }
 
+function ProviderMark({ name }: { name: string }) {
+  if (name === "Hims") return <HimsLogo size="sm" />;
+  if (name === "Mosh") return <MoshLogo size="sm" />;
+  return null;
+}
+
 function BlockView({ block, ctx }: { block: Block; ctx: Ctx }) {
-  const wrap = "mt-16 max-w-[68ch]";
   switch (block.type) {
     case "prose":
       return (
-        <section className={wrap}>
+        <section>
           <H2 id={block.id}>{block.heading}</H2>
-          {block.paragraphs.map((p, i) => (
-            <p key={i} className="mt-4 text-lg leading-[1.7]">
-              {p}
-            </p>
-          ))}
+          <div className={`mt-4 space-y-4 ${BODY}`}>
+            {block.paragraphs.map((p, i) => (
+              <p key={i}>{p}</p>
+            ))}
+          </div>
         </section>
       );
 
     case "ledger":
       return (
-        <section className={wrap}>
+        <section>
           <H2 id={block.id}>{block.heading}</H2>
-          {block.intro && <p className="mt-3 text-[#56636E]">{block.intro}</p>}
+          {block.intro && <p className="mt-3 text-sm text-[#56504a]">{block.intro}</p>}
           <Ledger rows={block.rows} preview={ctx.preview} />
         </section>
       );
 
     case "steps":
       return (
-        <section className={wrap}>
+        <section>
           <H2 id={block.id}>{block.heading}</H2>
-          {block.intro && <p className="mt-3 text-lg leading-[1.7]">{block.intro}</p>}
-          <ol className="mt-6 space-y-6">
+          {block.intro && <p className={`mt-4 ${BODY}`}>{block.intro}</p>}
+          <ol className="mt-6 space-y-5">
             {block.steps.map((s, i) => (
-              <li key={s.title} className="grid grid-cols-[2.25rem_1fr] gap-4">
-                <span aria-hidden className="flex h-9 w-9 items-center justify-center rounded-full border-2 border-[#17222B] font-semibold">
+              <li key={s.title} className="flex gap-4">
+                <span aria-hidden className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#e4f2f5] text-sm font-bold text-[#00748e]">
                   {i + 1}
                 </span>
                 <div>
-                  <h3 className="text-lg font-semibold">{s.title}</h3>
-                  <p className="mt-1 text-lg leading-[1.7]">{s.body}</p>
+                  <h3 className="font-bold text-[#14120f]">{s.title}</h3>
+                  <p className="mt-1 text-[15px] leading-relaxed text-[#56504a]">{s.body}</p>
                 </div>
               </li>
             ))}
@@ -243,17 +417,15 @@ function BlockView({ block, ctx }: { block: Block; ctx: Ctx }) {
 
     case "compare":
       return (
-        <section className="mt-16">
-          <div className="max-w-[68ch]">
-            <H2 id={block.id}>{block.heading}</H2>
-            {block.intro && <p className="mt-3 text-[#56636E]">{block.intro}</p>}
-          </div>
-          <div className="mt-5 overflow-x-auto rounded-lg border border-[#C9D3D6] bg-white">
-            <table className="w-full min-w-[640px] border-collapse text-left text-[15px] leading-relaxed">
+        <section>
+          <H2 id={block.id}>{block.heading}</H2>
+          {block.intro && <p className="mt-3 text-sm text-[#56504a]">{block.intro}</p>}
+          <div className="mt-5 overflow-x-auto rounded-xl border border-[#ded8cd] bg-white">
+            <table className="w-full min-w-[560px] border-collapse text-left text-sm leading-relaxed">
               <thead>
-                <tr className="border-b-2 border-[#17222B]">
+                <tr className="bg-[#f7f4ee]">
                   {block.columns.map((c, i) => (
-                    <th key={i} scope="col" className="px-4 py-3 font-semibold">
+                    <th key={i} scope="col" className={`px-4 py-3 ${i === 0 ? "font-semibold text-[#56504a]" : "font-black text-[#14120f]"}`}>
                       {c || <span className="sr-only">Feature</span>}
                     </th>
                   ))}
@@ -261,13 +433,13 @@ function BlockView({ block, ctx }: { block: Block; ctx: Ctx }) {
               </thead>
               <tbody>
                 {block.rows.map((r) => (
-                  <tr key={r.label} className="border-b border-[#E2E7E9] align-top last:border-b-0">
-                    <th scope="row" className="w-44 px-4 py-3 font-semibold">
+                  <tr key={r.label} className="border-t border-[#ded8cd] align-top">
+                    <th scope="row" className="w-40 px-4 py-3 font-medium text-[#56504a]">
                       {r.label}
                       <Flag show={ctx.preview && !!r.verify} />
                     </th>
                     {r.cells.map((c, i) => (
-                      <td key={i} className="px-4 py-3">
+                      <td key={i} className="px-4 py-3 text-[#14120f]">
                         {c}
                       </td>
                     ))}
@@ -276,30 +448,34 @@ function BlockView({ block, ctx }: { block: Block; ctx: Ctx }) {
               </tbody>
             </table>
           </div>
-          {block.footnote && <p className="mt-3 max-w-[68ch] text-sm text-[#56636E]">{block.footnote}</p>}
+          {block.footnote && <p className="mt-3 text-[13px] text-[#56504a]">{block.footnote}</p>}
         </section>
       );
 
     case "fit":
       return (
-        <section className="mt-16">
-          <div className="max-w-[68ch]">
-            <H2 id={block.id}>{block.heading}</H2>
-          </div>
-          <div className="mt-6 grid gap-8 md:grid-cols-2">
-            <div className="border-t-4 border-[#0F5E4E] pt-4">
-              <h3 className="text-lg font-semibold">It suits you if</h3>
-              <ul className="mt-3 list-disc space-y-2 pl-5 text-lg leading-[1.65]">
+        <section>
+          <H2 id={block.id}>{block.heading}</H2>
+          <div className="mt-6 grid gap-4 md:grid-cols-2">
+            <div className="nw-card rounded-2xl p-6">
+              <h3 className="font-bold text-[#14120f]">It suits you if</h3>
+              <ul className="mt-3 space-y-2.5">
                 {block.suits.map((s) => (
-                  <li key={s}>{s}</li>
+                  <li key={s} className="flex items-start gap-2.5 text-[15px] leading-relaxed text-[#14120f]">
+                    <Check className="mt-1 h-4 w-4 shrink-0 text-[#007a95]" aria-hidden />
+                    {s}
+                  </li>
                 ))}
               </ul>
             </div>
-            <div className="border-t-4 border-[#56636E] pt-4">
-              <h3 className="text-lg font-semibold">Look elsewhere if</h3>
-              <ul className="mt-3 list-disc space-y-2 pl-5 text-lg leading-[1.65]">
+            <div className="rounded-2xl border border-[#ded8cd] bg-[#f7f4ee] p-6">
+              <h3 className="font-bold text-[#14120f]">Look elsewhere if</h3>
+              <ul className="mt-3 space-y-2.5">
                 {block.notFor.map((s) => (
-                  <li key={s}>{s}</li>
+                  <li key={s} className="flex items-start gap-2.5 text-[15px] leading-relaxed text-[#56504a]">
+                    <Minus className="mt-1 h-4 w-4 shrink-0 text-[#56504a]" aria-hidden />
+                    {s}
+                  </li>
                 ))}
               </ul>
             </div>
@@ -309,16 +485,17 @@ function BlockView({ block, ctx }: { block: Block; ctx: Ctx }) {
 
     case "picks":
       return (
-        <section className={wrap}>
+        <section>
           <H2 id={block.id}>{block.heading}</H2>
-          {block.intro && <p className="mt-3 text-lg leading-[1.7]">{block.intro}</p>}
-          <dl className="mt-5 divide-y divide-[#D5DCDF] border-y border-[#D5DCDF]">
+          {block.intro && <p className={`mt-4 ${BODY}`}>{block.intro}</p>}
+          <dl className="mt-5 divide-y divide-[#ded8cd] border-y border-[#ded8cd]">
             {block.picks.map((p) => (
-              <div key={p.label} className="py-4">
-                <dt className="text-[#56636E]">{p.label}</dt>
-                <dd className="mt-1">
-                  <span className="text-lg font-semibold">{p.pick}.</span> <span className="text-lg leading-[1.65]">{p.why}</span>
+              <div key={p.label} className="grid gap-2 py-4 sm:grid-cols-[1fr_auto] sm:items-start sm:gap-6">
+                <dt className="text-[15px] font-semibold text-[#14120f]">{p.label}</dt>
+                <dd className="sm:order-none">
+                  <span className="inline-block rounded-full bg-[#e4f2f5] px-3 py-1 text-[13px] font-bold text-[#00748e]">{p.pick}</span>
                 </dd>
+                <dd className="text-[15px] leading-relaxed text-[#56504a] sm:col-span-2">{p.why}</dd>
               </div>
             ))}
           </dl>
@@ -327,12 +504,15 @@ function BlockView({ block, ctx }: { block: Block; ctx: Ctx }) {
 
     case "questions":
       return (
-        <section className={wrap}>
+        <section>
           <H2 id={block.id}>{block.heading}</H2>
-          {block.intro && <p className="mt-3 text-lg leading-[1.7]">{block.intro}</p>}
-          <ul className="mt-4 list-disc space-y-2 pl-5 text-lg leading-[1.65]">
+          {block.intro && <p className={`mt-4 ${BODY}`}>{block.intro}</p>}
+          <ul className="mt-5 space-y-2.5">
             {block.items.map((q) => (
-              <li key={q}>{q}</li>
+              <li key={q} className="flex items-start gap-3 text-[15px] leading-relaxed text-[#14120f]">
+                <span aria-hidden className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#007a95]" />
+                {q}
+              </li>
             ))}
           </ul>
         </section>
@@ -340,34 +520,40 @@ function BlockView({ block, ctx }: { block: Block; ctx: Ctx }) {
 
     case "callout":
       return (
-        <section className={`${wrap} rounded-lg border border-[#C9D3D6] bg-white p-6`}>
+        <section className="nw-card rounded-2xl p-6">
           <H2 id={block.id}>{block.heading}</H2>
-          {block.body.map((p, i) => (
-            <p key={i} className="mt-3 text-lg leading-[1.7]">
-              {p}
-            </p>
-          ))}
+          <div className={`mt-3 space-y-3 ${BODY}`}>
+            {block.body.map((p, i) => (
+              <p key={i}>{p}</p>
+            ))}
+          </div>
         </section>
       );
 
     case "offer": {
       const o = OFFERS[block.vertical];
       return (
-        <section id={block.id} aria-label="ReferLabs offer" className="mt-16 max-w-[68ch] rounded-lg border-2 border-[#0F5E4E] bg-[#E6F1EE] p-6 sm:p-8">
-          <p className="text-lg font-semibold">
-            {o.headline}
-            <Flag show={ctx.preview && o.headlineIsPlaceholder}>Offer to confirm</Flag>
-          </p>
-          <p className="mt-2 text-[#3A4650]">Our link applies this code automatically at checkout. If it doesn&rsquo;t show, enter it yourself.</p>
+        <section id={block.id} aria-label="Refer Labs offer" className="scroll-mt-24 rounded-2xl border border-[#007a95]/30 bg-[#007a95]/[0.08] p-6 sm:p-8">
+          <div className="flex items-start gap-3">
+            <Gift className="mt-1 h-5 w-5 shrink-0 text-[#007a95]" strokeWidth={1.9} aria-hidden />
+            <div className="min-w-0">
+              <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#003647]">Refer Labs code for new Hims patients</p>
+              <p className="mt-1 text-lg font-bold text-[#14120f]">
+                {o.headline}
+                <Flag show={ctx.preview && o.headlineIsPlaceholder}>Offer to confirm</Flag>
+              </p>
+              <p className="mt-1 text-[15px] text-[#56504a]">Our link applies this code automatically at checkout. If it doesn&rsquo;t show, enter it yourself.</p>
+            </div>
+          </div>
           <div className="mt-5">
             <CopyCode code={o.code} />
             <Flag show={ctx.preview && o.codeIsPlaceholder}>Placeholder code</Flag>
           </div>
           <div className="mt-6">
-            <CtaLink href={o.ctaHref} label={o.ctaLabel} placeholder={o.ctaIsPlaceholder} preview={ctx.preview} />
+            <CtaLink href={o.ctaHref} label={o.ctaLabel} placeholder={o.ctaIsPlaceholder} preview={ctx.preview} loc="offer-box" />
           </div>
-          <details className="mt-6 text-sm text-[#3A4650]">
-            <summary className="cursor-pointer font-semibold text-[#17222B]">Offer terms</summary>
+          <details className="mt-6 text-sm text-[#56504a]">
+            <summary className="cursor-pointer font-semibold text-[#14120f]">Offer terms</summary>
             <ul className="mt-2 list-disc space-y-1 pl-5">
               {o.terms.map((t) => (
                 <li key={t}>{t}</li>
@@ -380,24 +566,27 @@ function BlockView({ block, ctx }: { block: Block; ctx: Ctx }) {
 
     case "eligibility":
       return (
-        <section id={block.id} className="mt-12 max-w-[68ch] scroll-mt-16">
+        <section id={block.id} className="scroll-mt-24">
           <EligibilityCheck programLabel={PROGRAM_LABEL[block.vertical]} />
         </section>
       );
 
     case "providers":
       return (
-        <section className="mt-16">
-          <div className="max-w-[68ch]">
-            <H2 id={block.id}>{block.heading}</H2>
-            {block.intro && <p className="mt-3 text-lg leading-[1.7]">{block.intro}</p>}
-          </div>
-          <div className="mt-6 space-y-10">
+        <section>
+          <H2 id={block.id}>{block.heading}</H2>
+          {block.intro && <p className={`mt-4 ${BODY}`}>{block.intro}</p>}
+          <div className="mt-6 space-y-5">
             {block.providers.map((p) => (
-              <div key={p.name} className="max-w-[68ch] border-t border-[#17222B] pt-5">
-                <h3 className="text-2xl font-semibold">{p.name}</h3>
-                <p className="mt-1 font-semibold text-[#0F5E4E]">{p.bestFor}</p>
-                <p className="mt-3 text-lg leading-[1.7]">{p.summary}</p>
+              <div key={p.name} className="nw-card rounded-2xl p-6 sm:p-7">
+                <div className="flex flex-wrap items-center gap-4">
+                  <ProviderMark name={p.name} />
+                  <div>
+                    <h3 className="text-xl font-bold text-[#14120f]">{p.name}</h3>
+                    <p className="text-sm font-semibold text-[#007a95]">{p.bestFor}</p>
+                  </div>
+                </div>
+                <p className={`mt-4 ${BODY}`}>{p.summary}</p>
                 <Ledger rows={p.facts} preview={ctx.preview} />
                 {p.cta === "hims" && (
                   <div className="mt-5">
@@ -406,12 +595,13 @@ function BlockView({ block, ctx }: { block: Block; ctx: Ctx }) {
                       label={OFFERS[ctx.vertical].ctaLabel}
                       placeholder={OFFERS[ctx.vertical].ctaIsPlaceholder}
                       preview={ctx.preview}
+                      loc="provider-hims"
                     />
                   </div>
                 )}
                 {p.cta === "mosh" && (
                   <div className="mt-5">
-                    <CtaLink href={MOSH.ctaHref} label={MOSH.ctaLabel} placeholder={MOSH.ctaIsPlaceholder} preview={ctx.preview} variant="outline" />
+                    <CtaLink href={MOSH.ctaHref} label={MOSH.ctaLabel} placeholder={MOSH.ctaIsPlaceholder} preview={ctx.preview} loc="provider-mosh" variant="ghost" />
                   </div>
                 )}
               </div>
@@ -422,17 +612,16 @@ function BlockView({ block, ctx }: { block: Block; ctx: Ctx }) {
 
     case "faq":
       return (
-        <section className={wrap}>
+        <section>
           <H2 id={block.id}>{block.heading}</H2>
-          <div className="mt-5 divide-y divide-[#D5DCDF] border-y border-[#D5DCDF]">
+          <div className="mt-6 divide-y divide-[#ded8cd] border-y border-[#ded8cd]">
             {block.items.map((i) => (
               <details key={i.q} className="group py-4">
-                <summary className="cursor-pointer list-none text-lg font-semibold marker:hidden">
-                  <span className="mr-2 inline-block w-4 text-[#0F5E4E] group-open:hidden">+</span>
-                  <span className="mr-2 hidden w-4 text-[#0F5E4E] group-open:inline-block">&minus;</span>
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-[#14120f]">
                   {i.q}
+                  <span aria-hidden className="text-xl leading-none text-[#007a95] transition-transform group-open:rotate-45">+</span>
                 </summary>
-                <p className="mt-3 pl-6 text-lg leading-[1.7]">{i.a}</p>
+                <p className="mt-3 text-[15px] leading-relaxed text-[#56504a]">{i.a}</p>
               </details>
             ))}
           </div>

@@ -17,13 +17,13 @@ export function CopyCode({ code }: { code: string }) {
 
   return (
     <div className="flex flex-wrap items-center gap-3">
-      <span className="select-all rounded-md border-2 border-dashed border-[#0F5E4E] bg-white px-4 py-2 text-2xl font-semibold tracking-[0.08em] text-[#17222B] sm:text-3xl">
+      <span className="select-all rounded-xl border-2 border-dashed border-[#007a95] bg-white px-4 py-2 font-mono text-2xl font-bold tracking-[0.08em] text-[#14120f] sm:text-[1.7rem]">
         {code}
       </span>
       <button
         type="button"
         onClick={copy}
-        className="rounded-md border border-[#0F5E4E] px-4 py-2 text-base font-semibold text-[#0F5E4E] hover:bg-[#0F5E4E] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0F5E4E]"
+        className="nw-btn-ghost focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#007a95]"
       >
         {state === "copied" ? "Code copied" : state === "failed" ? "Select and copy the code" : "Copy code"}
       </button>

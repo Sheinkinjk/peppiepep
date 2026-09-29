@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { ArrowRight } from "lucide-react";
 
 /** Visible only in preview. Marks anything Hims still needs to confirm or issue. */
 export function Flag({ show, children = "To confirm" }: { show: boolean; children?: ReactNode }) {
@@ -10,39 +11,64 @@ export function Flag({ show, children = "To confirm" }: { show: boolean; childre
   );
 }
 
+/**
+ * Outbound partner button, on the site's nw-btn system so it matches /moshy and
+ * /moshhair. `loc` feeds data-cta, the placement label every brand page carries.
+ */
 export function CtaLink({
   href,
   label,
   placeholder,
   preview,
+  loc,
   variant = "solid",
+  size = "md",
+  block = false,
 }: {
   href: string;
   label: string;
   placeholder: boolean;
   preview: boolean;
-  variant?: "solid" | "outline";
+  loc: string;
+  variant?: "solid" | "ghost" | "inverse";
+  size?: "md" | "lg";
+  block?: boolean;
 }) {
-  const base =
-    "inline-flex items-center rounded-md px-6 py-3 text-base font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0F5E4E]";
+  const sizes = { md: "px-6 py-3.5 text-[15px]", lg: "px-8 py-4 text-base" } as const;
   const style =
     variant === "solid"
-      ? "bg-[#0F5E4E] text-white hover:bg-[#0B4A3D]"
-      : "border border-[#0F5E4E] text-[#0F5E4E] hover:bg-[#E6F1EE]";
+      ? "nw-btn"
+      : variant === "ghost"
+        ? "nw-btn-ghost"
+        : "nw-btn !bg-white !text-[#00748e] hover:!bg-[#e4f2f5]";
   return (
-    <span className="inline-flex flex-wrap items-center">
-      <a href={href} rel="sponsored nofollow noopener" target={placeholder ? undefined : "_blank"} className={`${base} ${style}`}>
+    <span className={`inline-flex flex-wrap items-center ${block ? "w-full" : ""}`}>
+      <a
+        href={href}
+        rel="nofollow sponsored noopener"
+        target={placeholder ? undefined : "_blank"}
+        data-cta={loc}
+        className={`${style} justify-center ${sizes[size]} ${block ? "w-full" : ""} focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#007a95]`}
+      >
         {label}
+        <ArrowRight className="h-4 w-4" aria-hidden />
       </a>
       <Flag show={preview && placeholder}>Placeholder link</Flag>
     </span>
   );
 }
 
-export function Disclosure({ text }: { text: string }) {
+export function Disclosure({ text, tone = "light" }: { text: string; tone?: "light" | "dark" }) {
   return (
-    <p className="border-l-4 border-[#56636E] bg-white px-4 py-3 text-sm leading-relaxed text-[#3A4650]">
-      <span className="font-semibold text-[#17222B]">Disclosure: </span>
+    <p
+      data-affiliate-disclosure
+      className={
+        tone === "dark"
+          ? "text-[12px] leading-relaxed text-white/70"
+          : "text-[13px] leading-relaxed text-[#56504a]"
+      }
+    >
+      <span className={tone === "dark" ? "font-semibold text-white" : "font-semibold text-[#14120f]"}>Disclosure: </span>
       {text}
     </p>
   );
