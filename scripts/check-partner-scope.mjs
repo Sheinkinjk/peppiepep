@@ -121,7 +121,7 @@ const PARTNERS = [
     name: "Mosh",
     tokens: ["getmosh.com.au", "MOSH_HAIR_URL", "REFERAL55", "/go/mosh-"],
     allow: [
-      "/hair-loss", "/moshhair", "/mosh-review", "/mosh-vs-dense",
+      "/hair-loss", "/moshhair", "/mosh-review", "/mosh-vs-dense", "/mosh-vs-pilot",
       "/best-hair-loss-treatment-australia", "/hair-loss-treatment-cost-australia",
       "/mens-health", "/deals", "/guides", "/coming-soon",
     ],

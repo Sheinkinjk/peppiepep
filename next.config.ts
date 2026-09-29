@@ -61,7 +61,8 @@ const nextConfig: NextConfig = {
       // compared a brand that no longer exists. Each goes to the roundup for the
       // same Refer Labs partner the page was built around.
       { source: '/moshy-vs-pilot', destination: '/best-weight-loss-telehealth-australia', statusCode: 301 },
-      { source: '/mosh-vs-pilot', destination: '/best-hair-loss-treatment-australia', statusCode: 301 },
+      // /mosh-vs-pilot restored 30 Sep 2026 as a live page on the Pilot-joined-Hims fact
+      // (its query was the site's strongest comparison). At Hims go-live it 301s to /hims-vs-mosh.
       // CloudTalk retired (24 August 2026): get.cloudtalk.io/9mxppdbxerja returns
       // 404, so the page's only CTA was broken while the page stayed live and
       // indexed. Same fault and same remedy as Instapage in July. 301 to

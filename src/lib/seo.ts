@@ -1693,6 +1693,13 @@ export const seoConfig = {
     ],
   },
 
+  moshVsPilot: {
+    title: "Mosh vs Pilot 2026: What Changed When Pilot Joined Hims",
+    description:
+      "Pilot has joined the Hims & Hers group and no longer runs as its own service. How Mosh compares for hair loss today, and the Mosh code REFERAL55 for 55% off.",
+    url: `${SITE_URL}/mosh-vs-pilot`,
+    keywords: ["mosh vs pilot", "pilot vs mosh", "mosh or pilot", "mosh vs pilot hair loss", "is pilot still available australia", "pilot hims"],
+  },
   moshyVsJuniper: {
     title: "Moshy vs Juniper 2026: Cost and Who Each Suits",
     description:

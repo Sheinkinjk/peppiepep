@@ -218,6 +218,11 @@ export const moshHairConfig: AffiliatePageConfig = {
 
   relatedLinks: [
     {
+      href: "/mosh-vs-pilot",
+      label: "Mosh vs Pilot: What Changed",
+      desc: "Pilot has joined Hims & Hers. How Mosh compares for hair loss now.",
+    },
+    {
       href: "/mosh-review",
       label: "Mosh Review: Is It Legit & Worth It?",
       desc: "An independent look at whether Mosh stacks up, what it costs, and what people raise.",

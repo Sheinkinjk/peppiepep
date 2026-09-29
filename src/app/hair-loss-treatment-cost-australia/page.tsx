@@ -315,6 +315,7 @@ export default function HairLossTreatmentCostAustraliaPage() {
                 <li><Link href="/how-to-stop-hair-loss-australia" className="nw-link">How to slow hair loss, and what the evidence supports</Link></li>
                 <li><Link href="/online-hair-loss-treatment-australia" className="nw-link">How online hair-loss treatment works</Link></li>
                 <li><Link href="/moshhair" className="nw-link">Mosh hair-loss: how it works and the current offer</Link></li>
+                <li><Link href="/mosh-vs-pilot" className="nw-link">Mosh vs Pilot, now that Pilot has joined Hims</Link></li>
                 <li><Link href="/hair-loss" className="nw-link">The full hair-loss hub</Link></li>
               </ul>
             </section>

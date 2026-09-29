@@ -157,6 +157,7 @@ const sections = [
       { href: "/online-hair-loss-treatment-australia", label: "Online Hair-Loss Treatment", desc: "How the telehealth assessment works, and what you can and can\u2019t get online." },
       { href: "/how-to-stop-hair-loss-australia", label: "How to Stop Hair Loss", desc: "Understanding the cause, what the evidence supports, and acting early." },
       { href: "/receding-hairline-treatment-australia", label: "Receding Hairline Treatment", desc: "What causes it, which treatments have real evidence, and why acting early matters." },
+        { href: "/mosh-vs-pilot", label: "Mosh vs Pilot", desc: "What changed when Pilot joined Hims & Hers." },
         { href: "/mosh-vs-dense", label: "Mosh vs Dense", desc: "Clinical pathway or topical products." },
     ],
   },

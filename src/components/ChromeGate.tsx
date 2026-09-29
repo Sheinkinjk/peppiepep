@@ -98,6 +98,7 @@ const STANDALONE_ROUTES = [
   "/cheapest-weight-loss-telehealth-australia",
   "/weight-loss-cost-calculator",
   "/mosh-vs-dense",
+  "/mosh-vs-pilot",
   // Website-builder + peptide head-to-heads
   "/carrd-vs-butternut",
   "/durable-vs-butternut",
