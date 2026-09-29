@@ -156,7 +156,7 @@ export default function CheapestWeightLossTelehealthPage() {
 
         <div className="mt-6 max-w-2xl space-y-2">
           <AffiliateDisclosure compact partners={["Moshy", "Juniper"]} />
-          {JUNIPER_REQUIRED ? <p className="text-[13px] leading-relaxed text-[#56504a]">{JUNIPER_REQUIRED.text}</p> : null}
+          {JUNIPER_REQUIRED ? <p className="rounded-xl border border-[#ded8cd] bg-[#f7f4ee] px-4 py-3 text-[13px] leading-relaxed text-[#56504a]">{JUNIPER_REQUIRED.text}</p> : null}
         </div>
 
         <ProviderPair providers={providers} className="mt-8" />

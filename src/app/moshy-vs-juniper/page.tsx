@@ -44,7 +44,7 @@ const providers: PairProvider[] = [
     points: [
       "Practitioner-led care with structured health coaching",
       "Designed and marketed for women",
-      "Subscription program with its own app",
+      "Monthly subscription program",
     ],
     offer: { text: "Initial consultation waived, valued at $89,", code: "JARREDKFC" },
     href: JUNIPER_URL,
@@ -57,7 +57,6 @@ const closing = providers.map((p) => ({ ...p, loc: p.loc.replace("hero", "close"
 
 const rows: { label: string; moshy: string; juniper: string }[] = [
   { label: "Care model", moshy: "Clinical pathway: eligibility check, practitioner review, delivery", juniper: "Clinical care plus structured coaching and community" },
-  { label: "Built for", moshy: "Anyone who passes the eligibility check", juniper: "Women" },
   { label: "How you start", moshy: "Free online eligibility check", juniper: "Online assessment, then an initial consultation" },
   { label: "Pricing", moshy: "Subscription, shown in the eligibility flow before you pay", juniper: "Subscription, shown in the sign-up flow before you pay" },
   { label: "Refer Labs code", moshy: "REFERRAL120: $120 off the first order", juniper: "JARREDKFC: initial consultation waived, valued at $89" },
@@ -164,7 +163,7 @@ export default function MoshyVsJuniperPage() {
 
         <div className="mt-6 max-w-2xl space-y-2">
           <AffiliateDisclosure compact partners={["Moshy", "Juniper"]} />
-          {JUNIPER_REQUIRED ? <p className="text-[13px] leading-relaxed text-[#56504a]">{JUNIPER_REQUIRED.text}</p> : null}
+          {JUNIPER_REQUIRED ? <p className="rounded-xl border border-[#ded8cd] bg-[#f7f4ee] px-4 py-3 text-[13px] leading-relaxed text-[#56504a]">{JUNIPER_REQUIRED.text}</p> : null}
         </div>
 
         <ProviderPair providers={providers} className="mt-8" />
@@ -224,7 +223,6 @@ export default function MoshyVsJuniperPage() {
             <ul className="mt-3 space-y-2 text-[15px] leading-relaxed text-[#56504a]">
               <li>You want regular coaching and someone checking in on your habits.</li>
               <li>A community of people on the same program would help you stick with it.</li>
-              <li>You want a program designed around women&apos;s experience of weight.</li>
             </ul>
           </div>
         </section>
