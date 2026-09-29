@@ -41,6 +41,8 @@ const BANNED = [
   "before it's too late", "don't wait", "running out of time",
   // Not in the partner program
   "premature ejaculation",
+  // Hims plan name that reads as a hormone reference (rule 4), and member-count stats
+  "T Support", "300,000", "australians have joined",
 ];
 
 // Checked case-sensitively (short tokens that would false-positive in lowercase).

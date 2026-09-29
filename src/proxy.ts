@@ -2,6 +2,8 @@ import { createServerClient } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
 import { logger } from '@/lib/logger'
 import { himsPreviewMiddleware } from '@/lib/hims/middleware'
+import { HIMS_SLUG_LIST } from '@/content/hims/slugs'
+import { HIMS_PREVIEW_COOKIE } from '@/lib/hims/access'
 
 /**
  * Permanently withdrawn content with no equivalent live page.
@@ -91,6 +93,14 @@ a{color:#0E7C66;font-weight:600}</style></head><body><main>
 <p><a href="/guides">Browse the guides</a></p>
 </main></body></html>`
 
+const HIMS_NOT_FOUND_BODY = `<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Page not found | Refer Labs</title>
+<style>body{margin:0;background:#F6F5F1;color:#16201C;font:16px/1.6 system-ui,sans-serif;display:grid;place-items:center;min-height:100vh}
+main{max-width:32rem;padding:2rem;text-align:center}h1{font-size:1.5rem;margin:0 0 .75rem}a{color:#0E7C66;font-weight:600}</style></head>
+<body><main><h1>Page not found</h1><p><a href="/guides">Browse the guides</a></p></main></body></html>`
+
 async function runProxy(request: NextRequest) {
   // Checked before the Supabase client is built: these paths need no session, and
   // skipping the auth roundtrip keeps a bot hammering dead URLs off the auth path.
@@ -106,6 +116,25 @@ async function runProxy(request: NextRequest) {
   // sets noindex, no-store and the preview-key cookie. The pages themselves 404
   // without the key, so this is defence in depth. Existing matcher already covers
   // these paths.
+  // A keyless request must 404 before rendering starts. The page's own notFound()
+  // runs after the root loading.tsx has begun streaming, so it served the not-found
+  // UI with status 200 and leaked the page title from generateMetadata (found in
+  // local verification, 29 Sep 2026). Refusing here gives a real 404 and no title.
+  const himsPath = request.nextUrl.pathname.replace(/^\/+|\/+$/g, '')
+  if ((HIMS_SLUG_LIST as readonly string[]).includes(himsPath) && process.env.HIMS_PAGES_LIVE !== 'true') {
+    const expected = process.env.HIMS_PREVIEW_KEY ?? ''
+    const given = request.nextUrl.searchParams.get('key') ?? request.cookies.get(HIMS_PREVIEW_COOKIE)?.value
+    if (expected.length < 24 || given !== expected) {
+      return new NextResponse(HIMS_NOT_FOUND_BODY, {
+        status: 404,
+        headers: {
+          'content-type': 'text/html; charset=utf-8',
+          'x-robots-tag': 'noindex, nofollow, noarchive',
+          'cache-control': 'private, no-store, max-age=0',
+        },
+      })
+    }
+  }
   const hims = himsPreviewMiddleware(request)
   if (hims) return hims
 

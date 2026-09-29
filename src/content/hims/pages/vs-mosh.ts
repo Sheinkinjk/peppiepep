@@ -1,0 +1,141 @@
+import type { HimsPageContent } from "../types";
+import { FACTS_CHECKED_ON } from "../config";
+
+export const vsMosh: HimsPageContent = {
+  slug: "hims-vs-mosh",
+  vertical: "weight",
+  kind: "versus",
+  seoTitle: "Hims vs Mosh (2026): Weight Loss, Hair Loss and ED Compared",
+  metaDescription:
+    "Hims vs Mosh for Australian men, compared on what you can actually check: consult fees, published prices, commitment periods, guarantees, support and delivery.",
+  h1: "Hims vs Mosh: which men's telehealth service fits you",
+  standfirst:
+    "Hims and Mosh are two of the largest men's telehealth services in Australia, and both cover weight loss, hair loss and ED. Neither can say publicly what their practitioners supply, so this comparison sticks to what you can verify before you sign up: what it costs to start, how long you're committed for, what happens if you change your mind, and what support looks like.",
+  verdict: [
+    "Choose Hims if you want round-the-clock access to a care team and you're comfortable with a longer commitment on weight loss. Choose Mosh if you want to see prices before the consult, a shorter minimum commitment on weight loss, and the option of a price match.",
+    "On hair loss the two are closer than they look. Both offer a 180-day money-back guarantee and free delivery. The real difference is that Mosh publishes its hair prices and Hims shows them after the consult.",
+  ],
+  otherPartnersOnPage: ["Mosh"],
+  blocks: [
+    {
+      type: "compare",
+      id: "overview",
+      heading: "Hims vs Mosh at a glance",
+      intro: `Read on each provider's own website on ${FACTS_CHECKED_ON}. Prices and offers change, so confirm at checkout.`,
+      columns: ["", "Hims", "Mosh"],
+      rows: [
+        { label: "Background", cells: ["Formerly Pilot. Part of Hims & Hers Health since 2026.", "Australian men's health service since 2016. Sister brands include Moshy and The Healthy Mummy."] },
+        { label: "Programs for men", cells: ["Weight loss, hair loss, ED and more", "Weight loss, hair loss, ED, skin, mental health and more"] },
+        { label: "How you start", cells: ["Free quiz, then a phone consult", "Free quiz, then a consult by text, video or phone"] },
+        { label: "Consult cost", cells: ["$20, refundable if not eligible or you don't proceed. Free with the ReferLabs code.", "Mosh says you don't pay until after a free practitioner review"], verify: true },
+        { label: "Delivery", cells: ["Free, discreet, tracked", "Free, discreet"] },
+        { label: "Ongoing support", cells: ["Unlimited practitioner check-ins, 24/7 Care Team", "Unlimited follow-ups; optional dietitian sessions for weight"] },
+        { label: "Price match", cells: ["Not advertised", "Yes, across hair and weight, subject to an eligibility check"] },
+      ],
+    },
+    { type: "offer", id: "offer", vertical: "weight" },
+    {
+      type: "compare",
+      id: "weight",
+      heading: "Weight loss: Hims vs Mosh",
+      intro: "The biggest difference between the two is how long you commit for.",
+      columns: ["", "Hims", "Mosh"],
+      rows: [
+        { label: "Advertised start", cells: ["$199 first payment with Hims' public new-patient code", "Month one from $249 with Mosh's public intro code ($100 off month one)"] },
+        { label: "Commitment attached to that price", cells: ["Twelve months, pay-upfront, minimum total $2,988", "Minimum three months"] },
+        { label: "Average monthly cost we can verify", cells: ["$249 across the twelve-month minimum", "Month one only. Later months not published on the pricing page."], verify: true },
+        { label: "Refund", cells: ["Full refund within 30 days of starting. Terms apply.", "Check Mosh's terms before you pay"], verify: true },
+        { label: "Extra support", cells: ["24/7 Care Team including nurses, pharmacists and clinicians", "Dietitian add-on, $50 per one-hour session"] },
+      ],
+      footnote: "Both providers attach their advertised weight loss price to a minimum commitment. Ask each one for the total cost over the period you expect to stay, not just the first payment.",
+    },
+    {
+      type: "prose",
+      id: "weight-read",
+      heading: "How to read the weight loss difference",
+      paragraphs: [
+        "On paper the first payments are close. The commitments are not. Hims' advertised price sits on a twelve-month pay-upfront option. Mosh's intro price comes with a three-month minimum. If you're confident you want a year-long program, the Hims structure gives you a known total. If you want to test the waters first, the shorter minimum is easier to live with.",
+        "Hims' page also says you can change or cancel at any time. Ask on the consult how that applies to the option you choose, and whether a monthly payment option is available.",
+        "Mosh's dietitian sessions are a real extra if you want structured help with food. Hims' answer is round-the-clock access to its care team. Which matters more depends on whether you want scheduled coaching or someone to ask when a question comes up.",
+      ],
+    },
+    {
+      type: "compare",
+      id: "hair",
+      heading: "Hair loss: Hims vs Mosh",
+      columns: ["", "Hims", "Mosh"],
+      rows: [
+        { label: "Published price", cells: ["Not published; shown after the consult", "Prevention from $24/month, Prevention & Regrowth from $44/month, advanced plan from $56/month"] },
+        { label: "Plan structure", cells: ["Keep and Regrow, with 2-in-1, 3-in-1 and single-action options", "Prevention, Prevention & Regrowth, and an advanced plan, tailored by the practitioner"] },
+        { label: "Money-back guarantee", cells: ["180 days. Terms apply.", "180 days on hair subscriptions. Terms apply."] },
+        { label: "Deliveries", cells: ["Every two or three months", "Subscription; frequency set with your plan"], verify: true },
+        { label: "Cancelling", cells: ["Before the next order, no fee", "Check Mosh's terms"], verify: true },
+      ],
+      footnote: "Hims runs a public new-patient hair offer from time to time. Offers can't be combined, so compare at checkout.",
+    },
+    {
+      type: "compare",
+      id: "ed",
+      heading: "ED: Hims vs Mosh",
+      columns: ["", "Hims", "Mosh"],
+      rows: [
+        { label: "Published price", cells: ["Not published; shown after the consult", "From $1.50 per day"] },
+        { label: "Plans", cells: ["ED Stamina, ED Performance and a third combined plan", "Tailored plan with your choice of delivery frequency"] },
+        { label: "Consult", cells: ["Phone. $20, refundable; free with the ReferLabs code.", "Text, video or phone"] },
+        { label: "Contract", cells: ["No lock-in; pause or cancel any time", "Check Mosh's terms"], verify: true },
+        { label: "Packaging", cells: ["Discreet, unmarked", "Discreet"] },
+      ],
+    },
+    {
+      type: "picks",
+      id: "picks",
+      heading: "Which one to choose",
+      intro: "There's no single winner. These are the calls we'd make for specific situations.",
+      picks: [
+        { label: "You want to see prices before any consult", pick: "Mosh", why: "Mosh publishes starting prices for hair, weight and ED. Hims shows hair and ED prices after the consult." },
+        { label: "You want the shortest weight loss commitment to start", pick: "Mosh", why: "Mosh's intro weight offer carries a three-month minimum, against twelve months on Hims' advertised pay-upfront option." },
+        { label: "You want help available at any hour", pick: "Hims", why: "Every Hims plan includes 24/7 access to a care team of nurses, pharmacists and clinicians, plus unlimited practitioner check-ins." },
+        { label: "You want structured help with food", pick: "Mosh", why: "Mosh offers dietitian sessions as a paid add-on to its weight program." },
+        { label: "You'd rather talk than type", pick: "Either", why: "Hims consults are by phone. Mosh offers phone as well as text and video." },
+        { label: "You want a long hair guarantee", pick: "Either", why: "Both offer 180 days on hair plans. Read each provider's terms." },
+        { label: "Free consult for ED", pick: "Hims with the ReferLabs code", why: "Hims charges $20 for the consult. The ReferLabs code makes it free for new patients." },
+      ],
+    },
+    {
+      type: "prose",
+      id: "method",
+      heading: "How we compared them",
+      paragraphs: [
+        `We read each provider's public pages, pricing and FAQs on ${FACTS_CHECKED_ON}, and compared only what a customer can check before signing up: cost to start, commitment, refund and cancellation terms, support and delivery. Where a provider doesn't publish something, we say so rather than guess.`,
+        "We don't compare what the practitioners supply, because Australian advertising law doesn't allow it to be named publicly and because it depends on your assessment. We haven't used testimonials or success-rate claims from either provider.",
+        "ReferLabs is paid by both Hims and Mosh when a new customer signs up using our code or link. The two pay us different amounts. That hasn't changed the calls above, several of which favour the provider that pays us less.",
+      ],
+    },
+    {
+      type: "faq",
+      id: "faq",
+      heading: "Hims vs Mosh: common questions",
+      items: [
+        { q: "Is Hims cheaper than Mosh?", a: "It depends on the program and how long you stay. For weight loss, Hims' advertised twelve-month minimum averages $249 a month, and Mosh's intro offer is $249 for month one with a three-month minimum. For hair and ED, Mosh publishes its prices and Hims shows them after the consult." },
+        { q: "Do Hims and Mosh both have a money-back guarantee?", a: "Both offer a 180-day money-back guarantee on hair plans, subject to their terms. Hims also offers a full refund within 30 days of starting its weight loss program." },
+        { q: "Which has better support, Hims or Mosh?", a: "Hims includes 24/7 access to its care team and unlimited practitioner check-ins. Mosh includes unlimited follow-ups and offers paid dietitian sessions for weight loss. Pick based on the kind of help you want." },
+        { q: "Can I switch from Mosh to Hims, or the other way?", a: "Yes. You start as a new patient with the quiz and consult. Tell the new practitioner about any plan you're currently on so they can assess you properly." },
+        { q: "Is Pilot the same as Hims?", a: "Yes. Pilot relaunched as Hims in 2026." },
+      ],
+    },
+  ],
+  sources: [
+    { label: "Hims: Weight loss", url: "https://hims.com.au/weight-loss" },
+    { label: "Hims: Hair loss", url: "https://hims.com.au/hair-loss" },
+    { label: "Hims: Erectile dysfunction", url: "https://hims.com.au/erectile-dysfunction" },
+    { label: "Mosh: Pricing", url: "https://www.getmosh.com.au/pricing" },
+    { label: "Mosh: Hair loss", url: "https://www.getmosh.com.au/hair-loss" },
+    { label: "Mosh: Hair loss reviews and guarantee", url: "https://www.getmosh.com.au/reviews-hair-loss" },
+  ],
+  related: [
+    { label: "Hims weight loss review", href: "/hims" },
+    { label: "Hims hair loss review", href: "/hims-hair-loss" },
+    { label: "Hims ED review", href: "/hims-ed" },
+    { label: "Best men's weight loss program in Australia", href: "/best-mens-weight-loss-program-australia" },
+  ],
+};

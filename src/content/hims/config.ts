@@ -112,7 +112,6 @@ export const FACTS = {
     practitioners: "AHPRA-registered practitioners working across Australia",
     support: "Unlimited practitioner check-ins and 24/7 access to the Care Team (nurses, pharmacists and clinicians)",
     delivery: "Free Australia-wide, discreet unmarked packaging, Australia Post tracking",
-    memberClaim: "Hims says over 300,000 Australians have joined",
     weight: {
       entry: "$199 first payment with Hims' public new-patient code",
       commitment: "Pay-upfront option with a twelve-month commitment and a minimum total payment of $2,988",
@@ -129,7 +128,7 @@ export const FACTS = {
       price: "Not published on Hims' public hair page; shown after the consult",
     },
     ed: {
-      plans: "ED Stamina, ED Performance and ED + T Support",
+      plans: "ED Stamina, ED Performance and a third combined plan",
       popular: "Hims says ED Stamina is preferred by most men on Hims",
       cancel: "Pause or cancel any time, no lock-in contracts",
       price: "Not published on Hims' public ED page; shown after the consult",
