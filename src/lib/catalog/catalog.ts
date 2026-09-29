@@ -423,12 +423,12 @@ export const CATALOG: Vertical[] = [
     h1Accent: "pay and manage your team",
     intro:
       "Software that runs payroll, onboarding and people admin in one place. This hub compares the main platforms by who they suit and where they operate, so you pick one built for your team, not the loudest brand.",
-    metaTitle: "HR & Payroll Software: Employment Hero vs Gusto",
+    metaTitle: "HR and Payroll Software in Australia (2026), Compared",
     metaDescription:
-      "Compare HR and payroll platforms for 2026: Employment Hero for Australian and NZ teams, Gusto for US teams. Independent comparison, no pay-to-rank.",
+      "Australian HR and payroll platforms compared on who they suit and what each plan includes, including which Employment Hero plan covers payroll.",
     keywords: [
       "hr payroll software comparison",
-      "employment hero vs gusto",
+      "payroll software australia",
       "best payroll software 2026",
       "hr software small business",
       "online payroll platform",
@@ -442,12 +442,11 @@ export const CATALOG: Vertical[] = [
         facts: [
           { label: "Role", value: "HR + payroll" },
           { label: "Best for", value: "AU & NZ teams" },
-          { label: "Pricing", value: "From A$10/employee/mo; enterprise on request" },
+          { label: "Payroll", value: "Included in the Employment Unlimited plan, quoted by sales" },
         ],
         affiliateUrl: EMPLOYMENT_HERO_URL,
         reviewHref: "/employmenthero",
         ctaLabel: "See Employment Hero",
-        featured: true,
       },
       {
         name: "Trainual",
@@ -465,12 +464,8 @@ export const CATALOG: Vertical[] = [
     ],
     faqs: [
       {
-        q: "Employment Hero or Gusto, which should I use?",
-        a: "It comes down to where your team is. Employment Hero is built for Australian and New Zealand businesses and handles local payroll and compliance. Gusto is a US-only platform, strong at US payroll, tax filing and benefits. Choose by your team's country rather than features alone.",
-      },
-      {
-        q: "Is Gusto available in Australia?",
-        a: "No. Gusto is a US-focused payroll and HR platform and is not built for Australian payroll or compliance. Australian businesses are better served by a local platform such as Employment Hero. We flag availability so you don't sign up for the wrong region.",
+        q: "Does Employment Hero's entry plan include payroll?",
+        a: "No. Employment Hero lists its HR plans on its own pricing page; payroll is included only in its top plan, Employment Unlimited, which is quoted by its sales team (read on employmenthero.com/pricing, 30 September 2026). Check which plan covers the modules you need before you compare prices.",
       },
       {
         q: "How much does payroll software cost in Australia?",

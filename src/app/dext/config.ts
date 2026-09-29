@@ -14,7 +14,7 @@ export const dextConfig: AffiliatePageConfig = {
   atAGlance: [
     { k: "Type", v: "Bookkeeping automation" },
     { k: "Best for", v: "Bookkeepers, accountants & SMBs" },
-    { k: "Pricing", v: "No free plan; from US$25/mo (annual)" },
+    { k: "Pricing", v: "No free plan; AUD plans on Dext's Australian site" },
     { k: "Syncs with", v: "Xero, QuickBooks, Sage" },
   ],
   hero: {

@@ -11,7 +11,7 @@ export const employmentHeroConfig: AffiliatePageConfig = {
   offer: "Free demo",
 
   quickAnswer:
-    "Employment Hero is an Australian-built, all-in-one HR, payroll and employment platform. It combines HR and people operations, ATO-certified Single Touch Payroll (STP Phase 2), AI recruitment and applicant tracking, employee benefits and earned wage access, and an employee app. It is Fair Work and ATO compliant, and is aimed at Australian small and medium businesses. Entry HR and payroll plans start around A$10 per employee per month, with higher tiers and enterprise pricing available on request.",
+    "Employment Hero is an Australian-built, all-in-one HR, payroll and employment platform. It combines HR and people operations, ATO-certified Single Touch Payroll (STP Phase 2), AI recruitment and applicant tracking, employee benefits and earned wage access, and an employee app. It is Fair Work and ATO compliant, and is aimed at Australian small and medium businesses. Employment Hero lists its HR plans on its own pricing page; payroll is included only in its top plan, Employment Unlimited, which is quoted by its sales team (read on employmenthero.com/pricing, 30 September 2026).",
 
   banner: {
     heading: "Employment Hero: HR, Payroll & Compliance",
@@ -24,7 +24,7 @@ export const employmentHeroConfig: AffiliatePageConfig = {
     { k: "What it is", v: "All-in-one HR, payroll and employment platform" },
     { k: "Best for", v: "Australian small and medium businesses" },
     { k: "Compliance", v: "Fair Work and ATO compliant, STP Phase 2 certified" },
-    { k: "Pricing", v: "From A$10/employee/mo; enterprise on request" },
+    { k: "Payroll", v: "Included in the Employment Unlimited plan, quoted by sales" },
   ],
   trustStrip: [
     "Australian-built for Australian employers",
@@ -33,7 +33,7 @@ export const employmentHeroConfig: AffiliatePageConfig = {
     "Fair Work compliant",
   ],
   verdict:
-    "Employment Hero is a strong fit for Australian SMEs that want HR, payroll and compliance handled in one Australian-built platform rather than stitched together. The ATO-certified payroll, Fair Work alignment and employee app cover the core obligations of employing people locally. Core plans start around A$10 per employee per month, with higher tiers quoted by headcount, so the sensible next step is a quick demo scoped to your business.",
+    "Employment Hero is a strong fit for Australian SMEs that want HR, payroll and compliance handled in one Australian-built platform rather than stitched together. The ATO-certified payroll, Fair Work alignment and employee app cover the core obligations of employing people locally. Payroll sits in its top plan, so a demo scoped to your business is the sensible next step.",
   verdictPoints: [
     "Australian-built and aligned to Fair Work and ATO requirements",
     "ATO-certified Single Touch Payroll (STP Phase 2) built in",
@@ -91,7 +91,7 @@ export const employmentHeroConfig: AffiliatePageConfig = {
     {
       heading: "Employment Hero pricing",
       paragraphs: [
-        "Employment Hero does not publish standard pricing publicly. Plans vary by business size, and enterprise pricing is available on request. That means there is no single figure we can quote here, and any page stating one as a fixed price would be guessing.",
+        "Employment Hero lists its HR plans on its own pricing page; payroll is included only in its top plan, Employment Unlimited, which is quoted by its sales team (read on employmenthero.com/pricing, 30 September 2026).",
         "The practical approach is to request a quote scoped to your headcount and the modules you need, since what you pay depends on how many employees you have and which parts of the platform you use. Because the offering spans HR, payroll, hiring and benefits, it is worth being clear about which of those you need when you enquire.",
         "Click through to Employment Hero to see the current plans and request pricing for your business.",
       ],
@@ -112,7 +112,7 @@ export const employmentHeroConfig: AffiliatePageConfig = {
     {
       num: "03",
       heading: "Request a quote",
-      body: "Pricing is not published publicly, so request a quote scoped to your headcount and the modules you want.",
+      body: "Payroll is in the Employment Unlimited plan, which is quoted, so request a quote scoped to your headcount and the modules you want.",
     },
     {
       num: "04",
@@ -125,7 +125,7 @@ export const employmentHeroConfig: AffiliatePageConfig = {
     "Direct access to Employment Hero via our affiliate link",
     "Explains what the platform is and what it covers",
     "Covers who it suits: Australian SMEs",
-    "Is honest that pricing is not published and is quoted per business",
+    "States which plan includes payroll",
     "Describes the Australian compliance and payroll fit in plain terms",
   ],
 
@@ -140,7 +140,7 @@ export const employmentHeroConfig: AffiliatePageConfig = {
     },
     {
       q: "How much does Employment Hero cost?",
-      a: "Employment Hero does not publish standard pricing publicly. Plans vary by business size and enterprise pricing is available on request, so there is no single fixed figure to quote. The practical step is to request a quote scoped to your headcount and the modules you need.",
+      a: "Employment Hero lists its HR plans on its own pricing page; payroll is included only in its top plan, Employment Unlimited, which is quoted by its sales team (read on employmenthero.com/pricing, 30 September 2026). The practical step is to request a quote scoped to your headcount and the modules you need.",
     },
     {
       q: "Is Employment Hero good for Australian businesses?",
@@ -203,5 +203,5 @@ export const employmentHeroConfig: AffiliatePageConfig = {
   },
 
   disclaimer:
-    "You will be taken to the Employment Hero site. This page is operated by Refer Labs and contains a disclosed affiliate link. Employment Hero does not publish standard pricing publicly; request a quote for figures specific to your business. Information is general in nature and correct to the best of our knowledge.",
+    "You will be taken to the Employment Hero site. This page is operated by Refer Labs and contains a disclosed affiliate link. Payroll is in Employment Hero's quoted top plan; request a quote for figures specific to your business. Information is general in nature and correct to the best of our knowledge.",
 };
