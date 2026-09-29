@@ -11,7 +11,7 @@ export const ed: HimsPageContent = {
   eyebrow: "Men's sexual health telehealth · Australia",
   h1: "Hims ED treatment Australia: the three plans, the consult and the Refer Labs code",
   standfirst:
-    "Hims, formerly Pilot, offers three erectile dysfunction plans to Australian men: ED Stamina, ED Performance and a combined plan. You start with a free two-minute quiz, speak to an Australian practitioner by phone, and any plan arrives free in unmarked packaging with no lock-in contract. Hims doesn't publish ED plan prices on its public page. New patients get a free initial consult with the Refer Labs code.",
+    "Hims, formerly Pilot, offers three erectile dysfunction plans to Australian men: ED Stamina, ED Performance and a combined plan. You start with a free two-minute quiz, speak to an Australian practitioner by phone, and any plan arrives free in unmarked packaging with no lock-in contract. Hims doesn't publish ED plan prices on its public page. With the Refer Labs code, new patients pay nothing for the initial consult.",
   hub: { label: "Men's health", href: "/mens-health" },
   verdictQuestion: "Is Hims ED treatment worth it?",
   verdict: [
@@ -37,15 +37,14 @@ export const ed: HimsPageContent = {
       ],
     },
     { type: "offer", id: "offer", vertical: "ed" },
-    { type: "eligibility", id: "eligibility", vertical: "ed" },
     {
       type: "prose",
       id: "plans",
       heading: "What are the three Hims ED plans?",
       paragraphs: [
-        "Hims describes its ED plans by the situation they suit. Australian advertising rules stop any provider naming what a plan contains, so every provider's page talks about plans and situations.",
+        "Hims describes its ED plans by the situation they suit. Australian advertising law stops any provider, or any site like Refer Labs, naming what a plan contains; on the phone consult the practitioner can discuss the options freely.",
         "ED Stamina is positioned around spontaneity: for men who don't want to plan ahead. Hims says it is the plan most men on Hims choose.",
-        "ED Performance is positioned around planned occasions, and Hims presents it as a reliable option for couples who plan sex in advance.",
+        "ED Performance is positioned around planned occasions.",
         "The third is a combined plan that Hims says is exclusive to it. Ask the practitioner what it involves and who it suits.",
         "The practitioner recommends a plan after reviewing your answers and talking to you. If the first plan doesn't suit, you can ask for an adjustment at any time.",
       ],
@@ -56,7 +55,7 @@ export const ed: HimsPageContent = {
       heading: "How does Hims ED work?",
       steps: [
         { title: "Take the free quiz", body: "A short set of questions about what's been happening and your general health. It's online, private and free." },
-        { title: "Book the phone consult", body: "Through the Refer Labs link the code applies at checkout and the initial consult is free. Without a code, the consult fee is refunded if you're not eligible or not satisfied with the options." },
+        { title: "Book the phone consult", body: "Our link carries the Refer Labs code, so the initial consult is free for new patients. Without it, Hims refunds the fee if you're not eligible or not satisfied with the options." },
         { title: "Speak to a practitioner", body: "An Australian practitioner calls you. They can name and explain the recommended plan in full, including how it's used and what it costs." },
         { title: "Order in your profile", body: "If you're approved and want to go ahead, you review and order the plan online and choose your delivery frequency." },
         { title: "Discreet delivery", body: "Your order arrives free, in an unmarked package, with Australia Post tracking. Check in with your practitioner whenever you want." },
@@ -67,25 +66,15 @@ export const ed: HimsPageContent = {
       id: "consult",
       heading: "What is the Hims ED consult like?",
       paragraphs: [
-        "Plenty of men put this off for months because the conversation feels awkward. You answer the sensitive questions in the quiz on your own time, so the practitioner already knows the background when they call, and the call can focus on what suits you.",
-        "Occasional trouble is common and often linked to stress, alcohol or tiredness. It is still worth a conversation if it keeps happening, and a practitioner is the right person to have it with. If anything in your answers suggests an in-person appointment would serve you better, the practitioner will tell you.",
+        "You answer the sensitive questions in the quiz, on your own time, so the practitioner already knows the background when they call and the conversation can go straight to what suits you.",
+        "If anything in your answers suggests an in-person appointment would serve you better, the practitioner will tell you.",
         "Be straight with the quiz and the practitioner about your health history and anything else you take. The assessment is only as good as the information behind it.",
-      ],
-    },
-    {
-      type: "prose",
-      id: "why-no-names",
-      heading: "Why doesn't any ED site in Australia name what it supplies?",
-      paragraphs: [
-        "Australian advertising law does not allow telehealth services, or sites like Refer Labs, to name the specific treatments a practitioner may recommend. That applies across the category.",
-        "Hims says the same on its own FAQ and points you to the consult, where the practitioner can discuss your options freely. If you decide the plan isn't for you, you can be refunded what you've paid.",
-        "What you can compare before the consult: whether the consult fee is refunded, whether prices are published, how discreet the packaging is, whether there's a contract, and what support you get after the first delivery.",
       ],
     },
     {
       type: "fit",
       id: "fit",
-      heading: "Who Hims ED suits, and who should look elsewhere",
+      heading: "Is Hims ED right for you?",
       suits: [
         "You'd rather not raise ED face to face and want the whole process online and by phone.",
         "Discretion matters: unmarked packaging and nothing on your doorstep that says what it is.",
@@ -116,11 +105,11 @@ export const ed: HimsPageContent = {
       heading: "Hims ED: common questions",
       items: [
         { q: "Is there a Hims discount code for ED?", a: `When we checked on ${FACTS_CHECKED_ON}, Hims wasn't showing a public ED code on its ED page. The Refer Labs code for new Hims patients is ${OFFERS.ed.code}, which gives a free initial consult, and our link applies it at checkout.` },
-        { q: "How much does Hims ED treatment cost in Australia?", a: "Hims doesn't publish ED plan prices on its public ED page, so the practitioner covers cost on the consult. The consult fee is refunded if you're not eligible or not satisfied with the options." },
+        { q: "How much does Hims ED treatment cost in Australia?", a: "Hims doesn't publish ED plan prices on its public ED page, so the practitioner covers cost on the consult, before you order anything." },
         { q: "Is Hims ED discreet?", a: "Yes. Hims ships free Australia-wide in a discreet, unmarked package with tracking, and the consult happens by phone." },
         { q: "What's the difference between ED Stamina and ED Performance?", a: "Hims positions ED Stamina around spontaneity, for men who don't want to plan ahead, and ED Performance around planned occasions. Your practitioner explains what each involves on the consult." },
         { q: "Can I cancel Hims ED?", a: "Yes. Hims says you can pause or cancel at any time and it doesn't use lock-in contracts." },
-        { q: "Is Hims ED the same as Pilot?", a: "Pilot has joined the Hims & Hers group, and pilot.com.au now sends new patients to the Hims quiz." },
+        { q: "Is Hims ED the same as Pilot?", a: "Yes. Pilot joined the Hims & Hers group, and Pilot's site now directs new patients to Hims." },
         { q: "Who are the Hims practitioners?", a: "Hims partners with AHPRA-registered practitioners working across Australia." },
       ],
     },

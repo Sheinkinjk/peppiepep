@@ -33,13 +33,12 @@ export const bestWeight: HimsPageContent = {
         { label: "Support between check-ins", cells: ["24-hour Care Team, unlimited practitioner check-ins", "Unlimited consultations; paid dietitian add-on", "Follow-up appointments as booked"] },
         { label: "Delivery", cells: ["Free, monthly, discreet", "Free, discreet", "You organise it yourself"] },
       ],
-      footnote: "We haven't compared every online weight loss service in Australia. The providers here are the ones we've reviewed in depth.",
     },
     { type: "offer", id: "offer", vertical: "weight" },
     {
       type: "providers",
       id: "providers",
-      heading: "Each option in more detail",
+      heading: "What each weight loss option offers",
       providers: [
         {
           name: "Hims",
@@ -83,7 +82,7 @@ export const bestWeight: HimsPageContent = {
       id: "how-to-choose",
       heading: "How do I choose a men's weight loss program?",
       paragraphs: [
-        "Australian advertising law doesn't allow any provider, or any site writing about them, to name the specific treatments a practitioner may recommend. That's why every program page looks alike, and why the useful comparison is on terms and support.",
+        "Australian advertising law doesn't allow any provider, or any site writing about them, to name the specific treatments a practitioner may recommend. So the useful comparison is on terms and support.",
         "Start with the total cost over the time you expect to stay. Each provider leads with an introductory offer and attaches it to a minimum period, so ask for the total over three months and over twelve.",
         "Then look at what happens if you want to stop: the refund window, the minimum commitment, and whether cancelling early leaves a balance. Then support: who you can reach, when, and whether help with food and exercise is included or extra.",
         "Finally, the consult. It's where the specifics are discussed, and a good provider makes it easy to ask questions and refunds the fee if you're not eligible or decide not to go ahead.",
@@ -103,22 +102,13 @@ export const bestWeight: HimsPageContent = {
       ],
     },
     {
-      type: "prose",
-      id: "method",
-      heading: "How we chose",
-      paragraphs: [
-        `We read each provider's public pages and terms on ${FACTS_CHECKED_ON} and compared them only on what a customer can check before signing up.`,
-        "Refer Labs is paid by Hims and Mosh when a new customer signs up using our code or link. We have not compared every provider in Australia. If there's one you'd like us to look at, email jarred@referlabs.com.au.",
-      ],
-    },
-    {
       type: "faq",
       id: "faq",
       heading: "Men's weight loss programs: common questions",
       items: [
         { q: "What is the best weight loss program for men in Australia?", a: "It depends on how long you're prepared to commit. Hims suits men who want a year-long program with 24-hour support. Mosh suits men who want a three-month minimum to start and optional dietitian sessions. An in-person practitioner suits men who want face-to-face care." },
         { q: "How much do online weight loss programs cost in Australia?", a: "Hims and Mosh both show their current pricing on their own sites and confirm it before you pay. Compare the total over the minimum commitment: twelve months on Hims' advertised pay-upfront option, three months on Mosh's intro offer." },
-        { q: "Is Pilot weight loss still available?", a: "Pilot has joined the Hims & Hers group, and pilot.com.au now sends new patients to the Hims quiz, so Hims is where Pilot's weight loss program continues." },
+        { q: "Is Pilot weight loss still available?", a: "Not under the Pilot name. Pilot joined the Hims & Hers group, and new patients who start on pilot.com.au are taken to the Hims quiz." },
         { q: "Why don't online weight loss programs say what they supply?", a: "Australian advertising law stops providers naming the specific treatments a practitioner may recommend. The practitioner explains the options on the consult." },
         { q: "Can I get a refund on an online weight loss program?", a: "Terms differ. Hims offers a full refund within 30 days of starting its program, subject to its terms. Check each provider's terms before you pay." },
       ],

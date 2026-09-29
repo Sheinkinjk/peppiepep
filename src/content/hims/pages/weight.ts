@@ -16,7 +16,7 @@ export const weight: HimsPageContent = {
   verdictQuestion: "Is Hims weight loss worth it?",
   verdict: [
     "Hims suits men who want a practitioner-led weight loss program run entirely from their phone, with support they can reach at any hour and everything delivered to the door.",
-    "The figure to plan around is the commitment. Hims' advertised starting offer is a pay-upfront option with a twelve-month commitment. If a year-long program matches how you think about it, the support behind it is strong. If you want to try a month and stop, confirm your payment options on the consult before you pay for anything beyond it.",
+    "The figure to plan around is the commitment. Hims' advertised starting offer is paid upfront and runs for twelve months. If you already expect to stay a year, the support behind it is strong. If you want to try a month and stop, confirm your payment options on the consult before you pay for anything beyond it.",
   ],
   blocks: [
     {
@@ -31,7 +31,7 @@ export const weight: HimsPageContent = {
         {
           label: "Commitment",
           value: "The advertised starting offer is a pay-upfront option with a twelve-month commitment.",
-          note: "From the fine print on hims.com.au/weight-loss. Hims' partner handbook says no lock-in. Ask Hims to reconcile before approval.",
+          note: "For Hims to confirm: the fine print on hims.com.au/weight-loss describes a twelve-month commitment, and the partner handbook says there is no lock-in.",
           verify: true,
         },
         { label: "Refund", value: "Full refund if you contact Hims within 30 days of starting. Terms apply." },
@@ -42,7 +42,6 @@ export const weight: HimsPageContent = {
       ],
     },
     { type: "offer", id: "offer", vertical: "weight" },
-    { type: "eligibility", id: "eligibility", vertical: "weight" },
     {
       type: "steps",
       id: "how-it-works",
@@ -78,7 +77,6 @@ export const weight: HimsPageContent = {
       paragraphs: [
         "Hims' advertised starting offer is the first payment on a pay-upfront option that carries a twelve-month commitment. The fine print on Hims' weight loss page sets a minimum total payment for that option, and if you're approved and choose to start, you pay the balance to get full access to the program. Hims shows the figures on its own site and in your profile before you pay.",
         "The same page says you can change or cancel your plan at any time and that deliveries ship monthly. Ask on the consult how that works alongside a twelve-month pay-upfront option: whether a monthly payment option is available for you, what happens to the balance if you stop early, and whether the 30-day refund covers the full pay-upfront amount. Get the answer in writing through your Hims profile or by email before you pay.",
-        "Two things sit outside the advertised offer: the consult fee, which Hims refunds if you're not eligible or decide not to go ahead, and any change of plan after you start, which the practitioner prices for you before it happens.",
       ],
     },
     {
@@ -87,8 +85,8 @@ export const weight: HimsPageContent = {
       heading: "Why doesn't Hims say what the treatment is?",
       paragraphs: [
         "Weight loss sites in Australia don't say exactly what they supply. Australian advertising law does not allow telehealth services, or sites like Refer Labs that write about them, to name the specific treatments a practitioner may recommend, and the rule applies to every provider in the category.",
-        "Hims says this on its own FAQ: advertising regulations stop it being more specific before the consult, and on the phone the practitioner can discuss the options freely. That is the right place for it, because what's appropriate depends on your health history, and the practitioner is the one assessing it.",
-        "It means you can't compare providers on what they supply before you've spoken to one. You can compare them on how easy it is to reach a practitioner, how long you're committed for, what happens if you want to stop, and what support looks like after the first delivery. The rest of this page is built around those questions.",
+        "Hims says this on its own FAQ: advertising regulations stop it being more specific before the consult, and on the phone the practitioner can discuss the options freely, based on your health history.",
+        "Before the consult, compare providers on how easy it is to reach a practitioner, how long you're committed for, what happens if you want to stop, and what support looks like after the first delivery.",
       ],
     },
     {
@@ -126,7 +124,6 @@ export const weight: HimsPageContent = {
       type: "questions",
       id: "consult-questions",
       heading: "What should I ask on the Hims consult?",
-      intro: "The consult is the only point where the specifics can be discussed. These questions decide whether the program is right for you.",
       items: [
         "What does the plan you're recommending involve, and how is it used day to day?",
         "What are the payment options for me, monthly as well as pay-upfront, and what is the total of each over twelve months?",
@@ -157,11 +154,7 @@ export const weight: HimsPageContent = {
         },
         {
           q: "How much does Hims weight loss cost in Australia?",
-          a: "Hims shows its weight loss pricing on its own site and in your profile before you pay. The advertised starting offer is a pay-upfront option with a twelve-month commitment, so ask on the consult about monthly options and the total over the period you expect to stay.",
-        },
-        {
-          q: "Is Hims the same company as Pilot?",
-          a: "Yes. Pilot has joined the Hims & Hers group, and pilot.com.au sends new patients to the Hims quiz. Former Pilot patients count as previous patients for Hims' new-patient offers.",
+          a: "Hims shows its weight loss pricing on its own site and in your profile before you pay. Because the advertised offer runs for twelve months, ask on the consult about monthly options and the total over the time you expect to stay.",
         },
         {
           q: "Can I get a refund from Hims?",

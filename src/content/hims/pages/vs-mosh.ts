@@ -124,7 +124,6 @@ export const vsMosh: HimsPageContent = {
         { q: "Do Hims and Mosh both have a money-back guarantee?", a: "Both offer a 180-day money-back guarantee on hair plans, subject to their terms. Hims also offers a full refund within 30 days of starting its weight loss program." },
         { q: "Which has better support, Hims or Mosh?", a: "Hims includes 24-hour access to its care team and unlimited practitioner check-ins. Mosh includes unlimited consultations and offers paid dietitian sessions for weight loss. Pick based on the kind of help you want." },
         { q: "Can I switch from Mosh to Hims, or the other way?", a: "Yes. You start as a new patient with the quiz and consult. Tell the new practitioner about any plan you're currently on so they can assess you properly." },
-        { q: "Is Pilot the same as Hims?", a: "Yes. Pilot has joined the Hims & Hers group, and pilot.com.au sends new patients to the Hims quiz." },
       ],
     },
   ],

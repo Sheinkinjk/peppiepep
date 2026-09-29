@@ -34,13 +34,12 @@ export const bestHair: HimsPageContent = {
         { label: "Cancelling", cells: ["Before the next order, no fee", "Check Mosh's terms", "Not applicable"], verify: true },
         { label: "Support", cells: ["Unlimited check-ins, 24/7 Care Team", "Ongoing practitioner support", "Follow-ups as booked"] },
       ],
-      footnote: "We haven't compared every online hair loss service in Australia. The providers here are the ones we've reviewed in depth.",
     },
     { type: "offer", id: "offer", vertical: "hair" },
     {
       type: "providers",
       id: "providers",
-      heading: "Each option in more detail",
+      heading: "What each hair loss option offers",
       providers: [
         {
           name: "Hims",
@@ -82,17 +81,8 @@ export const bestHair: HimsPageContent = {
       heading: "How do I choose an online hair loss service?",
       paragraphs: [
         "Hair plans take months to judge, so the terms that matter most are the ones that play out over months: the length of the money-back guarantee, what it takes to cancel, and how often you're charged. Hims and Mosh both offer 180 days.",
-        "Australian advertising law doesn't allow providers or review sites to name the specific treatments a practitioner may recommend, so you won't find ingredient lists on any of these sites. The consult is where that conversation happens.",
+        "Providers and review sites can't name what a hair plan contains under Australian advertising law, so the consult is where that conversation happens.",
         "Price is easier to compare where it's published. If a provider shows its price only after the consult, make sure the consult fee is refundable, then ask for the cost per delivery and the delivery frequency before you order.",
-      ],
-    },
-    {
-      type: "prose",
-      id: "method",
-      heading: "How we chose",
-      paragraphs: [
-        `We read each provider's public pages and terms on ${FACTS_CHECKED_ON} and compared them only on what a customer can check before signing up.`,
-        "Refer Labs is paid by Hims and Mosh when a new customer signs up using our code or link. We have not compared every provider in Australia.",
       ],
     },
     {
@@ -102,7 +92,7 @@ export const bestHair: HimsPageContent = {
       items: [
         { q: "What is the best online hair loss treatment in Australia?", a: "For most men it's a choice between Hims and Mosh. Both offer a 180-day money-back guarantee and free delivery. Mosh publishes its prices before the consult; Hims shows prices after the consult and includes 24/7 care team access." },
         { q: "How much does online hair loss treatment cost in Australia?", a: "Mosh publishes its hair plan prices on its pricing page. Hims shows its prices after the consult, and refunds the consult fee if you're not eligible or decide not to go ahead." },
-        { q: "Is Pilot hair loss still available?", a: "Pilot has joined the Hims & Hers group, and pilot.com.au now sends new patients to the Hims quiz, so Hims is where Pilot's hair loss service continues." },
+        { q: "Is Pilot hair loss still available?", a: "Only through Hims. Pilot is part of the Hims & Hers group now, and its website hands new patients to the Hims quiz." },
         { q: "Do online hair loss services offer refunds?", a: "Hims and Mosh both offer a 180-day money-back guarantee on hair plans, subject to their terms." },
         { q: "Should I see someone in person instead?", a: "If your hair loss is sudden, patchy or comes with other symptoms, an in-person appointment is the better first step." },
       ],

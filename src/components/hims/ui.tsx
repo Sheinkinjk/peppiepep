@@ -58,7 +58,7 @@ export function CtaLink({
   );
 }
 
-export function Disclosure({ text, tone = "light" }: { text: string; tone?: "light" | "dark" }) {
+export function Disclosure({ text, tone = "light", label = true }: { text: string; tone?: "light" | "dark"; label?: boolean }) {
   return (
     <p
       data-affiliate-disclosure
@@ -68,7 +68,7 @@ export function Disclosure({ text, tone = "light" }: { text: string; tone?: "lig
           : "text-[13px] leading-relaxed text-[#56504a]"
       }
     >
-      <span className={tone === "dark" ? "font-semibold text-white" : "font-semibold text-[#14120f]"}>Disclosure: </span>
+      {label && <span className={tone === "dark" ? "font-semibold text-white" : "font-semibold text-[#14120f]"}>Disclosure: </span>}
       {text}
     </p>
   );

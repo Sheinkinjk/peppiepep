@@ -34,13 +34,12 @@ export const bestEd: HimsPageContent = {
         { label: "Packaging", cells: ["Discreet, unmarked", "Discreet", "You collect it yourself"] },
         { label: "Support", cells: ["24/7 phone support, unlimited check-ins", "Ongoing practitioner support", "Follow-ups as booked"] },
       ],
-      footnote: "We haven't compared every online ED service in Australia. The providers here are the ones we've reviewed in depth.",
     },
     { type: "offer", id: "offer", vertical: "ed" },
     {
       type: "providers",
       id: "providers",
-      heading: "Each option in more detail",
+      heading: "What each ED option offers",
       providers: [
         {
           name: "Hims",
@@ -69,7 +68,7 @@ export const bestEd: HimsPageContent = {
           name: "Seeing a practitioner in person",
           bestFor: "Best if you want a broader health check at the same time",
           summary:
-            "An in-person appointment is the better starting point if you'd like a general health check alongside the conversation, or if you already have a practitioner who knows your history. It takes more effort than an online consult, and it is a conversation practitioners have every day.",
+            "An in-person appointment is the better starting point if you'd like a general health check alongside the conversation, or if you already have a practitioner who knows your history. It takes more effort than an online consult.",
           facts: [{ label: "Cost", value: "Set by the clinic. A Medicare rebate may apply to the appointment." }],
           cta: "none",
         },
@@ -80,18 +79,9 @@ export const bestEd: HimsPageContent = {
       id: "how-to-choose",
       heading: "How do I choose an online ED service?",
       paragraphs: [
-        "Australian advertising law doesn't allow providers or review sites to name the specific treatments a practitioner may recommend, so no ED site will tell you what it supplies. Compare on what you can see instead.",
+        "No ED site in Australia can name what it supplies, because advertising law prevents it. Compare on what you can see instead.",
         "Discretion: whether the packaging is unmarked and whether the consult can happen in a format you're comfortable with. Cost: whether the consult fee is refundable and whether the plan price is published. Flexibility: whether you're locked in, and how easy it is to pause. Support: whether you can get hold of someone if the first plan doesn't suit.",
         "Whichever you choose, be straight in the quiz and with the practitioner about your health and anything else you take. The recommendation depends on it.",
-      ],
-    },
-    {
-      type: "prose",
-      id: "method",
-      heading: "How we chose",
-      paragraphs: [
-        `We read each provider's public pages and terms on ${FACTS_CHECKED_ON} and compared them only on what a customer can check before signing up.`,
-        "Refer Labs is paid by Hims and Mosh when a new customer signs up using our code or link. We have not compared every provider in Australia.",
       ],
     },
     {
@@ -102,7 +92,7 @@ export const bestEd: HimsPageContent = {
         { q: "What is the best online ED service in Australia?", a: "For most men it's Hims or Mosh. Mosh publishes its price before the consult. Hims refunds the consult fee if you're not eligible, the Refer Labs code makes it free for new patients, and it has no lock-in contract." },
         { q: "Is online ED treatment discreet?", a: "Hims ships in unmarked packaging and Mosh ships discreetly. Neither requires a clinic visit." },
         { q: "Is there a discount code for Hims ED?", a: "The Refer Labs code gives new Hims patients a free initial consult. When we checked, Hims wasn't showing a public ED code." },
-        { q: "Mosh vs Pilot for ED: which is better?", a: "Pilot is now Hims: pilot.com.au says Pilot has joined the Hims & Hers group. For ED, Mosh publishes its price and consults by call, video or text; Hims consults by phone and has no lock-in contract." },
+        { q: "Mosh vs Pilot for ED: which is better?", a: "Pilot now operates as Hims, so the comparison today is Hims vs Mosh. For ED, Mosh publishes its price and consults by call, video or text; Hims consults by phone and has no lock-in contract." },
         { q: "Do I need to see someone in person for ED?", a: "Not usually. Online services assess you by quiz and consult, and the practitioner will tell you if an in-person appointment would be better for you." },
       ],
     },

@@ -11,11 +11,11 @@ export const hair: HimsPageContent = {
   eyebrow: "Men's hair loss telehealth · Australia",
   h1: "Hims hair loss Australia: the plans, the guarantee and the Refer Labs code",
   standfirst:
-    "Hims, formerly Pilot, offers hair loss plans to Australian men through a free two-minute quiz and a phone consult with an Australian practitioner. Plans are grouped by stage, Keep for early thinning and Regrow for more advanced loss, and come with a 180-day money-back guarantee, free discreet delivery every two or three months, and cancellation before any order without a fee. New patients get a free initial consult with the Refer Labs code.",
+    "Hims, formerly Pilot, offers hair loss plans to Australian men through a free two-minute quiz and a phone consult with an Australian practitioner. Plans are grouped by stage, Keep for early thinning and Regrow for more advanced loss, and come with a 180-day money-back guarantee, free discreet delivery every two or three months, and cancellation before any order without a fee. The Refer Labs code makes the initial consult free for new patients.",
   hub: { label: "Hair loss", href: "/hair-loss" },
   verdictQuestion: "Is Hims hair loss treatment worth it?",
   verdict: [
-    "Hims is a solid choice if you want a long-running hair plan with a long refund window behind it. The 180-day money-back guarantee is long enough to judge a plan properly, and you can cancel before any delivery without a fee.",
+    "Hims is a solid choice if you want a long-running hair plan with a long refund window behind it. The 180-day money-back guarantee gives you time to decide, and you can cancel before any delivery without a fee.",
     "The gap is price transparency. Hims doesn't publish hair plan prices on its public pages, so you see the cost after the consult. The consult fee is refunded if you decide not to go ahead, so finding out costs little.",
   ],
   blocks: [
@@ -37,15 +37,14 @@ export const hair: HimsPageContent = {
       ],
     },
     { type: "offer", id: "offer", vertical: "hair" },
-    { type: "eligibility", id: "eligibility", vertical: "hair" },
     {
       type: "prose",
       id: "plans",
       heading: "Which Hims hair plan is for me?",
       paragraphs: [
-        "Hims groups its hair plans in two ways. The first is by stage. Keep is aimed at men who are worried about hair loss or noticing the first signs of thinning, and want to hold on to what they have. Regrow is aimed at more advanced loss, including a receding hairline and thinning patches, and uses Hims' Hair Hybrid plans.",
-        "The second is by how many parts the plan combines. A 2-in-1 plan combines two approaches in one routine and, according to Hims, is the plan most of its hair patients are on. A 3-in-1 plan adds a third part aimed at supporting new growth, combined into one daily routine. Single-action plans focus on one approach, for men who need something more tailored. Hims recommends the combined plans in most cases.",
-        "Which one you're offered is the practitioner's decision, based on your quiz answers, the stage and pattern of your hair loss and your health history. You can ask for a different plan at any time and the Care Team will organise another practitioner appointment to discuss it.",
+        "Hims groups its hair plans in two ways. The first is by stage. Keep is aimed at men who are worried about hair loss or noticing the first signs of thinning. Regrow is aimed at more advanced loss, including a receding hairline and thinning patches, and uses Hims' Hair Hybrid plans.",
+        "The second is by how many parts the plan combines. A 2-in-1 plan combines two approaches in one routine and, according to Hims, is the plan most of its hair patients are on. A 3-in-1 plan adds a third part, combined into one daily routine. Single-action plans focus on one approach, for men who need something more tailored.",
+        "Which one you're offered is the practitioner's decision, based on your quiz answers, the stage and pattern of your hair loss and your health history. You can ask for a different plan at any time and the Care Team will organise another practitioner appointment to discuss it. Australian advertising law stops any provider naming what a plan contains, so the practitioner explains that on the consult.",
       ],
     },
     {
@@ -54,7 +53,7 @@ export const hair: HimsPageContent = {
       heading: "How does Hims hair loss work?",
       steps: [
         { title: "Take the online quiz", body: "About two minutes of questions about your hair, how long it has been changing, and your health history. Free, and it doesn't commit you to anything." },
-        { title: "Book the phone consult", body: "Through the Refer Labs link the code applies at checkout and the initial consult is free. Without a code, the consult fee is refunded if you're not eligible or decide not to go ahead." },
+        { title: "Book the phone consult", body: "Book through the Refer Labs link and the consult is free for new patients. Otherwise Hims refunds the fee if you're not eligible or decide not to go ahead." },
         { title: "Talk to an Australian practitioner", body: "The practitioner has read your answers before the call and can explain the recommended plan in full, including what it involves and what it costs. Ask about price here, since it isn't published on the site." },
         { title: "Order through your profile", body: "If you're approved and want to proceed, you choose the plan and delivery frequency in your Hims profile. Hims says your plan can arrive in as little as three days." },
         { title: "Ongoing deliveries and check-ins", body: "Refills arrive every two or three months. Check in with your practitioner whenever you like, and cancel before any upcoming order if you want to stop." },
@@ -65,19 +64,9 @@ export const hair: HimsPageContent = {
       id: "guarantee",
       heading: "How does the Hims 180-day money-back guarantee work?",
       paragraphs: [
-        "Hair plans are a slow process. Hims describes hair treatment as a long-term commitment and asks you to stick with a plan consistently before judging it. A 30-day refund window would be close to meaningless for that reason; 180 days is long enough to make a fair call.",
+        "Hair plans are a slow process. Hims describes hair treatment as a long-term commitment and asks you to stick with a plan consistently before judging it. 180 days gives you time to decide whether a plan suits you before asking for your money back.",
         "The guarantee applies if you're not satisfied with your progress, and you claim it by contacting Hims at hello@hims.com.au. It is subject to Hims' terms and conditions, so read those before you start and keep a note of your start date.",
         "Separately, you can cancel before any upcoming order is processed without a fee. The guarantee gets money back if you're unhappy with progress; cancelling stops future charges.",
-      ],
-    },
-    {
-      type: "prose",
-      id: "why-no-names",
-      heading: "Why doesn't Hims say what's in the hair plan?",
-      paragraphs: [
-        "Australian advertising law does not allow telehealth services, or sites like Refer Labs, to name the specific treatments a practitioner may recommend. Every provider in the category is under the same rule, which is why their pages talk about plans, stages and support.",
-        "Hims' own FAQ says the same: its practitioner can discuss the options freely on the phone consult, and if you decide the plan isn't for you, you're refunded what you've paid. Use the consult for exactly that.",
-        "Before the consult, compare providers on what you can see: the length of the money-back guarantee, whether you can cancel without a fee, how often deliveries come, what support is included, and whether the price is published up front.",
       ],
     },
     {
@@ -96,10 +85,10 @@ export const hair: HimsPageContent = {
     {
       type: "fit",
       id: "fit",
-      heading: "Who Hims hair loss suits, and who should look elsewhere",
+      heading: "Is Hims right for your hair loss?",
       suits: [
-        "You've noticed thinning or a receding hairline and want to act on it early, without a clinic visit.",
-        "You want a long money-back window that matches how slowly hair plans work.",
+        "You've noticed thinning or a receding hairline and want to speak to a practitioner about it without a clinic visit.",
+        "You want a long money-back window on a plan that runs for months.",
         "You like the option of changing plans through a practitioner rather than being locked into one routine.",
         "You may want weight loss or ED support later, since Hims covers both as well.",
       ],
@@ -132,9 +121,9 @@ export const hair: HimsPageContent = {
         { q: "How much is Hims hair loss treatment in Australia?", a: "Hims doesn't publish hair plan prices on its public hair page. You see the price after your phone consult, and the consult fee is refunded if you decide not to go ahead." },
         { q: "Does Hims offer a money-back guarantee on hair plans?", a: "Yes. Hims offers a 180-day money-back guarantee on hair plans if you're not satisfied with your progress. Its terms and conditions apply." },
         { q: "Can I cancel my Hims hair plan?", a: "Yes. You can cancel any time before your next order is processed, with no cancellation fee." },
-        { q: "What's the difference between the Hims 2-in-1 and 3-in-1 hair plans?", a: "The 2-in-1 combines two approaches into one plan and is the one Hims says most of its hair patients use. The 3-in-1 adds a third part aimed at supporting new growth. Your practitioner explains what each involves on the consult." },
+        { q: "What's the difference between the Hims 2-in-1 and 3-in-1 hair plans?", a: "The 2-in-1 combines two approaches into one plan and is the one Hims says most of its hair patients use. The 3-in-1 adds a third part. Your practitioner explains what each involves on the consult." },
         { q: "How often does Hims deliver hair plans?", a: "Every two or three months, depending on your plan. Delivery is free and discreet." },
-        { q: "Is Hims hair loss the same as Pilot hair loss?", a: "Pilot has joined the Hims & Hers group, and pilot.com.au now sends new patients to the Hims quiz, so Hims is where Pilot's hair loss service continues." },
+        { q: "Is Hims hair loss the same as Pilot hair loss?", a: "Pilot is now Hims. Pilot's website says it has joined the Hims & Hers group, and signing up there leads to the Hims quiz." },
       ],
     },
   ],

@@ -6,7 +6,6 @@ import { AUTHOR, DISCLOSURE, FACTS_CHECKED_ON, MOSH, OFFERS, SITE_DISCLOSURE, SI
 import { SCHEMA_AUTHOR, SCHEMA_PUBLISHER } from "@/lib/seo";
 import StickyCta from "@/components/consumer/StickyCta";
 import { CopyCode } from "./CopyCode";
-import { EligibilityCheck } from "./EligibilityCheck";
 import { CtaLink, Disclosure, Flag } from "./ui";
 
 // Layout follows the site's brand and comparison templates (29 Sep 2026):
@@ -157,7 +156,10 @@ export function HimsPage({ content, preview, linkSuffix }: { content: HimsPageCo
                     {offer.headline} (code {offer.code})
                     <Flag show={preview && (offer.headlineIsPlaceholder || offer.codeIsPlaceholder)}>Offer and code to confirm</Flag>
                   </p>
-                  <p className="mt-1.5 text-[12px] font-medium text-[#56504a]">Checked by Refer Labs, {FACTS_CHECKED_ON}</p>
+                  <p className="mt-1.5 text-[12px] font-medium text-[#56504a]">
+                    Checked by Refer Labs, {FACTS_CHECKED_ON} ·{" "}
+                    <a href="#offer" className="underline decoration-[#ded8cd] underline-offset-2 hover:text-[#14120f]">Offer terms</a>
+                  </p>
                 </div>
               </div>
 
@@ -208,14 +210,14 @@ export function HimsPage({ content, preview, linkSuffix }: { content: HimsPageCo
             <h1 className="mt-3 text-3xl font-black leading-[1.08] tracking-tight text-[#14120f] sm:text-4xl lg:text-[2.7rem]">{content.h1}</h1>
             <p className="mt-5 text-base leading-relaxed text-[#56504a] sm:text-lg">{content.standfirst}</p>
             {byline}
-            <div className="mt-5 space-y-2">
+            <div className="mt-5 space-y-1.5 border-l-2 border-[#ded8cd] pl-4">
               <Disclosure text={DISCLOSURE} />
-              {content.otherPartnersOnPage?.length ? <Disclosure text={SITE_DISCLOSURE} /> : null}
+              {content.otherPartnersOnPage?.length ? <Disclosure text={SITE_DISCLOSURE} label={false} /> : null}
             </div>
           </section>
         )}
 
-        <section aria-labelledby="verdict" className={`mt-12 ${isReview ? "max-w-3xl" : "max-w-3xl"}`}>
+        <section aria-labelledby="verdict" className="mt-12 max-w-3xl">
           <h2 id="verdict" className={H2_CLASS}>
             {content.verdictQuestion}
           </h2>
@@ -228,8 +230,11 @@ export function HimsPage({ content, preview, linkSuffix }: { content: HimsPageCo
                 </p>
               ))}
             </div>
-            <div className="mt-5">
+            <div className="mt-5 flex flex-wrap gap-3">
               <CtaLink href={offer.ctaHref} label={offer.ctaLabel} placeholder={offer.ctaIsPlaceholder} preview={preview} loc="verdict" />
+              {!isReview && (
+                <CtaLink href={MOSH.ctaHref} label={MOSH.ctaLabel} placeholder={MOSH.ctaIsPlaceholder} preview={preview} loc="verdict-mosh" variant="ghost" />
+              )}
             </div>
           </div>
           {isReview && content.otherPartnersOnPage?.length ? (
@@ -296,7 +301,7 @@ export function HimsPage({ content, preview, linkSuffix }: { content: HimsPageCo
 
         <section aria-labelledby="next" className="mt-20 overflow-hidden rounded-3xl bg-[#14120f] px-7 py-12 text-center sm:px-12 sm:py-16">
           <h2 id="next" className="mx-auto max-w-xl text-3xl font-bold leading-tight text-white sm:text-4xl">
-            See if Hims suits you
+            See if Hims {PROGRAM_LABEL[content.vertical]} suits you
           </h2>
           <p className="mx-auto mt-4 max-w-md text-[15px] leading-relaxed text-white/70">
             The quiz is free and takes about two minutes. Our link applies the Refer Labs code at checkout, or you can enter it yourself.
@@ -563,13 +568,6 @@ function BlockView({ block, ctx }: { block: Block; ctx: Ctx }) {
         </section>
       );
     }
-
-    case "eligibility":
-      return (
-        <section id={block.id} className="scroll-mt-24">
-          <EligibilityCheck programLabel={PROGRAM_LABEL[block.vertical]} />
-        </section>
-      );
 
     case "providers":
       return (

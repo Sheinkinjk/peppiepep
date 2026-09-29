@@ -30,7 +30,6 @@ export type Block =
   | { type: "questions"; id: string; heading: string; intro?: string; items: string[] }
   | { type: "callout"; id: string; heading: string; body: string[] }
   | { type: "offer"; id: string; vertical: Vertical }
-  | { type: "eligibility"; id: string; vertical: Vertical }
   | {
       type: "providers";
       id: string;
