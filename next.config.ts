@@ -61,8 +61,13 @@ const nextConfig: NextConfig = {
       // compared a brand that no longer exists. Each goes to the roundup for the
       // same Refer Labs partner the page was built around.
       { source: '/moshy-vs-pilot', destination: '/best-weight-loss-telehealth-australia', statusCode: 301 },
-      // /mosh-vs-pilot restored 30 Sep 2026 as a live page on the Pilot-joined-Hims fact
-      // (its query was the site's strongest comparison). At Hims go-live it 301s to /hims-vs-mosh.
+      { source: '/mosh-vs-pilot', destination: '/best-hair-loss-treatment-australia', statusCode: 301 },
+      // Retired 30 Sep 2026 (Jarred). The page's core content was the BMI criteria that
+      // are the prescribing indication of a medicine class, beside a discounted CTA (TGA).
+      { source: '/weight-loss-treatment-eligibility-australia', destination: '/weight-loss', statusCode: 301 },
+      // Retired 30 Sep 2026 (Jarred): the page existed to rank for a prescription topical,
+      // and its premise (retinol becomes prescription-only at higher strength) was unsupported.
+      { source: '/health-and-beauty/retinol-vs-prescription-strength-australia', destination: '/health-and-beauty/best-value-skincare-australia-cost-per-use', statusCode: 301 },
       // CloudTalk retired (24 August 2026): get.cloudtalk.io/9mxppdbxerja returns
       // 404, so the page's only CTA was broken while the page stayed live and
       // indexed. Same fault and same remedy as Instapage in July. 301 to

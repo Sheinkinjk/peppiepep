@@ -28,7 +28,6 @@ const guides = [
   { href: "/moshy-alternatives", title: "Moshy alternatives", desc: "The shortlist, including your GP." },
   { href: "/weight-loss-telehealth-men-australia", title: "The men's guide", desc: "How men's services work and the pre-signup checklist." },
   { href: "/moshy", title: "Moshy offer & referral link", desc: "$120 off your first order, applied automatically. No code to type." },
-  { href: "/weight-loss-treatment-eligibility-australia", title: "Do you qualify?", desc: "The eligibility criteria practitioners use, and how to check where you stand." },
   { href: "/weight-loss-quiz", title: "Which pathway fits you?", desc: "A short matcher across the clinical, coaching and GP routes." },
   { href: "/weight-loss-cost-calculator", title: "Weight-loss cost calculator", desc: "Estimate the monthly cost of each route before you commit." },
 ];
@@ -229,7 +228,7 @@ export default function WeightLossHubPage() {
               hrefLabel: "Read our Juniper guide",
               suits: "Women who want coaching and habit support alongside the clinical program.",
               how: "Online assessment with practitioner oversight, plus coaching and app-based tracking.",
-              cost: "Juniper's own Bundle & Save terms name a $249 initial payment and a $942 minimum total on its three-month bundle, with the monthly price depending on the treatment and the bundle length, read 23 September 2026. The exact figure is confirmed inside its flow before you commit.",
+              cost: "A monthly subscription, with bundle options. Juniper shows the price in its own sign-up flow before you pay.",
               offerText: "The initial consultation is waived with the code JARREDKFC, which Juniper values at $89. Nothing comes off the program itself.",
               offerNote: "Confirmed from Juniper's affiliate handbook, 23 September 2026.",
               visitHref: JUNIPER_URL,

@@ -981,6 +981,7 @@ export const seoConfig = {
     keywords: ["aussie health products", "aussie health products review", "natural health retailer australia", "australian supplements online"],
   },
   retinolVsPrescription: {
+    noIndex: true, // retired 30 Sep 2026, 301 in next.config
     // CONFOUND, 27 Sep 2026: body and one FAQ answer edited for TGA (two
     // benefit claims about the prescription category removed). Title and
     // description unchanged. Weigh the 13 Oct read with that in mind.
@@ -1694,6 +1695,7 @@ export const seoConfig = {
   },
 
   moshVsPilot: {
+    noIndex: true, // retired 30 Sep 2026, 301 in next.config
     title: "Mosh vs Pilot 2026: What Changed When Pilot Joined Hims",
     description:
       "Pilot has joined the Hims & Hers group and no longer runs as its own service. How Mosh compares for hair loss today, and the Mosh code REFERAL55 for 55% off.",
@@ -2142,6 +2144,7 @@ export const seoConfig = {
     keywords: ["mosh review", "is mosh legit", "is mosh worth it", "does mosh work", "mosh hair loss review australia", "mosh reviews"],
   },
   weightLossEligibility: {
+    noIndex: true, // retired 30 Sep 2026, 301 in next.config
     title: "Do You Qualify for Weight-Loss Treatment in Australia?",
     description:
       "The eligibility criteria for weight-loss treatment in Australia: the BMI thresholds practitioners generally consider, and what does not qualify you.",

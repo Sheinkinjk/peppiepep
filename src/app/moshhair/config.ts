@@ -89,7 +89,7 @@ export const moshHairConfig: AffiliatePageConfig = {
       heading: "What Mosh is",
       paragraphs: [
         "Mosh is an Australian men's-health telehealth service, and hair loss is one of its core categories. You fill in a questionnaire and upload a couple of photos, a registered Australian practitioner reviews your case, and, if it's appropriate, you're put on a subscription with treatment posted to your door. No waiting room, no GP appointment to get started.",
-        "What makes it more than a vending machine is the review step. Not everyone who applies is suitable; the practitioner can decline or redirect you, which is exactly what you'd want a prescriber to do. The trade-off is that it's built for the common case, straightforward male-pattern thinning, rather than complex or unusual hair loss, where an in-person specialist is the better call.",
+        "What makes it more than a vending machine is the review step. Not everyone who applies is suitable; the practitioner can decline or redirect you. The trade-off is that it's built for the common case, straightforward male-pattern thinning, rather than complex or unusual hair loss, where an in-person specialist is the better call.",
       ],
       disclaimer:
         "Hair-loss treatment suitability depends on the individual; speak with a qualified health professional before starting anything.",
@@ -97,7 +97,7 @@ export const moshHairConfig: AffiliatePageConfig = {
     {
       heading: "How the Mosh service works",
       paragraphs: [
-        "Mosh handles hair loss as a structured, online process rather than a shopfront. You answer questions about your hair-loss history, general health and goals, and upload photos. A registered Australian practitioner then reviews your case and decides, individually, whether any treatment is appropriate for you. Nothing is dispensed automatically, and that is the point.",
+        "Mosh handles hair loss as a structured, online process rather than a shopfront. You answer questions about your hair-loss history, general health and goals, and upload photos. A registered Australian practitioner then reviews your case and decides, individually, whether any treatment is appropriate for you.",
         "Because it is a clinical service, what you are offered (if anything) depends entirely on that assessment, not on what you select yourself. The only way to know what would apply to you is to complete the consult, which takes a few minutes and commits you to nothing.",
       ],
       hasCta: true,
@@ -115,7 +115,7 @@ export const moshHairConfig: AffiliatePageConfig = {
     {
       heading: "Mosh vs a GP vs topical brands",
       paragraphs: [
-        "Dense Hair Experts sells non-prescription scalp and density care. Mosh is a clinical service where a practitioner assesses whether prescription treatment is appropriate. If your hair loss is progressing, a clinical assessment is the place to start.",
+        "Dense Hair Experts sells non-prescription scalp and density care. Mosh runs online consultations where a practitioner decides whether any treatment is appropriate. If your hair loss is progressing, a clinical assessment is the place to start.",
         "Against your own GP, Mosh trades continuity for speed. A GP knows your history and may be cheaper; Mosh is faster, fully online, and you don't have to book an appointment in person.",
         "For the full landscape, clinical telehealth versus topical products, side by side with pricing, see our Best Hair Loss Treatment Australia comparison linked below.",
       ],
@@ -198,7 +198,7 @@ export const moshHairConfig: AffiliatePageConfig = {
     },
     {
       q: "Mosh vs Dense Hair Experts: which suits hair loss?",
-      a: "They serve different purposes. Mosh is a telehealth service where a practitioner assesses whether prescription treatment is appropriate. Dense Hair Experts is a topical hair-care brand focused on density and scalp health, without prescription ingredients. For noticeable or progressive hair loss, a telehealth service like Mosh is a stronger starting point for a clinical assessment; topical products can complement a routine. See our Best Hair Loss Treatment Australia comparison for a full breakdown.",
+      a: "They serve different purposes. Mosh runs online consultations where a practitioner decides whether any treatment is appropriate. Dense Hair Experts is a topical hair-care brand focused on density and scalp health, without prescription ingredients. For noticeable or progressive hair loss, a telehealth service like Mosh is a stronger starting point for a clinical assessment; topical products can complement a routine. See our Best Hair Loss Treatment Australia comparison for a full breakdown.",
     },
     {
       q: "Is Mosh worth it?",
@@ -217,11 +217,6 @@ export const moshHairConfig: AffiliatePageConfig = {
   ],
 
   relatedLinks: [
-    {
-      href: "/mosh-vs-pilot",
-      label: "Mosh vs Pilot: What Changed",
-      desc: "Pilot has joined Hims & Hers. How Mosh compares for hair loss now.",
-    },
     {
       href: "/mosh-review",
       label: "Mosh Review: Is It Legit & Worth It?",

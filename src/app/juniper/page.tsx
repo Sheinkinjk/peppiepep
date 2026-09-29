@@ -78,7 +78,7 @@ const faqs = [
   },
   {
     q: "How much does Juniper cost?",
-    a: "Juniper runs as a monthly subscription that its own site says includes the program, unlimited consultations and delivery, plus optional 1:1 health coaching as a paid add-on and a 30-day money-back window. Juniper's own Bundle & Save terms, read 23 September 2026, name a $249 initial payment and a $942 minimum total on the three-month bundle, with the monthly figure depending on the treatment and whether you bundle three, six or twelve months. The exact price that applies to you is confirmed inside Juniper's own flow before you commit, and JARREDKFC waives the $89 initial consultation on top.",
+    a: "Juniper runs as a monthly subscription that its own site says includes the program, unlimited consultations and delivery, plus optional 1:1 health coaching as a paid add-on and a 30-day money-back window. Juniper offers three, six and twelve-month bundles, and shows the price that applies to you in its own flow before you commit, and JARREDKFC waives the $89 initial consultation on top.",
   },
   {
     q: "What makes Juniper different?",
@@ -403,7 +403,7 @@ export default function JuniperPage() {
                   ))}
                 </ul>
                 <div className="mt-7 flex flex-wrap items-center gap-4">
-                  <JuniperCTA label="Start with a free consultation" loc="bottom-line" size="lg" />
+                  <JuniperCTA label="Start with the initial consultation" loc="bottom-line" size="lg" />
                 </div>
               </div>
             </section>
@@ -447,7 +447,7 @@ export default function JuniperPage() {
           </p>
           <div className="mt-8 flex justify-center">
             <a {...juniperAff} data-cta="final-band" className="nw-btn justify-center !bg-white !text-[#00748e] px-8 py-4 text-base hover:!bg-[#e4f2f5]">
-              Start with a free consultation <ArrowRight className="h-4 w-4" />
+              Start with the initial consultation <ArrowRight className="h-4 w-4" />
             </a>
           </div>
           <p className="mx-auto mt-6 max-w-lg text-xs leading-relaxed text-white/60">

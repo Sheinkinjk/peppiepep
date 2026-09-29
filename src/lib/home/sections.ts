@@ -24,10 +24,10 @@ export const categoryCards: CategoryCard[] = [
   {
     label: "Health & Beauty", href: "/health-and-beauty", object: "bottle", cta: "Explore health & beauty",
     // main: src/app/page.tsx, categoryCards
-    body: "What the actives do, what devices cost here, and how the prescription route differs.",
+    body: "What devices cost here, and how to compare skincare on cost per use.",
     links: [
       { label: "LED masks: real prices", href: "/health-and-beauty/led-face-mask-comparison-australia" },
-      { label: "Retinol vs prescription-strength", href: "/health-and-beauty/retinol-vs-prescription-strength-australia" },
+      { label: "Skincare cost per use", href: "/health-and-beauty/best-value-skincare-australia-cost-per-use" },
     ],
   },
   from("/solar-and-energy", "solar", "Explore solar & energy"),

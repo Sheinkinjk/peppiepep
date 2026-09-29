@@ -14,7 +14,7 @@ const faqs = [
   },
   {
     q: "Is telehealth or a topical product better for hair loss?",
-    a: "They do different jobs. Clinical telehealth can involve prescription treatment after a practitioner assessment; topical products are cosmetic and non-prescription, best as an ongoing routine. Which suits you depends on how far you want to go and whether a practitioner considers treatment appropriate. Neither is a guaranteed result.",
+    a: "They do different jobs. Clinical telehealth is a practitioner assessment, after which the practitioner decides whether any treatment is appropriate; topical products are cosmetic and non-prescription, best as an ongoing routine. Which suits you depends on how far you want to go and whether a practitioner considers treatment appropriate. Neither is a guaranteed result.",
   },
   {
     q: "Does the match decide if I am eligible for treatment?",

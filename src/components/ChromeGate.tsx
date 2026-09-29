@@ -34,7 +34,6 @@ const STANDALONE_ROUTES = [
   "/best-pet-insurance-australia",
   "/knose-vs-petsonme",
   "/mosh-review",
-  "/weight-loss-treatment-eligibility-australia",
   "/coming-soon",
   "/affiliate-software-australia",
   "/longevity",
@@ -98,7 +97,6 @@ const STANDALONE_ROUTES = [
   "/cheapest-weight-loss-telehealth-australia",
   "/weight-loss-cost-calculator",
   "/mosh-vs-dense",
-  "/mosh-vs-pilot",
   // Website-builder + peptide head-to-heads
   "/carrd-vs-butternut",
   "/durable-vs-butternut",

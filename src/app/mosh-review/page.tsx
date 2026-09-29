@@ -26,7 +26,7 @@ const faqs = [
   },
   {
     q: "Does Mosh work for hair loss?",
-    a: "Mosh is a service rather than a treatment in itself: it provides access to a practitioner who decides whether prescription hair-loss treatment is appropriate for you. Outcomes vary between people, and suitability is a clinical decision. This is general information, not medical advice.",
+    a: "Mosh is a service rather than a treatment in itself: it runs online consultations with a practitioner who decides whether any treatment is appropriate for you. Outcomes vary between people, and suitability is a clinical decision. This is general information, not medical advice.",
   },
   {
     q: "Is Mosh worth it?",
@@ -136,8 +136,7 @@ export default function MoshReviewPage() {
           <p className="text-[#56504a] text-sm sm:text-base leading-relaxed">
             Mosh is an Australian men&apos;s health telehealth service, and hair loss is the reason most people come
             looking. You complete a questionnaire and photo assessment online, a registered Australian practitioner
-            reviews your case, and if it is appropriate you continue on a subscription with treatment delivered to your
-            door. No waiting room and no referral letter to get started.
+            reviews your case, and the practitioner decides whether any treatment is appropriate. No waiting room and no referral letter to get started.
           </p>
           <p className="text-[#56504a] text-sm sm:text-base leading-relaxed">
             Delivery is free, new customers get 55% off their first order with code REFERAL55, and you see the plan and
@@ -199,8 +198,8 @@ export default function MoshReviewPage() {
           </p>
           <div className="rounded-xl border px-6 py-5 mt-6" style={{ borderColor: `${CYAN}40`, background: `${CYAN}0A` }}>
             <p className="text-[#14120f] text-sm sm:text-base leading-relaxed mb-4">
-              The online consultation is free, takes a few minutes, and commits you to nothing. It is the quickest way to
-              find out whether treatment is appropriate for you, with 55% off your first order using code REFERAL55.
+              There is no charge for the initial consultation; program fees apply. It takes a few minutes, commits you to
+              nothing, and is the quickest way to find out whether treatment is appropriate for you, with 55% off your first order using code REFERAL55.
             </p>
             <Cta label="Start the Mosh consultation" loc="mid-cta" />
           </div>
@@ -224,7 +223,7 @@ export default function MoshReviewPage() {
         <div className="rounded-2xl border px-6 py-7 mb-10 text-center sm:px-8" style={{ borderColor: `${CYAN}30`, background: `${CYAN}08` }}>
           <h2 className="text-lg sm:text-xl font-black text-[#14120f]">Ready to see where you stand?</h2>
           <p className="mx-auto mt-2 max-w-md text-sm leading-relaxed text-[#56504a]">
-            The Mosh consultation is free and takes a few minutes, with 55% off your first order through our link. You
+            There is no charge for the initial Mosh consultation; program fees apply. It takes a few minutes, with 55% off your first order through our link. You
             will see the plan and price before committing to anything.
           </p>
           <div className="mt-5 flex justify-center">

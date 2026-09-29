@@ -14,7 +14,7 @@ import { MOSH_HAIR_URL, DENSE_URL } from "@/lib/affiliate-links";
 const MOSH: MatchResult = {
   key: "mosh",
   name: "The clinical route, via Mosh",
-  why: "You want a practitioner-assessed approach, done online. Mosh runs a men's hair-loss consult entirely online; if a registered practitioner finds treatment appropriate, it is managed and delivered from home.",
+  why: "You want a practitioner-assessed approach, done online. Mosh runs a men's hair-loss consult entirely online, and a registered practitioner decides whether any treatment is appropriate.",
   primaryCta: { label: "Check your options with Mosh", href: MOSH_HAIR_URL, dataCta: "hair-quiz-mosh" },
   secondary: { label: "Read our full Mosh review", href: "/moshhair" },
   note: "Prescription treatments in Australia are only available after assessment by a registered practitioner, who decides whether they are appropriate for you. General information, not medical advice.",

@@ -151,7 +151,7 @@ export const denseConfig: AffiliatePageConfig = {
     {
       href: "/moshhair",
       label: "Mosh Hair Loss, Discount Code & Review",
-      desc: "Australian telehealth for hair loss: prescription treatment where appropriate, via online consultation.",
+      desc: "Australian telehealth for hair loss: an online consultation with a registered practitioner.",
     },
     {
       href: "/guides",

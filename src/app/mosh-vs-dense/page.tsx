@@ -63,11 +63,7 @@ const faqs = [
   },
   {
     q: "What is the difference between Mosh and Dense?",
-    a: "The core difference is clinical versus topical. Mosh is telehealth: you complete a questionnaire and photo assessment, a registered Australian practitioner reviews your case, and if treatment is appropriate it is supplied on a subscription with home delivery. Dense's range of shampoos, conditioners, serums, and scalp treatments is bought directly online with no consultation. Mosh's value is the Australian-practitioner assessment and prescription pathway; Dense's topical products are a cosmetic routine you manage yourself.",
-  },
-  {
-    q: "Can Mosh prescribe hair-loss treatment?",
-    a: "Mosh's practitioners can prescribe where a registered Australian practitioner decides it is clinically appropriate, following your online consultation and photo assessment. Some hair-loss treatments are prescription-only in Australia, while some topical products are available over the counter. Nothing is prescribed automatically, and not everyone who applies is eligible. Treatment is decided individually by the practitioner.",
+    a: "The core difference is clinical versus topical. Mosh is telehealth: you complete a questionnaire and photo assessment, a registered Australian practitioner reviews your case and decides whether any treatment is appropriate. Dense's range of shampoos, conditioners, serums, and scalp treatments is bought directly online with no consultation. Mosh's value is the Australian-practitioner assessment; Dense's topical products are a cosmetic routine you manage yourself.",
   },
   {
     q: "Is Dense Hair Experts a prescription treatment?",
@@ -75,7 +71,7 @@ const faqs = [
   },
   {
     q: "Can I use Mosh and Dense together?",
-    a: "Some men use a topical range alongside a clinical routine, but whether that is appropriate for you is a question for a health professional, not a comparison page. If you are prescribed anything through Mosh, follow the practitioner's guidance, and raise any other products you are using so they can advise.",
+    a: "Some men use a topical range alongside a clinical routine, but whether that is appropriate for you is a question for a health professional, not a comparison page. If you use Mosh, tell the practitioner about any other products you are using so they can advise.",
   },
   {
     q: "How much do Mosh and Dense cost?",
@@ -109,12 +105,11 @@ const webPageSchema = {
 
 // ── Comparison rows ──────────────────────────────────────────────────────────
 const rows: { label: string; mosh: string; dense: string }[] = [
-  { label: "What it is", mosh: "Prescription hair-loss telehealth", dense: "Non-prescription topical hair care" },
+  { label: "What it is", mosh: "Online hair-loss consultations", dense: "Topical hair care" },
   { label: "Category", mosh: "Clinical, practitioner-reviewed", dense: "Topical products, no consultation" },
-  { label: "Treatments", mosh: "Prescription treatment, if eligible", dense: "Shampoos, conditioners, serums, scalp care" },
-  { label: "Process", mosh: "Online consult → practitioner review → delivery", dense: "Shop online → delivered" },
-  { label: "Prescription", mosh: "Yes, where clinically appropriate", dense: "Topical range, no consult" },
-  { label: "Best for", mosh: "Active or progressing male-pattern loss", dense: "Early thinning, density & scalp health" },
+  { label: "What you get", mosh: "A practitioner assessment; any treatment decided by the practitioner", dense: "Shampoos, conditioners, serums, scalp care" },
+  { label: "Process", mosh: "Online consult, then practitioner review", dense: "Shop online" },
+  { label: "Best for", mosh: "Hair loss you want assessed by a practitioner", dense: "Hair density and scalp condition" },
   { label: "Pricing", mosh: "Subscription, confirmed in the consult", dense: "Per product or routine" },
   { label: "Discount", mosh: "55% off a first order with code REFERAL55, applied via the link", dense: "Referral via the link, no code" },
 ];
@@ -196,8 +191,7 @@ export default function MoshVsDensePage() {
               <p className="text-[#14120f] text-sm sm:text-base leading-relaxed max-w-2xl">
                 They answer different questions. If you have active or progressing male-pattern hair loss and want it
                 assessed, Mosh is the clinical route: an online consult reviewed by a registered practitioner, who decides
-                whether any treatment is appropriate. If you are dealing
-                with early thinning and want a topical routine for density and scalp health, Dense is the non-prescription
+                whether any treatment is appropriate. If you want a topical routine for density and scalp health, Dense is the non-prescription
                 option. Suitability for any prescription medicine is decided by the practitioner and never guaranteed. For
                 significant or sudden loss, see a doctor in person.
               </p>
@@ -246,7 +240,7 @@ export default function MoshVsDensePage() {
                 a telehealth service. You complete a questionnaire and upload photos, a registered Australian practitioner
                 reviews your case, and if treatment is appropriate it is supplied on a
                 subscription. The review step is the point: not everyone who applies is eligible, and the practitioner can
-                decline or redirect you, which is exactly what you would want a prescriber to do.
+                decline or redirect you, 
               </p>
               <p>
                 Dense Hair Experts is a topical hair-care brand. Its shampoos, conditioners, serums, and scalp treatments
@@ -270,7 +264,7 @@ export default function MoshVsDensePage() {
                 visit, but only when that practitioner judges treatment appropriate for you.
               </p>
               <p>
-                That last point is the compliance line. Nothing is dispensed automatically. Suitability
+                That last point is the compliance line. Suitability
                 is assessed individually, decided by a registered practitioner, and never guaranteed before that
                 assessment. The consultation itself takes a few minutes and commits you to nothing, and the online route removes the
                 friction that keeps many men from ever booking an appointment.
@@ -321,7 +315,7 @@ export default function MoshVsDensePage() {
             <div className="grid sm:grid-cols-2 gap-4">
               <div className="rounded-xl border border-[#ded8cd] bg-[#f7f4ee] p-6">
                 <h3 className="text-lg font-bold mb-2">Go with Mosh</h3>
-                <p className="text-[#56504a] text-sm leading-relaxed mb-4">Prescription telehealth. Best for active male-pattern loss. Practitioner-reviewed; suitability never guaranteed.</p>
+                <p className="text-[#56504a] text-sm leading-relaxed mb-4">Online consultations with a registered practitioner. Suitability is never guaranteed.</p>
                 <a {...mosh} data-cta="mosh-vs-dense-card-mosh" className="inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-bold text-white transition-all hover:-translate-y-0.5 shadow-md" style={{ background: GREEN, boxShadow: `0 8px 24px ${GREEN}25` }}>
                   Check eligibility on Mosh <ArrowRight className="h-4 w-4" />
                 </a>
@@ -329,7 +323,7 @@ export default function MoshVsDensePage() {
               </div>
               <div className="rounded-xl border border-[#ded8cd] bg-[#f7f4ee] p-6">
                 <h3 className="text-lg font-bold mb-2">Go with Dense</h3>
-                <p className="text-[#56504a] text-sm leading-relaxed mb-4">Non-prescription topical range. Best for early thinning, density, and scalp health.</p>
+                <p className="text-[#56504a] text-sm leading-relaxed mb-4">Non-prescription topical range for density and scalp health.</p>
                 <a {...dense} data-cta="mosh-vs-dense-card-dense" className="inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-bold text-white transition-all hover:-translate-y-0.5 shadow-md" style={{ background: GREEN, boxShadow: `0 8px 24px ${GREEN}25` }}>
                   Shop Dense Hair Experts <ArrowRight className="h-4 w-4" />
                 </a>

@@ -88,9 +88,9 @@ const webPageSchema = {
 // 30 Sep 2026. Prices are deliberately not printed (Jarred, 27 Sep 2026): Mosh
 // lists them on that page, and readers see them after the click.
 const plans: { name: string; note: string }[] = [
-  { name: "Prevention Plan", note: "Mosh lists it as best for receding hairlines." },
-  { name: "Prevention & Regrowth", note: "Mosh lists it as best for thinning and receding hair." },
-  { name: "Hair Loss", note: "Mosh lists it as best for advanced hair loss." },
+  { name: "Early stage", note: "Mosh lists a plan for receding hairlines." },
+  { name: "Middle stage", note: "Mosh lists a plan for thinning and receding hair." },
+  { name: "Advanced", note: "Mosh lists a plan for advanced hair loss." },
 ];
 
 export default function HairLossTreatmentCostAustraliaPage() {
@@ -315,7 +315,6 @@ export default function HairLossTreatmentCostAustraliaPage() {
                 <li><Link href="/how-to-stop-hair-loss-australia" className="nw-link">How to slow hair loss, and what the evidence supports</Link></li>
                 <li><Link href="/online-hair-loss-treatment-australia" className="nw-link">How online hair-loss treatment works</Link></li>
                 <li><Link href="/moshhair" className="nw-link">Mosh hair-loss: how it works and the current offer</Link></li>
-                <li><Link href="/mosh-vs-pilot" className="nw-link">Mosh vs Pilot, now that Pilot has joined Hims</Link></li>
                 <li><Link href="/hair-loss" className="nw-link">The full hair-loss hub</Link></li>
               </ul>
             </section>

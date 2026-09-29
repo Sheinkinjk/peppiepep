@@ -50,11 +50,11 @@ const FAQS = [
   },
   {
     q: "How much does hair loss treatment cost per month in Australia?",
-    a: "Online hair-loss services usually charge a monthly plan that covers the practitioner review and delivery. Mosh runs tiered plans and shows the price inside its sign-up flow before you commit. A GP consult may be bulk-billed or carry a gap fee, and anything prescribed is paid for at the pharmacy.",
+    a: "Online hair-loss services usually charge a monthly plan that covers the practitioner review and delivery. Mosh runs tiered plans and shows the price inside its sign-up flow before you commit. A GP consult may be bulk-billed or carry a gap fee,",
   },
   {
     q: "Is Mosh good for hair loss?",
-    a: "Mosh is an Australian telehealth service for men: an online questionnaire and photo assessment, reviewed by a registered practitioner who decides whether treatment is appropriate, with anything prescribed delivered to your door. It suits men who would rather not book a GP appointment. It is not an emergency or diagnostic service.",
+    a: "Mosh is an Australian telehealth service for men: an online questionnaire and photo assessment, reviewed by a registered practitioner who decides whether any treatment is appropriate. It suits men who would rather not book a GP appointment. It is not an emergency or diagnostic service.",
   },
   {
     q: "Mosh vs Dense Hair Experts, which should I use?",
@@ -62,7 +62,7 @@ const FAQS = [
   },
   {
     q: "Can I get hair-loss treatment online in Australia?",
-    a: "Yes. Hair-loss medicines are prescription-only in Australia, and online services such as Mosh arrange the assessment remotely: a questionnaire and photos, reviewed by a registered Australian practitioner. Any treatment is decided by that practitioner and only where it is clinically appropriate.",
+    a: "Yes, as an online consultation. Hair-loss medicines are prescription-only in Australia, and online services such as Mosh arrange the assessment remotely: a questionnaire and photos, reviewed by a registered Australian practitioner. Any treatment is decided by that practitioner and only where it is clinically appropriate.",
   },
 ];
 
@@ -200,7 +200,7 @@ export default function BestHairLossTreatmentAustraliaPage() {
               href: "/moshhair",
               hrefLabel: "Read our Mosh guide",
               suits: "Men who want a practitioner assessment for hair loss without booking a GP.",
-              how: "An online questionnaire and photos, reviewed by a registered practitioner who decides whether any treatment is appropriate. Anything prescribed is delivered.",
+              how: "An online questionnaire and photos, reviewed by a registered practitioner who decides whether any treatment is appropriate.",
               cost: "A monthly plan, with the price shown in Mosh's sign-up flow before you commit.",
               offerCode: "REFERAL55",
               visitHref: MOSH_HAIR_URL,
@@ -247,7 +247,7 @@ export default function BestHairLossTreatmentAustraliaPage() {
               </thead>
               <tbody className="divide-y divide-[#ded8cd]">
                 <tr><td className="px-4 py-3 text-[#14120f]">Prevention</td><td className="px-4 py-3 text-[#14120f]">Early thinning or a receding hairline</td></tr>
-                <tr><td className="px-4 py-3 text-[#14120f]">Prevention &amp; Regrowth</td><td className="px-4 py-3 text-[#14120f]">Thinning and receding; Mosh labels it most popular</td></tr>
+                <tr><td className="px-4 py-3 text-[#14120f]">Mosh&apos;s middle plan</td><td className="px-4 py-3 text-[#14120f]">Thinning and receding; Mosh labels it most popular</td></tr>
                 <tr><td className="px-4 py-3 text-[#14120f]">Hair Loss Clinic</td><td className="px-4 py-3 text-[#14120f]">More established hair loss</td></tr>
               </tbody>
             </table>

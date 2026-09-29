@@ -36,7 +36,7 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
       keywords: ["online hair loss treatment australia", "hair loss telehealth australia", "online hair loss doctor australia", "hair loss treatment online"],
     },
     lead:
-      "Online hair-loss treatment in Australia means having your case assessed by a registered practitioner over telehealth rather than in a clinic, and, if it is appropriate, having any prescribed treatment delivered to you. It is not a way around the clinical step. Since September 2023 the Medical Board's telehealth guidelines have required a genuine practitioner assessment rather than a form filled in on its own, so a compliant service always involves a real review before anything is prescribed. What you gain is convenience and speed to start; what you do not gain is a shortcut past the medicine's rules.",
+      "Online hair-loss treatment in Australia means having your case assessed by a registered practitioner over telehealth rather than in a clinic, with the practitioner deciding whether any treatment is appropriate. It is not a way around the clinical step. Since September 2023 the Medical Board's telehealth guidelines have required a genuine practitioner assessment rather than a form filled in on its own, so a compliant service always involves a real review. What you gain is convenience and speed to start; what you do not gain is a shortcut past the medicine's rules.",
     sections: [
       {
         h: "How the process runs, step by step",
@@ -44,14 +44,13 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
         bullets: [
           "You complete an online consultation, usually a health questionnaire, often with photos of the affected area.",
           "A registered Australian practitioner reviews your answers and history, not an algorithm on its own.",
-          "If a prescription treatment is appropriate, it is prescribed; if it is not, you should be told so, and some applicants are declined.",
-          "Any medicine is dispensed through a pharmacy and delivered, typically as part of a monthly plan with follow-up.",
+          "The practitioner decides whether any treatment is appropriate; if it is not, you should be told so, and some applicants are declined.",
         ],
       },
       {
         h: "What you can and can't get online",
         body: [
-          "You can get an assessment, and, if suitable, prescription treatment along with over-the-counter options bundled into a plan. You can also get ongoing review and delivery, which is the main convenience.",
+          "You can get an assessment and ongoing review without a clinic visit, which is the main convenience.",
           "You cannot get a guaranteed outcome, and you cannot be promised a specific treatment before anyone has assessed you. Any service that offers guaranteed access to a prescription treatment before a review is not operating the way a compliant Australian service should. Suitability is decided case by case.",
         ],
       },
@@ -59,7 +58,7 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
         h: "Online telehealth versus your GP",
         body: [
           "Both are valid, and they suit different people. Your GP sees you in person with your whole health picture in view and can manage treatment alongside the rest of your care, but it is slower to get started and depends on appointment availability.",
-          "Online telehealth is faster to begin and handles the medicine, review and delivery in one plan, which is why it appeals to people who know what they want and value convenience. The trade is that it is focused on the one issue rather than your whole health, so it is worth being upfront in the questionnaire about anything relevant.",
+          "Online telehealth is faster to begin and handles the consultation and ongoing review in one plan, which is why it appeals to people who know what they want and value convenience. The trade is that it is focused on the one issue rather than your whole health, so it is worth being upfront in the questionnaire about anything relevant.",
         ],
       },
       {
@@ -68,17 +67,17 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
         bullets: [
           "A registered Australian practitioner reviews your case, and the service can decline you.",
           "It does not promise a specific prescription medicine before the assessment.",
-          "Pricing, including whether medicine is billed separately from the plan, is clear before you commit.",
+          "Pricing, including what the plan covers, is clear before you commit.",
           "Cancellation and follow-up are set out plainly before you pay.",
         ],
       },
     ],
     faqs: [
-      { q: "Is online hair-loss treatment legitimate in Australia?", a: "Yes, telehealth is a recognised pathway. A registered Australian practitioner assesses you remotely and prescribes only if appropriate. Since September 2023 a prescription cannot rest on a questionnaire alone, so a compliant service involves a genuine practitioner review." },
+      { q: "Is online hair-loss treatment legitimate in Australia?", a: "Yes, telehealth is a recognised pathway. A registered Australian practitioner assesses you remotely and decides whether any treatment is appropriate. Since September 2023 a prescription cannot rest on a questionnaire alone, so a compliant service involves a genuine practitioner review." },
       { q: "Can I get prescription hair-loss treatment online without seeing anyone?", a: "No. Prescription treatment requires a registered practitioner to assess you first, even through telehealth. The review can happen online, but it has to be a real assessment. No compliant service can supply it before that." },
       { q: "How much does online hair-loss treatment cost?", a: "It is usually a monthly subscription that bundles the treatment, practitioner oversight and delivery, with the plan and price set at the assessment. Mosh, for example, includes free delivery and shows the plan and price before you commit, so confirm the current terms on the provider's site." },
       { q: "How do I find the cheapest hair-loss treatment online in Australia?", a: "Online telehealth usually charges one monthly subscription that bundles the treatment, practitioner oversight and delivery, so the cheapest option is the one whose bundle fits you, not just the lowest headline figure. Compare the monthly plan, what is included, delivery cost and cancellation terms across providers. Mosh, for example, includes free delivery, shows the plan and price before you commit, and gives new customers 55% off their first order through our link. Confirm current terms on the provider's site, and the lowest price is not always the best fit." },
-      { q: "Is telehealth or my GP better for hair loss?", a: "Both are valid. A GP offers in-person, whole-of-health care but is slower to start; telehealth is faster and bundles medicine, review and delivery, but is focused on the one issue. It comes down to how you prefer to be supported." },
+      { q: "Is telehealth or my GP better for hair loss?", a: "Both are valid. A GP offers in-person, whole-of-health care but is slower to start; telehealth is faster and bundles the consultation and ongoing review, but is focused on the one issue. It comes down to how you prefer to be supported." },
       { q: "Is hair-loss treatment safe, and what are the side effects?", a: "Prescription hair-loss treatments carry potential side effects, which is why they are prescription-only and why an assessment is required first. A registered practitioner weighs the likely benefit against the risks for your health history, explains what to watch for, and provides follow-up. Over-the-counter topical products carry their own considerations. Raise any concerns before starting. Information only, not medical advice." },
     ],
     related: [R.best, R.cost, R.mosh, R.moshReview, R.hub],
@@ -183,7 +182,7 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
       {
         h: "How to get assessed without an in-person visit",
         body: [
-          "Because prescription treatment requires a practitioner assessment, accessing it means a real review, which telehealth services now run online. You complete a consultation with photos, a registered Australian practitioner reviews it individually, and if a treatment is appropriate it is prescribed and delivered. Some men are declined, which is the screening working as intended.",
+          "Telehealth services run the practitioner assessment online. You complete a consultation with photos, and a registered Australian practitioner reviews it individually and decides whether any treatment is appropriate. Some men are declined.",
           "Mosh is one Australian men's telehealth service that runs this process online. Refer Labs readers who start through our link get 55% off their first order, applied automatically with no code to type. It commits you to nothing beyond the consultation, and a practitioner still decides what, if anything, you would be offered. This page is information only, not medical advice.",
         ],
       },
@@ -192,7 +191,7 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
       { q: "Can a receding hairline be reversed?", a: "It is more realistic to slow further loss and protect what you have than to fully reverse a receded hairline. Whether any treatment suits you is a clinical decision made by a registered practitioner after an assessment, and none guarantees an outcome." },
       { q: "What is the best treatment for a receding hairline?", a: "No single treatment is right for everyone. A registered practitioner assesses whether any option is appropriate for you, and hair-loss medicines are prescription-only in Australia. Most shampoos and supplements lack evidence for stopping the underlying process." },
       { q: "Is a receding hairline always male pattern baldness?", a: "No. A mature hairline settling slightly higher in your twenties is normal, and other causes of hair loss behave differently and need their own assessment. That is one reason a practitioner review matters before assuming a treatment is right for you." },
-      { q: "How do I get prescription treatment for a receding hairline in Australia?", a: "Prescription treatment requires an assessment by a registered practitioner. Telehealth services run this online: you complete a consultation with photos, a practitioner reviews it, and if appropriate it is prescribed and delivered. Mosh is one such service; Refer Labs readers get 55% off a first order through our link. Some applicants are declined." },
+      { q: "How do I get a receding hairline assessed in Australia?", a: "Through your GP or an online consultation with a registered practitioner. Telehealth services run this online: you complete a consultation with photos, and a practitioner reviews it and decides whether any treatment is appropriate. Mosh is one such service; Refer Labs readers get 55% off a first order with the code REFERAL55 through our link. Some applicants are declined." },
     ],
     related: [R.best, R.mosh, R.quiz, R.cost],
   },

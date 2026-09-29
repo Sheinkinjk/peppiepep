@@ -15,11 +15,6 @@ const SLUG = "/health-and-beauty";
 
 const guides = [
   {
-    href: "/health-and-beauty/retinol-vs-prescription-strength-australia",
-    title: "Retinol vs prescription-strength",
-    desc: "What the strength difference means, and how each route is accessed in Australia.",
-  },
-  {
     href: "/health-and-beauty/led-face-mask-comparison-australia",
     title: "LED face masks, compared",
     desc: "Real Australian prices, why they are higher than the US listing, and how to check the ARTG.",

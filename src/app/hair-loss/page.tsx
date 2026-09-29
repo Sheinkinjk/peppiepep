@@ -30,7 +30,7 @@ const guides = [
 const faqs = [
   {
     q: "What are my real options for hair loss in Australia?",
-    a: "Broadly two. Clinical telehealth services like Mosh can, after a practitioner assessment, provide prescription treatment where appropriate. Topical brands like Dense Hair Experts sell non-prescription products for density and scalp health. They solve different problems, and many people use one, the other, or both.",
+    a: "Broadly two. Clinical telehealth services like Mosh run online consultations with a registered practitioner, who decides whether any treatment is appropriate. Topical brands like Dense Hair Experts sell non-prescription products for density and scalp health. They solve different problems, and many people use one, the other, or both.",
   },
   {
     q: "Is topical treatment enough on its own?",
@@ -38,7 +38,7 @@ const faqs = [
   },
   {
     q: "How does the telehealth route work?",
-    a: "You complete an online consultation with photos, a registered practitioner reviews it individually, and if appropriate, treatment is prescribed and delivered. Some applicants are declined. It is not a shortcut past the clinical assessment; it just moves it online.",
+    a: "You complete an online consultation with photos, a registered practitioner reviews it individually, and the practitioner decides whether any treatment is appropriate. Some applicants are declined. It is not a shortcut past the clinical assessment; it just moves it online.",
   },
   {
     q: "Is any of this medical advice?",
@@ -178,7 +178,7 @@ export default function HairLossHubPage() {
               logo: "/logos/mosh-tile.png",
               href: "/moshhair",
               hrefLabel: "Read our Mosh guide",
-              suits: "Active or progressing loss, where a prescription route is on the table.",
+              suits: "Active or progressing loss that you want assessed by a practitioner.",
               how: "Online consultation, then a registered practitioner decides what is appropriate.",
               cost: "A subscription after the first order.",
               offerCode: "REFERAL55",
