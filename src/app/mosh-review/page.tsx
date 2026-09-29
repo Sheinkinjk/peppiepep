@@ -26,7 +26,7 @@ const faqs = [
   },
   {
     q: "Does Mosh work for hair loss?",
-    a: "Mosh is a service rather than a treatment in itself: it provides access to a practitioner who decides whether prescription hair-loss treatment is appropriate for you. Evidence-based hair-loss treatment generally takes several months to show change and works while it is used. Outcomes vary between people, and suitability is a clinical decision. This is general information, not medical advice.",
+    a: "Mosh is a service rather than a treatment in itself: it provides access to a practitioner who decides whether prescription hair-loss treatment is appropriate for you. Outcomes vary between people, and suitability is a clinical decision. This is general information, not medical advice.",
   },
   {
     q: "Is Mosh worth it?",
@@ -194,8 +194,7 @@ export default function MoshReviewPage() {
           <h2 className="text-xl font-black">What people raise</h2>
           <p className="text-[#56504a] text-sm sm:text-base leading-relaxed">
             The most common points in Australian discussions are practical rather than about legitimacy: that it is a
-            subscription, so it is an ongoing cost rather than a one-off; that hair-loss treatment takes months to show
-            change and only works while it is used; and that you should read the cancellation terms before you start.
+            subscription, so it is an ongoing cost rather than a one-off; that it is a longer-term plan rather than a quick fix; and that you should read the cancellation terms before you start.
             None of these are unique to Mosh, but they are worth going in with your eyes open.
           </p>
           <div className="rounded-xl border px-6 py-5 mt-6" style={{ borderColor: `${CYAN}40`, background: `${CYAN}0A` }}>

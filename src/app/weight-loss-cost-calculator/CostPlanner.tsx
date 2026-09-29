@@ -14,7 +14,7 @@ import { MOSHY_URL } from "@/lib/affiliate-links";
  * - Zero invented dollar figures. The tool compares COST STRUCTURES and tells
  *   the truth: exact prices are individual and shown inside each provider's
  *   own flow before any commitment. The only number used site-wide is the
- *   verified "$120 off first treatment" Moshy offer.
+ *   verified "$120 off first order" Moshy offer.
  * - Information only, not medical or financial advice; suitability for any
  *   treatment is decided by a registered practitioner.
  */
@@ -289,7 +289,7 @@ export default function CostPlanner() {
                 <div>
                   <p className="text-xs leading-relaxed text-[#56504a] mb-3">
                     The only way to see your exact price is inside the consultation, shown before you commit.
-                    New customers can currently receive $120 off their first treatment, applied automatically
+                    New customers can currently receive $120 off their first order, applied automatically
                     through our referral link.
                   </p>
                   <a

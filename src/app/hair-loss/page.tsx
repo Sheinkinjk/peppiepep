@@ -22,7 +22,7 @@ const guides = [
   { href: "/dense", kind: "review" as const, title: "Dense Hair Experts", desc: "The topical, non-prescription route for density and scalp health." },
   { href: "/hair-loss-treatment-cost-australia", title: "What treatment costs", desc: "Over-the-counter options vs telehealth plans, with Mosh\u2019s published prices." },
   { href: "/early-signs-of-hair-loss-australia", title: "Early signs of hair loss", desc: "How to tell if you're going bald, what's normal, and when to act." },
-  { href: "/how-to-stop-hair-loss-australia", title: "How to slow hair loss", desc: "The causes, what the evidence supports, and why acting early helps." },
+  { href: "/how-to-stop-hair-loss-australia", title: "How to slow hair loss", desc: "The causes, what the evidence supports, and how to get assessed." },
   { href: "/online-hair-loss-treatment-australia", title: "Online hair-loss treatment", desc: "How the telehealth assessment works, and what you can and can't get online." },
   { href: "/mens-health", title: "Men's health", desc: "The wider category: how the access routes differ and what each costs over a year." },
 ];

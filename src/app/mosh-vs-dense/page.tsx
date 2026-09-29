@@ -79,11 +79,11 @@ const faqs = [
   },
   {
     q: "How much do Mosh and Dense cost?",
-    a: "Mosh runs on a subscription and the cost depends on the plan your consultation lands on, since a single-active plan differs from a multi-active plan, and the fee bundles treatment, practitioner oversight, and delivery. You see the actual figures in the consultation before you commit. Dense is bought per product or as a routine directly from its store. Prices change, so check the current figures on each site. Our links apply any current referral offer at the URL level with no code to enter.",
+    a: "Mosh runs on a subscription and the cost depends on the plan your consultation lands on, since Mosh's plans differ by the stage of hair loss. You see the actual figures in the consultation before you commit. Dense is bought per product or as a routine directly from its store. Prices change, so check the current figures on each site. Our links apply any current referral offer at the URL level with no code to enter.",
   },
   {
     q: "Which should I start with for early thinning?",
-    a: "For early or mild thinning, some people begin with a topical routine like Dense, while others go straight to a clinical assessment because the condition is progressive and it is easier to keep hair than to recover it. Because Mosh's online consultation commits you to nothing and is reviewed by a registered practitioner, it is a low-friction way to find out what, if anything, you would be offered. Suitability is practitioner-decided and never guaranteed. For significant or rapid hair loss, see a doctor in person.",
+    a: "For early or mild thinning, some people begin with a topical routine like Dense, while others go straight to a clinical assessment. Because Mosh's online consultation commits you to nothing and is reviewed by a registered practitioner, it is a low-friction way to find out what, if anything, you would be offered. Suitability is practitioner-decided and never guaranteed. For significant or rapid hair loss, see a doctor in person.",
   },
 ];
 
@@ -272,8 +272,7 @@ export default function MoshVsDensePage() {
               <p>
                 That last point is the compliance line. Nothing is dispensed automatically. Suitability
                 is assessed individually, decided by a registered practitioner, and never guaranteed before that
-                assessment. The consultation itself takes a few minutes and commits you to nothing, which is the real
-                argument for it: hair-loss treatment tends to reward starting early, and the online route removes the
+                assessment. The consultation itself takes a few minutes and commits you to nothing, and the online route removes the
                 friction that keeps many men from ever booking an appointment.
               </p>
             </div>

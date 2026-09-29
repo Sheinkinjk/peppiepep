@@ -21,7 +21,7 @@ const faqs = [
   },
   {
     q: "Is the Moshy eligibility check free?",
-    a: "Yes. The online eligibility check is free, takes around ten minutes and commits you to nothing. If a registered Australian practitioner approves you, the subscription options and pricing are shown inside the platform before you pay. New customers can currently receive $120 off their first treatment through our referral link, applied automatically with no code.",
+    a: "Yes. The online eligibility check is free, takes around ten minutes and commits you to nothing. If a registered Australian practitioner approves you, the subscription options and pricing are shown inside the platform before you pay. New customers can currently receive $120 off their first order through our referral link, applied automatically with no code.",
   },
   {
     q: "Does Medicare cover weight-loss telehealth?",

@@ -86,7 +86,7 @@ export const iScreenConfig: AffiliatePageConfig = {
       heading: "Is a private blood test worth paying for?",
       paragraphs: [
         `Often it is not, and the reason is on i-screen's own terms page: none of its services are Medicare-rebatable or eligible for government subsidy. If a doctor believes a test is clinically indicated, that test is frequently bulk billed, and you would be paying between ${money(low.price)} and ${money(high.price)} for something available at no cost through the usual route. The cheapest first step is asking a GP whether the test you want is indicated.`,
-        "What ordering directly buys is access and speed, not a better test. You choose the panel yourself, you need no referral, and results are typically back within 48 hours. That matters if your GP has declined to order something you want to see, if you are tracking a marker over time, or if waiting for an appointment is the obstacle. It does not make the result more meaningful than the same assay ordered by a doctor.",
+        "What ordering directly buys is access and speed, not a better test. You choose the panel yourself, you need no referral, and results are typically back within 48 hours. That matters if waiting for an appointment is the obstacle. It does not make the result more meaningful than the same assay ordered by a doctor.",
         "The case against is the one that applies to all screening outside a clinical indication. A number slightly outside a reference range, in a person with no symptoms, frequently leads to more tests, more cost and more worry without changing anything.",
       ],
     },

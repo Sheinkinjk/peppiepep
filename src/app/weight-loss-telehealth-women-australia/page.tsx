@@ -122,7 +122,7 @@ export default function WeightLossTelehealthWomenPage() {
           <h2 className="text-xl font-black">Coaching-led vs clinical pathways</h2>
           <p className="text-[#56504a] text-sm sm:text-base leading-relaxed">
             The services marketed to women tend to split into two shapes. Coaching-led programs, like Juniper, wrap habit,
-            nutrition and community support around any medication, which suits people who want structure and
+            nutrition and community support around clinical care, which suits people who want structure and
             accountability alongside the clinical side. Leaner clinical pathways, like Moshy, focus on the practitioner
             assessment and treatment without the coaching layer, which suits people who want a straightforward route and
             a lower ongoing cost.
@@ -157,7 +157,7 @@ export default function WeightLossTelehealthWomenPage() {
             Juniper is the service built specifically for women, and its Weight Reset Program is the coaching-led option:
             unlimited practitioner follow-ups, health tracking through an app, a patient community, and optional 1:1
             coaching wrapped around any treatment. It suits people who want structure and accountability alongside the
-            clinical care rather than a bare prescription. Suitability is assessed individually by an Australian-registered
+            clinical care rather than a consult on its own. Suitability is assessed individually by an Australian-registered
             practitioner, and some applicants are declined.
           </p>
           <p className="text-[#56504a] text-sm sm:text-base leading-relaxed">

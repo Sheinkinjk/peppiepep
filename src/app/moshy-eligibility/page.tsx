@@ -33,7 +33,7 @@ const faqs = [
   },
   {
     q: "Who can complete the Moshy eligibility check?",
-    a: "Moshy's eligibility check is open to anyone considering the clinical pathway. It gathers your health history so an Australian-registered practitioner can assess suitability individually. If you would rather have coaching wrapped around medication, Juniper runs a comparable eligibility model with that focus.",
+    a: "Moshy's eligibility check is open to anyone considering the clinical pathway. It gathers your health history so an Australian-registered practitioner can assess suitability individually. If you would rather have coaching wrapped around clinical care, Juniper runs a comparable eligibility model with that focus.",
   },
 ];
 

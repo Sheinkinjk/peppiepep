@@ -92,7 +92,7 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
     meta: {
       title: "How to Stop Hair Loss (Australia 2026): What Helps",
       description:
-        "How to approach male pattern hair loss in Australia: the cause, what the evidence does and does not support, and why acting early matters.",
+        "How to approach male pattern hair loss in Australia: the cause, what the evidence does and does not support, and how to get assessed.",
       keywords: ["how to stop hair loss", "how to stop balding australia", "stop hair loss men", "hair loss treatment that works australia"],
     },
     lead:
@@ -107,7 +107,7 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
       // claim about the evidence behind over-the-counter products would be a new
       // claim with no source on file. The mechanism sentence stays: describing
       // the condition is not advertising a medicine.
-      "One step comes before any product: knowing which kind you have, because they do not respond to the same things. The most common form in men, male pattern hair loss, is largely genetic and driven by the hormone DHT, and it is gradual and progressive. Acting earlier gives you more to work with, since holding onto hair you still have is easier than recovering what is gone. What is right for you is a clinical decision, and this page is general information, not medical advice.",
+      "One step comes before any product: knowing which kind you have, because they do not respond to the same things. The most common form in men, male pattern hair loss, is largely genetic and hormonal, and it is gradual and progressive. What is right for you is a clinical decision, and this page is general information, not medical advice.",
     // 28 Sep 2026 (TGA): "two treatments carry the strongest evidence", one
     // "working on the hormonal driver", used "alongside" an OTC topical, identified
     // both medicines for male pattern loss without naming them, on a page carrying
@@ -116,7 +116,7 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
       {
         h: "Work out what is causing it",
         body: [
-          "Most male hair loss is androgenetic, the inherited 'male pattern' type, which shows up as a receding hairline or thinning crown and progresses slowly over years. It is driven by follicles' genetic sensitivity to DHT, not by anything you did wrong.",
+          "Most male hair loss is androgenetic, the inherited 'male pattern' type, which shows up as a receding hairline or thinning crown and progresses slowly over years. It is largely inherited, not caused by anything you did wrong.",
           "Other causes exist, such as stress-related shedding, thyroid issues, nutritional gaps or medication effects, and these behave differently and sometimes reverse on their own. Because the cause changes what helps, the sensible starting point is an assessment rather than guessing, especially if the loss is sudden, patchy or unusual.",
         ],
       },
@@ -133,13 +133,12 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
         h: "What tends not to move the needle",
         body: [
           "Plenty of products are marketed for hair loss without the evidence to match. Caffeine shampoos, most supplements, and low-cost devices may make hair look or feel thicker temporarily, but there is little evidence that they stop male pattern loss. That does not make them scams, but it does make them a poor substitute if halting the process is the goal.",
-          "The other common trap is waiting. Because the condition is progressive, the hair you keep is easier to hold than the hair you have already lost is to recover, so delaying rarely helps.",
         ],
       },
       {
         h: "How to get started",
         body: [
-          "You have two mainstream routes. See your own GP, who can assess you in person and manage treatment with your whole health in view, or use an online telehealth service where a registered Australian practitioner reviews your case and prescribes if it is appropriate, usually with the medicine and delivery included in a plan.",
+          "You have two mainstream routes. See your own GP, who can assess you in person and manage treatment with your whole health in view, or use an online telehealth service where a registered Australian practitioner reviews your case and decides whether any treatment is appropriate.",
           "Either way, the step that matters is a genuine assessment. Mosh is one Australian men's telehealth service that runs this kind of review for hair loss, and you can compare it against your other options first.",
         ],
       },
@@ -148,8 +147,7 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
       { q: "Can you stop hair loss?", a: "Male pattern hair loss is progressive, and for many men the realistic aim is slowing further loss rather than reversing it. Whether any treatment is appropriate for you is decided by a registered practitioner after an assessment, and none guarantees an outcome. Other causes of hair loss behave differently and need their own assessment." },
       { q: "What is the most effective way to stop male pattern baldness?", a: "There is no answer that holds for everyone, which is why it starts with an assessment. A registered practitioner decides whether any treatment suits you, and hair-loss medicines are prescription-only in Australia. Most shampoos, supplements and devices have little evidence for stopping the process itself." },
       { q: "Do hair-loss shampoos and supplements work?", a: "Most have little evidence for stopping male pattern hair loss specifically. They may temporarily improve how hair looks or feels, but they are not a substitute for an assessment if halting the underlying process is your goal." },
-      { q: "Does acting early make a difference?", a: "Generally yes. Male pattern hair loss is progressive, and it is easier to hold onto hair you still have than to recover hair that is already gone, so getting assessed sooner tends to give you more to work with." },
-      { q: "How do I know if I'm losing my hair, and when should I start?", a: "Early male pattern hair loss usually shows as gradual thinning at the crown or a hairline receding at the temples over years. A little extra hair in the shower is normal; a steady drop in density or a changing hairline is the signal to get assessed. Because the condition is progressive, acting sooner generally leaves more hair to protect, and a practitioner can confirm the cause." },
+      { q: "How do I know if I'm losing my hair, and when should I start?", a: "Early male pattern hair loss usually shows as gradual thinning at the crown or a hairline receding at the temples over years. A little extra hair in the shower is normal; a steady drop in density or a changing hairline is the signal to get assessed. A practitioner can confirm the cause." },
     ],
     related: [R.best, R.quiz, R.mosh, R.cost],
   },
@@ -162,16 +160,16 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
     meta: {
       title: "Receding Hairline Treatment Australia 2026: What Helps",
       description:
-        "A receding hairline in Australia: what causes it, which treatments have real evidence, and how an online practitioner assessment works.",
+        "A receding hairline in Australia: what causes it and how an online practitioner assessment works.",
       keywords: ["receding hairline treatment australia", "receding hairline", "how to fix a receding hairline", "receding hairline men australia"],
     },
     lead:
-      "A receding hairline, where the hair retreats at the temples and along the front, is one of the earliest and most common signs of male pattern hair loss. Because it is driven by the same underlying process as thinning on the crown, the assessment and the options are the same. The thing that most affects the result is not which product you pick but how early you act, because it is easier to hold onto the hairline you still have than to recover ground already lost. Whether any treatment suits you is a clinical decision made after an assessment.",
+      "A receding hairline, where the hair retreats at the temples and along the front, is one of the earliest and most common signs of male pattern hair loss. Because it is driven by the same underlying process as thinning on the crown, the assessment and the options are the same. Whether any treatment suits you is a clinical decision made after an assessment.",
     sections: [
       {
         h: "Why a hairline recedes",
         body: [
-          "Male pattern hair loss is largely genetic and hormonal: hair follicles at the temples and front are sensitive to DHT, a hormone that gradually shrinks them until they stop producing visible hair. This is why the hairline is often the first place men notice change, and why it tends to progress if left alone.",
+          "Male pattern hair loss is largely genetic and hormonal: hair follicles at the temples and front gradually shrink until they stop producing visible hair. This is why the hairline is often the first place men notice change, and why it tends to progress if left alone.",
           "Not every receding or uneven hairline is male pattern loss, though. A mature hairline that settles slightly higher in your twenties is normal, and other causes behave differently, which is part of why an assessment matters before assuming a treatment.",
         ],
       },
@@ -179,7 +177,6 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
         h: "What a practitioner decides",
         body: ["Hair-loss medicines are prescription-only in Australia, so whether any treatment suits a receding hairline is decided by a registered practitioner after an assessment. Refer Labs does not name or compare medicines."],
         bullets: [
-          "Early action: because the loss is progressive, starting sooner generally leaves more hair to protect.",
           "Most shampoos, supplements and devices lack comparable evidence for stopping the underlying process, whatever they do for appearance.",
         ],
       },
@@ -254,7 +251,7 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
       { q: "How do I tell if I am going bald?", a: "Look for a pattern that progresses over months rather than a single heavy shed: a hairline receding at the temples, a thinning or see-through crown, and a widening part. Comparing photos a year or two apart is the clearest home check. If the signs are adding up, a practitioner can confirm the cause." },
       { q: "How much hair loss per day is normal?", a: "Commonly cited figures put normal shedding at roughly 50 to 100 hairs a day, and it varies with washing and styling. What matters is a sustained increase or a steady drop in density over months, not the count on any one day." },
       { q: "Are early signs of balding at 20 or 25 normal?", a: "A mature hairline settling slightly higher in your late teens or twenties is common and not the same as balding. Genuine early male pattern hair loss can also start young, so if the crown or hairline keeps changing over months it is worth getting assessed rather than waiting." },
-      { q: "Can early hair loss be slowed if I catch it?", a: "Often the earlier it is assessed, the more options there are, because it is easier to hold onto existing hair than to recover hair that is already gone. Whether any treatment is appropriate for you is a clinical decision made by a registered practitioner after an assessment. This is general information, not medical advice." },
+      { q: "Can early hair loss be slowed if I catch it?", a: "A practitioner can tell you where you stand and what options there are. Whether any treatment is appropriate for you is a clinical decision made by a registered practitioner after an assessment. This is general information, not medical advice." },
       { q: "Who should I see about early hair loss?", a: "You can start with your own GP, or an online telehealth service where a registered Australian practitioner reviews your case. For significant or sudden loss, see a doctor in person. Our hair-loss match can point you to the route that fits." },
     ],
     related: [R.quiz, R.best, R.mosh, R.moshReview, R.hub],

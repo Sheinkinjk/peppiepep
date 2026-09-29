@@ -69,7 +69,7 @@ const itemListSchema = {
 const FAQS: { q: string; a: string }[] = [
                 {
                   q: "What is the best weight loss telehealth platform in Australia?",
-                  a: "Moshy (a lean clinical pathway, open to anyone eligible) and Juniper (a coaching-led program marketed to women) are the most widely used weight-loss telehealth platforms in Australia. The best platform depends on your health profile and whether you want a medication-focused clinical pathway or a coaching-heavy program. Suitability is assessed by each platform's practitioners individually.",
+                  a: "Moshy (a lean clinical pathway, open to anyone eligible) and Juniper (a coaching-led program marketed to women) are two Australian weight-loss telehealth platforms we compare. The best platform depends on your health profile and whether you want a lean clinical pathway or a coaching-heavy program. Suitability is assessed by each platform's practitioners individually.",
                 },
                 {
                   q: "How much does telehealth weight loss cost per month?",
@@ -380,7 +380,7 @@ export default function BestWeightLossTelehealthPage() {
                 </h1>
                 {/* The answer, directly under the h1. Nothing between: check-answer-slot. */}
                 <p className="text-[#14120f] text-base sm:text-lg leading-relaxed">
-                  Moshy and Juniper are the two most-used weight-management telehealth services in Australia, built
+                  Moshy and Juniper are two Australian weight-management telehealth services, built
                   for different people. Moshy is the clinical pathway with the least around it, open to anyone
                   eligible. Juniper wraps the same clinical step in coaching, an app and a patient community, and
                   markets to women. Both decide suitability through a registered practitioner, and some applicants
@@ -468,9 +468,9 @@ export default function BestWeightLossTelehealthPage() {
             </p>
             <ul className="space-y-2.5 text-sm text-[#56504a] max-w-2xl mb-5">
               <li><strong className="text-[#14120f]">Eligibility.</strong> Each provider runs an online questionnaire and a practitioner reviews whether treatment is appropriate for you. Approval is assessed individually and is not guaranteed.</li>
-              <li><strong className="text-[#14120f]">Total monthly cost.</strong> Add the program or subscription fee <em>and</em> the medication, which is usually billed separately and can vary by dose. A low program fee can still mean a high total.</li>
+              <li><strong className="text-[#14120f]">Total monthly cost.</strong> Check what the fee includes. Some programs include treatment, support and delivery in one price; others bill parts separately. Compare the full amount you would pay each month.</li>
               <li><strong className="text-[#14120f]">Practitioner review and support.</strong> Check whether you get an initial consult, ongoing check-ins, and how you reach a practitioner if something changes.</li>
-              <li><strong className="text-[#14120f]">Medication pathway.</strong> Weight-management medicines are prescription-only and dispensed by a pharmacy. Availability depends on the practitioner&apos;s assessment and current supply.</li>
+              <li><strong className="text-[#14120f]">Medication pathway.</strong> Weight-management medicines are prescription-only in Australia, and any treatment is decided by the practitioner and only where clinically appropriate.</li>
               <li><strong className="text-[#14120f]">Cancellation terms.</strong> Confirm whether it is month-to-month and how to pause or cancel before you subscribe.</li>
             </ul>
             <p className="text-sm text-[#56504a] leading-relaxed max-w-2xl">

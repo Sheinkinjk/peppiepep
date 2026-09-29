@@ -144,7 +144,7 @@ export const moshyConfig: AffiliatePageConfig = {
     },
     {
       q: "How much does Moshy cost per month?",
-      a: "Moshy advertises its program from $229 a month* on its own site, checked 14 August 2026. Treat that as a starting figure rather than a quote: what you pay depends on the plan a registered practitioner considers appropriate after your eligibility check, and the exact cost is confirmed inside Moshy's own flow before you commit to anything. New customers get $120 off their first order through the link on this page, which Moshy states applies to eligible programs with a minimum three-month commitment. *Indicative only and subject to change: view the latest pricing on Moshy's own site before you sign up.",
+      a: "Moshy lists its program price on its own site. What you pay depends on the plan a registered practitioner considers appropriate after your eligibility check, and the exact cost is confirmed inside Moshy's own flow before you commit to anything. New customers get $120 off their first order through the link on this page, which Moshy states applies to eligible programs with a minimum three-month commitment.",
     },
     {
       q: "Does Moshy have a referral code?",

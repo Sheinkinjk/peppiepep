@@ -41,7 +41,7 @@ const included = [
   "Online consultations with Australian-registered practitioners",
   "A medical weight-management program tailored by your practitioner",
   "Unlimited practitioner follow-ups, seven days a week",
-  "Health tracking through the award-winning Juniper app, with June AI",
+  "Health tracking through the Juniper app, with June AI",
   "The 20,000-member Juniper patient community",
   "Optional 1:1 health coaching from dietitians (a paid add-on)",
 ];
@@ -70,7 +70,7 @@ const faqs = [
   },
   {
     q: "What is Juniper?",
-    a: "Juniper is an Australian medical weight-management program designed for women. Its Weight Reset Program pairs online consultations with Australian-registered practitioners with a full wraparound of care: unlimited follow-ups, health tracking through an award-winning app with June AI, a 20,000-member patient community, and optional 1:1 health coaching from dietitians as a paid add-on.",
+    a: "Juniper is an Australian medical weight-management program designed for women. Its Weight Reset Program pairs online consultations with Australian-registered practitioners with a full wraparound of care: unlimited follow-ups, health tracking through an app with June AI, a 20,000-member patient community, and optional 1:1 health coaching from dietitians as a paid add-on.",
   },
   {
     q: "Is Juniper only for women?",
@@ -82,7 +82,7 @@ const faqs = [
   },
   {
     q: "What makes Juniper different?",
-    a: "The wraparound care. Beyond the medical program, you get a care team available seven days a week for unlimited follow-up consultations, an award-winning app with tracking, recipes and a 24/7 in-app AI companion, optional 1:1 coaching from dietitians, and a 20,000-member patient community. A waived $89 initial consultation, with the code JARREDKFC, lets you check whether it fits before committing.",
+    a: "The wraparound care. Beyond the medical program, you get a care team available seven days a week for unlimited follow-up consultations, an app with tracking, recipes and a 24/7 in-app AI companion, optional 1:1 coaching from dietitians, and a 20,000-member patient community. A waived $89 initial consultation, with the code JARREDKFC, lets you check whether it fits before committing.",
   },
   {
     q: "What does the program involve?",
@@ -98,7 +98,7 @@ const faqs = [
   },
   {
     q: "Is Juniper worth it?",
-    a: "It depends on what you want from a program. Juniper's value is the wraparound: a practitioner-led program plus unlimited follow-ups seven days a week, coaching, an award-winning app and a large patient community, rather than a program on its own. Because it runs on an ongoing subscription, the value tracks how consistently you use it. The waived $89 initial consultation for new patients, with the code JARREDKFC, is a no-commitment way to judge whether the fit is right before you pay for anything.",
+    a: "It depends on what you want from a program. Juniper's value is the wraparound: a practitioner-led program plus unlimited follow-ups seven days a week, coaching, an app and a large patient community, rather than a program on its own. Because it runs on an ongoing subscription, the value tracks how consistently you use it. The waived $89 initial consultation for new patients, with the code JARREDKFC, is a no-commitment way to judge whether the fit is right before you pay for anything.",
   },
   {
     q: "Does Juniper work?",
@@ -193,7 +193,7 @@ export default function JuniperPage() {
               Starting through this page applies the code JARREDKFC, which waives Juniper&apos;s initial consultation,
               valued at $89, so a new patient pays nothing to be assessed. Juniper is an Australian medical
               weight-management program designed for women: its Weight Reset Program pairs online consultations with
-              Australian-registered practitioners with structured coaching, unlimited follow-ups, an award-winning app
+              Australian-registered practitioners with structured coaching, unlimited follow-ups, an app
               and a 20,000-member patient community. The code takes nothing off the program itself, which is billed
               monthly and confirmed inside Juniper&apos;s own flow before you commit.
             </p>
@@ -281,7 +281,7 @@ export default function JuniperPage() {
                 </p>
                 <p>
                   What sets it apart is the wraparound: unlimited follow-ups seven days a week, health tracking through an
-                  award-winning app, a 20,000-member patient community, and optional 1:1 coaching from dietitians. It is
+                  app, a 20,000-member patient community, and optional 1:1 coaching from dietitians. It is
                   built for people who want structure and a whole care team in their corner.
                 </p>
               </div>
@@ -367,7 +367,7 @@ export default function JuniperPage() {
                 </p>
                 <p>
                   Whether it is worth it comes down to what you want from a program. Juniper&apos;s real draw is the
-                  wraparound: unlimited follow-ups seven days a week, coaching, an award-winning app and a large
+                  wraparound: unlimited follow-ups seven days a week, coaching, an app and a large
                   community, rather than a program on its own. Because it runs on an ongoing subscription, the value
                   tracks how consistently you use it. If you want structure and a whole care team in your corner, that is
                   where it earns its place; if you would rather manage everything with your own GP, that is a reasonable
@@ -386,7 +386,7 @@ export default function JuniperPage() {
                 <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">Why Juniper</h2>
                 <p className="mt-4 text-[15.5px] leading-relaxed text-[#56504a]">
                   Juniper is built for women who want a whole care team in their corner: coaching,
-                  community, an award-winning app, and unlimited follow-ups seven days a week. The waived initial consultation
+                  community, an app, and unlimited follow-ups seven days a week. The waived initial consultation
                   is the low-stakes way to check whether it fits, with a 30-day money-back window on eligible first orders.
                 </p>
                 <ul className="mt-5 space-y-2">

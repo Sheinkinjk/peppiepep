@@ -2135,7 +2135,7 @@ export const seoConfig = {
     // short version" became "How Mosh works", "What people actually raise" became
     // "What people raise", and one FAQ question lost "actually". Title and
     // description unchanged.
-    title: "Mosh Review 2026: Is It Legit, and Does It Work?",
+    title: "Mosh Review 2026: Is It Legit, and What It Costs",
     description:
       "A real clinical service, and REFERAL55 takes 55% off a first order. What the consult involves, what you pay monthly after, and who it does not suit.",
     url: `${SITE_URL}/mosh-review`,

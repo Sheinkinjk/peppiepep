@@ -29,7 +29,7 @@ const providers: PairProvider[] = [
     points: [
       "Free online eligibility check, then a practitioner review",
       "Subscription with delivery if a plan is appropriate",
-      "Mosh's sister brand, also covering hair regrowth and skin care",
+      "Mosh's sister brand, also covering hair loss and skin care",
     ],
     offer: { text: "$120 off your first order", code: "REFERRAL120" },
     href: MOSHY_URL,

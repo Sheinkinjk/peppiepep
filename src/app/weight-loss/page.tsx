@@ -44,10 +44,10 @@ const faqs = [
   },
   {
     q: "How much do online weight loss programs cost in Australia?",
-    a: "Most medical telehealth services run as a subscription, and any medication is usually billed separately on top. Coaching programs tend to charge a flat or monthly fee, and a GP visit is partly offset by Medicare. Pricing changes often, so check the current figure on each provider before you commit. Our individual guides note the cost model for each pathway.",
+    a: "Most medical telehealth services run as a subscription; some include treatment in the fee and others bill parts separately. Coaching programs tend to charge a flat or monthly fee, and a GP visit is partly offset by Medicare. Pricing changes often, so check the current figure on each provider before you commit. Our individual guides note the cost model for each pathway.",
   },
   {
-    q: "Can you get weight loss medication online in Australia?",
+    q: "Can you see a weight-management practitioner online in Australia?",
     a: "Prescription weight-management medicines are available in Australia only after an individual assessment by a registered practitioner, and a legitimate telehealth service will not promise a specific medicine before that assessment happens. Suitability is decided case by case. This hub is information only and does not recommend any treatment.",
   },
   {
@@ -285,7 +285,7 @@ export default function WeightLossHubPage() {
             <p>
               Whichever way you lean, a few checks separate a serious weight loss clinic online from a storefront.
               Confirm that a registered Australian practitioner reviews your case and that some people are declined.
-              Read the cost model in full, including whether any medication is billed separately from the subscription.
+              Read the cost model in full, including what the subscription includes.
               Check what ongoing support and cancellation look like before you commit, not after. And treat any promise
               of a guaranteed outcome as a red flag. Everything on this page is general information to help you compare
               services. It is not medical advice, and suitability for any treatment is decided individually by a

@@ -11,11 +11,11 @@ export const metadata = generateSEOMetadata(seoConfig.cgmNonDiabetic);
 const faqs = [
   {
     q: "Can you buy a continuous glucose monitor without diabetes in Australia?",
-    a: "Access exists outside a diabetes diagnosis, and the terms differ by product and supplier, with some routes running through a pharmacy or a subscription service. What does not apply is the subsidy: the National Diabetes Services Scheme supports eligible people with diabetes, and someone buying a CGM out of curiosity pays the full commercial price. Ask the specific supplier how access works rather than assuming it is an ordinary retail purchase.",
+    a: "CGMs are included on the ARTG for managing diabetes. Some suppliers sell them to people without diabetes, which is a use the devices were not assessed for, and the National Diabetes Services Scheme subsidy applies only to eligible people with diabetes. Whether one is appropriate for you is a question for your GP.",
   },
   {
     q: "How much does a CGM cost without a subsidy?",
-    a: "Sensors are consumable and last a set number of days, so the meaningful figure is the ongoing cost rather than a one-off. Work out the price per sensor multiplied by how many you would use in a year, and add any subscription or reader cost. Suppliers publish varying figures and we have verified none, so get the current price from the supplier and do that arithmetic before starting.",
+    a: "Sensors are consumable and last a set number of days, so the meaningful figure is the ongoing cost rather than a one-off. The annual cost is the price per sensor times the sensors used in a year, plus any subscription or reader cost. Suppliers publish varying figures and we have verified none.",
   },
   {
     q: "Is there evidence CGMs help people without diabetes?",
@@ -23,11 +23,11 @@ const faqs = [
   },
   {
     q: "Can a CGM tell me if I am prediabetic?",
-    a: "It is not the diagnostic test. Diabetes and prediabetes are diagnosed on specific blood tests interpreted by a clinician, not on sensor readings. A CGM might prompt you to go and get tested, which is a reasonable outcome, but the sensor result is not a diagnosis and should not be treated as one.",
+    a: "It is not the diagnostic test. Diabetes and prediabetes are diagnosed on specific blood tests interpreted by a clinician, not on sensor readings. A sensor reading is not a diagnosis of diabetes or prediabetes.",
   },
   {
     q: "What is the downside of wearing one?",
-    a: "Cost, and the risk of over-reading normal physiology. Glucose fluctuates in healthy people, and seeing every fluctuation can produce anxiety and unnecessarily restrictive eating in people who had no problem to begin with. That is a real reported pattern rather than a hypothetical one, and it is worth weighing before you start.",
+    a: "Cost, and the risk of over-reading normal physiology. Glucose fluctuates in healthy people, and seeing every fluctuation can produce anxiety and unnecessarily restrictive eating in people who had no problem to begin with. This has been reported.",
   },
 ];
 
@@ -57,8 +57,7 @@ export default function Page() {
         </p>
         <p className="mt-3">
           Buying one for general interest means paying the commercial price for every sensor, indefinitely. Since
-          sensors are consumables with a fixed wear time, the real number is the annual cost, and it is the figure to
-          establish before starting rather than after the third sensor.
+          sensors are consumables with a fixed wear time, the real number is the annual cost.
         </p>
       </section>
 
@@ -110,7 +109,7 @@ export default function Page() {
       <section>
         <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">If you are worried about diabetes</h2>
         <p className="mt-3">
-          See a GP and ask for the appropriate blood test. It is the validated diagnostic pathway, it attracts a
+          A GP can assess whether testing is indicated. Diabetes and prediabetes are diagnosed on blood tests read by a clinician; that is the validated diagnostic pathway, it attracts a
           Medicare rebate where indicated, and it gives you an answer a clinician can act on. A sensor bought online
           does none of those three things.
         </p>
