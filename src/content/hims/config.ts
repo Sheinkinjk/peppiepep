@@ -13,7 +13,7 @@
 // suitability checks, and buttons say "Continue to Hims" or "Continue to Mosh".
 
 import type { Vertical } from "./types";
-import { HIMS_URL, MOSH_HAIR_URL } from "@/lib/affiliate-links";
+import { HIMS_URL, MOSH_HAIR_URL, MOSHY_URL } from "@/lib/affiliate-links";
 
 export const SITE_URL = "https://referlabs.com.au";
 
@@ -81,11 +81,19 @@ export const OFFERS: Record<Vertical, Offer> = {
 
 /**
  * Mosh, per vertical. Only hair has a Refer Labs link and code (REFERAL55, the
- * hair offer on /moshhair). There is no Mosh weight-loss or ED link yet, so those
+ * hair offer on /moshhair). Weight is Moshy (the /moshy link and REFERRAL120). There is no Mosh ED link yet, so that
  * buttons go to Mosh's public page with plain rel and the card says so. Never
  * send an ED or weight reader through the hair link.
  */
 export type MoshSide = {
+  /** Brand shown on this vertical. Weight is Moshy, Mosh's partner brand (Jarred, 30 Sep 2026). */
+  name: "Mosh" | "Moshy";
+  logo: { src: string; w: number; h: number };
+  ctaLabel: string;
+  /** Where a comparison's ItemList points for this side. */
+  pageUrl: string;
+  /** Code terms, listed under the code on versus pages. */
+  terms?: string[];
   href: string;
   sponsored: boolean;
   code?: string;
@@ -99,20 +107,45 @@ export type MoshSide = {
 
 export const MOSH: Record<Vertical, MoshSide> = {
   hair: {
+    name: "Mosh",
+    logo: { src: "/logos/mosh-tile.png", w: 64, h: 64 },
+    ctaLabel: "Continue to Mosh",
+    pageUrl: "/moshhair",
+    terms: [
+      "New Mosh customers only. The discount applies to the first billing period only.",
+      "Mosh\u2019s promotion terms apply, at getmosh.com.au/promotions-terms-and-conditions.",
+      "A registered practitioner decides whether any treatment is appropriate for you. Program fees apply.",
+    ],
     href: MOSH_HAIR_URL,
     sponsored: true,
     code: "REFERAL55",
     offerText:
       "REFERAL55 is a discount on a new customer's first Mosh hair order. Our link carries REFERAL55; enter it at checkout if it isn't shown.",
   },
+  // Mosh's weight offering is Moshy, its partner brand (Jarred, 30 Sep 2026), so the
+  // weight comparison is Hims vs Moshy through the /moshy link and REFERRAL120. No
+  // amount is printed: lint:hims blocks dollar figures on these pages.
   weight: {
-    href: "https://www.getmosh.com.au/weight-loss",
-    sponsored: false,
-    noOfferText:
-      "Refer Labs has no Mosh weight-loss code or link. This button goes to Mosh's public weight-loss page and is not an affiliate link.",
-    pendingFlag: "No Mosh weight link yet",
+    name: "Moshy",
+    logo: { src: "/logos/moshy.png", w: 64, h: 64 },
+    ctaLabel: "Continue to Moshy",
+    pageUrl: "/moshy",
+    terms: [
+      "New Moshy customers on a practitioner-assigned weight program, one use per customer.",
+      "A minimum commitment of three months applies, and the code cannot be combined with other promotions (Moshy's sign-up page, read 30 September 2026).",
+      "A registered practitioner decides whether any treatment is appropriate for you. Program fees apply.",
+    ],
+    href: MOSHY_URL,
+    sponsored: true,
+    code: "REFERRAL120",
+    offerText:
+      "REFERRAL120 is a discount on a new customer's first Moshy order, with a three-month minimum commitment. Our link carries REFERRAL120; enter it at checkout if it isn't shown.",
   },
   ed: {
+    name: "Mosh",
+    logo: { src: "/logos/mosh-tile.png", w: 64, h: 64 },
+    ctaLabel: "Continue to Mosh",
+    pageUrl: "https://www.getmosh.com.au/erectile-dysfunction",
     href: "https://www.getmosh.com.au/erectile-dysfunction",
     sponsored: false,
     noOfferText:
@@ -138,6 +171,8 @@ export const SRC = {
   moshHome: { label: "Mosh: Home page", url: "https://www.getmosh.com.au/" },
   moshPricing: { label: "Mosh: Pricing", url: "https://www.getmosh.com.au/pricing" },
   moshWeight: { label: "Mosh: Weight loss", url: "https://www.getmosh.com.au/weight-loss" },
+  moshyWeight: { label: "Moshy: Weight loss", url: "https://www.getmoshy.com.au/weight-loss" },
+  moshyHome: { label: "Moshy: Home page", url: "https://www.getmoshy.com.au/" },
   moshHair: { label: "Mosh: Hair loss", url: "https://www.getmosh.com.au/hair-loss" },
   moshEd: { label: "Mosh: Erectile dysfunction", url: "https://www.getmosh.com.au/erectile-dysfunction" },
   moshReferLabs: { label: "Mosh: Refer Labs partner page", url: "https://www.getmosh.com.au/start/referlabs" },

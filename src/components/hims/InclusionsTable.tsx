@@ -1,4 +1,5 @@
 import { INCLUSIONS, INCLUSIONS_READ_ON, type InclusionsKey } from "@/content/hims/inclusions";
+import { MOSH } from "@/content/hims/config";
 import { Flag } from "./ui";
 
 /**
@@ -9,6 +10,8 @@ import { Flag } from "./ui";
  */
 export function InclusionsTable({ table, preview }: { table: InclusionsKey; preview: boolean }) {
   const data = INCLUSIONS[table];
+  // The weight table compares Moshy, Mosh's partner brand for weight (Jarred, 30 Sep 2026).
+  const other = table === "weight" ? MOSH.weight.name : "Mosh";
   return (
     <div>
       <div className="overflow-x-auto rounded-xl border border-[#ded8cd] bg-white">
@@ -19,7 +22,7 @@ export function InclusionsTable({ table, preview }: { table: InclusionsKey; prev
                 <span className="sr-only">Feature</span>
               </th>
               <th scope="col" className="px-4 py-3 font-black text-[#14120f]">Hims</th>
-              <th scope="col" className="px-4 py-3 font-black text-[#14120f]">Mosh</th>
+              <th scope="col" className="px-4 py-3 font-black text-[#14120f]">{other}</th>
             </tr>
           </thead>
           <tbody>
@@ -55,7 +58,7 @@ export function InclusionsTable({ table, preview }: { table: InclusionsKey; prev
             </a>
           </span>
         ))}
-        . Mosh:{" "}
+        . {other}:{" "}
         {data.sources.mosh.map((s, i) => (
           <span key={s.url}>
             {i > 0 ? ", " : ""}

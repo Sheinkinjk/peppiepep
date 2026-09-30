@@ -50,11 +50,11 @@ function HimsLogo({ size = "md" }: { size?: "sm" | "md" }) {
   );
 }
 
-function MoshLogo() {
+function MoshLogo({ src = "/logos/mosh-tile.png", name = "Mosh" }: { src?: string; name?: string }) {
   return (
     <Image
-      src="/logos/mosh-tile.png"
-      alt="Mosh logo"
+      src={src}
+      alt={`${name} logo`}
       width={64}
       height={64}
       className="h-16 w-16 rounded-2xl object-cover shadow-[0_10px_28px_-16px_rgba(20,18,15,0.35)]"
@@ -138,8 +138,8 @@ export function HimsPage({ content, preview, linkSuffix }: { content: HimsPageCo
             {
               "@type": "ListItem",
               position: 2,
-              name: "Mosh",
-              url: moshSide.sponsored ? `${SITE_URL}/moshhair` : moshSide.href,
+              name: moshSide.name,
+              url: moshSide.pageUrl.startsWith("/") ? `${SITE_URL}${moshSide.pageUrl}` : moshSide.pageUrl,
             },
           ],
         },
@@ -210,7 +210,7 @@ export function HimsPage({ content, preview, linkSuffix }: { content: HimsPageCo
 
   /* ---------------------------------------------------------------- versus */
   if (content.kind === "versus" && content.pair) {
-    const partners = moshSide.sponsored ? ["Hims", "Mosh"] : ["Hims"];
+    const partners = moshSide.sponsored ? ["Hims", moshSide.name] : ["Hims"];
     return (
       <>
         {previewBanner}
@@ -220,7 +220,7 @@ export function HimsPage({ content, preview, linkSuffix }: { content: HimsPageCo
           <div className="mt-8 flex items-center gap-3">
             <HimsLogo />
             <span className="text-sm font-semibold text-[#56504a]">vs</span>
-            <MoshLogo />
+            <MoshLogo src={moshSide.logo.src} name={moshSide.name} />
           </div>
           <p className="nw-kicker mt-5">{content.eyebrow}</p>
           <h1 className="mt-3 max-w-3xl text-3xl font-extrabold leading-[1.08] tracking-[-0.02em] text-[#14120f] sm:text-4xl lg:text-[2.7rem]">
@@ -598,7 +598,7 @@ function BlockView({ block, ctx, kind }: { block: Block; ctx: Ctx; kind: "review
           {(
             [
               ["Hims", block.hims],
-              ["Mosh", block.mosh],
+              [MOSH[ctx.moshLink].name, block.mosh],
             ] as const
           ).map(([name, items]) => (
             <div key={name} className="rounded-2xl border border-[#ded8cd] bg-[#f7f4ee] p-6">
@@ -638,14 +638,14 @@ function BlockView({ block, ctx, kind }: { block: Block; ctx: Ctx; kind: "review
                 </ul>
               </div>
               <div className="rounded-2xl border border-[#ded8cd] bg-white p-6 text-sm leading-relaxed text-[#56504a]">
-                <h3 className="text-base font-bold text-[#14120f]">Mosh</h3>
+                <h3 className="text-base font-bold text-[#14120f]">{m.name}</h3>
                 {m.code ? (
                   <>
                     <p className="mt-2 text-[#14120f]">{m.offerText}</p>
                     <ul className="mt-3 list-disc space-y-1 pl-5">
-                      <li>New Mosh customers only. The discount applies to the first billing period only.</li>
-                      <li>Mosh&rsquo;s promotion terms apply, at getmosh.com.au/promotions-terms-and-conditions.</li>
-                      <li>A registered practitioner decides whether any treatment is appropriate for you. Program fees apply.</li>
+                      {(m.terms ?? []).map((t) => (
+                        <li key={t}>{t}</li>
+                      ))}
                     </ul>
                   </>
                 ) : (

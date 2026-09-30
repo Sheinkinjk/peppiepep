@@ -15,11 +15,7 @@ All permanent (301), pointing straight at the final page, so no chains.
 | `/mosh-vs-pilot` | `/hims-vs-mosh` | Currently 301s to `/best-hair-loss-treatment-australia` (next.config.ts line 64). Pilot is now Hims, so the pair page is the closer match by intent. |
 | `/moshy-vs-pilot` | `/hims-vs-mosh` | Currently 301s to `/best-weight-loss-telehealth-australia` (line 63). Same reasoning. |
 
-**Needs Jarred's decision before doing the last two.** The 30 Sep 2026 TGA memory
-note says `/mosh-vs-pilot` was retired because Jarred considered it slop and it
-"could annoy Pilot", with "do not rebuild". Pointing the old URL at `/hims-vs-mosh`
-does not rebuild it, but it does send Pilot comparison traffic to a Hims vs Mosh
-page. Confirm Hims is comfortable with that, since Hims now owns Pilot.
+Jarred confirmed both Pilot redirects on 30 Sep 2026. One refinement to raise at go-live: `/moshy-vs-pilot` was a weight-loss comparison, and `/best-mens-weight-loss-program-australia` is now Hims vs Moshy, the closer match by intent. Pointing it there instead of `/hims-vs-mosh` is the better destination if Jarred agrees.
 
 After adding each redirect: remove the Hims slugs from `HIMS_SLUG_LIST` only if a
 page is retired, keep `check-redirect-order` green, and run `npm run verify:deploy`.
@@ -48,8 +44,9 @@ in place of "I". Hims has not approved that change. At go-live:
   `MOSH_ED_URL` constant (never reuse `MOSH_HAIR_URL`), set `MOSH.ed` in
   `src/content/hims/config.ts` to it with `sponsored: true` and the code, fill the
   `null` Mosh cells in `src/content/hims/inclusions.ts`, and re-read Mosh's page.
-- Mosh weight: no Refer Labs weight link or code. `/best-mens-weight-loss-program-australia`
-  sends Mosh clicks to Mosh's public weight page with plain rel.
+- Weight: Mosh's weight offering is Moshy, its partner brand (Jarred, 30 Sep 2026). The weight
+  comparison is Hims vs Moshy through the /moshy link (MOSHY_URL) and REFERRAL120. At go-live,
+  `check-partner-scope` needs the Moshy entry allowed on the Hims weight routes if it is not already.
 - The Hims weight "Commitment" row carries a verify flag: the weight page's fine
   print describes a twelve-month commitment, the partner handbook says no lock-in.
 

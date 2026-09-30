@@ -17,7 +17,7 @@ export const vsMosh: HimsPageContent = {
   hub: { label: "Men's health", href: "/mens-health" },
   verdictQuestion: "Is Hims or Mosh better?",
   verdict: [
-    "It depends on the program. For weight loss the difference is commitment: Hims' advertised starting offer is a twelve-month pay-upfront option, and Mosh's public intro offer carries a three-month minimum. Each gives 30 days to ask for your money back, under its own terms.",
+    "It depends on the program. For weight loss, Mosh's offering is Moshy, its partner brand: Hims' advertised starting offer is a twelve-month pay-upfront option, and Moshy's Refer Labs offer carries a three-month minimum. Each gives 30 days to ask for your money back, under its own terms.",
     "For hair, Mosh publishes its prices and limits its 180-day guarantee to quarterly programs; Hims shows prices after the consultation and covers every hair plan. For ED, the difference is format: Hims consults by phone from 7am to 11pm AEST, and Mosh lets you message a practitioner by text, with phone and video available.",
   ],
   pair: {
@@ -43,16 +43,16 @@ export const vsMosh: HimsPageContent = {
       mosh: [
         "You want to see prices before the consultation.",
         "You'd rather message a practitioner by text.",
-        "For weight loss, you want a three-month minimum and dietitian sessions on offer.",
+        "For weight loss, you want Moshy's three-month minimum with coaching and meal plans included.",
       ],
     },
     {
       type: "prose",
       id: "weight",
-      heading: "Should I choose Hims or Mosh for weight loss?",
+      heading: "Should I choose Hims or Moshy for weight loss?",
       paragraphs: [
-        "Start with how long you expect to stay. Hims' advertised offer sits on a twelve-month pay-upfront option, which gives a known total if you plan to stay a year. Mosh's public intro offer comes with a three-month minimum, which is easier to live with if you want to see how a program fits first. Hims' weight page also says you can change or cancel at any time, so ask how that applies to the option you choose.",
-        "Then support. Hims includes a 24/7 Care Team of practitioners, health coaches and pharmacists. Mosh lists meal plans, a tracking app and a care team that includes dietitians and exercise physiologists, with one-hour dietitian sessions as a paid add-on.",
+        "Mosh's weight offering is Moshy, its partner brand, so this is Hims against Moshy. Start with how long you expect to stay. Hims' advertised offer sits on a twelve-month pay-upfront option, which gives a known total if you plan to stay a year. Moshy's Refer Labs offer comes with a three-month minimum, which is easier to live with if you want to see how a program fits first. Hims' weight page also says you can change or cancel at any time, so ask how that applies to the option you choose.",
+        "Then support. Hims includes a 24/7 Care Team of practitioners, health coaches and pharmacists. Moshy includes in-app coaching, dietitian meal plans and a community, with a care team of medical practitioners, nurses, pharmacists, psychologists, dietitians and exercise physiologists. Moshy describes itself as a women's health clinic but takes anyone a practitioner assesses as suitable. Both are compared row by row on our men's weight loss page.",
       ],
     },
     {
@@ -60,7 +60,7 @@ export const vsMosh: HimsPageContent = {
       id: "moshy",
       heading: "Is Mosh the same as Moshy?",
       paragraphs: [
-        "No. Moshy is Mosh's brother brand, with its own site at getmoshy.com.au, and describes itself as an online women's health clinic. Everything on this page about Mosh refers to Mosh's own services on getmosh.com.au.",
+        "They are partner brands. Moshy has its own site at getmoshy.com.au, describes itself as an online women's health clinic, and runs Mosh's weight offering; its services are open to anyone a practitioner assesses as suitable. The hair and ED comparisons on this page are Mosh's own services on getmosh.com.au.",
       ],
     },
     { type: "offer", id: "codes", vertical: "hair" },
@@ -75,11 +75,11 @@ export const vsMosh: HimsPageContent = {
         },
         {
           q: "Is Hims cheaper than Mosh?",
-          a: "It depends on the program and how long you stay. Mosh publishes its prices on its pricing page. Hims publishes weight pricing on its weight page and shows hair and ED prices after the consultation. For weight loss, compare the total over each minimum: twelve months on Hims' advertised option, three months on Mosh's intro offer.",
+          a: "It depends on the program and how long you stay. Mosh publishes its prices on its pricing page. Hims publishes weight pricing on its weight page and shows hair and ED prices after the consultation. For weight loss, where Mosh's offering is Moshy, compare the total over each minimum: twelve months on Hims' advertised option, three months on Moshy's Refer Labs offer.",
         },
         {
           q: "Do Hims and Mosh have a money-back guarantee?",
-          a: "Yes, with different scopes. On hair, Hims covers all plans for 180 days and Mosh covers quarterly programs for 180 days. On weight loss, Hims gives 30 days from starting and Mosh 30 days on monthly programs from your first order. Each is under the provider's terms.",
+          a: "Yes, with different scopes. On hair, Hims covers all plans for 180 days and Mosh covers quarterly programs for 180 days. On weight loss, Hims gives 30 days from starting and Moshy, Mosh's weight brand, has a 30-day money-back guarantee. Each is under the provider's terms.",
         },
         {
           q: "Who owns Hims and Mosh?",
@@ -92,7 +92,7 @@ export const vsMosh: HimsPageContent = {
       ],
     },
   ],
-  sources: [SRC.himsWeight, SRC.himsHair, SRC.himsEd, SRC.himsFaq, SRC.pilot, SRC.eucalyptus, SRC.moshHome, SRC.moshPricing, SRC.moshWeight, SRC.moshHair, SRC.moshReferLabs],
+  sources: [SRC.himsWeight, SRC.himsHair, SRC.himsEd, SRC.himsFaq, SRC.pilot, SRC.eucalyptus, SRC.moshHome, SRC.moshPricing, SRC.moshyWeight, SRC.moshHair, SRC.moshReferLabs],
   related: [
     { label: "Hims weight loss", href: "/hims", desc: "The consultation, the twelve-month commitment and the refund window." },
     { label: "Hims hair loss", href: "/hims-hair-loss", desc: "The consultation, the 180-day money-back guarantee and cancelling." },

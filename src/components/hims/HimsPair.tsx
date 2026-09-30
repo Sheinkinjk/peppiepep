@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import type { PairSide, Vertical } from "@/content/hims/types";
-import { MOSH, MOSH_CTA_LABEL, OFFERS } from "@/content/hims/config";
+import { MOSH, OFFERS } from "@/content/hims/config";
 import { Flag } from "./ui";
 
 /**
@@ -44,8 +44,8 @@ export function HimsPair({
       sponsored: true,
     },
     {
-      name: "Mosh",
-      logo: { src: "/logos/mosh-tile.png", w: 48, h: 48, className: "h-12 w-12 rounded-xl object-cover" },
+      name: m.name,
+      logo: { src: m.logo.src, w: 48, h: 48, className: "h-12 w-12 rounded-xl object-cover" },
       side: mosh,
       offerBox: m.code ? (
         <p className="mb-4 rounded-xl bg-[#e4f2f5] px-4 py-3 text-sm leading-snug text-[#14120f]">
@@ -59,7 +59,7 @@ export function HimsPair({
         </p>
       ),
       href: m.href,
-      cta: MOSH_CTA_LABEL,
+      cta: m.ctaLabel,
       sponsored: m.sponsored,
     },
   ];

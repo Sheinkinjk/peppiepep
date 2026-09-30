@@ -5,22 +5,22 @@ export const bestWeight: HimsPageContent = {
   slug: "best-mens-weight-loss-program-australia",
   vertical: "weight",
   kind: "versus",
-  seoTitle: "Men's Weight Loss Programs Online in Australia: Hims vs Mosh",
+  seoTitle: "Men's Weight Loss Programs Online in Australia: Hims vs Moshy",
   metaDescription:
-    "Two online men's weight loss programs in Australia compared, Hims (formerly Pilot) and Mosh: commitment, money-back terms, practitioner support, nutrition help and the Refer Labs code.",
+    "Hims (formerly Pilot) and Moshy compared for Australian men: commitment, money-back terms, practitioner support, coaching and nutrition, and the Refer Labs code for each.",
   eyebrow: "Men's weight loss · Australia",
-  h1: "Online men's weight loss programs in Australia: Hims vs Mosh",
+  h1: "Online men's weight loss programs in Australia: Hims vs Moshy",
   standfirst:
-    "This page compares two Australian online weight loss programs for men, Hims (formerly Pilot) and Mosh, on what each publishes about commitment, refunds and support. In both, a registered practitioner decides whether any treatment is appropriate. Hims' advertised starting offer is a twelve-month pay-upfront option with a 24/7 Care Team. Mosh's public intro offer carries a three-month minimum, with meal plans, a tracking app and paid dietitian sessions. Each offers a 30-day money-back guarantee under its own terms.",
+    "This page compares two Australian online weight programs a man can join, Hims (formerly Pilot) and Moshy, Mosh's partner brand for weight, on commitment, refunds and support. In both, a registered practitioner decides whether any treatment is appropriate. Hims' advertised starting offer is a twelve-month pay-upfront option with a 24/7 Care Team. Moshy describes itself as a women's health clinic, takes anyone a practitioner assesses as suitable, and includes in-app coaching and dietitian meal plans; its Refer Labs offer has a three-month minimum. Each offers a 30-day money-back guarantee under its own terms.",
   hub: { label: "Weight loss", href: "/weight-loss" },
-  verdictQuestion: "Is Hims or Mosh better for men's weight loss?",
+  verdictQuestion: "Is Hims or Moshy better for men's weight loss?",
   verdict: [
-    "The two differ most on how long you commit and what support comes with it. Hims fits a man who expects to stay a year and wants a Care Team at any hour. Mosh fits a man who wants a shorter first commitment, nutrition tools, and a care team that lists dietitians and exercise physiologists.",
-    "Mosh's weight program is Mosh's own. Moshy, Mosh's brother brand, is a separate service that describes itself as an online women's health clinic.",
+    "The two differ most on how long you commit and what the program is built around. Hims is built for men and fits someone who expects to stay a year and wants a Care Team at any hour. Moshy is built with women in mind but open to men a practitioner assesses as suitable, and fits someone who wants a shorter first commitment with coaching and meal plans included.",
+    "Moshy is Mosh's partner brand and runs its weight offering; Refer Labs' Moshy link and code apply to it.",
   ],
   pair: {
     hims: {
-      bestIf: "A twelve-month program with support at any hour.",
+      bestIf: "A twelve-month program built for men, with support at any hour.",
       points: [
         "Advertised starting offer: twelve months, paid upfront",
         "24/7 Care Team of practitioners, health coaches and pharmacists",
@@ -28,11 +28,11 @@ export const bestWeight: HimsPageContent = {
       ],
     },
     mosh: {
-      bestIf: "A shorter first commitment with nutrition tools built in.",
+      bestIf: "A shorter first commitment with coaching and meal plans included.",
       points: [
-        "Public intro offer: three-month minimum",
-        "Meal plans, a tracking app and paid dietitian sessions",
-        "30-day money-back guarantee on monthly programs",
+        "Refer Labs offer: three-month minimum",
+        "In-app coaching, dietitian meal plans and a community",
+        "30-day money-back guarantee",
       ],
     },
   },
@@ -48,8 +48,8 @@ export const bestWeight: HimsPageContent = {
       ],
       mosh: [
         "You want a three-month minimum rather than twelve months.",
-        "You want meal plans, a tracking app and access to dietitians.",
-        "You'd like to consult by text or video as well as by phone.",
+        "You want coaching, meal plans and a community included in the fee.",
+        "You'd like to consult by video as well as by phone.",
       ],
     },
     {
@@ -77,15 +77,15 @@ export const bestWeight: HimsPageContent = {
       items: [
         {
           q: "What is the best weight loss program for men in Australia?",
-          a: "This page compares two, Hims and Mosh, rather than the whole market. Between them, the choice turns on commitment and support: Hims' advertised offer runs twelve months with a 24/7 Care Team, and Mosh's intro offer has a three-month minimum with meal plans and dietitian sessions.",
+          a: "This page compares two, Hims and Moshy, rather than the whole market. Between them, the choice turns on commitment and support: Hims' advertised offer runs twelve months with a 24/7 Care Team, and Moshy's Refer Labs offer has a three-month minimum with coaching and meal plans included.",
         },
         {
           q: "How much do online weight loss programs cost in Australia?",
-          a: "Hims and Mosh both show current pricing on their own sites and confirm it before you pay. Compare the total over each minimum commitment: twelve months on Hims' advertised pay-upfront option, three months on Mosh's intro offer.",
+          a: "Hims and Moshy both show current pricing on their own sites and confirm it before you pay. Moshy describes its fee as all-inclusive. Compare the total over each minimum commitment: twelve months on Hims' advertised pay-upfront option, three months on Moshy's Refer Labs offer.",
         },
         {
-          q: "Is Mosh weight loss the same as Moshy?",
-          a: "No. Moshy is Mosh's brother brand with its own site, getmoshy.com.au. The Mosh program on this page is Mosh's own, on getmosh.com.au.",
+          q: "Can men use Moshy?",
+          a: "Yes. Moshy describes itself as an online women's health clinic, but its services are open to anyone a practitioner assesses as suitable. Moshy is Mosh's partner brand and runs Mosh's weight offering.",
         },
         {
           q: "Is Pilot weight loss still available?",
@@ -93,15 +93,15 @@ export const bestWeight: HimsPageContent = {
         },
         {
           q: "Can I get a refund on an online weight loss program?",
-          a: "Both programs here offer 30 days. Hims refunds in full if you contact it within 30 days of starting; Mosh refunds your first order if you cancel a monthly program within 30 days of receiving it. Both are under the provider's terms.",
+          a: "Both programs here offer 30 days. Hims refunds in full if you contact it within 30 days of starting, and Moshy has a 30-day money-back guarantee. Both are under the provider's terms.",
         },
       ],
     },
   ],
-  sources: [SRC.himsWeight, SRC.himsFaq, SRC.moshWeight, SRC.moshPricing, SRC.moshHome, SRC.pilot],
+  sources: [SRC.himsWeight, SRC.himsFaq, SRC.moshyWeight, SRC.moshyHome, SRC.pilot],
   related: [
     { label: "Hims weight loss", href: "/hims", desc: "The consultation, the twelve-month commitment and the refund window." },
-    { label: "Hims vs Mosh", href: "/hims-vs-mosh", desc: "Weight loss, hair loss and ED compared." },
+    { label: "Hims vs Mosh", href: "/hims-vs-mosh", desc: "Hair loss and ED compared, and where Moshy fits for weight." },
     { label: "Online hair loss treatment: Hims vs Mosh", href: "/best-hair-loss-treatment-online-australia", desc: "Guarantees, cancelling and consultation formats side by side." },
     { label: "Moshy vs Juniper", href: "/moshy-vs-juniper", desc: "Two weight-management services built with women in mind." },
   ],

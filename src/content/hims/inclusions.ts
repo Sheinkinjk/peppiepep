@@ -44,7 +44,6 @@ const MOSH_START = "Free online quiz, then a consultation by call, video or text
 const MOSH_PRACTITIONERS =
   "AHPRA-registered medical practitioners and nurse practitioners based in Australia, paid on a fee-for-service basis";
 const MOSH_CONSULT_FEE = "No charge for the initial consultation; program fees apply";
-const MOSH_ACCREDITATION = "Certified by LegitScript (Mosh home page)";
 
 // The Refer Labs offer row. Hims' code and offer are placeholders until Hims'
 // reviewers confirm them (Jarred, 30 Sep 2026).
@@ -57,6 +56,10 @@ const HIMS_SRC = {
   hair: { label: "hims.com.au/hair-loss", url: "https://hims.com.au/hair-loss" },
   ed: { label: "hims.com.au/erectile-dysfunction", url: "https://hims.com.au/erectile-dysfunction" },
   faq: { label: "hims.com.au/faq", url: "https://hims.com.au/faq" },
+};
+const MOSHY_SRC = {
+  home: { label: "getmoshy.com.au", url: "https://www.getmoshy.com.au/" },
+  weight: { label: "getmoshy.com.au/weight-loss", url: "https://www.getmoshy.com.au/weight-loss" },
 };
 const MOSH_SRC = {
   home: { label: "getmosh.com.au", url: "https://www.getmosh.com.au/" },
@@ -75,7 +78,7 @@ export const INCLUSIONS: Record<InclusionsKey, InclusionsTableData> = {
         hims: "Formerly Pilot. Part of Hims & Hers Health, which completed its purchase of Eucalyptus on 2 June 2026",
         mosh: "Australian owned. Lists Moshy and Healthy Mummy as its brands",
       },
-      { label: "Programs", hims: "Weight loss, hair loss and sexual health", mosh: "Weight loss, hair loss, sexual health, mental health and skin" },
+      { label: "Programs", hims: "Weight loss, hair loss and sexual health", mosh: "Hair loss, sexual health, mental health and skin; weight loss through Moshy, its partner brand" },
       { label: "How you start", hims: HIMS_START, mosh: MOSH_START },
       { label: "Consult fee", hims: HIMS_CONSULT_FEE, mosh: MOSH_CONSULT_FEE },
       { label: "Practitioners", hims: HIMS_PRACTITIONERS, mosh: MOSH_PRACTITIONERS },
@@ -92,7 +95,7 @@ export const INCLUSIONS: Record<InclusionsKey, InclusionsTableData> = {
       {
         label: "Money-back",
         hims: "Weight: 30 days from starting. Hair: 180 days. Under Hims' terms",
-        mosh: "Weight: 30 days on monthly programs. Hair: 180 days on quarterly programs. Under Mosh's terms",
+        mosh: "Weight (through Moshy): 30 days. Hair: 180 days on quarterly programs. Under each brand's terms",
       },
       { label: "Prices", hims: "Weight pricing on Hims' weight page; hair and sexual health after the consult", mosh: "Published on Mosh's pricing page" },
       { label: "Refer Labs code", hims: HIMS_OFFER_CELL, himsFlag: HIMS_OFFER_FLAG, mosh: MOSH_HAIR_OFFER_CELL },
@@ -100,40 +103,46 @@ export const INCLUSIONS: Record<InclusionsKey, InclusionsTableData> = {
     sources: { hims: [HIMS_SRC.weight, HIMS_SRC.hair, HIMS_SRC.ed, HIMS_SRC.faq], mosh: [MOSH_SRC.home, MOSH_SRC.pricing, MOSH_SRC.weight, MOSH_SRC.hair, MOSH_SRC.referlabs] },
   },
 
+  // Weight compares Hims with Moshy, Mosh's partner brand for weight (Jarred, 30 Sep
+  // 2026). Moshy cells are the facts in src/lib/compare/weight-inclusions.ts, read off
+  // getmoshy.com.au/weight-loss the same day. The `mosh` field holds the Moshy cell.
   weight: {
     rows: [
-      { label: "How you start", hims: HIMS_START, mosh: MOSH_START },
+      {
+        label: "Who it is for",
+        hims: "Men's telehealth covering weight loss, hair loss and sexual health",
+        mosh: "An online women's health clinic by its own description; open to anyone a practitioner assesses as suitable",
+      },
+      { label: "How you start", hims: HIMS_START, mosh: "Online questionnaire, then a consult by phone or video" },
       {
         label: "Commitment",
         hims: "The advertised starting offer is a pay-upfront option with a twelve-month commitment",
-        mosh: "Mosh's public intro offer carries a minimum commitment of three months",
+        mosh: "The Refer Labs offer carries a three-month minimum commitment",
       },
       {
         label: "Money-back",
         hims: "30-day money-back guarantee: contact Hims within 30 days of starting. Terms apply",
-        mosh: "30-day money-back guarantee on monthly weight programs, counted from your first order. Terms apply",
+        mosh: "30-day money-back guarantee. Terms apply",
       },
       {
         label: "Practitioner and care team",
         hims: "Unlimited support from your practitioner and a 24/7 Care Team of practitioners, health coaches and pharmacists",
-        mosh: "Unlimited practitioner support from a team of medical practitioners, nurses, pharmacists, psychologists, dietitians and exercise physiologists",
+        mosh: "Unlimited medical support from a care team of medical practitioners, nurses, pharmacists, psychologists, dietitians and exercise physiologists",
       },
       {
-        label: "Nutrition and extras",
+        label: "Coaching and nutrition",
         hims: "Nutrition guidance from the Care Team; optional online community",
-        mosh: "Dietitian-approved meal plans, a tracking app and an online community; one-hour dietitian sessions as a paid add-on",
+        mosh: "In-app health coaching, dietitian-approved meal plans and recipes, and a community",
       },
-      { label: "Changing or stopping", hims: "Change or cancel your plan at any time (Hims weight page)", mosh: "Cancel anytime (Mosh home page)" },
-      { label: "Price match", hims: "Not advertised", mosh: "On substantially comparable programs, by application form. Terms apply" },
+      { label: "How it is priced", hims: "Weight pricing on Hims' weight page", mosh: "An all-inclusive program fee published on Moshy's site" },
       {
         label: "Refer Labs code",
         hims: HIMS_OFFER_CELL,
         himsFlag: HIMS_OFFER_FLAG,
-        mosh: "None. Refer Labs has no Mosh weight-loss code or link",
-        moshFlag: "No Mosh weight link yet",
+        mosh: "REFERRAL120: a discount on a new customer's first Moshy order, with a three-month minimum commitment",
       },
     ],
-    sources: { hims: [HIMS_SRC.weight, HIMS_SRC.faq], mosh: [MOSH_SRC.weight, MOSH_SRC.pricing, MOSH_SRC.home] },
+    sources: { hims: [HIMS_SRC.weight, HIMS_SRC.faq], mosh: [MOSHY_SRC.weight, MOSHY_SRC.home] },
   },
 
   hair: {
@@ -175,7 +184,6 @@ export const INCLUSIONS: Record<InclusionsKey, InclusionsTableData> = {
       { label: "Contract", hims: "No lock-in contracts; pause or cancel at any time", mosh: "No lock-in contracts; cancel anytime (Mosh home page)" },
       { label: "Support", hims: "24-hour Care Team of nurses, pharmacists and practitioners", mosh: "Message your practitioner by text; unlimited medical follow-ups (Mosh home page)" },
       { label: "Medicare", hims: HIMS_MEDICARE, mosh: null },
-      { label: "Accreditation", hims: "None named on the Hims pages read", mosh: MOSH_ACCREDITATION },
       { label: "Refer Labs code", hims: HIMS_OFFER_CELL, himsFlag: HIMS_OFFER_FLAG, mosh: null },
     ],
     sources: { hims: [HIMS_SRC.ed, HIMS_SRC.faq], mosh: [MOSH_SRC.ed, MOSH_SRC.home] },
