@@ -1654,8 +1654,6 @@ export const seoConfig = {
       "moshy vs juniper",
       "moshy vs juniper 2026",
       "moshy vs juniper australia",
-      "moshy eligibility quiz",
-      "moshy eligibility check",
       "moshy weight loss program australia",
       "moshy weight loss cost",
       "moshy cost australia",
@@ -1750,9 +1748,12 @@ export const seoConfig = {
     // and 2 clicks (GSC, 30 Aug to 26 Sep) on a title that never used the word,
     // though the h1 and an FAQ both answer it. Read on 27 Oct: clicks on that
     // query at unchanged position. Nothing else on the page changed.
-    title: "Moshy Review 2026: Is It Legit, and What Does It Cost?",
+    // 30 Sep 2026: "What Does It Cost?" dropped from the title. The page prints no
+    // partner price (no-partner-prices rule), so the title promised an answer the
+    // page does not give. Title and h1 now ask the same question.
+    title: "Moshy Review 2026: Is It Legit, and What Is the Service Like?",
     description:
-      `Is Moshy legit, what sign-up and the practitioner review involve, and what the subscription costs. $120 off a first order with REFERRAL120, checked ${offerCheckedOn("REFERRAL120")}.`,
+      `Is Moshy legit: its practitioners, accreditations and what signing up involves, read off Moshy's own site. $120 off a first order with REFERRAL120, checked ${offerCheckedOn("REFERRAL120")}.`,
     url: `${SITE_URL}/moshy-review`,
     keywords: [
       "moshy review",
@@ -2104,9 +2105,9 @@ export const seoConfig = {
     // and Jarred is about to drive that query with grassroots marketing.
     title: "Juniper Discount Code 2026: JARREDKFC Waives the $89 Consult",
     description:
-      "The Juniper discount code is JARREDKFC: it waives the initial consultation, valued at $89, through our link. What the coaching-led program includes, what it costs, and the 30-day money-back window.",
+      "The Juniper discount code is JARREDKFC: it waives the initial consultation, valued at $89, through our link. What the program includes, how it is priced, and Juniper's refund terms.",
     url: `${SITE_URL}/juniper`,
-    keywords: ["juniper australia", "juniper weight loss", "juniper review australia", "juniper discount code", "juniper promo code", "juniper coupon code", "is juniper legit", "is juniper worth it", "does juniper work", "juniper weight reset program", "juniper cost australia", "myjuniper", "juniper program australia"],
+    keywords: ["juniper australia", "juniper weight loss", "juniper review australia", "juniper discount code", "juniper promo code", "juniper coupon code", "is juniper legit", "is juniper worth it", "juniper cost australia", "myjuniper", "juniper program australia"],
   },
 
   iScreen: {

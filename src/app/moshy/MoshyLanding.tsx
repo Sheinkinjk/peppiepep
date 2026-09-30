@@ -1,17 +1,16 @@
 import Image from "next/image";
-import { EdgeObject } from "@/components/brand/EdgeObject";
-import VerifiedStamp from "@/components/consumer/VerifiedStamp";
-import OffersTable from "@/components/lending/OffersTable";
-import { MOSHY_OFFER, DEALS, verifiedFor } from "@/lib/offers";
+import Link from "next/link";
 import OfferSchema from "@/components/offers/OfferSchema";
-import { moshyConfig, MOSHY_URL } from "./config";
-import { ArrowRight, Check, ShieldCheck, Stethoscope, Truck, ClipboardList } from "lucide-react";
+import CodeAnswer from "@/components/offers/CodeAnswer";
+import { moshyConfig, MOSHY_URL, MOSHY_LEAD, MOSHY_FACTS_READ_ON, REFERRAL120_CHECKED } from "./config";
+import { ArrowRight, Check } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
 import FactHistory from "@/components/facts/FactHistory";
-
 import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
+
 // ── Money CTA (tracked: rel=sponsored is picked up by AffiliateClickTracker) ──
+// Three placements plus the mobile sticky bar: hero, at-a-glance card, closing band.
 function MoshyCTA({
   label = "Continue to Moshy",
   size = "md",
@@ -42,13 +41,60 @@ function MoshyCTA({
   );
 }
 
+const H2 = "text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl";
+const BODY = "mt-4 space-y-4 text-[15.5px] leading-relaxed text-[#56504a]";
+
+const glance: [string, string][] = [
+  ["What it is", "Australian weight-management telehealth, brother brand of Mosh"],
+  ["How it works", "Online questionnaire → practitioner consultation"],
+  ["Practitioners", "Independent AHPRA-registered doctors and nurses (Moshy's own site)"],
+  ["Pricing", "One monthly program fee, listed on Moshy's site"],
+  ["Discount code", "REFERRAL120: $120 off a first order, 3-month minimum"],
+  ["Code checked", REFERRAL120_CHECKED],
+];
+
+// Quoted from getmoshy.com.au/weight-loss (and the homepage for the care team).
+const included = [
+  "Unlimited medical support",
+  "In-app health tracking and health coaching",
+  "Dietitian-approved meal plans, recipes and nutrition support",
+  "An active and supportive community",
+  "A multidisciplinary care team of doctors, nurses, pharmacists, psychologists, dietitians and exercise physiologists",
+  "A 30-day money back guarantee and a price match guarantee, each on Moshy's own terms",
+];
+
+const toc: [string, string][] = [
+  ["code", "The discount code"],
+  ["how", "How Moshy works"],
+  ["included", "What's included"],
+  ["fit", "Who it suits"],
+  ["price", "How it's priced"],
+  ["alternatives", "Alternatives"],
+  ["faq", "FAQ"],
+];
+
 export default function MoshyLanding() {
+  const crumbs = moshyConfig.breadcrumb ?? [];
   return (
     <ConsumerShell>
       <OfferSchema code="REFERRAL120" />
       <main id="main-content" className="mx-auto max-w-5xl px-5 pb-24 sm:px-8">
-        {/* ── Hero ── */}
-        <section className="grid gap-10 pt-10 sm:pt-14 lg:grid-cols-[1.55fr_1fr] lg:gap-14">
+        {/* Breadcrumb (matches the BreadcrumbList JSON-LD in page.tsx) */}
+        <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2 pt-8 text-sm text-[#56504a]">
+          {crumbs.map((c, i) => (
+            <span key={c.label} className="flex items-center gap-2">
+              {i > 0 && <span aria-hidden="true">/</span>}
+              {c.href ? (
+                <Link href={c.href} className="transition-colors hover:text-[#14120f]">{c.label}</Link>
+              ) : (
+                <span className="text-[#14120f]">{c.label}</span>
+              )}
+            </span>
+          ))}
+        </nav>
+
+        {/* ── Hero: h1, then the answer, then the disclosure, then the first link ── */}
+        <section className="grid gap-10 pt-8 sm:pt-10 lg:grid-cols-[1.55fr_1fr] lg:gap-14">
           <div>
             <span className="mb-5 inline-flex h-16 w-16 items-center justify-center overflow-hidden rounded-2xl border border-[#ded8cd] bg-white shadow-[0_10px_28px_-16px_rgba(20,18,15,0.35)]">
               <Image src="/logos/moshy.png" alt="Moshy logo" width={52} height={52} className="h-12 w-12 object-contain" />
@@ -57,40 +103,21 @@ export default function MoshyLanding() {
               Moshy discount code Australia:{" "}
               <span>$120 off your first order.</span>
             </h1>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-[#56504a]">
-              The current Moshy offer is <strong className="text-[#14120f]">$120 off your first order</strong>, applied
-              automatically through our referral link (code REFERRAL120), so there is no code to type. Below is an
-              independent look at how Moshy works, what it costs, and how eligibility runs. Information only, and
-              a real, current offer, not an expired one.
-            </p>
-            <div className="mt-5">
-              <VerifiedStamp date={verifiedFor(MOSHY_OFFER.code) ?? ""} label="$120-off offer verified" />
-            </div>
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-[#56504a]">{MOSHY_LEAD}</p>
 
-            {/* The site's biggest money page carried only a four-word label,
-                "Disclosed affiliate link", beside a button further down. This is
-                the sentence, above the button, where the reader meets it first. */}
             <AffiliateDisclosure compact partners={["Moshy"]} className="mt-5 max-w-xl" />
 
             <div className="mt-6">
-              <MoshyCTA label="Get $120 off on Moshy" size="lg" loc="hero" />
+              <MoshyCTA size="lg" loc="hero" />
             </div>
           </div>
 
           {/* At-a-glance card */}
           <aside className="lg:pt-2">
-            <EdgeObject kind="scale">
             <div className="nw-card rounded-2xl p-6">
               <span className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#56504a]">At a glance</span>
               <dl className="mt-4 divide-y divide-[#f1ede4] text-sm">
-                {[
-                  ["What it is", "Australian weight-management telehealth"],
-                  ["For", "Anyone eligible seeking a clinically-supervised program"],
-                  ["Format", "Online eligibility → practitioner review → delivery"],
-                  ["Assessment", "Registered practitioner review"],
-                  ["Pricing", "Subscription, confirmed in the consult"],
-                  ["Discount code", "REFERRAL120, for $120 off your first order, via our link"],
-                ].map(([k, v]) => (
+                {glance.map(([k, v]) => (
                   <div key={k} className="flex gap-3 py-2.5">
                     <dt className="w-28 shrink-0 text-[#56504a]">{k}</dt>
                     <dd className="text-[#14120f]">{v}</dd>
@@ -102,54 +129,16 @@ export default function MoshyLanding() {
               </div>
               <p className="mt-3 text-center text-[11px] text-[#56504a]">Opens getmoshy.com.au · AU only</p>
             </div>
-            </EdgeObject>
           </aside>
         </section>
 
-        {/* ── Trust strip ── */}
-        <section className="mt-14 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-[#ded8cd] bg-[#ded8cd] sm:grid-cols-4">
-          {[
-            { icon: Stethoscope, label: "AHPRA-registered practitioners" },
-            { icon: ClipboardList, label: "Online eligibility in ~5 minutes" },
-            { icon: Truck, label: "Subscription with home delivery" },
-            { icon: ShieldCheck, label: "$120 off your first order via our link" },
-          ].map(({ icon: Icon, label }) => (
-            <div key={label} className="flex items-center gap-3 bg-white px-5 py-5">
-              <Icon className="h-5 w-5 shrink-0 text-[#007a95]" strokeWidth={1.7} />
-              <span className="text-[13px] font-medium leading-snug text-[#56504a]">{label}</span>
-            </div>
-          ))}
-        </section>
-
-        {/* ── Offer at a glance (structured, AI-extractable) ── */}
-        <section className="mt-8">
-          <OffersTable deals={DEALS.filter((d) => d.brand === "Moshy")} caption="Moshy discount code and offer, verified" />
-        </section>
-
-        {/* ── Compliance notice ── */}
-        <p className="mt-8 rounded-xl border border-[#ded8cd] bg-white px-5 py-4 text-xs leading-relaxed text-[#56504a]">
-          <span className="font-semibold text-[#56504a]">Information only.</span> This page describes Moshy as a service
-          and is not medical advice. It does not recommend any treatment or imply suitability for any individual.
-          Prescription medicines in Australia are available only after assessment by a registered practitioner. Always
-          consult a qualified health professional before making any health decision.
-        </p>
-
         {/* ── Body grid: TOC + article ── */}
-        <div className="mt-12 grid gap-12 lg:grid-cols-[200px_1fr] lg:gap-16">
-          {/* TOC */}
+        <div className="mt-14 grid gap-12 lg:grid-cols-[200px_1fr] lg:gap-16">
           <nav aria-label="On this page" className="hidden lg:block">
             <div className="sticky top-24">
               <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[#56504a]">On this page</p>
               <ul className="space-y-2.5 text-sm">
-                {[
-                  ["code", "The discount code"],
-                  ["official-site", "Is getmoshy.com.au official?"],
-                  ["what", "What Moshy is"],
-                  ["treatment", "Treatment and eligibility"],
-                  ["start", "How to start"],
-                  ["bottom-line", "Should you use Moshy?"],
-                  ["faq", "FAQ"],
-                ].map(([id, label]) => (
+                {toc.map(([id, label]) => (
                   <li key={id}>
                     <a href={`#${id}`} className="text-[#56504a] transition-colors hover:text-[#007a95]">
                       {label}
@@ -160,98 +149,39 @@ export default function MoshyLanding() {
             </div>
           </nav>
 
-          {/* Article */}
           <article className="max-w-2xl">
-            {/* The buyer's question as an h2, verbatim. It existed only inside the
-                FAQPage JSON-LD. It sits here rather than in the hero because the
-                answer paragraph directly under the h1 owns that slot, and nothing
-                goes above it. Worded differently from the FAQ entry: same facts,
-                not the same sentence twice on one page. */}
+            {/* The code and its terms, once. Replaces the one-row offers table and the
+                separate code h2 that restated it. */}
             <section id="code" className="scroll-mt-24">
-              <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">
-                What is the current Moshy discount code?
-              </h2>
-              <div className="mt-4 space-y-4 text-[15.5px] leading-relaxed text-[#56504a]">
-                <p>
-                  REFERRAL120, worth $120 off a first order. It applies to new customers on a practitioner-assigned
-                  weight-management program, one use per customer, with a minimum three-month commitment; dietitian,
-                  over-the-counter and meal-replacement plans are excluded. Our link carries it into the sign-up flow,
-                  so there is nothing to type.
-                </p>
-              </div>
+              <h2 className={H2}>What is the current Moshy discount code?</h2>
+              <CodeAnswer code="REFERRAL120" className="mt-5">
+                REFERRAL120 takes $120 off a new customer&apos;s first order on a practitioner-assigned Moshy
+                weight-loss program.
+              </CodeAnswer>
+              <ul className="mt-5 space-y-2 text-[15px] leading-relaxed text-[#56504a]">
+                {[
+                  "New customers only, one use per customer",
+                  "Excludes dietitian, over-the-counter and meal-replacement plans",
+                  "Minimum commitment period of 3 months",
+                  "Cannot be combined with any other promotion",
+                  "Our link opens Moshy's sign-up page with the code shown; if it is not already applied at checkout, enter REFERRAL120",
+                ].map((t) => (
+                  <li key={t} className="flex items-start gap-2.5">
+                    <Check className="mt-1 h-4 w-4 shrink-0 text-[#007a95]" aria-hidden="true" />
+                    {t}
+                  </li>
+                ))}
+              </ul>
             </section>
 
-            {/* Absorbed from /getmoshy when it was folded in (Aug 2026). It is the
-                one answer that page held and this one did not, and it is the whole
-                reason anyone types "getmoshy": confirming the domain is real. The
-                old page buried it below a discount box. */}
-            <section id="official-site" className="mt-12 scroll-mt-24">
-              <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">
-                Is getmoshy.com.au the official Moshy site?
-              </h2>
-              <div className="mt-4 space-y-4 text-[15.5px] leading-relaxed text-[#56504a]">
+            <section id="how" className="mt-12 scroll-mt-24">
+              <h2 className={H2}>How Moshy works</h2>
+              <div className={BODY}>
                 <p>
-                  Yes. getmoshy.com.au is Moshy&apos;s own domain. &ldquo;Get Moshy&rdquo;, &ldquo;getmoshy&rdquo; and
-                  &ldquo;getmoshy.com.au&rdquo; all refer to the same Australian telehealth weight-management service;
-                  this page is operated by Refer Labs, not by Moshy.
+                  Moshy is the brother brand of Mosh and runs weight-loss, hair and skin services online; this page covers
+                  weight loss, which runs in three stages. Weight-management medicines are prescription-only in Australia.
                 </p>
               </div>
-            </section>
-
-            {/* What */}
-            <section id="what" className="mt-12 scroll-mt-24">
-              <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">What Moshy is</h2>
-              <div className="mt-4 space-y-4 text-[15.5px] leading-relaxed text-[#56504a]">
-                <p>
-                  Moshy is a clinically-led Australian telehealth service, best known for its weight-management program
-                  and open to anyone eligible. You complete a health questionnaire online, a registered Australian
-                  practitioner reviews your case and decides whether any treatment is appropriate for you. There&apos;s no in-person GP appointment to book to get started.
-                </p>
-                <p>
-                  It exists because a lot of people simply won&apos;t make a GP appointment for weight. The online flow removes
-                  that friction without removing the clinician: every submission is assessed individually, and not everyone
-                  is approved. That last part matters. A service that screens people out is behaving like a clinical
-                  provider, not a vending machine.
-                </p>
-              </div>
-
-              <p className="my-7 border-l-2 border-[#007a95] pl-5 text-[15px] leading-relaxed text-[#56504a]">
-                The convenience is the draw, but the practitioner review is the part that matters: a registered
-                practitioner assesses each application individually, and some are declined.
-              </p>
-            </section>
-
-            {/* Treatment and eligibility */}
-            <section id="treatment" className="mt-12 scroll-mt-24">
-              <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">
-                How treatment and eligibility work
-              </h2>
-              <div className="mt-4 space-y-4 text-[15.5px] leading-relaxed text-[#56504a]">
-                <p>
-                  A lot of people reach Moshy while researching medical weight management. The most important fact to understand
-                  up front is a regulatory one.
-                </p>
-                <p>
-                  In Australia weight-management medicines are{" "}
-                  <strong className="font-semibold text-[#14120f]">prescription-only</strong>, and any treatment is decided
-                  by a registered practitioner, only where clinically appropriate, after assessing you individually. No
-                  platform can promise a specific treatment before that consultation, so be cautious of any that implies otherwise. This is information, not medical advice or a
-                  recommendation to use any medicine.
-                </p>
-              </div>
-              <div className="mt-6 rounded-xl border border-[#b9e3eb] bg-[#e4f2f5] p-5">
-                <p className="text-sm leading-relaxed text-[#14120f]">
-                  Ready to see whether you&apos;re eligible? It takes a few minutes and commits you to nothing.
-                </p>
-                <div className="mt-4">
-                  <MoshyCTA label="Start the Moshy eligibility check" loc="treatment" />
-                </div>
-              </div>
-            </section>
-
-            {/* How to start (steps from config) */}
-            <section id="start" className="mt-12 scroll-mt-24">
-              <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">How to start with Moshy</h2>
               <ol className="mt-6 space-y-5">
                 {moshyConfig.steps.map((s) => (
                   <li key={s.num} className="flex gap-4">
@@ -267,38 +197,70 @@ export default function MoshyLanding() {
               </ol>
             </section>
 
-            {/* Bottom line */}
-            <section id="bottom-line" className="mt-14 scroll-mt-24">
-              <div className="nw-card rounded-2xl p-7 sm:p-8">
-                <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">Should you use Moshy?</h2>
-                <p className="mt-4 text-[15.5px] leading-relaxed text-[#56504a]">
-                  The online process is fast, the practitioner review is real, and not everyone who applies is accepted. Whether it is appropriate for you is a decision for you and a registered
-                  practitioner. This page is information about the service, not medical advice.
+            <section id="included" className="mt-12 scroll-mt-24">
+              <h2 className={H2}>What does the Moshy program include?</h2>
+              <p className="mt-4 text-[15.5px] leading-relaxed text-[#56504a]">
+                As listed on getmoshy.com.au, read {MOSHY_FACTS_READ_ON}:
+              </p>
+              <ul className="mt-5 grid gap-2.5">
+                {included.map((t) => (
+                  <li key={t} className="flex items-start gap-2.5 text-[15px] leading-relaxed text-[#56504a]">
+                    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#e4f2f5]">
+                      <Check className="h-3.5 w-3.5 text-[#007a95]" strokeWidth={2.5} aria-hidden="true" />
+                    </span>
+                    {t}
+                  </li>
+                ))}
+              </ul>
+            </section>
+
+            <section id="fit" className="mt-12 scroll-mt-24">
+              <h2 className={H2}>Who Moshy suits, and who it may not</h2>
+              <div className={BODY}>
+                <p>
+                  <strong className="font-semibold text-[#14120f]">Suits:</strong> someone who wants the consultation
+                  done by phone or video without booking a GP, and wants coaching, meal plans, tracking and a member
+                  community bundled into one monthly fee.
                 </p>
-                <ul className="mt-5 space-y-2">
-                  {[
-                    "Fast, fully online eligibility, no GP appointment to start",
-                    "Real practitioner review; not everyone is approved",
-                    "Clear that any medicine is prescription-only and assessed individually",
-                  ].map((point) => (
-                    <li key={point} className="flex items-start gap-2.5 text-sm text-[#14120f]">
-                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#007a95]" />
-                      {point}
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-7 flex flex-wrap items-center gap-4">
-                  <MoshyCTA label="Continue to Moshy" size="lg" loc="bottom-line" />
-                  <span className="text-xs text-[#56504a]">Opens getmoshy.com.au · referral applied automatically</span>
-                </div>
+                <p>
+                  <strong className="font-semibold text-[#14120f]">May not suit:</strong> someone who would rather keep
+                  weight management with their own GP; someone who does not want to commit to 3 months, which
+                  REFERRAL120 requires; and anyone after a dietitian-only or meal-replacement plan, which the code
+                  excludes.
+                </p>
               </div>
             </section>
 
-            {/* FAQ */}
+            <section id="price" className="mt-12 scroll-mt-24">
+              <h2 className={H2}>How is Moshy priced?</h2>
+              <div className={BODY}>
+                <p>
+                  One all-inclusive monthly program fee, published on Moshy&apos;s own site. REFERRAL120 takes $120 off
+                  the first order and carries a minimum commitment period of 3 months, so budget for three months of
+                  the program fee when you use it.
+                </p>
+              </div>
+            </section>
+
+            <section id="alternatives" className="mt-12 scroll-mt-24">
+              <h2 className={H2}>Moshy alternatives and comparisons</h2>
+              <ul className="mt-5 grid gap-3 sm:grid-cols-2">
+                {(moshyConfig.relatedLinks ?? []).map((l) => (
+                  <li key={l.href}>
+                    <Link
+                      href={l.href}
+                      className="block h-full rounded-xl border border-[#ded8cd] bg-white px-4 py-3 transition-colors hover:border-[#007a95]"
+                    >
+                      <span className="font-semibold text-[#14120f]">{l.label}</span>
+                      <span className="mt-1 block text-sm leading-relaxed text-[#56504a]">{l.desc}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </section>
+
             <section id="faq" className="mt-14 scroll-mt-24">
-              <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">
-                Frequently asked questions
-              </h2>
+              <h2 className={H2}>Frequently asked questions</h2>
               <div className="mt-6 divide-y divide-[#ded8cd] border-y border-[#ded8cd]">
                 {moshyConfig.faqs.map((f) => (
                   <details key={f.q} className="group py-4">
@@ -314,13 +276,13 @@ export default function MoshyLanding() {
           </article>
         </div>
 
-        {/* ── Final CTA band ── */}
+        {/* ── Closing CTA ── */}
         <section className="mt-20 overflow-hidden rounded-3xl bg-[#14120f] px-7 py-12 text-center sm:px-12 sm:py-16">
           <h2 className="mx-auto max-w-xl text-3xl font-bold leading-tight text-white sm:text-4xl">
-            See where you stand with Moshy
+            Start with Moshy, $120 off your first order
           </h2>
           <p className="mx-auto mt-4 max-w-md text-[15px] leading-relaxed text-white/70">
-            A few minutes, no obligation, and no code to enter. The referral is applied automatically through the link.
+            REFERRAL120 through our link, for new customers on an eligible program with a 3-month minimum.
           </p>
           <div className="mt-8 flex justify-center">
             <a href={MOSHY_URL} target="_blank" rel="nofollow sponsored" data-cta="final-band" className="nw-btn justify-center !bg-white !text-[#00748e] px-8 py-4 text-base hover:!bg-[#e4f2f5]">
@@ -328,16 +290,12 @@ export default function MoshyLanding() {
               <ArrowRight className="h-4 w-4" />
             </a>
           </div>
-          <p className="mx-auto mt-6 max-w-lg text-xs leading-relaxed text-white/60">
-            You&apos;ll be taken to getmoshy.com.au. This page is operated by Refer Labs and contains an affiliate
-            referral link. It does not constitute medical advice; consult a qualified health professional before making
-            any health decision.
-          </p>
+          <p className="mx-auto mt-6 max-w-lg text-xs leading-relaxed text-white/60">{moshyConfig.disclaimer}</p>
         </section>
-      {/* Renders nothing until this subject has a third observation. The slot
-          exists so the series appears here the moment the next re-check lands. */}
-      <FactHistory subject="Moshy" kind="offer_observation" hub="weight-loss" route="/moshy" />
 
+        {/* Renders nothing until this subject has a third observation. The slot
+            exists so the series appears here the moment the next re-check lands. */}
+        <FactHistory subject="Moshy" kind="offer_observation" hub="weight-loss" route="/moshy" />
       </main>
 
       <StickyCta href={MOSHY_URL} product="Moshy · weight-loss telehealth" label="Get started" />
