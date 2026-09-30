@@ -76,10 +76,10 @@ export default function OffersTable({
         </tbody>
       </table>
       <p className="border-t border-[#f1ede4] bg-[#f7f4ee] px-4 py-2.5 text-xs text-[#56504a]">
-        Each offer shows the date we last read it off that provider’s own page, rather than a single site-wide
-        stamp, so you can see exactly how current each one is. &ldquo;Not recorded&rdquo; means we have not logged a
-        reading date for that one yet. &ldquo;No code needed&rdquo; means the offer applies
-        automatically through our link. Offers can change; figures are indicative, not a guarantee.
+        Each date is when we last confirmed that offer, on the provider&rsquo;s own page or directly with the provider.
+        {deals.some((d) => !d.verified) ? <> &ldquo;Not recorded&rdquo; means we have not logged a date for that one yet.</> : null}
+        {deals.some((d) => !d.code) ? <> &ldquo;No code needed&rdquo; means the offer is applied through our link or enquiry form.</> : null}
+        {" "}Offers can change, so check the terms on the provider&rsquo;s site.
       </p>
     </div>
   );

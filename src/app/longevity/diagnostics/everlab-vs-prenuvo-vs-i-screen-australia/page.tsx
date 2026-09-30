@@ -12,11 +12,11 @@ export const metadata = generateSEOMetadata(seoConfig.screeningCompared);
 const faqs = [
   {
     q: "What is the difference between Everlab, Prenuvo and i-screen?",
-    a: "Chiefly what they measure. Prenuvo is built around whole-body MRI imaging. Everlab is a broader preventive-health programme built largely around extensive pathology with clinician review. i-screen is a pathology testing service you can order without going through a GP first. Imaging and blood testing answer different questions, so start with which one looks at what you want checked, and compare price after that.",
+    a: "Chiefly what they measure. Prenuvo is built around whole-body MRI imaging. Everlab is a yearly preventive-health programme built around pathology with clinician review; its higher plans add a DEXA scan, and it also sells a full-body MRI. i-screen is a pathology testing service you can order without going through a GP first. Imaging and blood testing answer different questions, so start with which one looks at what you want checked, and compare price after that.",
   },
   {
     q: "How much do these services cost in Australia?",
-    a: "All three are private and unsubsidised, and each sets its own pricing across different packages. We have not published figures because we could not verify current prices off live listings, and quoting a stale number about a named company would be worse than quoting none. Ask each directly, and ask the same follow-up of all of them: what is not included.",
+    a: "All three are private and unsubsidised. Everlab publishes yearly plans from $299 to $2,999 (everlab.com.au/plans, read 1 October 2026), i-screen lists individual tests, and Prenuvo's Australian pricing is given when you book. Ask each the same follow-up: what is not included.",
   },
   {
     q: "Does a doctor review the results?",
@@ -40,7 +40,7 @@ export default function Page() {
       slug="/longevity/diagnostics/everlab-vs-prenuvo-vs-i-screen-australia"
       crumb="Screening services compared"
       h1={<>Everlab, Prenuvo and i-screen: <span>what each is looking at</span></>}
-      intro="Three different tests, not three prices for one. Prenuvo is whole-body MRI imaging. i-screen is pathology you can order directly. Everlab is extensive pathology with clinician review, run as a programme. Comparing them on price compares things that are not substitutes, so the first question is which of the three questions you are asking. We have an arrangement with i-screen and none with Everlab or Prenuvo, which is stated here rather than at the foot of the page because it is the thing a reader should weigh when reading the row about i-screen."
+      intro="Prenuvo is whole-body MRI imaging. i-screen is pathology you can order directly. Everlab is a yearly programme of pathology with clinician review, with a DEXA scan on higher plans and a full-body MRI sold separately. Start with which question you are asking, then compare price. We have an arrangement with i-screen and none with Everlab or Prenuvo."
       headline="Everlab vs Prenuvo vs i-screen in Australia"
       description={seoConfig.screeningCompared.description}
       faqs={faqs}
@@ -63,7 +63,7 @@ export default function Page() {
             <tbody className="divide-y divide-[#f1ede4]">
               {[
                 ["Prenuvo", "Whole-body MRI imaging", "Is there a structural abnormality somewhere"],
-                ["Everlab", "Extensive pathology with clinician review, as a programme", "What do a wide set of biomarkers say, and what should I do about them"],
+                ["Everlab", "Yearly programme: pathology with clinician review; DEXA on higher plans; full-body MRI sold separately. Plans $299 to $2,999 a year (read 1 Oct 2026)", "What do a wide set of biomarkers say, and what should I do about them"],
                 ["i-screen", "Pathology tests you can order directly, listed A$39 to A$1,099 (read 23 Sep 2026)", "I want specific blood tests without going through a GP first"],
               ].map((r) => (
                 <tr key={r[0]}>
@@ -78,8 +78,8 @@ export default function Page() {
         <p className="mt-3 text-xs text-[#56504a]">
           A structural description of each model, current as at 19 August 2026. Offerings change; confirm what is
           included directly with the provider. The i-screen range was read off its own catalogue on 23 September 2026.
-          We quote no prices for Everlab or Prenuvo because we have verified none off a live listing, and we earn
-          nothing from either.
+          Everlab&apos;s plan prices were read off its own plans page on 1 October 2026. Prenuvo&apos;s Australian pricing
+          is given when you book. We earn nothing from either.
         </p>
 
         {/* The only commercial link on this page. Disclosure sits above it, per

@@ -100,11 +100,10 @@ export const iScreenConfig: AffiliatePageConfig = {
       ctaText: "Browse i-screen's tests",
     },
     {
-      heading: "The tests and what they cost",
+      heading: "What i-screen tests cost",
       paragraphs: [
-        `A slice of the catalogue rather than all of it, chosen to show the range. i-screen lists ${ACCESS.catalogueSize} tests in total. Read on ${readOnLabel}.`,
-        TESTS.map((t) => `${t.name}, ${money(t.price)}, ${t.markers} marker${t.markers === 1 ? "" : "s"}`).join("; ") + ".",
-        `So the test you choose decides the cost far more than the provider does: there is about ${spread()} between the cheapest and the dearest on that list.`,
+        // Range only (Jarred, 1 Oct 2026): the full per-test list was replaced by the published range.
+        `i-screen lists ${ACCESS.catalogueSize} tests, priced from ${money(low.price)} for a single marker to ${money(high.price)} for its largest panel, read off its own catalogue on ${readOnLabel}. The test you choose decides the cost far more than the provider does, so check the price of the specific test on i-screen's site.`,
       ],
     },
     {

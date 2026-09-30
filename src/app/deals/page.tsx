@@ -28,7 +28,7 @@ const FAQS = [
    */
   {
     q: "Which discount codes does Refer Labs hold?",
-    a: "Six, each unique to Refer Labs and each dated in the table above: Moshy (REFERRAL120), Mosh (REFERAL55), Juniper (JARREDKFC, an $89 consultation waived), i-screen (referlabs), Knose (referlab2mf) and PetsOnMe (REFERLABS). What each one discounts, and what it does not, is set out on the brand's own page, linked from its row.",
+    a: "Six, each dated in the table above: Moshy (REFERRAL120), Mosh (REFERAL55), Juniper (JARREDKFC, an $89 consultation waived), i-screen (referlabs), Knose (referlab2mf) and PetsOnMe (REFERLABS). What each one discounts, and what it does not, is set out on the brand's own page, linked from its row.",
   },
   {
     q: "Are these discount codes current?",
