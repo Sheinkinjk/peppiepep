@@ -17,7 +17,9 @@ export async function himsMetadata(slug: string): Promise<Metadata> {
   return {
     title: page.seoTitle,
     description: page.metaDescription,
-    alternates: live ? { canonical: url } : undefined,
+    // Canonical is set in preview too (30 Sep 2026): without it the page inherits the
+    // root layout's homepage canonical. The page is noindex until go-live regardless.
+    alternates: { canonical: url },
     robots: live
       ? { index: true, follow: true }
       : { index: false, follow: false, nocache: true, googleBot: { index: false, follow: false } },

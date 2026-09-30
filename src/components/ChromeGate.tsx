@@ -47,7 +47,7 @@ const STANDALONE_ROUTES = [
   "/hims-vs-mosh",
   "/best-mens-weight-loss-program-australia",
   "/best-hair-loss-treatment-online-australia",
-  "/best-online-ed-treatment-australia",
+  "/ed",
   "/health-and-beauty",
   // The four Health & Beauty brand pages (16 Sep 2026). Top-level slugs, so the
   // "/health-and-beauty" prefix above does not cover them and each must be listed.

@@ -8,7 +8,7 @@ export function himsSitemapEntries(): MetadataRoute.Sitemap {
   if (!himsPagesLive()) return [];
   return HIMS_SLUG_LIST.map((slug) => ({
     url: `${SITE_URL}/${slug}`,
-    lastModified: new Date("2026-09-29"),
+    lastModified: new Date("2026-09-30"),
     changeFrequency: "monthly" as const,
     priority: slug.startsWith("hims") ? 0.9 : 0.8,
   }));

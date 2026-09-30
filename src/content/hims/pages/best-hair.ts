@@ -1,78 +1,55 @@
 import type { HimsPageContent } from "../types";
-import { FACTS_CHECKED_ON } from "../config";
+import { SRC } from "../config";
 
 export const bestHair: HimsPageContent = {
   slug: "best-hair-loss-treatment-online-australia",
   vertical: "hair",
-  kind: "best",
-  seoTitle: "Best Online Hair Loss Treatment Australia: Hims vs Mosh",
+  kind: "versus",
+  seoTitle: "Online Hair Loss Treatment in Australia: Hims vs Mosh",
   metaDescription:
-    "Online hair loss treatment for Australian men compared: Hims (formerly Pilot), Mosh and an in-person practitioner, on guarantees, cancelling and support.",
+    "Hims (formerly Pilot) and Mosh compared for online hair loss consultations in Australia: consult fees, 180-day money-back terms, cancelling, support and the Refer Labs codes.",
   eyebrow: "Men's hair loss · Australia",
-  h1: "Best online hair loss treatment in Australia: Hims, Mosh or in person?",
+  h1: "Online hair loss treatment in Australia: Hims vs Mosh compared",
   standfirst:
-    "For most Australian men treating hair loss online, the choice is Hims (formerly Pilot) or Mosh. Both offer a 180-day money-back guarantee on hair plans, free discreet delivery and ongoing practitioner support. Mosh publishes its hair plan prices before the consult. Hims shows them after the consult, and includes 24/7 care team access and cancellation before any order without a fee. An in-person practitioner is the better first step if hair loss is sudden or patchy.",
+    "This page compares two Australian online hair loss services for men, Hims (formerly Pilot) and Mosh. Both start with a free online quiz and a consultation with an AHPRA-registered practitioner, who decides whether any treatment is appropriate, and both run a 180-day money-back guarantee: Hims on all hair plans, Mosh on quarterly hair programs. Mosh publishes its hair prices and consults by call, video or text; Hims shows prices after a phone consultation and includes a 24-hour Care Team.",
   hub: { label: "Hair loss", href: "/hair-loss" },
   verdictQuestion: "Is Hims or Mosh better for hair loss?",
   verdict: [
-    "Pick Mosh if seeing the price before the consult matters most. Pick Hims if round-the-clock support and fee-free cancelling before each order matter more.",
-    "Either way, the 180-day guarantee gives you time to judge a plan properly, so keep a note of your start date.",
+    "Choose on how you want to be seen and when you want to see the price. Mosh publishes its hair prices and lets you reach your practitioner by text, call or video. Hims shows prices after a phone consultation, refunds the consult fee if you don't go ahead, and lets you cancel before any order without a fee.",
+    "Both guarantees run 180 days, but Mosh's covers quarterly programs only, so check which billing option you're on before relying on it.",
   ],
-  otherPartnersOnPage: ["Mosh"],
-  blocks: [
-    {
-      type: "compare",
-      id: "summary",
-      heading: "Online hair loss services compared",
-      intro: `Read on each provider's own website on ${FACTS_CHECKED_ON}. Confirm the terms at checkout.`,
-      columns: ["", "Hims", "Mosh", "In-person practitioner"],
-      rows: [
-        { label: "How you start", cells: ["Free quiz, phone consult", "Free quiz, consult by call, video or text", "Book an appointment at a clinic"] },
-        { label: "Consult", cells: ["Fee refunded if not eligible; free with the Refer Labs code", "Free consultation to start", "Set by the clinic; Medicare may apply"] },
-        { label: "Prices", cells: ["Shown after the consult", "Published on Mosh's pricing page", "Depends on what's recommended"] },
-        { label: "Money-back guarantee", cells: ["180 days. Terms apply.", "180 days. Terms apply.", "Not applicable"] },
-        { label: "Cancelling", cells: ["Before the next order, no fee", "Check Mosh's terms", "Not applicable"], verify: true },
-        { label: "Support", cells: ["Unlimited check-ins, 24/7 Care Team", "Ongoing practitioner support", "Follow-ups as booked"] },
+  pair: {
+    hims: {
+      bestIf: "A phone consultation, a 24-hour Care Team and a guarantee on every hair plan.",
+      points: [
+        "Free two-minute quiz, then a phone consultation",
+        "180-day money-back guarantee on all hair plans",
+        "Cancel before any order, no cancellation fee",
       ],
     },
-    { type: "offer", id: "offer", vertical: "hair" },
+    mosh: {
+      bestIf: "Prices published before you start, and a practitioner you can text.",
+      points: [
+        "Free online quiz, then a call, video or text consultation",
+        "180-day money-back guarantee on quarterly hair programs",
+        "Price match on substantially comparable hair programs",
+      ],
+    },
+  },
+  blocks: [
+    { type: "inclusions", id: "includes", heading: "What does each include?", table: "hair" },
     {
-      type: "providers",
-      id: "providers",
-      heading: "What each hair loss option offers",
-      providers: [
-        {
-          name: "Hims",
-          bestFor: "Best for support and flexibility",
-          summary:
-            "Hims (formerly Pilot) groups its hair plans by stage, Keep for early thinning and Regrow for more advanced loss, with 2-in-1, 3-in-1 and single-action options. Every plan includes unlimited practitioner check-ins and 24/7 care team access. You can cancel before any upcoming order without a fee, and the 180-day guarantee covers you if you're not satisfied with your progress.",
-          facts: [
-            { label: "Prices", value: "Shown after the consult" },
-            { label: "Deliveries", value: "Every two or three months" },
-            { label: "Consult", value: "Phone. Free with the Refer Labs code." },
-          ],
-          cta: "hims",
-        },
-        {
-          name: "Mosh",
-          bestFor: "Best for price transparency",
-          summary:
-            "Mosh publishes its hair plan prices on its pricing page, across a Prevention plan, a Prevention & Regrowth plan and an advanced plan. It says its practitioners tailor plans from more than 85 variations, and it offers a price match guarantee on substantially comparable products.",
-          facts: [
-            { label: "Prices", value: "Published on Mosh's pricing page" },
-            { label: "Guarantee", value: "180 days on hair subscriptions. Terms apply." },
-            { label: "Consult", value: "Free consultation to start" },
-          ],
-          cta: "mosh",
-        },
-        {
-          name: "Seeing a practitioner in person",
-          bestFor: "Best if you want your scalp examined face to face",
-          summary:
-            "An in-person appointment makes sense if your hair loss is patchy, sudden or comes with other symptoms, or if you'd simply rather be examined in person. You'll manage follow-ups yourself and there's no program guarantee.",
-          facts: [{ label: "Cost", value: "Set by the clinic. A Medicare rebate may apply to the appointment." }],
-          cta: "none",
-        },
+      type: "choose",
+      id: "choose",
+      hims: [
+        "You want the money-back guarantee to cover whichever hair plan you're on.",
+        "You want a Care Team you can reach at any hour.",
+        "You'd rather cancel before an order than be tied to a billing period.",
+      ],
+      mosh: [
+        "You want to see the price before the consultation.",
+        "You'd rather reach your practitioner by text.",
+        "You want a price match if you find a comparable hair program for less.",
       ],
     },
     {
@@ -80,33 +57,52 @@ export const bestHair: HimsPageContent = {
       id: "how-to-choose",
       heading: "How do I choose an online hair loss service?",
       paragraphs: [
-        "Hair plans take months to judge, so the terms that matter most are the ones that play out over months: the length of the money-back guarantee, what it takes to cancel, and how often you're charged. Hims and Mosh both offer 180 days.",
-        "Providers and review sites can't name what a hair plan contains under Australian advertising law, so the consult is where that conversation happens.",
-        "Price is easier to compare where it's published. If a provider shows its price only after the consult, make sure the consult fee is refundable, then ask for the cost per delivery and the delivery frequency before you order.",
+        "Hair plans run for months, so the terms that matter are the ones that play out over months: the length and scope of the money-back guarantee, what it takes to cancel, and how often you're charged.",
+        "Price is easier to compare where it is published. If a provider shows its price only after the consultation, check that the consult fee is refundable, then ask for the cost per order and the order frequency before you commit.",
       ],
     },
+    {
+      type: "prose",
+      id: "in-person",
+      heading: "Should I see someone in person about hair loss?",
+      paragraphs: [
+        "If your hair loss is sudden or patchy, or comes with other symptoms, an in-person appointment is the better first step. A practitioner on either service can also tell you if they think you should be seen in person.",
+      ],
+    },
+    { type: "offer", id: "codes", vertical: "hair" },
     {
       type: "faq",
       id: "faq",
       heading: "Online hair loss treatment: common questions",
       items: [
-        { q: "What is the best online hair loss treatment in Australia?", a: "For most men it's a choice between Hims and Mosh. Both offer a 180-day money-back guarantee and free delivery. Mosh publishes its prices before the consult; Hims shows prices after the consult and includes 24/7 care team access." },
-        { q: "How much does online hair loss treatment cost in Australia?", a: "Mosh publishes its hair plan prices on its pricing page. Hims shows its prices after the consult, and refunds the consult fee if you're not eligible or decide not to go ahead." },
-        { q: "Is Pilot hair loss still available?", a: "Only through Hims. Pilot is part of the Hims & Hers group now, and its website hands new patients to the Hims quiz." },
-        { q: "Do online hair loss services offer refunds?", a: "Hims and Mosh both offer a 180-day money-back guarantee on hair plans, subject to their terms." },
-        { q: "Should I see someone in person instead?", a: "If your hair loss is sudden, patchy or comes with other symptoms, an in-person appointment is the better first step." },
+        {
+          q: "What is the best online hair loss treatment in Australia?",
+          a: "This page compares two services, Hims and Mosh, and in both a practitioner decides whether any treatment suits you. Mosh publishes its prices and consults by call, video or text; Hims shows prices after a phone consultation and adds a 24-hour Care Team.",
+        },
+        {
+          q: "How much does online hair loss treatment cost in Australia?",
+          a: "Mosh publishes its hair plan prices on its pricing page. Hims shows its prices after the consultation and refunds the consult fee if no suitable plan is found or you decide not to go ahead.",
+        },
+        {
+          q: "Is the Mosh 180-day guarantee the same as Hims'?",
+          a: "Not quite. Hims applies its 180-day money-back guarantee to all hair plans. Mosh applies its guarantee to quarterly hair programs. Both are under each provider's terms.",
+        },
+        {
+          q: "Is Pilot hair loss still available?",
+          a: "Only through Hims. Pilot is part of the Hims & Hers group now, and its website hands new patients to the Hims quiz.",
+        },
+        {
+          q: "What are the Hims and Mosh codes for hair loss?",
+          a: "Refer Labs' Hims code is REFERLABS89, which means no charge for the initial consultation for new patients. Mosh's is REFERAL55, a discount on a new customer's first hair order; our link carries REFERAL55, and you can enter it at checkout if it isn't shown.",
+        },
       ],
     },
   ],
-  sources: [
-    { label: "Hims: Hair loss", url: "https://hims.com.au/hair-loss" },
-    { label: "Mosh: Pricing", url: "https://www.getmosh.com.au/pricing" },
-    { label: "Mosh: Hair loss", url: "https://www.getmosh.com.au/hair-loss" },
-    { label: "Pilot: notice that Pilot has joined the Hims & Hers group", url: "https://pilot.com.au/" },
-  ],
+  sources: [SRC.himsHair, SRC.himsFaq, SRC.moshHair, SRC.moshReferLabs, SRC.moshPricing, SRC.moshHome, SRC.pilot],
   related: [
-    { label: "Hims hair loss", href: "/hims-hair-loss", desc: "Keep and Regrow plans and the 180-day money-back guarantee." },
+    { label: "Hims hair loss", href: "/hims-hair-loss", desc: "The consultation, the 180-day money-back guarantee and cancelling." },
     { label: "Hims vs Mosh", href: "/hims-vs-mosh", desc: "Weight loss, hair loss and ED compared." },
-    { label: "Best online ED treatment in Australia", href: "/best-online-ed-treatment-australia", desc: "Hims, Mosh and an in-person practitioner for ED." },
+    { label: "Mosh hair loss", href: "/moshhair", desc: "Mosh's hair service and the REFERAL55 code." },
+    { label: "Online ED consultations: Hims vs Mosh", href: "/ed", desc: "Consultation format, hours and contracts." },
   ],
 };
