@@ -21,8 +21,8 @@ const breadcrumbSchema = {
   "@type": "BreadcrumbList",
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Refer Labs", item: SITE_URL },
-    { "@type": "ListItem", position: 2, name: "Guides", item: `${SITE_URL}/guides` },
-    { "@type": "ListItem", position: 3, name: "Moshy Discount Code Australia", item: `${SITE_URL}/moshy` },
+    { "@type": "ListItem", position: 2, name: "Weight loss", item: `${SITE_URL}/weight-loss` },
+    { "@type": "ListItem", position: 3, name: "Moshy discount code", item: `${SITE_URL}/moshy` },
   ],
 };
 
@@ -34,7 +34,7 @@ const webPageSchema = {
   url: seoConfig.moshy.url,
   inLanguage: "en-AU",
   datePublished: "2026-01-01",
-  dateModified: "2026-06-30",
+  dateModified: "2026-09-30",
   about: [
     { "@type": "Thing", name: "Moshy discount code Australia" },
     { "@type": "Thing", name: "Moshy weight loss Australia" },
@@ -43,7 +43,6 @@ const webPageSchema = {
     { "@type": "Thing", name: "Moshy review Australia" },
     { "@type": "Thing", name: "Australian weight loss telehealth" },
     { "@type": "Thing", name: "Moshy Australia" },
-    { "@type": "Thing", name: "Moshy eligibility check" },
   ],
   isPartOf: { "@id": `${SITE_URL}/#website` },
   author: SCHEMA_AUTHOR,
@@ -55,7 +54,7 @@ const organizationSchema = {
   "@type": "Organization",
   name: "Moshy",
   url: "https://www.getmoshy.com.au",
-  description: "Australian online telehealth platform offering clinically supervised weight management programmes. Online eligibility questionnaire, practitioner review, and subscription delivery to Australian residents.",
+  description: "Australian weight-management telehealth service and brother brand of Mosh. Online questionnaire, then a consultation with a registered practitioner by phone or video.",
   areaServed: { "@type": "Country", name: "Australia" },
 };
 
