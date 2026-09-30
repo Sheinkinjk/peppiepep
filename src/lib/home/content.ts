@@ -232,7 +232,7 @@ export const comparisons = {
   heading: "Popular comparisons",
   allLink: { label: "All guides", href: "/guides" },
   items: [
-    { kicker: "Hair loss", title: "Best hair loss treatment: Mosh vs Dense vs telehealth", href: "/best-hair-loss-treatment-australia" },
+    { kicker: "Hair loss", title: "Best hair loss treatment: Mosh or your GP", href: "/best-hair-loss-treatment-australia" },
     { kicker: "Solar & energy", title: "Solar and batteries: what to decide, in order", href: "/solar-and-energy" },
     { kicker: "Weight loss", title: "Telehealth or your GP? A practical comparison", href: "/moshy-vs-gp" },
     { kicker: "Creator tools", title: "beehiiv vs Substack vs Kit, compared properly", href: "/best-newsletter-platform" },

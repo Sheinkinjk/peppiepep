@@ -62,6 +62,13 @@ const nextConfig: NextConfig = {
       // same Refer Labs partner the page was built around.
       { source: '/moshy-vs-pilot', destination: '/best-weight-loss-telehealth-australia', statusCode: 301 },
       { source: '/mosh-vs-pilot', destination: '/best-hair-loss-treatment-australia', statusCode: 301 },
+      // Dense retired (1 Oct 2026, Jarred). densehairexperts.com's own footer describes
+      // a UK GPhC-registered pharmacy that prescribes after an online consultation, so
+      // the "non-prescription topical" framing was false, and sending Australians to an
+      // overseas prescribing pharmacy is a TGA risk. Each page goes to the closest live
+      // page by intent. Do not rebuild either page.
+      { source: '/dense', destination: '/hair-loss', statusCode: 301 },
+      { source: '/mosh-vs-dense', destination: '/best-hair-loss-treatment-australia', statusCode: 301 },
       // Retired 30 Sep 2026 (Jarred). The page's core content was the BMI criteria that
       // are the prescribing indication of a medicine class, beside a discounted CTA (TGA).
       { source: '/weight-loss-treatment-eligibility-australia', destination: '/weight-loss', statusCode: 301 },
@@ -322,9 +329,11 @@ const nextConfig: NextConfig = {
         permanent: false,
       },
       {
+        // Dense retired 1 Oct 2026: no longer sends readers to Dense. Permanent,
+        // unlike the other /r/* links, because this destination will not rotate back.
         source: '/r/dense',
-        destination: 'https://densehairexperts.myshopify.com?sca_ref=10755034.xwTupm6fuv&utm_source=affiliate-jarred-krowitz&utm_medium=affiliate-jarred-krowitz&utm_campaign=affiliate',
-        permanent: false,
+        destination: '/hair-loss',
+        statusCode: 301,
       },
       {
         source: '/r/moshhair',

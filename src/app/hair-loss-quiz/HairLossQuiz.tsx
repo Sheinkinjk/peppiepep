@@ -2,30 +2,31 @@
 
 import Link from "next/link";
 import MatchQuiz, { type MatchConfig, type MatchResult, type MatchAnswers } from "@/components/consumer/MatchQuiz";
-import { MOSH_HAIR_URL, DENSE_URL } from "@/lib/affiliate-links";
+import { MOSH_HAIR_URL } from "@/lib/affiliate-links";
 
 /**
- * Hair-loss matcher. Preference-based, not medical: routes to the clinical
- * telehealth route (Mosh, men's service), a topical/cosmetic routine (Dense),
- * or a GP. The in-person branch is honest and non-monetized. Practitioner-
- * assessment disclaimer on the clinical result. See TGA rules in project memory.
+ * Hair-loss matcher. Preference-based, not medical: routes to an online
+ * consultation (Mosh, men's service), over-the-counter cosmetic products (no
+ * brand, no link), or a GP. Only the online result earns. Dense was retired on
+ * 1 Oct 2026 (a UK prescribing pharmacy, not the topical brand it was described
+ * as), so the cosmetic result now names no brand. See TGA rules in project memory.
  */
 
 const MOSH: MatchResult = {
   key: "mosh",
-  name: "The clinical route, via Mosh",
-  why: "You want a practitioner-assessed approach, done online. Mosh runs a men's hair-loss consult entirely online, and a registered practitioner decides whether any treatment is appropriate.",
-  primaryCta: { label: "Check your options with Mosh", href: MOSH_HAIR_URL, dataCta: "hair-quiz-mosh" },
-  secondary: { label: "Read our full Mosh review", href: "/moshhair" },
-  note: "Prescription treatments in Australia are only available after assessment by a registered practitioner, who decides whether they are appropriate for you. General information, not medical advice.",
+  name: "An online consultation, via Mosh",
+  why: "You want a practitioner assessment, done online. Mosh runs a men's hair-loss consultation entirely online, and a registered practitioner decides whether any treatment is appropriate. Refer Labs earns a commission if you sign up through this link.",
+  primaryCta: { label: "Continue to Mosh", href: MOSH_HAIR_URL, dataCta: "hair-quiz-mosh" },
+  secondary: { label: "Read our Mosh guide", href: "/moshhair" },
+  note: "Hair-loss medicines are prescription-only in Australia. General information, not medical advice.",
 };
 
-const DENSE: MatchResult = {
-  key: "dense",
-  name: "A topical routine, via Dense",
-  why: "You want a non-prescription approach. Dense Hair Experts focuses on density and scalp health with topical, cosmetic products, no consult required. Best treated as an ongoing routine with realistic expectations.",
-  primaryCta: { label: "Visit Dense Hair Experts", href: DENSE_URL, dataCta: "hair-quiz-dense" },
-  secondary: { label: "Read our full Dense review", href: "/dense" },
+const OTC: MatchResult = {
+  key: "otc",
+  name: "Over-the-counter products",
+  why: "You would rather not have a consultation. Pharmacies sell shampoos, conditioners and serums for thinning hair with no consult; a pharmacist can explain what each is for. They are cosmetic and do not find the cause, so if the loss keeps progressing, a GP is the next step. We do not recommend a brand and earn nothing from this route.",
+  secondary: { label: "How each route is priced", href: "/hair-loss-treatment-cost-australia" },
+  note: "General information, not medical advice.",
 };
 
 const GP: MatchResult = {
@@ -52,7 +53,7 @@ const GP_WOMEN: MatchResult = {
 };
 
 function resolve(a: MatchAnswers): MatchResult {
-  if (a.pref === "topical") return DENSE;
+  if (a.pref === "topical") return OTC;
   if (a.pref === "unsure") return GP;
   // clinical
   if (a.who === "woman") return GP_WOMEN;
@@ -72,10 +73,10 @@ const config: MatchConfig = {
     },
     {
       id: "pref",
-      legend: "How would you prefer to treat it?",
+      legend: "How would you prefer to go about it?",
       options: [
-        { value: "clinical", title: "A clinical, practitioner-assessed approach", note: "Any treatment is decided by the practitioner" },
-        { value: "topical", title: "Topical, non-prescription products", note: "A cosmetic routine, no consult" },
+        { value: "clinical", title: "A practitioner assessment", note: "Online or with a GP" },
+        { value: "topical", title: "Over-the-counter products", note: "Cosmetic, with no consult" },
         { value: "unsure", title: "I'm not sure, I'd rather ask someone first", note: "See a doctor before deciding" },
       ],
     },

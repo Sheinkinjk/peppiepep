@@ -1,11 +1,10 @@
 import Link from "next/link";
-import HubProviders from "@/components/consumer/HubProviders";
 import { ArrowRight } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import MatchPrompt from "@/components/consumer/MatchPrompt";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, SCHEMA_AUTHOR, SCHEMA_PUBLISHER } from "@/lib/seo";
-import { MOSH_HAIR_URL, DENSE_URL } from "@/lib/affiliate-links";
+import { MOSH_HAIR_URL } from "@/lib/affiliate-links";
 import OfferSchema from "@/components/offers/OfferSchema";
 import { EdgeObject } from "@/components/brand/EdgeObject";
 import { GuideGrid } from "@/components/brand/GuideGrid";
@@ -16,12 +15,11 @@ export const metadata = generateSEOMetadata(seoConfig.hairLossHub);
 
 
 const guides = [
-  { href: "/best-hair-loss-treatment-australia", title: "Best hair loss treatment", desc: "Clinical telehealth versus topical products, side by side." },
+  { href: "/best-hair-loss-treatment-australia", title: "Best hair loss treatment", desc: "Mosh and your GP side by side, and where over-the-counter products fit." },
   { href: "/moshhair", title: "Mosh review & offer", desc: "How the men's hair-loss telehealth service works, plus 55% off your first order." },
-  { href: "/mosh-review", title: "Is Mosh legit & worth it?", desc: "An independent look at whether Mosh stacks up, what it costs, and what people raise." },
-  { href: "/dense", kind: "review" as const, title: "Dense Hair Experts", desc: "The topical, non-prescription route for density and scalp health." },
-  { href: "/hair-loss-treatment-cost-australia", title: "What treatment costs", desc: "Over-the-counter options vs telehealth plans, with Mosh\u2019s published prices." },
-  { href: "/early-signs-of-hair-loss-australia", title: "Early signs of hair loss", desc: "How to tell if you're going bald, what's normal, and when to act." },
+  { href: "/mosh-review", title: "Is Mosh legit & worth it?", desc: "Who runs the consultations, how billing works, and who Mosh does not suit." },
+  { href: "/hair-loss-treatment-cost-australia", title: "What treatment costs", desc: "How over-the-counter products, a GP and a telehealth subscription are each priced." },
+  { href: "/early-signs-of-hair-loss-australia", title: "Early signs of hair loss", desc: "How to tell if you're going bald, what's normal, and when to see someone." },
   { href: "/how-to-stop-hair-loss-australia", title: "How to slow hair loss", desc: "The causes, what the evidence supports, and how to get assessed." },
   { href: "/online-hair-loss-treatment-australia", title: "Online hair-loss treatment", desc: "How the telehealth assessment works, and what you can and can't get online." },
   { href: "/mens-health", title: "Men's health", desc: "The wider category: how the access routes differ and what each costs over a year." },
@@ -29,16 +27,16 @@ const guides = [
 
 const faqs = [
   {
-    q: "What are my real options for hair loss in Australia?",
-    a: "Broadly two. Clinical telehealth services like Mosh run online consultations with a registered practitioner, who decides whether any treatment is appropriate. Topical brands like Dense Hair Experts sell non-prescription products for density and scalp health. They solve different problems, and many people use one, the other, or both.",
+    q: "What are my options for hair loss in Australia?",
+    a: "Three. An online consultation with a service such as Mosh, where a registered practitioner decides whether any treatment is appropriate; an appointment with your GP; or over-the-counter shampoos and serums, which are cosmetic and need no consult. Hair-loss medicines are prescription-only in Australia, so the first two are the ways to be assessed.",
   },
   {
-    q: "Is topical treatment enough on its own?",
-    a: "It depends on the kind of hair loss, which is why the answer starts with an assessment. Hair-loss medicines are prescription-only in Australia, so for active or progressing loss a registered practitioner decides whether any treatment is appropriate. A cosmetic routine can sit alongside that, and is not a treatment on its own.",
+    q: "Are over-the-counter products enough on their own?",
+    a: "They are cosmetic: they change how hair looks and feels, and they do not find why it is falling out. For loss that is progressing, an assessment by a practitioner or your GP is what finds the cause.",
   },
   {
     q: "How does the telehealth route work?",
-    a: "You complete an online consultation with photos, a registered practitioner reviews it individually, and the practitioner decides whether any treatment is appropriate. Some applicants are declined. It is not a shortcut past the clinical assessment; it just moves it online.",
+    a: "You complete an online questionnaire with photos, and a registered practitioner reviews it individually, sometimes with a follow-up call. Some applicants are declined, and some are told to see a GP in person.",
   },
   {
     q: "Is any of this medical advice?",
@@ -59,10 +57,10 @@ const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   datePublished: "2026-03-16",
-  dateModified: "2026-07-16",
-  name: "Hair Loss in Australia: Compare Your Options",
+  dateModified: "2026-09-30",
+  name: "Hair loss treatment options in Australia, compared",
   description:
-    "Refer Labs' hair loss hub for Australians. Compare clinical telehealth and topical products, with independent guides to the main providers.",
+    "Refer Labs' hair loss hub for Australians: an online consultation, your GP, or over-the-counter products, and who each suits.",
   url: `${SITE_URL}/hair-loss`,
   inLanguage: "en-AU",
   isPartOf: { "@id": `${SITE_URL}/#website` },
@@ -97,11 +95,13 @@ export default function HairLossHubPage() {
           <div className="grid items-start gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
           <div className="max-w-2xl">
             <h1 className="mt-4 text-4xl font-bold leading-[1.06] tracking-[-0.01em] text-[#14120f] sm:text-5xl">
-              Hair loss in Australia: the options compared
+              Hair loss treatment options in Australia, compared
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#14120f]">
-              Prescription telehealth, topical products, and everything marketed in between. This hub separates the
-              clinical route from the cosmetic one so you know which you are looking at.
+              There are three routes. An online consultation with a service such as Mosh, where a registered
+              practitioner assesses you with no clinic visit; an appointment with your GP, who can also order tests and
+              refer you on; or over-the-counter shampoos and serums, which are cosmetic and need no consult. Hair-loss
+              medicines are prescription-only in Australia, so the first two are the ways to be assessed.
             </p>
             {/* Below the lead. The first paragraph after the h1 is the answer;
                 a disclosure in that slot is what an engine lifts instead. Still
@@ -116,7 +116,7 @@ export default function HairLossHubPage() {
               stacked
               href="/hair-loss-quiz"
               title="Not sure which hair-loss route fits you?"
-              sub="Answer one or two quick questions and get the option that fits, clinical, topical, or your GP, and why."
+              sub="Answer one or two quick questions and see which route fits: an online consultation, over-the-counter products, or your GP."
               cta="Take the 30-second match"
               dataCta="hair-match-prompt"
             />
@@ -125,82 +125,59 @@ export default function HairLossHubPage() {
         </section>
 
 
+        {/* Rebuilt 1 Oct 2026. Dense retired (a UK prescribing pharmacy that this
+            hub described as a non-prescription topical), and the HubProviders grid
+            went with it: a one-provider grid is an advert, not a comparison. Three
+            routes on equal cards; only the online one has a provider we link to. */}
         <section className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
           <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">
-            First, which route are you on?
+            Which route are you on?
           </h2>
-          <div className="mt-7 grid gap-4 lg:grid-cols-2">
-            <div className="rounded-2xl border border-[#007a95]/30 bg-white p-7">
+          <div className="mt-7 grid gap-4 lg:grid-cols-3">
+            <div className="rounded-2xl border border-[#ded8cd] bg-white p-7">
               <HubObject kind="phone" size={64} className="hy-obj mb-4" />
-              <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#007a95]">Clinical</p>
-              <h3 className="mt-3 text-xl font-bold text-[#14120f]">
-                Telehealth &amp; prescription
-              </h3>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#007a95]">Online</p>
+              <h3 className="mt-3 text-xl font-bold text-[#14120f]">An online consultation</h3>
               <p className="mt-2.5 text-sm leading-relaxed text-[#56504a]">
-                A registered practitioner assesses you and decides whether any treatment is appropriate. Mosh is one
-                Australian men&apos;s service that runs this online. This is the route for active or progressing loss.
+                A questionnaire and photos, reviewed by a registered practitioner, with no clinic visit. Mosh is one
+                Australian men&apos;s service that runs this. New customers get 55% off a first order with REFERAL55:
+                our link carries the code, and if it isn&apos;t shown at checkout, enter REFERAL55.
               </p>
               <div className="mt-5 space-y-2 text-sm font-semibold">
-                <p><Link href="/best-hair-loss-treatment-australia" className="text-[#007a95] hover:underline">Compare treatments →</Link></p>
+                <p>
+                  <a href={MOSH_HAIR_URL} target="_blank" rel="nofollow sponsored" data-cta="hair-hub-mosh" className="inline-flex items-center gap-1.5 text-[#007a95] hover:underline">
+                    Continue to Mosh <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+                  </a>
+                </p>
                 <p><Link href="/moshhair" className="text-[#007a95] hover:underline">Read the Mosh guide →</Link></p>
-                <p><Link href="/receding-hairline-treatment-australia" className="text-[#007a95] hover:underline">Receding hairline: the options →</Link></p>
               </div>
+            </div>
+            <div className="rounded-2xl border border-[#ded8cd] bg-white p-7">
+              <HubObject kind="scale" size={64} className="hy-obj mb-4" />
+              <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#56504a]">In person</p>
+              <h3 className="mt-3 text-xl font-bold text-[#14120f]">Your GP</h3>
+              <p className="mt-2.5 text-sm leading-relaxed text-[#56504a]">
+                A full history, blood tests where needed, and a referral to a dermatologist. The consult may be
+                bulk-billed. The better first step for sudden or patchy loss, and for women. We earn nothing from it.
+              </p>
+              <p className="mt-5 text-sm font-semibold">
+                <Link href="/best-hair-loss-treatment-australia" className="text-[#007a95] hover:underline">Mosh and your GP, side by side →</Link>
+              </p>
             </div>
             <div className="rounded-2xl border border-[#ded8cd] bg-white p-7">
               <HubObject kind="comb" size={64} className="hy-obj mb-4" />
               <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#56504a]">Cosmetic</p>
-              <h3 className="mt-3 text-xl font-bold text-[#14120f]">
-                Topical products
-              </h3>
+              <h3 className="mt-3 text-xl font-bold text-[#14120f]">Over-the-counter products</h3>
               <p className="mt-2.5 text-sm leading-relaxed text-[#56504a]">
-                Non-prescription shampoos, serums and scalp treatments for density and condition. Dense Hair Experts is
-                the main Australian name. Best as a routine, and best paired with realistic expectations.
+                Shampoos, conditioners and serums for thinning hair, sold by pharmacies with no consult. They change
+                how hair looks and feels; they do not find the cause. We do not recommend a brand.
               </p>
-              <p className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm font-semibold">
-                <a href={DENSE_URL} target="_blank" rel="nofollow sponsored" data-cta="hair-hub-dense" className="inline-flex items-center gap-1.5 text-[#007a95] hover:underline">
-                  Visit Dense Hair Experts <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
-                </a>
-                <Link href="/dense" className="font-medium text-[#56504a] hover:text-[#007a95] hover:underline">Read our review</Link>
+              <p className="mt-5 text-sm font-semibold">
+                <Link href="/hair-loss-treatment-cost-australia" className="text-[#007a95] hover:underline">How each route is priced →</Link>
               </p>
             </div>
           </div>
-
         </section>
-
-
-        <HubProviders
-          className="pb-10"
-          heading="The providers we cover"
-          intro="One prescription telehealth service and one topical range, answering the same four questions."
-          providers={[
-            {
-              name: "Mosh",
-              logo: "/logos/mosh-tile.png",
-              href: "/moshhair",
-              hrefLabel: "Read our Mosh guide",
-              suits: "Active or progressing loss that you want assessed by a practitioner.",
-              how: "Online consultation, then a registered practitioner decides what is appropriate.",
-              cost: "A subscription after the first order.",
-              offerCode: "REFERAL55",
-              visitHref: MOSH_HAIR_URL,
-              visitLabel: "Start the Mosh consultation",
-              earns: true,
-            },
-            {
-              name: "Dense Hair Experts",
-              logo: "/logos/dense.png",
-              href: "/dense",
-              hrefLabel: "Read our Dense guide",
-              suits: "Density and condition, without a prescription.",
-              how: "Non-prescription shampoos, serums and scalp treatments bought direct.",
-              cost: "Per product, priced on their own site.",
-              visitHref: DENSE_URL,
-              visitLabel: "Visit Dense Hair Experts",
-              highlight: "Bought direct as a routine, with no prescription and no consultation to book.",
-              earns: true,
-            },
-          ]}
-        />
 
         <section className="border-y border-[#ded8cd] bg-[#f7f4ee]">
           <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
