@@ -83,7 +83,7 @@ export const vsMosh: HimsPageContent = {
         },
         {
           q: "Who owns Hims and Mosh?",
-          a: "Hims is part of Hims & Hers Health, which completed its purchase of Eucalyptus, the former owner of Pilot and Juniper, on 2 June 2026. Mosh describes itself as Australian owned and lists Moshy and Healthy Mummy as its brands.",
+          a: "Hims is part of Hims & Hers Health, which completed its purchase of Eucalyptus, the Australian company behind Pilot and Juniper, on 2 June 2026; Pilot is rebranding as Hims. Mosh describes itself as Australian owned and lists Moshy and Healthy Mummy as its brands.",
         },
         {
           q: "Can I switch from Mosh to Hims, or the other way?",

@@ -104,20 +104,7 @@ export const weight: HimsPageContent = {
         "You may want hair loss or sexual health support later, since Hims covers both.",
       ],
     },
-    {
-      type: "questions",
-      id: "consult-questions",
-      heading: "What should I ask on the Hims consultation?",
-      items: [
-        "What does the plan you're recommending involve day to day?",
-        "What are the payment options for me, monthly as well as pay-upfront, and what is the total of each over twelve months?",
-        "If I stop after three months, what do I pay and what do I get back?",
-        "Does the 30-day refund cover the whole upfront amount?",
-        "What help do I get with food and exercise?",
-        "What happens at the end of the program?",
-        "Who do I contact if something doesn't feel right, and how quickly will they reply?",
-      ],
-    },
+
     {
       type: "prose",
       id: "about",

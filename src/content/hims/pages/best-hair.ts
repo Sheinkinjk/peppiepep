@@ -89,7 +89,7 @@ export const bestHair: HimsPageContent = {
         },
         {
           q: "Is Pilot hair loss still available?",
-          a: "Only through Hims. Pilot is part of the Hims & Hers group now, and its website hands new patients to the Hims quiz.",
+          a: "Only through Hims. Hims & Hers Health completed its acquisition of Eucalyptus, the Australian company behind Pilot, on 2 June 2026, and Pilot is rebranding as Hims; its website hands new patients to the Hims quiz.",
         },
         {
           q: "What are the Hims and Mosh codes for hair loss?",
@@ -98,7 +98,7 @@ export const bestHair: HimsPageContent = {
       ],
     },
   ],
-  sources: [SRC.himsHair, SRC.himsFaq, SRC.moshHair, SRC.moshReferLabs, SRC.moshPricing, SRC.moshHome, SRC.pilot],
+  sources: [SRC.himsHair, SRC.himsFaq, SRC.moshHair, SRC.moshReferLabs, SRC.moshPricing, SRC.moshHome, SRC.pilot, SRC.eucalyptus],
   related: [
     { label: "Hims hair loss", href: "/hims-hair-loss", desc: "The consultation, the 180-day money-back guarantee and cancelling." },
     { label: "Hims vs Mosh", href: "/hims-vs-mosh", desc: "Weight loss, hair loss and ED compared." },

@@ -14,7 +14,7 @@ export const ed: HimsPageContent = {
   eyebrow: "Men's sexual health telehealth · Australia",
   h1: "Hims ED Australia: the phone consultation, the terms and the code",
   standfirst:
-    "Hims, formerly Pilot, runs an online sexual health service for Australian men. You answer a free two-minute quiz in private, then speak by phone to an Australian practitioner, who decides whether any treatment is appropriate. Consultations run from 7am to 11pm AEST, seven days, there are no lock-in contracts, and Hims refunds the consult fee if no suitable plan is found for you. Hims doesn't publish its ED prices. With the Refer Labs code, new patients pay nothing for the initial consultation.",
+    "Hims, formerly Pilot, is the Australian service of Hims & Hers Health, the US-listed telehealth company, and covers sexual health for men alongside weight loss, hair loss and skin. You answer a free two-minute quiz in private, then speak by phone to an Australian-registered practitioner, who decides whether any treatment is appropriate. Consultations run from 7am to 11pm AEST, seven days, there are no lock-in contracts, and Hims refunds the consult fee if no suitable plan is found for you. Hims shows its ED prices after the consultation. With the Refer Labs code, new patients pay nothing for the initial consultation.",
   hub: { label: "Men's health", href: "/mens-health" },
   verdictQuestion: "Is Hims ED worth it?",
   verdict: [
@@ -70,24 +70,8 @@ export const ed: HimsPageContent = {
         "You want to be able to pause or cancel without a contract.",
         "You want a Care Team to contact between appointments.",
       ],
-      notFor: [
-        "You want to see the price before speaking to anyone. Hims shows ED pricing after the consultation.",
-        "You'd rather message by text than talk. Hims consults by phone.",
-        "You've been a Hims or Pilot patient before. New-patient offers, including ours, won't apply.",
-      ],
     },
-    {
-      type: "questions",
-      id: "consult-questions",
-      heading: "What should I ask on the Hims ED consultation?",
-      items: [
-        "Is a plan appropriate for me, and why that one?",
-        "Is there anything I should tell you about other things I take?",
-        "What does each order cost, and how often will I be charged?",
-        "How do I change the plan if it doesn't suit?",
-        "How do I pause or cancel, and is there a cut-off before each order?",
-      ],
-    },
+
     {
       type: "faq",
       id: "faq",
@@ -100,7 +84,7 @@ export const ed: HimsPageContent = {
         { q: "How much does Hims ED cost in Australia?", a: "Hims doesn't publish ED plan prices on its ED page. The practitioner covers cost on the consultation, before you order anything." },
         { q: "Is the Hims ED consultation private?", a: "The quiz is online and the consultation is a phone call, so there is no clinic visit and no video. Hims' practitioners are AHPRA-registered and based in Australia." },
         { q: "Can I cancel Hims ED?", a: "Yes. Hims says you can pause or cancel at any time and it has no lock-in contracts." },
-        { q: "Is Hims ED the same as Pilot?", a: "Yes. Pilot joined the Hims & Hers group, and Pilot's site now sends new patients to the Hims quiz." },
+        { q: "Is Hims ED the same as Pilot?", a: "Yes. Pilot is rebranding as Hims after Hims & Hers Health completed its acquisition of Eucalyptus, the Australian company behind Pilot, on 2 June 2026. Pilot's site says it has joined the Hims & Hers group and now sends new patients to the Hims quiz." },
         { q: "Can I claim Hims ED on Medicare?", a: "No. Hims' FAQ says Medicare benefits are not currently claimable for any of its plans." },
       ],
     },

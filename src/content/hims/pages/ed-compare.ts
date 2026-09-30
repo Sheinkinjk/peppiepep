@@ -104,7 +104,7 @@ export const edCompare: HimsPageContent = {
         },
         {
           q: "Is Hims the same as Pilot?",
-          a: "Yes. Pilot's website says Pilot has joined the Hims & Hers group, and new patients who start there are taken to the Hims quiz.",
+          a: "Yes. Hims & Hers Health completed its acquisition of Eucalyptus, the Australian company behind Pilot, on 2 June 2026, and Pilot is rebranding as Hims: Pilot's website says it has joined the Hims & Hers group, and new patients who start there are taken to the Hims quiz.",
         },
         {
           q: "Who are the practitioners?",
@@ -113,7 +113,7 @@ export const edCompare: HimsPageContent = {
       ],
     },
   ],
-  sources: [SRC.himsEd, SRC.himsFaq, SRC.pilot, SRC.moshEd, SRC.moshHome, SRC.moshPricing],
+  sources: [SRC.himsEd, SRC.himsFaq, SRC.pilot, SRC.eucalyptus, SRC.moshEd, SRC.moshHome, SRC.moshPricing],
   related: [
     { label: "Hims ED", href: "/hims-ed", desc: "The phone consultation, hours, contracts and the Care Team." },
     { label: "Hims vs Mosh", href: "/hims-vs-mosh", desc: "Weight loss, hair loss and ED compared." },

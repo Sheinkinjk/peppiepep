@@ -89,7 +89,7 @@ export const bestWeight: HimsPageContent = {
         },
         {
           q: "Is Pilot weight loss still available?",
-          a: "Not under the Pilot name. Pilot joined the Hims & Hers group, and new patients who start on pilot.com.au are taken to the Hims quiz.",
+          a: "Not under the Pilot name. Hims & Hers Health completed its acquisition of Eucalyptus, the Australian company behind Pilot, on 2 June 2026, and Pilot is rebranding as Hims: new patients who start on pilot.com.au are taken to the Hims quiz.",
         },
         {
           q: "Can I get a refund on an online weight loss program?",
@@ -98,7 +98,7 @@ export const bestWeight: HimsPageContent = {
       ],
     },
   ],
-  sources: [SRC.himsWeight, SRC.himsFaq, SRC.moshyWeight, SRC.moshyHome, SRC.pilot],
+  sources: [SRC.himsWeight, SRC.himsFaq, SRC.moshyWeight, SRC.moshyHome, SRC.pilot, SRC.eucalyptus],
   related: [
     { label: "Hims weight loss", href: "/hims", desc: "The consultation, the twelve-month commitment and the refund window." },
     { label: "Hims vs Mosh", href: "/hims-vs-mosh", desc: "Hair loss and ED compared, and where Moshy fits for weight." },

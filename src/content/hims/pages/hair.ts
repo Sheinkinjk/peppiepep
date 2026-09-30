@@ -11,7 +11,7 @@ export const hair: HimsPageContent = {
   eyebrow: "Men's hair loss telehealth · Australia",
   h1: "Hims hair loss Australia: the consultation, the guarantee and the code",
   standfirst:
-    "Hims, formerly Pilot, offers hair loss plans to Australian men through a free two-minute quiz and a phone consultation with an Australian practitioner, who decides whether any treatment is appropriate. Every hair plan carries a 180-day money-back guarantee under Hims' terms, and you can cancel before any order is processed without a fee. Hims doesn't publish hair plan prices; you see them after the consultation. With the Refer Labs code, new patients pay nothing for the initial consultation.",
+    "Hims, formerly Pilot, is the Australian men's health service of Hims & Hers Health, the US-listed telehealth company, and hair loss is one of the areas it covers alongside weight loss, skin and sexual health. You start with a free two-minute quiz and a phone consultation with an Australian-registered practitioner, who decides whether any treatment is appropriate. Every hair plan carries a 180-day money-back guarantee under Hims' terms, and you can cancel without a fee before any order is processed. Hims shows hair plan prices after the consultation. With the Refer Labs code, new patients pay nothing for the initial consultation.",
   hub: { label: "Hair loss", href: "/hair-loss" },
   verdictQuestion: "Is Hims hair loss treatment worth it?",
   verdict: [
@@ -87,25 +87,8 @@ export const hair: HimsPageContent = {
         "You like being able to change plans through a practitioner.",
         "You may want weight loss or sexual health support later, since Hims covers both.",
       ],
-      notFor: [
-        "You want to see prices before you speak to anyone. Hims shows hair pricing after the consultation.",
-        "You want a procedure such as a transplant. Hims offers plans run by practitioners, not procedures.",
-        "You've been a Hims or Pilot patient before. New-patient offers, including ours, won't apply.",
-        "You're a woman. Hims in Australia describes its hair plans as plans for men.",
-      ],
     },
-    {
-      type: "questions",
-      id: "consult-questions",
-      heading: "What should I ask on the Hims hair consultation?",
-      items: [
-        "Which plan are you recommending for my stage of hair loss, and why that one?",
-        "What does the plan involve day to day?",
-        "What does it cost per order, and how often will I be charged?",
-        "How do I claim the 180-day guarantee, and what does it cover?",
-        "What should I do if I want to adjust or stop the plan?",
-      ],
-    },
+
     {
       type: "faq",
       id: "faq",
@@ -119,7 +102,7 @@ export const hair: HimsPageContent = {
         { q: "Does Hims offer a money-back guarantee on hair plans?", a: "Yes. Hims offers a 180-day money-back guarantee on all hair plans if you're not satisfied, under its terms and conditions." },
         { q: "Can I cancel my Hims hair plan?", a: "Yes. You can cancel any time before your next order is processed, with no cancellation fee." },
         { q: "How often am I charged for a Hims hair plan?", a: "Hims hair plans run as a subscription, with an order every two or three months depending on the plan." },
-        { q: "Is Hims hair loss the same as Pilot hair loss?", a: "Pilot is now Hims. Pilot's website says it has joined the Hims & Hers group, and signing up there leads to the Hims quiz." },
+        { q: "Is Hims hair loss the same as Pilot hair loss?", a: "Yes. Hims & Hers Health completed its acquisition of Eucalyptus, the Australian company behind Pilot, on 2 June 2026, and Pilot is rebranding as Hims: its website says it has joined the Hims & Hers group, and signing up there leads to the Hims quiz. Former Pilot patients count as previous patients for new-patient offers." },
       ],
     },
   ],
