@@ -69,7 +69,10 @@ export const vsMosh: HimsPageContent = {
         summary:
           "Mosh lists its hair prices before you start; Hims gives its price after a phone consultation and refunds the consult fee if you don't go ahead. Each backs hair with a 180-day money-back guarantee, which Hims applies to every hair plan and Mosh to quarterly programs. Mosh's practitioners can be reached by text, call or video, and Hims adds a 24-hour Care Team.",
         rows: ["How you start", "Consult fee", "Money-back", "Support", "Stopping", "Prices"],
-        full: { label: "See the full hair loss comparison", href: "/best-hair-loss-treatment-online-australia" },
+        links: [
+          { label: "Hims hair loss", href: "/hims-hair-loss" },
+          { label: "Mosh hair loss and the REFERAL55 code", href: "/moshhair" },
+        ],
       },
       {
         vertical: "weight",
@@ -79,7 +82,10 @@ export const vsMosh: HimsPageContent = {
         summary:
           "Mosh runs weight loss through its partner brand Moshy. Hims' advertised starting offer is a twelve-month pay-upfront option backed by a 24/7 Care Team; Moshy's all-inclusive fee covers in-app coaching and dietitian meal plans, and its Refer Labs offer has a three-month minimum. Each gives 30 days to ask for your money back, under its own terms.",
         rows: ["Who it is for", "How you start", "Commitment", "Money-back", "Coaching and nutrition"],
-        full: { label: "See the full weight loss comparison", href: "/best-mens-weight-loss-program-australia" },
+        links: [
+          { label: "Hims weight loss", href: "/hims" },
+          { label: "Moshy weight loss and the REFERRAL120 code", href: "/moshy" },
+        ],
       },
       {
         vertical: "ed",
@@ -89,7 +95,7 @@ export const vsMosh: HimsPageContent = {
         summary:
           "The practical difference is how you talk to the practitioner. Hims books a phone call, any day from 7am to 11pm AEST; Mosh lets you message by text, with phone and video available, and says you never need to show your face. Both use AHPRA-registered practitioners in Australia, and neither has a lock-in contract.",
         rows: ["How you start", "Consultation format", "Practitioners", "Contract", "Support"],
-        full: { label: "See the full ED comparison", href: "/ed" },
+        links: [{ label: "See the full ED comparison", href: "/ed" }],
       },
     ],
   },

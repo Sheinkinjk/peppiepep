@@ -58,8 +58,8 @@ export type ProgramPanel = {
   summary: string;
   /** Labels of the rows to show from INCLUSIONS[vertical], in order (4 to 6). */
   rows: string[];
-  /** The full comparison page for this program. */
-  full: { label: string; href: string };
+  /** Where to read more. Equal links for both providers, or the full comparison page (ED). */
+  links: { label: string; href: string }[];
 };
 
 export type OverviewContent = {

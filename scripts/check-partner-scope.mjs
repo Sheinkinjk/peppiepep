@@ -125,8 +125,7 @@ const PARTNERS = [
       "/best-hair-loss-treatment-australia", "/hair-loss-treatment-cost-australia",
       "/mens-health", "/deals", "/guides", "/coming-soon",
       // Named on the Hims comparison pages (preview only, 29 Sep 2026).
-      "/hims-vs-mosh", "/best-mens-weight-loss-program-australia",
-      "/best-hair-loss-treatment-online-australia", "/ed",
+      "/hims-vs-mosh", "/ed",
     ],
     deny: [
       {
@@ -158,7 +157,7 @@ const PARTNERS = [
       "/mens-health", "/weight-loss", "/juniper", "/deals", "/guides", "/coming-soon",
       // Hims page set, preview only (29 Sep 2026).
       "/hims", "/hims-hair-loss", "/hims-ed", "/hims-vs-mosh",
-      "/best-mens-weight-loss-program-australia", "/best-hair-loss-treatment-online-australia", "/ed",
+      "/ed",
     ],
     deny: [
       {

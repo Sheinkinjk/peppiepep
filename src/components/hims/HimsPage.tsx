@@ -817,10 +817,12 @@ function OverviewView({
       <div className="mt-6">
         <HimsPair vertical={p.vertical} moshLink={p.vertical} preview={preview} locPrefix={`${content.slug}-${p.anchor}`} />
       </div>
-      <p className="mt-5 text-[15px]">
-        <Link href={`${p.full.href}${isHimsSlug(p.full.href) ? linkSuffix : ""}`} className="nw-link">
-          {p.full.label} <span aria-hidden>&rarr;</span>
-        </Link>
+      <p className="mt-5 flex flex-wrap gap-x-6 gap-y-2 text-[15px]">
+        {p.links.map((l) => (
+          <Link key={l.href} href={`${l.href}${isHimsSlug(l.href) ? linkSuffix : ""}`} className="nw-link">
+            {l.label} <span aria-hidden>&rarr;</span>
+          </Link>
+        ))}
       </p>
     </section>
   ));

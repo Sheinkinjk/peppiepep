@@ -4,7 +4,5 @@ export const HIMS_SLUG_LIST = [
   "hims-hair-loss",
   "hims-ed",
   "hims-vs-mosh",
-  "best-mens-weight-loss-program-australia",
-  "best-hair-loss-treatment-online-australia",
   "ed",
 ] as const;

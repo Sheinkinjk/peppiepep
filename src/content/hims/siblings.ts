@@ -31,16 +31,6 @@ export const SIBLINGS: Record<Slug, { label: string; neutralLabel?: string; desc
     neutralLabel: "How Hims compares with other providers",
     desc: "Both businesses side by side, then hair loss, weight loss and ED.",
   },
-  "best-mens-weight-loss-program-australia": {
-    label: "Men's weight loss programs: Hims vs Moshy",
-    neutralLabel: "Online men's weight loss programs compared",
-    desc: "Commitment, refund windows, support and nutrition help in one table.",
-  },
-  "best-hair-loss-treatment-online-australia": {
-    label: "Online hair loss treatment: Hims vs Mosh",
-    neutralLabel: "Online hair loss services compared",
-    desc: "Consult fees, guarantee scope, support and cancelling in one table.",
-  },
   ed: {
     label: "Online ED consultations: Hims vs Mosh",
     neutralLabel: "Online ED consultations compared",

@@ -11,11 +11,10 @@ All permanent (301), pointing straight at the final page, so no chains.
 | From | To | Why |
 |---|---|---|
 | `/best-online-ed-treatment-australia` | `/ed` | Folded into `/ed` on 30 Sep 2026. The route and content were deleted from the preview set; the URL was shared with Hims' reviewers on 29 Sep, so it should resolve. |
-| `/best-hair-loss-treatment-online-australia` | `/best-hair-loss-treatment-australia` | Main's `/best-hair-loss-treatment-australia` was rebuilt on 30 Sep 2026 and owns the hair comparison query. Two hair comparison pages would compete. Before redirecting, merge anything from the Hims hair comparison worth keeping (the Hims column of the inclusions table) into the main page. |
 | `/mosh-vs-pilot` | `/hims-vs-mosh` | Currently 301s to `/best-hair-loss-treatment-australia` (next.config.ts line 64). Pilot is now Hims, so the pair page is the closer match by intent. |
 | `/moshy-vs-pilot` | `/hims-vs-mosh` | Currently 301s to `/best-weight-loss-telehealth-australia` (line 63). Same reasoning. |
 
-Jarred confirmed both Pilot redirects on 30 Sep 2026. One refinement to raise at go-live: `/moshy-vs-pilot` was a weight-loss comparison, and `/best-mens-weight-loss-program-australia` is now Hims vs Moshy, the closer match by intent. Pointing it there instead of `/hims-vs-mosh` is the better destination if Jarred agrees.
+Jarred confirmed both Pilot redirects on 30 Sep 2026. `/moshy-vs-pilot` was a weight comparison, so point it at `/hims-vs-mosh#weight-loss` (the fragment is ignored by the redirect but the weight panel is on that page).
 
 After adding each redirect: remove the Hims slugs from `HIMS_SLUG_LIST` only if a
 page is retired, keep `check-redirect-order` green, and run `npm run verify:deploy`.
@@ -100,8 +99,6 @@ Page lines, under Men's health:
 - [Hims hair loss](https://referlabs.com.au/hims-hair-loss): Hims' hair loss service, formerly Pilot's: a 180-day money-back guarantee on every hair plan, cancelling before any order with no fee, and prices shown after the phone consultation (hims.com.au/hair-loss, read 1 October 2026).
 - [Hims ED](https://referlabs.com.au/hims-ed): Hims' private ED consultation, formerly Pilot's: an online quiz, then a phone call with an Australian practitioner from 7am to 11pm AEST, seven days, with no lock-in contract; Hims' FAQ says its plans are not claimable on Medicare (read 1 October 2026).
 - [Hims vs Mosh](https://referlabs.com.au/hims-vs-mosh): Who owns each (Hims & Hers Health; Mosh says it is Australian owned and lists Moshy and Healthy Mummy as its brands), what each covers and how each consults, then hair loss, weight loss and ED compared, with the Refer Labs codes for each: REFERLABS89 [PLACEHOLDER] for Hims, REFERAL55 for Mosh hair loss and REFERRAL120 for Moshy weight loss; Mosh's ED offer is not yet supplied. Read 1 October 2026. Also the answer to "Mosh vs Pilot", since Pilot is now Hims.
-- [Online hair loss treatment: Hims vs Mosh](https://referlabs.com.au/best-hair-loss-treatment-online-australia): Both give a 180-day money-back guarantee, Hims on all hair plans and Mosh on quarterly programs only; Mosh publishes its hair prices, Hims shows them after the consultation (read 1 October 2026). **Omit this line if the page is redirected to /best-hair-loss-treatment-australia at go-live (section 1).**
-- [Men's weight loss programs: Hims vs Moshy](https://referlabs.com.au/best-mens-weight-loss-program-australia): Hims' advertised twelve-month pay-upfront offer against Moshy's three-month minimum on REFERRAL120; both give 30 days for a refund; Moshy describes itself as a women's health clinic open to anyone a practitioner assesses as suitable (read 1 October 2026).
 - [Online ED consultations: Hims vs Mosh](https://referlabs.com.au/ed): Hims consults by phone from 7am to 11pm AEST; Mosh lets you message a practitioner by text, with phone and video available; neither has a lock-in contract (read 1 October 2026). Mosh's ED offer for Refer Labs readers has not been supplied.
 
 Also rewrite the Men's health line ("one commercial partner... no monetised route on the
@@ -118,8 +115,6 @@ page's own `modified` date, the same date its WebPage and Article schema carry.
 | https://referlabs.com.au/hims-hair-loss | 2026-10-01 | 0.9 |
 | https://referlabs.com.au/hims-ed | 2026-10-01 | 0.9 |
 | https://referlabs.com.au/hims-vs-mosh | 2026-10-01 | 0.9 |
-| https://referlabs.com.au/best-mens-weight-loss-program-australia | 2026-10-01 | 0.8 |
-| https://referlabs.com.au/best-hair-loss-treatment-online-australia | 2026-10-01 | 0.8 (drop if redirected, section 1) |
 | https://referlabs.com.au/ed | 2026-10-01 | 0.8 |
 
 If a page is edited again before launch, bump its `modified` field; the sitemap follows.
@@ -132,8 +127,8 @@ main-site pages that cannot link back while the set is in preview. Add these rev
 links at launch:
 
 - `/mosh-review` and `/moshy-review` -> `/hims-vs-mosh` (linked from it).
-- `/moshhair` -> `/best-hair-loss-treatment-online-australia` (or `/hims-vs-mosh#hair-loss` if that page is redirected).
-- `/moshy-vs-juniper` -> `/best-mens-weight-loss-program-australia`.
+- `/moshhair` -> `/hims-vs-mosh` (hair loss panel).
+- `/moshy` -> `/hims-vs-mosh` (weight loss panel).
 - `/mens-health/erectile-dysfunction-treatment-cost-australia` and `/mens-health` -> `/ed` (section 4).
 
 ## 9. Facts re-read on 1 October 2026
@@ -148,3 +143,8 @@ is cited by its own date, 2 June 2026. One correction: hims.com.au lists weight 
 ED, premature ejaculation and hair loss, not skin, so "skin" was removed from the three
 Hims review leads. The REFERRAL120 three-month minimum is still cited to Moshy's sign-up
 page as read on 30 September 2026.
+
+
+## Pages removed from the set (Jarred, 1 Oct 2026)
+
+`/best-mens-weight-loss-program-australia` and `/best-hair-loss-treatment-online-australia` were deleted before launch: `/hims-vs-mosh` now carries hair loss, weight loss and ED in one page with a program selector. Neither URL was ever public, so neither needs a redirect. `/best-online-ed-treatment-australia` was earlier replaced by `/ed`, which stays.
