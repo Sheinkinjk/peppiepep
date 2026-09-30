@@ -213,8 +213,8 @@ export default function WeightLossHubPage() {
               </h3>
               <p className="mt-2.5 text-sm leading-relaxed text-[#56504a]">
                 A registered practitioner assesses you individually before anything starts, and some applicants are
-                declined. Both services we cover include app coaching and dietitian meal plans. Juniper is designed for
-                women and offers 1:1 coaching as an add-on; Moshy is open to anyone eligible.
+                declined. Both services we cover include app coaching and dietitian meal plans. Both are built with women in
+                mind; Juniper offers 1:1 coaching as an add-on, and Moshy also covers hair and skin.
               </p>
               <div className="mt-5 space-y-2 text-sm font-semibold">
                 <p><Link href="/best-weight-loss-telehealth-australia" className="text-[#007a95] hover:underline">Compare the providers →</Link></p>

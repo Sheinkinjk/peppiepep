@@ -60,7 +60,7 @@ const closing = providers.map((p) => ({ ...p, loc: p.loc.replace("hero", "close"
 const faqs = [
   {
     q: "Is Moshy or Juniper better for weight loss?",
-    a: "Neither is better for everyone. Both are Australian telehealth services where a registered practitioner decides whether treatment is appropriate, and both include app coaching, dietitian meal plans, a community and a 30-day money-back guarantee. Juniper is designed for women and offers 1:1 coaching as an add-on; Moshy is Mosh's brother brand and also covers hair and skin.",
+    a: "Neither is better for everyone. Both are Australian telehealth services where a registered practitioner decides whether treatment is appropriate, and both include app coaching, dietitian meal plans, a community and a 30-day money-back guarantee. Both are built with women in mind. Juniper offers 1:1 coaching as an add-on; Moshy is Mosh's brother brand and also covers hair and skin.",
   },
   {
     q: "What are the Moshy and Juniper discount codes?",
@@ -151,8 +151,9 @@ export default function MoshyVsJuniperPage() {
         <p className="mt-5 max-w-2xl text-base leading-relaxed text-[#56504a] sm:text-lg">
           Moshy and Juniper are both Australian weight-management telehealth services where a registered practitioner
           decides whether treatment is appropriate, and both include app coaching, dietitian meal plans, a community and a
-          30-day money-back guarantee. Juniper is designed for women and offers 1:1 coaching as an add-on; Moshy is
-          Mosh&apos;s brother brand and also covers hair and skin. Moshy&apos;s code REFERRAL120 takes $120 off a first
+          30-day money-back guarantee. Both are built with women in mind. Juniper offers 1:1 coaching as an add-on;
+          Moshy is Mosh&apos;s brother brand, also covers hair and skin, and takes anyone a practitioner assesses as
+          suitable. Moshy&apos;s code REFERRAL120 takes $120 off a first
           order with a 3-month minimum; Juniper&apos;s JARREDKFC waives the initial consultation, valued at $89.
         </p>
 
@@ -198,7 +199,6 @@ export default function MoshyVsJuniperPage() {
           <div className="rounded-2xl border border-[#ded8cd] bg-[#f7f4ee] p-6">
             <h2 className="text-lg font-bold text-[#14120f]">Choose Juniper if</h2>
             <ul className="mt-3 space-y-2 text-[15px] leading-relaxed text-[#56504a]">
-              <li>You want a program designed for women.</li>
               <li>You want 1:1 coaching available on top of the program.</li>
               <li>You would like the initial consultation waived before you commit.</li>
             </ul>

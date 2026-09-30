@@ -15,7 +15,7 @@ const aff = { href: MOSHY_URL, target: "_blank" as const, rel: "nofollow sponsor
 const faqs = [
   {
     q: "Why do some weight loss services market to men and others to women?",
-    a: "Mostly marketing. Juniper designs its program for women; Moshy is open to anyone eligible. Both start with an online assessment that a registered practitioner reviews, and both include app coaching, dietitian meal plans and a community (each provider's own page, read 30 September 2026).",
+    a: "Mostly marketing. Juniper designs its program for women, and Moshy describes itself as an online women's health clinic, and its services are open to anyone a practitioner assesses as suitable. Both start with an online assessment that a registered practitioner reviews, and both include app coaching, dietitian meal plans and a community (each provider's own page, read 30 September 2026).",
   },
   {
     q: "Do I need to see a doctor in person first?",
@@ -81,8 +81,9 @@ export default function WeightLossTelehealthMenPage() {
           Weight loss telehealth for men in Australia: <span>how it works and what to check</span>
         </h1>
         <p className="text-[#56504a] text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
-          For men in Australia, the weight-management telehealth service we cover is Moshy, which is open to anyone
-          eligible; Juniper, the other service we compare, is designed for women. Moshy starts with an online
+          For men in Australia, the weight-management telehealth service we cover is Moshy. It describes itself as
+          an online women&apos;s health clinic, but its services are open to anyone a practitioner assesses as
+          suitable; Juniper, the other service we compare, is designed for women. Moshy starts with an online
           questionnaire and a consult by phone or video with a registered practitioner, who decides whether any
           treatment is appropriate. It includes in-app coaching, dietitian meal plans and a community, and its code
           REFERRAL120 takes $120 off a first order with a 3-month minimum commitment.
@@ -125,7 +126,7 @@ export default function WeightLossTelehealthMenPage() {
         <section className="space-y-4 mb-10">
           <h2 className="text-xl font-black">Where Moshy fits</h2>
           <p className="text-[#56504a] text-sm sm:text-base leading-relaxed">
-            Moshy is open to anyone eligible and passes the checklist above: AHPRA-registered practitioners, a
+            Moshy takes anyone a practitioner assesses as suitable and passes the checklist above: AHPRA-registered practitioners, a
             screening step, pricing published on its own site, and Australian regulation. It includes in-app coaching,
             dietitian meal plans and a community. Juniper, the other service we compare, is designed for women; our{" "}
             <Link href="/best-weight-loss-telehealth-australia" className="underline decoration-[#ded8cd] underline-offset-2 hover:text-[#14120f]" style={{ color: CYAN }}>

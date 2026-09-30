@@ -40,7 +40,7 @@ const providers: PairProvider[] = [
   {
     name: "Moshy",
     logo: "/logos/moshy.png",
-    bestIf: "An all-inclusive weight program, open to anyone eligible.",
+    bestIf: "An all-inclusive weight program from an online women's health clinic.",
     points: [
       "Online questionnaire, then a consult by phone or video",
       "In-app coaching, dietitian meal plans and a community",
@@ -56,7 +56,7 @@ const providers: PairProvider[] = [
 const faqs = [
   {
     q: "Which weight loss telehealth services are aimed at women?",
-    a: "Juniper is designed for women. Moshy is open to anyone eligible, women included. Both start with an online assessment that a registered Australian practitioner reviews, and both include app coaching, dietitian meal plans and a community (each provider's own page, read 30 September 2026). Juniper adds optional 1:1 coaching as a paid add-on.",
+    a: "Both are built for women: Juniper is designed for women, and Moshy describes itself as an online women's health clinic, and its services are open to anyone a practitioner assesses as suitable. Both start with an online assessment that a registered Australian practitioner reviews, and both include app coaching, dietitian meal plans and a community (each provider's own page, read 30 September 2026). Juniper adds optional 1:1 coaching as a paid add-on.",
   },
   {
     q: "Do I need a referral or an in-person appointment to start?",
@@ -133,11 +133,11 @@ export default function WeightLossTelehealthWomenPage() {
           Weight loss telehealth for women in Australia: <span>the options, and how to choose</span>
         </h1>
         <p className="text-[#56504a] text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
-          Two Australian weight-management telehealth services suit women: Juniper, which is designed for women, and
-          Moshy, which is open to anyone eligible. Both start with an online assessment reviewed by a registered
+          Juniper and Moshy are two Australian weight-management telehealth services built for women: Juniper is
+          designed for women, and Moshy describes itself as an online women&apos;s health clinic. Both start with an online assessment reviewed by a registered
           practitioner, and both include app coaching, dietitian meal plans, a community and a 30-day money-back
-          guarantee. The differences are Juniper&apos;s women-only design and its 1:1 coaching add-on, and Moshy&apos;s
-          place alongside Mosh&apos;s hair and skin services.
+          guarantee. The differences are Juniper&apos;s 1:1 coaching add-on, and Moshy&apos;s all-inclusive fee and
+          its hair and skin services.
         </p>
         <div className="max-w-2xl space-y-2">
           <AffiliateDisclosure compact partners={["Juniper", "Moshy"]} />
@@ -162,8 +162,8 @@ export default function WeightLossTelehealthWomenPage() {
           <h2 className="text-xl font-black mb-2">What does each include?</h2>
           <WeightInclusionsTable className="mt-4" />
           <p className="mt-4 text-[#56504a] text-sm sm:text-base leading-relaxed">
-            The two include much the same support, so the choice is about fit. Juniper suits someone who wants a program
-            designed for women and the option of 1:1 coaching. Moshy suits someone who wants an all-inclusive fee or may
+            The two include much the same support, so the choice is about fit. Juniper suits someone who wants the option of
+            1:1 coaching. Moshy suits someone who wants an all-inclusive fee or may
             later use Mosh&apos;s hair or skin services. We compare the two question by question in our{" "}
             <Link href="/moshy-vs-juniper" className="underline decoration-[#ded8cd] underline-offset-2 hover:text-[#14120f]" style={{ color: CYAN }}>
               Moshy vs Juniper guide

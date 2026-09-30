@@ -39,7 +39,7 @@ const PATHWAYS: Record<
   }
 > = {
   clinical: {
-    title: "Online program, open to anyone eligible",
+    title: "Online program, all-inclusive fee",
     tag: "e.g. Moshy",
     summary:
       "A practitioner-led telehealth program done online: a questionnaire, then a consult by phone or video. Moshy describes its fee as all-inclusive, with in-app coaching, dietitian meal plans and a community, and publishes its pricing on its own site.",
@@ -60,7 +60,7 @@ const PATHWAYS: Record<
     ],
   },
   coaching: {
-    title: "Online program designed for women",
+    title: "Online program, 1:1 coaching available",
     tag: "e.g. Juniper",
     summary:
       "A practitioner-led telehealth program designed for women, with app coaching, dietitian meal plans and a private community, and 1:1 coaching as a paid add-on. Juniper publishes its pricing on its own site; the fee varies with the plan and level of support.",
@@ -172,12 +172,12 @@ export default function CostPlanner() {
             <p className="text-sm text-[#56504a] mb-5">A preference, not a medical question.</p>
             <div className="grid gap-3">
               <button type="button" className={`${btn} border-[#ded8cd] bg-white`} onClick={() => choose(setSupport, "clinical" as Support)}>
-                <span className="font-semibold text-[#14120f] block text-sm">An online program, open to anyone</span>
+                <span className="font-semibold text-[#14120f] block text-sm">An all-inclusive online program</span>
                 <span className="text-xs text-[#56504a]">Practitioner-led, with app coaching and meal plans</span>
               </button>
               <button type="button" className={`${btn} border-[#ded8cd] bg-white`} onClick={() => choose(setSupport, "coaching" as Support)}>
-                <span className="font-semibold text-[#14120f] block text-sm">An online program designed for women</span>
-                <span className="text-xs text-[#56504a]">With the option of 1:1 coaching</span>
+                <span className="font-semibold text-[#14120f] block text-sm">An online program with 1:1 coaching available</span>
+                <span className="text-xs text-[#56504a]">Coaching as an add-on to the program</span>
               </button>
               <button type="button" className={`${btn} border-[#ded8cd] bg-white`} onClick={() => choose(setSupport, "gp" as Support)}>
                 <span className="font-semibold text-[#14120f] block text-sm">Face-to-face with my own doctor</span>

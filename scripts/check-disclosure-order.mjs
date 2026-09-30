@@ -36,7 +36,7 @@ const APP = "src/app";
  */
 const DISCLOSURE =
   /commercial arrangement|affiliate links?\b|(?:we|Refer Labs) (?:may )?earn a commission|paid partnership|how we make money/i;
-// Lead-form CTAs count too (added 1 Oct 2026): Apollo leads are captured on site
+// Lead-form CTAs count too (added 30 Sep 2026): Apollo leads are captured on site
 // through /apollo-energy-group#register, an internal link that is neither sponsored
 // nor /go/, so /apollo-energy-group and the battery pages disclosed only in the
 // footer and this guard never saw their first money link.

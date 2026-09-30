@@ -25,7 +25,7 @@ export const WEIGHT_INCLUSIONS: InclusionRow[] = [
   {
     label: "Built for",
     juniper: "Weight management, designed for women",
-    moshy: "Weight management, alongside hair and skin care; Mosh's brother brand",
+    moshy: "An online women's health clinic (its own description) covering weight, hair and skin; open to anyone a practitioner assesses as suitable. Mosh's brother brand",
   },
   {
     label: "How you start",
