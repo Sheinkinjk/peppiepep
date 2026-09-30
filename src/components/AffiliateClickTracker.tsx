@@ -25,7 +25,6 @@ import { attributionContext, firstTouch, landingPage, newEventId } from "@/lib/a
 const PARTNER_VALUE: Record<string, number> = {
   "getmoshy.com.au": 80,
   "getmosh.com.au": 70,
-  "densehairexperts.myshopify.com": 25,
   "myjuniper.com": 50,
   "beehiiv.com": 40,
   "try.carrd.co": 6,

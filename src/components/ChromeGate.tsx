@@ -55,7 +55,6 @@ const STANDALONE_ROUTES = [
   // Brand / affiliate review pages
   "/moshy",
   "/moshhair",
-  "/dense",
   "/carrd",
   "/durableai",
   "/butternut",
@@ -96,7 +95,6 @@ const STANDALONE_ROUTES = [
   "/online-weight-loss-doctor-australia",
   "/cheapest-weight-loss-telehealth-australia",
   "/weight-loss-cost-calculator",
-  "/mosh-vs-dense",
   // Website-builder + peptide head-to-heads
   "/carrd-vs-butternut",
   "/durable-vs-butternut",

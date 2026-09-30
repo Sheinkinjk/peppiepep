@@ -73,7 +73,7 @@ const BRAND_OBJECT: Record<string, ObjectKind> = {
   // affiliate and referral
   Superfiliate: "offer",
   // hair
-  Mosh: "comb", "Dense Hair Experts": "comb",
+  Mosh: "comb",
   // portable power
   EcoFlow: "power", "Anker SOLIX": "power",
 };

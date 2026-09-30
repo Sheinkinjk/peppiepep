@@ -172,7 +172,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly' as const,
       priority: g.priority,
     })),
-    { url: `${BASE}/dense`,             lastModified: FRESH, changeFrequency: 'monthly', priority: 0.7 },
 
     // ── Website builders / AI tools (redesigned this release) ──────────
     { url: `${BASE}/carrd`,      lastModified: AUG13, changeFrequency: 'monthly', priority: 0.78 },
@@ -232,7 +231,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/carrd-vs-durable`,                      lastModified: FRESH,  changeFrequency: 'monthly', priority: 0.74 },
     { url: `${BASE}/durable-vs-butternut`,                  lastModified: FRESH,  changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/carrd-vs-butternut`,                    lastModified: FRESH,  changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE}/mosh-vs-dense`,                         lastModified: TODAY,  changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/data`, lastModified: FRESH, changeFrequency: 'weekly', priority: 0.6 },
     // /authors/jarred is deliberately NOT here. It is noIndex until the bio is
     // written, and a noIndex URL in the sitemap tells Google to crawl a page we

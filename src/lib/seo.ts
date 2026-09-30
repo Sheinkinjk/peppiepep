@@ -1064,9 +1064,9 @@ export const seoConfig = {
   hairLossTreatmentCost: {
     title: "Hair Loss Treatment Cost Australia 2026 | Refer Labs",
     description:
-      "What hair-loss treatment costs in Australia: over-the-counter vs telehealth plans, Mosh's three hair plans, what is subsidised, and Mosh code REFERAL55 (55% off).",
+      "How hair-loss care is priced in Australia: over-the-counter products, a GP visit, and a telehealth subscription such as Mosh, plus what Medicare covers.",
     url: `${SITE_URL}/hair-loss-treatment-cost-australia`,
-    keywords: ["hair loss treatment cost australia", "mosh hair loss cost", "prescription hair loss treatment cost", "hair loss telehealth cost australia", "hair loss telehealth cost", "how much does hair loss treatment cost"],
+    keywords: ["hair loss treatment cost australia", "mosh hair loss cost", "hair loss telehealth cost australia", "hair loss telehealth cost", "how much does hair loss treatment cost"],
   },
   // Retired Aug 2026: a second Blueprint success page, now 308ing to /. Same
   // defensive purpose as referralBlueprintSuccess below.
@@ -1184,9 +1184,11 @@ export const seoConfig = {
   },
 
   hairLossHub: {
-    title: "Hair Loss Treatments Australia 2026 | Refer Labs",
+    // Title and h1 agree (1 Oct 2026): the h1 read "Hair loss in Australia: the
+    // options compared" under a "Hair Loss Treatments" title.
+    title: "Hair Loss Treatment Options Australia 2026 | Refer Labs",
     description:
-      "The hair loss decision, organised. Compare Australia's clinical telehealth and topical products, with independent guides to Mosh, Dense and more.",
+      "Hair loss in Australia: an online practitioner consultation with Mosh, your GP, or over-the-counter products. Who each suits and how each is priced.",
     url: `${SITE_URL}/hair-loss`,
     keywords: [
       "hair loss australia",
@@ -1578,7 +1580,7 @@ export const seoConfig = {
     // order discount, not a hair-only one, so the broader title is also truer.
     title: "Mosh Discount Code 2026: 55% Off First Order",
     description:
-      "REFERAL55, applied by our link: 55% off a first Mosh order. What the hair-loss consult involves, and the cost once that first order is behind you.",
+      "REFERAL55 takes 55% off a first Mosh order: our link carries it, or enter it at checkout. How the online consultation works and how Mosh bills after that.",
     url: `${SITE_URL}/moshhair`,
     keywords: [
       "mosh hair discount code",
@@ -1604,16 +1606,13 @@ export const seoConfig = {
       "mosh hair loss price australia",
       "mosh subscription cost",
       "mosh hair loss telehealth",
-      "mosh prescription hair loss",
       "hair loss treatment online australia",
       "hair loss telehealth australia",
-      "mosh vs dense hair experts",
-      "mosh hair loss results",
-      "how long does mosh take to work",
     ],
   },
 
   dense: {
+    noIndex: true, // retired 1 Oct 2026, 301 to /hair-loss in next.config
     title: "Dense Hair Experts Review 2026: What It Costs",
     description:
       "Looking for a Dense discount code, promo code, or coupon?",
@@ -1696,11 +1695,11 @@ export const seoConfig = {
 
   moshVsPilot: {
     noIndex: true, // retired 30 Sep 2026, 301 in next.config
-    title: "Mosh vs Pilot 2026: What Changed When Pilot Joined Hims",
+    title: "Mosh vs Pilot 2026",
     description:
-      "Pilot has joined the Hims & Hers group and no longer runs as its own service. How Mosh compares for hair loss today, and the Mosh code REFERAL55 for 55% off.",
+      "Pilot no longer runs as its own service. Our hair-loss comparison covers Mosh and your GP.",
     url: `${SITE_URL}/mosh-vs-pilot`,
-    keywords: ["mosh vs pilot", "pilot vs mosh", "mosh or pilot", "mosh vs pilot hair loss", "is pilot still available australia", "pilot hims"],
+    keywords: ["mosh vs pilot", "pilot vs mosh", "mosh or pilot", "mosh vs pilot hair loss", "is pilot still available australia"],
   },
   moshyVsJuniper: {
     title: "Moshy vs Juniper 2026: Cost and Who Each Suits",
@@ -2056,6 +2055,7 @@ export const seoConfig = {
   // "Mosh discount code") and one link to /mosh-review added. Title, description
   // and copy unchanged.
   moshVsDense: {
+    noIndex: true, // retired 1 Oct 2026, 301 to /best-hair-loss-treatment-australia in next.config
         // TITLE TEST, set 5 September 2026. Baseline in the 92-day export to 2 Sep:
     // 644 impressions, 3 clicks, 0.47% CTR at position 11.5. The two pages that convert best on this site, /moshy (2.50% at
     // position 16.1) and /moshy-review (2.03% at 12.7), both rank WORSE than this
@@ -2137,9 +2137,11 @@ export const seoConfig = {
     // short version" became "How Mosh works", "What people actually raise" became
     // "What people raise", and one FAQ question lost "actually". Title and
     // description unchanged.
-    title: "Mosh Review 2026: Is It Legit, and What It Costs",
+    // RETITLED 1 Oct 2026 (Jarred): the title test above ends here, four days early.
+    // Title and h1 now agree, and the page no longer promises cost it does not give.
+    title: "Mosh Review 2026: Is It Legit, and Is It Worth It?",
     description:
-      "A real clinical service, and REFERAL55 takes 55% off a first order. What the consult involves, what you pay monthly after, and who it does not suit.",
+      "Mosh uses AHPRA-registered doctors and nurse practitioners paid fee-for-service. How the consultation works, how billing runs, and REFERAL55 for 55% off a first order.",
     url: `${SITE_URL}/mosh-review`,
     keywords: ["mosh review", "is mosh legit", "is mosh worth it", "does mosh work", "mosh hair loss review australia", "mosh reviews"],
   },
@@ -2287,13 +2289,13 @@ export const seoConfig = {
   hairLossQuiz: {
     title: "Which Hair-Loss Option Fits You? 30-Second Match",
     description:
-      "Answer one or two quick questions and see which hair-loss route fits you, clinical telehealth, a topical routine, or your GP, and why.",
+      "Answer one or two quick questions and see which hair-loss route fits you: an online consultation, over-the-counter products, or your GP, and why.",
     url: `${SITE_URL}/hair-loss-quiz`,
     keywords: [
       "which hair loss treatment is right for me",
       "hair loss telehealth or topical",
       "best hair loss option australia",
-      "mosh or dense",
+      "mosh or gp hair loss",
       "how to choose hair loss treatment",
     ],
   },
@@ -2781,21 +2783,21 @@ export const seoConfig = {
     // page and both carry a figure in the title. Testing whether the figure is the
     // cause. Measure on 5 October 2026: CTR at unchanged position is the read.
     // CONFOUND, 13 Sep 2026: the page body changed mid-test when Pilot (retired,
-    // now Hims) was removed: one provider card, one table row, one FAQ. The title
+    // retired) was removed: one provider card, one table row, one FAQ. The title
     // and description did not change. Read the 5 Oct result with that in mind.
+    // CONFOUND, 1 Oct 2026: Dense retired from the site, so the body and the
+    // description changed (Mosh and your GP now). Title unchanged.
     title: "Best Hair Loss Treatment Australia 2026: How to Choose",
     description:
-      "REFERAL55 takes 55% off a first Mosh order. Mosh is prescription telehealth, Dense is a topical range off the shelf. What each route costs here.",
+      "Mosh or your GP for hair loss in Australia: how each assessment works, who each suits, and how each is priced. REFERAL55 takes 55% off a first Mosh order.",
     url: `${SITE_URL}/best-hair-loss-treatment-australia`,
     keywords: [
       "best hair loss treatment australia 2026",
       "best hair loss treatment australia",
       "mosh hair loss review australia",
-      "dense hair experts review",
       "hair loss telehealth australia 2026",
-      "prescription hair loss treatment australia",
       "hair loss treatment review australia",
-      "mosh vs dense australia",
+      "mosh or gp hair loss",
       "australian hair loss comparison",
       "hair loss clinic australia",
       "hair thinning treatment australia",
