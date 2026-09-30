@@ -13,9 +13,9 @@ import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 export const metadata = generateSEOMetadata(seoConfig.bestHairLossTreatmentAustralia);
 
 /*
- * Rebuilt 1 Oct 2026.
+ * Rebuilt 30 Sep 2026.
  *
- * Dense retired (Jarred, 1 Oct 2026). densehairexperts.com's own footer describes
+ * Dense retired (Jarred, 30 Sep 2026). densehairexperts.com's own footer describes
  * a UK GPhC-registered pharmacy that prescribes after an online consultation, so
  * calling it a "non-prescription topical" was false. The page now compares Mosh
  * (an online consultation) with your GP, and describes over-the-counter products

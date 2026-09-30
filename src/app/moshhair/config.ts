@@ -11,7 +11,7 @@ export { MOSH_HAIR_URL };
 // terms. So we do not name or endorse specific prescription treatments here; we
 // describe the service and direct people to a practitioner assessment.
 //
-// Restructured 1 Oct 2026 onto the brand-page skeleton: lead (code first, then one
+// Restructured 30 Sep 2026 onto the brand-page skeleton: lead (code first, then one
 // line on the service), offer box and at-a-glance card, key facts, one "How Mosh
 // works" section, who it suits, what it costs, FAQ, related, closing CTA.
 //

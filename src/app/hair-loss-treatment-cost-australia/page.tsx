@@ -35,7 +35,7 @@ const breadcrumbSchema = {
 };
 
 /*
- * 1 Oct 2026. The lead said nothing here attracts a Medicare rebate while a later
+ * 30 Sep 2026. The lead said nothing here attracts a Medicare rebate while a later
  * section said a telehealth consult may: the two now agree, and state only what
  * is sourced. The code FAQ is gone (it competed with /moshhair for the code query),
  * the plan-tier table that held no information is one sentence, and the offer box

@@ -125,7 +125,7 @@ export default function HairLossHubPage() {
         </section>
 
 
-        {/* Rebuilt 1 Oct 2026. Dense retired (a UK prescribing pharmacy that this
+        {/* Rebuilt 30 Sep 2026. Dense retired (a UK prescribing pharmacy that this
             hub described as a non-prescription topical), and the HubProviders grid
             went with it: a one-provider grid is an advert, not a comparison. Three
             routes on equal cards; only the online one has a provider we link to. */}

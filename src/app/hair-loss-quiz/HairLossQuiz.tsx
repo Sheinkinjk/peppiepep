@@ -8,7 +8,7 @@ import { MOSH_HAIR_URL } from "@/lib/affiliate-links";
  * Hair-loss matcher. Preference-based, not medical: routes to an online
  * consultation (Mosh, men's service), over-the-counter cosmetic products (no
  * brand, no link), or a GP. Only the online result earns. Dense was retired on
- * 1 Oct 2026 (a UK prescribing pharmacy, not the topical brand it was described
+ * 30 Sep 2026 (a UK prescribing pharmacy, not the topical brand it was described
  * as), so the cosmetic result now names no brand. See TGA rules in project memory.
  */
 

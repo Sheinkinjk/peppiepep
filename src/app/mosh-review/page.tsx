@@ -18,7 +18,7 @@ const CYAN = "#007a95";
 const aff = { href: MOSH_HAIR_URL, target: "_blank" as const, rel: "nofollow sponsored" as const };
 
 /*
- * Rewritten 1 Oct 2026. The lead now answers "is Mosh legit" in its first
+ * Rewritten 30 Sep 2026. The lead now answers "is Mosh legit" in its first
  * sentence with facts read off Mosh's own site; the title and h1 agree; billing
  * is described as Mosh's own terms describe it (a first hair order covers three
  * months) rather than as "monthly"; the money-back guarantee carries its
