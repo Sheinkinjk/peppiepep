@@ -7,20 +7,22 @@ export const beautifulaiConfig: AffiliatePageConfig = {
   badgeText: "AI presentations",
   eyebrow: "AI presentation software",
   affiliateUrl: BEAUTIFULAI_URL,
+  // Trial length and Pro price read on beautiful.ai/pricing, 30 September 2026.
   quickAnswer:
-    "Beautiful.ai is AI presentation software that designs your slides as you build them: you add content and its smart templates handle the layout, spacing and alignment automatically, so decks look professionally designed without a designer. It offers a free trial, with paid Pro and Team plans.",
-  offer: "Free trial",
+    "Beautiful.ai is AI presentation software that lays out your slides automatically as you add content. Its Pro plan costs US$14.50 a month billed annually, and every new account can try it free for 14 days (beautiful.ai/pricing, read 30 September 2026). It suits anyone who builds decks regularly and wants them on-brand without doing the formatting.",
+  offer: "14-day free trial",
+  offerCheckedOn: "2026-09-30",
   atAGlance: [
     { k: "Type", v: "AI presentation software" },
     { k: "Best for", v: "Founders, teams & consultants" },
-    { k: "Pricing", v: "No free plan; Pro from US$12/mo (annual)" },
-    { k: "Start", v: "Free trial" },
+    { k: "Pricing", v: "No free plan; Pro US$14.50/mo billed annually (read 30 Sep 2026)" },
+    { k: "Start", v: "14-day free trial" },
   ],
   hero: {
     h1Prefix: "Beautiful.ai:",
     h1Highlight: "slides that design themselves as you type",
     subheading:
-      "If building a good-looking deck eats hours you do not have, Beautiful.ai applies design rules automatically so slides stay clean and consistent. Here is what it does, who it suits, and how pricing works.",
+      "Beautiful.ai lays out each slide automatically as you type, and its Pro plan costs US$14.50 a month billed annually after a 14-day free trial (beautiful.ai/pricing, read 30 September 2026). It suits founders, consultants and sales teams who build decks every week.",
     trustBullets: ["AI applies the design for you", "Smart templates and slide library", "Free trial to start"],
   },
   banner: {
@@ -29,6 +31,15 @@ export const beautifulaiConfig: AffiliatePageConfig = {
     buttonLabel: "Try Beautiful.ai",
   },
   sections: [
+    {
+      heading: "How much does Beautiful.ai cost?",
+      paragraphs: [
+        "Read on beautiful.ai/pricing on 30 September 2026: Pro, for individuals, is US$14.50 a month billed annually, and there is a monthly-billed option for one-off projects. Team plans for shared branding and collaboration are priced separately on the same page, and Enterprise is quoted by sales. There is no permanent free plan.",
+        "Every new account can try Beautiful.ai free for 14 days before paying. There is no Beautiful.ai discount code to find: Beautiful.ai does not publish one and Refer Labs does not have one. View the latest pricing on Beautiful.ai's own site before you commit.",
+      ],
+      hasCta: true,
+      ctaText: "Try Beautiful.ai free",
+    },
     {
       heading: "What Beautiful.ai does",
       paragraphs: [
@@ -58,11 +69,7 @@ export const beautifulaiConfig: AffiliatePageConfig = {
   faqs: [
     {
       q: "Is there a Beautiful.ai free trial or discount code?",
-      a: "Yes to the trial: Beautiful.ai offers a free trial so you can build a deck before paying. It does not usually publish a public promo code, so signing up through our referral link is the reliable way to start, at no extra cost to you.",
-    },
-    {
-      q: "How much does Beautiful.ai cost?",
-      a: "Beautiful.ai does not have a permanent free plan; Pro starts from US$12/month billed annually, with Team plans for shared branding. Pricing changes, so check the current plans before committing.",
+      a: "There is a 14-day free trial and no code. Beautiful.ai lists no promo code on its own site, and Refer Labs has none to pass on; the trial lets you build a real deck before paying.",
     },
     {
       q: "Who is Beautiful.ai best for?",
@@ -88,5 +95,5 @@ export const beautifulaiConfig: AffiliatePageConfig = {
     bottomButton: "Continue to Beautiful.ai",
   },
   disclaimer:
-    "This page contains a disclosed affiliate link. If you sign up through it we may earn a commission at no extra cost to you, and it never changes our assessment. Pricing and offers change, verify current terms on Beautiful.ai before committing.",
+    "This page contains a disclosed affiliate link. If you sign up through it we may earn a commission at no extra cost to you, and it never changes our assessment. Pricing was read on Beautiful.ai's own page on 30 September 2026 and can change; view the latest pricing on Beautiful.ai's site.",
 };

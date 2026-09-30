@@ -38,7 +38,7 @@ const softwareSchema = {
   applicationCategory: "BusinessApplication",
   operatingSystem: "Web",
   description: "No-code tool for adding popups, notification bars and overlays to a website to capture emails and drive conversions, with targeting and A/B testing.",
-  offers: { "@type": "Offer", price: "29", priceCurrency: "USD", description: "Free plan; paid plans from US$29/month billed annually.", availability: "https://schema.org/InStock" },
+  offers: { "@type": "Offer", price: "29", priceCurrency: "USD", description: "Free plan to 5,000 lifetime views; Growth from US$29 a month billed annually (hellobar.com/pricing, read 30 September 2026).", availability: "https://schema.org/InStock" },
   url: "https://www.hellobar.com",
   sameAs: ["https://www.hellobar.com"],
 };

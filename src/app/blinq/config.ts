@@ -8,20 +8,24 @@ export const blinqConfig: AffiliatePageConfig = {
   badgeText: "Digital business cards",
   eyebrow: "Digital business cards",
   affiliateUrl: BLINQ_URL,
+  // Plans, prices and trials read on blinq.me/pricing, 30 September 2026,
+  // viewed from Australia. The page prints "$" without naming a currency, so
+  // the figures are given as displayed rather than labelled US$ or A$.
   quickAnswer:
-    "Blinq is a digital business card platform: you create a smart card with your contact details and links, then share it by QR code, link, email signature or NFC, and the recipient can save your details instantly. There is a free plan, with paid plans for professionals and teams.",
+    "Blinq's Free plan costs nothing and includes two digital business cards with unlimited sharing; Premium is $7.33 a month billed annually with a 7-day free trial, and Business is $4.99 per card a month billed annually with a 30-day trial and a five-card minimum (blinq.me/pricing, viewed from Australia on 30 September 2026). Blinq cards are shared by QR code, link, email signature, wallet or NFC and save straight to the recipient's phone.",
   offer: "Free plan available",
+  offerCheckedOn: "2026-09-30",
   atAGlance: [
     { k: "Type", v: "Digital business cards" },
     { k: "Best for", v: "Professionals, sales & teams" },
-    { k: "Pricing", v: "Free plan (2 cards); Premium from US$7.33/mo (annual)" },
+    { k: "Pricing", v: "Free plan (2 cards); Premium $7.33/mo billed annually (read 30 Sep 2026)" },
     { k: "Start", v: "Free plan, no card" },
   ],
   hero: {
     h1Prefix: "Blinq:",
     h1Highlight: "a digital business card people can save",
     subheading:
-      "Paper cards get lost and details go out of date. Blinq gives you a smart card you share by QR, link or NFC that saves straight to the recipient's phone. Here is what it does, who it suits, and how the free plan works.",
+      "Blinq is free for two digital business cards, and Premium costs $7.33 a month billed annually after a 7-day free trial (blinq.me/pricing, read 30 September 2026). You share the card by QR code, link or NFC and it saves straight to the recipient's phone.",
     trustBullets: ["Share by QR, link, email or NFC", "Recipient saves details instantly", "Free plan to start"],
   },
   banner: {
@@ -30,6 +34,15 @@ export const blinqConfig: AffiliatePageConfig = {
     buttonLabel: "Try Blinq free",
   },
   sections: [
+    {
+      heading: "How much does Blinq cost?",
+      paragraphs: [
+        "Read on blinq.me/pricing on 30 September 2026, viewed from Australia (the page shows \"$\" without naming the currency): Free is $0 forever, with two cards, unlimited sharing and contact creation, wallet passes and an email signature. Premium, for individuals, is $7.33 a month billed annually and adds up to five cards, a contact scanner, an AI notetaker and custom branding, with a 7-day free trial.",
+        "Business, for teams, is $4.99 per card a month billed annually, with a 30-day free trial and a minimum of five cards; lead capture at events adds $9.99 per lead captured and enriched. Enterprise is quoted. Neither Blinq nor Refer Labs has a discount code to offer.",
+      ],
+      hasCta: true,
+      ctaText: "Try Blinq free",
+    },
     {
       heading: "What Blinq does",
       paragraphs: [
@@ -41,7 +54,7 @@ export const blinqConfig: AffiliatePageConfig = {
       heading: "Who it suits",
       paragraphs: [
         "Blinq suits professionals, salespeople, founders and teams who network or meet clients and want a fast, modern way to share contact details that does not end up in a drawer. It is especially useful for teams that want consistent, on-brand cards and to capture leads from events.",
-        "There is a genuine free plan for an individual card, with paid plans adding customisation, analytics and team features; confirm the current plan for your needs.",
+        "An individual can stay on the free plan indefinitely; paid plans add customisation, AI tools and team management.",
       ],
     },
   ],
@@ -59,15 +72,11 @@ export const blinqConfig: AffiliatePageConfig = {
   faqs: [
     {
       q: "Is there a Blinq discount code?",
-      a: "Blinq doesn't rely on a typed discount code. It has a free plan you can start through the link on this page, with paid tiers if you need more. Offers can change over time.",
+      a: "No. Blinq runs no public discount code, and there is no Refer Labs code either. What Blinq offers instead is a free-forever plan with two cards, a 7-day free trial of Premium and a 30-day free trial of Business.",
     },
     {
       q: "Does Blinq have a free plan?",
       a: "Yes. Blinq has a free plan that lets you create and share a digital business card. Paid plans add customisation, analytics and team management; sign up through our link to start, at no extra cost to you.",
-    },
-    {
-      q: "How much does Blinq cost?",
-      a: "Blinq is free for a basic card, with paid plans with Premium from US$7.33/month billed annually for professional features, plus team and business tiers. Pricing changes, so check the current plans before committing.",
     },
     {
       q: "Who is Blinq best for?",
@@ -93,5 +102,5 @@ export const blinqConfig: AffiliatePageConfig = {
     bottomButton: "Continue to Blinq",
   },
   disclaimer:
-    "This page contains a disclosed affiliate link. If you sign up through it we may earn a commission at no extra cost to you, and it never changes our assessment. Pricing and offers change, verify current terms on Blinq before committing.",
+    "This page contains a disclosed affiliate link. If you sign up through it we may earn a commission at no extra cost to you, and it never changes our assessment. Prices were read on Blinq's own page on 30 September 2026 and can change; view the latest pricing on Blinq's site.",
 };

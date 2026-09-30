@@ -8,18 +8,22 @@ export const trainualConfig: AffiliatePageConfig = {
   eyebrow: "HR, onboarding & training",
   affiliateUrl: TRAINUAL_URL,
   quickAnswer:
-    "Trainual is an all-in-one training and operations platform: document how your business runs, build onboarding and role-based training, and keep SOPs searchable in one place. Plans are demo-led, so check the current pricing and any trial on Trainual before you commit.",
-  offer: "7-day free trial",
+    "Trainual is a training and operations platform for documenting how your business runs, building onboarding and role-based training, and keeping SOPs searchable. It publishes no prices: its four plans (Core, Pro, Premium and Enterprise) are quoted after a demo, and its pricing page offered no free trial when we read it on 30 September 2026.",
+  // trainual.com/pricing, rendered, 30 September 2026: four plans, no prices,
+  // every call to action "Get a demo", no trial. The old "7-day free trial"
+  // offer could not be found and was replaced.
+  offer: "Free demo",
+  offerCheckedOn: "2026-09-30",
   atAGlance: [
     { k: "Type", v: "Training / onboarding / SOPs" },
     { k: "Best for", v: "Growing teams & franchises" },
-    { k: "Pricing", v: "Custom pricing; book a demo" },
+    { k: "Pricing", v: "Quoted after a demo; no public prices (checked 30 Sep 2026)" },
   ],
   hero: {
     h1Prefix: "Trainual:",
     h1Highlight: "get how your business runs out of people's heads",
     subheading:
-      "Document processes, build onboarding and role-based training, and keep every standard operating procedure searchable in one place, so new hires ramp faster and nothing depends on one person remembering it.",
+      "Trainual publishes no prices and no free trial: each of its four plans is quoted after a demo (trainual.com/pricing, read 30 September 2026). It documents processes, builds onboarding and role-based training, and keeps every standard operating procedure searchable in one place.",
     trustBullets: ["Onboarding & training in one place", "Searchable SOPs", "AI-assisted content"],
   },
   banner: {
@@ -28,6 +32,15 @@ export const trainualConfig: AffiliatePageConfig = {
     buttonLabel: "See Trainual",
   },
   sections: [
+    {
+      heading: "How much does Trainual cost?",
+      paragraphs: [
+        "Trainual does not publish a price. Read on trainual.com/pricing on 30 September 2026, the page lists four plans, Core, Pro (marked most popular), Premium and Enterprise, and every one of them leads to \"Get a demo\" rather than a price or a trial. Pro adds individual training paths, e-signatures and an org chart; Premium adds custom branding, SSO and unlimited video storage.",
+        "So the only route to a figure is a quote for your team size after the demo. Trainual publishes no discount code and Refer Labs holds none. Any Trainual price quoted on a third-party site is not one Trainual publishes.",
+      ],
+      hasCta: true,
+      ctaText: "Book a Trainual demo",
+    },
     {
       heading: "What Trainual is for",
       paragraphs: [
@@ -39,7 +52,7 @@ export const trainualConfig: AffiliatePageConfig = {
       heading: "Who it suits",
       paragraphs: [
         "It fits growing teams, multi-location businesses and franchises that need consistent onboarding and repeatable processes. A very small team with simple, stable operations may not need a dedicated tool yet.",
-        "Trainual is sold on a subscription and is usually demo-led, so confirm the current plan and any trial for your team size before committing.",
+        "Trainual is sold on a subscription quoted after a demo, so ask for the price at your headcount before comparing it with a tool that publishes its rates.",
       ],
     },
   ],
@@ -57,11 +70,7 @@ export const trainualConfig: AffiliatePageConfig = {
   faqs: [
     {
       q: "Is there a Trainual free trial or discount code?",
-      a: "Trainual is usually demo-led, and the current plans and any trial are shown on its site, check there for the latest terms. We don't publish a promo code we can't verify; our referral link takes you to the current offer, at no extra cost to you.",
-    },
-    {
-      q: "How much does Trainual cost?",
-      a: "Trainual is priced on a subscription that scales with team size and plan. Because pricing changes and is often quoted after a demo, confirm the current cost on Trainual before committing.",
+      a: "Neither, as of 30 September 2026. Trainual's pricing page shows no free trial, and every plan leads to a demo. There is no Trainual discount code to find: Trainual does not publish one and Refer Labs does not have one.",
     },
     {
       q: "What is Trainual used for?",

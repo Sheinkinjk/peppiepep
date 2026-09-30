@@ -9,18 +9,21 @@ export const pipedriveConfig: AffiliatePageConfig = {
   eyebrow: "CRM & sales",
   affiliateUrl: PIPEDRIVE_URL,
   quickAnswer:
-    "Pipedrive is a sales CRM built around a visual pipeline: you drag deals through stages, log activities, and let automation handle the follow-up, so nothing stalls. New accounts get a 14-day free trial with no credit card; paid plans start at AU$19 per seat per month billed annually, read off Pipedrive's pricing page on 5 September 2026.",
+    "There is no Pipedrive discount code: Pipedrive publishes none and Refer Labs holds none. In Australia Pipedrive starts at AU$19 per seat a month billed annually (AU$228 a year) on its Lite plan, after a 14-day free trial with no credit card (pipedrive.com/en/pricing, read 30 September 2026). It is a sales CRM built around a visual, drag-and-drop deal pipeline.",
   offer: "14-day free trial, no card required",
+  // Re-read in a rendered browser on pipedrive.com/en/pricing, 30 September
+  // 2026: every AU$ figure and the trial terms matched the 5 Sep read.
+  offerCheckedOn: "2026-09-30",
   atAGlance: [
     { k: "Type", v: "Sales CRM / pipeline" },
     { k: "Best for", v: "Sales teams & SMBs" },
-    { k: "Pricing", v: "No free plan; from AU$19/seat/mo billed annually (5 Sep 2026)" },
+    { k: "Pricing", v: "No free plan; from AU$19/seat/mo billed annually (read 30 Sep 2026)" },
   ],
   hero: {
     h1Prefix: "Pipedrive:",
     h1Highlight: "the visual sales CRM that keeps deals moving",
     subheading:
-      "A deal-first CRM that shows your whole pipeline at a glance, automates the busywork, and reminds you who to chase, so your team sells instead of updating spreadsheets.",
+      "There is no Pipedrive discount code; in Australia Pipedrive costs from AU$19 per seat a month billed annually, after a 14-day free trial with no credit card (pipedrive.com/en/pricing, read 30 September 2026). It is a deal-first CRM that shows your whole pipeline at a glance and reminds you who to chase.",
     trustBullets: ["14-day free trial","No credit card to start","Visual drag-and-drop pipeline"],
   },
   banner: {
@@ -29,6 +32,15 @@ export const pipedriveConfig: AffiliatePageConfig = {
     buttonLabel: "Try Pipedrive free",
   },
   sections: [
+    {
+      heading: "How much does Pipedrive cost in Australia?",
+      paragraphs: [
+        "Pipedrive quotes Australian visitors in Australian dollars. Read on pipedrive.com/en/pricing on 30 September 2026, per seat a month billed annually: Lite AU$19 (AU$228 a year), Growth AU$49 (AU$588), Premium AU$79 (AU$948) and Ultimate AU$109 (AU$1,308). Growth adds full email sync and automations; Premium adds lead routing, scoring and e-signatures.",
+        "Pipedrive says annual billing saves up to 44% against monthly. Every plan starts with a 14-day free trial with no credit card. There is no free plan and no discount code: Pipedrive publishes none and Refer Labs holds none.",
+      ],
+      hasCta: true,
+      ctaText: "Try Pipedrive free",
+    },
     {
       heading: "What Pipedrive is for",
       paragraphs: [
@@ -51,8 +63,7 @@ export const pipedriveConfig: AffiliatePageConfig = {
   ],
   whyUseThis: ["A visual pipeline that shows deal status at a glance","Activity reminders so follow-ups never slip","Workflow automation for repetitive sales admin","Reporting to see what is winning and what is stuck"],
   faqs: [
-    { q: "Is there a Pipedrive free trial or discount code?", a: "Yes to the trial: new accounts get a 14-day free trial with no credit card. Pipedrive does not typically publish a public discount code; signing up through our referral link is the most reliable way to start, at no extra cost to you." },
-    { q: "How much does Pipedrive cost?", a: "Pipedrive quotes Australian visitors in Australian dollars, per seat per month billed annually: Lite AU$19 (AU$228 a year), Growth AU$49, Premium AU$79 and Ultimate AU$109. Read off pipedrive.com/en/pricing on 5 September 2026. Annual billing saves up to 44% against monthly on their own page. Check the current tiers before committing." },
+    { q: "Is there a Pipedrive free trial or discount code?", a: "There is a 14-day free trial with no credit card, per Pipedrive's pricing page on 30 September 2026, and no discount code: Pipedrive publishes none and Refer Labs holds none." },
     { q: "Does Pipedrive have a free plan?", a: "No, Pipedrive does not offer a permanent free plan; it offers a 14-day free trial instead. If you specifically need a free-forever CRM tier, a tool like a freemium CRM may suit better, but Pipedrive's trial lets you test everything first." },
     { q: "Is Pipedrive good for a small team?", a: "Yes, that is its sweet spot. It is built to be quick to set up and easy enough that a small sales team keeps it current, while still offering automation and reporting to run a pipeline properly." },
   ],

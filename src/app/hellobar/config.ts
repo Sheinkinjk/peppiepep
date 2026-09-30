@@ -7,19 +7,21 @@ export const helloBarConfig: AffiliatePageConfig = {
   badgeText: "Lead capture",
   eyebrow: "Lead generation & conversion",
   affiliateUrl: HELLOBAR_URL,
+  // Plans read on hellobar.com/pricing, rendered in a browser, 30 September 2026.
   quickAnswer:
-    "Hello Bar is a no-code tool for adding popups and notification bars to your website to capture emails, show announcements and drive clicks. It has a free plan and paid plans from US$29/month billed annually. You add it to any site without touching code.",
+    "Hello Bar is a no-code popup and notification-bar tool for capturing emails on your website. Its Starter plan is free forever for up to 5,000 popup views in total, and paid plans start with Growth at US$29 a month billed annually for 50,000 views a month, with no credit card required (hellobar.com/pricing, read 30 September 2026).",
   offer: "Free plan to start",
+  offerCheckedOn: "2026-09-30",
   atAGlance: [
     { k: "Type", v: "Popups & notification bars" },
     { k: "Best for", v: "On-site email capture & conversions" },
-    { k: "Pricing", v: "Free plan; paid from US$29/mo (annual)" },
+    { k: "Pricing", v: "Free to 5,000 lifetime views; Growth US$29/mo billed annually (read 30 Sep 2026)" },
   ],
   hero: {
     h1Prefix: "Hello Bar:",
     h1Highlight: "turn website visitors into subscribers",
     subheading:
-      "Add popups, sticky bars and targeted overlays to any website in minutes, no code, to grow your email list, promote an offer or point visitors where you want them. Connects to your email tools.",
+      "Hello Bar is free for up to 5,000 popup views, and its paid plans start at US$29 a month billed annually for 50,000 views a month (hellobar.com/pricing, read 30 September 2026). It adds popups, sticky bars and targeted overlays to any website without code, to grow an email list or promote an offer.",
     trustBullets: ["Free plan to start","No code, works on any site","Targeting and A/B testing"],
   },
   banner: {
@@ -28,6 +30,15 @@ export const helloBarConfig: AffiliatePageConfig = {
     buttonLabel: "Try Hello Bar free",
   },
   sections: [
+    {
+      heading: "How much does Hello Bar cost?",
+      paragraphs: [
+        "Read on hellobar.com/pricing on 30 September 2026, billed annually: Starter is free forever with unlimited popups, capped at 5,000 popup views in total over the account's life. Growth is US$29 a month for up to 50,000 views a month, Premium US$49 for 150,000, and Elite US$99 for 500,000. Every paid plan includes A/B testing, and agencies can ask for custom pricing.",
+        "Hello Bar says annual billing saves up to 24% against monthly, and none of the plans needs a credit card to start. Hello Bar runs no public discount code, and there is no Refer Labs code either. Because the free cap is lifetime rather than monthly, a site with steady traffic will reach it; plan on Growth if you expect to keep the popup running.",
+      ],
+      hasCta: true,
+      ctaText: "Try Hello Bar free",
+    },
     {
       heading: "What Hello Bar is for",
       paragraphs: [
@@ -50,8 +61,7 @@ export const helloBarConfig: AffiliatePageConfig = {
   ],
   whyUseThis: ["Popups, bars and overlays with no code","Targeting rules to show the right message","A/B testing to lift conversion rates","Connects to popular email and marketing tools"],
   faqs: [
-    { q: "Is Hello Bar free, and is there a discount code?", a: "Yes, Hello Bar has a free plan (with a lifetime cap on popup views and its branding shown). Paid plans from US$29/month billed annually add more views and remove branding. It does not publish a standard discount code; using our link takes you to the current plans, at no extra cost to you." },
-    { q: "How much does Hello Bar cost?", a: "The free plan covers a limited number of popup views. Paid plans start at US$29/month billed annually (Growth) for higher monthly view limits, with higher tiers for more traffic. Check the current plans for your traffic level before committing." },
+    { q: "Is Hello Bar free, and is there a discount code?", a: "Hello Bar's Starter plan is free forever, capped at 5,000 popup views over the life of the account (read 30 September 2026). There is no discount code: Hello Bar publishes none and Refer Labs holds none. Its published saving is up to 24% for annual billing." },
     { q: "Do I need to know how to code to use Hello Bar?", a: "No. You add a small snippet or a plugin once, then build and edit popups and bars in Hello Bar's editor without touching code. It works on most website platforms." },
     { q: "Will popups hurt my site or SEO?", a: "Used well, targeted popups grow your list without harming experience; used badly, intrusive popups can annoy visitors. Hello Bar's targeting and timing rules let you show them at sensible moments, which is the key to keeping conversions up without frustrating people." },
   ],

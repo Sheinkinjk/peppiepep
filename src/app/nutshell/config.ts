@@ -7,19 +7,23 @@ export const nutshellConfig: AffiliatePageConfig = {
   badgeText: "Sales CRM",
   eyebrow: "CRM & sales",
   affiliateUrl: NUTSHELL_URL,
+  // Plans and trial read on nutshell.com/pricing, rendered, 30 September 2026.
+  // The monthly/annual toggle did not change the displayed figures under a
+  // scripted click, so no billing period is attached to them here.
   quickAnswer:
-    "Nutshell is an easy-to-use sales CRM with marketing built in: pipeline and contact management, email sequences, web forms, landing pages and reporting in one tool. New accounts get a 14-day free trial with no credit card; paid plans start at US$13/user/month.",
+    "Nutshell is a sales CRM with email marketing, forms and landing pages built in, and its Foundation plan starts at US$13 per user a month, with a 14-day free trial and no credit card required (nutshell.com/pricing, read 30 September 2026). There are no seat minimums, and every plan includes unlimited contacts.",
   offer: "14-day free trial, no card required",
+  offerCheckedOn: "2026-09-30",
   atAGlance: [
     { k: "Type", v: "Sales CRM + marketing" },
     { k: "Best for", v: "SMB sales teams" },
-    { k: "Pricing", v: "No free plan; from US$13/user/mo" },
+    { k: "Pricing", v: "No free plan; Foundation US$13/user/mo (read 30 Sep 2026)" },
   ],
   hero: {
     h1Prefix: "Nutshell:",
     h1Highlight: "an easy sales CRM with marketing built in",
     subheading:
-      "A CRM that smaller sales teams use, pipeline and contact management, email sequences, web forms, landing pages and reporting in one place, without the cost or complexity of an enterprise platform.",
+      "Nutshell starts at US$13 per user a month after a 14-day free trial that needs no credit card (nutshell.com/pricing, read 30 September 2026). It puts pipeline and contact management, email sequences, web forms, landing pages and reporting in one CRM for smaller sales teams.",
     trustBullets: ["14-day free trial", "No credit card to start", "CRM and marketing in one"],
   },
   banner: {
@@ -28,6 +32,15 @@ export const nutshellConfig: AffiliatePageConfig = {
     buttonLabel: "Try Nutshell free",
   },
   sections: [
+    {
+      heading: "How much does Nutshell cost?",
+      paragraphs: [
+        "Read on nutshell.com/pricing on 30 September 2026, per user a month: Foundation US$13, Growth US$25, Pro US$42 (Nutshell's most popular, adding sales automation and five pipelines), Business US$59 and Enterprise US$79. Every plan includes unlimited contacts, email and calendar sync, the form builder, landing pages and email marketing tools, and there are no seat minimums.",
+        "Nutshell says annual billing saves 15%, and every plan starts with a 14-day free trial with no credit card. Neither Nutshell nor Refer Labs has a discount code to offer.",
+      ],
+      hasCta: true,
+      ctaText: "Try Nutshell free",
+    },
     {
       heading: "What Nutshell is for",
       paragraphs: [
@@ -57,11 +70,7 @@ export const nutshellConfig: AffiliatePageConfig = {
   faqs: [
     {
       q: "Is there a Nutshell free trial or discount code?",
-      a: "Yes to the trial: new accounts get a 14-day free trial with no credit card. Nutshell does not typically publish a public discount code; signing up through our referral link is the most reliable way to start, at no extra cost to you.",
-    },
-    {
-      q: "How much does Nutshell cost?",
-      a: "Nutshell is priced per user per month. Its entry Foundation plan starts at US$13/user/month, with the popular Pro plan US$42/user/month, and annual billing lowers the effective rate. Check the current tiers on Nutshell's pricing page before committing.",
+      a: "There is a 14-day free trial with no credit card, per Nutshell's pricing page on 30 September 2026, and there is no code: Nutshell publishes none and Refer Labs holds none.",
     },
     {
       q: "Does Nutshell include email marketing?",

@@ -38,14 +38,28 @@ function offerCode(offer: string): string | undefined {
  * global stamp on that page understates how current it is. Falls back to the
  * global stamp for offers with no per-offer date, which is what it means.
  */
-function verifiedStamp(brand: string): string {
+function verifiedStamp(brand: string, checkedOn?: string): string {
+  if (checkedOn) return `Checked & verified by Refer Labs, ${formatDay(checkedOn)}`;
   const d = DEALS.find((x) => x.brand === brand)?.verified;
-  return d ? formatVerified(d) : OFFERS_VERIFIED;
+  // No per-offer date means the last check was the global July sweep. Say when
+  // it was checked; do not call it verified as if the check were current.
+  return d ? `Checked & verified by Refer Labs, ${formatVerified(d)}` : `Last checked by Refer Labs, ${OFFERS_VERIFIED}`;
 }
 
-function dealRow(brand: string, offer: string) {
+/** "2026-09-30" -> "30 September 2026". */
+function formatDay(date: string): string {
+  const d = new Date(`${date}T00:00:00`);
+  if (isNaN(d.getTime())) return date;
+  return d.toLocaleDateString("en-AU", { day: "numeric", month: "long", year: "numeric" });
+}
+
+function dealRow(brand: string, offer: string, checkedOn?: string) {
   const real = DEALS.find((d) => d.brand === brand);
-  return real ?? { brand, offer, code: offerCode(offer) };
+  if (real) {
+    // A page re-read more recently than its DEALS row shows the newer date.
+    return checkedOn && (!real.verified || checkedOn > real.verified) ? { ...real, verified: checkedOn } : real;
+  }
+  return { brand, offer, code: offerCode(offer), verified: checkedOn };
 }
 
 function slugify(s: string) {
@@ -150,7 +164,7 @@ export default function PremiumAffiliateLanding({ config }: { config: AffiliateP
                       no agent is a quotable unit with nobody to cite. Do not trim the
                       name back out as redundant with the site it sits on: the unit
                       gets lifted away from the site. */}
-                  <p className="mt-1.5 text-[12px] font-medium text-[#56504a]">Checked &amp; verified by Refer Labs, {verifiedStamp(config.brand)}</p>
+                  <p className="mt-1.5 text-[12px] font-medium text-[#56504a]">{verifiedStamp(config.brand, config.offerCheckedOn)}</p>
                 </div>
               </div>
             )}
@@ -206,7 +220,7 @@ export default function PremiumAffiliateLanding({ config }: { config: AffiliateP
             <h2 className="text-lg font-extrabold text-[#14120f]">{config.brand} offer at a glance</h2>
             <div className="mt-4">
               <OffersTable
-                deals={[dealRow(config.brand, config.offer)]}
+                deals={[dealRow(config.brand, config.offer, config.offerCheckedOn)]}
                 caption={`${config.brand} discount code and current offer, verified`}
               />
             </div>

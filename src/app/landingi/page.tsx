@@ -38,7 +38,7 @@ const softwareSchema = {
   applicationCategory: "BusinessApplication",
   operatingSystem: "Web",
   description: "No-code landing-page builder for marketers, with a large template library, A/B testing, lead-capture forms and integrations.",
-  offers: { "@type": "Offer", price: "24", priceCurrency: "USD", description: "14-day free trial; paid plans from US$24/month.", availability: "https://schema.org/InStock" },
+  offers: { "@type": "Offer", price: "29", priceCurrency: "USD", description: "14-day free trial; Build plan listed at US$29 a month (landingi.com/pricing, read 30 September 2026).", availability: "https://schema.org/InStock" },
   url: "https://landingi.com",
   sameAs: ["https://landingi.com"],
 };

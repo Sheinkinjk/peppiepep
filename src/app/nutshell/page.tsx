@@ -38,7 +38,7 @@ const softwareSchema = {
   applicationCategory: "BusinessApplication",
   operatingSystem: "Web",
   description: "Easy-to-use sales CRM with built-in email marketing: pipeline and contact management, email sequences, web forms, landing pages and reporting.",
-  offers: { "@type": "Offer", price: "13", priceCurrency: "USD", description: "14-day free trial, no card; per-user plans from $13/user/month.", availability: "https://schema.org/InStock" },
+  offers: { "@type": "Offer", price: "13", priceCurrency: "USD", description: "14-day free trial, no card; Foundation from US$13 per user a month (nutshell.com/pricing, read 30 September 2026).", availability: "https://schema.org/InStock" },
   url: "https://www.nutshell.com",
   sameAs: ["https://www.nutshell.com"],
 };

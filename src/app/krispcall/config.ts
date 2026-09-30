@@ -7,18 +7,19 @@ export const krispcallConfig: AffiliatePageConfig = {
   badgeText: "Business phone",
   eyebrow: "Business phone & calling",
   affiliateUrl: KRISPCALL_URL,
+  // Plans read on krispcall.com/pricing, rendered in a browser, 30 September 2026.
   quickAnswer:
-    "KrispCall is a cloud phone system that gives teams virtual phone numbers in many countries, a shared call inbox, recording, SMS and CRM integrations, without physical hardware. Check the current plan and any trial on the signup page before you commit.",
+    "KrispCall is a cloud phone system for teams, and its Starter plan costs US$12 per user a month billed annually, including one free US, Canadian or UK number per user (krispcall.com/pricing, read 30 September 2026). It has no free plan or free trial; KrispCall offers a 14-day refund on the subscription instead. It handles calls, SMS, IVR and CRM sync from a browser or mobile app.",
   atAGlance: [
     { k: "Type", v: "Cloud phone / virtual numbers" },
     { k: "Best for", v: "Remote & distributed teams" },
-    { k: "Pricing", v: "No free plan; from US$12/user/mo (annual)" },
+    { k: "Pricing", v: "No free plan; Starter US$12/user/mo billed annually (read 30 Sep 2026)" },
   ],
   hero: {
     h1Prefix: "KrispCall:",
     h1Highlight: "virtual phone numbers and a shared inbox for your team",
     subheading:
-      "A cloud telephony platform for getting local and international numbers, handling calls and texts in one unified inbox, and keeping everything logged against your CRM, all from the browser and mobile app.",
+      "KrispCall starts at US$12 per user a month billed annually, with one free US, Canadian or UK number per user and a 14-day refund on the subscription (krispcall.com/pricing, read 30 September 2026). It is a cloud phone system for calls and texts in one team inbox, logged against your CRM, from the browser or mobile app.",
     trustBullets: ["Numbers in many countries", "Shared team call inbox", "Works from browser & mobile"],
   },
   banner: {
@@ -27,6 +28,15 @@ export const krispcallConfig: AffiliatePageConfig = {
     buttonLabel: "See KrispCall",
   },
   sections: [
+    {
+      heading: "How much does KrispCall cost?",
+      paragraphs: [
+        "Read on krispcall.com/pricing on 30 September 2026, billed annually per user a month: Starter is US$12 for teams of up to five, with 200 outbound and 200 inbound call minutes and 100 SMS segments per user. Advance is US$32 for teams of up to 50, adding call recording, transfers and transcripts, with 1,000 minutes each way. Max is US$48 with unlimited inbound and outbound calling. Each plan includes one free US, Canadian or UK number per user; numbers in other countries cost extra.",
+        "KrispCall says annual billing saves 20%. There is no free plan and no free trial; each plan carries a 14-day refund on the subscription. A banner on the same page offered up to two months free to businesses switching to KrispCall, on KrispCall's own terms. KrispCall publishes no discount code and Refer Labs holds none.",
+      ],
+      hasCta: true,
+      ctaText: "See KrispCall",
+    },
     {
       heading: "What KrispCall is for",
       paragraphs: [
@@ -56,11 +66,7 @@ export const krispcallConfig: AffiliatePageConfig = {
   faqs: [
     {
       q: "Is there a KrispCall free trial or discount code?",
-      a: "KrispCall's current plans and any trial are shown on its signup page, check there for the latest terms. We don't publish a promo code we can't verify; signing up through our referral link is the reliable way to reach the current offer, at no extra cost to you.",
-    },
-    {
-      q: "How much does KrispCall cost?",
-      a: "KrispCall is priced per user per month, and numbers can add to the total depending on country and type. Confirm the current per-seat and per-number cost on KrispCall before committing, since pricing changes.",
+      a: "No free trial and no code. KrispCall's pricing page offers a 14-day refund on the subscription instead of a trial, and a switching offer of up to two months free (read 30 September 2026). There is no KrispCall discount code to find: KrispCall does not publish one and Refer Labs does not have one.",
     },
     {
       q: "Can I get an international phone number with KrispCall?",

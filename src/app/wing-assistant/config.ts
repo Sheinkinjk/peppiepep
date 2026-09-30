@@ -8,18 +8,24 @@ export const wingAssistantConfig: AffiliatePageConfig = {
   eyebrow: "Virtual assistants",
   affiliateUrl: WING_ASSISTANT_URL,
   quickAnswer:
-    "Wing Assistant is a managed virtual-assistant service: you get a dedicated assistant for admin, sales, marketing, support or other roles, and Wing handles hiring, management and accountability, so it's not a freelancer marketplace. Pricing is quoted per plan; you can book a free consultation to scope it.",
+    "There is no Wing Assistant discount code: Wing publishes none and Refer Labs holds none. What Wing offers is a free, no-obligation 15-minute consultation, and it now publishes fixed monthly prices for a general virtual assistant, part-time (80 hours a month) or full-time (160 hours), on its own pricing page (wingassistant.com, read 30 September 2026). Wing is a managed service: it recruits, trains and supervises a dedicated assistant for you.",
+  // wingassistant.com/pricing (redirects to the homepage pricing block),
+  // rendered 30 September 2026: GVA Part-Time and Full-Time plans with fixed
+  // monthly prices, "Free, No obligation, 15 minutes" consultation. The old
+  // "quote-based" wording was wrong and was replaced. The figures themselves are
+  // not printed here, per the 27 Sep 2026 decision not to add partner prices.
   offer: "Free 15-minute consultation",
+  offerCheckedOn: "2026-09-30",
   atAGlance: [
     { k: "Type", v: "Managed virtual assistants" },
     { k: "Best for", v: "Delegating recurring work" },
-    { k: "Pricing", v: "Quote-based; part-time & full-time plans" },
+    { k: "Pricing", v: "Fixed monthly plans: part-time 80 hrs or full-time 160 hrs (checked 30 Sep 2026)" },
   ],
   hero: {
     h1Prefix: "Wing Assistant:",
     h1Highlight: "a managed virtual assistant, without the hiring headache",
     subheading:
-      "Delegate admin, sales, marketing, support and more to a dedicated assistant, with Wing handling recruitment, training and management so you get the output without running the hiring process yourself.",
+      "Wing Assistant has no discount code; its published offer is a free 15-minute consultation, and its fixed monthly plans for a part-time or full-time assistant are listed on its own pricing page (wingassistant.com, read 30 September 2026). You delegate admin, sales, marketing or support work, and Wing handles recruitment, training and supervision.",
     trustBullets: ["Dedicated assistant", "Managed, not a marketplace", "Free consultation to start"],
   },
   banner: {
@@ -28,6 +34,15 @@ export const wingAssistantConfig: AffiliatePageConfig = {
     buttonLabel: "See Wing Assistant",
   },
   sections: [
+    {
+      heading: "Is there a Wing Assistant discount code?",
+      paragraphs: [
+        "No. Neither Wing Assistant nor Refer Labs has a discount, promo or coupon code to offer. The offer Wing does publish, read on its site on 30 September 2026, is a free, no-obligation consultation of about 15 minutes to scope the work.",
+        "Wing now lists fixed monthly prices for a general virtual assistant: a part-time plan with 80 hours a month and a full-time plan with 160 hours a month, which Wing marks as a 16% saving. Both include a dedicated assistant, a customer success manager and free replacement if the fit is wrong. Other roles in operations, sales, marketing and support are available on request.",
+      ],
+      hasCta: true,
+      ctaText: "Book a free Wing consultation",
+    },
     {
       heading: "What Wing Assistant is",
       paragraphs: [
@@ -56,12 +71,8 @@ export const wingAssistantConfig: AffiliatePageConfig = {
   ],
   faqs: [
     {
-      q: "Is there a Wing Assistant discount code?",
-      a: "Wing Assistant doesn't use a typed discount code. You can book a free 15-minute consultation through the link on this page to scope pricing for your needs. Offers can change over time.",
-    },
-    {
       q: "How does Wing Assistant pricing work?",
-      a: "Wing quotes pricing per plan rather than publishing a single fixed rate, and it depends on the hours and roles you need. The free consultation is where you scope the work and get current pricing, verify the terms before committing.",
+      a: "Wing publishes fixed monthly prices for a general virtual assistant on its own site: a part-time plan with 80 hours a month and a full-time plan with 160 hours (read 30 September 2026). Specialist roles are scoped on the free consultation.",
     },
     {
       q: "Is Wing Assistant a freelancer marketplace?",

@@ -48,7 +48,8 @@ const webPageSchema = {
   isPartOf: { "@id": `${SITE_URL}/#website` },
 };
 
-// Pricing is not published publicly, so no Offer with a price is asserted.
+// The Payroll plan is listed at $10 (AUD) on employmenthero.com/pricing, read
+// 30 September 2026. The card prints no billing period, so none is asserted.
 const softwareSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
@@ -57,6 +58,13 @@ const softwareSchema = {
   operatingSystem: "Web, iOS, Android",
   description:
     "Australian-built, all-in-one HR, payroll and employment platform: HR and people operations, ATO-certified Single Touch Payroll (STP Phase 2), AI recruitment and applicant tracking, employee benefits and earned wage access, and an employee app. Fair Work and ATO compliant.",
+  offers: {
+    "@type": "Offer",
+    price: "10",
+    priceCurrency: "AUD",
+    description: "Payroll plan listed at $10 with a minimum of 10 users; Employment Unlimited quoted by sales (employmenthero.com/pricing, read 30 September 2026).",
+    availability: "https://schema.org/InStock",
+  },
   url: "https://employmenthero.com",
   sameAs: ["https://employmenthero.com"],
 };

@@ -72,6 +72,16 @@ export interface AffiliatePageConfig {
   offer?: string;
 
   /**
+   * ISO date (e.g. "2026-09-30") on which the offer was last re-read on the
+   * vendor's own page. Set it ONLY when that page was actually opened that day.
+   * It beats the DEALS `verified` date and the global OFFERS_VERIFIED fallback.
+   * Without it, a brand with no DEALS date shows "Last checked" with the global
+   * sweep month, which states when the offer was checked without implying a
+   * fresh check.
+   */
+  offerCheckedOn?: string;
+
+  /**
    * Show the "Independent guide · How we research" trust line under the hero.
    * Kept ON only for health/YMYL pages (where Google + AI scrutinise trust
    * hardest); off elsewhere for a cleaner, more conversion-focused layout.

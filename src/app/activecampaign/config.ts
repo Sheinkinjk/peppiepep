@@ -7,19 +7,22 @@ export const activeCampaignConfig: AffiliatePageConfig = {
   badgeText: "Email & automation",
   eyebrow: "Email marketing & automation",
   affiliateUrl: ACTIVECAMPAIGN_URL,
+  // Prices read in AUD on activecampaign.com/pricing, rendered in a browser,
+  // 30 September 2026; the 14-day, no-card trial read on the same page.
   quickAnswer:
-    "ActiveCampaign is an email marketing and automation platform with a built-in CRM: email campaigns, powerful automations, segmentation and sales tools in one place. New accounts get a 14-day free trial with no credit card; paid plans start at US$15/month for 1,000 contacts billed annually, rising with your list size.",
+    "ActiveCampaign is an email marketing and automation platform with a built-in CRM. In Australian dollars its Starter plan starts at A$23 a month for 1,000 contacts billed annually, and new accounts get a 14-day free trial with no credit card (activecampaign.com/pricing, read 30 September 2026). Every plan's price rises with the size of your list.",
   offer: "14-day free trial, no card required",
+  offerCheckedOn: "2026-09-30",
   atAGlance: [
     { k: "Type", v: "Email marketing / automation / CRM" },
     { k: "Best for", v: "SMBs wanting advanced automation" },
-    { k: "Pricing", v: "No free plan; from US$15/mo (1,000 contacts)" },
+    { k: "Pricing", v: "No free plan; from A$23/mo billed annually, 1,000 contacts (read 30 Sep 2026)" },
   ],
   hero: {
     h1Prefix: "ActiveCampaign:",
     h1Highlight: "email marketing with serious automation",
     subheading:
-      "Run email campaigns, then layer on automations that react to what each contact does, with segmentation and a built-in CRM, so your follow-up is personal without being manual.",
+      "ActiveCampaign is email marketing with a visual automation builder and a built-in CRM, and in Australia it starts at A$23 a month for 1,000 contacts billed annually, after a 14-day free trial that needs no card (activecampaign.com/pricing, read 30 September 2026). It suits a business that has outgrown send-and-hope newsletters.",
     trustBullets: ["14-day free trial","No credit card to start","Advanced automation builder"],
   },
   banner: {
@@ -28,6 +31,15 @@ export const activeCampaignConfig: AffiliatePageConfig = {
     buttonLabel: "Try ActiveCampaign free",
   },
   sections: [
+    {
+      heading: "How much does ActiveCampaign cost in Australia?",
+      paragraphs: [
+        "Read in Australian dollars on activecampaign.com/pricing on 30 September 2026, for 1,000 email contacts billed annually: Starter A$23 a month (one user, five actions per automation), Plus A$74 (unlimited automation actions, landing pages), Pro A$119 (three users, advanced segmentation and conditional content) and Enterprise A$218 (five users, SSO and a dedicated account team).",
+        "Those are starting prices. Every plan rises as your contact count grows, so price your real list size on ActiveCampaign's own page before you commit. There is no free plan and no discount code; the published offers are the 14-day free trial with no card and ActiveCampaign's own 30-day results guarantee, which offers your money back.",
+      ],
+      hasCta: true,
+      ctaText: "Try ActiveCampaign free",
+    },
     {
       heading: "What ActiveCampaign is for",
       paragraphs: [
@@ -50,8 +62,7 @@ export const activeCampaignConfig: AffiliatePageConfig = {
   ],
   whyUseThis: ["A powerful visual automation builder","Email, segmentation and a CRM in one tool","Automations that react to each contact's behaviour","Scales from newsletters to full lifecycle marketing"],
   faqs: [
-    { q: "Is there an ActiveCampaign free trial or discount code?", a: "Yes to the trial: new accounts get a 14-day free trial, no credit card required. ActiveCampaign does not typically publish a public discount code; signing up through our referral link is the most reliable way to start, at no extra cost to you." },
-    { q: "How much does ActiveCampaign cost?", a: "Pricing is by contact volume. The entry Starter plan begins at US$15/month for 1,000 contacts billed annually, with the popular Pro plan US$79/month; every plan's price rises as your list grows. Check the current tiers for your list size before committing." },
+    { q: "Is there an ActiveCampaign free trial or discount code?", a: "There is a trial and no code. New accounts get a 14-day free trial with no credit card, per ActiveCampaign's pricing page on 30 September 2026. Neither ActiveCampaign nor Refer Labs has a discount code to offer." },
     { q: "Does ActiveCampaign have a free plan?", a: "No, there is no permanent free plan; it offers a 14-day free trial instead. If you only need a simple free newsletter tool, a freemium email platform may suit better, but the trial lets you test the automation first." },
     { q: "ActiveCampaign vs a basic email tool, what's the difference?", a: "Basic tools send broadcasts to a list. ActiveCampaign adds an automation engine that reacts to each contact's behaviour, plus segmentation and a CRM, so follow-up is personalised and hands-off. It is the step up when send-and-hope email stops being enough." },
   ],
@@ -71,5 +82,5 @@ export const activeCampaignConfig: AffiliatePageConfig = {
     bottomButton: "Continue to ActiveCampaign",
   },
   disclaimer:
-    "This page contains a disclosed affiliate link. If you sign up through it we may earn a commission at no extra cost to you, and it never changes our assessment. Pricing and offers change, check current terms on ActiveCampaign before committing.",
+    "This page contains a disclosed affiliate link. If you sign up through it we may earn a commission at no extra cost to you, and it never changes our assessment. Prices were read in AUD on ActiveCampaign's pricing page on 30 September 2026 and can change; view the latest pricing on ActiveCampaign's own site.",
 };

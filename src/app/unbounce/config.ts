@@ -24,7 +24,7 @@ export const unbounceConfig: AffiliatePageConfig = {
     h1Prefix: "Unbounce:",
     h1Highlight: "20% off three months, or 35% off the year",
     subheading:
-      "A landing-page and conversion platform built for people spending money on traffic. New customers get 20% off the first three months, or 35% off the first full year on annual billing, applied automatically through the link on this page.",
+      "There is no Unbounce code to type: new customers get 20% off the first three months, or 35% off the first full year on annual billing, applied automatically through the link on this page. Unbounce is a landing-page and conversion platform built for people spending money on traffic.",
     trustBullets: [
       "20% off your first three months",
       "Or 35% off your first full year on annual billing",
@@ -39,9 +39,9 @@ export const unbounceConfig: AffiliatePageConfig = {
   },
   sections: [
     {
-      heading: "What the offer is",
+      heading: "Is there an Unbounce discount code?",
       paragraphs: [
-        "Two options, and you pick by choosing your billing term rather than by entering anything. On monthly billing you get 20% off your first three months. On an annual plan you get 35% off your first bill, covering the whole year.",
+        "There is no code to type; the discount comes through the referral link. Two options, and you pick by choosing your billing term rather than by entering anything. On monthly billing you get 20% off your first three months. On an annual plan you get 35% off your first bill, covering the whole year.",
         "It is a new-customer offer, so it will not apply to an existing account. There is no code to type: Unbounce's invitation page carries the discount into the sign-up flow when you arrive through a referral link.",
       ],
     },
@@ -73,8 +73,8 @@ export const unbounceConfig: AffiliatePageConfig = {
   ],
   faqs: [
     {
-      q: "Is there an Unbounce discount code?",
-      a: "There is no code to type. The current offer is 20% off your first three months, or 35% off your first full year if you choose annual billing, and it is applied automatically when you start through the referral link on this page. Unbounce states it on its own invitation page, where we verified it on 27 September 2026. It is for new customers only.",
+      q: "How do I get the Unbounce 20% or 35% discount?",
+      a: "Start through the referral link on this page. The current offer is 20% off your first three months, or 35% off your first full year if you choose annual billing, and it is applied automatically. Unbounce states it on its own invitation page, where we verified it on 27 September 2026. It is for new customers only.",
     },
     {
       q: "Should I take the 20% or the 35% Unbounce offer?",
