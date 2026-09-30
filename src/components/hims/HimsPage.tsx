@@ -539,7 +539,7 @@ function BlockView({ block, ctx, kind }: { block: Block; ctx: Ctx; kind: "review
       return (
         <section>
           <H2 id={block.id}>{block.heading}</H2>
-          <div className="mt-6 grid gap-4 md:grid-cols-2">
+          <div className={`mt-6 grid gap-4 ${block.notFor?.length ? "md:grid-cols-2" : ""}`}>
             <div className="nw-card rounded-2xl p-6">
               <h3 className="font-bold text-[#14120f]">It suits you if</h3>
               <ul className="mt-3 space-y-2.5">
@@ -551,6 +551,7 @@ function BlockView({ block, ctx, kind }: { block: Block; ctx: Ctx; kind: "review
                 ))}
               </ul>
             </div>
+            {block.notFor?.length ? (
             <div className="rounded-2xl border border-[#ded8cd] bg-[#f7f4ee] p-6">
               <h3 className="font-bold text-[#14120f]">Look elsewhere if</h3>
               <ul className="mt-3 space-y-2.5">
@@ -562,6 +563,7 @@ function BlockView({ block, ctx, kind }: { block: Block; ctx: Ctx; kind: "review
                 ))}
               </ul>
             </div>
+            ) : null}
           </div>
         </section>
       );

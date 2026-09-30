@@ -11,7 +11,7 @@ export const weight: HimsPageContent = {
   eyebrow: "Men's weight loss telehealth · Australia",
   h1: "Hims weight loss Australia: the consultation, the commitment and the code",
   standfirst:
-    "Hims is the men's telehealth service formerly called Pilot. Its weight loss program starts with a free two-minute quiz and a phone consultation with an Australian practitioner, who decides whether any treatment is appropriate. The advertised starting offer carries a twelve-month pay-upfront commitment, and Hims gives a full refund if you contact it within 30 days of starting (terms apply). With the Refer Labs code, new patients pay nothing for the initial consultation; program fees apply.",
+    "Hims is the Australian service of Hims & Hers Health, the US-listed telehealth company, and the men's health brand formerly called Pilot. It runs online consultations with Australian-registered practitioners for weight loss, hair loss, skin and sexual health. Its weight loss program starts with a free two-minute quiz and a phone consultation, and the practitioner decides whether any treatment is appropriate. The advertised starting offer carries a twelve-month pay-upfront commitment, with a full refund if you contact Hims within 30 days of starting (terms apply). With the Refer Labs code, new patients pay nothing for the initial consultation; program fees apply.",
   hub: { label: "Weight loss", href: "/weight-loss" },
   verdictQuestion: "Is Hims weight loss worth it?",
   verdict: [
@@ -80,16 +80,6 @@ export const weight: HimsPageContent = {
       ],
     },
     {
-      type: "prose",
-      id: "why-no-names",
-      heading: "Why doesn't Hims say what the treatment is?",
-      paragraphs: [
-        "Australian advertising law does not allow telehealth services, or sites like Refer Labs that write about them, to name the specific treatments a practitioner may recommend. The rule applies to every provider in the category.",
-        "Hims says this on its own FAQ: advertising regulations stop it being more specific before the consultation, and on the phone the practitioner can discuss the options freely.",
-        "Before the consultation, compare providers on how easy it is to reach a practitioner, how long you're committed for, what happens if you want to stop, and what support looks like after the first month.",
-      ],
-    },
-    {
       type: "ledger",
       id: "included",
       heading: "What's included once you're on a Hims weight loss plan?",
@@ -113,13 +103,6 @@ export const weight: HimsPageContent = {
         "You expect a program to run for months, and a twelve-month commitment matches how you think about it.",
         "You may want hair loss or sexual health support later, since Hims covers both.",
       ],
-      notFor: [
-        "You want to try a program for a single month. Ask about monthly options on the consultation before you pay.",
-        "You're a woman. Hims in Australia describes its plans as plans for men.",
-        "You've been a Hims or Pilot patient before. You can still use Hims, but new-patient offers, including ours, won't apply.",
-        "You want to be seen face to face. Hims consults by phone.",
-        "You want to claim on Medicare. Hims' FAQ says its plans are not claimable.",
-      ],
     },
     {
       type: "questions",
@@ -140,7 +123,7 @@ export const weight: HimsPageContent = {
       id: "about",
       heading: "Is Hims the same as Pilot?",
       paragraphs: [
-        "Yes. Pilot's website says Pilot has joined the Hims & Hers group, and clicking through from pilot.com.au leads to the Hims quiz. Hims & Hers Health, the US-listed telehealth company, completed its purchase of Eucalyptus, Pilot's parent company, on 2 June 2026.",
+        "Yes. Hims & Hers Health, the US-listed telehealth company, completed its acquisition of Eucalyptus, the Australian company behind Pilot, on 2 June 2026, which marked Hims & Hers' entry into Australia. Pilot is now rebranding as Hims: pilot.com.au says Pilot has joined the Hims & Hers group, and clicking through from Pilot's site opens the Hims quiz (read 1 October 2026). The acquisition announcement says patients already receiving care through Pilot continue without interruption.",
         "If you're searching for Pilot weight loss reviews or a Pilot discount code in Australia, Hims is the service you're now looking for. Former Pilot patients count as previous patients for Hims' new-patient offers.",
       ],
     },

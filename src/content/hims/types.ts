@@ -25,7 +25,7 @@ export type Block =
   | { type: "prose"; id: string; heading: string; paragraphs: string[] }
   | { type: "ledger"; id: string; heading: string; intro?: string; rows: LedgerRow[] }
   | { type: "steps"; id: string; heading: string; intro?: string; steps: { title: string; body: string }[] }
-  | { type: "fit"; id: string; heading: string; suits: string[]; notFor: string[] }
+  | { type: "fit"; id: string; heading: string; suits: string[]; notFor?: string[] }
   | { type: "questions"; id: string; heading: string; intro?: string; items: string[] }
   /** Review pages: the Hims code box. Versus pages: both providers' offer terms, side by side. */
   | { type: "offer"; id: string; vertical: Vertical }
