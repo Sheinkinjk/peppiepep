@@ -58,7 +58,7 @@ export const APOLLO_GUIDES: ApolloGuideEntry[] = [
         h: "Why the installer matters as much as the battery",
         body: [
           "A battery is a long-lived, high-value piece of electrical equipment wired into your home, so who installs it shapes both safety and how well it performs. The markers worth checking are SAA accreditation, a valid electrical licence, and a real workmanship warranty alongside the manufacturer's.",
-          "Apollo Energy Group is one SAA-accredited Australian installer (Electrical Licence 400672, 10-year battery warranty) that sizes systems from your real usage and applies the federal rebate at the point of sale. Refer Labs readers get $500 off their quote through our link, on top of the rebate.",
+          "Apollo Energy Group is one SAA-accredited Australian installer (Electrical Licence 400672C, 10-year battery warranty) that sizes systems from your real usage and applies the federal rebate at the point of sale. Refer Labs readers get $500 off their quote through our link, on top of the rebate.",
         ],
       },
     ],
@@ -158,7 +158,7 @@ export const APOLLO_GUIDES: ApolloGuideEntry[] = [
         h: "Getting both, without the paperwork headache",
         body: [
           "The cleanest way to capture both is to use an installer who handles the federal rebate at the point of sale and can connect you to an eligible VPP. That keeps the federal discount off your upfront price and sets up the NSW VPP incentive rather than leaving you to navigate it alone.",
-          "Apollo Energy Group is a NSW-based, SAA-accredited installer (Electrical Licence 400672, 10-year battery warranty) that applies the federal rebate at the point of sale. Refer Labs readers also get $500 off their quote through our link, on top of the rebates above.",
+          "Apollo Energy Group is a NSW-based, SAA-accredited installer (Electrical Licence 400672C, 10-year battery warranty) that applies the federal rebate at the point of sale. Refer Labs readers also get $500 off their quote through our link, on top of the rebates above.",
         ],
       },
     ],
@@ -207,7 +207,7 @@ export const APOLLO_GUIDES: ApolloGuideEntry[] = [
       {
         h: "One NSW-based, accredited option",
         body: [
-          "Apollo Energy Group is a NSW-based, SAA-accredited installer (Electrical Licence 400672, ABN 55697998208), offering systems in the 9kWh to 54kWh range with a 10-year battery warranty. It sizes from your real usage and applies the federal rebate at the point of sale.",
+          "Apollo Energy Group is a NSW-based, SAA-accredited installer (Electrical Licence 400672C, ABN 55697998208), offering systems in the 9kWh to 54kWh range with a 10-year battery warranty. It sizes from your real usage and applies the federal rebate at the point of sale.",
           "Refer Labs readers get $500 off an Apollo quote through our link, on top of the federal rebate. As with any installer, get the sizing, warranty and rebate detail in writing before you commit.",
         ],
       },
@@ -215,7 +215,7 @@ export const APOLLO_GUIDES: ApolloGuideEntry[] = [
     faqs: [
       { q: "What should I check in a NSW home battery installer?", a: "SAA accreditation, a valid electrical licence, written manufacturer and workmanship warranties, whether they apply the federal rebate at the point of sale, whether they can connect you to a VPP for the NSW incentive, and whether they size the system from your actual usage rather than selling a default package." },
       { q: "Does the installer apply the rebate or do I claim it?", a: "A good installer applies the federal Cheaper Home Batteries rebate at the point of sale, so it comes off your quoted price rather than being claimed back later. In NSW they can also connect you to an eligible Virtual Power Plant, which is what unlocks the state incentive." },
-      { q: "Is Apollo Energy a legitimate NSW installer?", a: "Apollo Energy Group is a NSW-based, SAA-accredited installer with Electrical Licence 400672 and ABN 55697998208, offering a 10-year battery warranty. You can read our fuller review, and as with any installer, get the sizing, warranty and rebate detail in writing before committing." },
+      { q: "Is Apollo Energy a legitimate NSW installer?", a: "Apollo Energy Group is a NSW-based, SAA-accredited installer with Electrical Licence 400672C and ABN 55697998208, offering a 10-year battery warranty. You can read our fuller review, and as with any installer, get the sizing, warranty and rebate detail in writing before committing." },
       { q: "How much does installation cost in NSW?", a: "It depends on the battery size, your switchboard and whether backup is included, and the federal rebate comes off at the point of sale. Rather than a headline figure, get a quote sized to your usage that shows the price after the rebate. Refer Labs readers get $500 off an Apollo quote through our link." },
     ],
     related: [R.review, R.hub, R.rebate, R.cost, R.calc],
@@ -256,7 +256,7 @@ export const APOLLO_GUIDES: ApolloGuideEntry[] = [
       {
         h: "One accredited option that covers Sydney",
         body: [
-          "Apollo Energy Group is a NSW-based, SAA-accredited installer (Electrical Licence 400672, ABN 55697998208) that services Sydney, offering systems from 9kWh to 54kWh with a 10-year battery warranty. It sizes from your real usage and applies the federal rebate at the point of sale.",
+          "Apollo Energy Group is a NSW-based, SAA-accredited installer (Electrical Licence 400672C, ABN 55697998208) that services Sydney, offering systems from 9kWh to 54kWh with a 10-year battery warranty. It sizes from your real usage and applies the federal rebate at the point of sale.",
           "Refer Labs readers get $500 off an Apollo quote through our link, on top of the federal rebate and any NSW VPP incentive. As with any Sydney installer, get the sizing, warranty and rebate detail in writing before you commit.",
         ],
       },
@@ -265,7 +265,7 @@ export const APOLLO_GUIDES: ApolloGuideEntry[] = [
       { q: "How do I choose a home battery installer in Sydney?", a: "Check SAA accreditation and a valid NSW electrical licence, get both the manufacturer and workmanship warranties in writing, confirm they apply the federal rebate at the point of sale and can connect you to a VPP for the NSW incentive, and make sure the quote is sized from your actual usage rather than a default package." },
       { q: "How much does home battery installation cost in Sydney?", a: "It depends on the battery size, your switchboard, and whether you want blackout backup, and the federal rebate comes off at the point of sale. Rather than a headline figure, get a quote sized to your usage that shows the price after the rebate. Refer Labs readers get $500 off an Apollo quote through our link." },
       { q: "Can I get the NSW rebate on a battery in Sydney?", a: "Yes. Sydney is in NSW, so both the federal Cheaper Home Batteries rebate (applied at sale) and the NSW VPP incentive (roughly $40 per usable kWh, capped at 28kWh) apply. An installer who handles both keeps the federal discount off your upfront price and sets up the VPP connection." },
-      { q: "Does Apollo Energy install in Sydney?", a: "Apollo Energy Group is a NSW-based, SAA-accredited installer that services Sydney, with Electrical Licence 400672 and a 10-year battery warranty. Refer Labs readers get $500 off a quote through our link. As with any installer, confirm the sizing, warranty and rebate detail in writing first." },
+      { q: "Does Apollo Energy install in Sydney?", a: "Apollo Energy Group is a NSW-based, SAA-accredited installer that services Sydney, with Electrical Licence 400672C and a 10-year battery warranty. Refer Labs readers get $500 off a quote through our link. As with any installer, confirm the sizing, warranty and rebate detail in writing first." },
     ],
     related: [{ href: "/home-battery-installer-nsw", label: "Choosing a NSW installer" }, R.review, R.hub, R.rebate, R.cost],
   },
@@ -354,7 +354,7 @@ export const APOLLO_GUIDES: ApolloGuideEntry[] = [
         h: "Getting backup specified properly",
         body: [
           "Because backup adds hardware and changes the wiring, it is something to raise with your installer at the quote stage rather than assume. A good installer will tell you whether whole-home backup is practical for your switchboard or whether essential-circuit backup is the sensible option, and what each costs.",
-          "Apollo Energy Group is a NSW-based, SAA-accredited installer (Electrical Licence 400672) that sizes systems from your real usage and can specify backup as part of the quote. Refer Labs readers get $500 off through our link, on top of the federal rebate. Confirm exactly what backup you are getting, and what it covers, in writing.",
+          "Apollo Energy Group is a NSW-based, SAA-accredited installer (Electrical Licence 400672C) that sizes systems from your real usage and can specify backup as part of the quote. Refer Labs readers get $500 off through our link, on top of the federal rebate. Confirm exactly what backup you are getting, and what it covers, in writing.",
         ],
       },
     ],
@@ -403,7 +403,7 @@ export const APOLLO_GUIDES: ApolloGuideEntry[] = [
         h: "Getting a package quoted properly",
         body: [
           "A good installer builds the quote from your usage: your daily consumption, how much of it is after dark, your roof, and what you want the system to do. The quote should show the panels, the battery, both sets of incentives applied, and any workmanship warranty, so you see the real out-the-door price.",
-          "Apollo Energy Group is a NSW-based, SAA-accredited installer (Electrical Licence 400672) that sizes solar and battery together from your real usage and applies the rebates at the point of sale. Refer Labs readers get $500 off the quote through our link, on top of the rebates.",
+          "Apollo Energy Group is a NSW-based, SAA-accredited installer (Electrical Licence 400672C) that sizes solar and battery together from your real usage and applies the rebates at the point of sale. Refer Labs readers get $500 off the quote through our link, on top of the rebates.",
         ],
       },
     ],
@@ -453,7 +453,7 @@ export const APOLLO_GUIDES: ApolloGuideEntry[] = [
         h: "Getting alternatives sized to your home",
         body: [
           "Rather than start from a brand, start from your usage. A good installer looks at how much power you use after dark, how much surplus solar you have to charge a battery, and whether backup matters to you, then recommends a battery sized to that. This is where a Powerwall alternative often wins or loses on the numbers.",
-          "Apollo Energy Group is a NSW-based, SAA-accredited installer (Electrical Licence 400672) that sizes systems from your real usage and applies the federal rebate at the point of sale. Refer Labs readers get $500 off the quote through our link, on top of the rebate.",
+          "Apollo Energy Group is a NSW-based, SAA-accredited installer (Electrical Licence 400672C) that sizes systems from your real usage and applies the federal rebate at the point of sale. Refer Labs readers get $500 off the quote through our link, on top of the rebate.",
         ],
       },
     ],

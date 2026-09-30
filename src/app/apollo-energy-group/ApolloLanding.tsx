@@ -1,4 +1,5 @@
 import Link from "next/link";
+import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 import BatteryDeadlineNote from "@/components/consumer/BatteryDeadlineNote";
 import { HubObject } from "@/components/home/Objects";
 import { APOLLO_ENERGY_LEAD_HREF, glance, steps, faqs } from "./config";
@@ -60,7 +61,7 @@ export default function ApolloLanding() {
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-[#56504a]">
               Apollo Energy Group is a Sydney-based, SAA-accredited solar battery (home battery) company. Register your
               interest below and a specialist gets in touch within 2 business days, with $500 off your quote on top of the
-              federal and NSW government rebates. No hype, no invented savings figures.
+              federal rebate, and the NSW incentive if you join a Virtual Power Plant.
             </p>
             <ul className="mt-7 grid gap-2.5 text-[15px] font-medium text-[#14120f]">
               {["$500 off, on top of the government rebate", "SAA-accredited, 10-year battery warranty", "No obligation, contacted within 2 business days"].map((t) => (
@@ -77,7 +78,8 @@ export default function ApolloLanding() {
                 does not exist and the copy beneath repeated it. The outbound Apollo
                 landing was retired and enquiries are handled through this form, so
                 both are gone rather than relabelled. */}
-            <div className="mt-8 flex flex-wrap items-center gap-3">
+            <AffiliateDisclosure compact partners={["Apollo Energy Group"]} className="mt-6 max-w-md" />
+            <div className="mt-6 flex flex-wrap items-center gap-3">
               <a href="#register" className="nw-btn">Register your interest <ArrowRight className="h-4 w-4" /></a>
             </div>
             <BatteryDeadlineNote className="mt-4 max-w-md" />
@@ -174,12 +176,12 @@ export default function ApolloLanding() {
                 <p>
                   Apollo Energy Group is a specialist in home battery storage. They install residential
                   and commercial battery systems from 9kWh up to 54kWh, engineered around your actual electricity usage
-                  rather than sold as a fixed package. They are based at 5 Martin Place in Sydney and install across Australia.
+                  rather than sold as a fixed package. They are based at 5 Martin Place in Sydney; coverage for your address is confirmed when you enquire.
                 </p>
                 <p>
                   The credentials they publish are the ones worth checking on any installer: SAA-accredited installers,
-                  Electrical Licence 400672, ABN 55697998208, and a 10-year battery warranty. Their site also cites 12
-                  years of installer experience, a 4.9 out of 5 Google rating, and being voted SBC&apos;s number one
+                  Electrical Licence 400672C, ABN 55697998208, and a 10-year battery warranty. Their site also cites 12
+                  years of installer experience, a 4.9 out of 5 Google rating, and being voted the number one NSW retrofit battery team
                   battery installer.
                 </p>
                 <p>
@@ -189,12 +191,6 @@ export default function ApolloLanding() {
                 </p>
               </div>
 
-              <figure className="my-7 border-l-2 border-[#007a95] pl-5">
-                <blockquote className="text-xl font-semibold italic leading-snug text-[#14120f]">
-                  &ldquo;The install is the easy part. The money question is what size you need, and what the
-                  rebate does to the price.&rdquo;
-                </blockquote>
-              </figure>
             </section>
 
             {/* Choosing a solar battery company */}
@@ -217,7 +213,7 @@ export default function ApolloLanding() {
                     "A real workmanship warranty alongside the manufacturer's battery warranty, both in writing.",
                     "Sizing from your actual usage data, not a one-size package pushed to hit a price.",
                     "The federal rebate applied at the point of sale, and, in NSW, a path to the Virtual Power Plant incentive.",
-                    "No high-pressure sales, and a quote that shows the price after every rebate.",
+                    "A quote that shows the price after every rebate.",
                   ].map((t) => (
                     <li key={t} className="flex gap-2.5">
                       <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#007a95]" aria-hidden="true" />{t}
@@ -225,7 +221,7 @@ export default function ApolloLanding() {
                   ))}
                 </ul>
                 <p>
-                  Apollo Energy Group meets those markers: SAA-accredited, Electrical Licence 400672, a 10-year battery
+                  Apollo Energy Group meets those markers: SAA-accredited, Electrical Licence 400672C, a 10-year battery
                   warranty, Sydney-based, and it sizes from your usage and applies the rebate at sale. That is why we
                   refer readers to it, and why Refer Labs readers get $500 off the quote. It is still worth getting the
                   sizing, warranty and rebate detail in writing and comparing on the criteria above.
@@ -240,14 +236,14 @@ export default function ApolloLanding() {
               </h2>
               <div className="mt-4 space-y-4 text-[15.5px] leading-relaxed text-[#56504a]">
                 <p>
-                  Apollo runs a dedicated landing page for Refer Labs readers offering{" "}
-                  <strong className="font-semibold text-[#14120f]">$500 off your home battery quote</strong>, applied
-                  directly to the system. This is a genuine exclusive rather than a public sale, which is why there is no
-                  code to hunt for: the discount is attached to the link on this page.
+                  Refer Labs readers get{" "}
+                  <strong className="font-semibold text-[#14120f]">$500 off an Apollo home battery quote</strong>. It is
+                  not a public offer: it is applied when you register your interest through the form on this page, which
+                  Refer Labs passes to Apollo with your consent.
                 </p>
                 <p>
-                  The form asks for four things, your name, email, phone and postcode. It takes under 30 seconds and
-                  carries no obligation. From there Apollo comes back with a quote for a system sized to your usage, with
+                  The form asks for your name, email, phone and postcode, plus two optional questions, and carries no
+                  obligation. From there Apollo comes back with a quote for a system sized to your usage, with
                   the $500 already off and any rebate you qualify for applied on top.
                 </p>
               </div>
@@ -284,7 +280,7 @@ export default function ApolloLanding() {
                   proportionally bigger rebate, and oversizing has real diminishing returns.
                 </p>
                 <p>
-                  On top of the federal discount, some states add their own incentive. NSW, for example, pays a Virtual Power Plant (VPP) incentive worth roughly $40 per usable kWh, capped at 28kWh, so up to about $1,100. It floats with certificate prices, so treat it as indicative.
+                  On top of the federal discount, some states add their own incentive. NSW, for example, pays an incentive for connecting a battery to an approved Virtual Power Plant (VPP); NSW publishes no flat figure, as the amount depends on the usable capacity you make available to the grid, up to 28kWh, and on the VPP provider (energy.nsw.gov.au, read 1 October 2026).
                   Eligibility depends on your battery, retailer and VPP terms, so it is worth asking what applies to your
                   system when the quote comes back.
                 </p>
@@ -404,7 +400,7 @@ export default function ApolloLanding() {
                 </ul>
                 <div className="mt-7 flex flex-wrap items-center gap-4">
                   <ApolloCTA label="Claim your $500 discount" size="lg" loc="bottom-line" />
-                  <span className="text-xs text-[#56504a]">Under 30 seconds · no obligation</span>
+                  <span className="text-xs text-[#56504a]">No obligation</span>
                 </div>
               </div>
             </section>
@@ -505,13 +501,13 @@ export default function ApolloLanding() {
             Get $500 off your home battery quote
           </h2>
           <p className="mx-auto mt-4 max-w-md text-[15px] leading-relaxed text-white/70">
-            Under 30 seconds, no obligation, and no code to enter. The discount is applied through the link, on top of
-            any rebate you qualify for.
+            No obligation. The $500 is applied to your quote when you register through this page, on top of any
+            rebate you qualify for.
           </p>
           <div className="mt-8 flex justify-center">
             <ApolloCTA label="Claim your $500 discount" size="lg" loc="final-band" />
           </div>
-          <p className="mt-5 text-xs text-white/50">Australia-wide · disclosed affiliate link</p>
+          <p className="mt-5 text-xs text-white/50">Sydney-based · disclosed referral</p>
         </section>
 
         {/* Disclosure */}

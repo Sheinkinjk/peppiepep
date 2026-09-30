@@ -56,8 +56,8 @@ export function Ladder() {
         <text x="196" y="212" fontSize="11" fill="#56504a">off, on top of the rebate</text>
       </svg>
       <figcaption className="rd-cap" style={{ marginTop: "0.7rem" }}>
-        Schematic, not to scale. The rebate varies with system size; $500 is the
-        figure read off Apollo&rsquo;s own page.
+        Schematic, not to scale. The rebate varies with system size; the $500 was
+        confirmed directly with Apollo.
       </figcaption>
     </figure>
   );

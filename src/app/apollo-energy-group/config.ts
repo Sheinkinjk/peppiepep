@@ -6,8 +6,8 @@ export { APOLLO_ENERGY_LEAD_HREF };
 export const glance: [string, string][] = [
   ["What it is", "Home battery installation specialist"],
   ["For", "Australian homeowners and businesses"],
-  ["Systems", "9kWh to 54kWh, engineered to your usage"],
-  ["Accredited", "SAA accredited, Electrical Licence 400672"],
+  ["Systems", "Sized to your usage"],
+  ["Accredited", "SAA accredited, Electrical Licence 400672C"],
   ["Warranty", "10-year battery warranty"],
   ["Offer", "$500 off your quote via Refer Labs, no code"],
 ];
@@ -16,7 +16,7 @@ export const steps = [
   {
     num: "1",
     heading: "Claim the $500 discount",
-    body: "Complete the short form on this page: name, email, phone and your postcode. We pass it to Apollo with your consent. It takes under 30 seconds and commits you to nothing.",
+    body: "Complete the short form on this page: name, email, phone and your postcode. We pass it to Apollo with your consent, and it carries no obligation.",
   },
   {
     num: "2",
@@ -31,14 +31,14 @@ export const steps = [
   {
     num: "4",
     heading: "Installed by accredited installers",
-    body: "Installation is carried out by SAA-accredited installers under Electrical Licence 400672, with a 10-year battery warranty.",
+    body: "Installation is carried out by SAA-accredited installers under Electrical Licence 400672C, with a 10-year battery warranty.",
   },
 ];
 
 export const faqs = [
   {
     q: "Is the $500 Refer Labs discount real, and do I need a code?",
-    a: "Yes. Apollo Energy Group runs a dedicated Refer Labs landing page offering $500 off your home battery quote, applied directly to the system. There is no code to type: the discount is attached to the link on this page. The form asks for your name, email, phone and postcode, takes under 30 seconds, and carries no obligation.",
+    a: "Yes. Refer Labs readers get $500 off an Apollo home battery quote, applied when you register your interest through the form on this page. It is not a public offer. The form asks for your name, email, phone and postcode, and carries no obligation.",
   },
   {
     q: "How much is the federal home battery rebate in 2026?",
@@ -50,7 +50,7 @@ export const faqs = [
   },
   {
     q: "Are there state incentives as well as the federal rebate?",
-    a: "Often, yes. The federal Cheaper Home Batteries discount applies nationally, and some states add their own incentive on top. NSW, for example, pays a Virtual Power Plant (VPP) incentive of roughly $40 per usable kWh (capped at 28kWh, so up to about $1,100, and floating with certificate prices). What you can claim depends on your state, your battery, your retailer and the VPP terms, so confirm what applies to your address when you get the quote.",
+    a: "Often, yes. The federal Cheaper Home Batteries discount applies nationally, and some states add their own incentive on top. NSW, for example, pays an incentive for connecting a battery to an approved Virtual Power Plant (VPP); the amount depends on the usable capacity made available to the grid, up to 28kWh, and on the VPP provider. What you can claim depends on your state, your battery, your retailer and the VPP terms, so confirm what applies to your address when you get the quote.",
   },
   {
     q: "How much will a home battery save me?",
@@ -62,15 +62,15 @@ export const faqs = [
   },
   {
     q: "What size battery do I need?",
-    a: "It depends on your evening and overnight consumption rather than a rule of thumb. Apollo installs systems from 9kWh to 54kWh and engineers the size from your real usage data rather than selling a fixed package. Worth knowing: because the federal rebate tapers above 14kWh, the value per extra kWh drops as the system gets larger.",
+    a: "It depends on your evening and overnight consumption rather than a rule of thumb. Apollo sizes the system from your real usage data rather than selling a fixed package. Worth knowing: because the federal rebate tapers above 14kWh, the value per extra kWh drops as the system gets larger.",
   },
   {
     q: "Is Apollo Energy Group accredited, and what is the warranty?",
-    a: "Apollo Energy Group installs using SAA-accredited installers and operates under Electrical Licence 400672 (ABN 55697998208). They list a 10-year battery warranty and 12 years of installer experience, and their site cites a 4.9 out of 5 Google rating and being voted SBC's number one battery installer. Those are the company's stated credentials, worth confirming as part of your own due diligence.",
+    a: "Apollo Energy Group installs using SAA-accredited installers and operates under Electrical Licence 400672C (ABN 55697998208). They list a 10-year battery warranty and 12 years of installer experience, and their site cites a 4.9 out of 5 Google rating and being voted the number one NSW retrofit battery team. Those are the company's stated credentials, worth confirming as part of your own due diligence.",
   },
   {
     q: "What areas does Apollo Energy Group cover?",
-    a: "Apollo Energy Group is based at 5 Martin Place in Sydney and installs for homes and businesses across Australia. Coverage for your specific address is confirmed when you request a quote, so put your postcode in and they will come back on whether they can service you.",
+    a: "Apollo Energy Group is based at 5 Martin Place in Sydney and installs for homes and businesses. Coverage for your specific address is confirmed when you request a quote, so put your postcode in and they will come back on whether they can service you.",
   },
   {
     q: "How much does a home battery cost through Apollo?",
@@ -82,7 +82,7 @@ export const faqs = [
   },
   {
     q: "What is the best solar battery company in Sydney?",
-    a: "Sydney has many solar battery installers, so judge them on the same markers rather than the loudest ad: SAA accreditation, a valid electrical licence, warranties in writing, sizing from your usage, and the federal rebate plus the NSW Virtual Power Plant incentive handled for you. Apollo Energy Group is Sydney-based (5 Martin Place), SAA-accredited with Electrical Licence 400672 and a 10-year battery warranty, and Refer Labs readers get $500 off a quote. Confirm the detail in writing and compare on those criteria.",
+    a: "Sydney has many solar battery installers, so compare them on the same markers: SAA accreditation, a valid electrical licence, warranties in writing, sizing from your usage, and the federal rebate plus the NSW Virtual Power Plant incentive handled for you. Apollo Energy Group is Sydney-based (5 Martin Place), SAA-accredited with Electrical Licence 400672C and a 10-year battery warranty, and Refer Labs readers get $500 off a quote. Confirm the detail in writing and compare on those criteria.",
   },
   {
     q: "What solar battery government rebate can I get in Sydney?",

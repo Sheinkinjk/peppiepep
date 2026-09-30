@@ -1,4 +1,5 @@
 import Link from "next/link";
+import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 import BatteryDeadlineNote from "@/components/consumer/BatteryDeadlineNote";
 import { SectionMark } from "@/components/brand/SectionMark";
 import { ArrowRight, Check } from "lucide-react";
@@ -29,11 +30,11 @@ const faqs = [
   },
   {
     q: "Are there state rebates as well as the federal one?",
-    a: "Often, yes, and they can stack. The federal discount applies nationally, and some states add their own incentive on top. NSW, for example, offers an incentive worth roughly $1,000 to $1,100 for connecting a battery to an approved Virtual Power Plant (VPP), paid through energy certificates so the figure moves. State schemes change often and some, such as Victoria's battery rebate, have closed, so confirm what currently applies at your address when you get a quote.",
+    a: "Often, yes, and they can stack. The federal discount applies nationally, and some states add their own incentive on top. NSW, for example, pays an incentive for connecting a battery to an approved Virtual Power Plant (VPP); the amount depends on the usable capacity made available to the grid, up to 28kWh, and on the VPP provider. State schemes change often and some, such as Victoria's battery rebate, have closed, so confirm what currently applies at your address when you get a quote.",
   },
   {
     q: "Do I need solar panels to claim the battery rebate?",
-    a: "A battery is normally installed alongside solar, and that is where the economics are strongest, since you store what you generate rather than exporting it cheaply. Requirements and the sensible setup vary by installer and state, so confirm eligibility for your specific situation before committing.",
+    a: "Yes. The federal discount is available for batteries connected to new or existing solar PV systems (dcceew.gov.au, read 1 October 2026). State incentives have their own rules, so confirm what applies at your address when you get a quote.",
   },
   {
     q: "Is a home battery worth it after the rebate?",
@@ -45,7 +46,7 @@ const faqs = [
   },
   {
     q: "Where can I get a quote with the rebate applied?",
-    a: "Any accredited installer applies the federal discount at the point of sale. Through Refer Labs, Apollo Energy Group also takes an exclusive $500 off your quote on top of the rebate, with no code to enter. The form takes under 30 seconds and carries no obligation.",
+    a: "Any accredited installer applies the federal discount at the point of sale. Through Refer Labs, Apollo Energy Group also takes an exclusive $500 off your quote on top of the rebate, applied when you register through the enquiry form. It carries no obligation.",
   },
 ];
 
@@ -83,8 +84,8 @@ function Offer({ loc }: { loc: string }) {
         $500 off your battery quote, on top of the rebate
       </p>
       <p className="mt-2 text-sm leading-relaxed text-[#56504a]">
-        Apollo Energy Group takes an extra $500 off for Refer Labs readers. No code to enter, the discount is attached to
-        the link. Under 30 seconds, no obligation.
+        Apollo Energy Group takes an extra $500 off for Refer Labs readers, applied when you register your interest
+        through our enquiry form. No obligation.
       </p>
       <div className="mt-4 flex flex-wrap items-center gap-3">
         <a
@@ -127,6 +128,7 @@ export default function HomeBatteryRebatePage() {
           </p>
 
           <div className="mt-8">
+            <AffiliateDisclosure compact partners={["Apollo Energy Group"]} className="mb-3" />
             <Offer loc="rebate-hero" />
             <BatteryDeadlineNote className="mt-3" />
           </div>
@@ -155,8 +157,8 @@ export default function HomeBatteryRebatePage() {
                 eligible battery, for systems between 5kWh and 100kWh.
               </p>
               <p>
-                You do not claim it back yourself. The discount runs through small-scale technology certificates (STCs), which
-                your accredited installer handles and applies straight to the quote. If a quote does not show it
+                Your accredited installer handles it: the discount runs through small-scale technology certificates (STCs), and
+                the installer either takes it off the upfront price or pays it as a rebate after installation. If a quote does not show it
                 itemised, that is a fair thing to push back on.
               </p>
             </div>
@@ -260,10 +262,10 @@ export default function HomeBatteryRebatePage() {
             <h2 className="text-2xl font-bold text-[#14120f]">State incentives on top</h2>
             <div className="mt-4 space-y-4 text-[15.5px] leading-relaxed text-[#56504a]">
               <p>
-                The federal discount is national, and some states add their own on top. NSW, for example, offers an
-                incentive worth roughly $1,000 to $1,100 for connecting your battery to an approved Virtual Power Plant,
-                where your battery helps support the grid at peak times in exchange for a payment. It is paid through
-                energy certificates, so the exact figure moves, and it depends on joining a VPP. State schemes change
+                The federal discount is national, and some states add their own on top. NSW, for example, pays an
+                incentive for connecting your battery to an approved Virtual Power Plant, where your battery helps support
+                the grid at peak times. The amount depends on the usable capacity you make available, up to 28kWh, and on
+                the VPP provider, and it depends on joining a VPP. State schemes change
                 often and some have closed, so confirm what applies at your address when you get a quote.
               </p>
               <p>
@@ -304,7 +306,7 @@ export default function HomeBatteryRebatePage() {
                   Apollo Energy Group
                 </Link>{" "}
                 takes an exclusive $500 off the quote on top of it. They are SAA-accredited, operate under Electrical
-                Licence 400672, list a 10-year battery warranty, and size systems from your real usage rather than
+                Licence 400672C, list a 10-year battery warranty, and size systems from your real usage rather than
                 selling a fixed package.
               </p>
               <ul className="mt-4 space-y-2">

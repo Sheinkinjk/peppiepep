@@ -125,6 +125,9 @@ export default function BatteryCalc() {
             <Row k="Net position after 10 years" v={(tenYearNet >= 0 ? "+" : "−") + fmt(Math.abs(tenYearNet))} bold accent={tenYearNet >= 0} />
           </dl>
 
+          <p className="mt-4 text-[12px] leading-relaxed text-[#56504a]">
+            Refer Labs may earn a commission if you request a quote from Apollo Energy Group, at no extra cost to you.
+          </p>
           <Link
             href="/apollo-energy-group#register"
             data-cta="battery-calc-to-eoi"
