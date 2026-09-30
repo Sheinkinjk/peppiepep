@@ -1,6 +1,7 @@
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
 import { SectionMark } from "@/components/brand/SectionMark";
 import { DURABLE_URL, BUTTERNUT_URL } from "@/lib/affiliate-links";
+import { DURABLE } from "@/lib/partners/durable";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
@@ -106,7 +107,8 @@ const webPageSchema = {
 // ── Comparison rows ──────────────────────────────────────────────────────────
 const rows: { label: string; durable: string; butternut: string }[] = [
   { label: "What it is", durable: "AI website builder for service businesses", butternut: "AI website generator for small business and creators" },
-  { label: "Setup speed", durable: "Full business site in ~30 seconds", butternut: "Full multi-page site in ~20 seconds" },
+  { label: "Setup speed", durable: "Full business site in about 30 seconds", butternut: "Full multi-page site in about 20 seconds" },
+  { label: `Price (${DURABLE.readOnLabel})`, durable: DURABLE.short, butternut: "Subscription, monthly or annual" },
   { label: "Free tier", durable: "Generate and preview free, no account", butternut: "Generate and preview free, no account" },
   { label: "Site structure", durable: "Strong first draft, service-focused", butternut: "Richer multi-page structure from one prompt" },
   { label: "Built-in extras", durable: "CRM, invoicing, Google Business", butternut: "Editor, SEO settings, blog publishing" },
@@ -308,7 +310,7 @@ export default function DurableVsButternutPage() {
             <div className="grid sm:grid-cols-2 gap-4">
               <div className="rounded-xl border border-[#ded8cd] bg-[#f7f4ee] p-6">
                 <h3 className="text-lg font-bold mb-2">Go with Durable AI</h3>
-                <p className="text-[#56504a] text-sm leading-relaxed mb-4">Business site in ~30s, plus a built-in CRM and invoicing. Best for service businesses.</p>
+                <p className="text-[#56504a] text-sm leading-relaxed mb-4">Business site in about 30 seconds, plus a built-in CRM and invoicing. Best for service businesses.</p>
                 <a {...durable} data-cta="durable-vs-butternut-card-durable" className="inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-bold text-white transition-all hover:-translate-y-0.5 shadow-md" style={{ background: GREEN, boxShadow: `0 8px 24px ${GREEN}25` }}>
                   Try Durable AI free <ArrowRight className="h-4 w-4" />
                 </a>
@@ -316,7 +318,7 @@ export default function DurableVsButternutPage() {
               </div>
               <div className="rounded-xl border border-[#ded8cd] bg-[#f7f4ee] p-6">
                 <h3 className="text-lg font-bold mb-2">Go with Butternut AI</h3>
-                <p className="text-[#56504a] text-sm leading-relaxed mb-4">Full multi-page site from one prompt in ~20s. Best for the richest generated site.</p>
+                <p className="text-[#56504a] text-sm leading-relaxed mb-4">Full multi-page site from one prompt in about 20 seconds. Best for the richest generated site.</p>
                 <a {...butternut} data-cta="durable-vs-butternut-card-butternut" className="inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-bold text-white transition-all hover:-translate-y-0.5 shadow-md" style={{ background: GREEN, boxShadow: `0 8px 24px ${GREEN}25` }}>
                   Try Butternut AI free <ArrowRight className="h-4 w-4" />
                 </a>

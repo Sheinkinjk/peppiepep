@@ -1,6 +1,8 @@
 export interface AffiliateSection {
   heading: string;
   paragraphs: string[];
+  /** Optional internal links listed under the paragraphs (e.g. alternatives we cover). */
+  links?: { href: string; label: string; desc: string }[];
   disclaimer?: string;
   hasCta?: boolean;
   ctaText?: string;
@@ -70,6 +72,13 @@ export interface AffiliatePageConfig {
    * "14-day free trial, no card". Omit when there is genuinely no offer.
    */
   offer?: string;
+
+  /**
+   * Label above `offer`. Defaults to "Current offer via our link". Set it when
+   * the offer is the vendor's own public one (a published annual saving, a trial
+   * anyone can start), so the callout does not imply the link grants it.
+   */
+  offerLabel?: string;
 
   /**
    * Show the "Independent guide · How we research" trust line under the hero.

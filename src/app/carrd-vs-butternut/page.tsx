@@ -1,6 +1,7 @@
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
 import { SectionMark } from "@/components/brand/SectionMark";
 import { CARRD_URL, BUTTERNUT_URL } from "@/lib/affiliate-links";
+import { CARRD } from "@/lib/partners/carrd";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
@@ -40,7 +41,7 @@ const itemListSchema = {
       position: 1,
       name: "Carrd",
       description:
-        "Simple one-page website builder with a free plan forever and Pro plans from $9/year. Best for portfolios, link-in-bio pages, landing pages, and personal sites. You build the page yourself in a fast, clean editor.",
+        `Simple one-page website builder with a free plan forever and Pro from ${CARRD.proLite} a year (${CARRD.proStandard} with a custom domain). Best for portfolios, link-in-bio pages, landing pages, and personal sites. You build the page yourself in a fast, clean editor.`,
       url: `${SITE_URL}/carrd`,
     },
     {
@@ -57,7 +58,7 @@ const itemListSchema = {
 const faqs = [
   {
     q: "Is Carrd or Butternut AI better?",
-    a: "It depends on the site you need. Carrd is the better pick for a single, polished one-page site, a portfolio, or a link-in-bio page that you want full control over and to keep cheap, since the free plan works and Pro starts at US$9 a year. Butternut AI is the better pick if you want a complete multi-page website generated for you from a single prompt in seconds and you would rather edit a first draft than build from scratch. Choose Carrd for a simple page you craft yourself; choose Butternut for a full site the AI drafts for you.",
+    a: `It depends on the site you need. Carrd is the better pick for a single, polished one-page site, a portfolio, or a link-in-bio page that you want full control over and to keep cheap, since the free plan works and Pro starts at ${CARRD.proLite} a year (${CARRD.readOnLabel}). Butternut AI is the better pick if you want a complete multi-page website generated for you from a single prompt in seconds and you would rather edit a first draft than build from scratch. Choose Carrd for a simple page you craft yourself; choose Butternut for a full site the AI drafts for you.`,
   },
   {
     q: "What is the main difference between Carrd and Butternut AI?",
@@ -69,7 +70,7 @@ const faqs = [
   },
   {
     q: "Which is cheaper, Carrd or Butternut AI?",
-    a: "Carrd is the cheaper option and one of the most affordable builders anywhere: the free plan is functional and Pro plans start at US$9 a year. Butternut AI is a monthly or annual subscription priced as a full website solution for small businesses, which is more than Carrd but still aimed at undercutting the twenty-to-forty-dollar-a-month cost of a traditional builder. If price is the deciding factor and a one-page site is enough, Carrd wins clearly.",
+    a: `Carrd is the cheaper option and one of the most affordable builders anywhere: the free plan is functional, and ${CARRD.sentence} Butternut AI is a monthly or annual subscription priced as a full website solution for small businesses, which is more than Carrd but still aimed at undercutting the twenty-to-forty-dollar-a-month cost of a traditional builder. If price is the deciding factor and a one-page site is enough, Carrd wins clearly.`,
   },
   {
     q: "Which builds a multi-page website?",
@@ -108,9 +109,9 @@ const rows: { label: string; carrd: string; butternut: string }[] = [
   { label: "What it is", carrd: "Simple one-page website builder", butternut: "AI full-site generator" },
   { label: "How you build", carrd: "Manual editor, you design the page", butternut: "AI generates a full site from a prompt" },
   { label: "Pages", carrd: "Single page only, by design", butternut: "Full multi-page site" },
-  { label: "Setup", carrd: "Live in under an hour", butternut: "Full site draft in ~20 seconds" },
+  { label: "Setup", carrd: "Live in under an hour", butternut: "Full site draft in about 20 seconds" },
   { label: "Free tier", carrd: "Free plan, up to 3 sites, no card", butternut: "Generate and preview free, no account" },
-  { label: "Pricing", carrd: "Free; Pro from $9/year", butternut: "Subscription (full website solution)" },
+  { label: `Pricing (${CARRD.readOnLabel})`, carrd: `Free; ${CARRD.short}`, butternut: "Subscription (full website solution)" },
   { label: "Built-in extras", carrd: "Forms, custom domain on Pro", butternut: "Editor, SEO settings, blog publishing" },
   { label: "Best for", carrd: "Portfolios, link-in-bio, one-page sites", butternut: "Small business, instant full-site drafts" },
   { label: "Less suited to", carrd: "Multi-page, blogs, e-commerce", butternut: "Large stores, complex multi-team sites" },
@@ -250,7 +251,8 @@ export default function CarrdVsButternutPage() {
               <p>
                 Both let you start for free, in slightly different ways. Carrd's free plan lets you build and publish up to
                 three one-page sites on carrd.co subdomains with no card, so you can run a simple site at no
-                cost, and Pro, from $9 a year, adds custom domains, forms, and more customisation. Butternut lets you
+                cost. Pro starts at {CARRD.proLite} a year, and a custom domain and forms need Pro Standard at{" "}
+                {CARRD.proStandard} a year (carrd.co/pro, {CARRD.readOnLabel}). Butternut lets you
                 generate and preview a full site for free with no account, and a paid subscription is what unlocks
                 publishing on a custom domain and the wider platform.
               </p>
@@ -264,7 +266,7 @@ export default function CarrdVsButternutPage() {
             <div className="mt-6 flex flex-col items-start gap-4 rounded-2xl border px-6 py-5 sm:flex-row sm:items-center sm:justify-between" style={{ borderColor: `${GREEN}25`, background: `${GREEN}0A` }}>
               <p className="max-w-lg text-sm leading-relaxed text-[#14120f]">
                 Just need a clean one-page site or link-in-bio without paying much? Carrd&apos;s free plan is the quickest
-                way to build and publish one. No card, and Pro starts at US$19 a year.
+                way to build and publish one. No card, and Pro starts at {CARRD.proLite} a year ({CARRD.readOnLabel}).
               </p>
               <a
                 {...carrd}
@@ -285,8 +287,9 @@ export default function CarrdVsButternutPage() {
             </h2>
             <div className="space-y-4 text-[15px] leading-relaxed text-[#56504a] max-w-2xl">
               <p>
-                On price the gap is real. Carrd is one of the cheapest builders anywhere: the free plan works, and Pro
-                tiers start at US$19 a year, which is why it is a perennial recommendation for anyone on a budget.
+                On price the gap is real. Carrd is one of the cheapest builders anywhere: the free plan works, Pro
+                starts at {CARRD.proLite} a year and a custom domain costs {CARRD.proStandard} a year (carrd.co/pro, {CARRD.readOnLabel}), which is why it is
+                a perennial recommendation for anyone on a budget.
                 Butternut is a monthly or annual subscription priced as a full website solution, more than Carrd but pitched
                 to undercut the twenty-to-forty-dollar-a-month cost of a traditional builder. Prices move, so confirm the
                 current plans on each platform before you decide.
@@ -307,7 +310,7 @@ export default function CarrdVsButternutPage() {
             <div className="grid sm:grid-cols-2 gap-4">
               <div className="rounded-xl border border-[#ded8cd] bg-[#f7f4ee] p-6">
                 <h3 className="text-lg font-bold mb-2">Go with Carrd</h3>
-                <p className="text-[#56504a] text-sm leading-relaxed mb-4">Free plan, Pro from $9/year. Best for a simple one-page site, portfolio, or link-in-bio.</p>
+                <p className="text-[#56504a] text-sm leading-relaxed mb-4">Free plan, Pro from {CARRD.proLite} a year ({CARRD.readOnLabel}). Best for a simple one-page site, portfolio, or link-in-bio.</p>
                 <a {...carrd} data-cta="carrd-vs-butternut-card-carrd" className="inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-bold text-white transition-all hover:-translate-y-0.5 shadow-md" style={{ background: GREEN, boxShadow: `0 8px 24px ${GREEN}25` }}>
                   Try Carrd free <ArrowRight className="h-4 w-4" />
                 </a>
@@ -315,7 +318,7 @@ export default function CarrdVsButternutPage() {
               </div>
               <div className="rounded-xl border border-[#ded8cd] bg-[#f7f4ee] p-6">
                 <h3 className="text-lg font-bold mb-2">Go with Butternut AI</h3>
-                <p className="text-[#56504a] text-sm leading-relaxed mb-4">Full multi-page site from one prompt in ~20s. Best for an instant full-site draft.</p>
+                <p className="text-[#56504a] text-sm leading-relaxed mb-4">Full multi-page site from one prompt in about 20 seconds. Best for an instant full-site draft.</p>
                 <a {...butternut} data-cta="carrd-vs-butternut-card-butternut" className="inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-bold text-white transition-all hover:-translate-y-0.5 shadow-md" style={{ background: GREEN, boxShadow: `0 8px 24px ${GREEN}25` }}>
                   Try Butternut AI free <ArrowRight className="h-4 w-4" />
                 </a>

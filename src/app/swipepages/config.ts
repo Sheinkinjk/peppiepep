@@ -173,6 +173,7 @@ export const swipePagesConfig: AffiliatePageConfig = {
   ],
 
   relatedLinks: [
+    { href: "/alidrop", label: "AliDrop", desc: "Source and fulfil dropshipping products for the store your ad pages sell." },
     {
       href: "/best-website-builder",
       label: "Best Website Builder 2026",
@@ -186,7 +187,7 @@ export const swipePagesConfig: AffiliatePageConfig = {
     {
       href: "/carrd",
       label: "Carrd, Free Website Builder",
-      desc: "Free plan forever, Pro from $19/year. Best for portfolios, link-in-bio, and simple sites.",
+      desc: "Free plan forever; Pro from US$9 a year, US$19 with a custom domain (30 September 2026). Best for portfolios, link-in-bio and simple sites.",
     },
     {
       href: "/guides",

@@ -32,11 +32,8 @@ function ProviderCard({ p }: { p: Provider }) {
   const href = p.affiliateUrl ?? p.externalUrl ?? p.reviewHref ?? "#";
   const isAff = Boolean(p.affiliateUrl);
   return (
-    <div className={`flex flex-col rounded-2xl border bg-[#f7f4ee] p-6 shadow-[0_2px_24px_-16px_rgba(0,0,0,0.2)] ${p.featured ? "border-[#007a95]/30" : "border-[#ded8cd]"}`}>
-      <div className="flex items-center justify-between gap-3">
-        <h3 className="text-xl font-bold text-[#14120f]">{p.name}</h3>
-        {p.featured && <span className="rounded-full bg-[#007a95]/10 px-2.5 py-1 text-[11px] font-bold text-[#007a95]">Top pick</span>}
-      </div>
+    <div className="flex flex-col rounded-2xl border border-[#ded8cd] bg-[#f7f4ee] p-6 shadow-[0_2px_24px_-16px_rgba(0,0,0,0.2)]">
+      <h3 className="text-xl font-bold text-[#14120f]">{p.name}</h3>
       <p className="mt-1 text-[13px] font-semibold uppercase tracking-[0.08em] text-[#007a95]">{p.bestFor}</p>
       <p className="mt-2.5 flex-1 text-sm leading-relaxed text-[#56504a]">{p.blurb}</p>
       <dl className="mt-4 divide-y divide-[#ded8cd] text-sm">
@@ -72,6 +69,11 @@ export default async function ComparePage({ params }: { params: Promise<{ slug: 
   const { slug } = await params;
   const v = getVertical(slug);
   if (!v) notFound();
+  // Hub neutrality: every provider gets the same card, in alphabetical order,
+  // so no row reads as ranked or promoted. The catalog order is not used.
+  const providers = [...v.providers].sort((a, b) =>
+    a.name.localeCompare(b.name, "en", { sensitivity: "base" }),
+  );
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -92,7 +94,12 @@ export default async function ComparePage({ params }: { params: Promise<{ slug: 
     isPartOf: { "@id": `${SITE_URL}/#website` },
     mainEntity: {
       "@type": "ItemList",
-      itemListElement: v.providers.map((p, i) => ({ "@type": "ListItem", position: i + 1, name: p.name })),
+      itemListElement: providers.map((p, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        name: p.name,
+        url: p.reviewHref ? `${SITE_URL}${p.reviewHref}` : (p.affiliateUrl ?? p.externalUrl),
+      })),
     },
   };
   const faqSchema = {
@@ -136,7 +143,7 @@ export default async function ComparePage({ params }: { params: Promise<{ slug: 
 
         <section className="mx-auto max-w-6xl px-5 py-12 sm:px-8">
           <div className="grid gap-4 sm:grid-cols-2">
-            {v.providers.map((p) => (
+            {providers.map((p) => (
               <ProviderCard key={p.name} p={p} />
             ))}
           </div>

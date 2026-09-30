@@ -13,14 +13,18 @@ export const leadpagesConfig: AffiliatePageConfig = {
   // their site and their landing states a different offer, so it was removed. If a
   // negotiated affiliate-exclusive discount exists, restore it with the source and
   // date recorded here rather than as a bare claim.
-  offer: "7-day free trial; 20% off annual billing",
+  // 30 Sep 2026 (Jarred, D-1): the 20% is Leadpages' public annual-billing
+  // saving, shown to every visitor on leadpages.com/pricing. It is not specific
+  // to our link, so the page says so and the callout is labelled as public.
+  offer: "7-day free trial; Leadpages' public 20% saving on annual billing",
+  offerLabel: "Leadpages' own public offer",
 
   quickAnswer:
-    "Leadpages is a landing-page and lead-generation builder with built-in A/B testing and conversion tools. You build pages from a large template library, add lead-capture forms, pop-ups and alert bars, connect your email and CRM tools, and test variants to lift conversion. It suits marketers, coaches and small businesses whose main goal is capturing leads, not just publishing a website. Leadpages offers a 7-day free trial, with paid plans from US$49 the first month, then US$99/month.",
+    "Leadpages is a landing-page and lead-generation builder with built-in A/B testing and conversion tools. You build pages from a large template library, add lead-capture forms, pop-ups and alert bars, connect your email and CRM tools, and test variants to lift conversion. It suits marketers, coaches and small businesses whose main goal is capturing leads, not just publishing a website. Leadpages offers a 7-day free trial; its Grow plan is A$150 a month, or A$120 a month billed annually (read on leadpages.com/pricing, 30 September 2026).",
 
   banner: {
     heading: "Leadpages: Landing Pages Built to Convert",
-    body: "Click below to go directly to Leadpages via our affiliate link and see the builder, templates and A/B testing.",
+    body: "Click below to go to Leadpages through our affiliate link and see the builder, templates and A/B testing.",
     buttonLabel: "Continue to Leadpages",
   },
 
@@ -29,7 +33,7 @@ export const leadpagesConfig: AffiliatePageConfig = {
     { k: "What it is", v: "Landing-page builder for lead generation" },
     { k: "Best for", v: "Marketers and small businesses capturing leads" },
     { k: "Stand-out", v: "A/B testing, big template library, pop-ups" },
-    { k: "Price", v: "From US$49 first month, then US$99/mo" },
+    { k: "Price", v: "Grow A$150/mo, or A$120/mo billed annually (30 September 2026)" },
   ],
   trustStrip: [
     "Large library of conversion-focused templates",
@@ -46,8 +50,8 @@ export const leadpagesConfig: AffiliatePageConfig = {
   ],
 
   hero: {
-    h1Prefix: "Leadpages discount:",
-    h1Highlight: "20% off annual billing on the landing-page builder",
+    h1Prefix: "Leadpages review:",
+    h1Highlight: "the landing-page builder, and what the 7-day trial covers",
     subheading:
       "Leadpages builds landing pages from templates, with A/B testing, pop-ups and form capture, then connects to your email tool or CRM. It suits someone running campaigns who needs pages faster than a developer can build them. Seven-day trial, and 20% off if you pay annually.",
     trustBullets: [
@@ -104,7 +108,7 @@ export const leadpagesConfig: AffiliatePageConfig = {
   faqs: [
     {
       q: "Is there a Leadpages discount code?",
-      a: "Leadpages doesn't rely on a typed code. The current offer is a 7-day free trial, and Leadpages publishes 20% off when you pay annually, applied when you start through the link on this page. Offers can change, so treat this as the current new-customer offer.",
+      a: "No. Leadpages publishes no discount code and Refer Labs holds none. What Leadpages offers every new customer is a 7-day free trial, and its own pricing page takes 20% off anyone who pays annually (read on leadpages.com/pricing, 30 September 2026). Neither depends on the link you arrive through.",
     },
     {
       q: "What is Leadpages?",
@@ -112,7 +116,7 @@ export const leadpagesConfig: AffiliatePageConfig = {
     },
     {
       q: "How much does Leadpages cost?",
-      a: "Leadpages offers a free trial to build and test before paying, then paid plans that unlock more pages, integrations and features. Pricing changes, so verify the current figures on the provider before committing.",
+      a: "Leadpages' own pricing page, read 30 September 2026 in Australian dollars: Grow A$150 a month (A$120 billed annually), Optimize A$300 (A$240 annually) and Scale A$600 (A$480 annually), each with a 7-day free trial. Its cheaper HTML Pub plans, for publishing pages without the optimisation tools, start at A$12 a month.",
     },
     {
       q: "Leadpages vs a general website builder, which do I need?",
@@ -142,7 +146,7 @@ export const leadpagesConfig: AffiliatePageConfig = {
     primary: "See Leadpages",
     secondary: "Continue to Leadpages",
     midHeading: "Ready to Build Pages That Capture Leads?",
-    midBody: "Click below to go directly to Leadpages via our affiliate link and start the free trial.",
+    midBody: "Click below to go to Leadpages through our affiliate link and start the free trial.",
     midButton: "Try Leadpages",
     bottomHeading: "See What Leadpages Can Do",
     bottomBody: "Click below to be taken to Leadpages. Explore the templates, lead capture and A/B testing.",
@@ -150,5 +154,5 @@ export const leadpagesConfig: AffiliatePageConfig = {
   },
 
   disclaimer:
-    "You will be taken to the Leadpages site. This page is operated by Refer Labs and contains a disclosed affiliate link. Pricing is indicative and correct to the best of our knowledge; check the current pricing on the provider.",
+    "You will be taken to the Leadpages site. This page is operated by Refer Labs and contains a disclosed affiliate link. Pricing can change, so check the current pricing on Leadpages before committing.",
 };

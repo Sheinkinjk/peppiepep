@@ -1,5 +1,6 @@
 import type { AffiliatePageConfig } from "@/components/affiliate/types";
 import { DURABLE_URL } from "@/lib/affiliate-links";
+import { DURABLE } from "@/lib/partners/durable";
 
 export { DURABLE_URL };
 
@@ -26,7 +27,7 @@ export const durableAiConfig: AffiliatePageConfig = {
     { k: "Start", v: "Free to try, no account" },
   ],
   trustStrip: [
-    "Website in ~30 seconds",
+    "Website in about 30 seconds",
     "Built-in CRM & invoicing",
     "Free to try, no account",
     "Built for service businesses",
@@ -134,7 +135,7 @@ export const durableAiConfig: AffiliatePageConfig = {
   faqs: [
     {
       q: "Is there a Durable AI free trial?",
-      a: "Yes. You can generate a website using Durable AI without creating an account. Enter your business type and location, and Durable generates a complete site in approximately 30 seconds. A subscription is required to publish with a custom domain and access the full platform, but the generation feature can be tested for free.",
+      a: `Yes. You can generate a website using Durable AI without creating an account: enter your business type and location, and Durable generates a complete site in about 30 seconds. ${DURABLE.sentence}`,
     },
     {
       q: "Is there a Durable AI discount code or promo code?",
@@ -182,7 +183,7 @@ export const durableAiConfig: AffiliatePageConfig = {
     {
       href: "/carrd",
       label: "Carrd, Free Website Builder",
-      desc: "Free plan forever, Pro from $19/year. Best for portfolios, link-in-bio, and simple sites.",
+      desc: "Free plan forever; Pro from US$9 a year, US$19 with a custom domain (30 September 2026). Best for portfolios, link-in-bio and simple sites.",
     },
     {
       href: "/guides",

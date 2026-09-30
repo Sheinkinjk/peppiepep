@@ -73,6 +73,8 @@ export const lindyConfig: AffiliatePageConfig = {
     },
   ],
   relatedLinks: [
+    { href: "/wing-assistant", label: "Wing Assistant", desc: "A dedicated human virtual assistant for the work an AI agent should not run alone." },
+    { href: "/compare/ai-tools", label: "Compare AI tools", desc: "Lindy next to AI voice, presentation and meeting-note tools." },
   ],
   ctas: {
     primary: "See Lindy",

@@ -5,6 +5,8 @@ import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
 import FeatureMatrix from "@/components/consumer/FeatureMatrix";
+import { CARRD } from "@/lib/partners/carrd";
+import { DURABLE } from "@/lib/partners/durable";
 
 export const metadata = generateSEOMetadata(seoConfig.bestWebsiteBuilder);
 
@@ -38,7 +40,7 @@ const itemListSchema = {
   description: "In-depth comparison of the best website builders including AI-powered options, Carrd, Durable AI, Butternut AI, and Swipe Pages.",
   numberOfItems: 4,
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Carrd", description: "Simplest and most affordable one-page website builder. Free plan available. Pro from $9/year.", url: `${SITE_URL}/carrd` },
+    { "@type": "ListItem", position: 1, name: "Carrd", description: `Simplest and most affordable one-page website builder. Free plan available. ${CARRD.short}, read on carrd.co/pro ${CARRD.readOnLabel}.`, url: `${SITE_URL}/carrd` },
     { "@type": "ListItem", position: 2, name: "Durable AI", description: "AI website builder for service businesses. Generates a site in 30 seconds with built-in CRM and invoicing.", url: `${SITE_URL}/durableai` },
     { "@type": "ListItem", position: 3, name: "Butternut AI", description: "Fastest AI website generator. Full multi-page site in 20 seconds with SEO tools and blog publishing.", url: `${SITE_URL}/butternut` },
     { "@type": "ListItem", position: 4, name: "Swipe Pages", description: "Dedicated landing page builder with AMP technology for paid ad campaigns. 14-day free trial.", url: `${SITE_URL}/swipepages` },
@@ -51,7 +53,7 @@ const faqSchema = {
   mainEntity: [
     { "@type": "Question", name: "What is the best website builder for beginners?", acceptedAnswer: { "@type": "Answer", text: "Carrd is the easiest starting point for beginners, a free plan, a simple editor, and most users are live within an hour. For zero-effort setup, Butternut AI and Durable AI generate a complete website from a text description in under 30 seconds with no design skill required." } },
     { "@type": "Question", name: "What is the best AI website builder in 2026?", acceptedAnswer: { "@type": "Answer", text: "Butternut AI and Durable AI are the strongest AI website builders available in 2026. Butternut generates a full multi-page site in 20 seconds with strong copy quality. Durable generates in 30 seconds and adds a CRM and invoicing for service businesses. Both offer free generation before you subscribe." } },
-    { "@type": "Question", name: "What is the cheapest website builder?", acceptedAnswer: { "@type": "Answer", text: "Carrd is the most affordable option with a genuine free plan and Pro plans from $9 per year. Butternut AI and Durable AI both allow free website generation before you commit to a paid publishing plan." } },
+    { "@type": "Question", name: "What is the cheapest website builder?", acceptedAnswer: { "@type": "Answer", text: `Carrd is the most affordable option with a genuine free plan. ${CARRD.sentence} Butternut AI and Durable AI both allow free website generation before you commit to a paid publishing plan.` } },
     { "@type": "Question", name: "Which website builder is best for Google Ads?", acceptedAnswer: { "@type": "Answer", text: "Swipe Pages is the strongest choice for Google Ads landing pages. Its AMP technology delivers mobile pages in under one second, with built-in A/B testing and dynamic text replacement for campaign personalisation." } },
   ],
 };
@@ -218,11 +220,11 @@ const platforms: PlatformCardProps[] = [
     name: "Carrd",
     tagline: "The fastest, cheapest way to get a clean professional site live. Free plan available permanently, no credit card, no trial expiry.",
     deal: "Free plan forever",
-    dealNote: "Publish up to 3 sites at no cost. Pro plans start at $9/year, the lowest annual price in the category.",
-    pricing: "Free / Pro from $9/year",
+    dealNote: `Publish up to 3 sites at no cost. Pro starts at ${CARRD.proLite} a year; a custom domain needs Pro Standard at ${CARRD.proStandard} a year (${CARRD.readOnLabel}).`,
+    pricing: `Free; ${CARRD.short} (${CARRD.readOnLabel})`,
     pros: [
       "Permanent free plan, no expiry",
-      "Pro plans from $9/year",
+      `Pro from ${CARRD.proLite} a year, ${CARRD.proStandard} with a custom domain`,
       "Zero learning curve, live within the hour",
       "Trusted by a large indie and creator community",
     ],
@@ -398,10 +400,10 @@ export default function BestWebsiteBuilderPage() {
                 </thead>
                 <tbody>
                   {[
-                    { name: "Carrd",        bestFor: "Portfolios, link-in-bio",      offer: "Free plan forever",            price: "Free / $9/yr",        href: "#carrd",      affUrl: CARRD_URL,     cta: "Start free" },
-                    { name: "Durable AI",   bestFor: "Local service businesses",     offer: "Generate free, no account",    price: "Free gen / paid pub", href: "#durable",    affUrl: DURABLE_URL,   cta: "Try free" },
+                    { name: "Carrd",        bestFor: "Portfolios, link-in-bio",      offer: "Free plan forever",            price: `Free / ${CARRD.proLite}/yr (${CARRD.readOnLabel})`, href: "#carrd",      affUrl: CARRD_URL,     cta: "Start free" },
+                    { name: "Durable AI",   bestFor: "Local service businesses",     offer: "Generate free, no account",    price: `Free plan; ${DURABLE.launchYearly}/mo yearly (${DURABLE.readOnLabel})`, href: "#durable",    affUrl: DURABLE_URL,   cta: "Try free" },
                     { name: "Butternut AI", bestFor: "Startups, SMBs, personal brand", offer: "Generate free, no account",  price: "Free gen / paid pub", href: "#butternut",  affUrl: BUTTERNUT_URL, cta: "Try free" },
-                    { name: "Swipe Pages",  bestFor: "Paid ad campaigns",            offer: "14-day trial, no credit card", price: "From $29/mo",         href: "#swipepages", affUrl: SWIPE_URL,     cta: "Start trial" },
+                    { name: "Swipe Pages",  bestFor: "Paid ad campaigns",            offer: "14-day trial, no credit card", price: "From US$29/mo billed annually (30 September 2026)", href: "#swipepages", affUrl: SWIPE_URL,     cta: "Start trial" },
                   ].map((row) => (
                     <tr key={row.name} className="border-b border-[#ded8cd] hover:bg-[#f7f4ee] transition-colors">
                       <td className="py-3 pr-4">
@@ -437,7 +439,7 @@ export default function BestWebsiteBuilderPage() {
             </h2>
             <div className="space-y-4 max-w-2xl">
               {[
-                { label: "Use Carrd if:", body: "You need a clean one-page site, portfolio, landing page, link-in-bio, or personal brand, and want the lowest cost option on the market. Free forever. Pro from $9/year. Nothing else comes close on price-to-quality for single-page use cases." },
+                { label: "Use Carrd if:", body: `You need a clean one-page site, portfolio, landing page, link-in-bio, or personal brand, and want the lowest cost option on the market. Free forever. Pro from ${CARRD.proLite} a year (${CARRD.readOnLabel}). Nothing else comes close on price-to-quality for single-page use cases.` },
                 { label: "Use Durable AI if:", body: "You are a local service business, trades, consultants, coaches, therapists, and want a website, a CRM to track leads, and invoicing in one platform, generated in 30 seconds from your business name and location. Not for e-commerce or content sites." },
                 { label: "Use Butternut AI if:", body: "You want the fastest AI-generated multi-page website with the strongest copy quality out of the box. No account required to generate and preview. Better than Durable for content-heavy sites; lacks the CRM and invoicing Durable includes." },
                 { label: "Use Swipe Pages if:", body: "You spend money on Google Ads or Meta Ads and your landing pages are costing you conversions due to slow mobile load times. AMP pages load in under one second. A/B testing and dynamic text replacement built in. Not a website solution, a dedicated conversion tool for paid traffic." },
@@ -475,7 +477,7 @@ export default function BestWebsiteBuilderPage() {
                 { label: "Blog / SEO tools",  vals: [false, false, true,  false] },
                 { label: "No-code editor",    vals: [true,  true,  true,  true]  },
                 { label: "Agency workspaces", vals: [false, false, false, true]  },
-                { label: "Starting price",    vals: ["Free / $9/yr", "Free gen", "Free gen", "14-day trial"] },
+                { label: `Starting price (${CARRD.readOnLabel})`, vals: [`Free / ${CARRD.proLite}/yr`, "Free plan", "Free gen", "14-day trial"] },
               ]}
             />
           </section>
@@ -497,7 +499,7 @@ export default function BestWebsiteBuilderPage() {
                 },
                 {
                   q: "What is the cheapest website builder?",
-                  a: "Carrd is the most affordable option with a genuine free plan and Pro plans from $9 per year. Butternut AI and Durable AI both allow free website generation before you commit to a paid publishing plan.",
+                  a: `Carrd is the most affordable option with a genuine free plan. ${CARRD.sentence} Butternut AI and Durable AI both allow free website generation before you commit to a paid publishing plan.`,
                 },
                 {
                   q: "Which website builder is best for Google Ads?",

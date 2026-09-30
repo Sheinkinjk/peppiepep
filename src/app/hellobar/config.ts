@@ -56,6 +56,7 @@ export const helloBarConfig: AffiliatePageConfig = {
     { q: "Will popups hurt my site or SEO?", a: "Used well, targeted popups grow your list without harming experience; used badly, intrusive popups can annoy visitors. Hello Bar's targeting and timing rules let you show them at sensible moments, which is the key to keeping conversions up without frustrating people." },
   ],
   relatedLinks: [
+    { href: "/survicate", label: "Survicate", desc: "Ask visitors and customers why they convert or leave, with on-site and email surveys." },
     { href: "/compare/lead-generation", label: "Compare lead-gen tools", desc: "See Hello Bar next to landing pages and quizzes." },
     { href: "/leadpages", label: "Leadpages", desc: "Build dedicated landing pages that convert." },
     { href: "/outgrow", label: "Outgrow", desc: "Capture leads with interactive quizzes and calculators." },
