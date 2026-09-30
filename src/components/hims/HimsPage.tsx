@@ -1,8 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Check, Gift, Minus } from "lucide-react";
-import type { Block, HimsPageContent, LedgerRow, Vertical } from "@/content/hims/types";
+import type { Block, HimsPageContent, LedgerRow, OverviewContent, Vertical } from "@/content/hims/types";
 import { HIMS_SLUG_LIST } from "@/content/hims/slugs";
+import { SIBLINGS } from "@/content/hims/siblings";
 import {
   AUTHOR,
   DISCLOSURE,
@@ -18,15 +19,19 @@ import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 import { CopyCode } from "./CopyCode";
 import { HimsPair } from "./HimsPair";
 import { InclusionsTable } from "./InclusionsTable";
+import { ProgramTabs } from "./ProgramTabs";
 import { CtaLink, Disclosure, Flag } from "./ui";
 
-// Two layouts (30 Sep 2026):
+// Three layouts:
 //  - review: the Hims brand pages, on the /moshy and /moshhair brand-page pattern
 //    (logo, lead, offer callout, at-a-glance card, sticky "Continue to Hims").
-//  - versus: the Hims and Mosh comparisons, on the /moshy-vs-juniper pattern
-//    (answer-first lead, compact disclosure above the first link, equal cards in
-//    alphabetical order, one dated inclusions table, balanced "Choose X if" lists,
-//    FAQ). No verdict box, no sticky button, no pick.
+//  - versus: the Hims and Mosh comparisons for one program, on the /moshy-vs-juniper
+//    pattern (answer-first lead, compact disclosure above the first link, equal cards
+//    in alphabetical order, one dated inclusions table, FAQ). No verdict box, no
+//    sticky button, no pick.
+//  - overview (/hims-vs-mosh, 1 Oct 2026): the two businesses profiled side by side,
+//    then a program selector whose three panels are all in the server HTML, the
+//    codes, a short FAQ and sources. No pick, no sticky, identical weight both sides.
 // On both, the answer is the first paragraph after the H1; nothing sits between them.
 
 const PROGRAM_LABEL: Record<Vertical, string> = { weight: "weight loss", hair: "hair loss", ed: "ED" };
@@ -81,7 +86,7 @@ export function HimsPage({ content, preview, linkSuffix }: { content: HimsPageCo
   const ctx: Ctx = { preview, linkSuffix, vertical: content.vertical, moshLink };
   const url = `${SITE_URL}/${content.slug}`;
   const faq = content.blocks.find((b): b is Extract<Block, { type: "faq" }> => b.type === "faq");
-  const crumbName = content.h1.split(":")[0];
+  const crumbName = content.h1.split(":")[0].split(" (")[0];
 
   const breadcrumb = [
     { name: "Refer Labs", item: SITE_URL },
@@ -97,7 +102,7 @@ export function HimsPage({ content, preview, linkSuffix }: { content: HimsPageCo
       headline: content.h1,
       description: content.metaDescription,
       datePublished: "2026-09-29",
-      dateModified: "2026-09-30",
+      dateModified: content.modified,
       author: SCHEMA_AUTHOR,
       publisher: SCHEMA_PUBLISHER,
       mainEntityOfPage: url,
@@ -115,7 +120,8 @@ export function HimsPage({ content, preview, linkSuffix }: { content: HimsPageCo
       description: content.metaDescription,
       url,
       inLanguage: "en-AU",
-      dateModified: "2026-09-30",
+      datePublished: "2026-09-29",
+      dateModified: content.modified,
       isPartOf: { "@id": `${SITE_URL}/#website` },
     },
     content.kind === "review"
@@ -135,12 +141,14 @@ export function HimsPage({ content, preview, linkSuffix }: { content: HimsPageCo
           numberOfItems: 2,
           itemListElement: [
             { "@type": "ListItem", position: 1, name: "Hims", url: `${SITE_URL}/hims` },
-            {
-              "@type": "ListItem",
-              position: 2,
-              name: moshSide.name,
-              url: moshSide.pageUrl.startsWith("/") ? `${SITE_URL}${moshSide.pageUrl}` : moshSide.pageUrl,
-            },
+            content.kind === "overview"
+              ? { "@type": "ListItem", position: 2, name: "Mosh", url: `${SITE_URL}/mosh-review` }
+              : {
+                  "@type": "ListItem",
+                  position: 2,
+                  name: moshSide.name,
+                  url: moshSide.pageUrl.startsWith("/") ? `${SITE_URL}${moshSide.pageUrl}` : moshSide.pageUrl,
+                },
           ],
         },
     faq && {
@@ -177,7 +185,9 @@ export function HimsPage({ content, preview, linkSuffix }: { content: HimsPageCo
       <h2 id="sources" className="text-lg font-bold text-[#14120f]">
         Sources
       </h2>
-      <p className="mt-1 text-[13px] text-[#56504a]">Each read on {FACTS_CHECKED_ON}.</p>
+      <p className="mt-1 text-[13px] text-[#56504a]">
+        Each provider page read on {FACTS_CHECKED_ON}. The Business Wire release is dated 2 June 2026.
+      </p>
       <ul className="mt-3 space-y-1.5 text-sm">
         {content.sources.map((s) => (
           <li key={s.url}>
@@ -190,13 +200,24 @@ export function HimsPage({ content, preview, linkSuffix }: { content: HimsPageCo
     </section>
   );
 
+  // Every other Hims page, then the page's own links outside the set. Review pages
+  // use the neutral labels, since they may not name a competitor.
+  const relatedLinks = [
+    ...HIMS_SLUG_LIST.filter((s) => s !== content.slug).map((s) => ({
+      href: `/${s}`,
+      label: content.kind === "review" ? (SIBLINGS[s].neutralLabel ?? SIBLINGS[s].label) : SIBLINGS[s].label,
+      desc: SIBLINGS[s].desc,
+    })),
+    ...content.related,
+  ];
+
   const related = (
     <section aria-labelledby="related" className="mt-14">
       <h2 id="related" className="text-xl font-bold text-[#14120f]">
         Related reading
       </h2>
       <div className="mt-4 grid gap-3 sm:grid-cols-2">
-        {content.related.map((r) => (
+        {relatedLinks.map((r) => (
           <Link key={r.href} href={`${r.href}${isHimsSlug(r.href) ? linkSuffix : ""}`} className="nw-card nw-card-hover group rounded-xl p-4">
             <p className="text-sm font-bold text-[#14120f] group-hover:text-[#007a95]">{r.label}</p>
             {r.desc && <p className="mt-1 text-xs leading-relaxed text-[#56504a]">{r.desc}</p>}
@@ -207,6 +228,25 @@ export function HimsPage({ content, preview, linkSuffix }: { content: HimsPageCo
   );
 
   const ldBlocks = jsonLd.map((j, i) => <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(j) }} />);
+
+  /* -------------------------------------------------------------- overview */
+  if (content.kind === "overview" && content.overview) {
+    return (
+      <>
+        {previewBanner}
+        <OverviewView
+          content={content}
+          overview={content.overview}
+          ctx={ctx}
+          breadcrumbNav={breadcrumbNav}
+          byline={byline}
+          related={related}
+          sources={sources}
+        />
+        {ldBlocks}
+      </>
+    );
+  }
 
   /* ---------------------------------------------------------------- versus */
   if (content.kind === "versus" && content.pair) {
@@ -250,7 +290,7 @@ export function HimsPage({ content, preview, linkSuffix }: { content: HimsPageCo
               {content.verdictQuestion}
             </h2>
             <div className={`mt-4 space-y-4 ${BODY}`}>
-              {content.verdict.map((p, i) => (
+              {(content.verdict ?? []).map((p, i) => (
                 <p key={i}>{p}</p>
               ))}
             </div>
@@ -384,7 +424,7 @@ export function HimsPage({ content, preview, linkSuffix }: { content: HimsPageCo
           </h2>
           <div className="mt-4 rounded-2xl border border-[#007a95]/25 bg-[#007a95]/[0.05] px-6 py-5">
             <div className="space-y-3">
-              {content.verdict.map((p, i) => (
+              {(content.verdict ?? []).map((p, i) => (
                 <p key={i} className="text-[15.5px] leading-relaxed text-[#14120f]">
                   {p}
                 </p>
@@ -711,4 +751,235 @@ function BlockView({ block, ctx, kind }: { block: Block; ctx: Ctx; kind: "review
         </section>
       );
   }
+}
+
+/* ------------------------------------------------------------------ */
+/* Overview layout: /hims-vs-mosh (1 Oct 2026)                          */
+
+/** Both marks in identical tiles, so neither business gets more visual weight. */
+function LogoTile({ name }: { name: "Hims" | "Mosh" }) {
+  return (
+    <span className="inline-flex h-[72px] w-[72px] items-center justify-center overflow-hidden rounded-2xl border border-[#ded8cd] bg-white shadow-[0_10px_28px_-18px_rgba(20,18,15,0.4)]">
+      {name === "Hims" ? (
+        <Image src="/logos/hims.png" alt="Hims logo" width={816} height={280} className="h-auto w-[52px]" />
+      ) : (
+        <Image src="/logos/mosh-tile.png" alt="Mosh logo" width={72} height={72} className="h-full w-full object-cover" />
+      )}
+    </span>
+  );
+}
+
+function OverviewView({
+  content,
+  overview,
+  ctx,
+  breadcrumbNav,
+  byline,
+  related,
+  sources,
+}: {
+  content: HimsPageContent;
+  overview: OverviewContent;
+  ctx: Ctx;
+  breadcrumbNav: React.ReactNode;
+  byline: React.ReactNode;
+  related: React.ReactNode;
+  sources: React.ReactNode;
+}) {
+  const { preview, linkSuffix } = ctx;
+  const faq = content.blocks.find((b): b is Extract<Block, { type: "faq" }> => b.type === "faq");
+  const partners = ["Hims", "Mosh", "Moshy"];
+  const hims = OFFERS.hair;
+
+  // The codes, derived from config so the sentence cannot drift from the cards.
+  const moshCodes = content.overview!.programs.map((p) => ({ program: p.tab, side: MOSH[p.vertical] }));
+  const coded = moshCodes.filter((c) => c.side.code);
+  const pending = moshCodes.filter((c) => !c.side.code);
+  const codesLead =
+    `Refer Labs has one Hims code, ${hims.code}, which applies to all three programs: ${hims.headline.charAt(0).toLowerCase()}${hims.headline.slice(1)}. ` +
+    `On the Mosh side each program has its own: ${coded.map((c) => `${c.side.code} for ${c.side.name} ${c.program.toLowerCase()}`).join(" and ")}` +
+    (pending.length ? `. Mosh's ${pending.map((c) => c.program.toLowerCase()).join(" and ")} offer has not been supplied yet.` : ".");
+
+  const panels = overview.programs.map((p) => (
+    <section key={p.anchor} aria-labelledby={`${p.anchor}-q`}>
+      <h2 id={`${p.anchor}-q`} className={H2_CLASS}>
+        {p.question}
+      </h2>
+      <p className={`mt-3 max-w-3xl ${BODY}`}>{p.summary}</p>
+      <div className="mt-6">
+        <InclusionsTable
+          table={p.vertical}
+          rows={p.rows}
+          preview={preview}
+          caption={`Hims and ${MOSH[p.vertical].name} for ${p.tab.toLowerCase()}`}
+        />
+      </div>
+      <div className="mt-6">
+        <HimsPair vertical={p.vertical} moshLink={p.vertical} preview={preview} locPrefix={`${content.slug}-${p.anchor}`} />
+      </div>
+      <p className="mt-5 text-[15px]">
+        <Link href={`${p.full.href}${isHimsSlug(p.full.href) ? linkSuffix : ""}`} className="nw-link">
+          {p.full.label} <span aria-hidden>&rarr;</span>
+        </Link>
+      </p>
+    </section>
+  ));
+
+  return (
+    <main id="main-content" className="mx-auto max-w-4xl px-4 pb-24 sm:px-8">
+      {breadcrumbNav}
+
+      {/* Header. Nothing sits between the H1 and the lead. */}
+      <header className="mt-8">
+        <div className="flex items-center gap-3">
+          <LogoTile name="Hims" />
+          <span aria-hidden className="text-sm font-semibold text-[#56504a]">
+            vs
+          </span>
+          <LogoTile name="Mosh" />
+        </div>
+        <p className="nw-kicker mt-6">{content.eyebrow}</p>
+        <h1 className="mt-3 max-w-3xl text-[2rem] font-extrabold leading-[1.08] tracking-[-0.02em] text-[#14120f] sm:text-4xl lg:text-[2.7rem]">
+          {content.h1}
+        </h1>
+        <p className="mt-5 max-w-2xl text-base leading-relaxed text-[#56504a] sm:text-lg">{content.standfirst}</p>
+        <div className="mt-5 max-w-2xl space-y-2">
+          <AffiliateDisclosure compact partners={partners} />
+          <HimsDisclosure preview={preview} />
+        </div>
+        {byline}
+      </header>
+
+      {/* The two businesses. Same rows, same order, same card. Rows share grid
+          tracks on wide screens so each fact sits level with its counterpart. */}
+      <section aria-labelledby="about" className="mt-14">
+        <h2 id="about" className={H2_CLASS}>
+          About the two businesses
+        </h2>
+        <div
+          className="mt-6 grid gap-4 md:grid-cols-2 md:grid-rows-[repeat(var(--profile-rows),auto)] md:gap-x-5 md:gap-y-0"
+          style={{ "--profile-rows": overview.profiles.length + 1 } as React.CSSProperties}
+        >
+          {(["Hims", "Mosh"] as const).map((name) => (
+            <article
+              key={name}
+              aria-labelledby={`about-${name.toLowerCase()}`}
+              className="rounded-2xl border border-[#ded8cd] bg-white md:row-span-full md:grid md:grid-rows-subgrid"
+            >
+              <div className="flex items-center gap-3 border-b border-[#ded8cd] px-5 py-4">
+                <h3 id={`about-${name.toLowerCase()}`} className="text-xl font-bold tracking-[-0.01em] text-[#14120f]">
+                  {name}
+                </h3>
+                <span className="text-[13px] text-[#56504a]">{name === "Hims" ? "hims.com.au" : "getmosh.com.au"}</span>
+              </div>
+              {overview.profiles.map((r, i) => (
+                <div key={r.label} className={`px-5 py-3.5 ${i > 0 ? "border-t border-[#f1ede4]" : ""}`}>
+                  <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#56504a]">{r.label}</p>
+                  <p className="mt-1 text-[15px] leading-relaxed text-[#14120f]">{name === "Hims" ? r.hims : r.mosh}</p>
+                </div>
+              ))}
+            </article>
+          ))}
+        </div>
+        <p className="mt-3 text-[12px] leading-relaxed text-[#56504a]">{overview.profilesNote}</p>
+      </section>
+
+      {/* Program selector: all three panels are in the HTML. */}
+      <section aria-label={overview.selectorHeading} className="mt-14 rounded-3xl border border-[#ded8cd] bg-[#f7f4ee] px-4 py-6 sm:px-8 sm:py-8">
+        <p className="nw-kicker">{overview.selectorHeading}</p>
+        <p className="mt-2 max-w-2xl text-[15px] leading-relaxed text-[#56504a]">{overview.selectorIntro}</p>
+        <div className="mt-5">
+          <ProgramTabs label="Choose a program" tabs={overview.programs.map((p) => ({ id: p.anchor, label: p.tab }))} panels={panels} />
+        </div>
+      </section>
+
+      {/* Codes, all three programs, both sides. */}
+      <section aria-labelledby="codes" className="mt-14">
+        <h2 id="codes" className={H2_CLASS}>
+          What are the Refer Labs codes?
+        </h2>
+        <p className={`mt-3 max-w-3xl ${BODY}`}>
+          {codesLead}
+          <Flag show={preview && (hims.codeIsPlaceholder || hims.headlineIsPlaceholder)}>Hims offer and code to confirm</Flag>
+        </p>
+        <div className="mt-6 grid gap-4 md:grid-cols-2">
+          <div className="rounded-2xl border border-[#ded8cd] bg-white p-5 text-sm leading-relaxed text-[#56504a]">
+            <h3 className="text-base font-bold text-[#14120f]">Hims</h3>
+            <dl className="mt-3 divide-y divide-[#f1ede4]">
+              {overview.programs.map((p) => (
+                <div key={p.anchor} className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 py-2.5">
+                  <dt>{p.tab}</dt>
+                  <dd className="font-mono font-bold tracking-[0.04em] text-[#14120f]">{OFFERS[p.vertical].code}</dd>
+                </div>
+              ))}
+            </dl>
+            <details className="mt-3">
+              <summary className="cursor-pointer font-semibold text-[#14120f]">Hims offer terms</summary>
+              <ul className="mt-2 list-disc space-y-1 pl-5">
+                {hims.terms.map((t) => (
+                  <li key={t}>{t}</li>
+                ))}
+              </ul>
+            </details>
+          </div>
+          <div className="rounded-2xl border border-[#ded8cd] bg-white p-5 text-sm leading-relaxed text-[#56504a]">
+            <h3 className="text-base font-bold text-[#14120f]">Mosh and Moshy</h3>
+            <dl className="mt-3 divide-y divide-[#f1ede4]">
+              {moshCodes.map((c) => (
+                <div key={c.program} className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 py-2.5">
+                  <dt>
+                    {c.program}
+                    <span className="text-[#56504a]"> ({c.side.name})</span>
+                  </dt>
+                  <dd className={c.side.code ? "font-mono font-bold tracking-[0.04em] text-[#14120f]" : "text-[#56504a]"}>
+                    {c.side.code ?? "No code yet"}
+                    <Flag show={preview && !!c.side.pendingFlag}>{c.side.pendingFlag}</Flag>
+                  </dd>
+                </div>
+              ))}
+            </dl>
+            <details className="mt-3">
+              <summary className="cursor-pointer font-semibold text-[#14120f]">Mosh and Moshy offer terms</summary>
+              <div className="mt-2 space-y-3">
+                {coded.map((c) => (
+                  <div key={c.program}>
+                    <p className="text-[#14120f]">{c.side.offerText}</p>
+                    <ul className="mt-1 list-disc space-y-1 pl-5">
+                      {(c.side.terms ?? []).map((t) => (
+                        <li key={t}>{t}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <p className="mt-10 max-w-3xl rounded-xl border border-[#ded8cd] bg-white px-5 py-4 text-[13px] leading-relaxed text-[#56504a]">
+        General information only, not medical advice. Refer Labs is not a healthcare provider. A registered practitioner at either
+        service decides whether any treatment is appropriate for you.
+      </p>
+
+      {faq ? (
+        <div className="mt-14">
+          <BlockView block={faq} ctx={ctx} kind="versus" />
+        </div>
+      ) : null}
+
+      {related}
+      {sources}
+
+      <footer className="mt-12 max-w-3xl space-y-3 text-xs leading-relaxed text-[#56504a]">
+        <AffiliateDisclosure partners={partners} earnsFromAll />
+        <Disclosure text={DISCLOSURE} />
+        <p>
+          Facts, offers and terms were read on {FACTS_CHECKED_ON} and can change, so confirm them with each business before you pay. Mosh&rsquo;s
+          ED button goes to its public page and is not an affiliate link. Hims is a trademark of Hims, Inc. Refer Labs is independent and is
+          not owned by or part of Hims, Mosh or any other provider named here.
+        </p>
+      </footer>
+    </main>
+  );
 }

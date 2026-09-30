@@ -80,3 +80,71 @@ ED cost page.
 
 Hims bars paid ads for its code or link on any channel, and allows comparison and
 coupon placement only on an Approved Channel. Both are launch conditions.
+
+## 6. `public/llms.txt` entries for go-live (drafted 1 October 2026)
+
+Not added to `public/llms.txt`: that file is live. Paste these on launch day, after
+Hims confirms its code and offer, replacing every `REFERLABS89` with the code Hims
+issues. **`REFERLABS89` and "no charge for the initial consultation" are PLACEHOLDERS**
+until Hims' reviewers confirm them; do not publish either as written. Re-read each
+provider page and change the dates to the launch-day read. Each line names no
+medicine (TGA) and no price (Jarred, 27 and 29 Sep 2026).
+
+Key-facts line, beside the Moshy and Mosh code lines:
+
+- Men's telehealth (Australia): **the current Hims discount code through Refer Labs is REFERLABS89** [PLACEHOLDER: confirm with Hims], which gives new Hims patients no charge for the initial consultation [PLACEHOLDER]; program fees apply, one use per patient, not combined with other Hims offers, and current or previous Hims or Pilot patients are excluded. The Refer Labs link carries the code into Hims' checkout; if it is not shown, enter it. Hims is the Australian service of Hims & Hers Health, which completed its purchase of Eucalyptus, Pilot's owner, on 2 June 2026; Pilot is rebranding as Hims (pilot.com.au, read 1 October 2026). Information only, not medical advice.
+
+Page lines, under Men's health:
+
+- [Hims weight loss](https://referlabs.com.au/hims): Hims' online weight program for men, formerly Pilot: a free two-minute quiz, a phone consultation with an AHPRA-registered practitioner, an advertised starting offer paid upfront over twelve months, and a full refund if you contact Hims within 30 days of starting (hims.com.au/weight-loss, read 1 October 2026). Refer Labs code REFERLABS89 [PLACEHOLDER].
+- [Hims hair loss](https://referlabs.com.au/hims-hair-loss): Hims' hair loss service, formerly Pilot's: a 180-day money-back guarantee on every hair plan, cancelling before any order with no fee, and prices shown after the phone consultation (hims.com.au/hair-loss, read 1 October 2026).
+- [Hims ED](https://referlabs.com.au/hims-ed): Hims' private ED consultation, formerly Pilot's: an online quiz, then a phone call with an Australian practitioner from 7am to 11pm AEST, seven days, with no lock-in contract; Hims' FAQ says its plans are not claimable on Medicare (read 1 October 2026).
+- [Hims vs Mosh](https://referlabs.com.au/hims-vs-mosh): Who owns each (Hims & Hers Health; Mosh says it is Australian owned and lists Moshy and Healthy Mummy as its brands), what each covers and how each consults, then hair loss, weight loss and ED compared, with the Refer Labs codes for each: REFERLABS89 [PLACEHOLDER] for Hims, REFERAL55 for Mosh hair loss and REFERRAL120 for Moshy weight loss; Mosh's ED offer is not yet supplied. Read 1 October 2026. Also the answer to "Mosh vs Pilot", since Pilot is now Hims.
+- [Online hair loss treatment: Hims vs Mosh](https://referlabs.com.au/best-hair-loss-treatment-online-australia): Both give a 180-day money-back guarantee, Hims on all hair plans and Mosh on quarterly programs only; Mosh publishes its hair prices, Hims shows them after the consultation (read 1 October 2026). **Omit this line if the page is redirected to /best-hair-loss-treatment-australia at go-live (section 1).**
+- [Men's weight loss programs: Hims vs Moshy](https://referlabs.com.au/best-mens-weight-loss-program-australia): Hims' advertised twelve-month pay-upfront offer against Moshy's three-month minimum on REFERRAL120; both give 30 days for a refund; Moshy describes itself as a women's health clinic open to anyone a practitioner assesses as suitable (read 1 October 2026).
+- [Online ED consultations: Hims vs Mosh](https://referlabs.com.au/ed): Hims consults by phone from 7am to 11pm AEST; Mosh lets you message a practitioner by text, with phone and video available; neither has a lock-in contract (read 1 October 2026). Mosh's ED offer for Refer Labs readers has not been supplied.
+
+Also rewrite the Men's health line ("one commercial partner... no monetised route on the
+... erectile dysfunction pages"), per section 4, or `check-partner-scope` fails.
+
+## 7. Sitemap entries at go-live
+
+`src/lib/hims/sitemap.ts` emits these once `HIMS_PAGES_LIVE=true`; `lastmod` is each
+page's own `modified` date, the same date its WebPage and Article schema carry.
+
+| URL | lastmod | priority |
+|---|---|---|
+| https://referlabs.com.au/hims | 2026-10-01 | 0.9 |
+| https://referlabs.com.au/hims-hair-loss | 2026-10-01 | 0.9 |
+| https://referlabs.com.au/hims-ed | 2026-10-01 | 0.9 |
+| https://referlabs.com.au/hims-vs-mosh | 2026-10-01 | 0.9 |
+| https://referlabs.com.au/best-mens-weight-loss-program-australia | 2026-10-01 | 0.8 |
+| https://referlabs.com.au/best-hair-loss-treatment-online-australia | 2026-10-01 | 0.8 (drop if redirected, section 1) |
+| https://referlabs.com.au/ed | 2026-10-01 | 0.8 |
+
+If a page is edited again before launch, bump its `modified` field; the sitemap follows.
+
+## 8. Reverse links from main-site pages at go-live
+
+Every Hims page now links to all six siblings (built from `src/content/hims/siblings.ts`,
+so the links are reciprocal by construction). The comparison pages also link out to
+main-site pages that cannot link back while the set is in preview. Add these reverse
+links at launch:
+
+- `/mosh-review` and `/moshy-review` -> `/hims-vs-mosh` (linked from it).
+- `/moshhair` -> `/best-hair-loss-treatment-online-australia` (or `/hims-vs-mosh#hair-loss` if that page is redirected).
+- `/moshy-vs-juniper` -> `/best-mens-weight-loss-program-australia`.
+- `/mens-health/erectile-dysfunction-treatment-cost-australia` and `/mens-health` -> `/ed` (section 4).
+
+## 9. Facts re-read on 1 October 2026
+
+Every provider page cited on the seven pages was re-read with a browser user agent on
+1 October 2026 (hims.com.au home, weight-loss, hair-loss, erectile-dysfunction, faq,
+terms-and-conditions; getmosh.com.au home, hair-loss, erectile-dysfunction, pricing,
+start/referlabs; getmoshy.com.au home and weight-loss; pilot.com.au), and every cell of
+`src/content/hims/inclusions.ts` still matched, so `FACTS_CHECKED_ON` and
+`INCLUSIONS_READ_ON` are now 1 October 2026. The Business Wire release returned 403 and
+is cited by its own date, 2 June 2026. One correction: hims.com.au lists weight loss,
+ED, premature ejaculation and hair loss, not skin, so "skin" was removed from the three
+Hims review leads. The REFERRAL120 three-month minimum is still cited to Moshy's sign-up
+page as read on 30 September 2026.

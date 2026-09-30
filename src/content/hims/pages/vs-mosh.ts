@@ -1,68 +1,99 @@
 import type { HimsPageContent } from "../types";
 import { FACTS_CHECKED_ON, SRC } from "../config";
 
+// /hims-vs-mosh, rebuilt 1 Oct 2026 (Jarred: "near top users are selecting hair
+// loss, weight loss, ed - then it would show summarised version ... must look
+// unbiased ... at top more generalised information about the businesses").
+// Layout: lead about the two businesses, two equal profiles, a program selector
+// whose three panels are all server-rendered, the codes, a short FAQ, sources.
+// Every profile fact was read off the business's own site on FACTS_CHECKED_ON,
+// plus the 2 June 2026 acquisition release. No pick, no "Choose X if", no verdict.
 export const vsMosh: HimsPageContent = {
   slug: "hims-vs-mosh",
   vertical: "hair",
-  // Covers all three programs. Hair is the only Mosh vertical with a Refer Labs link.
+  // The codes block and the default panel are hair, the program the old
+  // "mosh vs pilot" searches were about. Each panel sets its own Mosh side.
   moshLink: "hair",
-  kind: "versus",
-  seoTitle: "Hims vs Mosh (formerly Pilot vs Mosh): Weight, Hair and ED Compared",
+  kind: "overview",
+  modified: "2026-10-01",
+  seoTitle: "Hims vs Mosh (formerly Pilot vs Mosh): Hair, Weight and ED",
   metaDescription:
-    "Hims, formerly Pilot, and Mosh compared for Australian men: how you start, consult fees, practitioners, commitment and money-back terms for weight loss, hair loss and ED.",
-  eyebrow: "Men's telehealth comparison · Australia",
-  h1: "Hims vs Mosh: how do they compare for weight loss, hair loss and ED?",
+    "Who owns Hims (formerly Pilot) and Mosh, what each covers and how you consult, then hair loss, weight loss and ED side by side. Facts read 1 October 2026.",
+  eyebrow: "Men's telehealth · Australia",
+  h1: "Hims vs Mosh (formerly Pilot vs Mosh)",
   standfirst:
-    "Hims, the service formerly called Pilot, and Mosh are Australian men's telehealth services covering weight loss, hair loss and sexual health. Both start with a free online quiz and a consultation with an AHPRA-registered practitioner, who decides whether any treatment is appropriate. Hims consults by phone and includes a 24-hour Care Team. Mosh consults by call, video or text and publishes its prices before you start. On hair, both run a 180-day money-back guarantee: Hims on all hair plans, Mosh on quarterly programs.",
+    "Hims is the Australian men's health service of Hims & Hers Health, the US telehealth company that bought Pilot's owner Eucalyptus on 2 June 2026, and Pilot is rebranding as Hims. Mosh describes itself as an Australian-owned men's health clinic covering hair loss, sexual health, mental health and skin, with weight loss run through its partner brand Moshy. Both begin with an online quiz and a consultation with an AHPRA-registered practitioner, who decides whether any treatment is appropriate: Hims by phone, Mosh by call, with text messaging and video also available.",
   hub: { label: "Men's health", href: "/mens-health" },
-  verdictQuestion: "Is Hims or Mosh better?",
-  verdict: [
-    "It depends on the program. For weight loss, Mosh's offering is Moshy, its partner brand: Hims' advertised starting offer is a twelve-month pay-upfront option, and Moshy's Refer Labs offer carries a three-month minimum. Each gives 30 days to ask for your money back, under its own terms.",
-    "For hair, Mosh publishes its prices and limits its 180-day guarantee to quarterly programs; Hims shows prices after the consultation and covers every hair plan. For ED, the difference is format: Hims consults by phone from 7am to 11pm AEST, and Mosh lets you message a practitioner by text, with phone and video available.",
-  ],
-  pair: {
-    hims: {
-      bestIf: "A phone consultation and a Care Team at any hour.",
-      points: ["Free two-minute quiz, then a phone consultation", "Weight loss, hair loss and sexual health for men", "Pause, delay or cancel from your profile"],
-    },
-    mosh: {
-      bestIf: "Consultations by call, video or text, with prices published up front.",
-      points: ["Free online quiz, then a consultation", "Weight, hair, sexual health, mental health and skin", "No lock-in contracts; cancel anytime"],
-    },
+  overview: {
+    profiles: [
+      {
+        label: "Ownership",
+        hims: "Hims & Hers Health, Inc., which completed its purchase of Eucalyptus, Pilot's owner, on 2 June 2026. Pilot's site says it has joined the Hims & Hers group.",
+        mosh: "Australian owned, by its own description. Lists Moshy and Healthy Mummy as its brands.",
+      },
+      {
+        label: "What it covers",
+        hims: "Weight loss, hair loss and sexual health, for men.",
+        mosh: "Hair loss, sexual health, mental health and skin. Weight loss through Moshy, its partner brand.",
+      },
+      {
+        label: "How you consult",
+        hims: "Free two-minute online quiz, then a phone consultation.",
+        mosh: "Free online quiz, then a private call; text messaging, phone and video are available.",
+      },
+      {
+        label: "Practitioners",
+        hims: "AHPRA-registered practitioners who work remotely from within Australia.",
+        mosh: "AHPRA-registered medical practitioners and nurse practitioners in Australia, paid on a fee-for-service basis.",
+      },
+      {
+        label: "Hours and support",
+        hims: "Consultations 7am to 11pm AEST, seven days. A 24/7 Care Team after you start.",
+        mosh: "All online. Unlimited medical follow-ups and messaging with the medical team after you start.",
+      },
+      {
+        label: "Money-back scope",
+        hims: "180 days on all hair plans; 30 days from starting a weight program. Under Hims' terms.",
+        mosh: "180 days on quarterly hair programs. Moshy: 30 days on weight programs. Under each brand's terms.",
+      },
+    ],
+    profilesNote: `Read off each business's own site on ${FACTS_CHECKED_ON}; ownership also from the 2 June 2026 acquisition release. Sources are listed at the foot of the page.`,
+    selectorHeading: "Compare by program",
+    selectorIntro: "Pick a program to see how the two compare on it. Each panel has its own table and links.",
+    programs: [
+      {
+        vertical: "hair",
+        anchor: "hair-loss",
+        tab: "Hair loss",
+        question: "Hims or Mosh for hair loss?",
+        summary:
+          "Mosh lists its hair prices before you start; Hims gives its price after a phone consultation and refunds the consult fee if you don't go ahead. Each backs hair with a 180-day money-back guarantee, which Hims applies to every hair plan and Mosh to quarterly programs. Mosh's practitioners can be reached by text, call or video, and Hims adds a 24-hour Care Team.",
+        rows: ["How you start", "Consult fee", "Money-back", "Support", "Stopping", "Prices"],
+        full: { label: "See the full hair loss comparison", href: "/best-hair-loss-treatment-online-australia" },
+      },
+      {
+        vertical: "weight",
+        anchor: "weight-loss",
+        tab: "Weight loss",
+        question: "Hims or Moshy for weight loss?",
+        summary:
+          "Mosh runs weight loss through its partner brand Moshy. Hims' advertised starting offer is a twelve-month pay-upfront option backed by a 24/7 Care Team; Moshy's all-inclusive fee covers in-app coaching and dietitian meal plans, and its Refer Labs offer has a three-month minimum. Each gives 30 days to ask for your money back, under its own terms.",
+        rows: ["Who it is for", "How you start", "Commitment", "Money-back", "Coaching and nutrition"],
+        full: { label: "See the full weight loss comparison", href: "/best-mens-weight-loss-program-australia" },
+      },
+      {
+        vertical: "ed",
+        anchor: "ed",
+        tab: "Erectile dysfunction",
+        question: "Hims or Mosh for erectile dysfunction?",
+        summary:
+          "The practical difference is how you talk to the practitioner. Hims books a phone call, any day from 7am to 11pm AEST; Mosh lets you message by text, with phone and video available, and says you never need to show your face. Both use AHPRA-registered practitioners in Australia, and neither has a lock-in contract.",
+        rows: ["How you start", "Consultation format", "Practitioners", "Contract", "Support"],
+        full: { label: "See the full ED comparison", href: "/ed" },
+      },
+    ],
   },
   blocks: [
-    { type: "inclusions", id: "includes", heading: "What does each include?", table: "overview" },
-    {
-      type: "choose",
-      id: "choose",
-      hims: [
-        "You'd rather talk on the phone than type or be on video.",
-        "You want a Care Team you can reach at any hour.",
-        "For weight loss, a twelve-month program with a known total suits you.",
-      ],
-      mosh: [
-        "You want to see prices before the consultation.",
-        "You'd rather message a practitioner by text.",
-        "For weight loss, you want Moshy's three-month minimum with coaching and meal plans included.",
-      ],
-    },
-    {
-      type: "prose",
-      id: "weight",
-      heading: "Should I choose Hims or Moshy for weight loss?",
-      paragraphs: [
-        "Mosh's weight offering is Moshy, its partner brand, so this is Hims against Moshy. Start with how long you expect to stay. Hims' advertised offer sits on a twelve-month pay-upfront option, which gives a known total if you plan to stay a year. Moshy's Refer Labs offer comes with a three-month minimum, which is easier to live with if you want to see how a program fits first. Hims' weight page also says you can change or cancel at any time, so ask how that applies to the option you choose.",
-        "Then support. Hims includes a 24/7 Care Team of practitioners, health coaches and pharmacists. Moshy includes in-app coaching, dietitian meal plans and a community, with a care team of medical practitioners, nurses, pharmacists, psychologists, dietitians and exercise physiologists. Moshy describes itself as a women's health clinic but takes anyone a practitioner assesses as suitable. Both are compared row by row on our men's weight loss page.",
-      ],
-    },
-    {
-      type: "prose",
-      id: "moshy",
-      heading: "Is Mosh the same as Moshy?",
-      paragraphs: [
-        "They are partner brands. Moshy has its own site at getmoshy.com.au, describes itself as an online women's health clinic, and runs Mosh's weight offering; its services are open to anyone a practitioner assesses as suitable. The hair and ED comparisons on this page are Mosh's own services on getmosh.com.au.",
-      ],
-    },
     { type: "offer", id: "codes", vertical: "hair" },
     {
       type: "faq",
@@ -71,32 +102,49 @@ export const vsMosh: HimsPageContent = {
       items: [
         {
           q: "Is Mosh or Pilot better?",
-          a: "Pilot is now Hims: pilot.com.au says Pilot has joined the Hims & Hers group and sends new patients to the Hims quiz. So the comparison today is Hims vs Mosh. Hims consults by phone and adds a 24-hour Care Team; Mosh consults by call, video or text and publishes its prices first.",
+          a: "Pilot is now Hims. Hims & Hers Health completed its purchase of Eucalyptus, Pilot's owner, on 2 June 2026, and Pilot is rebranding as Hims, so the live comparison is Hims and Mosh. Hims consults by phone and adds a 24/7 Care Team; Mosh consults by call, text or video and publishes its prices first.",
         },
         {
-          q: "Is Hims cheaper than Mosh?",
-          a: "It depends on the program and how long you stay. Mosh publishes its prices on its pricing page. Hims publishes weight pricing on its weight page and shows hair and ED prices after the consultation. For weight loss, where Mosh's offering is Moshy, compare the total over each minimum: twelve months on Hims' advertised option, three months on Moshy's Refer Labs offer.",
+          q: "Who owns Hims and who owns Mosh?",
+          a: "Hims in Australia belongs to Hims & Hers Health, Inc., the US telehealth company, following its 2 June 2026 purchase of Eucalyptus, the company behind Pilot and Juniper. Mosh describes itself as Australian owned and lists Moshy and Healthy Mummy as its brands.",
         },
         {
-          q: "Do Hims and Mosh have a money-back guarantee?",
-          a: "Yes, with different scopes. On hair, Hims covers all plans for 180 days and Mosh covers quarterly programs for 180 days. On weight loss, Hims gives 30 days from starting and Moshy, Mosh's weight brand, has a 30-day money-back guarantee. Each is under the provider's terms.",
+          q: "Is Mosh the same as Moshy?",
+          a: "No, they are partner brands. Moshy has its own site, getmoshy.com.au, runs Mosh's weight loss service and describes itself as an online women's health clinic, open to anyone a practitioner assesses as suitable. Mosh's hair loss and sexual health services are on getmosh.com.au.",
         },
         {
-          q: "Who owns Hims and Mosh?",
-          a: "Hims is part of Hims & Hers Health, which completed its purchase of Eucalyptus, the Australian company behind Pilot and Juniper, on 2 June 2026; Pilot is rebranding as Hims. Mosh describes itself as Australian owned and lists Moshy and Healthy Mummy as its brands.",
+          q: "Do Hims and Mosh offer a money-back guarantee?",
+          a: "Yes, with different scopes. For hair, Hims covers every hair plan for 180 days and Mosh covers quarterly hair programs for 180 days. For weight, Hims allows 30 days from starting and Moshy has a 30-day money-back guarantee. Each applies under that business's own terms.",
         },
         {
-          q: "Can I switch from Mosh to Hims, or the other way?",
-          a: "Yes. You start as a new patient with the quiz and consultation. Tell the new practitioner about any plan you're on so they can assess you properly.",
+          q: "Does Hims or Mosh publish its prices?",
+          a: "Mosh lists its prices on its pricing page before you start. Hims shows weight pricing on its weight loss page and gives hair and ED prices after the consultation. Hims' FAQ says its plans are not claimable on Medicare.",
+        },
+        {
+          q: "Can I move from Mosh to Hims, or from Hims to Mosh?",
+          a: "Yes. You join the other service as a new patient, starting with its quiz and consultation. Tell the new practitioner about any plan you are on so they can assess you properly.",
         },
       ],
     },
   ],
-  sources: [SRC.himsWeight, SRC.himsHair, SRC.himsEd, SRC.himsFaq, SRC.pilot, SRC.eucalyptus, SRC.moshHome, SRC.moshPricing, SRC.moshyWeight, SRC.moshHair, SRC.moshReferLabs],
+  sources: [
+    SRC.himsHome,
+    SRC.himsWeight,
+    SRC.himsHair,
+    SRC.himsEd,
+    SRC.himsFaq,
+    SRC.pilot,
+    SRC.eucalyptus,
+    SRC.moshHome,
+    SRC.moshPricing,
+    SRC.moshHair,
+    SRC.moshEd,
+    SRC.moshReferLabs,
+    SRC.moshyHome,
+    SRC.moshyWeight,
+  ],
   related: [
-    { label: "Hims weight loss", href: "/hims", desc: "The consultation, the twelve-month commitment and the refund window." },
-    { label: "Hims hair loss", href: "/hims-hair-loss", desc: "The consultation, the 180-day money-back guarantee and cancelling." },
-    { label: "Online ED consultations: Hims vs Mosh", href: "/ed", desc: `Consultation format, hours and contracts, read ${FACTS_CHECKED_ON}.` },
-    { label: "Men's weight loss programs: Hims vs Mosh", href: "/best-mens-weight-loss-program-australia", desc: "Commitment, money-back terms and nutrition help side by side." },
+    { label: "Mosh review", href: "/mosh-review", desc: "Mosh's services, how its consultations work and its terms." },
+    { label: "Moshy review", href: "/moshy-review", desc: "Moshy's weight program, what the fee includes and its terms." },
   ],
 };

@@ -18,7 +18,7 @@ import { HIMS_URL, MOSH_HAIR_URL, MOSHY_URL } from "@/lib/affiliate-links";
 export const SITE_URL = "https://referlabs.com.au";
 
 /** Date every fact on these pages was last read on the provider's own public site. */
-export const FACTS_CHECKED_ON = "30 September 2026";
+export const FACTS_CHECKED_ON = "1 October 2026";
 
 export const AUTHOR = "Jarred - Founder";
 
@@ -158,6 +158,7 @@ export const MOSH_CTA_LABEL = "Continue to Mosh";
 
 /** Sources used on more than one page. */
 export const SRC = {
+  himsHome: { label: "Hims: Home page", url: "https://hims.com.au/" },
   himsWeight: { label: "Hims: Weight loss", url: "https://hims.com.au/weight-loss" },
   himsHair: { label: "Hims: Hair loss", url: "https://hims.com.au/hair-loss" },
   himsEd: { label: "Hims: Erectile dysfunction", url: "https://hims.com.au/erectile-dysfunction" },

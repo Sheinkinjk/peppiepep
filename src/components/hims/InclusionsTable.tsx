@@ -8,14 +8,35 @@ import { Flag } from "./ui";
  * src/content/hims/inclusions.ts. Columns are alphabetical and there is no winner
  * column. A Mosh cell with no verified fact renders "Awaiting Mosh" with a flag.
  */
-export function InclusionsTable({ table, preview }: { table: InclusionsKey; preview: boolean }) {
+export function InclusionsTable({
+  table,
+  preview,
+  rows,
+  caption,
+}: {
+  table: InclusionsKey;
+  preview: boolean;
+  /** Show only these rows, in this order (the /hims-vs-mosh panels). Omit for the whole table. */
+  rows?: string[];
+  /** Visually hidden table caption, for screen readers. */
+  caption?: string;
+}) {
   const data = INCLUSIONS[table];
+  const shown = rows
+    ? rows.map((label) => {
+        const r = data.rows.find((x) => x.label === label);
+        // A typo in a panel's row list must fail the build, not drop a row silently.
+        if (!r) throw new Error(`InclusionsTable: no "${label}" row in the ${table} table`);
+        return r;
+      })
+    : data.rows;
   // The weight table compares Moshy, Mosh's partner brand for weight (Jarred, 30 Sep 2026).
   const other = table === "weight" ? MOSH.weight.name : "Mosh";
   return (
     <div>
       <div className="overflow-x-auto rounded-xl border border-[#ded8cd] bg-white">
         <table className="w-full min-w-[560px] text-left text-sm leading-relaxed">
+          {caption ? <caption className="sr-only">{caption}</caption> : null}
           <thead>
             <tr className="bg-[#f7f4ee]">
               <th scope="col" className="w-40 px-4 py-3 font-semibold text-[#56504a]">
@@ -26,7 +47,7 @@ export function InclusionsTable({ table, preview }: { table: InclusionsKey; prev
             </tr>
           </thead>
           <tbody>
-            {data.rows.map((r) => (
+            {shown.map((r) => (
               <tr key={r.label} className="border-t border-[#ded8cd] align-top">
                 <th scope="row" className="px-4 py-3 font-medium text-[#56504a]">{r.label}</th>
                 <td className="px-4 py-3 text-[#14120f]">

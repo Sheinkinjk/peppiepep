@@ -5,13 +5,14 @@ export const bestWeight: HimsPageContent = {
   slug: "best-mens-weight-loss-program-australia",
   vertical: "weight",
   kind: "versus",
+  modified: "2026-10-01",
   seoTitle: "Men's Weight Loss Programs Online in Australia: Hims vs Moshy",
   metaDescription:
-    "Hims (formerly Pilot) and Moshy compared for Australian men: commitment, money-back terms, practitioner support, coaching and nutrition, and the Refer Labs code for each.",
+    "Twelve months upfront with Hims (formerly Pilot) or a three-month minimum with Moshy? Two online weight programs for men, on refunds, support and coaching.",
   eyebrow: "Men's weight loss · Australia",
   h1: "Online men's weight loss programs in Australia: Hims vs Moshy",
   standfirst:
-    "This page compares two Australian online weight programs a man can join, Hims (formerly Pilot) and Moshy, Mosh's partner brand for weight, on commitment, refunds and support. In both, a registered practitioner decides whether any treatment is appropriate. Hims' advertised starting offer is a twelve-month pay-upfront option with a 24/7 Care Team. Moshy describes itself as a women's health clinic, takes anyone a practitioner assesses as suitable, and includes in-app coaching and dietitian meal plans; its Refer Labs offer has a three-month minimum. Each offers a 30-day money-back guarantee under its own terms.",
+    "Hims (formerly Pilot) and Moshy, Mosh's partner brand for weight, run online weight programs that Australian men can join. In both, a registered practitioner decides whether any treatment is appropriate. Hims' advertised starting offer is a twelve-month pay-upfront option with a 24/7 Care Team. Moshy describes itself as a women's health clinic, takes anyone a practitioner assesses as suitable, and includes in-app coaching and dietitian meal plans; its Refer Labs offer has a three-month minimum. Each offers a 30-day money-back guarantee under its own terms.",
   hub: { label: "Weight loss", href: "/weight-loss" },
   verdictQuestion: "Is Hims or Moshy better for men's weight loss?",
   verdict: [
@@ -57,7 +58,7 @@ export const bestWeight: HimsPageContent = {
       id: "how-to-compare",
       heading: "How do I compare online weight loss programs?",
       paragraphs: [
-        "Australian advertising law doesn't allow any provider, or any site writing about one, to name the specific treatments a practitioner may recommend. The comparison that is open to you is on terms and support.",
+        "Neither provider may name the treatments a practitioner could recommend, and Australian advertising rules hold a site like Refer Labs to the same limit. What can be compared is terms and support.",
         "Start with the total over the time you expect to stay. Each provider leads with an introductory offer tied to a minimum period, so ask for the total over three months and over twelve. Then look at stopping: the refund window, the minimum commitment, and whether cancelling early leaves a balance. Then support: who you can reach, when, and whether help with food is included or extra.",
       ],
     },
@@ -89,7 +90,7 @@ export const bestWeight: HimsPageContent = {
         },
         {
           q: "Is Pilot weight loss still available?",
-          a: "Not under the Pilot name. Hims & Hers Health completed its acquisition of Eucalyptus, the Australian company behind Pilot, on 2 June 2026, and Pilot is rebranding as Hims: new patients who start on pilot.com.au are taken to the Hims quiz.",
+          a: "Not under the Pilot name. Pilot joined the Hims & Hers group when Hims & Hers Health's purchase of its owner, Eucalyptus, completed on 2 June 2026, and Pilot is rebranding as Hims: new patients who start on pilot.com.au are taken to the Hims quiz.",
         },
         {
           q: "Can I get a refund on an online weight loss program?",
@@ -99,10 +100,5 @@ export const bestWeight: HimsPageContent = {
     },
   ],
   sources: [SRC.himsWeight, SRC.himsFaq, SRC.moshyWeight, SRC.moshyHome, SRC.pilot, SRC.eucalyptus],
-  related: [
-    { label: "Hims weight loss", href: "/hims", desc: "The consultation, the twelve-month commitment and the refund window." },
-    { label: "Hims vs Mosh", href: "/hims-vs-mosh", desc: "Hair loss and ED compared, and where Moshy fits for weight." },
-    { label: "Online hair loss treatment: Hims vs Mosh", href: "/best-hair-loss-treatment-online-australia", desc: "Guarantees, cancelling and consultation formats side by side." },
-    { label: "Moshy vs Juniper", href: "/moshy-vs-juniper", desc: "Two weight-management services built with women in mind." },
-  ],
+  related: [{ label: "Moshy vs Juniper", href: "/moshy-vs-juniper", desc: "Two weight-management services built with women in mind." }],
 };

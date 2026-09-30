@@ -5,13 +5,14 @@ export const bestHair: HimsPageContent = {
   slug: "best-hair-loss-treatment-online-australia",
   vertical: "hair",
   kind: "versus",
+  modified: "2026-10-01",
   seoTitle: "Online Hair Loss Treatment in Australia: Hims vs Mosh",
   metaDescription:
-    "Hims (formerly Pilot) and Mosh compared for online hair loss consultations in Australia: consult fees, 180-day money-back terms, cancelling, support and the Refer Labs codes.",
+    "Hims (formerly Pilot) and Mosh both give 180 days to claim a hair loss refund, on different plans. Consult fees, support, cancelling and both codes compared.",
   eyebrow: "Men's hair loss · Australia",
   h1: "Online hair loss treatment in Australia: Hims vs Mosh compared",
   standfirst:
-    "This page compares two Australian online hair loss services for men, Hims (formerly Pilot) and Mosh. Both start with a free online quiz and a consultation with an AHPRA-registered practitioner, who decides whether any treatment is appropriate, and both run a 180-day money-back guarantee: Hims on all hair plans, Mosh on quarterly hair programs. Mosh publishes its hair prices and consults by call, video or text; Hims shows prices after a phone consultation and includes a 24-hour Care Team.",
+    "Hims (formerly Pilot) and Mosh are online hair loss services for Australian men. Each starts with a free online quiz and a consultation with an AHPRA-registered practitioner, who decides whether any treatment is appropriate, and each runs a 180-day money-back guarantee: Hims on all hair plans, Mosh on quarterly hair programs. Mosh publishes its hair prices and consults by call, video or text; Hims shows prices after a phone consultation and includes a 24-hour Care Team.",
   hub: { label: "Hair loss", href: "/hair-loss" },
   verdictQuestion: "Is Hims or Mosh better for hair loss?",
   verdict: [
@@ -43,7 +44,7 @@ export const bestHair: HimsPageContent = {
       id: "choose",
       hims: [
         "You want the money-back guarantee to cover whichever hair plan you're on.",
-        "You want a Care Team you can reach at any hour.",
+        "You want support from a Care Team at any hour of the day.",
         "You'd rather cancel before an order than be tied to a billing period.",
       ],
       mosh: [
@@ -89,7 +90,7 @@ export const bestHair: HimsPageContent = {
         },
         {
           q: "Is Pilot hair loss still available?",
-          a: "Only through Hims. Hims & Hers Health completed its acquisition of Eucalyptus, the Australian company behind Pilot, on 2 June 2026, and Pilot is rebranding as Hims; its website hands new patients to the Hims quiz.",
+          a: "Only through Hims. Since Hims & Hers Health took over Pilot's owner, Eucalyptus, on 2 June 2026, Pilot has been rebranding as Hims, and its website hands new patients to the Hims quiz.",
         },
         {
           q: "What are the Hims and Mosh codes for hair loss?",
@@ -99,10 +100,5 @@ export const bestHair: HimsPageContent = {
     },
   ],
   sources: [SRC.himsHair, SRC.himsFaq, SRC.moshHair, SRC.moshReferLabs, SRC.moshPricing, SRC.moshHome, SRC.pilot, SRC.eucalyptus],
-  related: [
-    { label: "Hims hair loss", href: "/hims-hair-loss", desc: "The consultation, the 180-day money-back guarantee and cancelling." },
-    { label: "Hims vs Mosh", href: "/hims-vs-mosh", desc: "Weight loss, hair loss and ED compared." },
-    { label: "Mosh hair loss", href: "/moshhair", desc: "Mosh's hair service and the REFERAL55 code." },
-    { label: "Online ED consultations: Hims vs Mosh", href: "/ed", desc: "Consultation format, hours and contracts." },
-  ],
+  related: [{ label: "Mosh hair loss", href: "/moshhair", desc: "Mosh's hair service and the REFERAL55 code." }],
 };

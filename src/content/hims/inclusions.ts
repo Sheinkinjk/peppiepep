@@ -1,6 +1,6 @@
 /**
  * What Hims and Mosh each say they include, read off each provider's own public
- * pages on 30 September 2026. One source of truth for the four comparison pages,
+ * pages on 30 September 2026 and re-read on 1 October 2026. One source of truth for the four comparison pages,
  * on the pattern of src/lib/compare/weight-inclusions.ts.
  *
  * Rules for every cell:
@@ -13,7 +13,7 @@
  *
  * Columns are alphabetical (Hims, Mosh) and there is no winner column.
  */
-export const INCLUSIONS_READ_ON = "30 September 2026";
+export const INCLUSIONS_READ_ON = "1 October 2026";
 
 export type InclusionsKey = "overview" | "weight" | "hair" | "ed";
 

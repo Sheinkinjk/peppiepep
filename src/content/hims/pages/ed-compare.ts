@@ -12,9 +12,10 @@ export const edCompare: HimsPageContent = {
   slug: "ed",
   vertical: "ed",
   kind: "versus",
+  modified: "2026-10-01",
   seoTitle: "Online ED Consultations in Australia: Hims vs Mosh",
   metaDescription:
-    "Hims (formerly Pilot) and Mosh compared for online ED consultations in Australia: consultation format, hours, practitioners, contracts and support, read from each provider's own site.",
+    "Phone or text? Hims (formerly Pilot) consults by phone, 7am to 11pm AEST; Mosh lets you message a practitioner. ED consultations, contracts and support compared.",
   eyebrow: "Men's sexual health · Australia",
   h1: "Online ED consultations in Australia: Hims vs Mosh",
   standfirst:
@@ -50,7 +51,7 @@ export const edCompare: HimsPageContent = {
       id: "choose",
       hims: [
         "You'd rather speak to a practitioner than type.",
-        "You want a Care Team you can reach at any hour.",
+        "You'd like a Care Team to contact between consultations.",
         "You want the consult fee refunded if no suitable plan is found.",
       ],
       mosh: [
@@ -65,7 +66,7 @@ export const edCompare: HimsPageContent = {
       heading: "How do online ED consultations work in Australia?",
       paragraphs: [
         "Both services start with a private online questionnaire about your health history, which a practitioner reads before the consultation. The practitioner then decides whether any treatment is appropriate. Hims says it may have no suitable option for you; Mosh says its practitioners first decide whether a telehealth consultation suits you.",
-        "Australian advertising rules stop providers, and sites that write about them, from naming what a practitioner may recommend, so the specifics are covered in the consultation.",
+        "Treatment specifics are left to the consultation, because Australian advertising rules keep them off provider sites and off pages like this one.",
       ],
     },
     {
@@ -79,7 +80,7 @@ export const edCompare: HimsPageContent = {
     {
       type: "prose",
       id: "in-person",
-      heading: "Should I see a practitioner in person instead?",
+      heading: "Is an in-person appointment better for ED?",
       paragraphs: [
         "Mosh says its practitioners sometimes advise tests or an in-person visit, and a practitioner on either service can tell you if an in-person appointment would serve you better. If you already see a practitioner who knows your history, starting there is reasonable.",
       ],
@@ -104,7 +105,7 @@ export const edCompare: HimsPageContent = {
         },
         {
           q: "Is Hims the same as Pilot?",
-          a: "Yes. Hims & Hers Health completed its acquisition of Eucalyptus, the Australian company behind Pilot, on 2 June 2026, and Pilot is rebranding as Hims: Pilot's website says it has joined the Hims & Hers group, and new patients who start there are taken to the Hims quiz.",
+          a: "Yes. Pilot is the former name. Eucalyptus, the company behind it, has been part of Hims & Hers Health since that acquisition completed on 2 June 2026, and Pilot is rebranding as Hims; new patients who start on pilot.com.au are taken to the Hims quiz.",
         },
         {
           q: "Who are the practitioners?",
@@ -115,8 +116,6 @@ export const edCompare: HimsPageContent = {
   ],
   sources: [SRC.himsEd, SRC.himsFaq, SRC.pilot, SRC.eucalyptus, SRC.moshEd, SRC.moshHome, SRC.moshPricing],
   related: [
-    { label: "Hims ED", href: "/hims-ed", desc: "The phone consultation, hours, contracts and the Care Team." },
-    { label: "Hims vs Mosh", href: "/hims-vs-mosh", desc: "Weight loss, hair loss and ED compared." },
     { label: "ED consultation costs in Australia", href: "/mens-health/erectile-dysfunction-treatment-cost-australia", desc: "What an online or in-person ED consultation costs." },
     { label: "Men's health", href: "/mens-health", desc: "Online men's health services in Australia." },
   ],

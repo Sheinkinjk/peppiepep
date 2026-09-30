@@ -19,8 +19,9 @@ export function HimsPair({
   preview,
   locPrefix,
 }: {
-  hims: PairSide;
-  mosh: PairSide;
+  /** Omit both for a compact pair (logo, offer, button), as on the /hims-vs-mosh panels. */
+  hims?: PairSide;
+  mosh?: PairSide;
   vertical: Vertical;
   moshLink: Vertical;
   preview: boolean;
@@ -67,21 +68,25 @@ export function HimsPair({
   return (
     <div className="grid gap-4 sm:grid-cols-2">
       {cards.map((c) => (
-        <div key={c.name} className="nw-card flex flex-col rounded-2xl p-6">
+        <div key={c.name} className={`nw-card flex flex-col rounded-2xl ${c.side ? "p-6" : "p-5"}`}>
           <div className="flex items-center gap-3">
             <Image src={c.logo.src} alt={`${c.name} logo`} width={c.logo.w} height={c.logo.h} className={c.logo.className} />
             <h3 className="text-lg font-bold text-[#14120f]">{c.name}</h3>
           </div>
-          <p className="mt-4 text-[15px] font-semibold leading-snug text-[#14120f]">{c.side.bestIf}</p>
-          <ul className="mt-3 space-y-1.5 text-sm leading-relaxed text-[#56504a]">
-            {c.side.points.map((pt) => (
-              <li key={pt} className="flex gap-2">
-                <span aria-hidden className="mt-2 h-1 w-1 shrink-0 rounded-full bg-[#56504a]" />
-                {pt}
-              </li>
-            ))}
-          </ul>
-          <div className="mt-auto pt-5">
+          {c.side ? (
+            <>
+              <p className="mt-4 text-[15px] font-semibold leading-snug text-[#14120f]">{c.side.bestIf}</p>
+              <ul className="mt-3 space-y-1.5 text-sm leading-relaxed text-[#56504a]">
+                {c.side.points.map((pt) => (
+                  <li key={pt} className="flex gap-2">
+                    <span aria-hidden className="mt-2 h-1 w-1 shrink-0 rounded-full bg-[#56504a]" />
+                    {pt}
+                  </li>
+                ))}
+              </ul>
+            </>
+          ) : null}
+          <div className={c.side ? "mt-auto pt-5" : "mt-auto pt-4"}>
             {c.offerBox}
             <a
               href={c.href}

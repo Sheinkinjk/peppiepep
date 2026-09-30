@@ -5,17 +5,18 @@ export const weight: HimsPageContent = {
   slug: "hims",
   vertical: "weight",
   kind: "review",
+  modified: "2026-10-01",
   seoTitle: "Hims Weight Loss Australia (formerly Pilot): Code and Review",
   metaDescription:
-    "Hims, formerly Pilot, runs an online men's weight loss program in Australia. The phone consultation, the twelve-month commitment, the 30-day refund, support and the Refer Labs code.",
+    "Hims, formerly Pilot, runs an online men's weight loss program in Australia: the phone consultation, twelve-month commitment, 30-day refund and Refer Labs code.",
   eyebrow: "Men's weight loss telehealth · Australia",
   h1: "Hims weight loss Australia: the consultation, the commitment and the code",
   standfirst:
-    "Hims is the Australian service of Hims & Hers Health, the US-listed telehealth company, and the men's health brand formerly called Pilot. It runs online consultations with Australian-registered practitioners for weight loss, hair loss, skin and sexual health. Its weight loss program starts with a free two-minute quiz and a phone consultation, and the practitioner decides whether any treatment is appropriate. The advertised starting offer carries a twelve-month pay-upfront commitment, with a full refund if you contact Hims within 30 days of starting (terms apply). With the Refer Labs code, new patients pay nothing for the initial consultation; program fees apply.",
+    "Hims is the Australian service of Hims & Hers Health, the US-listed telehealth company, and the men's health brand formerly called Pilot. It runs online consultations with Australian-registered practitioners for weight loss, hair loss and sexual health. Its weight loss program starts with a free two-minute quiz and a phone consultation, and the practitioner decides whether any treatment is appropriate. The advertised starting offer carries a twelve-month pay-upfront commitment, with a full refund if you contact Hims within 30 days of starting (terms apply). With the Refer Labs code, new patients pay nothing for the initial consultation; program fees apply.",
   hub: { label: "Weight loss", href: "/weight-loss" },
   verdictQuestion: "Is Hims weight loss worth it?",
   verdict: [
-    "Hims suits men who want a practitioner-led program run from their phone, with unlimited practitioner support and a Care Team they can reach at any hour.",
+    "It is worth considering if you want a practitioner-led program run entirely from your phone, with unlimited practitioner support and a Care Team you can reach at any hour.",
     "Plan around the commitment. The advertised starting offer is paid upfront and runs for twelve months. If you already expect to stay a year, that gives you a known total. If you would rather try a month first, ask about payment options on the consultation before you pay for anything beyond it.",
   ],
   blocks: [
@@ -151,10 +152,5 @@ export const weight: HimsPageContent = {
     },
   ],
   sources: [SRC.himsWeight, SRC.himsFaq, SRC.pilot, SRC.eucalyptus, SRC.himsTerms],
-  related: [
-    { label: "How Hims compares with other providers", href: "/hims-vs-mosh", desc: "Weight loss, hair loss and ED: how you start, commitment, refunds and support." },
-    { label: "Online men's weight loss programs compared", href: "/best-mens-weight-loss-program-australia", desc: "Commitment, money-back terms and nutrition help side by side." },
-    { label: "Hims hair loss", href: "/hims-hair-loss", desc: "The consultation, the 180-day money-back guarantee and cancelling." },
-    { label: "Hims ED", href: "/hims-ed", desc: "The phone consultation, hours, contracts and the Care Team." },
-  ],
+  related: [],
 };
