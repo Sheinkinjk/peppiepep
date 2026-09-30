@@ -9,9 +9,16 @@ export const employmentHeroConfig: AffiliatePageConfig = {
   badgeText: "HR & payroll",
   affiliateUrl: EMPLOYMENT_HERO_URL,
   offer: "Free demo",
+  // Every figure below was read on employmenthero.com/pricing (AU), in a
+  // rendered browser with each of its Recruitment, HR and Payroll tabs opened,
+  // on 30 September 2026. The plan cards print "$10 * Conditions apply" with no
+  // billing period beside the figure; the condition is a 10-user minimum. Do not
+  // add "a month" or "per employee" to the plan prices: the page does not say it.
+  // (The add-ons do say "per employee/month", and are quoted that way.)
+  offerCheckedOn: "2026-09-30",
 
   quickAnswer:
-    "Employment Hero is an Australian-built, all-in-one HR, payroll and employment platform. It combines HR and people operations, ATO-certified Single Touch Payroll (STP Phase 2), AI recruitment and applicant tracking, employee benefits and earned wage access, and an employee app. It is Fair Work and ATO compliant, and is aimed at Australian small and medium businesses. Employment Hero lists its HR plans on its own pricing page; payroll is included only in its top plan, Employment Unlimited, which is quoted by its sales team (read on employmenthero.com/pricing, 30 September 2026).",
+    "Employment Hero lists a standalone Payroll plan at $10 and its HR plans at $10 (HR Essentials) and $14 (HR Engage), each with a minimum of 10 users; HR Elite and Employment Unlimited, which bundles payroll with every HR feature, are quoted by sales (employmenthero.com/pricing, read 30 September 2026). Employment Hero is an Australian-built HR, payroll and hiring platform with ATO-certified Single Touch Payroll (STP Phase 2), aimed at Australian small and medium businesses.",
 
   banner: {
     heading: "Employment Hero: HR, Payroll & Compliance",
@@ -24,7 +31,7 @@ export const employmentHeroConfig: AffiliatePageConfig = {
     { k: "What it is", v: "All-in-one HR, payroll and employment platform" },
     { k: "Best for", v: "Australian small and medium businesses" },
     { k: "Compliance", v: "Fair Work and ATO compliant, STP Phase 2 certified" },
-    { k: "Payroll", v: "Included in the Employment Unlimited plan, quoted by sales" },
+    { k: "Price", v: "Payroll plan $10; HR plans $10 and $14; 10-user minimum (read 30 Sep 2026)" },
   ],
   trustStrip: [
     "Australian-built for Australian employers",
@@ -33,7 +40,7 @@ export const employmentHeroConfig: AffiliatePageConfig = {
     "Fair Work compliant",
   ],
   verdict:
-    "Employment Hero is a strong fit for Australian SMEs that want HR, payroll and compliance handled in one Australian-built platform rather than stitched together. The ATO-certified payroll, Fair Work alignment and employee app cover the core obligations of employing people locally. Payroll sits in its top plan, so a demo scoped to your business is the sensible next step.",
+    "Employment Hero is a strong fit for Australian SMEs that want HR, payroll and compliance handled in one Australian-built platform rather than stitched together. The ATO-certified payroll, Fair Work alignment and employee app cover the core obligations of employing people locally. Payroll and HR are sold as separate plans, or together in the quoted Employment Unlimited plan, so decide which you need before you book the demo.",
   verdictPoints: [
     "Australian-built and aligned to Fair Work and ATO requirements",
     "ATO-certified Single Touch Payroll (STP Phase 2) built in",
@@ -44,7 +51,7 @@ export const employmentHeroConfig: AffiliatePageConfig = {
     h1Prefix: "Employment Hero (Australia):",
     h1Highlight: "all-in-one HR, payroll and compliance for Australian SMEs",
     subheading:
-      "Employment Hero is Australian-built and combines HR, ATO-certified Single Touch Payroll, recruitment and employee benefits in one platform. It suits an Australian employer running payroll and HR in separate systems. Pricing is by quote and the demo is free.",
+      "Employment Hero's Payroll plan is listed at $10 and its HR plans at $10 and $14, each with a 10-user minimum, while the all-in-one Employment Unlimited plan is quoted by sales (employmenthero.com/pricing, read 30 September 2026). It is an Australian-built platform combining HR, ATO-certified Single Touch Payroll, recruitment and employee benefits, and the demo is free.",
     trustBullets: [
       "Direct access to Employment Hero",
       "Covers what the platform does and who it suits",
@@ -56,10 +63,10 @@ export const employmentHeroConfig: AffiliatePageConfig = {
 
   sections: [
     {
-      heading: "Access Employment Hero",
+      heading: "How much does Employment Hero cost?",
       paragraphs: [
-        "For an Australian employer comparing Employment Hero with the alternatives, a few things matter most: what the platform covers, how the payroll and compliance side holds up, and why the pricing is quoted per business rather than published. Instead of collecting the details from a run of review sites, it sets out the essentials and links straight through to Employment Hero to explore yourself.",
-        "Any button on the page takes you to Employment Hero directly, with no details needed here beforehand.",
+        "Read on employmenthero.com/pricing (Australia) on 30 September 2026, Employment Hero sells payroll and HR as separate plans. The Payroll plan is listed at $10 and includes unlimited pay runs, automated tax calculations, award interpretation, payroll reporting and employee self-service. On the HR side, HR Essentials is $10 and HR Engage, which adds recruitment, expenses, performance and learning, is $14. HR Elite and Employment Unlimited, the plan that bundles payroll with every HR feature, are custom-priced by sales.",
+        "Every plan carries the same condition: a minimum of 10 users, billed on the higher of the users in your agreement or your active users. The plan cards do not print a billing period beside the figure. Add-ons are priced per employee a month: rostering and time and attendance $4, managed payroll $20, HR advisory $14. Employment Hero's AI recruitment plans are separate again, from $199, and need no HR or payroll subscription. Employment Hero publishes no discount code; the free demo is the published way in.",
       ],
       hasCta: true,
       ctaText: "See Employment Hero",
@@ -89,11 +96,10 @@ export const employmentHeroConfig: AffiliatePageConfig = {
       ],
     },
     {
-      heading: "Employment Hero pricing",
+      heading: "What are the alternatives to Employment Hero?",
       paragraphs: [
-        "Employment Hero lists its HR plans on its own pricing page; payroll is included only in its top plan, Employment Unlimited, which is quoted by its sales team (read on employmenthero.com/pricing, 30 September 2026).",
-        "The practical approach is to request a quote scoped to your headcount and the modules you need, since what you pay depends on how many employees you have and which parts of the platform you use. Because the offering spans HR, payroll, hiring and benefits, it is worth being clear about which of those you need when you enquire.",
-        "Click through to Employment Hero to see the current plans and request pricing for your business.",
+        "The first question is whether you need a separate payroll system at all. Xero and MYOB both offer payroll inside their accounting software, so a small business already on one of them may only need HR tools on top. Employment Hero earns its place when you want payroll, HR records, onboarding and hiring in one Australian-built system rather than spread across the accounting package and several add-ons.",
+        "If what you actually need is documented processes and staff training rather than payroll, Trainual is a different kind of tool: it holds SOPs, onboarding and training, and does not run pay. Both are compared by job on our HR and payroll hub.",
       ],
     },
   ],
@@ -112,7 +118,7 @@ export const employmentHeroConfig: AffiliatePageConfig = {
     {
       num: "03",
       heading: "Request a quote",
-      body: "Payroll is in the Employment Unlimited plan, which is quoted, so request a quote scoped to your headcount and the modules you want.",
+      body: "Payroll and HR are separate plans with a 10-user minimum, and Employment Unlimited bundles both on a quote, so book the demo with your headcount and the modules you want.",
     },
     {
       num: "04",
@@ -132,15 +138,11 @@ export const employmentHeroConfig: AffiliatePageConfig = {
   faqs: [
     {
       q: "Is there an Employment Hero discount code?",
-      a: "Employment Hero doesn't publish a public discount code; it prices per business. You can book a free demo through the link on this page and pricing is quoted to your business. Offers can change over time.",
+      a: "No. There is no Employment Hero discount code to find: Employment Hero does not publish one and Refer Labs does not have one. Its published way in is a free demo, which you can book through the link on this page.",
     },
     {
       q: "What is Employment Hero?",
       a: "Employment Hero is an Australian-built, all-in-one HR, payroll and employment platform. It combines HR and people operations, ATO-certified Single Touch Payroll (STP Phase 2), AI recruitment and applicant tracking, employee benefits and earned wage access, and an employee app. It is designed for Australian employers and aligned to Fair Work and ATO requirements.",
-    },
-    {
-      q: "How much does Employment Hero cost?",
-      a: "Employment Hero lists its HR plans on its own pricing page; payroll is included only in its top plan, Employment Unlimited, which is quoted by its sales team (read on employmenthero.com/pricing, 30 September 2026). The practical step is to request a quote scoped to your headcount and the modules you need.",
     },
     {
       q: "Is Employment Hero good for Australian businesses?",
@@ -167,6 +169,16 @@ export const employmentHeroConfig: AffiliatePageConfig = {
   ],
 
   relatedLinks: [
+    {
+      href: "/compare/hr-payroll",
+      label: "HR & payroll tools compared",
+      desc: "Employment Hero and Trainual sorted by the job each one does.",
+    },
+    {
+      href: "/trainual",
+      label: "Trainual",
+      desc: "SOPs, onboarding and staff training in one place. It does not run payroll.",
+    },
     {
       href: "/best-ai-sales-tools",
       label: "Best AI Sales Tools 2026",
@@ -203,5 +215,5 @@ export const employmentHeroConfig: AffiliatePageConfig = {
   },
 
   disclaimer:
-    "You will be taken to the Employment Hero site. This page is operated by Refer Labs and contains a disclosed affiliate link. Payroll is in Employment Hero's quoted top plan; request a quote for figures specific to your business. Information is general in nature and correct to the best of our knowledge.",
+    "You will be taken to the Employment Hero site. This page is operated by Refer Labs and contains a disclosed affiliate link. Plan prices were read on employmenthero.com/pricing on 30 September 2026, carry a 10-user minimum and can change; view the latest pricing on Employment Hero's own site. Information is general in nature.",
 };

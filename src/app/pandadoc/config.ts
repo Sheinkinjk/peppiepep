@@ -9,19 +9,20 @@ export const pandadocConfig: AffiliatePageConfig = {
   eyebrow: "Documents & e-signature",
   affiliateUrl: PANDADOC_URL,
   quickAnswer:
-    "PandaDoc is document-automation software for proposals, quotes, contracts and forms, with built-in e-signatures. You build documents from templates, send them for legally binding signature, and track when they are opened and signed. There is a free eSign plan and a 14-day trial on paid tiers.",
+    "PandaDoc is proposal, quote and contract software with built-in e-signatures. Its Free plan costs US$0 for five documents a month with no credit card, and the paid Starter plan is listed at US$19 per seat a month, with a 14-day free trial (pandadoc.com/pricing, read 30 September 2026).",
   offer: "Free eSign plan; 14-day trial on paid",
+  offerCheckedOn: "2026-09-30",
   atAGlance: [
     { k: "Type", v: "Documents, proposals & e-signature" },
     { k: "Best for", v: "Sales teams & small businesses" },
-    { k: "Pricing", v: "Free eSign plan; paid from US$19/user/mo" },
+    { k: "Pricing", v: "Free (5 docs/mo); Starter US$19/seat/mo (read 30 Sep 2026)" },
     { k: "Start", v: "Free eSign plan or 14-day trial" },
   ],
   hero: {
     h1Prefix: "PandaDoc:",
     h1Highlight: "proposals, contracts and e-signatures in one tool",
     subheading:
-      "If proposals and contracts are slow because they bounce between docs, email and a separate signing tool, PandaDoc puts building, sending, tracking and signing in one place. Here is what it does and who it suits.",
+      "PandaDoc is free for five documents a month with no credit card, and its Starter plan is listed at US$19 per seat a month after a 14-day free trial (pandadoc.com/pricing, read 30 September 2026). It puts building, sending, tracking and signing proposals and contracts in one tool.",
     trustBullets: ["Proposals, quotes and contracts", "Built-in e-signatures", "Templates and real-time tracking"],
   },
   banner: {
@@ -30,6 +31,15 @@ export const pandadocConfig: AffiliatePageConfig = {
     buttonLabel: "Try PandaDoc",
   },
   sections: [
+    {
+      heading: "How much does PandaDoc cost?",
+      paragraphs: [
+        "Read on pandadoc.com/pricing on 30 September 2026, in US dollars excluding taxes: Free is US$0 for you and your team, limited to five documents a month, with no credit card. Starter is listed at US$19 per seat a month, with unlimited document uploads and e-signatures. Business is US$49 per seat a month and adds custom quotes, CRM integrations, a content library and approval workflows. Enterprise is quoted, per seat or per document.",
+        "Paid plans start with a 14-day free trial, and PandaDoc says it charges nothing until you decide to continue. It advertises savings of up to 46% for annual billing. Some features, including the API, CRM integrations and bulk send, need usage credits or a paid add-on. PandaDoc runs no public discount code, and there is no Refer Labs code either.",
+      ],
+      hasCta: true,
+      ctaText: "Try PandaDoc",
+    },
     {
       heading: "What PandaDoc does",
       paragraphs: [
@@ -59,11 +69,7 @@ export const pandadocConfig: AffiliatePageConfig = {
   faqs: [
     {
       q: "Is there a PandaDoc free plan or discount code?",
-      a: "Yes to a free plan: PandaDoc has a free eSign plan for basic signing, and a 14-day trial on paid tiers. It does not usually publish a public promo code, so signing up through our referral link is the reliable way to start, at no extra cost to you.",
-    },
-    {
-      q: "How much does PandaDoc cost?",
-      a: "PandaDoc has a free eSign plan; paid plans start from US$19 per user per month (Essentials), with a Business tier adding CRM integrations and the content library. Pricing changes, so check current plans before committing.",
+      a: "There is a free plan and no code. PandaDoc's Free plan covers five documents a month with no credit card, and paid plans have a 14-day free trial (read 30 September 2026). PandaDoc publishes no discount code and Refer Labs holds none.",
     },
     {
       q: "Who is PandaDoc best for?",

@@ -44,9 +44,9 @@ const softwareSchema = {
     "All-in-one marketing platform: email marketing, SMS and WhatsApp, marketing automation, a sales CRM and transactional email. Priced by monthly email volume rather than list size, with a free plan.",
   offers: {
     "@type": "Offer",
-    price: "9",
-    priceCurrency: "USD",
-    description: "Free plan with a daily send limit; paid tiers from $9/month, priced by monthly email volume.",
+    price: "12",
+    priceCurrency: "AUD",
+    description: "Free plan up to 300 emails a day; Starter from A$12 a month, priced by monthly email volume (brevo.com/pricing, read 30 September 2026).",
     availability: "https://schema.org/InStock",
   },
   url: "https://www.brevo.com",

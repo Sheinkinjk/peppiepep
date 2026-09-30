@@ -61,7 +61,7 @@ const softwareSchema = {
     name: p.name,
     price: p.price.replace("US$", ""),
     priceCurrency: "USD",
-    description: `${p.sources}, ${p.users}. ${DATABOX.billing}.`,
+    description: `${p.sources}, ${p.users}. ${DATABOX.billing}. Read on databox.com/pricing, ${DATABOX.readOnLabel}.`,
   })),
 };
 

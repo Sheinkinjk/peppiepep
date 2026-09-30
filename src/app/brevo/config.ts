@@ -9,9 +9,12 @@ export const brevoConfig: AffiliatePageConfig = {
   badgeText: "Email marketing",
   affiliateUrl: BREVO_URL,
   offer: "Free plan forever, no card",
+  // Free plan, 300 emails a day and the AUD plan prices re-read on
+  // brevo.com/pricing (AUD view) on 30 September 2026.
+  offerCheckedOn: "2026-09-30",
 
   quickAnswer:
-    "Brevo (formerly Sendinblue) is an all-in-one marketing platform: email marketing, SMS and WhatsApp campaigns, marketing automation, a built-in sales CRM and transactional email, in one tool. It suits small and mid-sized businesses that want to run email and automation without stitching several apps together. Brevo offers a free plan with a daily send limit, and paid tiers priced by monthly email volume rather than list size.",
+    "There is no Brevo discount code: Brevo publishes none and Refer Labs holds none. Brevo's free plan is permanent, sends up to 300 emails a day and needs no card, and the paid Starter plan costs A$12 a month, or A$10.83 a month billed yearly (brevo.com/pricing, AUD view, read 30 September 2026). Brevo (formerly Sendinblue) puts email, SMS and WhatsApp, automation, a sales CRM and transactional email in one tool, priced by emails sent rather than list size.",
 
   banner: {
     heading: "Brevo: All-in-One Marketing Platform",
@@ -23,7 +26,7 @@ export const brevoConfig: AffiliatePageConfig = {
   atAGlance: [
     { k: "What it is", v: "All-in-one email, SMS, automation & CRM" },
     { k: "Best for", v: "Small and mid-sized businesses" },
-    { k: "Price", v: "Free plan (300 emails/day); from US$9/mo" },
+    { k: "Price", v: "Free plan (300 emails/day); Starter A$12/mo, A$10.83/mo billed yearly (read 30 Sep 2026)" },
     { k: "Priced on", v: "Emails sent, not list size" },
   ],
   trustStrip: [
@@ -44,7 +47,7 @@ export const brevoConfig: AffiliatePageConfig = {
     h1Prefix: "Brevo:",
     h1Highlight: "the all-in-one email, automation and CRM platform",
     subheading:
-      "Brevo, formerly Sendinblue, puts email, SMS and WhatsApp campaigns, automation, a sales CRM and transactional email in one tool. Its free plan has no card and no expiry, which makes it a common starting point for a small business running three tools that could be one.",
+      "There is no Brevo discount code; what Brevo offers instead is a free plan with no card and no expiry that sends up to 300 emails a day, with paid plans from A$12 a month (brevo.com/pricing, read 30 September 2026). Brevo, formerly Sendinblue, puts email, SMS and WhatsApp campaigns, automation, a sales CRM and transactional email in one tool.",
     trustBullets: [
       "Direct access to Brevo",
       "Covers what Brevo does, who it suits, and how pricing works",
@@ -56,10 +59,10 @@ export const brevoConfig: AffiliatePageConfig = {
 
   sections: [
     {
-      heading: "Access Brevo",
+      heading: "Is there a Brevo discount code?",
       paragraphs: [
-        "Brevo comes up a lot when marketers compare email platforms, and the practical questions are always the same: what's included, how the send-volume pricing works, and who it suits. Instead of assembling the answer from a dozen review sites, it covers what counts and links straight through to Brevo.",
-        "Every button on the page goes straight to Brevo; nothing needs completing here beforehand.",
+        "No. Brevo publishes no discount, promo or coupon code and Refer Labs holds none. The two savings Brevo does publish, both read on brevo.com/pricing on 30 September 2026, are a free plan that never expires (up to 300 emails a day, no card) and 10% off any paid plan when you pay yearly instead of monthly.",
+        "Starting free and upgrading later costs nothing, so the free plan is the practical first step: build one automation, check your deliverability, then choose a tier. Our link goes to the same sign-up and adds no code.",
       ],
       hasCta: true,
       ctaText: "See Brevo",
@@ -82,8 +85,8 @@ export const brevoConfig: AffiliatePageConfig = {
     {
       heading: "Brevo pricing, in plain terms",
       paragraphs: [
-        "Brevo offers a free plan capped by a daily email limit, then paid tiers (commonly a Starter and a Business plan) priced by monthly email volume, with higher tiers unlocking more automation, reporting and removal of Brevo branding. Add-ons and enterprise pricing exist on top.",
-        "These plans and limits change, so treat any figure as a guide and check the current pricing on the provider before you commit. The practical way to judge value is to estimate your monthly send volume and match it to the tier, then compare against what you would pay a list-size-priced tool for the same list.",
+        "Read on brevo.com/pricing in Australian dollars on 30 September 2026: the Free plan sends up to 300 emails a day. Starter costs A$12 a month, or A$10.83 a month billed yearly, from 5,000 emails a month. Standard, which adds marketing automation, A/B testing and landing pages, costs A$25 a month, or A$22.50 billed yearly. Professional starts at A$824 a month, and Enterprise is custom-priced. Removing the Brevo logo is an A$11.70 monthly add-on on Starter.",
+        "Each paid price rises with the monthly email volume you pick. The practical way to judge value is to estimate your monthly sends, match them to the tier, then compare against what a list-size-priced tool would charge for the same list. View the latest pricing on Brevo's own site before you commit.",
       ],
     },
   ],
@@ -105,16 +108,12 @@ export const brevoConfig: AffiliatePageConfig = {
 
   faqs: [
     {
-      q: "Is there a Brevo discount code?",
-      a: "Brevo doesn't publish a public discount code. It offers a free plan forever with no card required, which you can start through the link on this page. Paid tiers are priced by emails sent, not list size.",
-    },
-    {
       q: "What is Brevo?",
       a: "Brevo (formerly Sendinblue) is an all-in-one marketing platform combining email marketing, SMS and WhatsApp, marketing automation, a sales CRM and transactional email. It is aimed at small and mid-sized businesses that want these tools in one place rather than several separate apps.",
     },
     {
       q: "How much does Brevo cost?",
-      a: "Brevo has a free plan with a daily email limit, then paid tiers priced by the number of emails you send per month rather than by list size. Higher tiers add more automation and reporting. Pricing and limits change, so verify the current figures on the provider before committing.",
+      a: "Brevo's Free plan costs nothing and sends up to 300 emails a day. Starter is A$12 a month (A$10.83 billed yearly) and Standard A$25 a month (A$22.50 billed yearly), each rising with the monthly email volume you choose, read on brevo.com/pricing on 30 September 2026.",
     },
     {
       q: "How is Brevo priced differently from other email tools?",
@@ -126,7 +125,7 @@ export const brevoConfig: AffiliatePageConfig = {
     },
     {
       q: "Does Brevo have a free plan?",
-      a: "Yes. Brevo offers a free plan with a daily send limit, which is enough to build and test an email workflow, automation and the CRM before moving to a paid tier. Confirm the current free-plan limits on the provider.",
+      a: "Yes. Brevo's free plan never expires, needs no card and sends up to 300 emails a day, which is enough to build and test an email workflow and the CRM before moving to a paid tier.",
     },
   ],
 
@@ -156,5 +155,5 @@ export const brevoConfig: AffiliatePageConfig = {
   },
 
   disclaimer:
-    "You will be taken to the Brevo site. This page is operated by Refer Labs and contains a disclosed affiliate link. Pricing and plan limits are indicative and correct to the best of our knowledge; check the current pricing on the provider.",
+    "You will be taken to the Brevo site. This page is operated by Refer Labs and contains a disclosed affiliate link. Prices were read in Australian dollars on brevo.com/pricing on 30 September 2026 and can change; view the latest pricing on Brevo's own site.",
 };

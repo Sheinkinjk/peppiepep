@@ -8,19 +8,20 @@ export const survicateConfig: AffiliatePageConfig = {
   eyebrow: "Surveys & customer feedback",
   affiliateUrl: SURVICATE_URL,
   quickAnswer:
-    "Survicate is a customer-feedback platform for running surveys across your website, email, app and chat, then analysing the responses (with AI) and pushing insights into your other tools. You can start on a free plan; check the current free-tier limits before you rely on it.",
-  offer: "Free plan to start",
+    "Survicate is a customer-feedback survey platform for your website, email, app and chat. Every sign-up starts with a 10-day free trial of its paid features with no card, then drops to a Free plan of 25 responses a month unless you upgrade; the Growth plan costs US$114 a month billed annually (survicate.com/pricing, read 30 September 2026).",
+  offer: "Free plan to start; 10-day trial, no card",
+  offerCheckedOn: "2026-09-30",
   atAGlance: [
     { k: "Type", v: "Surveys / customer feedback" },
     { k: "Best for", v: "Product, marketing & CX teams" },
-    { k: "Pricing", v: "Free plan; paid from US$114/mo" },
+    { k: "Pricing", v: "Free plan (25 responses/mo); Growth US$114/mo billed annually (read 30 Sep 2026)" },
     { k: "Integrations", v: "50+ tools" },
   ],
   hero: {
     h1Prefix: "Survicate:",
     h1Highlight: "ask your customers and act on the answers",
     subheading:
-      "Run surveys on your website, in emails, in your app or over chat, collect feedback at the moments that matter, and let AI summarise the themes, then send the insights into your CRM and analytics.",
+      "Survicate is free for 25 survey responses a month after a 10-day, no-card trial of its paid features, and its Growth plan costs US$114 a month billed annually (survicate.com/pricing, read 30 September 2026). It runs surveys on your website, in emails, in your app or over chat, and summarises the answers with AI.",
     trustBullets: ["Surveys across web, email & app", "AI-analysed responses", "Free plan to start"],
   },
   banner: {
@@ -29,6 +30,15 @@ export const survicateConfig: AffiliatePageConfig = {
     buttonLabel: "Try Survicate",
   },
   sections: [
+    {
+      heading: "Does Survicate have a free plan?",
+      paragraphs: [
+        "Yes. Read on survicate.com/pricing on 30 September 2026: every account starts with a 10-day free trial of the paid features, with no card required, and then switches to the Free plan unless you upgrade. The Free plan allows up to 25 responses a month, one active survey at a time, up to three team members and 30 days of data retention.",
+        "Paid plans: Growth is US$114 a month billed annually for 250 responses a month and 10 seats. Pro starts at US$349 a month and Enterprise at US$569, both with custom response limits. Survicate lists no discount code on its own site, and Refer Labs has none to pass on.",
+      ],
+      hasCta: true,
+      ctaText: "Try Survicate",
+    },
     {
       heading: "What Survicate does",
       paragraphs: [
@@ -57,12 +67,8 @@ export const survicateConfig: AffiliatePageConfig = {
   ],
   faqs: [
     {
-      q: "Does Survicate have a free plan?",
-      a: "Yes, Survicate offers a free tier so you can run surveys with limited monthly usage. Free-tier limits change, so check the current details on Survicate before relying on it for ongoing reporting.",
-    },
-    {
       q: "Is there a Survicate discount code?",
-      a: "Survicate doesn't typically publish a public promo code. The free plan is the standard way to start, and our referral link takes you to the current offer, at no extra cost to you.",
+      a: "No. Neither Survicate nor Refer Labs has a discount code to offer. Its published offers are the 10-day free trial with no card and the Free plan of 25 responses a month.",
     },
     {
       q: "What can you use Survicate for?",

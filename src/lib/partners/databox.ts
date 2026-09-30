@@ -12,27 +12,29 @@
  * clearest evidenced gap in that export.
  *
  * RE-VERIFICATION. Open databox.com/pricing, read the plans off the annual
- * toggle, update the values AND `readOn`. Do not bump `readOn` without
- * re-reading: the date is the claim the page prints.
+ * toggle (and the Core/Scale switch on Team), update the values AND `readOn`.
+ * Do not bump `readOn` without re-reading: the date is the claim the page prints.
+ *
+ * 30 SEPTEMBER 2026 RE-READ. Databox restructured its plans after the 5 Sep
+ * read: Pro (US$159) and Growth (US$399) are gone, replaced by a Team plan with
+ * Core and Scale tiers, and the per-source add-on price is no longer printed.
+ * The trial now covers any plan, not only Growth. Everything below is the new
+ * structure, read in a rendered browser with both toggles opened.
  *
  * NOTE ON BILLING. Every figure below is the ANNUAL-billing rate, which is what
  * Databox shows by default. Their own page says annual saves 20% against
- * monthly, so a reader comparing against a monthly competitor is not comparing
- * like with like unless they say so.
+ * monthly; the monthly rates are kept alongside so the page can state both.
  */
-const ADDITIONAL_SOURCE = "US$5.60";
-
 export const DATABOX = {
-  readOn: "2026-09-05",
-  readOnLabel: "5 September 2026",
-  readOnShort: "5 Sep 2026",
+  readOn: "2026-09-30",
+  readOnLabel: "30 September 2026",
+  readOnShort: "30 Sep 2026",
   source: "https://databox.com/pricing",
 
   /** Annual billing, which is the default on their pricing page. */
   billing: "billed annually",
   annualSaving: "20%",
-  trial: "14-day free trial of the Growth plan, no credit card",
-  additionalSource: ADDITIONAL_SOURCE,
+  trial: "14-day free trial of any paid plan, no credit card",
 
   /**
    * There is no Databox discount code, and the page says so plainly. Stating
@@ -46,41 +48,46 @@ export const DATABOX = {
     {
       name: "Free",
       price: "US$0",
+      monthly: "US$0",
       group: "Individual",
       sources: "3 data sources",
       users: "1 user",
-      note: "Permanent, not a trial. 1 dashboard or report, 10 custom metrics, 50 AI credits a month.",
+      note: "Permanent, not a trial. 50 AI credits a month.",
     },
     {
       name: "Analyst",
-      price: "US$64",
+      price: "US$71",
+      monthly: "US$89",
       group: "Individual",
       sources: "5 data sources",
       users: "1 user",
-      note: "The step up for one person who has outgrown three sources.",
+      note: "The step up for one person who has outgrown three sources. 150 AI credits a month.",
     },
     {
-      name: "Pro",
-      price: "US$159",
+      name: "Team (Core)",
+      price: "US$199",
+      monthly: "US$249",
       group: "Team",
-      sources: `3 included, then ${ADDITIONAL_SOURCE} per source per month`,
-      users: "Unlimited users",
-      note: "Where unlimited users start, which is the real reason to move off Analyst.",
+      sources: "10 data sources",
+      users: "3 users",
+      note: "Where more than one seat starts. 500 AI credits a month.",
     },
     {
-      name: "Growth",
-      price: "US$399",
+      name: "Team (Scale)",
+      price: "US$319",
+      monthly: null as string | null,
       group: "Team",
-      sources: `3 included, then ${ADDITIONAL_SOURCE} per source per month`,
-      users: "Unlimited users",
-      note: "Databox marks this most popular. It is also the plan the free trial runs on.",
+      sources: "30 data sources",
+      users: "10 users",
+      note: "The same Team plan with more seats and sources.",
     },
   ],
 } as const;
 
-/** Derived, never typed: the two figures the page argues from. */
+/** Derived, never typed: the figures the page argues from. */
 export const DATABOX_FACTS = {
   cheapestPaid: DATABOX.plans.find((p) => p.price !== "US$0")!,
   freePlan: DATABOX.plans[0],
   teamEntry: DATABOX.plans.find((p) => p.group === "Team")!,
+  topListed: DATABOX.plans[DATABOX.plans.length - 1],
 };
