@@ -160,7 +160,7 @@ export const categories = {
   items: [
     {
       label: "Weight Loss & Telehealth", href: "/weight-loss",
-      body: "Moshy, coaching-led programs and the GP pathway, compared on price and inclusions.",
+      body: "Moshy, Juniper and the GP pathway, compared on what each includes.",
       links: [
         { label: "Moshy: the offer", href: "/moshy" },
         { label: "Moshy vs Juniper", href: "/moshy-vs-juniper" },

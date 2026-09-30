@@ -15,11 +15,11 @@ const aff = { href: MOSHY_URL, target: "_blank" as const, rel: "nofollow sponsor
 const faqs = [
   {
     q: "Why do some weight loss services market to men and others to women?",
-    a: "Partly clinical tailoring and partly candour. Providers found some men engage more readily with a service worded for them, so the marketing split. In Australia, Moshy runs a clinical pathway that is open to anyone eligible, while Juniper wraps coaching around clinical care and markets primarily to women. Both use an eligibility-then-practitioner-review model.",
+    a: "Mostly marketing. Juniper designs its program for women; Moshy is open to anyone eligible. Both start with an online assessment that a registered practitioner reviews, and both include app coaching, dietitian meal plans and a community (each provider's own page, read 30 September 2026).",
   },
   {
     q: "Do I need to see a doctor in person first?",
-    a: "Not to start. Men's weight loss telehealth begins with an online questionnaire that a registered Australian practitioner then reviews. If your case needs an in-person look, a credible service will tell you so rather than proceed.",
+    a: "Not to start. Weight-loss telehealth begins with an online questionnaire that a registered Australian practitioner then reviews. If your case needs an in-person look, a credible service will tell you so rather than proceed.",
   },
   {
     q: "Is online weight loss treatment regulated in Australia?",
@@ -27,7 +27,7 @@ const faqs = [
   },
   {
     q: "What does a men's program typically include?",
-    a: "The common shape is an eligibility questionnaire, practitioner review, a plan if approved, ongoing check-ins, and delivery of anything prescribed. Details, inclusions, and pricing vary by provider and are shown before you commit.",
+    a: "The common shape is an online questionnaire, a practitioner review, a plan if you are suitable, ongoing check-ins, and support such as coaching and meal plans. Inclusions and pricing vary by provider and are shown before you commit.",
   },
 ];
 
@@ -51,7 +51,7 @@ const webPageSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
   datePublished: "2026-07-05",
-  dateModified: "2026-07-06",
+  dateModified: "2026-09-30",
   name: seoConfig.weightLossTelehealthMen.title,
   description: seoConfig.weightLossTelehealthMen.description,
   url: seoConfig.weightLossTelehealthMen.url,
@@ -81,29 +81,26 @@ export default function WeightLossTelehealthMenPage() {
           Weight loss telehealth for men in Australia: <span>how it works and what to check</span>
         </h1>
         <p className="text-[#56504a] text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
-          Men are famously bad at booking the appointment. Telehealth exists to remove that excuse. This page covers
-          how the men&apos;s services operate, the checklist worth running before you sign up with anyone, and where the
-          main Australian provider fits.
+          For men in Australia, the weight-management telehealth service we cover is Moshy, which is open to anyone
+          eligible; Juniper, the other service we compare, is designed for women. Moshy starts with an online
+          questionnaire and a consult by phone or video with a registered practitioner, who decides whether any
+          treatment is appropriate. It includes in-app coaching, dietitian meal plans and a community, and its code
+          REFERRAL120 takes $120 off a first order with a 3-month minimum commitment.
         </p>
 
         <p className="mb-10 rounded-lg border border-[#ded8cd] bg-[#f7f4ee] px-4 py-3 text-xs leading-relaxed text-[#56504a]">
           <span className="font-semibold text-[#14120f]">Information only.</span> This page describes a category of
-          services. It is not medical advice and does not recommend any treatment. Prescription medicines in Australia
-          require individual assessment by a registered practitioner. Contains an affiliate link.
+          services. It is not medical advice and does not recommend any treatment. Weight-management medicines are
+          prescription-only in Australia and need individual assessment by a registered practitioner. Contains an
+          affiliate link: we may earn a commission from Moshy, at no extra cost to you.
         </p>
 
         <section className="space-y-4 mb-10">
-          <h2 className="text-xl font-black">Why this category exists</h2>
+          <h2 className="text-xl font-black">How it works</h2>
           <p className="text-[#56504a] text-sm sm:text-base leading-relaxed">
-            The uncomfortable statistic behind men&apos;s telehealth is that men see doctors less often, and later, than
-            women. Weight sits high on the list of topics men avoid raising. Moving the first step online, into a
-            questionnaire you can fill in on the couch, removed the part most men were avoiding: the
-            face-to-face conversation that starts it.
-          </p>
-          <p className="text-[#56504a] text-sm sm:text-base leading-relaxed">
-            What it did not remove is the clinician. In Australia, every legitimate service in this category still puts
-            a registered practitioner between your questionnaire and any treatment. The format changed. The gatekeeping
-            did not.
+            You complete an online questionnaire in your own time. A registered practitioner reviews it and consults
+            with you by phone or video, then decides whether any treatment is appropriate. Some applicants are declined,
+            and a service that promises a specific medicine before that review is one to avoid.
           </p>
         </section>
 
@@ -113,7 +110,7 @@ export default function WeightLossTelehealthMenPage() {
             {[
               "Registered Australian practitioners doing the reviews, not offshore contractors",
               "A real screening step that declines unsuitable applicants",
-              "Pricing shown in full before you commit to a subscription",
+              "Pricing shown in full before you commit, including any minimum term",
               "An Australian entity operating under Australian health regulations",
               "A clear path to human support once you are a subscriber",
             ].map((item) => (
@@ -128,18 +125,18 @@ export default function WeightLossTelehealthMenPage() {
         <section className="space-y-4 mb-10">
           <h2 className="text-xl font-black">Where Moshy fits</h2>
           <p className="text-[#56504a] text-sm sm:text-base leading-relaxed">
-            Moshy runs a clinically-led telehealth pathway that is open to anyone eligible, and it passes the checklist
-            above: AHPRA-registered practitioners, an eligibility step that screens, pricing disclosed inside
-            the platform before any commitment, and Australian regulation. If you would rather have coaching wrapped
-            around clinical care, Juniper markets primarily to women, and we compare the main providers in our{" "}
+            Moshy is open to anyone eligible and passes the checklist above: AHPRA-registered practitioners, a
+            screening step, pricing published on its own site, and Australian regulation. It includes in-app coaching,
+            dietitian meal plans and a community. Juniper, the other service we compare, is designed for women; our{" "}
             <Link href="/best-weight-loss-telehealth-australia" className="underline decoration-[#ded8cd] underline-offset-2 hover:text-[#14120f]" style={{ color: CYAN }}>
               weight loss telehealth comparison
-            </Link>.
+            </Link>{" "}
+            sets out what each includes.
           </p>
           <div className="rounded-xl border px-6 py-5 mt-6" style={{ borderColor: `${CYAN}40`, background: `${CYAN}0A` }}>
             <p className="text-[#14120f] text-sm sm:text-base leading-relaxed mb-4">
-              The Moshy eligibility check takes about ten minutes and commits you to nothing. Our referral applies
-              automatically through the link.
+              Starting the Moshy questionnaire commits you to nothing. Our link carries REFERRAL120: $120 off a first
+              order, with a 3-month minimum commitment.
             </p>
             <a
               {...aff}

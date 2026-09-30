@@ -1,36 +1,60 @@
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, comparisonArticleSchema } from "@/lib/seo";
 import { SectionMark } from "@/components/brand/SectionMark";
-import EarningsBalanceNote from "@/components/consumer/EarningsBalanceNote";
 import EditorialMeta from "@/components/consumer/EditorialMeta";
 import { MOSHY_URL, JUNIPER_URL } from "@/lib/affiliate-links";
-import HubProviders from "@/components/consumer/HubProviders";
+import { requiredDisclosureFor } from "@/lib/partner-disclosures";
 import MatchPrompt from "@/components/consumer/MatchPrompt";
 import { EdgeObject } from "@/components/brand/EdgeObject";
-import { CheckCircle2, XCircle, ArrowRight, ExternalLink } from "lucide-react";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
-import StickyCta from "@/components/consumer/StickyCta";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
-import FeatureMatrix from "@/components/consumer/FeatureMatrix";
+import ProviderPair, { type PairProvider } from "@/components/consumer/ProviderPair";
+import WeightInclusionsTable from "@/components/consumer/WeightInclusionsTable";
 import OfferSchema from "@/components/offers/OfferSchema";
 
 import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 export const metadata = generateSEOMetadata(seoConfig.bestWeightLossTelehealth);
 
-// Juniper is an affiliate partner (sponsored) from July 2026; its link sits on /juniper only.
+const JUNIPER_REQUIRED = requiredDisclosureFor(JUNIPER_URL);
 
-const aff = (url: string, loc = "best-wl-telehealth") => ({
-  href: url,
-  target: "_blank" as const,
-  rel: "nofollow sponsored" as const,
-  "data-cta": loc,
-});
-
-const ext = (url: string) => ({
-  href: url,
-  target: "_blank" as const,
-  rel: "noopener noreferrer" as const,
-});
+/* Rebuilt 30 Sep 2026. The page carried three overlapping comparisons (a
+   five-column HubProviders grid, a quick table and a tick matrix) that described
+   Moshy as "a lean clinical pathway, no built-in coaching". Moshy's own page lists
+   in-app coaching, dietitian meal plans and a community, so the distinction was
+   false. One dated table (src/lib/compare/weight-inclusions.ts) now carries the
+   facts, and both providers get the same card. Alphabetical, no sticky CTA for
+   either. */
+const providers: PairProvider[] = [
+  {
+    name: "Juniper",
+    logo: "/logos/juniper.png",
+    logoAspect: 16 / 9,
+    bestIf: "A weight program designed for women, with 1:1 coaching as an add-on.",
+    points: [
+      "Online assessment, then an initial consultation",
+      "Dietitian chat in the app, meal plans and a private community",
+      "Full refund if the practitioner decides it isn't right for you",
+    ],
+    offer: { text: "Initial consultation waived, valued at $89,", code: "JARREDKFC" },
+    href: JUNIPER_URL,
+    cta: "Continue to Juniper",
+    loc: "best-wl-telehealth-juniper",
+  },
+  {
+    name: "Moshy",
+    logo: "/logos/moshy.png",
+    bestIf: "An all-inclusive weight program from Mosh's brother brand.",
+    points: [
+      "Online questionnaire, then a consult by phone or video",
+      "In-app coaching, dietitian meal plans and a community",
+      "Also covers hair loss and skin care",
+    ],
+    offer: { text: "$120 off your first order", code: "REFERRAL120" },
+    href: MOSHY_URL,
+    cta: "Continue to Moshy",
+    loc: "best-wl-telehealth-moshy",
+  },
+];
 
 // ─── JSON-LD ──────────────────────────────────────────────────────────────────
 
@@ -50,8 +74,8 @@ const itemListSchema = {
   description: "Comparison of Australian weight loss telehealth platforms Moshy and Juniper: how each assesses you, what support is included, and who each suits.",
   numberOfItems: 2,
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Moshy", description: "Australian clinically-led telehealth weight management platform. Online questionnaire and practitioner review; any treatment is decided by the practitioner. Subscription.", url: `${SITE_URL}/moshy` },
-    { "@type": "ListItem", position: 2, name: "Juniper", description: "Australian weight management program for women. Combines practitioner-led care with health coaching and ongoing support. Subscription.", url: `${SITE_URL}/juniper` },
+    { "@type": "ListItem", position: 1, name: "Moshy", description: "Australian telehealth weight management program from Mosh's brother brand. Online questionnaire and practitioner review, in-app coaching, dietitian meal plans and a community.", url: `${SITE_URL}/moshy` },
+    { "@type": "ListItem", position: 2, name: "Juniper", description: "Australian weight management program designed for women. Practitioner review, app coaching, dietitian meal plans and a community, with 1:1 coaching as an add-on.", url: `${SITE_URL}/juniper` },
   ],
 };
 
@@ -67,31 +91,29 @@ const itemListSchema = {
  * merely fixed. Do not reintroduce a second hand-written list.
  */
 const FAQS: { q: string; a: string }[] = [
-                {
-                  q: "What is the best weight loss telehealth platform in Australia?",
-                  a: "Moshy (a lean clinical pathway, open to anyone eligible) and Juniper (a coaching-led program marketed to women) are two Australian weight-loss telehealth platforms we compare. The best platform depends on your health profile and whether you want a lean clinical pathway or a coaching-heavy program. Suitability is assessed by each platform's practitioners individually.",
-                },
-                {
-                  q: "How much does telehealth weight loss cost per month?",
-                  a: "Most providers confirm pricing after an online consultation rather than publishing a fixed figure. Expect a monthly subscription that bundles treatment, consultations and delivery, shown before you commit. Final cost depends on the treatment prescribed.",
-                },
-                {
-                  q: "Are online weight loss clinics in Australia legit?",
-                  a: "The established platforms operate as regulated telehealth services: questionnaires reviewed by Australian-registered practitioners, and any medicine prescribed only after individual clinical assessment, because they are prescription-only. Check for a practitioner consultation before any prescription, an Australian business entity, and published contact details. A service offering prescription medication without practitioner review is the red flag.",
-                },
-                // "Is Moshy or Juniper better?" removed 29 Sep 2026. It sat in this
-                // page's FAQPage schema while /moshy-vs-juniper owns that question,
-                // and "moshy vs juniper" split about 440 impressions across the two
-                // pages (GSC, 90 days), the pair page converting 2.1% to this one's
-                // 1.4%. The head-to-head is linked from the answer section instead.
-                {
-                  q: "How do these platforms assess you?",
-                  a: "Both run practitioner-supervised weight-management programs: you complete an online questionnaire, and a registered practitioner assesses you individually and decides whether any treatment is appropriate. Weight-management medicines are prescription-only in Australia, neither platform promises a specific treatment in advance, and not everyone who applies is accepted.",
-                },
-                {
-                  q: "Are these platforms available across all of Australia?",
-                  a: "Moshy and Juniper are both Australian platforms operating nationally. Availability may vary by state for certain services. Check each platform's website for current service coverage.",
-                },
+  {
+    q: "What is the best weight loss telehealth platform in Australia?",
+    a: "Moshy and Juniper are the two Australian weight-management telehealth services we compare, and neither is best for everyone. Both include practitioner review, app coaching, dietitian meal plans, a community and a 30-day money-back guarantee (each provider's own page, read 30 September 2026). Juniper is designed for women and offers 1:1 coaching as an add-on; Moshy is open to anyone eligible and also covers hair and skin. A registered practitioner assesses suitability individually.",
+  },
+  {
+    q: "How much does telehealth weight loss cost per month?",
+    a: "Moshy and Juniper both publish their program pricing on their own sites. Moshy describes its fee as all-inclusive; Juniper's varies with the plan and level of support. Before you pay, check what the fee includes and whether there is a minimum commitment: Moshy's REFERRAL120 offer carries a 3-month minimum.",
+  },
+  {
+    q: "Are online weight loss clinics in Australia legit?",
+    a: "The established services operate as regulated telehealth: an Australian-registered practitioner reviews your assessment and decides whether any treatment is appropriate. Check for a practitioner consultation, an Australian business entity and published contact details. A service offering prescription-only medicines without a practitioner consultation is the red flag.",
+  },
+  // "Is Moshy or Juniper better?" removed 29 Sep 2026: /moshy-vs-juniper owns
+  // that question, and the two pages were splitting "moshy vs juniper"
+  // impressions (GSC, 90 days). The head-to-head is linked from the answer section.
+  {
+    q: "How do these platforms assess you?",
+    a: "Both start online: you complete an assessment, and a registered practitioner reviews it and decides whether any treatment is appropriate. Weight-management medicines are prescription-only in Australia, neither service promises a specific treatment in advance, and not everyone who applies is accepted.",
+  },
+  {
+    q: "Are these platforms available across all of Australia?",
+    a: "Yes. Moshy and Juniper are both Australian services that consult online, by phone or by video, so where you live in Australia does not change access.",
+  },
 ];
 
 const faqSchema = {
@@ -111,7 +133,7 @@ const serviceSchema = {
   "@type": "Service",
   name: "Australian weight loss telehealth comparison",
   description:
-    "Refer Labs compares Australian weight loss telehealth services using public pricing, eligibility, treatment pathway information, support model, disclosures and suitability considerations.",
+    "Refer Labs compares Australian weight loss telehealth services using public pricing, eligibility, consultation process, support model, disclosures and suitability considerations.",
   provider: { "@type": "Organization", name: "Refer Labs", url: SITE_URL },
   areaServed: { "@type": "Country", name: "Australia" },
   serviceType: "Comparison publishing",
@@ -125,7 +147,7 @@ const webPageSchema = {
   url: seoConfig.bestWeightLossTelehealth.url,
   inLanguage: "en-AU",
   datePublished: "2026-03-16",
-  dateModified: "2026-09-10",
+  dateModified: "2026-09-30",
   about: [
     { "@type": "Thing", name: "weight loss telehealth Australia 2026" },
     { "@type": "Thing", name: "practitioner-assessed treatment telehealth Australia" },
@@ -136,212 +158,14 @@ const webPageSchema = {
   isPartOf: { "@id": `${SITE_URL}/#website` },
 };
 
-// ─── Design tokens ────────────────────────────────────────────────────────────
-
-const CYAN    = "#007a95";
-const CYAN_LT = "#007a95";
-
-// ─── Sub-components ───────────────────────────────────────────────────────────
-
-function Pro({ text }: { text: string }) {
-  return (
-    <li className="flex items-start gap-2 text-sm text-[#14120f] leading-snug">
-      <CheckCircle2 className="h-3.5 w-3.5 flex-shrink-0 mt-0.5" style={{ color: CYAN_LT }} />
-      {text}
-    </li>
-  );
-}
-
-function Con({ text }: { text: string }) {
-  return (
-    <li className="flex items-start gap-2 text-sm text-[#56504a] leading-snug">
-      <XCircle className="h-3.5 w-3.5 flex-shrink-0 mt-0.5 text-[#56504a]" />
-      {text}
-    </li>
-  );
-}
-
-
-// ─── Platform card ────────────────────────────────────────────────────────────
-
-interface PlatformCardProps {
-  id: string;
-  index: string;
-  name: string;
-  tagline: string;
-  /* Optional: a provider we hold no arrangement with, and whose process we
-     cannot verify, shows no "Current access" box rather than a guess. */
-  deal?: string;
-  dealNote?: string;
-  pros: string[];
-  cons: string[];
-  affUrl?: string;
-  extUrl?: string;
-  ctaLabel: string;
-  internalUrl?: string;
-  reviewLabel?: string;
-  isAffiliate: boolean;
-}
-
-function PlatformCard({
-  id, index, name, tagline, deal, dealNote,
-  pros, cons, affUrl, extUrl, ctaLabel, internalUrl, reviewLabel, isAffiliate,
-}: PlatformCardProps) {
-  const ctaHref = isAffiliate ? affUrl! : extUrl!;
-  const ctaLinkProps = isAffiliate ? aff(ctaHref) : ext(ctaHref);
-
-  return (
-    <section
-      id={id}
-      className="border-t border-[#ded8cd] py-10 sm:py-12 scroll-mt-24"
-    >
-      <div className="grid lg:grid-cols-[1fr_260px] gap-8 lg:gap-12">
-
-        {/* Left, identity + content */}
-        <div>
-          <div className="flex items-center gap-3 mb-4">
-            <div
-              className="h-9 w-9 rounded-lg flex items-center justify-center text-[11px] font-black text-[#14120f] flex-shrink-0"
-              style={{ background: `${CYAN}1A`, border: `1px solid ${CYAN}30` }}
-            >
-              {index}
-            </div>
-            <h2 className="text-xl font-black text-[#14120f] leading-none">{name}</h2>
-          </div>
-
-          <p className="text-[#56504a] text-sm sm:text-base leading-relaxed mb-5 max-w-lg">
-            {tagline}
-          </p>
-
-          <div className="grid sm:grid-cols-2 gap-4">
-            <div>
-              <p className="text-[11px] font-bold uppercase tracking-wider text-[#56504a] mb-2.5">Strengths</p>
-              <ul className="space-y-2">
-                {pros.map((p) => <Pro key={p} text={p} />)}
-              </ul>
-            </div>
-            <div>
-              <p className="text-[11px] font-bold uppercase tracking-wider text-[#56504a] mb-2.5">Limitations</p>
-              <ul className="space-y-2">
-                {cons.map((c) => <Con key={c} text={c} />)}
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        {/* Right, deal + CTA */}
-        <div className="flex flex-col gap-4">
-          {deal && (
-            <div
-              className="rounded-xl p-5"
-              style={{ background: `${CYAN}0D`, border: `1px solid ${CYAN}30` }}
-            >
-              <p className="text-[11px] font-black uppercase tracking-widest mb-1.5" style={{ color: "#003647" }}>
-                Current access
-              </p>
-              <p className="text-[#14120f] font-black text-base leading-snug mb-1">{deal}</p>
-              {dealNote && <p className="text-[#56504a] text-xs leading-snug">{dealNote}</p>}
-            </div>
-          )}
-
-          <a
-            {...ctaLinkProps}
-            className="inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3.5 text-sm font-bold text-white shadow-lg transition-all hover:-translate-y-0.5 hover:shadow-xl"
-            style={{ background: CYAN, boxShadow: `0 6px 24px ${CYAN}30` }}
-          >
-            {ctaLabel}
-            <ArrowRight className="h-4 w-4" />
-          </a>
-
-          {internalUrl && reviewLabel && (
-            <Link
-              href={internalUrl}
-              className="inline-flex items-center justify-center gap-1.5 text-xs transition-colors hover:opacity-80"
-              style={{ color: "#56504a" }}
-            >
-              {reviewLabel} <ExternalLink className="h-3 w-3" />
-            </Link>
-          )}
-
-          {/* Stated on the card that carries the link, rather than as a banner
-              above the article. Corrected 16 Sep 2026: this said we earned from
-              Moshy and not from Juniper, which was wrong. Juniper has been a
-              commission-only partner since July 2026 (no customer discount), so
-              both cards carry a paying link and both say so. */}
-          {isAffiliate && <EarningsBalanceNote earnFrom={name} className="mt-1" />}
-
-          {/* Says where the button actually goes, for any provider we hold no
-              affiliate link for: their home page rather than a tracked or deep
-              link, which a reader should know before clicking. */}
-          {!isAffiliate && !deal && (
-            <p className="text-xs leading-relaxed text-[#56504a]">
-              We hold no affiliate arrangement with {name}, so this link goes to their home page
-              rather than a tracked or dedicated sign-up page, and we earn nothing if you use it.
-            </p>
-          )}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-// ─── Page data ────────────────────────────────────────────────────────────────
-
-const platforms: PlatformCardProps[] = [
-  {
-    id: "moshy",
-    index: "01",
-    name: "Moshy",
-    tagline: "Australian clinically-led telehealth weight management, open to anyone eligible. Moshy's online eligibility questionnaire is reviewed by Australian-registered practitioners. Any treatment is decided by the practitioner and only where clinically appropriate. Subscription with home delivery.",
-    deal: "Online eligibility, referral link",
-    dealNote: "The discount code is REFERRAL120. Our referral link takes you to the Moshy eligibility page with it already applied, so there is nothing to type.",
-    pros: [
-      "Clinically-led pathway, open to anyone eligible",
-      "Practitioner-assessed treatment where appropriate",
-      "Online-only process, no in-person GP visit required",
-      "Subscription home delivery",
-    ],
-    cons: [
-      "Lean clinical focus, no built-in coaching program",
-      "Not every applicant is accepted",
-    ],
-    affUrl: MOSHY_URL,
-    isAffiliate: true,
-    ctaLabel: "Start with Moshy",
-    internalUrl: "/moshy",
-    reviewLabel: "Full Moshy review & current offer",
-  },
-  {
-    id: "juniper",
-    index: "02",
-    name: "Juniper",
-    tagline: "Australian weight management programme for women. Juniper combines a practitioner-led program with structured health coaching and support. The programme takes a more comprehensive approach than a clinical pathway alone.",
-    deal: "Online eligibility check",
-    dealNote: "Juniper uses an online eligibility and consultation process. Practitioners review each submission individually before recommending a programme.",
-    pros: [
-      "Purpose-built for Australian women",
-      "Practitioner-assessed treatment where appropriate",
-      "Health coaching included in programme",
-      "Online process, no in-person GP visit required",
-    ],
-    cons: [
-      "Women only, not available for men",
-      "More premium pricing than some alternatives",
-    ],
-    extUrl: "/juniper",
-    isAffiliate: false,
-    ctaLabel: "Read our Juniper review",
-  },
-];
-
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
 const articleSchema = comparisonArticleSchema({
   headline: "Best weight loss telehealth services in Australia: Refer Labs' comparison",
-  description: "Refer Labs compares Australian weight-loss telehealth platforms on published pricing, eligibility process and program model.",
+  description: "Refer Labs compares Australian weight-loss telehealth services on what each includes, how you start and who each is built for.",
   url: "https://referlabs.com.au/best-weight-loss-telehealth-australia",
   datePublished: "2026-07-05",
-  dateModified: "2026-09-10",
+  dateModified: "2026-09-30",
 });
 
 export default function BestWeightLossTelehealthPage() {
@@ -365,13 +189,6 @@ export default function BestWeightLossTelehealthPage() {
             <span className="text-[#14120f]">Best Weight Loss Telehealth</span>
           <SectionMark kind="scale" size={56} /></nav>
 
-          {/* ── Hero ─────────────────────────────────────────────────────────
-              Rebuilt 24 Sep 2026 on the pattern the hubs use, after Jarred read
-              the previous version: four paragraphs of prose stacked under the
-              h1 (lead, disclosure, a code statement, a verification stamp). The
-              codes and their dates now live in the provider cards, where every
-              provider gets the same rows, and the hero carries the answer, the
-              disclosure and the route matcher. ── */}
           <section className="pt-10 pb-4 sm:pt-12">
             <div className="grid items-start gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
               <div className="max-w-3xl">
@@ -380,20 +197,27 @@ export default function BestWeightLossTelehealthPage() {
                 </h1>
                 {/* The answer, directly under the h1. Nothing between: check-answer-slot. */}
                 <p className="text-[#14120f] text-base sm:text-lg leading-relaxed">
-                  Moshy and Juniper are two Australian weight-management telehealth services, built
-                  for different people. Moshy is the clinical pathway with the least around it, open to anyone
-                  eligible. Juniper wraps the same clinical step in coaching, an app and a patient community, and
-                  markets to women. Both decide suitability through a registered practitioner, and some applicants
-                  are declined.
+                  Moshy and Juniper are two Australian weight-management telehealth services, and what they include is
+                  close: both start with an online assessment reviewed by a registered practitioner, and both include
+                  app coaching, dietitian meal plans, a community and a 30-day money-back guarantee. Juniper is designed
+                  for women and offers 1:1 coaching as an add-on. Moshy is open to anyone eligible and also covers hair
+                  and skin. Both decline some applicants.
                 </p>
-                <AffiliateDisclosure compact className="mt-4" />
+                <div className="mt-4 space-y-2">
+                  <AffiliateDisclosure compact partners={["Moshy", "Juniper"]} />
+                  {JUNIPER_REQUIRED ? (
+                    <p className="rounded-xl border border-[#ded8cd] bg-[#f7f4ee] px-4 py-3 text-[13px] leading-relaxed text-[#56504a]">
+                      {JUNIPER_REQUIRED.text}
+                    </p>
+                  ) : null}
+                </div>
               </div>
               <EdgeObject kind="scale" className="lg:mt-14">
                 <MatchPrompt
                   stacked
                   href="/weight-loss-quiz"
                   title="Not sure which fits you?"
-                  sub="Two questions on what you want around the clinical step. No health questions, no assessment."
+                  sub="Two questions on the support you want. No health questions, no assessment."
                   cta="Take the 30-second match"
                   dataCta="best-wl-telehealth-hero-quiz"
                 />
@@ -403,41 +227,7 @@ export default function BestWeightLossTelehealthPage() {
             <OfferSchema code="JARREDKFC" />
           </section>
 
-          <HubProviders
-            className="pt-10"
-            ctaPrefix="best-wl-telehealth"
-            heading="The two providers, on the same terms"
-            intro="Both answer the same four questions. We earn a commission from both and hold a code for each; neither can pay to be described more favourably."
-            providers={[
-              {
-                name: "Juniper",
-                logo: "/logos/juniper.png",
-                href: "/juniper",
-                hrefLabel: "Read our Juniper guide",
-                suits: "Women who want coaching and habit support alongside the clinical program.",
-                how: "Online assessment with practitioner oversight, plus coaching and app-based tracking.",
-                cost: "A monthly subscription, with bundle options. Juniper shows the price in its own sign-up flow before you pay.",
-                offerText: "The initial consultation is waived with the code JARREDKFC, which Juniper values at $89. Nothing comes off the program itself.",
-                offerNote: "Confirmed from Juniper's affiliate handbook, 23 September 2026.",
-                visitHref: JUNIPER_URL,
-                visitLabel: "Continue to Juniper",
-                earns: true,
-              },
-              {
-                name: "Moshy",
-                logo: "/logos/moshy.png",
-                href: "/moshy",
-                hrefLabel: "Read our Moshy guide",
-                suits: "Anyone eligible in Australia who wants the clinical pathway without a coaching wrap.",
-                how: "Online assessment, then a registered practitioner reviews it and sets the plan if you are suitable.",
-                cost: "A subscription, confirmed in the consult.",
-                offerCode: "REFERRAL120",
-                visitHref: MOSHY_URL,
-                visitLabel: "Continue to Moshy",
-                earns: true,
-              },
-            ]}
-          />
+          <ProviderPair providers={providers} className="mt-8" />
 
           {/* ── The buyer's question as an H2, with a liftable answer beneath it ── */}
           <section className="pt-12 pb-2">
@@ -445,11 +235,10 @@ export default function BestWeightLossTelehealthPage() {
               What is the best weight-loss telehealth in Australia?
             </h2>
             <p className="text-[#14120f] text-sm sm:text-base leading-relaxed max-w-3xl">
-              There is no single best service, because the two are built for different people. Moshy suits someone
-              who wants the clinical pathway with the least around it: an online assessment, a practitioner review,
-              and delivery if a program is appropriate. Juniper suits someone who wants coaching, an app and a patient
-              community around the same clinical step. Neither is cheaper on paper in a way that survives the first
-              month, so compare what each includes over a year.
+              There is no single best service. Moshy and Juniper include much the same support, so the choice comes
+              down to fit: Juniper is designed for women and sells 1:1 coaching as an add-on, while Moshy is open to
+              anyone eligible and sits alongside Mosh&apos;s hair and skin services. Compare what each costs over a
+              year on its own site, including the 3-month minimum that comes with Moshy&apos;s REFERRAL120 offer.
             </p>
             <p className="mt-3 text-sm sm:text-base max-w-3xl">
               <Link href="/moshy-vs-juniper" className="font-semibold text-[#007a95] hover:underline">
@@ -459,146 +248,49 @@ export default function BestWeightLossTelehealthPage() {
             </p>
           </section>
 
+          <section id="inclusions" className="border-t border-[#ded8cd] mt-10 py-8">
+            <h2 className="text-xl sm:text-2xl font-black text-[#14120f] mb-2">What does each include?</h2>
+            <p className="text-sm text-[#56504a] leading-relaxed max-w-2xl">
+              Read off each provider&apos;s own page. Any treatment is decided by the practitioner and only where
+              clinically appropriate.
+            </p>
+            <WeightInclusionsTable className="mt-5" />
+          </section>
+
           {/* ── Where to start / how to compare (answer-first for unbranded queries) ── */}
           <section id="how-to-compare" className="border-t border-[#ded8cd] py-8">
             <h2 className="text-xl sm:text-2xl font-black text-[#14120f] mb-3">Where to start: how to compare weight-loss telehealth</h2>
             <p className="text-sm text-[#56504a] leading-relaxed max-w-2xl mb-4">
-              If you are weighing up options, these factors matter more than the sign-up price. Check each one before you
-              commit:
+              These factors matter more than the sign-up price. Check each one before you commit:
             </p>
             <ul className="space-y-2.5 text-sm text-[#56504a] max-w-2xl mb-5">
-              <li><strong className="text-[#14120f]">Eligibility.</strong> Each provider runs an online questionnaire and a practitioner reviews whether treatment is appropriate for you. Approval is assessed individually and is not guaranteed.</li>
-              <li><strong className="text-[#14120f]">Total monthly cost.</strong> Check what the fee includes. Some programs include treatment, support and delivery in one price; others bill parts separately. Compare the full amount you would pay each month.</li>
+              <li><strong className="text-[#14120f]">Eligibility.</strong> Each provider runs an online assessment and a practitioner reviews whether treatment is appropriate for you. Approval is assessed individually and is not guaranteed.</li>
+              <li><strong className="text-[#14120f]">Total cost.</strong> Check what the fee includes and compare the full amount you would pay over the months you expect to stay.</li>
               <li><strong className="text-[#14120f]">Practitioner review and support.</strong> Check whether you get an initial consult, ongoing check-ins, and how you reach a practitioner if something changes.</li>
-              <li><strong className="text-[#14120f]">Medication pathway.</strong> Weight-management medicines are prescription-only in Australia, and any treatment is decided by the practitioner and only where clinically appropriate.</li>
-              <li><strong className="text-[#14120f]">Cancellation terms.</strong> Confirm whether it is month-to-month and how to pause or cancel before you subscribe.</li>
+              <li><strong className="text-[#14120f]">The practitioner decides.</strong> Weight-management medicines are prescription-only in Australia, and neither service promises a specific treatment in advance.</li>
+              <li><strong className="text-[#14120f]">Commitment and cancellation.</strong> Confirm any minimum term, and how to pause or cancel, before you subscribe.</li>
             </ul>
             <p className="text-sm text-[#56504a] leading-relaxed max-w-2xl">
-              <strong className="text-[#14120f]">Looking for a cheaper option?</strong> The lowest total cost is not always a
-              paid telehealth program. A GP (some appointments are bulk-billed) can assess eligibility and prescribe, which
-              may work out cheaper for some people. Compare the all-in monthly cost, not just the joining price. Speak with a
-              qualified health professional before starting or changing any treatment.
+              <strong className="text-[#14120f]">Looking for a cheaper option?</strong> The lowest total cost is not
+              always a paid telehealth program. A GP (some appointments are bulk-billed) can also assess you, which may
+              work out cheaper for some people. Speak with a qualified health professional before starting or changing
+              any treatment.
             </p>
           </section>
 
-          {/* How pricing works (no specific figures; confirmed in the consult) */}
+          {/* How pricing works (no partner prices on this page: Jarred, 27 Sep 2026) */}
           <section id="cost" className="border-t border-[#ded8cd] py-8">
             <h2 className="text-xl sm:text-2xl font-black text-[#14120f] mb-3">What telehealth weight loss costs</h2>
             <p className="text-sm text-[#56504a] leading-relaxed max-w-2xl mb-4">
-              Here is what makes this market hard to compare: <strong className="text-[#14120f]">most Australian providers confirm pricing after an online consultation</strong> rather than publishing a fixed figure. Expect a monthly subscription that bundles treatment, consultations and delivery, shown before you commit, with the final cost depending on the treatment prescribed. New Moshy customers get $120 off their first order through our link.
+              Moshy and Juniper both publish their program pricing on their own sites. Moshy describes its fee as
+              all-inclusive; Juniper&apos;s varies with the plan and level of support. Through our links,
+              Moshy&apos;s REFERRAL120 takes $120 off a new customer&apos;s first order, with a 3-month minimum
+              commitment, and Juniper&apos;s JARREDKFC waives the initial consultation, which Juniper values at $89.
             </p>
             <p className="text-xs text-[#56504a]">
-              Sources: getmoshy.com.au/weight-loss (price as published) and Juniper (no public pricing at time of check),
-              21 July 2026.
+              Sources: getmoshy.com.au/weight-loss and myjuniper.com, read 30 September 2026; the JARREDKFC value is from
+              Juniper&apos;s affiliate handbook.
             </p>
-          </section>
-
-          {/* ── Quick comparison table ─────────────────────────────────────────── */}
-          <section className="border-t border-[#ded8cd] py-8">
-            <div className="overflow-x-auto -mx-2 px-2">
-              <table className="w-full min-w-[540px] text-sm">
-                <thead>
-                  <tr className="border-b border-[#ded8cd]">
-                    <th className="text-left pb-3 pr-4 text-[#56504a] font-semibold text-[11px] uppercase tracking-wider w-36">Platform</th>
-                    <th className="pb-3 px-3 text-left text-[#56504a] font-semibold text-[11px] uppercase tracking-wider">Who it&apos;s for</th>
-                    <th className="pb-3 px-3 text-left text-[#56504a] font-semibold text-[11px] uppercase tracking-wider">Approach</th>
-                    <th className="pb-3 px-3 text-left text-[#56504a] font-semibold text-[11px] uppercase tracking-wider">Assessment</th>
-                    <th className="pb-3 pl-3 text-right text-[#56504a] font-semibold text-[11px] uppercase tracking-wider"><span className="sr-only">Link</span></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {[
-                    { name: "Moshy",        audience: "Adults (Australia)", approach: "Clinical telehealth pathway", treatment: "Practitioner review", href: "#moshy",       url: MOSHY_URL,    cta: "Get started",  isAff: true },
-                    { name: "Juniper",      audience: "Women (Australia)",        approach: "Clinical care + coaching", treatment: "Practitioner review", href: "#juniper",     url: "/juniper",  cta: "Juniper review",     isAff: false },
-                  ].map((row) => (
-                    <tr key={row.name} className="border-b border-[#ded8cd] hover:bg-[#f7f4ee] transition-colors">
-                      <th scope="row" className="py-3 pr-4 text-left font-normal">
-                        <a href={row.href} className="text-[#14120f] font-bold text-sm hover:opacity-80 transition-opacity">{row.name}</a>
-                      </th>
-                      <td className="py-3 px-3 text-[#56504a] text-xs">{row.audience}</td>
-                      <td className="py-3 px-3 text-[#56504a] text-xs">{row.approach}</td>
-                      <td className="py-3 px-3 text-xs font-semibold" style={{ color: CYAN_LT }}>{row.treatment}</td>
-                      <td className="py-3 pl-3 text-right">
-                        <a
-                          {...(row.isAff ? aff(row.url) : ext(row.url))}
-                          className="inline-flex items-center gap-1 rounded-full bg-[#007a95] px-3 py-1.5 text-[11px] font-bold text-white whitespace-nowrap transition-all hover:-translate-y-0.5 hover:bg-[#003647]"
-                        >
-                          {row.cta} <ArrowRight className="h-3 w-3" />
-                        </a>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-            <p className="text-[#56504a] text-[11px] mt-3">
-              Any treatment is decided by each platform&apos;s practitioners after an individual assessment. This comparison does not constitute medical advice.
-            </p>
-          </section>
-
-          {/* ── Platform cards ────────────────────────────────────────────────── */}
-          {platforms.map((p) => (
-            <PlatformCard key={p.id} {...p} />
-          ))}
-
-          {/* ── Feature breakdown ─────────────────────────────────────────────── */}
-          <section className="border-t border-[#ded8cd] py-12 sm:py-14">
-            <h2 className="text-xl sm:text-2xl font-black tracking-tight text-[#14120f] mb-6">
-              Platform Comparison: Key Criteria
-            </h2>
-
-            <FeatureMatrix
-              firstColLabel="Criteria"
-              columns={[
-                /* No highlight, and alphabetical. The Moshy column was tinted green
-                   and placed first on a page that ranks two providers and carries a
-                   link for one of them, which reads as the pick rather than as a
-                   column heading. */
-                { name: "Juniper" },
-                { name: "Moshy" },
-              ]}
-              rows={[
-                { label: "Available in Australia",     vals: [true , true ]  },
-                // Moshy is open to anyone eligible, so it serves both. This row
-                // previously said Moshy had no women's programme, contradicting the
-                // rest of the page.
-                { label: "Men's programme",            vals: [false, true ]  },
-                { label: "Women's programme",          vals: [true , true ] },
-                { label: "Practitioner-assessed treatment",    vals: [true , true ], note: "Subject to individual clinical eligibility" },
-                { label: "Online eligibility process", vals: [true , true ]  },
-                { label: "No in-person GP required",   vals: [true , true ]  },
-                { label: "Health coaching included",   vals: [true , false] },
-                { label: "Home delivery",              vals: [true , true ]  },
-                { label: "Lifestyle programme",        vals: [true , false] },
-                { label: "Community discussion",       vals: [true , true ] },
-              ]}
-              footnote="Feature availability is based on publicly available information at time of publication and may change. This page does not constitute medical advice."
-            />
-          </section>
-
-          {/* ── Verdict ──────────────────────────────────────────────────────── */}
-          <section className="border-t border-[#ded8cd] py-12 sm:py-14">
-            <h2 className="text-xl sm:text-2xl font-black tracking-tight text-[#14120f] mb-6">
-              The Verdict
-            </h2>
-            <div className="space-y-4 max-w-2xl">
-              {[
-                { label: "Choose Moshy if:", body: "You want a clinically supervised weight management programme with access to practitioner-assessed treatment options, done online. Moshy is open to anyone eligible, and its online-only process means no in-person GP appointment is required to start. Eligibility is assessed individually. Use our referral link for the current Moshy offer." },
-                // "designed for women exclusively" until 2 Sep 2026. Juniper's own FAQ answer
-                // on /juniper deliberately says "designs and markets its program for women",
-                // not "only": suitability is decided individually by a practitioner in the
-                // consultation. "Exclusively" was a stronger claim than Juniper makes about
-                // itself, it contradicted our own Juniper page, and it sat on the page with
-                // the most impressions on the site, where it would have turned away readers
-                // searching "is juniper for men" and "can men use juniper".
-                { label: "Choose Juniper if:", body: "You want a weight management programme that combines practitioner-led care with structured health coaching and community support. Juniper's programme is more coaching-intensive than Moshy's, and Juniper designs and markets it for women; suitability is decided individually in your consultation." },
-              ].map(({ label, body }) => (
-                <div key={label} className="border-b border-[#ded8cd] pb-4">
-                  <p className="text-sm font-bold text-[#14120f] mb-1">{label}</p>
-                  <p className="text-sm text-[#56504a] leading-relaxed">{body}</p>
-                </div>
-              ))}
-            </div>
           </section>
 
           {/* ── FAQ ──────────────────────────────────────────────────────────── */}
@@ -623,37 +315,32 @@ export default function BestWeightLossTelehealthPage() {
               source="deal-alert-best-weight-loss"
               interest="Weight-loss telehealth offers"
               heading="Get told when a weight-loss offer changes"
-              sub="Moshy new customers can currently get $120 off. We'll email you if the offers on this page change, and nothing else."
+              sub="We'll email you if the Moshy or Juniper offers on this page change, and nothing else."
             />
           </section>
 
           {/* ── Disclaimer + internal links ───────────────────────────────────── */}
           <section className="border-t border-[#ded8cd] py-8 pb-16">
-          {/* Moved below the fold, 28 Aug 2026. The last-updated line sat in the
-              opening screenful alongside the code sentence, the verification
-              stamp, the disclaimer and the CTAs, so a reader met roughly 120
-              words of provenance before the second idea. The date is a trust
-              signal, not an opening argument; it belongs next to the disclosure
-              at the foot. The verification stamp stays above: that one is
-              load-bearing for the attribution work. */}
-            <EditorialMeta lastUpdated="2026-09-10" className="mb-4" />
+            <EditorialMeta lastUpdated="2026-09-30" className="mb-4" />
             <AffiliateDisclosure partners={["Moshy", "Juniper"]} className="mb-3 max-w-2xl" />
             <p className="text-[#56504a] text-xs leading-relaxed max-w-2xl">
               All content on this page is for informational purposes only and does not constitute medical advice. Suitability for any weight management programme depends on individual health factors. Consult a qualified health professional before starting any treatment.
             </p>
-            <div className="mt-4 flex flex-wrap gap-3">
-              <Link href="/moshy" className="text-xs hover:opacity-80 transition-opacity" style={{ color: "#56504a" }}>
-                Moshy discount code &amp; full review
+            <div className="mt-4 flex flex-wrap gap-4">
+              <Link href="/juniper" className="text-xs text-[#56504a] hover:opacity-80 transition-opacity">
+                Our Juniper guide
               </Link>
-              <Link href="/moshhair" className="text-xs hover:opacity-80 transition-opacity" style={{ color: "#56504a" }}>
-                Mosh hair loss review
+              <Link href="/moshy" className="text-xs text-[#56504a] hover:opacity-80 transition-opacity">
+                Our Moshy guide
+              </Link>
+              <Link href="/weight-loss" className="text-xs text-[#56504a] hover:opacity-80 transition-opacity">
+                Weight loss navigator
               </Link>
             </div>
           </section>
 
         </div>
       </main>
-      <StickyCta href={MOSHY_URL} product="Moshy · weight-loss telehealth" label="Get started" />
     </ConsumerShell>
   );
 }

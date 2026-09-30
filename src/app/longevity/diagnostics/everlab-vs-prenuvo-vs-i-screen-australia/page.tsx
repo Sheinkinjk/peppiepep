@@ -16,7 +16,7 @@ const faqs = [
   },
   {
     q: "How much do these services cost in Australia?",
-    a: "All three are private and unsubsidised. Everlab publishes yearly plans from $299 to $2,999 (everlab.com.au/plans, read 1 October 2026), i-screen lists individual tests, and Prenuvo's Australian pricing is given when you book. Ask each the same follow-up: what is not included.",
+    a: "All three are private and unsubsidised. Everlab publishes yearly plans from $299 to $2,999 (everlab.com.au/plans, read 30 September 2026), i-screen lists individual tests, and Prenuvo's Australian pricing is given when you book. Ask each the same follow-up: what is not included.",
   },
   {
     q: "Does a doctor review the results?",
@@ -63,7 +63,7 @@ export default function Page() {
             <tbody className="divide-y divide-[#f1ede4]">
               {[
                 ["Prenuvo", "Whole-body MRI imaging", "Is there a structural abnormality somewhere"],
-                ["Everlab", "Yearly programme: pathology with clinician review; DEXA on higher plans; full-body MRI sold separately. Plans $299 to $2,999 a year (read 1 Oct 2026)", "What do a wide set of biomarkers say, and what should I do about them"],
+                ["Everlab", "Yearly programme: pathology with clinician review; DEXA on higher plans; full-body MRI sold separately. Plans $299 to $2,999 a year (read 30 Sep 2026)", "What do a wide set of biomarkers say, and what should I do about them"],
                 ["i-screen", "Pathology tests you can order directly, listed A$39 to A$1,099 (read 23 Sep 2026)", "I want specific blood tests without going through a GP first"],
               ].map((r) => (
                 <tr key={r[0]}>
@@ -78,7 +78,7 @@ export default function Page() {
         <p className="mt-3 text-xs text-[#56504a]">
           A structural description of each model, current as at 19 August 2026. Offerings change; confirm what is
           included directly with the provider. The i-screen range was read off its own catalogue on 23 September 2026.
-          Everlab&apos;s plan prices were read off its own plans page on 1 October 2026. Prenuvo&apos;s Australian pricing
+          Everlab&apos;s plan prices were read off its own plans page on 30 September 2026. Prenuvo&apos;s Australian pricing
           is given when you book. We earn nothing from either.
         </p>
 

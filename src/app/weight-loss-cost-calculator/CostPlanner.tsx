@@ -39,17 +39,17 @@ const PATHWAYS: Record<
   }
 > = {
   clinical: {
-    title: "Online clinical pathway",
+    title: "Online program, open to anyone eligible",
     tag: "e.g. Moshy",
     summary:
-      "A practitioner-led telehealth service done fully online. The eligibility check is free; if a registered Australian practitioner approves you, treatment runs on a subscription with the exact price shown inside the platform before you commit to anything.",
+      "A practitioner-led telehealth program done online: a questionnaire, then a consult by phone or video. Moshy describes its fee as all-inclusive, with in-app coaching, dietitian meal plans and a community, and publishes its pricing on its own site.",
     payFor: [
-      "Eligibility check: free, commits you to nothing",
-      "If approved: one subscription that typically bundles practitioner oversight, any prescribed treatment and delivery",
-      "No surprise line items: the figure is presented before you pay",
+      "Starting the questionnaire: commits you to nothing",
+      "If the practitioner decides the program suits you: one all-inclusive program fee",
+      "Any minimum term attached to an offer (Moshy's $120 offer carries a 3-month minimum)",
     ],
     determines: [
-      "The treatment plan the practitioner lands on (plans differ, so prices differ)",
+      "The plan the practitioner decides on, if any (plans differ, so prices differ)",
       "Program length and how long you stay subscribed",
       "Any current new-customer offer",
     ],
@@ -60,23 +60,23 @@ const PATHWAYS: Record<
     ],
   },
   coaching: {
-    title: "Coaching-led program",
+    title: "Online program designed for women",
     tag: "e.g. Juniper",
     summary:
-      "Practitioner-led care wrapped in a structured coaching and community program. You pay for the support layer as well as the clinical pathway, which suits people who want accountability built in. Pricing is shown inside the provider's own sign-up flow.",
+      "A practitioner-led telehealth program designed for women, with app coaching, dietitian meal plans and a private community, and 1:1 coaching as a paid add-on. Juniper publishes its pricing on its own site; the fee varies with the plan and level of support.",
     payFor: [
-      "A program fee covering coaching, community and check-ins",
-      "The clinical pathway and any prescribed treatment",
-      "Often bundled as one subscription, confirmed before you commit",
+      "A program fee covering practitioner care, app coaching, community and check-ins",
+      "1:1 coaching, if you add it",
+      "Confirmed before you commit",
     ],
     determines: [
-      "How much coaching and community is layered on",
-      "The treatment plan a practitioner approves, if any",
+      "The plan and level of support you choose",
+      "Whether you add 1:1 coaching",
       "Program length and commitment terms",
     ],
     ask: [
-      "How much of the fee is coaching versus the clinical side?",
-      "Can I keep the clinical pathway without the coaching layer?",
+      "What does the program fee include each month?",
+      "What does the 1:1 coaching add-on cost?",
       "What are the cancellation terms?",
     ],
   },
@@ -87,12 +87,12 @@ const PATHWAYS: Record<
       "Your own doctor manages the same kind of pathway through standard appointments. It is usually the slowest to start and the least convenient, but consult costs can be partly offset by Medicare, and there is no program fee.",
     payFor: [
       "Standard consult fees (bulk-billed or private, practice by practice)",
-      "Any prescribed treatment at pharmacy prices",
+      "Pharmacy costs for anything the GP decides on",
       "Follow-up appointments over time",
     ],
     determines: [
       "Whether your GP bulk-bills or charges a gap",
-      "What, if anything, is prescribed after assessment",
+      "What, if anything, the GP decides on after assessment",
       "How often you need reviews",
     ],
     ask: [
@@ -167,17 +167,17 @@ export default function CostPlanner() {
         {pay !== null && support === null && (
           <fieldset>
             <legend className="text-base sm:text-lg font-bold text-[#14120f] mb-1">
-              2 of 3: What kind of support do you want around it?
+              2 of 3: Which route appeals most?
             </legend>
             <p className="text-sm text-[#56504a] mb-5">A preference, not a medical question.</p>
             <div className="grid gap-3">
               <button type="button" className={`${btn} border-[#ded8cd] bg-white`} onClick={() => choose(setSupport, "clinical" as Support)}>
-                <span className="font-semibold text-[#14120f] block text-sm">A focused clinical pathway, online</span>
-                <span className="text-xs text-[#56504a]">Practitioner-led, minimal extras</span>
+                <span className="font-semibold text-[#14120f] block text-sm">An online program, open to anyone</span>
+                <span className="text-xs text-[#56504a]">Practitioner-led, with app coaching and meal plans</span>
               </button>
               <button type="button" className={`${btn} border-[#ded8cd] bg-white`} onClick={() => choose(setSupport, "coaching" as Support)}>
-                <span className="font-semibold text-[#14120f] block text-sm">Coaching and community built in</span>
-                <span className="text-xs text-[#56504a]">Accountability and structure alongside the clinical side</span>
+                <span className="font-semibold text-[#14120f] block text-sm">An online program designed for women</span>
+                <span className="text-xs text-[#56504a]">With the option of 1:1 coaching</span>
               </button>
               <button type="button" className={`${btn} border-[#ded8cd] bg-white`} onClick={() => choose(setSupport, "gp" as Support)}>
                 <span className="font-semibold text-[#14120f] block text-sm">Face-to-face with my own doctor</span>
@@ -288,9 +288,9 @@ export default function CostPlanner() {
               {key === "clinical" ? (
                 <div>
                   <p className="text-xs leading-relaxed text-[#56504a] mb-3">
-                    The only way to see your exact price is inside the consultation, shown before you commit.
-                    New customers can currently receive $120 off their first order, applied automatically
-                    through our referral link.
+                    Moshy publishes its program pricing on its own site, and the plan that applies is confirmed
+                    before you commit. New customers get $120 off their first order with REFERRAL120 through our
+                    link, with a 3-month minimum commitment. We earn a commission if you sign up.
                   </p>
                   <a
                     href={MOSHY_URL}
@@ -300,13 +300,13 @@ export default function CostPlanner() {
                     className="inline-flex items-center gap-2 rounded-xl px-5 py-3 text-sm font-bold text-white transition-all hover:-translate-y-0.5 shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#007a95]"
                     style={{ background: GREEN, boxShadow: `0 8px 24px ${GREEN}25` }}
                   >
-                    Continue to Moshy, see your price
+                    Continue to Moshy
                     <ArrowRight className="h-4 w-4" aria-hidden="true" />
                   </a>
                 </div>
               ) : key === "coaching" ? (
                 <Link href="/moshy-vs-juniper" className="inline-flex items-center gap-2 text-sm font-semibold text-[#007a95] hover:text-[#003647]">
-                  Compare the clinical and coaching pathways side by side
+                  Compare Moshy and Juniper side by side
                   <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </Link>
               ) : (

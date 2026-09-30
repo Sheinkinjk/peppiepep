@@ -280,7 +280,7 @@ export default function ApolloLanding() {
                   proportionally bigger rebate, and oversizing has real diminishing returns.
                 </p>
                 <p>
-                  On top of the federal discount, some states add their own incentive. NSW, for example, pays an incentive for connecting a battery to an approved Virtual Power Plant (VPP); NSW publishes no flat figure, as the amount depends on the usable capacity you make available to the grid, up to 28kWh, and on the VPP provider (energy.nsw.gov.au, read 1 October 2026).
+                  On top of the federal discount, some states add their own incentive. NSW, for example, pays an incentive for connecting a battery to an approved Virtual Power Plant (VPP); NSW publishes no flat figure, as the amount depends on the usable capacity you make available to the grid, up to 28kWh, and on the VPP provider (energy.nsw.gov.au, read 30 September 2026).
                   Eligibility depends on your battery, retailer and VPP terms, so it is worth asking what applies to your
                   system when the quote comes back.
                 </p>

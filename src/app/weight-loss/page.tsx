@@ -1,5 +1,6 @@
 import Link from "next/link";
-import HubProviders from "@/components/consumer/HubProviders";
+import ProviderPair, { type PairProvider } from "@/components/consumer/ProviderPair";
+import { requiredDisclosureFor } from "@/lib/partner-disclosures";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 import PathwayQuiz from "@/components/consumer/PathwayQuiz";
@@ -14,21 +15,58 @@ import { StepTrack } from "@/components/brand/StepTrack";
 import { HubObject } from "@/components/home/Objects";
 export const metadata = generateSEOMetadata(seoConfig.weightLossHub);
 
+const JUNIPER_REQUIRED = requiredDisclosureFor(JUNIPER_URL);
+
+// Same cards as /best-weight-loss-telehealth-australia and /moshy-vs-juniper
+// (30 Sep 2026). Alphabetical. Replaced a HubProviders grid that called Moshy
+// "without a coaching wrap", which Moshy's own page contradicts.
+const providers: PairProvider[] = [
+  {
+    name: "Juniper",
+    logo: "/logos/juniper.png",
+    logoAspect: 16 / 9,
+    bestIf: "A weight program designed for women, with 1:1 coaching as an add-on.",
+    points: [
+      "Online assessment, then an initial consultation",
+      "Dietitian chat in the app, meal plans and a private community",
+      "Full refund if the practitioner decides it isn't right for you",
+    ],
+    offer: { text: "Initial consultation waived, valued at $89,", code: "JARREDKFC" },
+    href: JUNIPER_URL,
+    cta: "Continue to Juniper",
+    loc: "weight-loss-hub-juniper",
+  },
+  {
+    name: "Moshy",
+    logo: "/logos/moshy.png",
+    bestIf: "An all-inclusive weight program from Mosh's brother brand.",
+    points: [
+      "Online questionnaire, then a consult by phone or video",
+      "In-app coaching, dietitian meal plans and a community",
+      "Also covers hair loss and skin care",
+    ],
+    offer: { text: "$120 off your first order", code: "REFERRAL120" },
+    href: MOSHY_URL,
+    cta: "Continue to Moshy",
+    loc: "weight-loss-hub-moshy",
+  },
+];
+
 
 const guides = [
   { href: "/moshy-review", title: "Moshy review", desc: "How the service runs, from application to subscription." },
-  { href: "/moshy-vs-juniper", title: "Moshy vs Juniper", desc: "How the clinical pathway and the coaching program differ." },
-  { href: "/juniper", title: "Juniper review", desc: "The women-focused, coaching-led program: cost, what's included, and how it compares to Moshy." },
+  { href: "/moshy-vs-juniper", title: "Moshy vs Juniper", desc: "What each includes, read off their own sites, and who each suits." },
+  { href: "/juniper", title: "Juniper review", desc: "Designed for women, with 1:1 coaching as an add-on: what is included and how it compares to Moshy." },
   { href: "/best-weight-loss-telehealth-australia", title: "Best weight loss telehealth", desc: "Moshy and Juniper side by side." },
   { href: "/cheapest-weight-loss-telehealth-australia", title: "Cheapest weight loss telehealth", desc: "Subscription vs pay-as-you-go, and what cheapest means." },
   { href: "/weight-loss-telehealth-cost-australia", title: "What it costs", desc: "How telehealth pricing and subscriptions work." },
   { href: "/online-weight-loss-doctor-australia", title: "Online weight loss doctor", desc: "How a telehealth consult and eligibility review runs." },
   { href: "/moshy-vs-gp", title: "Telehealth vs your GP", desc: "Two doors to the same care. The practical trade." },
-  { href: "/moshy-eligibility", title: "The eligibility check, explained", desc: "What the quiz asks and why some people are declined." },
+  { href: "/moshy-eligibility", title: "Moshy's questionnaire, explained", desc: "What it asks and why some people are declined." },
   { href: "/moshy-alternatives", title: "Moshy alternatives", desc: "The shortlist, including your GP." },
   { href: "/weight-loss-telehealth-men-australia", title: "The men's guide", desc: "How men's services work and the pre-signup checklist." },
   { href: "/moshy", title: "Moshy offer & referral link", desc: "$120 off your first order with the code REFERRAL120, applied through our link." },
-  { href: "/weight-loss-quiz", title: "Which pathway fits you?", desc: "A short matcher across the clinical, coaching and GP routes." },
+  { href: "/weight-loss-quiz", title: "Which pathway fits you?", desc: "A short matcher across the online services and your GP." },
   { href: "/weight-loss-cost-calculator", title: "Weight-loss cost calculator", desc: "Estimate the monthly cost of each route before you commit." },
 ];
 
@@ -39,11 +77,11 @@ const faqs = [
   },
   {
     q: "What are the best online weight loss programs in Australia?",
-    a: "There is no single best program, because the right fit depends on whether you want a clinical pathway, a coaching program, or in-person care with your GP. Our comparison of the main telehealth providers lines up Moshy and Juniper side by side so you can weigh them on eligibility, cost model and what is included. We never sell rankings.",
+    a: "There is no single best program, because the right fit depends on whether you want an online service or in-person care with your GP, and on the support you want around it. Moshy and Juniper both include app coaching, dietitian meal plans and a community; Juniper is designed for women with 1:1 coaching as an add-on, and Moshy is open to anyone eligible. Our comparison lines them up on what each includes. We never sell rankings.",
   },
   {
     q: "How much do online weight loss programs cost in Australia?",
-    a: "Most medical telehealth services run as a subscription; some include treatment in the fee and others bill parts separately. Coaching programs tend to charge a flat or monthly fee, and a GP visit is partly offset by Medicare. Pricing changes often, so check the current figure on each provider before you commit. Our individual guides note the cost model for each pathway.",
+    a: "Online services charge a program fee: Moshy describes its fee as all-inclusive, and Juniper's varies with the plan and level of support. Both publish pricing on their own sites. A GP visit is partly offset by Medicare. Check what the fee includes and any minimum commitment before you pay.",
   },
   {
     q: "Can you see a weight-management practitioner online in Australia?",
@@ -55,7 +93,7 @@ const faqs = [
   },
   {
     q: "Where should I start if I'm comparing weight loss options in Australia?",
-    a: "Start by working out which of the three pathways fits you: medical telehealth with practitioner oversight, a lifestyle and coaching program, or your GP. They are different products at different price points. Our guide to online weight loss programs walks through the split, and the telehealth comparison covers the main providers.",
+    a: "Start by deciding between an online service and your GP. Both begin with a practitioner assessing you; an online service is faster to start, and a GP sees you in person with Medicare offsetting part of the fee. Then compare what each online service includes on our telehealth comparison.",
   },
   {
     q: "Are online weight loss services in Australia legitimate?",
@@ -80,10 +118,10 @@ const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   datePublished: "2026-03-16",
-  dateModified: "2026-07-16",
+  dateModified: "2026-09-30",
   name: "Weight Loss Telehealth Australia: Compare Online Programs & Clinics",
   description:
-    "Refer Labs' weight loss telehealth hub for Australians. Compare online weight loss programs, medical telehealth clinics, lifestyle coaching and the GP pathway, with independent guides to Moshy, Juniper and more.",
+    "Refer Labs' weight loss telehealth hub for Australians. Compare the online services Moshy and Juniper on what each includes, and set them beside the GP pathway.",
   url: `${SITE_URL}/weight-loss`,
   inLanguage: "en-AU",
   isPartOf: { "@id": `${SITE_URL}/#website` },
@@ -135,8 +173,7 @@ export default function WeightLossHubPage() {
               <p className="mt-5 text-lg leading-relaxed text-[#14120f]">
                 Online weight loss telehealth lets you start without waiting weeks for an appointment: you complete an
                 assessment, a registered practitioner reviews it, and a plan follows if you&apos;re suitable. This hub
-                compares the online programs and clinics available in Australia across three clear pathways, with
-                independent research for each.
+                compares the two Australian online services we cover, Moshy and Juniper, and sets them beside your GP.
               </p>
               {/* Below the lead. The first paragraph after the h1 is the answer;
                   a disclosure in that slot is what an engine lifts instead. Still
@@ -176,8 +213,8 @@ export default function WeightLossHubPage() {
               </h3>
               <p className="mt-2.5 text-sm leading-relaxed text-[#56504a]">
                 A registered practitioner assesses you individually before anything starts, and some applicants are
-                declined. Moshy runs a lean clinical pathway open to anyone eligible; Juniper adds coaching and markets
-                to women. Priced as a subscription.
+                declined. Both services we cover include app coaching and dietitian meal plans. Juniper is designed for
+                women and offers 1:1 coaching as an add-on; Moshy is open to anyone eligible.
               </p>
               <div className="mt-5 space-y-2 text-sm font-semibold">
                 <p><Link href="/best-weight-loss-telehealth-australia" className="text-[#007a95] hover:underline">Compare the providers →</Link></p>
@@ -204,39 +241,22 @@ export default function WeightLossHubPage() {
         </section>
 
 
-        <HubProviders
-          heading="The providers we cover"
-          intro="Two Australian telehealth services, answering the same four questions."
-          providers={[
-            {
-              name: "Moshy",
-              logo: "/logos/moshy.png",
-              href: "/moshy",
-              hrefLabel: "Read our Moshy guide",
-              suits: "Anyone eligible in Australia, without a coaching wrap.",
-              how: "Online assessment, then a registered practitioner reviews it and sets the plan if you are suitable.",
-              cost: "A subscription, confirmed in the consult.",
-              offerCode: "REFERRAL120",
-              visitHref: MOSHY_URL,
-              visitLabel: "Continue to Moshy",
-              earns: true,
-            },
-            {
-              name: "Juniper",
-              logo: "/logos/juniper.png",
-              href: "/juniper",
-              hrefLabel: "Read our Juniper guide",
-              suits: "Women who want coaching and habit support alongside the clinical program.",
-              how: "Online assessment with practitioner oversight, plus coaching and app-based tracking.",
-              cost: "A monthly subscription, with bundle options. Juniper shows the price in its own sign-up flow before you pay.",
-              offerText: "The initial consultation is waived with the code JARREDKFC, which Juniper values at $89. Nothing comes off the program itself.",
-              offerNote: "Confirmed from Juniper's affiliate handbook, 23 September 2026.",
-              visitHref: JUNIPER_URL,
-              visitLabel: "Continue to Juniper",
-              earns: true,
-            },
-          ]}
-        />
+        <section className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
+          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">The providers we cover</h2>
+          <p className="mt-3 max-w-3xl text-[15px] leading-relaxed text-[#56504a]">
+            Listed alphabetically.{" "}
+            <Link href="/best-weight-loss-telehealth-australia#inclusions" className="font-semibold text-[#007a95] hover:underline">
+              What each includes, row by row
+            </Link>
+            .
+          </p>
+          {JUNIPER_REQUIRED ? (
+            <p className="mt-4 max-w-3xl rounded-xl border border-[#ded8cd] bg-[#f7f4ee] px-4 py-3 text-[13px] leading-relaxed text-[#56504a]">
+              {JUNIPER_REQUIRED.text}
+            </p>
+          ) : null}
+          <ProviderPair providers={providers} className="mt-6" />
+        </section>
 
         {/* Editorial: how it works.
             Same max-w-6xl gutter as every other section, with the prose measure
@@ -268,15 +288,14 @@ export default function WeightLossHubPage() {
               promises a specific medicine before anyone has looked at your history is the kind to walk away from.
             </p>
             <h3 className="pt-2 text-xl font-bold text-[#14120f]">
-              Telehealth, coaching and your GP: the practical difference
+              Telehealth and your GP: the practical difference
             </h3>
             <p>
-              The three pathways above are different products. Medical telehealth is the most structured
-              clinical route and is usually priced as a subscription. Coaching and lifestyle programs put habits and
-              nutrition first, with practitioner support in the background, and suit people who want accountability more
-              than a clinical pathway. Your GP sees you in person with your whole health picture in view, and Medicare
-              offsets part of the cost, but it is slower to get moving. The right one is the one that fits how you
-              want to be supported, and what you are comfortable paying.
+              The two routes above are different products. An online service runs the assessment and follow-ups
+              remotely for a program fee, and both services we cover add app coaching and dietitian support. Your GP
+              sees you in person with your whole health picture in view, and Medicare offsets part of the cost, but it
+              is slower to get moving. Non-clinical coaching and lifestyle programs put habits first without a
+              practitioner assessment, and we do not compare them here.
             </p>
             <h3 className="pt-2 text-xl font-bold text-[#14120f]">
               What to check before you sign up to any provider

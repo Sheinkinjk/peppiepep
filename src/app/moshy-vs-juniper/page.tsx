@@ -9,6 +9,7 @@ import CodeAnswer from "@/components/offers/CodeAnswer";
 import OfferSchema from "@/components/offers/OfferSchema";
 import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 import ProviderPair, { type PairProvider } from "@/components/consumer/ProviderPair";
+import WeightInclusionsTable from "@/components/consumer/WeightInclusionsTable";
 
 export const metadata = generateSEOMetadata(seoConfig.moshyVsJuniper);
 
@@ -25,11 +26,11 @@ const providers: PairProvider[] = [
   {
     name: "Moshy",
     logo: "/logos/moshy.png",
-    bestIf: "Best if you want a focused clinical pathway and a fast start.",
+    bestIf: "An all-inclusive weight program from Mosh's brother brand.",
     points: [
-      "Free online eligibility check, then a practitioner review",
-      "Monthly subscription program",
-      "Mosh's sister brand, also covering hair loss and skin care",
+      "Online questionnaire, then a consult by phone or video",
+      "In-app coaching, dietitian meal plans and a community",
+      "Also covers hair loss and skin care",
     ],
     offer: { text: "$120 off your first order", code: "REFERRAL120" },
     href: MOSHY_URL,
@@ -40,11 +41,11 @@ const providers: PairProvider[] = [
     name: "Juniper",
     logo: "/logos/juniper.png",
     logoAspect: 16 / 9,
-    bestIf: "Best if you want coaching and a community around your care.",
+    bestIf: "A weight program designed for women, with 1:1 coaching as an add-on.",
     points: [
-      "Practitioner-led care with structured health coaching",
-      "Designed and marketed for women",
-      "Monthly subscription program",
+      "Online assessment, then an initial consultation",
+      "Dietitian chat in the app, meal plans and a private community",
+      "Full refund if the practitioner decides it isn't right for you",
     ],
     offer: { text: "Initial consultation waived, valued at $89,", code: "JARREDKFC" },
     href: JUNIPER_URL,
@@ -55,25 +56,19 @@ const providers: PairProvider[] = [
 
 const closing = providers.map((p) => ({ ...p, loc: p.loc.replace("hero", "close") }));
 
-const rows: { label: string; moshy: string; juniper: string }[] = [
-  { label: "Care model", moshy: "Clinical pathway: eligibility check, practitioner review, delivery", juniper: "Clinical care plus structured coaching and community" },
-  { label: "How you start", moshy: "Free online eligibility check", juniper: "Online assessment, then an initial consultation" },
-  { label: "Pricing", moshy: "Subscription, shown in the eligibility flow before you pay", juniper: "Subscription, shown in the sign-up flow before you pay" },
-  { label: "Refer Labs code", moshy: "REFERRAL120: $120 off the first order", juniper: "JARREDKFC: initial consultation waived, valued at $89" },
-];
 
 const faqs = [
   {
     q: "Is Moshy or Juniper better for weight loss?",
-    a: "Neither is better for everyone. Both are Australian telehealth services where a registered practitioner decides whether treatment is appropriate. Moshy keeps to a lean clinical pathway; Juniper adds structured coaching and a community, and is designed for women. Pick on the kind of support you want.",
+    a: "Neither is better for everyone. Both are Australian telehealth services where a registered practitioner decides whether treatment is appropriate, and both include app coaching, dietitian meal plans, a community and a 30-day money-back guarantee. Juniper is designed for women and offers 1:1 coaching as an add-on; Moshy is Mosh's brother brand and also covers hair and skin.",
   },
   {
     q: "What are the Moshy and Juniper discount codes?",
-    a: "Through Refer Labs, Moshy's code is REFERRAL120, which takes $120 off a new customer's first order. Juniper's is JARREDKFC, which waives the initial consultation, valued by Juniper at $89; it does not take money off the program itself. Each applies automatically through the links on this page.",
+    a: "Through Refer Labs, Moshy's code is REFERRAL120, which takes $120 off a new customer's first order. Juniper's is JARREDKFC, which waives the initial consultation, valued by Juniper at $89; it does not take money off the program itself. Each is carried by the links on this page.",
   },
   {
     q: "How much do Moshy and Juniper cost?",
-    a: "Both run as subscriptions, and each shows its current price in its own sign-up flow before you pay. The plan a practitioner recommends sets what you pay, so compare the figure you are shown rather than a headline number.",
+    a: "Both publish their program pricing on their own sites. Moshy's is an all-inclusive program fee; Juniper's varies with the plan and level of support. Moshy's REFERRAL120 offer carries a 3-month minimum commitment.",
   },
   {
     q: "Can I switch from one to the other?",
@@ -155,10 +150,10 @@ export default function MoshyVsJuniperPage() {
         </h1>
         <p className="mt-5 max-w-2xl text-base leading-relaxed text-[#56504a] sm:text-lg">
           Moshy and Juniper are both Australian weight-management telehealth services where a registered practitioner
-          decides whether treatment is appropriate. The difference is the support around that decision: Moshy keeps to a
-          lean clinical pathway, and Juniper adds structured coaching and a community, designed for women. Moshy&apos;s
-          code REFERRAL120 takes $120 off a first order; Juniper&apos;s JARREDKFC waives the initial consultation, which
-          Juniper values at $89.
+          decides whether treatment is appropriate, and both include app coaching, dietitian meal plans, a community and a
+          30-day money-back guarantee. Juniper is designed for women and offers 1:1 coaching as an add-on; Moshy is
+          Mosh&apos;s brother brand and also covers hair and skin. Moshy&apos;s code REFERRAL120 takes $120 off a first
+          order with a 3-month minimum; Juniper&apos;s JARREDKFC waives the initial consultation, valued at $89.
         </p>
 
         <div className="mt-6 max-w-2xl space-y-2">
@@ -173,10 +168,11 @@ export default function MoshyVsJuniperPage() {
             Is Moshy or Juniper better for weight loss in Australia?
           </h2>
           <p className="mt-4 text-[15.5px] leading-relaxed text-[#56504a]">
-            It depends on what you want alongside the clinical side. If you want to get assessed quickly and keep things
-            simple, Moshy is built for that. If accountability and coaching are what keep you going, Juniper builds its
-            program around them. Both assess suitability individually, both run as subscriptions, and both show the price
-            before you pay.
+            On inclusions they are close: both list app coaching, dietitian meal plans, a community and a 30-day
+            money-back guarantee. Choose on fit. Juniper is designed around women and sells 1:1 coaching as an add-on.
+            Moshy sits alongside Mosh&apos;s hair and skin services and lists psychologists and exercise physiologists in its
+            care team. The offers differ too: Juniper&apos;s code waives the first consultation, while Moshy&apos;s takes
+            $120 off the first order and carries a 3-month minimum.
           </p>
           <CodeAnswer code="REFERRAL120" className="mt-5">
             Refer Labs holds a code for both. Moshy&apos;s is REFERRAL120, $120 off a new customer&apos;s first order, one
@@ -186,43 +182,25 @@ export default function MoshyVsJuniperPage() {
         </section>
 
         <section className="mt-14">
-          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">Moshy vs Juniper at a glance</h2>
-          <div className="mt-5 overflow-x-auto rounded-xl border border-[#ded8cd] bg-white">
-            <table className="w-full min-w-[560px] text-left text-sm leading-relaxed">
-              <thead>
-                <tr className="bg-[#f7f4ee]">
-                  <th scope="col" className="w-40 px-4 py-3 font-semibold text-[#56504a]"><span className="sr-only">Feature</span></th>
-                  <th scope="col" className="px-4 py-3 font-black text-[#14120f]">Moshy</th>
-                  <th scope="col" className="px-4 py-3 font-black text-[#14120f]">Juniper</th>
-                </tr>
-              </thead>
-              <tbody>
-                {rows.map((r) => (
-                  <tr key={r.label} className="border-t border-[#ded8cd] align-top">
-                    <th scope="row" className="px-4 py-3 font-medium text-[#56504a]">{r.label}</th>
-                    <td className="px-4 py-3 text-[#14120f]">{r.moshy}</td>
-                    <td className="px-4 py-3 text-[#14120f]">{r.juniper}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">What does each include?</h2>
+          <WeightInclusionsTable className="mt-5" />
         </section>
 
         <section className="mt-14 grid gap-4 sm:grid-cols-2">
           <div className="rounded-2xl border border-[#ded8cd] bg-[#f7f4ee] p-6">
             <h2 className="text-lg font-bold text-[#14120f]">Choose Moshy if</h2>
             <ul className="mt-3 space-y-2 text-[15px] leading-relaxed text-[#56504a]">
-              <li>You want an eligibility answer quickly, without a longer program attached.</li>
-              <li>You would rather manage food and exercise yourself.</li>
-              <li>You may want hair or skin care from the same brand later.</li>
+              <li>You may want hair or skin care from the same family of brands later.</li>
+              <li>You want a care team that lists psychologists and exercise physiologists.</li>
+              <li>A 3-month minimum on the REFERRAL120 offer suits you.</li>
             </ul>
           </div>
           <div className="rounded-2xl border border-[#ded8cd] bg-[#f7f4ee] p-6">
             <h2 className="text-lg font-bold text-[#14120f]">Choose Juniper if</h2>
             <ul className="mt-3 space-y-2 text-[15px] leading-relaxed text-[#56504a]">
-              <li>You want regular coaching and someone checking in on your habits.</li>
-              <li>A community of people on the same program would help you stick with it.</li>
+              <li>You want a program designed for women.</li>
+              <li>You want 1:1 coaching available on top of the program.</li>
+              <li>You would like the initial consultation waived before you commit.</li>
             </ul>
           </div>
         </section>

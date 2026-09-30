@@ -20,7 +20,7 @@ const aff = { href: MOSHY_URL, target: "_blank" as const, rel: "nofollow sponsor
 const faqs = [
   {
     q: "What is the closest alternative to Moshy?",
-    a: "For a lean, practitioner-led weight-management telehealth service in Australia, Moshy has few like-for-like twins. The realistic alternatives are your GP, who can manage the same pathway in person, or a coaching-led program such as Juniper.",
+    a: "For a practitioner-led weight-management telehealth service in Australia, Moshy has few like-for-like twins. The realistic alternatives are your GP, who can manage the same pathway in person, or a coaching-led program such as Juniper.",
   },
   {
     q: "How is Juniper different from Moshy?",

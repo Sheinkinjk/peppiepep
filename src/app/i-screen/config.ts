@@ -102,7 +102,7 @@ export const iScreenConfig: AffiliatePageConfig = {
     {
       heading: "What i-screen tests cost",
       paragraphs: [
-        // Range only (Jarred, 1 Oct 2026): the full per-test list was replaced by the published range.
+        // Range only (Jarred, 30 Sep 2026): the full per-test list was replaced by the published range.
         `i-screen lists ${ACCESS.catalogueSize} tests, priced from ${money(low.price)} for a single marker to ${money(high.price)} for its largest panel, read off its own catalogue on ${readOnLabel}. The test you choose decides the cost far more than the provider does, so check the price of the specific test on i-screen's site.`,
       ],
     },

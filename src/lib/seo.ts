@@ -326,7 +326,7 @@ export const seoConfig = {
   weightLossHub: {
     title: "Weight Loss Telehealth Australia 2026 | Refer Labs",
     description:
-      "Compare weight-loss telehealth in Australia: clinics, coaching and the GP pathway, with independent guides to Moshy and Juniper. Information only.",
+      "Compare weight-loss telehealth in Australia: what Moshy and Juniper each include, and how an online service compares with your GP. Information only.",
     url: `${SITE_URL}/weight-loss`,
     keywords: [
       "weight loss telehealth australia",
@@ -1676,7 +1676,7 @@ export const seoConfig = {
     // stop competing for the same query.
     title: "Best Weight Loss Telehealth Australia 2026: How to Choose",
     description:
-      "Moshy and Juniper compared for Australians on eligibility, process and cost. Our link carries REFERRAL120: $120 off a first Moshy order.",
+      "Moshy and Juniper compared for Australians: what each includes, how you start and what each costs to begin. Our links carry REFERRAL120 ($120 off Moshy) and JARREDKFC.",
     url: `${SITE_URL}/best-weight-loss-telehealth-australia`,
     keywords: [
       "best weight loss telehealth australia 2026",
@@ -1705,7 +1705,7 @@ export const seoConfig = {
   moshyVsJuniper: {
     title: "Moshy vs Juniper 2026: Cost and Who Each Suits",
     description:
-      "Moshy keeps to a lean clinical pathway; Juniper adds coaching and community for women. Codes: REFERRAL120 ($120 off Moshy), JARREDKFC (Juniper consult waived).",
+      "Moshy vs Juniper: what each includes, read off their own sites, and who each suits. Codes: REFERRAL120 ($120 off Moshy), JARREDKFC (Juniper consult waived).",
     url: `${SITE_URL}/moshy-vs-juniper`,
     keywords: [
       "moshy vs juniper",
@@ -1815,7 +1815,7 @@ export const seoConfig = {
 
     description:
 
-      "How weight-loss telehealth works for women in Australia: coaching-led vs clinical pathways, what to check, and where Juniper and Moshy fit. Information only.",
+      "Weight-loss telehealth for women in Australia: what Juniper and Moshy each include, read off their own sites, and the checks to run first. Information only.",
 
     url: `${SITE_URL}/weight-loss-telehealth-women-australia`,
 
@@ -1869,7 +1869,7 @@ export const seoConfig = {
   weightLossTelehealthMen: {
     title: "Weight Loss Telehealth for Men in Australia 2026",
     description:
-      "How weight-loss telehealth works for men in Australia.",
+      "How weight-loss telehealth works for men in Australia: the online assessment, the checks to run first, and what Moshy includes. Information only.",
     url: `${SITE_URL}/weight-loss-telehealth-men-australia`,
     keywords: [
       "weight loss telehealth men australia",

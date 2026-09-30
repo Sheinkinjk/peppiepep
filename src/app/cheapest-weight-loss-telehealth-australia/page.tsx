@@ -5,7 +5,6 @@ import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import EditorialMeta from "@/components/consumer/EditorialMeta";
 import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
-import CodeAnswer from "@/components/offers/CodeAnswer";
 import OfferSchema from "@/components/offers/OfferSchema";
 import ProviderPair, { type PairProvider } from "@/components/consumer/ProviderPair";
 
@@ -21,28 +20,9 @@ export const metadata = generateSEOMetadata(seoConfig.cheapestWeightLossTeleheal
 const DFWL_URL = "https://www.doctorsforweightloss.com.au/";
 const JUNIPER_REQUIRED = requiredDisclosureFor(JUNIPER_URL);
 
+// Alphabetical (hub-neutrality rule). Moshy and Juniper wording matches the
+// dated inclusions table in src/lib/compare/weight-inclusions.ts.
 const providers: PairProvider[] = [
-  {
-    name: "Moshy",
-    logo: "/logos/moshy.png",
-    bestIf: "Subscription with a lean clinical pathway.",
-    points: ["Free online eligibility check", "Monthly subscription, delivery included if a plan is appropriate"],
-    offer: { text: "$120 off your first order", code: "REFERRAL120" },
-    href: MOSHY_URL,
-    cta: "Continue to Moshy",
-    loc: "cheapest-card-moshy",
-  },
-  {
-    name: "Juniper",
-    logo: "/logos/juniper.png",
-    logoAspect: 16 / 9,
-    bestIf: "Subscription with coaching included, designed for women.",
-    points: ["Practitioner-led care plus structured coaching", "Monthly subscription program"],
-    offer: { text: "Initial consultation waived, valued at $89,", code: "JARREDKFC" },
-    href: JUNIPER_URL,
-    cta: "Continue to Juniper",
-    loc: "cheapest-card-juniper",
-  },
   {
     name: "Doctors for Weight Loss",
     bestIf: "Pay-as-you-go: no subscription, pay per consultation.",
@@ -52,12 +32,33 @@ const providers: PairProvider[] = [
     loc: "cheapest-card-dfwl",
     sponsored: false,
   },
+  {
+    name: "Juniper",
+    logo: "/logos/juniper.png",
+    logoAspect: 16 / 9,
+    bestIf: "A program fee that varies with the plan, designed for women.",
+    points: ["Online assessment, then an initial consultation", "1:1 coaching is a paid add-on"],
+    offer: { text: "Initial consultation waived, valued at $89,", code: "JARREDKFC" },
+    href: JUNIPER_URL,
+    cta: "Continue to Juniper",
+    loc: "cheapest-card-juniper",
+  },
+  {
+    name: "Moshy",
+    logo: "/logos/moshy.png",
+    bestIf: "An all-inclusive program fee.",
+    points: ["Online questionnaire, then a consult by phone or video", "The $120 offer comes with a 3-month minimum commitment"],
+    offer: { text: "$120 off your first order", code: "REFERRAL120" },
+    href: MOSHY_URL,
+    cta: "Continue to Moshy",
+    loc: "cheapest-card-moshy",
+  },
 ];
 
 const faqs = [
   {
     q: "What is the cheapest weight loss telehealth in Australia?",
-    a: "No single service is cheapest for everyone. A subscription such as Moshy or Juniper charges a monthly fee that covers consults and support; a pay-as-you-go service such as Doctors for Weight Loss charges per consultation. Which costs less depends on how often you need to be seen, and some services bill parts of the cost separately. A new-patient code lowers the first bill: REFERRAL120 takes $120 off a first Moshy order, and JARREDKFC waives Juniper's initial consultation, valued at $89.",
+    a: "No single service is cheapest for everyone. A subscription such as Moshy or Juniper charges a monthly fee that covers consults and support; a pay-as-you-go service such as Doctors for Weight Loss charges per consultation. Which costs less depends on how often you need to be seen, and some services bill parts of the cost separately. A new-patient code lowers the first bill: REFERRAL120 takes $120 off a first Moshy order (3-month minimum), and JARREDKFC waives Juniper's initial consultation, valued at $89.",
   },
   {
     q: "Is subscription or pay-as-you-go cheaper?",
@@ -68,8 +69,8 @@ const faqs = [
     a: "It depends on the service. Some, such as Moshy, list an all-inclusive program fee; others charge for the consultation and bill anything dispensed separately through a pharmacy. Weight-management medicines are prescription-only in Australia and are only supplied where a registered practitioner decides they are clinically appropriate. Read each provider's price breakdown in full.",
   },
   {
-    q: "Is there a Moshy discount code?",
-    a: "Yes. Through Refer Labs, Moshy's code is REFERRAL120, which takes $120 off a new customer's first order. It applies automatically through the Moshy link on this page.",
+    q: "Are there discount codes for Moshy and Juniper?",
+    a: "Yes. Through Refer Labs, Moshy's code is REFERRAL120, which takes $120 off a new customer's first order and comes with a 3-month minimum commitment. Juniper's is JARREDKFC, which waives the initial consultation, valued by Juniper at $89; it does not take money off the program. Each is carried by the links on this page.",
   },
   {
     q: "Are cheaper services still legitimate?",
@@ -93,9 +94,9 @@ const itemListSchema = {
   name: "Weight-loss telehealth in Australia by billing model",
   numberOfItems: 3,
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Moshy", description: "Subscription. Refer Labs code REFERRAL120: $120 off the first order.", url: `${SITE_URL}/moshy` },
-    { "@type": "ListItem", position: 2, name: "Juniper", description: "Subscription with coaching, designed for women. Refer Labs code JARREDKFC: initial consultation waived, valued at $89.", url: `${SITE_URL}/juniper` },
-    { "@type": "ListItem", position: 3, name: "Doctors for Weight Loss", description: "Pay-as-you-go, no subscription.", url: DFWL_URL },
+    { "@type": "ListItem", position: 1, name: "Doctors for Weight Loss", description: "Pay-as-you-go, no subscription.", url: DFWL_URL },
+    { "@type": "ListItem", position: 2, name: "Juniper", description: "Program fee varying with the plan, designed for women. Refer Labs code JARREDKFC: initial consultation waived, valued at $89.", url: `${SITE_URL}/juniper` },
+    { "@type": "ListItem", position: 3, name: "Moshy", description: "All-inclusive program fee. Refer Labs code REFERRAL120: $120 off the first order, 3-month minimum commitment.", url: `${SITE_URL}/moshy` },
   ],
 };
 
@@ -133,6 +134,7 @@ export default function CheapestWeightLossTelehealthPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
       <OfferSchema code="REFERRAL120" />
+      <OfferSchema code="JARREDKFC" />
 
       <main id="main-content" className="mx-auto max-w-5xl px-5 pb-24 pt-8 sm:px-8">
         <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2 text-sm text-[#56504a]">
@@ -151,7 +153,7 @@ export default function CheapestWeightLossTelehealthPage() {
           No service is cheapest for everyone, because weight-loss telehealth is billed two ways. A subscription such as
           Moshy or Juniper charges a monthly fee that covers consults and support; a pay-as-you-go service such as Doctors
           for Weight Loss charges per consultation. A new-patient code lowers the first bill: REFERRAL120
-          takes $120 off a first Moshy order, and JARREDKFC waives Juniper&apos;s initial consultation, valued at $89.
+          takes $120 off a first Moshy order (3-month minimum), and JARREDKFC waives Juniper&apos;s initial consultation, valued at $89.
         </p>
 
         <div className="mt-6 max-w-2xl space-y-2">
@@ -171,10 +173,6 @@ export default function CheapestWeightLossTelehealthPage() {
             provider shows its current price on its own site before you pay, which is where to read the figure: prices
             change, and the plan a practitioner recommends sets what you pay.
           </p>
-          <CodeAnswer code="REFERRAL120" className="mt-5">
-            The Moshy discount code through Refer Labs is REFERRAL120, worth $120 off a new customer&apos;s first order.
-            It applies automatically through the Moshy link on this page.
-          </CodeAnswer>
         </section>
 
         <section className="mt-14 max-w-3xl">

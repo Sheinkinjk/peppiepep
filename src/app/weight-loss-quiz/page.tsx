@@ -10,7 +10,7 @@ export const metadata = generateSEOMetadata(seoConfig.weightLossQuiz);
 const faqs = [
   {
     q: "How do I choose a weight-loss program in Australia?",
-    a: "Start with what you want. A fast, clinically-led pathway you can start online points to a medical telehealth service. Wanting coaching, habits and accountability alongside, rather than a clinical pathway alone, points to a coaching-led program. Preferring the lowest cost and an in-person assessment points to your GP. This match asks two quick questions and points you to the pathway that fits, and why. A registered practitioner still decides whether any treatment is appropriate for you.",
+    a: "Start with what you want. Starting online points to a telehealth service: both services we cover include app coaching and dietitian meal plans, and Juniper is designed for women. Wanting habits and nutrition at the centre without a practitioner assessment points to a GP or dietitian-led plan. Preferring an in-person assessment, with Medicare offsetting part of the fee, points to your GP. This match asks two quick questions and points you to the pathway that fits, and why. A registered practitioner still decides whether any treatment is appropriate for you.",
   },
   {
     q: "Is telehealth or an in-person GP better for weight loss?",

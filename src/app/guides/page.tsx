@@ -104,7 +104,7 @@ const sections = [
       { href: "/moshy-vs-juniper", label: "Moshy vs Juniper", desc: "The clinical and coaching platforms, split properly." },
       { href: "/moshy-vs-gp", label: "Telehealth vs Your GP", desc: "Two doors to the same care. The practical trade." },
       { href: "/moshy-alternatives", label: "Moshy Alternatives", desc: "The shortlist, including your GP." },
-      { href: "/weight-loss-telehealth-women-australia", label: "Weight Loss Telehealth for Women", desc: "Coaching-led vs clinical pathways, and how to choose." },
+      { href: "/weight-loss-telehealth-women-australia", label: "Weight Loss Telehealth for Women", desc: "What Juniper and Moshy each include, and the checks to run first." },
         { href: "/cheapest-weight-loss-telehealth-australia", label: "Cheapest Weight Loss Telehealth", desc: "Where the price differences come from." },
         { href: "/weight-loss-telehealth-cost-australia", label: "What Weight Loss Telehealth Costs", desc: "Consult fees, subscriptions and what is billed separately." },
         { href: "/online-weight-loss-doctor-australia", label: "Seeing an Online Weight-Loss Doctor", desc: "How the telehealth assessment works." },

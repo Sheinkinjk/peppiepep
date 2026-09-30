@@ -34,7 +34,7 @@ const faqs = [
   },
   {
     q: "Do I need solar panels to claim the battery rebate?",
-    a: "Yes. The federal discount is available for batteries connected to new or existing solar PV systems (dcceew.gov.au, read 1 October 2026). State incentives have their own rules, so confirm what applies at your address when you get a quote.",
+    a: "Yes. The federal discount is available for batteries connected to new or existing solar PV systems (dcceew.gov.au, read 30 September 2026). State incentives have their own rules, so confirm what applies at your address when you get a quote.",
   },
   {
     q: "Is a home battery worth it after the rebate?",
