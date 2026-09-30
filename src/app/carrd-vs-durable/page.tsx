@@ -1,6 +1,8 @@
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/lib/seo";
 import { SectionMark } from "@/components/brand/SectionMark";
 import { CARRD_URL, DURABLE_URL } from "@/lib/affiliate-links";
+import { CARRD } from "@/lib/partners/carrd";
+import { DURABLE } from "@/lib/partners/durable";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
@@ -25,11 +27,11 @@ const breadcrumbSchema = {
 const faqs = [
   {
     q: "Is Carrd or Durable AI better?",
-    a: "They solve different problems. Carrd is the best cheap one-page builder, ideal for a portfolio, link-in-bio, or simple landing page, free to start and Pro from $9/year. Durable AI generates a full multi-page business website in around 30 seconds and bundles a CRM and invoicing, which suits service businesses that want a working site plus light back-office tools. Pick Carrd for simple and cheap; pick Durable for an AI-built business site.",
+    a: `They solve different problems. Carrd is the cheapest one-page builder, ideal for a portfolio, link-in-bio, or simple landing page, free to start and Pro from ${CARRD.proLite} a year (${CARRD.proStandard} with a custom domain, ${CARRD.readOnLabel}). Durable AI generates a full multi-page business website in around 30 seconds and bundles a CRM and invoicing, which suits service businesses that want a working site plus light back-office tools. Pick Carrd for simple and cheap; pick Durable for an AI-built business site.`,
   },
   {
     q: "Which is cheaper, Carrd or Durable AI?",
-    a: "Carrd is dramatically cheaper, a free plan and Pro tiers starting $9/year. Durable AI is a monthly subscription priced like a business tool because it includes site generation plus CRM and invoicing. If budget is the deciding factor and you only need one page, Carrd wins easily.",
+    a: `Carrd, by a wide margin. ${CARRD.sentence} ${DURABLE.sentence} If budget decides it and you only need one page, Carrd costs less in a year than Durable costs in a month.`,
   },
   {
     q: "Can Durable AI build a multi-page website automatically?",
@@ -37,7 +39,7 @@ const faqs = [
   },
   {
     q: "Do both have free trials?",
-    a: "Carrd has a free plan you can keep. Durable AI lets you generate and preview a site free with no account before subscribing. Both let you try before paying.",
+    a: `Both have free plans. Carrd's is permanent and publishes up to three sites on carrd.co addresses, and Pro features can be trialled free for ${CARRD.proTrialDays} days. Durable generates and previews a site with no account, and its free plan lets you start before choosing a paid plan.`,
   },
 ];
 
@@ -49,10 +51,10 @@ const faqSchema = {
 
 const rows: { label: string; carrd: string; durable: string }[] = [
   { label: "Best for", carrd: "One-page sites, portfolios, link-in-bio", durable: "AI-built multi-page business sites" },
-  { label: "AI generation", carrd: "No, you build it", durable: "Yes, full site in ~30s" },
+  { label: "AI generation", carrd: "No, you build it", durable: "Yes, full site in about 30 seconds" },
   { label: "Pages", carrd: "Single page", durable: "Multi-page" },
   { label: "Extras", carrd: "Forms, simple widgets", durable: "CRM, invoicing, Google Business" },
-  { label: "Price", carrd: "Free; Pro from $9/year", durable: "Monthly subscription" },
+  { label: `Price (${CARRD.readOnLabel})`, carrd: `Free; ${CARRD.short}`, durable: DURABLE.short },
   { label: "Try free", carrd: "Free plan, keep it", durable: "Generate free, no account" },
 ];
 
@@ -77,7 +79,7 @@ export default function CarrdVsDurablePage() {
           <span>cheap-and-simple vs AI-built business site</span>
         </h1>
         <p className="text-[#56504a] text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
-          Both are excellent, for different jobs. <strong className="text-[#14120f]">Carrd</strong> is the cheapest way to
+          They do different jobs. <strong className="text-[#14120f]">Carrd</strong> is the cheapest way to
           ship a clean one-page site. <strong className="text-[#14120f]">Durable AI</strong> generates a full business
           website with a CRM in about 30 seconds.
         </p>
@@ -141,7 +143,7 @@ export default function CarrdVsDurablePage() {
         <div className="grid sm:grid-cols-2 gap-4 mb-12">
           <div className="rounded-xl border border-[#ded8cd] bg-[#f7f4ee] p-6">
             <h3 className="text-lg font-bold mb-2">Go with Carrd</h3>
-            <p className="text-[#56504a] text-sm leading-relaxed mb-4">Cheapest one-page builder. Free to start, Pro from $9/year.</p>
+            <p className="text-[#56504a] text-sm leading-relaxed mb-4">Cheapest one-page builder. Free to start, Pro from {CARRD.proLite} a year ({CARRD.readOnLabel}).</p>
             <a {...aff(CARRD_URL)} data-cta="card-carrd" className="inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-bold text-white transition-all hover:-translate-y-0.5 shadow-md" style={{ background: CYAN, boxShadow: `0 8px 24px ${CYAN}25` }}>
               Continue to Carrd <ArrowRight className="h-4 w-4" />
             </a>
@@ -149,7 +151,7 @@ export default function CarrdVsDurablePage() {
           </div>
           <div className="rounded-xl border border-[#ded8cd] bg-[#f7f4ee] p-6">
             <h3 className="text-lg font-bold mb-2">Go with Durable AI</h3>
-            <p className="text-[#56504a] text-sm leading-relaxed mb-4">Full business site in ~30s, with CRM and invoicing.</p>
+            <p className="text-[#56504a] text-sm leading-relaxed mb-4">Full business site in about 30 seconds, with a CRM and invoicing.</p>
             <a {...aff(DURABLE_URL)} data-cta="card-durable" className="inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-bold text-white transition-all hover:-translate-y-0.5 shadow-md" style={{ background: CYAN, boxShadow: `0 8px 24px ${CYAN}25` }}>
               Continue to Durable AI <ArrowRight className="h-4 w-4" />
             </a>

@@ -160,7 +160,7 @@ const sections = [
     label: "Website Builders & Landing Pages",
     description: "AI website builders, one-page sites and landing-page tools built to convert.",
     guides: [
-      { href: "/carrd", label: "Carrd", desc: "Free plan forever, Pro from $9/year. Best for simple sites." },
+      { href: "/carrd", label: "Carrd", desc: "Free plan forever; Pro from US$9 a year, US$19 with a custom domain (30 September 2026)." },
       { href: "/durableai", label: "Durable AI", desc: "Generate a business website in 30 seconds, with a CRM." },
       { href: "/butternut", label: "Butternut AI", desc: "A full site from a prompt in seconds. Free to try." },
       { href: "/swipepages", label: "Swipe Pages", desc: "Fast AMP landing pages. 14-day free trial." },

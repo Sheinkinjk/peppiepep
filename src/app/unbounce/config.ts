@@ -95,7 +95,7 @@ export const unbounceConfig: AffiliatePageConfig = {
   ],
   relatedLinks: [
     { href: "/compare/website-builders", label: "Website & landing-page builders", desc: "See Unbounce next to the other builders we cover." },
-    { href: "/leadpages", label: "Leadpages", desc: "A close alternative, currently 20% off annual billing." },
+    { href: "/leadpages", label: "Leadpages", desc: "A close alternative with a 7-day free trial on every plan." },
     { href: "/best-website-builder", label: "Best website builder", desc: "If you need a whole site rather than campaign pages." },
   ],
   ctas: {

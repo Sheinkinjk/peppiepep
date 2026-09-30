@@ -56,6 +56,7 @@ export const outgrowConfig: AffiliatePageConfig = {
     { q: "Why use interactive content instead of a form?", a: "Static forms ask people to give without getting anything back. Interactive content gives a result, a score, a recommendation, a number, in exchange for answers, so more people engage and the leads you capture are better qualified because they have told you what they want." },
   ],
   relatedLinks: [
+    { href: "/survicate", label: "Survicate", desc: "Customer-feedback surveys across web, email and app, with a free plan to start." },
     { href: "/compare/lead-generation", label: "Compare lead-gen tools", desc: "See Outgrow next to popups, landing pages and quizzes." },
     { href: "/flexiquiz", label: "FlexiQuiz", desc: "Build quizzes and tests with automatic marking." },
     { href: "/hellobar", label: "Hello Bar", desc: "Capture emails with on-site popups and bars." },

@@ -15,7 +15,7 @@ const faqs = [
   },
   {
     q: "What is the cheapest website builder?",
-    a: "Carrd, comfortably, with a genuine free plan and Pro from $9 per year. The AI builders let you generate a site free before committing to a paid publishing plan, so you can try before you pay.",
+    a: "Carrd, comfortably, with a genuine free plan and Pro from US$9 a year, or US$19 with a custom domain (carrd.co/pro, 30 September 2026). The AI builders let you generate a site free before committing to a paid publishing plan, so you can try before you pay.",
   },
   {
     q: "What is the best AI website builder?",

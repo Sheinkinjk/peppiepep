@@ -2,6 +2,7 @@ import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL } from "@/
 import PremiumAffiliateLanding from "@/components/affiliate/PremiumAffiliateLanding";
 import Link from "next/link";
 import { carrdConfig } from "./config";
+import { CARRD } from "@/lib/partners/carrd";
 
 export const metadata = generateSEOMetadata(seoConfig.carrd);
 
@@ -59,7 +60,7 @@ const softwareSchema = {
     "@type": "Offer",
     price: "0",
     priceCurrency: "USD",
-    description: "Free plan available permanently. Pro plans from $9/year.",
+    description: `Free plan available permanently. ${CARRD.short}, read on carrd.co/pro ${CARRD.readOnLabel}.`,
     availability: "https://schema.org/InStock",
   },
   url: "https://carrd.co",

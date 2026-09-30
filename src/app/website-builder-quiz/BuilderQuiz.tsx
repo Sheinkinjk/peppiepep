@@ -3,6 +3,7 @@
 import Link from "next/link";
 import MatchQuiz, { type MatchConfig, type MatchResult, type MatchAnswers } from "@/components/consumer/MatchQuiz";
 import { CARRD_URL, DURABLE_URL, BUTTERNUT_URL, SWIPE_PAGES_URL } from "@/lib/affiliate-links";
+import { CARRD as CARRD_PRICES } from "@/lib/partners/carrd";
 
 /**
  * Website-builder recommender, expressed as a MatchQuiz config. Three preference
@@ -15,21 +16,21 @@ import { CARRD_URL, DURABLE_URL, BUTTERNUT_URL, SWIPE_PAGES_URL } from "@/lib/af
 const CARRD: MatchResult = {
   key: "carrd",
   name: "Carrd",
-  why: "For a simple one-page site or link-in-bio, Carrd is the cheapest, fastest way to get live, a genuine free plan and Pro from $9/year.",
+  why: `For a simple one-page site or link-in-bio, Carrd is the cheapest, fastest way to get live: a genuine free plan, and Pro from ${CARRD_PRICES.proLite} a year (${CARRD_PRICES.readOnLabel}).`,
   primaryCta: { label: "Try Carrd free", href: CARRD_URL, dataCta: "builder-quiz-carrd" },
   secondary: { label: "Read our full review", href: "/carrd" },
 };
 const DURABLE: MatchResult = {
   key: "durable",
   name: "Durable AI",
-  why: "For a service business that wants a working site plus back-office tools, Durable AI generates a full site in ~30 seconds and bundles a CRM and invoicing.",
+  why: "For a service business that wants a working site plus back-office tools, Durable AI generates a full site in about 30 seconds and bundles a CRM and invoicing.",
   primaryCta: { label: "Try Durable AI", href: DURABLE_URL, dataCta: "builder-quiz-durable" },
   secondary: { label: "Read our full review", href: "/durableai" },
 };
 const BUTTERNUT: MatchResult = {
   key: "butternut",
   name: "Butternut AI",
-  why: "For the fastest full multi-page draft, Butternut AI builds a complete site from one prompt in ~20 seconds that you then refine. Free to generate.",
+  why: "For the fastest full multi-page draft, Butternut AI builds a complete site from one prompt in about 20 seconds that you then refine. Free to generate.",
   primaryCta: { label: "Try Butternut AI", href: BUTTERNUT_URL, dataCta: "builder-quiz-butternut" },
   secondary: { label: "Read our full review", href: "/butternut" },
 };

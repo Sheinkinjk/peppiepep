@@ -23,7 +23,7 @@ export const goHighLevelConfig: AffiliatePageConfig = {
   atAGlance: [
     { k: "What it is", v: "All-in-one CRM, marketing and sales platform" },
     { k: "Best for", v: "Marketing agencies and SMBs" },
-    { k: "Price", v: "From US$97/mo; Unlimited US$297/mo" },
+    { k: "Price", v: "Starter US$97/mo; Unlimited US$297/mo (30 September 2026)" },
     { k: "Start", v: "14-day free trial, no credit card" },
   ],
   trustStrip: [
@@ -83,7 +83,7 @@ export const goHighLevelConfig: AffiliatePageConfig = {
     {
       heading: "GoHighLevel pricing and free trial",
       paragraphs: [
-        "GoHighLevel offers a Starter plan from $97/month, which includes up to three sub-accounts, and an Unlimited plan from $297/month, which adds unlimited sub-accounts and API access. These figures can change, so treat them as a guide and check the current pricing on the provider before you commit.",
+        "Read on gohighlevel.com/pricing on 30 September 2026: the Starter plan is US$97 a month (US$970 a year) with three sub-accounts, the Unlimited plan US$297 a month (US$2,970 a year) with unlimited sub-accounts and basic API access, and Agency Pro US$497 a month (US$4,970 a year), which adds SaaS mode for agencies reselling the platform.",
         "There is a 14-day free trial and no credit card is required to start, which makes it straightforward to explore the platform and decide whether the all-in-one approach fits how you work.",
         "The way to judge value is to add up what you currently spend across your existing tools. If GoHighLevel replaces several of them, the monthly fee often compares well. If it would only replace one, the maths is less compelling.",
       ],
@@ -140,7 +140,7 @@ export const goHighLevelConfig: AffiliatePageConfig = {
     },
     {
       q: "How much does GoHighLevel cost?",
-      a: "GoHighLevel offers a Starter plan from $97/month with up to three sub-accounts, and an Unlimited plan from $297/month with unlimited sub-accounts and API access. Pricing can change, so verify the current figures on the provider. There is a 14-day free trial with no credit card required.",
+      a: "GoHighLevel's Starter plan is US$97 a month with three sub-accounts, Unlimited is US$297 a month with unlimited sub-accounts and basic API access, and Agency Pro is US$497 a month. Paying yearly costs ten months' fees, and every plan starts with a 14-day free trial (read on gohighlevel.com/pricing, 30 September 2026).",
     },
     {
       q: "Is there a GoHighLevel free trial?",
@@ -204,5 +204,5 @@ export const goHighLevelConfig: AffiliatePageConfig = {
   },
 
   disclaimer:
-    "You will be taken to gohighlevel.com. This page is operated by Refer Labs and contains a disclosed affiliate link. Pricing is indicative and correct to the best of our knowledge; check the current pricing on the provider.",
+    "You will be taken to gohighlevel.com. This page is operated by Refer Labs and contains a disclosed affiliate link. Pricing can change, so check the current pricing on GoHighLevel before committing.",
 };

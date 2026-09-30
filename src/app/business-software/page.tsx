@@ -73,14 +73,19 @@ const hubs = [
   { object: "card" as ObjectKind, href: "/compare/payments", label: "Payments & bookkeeping", desc: "Get paid across borders, and keep the books straight." },
   { object: "phone" as ObjectKind, href: "/compare/business-phone", label: "Business phone", desc: "Cloud calling and virtual numbers for sales and support teams." },
   { object: "chip" as ObjectKind, href: "/compare/ai-tools", label: "AI tools", desc: "AI assistants, voice and branding, sorted by what they do." },
+  { object: "checklist" as ObjectKind, href: "/compare/lead-generation", label: "Popups, quizzes & lead capture", desc: "On-site popups, interactive quizzes and graded assessments that turn visitors into leads." },
 ];
 
 /**
- * The three business tools where we hold a real monetary discount rather than a
+ * The business tools where we hold a real monetary discount rather than a
  * free trial anyone can start direct from the vendor.
  *
  * Ordered deliberately, not alphabetically: Superfiliate first because it is the
- * only one of the three that discounts a recurring fee rather than a first term.
+ * only one that discounts a recurring fee rather than a first term.
+ *
+ * Leadpages left this block on 30 Sep 2026 (Jarred, D-1): its 20% is Leadpages'
+ * own public annual-billing saving, not a discount our link grants. It is listed
+ * with the other tools below.
  * Terms, dates and hrefs come from the DEALS registry, so this block cannot drift
  * from /deals or from the brand page it links to.
  *
@@ -89,7 +94,8 @@ const hubs = [
  * Superfiliate 6, Leadpages 9) and sat last in "Popular tools" beneath eight
  * tools offering nothing but a trial.
  */
-const OFFER_BRANDS = ["Superfiliate", "Unbounce", "Leadpages"] as const;
+const OFFER_BRANDS = ["Superfiliate", "Unbounce"] as const;
+const COUNT_WORDS = ["No", "One", "Two", "Three", "Four", "Five"];
 const featuredOffers = OFFER_BRANDS
   .map((brand) => DEALS.find((d) => d.brand === brand))
   .filter((d): d is NonNullable<typeof d> => Boolean(d));
@@ -113,9 +119,12 @@ const tools = [
   { href: "/keap", label: "Keap", desc: "Small-business CRM with sales and marketing automation." },
   { href: "/gohighlevel", label: "GoHighLevel", desc: "All-in-one CRM, marketing automation and funnels." },
   { href: "/employmenthero", label: "Employment Hero", desc: "Australian HR, payroll and employment platform." },
-  // Superfiliate, Unbounce and Leadpages are not listed here: they carry a real
-  // discount and are featured in the offers block above instead, so the link is
-  // not split across two places on one page.
+  { href: "/leadpages", label: "Leadpages", desc: "Landing pages with A/B testing and lead capture. 7-day free trial." },
+  { href: "/pandadoc", label: "PandaDoc", desc: "Proposals, quotes and contracts with built-in e-signature. Free eSign plan." },
+  { href: "/blinq", label: "Blinq", desc: "Digital business cards shared by QR, link or NFC. Free plan with two cards." },
+  // Superfiliate and Unbounce are not listed here: they carry a real discount and
+  // are featured in the offers block above instead, so the link is not split
+  // across two places on one page.
 ];
 
 const itemListSchema = {
@@ -208,13 +217,13 @@ export default function BusinessSoftwarePage() {
             </div>
           </section>
 
-          {/* Current offers: the three tools we hold a real discount on. Placed
+          {/* Current offers: the tools we hold a real discount on. Placed
               above "Popular tools" because a discount is the only reason a reader
               has to start here rather than at the vendor's own site. */}
           <section className="mt-14 border-t border-[#ded8cd] pt-12">
             <h2 className="text-2xl font-extrabold text-[#14120f]">Current offers</h2>
             <p className="mt-2 max-w-2xl text-sm leading-relaxed text-[#56504a]">
-              Three of the tools we cover carry a real discount rather than a free trial anyone can
+              {COUNT_WORDS[featuredOffers.length] ?? featuredOffers.length} of the tools we cover carry a real discount rather than a free trial anyone can
               start direct. Each shows when we last checked it, and whether it was read off the provider&apos;s own page or confirmed directly with them.
             </p>
             <div className="mt-7 grid gap-4 sm:grid-cols-3">

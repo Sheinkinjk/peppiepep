@@ -8,14 +8,17 @@ export const alidropConfig: AffiliatePageConfig = {
   logo: "alidrop",
   badgeText: "Dropshipping",
   affiliateUrl: ALIDROP_URL,
-  offer: "US$1 for a 7-day trial",
+  // 30 Sep 2026 (Jarred, D-1): AliDrop's public trial on every plan, not a code
+  // and not specific to our link (alidrop.co/pricing).
+  offer: "AliDrop's public US$1, 7-day trial",
+  offerLabel: "AliDrop's own public offer",
 
   quickAnswer:
     "AliDrop is a dropshipping tool that helps you source products from AliExpress, Alibaba and Temu, import them to an online store such as Shopify, and automate order fulfilment so orders are placed with suppliers for you. It includes product research, private suppliers and branding options. AliDrop starts with a US$1 seven-day trial, then paid plans from US$39/month. Dropshipping is a business model with real costs and no guaranteed returns, this page describes the tool, not an income opportunity.",
 
   banner: {
     heading: "AliDrop: Dropshipping Made Simpler",
-    body: "Click below to go directly to AliDrop via our affiliate link and see the product sourcing and fulfilment tools.",
+    body: "Click below to go to AliDrop through our affiliate link and see the product sourcing and fulfilment tools.",
     buttonLabel: "Continue to AliDrop",
   },
 
@@ -24,25 +27,25 @@ export const alidropConfig: AffiliatePageConfig = {
     { k: "What it is", v: "AliExpress/Temu dropshipping & fulfilment tool" },
     { k: "Best for", v: "People building a dropshipping store" },
     { k: "Works with", v: "Shopify and other stores" },
-    { k: "Price", v: "US$1 7-day trial; from US$39/mo" },
+    { k: "Price", v: "US$1 for 7 days, then from US$39/mo (30 September 2026)" },
   ],
   trustStrip: [
     "Source from AliExpress, Alibaba and Temu",
     "Import products to Shopify in a few clicks",
     "Automated order fulfilment with suppliers",
-    "Free plan to start; paid tiers as you scale",
+    "US$1 for the first 7 days on any plan",
   ],
   verdict:
     "AliDrop is the right pick if you are building a dropshipping store and want product sourcing, importing and automated fulfilment in one tool rather than doing each step manually. It is a practical way to reduce the operational grind of dropshipping. It does not remove the hard parts, finding products that sell, marketing them, and managing margins after supplier and ad costs, so treat it as tooling for a real business, not a shortcut to income.",
   verdictPoints: [
     "Sourcing, importing and fulfilment automation in one tool",
     "Integrates with Shopify and common store platforms",
-    "A free plan lets you set up before you commit to a paid tier",
+    "A US$1, 7-day trial lets you set up before paying for a plan",
   ],
 
   hero: {
-    h1Prefix: "AliDrop offer:",
-    h1Highlight: "US$1 for a 7-day trial of the AliExpress and Temu tool",
+    h1Prefix: "AliDrop review:",
+    h1Highlight: "the AliExpress and Temu dropshipping tool, and its US$1 trial",
     subheading:
       "AliDrop sources products from AliExpress, Alibaba and Temu, imports them into a store such as Shopify, and places the supplier order for you when a customer buys. It suits someone starting a dropshipping store who does not want to fulfil by hand. The trial is US$1 for seven days.",
     trustBullets: [
@@ -99,7 +102,7 @@ export const alidropConfig: AffiliatePageConfig = {
   faqs: [
     {
       q: "Is there an AliDrop discount code?",
-      a: "AliDrop doesn't publish a public discount code. The current offer is US$1 for a 7-day trial, which you can start through the link on this page. Offers can change, so treat this as the current new-customer offer.",
+      a: "No. AliDrop publishes no discount code and Refer Labs holds none. Every AliDrop plan opens with a US$1, 7-day trial on AliDrop's own pricing page, whichever way you arrive (read on alidrop.co/pricing, 30 September 2026).",
     },
     {
       q: "What is AliDrop?",
@@ -107,7 +110,7 @@ export const alidropConfig: AffiliatePageConfig = {
     },
     {
       q: "How much does AliDrop cost?",
-      a: "AliDrop offers a free plan to get started, with paid tiers that unlock more as you scale. Plans and limits change, so check the current pricing on the provider before committing.",
+      a: "AliDrop has no free plan. Each plan costs US$1 for the first 7 days, then Starter is US$39 a month, Professional US$59, Empire US$99 and Unicorn US$299, and yearly billing takes up to 8 months off (read on alidrop.co/pricing, 30 September 2026).",
     },
     {
       q: "Does AliDrop work with Shopify?",
@@ -136,7 +139,7 @@ export const alidropConfig: AffiliatePageConfig = {
     primary: "See AliDrop",
     secondary: "Continue to AliDrop",
     midHeading: "Ready to Simplify Dropshipping Operations?",
-    midBody: "Click below to go directly to AliDrop via our affiliate link and set up sourcing and fulfilment, starting free.",
+    midBody: "Click below to go directly to AliDrop via our affiliate link and set up sourcing and fulfilment, starting with the US$1 trial.",
     midButton: "Try AliDrop",
     bottomHeading: "See What AliDrop Can Do",
     bottomBody: "Click below to be taken to AliDrop. Explore product sourcing, importing and automated fulfilment.",
@@ -144,5 +147,5 @@ export const alidropConfig: AffiliatePageConfig = {
   },
 
   disclaimer:
-    "You will be taken to the AliDrop site. This page is operated by Refer Labs and contains a disclosed affiliate link. Pricing is indicative and correct to the best of our knowledge; check the current pricing on the provider. Dropshipping involves risk and costs, and results vary; nothing here is a guarantee of income or financial advice.",
+    "You will be taken to the AliDrop site. This page is operated by Refer Labs and contains a disclosed affiliate link. Pricing can change, so check the current pricing on AliDrop before committing. Dropshipping involves risk and costs, and results vary; nothing here is a guarantee of income or financial advice.",
 };
