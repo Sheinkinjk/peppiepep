@@ -59,7 +59,6 @@ export const SEARCH_INDEX: SearchEntry[] = [
   { title: "Comparing mattresses", href: "/sleep/mattress-comparison-australia", category: "Sleep", kind: "Guide", keywords: "mattress comparison australia trial period foam density warranty" },
   { title: "Sleep trackers", href: "/sleep/sleep-tracker-comparison-australia", category: "Sleep", kind: "Guide", keywords: "sleep tracker australia accuracy wearable vs sleep study" },
   { title: "What good sleep costs", href: "/sleep/how-much-does-good-sleep-cost", category: "Sleep", kind: "Guide", keywords: "cost of good sleep australia free sleep improvements worth it" },
-  { title: "Retinol vs prescription-strength", href: "/health-and-beauty/retinol-vs-prescription-strength-australia", category: "Health & beauty", kind: "Guide", keywords: "retinol australia prescription strength skincare access route" },
   { title: "LED face masks in Australia", href: "/health-and-beauty/led-face-mask-comparison-australia", category: "Health & beauty", kind: "Guide", keywords: "led face mask australia price omnilux red light therapy artg" },
   { title: "Skincare cost per use", href: "/health-and-beauty/best-value-skincare-australia-cost-per-use", category: "Health & beauty", kind: "Guide", keywords: "best value skincare australia cost per use expensive skincare worth it" },
   { title: "Foreo Luna vs UFO", href: "/health-and-beauty/foreo-luna-vs-ufo", category: "Health & beauty", kind: "Guide", keywords: "foreo luna vs ufo price australia luna 4 ufo 3 red light cleansing device" },
@@ -82,7 +81,6 @@ export const SEARCH_INDEX: SearchEntry[] = [
   { title: "Moshy vs Juniper", href: "/moshy-vs-juniper", category: "Weight loss", kind: "Guide", keywords: "compare weight loss telehealth juniper" },
   { title: "Juniper review (women's weight-management)", href: "/juniper", category: "Weight loss", kind: "Guide", keywords: "juniper australia weight loss review cost 349 coaching women weight management vs moshy myjuniper" },
   { title: "Best weight loss telehealth in Australia", href: "/best-weight-loss-telehealth-australia", category: "Weight loss", kind: "Guide", keywords: "top online weight loss clinic australia weight management" },
-  { title: "Do you qualify for weight-loss treatment?", href: "/weight-loss-treatment-eligibility-australia", category: "Weight loss", kind: "Guide", keywords: "weight loss treatment eligibility australia do i qualify bmi criteria am i eligible" },
   { title: "Moshy vs your GP", href: "/moshy-vs-gp", category: "Weight loss", kind: "Guide", keywords: "doctor bulk bill medicare gp telehealth" },
   { title: "Moshy alternatives", href: "/moshy-alternatives", category: "Weight loss", kind: "Guide", keywords: "other options competitors similar" },
   { title: "Moshy eligibility check explained", href: "/moshy-eligibility", category: "Weight loss", kind: "Guide", keywords: "qualify assessment questionnaire suitability" },
@@ -94,8 +92,8 @@ export const SEARCH_INDEX: SearchEntry[] = [
   { title: "getmoshy.com.au explained", href: "/moshy", category: "Weight loss", kind: "Guide", keywords: "moshy website legit real official domain" },
 
   // Hair loss
-  { title: "Hair loss: compare your options", href: "/hair-loss", category: "Hair loss", kind: "Guide", keywords: "hair loss australia compare telehealth topical options men" },
-  { title: "Best hair loss treatment in Australia", href: "/best-hair-loss-treatment-australia", category: "Hair loss", kind: "Guide", keywords: "regrowth telehealth topical prescription treatment top compare" },
+  { title: "Hair loss: compare your options", href: "/hair-loss", category: "Hair loss", kind: "Guide", keywords: "hair loss australia compare telehealth gp over the counter options men" },
+  { title: "Best hair loss treatment in Australia", href: "/best-hair-loss-treatment-australia", category: "Hair loss", kind: "Guide", keywords: "mosh or gp telehealth over the counter compare hair loss" },
   { title: "Mosh hair: what to know & offer", href: "/moshhair", category: "Hair loss", kind: "Guide", keywords: "mosh review mens hair loss telehealth offer discount" },
   { title: "Mosh review: is it legit & worth it?", href: "/mosh-review", category: "Hair loss", kind: "Guide", keywords: "mosh review is mosh legit worth it does mosh work reviews australia" },
   { title: "Early signs of hair loss in men", href: "/early-signs-of-hair-loss-australia", category: "Hair loss", kind: "Guide", keywords: "early signs of hair loss am i going bald how to tell thinning crown balding signs" },
@@ -103,8 +101,6 @@ export const SEARCH_INDEX: SearchEntry[] = [
   { title: "Online hair loss treatment in Australia", href: "/online-hair-loss-treatment-australia", category: "Hair loss", kind: "Guide", keywords: "online hair loss treatment telehealth doctor australia assessment prescription" },
   { title: "How to stop hair loss", href: "/how-to-stop-hair-loss-australia", category: "Hair loss", kind: "Guide", keywords: "how to stop hair loss balding men male pattern treatment australia" },
   { title: "Receding hairline treatment", href: "/receding-hairline-treatment-australia", category: "Hair loss", kind: "Guide", keywords: "receding hairline treatment male pattern telehealth australia" },
-  { title: "Mosh vs Dense", href: "/mosh-vs-dense", category: "Hair loss", kind: "Guide", keywords: "mosh vs dense hair loss clinical topical compare" },
-  { title: "Dense Hair Experts", href: "/dense", category: "Hair loss", kind: "Guide", keywords: "dense hair non prescription topical" },
 
   // Men's health
 
@@ -194,16 +190,13 @@ export const SEARCH_INDEX: SearchEntry[] = [
   { title: "Cheapest weight-loss telehealth", href: "/cheapest-weight-loss-telehealth-australia", category: "Weight loss", kind: "Guide", keywords: "cheapest affordable low cost weight loss telehealth australia" },
   { title: "Online weight-loss doctor in Australia", href: "/online-weight-loss-doctor-australia", category: "Weight loss", kind: "Guide", keywords: "online weight loss doctor practitioner assessment australia" },
 
-  // Hair loss head-to-head
-  { title: "Mosh vs Dense", href: "/mosh-vs-dense", category: "Hair loss", kind: "Guide", keywords: "mosh vs dense hair loss prescription topical compare" },
-
   // Software head-to-heads
   { title: "Carrd vs Butternut", href: "/carrd-vs-butternut", category: "Software", kind: "Guide", keywords: "carrd vs butternut website builder compare" },
   { title: "Durable vs Butternut", href: "/durable-vs-butternut", category: "Software", kind: "Guide", keywords: "durable vs butternut ai website builder compare" },
   { title: "Which website builder quiz", href: "/website-builder-quiz", category: "Software", kind: "Guide", keywords: "which website builder should i use quiz recommend carrd durable butternut swipe pages" },
   { title: "Which AI sales tool quiz", href: "/ai-sales-tools-quiz", category: "Software", kind: "Guide", keywords: "which ai sales tool quiz match aisdr reply.io fullenrich gohighlevel ai sdr recommend for me bottleneck outbound" },
   { title: "Which newsletter platform quiz", href: "/newsletter-platform-quiz", category: "Creator tools", kind: "Guide", keywords: "which newsletter platform quiz match beehiiv substack kit convertkit recommend for me email" },
-  { title: "Which hair-loss option fits you", href: "/hair-loss-quiz", category: "Hair loss", kind: "Guide", keywords: "which hair loss treatment quiz match mosh dense telehealth topical gp recommend option for me" },
+  { title: "Which hair-loss option fits you", href: "/hair-loss-quiz", category: "Hair loss", kind: "Guide", keywords: "which hair loss treatment quiz match mosh telehealth over the counter gp recommend option for me" },
   // Business-software brand pages (were live + in the /business-software grid but missing from search)
   { title: "ActiveCampaign", href: "/activecampaign", category: "Software", kind: "Guide", keywords: "activecampaign email marketing automation crm discount referral" },
   { title: "FlexiQuiz", href: "/flexiquiz", category: "Software", kind: "Guide", keywords: "flexiquiz quiz test maker assessments exams online" },

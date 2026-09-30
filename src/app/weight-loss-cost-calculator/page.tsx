@@ -13,15 +13,15 @@ export const metadata = generateSEOMetadata(seoConfig.weightLossCostCalculator);
 const faqs = [
   {
     q: "How much does weight-loss telehealth cost in Australia?",
-    a: "There is no single figure, because pricing is individual. Online clinical services run on subscriptions where the fee typically bundles practitioner oversight, any prescribed treatment and delivery, and the exact price depends on the plan a registered practitioner approves for you. Every reputable provider shows your actual figure inside its own flow before you commit to anything.",
+    a: "There is no single figure, because pricing is individual. Online services charge a program fee: Moshy describes its fee as all-inclusive, and Juniper's varies with the plan and level of support. Both publish pricing on their own sites, and the plan that applies to you is confirmed before you commit.",
   },
   {
     q: "Why doesn't this calculator show exact prices?",
     a: "Because any exact figure we published would be a guess, and prices change and vary by individual treatment plan. Instead the planner shows what each pathway charges for, what determines your price, and the questions to ask, then points you to where your real figure is shown: inside the provider's consultation, before any commitment.",
   },
   {
-    q: "Is the Moshy eligibility check free?",
-    a: "Yes. The online eligibility check is free, takes around ten minutes and commits you to nothing. If a registered Australian practitioner approves you, the subscription options and pricing are shown inside the platform before you pay. New customers can currently receive $120 off their first treatment through our referral link, applied automatically with no code.",
+    q: "Does it cost anything to start with Moshy?",
+    a: "No. Starting Moshy's online questionnaire commits you to nothing. If a registered Australian practitioner decides the program suits you, the pricing is confirmed before you pay. New customers get $120 off their first order with REFERRAL120 through our link, with a 3-month minimum commitment.",
   },
   {
     q: "Does Medicare cover weight-loss telehealth?",
@@ -115,16 +115,14 @@ export default function WeightLossCostCalculatorPage() {
             </h2>
             <div className="space-y-4 text-[15px] leading-relaxed text-[#56504a] max-w-2xl">
               <p>
-                Most &ldquo;cost&rdquo; pages in this category publish a number to win the click, and the number
-                is either out of date or was never true for anyone in particular. Subscription pricing in
-                weight-loss telehealth depends on the treatment plan a registered practitioner approves after an
-                individual assessment, so two people rarely pay the same amount.
+                Weight-loss telehealth pricing depends on the program, the level of support and the plan that
+                applies after an individual assessment, so two people rarely pay the same amount.
               </p>
               <p>
                 What this tool gives you instead is the cost structure of each pathway, the
                 factors that move your price, and the fact that reputable providers show the exact figure inside
-                their own flow before you commit. The free eligibility check is how you turn &ldquo;roughly
-                what&rdquo; into &ldquo;exactly this, for me&rdquo; without spending anything. For the wider
+                their own flow before you commit. Starting a provider&apos;s questionnaire costs nothing and
+                shows you the figure that applies to you. For the wider
                 pricing landscape, see our guide to{" "}
                 <Link href="/weight-loss-telehealth-cost-australia" className="text-[#007a95] underline underline-offset-2">
                   how weight-loss telehealth pricing works
@@ -184,7 +182,7 @@ export default function WeightLossCostCalculatorPage() {
           </section>
         </div>
       </main>
-      <StickyCta href={MOSHY_URL} product="Moshy · weight-loss telehealth" label="Check eligibility" />
+      <StickyCta href={MOSHY_URL} product="Moshy · weight-loss telehealth" label="Get started" />
     </ConsumerShell>
   );
 }

@@ -32,7 +32,7 @@ export default function OffersTable({
         <thead className="hidden sm:table-header-group">
           <tr className="bg-[#f7f4ee] text-[11px] font-bold uppercase tracking-[0.08em] text-[#56504a]">
             <th scope="col" className="px-4 py-3">Provider</th>
-            <th scope="col" className="px-4 py-3">Best offer</th>
+            <th scope="col" className="px-4 py-3">Offer</th>
             <th scope="col" className="px-4 py-3">Saving</th>
             <th scope="col" className="px-4 py-3">Code</th>
             <th scope="col" className="px-4 py-3">Status</th>
@@ -76,10 +76,10 @@ export default function OffersTable({
         </tbody>
       </table>
       <p className="border-t border-[#f1ede4] bg-[#f7f4ee] px-4 py-2.5 text-xs text-[#56504a]">
-        Each offer shows the date we last read it off that provider’s own page, rather than a single site-wide
-        stamp, so you can see exactly how current each one is. &ldquo;Not recorded&rdquo; means we have not logged a
-        reading date for that one yet. &ldquo;No code needed&rdquo; means the offer applies
-        automatically through our link. Offers can change; figures are indicative, not a guarantee.
+        Each date is when we last confirmed that offer, on the provider&rsquo;s own page or directly with the provider.
+        {deals.some((d) => !d.verified) ? <> &ldquo;Not recorded&rdquo; means we have not logged a date for that one yet.</> : null}
+        {deals.some((d) => !d.code) ? <> &ldquo;No code needed&rdquo; means the offer is applied through our link or enquiry form.</> : null}
+        {" "}Offers can change, so check the terms on the provider&rsquo;s site.
       </p>
     </div>
   );

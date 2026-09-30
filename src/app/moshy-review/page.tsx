@@ -6,8 +6,6 @@ import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
-import VerifiedStamp from "@/components/consumer/VerifiedStamp";
-import { MOSHY_OFFER, verifiedFor } from "@/lib/offers";
 import FactHistory from "@/components/facts/FactHistory";
 import CodeAnswer from "@/components/offers/CodeAnswer";
 import OfferSchema from "@/components/offers/OfferSchema";
@@ -19,30 +17,29 @@ const CYAN = "#007a95";
 const CYAN_LT = "#007a95";
 const aff = { href: MOSHY_URL, target: "_blank" as const, rel: "nofollow sponsored" as const };
 
+// Facts read on getmoshy.com.au (homepage and /weight-loss) on this date.
+const READ_ON = "30 September 2026";
+
 const faqs = [
   {
     q: "Is Moshy legit?",
-    a: "Yes. Moshy is an Australian telehealth service operating under Australian health service regulations, and every eligibility submission is reviewed individually by a registered Australian practitioner. Some applicants are declined, which is the clinical screening working as it should, and pricing is shown inside the flow before you commit. Those are the markers of a real clinical service rather than a storefront.",
-  },
-  {
-    q: "Is Moshy a real Australian company?",
-    a: "Yes. Moshy is an Australian telehealth provider operating under Australian health service regulations, and eligibility submissions are reviewed by registered Australian practitioners. It sits in the same family of Australian telehealth brands as Mosh.",
-  },
-  {
-    q: "How long does the Moshy sign-up take?",
-    a: "The online eligibility questionnaire usually takes around five to ten minutes. The practitioner review that follows is not instant, because a real person assesses each submission individually.",
+    a: `Yes. getmoshy.com.au is Moshy's own site, and Moshy is the brother brand of the Australian telehealth service Mosh. Moshy says it partners with independent AHPRA-registered doctors and nurses based in Australia, paid on a fee-for-service basis, and its weight-loss page states it is NSQPCH-accredited, holds QIP Accreditation and LegitScript certification, and is ISO/IEC 27001 certified for information security (read ${READ_ON}).`,
   },
   {
     q: "Does everyone who applies get accepted?",
-    a: "No. Some applicants are declined or pointed toward other care after the practitioner review. That screening step is a feature of a clinical service rather than a flaw.",
+    a: "Not necessarily. A practitioner decides in the consultation whether any treatment is appropriate for you; finishing the questionnaire does not settle it.",
   },
   {
     q: "Do I need a referral from my GP to use Moshy?",
-    a: "No. The starting point is Moshy's own online eligibility check, which does not require a GP referral. Whether any treatment follows is decided by the reviewing practitioner based on your individual circumstances.",
+    a: "No. You start with Moshy's own online questionnaire, and Moshy arranges the consultation by phone or video. No GP referral is needed to begin.",
+  },
+  {
+    q: "Can I get my money back?",
+    a: `Moshy advertises a 30-day money back guarantee and a price match guarantee, each with its own conditions on Moshy's promotions terms page (read ${READ_ON}). If you use REFERRAL120, read those alongside the code's 3-month minimum commitment.`,
   },
   {
     q: "Is this page affiliated with Moshy?",
-    a: "This page is published by Refer Labs and contains an affiliate referral link, which is disclosed on the page. The referral applies automatically when you click through. Nothing here is medical advice.",
+    a: "This page is published by Refer Labs and contains an affiliate referral link, which is disclosed on the page. Refer Labs earns a fee when someone signs up through it, at no extra cost to them. Nothing here is medical advice.",
   },
 ];
 
@@ -66,7 +63,7 @@ const webPageSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
   datePublished: "2026-07-05",
-  dateModified: "2026-07-06",
+  dateModified: "2026-09-30",
   name: seoConfig.moshyReview.title,
   description: seoConfig.moshyReview.description,
   url: seoConfig.moshyReview.url,
@@ -110,37 +107,35 @@ export default function MoshyReviewPage() {
           Moshy review: <span>is it legit, and what the service is like</span>
         </h1>
         <p className="text-[#56504a] text-base sm:text-lg leading-relaxed mb-4 max-w-2xl">
-          A plain walkthrough of how Moshy works: what you get, what happens when you apply, and how to start the free
-          eligibility check.
+          Yes, Moshy is a legitimate Australian telehealth service: it says its practitioners are independent
+          AHPRA-registered doctors and nurses paid on a fee-for-service basis, and its own site states it is
+          NSQPCH-accredited, LegitScript-certified and ISO/IEC 27001 certified (read {READ_ON}). It is the brother brand
+          of Mosh, and the service is an online consultation with a registered practitioner, who decides whether any
+          treatment is appropriate.
         </p>
-        {/* Below the lead. The first paragraph after the h1 is the answer;
-            a disclosure in that slot is what an engine lifts instead. Still
-            above the first affiliate link, which is what it is for. */}
+        {/* Below the lead, above the first affiliate link. */}
         <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
-        <CodeAnswer code="REFERRAL120" className="mt-6">
-          REFERRAL120, the Moshy code Refer Labs holds, gets a new customer $120 off a first order, once per customer.
+        <CodeAnswer code="REFERRAL120" className="mt-6 mb-10">
+          REFERRAL120, the Moshy code Refer Labs holds, gets a new customer $120 off a first order on an eligible
+          program, once per customer, with a minimum commitment period of 3 months.
         </CodeAnswer>
         <OfferSchema code="REFERRAL120" />
 
-        <div className="mb-6">
-          <VerifiedStamp date={verifiedFor(MOSHY_OFFER.code) ?? ""} label={`${MOSHY_OFFER.amount} for new customers · verified`} />
-        </div>
-
         <section className="space-y-4 mb-10">
-          <h2 className="text-xl font-black">How Moshy works</h2>
+          <h2 className="text-2xl font-black">How Moshy works</h2>
           <p className="text-[#56504a] text-sm sm:text-base leading-relaxed">
-            Moshy is an Australian telehealth service, and its weight-management program is the part most people come
-            looking for. You complete a questionnaire online, a registered Australian practitioner reviews your answers,
-            and if they consider it appropriate you continue on a subscription, with anything prescribed delivered to
-            your door. No waiting room, no referral letter, no phone queue.
+            Moshy runs weight-loss, hair and skin services online, and its weight-management program is the part most
+            people come looking for. You answer a questionnaire on Moshy&apos;s site, then Moshy arranges a
+            consultation with a practitioner by phone or video. Weight-management medicines are prescription-only in
+            Australia.
           </p>
           <p className="text-[#56504a] text-sm sm:text-base leading-relaxed">
-            The starting point is a free eligibility check that takes about ten minutes and commits you to nothing.
-            That is the fastest way to see what Moshy would offer you. New customers get $120 off their first order
-              with code REFERRAL120, which our link applies for you.
+            If you go ahead, you pay one monthly program fee, which Moshy publishes on its weight-loss page. New
+            customers get $120 off their first order with REFERRAL120 through our link; if it is not already applied at
+            checkout, enter the code there.
           </p>
           <div className="pt-1">
-            <Cta label="Start your free eligibility check" loc="short-version" />
+            <Cta label="Continue to Moshy" loc="short-version" />
           </div>
         </section>
 
@@ -150,13 +145,15 @@ export default function MoshyReviewPage() {
         </p>
 
         <section className="space-y-5 mb-10">
-          <h2 className="text-xl font-black">What you get</h2>
+          <h2 className="text-2xl font-black">What you get</h2>
+          <p className="text-[#56504a] text-sm sm:text-base leading-relaxed">As listed on getmoshy.com.au, read {READ_ON}:</p>
           <ul className="space-y-3">
             {[
-              ["Done entirely from home", "The questionnaire, the review, the plan and the deliveries all happen online. Nothing needs to be booked in person."],
-              ["Reviewed by a registered practitioner", "A certified Australian practitioner assesses each submission individually. It is a clinical review, not an automatic checkout."],
-              ["Pricing shown before you commit", "If you are approved, the treatment options and the subscription pricing are laid out inside the platform first. You are never charged for something you have not seen."],
-              ["Delivered and managed on subscription", "Anything prescribed is sent to your door, with check-ins and questions handled through the platform rather than a generic support inbox."],
+              ["Done from home", "The questionnaire is online and the consultation is by phone or video, so nothing needs to be booked in person."],
+              ["Unlimited medical support", "Ongoing access to Moshy's practitioners, which Moshy lists as part of the program fee."],
+              ["A multidisciplinary care team", "Moshy names doctors, nurses, pharmacists, psychologists, dietitians and exercise physiologists."],
+              ["App, coaching and community", "In-app health tracking and health coaching, dietitian-approved meal plans and recipes, and a member community."],
+              ["Two guarantees", "A 30-day money back guarantee and a price match guarantee, each with conditions on Moshy's terms page."],
             ].map(([t, d]) => (
               <li key={t} className="flex gap-3">
                 <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: CYAN }} />
@@ -166,34 +163,14 @@ export default function MoshyReviewPage() {
               </li>
             ))}
           </ul>
-          <div className="pt-1">
-            <Cta label="See what Moshy offers you" loc="what-you-get" />
-          </div>
-        </section>
-
-        <section className="space-y-4 mb-10">
-          <h2 className="text-xl font-black">What happens when you apply</h2>
           <p className="text-[#56504a] text-sm sm:text-base leading-relaxed">
-            The eligibility check is a structured health questionnaire covering your history, your goals and your
-            current situation. Real practitioners review the submissions, and some applicants are declined or redirected
-            to other care, so approval is not guaranteed.
+            Weighing Moshy against Juniper? <Link href="/moshy-vs-juniper" style={{ color: CYAN }} className="font-semibold hover:opacity-80">Moshy vs Juniper</Link> puts
+            the two side by side.
           </p>
-          <p className="text-[#56504a] text-sm sm:text-base leading-relaxed">
-            If a practitioner approves you, the treatment options, the plan and the pricing are presented inside the
-            platform before anything is charged. The referral on this page applies automatically when you click through,
-            so there is no code to enter.
-          </p>
-          <div className="rounded-xl border px-6 py-5 mt-6" style={{ borderColor: `${CYAN}40`, background: `${CYAN}0A` }}>
-            <p className="text-[#14120f] text-sm sm:text-base leading-relaxed mb-4">
-              The eligibility check is free, takes a few minutes, and commits you to nothing. It is the quickest way to
-              find out where you stand.
-            </p>
-            <Cta label="Start the Moshy eligibility check" loc="mid-cta" />
-          </div>
         </section>
 
         <section className="mb-12">
-          <h2 className="text-xl font-black mb-5">Common questions</h2>
+          <h2 className="text-2xl font-black mb-5">Common questions</h2>
           <div className="space-y-3">
             {faqs.map((f) => (
               <details key={f.q} className="group rounded-xl border border-[#ded8cd] bg-[#f7f4ee] px-5 py-4">
@@ -208,13 +185,13 @@ export default function MoshyReviewPage() {
         </section>
 
         <div className="rounded-2xl border px-6 py-7 mb-10 text-center sm:px-8" style={{ borderColor: `${CYAN}30`, background: `${CYAN}08` }}>
-          <h2 className="text-lg sm:text-xl font-black text-[#14120f]">Ready to see where you stand?</h2>
+          <h2 className="text-lg sm:text-xl font-black text-[#14120f]">Start with Moshy</h2>
           <p className="mx-auto mt-2 max-w-md text-sm leading-relaxed text-[#56504a]">
-            The eligibility check is free and takes about ten minutes. You will see exactly what Moshy can offer you
-            before committing to anything.
+            $120 off a new customer&apos;s first order with REFERRAL120 through our link, on an eligible program with a
+            3-month minimum.
           </p>
           <div className="mt-5 flex justify-center">
-            <Cta label="Start your free eligibility check" loc="closing-cta" />
+            <Cta label="Continue to Moshy" loc="closing-cta" />
           </div>
         </div>
 
@@ -229,8 +206,9 @@ export default function MoshyReviewPage() {
         </div>
 
         <div className="border-t border-[#ded8cd] pt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm">
-          <Link href="/moshy" style={{ color: CYAN }} className="hover:opacity-80">About Moshy →</Link>
-          <Link href="/moshy-eligibility" style={{ color: CYAN }} className="hover:opacity-80">The eligibility check, explained →</Link>
+          <Link href="/moshy" style={{ color: CYAN }} className="hover:opacity-80">Moshy discount code →</Link>
+          <Link href="/moshy-vs-juniper" style={{ color: CYAN }} className="hover:opacity-80">Moshy vs Juniper →</Link>
+          <Link href="/moshy-eligibility" style={{ color: CYAN }} className="hover:opacity-80">What the questionnaire asks →</Link>
           <Link href="/moshy-alternatives" style={{ color: CYAN }} className="hover:opacity-80">Moshy alternatives →</Link>
         </div>
 
@@ -240,12 +218,12 @@ export default function MoshyReviewPage() {
 
         <AffiliateDisclosure className="mt-8" />
         <p className="text-[#56504a] text-xs mt-3 leading-relaxed">
-          Nothing on this page is medical advice. Prescription medicines in
-          Australia are available only after assessment by a registered practitioner.
+          Nothing on this page is medical advice. Offers and pricing can change; check current terms on
+          Moshy&apos;s own site.
         </p>
         <p className="text-[#56504a] text-xs mt-4">© 2026 Refer Labs · Australia · <Link href="/guides" className="hover:text-[#56504a]">All guides</Link></p>
       </main>
-      <StickyCta href={MOSHY_URL} product="Moshy" label="Check eligibility" />
+      <StickyCta href={MOSHY_URL} product="Moshy" label="Get started" />
     </ConsumerShell>
   );
 }

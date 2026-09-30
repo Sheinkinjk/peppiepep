@@ -38,8 +38,9 @@ export const nav: NavGroup[] = [
   {
     label: "Weight Loss", href: "/weight-loss",
     items: [
+      { label: "Weight loss navigator", href: "/weight-loss", blurb: "Every weight-loss route in one place, compared" },
       { label: "Moshy", href: "/moshy", blurb: "How the program works, plus $120 off your first order" },
-      { label: "Juniper", href: "/juniper", blurb: "Built for women, with a free first consultation" },
+      { label: "Juniper", href: "/juniper", blurb: "Built for women; JARREDKFC waives the initial consultation" },
       { label: "Compare all providers", href: "/best-weight-loss-telehealth-australia", blurb: "Pricing, eligibility and who each suits" },
       { label: "Which pathway fits you?", href: "/weight-loss-quiz", blurb: "A 60-second match, no sign-up" },
     ],
@@ -159,7 +160,7 @@ export const categories = {
   items: [
     {
       label: "Weight Loss & Telehealth", href: "/weight-loss",
-      body: "Moshy, coaching-led programs and the GP pathway, compared on price and inclusions.",
+      body: "Moshy, Juniper and the GP pathway, compared on what each includes.",
       links: [
         { label: "Moshy: the offer", href: "/moshy" },
         { label: "Moshy vs Juniper", href: "/moshy-vs-juniper" },
@@ -231,7 +232,7 @@ export const comparisons = {
   heading: "Popular comparisons",
   allLink: { label: "All guides", href: "/guides" },
   items: [
-    { kicker: "Hair loss", title: "Best hair loss treatment: Mosh vs Dense vs telehealth", href: "/best-hair-loss-treatment-australia" },
+    { kicker: "Hair loss", title: "Best hair loss treatment: Mosh or your GP", href: "/best-hair-loss-treatment-australia" },
     { kicker: "Solar & energy", title: "Solar and batteries: what to decide, in order", href: "/solar-and-energy" },
     { kicker: "Weight loss", title: "Telehealth or your GP? A practical comparison", href: "/moshy-vs-gp" },
     { kicker: "Creator tools", title: "beehiiv vs Substack vs Kit, compared properly", href: "/best-newsletter-platform" },

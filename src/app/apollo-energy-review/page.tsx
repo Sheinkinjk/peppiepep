@@ -3,6 +3,7 @@ import { SectionMark } from "@/components/brand/SectionMark";
 import { ArrowRight, Check } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
+import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, SCHEMA_AUTHOR, SCHEMA_PUBLISHER } from "@/lib/seo";
 import { APOLLO_ENERGY_LEAD_HREF } from "@/lib/affiliate-links";
 
@@ -16,11 +17,11 @@ const faqs = [
   },
   {
     q: "What do Apollo Energy Group reviews say?",
-    a: "Apollo's own site cites a 4.9 out of 5 Google rating and says it was voted SBC's number one battery installer. Those are the company's published figures rather than ours. Check the name before you read further: the Apollo pages on SolarQuotes and Solar Choice belong to Apollo Energy Solutions, a Newcastle installer with a different ABN, and most US review sites list Apollo Energy of Denver. As with any installer, read recent reviews yourself and weight the ones that describe the install and the after-sales service, not just the sales experience.",
+    a: "Apollo's own site cites a 4.9 out of 5 Google rating and says it was voted the number one NSW retrofit battery team. Those are the company's published figures rather than ours. Check the name before you read further: the Apollo pages on SolarQuotes and Solar Choice belong to Apollo Energy Solutions, a Newcastle installer with a different ABN, and most US review sites list Apollo Energy of Denver. As with any installer, read recent reviews yourself and weight the ones that describe the install and the after-sales service, not just the sales experience.",
   },
   {
     q: "Is there an Apollo Energy Group discount?",
-    a: "Yes. Refer Labs readers get an exclusive $500 off their battery quote, applied directly to the system. There is no code to type, the discount is attached to the link. It sits on top of the federal Cheaper Home Batteries rebate rather than replacing it. The form takes under 30 seconds and carries no obligation.",
+    a: "Yes. Refer Labs readers get an exclusive $500 off their battery quote, applied when you register your interest through our enquiry form. It sits on top of the federal Cheaper Home Batteries rebate rather than replacing it, and the form carries no obligation.",
   },
   {
     q: "How much does Apollo Energy Group cost?",
@@ -68,7 +69,7 @@ function Offer({ loc }: { loc: string }) {
       <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#003647]">The offer</p>
       <p className="mt-2 text-lg font-bold leading-snug text-[#14120f]">$500 off your Apollo battery quote</p>
       <p className="mt-2 text-sm leading-relaxed text-[#56504a]">
-        Applied directly to the system, on top of the government rebate (the federal Cheaper Home Batteries rebate), not instead of it. No code to enter. Under 30 seconds, no obligation.
+        Applied when you register through our enquiry form, on top of the federal Cheaper Home Batteries rebate, not instead of it. No obligation.
       </p>
       <div className="mt-4 flex flex-wrap items-center gap-3">
         <a
@@ -113,6 +114,7 @@ export default function ApolloEnergyReviewPage() {
           </p>
 
           <div className="mt-8">
+            <AffiliateDisclosure compact partners={["Apollo Energy Group"]} className="mb-3" />
             <Offer loc="review-hero" />
           </div>
 
@@ -161,7 +163,7 @@ export default function ApolloEnergyReviewPage() {
             <div className="mt-4 space-y-4 text-[15.5px] leading-relaxed text-[#56504a]">
               <p>
                 Apollo&apos;s site cites a 4.9 out of 5 Google rating, 12 years of installer experience, being voted
-                SBC&apos;s number one battery installer, an average bill reduction of over 70%, and a worked example of
+                the number one NSW retrofit battery team, an average bill reduction of over 70%, and a worked example of
                 roughly $1,349 in estimated annual savings on a 16kWh system.
               </p>
               <p>
@@ -249,10 +251,10 @@ export default function ApolloEnergyReviewPage() {
             <h2 className="text-2xl font-bold text-[#14120f]">The $500 discount</h2>
             <div className="mt-4 space-y-4 text-[15.5px] leading-relaxed text-[#56504a]">
               <p>
-                Apollo runs a dedicated landing page for Refer Labs readers with{" "}
-                <strong className="font-semibold text-[#14120f]">$500 off the battery quote</strong>, applied to the
-                system. It is a genuine exclusive rather than a public sale, which is why there is no code to hunt down.
-                It stacks on top of the federal rebate rather than replacing it.
+                Refer Labs readers get{" "}
+                <strong className="font-semibold text-[#14120f]">$500 off an Apollo battery quote</strong>, applied when
+                you register your interest through our enquiry form. It is not a public offer, and it stacks on top of the
+                federal rebate rather than replacing it.
               </p>
               <p>
                 If you want the full detail on the rebate, the sizing and the process, that is on the{" "}

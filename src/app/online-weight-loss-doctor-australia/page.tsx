@@ -142,7 +142,7 @@ export default function OnlineWeightLossDoctorAustraliaPage() {
               data-cta="doctor-hero"
               className="nw-btn shrink-0 whitespace-nowrap"
             >
-              Check your eligibility on Moshy ($120 off first order) <ArrowRight className="h-4 w-4" />
+              Continue to Moshy ($120 off first order) <ArrowRight className="h-4 w-4" />
             </a>
           </div>
           <EarningsBalanceNote earnFrom="Moshy" className="mt-3 max-w-2xl" />
@@ -239,7 +239,7 @@ export default function OnlineWeightLossDoctorAustraliaPage() {
                   specific medicine, as a red flag.
                 </p>
                 <p>
-                  On cost, most services separate the service or subscription fee from any medicine that is dispensed, and the exact
+                  On cost, some services list an all-inclusive program fee and others bill anything dispensed separately; the exact
                   figure is confirmed during your consult. Our guide to{" "}
                   <Link href="/weight-loss-telehealth-cost-australia" className="nw-link">weight-loss telehealth cost in Australia</Link>{" "}
                   breaks that down. Moshy is one Australian service that runs the assessment model described here and is open to anyone
@@ -266,7 +266,7 @@ export default function OnlineWeightLossDoctorAustraliaPage() {
                 data-cta="doctor-footer"
                 className="nw-btn mt-5"
               >
-                Check your eligibility on Moshy <ArrowRight className="h-4 w-4" />
+                Continue to Moshy <ArrowRight className="h-4 w-4" />
               </a>
             </section>
 
@@ -315,7 +315,7 @@ export default function OnlineWeightLossDoctorAustraliaPage() {
           </article>
         </div>
       </main>
-      <StickyCta href={MOSHY_URL} product="Moshy weight-loss telehealth" label="Check eligibility" />
+      <StickyCta href={MOSHY_URL} product="Moshy weight-loss telehealth" label="Get started" />
     </ConsumerShell>
   );
 }

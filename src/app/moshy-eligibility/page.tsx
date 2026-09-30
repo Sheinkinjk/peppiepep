@@ -33,7 +33,7 @@ const faqs = [
   },
   {
     q: "Who can complete the Moshy eligibility check?",
-    a: "Moshy's eligibility check is open to anyone considering the clinical pathway. It gathers your health history so an Australian-registered practitioner can assess suitability individually. If you would rather have coaching wrapped around medication, Juniper runs a comparable eligibility model with that focus.",
+    a: "Moshy's eligibility check is open to anyone considering the clinical pathway. It gathers your health history so an Australian-registered practitioner can assess suitability individually. Both Moshy and Juniper include app coaching and dietitian meal plans; Juniper also offers 1:1 coaching as an add-on.",
   },
 ];
 
@@ -194,7 +194,7 @@ export default function MoshyEligibilityPage() {
         </p>
         <p className="text-[#56504a] text-xs mt-4">© 2026 Refer Labs · Australia · <Link href="/guides" className="hover:text-[#56504a]">All guides</Link></p>
       </main>
-      <StickyCta href={MOSHY_URL} product="Moshy weight-loss telehealth" label="Check eligibility" />
+      <StickyCta href={MOSHY_URL} product="Moshy weight-loss telehealth" label="Get started" />
     </ConsumerShell>
   );
 }

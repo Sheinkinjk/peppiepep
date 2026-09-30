@@ -36,7 +36,11 @@ const APP = "src/app";
  */
 const DISCLOSURE =
   /commercial arrangement|affiliate links?\b|(?:we|Refer Labs) (?:may )?earn a commission|paid partnership|how we make money/i;
-const FIRST_LINK = /<a[^>]+(?:rel="[^"]*sponsored|href="\/go\/)/;
+// Lead-form CTAs count too (added 30 Sep 2026): Apollo leads are captured on site
+// through /apollo-energy-group#register, an internal link that is neither sponsored
+// nor /go/, so /apollo-energy-group and the battery pages disclosed only in the
+// footer and this guard never saw their first money link.
+const FIRST_LINK = /<a[^>]+(?:rel="[^"]*sponsored|href="\/go\/|href="(?:\/apollo-energy-group)?#register")/;
 
 if (!existsSync(BUILT)) {
   console.log("  No build output to check. Run after next build.");
@@ -52,7 +56,7 @@ function earningRoutes(dir = APP, acc = []) {
       // Widened 5 Sep 2026 from /go/ pages to EVERY page carrying an affiliate
       // link. The narrow version passed while 82 pages put the disclosure under
       // the button, because it only ever looked at the 18 newest.
-      if (/href:\s*"\/go\/|href="\/go\/|t\.cfjump\.com|rel="nofollow sponsored"|AffiliateDisclosure|PremiumAffiliateLanding/.test(src)) {
+      if (/href:\s*"\/go\/|href="\/go\/|t\.cfjump\.com|rel="nofollow sponsored"|AffiliateDisclosure|PremiumAffiliateLanding|APOLLO_ENERGY_LEAD_HREF|ApolloLanding|ApolloGuide|#register/.test(src)) {
         const r = "/" + dir.slice(APP.length + 1);
         if (!r.includes("[")) acc.push(r === "/" ? "/index" : r);
       }

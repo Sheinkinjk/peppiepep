@@ -1,5 +1,6 @@
 import type { AffiliatePageConfig } from "@/components/affiliate/types";
 import { CARRD_URL } from "@/lib/affiliate-links";
+import { CARRD } from "@/lib/partners/carrd";
 
 export { CARRD_URL };
 
@@ -8,12 +9,14 @@ export const carrdConfig: AffiliatePageConfig = {
   logo: "carrd",
   badgeText: "Website Builder",
   affiliateUrl: CARRD_URL,
-  // Read off carrd.co/pro on 21 August 2026: "Go Pro from just $19 / year".
-  // The previously published US$9 is no longer the advertised entry price.
-  offer: "Free plan forever; Pro from US$19/yr",
+  // Both Pro prices come from src/lib/partners/carrd.ts: Pro Lite is the entry
+  // tier, Pro Standard is the first with a custom domain.
+  // A price is not an offer: the callout states the free plan, and the dated
+  // Pro prices sit in the at-a-glance table below it.
+  offer: "Free plan forever, no card",
 
   quickAnswer:
-    "Carrd is a one-page website builder with a free plan forever and Pro plans from $9/year. It is best for portfolios, link-in-bio pages, simple landing pages, and personal sites. You can start free with no credit card via the link on this page.",
+    `Carrd is a one-page website builder with a free plan forever and Pro from ${CARRD.proLite} a year (${CARRD.proStandard} with a custom domain, read on carrd.co/pro, ${CARRD.readOnLabel}). It is best for portfolios, link-in-bio pages, simple landing pages, and personal sites. You can start free with no credit card via the link on this page.`,
 
   banner: {
     heading: "Carrd, Free Plan & Pro Pricing",
@@ -25,12 +28,12 @@ export const carrdConfig: AffiliatePageConfig = {
   atAGlance: [
     { k: "What it is", v: "One-page website builder" },
     { k: "Best for", v: "Portfolios, link-in-bio, simple sites" },
-    { k: "Price", v: "Free plan; Pro from US$19/yr" },
+    { k: "Price", v: `Free plan; ${CARRD.short} (${CARRD.readOnLabel})` },
     { k: "Start", v: "Free, no credit card" },
   ],
   trustStrip: [
     "Free plan forever",
-    "Pro from $9/year",
+    `Pro from ${CARRD.proLite}/year`,
     "Live in under an hour",
     "No credit card to start",
   ],
@@ -41,7 +44,7 @@ export const carrdConfig: AffiliatePageConfig = {
     h1Prefix: "Carrd:",
     h1Highlight: "The Simple Website Builder That Works",
     subheading:
-      "Carrd builds one-page sites: a portfolio, a link-in-bio, a simple landing page. The free plan is permanent and Pro starts at US$19 a year, so it is usually the cheapest way to get something live within the hour.",
+      `Carrd builds one-page sites: a portfolio, a link-in-bio, a simple landing page. The free plan is permanent and Pro starts at ${CARRD.proLite} a year, or ${CARRD.proStandard} with your own domain (${CARRD.readOnLabel}), so it is usually the cheapest way to get something live within the hour.`,
     trustBullets: [
       "Direct access to the Carrd sign-up page",
       "Covers Carrd pricing, free plan, and Pro tiers",
@@ -54,7 +57,7 @@ export const carrdConfig: AffiliatePageConfig = {
     {
       heading: "Access Carrd",
       paragraphs: [
-        "Carrd has no discount code, and it does not need one: the free plan is permanent and Pro is US$19 a year, which is less than most builders charge in a month. The buttons here open Carrd with nothing to fill in first.",
+        `Carrd has no discount code, and it does not need one: the free plan is permanent and Pro is ${CARRD.proLite} a year, or ${CARRD.proStandard} with a custom domain (${CARRD.readOnLabel}), which is less than most builders charge in a month. The buttons here open Carrd with nothing to fill in first.`,
         "Start on the free plan and upgrade later if you want a custom domain or forms. Nothing is lost by beginning there.",
       ],
       hasCta: true,
@@ -73,7 +76,7 @@ export const carrdConfig: AffiliatePageConfig = {
       paragraphs: [
         "Carrd is one of the most affordable website builders on the market. The free plan lets you build up to three sites on carrd.co subdomains, making it a genuine option for testing the platform before committing to a paid plan.",
         "Carrd Pro plans, Pro Lite, Pro Standard, and Pro Plus, are priced annually and are significantly cheaper than competitors. This pricing model is a major reason Carrd is frequently recommended in communities discussing budget-friendly website tools. If you are looking for a Carrd discount code or promo code, our referral link gives you direct access to the current Carrd offer.",
-        "Carrd does not typically offer time-limited free trials of Pro features, but the free plan is functional and gives you a clear sense of the builder before upgrading. The referral link on this page takes you to Carrd where you can explore all current pricing and plan options.",
+        `Carrd lets you try Pro features, custom domains and forms included, free for ${CARRD.proTrialDays} days, and the free plan is functional enough to judge the builder before upgrading. ${CARRD.sentence}`,
       ],
     },
     {
@@ -135,7 +138,7 @@ export const carrdConfig: AffiliatePageConfig = {
     },
     {
       q: "How much does Carrd Pro cost?",
-      a: "Carrd Pro is priced annually and is one of the most affordable paid website builders available. There are three Pro tiers, Pro Lite, Pro Standard, and Pro Plus, each unlocking additional features. Current pricing is shown on the Carrd website. Click through to check the latest plans and pricing.",
+      a: `${CARRD.sentence} All three are billed yearly, and Pro features can be tried free for ${CARRD.proTrialDays} days.`,
     },
     {
       q: "Is Carrd good for portfolios?",

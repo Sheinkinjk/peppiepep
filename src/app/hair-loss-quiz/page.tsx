@@ -10,19 +10,19 @@ export const metadata = generateSEOMetadata(seoConfig.hairLossQuiz);
 const faqs = [
   {
     q: "How do I choose a hair-loss treatment in Australia?",
-    a: "Start with the approach you want. A clinical, prescription-based route points to a men's telehealth service like Mosh, where a registered practitioner decides if treatment is appropriate. A non-prescription route points to a topical, cosmetic routine like Dense. If you are unsure of the cause or want to be seen in person, start with your GP. This match asks one or two questions and points you to the route that fits, and why.",
+    a: "Start with the approach you want. An online assessment points to a men's telehealth service such as Mosh, where a registered practitioner decides whether any treatment is appropriate. If you would rather not have a consultation, over-the-counter shampoos and serums are cosmetic and sold by pharmacies. If you are unsure of the cause or want to be seen in person, start with your GP.",
   },
   {
-    q: "Is telehealth or a topical product better for hair loss?",
-    a: "They do different jobs. Clinical telehealth can involve prescription treatment after a practitioner assessment; topical products are cosmetic and non-prescription, best as an ongoing routine. Which suits you depends on how far you want to go and whether a practitioner considers treatment appropriate. Neither is a guaranteed result.",
+    q: "Is telehealth or an over-the-counter product better for hair loss?",
+    a: "Telehealth is an assessment by a registered practitioner; an over-the-counter product is cosmetic and involves no assessment. Hair-loss medicines are prescription-only in Australia, so only an assessment, online or with a GP, can lead to one. Neither route guarantees a result.",
   },
   {
-    q: "Does the match decide if I am eligible for treatment?",
-    a: "No. Eligibility for any prescription treatment is decided only by a registered practitioner after they assess you individually. This tool matches your preferences to a route to explore, it is general information, not medical advice.",
+    q: "Does the match replace a practitioner's assessment?",
+    a: "No. It matches your preferences to a route to explore. Only a registered practitioner, after assessing you, can say what suits you. General information, not medical advice.",
   },
   {
     q: "Is the recommendation independent?",
-    a: "Yes. The result is based only on your answers, and we never sell rankings. Where we recommend a service the page carries a disclosed affiliate link, so we may earn a commission if you sign up through it, at no extra cost to you, and it never changes a conclusion. When a GP is the better first step we say so, even though it pays us nothing.",
+    a: "The result is based only on your answers. The online result links to Mosh, and Refer Labs earns a commission if you sign up through that link, at no extra cost to you. The GP and over-the-counter results earn us nothing.",
   },
 ];
 
@@ -79,9 +79,9 @@ export default function HairLossQuizPage() {
             </h1>
             <div className="mb-6 max-w-2xl space-y-3 text-sm leading-relaxed text-[#56504a] sm:text-base">
               <p>
-                A clinical telehealth route, a topical routine, or your GP, they suit different people. Answer one or two
-                quick questions and see the route that fits, and why. About 30 seconds. This is general
-                information, not medical advice, and it does not decide your eligibility.
+                An online consultation, over-the-counter products, or your GP: they suit different people. Answer one
+                or two quick questions and see the route that fits, and why. About 30 seconds. This is general
+                information, not medical advice, and it does not assess you.
               </p>
             </div>
           </section>
@@ -98,7 +98,7 @@ export default function HairLossQuizPage() {
                 <Link href="/hair-loss" className="text-[#007a95] underline underline-offset-2">hair-loss hub</Link>{" "}
                 and the{" "}
                 <Link href="/best-hair-loss-treatment-australia" className="text-[#007a95] underline underline-offset-2">full comparison</Link>{" "}
-                lay out clinical telehealth and topical products side by side.
+                lay out an online consultation, your GP and over-the-counter products side by side.
               </p>
             </div>
           </section>
@@ -121,9 +121,8 @@ export default function HairLossQuizPage() {
           <section className="border-t border-[#ded8cd] py-8 pb-16">
             <p className="max-w-2xl text-xs leading-relaxed text-[#56504a]">
               This page matches a route based on your answers and, where relevant, contains a disclosed affiliate link.
-              We may earn a commission if you sign up through it, at no extra cost to you, and it never changes a
-              conclusion. We never sell rankings. It is general health information, not medical advice, and does not
-              establish that any treatment is suitable for you.
+              We may earn a commission if you sign up through it, at no extra cost to you. It is general health
+              information, not medical advice, and does not establish that any treatment is suitable for you.
             </p>
           </section>
         </div>

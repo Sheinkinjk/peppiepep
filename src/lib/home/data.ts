@@ -157,12 +157,6 @@ export const popularComparisons = [
     updated: "2026-08-17",
   },
   {
-    href: "/mosh-vs-dense",
-    title: "Mosh and Dense for hair loss",
-    line: "Prescription telehealth against a topical range, and which stage each one suits.",
-    updated: "2026-08-17",
-  },
-  {
     href: "/knose-vs-petsonme",
     title: "Knose and PetsOnMe",
     line: "Two pet insurers, their cover levels, and the underwriter question behind both.",

@@ -60,7 +60,7 @@ const softwareSchema = {
     "@type": "Offer",
     price: "250",
     priceCurrency: "USD",
-    description: "From $250/month on the Solo plan; the popular Explore plan is $900/month billed quarterly, with unlimited seats and no long-term contract.",
+    description: "Solo US$250/month, month to month; Explore US$900/month and Scale US$2,500/month on quarterly contracts (aisdr.com/pricing, 30 September 2026).",
     availability: "https://schema.org/InStock",
   },
   url: "https://aisdr.com",

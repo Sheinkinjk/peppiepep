@@ -8,28 +8,44 @@ export const keapConfig: AffiliatePageConfig = {
   badgeText: "CRM & automation",
   eyebrow: "Sales & marketing automation",
   affiliateUrl: KEAP_URL,
+  // Re-read keap.com/pricing and keap.com, rendered, on 30 September 2026.
+  // Keap now shows "Starting at $299/mo (Billed monthly)" and "Required
+  // implementation services", and offers no free trial: every call to action
+  // is "Get a demo", and keap.com/free-trial redirects to the homepage. Our
+  // referral link lands on the same homepage. The old "14-day free trial" and
+  // "billed at US$2,988 a year" (read 5 Sep) were both removed.
   quickAnswer:
-    "Keap is an all-in-one CRM with sales and marketing automation built for small businesses: it combines contact management, a sales pipeline, email and SMS marketing, and automated follow-up in one platform. There is a 14-day free trial, and pricing scales with your number of contacts.",
-  offer: "14-day free trial",
+    "Keap is a CRM with sales and marketing automation for small businesses, sold as one platform starting at US$299 a month, billed monthly, plus required implementation services (keap.com/pricing, read 30 September 2026). Keap no longer shows a free trial; the way in is a free demo. It combines contacts, a sales pipeline, email and text marketing, landing pages, payments and automated follow-up.",
+  offer: "Free demo",
+  offerCheckedOn: "2026-09-30",
   atAGlance: [
     { k: "Type", v: "CRM + sales & marketing automation" },
     { k: "Best for", v: "Small businesses & solopreneurs" },
-    { k: "Pricing", v: "No free plan; US$299/mo, one platform price (5 Sep 2026)" },
-    { k: "Start", v: "14-day free trial" },
+    { k: "Pricing", v: "From US$299/mo billed monthly, plus implementation (read 30 Sep 2026)" },
+    { k: "Start", v: "Free demo; no free trial or free plan" },
   ],
   hero: {
     h1Prefix: "Keap:",
     h1Highlight: "CRM and follow-up automation in one place for small business",
     subheading:
-      "If leads slip through the cracks because follow-up is manual, Keap combines a CRM, pipeline, email and SMS, and automation so the chasing happens on its own. Here is what it does, who it suits, and how pricing works.",
-    trustBullets: ["CRM, pipeline and automation in one", "Email + SMS marketing built in", "14-day free trial"],
+      "Keap costs US$299 a month, billed monthly, for its whole platform, and Keap requires paid implementation services on top (keap.com/pricing, read 30 September 2026). It combines a CRM, pipeline, email and text marketing and automation so follow-up happens on its own.",
+    trustBullets: ["CRM, pipeline and automation in one", "Email + SMS marketing built in", "Free demo"],
   },
   banner: {
-    heading: "Start the Keap free trial",
-    body: "See the CRM, pipeline and automation together. 14 days, then pricing scales with your contacts.",
-    buttonLabel: "Try Keap free",
+    heading: "Book a Keap demo",
+    body: "See the CRM, pipeline and automation together on a demo before you commit.",
+    buttonLabel: "Book a Keap demo",
   },
   sections: [
+    {
+      heading: "How much does Keap cost?",
+      paragraphs: [
+        "Keap has dropped feature-based plans. Read on keap.com/pricing on 30 September 2026, the whole platform, covering CRM, automation, email and text, pipeline, landing pages, payments, appointments and reporting, starts at US$299 a month, billed monthly. The price is set by your number of users and contacts, which the page lets you adjust.",
+        "Keap also lists implementation services as required: strategy consulting, data import and migration, sold as packages on top of the subscription. Keap offers no free plan and no longer shows a free trial; it invites buyers to ask about current promotional offers on a demo or call. Keap lists no discount code on its own site, and Refer Labs has none to pass on.",
+      ],
+      hasCta: true,
+      ctaText: "Book a Keap demo",
+    },
     {
       heading: "What Keap does",
       paragraphs: [
@@ -41,12 +57,12 @@ export const keapConfig: AffiliatePageConfig = {
       heading: "Who it suits",
       paragraphs: [
         "Keap fits small businesses, coaches, agencies and solopreneurs who are losing revenue to inconsistent follow-up and want the CRM and the automation in one system rather than stitched together. It is heavier than a simple contact list, so it rewards businesses that will use the automation.",
-        "Pricing scales with your number of contacts, so it is worth being clear about your list size when you compare plans.",
+        "The subscription price moves with your users and contacts, and implementation is an extra cost, so get both figures on the demo before comparing Keap with a CRM you can set up yourself.",
       ],
     },
   ],
   steps: [
-    { num: "1", heading: "Start the trial", body: "Open Keap through the link and start the 14-day free trial." },
+    { num: "1", heading: "Book a demo", body: "Open Keap through the link and book a demo; ask for the price at your user and contact count." },
     { num: "2", heading: "Import your contacts", body: "Bring in your list and set up your pipeline stages." },
     { num: "3", heading: "Automate follow-up", body: "Build an email/SMS sequence so new leads are chased automatically." },
   ],
@@ -59,11 +75,7 @@ export const keapConfig: AffiliatePageConfig = {
   faqs: [
     {
       q: "Is there a Keap free trial or discount code?",
-      a: "Yes to the trial: Keap offers a 14-day free trial. It does not usually publish a public promo code, so signing up through our referral link is the reliable way to start the current offer, at no extra cost to you.",
-    },
-    {
-      q: "How much does Keap cost?",
-      a: "Keap has no free plan. As at 5 September 2026 it has dropped feature-based tiers for a single platform price of US$299 a month, billed at US$2,988 a year, read off keap.com. Pricing scales with your contact volume above the included allowance, so check the figure for your list size on Keap before committing.",
+      a: "Neither, as of 30 September 2026. Keap's site shows no free trial and no free plan, and every call to action is a demo. Neither Keap nor Refer Labs has a discount code to offer; its pricing page invites you to ask about current promotional offers.",
     },
     {
       q: "Who is Keap best for?",
@@ -84,10 +96,10 @@ export const keapConfig: AffiliatePageConfig = {
     primary: "See Keap",
     secondary: "Continue to Keap",
     midHeading: "Ready to stop losing leads to manual follow-up?",
-    midBody: "Open Keap through our referral link and start the 14-day free trial.",
-    midButton: "Try Keap free",
+    midBody: "Open Keap through our referral link and book a demo.",
+    midButton: "Book a Keap demo",
     bottomHeading: "See Keap run your follow-up",
-    bottomBody: "Set up a pipeline and an automated sequence during the trial.",
+    bottomBody: "Ask on the demo to see a pipeline and an automated sequence built for your business.",
     bottomButton: "Continue to Keap",
   },
   disclaimer:

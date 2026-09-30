@@ -1,3 +1,5 @@
+import { CARRD } from "@/lib/partners/carrd";
+
 // ─── Offers registry ─────────────────────────────────────────────────────────
 // Single source of truth for the "verified" freshness date, the featured deals that
 // feed the /deals hub, and the individual offer objects used on money pages.
@@ -129,32 +131,36 @@ export interface Deal {
 export const DEALS: Deal[] = [
   // readOff: the partner landing page our link resolves to, where the offer is
   // visible. Read live on 26 Aug 2026 per src/lib/facts/registry.ts.
-  { brand: "Moshy", logo: "/logos/moshy.png", href: "/moshy", offer: "$120 off your first order", code: "REFERRAL120", category: "Weight loss", featured: true, verified: "2026-09-23", exclusive: true, source: { readOff: "https://www.getmoshy.com.au/start/eligibility-check-moshy" } },
-  { brand: "Mosh", logo: "/logos/mosh-tile.png", href: "/moshhair", offer: "55% off your first order", code: "REFERAL55", category: "Hair loss", featured: true, verified: "2026-09-23", exclusive: true, source: { readOff: "https://www.getmosh.com.au/start/referlabs" } },
+  { brand: "Moshy", logo: "/logos/moshy.png", href: "/moshy", offer: "$120 off your first order", code: "REFERRAL120", category: "Weight loss", featured: true, verified: "2026-09-30", exclusive: true, source: { readOff: "https://www.getmoshy.com.au/start/eligibility-check-moshy" } },
+  { brand: "Mosh", logo: "/logos/mosh-tile.png", href: "/moshhair", offer: "55% off your first order", code: "REFERAL55", category: "Hair loss", featured: true, verified: "2026-09-30", exclusive: true, source: { readOff: "https://www.getmosh.com.au/start/referlabs" } },
   // Read on Apollo's page on 28 Aug 2026: the $500 is current and unchanged,
   // eligibility is the only stated condition, and the offer is not publicly
   // stated anywhere. It applies to applications made through our link.
   { brand: "Apollo Energy Group", logo: "/logos/apollo-energy.png", href: "/apollo-energy-group", offer: "$500 off your quote, on top of any rebate", category: "Home batteries", featured: true, verified: "2026-09-27", source: { noPublicPage: "Our own arrangement with Apollo, applying only to applications made through our link. Confirmed with Apollo's page on 28 August 2026: no public page states it." } },
   { brand: "Unbounce", logo: "/logos/unbounce.png", href: "/unbounce", offer: "20% off 3 months, or 35% off your first year", category: "Landing pages", featured: true, verified: "2026-09-27", source: { noPublicPage: "Partner-specific, stated on no public page. Recorded in the 25 Aug 2026 sweep note at the top of this file; re-confirm with the partner, not by searching." } },
-  { brand: "Leadpages", logo: "/logos/leadpages.png", href: "/leadpages", offer: "7-day free trial; 20% off annual billing", category: "Landing pages", featured: true, verified: "2026-08-25" },
   { brand: "Superfiliate", logo: "/logos/superfiliate.png", href: "/superfiliate", offer: "15% off your monthly SaaS fee", category: "Creator growth", featured: true, verified: "2026-09-27", source: { noPublicPage: "Partner-specific, stated on no public page. Recorded in the 25 Aug 2026 sweep note at the top of this file; re-confirm with the partner, not by searching." } },
 
   { brand: "i-screen", logo: "/logos/i-screen.svg", href: "/i-screen", offer: "$20 off your first test", code: "referlabs", category: "Health testing", featured: true, verified: "2026-09-23", exclusive: true, source: { noPublicPage: "Supplied by i-screen directly, 23 September 2026. Checked the same day that i-screen's own terms and FAQ name no coupon codes, so there is no page to re-read it off. Re-confirm with i-screen, not by searching." } },
   { brand: "Juniper", logo: "/logos/juniper.png", href: "/juniper", offer: "Initial consultation waived, valued at $89", code: "JARREDKFC", category: "Weight loss", featured: true, verified: "2026-09-23", exclusive: true, source: { noPublicPage: "Juniper's affiliate handbook, confirmed by Jarred 23 September 2026. Checked the same day that no public Juniper page states it: myjuniper.com rendered with the code in the query string shows only its own START50 banner, and the help-centre Discount Terms article names no code values. Re-confirm with Juniper, not by searching." } },
-  { brand: "Knose", logo: "/logos/knose.svg", href: "/knose", offer: "2 months free for new customers", code: "referlab2mf", category: "Pets", featured: true, verified: "2026-09-27", source: { noPublicPage: "Partner-specific, stated on no public page. Recorded in the 25 Aug 2026 sweep note at the top of this file; re-confirm with the partner, not by searching." } },
-  { brand: "PetsOnMe", logo: "/logos/petsonme.svg", href: "/petsonme", offer: "15% off pet care services, up from 12% (not the premium)", code: "REFERLABS", category: "Pets", featured: false, verified: "2026-09-27", source: { noPublicPage: "Partner-specific, stated on no public page. Recorded in the 25 Aug 2026 sweep note at the top of this file; re-confirm with the partner, not by searching." } },
+  { brand: "Knose", logo: "/logos/knose.svg", href: "/knose", offer: "2 months free for new customers", code: "referlab2mf", category: "Pets", featured: true, verified: "2026-09-30", source: { readOff: "https://knose.com.au/" } },
+  { brand: "PetsOnMe", logo: "/logos/petsonme.svg", href: "/petsonme", offer: "15% off pet care services, up from 12% (not the premium)", code: "REFERLABS", category: "Pets", featured: true, verified: "2026-09-27", source: { noPublicPage: "Partner-specific, stated on no public page. Recorded in the 25 Aug 2026 sweep note at the top of this file; re-confirm with the partner, not by searching." } },
 
-  { brand: "Carrd", logo: "/logos/carrd.png", href: "/carrd", offer: "Free plan forever; Pro from US$19/yr", category: "Website builders", verified: "2026-08-25" },
-  { brand: "beehiiv", logo: "/logos/beehiiv.png", href: "/best-newsletter-platform", offer: "Free plan, no revenue cut", category: "Newsletters", verified: "2026-08-25" },
-  { brand: "Brevo", logo: "/logos/brevo.png", href: "/brevo", offer: "Free plan forever, no card", category: "Email marketing", verified: "2026-08-25" },
-  // No `verified` on purpose, so this shows the global sweep stamp. Pipedrive's
-  // pricing page blocks automated fetching, so the 25 Aug 2026 sweep could not
-  // re-read it and stamping a date would have claimed a check that did not
-  // happen. Needs a manual visit to date.
-  { brand: "Pipedrive", logo: "/logos/pipedrive.png", href: "/pipedrive", offer: "14-day free trial, no card", category: "CRM" },
+  // Public trials and free plans below this line: none is specific to our link.
+  // Both Carrd prices come from src/lib/partners/carrd.ts.
+  { brand: "Carrd", logo: "/logos/carrd.png", href: "/carrd", offer: `Free plan forever; Pro from ${CARRD.proLite}/yr, ${CARRD.proStandard}/yr with a custom domain`, category: "Website builders", verified: CARRD.readOn, source: { readOff: CARRD.source } },
+  // The 0% revenue cut belongs to beehiiv's paid Scale plan; the free Launch plan
+  // has no paid subscriptions to take a cut of (beehiiv.com/pricing, 30 Sep 2026).
+  { brand: "beehiiv", logo: "/logos/beehiiv.png", href: "/best-newsletter-platform", offer: "Free plan up to 2,500 subscribers", category: "Newsletters", verified: "2026-09-30", source: { readOff: "https://www.beehiiv.com/pricing" } },
+  { brand: "Leadpages", logo: "/logos/leadpages.png", href: "/leadpages", offer: "7-day free trial; Leadpages' public 20% saving on annual billing", category: "Landing pages", featured: false, verified: "2026-09-30", source: { readOff: "https://www.leadpages.com/pricing" } },
+  { brand: "Brevo", logo: "/logos/brevo.png", href: "/brevo", offer: "Free plan forever, no card", category: "Email marketing", verified: "2026-09-30", source: { readOff: "https://www.brevo.com/pricing/" } },
+  // Pipedrive's pricing page blocks curl, so the 25 Aug 2026 sweep could not
+  // re-read it. Read in a rendered browser on 30 Sep 2026: "Free 14-day trial.
+  // No credit card required."
+  { brand: "Pipedrive", logo: "/logos/pipedrive.png", href: "/pipedrive", offer: "14-day free trial, no card", category: "CRM", verified: "2026-09-30", source: { readOff: "https://www.pipedrive.com/en/pricing" } },
   { brand: "GoHighLevel", logo: "/logos/gohighlevel.png", href: "/best-ai-sales-tools", offer: "14-day free trial, no card", category: "Sales & CRM", verified: "2026-08-25" },
-  { brand: "ElevenLabs", logo: "/logos/elevenlabs.png", href: "/elevenlabs", offer: "Free plan (10,000 credits/month)", category: "AI tools", verified: "2026-08-25" },
-  { brand: "AliDrop", logo: "/logos/alidrop.png", href: "/alidrop", offer: "US$1 for a 7-day trial", category: "E-commerce", verified: "2026-08-25" },
+  { brand: "ElevenLabs", logo: "/logos/elevenlabs.png", href: "/elevenlabs", offer: "Free plan (10,000 credits/month)", category: "AI tools", verified: "2026-09-30", source: { readOff: "https://elevenlabs.io/pricing" } },
+  // AliDrop's own public trial on every plan, not a discount (Jarred, D-1, 30 Sep 2026).
+  { brand: "AliDrop", logo: "/logos/alidrop.png", href: "/alidrop", offer: "AliDrop's public trial: US$1 for the first 7 days", category: "E-commerce", verified: "2026-09-30", source: { readOff: "https://www.alidrop.co/pricing" } },
 ];
 
 export const FEATURED_DEALS = DEALS.filter((d) => d.featured);

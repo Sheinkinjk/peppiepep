@@ -8,20 +8,23 @@ export const capsuleConfig: AffiliatePageConfig = {
   badgeText: "Simple CRM",
   eyebrow: "Sales CRM",
   affiliateUrl: CAPSULE_URL,
+  // Plans and prices read on capsulecrm.com/pricing, rendered in a browser,
+  // 30 September 2026.
   quickAnswer:
-    "Capsule is a simple, easy-to-use CRM for small businesses: it manages contacts, tracks a sales pipeline, stores your emails and notes against each contact, and adds light task management. There is a free plan for up to 250 contacts and two users, with paid plans that raise the limits.",
+    "Capsule CRM is free for up to 250 contacts and two users, and its paid Starter plan costs US$18 per user a month billed annually, with a 14-day free trial that needs no card (capsulecrm.com/pricing, read 30 September 2026). It is a simple sales CRM for small businesses: contacts, a visual pipeline, tasks, and emails stored against each contact.",
   offer: "Free plan (up to 250 contacts)",
+  offerCheckedOn: "2026-09-30",
   atAGlance: [
     { k: "Type", v: "Simple sales CRM" },
     { k: "Best for", v: "Small businesses wanting an easy CRM" },
-    { k: "Pricing", v: "Free up to 250 contacts; paid from US$18/user/mo" },
+    { k: "Pricing", v: "Free up to 250 contacts; Starter US$18/user/mo billed annually (read 30 Sep 2026)" },
     { k: "Start", v: "Free plan, no card" },
   ],
   hero: {
     h1Prefix: "Capsule:",
     h1Highlight: "a simple CRM small teams keep using",
     subheading:
-      "Most CRMs are abandoned because they are too heavy. Capsule keeps it to the essentials: contacts, a clear pipeline, tasks and email tracking. Here is what it does, who it suits, and how the free plan works.",
+      "Capsule CRM is free for up to 250 contacts and two users, and paid plans start at US$18 per user a month billed annually (capsulecrm.com/pricing, read 30 September 2026). It keeps to the essentials a small team will actually maintain: contacts, a clear pipeline, tasks and email tracking.",
     trustBullets: ["Free plan up to 250 contacts", "Contacts, pipeline and tasks", "Integrates with your email"],
   },
   banner: {
@@ -30,6 +33,15 @@ export const capsuleConfig: AffiliatePageConfig = {
     buttonLabel: "Try Capsule free",
   },
   sections: [
+    {
+      heading: "How much does Capsule CRM cost?",
+      paragraphs: [
+        "Read on capsulecrm.com/pricing on 30 September 2026, billed annually: Free is US$0 for up to two users and 250 contacts with one sales pipeline. Starter is US$18 per user a month (30,000 contacts, email templates, a shared mailbox, Xero and Zendesk integrations). Growth is US$36 per user a month and adds workflow automations, multiple pipelines, email sync and AI summaries. Advanced is US$54 per user a month.",
+        "Capsule says annual billing saves up to 14% against monthly. Each paid plan comes with a 14-day free trial and no card required. There is no Capsule discount code to find: Capsule does not publish one and Refer Labs does not have one.",
+      ],
+      hasCta: true,
+      ctaText: "Try Capsule free",
+    },
     {
       heading: "What Capsule does",
       paragraphs: [
@@ -59,15 +71,11 @@ export const capsuleConfig: AffiliatePageConfig = {
   faqs: [
     {
       q: "Is there a Capsule CRM discount code?",
-      a: "Capsule doesn't use a typed discount code. It offers a free plan for up to 250 contacts, which you can start through the link on this page, with paid tiers as you grow. Offers can change over time.",
+      a: "No. Capsule lists no discount code on its own site, and Refer Labs has none to pass on. Its published offers are the free plan (250 contacts, two users), a 14-day no-card trial of each paid plan, and up to 14% off for annual billing.",
     },
     {
       q: "Does Capsule have a free plan?",
       a: "Yes. Capsule has a free plan that supports up to 250 contacts and two users, with the core CRM features. Paid plans raise the contact limits and add features; sign up through our link to start, at no extra cost to you.",
-    },
-    {
-      q: "How much does Capsule cost?",
-      a: "Capsule is free up to 250 contacts and two users, then paid plans start from US$18 per user per month, scaling with contacts and features. Check current pricing on Capsule before committing.",
     },
     {
       q: "Who is Capsule best for?",
@@ -95,5 +103,5 @@ export const capsuleConfig: AffiliatePageConfig = {
     bottomButton: "Continue to Capsule",
   },
   disclaimer:
-    "This page contains a disclosed affiliate link. If you sign up through it we may earn a commission at no extra cost to you, and it never changes our assessment. Pricing and offers change, verify current terms on Capsule before committing.",
+    "This page contains a disclosed affiliate link. If you sign up through it we may earn a commission at no extra cost to you, and it never changes our assessment. Prices were read in US dollars on Capsule's own page on 30 September 2026 and can change; view the latest pricing on Capsule's site.",
 };

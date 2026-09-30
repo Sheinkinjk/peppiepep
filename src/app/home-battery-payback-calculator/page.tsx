@@ -136,8 +136,8 @@ export default function HomeBatteryPaybackCalculatorPage() {
               <h2 className="text-lg font-bold text-[#14120f]">Turn the estimate into a real number</h2>
               <p className="mt-2 text-[15px] leading-relaxed text-[#56504a]">
                 Apollo Energy Group sizes a battery from your actual usage and applies the federal rebate at the quote,
-                so you get a real payback figure for your home. You get $500 off your quote through our link, no code
-                needed, and it commits you to nothing.
+                so you get a real payback figure for your home. You get $500 off your quote when you enquire through
+                our form, with no obligation. Refer Labs may earn a commission if you request a quote, at no extra cost to you.
               </p>
               <a
                 href={APOLLO_ENERGY_LEAD_HREF}

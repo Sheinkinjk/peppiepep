@@ -9,12 +9,15 @@ export const butternutConfig: AffiliatePageConfig = {
   badgeText: "AI Website Builder",
   affiliateUrl: BUTTERNUT_URL,
 
+  // Plan terms read on butternut.ai/pricing (monthly and yearly toggles both
+  // opened) and the homepage, 30 September 2026. No plan price is printed here,
+  // per the 27 Sep 2026 decision not to add partner prices.
   quickAnswer:
-    "Butternut AI generates a full, multi-page website from a single text prompt in about 20 seconds, and is free to try with no account. It is best for small businesses wanting a complete site draft instantly. Access it via the link on this page.",
+    "Butternut AI is an AI website builder that writes a multi-page business site, with copy, images and layout, from a short description of your business. It is free to try with no credit card, you pay only when you publish, and every paid plan includes hosting, SSL and a custom domain free for the first year (butternut.ai, read 30 September 2026).",
 
   banner: {
     heading: "Butternut AI, Free Trial & AI Website Generation",
-    body: "Click below to go directly to Butternut AI via our referral link. Generate a site in 20 seconds, no account required.",
+    body: "Click below to go directly to Butternut AI via our referral link. Generate a site in seconds, no credit card required.",
     buttonLabel: "Continue to Butternut AI",
   },
 
@@ -23,13 +26,13 @@ export const butternutConfig: AffiliatePageConfig = {
     { k: "What it is", v: "AI website generator" },
     { k: "Best for", v: "Instant full-site first drafts" },
     { k: "Speed", v: "Full multi-page site in ~20 seconds" },
-    { k: "Start", v: "Free to try, no account" },
+    { k: "Start", v: "Free to try, no credit card" },
   ],
   trustStrip: [
     "Full site in ~20 seconds",
     "Generated from one prompt",
-    "Free to try, no account",
-    "Strong first-draft engine",
+    "Free to try, no credit card",
+    "Hosting and first-year domain included",
   ],
   verdict:
     "Butternut AI is the fastest way to a complete multi-page first draft from a single prompt. Treat it as a strong starting point you then edit, rather than a finished, ready-to-ship site.",
@@ -38,7 +41,7 @@ export const butternutConfig: AffiliatePageConfig = {
     h1Prefix: "Butternut AI:",
     h1Highlight: "Build a Website in 20 Seconds With AI",
     subheading:
-      "Butternut AI writes a full multi-page website from a single text prompt in about twenty seconds, free to try without an account. It suits a small business that would rather react to a complete draft than start from a blank page.",
+      "Butternut AI is an AI website builder that writes a full multi-page business site from a short description, and it is free to try with no credit card; you pay only when you publish (butternut.ai, read 30 September 2026). It suits a small business that would rather react to a complete draft than start from a blank page.",
     trustBullets: [
       "Direct access to Butternut AI via our referral link",
       "Covers Butternut AI pricing, free plan, and paid tiers",
@@ -49,10 +52,10 @@ export const butternutConfig: AffiliatePageConfig = {
 
   sections: [
     {
-      heading: "Access Butternut AI",
+      heading: "Is there a Butternut AI discount code?",
       paragraphs: [
-        "This page is for people searching for a Butternut AI discount code, Butternut AI review, Butternut AI promo code, or how Butternut compares to other AI website builders before signing up. Click any button on this page to go directly to Butternut AI via our referral link.",
-        "No information is needed here before you arrive. You can generate a website immediately without creating an account, the AI generation feature is accessible from the Butternut homepage.",
+        "No. Butternut AI runs no public discount code, and there is no Refer Labs code either. The savings Butternut does publish, read on butternut.ai on 30 September 2026, are a free trial with no credit card, 25% off for paying yearly instead of monthly, and a custom domain free for the first year on both paid plans.",
+        "There are two paid plans for business sites, Starter and Pro. Starter covers one custom domain, unlimited pages, hosting, SSL, automated SEO and payments; Pro adds a second domain, an AI chatbot trained on your content and WhatsApp lead capture. Current prices are on Butternut's own pricing page.",
       ],
       hasCta: true,
       ctaText: "Try Butternut AI Free",
@@ -66,11 +69,9 @@ export const butternutConfig: AffiliatePageConfig = {
       ],
     },
     {
-      heading: "Butternut AI Pricing and Free Trial",
+      heading: "What the free trial covers",
       paragraphs: [
-        "Butternut AI offers a free plan that lets you generate and preview a website without creating an account. The generation itself costs nothing, you enter your business description, and Butternut produces a full website immediately. Publishing with a custom domain requires a paid subscription.",
-        "Paid Butternut AI plans are billed monthly or annually, with annual billing offering a lower effective monthly rate. Plans unlock custom domain connection, unlimited regenerations, additional pages, premium AI features, and ongoing site management tools. If you are looking for a Butternut AI discount code, promo code, or the best current Butternut offer, our referral link gives you direct access to the Butternut sign-up page and any available deal.",
-        "Butternut AI's pricing model is aimed at individuals and small businesses who want a capable website solution without the $20-$40 per month cost of a traditional builder like Squarespace. Click through to check current plan pricing directly on the Butternut website.",
+        "Butternut lets you generate and edit a site before paying, and its homepage says no credit card is required. Publishing on your own domain needs a paid plan. Because both paid plans include a custom domain free for the first year, the domain registration is not a separate first-year cost.",
       ],
     },
     {
@@ -125,11 +126,7 @@ export const butternutConfig: AffiliatePageConfig = {
   faqs: [
     {
       q: "Is there a Butternut AI free trial?",
-      a: "Yes. You can generate a complete website using Butternut AI without creating an account. Enter your business description and Butternut produces a full site in approximately 20 seconds at no cost. A paid subscription is required to publish with a custom domain and access the full platform. Click any button on this page to try the generation for free.",
-    },
-    {
-      q: "Is there a Butternut AI discount code or promo code?",
-      a: "Butternut AI does not always publish a publicly available promo code. Our referral link gives you direct access to the Butternut sign-up page and any current offer. Click any button on this page to continue to Butternut AI.",
+      a: "Yes. Butternut AI is free to try with no credit card: describe your business and it generates a full site you can edit. Publishing needs a paid plan, Starter or Pro.",
     },
     {
       q: "How does Butternut AI generate a website?",
@@ -173,7 +170,7 @@ export const butternutConfig: AffiliatePageConfig = {
     {
       href: "/carrd",
       label: "Carrd, Free Website Builder",
-      desc: "Free plan forever, Pro from $19/year. Best for portfolios, link-in-bio, and simple sites.",
+      desc: "Free plan forever; Pro Lite US$9/yr, and a custom domain needs Pro Standard, US$19/yr (carrd.co/pro, 30 Sep 2026).",
     },
     {
       href: "/guides",
@@ -187,7 +184,7 @@ export const butternutConfig: AffiliatePageConfig = {
     secondary: "Continue to Butternut",
     midHeading: "Ready to Build Your Website With AI?",
     midBody:
-      "Click below to go directly to Butternut AI via our referral link. Generate a complete website in 20 seconds, no account required to try it.",
+      "Click below to go directly to Butternut AI via our referral link. Generate a complete website in seconds, no credit card required to try it.",
     midButton: "Generate My Website",
     bottomHeading: "Build a Professional Website in 20 Seconds",
     bottomBody:
@@ -196,5 +193,5 @@ export const butternutConfig: AffiliatePageConfig = {
   },
 
   disclaimer:
-    "You will be taken to butternut.ai. This page is operated by Refer Labs and contains a personalised affiliate referral link.",
+    "You will be taken to butternut.ai. This page is operated by Refer Labs and contains a personalised affiliate referral link. Plan terms were read on Butternut's own site on 30 September 2026 and can change; view the latest pricing on Butternut's site.",
 };

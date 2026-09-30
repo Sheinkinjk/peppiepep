@@ -86,7 +86,7 @@ export const iScreenConfig: AffiliatePageConfig = {
       heading: "Is a private blood test worth paying for?",
       paragraphs: [
         `Often it is not, and the reason is on i-screen's own terms page: none of its services are Medicare-rebatable or eligible for government subsidy. If a doctor believes a test is clinically indicated, that test is frequently bulk billed, and you would be paying between ${money(low.price)} and ${money(high.price)} for something available at no cost through the usual route. The cheapest first step is asking a GP whether the test you want is indicated.`,
-        "What ordering directly buys is access and speed, not a better test. You choose the panel yourself, you need no referral, and results are typically back within 48 hours. That matters if your GP has declined to order something you want to see, if you are tracking a marker over time, or if waiting for an appointment is the obstacle. It does not make the result more meaningful than the same assay ordered by a doctor.",
+        "What ordering directly buys is access and speed, not a better test. You choose the panel yourself, you need no referral, and results are typically back within 48 hours. That matters if waiting for an appointment is the obstacle. It does not make the result more meaningful than the same assay ordered by a doctor.",
         "The case against is the one that applies to all screening outside a clinical indication. A number slightly outside a reference range, in a person with no symptoms, frequently leads to more tests, more cost and more worry without changing anything.",
       ],
     },
@@ -100,11 +100,10 @@ export const iScreenConfig: AffiliatePageConfig = {
       ctaText: "Browse i-screen's tests",
     },
     {
-      heading: "The tests and what they cost",
+      heading: "What i-screen tests cost",
       paragraphs: [
-        `A slice of the catalogue rather than all of it, chosen to show the range. i-screen lists ${ACCESS.catalogueSize} tests in total. Read on ${readOnLabel}.`,
-        TESTS.map((t) => `${t.name}, ${money(t.price)}, ${t.markers} marker${t.markers === 1 ? "" : "s"}`).join("; ") + ".",
-        `So the test you choose decides the cost far more than the provider does: there is about ${spread()} between the cheapest and the dearest on that list.`,
+        // Range only (Jarred, 30 Sep 2026): the full per-test list was replaced by the published range.
+        `i-screen lists ${ACCESS.catalogueSize} tests, priced from ${money(low.price)} for a single marker to ${money(high.price)} for its largest panel, read off its own catalogue on ${readOnLabel}. The test you choose decides the cost far more than the provider does, so check the price of the specific test on i-screen's site.`,
       ],
     },
     {

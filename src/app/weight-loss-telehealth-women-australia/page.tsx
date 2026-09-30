@@ -1,13 +1,13 @@
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, comparisonArticleSchema } from "@/lib/seo";
 import { SectionMark } from "@/components/brand/SectionMark";
-import EarningsBalanceNote from "@/components/consumer/EarningsBalanceNote";
-import { MOSHY_URL } from "@/lib/affiliate-links";
-import { ArrowRight, Check } from "lucide-react";
+import { MOSHY_URL, JUNIPER_URL } from "@/lib/affiliate-links";
+import { requiredDisclosureFor } from "@/lib/partner-disclosures";
+import { Check } from "lucide-react";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
-import StickyCta from "@/components/consumer/StickyCta";
-import CodeAnswer from "@/components/offers/CodeAnswer";
 import OfferSchema from "@/components/offers/OfferSchema";
+import ProviderPair, { type PairProvider } from "@/components/consumer/ProviderPair";
+import WeightInclusionsTable from "@/components/consumer/WeightInclusionsTable";
 
 import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 import { pageDates } from "@/lib/page-dates";
@@ -15,37 +15,73 @@ export const metadata = generateSEOMetadata(seoConfig.weightLossTelehealthWomen)
 
 const CYAN = "#007a95";
 const CYAN_LT = "#007a95";
-const aff = { href: MOSHY_URL, target: "_blank" as const, rel: "nofollow sponsored" as const };
+const JUNIPER_REQUIRED = requiredDisclosureFor(JUNIPER_URL);
+
+// Rewritten 30 Sep 2026. The page was built on a "coaching-led (Juniper) vs lean
+// clinical (Moshy)" split, which Moshy's own page contradicts: it lists in-app
+// coaching, dietitian meal plans and a community. Facts now come from
+// src/lib/compare/weight-inclusions.ts. Alphabetical, same card for each.
+const providers: PairProvider[] = [
+  {
+    name: "Juniper",
+    logo: "/logos/juniper.png",
+    logoAspect: 16 / 9,
+    bestIf: "A weight program designed for women, with 1:1 coaching as an add-on.",
+    points: [
+      "Online assessment, then an initial consultation",
+      "Dietitian chat in the app, meal plans and a private community",
+      "Full refund if the practitioner decides it isn't right for you",
+    ],
+    offer: { text: "Initial consultation waived, valued at $89,", code: "JARREDKFC" },
+    href: JUNIPER_URL,
+    cta: "Continue to Juniper",
+    loc: "women-telehealth-juniper",
+  },
+  {
+    name: "Moshy",
+    logo: "/logos/moshy.png",
+    bestIf: "An all-inclusive weight program from an online women's health clinic.",
+    points: [
+      "Online questionnaire, then a consult by phone or video",
+      "In-app coaching, dietitian meal plans and a community",
+      "Also covers hair loss and skin care",
+    ],
+    offer: { text: "$120 off your first order", code: "REFERRAL120" },
+    href: MOSHY_URL,
+    cta: "Continue to Moshy",
+    loc: "women-telehealth-moshy",
+  },
+];
 
 const faqs = [
   {
     q: "Which weight loss telehealth services are aimed at women?",
-    a: "In Australia, Juniper markets primarily to women and wraps health coaching around clinical care. Moshy runs a clinically-led pathway that is open to anyone eligible and is not gendered. Both start with an online questionnaire that a registered Australian practitioner reviews before any treatment is discussed. The right fit depends on whether you want coaching built in or a leaner clinical pathway.",
+    a: "Both are built for women: Juniper is designed for women, and Moshy describes itself as an online women's health clinic, and its services are open to anyone a practitioner assesses as suitable. Both start with an online assessment that a registered Australian practitioner reviews, and both include app coaching, dietitian meal plans and a community (each provider's own page, read 30 September 2026). Juniper adds optional 1:1 coaching as a paid add-on.",
   },
   {
     q: "Do I need a referral or an in-person appointment to start?",
-    a: "Not to start. Women's weight loss telehealth begins with an online eligibility questionnaire that a registered Australian practitioner then reviews. If your situation needs an in-person assessment, a credible service will tell you rather than proceed. Prescription medicines still require individual clinical assessment.",
+    a: "Not to start. Both services begin with an online assessment that a registered Australian practitioner reviews. If your situation needs an in-person assessment, a credible service will tell you rather than proceed. Weight-management medicines are prescription-only in Australia and need individual clinical assessment.",
   },
   {
     q: "Is it safe to do weight loss treatment online in Australia?",
-    a: "Any pathway that could involve prescription medicine requires assessment by a registered practitioner, and telehealth providers operate under Australian health service regulations. That is why legitimate services screen applicants and decline some. Safety comes from the practitioner review, which the online format keeps in place rather than removing.",
+    a: "Telehealth providers operate under Australian health service regulations, and any treatment is decided by a registered practitioner after an individual assessment. That is why legitimate services screen applicants and decline some. The online format keeps the practitioner review in place.",
   },
   {
     q: "What does a women's program usually include?",
-    a: "The common shape is an eligibility questionnaire, practitioner review, a plan if approved, ongoing check-ins, and delivery of anything prescribed. Coaching-led services add habit and nutrition support around that. Inclusions and pricing vary by provider and are shown before you commit.",
+    a: "Both services we cover include an online assessment, practitioner review, ongoing follow-ups, app coaching, dietitian meal plans, a community and a 30-day money-back guarantee. Inclusions and pricing are shown on each provider's own site before you commit.",
   },
   {
     q: "How much does Juniper cost, and is there a discount?",
-    a: "Juniper runs as a monthly subscription that its own site says covers treatment, unlimited consultations and delivery, with optional 1:1 coaching as a paid add-on and a 30-day money-back guarantee. There is no single fixed price, since any treatment is arranged only after an individual assessment, and you can view Juniper's latest offers through our link. The cost that applies to you is confirmed inside Juniper's own flow before you commit.",
+    a: "Juniper publishes its program pricing on its own site. The fee varies with the plan and level of support, 1:1 coaching is a paid add-on, and there is a 30-day money-back guarantee. Through Refer Labs, the code JARREDKFC waives the initial consultation, which Juniper values at $89; it does not take money off the program.",
   },
 ];
 
 const articleSchema = comparisonArticleSchema({
   headline: "Weight loss telehealth for women in Australia: Refer Labs' comparison",
-  description: "Refer Labs compares coaching-led and clinical weight-loss telehealth pathways for women in Australia, and where Juniper and Moshy fit.",
+  description: "Refer Labs compares what Juniper and Moshy each include for women in Australia, read off each provider's own page.",
   url: "https://referlabs.com.au/weight-loss-telehealth-women-australia",
   datePublished: "2026-07-24",
-  dateModified: "2026-08-06",
+  dateModified: "2026-09-30",
 });
 
 const breadcrumbSchema = {
@@ -97,39 +133,41 @@ export default function WeightLossTelehealthWomenPage() {
           Weight loss telehealth for women in Australia: <span>the options, and how to choose</span>
         </h1>
         <p className="text-[#56504a] text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
-          Most of the weight-loss telehealth marketing aimed at women leads with coaching and community. That suits some
-          people and not others. This page explains how the women&apos;s services work, the difference between a
-          coaching-led program and a leaner clinical pathway, and the checklist worth running before you commit to any of
-          them.
+          Juniper and Moshy are two Australian weight-management telehealth services built for women: Juniper is
+          designed for women, and Moshy describes itself as an online women&apos;s health clinic. Both start with an online assessment reviewed by a registered
+          practitioner, and both include app coaching, dietitian meal plans, a community and a 30-day money-back
+          guarantee. The differences are Juniper&apos;s 1:1 coaching add-on, and Moshy&apos;s all-inclusive fee and
+          its hair and skin services.
         </p>
-        {/* Below the lead. The first paragraph after the h1 is the answer;
-            a disclosure in that slot is what an engine lifts instead. Still
-            above the first affiliate link, which is what it is for. */}
-        <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
-        <CodeAnswer code="REFERRAL120" className="mt-6">
-          The one code on this page is REFERRAL120, the Moshy code Refer Labs holds: $120 off a new customer&apos;s first order, once per customer, applied automatically through the link.
-        </CodeAnswer>
+        <div className="max-w-2xl space-y-2">
+          <AffiliateDisclosure compact partners={["Juniper", "Moshy"]} />
+          {JUNIPER_REQUIRED ? (
+            <p className="rounded-xl border border-[#ded8cd] bg-[#f7f4ee] px-4 py-3 text-[13px] leading-relaxed text-[#56504a]">
+              {JUNIPER_REQUIRED.text}
+            </p>
+          ) : null}
+        </div>
+        <OfferSchema code="JARREDKFC" />
         <OfferSchema code="REFERRAL120" />
 
+        <ProviderPair providers={providers} className="mt-8 mb-10" />
 
         <p className="mb-10 rounded-lg border border-[#ded8cd] bg-[#f7f4ee] px-4 py-3 text-xs leading-relaxed text-[#56504a]">
           <span className="font-semibold text-[#14120f]">Information only.</span> This page describes a category of
-          services. It is not medical advice and does not recommend any treatment. Prescription medicines in Australia
-          require individual assessment by a registered practitioner.
+          services. It is not medical advice and does not recommend any treatment. Weight-management medicines are
+          prescription-only in Australia, and any treatment is decided by a registered practitioner.
         </p>
 
-        <section className="space-y-4 mb-10">
-          <h2 className="text-xl font-black">Coaching-led vs clinical pathways</h2>
-          <p className="text-[#56504a] text-sm sm:text-base leading-relaxed">
-            The services marketed to women tend to split into two shapes. Coaching-led programs, like Juniper, wrap habit,
-            nutrition and community support around any medication, which suits people who want structure and
-            accountability alongside the clinical side. Leaner clinical pathways, like Moshy, focus on the practitioner
-            assessment and treatment without the coaching layer, which suits people who want a straightforward route and
-            a lower ongoing cost.
-          </p>
-          <p className="text-[#56504a] text-sm sm:text-base leading-relaxed">
-            Neither is better in the abstract. The question is what you want to pay for: the coaching wrap, or
-            just the clinical pathway. Both keep a registered practitioner between your questionnaire and any treatment.
+        <section className="mb-10">
+          <h2 className="text-xl font-black mb-2">What does each include?</h2>
+          <WeightInclusionsTable className="mt-4" />
+          <p className="mt-4 text-[#56504a] text-sm sm:text-base leading-relaxed">
+            The two include much the same support, so the choice is about fit. Juniper suits someone who wants the option of
+            1:1 coaching. Moshy suits someone who wants an all-inclusive fee or may
+            later use Mosh&apos;s hair or skin services. We compare the two question by question in our{" "}
+            <Link href="/moshy-vs-juniper" className="underline decoration-[#ded8cd] underline-offset-2 hover:text-[#14120f]" style={{ color: CYAN }}>
+              Moshy vs Juniper guide
+            </Link>.
           </p>
         </section>
 
@@ -139,7 +177,8 @@ export default function WeightLossTelehealthWomenPage() {
             {[
               "Registered Australian practitioners doing the reviews, not offshore contractors",
               "A real screening step that declines unsuitable applicants",
-              "Pricing shown in full before you commit, including what coaching adds",
+              "Pricing shown in full before you commit, including add-ons such as 1:1 coaching",
+              "Any minimum commitment, and how to pause or cancel",
               "An Australian entity operating under Australian health regulations",
               "A clear path to human support once you are a subscriber",
             ].map((item) => (
@@ -149,70 +188,6 @@ export default function WeightLossTelehealthWomenPage() {
               </li>
             ))}
           </ul>
-        </section>
-
-        <section className="space-y-4 mb-10">
-          <h2 className="text-xl font-black">Where Juniper fits</h2>
-          <p className="text-[#56504a] text-sm sm:text-base leading-relaxed">
-            Juniper is the service built specifically for women, and its Weight Reset Program is the coaching-led option:
-            unlimited practitioner follow-ups, health tracking through an app, a patient community, and optional 1:1
-            coaching wrapped around any treatment. It suits people who want structure and accountability alongside the
-            clinical care rather than a bare prescription. Suitability is assessed individually by an Australian-registered
-            practitioner, and some applicants are declined.
-          </p>
-          <p className="text-[#56504a] text-sm sm:text-base leading-relaxed">
-            You can view Juniper&apos;s latest offers through our link, and any treatment is arranged only after an
-            individual assessment, so the cost is confirmed inside Juniper&apos;s own flow before you commit. Our{" "}
-            <Link href="/juniper" className="underline decoration-[#ded8cd] underline-offset-2 hover:text-[#14120f]" style={{ color: CYAN }}>
-              full Juniper review
-            </Link>{" "}
-            breaks down exactly what is included.
-          </p>
-          <div className="rounded-xl border px-6 py-5 mt-6" style={{ borderColor: `${CYAN}40`, background: `${CYAN}0A` }}>
-            <p className="text-[#14120f] text-sm sm:text-base leading-relaxed mb-4">
-              Juniper&apos;s online eligibility check takes a few minutes and commits you to nothing. An
-              Australian-registered practitioner reviews your answers before anything is prescribed.
-            </p>
-            <Link
-              href="/juniper"
-              data-cta="women-telehealth-juniper"
-              className="inline-flex items-center gap-2 rounded-xl px-6 py-3 text-sm font-bold text-white transition-all hover:-translate-y-0.5 shadow-lg"
-              style={{ background: CYAN, boxShadow: `0 8px 32px ${CYAN}30` }}
-            >
-              Read our Juniper review
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
-        </section>
-
-        <section className="space-y-4 mb-10">
-          <h2 className="text-xl font-black">Where Moshy fits</h2>
-          <p className="text-[#56504a] text-sm sm:text-base leading-relaxed">
-            Moshy runs a clinically-led telehealth pathway that is open to anyone eligible, women included, and it passes
-            the checklist above: AHPRA-registered practitioners, an eligibility step that screens, pricing
-            disclosed inside the platform before any commitment, and Australian regulation. If you would rather have
-            coaching wrapped around clinical care, Juniper is the women-focused option, and we compare the two directly in
-            our{" "}
-            <Link href="/moshy-vs-juniper" className="underline decoration-[#ded8cd] underline-offset-2 hover:text-[#14120f]" style={{ color: CYAN }}>
-              Moshy vs Juniper guide
-            </Link>.
-          </p>
-          <div className="rounded-xl border px-6 py-5 mt-6" style={{ borderColor: `${CYAN}40`, background: `${CYAN}0A` }}>
-            <p className="text-[#14120f] text-sm sm:text-base leading-relaxed mb-4">
-              New customers currently get $120 off their first order (code REFERRAL120), applied automatically through the
-              link. The Moshy eligibility check takes about ten minutes and commits you to nothing.
-            </p>
-            <a
-              {...aff}
-              data-cta="women-telehealth-main"
-              className="inline-flex items-center gap-2 rounded-xl px-6 py-3 text-sm font-bold text-white transition-all hover:-translate-y-0.5 shadow-lg"
-              style={{ background: CYAN, boxShadow: `0 8px 32px ${CYAN}30` }}
-            >
-              Check your eligibility on Moshy
-              <ArrowRight className="h-4 w-4" />
-            </a>
-            <EarningsBalanceNote earnFromAll={["Moshy", "Juniper"]} className="mt-4 max-w-2xl" />
-          </div>
         </section>
 
         <section className="mb-12">
@@ -233,19 +208,18 @@ export default function WeightLossTelehealthWomenPage() {
         <div className="border-t border-[#ded8cd] pt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm">
           <Link href="/moshy-vs-juniper" style={{ color: CYAN }} className="hover:opacity-80">Moshy vs Juniper &rarr;</Link>
           <Link href="/juniper" style={{ color: CYAN }} className="hover:opacity-80">Juniper review &rarr;</Link>
-          <Link href="/moshy" style={{ color: CYAN }} className="hover:opacity-80">Start with Moshy</Link>
+          <Link href="/moshy" style={{ color: CYAN }} className="hover:opacity-80">Moshy guide &rarr;</Link>
           <Link href="/moshy-review" style={{ color: CYAN }} className="hover:opacity-80">Moshy review &rarr;</Link>
           <Link href="/best-weight-loss-telehealth-australia" style={{ color: CYAN }} className="hover:opacity-80">Best weight loss telehealth &rarr;</Link>
         </div>
 
-        <AffiliateDisclosure className="mt-8" />
+        <AffiliateDisclosure partners={["Juniper", "Moshy"]} className="mt-8" />
         <p className="text-[#56504a] text-xs mt-3 leading-relaxed">
           Nothing here is medical advice. Always consult a qualified health
           professional before making health decisions.
         </p>
         <p className="text-[#56504a] text-xs mt-4">&copy; 2026 Refer Labs &middot; Australia &middot; <Link href="/guides" className="hover:text-[#56504a]">All guides</Link></p>
       </main>
-      <StickyCta href={MOSHY_URL} product="Moshy weight-loss telehealth" label="Check eligibility" />
     </ConsumerShell>
   );
 }

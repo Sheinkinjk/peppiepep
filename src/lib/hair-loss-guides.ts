@@ -36,7 +36,7 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
       keywords: ["online hair loss treatment australia", "hair loss telehealth australia", "online hair loss doctor australia", "hair loss treatment online"],
     },
     lead:
-      "Online hair-loss treatment in Australia means having your case assessed by a registered practitioner over telehealth rather than in a clinic, and, if it is appropriate, having any prescribed treatment delivered to you. It is not a way around the clinical step. Since September 2023 the Medical Board's telehealth guidelines have required a genuine practitioner assessment rather than a form filled in on its own, so a compliant service always involves a real review before anything is prescribed. What you gain is convenience and speed to start; what you do not gain is a shortcut past the medicine's rules.",
+      "Online hair-loss treatment in Australia means having your case assessed by a registered practitioner over telehealth rather than in a clinic, with the practitioner deciding whether any treatment is appropriate. It is not a way around the clinical step. Since September 2023 the Medical Board's telehealth guidelines have required a genuine practitioner assessment rather than a form filled in on its own, so a compliant service always involves a real review. What you gain is convenience and speed to start; what you do not gain is a shortcut past the medicine's rules.",
     sections: [
       {
         h: "How the process runs, step by step",
@@ -44,14 +44,13 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
         bullets: [
           "You complete an online consultation, usually a health questionnaire, often with photos of the affected area.",
           "A registered Australian practitioner reviews your answers and history, not an algorithm on its own.",
-          "If a prescription treatment is appropriate, it is prescribed; if it is not, you should be told so, and some applicants are declined.",
-          "Any medicine is dispensed through a pharmacy and delivered, typically as part of a monthly plan with follow-up.",
+          "The practitioner decides whether any treatment is appropriate; if it is not, you should be told so, and some applicants are declined.",
         ],
       },
       {
         h: "What you can and can't get online",
         body: [
-          "You can get an assessment, and, if suitable, prescription treatment along with over-the-counter options bundled into a plan. You can also get ongoing review and delivery, which is the main convenience.",
+          "You can get an assessment and ongoing review without a clinic visit, which is the main convenience.",
           "You cannot get a guaranteed outcome, and you cannot be promised a specific treatment before anyone has assessed you. Any service that offers guaranteed access to a prescription treatment before a review is not operating the way a compliant Australian service should. Suitability is decided case by case.",
         ],
       },
@@ -59,7 +58,7 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
         h: "Online telehealth versus your GP",
         body: [
           "Both are valid, and they suit different people. Your GP sees you in person with your whole health picture in view and can manage treatment alongside the rest of your care, but it is slower to get started and depends on appointment availability.",
-          "Online telehealth is faster to begin and handles the medicine, review and delivery in one plan, which is why it appeals to people who know what they want and value convenience. The trade is that it is focused on the one issue rather than your whole health, so it is worth being upfront in the questionnaire about anything relevant.",
+          "Online telehealth is faster to begin and handles the consultation and ongoing review in one plan, which is why it appeals to people who know what they want and value convenience. The trade is that it is focused on the one issue rather than your whole health, so it is worth being upfront in the questionnaire about anything relevant.",
         ],
       },
       {
@@ -68,17 +67,17 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
         bullets: [
           "A registered Australian practitioner reviews your case, and the service can decline you.",
           "It does not promise a specific prescription medicine before the assessment.",
-          "Pricing, including whether medicine is billed separately from the plan, is clear before you commit.",
+          "Pricing, including what the plan covers, is clear before you commit.",
           "Cancellation and follow-up are set out plainly before you pay.",
         ],
       },
     ],
     faqs: [
-      { q: "Is online hair-loss treatment legitimate in Australia?", a: "Yes, telehealth is a recognised pathway. A registered Australian practitioner assesses you remotely and prescribes only if appropriate. Since September 2023 a prescription cannot rest on a questionnaire alone, so a compliant service involves a genuine practitioner review." },
+      { q: "Is online hair-loss treatment legitimate in Australia?", a: "Yes, telehealth is a recognised pathway. A registered Australian practitioner assesses you remotely and decides whether any treatment is appropriate. Since September 2023 a prescription cannot rest on a questionnaire alone, so a compliant service involves a genuine practitioner review." },
       { q: "Can I get prescription hair-loss treatment online without seeing anyone?", a: "No. Prescription treatment requires a registered practitioner to assess you first, even through telehealth. The review can happen online, but it has to be a real assessment. No compliant service can supply it before that." },
-      { q: "How much does online hair-loss treatment cost?", a: "It is usually a monthly subscription that bundles the treatment, practitioner oversight and delivery, with the plan and price set at the assessment. Mosh, for example, includes free delivery and shows the plan and price before you commit, so confirm the current terms on the provider's site." },
-      { q: "How do I find the cheapest hair-loss treatment online in Australia?", a: "Online telehealth usually charges one monthly subscription that bundles the treatment, practitioner oversight and delivery, so the cheapest option is the one whose bundle fits you, not just the lowest headline figure. Compare the monthly plan, what is included, delivery cost and cancellation terms across providers. Mosh, for example, includes free delivery, shows the plan and price before you commit, and gives new customers 55% off their first order through our link. Confirm current terms on the provider's site, and the lowest price is not always the best fit." },
-      { q: "Is telehealth or my GP better for hair loss?", a: "Both are valid. A GP offers in-person, whole-of-health care but is slower to start; telehealth is faster and bundles medicine, review and delivery, but is focused on the one issue. It comes down to how you prefer to be supported." },
+      { q: "How much does online hair-loss treatment cost?", a: "Usually a subscription that covers the practitioner consultation and ongoing check-ins. Mosh, for example, lists a monthly price for each hair plan on its own pricing page, and the consultation confirms which applies before you pay." },
+      { q: "How do I find the cheapest hair-loss treatment online in Australia?", a: "Compare the standard rate after any first-order discount, what the subscription covers, and the cancellation terms. Mosh, for example, lists a monthly price for each hair plan on its own pricing page, and REFERAL55 takes 55% off a new customer's first order. A GP consult may be bulk-billed, which can make it the cheaper place to start." },
+      { q: "Is telehealth or my GP better for hair loss?", a: "Both are valid. A GP offers in-person, whole-of-health care but is slower to start; telehealth is faster and includes ongoing review, but is focused on the one issue. It comes down to how you prefer to be supported." },
       { q: "Is hair-loss treatment safe, and what are the side effects?", a: "Prescription hair-loss treatments carry potential side effects, which is why they are prescription-only and why an assessment is required first. A registered practitioner weighs the likely benefit against the risks for your health history, explains what to watch for, and provides follow-up. Over-the-counter topical products carry their own considerations. Raise any concerns before starting. Information only, not medical advice." },
     ],
     related: [R.best, R.cost, R.mosh, R.moshReview, R.hub],
@@ -92,7 +91,7 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
     meta: {
       title: "How to Stop Hair Loss (Australia 2026): What Helps",
       description:
-        "How to approach male pattern hair loss in Australia: the cause, what the evidence does and does not support, and why acting early matters.",
+        "How to approach male pattern hair loss in Australia: the cause, what the evidence does and does not support, and how to get assessed.",
       keywords: ["how to stop hair loss", "how to stop balding australia", "stop hair loss men", "hair loss treatment that works australia"],
     },
     lead:
@@ -107,7 +106,7 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
       // claim about the evidence behind over-the-counter products would be a new
       // claim with no source on file. The mechanism sentence stays: describing
       // the condition is not advertising a medicine.
-      "One step comes before any product: knowing which kind you have, because they do not respond to the same things. The most common form in men, male pattern hair loss, is largely genetic and driven by the hormone DHT, and it is gradual and progressive. Acting earlier gives you more to work with, since holding onto hair you still have is easier than recovering what is gone. What is right for you is a clinical decision, and this page is general information, not medical advice.",
+      "One step comes before any product: knowing which kind you have, because they do not respond to the same things. The most common form in men, male pattern hair loss, is largely genetic and hormonal, and it is gradual and progressive. What is right for you is a clinical decision, and this page is general information, not medical advice.",
     // 28 Sep 2026 (TGA): "two treatments carry the strongest evidence", one
     // "working on the hormonal driver", used "alongside" an OTC topical, identified
     // both medicines for male pattern loss without naming them, on a page carrying
@@ -116,7 +115,7 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
       {
         h: "Work out what is causing it",
         body: [
-          "Most male hair loss is androgenetic, the inherited 'male pattern' type, which shows up as a receding hairline or thinning crown and progresses slowly over years. It is driven by follicles' genetic sensitivity to DHT, not by anything you did wrong.",
+          "Most male hair loss is androgenetic, the inherited 'male pattern' type, which shows up as a receding hairline or thinning crown and progresses slowly over years. It is largely inherited, not caused by anything you did wrong.",
           "Other causes exist, such as stress-related shedding, thyroid issues, nutritional gaps or medication effects, and these behave differently and sometimes reverse on their own. Because the cause changes what helps, the sensible starting point is an assessment rather than guessing, especially if the loss is sudden, patchy or unusual.",
         ],
       },
@@ -133,13 +132,12 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
         h: "What tends not to move the needle",
         body: [
           "Plenty of products are marketed for hair loss without the evidence to match. Caffeine shampoos, most supplements, and low-cost devices may make hair look or feel thicker temporarily, but there is little evidence that they stop male pattern loss. That does not make them scams, but it does make them a poor substitute if halting the process is the goal.",
-          "The other common trap is waiting. Because the condition is progressive, the hair you keep is easier to hold than the hair you have already lost is to recover, so delaying rarely helps.",
         ],
       },
       {
         h: "How to get started",
         body: [
-          "You have two mainstream routes. See your own GP, who can assess you in person and manage treatment with your whole health in view, or use an online telehealth service where a registered Australian practitioner reviews your case and prescribes if it is appropriate, usually with the medicine and delivery included in a plan.",
+          "You have two mainstream routes. See your own GP, who can assess you in person and manage treatment with your whole health in view, or use an online telehealth service where a registered Australian practitioner reviews your case and decides whether any treatment is appropriate.",
           "Either way, the step that matters is a genuine assessment. Mosh is one Australian men's telehealth service that runs this kind of review for hair loss, and you can compare it against your other options first.",
         ],
       },
@@ -148,8 +146,7 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
       { q: "Can you stop hair loss?", a: "Male pattern hair loss is progressive, and for many men the realistic aim is slowing further loss rather than reversing it. Whether any treatment is appropriate for you is decided by a registered practitioner after an assessment, and none guarantees an outcome. Other causes of hair loss behave differently and need their own assessment." },
       { q: "What is the most effective way to stop male pattern baldness?", a: "There is no answer that holds for everyone, which is why it starts with an assessment. A registered practitioner decides whether any treatment suits you, and hair-loss medicines are prescription-only in Australia. Most shampoos, supplements and devices have little evidence for stopping the process itself." },
       { q: "Do hair-loss shampoos and supplements work?", a: "Most have little evidence for stopping male pattern hair loss specifically. They may temporarily improve how hair looks or feels, but they are not a substitute for an assessment if halting the underlying process is your goal." },
-      { q: "Does acting early make a difference?", a: "Generally yes. Male pattern hair loss is progressive, and it is easier to hold onto hair you still have than to recover hair that is already gone, so getting assessed sooner tends to give you more to work with." },
-      { q: "How do I know if I'm losing my hair, and when should I start?", a: "Early male pattern hair loss usually shows as gradual thinning at the crown or a hairline receding at the temples over years. A little extra hair in the shower is normal; a steady drop in density or a changing hairline is the signal to get assessed. Because the condition is progressive, acting sooner generally leaves more hair to protect, and a practitioner can confirm the cause." },
+      { q: "How do I know if I'm losing my hair, and when should I start?", a: "Early male pattern hair loss usually shows as gradual thinning at the crown or a hairline receding at the temples over years. A little extra hair in the shower is normal; a steady drop in density or a changing hairline is the signal to get assessed. A practitioner can confirm the cause." },
     ],
     related: [R.best, R.quiz, R.mosh, R.cost],
   },
@@ -162,16 +159,16 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
     meta: {
       title: "Receding Hairline Treatment Australia 2026: What Helps",
       description:
-        "A receding hairline in Australia: what causes it, which treatments have real evidence, and how an online practitioner assessment works.",
+        "A receding hairline in Australia: what causes it and how an online practitioner assessment works.",
       keywords: ["receding hairline treatment australia", "receding hairline", "how to fix a receding hairline", "receding hairline men australia"],
     },
     lead:
-      "A receding hairline, where the hair retreats at the temples and along the front, is one of the earliest and most common signs of male pattern hair loss. Because it is driven by the same underlying process as thinning on the crown, the assessment and the options are the same. The thing that most affects the result is not which product you pick but how early you act, because it is easier to hold onto the hairline you still have than to recover ground already lost. Whether any treatment suits you is a clinical decision made after an assessment.",
+      "A receding hairline, where the hair retreats at the temples and along the front, is one of the earliest and most common signs of male pattern hair loss. Because it is driven by the same underlying process as thinning on the crown, the assessment and the options are the same. Whether any treatment suits you is a clinical decision made after an assessment.",
     sections: [
       {
         h: "Why a hairline recedes",
         body: [
-          "Male pattern hair loss is largely genetic and hormonal: hair follicles at the temples and front are sensitive to DHT, a hormone that gradually shrinks them until they stop producing visible hair. This is why the hairline is often the first place men notice change, and why it tends to progress if left alone.",
+          "Male pattern hair loss is largely genetic and hormonal: hair follicles at the temples and front gradually shrink until they stop producing visible hair. This is why the hairline is often the first place men notice change, and why it tends to progress if left alone.",
           "Not every receding or uneven hairline is male pattern loss, though. A mature hairline that settles slightly higher in your twenties is normal, and other causes behave differently, which is part of why an assessment matters before assuming a treatment.",
         ],
       },
@@ -179,15 +176,14 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
         h: "What a practitioner decides",
         body: ["Hair-loss medicines are prescription-only in Australia, so whether any treatment suits a receding hairline is decided by a registered practitioner after an assessment. Refer Labs does not name or compare medicines."],
         bullets: [
-          "Early action: because the loss is progressive, starting sooner generally leaves more hair to protect.",
           "Most shampoos, supplements and devices lack comparable evidence for stopping the underlying process, whatever they do for appearance.",
         ],
       },
       {
         h: "How to get assessed without an in-person visit",
         body: [
-          "Because prescription treatment requires a practitioner assessment, accessing it means a real review, which telehealth services now run online. You complete a consultation with photos, a registered Australian practitioner reviews it individually, and if a treatment is appropriate it is prescribed and delivered. Some men are declined, which is the screening working as intended.",
-          "Mosh is one Australian men's telehealth service that runs this process online. Refer Labs readers who start through our link get 55% off their first order, applied automatically with no code to type. It commits you to nothing beyond the consultation, and a practitioner still decides what, if anything, you would be offered. This page is information only, not medical advice.",
+          "Telehealth services run the practitioner assessment online. You complete a consultation with photos, and a registered Australian practitioner reviews it individually and decides whether any treatment is appropriate. Some men are declined.",
+          "Mosh is one Australian men's telehealth service that runs this process online. New customers get 55% off a first order with REFERAL55: our link carries the code, and if it isn't shown at checkout, enter REFERAL55. This page is information only, not medical advice.",
         ],
       },
     ],
@@ -195,7 +191,7 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
       { q: "Can a receding hairline be reversed?", a: "It is more realistic to slow further loss and protect what you have than to fully reverse a receded hairline. Whether any treatment suits you is a clinical decision made by a registered practitioner after an assessment, and none guarantees an outcome." },
       { q: "What is the best treatment for a receding hairline?", a: "No single treatment is right for everyone. A registered practitioner assesses whether any option is appropriate for you, and hair-loss medicines are prescription-only in Australia. Most shampoos and supplements lack evidence for stopping the underlying process." },
       { q: "Is a receding hairline always male pattern baldness?", a: "No. A mature hairline settling slightly higher in your twenties is normal, and other causes of hair loss behave differently and need their own assessment. That is one reason a practitioner review matters before assuming a treatment is right for you." },
-      { q: "How do I get prescription treatment for a receding hairline in Australia?", a: "Prescription treatment requires an assessment by a registered practitioner. Telehealth services run this online: you complete a consultation with photos, a practitioner reviews it, and if appropriate it is prescribed and delivered. Mosh is one such service; Refer Labs readers get 55% off a first order through our link. Some applicants are declined." },
+      { q: "How do I get a receding hairline assessed in Australia?", a: "Through your GP or an online consultation with a registered practitioner. Telehealth services run this online: you complete a consultation with photos, and a practitioner reviews it and decides whether any treatment is appropriate. Mosh is one such service; Refer Labs readers get 55% off a first order with the code REFERAL55 through our link. Some applicants are declined." },
     ],
     related: [R.best, R.mosh, R.quiz, R.cost],
   },
@@ -254,7 +250,7 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
       { q: "How do I tell if I am going bald?", a: "Look for a pattern that progresses over months rather than a single heavy shed: a hairline receding at the temples, a thinning or see-through crown, and a widening part. Comparing photos a year or two apart is the clearest home check. If the signs are adding up, a practitioner can confirm the cause." },
       { q: "How much hair loss per day is normal?", a: "Commonly cited figures put normal shedding at roughly 50 to 100 hairs a day, and it varies with washing and styling. What matters is a sustained increase or a steady drop in density over months, not the count on any one day." },
       { q: "Are early signs of balding at 20 or 25 normal?", a: "A mature hairline settling slightly higher in your late teens or twenties is common and not the same as balding. Genuine early male pattern hair loss can also start young, so if the crown or hairline keeps changing over months it is worth getting assessed rather than waiting." },
-      { q: "Can early hair loss be slowed if I catch it?", a: "Often the earlier it is assessed, the more options there are, because it is easier to hold onto existing hair than to recover hair that is already gone. Whether any treatment is appropriate for you is a clinical decision made by a registered practitioner after an assessment. This is general information, not medical advice." },
+      { q: "Can early hair loss be slowed if I catch it?", a: "A practitioner can tell you where you stand and what options there are. Whether any treatment is appropriate for you is a clinical decision made by a registered practitioner after an assessment. This is general information, not medical advice." },
       { q: "Who should I see about early hair loss?", a: "You can start with your own GP, or an online telehealth service where a registered Australian practitioner reviews your case. For significant or sudden loss, see a doctor in person. Our hair-loss match can point you to the route that fits." },
     ],
     related: [R.quiz, R.best, R.mosh, R.moshReview, R.hub],

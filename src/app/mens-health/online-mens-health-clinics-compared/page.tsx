@@ -33,7 +33,7 @@ const faqs = [
   },
   {
     q: "Why does this page not rank specific clinics?",
-    a: "Because we have not verified any provider's current pricing in this category and have no partner in it, so a ranking would be either guesswork or steering. The comparison criteria below are the same ones we would apply, and they let you run the comparison yourself on whichever services you are considering.",
+    a: "Because we have not verified current pricing across this category, and we have a commercial arrangement with one provider (Midoc), so a ranking would not be neutral. The comparison criteria below are the same ones we would apply, and they let you run the comparison yourself on whichever services you are considering.",
   },
   {
     q: "Is a subscription or per-consult model better?",
@@ -106,9 +106,8 @@ export default function Page() {
       <section>
         <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Why there is no ranked table here</h2>
         <p className="mt-3">
-          We have not verified any provider&apos;s current pricing in this category and have no commercial relationship
-          with any of them. A ranked list assembled on that basis would be guesswork dressed as research, and this
-          category has enough of that already.
+          We have not verified current pricing across this category, so we don&apos;t rank clinics. We have a commercial
+          arrangement with one provider, Midoc, which is listed below and disclosed as such.
         </p>
         <p className="mt-3">
           The criteria above are what we would use ourselves. Run them against the two or three services you are

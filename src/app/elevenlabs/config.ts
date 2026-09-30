@@ -7,20 +7,22 @@ export const elevenlabsConfig: AffiliatePageConfig = {
   badgeText: "AI voice",
   eyebrow: "AI tools",
   affiliateUrl: ELEVENLABS_URL,
+  // Plans read on elevenlabs.io/pricing, rendered in a browser, 30 September 2026.
   quickAnswer:
-    "ElevenLabs is an AI audio platform for realistic text-to-speech, voice cloning, dubbing and voice agents, with thousands of voices across many languages and an API for developers. You can start on a free plan; check the current free-tier limits before you rely on it.",
+    "ElevenLabs is an AI voice platform for text-to-speech, voice cloning, dubbing and voice agents. Its free plan gives 10,000 credits a month, and the Starter plan, which adds a commercial licence and instant voice cloning, costs US$6 a month (elevenlabs.io/pricing, read 30 September 2026).",
   offer: "Free plan (10,000 credits/month)",
+  offerCheckedOn: "2026-09-30",
   atAGlance: [
     { k: "Type", v: "AI voice / text-to-speech" },
     { k: "Best for", v: "Creators, developers & teams" },
-    { k: "Pricing", v: "Free plan; paid from US$6/mo" },
+    { k: "Pricing", v: "Free plan; Starter US$6/mo (read 30 Sep 2026)" },
     { k: "Languages", v: "70+" },
   ],
   hero: {
     h1Prefix: "ElevenLabs:",
     h1Highlight: "lifelike AI voices for content, apps and agents",
     subheading:
-      "Turn text into natural-sounding speech, clone a voice, dub video into other languages, or build voice agents, using a large library of voices across dozens of languages, with an API for developers.",
+      "ElevenLabs turns text into natural-sounding speech, clones voices, dubs video and runs voice agents; its free plan gives 10,000 credits a month, and a commercial licence starts on the US$6-a-month Starter plan (elevenlabs.io/pricing, read 30 September 2026).",
     trustBullets: ["Realistic text-to-speech", "Voice cloning & dubbing", "Free plan to start"],
   },
   banner: {
@@ -29,6 +31,15 @@ export const elevenlabsConfig: AffiliatePageConfig = {
     buttonLabel: "Try ElevenLabs",
   },
   sections: [
+    {
+      heading: "How much does ElevenLabs cost?",
+      paragraphs: [
+        "Read on elevenlabs.io/pricing on 30 September 2026, with monthly billing: Free is US$0 with 10,000 credits a month. Starter is US$6 a month for 30,000 credits and adds a commercial licence, instant voice cloning and the dubbing studio. Creator lists at US$22 a month for 121,000 credits and adds professional voice cloning; ElevenLabs was showing 50% off the first month, making it US$11. Pro is US$99 a month for 600,000 credits.",
+        "The free plan does not include the commercial licence, so anything you publish for a business belongs on Starter or above. ElevenLabs runs no public discount code, and there is no Refer Labs code either.",
+      ],
+      hasCta: true,
+      ctaText: "Try ElevenLabs free",
+    },
     {
       heading: "What ElevenLabs does",
       paragraphs: [
@@ -40,7 +51,7 @@ export const elevenlabsConfig: AffiliatePageConfig = {
       heading: "Who it suits",
       paragraphs: [
         "It suits creators who need voiceover without a studio, teams localising content into other languages, and developers adding voice to products. If you only need occasional TTS, the free tier may be enough; heavier or commercial use moves you onto paid plans.",
-        "Pricing is usage-based by the characters or credits you generate. Start on the free plan, then confirm the current tier limits and commercial terms before you build on it.",
+        "Pricing is by the credits you generate each month, so estimate your volume before choosing a tier.",
       ],
     },
   ],
@@ -58,11 +69,11 @@ export const elevenlabsConfig: AffiliatePageConfig = {
   faqs: [
     {
       q: "Does ElevenLabs have a free plan?",
-      a: "Yes, ElevenLabs offers a free tier so you can try text-to-speech and other features with limited monthly usage. Free-tier limits and commercial-use terms change, so check the current details on ElevenLabs before relying on it.",
+      a: "Yes. ElevenLabs' free plan gives 10,000 credits a month across text-to-speech, speech-to-text, sound effects and voice design (read 30 September 2026). It does not include the commercial licence, which starts on Starter.",
     },
     {
       q: "Is there an ElevenLabs discount code?",
-      a: "ElevenLabs doesn't typically publish a public promo code. The free plan is the standard way to start, and our referral link takes you to the current offer, at no extra cost to you.",
+      a: "No. ElevenLabs publishes no discount code and Refer Labs holds none. On 30 September 2026 its own pricing page showed 50% off the first month of the Creator plan, which applies to anyone signing up, not only through our link.",
     },
     {
       q: "What can you use ElevenLabs for?",
@@ -70,7 +81,7 @@ export const elevenlabsConfig: AffiliatePageConfig = {
     },
     {
       q: "Can I use ElevenLabs audio commercially?",
-      a: "Commercial use is generally tied to paid plans and their licensing terms, and voice cloning has its own rules around consent. Read the current terms on ElevenLabs before using generated audio commercially.",
+      a: "ElevenLabs' pricing page lists the commercial licence from the Starter plan up, not on the free plan. Voice cloning has its own consent rules, so read ElevenLabs' terms before publishing a cloned voice.",
     },
   ],
   relatedLinks: [

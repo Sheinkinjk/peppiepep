@@ -37,10 +37,6 @@ export const KNOSE_URL = "https://quick-quote.knose.com.au/details?promo=referla
 export const PETSONME_URL = "https://www.petsonme.com.au/pet-insurance/compare-cover/";
 export const PETSONME_CODE = "REFERLABS";
 
-// ── Health: hair care ───────────────────────────────────────────────────────
-export const DENSE_URL =
-  "https://densehairexperts.myshopify.com?sca_ref=10755034.xwTupm6fuv&utm_source=affiliate-jarred-krowitz&utm_medium=affiliate-jarred-krowitz&utm_campaign=affiliate";
-
 // ── Weight-loss: Juniper (affiliate partner from July 2026) ──────────────────
 // JARREDKFC waives the initial Juniper consultation, which Juniper values at $89,
 // so a new patient pays $0 to be assessed. Confirmed by Jarred from the Juniper

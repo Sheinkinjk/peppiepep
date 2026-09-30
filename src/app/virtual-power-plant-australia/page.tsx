@@ -207,7 +207,7 @@ export default function VirtualPowerPlantAustraliaPage() {
           <div className="mt-8 flex flex-col items-start gap-3 rounded-2xl border border-[#007a95]/25 bg-[#e4f2f5] px-6 py-5 sm:flex-row sm:items-center sm:justify-between">
             <p className="max-w-md text-[15px] leading-relaxed text-[#14120f]">
               A VPP needs a battery first. Apollo Energy Group sizes a system from your usage, applies the federal rebate,
-              and can connect an eligible battery to a VPP. Refer Labs readers get $500 off the quote.
+              and can connect an eligible battery to a VPP. Refer Labs readers get $500 off the quote. Refer Labs may earn a commission if you request a quote, at no extra cost to you.
             </p>
             <a
               href={APOLLO_ENERGY_LEAD_HREF}

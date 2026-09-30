@@ -22,8 +22,8 @@ const faqs = [
     a: "No. Refer Labs is not an insurer, broker or financial adviser. We provide general information and refer you to Knose. This page is not a recommendation or personal financial advice, and whether a Knose policy suits you depends on your own circumstances.",
   },
   {
-    q: "What is the Knose offer?",
-    a: "New customers get 2 months free when they take out a policy using the code referlab2mf through our link. The offer is provided by Knose and subject to their terms; confirm the current offer and terms during the quote.",
+    q: "What is the Knose promo code?",
+    a: "The Knose promo code through Refer Labs is referlab2mf. Knose's current public offer is 2 months free for new customers, and using referlab2mf through our link credits the policy to Refer Labs. The offer is provided by Knose and subject to their terms; confirm the current offer and terms during the quote.",
   },
   {
     q: "How does Refer Labs make money from this?",
@@ -98,9 +98,9 @@ export default function KnosePage() {
               Knose promo code <span>referlab2mf</span>: 2 months free for new customers
             </h1>
             <p className="mt-5 text-lg leading-relaxed text-[#56504a]">
-              Knose is an Australian pet insurance provider. New customers can get <strong className="text-[#14120f]">2
-              months free</strong> when they take out a policy using the code <strong className="text-[#14120f]">referlab2mf</strong> through
-              our link. This page is general information and a referral, not financial advice or a recommendation.
+              Knose is an Australian pet insurance provider. Its current offer for new customers is{" "}
+              <strong className="text-[#14120f]">2 months free</strong>, and the code{" "}
+              <strong className="text-[#14120f]">referlab2mf</strong>, applied through our link, credits the policy to Refer Labs. This page is general information and a referral, not financial advice or a recommendation.
             </p>
             {/* Below the lead. The first paragraph after the h1 is the answer;
                 a disclosure in that slot is what an engine lifts instead. Still
@@ -139,7 +139,8 @@ export default function KnosePage() {
           <section className="mb-12">
             <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">What is the current Knose promo code?</h2>
             <p className="mt-3 text-[15px] leading-relaxed text-[#56504a]">
-              referlab2mf, worth 2 months free for new customers taking out a policy. What the policy itself covers, and
+              referlab2mf. Knose runs 2 months free for new customers as its own public offer, and the code, used through
+              our link, credits the policy to Refer Labs. What the policy itself covers, and
               the waiting periods, exclusions and limits that apply, sit in Knose&apos;s PDS rather than in the offer, so
               get a quote to see what would apply to your pet.
             </p>

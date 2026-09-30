@@ -54,12 +54,12 @@ const softwareSchema = {
   applicationCategory: "WebApplication",
   operatingSystem: "Web",
   description:
-    "AI-powered website builder that generates a complete multi-page website in 20 seconds from a text prompt. Free to generate with no account required. Includes SEO tools, blog publishing, and custom domain support on paid plans.",
+    "AI-powered website builder that generates a complete multi-page website in 20 seconds from a text prompt. Free to try with no credit card. Includes SEO tools, blog publishing, and custom domain support on paid plans.",
   offers: {
     "@type": "Offer",
     price: "0",
     priceCurrency: "USD",
-    description: "Free AI website generation with no account required. Paid plans required to publish with a custom domain.",
+    description: "Free to try with no credit card; a paid plan is needed to publish (butternut.ai, read 30 September 2026).",
     availability: "https://schema.org/InStock",
   },
   url: "https://www.butternut.ai",

@@ -65,8 +65,6 @@ export default function Page() {
       faqs={faqs}
       related={[
         { href: "/health-and-beauty/best-value-skincare-australia-cost-per-use", label: "Cost per use, not sticker price" },
-        { href: "/health-and-beauty/retinol-vs-prescription-strength-australia", label: "Retinol vs prescription strength" },
-        { href: "/health-and-beauty/retinol-vs-prescription-strength-australia", label: "Retinol vs prescription-strength" },
       ]}
     >
       <section>

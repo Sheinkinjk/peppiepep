@@ -92,7 +92,7 @@ export async function recordSubscriber(
 /** Maps a path to its hub, for the three hubs the site reports on. */
 export function hubForPath(path?: string): string | undefined {
   if (!path) return undefined;
-  if (/hair-loss|moshhair|mosh-|dense/.test(path)) return "hair-loss";
+  if (/hair-loss|moshhair|mosh-/.test(path)) return "hair-loss";
   if (/weight-loss|moshy|juniper|getmoshy/.test(path)) return "weight-loss";
   if (/solar|battery|energy|ecoflow|anker|portable-power/.test(path)) return "solar-energy";
   return undefined;

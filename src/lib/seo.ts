@@ -326,7 +326,7 @@ export const seoConfig = {
   weightLossHub: {
     title: "Weight Loss Telehealth Australia 2026 | Refer Labs",
     description:
-      "Compare weight-loss telehealth in Australia: clinics, coaching and the GP pathway, with independent guides to Moshy and Juniper. Information only.",
+      "Compare weight-loss telehealth in Australia: what Moshy and Juniper each include, and how an online service compares with your GP. Information only.",
     url: `${SITE_URL}/weight-loss`,
     keywords: [
       "weight loss telehealth australia",
@@ -459,58 +459,58 @@ export const seoConfig = {
     keywords: ["cloudtalk discount code", "cloudtalk promo code", "cloudtalk coupon", "cloudtalk referral link", "cloudtalk review", "cloudtalk pricing", "cloudtalk free trial", "business phone system"],
   },
   krispcall: {
-    title: "KrispCall Review 2026: Free Trial Available",
+    title: "KrispCall Review 2026: Pricing and Refund Terms",
     description:
-      "Looking for a KrispCall discount code, promo code or referral link? KrispCall is a cloud phone system with virtual numbers and a shared team inbox.",
+      "KrispCall runs business calls from a browser or the mobile app, with local and international virtual numbers and a shared team inbox. Who it suits, and where a busy call floor outgrows it.",
     url: `${SITE_URL}/krispcall`,
     keywords: ["krispcall discount code", "krispcall promo code", "krispcall coupon", "krispcall referral link", "krispcall review", "krispcall pricing", "virtual phone number", "cloud phone system"],
   },
   dext: {
-    title: "Dext Review 2026: 14-Day Free Trial",
+    title: "Dext Review 2026: Free Trial and Pricing",
     description:
-      "Looking for a Dext discount code, promo code or referral link?",
+      "Dext reads receipts, bills and invoices and pushes the data into Xero, QuickBooks or Sage. It is priced by users and documents processed, and its free trial needs no payment details.",
     url: `${SITE_URL}/dext`,
     keywords: ["dext discount code", "dext promo code", "dext coupon", "dext referral link", "dext review", "dext pricing", "receiptbank dext", "bookkeeping automation software"],
   },
   trainual: {
-    title: "Trainual Review 2026: 7-Day Free Trial",
+    title: "Trainual Review 2026: Pricing and Free Demo",
     description:
-      "Looking for a Trainual discount code, promo code or referral link? Trainual documents processes, onboarding and SOPs in one place.",
+      "Trainual turns how your business runs into searchable SOPs and role-based onboarding. Trainual publishes no prices or free trial: each plan is quoted after a demo.",
     url: `${SITE_URL}/trainual`,
     keywords: ["trainual discount code", "trainual promo code", "trainual coupon", "trainual referral link", "trainual review", "trainual pricing", "employee onboarding software", "sop software"],
   },
   lindy: {
-    title: "Lindy Review 2026: 7-Day Free Trial",
+    title: "Lindy Review 2026: Pricing and What It Automates",
     description:
-      "Looking for a Lindy discount code, promo code or referral link? Lindy is an AI assistant that automates inbox, scheduling and CRM work.",
+      "Lindy connects to your inbox, calendar and CRM and takes over triage, scheduling and follow-ups. Who it suits, and why direct sign-ups are billed from day one.",
     url: `${SITE_URL}/lindy`,
     keywords: ["lindy discount code", "lindy ai promo code", "lindy coupon", "lindy referral link", "lindy ai review", "lindy pricing", "ai work assistant", "ai automation tool"],
   },
   elevenlabs: {
     title: "ElevenLabs Review 2026: Free 10,000 Credits",
     description:
-      "Looking for an ElevenLabs discount code, promo code or referral link? ElevenLabs is an AI voice and text-to-speech platform with voice cloning and dubbing.",
+      "ElevenLabs turns text into lifelike speech, clones voices and dubs video. The free plan gives 10,000 credits a month, enough to test voices before choosing a paid tier.",
     url: `${SITE_URL}/elevenlabs`,
     keywords: ["elevenlabs discount code", "elevenlabs promo code", "elevenlabs coupon", "elevenlabs referral link", "elevenlabs review", "elevenlabs pricing", "ai voice generator", "text to speech ai"],
   },
   wingAssistant: {
     title: "Wing Assistant Review 2026: Free Consult",
     description:
-      "Looking for a Wing Assistant discount code, promo code or referral link?",
+      "Wing Assistant places a managed, dedicated virtual assistant on recurring admin, inbox and sales-support work. Plans are quoted after a free 15-minute consultation.",
     url: `${SITE_URL}/wing-assistant`,
     keywords: ["wing assistant discount code", "wing assistant promo code", "wing assistant referral link", "wing assistant review", "wing assistant pricing", "managed virtual assistant", "virtual assistant service"],
   },
   survicate: {
     title: "Survicate Review 2026: Free Plan to Start",
     description:
-      "Looking for a Survicate discount code, promo code or referral link? Survicate runs customer-feedback surveys across web, email and app with AI analysis.",
+      "Survicate collects customer feedback through web, email and in-app surveys and summarises the answers with AI. It starts on a free plan and connects to more than 50 tools.",
     url: `${SITE_URL}/survicate`,
     keywords: ["survicate discount code", "survicate promo code", "survicate coupon", "survicate referral link", "survicate review", "survicate pricing", "customer feedback software", "survey tool"],
   },
   nutshell: {
     title: "Nutshell Review 2026: 14-Day Free Trial",
     description:
-      "Looking for a Nutshell discount code, promo code or referral link? Nutshell is an easy sales CRM with email marketing built in.",
+      "Nutshell pairs a sales pipeline with email sequences, web forms and reporting in one CRM. Every plan includes unlimited contacts, and the 14-day trial needs no credit card.",
     url: `${SITE_URL}/nutshell`,
     keywords: ["nutshell discount code", "nutshell promo code", "nutshell coupon", "nutshell crm referral link", "nutshell crm review", "nutshell pricing", "easy sales crm", "small business crm"],
   },
@@ -531,42 +531,42 @@ export const seoConfig = {
   pipedrive: {
     title: "Pipedrive Review 2026: 14-Day Free Trial",
     description:
-      "Looking for a Pipedrive discount code, promo code or referral link? Pipedrive is a visual sales CRM with a 14-day free trial, no card, through our link.",
+      "Pipedrive is a CRM built around a drag-and-drop deal pipeline, with activity reminders and automation. Plans are priced per seat in Australian dollars; the 14-day trial needs no card.",
     url: `${SITE_URL}/pipedrive`,
     keywords: ["pipedrive discount code", "pipedrive promo code", "pipedrive coupon", "pipedrive referral link", "pipedrive review", "pipedrive pricing", "visual sales crm", "pipeline crm"],
   },
   activeCampaign: {
     title: "ActiveCampaign Review 2026: 14-Day Trial",
     description:
-      "Looking for an ActiveCampaign discount code, promo code or referral link?",
+      "ActiveCampaign combines email marketing, multi-step automation and a light CRM, so follow-up reacts to what each contact does. Plans scale with your contact count; 14-day free trial.",
     url: `${SITE_URL}/activecampaign`,
     keywords: ["activecampaign discount code", "activecampaign promo code", "activecampaign coupon", "activecampaign referral link", "activecampaign review", "activecampaign pricing", "email marketing automation", "marketing automation crm"],
   },
   helloBar: {
     title: "Hello Bar Review 2026: Free Plan to Start",
     description:
-      "Looking for a Hello Bar discount code or referral link? Hello Bar adds no-code popups and bars to capture emails and lift conversions.",
+      "Hello Bar adds popups, sticky bars and overlays to an existing site without code, with A/B testing on every paid plan. The free plan covers up to 5,000 popup views.",
     url: `${SITE_URL}/hellobar`,
     keywords: ["hello bar discount code", "hellobar referral link", "hello bar review", "hello bar pricing", "website popup tool", "email capture popup", "notification bar"],
   },
   outgrow: {
-    title: "Outgrow Review 2026: Free Plan Available",
+    title: "Outgrow Review 2026: 7-Day Trial and Pricing",
     description:
-      "Looking for an Outgrow discount code or referral link? Outgrow builds no-code calculators, quizzes and assessments that capture qualified leads.",
+      "Outgrow builds calculators, quizzes and assessments that visitors complete before leaving an email, so leads arrive pre-qualified. The 7-day trial opens the Business plan with no card.",
     url: `${SITE_URL}/outgrow`,
     keywords: ["outgrow discount code", "outgrow referral link", "outgrow review", "outgrow pricing", "interactive content tool", "quiz funnel builder", "lead generation calculator"],
   },
   flexiQuiz: {
     title: "FlexiQuiz Review 2026: Free Plan to Start",
     description:
-      "Looking for a FlexiQuiz discount code or referral link? FlexiQuiz builds online quizzes, tests and assessments with auto-marking and certificates.",
+      "FlexiQuiz makes quizzes, tests and assessments that mark themselves and issue certificates. Its free plan allows 20 responses a month with no card, enough to run a real test.",
     url: `${SITE_URL}/flexiquiz`,
     keywords: ["flexiquiz discount code", "flexiquiz referral link", "flexiquiz review", "flexiquiz pricing", "online quiz maker", "online test maker", "assessment software"],
   },
   landingi: {
     title: "Landingi Review 2026: 14-Day Free Trial",
     description:
-      "Looking for a Landingi discount code or referral link?",
+      "Landingi is a no-code landing-page builder with an AI page generator, forms and A/B testing. Any plan can be tried free for 14 days before you commit to one.",
     url: `${SITE_URL}/landingi`,
     keywords: ["landingi discount code", "landingi referral link", "landingi review", "landingi pricing", "landing page builder", "no-code landing page", "ab testing landing page"],
   },
@@ -981,6 +981,7 @@ export const seoConfig = {
     keywords: ["aussie health products", "aussie health products review", "natural health retailer australia", "australian supplements online"],
   },
   retinolVsPrescription: {
+    noIndex: true, // retired 30 Sep 2026, 301 in next.config
     // CONFOUND, 27 Sep 2026: body and one FAQ answer edited for TGA (two
     // benefit claims about the prescription category removed). Title and
     // description unchanged. Weigh the 13 Oct read with that in mind.
@@ -1063,9 +1064,9 @@ export const seoConfig = {
   hairLossTreatmentCost: {
     title: "Hair Loss Treatment Cost Australia 2026 | Refer Labs",
     description:
-      "What hair-loss treatment costs in Australia 2026: over-the-counter options vs telehealth plans, using Mosh's published prices, and what is subsidised.",
+      "How hair-loss care is priced in Australia: over-the-counter products, a GP visit, and a telehealth subscription such as Mosh, plus what Medicare covers.",
     url: `${SITE_URL}/hair-loss-treatment-cost-australia`,
-    keywords: ["hair loss treatment cost australia", "mosh hair loss cost", "prescription hair loss treatment cost", "hair loss telehealth cost australia", "hair loss telehealth cost", "how much does hair loss treatment cost"],
+    keywords: ["hair loss treatment cost australia", "mosh hair loss cost", "hair loss telehealth cost australia", "hair loss telehealth cost", "how much does hair loss treatment cost"],
   },
   // Retired Aug 2026: a second Blueprint success page, now 308ing to /. Same
   // defensive purpose as referralBlueprintSuccess below.
@@ -1122,9 +1123,9 @@ export const seoConfig = {
     // (Search Console, 21 Aug to 17 Sep 2026), mostly for brands we do not
     // cover (Vush, KIC, RespectHealth): Google was filing it as a coupon
     // directory. Every code here is read off the provider's own page and dated.
-    title: "Discount Codes: Moshy, Mosh, Juniper, i-screen, Knose",
+    title: "Discount Codes: Moshy, Mosh, Juniper and i-screen",
     description:
-      "Verified Australian discount codes, each dated: Moshy REFERRAL120 for $120 off, Mosh REFERAL55 for 55% off, Juniper JARREDKFC for a waived $89 consultation, i-screen referlabs for $20 off, Knose and PetsOnMe.",
+      "Verified Australian discount codes, each dated: Moshy REFERRAL120 for $120 off, Mosh REFERAL55 for 55% off, Juniper JARREDKFC for a waived $89 consultation, i-screen referlabs for $20 off, plus pet insurance offers.",
     url: `${SITE_URL}/deals`,
     keywords: ["discount codes australia", "verified discount codes australia", "promo codes australia", "deals australia", "refer labs deals", "moshy discount code", "mosh discount code", "juniper discount code", "australian coupon codes"],
   },
@@ -1136,7 +1137,7 @@ export const seoConfig = {
     keywords: ["best solar battery company australia", "best solar battery company sydney", "solar battery company sydney", "solar battery government rebate sydney", "apollo energy group", "apollo energy group review", "solar battery installer sydney", "home battery australia", "cheaper home batteries program", "battery installer sydney"],
   },
   keap: {
-    title: "Keap Review 2026: 14-Day Free Trial",
+    title: "Keap Review 2026: Pricing and Free Demo",
     description:
       "Keap is an all-in-one CRM with sales and marketing automation for small businesses: pipeline, email and SMS, and automated follow-up.",
     url: `${SITE_URL}/keap`,
@@ -1183,9 +1184,11 @@ export const seoConfig = {
   },
 
   hairLossHub: {
-    title: "Hair Loss Treatments Australia 2026 | Refer Labs",
+    // Title and h1 agree (30 Sep 2026): the h1 read "Hair loss in Australia: the
+    // options compared" under a "Hair Loss Treatments" title.
+    title: "Hair Loss Treatment Options Australia 2026 | Refer Labs",
     description:
-      "The hair loss decision, organised. Compare Australia's clinical telehealth and topical products, with independent guides to Mosh, Dense and more.",
+      "Hair loss in Australia: an online practitioner consultation with Mosh, your GP, or over-the-counter products. Who each suits and how each is priced.",
     url: `${SITE_URL}/hair-loss`,
     keywords: [
       "hair loss australia",
@@ -1464,7 +1467,7 @@ export const seoConfig = {
   carrd: {
     title: "Carrd Review 2026: Free Website Builder | Refer Labs",
     description:
-      "Carrd review 2026: free plan forever, Pro from $9/year. The simplest one-page website builder for portfolios, link-in-bio, and landing pages.",
+      "Carrd builds one-page sites for portfolios, link-in-bio and landing pages. The free plan is permanent; Pro starts at US$9 a year, and US$19 a year adds your own domain.",
     url: `${SITE_URL}/carrd`,
     keywords: [
       "carrd review 2026",
@@ -1496,9 +1499,13 @@ export const seoConfig = {
     // cause. Measure on 5 October 2026: CTR at unchanged position is the read.
     // CONFOUND, 14 Sep 2026: one filler word ("actually") removed from one body
     // sentence in an AI-slop sweep. Title and description unchanged. Negligible.
-    title: "Durable AI 2026: A Site in 30 Seconds, From $19 | Refer Labs",
+    // TEST ENDED 30 Sep 2026: the $19 figure was stale (durable.com/pricing read
+    // 30 Sep: Launch US$22/mo billed yearly, US$25 monthly) and the page never
+    // printed it. Jarred's call: drop the figure rather than refresh it. The page
+    // has also been "Crawled, not indexed" since 22 May, so no CTR read was coming.
+    title: "Durable AI Review 2026: A Business Site in 30 Seconds, Free Plan",
     description:
-      "A complete business website in 30 seconds with no account, then from $19 a month to publish. The CRM and invoicing are what you are paying for.",
+      "Durable generates a business website in about 30 seconds and has a free plan to start on. Paid plans add your own domain, online bookings and AI agents.",
     url: `${SITE_URL}/durableai`,
     keywords: [
       "durable ai review 2026",
@@ -1577,7 +1584,7 @@ export const seoConfig = {
     // order discount, not a hair-only one, so the broader title is also truer.
     title: "Mosh Discount Code 2026: 55% Off First Order",
     description:
-      "REFERAL55, applied by our link: 55% off a first Mosh order. What the hair-loss consult involves, and the cost once that first order is behind you.",
+      "REFERAL55 takes 55% off a first Mosh order: our link carries it, or enter it at checkout. How the online consultation works and how Mosh bills after that.",
     url: `${SITE_URL}/moshhair`,
     keywords: [
       "mosh hair discount code",
@@ -1603,16 +1610,13 @@ export const seoConfig = {
       "mosh hair loss price australia",
       "mosh subscription cost",
       "mosh hair loss telehealth",
-      "mosh prescription hair loss",
       "hair loss treatment online australia",
       "hair loss telehealth australia",
-      "mosh vs dense hair experts",
-      "mosh hair loss results",
-      "how long does mosh take to work",
     ],
   },
 
   dense: {
+    noIndex: true, // retired 30 Sep 2026, 301 to /hair-loss in next.config
     title: "Dense Hair Experts Review 2026: What It Costs",
     description:
       "Looking for a Dense discount code, promo code, or coupon?",
@@ -1654,8 +1658,6 @@ export const seoConfig = {
       "moshy vs juniper",
       "moshy vs juniper 2026",
       "moshy vs juniper australia",
-      "moshy eligibility quiz",
-      "moshy eligibility check",
       "moshy weight loss program australia",
       "moshy weight loss cost",
       "moshy cost australia",
@@ -1675,7 +1677,7 @@ export const seoConfig = {
     // stop competing for the same query.
     title: "Best Weight Loss Telehealth Australia 2026: How to Choose",
     description:
-      "Moshy and Juniper compared for Australians on eligibility, process and cost. Our link carries REFERRAL120: $120 off a first Moshy order.",
+      "Moshy and Juniper compared for Australians: what each includes, how you start and what each costs to begin. Our links carry REFERRAL120 ($120 off Moshy) and JARREDKFC.",
     url: `${SITE_URL}/best-weight-loss-telehealth-australia`,
     keywords: [
       "best weight loss telehealth australia 2026",
@@ -1693,10 +1695,18 @@ export const seoConfig = {
     ],
   },
 
+  moshVsPilot: {
+    noIndex: true, // retired 30 Sep 2026, 301 in next.config
+    title: "Mosh vs Pilot 2026",
+    description:
+      "Pilot no longer runs as its own service. Our hair-loss comparison covers Mosh and your GP.",
+    url: `${SITE_URL}/mosh-vs-pilot`,
+    keywords: ["mosh vs pilot", "pilot vs mosh", "mosh or pilot", "mosh vs pilot hair loss", "is pilot still available australia"],
+  },
   moshyVsJuniper: {
     title: "Moshy vs Juniper 2026: Cost and Who Each Suits",
     description:
-      "Juniper wraps coaching around clinical care and is built for women; Moshy is open to anyone eligible. Our Moshy link applies REFERRAL120 for $120 off.",
+      "Moshy vs Juniper: what each includes, read off their own sites, and who each suits. Codes: REFERRAL120 ($120 off Moshy), JARREDKFC (Juniper consult waived).",
     url: `${SITE_URL}/moshy-vs-juniper`,
     keywords: [
       "moshy vs juniper",
@@ -1718,7 +1728,7 @@ export const seoConfig = {
   cheapestWeightLossTelehealth: {
     title: "Cheapest Weight Loss Telehealth Australia 2026 Compared",
     description:
-      "The cheapest weight-loss telehealth in Australia, compared: how subscription vs pay-per-consult pricing differs across Moshy and Juniper. Info only.",
+      "Subscription vs pay-per-consult weight-loss telehealth in Australia: Moshy, Juniper and Doctors for Weight Loss compared. Moshy code REFERRAL120 takes $120 off.",
     url: `${SITE_URL}/cheapest-weight-loss-telehealth-australia`,
     keywords: [
       "cheapest weight loss telehealth australia",
@@ -1742,9 +1752,12 @@ export const seoConfig = {
     // and 2 clicks (GSC, 30 Aug to 26 Sep) on a title that never used the word,
     // though the h1 and an FAQ both answer it. Read on 27 Oct: clicks on that
     // query at unchanged position. Nothing else on the page changed.
-    title: "Moshy Review 2026: Is It Legit, and What Does It Cost?",
+    // 30 Sep 2026: "What Does It Cost?" dropped from the title. The page prints no
+    // partner price (no-partner-prices rule), so the title promised an answer the
+    // page does not give. Title and h1 now ask the same question.
+    title: "Moshy Review 2026: Is It Legit, and What Is the Service Like?",
     description:
-      `Is Moshy legit, what sign-up and the practitioner review involve, and what the subscription costs. $120 off a first order with REFERRAL120, checked ${offerCheckedOn("REFERRAL120")}.`,
+      `Is Moshy legit: its practitioners, accreditations and what signing up involves, read off Moshy's own site. $120 off a first order with REFERRAL120, checked ${offerCheckedOn("REFERRAL120")}.`,
     url: `${SITE_URL}/moshy-review`,
     keywords: [
       "moshy review",
@@ -1806,7 +1819,7 @@ export const seoConfig = {
 
     description:
 
-      "How weight-loss telehealth works for women in Australia: coaching-led vs clinical pathways, what to check, and where Juniper and Moshy fit. Information only.",
+      "Weight-loss telehealth for women in Australia: what Juniper and Moshy each include, read off their own sites, and the checks to run first. Information only.",
 
     url: `${SITE_URL}/weight-loss-telehealth-women-australia`,
 
@@ -1860,7 +1873,7 @@ export const seoConfig = {
   weightLossTelehealthMen: {
     title: "Weight Loss Telehealth for Men in Australia 2026",
     description:
-      "How weight-loss telehealth works for men in Australia.",
+      "How weight-loss telehealth works for men in Australia: the online assessment, the checks to run first, and what Moshy includes. Information only.",
     url: `${SITE_URL}/weight-loss-telehealth-men-australia`,
     keywords: [
       "weight loss telehealth men australia",
@@ -2004,7 +2017,7 @@ export const seoConfig = {
   durableVsButternut: {
     title: "Durable AI vs Butternut AI 2026: Which Site Builder Wins?",
     description:
-      "Durable AI vs Butternut AI (2026): Durable builds a site in ~30 seconds with CRM and invoicing; Butternut generates a full multi-page site from one prompt.",
+      "Durable AI vs Butternut AI (2026): Durable builds a business site in about 30 seconds with a CRM and bookings; Butternut generates a full multi-page site from one prompt.",
     url: `${SITE_URL}/durable-vs-butternut`,
     keywords: [
       "durable vs butternut",
@@ -2025,7 +2038,7 @@ export const seoConfig = {
   carrdVsButternut: {
     title: "Carrd vs Butternut AI 2026: Simple Builder or AI Generator?",
     description:
-      "Carrd vs Butternut AI (2026): Carrd is a simple one-page builder (free; Pro $19/yr); Butternut generates a full multi-page site from one prompt.",
+      "Carrd vs Butternut AI (2026): Carrd is a one-page builder (free; Pro from US$9/yr, US$19 with a custom domain); Butternut generates a full multi-page site from one prompt.",
     url: `${SITE_URL}/carrd-vs-butternut`,
     keywords: [
       "carrd vs butternut",
@@ -2047,6 +2060,7 @@ export const seoConfig = {
   // "Mosh discount code") and one link to /mosh-review added. Title, description
   // and copy unchanged.
   moshVsDense: {
+    noIndex: true, // retired 30 Sep 2026, 301 to /best-hair-loss-treatment-australia in next.config
         // TITLE TEST, set 5 September 2026. Baseline in the 92-day export to 2 Sep:
     // 644 impressions, 3 clicks, 0.47% CTR at position 11.5. The two pages that convert best on this site, /moshy (2.50% at
     // position 16.1) and /moshy-review (2.03% at 12.7), both rank WORSE than this
@@ -2095,9 +2109,9 @@ export const seoConfig = {
     // and Jarred is about to drive that query with grassroots marketing.
     title: "Juniper Discount Code 2026: JARREDKFC Waives the $89 Consult",
     description:
-      "The Juniper discount code is JARREDKFC: it waives the initial consultation, valued at $89, through our link. What the coaching-led program includes, what it costs, and the 30-day money-back window.",
+      "The Juniper discount code is JARREDKFC: it waives the initial consultation, valued at $89, through our link. What the program includes, how it is priced, and Juniper's refund terms.",
     url: `${SITE_URL}/juniper`,
-    keywords: ["juniper australia", "juniper weight loss", "juniper review australia", "juniper discount code", "juniper promo code", "juniper coupon code", "is juniper legit", "is juniper worth it", "does juniper work", "juniper weight reset program", "juniper cost australia", "myjuniper", "juniper program australia"],
+    keywords: ["juniper australia", "juniper weight loss", "juniper review australia", "juniper discount code", "juniper promo code", "juniper coupon code", "is juniper legit", "is juniper worth it", "juniper cost australia", "myjuniper", "juniper program australia"],
   },
 
   iScreen: {
@@ -2128,13 +2142,16 @@ export const seoConfig = {
     // short version" became "How Mosh works", "What people actually raise" became
     // "What people raise", and one FAQ question lost "actually". Title and
     // description unchanged.
-    title: "Mosh Review 2026: Is It Legit, and Does It Work?",
+    // RETITLED 30 Sep 2026 (Jarred): the title test above ends here, four days early.
+    // Title and h1 now agree, and the page no longer promises cost it does not give.
+    title: "Mosh Review 2026: Is It Legit, and Is It Worth It?",
     description:
-      "A real clinical service, and REFERAL55 takes 55% off a first order. What the consult involves, what you pay monthly after, and who it does not suit.",
+      "Mosh uses AHPRA-registered doctors and nurse practitioners paid fee-for-service. How the consultation works, how billing runs, and REFERAL55 for 55% off a first order.",
     url: `${SITE_URL}/mosh-review`,
     keywords: ["mosh review", "is mosh legit", "is mosh worth it", "does mosh work", "mosh hair loss review australia", "mosh reviews"],
   },
   weightLossEligibility: {
+    noIndex: true, // retired 30 Sep 2026, 301 in next.config
     title: "Do You Qualify for Weight-Loss Treatment in Australia?",
     description:
       "The eligibility criteria for weight-loss treatment in Australia: the BMI thresholds practitioners generally consider, and what does not qualify you.",
@@ -2277,13 +2294,13 @@ export const seoConfig = {
   hairLossQuiz: {
     title: "Which Hair-Loss Option Fits You? 30-Second Match",
     description:
-      "Answer one or two quick questions and see which hair-loss route fits you, clinical telehealth, a topical routine, or your GP, and why.",
+      "Answer one or two quick questions and see which hair-loss route fits you: an online consultation, over-the-counter products, or your GP, and why.",
     url: `${SITE_URL}/hair-loss-quiz`,
     keywords: [
       "which hair loss treatment is right for me",
       "hair loss telehealth or topical",
       "best hair loss option australia",
-      "mosh or dense",
+      "mosh or gp hair loss",
       "how to choose hair loss treatment",
     ],
   },
@@ -2491,9 +2508,11 @@ export const seoConfig = {
     // cause. Measure on 5 October 2026: CTR at unchanged position is the read.
     // CONFOUND, 14 Sep 2026: one filler word ("actually") removed from the intro
     // sentence. Title and description unchanged. Negligible.
+    // CONFOUND, 30 Sep 2026: description corrected (Kit's free plan is now 10,000
+    // subscribers and Kit's fee is 3.5% + 30c, not 0%). Title unchanged.
     title: "beehiiv vs Substack: 0% vs 10% of Your Revenue",
     description:
-      "Substack takes 10% of paid subscription revenue; beehiiv and Kit take 0%. Free to 2,500 and 1,000 subscribers. What each costs as your list grows.",
+      "Substack keeps 10% of paid subscriptions, beehiiv 0% on its paid plan, Kit 3.5% + 30c including card fees. Kit is free to 10,000 subscribers, beehiiv to 2,500.",
     url: `${SITE_URL}/best-newsletter-platform`,
     keywords: [
       "best newsletter platform 2026",
@@ -2515,7 +2534,7 @@ export const seoConfig = {
   goHighLevel: {
     title: "GoHighLevel Review 2026: 14-Day Free Trial",
     description:
-      "GoHighLevel discount code, referral link and offer: the AI all-in-one CRM, marketing automation and funnels platform. From $97/month, 14-day free trial.",
+      "GoHighLevel puts CRM, funnels, email and SMS automation and booking in one platform for agencies and small businesses. Every plan starts with a 14-day free trial.",
     url: `${SITE_URL}/gohighlevel`,
     keywords: [
       "gohighlevel discount code",
@@ -2542,7 +2561,7 @@ export const seoConfig = {
   aisdr: {
     title: "AiSDR Review 2026: What It Costs",
     description:
-      "AiSDR discount code, referral link and pricing: the AI SDR that automates B2B outbound across email, LinkedIn and phone, and books meetings. From $250/month.",
+      "AiSDR is an AI sales rep that researches prospects, writes outreach across email, LinkedIn and phone, and books meetings. The Solo plan runs month to month; Explore and Scale are quarterly.",
     url: `${SITE_URL}/aisdr`,
     keywords: [
       "aisdr discount code",
@@ -2624,7 +2643,7 @@ export const seoConfig = {
   brevo: {
     title: "Brevo Review 2026: Free Plan Forever",
     description:
-      "Looking for a Brevo discount code, promo code or referral link?",
+      "Brevo runs email, SMS, automation and a CRM from one account and charges by emails sent, not list size. The free plan sends 300 emails a day and needs no card.",
     url: `${SITE_URL}/brevo`,
     keywords: [
       "brevo discount code",
@@ -2645,9 +2664,11 @@ export const seoConfig = {
   },
 
   alidrop: {
-    title: "AliDrop Discount Code 2026: US$1 for a 7-Day Trial",
+    // Retitled 30 Sep 2026 (Jarred, D-1): the US$1 trial is AliDrop's public
+    // trial on every plan, not a code and not specific to our link.
+    title: "AliDrop Review 2026: US$1 for a 7-Day Trial",
     description:
-      "The current AliDrop offer: US$1 for a 7-day trial through our referral link.",
+      "AliDrop imports AliExpress products into a Shopify store and automates fulfilment. Every plan opens with AliDrop's public US$1, 7-day trial.",
     url: `${SITE_URL}/alidrop`,
     keywords: [
       "alidrop discount code",
@@ -2668,9 +2689,11 @@ export const seoConfig = {
   },
 
   leadpages: {
-    title: "Leadpages Discount Code 2026: 20% Off Annual Billing",
+    // Retitled 30 Sep 2026 (Jarred, D-1): the 20% is Leadpages' own public
+    // annual-billing saving, shown to everyone on leadpages.com/pricing.
+    title: "Leadpages Review 2026: 7-Day Free Trial",
     description:
-      "Leadpages offer: a 7-day free trial, and 20% off if you pay annually, via our link.",
+      "Leadpages builds landing pages with A/B testing, pop-ups and lead capture. Every plan has a 7-day free trial, and Leadpages takes 20% off anyone who pays annually.",
     url: `${SITE_URL}/leadpages`,
     keywords: [
       "leadpages discount code",
@@ -2771,21 +2794,21 @@ export const seoConfig = {
     // page and both carry a figure in the title. Testing whether the figure is the
     // cause. Measure on 5 October 2026: CTR at unchanged position is the read.
     // CONFOUND, 13 Sep 2026: the page body changed mid-test when Pilot (retired,
-    // now Hims) was removed: one provider card, one table row, one FAQ. The title
+    // retired) was removed: one provider card, one table row, one FAQ. The title
     // and description did not change. Read the 5 Oct result with that in mind.
+    // CONFOUND, 30 Sep 2026: Dense retired from the site, so the body and the
+    // description changed (Mosh and your GP now). Title unchanged.
     title: "Best Hair Loss Treatment Australia 2026: How to Choose",
     description:
-      "REFERAL55 takes 55% off a first Mosh order. Mosh is prescription telehealth, Dense is a topical range off the shelf. What each route costs here.",
+      "Mosh or your GP for hair loss in Australia: how each assessment works, who each suits, and how each is priced. REFERAL55 takes 55% off a first Mosh order.",
     url: `${SITE_URL}/best-hair-loss-treatment-australia`,
     keywords: [
       "best hair loss treatment australia 2026",
       "best hair loss treatment australia",
       "mosh hair loss review australia",
-      "dense hair experts review",
       "hair loss telehealth australia 2026",
-      "prescription hair loss treatment australia",
       "hair loss treatment review australia",
-      "mosh vs dense australia",
+      "mosh or gp hair loss",
       "australian hair loss comparison",
       "hair loss clinic australia",
       "hair thinning treatment australia",

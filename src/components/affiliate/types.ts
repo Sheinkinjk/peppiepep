@@ -1,6 +1,8 @@
 export interface AffiliateSection {
   heading: string;
   paragraphs: string[];
+  /** Optional internal links listed under the paragraphs (e.g. alternatives we cover). */
+  links?: { href: string; label: string; desc: string }[];
   disclaimer?: string;
   hasCta?: boolean;
   ctaText?: string;
@@ -70,6 +72,22 @@ export interface AffiliatePageConfig {
    * "14-day free trial, no card". Omit when there is genuinely no offer.
    */
   offer?: string;
+
+  /**
+   * Label above `offer`. Defaults to "Current offer via our link". Set it when
+   * the offer is the vendor's own public one (a published annual saving, a trial
+   * anyone can start), so the callout does not imply the link grants it.
+   */
+  offerLabel?: string;
+  /**
+   * ISO date (e.g. "2026-09-30") on which the offer was last re-read on the
+   * vendor's own page. Set it ONLY when that page was actually opened that day.
+   * It beats the DEALS `verified` date and the global OFFERS_VERIFIED fallback.
+   * Without it, a brand with no DEALS date shows "Last checked" with the global
+   * sweep month, which states when the offer was checked without implying a
+   * fresh check.
+   */
+  offerCheckedOn?: string;
 
   /**
    * Show the "Independent guide · How we research" trust line under the hero.

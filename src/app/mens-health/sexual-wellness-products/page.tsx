@@ -127,8 +127,7 @@ export default function SexualWellnessProductsPage() {
           <section>
             <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Why this page is on its own</h2>
             <p className="mt-3">
-              Our guides on erectile dysfunction, premature ejaculation and clinic pricing carry no commercial links and
-              are not intended to. This page is where retail links will sit, and it exists separately so that the line
+              This page is where retail links will sit, and it exists separately so that the line
               between advice and commerce is visible in the site&apos;s structure rather than only in a disclosure
               paragraph.
             </p>

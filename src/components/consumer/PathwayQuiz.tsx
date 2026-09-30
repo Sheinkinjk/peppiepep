@@ -115,11 +115,11 @@ function resolve(a: Required<Answers>): Result {
   if (woman && coachingLed) {
     return {
       title: "Juniper looks like your fit",
-      body: "You want accountability and structure alongside a clinically-led program, done online. Juniper is built for women, with a coaching-and-community layer on top of a practitioner-led program.",
+      body: "You want accountability and structure alongside a practitioner-led program, done online. Juniper is designed for women, with app coaching, a private community and 1:1 coaching as an add-on.",
       offer: "Code JARREDKFC waives the initial consultation, which Juniper values at $89",
       cta: { label: "See Juniper (consult waived with JARREDKFC)", href: "/juniper", sponsored: false, loc: "quiz-juniper" },
       secondary: { label: "Compare the providers", href: "/best-weight-loss-telehealth-australia" },
-      also: "Prefer a leaner clinical pathway without the coaching layer? Moshy is open to anyone eligible.",
+      also: "Moshy is open to anyone eligible and includes in-app coaching and dietitian meal plans too.",
     };
   }
 
@@ -149,12 +149,12 @@ function resolve(a: Required<Answers>): Result {
         : "You are still weighing up the approach, and Moshy is a practitioner-led option you can explore online first";
   return {
     title: medicationLed ? "Moshy is the natural starting point" : "Moshy is one place to start",
-    body: `${wants}, open to anyone eligible. The eligibility check takes about ten minutes and commits you to nothing${speed ? ", so you can start straight away" : ""}. A GP can run the same pathway in person if you would rather.`,
+    body: `${wants}, open to anyone eligible. Starting the online questionnaire commits you to nothing${speed ? ", so you can start straight away" : ""}. A GP can run the same pathway in person if you would rather.`,
     offer: "$120 off your first order via our link",
-    cta: { label: "Check your eligibility on Moshy", href: MOSHY_URL, sponsored: true, loc: "quiz-moshy" },
+    cta: { label: "Continue to Moshy", href: MOSHY_URL, sponsored: true, loc: "quiz-moshy" },
     secondary: { label: "Read our full Moshy review", href: "/moshy-review" },
     also: woman
-      ? "Want coaching and community alongside the clinical side? Juniper is built for women."
+      ? "Want a program designed for women, with 1:1 coaching as an option? Juniper is built for women."
       : "Would rather keep it with your own doctor? We compare the two routes in Moshy vs your GP.",
   };
 }

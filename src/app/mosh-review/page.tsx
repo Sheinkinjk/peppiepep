@@ -6,8 +6,6 @@ import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
-import VerifiedStamp from "@/components/consumer/VerifiedStamp";
-import { verifiedFor } from "@/lib/offers";
 import FactHistory from "@/components/facts/FactHistory";
 import CodeAnswer from "@/components/offers/CodeAnswer";
 import OfferSchema from "@/components/offers/OfferSchema";
@@ -19,30 +17,33 @@ export const metadata = generateSEOMetadata(seoConfig.moshReview);
 const CYAN = "#007a95";
 const aff = { href: MOSH_HAIR_URL, target: "_blank" as const, rel: "nofollow sponsored" as const };
 
+/*
+ * Rewritten 30 Sep 2026. The lead now answers "is Mosh legit" in its first
+ * sentence with facts read off Mosh's own site; the title and h1 agree; billing
+ * is described as Mosh's own terms describe it (a first hair order covers three
+ * months) rather than as "monthly"; the money-back guarantee carries its
+ * condition (quarterly hair programs); the unsourced "what people raise" section
+ * is gone; and the legit / worth-it questions are answered once, in the body,
+ * rather than again in the FAQ.
+ */
+const MOSH_READ = "30 September 2026";
+
 const faqs = [
   {
-    q: "Is Mosh legit?",
-    a: "Yes. Mosh is an Australian men's health telehealth service operating under Australian health service regulations, and hair-loss enquiries are reviewed by registered Australian practitioners. It publishes its plans and prices openly and advertises a money-back guarantee, which are the markers of a real clinical service rather than a storefront.",
+    q: "What does Mosh do?",
+    a: "Mosh runs online consultations for men's health, including hair loss. You complete a questionnaire with photos, and a registered practitioner reviews it. It is not an emergency or diagnostic service. General information, not medical advice.",
   },
   {
-    q: "Does Mosh work for hair loss?",
-    a: "Mosh is a service rather than a treatment in itself: it provides access to a practitioner who decides whether prescription hair-loss treatment is appropriate for you. Evidence-based hair-loss treatment generally takes several months to show change and works while it is used. Outcomes vary between people, and suitability is a clinical decision. This is general information, not medical advice.",
-  },
-  {
-    q: "Is Mosh worth it?",
-    a: "It depends on what you want. Mosh's value is convenience and a genuine practitioner review with no in-person appointment, with the plan and price shown before you commit. A GP may be cheaper and already knows your history, while Mosh is faster and fully online. Since any treatment is ongoing, the value tracks how consistently you stick with it.",
-  },
-  {
-    q: "How much does Mosh cost, and is there a discount?",
-    a: "Mosh runs on a monthly subscription with free delivery, and you see the plan and price before you commit. New customers get 55% off their first order through the link on this page, applied automatically with no code to type. The exact plan and price are set after the assessment, so check the current terms on Mosh when you click through.",
+    q: "How does Mosh bill, and is there a discount?",
+    a: "Mosh runs as a subscription. It lists a monthly price for each hair plan on its own pricing page, and its promotion terms describe first-order hair discounts as covering the first three months. REFERAL55 takes 55% off a new customer's first order: our link carries the code, and if it isn't shown at checkout, enter REFERAL55. Later orders are at the standard plan rate.",
   },
   {
     q: "Can I cancel Mosh?",
-    a: "Mosh runs on a subscription and advertises a money-back guarantee. Cancellation and refund terms are set by Mosh and can change, so check the current terms on Mosh's own site before subscribing, and keep written confirmation of any cancellation. Refer Labs does not manage Mosh billing.",
+    a: `Mosh advertises no lock-in contracts and says you can cancel anytime (getmosh.com.au/start/referlabs, read ${MOSH_READ}). Its 180-day money-back guarantee applies to quarterly hair programs, under Mosh's terms. Keep written confirmation of any cancellation. Refer Labs does not manage Mosh billing.`,
   },
   {
     q: "Is this page affiliated with Mosh?",
-    a: "This page is published by Refer Labs and contains a disclosed affiliate referral link. The referral applies automatically when you click through, at no extra cost to you, and it never changes what we write. Nothing here is medical advice.",
+    a: "This page is published by Refer Labs and contains a disclosed affiliate referral link, so we may earn a commission if you sign up through it, at no extra cost to you. Nothing here is medical advice.",
   },
 ];
 
@@ -107,60 +108,48 @@ export default function MoshReviewPage() {
         <SectionMark kind="comb" size={56} /></nav>
 
         <h1 className="text-3xl sm:text-4xl lg:text-[2.7rem] font-black leading-[1.08] tracking-tight mb-5">
-          Mosh review: <span>is it legit, and is it worth it?</span>
+          Mosh Review 2026: <span>Is It Legit, and Is It Worth It?</span>
         </h1>
-        <p className="text-[#56504a] text-base sm:text-lg leading-relaxed mb-4 max-w-2xl">
-          An independent look at Mosh, the Australian men&apos;s hair-loss telehealth service: whether it is a real
-          clinical service, what it costs, what people raise about it, and how to start.
+        <p className="text-[#14120f] text-base sm:text-lg leading-relaxed mb-4 max-w-2xl">
+          Yes, Mosh is legit. It is an Australian-owned telehealth service that says it works only with AHPRA-registered
+          doctors and nurse practitioners based in Australia, pays them on a fee-for-service basis, and is certified by
+          LegitScript (getmosh.com.au, read {MOSH_READ}). Whether it is worth it depends on whether you want an online
+          consultation instead of a GP appointment, and on the standard rate you pay after the first order.
         </p>
         {/* Below the lead. The first paragraph after the h1 is the answer;
             a disclosure in that slot is what an engine lifts instead. Still
             above the first affiliate link, which is what it is for. */}
         <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
-        <CodeAnswer code="REFERAL55" className="mt-6">
-          REFERAL55, the Mosh code Refer Labs holds, gets a new customer 55% off a first order.
+        <CodeAnswer code="REFERAL55" className="mt-6 mb-10">
+          REFERAL55, the Mosh code Refer Labs holds, gets a new customer 55% off a first order. Our link carries it into
+          Mosh&apos;s sign-up; if it isn&apos;t shown at checkout, enter REFERAL55.
         </CodeAnswer>
         <OfferSchema code="REFERAL55" />
-
-        <div className="mb-6">
-          <VerifiedStamp date={verifiedFor("REFERAL55")!} label="55% off first order for new customers · verified" />
-        </div>
-
-        <p className="mb-10 rounded-lg border border-[#ded8cd] bg-[#f7f4ee] px-4 py-3 text-xs leading-relaxed text-[#56504a]">
-          <span className="font-semibold text-[#14120f]">Information only.</span> This page describes a telehealth service.
-          It is not medical advice, does not recommend any treatment, and does not imply suitability for any individual.
-        </p>
 
         <section className="space-y-4 mb-10">
           <h2 className="text-xl font-black">How Mosh works</h2>
           <p className="text-[#56504a] text-sm sm:text-base leading-relaxed">
-            Mosh is an Australian men&apos;s health telehealth service, and hair loss is the reason most people come
-            looking. You complete a questionnaire and photo assessment online, a registered Australian practitioner
-            reviews your case, and if it is appropriate you continue on a subscription with treatment delivered to your
-            door. No waiting room and no referral letter to get started.
-          </p>
-          <p className="text-[#56504a] text-sm sm:text-base leading-relaxed">
-            Delivery is free, new customers get 55% off their first order with code REFERAL55, and you see the plan and
-            price before you commit. The starting point is a quick online consultation that commits you to nothing.
+            Mosh is an online consultation with an AHPRA-registered practitioner, who decides whether any treatment is
+            appropriate. For hair loss you answer questions about your history and general health and upload photos;
+            the practitioner may follow up by message, call or video. There is no charge for the initial consultation;
+            program fees apply. Hair-loss medicines are prescription-only in Australia.
           </p>
           <div className="pt-1">
-            <Cta label="Start the Mosh consultation" loc="short-version" />
+            <Cta label="Continue to Mosh" loc="how-it-works" />
           </div>
         </section>
 
         <section className="space-y-4 mb-10">
           <h2 className="text-xl font-black">Is Mosh legit?</h2>
           <p className="text-[#56504a] text-sm sm:text-base leading-relaxed">
-            On the markers that matter, yes. Mosh is an Australian telehealth provider operating under Australian health
-            service regulations, and enquiries are reviewed by registered Australian practitioners rather than an
-            automatic checkout. Some applicants are declined, which is the screening working as it should.
+            Each of these is read off Mosh&apos;s own site, {MOSH_READ}:
           </p>
           <ul className="space-y-3">
             {[
-              ["Registered Australian practitioners", "A practitioner reviews each case individually and decides whether treatment is appropriate. Not everyone is approved."],
-              ["Pricing shown before you commit", "Mosh lays out the plan and price inside its flow before you pay, with free delivery, so there are no surprises at checkout."],
-              ["A money-back guarantee", "Mosh advertises a money-back guarantee, which lowers the risk of trying it. Confirm the current terms on their site."],
-              ["Disclosed, not anonymous", "It is a known Australian men's health brand, not a faceless storefront, and it does not promise a specific outcome before an assessment."],
+              ["AHPRA-registered practitioners", "Mosh says it works only with doctors and nurse practitioners registered with AHPRA and based in Australia."],
+              ["Paid fee-for-service", "Mosh says its practitioners are paid on a fee-for-service basis, so their pay does not depend on the outcome of a consultation."],
+              ["Certified by LegitScript", "Mosh states the certification on its homepage."],
+              ["Published terms", "A 180-day money-back guarantee on quarterly hair programs and a price match on substantially comparable programs, both under Mosh's terms."],
             ].map(([t, d]) => (
               <li key={t} className="flex gap-3">
                 <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: CYAN }} />
@@ -175,36 +164,16 @@ export default function MoshReviewPage() {
         <section className="space-y-4 mb-10">
           <h2 className="text-xl font-black">Is it worth it?</h2>
           <p className="text-[#56504a] text-sm sm:text-base leading-relaxed">
-            That comes down to what you want from it. Mosh&apos;s value is convenience and a genuine practitioner review
-            with no in-person appointment, with pricing shown before you commit. A GP may be cheaper and already knows
-            your history; Mosh is faster and fully online. Because any hair-loss treatment is ongoing, the real cost is
-            long-term, and the value tracks how consistently you stick with it.
+            It suits men with gradual thinning or a receding hairline who would rather not book an appointment: the
+            consultation is online, a practitioner reviews it, and the 180-day guarantee on quarterly hair programs
+            limits the downside. A GP suits you better if the loss is sudden or patchy, or you want blood tests or a
+            dermatologist referral; the consult may be bulk-billed, and your GP already knows your history.
           </p>
           <p className="text-[#56504a] text-sm sm:text-base leading-relaxed">
-            If you want a fast, fully online way to find out whether treatment is appropriate for you, with a money-back
-            guarantee if it is not for you, it is a low-friction place to start. If you would rather be seen in person or
-            keep everything with your GP, that is a reasonable choice too.
+            On cost, judge Mosh on the standard rate after the first order, not the discounted one. Mosh lists a monthly
+            price for each hair plan on its own pricing page, and the consultation confirms which plan applies before you
+            pay.
           </p>
-          <div className="pt-1">
-            <Cta label="See what Mosh offers you" loc="worth-it" />
-          </div>
-        </section>
-
-        <section className="space-y-4 mb-10">
-          <h2 className="text-xl font-black">What people raise</h2>
-          <p className="text-[#56504a] text-sm sm:text-base leading-relaxed">
-            The most common points in Australian discussions are practical rather than about legitimacy: that it is a
-            subscription, so it is an ongoing cost rather than a one-off; that hair-loss treatment takes months to show
-            change and only works while it is used; and that you should read the cancellation terms before you start.
-            None of these are unique to Mosh, but they are worth going in with your eyes open.
-          </p>
-          <div className="rounded-xl border px-6 py-5 mt-6" style={{ borderColor: `${CYAN}40`, background: `${CYAN}0A` }}>
-            <p className="text-[#14120f] text-sm sm:text-base leading-relaxed mb-4">
-              The online consultation is free, takes a few minutes, and commits you to nothing. It is the quickest way to
-              find out whether treatment is appropriate for you, with 55% off your first order using code REFERAL55.
-            </p>
-            <Cta label="Start the Mosh consultation" loc="mid-cta" />
-          </div>
         </section>
 
         <section className="mb-12">
@@ -223,13 +192,13 @@ export default function MoshReviewPage() {
         </section>
 
         <div className="rounded-2xl border px-6 py-7 mb-10 text-center sm:px-8" style={{ borderColor: `${CYAN}30`, background: `${CYAN}08` }}>
-          <h2 className="text-lg sm:text-xl font-black text-[#14120f]">Ready to see where you stand?</h2>
+          <h2 className="text-lg sm:text-xl font-black text-[#14120f]">Start with an online consultation</h2>
           <p className="mx-auto mt-2 max-w-md text-sm leading-relaxed text-[#56504a]">
-            The Mosh consultation is free and takes a few minutes, with 55% off your first order through our link. You
-            will see the plan and price before committing to anything.
+            No charge for the initial consultation; program fees apply. REFERAL55 takes 55% off a new customer&apos;s
+            first order.
           </p>
           <div className="mt-5 flex justify-center">
-            <Cta label="Start the Mosh consultation" loc="closing-cta" />
+            <Cta label="Continue to Mosh" loc="closing-cta" />
           </div>
         </div>
 
@@ -254,12 +223,11 @@ export default function MoshReviewPage() {
 
         <AffiliateDisclosure className="mt-8" />
         <p className="text-[#56504a] text-xs mt-8 leading-relaxed">
-          Nothing on this page is medical advice. Prescription hair-loss treatment in Australia is available only after assessment by a
-          registered practitioner who decides suitability.
+          Nothing on this page is medical advice.
         </p>
         <p className="text-[#56504a] text-xs mt-4">© 2026 Refer Labs · Australia · <Link href="/guides" className="hover:text-[#56504a]">All guides</Link></p>
       </main>
-      <StickyCta href={MOSH_HAIR_URL} product="Mosh · hair-loss telehealth" label="Start the consultation" />
+      <StickyCta href={MOSH_HAIR_URL} product="Mosh · hair-loss telehealth" label="Continue to Mosh" />
     </ConsumerShell>
   );
 }

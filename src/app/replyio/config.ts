@@ -8,10 +8,14 @@ export const replyioConfig: AffiliatePageConfig = {
   logo: "replyio",
   badgeText: "AI Sales & Automation",
   affiliateUrl: REPLY_IO_URL,
-  offer: "14-day free trial, no card",
+  // Reply.io's pricing page was re-read in a rendered browser on 30 September
+  // 2026. It states the 14-day free trial but says nothing about a card, so the
+  // old "no card" wording was dropped rather than carried forward.
+  offer: "14-day free trial",
+  offerCheckedOn: "2026-09-30",
 
   quickAnswer:
-    "Reply.io is an AI-first sales engagement platform that runs multichannel outbound: it builds and automates sequences across email, LinkedIn, calls and SMS, includes AI SDR agents that write and personalise messages, and bundles B2B data, an email finder and deliverability tools like inbox warm-up. It integrates with HubSpot, Salesforce and Pipedrive and books meetings for your team. There is no free plan; paid plans start from US$49/user/month with a 14-day free trial.",
+    "Reply.io is a sales engagement platform that automates outbound sequences across email, LinkedIn, calls and SMS, with an AI SDR, B2B contact data and inbox warm-up built in. Its Email Volume plan starts at US$49 per user a month billed annually, the Multichannel plan at US$89, and any new account can start a 14-day free trial (reply.io/pricing, read 30 September 2026). It integrates with HubSpot, Salesforce, Pipedrive, Copper and Close.",
 
   banner: {
     heading: "Reply.io: AI Sales Engagement Platform",
@@ -23,7 +27,7 @@ export const replyioConfig: AffiliatePageConfig = {
   atAGlance: [
     { k: "What it is", v: "AI-first multichannel sales engagement platform" },
     { k: "Best for", v: "SMB and mid-market sales teams running outbound" },
-    { k: "Price", v: "No free plan; from US$49/user/mo" },
+    { k: "Price", v: "From US$49/user/mo billed annually; 14-day free trial (read 30 Sep 2026)" },
     { k: "Integrations", v: "HubSpot, Salesforce, Pipedrive and more" },
   ],
   trustStrip: [
@@ -44,7 +48,7 @@ export const replyioConfig: AffiliatePageConfig = {
     h1Prefix: "Reply.io:",
     h1Highlight: "the AI sales engagement platform for multichannel outbound",
     subheading:
-      "Reply.io runs multichannel outbound across email, LinkedIn, calls and SMS, with AI agents that write and personalise the messages and a B2B database behind them. It suits a team already doing outbound that wants the sequencing handled. 14-day trial, no card.",
+      "Reply.io is a sales engagement platform that runs outbound sequences across email, LinkedIn, calls and SMS, and it starts at US$49 per user a month billed annually, with a 14-day free trial (reply.io/pricing, read 30 September 2026). It suits a team already doing outbound that wants the sequencing, data and follow-ups in one place.",
     trustBullets: [
       "Direct access to Reply.io",
       "Covers what Reply.io does, who it suits, and pricing",
@@ -56,10 +60,10 @@ export const replyioConfig: AffiliatePageConfig = {
 
   sections: [
     {
-      heading: "Access Reply.io",
+      heading: "How much does Reply.io cost?",
       paragraphs: [
-        "Sales teams comparing engagement platforms tend to ask the same things, so here they are for Reply.io: what it automates, how the multichannel sequences and AI SDR agents work, and how it fits a HubSpot, Salesforce or Pipedrive setup. Instead of digging through review sites for the details, it covers what counts and sends you straight to Reply.io to see it for yourself.",
-        "Use any button to reach Reply.io directly; nothing needs entering on this page beforehand.",
+        "Read on reply.io/pricing on 30 September 2026, with annual billing: the Email Volume plan starts at US$49 per user a month for 1,000 active contacts a month, with unlimited mailboxes and emails. LinkedIn automation is a US$69 a month add-on per account and calls and SMS a US$29 add-on. The Multichannel plan starts at US$89 per user a month and bundles email, LinkedIn, calls, SMS and unlimited active contacts. Jason, Reply.io's AI SDR, starts at US$500 a month.",
+        "Reply.io says annual billing saves up to 17% against monthly. There is no Reply.io discount code; the published way in is the 14-day free trial, which covers the B2B database, multichannel sequences, reports, the API and the AI features. View the latest pricing on Reply.io's own site before you commit.",
       ],
       hasCta: true,
       ctaText: "See Reply.io",
@@ -89,11 +93,10 @@ export const replyioConfig: AffiliatePageConfig = {
       ],
     },
     {
-      heading: "Reply.io pricing and plans",
+      heading: "Judging whether the price is worth it",
       paragraphs: [
-        "Reply.io is priced per user, with several plan tiers and a free trial to start, so you can test it against your own outreach before paying. Higher tiers unlock more channels, AI usage and data, and pricing can change, so treat any figure as a guide and check the current pricing on the provider before you commit.",
         "The way to judge value is against what your team spends today on separate tools for sequencing, data, an email finder and deliverability, since Reply.io bundles those into one platform. For a team actively running outbound, consolidating that stack can be the main saving.",
-        "Because there is a free trial, the lowest-risk approach is to run a small real campaign through it and see whether the deliverability, data quality and reply rates justify the plan you would need.",
+        "Because there is a 14-day free trial, the lowest-risk approach is to run a small real campaign through it and see whether the deliverability, data quality and reply rates justify the plan you would need.",
       ],
     },
   ],
@@ -132,15 +135,11 @@ export const replyioConfig: AffiliatePageConfig = {
   faqs: [
     {
       q: "Is there a Reply.io discount code?",
-      a: "Reply.io doesn't publish a public discount code. It offers a 14-day free trial with no card, which you can start through the link on this page. Per-user pricing applies after the trial. Offers can change over time.",
+      a: "No. There is no Reply.io discount code to find: Reply.io does not publish one and Refer Labs does not have one. Its published offers are the 14-day free trial and a saving of up to 17% for annual billing, both on reply.io/pricing (read 30 September 2026).",
     },
     {
       q: "What is Reply.io?",
       a: "Reply.io is an AI-first sales engagement platform for multichannel outbound. It builds and automates sequences across email, LinkedIn, calls and SMS, includes AI SDR agents that write and personalise messages, and bundles B2B data, an email finder and deliverability tools like inbox warm-up. It integrates with HubSpot, Salesforce and Pipedrive.",
-    },
-    {
-      q: "How much does Reply.io cost?",
-      a: "Reply.io is priced per user across several plan tiers, with a free trial to start. Higher tiers unlock more channels, AI usage and data. Pricing can change, so verify the current figures on the provider. The value case is usually judged against the cost of running separate tools for sequencing, data and deliverability.",
     },
     {
       q: "Who is Reply.io best for?",
@@ -152,7 +151,7 @@ export const replyioConfig: AffiliatePageConfig = {
     },
     {
       q: "Does Reply.io integrate with my CRM?",
-      a: "Yes. Reply.io integrates with CRMs including HubSpot, Salesforce and Pipedrive, so it works alongside your existing pipeline and data. Teams already using one of those CRMs tend to get extra value from the native integrations.",
+      a: "Yes. Reply.io's pricing page lists direct integrations with Salesforce, HubSpot, Pipedrive, Copper and Close, so it works alongside your existing pipeline and data. Teams already using one of those CRMs tend to get extra value from the native integrations.",
     },
     {
       q: "Does Reply.io help with email deliverability?",
@@ -203,5 +202,5 @@ export const replyioConfig: AffiliatePageConfig = {
   },
 
   disclaimer:
-    "You will be taken to the Reply.io site. This page is operated by Refer Labs and contains a disclosed affiliate link. Pricing is indicative and correct to the best of our knowledge; check the current pricing on the provider.",
+    "You will be taken to the Reply.io site. This page is operated by Refer Labs and contains a disclosed affiliate link. Prices were read in US dollars on reply.io/pricing on 30 September 2026 and can change; view the latest pricing on Reply.io's own site.",
 };

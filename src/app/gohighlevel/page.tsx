@@ -60,7 +60,7 @@ const softwareSchema = {
     "@type": "Offer",
     price: "97",
     priceCurrency: "USD",
-    description: "Starter from $97/month; Unlimited from $297/month. 14-day free trial, no credit card.",
+    description: "Starter US$97/month; Unlimited US$297/month; 14-day free trial (gohighlevel.com/pricing, 30 September 2026).",
     availability: "https://schema.org/InStock",
   },
   url: "https://www.gohighlevel.com",

@@ -82,7 +82,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/foreo`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/edible-beauty`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.78 },
     { url: `${BASE}/aussie-health-products`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.78 },
-    { url: `${BASE}/health-and-beauty/retinol-vs-prescription-strength-australia`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE}/health-and-beauty/led-face-mask-comparison-australia`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE}/health-and-beauty/best-value-skincare-australia-cost-per-use`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE}/health-and-beauty/foreo-luna-vs-ufo`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.72 },
@@ -176,7 +175,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly' as const,
       priority: g.priority,
     })),
-    { url: `${BASE}/dense`,             lastModified: FRESH, changeFrequency: 'monthly', priority: 0.7 },
 
     // ── Website builders / AI tools (redesigned this release) ──────────
     { url: `${BASE}/carrd`,      lastModified: AUG13, changeFrequency: 'monthly', priority: 0.78 },
@@ -230,14 +228,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/best-website-builder`,                  lastModified: AUG13,  changeFrequency: 'weekly',  priority: 0.82 },
     { url: `${BASE}/best-newsletter-platform`,              lastModified: AUG13,  changeFrequency: 'weekly',  priority: 0.82 },
     { url: `${BASE}/best-weight-loss-telehealth-australia`, lastModified: TODAY,  changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE}/weight-loss-treatment-eligibility-australia`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.82 },
     { url: `${BASE}/best-hair-loss-treatment-australia`,    lastModified: TODAY,  changeFrequency: 'monthly', priority: 0.78 },
     { url: `${BASE}/moshy-vs-juniper`,                      lastModified: TODAY,  changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/cheapest-weight-loss-telehealth-australia`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${BASE}/carrd-vs-durable`,                      lastModified: FRESH,  changeFrequency: 'monthly', priority: 0.74 },
     { url: `${BASE}/durable-vs-butternut`,                  lastModified: FRESH,  changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/carrd-vs-butternut`,                    lastModified: FRESH,  changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE}/mosh-vs-dense`,                         lastModified: TODAY,  changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/data`, lastModified: FRESH, changeFrequency: 'weekly', priority: 0.6 },
     // /authors/jarred is deliberately NOT here. It is noIndex until the bio is
     // written, and a noIndex URL in the sitemap tells Google to crawl a page we

@@ -10,7 +10,7 @@ export const aisdrConfig: AffiliatePageConfig = {
   affiliateUrl: AISDR_URL,
 
   quickAnswer:
-    "AiSDR is an AI sales development rep that automates B2B outbound. It finds in-market prospects using intent signals, researches each one, writes personalised messages, runs multi-channel sequences across email, LinkedIn and phone, qualifies replies and books meetings. It integrates with HubSpot and Salesforce. Pricing starts from $250/month for the Solo plan, with the popular Explore plan $900/month billed quarterly, unlimited seats and no long-term contract.",
+    "AiSDR is an AI sales development rep that automates B2B outbound. It finds in-market prospects using intent signals, researches each one, writes personalised messages, runs multi-channel sequences across email, LinkedIn and phone, qualifies replies and books meetings. It integrates with HubSpot and Salesforce. Pricing starts at US$250 a month for the month-to-month Solo plan; Explore is US$900 a month with unlimited users on a quarterly contract (read on aisdr.com/pricing, 30 September 2026).",
 
   banner: {
     heading: "AiSDR: AI Sales Development Rep",
@@ -22,7 +22,7 @@ export const aisdrConfig: AffiliatePageConfig = {
   atAGlance: [
     { k: "What it is", v: "AI sales development rep for B2B outbound" },
     { k: "Best for", v: "Revenue teams and founders building pipeline" },
-    { k: "Price", v: "From US$250/mo (Solo); Explore US$900/mo" },
+    { k: "Price", v: "Solo US$250/mo; Explore US$900/mo (30 September 2026)" },
     { k: "Integrations", v: "HubSpot and Salesforce" },
   ],
   trustStrip: [
@@ -90,9 +90,21 @@ export const aisdrConfig: AffiliatePageConfig = {
     {
       heading: "AiSDR pricing and contract",
       paragraphs: [
-        "AiSDR starts from $250/month for the Solo plan, with the popular Explore plan $900/month billed quarterly, and includes unlimited seats with no long-term contract. These figures can change, so treat them as a guide and check the current pricing on the provider before you commit.",
+        "Read on aisdr.com/pricing on 30 September 2026: Solo is US$250 a month and runs month to month, Explore is US$900 a month with unlimited users, and Scale is US$2,500 a month. All three are billed monthly; Explore and Scale sit on quarterly contracts.",
         "The way to judge value is against the fully loaded cost of a human SDR, which includes salary, tools, ramp time and the risk of turnover. For a team that needs consistent outbound volume, an AI rep priced this way can compare favourably, but only if you will feed it a clear target market and offer.",
-        "Because there is no long-term contract and seats are unlimited, the commitment model is relatively flexible for a tool at this level, which lowers the risk of trying it against your own pipeline.",
+        "Because Solo is month to month and the larger plans commit you for a quarter rather than a year, the commitment is short for a tool at this level, which lowers the risk of trying it against your own pipeline.",
+      ],
+    },
+    {
+      heading: "What are the alternatives to AiSDR?",
+      paragraphs: [
+        "The right alternative depends on which part of AiSDR's job you want done. To run outbound yourself rather than hand it to an AI rep, Reply.io is the closest match: a sequencing platform with its own AI SDR agents, from US$49 per user a month billed annually against AiSDR's US$250 Solo plan (each read on the vendor's own pricing page, 30 September 2026). If the gap is managing and nurturing the leads you already have, GoHighLevel covers the CRM and follow-up. If outreach fails because the contact data is wrong, FullEnrich fixes that layer for any of them.",
+      ],
+      links: [
+        { href: "/replyio", label: "Reply.io", desc: "multichannel sequences you run yourself, with AI SDR agents built in." },
+        { href: "/gohighlevel", label: "GoHighLevel", desc: "an all-in-one CRM, funnels and automation platform for agencies and small businesses." },
+        { href: "/fullenrich", label: "FullEnrich", desc: "verified emails and mobile numbers from 15+ data sources, feeding whichever outbound tool you choose." },
+        { href: "/compare/ai-sales-tools", label: "AI sales tools compared", desc: "every sales tool we cover, including Snov.io for budget prospecting, sorted by the job it does." },
       ],
     },
   ],
@@ -135,11 +147,11 @@ export const aisdrConfig: AffiliatePageConfig = {
     },
     {
       q: "Is there an AiSDR discount code?",
-    a: "AiSDR does not publish a public discount code, and Refer Labs does not hold one for it. Pricing starts from US$250 a month on the Solo plan with no long-term contract, and larger plans are quoted, so the saving worth chasing is on plan size and billing period rather than a code. Verify current pricing on AiSDR's own site before you commit.",
+    a: "AiSDR does not publish a public discount code, and Refer Labs does not hold one for it. Pricing starts at US$250 a month on the month-to-month Solo plan, with Explore at US$900 and Scale at US$2,500 on quarterly contracts (aisdr.com/pricing, 30 September 2026), so the saving worth chasing is on plan size rather than a code.",
   },
   {
     q: "How much does AiSDR cost?",
-      a: "AiSDR starts from $250/month for the Solo plan, with the popular quarterly plan $900/month, unlimited seats and no long-term contract. Pricing can change, so verify the current figures on the provider. The value case is usually judged against the fully loaded cost of hiring a human SDR.",
+      a: "AiSDR's Solo plan is US$250 a month, month to month. Explore is US$900 a month with unlimited users and Scale US$2,500 a month, both on quarterly contracts (read on aisdr.com/pricing, 30 September 2026). The value case is usually judged against the fully loaded cost of hiring a human SDR.",
     },
     {
       q: "Who is AiSDR best for?",
@@ -155,7 +167,7 @@ export const aisdrConfig: AffiliatePageConfig = {
     },
     {
       q: "How effective is AiSDR?",
-      a: "The company reports that AiSDR is used by 250 or more companies and booked more than 12,000 meetings in 2025. These are vendor-reported figures, so the best way to judge effectiveness is to run it against your own target market. Because there is no long-term contract, the commitment model is relatively flexible for a tool at this level.",
+      a: "The company reports that AiSDR is used by 250 or more companies and booked more than 12,000 meetings in 2025. These are vendor-reported figures, so the best way to judge effectiveness is to run it against your own target market. Because Solo runs month to month, the commitment is short for a tool at this level.",
     },
   ],
 
@@ -169,7 +181,7 @@ export const aisdrConfig: AffiliatePageConfig = {
     {
       href: "/best-ai-sales-tools",
       label: "Best AI Sales Tools 2026",
-      desc: "AiSDR vs GoHighLevel compared: AI outbound SDR versus all-in-one platform, with hedged pricing and what each is best for.",
+      desc: "AiSDR vs GoHighLevel compared: AI outbound SDR versus all-in-one platform, with dated pricing and what each is best for.",
     },
     {
       href: "/gohighlevel",
@@ -202,5 +214,5 @@ export const aisdrConfig: AffiliatePageConfig = {
   },
 
   disclaimer:
-    "You will be taken to the AiSDR site. This page is operated by Refer Labs and contains a disclosed affiliate link. Pricing and usage figures are indicative, vendor-reported where noted, and correct to the best of our knowledge; check the current pricing on the provider.",
+    "You will be taken to the AiSDR site. This page is operated by Refer Labs and contains a disclosed affiliate link. Usage figures are vendor-reported where noted. Pricing can change, so check the current pricing on AiSDR before committing.",
 };

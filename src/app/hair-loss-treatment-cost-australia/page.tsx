@@ -6,6 +6,9 @@ import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
 import EditorialMeta from "@/components/consumer/EditorialMeta";
+import CodeAnswer from "@/components/offers/CodeAnswer";
+import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
+import OfferSchema from "@/components/offers/OfferSchema";
 
 export const metadata = generateSEOMetadata(seoConfig.hairLossTreatmentCost);
 
@@ -18,7 +21,7 @@ const articleSchema = comparisonArticleSchema({
   description: "Refer Labs sets out what hair-loss treatment costs in Australia, comparing over-the-counter options with telehealth plans.",
   url: "https://referlabs.com.au/hair-loss-treatment-cost-australia",
   datePublished: "2026-07-17",
-  dateModified: "2026-08-14",
+  dateModified: "2026-09-30",
 });
 
 const breadcrumbSchema = {
@@ -31,30 +34,35 @@ const breadcrumbSchema = {
   ],
 };
 
+/*
+ * 30 Sep 2026. The lead said nothing here attracts a Medicare rebate while a later
+ * section said a telehealth consult may: the two now agree, and state only what
+ * is sourced. The code FAQ is gone (it competed with /moshhair for the code query),
+ * the plan-tier table that held no information is one sentence, and the offer box
+ * sits below the first answer instead of above it.
+ */
+const MOSH_READ = "30 September 2026";
+
 const faqs = [
   {
     q: "How much does hair-loss treatment cost in Australia?",
-    a: "It depends on the route. Buying an over-the-counter topical product is a one-off cost that varies by pharmacy. A telehealth plan is usually a monthly subscription that bundles treatment, practitioner oversight and delivery: Mosh, for example, offers tiered plans with free delivery, and shows the plan and price before you commit. The exact plan a practitioner assigns is confirmed during the assessment, so check the current figure on the provider's own site.",
+    a: "It depends on the route. An over-the-counter shampoo or serum is a one-off purchase priced by the retailer. A GP consult may be bulk-billed, or carry a gap fee after the Medicare rebate. A telehealth service such as Mosh charges a subscription: Mosh lists a monthly price for each of its three hair plans on its own pricing page, and the consultation confirms which applies before you pay.",
   },
   {
-    q: "Why is telehealth hair-loss treatment priced as a subscription?",
-    a: "Because the treatments are ongoing rather than one-off. Prescription hair-loss treatments only keep working while you keep using them, so services bundle the medicine, practitioner oversight and delivery into a monthly plan. The upside is convenience and included review; the thing to check is that you are comparing like plans, since a single-active plan and a multi-active plan are priced differently.",
+    q: "Why is online hair-loss care priced as a subscription?",
+    a: "Because hair-loss care is ongoing rather than one-off, online services charge a recurring plan that covers the practitioner consultation and ongoing check-ins. When you compare, compare plans for the same stage: Mosh prices its plans for a receding hairline and for advanced hair loss differently.",
   },
   {
     q: "Is hair-loss treatment covered by Medicare or the PBS?",
-    a: "Generally not for cosmetic hair loss. Prescription treatment for male pattern hair loss is not PBS-subsidised, so you pay a private price, and over-the-counter topical products are not subsidised either. A telehealth consultation may attract a Medicare rebate in some circumstances, but the treatment and plan costs are typically out of pocket. Check current details with each provider.",
+    a: `Medicare can rebate a GP consult, which may also be bulk-billed. Hair-loss treatment is not PBS-subsidised, and over-the-counter products are not subsidised. Mosh does not charge for its initial consultation, and its program fees are private: its pricing page mentions bulk billing only for mental-health consults, not hair loss (read ${MOSH_READ}).`,
   },
   {
     q: "Is it cheaper to buy an over-the-counter product myself?",
-    a: "For an over-the-counter topical alone, buying it at a pharmacy can be the cheapest route, since it does not need a prescription. The trade-off is that you are managing it yourself with no practitioner assessment, and prescription treatment is not available that way. Many people who want a combined, assessed plan find the convenience of a telehealth subscription worth the price. It comes down to whether you want a full plan or a single product.",
-  },
-  {
-    q: "What does the Mosh hair-loss offer include?",
-    a: "New customers get 55% off their first order through the link on this page, and plans include free, discreet delivery. Mosh does not publish its plan prices publicly: the plan and price are set by the assessment and shown to you before you commit. Two things Mosh does publish are worth knowing if you are comparing on cost. It advertises a 180-day money-back guarantee, and a price-match guarantee on substantially comparable programs, so a cheaper like-for-like plan elsewhere is worth raising with them directly. Checked on Mosh's own site, 14 August 2026; terms can change, so verify before you commit.",
+    a: "For a single product, often yes. Over-the-counter shampoos and serums are cosmetic and need no consult, so you are managing it yourself with no assessment. It comes down to whether you want a practitioner or your GP to assess the cause.",
   },
   {
     q: "Does Refer Labs earn money from this page?",
-    a: "Some links are disclosed affiliate links, including the link to Mosh, so we may earn a commission if you sign up through them, at no extra cost to you. It never changes what we write or how we compare options. Everything here is general information about cost, not medical or financial advice.",
+    a: "Some links are disclosed affiliate links, including the link to Mosh, so we may earn a commission if you sign up through them, at no extra cost to you. Everything here is general information about cost, not medical or financial advice.",
   },
 ];
 
@@ -72,7 +80,7 @@ const webPageSchema = {
   url: seoConfig.hairLossTreatmentCost.url,
   inLanguage: "en-AU",
   datePublished: "2026-07-17",
-  dateModified: "2026-08-14",
+  dateModified: "2026-09-30",
   about: [
     { "@type": "Thing", name: "hair loss treatment cost Australia" },
     { "@type": "Thing", name: "Mosh hair loss cost" },
@@ -82,14 +90,6 @@ const webPageSchema = {
   isPartOf: { "@id": `${SITE_URL}/#website` },
 };
 
-// Mosh's plan tiers. We deliberately do not quote specific plan prices: they are
-// shown on Mosh's own site before you commit, and pricing can change.
-const plans: { name: string; tier: string; note: string }[] = [
-  { name: "Single-active plan", tier: "Entry", note: "One active. Positioned for early thinning or a receding hairline." },
-  { name: "Two-active plan", tier: "Most popular", note: "Two actives combined, the combination approach clinical reviews rate highest." },
-  { name: "Advanced plan", tier: "Most comprehensive", note: "Multiple actives, for more established hair loss." },
-];
-
 export default function HairLossTreatmentCostAustraliaPage() {
   return (
     <ConsumerShell>
@@ -97,6 +97,7 @@ export default function HairLossTreatmentCostAustraliaPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
+      <OfferSchema code="REFERAL55" />
 
       <main className="text-[#14120f]">
         <div className="mx-auto max-w-3xl px-6 sm:px-8">
@@ -116,38 +117,15 @@ export default function HairLossTreatmentCostAustraliaPage() {
               What hair-loss treatment costs in Australia
             </h1>
             <p className="mt-5 text-base sm:text-lg leading-relaxed text-[#56504a]">
-              There are two routes and they are priced on different models, which is why a single figure does not exist.
-              An over-the-counter topical is a one-off purchase that varies by pharmacy. A telehealth plan is a monthly
-              subscription that continues whether you consult or not, and nothing in this category attracts a Medicare
-              rebate on the product itself. Annualise both before comparing them. General information about cost, not
-              medical or financial advice.
+              There is no single figure, because the three routes are priced on different models. An over-the-counter
+              shampoo or serum is a one-off purchase priced by the retailer. A GP consult may be bulk-billed, or carry a
+              gap fee after the Medicare rebate. A telehealth service such as Mosh charges a subscription: its initial
+              consultation carries no charge, and its program fees are private. Compare the yearly cost of each.
+              General information about cost, not medical or financial advice.
             </p>
-            <EditorialMeta lastUpdated="2026-08-14" className="mt-5" />
+            <EditorialMeta lastUpdated="2026-09-30" className="mt-5" />
+            <AffiliateDisclosure compact className="mt-4" />
           </header>
-
-          {/* Info-only note */}
-          <div className="nw-card px-5 py-4 text-sm leading-relaxed text-[#56504a]">
-            <span className="font-bold text-[#14120f]">Prices change.</span> The figures below are the providers&apos; own
-            published prices, which can change, so verify current pricing on each provider before you
-            commit. This page contains a disclosed affiliate link to Mosh.
-          </div>
-
-          {/* First CTA */}
-          <div className="mt-7 flex flex-col items-start gap-3 rounded-2xl border border-[#007a95]/25 bg-[#e4f2f5] px-6 py-5 sm:flex-row sm:items-center sm:justify-between">
-            <p className="max-w-md text-[15px] leading-relaxed text-[#14120f]">
-              New customers get 55% off their first order through our link, with free delivery. The plan and price are
-              shown on Mosh and confirmed after a practitioner assessment.
-            </p>
-            <a
-              href={MOSH_HAIR_URL}
-              target="_blank"
-              rel="nofollow sponsored"
-              data-cta="hairloss-cost-hero"
-              className="nw-btn shrink-0 whitespace-nowrap"
-            >
-              See Mosh plans <ArrowRight className="h-4 w-4" />
-            </a>
-          </div>
 
           {/* Body */}
           <article className="mt-10 space-y-9">
@@ -158,86 +136,82 @@ export default function HairLossTreatmentCostAustraliaPage() {
                 The question is now a visible H2 at the top with a liftable answer
                 beneath it, which is the pattern the sibling comparison pages use.
 
-                It deliberately does not invent a monthly figure. Mosh does not
-                publish plan prices: the plan and price are set after a
-                practitioner assessment. Competitor pages that win this question
-                quote numbers we cannot honestly match, so this states the cost
-                STRUCTURE and the one figure that is verified. */}
+                It prints no partner price (Jarred, 27 Sep 2026): Mosh publishes
+                its own on getmosh.com.au/pricing, and readers see it after the
+                click. So this states the cost STRUCTURE of each route. */}
             <section>
               <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#14120f]">
                 How much does hair-loss treatment cost per month in Australia?
               </h2>
               <div className="mt-4 rounded-xl border border-[#b9e3eb] bg-[#e4f2f5] px-6 py-5">
                 <p className="text-[15px] leading-relaxed text-[#14120f]">
-                  There are two cost structures, and they are not comparable on a single number. An over-the-counter
-                  topical product is a one-off purchase you repeat, priced by the pharmacy and paid for entirely by you.
-                  A telehealth plan is a monthly subscription that bundles the practitioner assessment, ongoing review
-                  and delivery into one recurring charge, so the monthly figure covers more than the product. Neither
-                  route attracts a Medicare rebate or a PBS subsidy for cosmetic hair loss, so the price you see is the
-                  price you pay.
+                  The routes are priced differently, so they do not reduce to one monthly number. An over-the-counter
+                  product is a one-off purchase you repeat, priced by the retailer and paid entirely by you. A telehealth
+                  plan is a recurring charge that covers the practitioner consultation and ongoing check-ins, so the
+                  monthly figure covers more than a product. A GP consult is a per-visit fee that Medicare may rebate or
+                  the practice may bulk-bill. Hair-loss treatment is not PBS-subsidised.
                 </p>
                 <p className="mt-3 text-[15px] leading-relaxed text-[#14120f]">
-                  Mosh does not publish its plan prices, because the plan is assigned after the assessment and shown to
-                  you before you commit. Rather than quote a figure that would be a guess, this page explains what sits
-                  inside each route so you can compare the quote you are given. Refer Labs readers get{" "}
-                  <strong className="font-semibold text-[#14120f]">55% off a first order</strong> through our link
-                  (verified on Mosh&apos;s own page, 17 August 2026).
+                  Mosh lists a monthly price for each of its three hair plans on its own pricing page, and the
+                  consultation confirms which one applies before you pay (getmosh.com.au/pricing, read {MOSH_READ}).
                 </p>
               </div>
             </section>
+
+            {/* The offer, below the first answer rather than above it. */}
+            <CodeAnswer code="REFERAL55">
+              The Mosh discount code through Refer Labs is REFERAL55, worth 55% off a new customer&apos;s first order.
+              Our link carries it into Mosh&apos;s sign-up; if it isn&apos;t shown at checkout, enter REFERAL55. More on
+              the code and how Mosh works on <Link href="/moshhair" className="nw-link">our Mosh page</Link>.
+            </CodeAnswer>
+            <div className="flex flex-col items-start gap-3 rounded-2xl border border-[#007a95]/25 bg-[#e4f2f5] px-6 py-5 sm:flex-row sm:items-center sm:justify-between">
+              <p className="max-w-md text-[15px] leading-relaxed text-[#14120f]">
+                See Mosh&apos;s hair plans and their prices on Mosh&apos;s own site. The consultation confirms which plan
+                applies before you pay.
+              </p>
+              <a
+                href={MOSH_HAIR_URL}
+                target="_blank"
+                rel="nofollow sponsored"
+                data-cta="hairloss-cost-hero"
+                className="nw-btn shrink-0 whitespace-nowrap"
+              >
+                Continue to Mosh <ArrowRight className="h-4 w-4" />
+              </a>
+            </div>
+
             <section>
               <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#14120f]">
-                The two cost routes
+                The three cost routes
               </h2>
               <div className="mt-4 space-y-4 text-[15px] leading-relaxed text-[#56504a]">
                 <p>
-                  <span className="font-semibold text-[#14120f]">Buy over the counter.</span> Some topical products are
-                  available at a pharmacy without a prescription. The cost is a one-off product price that varies by
-                  pharmacy, brand and pack size, and you manage it yourself. It is often the cheapest single route, but it
-                  only covers over-the-counter options, not prescription treatment.
+                  <span className="font-semibold text-[#14120f]">Buy over the counter.</span> Pharmacies sell shampoos,
+                  conditioners and serums for thinning hair with no prescription. The cost is a one-off product price that
+                  varies by retailer, brand and pack size. It is often the cheapest single route, and you manage it yourself
+                  without an assessment.
                 </p>
                 <p>
-                  <span className="font-semibold text-[#14120f]">A telehealth plan.</span> Services bundle treatment,
-                  practitioner oversight and delivery into a monthly subscription. This is how you access prescription
-                  treatment where a practitioner assesses it as appropriate, and how most combined plans are sold. The
-                  rest of this page uses Mosh&apos;s published prices as the worked example, because it publishes them
-                  openly.
+                  <span className="font-semibold text-[#14120f]">See your GP.</span> A per-visit consult fee, which may be
+                  bulk-billed or rebated by Medicare. A GP can also order tests and refer you to a dermatologist.
+                </p>
+                <p>
+                  <span className="font-semibold text-[#14120f]">A telehealth plan.</span> An online consultation with a
+                  registered practitioner, who decides whether any treatment is appropriate, billed as a recurring
+                  subscription.
                 </p>
               </div>
             </section>
 
             <section>
               <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#14120f]">
-                Mosh hair-loss plans, by tier
+                How Mosh prices its hair plans
               </h2>
               <p className="mt-3 text-[15px] leading-relaxed text-[#56504a]">
-                Mosh offers tiered plans, with the exact plan assigned after a practitioner assessment. You see the plan
-                and price inside Mosh&apos;s own flow before you commit, which is why we point you there rather than quote
-                a figure that can change.
-              </p>
-              <div className="mt-5 overflow-x-auto rounded-xl border border-[#ded8cd]">
-                <table className="w-full min-w-[520px] text-sm">
-                  <thead>
-                    <tr className="bg-[#f7f4ee] text-left">
-                      <th className="px-4 py-3 font-semibold text-[#14120f]">Plan</th>
-                      <th className="px-4 py-3 font-semibold text-[#14120f]">Tier</th>
-                      <th className="px-4 py-3 font-semibold text-[#14120f]">Best for</th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-[#ded8cd]">
-                    {plans.map((p) => (
-                      <tr key={p.name}>
-                        <td className="px-4 py-3 font-semibold text-[#14120f]">{p.name}</td>
-                        <td className="px-4 py-3 whitespace-nowrap font-semibold text-[#007a95]">{p.tier}</td>
-                        <td className="px-4 py-3 text-[#56504a]">{p.note}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-              <p className="mt-3 text-xs leading-relaxed text-[#56504a]">
-                Plans include free, discreet delivery, and Mosh advertises a money-back guarantee. New customers get 55%
-                off their first order through our link. You see the current plan and price on Mosh before you commit.
+                Mosh sells three hair plans by stage: for a receding hairline, for thinning and receding hair, and for
+                advanced hair loss. Its promotion terms describe
+                first-order hair discounts as covering the first three months, and a 180-day money-back guarantee applies
+                to quarterly hair programs under Mosh&apos;s terms (getmosh.com.au, read {MOSH_READ}).
               </p>
             </section>
 
@@ -247,11 +221,10 @@ export default function HairLossTreatmentCostAustraliaPage() {
               </h2>
               <div className="mt-4 space-y-4 text-[15px] leading-relaxed text-[#56504a]">
                 <p>
-                  For cosmetic hair loss, expect to pay privately. Prescription treatment for male pattern hair
-                  loss is not subsidised on the PBS, and over-the-counter products are not subsidised either. A telehealth
-                  consultation may attract a Medicare rebate in some circumstances, but the treatment and plan costs are
-                  typically out of pocket. It is worth confirming the current position with each provider rather than
-                  assuming.
+                  Medicare can rebate a GP consult, and some practices bulk-bill. Hair-loss treatment is not subsidised on
+                  the PBS, and over-the-counter products are not subsidised either. Mosh does not charge for its initial
+                  consultation, and its program fees are private: its pricing page mentions bulk billing only for its
+                  mental-health consults, not for hair loss (read {MOSH_READ}).
                 </p>
               </div>
             </section>
@@ -262,15 +235,14 @@ export default function HairLossTreatmentCostAustraliaPage() {
               </h2>
               <div className="mt-4 space-y-4 text-[15px] leading-relaxed text-[#56504a]">
                 <p>
-                  The trap is comparing a single-active plan against a multi-active one on price alone. A cheaper plan
-                  that includes one active is not cheaper than a dearer plan that includes two, if the two-active
-                  plan is what a practitioner assigns you. Compare on what is included, not just the headline monthly
-                  figure, and remember any introductory discount applies to the first order rather than the ongoing price.
+                  Compare plans at the same stage: a plan for a receding hairline and a plan for advanced hair loss are
+                  priced differently, and the practitioner decides which applies. Remember that a first-order discount
+                  such as REFERAL55 comes off the first order, not every month after it.
                 </p>
                 <p>
                   For the routes themselves, our{" "}
-                  <Link href="/best-hair-loss-treatment-australia" className="nw-link">comparison of the main providers</Link>{" "}
-                  lines up the clinical and topical options side by side, and the{" "}
+                  <Link href="/best-hair-loss-treatment-australia" className="nw-link">hair-loss comparison</Link>{" "}
+                  sets Mosh beside your GP, and the{" "}
                   <Link href="/hair-loss" className="nw-link">hair-loss hub</Link> explains which route fits which stage.
                 </p>
               </div>
@@ -280,9 +252,7 @@ export default function HairLossTreatmentCostAustraliaPage() {
             <section className="rounded-2xl border border-[#ded8cd] bg-[#f1ede4] px-6 py-6">
               <h2 className="text-lg font-bold text-[#14120f]">See the plan and price for you</h2>
               <p className="mt-2 text-[15px] leading-relaxed text-[#56504a]">
-                The exact plan and price are confirmed after a practitioner assessment. Mosh runs a men&apos;s hair-loss
-                assessment online, reviewed by registered Australian practitioners, with free delivery and 55% off your
-                first order through our link.
+                The plan and price are confirmed in the consultation, before you pay.
               </p>
               <a
                 href={MOSH_HAIR_URL}
@@ -291,7 +261,7 @@ export default function HairLossTreatmentCostAustraliaPage() {
                 data-cta="hairloss-cost-footer"
                 className="nw-btn mt-5"
               >
-                See Mosh plans <ArrowRight className="h-4 w-4" />
+                Continue to Mosh <ArrowRight className="h-4 w-4" />
               </a>
             </section>
 
@@ -327,15 +297,15 @@ export default function HairLossTreatmentCostAustraliaPage() {
             <section className="border-t border-[#ded8cd] pt-6 pb-16">
               <p className="text-xs leading-relaxed text-[#56504a]">
                 This page is published by Refer Labs, an independent comparison publisher, and contains a disclosed
-                affiliate link to Mosh, which means we may earn a commission if you sign up through our link. Commissions
-                never change what we write. Prices shown are the providers&apos; own published figures and can change, so
-                verify current pricing before you commit. Content is general information, not medical or financial advice.
+                affiliate link to Mosh, which means we may earn a commission if you sign up through our link. This page
+                prints no plan prices; Mosh lists its own, which can change, so verify current pricing on Mosh&apos;s own
+                site before you commit. Content is general information, not medical or financial advice.
               </p>
             </section>
           </article>
         </div>
       </main>
-      <StickyCta href={MOSH_HAIR_URL} product="Mosh hair-loss telehealth" label="See plans" />
+      <StickyCta href={MOSH_HAIR_URL} product="Mosh · hair-loss telehealth" label="Continue to Mosh" />
     </ConsumerShell>
   );
 }

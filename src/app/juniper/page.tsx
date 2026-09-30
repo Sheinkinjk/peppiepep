@@ -1,7 +1,8 @@
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, SCHEMA_AUTHOR, SCHEMA_PUBLISHER } from "@/lib/seo";
 import { SectionMark } from "@/components/brand/SectionMark";
 import { JUNIPER_URL } from "@/lib/affiliate-links";
-import { ArrowRight, Check, ShieldCheck, Stethoscope, Truck, Users } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
+import { requiredDisclosureFor } from "@/lib/partner-disclosures";
 import Image from "next/image";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
@@ -14,99 +15,74 @@ export const metadata = generateSEOMetadata(seoConfig.juniper);
 const SLUG = "/juniper";
 
 // Sponsored CTA (rel=nofollow sponsored, picked up by AffiliateClickTracker).
-// JARREDKFC is commission-only: NO customer discount is claimed anywhere here.
 const juniperAff = {
   href: JUNIPER_URL,
   target: "_blank" as const,
   rel: "nofollow sponsored" as const,
 };
 
+// Read on myjuniper.com (homepage, in a browser; curl is blocked) on this date.
+const READ_ON = "30 September 2026";
+
+// Juniper's handbook wording, word for word, from the shared registry.
+const JUNIPER_DISCLOSURE = requiredDisclosureFor(JUNIPER_URL)?.text ?? "";
+
 const glance: [string, string][] = [
-  ["What it is", "Australian women's weight-management telehealth"],
-  ["For", "Women seeking a coaching-led, clinically-supervised program"],
-  ["Format", "Online eligibility → practitioner review → program & delivery"],
-  ["Included", "Unlimited follow-ups, app tracking, patient community"],
-  ["Pricing", "Monthly subscription, two program options, confirmed in the consult"],
-  ["Referral", "Code JARREDKFC waives the initial consultation, valued at $89"],
+  ["What it is", "Weight-management telehealth, “a digital health clinic by Eucalyptus”"],
+  ["For", "Juniper says it is “dedicated to helping women”"],
+  ["How it works", "Online quiz → phone consultation with an accredited Australian practitioner"],
+  ["Included", "Unlimited follow-ups, app health tracking, patient community"],
+  ["Coaching", "1:1 health coaching, can be added at any time"],
+  ["Pricing", "Different pricing options, confirmed with your practitioner"],
+  ["Code", "JARREDKFC waives the initial consultation, valued at $89"],
 ];
 
-const trust = [
-  { icon: Stethoscope, label: "AHPRA-registered practitioners" },
-  { icon: Users, label: "Coaching, app and patient community" },
-  { icon: Truck, label: "Subscription with home delivery" },
-  { icon: ShieldCheck, label: "30-day money-back guarantee (Juniper's own)" },
-];
-
+// Juniper's own wording from its homepage, read READ_ON.
 const included = [
-  "Online consultations with Australian-registered practitioners",
-  "A medical weight-management program tailored by your practitioner",
-  "Unlimited practitioner follow-ups, seven days a week",
-  "Health tracking through the award-winning Juniper app, with June AI",
-  "The 20,000-member Juniper patient community",
-  "Optional 1:1 health coaching from dietitians (a paid add-on)",
+  "Unlimited follow-up consultations with an Australian practitioner",
+  "Health tracking via Juniper's app",
+  "Access to Juniper's supportive community",
+  "1:1 health coaching, which Juniper says can be added for extra support at any time",
+  "A 30-day money-back guarantee (“Love your weight loss in 30 days or your money back”)",
 ];
 
 const steps = [
-  { num: 1, heading: "Complete the online consultation", body: "You answer a health questionnaire about your history, weight and goals. It takes a few minutes and commits you to nothing." },
-  { num: 2, heading: "A practitioner reviews your case", body: "An Australian-registered practitioner assesses your answers individually. Not everyone is suitable, and some applicants are declined at review." },
-  { num: 3, heading: "Your Weight Reset Program is set", body: "If you are suitable, your program is discussed with you and tailored by your practitioner, with the cost shown before you commit." },
-  { num: 4, heading: "Ongoing support and delivery", body: "The program runs on a subscription with unlimited follow-ups, app tracking, the patient community, and everything delivered discreetly to your door." },
+  { num: 1, heading: "Take the online quiz", body: "Questions about your health history and goals. Juniper says your practitioner reviews your answers confidentially." },
+  { num: 2, heading: "Talk to a practitioner", body: "Juniper books a secure phone call with an accredited Australian practitioner, who asks follow-up questions and answers yours." },
+  { num: 3, heading: "If you go ahead", body: "The program runs with unlimited follow-up consultations, health tracking in Juniper's app and its patient community, with 1:1 coaching available as an add-on." },
 ];
 
 const toc: [string, string][] = [
-  ["what", "What Juniper is"],
-  ["included", "What the program includes"],
-  ["start", "How it works"],
-  ["cost", "What it costs"],
-  ["verdict", "Is it legit & worth it?"],
-  ["bottom-line", "Why Juniper"],
+  ["included", "What's included"],
+  ["how", "How it works"],
+  ["cost", "How it's priced"],
+  ["alternatives", "Alternatives"],
   ["faq", "FAQ"],
+];
+
+const related: { href: string; label: string; desc: string }[] = [
+  { href: "/moshy-vs-juniper", label: "Moshy vs Juniper", desc: "The two weight-management telehealth services side by side, with each one's code." },
+  { href: "/best-weight-loss-telehealth-australia", label: "Best weight loss telehealth in Australia", desc: "The Australian online weight-management providers compared on how they work and how they are priced." },
+  { href: "/weight-loss-telehealth-women-australia", label: "Weight-loss telehealth for women", desc: "How the women-focused services work." },
+  { href: "/weight-loss-telehealth-cost-australia", label: "What weight-loss telehealth costs", desc: "How the services in this category are priced." },
 ];
 
 const faqs = [
   {
     q: "What is the current Juniper discount code?",
-    a: "The current Juniper discount code is JARREDKFC. It waives Juniper's initial consultation, which Juniper values at $89, so a new patient pays nothing to be assessed. It is applied automatically when you start through the link on this page, so there is nothing to type. It takes nothing off the program itself: Juniper runs as a monthly subscription and the price that applies to you is confirmed inside Juniper's own flow before you commit. Juniper separately promotes START50 on its own site, worth $50 off the first month, and Juniper's terms state that codes cannot be combined, so you use one or the other. Confirmed from Juniper's affiliate handbook on 23 September 2026.",
+    a: `JARREDKFC. Through our link it waives Juniper's initial consultation, which Juniper values at $89 (source: Juniper's affiliate handbook, confirmed 23 September 2026; no public Juniper page states it). It takes nothing off the program itself. Separately, Juniper's own homepage advertises START50: "Save $50 with code START50. T&Cs apply." (read ${READ_ON}). Check Juniper's terms for which one applies to your first order.`,
   },
   {
-    q: "What is Juniper?",
-    a: "Juniper is an Australian medical weight-management program designed for women. Its Weight Reset Program pairs online consultations with Australian-registered practitioners with a full wraparound of care: unlimited follow-ups, health tracking through an award-winning app with June AI, a 20,000-member patient community, and optional 1:1 health coaching from dietitians as a paid add-on.",
+    q: "Is Juniper legit, and is it worth it?",
+    a: `Juniper describes itself as "a digital health clinic by Eucalyptus", and its consultations are phone calls with an accredited Australian practitioner. Its homepage says the program is "trusted by 300,000 members worldwide" and offers a 30-day money-back guarantee, and Juniper says that if your practitioner determines the program isn't right for you, you receive a full refund (read ${READ_ON}). Whether it is worth it depends on how much you will use the follow-ups, app and community that the program fee covers.`,
   },
   {
     q: "Is Juniper only for women?",
-    a: "Juniper designs and markets its program for women. It is built around understanding what women experience with weight, from the practitioners to the coaching and community. Suitability for the program is decided individually by a registered Australian practitioner in your consultation.",
-  },
-  {
-    q: "How much does Juniper cost?",
-    a: "Juniper runs as a monthly subscription that its own site says includes the program, unlimited consultations and delivery, plus optional 1:1 health coaching as a paid add-on and a 30-day money-back window. Juniper's own Bundle & Save terms, read 23 September 2026, name a $249 initial payment and a $942 minimum total on the three-month bundle, with the monthly figure depending on the treatment and whether you bundle three, six or twelve months. The exact price that applies to you is confirmed inside Juniper's own flow before you commit, and JARREDKFC waives the $89 initial consultation on top.",
-  },
-  {
-    q: "What makes Juniper different?",
-    a: "The wraparound care. Beyond the medical program, you get a care team available seven days a week for unlimited follow-up consultations, an award-winning app with tracking, recipes and a 24/7 in-app AI companion, optional 1:1 coaching from dietitians, and a 20,000-member patient community. A waived $89 initial consultation, with the code JARREDKFC, lets you check whether it fits before committing.",
-  },
-  {
-    q: "What does the program involve?",
-    a: "Juniper's Weight Reset Program is a practitioner-led medical weight-management program wrapped in ongoing support. The clinical specifics are decided individually by your treating practitioner in your consultation, not from a webpage, which is exactly why the waived initial consultation exists. This page is general information, not medical advice.",
-  },
-  {
-    q: "How do I start with Juniper?",
-    a: "You complete an online questionnaire, an Australian-registered practitioner reviews it, and if you are suitable your program is discussed with you. Some applicants are declined at review. You can begin from the link on this page, and new patients have the $89 initial consultation waived with the code JARREDKFC.",
-  },
-  {
-    q: "Is Juniper legit?",
-    a: "Yes. Juniper is an established Australian weight-management telehealth service, and applications are reviewed individually by AHPRA-registered practitioners rather than approved automatically. It publishes its inclusions openly, runs a 20,000-member patient community, and offers a 30-day money-back window on eligible first orders. Some applicants are declined at review, which is the clinical screening working as it should.",
-  },
-  {
-    q: "Is Juniper worth it?",
-    a: "It depends on what you want from a program. Juniper's value is the wraparound: a practitioner-led program plus unlimited follow-ups seven days a week, coaching, an award-winning app and a large patient community, rather than a program on its own. Because it runs on an ongoing subscription, the value tracks how consistently you use it. The waived $89 initial consultation for new patients, with the code JARREDKFC, is a no-commitment way to judge whether the fit is right before you pay for anything.",
-  },
-  {
-    q: "Does Juniper work?",
-    a: "Juniper is a program and support service rather than a one-off intervention, so whether it works comes down to the individual and is a clinical matter decided with your practitioner, not something a webpage can promise. What Juniper provides is structure: practitioner-led care, unlimited follow-ups, coaching, tracking and a patient community, all designed to help people stay consistent. Results vary between people and depend on suitability and how closely the program is followed. This is general information, not medical advice.",
+    a: `Juniper says it is "dedicated to helping women", and its program is marketed to women. Whether the program suits a particular person is decided by the practitioner in the consultation.`,
   },
   {
     q: "Can I cancel Juniper, and are refunds available?",
-    a: "Juniper runs on a subscription and offers a 30-day money-back window on eligible first orders. Cancellation and refund terms are set by Juniper and can change, so check the current terms on Juniper's own site before subscribing, and keep written confirmation of any cancellation. Refer Labs does not manage Juniper billing.",
+    a: `Juniper states two refund terms on its homepage: a 30-day money-back guarantee on your first order, and a full refund if your practitioner determines the program isn't right for you or you choose not to proceed (read ${READ_ON}). Cancellation and refund terms are Juniper's and can change, so check them before you start. Refer Labs does not manage Juniper billing.`,
   },
 ];
 
@@ -134,7 +110,7 @@ const webPageSchema = {
   url: seoConfig.juniper.url,
   inLanguage: "en-AU",
   datePublished: "2026-07-29",
-  dateModified: "2026-08-06",
+  dateModified: "2026-09-30",
   isPartOf: { "@id": `${SITE_URL}/#website` },
   author: SCHEMA_AUTHOR,
   publisher: SCHEMA_PUBLISHER,
@@ -147,7 +123,7 @@ const webPageSchema = {
   },
 };
 
-function JuniperCTA({ label = "Check your eligibility", loc, block = false, size = "md" }: { label?: string; loc: string; block?: boolean; size?: "md" | "lg" }) {
+function JuniperCTA({ label = "Continue to Juniper", loc, block = false, size = "md" }: { label?: string; loc: string; block?: boolean; size?: "md" | "lg" }) {
   const pad = size === "lg" ? "px-8 py-4 text-base" : "";
   return (
     <a {...juniperAff} data-cta={loc} className={`nw-btn justify-center ${pad} ${block ? "w-full" : ""}`}>
@@ -173,7 +149,7 @@ export default function JuniperPage() {
           <span className="text-[#14120f]">Juniper</span>
         <SectionMark kind="scale" size={56} /></nav>
 
-        {/* ── Hero ── */}
+        {/* ── Hero: h1, the answer, Juniper's required wording, then the first link ── */}
         <section className="grid gap-10 pt-8 sm:pt-10 lg:grid-cols-[1.55fr_1fr] lg:gap-14">
           <div>
             <span className="mb-5 inline-flex h-16 w-16 items-center justify-center overflow-hidden rounded-2xl border border-[#ded8cd] bg-white shadow-[0_10px_28px_-16px_rgba(20,18,15,0.35)]">
@@ -182,35 +158,23 @@ export default function JuniperPage() {
             <h1 className="mt-4 text-4xl font-extrabold leading-[1.06] tracking-[-0.02em] text-[#14120f] sm:text-5xl lg:text-[3.2rem]">
               Juniper discount code Australia: <span>JARREDKFC waives the $89 consultation</span>
             </h1>
-            <p className="mt-5 inline-flex items-center gap-2 rounded-full border border-[#b9e3eb] bg-[#e4f2f5] px-4 py-1.5 text-[13px] font-bold text-[#00748e]">
-              <ShieldCheck className="h-4 w-4" aria-hidden="true" /> Code JARREDKFC, applied through our link
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-[#56504a]">
+              The current Juniper discount code is JARREDKFC: through our link it waives Juniper&apos;s initial
+              consultation, which Juniper values at $89, and takes nothing off the program itself. Juniper is a
+              weight-management telehealth program that says it is &ldquo;dedicated to helping women&rdquo;, run as
+              &ldquo;a digital health clinic by Eucalyptus&rdquo;. The service is an online consultation with a
+              registered practitioner, who decides whether any treatment is appropriate.
             </p>
-            {/* Below the lead. The first paragraph after the h1 is the answer;
-                a disclosure in that slot is what an engine lifts instead. Still
-                above the first affiliate link, which is what it is for. */}
-            <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
-            <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#56504a]">
-              Starting through this page applies the code JARREDKFC, which waives Juniper&apos;s initial consultation,
-              valued at $89, so a new patient pays nothing to be assessed. Juniper is an Australian medical
-              weight-management program designed for women: its Weight Reset Program pairs online consultations with
-              Australian-registered practitioners with structured coaching, unlimited follow-ups, an award-winning app
-              and a 20,000-member patient community. The code takes nothing off the program itself, which is billed
-              monthly and confirmed inside Juniper&apos;s own flow before you commit.
+            {/* Juniper's handbook requires this exact sentence, prominently, before
+                any Juniper link. It comes from src/lib/partner-disclosures.ts; do
+                not reword, abbreviate or append to it. */}
+            <p className="mt-5 max-w-xl rounded-xl border border-[#ded8cd] bg-[#f7f4ee] px-4 py-3 text-[14px] leading-relaxed text-[#14120f]">
+              {JUNIPER_DISCLOSURE}
             </p>
+            <AffiliateDisclosure compact className="mt-3 max-w-xl" />
             <div className="mt-6">
-              <JuniperCTA label="Start with the consultation waived" loc="hero" size="lg" />
+              <JuniperCTA loc="hero" size="lg" />
             </div>
-              {/* Juniper's handbook requires one of two disclosure statements
-                  word-for-word AND prominently displayed, benchmarked against a
-                  social caption. It previously appeared once, in 45%-opacity text
-                  at the very bottom of a 440-line page, which a reader who clicked
-                  the hero CTA would never reach. This is the exact wording, in
-                  readable contrast, beside the CTA. Do not reword, abbreviate or
-                  append to this sentence. */}
-              <p className="mt-5 max-w-xl rounded-xl border border-[#ded8cd] bg-[#f7f4ee] px-4 py-3 text-[13px] leading-relaxed text-[#56504a]">
-                This post contains affiliate links. If you are a new Juniper patient and make a purchase through these
-                links, I may earn a small commission at no extra cost to you.
-              </p>
           </div>
 
           {/* At-a-glance card */}
@@ -228,31 +192,13 @@ export default function JuniperPage() {
               <div className="mt-5">
                 <JuniperCTA loc="glance-card" block />
               </div>
-              <p className="mt-3 text-center text-[11px] text-[#56504a]">Opens myjuniper.com · AU only</p>
+              <p className="mt-3 text-center text-[11px] text-[#56504a]">Opens myjuniper.com · AU only · read {READ_ON}</p>
             </div>
           </aside>
         </section>
 
-        {/* ── Trust strip ── */}
-        <section className="mt-14 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-[#ded8cd] bg-[#ded8cd] sm:grid-cols-4">
-          {trust.map(({ icon: Icon, label }) => (
-            <div key={label} className="flex items-center gap-3 bg-white px-5 py-5">
-              <Icon className="h-5 w-5 shrink-0 text-[#007a95]" strokeWidth={1.7} aria-hidden="true" />
-              <span className="text-[13px] font-medium leading-snug text-[#56504a]">{label}</span>
-            </div>
-          ))}
-        </section>
-
-        {/* ── Compliance notice ── */}
-        <p className="mt-8 rounded-xl border border-[#ded8cd] bg-white px-5 py-4 text-xs leading-relaxed text-[#56504a]">
-          <span className="font-semibold text-[#56504a]">Information only.</span> This page describes Juniper&apos;s
-          program as a service and is not medical advice. Suitability for any program is decided individually by a
-          registered Australian practitioner in a consultation. Always consult a qualified health professional before
-          making any health decision.
-        </p>
-
         {/* ── Body grid: TOC + article ── */}
-        <div className="mt-12 grid gap-12 lg:grid-cols-[200px_1fr] lg:gap-16">
+        <div className="mt-14 grid gap-12 lg:grid-cols-[200px_1fr] lg:gap-16">
           {/* TOC */}
           <nav aria-label="On this page" className="hidden lg:block">
             <div className="sticky top-24">
@@ -269,34 +215,10 @@ export default function JuniperPage() {
 
           {/* Article */}
           <article className="max-w-2xl">
-            {/* What */}
-            <section id="what" className="scroll-mt-24">
-              <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">What Juniper is</h2>
-              <div className="mt-4 space-y-4 text-[15.5px] leading-relaxed text-[#56504a]">
-                <p>
-                  Juniper is a clinically-led Australian weight-management program designed for women, built around its
-                  Weight Reset Program. You complete a health questionnaire online, an Australian-registered practitioner
-                  reviews your case, and if it is appropriate you continue on a subscription with everything delivered
-                  discreetly to your door. There is no in-person GP appointment to book to get started.
-                </p>
-                <p>
-                  What sets it apart is the wraparound: unlimited follow-ups seven days a week, health tracking through an
-                  award-winning app, a 20,000-member patient community, and optional 1:1 coaching from dietitians. It is
-                  built for people who want structure and a whole care team in their corner.
-                </p>
-              </div>
-              <p className="my-7 border-l-2 border-[#007a95] pl-5 text-[15px] leading-relaxed text-[#56504a]">
-                The coaching and community are the draw, but the practitioner review is the part that matters: every
-                application is assessed individually, and some are declined.
-              </p>
-            </section>
-
-            {/* Included */}
-            <section id="included" className="mt-12 scroll-mt-24">
-              <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">What the Weight Reset Program includes</h2>
+            <section id="included" className="scroll-mt-24">
+              <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">What does Juniper include?</h2>
               <p className="mt-4 text-[15.5px] leading-relaxed text-[#56504a]">
-                Juniper positions itself as more than a program: it wraps clinical care in ongoing support. Based on
-                Juniper&apos;s own site, a plan includes:
+                In Juniper&apos;s own words on myjuniper.com, read {READ_ON}, all Juniper programs include:
               </p>
               <ul className="mt-5 grid gap-2.5">
                 {included.map((t) => (
@@ -310,9 +232,11 @@ export default function JuniperPage() {
               </ul>
             </section>
 
-            {/* How it works */}
-            <section id="start" className="mt-12 scroll-mt-24">
-              <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">How it works</h2>
+            <section id="how" className="mt-12 scroll-mt-24">
+              <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">How does Juniper work?</h2>
+              <p className="mt-4 text-[15.5px] leading-relaxed text-[#56504a]">
+                Three stages, all done remotely. Weight-management medicines are prescription-only in Australia.
+              </p>
               <ol className="mt-6 space-y-5">
                 {steps.map((s) => (
                   <li key={s.num} className="flex gap-4">
@@ -326,86 +250,35 @@ export default function JuniperPage() {
                   </li>
                 ))}
               </ol>
-              <div className="mt-7 rounded-xl border border-[#b9e3eb] bg-[#e4f2f5] p-5">
-                <p className="text-sm leading-relaxed text-[#14120f]">
-                  Want to see if Juniper is a fit? The online eligibility check takes a few minutes and commits you to
-                  nothing, and new patients have the initial consultation, valued by Juniper at $89, waived through our link with the code JARREDKFC.
-                </p>
-                <div className="mt-4">
-                  <JuniperCTA label="Start the Juniper eligibility check" loc="start" />
-                </div>
-              </div>
             </section>
 
-            {/* Cost */}
             <section id="cost" className="mt-12 scroll-mt-24">
               <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">How much does Juniper cost?</h2>
               <div className="mt-4 space-y-4 text-[15.5px] leading-relaxed text-[#56504a]">
                 <p>
-                  Juniper runs as a monthly subscription that its own site says covers the program, unlimited
-                  consultations and delivery, with optional 1:1 health coaching as a paid add-on and a 30-day money-back
-                  window. Juniper offers two program options at different price points, so the cost that applies to you is
-                  confirmed inside Juniper&apos;s own flow before you commit to anything.
+                  Juniper says &ldquo;Different pricing options are available and may vary depending on the plan
+                  confirmed with your practitioner.&rdquo; The price that applies to you is set in that consultation,
+                  and 1:1 health coaching is an optional add-on.
                 </p>
                 <p>
-                  New patients who start through our Juniper link have the $89 initial consultation waived, applied with the code JARREDKFC when you use our
-                  link at checkout. It is a no-cost, no-commitment way to talk to a practitioner and find out whether the
-                  program suits you.
+                  JARREDKFC waives the initial consultation, valued at $89, when you start through our link. If your
+                  practitioner determines the program isn&apos;t right for you, Juniper says you receive a full refund.
                 </p>
               </div>
             </section>
 
-            {/* Legit & worth it (review intent) */}
-            <section id="verdict" className="mt-12 scroll-mt-24">
-              <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">Is Juniper legit, and is it worth it?</h2>
-              <div className="mt-4 space-y-4 text-[15.5px] leading-relaxed text-[#56504a]">
-                <p>
-                  On the markers that matter, Juniper is a real clinical service, not a storefront. Applications are
-                  reviewed individually by AHPRA-registered practitioners, some applicants are declined, the inclusions
-                  are published openly, and there is a 30-day money-back window on eligible first orders. It is an
-                  established Australian brand with a 20,000-member patient community behind it.
-                </p>
-                <p>
-                  Whether it is worth it comes down to what you want from a program. Juniper&apos;s real draw is the
-                  wraparound: unlimited follow-ups seven days a week, coaching, an award-winning app and a large
-                  community, rather than a program on its own. Because it runs on an ongoing subscription, the value
-                  tracks how consistently you use it. If you want structure and a whole care team in your corner, that is
-                  where it earns its place; if you would rather manage everything with your own GP, that is a reasonable
-                  choice too.
-                </p>
-              </div>
-              <p className="my-7 border-l-2 border-[#007a95] pl-5 text-[15px] leading-relaxed text-[#56504a]">
-                The waived initial consultation exists for exactly this question: it is a no-commitment way to talk to a
-                practitioner and judge the fit before you pay for anything.
-              </p>
-            </section>
-
-            {/* Bottom line */}
-            <section id="bottom-line" className="mt-14 scroll-mt-24">
-              <div className="nw-card rounded-2xl p-7 sm:p-8">
-                <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">Why Juniper</h2>
-                <p className="mt-4 text-[15.5px] leading-relaxed text-[#56504a]">
-                  Juniper is built for women who want a whole care team in their corner: coaching,
-                  community, an award-winning app, and unlimited follow-ups seven days a week. The waived initial consultation
-                  is the low-stakes way to check whether it fits, with a 30-day money-back window on eligible first orders.
-                </p>
-                <ul className="mt-5 space-y-2">
-                  {[
-                    "Wraparound care: unlimited follow-ups, coaching, app and a 20,000-member community",
-                    "Designed for and marketed to women",
-                    "Registered Australian practitioners; not everyone is approved",
-                    "$89 initial consultation waived with JARREDKFC via our link, no commitment",
-                  ].map((point) => (
-                    <li key={point} className="flex items-start gap-2.5 text-sm text-[#14120f]">
-                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#007a95]" aria-hidden="true" />
-                      {point}
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-7 flex flex-wrap items-center gap-4">
-                  <JuniperCTA label="Start with a free consultation" loc="bottom-line" size="lg" />
-                </div>
-              </div>
+            <section id="alternatives" className="mt-12 scroll-mt-24">
+              <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">Juniper alternatives and comparisons</h2>
+              <ul className="mt-5 grid gap-3 sm:grid-cols-2">
+                {related.map((l) => (
+                  <li key={l.href}>
+                    <Link href={l.href} className="block h-full rounded-xl border border-[#ded8cd] bg-white px-4 py-3 transition-colors hover:border-[#007a95]">
+                      <span className="font-semibold text-[#14120f]">{l.label}</span>
+                      <span className="mt-1 block text-sm leading-relaxed text-[#56504a]">{l.desc}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </section>
 
             {/* FAQ */}
@@ -423,39 +296,25 @@ export default function JuniperPage() {
                 ))}
               </div>
             </section>
-
-            {/* Related */}
-            <section className="mt-12">
-              <h2 className="text-lg font-bold text-[#14120f]">Keep reading</h2>
-              <ul className="mt-3 space-y-2 text-[15px]">
-                <li><Link href="/weight-loss-telehealth-women-australia" className="nw-link">Weight-loss telehealth for women, explained</Link></li>
-                <li><Link href="/weight-loss-telehealth-cost-australia" className="nw-link">What weight-loss telehealth costs</Link></li>
-                <li><Link href="/weight-loss" className="nw-link">The full weight-loss hub</Link></li>
-              </ul>
-            </section>
           </article>
         </div>
 
-        {/* ── Final CTA band ── */}
+        {/* ── Closing CTA ── */}
         <section className="mt-20 overflow-hidden rounded-3xl bg-[#14120f] px-7 py-12 text-center sm:px-12 sm:py-16">
           <h2 className="mx-auto max-w-xl text-3xl font-bold leading-tight text-white sm:text-4xl">
-            See where you stand with Juniper
+            Start with Juniper, initial consultation waived
           </h2>
           <p className="mx-auto mt-4 max-w-md text-[15px] leading-relaxed text-white/70">
-            A few minutes and no obligation. New patients have the $89 initial consultation waived (code JARREDKFC) with an Australian-registered
-            practitioner through our link, and you see the cost before you commit.
+            JARREDKFC through our link waives the initial consultation, valued at $89, for new patients.
           </p>
           <div className="mt-8 flex justify-center">
             <a {...juniperAff} data-cta="final-band" className="nw-btn justify-center !bg-white !text-[#00748e] px-8 py-4 text-base hover:!bg-[#e4f2f5]">
-              Start with a free consultation <ArrowRight className="h-4 w-4" />
+              Continue to Juniper <ArrowRight className="h-4 w-4" />
             </a>
           </div>
           <p className="mx-auto mt-6 max-w-lg text-xs leading-relaxed text-white/60">
-            This post contains affiliate links. If you are a new Juniper patient and make a purchase through these links,
-            I may earn a small commission at no extra cost to you.
-          </p>
-          <p className="mx-auto mt-3 max-w-lg text-xs leading-relaxed text-white/60">
-            Content is general information, not medical advice, and suitability for any program is decided by a registered Australian practitioner. Juniper&apos;s inclusions and pricing are drawn from Juniper&apos;s own site and can change, so confirm current terms before you commit.
+            Content is general information about a service, not medical advice. Juniper&apos;s inclusions and pricing
+            are drawn from Juniper&apos;s own site and can change, so confirm current terms before you commit.
           </p>
         </section>
       {/* Renders nothing until this subject has a third observation. The slot
@@ -464,7 +323,7 @@ export default function JuniperPage() {
 
       </main>
 
-      <StickyCta href={JUNIPER_URL} product="Juniper weight-management program" label="Check eligibility" />
+      <StickyCta href={JUNIPER_URL} product="Juniper weight-management program" label="Get started" />
     </ConsumerShell>
   );
 }

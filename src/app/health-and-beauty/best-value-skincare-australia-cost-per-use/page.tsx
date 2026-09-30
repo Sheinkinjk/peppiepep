@@ -50,7 +50,6 @@ export default function Page() {
       description={seoConfig.skincareCostPerUse.description}
       faqs={faqs}
       related={[
-        { href: "/health-and-beauty/retinol-vs-prescription-strength-australia", label: "Retinol vs prescription-strength" },
         { href: "/health-and-beauty/led-face-mask-comparison-australia", label: "LED face masks" },
         { href: "/health-and-beauty/natural-skincare-australia", label: "Natural vs certified organic" },
         { href: "/health-and-beauty/skincare-quiz", label: "Which routine fits you?" },

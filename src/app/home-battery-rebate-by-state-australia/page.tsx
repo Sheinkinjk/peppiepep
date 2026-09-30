@@ -245,7 +245,7 @@ export default function HomeBatteryRebateByStatePage() {
           <div className="mt-8 flex flex-col items-start gap-3 rounded-2xl border border-[#007a95]/25 bg-[#e4f2f5] px-6 py-5 sm:flex-row sm:items-center sm:justify-between">
             <p className="max-w-md text-[15px] leading-relaxed text-[#14120f]">
               Whichever state you are in, the federal rebate is applied at the point of sale. Through Refer Labs, Apollo
-              Energy Group takes an extra $500 off your quote on top of it, with no code to enter.
+              Energy Group takes an extra $500 off your quote on top of it, applied through our enquiry form. Refer Labs may earn a commission if you request a quote, at no extra cost to you.
             </p>
             <a
               href={APOLLO_ENERGY_LEAD_HREF}

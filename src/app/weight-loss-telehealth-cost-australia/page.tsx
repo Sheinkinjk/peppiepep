@@ -28,15 +28,15 @@ const breadcrumbSchema = {
 const faqs = [
   {
     q: "How much does weight-loss telehealth cost in Australia?",
-    a: "Pricing varies between services and changes over time, so there is no single fixed figure. Cost is usually made up of two parts: a consultation or subscription fee for the telehealth service, and the separate cost of any medicine that is dispensed. The exact amount is confirmed during your consult, once a practitioner has assessed what, if anything, is appropriate for you. This page is general information, not medical or financial advice.",
+    a: "Pricing varies between services and changes over time, so there is no single fixed figure. Services charge in one of two ways: an all-inclusive program fee (Moshy, for example, lists its program as including treatment, practitioner support and delivery), or a consultation fee with anything dispensed billed separately by a pharmacy. The exact amount is confirmed during your consult, once a practitioner has assessed what, if anything, is appropriate for you. This page is general information, not medical or financial advice.",
   },
   {
     q: "How much does Moshy cost?",
-    a: "Moshy advertises its program from $229 a month* on its own site, checked 14 August 2026. That is a starting figure rather than a quote: the total depends on the plan a practitioner considers appropriate for you, and it is confirmed inside Moshy's eligibility flow before you commit to anything. New customers get $120 off their first order through the link on this page, which Moshy states applies to eligible programs with a minimum three-month commitment. *Indicative only and subject to change: view the latest pricing on Moshy's own site before you sign up.",
+    a: "Moshy lists its program price on its own site, and describes the program as all-inclusive: treatment, practitioner support and delivery (read on getmoshy.com.au, 30 September 2026). What you pay depends on the plan a practitioner considers appropriate for you, confirmed before you commit. New customers get $120 off their first order with the code REFERRAL120 through the link on this page, which Moshy states applies to eligible programs with a minimum three-month commitment.",
   },
   {
-    q: "Is the medication included in the telehealth subscription?",
-    a: "Usually not. Most Australian weight-loss telehealth services separate the two: you pay for the service, consult or subscription, and any medicine that is prescribed is billed separately by the pharmacy that dispenses it. This matters when you are comparing services, because a low headline service fee does not include medicine cost. Always read the full cost breakdown before signing up.",
+    q: "Is treatment included in the telehealth subscription?",
+    a: "It depends on the service. Some, such as Moshy, list an all-inclusive program fee covering treatment, support and delivery. Others charge for the consultation and bill anything dispensed separately through a pharmacy. Read each provider's cost breakdown so you compare the full amount.",
   },
   {
     q: "Is weight-loss telehealth covered by Medicare?",
@@ -114,12 +114,11 @@ export default function WeightLossTelehealthCostAustraliaPage() {
               Weight-loss telehealth cost in Australia: how the pricing works
             </h1>
             <p className="mt-5 text-base sm:text-lg leading-relaxed text-[#56504a]">
-              There is no single price, and the reason matters: almost every online weight-management service bills in two
-              parts, a program or subscription fee and the medicine, and the second is usually charged separately by the
-              pharmacy. A service that advertises one number is quoting the first part. Add both, multiply by twelve, and
-              the services become comparable. General information, not medical or financial advice.
+              There is no single price, because services charge in two different ways. Some, such as Moshy, list one
+              all-inclusive program fee covering treatment, support and delivery. Others charge a consultation fee and
+              bill anything dispensed separately through a pharmacy. Compare the full monthly amount, multiplied by twelve. General information, not medical or financial advice.
             </p>
-            <EditorialMeta lastUpdated="2026-08-14" className="mt-5" />
+            <EditorialMeta lastUpdated="2026-09-30" className="mt-5" />
           </header>
 
           {/* Info-only note */}
@@ -142,7 +141,7 @@ export default function WeightLossTelehealthCostAustraliaPage() {
               data-cta="cost-hero"
               className="nw-btn shrink-0 whitespace-nowrap"
             >
-              Check your eligibility on Moshy <ArrowRight className="h-4 w-4" />
+              Continue to Moshy <ArrowRight className="h-4 w-4" />
             </a>
           </div>
           <EarningsBalanceNote earnFrom="Moshy" className="mt-3 max-w-2xl" />
@@ -152,39 +151,35 @@ export default function WeightLossTelehealthCostAustraliaPage() {
 
             <section>
               <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#14120f]">
-                The two parts of the cost
+                The two ways services charge
               </h2>
               <div className="mt-4 space-y-4 text-[15px] leading-relaxed text-[#56504a]">
                 <p>
-                  The most useful thing to understand is that weight-loss telehealth pricing in Australia almost always splits into two
-                  separate parts, and many people only notice the first one when they compare services.
+                  Before comparing prices, check which of these two models a service uses.
                 </p>
                 <div className="grid gap-4 sm:grid-cols-2">
                   <div className="nw-card px-5 py-5">
-                    <h3 className="text-lg font-bold text-[#14120f]">The service fee</h3>
+                    <h3 className="text-lg font-bold text-[#14120f]">All-inclusive program</h3>
                     <p className="mt-2 text-sm leading-relaxed text-[#56504a]">
-                      A consultation fee or an ongoing subscription that covers the practitioner assessment, follow-ups and ongoing
-                      support. Medical telehealth is usually structured as a subscription because weight management is ongoing rather
-                      than a single visit.
+                      One monthly fee covering the practitioner assessment, follow-ups, support and, where appropriate, treatment and
+                      delivery. Moshy lists its program this way.
                     </p>
                   </div>
                   <div className="nw-card px-5 py-5">
-                    <h3 className="text-lg font-bold text-[#14120f]">Any medicine, separately</h3>
+                    <h3 className="text-lg font-bold text-[#14120f]">Consult fee, dispensing separate</h3>
                     <p className="mt-2 text-sm leading-relaxed text-[#56504a]">
-                      If a practitioner assesses that a prescription medicine is appropriate, it is typically billed separately by the
-                      pharmacy that dispenses it. This is not included in the headline service fee, so it is the part that is easiest
-                      to overlook when comparing.
+                      You pay for the consultation, and anything a practitioner decides is appropriate is dispensed and billed
+                      separately by a pharmacy. Add both parts before comparing.
                     </p>
                   </div>
                 </div>
                 <p>
-                  Because of this split, a low advertised service fee does not tell you the full story. When you compare two services,
-                  you are comparing the service fee plus any medicine cost together, and both can change over time.
+                  Compare the full monthly amount under each model, not the headline fee.
                 </p>
                 <p>
                   People often search for an exact Moshy price, and it is a fair thing to want. There is no
                   single fixed figure that applies to everyone. The total depends on what a practitioner assesses as appropriate for
-                  your individual situation, and both service fees and medicine prices move over time.
+                  your individual situation, and prices move over time.
                 </p>
                 <p>
                   The reliable number is the one shown to you inside the Moshy flow itself, after the assessment and before you pay.
@@ -208,7 +203,7 @@ export default function WeightLossTelehealthCostAustraliaPage() {
                 <ul className="ml-1 space-y-3">
                   {[
                     ["Subscription versus one-off", "Medical telehealth usually runs as a recurring subscription that bundles ongoing practitioner support. A one-off consult with a GP is priced differently and may attract a Medicare rebate."],
-                    ["Whether a medicine is involved", "If a practitioner assesses that a prescription medicine is appropriate, that cost sits on top of the service fee. If it is not appropriate for you, that part does not apply."],
+                    ["Whether treatment is in the fee", "On an all-inclusive program, treatment decided by the practitioner is part of the fee. On a consult model, anything dispensed is billed separately by a pharmacy."],
                     ["What support is included", "Some services bundle coaching, check-ins and messaging into the fee. More support generally means a higher service price, which may or may not be worth it for you."],
                     ["Billing cycle and cancellation", "Monthly versus longer billing periods change the headline number. Always check how cancellation works before you commit, not after."],
                     ["Medicare and insurance", "Depending on your circumstances, a consult may attract a rebate, but subscriptions and medicines are typically not fully covered. Coverage is individual."],
@@ -259,7 +254,7 @@ export default function WeightLossTelehealthCostAustraliaPage() {
                 data-cta="cost-footer"
                 className="nw-btn mt-5"
               >
-                Check your eligibility on Moshy <ArrowRight className="h-4 w-4" />
+                Continue to Moshy <ArrowRight className="h-4 w-4" />
               </a>
             </section>
 
@@ -310,7 +305,7 @@ export default function WeightLossTelehealthCostAustraliaPage() {
           </article>
         </div>
       </main>
-      <StickyCta href={MOSHY_URL} product="Moshy weight-loss telehealth" label="Check eligibility" />
+      <StickyCta href={MOSHY_URL} product="Moshy weight-loss telehealth" label="Get started" />
     </ConsumerShell>
   );
 }

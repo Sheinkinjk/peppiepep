@@ -20,7 +20,7 @@ const aff = { href: MOSHY_URL, target: "_blank" as const, rel: "nofollow sponsor
 const faqs = [
   {
     q: "What is the closest alternative to Moshy?",
-    a: "For a lean, practitioner-led weight-management telehealth service in Australia, Moshy has few like-for-like twins. The realistic alternatives are your GP, who can manage the same pathway in person, or a coaching-led program such as Juniper.",
+    a: "For a practitioner-led weight-management telehealth service in Australia, Moshy has few like-for-like twins. The realistic alternatives are your GP, who can manage the same pathway in person, or a coaching-led program such as Juniper.",
   },
   {
     q: "How is Juniper different from Moshy?",
@@ -159,7 +159,7 @@ export default function MoshyAlternativesPage() {
               className="inline-flex items-center gap-2 rounded-xl px-6 py-3 text-sm font-bold text-white transition-all hover:-translate-y-0.5 shadow-lg"
               style={{ background: CYAN, boxShadow: `0 8px 32px ${CYAN}30` }}
             >
-              Check your eligibility on Moshy ($120 off with code REFERRAL120)
+              Continue to Moshy ($120 off with code REFERRAL120)
               <ArrowRight className="h-4 w-4" />
             </a>
             <EarningsBalanceNote earnFromAll={["Moshy", "Juniper"]} className="mt-4 max-w-2xl" />
@@ -198,7 +198,7 @@ export default function MoshyAlternativesPage() {
         </p>
         <p className="text-[#56504a] text-xs mt-4">© 2026 Refer Labs · Australia · <Link href="/guides" className="hover:text-[#56504a]">All guides</Link></p>
       </main>
-      <StickyCta href={MOSHY_URL} product="Moshy weight-loss telehealth" label="Check eligibility" />
+      <StickyCta href={MOSHY_URL} product="Moshy weight-loss telehealth" label="Get started" />
     </ConsumerShell>
   );
 }

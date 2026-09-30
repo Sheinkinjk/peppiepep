@@ -212,7 +212,7 @@ export default function PetsOnMePage() {
               "The annual limit against your realistic worst case, not the average year. One cruciate surgery can consume a $5,000 limit.",
               "Hereditary and congenital conditions, which carry their own sub-limits here and are excluded entirely on many entry policies.",
               "Waiting periods in the PDS, and whether yours are waived because you are switching with 12 months of continuous cover.",
-              "Pre-existing conditions, which are excluded by every Australian pet insurer and are the most common reason a claim is declined.",
+              "Pre-existing conditions: check how the PDS defines and treats them before you buy.",
             ].map((t) => (
               <li key={t} className="flex items-start gap-2.5 text-[15px] leading-relaxed text-[#56504a]">
                 <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#e4f2f5]">

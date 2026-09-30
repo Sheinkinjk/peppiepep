@@ -40,7 +40,7 @@ const webPageSchema = {
     { "@type": "Thing", name: "beehiiv vs Substack 2026" },
     { "@type": "Thing", name: "newsletter monetization" },
     { "@type": "Thing", name: "beehiiv ad network" },
-    { "@type": "Thing", name: "beehiiv 14-day free trial" },
+    { "@type": "Thing", name: "beehiiv free plan" },
     { "@type": "Thing", name: "best newsletter platform 2026" },
   ],
   isPartOf: { "@id": `${SITE_URL}/#website` },
@@ -53,12 +53,12 @@ const softwareSchema = {
   applicationCategory: "WebApplication",
   operatingSystem: "Web",
   description:
-    "Newsletter platform built for growth. Includes a native ad network, referral programme, paid subscriptions, boosts, and advanced analytics. Free plan up to 2,500 subscribers. 14-day trial of paid features.",
+    "Newsletter platform built for growth. Free Launch plan up to 2,500 subscribers with unlimited sends; the ad network, referral program and paid subscriptions come with the paid Scale and Max plans.",
   offers: {
     "@type": "Offer",
     price: "0",
     priceCurrency: "USD",
-    description: "Free plan up to 2,500 subscribers. 14-day trial of paid features. No credit card required for trial.",
+    description: "Free Launch plan up to 2,500 subscribers, no card (beehiiv.com/pricing, read 30 September 2026).",
     availability: "https://schema.org/InStock",
   },
   url: "https://www.beehiiv.com",

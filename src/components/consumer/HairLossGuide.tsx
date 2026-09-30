@@ -70,7 +70,7 @@ function MoshCta({ heading, body, loc }: { heading: string; body: string; loc: s
         <p className="mt-1 text-[14px] leading-relaxed text-[#14120f]">{body}</p>
       </div>
       <a href={MOSH_HAIR_URL} target="_blank" rel="nofollow sponsored" data-cta={`hairloss-${loc}`} className="nw-btn shrink-0 whitespace-nowrap">
-        Start a Mosh assessment <ArrowRight className="h-4 w-4" aria-hidden="true" />
+        Continue to Mosh <ArrowRight className="h-4 w-4" aria-hidden="true" />
       </a>
     </div>
   );
@@ -113,7 +113,7 @@ export default function HairLossGuide({ cfg }: { cfg: HairLossGuideConfig }) {
           <MoshCta
             loc="top"
             heading="Want a practitioner to assess your options?"
-            body="Mosh runs a men's hair-loss assessment online, reviewed by registered Australian practitioners, with treatment delivered if appropriate. Free delivery, and 55% off your first order through our link; you see the plan and price before you commit."
+            body="Mosh runs a men's hair-loss assessment online, reviewed by registered Australian practitioners, who decide whether any treatment is appropriate. 55% off your first order with the code REFERAL55 through our link; you see the plan and price before you commit."
           />
         </div>
 
@@ -142,7 +142,7 @@ export default function HairLossGuide({ cfg }: { cfg: HairLossGuideConfig }) {
           <MoshCta
             loc="bottom"
             heading="Start with a practitioner, not a guess"
-            body="If you want your options assessed properly, Mosh's online consultation is reviewed by a registered Australian practitioner. 55% off your first order through our link; money-back guarantee applies."
+            body="If you want your options assessed properly, Mosh's online consultation is reviewed by a registered Australian practitioner. 55% off a new customer's first order with REFERAL55; Mosh's 180-day money-back guarantee applies to quarterly hair programs, under its terms."
           />
         </div>
 

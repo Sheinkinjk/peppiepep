@@ -38,7 +38,7 @@ const STATS = [
 const WHY = [
   { icon: Wrench, h: "Custom-engineered, not a package", p: "Every system is sized from your real usage data, not sold as a one-size box. You get a system that fits your home, not a sales target." },
   { icon: HandCoins, h: "Transparent pricing & finance", p: "Clear pricing with finance options through Australian lenders, the federal rebate applied at the point of sale, and no surprises." },
-  { icon: ShieldCheck, h: "No high-pressure sales", p: "Just advice. Apollo is SAA-accredited (Electrical Licence 400672) with a 10-year battery warranty and 12 years of installer experience." },
+  { icon: ShieldCheck, h: "No high-pressure sales", p: "Just advice. Apollo is SAA-accredited (Electrical Licence 400672C) with a 10-year battery warranty and 12 years of installer experience." },
 ];
 
 const STEPS = [
@@ -58,7 +58,7 @@ const FAQS = [
   },
   {
     q: "Is Apollo Energy Group accredited?",
-    a: "Yes. Apollo Energy Group is a Sydney-based, SAA-accredited installer (Electrical Licence 400672) offering a 10-year battery warranty. Apollo's own site cites a 4.9/5 Google rating, around 12 years of installer experience, and describes itself as SBC's #1 NSW battery installer.",
+    a: "Yes. Apollo Energy Group is a Sydney-based, SAA-accredited installer (Electrical Licence 400672C) offering a 10-year battery warranty. Apollo's own site cites a 4.9/5 Google rating, 12 years of installer experience, and says it was voted the #1 NSW retrofit battery team.",
   },
   {
     q: "Do I have to buy anything to register my interest?",
@@ -152,7 +152,7 @@ export default function ApolloEoiPage() {
                 </span>
                 <p className="text-[13px] leading-snug text-[#56504a]">
                   In partnership with <span className="font-semibold text-[#14120f]">Apollo Energy Group</span>. On Apollo&apos;s
-                  own site, voted SBC&apos;s #1 NSW battery installer.
+                  own site, voted the #1 NSW retrofit battery team. Refer Labs may earn a commission if you request a quote, at no extra cost to you.
                 </p>
               </div>
             </div>

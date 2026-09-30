@@ -7,19 +7,23 @@ export const landingiConfig: AffiliatePageConfig = {
   badgeText: "Landing pages",
   eyebrow: "Landing pages",
   affiliateUrl: LANDINGI_URL,
+  // Plans read on landingi.com/pricing, rendered in a browser, 30 September
+  // 2026, in its default view. The yearly toggle did not respond to a scripted
+  // click, so only the default-view figures are stated.
   quickAnswer:
-    "Landingi is a no-code landing-page builder for marketers: create, publish and A/B test campaign and lead-generation pages without a developer, using a large template library and AI assistance. There is no free plan, but you get a 14-day free trial; paid plans start at US$24/month.",
+    "Landingi is a no-code landing-page builder with AI page generation and A/B testing. Its Build plan is listed at US$29 a month for 10 active landing pages and 2,000 visits a month, every plan starts with a 14-day free trial, and there is no free plan (landingi.com/pricing, read 30 September 2026).",
   offer: "14-day free trial",
+  offerCheckedOn: "2026-09-30",
   atAGlance: [
     { k: "Type", v: "Landing-page builder" },
     { k: "Best for", v: "Marketers & agencies" },
-    { k: "Pricing", v: "No free plan; from US$24/mo" },
+    { k: "Pricing", v: "No free plan; Build US$29/mo (read 30 Sep 2026)" },
   ],
   hero: {
     h1Prefix: "Landingi:",
     h1Highlight: "no-code landing pages that convert",
     subheading:
-      "Build, publish and test campaign and lead-capture pages from a large template library, no developer needed, then optimise them with A/B testing and analytics to lift conversions.",
+      "Landingi's Build plan is listed at US$29 a month after a 14-day free trial, and Landingi says paying yearly saves more than two months (landingi.com/pricing, read 30 September 2026). It builds, publishes and A/B tests campaign and lead-capture pages without a developer.",
     trustBullets: ["14-day free trial","No code, large template library","Built-in A/B testing"],
   },
   banner: {
@@ -28,6 +32,15 @@ export const landingiConfig: AffiliatePageConfig = {
     buttonLabel: "Try Landingi free",
   },
   sections: [
+    {
+      heading: "How much does Landingi cost?",
+      paragraphs: [
+        "Read on landingi.com/pricing on 30 September 2026, in the page's default view: Build is US$29 a month for 10 active landing pages, 2,000 visits a month and one custom domain. Optimize is US$149 a month for 100 pages, 30,000 visits and server-side A/B testing, and Landingi was showing a first-month price of US$29 on it. Scale is US$299 a month for unlimited pages and client sub-accounts, and Enterprise starts at US$1,499.",
+        "Every plan starts with a 14-day free trial, and Landingi says paying yearly saves more than two months. There is no free plan. Neither Landingi nor Refer Labs has a discount code to offer.",
+      ],
+      hasCta: true,
+      ctaText: "Try Landingi free",
+    },
     {
       heading: "What Landingi is for",
       paragraphs: [
@@ -50,8 +63,7 @@ export const landingiConfig: AffiliatePageConfig = {
   ],
   whyUseThis: ["A large library of conversion-focused templates","No-code editor to publish pages fast","Built-in A/B testing and analytics","Forms, pop-ups and marketing-tool integrations"],
   faqs: [
-    { q: "Is there a Landingi free trial or discount code?", a: "Landingi does not have a free-forever plan, but it offers a 14-day free trial so you can build and publish pages before paying. It does not usually run a public discount code; starting through our referral link takes you to the current trial and plans, at no extra cost to you." },
-    { q: "How much does Landingi cost?", a: "Paid plans start at US$24/month for the entry tier (a set number of pages and monthly visits), with higher tiers like Optimize US$119/month for more pages, traffic and features. Annual billing lowers the rate. Check the current plans for your traffic before committing." },
+    { q: "Is there a Landingi free trial or discount code?", a: "There is a 14-day free trial on every plan and no code. Landingi runs no public discount code, and there is no Refer Labs code either; on 30 September 2026 its own pricing page showed a first-month price of US$29 on the Optimize plan, open to anyone." },
     { q: "Landingi vs a website builder, which do I need?", a: "A website builder is for your whole site. Landingi is for standalone landing pages built to convert a specific campaign or offer, with A/B testing and lead capture front and centre. If your goal is capturing leads from ads or campaigns, a landing-page tool usually outperforms a general site builder." },
     { q: "Do I need to code to use Landingi?", a: "No. You build and edit pages in a drag-and-drop editor and publish them without touching code. Templates give you a head start, and integrations connect the page to your email and marketing tools." },
   ],

@@ -60,7 +60,7 @@ const softwareSchema = {
     "@type": "Offer",
     price: "49",
     priceCurrency: "USD",
-    description: "No free plan; paid from $49/user/month with a 14-day free trial.",
+    description: "Email Volume plan from US$49 per user a month billed annually, with a 14-day free trial (reply.io/pricing, read 30 September 2026).",
     availability: "https://schema.org/InStock",
   },
   url: "https://reply.io",

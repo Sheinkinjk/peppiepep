@@ -10,7 +10,7 @@ export const swipePagesConfig: AffiliatePageConfig = {
   affiliateUrl: SWIPE_PAGES_URL,
 
   quickAnswer:
-    "Swipe Pages is a landing page builder that creates AMP pages loading in under one second, with A/B testing and dynamic text replacement. It is best for paid-ads campaigns where load speed drives conversions. It offers a 14-day free trial with no credit card via the link on this page.",
+    "Swipe Pages is an AMP landing page builder for paid-ad campaigns, with A/B testing and dynamic text replacement. Swipe Pages runs no public discount code, and there is no Refer Labs code either; its published offers are a full-featured 14-day free trial with no credit card and up to 25% off for annual billing (swipepages.com/pricing, read 30 September 2026). Its pricing page lists no lifetime plan.",
 
   banner: {
     heading: "Swipe Pages, 14-Day Free Trial, No Credit Card",
@@ -38,7 +38,7 @@ export const swipePagesConfig: AffiliatePageConfig = {
     h1Prefix: "Swipe Pages:",
     h1Highlight: "The Fastest Landing Page Builder for Paid Ads",
     subheading:
-      "Swipe Pages builds AMP landing pages that load in under a second, with A/B testing and dynamic text replacement. Speed is the point: on paid traffic a slow page loses the click before anyone reads it. The trial runs 14 days.",
+      "Swipe Pages is an AMP landing page builder for paid-ad campaigns, and it has no discount code; what it publishes is a full-featured 14-day free trial with no credit card and up to 25% off annual billing (swipepages.com/pricing, read 30 September 2026). Speed is the point: on paid traffic a slow page loses the click before anyone reads it.",
     trustBullets: [
       "Direct access to Swipe Pages via our referral link",
       "Covers Swipe Pages pricing, free trial, and plan tiers",
@@ -50,10 +50,10 @@ export const swipePagesConfig: AffiliatePageConfig = {
 
   sections: [
     {
-      heading: "Access Swipe Pages",
+      heading: "Is there a Swipe Pages discount code or lifetime deal?",
       paragraphs: [
-        "This page is for people searching for a Swipe Pages discount code, Swipe Pages review, Swipe Pages promo code, or how Swipe Pages compares to other landing page builders. Click any button on this page to go directly to Swipe Pages via our referral link and access the current free trial offer.",
-        "No information is required on this page before you arrive. Click through to explore Swipe Pages, review the pricing, and start building landing pages with the free trial.",
+        "No to both, as of 30 September 2026. Swipe Pages publishes no discount or promo code and Refer Labs holds none, and its pricing page lists three subscription plans (Startup, Marketer and Agency) with no lifetime option.",
+        "The savings Swipe Pages does publish are a full-featured 14-day free trial with no credit card, and up to 25% off for paying annually rather than monthly. Our link goes to the same sign-up and adds no code.",
       ],
       hasCta: true,
       ctaText: "Start the Swipe Pages Free Trial",
@@ -69,9 +69,8 @@ export const swipePagesConfig: AffiliatePageConfig = {
     {
       heading: "Swipe Pages Pricing and Free Trial",
       paragraphs: [
-        "Swipe Pages offers a 14-day free trial on all paid plans, giving you full access to the platform before committing. No credit card is required to start. The trial lets you build and publish landing pages, test the AMP functionality, run A/B tests, and connect your domain, giving you a genuine evaluation window.",
-        "Paid Swipe Pages plans, Startup, Marketer, and Agency, are billed monthly or annually, with annual billing offering a meaningful discount on the monthly rate. Plans differ in the number of workspaces, custom domains, team seats, and monthly unique visitors allowed. The Agency plan supports multiple client workspaces, making it the right choice for marketing agencies managing multiple accounts.",
-        "If you are searching for a Swipe Pages discount code, Swipe Pages promo code, or the best current Swipe Pages offer, our referral link gives you direct access to the Swipe Pages sign-up page and the current trial. Click through to check live pricing and plan details.",
+        "Swipe Pages offers a full-featured 14-day free trial with no credit card required, per its pricing page on 30 September 2026. The trial lets you build and publish landing pages, test the AMP functionality and connect your domain before choosing a plan.",
+        "Paid plans, Startup, Marketer and Agency, are billed monthly or annually, and Swipe Pages says annual billing saves up to 25%. Plans differ by custom domains (1, 5 or unlimited), monthly traffic (20,000, 50,000 or 500,000), team members and client sub-accounts, and server-side A/B testing and dynamic text replacement start on Marketer. Current prices are on Swipe Pages' own pricing page.",
       ],
     },
     {
@@ -137,10 +136,6 @@ export const swipePagesConfig: AffiliatePageConfig = {
       a: "Yes. Swipe Pages offers a 14-day free trial on all paid plans. No credit card is required to start. The trial gives you full platform access including AMP landing page building, A/B testing, custom domain connection, and integrations. Click any button on this page to start the trial.",
     },
     {
-      q: "Is there a Swipe Pages discount code or promo code?",
-      a: "Swipe Pages does not always publish a publicly available discount code. Our referral link gives you direct access to the Swipe Pages sign-up page and any current offer available. Click any button on this page to continue to Swipe Pages.",
-    },
-    {
       q: "What makes Swipe Pages different from other landing page builders?",
       a: "Swipe Pages is built specifically around AMP (Accelerated Mobile Pages) technology, which enables mobile landing pages to load in under one second. For businesses running paid ad campaigns, faster mobile load times directly reduce bounce rates and improve conversion rates. This focus on page speed for ad campaign performance is Swipe Pages' primary differentiator from general landing page builders.",
     },
@@ -173,6 +168,7 @@ export const swipePagesConfig: AffiliatePageConfig = {
   ],
 
   relatedLinks: [
+    { href: "/alidrop", label: "AliDrop", desc: "Source and fulfil dropshipping products for the store your ad pages sell." },
     {
       href: "/best-website-builder",
       label: "Best Website Builder 2026",
@@ -186,7 +182,7 @@ export const swipePagesConfig: AffiliatePageConfig = {
     {
       href: "/carrd",
       label: "Carrd, Free Website Builder",
-      desc: "Free plan forever, Pro from $19/year. Best for portfolios, link-in-bio, and simple sites.",
+      desc: "Free plan forever; Pro from US$9 a year, US$19 with a custom domain (30 September 2026). Best for portfolios, link-in-bio and simple sites.",
     },
     {
       href: "/guides",

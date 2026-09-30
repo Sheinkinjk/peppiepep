@@ -11,9 +11,13 @@ export const superfiliateConfig: AffiliatePageConfig = {
   // Read off Superfiliate's own partner landing page, 20 August 2026:
   // "Enjoy 15% off your monthly Superfiliate SaaS fee!"
   offer: "15% off your monthly Superfiliate SaaS fee",
+  // Partner page re-read 30 September 2026: the 15% line is unchanged. The
+  // same day superfiliate.com showed no price anywhere, its /pricing path
+  // returned 404, and every call to action was "Book demo".
+  offerCheckedOn: "2026-09-30",
 
   quickAnswer:
-    "Through the link on this page, new subscribers get 15% off their monthly Superfiliate SaaS fee. Superfiliate is a creator-led growth platform that helps e-commerce and DTC brands run affiliate, referral and creator programs in one place. Each affiliate or creator gets a personalised landing page and custom links, with rewards, tracking and integrations into your store. It is a tool for brands running programs, not for individual affiliates. Pricing is otherwise quoted per brand, so book a demo to scope it.",
+    "Superfiliate publishes no price list: pricing is quoted per brand after a demo, and superfiliate.com showed no plan prices when we checked on 30 September 2026. Through the link on this page, new subscribers get 15% off their monthly Superfiliate SaaS fee. Superfiliate is a creator-led growth platform for e-commerce and DTC brands running affiliate, referral and creator programs, with a personalised landing page for each creator.",
 
   banner: {
     heading: "Superfiliate: 15% Off Your Monthly Fee",
@@ -26,7 +30,7 @@ export const superfiliateConfig: AffiliatePageConfig = {
     { k: "What it is", v: "Affiliate, referral & creator program platform" },
     { k: "Who it's for", v: "E-commerce and DTC brands (not affiliates)" },
     { k: "Stand-out", v: "Personalised landing pages per creator" },
-    { k: "Price", v: "Custom pricing, quoted via demo (+ success fee)" },
+    { k: "Price", v: "Quoted per brand after a demo; no public price list (checked 30 Sep 2026)" },
   ],
   trustStrip: [
     "Affiliate, referral and creator programs in one platform",
@@ -46,7 +50,7 @@ export const superfiliateConfig: AffiliatePageConfig = {
     h1Prefix: "Superfiliate discount:",
     h1Highlight: "15% off the monthly fee on the creator-led platform",
     subheading:
-      "Superfiliate runs affiliate, referral and creator programs for e-commerce brands in one place, giving each creator their own landing page rather than a bare link. New subscribers get 15% off the monthly SaaS fee through the link on this page.",
+      "Superfiliate does not publish its pricing: each brand gets a quote after a demo, and superfiliate.com listed no plan prices when we checked on 30 September 2026. New subscribers get 15% off the monthly SaaS fee through the link on this page. Superfiliate runs affiliate, referral and creator programs for e-commerce brands, giving each creator their own landing page.",
     trustBullets: [
       "Direct access to Superfiliate",
       "Covers what Superfiliate does and who it suits",
@@ -58,10 +62,10 @@ export const superfiliateConfig: AffiliatePageConfig = {
 
   sections: [
     {
-      heading: "Access Superfiliate",
+      heading: "How much does Superfiliate cost?",
       paragraphs: [
-        "If your brand is looking at Superfiliate to run its affiliate, referral and creator programs, this page covers what it does, how the creator-led model works, and how to get pricing, then links straight through to Superfiliate.",
-        "Any button on the page takes you straight to Superfiliate, with no details needed here first.",
+        "Superfiliate does not publish a price. On 30 September 2026 its site carried no plan prices, the superfiliate.com/pricing address returned a 404, and every call to action was \"Book demo\", so the only way to a figure is a quote scoped to your brand. Any Superfiliate price you see quoted on a third-party site is not one Superfiliate publishes.",
+        "New subscribers get 15% off the monthly Superfiliate SaaS fee through the link on this page. When you compare the quote against other affiliate platforms, ask what the monthly fee covers and whether any per-order or success-based fee applies, so the two numbers are comparable.",
       ],
       hasCta: true,
       ctaText: "See Superfiliate",
@@ -75,10 +79,10 @@ export const superfiliateConfig: AffiliatePageConfig = {
       ],
     },
     {
-      heading: "Who Superfiliate is best for, and pricing",
+      heading: "Who Superfiliate is best for",
       paragraphs: [
         "Superfiliate suits e-commerce and DTC brands, typically on platforms like Shopify, that want to run affiliate, referral or creator programs with a more personalised, on-brand experience than a shared coupon. If word-of-mouth and creators are a real channel for you, that is the fit.",
-        "Superfiliate does not publish standard pricing; it is quoted per brand based on your needs. So rather than a plan page, the path is to book a demo and get current terms. Treat any figure you see elsewhere as unverified, and confirm directly with the provider.",
+        "Its site lists integrations with Shopify, Meta ads, TikTok Shop and YouTube, and describes creator payment models of a flat fee, commission or any combination, which matters if you pay creators in more than one way.",
       ],
     },
   ],
@@ -106,10 +110,6 @@ export const superfiliateConfig: AffiliatePageConfig = {
     {
       q: "What is Superfiliate?",
       a: "Superfiliate is a creator-led growth platform for e-commerce and DTC brands to run affiliate, referral and creator programs in one place. Each partner gets a personalised landing page and custom links, with rewards, tracking and store integrations. It is a tool for brands running programs, not for individual affiliates.",
-    },
-    {
-      q: "How much does Superfiliate cost?",
-      a: "Superfiliate does not publish standard public pricing; it is quoted per brand based on your needs. The practical way to get current pricing is to book a demo with the provider. Treat any figure quoted elsewhere as unverified.",
     },
     {
       q: "Is Superfiliate for affiliates or for brands?",

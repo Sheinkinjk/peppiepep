@@ -69,15 +69,15 @@ const faqs = [
   },
   {
     q: "Are Knose and PetsOnMe underwritten by the same company?",
-    a: "Yes. Both name Pacific International Insurance Pty Ltd (ABN 83 169 311 193, AFSL 523921) as the underwriter, so choosing between them is a choice between two products carried by the same insurer rather than a spread across two. It does not make either a worse policy, and the cover levels, waiting periods and excess options still differ, but it is worth knowing if you thought you were comparing unrelated companies. Refer Labs earns a commission from both, which is why we state it rather than leave it out.",
+    a: "Yes. Both name Pacific International Insurance Pty Ltd (ABN 83 169 311 193, AFSL 523921) as the underwriter, so choosing between them is a choice between two products carried by the same insurer rather than a spread across two. It does not make either a worse policy, and the cover levels, waiting periods and excess options still differ, but it is worth knowing if you thought you were comparing unrelated companies. Refer Labs earns a commission from both.",
   },
   {
     q: "What is the best pet insurance in Australia?",
-    a: "There is no single best policy, and any page that names one without knowing your pet is guessing. The right cover depends on your pet's breed and age, whether hereditary conditions are a realistic risk, the annual limit you would need in a bad year, and the excess you could absorb on the day. What you can do is compare on the same six things every time: benefit percentage, annual limit, hereditary and congenital cover, waiting periods, excess, and what is excluded. We compare PetsOnMe and Knose, and we publish no star ratings of our own.",
+    a: "There is no single best policy. The right cover depends on your pet's breed and age, whether hereditary conditions are a realistic risk, the annual limit you would need in a bad year, and the excess you could absorb on the day. What you can do is compare on the same six things every time: benefit percentage, annual limit, hereditary and congenital cover, waiting periods, excess, and what is excluded. We compare PetsOnMe and Knose, and we publish no star ratings of our own.",
   },
   {
     q: "Does Refer Labs rank pet insurers?",
-    a: "No, and we will not invent a ranking. We cover two providers, one of which publishes its cover levels and one of which does not, so a like-for-like table would tell you less than it appears to. We rank the decision criteria instead, because that is the part you can apply to your own pet. Refer Labs is not an insurer, broker or financial adviser.",
+    a: "No. We cover two providers, and neither publishes premiums, which depend on your pet. We set out the decision criteria instead, because that is the part you can apply to your own pet. Refer Labs is not an insurer, broker or financial adviser.",
   },
   {
     q: "How much does pet insurance cost in Australia?",
@@ -164,7 +164,7 @@ export default function BestPetInsuranceAustraliaPage() {
           <h2 className="text-xl font-bold text-[#14120f] sm:text-2xl">What is the best pet insurance in Australia?</h2>
           <div className="mt-4 rounded-xl border border-[#b9e3eb] bg-[#e4f2f5] px-6 py-5">
             <p className="text-[15px] leading-relaxed text-[#14120f]">
-              There is no single best policy, and a page that names one without knowing your pet is guessing. What
+              There is no single best policy. What
               decides it is your pet&apos;s breed and age, whether hereditary conditions are a realistic risk, the
               annual limit you would need in a bad year, and the excess you could absorb on the day. Compare on the same
               six things every time: benefit percentage, annual limit, hereditary and congenital cover, waiting periods,
@@ -197,10 +197,9 @@ export default function BestPetInsuranceAustraliaPage() {
         <section className="mt-14">
           <h2 className="text-xl font-bold text-[#14120f] sm:text-2xl">The providers we cover</h2>
           <p className="mt-3 text-[15px] leading-relaxed text-[#56504a]">
-            Two, both Australian, and they differ in ways that matter. On the published numbers Knose pays a higher
-            share of the bill and carries no sub-limits, while PetsOnMe sets out three clearly-tiered plans with
-            sub-limits on hereditary and dental cover. Neither is better in the abstract, because the right one depends
-            on your pet and what you would claim for. Every figure below is from each provider&apos;s own site.
+            Two Australian providers. Knose offers 70%, 80% or 90% of eligible vet bills with no sub-limits; PetsOnMe
+            pays 80% across three tiered plans, with limits on hereditary and dental cover. Which suits you depends on your
+            pet and what you would claim for. Every figure below is from each provider&apos;s own site.
           </p>
           <div className="mt-6 grid gap-5">
             {providers.map((p) => (
@@ -272,8 +271,7 @@ export default function BestPetInsuranceAustraliaPage() {
               Neither Knose nor PetsOnMe appears on PetSure&apos;s partner list. Both are underwritten by Pacific
               International Insurance Pty Ltd (ABN 83 169 311 193, AFSL 523921), so they sit outside the PetSure group,
               but they also sit alongside each other. If you are weighing Knose against PetsOnMe, you are choosing
-              between two products carried by the same insurer, not diversifying across two. We earn from both, and
-              that is exactly why it is stated here rather than left out.
+              between two products carried by the same insurer, not diversifying across two. Refer Labs earns from both.
             </p>
             <p className="mt-3 text-[13px] leading-relaxed text-[#56504a]">
               Read off PetSure&apos;s, Knose&apos;s and PetsOnMe&apos;s own disclosure statements on 21 August 2026. The{" "}
