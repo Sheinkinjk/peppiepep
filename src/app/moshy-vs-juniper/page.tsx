@@ -28,7 +28,7 @@ const providers: PairProvider[] = [
     bestIf: "Best if you want a focused clinical pathway and a fast start.",
     points: [
       "Free online eligibility check, then a practitioner review",
-      "Subscription with delivery if a plan is appropriate",
+      "Monthly subscription program",
       "Mosh's sister brand, also covering hair loss and skin care",
     ],
     offer: { text: "$120 off your first order", code: "REFERRAL120" },

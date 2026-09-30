@@ -87,7 +87,7 @@ export default function MoshyLanding() {
                   ["What it is", "Australian weight-management telehealth"],
                   ["For", "Anyone eligible seeking a clinically-supervised program"],
                   ["Format", "Online eligibility → practitioner review → delivery"],
-                  ["Medication", "Treatment access if clinically appropriate"],
+                  ["Assessment", "Registered practitioner review"],
                   ["Pricing", "Subscription, confirmed in the consult"],
                   ["Discount code", "REFERRAL120, for $120 off your first order, via our link"],
                 ].map(([k, v]) => (
@@ -205,8 +205,7 @@ export default function MoshyLanding() {
                 <p>
                   Moshy is a clinically-led Australian telehealth service, best known for its weight-management program
                   and open to anyone eligible. You complete a health questionnaire online, a registered Australian
-                  practitioner reviews your case, and if it&apos;s appropriate, you continue on a subscription with treatment
-                  delivered to your door. There&apos;s no in-person GP appointment to book to get started.
+                  practitioner reviews your case and decides whether any treatment is appropriate for you. There&apos;s no in-person GP appointment to book to get started.
                 </p>
                 <p>
                   It exists because a lot of people simply won&apos;t make a GP appointment for weight. The online flow removes
@@ -233,11 +232,10 @@ export default function MoshyLanding() {
                   up front is a regulatory one.
                 </p>
                 <p>
-                  In Australia these medications are{" "}
-                  <strong className="font-semibold text-[#14120f]">prescription-only</strong>. A platform like Moshy can
-                  connect you with a registered practitioner who may prescribe one <em>only if</em> they judge it clinically
-                  appropriate after assessing you individually. No platform can promise you a specific medication before that
-                  consultation, so be cautious of any that implies otherwise. This is information, not medical advice or a
+                  In Australia weight-management medicines are{" "}
+                  <strong className="font-semibold text-[#14120f]">prescription-only</strong>, and any treatment is decided
+                  by a registered practitioner, only where clinically appropriate, after assessing you individually. No
+                  platform can promise a specific treatment before that consultation, so be cautious of any that implies otherwise. This is information, not medical advice or a
                   recommendation to use any medicine.
                 </p>
               </div>
@@ -274,9 +272,7 @@ export default function MoshyLanding() {
               <div className="nw-card rounded-2xl p-7 sm:p-8">
                 <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">Should you use Moshy?</h2>
                 <p className="mt-4 text-[15.5px] leading-relaxed text-[#56504a]">
-                  As a service, Moshy is a credible, well-run option: the online process is fast, the
-                  practitioner review is real, and it is transparent that any prescription medication is prescription-only
-                  and assessed individually. Whether it is appropriate for you is a decision for you and a registered
+                  The online process is fast, the practitioner review is real, and not everyone who applies is accepted. Whether it is appropriate for you is a decision for you and a registered
                   practitioner. This page is information about the service, not medical advice.
                 </p>
                 <ul className="mt-5 space-y-2">
@@ -344,7 +340,7 @@ export default function MoshyLanding() {
 
       </main>
 
-      <StickyCta href={MOSHY_URL} product="Moshy · weight-loss telehealth" label="Check eligibility" />
+      <StickyCta href={MOSHY_URL} product="Moshy · weight-loss telehealth" label="Get started" />
     </ConsumerShell>
   );
 }

@@ -22,7 +22,7 @@ export const moshyConfig: AffiliatePageConfig = {
     h1Prefix: "Moshy Discount Code Australia 2026:",
     h1Highlight: "Referral Link, Review & Eligibility Guide",
     subheading:
-      "Looking for a Moshy discount code, promo code, or referral link? This page gives you direct access to the current Moshy referral offer and covers the eligibility process, cost, how treatment access works, and how Moshy compares to Juniper.",
+      "Looking for a Moshy discount code, promo code, or referral link? This page gives you direct access to the current Moshy referral offer and covers the eligibility process, cost, how the assessment works, and how Moshy compares to Juniper.",
     trustBullets: [
       "Code REFERRAL120, applied automatically via our link",
       "Covers Moshy weight loss cost and subscription pricing",
@@ -56,7 +56,7 @@ export const moshyConfig: AffiliatePageConfig = {
       heading: "Treatment and eligibility",
       paragraphs: [
         "Moshy is one of the most searched Australian telehealth platforms in connection with practitioner-assessed weight management. The most important thing to understand up front is a regulatory fact, not a sales pitch.",
-        "In Australia, weight-management medicines are prescription-only. A telehealth platform like Moshy can facilitate access to an assessment with a registered Australian practitioner who, if they determine it is clinically appropriate, may prescribe. Moshy does not advertise which specific medications are available - this is discussed only as part of the clinical consultation after eligibility is assessed.",
+        "In Australia, weight-management medicines are prescription-only. Moshy runs an online assessment with a registered Australian practitioner, who decides whether any treatment is appropriate for you. Moshy does not advertise specific treatments; those are discussed only in the clinical consultation.",
         "No platform can guarantee access to any specific medication before the consultation, and suitability is assessed individually. This is information about the service, not medical advice or a recommendation to use any medicine.",
       ],
       hasCta: true,
@@ -80,7 +80,7 @@ export const moshyConfig: AffiliatePageConfig = {
         "In terms of which platform is 'better' for weight loss, this is not a meaningful comparison at a general level. Outcomes from weight management programmes depend on the individual, adherence, clinical suitability for specific treatments, and lifestyle factors. The right starting point is completing the eligibility process with whichever platform matches the kind of support you want and your health profile.",
       ],
       hasCta: true,
-      ctaText: "Check Eligibility with Moshy",
+      ctaText: "Start with Moshy",
     },
     {
       heading: "Moshy Codes & How They Work",
@@ -117,7 +117,7 @@ export const moshyConfig: AffiliatePageConfig = {
 
   whyUseThis: [
     "Direct access to the current Moshy referral link - no outdated or expired codes",
-    "Covers Moshy pricing, treatment access, and what to expect from the eligibility process",
+    "Covers Moshy pricing, the assessment, and what to expect from the eligibility process",
     "Moshy vs Juniper comparison in plain terms",
     "Built for Australian users - links to the AU Moshy platform only",
     "Medical disclaimers throughout - no misleading health claims",
@@ -152,7 +152,7 @@ export const moshyConfig: AffiliatePageConfig = {
     },
     {
       q: "How does Moshy handle treatment and eligibility in Australia?",
-      a: "Moshy can facilitate access to a clinical assessment with an Australian-registered practitioner who may prescribe if they consider it clinically appropriate. Weight-management medicines are prescription-only in Australia and access depends entirely on individual clinical suitability. Moshy does not advertise which specific medications are available prior to the consultation. This page does not constitute medical advice.",
+      a: "Moshy runs an online assessment with an Australian-registered practitioner, who decides whether any treatment is appropriate for you. Weight-management medicines are prescription-only in Australia. Moshy does not advertise specific treatments before the consultation. This page does not constitute medical advice.",
     },
     {
       q: "Is Moshy available in all Australian states?",
@@ -203,7 +203,7 @@ export const moshyConfig: AffiliatePageConfig = {
   ],
 
   ctas: {
-    primary: "Check Eligibility with Moshy",
+    primary: "Start with Moshy",
     secondary: "Go to Moshy",
     midHeading: "Ready to Start the Moshy Eligibility Process?",
     midBody:

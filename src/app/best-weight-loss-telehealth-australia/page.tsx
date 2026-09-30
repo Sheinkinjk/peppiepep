@@ -47,11 +47,11 @@ const itemListSchema = {
   "@context": "https://schema.org",
   "@type": "ItemList",
   name: "Best Weight Loss Telehealth Platforms Australia 2026",
-  description: "In-depth comparison of Australian weight loss telehealth platforms: Moshy and Juniper. Treatment access, eligibility process and who each platform suits.",
+  description: "Comparison of Australian weight loss telehealth platforms Moshy and Juniper: how each assesses you, what support is included, and who each suits.",
   numberOfItems: 2,
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Moshy", description: "Australian clinically-led telehealth weight management platform, open to anyone eligible. Online eligibility questionnaire, practitioner review, and treatment access where clinically appropriate. Subscription with home delivery.", url: `${SITE_URL}/moshy` },
-    { "@type": "ListItem", position: 2, name: "Juniper", description: "Australian weight management program for women. Combines a medical program with health coaching and ongoing practitioner support. Premium subscription model.", url: `${SITE_URL}/juniper` },
+    { "@type": "ListItem", position: 1, name: "Moshy", description: "Australian clinically-led telehealth weight management platform. Online questionnaire and practitioner review; any treatment is decided by the practitioner. Subscription.", url: `${SITE_URL}/moshy` },
+    { "@type": "ListItem", position: 2, name: "Juniper", description: "Australian weight management program for women. Combines practitioner-led care with health coaching and ongoing support. Subscription.", url: `${SITE_URL}/juniper` },
   ],
 };
 
@@ -85,8 +85,8 @@ const FAQS: { q: string; a: string }[] = [
                 // pages (GSC, 90 days), the pair page converting 2.1% to this one's
                 // 1.4%. The head-to-head is linked from the answer section instead.
                 {
-                  q: "How do these platforms handle treatment access?",
-                  a: "Both Moshy and Juniper operate practitioner-supervised weight-management pathways that can involve treatment that a registered practitioner assesses as appropriate. Weight-management medicines are prescription-only in Australia and are prescribed only after an individual assessment by a registered practitioner, who decides suitability. Whether any specific medicine is appropriate is a clinical decision, not something a platform promises in advance, and not everyone who applies is prescribed medication. This page does not constitute medical advice.",
+                  q: "How do these platforms assess you?",
+                  a: "Both run practitioner-supervised weight-management programs: you complete an online questionnaire, and a registered practitioner assesses you individually and decides whether any treatment is appropriate. Weight-management medicines are prescription-only in Australia, neither platform promises a specific treatment in advance, and not everyone who applies is accepted.",
                 },
                 {
                   q: "Are these platforms available across all of Australia?",
@@ -303,11 +303,11 @@ const platforms: PlatformCardProps[] = [
     ],
     cons: [
       "Lean clinical focus, no built-in coaching program",
-      "Not all applicants are eligible for medication",
+      "Not every applicant is accepted",
     ],
     affUrl: MOSHY_URL,
     isAffiliate: true,
-    ctaLabel: "Check Eligibility with Moshy",
+    ctaLabel: "Start with Moshy",
     internalUrl: "/moshy",
     reviewLabel: "Full Moshy review & current offer",
   },
@@ -420,7 +420,7 @@ export default function BestWeightLossTelehealthPage() {
                 offerText: "The initial consultation is waived with the code JARREDKFC, which Juniper values at $89. Nothing comes off the program itself.",
                 offerNote: "Confirmed from Juniper's affiliate handbook, 23 September 2026.",
                 visitHref: JUNIPER_URL,
-                visitLabel: "Check eligibility on Juniper",
+                visitLabel: "Continue to Juniper",
                 earns: true,
               },
               {
@@ -433,7 +433,7 @@ export default function BestWeightLossTelehealthPage() {
                 cost: "A subscription, confirmed in the consult.",
                 offerCode: "REFERRAL120",
                 visitHref: MOSHY_URL,
-                visitLabel: "Check eligibility on Moshy",
+                visitLabel: "Continue to Moshy",
                 earns: true,
               },
             ]}
@@ -502,14 +502,14 @@ export default function BestWeightLossTelehealthPage() {
                     <th className="text-left pb-3 pr-4 text-[#56504a] font-semibold text-[11px] uppercase tracking-wider w-36">Platform</th>
                     <th className="pb-3 px-3 text-left text-[#56504a] font-semibold text-[11px] uppercase tracking-wider">Who it&apos;s for</th>
                     <th className="pb-3 px-3 text-left text-[#56504a] font-semibold text-[11px] uppercase tracking-wider">Approach</th>
-                    <th className="pb-3 px-3 text-left text-[#56504a] font-semibold text-[11px] uppercase tracking-wider">Treatment access</th>
+                    <th className="pb-3 px-3 text-left text-[#56504a] font-semibold text-[11px] uppercase tracking-wider">Assessment</th>
                     <th className="pb-3 pl-3 text-right text-[#56504a] font-semibold text-[11px] uppercase tracking-wider"><span className="sr-only">Link</span></th>
                   </tr>
                 </thead>
                 <tbody>
                   {[
-                    { name: "Moshy",        audience: "Anyone eligible (Australia)", approach: "Telehealth + medication",    treatment: "Yes (subject to eligibility)", href: "#moshy",       url: MOSHY_URL,    cta: "Check eligibility",  isAff: true },
-                    { name: "Juniper",      audience: "Women (Australia)",        approach: "Coaching + medical program", treatment: "Yes (subject to eligibility)", href: "#juniper",     url: "/juniper",  cta: "Juniper review",     isAff: false },
+                    { name: "Moshy",        audience: "Adults (Australia)", approach: "Clinical telehealth pathway", treatment: "Practitioner review", href: "#moshy",       url: MOSHY_URL,    cta: "Get started",  isAff: true },
+                    { name: "Juniper",      audience: "Women (Australia)",        approach: "Clinical care + coaching", treatment: "Practitioner review", href: "#juniper",     url: "/juniper",  cta: "Juniper review",     isAff: false },
                   ].map((row) => (
                     <tr key={row.name} className="border-b border-[#ded8cd] hover:bg-[#f7f4ee] transition-colors">
                       <th scope="row" className="py-3 pr-4 text-left font-normal">
@@ -532,7 +532,7 @@ export default function BestWeightLossTelehealthPage() {
               </table>
             </div>
             <p className="text-[#56504a] text-[11px] mt-3">
-              Treatment access is subject to individual clinical assessment by each platform&apos;s practitioners. This comparison does not constitute medical advice.
+              Any treatment is decided by each platform&apos;s practitioners after an individual assessment. This comparison does not constitute medical advice.
             </p>
           </section>
 
@@ -653,7 +653,7 @@ export default function BestWeightLossTelehealthPage() {
 
         </div>
       </main>
-      <StickyCta href={MOSHY_URL} product="Moshy · weight-loss telehealth" label="Check eligibility" />
+      <StickyCta href={MOSHY_URL} product="Moshy · weight-loss telehealth" label="Get started" />
     </ConsumerShell>
   );
 }

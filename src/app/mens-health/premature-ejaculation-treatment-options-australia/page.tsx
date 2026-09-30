@@ -18,7 +18,7 @@ export const metadata = generateSEOMetadata(seoConfig.peTreatmentOptions);
 const faqs = [
   {
     q: "What are the treatment options for premature ejaculation in Australia?",
-    a: "Broader than most people expect. There are behavioural techniques that require no prescription and no appointment. There is psychological support, which a GP can arrange and which may attract rebated sessions under a Mental Health Treatment Plan. And there are prescription options, which a registered practitioner may consider appropriate after an individual assessment. Many people are treated with a combination rather than one route alone.",
+    a: "Broader than most people expect. There are behavioural techniques that require no prescription and no appointment. There is psychological support, which a GP can arrange and which may attract rebated sessions under a Mental Health Treatment Plan. A registered practitioner can assess which approach suits you. Many people are treated with a combination rather than one route alone.",
   },
   {
     q: "Should I see a GP or use an online clinic?",

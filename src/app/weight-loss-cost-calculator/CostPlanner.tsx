@@ -63,7 +63,7 @@ const PATHWAYS: Record<
     title: "Coaching-led program",
     tag: "e.g. Juniper",
     summary:
-      "Medication access wrapped in a structured coaching and community program. You pay for the support layer as well as the clinical pathway, which suits people who want accountability built in. Pricing is shown inside the provider's own sign-up flow.",
+      "Practitioner-led care wrapped in a structured coaching and community program. You pay for the support layer as well as the clinical pathway, which suits people who want accountability built in. Pricing is shown inside the provider's own sign-up flow.",
     payFor: [
       "A program fee covering coaching, community and check-ins",
       "The clinical pathway and any prescribed treatment",
@@ -300,7 +300,7 @@ export default function CostPlanner() {
                     className="inline-flex items-center gap-2 rounded-xl px-5 py-3 text-sm font-bold text-white transition-all hover:-translate-y-0.5 shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#007a95]"
                     style={{ background: GREEN, boxShadow: `0 8px 24px ${GREEN}25` }}
                   >
-                    Check eligibility on Moshy, see your price
+                    Continue to Moshy, see your price
                     <ArrowRight className="h-4 w-4" aria-hidden="true" />
                   </a>
                 </div>

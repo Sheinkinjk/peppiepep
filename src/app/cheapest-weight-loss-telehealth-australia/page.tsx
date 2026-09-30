@@ -57,15 +57,15 @@ const providers: PairProvider[] = [
 const faqs = [
   {
     q: "What is the cheapest weight loss telehealth in Australia?",
-    a: "No single service is cheapest for everyone. A subscription such as Moshy or Juniper charges a monthly fee that covers consults and support; a pay-as-you-go service such as Doctors for Weight Loss charges per consultation. Which costs less depends on how often you need to be seen, and any medicine is usually billed on top of either. A new-patient code lowers the first bill: REFERRAL120 takes $120 off a first Moshy order, and JARREDKFC waives Juniper's initial consultation, valued at $89.",
+    a: "No single service is cheapest for everyone. A subscription such as Moshy or Juniper charges a monthly fee that covers consults and support; a pay-as-you-go service such as Doctors for Weight Loss charges per consultation. Which costs less depends on how often you need to be seen, and some services bill parts of the cost separately. A new-patient code lowers the first bill: REFERRAL120 takes $120 off a first Moshy order, and JARREDKFC waives Juniper's initial consultation, valued at $89.",
   },
   {
     q: "Is subscription or pay-as-you-go cheaper?",
     a: "Pay-as-you-go tends to cost less if you only need occasional appointments. A subscription tends to cost less if you want regular contact, because consults and support sit inside the monthly fee. Add up twelve months of each at the number of consults you expect before deciding.",
   },
   {
-    q: "Is medication included in the price?",
-    a: "Not always. On many plans the fee covers the consult and support, and any medicine a practitioner prescribes is billed separately. Weight-management medicines are prescription-only in Australia and are only supplied where a registered practitioner decides they are clinically appropriate. Read each provider's price breakdown in full.",
+    q: "Is treatment included in the price?",
+    a: "It depends on the service. Some, such as Moshy, list an all-inclusive program fee; others charge for the consultation and bill anything dispensed separately through a pharmacy. Weight-management medicines are prescription-only in Australia and are only supplied where a registered practitioner decides they are clinically appropriate. Read each provider's price breakdown in full.",
   },
   {
     q: "Is there a Moshy discount code?",

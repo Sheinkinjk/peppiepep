@@ -33,7 +33,7 @@ export const denseConfig: AffiliatePageConfig = {
     "No code, referral via the link",
   ],
   verdict:
-    "Dense Hair Experts offers topical products for density and scalp health, used consistently as part of a routine. For a prescription pathway assessed by an Australian-registered practitioner, a telehealth provider like Mosh is the stronger first step.",
+    "Dense Hair Experts offers topical products for density and scalp health, used consistently as part of a routine. For an assessment by an Australian-registered practitioner, a telehealth provider like Mosh is the stronger first step.",
 
   hero: {
     h1Prefix: "Dense Discount Code Australia:",

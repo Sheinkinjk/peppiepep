@@ -245,7 +245,7 @@ export const moshHairConfig: AffiliatePageConfig = {
   ],
 
   ctas: {
-    primary: "Check your eligibility on Mosh",
+    primary: "Continue to Mosh",
     secondary: "Continue to Mosh",
     midHeading: "Ready to Explore the Mosh Service?",
     midBody:

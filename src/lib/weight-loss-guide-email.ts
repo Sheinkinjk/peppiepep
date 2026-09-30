@@ -38,7 +38,7 @@ export function buildWeightLossGuideEmail(): string {
             ${optionRow(
               "1. Medical telehealth, open to anyone",
               "Best if you want a fast, fully-online start",
-              "A clinically-led online pathway: you complete an eligibility check, a registered practitioner reviews it, and if appropriate you continue on a subscription with everything delivered to your door. No waiting room, no referral letter. Moshy runs exactly this, is open to anyone eligible, and new customers get $120 off their first order through our link.",
+              "A clinically-led online pathway: you complete an eligibility check, a registered practitioner reviews it and decides whether any treatment is appropriate. No waiting room, no referral letter. Moshy runs exactly this, is open to anyone eligible, and new customers get $120 off their first order through our link.",
               { label: "See how Moshy works", href: utm("/moshy", "wl_guide_moshy") },
             )}
             ${optionRow(

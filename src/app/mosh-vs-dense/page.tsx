@@ -165,7 +165,7 @@ export default function MoshVsDensePage() {
                 className="inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3.5 text-sm font-bold text-white shadow-lg transition-all hover:-translate-y-0.5"
                 style={{ background: GREEN, boxShadow: `0 6px 24px ${GREEN}30` }}
               >
-                Check eligibility on Mosh (55% off first order)
+                Continue to Mosh (55% off first order)
                 <ArrowRight className="h-4 w-4" />
               </a>
               <a
@@ -281,7 +281,7 @@ export default function MoshVsDensePage() {
                 className="inline-flex shrink-0 items-center gap-2 rounded-full px-6 py-3 text-sm font-bold text-white shadow-lg transition-all hover:-translate-y-0.5"
                 style={{ background: GREEN, boxShadow: `0 6px 24px ${GREEN}30` }}
               >
-                Check eligibility on Mosh
+                Continue to Mosh
                 <ArrowRight className="h-4 w-4" />
               </a>
             </div>
@@ -317,7 +317,7 @@ export default function MoshVsDensePage() {
                 <h3 className="text-lg font-bold mb-2">Go with Mosh</h3>
                 <p className="text-[#56504a] text-sm leading-relaxed mb-4">Online consultations with a registered practitioner. Suitability is never guaranteed.</p>
                 <a {...mosh} data-cta="mosh-vs-dense-card-mosh" className="inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-bold text-white transition-all hover:-translate-y-0.5 shadow-md" style={{ background: GREEN, boxShadow: `0 8px 24px ${GREEN}25` }}>
-                  Check eligibility on Mosh <ArrowRight className="h-4 w-4" />
+                  Continue to Mosh <ArrowRight className="h-4 w-4" />
                 </a>
                 <p className="mt-3"><Link href="/moshhair" className="text-xs text-[#56504a] underline decoration-[#ded8cd] underline-offset-2 hover:text-[#14120f]">Mosh discount code and how the service works →</Link></p>
               </div>
@@ -384,7 +384,7 @@ export default function MoshVsDensePage() {
       <FactHistory subject="Mosh" kind="offer_observation" hub="hair-loss" route="/mosh-vs-dense" />
 
       </main>
-      <StickyCta href={MOSH_HAIR_URL} product="Mosh · hair-loss telehealth" label="Check eligibility" />
+      <StickyCta href={MOSH_HAIR_URL} product="Mosh · hair-loss telehealth" label="Get started" />
     </ConsumerShell>
   );
 }

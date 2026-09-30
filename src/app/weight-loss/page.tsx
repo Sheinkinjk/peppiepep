@@ -27,7 +27,7 @@ const guides = [
   { href: "/moshy-eligibility", title: "The eligibility check, explained", desc: "What the quiz asks and why some people are declined." },
   { href: "/moshy-alternatives", title: "Moshy alternatives", desc: "The shortlist, including your GP." },
   { href: "/weight-loss-telehealth-men-australia", title: "The men's guide", desc: "How men's services work and the pre-signup checklist." },
-  { href: "/moshy", title: "Moshy offer & referral link", desc: "$120 off your first order, applied automatically. No code to type." },
+  { href: "/moshy", title: "Moshy offer & referral link", desc: "$120 off your first order with the code REFERRAL120, applied through our link." },
   { href: "/weight-loss-quiz", title: "Which pathway fits you?", desc: "A short matcher across the clinical, coaching and GP routes." },
   { href: "/weight-loss-cost-calculator", title: "Weight-loss cost calculator", desc: "Estimate the monthly cost of each route before you commit." },
 ];
@@ -35,7 +35,7 @@ const guides = [
 const faqs = [
   {
     q: "How does online weight loss telehealth work in Australia?",
-    a: "You complete a health questionnaire online, a registered Australian practitioner reviews your answers, and if you are suitable they discuss an appropriate plan with you. Everything happens remotely through a secure portal or app. Some applicants are declined at the review stage, which is a sign the screening is doing its job rather than a fault in the service.",
+    a: "You complete a health questionnaire online, a registered Australian practitioner reviews your answers, and if you are suitable they discuss an appropriate plan with you. Everything happens remotely through a secure portal or app. Some applicants are declined at the review stage.",
   },
   {
     q: "What are the best online weight loss programs in Australia?",
@@ -47,7 +47,7 @@ const faqs = [
   },
   {
     q: "Can you see a weight-management practitioner online in Australia?",
-    a: "Prescription weight-management medicines are available in Australia only after an individual assessment by a registered practitioner, and a legitimate telehealth service will not promise a specific medicine before that assessment happens. Suitability is decided case by case. This hub is information only and does not recommend any treatment.",
+    a: "Yes. Australian telehealth services run the consultation online: you complete a questionnaire, and a registered practitioner assesses you and decides whether any treatment is appropriate. Weight-management medicines are prescription-only in Australia, and a legitimate service will not promise a specific treatment before that assessment. This hub is information only.",
   },
   {
     q: "Is a weight loss telehealth service the same as a weight loss clinic?",
@@ -63,7 +63,7 @@ const faqs = [
   },
   {
     q: "Does Refer Labs earn money from these pages?",
-    a: "Some links are disclosed affiliate links, and Moshy's referral link is one of them. Commissions never change a comparison or a conclusion, and every page that contains one says so. Everything here is general information, not medical advice, and our full standards are at how we research.",
+    a: "Some links are disclosed affiliate links, including Moshy's and Juniper's. Commissions never change a comparison or a conclusion, and every page that contains one says so. Everything here is general information, not medical advice, and our full standards are at how we research.",
   },
 ];
 
@@ -218,7 +218,7 @@ export default function WeightLossHubPage() {
               cost: "A subscription, confirmed in the consult.",
               offerCode: "REFERRAL120",
               visitHref: MOSHY_URL,
-              visitLabel: "Check eligibility on Moshy",
+              visitLabel: "Continue to Moshy",
               earns: true,
             },
             {
@@ -232,7 +232,7 @@ export default function WeightLossHubPage() {
               offerText: "The initial consultation is waived with the code JARREDKFC, which Juniper values at $89. Nothing comes off the program itself.",
               offerNote: "Confirmed from Juniper's affiliate handbook, 23 September 2026.",
               visitHref: JUNIPER_URL,
-              visitLabel: "Check eligibility on Juniper",
+              visitLabel: "Continue to Juniper",
               earns: true,
             },
           ]}

@@ -10,15 +10,15 @@ export const metadata = generateSEOMetadata(seoConfig.hairLossQuiz);
 const faqs = [
   {
     q: "How do I choose a hair-loss treatment in Australia?",
-    a: "Start with the approach you want. A clinical, prescription-based route points to a men's telehealth service like Mosh, where a registered practitioner decides if treatment is appropriate. A non-prescription route points to a topical, cosmetic routine like Dense. If you are unsure of the cause or want to be seen in person, start with your GP. This match asks one or two questions and points you to the route that fits, and why.",
+    a: "Start with the approach you want. A practitioner-assessed route points to a men's telehealth service like Mosh, where a registered practitioner decides if treatment is appropriate. A non-prescription route points to a topical, cosmetic routine like Dense. If you are unsure of the cause or want to be seen in person, start with your GP. This match asks one or two questions and points you to the route that fits, and why.",
   },
   {
     q: "Is telehealth or a topical product better for hair loss?",
     a: "They do different jobs. Clinical telehealth is a practitioner assessment, after which the practitioner decides whether any treatment is appropriate; topical products are cosmetic and non-prescription, best as an ongoing routine. Which suits you depends on how far you want to go and whether a practitioner considers treatment appropriate. Neither is a guaranteed result.",
   },
   {
-    q: "Does the match decide if I am eligible for treatment?",
-    a: "No. Eligibility for any prescription treatment is decided only by a registered practitioner after they assess you individually. This tool matches your preferences to a route to explore, it is general information, not medical advice.",
+    q: "Does the match replace a practitioner's assessment?",
+    a: "No. Any treatment is decided only by a registered practitioner after they assess you individually. This tool matches your preferences to a route to explore; it is general information, not medical advice.",
   },
   {
     q: "Is the recommendation independent?",

@@ -36,23 +36,23 @@ const breadcrumbSchema = {
 const faqs = [
   {
     q: "How much does hair-loss treatment cost in Australia?",
-    a: "It depends on the route. Buying an over-the-counter topical product is a one-off cost that varies by pharmacy. A telehealth plan is usually a monthly subscription that bundles treatment, practitioner oversight and delivery: Mosh, for example, lists three hair plans on its own pricing page, and the assessment confirms which one applies before you commit. New Mosh customers get 55% off a first order with the code REFERAL55.",
+    a: "It depends on the route. Buying an over-the-counter topical product is a one-off cost that varies by pharmacy. A telehealth plan is usually a monthly subscription covering the practitioner assessment, ongoing review and delivery: Mosh, for example, lists three hair plans on its own pricing page, and the assessment confirms which one applies before you commit. New Mosh customers get 55% off a first order with the code REFERAL55.",
   },
   {
-    q: "Why is telehealth hair-loss treatment priced as a subscription?",
-    a: "Because hair-loss treatment is ongoing rather than one-off, services bundle the treatment, practitioner oversight and delivery into a monthly plan. The upside is convenience and included review; the thing to check is that you are comparing like plans, since plans for early and advanced hair loss are priced differently.",
+    q: "Why is online hair-loss care priced as a subscription?",
+    a: "Because hair-loss care is ongoing rather than one-off, online services charge a monthly plan that covers practitioner review and delivery. The upside is convenience and included review; the thing to check is that you are comparing like plans, since plans for early and advanced hair loss are priced differently.",
   },
   {
     q: "Is hair-loss treatment covered by Medicare or the PBS?",
-    a: "Generally not for cosmetic hair loss. Prescription treatment for male pattern hair loss is not PBS-subsidised, so you pay a private price, and over-the-counter topical products are not subsidised either. A telehealth consultation may attract a Medicare rebate in some circumstances, but the treatment and plan costs are typically out of pocket. Check current details with each provider.",
+    a: "Generally not for cosmetic hair loss. Treatment for cosmetic hair loss is not PBS-subsidised, so you pay a private price, and over-the-counter topical products are not subsidised either. A telehealth consultation may attract a Medicare rebate in some circumstances, but the treatment and plan costs are typically out of pocket. Check current details with each provider.",
   },
   {
     q: "Is it cheaper to buy an over-the-counter product myself?",
-    a: "For an over-the-counter topical alone, buying it at a pharmacy can be the cheapest route, since it does not need a prescription. The trade-off is that you are managing it yourself with no practitioner assessment, and prescription treatment is not available that way. Many people who want a combined, assessed plan find the convenience of a telehealth subscription worth the price. It comes down to whether you want a full plan or a single product.",
+    a: "For an over-the-counter topical alone, buying it at a pharmacy can be the cheapest route, since it does not need a prescription. The trade-off is that you are managing it yourself with no practitioner assessment, and nothing is assessed by a practitioner. It comes down to whether you want a practitioner assessment and ongoing review, or to manage a product yourself.",
   },
   {
     q: "What is the Mosh discount code for hair loss?",
-    a: "Through Refer Labs, the Mosh code is REFERAL55, worth 55% off a new customer's first order; it applies once, to that first order. The link on this page carries it automatically. Plans include free, discreet delivery, and Mosh advertises a 180-day money-back guarantee and a price-match guarantee on substantially comparable programs. Code checked on the Mosh sign-up page 23 September 2026; guarantees checked on Mosh's own site 14 August 2026.",
+    a: "Through Refer Labs, the Mosh code is REFERAL55, worth 55% off a new customer's first order; it applies once, to that first order. The link on this page carries it automatically. Plans include free, discreet delivery, and Mosh advertises a 180-day money-back guarantee and a price-match guarantee on substantially comparable programs. Code checked on the Mosh sign-up page 23 September 2026; guarantees checked on Mosh's own site 30 September 2026.",
   },
   {
     q: "Does Refer Labs earn money from this page?",
@@ -194,13 +194,13 @@ export default function HairLossTreatmentCostAustraliaPage() {
                 <p>
                   <span className="font-semibold text-[#14120f]">Buy over the counter.</span> Some topical products are
                   available at a pharmacy without a prescription. The cost is a one-off product price that varies by
-                  pharmacy, brand and pack size, and you manage it yourself. It is often the cheapest single route, but it
-                  only covers over-the-counter options, not prescription treatment.
+                  pharmacy, brand and pack size. It is often the cheapest single route, and you manage it yourself without a
+                  practitioner assessment.
                 </p>
                 <p>
-                  <span className="font-semibold text-[#14120f]">A telehealth plan.</span> Services bundle treatment,
-                  practitioner oversight and delivery into a monthly subscription. This is how you access prescription
-                  treatment where a practitioner assesses it as appropriate. The rest of this page uses Mosh&apos;s plans
+                  <span className="font-semibold text-[#14120f]">A telehealth plan.</span> Services bundle the
+                  practitioner assessment, ongoing review and delivery into a monthly subscription, and the practitioner decides whether
+                  any treatment is appropriate. The rest of this page uses Mosh&apos;s plans
                   as the worked example.
                 </p>
               </div>
@@ -244,7 +244,7 @@ export default function HairLossTreatmentCostAustraliaPage() {
               </h2>
               <div className="mt-4 space-y-4 text-[15px] leading-relaxed text-[#56504a]">
                 <p>
-                  For cosmetic hair loss, expect to pay privately. Prescription treatment for male pattern hair
+                  For cosmetic hair loss, expect to pay privately. Treatment for cosmetic hair
                   loss is not subsidised on the PBS, and over-the-counter products are not subsidised either. A telehealth
                   consultation may attract a Medicare rebate in some circumstances, but the treatment and plan costs are
                   typically out of pocket. It is worth confirming the current position with each provider rather than

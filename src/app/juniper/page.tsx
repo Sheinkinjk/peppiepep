@@ -147,7 +147,7 @@ const webPageSchema = {
   },
 };
 
-function JuniperCTA({ label = "Check your eligibility", loc, block = false, size = "md" }: { label?: string; loc: string; block?: boolean; size?: "md" | "lg" }) {
+function JuniperCTA({ label = "Get started", loc, block = false, size = "md" }: { label?: string; loc: string; block?: boolean; size?: "md" | "lg" }) {
   const pad = size === "lg" ? "px-8 py-4 text-base" : "";
   return (
     <a {...juniperAff} data-cta={loc} className={`nw-btn justify-center ${pad} ${block ? "w-full" : ""}`}>
@@ -464,7 +464,7 @@ export default function JuniperPage() {
 
       </main>
 
-      <StickyCta href={JUNIPER_URL} product="Juniper weight-management program" label="Check eligibility" />
+      <StickyCta href={JUNIPER_URL} product="Juniper weight-management program" label="Get started" />
     </ConsumerShell>
   );
 }

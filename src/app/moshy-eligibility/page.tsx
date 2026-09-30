@@ -194,7 +194,7 @@ export default function MoshyEligibilityPage() {
         </p>
         <p className="text-[#56504a] text-xs mt-4">© 2026 Refer Labs · Australia · <Link href="/guides" className="hover:text-[#56504a]">All guides</Link></p>
       </main>
-      <StickyCta href={MOSHY_URL} product="Moshy weight-loss telehealth" label="Check eligibility" />
+      <StickyCta href={MOSHY_URL} product="Moshy weight-loss telehealth" label="Get started" />
     </ConsumerShell>
   );
 }

@@ -184,7 +184,7 @@ export default function WeightLossCostCalculatorPage() {
           </section>
         </div>
       </main>
-      <StickyCta href={MOSHY_URL} product="Moshy · weight-loss telehealth" label="Check eligibility" />
+      <StickyCta href={MOSHY_URL} product="Moshy · weight-loss telehealth" label="Get started" />
     </ConsumerShell>
   );
 }

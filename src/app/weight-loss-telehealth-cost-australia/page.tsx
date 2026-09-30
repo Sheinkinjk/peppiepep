@@ -141,7 +141,7 @@ export default function WeightLossTelehealthCostAustraliaPage() {
               data-cta="cost-hero"
               className="nw-btn shrink-0 whitespace-nowrap"
             >
-              Check your eligibility on Moshy <ArrowRight className="h-4 w-4" />
+              Continue to Moshy <ArrowRight className="h-4 w-4" />
             </a>
           </div>
           <EarningsBalanceNote earnFrom="Moshy" className="mt-3 max-w-2xl" />
@@ -254,7 +254,7 @@ export default function WeightLossTelehealthCostAustraliaPage() {
                 data-cta="cost-footer"
                 className="nw-btn mt-5"
               >
-                Check your eligibility on Moshy <ArrowRight className="h-4 w-4" />
+                Continue to Moshy <ArrowRight className="h-4 w-4" />
               </a>
             </section>
 
@@ -305,7 +305,7 @@ export default function WeightLossTelehealthCostAustraliaPage() {
           </article>
         </div>
       </main>
-      <StickyCta href={MOSHY_URL} product="Moshy weight-loss telehealth" label="Check eligibility" />
+      <StickyCta href={MOSHY_URL} product="Moshy weight-loss telehealth" label="Get started" />
     </ConsumerShell>
   );
 }

@@ -10,15 +10,15 @@ export const metadata = generateSEOMetadata(seoConfig.weightLossQuiz);
 const faqs = [
   {
     q: "How do I choose a weight-loss program in Australia?",
-    a: "Start with what you want. A fast, clinically-led pathway you can start online points to a medical telehealth service. Wanting coaching, habits and accountability alongside, rather than medication first, points to a coaching-led program. Preferring the lowest cost and an in-person assessment points to your GP. This match asks two quick questions and points you to the pathway that fits, and why. A registered practitioner still decides whether any treatment is appropriate for you.",
+    a: "Start with what you want. A fast, clinically-led pathway you can start online points to a medical telehealth service. Wanting coaching, habits and accountability alongside, rather than a clinical pathway alone, points to a coaching-led program. Preferring the lowest cost and an in-person assessment points to your GP. This match asks two quick questions and points you to the pathway that fits, and why. A registered practitioner still decides whether any treatment is appropriate for you.",
   },
   {
     q: "Is telehealth or an in-person GP better for weight loss?",
     a: "Neither is universally better, they suit different people. Telehealth is faster to start and handled from home, with practitioner check-ins built in. An in-person GP suits you if you prefer a face-to-face assessment, want the lowest cost with Medicare offsetting part of it, or have a complex history. Both routes involve a registered practitioner deciding whether any treatment is appropriate for you.",
   },
   {
-    q: "Does the match decide if I am eligible for treatment?",
-    a: "No. Eligibility for any prescription treatment in Australia is decided only by a registered practitioner after they assess you individually. This tool matches your preferences to a route to explore, it is general information, not a medical assessment or medical advice.",
+    q: "Does the match replace a practitioner's assessment?",
+    a: "No. Any treatment is decided only by a registered practitioner after they assess you individually. This tool matches your preferences to a route to explore; it is general information, not medical advice.",
   },
   {
     q: "Is the recommendation independent?",

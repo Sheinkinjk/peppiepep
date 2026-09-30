@@ -38,8 +38,9 @@ export const nav: NavGroup[] = [
   {
     label: "Weight Loss", href: "/weight-loss",
     items: [
+      { label: "Weight loss navigator", href: "/weight-loss", blurb: "Every weight-loss route in one place, compared" },
       { label: "Moshy", href: "/moshy", blurb: "How the program works, plus $120 off your first order" },
-      { label: "Juniper", href: "/juniper", blurb: "Built for women, with a free first consultation" },
+      { label: "Juniper", href: "/juniper", blurb: "Built for women; JARREDKFC waives the initial consultation" },
       { label: "Compare all providers", href: "/best-weight-loss-telehealth-australia", blurb: "Pricing, eligibility and who each suits" },
       { label: "Which pathway fits you?", href: "/weight-loss-quiz", blurb: "A 60-second match, no sign-up" },
     ],

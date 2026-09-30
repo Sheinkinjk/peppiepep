@@ -151,7 +151,7 @@ function resolve(a: Required<Answers>): Result {
     title: medicationLed ? "Moshy is the natural starting point" : "Moshy is one place to start",
     body: `${wants}, open to anyone eligible. The eligibility check takes about ten minutes and commits you to nothing${speed ? ", so you can start straight away" : ""}. A GP can run the same pathway in person if you would rather.`,
     offer: "$120 off your first order via our link",
-    cta: { label: "Check your eligibility on Moshy", href: MOSHY_URL, sponsored: true, loc: "quiz-moshy" },
+    cta: { label: "Continue to Moshy", href: MOSHY_URL, sponsored: true, loc: "quiz-moshy" },
     secondary: { label: "Read our full Moshy review", href: "/moshy-review" },
     also: woman
       ? "Want coaching and community alongside the clinical side? Juniper is built for women."
