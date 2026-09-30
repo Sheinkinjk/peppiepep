@@ -62,7 +62,7 @@ const itemListSchema = {
 const faqs = [
   {
     q: "What are the best AI sales tools in 2026?",
-    a: "Four of the strongest AI sales and automation tools in 2026 are GoHighLevel, AiSDR, Reply.io and FullEnrich, and they sit at different points in the sales stack. FullEnrich is a waterfall enrichment tool that finds verified emails and mobile numbers. Reply.io is an AI sales engagement platform for running your own multichannel outbound. AiSDR is a done-for-you AI sales development rep that prospects and books meetings. GoHighLevel is an all-in-one CRM, marketing automation and sales platform, best for agencies and SMBs replacing a stack of tools.",
+    a: "The four AI sales and automation tools we cover are GoHighLevel, AiSDR, Reply.io and FullEnrich, and they sit at different points in the sales stack. FullEnrich is a waterfall enrichment tool that finds verified emails and mobile numbers. Reply.io is an AI sales engagement platform for running your own multichannel outbound. AiSDR is a done-for-you AI sales development rep that prospects and books meetings. GoHighLevel is an all-in-one CRM, marketing automation and sales platform, best for agencies and SMBs replacing a stack of tools.",
   },
   {
     q: "GoHighLevel vs AiSDR: which should I choose?",
@@ -118,13 +118,13 @@ const tools = [
     tagline: "AI-powered CRM, marketing and sales in one platform",
     bestFor: "Marketing agencies and SMBs replacing a stack of tools",
     price: "Starter US$97/mo; Unlimited US$297/mo (30 September 2026)",
-    trial: "14-day free trial, no credit card",
+    trial: "14-day free trial",
     pros: [
       "CRM, email and SMS automation, funnels and pipelines in one login",
       "Agency sub-accounts for managing multiple clients",
       "Built-in AI: voice, conversation and content",
       "Reputation management and review requests included",
-      "14-day free trial with no credit card to start",
+      "14-day free trial to start",
     ],
     cons: [
       "Broad platform means a real setup and learning curve",
@@ -476,7 +476,7 @@ export default function BestAiSalesToolsPage() {
             <span style={{ color: ACCENT_LT }}>Start with GoHighLevel.</span>
           </h2>
           <p className="text-[#56504a] text-sm max-w-md mx-auto mb-7 leading-relaxed">
-            14-day free trial, no credit card. Or read the full reviews to compare GoHighLevel, AiSDR, Reply.io and FullEnrich in detail.
+            14-day free trial on every plan. Or read the full reviews to compare GoHighLevel, AiSDR, Reply.io and FullEnrich in detail.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a

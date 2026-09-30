@@ -152,7 +152,7 @@ export const DEALS: Deal[] = [
   // has no paid subscriptions to take a cut of (beehiiv.com/pricing, 30 Sep 2026).
   { brand: "beehiiv", logo: "/logos/beehiiv.png", href: "/best-newsletter-platform", offer: "Free plan up to 2,500 subscribers", category: "Newsletters", verified: "2026-09-30", source: { readOff: "https://www.beehiiv.com/pricing" } },
   { brand: "Leadpages", logo: "/logos/leadpages.png", href: "/leadpages", offer: "7-day free trial; Leadpages' public 20% saving on annual billing", category: "Landing pages", featured: false, verified: "2026-09-30", source: { readOff: "https://www.leadpages.com/pricing" } },
-  { brand: "Brevo", logo: "/logos/brevo.png", href: "/brevo", offer: "Free plan forever, no card", category: "Email marketing", verified: "2026-08-25" },
+  { brand: "Brevo", logo: "/logos/brevo.png", href: "/brevo", offer: "Free plan forever, no card", category: "Email marketing", verified: "2026-09-30", source: { readOff: "https://www.brevo.com/pricing/" } },
   // Pipedrive's pricing page blocks curl, so the 25 Aug 2026 sweep could not
   // re-read it. Read in a rendered browser on 30 Sep 2026: "Free 14-day trial.
   // No credit card required."

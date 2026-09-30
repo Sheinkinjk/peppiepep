@@ -401,7 +401,7 @@ export const CATALOG: Vertical[] = [
         facts: [
           { label: "Role", value: "CRM + marketing automation" },
           { label: "Best for", value: "Small businesses & solopreneurs" },
-          { label: "Pricing", value: "14-day trial; US$299/mo, one platform price (30 September 2026)" },
+          { label: "Pricing", value: "Free demo; from US$299/mo billed monthly, plus required implementation (30 September 2026)" },
         ],
         affiliateUrl: KEAP_URL,
         reviewHref: "/keap",
@@ -458,7 +458,7 @@ export const CATALOG: Vertical[] = [
         facts: [
           { label: "Role", value: "HR + payroll" },
           { label: "Best for", value: "AU & NZ teams" },
-          { label: "Payroll", value: "Included in the Employment Unlimited plan, quoted by sales" },
+          { label: "Payroll", value: "Standalone Payroll plan listed at $10, 10-user minimum (30 September 2026)" },
         ],
         affiliateUrl: EMPLOYMENT_HERO_URL,
         reviewHref: "/employmenthero",
@@ -480,8 +480,8 @@ export const CATALOG: Vertical[] = [
     ],
     faqs: [
       {
-        q: "Does Employment Hero's entry plan include payroll?",
-        a: "No. Employment Hero lists its HR plans on its own pricing page; payroll is included only in its top plan, Employment Unlimited, which is quoted by its sales team (read on employmenthero.com/pricing, 30 September 2026). Check which plan covers the modules you need before you compare prices.",
+        q: "Does Employment Hero sell payroll on its own?",
+        a: "Yes. Employment Hero lists a standalone Payroll plan at $10, and its HR plans at $10 (HR Essentials) and $14 (HR Engage), each with a 10-user minimum; Employment Unlimited, which bundles payroll with every HR feature, is quoted by sales (read on employmenthero.com/pricing, 30 September 2026). Check which plan covers the modules you need before you compare prices.",
       },
       {
         q: "How much does payroll software cost in Australia?",
@@ -610,7 +610,7 @@ export const CATALOG: Vertical[] = [
       },
       {
         q: "What does Dext cost in Australia?",
-        a: "Dext has no free plan. It prices by users and documents processed and lists its plans in Australian dollars on its Australian site, with a 14-day free trial that needs no card. Check the plan for your document volume before you commit.",
+        a: "Dext has no free plan. It prices by users and documents processed and lists its plans in Australian dollars on its Australian site, with a free trial that needs no payment details. Check the plan for your document volume before you commit.",
       },
       {
         q: "What is Payoneer used for?",
@@ -756,7 +756,7 @@ export const CATALOG: Vertical[] = [
       },
       {
         q: "Are these AI tools free to try?",
-        a: "Both offer a low-risk way to start: ElevenLabs has a free plan, and Lindy offers a free trial. Free tiers and trials change, so confirm the current limits on each provider before you rely on them.",
+        a: "Both offer a low-risk way to start: ElevenLabs has a free plan, and Lindy's Plus plan starts at US$29.99 per user a month (read on lindy.ai/pricing, 30 September 2026); direct sign-ups are billed from day one. Free tiers and trials change, so confirm the current limits on each provider before you rely on them.",
       },
       {
         q: "AI assistant vs AI voice, what's the difference?",

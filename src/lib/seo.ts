@@ -459,30 +459,30 @@ export const seoConfig = {
     keywords: ["cloudtalk discount code", "cloudtalk promo code", "cloudtalk coupon", "cloudtalk referral link", "cloudtalk review", "cloudtalk pricing", "cloudtalk free trial", "business phone system"],
   },
   krispcall: {
-    title: "KrispCall Review 2026: Free Trial Available",
+    title: "KrispCall Review 2026: Pricing and Refund Terms",
     description:
       "KrispCall runs business calls from a browser or the mobile app, with local and international virtual numbers and a shared team inbox. Who it suits, and where a busy call floor outgrows it.",
     url: `${SITE_URL}/krispcall`,
     keywords: ["krispcall discount code", "krispcall promo code", "krispcall coupon", "krispcall referral link", "krispcall review", "krispcall pricing", "virtual phone number", "cloud phone system"],
   },
   dext: {
-    title: "Dext Review 2026: 14-Day Free Trial",
+    title: "Dext Review 2026: Free Trial and Pricing",
     description:
-      "Dext reads receipts, bills and invoices and pushes the data into Xero, QuickBooks or Sage. It is priced by users and documents processed, and the trial runs 14 days with no card.",
+      "Dext reads receipts, bills and invoices and pushes the data into Xero, QuickBooks or Sage. It is priced by users and documents processed, and its free trial needs no payment details.",
     url: `${SITE_URL}/dext`,
     keywords: ["dext discount code", "dext promo code", "dext coupon", "dext referral link", "dext review", "dext pricing", "receiptbank dext", "bookkeeping automation software"],
   },
   trainual: {
-    title: "Trainual Review 2026: 7-Day Free Trial",
+    title: "Trainual Review 2026: Pricing and Free Demo",
     description:
-      "Trainual turns how your business runs into searchable SOPs and role-based onboarding. Pricing is quoted after a demo, and a 7-day free trial lets you build a first playbook.",
+      "Trainual turns how your business runs into searchable SOPs and role-based onboarding. Trainual publishes no prices or free trial: each plan is quoted after a demo.",
     url: `${SITE_URL}/trainual`,
     keywords: ["trainual discount code", "trainual promo code", "trainual coupon", "trainual referral link", "trainual review", "trainual pricing", "employee onboarding software", "sop software"],
   },
   lindy: {
-    title: "Lindy Review 2026: 7-Day Free Trial",
+    title: "Lindy Review 2026: Pricing and What It Automates",
     description:
-      "Lindy connects to your inbox, calendar and CRM and takes over triage, scheduling and follow-ups. Who it suits, and what its 7-day free trial lets you test.",
+      "Lindy connects to your inbox, calendar and CRM and takes over triage, scheduling and follow-ups. Who it suits, and why direct sign-ups are billed from day one.",
     url: `${SITE_URL}/lindy`,
     keywords: ["lindy discount code", "lindy ai promo code", "lindy coupon", "lindy referral link", "lindy ai review", "lindy pricing", "ai work assistant", "ai automation tool"],
   },
@@ -550,7 +550,7 @@ export const seoConfig = {
     keywords: ["hello bar discount code", "hellobar referral link", "hello bar review", "hello bar pricing", "website popup tool", "email capture popup", "notification bar"],
   },
   outgrow: {
-    title: "Outgrow Review 2026: Free Plan Available",
+    title: "Outgrow Review 2026: 7-Day Trial and Pricing",
     description:
       "Outgrow builds calculators, quizzes and assessments that visitors complete before leaving an email, so leads arrive pre-qualified. The 7-day trial opens the Business plan with no card.",
     url: `${SITE_URL}/outgrow`,
@@ -1137,7 +1137,7 @@ export const seoConfig = {
     keywords: ["best solar battery company australia", "best solar battery company sydney", "solar battery company sydney", "solar battery government rebate sydney", "apollo energy group", "apollo energy group review", "solar battery installer sydney", "home battery australia", "cheaper home batteries program", "battery installer sydney"],
   },
   keap: {
-    title: "Keap Review 2026: 14-Day Free Trial",
+    title: "Keap Review 2026: Pricing and Free Demo",
     description:
       "Keap is an all-in-one CRM with sales and marketing automation for small businesses: pipeline, email and SMS, and automated follow-up.",
     url: `${SITE_URL}/keap`,

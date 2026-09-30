@@ -135,7 +135,7 @@ const platforms = [
       "Built-in referral program for subscriber growth",
       "Native ad network on the paid Scale plan",
       "No revenue cut on paid subscriptions",
-      "14-day trial of all paid features, no credit card",
+      "Free Launch plan up to 2,500 subscribers",
       "Best-in-class analytics and growth tracking",
       "Newsletter recommendations across the beehiiv network",
       "Custom domains on free plan",
@@ -202,7 +202,7 @@ const features = [
   { label: "Discovery network", beehiiv: "Growing",             substack: "Large",             convertkit: "Limited" },
   { label: "Automation",        beehiiv: "Basic",               substack: "Minimal",           convertkit: "Advanced" },
   { label: "Analytics",         beehiiv: "Best in class",       substack: "Basic",             convertkit: "Good" },
-  { label: "Free trial",        beehiiv: "14 days (paid features)", substack: "N/A",           convertkit: "14 days" },
+  { label: "Free trial",        beehiiv: "Yes; length not stated", substack: "N/A",           convertkit: "14 days" },
 ];
 
 // ─── Component ────────────────────────────────────────────────────────────────
@@ -255,7 +255,7 @@ export default function BestNewsletterPlatformPage() {
             className="inline-flex items-center justify-center gap-2 rounded-xl px-7 py-3.5 text-sm font-bold text-white transition-all hover:-translate-y-0.5 shadow-lg"
             style={{ background: CYAN, boxShadow: `0 8px 32px ${CYAN}30` }}
           >
-            Try beehiiv Free, 14-Day Trial
+            Start beehiiv free
             <ArrowRight className="h-4 w-4" />
           </a>
         </div>
@@ -264,7 +264,7 @@ export default function BestNewsletterPlatformPage() {
         <section id="comparison" className="border-t border-[#007a95]/10 py-12 sm:py-14">
           <h2 className="text-2xl sm:text-3xl font-black text-[#14120f] mb-3">Our Pick: beehiiv</h2>
           <p className="text-[#56504a] text-sm sm:text-base leading-relaxed max-w-2xl mb-6">
-            For newsletter creators focused on growing an audience and monetising without giving up revenue, beehiiv is the strongest platform available in 2026. The built-in referral program, ad network, and 0% revenue share on paid subscriptions put it well ahead of alternatives once you are past the earliest stage.
+            For newsletter creators focused on growing an audience and monetising without giving up revenue, beehiiv fits best: its referral program, and on the Scale plan its ad network and 0% revenue share on paid subscriptions, cover the growth stage (beehiiv.com/pricing, 30 September 2026).
           </p>
           <p className="text-[#56504a] text-sm sm:text-base leading-relaxed max-w-2xl mb-8">
             Substack is a legitimate starting point for its discovery network and zero monthly fee, but the 10% revenue cut becomes a real cost at scale. ConvertKit is better for product businesses with complex email sequences than for newsletter-first creators.
@@ -439,7 +439,7 @@ export default function BestNewsletterPlatformPage() {
             <span style={{ color: CYAN_LT }}>Try beehiiv Free.</span>
           </h2>
           <p className="text-[#56504a] text-sm max-w-md mx-auto mb-7 leading-relaxed">
-            Free up to {BEEHIIV.free} subscribers. 14-day trial of paid features. No credit card required.
+            Free up to {BEEHIIV.free} subscribers on the Launch plan. The ad network and 0% revenue share come with the paid Scale plan.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
