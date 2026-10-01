@@ -72,7 +72,7 @@ function resolve(a: Answers): Result {
       title: "Start with an assessment, not another product",
       body: "Persistent breakouts are the case where cycling through over-the-counter products tends to cost more than getting assessed. A GP consult is the cheaper first step and is also the gateway to a specialist referral, which is what makes a Medicare rebate available on a dermatologist appointment.",
       next: [
-        { href: "/health-and-beauty/acne-treatment-options-and-costs-australia", label: "Acne treatment options and what they cost" },
+        { href: "/health-and-beauty", label: "Health and beauty guides" },
         { href: "/health-and-beauty/best-value-skincare-australia-cost-per-use", label: "Cost per use, not sticker price" },
       ],
     };
@@ -89,7 +89,7 @@ function resolve(a: Answers): Result {
   if (a.priority === "ageing" && a.budget === "high") {
     return {
       title: "Work out the annual figure before you book anything",
-      body: "At this budget both at-home devices and clinic treatments are on the table, and they are priced completely differently. A device is one payment; clinic treatments are usually maintenance. Comparing them means converting both to a twelve-month cost, which is the number almost nobody asks for.",
+      body: "At this budget an at-home device is one option. Compare its one-off price with anything you would pay for repeatedly, converting both to a twelve-month cost.",
       next: [
         { href: "/foreo", label: "Foreo: Australian device prices" },
         { href: "/health-and-beauty/led-face-mask-comparison-australia", label: "What LED devices cost here" },
@@ -285,8 +285,8 @@ export default function SkincareQuiz() {
 
       <p className="mt-6 text-xs leading-relaxed text-[#56504a]">
         This quiz asks only about preferences and budget. It is general information, not medical advice, and not an
-        assessment of your skin. Anything prescription-only in Australia is supplied after an individual assessment by
-        a registered practitioner.
+        assessment of your skin. Any treatment is decided by a registered practitioner after an individual
+        assessment.
       </p>
     </div>
   );

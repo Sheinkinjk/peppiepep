@@ -49,7 +49,6 @@ export const SEARCH_INDEX: SearchEntry[] = [
   { title: "Online men's health clinics compared", href: "/mens-health/online-mens-health-clinics-compared", category: "Men's health", kind: "Guide", keywords: "online mens health clinic australia subscription consult model ahpra" },
   { title: "Telehealth or a GP for men's health", href: "/mens-health/is-telehealth-or-a-gp-cheaper-for-mens-health", category: "Men's health", kind: "Guide", keywords: "telehealth vs gp cost mens health bulk billed medicare rebate" },
   { title: "Online medical certificate cost", href: "/mens-health/online-doctor-medical-certificate-australia", category: "Men's health", kind: "Guide", keywords: "online medical certificate australia cost sick certificate telehealth same day carer" },
-  { title: "Online prescription in Australia", href: "/mens-health/online-prescription-australia", category: "Men's health", kind: "Guide", keywords: "online prescription australia escript repeat script medicare ihi cost pharmacy" },
   { title: "Sexual wellness products", href: "/mens-health/sexual-wellness-products", category: "Men's health", kind: "Guide", keywords: "sexual wellness products australia retail adults artg" },
   { title: "Men's health quiz", href: "/mens-health/mens-health-quiz", category: "Men's health", kind: "Guide", keywords: "mens health quiz australia gp or online clinic" },
   { title: "Sleep", href: "/sleep", category: "Sleep", kind: "Category", keywords: "sleep australia sleep apnoea cpap mattress sleep tracker sleep study" },
@@ -83,7 +82,6 @@ export const SEARCH_INDEX: SearchEntry[] = [
   { title: "Best weight loss telehealth in Australia", href: "/best-weight-loss-telehealth-australia", category: "Weight loss", kind: "Guide", keywords: "top online weight loss clinic australia weight management" },
   { title: "Moshy vs your GP", href: "/moshy-vs-gp", category: "Weight loss", kind: "Guide", keywords: "doctor bulk bill medicare gp telehealth" },
   { title: "Moshy alternatives", href: "/moshy-alternatives", category: "Weight loss", kind: "Guide", keywords: "other options competitors similar" },
-  { title: "Moshy eligibility check explained", href: "/moshy-eligibility", category: "Weight loss", kind: "Guide", keywords: "qualify assessment questionnaire suitability" },
   { title: "Weight-loss cost calculator", href: "/weight-loss-cost-calculator", category: "Weight loss", kind: "Guide", keywords: "cost calculator price how much pay subscription gp medicare pathway planner tool" },
   { title: "Which weight-loss option fits you", href: "/weight-loss-quiz", category: "Weight loss", kind: "Guide", keywords: "which weight loss program quiz match telehealth or gp online moshy eligibility recommend option for me" },
   { title: "Weight loss telehealth for men", href: "/weight-loss-telehealth-men-australia", category: "Weight loss", kind: "Guide", keywords: "mens weight loss male" },
@@ -98,9 +96,7 @@ export const SEARCH_INDEX: SearchEntry[] = [
   { title: "Mosh review: is it legit & worth it?", href: "/mosh-review", category: "Hair loss", kind: "Guide", keywords: "mosh review is mosh legit worth it does mosh work reviews australia" },
   { title: "Early signs of hair loss in men", href: "/early-signs-of-hair-loss-australia", category: "Hair loss", kind: "Guide", keywords: "early signs of hair loss am i going bald how to tell thinning crown balding signs" },
   { title: "Hair loss treatment cost in Australia", href: "/hair-loss-treatment-cost-australia", category: "Hair loss", kind: "Guide", keywords: "hair loss treatment cost australia mosh price subscription telehealth" },
-  { title: "Online hair loss treatment in Australia", href: "/online-hair-loss-treatment-australia", category: "Hair loss", kind: "Guide", keywords: "online hair loss treatment telehealth doctor australia assessment prescription" },
-  { title: "How to stop hair loss", href: "/how-to-stop-hair-loss-australia", category: "Hair loss", kind: "Guide", keywords: "how to stop hair loss balding men male pattern treatment australia" },
-  { title: "Receding hairline treatment", href: "/receding-hairline-treatment-australia", category: "Hair loss", kind: "Guide", keywords: "receding hairline treatment male pattern telehealth australia" },
+  { title: "Receding hairline: causes and assessment", href: "/receding-hairline-treatment-australia", category: "Hair loss", kind: "Guide", keywords: "receding hairline treatment male pattern telehealth australia" },
 
   // Men's health
 

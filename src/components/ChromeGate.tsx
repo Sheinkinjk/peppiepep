@@ -62,7 +62,6 @@ const STANDALONE_ROUTES = [
   "/beehiiv",
   // Moshy funnel pages
   "/moshy-review",
-  "/moshy-eligibility",
   "/moshy-vs-gp",
   "/moshy-alternatives",
   "/weight-loss-telehealth-men-australia",
@@ -145,8 +144,6 @@ const STANDALONE_ROUTES = [
   "/virtual-power-plant-australia",
   // Hair-loss cluster info pages (own light ConsumerShell)
   "/hair-loss-treatment-cost-australia",
-  "/online-hair-loss-treatment-australia",
-  "/how-to-stop-hair-loss-australia",
   "/receding-hairline-treatment-australia",
   // Business software hub (own light ConsumerShell; was double-headering)
   "/business-software",

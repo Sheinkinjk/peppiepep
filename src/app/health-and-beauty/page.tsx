@@ -54,8 +54,8 @@ const faqs = [
     a: "Not reliably. Price reflects packaging, brand and formulation research as much as what the product does on your skin. The more useful question is what active ingredient a product contains, at what concentration, and whether you will use it consistently. Our cost-per-use guide sets out how to compare products on what you spend per application rather than what the bottle costs.",
   },
   {
-    q: "What skin treatments need a prescription in Australia?",
-    a: "Stronger topical treatments and oral medicines used for skin conditions are prescription-only in Australia, which means they are supplied only after an individual assessment by a registered practitioner who decides whether they are appropriate. Over-the-counter products, including retinol, are available without one. We describe how each route is accessed rather than naming specific medicines, because advertising prescription medicines to the public is prohibited here.",
+    q: "When does a skin concern need a practitioner in Australia?",
+    a: "Some skin conditions need a practitioner's assessment, and a practitioner decides whether any treatment is appropriate. Over-the-counter products, including retinol, are available without one. We describe how each route is accessed rather than naming specific medicines, because advertising prescription medicines to the public is prohibited here.",
   },
   {
     q: "Are LED face masks regulated in Australia?",

@@ -14,7 +14,7 @@ const faqs = [
   },
   {
     q: "Is telehealth or an over-the-counter product better for hair loss?",
-    a: "Telehealth is an assessment by a registered practitioner; an over-the-counter product is cosmetic and involves no assessment. Hair-loss medicines are prescription-only in Australia, so only an assessment, online or with a GP, can lead to one. Neither route guarantees a result.",
+    a: "Telehealth is an assessment by a registered practitioner, who decides whether any treatment is appropriate; an over-the-counter product is cosmetic and involves no assessment. Neither route guarantees a result.",
   },
   {
     q: "Does the match replace a practitioner's assessment?",

@@ -9,6 +9,7 @@ import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 import FactHistory from "@/components/facts/FactHistory";
 import CodeAnswer from "@/components/offers/CodeAnswer";
 import OfferSchema from "@/components/offers/OfferSchema";
+import { MOSH_PROMO_TERMS_URL, REFERAL55_TERMS } from "@/lib/offers";
 
 import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 import { pageDates } from "@/lib/page-dates";
@@ -35,11 +36,11 @@ const faqs = [
   },
   {
     q: "How does Mosh bill, and is there a discount?",
-    a: "Mosh runs as a subscription. It lists a monthly price for each hair plan on its own pricing page, and its promotion terms describe first-order hair discounts as covering the first three months. REFERAL55 takes 55% off a new customer's first order: our link carries the code, and if it isn't shown at checkout, enter REFERAL55. Later orders are at the standard plan rate.",
+    a: "Mosh runs as a subscription. It lists its plans on its own pricing page; the practitioner decides which, if any, applies, and Mosh shows the price before you pay. Its promotion terms describe first-order hair discounts as covering the first three months. REFERAL55 takes 55% off: our link carries the code, and if it isn't shown at checkout, enter REFERAL55. New customers only; applies to the first order of a Mosh hair program; full terms at getmosh.com.au/promotions-terms-and-conditions. Later orders are at the standard plan rate.",
   },
   {
     q: "Can I cancel Mosh?",
-    a: `Mosh advertises no lock-in contracts and says you can cancel anytime (getmosh.com.au/start/referlabs, read ${MOSH_READ}). Its 180-day money-back guarantee applies to quarterly hair programs, under Mosh's terms. Keep written confirmation of any cancellation. Refer Labs does not manage Mosh billing.`,
+    a: `Mosh advertises no lock-in contracts and says you can cancel anytime (getmosh.com.au/start/referlabs, read ${MOSH_READ}). Mosh also offers a 180-day money-back guarantee on quarterly hair programs, under its terms at getmosh.com.au/promotions-terms-and-conditions. Keep written confirmation of any cancellation. Refer Labs does not manage Mosh billing.`,
   },
   {
     q: "Is this page affiliated with Mosh?",
@@ -122,7 +123,8 @@ export default function MoshReviewPage() {
         <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
         <CodeAnswer code="REFERAL55" className="mt-6 mb-10">
           REFERAL55, the Mosh code Refer Labs holds, gets a new customer 55% off a first order. Our link carries it into
-          Mosh&apos;s sign-up; if it isn&apos;t shown at checkout, enter REFERAL55.
+          Mosh&apos;s sign-up; if it isn&apos;t shown at checkout, enter REFERAL55. {REFERAL55_TERMS}{" "}
+          <a href={MOSH_PROMO_TERMS_URL} target="_blank" rel="nofollow noopener" style={{ color: CYAN }} className="font-semibold underline underline-offset-2">Mosh&apos;s promotion terms</a>.
         </CodeAnswer>
         <OfferSchema code="REFERAL55" />
 
@@ -132,7 +134,7 @@ export default function MoshReviewPage() {
             Mosh is an online consultation with an AHPRA-registered practitioner, who decides whether any treatment is
             appropriate. For hair loss you answer questions about your history and general health and upload photos;
             the practitioner may follow up by message, call or video. There is no charge for the initial consultation;
-            program fees apply. Hair-loss medicines are prescription-only in Australia.
+            program fees apply.
           </p>
           <div className="pt-1">
             <Cta label="Continue to Mosh" loc="how-it-works" />
@@ -159,19 +161,22 @@ export default function MoshReviewPage() {
               </li>
             ))}
           </ul>
+          <p className="text-[#56504a] text-sm sm:text-base leading-relaxed">
+            <a href={MOSH_PROMO_TERMS_URL} target="_blank" rel="nofollow noopener" style={{ color: CYAN }} className="font-semibold underline underline-offset-2">Read Mosh&apos;s promotion terms</a>
+          </p>
         </section>
 
         <section className="space-y-4 mb-10">
           <h2 className="text-xl font-black">Is it worth it?</h2>
           <p className="text-[#56504a] text-sm sm:text-base leading-relaxed">
             It suits men with gradual thinning or a receding hairline who would rather not book an appointment: the
-            consultation is online, a practitioner reviews it, and the 180-day guarantee on quarterly hair programs
-            limits the downside. A GP suits you better if the loss is sudden or patchy, or you want blood tests or a
+            consultation is online and a practitioner reviews it. Mosh offers a 180-day money-back guarantee on
+            quarterly hair programs, under <a href={MOSH_PROMO_TERMS_URL} target="_blank" rel="nofollow noopener" style={{ color: CYAN }} className="font-semibold underline underline-offset-2">its terms</a>. A GP suits you better if the loss is sudden or patchy, or you want blood tests or a
             dermatologist referral; the consult may be bulk-billed, and your GP already knows your history.
           </p>
           <p className="text-[#56504a] text-sm sm:text-base leading-relaxed">
-            On cost, judge Mosh on the standard rate after the first order, not the discounted one. Mosh lists a monthly
-            price for each hair plan on its own pricing page, and the consultation confirms which plan applies before you
+            On cost, judge Mosh on the standard rate after the first order, not the discounted one. Mosh lists its plans
+            on its own pricing page; the practitioner decides which, if any, applies, and Mosh shows the price before you
             pay.
           </p>
         </section>
@@ -196,6 +201,10 @@ export default function MoshReviewPage() {
           <p className="mx-auto mt-2 max-w-md text-sm leading-relaxed text-[#56504a]">
             No charge for the initial consultation; program fees apply. REFERAL55 takes 55% off a new customer&apos;s
             first order.
+          </p>
+          <p className="mx-auto mt-2 max-w-md text-xs leading-relaxed text-[#56504a]">
+            {REFERAL55_TERMS}{" "}
+            <a href={MOSH_PROMO_TERMS_URL} target="_blank" rel="nofollow noopener" style={{ color: CYAN }} className="font-semibold underline underline-offset-2">Mosh&apos;s promotion terms</a>
           </p>
           <div className="mt-5 flex justify-center">
             <Cta label="Continue to Mosh" loc="closing-cta" />

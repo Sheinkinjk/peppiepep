@@ -5,6 +5,7 @@ import { ArrowRight, Check } from "lucide-react";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
+import { MOSHY_PROMO_TERMS_URL } from "@/lib/offers";
 
 export const metadata = generateSEOMetadata(seoConfig.weightLossTelehealthMen);
 
@@ -23,11 +24,11 @@ const faqs = [
   },
   {
     q: "Is online weight loss treatment regulated in Australia?",
-    a: "Yes. Any pathway that could involve prescription medicine requires individual assessment by a registered practitioner, and telehealth providers operate under Australian health service regulations. That is why legitimate services decline some applicants.",
+    a: "Yes. Practitioners consulting through these services must be registered with AHPRA, and telehealth providers operate under Australian health service regulations. A registered practitioner reviews each applicant and some are declined.",
   },
   {
     q: "What does a men's program typically include?",
-    a: "The common shape is an online questionnaire, a practitioner review, a plan if you are suitable, ongoing check-ins, and support such as coaching and meal plans. Inclusions and pricing vary by provider and are shown before you commit.",
+    a: "The common shape is an online questionnaire, a consultation with a registered practitioner, ongoing check-ins, and support such as coaching and meal plans. Inclusions and pricing vary by provider and are shown before you commit.",
   },
 ];
 
@@ -51,7 +52,7 @@ const webPageSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
   datePublished: "2026-07-05",
-  dateModified: "2026-09-30",
+  dateModified: "2026-10-01",
   name: seoConfig.weightLossTelehealthMen.title,
   description: seoConfig.weightLossTelehealthMen.description,
   url: seoConfig.weightLossTelehealthMen.url,
@@ -91,17 +92,15 @@ export default function WeightLossTelehealthMenPage() {
 
         <p className="mb-10 rounded-lg border border-[#ded8cd] bg-[#f7f4ee] px-4 py-3 text-xs leading-relaxed text-[#56504a]">
           <span className="font-semibold text-[#14120f]">Information only.</span> This page describes a category of
-          services. It is not medical advice and does not recommend any treatment. Weight-management medicines are
-          prescription-only in Australia and need individual assessment by a registered practitioner. Contains an
-          affiliate link: we may earn a commission from Moshy, at no extra cost to you.
+          services. It is not medical advice and does not recommend any treatment. Contains an affiliate link: we may earn a commission from Moshy, at no extra cost to you.
         </p>
 
         <section className="space-y-4 mb-10">
           <h2 className="text-xl font-black">How it works</h2>
           <p className="text-[#56504a] text-sm sm:text-base leading-relaxed">
             You complete an online questionnaire in your own time. A registered practitioner reviews it and consults
-            with you by phone or video, then decides whether any treatment is appropriate. Some applicants are declined,
-            and a service that promises a specific medicine before that review is one to avoid.
+            with you by phone or video, then decides whether any treatment is appropriate. Some applicants are declined.
+            A service that promises a particular treatment before a practitioner has assessed you is one to avoid.
           </p>
         </section>
 
@@ -136,8 +135,12 @@ export default function WeightLossTelehealthMenPage() {
           </p>
           <div className="rounded-xl border px-6 py-5 mt-6" style={{ borderColor: `${CYAN}40`, background: `${CYAN}0A` }}>
             <p className="text-[#14120f] text-sm sm:text-base leading-relaxed mb-4">
-              Starting the Moshy questionnaire commits you to nothing. Our link carries REFERRAL120: $120 off a first
-              order, with a 3-month minimum commitment.
+              Our link carries REFERRAL120: $120 off a first order, one use per new customer, with a 3-month minimum
+              commitment under{" "}
+              <a href={MOSHY_PROMO_TERMS_URL} target="_blank" rel="noopener noreferrer" className="font-semibold underline underline-offset-2">
+                Moshy&apos;s promotion terms
+              </a>
+              .
             </p>
             <a
               {...aff}
@@ -145,7 +148,7 @@ export default function WeightLossTelehealthMenPage() {
               className="inline-flex items-center gap-2 rounded-xl px-6 py-3 text-sm font-bold text-white transition-all hover:-translate-y-0.5 shadow-lg"
               style={{ background: CYAN, boxShadow: `0 8px 32px ${CYAN}30` }}
             >
-              Continue to Moshy ($120 off first order)
+              Continue to Moshy
               <ArrowRight className="h-4 w-4" />
             </a>
           </div>
@@ -176,7 +179,8 @@ export default function WeightLossTelehealthMenPage() {
 
         <p className="text-[#56504a] text-xs mt-8 leading-relaxed">
           This page is operated by Refer Labs and contains an affiliate referral link. We may earn a commission if you
-          sign up through it, at no extra cost to you. Nothing here is medical advice. Always consult a qualified health
+          sign up through it, at no extra cost to you. Nothing here is medical advice. Any treatment is decided by a
+          registered practitioner after an individual assessment. Always consult a qualified health
           professional before making health decisions.
         </p>
         <p className="text-[#56504a] text-xs mt-4">© 2026 Refer Labs · Australia · <Link href="/guides" className="hover:text-[#56504a]">All guides</Link></p>

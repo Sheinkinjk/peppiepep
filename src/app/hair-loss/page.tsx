@@ -5,6 +5,7 @@ import MatchPrompt from "@/components/consumer/MatchPrompt";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, SCHEMA_AUTHOR, SCHEMA_PUBLISHER } from "@/lib/seo";
 import { MOSH_HAIR_URL } from "@/lib/affiliate-links";
+import { MOSH_PROMO_TERMS_URL, REFERAL55_TERMS } from "@/lib/offers";
 import OfferSchema from "@/components/offers/OfferSchema";
 import { EdgeObject } from "@/components/brand/EdgeObject";
 import { GuideGrid } from "@/components/brand/GuideGrid";
@@ -18,18 +19,16 @@ const guides = [
   { href: "/best-hair-loss-treatment-australia", title: "Best hair loss treatment", desc: "Mosh and your GP side by side, and where over-the-counter products fit." },
   { href: "/moshhair", title: "Mosh review & offer", desc: "How the men's hair-loss telehealth service works, plus 55% off your first order." },
   { href: "/mosh-review", title: "Is Mosh legit & worth it?", desc: "Who runs the consultations, how billing works, and who Mosh does not suit." },
-  { href: "/hair-loss-treatment-cost-australia", title: "What treatment costs", desc: "How over-the-counter products, a GP and a telehealth subscription are each priced." },
-  { href: "/early-signs-of-hair-loss-australia", title: "Early signs of hair loss", desc: "How to tell if you're going bald, what's normal, and when to see someone." },
-  { href: "/how-to-stop-hair-loss-australia", title: "How to slow hair loss", desc: "The causes, what the evidence supports, and how to get assessed." },
+  { href: "/hair-loss-treatment-cost-australia", title: "Hair-loss costs compared", desc: "How over-the-counter products, a GP and a telehealth subscription are each priced." },
+  { href: "/early-signs-of-hair-loss-australia", title: "Early signs of hair loss", desc: "How to tell if you're going bald, what's normal, and where to get it checked." },
   { href: "/receding-hairline-treatment-australia", title: "Receding hairline", desc: "What a receding hairline usually means, and the routes to having it assessed." },
-  { href: "/online-hair-loss-treatment-australia", title: "Online hair-loss treatment", desc: "How the telehealth assessment works, and what you can and can't get online." },
   { href: "/mens-health", title: "Men's health", desc: "The wider category: how the access routes differ and what each costs over a year." },
 ];
 
 const faqs = [
   {
     q: "What are my options for hair loss in Australia?",
-    a: "Three. An online consultation with a service such as Mosh, where a registered practitioner decides whether any treatment is appropriate; an appointment with your GP; or over-the-counter shampoos and serums, which are cosmetic and need no consult. Hair-loss medicines are prescription-only in Australia, so the first two are the ways to be assessed.",
+    a: "Three. An online consultation with a service such as Mosh, where a registered practitioner decides whether any treatment is appropriate; an appointment with your GP; or over-the-counter shampoos and serums, which are cosmetic. Your GP and an online consultation are the two ways to be assessed; over-the-counter products need no consult.",
   },
   {
     q: "Are over-the-counter products enough on their own?",
@@ -41,7 +40,7 @@ const faqs = [
   },
   {
     q: "Is any of this medical advice?",
-    a: "No. This hub is general information about services and products. Suitability for any treatment is assessed individually by registered practitioners, and prescription medicines are prescription-only in Australia. Speak to a qualified health professional about your own situation.",
+    a: "No. This hub is general information about services and products. Any treatment is decided by a registered practitioner after an individual assessment. Speak to a qualified health professional about your own situation.",
   },
 ];
 
@@ -58,7 +57,7 @@ const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   datePublished: "2026-03-16",
-  dateModified: "2026-09-30",
+  dateModified: "2026-10-01",
   name: "Hair loss treatment options in Australia, compared",
   description:
     "Refer Labs' hair loss hub for Australians: an online consultation, your GP, or over-the-counter products, and who each suits.",
@@ -101,8 +100,8 @@ export default function HairLossHubPage() {
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#14120f]">
               There are three routes. An online consultation with a service such as Mosh, where a registered
               practitioner assesses you with no clinic visit; an appointment with your GP, who can also order tests and
-              refer you on; or over-the-counter shampoos and serums, which are cosmetic and need no consult. Hair-loss
-              medicines are prescription-only in Australia, so the first two are the ways to be assessed.
+              refer you on; or over-the-counter shampoos and serums, which are cosmetic. Your GP and an online
+              consultation are the two ways to be assessed; over-the-counter products need no consult.
             </p>
             {/* Below the lead. The first paragraph after the h1 is the answer;
                 a disclosure in that slot is what an engine lifts instead. Still
@@ -141,8 +140,14 @@ export default function HairLossHubPage() {
               <h3 className="mt-3 text-xl font-bold text-[#14120f]">An online consultation</h3>
               <p className="mt-2.5 text-sm leading-relaxed text-[#56504a]">
                 A questionnaire and photos, reviewed by a registered practitioner, with no clinic visit. Mosh is one
-                Australian men&apos;s service that runs this. New customers get 55% off a first order with REFERAL55:
-                our link carries the code, and if it isn&apos;t shown at checkout, enter REFERAL55.
+                Australian men&apos;s service that runs this. Refer Labs readers get 55% off with REFERAL55: our link
+                carries the code, and if it isn&apos;t shown at checkout, enter REFERAL55.
+              </p>
+              <p className="mt-2 text-xs leading-relaxed text-[#56504a]">
+                {REFERAL55_TERMS}{" "}
+                <a href={MOSH_PROMO_TERMS_URL} target="_blank" rel="nofollow noopener" className="font-semibold text-[#007a95] underline underline-offset-2">
+                  Mosh&apos;s promotion terms
+                </a>
               </p>
               <div className="mt-5 space-y-2 text-sm font-semibold">
                 <p>
@@ -210,8 +215,8 @@ export default function HairLossHubPage() {
           </div>
           <p className="mt-8 max-w-3xl rounded-xl border border-[#ded8cd] bg-[#f7f4ee] px-5 py-4 text-xs leading-relaxed text-[#56504a]">
             <span className="font-semibold text-[#14120f]">Information only.</span> Nothing here is medical advice or a
-            recommendation of any treatment. Prescription medicines in Australia are available only after individual
-            assessment by a registered practitioner.
+            recommendation of any treatment. Any treatment is decided by a registered practitioner after an individual
+            assessment.
           </p>
           <AffiliateDisclosure className="mt-3 max-w-3xl" />
           <p className="mt-6 text-sm leading-relaxed text-[#56504a]">

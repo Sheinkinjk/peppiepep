@@ -10,6 +10,7 @@ import OfferSchema from "@/components/offers/OfferSchema";
 import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 import ProviderPair, { type PairProvider } from "@/components/consumer/ProviderPair";
 import WeightInclusionsTable from "@/components/consumer/WeightInclusionsTable";
+import { MOSHY_PROMO_TERMS_URL } from "@/lib/offers";
 
 export const metadata = generateSEOMetadata(seoConfig.moshyVsJuniper);
 
@@ -32,7 +33,7 @@ const providers: PairProvider[] = [
       "In-app coaching, dietitian meal plans and a community",
       "Also covers hair loss and skin care",
     ],
-    offer: { text: "$120 off your first order", code: "REFERRAL120" },
+    offer: { text: "$120 off your first order, 3-month minimum,", code: "REFERRAL120" },
     href: MOSHY_URL,
     cta: "Continue to Moshy",
     loc: "mvj-hero-moshy",
@@ -45,9 +46,9 @@ const providers: PairProvider[] = [
     points: [
       "Online assessment, then an initial consultation",
       "Dietitian chat in the app, meal plans and a private community",
-      "Full refund if the practitioner decides it isn't right for you",
+      "Full refund if you do not proceed after the consultation (Juniper's terms)",
     ],
-    offer: { text: "Initial consultation waived, valued at $89,", code: "JARREDKFC" },
+    offer: { text: "No charge for the initial consultation, valued at $89 (program fees apply),", code: "JARREDKFC" },
     href: JUNIPER_URL,
     cta: "Continue to Juniper",
     loc: "mvj-hero-juniper",
@@ -64,7 +65,7 @@ const faqs = [
   },
   {
     q: "What are the Moshy and Juniper discount codes?",
-    a: "Through Refer Labs, Moshy's code is REFERRAL120, which takes $120 off a new customer's first order. Juniper's is JARREDKFC, which waives the initial consultation, valued by Juniper at $89; it does not take money off the program itself. Each is carried by the links on this page.",
+    a: "Through Refer Labs, Moshy's code is REFERRAL120, which takes $120 off a new customer's first order, one use, with a 3-month minimum commitment under Moshy's promotion terms. Juniper's is JARREDKFC, which means no charge for the initial consultation, which Juniper values at $89; program fees apply. Each is carried by the links on this page.",
   },
   {
     q: "How much do Moshy and Juniper cost?",
@@ -112,7 +113,7 @@ const webPageSchema = {
   url: seoConfig.moshyVsJuniper.url,
   inLanguage: "en-AU",
   datePublished: "2026-07-05",
-  dateModified: "2026-09-30",
+  dateModified: "2026-10-01",
   isPartOf: { "@id": `${SITE_URL}/#website` },
 };
 
@@ -121,7 +122,7 @@ const articleSchema = comparisonArticleSchema({
   description: "Refer Labs compares Moshy and Juniper on care model, who each is built for, and the Refer Labs code for each.",
   url: "https://referlabs.com.au/moshy-vs-juniper",
   datePublished: "2026-07-05",
-  dateModified: "2026-09-30",
+  dateModified: "2026-10-01",
 });
 
 export default function MoshyVsJuniperPage() {
@@ -154,7 +155,8 @@ export default function MoshyVsJuniperPage() {
           30-day money-back guarantee. Both are built with women in mind. Juniper offers 1:1 coaching as an add-on;
           Moshy is Mosh&apos;s brother brand, also covers hair and skin, and takes anyone a practitioner assesses as
           suitable. Moshy&apos;s code REFERRAL120 takes $120 off a first
-          order with a 3-month minimum; Juniper&apos;s JARREDKFC waives the initial consultation, valued at $89.
+          order with a 3-month minimum; Juniper&apos;s JARREDKFC means no charge for the initial consultation, valued at
+          $89, and program fees apply.
         </p>
 
         <div className="mt-6 max-w-2xl space-y-2">
@@ -172,13 +174,16 @@ export default function MoshyVsJuniperPage() {
             On inclusions they are close: both list app coaching, dietitian meal plans, a community and a 30-day
             money-back guarantee. Choose on fit. Juniper is designed around women and sells 1:1 coaching as an add-on.
             Moshy sits alongside Mosh&apos;s hair and skin services and lists psychologists and exercise physiologists in its
-            care team. The offers differ too: Juniper&apos;s code waives the first consultation, while Moshy&apos;s takes
+            care team. The offers differ too: Juniper&apos;s code means no charge for the first consultation (program fees apply), while Moshy&apos;s takes
             $120 off the first order and carries a 3-month minimum.
           </p>
           <CodeAnswer code="REFERRAL120" className="mt-5">
             Refer Labs holds a code for both. Moshy&apos;s is REFERRAL120, $120 off a new customer&apos;s first order, one
-            use per customer. Juniper&apos;s is JARREDKFC, which waives the initial consultation Juniper values at $89, so
-            you pay nothing to be assessed; it takes nothing off the program itself.
+            use per customer, with a 3-month minimum commitment under{" "}
+            <a href={MOSHY_PROMO_TERMS_URL} target="_blank" rel="noopener noreferrer" className="font-semibold underline underline-offset-2">
+              Moshy&apos;s promotion terms
+            </a>
+            . JARREDKFC means no charge for the initial consultation, which Juniper values at $89; program fees apply.
           </CodeAnswer>
         </section>
 
@@ -200,7 +205,7 @@ export default function MoshyVsJuniperPage() {
             <h2 className="text-lg font-bold text-[#14120f]">Choose Juniper if</h2>
             <ul className="mt-3 space-y-2 text-[15px] leading-relaxed text-[#56504a]">
               <li>You want 1:1 coaching available on top of the program.</li>
-              <li>You would like the initial consultation waived before you commit.</li>
+              <li>You would like no charge for the initial consultation before you commit (program fees apply).</li>
             </ul>
           </div>
         </section>
@@ -243,7 +248,7 @@ export default function MoshyVsJuniperPage() {
 
         <FactHistory subject="Moshy" kind="offer_observation" hub="weight-loss" route="/moshy-vs-juniper" />
 
-        <EditorialMeta lastUpdated="2026-09-30" className="mt-8" />
+        <EditorialMeta lastUpdated="2026-10-01" className="mt-8" />
         <AffiliateDisclosure partners={["Moshy", "Juniper"]} earnsFromAll className="mt-6" />
       </main>
     </ConsumerShell>

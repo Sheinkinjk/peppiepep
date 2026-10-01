@@ -77,12 +77,6 @@ const guides: GuideLink[] = [
     kind: "cost",
   },
   {
-    href: "/mens-health/online-prescription-australia",
-    title: "Online prescription: cost and Medicare",
-    desc: `${MIDOC.scriptRepeat} for a repeat and ${MIDOC.scriptNew} for a new script (read ${MIDOC.readOnShort}), plus the identifier that decides whether you get one.`,
-    kind: "cost",
-  },
-  {
     href: "/mens-health/mens-health-quiz",
     title: "Which route fits you?",
     desc: "Four questions on cost, discretion and preference. No health questions.",
@@ -100,11 +94,11 @@ const OTHER: { href: string; label: string; object: ObjectKind }[] = [
 const faqs = [
   {
     q: "What does men's health treatment cost in Australia?",
-    a: "It depends far more on the access route than on the condition. A GP consult may be bulk-billed or carry a gap, with a Medicare rebate on the consultation. Online clinics generally run subscriptions that bundle a consult with ongoing supply and support. The figure worth comparing is what each route costs over twelve months, not what the first appointment costs.",
+    a: "It depends far more on the access route than on the condition. A GP consult may be bulk-billed or carry a gap, with a Medicare rebate on the consultation. Online clinics generally run subscriptions that bundle a consult with ongoing support. The figure worth comparing is what each route costs over twelve months, not what the first appointment costs.",
   },
   {
     q: "Are online men's health clinics legitimate in Australia?",
-    a: "The established ones operate as regulated telehealth services: you complete an assessment, an Australian-registered practitioner reviews it, and anything prescription-only is supplied only where that practitioner judges it appropriate and dispensed by a pharmacy. The check to run on any service is whether a practitioner consultation happens before anything is supplied. A service offering to skip that step is the warning sign.",
+    a: "The established ones operate as regulated telehealth services: you complete an assessment, an Australian-registered practitioner reviews it, and any treatment is decided by the practitioner after an individual assessment. The check to run on any service is whether a practitioner consultation happens before any treatment is decided. A service offering to skip that step is the warning sign.",
   },
   {
     q: "Is men's health covered by Medicare?",
@@ -187,7 +181,7 @@ export default function MensHealthHub() {
                 cannot be compared directly. One bills a subscription every month whether you consult or not; the
                 other bills per appointment, often with a Medicare rebate and sometimes bulk-billed. These guides put
                 both on a twelve-month footing, say what each route includes and what is billed separately, and price
-                the parts you can actually check, from a consultation to a certificate to a repeat script.
+                the parts you can actually check, from a consultation to a certificate.
               </p>
               <AffiliateDisclosure compact className="mt-4" />
             </div>
@@ -214,8 +208,8 @@ export default function MensHealthHub() {
               name: "Midoc",
               href: "/midoc",
               hrefLabel: "Read our Midoc guide",
-              suits: "Someone who wants a consultation, a certificate or a repeat script quickly, without booking a clinic visit.",
-              how: `Online consultations with ${MIDOC.practitioners}, ${MIDOC.waitTime}. Certificates and scripts are separate lines with their own prices.`,
+              suits: "Someone who wants a consultation or a certificate quickly, without booking a clinic visit.",
+              how: `Online consultations with ${MIDOC.practitioners}, ${MIDOC.waitTime}. Certificates are a separate line with their own prices.`,
               cost: `Standard consultation ${MIDOC.consultStandard}, specialist ${MIDOC.consultSpecialist}, certificates from ${MIDOC.certificateSingleDay}, read ${MIDOC.readOnLabel}.`,
               visitHref: "/go/midoc-mens-health-hub",
               highlight: `Mental health care plans and reviews are ${MIDOC.mentalHealth}, read ${MIDOC.readOnLabel}. That is the one line here that Medicare covers in full.`,

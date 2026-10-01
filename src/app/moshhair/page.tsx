@@ -35,7 +35,7 @@ const webPageSchema = {
   url: seoConfig.moshHair.url,
   inLanguage: "en-AU",
   datePublished: "2026-01-01",
-  dateModified: "2026-09-30",
+  dateModified: "2026-10-01",
   about: [
     { "@type": "Thing", name: "Mosh hair loss telehealth Australia" },
     { "@type": "Thing", name: "Mosh discount code" },

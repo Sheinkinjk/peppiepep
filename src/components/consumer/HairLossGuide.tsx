@@ -6,6 +6,7 @@ import StickyCta from "@/components/consumer/StickyCta";
 import EditorialMeta from "@/components/consumer/EditorialMeta";
 import { SITE_URL, SCHEMA_AUTHOR, SCHEMA_PUBLISHER } from "@/lib/seo";
 import { MOSH_HAIR_URL } from "@/lib/affiliate-links";
+import { MOSH_PROMO_TERMS_URL, REFERAL55_TERMS } from "@/lib/offers";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Shared layout for the hair-loss guide cluster (men's hair loss, funnels to Mosh).
@@ -18,7 +19,7 @@ import { MOSH_HAIR_URL } from "@/lib/affiliate-links";
 export type GuideSection = { h: string; body: string[]; bullets?: string[] };
 
 export interface HairLossGuideConfig {
-  slug: string;                 // e.g. "/online-hair-loss-treatment-australia"
+  slug: string;                 // e.g. "/early-signs-of-hair-loss-australia"
   crumb: string;
   h1: string;
   /** Direct, citable answer in the first ~100 words (AEO/GEO). */
@@ -28,9 +29,8 @@ export interface HairLossGuideConfig {
   related: { href: string; label: string }[];
 }
 
-// Restamped 2 Sep 2026, when the telehealth prescribing claim on these guides
-// was corrected: it said the rule applied "since 2025" when the Medical Board's
-// revised telehealth guidelines took effect 1 September 2023.
+// Restamped 1 Oct 2026 after the TGA/Ahpra copy pass (efficacy, urgency and
+// class wording removed; Mosh's promotion terms linked beside the code).
 export function hairLossGuideSchemas(cfg: HairLossGuideConfig) {
   const url = `${SITE_URL}${cfg.slug}`;
   return [
@@ -48,7 +48,7 @@ export function hairLossGuideSchemas(cfg: HairLossGuideConfig) {
       "@type": "Article",
       headline: cfg.h1,
       url,
-      dateModified: "2026-09-02",
+      dateModified: "2026-10-01",
       author: SCHEMA_AUTHOR,
       publisher: SCHEMA_PUBLISHER,
     },
@@ -68,6 +68,13 @@ function MoshCta({ heading, body, loc }: { heading: string; body: string; loc: s
       <div className="max-w-md">
         <p className="font-bold text-[#14120f]">{heading}</p>
         <p className="mt-1 text-[14px] leading-relaxed text-[#14120f]">{body}</p>
+        {/* Ahpra s133(1)(b): the inducement's terms are stated and linked beside the code. */}
+        <p className="mt-2 text-[12px] leading-relaxed text-[#56504a]">
+          {REFERAL55_TERMS}{" "}
+          <a href={MOSH_PROMO_TERMS_URL} target="_blank" rel="nofollow noopener" className="font-semibold text-[#007a95] underline underline-offset-2">
+            Mosh&apos;s promotion terms
+          </a>
+        </p>
       </div>
       <a href={MOSH_HAIR_URL} target="_blank" rel="nofollow sponsored" data-cta={`hairloss-${loc}`} className="nw-btn shrink-0 whitespace-nowrap">
         Continue to Mosh <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -98,22 +105,21 @@ export default function HairLossGuide({ cfg }: { cfg: HairLossGuideConfig }) {
         {/* Below the lead, never between it and the h1. The first thing after
             the h1 is the answer; a meta strip in that slot is what an engine
             lifts instead. */}
-        <EditorialMeta lastUpdated="2026-09-02" className="mt-4" />
+        <EditorialMeta lastUpdated="2026-10-01" className="mt-4" />
 
         {/* Information-only notice */}
         <div className="nw-card mt-6 px-5 py-4 text-sm leading-relaxed text-[#56504a]">
-          <span className="font-bold text-[#14120f]">Information only.</span> Nothing here is medical advice or a
-          recommendation of any treatment. Prescription hair-loss treatment in Australia is supplied only after an
-          individual assessment by a registered practitioner who decides suitability. This page contains a disclosed
-          affiliate link to Mosh.
+          <span className="font-bold text-[#14120f]">Information only.</span> Nothing here is medical advice. Any
+          treatment is decided by a registered practitioner after an individual assessment. This page contains a
+          disclosed affiliate link to Mosh.
         </div>
 
         {/* Top CTA (service-focused) */}
         <div className="mt-7">
           <MoshCta
             loc="top"
-            heading="Want a practitioner to assess your options?"
-            body="Mosh runs a men's hair-loss assessment online, reviewed by registered Australian practitioners, who decide whether any treatment is appropriate. 55% off your first order with the code REFERAL55 through our link; you see the plan and price before you commit."
+            heading="Want your hair loss assessed by a practitioner?"
+            body="Mosh runs a men's hair-loss assessment online, reviewed by registered Australian practitioners, who decide whether any treatment is appropriate. 55% off with the code REFERAL55 through our link; you see the plan and price before you commit."
           />
         </div>
 
@@ -142,7 +148,7 @@ export default function HairLossGuide({ cfg }: { cfg: HairLossGuideConfig }) {
           <MoshCta
             loc="bottom"
             heading="Start with a practitioner, not a guess"
-            body="If you want your options assessed properly, Mosh's online consultation is reviewed by a registered Australian practitioner. 55% off a new customer's first order with REFERAL55; Mosh's 180-day money-back guarantee applies to quarterly hair programs, under its terms."
+            body="Mosh's online consultation is reviewed by a registered Australian practitioner, who decides whether any treatment is appropriate. 55% off with REFERAL55; Mosh also offers a 180-day money-back guarantee on quarterly hair programs, under its promotion terms."
           />
         </div>
 
@@ -173,14 +179,14 @@ export default function HairLossGuide({ cfg }: { cfg: HairLossGuideConfig }) {
         <p className="mt-10 flex items-start gap-2 text-xs leading-relaxed text-[#56504a]">
           <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-[#007a95]" aria-hidden="true" />
           <span>
-            Information only, not medical advice. Prescription medicines in Australia are supplied only after individual
-            assessment by a registered practitioner. Some links are disclosed affiliate links, and commissions never change
+            Information only, not medical advice. Any treatment is decided by a registered practitioner after an
+            individual assessment. Some links are disclosed affiliate links, and commissions never change
             a comparison or a conclusion.
           </span>
         </p>
       </main>
 
-      <StickyCta href={MOSH_HAIR_URL} product="Mosh hair-loss telehealth" label="Claim offer" offer="55% off your first order" />
+      <StickyCta href={MOSH_HAIR_URL} product="Mosh hair-loss telehealth" label="Claim offer" offer="55% off your first order" termsHref={MOSH_PROMO_TERMS_URL} />
     </ConsumerShell>
   );
 }

@@ -7,6 +7,7 @@ import PathwayQuiz from "@/components/consumer/PathwayQuiz";
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, SCHEMA_AUTHOR, SCHEMA_PUBLISHER } from "@/lib/seo";
 import { MOSHY_URL, JUNIPER_URL } from "@/lib/affiliate-links";
 import OfferSchema from "@/components/offers/OfferSchema";
+import { MOSHY_PROMO_TERMS_URL } from "@/lib/offers";
 
 import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 import { EdgeObject } from "@/components/brand/EdgeObject";
@@ -29,9 +30,9 @@ const providers: PairProvider[] = [
     points: [
       "Online assessment, then an initial consultation",
       "Dietitian chat in the app, meal plans and a private community",
-      "Full refund if the practitioner decides it isn't right for you",
+      "Full refund if you do not proceed after the consultation (Juniper's terms)",
     ],
-    offer: { text: "Initial consultation waived, valued at $89,", code: "JARREDKFC" },
+    offer: { text: "No charge for the initial consultation, valued at $89 (program fees apply),", code: "JARREDKFC" },
     href: JUNIPER_URL,
     cta: "Continue to Juniper",
     loc: "weight-loss-hub-juniper",
@@ -45,7 +46,7 @@ const providers: PairProvider[] = [
       "In-app coaching, dietitian meal plans and a community",
       "Also covers hair loss and skin care",
     ],
-    offer: { text: "$120 off your first order", code: "REFERRAL120" },
+    offer: { text: "$120 off your first order, 3-month minimum,", code: "REFERRAL120" },
     href: MOSHY_URL,
     cta: "Continue to Moshy",
     loc: "weight-loss-hub-moshy",
@@ -60,12 +61,11 @@ const guides = [
   { href: "/best-weight-loss-telehealth-australia", title: "Best weight loss telehealth", desc: "Moshy and Juniper side by side." },
   { href: "/cheapest-weight-loss-telehealth-australia", title: "Cheapest weight loss telehealth", desc: "Subscription vs pay-as-you-go, and what cheapest means." },
   { href: "/weight-loss-telehealth-cost-australia", title: "What it costs", desc: "How telehealth pricing and subscriptions work." },
-  { href: "/moshy-vs-gp", title: "Telehealth vs your GP", desc: "Two doors to the same care. The practical trade." },
-  { href: "/moshy-eligibility", title: "Moshy's questionnaire, explained", desc: "What it asks and why some people are declined." },
+  { href: "/moshy-vs-gp", title: "Telehealth vs your GP", desc: "Online consultations or in-person care: the practical trade." },
   { href: "/moshy-alternatives", title: "Moshy alternatives", desc: "The shortlist, including your GP." },
   { href: "/weight-loss-telehealth-men-australia", title: "The men's guide", desc: "How men's services work and the pre-signup checklist." },
-  { href: "/moshy", title: "Moshy offer & referral link", desc: "$120 off your first order with the code REFERRAL120, applied through our link." },
-  { href: "/weight-loss-quiz", title: "Which pathway fits you?", desc: "A short matcher across the online services and your GP." },
+  { href: "/moshy", title: "Moshy offer & referral link", desc: "$120 off your first order with the code REFERRAL120, applied through our link; 3-month minimum commitment." },
+  { href: "/weight-loss-quiz", title: "Which route fits you?", desc: "A short matcher across the online services and your GP." },
   { href: "/weight-loss-cost-calculator", title: "Weight-loss cost calculator", desc: "Estimate the monthly cost of each route before you commit." },
 ];
 
@@ -76,7 +76,7 @@ const faqs = [
   },
   {
     q: "What are the best online weight loss programs in Australia?",
-    a: "There is no single best program, because the right fit depends on whether you want an online service or in-person care with your GP, and on the support you want around it. Moshy and Juniper both include app coaching, dietitian meal plans and a community; Juniper is designed for women with 1:1 coaching as an add-on, and Moshy is open to anyone eligible. Our comparison lines them up on what each includes. We never sell rankings.",
+    a: "There is no single best program, because the right fit depends on whether you want an online service or in-person care with your GP, and on the support you want around it. Moshy and Juniper both include app coaching, dietitian meal plans and a community; Juniper is designed for women with 1:1 coaching as an add-on, and Moshy is open to anyone a practitioner assesses as suitable. Our comparison lines them up on what each includes. We never sell rankings.",
   },
   {
     q: "How much do online weight loss programs cost in Australia?",
@@ -84,7 +84,7 @@ const faqs = [
   },
   {
     q: "Can you see a weight-management practitioner online in Australia?",
-    a: "Yes. Australian telehealth services run the consultation online: you complete a questionnaire, and a registered practitioner assesses you and decides whether any treatment is appropriate. Weight-management medicines are prescription-only in Australia, and a legitimate service will not promise a specific treatment before that assessment. This hub is information only.",
+    a: "Yes. Australian telehealth services run the consultation online: you complete a questionnaire, and a registered practitioner assesses you and decides whether any treatment is appropriate. A service that promises a particular treatment before a practitioner has assessed you is one to avoid. This hub is information only.",
   },
   {
     q: "Is a weight loss telehealth service the same as a weight loss clinic?",
@@ -96,7 +96,7 @@ const faqs = [
   },
   {
     q: "Are online weight loss services in Australia legitimate?",
-    a: "The medical telehealth providers operate under Australian health regulations, use registered practitioners, and decline applicants who are not suitable. That screening step is the marker to look for. Services that promise a specific medicine before anyone has assessed you are the ones to avoid.",
+    a: "The medical telehealth providers operate under Australian health regulations, use registered practitioners, and decline applicants who are not suitable. That screening step is the marker to look for. A service that promises a particular treatment before a practitioner has assessed you is one to avoid.",
   },
   {
     q: "Does Refer Labs earn money from these pages?",
@@ -117,10 +117,10 @@ const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   datePublished: "2026-03-16",
-  dateModified: "2026-09-30",
+  dateModified: "2026-10-01",
   name: "Weight Loss Telehealth Australia: Compare Online Programs & Clinics",
   description:
-    "Refer Labs' weight loss telehealth hub for Australians. Compare the online services Moshy and Juniper on what each includes, and set them beside the GP pathway.",
+    "Refer Labs' weight loss telehealth hub for Australians. Compare the online services Moshy and Juniper on what each includes, and set them beside the GP route.",
   url: `${SITE_URL}/weight-loss`,
   inLanguage: "en-AU",
   isPartOf: { "@id": `${SITE_URL}/#website` },
@@ -247,6 +247,10 @@ export default function WeightLossHubPage() {
             <Link href="/best-weight-loss-telehealth-australia#inclusions" className="font-semibold text-[#007a95] hover:underline">
               What each includes, row by row
             </Link>
+            . Moshy&apos;s REFERRAL120 is one use per new customer and carries a 3-month minimum commitment under{" "}
+            <a href={MOSHY_PROMO_TERMS_URL} target="_blank" rel="noopener noreferrer" className="font-semibold text-[#007a95] hover:underline">
+              Moshy&apos;s promotion terms
+            </a>
             .
           </p>
           {JUNIPER_REQUIRED ? (
@@ -276,7 +280,7 @@ export default function WeightLossHubPage() {
               A weight loss telehealth service is an online clinic. The assessment, the practitioner review and the
               follow-ups all happen remotely, usually through a secure portal or app rather than a waiting room. For a
               lot of Australians that is the appeal: you can start in your own time, and the friction of booking a
-              first appointment disappears. The care itself is still delivered by registered practitioners working
+              first appointment disappears. The care itself is still provided by registered practitioners working
               under Australian health regulations.
             </p>
             <p>
@@ -284,7 +288,7 @@ export default function WeightLossHubPage() {
               answer a detailed health questionnaire, a registered practitioner reviews your answers, and only if you
               are considered suitable does a plan get discussed. Suitability is assessed individually, and some
               applicants are declined. That screening step is the single most useful thing to look for. A service that
-              promises a specific medicine before anyone has looked at your history is the kind to walk away from.
+              promises a particular treatment before a practitioner has assessed you is one to avoid.
             </p>
             <h3 className="pt-2 text-xl font-bold text-[#14120f]">
               Telehealth and your GP: the practical difference
@@ -349,8 +353,8 @@ export default function WeightLossHubPage() {
           </div>
           <p className="mt-8 max-w-3xl rounded-xl border border-[#ded8cd] bg-[#f7f4ee] px-5 py-4 text-xs leading-relaxed text-[#56504a]">
             <span className="font-semibold text-[#14120f]">Information only.</span> Nothing in this hub is medical advice
-            or a recommendation of any treatment. Prescription medicines in Australia are available only after individual
-            assessment by a registered practitioner.
+            or a recommendation of any treatment. Any treatment is decided by a registered practitioner after an
+            individual assessment.
           </p>
           <AffiliateDisclosure partners={["Moshy", "Juniper"]} className="mt-3 max-w-3xl" />
           <p className="mt-6 text-sm leading-relaxed text-[#56504a]">

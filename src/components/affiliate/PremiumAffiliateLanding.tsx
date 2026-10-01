@@ -174,6 +174,14 @@ export default function PremiumAffiliateLanding({ config }: { config: AffiliateP
                       name back out as redundant with the site it sits on: the unit
                       gets lifted away from the site. */}
                   <p className="mt-1.5 text-[12px] font-medium text-[#56504a]">{verifiedStamp(config.brand, config.offerCheckedOn)}</p>
+                  {config.offerTermsUrl && (
+                    <p className="mt-1.5 text-[12px] leading-relaxed text-[#56504a]">
+                      {config.offerTerms ? `${config.offerTerms} ` : ""}
+                      <a href={config.offerTermsUrl} target="_blank" rel="nofollow noopener" className="font-semibold text-[#007a95] underline underline-offset-2">
+                        {config.brand}&apos;s promotion terms
+                      </a>
+                    </p>
+                  )}
                 </div>
                 </div>
                 <div className="mt-5 [&>a]:w-full sm:[&>a]:w-auto">{cta(config.ctas.primary, "hero", "lg")}</div>
@@ -211,12 +219,22 @@ export default function PremiumAffiliateLanding({ config }: { config: AffiliateP
         {/* Trust strip */}
         {config.trustStrip && config.trustStrip.length > 0 && (
           <section className="mt-14 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-[#ded8cd] bg-[#ded8cd] sm:grid-cols-4">
-            {config.trustStrip.slice(0, 4).map((label) => (
-              <div key={label} className="flex items-center gap-3 bg-white px-5 py-5">
-                <ShieldCheck className="h-5 w-5 shrink-0 text-[#007a95]" strokeWidth={1.7} />
-                <span className="text-[13px] font-medium leading-snug text-[#56504a]">{label}</span>
-              </div>
-            ))}
+            {config.trustStrip.slice(0, 4).map((item) => {
+              // An item may be a plain label or an outbound link (e.g. to the vendor's terms).
+              const label = typeof item === "string" ? item : item.label;
+              return (
+                <div key={label} className="flex items-center gap-3 bg-white px-5 py-5">
+                  <ShieldCheck className="h-5 w-5 shrink-0 text-[#007a95]" strokeWidth={1.7} />
+                  {typeof item === "string" ? (
+                    <span className="text-[13px] font-medium leading-snug text-[#56504a]">{label}</span>
+                  ) : (
+                    <a href={item.href} target="_blank" rel="nofollow noopener" className="text-[13px] font-medium leading-snug text-[#007a95] underline underline-offset-2">
+                      {label}
+                    </a>
+                  )}
+                </div>
+              );
+            })}
           </section>
         )}
 
@@ -279,6 +297,13 @@ export default function PremiumAffiliateLanding({ config }: { config: AffiliateP
                       </li>
                     ))}
                   </ul>
+                )}
+                {section.termsLink && (
+                  <p className="mt-3 text-[14px] leading-relaxed text-[#56504a]">
+                    <a href={section.termsLink.href} target="_blank" rel="nofollow noopener" className="nw-link font-semibold">
+                      {section.termsLink.label}
+                    </a>
+                  </p>
                 )}
                 {section.disclaimer && <p className="mt-3 text-xs leading-relaxed text-[#56504a]">{section.disclaimer}</p>}
                 {section.hasCta && (
@@ -371,6 +396,14 @@ export default function PremiumAffiliateLanding({ config }: { config: AffiliateP
             {config.ctas.bottomHeading}
           </h2>
           <p className="mx-auto mt-4 max-w-md text-[15px] leading-relaxed text-white/70">{config.ctas.bottomBody}</p>
+          {config.offerTermsUrl && (
+            <p className="mx-auto mt-2 max-w-md text-[13px] leading-relaxed text-white/70">
+              {config.offerTerms ? `${config.offerTerms} ` : ""}
+              <a href={config.offerTermsUrl} target="_blank" rel="nofollow noopener" className="font-semibold text-white underline underline-offset-2">
+                {config.brand}&apos;s promotion terms
+              </a>
+            </p>
+          )}
           <div className="mt-8 flex justify-center">
             <a href={url} target="_blank" rel="nofollow sponsored" data-cta="final-band" className="nw-btn justify-center !bg-white !text-[#00748e] px-8 py-4 text-base hover:!bg-[#e4f2f5]">
               {continueLabel}
@@ -381,7 +414,7 @@ export default function PremiumAffiliateLanding({ config }: { config: AffiliateP
         </section>
       </main>
 
-      <StickyCta href={url} product={config.brand} label={config.offer ? "Claim offer" : "Get started"} offer={config.offer} />
+      <StickyCta href={url} product={config.brand} label={config.offer ? "Claim offer" : "Get started"} offer={config.offer} termsHref={config.offerTermsUrl} />
     </ConsumerShell>
   );
 }

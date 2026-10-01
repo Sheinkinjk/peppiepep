@@ -34,7 +34,7 @@ const webPageSchema = {
   url: seoConfig.moshy.url,
   inLanguage: "en-AU",
   datePublished: "2026-01-01",
-  dateModified: "2026-09-30",
+  dateModified: "2026-10-01",
   about: [
     { "@type": "Thing", name: "Moshy discount code Australia" },
     { "@type": "Thing", name: "Moshy weight loss Australia" },

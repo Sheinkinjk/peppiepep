@@ -15,6 +15,7 @@ export default function StickyCta({
   product,
   offer,
   sponsored = true,
+  termsHref,
 }: {
   href: string;
   label: string;
@@ -22,6 +23,8 @@ export default function StickyCta({
   /** When set, surfaces the deal as the headline line (still discloses the link). */
   offer?: string;
   sponsored?: boolean;
+  /** Optional link to the offer's terms, shown beside the offer line (Ahpra s133(1)(b)). */
+  termsHref?: string;
 }) {
   const [show, setShow] = useState(false);
   const isInternal = href.startsWith("/") || href.startsWith("#");
@@ -46,7 +49,17 @@ export default function StickyCta({
         <div className="min-w-0 flex-1">
           {offer ? (
             <>
-              <p className="truncate text-[13px] font-bold text-[#007a95]">{offer}</p>
+              <p className="truncate text-[13px] font-bold text-[#007a95]">
+                {offer}
+                {termsHref && (
+                  <>
+                    {" "}
+                    <a href={termsHref} target="_blank" rel="nofollow noopener" className="text-[11px] font-semibold text-[#56504a] underline underline-offset-2">
+                      Terms
+                    </a>
+                  </>
+                )}
+              </p>
               <p className="truncate text-[12px] text-[#56504a]">{product} · {disclosure}</p>
             </>
           ) : (

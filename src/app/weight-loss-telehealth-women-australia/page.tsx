@@ -11,6 +11,7 @@ import WeightInclusionsTable from "@/components/consumer/WeightInclusionsTable";
 
 import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 import { pageDates } from "@/lib/page-dates";
+import { MOSHY_PROMO_TERMS_URL } from "@/lib/offers";
 export const metadata = generateSEOMetadata(seoConfig.weightLossTelehealthWomen);
 
 const CYAN = "#007a95";
@@ -30,9 +31,9 @@ const providers: PairProvider[] = [
     points: [
       "Online assessment, then an initial consultation",
       "Dietitian chat in the app, meal plans and a private community",
-      "Full refund if the practitioner decides it isn't right for you",
+      "Full refund if you do not proceed after the consultation (Juniper's terms)",
     ],
-    offer: { text: "Initial consultation waived, valued at $89,", code: "JARREDKFC" },
+    offer: { text: "No charge for the initial consultation, valued at $89 (program fees apply),", code: "JARREDKFC" },
     href: JUNIPER_URL,
     cta: "Continue to Juniper",
     loc: "women-telehealth-juniper",
@@ -46,7 +47,7 @@ const providers: PairProvider[] = [
       "In-app coaching, dietitian meal plans and a community",
       "Also covers hair loss and skin care",
     ],
-    offer: { text: "$120 off your first order", code: "REFERRAL120" },
+    offer: { text: "$120 off your first order, 3-month minimum,", code: "REFERRAL120" },
     href: MOSHY_URL,
     cta: "Continue to Moshy",
     loc: "women-telehealth-moshy",
@@ -60,11 +61,11 @@ const faqs = [
   },
   {
     q: "Do I need a referral or an in-person appointment to start?",
-    a: "Not to start. Both services begin with an online assessment that a registered Australian practitioner reviews. If your situation needs an in-person assessment, a credible service will tell you rather than proceed. Weight-management medicines are prescription-only in Australia and need individual clinical assessment.",
+    a: "Not to start. Both services begin with an online assessment that a registered Australian practitioner reviews. If your situation needs an in-person assessment, a credible service will tell you rather than proceed.",
   },
   {
-    q: "Is it safe to do weight loss treatment online in Australia?",
-    a: "Telehealth providers operate under Australian health service regulations, and any treatment is decided by a registered practitioner after an individual assessment. That is why legitimate services screen applicants and decline some. The online format keeps the practitioner review in place.",
+    q: "How is online weight-management care regulated in Australia?",
+    a: "Practitioners consulting through these services must be registered with AHPRA, and telehealth providers operate under Australian health service regulations. A registered practitioner reviews each applicant and some are declined.",
   },
   {
     q: "What does a women's program usually include?",
@@ -72,7 +73,7 @@ const faqs = [
   },
   {
     q: "How much does Juniper cost, and is there a discount?",
-    a: "Juniper publishes its program pricing on its own site. The fee varies with the plan and level of support, 1:1 coaching is a paid add-on, and there is a 30-day money-back guarantee. Through Refer Labs, the code JARREDKFC waives the initial consultation, which Juniper values at $89; it does not take money off the program.",
+    a: "Juniper publishes its program pricing on its own site. The fee varies with the plan and level of support, 1:1 coaching is a paid add-on, and there is a 30-day money-back guarantee. Through Refer Labs, JARREDKFC means no charge for the initial consultation, which Juniper values at $89; program fees apply.",
   },
 ];
 
@@ -81,7 +82,7 @@ const articleSchema = comparisonArticleSchema({
   description: "Refer Labs compares what Juniper and Moshy each include for women in Australia, read off each provider's own page.",
   url: "https://referlabs.com.au/weight-loss-telehealth-women-australia",
   datePublished: "2026-07-24",
-  dateModified: "2026-09-30",
+  dateModified: "2026-10-01",
 });
 
 const breadcrumbSchema = {
@@ -154,8 +155,13 @@ export default function WeightLossTelehealthWomenPage() {
 
         <p className="mb-10 rounded-lg border border-[#ded8cd] bg-[#f7f4ee] px-4 py-3 text-xs leading-relaxed text-[#56504a]">
           <span className="font-semibold text-[#14120f]">Information only.</span> This page describes a category of
-          services. It is not medical advice and does not recommend any treatment. Weight-management medicines are
-          prescription-only in Australia, and any treatment is decided by a registered practitioner.
+          services. It is not medical advice and does not recommend any treatment. Any treatment is decided by a
+          registered practitioner after an individual assessment. REFERRAL120 is one use per new customer and carries
+          a 3-month minimum commitment under{" "}
+          <a href={MOSHY_PROMO_TERMS_URL} target="_blank" rel="noopener noreferrer" className="font-semibold underline underline-offset-2">
+            Moshy&apos;s promotion terms
+          </a>
+          .
         </p>
 
         <section className="mb-10">

@@ -39,9 +39,9 @@ export const nav: NavGroup[] = [
     label: "Weight Loss", href: "/weight-loss",
     items: [
       { label: "Weight loss navigator", href: "/weight-loss", blurb: "Every weight-loss route in one place, compared" },
-      { label: "Moshy", href: "/moshy", blurb: "How the program works, plus $120 off your first order" },
+      { label: "Moshy", href: "/moshy", blurb: "How the program works, plus $120 off your first order (3-month minimum)" },
       { label: "Juniper", href: "/juniper", blurb: "Built for women; JARREDKFC waives the initial consultation" },
-      { label: "Compare all providers", href: "/best-weight-loss-telehealth-australia", blurb: "Pricing, eligibility and who each suits" },
+      { label: "Compare all providers", href: "/best-weight-loss-telehealth-australia", blurb: "Pricing, inclusions and who each suits" },
       { label: "Which pathway fits you?", href: "/weight-loss-quiz", blurb: "A 60-second match, no sign-up" },
     ],
   },
@@ -49,8 +49,8 @@ export const nav: NavGroup[] = [
     label: "Hair Loss", href: "/hair-loss",
     items: [
       { label: "Mosh", href: "/moshhair", blurb: "How it works, plus 55% off your first order" },
-      { label: "Compare all options", href: "/best-hair-loss-treatment-australia", blurb: "Clinical telehealth vs topical products" },
-      { label: "What it costs", href: "/hair-loss-treatment-cost-australia", blurb: "Prices by pathway" },
+      { label: "Compare all options", href: "/best-hair-loss-treatment-australia", blurb: "Online consultation or your GP, compared" },
+      { label: "What it costs", href: "/hair-loss-treatment-cost-australia", blurb: "What each route costs" },
       { label: "Which option fits you?", href: "/hair-loss-quiz", blurb: "A 60-second match, no sign-up" },
     ],
   },
@@ -134,8 +134,8 @@ export const picks = {
   items: [
     {
       kicker: "Weight loss", brand: "Moshy", href: "/moshy", logo: "/logos/moshy.png",
-      offer: "$120 off with code REFERRAL120",
-      body: "Clinically-led weight-management telehealth, open to anyone eligible, with the plan set by a practitioner.",
+      offer: "$120 off with code REFERRAL120 (3-month minimum)",
+      body: "Weight-management telehealth: an online consultation with a registered practitioner, plus coaching and meal plans.",
       cta: "See the offer",
     },
     {
@@ -160,7 +160,7 @@ export const categories = {
   items: [
     {
       label: "Weight Loss & Telehealth", href: "/weight-loss",
-      body: "Moshy, Juniper and the GP pathway, compared on what each includes.",
+      body: "Moshy, Juniper and your GP, compared on what each includes.",
       links: [
         { label: "Moshy: the offer", href: "/moshy" },
         { label: "Moshy vs Juniper", href: "/moshy-vs-juniper" },
@@ -168,7 +168,7 @@ export const categories = {
     },
     {
       label: "Hair Loss Treatment", href: "/hair-loss",
-      body: "Clinical telehealth versus topical products, and which suits which stage.",
+      body: "Hair-loss telehealth and your GP compared, on cost and how each works.",
       links: [
         { label: "Mosh: the offer", href: "/moshhair" },
         { label: "Best treatment, compared", href: "/best-hair-loss-treatment-australia" },

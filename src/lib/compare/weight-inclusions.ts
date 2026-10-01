@@ -35,7 +35,7 @@ export const WEIGHT_INCLUSIONS: InclusionRow[] = [
   {
     label: "Practitioner support",
     juniper: "Unlimited follow-up consultations with an Australian practitioner",
-    moshy: "Unlimited medical support from a care team of doctors, nurses, pharmacists, psychologists, dietitians and exercise physiologists",
+    moshy: "Unlimited practitioner support from a care team including doctors, nurses, dietitians, psychologists and exercise physiologists",
   },
   {
     label: "Coaching and nutrition",
@@ -49,7 +49,7 @@ export const WEIGHT_INCLUSIONS: InclusionRow[] = [
   },
   {
     label: "Money-back",
-    juniper: "30-day money-back guarantee; full refund if the practitioner decides the program isn't right for you",
+    juniper: "30-day money-back guarantee; full refund if you do not proceed after the consultation (Juniper's terms)",
     moshy: "30-day money-back guarantee",
   },
   {
@@ -59,7 +59,7 @@ export const WEIGHT_INCLUSIONS: InclusionRow[] = [
   },
   {
     label: "Refer Labs code",
-    juniper: "JARREDKFC: initial consultation waived, valued at $89",
+    juniper: "JARREDKFC: no charge for the initial consultation, valued at $89; program fees apply",
     moshy: "REFERRAL120: $120 off a first order; 3-month minimum commitment",
   },
 ];

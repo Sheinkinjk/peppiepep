@@ -21,7 +21,7 @@ const faqs = [
   },
   {
     q: "Is the quiz recommending products or brands?",
-    a: "Not currently. We have no skincare partner, so there is no brand we earn from and nothing to steer you toward. The result points at our own guides. When we do add providers, we will disclose it on the page as we do everywhere else.",
+    a: "The result points at our own guides, not at a product. We earn a commission from Edible Beauty, linked below the quiz and disclosed beside the link, and from Foreo through links on our Foreo guides, which some results point to. Your answers decide the result, and a commission does not.",
   },
 ];
 

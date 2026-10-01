@@ -36,11 +36,10 @@ const SECTIONS = [
     accent: "#2F6E5A",
     tint: "#E7F1EC",
     title: "Men's Health",
-    live: "Seven guides, live now",
+    live: "Six guides, live now",
     body: "How the access routes are priced, why a subscription and a consult fee are not comparable figures, and the rebated pathway most single-condition services cannot arrange. No medicine is named anywhere.",
     links: [
       { h: "/mens-health/erectile-dysfunction-treatment-cost-australia", l: "What the routes cost" },
-      { h: "/mens-health/online-prescription-australia", l: "Online prescription: cost and Medicare" },
       { h: "/mens-health/online-doctor-medical-certificate-australia", l: "Medical certificate: cost and speed" },
     ],
   },

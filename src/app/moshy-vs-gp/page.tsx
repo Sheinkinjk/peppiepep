@@ -10,6 +10,7 @@ import CodeAnswer from "@/components/offers/CodeAnswer";
 import OfferSchema from "@/components/offers/OfferSchema";
 
 import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
+import { MOSHY_PROMO_TERMS_URL } from "@/lib/offers";
 export const metadata = generateSEOMetadata(seoConfig.moshyVsGp);
 
 const CYAN = "#007a95";
@@ -23,7 +24,7 @@ const faqs = [
   },
   {
     q: "Which is cheaper, Moshy or a GP?",
-    a: "It depends on your situation. A GP route can involve consultation fees offset by Medicare plus standard pharmacy prices, while Moshy bundles the practitioner oversight, check-ins, and delivery into one subscription shown before you commit. Neither is universally cheaper, so compare your own numbers.",
+    a: "A GP consultation is partly offset by Medicare; Moshy charges one program fee published on its own site. Neither is cheaper for everyone, so compare your own numbers.",
   },
   {
     q: "Can I use both?",
@@ -31,7 +32,7 @@ const faqs = [
   },
   {
     q: "Does Moshy replace my regular doctor?",
-    a: "No. It handles one specific pathway with practitioner oversight. Your GP remains the right person for your overall health, and for anything the online questionnaire is not designed to catch.",
+    a: "No. It covers weight management through online consultations with a registered practitioner. Your GP remains the right person for your overall health, and for anything the online questionnaire is not designed to catch.",
   },
 ];
 
@@ -55,7 +56,7 @@ const webPageSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
   datePublished: "2026-07-05",
-  dateModified: "2026-07-06",
+  dateModified: "2026-10-01",
   name: seoConfig.moshyVsGp.title,
   description: seoConfig.moshyVsGp.description,
   url: seoConfig.moshyVsGp.url,
@@ -69,7 +70,7 @@ const rows: [string, string, string][] = [
   ["Getting started", "Online questionnaire, about 10 minutes", "Book and attend an appointment"],
   ["Who assesses you", "Registered practitioner, reviewing remotely", "Your GP, in person"],
   ["Continuity", "Focused on one program", "Whole-of-health relationship over years"],
-  ["Format", "App, email, delivery to your door", "Clinic visits, scripts filled at a pharmacy"],
+  ["Cost", "One program fee covering follow-ups, coaching and meal plans, published on Moshy's site", "In-person consultations, partly offset by Medicare"],
   ["Best suited to", "The straightforward case, done conveniently", "Complex history, or you value one doctor who knows you"],
 ];
 
@@ -90,25 +91,32 @@ export default function MoshyVsGpPage() {
         <SectionMark kind="scale" size={56} /></nav>
 
         <h1 className="text-3xl sm:text-4xl lg:text-[2.7rem] font-black leading-[1.08] tracking-tight mb-5">
-          Moshy vs your GP: <span>two doors to the same kind of care</span>
+          Moshy vs your GP: <span>online consultations or in-person care</span>
         </h1>
         <p className="text-[#56504a] text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
-          Both routes end with a qualified practitioner making an individual decision about you. The differences are
-          practical: speed, format, continuity, and what kind of case each one handles best.
+          Moshy runs the consultation online by phone or video and bundles follow-ups, coaching and meal plans into one
+          program fee; a GP sees you in person, with the consultation partly offset by Medicare. In both, a registered
+          practitioner makes an individual decision about you. The differences are practical: speed, format,
+          continuity, and what kind of case each one handles best.
         </p>
         {/* Below the lead. The first paragraph after the h1 is the answer;
             a disclosure in that slot is what an engine lifts instead. Still
             above the first affiliate link, which is what it is for. */}
         <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
         <CodeAnswer code="REFERRAL120" className="mt-6">
-          A GP visit has no discount code attached; the telehealth route does, and REFERRAL120, the Moshy code Refer Labs verified, takes $120 off a new customer&apos;s first order, once per customer.
+          A GP visit has no discount code attached. REFERRAL120, the Moshy code Refer Labs verified, takes $120 off a
+          new customer&apos;s first order, once per customer, and carries a 3-month minimum commitment under{" "}
+          <a href={MOSHY_PROMO_TERMS_URL} target="_blank" rel="noopener noreferrer" className="font-semibold underline underline-offset-2">
+            Moshy&apos;s promotion terms
+          </a>
+          .
         </CodeAnswer>
         <OfferSchema code="REFERRAL120" />
 
 
         <p className="mb-10 rounded-lg border border-[#ded8cd] bg-[#f7f4ee] px-4 py-3 text-xs leading-relaxed text-[#56504a]">
           <span className="font-semibold text-[#14120f]">Information only.</span> This page compares two ways of
-          accessing care. It is not medical advice, does not recommend either pathway for any individual, and both are
+          accessing care. It is not medical advice, does not recommend either route for any individual, and both are
           legitimate.
         </p>
 
@@ -120,10 +128,10 @@ export default function MoshyVsGpPage() {
               Both are legitimate, and the right one depends on what you want from the process. Your GP is the cheaper
               route because Medicare offsets part of the consult, already knows your history, and can manage weight
               alongside the rest of your health, but it is slower to begin and depends on appointment availability.
-              Moshy is faster and entirely online, with the eligibility check, practitioner review and delivery handled
-              in one flow, though it is focused on the single issue rather than your whole health. If cost and
-              continuity matter most, start with your GP. If speed and convenience matter most, Moshy is the more
-              natural starting point. Either way a registered Australian practitioner decides what is appropriate.
+              Moshy runs the consultation online by phone or video and bundles follow-ups, coaching and meal plans into
+              one program fee, though it is focused on weight rather than your whole health. If cost and continuity
+              matter most, start with your GP. If speed and convenience matter most, Moshy suits that better. Either
+              way a registered Australian practitioner decides what is appropriate.
             </p>
           </div>
         </section>
@@ -154,8 +162,12 @@ export default function MoshyVsGpPage() {
 
         <div className="rounded-xl border px-6 py-5 mb-12" style={{ borderColor: `${CYAN}40`, background: `${CYAN}0A` }}>
           <p className="text-[#14120f] text-sm sm:text-base leading-relaxed mb-4">
-            If the telehealth route suits your situation, Moshy&apos;s eligibility check is the starting point. Ten
-            minutes, no commitment, referral applied automatically.
+            Continue to Moshy. REFERRAL120 takes $120 off a first order and carries a 3-month minimum commitment;
+            read{" "}
+            <a href={MOSHY_PROMO_TERMS_URL} target="_blank" rel="noopener noreferrer" className="font-semibold underline underline-offset-2">
+              Moshy&apos;s promotion terms
+            </a>{" "}
+            before you start.
           </p>
           <a
             {...aff}
@@ -163,7 +175,7 @@ export default function MoshyVsGpPage() {
             className="inline-flex items-center gap-2 rounded-xl px-6 py-3 text-sm font-bold text-white transition-all hover:-translate-y-0.5 shadow-lg"
             style={{ background: CYAN, boxShadow: `0 8px 32px ${CYAN}30` }}
           >
-            Continue to Moshy ($120 off with code REFERRAL120)
+            Continue to Moshy
             <ArrowRight className="h-4 w-4" />
           </a>
         </div>
@@ -172,14 +184,12 @@ export default function MoshyVsGpPage() {
           <h2 className="text-xl font-black">The trade-off</h2>
           <p className="text-[#56504a] text-sm sm:text-base leading-relaxed">
             Telehealth trades continuity for convenience. Moshy will never know your history the way a GP you have seen
-            for a decade does, and it is not trying to. What it offers instead is the removal of every small barrier
-            between deciding to act and acting: no booking lead time, no waiting room, no need to say anything
-            out loud to anyone until a practitioner has already reviewed your details.
+            for a decade does. It offers a consultation by phone or video with no booking lead time and no waiting
+            room.
           </p>
           <p className="text-[#56504a] text-sm sm:text-base leading-relaxed">
-            For plenty of men, that difference is the difference between starting and not starting. For others, the
-            GP&apos;s office is the better room. Anything urgent, unusual, or layered on top of other conditions belongs
-            with a doctor in person, full stop.
+            For some people the GP&apos;s office is the better room. Anything urgent, unusual, or layered on top of other
+            conditions belongs with a doctor in person.
           </p>
         </section>
 
@@ -201,7 +211,6 @@ export default function MoshyVsGpPage() {
         <div className="border-t border-[#ded8cd] pt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm">
           <Link href="/moshy" style={{ color: CYAN }} className="hover:opacity-80">Moshy: the offer</Link>
           <Link href="/moshy-review" style={{ color: CYAN }} className="hover:opacity-80">Moshy review →</Link>
-          <Link href="/moshy-eligibility" style={{ color: CYAN }} className="hover:opacity-80">The eligibility check →</Link>
           <Link href="/moshy-alternatives" style={{ color: CYAN }} className="hover:opacity-80">Moshy alternatives →</Link>
         </div>
 
@@ -211,7 +220,8 @@ export default function MoshyVsGpPage() {
 
         <AffiliateDisclosure className="mt-8" />
         <p className="text-[#56504a] text-xs mt-3 leading-relaxed">
-          Nothing here is medical advice. Always consult a qualified health
+          Nothing here is medical advice. Any treatment is decided by a registered practitioner after an individual
+          assessment. Always consult a qualified health
           professional about your own circumstances.
         </p>
         <p className="text-[#56504a] text-xs mt-4">© 2026 Refer Labs · Australia · <Link href="/guides" className="hover:text-[#56504a]">All guides</Link></p>

@@ -4,6 +4,13 @@ export interface AffiliateSection {
   /** Optional internal links listed under the paragraphs (e.g. alternatives we cover). */
   links?: { href: string; label: string; desc: string }[];
   disclaimer?: string;
+  /**
+   * Optional outbound link to the vendor's own terms, rendered under the
+   * paragraphs. Use it on any section that states an inducement (a code, a
+   * guarantee) for a regulated health service: Ahpra s133(1)(b) and guideline
+   * 4.2 need the terms stated and easy to find beside the offer.
+   */
+  termsLink?: { href: string; label: string };
   hasCta?: boolean;
   ctaText?: string;
 }
@@ -96,6 +103,14 @@ export interface AffiliatePageConfig {
    * fresh check.
    */
   offerCheckedOn?: string;
+  /**
+   * Optional one-line terms for `offer` (e.g. REFERAL55_TERMS), with the vendor's
+   * own terms URL. When `offerTermsUrl` is set, the offer box, the final CTA band
+   * and the sticky bar each carry a link to it. Added 1 Oct 2026 for Ahpra
+   * s133(1)(b); pages that omit both fields render exactly as before.
+   */
+  offerTerms?: string;
+  offerTermsUrl?: string;
 
   /**
    * Show the "Independent guide · How we research" trust line under the hero.
@@ -115,7 +130,7 @@ export interface AffiliatePageConfig {
   /** Scannable "at a glance" facts shown in the hero sidebar card */
   atAGlance?: { k: string; v: string }[];
   /** Trust-strip items shown under the hero */
-  trustStrip?: string[];
+  trustStrip?: (string | { label: string; href: string })[];
   /** Editorial verdict paragraph (the "bottom line") */
   verdict?: string;
   /** Verdict supporting bullets */

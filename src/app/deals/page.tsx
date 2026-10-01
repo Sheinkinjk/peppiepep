@@ -28,7 +28,7 @@ const FAQS = [
    */
   {
     q: "Which discount codes does Refer Labs hold?",
-    a: "Six, each dated in the table above: Moshy (REFERRAL120), Mosh (REFERAL55), Juniper (JARREDKFC, an $89 consultation waived), i-screen (referlabs), Knose (referlab2mf) and PetsOnMe (REFERLABS). What each one discounts, and what it does not, is set out on the brand's own page, linked from its row.",
+    a: "Six, each dated in the table above: Moshy (REFERRAL120, with a 3-month minimum commitment), Mosh (REFERAL55), Juniper (JARREDKFC, an $89 consultation waived), i-screen (referlabs), Knose (referlab2mf) and PetsOnMe (REFERLABS). What each one discounts, and what it does not, is set out on the brand's own page, linked from its row.",
   },
   {
     q: "Are these discount codes current?",
@@ -181,6 +181,16 @@ export default function DealsPage() {
                     </th>
                     <td className="col-span-2 mt-3 block text-[17px] font-bold leading-snug text-[#007a95] sm:mt-0 sm:table-cell sm:px-5 sm:py-4 sm:align-middle sm:text-[15px]">
                       {d.offer}
+                      {d.termsUrl && (
+                        <a
+                          href={d.termsUrl}
+                          target="_blank"
+                          rel="nofollow noopener"
+                          className="mt-1 block text-xs font-semibold text-[#56504a] underline hover:text-[#007a95]"
+                        >
+                          {d.brand}&apos;s promotion terms
+                        </a>
+                      )}
                     </td>
                     <td className="col-span-2 mt-3 block sm:mt-0 sm:table-cell sm:px-5 sm:py-4 sm:align-middle">
                       {d.code ? (

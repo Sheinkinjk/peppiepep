@@ -64,15 +64,15 @@ export default function Page() {
                 <th className="px-4 py-3 font-semibold">Route</th>
                 <th className="px-4 py-3 font-semibold">Arranged by</th>
                 <th className="px-4 py-3 font-semibold">Medicare</th>
-                <th className="px-4 py-3 font-semibold">Prescription</th>
+                <th className="px-4 py-3 font-semibold">Who decides the approach</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-[#f1ede4]">
               {[
-                ["Behavioural techniques", "Self-directed, or guided by a clinician", "Not applicable", "No"],
-                ["Psychological support", "GP referral, often via a Mental Health Treatment Plan", "Rebated sessions, capped per year", "No"],
-                ["GP assessment", "Book directly", "Rebate on the consult", "Only if considered appropriate"],
-                ["Online men's health clinic", "Sign up, complete an assessment", "Usually none", "Only if considered appropriate"],
+                ["Behavioural techniques", "Self-directed, or guided by a clinician", "Not applicable", "You"],
+                ["Psychological support", "GP referral, often via a Mental Health Treatment Plan", "Rebated sessions, capped per year", "A psychologist"],
+                ["GP assessment", "Book directly", "Rebate on the consult", "A practitioner"],
+                ["Online men's health clinic", "Sign up, complete an assessment", "Usually none", "A practitioner"],
               ].map((r) => (
                 <tr key={r[0]}>
                   <td className="px-4 py-3 font-semibold text-[#14120f]">{r[0]}</td>
@@ -120,7 +120,7 @@ export default function Page() {
         <ul className="mt-3 list-disc space-y-2 pl-5">
           <li>Ask what the twelve-month total is, not the first-month price.</li>
           <li>Ask whether any part of it attracts a Medicare rebate.</li>
-          <li>Ask whether a practitioner consultation happens before anything is supplied. If not, leave.</li>
+          <li>Ask whether a practitioner consults you before any treatment is decided. If not, leave.</li>
           <li>Ask how you cancel, and whether cancelling is possible in the app or requires contacting support.</li>
           <li>Consider whether a GP appointment first would open the rebated psychology pathway for you.</li>
         </ul>

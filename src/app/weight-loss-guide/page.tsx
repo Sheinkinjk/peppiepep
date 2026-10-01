@@ -3,12 +3,13 @@ import Link from "next/link";
 import { Check } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import GuideCapture from "@/components/consumer/GuideCapture";
+import { MOSHY_PROMO_TERMS_URL } from "@/lib/offers";
 
 export const metadata = generateSEOMetadata(seoConfig.weightLossGuide);
 
 const inside: string[] = [
-  "Moshy: an all-inclusive online program with in-app coaching and meal plans, and its $120-off offer for new customers",
-  "Juniper: a program designed for women with 1:1 coaching as an add-on, and its waived initial consultation",
+  "Moshy: an all-inclusive online program with in-app coaching and meal plans, and its $120-off offer for new customers, which carries a 3-month minimum commitment",
+  "Juniper: a program designed for women with 1:1 coaching as an add-on, and no charge for its initial consultation (program fees apply)",
   "The GP route: when face-to-face care and Medicare make more sense",
   "A 60-second matcher to point you to the one that fits, and why",
 ];
@@ -22,7 +23,7 @@ export default function WeightLossGuidePage() {
         </h1>
         <p className="mt-5 text-lg leading-relaxed text-[#56504a]">
           Telehealth, coaching, meal plans, your GP. The options blur together and everyone is selling something. This
-          free guide lays out the main pathways and who each one suits, so you can choose with
+          free guide lays out the main routes and who each one suits, so you can choose with
           your eyes open. We will email it to you now.
         </p>
 
@@ -43,10 +44,14 @@ export default function WeightLossGuidePage() {
 
         <p className="mt-8 text-xs leading-relaxed text-[#56504a]">
           Refer Labs is an independent Australian comparison publisher. This guide is general information, not medical
-          advice, and does not recommend any treatment or imply suitability for any individual. Results vary between
-          people, and suitability for any program is decided by a registered Australian practitioner. The guide contains
-          disclosed affiliate links: we may earn a commission if you sign up through them, at no extra cost to you, and it
-          never changes what we write.
+          advice, and does not recommend any treatment or imply suitability for any individual. Suitability for any
+          program is decided by a registered Australian practitioner. The guide contains disclosed affiliate links: we
+          may earn a commission if you sign up through them, at no extra cost to you, and it never changes what we
+          write. Moshy&apos;s offer is one use per new customer, carries a 3-month minimum commitment and applies under{" "}
+          <a href={MOSHY_PROMO_TERMS_URL} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">
+            Moshy&apos;s promotion terms
+          </a>
+          .
         </p>
 
         <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 border-t border-[#ded8cd] pt-6 text-sm">

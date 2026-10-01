@@ -18,7 +18,7 @@ const MOSH: MatchResult = {
   why: "You want a practitioner assessment, done online. Mosh runs a men's hair-loss consultation entirely online, and a registered practitioner decides whether any treatment is appropriate. Refer Labs earns a commission if you sign up through this link.",
   primaryCta: { label: "Continue to Mosh", href: MOSH_HAIR_URL, dataCta: "hair-quiz-mosh" },
   secondary: { label: "Read our Mosh guide", href: "/moshhair" },
-  note: "Hair-loss medicines are prescription-only in Australia. General information, not medical advice.",
+  note: "Any treatment is decided by a registered practitioner after an individual assessment. General information, not medical advice.",
 };
 
 const OTC: MatchResult = {

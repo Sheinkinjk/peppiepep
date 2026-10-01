@@ -95,7 +95,6 @@ export const GO_DESTINATIONS: Record<string, string> = {
   "midoc-hair-loss": MIDOC_HOME,
   "midoc-brand-page": MIDOC_HOME,
   "midoc-medical-certificate": MIDOC_HOME,
-  "midoc-online-prescription": MIDOC_HOME,
   "foreo-led-masks": FOREO_UFO,
   "foreo-skin-hub": FOREO_LUNA,
   "foreo-luna-vs-ufo": FOREO_LUNA,
