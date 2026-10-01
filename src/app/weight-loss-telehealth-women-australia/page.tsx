@@ -151,8 +151,7 @@ export default function WeightLossTelehealthWomenPage() {
 
         <p className="mb-10 rounded-lg border border-[#ded8cd] bg-[#f7f4ee] px-4 py-3 text-xs leading-relaxed text-[#56504a]">
           <span className="font-semibold text-[#14120f]">Information only.</span> This page describes a category of
-          services. It is not medical advice and does not recommend any treatment. Any treatment is decided by a
-          registered practitioner after an individual assessment. REFERRAL120 is one use per new customer and carries
+          services. It is not medical advice and does not recommend a course of care. A registered practitioner decides what is right for you after an individual assessment. REFERRAL120 is one use per new customer and carries
           a 3-month minimum commitment.
         </p>
 

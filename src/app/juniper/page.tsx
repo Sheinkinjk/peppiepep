@@ -163,7 +163,7 @@ export default function JuniperPage() {
               initial consultation, which Juniper values at $89; program fees apply. Juniper is a
               weight-management telehealth program that says it is &ldquo;dedicated to helping women&rdquo;, run as
               &ldquo;a digital health clinic by Eucalyptus&rdquo;. The service is an online consultation with a
-              registered practitioner, who decides whether any treatment is appropriate.
+              registered practitioner, who decides whether the program is right for you.
             </p>
             {/* Juniper's handbook sentence (src/lib/partner-disclosures.ts), verbatim and before any
                 Juniper link, in the same block as our own disclosure (2 Oct 2026). */}
@@ -311,8 +311,7 @@ export default function JuniperPage() {
             </a>
           </div>
           <p className="mx-auto mt-6 max-w-lg text-xs leading-relaxed text-white/60">
-            Content is general information about a service, not medical advice. Any treatment is decided by a
-            registered practitioner after an individual assessment. Juniper&apos;s inclusions and pricing
+            Content is general information about a service, not medical advice. A registered practitioner decides what is right for you after an individual assessment. Juniper&apos;s inclusions and pricing
             are drawn from Juniper&apos;s own site and can change, so confirm current terms before you commit.
           </p>
         </section>

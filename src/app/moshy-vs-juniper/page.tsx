@@ -62,7 +62,7 @@ const closing = providers.map((p) => ({ ...p, loc: p.loc.replace("hero", "close"
 const faqs = [
   {
     q: "How do Moshy and Juniper differ?",
-    a: "Both are Australian telehealth services where a registered practitioner decides whether treatment is appropriate, and both include meal plans, a community, app progress tracking and a 30-day money-back guarantee. Both are built with women in mind. Juniper lists a physio-designed exercise program and a practitioner team of specialist GPs and nurse practitioners; Moshy is Mosh's brother brand, includes in-app health coaching and also covers hair and skin.",
+    a: "Both are Australian telehealth services where a registered practitioner decides whether the program is right for you, and both include meal plans, a community, app progress tracking and a 30-day money-back guarantee. Both are built with women in mind. Juniper lists a physio-designed exercise program and a practitioner team of specialist GPs and nurse practitioners; Moshy is Mosh's brother brand, includes in-app health coaching and also covers hair and skin.",
   },
   {
     q: "What are the Moshy and Juniper discount codes?",
@@ -152,7 +152,7 @@ export default function MoshyVsJuniperPage() {
         </h1>
         <p className="mt-5 max-w-2xl text-base leading-relaxed text-[#56504a] sm:text-lg">
           Moshy and Juniper are both Australian weight-management telehealth services where a registered practitioner
-          decides whether treatment is appropriate, and both include meal plans, a community, app progress tracking and
+          decides whether the program is right for you, and both include meal plans, a community, app progress tracking and
           a 30-day money-back guarantee. Both are built with women in mind. Juniper lists a physio-designed exercise
           program and a practitioner team of specialist GPs and nurse practitioners; Moshy is Mosh&apos;s brother
           brand, includes in-app health coaching and also covers hair and skin. Moshy&apos;s code REFERRAL120 takes $120 off a first
@@ -208,7 +208,7 @@ export default function MoshyVsJuniperPage() {
 
         <p className="mt-8 max-w-3xl rounded-xl border border-[#ded8cd] bg-white px-5 py-4 text-[13px] leading-relaxed text-[#56504a]">
           Information only, not medical advice. Neither service is suitable for everyone, and a registered Australian
-          practitioner decides whether any treatment is appropriate for you.
+          practitioner decides what is right for you.
         </p>
 
         <section className="mt-14 max-w-3xl">

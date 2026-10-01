@@ -75,7 +75,7 @@ const faqs = [
   },
   {
     q: "Are cheaper services still legitimate?",
-    a: "Price doesn't decide it. A serious provider at any price has a registered Australian practitioner review your case, declines some applicants, shows its pricing before you pay, and never promises a particular treatment before a practitioner has assessed you.",
+    a: "Price doesn't decide it. A serious provider at any price has a registered Australian practitioner review your case, declines some applicants, shows its pricing before you pay, and never promises a particular outcome before a practitioner has assessed you.",
   },
 ];
 
@@ -195,8 +195,7 @@ export default function CheapestWeightLossTelehealthPage() {
 
         <p className="mt-10 max-w-3xl rounded-xl border border-[#ded8cd] bg-white px-5 py-4 text-[13px] leading-relaxed text-[#56504a]">
           Information only, not medical advice. Suitability for any program is decided by a registered Australian
-          practitioner, not by price, and any treatment is decided by a registered practitioner after an individual
-          assessment.
+          practitioner, not by price, and a registered practitioner decides what is right for you after an individual assessment.
         </p>
         <OfferTermsNote brand="Moshy" className="mt-4 max-w-3xl" />
 

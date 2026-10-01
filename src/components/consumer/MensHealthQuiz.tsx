@@ -283,8 +283,7 @@ export default function MensHealthQuiz() {
 
       <p className="mt-6 text-xs leading-relaxed text-[#56504a]">
         This quiz asks only about cost, privacy and how you prefer to consult. It collects no health information, makes
-        no assessment of you, and is general information rather than medical advice. Any treatment is decided by a
-        registered practitioner after an individual assessment.
+        no assessment of you, and is general information rather than medical advice. A registered practitioner decides what is right for you after an individual assessment.
       </p>
     </div>
   );
