@@ -1,6 +1,6 @@
 import type { AffiliatePageConfig } from "@/components/affiliate/types";
 import { MOSH_HAIR_URL } from "@/lib/affiliate-links";
-import { checkedOn } from "@/lib/offers";
+import { checkedOn, MOSH_TERMS_URL, MOSH_PROMOTIONS_PAGE_URL, REFERAL55_TERMS } from "@/lib/offers";
 
 export { MOSH_HAIR_URL };
 
@@ -39,10 +39,15 @@ export const moshHairConfig: AffiliatePageConfig = {
   logoBleed: true,
   badgeText: "Australia",
   affiliateUrl: MOSH_HAIR_URL,
+  offerViaLink: true,
   offer: "55% off your first order (code REFERAL55)",
+  // Ahpra s133(1)(b): the terms are stated and linked beside the offer box, the
+  // final CTA band and the sticky bar (TGA/Ahpra audit M16, 1 Oct 2026).
+  offerTerms: REFERAL55_TERMS,
+  offerTermsUrl: MOSH_TERMS_URL,
 
   quickAnswer:
-    "The Mosh discount code through Refer Labs is REFERAL55, worth 55% off a new customer's first order. Our link carries it into Mosh's sign-up; if it isn't shown at checkout, enter REFERAL55. Mosh is an online consultation with an AHPRA-registered practitioner, who decides whether any treatment is appropriate.",
+    "The Mosh discount code through Refer Labs is REFERAL55, worth 55% off a new customer's first order of a Mosh hair program, under Mosh's terms. Use code REFERAL55 at checkout; our link opens Mosh's sign-up with the offer. Mosh is an online consultation with an AHPRA-registered practitioner, who decides whether any treatment is appropriate.",
 
   // Not rendered by PremiumAffiliateLanding; kept because the type requires it.
   banner: {
@@ -57,13 +62,13 @@ export const moshHairConfig: AffiliatePageConfig = {
     { k: "Who assesses", v: "AHPRA-registered doctors and nurse practitioners" },
     { k: "How it works", v: "Online questionnaire and photos, reviewed by a practitioner" },
     { k: "Pricing", v: "A subscription: first order, then the standard plan rate" },
-    { k: "Using the code", v: "Our link carries REFERAL55; if it isn't shown at checkout, enter it" },
+    { k: "Using the code", v: "Use REFERAL55 at checkout; our link opens Mosh's sign-up with the offer" },
   ],
   // Key facts, each read on Mosh's own site on MOSH_READ.
   trustStrip: [
     "AHPRA-registered practitioners, paid fee-for-service",
     "No charge for the initial consultation; program fees apply",
-    "180-day money-back guarantee on quarterly hair programs (T&Cs)",
+    { label: "180-day money-back guarantee on quarterly hair programs, under Mosh's terms", href: MOSH_PROMOTIONS_PAGE_URL },
     "No lock-in contract; cancel anytime",
   ],
   // PremiumAffiliateLanding always renders a "Should you use Mosh?" box from this
@@ -78,7 +83,7 @@ export const moshHairConfig: AffiliatePageConfig = {
     h1Highlight: "55% off your first order",
     // The lead: the code and what it discounts first, then one line on what Mosh is.
     subheading:
-      "REFERAL55 takes 55% off a new customer's first Mosh order. Our link carries REFERAL55 into Mosh's sign-up; if it isn't shown at checkout, enter REFERAL55. Mosh is an online consultation with an AHPRA-registered practitioner, who decides whether any treatment is appropriate.",
+      "REFERAL55 takes 55% off a new customer's first Mosh order. Use code REFERAL55 at checkout; our link opens Mosh's sign-up with the offer. Mosh is an online consultation with an AHPRA-registered practitioner, who decides whether any treatment is appropriate.",
     trustBullets: [],
   },
 
@@ -88,7 +93,7 @@ export const moshHairConfig: AffiliatePageConfig = {
       paragraphs: [
         "You start through the link on this page, which opens Mosh's sign-up at getmosh.com.au. You answer questions about your hair loss and general health and upload photos; Mosh describes it as a five-minute quiz.",
         `An AHPRA-registered doctor or nurse practitioner based in Australia reviews your answers, and may follow up by message, call or video. Mosh says its practitioners are paid on a fee-for-service basis (getmosh.com.au, read ${MOSH_READ}). Some applicants are declined, or told to see a GP in person.`,
-        "If you go ahead, the plan, billing and any changes are managed through your Mosh account, and you can message your practitioner while you are on it. Hair-loss medicines are prescription-only in Australia.",
+        "If you go ahead, the plan, billing and any changes are managed through your Mosh account, and you can message your practitioner while you are on it. Any treatment is decided by the practitioner after an individual assessment.",
       ],
       hasCta: true,
       ctaText: "Continue to Mosh",
@@ -103,10 +108,11 @@ export const moshHairConfig: AffiliatePageConfig = {
     {
       heading: "What Mosh costs",
       paragraphs: [
-        "Mosh runs as a subscription. There is no charge for the initial consultation; program fees apply. Mosh lists a monthly price for each hair plan on its own pricing page, and the consultation confirms which plan applies before you pay.",
-        "REFERAL55 takes 55% off the first order only. Mosh's promotion terms describe its first-order hair discounts as covering the first three months; after that you pay the standard rate for your plan, so compare that rate rather than the discounted one.",
-        `Two published terms limit the downside. A 180-day money-back guarantee applies to quarterly hair programs, and a price match applies where an approved competitor charges less for a substantially comparable program. Both are subject to Mosh's terms (getmosh.com.au/hair-loss and /promotions-terms-and-conditions, read ${MOSH_READ}).`,
+        "Mosh runs as a subscription. There is no charge for the initial consultation; program fees apply. Mosh lists its plans on its own pricing page; the practitioner decides which, if any, applies, and Mosh shows the price before you pay.",
+        "REFERAL55 takes 55% off the first order only, for new customers. Mosh's promotions page describes its first-order hair discounts as covering the first three months; after that you pay the standard rate for your plan, so compare that rate rather than the discounted one.",
+        `Mosh publishes two further terms. It offers a 180-day money-back guarantee on quarterly hair programs, and a price match where an approved competitor charges less for a substantially comparable program. Both are subject to Mosh's terms (getmosh.com.au/hair-loss and /promotions-terms-and-conditions, read ${MOSH_READ}).`,
       ],
+      termsLink: { href: MOSH_PROMOTIONS_PAGE_URL, label: "Read Mosh's guarantee and promotions terms" },
     },
   ],
 
@@ -119,11 +125,11 @@ export const moshHairConfig: AffiliatePageConfig = {
   faqs: [
     {
       q: "What is the Mosh discount code, and how do I use it?",
-      a: `REFERAL55, worth 55% off a new customer's first Mosh order. Our link carries REFERAL55 into Mosh's sign-up; Mosh's own page says to use it at checkout, so if it isn't already shown there, enter REFERAL55. Checked on getmosh.com.au/start/referlabs, ${CODE_CHECKED}.`,
+      a: `REFERAL55, worth 55% off a new customer's first Mosh order. Use code REFERAL55 at checkout; our link opens Mosh's sign-up with the offer. ${REFERAL55_TERMS} Mosh's terms are at getmosh.com.au/terms. Checked on getmosh.com.au/start/referlabs, ${CODE_CHECKED}.`,
     },
     {
       q: "Is the Mosh discount only for the first order?",
-      a: "Yes. REFERAL55 applies to a new customer's first order. Later orders are charged at the standard rate for the plan the consultation confirmed, which Mosh shows before you pay.",
+      a: "Yes. REFERAL55 applies to a new customer's first order of a Mosh hair program, under Mosh's terms. Later orders are charged at the standard rate for the plan the consultation confirmed, which Mosh shows before you pay.",
     },
     {
       q: "Is Mosh legit, and is getmosh.com.au the official site?",
@@ -135,7 +141,7 @@ export const moshHairConfig: AffiliatePageConfig = {
     },
     {
       q: "What are Mosh's money-back and price-match terms?",
-      a: `Mosh's 180-day money-back guarantee applies to quarterly hair programs: cancel within 180 days and Mosh says it will refund you in full. Its price match applies where an approved competitor charges less for a substantially comparable program. Both carry conditions set out in Mosh's terms (read ${MOSH_READ}).`,
+      a: `Mosh's 180-day money-back guarantee applies to quarterly hair programs: cancel within 180 days and Mosh says it will refund you in full. Its price match applies where an approved competitor charges less for a substantially comparable program. Both carry conditions set out in Mosh's terms, at getmosh.com.au/promotions-terms-and-conditions (read ${MOSH_READ}).`,
     },
     {
       q: "Can I cancel Mosh?",
@@ -143,7 +149,7 @@ export const moshHairConfig: AffiliatePageConfig = {
     },
     {
       q: "Is Mosh worth it?",
-      a: "It depends on what you value. Mosh is fully online with no appointment, a practitioner reviews your case, and the 180-day guarantee on quarterly hair programs limits the downside. A GP may cost less after Medicare, knows your history and can order tests. Because hair-loss care is ongoing, judge it on the standard rate after the first order.",
+      a: "It depends on what you value. Mosh is fully online with no appointment, a practitioner reviews your case, and Mosh offers a 180-day money-back guarantee on quarterly hair programs, under its terms (getmosh.com.au/promotions-terms-and-conditions). A GP may cost less after Medicare, knows your history and can order tests. Because hair-loss care is ongoing, judge it on the standard rate after the first order.",
     },
   ],
 
@@ -172,7 +178,7 @@ export const moshHairConfig: AffiliatePageConfig = {
     {
       href: "/moshy",
       label: "Moshy Weight Loss, Discount Code & Review",
-      desc: "Mosh's sister brand for weight management.",
+      desc: "Mosh's brother brand for weight management.",
     },
   ],
 

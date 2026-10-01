@@ -34,7 +34,7 @@ const glance: [string, string][] = [
   ["Included", "Unlimited follow-ups, app health tracking, patient community"],
   ["Coaching", "1:1 health coaching, can be added at any time"],
   ["Pricing", "Different pricing options, confirmed with your practitioner"],
-  ["Code", "JARREDKFC waives the initial consultation, valued at $89"],
+  ["Code", "JARREDKFC: no charge for the initial consultation, which Juniper values at $89; program fees apply"],
 ];
 
 // Juniper's own wording from its homepage, read READ_ON.
@@ -43,7 +43,7 @@ const included = [
   "Health tracking via Juniper's app",
   "Access to Juniper's supportive community",
   "1:1 health coaching, which Juniper says can be added for extra support at any time",
-  "A 30-day money-back guarantee (“Love your weight loss in 30 days or your money back”)",
+  "A 30-day money-back guarantee on the first order, on Juniper's own terms",
 ];
 
 const steps = [
@@ -70,11 +70,11 @@ const related: { href: string; label: string; desc: string }[] = [
 const faqs = [
   {
     q: "What is the current Juniper discount code?",
-    a: `JARREDKFC. Through our link it waives Juniper's initial consultation, which Juniper values at $89 (source: Juniper's affiliate handbook, confirmed 23 September 2026; no public Juniper page states it). It takes nothing off the program itself. Separately, Juniper's own homepage advertises START50: "Save $50 with code START50. T&Cs apply." (read ${READ_ON}). Check Juniper's terms for which one applies to your first order.`,
+    a: `JARREDKFC. Through our link it means no charge for Juniper's initial consultation, which Juniper values at $89 (source: Juniper's affiliate handbook, confirmed 23 September 2026; no public Juniper page states it); program fees apply.`,
   },
   {
     q: "Is Juniper legit, and is it worth it?",
-    a: `Juniper describes itself as "a digital health clinic by Eucalyptus", and its consultations are phone calls with an accredited Australian practitioner. Its homepage says the program is "trusted by 300,000 members worldwide" and offers a 30-day money-back guarantee, and Juniper says that if your practitioner determines the program isn't right for you, you receive a full refund (read ${READ_ON}). Whether it is worth it depends on how much you will use the follow-ups, app and community that the program fee covers.`,
+    a: `Juniper describes itself as "a digital health clinic by Eucalyptus", and its consultations are phone calls with an accredited Australian practitioner. Its homepage offers a 30-day money-back guarantee on the first order, and a full refund if you do not proceed after the consultation, both on Juniper's own terms (read ${READ_ON}). Whether it is worth it depends on how much you will use the follow-ups, app and community that the program fee covers.`,
   },
   {
     q: "Is Juniper only for women?",
@@ -82,7 +82,7 @@ const faqs = [
   },
   {
     q: "Can I cancel Juniper, and are refunds available?",
-    a: `Juniper states two refund terms on its homepage: a 30-day money-back guarantee on your first order, and a full refund if your practitioner determines the program isn't right for you or you choose not to proceed (read ${READ_ON}). Cancellation and refund terms are Juniper's and can change, so check them before you start. Refer Labs does not manage Juniper billing.`,
+    a: `Juniper states two refund terms on its homepage: a 30-day money-back guarantee on your first order, and a full refund if you do not proceed after the consultation (read ${READ_ON}). Cancellation and refund terms are Juniper's and can change, so check them before you start. Refer Labs does not manage Juniper billing.`,
   },
 ];
 
@@ -110,7 +110,7 @@ const webPageSchema = {
   url: seoConfig.juniper.url,
   inLanguage: "en-AU",
   datePublished: "2026-07-29",
-  dateModified: "2026-09-30",
+  dateModified: "2026-10-01",
   isPartOf: { "@id": `${SITE_URL}/#website` },
   author: SCHEMA_AUTHOR,
   publisher: SCHEMA_PUBLISHER,
@@ -159,19 +159,15 @@ export default function JuniperPage() {
               Juniper discount code Australia: <span>JARREDKFC waives the $89 consultation</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-[#56504a]">
-              The current Juniper discount code is JARREDKFC: through our link it waives Juniper&apos;s initial
-              consultation, which Juniper values at $89, and takes nothing off the program itself. Juniper is a
+              The current Juniper discount code is JARREDKFC: through our link it means no charge for Juniper&apos;s
+              initial consultation, which Juniper values at $89; program fees apply. Juniper is a
               weight-management telehealth program that says it is &ldquo;dedicated to helping women&rdquo;, run as
               &ldquo;a digital health clinic by Eucalyptus&rdquo;. The service is an online consultation with a
               registered practitioner, who decides whether any treatment is appropriate.
             </p>
-            {/* Juniper's handbook requires this exact sentence, prominently, before
-                any Juniper link. It comes from src/lib/partner-disclosures.ts; do
-                not reword, abbreviate or append to it. */}
-            <p className="mt-5 max-w-xl rounded-xl border border-[#ded8cd] bg-[#f7f4ee] px-4 py-3 text-[14px] leading-relaxed text-[#14120f]">
-              {JUNIPER_DISCLOSURE}
-            </p>
-            <AffiliateDisclosure compact className="mt-3 max-w-xl" />
+            {/* Juniper's handbook sentence (src/lib/partner-disclosures.ts), verbatim and before any
+                Juniper link, in the same block as our own disclosure (2 Oct 2026). */}
+            <AffiliateDisclosure compact required={JUNIPER_DISCLOSURE} className="mt-5 max-w-xl" />
             <div className="mt-6">
               <JuniperCTA loc="hero" size="lg" />
             </div>
@@ -235,7 +231,7 @@ export default function JuniperPage() {
             <section id="how" className="mt-12 scroll-mt-24">
               <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">How does Juniper work?</h2>
               <p className="mt-4 text-[15.5px] leading-relaxed text-[#56504a]">
-                Three stages, all done remotely. Weight-management medicines are prescription-only in Australia.
+                Three stages, all done remotely.
               </p>
               <ol className="mt-6 space-y-5">
                 {steps.map((s) => (
@@ -257,12 +253,13 @@ export default function JuniperPage() {
               <div className="mt-4 space-y-4 text-[15.5px] leading-relaxed text-[#56504a]">
                 <p>
                   Juniper says &ldquo;Different pricing options are available and may vary depending on the plan
-                  confirmed with your practitioner.&rdquo; The price that applies to you is set in that consultation,
-                  and 1:1 health coaching is an optional add-on.
+                  confirmed with your practitioner.&rdquo; Juniper confirms the plan price in the consultation, and 1:1
+                  health coaching is an optional add-on.
                 </p>
                 <p>
-                  JARREDKFC waives the initial consultation, valued at $89, when you start through our link. If your
-                  practitioner determines the program isn&apos;t right for you, Juniper says you receive a full refund.
+                  JARREDKFC means no charge for the initial consultation, which Juniper values at $89; program fees
+                  apply. Juniper offers a full refund if you do not proceed after the consultation (Juniper&apos;s
+                  terms).
                 </p>
               </div>
             </section>
@@ -302,10 +299,11 @@ export default function JuniperPage() {
         {/* ── Closing CTA ── */}
         <section className="mt-20 overflow-hidden rounded-3xl bg-[#14120f] px-7 py-12 text-center sm:px-12 sm:py-16">
           <h2 className="mx-auto max-w-xl text-3xl font-bold leading-tight text-white sm:text-4xl">
-            Start with Juniper, initial consultation waived
+            Start with Juniper, no charge for the initial consultation
           </h2>
           <p className="mx-auto mt-4 max-w-md text-[15px] leading-relaxed text-white/70">
-            JARREDKFC through our link waives the initial consultation, valued at $89, for new patients.
+            JARREDKFC through our link means no charge for the initial consultation, which Juniper values at $89;
+            program fees apply.
           </p>
           <div className="mt-8 flex justify-center">
             <a {...juniperAff} data-cta="final-band" className="nw-btn justify-center !bg-white !text-[#00748e] px-8 py-4 text-base hover:!bg-[#e4f2f5]">
@@ -313,7 +311,8 @@ export default function JuniperPage() {
             </a>
           </div>
           <p className="mx-auto mt-6 max-w-lg text-xs leading-relaxed text-white/60">
-            Content is general information about a service, not medical advice. Juniper&apos;s inclusions and pricing
+            Content is general information about a service, not medical advice. Any treatment is decided by a
+            registered practitioner after an individual assessment. Juniper&apos;s inclusions and pricing
             are drawn from Juniper&apos;s own site and can change, so confirm current terms before you commit.
           </p>
         </section>

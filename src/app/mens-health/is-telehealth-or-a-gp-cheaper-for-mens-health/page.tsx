@@ -26,7 +26,7 @@ const faqs = [
   },
   {
     q: "How do I compare a subscription against GP appointments?",
-    a: "Annualise both. For the subscription, multiply the monthly figure by twelve and add anything billed separately. For the GP, multiply your realistic number of appointments by the out-of-pocket cost each, then add anything dispensed. Comparing a monthly subscription figure against a single consult fee is the error the pricing in this category quietly encourages.",
+    a: "Annualise both. For the subscription, multiply the monthly figure by twelve and add anything billed separately. For the GP, multiply your realistic number of appointments by the out-of-pocket cost each, then add any pharmacy cost. Comparing a monthly subscription figure against a single consult fee is the error the pricing in this category quietly encourages.",
   },
   {
     q: "Does telehealth attract a Medicare rebate in Australia?",
@@ -53,7 +53,6 @@ export default function Page() {
       related={[
         { href: "/mens-health/online-mens-health-clinics-compared", label: "Clinics compared" },
         { href: "/mens-health/erectile-dysfunction-treatment-cost-australia", label: "Erectile dysfunction costs" },
-        { href: "/mens-health/online-prescription-australia", label: "Online prescription costs" },
       ]}
     >
       <section>
@@ -73,7 +72,7 @@ export default function Page() {
           <div className="rounded-2xl border border-[#ded8cd] bg-white p-6">
             <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#56504a]">GP route, per year</p>
             <p className="mt-2 text-[15px] font-semibold text-[#14120f]">
-              (out-of-pocket per appointment × appointments you would book) + anything dispensed
+              (out-of-pocket per appointment × appointments you would book) + any pharmacy cost
             </p>
             <p className="mt-2 text-sm text-[#56504a]">
               Out-of-pocket is zero if the practice bulk bills, and the fee minus the rebate if it does not.
@@ -150,7 +149,7 @@ export default function Page() {
           {
             name: "Midoc",
             href: "/go/midoc-telehealth-vs-gp",
-            what: "Australian telehealth with AHPRA-registered doctors, covering consultations, scripts, specialist referrals and medical certificates. Pricing is shown before you commit and there is no membership fee.",
+            what: "Australian telehealth with AHPRA-registered doctors, covering consultations, specialist referrals and medical certificates. Pricing is shown before you commit and there is no membership fee.",
             checked: MIDOC.readOnLabel,
           },
         ]}

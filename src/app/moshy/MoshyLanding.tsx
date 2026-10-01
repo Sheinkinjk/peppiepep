@@ -8,6 +8,8 @@ import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
 import FactHistory from "@/components/facts/FactHistory";
 import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
+import { MOSHY_TERMS_URL } from "@/lib/offers";
+import { OfferTermsNote } from "@/components/consumer/TermsApplyLink";
 
 // ── Money CTA (tracked: rel=sponsored is picked up by AffiliateClickTracker) ──
 // Three placements plus the mobile sticky bar: hero, at-a-glance card, closing band.
@@ -49,17 +51,17 @@ const glance: [string, string][] = [
   ["How it works", "Online questionnaire → practitioner consultation"],
   ["Practitioners", "Independent AHPRA-registered doctors and nurses (Moshy's own site)"],
   ["Pricing", "One monthly program fee, listed on Moshy's site"],
-  ["Discount code", "REFERRAL120: $120 off a first order, 3-month minimum"],
+  ["Discount code", "REFERRAL120: $120 off a first order"],
   ["Code checked", REFERRAL120_CHECKED],
 ];
 
 // Quoted from getmoshy.com.au/weight-loss (and the homepage for the care team).
 const included = [
-  "Unlimited medical support",
+  "Unlimited practitioner support",
   "In-app health tracking and health coaching",
   "Dietitian-approved meal plans, recipes and nutrition support",
   "An active and supportive community",
-  "A multidisciplinary care team of doctors, nurses, pharmacists, psychologists, dietitians and exercise physiologists",
+  "A care team including doctors, nurses, dietitians, psychologists and exercise physiologists",
   "A 30-day money back guarantee and a price match guarantee, each on Moshy's own terms",
 ];
 
@@ -107,8 +109,9 @@ export default function MoshyLanding() {
 
             <AffiliateDisclosure compact partners={["Moshy"]} className="mt-5 max-w-xl" />
 
-            <div className="mt-6">
+            <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2">
               <MoshyCTA size="lg" loc="hero" />
+
             </div>
           </div>
 
@@ -127,7 +130,9 @@ export default function MoshyLanding() {
               <div className="mt-5">
                 <MoshyCTA block loc="glance-card" />
               </div>
-              <p className="mt-3 text-center text-[11px] text-[#56504a]">Opens getmoshy.com.au · AU only</p>
+              <p className="mt-3 text-center text-[11px] text-[#56504a]">
+                Opens getmoshy.com.au · AU only
+              </p>
             </div>
           </aside>
         </section>
@@ -155,16 +160,16 @@ export default function MoshyLanding() {
             <section id="code" className="scroll-mt-24">
               <h2 className={H2}>What is the current Moshy discount code?</h2>
               <CodeAnswer code="REFERRAL120" className="mt-5">
-                REFERRAL120 takes $120 off a new customer&apos;s first order on a practitioner-assigned Moshy
-                weight-loss program.
+                REFERRAL120 takes $120 off a new customer&apos;s first order on eligible Moshy weight
+                programs.
               </CodeAnswer>
               <ul className="mt-5 space-y-2 text-[15px] leading-relaxed text-[#56504a]">
                 {[
                   "New customers only, one use per customer",
-                  "Excludes dietitian, over-the-counter and meal-replacement plans",
+                  "Applies to eligible Moshy weight programs",
                   "Minimum commitment period of 3 months",
                   "Cannot be combined with any other promotion",
-                  "Our link opens Moshy's sign-up page with the code shown; if it is not already applied at checkout, enter REFERRAL120",
+                  "Use code REFERRAL120 at checkout; our link opens Moshy's sign-up with the offer",
                 ].map((t) => (
                   <li key={t} className="flex items-start gap-2.5">
                     <Check className="mt-1 h-4 w-4 shrink-0 text-[#007a95]" aria-hidden="true" />
@@ -172,6 +177,7 @@ export default function MoshyLanding() {
                   </li>
                 ))}
               </ul>
+              
             </section>
 
             <section id="how" className="mt-12 scroll-mt-24">
@@ -179,7 +185,7 @@ export default function MoshyLanding() {
               <div className={BODY}>
                 <p>
                   Moshy is the brother brand of Mosh and runs weight-loss, hair and skin services online; this page covers
-                  weight loss, which runs in three stages. Weight-management medicines are prescription-only in Australia.
+                  weight loss, which runs in three stages.
                 </p>
               </div>
               <ol className="mt-6 space-y-5">
@@ -224,9 +230,8 @@ export default function MoshyLanding() {
                 </p>
                 <p>
                   <strong className="font-semibold text-[#14120f]">May not suit:</strong> someone who would rather keep
-                  weight management with their own GP; someone who does not want to commit to 3 months, which
-                  REFERRAL120 requires; and anyone after a dietitian-only or meal-replacement plan, which the code
-                  excludes.
+                  weight management with their own GP, and someone who does not want to commit to 3 months, which
+                  REFERRAL120 requires.
                 </p>
               </div>
             </section>
@@ -272,6 +277,7 @@ export default function MoshyLanding() {
                   </details>
                 ))}
               </div>
+              <OfferTermsNote brand="Moshy" className="mt-6" />
             </section>
           </article>
         </div>
@@ -282,8 +288,9 @@ export default function MoshyLanding() {
             Start with Moshy, $120 off your first order
           </h2>
           <p className="mx-auto mt-4 max-w-md text-[15px] leading-relaxed text-white/70">
-            REFERRAL120 through our link, for new customers on an eligible program with a 3-month minimum.
+            REFERRAL120 at checkout, for new customers.
           </p>
+          
           <div className="mt-8 flex justify-center">
             <a href={MOSHY_URL} target="_blank" rel="nofollow sponsored" data-cta="final-band" className="nw-btn justify-center !bg-white !text-[#00748e] px-8 py-4 text-base hover:!bg-[#e4f2f5]">
               Continue to Moshy

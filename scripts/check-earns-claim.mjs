@@ -35,9 +35,17 @@ const ROOT = ".next/server/app";
  * "earns us nothing" and "no links are live" are now caught. Tested against the four
  * correct sentences the site uses ("nothing ELSE here earns us anything", "we earn
  * nothing from Everlab") before shipping: none trips it.
+ *
+ * Widened 1 Oct 2026. /health-and-beauty/best-value-skincare-australia-cost-per-use
+ * and /health-and-beauty/skincare-quiz told readers "We have no skincare partner, so
+ * there is no brand we earn from" while linking /go/edible-beauty-* and
+ * /go/aussie-health-* (TGA/ACL audit M10). None of the patterns above matched that
+ * phrasing. "(we) have / there is / there are no <up to two words> partner(s)" and
+ * "no brand(s) / company / provider / retailer we earn from" are now caught, on a
+ * page that carries a /go/ or sponsored link only.
  */
 const EARNS_NOTHING =
-  /nothing (?:here|on this page|on these pages|in this (?:section|category|hub))(?:,? (?:currently|yet|right now))? (?:earns us (?:a )?(?:commission|anything|nothing)|pays us|earns us)|\bwe earn nothing (?:here|from this section)\b|\bno links are live\b/i;
+  /nothing (?:here|on this page|on these pages|in this (?:section|category|hub))(?:,? (?:currently|yet|right now))? (?:earns us (?:a )?(?:commission|anything|nothing)|pays us|earns us)|\bwe earn nothing (?:here|from this section)\b|\bno links are live\b|\b(?:have|there is|there are) no (?:[a-z-]+ ){0,2}partners?\b|\bno (?:brand|brands|company|companies|provider|providers|retailer|retailers) we earn from\b/i;
 
 const EARNS_LINK = /href="\/go\/|rel="[^"]*sponsored/;
 

@@ -7,6 +7,7 @@ import ConsumerShell from "@/components/consumer/ConsumerShell";
 import { FEATURED_DEALS, OTHER_DEALS, DEALS, formatVerifiedFull } from "@/lib/offers";
 import OfferSchema from "@/components/offers/OfferSchema";
 import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
+import TermsApplyLink, { OfferTermsNote } from "@/components/consumer/TermsApplyLink";
 import { logoScale } from "@/lib/logo-optics";
 
 export const metadata = generateSEOMetadata(seoConfig.deals);
@@ -28,7 +29,7 @@ const FAQS = [
    */
   {
     q: "Which discount codes does Refer Labs hold?",
-    a: "Six, each dated in the table above: Moshy (REFERRAL120), Mosh (REFERAL55), Juniper (JARREDKFC, an $89 consultation waived), i-screen (referlabs), Knose (referlab2mf) and PetsOnMe (REFERLABS). What each one discounts, and what it does not, is set out on the brand's own page, linked from its row.",
+    a: "Six, each dated in the table above: Moshy (REFERRAL120, with a 3-month minimum commitment), Mosh (REFERAL55), Juniper (JARREDKFC, an $89 consultation waived), i-screen (referlabs), Knose (referlab2mf) and PetsOnMe (REFERLABS). What each one discounts, and what it does not, is set out on the brand's own page, linked from its row.",
   },
   {
     q: "Are these discount codes current?",
@@ -181,6 +182,11 @@ export default function DealsPage() {
                     </th>
                     <td className="col-span-2 mt-3 block text-[17px] font-bold leading-snug text-[#007a95] sm:mt-0 sm:table-cell sm:px-5 sm:py-4 sm:align-middle sm:text-[15px]">
                       {d.offer}
+                      {d.termsUrl && (
+                        <span className="mt-1 block leading-none">
+                          <TermsApplyLink href={d.termsUrl} />
+                        </span>
+                      )}
                     </td>
                     <td className="col-span-2 mt-3 block sm:mt-0 sm:table-cell sm:px-5 sm:py-4 sm:align-middle">
                       {d.code ? (
@@ -222,6 +228,12 @@ export default function DealsPage() {
               Each date is when we last confirmed that offer. Offers can change, so check the terms on the
               provider&apos;s site before you sign up.
             </p>
+          </div>
+          {/* The full terms for the codes we link terms for, below the
+              table; each row carries only the muted "T&Cs apply" link (1 Oct 2026). */}
+          <div className="mt-5 space-y-2">
+            <OfferTermsNote brand="Moshy" />
+            <OfferTermsNote brand="Mosh" />
           </div>
         </section>
 

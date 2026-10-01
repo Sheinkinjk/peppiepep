@@ -10,6 +10,8 @@ import { HubObject, type ObjectKind } from "@/components/home/Objects";
 import SoftwareFinder, { type FinderGoal, type FinderProvider } from "@/components/consumer/SoftwareFinder";
 import { CATALOG } from "@/lib/catalog/catalog";
 import { DEALS, formatVerifiedFull, checkMethod } from "@/lib/offers";
+import { SUPERFILIATE_URL, UNBOUNCE_URL } from "@/lib/affiliate-links";
+import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 
 export const metadata = generateSEOMetadata(seoConfig.businessSoftware);
 
@@ -96,6 +98,9 @@ const hubs = [
  */
 const OFFER_BRANDS = ["Superfiliate", "Unbounce"] as const;
 const COUNT_WORDS = ["No", "One", "Two", "Three", "Four", "Five"];
+// Direct links for the offer buttons. The offers exist through these links, so the
+// button goes straight there; the review page is the secondary link.
+const OFFER_URLS: Record<(typeof OFFER_BRANDS)[number], string> = { Superfiliate: SUPERFILIATE_URL, Unbounce: UNBOUNCE_URL };
 const featuredOffers = OFFER_BRANDS
   .map((brand) => DEALS.find((d) => d.brand === brand))
   .filter((d): d is NonNullable<typeof d> => Boolean(d));
@@ -111,17 +116,18 @@ const guides = [
 ];
 
 const tools = [
-  { href: "/databox", label: "Databox", desc: "KPI dashboards over the tools you already use. Free plan, no expiry." },
-  { href: "/pipedrive", label: "Pipedrive", desc: "Visual sales CRM with pipeline and automation." },
-  { href: "/nutshell", label: "Nutshell", desc: "Easy sales CRM with email marketing built in." },
-  { href: "/capsule", label: "Capsule", desc: "A simple CRM small teams keep using." },
-  { href: "/activecampaign", label: "ActiveCampaign", desc: "Email marketing with powerful automation and a CRM." },
-  { href: "/keap", label: "Keap", desc: "Small-business CRM with sales and marketing automation." },
-  { href: "/gohighlevel", label: "GoHighLevel", desc: "All-in-one CRM, marketing automation and funnels." },
-  { href: "/employmenthero", label: "Employment Hero", desc: "Australian HR, payroll and employment platform." },
-  { href: "/leadpages", label: "Leadpages", desc: "Landing pages with A/B testing and lead capture. 7-day free trial." },
-  { href: "/pandadoc", label: "PandaDoc", desc: "Proposals, quotes and contracts with built-in e-signature. Free eSign plan." },
-  { href: "/blinq", label: "Blinq", desc: "Digital business cards shared by QR, link or NFC. Free plan with two cards." },
+  { href: "/databox", tag: "Free plan", label: "Databox", desc: "KPI dashboards over the tools you already use." },
+  { href: "/pipedrive", tag: "14-day free trial", label: "Pipedrive", desc: "Visual sales CRM with pipeline and automation." },
+  { href: "/nutshell", tag: "14-day free trial", label: "Nutshell", desc: "Easy sales CRM with email marketing built in." },
+  { href: "/capsule", tag: "Free plan", label: "Capsule", desc: "A simple CRM small teams keep using." },
+  { href: "/activecampaign", tag: "14-day free trial", label: "ActiveCampaign", desc: "Email marketing with powerful automation and a CRM." },
+  { href: "/keap", tag: "Free demo", label: "Keap", desc: "Small-business CRM with sales and marketing automation." },
+  { href: "/gohighlevel", tag: "14-day free trial", label: "GoHighLevel", desc: "All-in-one CRM, marketing automation and funnels." },
+  { href: "/employmenthero", tag: "Free demo", label: "Employment Hero", desc: "Australian HR, payroll and employment platform." },
+  { href: "/leadpages", tag: "7-day free trial", label: "Leadpages", desc: "Landing pages with A/B testing and lead capture." },
+  { href: "/pandadoc", tag: "Free eSign plan", label: "PandaDoc", desc: "Proposals, quotes and contracts with built-in e-signature." },
+  { href: "/blinq", tag: "Free plan", label: "Blinq", desc: "Digital business cards shared by QR, link or NFC; the free plan covers two cards." },
+  // `tag` is each vendor's own public offer, as on its brand page (1 Oct 2026).
   // Superfiliate and Unbounce are not listed here: they carry a real discount and
   // are featured in the offers block above instead, so the link is not split
   // across two places on one page.
@@ -195,6 +201,60 @@ export default function BusinessSoftwarePage() {
           </div>
         </section>
 
+        {/* Current offers, directly under the hero (1 Oct 2026). They sat third, below
+            the category grid, in small cards linking to our own review pages, so a
+            reader had to scroll and click twice to reach the discount. Both offers get
+            identical cards, alphabetical, per the hub-neutrality rule. */}
+        <section aria-labelledby="offers-h" className="border-b border-[#ded8cd] bg-white">
+          <div className="mx-auto max-w-6xl px-5 py-12 sm:px-8">
+            <div className="flex flex-wrap items-end justify-between gap-4">
+              <div className="max-w-2xl">
+                <p className="nw-kicker">Through Refer Labs</p>
+                <h2 id="offers-h" className="mt-2 text-2xl font-extrabold text-[#14120f] sm:text-3xl">Current software offers</h2>
+                <p className="mt-2 text-sm leading-relaxed text-[#56504a]">
+                  {COUNT_WORDS[featuredOffers.length] ?? featuredOffers.length} of the tools we cover carry a real discount through our links, not just a
+                  free trial anyone can start direct. Each shows when we last checked it.
+                </p>
+              </div>
+              <Link href="/deals" className="nw-link text-sm">Every offer we track</Link>
+            </div>
+            <AffiliateDisclosure compact className="mt-5 max-w-2xl" />
+            <div className="mt-6 grid gap-5 md:grid-cols-2">
+              {featuredOffers.map((d) => (
+                <div key={d.brand} className="flex flex-col rounded-2xl border-2 border-[#007a95] bg-white p-6 shadow-[0_14px_36px_-22px_rgba(0,54,71,0.45)]">
+                  <div className="flex items-center gap-3">
+                    {d.logo && (
+                      <span className="grid h-12 w-12 shrink-0 place-items-center overflow-hidden rounded-lg border border-[#ded8cd] bg-white">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img src={d.logo} alt="" width={32} height={32} className="h-8 w-8 object-contain" />
+                      </span>
+                    )}
+                    <h3 className="text-lg font-extrabold text-[#14120f]">{d.brand}</h3>
+                  </div>
+                  <p className="mt-4 text-2xl font-extrabold leading-tight tracking-[-0.01em] text-[#14120f]">{d.offer}</p>
+                  {d.verified && (
+                    <p className="mt-2 text-[12px] font-medium text-[#56504a]">
+                      {checkMethod(d.brand, true)} on {formatVerifiedFull(d.verified)}.
+                    </p>
+                  )}
+                  <div className="mt-auto flex flex-wrap items-center gap-x-5 gap-y-3 pt-6">
+                    <a
+                      href={OFFER_URLS[d.brand as (typeof OFFER_BRANDS)[number]]}
+                      target="_blank"
+                      rel="nofollow sponsored"
+                      data-cta={`business-software-offer-${d.brand.toLowerCase()}`}
+                      className="nw-btn justify-center px-6 py-3.5 text-[15px] max-sm:w-full"
+                    >
+                      Continue to {d.brand} <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                    </a>
+                    <Link href={d.href} className="nw-link text-sm">Read our {d.brand} review</Link>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
           {/* Category directory (SEO + browse) */}
           <section id="browse" className="scroll-mt-24">
@@ -212,46 +272,6 @@ export default function BusinessSoftwarePage() {
                   </div>
                   <h3 className="mt-3 text-xl font-bold text-[#14120f] group-hover:text-[#007a95]">{h.label}</h3>
                   <p className="mt-1.5 text-sm leading-relaxed text-[#56504a]">{h.desc}</p>
-                </Link>
-              ))}
-            </div>
-          </section>
-
-          {/* Current offers: the tools we hold a real discount on. Placed
-              above "Popular tools" because a discount is the only reason a reader
-              has to start here rather than at the vendor's own site. */}
-          <section className="mt-14 border-t border-[#ded8cd] pt-12">
-            <h2 className="text-2xl font-extrabold text-[#14120f]">Current offers</h2>
-            <p className="mt-2 max-w-2xl text-sm leading-relaxed text-[#56504a]">
-              {COUNT_WORDS[featuredOffers.length] ?? featuredOffers.length} of the tools we cover carry a real discount rather than a free trial anyone can
-              start direct. Each shows when we last checked it, and whether it was read off the provider&apos;s own page or confirmed directly with them.
-            </p>
-            <div className="mt-7 grid gap-4 sm:grid-cols-3">
-              {featuredOffers.map((d) => (
-                <Link
-                  key={d.brand}
-                  href={d.href}
-                  className="group flex flex-col rounded-2xl border border-[#ded8cd] bg-white p-6 transition-all hover:-translate-y-0.5 hover:border-[#14120f]"
-                >
-                  <div className="flex items-center gap-3">
-                    {d.logo && (
-                      <span className="grid h-12 w-12 shrink-0 place-items-center overflow-hidden rounded-lg bg-white">
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img src={d.logo} alt="" width={32} height={32} className="h-8 w-8 object-contain" />
-                      </span>
-                    )}
-                    <h3 className="text-lg font-extrabold text-[#14120f] group-hover:text-[#007a95]">{d.brand}</h3>
-                  </div>
-                  {/* Saffron: a figure we checked, as on the homepage. */}
-                  <p className="mt-3 text-[15px] font-bold leading-snug text-[#a85d09]">{d.offer}</p>
-                  {d.verified && (
-                    <p className="mt-2 text-[12px] font-medium text-[#56504a]">
-                      {checkMethod(d.brand, true)} on {formatVerifiedFull(d.verified)}.
-                    </p>
-                  )}
-                  <span className="mt-auto inline-flex items-center gap-1.5 pt-5 text-sm font-semibold text-[#007a95]">
-                    See the offer <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
-                  </span>
                 </Link>
               ))}
             </div>

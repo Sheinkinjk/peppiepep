@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export const metadata = generateSEOMetadata(seoConfig.disclaimer);
 
-const UPDATED = "25 August 2026";
+const UPDATED = "1 October 2026";
 
 /**
  * Standing disclaimer.
@@ -104,7 +104,9 @@ export default function Disclaimer() {
               Our health pages describe how a service works, what it costs and how providers differ. They are not
               medical advice and are not a substitute for consulting a registered health practitioner. We do not
               diagnose, we do not recommend treatments, and we do not name prescription medicines. Whether any treatment
-              is appropriate for you is a decision for a practitioner who has assessed you.
+              is appropriate for you is a decision for a practitioner who has assessed you. Where a page shows a
+              discount code for a health service, the discount applies to that provider&apos;s fees, such as the
+              consultation or the program, and never decides whether any treatment is appropriate.
             </p>
             <p>
               If you are experiencing a medical emergency, call 000. For health advice, speak to your GP or call
@@ -127,7 +129,7 @@ export default function Disclaimer() {
               Every price on this site was read off the provider&apos;s own published page. Discount codes and offers were
               either read off that page or, where an offer is specific to Refer Labs and published nowhere, confirmed
               directly with the provider. Each carries the date it was checked. Providers change prices, terms, eligibility and availability without telling
-              us, and a code may expire or be withdrawn at any time. Treat what we publish as a dated record rather than
+              us, and a code may expire or be withdrawn at any time. Where an offer is the provider&apos;s own public offer, such as a free plan or a trial anyone can start direct, the page labels it as theirs rather than as something our link unlocks. Treat what we publish as a dated record rather than
               a quote, and confirm the current terms with the provider before you commit.
             </p>
             <p>
@@ -172,7 +174,7 @@ export default function Disclaimer() {
               Australian Consumer Law or any other law that cannot lawfully be excluded. Where a law implies a guarantee
               that cannot be excluded, our liability is limited to the extent the law permits. This disclaimer sits
               alongside our{" "}
-              <Link href="/terms" className="font-semibold text-[#007a95] hover:underline">Terms of Service</Link> and{" "}
+              <Link href="/terms" className="font-semibold text-[#007a95] hover:underline">Terms of Use</Link> and{" "}
               <Link href="/privacy" className="font-semibold text-[#007a95] hover:underline">Privacy Policy</Link>, and
               does not replace them.
             </p>

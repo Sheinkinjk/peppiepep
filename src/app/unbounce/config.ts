@@ -13,6 +13,7 @@ export const unbounceConfig: AffiliatePageConfig = {
   // Read verbatim off the Unbounce invitation page on 27 September 2026:
   // "You've just scored 20% off your first three months (or 35% off your first
   // full year) with Unbounce! ... New customers only."
+  offerViaLink: true,
   offer: "20% off your first three months, or 35% off your first full year",
   atAGlance: [
     { k: "Type", v: "Landing-page & conversion platform" },

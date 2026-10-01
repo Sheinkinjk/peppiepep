@@ -34,7 +34,7 @@ const faqs = [
   },
   {
     q: "Do I need a Medicare card?",
-    a: `Midoc states a Medicare card is ${MIDOC.certificateMedicare}, and that "${MIDOC.certificateOverseasStudents}". A certificate is not a prescription, so this is one of the few telehealth services where not holding a card does not stop you, which is the practical difference from the prescription line.`,
+    a: `Midoc states a Medicare card is ${MIDOC.certificateMedicare}, and that "${MIDOC.certificateOverseasStudents}". So this is one of the few telehealth services where not holding a card does not stop you.`,
   },
   {
     q: "Can I get one for a day that has already passed?",
@@ -60,7 +60,6 @@ export default function Page() {
       updated={MIDOC.readOn}
       faqs={faqs}
       related={[
-        { href: "/mens-health/online-prescription-australia", label: "Online prescriptions" },
         { href: "/midoc", label: "Midoc: what it costs" },
         { href: "/mens-health/is-telehealth-or-a-gp-cheaper-for-mens-health", label: "Telehealth or a GP?" },
       ]}

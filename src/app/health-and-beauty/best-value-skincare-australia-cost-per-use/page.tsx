@@ -33,7 +33,7 @@ const faqs = [
   },
   {
     q: "Does Refer Labs recommend specific skincare brands?",
-    a: "Not in this section yet. We have no skincare partner, so there is no brand we earn from and no list to steer you toward. This page gives you the method so you can run it on whatever you are already considering. When we do add providers we will disclose it on the page.",
+    a: "This page does not rank skincare brands. We earn a commission from Edible Beauty and Aussie Health Products, linked below and disclosed beside each link. The method on this page is the same whichever you use, and you can run it on whatever you are already considering.",
   },
 ];
 
@@ -139,8 +139,8 @@ export default function Page() {
         <p className="mt-3">
           Cost per use is easy to compare but hard to feel. Multiply it out instead. A product at $1.50 per application
           used nightly is roughly $550 a year; at $0.91 it is about $330. Seeing the annual figure is what usually
-          settles whether a routine is worth it, and it is also the number to compare against a practitioner consult if
-          you are weighing the prescription route.
+          settles whether a routine is worth it, and it is also the number to compare against the cost of a
+          consultation.
         </p>
       </section>
 

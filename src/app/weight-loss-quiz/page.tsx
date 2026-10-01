@@ -3,6 +3,7 @@ import { SectionMark } from "@/components/brand/SectionMark";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import PathwayQuiz from "@/components/consumer/PathwayQuiz";
+import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 
 import { pageDates } from "@/lib/page-dates";
 export const metadata = generateSEOMetadata(seoConfig.weightLossQuiz);
@@ -10,7 +11,7 @@ export const metadata = generateSEOMetadata(seoConfig.weightLossQuiz);
 const faqs = [
   {
     q: "How do I choose a weight-loss program in Australia?",
-    a: "Start with what you want. Starting online points to a telehealth service: both services we cover include app coaching and dietitian meal plans, and Juniper adds 1:1 coaching as an option. Wanting habits and nutrition at the centre without a practitioner assessment points to a GP or dietitian-led plan. Preferring an in-person assessment, with Medicare offsetting part of the fee, points to your GP. This match asks two quick questions and points you to the pathway that fits, and why. A registered practitioner still decides whether any treatment is appropriate for you.",
+    a: "Start with what you want. Starting online points to a telehealth service: both services we cover include meal plans and practitioner support; Moshy includes in-app health coaching, and Juniper offers health coaching as an optional add-on. Wanting habits and nutrition at the centre without a practitioner assessment points to a GP or dietitian-led plan. Preferring an in-person assessment, with Medicare offsetting part of the fee, points to your GP. This match asks a few quick questions and points you to the route that fits, and why. A registered practitioner still decides whether any treatment is appropriate for you.",
   },
   {
     q: "Is telehealth or an in-person GP better for weight loss?",
@@ -79,14 +80,17 @@ export default function WeightLossQuizPage() {
             </h1>
             <div className="mb-6 max-w-2xl space-y-3 text-sm leading-relaxed text-[#56504a] sm:text-base">
               <p>
-                A clinical telehealth pathway, a coaching program, or your GP, they suit different people. Answer two
-                quick questions and see the route that fits your situation, and why. About 30 seconds.
-                This is general information, not medical advice, and it does not decide your eligibility.
+                A practitioner-led online service, a coaching program, or your GP: they suit different people. Answer
+                a few quick questions and see the route that fits your situation, and why. About 30 seconds.
+                This is general information, not medical advice, and it does not assess your suitability for any
+                treatment.
               </p>
             </div>
           </section>
 
           <section className="pb-4">
+            {/* Above the quiz: its Moshy and Juniper results link straight to the partner. */}
+            <AffiliateDisclosure compact className="mb-4 max-w-2xl" />
             <PathwayQuiz />
           </section>
 

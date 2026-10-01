@@ -33,9 +33,10 @@ import { CARRD } from "@/lib/partners/carrd";
  * REFERLABS, Superfiliate's 15% and Unbounce's 20/35% are partner-specific and
  * never appear on a public page, and Pipedrive's pricing page blocks automated
  * fetching. Apollo's $500 was confirmed separately on 28 Aug 2026 and carries
- * its own date; it is our own arrangement, so there is still no page to re-read. Worth knowing from the
- * same sweep: Mosh now publicly runs MOSHINTRO100 for $100 off a first month of
- * weight loss, which is a different product from the hair-loss offer we list.
+ * its own date; it is our own arrangement, so there is still no page to re-read.
+ *
+ * Partners' own public codes are never named on this site (Jarred, 1 Oct 2026):
+ * only the codes issued to Refer Labs appear.
  */
 export const VERIFIED_DATE = "2026-07-28";
 
@@ -59,10 +60,48 @@ export function formatVerifiedFull(date: string): string {
 /** Full display date ("24 Jul 2026"). */
 export const VERIFIED_FULL = formatVerifiedFull(VERIFIED_DATE);
 
+/**
+ * Each brand's general terms, linked as "T&Cs apply" beside every printed code,
+ * because Ahpra s133(1)(b) allows an inducement for a regulated health service
+ * only where its terms are stated, and guideline 4.2 says they must be easy to find.
+ *
+ * Corrected 1 Oct 2026: these were the brands' /promotions-terms-and-conditions
+ * pages, and neither code appears there. REFERRAL120's terms are in the footnote
+ * of Moshy's sign-up page, which cites getmoshy.com.au/terms; REFERAL55 appears
+ * only on Mosh's /start/referlabs page, whose "T&Cs apply" links Mosh's general
+ * terms (Mosh's promotions page lists other codes, not REFERAL55). Both URLs returned 200.
+ */
+export const MOSHY_TERMS_URL = "https://www.getmoshy.com.au/terms";
+export const MOSH_TERMS_URL = "https://www.getmosh.com.au/terms";
+
+/**
+ * The promotions pages themselves. Cited ONLY for what they actually carry: the
+ * money-back and price-match guarantees and Mosh's first-order hair discount
+ * wording. Never as the terms of REFERRAL120 or REFERAL55.
+ */
+export const MOSHY_PROMOTIONS_PAGE_URL = "https://www.getmoshy.com.au/promotions-terms-and-conditions";
+export const MOSH_PROMOTIONS_PAGE_URL = "https://www.getmosh.com.au/promotions-terms-and-conditions";
+
+/**
+ * The REFERRAL120 terms in one sentence, for every page and email that prints the
+ * code. Deliberately says "eligible weight programs under Moshy's terms" and NOT
+ * which plans are excluded: listing the excluded non-prescription plans told the
+ * reader by elimination which plan the discount applies to (TGA audit, 1 Oct 2026).
+ */
+export const REFERRAL120_TERMS =
+  "New Moshy customers only, one use, on eligible Moshy weight programs, with a 3-month minimum commitment; terms on Moshy's sign-up page and in Moshy's terms.";
+
+/** The REFERAL55 terms in one sentence, linked to Mosh's terms wherever the code appears. */
+export const REFERAL55_TERMS =
+  "New Mosh customers only; applies to the first order of a Mosh hair program; terms on Mosh's sign-up page and in Mosh's terms.";
+
 /** The Moshy new-customer offer, referenced directly on the weight-loss money pages. */
 export const MOSHY_OFFER = {
   amount: "$120 off",
   code: "REFERRAL120",
+  /** Moshy's own term, stated wherever the code appears (Ahpra s133(1)(b), ACL s29(1)(i)). */
+  minimum: "3-month minimum commitment",
+  termsUrl: "https://www.getmoshy.com.au/terms",
   // No date here. This object carried its own copy of the check date twice and
   // it drifted both times: "July 2026" against /deals' 17 August, then "August
   // 2026" on the /moshy and /moshy-review stamps for a month after the 23 Sep
@@ -126,13 +165,16 @@ export interface Deal {
    * redirect URLs, not the pages an offer was read off.
    */
   source?: { readOff: string } | { noPublicPage: string };
+
+  /** The brand's own terms page, linked as "T&Cs apply" beside the row on /deals. */
+  termsUrl?: string;
 }
 
 export const DEALS: Deal[] = [
   // readOff: the partner landing page our link resolves to, where the offer is
   // visible. Read live on 26 Aug 2026 per src/lib/facts/registry.ts.
-  { brand: "Moshy", logo: "/logos/moshy.png", href: "/moshy", offer: "$120 off your first order", code: "REFERRAL120", category: "Weight loss", featured: true, verified: "2026-09-30", exclusive: true, source: { readOff: "https://www.getmoshy.com.au/start/eligibility-check-moshy" } },
-  { brand: "Mosh", logo: "/logos/mosh-tile.png", href: "/moshhair", offer: "55% off your first order", code: "REFERAL55", category: "Hair loss", featured: true, verified: "2026-09-30", exclusive: true, source: { readOff: "https://www.getmosh.com.au/start/referlabs" } },
+  { brand: "Moshy", logo: "/logos/moshy.png", href: "/moshy", offer: "$120 off your first order", code: "REFERRAL120", category: "Weight loss", featured: true, verified: "2026-09-30", exclusive: true, source: { readOff: "https://www.getmoshy.com.au/start/eligibility-check-moshy" }, termsUrl: MOSHY_TERMS_URL },
+  { brand: "Mosh", logo: "/logos/mosh-tile.png", href: "/moshhair", offer: "55% off your first order", code: "REFERAL55", category: "Hair loss", featured: true, verified: "2026-09-30", exclusive: true, source: { readOff: "https://www.getmosh.com.au/start/referlabs" }, termsUrl: MOSH_TERMS_URL },
   // Read on Apollo's page on 28 Aug 2026: the $500 is current and unchanged,
   // eligibility is the only stated condition, and the offer is not publicly
   // stated anywhere. It applies to applications made through our link.
@@ -141,7 +183,7 @@ export const DEALS: Deal[] = [
   { brand: "Superfiliate", logo: "/logos/superfiliate.png", href: "/superfiliate", offer: "15% off your monthly SaaS fee", category: "Creator growth", featured: true, verified: "2026-09-27", source: { noPublicPage: "Partner-specific, stated on no public page. Recorded in the 25 Aug 2026 sweep note at the top of this file; re-confirm with the partner, not by searching." } },
 
   { brand: "i-screen", logo: "/logos/i-screen.svg", href: "/i-screen", offer: "$20 off your first test", code: "referlabs", category: "Health testing", featured: true, verified: "2026-09-23", exclusive: true, source: { noPublicPage: "Supplied by i-screen directly, 23 September 2026. Checked the same day that i-screen's own terms and FAQ name no coupon codes, so there is no page to re-read it off. Re-confirm with i-screen, not by searching." } },
-  { brand: "Juniper", logo: "/logos/juniper.png", href: "/juniper", offer: "Initial consultation waived, valued at $89", code: "JARREDKFC", category: "Weight loss", featured: true, verified: "2026-09-23", exclusive: true, source: { noPublicPage: "Juniper's affiliate handbook, confirmed by Jarred 23 September 2026. Checked the same day that no public Juniper page states it: myjuniper.com rendered with the code in the query string shows only its own START50 banner, and the help-centre Discount Terms article names no code values. Re-confirm with Juniper, not by searching." } },
+  { brand: "Juniper", logo: "/logos/juniper.png", href: "/juniper", offer: "Initial consultation waived, valued at $89", code: "JARREDKFC", category: "Weight loss", featured: true, verified: "2026-09-23", exclusive: true, source: { noPublicPage: "Juniper's affiliate handbook, confirmed by Jarred 23 September 2026. Checked the same day that no public Juniper page states it: myjuniper.com rendered with the code in the query string does not show it, and the help-centre Discount Terms article names no code values. Re-confirm with Juniper, not by searching." } },
   { brand: "Knose", logo: "/logos/knose.svg", href: "/knose", offer: "2 months free for new customers", code: "referlab2mf", category: "Pets", featured: true, verified: "2026-09-30", source: { readOff: "https://knose.com.au/" } },
   { brand: "PetsOnMe", logo: "/logos/petsonme.svg", href: "/petsonme", offer: "15% off pet care services, up from 12% (not the premium)", code: "REFERLABS", category: "Pets", featured: true, verified: "2026-09-27", source: { noPublicPage: "Partner-specific, stated on no public page. Recorded in the 25 Aug 2026 sweep note at the top of this file; re-confirm with the partner, not by searching." } },
 
@@ -190,24 +232,34 @@ export interface OfferFacts {
   object: string;
   newCustomer?: boolean;
   oneUse?: boolean;
+  /** A minimum commitment the vendor attaches to the offer. Part of the price (ACL s29(1)(i)). */
+  minimumTerm?: string;
+  /** The vendor's own terms page for the code. */
+  termsUrl?: string;
 }
 
 export const OFFER_FACTS: Record<string, OfferFacts> = {
   // amount + verified: the Moshy DEALS row above.
   // object, newCustomer, oneUse: src/app/moshy/config.ts:129 and :133, which
   // state the terms as read off Moshy's own sign-up page on 17 August 2026.
+  // minimumTerm: Moshy's landing page, read 1 Oct 2026: "subject to a minimum
+  // commitment period of 3 months". object reworded 1 Oct 2026 (TGA audit H7):
+  // eligible programs under Moshy's terms, never a list of excluded plans.
   REFERRAL120: {
     brand: "Moshy", code: "REFERRAL120", amount: "$120 off",
-    object: "a new customer's first order",
+    object: "a new customer's first order on an eligible Moshy weight program",
     newCustomer: true, oneUse: true,
+    minimumTerm: "3-month minimum commitment",
+    termsUrl: MOSHY_TERMS_URL,
   },
   // amount + verified: the Mosh DEALS row above.
   // object + newCustomer: src/app/moshhair/config.ts:22 and :127.
   // oneUse omitted: Mosh does not state it anywhere on file.
   REFERAL55: {
     brand: "Mosh", code: "REFERAL55", amount: "55% off",
-    object: "a new customer's first order",
+    object: "the first order of a new customer's Mosh hair program",
     newCustomer: true,
+    termsUrl: MOSH_TERMS_URL,
   },
   // amount + object: the i-screen DEALS row above, and src/lib/partners/i-screen.ts,
   // which holds the catalogue the discount applies against. The object is the FIRST
@@ -308,6 +360,8 @@ export function offerSchema(code: string) {
   const terms = [
     f.newCustomer ? "New customers only." : null,
     f.oneUse ? "One use per customer." : null,
+    f.minimumTerm ? `${f.minimumTerm.charAt(0).toUpperCase()}${f.minimumTerm.slice(1)}.` : null,
+    f.termsUrl ? `Full terms: ${f.termsUrl}` : null,
   ].filter(Boolean).join(" ");
   return {
     "@context": "https://schema.org",

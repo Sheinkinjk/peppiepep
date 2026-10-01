@@ -58,7 +58,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/mens-health/online-mens-health-clinics-compared`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.72 },
     { url: `${BASE}/mens-health/is-telehealth-or-a-gp-cheaper-for-mens-health`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE}/mens-health/online-doctor-medical-certificate-australia`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.75 },
-    { url: `${BASE}/mens-health/online-prescription-australia`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.75 },
     { url: `${BASE}/mens-health/sexual-wellness-products`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${BASE}/mens-health/mens-health-quiz`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.65 },
     // Sleep (19 Aug 2026). Category live and indexed ahead of partners.
@@ -146,7 +145,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/moshy`,             lastModified: TODAY, changeFrequency: 'weekly',  priority: 0.92 },
     { url: `${BASE}/juniper`,           lastModified: AUG13, changeFrequency: 'weekly',  priority: 0.85 },
     { url: `${BASE}/moshy-review`,      lastModified: FRESH, changeFrequency: 'monthly', priority: 0.85 },
-    { url: `${BASE}/moshy-eligibility`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/moshy-vs-gp`,       lastModified: TODAY, changeFrequency: 'monthly', priority: 0.78 },
     { url: `${BASE}/moshy-alternatives`,lastModified: TODAY, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/weight-loss-telehealth-men-australia`,   lastModified: TODAY, changeFrequency: 'monthly', priority: 0.82 },
@@ -154,7 +152,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/weight-loss-telehealth-cost-australia`,  lastModified: TODAY, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${BASE}/weight-loss-cost-calculator`,            lastModified: FRESH, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${BASE}/weight-loss-quiz`,                       lastModified: FRESH, changeFrequency: 'monthly', priority: 0.88 },
-    { url: `${BASE}/online-weight-loss-doctor-australia`,    lastModified: TODAY, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${BASE}/moshhair`,          lastModified: TODAY, changeFrequency: 'weekly',  priority: 0.78 },
     { url: `${BASE}/mosh-review`,        lastModified: FRESH, changeFrequency: 'monthly', priority: 0.82 },
     // The medicine-name slugs (/finasteride-australia, /minoxidil-australia,

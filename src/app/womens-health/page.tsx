@@ -68,7 +68,7 @@ const OTHER: { href: string; label: string; object: ObjectKind }[] = [
 const faqs = [
   {
     q: "Where can I get women's health care without seeing a GP in Australia?",
-    a: "More than most people expect. In every state whose rules we could read, a trained pharmacist can treat an uncomplicated urinary tract infection in women aged 18 to 65, and in most states a pharmacist can resupply the contraception you already use. Online doctors can consult by video or phone. A GP is still the route for anything new, complex or recurring, and since 1 November 2025 the bulk billing incentive applies to every Medicare-eligible patient.",
+    a: "More than most people expect. In every state whose rules we could read, a trained pharmacist can assess an uncomplicated urinary tract infection in women aged 18 to 65, and in most states a pharmacist can resupply the contraception you already use. Online doctors can consult by video or phone. A GP is still the route for anything new, complex or recurring, and since 1 November 2025 the bulk billing incentive applies to every Medicare-eligible patient.",
   },
   {
     q: "Is women's health telehealth covered by Medicare?",
@@ -140,7 +140,7 @@ export default function WomensHealthHub() {
               </h1>
               {/* The answer, directly under the h1. Nothing between: check-answer-slot. */}
               <p className="mt-5 text-lg leading-relaxed text-[#14120f]">
-                A lot of routine women&apos;s health care no longer has to start with a GP. A trained pharmacist can treat
+                A lot of routine women&apos;s health care no longer has to start with a GP. A trained pharmacist can assess
                 an uncomplicated UTI in every state whose rules we could read, and resupply contraception in most of
                 them. Online doctors consult by video or phone, sometimes with a Medicare rebate and often without. For
                 menopause, Medicare now pays for a dedicated assessment with your own GP. These guides set out what

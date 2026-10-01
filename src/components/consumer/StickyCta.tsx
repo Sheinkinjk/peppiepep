@@ -8,6 +8,9 @@ import { ArrowRight } from "lucide-react";
  * hero, keeping the primary action one tap away on the pages that earn. The
  * link carries rel="sponsored" + data-cta="mobile-sticky" so AffiliateClickTracker
  * attributes the click and its placement automatically.
+ *
+ * Code, offer and button only: no terms link or sentence (1 Oct 2026). The terms
+ * sit on the page itself, beside the code and lower down.
  */
 export default function StickyCta({
   href,
@@ -46,7 +49,9 @@ export default function StickyCta({
         <div className="min-w-0 flex-1">
           {offer ? (
             <>
-              <p className="truncate text-[13px] font-bold text-[#007a95]">{offer}</p>
+              <p className="truncate text-[13px] font-bold text-[#007a95]">
+                {offer}
+              </p>
               <p className="truncate text-[12px] text-[#56504a]">{product} · {disclosure}</p>
             </>
           ) : (

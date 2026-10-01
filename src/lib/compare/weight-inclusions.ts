@@ -1,6 +1,6 @@
 /**
  * What Moshy and Juniper each say their weight-management program includes,
- * read off each provider's own page on 30 September 2026. One source of truth for
+ * read off each provider's own pages (date below). One source of truth for
  * every comparison page (/moshy-vs-juniper, /best-weight-loss-telehealth-australia,
  * /weight-loss, /cheapest-weight-loss-telehealth-australia).
  *
@@ -11,11 +11,17 @@
  * provider states, in its own words where possible. No prices (Jarred, 27 Sep 2026)
  * and no treatment or delivery wording (TGA, 30 Sep 2026).
  */
-export const INCLUSIONS_READ_ON = "30 September 2026";
+// Re-read 1 October 2026: Juniper's /pricing ("Everything in your program") and
+// /faq ("Our practitioners"), and Moshy's /weight-loss. Juniper's pages were read
+// with playwright-core (curl gets a 403). Juniper's own pages disagree on the
+// scales: the /pricing program cards say "Bluetooth scales, delivered (optional
+// add-on)", so the table says optional add-on. Health coaching is "optional for
+// both programs" on /pricing, stated once, in the coaching row.
+export const INCLUSIONS_READ_ON = "1 October 2026";
 
 export const INCLUSIONS_SOURCES = {
   Moshy: "https://www.getmoshy.com.au/weight-loss",
-  Juniper: "https://www.myjuniper.com/",
+  Juniper: "https://www.myjuniper.com/pricing",
 } as const;
 
 export type InclusionRow = { label: string; juniper: string; moshy: string };
@@ -34,22 +40,27 @@ export const WEIGHT_INCLUSIONS: InclusionRow[] = [
   },
   {
     label: "Practitioner support",
-    juniper: "Unlimited follow-up consultations with an Australian practitioner",
-    moshy: "Unlimited medical support from a care team of doctors, nurses, pharmacists, psychologists, dietitians and exercise physiologists",
+    juniper: "Unlimited practitioner support from specialist GPs (including FRACGP Fellows) and nurse practitioners, with a medical support team of registered nurses and pharmacists",
+    moshy: "Unlimited practitioner support from a care team of doctors, nurses, pharmacists, psychologists, dietitians and exercise physiologists",
   },
   {
     label: "Coaching and nutrition",
-    juniper: "Chat with dietitians and nutritionists in the app; dietitian-led meal plans; 1:1 health coaching as an add-on",
+    juniper: "Meal plans and recipes; health coaching (chat with dietitians in the app) as an optional add-on",
     moshy: "In-app health coaching; dietitian-approved meal plans, recipes and nutrition support",
   },
   {
+    label: "Exercise",
+    juniper: "Guided exercise program, designed with physiotherapists",
+    moshy: "Exercise physiologists in its care team",
+  },
+  {
     label: "Community and tracking",
-    juniper: "Private community; app tracking with Bluetooth scales",
+    juniper: "Private community; progress tracking and an AI health companion in the app; Bluetooth scales as an optional add-on",
     moshy: "Supportive community; in-app health and progress tracking",
   },
   {
     label: "Money-back",
-    juniper: "30-day money-back guarantee; full refund if the practitioner decides the program isn't right for you",
+    juniper: "30-day money-back guarantee; full refund if you do not proceed after the consultation (Juniper's terms)",
     moshy: "30-day money-back guarantee",
   },
   {
@@ -59,7 +70,7 @@ export const WEIGHT_INCLUSIONS: InclusionRow[] = [
   },
   {
     label: "Refer Labs code",
-    juniper: "JARREDKFC: initial consultation waived, valued at $89",
-    moshy: "REFERRAL120: $120 off a first order; 3-month minimum commitment",
+    juniper: "JARREDKFC: no charge for the initial consultation, valued at $89; program fees apply",
+    moshy: "REFERRAL120: $120 off a first order",
   },
 ];

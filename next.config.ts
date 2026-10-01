@@ -72,6 +72,17 @@ const nextConfig: NextConfig = {
       // Retired 30 Sep 2026 (Jarred). The page's core content was the BMI criteria that
       // are the prescribing indication of a medicine class, beside a discounted CTA (TGA).
       { source: '/weight-loss-treatment-eligibility-australia', destination: '/weight-loss', statusCode: 301 },
+      // Retired 1 Oct 2026 (Jarred): built around 'weight-loss prescription online' and an
+      // eligibility-check framing, which the 30 Sep 2026 TGA wording rules rule out.
+      { source: '/online-weight-loss-doctor-australia', destination: '/weight-loss', statusCode: 301 },
+      // Retired 1 Oct 2026 (Jarred, TGA audit group 1). /moshy-eligibility promoted an
+      // eligibility questionnaire for a prescription-treatment program; the two hair pages
+      // answered efficacy and "get the prescription class online" queries; the online
+      // prescription page sat under men's health beside ED and PE pages. Do not rebuild.
+      { source: '/moshy-eligibility', destination: '/moshy-review', statusCode: 301 },
+      { source: '/how-to-stop-hair-loss-australia', destination: '/hair-loss', statusCode: 301 },
+      { source: '/online-hair-loss-treatment-australia', destination: '/hair-loss', statusCode: 301 },
+      { source: '/mens-health/online-prescription-australia', destination: '/mens-health', statusCode: 301 },
       // Retired 30 Sep 2026 (Jarred): the page existed to rank for a prescription topical,
       // and its premise (retinol becomes prescription-only at higher strength) was unsupported.
       { source: '/health-and-beauty/retinol-vs-prescription-strength-australia', destination: '/health-and-beauty/best-value-skincare-australia-cost-per-use', statusCode: 301 },

@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { ArrowRight, RotateCcw, CheckCircle2 } from "lucide-react";
 import { MOSHY_URL } from "@/lib/affiliate-links";
+import { MOSHY_TERMS_URL } from "@/lib/offers";
 
 /**
  * Weight-loss pathway cost planner.
@@ -44,12 +45,11 @@ const PATHWAYS: Record<
     summary:
       "A practitioner-led telehealth program done online: a questionnaire, then a consult by phone or video. Moshy describes its fee as all-inclusive, with in-app coaching, dietitian meal plans and a community, and publishes its pricing on its own site.",
     payFor: [
-      "Starting the questionnaire: commits you to nothing",
-      "If the practitioner decides the program suits you: one all-inclusive program fee",
+      "One all-inclusive program fee covering practitioner support, follow-ups, coaching and meal plans",
       "Any minimum term attached to an offer (Moshy's $120 offer carries a 3-month minimum)",
     ],
     determines: [
-      "The plan the practitioner decides on, if any (plans differ, so prices differ)",
+      "The program you choose",
       "Program length and how long you stay subscribed",
       "Any current new-customer offer",
     ],
@@ -65,7 +65,7 @@ const PATHWAYS: Record<
     summary:
       "A practitioner-led telehealth program designed for women, with app coaching, dietitian meal plans and a private community, and 1:1 coaching as a paid add-on. Juniper publishes its pricing on its own site; the fee varies with the plan and level of support.",
     payFor: [
-      "A program fee covering practitioner care, app coaching, community and check-ins",
+      "A program fee covering consultations, app coaching, community and check-ins",
       "1:1 coaching, if you add it",
       "Confirmed before you commit",
     ],
@@ -81,24 +81,22 @@ const PATHWAYS: Record<
     ],
   },
   gp: {
-    title: "GP pathway",
+    title: "Your GP",
     tag: "in person",
     summary:
-      "Your own doctor manages the same kind of pathway through standard appointments. It is usually the slowest to start and the least convenient, but consult costs can be partly offset by Medicare, and there is no program fee.",
+      "Your own doctor sees you through standard in-person appointments. It is usually the slowest to start and the least convenient, but consultations are partly offset by Medicare, and there is no program fee.",
     payFor: [
       "Standard consult fees (bulk-billed or private, practice by practice)",
-      "Pharmacy costs for anything the GP decides on",
       "Follow-up appointments over time",
     ],
     determines: [
       "Whether your GP bulk-bills or charges a gap",
-      "What, if anything, the GP decides on after assessment",
       "How often you need reviews",
     ],
     ask: [
       "Do you bulk-bill for these consults?",
       "What will follow-up appointments cost?",
-      "What would the treatment cost at my pharmacy?",
+      "How many appointments should I expect?",
     ],
   },
 };
@@ -149,12 +147,12 @@ export default function CostPlanner() {
             <p className="text-sm text-[#56504a] mb-5">This is about structure, not amounts.</p>
             <div className="grid gap-3">
               <button type="button" className={`${btn} border-[#ded8cd] bg-white`} onClick={() => choose(setPay, "bundle" as Pay)}>
-                <span className="font-semibold text-[#14120f] block text-sm">One subscription that bundles everything</span>
-                <span className="text-xs text-[#56504a]">Practitioner oversight, treatment and delivery in one fee</span>
+                <span className="font-semibold text-[#14120f] block text-sm">One program fee</span>
+                <span className="text-xs text-[#56504a]">Covering consultations and support</span>
               </button>
               <button type="button" className={`${btn} border-[#ded8cd] bg-white`} onClick={() => choose(setPay, "per-visit" as Pay)}>
-                <span className="font-semibold text-[#14120f] block text-sm">Pay per appointment as I go</span>
-                <span className="text-xs text-[#56504a]">Consult fees and pharmacy prices, no program fee</span>
+                <span className="font-semibold text-[#14120f] block text-sm">Pay per consultation</span>
+                <span className="text-xs text-[#56504a]">No program fee</span>
               </button>
               <button type="button" className={`${btn} border-[#ded8cd] bg-white`} onClick={() => choose(setPay, "unsure" as Pay)}>
                 <span className="font-semibold text-[#14120f] block text-sm">Not sure yet</span>
@@ -192,7 +190,7 @@ export default function CostPlanner() {
             <legend className="text-base sm:text-lg font-bold text-[#14120f] mb-1">
               3 of 3: Do you have a Medicare card?
             </legend>
-            <p className="text-sm text-[#56504a] mb-5">It only changes the GP-pathway notes below.</p>
+            <p className="text-sm text-[#56504a] mb-5">It only changes the GP notes below.</p>
             <div className="grid gap-3 sm:grid-cols-2">
               <button type="button" className={`${btn} border-[#ded8cd] bg-white`} onClick={() => choose(setMedicare, "yes" as Medicare, true)}>
                 <span className="font-semibold text-[#14120f] text-sm">Yes</span>
@@ -211,7 +209,7 @@ export default function CostPlanner() {
     <div>
       <div className="mb-5 flex items-center justify-between gap-4">
         <p className="text-sm font-semibold text-[#14120f]">
-          Your pathways, ordered by fit with how you want to pay and be supported:
+          Your options, ordered by fit with how you want to pay and be supported:
         </p>
         <button
           type="button"
@@ -288,9 +286,10 @@ export default function CostPlanner() {
               {key === "clinical" ? (
                 <div>
                   <p className="text-xs leading-relaxed text-[#56504a] mb-3">
-                    Moshy publishes its program pricing on its own site, and the plan that applies is confirmed
-                    before you commit. New customers get $120 off their first order with REFERRAL120 through our
-                    link, with a 3-month minimum commitment. We earn a commission if you sign up.
+                    Moshy publishes its program pricing on its own site and shows the amount before you pay. New
+                    customers get $120 off their first order with REFERRAL120 at checkout, one use, with a
+                    3-month minimum commitment. We earn a
+                    commission if you sign up.
                   </p>
                   <a
                     href={MOSHY_URL}
@@ -322,9 +321,9 @@ export default function CostPlanner() {
 
       <p className="mt-5 text-xs leading-relaxed text-[#56504a] max-w-2xl">
         This planner compares pricing structures and preferences only. It is not medical or financial
-        advice, it does not assess suitability for any treatment, and it does not recommend any medicine.
-        Whether any treatment is appropriate for you is decided by a registered Australian practitioner
-        after an individual assessment, and approval is never guaranteed.
+        advice, it does not assess suitability for any treatment, and it does not recommend any treatment.
+        Any treatment is decided by a registered practitioner after an individual assessment, and some
+        applicants are declined.
       </p>
     </div>
   );

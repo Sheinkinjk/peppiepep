@@ -86,8 +86,7 @@ export default function EarningsBalanceNote({
     const others = noEarnFrom ? (Array.isArray(noEarnFrom) ? noEarnFrom : [noEarnFrom]) : [];
     return (
       <p className={`text-xs leading-relaxed text-[#56504a] ${className}`}>
-        We earn a commission if you sign up through the {list(earnFromAll, "or")} link
-        {earnFromAll.length > 1 ? "s" : ""} on this page, at no extra cost to you. We earn from{" "}
+        {`We earn a commission if you sign up through the ${list(earnFromAll, "or")} ${earnFromAll.length > 1 ? "links" : "link"} on this page, at no extra cost to you. We earn from `}
         {WORD[earnFromAll.length] ?? "each"} of them
         {others.length > 0 ? (
           <>, and nothing from {list(others, "or")}: we have no commercial arrangement with them</>

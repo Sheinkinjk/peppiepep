@@ -790,7 +790,7 @@ export const seoConfig = {
   whUti: {
     title: "UTI Treatment Without a GP in Australia 2026: State by State",
     description:
-      "A pharmacist can treat an uncomplicated UTI in women 18 to 65. Victoria is the one state we found where the consultation is free by rule; elsewhere pharmacies may charge.",
+      "A pharmacist can assess an uncomplicated UTI in women 18 to 65. Victoria is the one state we found where the consultation is free by rule; elsewhere pharmacies may charge.",
     url: `${SITE_URL}/womens-health/uti-treatment-without-a-gp-australia`,
     keywords: ["uti treatment without gp", "pharmacist uti treatment australia", "uti pharmacy cost", "chemist care now uti", "online uti doctor australia"],
   },
@@ -850,6 +850,7 @@ export const seoConfig = {
     keywords: ["online medical certificate australia", "medical certificate online cost", "sick certificate online australia", "telehealth medical certificate australia", "same day medical certificate online"],
   },
   onlinePrescription: {
+    noIndex: true, // retired 1 Oct 2026, 301 to /mens-health in next.config
     title: "Online Prescription Australia: Cost, Medicare | Refer Labs",
     description:
       "What an online prescription costs in Australia, and the identifier that decides whether you get one: a Medicare card, or an IHI number if you have none.",
@@ -1125,7 +1126,7 @@ export const seoConfig = {
     // directory. Every code here is read off the provider's own page and dated.
     title: "Discount Codes: Moshy, Mosh, Juniper and i-screen",
     description:
-      "Verified Australian discount codes, each dated: Moshy REFERRAL120 for $120 off, Mosh REFERAL55 for 55% off, Juniper JARREDKFC for a waived $89 consultation, i-screen referlabs for $20 off, plus pet insurance offers.",
+      "Verified Australian discount codes, each dated: Moshy REFERRAL120 for $120 off, Mosh REFERAL55 for 55% off a first hair order, Juniper JARREDKFC for no charge on the $89 initial consultation, i-screen referlabs for $20 off, plus pet insurance offers.",
     url: `${SITE_URL}/deals`,
     keywords: ["discount codes australia", "verified discount codes australia", "promo codes australia", "deals australia", "refer labs deals", "moshy discount code", "mosh discount code", "juniper discount code", "australian coupon codes"],
   },
@@ -1584,7 +1585,7 @@ export const seoConfig = {
     // order discount, not a hair-only one, so the broader title is also truer.
     title: "Mosh Discount Code 2026: 55% Off First Order",
     description:
-      "REFERAL55 takes 55% off a first Mosh order: our link carries it, or enter it at checkout. How the online consultation works and how Mosh bills after that.",
+      "REFERAL55 takes 55% off a new customer's first Mosh order: use it at checkout; our link opens Mosh's sign-up with the offer. How the online consultation works and how Mosh bills after that.",
     url: `${SITE_URL}/moshhair`,
     keywords: [
       "mosh hair discount code",
@@ -1638,7 +1639,7 @@ export const seoConfig = {
   moshy: {
     title: "Moshy Discount Code Australia 2026: $120 Off | Refer Labs",
     description:
-      `The current Moshy discount code is REFERRAL120. It applies through our link for $120 off a first order, read off Moshy's own page on ${offerCheckedOn("REFERRAL120")}.`,
+      `The current Moshy discount code is REFERRAL120: $120 off a first order at checkout, read off Moshy's own page on ${offerCheckedOn("REFERRAL120")}.`,
     url: `${SITE_URL}/moshy`,
     keywords: [
       "moshy discount code",
@@ -1677,7 +1678,7 @@ export const seoConfig = {
     // stop competing for the same query.
     title: "Best Weight Loss Telehealth Australia 2026: How to Choose",
     description:
-      "Moshy and Juniper compared for Australians: what each includes, how you start and what each costs to begin. Our links carry REFERRAL120 ($120 off Moshy) and JARREDKFC.",
+      "Moshy and Juniper compared for Australians: what each includes, how you start and what each costs to begin. Codes: REFERRAL120 ($120 off Moshy) and JARREDKFC.",
     url: `${SITE_URL}/best-weight-loss-telehealth-australia`,
     keywords: [
       "best weight loss telehealth australia 2026",
@@ -1691,7 +1692,6 @@ export const seoConfig = {
       "australian weight loss program comparison",
       "best online weight management australia",
       "weight loss program australia 2026",
-      "weight loss medication telehealth australia",
     ],
   },
 
@@ -1706,7 +1706,7 @@ export const seoConfig = {
   moshyVsJuniper: {
     title: "Moshy vs Juniper 2026: Cost and Who Each Suits",
     description:
-      "Moshy vs Juniper: what each includes, read off their own sites, and who each suits. Codes: REFERRAL120 ($120 off Moshy), JARREDKFC (Juniper consult waived).",
+      "Moshy vs Juniper: what each includes, read off their own sites, and who each suits. Codes: REFERRAL120 ($120 off Moshy), JARREDKFC (no charge for Juniper's initial consult).",
     url: `${SITE_URL}/moshy-vs-juniper`,
     keywords: [
       "moshy vs juniper",
@@ -1774,6 +1774,7 @@ export const seoConfig = {
   },
 
   moshyEligibility: {
+    noIndex: true, // retired 1 Oct 2026, 301 to /moshy-review in next.config
     title: "Moshy Eligibility Check Explained: What the Quiz Asks",
     description:
       "What the Moshy eligibility check involves. The questions the online quiz asks, how long it takes, what the practitioner review looks at, and why some applications are declined. Information only.",
@@ -1908,7 +1909,7 @@ export const seoConfig = {
   moshyVsGp: {
     title: "Moshy vs Your GP for Weight Management: A Practical Comparison | Refer Labs",
     description:
-      "Moshy and a regular GP are two doors to the same kind of care. How each pathway runs, where telehealth saves time, where a GP is clearly the right call, and why both are valid. Information only, not medical advice.",
+      "Moshy vs your GP for weight management: Moshy runs consultations online by phone or video for one program fee; a GP sees you in person, partly offset by Medicare. Information only, not medical advice.",
     url: `${SITE_URL}/moshy-vs-gp`,
     keywords: [
       "moshy vs gp",
@@ -1942,7 +1943,7 @@ export const seoConfig = {
   moshyAlternatives: {
     title: "Moshy Alternatives in Australia 2026: Who Else Does This? | Refer Labs",
     description:
-      "Moshy alternatives in Australia, and $120 off Moshy with code REFERRAL120 if you stay: Juniper for women, or your own GP. What each pathway offers. Information only, not medical advice.",
+      "Moshy alternatives in Australia: Juniper is the closest like-for-like option we compare, and your GP is a route too. REFERRAL120 takes $120 off Moshy. Information only.",
     url: `${SITE_URL}/moshy-alternatives`,
     keywords: [
       "moshy alternatives",
@@ -1962,7 +1963,7 @@ export const seoConfig = {
   weightLossTelehealthCost: {
     title: "Weight Loss Telehealth Cost in Australia 2026 | Refer Labs",
     description:
-      "How much weight-loss telehealth costs in Australia: consult fees, subscription models, and why medication is billed separately. What drives the price.",
+      "How weight-loss telehealth is priced in Australia: program fees, minimum terms and Medicare, and where each service publishes its price.",
     url: `${SITE_URL}/weight-loss-telehealth-cost-australia`,
     keywords: [
       "weight loss telehealth cost australia",
@@ -1978,6 +1979,7 @@ export const seoConfig = {
   },
 
   onlineWeightLossDoctor: {
+    noIndex: true, // retired 1 Oct 2026, 301 to /weight-loss in next.config
     title: "Online Weight Loss Doctor Australia 2026: How It Works",
     description:
       "How seeing a weight-loss doctor online works in Australia.",
@@ -2109,7 +2111,7 @@ export const seoConfig = {
     // and Jarred is about to drive that query with grassroots marketing.
     title: "Juniper Discount Code 2026: JARREDKFC Waives the $89 Consult",
     description:
-      "The Juniper discount code is JARREDKFC: it waives the initial consultation, valued at $89, through our link. What the program includes, how it is priced, and Juniper's refund terms.",
+      "The Juniper discount code is JARREDKFC: no charge for the initial consultation, valued at $89, through our link; program fees apply. What the program includes and Juniper's refund terms.",
     url: `${SITE_URL}/juniper`,
     keywords: ["juniper australia", "juniper weight loss", "juniper review australia", "juniper discount code", "juniper promo code", "juniper coupon code", "is juniper legit", "is juniper worth it", "juniper cost australia", "myjuniper", "juniper program australia"],
   },
@@ -2127,7 +2129,7 @@ export const seoConfig = {
     noIndex: true,
     title: "Free Australian Weight-Loss Options Guide | Refer Labs",
     description:
-      "A free, plain-English guide to the main weight-loss pathways in Australia: medical telehealth, coaching-led programs and the GP route, and who each suits.",
+      "A free, plain-English guide to the main weight-loss routes in Australia: online telehealth programs, coaching and the GP route, and who each suits.",
     url: `${SITE_URL}/weight-loss-guide`,
     keywords: ["weight loss options australia", "weight loss guide australia", "weight loss telehealth guide"],
   },
@@ -2146,7 +2148,7 @@ export const seoConfig = {
     // Title and h1 now agree, and the page no longer promises cost it does not give.
     title: "Mosh Review 2026: Is It Legit, and Is It Worth It?",
     description:
-      "Mosh uses AHPRA-registered doctors and nurse practitioners paid fee-for-service. How the consultation works, how billing runs, and REFERAL55 for 55% off a first order.",
+      "Mosh uses AHPRA-registered doctors and nurse practitioners paid fee-for-service. How the consultation works, how billing runs, and REFERAL55 for 55% off a new customer's first order.",
     url: `${SITE_URL}/mosh-review`,
     keywords: ["mosh review", "is mosh legit", "is mosh worth it", "does mosh work", "mosh hair loss review australia", "mosh reviews"],
   },
@@ -2180,7 +2182,7 @@ export const seoConfig = {
   weightLossCostCalculator: {
     title: "Weight Loss Telehealth Cost Calculator Australia",
     description:
-      "Work out what weight-loss telehealth costs in Australia: compare subscription, coaching and GP pathways, and where your exact price is shown.",
+      "Work out what weight-loss telehealth costs in Australia: compare program fees, coaching add-ons and the GP route, and where each provider publishes its price.",
     url: `${SITE_URL}/weight-loss-cost-calculator`,
     keywords: [
       "weight loss telehealth cost calculator",
@@ -2798,9 +2800,11 @@ export const seoConfig = {
     // and description did not change. Read the 5 Oct result with that in mind.
     // CONFOUND, 30 Sep 2026: Dense retired from the site, so the body and the
     // description changed (Mosh and your GP now). Title unchanged.
+    // CONFOUND, 1 Oct 2026: TGA/Ahpra copy pass. Lead and two FAQs reworded, the
+    // Mosh plan-stage table removed, Mosh's promotion terms linked. Title unchanged.
     title: "Best Hair Loss Treatment Australia 2026: How to Choose",
     description:
-      "Mosh or your GP for hair loss in Australia: how each assessment works, who each suits, and how each is priced. REFERAL55 takes 55% off a first Mosh order.",
+      "Mosh or your GP for hair loss in Australia: how each assessment works, who each suits, and how each is priced. REFERAL55 takes 55% off a new customer's first Mosh order.",
     url: `${SITE_URL}/best-hair-loss-treatment-australia`,
     keywords: [
       "best hair loss treatment australia 2026",

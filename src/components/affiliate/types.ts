@@ -4,6 +4,13 @@ export interface AffiliateSection {
   /** Optional internal links listed under the paragraphs (e.g. alternatives we cover). */
   links?: { href: string; label: string; desc: string }[];
   disclaimer?: string;
+  /**
+   * Optional outbound link to the vendor's own terms, rendered under the
+   * paragraphs. Use it on any section that states an inducement (a code, a
+   * guarantee) for a regulated health service: Ahpra s133(1)(b) and guideline
+   * 4.2 need the terms stated and easy to find beside the offer.
+   */
+  termsLink?: { href: string; label: string };
   hasCta?: boolean;
   ctaText?: string;
 }
@@ -80,6 +87,14 @@ export interface AffiliatePageConfig {
    */
   offerLabel?: string;
   /**
+   * true ONLY when the offer exists because the reader comes through our link or
+   * code (Superfiliate's 15%, Unbounce's 20%/35%, Mosh's REFERAL55). Without it the
+   * label reads "<Brand>'s current offer": a free plan, trial or demo anyone can get
+   * direct must never be labelled "via our link" (ACL s29; fixed 1 Oct 2026, when
+   * 26 brand pages said "via our link" above public trials).
+   */
+  offerViaLink?: boolean;
+  /**
    * ISO date (e.g. "2026-09-30") on which the offer was last re-read on the
    * vendor's own page. Set it ONLY when that page was actually opened that day.
    * It beats the DEALS `verified` date and the global OFFERS_VERIFIED fallback.
@@ -88,6 +103,16 @@ export interface AffiliatePageConfig {
    * fresh check.
    */
   offerCheckedOn?: string;
+  /**
+   * Optional one-line terms for `offer` (e.g. REFERAL55_TERMS), with the vendor's
+   * own terms URL. When `offerTermsUrl` is set, the offer box and the final CTA
+   * band carry a muted "T&Cs apply" link to it, and the full sentence with the
+   * link sits under the "offer at a glance" table. The sticky bar carries neither.
+   * Added 1 Oct 2026 for Ahpra s133(1)(b); pages that omit both fields render
+   * exactly as before.
+   */
+  offerTerms?: string;
+  offerTermsUrl?: string;
 
   /**
    * Show the "Independent guide · How we research" trust line under the hero.
@@ -107,7 +132,7 @@ export interface AffiliatePageConfig {
   /** Scannable "at a glance" facts shown in the hero sidebar card */
   atAGlance?: { k: string; v: string }[];
   /** Trust-strip items shown under the hero */
-  trustStrip?: string[];
+  trustStrip?: (string | { label: string; href: string })[];
   /** Editorial verdict paragraph (the "bottom line") */
   verdict?: string;
   /** Verdict supporting bullets */

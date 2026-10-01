@@ -18,7 +18,7 @@ export const metadata = generateSEOMetadata(seoConfig.edTreatmentCost);
 const faqs = [
   {
     q: "How much does erectile dysfunction treatment cost in Australia?",
-    a: "The route determines the cost far more than the condition does. A GP appointment may be bulk-billed or carry a gap, with a Medicare rebate on the consultation. An online clinic typically charges a subscription that bundles the consult with ongoing supply and support, and those subscriptions are usually outside Medicare. Anything prescribed is a separate cost again. Compare the twelve-month total rather than the entry price, because subscription models are designed around the entry price looking low.",
+    a: "The route determines the cost far more than the condition does. A GP appointment may be bulk-billed or carry a gap, with a Medicare rebate on the consultation. An online clinic typically charges a subscription that bundles the consult with ongoing support, and those subscriptions are usually outside Medicare. Any pharmacy cost is separate again. Compare the twelve-month total rather than the entry price, because subscription models are designed around the entry price looking low.",
   },
   {
     q: "Can I see a GP about erectile dysfunction?",
@@ -26,15 +26,15 @@ const faqs = [
   },
   {
     q: "Does Medicare cover erectile dysfunction treatment?",
-    a: "Medicare rebates apply to the consultation, not to what is dispensed. A GP consult attracts a rebate and may be bulk-billed. Online subscriptions generally sit outside Medicare entirely, which is a material difference when comparing prices that is rarely made obvious. Ask any service directly whether a rebate applies before subscribing.",
+    a: "Medicare rebates apply to the consultation, not to any pharmacy cost. A GP consult attracts a rebate and may be bulk-billed. Online subscriptions generally sit outside Medicare entirely, which is a material difference when comparing prices that is rarely made obvious. Ask any service directly whether a rebate applies before subscribing.",
   },
   {
     q: "Are online erectile dysfunction clinics cheaper than a GP?",
-    a: "Sometimes on convenience, less often on total cost. A bulk-billed GP consult can cost nothing, while a subscription runs every month whether or not you need a consultation that month. Compare a year of subscription against a year of appointments plus anything dispensed. That is arithmetic you can do before you sign up.",
+    a: "Sometimes on convenience, less often on total cost. A bulk-billed GP consult can cost nothing, while a subscription runs every month whether or not you need a consultation that month. Compare a year of subscription against a year of appointments plus any pharmacy cost. That is arithmetic you can do before you sign up.",
   },
   {
-    q: "Do I need a prescription for erectile dysfunction treatment in Australia?",
-    a: "Treatments in this category are prescription-only, which means they are supplied after an individual assessment by a registered Australian practitioner who decides whether they are appropriate for you. No service can lawfully supply them without that assessment. Any site offering to skip it should be avoided, both because it is unlawful and because the assessment is what catches an underlying cause.",
+    q: "Do I need to see a practitioner about erectile dysfunction?",
+    a: "Yes, for any treatment. It is decided by a registered Australian practitioner after an individual assessment, and no service can lawfully skip that step. Any site offering to skip it should be avoided, both because it is unlawful and because the assessment is what catches an underlying cause.",
   },
 ];
 
@@ -43,6 +43,7 @@ export default function Page() {
     <SectionGuideShell
       section="Men's health"
       sectionHref="/mens-health"
+      comingSoonVariant="unmonetised"
       slug="/mens-health/erectile-dysfunction-treatment-cost-australia"
       crumb="Erectile dysfunction costs"
       h1={<>Erectile dysfunction treatment in Australia: <span>what the routes cost</span></>}
@@ -84,8 +85,8 @@ export default function Page() {
             <tbody className="divide-y divide-[#f1ede4]">
               {[
                 ["Your regular GP", "Per appointment, bulk-billed or with a gap", "Rebate on the consult", "Only when you book"],
-                ["Online clinic, subscription", "Monthly, bundling consult, supply and support", "Usually none", "Yes, every month"],
-                ["Online clinic, per consult", "Per consultation, supply billed separately", "Varies by service", "Only when you consult"],
+                ["Online clinic, subscription", "Monthly, bundling consult and ongoing support", "Usually none", "Yes, every month"],
+                ["Online clinic, per consult", "Per consultation; any pharmacy cost is separate", "Varies by service", "Only when you consult"],
               ].map((r) => (
                 <tr key={r[0]}>
                   <td className="px-4 py-3 font-semibold text-[#14120f]">{r[0]}</td>
@@ -112,14 +113,14 @@ export default function Page() {
           anything.
         </p>
         <p className="mt-3">
-          Convert both to twelve months before deciding. A bulk-billed GP appointment twice a year plus dispensed cost
+          Convert both to twelve months before deciding. A bulk-billed GP appointment twice a year plus any pharmacy cost
           is a very different annual figure from a subscription running every month, and which comes out ahead depends
           on how often you would consult.
         </p>
         <div className="mt-4 rounded-2xl border border-[#007a95]/25 bg-[#f7f4ee] p-6">
           <p className="text-[15px] font-semibold text-[#14120f]">The question to ask each provider</p>
           <p className="mt-2 text-sm text-[#56504a]">
-            &ldquo;What will I have paid you twelve months from now, including everything dispensed, if my situation
+            &ldquo;What will I have paid you twelve months from now, including any pharmacy cost, if my situation
             does not change?&rdquo; A service that cannot answer that plainly is one whose pricing you do not yet
             understand.
           </p>

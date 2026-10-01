@@ -85,7 +85,7 @@ export default function Privacy() {
         <h1 className="mt-4 text-4xl font-bold leading-[1.07] tracking-[-0.01em] text-[#14120f] sm:text-5xl">
           Privacy Policy
         </h1>
-        <p className="mt-4 text-sm text-[#56504a]">Last updated: 15 September 2026 · Version 3.0</p>
+        <p className="mt-4 text-sm text-[#56504a]">Last updated: 1 October 2026 · Version 3.1</p>
 
         <p className="mt-8 text-lg leading-relaxed text-[#14120f]">
           You can read all of Refer Labs without giving us any personal information. We only collect details you choose
@@ -108,8 +108,8 @@ export default function Privacy() {
             <h3 className="text-lg font-semibold text-[#14120f]">Information you give us</h3>
             <ul className="list-disc space-y-2 pl-5">
               <li>
-                <strong>Newsletter and guide sign-ups:</strong> your email address, the page you signed up from, and, for
-                quizzes that offer to email you, the name of the result you were shown. We do not store your quiz answers.
+                <strong>Newsletter and guide sign-ups:</strong> your email address and the page or quiz you signed up from.
+                We do not store your quiz answers, and our health quizzes do not send us your result.
               </li>
               <li>
                 <strong>Home battery enquiries:</strong> your name, email, phone number, postcode, timeframe and any notes
@@ -153,8 +153,10 @@ export default function Privacy() {
             </ul>
 
             <p>
-              We do not knowingly collect sensitive information, such as health information. Our health quizzes show
-              results on the page, and if you ask to be emailed we keep only your email and the result name.
+              We do not ask for health information. Our health quizzes show their results on the page and do not send
+              your answers or result to us. If you sign up from a health page, we record that page, which may show a
+              health topic you are interested in. We use it only to send you relevant emails, never share it, and delete
+              it with your subscription.
             </p>
           </Section>
 
@@ -272,6 +274,11 @@ export default function Privacy() {
                 <strong>Analytics cookies (Google Analytics)</strong> are off by default and only set if you choose
                 &ldquo;Accept all&rdquo; or switch analytics on. Until then, Google Consent Mode keeps analytics storage
                 denied.
+              </li>
+              <li>
+                <strong>Other local storage:</strong> a note that you have subscribed, so the sign-up prompt stops
+                appearing, and a note for the current browser session of whether you arrived from an AI assistant, used
+                only for the consented analytics above. Neither identifies you or leaves your device.
               </li>
               <li>
                 <strong>Vercel Analytics</strong> is cookieless and runs without a consent prompt because it stores nothing

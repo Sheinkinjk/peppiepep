@@ -111,12 +111,12 @@ export const liveCategories = [
   {
     href: "/weight-loss",
     label: "Weight loss",
-    blurb: "Telehealth weight management, compared on eligibility, process and cost.",
+    blurb: "Telehealth weight management, compared on process, support and cost.",
   },
   {
     href: "/hair-loss",
     label: "Hair loss",
-    blurb: "Prescription telehealth against topical ranges you can buy off the shelf.",
+    blurb: "Hair-loss telehealth and your GP, compared on cost and how each works.",
   },
   { href: "/pet-insurance", label: "Pet insurance", blurb: "Benefit percentages, annual limits, excess and the waiting periods that decide a claim." },
   {

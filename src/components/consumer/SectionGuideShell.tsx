@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { SectionMark } from "@/components/brand/SectionMark";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
-import ComingSoonNote from "@/components/consumer/ComingSoonNote";
+import ComingSoonNote, { type Variant } from "@/components/consumer/ComingSoonNote";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 import { SITE_URL, comparisonArticleSchema } from "@/lib/seo";
 import { pageDates } from "@/lib/page-dates";
@@ -17,6 +17,7 @@ import { pageDates } from "@/lib/page-dates";
 export default function SectionGuideShell({
   section,
   sectionHref,
+  comingSoonVariant,
   slug,
   crumb,
   h1,
@@ -30,6 +31,8 @@ export default function SectionGuideShell({
 }: {
   section: string;
   sectionHref: string;
+  /** Override the section's ComingSoonNote wording, e.g. "unmonetised" on a page that links no provider. */
+  comingSoonVariant?: Variant;
   slug: string;
   crumb: string;
   h1: React.ReactNode;
@@ -128,7 +131,7 @@ export default function SectionGuideShell({
         </p>
 
         <div className="mt-7">
-          <ComingSoonNote category={section} />
+          <ComingSoonNote category={section} variant={comingSoonVariant} />
         </div>
 
         <div className="mt-10 space-y-10 text-[15px] leading-relaxed text-[#56504a]">{children}</div>
@@ -163,8 +166,8 @@ export default function SectionGuideShell({
 
         <p className="mt-10 text-xs leading-relaxed text-[#56504a]">
           General information for an Australian audience, not medical advice and not a diagnosis. Circumstances differ
-          from person to person, and anything prescription-only is supplied in Australia only after an individual
-          assessment by a registered practitioner who decides whether it is appropriate. Prices change; each figure
+          from person to person, and any treatment is decided by a registered practitioner after an individual
+          assessment. Prices change; each figure
           states when we checked it.
         </p>
 

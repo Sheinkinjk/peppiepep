@@ -3,8 +3,10 @@
 import { useState } from "react";
 import Link from "next/link";
 import { ArrowRight, RotateCcw, Check, Share2 } from "lucide-react";
-import { MOSHY_URL } from "@/lib/affiliate-links";
+import { MOSHY_URL, JUNIPER_URL } from "@/lib/affiliate-links";
+import { requiredDisclosureFor } from "@/lib/partner-disclosures";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
+import { MOSHY_TERMS_URL } from "@/lib/offers";
 
 /**
  * "Which weight-loss pathway fits you?" is a short preference-based matcher that
@@ -47,7 +49,7 @@ const QUESTIONS: {
     key: "approach",
     q: "Which approach appeals most?",
     options: [
-      { value: "clinical", label: "Clinically-led, practitioner-guided", note: "A structured medical pathway" },
+      { value: "clinical", label: "Practitioner-led", note: "Regular consultations with a registered practitioner" },
       { value: "coaching", label: "Coaching and habits first", note: "Nutrition and lifestyle at the centre" },
       { value: "unsure", label: "Not sure yet", note: "Still weighing it up" },
     ],
@@ -85,27 +87,31 @@ type Result = {
   title: string;
   body: string;
   offer?: string;
+  /** The offer's own terms page, linked beside the offer chip. */
+  offerTerms?: string;
   cta?: { label: string; href: string; sponsored: boolean; loc: string };
   secondary?: { label: string; href: string };
   also?: string;
   capture?: boolean;
+  /** Partner-mandated wording, shown verbatim above the button (Juniper's handbook). */
+  requiredDisclosure?: string;
 };
 
 function resolve(a: Required<Answers>): Result {
   const woman = a.gender === "woman";
   const coachingLed = a.approach === "coaching" || a.support === "high";
-  const medicationLed = a.approach === "clinical";
+  const practitionerLed = a.approach === "clinical";
   const speed = a.urgency === "now";
 
-  // GP pathway: prefers in person, or lowest cost with a habits-first (non-medication) approach.
-  if (a.channel === "in-person" || (a.cost === "lowest" && !medicationLed && a.channel !== "online")) {
+  // GP route: prefers in person, or lowest cost with a habits-first approach.
+  if (a.channel === "in-person" || (a.cost === "lowest" && !practitionerLed && a.channel !== "online")) {
     return {
       title: "Start with your GP",
-      body: `A GP can manage the same pathway in person, knows your history, and Medicare offsets part of the cost. It is slower to begin${speed ? ", so it's worth booking in as soon as you can" : ""}, and for what you're after that trade makes sense.`,
+      body: `A GP can see you in person, knows your history, and Medicare offsets part of the consultation. It is slower to begin${speed ? ", so it's worth booking in as soon as you can" : ""}, and for what you're after that trade makes sense.`,
       secondary: { label: "Read: telehealth vs your GP", href: "/moshy-vs-gp" },
       also: woman
-        ? "If you later want it done online, Juniper is built for women and Moshy is open to anyone eligible."
-        : "If you later want it done online, Moshy runs the clinical pathway and is open to anyone eligible.",
+        ? "If you later want it done online, Juniper is built for women and Moshy is open to anyone a practitioner assesses as suitable."
+        : "If you later want it done online, Moshy runs consultations with a registered practitioner by phone or video and is open to anyone a practitioner assesses as suitable.",
       capture: true,
     };
   }
@@ -115,11 +121,14 @@ function resolve(a: Required<Answers>): Result {
   if (woman && coachingLed) {
     return {
       title: "Juniper looks like your fit",
-      body: "You want accountability and structure alongside a practitioner-led program, done online. Juniper is designed for women, with app coaching, a private community and 1:1 coaching as an add-on.",
-      offer: "Code JARREDKFC waives the initial consultation, which Juniper values at $89",
-      cta: { label: "See Juniper (consult waived with JARREDKFC)", href: "/juniper", sponsored: false, loc: "quiz-juniper" },
+      body: "You want accountability and structure alongside a practitioner-led program, done online. Juniper is designed for women, with meal plans, app tracking and a private community; health coaching is an optional add-on.",
+      offer: "JARREDKFC: no charge for the initial consultation, which Juniper values at $89; program fees apply",
+      // Straight to Juniper, like the Moshy result (1 Oct 2026), with Juniper's
+      // handbook wording above the button. It previously went to our /juniper page.
+      cta: { label: "Continue to Juniper", href: JUNIPER_URL, sponsored: true, loc: "quiz-juniper" },
+      requiredDisclosure: requiredDisclosureFor(JUNIPER_URL)?.text,
       secondary: { label: "Compare the providers", href: "/best-weight-loss-telehealth-australia" },
-      also: "Moshy is open to anyone eligible and includes in-app coaching and dietitian meal plans too.",
+      also: "Moshy is open to anyone a practitioner assesses as suitable and includes in-app coaching and dietitian meal plans too.",
     };
   }
 
@@ -130,31 +139,33 @@ function resolve(a: Required<Answers>): Result {
   if (a.approach === "coaching" && (a.support !== "high" || !woman)) {
     return {
       title: "A habits-first plan is your starting point",
-      body: "You want coaching and habits at the centre rather than a clinical pathway first. A GP or dietitian can build a plan around nutrition and lifestyle. If you later want the clinical route, Moshy runs that pathway online.",
+      body: "You want coaching and habits at the centre. A GP or dietitian can build a plan around nutrition and lifestyle.",
       secondary: { label: "See all weight-loss options", href: "/weight-loss" },
-      also: "If a clinical, online pathway appeals later, Moshy is open to anyone eligible.",
+      also: "If you later want regular consultations with a registered practitioner online, Moshy offers them with coaching and meal plans, and is open to anyone a practitioner assesses as suitable.",
       capture: true,
     };
   }
 
-  // Default: clinical / online / unsure -> Moshy (clinical pathway, open to anyone eligible).
-  // The opening sentence restates only what the reader chose. It used to say
-  // "You want a fast, clinically-led pathway done online" to everyone landing
-  // here, including people who answered "not sure" or "no preference".
+  // Default: practitioner-led / online / unsure -> Moshy (open to anyone a
+  // practitioner assesses as suitable). The opening sentence restates only what
+  // the reader chose. It used to say "You want a fast, clinically-led pathway
+  // done online" to everyone landing here, including people who answered "not
+  // sure" or "no preference". 1 Oct 2026: no "clinical pathway" wording (TGA).
   const wants =
-    medicationLed && a.channel === "online"
-      ? "You want a clinically-led pathway done online, and Moshy runs that"
-      : medicationLed
-        ? "You want a clinically-led pathway, and Moshy runs one entirely online"
+    practitionerLed && a.channel === "online"
+      ? "You want practitioner-led care done online, and Moshy runs consultations with a registered practitioner by phone or video"
+      : practitionerLed
+        ? "You want practitioner-led care, and Moshy runs its consultations online by phone or video"
         : "You are still weighing up the approach, and Moshy is a practitioner-led option you can explore online first";
   return {
-    title: medicationLed ? "Moshy is the natural starting point" : "Moshy is one place to start",
-    body: `${wants}, open to anyone eligible. Starting the online questionnaire commits you to nothing${speed ? ", so you can start straight away" : ""}. A GP can run the same pathway in person if you would rather.`,
-    offer: "$120 off your first order via our link",
+    title: practitionerLed ? "Moshy fits what you chose" : "Moshy is one place to start",
+    body: `${wants}, with coaching and meal plans in one program fee. It is open to anyone a practitioner assesses as suitable${speed ? ", and you can start straight away" : ""}. A GP can see you in person if you would rather.`,
+    offer: "REFERRAL120 at checkout: $120 off your first order",
+    offerTerms: MOSHY_TERMS_URL,
     cta: { label: "Continue to Moshy", href: MOSHY_URL, sponsored: true, loc: "quiz-moshy" },
     secondary: { label: "Read our full Moshy review", href: "/moshy-review" },
     also: woman
-      ? "Want a program designed for women, with 1:1 coaching as an option? Juniper is built for women."
+      ? "Juniper is also designed for women, with health coaching as an optional add-on."
       : "Would rather keep it with your own doctor? We compare the two routes in Moshy vs your GP.",
   };
 }
@@ -181,7 +192,7 @@ export default function PathwayQuiz() {
     if (typeof window === "undefined") return;
     const url = "https://referlabs.com.au/weight-loss-quiz";
     window.gtag?.("event", "quiz_share", { method: "share_button" });
-    const data = { title: "Which weight-loss pathway fits you?", text: "I just matched my weight-loss pathway on Refer Labs. Find yours in 60 seconds:", url };
+    const data = { title: "Which weight-loss option fits you?", text: "I just matched my weight-loss option on Refer Labs. Find yours in 60 seconds:", url };
     try {
       if (navigator.share) {
         await navigator.share(data);
@@ -202,7 +213,7 @@ export default function PathwayQuiz() {
   return (
     <div className="nw-card rounded-2xl p-7 sm:p-9">
       <div className="flex items-center justify-between gap-4">
-        <p className="nw-kicker">{done ? "Your match" : `Pathway matcher · step ${answered + 1} of ${QUESTIONS.length}`}</p>
+        <p className="nw-kicker">{done ? "Your match" : `Option matcher · step ${answered + 1} of ${QUESTIONS.length}`}</p>
         {answered > 0 && (
           <button onClick={reset} className="inline-flex items-center gap-1.5 text-xs font-medium text-[#56504a] hover:text-[#007a95]">
             <RotateCcw className="h-3 w-3" /> Restart
@@ -219,7 +230,7 @@ export default function PathwayQuiz() {
       {!done && current && (
         <div className="mt-5">
           {answered === 0 && (
-            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Which weight-loss pathway fits you?</h2>
+            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Which weight-loss option fits you?</h2>
           )}
           <p className={`${answered === 0 ? "mt-3" : ""} text-lg font-semibold text-[#14120f]`}>{current.q}</p>
           <div className="mt-5 grid gap-3">
@@ -249,10 +260,16 @@ export default function PathwayQuiz() {
               <Check className="h-3.5 w-3.5" strokeWidth={2.5} aria-hidden="true" /> {result.offer}
             </span>
           )}
+          
           <p className="mt-3 text-[15px] leading-relaxed text-[#56504a]">{result.body}</p>
           {result.also && (
             <p className="mt-4 rounded-xl border border-[#ded8cd] bg-[#f7f4ee] px-4 py-3 text-[14px] leading-relaxed text-[#56504a]">
               <span className="font-semibold text-[#14120f]">Also worth knowing: </span>{result.also}
+            </p>
+          )}
+          {result.requiredDisclosure && (
+            <p className="mt-5 rounded-xl border border-[#ded8cd] bg-[#f7f4ee] px-4 py-3 text-[13px] leading-relaxed text-[#56504a]">
+              {result.requiredDisclosure}
             </p>
           )}
           <div className="mt-6 flex flex-wrap items-center gap-4">

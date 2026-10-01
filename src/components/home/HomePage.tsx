@@ -1,5 +1,6 @@
 import NewsletterPopup from "@/components/consumer/NewsletterPopup";
 import Link from "next/link";
+
 import { SiteFooterBar, SiteHeader } from "@/components/brand/SiteChrome";
 import { HomeLogo } from "@/components/home/HomeLogo";
 import { Nav, NavRail } from "@/components/home/HomeNav";
@@ -39,11 +40,14 @@ import {
 const CONDITION = /annual|yearly|first year|billing|months? of|\bfor \d+ months\b/i;
 function said(r: { figure: string | null; offer: string }): string {
   const fig = r.figure ?? "";
+  // A minimum commitment travels with the saving (Moshy's REFERRAL120, 1 Oct 2026):
+  // "$120 off" alone omits part of the price.
+  const min = r.offer.match(/\d+-month minimum/i);
+  if (min) return `${fig} off (${min[0]})`;
   const clause = r.offer.split(";").map((c) => c.trim()).find((c) => c.includes(fig)) ?? "";
   if (CONDITION.test(clause)) return clause;
   return /free/i.test(fig) ? fig : `${fig} off`;
 }
-
 
 /** Display headings on this page carry no closing full stop. */
 const noStop = (t: string) => t.replace(/\.\s*$/, "");
@@ -52,7 +56,6 @@ function Mark({ of, size = 18 }: { of: string; size?: number }) {
   const k = objectFor(of);
   return k ? <HubObject kind={k} size={size} className="hy-obj hy-obj--inline" /> : null;
 }
-
 
 /* ---- the hero: six hub cards ------------------------------------------- */
 
