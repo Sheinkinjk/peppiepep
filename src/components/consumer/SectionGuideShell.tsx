@@ -166,8 +166,7 @@ export default function SectionGuideShell({
 
         <p className="mt-10 text-xs leading-relaxed text-[#56504a]">
           General information for an Australian audience, not medical advice and not a diagnosis. Circumstances differ
-          from person to person, and any treatment is decided by a registered practitioner after an individual
-          assessment. Prices change; each figure
+          from person to person, and a registered practitioner decides what is right for you after an individual assessment. Prices change; each figure
           states when we checked it.
         </p>
 

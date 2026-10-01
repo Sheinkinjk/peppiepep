@@ -103,14 +103,14 @@ const FAQS: { q: string; a: string }[] = [
   },
   {
     q: "Are online weight loss clinics in Australia legit?",
-    a: "The established services operate as regulated telehealth: an Australian-registered practitioner reviews your assessment and decides whether any treatment is appropriate. Check for a practitioner consultation, an Australian business entity and published contact details. A service that promises a particular treatment before a practitioner has assessed you is one to avoid.",
+    a: "The established services operate as regulated telehealth: an Australian-registered practitioner reviews your assessment and decides whether the program is right for you. Check for a practitioner consultation, an Australian business entity and published contact details. A service that promises a particular outcome before a practitioner has assessed you is one to avoid.",
   },
   // "Is Moshy or Juniper better?" removed 29 Sep 2026: /moshy-vs-juniper owns
   // that question, and the two pages were splitting "moshy vs juniper"
   // impressions (GSC, 90 days). The head-to-head is linked from the answer section.
   {
     q: "How do these platforms assess you?",
-    a: "Both start online: you complete an assessment, and a registered practitioner reviews it and decides whether any treatment is appropriate. Neither service promises a particular treatment in advance, and some applicants are declined.",
+    a: "Both start online: you complete an assessment, and a registered practitioner reviews it and decides whether the program is right for you. Neither service promises a particular outcome in advance, and some applicants are declined.",
   },
   {
     q: "Are these platforms available across all of Australia?",
@@ -249,8 +249,7 @@ export default function BestWeightLossTelehealthPage() {
           <section id="inclusions" className="border-t border-[#ded8cd] mt-10 py-8">
             <h2 className="text-xl sm:text-2xl font-black text-[#14120f] mb-2">What does each include?</h2>
             <p className="text-sm text-[#56504a] leading-relaxed max-w-2xl">
-              Read off each provider&apos;s own page. Any treatment is decided by the practitioner and only where
-              clinically appropriate.
+              Read off each provider&apos;s own page. The practitioner decides what is appropriate for you.
             </p>
             <WeightInclusionsTable className="mt-5" />
           </section>
@@ -265,14 +264,13 @@ export default function BestWeightLossTelehealthPage() {
               <li><strong className="text-[#14120f]">Assessment.</strong> A registered practitioner reviews each applicant and some are declined.</li>
               <li><strong className="text-[#14120f]">Total cost.</strong> Check what the fee includes and compare the full amount you would pay over the months you expect to stay.</li>
               <li><strong className="text-[#14120f]">Practitioner review and support.</strong> Check whether you get an initial consult, ongoing check-ins, and how you reach a practitioner if something changes.</li>
-              <li><strong className="text-[#14120f]">The practitioner decides.</strong> A service that promises a particular treatment before a practitioner has assessed you is one to avoid.</li>
+              <li><strong className="text-[#14120f]">The practitioner decides.</strong> A service that promises a particular outcome before a practitioner has assessed you is one to avoid.</li>
               <li><strong className="text-[#14120f]">Commitment and cancellation.</strong> Confirm any minimum term, and how to pause or cancel, before you subscribe.</li>
             </ul>
             <p className="text-sm text-[#56504a] leading-relaxed max-w-2xl">
               <strong className="text-[#14120f]">Looking for a cheaper option?</strong> The lowest total cost is not
               always a paid telehealth program. A GP (some appointments are bulk-billed) can also assess you, which may
-              work out cheaper for some people. Speak with a qualified health professional before starting or changing
-              any treatment.
+              work out cheaper for some people. Speak with a qualified health professional before making changes to your health care.
             </p>
           </section>
 
@@ -324,7 +322,7 @@ export default function BestWeightLossTelehealthPage() {
             <EditorialMeta lastUpdated="2026-10-01" className="mb-4" />
             <AffiliateDisclosure partners={["Moshy", "Juniper"]} className="mb-3 max-w-2xl" />
             <p className="text-[#56504a] text-xs leading-relaxed max-w-2xl">
-              All content on this page is for informational purposes only and does not constitute medical advice. Suitability for any weight management programme depends on individual health factors. Any treatment is decided by a registered practitioner after an individual assessment. Consult a qualified health professional before starting any treatment.
+              All content on this page is for informational purposes only and does not constitute medical advice. Suitability for any weight management programme depends on individual health factors. A registered practitioner decides what is right for you after an individual assessment. Consult a qualified health professional before starting any program.
             </p>
             <div className="mt-4 flex flex-wrap gap-4">
               <Link href="/juniper" className="text-xs text-[#56504a] hover:opacity-80 transition-opacity">

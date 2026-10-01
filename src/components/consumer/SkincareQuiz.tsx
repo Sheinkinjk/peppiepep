@@ -285,8 +285,7 @@ export default function SkincareQuiz() {
 
       <p className="mt-6 text-xs leading-relaxed text-[#56504a]">
         This quiz asks only about preferences and budget. It is general information, not medical advice, and not an
-        assessment of your skin. Any treatment is decided by a registered practitioner after an individual
-        assessment.
+        assessment of your skin. A registered practitioner decides what is right for you after an individual assessment.
       </p>
     </div>
   );

@@ -57,7 +57,7 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
       {
         h: "How to get assessed without an in-person visit",
         body: [
-          "Telehealth services run the practitioner assessment online. You complete a consultation with photos, and a registered Australian practitioner reviews it individually and decides whether any treatment is appropriate. Some men are declined.",
+          "Telehealth services run the practitioner assessment online. You complete a consultation with photos, and a registered Australian practitioner reviews it individually and decides whether the program is right for you. Some men are declined.",
           "Mosh is one Australian men's telehealth service that runs this process online. New customers get 55% off the first order of a Mosh hair program with REFERAL55, under Mosh's terms, linked beside each offer box on this page. Use code REFERAL55 at checkout; our link opens Mosh's sign-up with the offer. This page is information only, not medical advice.",
         ],
       },
@@ -66,7 +66,7 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
       { q: "Can a receding hairline be reversed?", a: "A practitioner can explain what is realistic for you after an assessment; no treatment guarantees an outcome. Whether any treatment suits you is a clinical decision made by a registered practitioner." },
       { q: "What is the best treatment for a receding hairline?", a: "No single treatment is right for everyone. A registered practitioner assesses whether any option is appropriate for you. Over-the-counter shampoos and supplements are cosmetic products and involve no assessment." },
       { q: "Is a receding hairline always male pattern baldness?", a: "No. A mature hairline settling slightly higher in your twenties is normal, and other causes of hair loss behave differently and need their own assessment. That is one reason a practitioner review matters before assuming a treatment is right for you." },
-      { q: "How do I get a receding hairline assessed in Australia?", a: "Through your GP or an online consultation with a registered practitioner. Telehealth services run this online: you complete a consultation with photos, and a practitioner reviews it and decides whether any treatment is appropriate. Mosh is one such service; Refer Labs readers get 55% off with the code REFERAL55 at checkout (new customers only, first order of a hair program, Mosh's terms apply). Some applicants are declined." },
+      { q: "How do I get a receding hairline assessed in Australia?", a: "Through your GP or an online consultation with a registered practitioner. Telehealth services run this online: you complete a consultation with photos, and a practitioner reviews it and decides whether the program is right for you. Mosh is one such service; Refer Labs readers get 55% off with the code REFERAL55 at checkout (new customers only, first order of a hair program, Mosh's terms apply). Some applicants are declined." },
     ],
     related: [R.best, R.mosh, R.quiz, R.cost],
   },
@@ -117,7 +117,7 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
         h: "Where to get it checked",
         body: [
           "If the signs above are adding up, an assessment tells you the cause, since other causes of hair loss exist and behave differently.",
-          "You can start with your GP, or with an online telehealth service where a registered Australian practitioner reviews your case and decides whether any treatment is appropriate. Our 30-second match points you to the route that fits, and Mosh is one Australian men's service that runs this kind of assessment online.",
+          "You can start with your GP, or with an online telehealth service where a registered Australian practitioner reviews your case and decides whether the program is right for you. Our 30-second match points you to the route that fits, and Mosh is one Australian men's service that runs this kind of assessment online.",
         ],
       },
     ],
@@ -125,7 +125,7 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
       { q: "How do I tell if I am going bald?", a: "Look for a pattern that progresses over months rather than a single heavy shed: a hairline receding at the temples, a thinning or see-through crown, and a widening part. Comparing photos a year or two apart is the clearest home check. If the signs are adding up, a practitioner can confirm the cause." },
       { q: "How much hair loss per day is normal?", a: "Commonly cited figures put normal shedding at roughly 50 to 100 hairs a day, and it varies with washing and styling. What matters is a sustained increase or a steady drop in density over months, not the count on any one day." },
       { q: "Are early signs of balding at 20 or 25 normal?", a: "A mature hairline settling slightly higher in your late teens or twenties is common and not the same as balding. Genuine early male pattern hair loss can also start young, so if the crown or hairline keeps changing over months, a GP or a registered practitioner can tell you which it is." },
-      { q: "What should I do if I notice early signs?", a: "Track the change with photos over a few months, then have it checked by your GP or through an online consultation with a registered Australian practitioner. The practitioner confirms the cause and decides whether any treatment is appropriate. This is general information, not medical advice." },
+      { q: "What should I do if I notice early signs?", a: "Track the change with photos over a few months, then have it checked by your GP or through an online consultation with a registered Australian practitioner. The practitioner confirms the cause and decides whether the program is right for you. This is general information, not medical advice." },
       { q: "Who should I see about early hair loss?", a: "You can start with your own GP, or an online telehealth service where a registered Australian practitioner reviews your case. For significant or sudden loss, see a doctor in person. Our hair-loss match can point you to the route that fits." },
     ],
     related: [R.quiz, R.best, R.mosh, R.receding, R.hub],

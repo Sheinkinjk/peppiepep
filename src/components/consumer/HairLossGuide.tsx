@@ -104,8 +104,7 @@ export default function HairLossGuide({ cfg }: { cfg: HairLossGuideConfig }) {
 
         {/* Information-only notice */}
         <div className="nw-card mt-6 px-5 py-4 text-sm leading-relaxed text-[#56504a]">
-          <span className="font-bold text-[#14120f]">Information only.</span> Nothing here is medical advice. Any
-          treatment is decided by a registered practitioner after an individual assessment. This page contains a
+          <span className="font-bold text-[#14120f]">Information only.</span> Nothing here is medical advice. A registered practitioner decides what is right for you after an individual assessment. This page contains a
           disclosed affiliate link to Mosh.
         </div>
 
@@ -143,7 +142,7 @@ export default function HairLossGuide({ cfg }: { cfg: HairLossGuideConfig }) {
           <MoshCta
             loc="bottom"
             heading="Start with a practitioner, not a guess"
-            body="Mosh's online consultation is reviewed by a registered Australian practitioner, who decides whether any treatment is appropriate. 55% off with REFERAL55; Mosh also offers a 180-day money-back guarantee on quarterly hair programs, under its terms."
+            body="Mosh's online consultation is reviewed by a registered Australian practitioner, who decides whether the program is right for you. 55% off with REFERAL55; Mosh also offers a 180-day money-back guarantee on quarterly hair programs, under its terms."
           />
         </div>
 
@@ -175,8 +174,7 @@ export default function HairLossGuide({ cfg }: { cfg: HairLossGuideConfig }) {
         <p className="mt-10 flex items-start gap-2 text-xs leading-relaxed text-[#56504a]">
           <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-[#007a95]" aria-hidden="true" />
           <span>
-            Information only, not medical advice. Any treatment is decided by a registered practitioner after an
-            individual assessment. Some links are disclosed affiliate links, and commissions never change
+            Information only, not medical advice. A registered practitioner decides what is right for you after an individual assessment. Some links are disclosed affiliate links, and commissions never change
             a comparison or a conclusion.
           </span>
         </p>

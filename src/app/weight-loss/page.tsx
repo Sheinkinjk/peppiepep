@@ -85,7 +85,7 @@ const faqs = [
   },
   {
     q: "Can you see a weight-management practitioner online in Australia?",
-    a: "Yes. Australian telehealth services run the consultation online: you complete a questionnaire, and a registered practitioner assesses you and decides whether any treatment is appropriate. A service that promises a particular treatment before a practitioner has assessed you is one to avoid. This hub is information only.",
+    a: "Yes. Australian telehealth services run the consultation online: you complete a questionnaire, and a registered practitioner assesses you and decides whether the program is right for you. A service that promises a particular outcome before a practitioner has assessed you is one to avoid. This hub is information only.",
   },
   {
     q: "Is a weight loss telehealth service the same as a weight loss clinic?",
@@ -97,7 +97,7 @@ const faqs = [
   },
   {
     q: "Are online weight loss services in Australia legitimate?",
-    a: "The medical telehealth providers operate under Australian health regulations, use registered practitioners, and decline applicants who are not suitable. That screening step is the marker to look for. A service that promises a particular treatment before a practitioner has assessed you is one to avoid.",
+    a: "The medical telehealth providers operate under Australian health regulations, use registered practitioners, and decline applicants who are not suitable. That screening step is the marker to look for. A service that promises a particular outcome before a practitioner has assessed you is one to avoid.",
   },
   {
     q: "Does Refer Labs earn money from these pages?",
@@ -280,7 +280,7 @@ export default function WeightLossHubPage() {
               answer a detailed health questionnaire, a registered practitioner reviews your answers, and only if you
               are considered suitable does a plan get discussed. Suitability is assessed individually, and some
               applicants are declined. That screening step is the single most useful thing to look for. A service that
-              promises a particular treatment before a practitioner has assessed you is one to avoid.
+              promises a particular outcome before a practitioner has assessed you is one to avoid.
             </p>
             <h3 className="pt-2 text-xl font-bold text-[#14120f]">
               Telehealth and your GP: the practical difference
@@ -301,7 +301,7 @@ export default function WeightLossHubPage() {
               Read the cost model in full, including what the subscription includes.
               Check what ongoing support and cancellation look like before you commit, not after. And treat any promise
               of a guaranteed outcome as a red flag. Everything on this page is general information to help you compare
-              services. It is not medical advice, and suitability for any treatment is decided individually by a
+              services. It is not medical advice, and suitability is decided individually by a
               qualified health professional.
             </p>
           </div>
@@ -345,9 +345,7 @@ export default function WeightLossHubPage() {
           </div>
           <OfferTermsNote brand="Moshy" className="mt-6 max-w-3xl" />
           <p className="mt-8 max-w-3xl rounded-xl border border-[#ded8cd] bg-[#f7f4ee] px-5 py-4 text-xs leading-relaxed text-[#56504a]">
-            <span className="font-semibold text-[#14120f]">Information only.</span> Nothing in this hub is medical advice
-            or a recommendation of any treatment. Any treatment is decided by a registered practitioner after an
-            individual assessment.
+            <span className="font-semibold text-[#14120f]">Information only.</span> Nothing in this hub is medical advice. A registered practitioner decides what is right for you after an individual assessment.
           </p>
           <AffiliateDisclosure partners={["Moshy", "Juniper"]} className="mt-3 max-w-3xl" />
           <p className="mt-6 text-sm leading-relaxed text-[#56504a]">
