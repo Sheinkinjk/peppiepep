@@ -126,6 +126,8 @@ const PARTNERS = [
       "/mens-health", "/deals", "/guides", "/coming-soon",
       // Named on the Hims comparison pages (preview only, 29 Sep 2026).
       "/hims-vs-mosh", "/ed",
+      // Password-protected review copies of the same pages (2 Oct 2026).
+      "/preview",
     ],
     deny: [
       {
@@ -158,6 +160,8 @@ const PARTNERS = [
       // Hims page set, preview only (29 Sep 2026).
       "/hims", "/hims-hair-loss", "/hims-ed", "/hims-vs-mosh",
       "/ed",
+      // Password-protected review copies at /preview/<slug> (2 Oct 2026).
+      "/preview",
     ],
     deny: [
       {

@@ -2,17 +2,15 @@ import { himsMetadata, renderHimsRoute } from "@/lib/hims/render";
 
 const SLUG = "hims-ed";
 
-// Reads the preview cookie/key per request. Switch to static once HIMS_PAGES_LIVE=true if you like.
+// 404 until HIMS_PAGES_LIVE=true (src/proxy.ts refuses first). Review happens at
+// /preview/hims-ed behind a password. Read per request so flipping the env var needs
+// no rebuild; switch to static after launch if you like.
 export const dynamic = "force-dynamic";
 
 export function generateMetadata() {
   return himsMetadata(SLUG);
 }
 
-export default async function Page({
-  searchParams,
-}: {
-  searchParams: Promise<Record<string, string | string[] | undefined>>;
-}) {
-  return renderHimsRoute(SLUG, await searchParams);
+export default function Page() {
+  return renderHimsRoute(SLUG);
 }

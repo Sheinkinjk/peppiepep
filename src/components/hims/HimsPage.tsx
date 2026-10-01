@@ -36,7 +36,7 @@ import { CtaLink, Disclosure, Flag } from "./ui";
 
 const PROGRAM_LABEL: Record<Vertical, string> = { weight: "weight loss", hair: "hair loss", ed: "ED" };
 
-type Ctx = { preview: boolean; linkSuffix: string; vertical: Vertical; moshLink: Vertical };
+type Ctx = { preview: boolean; linkPrefix: string; vertical: Vertical; moshLink: Vertical };
 
 const H2_CLASS = "scroll-mt-24 text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl";
 const BODY = "text-[15.5px] leading-relaxed text-[#56504a]";
@@ -63,6 +63,8 @@ function Lead({ content, preview, className }: { content: HimsPageContent; previ
 }
 
 const isHimsSlug = (href: string) => (HIMS_SLUG_LIST as readonly string[]).includes(href.replace(/^\//, ""));
+// In the /preview review area, links between the five pages stay inside it (2 Oct 2026).
+const siblingHref = (href: string, linkPrefix: string) => (isHimsSlug(href) ? `${linkPrefix}${href}` : href);
 
 function HimsLogo({ size = "md" }: { size?: "sm" | "md" }) {
   return (
@@ -153,9 +155,9 @@ function OfferTermsFoot({ verticals, mosh }: { verticals: Vertical[]; mosh: Vert
   );
 }
 
-export function HimsPage({ content, preview, linkSuffix }: { content: HimsPageContent; preview: boolean; linkSuffix: string }) {
+export function HimsPage({ content, preview, linkPrefix }: { content: HimsPageContent; preview: boolean; linkPrefix: string }) {
   const moshLink = content.moshLink ?? content.vertical;
-  const ctx: Ctx = { preview, linkSuffix, vertical: content.vertical, moshLink };
+  const ctx: Ctx = { preview, linkPrefix, vertical: content.vertical, moshLink };
   const url = `${SITE_URL}/${content.slug}`;
   const faq = content.blocks.find((b): b is Extract<Block, { type: "faq" }> => b.type === "faq");
   const crumbName = content.h1.split(":")[0].split(" (")[0];
@@ -290,7 +292,7 @@ export function HimsPage({ content, preview, linkSuffix }: { content: HimsPageCo
       </h2>
       <div className="mt-4 grid gap-3 sm:grid-cols-2">
         {relatedLinks.map((r) => (
-          <Link key={r.href} href={`${r.href}${isHimsSlug(r.href) ? linkSuffix : ""}`} className="nw-card nw-card-hover group rounded-xl p-4">
+          <Link key={r.href} href={siblingHref(r.href, linkPrefix)} className="nw-card nw-card-hover group rounded-xl p-4">
             <p className="text-sm font-bold text-[#14120f] group-hover:text-[#007a95]">{r.label}</p>
             {r.desc && <p className="mt-1 text-xs leading-relaxed text-[#56504a]">{r.desc}</p>}
           </Link>
@@ -807,7 +809,7 @@ function OverviewView({
   related: React.ReactNode;
   sources: React.ReactNode;
 }) {
-  const { preview, linkSuffix } = ctx;
+  const { preview, linkPrefix } = ctx;
   const faq = content.blocks.find((b): b is Extract<Block, { type: "faq" }> => b.type === "faq");
   const partners = ["Hims", "Mosh", "Moshy"];
   const hims = OFFERS.hair;
@@ -840,7 +842,7 @@ function OverviewView({
       </div>
       <p className="mt-5 flex flex-wrap gap-x-6 gap-y-2 text-[15px]">
         {p.links.map((l) => (
-          <Link key={l.href} href={`${l.href}${isHimsSlug(l.href) ? linkSuffix : ""}`} className="nw-link">
+          <Link key={l.href} href={siblingHref(l.href, linkPrefix)} className="nw-link">
             {l.label} <span aria-hidden>&rarr;</span>
           </Link>
         ))}

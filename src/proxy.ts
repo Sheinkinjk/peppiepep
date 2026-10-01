@@ -1,9 +1,9 @@
 import { createServerClient } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
 import { logger } from '@/lib/logger'
-import { himsPreviewMiddleware } from '@/lib/hims/middleware'
 import { HIMS_SLUG_LIST } from '@/content/hims/slugs'
-import { HIMS_PREVIEW_COOKIE } from '@/lib/hims/access'
+import { HIMS_REVIEW_COOKIE, REVIEW_HEADERS, hasReviewAccess, isHimsSlug } from '@/lib/hims/access'
+import { reviewGateHtml, type GateError } from '@/lib/hims/review-gate'
 
 /**
  * Permanently withdrawn content with no equivalent live page.
@@ -101,6 +101,45 @@ const HIMS_NOT_FOUND_BODY = `<!doctype html><html lang="en"><head><meta charset=
 main{max-width:32rem;padding:2rem;text-align:center}h1{font-size:1.5rem;margin:0 0 .75rem}a{color:#0E7C66;font-weight:600}</style></head>
 <body><main><h1>Page not found</h1><p><a href="/guides">Browse the guides</a></p></main></body></html>`
 
+function withReviewHeaders(res: NextResponse): NextResponse {
+  for (const [k, v] of Object.entries(REVIEW_HEADERS)) res.headers.set(k, v)
+  return res
+}
+
+// /preview/auth            -> the password route handler (POST only)
+// POST /preview/<slug>     -> rewritten to /preview/auth (slug in x-review-slug); the form
+//                             posts to its own URL so its markup never names the page
+// GET /preview/<slug>      -> the draft with a valid review cookie, else the 401 gate
+// anything else            -> 404
+function reviewArea(request: NextRequest, rest: string): NextResponse {
+  if (rest === 'auth') return withReviewHeaders(NextResponse.next())
+  if (!isHimsSlug(rest)) {
+    return new NextResponse(HIMS_NOT_FOUND_BODY, {
+      status: 404,
+      headers: { 'content-type': 'text/html; charset=utf-8', ...REVIEW_HEADERS },
+    })
+  }
+  if (request.method === 'POST') {
+    // The slug travels as a request header: the route handler sees the original URL's
+    // query string after a rewrite, not the rewritten one (found in local testing).
+    const url = request.nextUrl.clone()
+    url.pathname = '/preview/auth'
+    url.search = ''
+    const headers = new Headers(request.headers)
+    headers.set('x-review-slug', rest)
+    return withReviewHeaders(NextResponse.rewrite(url, { request: { headers } }))
+  }
+  if (hasReviewAccess(request.cookies.get(HIMS_REVIEW_COOKIE)?.value)) {
+    return withReviewHeaders(NextResponse.next())
+  }
+  const e = request.nextUrl.searchParams.get('error')
+  const error: GateError = e === 'wrong' || e === 'limited' ? e : null
+  return new NextResponse(reviewGateHtml(error), {
+    status: 401,
+    headers: { 'content-type': 'text/html; charset=utf-8', ...REVIEW_HEADERS },
+  })
+}
+
 async function runProxy(request: NextRequest) {
   // Checked before the Supabase client is built: these paths need no session, and
   // skipping the auth roundtrip keeps a bot hammering dead URLs off the auth path.
@@ -111,32 +150,24 @@ async function runProxy(request: NextRequest) {
     })
   }
 
-  // Hims page set, preview only (29 Sep 2026). Returns null for every other path,
-  // and for the seven Hims slugs once HIMS_PAGES_LIVE=true. While in preview it
-  // sets noindex, no-store and the preview-key cookie. The pages themselves 404
-  // without the key, so this is defence in depth. Existing matcher already covers
-  // these paths.
-  // A keyless request must 404 before rendering starts. The page's own notFound()
-  // runs after the root loading.tsx has begun streaming, so it served the not-found
-  // UI with status 200 and leaked the page title from generateMetadata (found in
-  // local verification, 29 Sep 2026). Refusing here gives a real 404 and no title.
+  // Hims page set (29 Sep 2026; password review area 2 Oct 2026).
+  // The real slugs 404 for everyone until HIMS_PAGES_LIVE=true. Refusing here, before
+  // rendering starts, matters: the page's own notFound() runs after the root
+  // loading.tsx has begun streaming, so it served the not-found UI with status 200
+  // and leaked the page title from generateMetadata (29 Sep 2026).
   const himsPath = request.nextUrl.pathname.replace(/^\/+|\/+$/g, '')
   if ((HIMS_SLUG_LIST as readonly string[]).includes(himsPath) && process.env.HIMS_PAGES_LIVE !== 'true') {
-    const expected = process.env.HIMS_PREVIEW_KEY ?? ''
-    const given = request.nextUrl.searchParams.get('key') ?? request.cookies.get(HIMS_PREVIEW_COOKIE)?.value
-    if (expected.length < 24 || given !== expected) {
-      return new NextResponse(HIMS_NOT_FOUND_BODY, {
-        status: 404,
-        headers: {
-          'content-type': 'text/html; charset=utf-8',
-          'x-robots-tag': 'noindex, nofollow, noarchive',
-          'cache-control': 'private, no-store, max-age=0',
-        },
-      })
-    }
+    return new NextResponse(HIMS_NOT_FOUND_BODY, {
+      status: 404,
+      headers: { 'content-type': 'text/html; charset=utf-8', ...REVIEW_HEADERS },
+    })
   }
-  const hims = himsPreviewMiddleware(request)
-  if (hims) return hims
+  // /preview/*: the password-protected review copy. Every response here is noindex
+  // and uncached. Deliberately NOT disallowed in robots.txt: a crawler has to fetch
+  // a page to see its noindex.
+  if (himsPath === 'preview' || himsPath.startsWith('preview/')) {
+    return reviewArea(request, himsPath.slice('preview/'.length))
+  }
 
   // Create a response that we'll update with cookies
   const response = NextResponse.next({

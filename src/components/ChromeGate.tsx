@@ -46,6 +46,8 @@ const STANDALONE_ROUTES = [
   "/hims-ed",
   "/hims-vs-mosh",
   "/ed",
+  // Password-protected review copies of the Hims set (2 Oct 2026). Prefix entry.
+  "/preview",
   "/health-and-beauty",
   // The four Health & Beauty brand pages (16 Sep 2026). Top-level slugs, so the
   // "/health-and-beauty" prefix above does not cover them and each must be listed.
