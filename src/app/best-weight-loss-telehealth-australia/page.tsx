@@ -14,7 +14,7 @@ import OfferSchema from "@/components/offers/OfferSchema";
 
 import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 import { MOSHY_TERMS_URL } from "@/lib/offers";
-import TermsApplyLink, { OfferTermsNote } from "@/components/consumer/TermsApplyLink";
+import { OfferTermsNote } from "@/components/consumer/TermsApplyLink";
 export const metadata = generateSEOMetadata(seoConfig.bestWeightLossTelehealth);
 
 const JUNIPER_REQUIRED = requiredDisclosureFor(JUNIPER_URL);
@@ -207,12 +207,7 @@ export default function BestWeightLossTelehealthPage() {
                   decline some applicants.
                 </p>
                 <div className="mt-4 space-y-2">
-                  <AffiliateDisclosure compact partners={["Moshy", "Juniper"]} />
-                  {JUNIPER_REQUIRED ? (
-                    <p className="rounded-xl border border-[#ded8cd] bg-[#f7f4ee] px-4 py-3 text-[13px] leading-relaxed text-[#56504a]">
-                      {JUNIPER_REQUIRED.text}
-                    </p>
-                  ) : null}
+                  <AffiliateDisclosure compact partners={["Moshy", "Juniper"]} required={JUNIPER_REQUIRED?.text} />
                 </div>
               </div>
               <EdgeObject kind="scale" className="lg:mt-14">
@@ -288,7 +283,7 @@ export default function BestWeightLossTelehealthPage() {
               Moshy and Juniper both publish their program pricing on their own sites. Moshy describes its fee as
               all-inclusive; Juniper&apos;s varies with the plan and level of support. With our codes,
               Moshy&apos;s REFERRAL120 takes $120 off a new customer&apos;s first order, with a 3-month minimum
-              commitment (<TermsApplyLink href={MOSHY_TERMS_URL} />), and Juniper&apos;s JARREDKFC means no charge for the initial consultation, which Juniper values at $89;
+              commitment, and Juniper&apos;s JARREDKFC means no charge for the initial consultation, which Juniper values at $89;
               program fees apply.
             </p>
             <p className="text-xs text-[#56504a]">
@@ -310,7 +305,6 @@ export default function BestWeightLossTelehealthPage() {
                 </div>
               ))}
             </div>
-            {/* The full offer terms; beside the code there is only "T&Cs apply" (1 Oct 2026). */}
             <OfferTermsNote brand="Moshy" className="mt-6" />
           </section>
 

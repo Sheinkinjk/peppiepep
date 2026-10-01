@@ -10,7 +10,7 @@ import CodeAnswer from "@/components/offers/CodeAnswer";
 import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 import OfferSchema from "@/components/offers/OfferSchema";
 import { MOSH_TERMS_URL, MOSH_PROMOTIONS_PAGE_URL } from "@/lib/offers";
-import TermsApplyLink, { OfferTermsNote } from "@/components/consumer/TermsApplyLink";
+import { OfferTermsNote } from "@/components/consumer/TermsApplyLink";
 
 export const metadata = generateSEOMetadata(seoConfig.hairLossTreatmentCost);
 
@@ -163,8 +163,7 @@ export default function HairLossTreatmentCostAustraliaPage() {
             {/* The offer, below the first answer rather than above it. */}
             <CodeAnswer code="REFERAL55">
               The Mosh discount code through Refer Labs is REFERAL55, worth 55% off a new customer&apos;s first order.
-              Use code REFERAL55 at checkout; our link opens Mosh&apos;s sign-up with the offer.{" "}
-              <TermsApplyLink href={MOSH_TERMS_URL} />. More on the code and how Mosh works on{" "}
+              Use code REFERAL55 at checkout; our link opens Mosh&apos;s sign-up with the offer.. More on the code and how Mosh works on{" "}
               <Link href="/moshhair" className="nw-link">our Mosh page</Link>.
             </CodeAnswer>
             <div className="flex flex-col items-start gap-3 rounded-2xl border border-[#007a95]/25 bg-[#e4f2f5] px-6 py-5 sm:flex-row sm:items-center sm:justify-between">
@@ -282,7 +281,6 @@ export default function HairLossTreatmentCostAustraliaPage() {
                   </details>
                 ))}
               </div>
-              {/* The full offer terms; beside the code there is only "T&Cs apply" (1 Oct 2026). */}
               <OfferTermsNote brand="Mosh" className="mt-5" />
             </section>
 

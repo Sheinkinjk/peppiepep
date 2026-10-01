@@ -11,7 +11,7 @@ import OfferSchema from "@/components/offers/OfferSchema";
 
 import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 import { MOSHY_TERMS_URL } from "@/lib/offers";
-import TermsApplyLink, { OfferTermsNote } from "@/components/consumer/TermsApplyLink";
+import { OfferTermsNote } from "@/components/consumer/TermsApplyLink";
 export const metadata = generateSEOMetadata(seoConfig.moshyVsGp);
 
 const CYAN = "#007a95";
@@ -106,7 +106,7 @@ export default function MoshyVsGpPage() {
         <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
         <CodeAnswer code="REFERRAL120" className="mt-6">
           REFERRAL120, the Moshy code Refer Labs verified, takes $120 off a
-          new customer&apos;s first order, once per customer, and carries a 3-month minimum commitment (<TermsApplyLink href={MOSHY_TERMS_URL} />).
+          new customer&apos;s first order, once per customer, and carries a 3-month minimum commitment.
         </CodeAnswer>
         <OfferSchema code="REFERRAL120" />
 
@@ -160,8 +160,7 @@ export default function MoshyVsGpPage() {
         <div className="rounded-xl border px-6 py-5 mb-12" style={{ borderColor: `${CYAN}40`, background: `${CYAN}0A` }}>
           <p className="text-[#14120f] text-sm sm:text-base leading-relaxed mb-4">
             Continue to Moshy. REFERRAL120 takes $120 off a first order.{" "}
-            Use code REFERRAL120 at checkout; our link opens Moshy&apos;s sign-up with the offer.{" "}
-            <TermsApplyLink href={MOSHY_TERMS_URL} />
+            Use code REFERRAL120 at checkout; our link opens Moshy&apos;s sign-up with the offer.
           </p>
           <a
             {...aff}
@@ -202,8 +201,6 @@ export default function MoshyVsGpPage() {
           </div>
         </section>
 
-        {/* The full offer terms, near the foot; beside the code there is only the
-            muted "T&Cs apply" link (1 Oct 2026). */}
         <OfferTermsNote brand="Moshy" className="mb-8" />
 
         <div className="border-t border-[#ded8cd] pt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm">

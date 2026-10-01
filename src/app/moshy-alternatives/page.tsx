@@ -12,7 +12,7 @@ import OfferSchema from "@/components/offers/OfferSchema";
 
 import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 import { MOSHY_TERMS_URL } from "@/lib/offers";
-import TermsApplyLink, { OfferTermsNote } from "@/components/consumer/TermsApplyLink";
+import { OfferTermsNote } from "@/components/consumer/TermsApplyLink";
 export const metadata = generateSEOMetadata(seoConfig.moshyAlternatives);
 
 const CYAN = "#007a95";
@@ -93,7 +93,7 @@ export default function MoshyAlternativesPage() {
         <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
         <CodeAnswer code="REFERRAL120" className="mt-6">
           Refer Labs holds a Moshy code: REFERRAL120, $120 off a new customer&apos;s first order, one use per customer,
-          with a 3-month minimum commitment (<TermsApplyLink href={MOSHY_TERMS_URL} />).
+          with a 3-month minimum commitment.
         </CodeAnswer>
         <OfferSchema code="REFERRAL120" />
 
@@ -151,8 +151,7 @@ export default function MoshyAlternativesPage() {
           </p>
           <div className="rounded-xl border px-6 py-5 mt-4" style={{ borderColor: `${CYAN}40`, background: `${CYAN}0A` }}>
             <p className="text-[#14120f] text-sm sm:text-base leading-relaxed mb-4">
-              REFERRAL120: $120 off a first order. Use code REFERRAL120 at checkout; our link opens Moshy&apos;s sign-up with the offer.{" "}
-              <TermsApplyLink href={MOSHY_TERMS_URL} />
+              REFERRAL120: $120 off a first order. Use code REFERRAL120 at checkout; our link opens Moshy&apos;s sign-up with the offer.
             </p>
             <a
               {...aff}
@@ -183,8 +182,6 @@ export default function MoshyAlternativesPage() {
           </div>
         </section>
 
-        {/* The full offer terms, near the foot; beside the code there is only the
-            muted "T&Cs apply" link (1 Oct 2026). */}
         <OfferTermsNote brand="Moshy" className="mb-8" />
 
         <div className="border-t border-[#ded8cd] pt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm">

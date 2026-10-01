@@ -11,7 +11,7 @@ import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 import ProviderPair, { type PairProvider } from "@/components/consumer/ProviderPair";
 import WeightInclusionsTable from "@/components/consumer/WeightInclusionsTable";
 import { MOSHY_TERMS_URL } from "@/lib/offers";
-import TermsApplyLink, { OfferTermsNote } from "@/components/consumer/TermsApplyLink";
+import { OfferTermsNote } from "@/components/consumer/TermsApplyLink";
 
 export const metadata = generateSEOMetadata(seoConfig.moshyVsJuniper);
 
@@ -61,8 +61,8 @@ const closing = providers.map((p) => ({ ...p, loc: p.loc.replace("hero", "close"
 
 const faqs = [
   {
-    q: "Is Moshy or Juniper better for weight loss?",
-    a: "Neither is better for everyone. Both are Australian telehealth services where a registered practitioner decides whether treatment is appropriate, and both include meal plans, a community, app progress tracking and a 30-day money-back guarantee. Both are built with women in mind. Juniper lists a physio-designed exercise program and a practitioner team of specialist GPs and nurse practitioners; Moshy is Mosh's brother brand, includes in-app health coaching and also covers hair and skin.",
+    q: "How do Moshy and Juniper differ?",
+    a: "Both are Australian telehealth services where a registered practitioner decides whether treatment is appropriate, and both include meal plans, a community, app progress tracking and a 30-day money-back guarantee. Both are built with women in mind. Juniper lists a physio-designed exercise program and a practitioner team of specialist GPs and nurse practitioners; Moshy is Mosh's brother brand, includes in-app health coaching and also covers hair and skin.",
   },
   {
     q: "What are the Moshy and Juniper discount codes?",
@@ -161,26 +161,25 @@ export default function MoshyVsJuniperPage() {
         </p>
 
         <div className="mt-6 max-w-2xl space-y-2">
-          <AffiliateDisclosure compact partners={["Moshy", "Juniper"]} />
-          {JUNIPER_REQUIRED ? <p className="rounded-xl border border-[#ded8cd] bg-[#f7f4ee] px-4 py-3 text-[13px] leading-relaxed text-[#56504a]">{JUNIPER_REQUIRED.text}</p> : null}
+          <AffiliateDisclosure compact partners={["Moshy", "Juniper"]} required={JUNIPER_REQUIRED?.text} />
         </div>
 
         <ProviderPair providers={providers} className="mt-8" />
 
         <section className="mt-14 max-w-3xl">
           <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">
-            Is Moshy or Juniper better for weight loss in Australia?
+            How do Moshy and Juniper differ?
           </h2>
           <p className="mt-4 text-[15.5px] leading-relaxed text-[#56504a]">
             On inclusions they are close: both list meal plans, a community, app progress tracking and a 30-day
-            money-back guarantee. Choose on fit. Juniper is designed around women, with a physio-designed exercise
+            money-back guarantee. Juniper is designed around women, with a physio-designed exercise
             program and a practitioner team of specialist GPs and nurse practitioners. Moshy sits alongside Mosh&apos;s
             hair and skin services and lists psychologists and exercise physiologists in its care team. The offers differ too: Juniper&apos;s code means no charge for the first consultation (program fees apply), while Moshy&apos;s takes
             $120 off the first order.
           </p>
           <CodeAnswer code="REFERRAL120" className="mt-5">
             Refer Labs holds a code for both. Moshy&apos;s is REFERRAL120, $120 off a new customer&apos;s first order, one
-            use per customer (<TermsApplyLink href={MOSHY_TERMS_URL} />). JARREDKFC means no charge for the initial consultation, which Juniper values at $89; program fees apply.
+            use per customer. JARREDKFC means no charge for the initial consultation, which Juniper values at $89; program fees apply.
           </CodeAnswer>
         </section>
 
@@ -225,8 +224,6 @@ export default function MoshyVsJuniperPage() {
               </details>
             ))}
           </div>
-          {/* The full offer terms sit here; beside the code there is only the muted
-              "T&Cs apply" link (1 Oct 2026). */}
           <OfferTermsNote brand="Moshy" className="mt-6" />
         </section>
 

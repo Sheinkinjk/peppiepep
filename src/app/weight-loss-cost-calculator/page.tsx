@@ -150,7 +150,6 @@ export default function WeightLossCostCalculatorPage() {
                 </details>
               ))}
             </div>
-            {/* The full offer terms; beside the code there is only "T&Cs apply" (1 Oct 2026). */}
             <OfferTermsNote brand="Moshy" className="mt-5" />
           </section>
 

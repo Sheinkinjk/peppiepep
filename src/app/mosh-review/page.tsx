@@ -10,7 +10,7 @@ import FactHistory from "@/components/facts/FactHistory";
 import CodeAnswer from "@/components/offers/CodeAnswer";
 import OfferSchema from "@/components/offers/OfferSchema";
 import { MOSH_TERMS_URL, MOSH_PROMOTIONS_PAGE_URL } from "@/lib/offers";
-import TermsApplyLink, { OfferTermsNote } from "@/components/consumer/TermsApplyLink";
+import { OfferTermsNote } from "@/components/consumer/TermsApplyLink";
 
 import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 import { pageDates } from "@/lib/page-dates";
@@ -124,8 +124,7 @@ export default function MoshReviewPage() {
         <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
         <CodeAnswer code="REFERAL55" className="mt-6 mb-10">
           REFERAL55, the Mosh code Refer Labs holds, gets a new customer 55% off a first order.
-          Use code REFERAL55 at checkout; our link opens Mosh&apos;s sign-up with the offer.{" "}
-          <TermsApplyLink href={MOSH_TERMS_URL} />
+          Use code REFERAL55 at checkout; our link opens Mosh&apos;s sign-up with the offer.
         </CodeAnswer>
         <OfferSchema code="REFERAL55" />
 
@@ -195,7 +194,6 @@ export default function MoshReviewPage() {
               </details>
             ))}
           </div>
-          {/* The full offer terms; beside the code there is only "T&Cs apply" (1 Oct 2026). */}
           <OfferTermsNote brand="Mosh" className="mt-5" />
         </section>
 
@@ -203,7 +201,7 @@ export default function MoshReviewPage() {
           <h2 className="text-lg sm:text-xl font-black text-[#14120f]">Start with an online consultation</h2>
           <p className="mx-auto mt-2 max-w-md text-sm leading-relaxed text-[#56504a]">
             No charge for the initial consultation; program fees apply. REFERAL55 takes 55% off a new customer&apos;s
-            first order. <TermsApplyLink href={MOSH_TERMS_URL} />
+            first order.
           </p>
           <div className="mt-5 flex justify-center">
             <Cta label="Continue to Mosh" loc="closing-cta" />

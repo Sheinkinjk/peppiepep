@@ -1,6 +1,6 @@
 import NewsletterPopup from "@/components/consumer/NewsletterPopup";
 import Link from "next/link";
-import TermsApplyLink, { termsUrlForCode } from "@/components/consumer/TermsApplyLink";
+
 import { SiteFooterBar, SiteHeader } from "@/components/brand/SiteChrome";
 import { HomeLogo } from "@/components/home/HomeLogo";
 import { Nav, NavRail } from "@/components/home/HomeNav";
@@ -49,7 +49,6 @@ function said(r: { figure: string | null; offer: string }): string {
   return /free/i.test(fig) ? fig : `${fig} off`;
 }
 
-
 /** Display headings on this page carry no closing full stop. */
 const noStop = (t: string) => t.replace(/\.\s*$/, "");
 
@@ -57,7 +56,6 @@ function Mark({ of, size = 18 }: { of: string; size?: number }) {
   const k = objectFor(of);
   return k ? <HubObject kind={k} size={size} className="hy-obj hy-obj--inline" /> : null;
 }
-
 
 /* ---- the hero: six hub cards ------------------------------------------- */
 
@@ -125,12 +123,6 @@ function Picks() {
                 <span className="hy-pick__b">{p.brand}</span>
               </div>
               <p className="hy-pick__o">{p.offer}</p>
-              {/* Muted "T&Cs apply" beside a code with linked terms (1 Oct 2026). */}
-              {termsUrlForCode(p.offer.match(/\b(REFERRAL120|REFERAL55)\b/)?.[1]) && (
-                <p className="mt-1">
-                  <TermsApplyLink href={termsUrlForCode(p.offer.match(/\b(REFERRAL120|REFERAL55)\b/)?.[1])!} />
-                </p>
-              )}
               <p className="hy-pick__w">{p.body}</p>
               <Link href={p.href} className="hy-pick__cta">{p.cta}</Link>
             </li>

@@ -7,7 +7,6 @@ import { MOSHY_URL, JUNIPER_URL } from "@/lib/affiliate-links";
 import { requiredDisclosureFor } from "@/lib/partner-disclosures";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 import { MOSHY_TERMS_URL } from "@/lib/offers";
-import TermsApplyLink from "@/components/consumer/TermsApplyLink";
 
 /**
  * "Which weight-loss pathway fits you?" is a short preference-based matcher that
@@ -261,11 +260,7 @@ export default function PathwayQuiz() {
               <Check className="h-3.5 w-3.5" strokeWidth={2.5} aria-hidden="true" /> {result.offer}
             </span>
           )}
-          {result.offer && result.offerTerms && (
-            <p className="mt-2 text-[12px] text-[#56504a]">
-              One use per new customer. <TermsApplyLink href={result.offerTerms} />
-            </p>
-          )}
+          
           <p className="mt-3 text-[15px] leading-relaxed text-[#56504a]">{result.body}</p>
           {result.also && (
             <p className="mt-4 rounded-xl border border-[#ded8cd] bg-[#f7f4ee] px-4 py-3 text-[14px] leading-relaxed text-[#56504a]">

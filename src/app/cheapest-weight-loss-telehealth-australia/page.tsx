@@ -159,8 +159,7 @@ export default function CheapestWeightLossTelehealthPage() {
         </p>
 
         <div className="mt-6 max-w-2xl space-y-2">
-          <AffiliateDisclosure compact partners={["Moshy", "Juniper"]} />
-          {JUNIPER_REQUIRED ? <p className="rounded-xl border border-[#ded8cd] bg-[#f7f4ee] px-4 py-3 text-[13px] leading-relaxed text-[#56504a]">{JUNIPER_REQUIRED.text}</p> : null}
+          <AffiliateDisclosure compact partners={["Moshy", "Juniper"]} required={JUNIPER_REQUIRED?.text} />
         </div>
 
         <ProviderPair providers={providers} className="mt-8" />
@@ -199,8 +198,6 @@ export default function CheapestWeightLossTelehealthPage() {
           practitioner, not by price, and any treatment is decided by a registered practitioner after an individual
           assessment.
         </p>
-        {/* The full offer terms, below the comparison; beside the code there is only
-            the muted "T&Cs apply" link (1 Oct 2026). */}
         <OfferTermsNote brand="Moshy" className="mt-4 max-w-3xl" />
 
         <section className="mt-14 max-w-3xl">

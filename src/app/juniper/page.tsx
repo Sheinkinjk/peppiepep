@@ -165,13 +165,9 @@ export default function JuniperPage() {
               &ldquo;a digital health clinic by Eucalyptus&rdquo;. The service is an online consultation with a
               registered practitioner, who decides whether any treatment is appropriate.
             </p>
-            {/* Juniper's handbook requires this exact sentence, prominently, before
-                any Juniper link. It comes from src/lib/partner-disclosures.ts; do
-                not reword, abbreviate or append to it. */}
-            <p className="mt-5 max-w-xl rounded-xl border border-[#ded8cd] bg-[#f7f4ee] px-4 py-3 text-[14px] leading-relaxed text-[#14120f]">
-              {JUNIPER_DISCLOSURE}
-            </p>
-            <AffiliateDisclosure compact className="mt-3 max-w-xl" />
+            {/* Juniper's handbook sentence (src/lib/partner-disclosures.ts), verbatim and before any
+                Juniper link, in the same block as our own disclosure (2 Oct 2026). */}
+            <AffiliateDisclosure compact required={JUNIPER_DISCLOSURE} className="mt-5 max-w-xl" />
             <div className="mt-6">
               <JuniperCTA loc="hero" size="lg" />
             </div>

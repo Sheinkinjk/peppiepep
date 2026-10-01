@@ -7,7 +7,7 @@ import EditorialMeta from "@/components/consumer/EditorialMeta";
 import { SITE_URL, SCHEMA_AUTHOR, SCHEMA_PUBLISHER } from "@/lib/seo";
 import { MOSH_HAIR_URL } from "@/lib/affiliate-links";
 import { MOSH_TERMS_URL } from "@/lib/offers";
-import TermsApplyLink, { OfferTermsNote } from "@/components/consumer/TermsApplyLink";
+import { OfferTermsNote } from "@/components/consumer/TermsApplyLink";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Shared layout for the hair-loss guide cluster (men's hair loss, funnels to Mosh).
@@ -69,11 +69,7 @@ function MoshCta({ heading, body, loc }: { heading: string; body: string; loc: s
       <div className="max-w-md">
         <p className="font-bold text-[#14120f]">{heading}</p>
         <p className="mt-1 text-[14px] leading-relaxed text-[#14120f]">{body}</p>
-        {/* Ahpra s133(1)(b): a muted "T&Cs apply" beside the code; the full terms
-            sentence sits under the FAQ (1 Oct 2026). */}
-        <p className="mt-2">
-          <TermsApplyLink href={MOSH_TERMS_URL} />
-        </p>
+        
       </div>
       <a href={MOSH_HAIR_URL} target="_blank" rel="nofollow sponsored" data-cta={`hairloss-${loc}`} className="nw-btn shrink-0 whitespace-nowrap">
         Continue to Mosh <ArrowRight className="h-4 w-4" aria-hidden="true" />

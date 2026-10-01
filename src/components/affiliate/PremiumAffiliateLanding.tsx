@@ -5,7 +5,7 @@ import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
 import { OFFERS_VERIFIED, DEALS, formatVerified } from "@/lib/offers";
 import OffersTable from "@/components/lending/OffersTable";
-import TermsApplyLink, { TermsSentence } from "@/components/consumer/TermsApplyLink";
+import { TermsSentence } from "@/components/consumer/TermsApplyLink";
 import type { AffiliatePageConfig } from "./types";
 
 import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
@@ -178,12 +178,7 @@ export default function PremiumAffiliateLanding({ config }: { config: AffiliateP
                     {verifiedStamp(config.brand, config.offerCheckedOn)}
                     {/* Only the muted link here; the full terms sentence sits under
                         the "offer at a glance" table below (1 Oct 2026). */}
-                    {config.offerTermsUrl && (
-                      <>
-                        {" · "}
-                        <TermsApplyLink href={config.offerTermsUrl} />
-                      </>
-                    )}
+                    
                   </p>
                 </div>
                 </div>
@@ -407,11 +402,7 @@ export default function PremiumAffiliateLanding({ config }: { config: AffiliateP
             {config.ctas.bottomHeading}
           </h2>
           <p className="mx-auto mt-4 max-w-md text-[15px] leading-relaxed text-white/70">{config.ctas.bottomBody}</p>
-          {config.offerTermsUrl && (
-            <p className="mx-auto mt-2 max-w-md">
-              <TermsApplyLink href={config.offerTermsUrl} tone="dark" />
-            </p>
-          )}
+          
           <div className="mt-8 flex justify-center">
             <a href={url} target="_blank" rel="nofollow sponsored" data-cta="final-band" className="nw-btn justify-center !bg-white !text-[#00748e] px-8 py-4 text-base hover:!bg-[#e4f2f5]">
               {continueLabel}

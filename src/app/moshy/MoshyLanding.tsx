@@ -9,7 +9,7 @@ import StickyCta from "@/components/consumer/StickyCta";
 import FactHistory from "@/components/facts/FactHistory";
 import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 import { MOSHY_TERMS_URL } from "@/lib/offers";
-import TermsApplyLink, { OfferTermsNote } from "@/components/consumer/TermsApplyLink";
+import { OfferTermsNote } from "@/components/consumer/TermsApplyLink";
 
 // ── Money CTA (tracked: rel=sponsored is picked up by AffiliateClickTracker) ──
 // Three placements plus the mobile sticky bar: hero, at-a-glance card, closing band.
@@ -111,7 +111,7 @@ export default function MoshyLanding() {
 
             <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2">
               <MoshyCTA size="lg" loc="hero" />
-              <TermsApplyLink href={MOSHY_TERMS_URL} />
+
             </div>
           </div>
 
@@ -131,7 +131,7 @@ export default function MoshyLanding() {
                 <MoshyCTA block loc="glance-card" />
               </div>
               <p className="mt-3 text-center text-[11px] text-[#56504a]">
-                Opens getmoshy.com.au · AU only · <TermsApplyLink href={MOSHY_TERMS_URL} className="!text-[11px]" />
+                Opens getmoshy.com.au · AU only
               </p>
             </div>
           </aside>
@@ -177,9 +177,7 @@ export default function MoshyLanding() {
                   </li>
                 ))}
               </ul>
-              <p className="mt-3">
-                <TermsApplyLink href={MOSHY_TERMS_URL} />
-              </p>
+              
             </section>
 
             <section id="how" className="mt-12 scroll-mt-24">
@@ -279,8 +277,6 @@ export default function MoshyLanding() {
                   </details>
                 ))}
               </div>
-              {/* The full terms, once, near the foot (1 Oct 2026); beside the code and
-                  the buttons there is only the muted "T&Cs apply" link. */}
               <OfferTermsNote brand="Moshy" className="mt-6" />
             </section>
           </article>
@@ -294,9 +290,7 @@ export default function MoshyLanding() {
           <p className="mx-auto mt-4 max-w-md text-[15px] leading-relaxed text-white/70">
             REFERRAL120 at checkout, for new customers.
           </p>
-          <p className="mx-auto mt-2 max-w-md">
-            <TermsApplyLink href={MOSHY_TERMS_URL} tone="dark" />
-          </p>
+          
           <div className="mt-8 flex justify-center">
             <a href={MOSHY_URL} target="_blank" rel="nofollow sponsored" data-cta="final-band" className="nw-btn justify-center !bg-white !text-[#00748e] px-8 py-4 text-base hover:!bg-[#e4f2f5]">
               Continue to Moshy

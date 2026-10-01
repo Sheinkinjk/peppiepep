@@ -34,6 +34,7 @@ export default function AffiliateDisclosure({
   noStarRatings = false,
   priceUnaffected = false,
   extra,
+  required,
   className = "",
 }: {
   /** Named where the page's previous wording named them. */
@@ -51,6 +52,12 @@ export default function AffiliateDisclosure({
   priceUnaffected?: boolean;
   /** Anything the canonical sentence and these props cannot hold. */
   extra?: ReactNode;
+  /**
+   * A partner's mandated wording (e.g. Juniper's handbook sentence), printed
+   * verbatim on its own line inside the same block, so a page shows one
+   * disclosure rather than two stacked boxes (2 Oct 2026). Never reworded.
+   */
+  required?: string;
   /**
    * One line, for the slot ABOVE the first affiliate link.
    *
@@ -74,6 +81,17 @@ export default function AffiliateDisclosure({
       : "";
 
   if (compact) {
+    if (required) {
+      return (
+        <div className={`text-[13px] leading-relaxed text-[#56504a] ${className}`} data-affiliate-disclosure>
+          <p>
+            Refer Labs may earn a commission if you sign up or buy through the links on this page
+            {named}, at no extra cost to you.
+          </p>
+          <p className="mt-1">{required}</p>
+        </div>
+      );
+    }
     return (
       <p className={`text-[13px] leading-relaxed text-[#56504a] ${className}`} data-affiliate-disclosure>
         Refer Labs may earn a commission if you sign up or buy through the links on this page

@@ -37,7 +37,7 @@ const faqs = [
   },
   {
     q: "Is a subscription or per-consult model better?",
-    a: "It depends on how often you would consult. A subscription bundles convenience and ongoing support and charges every month regardless. Per-consult costs nothing in months you do not book but leaves you arranging things yourself. Neither is better in the abstract, and the way to tell is to estimate your consultations over a year and cost both.",
+    a: "It depends on how often you would consult. A subscription bundles convenience and ongoing support and charges every month regardless. Per-consult costs nothing in months you do not book but leaves you arranging things yourself. The way to tell which costs less is to estimate your consultations over a year and cost both.",
   },
 ];
 

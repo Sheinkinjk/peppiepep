@@ -10,7 +10,7 @@ import MatchPrompt from "@/components/consumer/MatchPrompt";
 
 import EarningsBalanceNote from "@/components/consumer/EarningsBalanceNote";
 import { MOSHY_TERMS_URL } from "@/lib/offers";
-import TermsApplyLink, { OfferTermsNote } from "@/components/consumer/TermsApplyLink";
+import { OfferTermsNote } from "@/components/consumer/TermsApplyLink";
 export const metadata = generateSEOMetadata(seoConfig.weightLossTelehealthCost);
 
 const SLUG = "/weight-loss-telehealth-cost-australia";
@@ -240,7 +240,7 @@ export default function WeightLossTelehealthCostAustraliaPage() {
               <h2 className="text-lg font-bold text-[#14120f]">See Moshy&apos;s current fee</h2>
               <p className="mt-2 text-[15px] leading-relaxed text-[#56504a]">
                 Continue to Moshy. REFERRAL120 takes $120 off a new customer&apos;s first order and carries a 3-month
-                minimum commitment. <TermsApplyLink href={MOSHY_TERMS_URL} />
+                minimum commitment.
               </p>
               <a
                 href={MOSHY_URL}
@@ -269,7 +269,6 @@ export default function WeightLossTelehealthCostAustraliaPage() {
                   </details>
                 ))}
               </div>
-              {/* The full offer terms; beside the code there is only "T&Cs apply" (1 Oct 2026). */}
               <OfferTermsNote brand="Moshy" className="mt-5" />
             </section>
 

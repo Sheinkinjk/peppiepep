@@ -8,7 +8,7 @@ import MatchPrompt from "@/components/consumer/MatchPrompt";
 import { EdgeObject } from "@/components/brand/EdgeObject";
 import OfferSchema from "@/components/offers/OfferSchema";
 import { checkedOn, MOSH_TERMS_URL } from "@/lib/offers";
-import TermsApplyLink, { OfferTermsNote } from "@/components/consumer/TermsApplyLink";
+import { OfferTermsNote } from "@/components/consumer/TermsApplyLink";
 
 import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 export const metadata = generateSEOMetadata(seoConfig.bestHairLossTreatmentAustralia);
@@ -182,8 +182,7 @@ export default function BestHairLossTreatmentAustraliaPage() {
                 <tr>
                   <th scope="row" className="px-3 py-3 text-left font-medium text-[#56504a] sm:px-4">Refer Labs offer</th>
                   <td className="px-3 py-3 text-[#14120f] sm:px-4">
-                    55% off with REFERAL55. Use code REFERAL55 at checkout; our link opens Mosh&apos;s sign-up with the offer.{checked ? ` Checked ${checked}.` : ""}{" "}
-                    <TermsApplyLink href={MOSH_TERMS_URL} />
+                    55% off with REFERAL55. Use code REFERAL55 at checkout; our link opens Mosh&apos;s sign-up with the offer.{checked ? ` Checked ${checked}.` : ""}
                   </td>
                   <td className="px-3 py-3 text-[#14120f] sm:px-4">None</td>
                 </tr>
@@ -268,7 +267,6 @@ export default function BestHairLossTreatmentAustraliaPage() {
               </div>
             ))}
           </div>
-          {/* The full offer terms; beside the code there is only "T&Cs apply" (1 Oct 2026). */}
           <OfferTermsNote brand="Mosh" className="mt-6" />
           <p className="mt-6 text-xs text-[#56504a] leading-relaxed">
             General information, not medical advice. Hair loss has several causes, and a registered health

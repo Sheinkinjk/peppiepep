@@ -6,7 +6,7 @@ import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
 import { MOSHY_TERMS_URL } from "@/lib/offers";
-import TermsApplyLink, { OfferTermsNote } from "@/components/consumer/TermsApplyLink";
+import { OfferTermsNote } from "@/components/consumer/TermsApplyLink";
 
 export const metadata = generateSEOMetadata(seoConfig.weightLossTelehealthMen);
 
@@ -137,7 +137,7 @@ export default function WeightLossTelehealthMenPage() {
           <div className="rounded-xl border px-6 py-5 mt-6" style={{ borderColor: `${CYAN}40`, background: `${CYAN}0A` }}>
             <p className="text-[#14120f] text-sm sm:text-base leading-relaxed mb-4">
               REFERRAL120: $120 off a first order, one use per new customer.{" "}
-              Use code REFERRAL120 at checkout; our link opens Moshy&apos;s sign-up with the offer. <TermsApplyLink href={MOSHY_TERMS_URL} />
+              Use code REFERRAL120 at checkout; our link opens Moshy&apos;s sign-up with the offer.
             </p>
             <a
               {...aff}
@@ -166,8 +166,6 @@ export default function WeightLossTelehealthMenPage() {
           </div>
         </section>
 
-        {/* The full offer terms, near the foot; beside the code there is only the
-            muted "T&Cs apply" link (1 Oct 2026). */}
         <OfferTermsNote brand="Moshy" className="mb-8" />
 
         <div className="border-t border-[#ded8cd] pt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm">

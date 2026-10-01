@@ -8,7 +8,7 @@ import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, SCHEMA_AU
 import { MOSHY_URL, JUNIPER_URL } from "@/lib/affiliate-links";
 import OfferSchema from "@/components/offers/OfferSchema";
 import { MOSHY_TERMS_URL } from "@/lib/offers";
-import TermsApplyLink, { OfferTermsNote } from "@/components/consumer/TermsApplyLink";
+import { OfferTermsNote } from "@/components/consumer/TermsApplyLink";
 
 import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 import { EdgeObject } from "@/components/brand/EdgeObject";
@@ -178,7 +178,7 @@ export default function WeightLossHubPage() {
               {/* Below the lead. The first paragraph after the h1 is the answer;
                   a disclosure in that slot is what an engine lifts instead. Still
                   above the first affiliate link, which is what it is for. */}
-              <AffiliateDisclosure compact className="mt-4" />
+              <AffiliateDisclosure compact required={JUNIPER_REQUIRED?.text} className="mt-4" />
               <OfferSchema code="REFERRAL120" />
             </div>
 
@@ -248,13 +248,8 @@ export default function WeightLossHubPage() {
             <Link href="/best-weight-loss-telehealth-australia#inclusions" className="font-semibold text-[#007a95] hover:underline">
               What each includes, row by row
             </Link>
-            . Moshy&apos;s REFERRAL120 is one use per new customer (<TermsApplyLink href={MOSHY_TERMS_URL} />).
+            . Moshy&apos;s REFERRAL120 is one use per new customer.
           </p>
-          {JUNIPER_REQUIRED ? (
-            <p className="mt-4 max-w-3xl rounded-xl border border-[#ded8cd] bg-[#f7f4ee] px-4 py-3 text-[13px] leading-relaxed text-[#56504a]">
-              {JUNIPER_REQUIRED.text}
-            </p>
-          ) : null}
           <ProviderPair providers={providers} className="mt-6" />
         </section>
 
@@ -348,7 +343,6 @@ export default function WeightLossHubPage() {
               </details>
             ))}
           </div>
-          {/* The full offer terms; beside the code there is only "T&Cs apply" (1 Oct 2026). */}
           <OfferTermsNote brand="Moshy" className="mt-6 max-w-3xl" />
           <p className="mt-8 max-w-3xl rounded-xl border border-[#ded8cd] bg-[#f7f4ee] px-5 py-4 text-xs leading-relaxed text-[#56504a]">
             <span className="font-semibold text-[#14120f]">Information only.</span> Nothing in this hub is medical advice
