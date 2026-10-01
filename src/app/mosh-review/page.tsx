@@ -37,7 +37,7 @@ const faqs = [
   },
   {
     q: "How does Mosh bill, and is there a discount?",
-    a: "Mosh runs as a subscription. It lists its plans on its own pricing page; the practitioner decides which, if any, applies, and Mosh shows the price before you pay. Its promotions page describes first-order hair discounts as covering the first three months. REFERAL55 takes 55% off: our link carries the code, and if it isn't shown at checkout, enter REFERAL55. New customers only; applies to the first order of a Mosh hair program; full terms at getmosh.com.au/promotions-terms-and-conditions. Later orders are at the standard plan rate.",
+    a: "Mosh runs as a subscription. It lists its plans on its own pricing page; the practitioner decides which, if any, applies, and Mosh shows the price before you pay. Its promotions page describes first-order hair discounts as covering the first three months. REFERAL55 takes 55% off. Use code REFERAL55 at checkout; our link opens Mosh's sign-up with the offer. New customers only; applies to the first order of a Mosh hair program; full terms at getmosh.com.au/promotions-terms-and-conditions. Later orders are at the standard plan rate.",
   },
   {
     q: "Can I cancel Mosh?",
@@ -123,8 +123,8 @@ export default function MoshReviewPage() {
             above the first affiliate link, which is what it is for. */}
         <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
         <CodeAnswer code="REFERAL55" className="mt-6 mb-10">
-          REFERAL55, the Mosh code Refer Labs holds, gets a new customer 55% off a first order. Our link carries it into
-          Mosh&apos;s sign-up; if it isn&apos;t shown at checkout, enter REFERAL55.{" "}
+          REFERAL55, the Mosh code Refer Labs holds, gets a new customer 55% off a first order.
+          Use code REFERAL55 at checkout; our link opens Mosh&apos;s sign-up with the offer.{" "}
           <TermsApplyLink href={MOSH_TERMS_URL} />
         </CodeAnswer>
         <OfferSchema code="REFERAL55" />

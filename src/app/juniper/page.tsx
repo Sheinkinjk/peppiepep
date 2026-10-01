@@ -70,7 +70,7 @@ const related: { href: string; label: string; desc: string }[] = [
 const faqs = [
   {
     q: "What is the current Juniper discount code?",
-    a: `JARREDKFC. Through our link it means no charge for Juniper's initial consultation, which Juniper values at $89 (source: Juniper's affiliate handbook, confirmed 23 September 2026; no public Juniper page states it); program fees apply. Separately, Juniper's own homepage advertises START50: "Save $50 with code START50. T&Cs apply." (read ${READ_ON}). Check Juniper's terms for which one applies to your first order.`,
+    a: `JARREDKFC. Through our link it means no charge for Juniper's initial consultation, which Juniper values at $89 (source: Juniper's affiliate handbook, confirmed 23 September 2026; no public Juniper page states it); program fees apply.`,
   },
   {
     q: "Is Juniper legit, and is it worth it?",

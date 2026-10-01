@@ -1585,7 +1585,7 @@ export const seoConfig = {
     // order discount, not a hair-only one, so the broader title is also truer.
     title: "Mosh Discount Code 2026: 55% Off First Order",
     description:
-      "REFERAL55 takes 55% off a new customer's first Mosh order: our link carries it, or enter it at checkout. How the online consultation works and how Mosh bills after that.",
+      "REFERAL55 takes 55% off a new customer's first Mosh order: use it at checkout; our link opens Mosh's sign-up with the offer. How the online consultation works and how Mosh bills after that.",
     url: `${SITE_URL}/moshhair`,
     keywords: [
       "mosh hair discount code",
@@ -1639,7 +1639,7 @@ export const seoConfig = {
   moshy: {
     title: "Moshy Discount Code 2026: $120 Off (3-Month Minimum) | Refer Labs",
     description:
-      `The current Moshy discount code is REFERRAL120. It applies through our link for $120 off a first order, with a 3-month minimum commitment, read off Moshy's own page on ${offerCheckedOn("REFERRAL120")}.`,
+      `The current Moshy discount code is REFERRAL120: $120 off a first order at checkout, with a 3-month minimum commitment, read off Moshy's own page on ${offerCheckedOn("REFERRAL120")}.`,
     url: `${SITE_URL}/moshy`,
     keywords: [
       "moshy discount code",
@@ -1678,7 +1678,7 @@ export const seoConfig = {
     // stop competing for the same query.
     title: "Best Weight Loss Telehealth Australia 2026: How to Choose",
     description:
-      "Moshy and Juniper compared for Australians: what each includes, how you start and what each costs to begin. Our links carry REFERRAL120 ($120 off Moshy, 3-month minimum) and JARREDKFC.",
+      "Moshy and Juniper compared for Australians: what each includes, how you start and what each costs to begin. Codes: REFERRAL120 ($120 off Moshy, 3-month minimum) and JARREDKFC.",
     url: `${SITE_URL}/best-weight-loss-telehealth-australia`,
     keywords: [
       "best weight loss telehealth australia 2026",

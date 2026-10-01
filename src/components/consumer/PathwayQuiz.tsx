@@ -155,7 +155,7 @@ function resolve(a: Required<Answers>): Result {
   return {
     title: practitionerLed ? "Moshy fits what you chose" : "Moshy is one place to start",
     body: `${wants}, with coaching and meal plans in one program fee. It is open to anyone a practitioner assesses as suitable${speed ? ", and you can start straight away" : ""}. A GP can see you in person if you would rather.`,
-    offer: "REFERRAL120: $120 off your first order via our link, 3-month minimum commitment",
+    offer: "REFERRAL120 at checkout: $120 off your first order, 3-month minimum commitment",
     offerTerms: MOSHY_TERMS_URL,
     cta: { label: "Continue to Moshy", href: MOSHY_URL, sponsored: true, loc: "quiz-moshy" },
     secondary: { label: "Read our full Moshy review", href: "/moshy-review" },

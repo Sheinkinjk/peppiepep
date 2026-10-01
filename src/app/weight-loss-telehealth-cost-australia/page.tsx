@@ -34,7 +34,7 @@ const faqs = [
   },
   {
     q: "How much does Moshy cost?",
-    a: "Moshy publishes its program price on its own site and describes it as one all-inclusive program fee (read on getmoshy.com.au, 30 September 2026). New customers get $120 off their first order with the code REFERRAL120 through the link on this page, one use per new customer, with a 3-month minimum commitment under Moshy's terms.",
+    a: "Moshy publishes its program price on its own site and describes it as one all-inclusive program fee (read on getmoshy.com.au, 30 September 2026). New customers get $120 off their first order with the code REFERRAL120 at checkout, one use per new customer, with a 3-month minimum commitment under Moshy's terms.",
   },
   {
     q: "What does a program fee cover?",

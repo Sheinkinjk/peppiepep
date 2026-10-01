@@ -169,7 +169,7 @@ export default function MoshyLanding() {
                   "Applies to eligible Moshy weight programs",
                   "Minimum commitment period of 3 months",
                   "Cannot be combined with any other promotion",
-                  "Our link opens Moshy's sign-up page with the code shown; if it is not already applied at checkout, enter REFERRAL120",
+                  "Use code REFERRAL120 at checkout; our link opens Moshy's sign-up with the offer",
                 ].map((t) => (
                   <li key={t} className="flex items-start gap-2.5">
                     <Check className="mt-1 h-4 w-4 shrink-0 text-[#007a95]" aria-hidden="true" />
@@ -292,7 +292,7 @@ export default function MoshyLanding() {
             Start with Moshy, $120 off your first order
           </h2>
           <p className="mx-auto mt-4 max-w-md text-[15px] leading-relaxed text-white/70">
-            REFERRAL120 through our link, for new customers with a 3-month minimum commitment.
+            REFERRAL120 at checkout, for new customers with a 3-month minimum commitment.
           </p>
           <p className="mx-auto mt-2 max-w-md">
             <TermsApplyLink href={MOSHY_TERMS_URL} tone="dark" />

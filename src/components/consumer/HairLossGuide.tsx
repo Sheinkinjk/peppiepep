@@ -118,7 +118,7 @@ export default function HairLossGuide({ cfg }: { cfg: HairLossGuideConfig }) {
           <MoshCta
             loc="top"
             heading="Want your hair loss assessed by a practitioner?"
-            body="Mosh runs a men's hair-loss assessment online, reviewed by registered Australian practitioners, who decide whether any treatment is appropriate. 55% off with the code REFERAL55 through our link; you see the plan and price before you commit."
+            body="Mosh runs a men's hair-loss assessment online, reviewed by registered Australian practitioners, who decide whether any treatment is appropriate. 55% off with the code REFERAL55 at checkout; you see the plan and price before you commit."
           />
         </div>
 

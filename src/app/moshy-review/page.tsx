@@ -37,7 +37,7 @@ const faqs = [
   },
   {
     q: "Can I get my money back?",
-    a: `Moshy advertises a 30-day money back guarantee and a price match guarantee, each with its own conditions on Moshy's promotions terms page (read ${READ_ON}). If you use REFERRAL120, read those alongside the code's 3-month minimum commitment.`,
+    a: `Moshy advertises a 30-day money back guarantee and a price match guarantee, each with its own conditions on Moshy's site; the money-back guarantee is in Moshy's terms at getmoshy.com.au/terms (read ${READ_ON}). If you use REFERRAL120, read those alongside the code's 3-month minimum commitment.`,
   },
   {
     q: "Is this page affiliated with Moshy?",
@@ -132,9 +132,8 @@ export default function MoshyReviewPage() {
           </p>
           <p className="text-[#56504a] text-sm sm:text-base leading-relaxed">
             If you go ahead, you pay one monthly program fee, which Moshy publishes on its weight-loss page. New
-            customers get $120 off their first order with REFERRAL120 through our link, with a 3-month minimum
-            commitment under Moshy&apos;s terms; if the code is not already applied at checkout, enter it
-            there.
+            customers get $120 off their first order with REFERRAL120, with a 3-month minimum commitment under
+            Moshy&apos;s terms. Use code REFERRAL120 at checkout; our link opens Moshy&apos;s sign-up with the offer.
           </p>
           <div className="pt-1">
             <Cta label="Continue to Moshy" loc="short-version" />
@@ -191,7 +190,7 @@ export default function MoshyReviewPage() {
         <div className="rounded-2xl border px-6 py-7 mb-10 text-center sm:px-8" style={{ borderColor: `${CYAN}30`, background: `${CYAN}08` }}>
           <h2 className="text-lg sm:text-xl font-black text-[#14120f]">Start with Moshy</h2>
           <p className="mx-auto mt-2 max-w-md text-sm leading-relaxed text-[#56504a]">
-            $120 off a new customer&apos;s first order with REFERRAL120 through our link, with a 3-month minimum
+            $120 off a new customer&apos;s first order with REFERRAL120 at checkout, with a 3-month minimum
             commitment. <TermsApplyLink href={MOSHY_TERMS_URL} />
           </p>
           <div className="mt-5 flex justify-center">

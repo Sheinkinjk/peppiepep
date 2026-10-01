@@ -182,8 +182,7 @@ export default function BestHairLossTreatmentAustraliaPage() {
                 <tr>
                   <th scope="row" className="px-3 py-3 text-left font-medium text-[#56504a] sm:px-4">Refer Labs offer</th>
                   <td className="px-3 py-3 text-[#14120f] sm:px-4">
-                    55% off with REFERAL55. Our link carries the code; if it isn&apos;t shown at checkout, enter
-                    REFERAL55.{checked ? ` Checked ${checked}.` : ""}{" "}
+                    55% off with REFERAL55. Use code REFERAL55 at checkout; our link opens Mosh&apos;s sign-up with the offer.{checked ? ` Checked ${checked}.` : ""}{" "}
                     <TermsApplyLink href={MOSH_TERMS_URL} />
                   </td>
                   <td className="px-3 py-3 text-[#14120f] sm:px-4">None</td>

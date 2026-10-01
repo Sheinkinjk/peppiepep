@@ -27,10 +27,10 @@ const providers: PairProvider[] = [
     name: "Juniper",
     logo: "/logos/juniper.png",
     logoAspect: 16 / 9,
-    bestIf: "A weight program designed for women, with 1:1 coaching as an add-on.",
+    bestIf: "A weight program designed for women, with meal plans, a physio-designed exercise program and a private community.",
     points: [
-      "Online assessment, then an initial consultation",
-      "Dietitian chat in the app, meal plans and a private community",
+      "Online assessment, then a phone consultation with an Australian practitioner",
+      "Unlimited practitioner support from specialist GPs and nurse practitioners",
       "Full refund if you do not proceed after the consultation (Juniper's terms)",
     ],
     offer: { text: "No charge for the initial consultation, valued at $89 (program fees apply),", code: "JARREDKFC" },
@@ -58,14 +58,14 @@ const providers: PairProvider[] = [
 const guides = [
   { href: "/moshy-review", title: "Moshy review", desc: "How the service runs, from application to subscription." },
   { href: "/moshy-vs-juniper", title: "Moshy vs Juniper", desc: "What each includes, read off their own sites, and who each suits." },
-  { href: "/juniper", title: "Juniper review", desc: "Designed for women, with 1:1 coaching as an add-on: what is included and how it compares to Moshy." },
+  { href: "/juniper", title: "Juniper review", desc: "Designed for women: what the program includes, who its practitioners are, and how it compares to Moshy." },
   { href: "/best-weight-loss-telehealth-australia", title: "Best weight loss telehealth", desc: "Moshy and Juniper side by side." },
   { href: "/cheapest-weight-loss-telehealth-australia", title: "Cheapest weight loss telehealth", desc: "Subscription vs pay-as-you-go, and what cheapest means." },
   { href: "/weight-loss-telehealth-cost-australia", title: "What it costs", desc: "How telehealth pricing and subscriptions work." },
   { href: "/moshy-vs-gp", title: "Telehealth vs your GP", desc: "Online consultations or in-person care: the practical trade." },
   { href: "/moshy-alternatives", title: "Moshy alternatives", desc: "The shortlist, including your GP." },
   { href: "/weight-loss-telehealth-men-australia", title: "The men's guide", desc: "How men's services work and the pre-signup checklist." },
-  { href: "/moshy", title: "Moshy offer & referral link", desc: "$120 off your first order with the code REFERRAL120, applied through our link; 3-month minimum commitment." },
+  { href: "/moshy", title: "Moshy offer & referral link", desc: "$120 off your first order with code REFERRAL120 at checkout; 3-month minimum commitment." },
   { href: "/weight-loss-quiz", title: "Which route fits you?", desc: "A short matcher across the online services and your GP." },
   { href: "/weight-loss-cost-calculator", title: "Weight-loss cost calculator", desc: "Estimate the monthly cost of each route before you commit." },
 ];
@@ -77,7 +77,7 @@ const faqs = [
   },
   {
     q: "What are the best online weight loss programs in Australia?",
-    a: "There is no single best program, because the right fit depends on whether you want an online service or in-person care with your GP, and on the support you want around it. Moshy and Juniper both include app coaching, dietitian meal plans and a community; Juniper is designed for women with 1:1 coaching as an add-on, and Moshy is open to anyone a practitioner assesses as suitable. Our comparison lines them up on what each includes. We never sell rankings.",
+    a: "There is no single best program, because the right fit depends on whether you want an online service or in-person care with your GP, and on the support you want around it. Moshy and Juniper both include meal plans, a community and app progress tracking; Juniper is designed for women and lists a physio-designed exercise program, and Moshy includes in-app health coaching and also covers hair and skin. Our comparison lines them up on what each includes. We never sell rankings.",
   },
   {
     q: "How much do online weight loss programs cost in Australia?",
@@ -213,8 +213,8 @@ export default function WeightLossHubPage() {
               </h3>
               <p className="mt-2.5 text-sm leading-relaxed text-[#56504a]">
                 A registered practitioner assesses you individually before anything starts, and some applicants are
-                declined. Both services we cover include app coaching and dietitian meal plans. Both are built with women in
-                mind; Juniper offers 1:1 coaching as an add-on, and Moshy also covers hair and skin.
+                declined. Both services we cover include meal plans and a community. Both are built with women in
+                mind; Juniper lists a physio-designed exercise program, and Moshy also covers hair and skin.
               </p>
               <div className="mt-5 space-y-2 text-sm font-semibold">
                 <p><Link href="/best-weight-loss-telehealth-australia" className="text-[#007a95] hover:underline">Compare the providers →</Link></p>

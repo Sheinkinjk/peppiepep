@@ -40,13 +40,13 @@ export function buildWeightLossGuideEmail(): string {
             ${optionRow(
               "1. Moshy: an all-inclusive online program",
               "Best if you want one fee with coaching built in",
-              `You complete an online questionnaire, then a consult by phone or video with a registered practitioner, who decides whether any treatment is appropriate. The fee is all-inclusive, with in-app coaching, dietitian meal plans and a community. Moshy describes itself as an online women's health clinic and takes anyone a practitioner assesses as suitable. New customers get $120 off their first order with REFERRAL120 through our link. ${REFERRAL120_TERMS} <a href="${MOSHY_TERMS_URL}" style="color:${GREEN};">Read Moshy's terms</a> before you start.`,
+              `You complete an online questionnaire, then a consult by phone or video with a registered practitioner, who decides whether any treatment is appropriate. The fee is all-inclusive, with in-app coaching, dietitian meal plans and a community. Moshy describes itself as an online women's health clinic and takes anyone a practitioner assesses as suitable. New customers get $120 off their first order with REFERRAL120. Use code REFERRAL120 at checkout; our link opens Moshy's sign-up with the offer. ${REFERRAL120_TERMS} <a href="${MOSHY_TERMS_URL}" style="color:${GREEN};">Read Moshy's terms</a> before you start.`,
               { label: "See how Moshy works", href: utm("/moshy", "wl_guide_moshy") },
             )}
             ${optionRow(
               "2. Juniper: designed for women",
-              "Best if you want the option of 1:1 coaching",
-              "Practitioner-led online care designed for women, with unlimited follow-up consultations, app tracking, dietitian chat, meal plans and a private community, and 1:1 coaching as a paid add-on. With JARREDKFC there is no charge for the initial consultation, which Juniper values at $89; program fees apply.",
+              "Best if you want a program designed around women",
+              "Practitioner-led online care designed for women, with unlimited practitioner support from specialist GPs and nurse practitioners, meal plans, a physio-designed exercise program, progress tracking and a private community. With JARREDKFC there is no charge for the initial consultation, which Juniper values at $89; program fees apply.",
               { label: "See how Juniper works", href: utm("/juniper", "wl_guide_juniper") },
             )}
             ${optionRow(

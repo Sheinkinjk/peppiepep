@@ -105,7 +105,7 @@ export default function MoshyVsGpPage() {
             above the first affiliate link, which is what it is for. */}
         <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
         <CodeAnswer code="REFERRAL120" className="mt-6">
-          A GP visit has no discount code attached. REFERRAL120, the Moshy code Refer Labs verified, takes $120 off a
+          REFERRAL120, the Moshy code Refer Labs verified, takes $120 off a
           new customer&apos;s first order, once per customer, and carries a 3-month minimum commitment (<TermsApplyLink href={MOSHY_TERMS_URL} />).
         </CodeAnswer>
         <OfferSchema code="REFERRAL120" />
@@ -122,13 +122,13 @@ export default function MoshyVsGpPage() {
           <h2 className="text-xl font-black mb-3">Should you use Moshy or see your GP for weight loss?</h2>
           <div className="rounded-xl border border-[#b9e3eb] bg-[#e4f2f5] px-6 py-5">
             <p className="text-[#14120f] text-sm sm:text-base leading-relaxed max-w-2xl">
-              Both are legitimate, and the right one depends on what you want from the process. Your GP is the cheaper
-              route because Medicare offsets part of the consult, already knows your history, and can manage weight
-              alongside the rest of your health, but it is slower to begin and depends on appointment availability.
-              Moshy runs the consultation online by phone or video and bundles follow-ups, coaching and meal plans into
-              one program fee, though it is focused on weight rather than your whole health. If cost and continuity
-              matter most, start with your GP. If speed and convenience matter most, Moshy suits that better. Either
-              way a registered Australian practitioner decides what is appropriate.
+              Both are legitimate, and the right one depends on what you want from the process. A GP consultation is
+              partly offset by Medicare and Moshy charges one program fee; which costs less depends on how often you
+              are seen. Your GP holds your full history and can manage weight alongside the rest of your health, and
+              is booked by appointment. Moshy runs the consultation online by phone or video and bundles follow-ups,
+              coaching and meal plans into one program fee, with weight, hair and skin services under one brand. If
+              continuity with one doctor matters most, start with your GP. If speed and convenience matter most,
+              Moshy suits that better. Either way a registered Australian practitioner decides what is appropriate.
             </p>
           </div>
         </section>
@@ -160,6 +160,7 @@ export default function MoshyVsGpPage() {
         <div className="rounded-xl border px-6 py-5 mb-12" style={{ borderColor: `${CYAN}40`, background: `${CYAN}0A` }}>
           <p className="text-[#14120f] text-sm sm:text-base leading-relaxed mb-4">
             Continue to Moshy. REFERRAL120 takes $120 off a first order and carries a 3-month minimum commitment.{" "}
+            Use code REFERRAL120 at checkout; our link opens Moshy&apos;s sign-up with the offer.{" "}
             <TermsApplyLink href={MOSHY_TERMS_URL} />
           </p>
           <a
@@ -176,9 +177,9 @@ export default function MoshyVsGpPage() {
         <section className="space-y-4 mb-10">
           <h2 className="text-xl font-black">The trade-off</h2>
           <p className="text-[#56504a] text-sm sm:text-base leading-relaxed">
-            Telehealth trades continuity for convenience. Moshy will never know your history the way a GP you have seen
-            for a decade does. It offers a consultation by phone or video with no booking lead time and no waiting
-            room.
+            Telehealth trades continuity for convenience. Your GP holds your full history; Moshy works from your
+            questionnaire and consultation. It offers a consultation by phone or video with no booking lead time and
+            no waiting room.
           </p>
           <p className="text-[#56504a] text-sm sm:text-base leading-relaxed">
             For some people the GP&apos;s office is the better room. Anything urgent, unusual, or layered on top of other

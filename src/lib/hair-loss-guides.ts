@@ -58,7 +58,7 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
         h: "How to get assessed without an in-person visit",
         body: [
           "Telehealth services run the practitioner assessment online. You complete a consultation with photos, and a registered Australian practitioner reviews it individually and decides whether any treatment is appropriate. Some men are declined.",
-          "Mosh is one Australian men's telehealth service that runs this process online. New customers get 55% off the first order of a Mosh hair program with REFERAL55, under Mosh's terms, linked beside each offer box on this page: our link carries the code, and if it isn't shown at checkout, enter REFERAL55. This page is information only, not medical advice.",
+          "Mosh is one Australian men's telehealth service that runs this process online. New customers get 55% off the first order of a Mosh hair program with REFERAL55, under Mosh's terms, linked beside each offer box on this page. Use code REFERAL55 at checkout; our link opens Mosh's sign-up with the offer. This page is information only, not medical advice.",
         ],
       },
     ],
@@ -66,7 +66,7 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
       { q: "Can a receding hairline be reversed?", a: "A practitioner can explain what is realistic for you after an assessment; no treatment guarantees an outcome. Whether any treatment suits you is a clinical decision made by a registered practitioner." },
       { q: "What is the best treatment for a receding hairline?", a: "No single treatment is right for everyone. A registered practitioner assesses whether any option is appropriate for you. Over-the-counter shampoos and supplements are cosmetic products and involve no assessment." },
       { q: "Is a receding hairline always male pattern baldness?", a: "No. A mature hairline settling slightly higher in your twenties is normal, and other causes of hair loss behave differently and need their own assessment. That is one reason a practitioner review matters before assuming a treatment is right for you." },
-      { q: "How do I get a receding hairline assessed in Australia?", a: "Through your GP or an online consultation with a registered practitioner. Telehealth services run this online: you complete a consultation with photos, and a practitioner reviews it and decides whether any treatment is appropriate. Mosh is one such service; Refer Labs readers get 55% off with the code REFERAL55 through our link (new customers only, first order of a hair program, Mosh's terms apply). Some applicants are declined." },
+      { q: "How do I get a receding hairline assessed in Australia?", a: "Through your GP or an online consultation with a registered practitioner. Telehealth services run this online: you complete a consultation with photos, and a practitioner reviews it and decides whether any treatment is appropriate. Mosh is one such service; Refer Labs readers get 55% off with the code REFERAL55 at checkout (new customers only, first order of a hair program, Mosh's terms apply). Some applicants are declined." },
     ],
     related: [R.best, R.mosh, R.quiz, R.cost],
   },

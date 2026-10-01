@@ -163,7 +163,7 @@ export default function HairLossTreatmentCostAustraliaPage() {
             {/* The offer, below the first answer rather than above it. */}
             <CodeAnswer code="REFERAL55">
               The Mosh discount code through Refer Labs is REFERAL55, worth 55% off a new customer&apos;s first order.
-              Our link carries it into Mosh&apos;s sign-up; if it isn&apos;t shown at checkout, enter REFERAL55.{" "}
+              Use code REFERAL55 at checkout; our link opens Mosh&apos;s sign-up with the offer.{" "}
               <TermsApplyLink href={MOSH_TERMS_URL} />. More on the code and how Mosh works on{" "}
               <Link href="/moshhair" className="nw-link">our Mosh page</Link>.
             </CodeAnswer>

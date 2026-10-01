@@ -141,8 +141,8 @@ export default function HairLossHubPage() {
               <h3 className="mt-3 text-xl font-bold text-[#14120f]">An online consultation</h3>
               <p className="mt-2.5 text-sm leading-relaxed text-[#56504a]">
                 A questionnaire and photos, reviewed by a registered practitioner, with no clinic visit. Mosh is one
-                Australian men&apos;s service that runs this. Refer Labs readers get 55% off with REFERAL55: our link
-                carries the code, and if it isn&apos;t shown at checkout, enter REFERAL55.{" "}
+                Australian men&apos;s service that runs this. Refer Labs readers get 55% off with REFERAL55.
+                Use code REFERAL55 at checkout; our link opens Mosh&apos;s sign-up with the offer.{" "}
                 <TermsApplyLink href={MOSH_TERMS_URL} />
               </p>
               <div className="mt-5 space-y-2 text-sm font-semibold">

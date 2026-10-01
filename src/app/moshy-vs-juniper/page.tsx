@@ -43,10 +43,10 @@ const providers: PairProvider[] = [
     name: "Juniper",
     logo: "/logos/juniper.png",
     logoAspect: 16 / 9,
-    bestIf: "A weight program designed for women, with 1:1 coaching as an add-on.",
+    bestIf: "A weight program designed for women, with meal plans, a physio-designed exercise program and a private community.",
     points: [
-      "Online assessment, then an initial consultation",
-      "Dietitian chat in the app, meal plans and a private community",
+      "Online assessment, then a phone consultation with an Australian practitioner",
+      "Unlimited practitioner support from specialist GPs and nurse practitioners",
       "Full refund if you do not proceed after the consultation (Juniper's terms)",
     ],
     offer: { text: "No charge for the initial consultation, valued at $89 (program fees apply),", code: "JARREDKFC" },
@@ -62,11 +62,11 @@ const closing = providers.map((p) => ({ ...p, loc: p.loc.replace("hero", "close"
 const faqs = [
   {
     q: "Is Moshy or Juniper better for weight loss?",
-    a: "Neither is better for everyone. Both are Australian telehealth services where a registered practitioner decides whether treatment is appropriate, and both include app coaching, dietitian meal plans, a community and a 30-day money-back guarantee. Both are built with women in mind. Juniper offers 1:1 coaching as an add-on; Moshy is Mosh's brother brand and also covers hair and skin.",
+    a: "Neither is better for everyone. Both are Australian telehealth services where a registered practitioner decides whether treatment is appropriate, and both include meal plans, a community, app progress tracking and a 30-day money-back guarantee. Both are built with women in mind. Juniper lists a physio-designed exercise program and a practitioner team of specialist GPs and nurse practitioners; Moshy is Mosh's brother brand, includes in-app health coaching and also covers hair and skin.",
   },
   {
     q: "What are the Moshy and Juniper discount codes?",
-    a: "Through Refer Labs, Moshy's code is REFERRAL120, which takes $120 off a new customer's first order, one use, with a 3-month minimum commitment under Moshy's terms. Juniper's is JARREDKFC, which means no charge for the initial consultation, which Juniper values at $89; program fees apply. Each is carried by the links on this page.",
+    a: "Through Refer Labs, Moshy's code is REFERRAL120, which takes $120 off a new customer's first order, one use, with a 3-month minimum commitment under Moshy's terms. Juniper's is JARREDKFC, which means no charge for the initial consultation, which Juniper values at $89; program fees apply. Use each code at checkout; our links open each provider's sign-up with the offer.",
   },
   {
     q: "How much do Moshy and Juniper cost?",
@@ -152,10 +152,10 @@ export default function MoshyVsJuniperPage() {
         </h1>
         <p className="mt-5 max-w-2xl text-base leading-relaxed text-[#56504a] sm:text-lg">
           Moshy and Juniper are both Australian weight-management telehealth services where a registered practitioner
-          decides whether treatment is appropriate, and both include app coaching, dietitian meal plans, a community and a
-          30-day money-back guarantee. Both are built with women in mind. Juniper offers 1:1 coaching as an add-on;
-          Moshy is Mosh&apos;s brother brand, also covers hair and skin, and takes anyone a practitioner assesses as
-          suitable. Moshy&apos;s code REFERRAL120 takes $120 off a first
+          decides whether treatment is appropriate, and both include meal plans, a community, app progress tracking and
+          a 30-day money-back guarantee. Both are built with women in mind. Juniper lists a physio-designed exercise
+          program and a practitioner team of specialist GPs and nurse practitioners; Moshy is Mosh&apos;s brother
+          brand, includes in-app health coaching and also covers hair and skin. Moshy&apos;s code REFERRAL120 takes $120 off a first
           order with a 3-month minimum; Juniper&apos;s JARREDKFC means no charge for the initial consultation, valued at
           $89, and program fees apply.
         </p>
@@ -172,10 +172,10 @@ export default function MoshyVsJuniperPage() {
             Is Moshy or Juniper better for weight loss in Australia?
           </h2>
           <p className="mt-4 text-[15.5px] leading-relaxed text-[#56504a]">
-            On inclusions they are close: both list app coaching, dietitian meal plans, a community and a 30-day
-            money-back guarantee. Choose on fit. Juniper is designed around women and sells 1:1 coaching as an add-on.
-            Moshy sits alongside Mosh&apos;s hair and skin services and lists psychologists and exercise physiologists in its
-            care team. The offers differ too: Juniper&apos;s code means no charge for the first consultation (program fees apply), while Moshy&apos;s takes
+            On inclusions they are close: both list meal plans, a community, app progress tracking and a 30-day
+            money-back guarantee. Choose on fit. Juniper is designed around women, with a physio-designed exercise
+            program and a practitioner team of specialist GPs and nurse practitioners. Moshy sits alongside Mosh&apos;s
+            hair and skin services and lists psychologists and exercise physiologists in its care team. The offers differ too: Juniper&apos;s code means no charge for the first consultation (program fees apply), while Moshy&apos;s takes
             $120 off the first order and carries a 3-month minimum.
           </p>
           <CodeAnswer code="REFERRAL120" className="mt-5">
@@ -195,14 +195,14 @@ export default function MoshyVsJuniperPage() {
             <ul className="mt-3 space-y-2 text-[15px] leading-relaxed text-[#56504a]">
               <li>You may want hair or skin care from the same family of brands later.</li>
               <li>You want a care team that lists psychologists and exercise physiologists.</li>
-              <li>A 3-month minimum on the REFERRAL120 offer suits you.</li>
+              <li>You want in-app health coaching included in the program fee.</li>
             </ul>
           </div>
           <div className="rounded-2xl border border-[#ded8cd] bg-[#f7f4ee] p-6">
             <h2 className="text-lg font-bold text-[#14120f]">Choose Juniper if</h2>
             <ul className="mt-3 space-y-2 text-[15px] leading-relaxed text-[#56504a]">
-              <li>You want 1:1 coaching available on top of the program.</li>
-              <li>You would like no charge for the initial consultation before you commit (program fees apply).</li>
+              <li>You want a program designed around women, with a physio-designed exercise program.</li>
+              <li>You want a practitioner team of specialist GPs and nurse practitioners, with nurses and pharmacists on its medical support team.</li>
             </ul>
           </div>
         </section>
@@ -233,7 +233,7 @@ export default function MoshyVsJuniperPage() {
         <section className="mt-14">
           <h2 className="text-xl font-bold text-[#14120f]">Ready to start?</h2>
           <p className="mt-2 max-w-2xl text-[15px] leading-relaxed text-[#56504a]">
-            Both links apply the Refer Labs code automatically.
+            Use code REFERRAL120 or JARREDKFC at checkout; each link opens that provider&apos;s sign-up with the offer.
           </p>
           <ProviderPair providers={closing} className="mt-5" />
         </section>

@@ -38,7 +38,7 @@ const providers: PairProvider[] = [
     logo: "/logos/juniper.png",
     logoAspect: 16 / 9,
     bestIf: "A program fee that varies with the plan, designed for women.",
-    points: ["Online assessment, then an initial consultation", "1:1 coaching is a paid add-on"],
+    points: ["Online assessment, then a phone consultation with an Australian practitioner", "Unlimited practitioner support from specialist GPs and nurse practitioners"],
     offer: { text: "No charge for the initial consultation, valued at $89 (program fees apply),", code: "JARREDKFC" },
     href: JUNIPER_URL,
     cta: "Continue to Juniper",
@@ -48,7 +48,7 @@ const providers: PairProvider[] = [
     name: "Moshy",
     logo: "/logos/moshy.png",
     bestIf: "An all-inclusive program fee.",
-    points: ["Online questionnaire, then a consult by phone or video", "The $120 offer comes with a 3-month minimum commitment"],
+    points: ["Online questionnaire, then a consult by phone or video", "In-app coaching, dietitian meal plans and a community"],
     offer: { text: "$120 off your first order, 3-month minimum,", code: "REFERRAL120" },
     href: MOSHY_URL,
     cta: "Continue to Moshy",
@@ -71,7 +71,7 @@ const faqs = [
   },
   {
     q: "Are there discount codes for Moshy and Juniper?",
-    a: "Yes. Through Refer Labs, Moshy's code is REFERRAL120, which takes $120 off a new customer's first order and comes with a 3-month minimum commitment under Moshy's terms. Juniper's is JARREDKFC, which means no charge for the initial consultation, valued by Juniper at $89; program fees apply. Each is carried by the links on this page.",
+    a: "Yes. Through Refer Labs, Moshy's code is REFERRAL120, which takes $120 off a new customer's first order and comes with a 3-month minimum commitment under Moshy's terms. Juniper's is JARREDKFC, which means no charge for the initial consultation, valued by Juniper at $89; program fees apply. Use each code at checkout; our links open each provider's sign-up with the offer.",
   },
   {
     q: "Are cheaper services still legitimate?",

@@ -28,10 +28,10 @@ const providers: PairProvider[] = [
     name: "Juniper",
     logo: "/logos/juniper.png",
     logoAspect: 16 / 9,
-    bestIf: "A weight program designed for women, with 1:1 coaching as an add-on.",
+    bestIf: "A weight program designed for women, with meal plans, a physio-designed exercise program and a private community.",
     points: [
-      "Online assessment, then an initial consultation",
-      "Dietitian chat in the app, meal plans and a private community",
+      "Online assessment, then a phone consultation with an Australian practitioner",
+      "Unlimited practitioner support from specialist GPs and nurse practitioners",
       "Full refund if you do not proceed after the consultation (Juniper's terms)",
     ],
     offer: { text: "No charge for the initial consultation, valued at $89 (program fees apply),", code: "JARREDKFC" },
@@ -58,7 +58,7 @@ const providers: PairProvider[] = [
 const faqs = [
   {
     q: "Which weight loss telehealth services are aimed at women?",
-    a: "Both are built for women: Juniper is designed for women, and Moshy describes itself as an online women's health clinic, and its services are open to anyone a practitioner assesses as suitable. Both start with an online assessment that a registered Australian practitioner reviews, and both include app coaching, dietitian meal plans and a community (each provider's own page, read 30 September 2026). Juniper adds optional 1:1 coaching as a paid add-on.",
+    a: "Both are built for women: Juniper is designed for women, and Moshy describes itself as an online women's health clinic, and its services are open to anyone a practitioner assesses as suitable. Both start with an online assessment that a registered Australian practitioner reviews, and both include meal plans, a community and app progress tracking (each provider's own pages, read 1 October 2026). Juniper lists a physio-designed exercise program; Moshy includes in-app health coaching.",
   },
   {
     q: "Do I need a referral or an in-person appointment to start?",
@@ -70,11 +70,11 @@ const faqs = [
   },
   {
     q: "What does a women's program usually include?",
-    a: "Both services we cover include an online assessment, practitioner review, ongoing follow-ups, app coaching, dietitian meal plans, a community and a 30-day money-back guarantee. Inclusions and pricing are shown on each provider's own site before you commit.",
+    a: "Both services we cover include an online assessment, practitioner review, ongoing follow-ups, meal plans, a community, app progress tracking and a 30-day money-back guarantee. Inclusions and pricing are shown on each provider's own site before you commit.",
   },
   {
     q: "How much does Juniper cost, and is there a discount?",
-    a: "Juniper publishes its program pricing on its own site. The fee varies with the plan and level of support, 1:1 coaching is a paid add-on, and there is a 30-day money-back guarantee. Through Refer Labs, JARREDKFC means no charge for the initial consultation, which Juniper values at $89; program fees apply.",
+    a: "Juniper publishes its program pricing on its own site. The fee varies with the plan and level of support, and there is a 30-day money-back guarantee. Through Refer Labs, JARREDKFC means no charge for the initial consultation, which Juniper values at $89; program fees apply.",
   },
 ];
 
@@ -137,9 +137,9 @@ export default function WeightLossTelehealthWomenPage() {
         <p className="text-[#56504a] text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
           Juniper and Moshy are two Australian weight-management telehealth services built for women: Juniper is
           designed for women, and Moshy describes itself as an online women&apos;s health clinic. Both start with an online assessment reviewed by a registered
-          practitioner, and both include app coaching, dietitian meal plans, a community and a 30-day money-back
-          guarantee. The differences are Juniper&apos;s 1:1 coaching add-on, and Moshy&apos;s all-inclusive fee and
-          its hair and skin services.
+          practitioner, and both include meal plans, a community, app progress tracking and a 30-day money-back
+          guarantee. The differences: Juniper lists a physio-designed exercise program and a practitioner team of
+          specialist GPs and nurse practitioners, and Moshy has an all-inclusive fee and hair and skin services.
         </p>
         <div className="max-w-2xl space-y-2">
           <AffiliateDisclosure compact partners={["Juniper", "Moshy"]} />
@@ -165,8 +165,8 @@ export default function WeightLossTelehealthWomenPage() {
           <h2 className="text-xl font-black mb-2">What does each include?</h2>
           <WeightInclusionsTable className="mt-4" />
           <p className="mt-4 text-[#56504a] text-sm sm:text-base leading-relaxed">
-            The two include much the same support, so the choice is about fit. Juniper suits someone who wants the option of
-            1:1 coaching. Moshy suits someone who wants an all-inclusive fee or may
+            The two include much the same support, so the choice is about fit. Juniper suits someone who wants a program
+            designed around women, with a physio-designed exercise program. Moshy suits someone who wants an all-inclusive fee or may
             later use Mosh&apos;s hair or skin services. We compare the two question by question in our{" "}
             <Link href="/moshy-vs-juniper" className="underline decoration-[#ded8cd] underline-offset-2 hover:text-[#14120f]" style={{ color: CYAN }}>
               Moshy vs Juniper guide
@@ -180,7 +180,7 @@ export default function WeightLossTelehealthWomenPage() {
             {[
               "Registered Australian practitioners doing the reviews, not offshore contractors",
               "A real screening step that declines unsuitable applicants",
-              "Pricing shown in full before you commit, including add-ons such as 1:1 coaching",
+              "Pricing shown in full before you commit, including any add-ons",
               "Any minimum commitment, and how to pause or cancel",
               "An Australian entity operating under Australian health regulations",
               "A clear path to human support once you are a subscriber",

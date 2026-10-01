@@ -17,7 +17,7 @@ export const REFERRAL120_CHECKED = checkedOn("REFERRAL120") ?? "";
 
 /** The answer paragraph under the h1. Also the page's quickAnswer. */
 export const MOSHY_LEAD =
-  "The current Moshy discount code is REFERRAL120: $120 off a new customer's first order on eligible Moshy weight programs, applied through our link; the offer carries a 3-month minimum commitment. Moshy is an Australian weight-management telehealth service, brother brand of Mosh, where a registered practitioner decides whether any treatment is appropriate.";
+  "The current Moshy discount code is REFERRAL120: $120 off a new customer's first order on eligible Moshy weight programs, with a 3-month minimum commitment. Use code REFERRAL120 at checkout; our link opens Moshy's sign-up with the offer. Moshy is an Australian weight-management telehealth service, brother brand of Mosh, where a registered practitioner decides whether any treatment is appropriate.";
 
 export const moshyConfig: AffiliatePageConfig = {
   brand: "Moshy",
@@ -68,7 +68,7 @@ export const moshyConfig: AffiliatePageConfig = {
   faqs: [
     {
       q: "What is the current Moshy discount code?",
-      a: `REFERRAL120, worth $120 off a new customer's first order with a 3-month minimum commitment, checked on Moshy's own sign-up page on ${REFERRAL120_CHECKED}. Under Moshy's terms it applies to eligible Moshy weight programs, is one use per new customer, cannot be combined with other promotions, and carries a minimum commitment period of 3 months. Moshy's terms are at getmoshy.com.au/terms. Our link opens that sign-up page with the code shown; if it is not already applied at checkout, enter REFERRAL120. Moshy also publishes its own public code, MOSHYINTRO100, which its promotions terms describe as $100 off the first billing period (read ${MOSHY_FACTS_READ_ON}). REFERRAL120 is $20 larger and adds the 3-month minimum.`,
+      a: `REFERRAL120, worth $120 off a new customer's first order with a 3-month minimum commitment, checked on Moshy's own sign-up page on ${REFERRAL120_CHECKED}. Under Moshy's terms it applies to eligible Moshy weight programs, is one use per new customer, cannot be combined with other promotions, and carries a minimum commitment period of 3 months. Moshy's terms are at getmoshy.com.au/terms. Use code REFERRAL120 at checkout; our link opens Moshy's sign-up with the offer.`,
     },
     {
       q: "Is getmoshy.com.au the official Moshy site, and is Moshy legit?",
@@ -80,7 +80,7 @@ export const moshyConfig: AffiliatePageConfig = {
     },
     {
       q: "Can I get a refund from Moshy?",
-      a: `Moshy advertises a 30-day money back guarantee and a price match guarantee, each with its own conditions on Moshy's promotions terms page (read ${MOSHY_FACTS_READ_ON}). Read those terms before you start, particularly alongside the 3-month minimum that comes with REFERRAL120.`,
+      a: `Moshy advertises a 30-day money back guarantee and a price match guarantee, each with its own conditions on Moshy's site; the money-back guarantee is in Moshy's terms at getmoshy.com.au/terms (read ${MOSHY_FACTS_READ_ON}). Read those terms before you start, particularly alongside the 3-month minimum that comes with REFERRAL120.`,
     },
     {
       q: "Do I need a GP referral to use Moshy?",

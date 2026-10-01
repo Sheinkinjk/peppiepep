@@ -44,9 +44,7 @@ export const PETSONME_CODE = "REFERLABS";
 // Never "$89 off", which would claim money off the program. Same trap as PetsOnMe,
 // where REFERLABS discounts pet care services and not the premium.
 //
-// Juniper promotes START50 on its own site, $50 off the first month, and its own
-// terms say codes cannot be combined, so a reader picks one. Ours is the larger of
-// the two by Juniper's own valuation; show both figures rather than asserting it.
+// Juniper's own public codes are never named on our pages (Jarred, 1 Oct 2026).
 //
 // myjuniper.com is the live site; myjuniper.com.au is a parked domain.
 export const JUNIPER_CODE = "JARREDKFC";

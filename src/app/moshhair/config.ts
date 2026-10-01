@@ -47,7 +47,7 @@ export const moshHairConfig: AffiliatePageConfig = {
   offerTermsUrl: MOSH_TERMS_URL,
 
   quickAnswer:
-    "The Mosh discount code through Refer Labs is REFERAL55, worth 55% off a new customer's first order of a Mosh hair program, under Mosh's terms. Our link carries it into Mosh's sign-up; if it isn't shown at checkout, enter REFERAL55. Mosh is an online consultation with an AHPRA-registered practitioner, who decides whether any treatment is appropriate.",
+    "The Mosh discount code through Refer Labs is REFERAL55, worth 55% off a new customer's first order of a Mosh hair program, under Mosh's terms. Use code REFERAL55 at checkout; our link opens Mosh's sign-up with the offer. Mosh is an online consultation with an AHPRA-registered practitioner, who decides whether any treatment is appropriate.",
 
   // Not rendered by PremiumAffiliateLanding; kept because the type requires it.
   banner: {
@@ -62,7 +62,7 @@ export const moshHairConfig: AffiliatePageConfig = {
     { k: "Who assesses", v: "AHPRA-registered doctors and nurse practitioners" },
     { k: "How it works", v: "Online questionnaire and photos, reviewed by a practitioner" },
     { k: "Pricing", v: "A subscription: first order, then the standard plan rate" },
-    { k: "Using the code", v: "Our link carries REFERAL55; if it isn't shown at checkout, enter it" },
+    { k: "Using the code", v: "Use REFERAL55 at checkout; our link opens Mosh's sign-up with the offer" },
   ],
   // Key facts, each read on Mosh's own site on MOSH_READ.
   trustStrip: [
@@ -83,7 +83,7 @@ export const moshHairConfig: AffiliatePageConfig = {
     h1Highlight: "55% off your first order",
     // The lead: the code and what it discounts first, then one line on what Mosh is.
     subheading:
-      "REFERAL55 takes 55% off a new customer's first Mosh order. Our link carries REFERAL55 into Mosh's sign-up; if it isn't shown at checkout, enter REFERAL55. Mosh is an online consultation with an AHPRA-registered practitioner, who decides whether any treatment is appropriate.",
+      "REFERAL55 takes 55% off a new customer's first Mosh order. Use code REFERAL55 at checkout; our link opens Mosh's sign-up with the offer. Mosh is an online consultation with an AHPRA-registered practitioner, who decides whether any treatment is appropriate.",
     trustBullets: [],
   },
 
@@ -125,7 +125,7 @@ export const moshHairConfig: AffiliatePageConfig = {
   faqs: [
     {
       q: "What is the Mosh discount code, and how do I use it?",
-      a: `REFERAL55, worth 55% off a new customer's first Mosh order. Our link carries REFERAL55 into Mosh's sign-up; Mosh's own page says to use it at checkout, so if it isn't already shown there, enter REFERAL55. ${REFERAL55_TERMS} Mosh's terms are at getmosh.com.au/terms. Checked on getmosh.com.au/start/referlabs, ${CODE_CHECKED}.`,
+      a: `REFERAL55, worth 55% off a new customer's first Mosh order. Use code REFERAL55 at checkout; our link opens Mosh's sign-up with the offer. ${REFERAL55_TERMS} Mosh's terms are at getmosh.com.au/terms. Checked on getmosh.com.au/start/referlabs, ${CODE_CHECKED}.`,
     },
     {
       q: "Is the Mosh discount only for the first order?",
@@ -178,7 +178,7 @@ export const moshHairConfig: AffiliatePageConfig = {
     {
       href: "/moshy",
       label: "Moshy Weight Loss, Discount Code & Review",
-      desc: "Mosh's sister brand for weight management.",
+      desc: "Mosh's brother brand for weight management.",
     },
   ],
 

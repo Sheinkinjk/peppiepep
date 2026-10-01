@@ -288,7 +288,7 @@ export default function CostPlanner() {
                 <div>
                   <p className="text-xs leading-relaxed text-[#56504a] mb-3">
                     Moshy publishes its program pricing on its own site and shows the amount before you pay. New
-                    customers get $120 off their first order with REFERRAL120 through our link, one use, with a
+                    customers get $120 off their first order with REFERRAL120 at checkout, one use, with a
                     3-month minimum commitment (<TermsApplyLink href={MOSHY_TERMS_URL} />). We earn a
                     commission if you sign up.
                   </p>
