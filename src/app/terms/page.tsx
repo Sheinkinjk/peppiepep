@@ -48,7 +48,7 @@ export default function Terms() {
         <h1 className="mt-4 text-4xl font-bold leading-[1.07] tracking-[-0.01em] text-[#14120f] sm:text-5xl">
           Terms of Use
         </h1>
-        <p className="mt-4 text-sm text-[#56504a]">Last updated: 15 September 2026</p>
+        <p className="mt-4 text-sm text-[#56504a]">Last updated: 1 October 2026</p>
 
         <p className="mt-8 text-lg leading-relaxed text-[#14120f]">
           These terms apply when you use referlabs.com.au. Reading the site is free and needs no account. The site is
@@ -101,7 +101,8 @@ export default function Terms() {
             <p>
               Prices are read off each provider&apos;s own page and dated. Offers are either read off the provider&apos;s
               page or, where an offer is specific to Refer Labs and published nowhere, confirmed directly with the
-              provider, and each carries the date it was checked. Providers can change prices, terms, eligibility and
+              provider, and each carries the date it was checked. Where an offer is the provider&apos;s own public offer,
+          such as a free plan or a trial anyone can start direct, we label it as the provider&apos;s offer, not ours. Providers can change prices, terms, eligibility and
               offers without telling us, so treat what we publish as a dated record, not a quote, and confirm the current
               terms with the provider before you commit.
             </p>
