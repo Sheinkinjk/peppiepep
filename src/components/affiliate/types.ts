@@ -105,9 +105,11 @@ export interface AffiliatePageConfig {
   offerCheckedOn?: string;
   /**
    * Optional one-line terms for `offer` (e.g. REFERAL55_TERMS), with the vendor's
-   * own terms URL. When `offerTermsUrl` is set, the offer box, the final CTA band
-   * and the sticky bar each carry a link to it. Added 1 Oct 2026 for Ahpra
-   * s133(1)(b); pages that omit both fields render exactly as before.
+   * own terms URL. When `offerTermsUrl` is set, the offer box and the final CTA
+   * band carry a muted "T&Cs apply" link to it, and the full sentence with the
+   * link sits under the "offer at a glance" table. The sticky bar carries neither.
+   * Added 1 Oct 2026 for Ahpra s133(1)(b); pages that omit both fields render
+   * exactly as before.
    */
   offerTerms?: string;
   offerTermsUrl?: string;

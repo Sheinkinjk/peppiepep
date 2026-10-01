@@ -7,6 +7,7 @@ import ConsumerShell from "@/components/consumer/ConsumerShell";
 import { FEATURED_DEALS, OTHER_DEALS, DEALS, formatVerifiedFull } from "@/lib/offers";
 import OfferSchema from "@/components/offers/OfferSchema";
 import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
+import TermsApplyLink, { OfferTermsNote } from "@/components/consumer/TermsApplyLink";
 import { logoScale } from "@/lib/logo-optics";
 
 export const metadata = generateSEOMetadata(seoConfig.deals);
@@ -182,14 +183,9 @@ export default function DealsPage() {
                     <td className="col-span-2 mt-3 block text-[17px] font-bold leading-snug text-[#007a95] sm:mt-0 sm:table-cell sm:px-5 sm:py-4 sm:align-middle sm:text-[15px]">
                       {d.offer}
                       {d.termsUrl && (
-                        <a
-                          href={d.termsUrl}
-                          target="_blank"
-                          rel="nofollow noopener"
-                          className="mt-1 block text-xs font-semibold text-[#56504a] underline hover:text-[#007a95]"
-                        >
-                          {d.brand}&apos;s promotion terms
-                        </a>
+                        <span className="mt-1 block leading-none">
+                          <TermsApplyLink href={d.termsUrl} />
+                        </span>
                       )}
                     </td>
                     <td className="col-span-2 mt-3 block sm:mt-0 sm:table-cell sm:px-5 sm:py-4 sm:align-middle">
@@ -232,6 +228,12 @@ export default function DealsPage() {
               Each date is when we last confirmed that offer. Offers can change, so check the terms on the
               provider&apos;s site before you sign up.
             </p>
+          </div>
+          {/* The full terms for the codes we link terms for, below the
+              table; each row carries only the muted "T&Cs apply" link (1 Oct 2026). */}
+          <div className="mt-5 space-y-2">
+            <OfferTermsNote brand="Moshy" />
+            <OfferTermsNote brand="Mosh" />
           </div>
         </section>
 

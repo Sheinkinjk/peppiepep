@@ -6,6 +6,7 @@ import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 import CostPlanner from "./CostPlanner";
+import { OfferTermsNote } from "@/components/consumer/TermsApplyLink";
 
 import { pageDates } from "@/lib/page-dates";
 export const metadata = generateSEOMetadata(seoConfig.weightLossCostCalculator);
@@ -21,7 +22,7 @@ const faqs = [
   },
   {
     q: "How is Moshy priced?",
-    a: "Moshy publishes one all-inclusive program fee on its own site and shows the amount before you pay. New customers get $120 off their first order with REFERRAL120 through our link, one use, with a 3-month minimum commitment under Moshy's promotion terms.",
+    a: "Moshy publishes one all-inclusive program fee on its own site and shows the amount before you pay. New customers get $120 off their first order with REFERRAL120 through our link, one use, with a 3-month minimum commitment under Moshy's terms. Moshy's terms are at getmoshy.com.au/terms.",
   },
   {
     q: "Does Medicare cover weight-loss telehealth?",
@@ -149,6 +150,8 @@ export default function WeightLossCostCalculatorPage() {
                 </details>
               ))}
             </div>
+            {/* The full offer terms; beside the code there is only "T&Cs apply" (1 Oct 2026). */}
+            <OfferTermsNote brand="Moshy" className="mt-5" />
           </section>
 
           {/* Email capture */}

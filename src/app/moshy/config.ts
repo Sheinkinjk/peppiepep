@@ -17,7 +17,7 @@ export const REFERRAL120_CHECKED = checkedOn("REFERRAL120") ?? "";
 
 /** The answer paragraph under the h1. Also the page's quickAnswer. */
 export const MOSHY_LEAD =
-  "The current Moshy discount code is REFERRAL120: $120 off a new customer's first order on the Moshy weight programs its promotion terms list, applied through our link; the offer carries a 3-month minimum commitment. Moshy is an Australian weight-management telehealth service, brother brand of Mosh, where a registered practitioner decides whether any treatment is appropriate.";
+  "The current Moshy discount code is REFERRAL120: $120 off a new customer's first order on eligible Moshy weight programs, applied through our link; the offer carries a 3-month minimum commitment. Moshy is an Australian weight-management telehealth service, brother brand of Mosh, where a registered practitioner decides whether any treatment is appropriate.";
 
 export const moshyConfig: AffiliatePageConfig = {
   brand: "Moshy",
@@ -32,7 +32,7 @@ export const moshyConfig: AffiliatePageConfig = {
   // `faqs` from this config, so these stay short and match the page.
   banner: {
     heading: "Moshy discount code",
-    body: "REFERRAL120: $120 off a new customer's first order under Moshy's promotion terms, with a 3-month minimum commitment.",
+    body: "REFERRAL120: $120 off a new customer's first order under Moshy's terms, with a 3-month minimum commitment.",
     buttonLabel: "Continue to Moshy",
   },
 
@@ -68,7 +68,7 @@ export const moshyConfig: AffiliatePageConfig = {
   faqs: [
     {
       q: "What is the current Moshy discount code?",
-      a: `REFERRAL120, worth $120 off a new customer's first order with a 3-month minimum commitment, checked on Moshy's own sign-up page on ${REFERRAL120_CHECKED}. Under Moshy's promotion terms it applies to the Moshy weight programs those terms list as eligible, is one use per new customer, cannot be combined with other promotions, and carries a minimum commitment period of 3 months. Our link opens that sign-up page with the code shown; if it is not already applied at checkout, enter REFERRAL120. Moshy also publishes its own public code, MOSHYINTRO100, which its promotions terms describe as $100 off the first billing period (read ${MOSHY_FACTS_READ_ON}). REFERRAL120 is $20 larger and adds the 3-month minimum.`,
+      a: `REFERRAL120, worth $120 off a new customer's first order with a 3-month minimum commitment, checked on Moshy's own sign-up page on ${REFERRAL120_CHECKED}. Under Moshy's terms it applies to eligible Moshy weight programs, is one use per new customer, cannot be combined with other promotions, and carries a minimum commitment period of 3 months. Moshy's terms are at getmoshy.com.au/terms. Our link opens that sign-up page with the code shown; if it is not already applied at checkout, enter REFERRAL120. Moshy also publishes its own public code, MOSHYINTRO100, which its promotions terms describe as $100 off the first billing period (read ${MOSHY_FACTS_READ_ON}). REFERRAL120 is $20 larger and adds the 3-month minimum.`,
     },
     {
       q: "Is getmoshy.com.au the official Moshy site, and is Moshy legit?",

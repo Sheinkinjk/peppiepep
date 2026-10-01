@@ -1,4 +1,5 @@
 import Image from "next/image";
+import TermsApplyLink, { termsUrlForCode } from "@/components/consumer/TermsApplyLink";
 import { ArrowRight } from "lucide-react";
 
 /**
@@ -73,6 +74,12 @@ export default function ProviderPair({ providers, className = "" }: { providers:
                   {p.offer.code ? (
                     <>
                       {" "}with code <span className="font-mono font-bold tracking-[0.04em]">{p.offer.code}</span>
+                      {termsUrlForCode(p.offer.code) ? (
+                        <>
+                          {" "}
+                          <TermsApplyLink href={termsUrlForCode(p.offer.code)!} />
+                        </>
+                      ) : null}
                     </>
                   ) : null}
                 </p>

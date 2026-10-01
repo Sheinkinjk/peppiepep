@@ -9,7 +9,8 @@ import EditorialMeta from "@/components/consumer/EditorialMeta";
 import CodeAnswer from "@/components/offers/CodeAnswer";
 import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 import OfferSchema from "@/components/offers/OfferSchema";
-import { MOSH_PROMO_TERMS_URL, REFERAL55_TERMS } from "@/lib/offers";
+import { MOSH_TERMS_URL, MOSH_PROMOTIONS_PAGE_URL } from "@/lib/offers";
+import TermsApplyLink, { OfferTermsNote } from "@/components/consumer/TermsApplyLink";
 
 export const metadata = generateSEOMetadata(seoConfig.hairLossTreatmentCost);
 
@@ -163,7 +164,7 @@ export default function HairLossTreatmentCostAustraliaPage() {
             <CodeAnswer code="REFERAL55">
               The Mosh discount code through Refer Labs is REFERAL55, worth 55% off a new customer&apos;s first order.
               Our link carries it into Mosh&apos;s sign-up; if it isn&apos;t shown at checkout, enter REFERAL55.{" "}
-              {REFERAL55_TERMS} Read <a href={MOSH_PROMO_TERMS_URL} target="_blank" rel="nofollow noopener" className="nw-link">Mosh&apos;s promotion terms</a>. More on the code and how Mosh works on{" "}
+              <TermsApplyLink href={MOSH_TERMS_URL} />. More on the code and how Mosh works on{" "}
               <Link href="/moshhair" className="nw-link">our Mosh page</Link>.
             </CodeAnswer>
             <div className="flex flex-col items-start gap-3 rounded-2xl border border-[#007a95]/25 bg-[#e4f2f5] px-6 py-5 sm:flex-row sm:items-center sm:justify-between">
@@ -211,7 +212,7 @@ export default function HairLossTreatmentCostAustraliaPage() {
               </h2>
               <p className="mt-3 text-[15px] leading-relaxed text-[#56504a]">
                 Mosh lists its plans on its own pricing page; the practitioner decides which, if any, applies.
-                {" "}<a href={MOSH_PROMO_TERMS_URL} target="_blank" rel="nofollow noopener" className="nw-link">Mosh&apos;s promotion terms</a> describe first-order hair discounts as covering the first three months,
+                {" "}<a href={MOSH_PROMOTIONS_PAGE_URL} target="_blank" rel="nofollow noopener" className="nw-link">Mosh&apos;s promotions page</a> describes first-order hair discounts as covering the first three months,
                 and Mosh offers a 180-day money-back guarantee on quarterly hair programs under those terms
                 (getmosh.com.au, read {MOSH_READ}).
               </p>
@@ -239,7 +240,7 @@ export default function HairLossTreatmentCostAustraliaPage() {
                 <p>
                   Compare the cost over a year, not the first month. A first-order discount such as REFERAL55 comes
                   off the first order, not every month after it, and applies only to new customers under{" "}
-                  <a href={MOSH_PROMO_TERMS_URL} target="_blank" rel="nofollow noopener" className="nw-link">Mosh&apos;s promotion terms</a>.
+                  <a href={MOSH_TERMS_URL} target="_blank" rel="nofollow noopener" className="nw-link">Mosh&apos;s terms</a>.
                 </p>
                 <p>
                   For the routes themselves, our{" "}
@@ -281,6 +282,8 @@ export default function HairLossTreatmentCostAustraliaPage() {
                   </details>
                 ))}
               </div>
+              {/* The full offer terms; beside the code there is only "T&Cs apply" (1 Oct 2026). */}
+              <OfferTermsNote brand="Mosh" className="mt-5" />
             </section>
 
             {/* Related */}

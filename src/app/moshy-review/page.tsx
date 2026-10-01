@@ -11,7 +11,8 @@ import CodeAnswer from "@/components/offers/CodeAnswer";
 import OfferSchema from "@/components/offers/OfferSchema";
 
 import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
-import { MOSHY_PROMO_TERMS_URL } from "@/lib/offers";
+import { MOSHY_TERMS_URL } from "@/lib/offers";
+import TermsApplyLink, { OfferTermsNote } from "@/components/consumer/TermsApplyLink";
 export const metadata = generateSEOMetadata(seoConfig.moshyReview);
 
 const CYAN = "#007a95";
@@ -118,11 +119,7 @@ export default function MoshyReviewPage() {
         <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
         <CodeAnswer code="REFERRAL120" className="mt-6 mb-10">
           REFERRAL120, the Moshy code Refer Labs holds, gets a new customer $120 off a first order, once per customer,
-          with a minimum commitment period of 3 months, on the Moshy weight programs listed as eligible in{" "}
-          <a href={MOSHY_PROMO_TERMS_URL} target="_blank" rel="noopener noreferrer" className="font-semibold underline underline-offset-2">
-            Moshy&apos;s promotion terms
-          </a>
-          .
+          with a minimum commitment period of 3 months, on eligible Moshy weight programs (<TermsApplyLink href={MOSHY_TERMS_URL} />).
         </CodeAnswer>
         <OfferSchema code="REFERRAL120" />
 
@@ -136,7 +133,7 @@ export default function MoshyReviewPage() {
           <p className="text-[#56504a] text-sm sm:text-base leading-relaxed">
             If you go ahead, you pay one monthly program fee, which Moshy publishes on its weight-loss page. New
             customers get $120 off their first order with REFERRAL120 through our link, with a 3-month minimum
-            commitment under Moshy&apos;s promotion terms; if the code is not already applied at checkout, enter it
+            commitment under Moshy&apos;s terms; if the code is not already applied at checkout, enter it
             there.
           </p>
           <div className="pt-1">
@@ -187,17 +184,15 @@ export default function MoshyReviewPage() {
               </details>
             ))}
           </div>
+          {/* The full offer terms; beside the code there is only "T&Cs apply" (1 Oct 2026). */}
+          <OfferTermsNote brand="Moshy" className="mt-5" />
         </section>
 
         <div className="rounded-2xl border px-6 py-7 mb-10 text-center sm:px-8" style={{ borderColor: `${CYAN}30`, background: `${CYAN}08` }}>
           <h2 className="text-lg sm:text-xl font-black text-[#14120f]">Start with Moshy</h2>
           <p className="mx-auto mt-2 max-w-md text-sm leading-relaxed text-[#56504a]">
             $120 off a new customer&apos;s first order with REFERRAL120 through our link, with a 3-month minimum
-            commitment, under{" "}
-            <a href={MOSHY_PROMO_TERMS_URL} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">
-              Moshy&apos;s promotion terms
-            </a>
-            .
+            commitment. <TermsApplyLink href={MOSHY_TERMS_URL} />
           </p>
           <div className="mt-5 flex justify-center">
             <Cta label="Continue to Moshy" loc="closing-cta" />
@@ -210,7 +205,7 @@ export default function MoshyReviewPage() {
             source="deal-alert-moshy-review"
             interest="Moshy offer"
             heading="Not ready today? Get told when the Moshy offer changes."
-            sub="New customers can currently get $120 off a first order with code REFERRAL120, with a 3-month minimum commitment under Moshy's promotion terms. We'll email you if that changes, and nothing else."
+            sub="New customers can currently get $120 off a first order with code REFERRAL120, with a 3-month minimum commitment under Moshy's terms. We'll email you if that changes, and nothing else."
           />
         </div>
 

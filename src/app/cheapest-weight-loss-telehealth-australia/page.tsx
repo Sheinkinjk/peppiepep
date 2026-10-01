@@ -6,7 +6,7 @@ import ConsumerShell from "@/components/consumer/ConsumerShell";
 import EditorialMeta from "@/components/consumer/EditorialMeta";
 import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 import OfferSchema from "@/components/offers/OfferSchema";
-import { MOSHY_PROMO_TERMS_URL } from "@/lib/offers";
+import { OfferTermsNote } from "@/components/consumer/TermsApplyLink";
 import ProviderPair, { type PairProvider } from "@/components/consumer/ProviderPair";
 
 export const metadata = generateSEOMetadata(seoConfig.cheapestWeightLossTelehealth);
@@ -59,7 +59,7 @@ const providers: PairProvider[] = [
 const faqs = [
   {
     q: "What is the cheapest weight loss telehealth in Australia?",
-    a: "No single service is cheapest for everyone. A subscription such as Moshy or Juniper charges a monthly fee that covers consults and support; a pay-as-you-go service such as Doctors for Weight Loss charges per consultation. Which costs less depends on how often you need to be seen. A new-patient code lowers the first bill: REFERRAL120 takes $120 off a first Moshy order with a 3-month minimum commitment, under Moshy's promotion terms, and JARREDKFC means no charge for Juniper's initial consultation, valued at $89; program fees apply.",
+    a: "No single service is cheapest for everyone. A subscription such as Moshy or Juniper charges a monthly fee that covers consults and support; a pay-as-you-go service such as Doctors for Weight Loss charges per consultation. Which costs less depends on how often you need to be seen. A new-patient code lowers the first bill: REFERRAL120 takes $120 off a first Moshy order with a 3-month minimum commitment, under Moshy's terms, and JARREDKFC means no charge for Juniper's initial consultation, valued at $89; program fees apply.",
   },
   {
     q: "Is subscription or pay-as-you-go cheaper?",
@@ -71,7 +71,7 @@ const faqs = [
   },
   {
     q: "Are there discount codes for Moshy and Juniper?",
-    a: "Yes. Through Refer Labs, Moshy's code is REFERRAL120, which takes $120 off a new customer's first order and comes with a 3-month minimum commitment under Moshy's promotion terms. Juniper's is JARREDKFC, which means no charge for the initial consultation, valued by Juniper at $89; program fees apply. Each is carried by the links on this page.",
+    a: "Yes. Through Refer Labs, Moshy's code is REFERRAL120, which takes $120 off a new customer's first order and comes with a 3-month minimum commitment under Moshy's terms. Juniper's is JARREDKFC, which means no charge for the initial consultation, valued by Juniper at $89; program fees apply. Each is carried by the links on this page.",
   },
   {
     q: "Are cheaper services still legitimate?",
@@ -197,12 +197,11 @@ export default function CheapestWeightLossTelehealthPage() {
         <p className="mt-10 max-w-3xl rounded-xl border border-[#ded8cd] bg-white px-5 py-4 text-[13px] leading-relaxed text-[#56504a]">
           Information only, not medical advice. Suitability for any program is decided by a registered Australian
           practitioner, not by price, and any treatment is decided by a registered practitioner after an individual
-          assessment. REFERRAL120 is one use per new customer, carries a 3-month minimum commitment and applies under{" "}
-          <a href={MOSHY_PROMO_TERMS_URL} target="_blank" rel="noopener noreferrer" className="font-semibold text-[#007a95] underline underline-offset-2">
-            Moshy&apos;s promotion terms
-          </a>
-          .
+          assessment.
         </p>
+        {/* The full offer terms, below the comparison; beside the code there is only
+            the muted "T&Cs apply" link (1 Oct 2026). */}
+        <OfferTermsNote brand="Moshy" className="mt-4 max-w-3xl" />
 
         <section className="mt-14 max-w-3xl">
           <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">Cheapest weight loss telehealth: common questions</h2>

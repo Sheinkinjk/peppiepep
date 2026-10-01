@@ -5,7 +5,8 @@ import Link from "next/link";
 import { ArrowRight, RotateCcw, Check, Share2 } from "lucide-react";
 import { MOSHY_URL } from "@/lib/affiliate-links";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
-import { MOSHY_PROMO_TERMS_URL } from "@/lib/offers";
+import { MOSHY_TERMS_URL } from "@/lib/offers";
+import TermsApplyLink from "@/components/consumer/TermsApplyLink";
 
 /**
  * "Which weight-loss pathway fits you?" is a short preference-based matcher that
@@ -155,7 +156,7 @@ function resolve(a: Required<Answers>): Result {
     title: practitionerLed ? "Moshy fits what you chose" : "Moshy is one place to start",
     body: `${wants}, with coaching and meal plans in one program fee. It is open to anyone a practitioner assesses as suitable${speed ? ", and you can start straight away" : ""}. A GP can see you in person if you would rather.`,
     offer: "REFERRAL120: $120 off your first order via our link, 3-month minimum commitment",
-    offerTerms: MOSHY_PROMO_TERMS_URL,
+    offerTerms: MOSHY_TERMS_URL,
     cta: { label: "Continue to Moshy", href: MOSHY_URL, sponsored: true, loc: "quiz-moshy" },
     secondary: { label: "Read our full Moshy review", href: "/moshy-review" },
     also: woman
@@ -255,11 +256,8 @@ export default function PathwayQuiz() {
             </span>
           )}
           {result.offer && result.offerTerms && (
-            <p className="mt-2 text-[12.5px] text-[#56504a]">
-              One use per new customer.{" "}
-              <a href={result.offerTerms} target="_blank" rel="noopener noreferrer" className="font-semibold text-[#007a95] underline underline-offset-2">
-                Read Moshy&apos;s promotion terms
-              </a>
+            <p className="mt-2 text-[12px] text-[#56504a]">
+              One use per new customer. <TermsApplyLink href={result.offerTerms} />
             </p>
           )}
           <p className="mt-3 text-[15px] leading-relaxed text-[#56504a]">{result.body}</p>

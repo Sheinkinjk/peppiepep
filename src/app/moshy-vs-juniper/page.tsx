@@ -10,7 +10,8 @@ import OfferSchema from "@/components/offers/OfferSchema";
 import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 import ProviderPair, { type PairProvider } from "@/components/consumer/ProviderPair";
 import WeightInclusionsTable from "@/components/consumer/WeightInclusionsTable";
-import { MOSHY_PROMO_TERMS_URL } from "@/lib/offers";
+import { MOSHY_TERMS_URL } from "@/lib/offers";
+import TermsApplyLink, { OfferTermsNote } from "@/components/consumer/TermsApplyLink";
 
 export const metadata = generateSEOMetadata(seoConfig.moshyVsJuniper);
 
@@ -65,7 +66,7 @@ const faqs = [
   },
   {
     q: "What are the Moshy and Juniper discount codes?",
-    a: "Through Refer Labs, Moshy's code is REFERRAL120, which takes $120 off a new customer's first order, one use, with a 3-month minimum commitment under Moshy's promotion terms. Juniper's is JARREDKFC, which means no charge for the initial consultation, which Juniper values at $89; program fees apply. Each is carried by the links on this page.",
+    a: "Through Refer Labs, Moshy's code is REFERRAL120, which takes $120 off a new customer's first order, one use, with a 3-month minimum commitment under Moshy's terms. Juniper's is JARREDKFC, which means no charge for the initial consultation, which Juniper values at $89; program fees apply. Each is carried by the links on this page.",
   },
   {
     q: "How much do Moshy and Juniper cost?",
@@ -179,11 +180,7 @@ export default function MoshyVsJuniperPage() {
           </p>
           <CodeAnswer code="REFERRAL120" className="mt-5">
             Refer Labs holds a code for both. Moshy&apos;s is REFERRAL120, $120 off a new customer&apos;s first order, one
-            use per customer, with a 3-month minimum commitment under{" "}
-            <a href={MOSHY_PROMO_TERMS_URL} target="_blank" rel="noopener noreferrer" className="font-semibold underline underline-offset-2">
-              Moshy&apos;s promotion terms
-            </a>
-            . JARREDKFC means no charge for the initial consultation, which Juniper values at $89; program fees apply.
+            use per customer, with a 3-month minimum commitment (<TermsApplyLink href={MOSHY_TERMS_URL} />). JARREDKFC means no charge for the initial consultation, which Juniper values at $89; program fees apply.
           </CodeAnswer>
         </section>
 
@@ -228,6 +225,9 @@ export default function MoshyVsJuniperPage() {
               </details>
             ))}
           </div>
+          {/* The full offer terms sit here; beside the code there is only the muted
+              "T&Cs apply" link (1 Oct 2026). */}
+          <OfferTermsNote brand="Moshy" className="mt-6" />
         </section>
 
         <section className="mt-14">

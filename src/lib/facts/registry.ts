@@ -100,7 +100,7 @@ export const FACTS: Fact[] = [
     observedBy: 'jarred',
     method: "Verified the code and its stated terms against Moshy's own sign-up page.",
     claim:
-      "The code REFERRAL120 took $120 off a new customer's first order, one use per customer, on the Moshy weight programs its promotion terms list as eligible, with a 3-month minimum commitment.",
+      "The code REFERRAL120 took $120 off a new customer's first order, one use per customer, on eligible Moshy weight programs, with a 3-month minimum commitment.",
     value: 120,
     unit: 'AUD off first order',
     // Source: /moshy "verified against Moshy's own sign-up page on 17 August 2026."
@@ -178,7 +178,7 @@ export const FACTS: Fact[] = [
     observedBy: 'jarred',
     method: "Read the offer on Moshy's own sign-up page.",
     claim:
-      "The code REFERRAL120 took $120 off a new customer's first order, one use per customer, on the Moshy weight programs its promotion terms list as eligible, with a 3-month minimum commitment.",
+      "The code REFERRAL120 took $120 off a new customer's first order, one use per customer, on eligible Moshy weight programs, with a 3-month minimum commitment.",
     supersedes: 'moshy-offer-2026-08-17',
     // Source: read live from
     // https://www.getmoshy.com.au/start/eligibility-check-moshy on 26 August

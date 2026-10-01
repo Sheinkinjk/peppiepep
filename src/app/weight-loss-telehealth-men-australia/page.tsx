@@ -5,7 +5,8 @@ import { ArrowRight, Check } from "lucide-react";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
-import { MOSHY_PROMO_TERMS_URL } from "@/lib/offers";
+import { MOSHY_TERMS_URL } from "@/lib/offers";
+import TermsApplyLink, { OfferTermsNote } from "@/components/consumer/TermsApplyLink";
 
 export const metadata = generateSEOMetadata(seoConfig.weightLossTelehealthMen);
 
@@ -136,11 +137,7 @@ export default function WeightLossTelehealthMenPage() {
           <div className="rounded-xl border px-6 py-5 mt-6" style={{ borderColor: `${CYAN}40`, background: `${CYAN}0A` }}>
             <p className="text-[#14120f] text-sm sm:text-base leading-relaxed mb-4">
               Our link carries REFERRAL120: $120 off a first order, one use per new customer, with a 3-month minimum
-              commitment under{" "}
-              <a href={MOSHY_PROMO_TERMS_URL} target="_blank" rel="noopener noreferrer" className="font-semibold underline underline-offset-2">
-                Moshy&apos;s promotion terms
-              </a>
-              .
+              commitment. <TermsApplyLink href={MOSHY_TERMS_URL} />
             </p>
             <a
               {...aff}
@@ -168,6 +165,10 @@ export default function WeightLossTelehealthMenPage() {
             ))}
           </div>
         </section>
+
+        {/* The full offer terms, near the foot; beside the code there is only the
+            muted "T&Cs apply" link (1 Oct 2026). */}
+        <OfferTermsNote brand="Moshy" className="mb-8" />
 
         <div className="border-t border-[#ded8cd] pt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm">
           <Link href="/moshy" style={{ color: CYAN }} className="hover:opacity-80">Moshy: how to start</Link>

@@ -9,7 +9,8 @@ import EditorialMeta from "@/components/consumer/EditorialMeta";
 import MatchPrompt from "@/components/consumer/MatchPrompt";
 
 import EarningsBalanceNote from "@/components/consumer/EarningsBalanceNote";
-import { MOSHY_PROMO_TERMS_URL } from "@/lib/offers";
+import { MOSHY_TERMS_URL } from "@/lib/offers";
+import TermsApplyLink, { OfferTermsNote } from "@/components/consumer/TermsApplyLink";
 export const metadata = generateSEOMetadata(seoConfig.weightLossTelehealthCost);
 
 const SLUG = "/weight-loss-telehealth-cost-australia";
@@ -33,7 +34,7 @@ const faqs = [
   },
   {
     q: "How much does Moshy cost?",
-    a: "Moshy publishes its program price on its own site and describes it as one all-inclusive program fee (read on getmoshy.com.au, 30 September 2026). New customers get $120 off their first order with the code REFERRAL120 through the link on this page, one use per new customer, with a 3-month minimum commitment under Moshy's promotion terms.",
+    a: "Moshy publishes its program price on its own site and describes it as one all-inclusive program fee (read on getmoshy.com.au, 30 September 2026). New customers get $120 off their first order with the code REFERRAL120 through the link on this page, one use per new customer, with a 3-month minimum commitment under Moshy's terms.",
   },
   {
     q: "What does a program fee cover?",
@@ -239,11 +240,7 @@ export default function WeightLossTelehealthCostAustraliaPage() {
               <h2 className="text-lg font-bold text-[#14120f]">See Moshy&apos;s current fee</h2>
               <p className="mt-2 text-[15px] leading-relaxed text-[#56504a]">
                 Continue to Moshy. REFERRAL120 takes $120 off a new customer&apos;s first order and carries a 3-month
-                minimum commitment; read{" "}
-                <a href={MOSHY_PROMO_TERMS_URL} target="_blank" rel="noopener noreferrer" className="font-semibold text-[#007a95] underline underline-offset-2">
-                  Moshy&apos;s promotion terms
-                </a>{" "}
-                before you start.
+                minimum commitment. <TermsApplyLink href={MOSHY_TERMS_URL} />
               </p>
               <a
                 href={MOSHY_URL}
@@ -272,6 +269,8 @@ export default function WeightLossTelehealthCostAustraliaPage() {
                   </details>
                 ))}
               </div>
+              {/* The full offer terms; beside the code there is only "T&Cs apply" (1 Oct 2026). */}
+              <OfferTermsNote brand="Moshy" className="mt-5" />
             </section>
 
             {/* Related */}

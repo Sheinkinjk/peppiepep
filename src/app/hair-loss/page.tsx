@@ -5,7 +5,8 @@ import MatchPrompt from "@/components/consumer/MatchPrompt";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, SCHEMA_AUTHOR, SCHEMA_PUBLISHER } from "@/lib/seo";
 import { MOSH_HAIR_URL } from "@/lib/affiliate-links";
-import { MOSH_PROMO_TERMS_URL, REFERAL55_TERMS } from "@/lib/offers";
+import { MOSH_TERMS_URL } from "@/lib/offers";
+import TermsApplyLink, { OfferTermsNote } from "@/components/consumer/TermsApplyLink";
 import OfferSchema from "@/components/offers/OfferSchema";
 import { EdgeObject } from "@/components/brand/EdgeObject";
 import { GuideGrid } from "@/components/brand/GuideGrid";
@@ -141,13 +142,8 @@ export default function HairLossHubPage() {
               <p className="mt-2.5 text-sm leading-relaxed text-[#56504a]">
                 A questionnaire and photos, reviewed by a registered practitioner, with no clinic visit. Mosh is one
                 Australian men&apos;s service that runs this. Refer Labs readers get 55% off with REFERAL55: our link
-                carries the code, and if it isn&apos;t shown at checkout, enter REFERAL55.
-              </p>
-              <p className="mt-2 text-xs leading-relaxed text-[#56504a]">
-                {REFERAL55_TERMS}{" "}
-                <a href={MOSH_PROMO_TERMS_URL} target="_blank" rel="nofollow noopener" className="font-semibold text-[#007a95] underline underline-offset-2">
-                  Mosh&apos;s promotion terms
-                </a>
+                carries the code, and if it isn&apos;t shown at checkout, enter REFERAL55.{" "}
+                <TermsApplyLink href={MOSH_TERMS_URL} />
               </p>
               <div className="mt-5 space-y-2 text-sm font-semibold">
                 <p>
@@ -213,6 +209,8 @@ export default function HairLossHubPage() {
               </details>
             ))}
           </div>
+          {/* The full offer terms; beside the code there is only "T&Cs apply" (1 Oct 2026). */}
+          <OfferTermsNote brand="Mosh" className="mt-6 max-w-3xl" />
           <p className="mt-8 max-w-3xl rounded-xl border border-[#ded8cd] bg-[#f7f4ee] px-5 py-4 text-xs leading-relaxed text-[#56504a]">
             <span className="font-semibold text-[#14120f]">Information only.</span> Nothing here is medical advice or a
             recommendation of any treatment. Any treatment is decided by a registered practitioner after an individual

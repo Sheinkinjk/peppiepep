@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Check } from "lucide-react";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import GuideCapture from "@/components/consumer/GuideCapture";
-import { MOSHY_PROMO_TERMS_URL } from "@/lib/offers";
+import { MOSHY_TERMS_URL } from "@/lib/offers";
 
 export const metadata = generateSEOMetadata(seoConfig.weightLossGuide);
 
@@ -48,8 +48,8 @@ export default function WeightLossGuidePage() {
           program is decided by a registered Australian practitioner. The guide contains disclosed affiliate links: we
           may earn a commission if you sign up through them, at no extra cost to you, and it never changes what we
           write. Moshy&apos;s offer is one use per new customer, carries a 3-month minimum commitment and applies under{" "}
-          <a href={MOSHY_PROMO_TERMS_URL} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">
-            Moshy&apos;s promotion terms
+          <a href={MOSHY_TERMS_URL} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">
+            Moshy&apos;s terms
           </a>
           .
         </p>

@@ -13,7 +13,8 @@ import WeightInclusionsTable from "@/components/consumer/WeightInclusionsTable";
 import OfferSchema from "@/components/offers/OfferSchema";
 
 import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
-import { MOSHY_PROMO_TERMS_URL } from "@/lib/offers";
+import { MOSHY_TERMS_URL } from "@/lib/offers";
+import TermsApplyLink, { OfferTermsNote } from "@/components/consumer/TermsApplyLink";
 export const metadata = generateSEOMetadata(seoConfig.bestWeightLossTelehealth);
 
 const JUNIPER_REQUIRED = requiredDisclosureFor(JUNIPER_URL);
@@ -286,11 +287,7 @@ export default function BestWeightLossTelehealthPage() {
               Moshy and Juniper both publish their program pricing on their own sites. Moshy describes its fee as
               all-inclusive; Juniper&apos;s varies with the plan and level of support. Through our links,
               Moshy&apos;s REFERRAL120 takes $120 off a new customer&apos;s first order, with a 3-month minimum
-              commitment under{" "}
-              <a href={MOSHY_PROMO_TERMS_URL} target="_blank" rel="noopener noreferrer" className="font-semibold text-[#007a95] underline underline-offset-2">
-                Moshy&apos;s promotion terms
-              </a>
-              , and Juniper&apos;s JARREDKFC means no charge for the initial consultation, which Juniper values at $89;
+              commitment (<TermsApplyLink href={MOSHY_TERMS_URL} />), and Juniper&apos;s JARREDKFC means no charge for the initial consultation, which Juniper values at $89;
               program fees apply.
             </p>
             <p className="text-xs text-[#56504a]">
@@ -312,6 +309,8 @@ export default function BestWeightLossTelehealthPage() {
                 </div>
               ))}
             </div>
+            {/* The full offer terms; beside the code there is only "T&Cs apply" (1 Oct 2026). */}
+            <OfferTermsNote brand="Moshy" className="mt-6" />
           </section>
 
           {/* ── Deal alert ────────────────────────────────────────────────────── */}
@@ -321,7 +320,7 @@ export default function BestWeightLossTelehealthPage() {
               source="deal-alert-best-weight-loss"
               interest="Weight-loss telehealth offers"
               heading="Get told when a weight-loss offer changes"
-              sub="We'll email you if the Moshy or Juniper offers on this page change, and nothing else. Moshy's REFERRAL120 currently takes $120 off a first order with a 3-month minimum commitment, under Moshy's promotion terms."
+              sub="We'll email you if the Moshy or Juniper offers on this page change, and nothing else. Moshy's REFERRAL120 currently takes $120 off a first order with a 3-month minimum commitment, under Moshy's terms."
             />
           </section>
 

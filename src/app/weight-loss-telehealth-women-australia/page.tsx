@@ -11,7 +11,8 @@ import WeightInclusionsTable from "@/components/consumer/WeightInclusionsTable";
 
 import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 import { pageDates } from "@/lib/page-dates";
-import { MOSHY_PROMO_TERMS_URL } from "@/lib/offers";
+import { MOSHY_TERMS_URL } from "@/lib/offers";
+import TermsApplyLink, { OfferTermsNote } from "@/components/consumer/TermsApplyLink";
 export const metadata = generateSEOMetadata(seoConfig.weightLossTelehealthWomen);
 
 const CYAN = "#007a95";
@@ -157,11 +158,7 @@ export default function WeightLossTelehealthWomenPage() {
           <span className="font-semibold text-[#14120f]">Information only.</span> This page describes a category of
           services. It is not medical advice and does not recommend any treatment. Any treatment is decided by a
           registered practitioner after an individual assessment. REFERRAL120 is one use per new customer and carries
-          a 3-month minimum commitment under{" "}
-          <a href={MOSHY_PROMO_TERMS_URL} target="_blank" rel="noopener noreferrer" className="font-semibold underline underline-offset-2">
-            Moshy&apos;s promotion terms
-          </a>
-          .
+          a 3-month minimum commitment (<TermsApplyLink href={MOSHY_TERMS_URL} />).
         </p>
 
         <section className="mb-10">
@@ -210,6 +207,10 @@ export default function WeightLossTelehealthWomenPage() {
             ))}
           </div>
         </section>
+
+        {/* The full offer terms, near the foot; beside the code there is only the
+            muted "T&Cs apply" link (1 Oct 2026). */}
+        <OfferTermsNote brand="Moshy" className="mb-8" />
 
         <div className="border-t border-[#ded8cd] pt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm">
           <Link href="/moshy-vs-juniper" style={{ color: CYAN }} className="hover:opacity-80">Moshy vs Juniper &rarr;</Link>

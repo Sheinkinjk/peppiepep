@@ -4,7 +4,8 @@ import { useState } from "react";
 import Link from "next/link";
 import { ArrowRight, RotateCcw, CheckCircle2 } from "lucide-react";
 import { MOSHY_URL } from "@/lib/affiliate-links";
-import { MOSHY_PROMO_TERMS_URL } from "@/lib/offers";
+import { MOSHY_TERMS_URL } from "@/lib/offers";
+import TermsApplyLink from "@/components/consumer/TermsApplyLink";
 
 /**
  * Weight-loss pathway cost planner.
@@ -288,11 +289,8 @@ export default function CostPlanner() {
                   <p className="text-xs leading-relaxed text-[#56504a] mb-3">
                     Moshy publishes its program pricing on its own site and shows the amount before you pay. New
                     customers get $120 off their first order with REFERRAL120 through our link, one use, with a
-                    3-month minimum commitment under{" "}
-                    <a href={MOSHY_PROMO_TERMS_URL} target="_blank" rel="noopener noreferrer" className="font-semibold text-[#007a95] underline underline-offset-2">
-                      Moshy&apos;s promotion terms
-                    </a>
-                    . We earn a commission if you sign up.
+                    3-month minimum commitment (<TermsApplyLink href={MOSHY_TERMS_URL} />). We earn a
+                    commission if you sign up.
                   </p>
                   <a
                     href={MOSHY_URL}

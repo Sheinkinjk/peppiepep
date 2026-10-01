@@ -6,7 +6,8 @@ import StickyCta from "@/components/consumer/StickyCta";
 import EditorialMeta from "@/components/consumer/EditorialMeta";
 import { SITE_URL, SCHEMA_AUTHOR, SCHEMA_PUBLISHER } from "@/lib/seo";
 import { MOSH_HAIR_URL } from "@/lib/affiliate-links";
-import { MOSH_PROMO_TERMS_URL, REFERAL55_TERMS } from "@/lib/offers";
+import { MOSH_TERMS_URL } from "@/lib/offers";
+import TermsApplyLink, { OfferTermsNote } from "@/components/consumer/TermsApplyLink";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Shared layout for the hair-loss guide cluster (men's hair loss, funnels to Mosh).
@@ -30,7 +31,7 @@ export interface HairLossGuideConfig {
 }
 
 // Restamped 1 Oct 2026 after the TGA/Ahpra copy pass (efficacy, urgency and
-// class wording removed; Mosh's promotion terms linked beside the code).
+// class wording removed; Mosh's terms linked beside the code).
 export function hairLossGuideSchemas(cfg: HairLossGuideConfig) {
   const url = `${SITE_URL}${cfg.slug}`;
   return [
@@ -68,12 +69,10 @@ function MoshCta({ heading, body, loc }: { heading: string; body: string; loc: s
       <div className="max-w-md">
         <p className="font-bold text-[#14120f]">{heading}</p>
         <p className="mt-1 text-[14px] leading-relaxed text-[#14120f]">{body}</p>
-        {/* Ahpra s133(1)(b): the inducement's terms are stated and linked beside the code. */}
-        <p className="mt-2 text-[12px] leading-relaxed text-[#56504a]">
-          {REFERAL55_TERMS}{" "}
-          <a href={MOSH_PROMO_TERMS_URL} target="_blank" rel="nofollow noopener" className="font-semibold text-[#007a95] underline underline-offset-2">
-            Mosh&apos;s promotion terms
-          </a>
+        {/* Ahpra s133(1)(b): a muted "T&Cs apply" beside the code; the full terms
+            sentence sits under the FAQ (1 Oct 2026). */}
+        <p className="mt-2">
+          <TermsApplyLink href={MOSH_TERMS_URL} />
         </p>
       </div>
       <a href={MOSH_HAIR_URL} target="_blank" rel="nofollow sponsored" data-cta={`hairloss-${loc}`} className="nw-btn shrink-0 whitespace-nowrap">
@@ -148,7 +147,7 @@ export default function HairLossGuide({ cfg }: { cfg: HairLossGuideConfig }) {
           <MoshCta
             loc="bottom"
             heading="Start with a practitioner, not a guess"
-            body="Mosh's online consultation is reviewed by a registered Australian practitioner, who decides whether any treatment is appropriate. 55% off with REFERAL55; Mosh also offers a 180-day money-back guarantee on quarterly hair programs, under its promotion terms."
+            body="Mosh's online consultation is reviewed by a registered Australian practitioner, who decides whether any treatment is appropriate. 55% off with REFERAL55; Mosh also offers a 180-day money-back guarantee on quarterly hair programs, under its terms."
           />
         </div>
 
@@ -166,6 +165,7 @@ export default function HairLossGuide({ cfg }: { cfg: HairLossGuideConfig }) {
               </details>
             ))}
           </div>
+          <OfferTermsNote brand="Mosh" className="mt-5" />
         </section>
 
         {/* Related */}
@@ -186,7 +186,7 @@ export default function HairLossGuide({ cfg }: { cfg: HairLossGuideConfig }) {
         </p>
       </main>
 
-      <StickyCta href={MOSH_HAIR_URL} product="Mosh hair-loss telehealth" label="Claim offer" offer="55% off your first order" termsHref={MOSH_PROMO_TERMS_URL} />
+      <StickyCta href={MOSH_HAIR_URL} product="Mosh hair-loss telehealth" label="Claim offer" offer="55% off your first order" />
     </ConsumerShell>
   );
 }

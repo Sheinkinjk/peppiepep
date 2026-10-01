@@ -5,6 +5,7 @@ import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
 import { OFFERS_VERIFIED, DEALS, formatVerified } from "@/lib/offers";
 import OffersTable from "@/components/lending/OffersTable";
+import TermsApplyLink, { TermsSentence } from "@/components/consumer/TermsApplyLink";
 import type { AffiliatePageConfig } from "./types";
 
 import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
@@ -173,15 +174,17 @@ export default function PremiumAffiliateLanding({ config }: { config: AffiliateP
                       no agent is a quotable unit with nobody to cite. Do not trim the
                       name back out as redundant with the site it sits on: the unit
                       gets lifted away from the site. */}
-                  <p className="mt-1.5 text-[12px] font-medium text-[#56504a]">{verifiedStamp(config.brand, config.offerCheckedOn)}</p>
-                  {config.offerTermsUrl && (
-                    <p className="mt-1.5 text-[12px] leading-relaxed text-[#56504a]">
-                      {config.offerTerms ? `${config.offerTerms} ` : ""}
-                      <a href={config.offerTermsUrl} target="_blank" rel="nofollow noopener" className="font-semibold text-[#007a95] underline underline-offset-2">
-                        {config.brand}&apos;s promotion terms
-                      </a>
-                    </p>
-                  )}
+                  <p className="mt-1.5 text-[12px] font-medium text-[#56504a]">
+                    {verifiedStamp(config.brand, config.offerCheckedOn)}
+                    {/* Only the muted link here; the full terms sentence sits under
+                        the "offer at a glance" table below (1 Oct 2026). */}
+                    {config.offerTermsUrl && (
+                      <>
+                        {" · "}
+                        <TermsApplyLink href={config.offerTermsUrl} />
+                      </>
+                    )}
+                  </p>
                 </div>
                 </div>
                 <div className="mt-5 [&>a]:w-full sm:[&>a]:w-auto">{cta(config.ctas.primary, "hero", "lg")}</div>
@@ -248,6 +251,14 @@ export default function PremiumAffiliateLanding({ config }: { config: AffiliateP
                 caption={`${config.brand} discount code and current offer, verified`}
               />
             </div>
+            {/* The full terms live here, below the hero, rather than between the
+                offer and its button (1 Oct 2026). */}
+            {config.offerTermsUrl && (
+              <p className="mt-3 text-[13px] leading-relaxed text-[#56504a]">
+                <span className="font-semibold text-[#14120f]">Offer terms.</span>{" "}
+                <TermsSentence sentence={config.offerTerms ?? ""} brand={config.brand} href={config.offerTermsUrl} />
+              </p>
+            )}
           </section>
         )}
 
@@ -397,11 +408,8 @@ export default function PremiumAffiliateLanding({ config }: { config: AffiliateP
           </h2>
           <p className="mx-auto mt-4 max-w-md text-[15px] leading-relaxed text-white/70">{config.ctas.bottomBody}</p>
           {config.offerTermsUrl && (
-            <p className="mx-auto mt-2 max-w-md text-[13px] leading-relaxed text-white/70">
-              {config.offerTerms ? `${config.offerTerms} ` : ""}
-              <a href={config.offerTermsUrl} target="_blank" rel="nofollow noopener" className="font-semibold text-white underline underline-offset-2">
-                {config.brand}&apos;s promotion terms
-              </a>
+            <p className="mx-auto mt-2 max-w-md">
+              <TermsApplyLink href={config.offerTermsUrl} tone="dark" />
             </p>
           )}
           <div className="mt-8 flex justify-center">
@@ -414,7 +422,7 @@ export default function PremiumAffiliateLanding({ config }: { config: AffiliateP
         </section>
       </main>
 
-      <StickyCta href={url} product={config.brand} label={config.offer ? "Claim offer" : "Get started"} offer={config.offer} termsHref={config.offerTermsUrl} />
+      <StickyCta href={url} product={config.brand} label={config.offer ? "Claim offer" : "Get started"} offer={config.offer} />
     </ConsumerShell>
   );
 }

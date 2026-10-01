@@ -3,7 +3,7 @@
 // efficacy promises, states info-only + practitioner-decided suitability, and discloses
 // the affiliate links. Static content only (no user input interpolated).
 
-import { MOSHY_PROMO_TERMS_URL, REFERRAL120_TERMS } from "@/lib/offers";
+import { MOSHY_TERMS_URL, REFERRAL120_TERMS } from "@/lib/offers";
 
 const GREEN = "#0a7c42";
 const INK = "#10251b";
@@ -40,7 +40,7 @@ export function buildWeightLossGuideEmail(): string {
             ${optionRow(
               "1. Moshy: an all-inclusive online program",
               "Best if you want one fee with coaching built in",
-              `You complete an online questionnaire, then a consult by phone or video with a registered practitioner, who decides whether any treatment is appropriate. The fee is all-inclusive, with in-app coaching, dietitian meal plans and a community. Moshy describes itself as an online women's health clinic and takes anyone a practitioner assesses as suitable. New customers get $120 off their first order with REFERRAL120 through our link. ${REFERRAL120_TERMS} <a href="${MOSHY_PROMO_TERMS_URL}" style="color:${GREEN};">Read Moshy's promotion terms</a> before you start.`,
+              `You complete an online questionnaire, then a consult by phone or video with a registered practitioner, who decides whether any treatment is appropriate. The fee is all-inclusive, with in-app coaching, dietitian meal plans and a community. Moshy describes itself as an online women's health clinic and takes anyone a practitioner assesses as suitable. New customers get $120 off their first order with REFERRAL120 through our link. ${REFERRAL120_TERMS} <a href="${MOSHY_TERMS_URL}" style="color:${GREEN};">Read Moshy's terms</a> before you start.`,
               { label: "See how Moshy works", href: utm("/moshy", "wl_guide_moshy") },
             )}
             ${optionRow(

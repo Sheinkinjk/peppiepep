@@ -8,7 +8,8 @@ import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
 import FactHistory from "@/components/facts/FactHistory";
 import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
-import { MOSHY_PROMO_TERMS_URL } from "@/lib/offers";
+import { MOSHY_TERMS_URL } from "@/lib/offers";
+import TermsApplyLink, { OfferTermsNote } from "@/components/consumer/TermsApplyLink";
 
 // ── Money CTA (tracked: rel=sponsored is picked up by AffiliateClickTracker) ──
 // Three placements plus the mobile sticky bar: hero, at-a-glance card, closing band.
@@ -108,8 +109,9 @@ export default function MoshyLanding() {
 
             <AffiliateDisclosure compact partners={["Moshy"]} className="mt-5 max-w-xl" />
 
-            <div className="mt-6">
+            <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2">
               <MoshyCTA size="lg" loc="hero" />
+              <TermsApplyLink href={MOSHY_TERMS_URL} />
             </div>
           </div>
 
@@ -128,7 +130,9 @@ export default function MoshyLanding() {
               <div className="mt-5">
                 <MoshyCTA block loc="glance-card" />
               </div>
-              <p className="mt-3 text-center text-[11px] text-[#56504a]">Opens getmoshy.com.au · AU only</p>
+              <p className="mt-3 text-center text-[11px] text-[#56504a]">
+                Opens getmoshy.com.au · AU only · <TermsApplyLink href={MOSHY_TERMS_URL} className="!text-[11px]" />
+              </p>
             </div>
           </aside>
         </section>
@@ -156,13 +160,13 @@ export default function MoshyLanding() {
             <section id="code" className="scroll-mt-24">
               <h2 className={H2}>What is the current Moshy discount code?</h2>
               <CodeAnswer code="REFERRAL120" className="mt-5">
-                REFERRAL120 takes $120 off a new customer&apos;s first order on the Moshy weight programs its
-                promotion terms list as eligible, with a 3-month minimum commitment.
+                REFERRAL120 takes $120 off a new customer&apos;s first order on eligible Moshy weight
+                programs, with a 3-month minimum commitment.
               </CodeAnswer>
               <ul className="mt-5 space-y-2 text-[15px] leading-relaxed text-[#56504a]">
                 {[
                   "New customers only, one use per customer",
-                  "Applies to the Moshy weight programs its promotion terms list as eligible",
+                  "Applies to eligible Moshy weight programs",
                   "Minimum commitment period of 3 months",
                   "Cannot be combined with any other promotion",
                   "Our link opens Moshy's sign-up page with the code shown; if it is not already applied at checkout, enter REFERRAL120",
@@ -173,12 +177,8 @@ export default function MoshyLanding() {
                   </li>
                 ))}
               </ul>
-              <p className="mt-4 text-[15px] leading-relaxed text-[#56504a]">
-                Read{" "}
-                <a href={MOSHY_PROMO_TERMS_URL} target="_blank" rel="noopener noreferrer" className="font-semibold text-[#00748e] underline underline-offset-2">
-                  Moshy&apos;s promotion terms
-                </a>{" "}
-                before you start.
+              <p className="mt-3">
+                <TermsApplyLink href={MOSHY_TERMS_URL} />
               </p>
             </section>
 
@@ -279,6 +279,9 @@ export default function MoshyLanding() {
                   </details>
                 ))}
               </div>
+              {/* The full terms, once, near the foot (1 Oct 2026); beside the code and
+                  the buttons there is only the muted "T&Cs apply" link. */}
+              <OfferTermsNote brand="Moshy" className="mt-6" />
             </section>
           </article>
         </div>
@@ -289,11 +292,10 @@ export default function MoshyLanding() {
             Start with Moshy, $120 off your first order
           </h2>
           <p className="mx-auto mt-4 max-w-md text-[15px] leading-relaxed text-white/70">
-            REFERRAL120 through our link, for new customers with a 3-month minimum commitment, under{" "}
-            <a href={MOSHY_PROMO_TERMS_URL} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-white">
-              Moshy&apos;s promotion terms
-            </a>
-            .
+            REFERRAL120 through our link, for new customers with a 3-month minimum commitment.
+          </p>
+          <p className="mx-auto mt-2 max-w-md">
+            <TermsApplyLink href={MOSHY_TERMS_URL} tone="dark" />
           </p>
           <div className="mt-8 flex justify-center">
             <a href={MOSHY_URL} target="_blank" rel="nofollow sponsored" data-cta="final-band" className="nw-btn justify-center !bg-white !text-[#00748e] px-8 py-4 text-base hover:!bg-[#e4f2f5]">

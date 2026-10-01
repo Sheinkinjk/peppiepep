@@ -7,7 +7,8 @@ import PathwayQuiz from "@/components/consumer/PathwayQuiz";
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, SCHEMA_AUTHOR, SCHEMA_PUBLISHER } from "@/lib/seo";
 import { MOSHY_URL, JUNIPER_URL } from "@/lib/affiliate-links";
 import OfferSchema from "@/components/offers/OfferSchema";
-import { MOSHY_PROMO_TERMS_URL } from "@/lib/offers";
+import { MOSHY_TERMS_URL } from "@/lib/offers";
+import TermsApplyLink, { OfferTermsNote } from "@/components/consumer/TermsApplyLink";
 
 import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 import { EdgeObject } from "@/components/brand/EdgeObject";
@@ -247,11 +248,7 @@ export default function WeightLossHubPage() {
             <Link href="/best-weight-loss-telehealth-australia#inclusions" className="font-semibold text-[#007a95] hover:underline">
               What each includes, row by row
             </Link>
-            . Moshy&apos;s REFERRAL120 is one use per new customer and carries a 3-month minimum commitment under{" "}
-            <a href={MOSHY_PROMO_TERMS_URL} target="_blank" rel="noopener noreferrer" className="font-semibold text-[#007a95] hover:underline">
-              Moshy&apos;s promotion terms
-            </a>
-            .
+            . Moshy&apos;s REFERRAL120 is one use per new customer and carries a 3-month minimum commitment (<TermsApplyLink href={MOSHY_TERMS_URL} />).
           </p>
           {JUNIPER_REQUIRED ? (
             <p className="mt-4 max-w-3xl rounded-xl border border-[#ded8cd] bg-[#f7f4ee] px-4 py-3 text-[13px] leading-relaxed text-[#56504a]">
@@ -351,6 +348,8 @@ export default function WeightLossHubPage() {
               </details>
             ))}
           </div>
+          {/* The full offer terms; beside the code there is only "T&Cs apply" (1 Oct 2026). */}
+          <OfferTermsNote brand="Moshy" className="mt-6 max-w-3xl" />
           <p className="mt-8 max-w-3xl rounded-xl border border-[#ded8cd] bg-[#f7f4ee] px-5 py-4 text-xs leading-relaxed text-[#56504a]">
             <span className="font-semibold text-[#14120f]">Information only.</span> Nothing in this hub is medical advice
             or a recommendation of any treatment. Any treatment is decided by a registered practitioner after an
