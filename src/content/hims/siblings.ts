@@ -1,6 +1,6 @@
-// How each Hims page is linked from the other six (1 Oct 2026).
+// How each Hims page is linked from the other four (1 Oct 2026).
 //
-// The renderer adds every sibling to every page's "Related reading", so the seven
+// The renderer adds every sibling to every page's "Related reading", so the five
 // pages link to each other and the links are reciprocal by construction. A page's
 // own `related` field now holds only links outside the set.
 //

@@ -17,7 +17,7 @@ import { SCHEMA_AUTHOR, SCHEMA_PUBLISHER } from "@/lib/seo";
 import StickyCta from "@/components/consumer/StickyCta";
 import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 import { CopyCode } from "./CopyCode";
-import { HimsPair } from "./HimsPair";
+import { HimsPair, PendingPanel } from "./HimsPair";
 import { InclusionsTable } from "./InclusionsTable";
 import { ProgramTabs } from "./ProgramTabs";
 import { CtaLink, Disclosure, Flag } from "./ui";
@@ -40,6 +40,27 @@ type Ctx = { preview: boolean; linkSuffix: string; vertical: Vertical; moshLink:
 
 const H2_CLASS = "scroll-mt-24 text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl";
 const BODY = "text-[15.5px] leading-relaxed text-[#56504a]";
+
+/**
+ * The lead paragraph. The Refer Labs offer sentence sits at its end, inside the same
+ * <p>, so the answer slot holds; in preview it carries the amber flag while Hims
+ * has not confirmed the offer.
+ */
+function Lead({ content, preview, className }: { content: HimsPageContent; preview: boolean; className: string }) {
+  const offer = OFFERS[content.vertical];
+  return (
+    <p className={className}>
+      {content.standfirst}
+      {content.standfirstOffer ? (
+        <>
+          {" "}
+          <span data-offer-sentence>{content.standfirstOffer}</span>
+          <Flag show={preview && offer.headlineIsPlaceholder}>Offer to confirm</Flag>
+        </>
+      ) : null}
+    </p>
+  );
+}
 
 const isHimsSlug = (href: string) => (HIMS_SLUG_LIST as readonly string[]).includes(href.replace(/^\//, ""));
 
@@ -266,7 +287,7 @@ export function HimsPage({ content, preview, linkSuffix }: { content: HimsPageCo
           <h1 className="mt-3 max-w-3xl text-3xl font-extrabold leading-[1.08] tracking-[-0.02em] text-[#14120f] sm:text-4xl lg:text-[2.7rem]">
             {content.h1}
           </h1>
-          <p className="mt-5 max-w-2xl text-base leading-relaxed text-[#56504a] sm:text-lg">{content.standfirst}</p>
+          <Lead content={content} preview={preview} className="mt-5 max-w-2xl text-base leading-relaxed text-[#56504a] sm:text-lg" />
           {byline}
 
           <div className="mt-5 max-w-2xl space-y-2">
@@ -309,9 +330,6 @@ export function HimsPage({ content, preview, linkSuffix }: { content: HimsPageCo
 
           <section className="mt-14">
             <h2 className="text-xl font-bold text-[#14120f]">Ready to start?</h2>
-            <p className="mt-2 max-w-2xl text-[15px] leading-relaxed text-[#56504a]">
-              Each button goes to the provider&rsquo;s own site. What each card says about a code applies there.
-            </p>
             <div className="mt-5">
               <HimsPair
                 hims={content.pair.hims}
@@ -359,7 +377,7 @@ export function HimsPage({ content, preview, linkSuffix }: { content: HimsPageCo
             <HimsLogo />
             <p className="nw-kicker mt-5">{content.eyebrow}</p>
             <h1 className="mt-3 text-4xl font-extrabold leading-[1.05] tracking-[-0.02em] text-[#14120f] sm:text-5xl lg:text-[3.1rem]">{content.h1}</h1>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-[#56504a]">{content.standfirst}</p>
+            <Lead content={content} preview={preview} className="mt-6 max-w-xl text-lg leading-relaxed text-[#56504a]" />
             {byline}
 
             <div className="mt-6 max-w-xl">
@@ -490,8 +508,8 @@ export function HimsPage({ content, preview, linkSuffix }: { content: HimsPageCo
             change, so confirm them with Hims before you pay.
           </p>
           <p>
-            Program details on this page are taken from Hims&rsquo; public website and are Hims&rsquo; to confirm. For anything about your own
-            situation, ask the practitioner on the consult or contact Hims directly.
+            Program details are taken from Hims&rsquo; public website and are Hims&rsquo; to confirm. For anything about your own situation,
+            contact Hims.
           </p>
           <p>Hims is a trademark of Hims, Inc. Refer Labs is independent and is not owned by or part of Hims or any other provider.</p>
         </footer>
@@ -634,29 +652,6 @@ function BlockView({ block, ctx, kind }: { block: Block; ctx: Ctx; kind: "review
         </section>
       );
 
-    case "choose":
-      return (
-        <section className="grid gap-4 sm:grid-cols-2">
-          {(
-            [
-              ["Hims", block.hims],
-              [MOSH[ctx.moshLink].name, block.mosh],
-            ] as const
-          ).map(([name, items]) => (
-            <div key={name} className="rounded-2xl border border-[#ded8cd] bg-[#f7f4ee] p-6">
-              <h2 id={`${block.id}-${name.toLowerCase()}`} className="text-lg font-bold text-[#14120f]">
-                Choose {name} if
-              </h2>
-              <ul className="mt-3 space-y-2 text-[15px] leading-relaxed text-[#56504a]">
-                {items.map((s) => (
-                  <li key={s}>{s}</li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </section>
-      );
-
     case "offer": {
       const o = OFFERS[block.vertical];
       if (kind === "versus") {
@@ -679,24 +674,19 @@ function BlockView({ block, ctx, kind }: { block: Block; ctx: Ctx; kind: "review
                   ))}
                 </ul>
               </div>
-              <div className="rounded-2xl border border-[#ded8cd] bg-white p-6 text-sm leading-relaxed text-[#56504a]">
-                <h3 className="text-base font-bold text-[#14120f]">{m.name}</h3>
-                {m.code ? (
-                  <>
-                    <p className="mt-2 text-[#14120f]">{m.offerText}</p>
-                    <ul className="mt-3 list-disc space-y-1 pl-5">
-                      {(m.terms ?? []).map((t) => (
-                        <li key={t}>{t}</li>
-                      ))}
-                    </ul>
-                  </>
-                ) : (
-                  <p className="mt-2">
-                    {m.noOfferText}
-                    <Flag show={ctx.preview && !!m.pendingFlag}>{m.pendingFlag}</Flag>
-                  </p>
-                )}
-              </div>
+              {m.placeholder ? (
+                <PendingPanel name={m.name} logo={m.logo} text={m.placeholder} />
+              ) : (
+                <div className="rounded-2xl border border-[#ded8cd] bg-white p-6 text-sm leading-relaxed text-[#56504a]">
+                  <h3 className="text-base font-bold text-[#14120f]">{m.name}</h3>
+                  <p className="mt-2 text-[#14120f]">{m.offerText}</p>
+                  <ul className="mt-3 list-disc space-y-1 pl-5">
+                    {(m.terms ?? []).map((t) => (
+                      <li key={t}>{t}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </div>
           </section>
         );
@@ -792,13 +782,13 @@ function OverviewView({
   const hims = OFFERS.hair;
 
   // The codes, derived from config so the sentence cannot drift from the cards.
-  const moshCodes = content.overview!.programs.map((p) => ({ program: p.tab, side: MOSH[p.vertical] }));
+  const moshCodes = content.overview!.programs.map((p) => ({ program: p.tab, vertical: p.vertical, side: MOSH[p.vertical] }));
   const coded = moshCodes.filter((c) => c.side.code);
   const pending = moshCodes.filter((c) => !c.side.code);
   const codesLead =
     `Refer Labs has one Hims code, ${hims.code}, which applies to all three programs: ${hims.headline.charAt(0).toLowerCase()}${hims.headline.slice(1)}. ` +
     `On the Mosh side each program has its own: ${coded.map((c) => `${c.side.code} for ${c.side.name} ${c.program.toLowerCase()}`).join(" and ")}` +
-    (pending.length ? `. Mosh's ${pending.map((c) => c.program.toLowerCase()).join(" and ")} offer has not been supplied yet.` : ".");
+    (pending.length ? `. Mosh's ${pending.map((c) => PROGRAM_LABEL[c.vertical]).join(" and ")} code will be added once Mosh supplies it.` : ".");
 
   const panels = overview.programs.map((p) => (
     <section key={p.anchor} aria-labelledby={`${p.anchor}-q`}>
@@ -844,7 +834,7 @@ function OverviewView({
         <h1 className="mt-3 max-w-3xl text-[2rem] font-extrabold leading-[1.08] tracking-[-0.02em] text-[#14120f] sm:text-4xl lg:text-[2.7rem]">
           {content.h1}
         </h1>
-        <p className="mt-5 max-w-2xl text-base leading-relaxed text-[#56504a] sm:text-lg">{content.standfirst}</p>
+        <Lead content={content} preview={preview} className="mt-5 max-w-2xl text-base leading-relaxed text-[#56504a] sm:text-lg" />
         <div className="mt-5 max-w-2xl space-y-2">
           <AffiliateDisclosure compact partners={partners} />
           <HimsDisclosure preview={preview} />
@@ -889,7 +879,6 @@ function OverviewView({
       {/* Program selector: all three panels are in the HTML. */}
       <section aria-label={overview.selectorHeading} className="mt-14 rounded-3xl border border-[#ded8cd] bg-[#f7f4ee] px-4 py-6 sm:px-8 sm:py-8">
         <p className="nw-kicker">{overview.selectorHeading}</p>
-        <p className="mt-2 max-w-2xl text-[15px] leading-relaxed text-[#56504a]">{overview.selectorIntro}</p>
         <div className="mt-5">
           <ProgramTabs label="Choose a program" tabs={overview.programs.map((p) => ({ id: p.anchor, label: p.tab }))} panels={panels} />
         </div>
@@ -933,10 +922,13 @@ function OverviewView({
                     {c.program}
                     <span className="text-[#56504a]"> ({c.side.name})</span>
                   </dt>
-                  <dd className={c.side.code ? "font-mono font-bold tracking-[0.04em] text-[#14120f]" : "text-[#56504a]"}>
-                    {c.side.code ?? "No code yet"}
-                    <Flag show={preview && !!c.side.pendingFlag}>{c.side.pendingFlag}</Flag>
-                  </dd>
+                  {c.side.placeholder ? (
+                    <dd data-placeholder="mosh-ed" className="rounded-md border border-dashed border-[#d3ccbf] bg-[#f7f4ee] px-2.5 py-0.5 italic text-[#8a8379]">
+                      To be added
+                    </dd>
+                  ) : (
+                    <dd className="font-mono font-bold tracking-[0.04em] text-[#14120f]">{c.side.code}</dd>
+                  )}
                 </div>
               ))}
             </dl>
@@ -977,8 +969,8 @@ function OverviewView({
         <AffiliateDisclosure partners={partners} earnsFromAll />
         <Disclosure text={DISCLOSURE} />
         <p>
-          Facts, offers and terms were read on {FACTS_CHECKED_ON} and can change, so confirm them with each business before you pay. Mosh&rsquo;s
-          ED button goes to its public page and is not an affiliate link. Hims is a trademark of Hims, Inc. Refer Labs is independent and is
+          Facts, offers and terms were read on {FACTS_CHECKED_ON} and can change, so confirm them with each business before you pay. Hims is a
+          trademark of Hims, Inc. Refer Labs is independent and is
           not owned by or part of Hims, Mosh or any other provider named here.
         </p>
       </footer>

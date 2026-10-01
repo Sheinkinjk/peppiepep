@@ -9,7 +9,7 @@
  *  - no treatment, shipping or supply wording, no plan names that are efficacy
  *    words (TGA service wording, 30 Sep 2026);
  *  - a fact that could not be read today is dropped. A cell that must exist but
- *    cannot be filled yet is `null`, which renders "Awaiting Mosh" with a flag.
+ *    cannot be filled yet is `null`, which renders a muted "To be added".
  *
  * Columns are alphabetical (Hims, Mosh) and there is no winner column.
  */
@@ -23,7 +23,7 @@ export type InclusionRow = {
   mosh: string | null;
   /** Preview flag beside the Hims cell (a placeholder Hims has not confirmed). */
   himsFlag?: string;
-  /** Preview flag beside the Mosh cell. A null Mosh cell is always flagged "Awaiting Mosh". */
+  /** Preview flag beside the Mosh cell. A null Mosh cell renders a muted "To be added". */
   moshFlag?: string;
 };
 
@@ -171,21 +171,20 @@ export const INCLUSIONS: Record<InclusionsKey, InclusionsTableData> = {
     sources: { hims: [HIMS_SRC.hair, HIMS_SRC.faq], mosh: [MOSH_SRC.hair, MOSH_SRC.referlabs, MOSH_SRC.pricing, MOSH_SRC.home] },
   },
 
+  // PLACEHOLDER (Jarred, 1 Oct 2026): Mosh has not supplied its ED details, so every
+  // Mosh cell is null and renders "To be added". Fill the `mosh` cells and
+  // `sources.mosh` when Mosh supplies them (see the note on MOSH.ed in config.ts).
   ed: {
     rows: [
-      { label: "How you start", hims: HIMS_START, mosh: "Short online questionnaire, then a private consultation with a practitioner" },
-      {
-        label: "Consultation format",
-        hims: `Phone. ${HIMS_HOURS}`,
-        mosh: "Text messaging, with phone and video also available. Mosh says you never need to show your face",
-      },
-      { label: "Practitioners", hims: HIMS_PRACTITIONERS, mosh: MOSH_PRACTITIONERS },
+      { label: "How you start", hims: HIMS_START, mosh: null },
+      { label: "Consultation format", hims: `Phone. ${HIMS_HOURS}`, mosh: null },
+      { label: "Practitioners", hims: HIMS_PRACTITIONERS, mosh: null },
       { label: "Consult fee", hims: HIMS_CONSULT_FEE, mosh: null },
-      { label: "Contract", hims: "No lock-in contracts; pause or cancel at any time", mosh: "No lock-in contracts; cancel anytime (Mosh home page)" },
-      { label: "Support", hims: "24-hour Care Team of nurses, pharmacists and practitioners", mosh: "Message your practitioner by text; unlimited medical follow-ups (Mosh home page)" },
+      { label: "Contract", hims: "No lock-in contracts; pause or cancel at any time", mosh: null },
+      { label: "Support", hims: "24-hour Care Team of nurses, pharmacists and practitioners", mosh: null },
       { label: "Medicare", hims: HIMS_MEDICARE, mosh: null },
       { label: "Refer Labs code", hims: HIMS_OFFER_CELL, himsFlag: HIMS_OFFER_FLAG, mosh: null },
     ],
-    sources: { hims: [HIMS_SRC.ed, HIMS_SRC.faq], mosh: [MOSH_SRC.ed, MOSH_SRC.home] },
+    sources: { hims: [HIMS_SRC.ed, HIMS_SRC.faq], mosh: [] },
   },
 };

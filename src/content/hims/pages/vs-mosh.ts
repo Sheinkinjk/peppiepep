@@ -57,9 +57,8 @@ export const vsMosh: HimsPageContent = {
         mosh: "180 days on quarterly hair programs. Moshy: 30 days on weight programs. Under each brand's terms.",
       },
     ],
-    profilesNote: `Read off each business's own site on ${FACTS_CHECKED_ON}; ownership also from the 2 June 2026 acquisition release. Sources are listed at the foot of the page.`,
+    profilesNote: `Read off each business's own site on ${FACTS_CHECKED_ON}; ownership also from the 2 June 2026 acquisition release.`,
     selectorHeading: "Compare by program",
-    selectorIntro: "Pick a program to see how the two compare on it. Each panel has its own table and links.",
     programs: [
       {
         vertical: "hair",
@@ -80,7 +79,7 @@ export const vsMosh: HimsPageContent = {
         tab: "Weight loss",
         question: "Hims or Moshy for weight loss?",
         summary:
-          "Mosh runs weight loss through its partner brand Moshy. Hims' advertised starting offer is a twelve-month pay-upfront option backed by a 24/7 Care Team; Moshy's all-inclusive fee covers in-app coaching and dietitian meal plans, and its Refer Labs offer has a three-month minimum. Each gives 30 days to ask for your money back, under its own terms.",
+          "Hims' advertised starting offer is a twelve-month pay-upfront option backed by a 24/7 Care Team; Moshy's all-inclusive fee covers in-app coaching and dietitian meal plans, and its Refer Labs offer has a three-month minimum. Each gives 30 days to ask for your money back, under its own terms.",
         rows: ["Who it is for", "How you start", "Commitment", "Money-back", "Coaching and nutrition"],
         links: [
           { label: "Hims weight loss", href: "/hims" },
@@ -93,9 +92,9 @@ export const vsMosh: HimsPageContent = {
         tab: "Erectile dysfunction",
         question: "Hims or Mosh for erectile dysfunction?",
         summary:
-          "The practical difference is how you talk to the practitioner. Hims books a phone call, any day from 7am to 11pm AEST; Mosh lets you message by text, with phone and video available, and says you never need to show your face. Both use AHPRA-registered practitioners in Australia, and neither has a lock-in contract.",
+          "Hims books a phone call with an AHPRA-registered practitioner in Australia, any day from 7am to 11pm AEST, and has no lock-in contract. Mosh's ED details are still to be added.",
         rows: ["How you start", "Consultation format", "Practitioners", "Contract", "Support"],
-        links: [{ label: "See the full ED comparison", href: "/ed" }],
+        links: [{ label: "Online ED consultations: Hims vs Mosh", href: "/ed" }],
       },
     ],
   },
@@ -128,7 +127,7 @@ export const vsMosh: HimsPageContent = {
         },
         {
           q: "Can I move from Mosh to Hims, or from Hims to Mosh?",
-          a: "Yes. You join the other service as a new patient, starting with its quiz and consultation. Tell the new practitioner about any plan you are on so they can assess you properly.",
+          a: "Yes. You join the other service as a new patient, starting with its quiz and consultation. Hims' new-patient offer excludes current and previous Hims or Pilot patients.",
         },
       ],
     },
@@ -144,7 +143,6 @@ export const vsMosh: HimsPageContent = {
     SRC.moshHome,
     SRC.moshPricing,
     SRC.moshHair,
-    SRC.moshEd,
     SRC.moshReferLabs,
     SRC.moshyHome,
     SRC.moshyWeight,

@@ -33,13 +33,14 @@ export type Block =
   | { type: "offer"; id: string; vertical: Vertical }
   /** Versus pages: the dated "What does each include?" table. */
   | { type: "inclusions"; id: string; heading: string; table: InclusionsKey }
-  /** Versus pages: balanced "Choose Hims if" / "Choose Mosh if" lists. Not used on /hims-vs-mosh. */
-  | { type: "choose"; id: string; hims: string[]; mosh: string[] }
   | { type: "faq"; id: string; heading: string; items: { q: string; a: string }[] };
 
 export type Source = { label: string; url: string };
 
-/** One side of a versus card. Same fields for both providers. */
+/**
+ * One side of a versus card. Same fields for both providers. A side whose MOSH
+ * entry carries `placeholder` renders as a placeholder card and ignores these.
+ */
 export type PairSide = { bestIf: string; points: string[] };
 
 /** One fact row in the "About the two businesses" profiles. Same label for both sides. */
@@ -67,7 +68,6 @@ export type OverviewContent = {
   /** What the profile facts were read from, and when. */
   profilesNote: string;
   selectorHeading: string;
-  selectorIntro: string;
   programs: ProgramPanel[];
 };
 
@@ -89,6 +89,12 @@ export type HimsPageContent = {
   h1: string;
   /** The first paragraph after the H1. It answers the page's query; nothing sits above it. */
   standfirst: string;
+  /**
+   * The Refer Labs offer sentence, rendered at the end of the same lead paragraph.
+   * Kept separate so the renderer can flag it "Offer to confirm" in preview while
+   * Hims has not confirmed the offer (1 Oct 2026). Not used on comparison pages.
+   */
+  standfirstOffer?: string;
   /** The hub this page belongs to, for the breadcrumb. */
   hub: { label: string; href: string };
   /** The buyer's question, verbatim, asked as an H2. Review and versus pages. */
@@ -103,7 +109,7 @@ export type HimsPageContent = {
   sources: Source[];
   /**
    * Links beyond the Hims set. The other Hims pages are added by the renderer from
-   * src/content/hims/siblings.ts, so every page links to all six siblings and the
+   * src/content/hims/siblings.ts, so every page links to all four siblings and the
    * links are reciprocal by construction.
    */
   related: { label: string; href: string; desc?: string }[];

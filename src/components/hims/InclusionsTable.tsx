@@ -6,7 +6,8 @@ import { Flag } from "./ui";
  * The dated "What does each include?" table for Hims and Mosh (30 Sep 2026), on
  * the pattern of src/components/consumer/WeightInclusionsTable.tsx. Rows come from
  * src/content/hims/inclusions.ts. Columns are alphabetical and there is no winner
- * column. A Mosh cell with no verified fact renders "Awaiting Mosh" with a flag.
+ * column. A Mosh cell with no fact yet (null) renders a muted "To be added", and a
+ * column with no facts at all (Mosh ED, 1 Oct 2026) is shaded as a placeholder.
  */
 export function InclusionsTable({
   table,
@@ -32,6 +33,8 @@ export function InclusionsTable({
     : data.rows;
   // The weight table compares Moshy, Mosh's partner brand for weight (Jarred, 30 Sep 2026).
   const other = table === "weight" ? MOSH.weight.name : "Mosh";
+  const otherPending = shown.every((r) => r.mosh === null);
+  const pendingCell = "bg-[#f7f4ee] text-[#8a8379]";
   return (
     <div>
       <div className="overflow-x-auto rounded-xl border border-[#ded8cd] bg-white">
@@ -43,7 +46,7 @@ export function InclusionsTable({
                 <span className="sr-only">Feature</span>
               </th>
               <th scope="col" className="px-4 py-3 font-black text-[#14120f]">Hims</th>
-              <th scope="col" className="px-4 py-3 font-black text-[#14120f]">{other}</th>
+              <th scope="col" className={`px-4 py-3 font-black ${otherPending ? "text-[#8a8379]" : "text-[#14120f]"}`}>{other}</th>
             </tr>
           </thead>
           <tbody>
@@ -54,9 +57,9 @@ export function InclusionsTable({
                   {r.hims}
                   <Flag show={preview && !!r.himsFlag}>{r.himsFlag}</Flag>
                 </td>
-                <td className="px-4 py-3 text-[#14120f]">
+                <td className={`px-4 py-3 ${r.mosh === null ? pendingCell : "text-[#14120f]"}`}>
                   {r.mosh === null ? (
-                    preview ? <Flag show>Awaiting Mosh</Flag> : "Awaiting Mosh"
+                    <span className="italic">To be added</span>
                   ) : (
                     <>
                       {r.mosh}
@@ -80,6 +83,7 @@ export function InclusionsTable({
           </span>
         ))}
         . {other}:{" "}
+        {data.sources.mosh.length === 0 ? "details to be added" : null}
         {data.sources.mosh.map((s, i) => (
           <span key={s.url}>
             {i > 0 ? ", " : ""}

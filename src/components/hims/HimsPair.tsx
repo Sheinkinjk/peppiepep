@@ -8,9 +8,51 @@ import { Flag } from "./ui";
  * Hims and Mosh side by side, on the pattern of
  * src/components/consumer/ProviderPair.tsx (30 Sep 2026): same card, same fields,
  * same button for both, alphabetical order. It is a separate component only
- * because the preview needs amber flags inside the offer box, and a Mosh card can
- * carry a plain (non-affiliate) link where no Mosh link exists for the vertical.
+ * because the preview needs amber flags inside the offer box, and a Mosh side whose
+ * details have not been supplied (MOSH.ed, 1 Oct 2026) renders as a placeholder.
  */
+
+/**
+ * A provider side that has not been supplied yet: a dashed, muted panel the same
+ * size as its neighbour, with the provider's name and one line. No button, no link.
+ * Used for the Mosh ED card, codes panel and codes row until Mosh supplies them.
+ */
+export function PendingPanel({
+  name,
+  logo,
+  text,
+  compact = false,
+  showLogo = true,
+}: {
+  name: string;
+  logo?: { src: string };
+  text: string;
+  compact?: boolean;
+  showLogo?: boolean;
+}) {
+  return (
+    <div
+      data-placeholder="mosh-ed"
+      className={`flex h-full flex-col rounded-2xl border-2 border-dashed border-[#d3ccbf] bg-[#f7f4ee] ${compact ? "p-5" : "p-6"}`}
+    >
+      <div className="flex items-center gap-3">
+        {showLogo && logo ? (
+          <Image src={logo.src} alt={`${name} logo`} width={48} height={48} className="h-12 w-12 rounded-xl object-cover opacity-50 grayscale" />
+        ) : null}
+        <h3 className="text-lg font-bold text-[#8a8379]">{name}</h3>
+      </div>
+      <p className="mt-4 text-[15px] leading-relaxed text-[#56504a]">{text}</p>
+      <div className={compact ? "mt-auto pt-4" : "mt-auto pt-5"}>
+        <span
+          aria-disabled="true"
+          className="flex w-full items-center justify-center rounded-full border border-dashed border-[#d3ccbf] px-6 py-3 text-[15px] font-semibold text-[#a39b8f]"
+        >
+          Details to come
+        </span>
+      </div>
+    </div>
+  );
+}
 export function HimsPair({
   hims,
   mosh,
@@ -49,16 +91,8 @@ export function HimsPair({
       logo: { src: m.logo.src, w: 48, h: 48, className: "h-12 w-12 rounded-xl object-cover" },
       side: mosh,
       offerBox: m.code ? (
-        <p className="mb-4 rounded-xl bg-[#e4f2f5] px-4 py-3 text-sm leading-snug text-[#14120f]">
-          {m.offerText}
-          <Flag show={preview && !!m.pendingFlag}>{m.pendingFlag}</Flag>
-        </p>
-      ) : (
-        <p className="mb-4 rounded-xl bg-[#f7f4ee] px-4 py-3 text-sm leading-snug text-[#56504a]">
-          {m.noOfferText}
-          <Flag show={preview && !!m.pendingFlag}>{m.pendingFlag}</Flag>
-        </p>
-      ),
+        <p className="mb-4 rounded-xl bg-[#e4f2f5] px-4 py-3 text-sm leading-snug text-[#14120f]">{m.offerText}</p>
+      ) : null,
       href: m.href,
       cta: m.ctaLabel,
       sponsored: m.sponsored,
@@ -67,7 +101,10 @@ export function HimsPair({
 
   return (
     <div className="grid gap-4 sm:grid-cols-2">
-      {cards.map((c) => (
+      {cards.map((c, i) =>
+        i === 1 && m.placeholder ? (
+          <PendingPanel key={c.name} name={m.name} logo={m.logo} text={m.placeholder} compact={!c.side} />
+        ) : (
         <div key={c.name} className={`nw-card flex flex-col rounded-2xl ${c.side ? "p-6" : "p-5"}`}>
           <div className="flex items-center gap-3">
             <Image src={c.logo.src} alt={`${c.name} logo`} width={c.logo.w} height={c.logo.h} className={c.logo.className} />
@@ -100,7 +137,8 @@ export function HimsPair({
             </a>
           </div>
         </div>
-      ))}
+        ),
+      )}
     </div>
   );
 }

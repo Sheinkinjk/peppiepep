@@ -81,9 +81,11 @@ export const OFFERS: Record<Vertical, Offer> = {
 
 /**
  * Mosh, per vertical. Only hair has a Refer Labs link and code (REFERAL55, the
- * hair offer on /moshhair). Weight is Moshy (the /moshy link and REFERRAL120). There is no Mosh ED link yet, so that
- * buttons go to Mosh's public page with plain rel and the card says so. Never
- * send an ED or weight reader through the hair link.
+ * hair offer on /moshhair). Weight is Moshy (the /moshy link and REFERRAL120).
+ * ED is a placeholder until Mosh supplies its ED details and offer (Jarred,
+ * 1 Oct 2026): every Mosh ED card, table cell and code row renders as a muted
+ * dashed placeholder with no link. Never send an ED or weight reader through the
+ * hair link.
  */
 export type MoshSide = {
   /** Brand shown on this vertical. Weight is Moshy, Mosh's partner brand (Jarred, 30 Sep 2026). */
@@ -99,10 +101,12 @@ export type MoshSide = {
   code?: string;
   /** What the code applies to, stated in full wherever the code appears. */
   offerText?: string;
-  /** Shown when there is no Refer Labs offer for this vertical. */
-  noOfferText?: string;
-  /** Renders an amber flag in preview. */
-  pendingFlag?: string;
+  /**
+   * Set while the provider has not supplied its details for this vertical. Every
+   * card, codes panel and table column for the side then renders as a placeholder
+   * showing this line, with no button and no link.
+   */
+  placeholder?: string;
 };
 
 export const MOSH: Record<Vertical, MoshSide> = {
@@ -141,16 +145,23 @@ export const MOSH: Record<Vertical, MoshSide> = {
     offerText:
       "REFERRAL120 is a discount on a new customer's first Moshy order, with a three-month minimum commitment. Our link carries REFERRAL120; enter it at checkout if it isn't shown.",
   },
+  // PLACEHOLDER (Jarred, 1 Oct 2026): Mosh has not supplied its ED details or offer.
+  // When it does, this is a data change, not a redesign:
+  //  1. here: delete `placeholder`, set `href` (the Mosh ED tracking link from
+  //     src/lib/affiliate-links.ts), `sponsored: true`, `code`, `offerText`, `terms`
+  //     and `pageUrl`;
+  //  2. src/content/hims/inclusions.ts: fill the `mosh` cells of the `ed` table and
+  //     its `sources.mosh`;
+  //  3. src/content/hims/pages/ed-compare.ts: fill `pair.mosh`, and add the Mosh side
+  //     back to the lead, the answer and the FAQ.
   ed: {
     name: "Mosh",
     logo: { src: "/logos/mosh-tile.png", w: 64, h: 64 },
     ctaLabel: "Continue to Mosh",
-    pageUrl: "https://www.getmosh.com.au/erectile-dysfunction",
-    href: "https://www.getmosh.com.au/erectile-dysfunction",
+    pageUrl: "/mosh-review",
+    href: "",
     sponsored: false,
-    noOfferText:
-      "Mosh's ED offer for Refer Labs readers has not been supplied yet. Until it is, this button goes to Mosh's public ED page and is not an affiliate link.",
-    pendingFlag: "Awaiting Mosh's offer",
+    placeholder: "Mosh's ED details and offer will be added here once Mosh supplies them.",
   },
 };
 

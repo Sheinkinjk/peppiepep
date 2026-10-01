@@ -10,14 +10,15 @@ export const hair: HimsPageContent = {
   metaDescription:
     "Pilot's hair loss service is now Hims: a phone consultation, a 180-day money-back guarantee on every hair plan, fee-free cancelling and a Refer Labs code.",
   eyebrow: "Men's hair loss telehealth · Australia",
-  h1: "Hims hair loss Australia: the consultation, the guarantee and the code",
+  h1: "Hims hair loss in Australia, with a 180-day money-back guarantee",
   standfirst:
-    "Hims hair loss is an online service from Hims, the Australian arm of US-listed Hims & Hers Health and the brand Pilot is becoming; Hims also covers weight loss and sexual health. You start with a free two-minute quiz and a phone consultation with an Australian-registered practitioner, who decides whether any treatment is appropriate. Every hair plan carries a 180-day money-back guarantee under Hims' terms, and you can cancel without a fee before any order is processed. Prices appear after the consultation, and new patients using the Refer Labs code are not charged for the initial consultation.",
+    "Hims hair loss is an online service from Hims, the Australian arm of US-listed Hims & Hers Health and the brand Pilot is becoming; Hims also covers weight loss and sexual health. You start with a free two-minute quiz and a phone consultation with an Australian-registered practitioner, who decides whether any treatment is appropriate. Every hair plan carries a 180-day money-back guarantee under Hims' terms, and you can cancel without a fee before any order is processed. Prices appear after the consultation.",
+  standfirstOffer: "New patients using the Refer Labs code are not charged for the initial consultation.",
   hub: { label: "Hair loss", href: "/hair-loss" },
   verdictQuestion: "Is Hims hair loss treatment worth it?",
   verdict: [
-    "The case for it is time. Hair plans run for months, the 180-day guarantee covers every one of them, and cancelling before an order costs nothing.",
-    "The gap is price. Hims shows hair pricing only after the consultation. The consult fee is refunded if you decide not to go ahead, so finding out costs little.",
+    "Hair plans run for months, and Hims backs every one with a 180-day money-back guarantee and no fee for cancelling before an order.",
+    "The price is shown only after the consultation, and Hims refunds the consult fee if you don't go ahead.",
   ],
   blocks: [
     {
@@ -51,10 +52,10 @@ export const hair: HimsPageContent = {
       id: "how-it-works",
       heading: "How does Hims hair loss work?",
       steps: [
-        { title: "Take the online quiz", body: "About two minutes of questions about your hair, how long it has been changing, and your health history. Free, and it doesn't commit you to anything." },
-        { title: "Book the phone consultation", body: "Our link carries the Refer Labs code into checkout. Otherwise Hims refunds the consult fee if no suitable plan is found or you decide not to go ahead." },
-        { title: "Talk to an Australian practitioner", body: "The practitioner has read your answers before the call and decides whether any treatment is appropriate. Ask about price here, since it isn't published on the site." },
-        { title: "Decide in your profile", body: "If a plan is recommended and you want to proceed, you choose it and the order frequency in your Hims profile." },
+        { title: "Take the online quiz", body: "About two minutes of questions about your hair, how long it has been changing and your health history. There is no charge." },
+        { title: "Book the phone consultation", body: "Calls run 7am to 11pm AEST, every day of the week." },
+        { title: "Talk to an Australian practitioner", body: "The practitioner has your answers before the call and decides whether any treatment is appropriate." },
+        { title: "Choose a plan and how often it is ordered", body: "If a plan is recommended and you want to proceed, you pick it and the order frequency in your Hims profile." },
         { title: "Check in and adjust", body: "Check in with your practitioner whenever you like, and cancel before any upcoming order if you want to stop." },
       ],
     },
@@ -63,7 +64,7 @@ export const hair: HimsPageContent = {
       id: "guarantee",
       heading: "How does the Hims 180-day money-back guarantee work?",
       paragraphs: [
-        "Hims offers a 180-day money-back guarantee on all hair plans if you're not satisfied, claimed by emailing hello@hims.com.au. It sits under Hims' terms and conditions, so read those before you start and keep a note of your start date.",
+        "Hims offers a 180-day money-back guarantee on all hair plans if you're not satisfied, claimed by emailing hello@hims.com.au under Hims' terms and conditions.",
         "Cancelling is separate. You can cancel before any upcoming order is processed without a fee. The guarantee returns money already paid; cancelling stops future charges.",
       ],
     },
@@ -86,7 +87,6 @@ export const hair: HimsPageContent = {
         "You've noticed thinning or a receding hairline and want to speak to a practitioner without a clinic visit.",
         "You want a long money-back window on a plan that runs for months.",
         "You like being able to change plans through a practitioner.",
-        "You may want weight loss or sexual health support later, since Hims covers both.",
       ],
     },
 
@@ -97,7 +97,7 @@ export const hair: HimsPageContent = {
       items: [
         {
           q: "Is there a Hims discount code for hair loss?",
-          a: `Yes, two. ${OFFERS.hair.code} is the Refer Labs code: no charge for the initial consultation for a new patient, with program fees applying after that, one use, not combined with other Hims offers. Hims also shows its own new-patient hair code on its hair page, so compare the two at checkout. Our link carries the Refer Labs code; otherwise type it in. Read ${FACTS_CHECKED_ON}.`,
+          a: `${OFFERS.hair.code} is the Refer Labs code for new Hims patients: no charge for the initial consultation, with program fees after that, and one use per patient. Hims' hair page also shows a new-patient code of its own, and the two can't be combined. Read ${FACTS_CHECKED_ON}.`,
         },
         { q: "How much is Hims hair loss treatment in Australia?", a: "Hims doesn't publish hair plan prices on its hair page. You see the price after your phone consultation, and the consult fee is refunded if you decide not to go ahead." },
         { q: "Does Hims offer a money-back guarantee on hair plans?", a: "Yes. Hims offers a 180-day money-back guarantee on all hair plans if you're not satisfied, under its terms and conditions." },

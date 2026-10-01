@@ -10,14 +10,15 @@ export const weight: HimsPageContent = {
   metaDescription:
     "Hims, formerly Pilot, runs an online men's weight loss program in Australia: the phone consultation, twelve-month commitment, 30-day refund and Refer Labs code.",
   eyebrow: "Men's weight loss telehealth · Australia",
-  h1: "Hims weight loss Australia: the consultation, the commitment and the code",
+  h1: "Hims weight loss in Australia: how it starts and what it commits you to",
   standfirst:
-    "Hims is the Australian service of Hims & Hers Health, the US-listed telehealth company, and the men's health brand formerly called Pilot. It runs online consultations with Australian-registered practitioners for weight loss, hair loss and sexual health. Its weight loss program starts with a free two-minute quiz and a phone consultation, and the practitioner decides whether any treatment is appropriate. The advertised starting offer carries a twelve-month pay-upfront commitment, with a full refund if you contact Hims within 30 days of starting (terms apply). With the Refer Labs code, new patients pay nothing for the initial consultation; program fees apply.",
+    "Hims is the Australian service of Hims & Hers Health, the US-listed telehealth company, and the men's health brand formerly called Pilot. It runs online consultations with Australian-registered practitioners for weight loss, hair loss and sexual health. Its weight loss program starts with a free two-minute quiz and a phone consultation, and the practitioner decides whether any treatment is appropriate. The advertised starting offer carries a twelve-month pay-upfront commitment, with a full refund if you contact Hims within 30 days of starting (terms apply).",
+  standfirstOffer: "With the Refer Labs code, new patients pay nothing for the initial consultation; program fees apply.",
   hub: { label: "Weight loss", href: "/weight-loss" },
   verdictQuestion: "Is Hims weight loss worth it?",
   verdict: [
-    "It is worth considering if you want a practitioner-led program run entirely from your phone, with unlimited practitioner support and a Care Team you can reach at any hour.",
-    "Plan around the commitment. The advertised starting offer is paid upfront and runs for twelve months. If you already expect to stay a year, that gives you a known total. If you would rather try a month first, ask about payment options on the consultation before you pay for anything beyond it.",
+    "It suits someone who wants a practitioner-led program run from their phone, with unlimited practitioner support and a Care Team reachable at any hour.",
+    "The advertised starting offer is paid upfront and runs for twelve months. If you expect to stay a year, that gives you a known total; if not, check the payment options in your Hims profile before you pay.",
   ],
   blocks: [
     {
@@ -47,7 +48,7 @@ export const weight: HimsPageContent = {
       type: "steps",
       id: "how-it-works",
       heading: "How does Hims weight loss work?",
-      intro: "The steps are the same with or without a code, and nothing is charged beyond the consult fee until you choose a plan.",
+      intro: "Nothing beyond the consult fee is charged until you choose a plan.",
       steps: [
         {
           title: "Take the online quiz",
@@ -55,15 +56,15 @@ export const weight: HimsPageContent = {
         },
         {
           title: "Book the phone consultation",
-          body: "Consultations run from 7am to 11pm AEST, seven days. Our link carries the Refer Labs code into checkout. If no suitable plan is found for you, or you decide not to go ahead, Hims refunds the consult fee.",
+          body: "Consultations run from 7am to 11pm AEST, seven days. If no suitable plan is found for you, or you decide not to go ahead, Hims refunds the consult fee.",
         },
         {
           title: "Talk it through with the practitioner",
-          body: "The practitioner reads your quiz answers before the call and decides whether any treatment is appropriate. The specifics, the cost and what the program involves are discussed here, so bring your questions.",
+          body: "The practitioner reads your quiz answers before the call and decides whether any treatment is appropriate. Cost and what the program involves are covered on the call.",
         },
         {
           title: "Decide in your Hims profile",
-          body: "If a plan is recommended, you review it and the payment options in your profile and choose whether to go ahead. Read the commitment period and the refund terms on that screen before you pay.",
+          body: "If a plan is recommended, you review it and the payment options in your profile and choose whether to go ahead.",
         },
         {
           title: "Ongoing support",
@@ -77,7 +78,7 @@ export const weight: HimsPageContent = {
       heading: "What does Hims weight loss commit you to?",
       paragraphs: [
         "Hims' advertised starting offer is the first payment on a pay-upfront option that carries a twelve-month commitment. The fine print on Hims' weight page sets a minimum total payment for that option, and if a plan is recommended and you choose to start, you pay the balance to get full access to the program. Hims shows the figures on its own site and in your profile before you pay.",
-        "The same page says the program runs on a monthly schedule and that you can change or cancel at any time. Ask on the consultation how that sits with a twelve-month pay-upfront option: whether a monthly payment option is open to you, what happens to the balance if you stop early, and whether the 30-day refund covers the full upfront amount. Get the answer in writing through your Hims profile or by email before you pay.",
+        "The same page also says the program runs on a monthly schedule and that you can change or cancel at any time. If you choose the upfront option, get Hims' answer in writing on what happens to the balance if you stop early.",
       ],
     },
     {
@@ -98,11 +99,9 @@ export const weight: HimsPageContent = {
       id: "fit",
       heading: "Who does Hims weight loss suit?",
       suits: [
-        "You want the whole process on your phone: quiz, consultation, ordering and support.",
-        "You want help between check-ins from a team you can reach at any hour.",
         "You prefer a phone call to a video call or a clinic visit.",
-        "You expect a program to run for months, and a twelve-month commitment matches how you think about it.",
-        "You may want hair loss or sexual health support later, since Hims covers both.",
+        "You expect to stay on a program for a year.",
+        "You want guidance on eating habits without a set diet.",
       ],
     },
 
@@ -112,7 +111,7 @@ export const weight: HimsPageContent = {
       heading: "Is Hims the same as Pilot?",
       paragraphs: [
         "Yes. Hims & Hers Health, the US-listed telehealth company, completed its acquisition of Eucalyptus, the Australian company behind Pilot, on 2 June 2026, which marked Hims & Hers' entry into Australia. Pilot is now rebranding as Hims: pilot.com.au says Pilot has joined the Hims & Hers group, and clicking through from Pilot's site opens the Hims quiz (read 1 October 2026). The acquisition announcement says patients already receiving care through Pilot continue without interruption.",
-        "If you're searching for Pilot weight loss reviews or a Pilot discount code in Australia, Hims is the service you're now looking for. Former Pilot patients count as previous patients for Hims' new-patient offers.",
+        "Pilot weight loss is now Hims weight loss. Former Pilot patients count as previous patients for Hims' new-patient offers.",
       ],
     },
     {
@@ -122,11 +121,11 @@ export const weight: HimsPageContent = {
       items: [
         {
           q: "Is there a Hims discount code for weight loss?",
-          a: `The Refer Labs code for new Hims patients is ${OFFERS.weight.code}: no charge for the initial consultation, and program fees apply. Our link carries it into Hims' checkout; if it isn't shown, enter it yourself. It is for new patients in Australia only and can't be combined with other Hims offers. Hims also publishes its own new-patient code on its weight page, so compare the two at checkout. Read ${FACTS_CHECKED_ON}.`,
+          a: `The Refer Labs code for new Hims patients is ${OFFERS.weight.code}: no charge for the initial consultation, and program fees apply. It is for new patients in Australia only and can't be combined with other Hims offers. Hims also publishes its own new-patient code on its weight page, so compare the two at checkout. Read ${FACTS_CHECKED_ON}.`,
         },
         {
           q: "How much does Hims weight loss cost in Australia?",
-          a: "Hims shows its weight loss pricing on its own site and in your profile before you pay. Because the advertised offer runs for twelve months, ask on the consultation about monthly options and the total over the time you expect to stay.",
+          a: "Hims publishes weight loss pricing on its weight page and shows it again in your profile before you pay. For the pay-upfront option, the figure that matters is the twelve-month total.",
         },
         {
           q: "Can I get a refund from Hims?",
@@ -134,7 +133,7 @@ export const weight: HimsPageContent = {
         },
         {
           q: "Can I cancel Hims weight loss?",
-          a: "Hims' weight page says you can change or cancel at any time. Its advertised starting offer is attached to a twelve-month pay-upfront commitment, so confirm on the consultation what cancelling early would mean for the option you choose.",
+          a: "Hims' weight page says you can change or cancel at any time. Its advertised starting offer carries a twelve-month pay-upfront commitment, so check what stopping early means for that option, in writing, before you pay.",
         },
         {
           q: "Is the Hims consultation by video?",
