@@ -17,6 +17,7 @@ const R = {
   quiz: { href: "/hair-loss-quiz", label: "Which option fits you? (30-sec quiz)" },
   best: { href: "/best-hair-loss-treatment-australia", label: "Best hair-loss treatment, compared" },
   moshReview: { href: "/mosh-review", label: "Is Mosh legit? Our review" },
+  receding: { href: "/receding-hairline-treatment-australia", label: "Receding hairline: the options" },
 };
 
 // Source for the telehealth prescribing rule: Medical Board of Australia,
@@ -148,7 +149,7 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
       { q: "Do hair-loss shampoos and supplements work?", a: "Most have little evidence for stopping male pattern hair loss specifically. They may temporarily improve how hair looks or feels, but they are not a substitute for an assessment if halting the underlying process is your goal." },
       { q: "How do I know if I'm losing my hair, and when should I start?", a: "Early male pattern hair loss usually shows as gradual thinning at the crown or a hairline receding at the temples over years. A little extra hair in the shower is normal; a steady drop in density or a changing hairline is the signal to get assessed. A practitioner can confirm the cause." },
     ],
-    related: [R.best, R.quiz, R.mosh, R.cost],
+    related: [R.best, R.quiz, R.mosh, R.cost, R.receding],
   },
 
   {
@@ -253,7 +254,7 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
       { q: "Can early hair loss be slowed if I catch it?", a: "A practitioner can tell you where you stand and what options there are. Whether any treatment is appropriate for you is a clinical decision made by a registered practitioner after an assessment. This is general information, not medical advice." },
       { q: "Who should I see about early hair loss?", a: "You can start with your own GP, or an online telehealth service where a registered Australian practitioner reviews your case. For significant or sudden loss, see a doctor in person. Our hair-loss match can point you to the route that fits." },
     ],
-    related: [R.quiz, R.best, R.mosh, R.moshReview, R.hub],
+    related: [R.quiz, R.best, R.mosh, R.receding, R.hub],
   },
 ];
 

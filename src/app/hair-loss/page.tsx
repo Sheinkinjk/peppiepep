@@ -21,6 +21,7 @@ const guides = [
   { href: "/hair-loss-treatment-cost-australia", title: "What treatment costs", desc: "How over-the-counter products, a GP and a telehealth subscription are each priced." },
   { href: "/early-signs-of-hair-loss-australia", title: "Early signs of hair loss", desc: "How to tell if you're going bald, what's normal, and when to see someone." },
   { href: "/how-to-stop-hair-loss-australia", title: "How to slow hair loss", desc: "The causes, what the evidence supports, and how to get assessed." },
+  { href: "/receding-hairline-treatment-australia", title: "Receding hairline", desc: "What a receding hairline usually means, and the routes to having it assessed." },
   { href: "/online-hair-loss-treatment-australia", title: "Online hair-loss treatment", desc: "How the telehealth assessment works, and what you can and can't get online." },
   { href: "/mens-health", title: "Men's health", desc: "The wider category: how the access routes differ and what each costs over a year." },
 ];

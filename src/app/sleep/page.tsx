@@ -28,6 +28,11 @@ const guides = [
     desc: "Verified Australian prices, plus the ongoing consumables people forget.",
   },
   {
+    href: "/emma-sleep",
+    title: "Emma Sleep",
+    desc: "The mattress brand we have an arrangement with: its range, the trial and what we checked.",
+  },
+  {
     href: "/sleep/mattress-comparison-australia",
     title: "Comparing mattresses properly",
     desc: "What the specifications mean, and how trial periods work.",

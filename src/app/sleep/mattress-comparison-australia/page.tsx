@@ -53,6 +53,7 @@ export default function Page() {
       related={[
         { href: "/sleep/how-much-does-good-sleep-cost", label: "What good sleep costs" },
         { href: "/sleep/sleep-tracker-comparison-australia", label: "What trackers measure" },
+        { href: "/emma-sleep", label: "Emma Sleep: what we checked" },
       ]}
     >
       <AffiliateDisclosure compact className="mb-8" />
