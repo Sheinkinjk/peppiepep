@@ -18,7 +18,7 @@ import { HIMS_URL, MOSH_HAIR_URL, MOSHY_URL } from "@/lib/affiliate-links";
 export const SITE_URL = "https://referlabs.com.au";
 
 /** Date every fact on these pages was last read on the provider's own public site. */
-export const FACTS_CHECKED_ON = "1 October 2026";
+export const FACTS_CHECKED_ON = "2 October 2026";
 
 export const AUTHOR = "Jarred - Founder";
 
@@ -36,7 +36,7 @@ export const AUTHOR = "Jarred - Founder";
 export const DISCLOSURE =
   "If you're a new patient to Hims and make a purchase with the affiliate code shared in this content, Refer Labs may earn a small commission at no extra cost to you.";
 
-/** Shown to Hims' reviewers beside the disclosure, preview only. */
+/** Shown to Hims' reviewers inside the one disclosure block, preview only. */
 export const DISCLOSURE_REVIEW_NOTE =
   "For Hims to approve: the handbook statement with Refer Labs named in place of \"I\".";
 
@@ -45,7 +45,12 @@ type Offer = {
   codeIsPlaceholder: boolean;
   headline: string;
   headlineIsPlaceholder: boolean;
-  /** Offer terms. AHPRA's advertising guidelines require terms for any discount or inducement to be stated. */
+  /**
+   * Offer terms. AHPRA's advertising guidelines require terms for any discount or
+   * inducement to be stated. Fine print stays fine print (Jarred, 1-2 Oct 2026):
+   * these render only in the offer-terms note at the foot of each page, never in
+   * an offer box, card, codes panel, CTA or sticky bar.
+   */
   terms: string[];
   ctaLabel: string;
   ctaHref: string;
@@ -56,7 +61,7 @@ const TERMS = [
   "New Hims patients in Australia only. Current and previous Hims or Pilot patients are excluded.",
   "Our link carries the code into Hims' checkout; if it isn't shown, enter it yourself. One use per patient.",
   "Cannot be combined with any other Hims offer.",
-  "A registered practitioner decides whether any treatment is appropriate for you. Program fees apply.",
+  "A registered practitioner decides whether the program is right for you. Program fees apply.",
   "Hims may change or withdraw this offer. Full terms at hims.com.au/terms-and-conditions.",
 ];
 
@@ -94,7 +99,7 @@ export type MoshSide = {
   ctaLabel: string;
   /** Where a comparison's ItemList points for this side. */
   pageUrl: string;
-  /** Code terms, listed under the code on versus pages. */
+  /** Code terms. Rendered only in the offer-terms note at the foot of the page (fine print, 1-2 Oct 2026). */
   terms?: string[];
   href: string;
   sponsored: boolean;
@@ -116,9 +121,9 @@ export const MOSH: Record<Vertical, MoshSide> = {
     ctaLabel: "Continue to Mosh",
     pageUrl: "/moshhair",
     terms: [
-      "New Mosh customers only. The discount applies to the first billing period only.",
-      "Mosh\u2019s promotion terms apply, at getmosh.com.au/promotions-terms-and-conditions.",
-      "A registered practitioner decides whether any treatment is appropriate for you. Program fees apply.",
+      "New Mosh customers only; applies to the first order of a Mosh hair program (Mosh's Refer Labs page, read 2 October 2026).",
+      "Unless a promotion says otherwise, Mosh's terms allow one use per customer and one promotion per order. Full terms at getmosh.com.au/terms.",
+      "A registered practitioner decides whether the program is right for you. Program fees apply.",
     ],
     href: MOSH_HAIR_URL,
     sponsored: true,
@@ -136,14 +141,14 @@ export const MOSH: Record<Vertical, MoshSide> = {
     pageUrl: "/moshy",
     terms: [
       "New Moshy customers on a practitioner-assigned weight program, one use per customer.",
-      "A minimum commitment of three months applies, and the code cannot be combined with other promotions (Moshy's sign-up page, read 30 September 2026).",
-      "A registered practitioner decides whether any treatment is appropriate for you. Program fees apply.",
+      "A minimum commitment of three months applies, and the code cannot be combined with other promotions (Moshy's sign-up page, read 2 October 2026). Full terms at getmoshy.com.au/terms.",
+      "A registered practitioner decides whether the program is right for you. Program fees apply.",
     ],
     href: MOSHY_URL,
     sponsored: true,
     code: "REFERRAL120",
     offerText:
-      "REFERRAL120 is a discount on a new customer's first Moshy order, with a three-month minimum commitment. Our link carries REFERRAL120; enter it at checkout if it isn't shown.",
+      "REFERRAL120 is a discount on a new customer's first Moshy order. Our link carries REFERRAL120; enter it at checkout if it isn't shown.",
   },
   // PLACEHOLDER (Jarred, 1 Oct 2026): Mosh has not supplied its ED details or offer.
   // When it does, this is a data change, not a redesign:

@@ -16,14 +16,14 @@ export const edCompare: HimsPageContent = {
   slug: "ed",
   vertical: "ed",
   kind: "versus",
-  modified: "2026-10-01",
+  modified: "2026-10-02",
   seoTitle: "Online ED Consultations in Australia: Hims vs Mosh",
   metaDescription:
-    "Hims (formerly Pilot) consults on ED by phone, 7am to 11pm AEST, with no lock-in contract. Mosh's ED details are to be added. Read 1 October 2026.",
+    "Hims (formerly Pilot) consults on ED by phone, 7am to 11pm AEST, with no lock-in contract. Mosh's ED details are to be added. Read 2 October 2026.",
   eyebrow: "Men's sexual health · Australia",
   h1: "Online ED consultations in Australia: Hims vs Mosh",
   standfirst:
-    "Hims, formerly Pilot, runs private online ED consultations for Australian men by phone, any day from 7am to 11pm AEST. A free two-minute quiz comes first, then the call with an Australian-registered practitioner, who decides whether any treatment is appropriate. Hims has no lock-in contract and refunds the consult fee if no suitable plan is found. Mosh's ED details will sit beside Hims' once Mosh supplies them.",
+    "Hims, formerly Pilot (Hims & Hers bought Pilot's owner on 2 June 2026), runs private online ED consultations for Australian men by phone, any day from 7am to 11pm AEST. A free two-minute quiz comes first, then the call with an Australian-registered practitioner, who decides whether a plan is right for you. Hims has no lock-in contract and refunds the consult fee if no suitable plan is found. Mosh's ED details will sit beside Hims' once Mosh supplies them.",
   hub: { label: "Men's health", href: "/mens-health" },
   verdictQuestion: "How do Hims and Mosh run an online ED consultation?",
   verdict: [
@@ -50,7 +50,7 @@ export const edCompare: HimsPageContent = {
       id: "how-it-works",
       heading: "How do online ED consultations work in Australia?",
       paragraphs: [
-        "A private online questionnaire about your health history comes first, and a practitioner reads it before the consultation. The practitioner then decides whether any treatment is appropriate. Hims says it may have no suitable option for you, and refunds the consult fee when that happens.",
+        "A private online questionnaire about your health history comes first, and a practitioner reads it before the consultation. The practitioner then decides whether a plan is right for you. Hims says it may have no suitable option for you, and refunds the consult fee when that happens.",
       ],
     },
     { type: "offer", id: "codes", vertical: "ed" },
@@ -61,7 +61,7 @@ export const edCompare: HimsPageContent = {
       items: [
         {
           q: "Is there a Hims or Mosh discount code for ED?",
-          a: `Refer Labs' Hims code is ${OFFERS.ed.code}, which means no charge for the initial consultation for new patients; program fees apply. Hims' ED page showed no public code when read on ${FACTS_CHECKED_ON}. Mosh's ED code will be added once Mosh supplies it.`,
+          a: `Refer Labs' Hims code is ${OFFERS.ed.code}, which means no charge for the initial consultation for new patients; program fees apply. Read ${FACTS_CHECKED_ON}. Mosh's ED code will be added once Mosh supplies it.`,
         },
         {
           q: "How much does an online ED consultation with Hims cost?",

@@ -1,6 +1,6 @@
 /**
  * What Hims and Mosh each say they include, read off each provider's own public
- * pages on 30 September 2026 and re-read on 1 October 2026. One source of truth for the four comparison pages,
+ * pages on 30 September 2026 and re-read on 2 October 2026. One source of truth for the comparison pages,
  * on the pattern of src/lib/compare/weight-inclusions.ts.
  *
  * Rules for every cell:
@@ -8,12 +8,14 @@
  *  - no prices (Jarred, 27 and 29 Sep 2026);
  *  - no treatment, shipping or supply wording, no plan names that are efficacy
  *    words (TGA service wording, 30 Sep 2026);
+ *  - no code minimums or terms links: those are fine print and sit only in FAQ
+ *    answers and the offer-terms note at the foot of the page (1-2 Oct 2026);
  *  - a fact that could not be read today is dropped. A cell that must exist but
  *    cannot be filled yet is `null`, which renders a muted "To be added".
  *
  * Columns are alphabetical (Hims, Mosh) and there is no winner column.
  */
-export const INCLUSIONS_READ_ON = "1 October 2026";
+export const INCLUSIONS_READ_ON = "2 October 2026";
 
 export type InclusionsKey = "overview" | "weight" | "hair" | "ed";
 
@@ -90,7 +92,7 @@ export const INCLUSIONS: Record<InclusionsKey, InclusionsTableData> = {
       {
         label: "Stopping",
         hims: "Pause, delay or cancel from your profile",
-        mosh: "No lock-in contracts; cancel anytime",
+        mosh: "Cancel anytime",
       },
       {
         label: "Money-back",
@@ -113,11 +115,11 @@ export const INCLUSIONS: Record<InclusionsKey, InclusionsTableData> = {
         hims: "Men's telehealth covering weight loss, hair loss and sexual health",
         mosh: "An online women's health clinic by its own description; open to anyone a practitioner assesses as suitable",
       },
-      { label: "How you start", hims: HIMS_START, mosh: "Online questionnaire, then a consult by phone or video" },
+      { label: "How you start", hims: HIMS_START, mosh: "Free online quiz, then a consult by phone or video" },
       {
         label: "Commitment",
         hims: "The advertised starting offer is a pay-upfront option with a twelve-month commitment",
-        mosh: "The Refer Labs offer carries a three-month minimum commitment",
+        mosh: "No lock-in contracts, by Moshy's own description; a code can carry its own minimum term, set out in the offer terms at the foot of this page",
       },
       {
         label: "Money-back",
@@ -139,7 +141,7 @@ export const INCLUSIONS: Record<InclusionsKey, InclusionsTableData> = {
         label: "Refer Labs code",
         hims: HIMS_OFFER_CELL,
         himsFlag: HIMS_OFFER_FLAG,
-        mosh: "REFERRAL120: a discount on a new customer's first Moshy order, with a three-month minimum commitment",
+        mosh: "REFERRAL120: a discount on a new customer's first Moshy order",
       },
     ],
     sources: { hims: [HIMS_SRC.weight, HIMS_SRC.faq], mosh: [MOSHY_SRC.weight, MOSHY_SRC.home] },
@@ -162,7 +164,7 @@ export const INCLUSIONS: Record<InclusionsKey, InclusionsTableData> = {
       {
         label: "Stopping",
         hims: "Cancel before your next order is processed, with no cancellation fee",
-        mosh: "No lock-in contracts; cancel anytime",
+        mosh: "Cancel anytime",
       },
       { label: "Price match", hims: "Not advertised", mosh: "On substantially comparable hair programs, by application form. Terms apply" },
       { label: "Prices", hims: "Not published on Hims' hair page; shown after the consult", mosh: "Published on Mosh's pricing page" },

@@ -5,14 +5,14 @@ export const weight: HimsPageContent = {
   slug: "hims",
   vertical: "weight",
   kind: "review",
-  modified: "2026-10-01",
+  modified: "2026-10-02",
   seoTitle: "Hims Weight Loss Australia (formerly Pilot): Code and Review",
   metaDescription:
     "Hims, formerly Pilot, runs an online men's weight loss program in Australia: the phone consultation, twelve-month commitment, 30-day refund and Refer Labs code.",
   eyebrow: "Men's weight loss telehealth · Australia",
   h1: "Hims weight loss in Australia: how it starts and what it commits you to",
   standfirst:
-    "Hims is the Australian service of Hims & Hers Health, the US-listed telehealth company, and the men's health brand formerly called Pilot. It runs online consultations with Australian-registered practitioners for weight loss, hair loss and sexual health. Its weight loss program starts with a free two-minute quiz and a phone consultation, and the practitioner decides whether any treatment is appropriate. The advertised starting offer carries a twelve-month pay-upfront commitment, with a full refund if you contact Hims within 30 days of starting (terms apply).",
+    "Hims is the Australian service of Hims & Hers Health, the US-listed telehealth company, and the men's health brand formerly called Pilot: Hims & Hers bought Pilot's owner, Eucalyptus, on 2 June 2026, and Pilot is rebranding as Hims. It runs online consultations with Australian-registered practitioners for weight loss, hair loss and sexual health. Its weight loss program starts with a free two-minute quiz and a phone consultation, and the practitioner decides whether the program is right for you. The advertised starting offer carries a twelve-month pay-upfront commitment, with a full refund if you contact Hims within 30 days of starting.",
   standfirstOffer: "With the Refer Labs code, new patients pay nothing for the initial consultation; program fees apply.",
   hub: { label: "Weight loss", href: "/weight-loss" },
   verdictQuestion: "Is Hims weight loss worth it?",
@@ -36,7 +36,7 @@ export const weight: HimsPageContent = {
           note: "For Hims to confirm: the fine print on hims.com.au/weight-loss describes a twelve-month commitment, and the partner handbook says there is no lock-in.",
           verify: true,
         },
-        { label: "Money-back", value: "Full refund if you contact Hims within 30 days of starting. Terms apply." },
+        { label: "Money-back", value: "Full refund if you contact Hims within 30 days of starting, under Hims' terms." },
         { label: "Cancelling", value: "Hims' weight page says you can change or cancel your plan at any time." },
         { label: "Support", value: "Unlimited practitioner support and a 24/7 Care Team." },
         { label: "Practitioners", value: "AHPRA-registered, based in Australia." },
@@ -60,7 +60,7 @@ export const weight: HimsPageContent = {
         },
         {
           title: "Talk it through with the practitioner",
-          body: "The practitioner reads your quiz answers before the call and decides whether any treatment is appropriate. Cost and what the program involves are covered on the call.",
+          body: "The practitioner reads your quiz answers before the call and decides whether the program is right for you. Cost and what the program involves are covered on the call.",
         },
         {
           title: "Decide in your Hims profile",
@@ -91,7 +91,7 @@ export const weight: HimsPageContent = {
         { label: "Plan changes", value: "Ask to discuss an alternative plan and the Care Team books another practitioner appointment." },
         { label: "Nutrition", value: "Guidance on eating habits from the Care Team, without a set diet." },
         { label: "Community", value: "An optional online community." },
-        { label: "Money-back", value: "30 days from the start of the program to ask for a full refund. Terms apply." },
+        { label: "Money-back", value: "30 days from the start of the program to ask for a full refund, by emailing hello@hims.com.au." },
       ],
     },
     {
@@ -110,7 +110,7 @@ export const weight: HimsPageContent = {
       id: "about",
       heading: "Is Hims the same as Pilot?",
       paragraphs: [
-        "Yes. Hims & Hers Health, the US-listed telehealth company, completed its acquisition of Eucalyptus, the Australian company behind Pilot, on 2 June 2026, which marked Hims & Hers' entry into Australia. Pilot is now rebranding as Hims: pilot.com.au says Pilot has joined the Hims & Hers group, and clicking through from Pilot's site opens the Hims quiz (read 1 October 2026). The acquisition announcement says patients already receiving care through Pilot continue without interruption.",
+        "Yes. Hims & Hers Health, the US-listed telehealth company, completed its acquisition of Eucalyptus, the Australian company behind Pilot, on 2 June 2026, which marked Hims & Hers' entry into Australia. Pilot is now rebranding as Hims: pilot.com.au says Pilot has joined the Hims & Hers group, and clicking through from Pilot's site opens the Hims quiz (read 2 October 2026). The acquisition announcement says patients already receiving care through Pilot continue without interruption.",
         "Pilot weight loss is now Hims weight loss. Former Pilot patients count as previous patients for Hims' new-patient offers.",
       ],
     },
@@ -121,7 +121,7 @@ export const weight: HimsPageContent = {
       items: [
         {
           q: "Is there a Hims discount code for weight loss?",
-          a: `The Refer Labs code for new Hims patients is ${OFFERS.weight.code}: no charge for the initial consultation, and program fees apply. It is for new patients in Australia only and can't be combined with other Hims offers. Hims also publishes its own new-patient code on its weight page, so compare the two at checkout. Read ${FACTS_CHECKED_ON}.`,
+          a: `The Refer Labs code for new Hims patients is ${OFFERS.weight.code}: no charge for the initial consultation, and program fees apply. It is for new patients in Australia only, one use per patient, and can't be combined with other Hims offers. Read ${FACTS_CHECKED_ON}.`,
         },
         {
           q: "How much does Hims weight loss cost in Australia?",

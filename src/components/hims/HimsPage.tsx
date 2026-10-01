@@ -88,7 +88,10 @@ function MoshLogo({ src = "/logos/mosh-tile.png", name = "Mosh" }: { src?: strin
   );
 }
 
-/** The Hims handbook disclosure, plus the reviewer note while Hims has not approved the wording. */
+/**
+ * Review pages: the Hims handbook disclosure, with the reviewer note inside the
+ * same block while Hims has not approved the wording.
+ */
 function HimsDisclosure({ preview }: { preview: boolean }) {
   return (
     <div>
@@ -99,6 +102,54 @@ function HimsDisclosure({ preview }: { preview: boolean }) {
         </p>
       ) : null}
     </div>
+  );
+}
+
+/**
+ * Comparison pages: one compact disclosure block (2 Oct 2026, the pattern on main).
+ * Our sentence and the Hims handbook sentence sit in the same block via `required`,
+ * and the preview reviewer note sits inside it, not as a second box.
+ */
+function PairDisclosure({ partners, preview }: { partners: string[]; preview: boolean }) {
+  return (
+    <div>
+      <AffiliateDisclosure compact partners={partners} required={DISCLOSURE} />
+      {preview ? (
+        <p className="mt-1">
+          <Flag show>{DISCLOSURE_REVIEW_NOTE}</Flag>
+        </p>
+      ) : null}
+    </div>
+  );
+}
+
+/**
+ * The offer terms, once, at the foot of the page (fine print stays fine print,
+ * Jarred 1-2 Oct 2026). Code minimums and terms links appear here and in FAQ
+ * answers only, never in an offer box, card, codes panel, CTA or sticky bar.
+ */
+function OfferTermsFoot({ verticals, mosh }: { verticals: Vertical[]; mosh: Vertical[] }) {
+  const sides = [
+    { name: "Hims", code: OFFERS[verticals[0]].code, terms: OFFERS[verticals[0]].terms },
+    ...mosh
+      .map((v) => MOSH[v])
+      .filter((m) => m.code && m.terms?.length)
+      .map((m) => ({ name: m.name, code: m.code as string, terms: m.terms as string[] })),
+  ];
+  return (
+    <section aria-labelledby="offer-terms" className="space-y-2">
+      <h2 id="offer-terms" className="text-sm font-bold text-[#14120f]">
+        Offer terms
+      </h2>
+      {sides.map((s) => (
+        <p key={s.code}>
+          <span className="font-semibold text-[#14120f]">
+            {s.name} ({s.code}).
+          </span>{" "}
+          {s.terms.join(" ")}
+        </p>
+      ))}
+    </section>
   );
 }
 
@@ -290,9 +341,8 @@ export function HimsPage({ content, preview, linkSuffix }: { content: HimsPageCo
           <Lead content={content} preview={preview} className="mt-5 max-w-2xl text-base leading-relaxed text-[#56504a] sm:text-lg" />
           {byline}
 
-          <div className="mt-5 max-w-2xl space-y-2">
-            <AffiliateDisclosure compact partners={partners} />
-            <HimsDisclosure preview={preview} />
+          <div className="mt-5 max-w-2xl">
+            <PairDisclosure partners={partners} preview={preview} />
           </div>
 
           <div className="mt-8">
@@ -324,8 +374,8 @@ export function HimsPage({ content, preview, linkSuffix }: { content: HimsPageCo
           ))}
 
           <p className="mt-10 max-w-3xl rounded-xl border border-[#ded8cd] bg-white px-5 py-4 text-[13px] leading-relaxed text-[#56504a]">
-            General information only, not medical advice. Refer Labs is not a healthcare provider. Neither service suits everyone, and a
-            registered practitioner decides whether any treatment is appropriate for you.
+            General information only, not medical advice. Refer Labs is not a healthcare provider. At either service, a registered
+            practitioner decides whether a program is right for you.
           </p>
 
           <section className="mt-14">
@@ -346,6 +396,7 @@ export function HimsPage({ content, preview, linkSuffix }: { content: HimsPageCo
           {sources}
 
           <footer className="mt-12 max-w-3xl space-y-3 text-xs leading-relaxed text-[#56504a]">
+            <OfferTermsFoot verticals={[content.vertical]} mosh={[moshLink]} />
             <AffiliateDisclosure partners={partners} earnsFromAll={moshSide.sponsored} />
             <Disclosure text={DISCLOSURE} />
             <p>
@@ -392,10 +443,7 @@ export function HimsPage({ content, preview, linkSuffix }: { content: HimsPageCo
                   {offer.headline} (code {offer.code})
                   <Flag show={preview && (offer.headlineIsPlaceholder || offer.codeIsPlaceholder)}>Offer and code to confirm</Flag>
                 </p>
-                <p className="mt-1.5 text-[12px] font-medium text-[#56504a]">
-                  Read by Refer Labs, {FACTS_CHECKED_ON} ·{" "}
-                  <a href="#offer" className="underline decoration-[#ded8cd] underline-offset-2 hover:text-[#14120f]">Offer terms</a>
-                </p>
+                <p className="mt-1.5 text-[12px] font-medium text-[#56504a]">Read by Refer Labs, {FACTS_CHECKED_ON}</p>
               </div>
             </div>
 
@@ -486,8 +534,8 @@ export function HimsPage({ content, preview, linkSuffix }: { content: HimsPageCo
             Start with the Hims {PROGRAM_LABEL[content.vertical]} quiz
           </h2>
           <p className="mx-auto mt-4 max-w-md text-[15px] leading-relaxed text-white/70">
-            The quiz is free and takes about two minutes. A registered practitioner then decides whether any treatment is appropriate. Our
-            link carries the Refer Labs code; if it isn&rsquo;t shown at checkout, enter it yourself.
+            The quiz is free and takes about two minutes, and a registered practitioner then decides whether the program is right for
+            you. Our link carries the Refer Labs code; if it isn&rsquo;t shown at checkout, enter it yourself.
           </p>
           <p className="mt-5 text-white">
             Code <span className="font-mono text-lg font-bold tracking-[0.08em]">{offer.code}</span>
@@ -502,9 +550,10 @@ export function HimsPage({ content, preview, linkSuffix }: { content: HimsPageCo
         </section>
 
         <footer className="mt-12 max-w-3xl space-y-3 text-xs leading-relaxed text-[#56504a]">
+          <OfferTermsFoot verticals={[content.vertical]} mosh={[]} />
           <p>
             General information only, not medical advice. Refer Labs is not a healthcare provider and does not assess anyone. A registered
-            practitioner decides whether any treatment is appropriate for you. Offers and terms were read on {FACTS_CHECKED_ON} and can
+            practitioner decides whether the program is right for you. Offers and terms were read on {FACTS_CHECKED_ON} and can
             change, so confirm them with Hims before you pay.
           </p>
           <p>
@@ -659,7 +708,7 @@ function BlockView({ block, ctx, kind }: { block: Block; ctx: Ctx; kind: "review
         return (
           <section id={block.id} aria-labelledby={`${block.id}-h`} className="scroll-mt-24">
             <h2 id={`${block.id}-h`} className={H2_CLASS}>
-              What are the Refer Labs codes, and their terms?
+              What are the Refer Labs codes?
             </h2>
             <div className="mt-5 grid gap-4 sm:grid-cols-2">
               <div className="rounded-2xl border border-[#ded8cd] bg-white p-6 text-sm leading-relaxed text-[#56504a]">
@@ -668,11 +717,6 @@ function BlockView({ block, ctx, kind }: { block: Block; ctx: Ctx; kind: "review
                   {o.headline}. Code <span className="font-mono font-bold">{o.code}</span>.
                   <Flag show={ctx.preview && (o.codeIsPlaceholder || o.headlineIsPlaceholder)}>Offer and code to confirm</Flag>
                 </p>
-                <ul className="mt-3 list-disc space-y-1 pl-5">
-                  {o.terms.map((t) => (
-                    <li key={t}>{t}</li>
-                  ))}
-                </ul>
               </div>
               {m.placeholder ? (
                 <PendingPanel name={m.name} logo={m.logo} text={m.placeholder} />
@@ -680,11 +724,6 @@ function BlockView({ block, ctx, kind }: { block: Block; ctx: Ctx; kind: "review
                 <div className="rounded-2xl border border-[#ded8cd] bg-white p-6 text-sm leading-relaxed text-[#56504a]">
                   <h3 className="text-base font-bold text-[#14120f]">{m.name}</h3>
                   <p className="mt-2 text-[#14120f]">{m.offerText}</p>
-                  <ul className="mt-3 list-disc space-y-1 pl-5">
-                    {(m.terms ?? []).map((t) => (
-                      <li key={t}>{t}</li>
-                    ))}
-                  </ul>
                 </div>
               )}
             </div>
@@ -711,14 +750,6 @@ function BlockView({ block, ctx, kind }: { block: Block; ctx: Ctx; kind: "review
           <div className="mt-6">
             <CtaLink href={o.ctaHref} label={o.ctaLabel} placeholder={o.ctaIsPlaceholder} preview={ctx.preview} loc="offer-box" />
           </div>
-          <details className="mt-6 text-sm text-[#56504a]">
-            <summary className="cursor-pointer font-semibold text-[#14120f]">Offer terms</summary>
-            <ul className="mt-2 list-disc space-y-1 pl-5">
-              {o.terms.map((t) => (
-                <li key={t}>{t}</li>
-              ))}
-            </ul>
-          </details>
         </section>
       );
     }
@@ -835,9 +866,8 @@ function OverviewView({
           {content.h1}
         </h1>
         <Lead content={content} preview={preview} className="mt-5 max-w-2xl text-base leading-relaxed text-[#56504a] sm:text-lg" />
-        <div className="mt-5 max-w-2xl space-y-2">
-          <AffiliateDisclosure compact partners={partners} />
-          <HimsDisclosure preview={preview} />
+        <div className="mt-5 max-w-2xl">
+          <PairDisclosure partners={partners} preview={preview} />
         </div>
         {byline}
       </header>
@@ -904,14 +934,6 @@ function OverviewView({
                 </div>
               ))}
             </dl>
-            <details className="mt-3">
-              <summary className="cursor-pointer font-semibold text-[#14120f]">Hims offer terms</summary>
-              <ul className="mt-2 list-disc space-y-1 pl-5">
-                {hims.terms.map((t) => (
-                  <li key={t}>{t}</li>
-                ))}
-              </ul>
-            </details>
           </div>
           <div className="rounded-2xl border border-[#ded8cd] bg-white p-5 text-sm leading-relaxed text-[#56504a]">
             <h3 className="text-base font-bold text-[#14120f]">Mosh and Moshy</h3>
@@ -932,28 +954,13 @@ function OverviewView({
                 </div>
               ))}
             </dl>
-            <details className="mt-3">
-              <summary className="cursor-pointer font-semibold text-[#14120f]">Mosh and Moshy offer terms</summary>
-              <div className="mt-2 space-y-3">
-                {coded.map((c) => (
-                  <div key={c.program}>
-                    <p className="text-[#14120f]">{c.side.offerText}</p>
-                    <ul className="mt-1 list-disc space-y-1 pl-5">
-                      {(c.side.terms ?? []).map((t) => (
-                        <li key={t}>{t}</li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
-            </details>
           </div>
         </div>
       </section>
 
       <p className="mt-10 max-w-3xl rounded-xl border border-[#ded8cd] bg-white px-5 py-4 text-[13px] leading-relaxed text-[#56504a]">
         General information only, not medical advice. Refer Labs is not a healthcare provider. A registered practitioner at either
-        service decides whether any treatment is appropriate for you.
+        service decides whether a program is right for you.
       </p>
 
       {faq ? (
@@ -966,6 +973,7 @@ function OverviewView({
       {sources}
 
       <footer className="mt-12 max-w-3xl space-y-3 text-xs leading-relaxed text-[#56504a]">
+        <OfferTermsFoot verticals={["hair"]} mosh={overview.programs.map((p) => p.vertical)} />
         <AffiliateDisclosure partners={partners} earnsFromAll />
         <Disclosure text={DISCLOSURE} />
         <p>
