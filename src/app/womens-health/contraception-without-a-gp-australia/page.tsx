@@ -15,6 +15,11 @@ export const metadata = generateSEOMetadata(seoConfig.whContraception);
  * Telehealth services are described by their pricing, not named: none is a
  * partner yet, and no partner is staged ahead of an agreement.
  *
+ * 1 Oct 2026 (TGA audit M9): the cost table lost its "The contraception" price
+ * column and online services are "online consultation services", not "script
+ * services". The page prices the consultation; the PBS co-payment stays as a
+ * general Medicare fact, attached to no provider.
+ *
  * The facts this page owns: pharmacist-supplied contraception in NSW and Victoria
  * is sold at private, non-PBS prices; and a telehealth contraception consult can
  * attract a Medicare rebate with no prior relationship with the doctor, through
@@ -46,7 +51,7 @@ const faqs = [
   },
   {
     q: "Does Medicare cover an online contraception consultation?",
-    a: "It can. Ordinary GP telehealth needs a face-to-face visit with that practice in the previous 12 months, but Medicare's sexual and reproductive health telehealth items do not. They pay a rebate without an established relationship, for example $45.05 for a standard video or phone consult. The catch is that most online script services charge a private fee instead, so ask whether the consult is bulk-billed or rebated before you book.",
+    a: "It can. Ordinary GP telehealth needs a face-to-face visit with that practice in the previous 12 months, but Medicare's sexual and reproductive health telehealth items do not. They pay a rebate without an established relationship, for example $45.05 for a standard video or phone consult. The catch is that most online consultation services charge a private fee instead, so ask whether the consult is bulk-billed or rebated before you book.",
   },
   {
     q: "Where can I get contraception bulk-billed?",
@@ -109,36 +114,34 @@ export default function Page() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">What each route costs</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">What each consultation route costs</h2>
         <div className="mt-4 overflow-x-auto rounded-2xl border border-[#ded8cd]">
-          <table className="w-full min-w-[640px] border-collapse text-left text-sm">
+          <table className="w-full min-w-[520px] border-collapse text-left text-sm">
             <thead className="bg-[#f7f4ee] text-[11px] uppercase tracking-[0.1em] text-[#56504a]">
               <tr>
                 <th className="px-4 py-3 font-semibold">Route</th>
                 <th className="px-4 py-3 font-semibold">The consultation</th>
-                <th className="px-4 py-3 font-semibold">The contraception</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-[#f1ede4]">
               {[
-                ["Your GP", "Bulk-billed, or a gap above the $45.05 Medicare rebate for a standard consult", "PBS price where listed: up to $25.00, or $7.70 concession"],
-                ["Pharmacist, NSW or Victoria", "Free in Victoria; set by the pharmacy in NSW", "Private price, outside the PBS and the Safety Net"],
-                ["Pharmacist, other states", "Set by the pharmacy, amount not published", "Ask before the consult"],
-                ["Online doctor", "Most services we read charge a private fee; a rebate is possible through the sexual and reproductive health items", "PBS price if the doctor writes a PBS prescription"],
-                ["Family planning or sexual health clinic", "Bulk-billed for many patients", "PBS price where listed"],
+                ["Your GP", "Bulk-billed, or a gap above the $45.05 Medicare rebate for a standard consult"],
+                ["Pharmacist, NSW or Victoria", "Free in Victoria; set by the pharmacy in NSW"],
+                ["Pharmacist, other states", "Set by the pharmacy, amount not published"],
+                ["Online doctor", "Most services we read charge a private fee; a rebate is possible through the sexual and reproductive health items"],
+                ["Family planning or sexual health clinic", "Bulk-billed for many patients"],
               ].map((r) => (
                 <tr key={r[0]}>
                   <td className="px-4 py-3 font-semibold text-[#14120f]">{r[0]}</td>
                   <td className="px-4 py-3">{r[1]}</td>
-                  <td className="px-4 py-3">{r[2]}</td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
         <p className="mt-3 text-xs text-[#56504a]">
-          Medicare rebates from MBS Online (fees from 1 July 2026) and the PBS co-payment from pbs.gov.au, read {READ}.
-          Not every contraceptive is PBS-listed; unlisted ones cost more at every route.
+          Medicare rebates from MBS Online (fees from 1 July 2026), read {READ}. Separately from any consultation, the
+          general PBS co-payment from 1 January 2026 is $25.00, or $7.70 with a concession card (pbs.gov.au, read {READ}).
         </p>
       </section>
 
@@ -151,9 +154,9 @@ export default function Page() {
           and 92734), provided the doctor works from a practice that also offers face-to-face care.
         </p>
         <p className="mt-3">
-          Most online script services we read charge a private fee rather than claiming these items: across six
-          national services, prices on {READ} ran from $24.90 for an express script request to $90 for an after-hours
-          consult, with the contraception itself extra. It is worth asking whether a consult is bulk-billed before paying.
+          Most online consultation services we read charge a private fee rather than claiming these items: across six
+          national services, fees on {READ} ran from $24.90 to $90, the top of that range for an after-hours consult.
+          It is worth asking whether a consult is bulk-billed before paying.
         </p>
       </section>
 

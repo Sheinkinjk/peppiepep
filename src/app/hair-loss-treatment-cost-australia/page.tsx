@@ -9,6 +9,7 @@ import EditorialMeta from "@/components/consumer/EditorialMeta";
 import CodeAnswer from "@/components/offers/CodeAnswer";
 import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 import OfferSchema from "@/components/offers/OfferSchema";
+import { MOSH_PROMO_TERMS_URL, REFERAL55_TERMS } from "@/lib/offers";
 
 export const metadata = generateSEOMetadata(seoConfig.hairLossTreatmentCost);
 
@@ -21,7 +22,7 @@ const articleSchema = comparisonArticleSchema({
   description: "Refer Labs sets out what hair-loss treatment costs in Australia, comparing over-the-counter options with telehealth plans.",
   url: "https://referlabs.com.au/hair-loss-treatment-cost-australia",
   datePublished: "2026-07-17",
-  dateModified: "2026-09-30",
+  dateModified: "2026-10-01",
 });
 
 const breadcrumbSchema = {
@@ -46,15 +47,15 @@ const MOSH_READ = "30 September 2026";
 const faqs = [
   {
     q: "How much does hair-loss treatment cost in Australia?",
-    a: "It depends on the route. An over-the-counter shampoo or serum is a one-off purchase priced by the retailer. A GP consult may be bulk-billed, or carry a gap fee after the Medicare rebate. A telehealth service such as Mosh charges a subscription: Mosh lists a monthly price for each of its three hair plans on its own pricing page, and the consultation confirms which applies before you pay.",
+    a: "It depends on the route. An over-the-counter shampoo or serum is a one-off purchase priced by the retailer. A GP consult may be bulk-billed, or carry a gap fee after the Medicare rebate. A telehealth service such as Mosh charges a subscription, which Mosh publishes on its own pricing page.",
   },
   {
     q: "Why is online hair-loss care priced as a subscription?",
-    a: "Because hair-loss care is ongoing rather than one-off, online services charge a recurring plan that covers the practitioner consultation and ongoing check-ins. When you compare, compare plans for the same stage: Mosh prices its plans for a receding hairline and for advanced hair loss differently.",
+    a: "Because hair-loss care is ongoing rather than one-off, online services charge a recurring plan that covers the practitioner consultation and ongoing check-ins. Mosh lists its plans on its own pricing page; the practitioner decides which, if any, applies, and Mosh shows the price before you pay.",
   },
   {
-    q: "Is hair-loss treatment covered by Medicare or the PBS?",
-    a: `Medicare can rebate a GP consult, which may also be bulk-billed. Hair-loss treatment is not PBS-subsidised, and over-the-counter products are not subsidised. Mosh does not charge for its initial consultation, and its program fees are private: its pricing page mentions bulk billing only for mental-health consults, not hair loss (read ${MOSH_READ}).`,
+    q: "Is hair-loss care covered by Medicare or the PBS?",
+    a: `Medicare can rebate a GP consult, which may also be bulk-billed. The PBS does not subsidise hair-loss care, and over-the-counter products are not subsidised. Mosh does not charge for its initial consultation, and its program fees are private: its pricing page mentions bulk billing only for mental-health consults, not hair loss (read ${MOSH_READ}).`,
   },
   {
     q: "Is it cheaper to buy an over-the-counter product myself?",
@@ -80,7 +81,7 @@ const webPageSchema = {
   url: seoConfig.hairLossTreatmentCost.url,
   inLanguage: "en-AU",
   datePublished: "2026-07-17",
-  dateModified: "2026-09-30",
+  dateModified: "2026-10-01",
   about: [
     { "@type": "Thing", name: "hair loss treatment cost Australia" },
     { "@type": "Thing", name: "Mosh hair loss cost" },
@@ -123,7 +124,7 @@ export default function HairLossTreatmentCostAustraliaPage() {
               consultation carries no charge, and its program fees are private. Compare the yearly cost of each.
               General information about cost, not medical or financial advice.
             </p>
-            <EditorialMeta lastUpdated="2026-09-30" className="mt-5" />
+            <EditorialMeta lastUpdated="2026-10-01" className="mt-5" />
             <AffiliateDisclosure compact className="mt-4" />
           </header>
 
@@ -149,11 +150,11 @@ export default function HairLossTreatmentCostAustraliaPage() {
                   product is a one-off purchase you repeat, priced by the retailer and paid entirely by you. A telehealth
                   plan is a recurring charge that covers the practitioner consultation and ongoing check-ins, so the
                   monthly figure covers more than a product. A GP consult is a per-visit fee that Medicare may rebate or
-                  the practice may bulk-bill. Hair-loss treatment is not PBS-subsidised.
+                  the practice may bulk-bill. The PBS does not subsidise hair-loss care.
                 </p>
                 <p className="mt-3 text-[15px] leading-relaxed text-[#14120f]">
-                  Mosh lists a monthly price for each of its three hair plans on its own pricing page, and the
-                  consultation confirms which one applies before you pay (getmosh.com.au/pricing, read {MOSH_READ}).
+                  Mosh lists its plans on its own pricing page; the practitioner decides which, if any, applies, and
+                  Mosh shows the price before you pay (getmosh.com.au/pricing, read {MOSH_READ}).
                 </p>
               </div>
             </section>
@@ -161,13 +162,14 @@ export default function HairLossTreatmentCostAustraliaPage() {
             {/* The offer, below the first answer rather than above it. */}
             <CodeAnswer code="REFERAL55">
               The Mosh discount code through Refer Labs is REFERAL55, worth 55% off a new customer&apos;s first order.
-              Our link carries it into Mosh&apos;s sign-up; if it isn&apos;t shown at checkout, enter REFERAL55. More on
-              the code and how Mosh works on <Link href="/moshhair" className="nw-link">our Mosh page</Link>.
+              Our link carries it into Mosh&apos;s sign-up; if it isn&apos;t shown at checkout, enter REFERAL55.{" "}
+              {REFERAL55_TERMS} Read <a href={MOSH_PROMO_TERMS_URL} target="_blank" rel="nofollow noopener" className="nw-link">Mosh&apos;s promotion terms</a>. More on the code and how Mosh works on{" "}
+              <Link href="/moshhair" className="nw-link">our Mosh page</Link>.
             </CodeAnswer>
             <div className="flex flex-col items-start gap-3 rounded-2xl border border-[#007a95]/25 bg-[#e4f2f5] px-6 py-5 sm:flex-row sm:items-center sm:justify-between">
               <p className="max-w-md text-[15px] leading-relaxed text-[#14120f]">
-                See Mosh&apos;s hair plans and their prices on Mosh&apos;s own site. The consultation confirms which plan
-                applies before you pay.
+                See Mosh&apos;s prices on its own site. The practitioner decides which plan, if any, applies, and Mosh
+                shows the price before you pay.
               </p>
               <a
                 href={MOSH_HAIR_URL}
@@ -187,7 +189,7 @@ export default function HairLossTreatmentCostAustraliaPage() {
               <div className="mt-4 space-y-4 text-[15px] leading-relaxed text-[#56504a]">
                 <p>
                   <span className="font-semibold text-[#14120f]">Buy over the counter.</span> Pharmacies sell shampoos,
-                  conditioners and serums for thinning hair with no prescription. The cost is a one-off product price that
+                  conditioners and serums for thinning hair with no consult. The cost is a one-off product price that
                   varies by retailer, brand and pack size. It is often the cheapest single route, and you manage it yourself
                   without an assessment.
                 </p>
@@ -208,10 +210,10 @@ export default function HairLossTreatmentCostAustraliaPage() {
                 How Mosh prices its hair plans
               </h2>
               <p className="mt-3 text-[15px] leading-relaxed text-[#56504a]">
-                Mosh sells three hair plans by stage: for a receding hairline, for thinning and receding hair, and for
-                advanced hair loss. Its promotion terms describe
-                first-order hair discounts as covering the first three months, and a 180-day money-back guarantee applies
-                to quarterly hair programs under Mosh&apos;s terms (getmosh.com.au, read {MOSH_READ}).
+                Mosh lists its plans on its own pricing page; the practitioner decides which, if any, applies.
+                {" "}<a href={MOSH_PROMO_TERMS_URL} target="_blank" rel="nofollow noopener" className="nw-link">Mosh&apos;s promotion terms</a> describe first-order hair discounts as covering the first three months,
+                and Mosh offers a 180-day money-back guarantee on quarterly hair programs under those terms
+                (getmosh.com.au, read {MOSH_READ}).
               </p>
             </section>
 
@@ -221,8 +223,8 @@ export default function HairLossTreatmentCostAustraliaPage() {
               </h2>
               <div className="mt-4 space-y-4 text-[15px] leading-relaxed text-[#56504a]">
                 <p>
-                  Medicare can rebate a GP consult, and some practices bulk-bill. Hair-loss treatment is not subsidised on
-                  the PBS, and over-the-counter products are not subsidised either. Mosh does not charge for its initial
+                  Medicare can rebate a GP consult, and some practices bulk-bill. The PBS does not subsidise hair-loss
+                  care, and over-the-counter products are not subsidised either. Mosh does not charge for its initial
                   consultation, and its program fees are private: its pricing page mentions bulk billing only for its
                   mental-health consults, not for hair loss (read {MOSH_READ}).
                 </p>
@@ -235,15 +237,15 @@ export default function HairLossTreatmentCostAustraliaPage() {
               </h2>
               <div className="mt-4 space-y-4 text-[15px] leading-relaxed text-[#56504a]">
                 <p>
-                  Compare plans at the same stage: a plan for a receding hairline and a plan for advanced hair loss are
-                  priced differently, and the practitioner decides which applies. Remember that a first-order discount
-                  such as REFERAL55 comes off the first order, not every month after it.
+                  Compare the cost over a year, not the first month. A first-order discount such as REFERAL55 comes
+                  off the first order, not every month after it, and applies only to new customers under{" "}
+                  <a href={MOSH_PROMO_TERMS_URL} target="_blank" rel="nofollow noopener" className="nw-link">Mosh&apos;s promotion terms</a>.
                 </p>
                 <p>
                   For the routes themselves, our{" "}
                   <Link href="/best-hair-loss-treatment-australia" className="nw-link">hair-loss comparison</Link>{" "}
                   sets Mosh beside your GP, and the{" "}
-                  <Link href="/hair-loss" className="nw-link">hair-loss hub</Link> explains which route fits which stage.
+                  <Link href="/hair-loss" className="nw-link">hair-loss hub</Link> explains who each route suits.
                 </p>
               </div>
             </section>
@@ -286,9 +288,8 @@ export default function HairLossTreatmentCostAustraliaPage() {
               <h2 className="text-lg font-bold text-[#14120f]">Keep reading</h2>
               <ul className="mt-3 space-y-2 text-[15px]">
                 <li><Link href="/best-hair-loss-treatment-australia" className="nw-link">Best hair-loss treatment in Australia, compared</Link></li>
-                <li><Link href="/how-to-stop-hair-loss-australia" className="nw-link">How to slow hair loss, and what the evidence supports</Link></li>
-                <li><Link href="/online-hair-loss-treatment-australia" className="nw-link">How online hair-loss treatment works</Link></li>
                 <li><Link href="/moshhair" className="nw-link">Mosh hair-loss: how it works and the current offer</Link></li>
+                <li><Link href="/early-signs-of-hair-loss-australia" className="nw-link">Early signs of hair loss, and where to get it checked</Link></li>
                 <li><Link href="/hair-loss" className="nw-link">The full hair-loss hub</Link></li>
               </ul>
             </section>

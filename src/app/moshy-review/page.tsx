@@ -11,6 +11,7 @@ import CodeAnswer from "@/components/offers/CodeAnswer";
 import OfferSchema from "@/components/offers/OfferSchema";
 
 import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
+import { MOSHY_PROMO_TERMS_URL } from "@/lib/offers";
 export const metadata = generateSEOMetadata(seoConfig.moshyReview);
 
 const CYAN = "#007a95";
@@ -27,7 +28,7 @@ const faqs = [
   },
   {
     q: "Does everyone who applies get accepted?",
-    a: "Not necessarily. A practitioner decides in the consultation whether any treatment is appropriate for you; finishing the questionnaire does not settle it.",
+    a: "No. A registered practitioner reviews each applicant in the consultation and some are declined; finishing the questionnaire does not settle it.",
   },
   {
     q: "Do I need a referral from my GP to use Moshy?",
@@ -63,7 +64,7 @@ const webPageSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
   datePublished: "2026-07-05",
-  dateModified: "2026-09-30",
+  dateModified: "2026-10-01",
   name: seoConfig.moshyReview.title,
   description: seoConfig.moshyReview.description,
   url: seoConfig.moshyReview.url,
@@ -116,8 +117,12 @@ export default function MoshyReviewPage() {
         {/* Below the lead, above the first affiliate link. */}
         <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
         <CodeAnswer code="REFERRAL120" className="mt-6 mb-10">
-          REFERRAL120, the Moshy code Refer Labs holds, gets a new customer $120 off a first order on an eligible
-          program, once per customer, with a minimum commitment period of 3 months.
+          REFERRAL120, the Moshy code Refer Labs holds, gets a new customer $120 off a first order, once per customer,
+          with a minimum commitment period of 3 months, on the Moshy weight programs listed as eligible in{" "}
+          <a href={MOSHY_PROMO_TERMS_URL} target="_blank" rel="noopener noreferrer" className="font-semibold underline underline-offset-2">
+            Moshy&apos;s promotion terms
+          </a>
+          .
         </CodeAnswer>
         <OfferSchema code="REFERRAL120" />
 
@@ -126,13 +131,13 @@ export default function MoshyReviewPage() {
           <p className="text-[#56504a] text-sm sm:text-base leading-relaxed">
             Moshy runs weight-loss, hair and skin services online, and its weight-management program is the part most
             people come looking for. You answer a questionnaire on Moshy&apos;s site, then Moshy arranges a
-            consultation with a practitioner by phone or video. Weight-management medicines are prescription-only in
-            Australia.
+            consultation with a practitioner by phone or video.
           </p>
           <p className="text-[#56504a] text-sm sm:text-base leading-relaxed">
             If you go ahead, you pay one monthly program fee, which Moshy publishes on its weight-loss page. New
-            customers get $120 off their first order with REFERRAL120 through our link; if it is not already applied at
-            checkout, enter the code there.
+            customers get $120 off their first order with REFERRAL120 through our link, with a 3-month minimum
+            commitment under Moshy&apos;s promotion terms; if the code is not already applied at checkout, enter it
+            there.
           </p>
           <div className="pt-1">
             <Cta label="Continue to Moshy" loc="short-version" />
@@ -150,8 +155,8 @@ export default function MoshyReviewPage() {
           <ul className="space-y-3">
             {[
               ["Done from home", "The questionnaire is online and the consultation is by phone or video, so nothing needs to be booked in person."],
-              ["Unlimited medical support", "Ongoing access to Moshy's practitioners, which Moshy lists as part of the program fee."],
-              ["A multidisciplinary care team", "Moshy names doctors, nurses, pharmacists, psychologists, dietitians and exercise physiologists."],
+              ["Unlimited practitioner support", "Ongoing access to Moshy's practitioners, which Moshy lists as part of the program fee."],
+              ["A care team", "Moshy's care team includes doctors, nurses, dietitians, psychologists and exercise physiologists."],
               ["App, coaching and community", "In-app health tracking and health coaching, dietitian-approved meal plans and recipes, and a member community."],
               ["Two guarantees", "A 30-day money back guarantee and a price match guarantee, each with conditions on Moshy's terms page."],
             ].map(([t, d]) => (
@@ -187,8 +192,12 @@ export default function MoshyReviewPage() {
         <div className="rounded-2xl border px-6 py-7 mb-10 text-center sm:px-8" style={{ borderColor: `${CYAN}30`, background: `${CYAN}08` }}>
           <h2 className="text-lg sm:text-xl font-black text-[#14120f]">Start with Moshy</h2>
           <p className="mx-auto mt-2 max-w-md text-sm leading-relaxed text-[#56504a]">
-            $120 off a new customer&apos;s first order with REFERRAL120 through our link, on an eligible program with a
-            3-month minimum.
+            $120 off a new customer&apos;s first order with REFERRAL120 through our link, with a 3-month minimum
+            commitment, under{" "}
+            <a href={MOSHY_PROMO_TERMS_URL} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">
+              Moshy&apos;s promotion terms
+            </a>
+            .
           </p>
           <div className="mt-5 flex justify-center">
             <Cta label="Continue to Moshy" loc="closing-cta" />
@@ -201,14 +210,13 @@ export default function MoshyReviewPage() {
             source="deal-alert-moshy-review"
             interest="Moshy offer"
             heading="Not ready today? Get told when the Moshy offer changes."
-            sub="New customers can currently get $120 off with code REFERRAL120. We'll email you if that changes, and nothing else."
+            sub="New customers can currently get $120 off a first order with code REFERRAL120, with a 3-month minimum commitment under Moshy's promotion terms. We'll email you if that changes, and nothing else."
           />
         </div>
 
         <div className="border-t border-[#ded8cd] pt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm">
           <Link href="/moshy" style={{ color: CYAN }} className="hover:opacity-80">Moshy discount code →</Link>
           <Link href="/moshy-vs-juniper" style={{ color: CYAN }} className="hover:opacity-80">Moshy vs Juniper →</Link>
-          <Link href="/moshy-eligibility" style={{ color: CYAN }} className="hover:opacity-80">What the questionnaire asks →</Link>
           <Link href="/moshy-alternatives" style={{ color: CYAN }} className="hover:opacity-80">Moshy alternatives →</Link>
         </div>
 
@@ -218,8 +226,8 @@ export default function MoshyReviewPage() {
 
         <AffiliateDisclosure className="mt-8" />
         <p className="text-[#56504a] text-xs mt-3 leading-relaxed">
-          Nothing on this page is medical advice. Offers and pricing can change; check current terms on
-          Moshy&apos;s own site.
+          Nothing on this page is medical advice. Any treatment is decided by a registered practitioner after an
+          individual assessment. Offers and pricing can change; check current terms on Moshy&apos;s own site.
         </p>
         <p className="text-[#56504a] text-xs mt-4">© 2026 Refer Labs · Australia · <Link href="/guides" className="hover:text-[#56504a]">All guides</Link></p>
       </main>

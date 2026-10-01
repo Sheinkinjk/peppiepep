@@ -154,7 +154,7 @@ export const MIDOC = {
   practitioners: "doctors registered with AHPRA",
 
   bands: [
-    { band: "Standard consultation", price: CONSULT_STANDARD, items: "General health, child health, COVID-19, hair loss, sexual health and STI, smoking cessation, continence." },
+    { band: "Standard consultation", price: CONSULT_STANDARD, items: "Among other services: general health, child health, COVID-19, sexual health and STI, smoking cessation, continence." },
     { band: "Specialist consultation", price: CONSULT_SPECIALIST, items: "Among other services: men's health (priced after the Medicare rebate), dementia support, wound care." },
     { band: "Mental health care plan or review", price: "Fully bulk billed", items: "Listed at no cost, so there is nothing for us to earn on it." },
     { band: "Repeat script", price: SCRIPT_REPEAT, items: "A repeat of something already prescribed to you." },

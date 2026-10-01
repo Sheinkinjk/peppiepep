@@ -25,11 +25,11 @@ const UPDATED = MIDOC.readOn;
 const FAQS = [
   {
     q: "What is Midoc?",
-    a: `Midoc is an Australian telehealth service. You complete a short form, a doctor registered with AHPRA calls you by phone or video, and where appropriate they can issue a prescription, a medical certificate or a specialist referral. Read off midoc.com.au on ${MIDOC.readOnLabel}.`,
+    a: `Midoc is an Australian telehealth service. You complete a short form, a doctor registered with AHPRA calls you by phone or video and decides what, if anything, is appropriate, which may include a certificate or a referral. Read off midoc.com.au on ${MIDOC.readOnLabel}.`,
   },
   {
     q: "How much does a Midoc consultation cost?",
-    a: `Midoc lists standard consultations at ${MIDOC.consultStandard}, covering general health, child health, COVID-19, hair loss, sexual health and STI, smoking cessation and continence. Specialist consultations are listed at ${MIDOC.consultSpecialist}, covering, among other services, men's health priced after the Medicare rebate, dementia support and wound care. A mental health care plan or review is listed as ${MIDOC.mentalHealth}. Medical certificates are ${MIDOC.certificateSingleDay} for a single day and ${MIDOC.certificateWeek} for multiple days. Read off midoc.com.au on ${MIDOC.readOnLabel}, and prices can change.`,
+    a: `Midoc lists standard consultations at ${MIDOC.consultStandard}, covering, among other services, general health, child health, COVID-19, sexual health and STI, smoking cessation and continence. Specialist consultations are listed at ${MIDOC.consultSpecialist}, covering, among other services, men's health priced after the Medicare rebate, dementia support and wound care. A mental health care plan or review is listed as ${MIDOC.mentalHealth}. Medical certificates are ${MIDOC.certificateSingleDay} for a single day and ${MIDOC.certificateWeek} for multiple days. Read off midoc.com.au on ${MIDOC.readOnLabel}, and prices can change.`,
   },
   {
     q: "How long is the wait?",
@@ -37,7 +37,7 @@ const FAQS = [
   },
   {
     q: "Do I need a Medicare card?",
-    a: "Midoc states a Medicare card is not required for a consultation, but is required for a prescription. That is the single most useful thing to check before you book, because it decides whether the consultation can end in the thing you came for.",
+    a: "Midoc states a Medicare card is not required for a consultation, but is required for a prescription. Check which applies to you before you book.",
   },
   {
     q: "Is Midoc available in my state?",
@@ -78,7 +78,7 @@ const orgSchema = {
   name: "Midoc",
   url: "https://www.midoc.com.au",
   areaServed: "AU",
-  description: "Australian telehealth service providing consultations, prescriptions, medical certificates and specialist referrals from AHPRA-registered doctors.",
+  description: "Australian telehealth service providing consultations, medical certificates and specialist referrals from AHPRA-registered doctors.",
 };
 
 export default function MidocPage() {
@@ -104,8 +104,8 @@ export default function MidocPage() {
         {/* Answer-first. Nothing goes above this paragraph. */}
         <p className="mt-5 text-lg leading-relaxed text-[#56504a]">
           Midoc is an Australian telehealth service. You fill in a short form, a doctor registered with
-          AHPRA calls you by phone or video usually within 5 to 60 minutes, and where it is
-          appropriate they can issue a prescription, a medical certificate or a specialist referral.
+          AHPRA calls you by phone or video usually within 5 to 60 minutes, and decides what, if
+          anything, is appropriate, which may include a certificate or a referral.
           Standard consultations are listed at {MIDOC.consultStandard} and specialist consultations at{" "}
           {MIDOC.consultSpecialist}, with mental health care plans listed as {MIDOC.mentalHealth}. Read
           off midoc.com.au on {MIDOC.readOnLabel}.
@@ -120,8 +120,7 @@ export default function MidocPage() {
         <p className="mt-6 rounded-xl border border-[#ded8cd] bg-[#f7f4ee] px-5 py-4 text-xs leading-relaxed text-[#56504a]">
           <span className="font-semibold text-[#56504a]">Information only.</span> This page describes a
           service and how to reach it. It is not medical advice and does not recommend any treatment.
-          Prescription medicines in Australia are supplied only after an individual assessment by a
-          registered practitioner, who decides what is appropriate.
+          Any treatment is decided by a registered practitioner after an individual assessment.
         </p>
 
         <section className="mt-12">
@@ -149,7 +148,7 @@ export default function MidocPage() {
           <ol className="mt-4 space-y-3 text-[15px] leading-relaxed text-[#56504a]">
             <li><span className="font-semibold text-[#14120f]">1.</span> Pick the service and complete a short health form.</li>
             <li><span className="font-semibold text-[#14120f]">2.</span> An AHPRA-registered doctor calls you, by phone or video depending on the service, usually within 5 to 60 minutes.</li>
-            <li><span className="font-semibold text-[#14120f]">3.</span> If it is clinically appropriate, they issue what you need: a prescription, a certificate, or a referral. A Medicare card is required for a prescription, though not for the consultation itself.</li>
+            <li><span className="font-semibold text-[#14120f]">3.</span> The doctor decides what, if anything, is appropriate, which may include a certificate or a referral. A Medicare card is required for a prescription, though not for the consultation itself.</li>
           </ol>
           <p className="mt-4 text-[15px] leading-relaxed text-[#56504a]">
             Hours vary by service. Most run {MIDOC.hoursMost}, with {MIDOC.hoursExceptions}.
@@ -203,7 +202,6 @@ export default function MidocPage() {
           <ul className="mt-4 space-y-2 text-[15px]">
             <li><Link href="/mens-health/is-telehealth-or-a-gp-cheaper-for-mens-health" className="text-[#007a95] hover:underline">Is telehealth or a GP cheaper for men&apos;s health?</Link></li>
             <li><Link href="/mens-health/online-mens-health-clinics-compared" className="text-[#007a95] hover:underline">Online men&apos;s health clinics compared</Link></li>
-            <li><Link href="/mens-health/online-prescription-australia" className="text-[#007a95] hover:underline">Online prescriptions in Australia: cost and Medicare</Link></li>
             <li><Link href="/mens-health/online-doctor-medical-certificate-australia" className="text-[#007a95] hover:underline">Online medical certificates: cost and turnaround</Link></li>
             <li><Link href="/mens-health" className="text-[#007a95] hover:underline">All men&apos;s health guides</Link></li>
           </ul>

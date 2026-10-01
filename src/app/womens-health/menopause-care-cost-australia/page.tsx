@@ -5,6 +5,9 @@ import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
 export const metadata = generateSEOMetadata(seoConfig.whMenopause);
 
 /*
+ * 1 Oct 2026 (TGA audit M9): nothing here says what is prescribed or that it is
+ * paid for separately; the page prices consultations and programs only.
+ *
  * Built 28 Sep 2026 from MBS Online (fees from 1 July 2026), health.gov.au, the
  * Royal Women's Hospital and NSW Health, and the fee pages of Australian
  * telehealth menopause services, all read that day.
@@ -34,7 +37,7 @@ const faqs = [
   },
   {
     q: "How much does a private menopause clinic cost in Australia?",
-    a: "Across seven Australian telehealth menopause services whose fee pages we read on 28 September 2026, the out-of-pocket cost of a first consult ran from nothing, for a bulk-billed phone consult, to $326 after the Medicare rebate. Program fees, email consults, script requests and support programs attract no rebate. Anything prescribed is paid for separately at the pharmacy.",
+    a: "Across seven Australian telehealth menopause services whose fee pages we read on 28 September 2026, the out-of-pocket cost of a first consult ran from nothing, for a bulk-billed phone consult, to $326 after the Medicare rebate. Program fees, email consults and support programs attract no rebate.",
   },
   {
     q: "Can I see a public menopause clinic?",
@@ -101,8 +104,8 @@ export default function Page() {
             </thead>
             <tbody className="divide-y divide-[#f1ede4]">
               {[
-                ["Doctor-led clinic, long first consult", "$216.65 to $326 across three services", "Follow-ups with a rebate; email consults and script requests without one"],
-                ["Bulk-billed consult, then a monthly program", "$0", "A program fee each month, with anything prescribed extra"],
+                ["Doctor-led clinic, long first consult", "$216.65 to $326 across three services", "Follow-ups with a rebate; email consults and other non-consult fees without one"],
+                ["Bulk-billed consult, then a monthly program", "$0", "A program fee each month"],
                 ["Fixed-price care plan", "$199 for three months, consults bulk-billed", "Price after three months not published"],
                 ["Private flat-fee consult", "$35 to $59.90 across two services", "No Medicare rebate"],
               ].map((r) => (
@@ -116,8 +119,7 @@ export default function Page() {
           </table>
         </div>
         <p className="mt-3 text-xs text-[#56504a]">
-          Read from each service&apos;s own fee page on {READ}. Anything prescribed is paid for separately at the
-          pharmacy on every model.
+          Read from each service&apos;s own fee page on {READ}. The figures are consultation and program fees only.
         </p>
       </section>
 
@@ -147,8 +149,8 @@ export default function Page() {
           listing is not an endorsement, so treat it as a place to start rather than a recommendation.
         </p>
         <p className="mt-3">
-          General information for an Australian audience, not medical advice. Menopause medicines are prescription-only
-          in Australia, and any treatment is decided by a registered practitioner after an assessment.
+          General information for an Australian audience, not medical advice. Any treatment is decided by a registered
+          practitioner after an assessment.
         </p>
       </section>
 

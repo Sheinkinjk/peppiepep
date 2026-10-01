@@ -39,6 +39,10 @@ import {
 const CONDITION = /annual|yearly|first year|billing|months? of|\bfor \d+ months\b/i;
 function said(r: { figure: string | null; offer: string }): string {
   const fig = r.figure ?? "";
+  // A minimum commitment travels with the saving (Moshy's REFERRAL120, 1 Oct 2026):
+  // "$120 off" alone omits part of the price.
+  const min = r.offer.match(/\d+-month minimum/i);
+  if (min) return `${fig} off (${min[0]})`;
   const clause = r.offer.split(";").map((c) => c.trim()).find((c) => c.includes(fig)) ?? "";
   if (CONDITION.test(clause)) return clause;
   return /free/i.test(fig) ? fig : `${fig} off`;

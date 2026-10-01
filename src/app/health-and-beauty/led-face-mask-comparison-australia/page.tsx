@@ -35,7 +35,7 @@ const faqs = [
   },
   {
     q: "Is a cheaper LED mask worth it?",
-    a: "It depends what is missing. A lower price can reflect fewer LEDs, lower output, a smaller treatment area, or no ARTG inclusion. None of those are automatically disqualifying, but they should be visible before you buy. If a listing does not state wavelength, LED count and regulatory status, you are not comparing it to anything, you are guessing.",
+    a: "It depends what is missing. A lower price can reflect fewer LEDs, lower output, a smaller coverage area, or no ARTG inclusion. None of those are automatically disqualifying, but they should be visible before you buy. If a listing does not state wavelength, LED count and regulatory status, you are not comparing it to anything, you are guessing.",
   },
 ];
 
@@ -114,7 +114,7 @@ export default function Page() {
         <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">What to check on a listing</h2>
         <ul className="mt-3 list-disc space-y-2 pl-5">
           <li><strong className="text-[#14120f]">Wavelengths, stated in nanometres.</strong> A listing that says only &ldquo;red light&rdquo; cannot be compared to one that specifies 633nm.</li>
-          <li><strong className="text-[#14120f]">LED count and coverage.</strong> Both determine how much of your face is treated and for how long a session runs.</li>
+          <li><strong className="text-[#14120f]">LED count and coverage.</strong> Both determine how much of your face it covers and for how long a session runs.</li>
           <li><strong className="text-[#14120f]">ARTG inclusion.</strong> Search the register yourself by brand or sponsor rather than taking a marketing line at face value.</li>
           <li><strong className="text-[#14120f]">Session time and frequency.</strong> A device needing long daily sessions is one most people quietly stop using.</li>
           <li><strong className="text-[#14120f]">Warranty and who honours it.</strong> An Australian seller and an overseas one are not the same proposition if the device fails.</li>

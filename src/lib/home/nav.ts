@@ -11,9 +11,9 @@ export const hybridNav: NavGroup[] = [
     label: "Weight Loss", href: "/weight-loss",
     items: [
       { href: "/weight-loss", label: "Weight loss navigator", blurb: "Every weight-loss route in one place, compared" },
-      { href: "/moshy", label: "Moshy", blurb: "How the program works, plus $120 off your first order" },
+      { href: "/moshy", label: "Moshy", blurb: "How the program works, plus $120 off your first order (3-month minimum)" },
       { href: "/juniper", label: "Juniper", blurb: "Built for women; JARREDKFC waives the initial consultation" },
-      { href: "/best-weight-loss-telehealth-australia", label: "Compare all providers", blurb: "Pricing, eligibility and who each suits" },
+      { href: "/best-weight-loss-telehealth-australia", label: "Compare all providers", blurb: "Pricing, inclusions and who each suits" },
       { href: "/weight-loss-quiz", label: "Which pathway fits you?", blurb: "A 60-second match, no sign-up" },
     ],
   },
@@ -21,8 +21,8 @@ export const hybridNav: NavGroup[] = [
     label: "Hair Loss", href: "/hair-loss",
     items: [
       { href: "/moshhair", label: "Mosh", blurb: "How it works, plus 55% off your first order" },
-      { href: "/best-hair-loss-treatment-australia", label: "Compare all options", blurb: "Clinical telehealth vs topical products" },
-      { href: "/hair-loss-treatment-cost-australia", label: "What treatment costs", blurb: "What you pay and what is included" },
+      { href: "/best-hair-loss-treatment-australia", label: "Compare all options", blurb: "Online consultation or your GP, compared" },
+      { href: "/hair-loss-treatment-cost-australia", label: "What it costs", blurb: "What you pay and what is included" },
       { href: "/hair-loss-quiz", label: "Which option fits you?", blurb: "A 30-second match" },
     ],
   },

@@ -59,10 +59,35 @@ export function formatVerifiedFull(date: string): string {
 /** Full display date ("24 Jul 2026"). */
 export const VERIFIED_FULL = formatVerifiedFull(VERIFIED_DATE);
 
+/**
+ * Promotion terms pages, read 1 Oct 2026 (both returned 200 and carry each brand's
+ * promotion terms). Linked beside every mention of the code, because Ahpra s133(1)(b)
+ * allows an inducement for a regulated health service only where its terms are
+ * stated, and guideline 4.2 says they must be easy to find.
+ */
+export const MOSHY_PROMO_TERMS_URL = "https://www.getmoshy.com.au/promotions-terms-and-conditions";
+export const MOSH_PROMO_TERMS_URL = "https://www.getmosh.com.au/promotions-terms-and-conditions";
+
+/**
+ * The REFERRAL120 terms in one sentence, for every page and email that prints the
+ * code. Deliberately says "eligible weight programs under Moshy's terms" and NOT
+ * which plans are excluded: listing the excluded non-prescription plans told the
+ * reader by elimination which plan the discount applies to (TGA audit, 1 Oct 2026).
+ */
+export const REFERRAL120_TERMS =
+  "New customers only, one use, on the Moshy weight programs its promotion terms list as eligible, with a 3-month minimum commitment.";
+
+/** The REFERAL55 terms in one sentence, linked to Mosh's promotion terms wherever the code appears. */
+export const REFERAL55_TERMS =
+  "New customers only; applies to the first order of a Mosh hair program; full terms on Mosh's site.";
+
 /** The Moshy new-customer offer, referenced directly on the weight-loss money pages. */
 export const MOSHY_OFFER = {
   amount: "$120 off",
   code: "REFERRAL120",
+  /** Moshy's own term, stated wherever the code appears (Ahpra s133(1)(b), ACL s29(1)(i)). */
+  minimum: "3-month minimum commitment",
+  termsUrl: "https://www.getmoshy.com.au/promotions-terms-and-conditions",
   // No date here. This object carried its own copy of the check date twice and
   // it drifted both times: "July 2026" against /deals' 17 August, then "August
   // 2026" on the /moshy and /moshy-review stamps for a month after the 23 Sep
@@ -126,13 +151,16 @@ export interface Deal {
    * redirect URLs, not the pages an offer was read off.
    */
   source?: { readOff: string } | { noPublicPage: string };
+
+  /** The brand's own promotion terms page, linked beside the row on /deals. */
+  termsUrl?: string;
 }
 
 export const DEALS: Deal[] = [
   // readOff: the partner landing page our link resolves to, where the offer is
   // visible. Read live on 26 Aug 2026 per src/lib/facts/registry.ts.
-  { brand: "Moshy", logo: "/logos/moshy.png", href: "/moshy", offer: "$120 off your first order", code: "REFERRAL120", category: "Weight loss", featured: true, verified: "2026-09-30", exclusive: true, source: { readOff: "https://www.getmoshy.com.au/start/eligibility-check-moshy" } },
-  { brand: "Mosh", logo: "/logos/mosh-tile.png", href: "/moshhair", offer: "55% off your first order", code: "REFERAL55", category: "Hair loss", featured: true, verified: "2026-09-30", exclusive: true, source: { readOff: "https://www.getmosh.com.au/start/referlabs" } },
+  { brand: "Moshy", logo: "/logos/moshy.png", href: "/moshy", offer: "$120 off your first order, 3-month minimum", code: "REFERRAL120", category: "Weight loss", featured: true, verified: "2026-09-30", exclusive: true, source: { readOff: "https://www.getmoshy.com.au/start/eligibility-check-moshy" }, termsUrl: MOSHY_PROMO_TERMS_URL },
+  { brand: "Mosh", logo: "/logos/mosh-tile.png", href: "/moshhair", offer: "55% off your first order", code: "REFERAL55", category: "Hair loss", featured: true, verified: "2026-09-30", exclusive: true, source: { readOff: "https://www.getmosh.com.au/start/referlabs" }, termsUrl: MOSH_PROMO_TERMS_URL },
   // Read on Apollo's page on 28 Aug 2026: the $500 is current and unchanged,
   // eligibility is the only stated condition, and the offer is not publicly
   // stated anywhere. It applies to applications made through our link.
@@ -190,24 +218,34 @@ export interface OfferFacts {
   object: string;
   newCustomer?: boolean;
   oneUse?: boolean;
+  /** A minimum commitment the vendor attaches to the offer. Part of the price (ACL s29(1)(i)). */
+  minimumTerm?: string;
+  /** The vendor's own promotion terms page. */
+  termsUrl?: string;
 }
 
 export const OFFER_FACTS: Record<string, OfferFacts> = {
   // amount + verified: the Moshy DEALS row above.
   // object, newCustomer, oneUse: src/app/moshy/config.ts:129 and :133, which
   // state the terms as read off Moshy's own sign-up page on 17 August 2026.
+  // minimumTerm: Moshy's landing page, read 1 Oct 2026: "subject to a minimum
+  // commitment period of 3 months". object reworded 1 Oct 2026 (TGA audit H7):
+  // eligible programs under Moshy's terms, never a list of excluded plans.
   REFERRAL120: {
     brand: "Moshy", code: "REFERRAL120", amount: "$120 off",
-    object: "a new customer's first order",
+    object: "a new customer's first order on a Moshy weight program its promotion terms list as eligible",
     newCustomer: true, oneUse: true,
+    minimumTerm: "3-month minimum commitment",
+    termsUrl: MOSHY_PROMO_TERMS_URL,
   },
   // amount + verified: the Mosh DEALS row above.
   // object + newCustomer: src/app/moshhair/config.ts:22 and :127.
   // oneUse omitted: Mosh does not state it anywhere on file.
   REFERAL55: {
     brand: "Mosh", code: "REFERAL55", amount: "55% off",
-    object: "a new customer's first order",
+    object: "the first order of a new customer's Mosh hair program",
     newCustomer: true,
+    termsUrl: MOSH_PROMO_TERMS_URL,
   },
   // amount + object: the i-screen DEALS row above, and src/lib/partners/i-screen.ts,
   // which holds the catalogue the discount applies against. The object is the FIRST
@@ -308,6 +346,8 @@ export function offerSchema(code: string) {
   const terms = [
     f.newCustomer ? "New customers only." : null,
     f.oneUse ? "One use per customer." : null,
+    f.minimumTerm ? `${f.minimumTerm.charAt(0).toUpperCase()}${f.minimumTerm.slice(1)}.` : null,
+    f.termsUrl ? `Full terms: ${f.termsUrl}` : null,
   ].filter(Boolean).join(" ");
   return {
     "@context": "https://schema.org",

@@ -264,7 +264,7 @@ const PARTNERS = [
 // Widened 14 Sep 2026: /mens-health and /health-and-beauty shipped "nothing in this
 // section currently earns us a commission" beside partner links for over a week,
 // because this matched only "nothing here" / "nothing on this page".
-const EARNS_NOTHING = /nothing (?:here|on this page|on these pages|in this (?:section|category|hub))(?:,? (?:currently|yet|right now))? (?:earns us (?:a )?(?:commission|anything|nothing)|pays us|earns us)|\bwe earn nothing (?:here|from this section)\b|\bno links are live\b/i;
+const EARNS_NOTHING = /nothing (?:here|on this page|on these pages|in this (?:section|category|hub))(?:,? (?:currently|yet|right now))? (?:earns us (?:a )?(?:commission|anything|nothing)|pays us|earns us)|\bwe earn nothing (?:here|from this section)\b|\bno links are live\b|\b(?:have|there is|there are) no (?:[a-z-]+ ){0,2}partners?\b|\bno (?:brand|brands|company|companies|provider|providers|retailer|retailers) we earn from\b/i;
 
 /**
  * Source with comments removed, for the denial checks.

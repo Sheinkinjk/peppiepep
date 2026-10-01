@@ -30,7 +30,10 @@ import { Clock } from "lucide-react";
  * as the sentence removed above, in new clothes. Say what is missing; do not
  * tell the reader the rest is good.
  */
-type Variant = "a" | "b" | "c" | "d" | "partnered" | "partneredSection";
+// "unmonetised" (1 Oct 2026): for a page inside a partnered hub that itself
+// links no provider, where "partnered" would describe providers that are not
+// there (ACL s18; TGA/Ahpra audit L2, /mens-health/erectile-dysfunction-treatment-cost-australia).
+export type Variant = "a" | "b" | "c" | "d" | "partnered" | "partneredSection" | "unmonetised";
 
 const BY_CATEGORY: Record<string, Variant> = {
   Longevity: "a",
@@ -82,6 +85,8 @@ export default function ComingSoonNote({
       <>{cap(what)} are not on the page yet, and nothing here earns us a commission before then.</>
     ) : v === "partneredSection" ? (
       <>Where a page here links a company that pays us, it says so beside that link, and nothing else on these pages earns us anything.</>
+    ) : v === "unmonetised" ? (
+      <>This page links no provider, and nothing on it earns us a commission.</>
     ) : v === "partnered" ? (
       <>The providers below are ones we have checked ourselves, and we earn a commission if you sign up through them.</>
     ) : (

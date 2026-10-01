@@ -13,23 +13,23 @@ export const metadata = generateSEOMetadata(seoConfig.weightLossCostCalculator);
 const faqs = [
   {
     q: "How much does weight-loss telehealth cost in Australia?",
-    a: "There is no single figure, because pricing is individual. Online services charge a program fee: Moshy describes its fee as all-inclusive, and Juniper's varies with the plan and level of support. Both publish pricing on their own sites, and the plan that applies to you is confirmed before you commit.",
+    a: "There is no single figure, because pricing is individual. Online services charge a program fee: Moshy describes its fee as all-inclusive, and Juniper's varies with the plan and level of support. Both publish pricing on their own sites and show the amount before you pay.",
   },
   {
     q: "Why doesn't this calculator show exact prices?",
-    a: "Because any exact figure we published would be a guess, and prices change and vary by individual treatment plan. Instead the planner shows what each pathway charges for, what determines your price, and the questions to ask, then points you to where your real figure is shown: inside the provider's consultation, before any commitment.",
+    a: "Because any exact figure we published would go stale: prices change and vary with the program and level of support. Instead the planner shows what each route charges for, what determines your price, and the questions to ask, then points you to where your real figure is shown: the provider's own pricing page, before you pay.",
   },
   {
-    q: "Does it cost anything to start with Moshy?",
-    a: "No. Starting Moshy's online questionnaire commits you to nothing. If a registered Australian practitioner decides the program suits you, the pricing is confirmed before you pay. New customers get $120 off their first order with REFERRAL120 through our link, with a 3-month minimum commitment.",
+    q: "How is Moshy priced?",
+    a: "Moshy publishes one all-inclusive program fee on its own site and shows the amount before you pay. New customers get $120 off their first order with REFERRAL120 through our link, one use, with a 3-month minimum commitment under Moshy's promotion terms.",
   },
   {
     q: "Does Medicare cover weight-loss telehealth?",
-    a: "Telehealth weight-management programs are generally private services, so the program fees are not Medicare-rebated. The GP pathway is different: eligible in-person or telehealth GP consults may attract Medicare rebates, and some practices bulk-bill, which is why the GP route can suit people prioritising lowest cash cost over speed and convenience. Check your own practice's billing.",
+    a: "Telehealth weight-management programs are generally private services, so the program fees are not Medicare-rebated. The GP route is different: eligible in-person or telehealth GP consults may attract Medicare rebates, and some practices bulk-bill, which is why the GP route can suit people prioritising lowest cash cost over speed and convenience. Check your own practice's billing.",
   },
   {
     q: "Is this tool medical advice?",
-    a: "No. The planner compares pricing structures based on your preferences about paying and support. It does not assess your health, does not evaluate suitability for any treatment, and does not recommend any medicine. Suitability is decided by a registered Australian practitioner after an individual assessment, and approval is never guaranteed.",
+    a: "No. The planner compares pricing structures based on your preferences about paying and support. It does not assess your health, does not evaluate suitability for any treatment, and does not recommend any treatment. Suitability is decided by a registered Australian practitioner after an individual assessment, and some applicants are declined.",
   },
 ];
 
@@ -84,22 +84,21 @@ export default function WeightLossCostCalculatorPage() {
           {/* Hero */}
           <section className="pt-9 pb-7 sm:pt-11">
             <h1 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-extrabold leading-[1.08] tracking-tight text-[#14120f] mb-4 max-w-3xl">
-              What will weight-loss telehealth cost you? Find your pathway
+              What will weight-loss telehealth cost you? Compare the fee models
             </h1>
             <div className="text-[#56504a] text-sm sm:text-base leading-relaxed max-w-2xl mb-5 space-y-3">
               <p>
-                Nobody can quote you an honest fixed price for weight-loss care, because the figure depends on
-                the plan a practitioner approves for you. What we can do is show you exactly{" "}
-                <strong className="font-semibold text-[#14120f]">what each pathway charges for</strong>, what
-                moves the price, and where your real number gets revealed before you commit a cent.
+                Weight-loss telehealth has no single fixed price, because the figure depends on the program and
+                support level you choose. This planner shows{" "}
+                <strong className="font-semibold text-[#14120f]">what each route charges for</strong>, what moves
+                the price, and where each provider publishes its fee before you pay.
               </p>
               <p>Three quick preference questions. No health questions, and nothing is stored.</p>
             </div>
             <p className="mb-6 rounded-lg border border-[#ded8cd] bg-[#f7f4ee] px-4 py-3 text-xs leading-relaxed text-[#56504a]">
               <span className="font-semibold text-[#14120f]">Information only.</span> This tool compares pricing
               structures, not medical suitability. It is not medical or financial advice and does not recommend
-              any treatment. Prescription medicines in Australia are available only after assessment by a
-              registered practitioner. This page contains a disclosed affiliate link.
+              any treatment. This page contains a disclosed affiliate link.
             </p>
           </section>
 
@@ -115,14 +114,13 @@ export default function WeightLossCostCalculatorPage() {
             </h2>
             <div className="space-y-4 text-[15px] leading-relaxed text-[#56504a] max-w-2xl">
               <p>
-                Weight-loss telehealth pricing depends on the program, the level of support and the plan that
-                applies after an individual assessment, so two people rarely pay the same amount.
+                Weight-loss telehealth pricing depends on the program, the level of support and any minimum
+                term, so two people rarely pay the same amount.
               </p>
               <p>
-                What this tool gives you instead is the cost structure of each pathway, the
-                factors that move your price, and the fact that reputable providers show the exact figure inside
-                their own flow before you commit. Starting a provider&apos;s questionnaire costs nothing and
-                shows you the figure that applies to you. For the wider
+                What this tool gives you instead is the cost structure of each route, the factors that move your
+                price, and where to read the exact figure: each provider publishes its fee on its own pricing page
+                and shows it before you pay. For the wider
                 pricing landscape, see our guide to{" "}
                 <Link href="/weight-loss-telehealth-cost-australia" className="text-[#007a95] underline underline-offset-2">
                   how weight-loss telehealth pricing works
@@ -175,8 +173,7 @@ export default function WeightLossCostCalculatorPage() {
               This page is operated by Refer Labs and contains a disclosed affiliate referral link to Moshy. We
               may earn a commission if you sign up through it, at no extra cost to you, and it never changes a
               conclusion. All content is general information only and does not constitute medical or financial
-              advice. Prescription medicines in Australia are available only after an individual assessment by a
-              registered Australian practitioner, and suitability is practitioner-decided and never guaranteed.
+              advice. Any treatment is decided by a registered practitioner after an individual assessment.
               Consult a qualified health professional before making health decisions.
             </p>
           </section>

@@ -11,6 +11,7 @@ import CodeAnswer from "@/components/offers/CodeAnswer";
 import OfferSchema from "@/components/offers/OfferSchema";
 
 import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
+import { MOSHY_PROMO_TERMS_URL } from "@/lib/offers";
 export const metadata = generateSEOMetadata(seoConfig.moshyAlternatives);
 
 const CYAN = "#007a95";
@@ -20,7 +21,7 @@ const aff = { href: MOSHY_URL, target: "_blank" as const, rel: "nofollow sponsor
 const faqs = [
   {
     q: "What is the closest alternative to Moshy?",
-    a: "For a practitioner-led weight-management telehealth service in Australia, Moshy has few like-for-like twins. The realistic alternatives are your GP, who can manage the same pathway in person, or Juniper, a weight program designed for women with 1:1 coaching as an add-on.",
+    a: "Of the services we compare, Juniper is the closest like-for-like option: a weight program designed for women, with an online consultation with a registered practitioner and 1:1 coaching as an add-on. Other online services exist, and your GP is a route too.",
   },
   {
     q: "How is Juniper different from Moshy?",
@@ -28,11 +29,7 @@ const faqs = [
   },
   {
     q: "Is going through my GP a real alternative?",
-    a: "Yes, and it is worth taking seriously. A GP can assess you for the same kind of pathway in person, knows your history, and may work out cheaper. The trade is convenience: booking, attending, and repeat visits versus a ten-minute online questionnaire.",
-  },
-  {
-    q: "Why do so few alternatives exist?",
-    a: "Because the model is hard to run properly. It requires registered practitioners, genuine screening, and Australian regulatory compliance. That filters out casual entrants, which from a user's perspective is a good thing.",
+    a: "Yes. A GP can see you in person, knows your history, and Medicare partly offsets the consultation. The trade is convenience: booking, attending, and repeat visits versus an online questionnaire and a phone or video consultation.",
   },
 ];
 
@@ -56,7 +53,7 @@ const webPageSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
   datePublished: "2026-07-05",
-  dateModified: "2026-09-10",
+  dateModified: "2026-10-01",
   name: seoConfig.moshyAlternatives.title,
   description: seoConfig.moshyAlternatives.description,
   url: seoConfig.moshyAlternatives.url,
@@ -86,15 +83,20 @@ export default function MoshyAlternativesPage() {
           Moshy alternatives in Australia: <span>the shortlist</span>
         </h1>
         <p className="text-[#56504a] text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
-          People search for Moshy alternatives for good reasons: comparing before committing, or the service was not
-          the right fit. The shortlist is short, and here it is without padding.
+          Of the services we compare, Juniper is the closest like-for-like option to Moshy; other online services
+          exist, and your GP is a route too. Which suits you depends on what you want from the program.
         </p>
         {/* Below the lead. The first paragraph after the h1 is the answer;
             a disclosure in that slot is what an engine lifts instead. Still
             above the first affiliate link, which is what it is for. */}
         <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
         <CodeAnswer code="REFERRAL120" className="mt-6">
-          Among the alternatives set out below, Moshy is the one with a Refer Labs code: REFERRAL120, $120 off a new customer&apos;s first order, one use per customer.
+          Refer Labs holds a Moshy code: REFERRAL120, $120 off a new customer&apos;s first order, one use per customer,
+          with a 3-month minimum commitment under{" "}
+          <a href={MOSHY_PROMO_TERMS_URL} target="_blank" rel="noopener noreferrer" className="font-semibold underline underline-offset-2">
+            Moshy&apos;s promotion terms
+          </a>
+          .
         </CodeAnswer>
         <OfferSchema code="REFERRAL120" />
 
@@ -104,10 +106,11 @@ export default function MoshyAlternativesPage() {
           <h2 className="text-xl font-black mb-3">What are the best alternatives to Moshy in Australia?</h2>
           <div className="rounded-xl border border-[#b9e3eb] bg-[#e4f2f5] px-6 py-5">
             <p className="text-[#14120f] text-sm sm:text-base leading-relaxed max-w-2xl">
-              There are two realistic alternatives, and which suits you depends on what Moshy is missing for you.
-              Your GP is the cheapest route and the best fit if you want weight managed alongside the rest of your
-              health. Juniper is the closest like-for-like online option and is built for women, wrapping coaching, an
-              app and a patient community around the clinical care, with the $89 initial consultation waived for new patients through JARREDKFC.
+              Of the services we compare, Juniper is the closest like-for-like option; other online services exist,
+              and your GP is a route too. Your GP suits you if you want weight managed alongside the rest of your
+              health, with the consultation partly offset by Medicare. Juniper is designed for women and offers an
+              online consultation with a registered practitioner, plus coaching, meal plans and a community; JARREDKFC
+              means no charge for the initial consultation, which Juniper values at $89, and program fees apply.
               Suitability for any of them is decided individually by a registered Australian practitioner.
             </p>
           </div>
@@ -121,10 +124,9 @@ export default function MoshyAlternativesPage() {
         <section className="space-y-4 mb-8">
           <h2 className="text-xl font-black">1. Your GP</h2>
           <p className="text-[#56504a] text-sm sm:text-base leading-relaxed">
-            A GP can manage a weight pathway in person, sees your whole health picture,
-            and Medicare offsets part of the cost. What you give up is convenience and, for some people, the willingness to
-            start at all. If you would book the appointment, this is a strong option. We compared the two
-            routes properly in{" "}
+            A GP can see you in person about weight management, sees your whole health picture, and Medicare offsets
+            part of the consultation. What you give up is convenience. If you would book the appointment, this is a
+            strong option. We compare the two routes in{" "}
             <Link href="/moshy-vs-gp" className="underline decoration-[#ded8cd] underline-offset-2 hover:text-[#14120f]" style={{ color: CYAN }}>
               Moshy vs your GP
             </Link>.
@@ -132,10 +134,11 @@ export default function MoshyAlternativesPage() {
         </section>
 
         <section className="space-y-4 mb-8">
-          <h2 className="text-xl font-black">2. Juniper, if you want coaching built in</h2>
+          <h2 className="text-xl font-black">2. Juniper, designed for women</h2>
           <p className="text-[#56504a] text-sm sm:text-base leading-relaxed">
-            Juniper runs a close model to Moshy but adds a coaching and community layer on top of the clinical pathway,
-            and markets primarily to women. If that structure is what you want,{" "}
+            Juniper runs a close model to Moshy: an online consultation with a registered practitioner, plus app
+            coaching, dietitian meal plans and a community, with 1:1 coaching as a paid add-on. It is designed for
+            women. To see what it includes,{" "}
             <Link href="/juniper" data-cta="moshy-alternatives-juniper" className="underline decoration-[#ded8cd] underline-offset-2 hover:text-[#14120f]" style={{ color: CYAN }}>
               read our Juniper review
             </Link>.
@@ -151,7 +154,11 @@ export default function MoshyAlternativesPage() {
           </p>
           <div className="rounded-xl border px-6 py-5 mt-4" style={{ borderColor: `${CYAN}40`, background: `${CYAN}0A` }}>
             <p className="text-[#14120f] text-sm sm:text-base leading-relaxed mb-4">
-              Starting Moshy&apos;s questionnaire commits you to nothing. Our link carries REFERRAL120 ($120 off a first order, 3-month minimum); enter it at checkout if it isn&apos;t shown.
+              Our link carries REFERRAL120: $120 off a first order with a 3-month minimum commitment, under{" "}
+              <a href={MOSHY_PROMO_TERMS_URL} target="_blank" rel="noopener noreferrer" className="font-semibold underline underline-offset-2">
+                Moshy&apos;s promotion terms
+              </a>
+              . Enter it at checkout if it isn&apos;t shown.
             </p>
             <a
               {...aff}
@@ -159,7 +166,7 @@ export default function MoshyAlternativesPage() {
               className="inline-flex items-center gap-2 rounded-xl px-6 py-3 text-sm font-bold text-white transition-all hover:-translate-y-0.5 shadow-lg"
               style={{ background: CYAN, boxShadow: `0 8px 32px ${CYAN}30` }}
             >
-              Continue to Moshy ($120 off with code REFERRAL120)
+              Continue to Moshy
               <ArrowRight className="h-4 w-4" />
             </a>
             <EarningsBalanceNote earnFromAll={["Moshy", "Juniper"]} className="mt-4 max-w-2xl" />
@@ -193,7 +200,8 @@ export default function MoshyAlternativesPage() {
 
         <AffiliateDisclosure partners={["Moshy", "Juniper"]} className="mt-8" />
         <p className="text-[#56504a] text-xs mt-3 leading-relaxed">
-          Nothing here is medical advice. Always consult a qualified health
+          Nothing here is medical advice. Any treatment is decided by a registered practitioner after an individual
+          assessment. Always consult a qualified health
           professional about your own circumstances.
         </p>
         <p className="text-[#56504a] text-xs mt-4">© 2026 Refer Labs · Australia · <Link href="/guides" className="hover:text-[#56504a]">All guides</Link></p>

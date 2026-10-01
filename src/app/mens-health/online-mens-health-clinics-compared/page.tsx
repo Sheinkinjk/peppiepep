@@ -21,15 +21,15 @@ export const metadata = generateSEOMetadata(seoConfig.mensClinicsCompared);
 const faqs = [
   {
     q: "How do online men's health clinics differ from each other?",
-    a: "Mostly in how they charge and what the subscription includes, rather than in the clinical process, which is broadly similar: you complete an assessment, an Australian-registered practitioner reviews it, and anything prescription-only is supplied only if they judge it appropriate. The differences that affect you are whether you pay per consult or monthly, whether supply is bundled or billed separately, whether review appointments cost extra, and how easily you can cancel.",
+    a: "Mostly in how they charge and what the subscription includes, rather than in the clinical process, which is broadly similar: you complete an assessment, an Australian-registered practitioner reviews it, and any treatment is decided by the practitioner after an individual assessment. The differences that affect you are whether you pay per consult or monthly, what the subscription bundles and what is billed separately, whether review appointments cost extra, and how easily you can cancel.",
   },
   {
     q: "What should I check before signing up to an online men's health clinic?",
-    a: "That a practitioner consultation happens before anything is supplied, which is both a legal requirement and the single most important safety check. Then the commercial terms: the twelve-month cost rather than the first month, what is bundled, whether Medicare applies to any part, and the cancellation process. Ask whether cancelling can be done in the account or requires contacting support, because that difference shows up later.",
+    a: "That a practitioner consults you before any treatment is decided, which is both a legal requirement and the single most important safety check. Then the commercial terms: the twelve-month cost rather than the first month, what is bundled, whether Medicare applies to any part, and the cancellation process. Ask whether cancelling can be done in the account or requires contacting support, because that difference shows up later.",
   },
   {
     q: "Are online men's health clinics regulated in Australia?",
-    a: "The practitioners are. Anyone prescribing must be registered with AHPRA, and you can search the register yourself by name. Prescription-only medicines can be supplied only after an individual assessment and are dispensed by a pharmacy. A service that offers to supply without an assessment is operating outside those rules, which is a reason to avoid it rather than a shortcut worth taking.",
+    a: "The practitioners are. Every practitioner must be registered with AHPRA, and you can search the register yourself by name. Any treatment is decided by a registered practitioner after an individual assessment. A service that offers to skip the assessment is operating outside those rules, which is a reason to avoid it rather than a shortcut worth taking.",
   },
   {
     q: "Why does this page not rank specific clinics?",
@@ -62,13 +62,13 @@ export default function Page() {
       <section>
         <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">The safety check that comes first</h2>
         <p className="mt-3">
-          Before any comparison of price: a practitioner consultation must happen before anything prescription-only is
-          supplied. That is a legal requirement in Australia, not a service feature, and it is what an assessment is
+          Before any comparison of price: a practitioner must assess you before any treatment is decided. That is a
+          legal requirement in Australia, not a service feature, and it is what an assessment is
           for. A service presenting the assessment as a formality, or offering to skip it, is telling you something
           about how it operates.
         </p>
         <p className="mt-3">
-          You can check any prescribing practitioner on the AHPRA register yourself. It takes a minute and it is the
+          You can check any practitioner on the AHPRA register yourself. It takes a minute and it is the
           most useful minute in this process.
         </p>
       </section>
@@ -86,7 +86,7 @@ export default function Page() {
             <tbody className="divide-y divide-[#f1ede4]">
               {[
                 ["Subscription or per consult", "Decides whether you pay in months you would not have booked."],
-                ["What the subscription bundles", "Consult, supply, delivery and support are sometimes separate line items."],
+                ["What the subscription bundles", "The consult, review appointments and support are sometimes separate line items."],
                 ["Cost of a review appointment", "Frequently excluded from the headline figure and needed more than once a year."],
                 ["Whether Medicare applies to any part", "Most online subscriptions sit outside it entirely, unlike a GP consult."],
                 ["Cancellation process", "In-account cancellation versus contacting support is a real difference in practice."],

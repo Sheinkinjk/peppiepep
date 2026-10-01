@@ -95,7 +95,7 @@ function resolve(a: Answers): Result {
   if (frequent) {
     return {
       title: "A bundled subscription may work out cheaper",
-      body: "Subscriptions look expensive against a single consult and stop looking that way once you would consult often. Since your GP does not bulk bill, the comparison is a gap fee several times a year plus anything dispensed, against a bundled monthly figure. Annualise both before deciding, and check what the subscription excludes.",
+      body: "Subscriptions look expensive against a single consult and stop looking that way once you would consult often. Since your GP does not bulk bill, the comparison is a gap fee several times a year plus any pharmacy cost, against a bundled monthly figure. Annualise both before deciding, and check what the subscription excludes.",
       next: [
         { href: "/mens-health/online-mens-health-clinics-compared", label: "What to check before subscribing" },
         { href: "/mens-health/is-telehealth-or-a-gp-cheaper-for-mens-health", label: "The annual comparison" },
@@ -283,8 +283,8 @@ export default function MensHealthQuiz() {
 
       <p className="mt-6 text-xs leading-relaxed text-[#56504a]">
         This quiz asks only about cost, privacy and how you prefer to consult. It collects no health information, makes
-        no assessment of you, and is general information rather than medical advice. Anything prescription-only in
-        Australia is supplied after an individual assessment by a registered practitioner.
+        no assessment of you, and is general information rather than medical advice. Any treatment is decided by a
+        registered practitioner after an individual assessment.
       </p>
     </div>
   );

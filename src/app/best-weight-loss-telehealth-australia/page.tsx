@@ -13,6 +13,7 @@ import WeightInclusionsTable from "@/components/consumer/WeightInclusionsTable";
 import OfferSchema from "@/components/offers/OfferSchema";
 
 import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
+import { MOSHY_PROMO_TERMS_URL } from "@/lib/offers";
 export const metadata = generateSEOMetadata(seoConfig.bestWeightLossTelehealth);
 
 const JUNIPER_REQUIRED = requiredDisclosureFor(JUNIPER_URL);
@@ -33,9 +34,9 @@ const providers: PairProvider[] = [
     points: [
       "Online assessment, then an initial consultation",
       "Dietitian chat in the app, meal plans and a private community",
-      "Full refund if the practitioner decides it isn't right for you",
+      "Full refund if you do not proceed after the consultation (Juniper's terms)",
     ],
-    offer: { text: "Initial consultation waived, valued at $89,", code: "JARREDKFC" },
+    offer: { text: "No charge for the initial consultation, valued at $89 (program fees apply),", code: "JARREDKFC" },
     href: JUNIPER_URL,
     cta: "Continue to Juniper",
     loc: "best-wl-telehealth-juniper",
@@ -49,7 +50,7 @@ const providers: PairProvider[] = [
       "In-app coaching, dietitian meal plans and a community",
       "Also covers hair loss and skin care",
     ],
-    offer: { text: "$120 off your first order", code: "REFERRAL120" },
+    offer: { text: "$120 off your first order, 3-month minimum,", code: "REFERRAL120" },
     href: MOSHY_URL,
     cta: "Continue to Moshy",
     loc: "best-wl-telehealth-moshy",
@@ -101,14 +102,14 @@ const FAQS: { q: string; a: string }[] = [
   },
   {
     q: "Are online weight loss clinics in Australia legit?",
-    a: "The established services operate as regulated telehealth: an Australian-registered practitioner reviews your assessment and decides whether any treatment is appropriate. Check for a practitioner consultation, an Australian business entity and published contact details. A service offering prescription-only medicines without a practitioner consultation is the red flag.",
+    a: "The established services operate as regulated telehealth: an Australian-registered practitioner reviews your assessment and decides whether any treatment is appropriate. Check for a practitioner consultation, an Australian business entity and published contact details. A service that promises a particular treatment before a practitioner has assessed you is one to avoid.",
   },
   // "Is Moshy or Juniper better?" removed 29 Sep 2026: /moshy-vs-juniper owns
   // that question, and the two pages were splitting "moshy vs juniper"
   // impressions (GSC, 90 days). The head-to-head is linked from the answer section.
   {
     q: "How do these platforms assess you?",
-    a: "Both start online: you complete an assessment, and a registered practitioner reviews it and decides whether any treatment is appropriate. Weight-management medicines are prescription-only in Australia, neither service promises a specific treatment in advance, and not everyone who applies is accepted.",
+    a: "Both start online: you complete an assessment, and a registered practitioner reviews it and decides whether any treatment is appropriate. Neither service promises a particular treatment in advance, and some applicants are declined.",
   },
   {
     q: "Are these platforms available across all of Australia?",
@@ -133,7 +134,7 @@ const serviceSchema = {
   "@type": "Service",
   name: "Australian weight loss telehealth comparison",
   description:
-    "Refer Labs compares Australian weight loss telehealth services using public pricing, eligibility, consultation process, support model, disclosures and suitability considerations.",
+    "Refer Labs compares Australian weight loss telehealth services using public pricing, consultation process, support model, disclosures and suitability considerations.",
   provider: { "@type": "Organization", name: "Refer Labs", url: SITE_URL },
   areaServed: { "@type": "Country", name: "Australia" },
   serviceType: "Comparison publishing",
@@ -147,7 +148,7 @@ const webPageSchema = {
   url: seoConfig.bestWeightLossTelehealth.url,
   inLanguage: "en-AU",
   datePublished: "2026-03-16",
-  dateModified: "2026-09-30",
+  dateModified: "2026-10-01",
   about: [
     { "@type": "Thing", name: "weight loss telehealth Australia 2026" },
     { "@type": "Thing", name: "practitioner-assessed treatment telehealth Australia" },
@@ -165,7 +166,7 @@ const articleSchema = comparisonArticleSchema({
   description: "Refer Labs compares Australian weight-loss telehealth services on what each includes, how you start and who each is built for.",
   url: "https://referlabs.com.au/best-weight-loss-telehealth-australia",
   datePublished: "2026-07-05",
-  dateModified: "2026-09-30",
+  dateModified: "2026-10-01",
 });
 
 export default function BestWeightLossTelehealthPage() {
@@ -264,10 +265,10 @@ export default function BestWeightLossTelehealthPage() {
               These factors matter more than the sign-up price. Check each one before you commit:
             </p>
             <ul className="space-y-2.5 text-sm text-[#56504a] max-w-2xl mb-5">
-              <li><strong className="text-[#14120f]">Eligibility.</strong> Each provider runs an online assessment and a practitioner reviews whether treatment is appropriate for you. Approval is assessed individually and is not guaranteed.</li>
+              <li><strong className="text-[#14120f]">Assessment.</strong> A registered practitioner reviews each applicant and some are declined.</li>
               <li><strong className="text-[#14120f]">Total cost.</strong> Check what the fee includes and compare the full amount you would pay over the months you expect to stay.</li>
               <li><strong className="text-[#14120f]">Practitioner review and support.</strong> Check whether you get an initial consult, ongoing check-ins, and how you reach a practitioner if something changes.</li>
-              <li><strong className="text-[#14120f]">The practitioner decides.</strong> Weight-management medicines are prescription-only in Australia, and neither service promises a specific treatment in advance.</li>
+              <li><strong className="text-[#14120f]">The practitioner decides.</strong> A service that promises a particular treatment before a practitioner has assessed you is one to avoid.</li>
               <li><strong className="text-[#14120f]">Commitment and cancellation.</strong> Confirm any minimum term, and how to pause or cancel, before you subscribe.</li>
             </ul>
             <p className="text-sm text-[#56504a] leading-relaxed max-w-2xl">
@@ -285,7 +286,12 @@ export default function BestWeightLossTelehealthPage() {
               Moshy and Juniper both publish their program pricing on their own sites. Moshy describes its fee as
               all-inclusive; Juniper&apos;s varies with the plan and level of support. Through our links,
               Moshy&apos;s REFERRAL120 takes $120 off a new customer&apos;s first order, with a 3-month minimum
-              commitment, and Juniper&apos;s JARREDKFC waives the initial consultation, which Juniper values at $89.
+              commitment under{" "}
+              <a href={MOSHY_PROMO_TERMS_URL} target="_blank" rel="noopener noreferrer" className="font-semibold text-[#007a95] underline underline-offset-2">
+                Moshy&apos;s promotion terms
+              </a>
+              , and Juniper&apos;s JARREDKFC means no charge for the initial consultation, which Juniper values at $89;
+              program fees apply.
             </p>
             <p className="text-xs text-[#56504a]">
               Sources: getmoshy.com.au/weight-loss and myjuniper.com, read 30 September 2026; the JARREDKFC value is from
@@ -315,16 +321,16 @@ export default function BestWeightLossTelehealthPage() {
               source="deal-alert-best-weight-loss"
               interest="Weight-loss telehealth offers"
               heading="Get told when a weight-loss offer changes"
-              sub="We'll email you if the Moshy or Juniper offers on this page change, and nothing else."
+              sub="We'll email you if the Moshy or Juniper offers on this page change, and nothing else. Moshy's REFERRAL120 currently takes $120 off a first order with a 3-month minimum commitment, under Moshy's promotion terms."
             />
           </section>
 
           {/* ── Disclaimer + internal links ───────────────────────────────────── */}
           <section className="border-t border-[#ded8cd] py-8 pb-16">
-            <EditorialMeta lastUpdated="2026-09-30" className="mb-4" />
+            <EditorialMeta lastUpdated="2026-10-01" className="mb-4" />
             <AffiliateDisclosure partners={["Moshy", "Juniper"]} className="mb-3 max-w-2xl" />
             <p className="text-[#56504a] text-xs leading-relaxed max-w-2xl">
-              All content on this page is for informational purposes only and does not constitute medical advice. Suitability for any weight management programme depends on individual health factors. Consult a qualified health professional before starting any treatment.
+              All content on this page is for informational purposes only and does not constitute medical advice. Suitability for any weight management programme depends on individual health factors. Any treatment is decided by a registered practitioner after an individual assessment. Consult a qualified health professional before starting any treatment.
             </p>
             <div className="mt-4 flex flex-wrap gap-4">
               <Link href="/juniper" className="text-xs text-[#56504a] hover:opacity-80 transition-opacity">
