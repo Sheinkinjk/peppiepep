@@ -10,6 +10,7 @@ export const superfiliateConfig: AffiliatePageConfig = {
   affiliateUrl: SUPERFILIATE_URL,
   // Read off Superfiliate's own partner landing page, 20 August 2026:
   // "Enjoy 15% off your monthly Superfiliate SaaS fee!"
+  offerViaLink: true,
   offer: "15% off your monthly Superfiliate SaaS fee",
   // Partner page re-read 30 September 2026: the 15% line is unchanged. The
   // same day superfiliate.com showed no price anywhere, its /pricing path

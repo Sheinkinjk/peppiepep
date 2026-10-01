@@ -152,12 +152,21 @@ export default function PremiumAffiliateLanding({ config }: { config: AffiliateP
               </div>
             )}
 
-            {config.offer && (
-              <div className="mt-7 flex items-start gap-3 rounded-2xl border border-[#007a95]/30 bg-[#007a95]/[0.08] px-5 py-4">
-                <Gift className="mt-0.5 h-5 w-5 shrink-0 text-[#007a95]" strokeWidth={1.9} />
-                <div>
-                  <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#003647]">{config.offerLabel ?? "Current offer via our link"}</p>
-                  <p className="mt-1 text-[15px] font-bold leading-snug text-[#14120f]">{config.offer}</p>
+            {/* Disclosure first, then the offer with its button inside it (1 Oct 2026).
+                The offer used to be a pale box with the button below the disclosure,
+                off the first screen on a phone. The disclosure still sits above the
+                first link, which is what check-disclosure-order enforces. */}
+            <AffiliateDisclosure compact className="mt-7" />
+
+            {config.offer ? (
+              <div className="mt-5 rounded-2xl border-2 border-[#007a95] bg-white p-5 shadow-[0_14px_36px_-22px_rgba(0,54,71,0.45)] sm:p-6">
+                <div className="flex items-start gap-3">
+                <Gift className="mt-1 h-6 w-6 shrink-0 text-[#007a95]" strokeWidth={1.9} />
+                <div className="min-w-0">
+                  <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#003647]">
+                    {config.offerLabel ?? (config.offerViaLink ? "Current offer via our link" : `${config.brand}'s current offer`)}
+                  </p>
+                  <p className="mt-1.5 text-xl font-extrabold leading-snug tracking-[-0.01em] text-[#14120f] sm:text-2xl">{config.offer}</p>
                   {/* Names the publisher, for the same measured reason CodeAnswer's
                       stamp does: Perplexity attributed our code as "one coupon site
                       says" while crediting a competitor by name and date. A date with
@@ -166,15 +175,12 @@ export default function PremiumAffiliateLanding({ config }: { config: AffiliateP
                       gets lifted away from the site. */}
                   <p className="mt-1.5 text-[12px] font-medium text-[#56504a]">{verifiedStamp(config.brand, config.offerCheckedOn)}</p>
                 </div>
+                </div>
+                <div className="mt-5 [&>a]:w-full sm:[&>a]:w-auto">{cta(config.ctas.primary, "hero", "lg")}</div>
               </div>
+            ) : (
+              <div className="mt-8">{cta(config.ctas.primary, "hero", "lg")}</div>
             )}
-
-            {/* Above the button, deliberately. The reader who clicks the hero CTA
-                never scrolls to a disclosure sitting under the fold, which is how
-                38 brand pages came to disclose only after the action. */}
-            <AffiliateDisclosure compact className="mt-7" />
-
-            <div className="mt-8">{cta(config.ctas.primary, "hero", "lg")}</div>
           </div>
 
           {/* At-a-glance card */}

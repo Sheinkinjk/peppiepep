@@ -39,6 +39,7 @@ export const moshHairConfig: AffiliatePageConfig = {
   logoBleed: true,
   badgeText: "Australia",
   affiliateUrl: MOSH_HAIR_URL,
+  offerViaLink: true,
   offer: "55% off your first order (code REFERAL55)",
 
   quickAnswer:
