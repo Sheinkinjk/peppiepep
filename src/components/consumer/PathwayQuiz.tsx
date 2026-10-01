@@ -3,7 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import { ArrowRight, RotateCcw, Check, Share2 } from "lucide-react";
-import { MOSHY_URL } from "@/lib/affiliate-links";
+import { MOSHY_URL, JUNIPER_URL } from "@/lib/affiliate-links";
+import { requiredDisclosureFor } from "@/lib/partner-disclosures";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
 import { MOSHY_TERMS_URL } from "@/lib/offers";
 import TermsApplyLink from "@/components/consumer/TermsApplyLink";
@@ -93,6 +94,8 @@ type Result = {
   secondary?: { label: string; href: string };
   also?: string;
   capture?: boolean;
+  /** Partner-mandated wording, shown verbatim above the button (Juniper's handbook). */
+  requiredDisclosure?: string;
 };
 
 function resolve(a: Required<Answers>): Result {
@@ -119,9 +122,12 @@ function resolve(a: Required<Answers>): Result {
   if (woman && coachingLed) {
     return {
       title: "Juniper looks like your fit",
-      body: "You want accountability and structure alongside a practitioner-led program, done online. Juniper is designed for women, with app coaching, a private community and 1:1 coaching as an add-on.",
+      body: "You want accountability and structure alongside a practitioner-led program, done online. Juniper is designed for women, with meal plans, app tracking and a private community; health coaching is an optional add-on.",
       offer: "JARREDKFC: no charge for the initial consultation, which Juniper values at $89; program fees apply",
-      cta: { label: "See Juniper", href: "/juniper", sponsored: false, loc: "quiz-juniper" },
+      // Straight to Juniper, like the Moshy result (1 Oct 2026), with Juniper's
+      // handbook wording above the button. It previously went to our /juniper page.
+      cta: { label: "Continue to Juniper", href: JUNIPER_URL, sponsored: true, loc: "quiz-juniper" },
+      requiredDisclosure: requiredDisclosureFor(JUNIPER_URL)?.text,
       secondary: { label: "Compare the providers", href: "/best-weight-loss-telehealth-australia" },
       also: "Moshy is open to anyone a practitioner assesses as suitable and includes in-app coaching and dietitian meal plans too.",
     };
@@ -160,7 +166,7 @@ function resolve(a: Required<Answers>): Result {
     cta: { label: "Continue to Moshy", href: MOSHY_URL, sponsored: true, loc: "quiz-moshy" },
     secondary: { label: "Read our full Moshy review", href: "/moshy-review" },
     also: woman
-      ? "Want a program designed for women, with 1:1 coaching as an option? Juniper is built for women."
+      ? "Juniper is also designed for women, with health coaching as an optional add-on."
       : "Would rather keep it with your own doctor? We compare the two routes in Moshy vs your GP.",
   };
 }
@@ -264,6 +270,11 @@ export default function PathwayQuiz() {
           {result.also && (
             <p className="mt-4 rounded-xl border border-[#ded8cd] bg-[#f7f4ee] px-4 py-3 text-[14px] leading-relaxed text-[#56504a]">
               <span className="font-semibold text-[#14120f]">Also worth knowing: </span>{result.also}
+            </p>
+          )}
+          {result.requiredDisclosure && (
+            <p className="mt-5 rounded-xl border border-[#ded8cd] bg-[#f7f4ee] px-4 py-3 text-[13px] leading-relaxed text-[#56504a]">
+              {result.requiredDisclosure}
             </p>
           )}
           <div className="mt-6 flex flex-wrap items-center gap-4">

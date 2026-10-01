@@ -17,7 +17,7 @@ const aff = { href: MOSHY_URL, target: "_blank" as const, rel: "nofollow sponsor
 const faqs = [
   {
     q: "Why do some weight loss services market to men and others to women?",
-    a: "Mostly marketing. Juniper designs its program for women, and Moshy describes itself as an online women's health clinic, and its services are open to anyone a practitioner assesses as suitable. Both start with an online assessment that a registered practitioner reviews, and both include app coaching, dietitian meal plans and a community (each provider's own page, read 30 September 2026).",
+    a: "Juniper designs its program for women, and Moshy describes itself as an online women's health clinic whose services are open to anyone a practitioner assesses as suitable. Both start with an online assessment that a registered practitioner reviews, and both include meal plans and a community, with health coaching built into Moshy and an optional add-on at Juniper (each provider's own page, read 1 October 2026).",
   },
   {
     q: "Do I need to see a doctor in person first?",
