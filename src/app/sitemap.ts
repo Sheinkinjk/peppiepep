@@ -151,7 +151,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/weight-loss-telehealth-cost-australia`,  lastModified: TODAY, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${BASE}/weight-loss-cost-calculator`,            lastModified: FRESH, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${BASE}/weight-loss-quiz`,                       lastModified: FRESH, changeFrequency: 'monthly', priority: 0.88 },
-    { url: `${BASE}/online-weight-loss-doctor-australia`,    lastModified: TODAY, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${BASE}/moshhair`,          lastModified: TODAY, changeFrequency: 'weekly',  priority: 0.78 },
     { url: `${BASE}/mosh-review`,        lastModified: FRESH, changeFrequency: 'monthly', priority: 0.82 },
     // The medicine-name slugs (/finasteride-australia, /minoxidil-australia,

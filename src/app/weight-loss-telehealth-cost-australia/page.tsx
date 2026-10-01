@@ -52,7 +52,7 @@ const faqs = [
   },
   {
     q: "How do I find out what it will cost me?",
-    a: "Start the eligibility check with the service you are considering. A practitioner assesses your situation, and the applicable cost is confirmed to you before you commit. Moshy's eligibility check is free to complete, so you can see how the process works without paying anything up front. Completing it does not obligate you to proceed.",
+    a: "Start the online questionnaire with the service you are considering. A practitioner assesses your situation, and the cost that applies is confirmed before you commit. Starting Moshy's questionnaire costs nothing and does not oblige you to go ahead.",
   },
   {
     q: "Does Refer Labs set or control these prices?",
@@ -131,8 +131,8 @@ export default function WeightLossTelehealthCostAustraliaPage() {
           {/* First CTA */}
           <div className="mt-7 flex flex-col items-start gap-3 rounded-2xl border border-[#007a95]/25 bg-[#e4f2f5] px-6 py-5 sm:flex-row sm:items-center sm:justify-between">
             <p className="max-w-md text-[15px] leading-relaxed text-[#14120f]">
-              Want the real number for your situation? Moshy&apos;s eligibility check is free to complete, and the applicable cost
-              is confirmed to you inside the flow before you commit to anything.
+              Want the number for your situation? Starting Moshy&apos;s questionnaire costs nothing, and the cost that applies
+              is confirmed before you commit to anything.
             </p>
             <a
               href={MOSHY_URL}
@@ -215,10 +215,10 @@ export default function WeightLossTelehealthCostAustraliaPage() {
                   ))}
                 </ul>
                 <p>
-                  Whether any medicine forms part of your plan is decided by the practitioner during your assessment, and
-                  our guide to{" "}
-                  <Link href="/online-weight-loss-doctor-australia" className="nw-link">seeing an online weight-loss doctor</Link> explains that side
-                  of the category. Remember that any medicine is prescription-only and only supplied after a practitioner assessment.
+                  Whether any treatment forms part of your plan is decided by the practitioner during your consultation, and
+                  our{" "}
+                  <Link href="/weight-loss" className="nw-link">weight loss navigator</Link> explains how the online consultation
+                  works. Weight-management medicines are prescription-only in Australia.
                 </p>
               </div>
             </section>
@@ -229,13 +229,11 @@ export default function WeightLossTelehealthCostAustraliaPage() {
               </h2>
               <div className="mt-4 space-y-4 text-[15px] leading-relaxed text-[#56504a]">
                 <p>
-                  The dependable way to find out what you would pay is to start the eligibility check with the service you are
-                  considering. A practitioner assesses your situation, and the applicable cost is confirmed to you before you commit.
-                  With Moshy, the eligibility check is free to complete, so you can see the process and the numbers that apply to you
-                  without paying anything up front, and without being obligated to proceed. If you would rather understand the
-                  practitioner side first, our guide to the{" "}
-                  <Link href="/online-weight-loss-doctor-australia" className="nw-link">online weight-loss doctor process</Link> walks
-                  through what a consult involves.
+                  The dependable way to find out what you would pay is to start the online questionnaire with the service you are
+                  considering. A practitioner assesses your situation, and the cost that applies is confirmed before you commit.
+                  Starting Moshy&apos;s questionnaire costs nothing and does not oblige you to go ahead. If you would rather
+                  understand the consultation first, our{" "}
+                  <Link href="/weight-loss" className="nw-link">weight loss navigator</Link> walks through what it involves.
                 </p>
               </div>
             </section>
@@ -244,8 +242,8 @@ export default function WeightLossTelehealthCostAustraliaPage() {
             <section className="rounded-2xl border border-[#ded8cd] bg-[#f1ede4] px-6 py-6">
               <h2 className="text-lg font-bold text-[#14120f]">See the cost that applies to you</h2>
               <p className="mt-2 text-[15px] leading-relaxed text-[#56504a]">
-                Rather than guessing from a generic figure, complete Moshy&apos;s free eligibility check and the applicable cost is
-                confirmed to you inside the flow, after a practitioner assessment and before you pay. About ten minutes, no obligation.
+                Start Moshy&apos;s online questionnaire: the cost that applies to you is confirmed after a practitioner
+                consultation and before you pay, with no obligation to go ahead.
               </p>
               <a
                 href={MOSHY_URL}
@@ -283,7 +281,7 @@ export default function WeightLossTelehealthCostAustraliaPage() {
                 <li><Link href="/weight-loss-cost-calculator" className="nw-link">Try the cost planner: find your pathway in three questions</Link></li>
                 <li><Link href="/moshy" className="nw-link">Moshy: the offer and how to start</Link></li>
                 <li><Link href="/moshy-review" className="nw-link">Our independent Moshy review</Link></li>
-                <li><Link href="/online-weight-loss-doctor-australia" className="nw-link">Seeing an online weight-loss doctor in Australia</Link></li>
+                <li><Link href="/weight-loss" className="nw-link">Weight loss navigator: how online consultations work</Link></li>
                 <li><Link href="/best-weight-loss-telehealth-australia" className="nw-link">Best weight-loss telehealth in Australia, compared</Link></li>
                 <li><Link href="/cheapest-weight-loss-telehealth-australia" className="nw-link">The cheapest weight-loss telehealth routes</Link></li>
                 <li><Link href="/moshy-vs-juniper" className="nw-link">Moshy vs Juniper, side by side</Link></li>

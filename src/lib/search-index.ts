@@ -188,7 +188,6 @@ export const SEARCH_INDEX: SearchEntry[] = [
   // Weight loss (guides + head-to-heads not yet indexed)
   { title: "Weight-loss telehealth cost, explained", href: "/weight-loss-telehealth-cost-australia", category: "Weight loss", kind: "Guide", keywords: "cost price how much weight loss telehealth australia subscription" },
   { title: "Cheapest weight-loss telehealth", href: "/cheapest-weight-loss-telehealth-australia", category: "Weight loss", kind: "Guide", keywords: "cheapest affordable low cost weight loss telehealth australia" },
-  { title: "Online weight-loss doctor in Australia", href: "/online-weight-loss-doctor-australia", category: "Weight loss", kind: "Guide", keywords: "online weight loss doctor practitioner assessment australia" },
 
   // Software head-to-heads
   { title: "Carrd vs Butternut", href: "/carrd-vs-butternut", category: "Software", kind: "Guide", keywords: "carrd vs butternut website builder compare" },

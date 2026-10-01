@@ -1978,6 +1978,7 @@ export const seoConfig = {
   },
 
   onlineWeightLossDoctor: {
+    noIndex: true, // retired 1 Oct 2026, 301 to /weight-loss in next.config
     title: "Online Weight Loss Doctor Australia 2026: How It Works",
     description:
       "How seeing a weight-loss doctor online works in Australia.",

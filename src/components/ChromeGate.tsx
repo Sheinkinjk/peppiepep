@@ -92,7 +92,6 @@ const STANDALONE_ROUTES = [
   "/superfiliate",
   // Weight-loss cluster (own light shell)
   "/weight-loss-telehealth-cost-australia",
-  "/online-weight-loss-doctor-australia",
   "/cheapest-weight-loss-telehealth-australia",
   "/weight-loss-cost-calculator",
   // Website-builder + peptide head-to-heads

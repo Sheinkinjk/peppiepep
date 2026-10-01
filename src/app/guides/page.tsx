@@ -107,7 +107,6 @@ const sections = [
       { href: "/weight-loss-telehealth-women-australia", label: "Weight Loss Telehealth for Women", desc: "What Juniper and Moshy each include, and the checks to run first." },
         { href: "/cheapest-weight-loss-telehealth-australia", label: "Cheapest Weight Loss Telehealth", desc: "Where the price differences come from." },
         { href: "/weight-loss-telehealth-cost-australia", label: "What Weight Loss Telehealth Costs", desc: "Consult fees, subscriptions and what is billed separately." },
-        { href: "/online-weight-loss-doctor-australia", label: "Seeing an Online Weight-Loss Doctor", desc: "How the telehealth assessment works." },
         { href: "/weight-loss-telehealth-men-australia", label: "Weight Loss Telehealth for Men", desc: "How the men’s services differ." },
         { href: "/weight-loss-cost-calculator", label: "Weight-Loss Cost Calculator", desc: "Estimate the monthly and annual figure." },
         { href: "/moshy-eligibility", label: "The Moshy Eligibility Check", desc: "What the questionnaire asks and why." },

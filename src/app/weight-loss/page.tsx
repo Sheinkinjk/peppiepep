@@ -60,7 +60,6 @@ const guides = [
   { href: "/best-weight-loss-telehealth-australia", title: "Best weight loss telehealth", desc: "Moshy and Juniper side by side." },
   { href: "/cheapest-weight-loss-telehealth-australia", title: "Cheapest weight loss telehealth", desc: "Subscription vs pay-as-you-go, and what cheapest means." },
   { href: "/weight-loss-telehealth-cost-australia", title: "What it costs", desc: "How telehealth pricing and subscriptions work." },
-  { href: "/online-weight-loss-doctor-australia", title: "Online weight loss doctor", desc: "How a telehealth consult and eligibility review runs." },
   { href: "/moshy-vs-gp", title: "Telehealth vs your GP", desc: "Two doors to the same care. The practical trade." },
   { href: "/moshy-eligibility", title: "Moshy's questionnaire, explained", desc: "What it asks and why some people are declined." },
   { href: "/moshy-alternatives", title: "Moshy alternatives", desc: "The shortlist, including your GP." },
