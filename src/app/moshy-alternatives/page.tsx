@@ -20,11 +20,11 @@ const aff = { href: MOSHY_URL, target: "_blank" as const, rel: "nofollow sponsor
 const faqs = [
   {
     q: "What is the closest alternative to Moshy?",
-    a: "For a practitioner-led weight-management telehealth service in Australia, Moshy has few like-for-like twins. The realistic alternatives are your GP, who can manage the same pathway in person, or a coaching-led program such as Juniper.",
+    a: "For a practitioner-led weight-management telehealth service in Australia, Moshy has few like-for-like twins. The realistic alternatives are your GP, who can manage the same pathway in person, or Juniper, a weight program designed for women with 1:1 coaching as an add-on.",
   },
   {
     q: "How is Juniper different from Moshy?",
-    a: "Juniper wraps clinical care inside a broader coaching and community program and markets primarily to women. Moshy keeps the experience focused on the clinical pathway, open to anyone eligible. Which suits you depends on how much coaching support you want alongside the clinical side.",
+    a: "Mostly in the extras. Both include practitioner review, app coaching, dietitian meal plans and a community (each provider's own page, read 30 September 2026). Juniper is designed for women and offers 1:1 coaching as an add-on. Moshy describes itself as an online women's health clinic, takes anyone a practitioner assesses as suitable, and charges an all-inclusive fee.",
   },
   {
     q: "Is going through my GP a real alternative?",
@@ -143,15 +143,15 @@ export default function MoshyAlternativesPage() {
         </section>
 
         <section className="space-y-4 mb-10">
-          <h2 className="text-xl font-black">And for the focused clinical pathway itself</h2>
+          <h2 className="text-xl font-black">Where does Moshy fit?</h2>
           <p className="text-[#56504a] text-sm sm:text-base leading-relaxed">
-            For a lean, practitioner-led telehealth program in Australia that is open to anyone eligible, Moshy is the
-            reference point. The requirements of registered practitioners, genuine screening, and Australian regulation
-            filter the field down to very few services that run this pathway properly.
+            Moshy describes itself as an online women&apos;s health clinic and takes anyone a practitioner assesses as
+            suitable. Its weight program includes in-app coaching, dietitian meal plans and a community for an
+            all-inclusive fee, and a registered practitioner decides whether any treatment is appropriate.
           </p>
           <div className="rounded-xl border px-6 py-5 mt-4" style={{ borderColor: `${CYAN}40`, background: `${CYAN}0A` }}>
             <p className="text-[#14120f] text-sm sm:text-base leading-relaxed mb-4">
-              The eligibility check takes about ten minutes and commits you to nothing. Referral applied automatically.
+              Starting Moshy&apos;s questionnaire commits you to nothing. Our link carries REFERRAL120 ($120 off a first order, 3-month minimum); enter it at checkout if it isn&apos;t shown.
             </p>
             <a
               {...aff}

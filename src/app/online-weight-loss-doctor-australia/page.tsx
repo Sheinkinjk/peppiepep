@@ -52,7 +52,7 @@ const faqs = [
   },
   {
     q: "Is an online weight-loss doctor available to men and women?",
-    a: "The pathway itself is not gender-specific, though some services market to a particular audience. Moshy, for example, runs its assessment for anyone who is eligible regardless of gender. Whether a plan is appropriate for any individual is decided by the practitioner during the assessment.",
+    a: "Yes, though services market to particular audiences. Juniper is designed for women, and Moshy describes itself as an online women's health clinic and takes anyone a practitioner assesses as suitable. Whether a plan is appropriate for any individual is decided by the practitioner during the assessment.",
   },
   {
     q: "Does Refer Labs employ these doctors?",
@@ -242,8 +242,8 @@ export default function OnlineWeightLossDoctorAustraliaPage() {
                   On cost, some services list an all-inclusive program fee and others bill anything dispensed separately; the exact
                   figure is confirmed during your consult. Our guide to{" "}
                   <Link href="/weight-loss-telehealth-cost-australia" className="nw-link">weight-loss telehealth cost in Australia</Link>{" "}
-                  breaks that down. Moshy is one Australian service that runs the assessment model described here and is open to anyone
-                  eligible. You can read how it works in practice in our{" "}
+                  breaks that down. Moshy is one Australian service that runs the assessment model described here; it describes itself as a
+                  women&apos;s health clinic and takes anyone a practitioner assesses as suitable. You can read how it works in practice in our{" "}
                   <Link href="/moshy-review" className="nw-link">independent Moshy review</Link>, or compare it with other providers in
                   our roundup of the{" "}
                   <Link href="/best-weight-loss-telehealth-australia" className="nw-link">best weight-loss telehealth in Australia</Link>.

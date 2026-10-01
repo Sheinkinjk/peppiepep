@@ -36,21 +36,21 @@ export function buildWeightLossGuideEmail(): string {
         <tr><td style="padding:8px 28px 4px;">
           <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
             ${optionRow(
-              "1. Medical telehealth, open to anyone",
-              "Best if you want a fast, fully-online start",
-              "A clinically-led online pathway: you complete an eligibility check, a registered practitioner reviews it and decides whether any treatment is appropriate. No waiting room, no referral letter. Moshy runs exactly this, is open to anyone eligible, and new customers get $120 off their first order through our link.",
+              "1. Moshy: an all-inclusive online program",
+              "Best if you want one fee with coaching built in",
+              "You complete an online questionnaire, then a consult by phone or video with a registered practitioner, who decides whether any treatment is appropriate. The fee is all-inclusive, with in-app coaching, dietitian meal plans and a community. Moshy describes itself as an online women's health clinic and takes anyone a practitioner assesses as suitable. New customers get $120 off their first order with REFERRAL120 through our link, with a 3-month minimum commitment.",
               { label: "See how Moshy works", href: utm("/moshy", "wl_guide_moshy") },
             )}
             ${optionRow(
-              "2. Coaching-led telehealth, built for women",
-              "Best if you want accountability and support",
-              "The same practitioner-led online care, wrapped in a coaching-and-community program. Juniper is designed and marketed for women, with unlimited follow-ups, an award-winning app and a 20,000-member community. New patients can start with a free first consultation, so you can check the fit before paying anything.",
+              "2. Juniper: designed for women",
+              "Best if you want the option of 1:1 coaching",
+              "Practitioner-led online care designed for women, with unlimited follow-up consultations, app tracking, dietitian chat, meal plans and a private community, and 1:1 coaching as a paid add-on. With JARREDKFC there is no charge for the initial consultation, which Juniper values at $89; program fees apply.",
               { label: "See how Juniper works", href: utm("/juniper", "wl_guide_juniper") },
             )}
             ${optionRow(
               "3. Your GP",
               "Best if you want face-to-face care",
-              "A GP can manage the same pathway in person, already knows your history, and Medicare offsets part of the cost. It is slower to book than telehealth, but if you prefer being seen in person or have a complex history, it is a sensible starting point. It pays us nothing, and we still recommend it where it fits.",
+              "A GP can manage the same pathway in person, already knows your history, and Medicare offsets part of the cost. It is slower to book than telehealth, but if you prefer being seen in person or have a complex history, it is a sensible starting point. Refer Labs earns nothing from this route.",
               null,
             )}
             ${optionRow(

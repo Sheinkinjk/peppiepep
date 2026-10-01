@@ -7,8 +7,8 @@ import GuideCapture from "@/components/consumer/GuideCapture";
 export const metadata = generateSEOMetadata(seoConfig.weightLossGuide);
 
 const inside: string[] = [
-  "Medical telehealth, open to anyone: the fast, fully-online clinical pathway, and Moshy's $120-off offer for new customers",
-  "Coaching-led telehealth built for women: Juniper's program, community and waived initial consultation",
+  "Moshy: an all-inclusive online program with in-app coaching and meal plans, and its $120-off offer for new customers",
+  "Juniper: a program designed for women with 1:1 coaching as an add-on, and its waived initial consultation",
   "The GP route: when face-to-face care and Medicare make more sense",
   "A 60-second matcher to point you to the one that fits, and why",
 ];
