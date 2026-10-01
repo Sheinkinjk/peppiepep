@@ -132,8 +132,7 @@ export default function MoshyReviewPage() {
           </p>
           <p className="text-[#56504a] text-sm sm:text-base leading-relaxed">
             If you go ahead, you pay one monthly program fee, which Moshy publishes on its weight-loss page. New
-            customers get $120 off their first order with REFERRAL120, with a 3-month minimum commitment under
-            Moshy&apos;s terms. Use code REFERRAL120 at checkout; our link opens Moshy&apos;s sign-up with the offer.
+            customers get $120 off their first order with REFERRAL120, under Moshy&apos;s terms. Use code REFERRAL120 at checkout; our link opens Moshy&apos;s sign-up with the offer.
           </p>
           <div className="pt-1">
             <Cta label="Continue to Moshy" loc="short-version" />
@@ -190,8 +189,8 @@ export default function MoshyReviewPage() {
         <div className="rounded-2xl border px-6 py-7 mb-10 text-center sm:px-8" style={{ borderColor: `${CYAN}30`, background: `${CYAN}08` }}>
           <h2 className="text-lg sm:text-xl font-black text-[#14120f]">Start with Moshy</h2>
           <p className="mx-auto mt-2 max-w-md text-sm leading-relaxed text-[#56504a]">
-            $120 off a new customer&apos;s first order with REFERRAL120 at checkout, with a 3-month minimum
-            commitment. <TermsApplyLink href={MOSHY_TERMS_URL} />
+            $120 off a new customer&apos;s first order with REFERRAL120 at checkout.{" "}
+            <TermsApplyLink href={MOSHY_TERMS_URL} />
           </p>
           <div className="mt-5 flex justify-center">
             <Cta label="Continue to Moshy" loc="closing-cta" />
@@ -204,7 +203,7 @@ export default function MoshyReviewPage() {
             source="deal-alert-moshy-review"
             interest="Moshy offer"
             heading="Not ready today? Get told when the Moshy offer changes."
-            sub="New customers can currently get $120 off a first order with code REFERRAL120, with a 3-month minimum commitment under Moshy's terms. We'll email you if that changes, and nothing else."
+            sub="New customers can currently get $120 off a first order with code REFERRAL120, under Moshy's terms. We'll email you if that changes, and nothing else."
           />
         </div>
 

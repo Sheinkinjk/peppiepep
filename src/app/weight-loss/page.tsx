@@ -47,7 +47,7 @@ const providers: PairProvider[] = [
       "In-app coaching, dietitian meal plans and a community",
       "Also covers hair loss and skin care",
     ],
-    offer: { text: "$120 off your first order, 3-month minimum,", code: "REFERRAL120" },
+    offer: { text: "$120 off your first order", code: "REFERRAL120" },
     href: MOSHY_URL,
     cta: "Continue to Moshy",
     loc: "weight-loss-hub-moshy",
@@ -65,7 +65,7 @@ const guides = [
   { href: "/moshy-vs-gp", title: "Telehealth vs your GP", desc: "Online consultations or in-person care: the practical trade." },
   { href: "/moshy-alternatives", title: "Moshy alternatives", desc: "The shortlist, including your GP." },
   { href: "/weight-loss-telehealth-men-australia", title: "The men's guide", desc: "How men's services work and the pre-signup checklist." },
-  { href: "/moshy", title: "Moshy offer & referral link", desc: "$120 off your first order with code REFERRAL120 at checkout; 3-month minimum commitment." },
+  { href: "/moshy", title: "Moshy offer & referral link", desc: "$120 off your first order with code REFERRAL120 at checkout." },
   { href: "/weight-loss-quiz", title: "Which route fits you?", desc: "A short matcher across the online services and your GP." },
   { href: "/weight-loss-cost-calculator", title: "Weight-loss cost calculator", desc: "Estimate the monthly cost of each route before you commit." },
 ];
@@ -248,7 +248,7 @@ export default function WeightLossHubPage() {
             <Link href="/best-weight-loss-telehealth-australia#inclusions" className="font-semibold text-[#007a95] hover:underline">
               What each includes, row by row
             </Link>
-            . Moshy&apos;s REFERRAL120 is one use per new customer and carries a 3-month minimum commitment (<TermsApplyLink href={MOSHY_TERMS_URL} />).
+            . Moshy&apos;s REFERRAL120 is one use per new customer (<TermsApplyLink href={MOSHY_TERMS_URL} />).
           </p>
           {JUNIPER_REQUIRED ? (
             <p className="mt-4 max-w-3xl rounded-xl border border-[#ded8cd] bg-[#f7f4ee] px-4 py-3 text-[13px] leading-relaxed text-[#56504a]">

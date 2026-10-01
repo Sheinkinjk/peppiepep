@@ -98,7 +98,7 @@ const sections = [
     label: "Weight Loss & Telehealth",
     description: "How Australia's online weight-loss services work, and which suits whom.",
     guides: [
-      { href: "/moshy", label: "Moshy, Offer & Referral Link", desc: `$120 off a first order with code REFERRAL120 at checkout, 3-month minimum. Read off Moshy's own page on ${checkedOn("REFERRAL120")}.` },
+      { href: "/moshy", label: "Moshy, Offer & Referral Link", desc: `$120 off a first order with code REFERRAL120 at checkout. Read off Moshy's own page on ${checkedOn("REFERRAL120")}.` },
       { href: "/moshy-review", label: "Moshy, Explained", desc: "How the service runs, application to subscription." },
       { href: "/moshy-vs-juniper", label: "Moshy vs Juniper", desc: "What each includes, read off their own sites, and who each suits." },
       { href: "/moshy-vs-gp", label: "Telehealth vs Your GP", desc: "Two doors to the same care. The practical trade." },

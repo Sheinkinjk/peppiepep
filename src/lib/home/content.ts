@@ -39,7 +39,7 @@ export const nav: NavGroup[] = [
     label: "Weight Loss", href: "/weight-loss",
     items: [
       { label: "Weight loss navigator", href: "/weight-loss", blurb: "Every weight-loss route in one place, compared" },
-      { label: "Moshy", href: "/moshy", blurb: "How the program works, plus $120 off your first order (3-month minimum)" },
+      { label: "Moshy", href: "/moshy", blurb: "How the program works, plus $120 off your first order" },
       { label: "Juniper", href: "/juniper", blurb: "Built for women; JARREDKFC waives the initial consultation" },
       { label: "Compare all providers", href: "/best-weight-loss-telehealth-australia", blurb: "Pricing, inclusions and who each suits" },
       { label: "Which pathway fits you?", href: "/weight-loss-quiz", blurb: "A 60-second match, no sign-up" },
@@ -134,7 +134,7 @@ export const picks = {
   items: [
     {
       kicker: "Weight loss", brand: "Moshy", href: "/moshy", logo: "/logos/moshy.png",
-      offer: "$120 off with code REFERRAL120 (3-month minimum)",
+      offer: "$120 off with code REFERRAL120",
       body: "Weight-management telehealth: an online consultation with a registered practitioner, plus coaching and meal plans.",
       cta: "See the offer",
     },

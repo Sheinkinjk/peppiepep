@@ -11,7 +11,7 @@ export const hybridNav: NavGroup[] = [
     label: "Weight Loss", href: "/weight-loss",
     items: [
       { href: "/weight-loss", label: "Weight loss navigator", blurb: "Every weight-loss route in one place, compared" },
-      { href: "/moshy", label: "Moshy", blurb: "How the program works, plus $120 off your first order (3-month minimum)" },
+      { href: "/moshy", label: "Moshy", blurb: "How the program works, plus $120 off your first order" },
       { href: "/juniper", label: "Juniper", blurb: "Built for women; JARREDKFC waives the initial consultation" },
       { href: "/best-weight-loss-telehealth-australia", label: "Compare all providers", blurb: "Pricing, inclusions and who each suits" },
       { href: "/weight-loss-quiz", label: "Which pathway fits you?", blurb: "A 60-second match, no sign-up" },

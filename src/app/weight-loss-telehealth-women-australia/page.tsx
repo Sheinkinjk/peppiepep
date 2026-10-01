@@ -48,7 +48,7 @@ const providers: PairProvider[] = [
       "In-app coaching, dietitian meal plans and a community",
       "Also covers hair loss and skin care",
     ],
-    offer: { text: "$120 off your first order, 3-month minimum,", code: "REFERRAL120" },
+    offer: { text: "$120 off your first order", code: "REFERRAL120" },
     href: MOSHY_URL,
     cta: "Continue to Moshy",
     loc: "women-telehealth-moshy",

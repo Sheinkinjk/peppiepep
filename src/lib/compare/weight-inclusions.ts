@@ -71,6 +71,6 @@ export const WEIGHT_INCLUSIONS: InclusionRow[] = [
   {
     label: "Refer Labs code",
     juniper: "JARREDKFC: no charge for the initial consultation, valued at $89; program fees apply",
-    moshy: "REFERRAL120: $120 off a first order; 3-month minimum commitment",
+    moshy: "REFERRAL120: $120 off a first order",
   },
 ];

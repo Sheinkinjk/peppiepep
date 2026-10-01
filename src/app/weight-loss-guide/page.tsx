@@ -8,7 +8,7 @@ import { MOSHY_TERMS_URL } from "@/lib/offers";
 export const metadata = generateSEOMetadata(seoConfig.weightLossGuide);
 
 const inside: string[] = [
-  "Moshy: an all-inclusive online program with in-app coaching and meal plans, and its $120-off offer for new customers, which carries a 3-month minimum commitment",
+  "Moshy: an all-inclusive online program with in-app coaching and meal plans, and its $120-off offer for new customers",
   "Juniper: a program designed for women with meal plans and a physio-designed exercise program, and no charge for its initial consultation through JARREDKFC (program fees apply)",
   "The GP route: when face-to-face care and Medicare make more sense",
   "A 60-second matcher to point you to the one that fits, and why",

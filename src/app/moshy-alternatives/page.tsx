@@ -151,7 +151,7 @@ export default function MoshyAlternativesPage() {
           </p>
           <div className="rounded-xl border px-6 py-5 mt-4" style={{ borderColor: `${CYAN}40`, background: `${CYAN}0A` }}>
             <p className="text-[#14120f] text-sm sm:text-base leading-relaxed mb-4">
-              REFERRAL120: $120 off a first order with a 3-month minimum commitment. Use code REFERRAL120 at checkout; our link opens Moshy&apos;s sign-up with the offer.{" "}
+              REFERRAL120: $120 off a first order. Use code REFERRAL120 at checkout; our link opens Moshy&apos;s sign-up with the offer.{" "}
               <TermsApplyLink href={MOSHY_TERMS_URL} />
             </p>
             <a

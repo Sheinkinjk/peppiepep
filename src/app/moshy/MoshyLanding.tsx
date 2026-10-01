@@ -51,7 +51,7 @@ const glance: [string, string][] = [
   ["How it works", "Online questionnaire → practitioner consultation"],
   ["Practitioners", "Independent AHPRA-registered doctors and nurses (Moshy's own site)"],
   ["Pricing", "One monthly program fee, listed on Moshy's site"],
-  ["Discount code", "REFERRAL120: $120 off a first order, 3-month minimum"],
+  ["Discount code", "REFERRAL120: $120 off a first order"],
   ["Code checked", REFERRAL120_CHECKED],
 ];
 
@@ -161,7 +161,7 @@ export default function MoshyLanding() {
               <h2 className={H2}>What is the current Moshy discount code?</h2>
               <CodeAnswer code="REFERRAL120" className="mt-5">
                 REFERRAL120 takes $120 off a new customer&apos;s first order on eligible Moshy weight
-                programs, with a 3-month minimum commitment.
+                programs.
               </CodeAnswer>
               <ul className="mt-5 space-y-2 text-[15px] leading-relaxed text-[#56504a]">
                 {[
@@ -292,7 +292,7 @@ export default function MoshyLanding() {
             Start with Moshy, $120 off your first order
           </h2>
           <p className="mx-auto mt-4 max-w-md text-[15px] leading-relaxed text-white/70">
-            REFERRAL120 at checkout, for new customers with a 3-month minimum commitment.
+            REFERRAL120 at checkout, for new customers.
           </p>
           <p className="mx-auto mt-2 max-w-md">
             <TermsApplyLink href={MOSHY_TERMS_URL} tone="dark" />

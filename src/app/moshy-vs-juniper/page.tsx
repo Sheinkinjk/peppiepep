@@ -34,7 +34,7 @@ const providers: PairProvider[] = [
       "In-app coaching, dietitian meal plans and a community",
       "Also covers hair loss and skin care",
     ],
-    offer: { text: "$120 off your first order, 3-month minimum,", code: "REFERRAL120" },
+    offer: { text: "$120 off your first order", code: "REFERRAL120" },
     href: MOSHY_URL,
     cta: "Continue to Moshy",
     loc: "mvj-hero-moshy",
@@ -156,7 +156,7 @@ export default function MoshyVsJuniperPage() {
           a 30-day money-back guarantee. Both are built with women in mind. Juniper lists a physio-designed exercise
           program and a practitioner team of specialist GPs and nurse practitioners; Moshy is Mosh&apos;s brother
           brand, includes in-app health coaching and also covers hair and skin. Moshy&apos;s code REFERRAL120 takes $120 off a first
-          order with a 3-month minimum; Juniper&apos;s JARREDKFC means no charge for the initial consultation, valued at
+          order; Juniper&apos;s JARREDKFC means no charge for the initial consultation, valued at
           $89, and program fees apply.
         </p>
 
@@ -176,11 +176,11 @@ export default function MoshyVsJuniperPage() {
             money-back guarantee. Choose on fit. Juniper is designed around women, with a physio-designed exercise
             program and a practitioner team of specialist GPs and nurse practitioners. Moshy sits alongside Mosh&apos;s
             hair and skin services and lists psychologists and exercise physiologists in its care team. The offers differ too: Juniper&apos;s code means no charge for the first consultation (program fees apply), while Moshy&apos;s takes
-            $120 off the first order and carries a 3-month minimum.
+            $120 off the first order.
           </p>
           <CodeAnswer code="REFERRAL120" className="mt-5">
             Refer Labs holds a code for both. Moshy&apos;s is REFERRAL120, $120 off a new customer&apos;s first order, one
-            use per customer, with a 3-month minimum commitment (<TermsApplyLink href={MOSHY_TERMS_URL} />). JARREDKFC means no charge for the initial consultation, which Juniper values at $89; program fees apply.
+            use per customer (<TermsApplyLink href={MOSHY_TERMS_URL} />). JARREDKFC means no charge for the initial consultation, which Juniper values at $89; program fees apply.
           </CodeAnswer>
         </section>
 

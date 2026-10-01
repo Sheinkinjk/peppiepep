@@ -51,7 +51,7 @@ const providers: PairProvider[] = [
       "In-app coaching, dietitian meal plans and a community",
       "Also covers hair loss and skin care",
     ],
-    offer: { text: "$120 off your first order, 3-month minimum,", code: "REFERRAL120" },
+    offer: { text: "$120 off your first order", code: "REFERRAL120" },
     href: MOSHY_URL,
     cta: "Continue to Moshy",
     loc: "best-wl-telehealth-moshy",
@@ -241,7 +241,7 @@ export default function BestWeightLossTelehealthPage() {
               There is no single best service. Moshy and Juniper include much the same support, so the choice comes
               down to fit: Juniper is designed around women, with a physio-designed exercise program, while Moshy has
               an all-inclusive fee and sits alongside Mosh&apos;s hair and skin services. Compare what each costs over a
-              year on its own site, including the 3-month minimum that comes with Moshy&apos;s REFERRAL120 offer.
+              year on its own site.
             </p>
             <p className="mt-3 text-sm sm:text-base max-w-3xl">
               <Link href="/moshy-vs-juniper" className="font-semibold text-[#007a95] hover:underline">
@@ -321,7 +321,7 @@ export default function BestWeightLossTelehealthPage() {
               source="deal-alert-best-weight-loss"
               interest="Weight-loss telehealth offers"
               heading="Get told when a weight-loss offer changes"
-              sub="We'll email you if the Moshy or Juniper offers on this page change, and nothing else. Moshy's REFERRAL120 currently takes $120 off a first order with a 3-month minimum commitment, under Moshy's terms."
+              sub="We'll email you if the Moshy or Juniper offers on this page change, and nothing else. Moshy's REFERRAL120 currently takes $120 off a first order, under Moshy's terms."
             />
           </section>
 

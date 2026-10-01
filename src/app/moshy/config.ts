@@ -17,7 +17,7 @@ export const REFERRAL120_CHECKED = checkedOn("REFERRAL120") ?? "";
 
 /** The answer paragraph under the h1. Also the page's quickAnswer. */
 export const MOSHY_LEAD =
-  "The current Moshy discount code is REFERRAL120: $120 off a new customer's first order on eligible Moshy weight programs, with a 3-month minimum commitment. Use code REFERRAL120 at checkout; our link opens Moshy's sign-up with the offer. Moshy is an Australian weight-management telehealth service, brother brand of Mosh, where a registered practitioner decides whether any treatment is appropriate.";
+  "The current Moshy discount code is REFERRAL120: $120 off a new customer's first order on eligible Moshy weight programs. Use code REFERRAL120 at checkout; our link opens Moshy's sign-up with the offer. Moshy is an Australian weight-management telehealth service, brother brand of Mosh, where a registered practitioner decides whether any treatment is appropriate.";
 
 export const moshyConfig: AffiliatePageConfig = {
   brand: "Moshy",
@@ -32,7 +32,7 @@ export const moshyConfig: AffiliatePageConfig = {
   // `faqs` from this config, so these stay short and match the page.
   banner: {
     heading: "Moshy discount code",
-    body: "REFERRAL120: $120 off a new customer's first order under Moshy's terms, with a 3-month minimum commitment.",
+    body: "REFERRAL120: $120 off a new customer's first order under Moshy's terms.",
     buttonLabel: "Continue to Moshy",
   },
 
@@ -49,7 +49,7 @@ export const moshyConfig: AffiliatePageConfig = {
     {
       num: "01",
       heading: "Answer Moshy's online questionnaire",
-      body: "It covers your health history, your goals and your current situation, and takes a few minutes. The link on this page opens it with REFERRAL120 attached, an offer that carries a 3-month minimum commitment.",
+      body: "It covers your health history, your goals and your current situation, and takes a few minutes. The link on this page opens it with REFERRAL120 attached.",
     },
     {
       num: "02",

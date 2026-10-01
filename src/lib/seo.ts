@@ -1126,7 +1126,7 @@ export const seoConfig = {
     // directory. Every code here is read off the provider's own page and dated.
     title: "Discount Codes: Moshy, Mosh, Juniper and i-screen",
     description:
-      "Verified Australian discount codes, each dated: Moshy REFERRAL120 for $120 off (3-month minimum), Mosh REFERAL55 for 55% off a first hair order, Juniper JARREDKFC for no charge on the $89 initial consultation, i-screen referlabs for $20 off, plus pet insurance offers.",
+      "Verified Australian discount codes, each dated: Moshy REFERRAL120 for $120 off, Mosh REFERAL55 for 55% off a first hair order, Juniper JARREDKFC for no charge on the $89 initial consultation, i-screen referlabs for $20 off, plus pet insurance offers.",
     url: `${SITE_URL}/deals`,
     keywords: ["discount codes australia", "verified discount codes australia", "promo codes australia", "deals australia", "refer labs deals", "moshy discount code", "mosh discount code", "juniper discount code", "australian coupon codes"],
   },
@@ -1637,9 +1637,9 @@ export const seoConfig = {
   },
 
   moshy: {
-    title: "Moshy Discount Code 2026: $120 Off (3-Month Minimum) | Refer Labs",
+    title: "Moshy Discount Code Australia 2026: $120 Off | Refer Labs",
     description:
-      `The current Moshy discount code is REFERRAL120: $120 off a first order at checkout, with a 3-month minimum commitment, read off Moshy's own page on ${offerCheckedOn("REFERRAL120")}.`,
+      `The current Moshy discount code is REFERRAL120: $120 off a first order at checkout, read off Moshy's own page on ${offerCheckedOn("REFERRAL120")}.`,
     url: `${SITE_URL}/moshy`,
     keywords: [
       "moshy discount code",
@@ -1678,7 +1678,7 @@ export const seoConfig = {
     // stop competing for the same query.
     title: "Best Weight Loss Telehealth Australia 2026: How to Choose",
     description:
-      "Moshy and Juniper compared for Australians: what each includes, how you start and what each costs to begin. Codes: REFERRAL120 ($120 off Moshy, 3-month minimum) and JARREDKFC.",
+      "Moshy and Juniper compared for Australians: what each includes, how you start and what each costs to begin. Codes: REFERRAL120 ($120 off Moshy) and JARREDKFC.",
     url: `${SITE_URL}/best-weight-loss-telehealth-australia`,
     keywords: [
       "best weight loss telehealth australia 2026",
@@ -1706,7 +1706,7 @@ export const seoConfig = {
   moshyVsJuniper: {
     title: "Moshy vs Juniper 2026: Cost and Who Each Suits",
     description:
-      "Moshy vs Juniper: what each includes, read off their own sites, and who each suits. Codes: REFERRAL120 ($120 off Moshy, 3-month minimum), JARREDKFC (no charge for Juniper's initial consult).",
+      "Moshy vs Juniper: what each includes, read off their own sites, and who each suits. Codes: REFERRAL120 ($120 off Moshy), JARREDKFC (no charge for Juniper's initial consult).",
     url: `${SITE_URL}/moshy-vs-juniper`,
     keywords: [
       "moshy vs juniper",
@@ -1728,7 +1728,7 @@ export const seoConfig = {
   cheapestWeightLossTelehealth: {
     title: "Cheapest Weight Loss Telehealth Australia 2026 Compared",
     description:
-      "Subscription vs pay-per-consult weight-loss telehealth in Australia: Moshy, Juniper and Doctors for Weight Loss compared. Moshy code REFERRAL120 takes $120 off (3-month minimum).",
+      "Subscription vs pay-per-consult weight-loss telehealth in Australia: Moshy, Juniper and Doctors for Weight Loss compared. Moshy code REFERRAL120 takes $120 off.",
     url: `${SITE_URL}/cheapest-weight-loss-telehealth-australia`,
     keywords: [
       "cheapest weight loss telehealth australia",
@@ -1757,7 +1757,7 @@ export const seoConfig = {
     // page does not give. Title and h1 now ask the same question.
     title: "Moshy Review 2026: Is It Legit, and What Is the Service Like?",
     description:
-      `Is Moshy legit: its practitioners, accreditations and what signing up involves, read off Moshy's own site. $120 off a first order with REFERRAL120 (3-month minimum), checked ${offerCheckedOn("REFERRAL120")}.`,
+      `Is Moshy legit: its practitioners, accreditations and what signing up involves, read off Moshy's own site. $120 off a first order with REFERRAL120, checked ${offerCheckedOn("REFERRAL120")}.`,
     url: `${SITE_URL}/moshy-review`,
     keywords: [
       "moshy review",
@@ -1943,7 +1943,7 @@ export const seoConfig = {
   moshyAlternatives: {
     title: "Moshy Alternatives in Australia 2026: Who Else Does This? | Refer Labs",
     description:
-      "Moshy alternatives in Australia: Juniper is the closest like-for-like option we compare, and your GP is a route too. REFERRAL120 takes $120 off Moshy (3-month minimum). Information only.",
+      "Moshy alternatives in Australia: Juniper is the closest like-for-like option we compare, and your GP is a route too. REFERRAL120 takes $120 off Moshy. Information only.",
     url: `${SITE_URL}/moshy-alternatives`,
     keywords: [
       "moshy alternatives",

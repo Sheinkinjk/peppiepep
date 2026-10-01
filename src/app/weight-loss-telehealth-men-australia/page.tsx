@@ -88,7 +88,7 @@ export default function WeightLossTelehealthMenPage() {
           suitable; Juniper, the other service we compare, is designed for women. Moshy starts with an online
           questionnaire and a consult by phone or video with a registered practitioner, who decides whether any
           treatment is appropriate. It includes in-app coaching, dietitian meal plans and a community, and its code
-          REFERRAL120 takes $120 off a first order with a 3-month minimum commitment.
+          REFERRAL120 takes $120 off a first order.
         </p>
 
         <p className="mb-10 rounded-lg border border-[#ded8cd] bg-[#f7f4ee] px-4 py-3 text-xs leading-relaxed text-[#56504a]">
@@ -136,7 +136,7 @@ export default function WeightLossTelehealthMenPage() {
           </p>
           <div className="rounded-xl border px-6 py-5 mt-6" style={{ borderColor: `${CYAN}40`, background: `${CYAN}0A` }}>
             <p className="text-[#14120f] text-sm sm:text-base leading-relaxed mb-4">
-              REFERRAL120: $120 off a first order, one use per new customer, with a 3-month minimum commitment.{" "}
+              REFERRAL120: $120 off a first order, one use per new customer.{" "}
               Use code REFERRAL120 at checkout; our link opens Moshy&apos;s sign-up with the offer. <TermsApplyLink href={MOSHY_TERMS_URL} />
             </p>
             <a

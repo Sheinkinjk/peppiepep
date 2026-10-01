@@ -49,7 +49,7 @@ const providers: PairProvider[] = [
     logo: "/logos/moshy.png",
     bestIf: "An all-inclusive program fee.",
     points: ["Online questionnaire, then a consult by phone or video", "In-app coaching, dietitian meal plans and a community"],
-    offer: { text: "$120 off your first order, 3-month minimum,", code: "REFERRAL120" },
+    offer: { text: "$120 off your first order", code: "REFERRAL120" },
     href: MOSHY_URL,
     cta: "Continue to Moshy",
     loc: "cheapest-card-moshy",
@@ -97,7 +97,7 @@ const itemListSchema = {
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Doctors for Weight Loss", description: "Pay-as-you-go, no subscription.", url: DFWL_URL },
     { "@type": "ListItem", position: 2, name: "Juniper", description: "Program fee varying with the plan, designed for women. Refer Labs code JARREDKFC: no charge for the initial consultation, valued at $89; program fees apply.", url: `${SITE_URL}/juniper` },
-    { "@type": "ListItem", position: 3, name: "Moshy", description: "All-inclusive program fee. Refer Labs code REFERRAL120: $120 off the first order, 3-month minimum commitment.", url: `${SITE_URL}/moshy` },
+    { "@type": "ListItem", position: 3, name: "Moshy", description: "All-inclusive program fee. Refer Labs code REFERRAL120: $120 off the first order.", url: `${SITE_URL}/moshy` },
   ],
 };
 
@@ -154,7 +154,7 @@ export default function CheapestWeightLossTelehealthPage() {
           No service is cheapest for everyone, because weight-loss telehealth is billed two ways. A subscription such as
           Moshy or Juniper charges a monthly fee that covers consults and support; a pay-as-you-go service such as Doctors
           for Weight Loss charges per consultation. A new-patient code lowers the first bill: REFERRAL120
-          takes $120 off a first Moshy order with a 3-month minimum commitment, and JARREDKFC means no charge for
+          takes $120 off a first Moshy order, and JARREDKFC means no charge for
           Juniper&apos;s initial consultation, valued at $89; program fees apply.
         </p>
 
