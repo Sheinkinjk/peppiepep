@@ -2,6 +2,7 @@ import { MetadataRoute } from 'next';
 import { CATALOG } from '@/lib/catalog/catalog';
 import { HAIR_LOSS_GUIDES } from '@/lib/hair-loss-guides';
 import { APOLLO_GUIDES } from '@/lib/apollo-guides';
+import { himsSitemapEntries } from "@/lib/hims/sitemap";
 
 const BASE = process.env.NEXT_PUBLIC_SITE_URL || 'https://referlabs.com.au';
 // Deploy-trigger check, 19 Aug 2026: verifying git auto-deploy fires on a single
@@ -20,6 +21,8 @@ const LEGAL  = new Date('2026-01-15'); // legal, changes yearly
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
+    // Hims page set: returns nothing until HIMS_PAGES_LIVE=true (preview only, 29 Sep 2026).
+    ...himsSitemapEntries(),
 
     // ── Core platform ──────────────────────────────────────────────────
     { url: BASE,                         lastModified: FRESH,  changeFrequency: 'weekly',  priority: 1.0 },

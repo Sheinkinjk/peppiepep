@@ -18,6 +18,11 @@ export const MOSHY_URL = "https://www.getmoshy.com.au/start/eligibility-check-mo
 // Mosh tracks via the partner path /start/referlabs. Canonical across all pages.
 export const MOSH_HAIR_URL = "https://www.getmosh.com.au/start/referlabs";
 
+// Hims (formerly Pilot). Tracking link supplied by Hims, 29 Sep 2026. The code in
+// the URL is what Hims attributes on. Used only by the Hims page set, which is
+// preview-only until Hims approves it.
+export const HIMS_URL = "https://www.hims.com.au/?utm_source=affiliate&utm_campaign=jarred&discountCode=JARREDSTART";
+
 // Pet insurance referral (Knose). Structured as a referral under Corporations
 // Regulation 7.6.01(1)(e): general information + referral only, the benefit is
 // disclosed on-page, and NO financial product advice/recommendation is given.
