@@ -10,14 +10,16 @@ import OffersTable from "@/components/lending/OffersTable";
 import OfferSchema from "@/components/offers/OfferSchema";
 
 import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
+import PetCoverTable from "@/components/consumer/PetCoverTable";
+import { READ_ON_LABEL } from "@/lib/pet-cover";
 export const metadata = generateSEOMetadata(seoConfig.petsonme);
 
 const SLUG = "/petsonme";
 const GREEN = "#007a95";
-const UPDATED = "2026-09-14";
+const UPDATED = "2026-10-03";
 
-// Every figure below is read off PetsOnMe's own compare-cover page (checked
-// 17 August 2026). Nothing is estimated. Premiums are NOT published, so none
+// Every figure below is read off PetsOnMe's own compare-cover page (re-read
+// 3 October 2026). Nothing is estimated. Premiums are NOT published, so none
 // are quoted here.
 const plans: { name: string; limit: string; extra: string }[] = [
   { name: "Accidental", limit: "$5,000 annual benefit limit", extra: "Accidental injury cover only. The entry option." },
@@ -34,7 +36,7 @@ const faqs = [
   },
   {
     q: "What do the PetsOnMe plans cover?",
-    a: "PetsOnMe offers three levels. Accidental carries a $5,000 annual benefit limit and covers accidental injury. Classic carries $10,000 and adds hereditary conditions cover limited to $2,300 a year. Deluxe carries $20,000, with hereditary conditions to $3,800 a year and select dental to $500 a year. All three pay 80% of the eligible vet bill less your chosen excess. Figures are from PetsOnMe's own compare-cover page, checked 17 August 2026.",
+    a: "PetsOnMe offers three levels. Accidental carries a $5,000 annual benefit limit and covers accidental injury. Classic carries $10,000 and adds hereditary conditions cover limited to $2,300 a year. Deluxe carries $20,000, with hereditary conditions to $3,800 a year and select dental to $500 a year. All three pay 80% of the eligible vet bill less your chosen excess. Figures are from PetsOnMe's own compare-cover page, read 3 October 2026.",
   },
   {
     q: "How much does PetsOnMe cost?",
@@ -174,7 +176,7 @@ export default function PetsOnMePage() {
           <p className="mt-3 text-[15px] leading-relaxed text-[#56504a]">
             All three pay 80% of the eligible vet bill less your chosen excess, with excess options of $100, $200 or
             $300. What changes between them is the annual limit and what sits inside it. Figures are from
-            PetsOnMe&apos;s own compare-cover page, checked 17 August 2026.
+            PetsOnMe&apos;s own compare-cover page, read {READ_ON_LABEL}.
           </p>
           <div className="mt-6 overflow-x-auto rounded-xl border border-[#ded8cd]">
             <table className="w-full min-w-[520px] text-sm">
@@ -201,6 +203,13 @@ export default function PetsOnMePage() {
             postcode and the excess you pick, so a quote is the only real figure. Limits and terms can change, so
             confirm current cover in the PDS.
           </p>
+        </section>
+
+        {/* Published cover terms as fact rows, no verdict (3 Oct 2026, legal
+            review M7). Same data as /knose-vs-petsonme and the best-pet page. */}
+        <section className="mt-12">
+          <h2 className="text-xl font-bold text-[#14120f] sm:text-2xl">What PetsOnMe publishes about its cover</h2>
+          <PetCoverTable only="petsonme" className="mt-5" />
         </section>
 
         {/* What to check */}
@@ -266,7 +275,7 @@ export default function PetsOnMePage() {
           The product is
           underwritten by Pacific International Insurance Pty Ltd (ABN 83 169 311 193) and distributed by Pets On Me
           Insurance Pty Limited (ABN 42 650 975 554). Cover details are from PetsOnMe&apos;s own compare-cover page,
-          checked 17 August 2026, and can change: confirm current terms, limits and waiting periods in the Product
+          read {READ_ON_LABEL}, and can change: confirm current terms, limits and waiting periods in the Product
           Disclosure Statement before you buy.
         </p>
       </main>

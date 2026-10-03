@@ -161,7 +161,7 @@ export default function MoshyVsJuniperPage() {
         </p>
 
         <div className="mt-6 max-w-2xl space-y-2">
-          <AffiliateDisclosure compact partners={["Moshy", "Juniper"]} required={JUNIPER_REQUIRED?.text} />
+          <AffiliateDisclosure compact partners={["Moshy", "Juniper"]} required={JUNIPER_REQUIRED?.text} notWholeMarket="We earn from both services compared here. The page covers providers we have a commercial relationship with, and other weight-management telehealth services exist." />
         </div>
 
         <ProviderPair providers={providers} className="mt-8" />

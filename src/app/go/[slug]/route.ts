@@ -31,5 +31,7 @@ export async function GET(_req: NextRequest, ctx: { params: Promise<{ slug: stri
   if (!destination) {
     return NextResponse.redirect(new URL("/mens-health", _req.nextUrl.origin), 302);
   }
-  return NextResponse.redirect(destination, 302);
+  // A destination starting with "/" is one of our own pages: a paused placement
+  // (OptiSlim, 3 Oct 2026) points there so the slug never reaches the partner.
+  return NextResponse.redirect(new URL(destination, _req.nextUrl.origin), 302);
 }

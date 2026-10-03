@@ -48,7 +48,7 @@ export default function Terms() {
         <h1 className="mt-4 text-4xl font-bold leading-[1.07] tracking-[-0.01em] text-[#14120f] sm:text-5xl">
           Terms of Use
         </h1>
-        <p className="mt-4 text-sm text-[#56504a]">Last updated: 1 October 2026</p>
+        <p className="mt-4 text-sm text-[#56504a]">Last updated: 3 October 2026</p>
 
         <p className="mt-8 text-lg leading-relaxed text-[#14120f]">
           These terms apply when you use referlabs.com.au. Reading the site is free and needs no account. The site is
@@ -122,7 +122,9 @@ export default function Terms() {
             <ul className="list-disc space-y-2 pl-5">
               <li>Any commission is paid by the provider, at no extra cost to you.</li>
               <li>
-                A provider cannot pay to change its position, to be added to a comparison, or to have a criticism removed.
+                A provider cannot pay to change its position or our conclusions, or to have a criticism removed. Most
+                providers we compare pay us a commission or referral fee, and on some pages we only compare providers we
+                earn from; those pages say so.
               </li>
               <li>
                 We disclose commercial relationships on the pages that carry them. How we earn is set out on{" "}

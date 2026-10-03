@@ -10,14 +10,22 @@ import OfferSchema from "@/components/offers/OfferSchema";
 
 import EarningsBalanceNote from "@/components/consumer/EarningsBalanceNote";
 import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
+import PetCoverTable from "@/components/consumer/PetCoverTable";
+import { READ_ON_LABEL } from "@/lib/pet-cover";
 export const metadata = generateSEOMetadata(seoConfig.bestPetInsurance);
 
 const SLUG = "/best-pet-insurance-australia";
-const UPDATED = "2026-08-17";
+const UPDATED = "2026-10-03";
 
 // Deliberately NOT a ranked list. We publish no star ratings, and we cannot
 // rank two providers on cover when only one publishes its limits. The page
 // ranks the DECISION CRITERIA instead, which is the part a reader can act on.
+//
+// 3 Oct 2026 (legal review M7): no line here may say which policy is worth
+// buying or whether insuring is worthwhile. Refer Labs holds no AFSL, and the
+// referral exemption (reg 7.6.01(1)(e)) does not cover an opinion on a product
+// or a class of products. Each criterion says what the term means and nothing
+// about what the reader should pick.
 const criteria: { h: string; p: string }[] = [
   {
     h: "The benefit percentage",
@@ -25,11 +33,11 @@ const criteria: { h: string; p: string }[] = [
   },
   {
     h: "The annual benefit limit",
-    p: "The most the policy pays in a year. Test it against a realistic worst case rather than an average year: a single cruciate ligament repair or a snake bite can run into thousands, and an entry limit disappears quickly. The limit matters more than almost any other number on the page.",
+    p: "The most the policy pays in a year. Test it against a realistic worst case rather than an average year: a single cruciate ligament repair or a snake bite can run into thousands, and an entry limit disappears quickly.",
   },
   {
     h: "Hereditary and congenital conditions",
-    p: "Breed-linked conditions are where policies diverge most. Many entry policies exclude them outright, and those that include them often apply a separate annual sub-limit well below the headline limit. If you have a breed with known predispositions, this single line can decide which policy is worth buying.",
+    p: "Breed-linked conditions are where policies diverge most. Many entry policies exclude them outright, and those that include them often apply a separate annual sub-limit well below the headline limit.",
   },
   {
     h: "Waiting periods",
@@ -37,11 +45,11 @@ const criteria: { h: string; p: string }[] = [
   },
   {
     h: "The excess, and how it moves the premium",
-    p: "You usually choose from a small set of excess amounts. A higher excess lowers the monthly premium and raises what you pay per claim. Pick the one you could absorb on the day your pet needs surgery, not the one that makes the monthly figure look best.",
+    p: "You usually choose from a small set of excess amounts. A higher excess lowers the monthly premium and raises what you pay per claim.",
   },
   {
     h: "Pre-existing conditions",
-    p: "Excluded by every Australian pet insurer, and the most common reason a claim is declined. Anything showing signs before cover started, or during a waiting period, is generally out. This is the strongest argument for insuring a pet while young and healthy rather than after a diagnosis.",
+    p: "Excluded by every Australian pet insurer, and the most common reason a claim is declined. Anything showing signs before cover started, or during a waiting period, is generally out.",
   },
 ];
 
@@ -56,7 +64,7 @@ const providers = [
   {
     name: "Knose",
     href: "/knose",
-    published: "Claims back up to 90% on eligible vet bills across its policies, with an annual limit up to $25,000 and an excess of $0, $100 or $200. Knose states there are no sub-limits on eligible treatments, so the full annual limit applies to any covered condition. Hereditary and congenital conditions are covered, with a six-month exclusion period unless waived. Dental illness, behavioural and specialised therapies are optional extras.",
+    published: "Lets you choose 70%, 80% or 90% of eligible vet bills, with an annual limit up to $25,000 and an excess of $0, $100 or $200. Knose states there are no sub-limits on eligible treatments, so the full annual limit applies to any covered condition. Hereditary and congenital conditions are covered, with a six-month exclusion period unless waived. Dental illness, behavioural and specialised therapies are optional extras.",
     offer: "Code referlab2mf gives new customers 2 months free when they take out a policy through our link.",
     cta: { label: "Get a Knose quote", href: KNOSE_URL },
   },
@@ -84,8 +92,8 @@ const faqs = [
     a: "Neither provider we cover publishes premiums, because the price is calculated from your pet's species, breed and age, your postcode and the excess you choose. Any figure quoted without those inputs is a guess. Get a quote from each provider with the same excess and cover level so you are comparing on equal terms.",
   },
   {
-    q: "Is it worth insuring an older pet?",
-    a: "It depends on what is already on the record. Pre-existing conditions are excluded, so a policy taken out after a diagnosis will not cover that condition, and premiums rise with age. Some insurers also cap the age at which a pet can first be enrolled. If your pet is older and healthy, cover can still be worthwhile for the unexpected, but read the age limits and exclusions before you assume it applies.",
+    q: "Can you insure an older pet?",
+    a: "Often, within limits each insurer sets. Pre-existing conditions are excluded, so a policy taken out after a diagnosis will not cover that condition, and premiums rise with age. Some insurers also cap the age at which a pet can first be enrolled. The age limits and exclusions are in each insurer's Product Disclosure Statement.",
   },
   {
     q: "What is the single biggest mistake when choosing pet insurance?",
@@ -173,7 +181,7 @@ export default function BestPetInsuranceAustraliaPage() {
         {/* Below the lead. The first paragraph after the h1 is the answer;
             a disclosure in that slot is what an engine lifts instead. Still
             above the first affiliate link, which is what it is for. */}
-        <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
+        <AffiliateDisclosure compact className="mt-4 max-w-2xl" notWholeMarket="Both insurers compared here pay us. We cover only providers we have a commercial relationship with, so this is not a comparison of the whole pet insurance market." />
             <CodeAnswer code="referlab2mf" className="mt-4">
               Of the codes Refer Labs holds, Knose&apos;s referlab2mf is the only free-months offer: 2 months free for new customers who take out a policy.
             </CodeAnswer>
@@ -198,8 +206,8 @@ export default function BestPetInsuranceAustraliaPage() {
           <h2 className="text-xl font-bold text-[#14120f] sm:text-2xl">The providers we cover</h2>
           <p className="mt-3 text-[15px] leading-relaxed text-[#56504a]">
             Two Australian providers. Knose offers 70%, 80% or 90% of eligible vet bills with no sub-limits; PetsOnMe
-            pays 80% across three tiered plans, with limits on hereditary and dental cover. Which suits you depends on your
-            pet and what you would claim for. Every figure below is from each provider&apos;s own site.
+            pays 80% across three tiered plans, with limits on hereditary and dental cover. Every figure below is from
+            each provider&apos;s own site.
           </p>
           <div className="mt-6 grid gap-5">
             {providers.map((p) => (
@@ -220,6 +228,8 @@ export default function BestPetInsuranceAustraliaPage() {
               </div>
             ))}
           </div>
+          <h3 className="mt-10 text-[17px] font-bold text-[#14120f]">What each publishes, row by row</h3>
+          <PetCoverTable className="mt-4" />
           <EarningsBalanceNote earnFromAll={["Knose", "PetsOnMe"]} className="mt-5" />
         </section>
 
@@ -320,7 +330,7 @@ export default function BestPetInsuranceAustraliaPage() {
         <AffiliateDisclosure partners={["PetsOnMe", "Knose"]} earnsFromAll className="mt-8" />
         <p className="mt-3 text-xs leading-relaxed text-[#56504a]">
           A provider cannot pay to be described more favourably than the facts support. Cover details are
-          taken from each provider&apos;s own published pages and were checked on 17 August 2026; terms change, so
+          taken from each provider&apos;s own published pages and were read on {READ_ON_LABEL}; terms change, so
           confirm current cover, limits and waiting periods in the Product Disclosure Statement before you buy.
         </p>
       </main>

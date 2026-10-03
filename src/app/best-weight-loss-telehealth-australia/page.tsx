@@ -207,7 +207,7 @@ export default function BestWeightLossTelehealthPage() {
                   decline some applicants.
                 </p>
                 <div className="mt-4 space-y-2">
-                  <AffiliateDisclosure compact partners={["Moshy", "Juniper"]} required={JUNIPER_REQUIRED?.text} />
+                  <AffiliateDisclosure compact partners={["Moshy", "Juniper"]} required={JUNIPER_REQUIRED?.text} notWholeMarket="Both services on this page pay us, and we compare only providers we have a commercial relationship with. This is not the whole market: other weight-management telehealth services exist." />
                 </div>
               </div>
               <EdgeObject kind="scale" className="lg:mt-14">

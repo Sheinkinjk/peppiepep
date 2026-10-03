@@ -235,6 +235,10 @@ const PARTNERS = [
   // under /weight-loss: that hub is practitioner-assessed telehealth, and a food
   // product sitting beside it would imply the two are alternatives (Jarred,
   // 16 Sep 2026). Health & Beauty only.
+  // Links PAUSED 3 Oct 2026, OptiSlim GLP-1 landing page, pending lawyer (legal
+  // review H3). No page carries an OptiSlim link, so /optislim is no longer an
+  // earning route and llms.txt says so. The allow list stays: /optislim still
+  // names the brand as information, and restoring the links needs no change here.
   { name: "OptiSlim",      tokens: ["optislim", "t/77632"], allow: ["/health-and-beauty", "/optislim", "/guides", "/coming-soon"] },
   { name: "Edible Beauty",  tokens: ["edible-beauty", "ediblebeauty"], allow: ["/health-and-beauty", "/edible-beauty", "/guides", "/coming-soon"] },
   { name: "Aussie Health",  tokens: ["aussie-health", "aussiehealthproducts"], allow: ["/health-and-beauty", "/aussie-health-products", "/guides", "/coming-soon"] },

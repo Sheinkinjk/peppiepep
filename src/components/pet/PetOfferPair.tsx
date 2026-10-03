@@ -27,6 +27,7 @@ export default function PetOfferPair({ ctaPrefix }: { ctaPrefix: string }) {
       className="mb-10 !px-0"
       ctaPrefix={ctaPrefix}
       heading="The two insurers we cover"
+      suitsHeading="What it publishes"
       intro="Both are underwritten by Pacific International Insurance, so they are two products carried by one insurer rather than independent alternatives. Cover, waiting periods, exclusions and limits sit in each provider's PDS and Target Market Determination, which is what to read before you buy."
       providers={[
         {
@@ -34,7 +35,7 @@ export default function PetOfferPair({ ctaPrefix }: { ctaPrefix: string }) {
           logo: "/logos/knose.svg",
           href: "/knose",
           hrefLabel: "Read our Knose guide",
-          suits: "Buyers who want the cover, waiting periods and exclusions set out before they get a quote.",
+          suits: "70%, 80% or 90% of eligible vet bills, an annual limit up to $25,000 and a $0, $100 or $200 excess. Read off Knose's own site, 3 October 2026.",
           how: "Quote online for your pet; the policy terms sit in Knose's PDS.",
           cost: "Priced per pet and postcode, so a quote is the only real figure.",
           offerCode: "referlab2mf",
@@ -47,9 +48,9 @@ export default function PetOfferPair({ ctaPrefix }: { ctaPrefix: string }) {
           logo: "/logos/petsonme.svg",
           href: "/petsonme",
           hrefLabel: "Read our PetsOnMe guide",
-          suits: "Buyers comparing published cover levels before quoting.",
+          suits: "80% of the eligible vet bill on three plans, with annual limits of $5,000, $10,000 or $20,000 and a $100, $200 or $300 excess. Read off PetsOnMe's own compare-cover page, 3 October 2026.",
           how: "Compare the three published cover levels, then quote online; the policy terms sit in PetsOnMe's PDS.",
-          cost: "Premiums are not published. Annual benefit limits run $5,000, $10,000 or $20,000 by level, each paying 80% of the eligible vet bill less an excess of $100, $200 or $300. Read off PetsOnMe's own compare-cover page, 17 August 2026.",
+          cost: "Premiums are not published: priced per pet and postcode, so a quote is the only real figure.",
           offerCode: "REFERLABS",
           visitHref: PETSONME_URL,
           visitLabel: "Compare PetsOnMe cover",

@@ -92,6 +92,7 @@ export default function HubProviders({
   intro,
   providers,
   ctaPrefix = "hub",
+  suitsHeading = "Who it suits",
   className = "",
 }: {
   heading: string;
@@ -99,6 +100,13 @@ export default function HubProviders({
   providers: HubProvider[];
   /** Scopes data-cta so a click is attributed to the page that produced it. */
   ctaPrefix?: string;
+  /**
+   * Heading for the `suits` column. The pet insurance hub passes "What it
+   * publishes" (3 Oct 2026, legal review M7): a referrer without an AFSL may
+   * not say which insurance product suits a reader, so that column holds
+   * published cover facts there instead.
+   */
+  suitsHeading?: string;
   className?: string;
 }) {
   const hasOffer = (p: HubProvider) => Boolean(p.offerCode || p.offerText);
@@ -134,7 +142,7 @@ export default function HubProviders({
           without duplicating the markup into a separate mobile block. */}
       <div className="mt-7 grid gap-4 lg:grid-cols-[1.15fr_1fr_1fr_1.05fr_auto] lg:gap-0">
         <div className="hidden lg:contents">
-          {["Provider", "Who it suits", "What it costs", offerHeading, ""].map((h, i) => (
+          {["Provider", suitsHeading, "What it costs", offerHeading, ""].map((h, i) => (
             <div
               key={i}
               className="hidden border-b border-[#dfe5e1] px-4 pb-3 text-[12px] font-semibold uppercase tracking-[0.05em] text-[#56504a] lg:block"
@@ -179,7 +187,7 @@ export default function HubProviders({
 
               <div className="mt-4 border-t border-[#f1ede4] pt-4 lg:mt-0 lg:border-b lg:border-t-0 lg:px-4 lg:py-5">
                 <span className="text-[12px] font-semibold uppercase tracking-[0.05em] text-[#56504a] lg:hidden">
-                  Who it suits
+                  {suitsHeading}
                 </span>
                 <p className="mt-1 text-[15px] leading-relaxed text-[#56504a] lg:mt-0">{p.suits}</p>
               </div>
