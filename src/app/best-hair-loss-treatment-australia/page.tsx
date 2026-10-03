@@ -134,7 +134,7 @@ export default function BestHairLossTreatmentAustraliaPage() {
                 shampoos and serums are cosmetic and need no consult. Sudden or patchy loss, or hair loss in a woman, is
                 a reason to start with a GP.
               </p>
-              <AffiliateDisclosure compact className="mt-4" />
+              <AffiliateDisclosure compact className="mt-4" notWholeMarket="Mosh is the only online service we compare, and it pays us. The GP route earns us nothing. Other online hair-loss services exist that this page does not cover." />
             </div>
             <EdgeObject kind="comb" className="lg:mt-14">
               <MatchPrompt

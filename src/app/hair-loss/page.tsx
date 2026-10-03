@@ -107,7 +107,7 @@ export default function HairLossHubPage() {
             {/* Below the lead. The first paragraph after the h1 is the answer;
                 a disclosure in that slot is what an engine lifts instead. Still
                 above the first affiliate link, which is what it is for. */}
-            <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
+            <AffiliateDisclosure compact className="mt-4 max-w-2xl" notWholeMarket="The one online service on this hub, Mosh, pays us, and other online services exist that we do not list." />
             <OfferSchema code="REFERAL55" />
           </div>
           {/* The matcher, moved up from below the guides so the hero has its

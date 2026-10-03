@@ -11,10 +11,11 @@ import OffersTable from "@/components/lending/OffersTable";
 import OfferSchema from "@/components/offers/OfferSchema";
 
 import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
+import PetCoverTable from "@/components/consumer/PetCoverTable";
 export const metadata = generateSEOMetadata(seoConfig.knose);
 
 const SLUG = "/knose";
-const UPDATED = "2026-09-14";
+const UPDATED = "2026-10-03";
 
 const faqs = [
   {
@@ -144,6 +145,13 @@ export default function KnosePage() {
               the waiting periods, exclusions and limits that apply, sit in Knose&apos;s PDS rather than in the offer, so
               get a quote to see what would apply to your pet.
             </p>
+          </section>
+
+          {/* Published cover terms as fact rows, no verdict (3 Oct 2026, legal
+              review M7). Same data as /knose-vs-petsonme and the best-pet page. */}
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">What Knose publishes about its cover</h2>
+            <PetCoverTable only="knose" className="mt-5" />
           </section>
 
           {/* What to check (factual pointers, not advice) */}

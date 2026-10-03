@@ -31,16 +31,18 @@ export default function HowWeMakeMoney() {
         <HubObject kind="balance" size={64} className="hy-obj mb-5" />
         <h1 className="text-4xl font-extrabold leading-[1.1] text-[#14120f]">How we make money</h1>
         <p className="mt-4 text-lg leading-relaxed text-[#56504a]">
-          Refer Labs is free to use. Two things pay for it: commissions when you act on a recommendation, and paid
-          work for businesses on the other side of the site. Neither one lets a company buy a better ranking or a
+          Refer Labs is free to use. Two things pay for it: commissions when you sign up or buy through one of our
+          links, and paid work for businesses on the other side of the site. Neither one lets a company buy a better ranking or a
           softer review.
         </p>
 
         <Section h="Affiliate links">
           <p>
-            On most of the site, when you click through to a product we recommend and sign up, the provider may pay us a
-            commission. It costs you nothing extra, and sometimes gets you a better deal than going direct. We only earn if
-            you act on a recommendation, which is exactly why the recommendation has to be honest to be worth anything.
+            On most of the site, when you click through to a provider and sign up or buy, the provider may pay us a
+            commission. It costs you nothing extra, and sometimes gets you a better deal than going direct. On some
+            pages, including the health and pet insurance comparisons, every provider compared is one we earn from.
+            Those pages say so: they cover providers we have a commercial relationship with, which is not the whole
+            market.
           </p>
         </Section>
 
@@ -48,7 +50,9 @@ export default function HowWeMakeMoney() {
           <p>
             The business side of the site sells services: building and running referral and affiliate programs for
             companies that want one. That is client work, billed to the client, and it is kept apart from everything
-            you read on the consumer side. Being listed, reviewed or compared here is free, and no client can buy it.
+            you read on the consumer side. There is no fee to be listed, and no provider or client can pay to change
+            its position or our conclusions. Most providers we compare do pay us a commission on sign-ups, and on some
+            pages we only compare providers we earn from.
             Where a company we do paid work for also appears in a comparison, the page says so.
           </p>
         </Section>

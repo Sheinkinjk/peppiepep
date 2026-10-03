@@ -32,10 +32,22 @@ const MIDOC_HOME = "https://www.midoc.com.au/?ref=ytvpnchm";
  *
  * Destinations verified 4 Sep 2026: both resolve 200 with CF tracking intact.
  */
-// OptiSlim (Commission Factory, merchant 77632), added 16 Sep 2026. Homepage
-// rather than a deep link: no server response was checked proving a deep link
-// keeps the referral, and the same caution applies here as to Midoc.
-const OPTISLIM = "https://t.cfjump.com/94361/t/77632?Url=https%3a%2f%2fwww.optislim.com.au%2f";
+// OptiSlim (Commission Factory, merchant 77632), added 16 Sep 2026.
+//
+// PAUSED 3 Oct 2026, pending lawyer. OptiSlim's homepage now runs a "GLP-1
+// Support" range and a sitewide nav item to a page about taking a prescription
+// dose (legal review H3, reports/legal-risk-review-2026-10-03.md). The linking
+// rule looks at the destination in the context of our content, and a deep link
+// does not cure it because the nav item is sitewide. Every /go/optislim-* slug
+// now resolves to our own /optislim page, so an old link, a cached page or a
+// bookmark never reaches the partner.
+//
+// TO RESTORE: uncomment the line below, point both optislim-* entries in
+// GO_DESTINATIONS back at OPTISLIM, and restore the two CTAs (the /optislim
+// "View OptiSlim's current pricing" button and the /health-and-beauty provider
+// row). `git show` the commit that paused it for the exact diff.
+// const OPTISLIM = "https://t.cfjump.com/94361/t/77632?Url=https%3a%2f%2fwww.optislim.com.au%2f";
+const OPTISLIM_PAUSED = "/optislim";
 // Emma Sleep (Commission Factory, merchant 70242) and Technogym Australia
 // (merchant 89154), added 16 Sep 2026. Homepage destinations for both: no server
 // response was checked proving a deep link keeps the referral, same caution as
@@ -102,14 +114,14 @@ export const GO_DESTINATIONS: Record<string, string> = {
   "aussie-health-natural-skincare": AUSSIE_HEALTH,
   "edible-beauty-cost-per-use": EDIBLE_BEAUTY,
   "edible-beauty-retinol-otc": EDIBLE_BEAUTY,
-  "optislim-health-hub": OPTISLIM,
+  "optislim-health-hub": OPTISLIM_PAUSED, // paused 3 Oct 2026, OptiSlim GLP-1 landing page, pending lawyer
   "emma-sleep-hub": EMMA,
   "emma-mattress-comparison": EMMA,
   "emma-sleep-brand": EMMA,
   "technogym-longevity-hub": TECHNOGYM,
   "technogym-health-hub": TECHNOGYM,
   "technogym-brand": TECHNOGYM,
-  "optislim-brand": OPTISLIM,
+  "optislim-brand": OPTISLIM_PAUSED, // paused 3 Oct 2026, OptiSlim GLP-1 landing page, pending lawyer
   "edible-beauty-skin-hub": EDIBLE_BEAUTY,
   "edible-beauty-skincare-quiz": EDIBLE_BEAUTY,
   "aussie-health-cost-per-use": AUSSIE_HEALTH,

@@ -2,9 +2,8 @@ import Link from "next/link";
 
 import { SectionMark } from "@/components/brand/SectionMark";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
-import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, SCHEMA_AUTHOR, SCHEMA_PUBLISHER } from "@/lib/seo";
-import { RANGES, VLED_RULE, BRAND, perMeal, boxPrice, cheapestPerMeal, readOn, source } from "@/lib/partners/optislim";
+import { RANGES, VLED_RULE, BRAND, perMeal, boxPrice, cheapestPerMeal } from "@/lib/partners/optislim";
 
 export const metadata = generateSEOMetadata(seoConfig.optislim);
 
@@ -23,6 +22,15 @@ export const metadata = generateSEOMetadata(seoConfig.optislim);
  * No outcome claim appears here: the brand's "1.5-2.5 kg per week" and its
  * money-back guarantee are deliberately not carried across (Jarred, 16 Sep
  * 2026). See the claim rule at the top of the partner file.
+ *
+ * AFFILIATE LINKS PAUSED 3 Oct 2026, OptiSlim GLP-1 landing page, pending
+ * lawyer (legal review H3). The page stays up as information. Removed: the
+ * compact AffiliateDisclosure under the lead, the "View OptiSlim's current
+ * pricing" button (data-cta optislim-brand-primary, pointing at the
+ * /go/optislim-brand slug, which now resolves to this page), the commission
+ * sentence under it, and the plain link to OptiSlim's VLCD collection page in
+ * the price note. To restore, `git show` the pausing commit and revert this
+ * file, src/lib/go-links.ts and the /health-and-beauty provider row together.
  */
 
 const READ_ON_LABEL = "16 September 2026";
@@ -46,7 +54,7 @@ const faqs = [
   },
   {
     q: "Does Refer Labs earn money from this page?",
-    a: "Yes, through Commission Factory, if you buy after following our link. We hold no OptiSlim code. The commission did not stop this page telling you the regulator expects a doctor and a dietitian to be supervising you, which is not a sentence that sells shakes.",
+    a: "Not at the moment. Refer Labs paused its OptiSlim affiliate link on 3 October 2026, so this page carries no link to OptiSlim and nothing on it is paid. Before then we had a Commission Factory link here. We hold no OptiSlim code.",
   },
 ];
 
@@ -74,7 +82,7 @@ const webPageSchema = {
   inLanguage: "en-AU",
   isPartOf: { "@id": `${SITE_URL}/#website` },
   datePublished: "2026-09-16",
-  dateModified: "2026-09-16",
+  dateModified: "2026-10-03",
   author: SCHEMA_AUTHOR,
   publisher: SCHEMA_PUBLISHER,
 };
@@ -109,7 +117,9 @@ export default function OptislimPage() {
               to be used under the supervision of a medical practitioner and dietitian, for no more than twelve weeks
               as a sole source of nutrition.
             </p>
-            <AffiliateDisclosure compact className="mt-4" />
+            <p className="mt-4 text-[13px] leading-relaxed text-[#56504a]">
+              This page carries no affiliate link: Refer Labs paused its OptiSlim link on 3 October 2026.
+            </p>
           </div>
         </section>
 
@@ -181,11 +191,8 @@ export default function OptislimPage() {
             </table>
           </div>
           <p className="mt-4 max-w-3xl text-[13px] leading-relaxed text-[#56504a]">
-            Prices can change without notice. View the current pricing on{" "}
-            <a href={source} target="_blank" rel="noopener noreferrer" className="text-[#007a95] hover:underline">
-              OptiSlim&apos;s own site
-            </a>{" "}
-            before you commit. Last read {READ_ON_LABEL}.
+            Prices can change without notice, so check the current figure on OptiSlim&apos;s own site before you
+            commit. Last read {READ_ON_LABEL}.
           </p>
         </section>
 
@@ -207,25 +214,13 @@ export default function OptislimPage() {
             </p>
           </div>
 
+          {/* CTA paused 3 Oct 2026, OptiSlim GLP-1 landing page, pending lawyer.
+              See the note at the top of this file for what to restore. */}
           <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
-            <a
-              href="/go/optislim-brand"
-              target="_blank"
-              rel="nofollow sponsored"
-              data-cta="optislim-brand-primary"
-              className="inline-flex items-center rounded-full bg-[#007a95] px-6 py-3 text-[15px] font-semibold text-white transition-colors hover:bg-[#003647]"
-            >
-              View OptiSlim&apos;s current pricing
-            </a>
             <Link href="/health-and-beauty" className="text-sm font-semibold text-[#007a95] hover:underline">
-              Compare every Health &amp; Beauty partner →
+              See the rest of the Health &amp; Beauty section →
             </Link>
           </div>
-          <p className="mt-3 text-[13px] leading-relaxed text-[#56504a]">
-            We earn a commission if you buy through that link, at no extra cost to you. We hold no OptiSlim code.
-            The commission did not stop this page opening with the regulator&apos;s view that a doctor and a dietitian
-            should be supervising you.
-          </p>
         </section>
 
         <section className="border-y border-[#ded8cd] bg-[#f7f4ee]">

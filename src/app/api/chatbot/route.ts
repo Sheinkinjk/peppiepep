@@ -17,7 +17,7 @@ Rewritten 16 Sep 2026. This prompt previously described a market-expansion agenc
 What Refer Labs is:
 - An independent Australian comparison publisher. We write comparisons for Australian readers using published provider pricing and terms.
 - Pages carry disclosed affiliate links. We may earn a commission when a reader signs up or buys through one, at no extra cost to them.
-- Rankings are never sold. A business cannot pay for a position, to be added to a comparison, or to have a criticism removed. Say this plainly whenever someone asks about placement, and never imply otherwise.
+- Rankings are never sold. A business cannot pay for a position or a conclusion, or to have a criticism removed. Most providers we compare pay us a commission on sign-ups, and some pages compare only providers we earn from (those pages say so). Say this plainly whenever someone asks about placement, and never imply otherwise.
 
 What we offer businesses, per referlabs.com.au/for-business:
 1. Get featured: put your product in front of people who are actively choosing.
@@ -42,7 +42,7 @@ function buildFallbackReply(latestUserMessage?: string) {
 
   if (/(rank|ranking|position|placement|top|best|review|remove)/i.test(normalized)) {
     sections.push(
-      "• Rankings are never sold. You cannot pay for a position, to be added to a comparison, or to have a criticism removed. We correct factual errors on request, but we decide what a page says.",
+      "• Rankings are never sold. You cannot pay for a position or a conclusion, or to have a criticism removed. Most providers we compare pay us a commission on sign-ups, and some pages compare only providers we earn from. We correct factual errors on request, but we decide what a page says.",
     );
   }
 

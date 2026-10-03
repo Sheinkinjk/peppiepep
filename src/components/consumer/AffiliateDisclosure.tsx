@@ -35,6 +35,7 @@ export default function AffiliateDisclosure({
   priceUnaffected = false,
   extra,
   required,
+  notWholeMarket,
   className = "",
 }: {
   /** Named where the page's previous wording named them. */
@@ -73,6 +74,14 @@ export default function AffiliateDisclosure({
    * afterwards.
    */
   compact?: boolean;
+  /**
+   * One sentence saying the page compares only providers Refer Labs earns from,
+   * so it is not the whole market (legal review M5, 3 Oct 2026; ACCC comparator
+   * guidance). Passed as text, worded per page, so ten pages do not carry one
+   * identical sentence skeleton. Renders inside the same block as the compact
+   * disclosure, never between the h1 and the lead.
+   */
+  notWholeMarket?: string;
   className?: string;
 }) {
   const named =
@@ -81,14 +90,15 @@ export default function AffiliateDisclosure({
       : "";
 
   if (compact) {
-    if (required) {
+    if (required || notWholeMarket) {
       return (
         <div className={`text-[13px] leading-relaxed text-[#56504a] ${className}`} data-affiliate-disclosure>
           <p>
             Refer Labs may earn a commission if you sign up or buy through the links on this page
             {named}, at no extra cost to you.
+            {notWholeMarket ? <> {notWholeMarket}</> : null}
           </p>
-          <p className="mt-1">{required}</p>
+          {required ? <p className="mt-1">{required}</p> : null}
         </div>
       );
     }

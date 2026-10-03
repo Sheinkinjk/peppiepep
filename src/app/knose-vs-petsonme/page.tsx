@@ -5,57 +5,46 @@ import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import EditorialMeta from "@/components/consumer/EditorialMeta";
+import PetCoverTable from "@/components/consumer/PetCoverTable";
+import { READ_ON_LABEL } from "@/lib/pet-cover";
 
 import AffiliateDisclosure from "@/components/consumer/AffiliateDisclosure";
 export const metadata = generateSEOMetadata(seoConfig.knoseVsPetsonme);
 
 const SLUG = "/knose-vs-petsonme";
-const UPDATED = "2026-08-17";
+const UPDATED = "2026-10-03";
 
-// Every cell is read off the provider's own site, checked 17 August 2026.
-// Neither publishes premiums, so no price is quoted. Where a provider does not
-// state something publicly, the cell says so rather than guessing.
-const rows: { label: string; knose: string; pom: string }[] = [
-  { label: "Benefit percentage", knose: "Up to 90% of eligible vet bills, across its policies", pom: "80% of the eligible vet bill, on all three plans" },
-  { label: "Annual benefit limit", knose: "Up to $25,000", pom: "$5,000 (Accidental), $10,000 (Classic), $20,000 (Deluxe)" },
-  { label: "Excess options", knose: "$0, $100 or $200 per policy period", pom: "$100, $200 or $300" },
-  { label: "Sub-limits", knose: "States no sub-limits on eligible treatments: the full annual limit applies to any covered condition", pom: "Yes. Hereditary conditions capped at $2,300pa (Classic) or $3,800pa (Deluxe)" },
-  { label: "Hereditary & congenital", knose: "Covered, with a six-month exclusion period unless waived", pom: "Covered on Classic and Deluxe, within the sub-limits above. Not on Accidental" },
-  { label: "Dental", knose: "Optional extra (dental illness), alongside behavioural and specialised therapies", pom: "Select dental included on Deluxe, capped at $500pa" },
-  // Corrected 21 August 2026. This row previously read "Not stated on the cover
-  // page" for Knose, which made PetsOnMe look like the more transparent product.
-  // Knose does name its underwriter, in the disclosure on knose.com.au, and it is
-  // the same company. The difference was where each one prints it, not who carries
-  // the risk. Read off both companies' own sites on 21 August 2026.
-  { label: "Underwriter", knose: "Pacific International Insurance Pty Ltd (ABN 83 169 311 193)", pom: "Pacific International Insurance Pty Ltd (ABN 83 169 311 193)" },
-  { label: "Premiums", knose: "Not published: quote-based", pom: "Not published: quote-based" },
-  { label: "Refer Labs offer", knose: "2 months free with code referlab2mf", pom: `Code ${PETSONME_CODE} lifts the pet care services discount from 12% to 15%, not the premium` },
-];
+// The side-by-side figures live in src/lib/pet-cover.ts and render through
+// PetCoverTable, re-read off both insurers' own sites on 3 October 2026. The
+// "Knose suits you if" / "PetsOnMe suits you if" blocks that sat under the table
+// were removed the same day (legal review M7): mapping a named insurance product
+// to a reader's attributes is an opinion the referral exemption in reg
+// 7.6.01(1)(e) does not cover. State what each publishes; let the reader decide.
 
 const faqs = [
   {
     q: "How do Knose and PetsOnMe differ?",
-    a: "On the published numbers the two differ mainly in headline figures. Knose claims back up to 90% of the bill against PetsOnMe's 80%, carries a higher annual limit at up to $25,000, offers a $0 excess option, and states it applies no sub-limits, so the full annual limit is available for any covered condition. PetsOnMe's advantage is clarity of structure: three plainly tiered plans and published limits, which makes it easy to see exactly what you are buying. Both are underwritten by the same company, Pacific International Insurance (ABN 83 169 311 193), so this is a choice between two products from one insurer rather than a spread across two. Premiums are quote-based and neither publishes them, so the provider that looks better on paper can still cost more for your pet.",
+    a: "On what each publishes: Knose lets you choose 70%, 80% or 90% of eligible vet bills, an annual limit up to $25,000 and an excess of $0, $100 or $200, and states it applies no sub-limits on eligible treatments. PetsOnMe pays 80% on three tiered plans with annual limits of $5,000, $10,000 and $20,000, an excess of $100, $200 or $300, and sub-limits on hereditary and dental cover. Both are underwritten by Pacific International Insurance (ABN 83 169 311 193), so they are two products from one insurer. Neither publishes premiums. Figures read off both insurers' own sites on 3 October 2026.",
   },
   {
-    q: "What is the biggest practical difference between them?",
-    a: "Sub-limits. PetsOnMe caps hereditary conditions at $2,300 a year on Classic and $3,800 on Deluxe, and dental at $500 on Deluxe. Knose states it applies no sub-limits on eligible treatments, so the whole annual limit is available for any covered condition. If your breed carries a known hereditary risk, that single difference can matter more than the headline limit, because a sub-limit is the number you hit when you claim.",
+    q: "How do their sub-limits differ?",
+    a: "PetsOnMe caps hereditary conditions at $2,300 a year on Classic and $3,800 on Deluxe, and dental at $500 a year on Deluxe. Knose states it applies no sub-limits on eligible treatments, so its annual limit applies to any covered condition. Both insurers set out the detail, including exclusions, in their Product Disclosure Statements.",
   },
   {
-    q: "Which one pays more of the vet bill?",
-    a: "Knose, on the published figures: up to 90% of eligible vet bills against PetsOnMe's 80%. On a $6,000 surgery that is roughly $600 versus $1,200 out of pocket before the excess. A higher benefit percentage usually carries a higher premium, so compare quotes for your own pet with the same excess before treating that as settled.",
+    q: "What share of the vet bill does each pay?",
+    a: "Knose lets you choose 70%, 80% or 90% of eligible vet bills. PetsOnMe pays 80% on all three plans. On a $6,000 eligible bill, 90% leaves $600 and 80% leaves $1,200 for you to pay before the excess. The premium changes with the percentage and excess chosen, so the quote for your own pet is where the two can be compared on price.",
   },
   {
     q: "How do the excess options compare?",
-    a: "Knose offers $0, $100 or $200 per policy period. PetsOnMe offers $100, $200 or $300. A $0 excess is unusual in the Australian market and means you pay nothing before the benefit percentage applies, though it generally raises the premium. Choose the excess you could absorb on the day your pet needs surgery, not the one that makes the monthly figure look smallest.",
+    a: "Knose offers $0, $100 or $200 per policy period. PetsOnMe offers $100, $200 or $300. With either insurer, a lower excess generally means a higher premium.",
   },
   {
     q: "What do the offers give me?",
-    a: "They are different in kind, which is worth understanding before you compare them. The Knose code referlab2mf gives new customers 2 months free on the policy itself. The PetsOnMe code REFERLABS lifts the discount on their pet care services, meaning walking, minding, sitting, day care, house sitting and grooming, from 12% to 15%. The PetsOnMe code does not reduce the insurance premium.",
+    a: "They are different in kind. The Knose code referlab2mf goes with Knose's public offer of 2 months free for new customers on the policy itself. The PetsOnMe code REFERLABS lifts the discount on their pet care services, meaning walking, minding, sitting, day care, house sitting and grooming, from 12% to 15%. The PetsOnMe code does not reduce the insurance premium.",
   },
   {
     q: "Does Refer Labs prefer one of them?",
-    a: "No, and we publish no star ratings of our own. Refer Labs is not an insurer, broker or financial adviser, and nothing here is a recommendation or personal financial advice. We earn a commission from both providers, which is why we set out the published figures side by side and let them decide it rather than naming a winner. Read each Product Disclosure Statement and Target Market Determination before you buy.",
+    a: "No, and we publish no star ratings of our own. Refer Labs is not an insurer, broker or financial adviser, and nothing here is a recommendation or personal financial advice. We earn a commission from both providers, which is why we set out the published figures side by side rather than naming a winner. Read each Product Disclosure Statement and Target Market Determination before you buy.",
   },
 ];
 
@@ -127,17 +116,17 @@ export default function KnoseVsPetsOnMePage() {
           <h2 className="text-xl font-bold text-[#14120f] sm:text-2xl">How do Knose and PetsOnMe differ?</h2>
           <div className="mt-4 rounded-xl border border-[#b9e3eb] bg-[#e4f2f5] px-6 py-5">
             <p className="text-[15px] leading-relaxed text-[#14120f]">
-              On the published numbers the two differ mainly in headline figures. Knose states up to 90% of the bill
-              against PetsOnMe&apos;s 80%, an annual limit up to $25,000, a $0 excess option, and no sub-limits, so the
-              full limit is available for any covered condition. PetsOnMe&apos;s strength is clarity: three plainly tiered
-              plans with published limits, so you can see exactly what you are buying. Both are underwritten by the same company, Pacific International Insurance (ABN 83 169 311 193), so this is a choice between two products from one insurer rather than a spread across two. Neither
-              wins outright, because neither publishes premiums and the one that looks better on paper can still cost
-              more for your pet. The sub-limit difference is the one most likely to decide it in a real claim.
+              Knose and PetsOnMe publish different cover structures from the same insurer. Knose lets you choose 70%, 80%
+              or 90% of eligible vet bills, an annual limit up to $25,000 and a $0, $100 or $200 excess, and states no
+              sub-limits on eligible treatments. PetsOnMe pays 80% on three plans with limits of $5,000, $10,000 and
+              $20,000, a $100, $200 or $300 excess, and sub-limits on hereditary and dental cover. Both are underwritten
+              by Pacific International Insurance (ABN 83 169 311 193). Neither publishes premiums, so a quote for your
+              own pet is the only price comparison available.
             </p>
         {/* Below the lead. The first paragraph after the h1 is the answer;
             a disclosure in that slot is what an engine lifts instead. Still
             above the first affiliate link, which is what it is for. */}
-        <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
+        <AffiliateDisclosure compact className="mt-4 max-w-2xl" notWholeMarket="We earn from both insurers on this page, and they are the only two we compare. Other Australian pet insurers are not covered here." />
         <EditorialMeta lastUpdated={UPDATED} className="mt-5" />
           </div>
         </section>
@@ -151,57 +140,31 @@ export default function KnoseVsPetsOnMePage() {
         {/* Table */}
         <section className="mt-12">
           <h2 className="text-xl font-bold text-[#14120f] sm:text-2xl">Side by side</h2>
-          <div className="mt-5 overflow-x-auto rounded-xl border border-[#ded8cd]">
-            <table className="w-full min-w-[640px] text-sm">
-              <thead>
-                <tr className="bg-[#f7f4ee]">
-                  <th className="w-40 px-4 py-3 text-left font-semibold text-[#56504a]"></th>
-                  <th className="px-4 py-3 text-left font-black text-[#14120f]">Knose</th>
-                  <th className="px-4 py-3 text-left font-black text-[#14120f]">PetsOnMe</th>
-                </tr>
-              </thead>
-              <tbody>
-                {rows.map((r) => (
-                  <tr key={r.label} className="border-t border-[#ded8cd] align-top">
-                    <td className="px-4 py-3 font-medium text-[#56504a]">{r.label}</td>
-                    <td className="px-4 py-3 text-[#14120f]">{r.knose}</td>
-                    <td className="px-4 py-3 text-[#14120f]">{r.pom}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          <p className="mt-3 text-xs leading-relaxed text-[#56504a]">
-            Every figure is taken from each provider&apos;s own published pages and was checked on 17 August 2026.
-            Neither publishes premiums, because pricing depends on your pet&apos;s species, breed and age, your postcode
-            and the excess you choose. Terms change: confirm current cover in each Product Disclosure Statement.
-          </p>
+          <PetCoverTable className="mt-5" />
         </section>
 
-        {/* Who each suits */}
+        {/* Offers and quotes. Identical treatment for both, and no line about who
+            either policy suits (3 Oct 2026, legal review M7). */}
         <section className="mt-12 grid gap-5 sm:grid-cols-2">
           <div className="rounded-2xl border border-[#ded8cd] bg-[#f7f4ee] p-6">
-            <h3 className="text-lg font-extrabold text-[#14120f]">Knose suits you if</h3>
+            <h3 className="text-lg font-extrabold text-[#14120f]">Knose</h3>
             <p className="mt-2 text-[15px] leading-relaxed text-[#56504a]">
-              You want the highest share of the bill covered, you would rather not meet a sub-limit at claim time, or a
-              $0 excess appeals. It is also the one to look at if your breed carries hereditary risk, since the full
-              annual limit stays available for those conditions.
+              Offer: 2 months free for new customers, Knose&apos;s own public offer, with code referlab2mf through our
+              link.
             </p>
             <a href={KNOSE_URL} target="_blank" rel="nofollow sponsored" data-cta="kvp-knose" className="nw-btn mt-5 justify-center">
-              Get a Knose quote (2 months free) <ArrowRight className="h-4 w-4" />
+              Get a Knose quote <ArrowRight className="h-4 w-4" />
             </a>
           </div>
           <div className="rounded-2xl border border-[#ded8cd] bg-[#f7f4ee] p-6">
-            <h3 className="text-lg font-extrabold text-[#14120f]">PetsOnMe suits you if</h3>
+            <h3 className="text-lg font-extrabold text-[#14120f]">PetsOnMe</h3>
             <p className="mt-2 text-[15px] leading-relaxed text-[#56504a]">
-              You want clearly separated tiers, or you are starting with accident-only cover and want a defined entry
-              point. The pet care services discount is worth something on top if you regularly
-              use walking, minding or grooming.
+              Offer: code {PETSONME_CODE} lifts the pet care services discount from 12% to 15%. It does not reduce the
+              premium.
             </p>
             <a href={PETSONME_URL} target="_blank" rel="nofollow sponsored" data-cta="kvp-petsonme" className="nw-btn mt-5 justify-center">
-              Compare PetsOnMe cover <ArrowRight className="h-4 w-4" />
+              Get a PetsOnMe quote <ArrowRight className="h-4 w-4" />
             </a>
-            <p className="mt-3 text-center text-xs font-semibold text-[#007a95]">Use code {PETSONME_CODE} at quote</p>
           </div>
         </section>
 
@@ -232,9 +195,9 @@ export default function KnoseVsPetsOnMePage() {
         <AffiliateDisclosure partners={["Knose", "PetsOnMe"]} earnsFromAll noStarRatings className="mt-8" />
         <p className="mt-3 text-xs leading-relaxed text-[#56504a]">
           A provider cannot pay to be described more
-          favourably than the facts support. Cover details are from each provider&apos;s own pages, checked 17 August
-          2026, and can change: confirm current cover, limits, exclusions and waiting periods in the Product Disclosure
-          Statement before you buy.
+          favourably than the facts support. Cover details are from each provider&apos;s own pages, read{" "}
+          {READ_ON_LABEL}, and can change: confirm current cover, limits, exclusions and waiting periods in the Product
+          Disclosure Statement before you buy.
         </p>
       </main>
     </ConsumerShell>

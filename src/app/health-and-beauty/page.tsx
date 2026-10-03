@@ -67,7 +67,7 @@ const faqs = [
   },
   {
     q: "Does Refer Labs earn from this section?",
-    a: "Yes, from five retail partners: OptiSlim, Technogym, Foreo, Edible Beauty Australia and Aussie Health Products, all through Commission Factory. We earn a commission if you buy through a link to one of them, at no extra cost to you, and each page carrying one says so beside it. We hold no discount code for any of the five, so there is nothing on this page we can claim saves you money. Commissions do not change what we compare or conclude.",
+    a: "Yes, from four retail partners: Technogym, Foreo, Edible Beauty Australia and Aussie Health Products, all through Commission Factory. We earn a commission if you buy through a link to one of them, at no extra cost to you, and each page carrying one says so beside it. We hold no discount code for any of the four, so there is nothing on this page we can claim saves you money. Our OptiSlim link has been paused since 3 October 2026, so the OptiSlim page carries no affiliate link. Commissions do not change what we compare or conclude.",
   },
 ];
 
@@ -140,7 +140,7 @@ export default function SkinAndBeautyHub() {
               by the food regulator&apos;s own rule, meant to be used under medical supervision. These guides cover
               what each thing costs in Australian dollars and which of its claims survive a check.
             </p>
-            <AffiliateDisclosure compact className="mt-4" />
+            <AffiliateDisclosure compact className="mt-4" notWholeMarket="Every retailer in the partner table pays us a commission, so it shows the brands we have a commercial relationship with rather than the whole market." />
           </div>
           <EdgeObject kind="bottle" className="lg:mt-14">
             <MatchPrompt
@@ -160,7 +160,7 @@ export default function SkinAndBeautyHub() {
           className="pt-16"
           ctaPrefix="health-beauty-hub"
           heading="The partners we cover"
-          intro="Five Australian retail partners, answering the same four questions. We earn a commission from all five, hold a discount code for none of them, and none of them can pay to be described more favourably."
+          intro="Four Australian retail partners, answering the same four questions. We earn a commission from all four, hold a discount code for none of them, and none of them can pay to be described more favourably."
           providers={[
             {
               name: "Aussie Health Products",
@@ -214,19 +214,16 @@ export default function SkinAndBeautyHub() {
               earns: true,
               earnAction: "buy from",
             },
-            {
-              name: "OptiSlim",
-              href: "/optislim",
-              hrefLabel: "Read our OptiSlim guide",
-              suits: "People whose doctor has already put a very low energy diet on the table.",
-              how: "Meal-replacement shakes, bars and soups. The VLCD range is a food for special medical purposes.",
-              cost: "$44.99 for 21 meals, or $2.14 a meal, read 16 September 2026.",
-              visitHref: "/go/optislim-health-hub",
-              highlight: "Nine flavours in the Classic line and three in Platinum, all in 21-meal boxes.",
-              visitLabel: "View OptiSlim pricing",
-              earns: true,
-              earnAction: "buy from",
-            },
+            /* OptiSlim row PAUSED 3 Oct 2026, OptiSlim GLP-1 landing page, pending
+               lawyer (legal review H3). To restore, re-add this object and put
+               OptiSlim back in the intro count and the earnings FAQ above:
+               { name: "OptiSlim", href: "/optislim", hrefLabel: "Read our OptiSlim guide",
+                 suits: "People whose doctor has already put a very low energy diet on the table.",
+                 how: "Meal-replacement shakes, bars and soups. The VLCD range is a food for special medical purposes.",
+                 cost: "$44.99 for 21 meals, or $2.14 a meal, read 16 September 2026.",
+                 visitHref: "/go/optislim-health-hub",
+                 highlight: "Nine flavours in the Classic line and three in Platinum, all in 21-meal boxes.",
+                 visitLabel: "View OptiSlim pricing", earns: true, earnAction: "buy from" }, */
           ]}
         />
 

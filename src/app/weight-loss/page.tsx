@@ -178,7 +178,7 @@ export default function WeightLossHubPage() {
               {/* Below the lead. The first paragraph after the h1 is the answer;
                   a disclosure in that slot is what an engine lifts instead. Still
                   above the first affiliate link, which is what it is for. */}
-              <AffiliateDisclosure compact required={JUNIPER_REQUIRED?.text} className="mt-4" />
+              <AffiliateDisclosure compact required={JUNIPER_REQUIRED?.text} className="mt-4" notWholeMarket="Both online services on this hub pay us, and the GP route earns us nothing. We only cover services we have a commercial relationship with, which is not the whole market." />
               <OfferSchema code="REFERRAL120" />
             </div>
 

@@ -152,7 +152,7 @@ const APPROACH = [
   "Several options per category, never a single sponsored result",
   "Assessed against category criteria, and we publish no star ratings of our own",
   "Prices and offers dated on the page, and re-checked as they change",
-  "No fee to be listed, and no paid placement",
+  "No listing fee and no paid placement, though most partners pay a commission on sales",
 ];
 
 // The questions every applicant asks before they fill the form in, answered on
@@ -162,7 +162,7 @@ const APPROACH = [
 const faqs = [
   {
     q: "How much does it cost to be listed on Refer Labs?",
-    a: "Nothing. There is no listing fee and no placement fee, and we do not sell position in a table. Where a commercial relationship exists it is a commission on a sale, or a referral fee on an enquiry we introduce, and it is disclosed on the page it applies to.",
+    a: "There is no listing fee and no placement fee, and we do not sell position in a table. Most providers we compare do have a commercial relationship with us: a commission on a sale, or a referral fee on an enquiry we introduce. It is disclosed on the page it applies to, and a page that compares only providers we earn from says so.",
   },
   {
     q: "Can I pay to rank above a competitor?",
@@ -245,8 +245,8 @@ export default function PartnerWithReferLabsPage() {
             <p>
               Refer Labs profiles a small number of providers in each category against published criteria. We take a
               commission when a reader signs up or buys through a link, and that is disclosed on every page it applies
-              to. What we do not do is sell position: no brand has ever paid to rank above another, and there is no fee
-              to be listed.
+              to. What we do not do is sell position: no brand has ever paid to rank above another, and there is no
+              listing fee. On some pages every provider compared is a commission partner, and those pages state it.
             </p>
             <p>
               It follows that we publish things partners would rather we did not. Where two brands we earn from share an
