@@ -112,11 +112,13 @@ export const SEARCH_INDEX: SearchEntry[] = [
   { title: "Best newsletter platform 2026", href: "/best-newsletter-platform", category: "Creator tools", kind: "Guide", keywords: "email marketing substack convertkit beehiiv top" },
   { title: "beehiiv review", href: "/beehiiv", category: "Creator tools", kind: "Guide", keywords: "newsletter email platform grow audience" },
   { title: "Brevo review", href: "/brevo", category: "Creator tools", kind: "Guide", keywords: "brevo sendinblue email marketing sms automation crm all in one platform" },
+  { title: "Brevo vs Mailchimp", href: "/brevo-vs-mailchimp", category: "Creator tools", kind: "Guide", keywords: "brevo vs mailchimp email marketing free plan 250 contacts aud price australia" },
 
   // Software / landing pages
   { title: "Leadpages review", href: "/leadpages", category: "Software", kind: "Guide", keywords: "leadpages landing page builder lead generation ab testing conversion" },
   { title: "KrispCall review", href: "/krispcall", category: "Software", kind: "Guide", keywords: "krispcall cloud phone virtual number shared inbox remote team voip discount code" },
   { title: "Dext review", href: "/dext", category: "Software", kind: "Guide", keywords: "dext bookkeeping automation receipt invoice capture xero quickbooks accounting discount code" },
+  { title: "Dext vs Hubdoc", href: "/dext-vs-hubdoc", category: "Software", kind: "Guide", keywords: "dext vs hubdoc xero smart document capture receipt capture is hubdoc free with xero aud price" },
   { title: "Trainual review", href: "/trainual", category: "Software", kind: "Guide", keywords: "trainual training onboarding sop documentation hr process discount code" },
   { title: "Lindy review", href: "/lindy", category: "AI & sales", kind: "Guide", keywords: "lindy ai work assistant automation inbox scheduling crm agent discount code" },
   { title: "ElevenLabs review", href: "/elevenlabs", category: "AI & sales", kind: "Guide", keywords: "elevenlabs ai voice text to speech tts voice cloning dubbing discount code" },
@@ -161,12 +163,16 @@ export const SEARCH_INDEX: SearchEntry[] = [
   { title: "Best AI sales tools 2026", href: "/best-ai-sales-tools", category: "AI & sales", kind: "Guide", keywords: "ai sales automation gohighlevel aisdr crm outbound sdr compare top" },
   { title: "AI sales tools compared", href: "/compare/ai-sales-tools", category: "AI & sales", kind: "Guide", keywords: "compare ai sales tools by job stack data outreach ai sdr crm hub" },
   { title: "GoHighLevel review", href: "/gohighlevel", category: "AI & sales", kind: "Guide", keywords: "gohighlevel all in one crm marketing automation funnels agency ai" },
+  { title: "GoHighLevel vs HubSpot", href: "/gohighlevel-vs-hubspot", category: "AI & sales", kind: "Guide", keywords: "gohighlevel vs hubspot highlevel crm agency flat fee per seat aud usage email sms" },
   { title: "AiSDR review", href: "/aisdr", category: "AI & sales", kind: "Guide", keywords: "aisdr ai sdr sales development rep outbound prospecting book meetings" },
   { title: "Reply.io review", href: "/replyio", category: "AI & sales", kind: "Guide", keywords: "reply.io reply io sales engagement multichannel email linkedin sequences ai sdr outreach cold email" },
+  { title: "Reply.io vs Apollo.io", href: "/replyio-vs-apollo", category: "AI & sales", kind: "Guide", keywords: "reply.io vs apollo apollo.io free plan credits outreach linkedin calls sms sequences" },
   { title: "FullEnrich review", href: "/fullenrich", category: "AI & sales", kind: "Guide", keywords: "fullenrich waterfall enrichment b2b contact data email mobile phone number finder clay prospecting" },
 
   // Business software
   { title: "Employment Hero review", href: "/employmenthero", category: "Business software", kind: "Guide", keywords: "employment hero hr payroll software australia single touch payroll stp fair work" },
+  { title: "Employment Hero vs Xero Payroll", href: "/employment-hero-vs-xero-payroll", category: "Software", kind: "Guide", keywords: "employment hero vs xero payroll keypay headcount 10 user minimum payroll software australia" },
+  { title: "Employment Hero vs Deputy", href: "/employment-hero-vs-deputy", category: "Software", kind: "Guide", keywords: "employment hero vs deputy rostering payroll add-on deputy payroll australia minimum spend" },
 
   // Affiliate marketing
   { title: "Affiliate earnings calculator", href: "/affiliate-earnings-calculator", category: "Affiliate marketing", kind: "Guide", keywords: "affiliate earnings income calculator how much make commission estimate tool" },
@@ -202,6 +208,7 @@ export const SEARCH_INDEX: SearchEntry[] = [
   { title: "Outgrow", href: "/outgrow", category: "Software", kind: "Guide", keywords: "outgrow interactive quizzes calculators lead generation content" },
   { title: "Databox", href: "/databox", category: "Business software", kind: "Review", keywords: "databox discount code coupon pricing free plan kpi dashboard reporting" },
   { title: "Pipedrive CRM", href: "/pipedrive", category: "AI & sales", kind: "Guide", keywords: "pipedrive crm visual sales pipeline deals" },
+  { title: "Pipedrive vs HubSpot", href: "/pipedrive-vs-hubspot", category: "AI & sales", kind: "Guide", keywords: "pipedrive vs hubspot crm free crm two users aud seat price onboarding fee australia" },
 
   // Business finance (lending vertical)
   { title: "How Refer Labs makes money", href: "/how-we-make-money", category: "Browse", kind: "Guide", keywords: "how we make money affiliate commission lender referral disclosure" },

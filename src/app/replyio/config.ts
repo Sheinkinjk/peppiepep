@@ -166,6 +166,7 @@ export const replyioConfig: AffiliatePageConfig = {
   ],
 
   relatedLinks: [
+    { href: "/replyio-vs-apollo", label: "Reply.io vs Apollo.io", desc: "Apollo.io's free credit plan beside Reply.io's bundled channels." },
     {
       href: "/best-ai-sales-tools",
       label: "Best AI Sales Tools 2026",

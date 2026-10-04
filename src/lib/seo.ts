@@ -2058,6 +2058,58 @@ export const seoConfig = {
     ],
   },
 
+  // Business-software brand pairs, built 4 Oct 2026. Each compares a partner with
+  // a non-partner on facts read off both vendors' own pages that day.
+  employmentHeroVsXeroPayroll: {
+    title: "Employment Hero vs Xero Payroll: Headcount Limits and AUD Prices",
+    description:
+      "Xero includes payroll in every plan, capped by people paid (1 on Ignite, 10 on Ultimate 10); Employment Hero's Payroll plan has a 10-user minimum. Read 4 Oct 2026.",
+    url: `${SITE_URL}/employment-hero-vs-xero-payroll`,
+    keywords: ["employment hero vs xero payroll", "xero payroll vs employment hero", "employment hero vs keypay", "xero payroll included", "employment hero minimum users", "payroll software australia"],
+  },
+  dextVsHubdoc: {
+    title: "Dext vs Hubdoc (2026): Xero Now Includes Its Own Capture",
+    description:
+      "Xero's Australian Hubdoc page now redirects to its own Smart Document Capture. Dext, Hubdoc and Xero's capture compared on AUD price, extraction and software.",
+    url: `${SITE_URL}/dext-vs-hubdoc`,
+    keywords: ["dext vs hubdoc", "hubdoc vs dext", "is hubdoc free with xero", "xero smart document capture", "dext pricing australia", "hubdoc pricing australia"],
+  },
+  employmentHeroVsDeputy: {
+    title: "Employment Hero vs Deputy: Payroll Plan or Roster Add-on",
+    description:
+      "Deputy now sells Australian payroll as a $5 per user add-on; Employment Hero sells it as a plan with a 10-user minimum. Rules, minimums and AUD prices, 4 Oct 2026.",
+    url: `${SITE_URL}/employment-hero-vs-deputy`,
+    keywords: ["employment hero vs deputy", "deputy vs employment hero", "does deputy do payroll", "deputy payroll australia", "deputy minimum monthly spend", "rostering and payroll software australia"],
+  },
+  replyioVsApollo: {
+    title: "Reply.io vs Apollo.io: Free Plan, Seats and Channels Compared",
+    description:
+      "Apollo.io keeps a free plan with monthly credits; Reply.io offers a 14-day trial and bundles LinkedIn, calls and SMS per seat. Plans read on 4 October 2026.",
+    url: `${SITE_URL}/replyio-vs-apollo`,
+    keywords: ["reply.io vs apollo", "apollo vs reply.io", "reply io vs apollo io", "apollo.io free plan", "reply.io pricing", "cold outreach tools"],
+  },
+  pipedriveVsHubspot: {
+    title: "Pipedrive vs HubSpot in Australia: AUD Seats and the Free CRM",
+    description:
+      "HubSpot is free for up to 2 users and adds an onboarding fee at Professional; Pipedrive has no free plan and prices seats from AU$19. Read 4 October 2026.",
+    url: `${SITE_URL}/pipedrive-vs-hubspot`,
+    keywords: ["pipedrive vs hubspot", "hubspot vs pipedrive", "pipedrive vs hubspot australia", "is hubspot crm free", "pipedrive price aud", "crm for small business australia"],
+  },
+  gohighlevelVsHubspot: {
+    title: "GoHighLevel vs HubSpot: Flat Agency Fee or Per-Seat AUD Pricing",
+    description:
+      "GoHighLevel charges a flat monthly fee with no currency printed, plus email and SMS usage; HubSpot prices seats in AUD and is free for 2 users. Read 4 Oct 2026.",
+    url: `${SITE_URL}/gohighlevel-vs-hubspot`,
+    keywords: ["gohighlevel vs hubspot", "hubspot vs gohighlevel", "gohighlevel australia", "gohighlevel pricing aud", "can gohighlevel replace hubspot", "all in one crm for agencies"],
+  },
+  brevoVsMailchimp: {
+    title: "Brevo vs Mailchimp in Australia: Free Plans and AUD Prices",
+    description:
+      "Mailchimp's free plan is capped at 250 contacts and its trial needs a card; Brevo's free plan needs none and is set by send volume. AUD prices, 4 October 2026.",
+    url: `${SITE_URL}/brevo-vs-mailchimp`,
+    keywords: ["brevo vs mailchimp", "mailchimp vs brevo", "brevo vs mailchimp australia", "mailchimp free plan limit", "brevo free plan", "email marketing australia"],
+  },
+
   // CONFOUND, 27 Sep 2026: two in-body links relabelled ("Mosh review" to
   // "Mosh discount code") and one link to /mosh-review added. Title, description
   // and copy unchanged.

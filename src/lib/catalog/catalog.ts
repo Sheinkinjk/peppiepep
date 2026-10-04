@@ -56,6 +56,12 @@ export type Vertical = {
   roundupHref?: { href: string; label: string };
   /** search-index category for the auto-generated related-guides block. */
   relatedCategory?: string;
+  /**
+   * Head-to-head pages for providers in this hub (added 4 Oct 2026). Listed
+   * explicitly because the related-guides block takes the first six entries of a
+   * search-index category, so a new pair page could otherwise never appear here.
+   */
+  pairGuides?: { href: string; label: string; desc: string }[];
   providers: Provider[];
   faqs: { q: string; a: string }[];
 };
@@ -209,6 +215,9 @@ export const CATALOG: Vertical[] = [
     ],
     roundupHref: { href: "/best-newsletter-platform", label: "Read the full beehiiv vs Substack vs ConvertKit comparison" },
     relatedCategory: "Creator tools",
+    pairGuides: [
+      { href: "/brevo-vs-mailchimp", label: "Brevo vs Mailchimp", desc: "Free-plan limits and AUD prices: send-metered against contact-metered." },
+    ],
     providers: [
       {
         name: "beehiiv",
@@ -278,6 +287,11 @@ export const CATALOG: Vertical[] = [
     ],
     roundupHref: { href: "/best-ai-sales-tools", label: "Read the full AI sales tools roundup" },
     relatedCategory: "AI & sales",
+    pairGuides: [
+      { href: "/pipedrive-vs-hubspot", label: "Pipedrive vs HubSpot", desc: "AUD seat prices, the two-user free tier and HubSpot's onboarding fee." },
+      { href: "/gohighlevel-vs-hubspot", label: "GoHighLevel vs HubSpot", desc: "A flat agency fee plus usage, against per-seat pricing in AUD." },
+      { href: "/replyio-vs-apollo", label: "Reply.io vs Apollo.io", desc: "A free credit-based plan against bundled LinkedIn, calls and SMS." },
+    ],
     providers: [
       {
         name: "FullEnrich",
@@ -450,6 +464,10 @@ export const CATALOG: Vertical[] = [
       "online payroll platform",
     ],
     relatedCategory: "Software",
+    pairGuides: [
+      { href: "/employment-hero-vs-xero-payroll", label: "Employment Hero vs Xero Payroll", desc: "Xero's included headcount against Employment Hero's 10-user minimum." },
+      { href: "/employment-hero-vs-deputy", label: "Employment Hero vs Deputy", desc: "A payroll plan with a roster add-on, or a roster with a payroll add-on." },
+    ],
     providers: [
       {
         name: "Employment Hero",
@@ -511,6 +529,9 @@ export const CATALOG: Vertical[] = [
       "sales sequence tool 2026",
     ],
     relatedCategory: "AI & sales",
+    pairGuides: [
+      { href: "/replyio-vs-apollo", label: "Reply.io vs Apollo.io", desc: "A free credit-based plan against bundled LinkedIn, calls and SMS." },
+    ],
     providers: [
       {
         name: "Snov.io",
@@ -576,6 +597,9 @@ export const CATALOG: Vertical[] = [
       "payoneer australia",
     ],
     relatedCategory: "Software",
+    pairGuides: [
+      { href: "/dext-vs-hubdoc", label: "Dext vs Hubdoc", desc: "Where Xero's own capture leaves both, with AUD prices." },
+    ],
     providers: [
       {
         name: "Payoneer",

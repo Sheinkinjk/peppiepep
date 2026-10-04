@@ -225,6 +225,13 @@ export default function BestCrmSmallBusinessPage() {
             Keap. Every one offers a free trial, so shortlist two and test the feel, since that matters as much as the
             spec sheet.
           </p>
+          <p className="mt-4 text-[#56504a] text-sm sm:text-base leading-relaxed max-w-2xl">
+            Weighing Pipedrive against HubSpot&apos;s free CRM?{" "}
+            <Link href="/pipedrive-vs-hubspot" className="font-semibold hover:opacity-80" style={{ color: GREEN }}>
+              Pipedrive vs HubSpot
+            </Link>{" "}
+            sets out both in Australian dollars, including where HubSpot&apos;s free tier ends.
+          </p>
         </section>
 
         <section className="mt-14">

@@ -169,6 +169,8 @@ export const employmentHeroConfig: AffiliatePageConfig = {
   ],
 
   relatedLinks: [
+    { href: "/employment-hero-vs-xero-payroll", label: "Employment Hero vs Xero Payroll", desc: "Xero includes payroll by headcount; Employment Hero has a 10-user minimum. Both set out, dated." },
+    { href: "/employment-hero-vs-deputy", label: "Employment Hero vs Deputy", desc: "A payroll plan with a roster add-on, or a roster platform with a payroll add-on." },
     {
       href: "/compare/hr-payroll",
       label: "HR & payroll tools compared",
