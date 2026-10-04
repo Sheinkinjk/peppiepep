@@ -1,4 +1,5 @@
 import { ImageResponse } from "next/og";
+import { verifyOgTitle } from "@/lib/og-sign";
 
 export const contentType = "image/png";
 export const size = { width: 1200, height: 630 };
@@ -25,15 +26,16 @@ async function loadFonts(origin: string): Promise<FontEntry[]> {
   }
 }
 
-// Branded, per-page Open Graph card. Title (and optional tag) come from query
-// params set server-side by lib/seo.ts, giving every page a unique social/SERP
-// card without a hand-made image per route.
+// Branded, per-page Open Graph card. The title comes from a query param set
+// server-side by lib/seo.ts with a signature; an unsigned or tampered title gets
+// the plain wordmark card instead (see lib/og-sign.ts).
 export async function GET(req: Request) {
   const { searchParams, origin } = new URL(req.url);
 
-  const rawTitle = searchParams.get("title") || "Refer Labs";
+  const asked = searchParams.get("title") || "";
+  const rawTitle = asked && verifyOgTitle(asked, searchParams.get("s")) ? asked : "Refer Labs";
   const title = rawTitle.length > 110 ? `${rawTitle.slice(0, 107)}…` : rawTitle;
-  const tag = searchParams.get("tag")?.slice(0, 40) || "";
+  const tag = "";
 
   const fonts = await loadFonts(origin);
   const fontFamily = fonts.length ? "Geist" : "sans-serif";
@@ -123,7 +125,7 @@ export async function GET(req: Request) {
             referlabs.com.au
           </div>
           <div style={{ color: "rgba(255,255,255,0.40)", fontSize: 24, fontWeight: 600 }}>
-            Growth &amp; Distribution Engine
+            Comparisons for Australians
           </div>
         </div>
       </div>
