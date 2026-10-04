@@ -139,7 +139,7 @@ export default function Page() {
           {
             name: "Emma Sleep",
             href: "/go/emma-mattress-comparison",
-            what: "Mattresses from $569 with a 150-night trial. Every mattress was listed at a discount when we read the site on 16 September 2026, so compare the price you pay rather than the struck-through one.",
+            what: "Mattresses from $569 with a 150-night trial. Compare the price you pay against other mattresses.",
             checked: "16 September 2026",
           },
         ]}

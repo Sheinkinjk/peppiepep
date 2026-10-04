@@ -18,11 +18,10 @@
  * price offered on sale for an extended period may have "effectively become the
  * new selling price".
  *
- * WHAT WE MUST NOT SAY. We are not alleging Emma breaches anything. We read one
- * day's listings, we did not observe a price history, and a single observation
- * cannot establish how long a price has run. The page states what we saw, states
- * what the regulator requires, and tells the reader to judge the mattress on the
- * price they will actually pay. That is the whole claim.
+ * 5 OCT 2026: the Federal Court ordered Emma Sleep to pay $15 million on
+ * 24 April 2026 for misleading strikethrough and percentage-off prices
+ * (ACCC_PENALTY below). Pages now print only the price paid; `was` stays here
+ * as a record and is not shown anywhere.
  *
  * RE-VERIFICATION. Open the `source` URL, read the current and struck-through
  * prices, update both AND `readOn`. Do not bump `readOn` without re-reading.
@@ -43,6 +42,16 @@ export const META = {
 export const { readOn, readOnLabel, source } = META;
 
 
+
+/** The ACCC's release on the Federal Court penalty, read 5 Oct 2026. */
+export const ACCC_PENALTY = {
+  amount: "$15 million",
+  date: "24 April 2026",
+  admitted: "58 of its 74 products had not previously been for sale at the strikethrough price",
+  source:
+    "https://www.accc.gov.au/media-release/bedding-supplier-emma-sleep-to-pay-a-total-of-15m-in-penalties-for-misleading-statements-about-sale-prices",
+  readOn: "5 October 2026",
+} as const;
 
 /** The ACCC's own words on comparison pricing. Quoted, never paraphrased. */
 export const ACCC_RULE = {
@@ -73,11 +82,6 @@ export const PRODUCTS: EmmaProduct[] = [
 ];
 
 export const money = (n: number): string => `$${n.toLocaleString("en-AU")}`;
-
-/** The advertised percentage off, derived rather than typed. */
-export function percentOff(p: EmmaProduct): string {
-  return `${Math.round((1 - p.price / p.was) * 100)}% off`;
-}
 
 export function cheapestMattress(): EmmaProduct {
   return [...PRODUCTS].filter((p) => p.kind === "Mattress").sort((a, b) => a.price - b.price)[0];

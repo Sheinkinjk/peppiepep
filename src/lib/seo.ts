@@ -948,7 +948,7 @@ export const seoConfig = {
   emmaSleep: {
     title: "Emma Sleep Australia 2026: Real Prices and the Discount Test",
     description:
-      "Emma mattresses from $569 in Australia, every one listed at a discount when we read it.",
+      "Emma mattresses from $569 in Australia with a 150-night trial, and the $15 million penalty over its sale prices in April 2026.",
     url: `${SITE_URL}/emma-sleep`,
     keywords: ["emma sleep australia", "emma mattress price australia", "emma mattress review", "emma sleep discount", "mattress sale australia"],
   },

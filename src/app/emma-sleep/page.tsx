@@ -1,6 +1,6 @@
 import RetailerBrandPage, { type RetailerBrand } from "@/components/consumer/RetailerBrandPage";
 import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
-import { PRODUCTS, ACCC_RULE, TERMS, money, percentOff, cheapestMattress, readOnLabel } from "@/lib/partners/emma-sleep";
+import { PRODUCTS, ACCC_RULE, ACCC_PENALTY, TERMS, money, cheapestMattress, readOnLabel } from "@/lib/partners/emma-sleep";
 
 export const metadata = generateSEOMetadata(seoConfig.emmaSleep);
 
@@ -13,9 +13,9 @@ export const metadata = generateSEOMetadata(seoConfig.emmaSleep);
  * or special price, as the price has effectively become the new selling price".
  * A buyer should judge the mattress on what they pay, not on the gap.
  *
- * WE ARE NOT ALLEGING A BREACH. One day's listings were read. No price history
- * was observed. The page states what we saw, quotes the regulator, and stops.
- * See the claim rule at the top of src/lib/partners/emma-sleep.ts.
+ * 5 Oct 2026: the struck-through prices and percentages are no longer printed.
+ * The Federal Court penalised Emma $15 million for them on 24 April 2026, and
+ * repeating them on a commission page carried the same claim (Jarred approved).
  */
 
 const cheapest = cheapestMattress();
@@ -24,19 +24,19 @@ const brand: RetailerBrand = {
   name: "Emma Sleep",
   slug: "/emma-sleep",
   section: { href: "/sleep", label: "Sleep" },
-  tagline: "what you pay, and what the struck-through price is worth",
+  tagline: "what you pay, and why the struck-through price is not the test",
   lead: (
     <>
       Emma sells mattresses and bundles in Australia from {money(cheapest.price)} for the{" "}
-      {cheapest.name.replace("Emma ", "")}, with a {TERMS.trialNights}-night trial. Every mattress we saw on{" "}
-      {readOnLabel} was listed at a discount, between {percentOff(PRODUCTS[2])} and {percentOff(PRODUCTS[1])} a
-      struck-through price. The number worth comparing against other mattresses is the one you pay, not the one with
-      the line through it.
+      {cheapest.name.replace("Emma ", "")}, with a {TERMS.trialNights}-night trial, read on {readOnLabel}. On{" "}
+      {ACCC_PENALTY.date} the Federal Court ordered Emma Sleep to pay {ACCC_PENALTY.amount} in penalties for
+      misleading strikethrough and percentage-off sale prices. The number worth comparing against other mattresses is
+      the one you pay.
     </>
   ),
   facts: PRODUCTS.map((p) => ({
     label: p.name.replace("Emma ", ""),
-    value: `${money(p.price)}, listed as ${percentOff(p)} ${money(p.was)}`,
+    value: money(p.price),
   })).concat([
     { label: "Trial", value: `${TERMS.trialNights} nights` },
     { label: "Delivery", value: TERMS.delivery },
@@ -44,21 +44,21 @@ const brand: RetailerBrand = {
   ]),
   factsNote: (
     <>
-      Read off Emma&apos;s own Australian site on {readOnLabel}. Both figures are recorded because the discount is a
-      fact about the listing. We do not present the gap between them as money saved, for the reason set out below.
+      The price you pay, read off Emma&apos;s own Australian site on {readOnLabel}. We do not repeat struck-through
+      prices or percentages off, for the reason set out below.
     </>
   ),
   unverified: (
     <>
       <p>
-        We could not verify that any struck-through price was ever the selling price, or for how long. We read one
-        day&apos;s listings and observed no price history, so we are not telling you that you saved{" "}
-        {money(PRODUCTS[1].was - PRODUCTS[1].price)} on a Luxe ThermoCool, and we are not alleging Emma has done
-        anything wrong. Both would need evidence we do not have.
+        On {ACCC_PENALTY.date} the Federal Court ordered Emma Sleep Pty Ltd and Emma Sleep Southeast Asia Inc to pay{" "}
+        {ACCC_PENALTY.amount} in penalties for false or misleading statements about sale prices. Emma admitted that{" "}
+        {ACCC_PENALTY.admitted} (
+        <a href={ACCC_PENALTY.source} className="underline">ACCC media release</a>, read {ACCC_PENALTY.readOn}). That is
+        why this page shows only the price you pay.
       </p>
       <p className="mt-4">
-        The warranty length was not stated where we looked, so we do not quote one. Delivery cost outside select metro
-        areas was not stated either. Check both at checkout.
+        Check the warranty length and the delivery cost outside metro areas at checkout.
       </p>
     </>
   ),
@@ -75,10 +75,8 @@ const brand: RetailerBrand = {
           It also describes a was/now claim as misleading where &ldquo;{ACCC_RULE.wasNow}&rdquo;
         </>,
         <>
-          None of that is a statement about Emma. It is the test any reader can apply to any mattress retailer,
-          including this one, and the practical conclusion is the same either way: compare{" "}
-          {money(cheapest.price)} against what a rival actually charges, and ignore the struck-through figure
-          entirely. If the discount is permanent, it is not a discount, it is the price.
+          It is a test any reader can apply to any mattress retailer: compare {money(cheapest.price)} against what a
+          rival actually charges, and ignore any struck-through figure.
         </>,
       ],
     },
@@ -104,11 +102,11 @@ const brand: RetailerBrand = {
   faqs: [
     {
       q: "How much does an Emma mattress cost in Australia?",
-      a: `The Comfort Plus was listed at ${money(PRODUCTS[0].price)} and the Luxe ThermoCool at ${money(PRODUCTS[1].price)}, both marked down from higher struck-through prices, read on ${readOnLabel}. Bundles ran ${money(PRODUCTS[2].price)} and ${money(PRODUCTS[3].price)}. Prices move with promotions, so check the current figure before buying.`,
+      a: `The Comfort Plus was listed at ${money(PRODUCTS[0].price)} and the Luxe ThermoCool at ${money(PRODUCTS[1].price)}, read on ${readOnLabel}. Bundles ran ${money(PRODUCTS[2].price)} and ${money(PRODUCTS[3].price)}. Prices move with promotions, so check the current figure before buying.`,
     },
     {
-      q: "Are Emma's discounts real?",
-      a: "We cannot tell you, because we read one day's listings and observed no price history. What we can tell you is the test: the ACCC says a price offered at a sale or special price for an extended period may be misleading to call a sale, because it has effectively become the new selling price. Compare the price you would pay against rival mattresses rather than against the struck-through number.",
+      q: "Was Emma Sleep fined over its sale prices?",
+      a: `Yes. On ${ACCC_PENALTY.date} the Federal Court ordered Emma Sleep to pay ${ACCC_PENALTY.amount} in penalties for false or misleading statements about sale prices; Emma admitted that ${ACCC_PENALTY.admitted} (ACCC media release, read ${ACCC_PENALTY.readOn}). Compare the price you would pay against rival mattresses rather than against any struck-through number.`,
     },
     {
       q: "How long is the Emma trial?",
@@ -116,7 +114,7 @@ const brand: RetailerBrand = {
     },
     {
       q: "Does Refer Labs earn money from this page?",
-      a: "Yes, through Commission Factory, if you buy after following our link. We hold no Emma code, so we cannot claim to get you a better price than the site already shows. The section telling you to ignore the struck-through figure is the part a paying brand would most want removed, and it stays.",
+      a: "Yes, through Commission Factory, if you buy after following our link. We hold no Emma code, so we cannot claim to get you a better price than the site already shows.",
     },
   ],
   disclaimer: (
