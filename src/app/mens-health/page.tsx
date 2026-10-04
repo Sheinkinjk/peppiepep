@@ -98,7 +98,7 @@ const faqs = [
   },
   {
     q: "Does Refer Labs earn from this section?",
-    a: "Yes, from one partner. Midoc pays us a commission if you use a service through a Midoc link in this section, at no extra cost to you, and each page carrying one says so beside it. The mental health and erectile dysfunction pages carry no commercial link. Commissions do not change what we compare or conclude.",
+    a: "Yes, from one partner. Midoc pays us a commission if you use a service through a Midoc link in this section, at no extra cost to you, and each page carrying one says so beside it. Commissions do not change what we compare or conclude.",
   },
 ];
 

@@ -12,7 +12,7 @@ export const SEARCH_INDEX: SearchEntry[] = [
   // Categories
   { title: "Deals & discount codes", href: "/deals", category: "Deals", kind: "Guide", keywords: "deals discount codes promo codes australia moshy mosh apollo offers current verified" },
   { title: "Weight loss & telehealth", href: "/weight-loss", category: "Health", kind: "Category", keywords: "weight management obesity diet telehealth weight management telehealth online clinic" },
-  { title: "Hair loss treatment", href: "/hair-loss", category: "Health", kind: "Category", keywords: "hair regrowth balding thinning telehealth topical scalp" },
+  { title: "Hair loss treatment", href: "/hair-loss", category: "Health", kind: "Category", keywords: "hair loss balding thinning telehealth online consultation scalp" },
   { title: "Who underwrites pet insurance in Australia", href: "/who-underwrites-pet-insurance-australia", category: "Insurance", kind: "Guide", keywords: "who underwrites pet insurance petsure hollard pacific international knose petsonme trupanion bow wow underwriter issuer australia" },
   { title: "Pet insurance", href: "/pet-insurance", category: "Insurance", kind: "Category", keywords: "pet insurance australia dog cat cover waiting period exclusions excess annual limit knose offers referrer" },
   { title: "Health & beauty", href: "/health-and-beauty", category: "Health & beauty", kind: "Category", keywords: "health beauty australia skincare meal replacement vlcd devices acne led mask" },
@@ -40,7 +40,7 @@ export const SEARCH_INDEX: SearchEntry[] = [
   { title: "Women's health", href: "/womens-health", category: "Women's health", kind: "Category", keywords: "womens health australia uti contraception menopause pharmacist telehealth" },
   { title: "Menopause care costs", href: "/womens-health/menopause-care-cost-australia", category: "Women's health", kind: "Guide", keywords: "menopause cost medicare assessment item 695 telehealth clinic perimenopause" },
   { title: "UTI treatment without a GP", href: "/womens-health/uti-treatment-without-a-gp-australia", category: "Women's health", kind: "Guide", keywords: "uti pharmacist treatment chemist care now cost state" },
-  { title: "Men's health", href: "/mens-health", category: "Men's health", kind: "Category", keywords: "mens health australia erectile dysfunction premature ejaculation online clinic cost" },
+  { title: "Men's health", href: "/mens-health", category: "Men's health", kind: "Category", keywords: "mens health australia online clinic telehealth medical certificate cost" },
   { title: "Online men's health clinics compared", href: "/mens-health/online-mens-health-clinics-compared", category: "Men's health", kind: "Guide", keywords: "online mens health clinic australia subscription consult model ahpra" },
   { title: "Telehealth or a GP for men's health", href: "/mens-health/is-telehealth-or-a-gp-cheaper-for-mens-health", category: "Men's health", kind: "Guide", keywords: "telehealth vs gp cost mens health bulk billed medicare rebate" },
   { title: "Online medical certificate cost", href: "/mens-health/online-doctor-medical-certificate-australia", category: "Men's health", kind: "Guide", keywords: "online medical certificate australia cost sick certificate telehealth same day carer" },

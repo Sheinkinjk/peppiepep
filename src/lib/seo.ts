@@ -850,7 +850,7 @@ export const seoConfig = {
   onlineMedicalCertificate: {
     title: "Online Medical Certificate Australia: Cost 2026 | Refer Labs",
     description:
-      "What an online medical certificate costs in Australia: Midoc's four types from $18, issued 24/7, and the doctor's review you are paying for.",
+      "What an online medical certificate costs in Australia: Midoc's four types from $18.88, issued 24/7, and the doctor's review you are paying for.",
     url: `${SITE_URL}/mens-health/online-doctor-medical-certificate-australia`,
     keywords: ["online medical certificate australia", "medical certificate online cost", "sick certificate online australia", "telehealth medical certificate australia", "same day medical certificate online"],
   },

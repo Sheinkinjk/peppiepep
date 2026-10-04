@@ -24,8 +24,8 @@ const faqs = [
     a: "Not to start. Weight-loss telehealth begins with an online questionnaire that a registered Australian practitioner then reviews. If your case needs an in-person look, a credible service will tell you so rather than proceed.",
   },
   {
-    q: "Is online weight loss treatment regulated in Australia?",
-    a: "Yes. Practitioners consulting through these services must be registered with AHPRA, and telehealth providers operate under Australian health service regulations. A registered practitioner reviews each applicant and some are declined.",
+    q: "How is online weight-management care regulated in Australia?",
+    a: "Practitioners consulting through these services must be registered with AHPRA, and telehealth providers operate under Australian health service regulations. A registered practitioner reviews each applicant and some are declined.",
   },
   {
     q: "What does a men's program typically include?",

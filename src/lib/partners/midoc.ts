@@ -33,18 +33,18 @@
  */
 const CONSULT_STANDARD = "$49";
 const CONSULT_SPECIALIST = "$69";
-const SCRIPT_REPEAT = "$18";
-const SCRIPT_NEW = "$39";
-const CERT_SINGLE = "$18";
-const CERT_WEEK = "$36";
+const SCRIPT_REPEAT = "$18.88";
+const SCRIPT_NEW = "$39.88";
+const CERT_SINGLE = "$18.88";
+const CERT_WEEK = "$36.88";
 const MENTAL_HEALTH = "fully bulk billed";
 
 export const MIDOC = {
   /** The date every figure below was read off midoc.com.au. */
-  readOn: "2026-09-04",
-  readOnLabel: "4 September 2026",
+  readOn: "2026-10-05",
+  readOnLabel: "5 October 2026",
   /** Short form, for a card or a table header where the full label will not fit. */
-  readOnShort: "4 Sep 2026",
+  readOnShort: "5 Oct 2026",
   source: "https://www.midoc.com.au/telehealth",
 
   consultStandard: CONSULT_STANDARD,
@@ -70,13 +70,7 @@ export const MIDOC = {
   scriptIdentifier:
     "a valid Medicare card, or an Individual Healthcare Identifier (IHI) number if you do not have one",
   scriptRepeatProof: "proof of your previous prescription, uploaded with the request",
-  /**
-   * Their product copy says one prescription per repeat consultation; their FAQ
-   * on the same page says up to three different repeat medications per request.
-   * Both are quoted rather than reconciled, because we cannot resolve it for a
-   * reader and picking one would be a guess.
-   */
-  scriptRepeatCountProductCopy: "up to 1 prescription in one consultation",
+  /** The FAQ wording. The "1 prescription" product line it once contradicted was gone on 5 Oct 2026. */
   scriptRepeatCountFaq: "up to 3 different types of repeat medications in one request, subject to doctor discretion",
   scriptPractitioners: "AHPRA-registered doctors and nurse practitioners",
 
@@ -148,7 +142,7 @@ export const MIDOC = {
   waitTime: "usually within 5 to 60 minutes",
   format: "phone or video, depending on the service",
   hoursMost: "8am to 2am, seven days",
-  hoursExceptions: "smoking cessation 8am to 5pm, men's health 9am to 5pm",
+  hoursExceptions: "several specialist services 8am to 8pm, smoking cessation 8am to 5pm and men's health 9am to 5pm",
   coverage: "nationally, across QLD, NSW, ACT, VIC, SA, WA, NT and TAS",
   medicare: "not required for a consultation, required for a prescription",
   practitioners: "doctors registered with AHPRA",
