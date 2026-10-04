@@ -24,7 +24,7 @@ function optionRow(title: string, who: string, body: string, cta: { label: strin
     </td></tr>`;
 }
 
-export function buildWeightLossGuideEmail(): string {
+export function buildWeightLossGuideEmail(unsubscribeHref: string): string {
   return `<!doctype html>
 <html><body style="margin:0;padding:0;background:#f5f8f6;">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f5f8f6;padding:28px 12px;">
@@ -64,7 +64,7 @@ export function buildWeightLossGuideEmail(): string {
           </table>
         </td></tr>
         <tr><td style="padding:18px 28px 26px;">
-          <p style="margin:0;font-size:12px;line-height:1.6;color:${MUTED};font-family:${FONT};">This guide is published by Refer Labs and is general information, not medical advice. It does not recommend a course of care or imply suitability for any individual. Suitability for any program is decided by a registered Australian practitioner. It contains disclosed affiliate links: we may earn a commission if you sign up through them, at no extra cost to you, and it never changes what we write. You are receiving this because you requested the guide at referlabs.com.au. <a href="${BASE}/contact?subject=Unsubscribe" style="color:${MUTED};">Unsubscribe</a>.</p>
+          <p style="margin:0;font-size:12px;line-height:1.6;color:${MUTED};font-family:${FONT};">This guide is published by Refer Labs and is general information, not medical advice. It does not recommend a course of care or imply suitability for any individual. Suitability for any program is decided by a registered Australian practitioner. It contains disclosed affiliate links: we may earn a commission if you sign up through them, at no extra cost to you, and it never changes what we write. You are receiving this because you requested the guide at referlabs.com.au. <a href="${unsubscribeHref}" style="color:${MUTED};">Unsubscribe</a>.</p>
         </td></tr>
       </table>
       <p style="margin:16px 0 0;font-size:12px;color:${MUTED};font-family:${FONT};">Refer Labs &middot; Independent Australian comparisons &middot; <a href="${BASE}" style="color:${GREEN};text-decoration:none;">referlabs.com.au</a></p>

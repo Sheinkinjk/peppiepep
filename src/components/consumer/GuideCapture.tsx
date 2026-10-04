@@ -8,6 +8,8 @@ const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 export default function GuideCapture({ source = "weight-loss-guide" }: { source?: string }) {
   const [email, setEmail] = useState("");
   const [honeypot, setHoneypot] = useState("");
+  // Updates are a separate, unticked opt-in (Spam Act s 16): asking for the guide is not consent to more email.
+  const [updates, setUpdates] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [err, setErr] = useState<string | null>(null);
   const [done, setDone] = useState(false);
@@ -24,7 +26,7 @@ export default function GuideCapture({ source = "weight-loss-guide" }: { source?
       const res = await fetch("/api/weight-loss-guide", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: email.trim(), source, company_website_confirm: honeypot }),
+        body: JSON.stringify({ email: email.trim(), source, updates, company_website_confirm: honeypot }),
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok || !data.ok) {
@@ -101,9 +103,18 @@ export default function GuideCapture({ source = "weight-loss-guide" }: { source?
         </button>
       </div>
       {err && <p role="alert" className="mt-2 text-sm text-[#c0392b]">{err}</p>}
-      <p className="mt-3 text-[12px] leading-relaxed text-[#56504a]">
-        Free, one email. No spam. Unsubscribe anytime. By requesting the guide you agree to receive it and the occasional
-        Refer Labs update. General information, not medical advice.
+      <label className="mt-3 flex items-start gap-2 text-[13px] leading-relaxed text-[#14120f]">
+        <input
+          type="checkbox"
+          checked={updates}
+          onChange={(e) => setUpdates(e.target.checked)}
+          className="mt-1 h-4 w-4 shrink-0 accent-[#007a95]"
+        />
+        <span>Also email me occasional Refer Labs updates when a comparison or verified offer changes.</span>
+      </label>
+      <p className="mt-2 text-[12px] leading-relaxed text-[#56504a]">
+        Free. The guide is sent once by email; we only send more if you tick the box. Every email has a one-click
+        unsubscribe. General information, not medical advice.
       </p>
     </form>
   );
