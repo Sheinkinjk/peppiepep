@@ -167,6 +167,7 @@ export const goHighLevelConfig: AffiliatePageConfig = {
   ],
 
   relatedLinks: [
+    { href: "/gohighlevel-vs-hubspot", label: "GoHighLevel vs HubSpot", desc: "A flat agency fee plus usage, against HubSpot's per-seat AUD pricing." },
     { href: "/pipedrive", label: "Pipedrive", desc: "A simpler, pipeline-first CRM." },
     {
       href: "/best-ai-sales-tools",

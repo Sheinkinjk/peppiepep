@@ -67,6 +67,7 @@ export const activeCampaignConfig: AffiliatePageConfig = {
     { q: "ActiveCampaign vs a basic email tool, what's the difference?", a: "Basic tools send broadcasts to a list. ActiveCampaign adds an automation engine that reacts to each contact's behaviour, plus segmentation and a CRM, so follow-up is personalised and hands-off. It is the step up when send-and-hope email stops being enough." },
   ],
   relatedLinks: [
+    { href: "/brevo-vs-mailchimp", label: "Brevo vs Mailchimp", desc: "Two other email tools compared on free plans and AUD prices." },
     { href: "/databox", label: "Databox", desc: "Report on email, CRM and ad performance in one dashboard. Free plan, no expiry." },
     { href: "/compare/ai-sales-tools", label: "Compare sales & CRM tools", desc: "See ActiveCampaign next to CRMs and outreach tools." },
     { href: "/brevo", label: "Brevo", desc: "An all-in-one email, SMS and CRM alternative." },

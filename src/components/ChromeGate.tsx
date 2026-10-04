@@ -105,6 +105,14 @@ const STANDALONE_ROUTES = [
   // Website-builder + peptide head-to-heads
   "/carrd-vs-butternut",
   "/durable-vs-butternut",
+  // Business-software brand pairs (4 Oct 2026, ConsumerShell)
+  "/employment-hero-vs-xero-payroll",
+  "/dext-vs-hubdoc",
+  "/employment-hero-vs-deputy",
+  "/replyio-vs-apollo",
+  "/pipedrive-vs-hubspot",
+  "/gohighlevel-vs-hubspot",
+  "/brevo-vs-mailchimp",
   // Affiliate-marketing guides
   "/affiliate-programs-australia",
   "/high-paying-affiliate-programs",

@@ -68,6 +68,7 @@ export const pipedriveConfig: AffiliatePageConfig = {
     { q: "Is Pipedrive good for a small team?", a: "Yes, that is its sweet spot. It is built to be quick to set up and easy enough that a small sales team keeps it current, while still offering automation and reporting to run a pipeline properly." },
   ],
   relatedLinks: [
+    { href: "/pipedrive-vs-hubspot", label: "Pipedrive vs HubSpot", desc: "AUD seat prices, HubSpot's two-user free tier and its onboarding fee." },
     { href: "/databox", label: "Databox", desc: "Dashboards that pull your CRM, ads and email numbers into one view. Free plan." },
       { href: "/best-crm-small-business-australia", label: "Best CRM for small business", desc: "Pipedrive, Capsule, Nutshell and Keap compared by who each suits." },
     { href: "/capsule", label: "Capsule", desc: "A simpler CRM for small teams." },

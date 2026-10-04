@@ -31,6 +31,12 @@ export type PairProvider = {
   /** data-cta placement label. */
   loc: string;
   sponsored?: boolean;
+  /**
+   * Replaces the no-offer line. Added 4 Oct 2026 for the business-software pair
+   * pages, where a partner card has no code: the default line said "We don't earn
+   * from this provider", which is false on a card carrying our affiliate link.
+   */
+  note?: string;
 };
 
 export default function ProviderPair({ providers, className = "" }: { providers: PairProvider[]; className?: string }) {
@@ -80,7 +86,10 @@ export default function ProviderPair({ providers, className = "" }: { providers:
                 </p>
               ) : (
                 <p className="mb-4 rounded-xl bg-[#f7f4ee] px-4 py-3 text-sm leading-snug text-[#56504a]">
-                  No Refer Labs code. We don&apos;t earn from this provider.
+                  {p.note ??
+                    (sponsored
+                      ? "No Refer Labs code. Refer Labs earns a commission if you sign up through this link."
+                      : "No Refer Labs code. We don't earn from this provider.")}
                 </p>
               )}
               <a

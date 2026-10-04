@@ -89,6 +89,7 @@ export const dextConfig: AffiliatePageConfig = {
     },
   ],
   relatedLinks: [
+    { href: "/dext-vs-hubdoc", label: "Dext vs Hubdoc", desc: "Hubdoc, Dext and the capture Xero now includes, with AUD prices." },
     { href: "/compare/payments", label: "Payments & finance tools", desc: "Getting paid across borders, plus bookkeeping and accounting automation." },
   ],
   ctas: {

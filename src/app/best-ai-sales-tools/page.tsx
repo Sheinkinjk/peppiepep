@@ -505,6 +505,8 @@ export default function BestAiSalesToolsPage() {
                 { href: "/aisdr", label: "AiSDR Review" },
                 { href: "/replyio", label: "Reply.io Review" },
                 { href: "/fullenrich", label: "FullEnrich Review" },
+                { href: "/replyio-vs-apollo", label: "Reply.io vs Apollo.io" },
+                { href: "/gohighlevel-vs-hubspot", label: "GoHighLevel vs HubSpot" },
                 { href: "/for-business", label: "For Business: Partner With Refer Labs" },
                 { href: "/guides", label: "All Comparison Guides" },
               ].map(({ href, label }) => (

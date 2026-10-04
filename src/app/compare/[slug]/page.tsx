@@ -154,6 +154,24 @@ export default async function ComparePage({ params }: { params: Promise<{ slug: 
               </Link>
             </p>
           )}
+          {v.pairGuides && v.pairGuides.length > 0 && (
+            <div className="mt-10">
+              <h2 className="text-lg font-bold text-[#14120f]">Head-to-head comparisons</h2>
+              <ul className="mt-3 grid gap-3 sm:grid-cols-2">
+                {v.pairGuides.map((g) => (
+                  <li key={g.href}>
+                    <Link
+                      href={g.href}
+                      className="group block rounded-xl border border-[#ded8cd] bg-white p-4 transition-colors hover:border-[#007a95]/40"
+                    >
+                      <span className="block text-[15px] font-bold text-[#14120f] group-hover:text-[#007a95]">{g.label}</span>
+                      <span className="mt-1 block text-sm leading-relaxed text-[#56504a]">{g.desc}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </section>
 
         <section className="mx-auto max-w-6xl px-5 py-8 sm:px-8">

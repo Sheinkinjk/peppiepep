@@ -113,6 +113,14 @@ const guides = [
   { href: "/best-crm-small-business-australia", label: "Best CRM for small business", desc: "Pipedrive, Capsule, Nutshell and Keap on real monthly pricing." },
   { href: "/best-website-builder", label: "Best website builder", desc: "One-page, AI-generated and full builders, compared on what they cost." },
   { href: "/best-ai-sales-tools", label: "Best AI sales tools", desc: "GoHighLevel, AiSDR, Reply.io and FullEnrich, by the bottleneck each solves." },
+  // Brand pairs, 4 Oct 2026: each sets a partner beside a non-partner.
+  { href: "/employment-hero-vs-xero-payroll", label: "Employment Hero vs Xero Payroll", desc: "Xero's included headcount against Employment Hero's 10-user minimum." },
+  { href: "/employment-hero-vs-deputy", label: "Employment Hero vs Deputy", desc: "A payroll plan with a roster add-on, or a roster with a payroll add-on." },
+  { href: "/dext-vs-hubdoc", label: "Dext vs Hubdoc", desc: "Where Xero's own capture leaves both, with AUD prices." },
+  { href: "/pipedrive-vs-hubspot", label: "Pipedrive vs HubSpot", desc: "AUD seat prices, the two-user free tier and HubSpot's onboarding fee." },
+  { href: "/gohighlevel-vs-hubspot", label: "GoHighLevel vs HubSpot", desc: "A flat agency fee plus usage, against per-seat pricing in AUD." },
+  { href: "/replyio-vs-apollo", label: "Reply.io vs Apollo.io", desc: "A free credit-based plan against bundled LinkedIn, calls and SMS." },
+  { href: "/brevo-vs-mailchimp", label: "Brevo vs Mailchimp", desc: "Free-plan limits and AUD prices: send-metered against contact-metered." },
 ];
 
 const tools = [

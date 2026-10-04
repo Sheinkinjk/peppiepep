@@ -11,6 +11,7 @@ const BASE = process.env.NEXT_PUBLIC_SITE_URL || 'https://referlabs.com.au';
 
 // Credible per-page lastmod tiers (avoids the "everything changed today" signal
 // that Google discounts). Bump the relevant tier when a page is genuinely edited.
+const OCT04  = new Date('2026-10-04'); // business-software brand pairs published
 const TODAY  = new Date('2026-08-19'); // TGA sweep + hub offer bands
 const AUG13  = new Date('2026-08-13'); // previous batch // materially rewritten in this batch (Aug: TGA scrub, pricing, compliance, answer-first)
 const NEW    = new Date('2026-07-22'); // published/edited in the current batch
@@ -231,6 +232,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/carrd-vs-durable`,                      lastModified: FRESH,  changeFrequency: 'monthly', priority: 0.74 },
     { url: `${BASE}/durable-vs-butternut`,                  lastModified: FRESH,  changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/carrd-vs-butternut`,                    lastModified: FRESH,  changeFrequency: 'monthly', priority: 0.8 },
+    // Business-software brand pairs (4 Oct 2026)
+    { url: `${BASE}/employment-hero-vs-xero-payroll`,       lastModified: OCT04,  changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/dext-vs-hubdoc`,                        lastModified: OCT04,  changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/employment-hero-vs-deputy`,             lastModified: OCT04,  changeFrequency: 'monthly', priority: 0.78 },
+    { url: `${BASE}/replyio-vs-apollo`,                     lastModified: OCT04,  changeFrequency: 'monthly', priority: 0.75 },
+    { url: `${BASE}/pipedrive-vs-hubspot`,                  lastModified: OCT04,  changeFrequency: 'monthly', priority: 0.75 },
+    { url: `${BASE}/gohighlevel-vs-hubspot`,                lastModified: OCT04,  changeFrequency: 'monthly', priority: 0.75 },
+    { url: `${BASE}/brevo-vs-mailchimp`,                    lastModified: OCT04,  changeFrequency: 'monthly', priority: 0.75 },
     { url: `${BASE}/data`, lastModified: FRESH, changeFrequency: 'weekly', priority: 0.6 },
     // /authors/jarred is deliberately NOT here. It is noIndex until the bio is
     // written, and a noIndex URL in the sitemap tells Google to crawl a page we
