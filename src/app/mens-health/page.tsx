@@ -47,18 +47,6 @@ const guides: GuideLink[] = [
     kind: "review",
   },
   {
-    href: "/mens-health/erectile-dysfunction-treatment-cost-australia",
-    title: "Erectile dysfunction: what treatment costs",
-    desc: "How GP, telehealth and subscription pricing differ, and where Medicare applies.",
-    kind: "cost",
-  },
-  {
-    href: "/mens-health/premature-ejaculation-treatment-options-australia",
-    title: "Premature ejaculation: the routes",
-    desc: "What a GP, a psychologist and an online clinic each offer, and how each is priced.",
-    kind: "explainer",
-  },
-  {
     href: "/mens-health/online-mens-health-clinics-compared",
     title: "Online clinics, compared",
     desc: "Consult models, subscription structures, and what is billed separately.",

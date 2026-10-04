@@ -52,7 +52,6 @@ export default function Page() {
       faqs={faqs}
       related={[
         { href: "/mens-health/online-mens-health-clinics-compared", label: "Clinics compared" },
-        { href: "/mens-health/erectile-dysfunction-treatment-cost-australia", label: "Erectile dysfunction costs" },
       ]}
     >
       <section>

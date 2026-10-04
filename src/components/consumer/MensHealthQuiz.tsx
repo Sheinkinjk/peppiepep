@@ -78,7 +78,7 @@ function resolve(a: Answers): Result {
       body: "A bulk-billed consult costs you nothing and attracts a Medicare rebate that online subscriptions generally do not. Your GP can also refer you onward, including to rebated pathways an online service cannot arrange. Start there and treat a subscription as the fallback rather than the default.",
       next: [
         { href: "/mens-health/is-telehealth-or-a-gp-cheaper-for-mens-health", label: "The cost comparison, annualised" },
-        { href: "/mens-health/erectile-dysfunction-treatment-cost-australia", label: "How the routes are priced" },
+        { href: "/mens-health/online-mens-health-clinics-compared", label: "How online clinics are priced" },
       ],
     };
   }

@@ -13,11 +13,6 @@ const SLUG = "/sleep";
 
 const guides = [
   {
-    href: "/sleep/do-i-have-sleep-apnoea",
-    title: "Do I have sleep apnoea?",
-    desc: "How it is diagnosed here, and how to make the GP appointment count.",
-  },
-  {
     href: "/sleep/home-sleep-test-australia-cost",
     title: "Home sleep studies and cost",
     desc: "Home versus lab testing, how referral works, and where Medicare applies.",
@@ -145,7 +140,7 @@ export default function SleepHub() {
             which is why the Coming Soon note is gone: it told readers nothing
             here pays us, and that stopped being true. The placement sits in the
             retail half of the hub on purpose. check-partner-scope denies Emma on
-            /sleep/do-i-have-sleep-apnoea, /sleep/home-sleep-test-australia-cost
+            /sleep/home-sleep-test-australia-cost
             and /sleep/cpap-machine-costs-australia, because a mattress link
             beside a clinical page would imply a mattress answers a diagnosis. */}
         <PartnerRoute

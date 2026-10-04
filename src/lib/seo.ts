@@ -769,7 +769,7 @@ export const seoConfig = {
   womensHealthHub: {
     title: "Women's Health in Australia 2026: Access Routes and Costs",
     description:
-      "Where a pharmacist can treat a UTI or resupply contraception, what online consults cost, and the Medicare menopause assessment. State by state, dated.",
+      "Where a pharmacist can treat a UTI, what online consults cost, and the Medicare menopause assessment. State by state, dated.",
     url: `${SITE_URL}/womens-health`,
     keywords: ["womens health australia", "womens health telehealth australia", "online womens health clinic australia", "womens health without a gp"],
   },
@@ -785,6 +785,7 @@ export const seoConfig = {
     description:
       "Where a pharmacist can resupply or start contraception, which online consults Medicare rebates, and why pharmacy-supplied contraception can cost more.",
     url: `${SITE_URL}/womens-health/contraception-without-a-gp-australia`,
+    noIndex: true, // retired 4 Oct 2026, 301s in next.config.ts
     keywords: ["contraception without a gp australia", "pharmacist contraception resupply", "online contraception prescription australia", "contraception telehealth medicare"],
   },
   whUti: {
@@ -819,6 +820,7 @@ export const seoConfig = {
     description:
       "What erectile dysfunction treatment costs in Australia: how GP, telehealth and subscription models are priced, and where Medicare applies.",
     url: `${SITE_URL}/mens-health/erectile-dysfunction-treatment-cost-australia`,
+    noIndex: true, // retired 4 Oct 2026, 301s in next.config.ts
     keywords: ["erectile dysfunction treatment cost australia", "ed treatment cost australia", "erectile dysfunction australia", "ed clinic cost australia", "erectile dysfunction gp australia"],
   },
   peTreatmentOptions: {
@@ -826,6 +828,7 @@ export const seoConfig = {
     description:
       "Routes to treatment for premature ejaculation in Australia: what a GP, a psychologist and an online clinic offer, and where Medicare applies.",
     url: `${SITE_URL}/mens-health/premature-ejaculation-treatment-options-australia`,
+    noIndex: true, // retired 4 Oct 2026, 301s in next.config.ts
     keywords: ["premature ejaculation treatment australia", "premature ejaculation options australia", "premature ejaculation gp australia", "premature ejaculation cost australia"],
   },
   mensClinicsCompared: {
@@ -904,6 +907,7 @@ export const seoConfig = {
     description:
       "How sleep apnoea is diagnosed in Australia: what a GP asks, how a sleep study is arranged, what Medicare covers, and how to prepare for the appointment.",
     url: `${SITE_URL}/sleep/do-i-have-sleep-apnoea`,
+    noIndex: true, // retired 4 Oct 2026, 301s in next.config.ts
     keywords: ["do i have sleep apnoea", "sleep apnoea diagnosis australia", "sleep apnoea test australia", "sleep apnoea gp australia", "how to get tested for sleep apnoea australia"],
   },
   homeSleepTestCost: {

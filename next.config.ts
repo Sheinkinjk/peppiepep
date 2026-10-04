@@ -32,6 +32,13 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // Retired 4 Oct 2026 (Jarred): health pages with no commercial purpose, or a
+      // TGA-sensitive subject (S4 categories, sexual health, a "do I have" page),
+      // and almost no search traffic. Each 301s to its section hub.
+      { source: '/womens-health/contraception-without-a-gp-australia', destination: '/womens-health', permanent: true },
+      { source: '/mens-health/erectile-dysfunction-treatment-cost-australia', destination: '/mens-health', permanent: true },
+      { source: '/mens-health/premature-ejaculation-treatment-options-australia', destination: '/mens-health', permanent: true },
+      { source: '/sleep/do-i-have-sleep-apnoea', destination: '/sleep', permanent: true },
       // Retired 16 Sep 2026 (Jarred: not relevant to our offering). Both were
       // "what it costs" pages carrying no cost: 1,000 words each and zero prices,
       // because neither Australian cosmetic clinics nor acne pathways publish one.

@@ -47,7 +47,6 @@ export default function Page() {
       description={seoConfig.homeSleepTestCost.description}
       faqs={faqs}
       related={[
-        { href: "/sleep/do-i-have-sleep-apnoea", label: "How diagnosis works" },
         { href: "/sleep/cpap-machine-costs-australia", label: "What CPAP costs" },
       ]}
     >

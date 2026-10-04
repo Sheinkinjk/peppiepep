@@ -68,7 +68,6 @@ export default function Page() {
       description={seoConfig.whUti.description}
       faqs={faqs}
       related={[
-        { href: "/womens-health/contraception-without-a-gp-australia", label: "Contraception without a GP" },
         { href: "/womens-health/menopause-care-cost-australia", label: "Menopause care: what it costs" },
       ]}
     >

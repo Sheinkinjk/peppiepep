@@ -49,13 +49,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Women's health (28 Sep 2026). Coming soon: guides only, no provider links.
     { url: `${BASE}/womens-health`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/womens-health/menopause-care-cost-australia`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.72 },
-    { url: `${BASE}/womens-health/contraception-without-a-gp-australia`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.72 },
     { url: `${BASE}/womens-health/uti-treatment-without-a-gp-australia`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.72 },
     // Men's health (19 Aug 2026). Clinical guides carry no commercial links.
     { url: `${BASE}/mens-health`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${BASE}/midoc`,               lastModified: TODAY, changeFrequency: 'monthly', priority: 0.78 },
-    { url: `${BASE}/mens-health/erectile-dysfunction-treatment-cost-australia`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.75 },
-    { url: `${BASE}/mens-health/premature-ejaculation-treatment-options-australia`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.72 },
     { url: `${BASE}/mens-health/online-mens-health-clinics-compared`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.72 },
     { url: `${BASE}/mens-health/is-telehealth-or-a-gp-cheaper-for-mens-health`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE}/mens-health/online-doctor-medical-certificate-australia`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.75 },
@@ -63,7 +60,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/mens-health/mens-health-quiz`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.65 },
     // Sleep (19 Aug 2026). Category live and indexed ahead of partners.
     { url: `${BASE}/sleep`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.85 },
-    { url: `${BASE}/sleep/do-i-have-sleep-apnoea`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.75 },
     { url: `${BASE}/sleep/home-sleep-test-australia-cost`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.72 },
     { url: `${BASE}/sleep/cpap-machine-costs-australia`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.72 },
     { url: `${BASE}/sleep/mattress-comparison-australia`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },

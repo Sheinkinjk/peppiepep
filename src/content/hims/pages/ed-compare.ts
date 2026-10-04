@@ -80,7 +80,6 @@ export const edCompare: HimsPageContent = {
   ],
   sources: [SRC.himsEd, SRC.himsFaq, SRC.pilot, SRC.eucalyptus],
   related: [
-    { label: "ED consultation costs in Australia", href: "/mens-health/erectile-dysfunction-treatment-cost-australia", desc: "What an online or in-person ED consultation costs." },
     { label: "Men's health", href: "/mens-health", desc: "Online men's health services in Australia." },
   ],
 };

@@ -50,7 +50,6 @@ export default function Page() {
       faqs={faqs}
       related={[
         { href: "/sleep/mattress-comparison-australia", label: "Comparing mattresses" },
-        { href: "/sleep/do-i-have-sleep-apnoea", label: "When it is clinical" },
       ]}
     >
       <section>
@@ -67,7 +66,7 @@ export default function Page() {
         </ul>
         <p className="mt-3">
           No product on any list treats a sleep disorder, and buying one first mostly delays the answer. Our guide to{" "}
-          <a href="/sleep/do-i-have-sleep-apnoea" className="font-semibold text-[#007a95] hover:underline">how diagnosis works</a>{" "}
+          <a href="/sleep/home-sleep-test-australia-cost" className="font-semibold text-[#007a95] hover:underline">sleep studies and what they cost</a>{" "}
           covers what that appointment involves.
         </p>
       </section>

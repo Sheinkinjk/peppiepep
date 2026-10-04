@@ -50,7 +50,6 @@ export default function Page() {
       description={seoConfig.cpapCosts.description}
       faqs={faqs}
       related={[
-        { href: "/sleep/do-i-have-sleep-apnoea", label: "How diagnosis works" },
         { href: "/sleep/home-sleep-test-australia-cost", label: "Sleep study costs" },
       ]}
     >
@@ -63,7 +62,7 @@ export default function Page() {
         </p>
         <p className="mt-3">
           If you have not been through that process yet, the useful page is{" "}
-          <a href="/sleep/do-i-have-sleep-apnoea" className="font-semibold text-[#007a95] hover:underline">how diagnosis works</a>,
+          <a href="/sleep/home-sleep-test-australia-cost" className="font-semibold text-[#007a95] hover:underline">how a sleep study is arranged</a>,
           and this one is worth returning to afterwards.
         </p>
       </section>

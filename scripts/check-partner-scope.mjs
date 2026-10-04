@@ -216,7 +216,6 @@ const PARTNERS = [
     tokens: ["emma-sleep", "t/70242"],
     allow: ["/sleep", "/emma-sleep", "/guides", "/coming-soon"],
     denyRoutes: [
-      "/sleep/do-i-have-sleep-apnoea",
       "/sleep/home-sleep-test-australia-cost",
       "/sleep/cpap-machine-costs-australia",
     ],
