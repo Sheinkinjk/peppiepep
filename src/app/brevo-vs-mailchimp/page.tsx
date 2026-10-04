@@ -219,7 +219,6 @@ export default function Page() {
               name: "Brevo",
               items: [
                 "You want a free plan that does not ask for a card.",
-                "Your bill should follow how much you send, not the size of the list you keep.",
                 "Transactional email, SMS or WhatsApp need to run from the same account as campaigns.",
               ],
             },
