@@ -94,7 +94,7 @@ export const DEXT = {
 export const HUBDOC = { aud: "$15", trialDays: 30 } as const;
 
 /** Reply.io: a bare "$", no currency printed. Annual billing shown by default. */
-export const REPLY = { multichannel: "$89", emailVolume: "$159", linkedin: "$69", calls: "$29", trialDays: 14 } as const;
+export const REPLY = { multichannel: "$89", emailVolumePerUser: "$49", emailVolume: "$159", linkedin: "$69", calls: "$29", trialDays: 14 } as const;
 
 /** Apollo.io: a bare "$", no currency printed. Per seat per month, billed annually. */
 export const APOLLO = { basic: "$49", professional: "$79", organization: "$119", advancedDialer: "$119", freeCredits: "900", trialCredits: 75 } as const;

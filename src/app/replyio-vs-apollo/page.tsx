@@ -64,7 +64,7 @@ const faqs = [
   },
   {
     q: "Does Reply.io have a free plan?",
-    a: `Its pricing page shows no permanent free plan. Reply.io offers a ${REPLY.trialDays}-day free trial with access to its core features; after that, Multichannel starts from ${REPLY.multichannel} per user a month and Email Volume from ${REPLY.emailVolume} a month, both billed annually (reply.io/pricing, read ${READ_ON}).`,
+    a: `Its pricing page shows no permanent free plan. Reply.io offers a ${REPLY.trialDays}-day free trial with access to its core features; after that, Multichannel starts from ${REPLY.multichannel} per user a month and Email Volume from ${REPLY.emailVolumePerUser} per user a month for 1,000 active contacts (or ${REPLY.emailVolume} a month for unlimited users at 10,000 active contacts), all billed annually (reply.io/pricing, read ${READ_ON}).`,
   },
   {
     q: "Are Reply.io and Apollo.io priced in US dollars?",

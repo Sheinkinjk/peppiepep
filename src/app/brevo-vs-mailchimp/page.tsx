@@ -199,7 +199,7 @@ export default function Page() {
               {
                 label: "Entry paid plan",
                 cells: [
-                  `Starter ${BREVO.starterMonthly}/month, or ${BREVO.starterYearly}/month billed yearly (5,000 emails/month; plan summary lists 500 contacts included)`,
+                  `Starter ${BREVO.starterMonthly}/month, or ${BREVO.starterYearly}/month billed yearly (from 5,000 emails/month)`,
                   `Essentials from ${MAILCHIMP.essentials}/month after a 14-day trial`,
                 ],
               },
