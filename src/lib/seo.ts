@@ -711,6 +711,7 @@ export const seoConfig = {
     description:
       "A short quiz matching you to a recovery setup based on space, budget, climate and how often you would use it. General information, not medical advice.",
     url: `${SITE_URL}/longevity/recovery/recovery-setup-quiz`,
+    noIndex: true, // retired 5 Oct 2026, 301s in next.config.ts
     keywords: ["recovery setup quiz", "ice bath or sauna", "home recovery australia"],
   },
   diagnosticsHub: {
@@ -753,6 +754,7 @@ export const seoConfig = {
     description:
       "A short quiz on whether preventive screening suits your situation, based on budget and how you would handle an uncertain result. No health questions.",
     url: `${SITE_URL}/longevity/diagnostics/health-screening-quiz`,
+    noIndex: true, // retired 5 Oct 2026, 301s in next.config.ts
     keywords: ["health screening quiz", "should i get a full body scan", "preventive screening worth it australia"],
   },
   supplementsEvidence: {
@@ -2354,6 +2356,7 @@ export const seoConfig = {
     description:
       "Answer one or two quick questions and see which hair-loss route fits you: an online consultation, over-the-counter products, or your GP, and why.",
     url: `${SITE_URL}/hair-loss-quiz`,
+    noIndex: true, // retired 5 Oct 2026, 301s in next.config.ts
     keywords: [
       "which hair loss treatment is right for me",
       "hair loss telehealth or topical",
@@ -2368,6 +2371,7 @@ export const seoConfig = {
     description:
       "Answer one quick question and see which newsletter platform fits your goal, beehiiv, Substack or Kit, and why.",
     url: `${SITE_URL}/newsletter-platform-quiz`,
+    noIndex: true, // retired 5 Oct 2026, 301s in next.config.ts
     keywords: [
       "which newsletter platform should i use",
       "beehiiv vs substack vs kit",
@@ -2382,6 +2386,7 @@ export const seoConfig = {
     description:
       "Answer one or two quick questions and see which AI sales tool fits your bottleneck, FullEnrich, Reply.io, AiSDR or GoHighLevel, and why.",
     url: `${SITE_URL}/ai-sales-tools-quiz`,
+    noIndex: true, // retired 5 Oct 2026, 301s in next.config.ts
     keywords: [
       "which ai sales tool should i use",
       "best ai sales tool for me",
@@ -2412,6 +2417,7 @@ export const seoConfig = {
     description:
       "Answer two or three quick questions and get the website builder that fits your project, Carrd, Durable AI, Butternut AI or Swipe Pages, and why.",
     url: `${SITE_URL}/website-builder-quiz`,
+    noIndex: true, // retired 5 Oct 2026, 301s in next.config.ts
     keywords: [
       "which website builder should i use",
       "website builder quiz",

@@ -139,11 +139,11 @@ export default function BestHairLossTreatmentAustraliaPage() {
             <EdgeObject kind="comb" className="lg:mt-14">
               <MatchPrompt
                 stacked
-                href="/hair-loss-quiz"
-                title="Not sure which route fits?"
-                sub="Three questions about how you would prefer to go about it. No health questions, no assessment."
-                cta="Take the 30-second match"
-                dataCta="best-hair-loss-hero-quiz"
+                href="#side-by-side"
+                title="See the three routes side by side"
+                sub="An online consultation, over-the-counter products and your GP: what each costs and who each suits."
+                cta="Jump to the comparison"
+                dataCta="best-hair-loss-hero-compare"
               />
             </EdgeObject>
           </div>

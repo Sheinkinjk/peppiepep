@@ -170,11 +170,9 @@ Prices below were read off each brand's own Australian store on 24 August 2026 a
 - [Best hair loss treatment Australia](https://referlabs.com.au/best-hair-loss-treatment-australia): Mosh (online consultation) and your GP side by side, and where over-the-counter products fit.
 - [Hair loss treatment cost Australia](https://referlabs.com.au/hair-loss-treatment-cost-australia): How over-the-counter products, a GP visit and a telehealth subscription are each priced, and what Medicare does and does not cover.
 - [Receding hairline in Australia](https://referlabs.com.au/receding-hairline-treatment-australia): What causes a receding hairline, and the routes to having it assessed.
-- [Which hair-loss route quiz](https://referlabs.com.au/hair-loss-quiz): One-or-two-question matcher across an online consultation, over-the-counter products, or your GP.
 
 ## AI sales & automation tools
 - [Best AI sales tools](https://referlabs.com.au/best-ai-sales-tools): GoHighLevel, AiSDR, Reply.io and FullEnrich compared, by role in the sales stack.
-- [Which AI sales tool quiz](https://referlabs.com.au/ai-sales-tools-quiz): One-or-two-question matcher across FullEnrich, Reply.io, AiSDR and GoHighLevel.
 - [GoHighLevel](https://referlabs.com.au/gohighlevel): All-in-one AI CRM, marketing automation, funnels and sales platform for agencies and SMBs. Starter US$97/mo, Unlimited US$297/mo, Agency Pro US$497/mo, each with a 14-day free trial (read on gohighlevel.com/pricing 30 September 2026).
 - [GoHighLevel vs HubSpot](https://referlabs.com.au/gohighlevel-vs-hubspot): GoHighLevel prints $97, $297 and $497 a month with no currency named, unlimited users and contacts, and bills email ($0.675 per 1,000), phone (Twilio rates) and AI by usage from a prepaid wallet; its pricing guide states its AI prices are in USD. HubSpot prices seats in AUD and is free for up to 2 users. Read 4 October 2026. Refer Labs earns from GoHighLevel, not HubSpot.
 - [AiSDR](https://referlabs.com.au/aisdr): AI sales development rep that automates B2B outbound prospecting, personalised outreach and meeting booking. Solo US$250/mo month to month; Explore US$900/mo and Scale US$2,500/mo on quarterly contracts (read on aisdr.com/pricing 30 September 2026). The page lists the AiSDR alternatives Refer Labs covers: Reply.io, GoHighLevel, FullEnrich and Snov.io.
@@ -211,7 +209,6 @@ Prices below were read off each brand's own Australian store on 24 August 2026 a
 
 ## Website builders & landing pages
 - [Best website builder](https://referlabs.com.au/best-website-builder): Carrd, Durable AI, Butternut AI and Swipe Pages, compared.
-- [Which website builder quiz](https://referlabs.com.au/website-builder-quiz): Two-to-three-question recommender that matches you to Carrd, Durable AI, Butternut AI or Swipe Pages.
 - [Carrd](https://referlabs.com.au/carrd): Simple one-page website builder. Free plan; Pro Lite US$9/year (three sites, no custom domain), Pro Standard US$19/year (the cheapest tier with a custom domain), Pro Plus US$49/year, and a 7-day free trial of Pro, read off carrd.co/pro 30 September 2026.
 - [Durable AI](https://referlabs.com.au/durableai): AI website builder with a CRM, bookings and AI agents. Free plan; Launch US$22/mo billed yearly or US$25 monthly, Grow US$41/mo billed yearly or US$49 monthly (read on durable.com/pricing 30 September 2026).
 - [Butternut AI](https://referlabs.com.au/butternut): AI full-site generator from a prompt.
@@ -222,7 +219,6 @@ Prices below were read off each brand's own Australian store on 24 August 2026 a
 
 ## Newsletter & creator tools
 - [Best newsletter platform](https://referlabs.com.au/best-newsletter-platform): beehiiv vs Substack vs Kit, with a Kit vs Substack section. Substack keeps 10% of paid subscription revenue plus card fees (substack.com/going-paid). Kit charges 3.5% + 30c per transaction including card fees, is free to 10,000 subscribers, and its Creator plan is US$33/mo billed yearly. beehiiv takes 0% on its paid Scale plan (US$43/mo billed annually) and is free to 2,500 subscribers. All read on each vendor's own page 30 September 2026.
-- [Which newsletter platform quiz](https://referlabs.com.au/newsletter-platform-quiz): One-question matcher across beehiiv, Substack and Kit.
 - [beehiiv](https://referlabs.com.au/beehiiv): Newsletter platform built for growth.
 - [Brevo](https://referlabs.com.au/brevo): All-in-one email marketing, SMS, automation and CRM platform (formerly Sendinblue). Priced by emails sent, not list size. Free plan of 300 emails a day; Starter A$12 a month, or A$10.83 billed yearly (read on brevo.com/pricing 30 September 2026). No discount code.
 - [Brevo vs Mailchimp](https://referlabs.com.au/brevo-vs-mailchimp): Both quote AUD. Mailchimp's free plan is limited to 250 contacts and 500 sends a month, and its 14-day paid trial requires payment details; Essentials from A$18.92 and Standard from A$29.11 a month. Brevo's free plan needs no card and is listed at 5,000 emails a month in its plan table (its FAQ says up to 300 a day); Starter A$12 a month or A$10.83 billed yearly. Read 4 October 2026. Refer Labs earns from Brevo, not Mailchimp.

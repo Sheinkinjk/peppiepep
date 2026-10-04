@@ -36,7 +36,6 @@ export default function Page() {
       faqs={faqs}
       related={[
         { href: "/longevity/diagnostics/whole-body-mri-australia-cost", label: "Whole-body MRI: the case against" },
-        { href: "/longevity/diagnostics/health-screening-quiz", label: "Is screening right for you?" },
       ]}
     >
       <section>

@@ -37,7 +37,6 @@ export const GROUPS: Group[] = [
       { href: "/moshhair", label: "Mosh", note: "How it works, plus 55% off your first order" },
       { href: "/best-hair-loss-treatment-australia", label: "Compare all options", note: "Online consultation or your GP, compared" },
       { href: "/hair-loss-treatment-cost-australia", label: "What it costs", note: "What you pay and what is included" },
-      { href: "/hair-loss-quiz", label: "Which option fits you?", note: "A 30-second match" },
     ],
   },
   // Third from 16 Sep 2026, at Jarred's request, when the hub went live: it

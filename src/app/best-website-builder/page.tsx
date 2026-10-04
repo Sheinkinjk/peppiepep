@@ -347,11 +347,6 @@ export default function BestWebsiteBuilderPage() {
             <p className="text-[#56504a] text-sm sm:text-base leading-relaxed max-w-2xl mb-4">
               Below: what each platform is built for, current pricing, current offers, and a direct link to get started. No affiliate fluff, each verdict is based on what the product does well and who it will fail.
             </p>
-            <p className="mb-7 text-sm">
-              <Link href="/website-builder-quiz" className="font-semibold text-[#007a95] underline decoration-[#007a95]/30 underline-offset-4 hover:text-[#003647]">
-                Not sure which fits? Take the 60-second quiz →
-              </Link>
-            </p>
 
             {/* Jump nav */}
             <nav aria-label="Jump to section" className="flex flex-wrap gap-2">

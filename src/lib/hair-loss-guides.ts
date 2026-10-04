@@ -15,7 +15,6 @@ const R = {
   cost: { href: "/hair-loss-treatment-cost-australia", label: "Hair-loss costs compared" },
   hub: { href: "/hair-loss", label: "Compare all hair-loss options" },
   mosh: { href: "/moshhair", label: "Mosh: how it works & the offer" },
-  quiz: { href: "/hair-loss-quiz", label: "Which option fits you? (30-sec quiz)" },
   best: { href: "/best-hair-loss-treatment-australia", label: "Best hair-loss treatment, compared" },
   moshReview: { href: "/mosh-review", label: "Is Mosh legit? Our review" },
   receding: { href: "/receding-hairline-treatment-australia", label: "Receding hairline: causes and getting assessed" },
@@ -68,7 +67,7 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
       { q: "Is a receding hairline always male pattern baldness?", a: "No. A mature hairline settling slightly higher in your twenties is normal, and other causes of hair loss behave differently and need their own assessment. That is one reason a practitioner review matters before assuming a treatment is right for you." },
       { q: "How do I get a receding hairline assessed in Australia?", a: "Through your GP or an online consultation with a registered practitioner. Telehealth services run this online: you complete a consultation with photos, and a practitioner reviews it and decides whether the program is right for you. Mosh is one such service; Refer Labs readers get 55% off with the code REFERAL55 at checkout (new customers only, first order of a hair program, Mosh's terms apply). Some applicants are declined." },
     ],
-    related: [R.best, R.mosh, R.quiz, R.cost],
+    related: [R.best, R.mosh, R.cost],
   },
 
   {
@@ -128,7 +127,7 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
       { q: "What should I do if I notice early signs?", a: "Track the change with photos over a few months, then have it checked by your GP or through an online consultation with a registered Australian practitioner. The practitioner confirms the cause and decides whether the program is right for you. This is general information, not medical advice." },
       { q: "Who should I see about early hair loss?", a: "You can start with your own GP, or an online telehealth service where a registered Australian practitioner reviews your case. For significant or sudden loss, see a doctor in person. Our hair-loss match can point you to the route that fits." },
     ],
-    related: [R.quiz, R.best, R.mosh, R.receding, R.hub],
+    related: [R.best, R.mosh, R.receding, R.hub],
   },
 ];
 

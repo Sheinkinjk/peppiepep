@@ -51,7 +51,6 @@ export const nav: NavGroup[] = [
       { label: "Mosh", href: "/moshhair", blurb: "How it works, plus 55% off your first order" },
       { label: "Compare all options", href: "/best-hair-loss-treatment-australia", blurb: "Online consultation or your GP, compared" },
       { label: "What it costs", href: "/hair-loss-treatment-cost-australia", blurb: "What each route costs" },
-      { label: "Which option fits you?", href: "/hair-loss-quiz", blurb: "A 60-second match, no sign-up" },
     ],
   },
   {

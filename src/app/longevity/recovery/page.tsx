@@ -9,7 +9,6 @@ const guides = [
   { href: "/longevity/recovery/home-sauna-cost-australia", title: "Home sauna costs", desc: "Unit price, the electrical work most quotes exclude, and the annual running cost." },
   { href: "/longevity/recovery/infrared-vs-traditional-sauna-australia", title: "Infrared vs traditional", desc: "How they differ on installation, power and what the evidence covers." },
   { href: "/longevity/recovery/contrast-therapy-what-the-evidence-says", title: "Contrast therapy: the evidence", desc: "What the research supports, where it is weak, and what that means before spending." },
-  { href: "/longevity/recovery/recovery-setup-quiz", title: "What fits your space?", desc: "A short matcher across space, budget, climate and how often you would use it." },
 ];
 
 const faqs = [

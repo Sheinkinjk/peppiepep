@@ -6,7 +6,6 @@ import Image from "next/image";
 import { logoScale } from "@/lib/logo-optics";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
-import MatchPrompt from "@/components/consumer/MatchPrompt";
 
 export const metadata = generateSEOMetadata(seoConfig.bestAiSalesTools);
 
@@ -447,14 +446,6 @@ export default function BestAiSalesToolsPage() {
             </p>
           </div>
         </section>
-
-        <MatchPrompt
-          href="/ai-sales-tools-quiz"
-          title="Not sure which tool you need?"
-          sub="Answer one or two quick questions and get the AI sales tool that fixes your actual bottleneck, and why. About 30 seconds."
-          cta="Take the 30-second match"
-          dataCta="ai-match-prompt"
-        />
 
         {/* FAQ */}
         <section id="faq" className="border-t border-[#007a95]/10 py-12 sm:py-14">

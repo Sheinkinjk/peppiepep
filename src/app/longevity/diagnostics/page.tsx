@@ -10,7 +10,6 @@ const guides = [
   { href: "/longevity/diagnostics/everlab-vs-prenuvo-vs-i-screen-australia", title: "Everlab vs Prenuvo vs i-screen", desc: "What each measures, how each is priced, and who reviews the result." },
   { href: "/longevity/diagnostics/biological-age-testing-australia", title: "Biological age testing", desc: "Why two tests can give different ages from one sample, and what that tells you." },
   { href: "/longevity/diagnostics/cgm-for-non-diabetics-australia", title: "Glucose monitors without diabetes", desc: "What they cost unsubsidised, how access works, and what the evidence supports." },
-  { href: "/longevity/diagnostics/health-screening-quiz", title: "Is screening worth it for you?", desc: "Four questions on budget and how you would handle an uncertain result." },
   { href: "/i-screen", title: "i-screen: what the tests cost", desc: "Private pathology from A$39 to A$1,099, the referlabs code, and why a GP is cheaper for a test that is indicated." },
 ];
 

@@ -46,7 +46,6 @@ export default function Page() {
       related={[
         { href: "/longevity/diagnostics/everlab-vs-prenuvo-vs-i-screen-australia", label: "Everlab vs Prenuvo vs i-screen" },
         { href: "/longevity/diagnostics/biological-age-testing-australia", label: "Biological age testing" },
-        { href: "/longevity/diagnostics/health-screening-quiz", label: "Is screening right for you?" },
       ]}
     >
       <section>

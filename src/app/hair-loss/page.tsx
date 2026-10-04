@@ -115,11 +115,11 @@ export default function HairLossHubPage() {
           <EdgeObject kind="comb">
             <MatchPrompt
               stacked
-              href="/hair-loss-quiz"
-              title="Not sure which hair-loss route fits you?"
-              sub="Answer one or two quick questions and see which route fits: an online consultation, over-the-counter products, or your GP."
-              cta="Take the 30-second match"
-              dataCta="hair-match-prompt"
+              href="/best-hair-loss-treatment-australia"
+              title="Compare the three routes"
+              sub="An online consultation, over-the-counter products and your GP, side by side: what each costs and who each suits."
+              cta="Compare all options"
+              dataCta="hair-hub-hero-compare"
             />
           </EdgeObject>
           </div>

@@ -39,12 +39,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/longevity/recovery/home-sauna-cost-australia`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.72 },
     { url: `${BASE}/longevity/recovery/infrared-vs-traditional-sauna-australia`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.72 },
     { url: `${BASE}/longevity/recovery/contrast-therapy-what-the-evidence-says`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE}/longevity/recovery/recovery-setup-quiz`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.62 },
     { url: `${BASE}/longevity/diagnostics/whole-body-mri-australia-cost`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.78 },
     { url: `${BASE}/longevity/diagnostics/everlab-vs-prenuvo-vs-i-screen-australia`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.75 },
     { url: `${BASE}/longevity/diagnostics/biological-age-testing-australia`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.72 },
     { url: `${BASE}/longevity/diagnostics/cgm-for-non-diabetics-australia`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.72 },
-    { url: `${BASE}/longevity/diagnostics/health-screening-quiz`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.62 },
     { url: `${BASE}/longevity/supplements/longevity-supplements-evidence-review`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
     // Women's health (28 Sep 2026). Coming soon: guides only, no provider links.
     { url: `${BASE}/womens-health`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.8 },
@@ -248,10 +246,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // ── Affiliate programs cluster (hub + 3 spokes) ────────────────────
     { url: `${BASE}/affiliate-programs-australia`,             lastModified: FRESH, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${BASE}/affiliate-earnings-calculator`,            lastModified: FRESH, changeFrequency: 'monthly', priority: 0.82 },
-    { url: `${BASE}/website-builder-quiz`,             lastModified: FRESH, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE}/ai-sales-tools-quiz`,              lastModified: FRESH, changeFrequency: 'monthly', priority: 0.82 },
-    { url: `${BASE}/newsletter-platform-quiz`,         lastModified: FRESH, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE}/hair-loss-quiz`,                   lastModified: FRESH, changeFrequency: 'monthly', priority: 0.82 },
     { url: `${BASE}/high-paying-affiliate-programs`,           lastModified: FRESH, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/recurring-affiliate-programs`,             lastModified: FRESH, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/how-to-start-affiliate-marketing-australia`, lastModified: FRESH, changeFrequency: 'monthly', priority: 0.8 },

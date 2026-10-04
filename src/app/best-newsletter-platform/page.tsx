@@ -4,7 +4,6 @@ import { CheckCircle2, XCircle, ArrowRight, ExternalLink } from "lucide-react";
 import Link from "next/link";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import StickyCta from "@/components/consumer/StickyCta";
-import MatchPrompt from "@/components/consumer/MatchPrompt";
 
 export const metadata = generateSEOMetadata(seoConfig.bestNewsletterPlatform);
 
@@ -410,14 +409,6 @@ export default function BestNewsletterPlatformPage() {
             </table>
           </div>
         </section>
-
-        <MatchPrompt
-          href="/newsletter-platform-quiz"
-          title="Not sure which platform to pick?"
-          sub="Answer one quick question and get the newsletter platform that fits your goal, and why."
-          cta="Take the 20-second match"
-          dataCta="newsletter-match-prompt"
-        />
 
         {/* FAQ */}
         <section id="faq" className="border-t border-[#007a95]/10 py-12 sm:py-14">

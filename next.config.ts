@@ -32,6 +32,14 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // Retired 5 Oct 2026 (Jarred): quizzes with 0 to 2 visits in 90 days. Each
+      // 301s to the page it was matching readers into.
+      { source: '/newsletter-platform-quiz', destination: '/best-newsletter-platform', permanent: true },
+      { source: '/ai-sales-tools-quiz', destination: '/best-ai-sales-tools', permanent: true },
+      { source: '/website-builder-quiz', destination: '/best-website-builder', permanent: true },
+      { source: '/hair-loss-quiz', destination: '/hair-loss', permanent: true },
+      { source: '/longevity/diagnostics/health-screening-quiz', destination: '/longevity/diagnostics', permanent: true },
+      { source: '/longevity/recovery/recovery-setup-quiz', destination: '/longevity/recovery', permanent: true },
       // Retired 4 Oct 2026 (Jarred): health pages with no commercial purpose, or a
       // TGA-sensitive subject (S4 categories, sexual health, a "do I have" page),
       // and almost no search traffic. Each 301s to its section hub.

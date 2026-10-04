@@ -161,7 +161,6 @@ const sections = [
       { href: "/carrd-vs-durable", label: "Carrd vs Durable AI", desc: "Cheap-and-simple vs AI-built business site." },
         { href: "/carrd-vs-butternut", label: "Carrd vs Butternut AI", desc: "One-page simplicity against AI generation." },
         { href: "/durable-vs-butternut", label: "Durable vs Butternut AI", desc: "Two AI builders compared." },
-        { href: "/website-builder-quiz", label: "Website Builder Quiz", desc: "Match a builder to what you are making." },
     ],
   },
   {
@@ -182,7 +181,6 @@ const sections = [
       { href: "/brevo", label: "Brevo", desc: "Email, SMS, automation and a CRM in one tool." },
       { href: "/activecampaign", label: "ActiveCampaign", desc: "Email marketing with a powerful automation builder." },
       { href: "/brevo-vs-mailchimp", label: "Brevo vs Mailchimp", desc: "Free-plan limits and AUD prices: send-metered against contact-metered." },
-        { href: "/newsletter-platform-quiz", label: "Newsletter Platform Quiz", desc: "Match a platform to your list and budget." },
     ],
   },
   {
@@ -202,7 +200,6 @@ const sections = [
       { href: "/fullenrich", label: "FullEnrich", desc: "Waterfall enrichment for verified emails and mobiles." },
       { href: "/keap", label: "Keap", desc: "Small-business CRM with sales and marketing automation." },
       { href: "/capsule", label: "Capsule", desc: "A simple CRM small teams keep using." },
-        { href: "/ai-sales-tools-quiz", label: "AI Sales Tools Quiz", desc: "Match a tool to the job you are hiring it for." },
     ],
   },
   {
@@ -247,9 +244,7 @@ const sections = [
       { href: "/mens-health/mens-health-quiz", label: "Men's Health Quiz", desc: "Cost, privacy and consult preference. No health questions." },
       { href: "/mens-health/sexual-wellness-products", label: "Sexual Wellness Products", desc: "The non-prescription retail category, kept separate from the clinical guides." },
       { href: "/longevity/recovery", label: "Recovery", desc: "Ice baths and saunas: purchase price and the running cost nobody quotes." },
-      { href: "/longevity/recovery/recovery-setup-quiz", label: "Recovery Setup Quiz", desc: "Space, budget, climate and frequency." },
       { href: "/longevity/diagnostics", label: "Diagnostics & Screening", desc: "What the tests cost, and what clinicians say about screening the well." },
-      { href: "/longevity/diagnostics/health-screening-quiz", label: "Health Screening Quiz", desc: "Whether preventive screening suits your situation." },
     ],
   },
   {

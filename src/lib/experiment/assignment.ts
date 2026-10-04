@@ -81,7 +81,6 @@ export const ASSIGNMENTS: Assignment[] = [
   { route: '/hair-loss', hub: 'hair-loss', arm: 'excluded', pairId: null, wordsAtAssignment: 0, reason: 'hub landing' },
   { route: '/weight-loss', hub: 'weight-loss', arm: 'excluded', pairId: null, wordsAtAssignment: 0, reason: 'hub landing' },
   { route: '/solar-and-energy', hub: 'solar-energy', arm: 'excluded', pairId: null, wordsAtAssignment: 0, reason: 'hub landing' },
-  { route: '/hair-loss-quiz', hub: 'hair-loss', arm: 'excluded', pairId: null, wordsAtAssignment: 0, reason: 'tool' },
   { route: '/weight-loss-quiz', hub: 'weight-loss', arm: 'excluded', pairId: null, wordsAtAssignment: 0, reason: 'tool' },
   { route: '/weight-loss-cost-calculator', hub: 'weight-loss', arm: 'excluded', pairId: null, wordsAtAssignment: 0, reason: 'tool' },
   { route: '/home-battery-payback-calculator', hub: 'solar-energy', arm: 'excluded', pairId: null, wordsAtAssignment: 0, reason: 'tool' },
