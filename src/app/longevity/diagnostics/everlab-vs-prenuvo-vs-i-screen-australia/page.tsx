@@ -3,11 +3,9 @@ import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
 
 export const metadata = generateSEOMetadata(seoConfig.screeningCompared);
 
-/** Named services, so accuracy matters more than usual. We state only what is
- *  structurally true of each MODEL (imaging-led vs pathology-led vs
- *  pathology-panel) and quote no price, because we verified none off a live
- *  listing and inventing figures about named companies would be both wrong and
- *  actionable. Everything else is framed as questions to ask them directly. */
+/** Named services, so accuracy matters more than usual: every price is read off
+ *  the provider's own page and dated. i-screen is the only partner here; Everlab
+ *  and Prenuvo stay as context, not the focus (Jarred, 5 Oct 2026). */
 
 const faqs = [
   {
@@ -16,19 +14,11 @@ const faqs = [
   },
   {
     q: "How much do these services cost in Australia?",
-    a: "All three are private and unsubsidised. Everlab publishes yearly plans from $299 to $2,999 (everlab.com.au/plans, read 30 September 2026), i-screen lists individual tests, and Prenuvo lists a Whole Body Scan at $2,999 and a Head & Torso Scan at $1,799 at its one Australian clinic, in Toorak, Melbourne (prenuvo.com/au, read 5 October 2026). Ask each the same follow-up: what is not included.",
-  },
-  {
-    q: "Does a doctor review the results?",
-    a: "This is the question that most changes the value, and it differs between services and sometimes between packages within one service. Ask specifically: is a doctor reviewing my results, is that included in the price, and do I get a conversation or only a report. A large set of numbers with no clinical interpretation transfers the hard part to you and often to your GP.",
+    a: "All three are private and unsubsidised. Everlab publishes yearly plans from $299 to $2,999 (everlab.com.au/plans, read 30 September 2026), i-screen lists individual tests, and Prenuvo lists a Whole Body Scan at $2,999 and a Head & Torso Scan at $1,799 at its one Australian clinic, in Toorak, Melbourne (prenuvo.com/au, read 5 October 2026).",
   },
   {
     q: "Does Medicare cover any of this?",
     a: "Generally not, because these are screening services for people without symptoms rather than investigations of a clinical problem. If something found leads to a clinically indicated follow-up, that follow-up may attract a rebate. The initial screen does not.",
-  },
-  {
-    q: "Which one should I choose?",
-    a: "That depends on your history and risk, which is a conversation for a GP rather than a comparison site. What we can say is that the question worth answering before booking any of them is what you would do with each possible result. If a borderline finding would mean months of follow-up you had not budgeted for, that belongs in the decision.",
   },
 ];
 
@@ -120,32 +110,11 @@ export default function Page() {
           An MRI looks at structure. Blood tests look at chemistry. Something visible on a scan will not necessarily
           show in bloods, and plenty of things bloods pick up are invisible on imaging.
         </p>
-        <p className="mt-3">
-          So &ldquo;which is better value&rdquo; is the wrong question. The better one is what you are worried
-          about, and whether that concern is well founded, which is where a GP conversation beats a comparison table.
-        </p>
       </section>
 
-      <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Ask all three the same questions</h2>
-        <ol className="mt-4 space-y-3">
-          {[
-            ["What is the total fee, and what is explicitly not included?", "Follow-up and interpretation are the common exclusions."],
-            ["Is a doctor reviewing my results, and do I speak to them?", "A report without interpretation moves the hard part onto you or your GP."],
-            ["What proportion of clients get a finding needing follow-up?", "A fair provider will answer this. It tells you how likely the cascade is."],
-            ["Is follow-up included, and if not, what does it cost?", "This is where the total can grow well beyond the advertised figure."],
-            ["Will my GP receive the results in a usable form?", "Your GP is who acts on it long after the service has moved on."],
-          ].map(([q, why], i) => (
-            <li key={i} className="rounded-2xl border border-[#ded8cd] bg-white p-5">
-              <p className="font-semibold text-[#14120f]">{i + 1}. {q}</p>
-              <p className="mt-1.5 text-sm">{why}</p>
-            </li>
-          ))}
-        </ol>
-      </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">The step before any of them</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">When a test may be rebated</h2>
         <p className="mt-3">
           Talk to a GP about what your actual risk factors are. Some people have a family history or a specific concern
           that warrants investigation, and in those cases there may be a clinically indicated pathway that
@@ -156,8 +125,7 @@ export default function Page() {
           <a href="/longevity/diagnostics/whole-body-mri-australia-cost" className="font-semibold text-[#007a95] hover:underline">
             page on whole-body MRI
           </a>{" "}
-          sets out why clinicians are cautious about broad screening of people without symptoms. That caution applies
-          to this whole category, not to one provider in it.
+          sets out why clinicians are cautious about broad screening of people without symptoms.
         </p>
         <p className="mt-3">
           General information for an Australian audience, not medical advice, and not a recommendation for or against
