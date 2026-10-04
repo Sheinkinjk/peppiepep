@@ -23,6 +23,9 @@ const allowedOrigins = Array.from(
 ) as string[];
 
 const nextConfig: NextConfig = {
+  // HIMS_PAGES_LIVE is read on the server; ChromeGate (a client component) needs it
+  // at build time so the unreleased Hims slugs are not compiled into public JS.
+  env: { NEXT_PUBLIC_HIMS_PAGES_LIVE: process.env.HIMS_PAGES_LIVE ?? "" },
   reactCompiler: true,
   experimental: {
     serverActions: {

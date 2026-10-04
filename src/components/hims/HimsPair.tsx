@@ -1,4 +1,7 @@
 import Image from "next/image";
+// Not in public/ until launch: a public /logos/hims.png disclosed the unreleased
+// partnership (5 Oct 2026 audit). A static import is served under a hashed name.
+import partnerMark from "@/content/hims/partner-mark.png";
 import { ArrowRight } from "lucide-react";
 import type { PairSide, Vertical } from "@/content/hims/types";
 import { MOSH, OFFERS } from "@/content/hims/config";
@@ -74,7 +77,7 @@ export function HimsPair({
   const cards = [
     {
       name: "Hims",
-      logo: { src: "/logos/hims.png", w: 816, h: 280, className: "h-12 w-auto rounded-xl border border-[#ded8cd] bg-white px-2.5 py-3" },
+      logo: { src: partnerMark.src, w: 816, h: 280, className: "h-12 w-auto rounded-xl border border-[#ded8cd] bg-white px-2.5 py-3" },
       side: hims,
       offerBox: (
         <p className="mb-4 rounded-xl bg-[#e4f2f5] px-4 py-3 text-sm leading-snug text-[#14120f]">

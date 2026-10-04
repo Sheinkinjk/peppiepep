@@ -70,12 +70,18 @@ partner" or "no monetised route"; those two are edited by hand.
 ## 5. Registries at go-live (not before)
 
 `HIMS_PAGES_LIVE=true` turns on the sitemap entries, canonical OG tags and indexing.
+Since 5 Oct 2026 it also compiles the five slugs into `ChromeGate` (via
+`NEXT_PUBLIC_HIMS_PAGES_LIVE` in `next.config.ts`), so flipping it needs a fresh
+deploy, which a Vercel env change needs anyway. Without that the pages would
+render with the legacy header stacked on top. The logo lives at
+`src/content/hims/partner-mark.png` (static import, hashed URL); copy it to
+`public/logos/hims.png` only if a logo grid or brand registry needs the path.
 Also add, in one pass: `seoConfig` entries if the pages move off the Hims renderer,
 `/guides`, `src/lib/search-index.ts`, the `/mens-health`, `/weight-loss` and
 `/hair-loss` hubs, `public/llms.txt` (with the Hims code stated literally once
 confirmed), and `src/lib/offers.ts` only if the confirmed offer is a genuine
-monetary discount. Reverse `relatedLinks` from `/moshhair`, `/mosh-review` and the
-ED cost page.
+monetary discount. Reverse `relatedLinks` from `/moshhair` and `/mosh-review` (the ED cost page
+was retired on 4 Oct 2026).
 
 Hims bars paid ads for its code or link on any channel, and allows comparison and
 coupon placement only on an Approved Channel. Both are launch conditions.

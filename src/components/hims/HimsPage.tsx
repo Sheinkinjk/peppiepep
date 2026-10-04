@@ -1,4 +1,5 @@
 import Image from "next/image";
+import partnerMark from "@/content/hims/partner-mark.png";
 import Link from "next/link";
 import { Check, Gift, Minus } from "lucide-react";
 import type { Block, HimsPageContent, LedgerRow, OverviewContent, Vertical } from "@/content/hims/types";
@@ -73,7 +74,7 @@ function HimsLogo({ size = "md" }: { size?: "sm" | "md" }) {
         size === "md" ? "h-16 px-5" : "h-11 px-3.5"
       }`}
     >
-      <Image src="/logos/hims.png" alt="Hims logo" width={816} height={280} className={size === "md" ? "h-8 w-auto" : "h-5 w-auto"} />
+      <Image src={partnerMark} alt="Hims logo" width={816} height={280} className={size === "md" ? "h-8 w-auto" : "h-5 w-auto"} />
     </span>
   );
 }
@@ -784,7 +785,7 @@ function LogoTile({ name }: { name: "Hims" | "Mosh" }) {
   return (
     <span className="inline-flex h-[72px] w-[72px] items-center justify-center overflow-hidden rounded-2xl border border-[#ded8cd] bg-white shadow-[0_10px_28px_-18px_rgba(20,18,15,0.4)]">
       {name === "Hims" ? (
-        <Image src="/logos/hims.png" alt="Hims logo" width={816} height={280} className="h-auto w-[52px]" />
+        <Image src={partnerMark} alt="Hims logo" width={816} height={280} className="h-auto w-[52px]" />
       ) : (
         <Image src="/logos/mosh-tile.png" alt="Mosh logo" width={72} height={72} className="h-full w-full object-cover" />
       )}

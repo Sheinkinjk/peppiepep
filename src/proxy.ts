@@ -113,12 +113,16 @@ function withReviewHeaders(res: NextResponse): NextResponse {
 // anything else            -> 404
 function reviewArea(request: NextRequest, rest: string): NextResponse {
   if (rest === 'auth') return withReviewHeaders(NextResponse.next())
-  if (!isHimsSlug(rest)) {
-    return new NextResponse(HIMS_NOT_FOUND_BODY, {
+  // Any well-formed slug gets the same gate and the same password handling, so a
+  // visitor without the password cannot tell a real preview from an invented one
+  // (5 Oct 2026 audit). Only a visitor holding the cookie sees the 404 for an
+  // unknown slug.
+  const notFound = () =>
+    new NextResponse(HIMS_NOT_FOUND_BODY, {
       status: 404,
       headers: { 'content-type': 'text/html; charset=utf-8', ...REVIEW_HEADERS },
     })
-  }
+  if (!/^[a-z0-9-]{1,60}$/.test(rest)) return notFound()
   if (request.method === 'POST') {
     // The slug travels as a request header: the route handler sees the original URL's
     // query string after a rewrite, not the rewritten one (found in local testing).
@@ -130,7 +134,7 @@ function reviewArea(request: NextRequest, rest: string): NextResponse {
     return withReviewHeaders(NextResponse.rewrite(url, { request: { headers } }))
   }
   if (hasReviewAccess(request.cookies.get(HIMS_REVIEW_COOKIE)?.value)) {
-    return withReviewHeaders(NextResponse.next())
+    return isHimsSlug(rest) ? withReviewHeaders(NextResponse.next()) : notFound()
   }
   const e = request.nextUrl.searchParams.get('error')
   const error: GateError = e === 'wrong' || e === 'limited' ? e : null

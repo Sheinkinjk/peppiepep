@@ -4,7 +4,6 @@ import {
   HIMS_REVIEW_MAX_AGE,
   HIMS_REVIEW_PATH,
   REVIEW_HEADERS,
-  isHimsSlug,
   reviewTokenForAttempt,
 } from "@/lib/hims/access";
 
@@ -53,7 +52,10 @@ function back(req: NextRequest, slug: string, error?: "wrong" | "limited") {
 export async function POST(req: NextRequest) {
   // Set by src/proxy.ts when it rewrites the gate's POST here.
   const slugParam = req.headers.get("x-review-slug") ?? "";
-  const slug = isHimsSlug(slugParam) ? slugParam : "hims";
+  // Redirect back to the slug that was posted, real or not: sending unknown slugs to
+  // a fixed real one disclosed it (5 Oct 2026 audit). The proxy only forwards slugs
+  // matching this pattern; anything else falls back to a neutral path.
+  const slug = /^[a-z0-9-]{1,60}$/.test(slugParam) ? slugParam : "draft";
   const ip = clientIp(req);
 
   if (limited(ip)) return back(req, slug, "limited");
