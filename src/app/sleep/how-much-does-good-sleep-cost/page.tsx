@@ -55,8 +55,7 @@ export default function Page() {
       <section>
         <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">First, rule out the clinical question</h2>
         <p className="mt-3">
-          Everything below assumes there is nothing medical going on. If any of these apply, the right first step is a
-          GP appointment rather than a purchase:
+          Everything below assumes there is nothing medical going on. If any of these apply, see a GP:
         </p>
         <ul className="mt-3 list-disc space-y-2 pl-5">
           <li>Loud snoring, or a partner noticing you stop breathing.</li>
@@ -65,7 +64,7 @@ export default function Page() {
           <li>Sleep problems that have persisted for months rather than weeks.</li>
         </ul>
         <p className="mt-3">
-          No product on any list treats a sleep disorder, and buying one first mostly delays the answer. Our guide to{" "}
+          Our guide to{" "}
           <a href="/sleep/home-sleep-test-australia-cost" className="font-semibold text-[#007a95] hover:underline">sleep studies and what they cost</a>{" "}
           covers what that appointment involves.
         </p>

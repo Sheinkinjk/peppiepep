@@ -59,7 +59,7 @@ export default function Page() {
       ]}
     >
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Why nobody can give you one number</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Why running costs vary</h2>
         <p className="mt-3">
           A chiller&apos;s job is removing heat from water. How much heat it has to remove depends on how warm the air
           is, how well the tub holds cold, and how far below ambient you want the water. Those differ between Cairns and

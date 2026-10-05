@@ -56,14 +56,13 @@ export default function Page() {
       <section>
         <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Equipment comes after a diagnosis</h2>
         <p className="mt-3">
-          Worth stating before any prices: CPAP follows a sleep study and clinical guidance. The pressure settings are
-          determined for your situation, and buying a machine to treat a problem nobody has confirmed is both an
-          expensive guess and a way of delaying the answer.
+          CPAP follows a sleep study and clinical guidance, and the pressure settings are determined for your
+          situation.
         </p>
         <p className="mt-3">
-          If you have not been through that process yet, the useful page is{" "}
-          <a href="/sleep/home-sleep-test-australia-cost" className="font-semibold text-[#007a95] hover:underline">how a sleep study is arranged</a>,
-          and this one is worth returning to afterwards.
+          Our guide to{" "}
+          <a href="/sleep/home-sleep-test-australia-cost" className="font-semibold text-[#007a95] hover:underline">how a sleep study is arranged</a>{" "}
+          covers that step and what it costs.
         </p>
       </section>
 
@@ -99,9 +98,8 @@ export default function Page() {
           prices; we have not listed figures we could not verify.
         </p>
         <p className="mt-4">
-          The $274 gap between the manufacturer and a retailer on an identical model is the useful part. Going direct
-          feels like the way to avoid a middleman markup, and here it cost more. Whatever the reason, it makes the case
-          for checking several sellers on the exact model you have been directed toward.
+          The same model cost $274 more from the manufacturer than from a retailer, so it is worth checking several
+          sellers on the exact model you have been directed toward.
         </p>
       </section>
 

@@ -26,7 +26,7 @@ const READ_ON = "4 September 2026";
 const faqs = [
   {
     q: "Is \"natural\" a regulated word on Australian skincare?",
-    a: "No. There is no certification a cosmetic has to hold before the word natural appears on it, and no minimum share of ingredients it implies. It is a marketing description, so two products carrying it can have very little in common. The word commits nobody to anything in particular, which is a statement about the word rather than about any brand using it.",
+    a: "No. There is no certification a cosmetic has to hold before the word natural appears on it, and no minimum share of ingredients it implies. It is a marketing description, so two products carrying it can have very little in common.",
   },
   {
     q: "Is \"certified organic\" different?",
@@ -123,7 +123,7 @@ export default function Page() {
 
       <PartnerRoute
         heading="Where we send readers"
-        intro="Two Australian retailers we have a commercial arrangement with, listed with what each one is. Neither advertises organic certification on its own site, and we would rather say so than let the section imply otherwise."
+        intro="Two Australian retailers we have a commercial arrangement with, listed with what each one is. Neither advertises organic certification on its own site."
         providers={[
           {
             name: "Edible Beauty Australia",

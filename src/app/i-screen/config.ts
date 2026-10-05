@@ -35,7 +35,7 @@ export const iScreenConfig: AffiliatePageConfig = {
   offer: `${money(DISCOUNT_AUD)} off your first test (code ${I_SCREEN_CODE})`,
   showResearchNote: true,
 
-  quickAnswer: `The current i-screen discount code is ${I_SCREEN_CODE}, worth ${money(DISCOUNT_AUD)} off your first test, entered at checkout. i-screen sells pathology tests directly to the public in Australia with no GP referral needed, and its catalogue runs from ${money(low.price)} for a single marker to ${money(high.price)} for its most comprehensive panel, read on ${readOnLabel}. The code is the only thing we are paid on, so clicking through without entering it earns us nothing. Before you use it, one fact from i-screen's own terms: none of its services are Medicare-rebatable, while a test a GP considers clinically indicated is frequently bulk billed.`,
+  quickAnswer: `The current i-screen discount code is ${I_SCREEN_CODE}, worth ${money(DISCOUNT_AUD)} off your first test, entered at checkout. i-screen sells pathology tests directly to the public in Australia with no GP referral needed, and its catalogue runs from ${money(low.price)} for a single marker to ${money(high.price)} for its most comprehensive panel, read on ${readOnLabel}. The code is the only thing we are paid on, so clicking through without entering it earns us nothing. i-screen's own terms state that none of its services are Medicare-rebatable.`,
 
   banner: {
     heading: `i-screen: ${money(DISCOUNT_AUD)} off your first test`,
@@ -58,9 +58,7 @@ export const iScreenConfig: AffiliatePageConfig = {
     "Sample given at an affiliated collection centre",
     `Code ${I_SCREEN_CODE} typed at checkout`,
   ],
-  pullQuote:
-    "The question is not whether the test is accurate. It is whether knowing the number changes anything you would do.",
-  verdict: `i-screen is a straightforward way to order pathology without going through a GP first, and the code ${I_SCREEN_CODE} takes ${money(DISCOUNT_AUD)} off the first one. Whether it is worth paying for depends on a question the marketing does not ask: if a doctor considers the test clinically indicated, it is frequently bulk billed, and you would be paying for something available at no cost. Where it earns its keep is access and speed, not a better test.`,
+  verdict: `i-screen is a straightforward way to order pathology without going through a GP first, and the code ${I_SCREEN_CODE} takes ${money(DISCOUNT_AUD)} off the first one. What it offers is access and speed: you choose the panel, need no referral, and results are typically back within 48 hours.`,
   verdictPoints: [
     "No referral, and results typically back within 48 hours",
     `${money(DISCOUNT_AUD)} off is about ${discountAtCheapest()} of the cheapest test and about ${discountAtDearest()} of the dearest`,
@@ -73,27 +71,26 @@ export const iScreenConfig: AffiliatePageConfig = {
     // for a different one sends Google to the wrong page of ours.
     h1Prefix: "i-screen discount code Australia:",
     h1Highlight: `${money(DISCOUNT_AUD)} off your first test`,
-    subheading: `The code ${I_SCREEN_CODE} takes ${money(DISCOUNT_AUD)} off your first i-screen test, entered at checkout. i-screen sells pathology directly, with no GP referral, from ${money(low.price)} for a single marker to ${money(high.price)} for its largest panel. The part worth knowing before you order: none of it is Medicare-rebatable, while a test your GP considers necessary is frequently bulk billed.`,
+    subheading: `The code ${I_SCREEN_CODE} takes ${money(DISCOUNT_AUD)} off your first i-screen test, entered at checkout. i-screen sells pathology directly, with no GP referral, from ${money(low.price)} for a single marker to ${money(high.price)} for its largest panel. None of it is Medicare-rebatable, on i-screen's own terms.`,
     trustBullets: [
       "What the tests cost, read off i-screen's own catalogue",
       "What $20 off is worth on a $39 test and on a $1,099 panel",
-      "Why a GP is the cheaper starting point for an indicated test",
+      "Whether Medicare applies, from i-screen's own terms",
     ],
   },
 
   sections: [
     {
-      heading: "Is a private blood test worth paying for?",
+      heading: "What ordering directly buys",
       paragraphs: [
-        `Often it is not, and the reason is on i-screen's own terms page: none of its services are Medicare-rebatable or eligible for government subsidy. If a doctor believes a test is clinically indicated, that test is frequently bulk billed, and you would be paying between ${money(low.price)} and ${money(high.price)} for something available at no cost through the usual route. The cheapest first step is asking a GP whether the test you want is indicated.`,
-        "What ordering directly buys is access and speed, not a better test. You choose the panel yourself, you need no referral, and results are typically back within 48 hours. That matters if waiting for an appointment is the obstacle. It does not make the result more meaningful than the same assay ordered by a doctor.",
-        "The case against is the one that applies to all screening outside a clinical indication. A number slightly outside a reference range, in a person with no symptoms, frequently leads to more tests, more cost and more worry without changing anything.",
+        "Access and speed. You choose the panel yourself, you need no referral, and results are typically back within 48 hours. That matters if waiting for an appointment is the obstacle.",
+        `i-screen's own terms page states that none of its services are Medicare-rebatable or eligible for government subsidy, so the listed price, from ${money(low.price)} to ${money(high.price)}, is what you pay.`,
       ],
     },
     {
       heading: `What ${money(DISCOUNT_AUD)} off actually saves you`,
       paragraphs: [
-        `At the cheap end the code is substantial: ${money(DISCOUNT_AUD)} off a ${money(low.price)} test is about ${discountAtCheapest()}. At the top of the catalogue it is about ${discountAtDearest()} of a ${money(high.price)} panel, which is unlikely to be the thing that decides the purchase. Choose on what you need measured and treat the code as a deduction rather than a reason.`,
+        `At the cheap end the code is substantial: ${money(DISCOUNT_AUD)} off a ${money(low.price)} test is about ${discountAtCheapest()}. At the top of the catalogue it is about ${discountAtDearest()} of a ${money(high.price)} panel.`,
         `The code discounts your first test. It is not an ongoing saving, not a discount on a consultation, and not a subscription rate. It is typed at checkout: the click alone does nothing, for you or for us.`,
       ],
       hasCta: true,
@@ -109,7 +106,7 @@ export const iScreenConfig: AffiliatePageConfig = {
     {
       heading: "Who it suits, and who it does not",
       paragraphs: [
-        "It suits someone with a specific marker in mind who wants it measured without a referral, and someone tracking the same panel over time. It suits less well anyone with symptoms, who is better served by a doctor who can examine them, and anyone whose test would be bulk billed on a GP's request.",
+        "It suits someone with a specific marker in mind who wants it measured without a referral, and someone tracking the same panel over time. It suits less well anyone with symptoms, who is better served by a doctor who can examine them.",
         ACCESS.interpretation,
         ACCESS.scope,
       ],
@@ -119,7 +116,7 @@ export const iScreenConfig: AffiliatePageConfig = {
   ],
 
   steps: [
-    { num: "01", heading: "Choose your test", body: `Pick from the catalogue, which runs ${money(low.price)} to ${money(high.price)}. If you are unsure whether you need it, ask a GP first: an indicated test is frequently bulk billed.` },
+    { num: "01", heading: "Choose your test", body: `Pick from the catalogue, which runs ${money(low.price)} to ${money(high.price)}.` },
     { num: "02", heading: `Enter ${I_SCREEN_CODE} at checkout`, body: `The code takes ${money(DISCOUNT_AUD)} off your first test. It is typed, not carried by the link, so entering it is the step that matters.` },
     { num: "03", heading: "Give your sample", body: "You attend an affiliated collection centre. No GP referral is needed to order or to attend." },
     { num: "04", heading: "Read your result", body: "Results are typically available within 48 hours depending on the test, in an i-screen dashboard. Discuss anything that concerns you with a practitioner." },
@@ -129,7 +126,6 @@ export const iScreenConfig: AffiliatePageConfig = {
     `The code ${I_SCREEN_CODE} stated in full, with what it discounts and what it does not`,
     `Real prices read off i-screen's own catalogue on ${readOnLabel}, not a range we guessed`,
     "The Medicare position, quoted from i-screen's own terms rather than left out",
-    "The argument against buying, which is the part the marketing omits",
   ],
 
   faqs: [
@@ -143,7 +139,7 @@ export const iScreenConfig: AffiliatePageConfig = {
     },
     {
       q: "Can you claim i-screen on Medicare?",
-      a: "No. i-screen's own Terms and Conditions state that none of its services, including its clinical consultation services, are Medicare-rebatable or eligible for government subsidy, so the listed price is what you pay. A test a doctor considers clinically indicated is frequently bulk billed instead, which is why asking a GP first is the cheaper starting point for most people.",
+      a: "No. i-screen's own Terms and Conditions state that none of its services, including its clinical consultation services, are Medicare-rebatable or eligible for government subsidy, so the listed price is what you pay.",
     },
     {
       q: "Do you need a GP referral for i-screen?",
@@ -155,7 +151,7 @@ export const iScreenConfig: AffiliatePageConfig = {
     },
     {
       q: "Does Refer Labs earn money from this page?",
-      a: `Yes, and only through the code. i-screen gave us the coupon ${I_SCREEN_CODE} and there is no tracking link, so a reader who clicks through and buys without typing it earns us nothing. That is an unusual arrangement and worth stating plainly: we are paid when you use the discount, not when you click. It is also why this page tells you to ask a GP first, which is the advice that costs us money.`,
+      a: `Yes, and only through the code. i-screen gave us the coupon ${I_SCREEN_CODE} and there is no tracking link, so a reader who clicks through and buys without typing it earns us nothing. We are paid when you use the discount, not when you click.`,
     },
   ],
 
@@ -179,7 +175,7 @@ export const iScreenConfig: AffiliatePageConfig = {
     {
       href: "/longevity/diagnostics",
       label: "Screening and diagnostics in Australia",
-      desc: "What the services cost, and what Australian clinicians say about screening people who feel well.",
+      desc: "What the services cost, what each measures, and where Medicare applies.",
     },
   ],
 
@@ -189,8 +185,8 @@ export const iScreenConfig: AffiliatePageConfig = {
     midHeading: "Ready to order a test?",
     midBody: `You will be taken to i-screen. The code ${I_SCREEN_CODE} is typed at checkout and takes ${money(DISCOUNT_AUD)} off your first test.`,
     midButton: "Continue to i-screen",
-    bottomHeading: "Ask a GP first if the test might be indicated",
-    bottomBody: `If it is, it is frequently bulk billed and costs you nothing. If it is not, and you still want it measured, the code ${I_SCREEN_CODE} takes ${money(DISCOUNT_AUD)} off your first i-screen test.`,
+    bottomHeading: `${money(DISCOUNT_AUD)} off your first test`,
+    bottomBody: `Enter ${I_SCREEN_CODE} at checkout on i-screen. The code is typed, not carried by the link, and takes ${money(DISCOUNT_AUD)} off your first test.`,
     bottomButton: "Continue to i-screen",
   },
 

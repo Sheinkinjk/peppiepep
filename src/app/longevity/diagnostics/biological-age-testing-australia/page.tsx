@@ -27,7 +27,7 @@ const faqs = [
   },
   {
     q: "Is there any value in taking one?",
-    a: "As a curiosity, or as motivation if a number is what gets you to change habits, possibly. As a health finding to act on, no. If you would treat a poor result as a reason to spend heavily on interventions, the more useful thing is a GP conversation about your actual measurable risk factors, most of which are cheaper to test and far better validated.",
+    a: "As a curiosity, or as motivation if a number is what gets you to change habits. Different tests can return different ages from the same sample, so treat the result as a model output rather than a health finding.",
   },
 ];
 

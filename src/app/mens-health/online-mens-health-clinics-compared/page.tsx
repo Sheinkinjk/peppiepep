@@ -109,23 +109,9 @@ export default function Page() {
           We have not verified current pricing across this category, so we don&apos;t rank clinics. We have a commercial
           arrangement with one provider, Midoc, which is listed below and disclosed as such.
         </p>
-        <p className="mt-3">
-          The criteria above are what we would use ourselves. Run them against the two or three services you are
-          weighing up and the differences become obvious quickly.
-        </p>
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">The one number worth extracting</h2>
-        <div className="mt-4 rounded-2xl border border-[#007a95]/25 bg-[#f7f4ee] p-6">
-          <p className="text-[15px] font-semibold text-[#14120f]">
-            &ldquo;What will I have paid twelve months from now, including everything, if nothing changes?&rdquo;
-          </p>
-          <p className="mt-2 text-sm text-[#56504a]">
-            Ask each service in those words. A monthly figure and a per-consult fee only become comparable once both are
-            annualised, and a provider that cannot answer plainly has pricing you do not yet understand.
-          </p>
-        </div>
         <p className="mt-4">
           General information for an Australian audience, not medical advice. What is appropriate for you is decided by
           a registered practitioner after an individual assessment.

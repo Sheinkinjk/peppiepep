@@ -725,7 +725,7 @@ export const seoConfig = {
   diagnosticsHub: {
     title: "Health Diagnostics Australia 2026: Costs and What They Find",
     description:
-      "Preventive screening in Australia: what whole-body MRI, biological-age testing and glucose monitoring cost, and what the medical community says.",
+      "Preventive screening in Australia: what whole-body MRI, biological-age testing, pathology and glucose monitoring cost, and where Medicare applies.",
     url: `${SITE_URL}/longevity/diagnostics`,
     keywords: ["health screening australia", "preventive health australia", "health diagnostics australia cost"],
   },
@@ -737,9 +737,9 @@ export const seoConfig = {
     keywords: ["everlab australia", "prenuvo australia", "i-screen australia", "health screening compared australia", "preventive screening australia"],
   },
   wholeBodyMri: {
-    title: "Whole-Body MRI in Australia 2026: Cost and the Case Against",
+    title: "Whole-Body MRI Cost in Australia 2026: Prices Compared",
     description:
-      "What whole-body MRI screening costs in Australia, why no Medicare rebate applies, and why medical bodies are cautious about screening the well.",
+      "What a whole-body MRI costs in Australia, read off each provider's own site, what the fee includes and what it leaves out, and why no Medicare rebate applies.",
     url: `${SITE_URL}/longevity/diagnostics/whole-body-mri-australia-cost`,
     keywords: ["whole body mri australia cost", "prenuvo cost australia", "full body scan australia", "whole body mri medicare"],
   },

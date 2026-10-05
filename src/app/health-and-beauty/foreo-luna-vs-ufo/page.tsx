@@ -22,7 +22,7 @@ export const metadata = generateSEOMetadata(seoConfig.foreoLunaVsUfo);
 const faqs = [
   {
     q: "What is the difference between the Foreo Luna and the UFO?",
-    a: `They are different device types, not two versions of the same thing. The LUNA is ${FOREO.lunaWhatItIs}. The UFO is ${FOREO.ufoWhatItIs}. Comparing them to pick a winner is comparing a toothbrush to a lamp: the question worth asking is which of the two things you want to do.`,
+    a: `They are different device types, not two versions of the same thing. The LUNA is ${FOREO.lunaWhatItIs}. The UFO is ${FOREO.ufoWhatItIs}. Choose by which of the two jobs you want done.`,
   },
   {
     q: "Can one device do both?",
@@ -227,9 +227,7 @@ export default function Page() {
           them treats, reduces or clears, because that is a claim we are not in a position to make.
           The LUNA descriptions are Foreo&apos;s own words about its own products, which we neither
           endorse nor verify. The UFO descriptions are ours, and describe what the device emits
-          rather than what the emitting is for. Foreo publishes user-outcome percentages on its own
-          site; we have deliberately not carried any of them across. General information for an
-          Australian audience.
+          rather than what the emitting is for. General information for an Australian audience.
         </p>
       </section>
     </SectionGuideShell>

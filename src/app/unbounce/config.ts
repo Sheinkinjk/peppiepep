@@ -83,7 +83,7 @@ export const unbounceConfig: AffiliatePageConfig = {
     },
     {
       q: "Does the Unbounce offer apply to existing accounts?",
-      a: "No. Unbounce states the offer is for new customers only. If you already have an account it will not apply, and the useful question for you is whether your current plan still matches your traffic rather than whether a signup discount is available.",
+      a: "No. Unbounce states the offer is for new customers only. If you already have an account it will not apply.",
     },
     {
       q: "How much does Unbounce cost?",

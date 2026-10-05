@@ -90,7 +90,7 @@ const faqs = [
   },
   {
     q: "Is men's health covered by Medicare?",
-    a: "Rebates apply to consultations rather than to products. A GP appointment attracts a rebate and may be bulk-billed. Online clinic subscriptions are often outside Medicare entirely, which is a material difference when comparing them on price. Ask any service directly whether a rebate applies before you subscribe.",
+    a: "Rebates apply to consultations rather than to products. A GP appointment attracts a rebate and may be bulk-billed. Online clinic subscriptions are often outside Medicare entirely, which is a material difference when comparing them on price.",
   },
   {
     q: "Do you name specific medicines on these pages?",

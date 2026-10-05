@@ -74,9 +74,8 @@ const brand: RetailerBrand = {
       heading: "What to settle before you order",
       paras: [
         <>
-          Three things decide whether a purchase at this price goes well, and none is on the product page: whether the
-          machine fits through your door and into the room, what installation costs and includes, and what happens
-          when it needs a service. Ask all three before paying.
+          Three things to confirm when you order: that the machine fits through your door and into the room, what
+          installation costs and includes, and how servicing works.
         </>,
       ],
     },
@@ -96,7 +95,7 @@ const brand: RetailerBrand = {
     },
     {
       q: "Is Technogym worth the money?",
-      a: "That depends on whether you will use it, which we cannot answer for you. What we can say is that the case for this price level rests on build, servicing and resale rather than on any health outcome the equipment produces that cheaper equipment does not. Much cheaper machines exist and we earn nothing from them.",
+      a: "It depends on how much you will use it. The price reflects commercial-grade build, local servicing and resale value.",
     },
     {
       q: "Does Refer Labs earn money from this page?",

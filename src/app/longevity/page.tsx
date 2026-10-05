@@ -6,7 +6,7 @@ import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
 export const metadata = generateSEOMetadata(seoConfig.longevityHub);
 
 const guides = [
-  { href: "/longevity/recovery", title: "Recovery", desc: "Ice baths and saunas: unit prices, the running costs nobody quotes, and what the evidence supports." },
+  { href: "/longevity/recovery", title: "Recovery", desc: "Ice baths and saunas: unit prices, running costs, and what the evidence supports." },
   { href: "/longevity/diagnostics", title: "Diagnostics & screening", desc: "Whole-body MRI, biological-age tests and glucose monitors, with the medical criticism included." },
   { href: "/longevity/supplements/longevity-supplements-evidence-review", title: "Supplements, reviewed", desc: "What AUST L on a label means, and why the headline claims rarely survive scrutiny." },
 ];

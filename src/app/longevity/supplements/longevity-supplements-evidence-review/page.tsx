@@ -39,7 +39,7 @@ export default function Page() {
       slug="/longevity/supplements/longevity-supplements-evidence-review"
       crumb="Supplements, reviewed"
       h1={<>Longevity supplements: <span>how to read the evidence yourself</span></>}
-      intro="We name no products here, deliberately. What is more useful, and more durable as the fashionable compound changes each year, is knowing what the label certifies and how to tell a supportive study from a persuasive one."
+      intro="How to read a supplement label in Australia, what AUST L certifies, and how to tell a supportive study from a persuasive one."
       headline="Longevity supplements in Australia: an evidence review"
       description={seoConfig.supplementsEvidence.description}
       faqs={faqs}
@@ -112,10 +112,6 @@ export default function Page() {
           A compound with a real biological effect can interact with prescribed medicines, affect bleeding risk, or
           place load on the liver. Tell your GP or pharmacist everything you take, especially before surgery or when
           starting something new.
-        </p>
-        <p className="mt-3">
-          There is a useful symmetry here: a product that does nothing is safe and a waste of money, and a product that
-          does something can interact. Both are reasons to mention it to a clinician.
         </p>
       </section>
 

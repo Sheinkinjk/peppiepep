@@ -63,7 +63,7 @@ const faqs = [
   },
   {
     q: "Does Refer Labs earn from this section?",
-    a: "Yes, from one: Emma Sleep, through Commission Factory, since 16 September 2026. We earn a commission if you buy a mattress after following our link, at no extra cost to you, and the page carrying that link says so beside it. We hold no Emma discount code. Emma is deliberately kept off the clinical pages in this section, covering sleep apnoea, home sleep testing and CPAP costs, because a mattress is not a response to a diagnosis and a commission link there would imply it is. What we earn changes nothing about what these guides say.",
+    a: "Yes, from one: Emma Sleep, through Commission Factory, since 16 September 2026. We earn a commission if you buy a mattress after following our link, at no extra cost to you, and the page carrying that link says so beside it. We hold no Emma discount code. Emma is linked only from the mattress pages, not from the guides on sleep testing and CPAP."
   },
 ];
 

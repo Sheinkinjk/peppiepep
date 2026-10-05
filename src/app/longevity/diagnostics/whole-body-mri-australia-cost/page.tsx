@@ -3,34 +3,24 @@ import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
 
 export const metadata = generateSEOMetadata(seoConfig.wholeBodyMri);
 
-/** The page that carries the criticism. Screening asymptomatic people with
- *  whole-body MRI is genuinely contested among Australian clinicians, chiefly
- *  because of the incidental-finding cascade. Omitting that to keep the page
- *  commercially friendly would make it advertising. Prices are the three that
- *  providers publish on their own sites, each read 13 Sep 2026. An earlier
- *  version said providers "publish little and we verified none", which was
- *  wrong. No commission is earned from any of them. */
+/** What a whole-body MRI costs in Australia, from the prices providers publish
+ *  on their own sites, and what the fee leaves out. Reframed 6 Oct 2026 (Jarred):
+ *  the page had been built as "the case against", which pointed readers away from
+ *  acting rather than informing the decision. The cost facts, the no-rebate rule
+ *  and the not-medical-advice line stay. No commission is earned from any provider. */
 
 const faqs = [
   {
     q: "How much does a whole-body MRI cost in Australia?",
-    a: "Three providers publish a price on their own site, each read on 13 September 2026: OneMRI $2,990, Everlab $2,999 for members or $3,499 for non-members (its package adds a chest CT), and Full Body MRI in Perth $2,990. What is consistent is that you pay the whole amount: there is no Medicare rebate for imaging done as screening on someone without symptoms. Ask also what happens after: none of the three lists a follow-up scan or a specialist appointment in what its fee covers, and that is where the total can grow.",
+    a: "Three providers publish a price on their own site, each read on 13 September 2026: OneMRI $2,990, Everlab $2,999 for members or $3,499 for non-members (its package adds a chest CT), and Full Body MRI in Perth $2,999 (read 6 October 2026). What is consistent is that you pay the whole amount: there is no Medicare rebate for imaging done as screening on someone without symptoms. Ask also what happens after: none of the three lists a follow-up scan or a specialist appointment in what its fee covers, and that is where the total can grow.",
   },
   {
     q: "Does Medicare cover whole-body MRI screening?",
-    a: "No. Medicare rebates attach to imaging requested for a clinical indication, meaning there is a symptom or finding being investigated. A scan bought because you feel well and want reassurance does not meet that, so it is fully out of pocket. That is a deliberate policy position reflecting the view that population screening of this kind has not been shown to do more good than harm.",
+    a: "No. Medicare rebates attach to imaging requested for a clinical indication, meaning there is a symptom or finding being investigated. A scan bought because you feel well and want reassurance does not meet that, so it is fully out of pocket.",
   },
   {
     q: "What is an incidental finding?",
-    a: "Something the scan picks up that you were not looking for and that may never have affected your health. These are common in whole-body imaging. The difficulty is that once found, a finding usually cannot simply be ignored: it typically leads to further imaging, a specialist opinion, sometimes a biopsy, and a period of not knowing. That sequence carries its own cost, risk and anxiety, and it is the main reason clinicians are cautious.",
-  },
-  {
-    q: "Why are Australian doctors cautious about whole-body MRI?",
-    a: "Because screening people without symptoms has to clear a high bar: it must find serious disease early enough to change the outcome, more often than it causes harm through false alarms and overdiagnosis. Established programs like bowel, breast and cervical screening were built on evidence that they clear it. Whole-body MRI as a general screen has not demonstrated the same, which is why it sits outside the subsidised system rather than inside it. The Royal Australian and New Zealand College of Radiologists does not recommend whole-body MRI screening for people without symptoms who have no previously diagnosed cancer or cancer predisposition syndrome (position statement v1.1, approved 4 July 2025).",
-  },
-  {
-    q: "Is there any case for having one?",
-    a: "There are situations where broad imaging is clinically indicated, and that is a conversation with a doctor who knows your history and risk. What this page argues against is not the scan; it is buying one as a consumer product on the assumption that more information is automatically better. Discuss it with a GP first, including what you would do with each possible result.",
+    a: "Something the scan picks up that you were not looking for and that may never have affected your health. These are common in whole-body imaging. The difficulty is that once found, a finding usually cannot simply be ignored: it typically leads to further imaging, a specialist opinion, sometimes a biopsy, and a period of not knowing. Each of those steps can add to the cost.",
   },
 ];
 
@@ -41,9 +31,9 @@ export default function Page() {
       sectionHref="/longevity/diagnostics"
       slug="/longevity/diagnostics/whole-body-mri-australia-cost"
       crumb="Whole-body MRI"
-      h1={<>Whole-body MRI in Australia: <span>the cost, and the case against</span></>}
-      intro="Three Australian providers publish a whole-body MRI price on their own sites, from $2,990 to $3,499, read 13 September 2026. Each fee covers the scan, a radiologist's report and a consultation on the result. None of the three lists the follow-up scan or specialist visit a finding can lead to, and Australia's college of radiologists recommends against the scan for people with no symptoms and no cancer history or predisposition."
-      headline="Whole-body MRI in Australia: cost and the case against"
+      h1={<>Whole-body MRI in Australia: <span>what it costs</span></>}
+      intro="Three Australian providers publish a whole-body MRI price on their own sites, from $2,990 to $3,499, read 13 September 2026. Each fee covers the scan, a radiologist's report and a consultation on the result. None of the three lists the follow-up scan or specialist visit a finding can lead to, and none attracts a Medicare rebate."
+      headline="Whole-body MRI in Australia: what it costs"
       description={seoConfig.wholeBodyMri.description}
       faqs={faqs}
       related={[
@@ -52,39 +42,23 @@ export default function Page() {
       ]}
     >
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Why there is no rebate, and why that is informative</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Why there is no Medicare rebate</h2>
         <p className="mt-3">
           Medicare rebates apply to imaging with a clinical indication. Screening someone who feels well is not that, so
           a whole-body scan bought preventively is entirely out of pocket.
         </p>
-        <p className="mt-3">
-          The absence of a rebate is not an administrative gap. Screening programs enter the subsidised system when
-          evidence shows they find serious disease early enough to change outcomes more often than they harm people
-          through false alarms and overtreatment. Bowel, breast and cervical screening cleared that bar. Whole-body MRI
-          as a general screen has not.
-        </p>
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">The incidental-finding cascade</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">What a finding can add to the cost</h2>
         <p className="mt-3">
-          This is the mechanism behind the caution, and it is rarely mentioned in the marketing. A detailed scan of a
-          healthy body frequently finds something: a small nodule, a cyst, an anatomical variation. Most are harmless.
+          A detailed scan of a healthy body frequently finds something: a small nodule, a cyst, an anatomical variation.
+          Most are harmless.
         </p>
         <p className="mt-3">
-          The problem is what happens next. A finding of uncertain significance usually cannot be left alone. It
-          typically means repeat imaging in a few months, a specialist referral, sometimes a biopsy with its own risks,
-          and living with uncertainty throughout. Each step costs money, and the anxiety is real even when the
-          eventual answer is that nothing was wrong.
+          A finding of uncertain significance usually leads to repeat imaging in a few months, a specialist referral
+          or further investigation. Each step has its own cost, set out in the table below.
         </p>
-        <div className="mt-4 rounded-2xl border border-[#ded8cd] bg-[#f7f4ee] p-6">
-          <p className="text-[15px] font-semibold text-[#14120f]">The question to sit with before booking</p>
-          <p className="mt-2 text-sm text-[#56504a]">
-            If this scan finds something small and uncertain, what will I do? If the answer is months of follow-up and
-            worry over something that was never going to harm you, that is a realistic outcome rather than a remote one,
-            and it belongs in the decision.
-          </p>
-        </div>
       </section>
 
       <section>
@@ -124,8 +98,8 @@ export default function Page() {
             <a href="https://www.everlab.com.au/medical-tests/full-body-mri-scan" target="_blank" rel="noopener noreferrer" className="font-semibold text-[#007a95] hover:underline">Everlab&apos;s full body MRI page</a>, read 13 September 2026.
           </li>
           <li>
-            <strong>Full Body MRI</strong> (a single clinic in Subiaco, Perth): $2,990 per person. Source:{" "}
-            <a href="https://fullbodymri.com.au/pricing/" target="_blank" rel="noopener noreferrer" className="font-semibold text-[#007a95] hover:underline">Full Body MRI&apos;s pricing page</a>, read 13 September 2026.
+            <strong>Full Body MRI</strong> (a single clinic in Subiaco, Perth): $2,999 per person. Source:{" "}
+            <a href="https://fullbodymri.com.au/pricing/" target="_blank" rel="noopener noreferrer" className="font-semibold text-[#007a95] hover:underline">Full Body MRI&apos;s pricing page</a>, read 6 October 2026.
           </li>
         </ul>
         <p className="mt-3 text-xs text-[#56504a]">
@@ -174,33 +148,12 @@ export default function Page() {
           The advertised price is the price of the scan and its explanation. What a finding costs after that is not in
           any of the three. Follow-up that is now clinically indicated may attract a rebate, as the table above sets out.
         </p>
-        <div className="mt-4 rounded-2xl border border-[#ded8cd] bg-[#f7f4ee] p-6">
-          <p className="text-[15px] font-semibold text-[#14120f]">What Australia&apos;s radiologists say</p>
-          <p className="mt-2 text-sm text-[#56504a]">
-            The Royal Australian and New Zealand College of Radiologists &ldquo;does not recommend performing whole body
-            MRI screening in asymptomatic patients who do not have a previously diagnosed malignancy or a cancer
-            predisposition syndrome.&rdquo; It gives the reason: incidental findings &ldquo;can lead to significant and
-            unnecessary patient anxiety, further investigation (including biopsy) and substantial downstream healthcare
-            costs.&rdquo; Source:{" "}
-            <a href="https://www.ranzcr.com/college/document-library/2024-position-statement-on-whole-body-mri" target="_blank" rel="noopener noreferrer" className="font-semibold text-[#007a95] hover:underline">RANZCR, Whole Body MRI Screening in Low-Risk Patients, position statement v1.1</a>,
-            approved 4 July 2025, read 13 September 2026.
-          </p>
-        </div>
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Questions worth asking a provider</h2>
-        <ul className="mt-3 list-disc space-y-2 pl-5">
-          <li>What is the total fee, and is the reporting radiologist&apos;s time included?</li>
-          <li>Who explains the result to me, and is that a doctor?</li>
-          <li>What proportion of your scans produce a finding requiring follow-up?</li>
-          <li>Is follow-up included, or billed separately?</li>
-          <li>Will my GP receive the report, and in what form?</li>
-        </ul>
         <p className="mt-4">
           General information for an Australian audience, not medical advice and not a recommendation for or against
-          any test. Whether screening is appropriate for you depends on your history and risk, which is a conversation
-          for a practitioner who knows both.
+          any test.
         </p>
       </section>
     </SectionGuideShell>

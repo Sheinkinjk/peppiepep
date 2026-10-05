@@ -34,7 +34,7 @@ const faqs = [
   },
   {
     q: "Can these products treat a medical condition?",
-    a: "Retail products are not a substitute for a clinical assessment. If you are dealing with a persistent issue, the useful step is a practitioner rather than a purchase, and our clinical guides set out what those routes cost. Treat any retail claim to address a medical condition with scepticism, and check whether the product appears on the ARTG if such a claim is being made.",
+    a: "Retail products are not a substitute for a clinical assessment. Treat any retail claim to address a medical condition with scepticism, and check whether the product appears on the ARTG if such a claim is being made.",
   },
   {
     q: "Will Refer Labs earn commission on this page?",
@@ -97,8 +97,7 @@ export default function SexualWellnessProductsPage() {
         </h1>
         <p className="mt-5 text-lg leading-relaxed text-[#14120f]">
           This page covers the non-prescription retail category, and it is the only page in our men&apos;s health
-          section where retailer links will appear. It is written for adults and kept deliberately separate from our
-          guides on conditions and treatment costs.
+          section where retailer links will appear. It is written for adults.
         </p>
 
         <div className="mt-7 rounded-2xl border border-[#ded8cd] bg-[#f7f4ee] px-5 py-4">

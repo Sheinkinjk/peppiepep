@@ -102,8 +102,8 @@ export default function Page() {
         <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">What feeling better is worth</h2>
         <p className="mt-3">
           Enjoying it, feeling alert afterwards, and having a routine you look forward to are legitimate reasons to
-          spend money, and they do not need a research paper to justify them. The problem is not people buying ice
-          baths; it is people buying them on the strength of claims about longevity that nobody has demonstrated.
+          spend money, and they do not need a research paper to justify them. Claims that ice baths extend life have
+          not been demonstrated.
         </p>
         <p className="mt-3">
           Buy it because you will use it and like it. If you are buying it to extend your life, the evidence for that

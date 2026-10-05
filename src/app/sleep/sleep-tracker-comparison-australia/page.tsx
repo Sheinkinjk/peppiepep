@@ -29,7 +29,7 @@ const faqs = [
   },
   {
     q: "What should I look for in a sleep tracker?",
-    a: "Whether it needs charging at a time that suits you, since a device charging overnight records nothing. Whether the data is exportable or trapped behind a subscription. What the subscription costs, because several platforms put the useful analysis behind one. And whether it is comfortable enough to wear every night, since an unworn tracker measures nothing at all.",
+    a: "Whether it needs charging at a time that suits you, since a device charging overnight records nothing. Whether the data is exportable or trapped behind a subscription. What the subscription costs, because several platforms charge for the detailed analysis. And whether it is comfortable enough to wear every night, since an unworn tracker measures nothing at all.",
   },
   {
     q: "Should I show my tracker data to a doctor?",

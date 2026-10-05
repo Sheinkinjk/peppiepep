@@ -35,7 +35,7 @@ export default function Page() {
       description={seoConfig.screeningCompared.description}
       faqs={faqs}
       related={[
-        { href: "/longevity/diagnostics/whole-body-mri-australia-cost", label: "Whole-body MRI: the case against" },
+        { href: "/longevity/diagnostics/whole-body-mri-australia-cost", label: "Whole-body MRI: what it costs" },
       ]}
     >
       <section>
@@ -82,8 +82,7 @@ export default function Page() {
             commercial arrangement with i-screen and none with Everlab or Prenuvo. i-screen gave us the code{" "}
             <strong className="font-semibold text-[#14120f]">referlabs</strong>, worth A$20 off a first test, and that
             code is the only thing we are paid on, so a click alone earns us nothing. Before you use it: none of
-            i-screen is Medicare-rebatable, on i-screen&apos;s own terms, while a test a GP considers clinically
-            indicated is frequently bulk billed. Ask a GP first if the test you want might be indicated.
+            i-screen is Medicare-rebatable, on i-screen&apos;s own terms.
           </p>
           <p className="mt-3 text-[13px]">
             <a
@@ -115,16 +114,15 @@ export default function Page() {
       <section>
         <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">When a test may be rebated</h2>
         <p className="mt-3">
-          Talk to a GP about what your actual risk factors are. Some people have a family history or a specific concern
-          that warrants investigation, and in those cases there may be a clinically indicated pathway that
-          attracts a rebate rather than a private screen you pay for in full.
+          A test requested for a clinical reason, such as a symptom or a family history, can attract a Medicare rebate.
+          A private screen you order yourself is paid in full.
         </p>
         <p className="mt-3">
           Our{" "}
           <a href="/longevity/diagnostics/whole-body-mri-australia-cost" className="font-semibold text-[#007a95] hover:underline">
             page on whole-body MRI
           </a>{" "}
-          sets out why clinicians are cautious about broad screening of people without symptoms.
+          sets out what each provider charges and what the fee leaves out.
         </p>
         <p className="mt-3">
           General information for an Australian audience, not medical advice, and not a recommendation for or against
