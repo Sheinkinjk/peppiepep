@@ -30,9 +30,6 @@ const STANDALONE_ROUTES = [
   // but were never registered, so the legacy header stacked on top of their own
   // nav. Three are pet money pages. Worth re-running that sweep after any new
   // ConsumerShell page rather than trusting this list to stay complete.
-  "/petsonme",
-  "/best-pet-insurance-australia",
-  "/knose-vs-petsonme",
   "/mosh-review",
   "/coming-soon",
   "/affiliate-software-australia",
@@ -125,9 +122,6 @@ const STANDALONE_ROUTES = [
   // Affiliate content hub + editorial standards
   "/guides",
   "/search",
-  "/pet-insurance",
-  "/knose",
-  "/what-pet-insurance-covers-australia",
   "/about",
   "/cloudtalk",
   "/krispcall",
@@ -215,7 +209,6 @@ const STANDALONE_ROUTES = [
   // by anyone noticing: all three rendered two headers and two footers.
   "/apollo-energy-group-eoi",
   "/weight-loss-guide",
-  "/who-underwrites-pet-insurance-australia",
   "/data",
   "/disclaimer",
   "/partner-with-refer-labs",

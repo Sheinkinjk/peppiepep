@@ -24,7 +24,7 @@ async function get(url: string, ua: string) {
   return { status: r.status, xRobots: r.headers.get("x-robots-tag"), len: body.length, head: body.slice(0, 500) };
 }
 
-const ROUTES = ["/", "/moshy", "/moshhair", "/deals", "/knose", "/best-weight-loss-telehealth-australia", "/moshy-vs-juniper"];
+const ROUTES = ["/", "/moshy", "/moshhair", "/deals", "/best-weight-loss-telehealth-australia", "/moshy-vs-juniper"];
 
 const main = async () => {
   const robots = await (await fetch(`${HOST}/robots.txt`, { headers: { "User-Agent": AGENTS.browser } })).text();

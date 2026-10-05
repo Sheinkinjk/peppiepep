@@ -61,7 +61,7 @@ export default function Terms() {
           <Section n="1" title="What Refer Labs is">
             <p>
               Refer Labs publishes independent comparisons, guides, calculators and quizzes for Australians, covering
-              health services, pet insurance, home energy, software and other products. We are a publisher and referrer.
+              health services, home energy, software and other products. We are a publisher and referrer.
               We are not a doctor, insurer, broker, financial adviser, installer, lender or seller of anything we compare,
               and we hold no stock and dispense nothing.
             </p>

@@ -350,10 +350,8 @@ export const footer = {
 export const logoOptical: Record<string, { scale: number; note: string }> = {
   "/logos/apollo-energy.png": { scale: 0.86, note: "Dense square glyph on a filled tile; reads heavy, pulled down." },
   "/logos/moshy.png": { scale: 0.92, note: "Square lowercase mark with tight counters; slightly reduced." },
-  "/logos/knose.svg": { scale: 1.18, note: "Wide lowercase wordmark, short x-height; enlarged so it does not read small." },
   "/logos/superfiliate.png": { scale: 0.9, note: "Square tile with a heavy glyph; reduced to match the wordmarks." },
   "/logos/mosh-tile.png": { scale: 0.88, note: "Solid square tile, the heaviest mark in the set." },
-  "/logos/petsonme.svg": { scale: 1.12, note: "Wordmark plus device, wide; enlarged." },
   "/logos/unbounce.png": { scale: 1.05, note: "Wide wordmark; slightly enlarged." },
   "/logos/leadpages.png": { scale: 0.94, note: "Square tile; slightly reduced." },
   "/logos/i-screen.png": { scale: 1.6, note: "Thin wide wordmark on a square canvas; enlarged so it reads beside the others." },

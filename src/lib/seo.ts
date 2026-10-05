@@ -207,6 +207,7 @@ export const seoConfig = {
     description:
       "Pet insurance in Australia: what cover types, waiting periods, exclusions and limits mean, plus current offers like 2 months free with Knose.",
     url: `${SITE_URL}/pet-insurance`,
+    noIndex: true, // pet insurance withdrawn 6 Oct 2026; 410 in src/proxy.ts
     keywords: ["pet insurance australia", "compare pet insurance australia", "dog insurance australia", "cat insurance australia", "pet insurance offers"],
   },
   petsonme: {
@@ -214,6 +215,7 @@ export const seoConfig = {
     description:
       "PetsOnMe pet insurance: the REFERLABS code takes 15% off pet care services, not the premium. Accidental, Classic and Deluxe plans compared.",
     url: `${SITE_URL}/petsonme`,
+    noIndex: true, // pet insurance withdrawn 6 Oct 2026; 410 in src/proxy.ts
     keywords: ["petsonme", "pets on me pet insurance", "petsonme review", "petsonme pet insurance australia", "petsonme referral code", "pets on me insurance"],
   },
   knoseVsPetsonme: {
@@ -221,6 +223,7 @@ export const seoConfig = {
     description:
       "Knose vs PetsOnMe compared on published cover: 90% vs 80% of the vet bill, $25,000 vs $20,000 annual limits, excess from $0 vs $100, and sub-limits.",
     url: `${SITE_URL}/knose-vs-petsonme`,
+    noIndex: true, // pet insurance withdrawn 6 Oct 2026; 410 in src/proxy.ts
     keywords: ["knose vs petsonme", "petsonme vs knose", "knose or petsonme", "compare knose petsonme pet insurance", "best pet insurance australia comparison"],
   },
   bestPetInsurance: {
@@ -228,6 +231,7 @@ export const seoConfig = {
     description:
       "How to choose pet insurance in Australia: the benefit percentage, annual limits, excess, waiting periods and exclusions that decide what you get back.",
     url: `${SITE_URL}/best-pet-insurance-australia`,
+    noIndex: true, // pet insurance withdrawn 6 Oct 2026; 410 in src/proxy.ts
     keywords: ["best pet insurance australia", "best pet insurance", "compare pet insurance australia", "best dog insurance australia", "best cat insurance australia", "pet insurance comparison australia"],
   },
 
@@ -238,6 +242,7 @@ export const seoConfig = {
     description:
       "Knose promo code Australia: new customers get 2 months free with code referlab2mf through our link. What Knose pet insurance covers. Not financial advice.",
     url: `${SITE_URL}/knose`,
+    noIndex: true, // pet insurance withdrawn 6 Oct 2026; 410 in src/proxy.ts
     keywords: ["knose pet insurance", "knose promo code", "knose 2 months free", "knose pet insurance review"],
   },
   ecoflow: {
@@ -288,6 +293,7 @@ export const seoConfig = {
     description:
       "PetSure issues or administers 20+ Australian pet insurance brands, including Trupanion since March 2026.",
     url: `${SITE_URL}/who-underwrites-pet-insurance-australia`,
+    noIndex: true, // pet insurance withdrawn 6 Oct 2026; 410 in src/proxy.ts
     keywords: ["who underwrites pet insurance australia", "is trupanion underwritten by petsure", "who underwrites knose", "petsure brands list", "pet insurance underwriter australia", "petsonme underwriter"],
   },
   whatPetInsuranceCovers: {
@@ -295,6 +301,7 @@ export const seoConfig = {
     description:
       "A plain-English explainer of pet insurance cover types, waiting periods, exclusions, excess and annual limits in Australia. General information, not advice.",
     url: `${SITE_URL}/what-pet-insurance-covers-australia`,
+    noIndex: true, // pet insurance withdrawn 6 Oct 2026; 410 in src/proxy.ts
     keywords: ["what pet insurance covers", "pet insurance waiting period", "pet insurance exclusions australia", "accident and illness cover"],
   },
   // On-site search results. Kept crawlable but noindex (avoids indexing infinite
@@ -303,7 +310,7 @@ export const seoConfig = {
     noIndex: true,
     title: "Search | Refer Labs",
     description:
-      "Search Refer Labs comparisons, guides and deals across Australian health, solar and energy, pet insurance and business software.",
+      "Search Refer Labs comparisons, guides and deals across Australian health, solar and energy and business software.",
     url: `${SITE_URL}/search`,
     keywords: ["search refer labs", "find comparison"],
   },
@@ -1133,7 +1140,7 @@ export const seoConfig = {
     // directory. Every code here is read off the provider's own page and dated.
     title: "Discount Codes: Moshy, Mosh, Juniper and i-screen",
     description:
-      "Verified Australian discount codes, each dated: Moshy REFERRAL120 for $120 off, Mosh REFERAL55 for 55% off a first hair order, Juniper JARREDKFC for no charge on the $89 initial consultation, i-screen referlabs for $20 off, plus pet insurance offers.",
+      "Verified Australian discount codes, each dated: Moshy REFERRAL120 for $120 off, Mosh REFERAL55 for 55% off a first hair order, Juniper JARREDKFC for no charge on the $89 initial consultation, i-screen referlabs for $20 off.",
     url: `${SITE_URL}/deals`,
     keywords: ["discount codes australia", "verified discount codes australia", "promo codes australia", "deals australia", "refer labs deals", "moshy discount code", "mosh discount code", "juniper discount code", "australian coupon codes"],
   },

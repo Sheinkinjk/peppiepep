@@ -73,6 +73,15 @@ const GONE = [
   '/wix',
   '/wordpress',
   '/zapier',
+  // Pet insurance withdrawn as an offering (6 Oct 2026, Jarred). No live page
+  // answers a pet-insurance query, so 410 rather than a redirect.
+  '/pet-insurance',
+  '/knose',
+  '/petsonme',
+  '/best-pet-insurance-australia',
+  '/knose-vs-petsonme',
+  '/who-underwrites-pet-insurance-australia',
+  '/what-pet-insurance-covers-australia',
 ]
 
 function isGone(pathname: string): boolean {

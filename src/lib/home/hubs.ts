@@ -12,7 +12,6 @@ import type { ObjectKind } from "@/components/home/Objects";
 export const HUB_OBJECT: Record<string, ObjectKind> = {
   "/weight-loss": "scale",
   "/hair-loss": "comb",
-  "/pet-insurance": "tag",
   "/solar-and-energy": "solar",
   "/home-battery-rebate-australia": "battery",
   "/portable-power-station-australia": "power",

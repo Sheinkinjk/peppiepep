@@ -118,7 +118,6 @@ export const liveCategories = [
     label: "Hair loss",
     blurb: "Hair-loss telehealth and your GP, compared on cost and how each works.",
   },
-  { href: "/pet-insurance", label: "Pet insurance", blurb: "Benefit percentages, annual limits, excess and the waiting periods that decide a claim." },
   {
     href: "/solar-and-energy",
     label: "Solar and energy",
@@ -140,7 +139,6 @@ export const partnerLogos = [
   { name: "Moshy", src: "/logos/moshy.png" },
   { name: "Mosh", src: "/logos/mosh-tile.png" },
   { name: "Juniper", src: "/logos/juniper.png" },
-  { name: "Knose", src: "/logos/knose.svg" },
   { name: "Apollo Energy Group", src: "/logos/apollo-energy.png" },
   { name: "Superfiliate", src: "/logos/superfiliate.png" },
 ] as const;
@@ -155,18 +153,6 @@ export const popularComparisons = [
     title: "Moshy and Juniper, compared",
     line: "Two weight-management platforms built differently, on eligibility, process and what you pay.",
     updated: "2026-08-17",
-  },
-  {
-    href: "/knose-vs-petsonme",
-    title: "Knose and PetsOnMe",
-    line: "Two pet insurers, their cover levels, and the underwriter question behind both.",
-    updated: "2026-08-27",
-  },
-  {
-    href: "/who-underwrites-pet-insurance-australia",
-    title: "Who underwrites pet insurance in Australia",
-    line: "Most published sources name the wrong insurer. Knose's own disclosure names Pacific International.",
-    updated: "2026-08-27",
   },
 ] as const;
 

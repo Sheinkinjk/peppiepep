@@ -13,7 +13,7 @@ export const aboutFAQs: FAQ[] = [
   },
   {
     q: "Which categories does Refer Labs cover?",
-    a: "Consumer money decisions are the focus: weight-loss and hair-loss telehealth, pet insurance and home batteries, alongside guides to business finance and the software that runs a business. We expand one vertical at a time rather than covering everything shallowly.",
+    a: "Consumer money decisions are the focus: weight-loss and hair-loss telehealth and home batteries, alongside guides to business finance and the software that runs a business. We expand one vertical at a time rather than covering everything shallowly.",
   },
   {
     q: "Is Refer Labs Australian?",

@@ -12,7 +12,7 @@ const listingSchema = z.object({
   businessName: z.string().min(1, "Business name is required").max(200),
   website: z.string().min(1, "Website is required").max(300),
   contactEmail: z.string().email("Valid email is required").max(300),
-  category: z.enum(["Weight loss & telehealth", "Hair loss & men's health", "Solar & energy", "Pet insurance", "Business software"]),
+  category: z.enum(["Weight loss & telehealth", "Hair loss & men's health", "Solar & energy", "Business software"]),
   description: z.string().min(10, "Please provide a brief description").max(1500),
 });
 

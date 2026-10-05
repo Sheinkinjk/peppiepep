@@ -120,20 +120,6 @@ const categories = [
   },
   {
     num: "07",
-    label: "Pet insurance",
-    intro:
-      "Pet cover is sold on monthly price and decided by the fine print: benefit percentage, annual limits, waiting periods and what counts as pre-existing. We publish what each policy document says, including who underwrites it.",
-    detail:
-      "Australian pet insurers and the underwriters behind them. We state where two brands share an insurer, because that changes whether they are genuine alternatives.",
-    eval: [
-      "Benefit percentage and annual benefit limit, stated plainly",
-      "Waiting periods, excess and hereditary or congenital cover",
-      "The underwriter named, not just the brand",
-      "Product disclosure that matches the marketing",
-    ],
-  },
-  {
-    num: "08",
     label: "Business software",
     intro:
       "The software that runs a business, CRM, websites and landing pages, email, HR and payroll, payments, is a maze of near-identical tools. We sort them by the job you need done and recommend on fit, not on who pays the most.",
@@ -182,7 +168,7 @@ const faqs = [
   },
   {
     q: "What categories are you accepting?",
-    a: "Weight loss and telehealth, hair loss and men's health, solar and energy, pet insurance, and business software. We are deliberately narrow: a category we cannot research properly is one where our comparison is worth nothing to a reader.",
+    a: "Weight loss and telehealth, hair loss and men's health, solar and energy, and business software. We are deliberately narrow: a category we cannot research properly is one where our comparison is worth nothing to a reader.",
   },
 ];
 const faqSchema = {
@@ -217,7 +203,7 @@ export default function PartnerWithReferLabsPage() {
             <span>Refer Labs</span>
           </h1>
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-[#56504a]">
-            We compare providers across health, solar and energy, pet insurance and business software, and reach
+            We compare providers across health, solar and energy and business software, and reach
             Australians at the point they are choosing. Placement is earned against published criteria and is never
             sold, which is what makes the traffic worth having.
           </p>

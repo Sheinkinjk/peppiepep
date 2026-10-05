@@ -45,7 +45,6 @@ const OTHER: { href: string; label: string; object: ObjectKind }[] = [
   { href: "/sleep", label: "Sleep", object: "pillow" },
   { href: "/weight-loss", label: "Weight loss", object: "scale" },
   { href: "/hair-loss", label: "Hair loss", object: "comb" },
-  { href: "/pet-insurance", label: "Pets", object: "tag" },
 ];
 
 const faqs = [

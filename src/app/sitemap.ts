@@ -93,13 +93,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/guides`,             lastModified: AUG13,  changeFrequency: 'weekly',  priority: 0.8 },
     { url: `${BASE}/deals`,              lastModified: AUG13,  changeFrequency: 'weekly',  priority: 0.82 },
     { url: `${BASE}/business-software`,  lastModified: FRESH,  changeFrequency: 'weekly',  priority: 0.85 },
-    { url: `${BASE}/pet-insurance`,  lastModified: FRESH,  changeFrequency: 'weekly',  priority: 0.85 },
-    { url: `${BASE}/knose`,  lastModified: FRESH,  changeFrequency: 'weekly',  priority: 0.8 },
-    { url: `${BASE}/petsonme`,  lastModified: AUG13,  changeFrequency: 'weekly',  priority: 0.8 },
-    { url: `${BASE}/best-pet-insurance-australia`,  lastModified: AUG13,  changeFrequency: 'weekly',  priority: 0.86 },
-    { url: `${BASE}/knose-vs-petsonme`,  lastModified: AUG13,  changeFrequency: 'weekly',  priority: 0.84 },
-    { url: `${BASE}/who-underwrites-pet-insurance-australia`, lastModified: FRESH, changeFrequency: 'monthly',  priority: 0.75 },
-    { url: `${BASE}/what-pet-insurance-covers-australia`,  lastModified: FRESH,  changeFrequency: 'monthly',  priority: 0.7 },
     { url: `${BASE}/about`,              lastModified: AUG13, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${BASE}/contact`,            lastModified: STABLE, changeFrequency: 'monthly', priority: 0.6 },
 

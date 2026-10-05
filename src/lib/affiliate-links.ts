@@ -23,20 +23,6 @@ export const MOSH_HAIR_URL = "https://www.getmosh.com.au/start/referlabs";
 // preview-only until Hims approves it.
 export const HIMS_URL = "https://www.hims.com.au/?utm_source=affiliate&utm_campaign=jarred&discountCode=JARREDSTART";
 
-// Pet insurance referral (Knose). Structured as a referral under Corporations
-// Regulation 7.6.01(1)(e): general information + referral only, the benefit is
-// disclosed on-page, and NO financial product advice/recommendation is given.
-// Promo code referlab2mf gives the customer 2 months free.
-export const KNOSE_URL = "https://quick-quote.knose.com.au/details?promo=referlab2mf";
-
-// PetsOnMe: second pet-insurance partner (Aug 2026). No tracked URL exists yet, so
-// the code REFERLABS is entered by the customer at quote and must stay visible next
-// to every CTA. Swap this constant for a tracked link if PetsOnMe supplies one.
-// NOTE: REFERLABS upgrades the pet-care-services discount from 12% to 15%. It is NOT
-// a discount on the premium; never describe it as one.
-export const PETSONME_URL = "https://www.petsonme.com.au/pet-insurance/compare-cover/";
-export const PETSONME_CODE = "REFERLABS";
-
 // ── Weight-loss: Juniper (affiliate partner from July 2026) ──────────────────
 // JARREDKFC waives the initial Juniper consultation, which Juniper values at $89,
 // so a new patient pays $0 to be assessed. Confirmed by Jarred from the Juniper

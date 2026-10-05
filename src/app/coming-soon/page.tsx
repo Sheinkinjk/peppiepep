@@ -216,7 +216,6 @@ export default function ComingSoonPage() {
             <ul className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold">
               <li><Link href="/weight-loss" className="text-[#007a95] hover:underline">Weight loss</Link></li>
               <li><Link href="/hair-loss" className="text-[#007a95] hover:underline">Hair loss</Link></li>
-              <li><Link href="/pet-insurance" className="text-[#007a95] hover:underline">Pets</Link></li>
               <li><Link href="/deals" className="text-[#007a95] hover:underline">All current offers</Link></li>
             </ul>
           </div>

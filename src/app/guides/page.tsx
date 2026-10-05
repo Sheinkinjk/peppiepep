@@ -20,10 +20,6 @@ const breadcrumbSchema = {
 const hubs = [
   { href: "/weight-loss", label: "Weight Loss", desc: "Telehealth, programs and the GP pathway, compared." },
   { href: "/hair-loss", label: "Hair Loss", desc: "Clinical prescription treatment versus topical products." },
-  { href: "/best-pet-insurance-australia", label: "Best Pet Insurance: How to Choose", desc: "The six things that decide what you get back: benefit percentage, annual limit, hereditary cover, waiting periods, excess and exclusions." },
-  { href: "/knose-vs-petsonme", label: "Knose vs PetsOnMe", desc: "The two compared on published cover: benefit percentage, annual limits, excess and sub-limits." },
-  { href: "/petsonme", label: "PetsOnMe: Cover & Code", desc: `The Accidental, Classic and Deluxe plans, the 80% benefit, and what the REFERLABS code discounts. Confirmed directly with PetsOnMe on ${checkedOn("REFERLABS")}.` },
-  { href: "/pet-insurance", label: "Pets", desc: "Cover types, waiting periods and exclusions explained, plus current offers. General information, not advice." },
   { href: "/coming-soon", label: "Coming Soon", desc: "The category still being built out, and what is already readable in it." },
   { href: "/health-and-beauty", label: "Health & Beauty", desc: "Skincare, devices and meal replacements: what each costs here, and which claims survive a check." },
   { href: "/sleep", label: "Sleep", desc: "Sleep studies, CPAP costs, mattresses and trackers, separated properly." },
@@ -86,8 +82,6 @@ const sections = [
       { href: "/best-weight-loss-telehealth-australia", label: "Best Weight Loss Telehealth", desc: "Moshy vs Juniper, compared." },
       { href: "/best-hair-loss-treatment-australia", label: "Best Hair Loss Treatment", desc: "Clinical telehealth vs topical products." },
       { href: "/best-ai-sales-tools", label: "Best AI Sales Tools 2026", desc: "GoHighLevel, AiSDR, Reply.io and FullEnrich, by job." },
-      { href: "/who-underwrites-pet-insurance-australia", label: "Who Underwrites Pet Insurance", desc: "PetSure issues 20+ brands. Which are independent, from each company's own disclosure." },
-      { href: "/what-pet-insurance-covers-australia", label: "What Pet Insurance Covers", desc: "Cover types, waiting periods and exclusions." },
     ],
   },
   {

@@ -7,7 +7,7 @@ import { execSync } from "node:child_process";
  * changed pages get recrawled fast instead of waiting for the next crawl. Run
  * it AFTER a production deploy, so the live sitemap already reflects the change:
  *
- *   npm run indexnow -- /moshy /knose      submit just those two
+ *   npm run indexnow -- /moshy /moshhair   submit just those two
  *   npm run indexnow                       submit every URL in the sitemap
  *
  * PREFER THE FIRST FORM. IndexNow means "these URLs changed", and every run of

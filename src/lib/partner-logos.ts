@@ -34,8 +34,6 @@ const LOGOS: Record<string, string> = {
   "/moshy": "/logos/moshy.png",
   "/juniper": "/logos/juniper.png",
   "/moshhair": "/logos/mosh-tile.png",
-  "/knose": "/logos/knose.svg",
-  "/petsonme": "/logos/petsonme.svg",
   "/apollo-energy-group": "/logos/apollo-energy.png",
 };
 

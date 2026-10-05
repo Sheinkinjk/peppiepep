@@ -21,16 +21,10 @@ import { CARRD } from "@/lib/partners/carrd";
  * Sweep of 25 Aug 2026 re-read seven from the vendor's own page (Carrd,
  * beehiiv, Brevo, GoHighLevel, ElevenLabs, AliDrop, Leadpages) and stamped
  * those individually. The rest could not be verified without partner access:
- * Moshy's REFERRAL120, Mosh's REFERAL55, Knose's referlab2mf, PetsOnMe's
- * PetsOnMe is deliberately NOT featured (5 Sep 2026). Its link,
- * petsonme.com.au/pet-insurance/compare-cover/, carries no tracking parameter of
- * any kind, so attribution depends entirely on the customer remembering to type
- * REFERLABS at checkout. Compare Knose on the same hub, which is tracked via
- * ?promo=referlab2mf. Featuring the one merchant whose clicks we cannot measure
- * puts our most prominent slot on our least accountable partner. Restore
- * featured: true once a tracked link exists.
+ * Moshy's REFERRAL120 and Mosh's REFERAL55. (Knose and PetsOnMe were removed
+ * with the pet vertical on 6 Oct 2026.)
  *
- * REFERLABS, Superfiliate's 15% and Unbounce's 20/35% are partner-specific and
+ * Superfiliate's 15% and Unbounce's 20/35% are partner-specific and
  * never appear on a public page, and Pipedrive's pricing page blocks automated
  * fetching. Apollo's $500 was confirmed separately on 28 Aug 2026 and carries
  * its own date; it is our own arrangement, so there is still no page to re-read.
@@ -184,8 +178,6 @@ export const DEALS: Deal[] = [
 
   { brand: "i-screen", logo: "/logos/i-screen.svg", href: "/i-screen", offer: "$20 off your first test", code: "referlabs", category: "Health testing", featured: true, verified: "2026-09-23", exclusive: true, source: { noPublicPage: "Supplied by i-screen directly, 23 September 2026. Checked the same day that i-screen's own terms and FAQ name no coupon codes, so there is no page to re-read it off. Re-confirm with i-screen, not by searching." } },
   { brand: "Juniper", logo: "/logos/juniper.png", href: "/juniper", offer: "Initial consultation waived, valued at $89", code: "JARREDKFC", category: "Weight loss", featured: true, verified: "2026-09-23", exclusive: true, source: { noPublicPage: "Juniper's affiliate handbook, confirmed by Jarred 23 September 2026. Checked the same day that no public Juniper page states it: myjuniper.com rendered with the code in the query string does not show it, and the help-centre Discount Terms article names no code values. Re-confirm with Juniper, not by searching." } },
-  { brand: "Knose", logo: "/logos/knose.svg", href: "/knose", offer: "2 months free for new customers", code: "referlab2mf", category: "Pets", featured: true, verified: "2026-09-30", source: { readOff: "https://knose.com.au/" } },
-  { brand: "PetsOnMe", logo: "/logos/petsonme.svg", href: "/petsonme", offer: "15% off pet care services, up from 12% (not the premium)", code: "REFERLABS", category: "Pets", featured: true, verified: "2026-09-27", source: { noPublicPage: "Partner-specific, stated on no public page. Recorded in the 25 Aug 2026 sweep note at the top of this file; re-confirm with the partner, not by searching." } },
 
   // Public trials and free plans below this line: none is specific to our link.
   // Both Carrd prices come from src/lib/partners/carrd.ts.
@@ -280,25 +272,6 @@ export const OFFER_FACTS: Record<string, OfferFacts> = {
     brand: "Juniper", code: "JARREDKFC", amount: "Initial consultation waived, valued at $89",
     object: "the initial consultation for a new patient",
     newCustomer: true, oneUse: true,
-  },
-  // amount + newCustomer: the Knose DEALS row above.
-  // object: src/app/knose/page.tsx:21 ("when they take out a policy").
-  // verified: Jarred read Knose's own page on 27 August 2026 and confirmed the
-  // offer current. This is the only date on file for it; the global sweep stamp
-  // and the page's last-updated date are not substitutes and were never used.
-  referlab2mf: {
-    brand: "Knose", code: "referlab2mf", amount: "2 months free",
-    object: "a policy taken out through our link",
-    newCustomer: true,
-  },
-  // amount + verified: the PetsOnMe DEALS row above.
-  // object: src/app/petsonme/page.tsx:28. The object is the whole point here:
-  // the code discounts pet care services, NOT the premium, and saying otherwise
-  // is the s29 breach this field exists to prevent.
-  // newCustomer/oneUse omitted: PetsOnMe states neither.
-  REFERLABS: {
-    brand: "PetsOnMe", code: "REFERLABS", amount: "15% off",
-    object: "pet care services, up from the usual 12%, not the insurance premium",
   },
 };
 

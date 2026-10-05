@@ -9,7 +9,6 @@ const categories = [
   "Weight loss & telehealth",
   "Hair loss & men's health",
   "Solar & energy",
-  "Pet insurance",
   "Business software",
 ] as const;
 

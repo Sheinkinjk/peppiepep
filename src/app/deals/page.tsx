@@ -29,7 +29,7 @@ const FAQS = [
    */
   {
     q: "Which discount codes does Refer Labs hold?",
-    a: "Six, each dated in the table above: Moshy (REFERRAL120, with a 3-month minimum commitment), Mosh (REFERAL55), Juniper (JARREDKFC, an $89 consultation waived), i-screen (referlabs), Knose (referlab2mf) and PetsOnMe (REFERLABS). What each one discounts, and what it does not, is set out on the brand's own page, linked from its row.",
+    a: "Four, each dated in the table above: Moshy (REFERRAL120, with a 3-month minimum commitment), Mosh (REFERAL55), Juniper (JARREDKFC, an $89 consultation waived) and i-screen (referlabs). What each one discounts, and what it does not, is set out on the brand's own page, linked from its row.",
   },
   {
     q: "Are these discount codes current?",
@@ -37,7 +37,7 @@ const FAQS = [
   },
   {
     q: "Why is a code sometimes not a discount on the price?",
-    a: "Because a code discounts a specific thing, and it is not always the headline price. PetsOnMe's REFERLABS takes 15% off pet care services, not off the insurance premium. Juniper's JARREDKFC waives the initial consultation, which Juniper values at $89, and takes nothing off the program. Each row and each brand page states the object of the discount for that reason.",
+    a: "Because a code discounts a specific thing, and it is not always the headline price. Juniper's JARREDKFC waives the initial consultation, which Juniper values at $89, and takes nothing off the program. Each row and each brand page states the object of the discount for that reason.",
   },
   {
     q: "Does Refer Labs earn from these deals?",

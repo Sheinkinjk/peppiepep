@@ -40,7 +40,7 @@ export default function HowWeMakeMoney() {
           <p>
             On most of the site, when you click through to a provider and sign up or buy, the provider may pay us a
             commission. It costs you nothing extra, and sometimes gets you a better deal than going direct. On some
-            pages, including the health and pet insurance comparisons, every provider compared is one we earn from.
+            pages, including the health comparisons, every provider compared is one we earn from.
             Those pages say so: they cover providers we have a commercial relationship with, which is not the whole
             market.
           </p>
