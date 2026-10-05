@@ -117,16 +117,6 @@ export default function Page() {
         </p>
       </section>
 
-      <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Questions worth asking before you buy</h2>
-        <ul className="mt-3 list-disc space-y-2 pl-5">
-          <li>What does a year of consumables cost for this specific mask?</li>
-          <li>What is the warranty, and who services the machine if it fails?</li>
-          <li>Is there a trial or return period if the mask does not suit you? Mask fit is the most common reason people abandon therapy.</li>
-          <li>Does my private health cover contribute, and is there a waiting period?</li>
-          <li>Is there any state or territory scheme I might be eligible for?</li>
-        </ul>
-      </section>
     </SectionGuideShell>
   );
 }

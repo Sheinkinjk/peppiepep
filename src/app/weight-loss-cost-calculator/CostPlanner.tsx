@@ -36,7 +36,6 @@ const PATHWAYS: Record<
     summary: string;
     payFor: string[];
     determines: string[];
-    ask: string[];
   }
 > = {
   clinical: {
@@ -52,11 +51,6 @@ const PATHWAYS: Record<
       "The program you choose",
       "Program length and how long you stay subscribed",
       "Any current new-customer offer",
-    ],
-    ask: [
-      "What exactly does the subscription include each month?",
-      "What happens to the price after any intro offer ends?",
-      "How do I pause or cancel?",
     ],
   },
   coaching: {
@@ -74,11 +68,6 @@ const PATHWAYS: Record<
       "Whether you add 1:1 coaching",
       "Program length and commitment terms",
     ],
-    ask: [
-      "What does the program fee include each month?",
-      "What does the 1:1 coaching add-on cost?",
-      "What are the cancellation terms?",
-    ],
   },
   gp: {
     title: "Your GP",
@@ -92,11 +81,6 @@ const PATHWAYS: Record<
     determines: [
       "Whether your GP bulk-bills or charges a gap",
       "How often you need reviews",
-    ],
-    ask: [
-      "Do you bulk-bill for these consults?",
-      "What will follow-up appointments cost?",
-      "How many appointments should I expect?",
     ],
   },
 };
@@ -272,16 +256,6 @@ export default function CostPlanner() {
                 </div>
               </div>
 
-              <details className="mb-4 rounded-lg border border-[#ded8cd] bg-[#f7f4ee] px-4 py-3">
-                <summary className="cursor-pointer list-none text-xs font-bold text-[#14120f]">
-                  Questions to ask before paying +
-                </summary>
-                <ul className="list-disc pl-4 mt-2 space-y-1">
-                  {p.ask.map((x) => (
-                    <li key={x} className="text-xs leading-relaxed text-[#56504a]">{x}</li>
-                  ))}
-                </ul>
-              </details>
 
               {key === "clinical" ? (
                 <div>

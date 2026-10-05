@@ -18,7 +18,7 @@ const faqs = [
   },
   {
     q: "Why doesn't this calculator show exact prices?",
-    a: "Because any exact figure we published would go stale: prices change and vary with the program and level of support. Instead the planner shows what each route charges for, what determines your price, and the questions to ask, then points you to where your real figure is shown: the provider's own pricing page, before you pay.",
+    a: "Because any exact figure we published would go stale: prices change and vary with the program and level of support. Instead the planner shows what each route charges for, and what determines your price, then points you to where your real figure is shown: the provider's own pricing page, before you pay.",
   },
   {
     q: "How is Moshy priced?",

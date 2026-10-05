@@ -99,11 +99,6 @@ export default function Page() {
           name the obstacle you are removing. Light in the room, noise, temperature, or a mattress that is
           past it are specific problems with specific solutions.
         </p>
-        <p className="mt-3">
-          The test is whether you could finish this sentence before you buy: &ldquo;this will fix ___ , which I know is
-          disrupting my sleep because ___&rdquo;. If you cannot, the purchase is speculative and the category has plenty
-          of expensive ways to be speculative.
-        </p>
       </section>
 
       <section>
