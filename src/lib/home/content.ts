@@ -312,7 +312,6 @@ export const footer = {
         { label: "Best Newsletter Platform", href: "/best-newsletter-platform" },
         { label: "Home Battery Rebate 2026", href: "/home-battery-rebate-australia" },
         { label: "Best Home Battery", href: "/best-home-battery-australia" },
-        { label: "Everlab vs Prenuvo vs i-screen", href: "/longevity/diagnostics/everlab-vs-prenuvo-vs-i-screen-australia" },
       ],
     },
     {
@@ -324,7 +323,6 @@ export const footer = {
         { label: "Affiliate Programs AU", href: "/affiliate-programs-australia" },
         { label: "Contact", href: "/contact" },
         { label: "FAQ", href: "/faq" },
-        { label: "Observation log", href: "/data" },
       ],
     },
   ],
