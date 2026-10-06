@@ -45,6 +45,10 @@ function said(r: { figure: string | null; offer: string }): string {
   const min = r.offer.match(/\d+-month minimum/i);
   if (min) return `${fig} off (${min[0]})`;
   const clause = r.offer.split(";").map((c) => c.trim()).find((c) => c.includes(fig)) ?? "";
+  // An offer with alternatives ("20% off 3 months, or 35% off your first year")
+  // shows its lowest figure only (Jarred, 6 Oct 2026): the long clause read badly
+  // in the tile, and the full terms are on the brand page and /deals.
+  if (/\bor\b/.test(clause)) return `${fig} off`;
   if (CONDITION.test(clause)) return clause;
   return /free/i.test(fig) ? fig : `${fig} off`;
 }
