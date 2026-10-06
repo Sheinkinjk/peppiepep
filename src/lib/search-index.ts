@@ -79,7 +79,7 @@ export const SEARCH_INDEX: SearchEntry[] = [
   { title: "Hair loss: compare your options", href: "/hair-loss", category: "Hair loss", kind: "Guide", keywords: "hair loss australia compare telehealth gp over the counter options men" },
   { title: "Best hair loss treatment in Australia", href: "/best-hair-loss-treatment-australia", category: "Hair loss", kind: "Guide", keywords: "mosh or gp telehealth over the counter compare hair loss" },
   { title: "Mosh hair: what to know & offer", href: "/moshhair", category: "Hair loss", kind: "Guide", keywords: "mosh review mens hair loss telehealth offer discount" },
-  { title: "Mosh review: is it legit & worth it?", href: "/mosh-review", category: "Hair loss", kind: "Guide", keywords: "mosh review is mosh legit worth it does mosh work reviews australia" },
+  { title: "Mosh review: is it legit?", href: "/mosh-review", category: "Hair loss", kind: "Guide", keywords: "mosh review is mosh legit does mosh work reviews australia" },
   { title: "Early signs of hair loss in men", href: "/early-signs-of-hair-loss-australia", category: "Hair loss", kind: "Guide", keywords: "early signs of hair loss am i going bald how to tell thinning crown balding signs" },
   { title: "Hair loss treatment cost in Australia", href: "/hair-loss-treatment-cost-australia", category: "Hair loss", kind: "Guide", keywords: "hair loss treatment cost australia mosh price subscription telehealth" },
   { title: "Receding hairline: causes and assessment", href: "/receding-hairline-treatment-australia", category: "Hair loss", kind: "Guide", keywords: "receding hairline treatment male pattern telehealth australia" },

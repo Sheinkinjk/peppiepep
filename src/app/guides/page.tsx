@@ -134,7 +134,7 @@ const sections = [
       { href: "/hair-loss", label: "Hair Loss: Compare Your Options", desc: "An online consultation, your GP, or over-the-counter products, and which suits whom." },
       { href: "/best-hair-loss-treatment-australia", label: "Best Hair Loss Treatment", desc: "Mosh and your GP side by side, plus where over-the-counter products fit." },
       { href: "/moshhair", label: "Mosh Hair: What to Know", desc: "Men's hair-loss telehealth. Process, options, current offer." },
-      { href: "/mosh-review", label: "Mosh Review: Legit & Worth It?", desc: "Who runs the consultations, how billing works, and who Mosh does not suit." },
+      { href: "/mosh-review", label: "Mosh Review: Is It Legit?", desc: "Who runs the consultations and how billing works." },
       { href: "/early-signs-of-hair-loss-australia", label: "Early Signs of Hair Loss", desc: "How to tell if you're going bald, what's normal, and where to get it checked." },
       { href: "/hair-loss-treatment-cost-australia", label: "Hair-Loss Costs Compared", desc: "How over-the-counter products, a GP and a telehealth subscription are each priced." },
       { href: "/receding-hairline-treatment-australia", label: "Receding Hairline: Causes and Assessment", desc: "What causes it, and how to get it assessed by a practitioner or your GP." },

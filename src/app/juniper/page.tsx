@@ -73,8 +73,8 @@ const faqs = [
     a: `JARREDKFC. Through our link it means no charge for Juniper's initial consultation, which Juniper values at $89 (source: Juniper's affiliate handbook, confirmed 23 September 2026; no public Juniper page states it); program fees apply.`,
   },
   {
-    q: "Is Juniper legit, and is it worth it?",
-    a: `Juniper describes itself as "a digital health clinic by Eucalyptus", and its consultations are phone calls with an accredited Australian practitioner. Its homepage offers a 30-day money-back guarantee on the first order, and a full refund if you do not proceed after the consultation, both on Juniper's own terms (read ${READ_ON}). Whether it is worth it depends on how much you will use the follow-ups, app and community that the program fee covers.`,
+    q: "Is Juniper legit?",
+    a: `Juniper describes itself as "a digital health clinic by Eucalyptus", and its consultations are phone calls with an accredited Australian practitioner. Its homepage offers a 30-day money-back guarantee on the first order, and a full refund if you do not proceed after the consultation, both on Juniper's own terms (read ${READ_ON}).`,
   },
   {
     q: "Is Juniper only for women?",

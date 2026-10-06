@@ -19,8 +19,8 @@ const faqs = [
     a: "From one company, i-screen, since 23 September 2026. It gave us the code referlabs, worth $20 off a first test, and that code is the only thing we are paid on: a reader who clicks through and buys without entering it earns us nothing. We earn nothing from Everlab, Prenuvo, or any imaging or pathology provider named in these guides. i-screen's own terms state that none of its services are Medicare-rebatable.",
   },
   {
-    q: "Is preventive health screening worth it in Australia?",
-    a: "It depends on the test and on you. National programs such as bowel, breast and cervical screening are often free or subsidised. Private tests and scans are paid in full, so compare what each one includes and what it costs.",
+    q: "Is preventive health screening covered in Australia?",
+    a: "National programs such as bowel, breast and cervical screening are often free or subsidised. Private tests and scans are paid in full, so compare what each one includes and what it costs.",
   },
   {
     q: "Does Medicare cover whole-body MRI screening?",

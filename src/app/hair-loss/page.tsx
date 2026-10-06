@@ -19,7 +19,7 @@ export const metadata = generateSEOMetadata(seoConfig.hairLossHub);
 const guides = [
   { href: "/best-hair-loss-treatment-australia", title: "Best hair loss treatment", desc: "Mosh and your GP side by side, and where over-the-counter products fit." },
   { href: "/moshhair", title: "Mosh review & offer", desc: "How the men's hair-loss telehealth service works, plus 55% off your first order." },
-  { href: "/mosh-review", title: "Is Mosh legit & worth it?", desc: "Who runs the consultations, how billing works, and who Mosh does not suit." },
+  { href: "/mosh-review", title: "Is Mosh legit?", desc: "Who runs the consultations and how billing works." },
   { href: "/hair-loss-treatment-cost-australia", title: "Hair-loss costs compared", desc: "How over-the-counter products, a GP and a telehealth subscription are each priced." },
   { href: "/early-signs-of-hair-loss-australia", title: "Early signs of hair loss", desc: "How to tell if you're going bald, what's normal, and where to get it checked." },
   { href: "/receding-hairline-treatment-australia", title: "Receding hairline", desc: "What a receding hairline usually means, and the routes to having it assessed." },

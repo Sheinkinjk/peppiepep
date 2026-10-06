@@ -1669,7 +1669,6 @@ export const seoConfig = {
       "moshy weight loss review",
       "moshy review australia",
       "is moshy legit",
-      "is moshy worth it",
       "moshy vs juniper",
       "moshy vs juniper 2026",
       "moshy vs juniper australia",
