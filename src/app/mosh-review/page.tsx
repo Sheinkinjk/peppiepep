@@ -110,13 +110,13 @@ export default function MoshReviewPage() {
         <SectionMark kind="comb" size={56} /></nav>
 
         <h1 className="text-3xl sm:text-4xl lg:text-[2.7rem] font-black leading-[1.08] tracking-tight mb-5">
-          Mosh Review 2026: <span>Is It Legit, and Is It Worth It?</span>
+          Mosh Review 2026: <span>Is It Legit?</span>
         </h1>
         <p className="text-[#14120f] text-base sm:text-lg leading-relaxed mb-4 max-w-2xl">
           Yes, Mosh is legit. It is an Australian-owned telehealth service that says it works only with AHPRA-registered
           doctors and nurse practitioners based in Australia, pays them on a fee-for-service basis, and is certified by
-          LegitScript (getmosh.com.au, read {MOSH_READ}). Whether it is worth it depends on whether you want an online
-          consultation instead of a GP appointment, and on the standard rate you pay after the first order.
+          LegitScript (getmosh.com.au, read {MOSH_READ}). The consultation is online, and a practitioner decides whether any
+          treatment is appropriate.
         </p>
         {/* Below the lead. The first paragraph after the h1 is the answer;
             a disclosure in that slot is what an engine lifts instead. Still
@@ -166,20 +166,6 @@ export default function MoshReviewPage() {
           </p>
         </section>
 
-        <section className="space-y-4 mb-10">
-          <h2 className="text-xl font-black">Is it worth it?</h2>
-          <p className="text-[#56504a] text-sm sm:text-base leading-relaxed">
-            It suits men with gradual thinning or a receding hairline who would rather not book an appointment: the
-            consultation is online and a practitioner reviews it. Mosh offers a 180-day money-back guarantee on
-            quarterly hair programs, under <a href={MOSH_PROMOTIONS_PAGE_URL} target="_blank" rel="nofollow noopener" style={{ color: CYAN }} className="font-semibold underline underline-offset-2">its terms</a>. A GP suits you better if the loss is sudden or patchy, or you want blood tests or a
-            dermatologist referral; the consult may be bulk-billed, and your GP already knows your history.
-          </p>
-          <p className="text-[#56504a] text-sm sm:text-base leading-relaxed">
-            On cost, judge Mosh on the standard rate after the first order, not the discounted one. Mosh lists its plans
-            on its own pricing page; the practitioner decides which, if any, applies, and Mosh shows the price before you
-            pay.
-          </p>
-        </section>
 
         <section className="mb-12">
           <h2 className="text-xl font-black mb-5">Common questions</h2>

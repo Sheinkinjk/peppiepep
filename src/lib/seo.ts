@@ -1125,7 +1125,7 @@ export const seoConfig = {
   // title carries the price rather than a discount. Prices read off
   // midoc.com.au on 3 Sep 2026.
   midoc: {
-    title: `Midoc Review 2026: Consultations from ${MIDOC.consultStandard} | Refer Labs`,
+    title: `Midoc Australia 2026: How the Online Consultation Works | Refer Labs`,
     description:
       `Midoc is Australian telehealth: AHPRA-registered doctors by phone or video, ${MIDOC.waitTime}. Consultations from ${MIDOC.consultStandard}, certificates from ${MIDOC.certificateSingleDay}.`,
     url: `${SITE_URL}/midoc`,
@@ -2213,11 +2213,11 @@ export const seoConfig = {
     // description unchanged.
     // RETITLED 30 Sep 2026 (Jarred): the title test above ends here, four days early.
     // Title and h1 now agree, and the page no longer promises cost it does not give.
-    title: "Mosh Review 2026: Is It Legit, and Is It Worth It?",
+    title: "Mosh Review 2026: Is It Legit?",
     description:
       "Mosh uses AHPRA-registered doctors and nurse practitioners paid fee-for-service. How the consultation works, how billing runs, and REFERAL55 for 55% off a new customer's first order.",
     url: `${SITE_URL}/mosh-review`,
-    keywords: ["mosh review", "is mosh legit", "is mosh worth it", "does mosh work", "mosh hair loss review australia", "mosh reviews"],
+    keywords: ["mosh review", "is mosh legit", "does mosh work", "mosh hair loss review australia", "mosh reviews"],
   },
   weightLossEligibility: {
     noIndex: true, // retired 30 Sep 2026, 301 in next.config

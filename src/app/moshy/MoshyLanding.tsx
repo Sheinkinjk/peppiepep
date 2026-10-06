@@ -69,8 +69,6 @@ const toc: [string, string][] = [
   ["code", "The discount code"],
   ["how", "How Moshy works"],
   ["included", "What's included"],
-  ["fit", "Who it suits"],
-  ["price", "How it's priced"],
   ["alternatives", "Alternatives"],
   ["faq", "FAQ"],
 ];
@@ -220,32 +218,7 @@ export default function MoshyLanding() {
               </ul>
             </section>
 
-            <section id="fit" className="mt-12 scroll-mt-24">
-              <h2 className={H2}>Who Moshy suits, and who it may not</h2>
-              <div className={BODY}>
-                <p>
-                  <strong className="font-semibold text-[#14120f]">Suits:</strong> someone who wants the consultation
-                  done by phone or video without booking a GP, and wants coaching, meal plans, tracking and a member
-                  community bundled into one monthly fee.
-                </p>
-                <p>
-                  <strong className="font-semibold text-[#14120f]">May not suit:</strong> someone who would rather keep
-                  weight management with their own GP, and someone who does not want to commit to 3 months, which
-                  REFERRAL120 requires.
-                </p>
-              </div>
-            </section>
 
-            <section id="price" className="mt-12 scroll-mt-24">
-              <h2 className={H2}>How is Moshy priced?</h2>
-              <div className={BODY}>
-                <p>
-                  One all-inclusive monthly program fee, published on Moshy&apos;s own site. REFERRAL120 takes $120 off
-                  the first order and carries a minimum commitment period of 3 months, so budget for three months of
-                  the program fee when you use it.
-                </p>
-              </div>
-            </section>
 
             <section id="alternatives" className="mt-12 scroll-mt-24">
               <h2 className={H2}>Moshy alternatives and comparisons</h2>

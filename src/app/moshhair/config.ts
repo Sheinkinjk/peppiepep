@@ -75,7 +75,8 @@ export const moshHairConfig: AffiliatePageConfig = {
   // field. It cannot be removed through the config, so it carries the one-line
   // decision and points to the comparison rather than repeating the page.
   verdict:
-    "If you want a practitioner to look at gradual thinning or a receding hairline without booking an appointment, Mosh is built for that. If you want an in-person exam, blood tests or a dermatologist referral, start with your GP. Our best hair-loss treatment comparison sets the two side by side.",
+    "Mosh is an online hair-loss consultation with an AHPRA-registered practitioner. REFERAL55 takes 55% off a new customer's first order, entered at checkout.",
+  verdictHeading: "Mosh: the offer",
 
   hero: {
     // Title and h1 agree: "Mosh Discount Code 2026: 55% Off First Order".
@@ -94,25 +95,10 @@ export const moshHairConfig: AffiliatePageConfig = {
         "You start through the link on this page, which opens Mosh's sign-up at getmosh.com.au. You answer questions about your hair loss and general health and upload photos; Mosh describes it as a five-minute quiz.",
         `An AHPRA-registered doctor or nurse practitioner based in Australia reviews your answers, and may follow up by message, call or video. Mosh says its practitioners are paid on a fee-for-service basis (getmosh.com.au, read ${MOSH_READ}). Some applicants are declined, or told to see a GP in person.`,
         "If you go ahead, the plan, billing and any changes are managed through your Mosh account, and you can message your practitioner while you are on it. Any treatment is decided by the practitioner after an individual assessment.",
+        "There is no charge for the initial consultation; program fees apply, and Mosh shows the price before you pay. If hair loss is sudden or patchy, or comes with scalp symptoms, see a GP in person.",
       ],
       hasCta: true,
       ctaText: "Continue to Mosh",
-    },
-    {
-      heading: "Who Mosh suits, and when to see a GP instead",
-      paragraphs: [
-        "Mosh's hair service is for men, and it is built for the common case: gradual thinning or a receding hairline, from someone who would rather not book an appointment.",
-        "See a GP first if the loss is sudden or patchy, comes with scalp symptoms, or if you want blood tests or a dermatologist referral. A GP also knows your history, and the consult may be bulk-billed.",
-      ],
-    },
-    {
-      heading: "What Mosh costs",
-      paragraphs: [
-        "Mosh runs as a subscription. There is no charge for the initial consultation; program fees apply. Mosh lists its plans on its own pricing page; the practitioner decides which, if any, applies, and Mosh shows the price before you pay.",
-        "REFERAL55 takes 55% off the first order only, for new customers. Mosh's promotions page describes its first-order hair discounts as covering the first three months; after that you pay the standard rate for your plan, so compare that rate rather than the discounted one.",
-        `Mosh publishes two further terms. It offers a 180-day money-back guarantee on quarterly hair programs, and a price match where an approved competitor charges less for a substantially comparable program. Both are subject to Mosh's terms (getmosh.com.au/hair-loss and /promotions-terms-and-conditions, read ${MOSH_READ}).`,
-      ],
-      termsLink: { href: MOSH_PROMOTIONS_PAGE_URL, label: "Read Mosh's guarantee and promotions terms" },
     },
   ],
 
@@ -146,10 +132,6 @@ export const moshHairConfig: AffiliatePageConfig = {
     {
       q: "Can I cancel Mosh?",
       a: `Mosh advertises no lock-in contracts and says you can cancel anytime (getmosh.com.au/start/referlabs, read ${MOSH_READ}). Check the refund terms for your program before you subscribe, and keep written confirmation of any cancellation. Refer Labs does not manage Mosh billing.`,
-    },
-    {
-      q: "Is Mosh worth it?",
-      a: "It depends on what you value. Mosh is fully online with no appointment, a practitioner reviews your case, and Mosh offers a 180-day money-back guarantee on quarterly hair programs, under its terms (getmosh.com.au/promotions-terms-and-conditions). A GP may cost less after Medicare, knows your history and can order tests. Because hair-loss care is ongoing, judge it on the standard rate after the first order.",
     },
   ],
 

@@ -58,10 +58,10 @@ export const iScreenConfig: AffiliatePageConfig = {
     "Sample given at an affiliated collection centre",
     `Code ${I_SCREEN_CODE} typed at checkout`,
   ],
-  verdict: `i-screen is a straightforward way to order pathology without going through a GP first, and the code ${I_SCREEN_CODE} takes ${money(DISCOUNT_AUD)} off the first one. What it offers is access and speed: you choose the panel, need no referral, and results are typically back within 48 hours.`,
+  verdict: `i-screen sells pathology tests online with no GP referral, and the code ${I_SCREEN_CODE} takes ${money(DISCOUNT_AUD)} off your first test, entered at checkout.`,
+  verdictHeading: "i-screen: the offer",
   verdictPoints: [
     "No referral, and results typically back within 48 hours",
-    `${money(DISCOUNT_AUD)} off is about ${discountAtCheapest()} of the cheapest test and about ${discountAtDearest()} of the dearest`,
     "Nothing here is Medicare-rebatable, on i-screen's own terms",
   ],
 
@@ -73,8 +73,7 @@ export const iScreenConfig: AffiliatePageConfig = {
     h1Highlight: `${money(DISCOUNT_AUD)} off your first test`,
     subheading: `The code ${I_SCREEN_CODE} takes ${money(DISCOUNT_AUD)} off your first i-screen test, entered at checkout. i-screen sells pathology directly, with no GP referral, from ${money(low.price)} for a single marker to ${money(high.price)} for its largest panel. None of it is Medicare-rebatable, on i-screen's own terms.`,
     trustBullets: [
-      "What the tests cost, read off i-screen's own catalogue",
-      "What $20 off is worth on a $39 test and on a $1,099 panel",
+      "Order online, no GP referral",
       "Whether Medicare applies, from i-screen's own terms",
     ],
   },
@@ -83,40 +82,18 @@ export const iScreenConfig: AffiliatePageConfig = {
     {
       heading: "What ordering directly buys",
       paragraphs: [
-        "Access and speed. You choose the panel yourself, you need no referral, and results are typically back within 48 hours. That matters if waiting for an appointment is the obstacle.",
-        `i-screen's own terms page states that none of its services are Medicare-rebatable or eligible for government subsidy, so the listed price, from ${money(low.price)} to ${money(high.price)}, is what you pay.`,
-      ],
-    },
-    {
-      heading: `What ${money(DISCOUNT_AUD)} off actually saves you`,
-      paragraphs: [
-        `At the cheap end the code is substantial: ${money(DISCOUNT_AUD)} off a ${money(low.price)} test is about ${discountAtCheapest()}. At the top of the catalogue it is about ${discountAtDearest()} of a ${money(high.price)} panel.`,
-        `The code discounts your first test. It is not an ongoing saving, not a discount on a consultation, and not a subscription rate. It is typed at checkout: the click alone does nothing, for you or for us.`,
+        "Access and speed. You choose the panel yourself, you need no referral, and results are typically back within 48 hours.",
+        `Tests start from ${money(low.price)}, and i-screen's own terms page states that none of its services are Medicare-rebatable.`,
       ],
       hasCta: true,
       ctaText: "Browse i-screen's tests",
-    },
-    {
-      heading: "What i-screen tests cost",
-      paragraphs: [
-        // Range only (Jarred, 30 Sep 2026): the full per-test list was replaced by the published range.
-        `i-screen lists ${ACCESS.catalogueSize} tests, priced from ${money(low.price)} for a single marker to ${money(high.price)} for its largest panel, read off its own catalogue on ${readOnLabel}. The test you choose decides the cost far more than the provider does, so check the price of the specific test on i-screen's site.`,
-      ],
-    },
-    {
-      heading: "Who it suits, and who it does not",
-      paragraphs: [
-        "It suits someone with a specific marker in mind who wants it measured without a referral, and someone tracking the same panel over time. It suits less well anyone with symptoms, who is better served by a doctor who can examine them.",
-        ACCESS.interpretation,
-        ACCESS.scope,
-      ],
       disclaimer:
         "General information only. Nothing here is medical advice, a diagnosis, or a claim that any test prevents disease, detects illness early or extends life. Which tests are appropriate for you is a matter for a qualified health professional.",
     },
   ],
 
   steps: [
-    { num: "01", heading: "Choose your test", body: `Pick from the catalogue, which runs ${money(low.price)} to ${money(high.price)}.` },
+    { num: "01", heading: "Choose your test", body: "Pick from i-screen's catalogue on its own site." },
     { num: "02", heading: `Enter ${I_SCREEN_CODE} at checkout`, body: `The code takes ${money(DISCOUNT_AUD)} off your first test. It is typed, not carried by the link, so entering it is the step that matters.` },
     { num: "03", heading: "Give your sample", body: "You attend an affiliated collection centre. No GP referral is needed to order or to attend." },
     { num: "04", heading: "Read your result", body: "Results are typically available within 48 hours depending on the test, in an i-screen dashboard. Discuss anything that concerns you with a practitioner." },
@@ -131,11 +108,7 @@ export const iScreenConfig: AffiliatePageConfig = {
   faqs: [
     {
       q: "What is the current i-screen discount code?",
-      a: `The current i-screen discount code is ${I_SCREEN_CODE}. It takes ${money(DISCOUNT_AUD)} off your first test and is entered at checkout. i-screen supplied it to Refer Labs directly and publishes it nowhere, confirmed ${readOnLabel}. It discounts the first test only: it is not an ongoing saving and not a discount on a consultation. Against a catalogue running ${money(low.price)} to ${money(high.price)}, that is about ${discountAtCheapest()} off the cheapest test and about ${discountAtDearest()} off the dearest.`,
-    },
-    {
-      q: "How much do i-screen tests cost in Australia?",
-      a: `Listed prices ran from ${money(low.price)} for a single marker such as HbA1c or a full blood count, to ${money(high.price)} for the 284-marker Platinum panel with DNA, read off i-screen's own catalogue on ${readOnLabel}. Mid-range annual panels such as the Well Man and Well Woman tests were ${money(249)} and ${money(259)}. That is a spread of about ${spread()}, so "an i-screen test" is not one price.`,
+      a: `The current i-screen discount code is ${I_SCREEN_CODE}. It takes ${money(DISCOUNT_AUD)} off your first test and is entered at checkout. i-screen supplied it to Refer Labs directly and publishes it nowhere, confirmed ${readOnLabel}. It discounts the first test only: it is not an ongoing saving and not a discount on a consultation.`,
     },
     {
       q: "Can you claim i-screen on Medicare?",
@@ -169,7 +142,7 @@ export const iScreenConfig: AffiliatePageConfig = {
     },
     {
       href: "/longevity/diagnostics/biological-age-testing-australia",
-      label: "Biological age testing, and what it is worth",
+      label: "Biological age testing",
       desc: "Why two tests can return different ages from one sample, and why the number is a model output.",
     },
     {

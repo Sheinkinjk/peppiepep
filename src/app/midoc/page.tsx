@@ -29,7 +29,7 @@ const FAQS = [
   },
   {
     q: "How much does a Midoc consultation cost?",
-    a: `Midoc lists standard consultations at ${MIDOC.consultStandard}, covering, among other services, general health, child health, COVID-19, sexual health and STI, smoking cessation and continence. Specialist consultations are listed at ${MIDOC.consultSpecialist}, covering, among other services, men's health priced after the Medicare rebate, dementia support and wound care. A mental health care plan or review is listed as ${MIDOC.mentalHealth}. Medical certificates are ${MIDOC.certificateSingleDay} for a single day and ${MIDOC.certificateWeek} for multiple days. Read off midoc.com.au on ${MIDOC.readOnLabel}, and prices can change.`,
+    a: `Midoc lists standard consultations at ${MIDOC.consultStandard} and specialist consultations at ${MIDOC.consultSpecialist}, with the full price list on its own site. Read off midoc.com.au on ${MIDOC.readOnLabel}.`,
   },
   {
     q: "How long is the wait?",
@@ -42,10 +42,6 @@ const FAQS = [
   {
     q: "Is Midoc available in my state?",
     a: `Midoc states it operates ${MIDOC.coverage}. Read off midoc.com.au on ${MIDOC.readOnLabel}.`,
-  },
-  {
-    q: "Who is Midoc not right for?",
-    a: "Anyone who needs a physical examination, ongoing continuity with one regular GP who knows their history, or emergency care. Telehealth is an access route, not a replacement for either of those. It also will not suit you if you need a prescription and do not hold a Medicare card. This page is general information, not medical advice.",
   },
 ];
 
@@ -98,7 +94,7 @@ export default function MidocPage() {
         <SectionMark kind="pulse" size={56} /></nav>
 
         <h1 className="text-3xl font-extrabold leading-[1.08] tracking-tight text-[#14120f] sm:text-4xl">
-          Midoc: what it costs and how the access route works
+          Midoc: how the online consultation works
         </h1>
 
         {/* Answer-first. Nothing goes above this paragraph. */}
@@ -123,25 +119,6 @@ export default function MidocPage() {
           Any treatment is decided by a registered practitioner after an individual assessment.
         </p>
 
-        <section className="mt-12">
-          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">What a Midoc consultation costs</h2>
-          <p className="mt-3 text-[15px] leading-relaxed text-[#56504a]">
-            Midoc publishes its prices rather than quoting after an assessment, and states there is no
-            membership fee. Every figure below was read off midoc.com.au on {MIDOC.readOnLabel} and can
-            change, so confirm the current price on their site before you book.
-          </p>
-          <dl className="mt-6 divide-y divide-[#f1ede4] overflow-hidden rounded-2xl border border-[#ded8cd] bg-white">
-            {MIDOC.bands.map((p) => (
-              <div key={p.band} className="px-5 py-4 sm:px-6">
-                <dt className="text-[15px] font-bold text-[#14120f]">
-                  {p.band}, {p.price}{" "}
-                  <span className="font-medium text-[#56504a]">({MIDOC.readOnShort})</span>
-                </dt>
-                <dd className="mt-1 text-sm leading-relaxed text-[#56504a]">{p.items}</dd>
-              </div>
-            ))}
-          </dl>
-        </section>
 
         <section className="mt-12">
           <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">How the access route works</h2>
@@ -153,23 +130,11 @@ export default function MidocPage() {
           <p className="mt-4 text-[15px] leading-relaxed text-[#56504a]">
             Hours vary by service. Most run {MIDOC.hoursMost}, with {MIDOC.hoursExceptions}.
           </p>
+          <p className="mt-3 text-[15px] leading-relaxed text-[#56504a]">
+            Telehealth is not for emergencies or for anything that needs a physical examination.
+          </p>
         </section>
 
-        <section className="mt-12">
-          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Who it suits, and who it does not</h2>
-          <p className="mt-3 text-[15px] leading-relaxed text-[#56504a]">
-            It suits someone who wants a decision quickly, outside standard clinic hours, on something
-            they already understand: a certificate, a repeat script, a referral, or a first
-            conversation about a subject they have been putting off. Published pricing and no
-            membership fee make the cost knowable before you start.
-          </p>
-          <p className="mt-3 text-[15px] leading-relaxed text-[#56504a]">
-            It does not suit anyone who needs a physical examination, ongoing continuity with a GP who
-            knows their history, or emergency care. It also will not work if you need a prescription
-            and do not hold a Medicare card, which is the check worth doing before you book rather
-            than after.
-          </p>
-        </section>
 
         <PartnerRoute
           className="mt-12"

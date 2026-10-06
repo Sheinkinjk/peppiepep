@@ -135,6 +135,9 @@ export interface AffiliatePageConfig {
   trustStrip?: (string | { label: string; href: string })[];
   /** Editorial verdict paragraph (the "bottom line") */
   verdict?: string;
+  /** Heading for the bottom box. Health services set a neutral one (6 Oct 2026):
+   *  "Should you use X?" reads as advice on a regulated health service. */
+  verdictHeading?: string;
   /** Verdict supporting bullets */
   verdictPoints?: string[];
   /** Optional pull-quote rendered in the body */
