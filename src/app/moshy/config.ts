@@ -106,11 +106,6 @@ export const moshyConfig: AffiliatePageConfig = {
       desc: "The Australian online weight-management providers compared on how they work and how they are priced.",
     },
     {
-      href: "/moshy-alternatives",
-      label: "Moshy alternatives",
-      desc: "Other routes in Australia, including other telehealth services and your own GP.",
-    },
-    {
       href: "/moshy-vs-gp",
       label: "Moshy vs your GP",
       desc: "Online telehealth against seeing your own doctor.",

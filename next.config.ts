@@ -35,6 +35,10 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // Retired 6 Oct 2026 (Jarred): an alternatives page sends readers away from
+      // the partner it is named after. Readers comparing options land on the
+      // partner-vs-partner page instead.
+      { source: '/moshy-alternatives', destination: '/moshy-vs-juniper', permanent: true },
       // Retired 5 Oct 2026 (Jarred): quizzes with 0 to 2 visits in 90 days. Each
       // 301s to the page it was matching readers into.
       { source: '/newsletter-platform-quiz', destination: '/best-newsletter-platform', permanent: true },

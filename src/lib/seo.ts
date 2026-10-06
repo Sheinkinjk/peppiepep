@@ -1959,6 +1959,7 @@ export const seoConfig = {
     description:
       "Moshy alternatives in Australia: Juniper is the closest like-for-like option we compare, and your GP is a route too. REFERRAL120 takes $120 off Moshy. Information only.",
     url: `${SITE_URL}/moshy-alternatives`,
+    noIndex: true, // retired 6 Oct 2026, 301 to /moshy-vs-juniper in next.config.ts
     keywords: [
       "moshy alternatives",
       "alternatives to moshy",

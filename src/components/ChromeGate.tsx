@@ -70,7 +70,6 @@ const STANDALONE_ROUTES = [
   // Moshy funnel pages
   "/moshy-review",
   "/moshy-vs-gp",
-  "/moshy-alternatives",
   "/weight-loss-telehealth-men-australia",
   // Comparison roundups + head-to-heads (not core business)
   "/moshy-vs-juniper",

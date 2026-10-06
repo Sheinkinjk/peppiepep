@@ -134,7 +134,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/juniper`,           lastModified: AUG13, changeFrequency: 'weekly',  priority: 0.85 },
     { url: `${BASE}/moshy-review`,      lastModified: FRESH, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${BASE}/moshy-vs-gp`,       lastModified: TODAY, changeFrequency: 'monthly', priority: 0.78 },
-    { url: `${BASE}/moshy-alternatives`,lastModified: TODAY, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/weight-loss-telehealth-men-australia`,   lastModified: TODAY, changeFrequency: 'monthly', priority: 0.82 },
     { url: `${BASE}/weight-loss-telehealth-women-australia`, lastModified: AUG13, changeFrequency: 'monthly', priority: 0.82 },
     { url: `${BASE}/weight-loss-telehealth-cost-australia`,  lastModified: TODAY, changeFrequency: 'monthly', priority: 0.85 },
