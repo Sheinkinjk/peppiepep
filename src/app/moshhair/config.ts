@@ -149,7 +149,7 @@ export const moshHairConfig: AffiliatePageConfig = {
     },
     {
       href: "/mosh-review",
-      label: "Mosh Review: Is It Legit, and Is It Worth It?",
+      label: "Mosh Review: Is It Legit?",
       desc: "Who runs the consultations, how billing works, and who Mosh does not suit.",
     },
     {
