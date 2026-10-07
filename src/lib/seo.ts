@@ -873,7 +873,7 @@ export const seoConfig = {
   sexualWellnessProducts: {
     title: "Sexual Wellness Products in Australia: What to Know",
     description:
-      "General information on the non-prescription sexual wellness retail category in Australia, kept separate from our clinical men's health guides. For adults.",
+      "General information on the sexual wellness retail category in Australia. For adults.",
     url: `${SITE_URL}/mens-health/sexual-wellness-products`,
     keywords: ["sexual wellness products australia", "adult wellness retail australia"],
   },

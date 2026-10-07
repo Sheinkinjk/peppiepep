@@ -165,7 +165,7 @@ export const categories = {
       ],
     },
     {
-      label: "Hair Loss Treatment", href: "/hair-loss",
+      label: "Hair Loss", href: "/hair-loss",
       body: "Hair-loss telehealth and your GP compared, on cost and how each works.",
       links: [
         { label: "Mosh: the offer", href: "/moshhair" },
@@ -292,7 +292,7 @@ export const footer = {
       heading: "By category",
       links: [
         { label: "Weight Loss & Telehealth", href: "/weight-loss" },
-        { label: "Hair Loss Treatment", href: "/hair-loss" },
+        { label: "Hair Loss", href: "/hair-loss" },
         { label: "Men's Health", href: "/mens-health" },
         { label: "Solar & Energy", href: "/solar-and-energy" },
         { label: "Website Builders", href: "/compare/website-builders" },
@@ -306,7 +306,7 @@ export const footer = {
       heading: "Top comparisons",
       links: [
         { label: "Best Weight-Loss Telehealth", href: "/best-weight-loss-telehealth-australia" },
-        { label: "Best Hair-Loss Treatment", href: "/best-hair-loss-treatment-australia" },
+        { label: "Hair-Loss Options Compared", href: "/best-hair-loss-treatment-australia" },
         { label: "Best Website Builder", href: "/best-website-builder" },
         { label: "Best Newsletter Platform", href: "/best-newsletter-platform" },
         { label: "Home Battery Rebate 2026", href: "/home-battery-rebate-australia" },

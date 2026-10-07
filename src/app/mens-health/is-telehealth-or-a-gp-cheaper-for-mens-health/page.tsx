@@ -26,7 +26,7 @@ const faqs = [
   },
   {
     q: "How do I compare a subscription against GP appointments?",
-    a: "Annualise both. For the subscription, multiply the monthly figure by twelve and add anything billed separately. For the GP, multiply your realistic number of appointments by the out-of-pocket cost each, then add any pharmacy cost.",
+    a: "Annualise both. For the subscription, multiply the monthly figure by twelve and add anything billed separately. For the GP, multiply your realistic number of appointments by the out-of-pocket cost each.",
   },
   {
     q: "Does telehealth attract a Medicare rebate in Australia?",
@@ -67,7 +67,7 @@ export default function Page() {
           <div className="rounded-2xl border border-[#ded8cd] bg-white p-6">
             <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#56504a]">GP route, per year</p>
             <p className="mt-2 text-[15px] font-semibold text-[#14120f]">
-              (out-of-pocket per appointment × appointments you would book) + any pharmacy cost
+              (out-of-pocket per appointment × appointments you would book)
             </p>
             <p className="mt-2 text-sm text-[#56504a]">
               Out-of-pocket is zero if the practice bulk bills, and the fee minus the rebate if it does not.
@@ -110,15 +110,10 @@ export default function Page() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">When paying more is the right call</h2>
+        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Beyond the price</h2>
         <p className="mt-3">
-          Price is not the only thing being bought here. A significant number of men delay seeking help on these
-          subjects for years, and a service that removes the waiting room sometimes converts intention into an
-          appointment that would otherwise never happen.
-        </p>
-        <p className="mt-3">
-          If that is you, paying a premium to get assessed is a sensible trade rather than a failure of
-          budgeting.
+          An online service removes the waiting room and the booking lead time. For some people that convenience and
+          privacy matter as much as the price.
         </p>
         <p className="mt-3">
           General information for an Australian audience, not medical advice.

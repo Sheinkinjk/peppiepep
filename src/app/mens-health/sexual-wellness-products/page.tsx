@@ -96,7 +96,7 @@ export default function SexualWellnessProductsPage() {
           Sexual wellness products in Australia
         </h1>
         <p className="mt-5 text-lg leading-relaxed text-[#14120f]">
-          This page covers the non-prescription retail category, and it is the only page in our men&apos;s health
+          This page covers the retail category, and it is the only page in our men&apos;s health
           section where retailer links will appear. It is written for adults.
         </p>
 
@@ -163,14 +163,6 @@ export default function SexualWellnessProductsPage() {
             </ul>
           </section>
 
-          <section>
-            <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">When a purchase is not the answer</h2>
-            <p className="mt-3">
-              If something has persisted, is causing distress, or has changed noticeably, that is a reason to speak to a
-              practitioner rather than to buy something. Retail products do not diagnose and are not a treatment
-              pathway, and delaying an assessment to try purchases first is the expensive order to do it in.
-            </p>
-          </section>
 
           <section>
             <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">Common questions</h2>

@@ -50,7 +50,7 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
         h: "What a practitioner decides",
         body: ["What is appropriate for a receding hairline is decided by a registered practitioner after an individual assessment. Refer Labs does not name or compare medicines."],
         bullets: [
-          "Shampoos, supplements and devices sold for hair loss are mostly cosmetic: they change how hair looks, not why it is falling out.",
+          "Shampoos, supplements and devices sold for hair loss are mostly cosmetic products.",
         ],
       },
       {
@@ -62,7 +62,6 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
       },
     ],
     faqs: [
-      { q: "Can a receding hairline be reversed?", a: "A practitioner can explain what is realistic for you after an assessment; no treatment guarantees an outcome. Whether any treatment suits you is a clinical decision made by a registered practitioner." },
       { q: "What is the best treatment for a receding hairline?", a: "No single treatment is right for everyone. A registered practitioner assesses whether any option is appropriate for you. Over-the-counter shampoos and supplements are cosmetic products and involve no assessment." },
       { q: "Is a receding hairline always male pattern baldness?", a: "No. A mature hairline settling slightly higher in your twenties is normal, and other causes of hair loss behave differently and need their own assessment. That is one reason a practitioner review matters before assuming a treatment is right for you." },
       { q: "How do I get a receding hairline assessed in Australia?", a: "Through your GP or an online consultation with a registered practitioner. Telehealth services run this online: you complete a consultation with photos, and a practitioner reviews it and decides whether the program is right for you. Mosh is one such service; Refer Labs readers get 55% off with the code REFERAL55 at checkout (new customers only, first order of a hair program, Mosh's terms apply). Some applicants are declined." },
@@ -103,19 +102,9 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
         ],
       },
       {
-        h: "How to check yourself",
-        body: ["You can track this at home before deciding whether to get assessed."],
-        bullets: [
-          "Compare photos: line up a recent top-of-head and hairline photo against ones from a year or two ago.",
-          "The part test: part your hair the same way in the same light and watch whether the gap widens over a few months.",
-          "The crown check: use your phone camera or two mirrors to see the crown you cannot normally view.",
-          "Track shedding: note whether heavier shedding lasts weeks rather than days.",
-        ],
-      },
-      {
         h: "Where to get it checked",
         body: [
-          "If the signs above are adding up, an assessment tells you the cause, since other causes of hair loss exist and behave differently.",
+          "An assessment tells you the cause, since other causes of hair loss exist and behave differently.",
           "You can start with your GP, or with an online telehealth service where a registered Australian practitioner reviews your case and decides whether the program is right for you. Mosh is one Australian men's service that runs this kind of assessment online.",
         ],
       },

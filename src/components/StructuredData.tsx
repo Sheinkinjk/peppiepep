@@ -146,7 +146,7 @@ export function OrganizationSchema() {
 export function SiteNavigationSchema() {
   const nav = [
     { name: "Weight loss & telehealth", url: "https://referlabs.com.au/weight-loss" },
-    { name: "Hair loss treatment", url: "https://referlabs.com.au/hair-loss" },
+    { name: "Hair loss", url: "https://referlabs.com.au/hair-loss" },
     { name: "Longevity", url: "https://referlabs.com.au/longevity" },
     { name: "Home batteries", url: "https://referlabs.com.au/apollo-energy-group" },
     { name: "Business software", url: "https://referlabs.com.au/business-software" },

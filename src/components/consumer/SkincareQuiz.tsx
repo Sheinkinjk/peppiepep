@@ -99,7 +99,7 @@ function resolve(a: Answers): Result {
   if (a.priority === "ageing") {
     return {
       title: "A consistent topical routine, judged on cost per use",
-      body: "At this budget the topical route is where the value is, and consistency matters more than potency. The trap is buying progressively stronger products hoping to close the gap to prescription strength, which is a regulatory threshold rather than a shelf you can climb.",
+      body: "At this budget the topical route is where the value is, and consistency matters more than potency.",
       next: [
         { href: "/health-and-beauty/best-value-skincare-australia-cost-per-use", label: "Cost per use, not sticker price" },
       ],

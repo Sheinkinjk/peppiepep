@@ -19,7 +19,7 @@ const breadcrumbSchema = {
 
 const hubs = [
   { href: "/weight-loss", label: "Weight Loss", desc: "Telehealth, programs and the GP pathway, compared." },
-  { href: "/hair-loss", label: "Hair Loss", desc: "Clinical prescription treatment versus topical products." },
+  { href: "/hair-loss", label: "Hair Loss", desc: "Online consultation, your GP or over-the-counter products." },
   { href: "/coming-soon", label: "Coming Soon", desc: "The category still being built out, and what is already readable in it." },
   { href: "/health-and-beauty", label: "Health & Beauty", desc: "Skincare, devices and meal replacements: what each costs here, and which claims survive a check." },
   { href: "/sleep", label: "Sleep", desc: "Sleep studies, CPAP costs, mattresses and trackers, separated properly." },
@@ -80,7 +80,7 @@ const sections = [
       { href: "/best-website-builder", label: "Best Website Builder 2026", desc: "Carrd vs Durable AI vs Butternut AI vs Swipe Pages." },
       { href: "/best-newsletter-platform", label: "Best Newsletter Platform 2026", desc: "beehiiv vs Substack vs ConvertKit." },
       { href: "/best-weight-loss-telehealth-australia", label: "Best Weight Loss Telehealth", desc: "Moshy vs Juniper, compared." },
-      { href: "/best-hair-loss-treatment-australia", label: "Best Hair Loss Treatment", desc: "Clinical telehealth vs topical products." },
+      { href: "/best-hair-loss-treatment-australia", label: "Hair-Loss Options Compared", desc: "Online consultation, your GP or over-the-counter products." },
       { href: "/best-ai-sales-tools", label: "Best AI Sales Tools 2026", desc: "GoHighLevel, AiSDR, Reply.io and FullEnrich, by job." },
     ],
   },
@@ -132,7 +132,7 @@ const sections = [
     description: "Online practitioner consultations, your GP, and over-the-counter products for hair loss in Australia.",
     guides: [
       { href: "/hair-loss", label: "Hair Loss: Compare Your Options", desc: "An online consultation, your GP, or over-the-counter products, and which suits whom." },
-      { href: "/best-hair-loss-treatment-australia", label: "Best Hair Loss Treatment", desc: "Mosh and your GP side by side, plus where over-the-counter products fit." },
+      { href: "/best-hair-loss-treatment-australia", label: "Hair-Loss Options Compared", desc: "Mosh and your GP side by side, plus where over-the-counter products fit." },
       { href: "/moshhair", label: "Mosh Hair: What to Know", desc: "Men's hair-loss telehealth. Process, options, current offer." },
       { href: "/mosh-review", label: "Mosh Review: Is It Legit?", desc: "Who runs the consultations and how billing works." },
       { href: "/early-signs-of-hair-loss-australia", label: "Early Signs of Hair Loss", desc: "How to tell if you're going bald, what's normal, and where to get it checked." },
@@ -234,7 +234,7 @@ const sections = [
     guides: [
       { href: "/coming-soon", label: "What We're Building", desc: "What is still in progress, and what is readable today." },
       { href: "/health-and-beauty/skincare-quiz", label: "Skincare Quiz", desc: "Four questions on budget, effort and priority." },
-      { href: "/mens-health/sexual-wellness-products", label: "Sexual Wellness Products", desc: "The non-prescription retail category, kept separate from the clinical guides." },
+      { href: "/mens-health/sexual-wellness-products", label: "Sexual Wellness Products", desc: "The retail category, for adults." },
       { href: "/longevity/recovery", label: "Recovery", desc: "Ice baths and saunas: purchase price and running costs." },
       { href: "/longevity/diagnostics", label: "Diagnostics & Screening", desc: "What the tests cost, and what clinicians say about screening the well." },
     ],
