@@ -57,7 +57,7 @@ const providers: PairProvider[] = [
 
 const guides = [
   { href: "/moshy-review", title: "Moshy review", desc: "How the service runs, from application to subscription." },
-  { href: "/moshy-vs-juniper", title: "Moshy vs Juniper", desc: "What each includes, read off their own sites, and who each suits." },
+  { href: "/moshy-vs-juniper", title: "Moshy vs Juniper", desc: "What each includes and how each is priced, read off their own sites." },
   { href: "/juniper", title: "Juniper review", desc: "Designed for women: what the program includes, who its practitioners are, and how it compares to Moshy." },
   { href: "/best-weight-loss-telehealth-australia", title: "Best weight loss telehealth", desc: "Moshy and Juniper side by side." },
   { href: "/cheapest-weight-loss-telehealth-australia", title: "Cheapest weight loss telehealth", desc: "Subscription vs pay-as-you-go, and what cheapest means." },

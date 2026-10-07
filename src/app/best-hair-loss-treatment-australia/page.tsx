@@ -87,7 +87,7 @@ const webPageSchema = {
 
 const articleSchema = comparisonArticleSchema({
   headline: "Best Hair Loss Treatment Australia 2026: How to Choose",
-  description: "Refer Labs compares an online consultation with Mosh and an appointment with your GP for hair loss in Australia, on who each suits, how it works and how it is priced.",
+  description: "Refer Labs compares an online consultation with Mosh and an appointment with your GP for hair loss in Australia, on how each works and how each is priced.",
   url: "https://referlabs.com.au/best-hair-loss-treatment-australia",
   datePublished: "2026-07-05",
   dateModified: "2026-10-01",
@@ -141,7 +141,7 @@ export default function BestHairLossTreatmentAustraliaPage() {
                 stacked
                 href="#side-by-side"
                 title="See the three routes side by side"
-                sub="An online consultation, over-the-counter products and your GP: what each costs and who each suits."
+                sub="An online consultation, over-the-counter products and your GP: what each involves and how each is priced."
                 cta="Jump to the comparison"
                 dataCta="best-hair-loss-hero-compare"
               />

@@ -27,7 +27,7 @@ export const GROUPS: Group[] = [
       { href: "/weight-loss", label: "Weight loss navigator", note: "Every weight-loss route in one place, compared" },
       { href: "/moshy", label: "Moshy", note: "How the program works, plus $120 off your first order" },
       { href: "/juniper", label: "Juniper", note: "Built for women; JARREDKFC waives the initial consultation" },
-      { href: "/best-weight-loss-telehealth-australia", label: "Compare all providers", note: "Pricing, inclusions and who each suits" },
+      { href: "/best-weight-loss-telehealth-australia", label: "Compare all providers", note: "Pricing and what each includes" },
     ],
   },
   {

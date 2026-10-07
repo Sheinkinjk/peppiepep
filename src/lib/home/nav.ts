@@ -13,7 +13,7 @@ export const hybridNav: NavGroup[] = [
       { href: "/weight-loss", label: "Weight loss navigator", blurb: "Every weight-loss route in one place, compared" },
       { href: "/moshy", label: "Moshy", blurb: "How the program works, plus $120 off your first order" },
       { href: "/juniper", label: "Juniper", blurb: "Built for women; JARREDKFC waives the initial consultation" },
-      { href: "/best-weight-loss-telehealth-australia", label: "Compare all providers", blurb: "Pricing, inclusions and who each suits" },
+      { href: "/best-weight-loss-telehealth-australia", label: "Compare all providers", blurb: "Pricing and what each includes" },
     ],
   },
   {

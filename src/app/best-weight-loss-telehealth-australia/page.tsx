@@ -73,7 +73,7 @@ const itemListSchema = {
   "@context": "https://schema.org",
   "@type": "ItemList",
   name: "Best Weight Loss Telehealth Platforms Australia 2026",
-  description: "Comparison of Australian weight loss telehealth platforms Moshy and Juniper: how each assesses you, what support is included, and who each suits.",
+  description: "Comparison of Australian weight loss telehealth platforms Moshy and Juniper: how each assesses you, what support is included, and how each is priced.",
   numberOfItems: 2,
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Juniper", description: "Australian weight management program designed for women. Practitioner review by specialist GPs and nurse practitioners, meal plans, a physio-designed exercise program and a private community.", url: `${SITE_URL}/juniper` },
@@ -242,7 +242,7 @@ export default function BestWeightLossTelehealthPage() {
               <Link href="/moshy-vs-juniper" className="font-semibold text-[#007a95] hover:underline">
                 Moshy vs Juniper: the two side by side
               </Link>{" "}
-              <span className="text-[#56504a]">covers cost, who each suits and what each includes, question by question.</span>
+              <span className="text-[#56504a]">covers cost and what each includes, question by question.</span>
             </p>
           </section>
 
