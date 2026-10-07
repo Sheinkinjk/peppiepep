@@ -55,7 +55,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/mens-health/is-telehealth-or-a-gp-cheaper-for-mens-health`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE}/mens-health/online-doctor-medical-certificate-australia`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.75 },
     { url: `${BASE}/mens-health/sexual-wellness-products`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${BASE}/mens-health/mens-health-quiz`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.65 },
     // Sleep (19 Aug 2026). Category live and indexed ahead of partners.
     { url: `${BASE}/sleep`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${BASE}/sleep/home-sleep-test-australia-cost`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.72 },
@@ -138,7 +137,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/weight-loss-telehealth-women-australia`, lastModified: AUG13, changeFrequency: 'monthly', priority: 0.82 },
     { url: `${BASE}/weight-loss-telehealth-cost-australia`,  lastModified: TODAY, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${BASE}/weight-loss-cost-calculator`,            lastModified: FRESH, changeFrequency: 'monthly', priority: 0.85 },
-    { url: `${BASE}/weight-loss-quiz`,                       lastModified: FRESH, changeFrequency: 'monthly', priority: 0.88 },
     { url: `${BASE}/moshhair`,          lastModified: TODAY, changeFrequency: 'weekly',  priority: 0.78 },
     { url: `${BASE}/mosh-review`,        lastModified: FRESH, changeFrequency: 'monthly', priority: 0.82 },
     // The medicine-name slugs (/finasteride-australia, /minoxidil-australia,

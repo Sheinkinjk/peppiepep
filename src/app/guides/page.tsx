@@ -234,7 +234,6 @@ const sections = [
     guides: [
       { href: "/coming-soon", label: "What We're Building", desc: "What is still in progress, and what is readable today." },
       { href: "/health-and-beauty/skincare-quiz", label: "Skincare Quiz", desc: "Four questions on budget, effort and priority." },
-      { href: "/mens-health/mens-health-quiz", label: "Men's Health Quiz", desc: "Cost, privacy and consult preference. No health questions." },
       { href: "/mens-health/sexual-wellness-products", label: "Sexual Wellness Products", desc: "The non-prescription retail category, kept separate from the clinical guides." },
       { href: "/longevity/recovery", label: "Recovery", desc: "Ice baths and saunas: purchase price and running costs." },
       { href: "/longevity/diagnostics", label: "Diagnostics & Screening", desc: "What the tests cost, and what clinicians say about screening the well." },

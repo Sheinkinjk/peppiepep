@@ -35,6 +35,10 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // Retired 7 Oct 2026 (Jarred): TGA guidance names eligibility questionnaires
+      // that lead to a prescription service as likely advertising.
+      { source: '/weight-loss-quiz', destination: '/best-weight-loss-telehealth-australia', permanent: true },
+      { source: '/mens-health/mens-health-quiz', destination: '/mens-health', permanent: true },
       // Retired 6 Oct 2026 (Jarred): an alternatives page sends readers away from
       // the partner it is named after. Readers comparing options land on the
       // partner-vs-partner page instead.

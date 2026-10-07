@@ -64,12 +64,6 @@ const guides: GuideLink[] = [
     desc: `From ${MIDOC.certificateSingleDay} for a single day (read ${MIDOC.readOnShort}), with what the review buys you.`,
     kind: "cost",
   },
-  {
-    href: "/mens-health/mens-health-quiz",
-    title: "Which route fits you?",
-    desc: "Four questions on cost, discretion and preference. No health questions.",
-    kind: "quiz",
-  },
 ];
 
 const OTHER: { href: string; label: string; object: ObjectKind }[] = [
@@ -176,11 +170,11 @@ export default function MensHealthHub() {
             <EdgeObject kind="pulse" className="lg:mt-14">
               <MatchPrompt
                 stacked
-                href="/mens-health/mens-health-quiz"
-                title="Which route fits you?"
-                sub="Four questions on cost, discretion and how you prefer to consult. No health questions, no assessment."
-                cta="Find your route"
-                dataCta="mens-health-hero-quiz"
+                href="/mens-health/online-mens-health-clinics-compared"
+                title="How online clinics compare"
+                sub="Consult models, what is billed separately, and where Medicare applies."
+                cta="Compare online clinics"
+                dataCta="mens-health-hero-compare"
               />
             </EdgeObject>
           </div>

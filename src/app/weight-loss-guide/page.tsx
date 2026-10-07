@@ -55,7 +55,6 @@ export default function WeightLossGuidePage() {
         </p>
 
         <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 border-t border-[#ded8cd] pt-6 text-sm">
-          <Link href="/weight-loss-quiz" className="nw-link">Prefer the 60-second quiz?</Link>
           <Link href="/weight-loss" className="nw-link">The full weight-loss hub</Link>
         </div>
       </main>

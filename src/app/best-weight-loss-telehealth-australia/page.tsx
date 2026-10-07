@@ -213,11 +213,11 @@ export default function BestWeightLossTelehealthPage() {
               <EdgeObject kind="scale" className="lg:mt-14">
                 <MatchPrompt
                   stacked
-                  href="/weight-loss-quiz"
-                  title="Not sure which fits you?"
-                  sub="Two questions on the support you want. No health questions, no assessment."
-                  cta="Take the 30-second match"
-                  dataCta="best-wl-telehealth-hero-quiz"
+                  href="#inclusions"
+                  title="See what each includes"
+                  sub="Juniper and Moshy side by side: coaching, app, community and how each is priced."
+                  cta="Jump to the comparison"
+                  dataCta="best-wl-telehealth-hero-compare"
                 />
               </EdgeObject>
             </div>

@@ -14,7 +14,6 @@ export const hybridNav: NavGroup[] = [
       { href: "/moshy", label: "Moshy", blurb: "How the program works, plus $120 off your first order" },
       { href: "/juniper", label: "Juniper", blurb: "Built for women; JARREDKFC waives the initial consultation" },
       { href: "/best-weight-loss-telehealth-australia", label: "Compare all providers", blurb: "Pricing, inclusions and who each suits" },
-      { href: "/weight-loss-quiz", label: "Which pathway fits you?", blurb: "A 60-second match, no sign-up" },
     ],
   },
   {

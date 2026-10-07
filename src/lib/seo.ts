@@ -882,6 +882,7 @@ export const seoConfig = {
     description:
       "A short quiz matching you to a men's health access route based on cost, discretion and how you prefer to consult. Asks no health questions.",
     url: `${SITE_URL}/mens-health/mens-health-quiz`,
+    noIndex: true, // retired 7 Oct 2026, 301 in next.config.ts
     keywords: ["mens health quiz australia", "online clinic or gp quiz", "mens health options australia"],
   },
 
@@ -2410,6 +2411,7 @@ export const seoConfig = {
     description:
       "Answer two quick questions and see which weight-loss route fits you, an online telehealth program or an in-person GP, and why.",
     url: `${SITE_URL}/weight-loss-quiz`,
+    noIndex: true, // retired 7 Oct 2026, 301 in next.config.ts
     keywords: [
       "which weight loss program is right for me",
       "weight loss telehealth or gp",

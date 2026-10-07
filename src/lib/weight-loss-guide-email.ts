@@ -55,12 +55,6 @@ export function buildWeightLossGuideEmail(unsubscribeHref: string): string {
               "A GP can see you in person, already knows your history, and Medicare offsets part of the consultation. It is slower to book than telehealth, but if you prefer being seen in person or have a complex history, it is a sensible starting point. Refer Labs earns nothing from this route.",
               null,
             )}
-            ${optionRow(
-              "Not sure which fits?",
-              "60 seconds, no sign-up",
-              "Our free matcher asks a couple of quick questions and points you to the route that suits your goals, budget and how much support you want, and tells you why.",
-              { label: "Take the quiz", href: utm("/weight-loss-quiz", "wl_guide_quiz") },
-            )}
           </table>
         </td></tr>
         <tr><td style="padding:18px 28px 26px;">

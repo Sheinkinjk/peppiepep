@@ -3,7 +3,7 @@ import ProviderPair, { type PairProvider } from "@/components/consumer/ProviderP
 import { requiredDisclosureFor } from "@/lib/partner-disclosures";
 import ConsumerShell from "@/components/consumer/ConsumerShell";
 import NewsletterSignup from "@/components/consumer/NewsletterSignup";
-import PathwayQuiz from "@/components/consumer/PathwayQuiz";
+import MatchPrompt from "@/components/consumer/MatchPrompt";
 import { generateMetadata as generateSEOMetadata, seoConfig, SITE_URL, SCHEMA_AUTHOR, SCHEMA_PUBLISHER } from "@/lib/seo";
 import { MOSHY_URL, JUNIPER_URL } from "@/lib/affiliate-links";
 import OfferSchema from "@/components/offers/OfferSchema";
@@ -65,7 +65,6 @@ const guides = [
   { href: "/moshy-vs-gp", title: "Telehealth vs your GP", desc: "Online consultations or in-person care: the practical trade." },
   { href: "/weight-loss-telehealth-men-australia", title: "The men's guide", desc: "How men's services work and the pre-signup checklist." },
   { href: "/moshy", title: "Moshy offer & referral link", desc: "$120 off your first order with code REFERRAL120 at checkout." },
-  { href: "/weight-loss-quiz", title: "Which route fits you?", desc: "A short matcher across the online services and your GP." },
   { href: "/weight-loss-cost-calculator", title: "Weight-loss cost calculator", desc: "Estimate the monthly cost of each route before you commit." },
 ];
 
@@ -181,7 +180,16 @@ export default function WeightLossHubPage() {
               <OfferSchema code="REFERRAL120" />
             </div>
 
-            <EdgeObject kind="scale"><PathwayQuiz /></EdgeObject>
+            <EdgeObject kind="scale">
+              <MatchPrompt
+                stacked
+                href="/best-weight-loss-telehealth-australia"
+                title="Compare the online services"
+                sub="Juniper and Moshy side by side: what each includes and how each is priced."
+                cta="Compare all options"
+                dataCta="weight-loss-hub-hero-compare"
+              />
+            </EdgeObject>
           </div>
         </section>
 

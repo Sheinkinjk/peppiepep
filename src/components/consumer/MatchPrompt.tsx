@@ -8,10 +8,10 @@ import { ArrowRight } from "lucide-react";
  * any inline CTAs. Defaults to the weight-loss match; override for other verticals.
  */
 export default function MatchPrompt({
-  href = "/weight-loss-quiz",
-  title = "Not sure which option fits you?",
-  sub = "Answer two quick questions to see the pathway that fits your situation, and the reasoning behind it. About 30 seconds.",
-  cta = "Take the 30-second match",
+  href = "/best-weight-loss-telehealth-australia",
+  title = "Compare the online services",
+  sub = "What each includes and how each is priced, side by side.",
+  cta = "Compare all options",
   dataCta = "match-prompt",
   stacked = false,
 }: {

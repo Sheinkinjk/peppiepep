@@ -56,7 +56,6 @@ export default function Page() {
       related={[
         { href: "/mens-health/is-telehealth-or-a-gp-cheaper-for-mens-health", label: "Telehealth or a GP?" },
         { href: "/mens-health/online-doctor-medical-certificate-australia", label: "Online medical certificates" },
-        { href: "/mens-health/mens-health-quiz", label: "Which route fits you?" },
       ]}
     >
       <section>
