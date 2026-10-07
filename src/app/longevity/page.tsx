@@ -78,7 +78,6 @@ export default function LongevityHub() {
       otherLinks={[
         { href: "/sleep", label: "Sleep" },
         { href: "/health-and-beauty", label: "Health & beauty" },
-        { href: "/mens-health", label: "Men's health" },
       ]}
       listName="Longevity guides"
       title={seoConfig.longevityHub.title}

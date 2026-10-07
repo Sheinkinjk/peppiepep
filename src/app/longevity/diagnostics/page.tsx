@@ -70,7 +70,6 @@ export default function DiagnosticsHub() {
       otherLinks={[
         { href: "/longevity", label: "Longevity" },
         { href: "/longevity/recovery", label: "Recovery" },
-        { href: "/mens-health", label: "Men's health" },
       ]}
       listName="Diagnostics guides"
       title={seoConfig.diagnosticsHub.title}

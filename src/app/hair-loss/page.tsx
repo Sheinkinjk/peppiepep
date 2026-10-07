@@ -29,7 +29,7 @@ const guides = [
 const faqs = [
   {
     q: "What are my options for hair loss in Australia?",
-    a: "Three. An online consultation with a service such as Mosh, where a registered practitioner decides whether any treatment is appropriate; an appointment with your GP; or over-the-counter shampoos and serums, which are cosmetic. Your GP and an online consultation are the two ways to be assessed; over-the-counter products need no consult.",
+    a: "Three. An online consultation with a service such as Mosh, where a registered practitioner decides what is appropriate for you; an appointment with your GP; or over-the-counter shampoos and serums, which are cosmetic. Your GP and an online consultation are the two ways to be assessed; over-the-counter products need no consult.",
   },
   {
     q: "Are over-the-counter products enough on their own?",
@@ -41,7 +41,7 @@ const faqs = [
   },
   {
     q: "Is any of this medical advice?",
-    a: "No. This hub is general information about services and products. Any treatment is decided by a registered practitioner after an individual assessment. Speak to a qualified health professional about your own situation.",
+    a: "No. This hub is general information about services and products. What is appropriate for you is decided by a registered practitioner after an individual assessment. Speak to a qualified health professional about your own situation.",
   },
 ];
 
@@ -211,7 +211,7 @@ export default function HairLossHubPage() {
           <OfferTermsNote brand="Mosh" className="mt-6 max-w-3xl" />
           <p className="mt-8 max-w-3xl rounded-xl border border-[#ded8cd] bg-[#f7f4ee] px-5 py-4 text-xs leading-relaxed text-[#56504a]">
             <span className="font-semibold text-[#14120f]">Information only.</span> Nothing here is medical advice or a
-            recommendation of any treatment. Any treatment is decided by a registered practitioner after an individual
+            recommendation of any treatment. What is appropriate for you is decided by a registered practitioner after an individual
             assessment.
           </p>
           <AffiliateDisclosure className="mt-3 max-w-3xl" />

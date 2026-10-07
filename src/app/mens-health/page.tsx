@@ -80,7 +80,7 @@ const faqs = [
   },
   {
     q: "Are online men's health clinics legitimate in Australia?",
-    a: "The established ones operate as regulated telehealth services: you complete an assessment, an Australian-registered practitioner reviews it, and any treatment is decided by the practitioner after an individual assessment. The check to run on any service is whether a practitioner consultation happens before any treatment is decided. A service offering to skip that step is the warning sign.",
+    a: "The established ones operate as regulated telehealth services: you complete an assessment, an Australian-registered practitioner reviews it, and the practitioner decides what is appropriate for you after an individual assessment. The check to run on any service is whether a practitioner consultation happens before anything is decided. A service offering to skip that step is the warning sign.",
   },
   {
     q: "Is men's health covered by Medicare?",

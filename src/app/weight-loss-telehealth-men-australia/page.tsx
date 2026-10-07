@@ -86,8 +86,8 @@ export default function WeightLossTelehealthMenPage() {
           For men in Australia, the weight-management telehealth service we cover is Moshy. It describes itself as
           an online women&apos;s health clinic, but its services are open to anyone a practitioner assesses as
           suitable; Juniper, the other service we compare, is designed for women. Moshy starts with an online
-          questionnaire and a consult by phone or video with a registered practitioner, who decides whether any
-          treatment is appropriate. It includes in-app coaching, dietitian meal plans and a community, and its code
+          questionnaire and a consult by phone or video with a registered practitioner, who decides what is
+          appropriate for you. It includes in-app coaching, dietitian meal plans and a community, and its code
           REFERRAL120 takes $120 off a first order.
         </p>
 
@@ -100,7 +100,7 @@ export default function WeightLossTelehealthMenPage() {
           <h2 className="text-xl font-black">How it works</h2>
           <p className="text-[#56504a] text-sm sm:text-base leading-relaxed">
             You complete an online questionnaire in your own time. A registered practitioner reviews it and consults
-            with you by phone or video, then decides whether any treatment is appropriate. Some applicants are declined.
+            with you by phone or video, then decides what is appropriate for you. Some applicants are declined.
             A service that promises a particular treatment before a practitioner has assessed you is one to avoid.
           </p>
         </section>
@@ -178,7 +178,7 @@ export default function WeightLossTelehealthMenPage() {
 
         <p className="text-[#56504a] text-xs mt-8 leading-relaxed">
           This page is operated by Refer Labs and contains an affiliate referral link. We may earn a commission if you
-          sign up through it, at no extra cost to you. Nothing here is medical advice. Any treatment is decided by a
+          sign up through it, at no extra cost to you. Nothing here is medical advice. What is appropriate for you is decided by a
           registered practitioner after an individual assessment. Always consult a qualified health
           professional before making health decisions.
         </p>

@@ -215,7 +215,7 @@ export default function MoshyVsGpPage() {
 
         <AffiliateDisclosure className="mt-8" />
         <p className="text-[#56504a] text-xs mt-3 leading-relaxed">
-          Nothing here is medical advice. Any treatment is decided by a registered practitioner after an individual
+          Nothing here is medical advice. What is appropriate for you is decided by a registered practitioner after an individual
           assessment. Always consult a qualified health
           professional about your own circumstances.
         </p>

@@ -175,7 +175,7 @@ export default function WeightLossCostCalculatorPage() {
               This page is operated by Refer Labs and contains a disclosed affiliate referral link to Moshy. We
               may earn a commission if you sign up through it, at no extra cost to you, and it never changes a
               conclusion. All content is general information only and does not constitute medical or financial
-              advice. Any treatment is decided by a registered practitioner after an individual assessment.
+              advice. What is appropriate for you is decided by a registered practitioner after an individual assessment.
               Consult a qualified health professional before making health decisions.
             </p>
           </section>

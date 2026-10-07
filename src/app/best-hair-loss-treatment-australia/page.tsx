@@ -37,7 +37,7 @@ const MOSH_READ = "30 September 2026";
 const FAQS = [
   {
     q: "What is the best hair loss treatment in Australia?",
-    a: "There is no single best treatment, because what is appropriate depends on the cause and stage of the hair loss. The practical choice is who assesses you: an online service such as Mosh, or your GP. A registered practitioner decides whether any treatment is appropriate. Over-the-counter shampoos and serums are cosmetic and need no consult. Sudden, patchy or unexplained hair loss is a reason to see a GP first.",
+    a: "There is no single best treatment, because what is appropriate depends on the cause and stage of the hair loss. The practical choice is who assesses you: an online service such as Mosh, or your GP. A registered practitioner decides what is appropriate for you. Over-the-counter shampoos and serums are cosmetic and need no consult. Sudden, patchy or unexplained hair loss is a reason to see a GP first.",
   },
   {
     q: "How much does hair loss treatment cost per month in Australia?",
@@ -128,7 +128,7 @@ export default function BestHairLossTreatmentAustraliaPage() {
               {/* The answer, directly under the h1. Nothing between: check-answer-slot. */}
               <p className="text-[#14120f] text-base sm:text-lg leading-relaxed">
                 The practical choice is who assesses you: an online service such as Mosh, or your GP. A registered
-                practitioner decides whether any treatment is appropriate. Mosh is an online consultation with an
+                practitioner decides what is appropriate for you. Mosh is an online consultation with an
                 AHPRA-registered practitioner; it is for men and runs fully online.
                 A GP sees anyone, can order tests and refer you on, and the consult may be bulk-billed. Over-the-counter
                 shampoos and serums are cosmetic and need no consult. Sudden or patchy loss, or hair loss in a woman, is

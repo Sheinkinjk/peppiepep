@@ -115,8 +115,8 @@ export default function MoshReviewPage() {
         <p className="text-[#14120f] text-base sm:text-lg leading-relaxed mb-4 max-w-2xl">
           Yes, Mosh is legit. It is an Australian-owned telehealth service that says it works only with AHPRA-registered
           doctors and nurse practitioners based in Australia, pays them on a fee-for-service basis, and is certified by
-          LegitScript (getmosh.com.au, read {MOSH_READ}). The consultation is online, and a practitioner decides whether any
-          treatment is appropriate.
+          LegitScript (getmosh.com.au, read {MOSH_READ}). The consultation is online, and a practitioner decides what is
+          appropriate for you.
         </p>
         {/* Below the lead. The first paragraph after the h1 is the answer;
             a disclosure in that slot is what an engine lifts instead. Still
@@ -131,8 +131,8 @@ export default function MoshReviewPage() {
         <section className="space-y-4 mb-10">
           <h2 className="text-xl font-black">How Mosh works</h2>
           <p className="text-[#56504a] text-sm sm:text-base leading-relaxed">
-            Mosh is an online consultation with an AHPRA-registered practitioner, who decides whether any treatment is
-            appropriate. For hair loss you answer questions about your history and general health and upload photos;
+            Mosh is an online consultation with an AHPRA-registered practitioner, who decides what is appropriate for
+            you. For hair loss you answer questions about your history and general health and upload photos;
             the practitioner may follow up by message, call or video. There is no charge for the initial consultation;
             program fees apply.
           </p>

@@ -296,7 +296,7 @@ export default function CostPlanner() {
       <p className="mt-5 text-xs leading-relaxed text-[#56504a] max-w-2xl">
         This planner compares pricing structures and preferences only. It is not medical or financial
         advice, it does not assess suitability for any treatment, and it does not recommend any treatment.
-        Any treatment is decided by a registered practitioner after an individual assessment, and some
+        What is appropriate for you is decided by a registered practitioner after an individual assessment, and some
         applicants are declined.
       </p>
     </div>

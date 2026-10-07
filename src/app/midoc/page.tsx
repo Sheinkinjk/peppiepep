@@ -116,7 +116,7 @@ export default function MidocPage() {
         <p className="mt-6 rounded-xl border border-[#ded8cd] bg-[#f7f4ee] px-5 py-4 text-xs leading-relaxed text-[#56504a]">
           <span className="font-semibold text-[#56504a]">Information only.</span> This page describes a
           service and how to reach it. It is not medical advice and does not recommend any treatment.
-          Any treatment is decided by a registered practitioner after an individual assessment.
+          What is appropriate for you is decided by a registered practitioner after an individual assessment.
         </p>
 
 

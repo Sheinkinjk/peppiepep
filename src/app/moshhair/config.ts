@@ -47,7 +47,7 @@ export const moshHairConfig: AffiliatePageConfig = {
   offerTermsUrl: MOSH_TERMS_URL,
 
   quickAnswer:
-    "The Mosh discount code through Refer Labs is REFERAL55, worth 55% off a new customer's first order of a Mosh hair program, under Mosh's terms. Use code REFERAL55 at checkout; our link opens Mosh's sign-up with the offer. Mosh is an online consultation with an AHPRA-registered practitioner, who decides whether any treatment is appropriate.",
+    "The Mosh discount code through Refer Labs is REFERAL55, worth 55% off a new customer's first order of a Mosh hair program, under Mosh's terms. Use code REFERAL55 at checkout; our link opens Mosh's sign-up with the offer. Mosh is an online consultation with an AHPRA-registered practitioner, who decides what is appropriate for you.",
 
   // Not rendered by PremiumAffiliateLanding; kept because the type requires it.
   banner: {
@@ -84,7 +84,7 @@ export const moshHairConfig: AffiliatePageConfig = {
     h1Highlight: "55% off your first order",
     // The lead: the code and what it discounts first, then one line on what Mosh is.
     subheading:
-      "REFERAL55 takes 55% off a new customer's first Mosh order. Use code REFERAL55 at checkout; our link opens Mosh's sign-up with the offer. Mosh is an online consultation with an AHPRA-registered practitioner, who decides whether any treatment is appropriate.",
+      "REFERAL55 takes 55% off a new customer's first Mosh order. Use code REFERAL55 at checkout; our link opens Mosh's sign-up with the offer. Mosh is an online consultation with an AHPRA-registered practitioner, who decides what is appropriate for you.",
     trustBullets: [],
   },
 
@@ -94,7 +94,7 @@ export const moshHairConfig: AffiliatePageConfig = {
       paragraphs: [
         "You start through the link on this page, which opens Mosh's sign-up at getmosh.com.au. You answer questions about your hair loss and general health and upload photos; Mosh describes it as a five-minute quiz.",
         `An AHPRA-registered doctor or nurse practitioner based in Australia reviews your answers, and may follow up by message, call or video. Mosh says its practitioners are paid on a fee-for-service basis (getmosh.com.au, read ${MOSH_READ}). Some applicants are declined, or told to see a GP in person.`,
-        "If you go ahead, the plan, billing and any changes are managed through your Mosh account, and you can message your practitioner while you are on it. Any treatment is decided by the practitioner after an individual assessment.",
+        "If you go ahead, the plan, billing and any changes are managed through your Mosh account, and you can message your practitioner while you are on it. What is appropriate for you is decided by the practitioner after an individual assessment.",
         "There is no charge for the initial consultation; program fees apply, and Mosh shows the price before you pay. If hair loss is sudden or patchy, or comes with scalp symptoms, see a GP in person.",
       ],
       hasCta: true,

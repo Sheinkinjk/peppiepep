@@ -54,7 +54,7 @@ const faqs = [
   },
   {
     q: "When does a skin concern need a practitioner in Australia?",
-    a: "Some skin conditions need a practitioner's assessment, and a practitioner decides whether any treatment is appropriate. Over-the-counter products, including retinol, are available without one. We describe how each route is accessed rather than naming specific medicines, because advertising prescription medicines to the public is prohibited here.",
+    a: "Some skin conditions need a practitioner's assessment, and a practitioner decides what is appropriate for you. Over-the-counter products, including retinol, are available without one. We describe how each route is accessed rather than naming specific medicines, because advertising prescription medicines to the public is prohibited here.",
   },
   {
     q: "Are LED face masks regulated in Australia?",

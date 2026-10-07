@@ -37,7 +37,7 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
       keywords: ["receding hairline treatment australia", "receding hairline", "receding hairline men australia"],
     },
     lead:
-      "A receding hairline, where the hair retreats at the temples and along the front, is one of the earliest and most common signs of male pattern hair loss. Your GP or an online consultation with a registered practitioner can confirm the cause, and whether any treatment is appropriate is that practitioner's decision after an individual assessment.",
+      "A receding hairline, where the hair retreats at the temples and along the front, is one of the earliest and most common signs of male pattern hair loss. Your GP or an online consultation with a registered practitioner can confirm the cause, and decides what is appropriate for you after an individual assessment.",
     sections: [
       {
         h: "Why a hairline recedes",
@@ -48,7 +48,7 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
       },
       {
         h: "What a practitioner decides",
-        body: ["Whether any treatment suits a receding hairline is decided by a registered practitioner after an individual assessment. Refer Labs does not name or compare medicines."],
+        body: ["What is appropriate for a receding hairline is decided by a registered practitioner after an individual assessment. Refer Labs does not name or compare medicines."],
         bullets: [
           "Shampoos, supplements and devices sold for hair loss are mostly cosmetic: they change how hair looks, not why it is falling out.",
         ],

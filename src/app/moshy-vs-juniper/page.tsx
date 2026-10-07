@@ -74,7 +74,7 @@ const faqs = [
   },
   {
     q: "Can I switch from one to the other?",
-    a: "Yes. You would start with the other provider as a new patient. Tell the new practitioner about any plan you are currently on so they can assess you properly.",
+    a: "Yes. You would start with the other provider as a new patient. Tell the new practitioner about your current program and health history so they can assess you properly.",
   },
 ];
 

@@ -148,7 +148,7 @@ export default function Page() {
           listing is not an endorsement, so treat it as a place to start rather than a recommendation.
         </p>
         <p className="mt-3">
-          General information for an Australian audience, not medical advice. Any treatment is decided by a registered
+          General information for an Australian audience, not medical advice. What is appropriate for you is decided by a registered
           practitioner after an assessment.
         </p>
       </section>

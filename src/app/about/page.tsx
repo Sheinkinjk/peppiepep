@@ -148,7 +148,7 @@ export default function AboutPage() {
             </div>
             <p className={P}>
               This is desk research. Refer Labs does not use most of what it covers and does not claim to. For services
-              that cannot be tried, such as prescription telehealth, the pages describe the published process and link
+              that cannot be tried, such as online consultations, the pages describe the published process and link
               to the source so a reader can check it. Terms change, so every page quoting a price asks the reader to
               confirm current pricing with the provider before committing.
             </p>

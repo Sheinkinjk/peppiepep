@@ -17,7 +17,7 @@ export const REFERRAL120_CHECKED = checkedOn("REFERRAL120") ?? "";
 
 /** The answer paragraph under the h1. Also the page's quickAnswer. */
 export const MOSHY_LEAD =
-  "The current Moshy discount code is REFERRAL120: $120 off a new customer's first order on eligible Moshy weight programs. Use code REFERRAL120 at checkout; our link opens Moshy's sign-up with the offer. Moshy is an Australian weight-management telehealth service, brother brand of Mosh, where a registered practitioner decides whether any treatment is appropriate.";
+  "The current Moshy discount code is REFERRAL120: $120 off a new customer's first order on eligible Moshy weight programs. Use code REFERRAL120 at checkout; our link opens Moshy's sign-up with the offer. Moshy is an Australian weight-management telehealth service, brother brand of Mosh, where a registered practitioner decides what is appropriate for you.";
 
 export const moshyConfig: AffiliatePageConfig = {
   brand: "Moshy",
@@ -129,5 +129,5 @@ export const moshyConfig: AffiliatePageConfig = {
   },
 
   disclaimer:
-    "You will be taken to getmoshy.com.au. This page is operated by Refer Labs and contains an affiliate referral link. It is information about a service, not medical advice. Any treatment is decided by a registered practitioner after an individual assessment. Offers and pricing can change; check current terms on Moshy's own site.",
+    "You will be taken to getmoshy.com.au. This page is operated by Refer Labs and contains an affiliate referral link. It is information about a service, not medical advice. What is appropriate for you is decided by a registered practitioner after an individual assessment. Offers and pricing can change; check current terms on Moshy's own site.",
 };

@@ -56,7 +56,7 @@ const faqs = [
   },
   {
     q: "Is hair-loss care covered by Medicare or the PBS?",
-    a: `Medicare can rebate a GP consult, which may also be bulk-billed. The PBS does not subsidise hair-loss care, and over-the-counter products are not subsidised. Mosh does not charge for its initial consultation, and its program fees are private: its pricing page mentions bulk billing only for mental-health consults, not hair loss (read ${MOSH_READ}).`,
+    a: `Medicare can rebate a GP consult, which may also be bulk-billed. Over-the-counter products are not subsidised. Mosh does not charge for its initial consultation, and its program fees are private: its pricing page mentions bulk billing only for mental-health consults, not hair loss (read ${MOSH_READ}).`,
   },
   {
     q: "Is it cheaper to buy an over-the-counter product myself?",
@@ -151,7 +151,7 @@ export default function HairLossTreatmentCostAustraliaPage() {
                   product is a one-off purchase you repeat, priced by the retailer and paid entirely by you. A telehealth
                   plan is a recurring charge that covers the practitioner consultation and ongoing check-ins, so the
                   monthly figure covers more than a product. A GP consult is a per-visit fee that Medicare may rebate or
-                  the practice may bulk-bill. The PBS does not subsidise hair-loss care.
+                  the practice may bulk-bill.
                 </p>
                 <p className="mt-3 text-[15px] leading-relaxed text-[#14120f]">
                   Mosh lists its plans on its own pricing page; the practitioner decides which, if any, applies, and
@@ -199,7 +199,7 @@ export default function HairLossTreatmentCostAustraliaPage() {
                 </p>
                 <p>
                   <span className="font-semibold text-[#14120f]">A telehealth plan.</span> An online consultation with a
-                  registered practitioner, who decides whether any treatment is appropriate, billed as a recurring
+                  registered practitioner, who decides what is appropriate for you, billed as a recurring
                   subscription.
                 </p>
               </div>
@@ -223,8 +223,8 @@ export default function HairLossTreatmentCostAustraliaPage() {
               </h2>
               <div className="mt-4 space-y-4 text-[15px] leading-relaxed text-[#56504a]">
                 <p>
-                  Medicare can rebate a GP consult, and some practices bulk-bill. The PBS does not subsidise hair-loss
-                  care, and over-the-counter products are not subsidised either. Mosh does not charge for its initial
+                  Medicare can rebate a GP consult, and some practices bulk-bill. Over-the-counter products are not
+                  subsidised. Mosh does not charge for its initial
                   consultation, and its program fees are private: its pricing page mentions bulk billing only for its
                   mental-health consults, not for hair loss (read {MOSH_READ}).
                 </p>

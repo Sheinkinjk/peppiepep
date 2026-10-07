@@ -35,7 +35,7 @@ export const SEARCH_INDEX: SearchEntry[] = [
   { title: "Biological age testing", href: "/longevity/diagnostics/biological-age-testing-australia", category: "Longevity", kind: "Guide", keywords: "biological age test australia epigenetic methylation" },
   { title: "CGM without diabetes", href: "/longevity/diagnostics/cgm-for-non-diabetics-australia", category: "Longevity", kind: "Guide", keywords: "cgm non diabetic australia glucose monitor cost ndss" },
   { title: "Longevity supplements evidence", href: "/longevity/supplements/longevity-supplements-evidence-review", category: "Longevity", kind: "Guide", keywords: "longevity supplements australia aust l evidence review" },
-  { title: "Women's health", href: "/womens-health", category: "Women's health", kind: "Category", keywords: "womens health australia uti contraception menopause pharmacist telehealth" },
+  { title: "Women's health", href: "/womens-health", category: "Women's health", kind: "Category", keywords: "womens health australia uti menopause pharmacist telehealth" },
   { title: "Menopause care costs", href: "/womens-health/menopause-care-cost-australia", category: "Women's health", kind: "Guide", keywords: "menopause cost medicare assessment item 695 telehealth clinic perimenopause" },
   { title: "UTI treatment without a GP", href: "/womens-health/uti-treatment-without-a-gp-australia", category: "Women's health", kind: "Guide", keywords: "uti pharmacist treatment chemist care now cost state" },
   { title: "Men's health", href: "/mens-health", category: "Men's health", kind: "Category", keywords: "mens health australia online clinic telehealth medical certificate cost" },
@@ -69,7 +69,7 @@ export const SEARCH_INDEX: SearchEntry[] = [
   { title: "Moshy vs your GP", href: "/moshy-vs-gp", category: "Weight loss", kind: "Guide", keywords: "doctor bulk bill medicare gp telehealth" },
   { title: "Weight-loss cost calculator", href: "/weight-loss-cost-calculator", category: "Weight loss", kind: "Guide", keywords: "cost calculator price how much pay subscription gp medicare pathway planner tool" },
   { title: "Weight loss telehealth for men", href: "/weight-loss-telehealth-men-australia", category: "Weight loss", kind: "Guide", keywords: "mens weight loss male" },
-  { title: "Midoc: telehealth consultation costs", href: "/midoc", category: "Men's health", kind: "Review", keywords: "midoc telehealth online doctor australia medical certificate script referral" },
+  { title: "Midoc: telehealth consultation costs", href: "/midoc", category: "Men's health", kind: "Review", keywords: "midoc telehealth online doctor australia medical certificate referral" },
   { title: "Moshy offer & referral link", href: "/moshy", category: "Weight loss", kind: "Guide", keywords: "getmoshy discount code deal sign up" },
   { title: "getmoshy.com.au explained", href: "/moshy", category: "Weight loss", kind: "Guide", keywords: "moshy website legit real official domain" },
 
@@ -77,10 +77,10 @@ export const SEARCH_INDEX: SearchEntry[] = [
   { title: "Hair loss: compare your options", href: "/hair-loss", category: "Hair loss", kind: "Guide", keywords: "hair loss australia compare telehealth gp over the counter options men" },
   { title: "Best hair loss treatment in Australia", href: "/best-hair-loss-treatment-australia", category: "Hair loss", kind: "Guide", keywords: "mosh or gp telehealth over the counter compare hair loss" },
   { title: "Mosh hair: what to know & offer", href: "/moshhair", category: "Hair loss", kind: "Guide", keywords: "mosh review mens hair loss telehealth offer discount" },
-  { title: "Mosh review: is it legit?", href: "/mosh-review", category: "Hair loss", kind: "Guide", keywords: "mosh review is mosh legit does mosh work reviews australia" },
+  { title: "Mosh review: is it legit?", href: "/mosh-review", category: "Hair loss", kind: "Guide", keywords: "mosh review is mosh legit reviews australia" },
   { title: "Early signs of hair loss in men", href: "/early-signs-of-hair-loss-australia", category: "Hair loss", kind: "Guide", keywords: "early signs of hair loss am i going bald how to tell thinning crown balding signs" },
-  { title: "Hair loss treatment cost in Australia", href: "/hair-loss-treatment-cost-australia", category: "Hair loss", kind: "Guide", keywords: "hair loss treatment cost australia mosh price subscription telehealth" },
-  { title: "Receding hairline: causes and assessment", href: "/receding-hairline-treatment-australia", category: "Hair loss", kind: "Guide", keywords: "receding hairline treatment male pattern telehealth australia" },
+  { title: "Hair loss treatment cost in Australia", href: "/hair-loss-treatment-cost-australia", category: "Hair loss", kind: "Guide", keywords: "hair loss cost australia mosh online consultation subscription" },
+  { title: "Receding hairline: causes and assessment", href: "/receding-hairline-treatment-australia", category: "Hair loss", kind: "Guide", keywords: "receding hairline male pattern hair loss online consultation australia" },
 
   // Men's health
 
@@ -134,7 +134,7 @@ export const SEARCH_INDEX: SearchEntry[] = [
   { title: "What size home battery do I need", href: "/what-size-home-battery-do-i-need-australia", category: "Solar & energy", kind: "Guide", keywords: "what size home battery do i need kwh sizing calculator australia how many" },
   { title: "NSW home battery rebate 2026", href: "/nsw-home-battery-rebate-2026", category: "Solar & energy", kind: "Guide", keywords: "nsw home battery rebate 2026 vpp incentive federal stack sydney pdrs" },
   { title: "Home battery installer NSW", href: "/home-battery-installer-nsw", category: "Solar & energy", kind: "Guide", keywords: "home battery installer nsw sydney saa accredited electrical licence solar battery installation" },
-  { title: "Weight loss telehealth for women", href: "/weight-loss-telehealth-women-australia", category: "Health", kind: "Guide", keywords: "weight loss telehealth women australia female online program juniper alternative moshy" },
+  { title: "Weight loss telehealth for women", href: "/weight-loss-telehealth-women-australia", category: "Health", kind: "Guide", keywords: "weight loss telehealth women australia female online program juniper moshy" },
   { title: "Best CRM for small business", href: "/best-crm-small-business-australia", category: "Business software", kind: "Guide", keywords: "best crm small business australia pipedrive capsule nutshell keap cheapest simple crm" },
   { title: "Home battery installer Sydney", href: "/home-battery-installer-sydney", category: "Solar & energy", kind: "Guide", keywords: "home battery installer sydney solar battery installation sydney metro nsw saa accredited" },
   { title: "Solar and battery packages", href: "/solar-and-battery-package-australia", category: "Solar & energy", kind: "Guide", keywords: "solar and battery package australia bundle solar plus storage sizing rebate cost" },

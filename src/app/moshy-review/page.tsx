@@ -112,8 +112,8 @@ export default function MoshyReviewPage() {
           Yes, Moshy is a legitimate Australian telehealth service: it says its practitioners are independent
           AHPRA-registered doctors and nurses paid on a fee-for-service basis, and its own site states it is
           NSQPCH-accredited, LegitScript-certified and ISO/IEC 27001 certified (read {READ_ON}). It is the brother brand
-          of Mosh, and the service is an online consultation with a registered practitioner, who decides whether any
-          treatment is appropriate.
+          of Mosh, and the service is an online consultation with a registered practitioner, who decides what is
+          appropriate for you.
         </p>
         {/* Below the lead, above the first affiliate link. */}
         <AffiliateDisclosure compact className="mt-4 max-w-2xl" />
@@ -216,7 +216,7 @@ export default function MoshyReviewPage() {
 
         <AffiliateDisclosure className="mt-8" />
         <p className="text-[#56504a] text-xs mt-3 leading-relaxed">
-          Nothing on this page is medical advice. Any treatment is decided by a registered practitioner after an
+          Nothing on this page is medical advice. What is appropriate for you is decided by a registered practitioner after an
           individual assessment. Offers and pricing can change; check current terms on Moshy&apos;s own site.
         </p>
         <p className="text-[#56504a] text-xs mt-4">© 2026 Refer Labs · Australia · <Link href="/guides" className="hover:text-[#56504a]">All guides</Link></p>

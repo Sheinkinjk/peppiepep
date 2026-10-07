@@ -293,7 +293,7 @@ export default function WeightLossTelehealthCostAustraliaPage() {
                 This page is published by Refer Labs, an independent comparison publisher, and contains a disclosed affiliate link to
                 Moshy, which means we may earn a commission if you sign up through our link. Commissions never change what we write.
                 All content is for general information only and does not constitute medical or financial advice. Prices vary between
-                services and change over time. Any treatment is decided by a registered practitioner after an individual
+                services and change over time. What is appropriate for you is decided by a registered practitioner after an individual
                 assessment. Confirm current pricing directly with the service, and consult a
                 qualified health professional before starting any treatment.
               </p>

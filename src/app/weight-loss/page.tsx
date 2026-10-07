@@ -170,7 +170,7 @@ export default function WeightLossHubPage() {
               </h1>
               <p className="mt-5 text-lg leading-relaxed text-[#14120f]">
                 Online weight loss telehealth lets you start without waiting weeks for an appointment: you complete an
-                assessment, a registered practitioner reviews it, and a plan follows if you&apos;re suitable. This hub
+                assessment, and a registered practitioner reviews it and decides whether the program is right for you. This hub
                 compares the two Australian online services we cover, Moshy and Juniper, and sets them beside your GP.
               </p>
               {/* Below the lead. The first paragraph after the h1 is the answer;
@@ -272,7 +272,7 @@ export default function WeightLossHubPage() {
           <StepTrack steps={[
             { title: "A health questionnaire", object: "checklist", body: "You answer a detailed health questionnaire online, in your own time." },
             { title: "A practitioner reviews it", object: "phone", body: "A registered practitioner reviews your answers remotely. Some applicants are declined." },
-            { title: "A plan, if you are suitable", object: "document", body: "Only if you are considered suitable does a plan get discussed. Follow-ups happen remotely too." },
+            { title: "The practitioner decides", object: "document", body: "The practitioner decides whether the program is right for you. Follow-ups happen remotely too." },
           ]} />
           <div className="mt-5 max-w-3xl space-y-4 text-[15px] leading-relaxed text-[#56504a]">
             <p>
