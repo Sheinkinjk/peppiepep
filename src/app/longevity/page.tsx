@@ -21,10 +21,6 @@ const faqs = [
     a: "It varies enormously by category, and the ranking is not the one the industry promotes. Sleep, movement and not smoking are free and have the strongest evidence behind them. Recovery hardware is a comfort and consistency purchase with modest supporting evidence. Screening and supplements are where the gap between price and demonstrated benefit is widest, which is why our guides in those areas carry the criticism as well as the pitch.",
   },
   {
-    q: "Why does this section include arguments against buying?",
-    a: "Because in this category they are the part that is hardest to find elsewhere. Whole-body MRI screening in people without symptoms is contested among Australian clinicians, and biological-age tests can return different results from the same sample. Leaving that out would make these pages advertising rather than guidance.",
-  },
-  {
     q: "Does Refer Labs earn from this section?",
     a: "Yes, from two. Technogym, through Commission Factory since 16 September 2026: we earn a commission if you buy through our link, at no extra cost to you, we hold no Technogym discount code, and it is the premium end of the market with much cheaper equipment we earn nothing from, which these guides say plainly. Technogym is kept off the diagnostics pages, where equipment beside a test result would read as a prescription for one. And i-screen, directly, since 23 September 2026: it gave us the coupon referlabs for $20 off a first test, and that coupon is the only thing that pays us, so a reader who clicks without typing it earns us nothing. The i-screen pages say that a GP-ordered test is frequently bulk billed while i-screen is not Medicare-rebatable at all, which is the argument against the purchase and is on the page for that reason.",
   },
@@ -54,7 +50,7 @@ export default function LongevityHub() {
         <PartnerRoute
           className="mt-10"
           heading="The two companies we have an arrangement with"
-          intro="Everything else in this section pays us nothing. Both of these are the expensive option in their category: cheaper equipment and the GP route exist, we earn nothing from either, and for most readers they are the sensible comparison."
+          intro="The two companies in this section that pay us a commission."
           providers={[
             {
               name: "i-screen",

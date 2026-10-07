@@ -86,10 +86,6 @@ export default function Page() {
             </div>
           ))}
         </div>
-        <p className="mt-4">
-          Give these a genuine run of several weeks before spending. If they resolve the problem you were about to buy
-          your way out of, that is the highest return available in this category.
-        </p>
       </section>
 
       <section>

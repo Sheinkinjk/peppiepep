@@ -265,7 +265,7 @@ export default function JuniperPage() {
             </section>
 
             <section id="alternatives" className="mt-12 scroll-mt-24">
-              <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">Juniper alternatives and comparisons</h2>
+              <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">Comparisons and related guides</h2>
               <ul className="mt-5 grid gap-3 sm:grid-cols-2">
                 {related.map((l) => (
                   <li key={l.href}>

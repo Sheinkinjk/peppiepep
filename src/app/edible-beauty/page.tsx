@@ -105,7 +105,7 @@ const brand: RetailerBrand = {
     },
     {
       q: "Does Refer Labs earn money from this page?",
-      a: "Yes, through Commission Factory, if you buy after following our link. We hold no Edible Beauty code, so there is no saving we can claim. The certification section stays exactly as written, which is the point: a commission does not buy a softer sentence.",
+      a: "Yes, through Commission Factory, if you buy after following our link. We hold no Edible Beauty code, so there is no saving we can claim.",
     },
   ],
   disclaimer: (

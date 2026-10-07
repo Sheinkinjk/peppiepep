@@ -258,20 +258,14 @@ export default function BestWeightLossTelehealthPage() {
           <section id="how-to-compare" className="border-t border-[#ded8cd] py-8">
             <h2 className="text-xl sm:text-2xl font-black text-[#14120f] mb-3">Where to start: how to compare weight-loss telehealth</h2>
             <p className="text-sm text-[#56504a] leading-relaxed max-w-2xl mb-4">
-              These factors matter more than the sign-up price. Check each one before you commit:
+              The factors that separate the services:
             </p>
             <ul className="space-y-2.5 text-sm text-[#56504a] max-w-2xl mb-5">
               <li><strong className="text-[#14120f]">Assessment.</strong> A registered practitioner reviews each applicant and some are declined.</li>
               <li><strong className="text-[#14120f]">Total cost.</strong> Check what the fee includes and compare the full amount you would pay over the months you expect to stay.</li>
               <li><strong className="text-[#14120f]">Practitioner review and support.</strong> Check whether you get an initial consult, ongoing check-ins, and how you reach a practitioner if something changes.</li>
-              <li><strong className="text-[#14120f]">The practitioner decides.</strong> A service that promises a particular outcome before a practitioner has assessed you is one to avoid.</li>
-              <li><strong className="text-[#14120f]">Commitment and cancellation.</strong> Confirm any minimum term, and how to pause or cancel, before you subscribe.</li>
+              <li><strong className="text-[#14120f]">The practitioner decides.</strong> A registered practitioner decides whether the program is right for you.</li>
             </ul>
-            <p className="text-sm text-[#56504a] leading-relaxed max-w-2xl">
-              <strong className="text-[#14120f]">Looking for a cheaper option?</strong> The lowest total cost is not
-              always a paid telehealth program. A GP (some appointments are bulk-billed) can also assess you, which may
-              work out cheaper for some people. Speak with a qualified health professional before making changes to your health care.
-            </p>
           </section>
 
           {/* How pricing works (no partner prices on this page: Jarred, 27 Sep 2026) */}

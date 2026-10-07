@@ -40,7 +40,7 @@ const guides = [
   {
     href: "/sleep/how-much-does-good-sleep-cost",
     title: "What good sleep costs",
-    desc: "The free changes worth trying first, and where spending helps.",
+    desc: "Where spending helps, and how to judge a purchase over its lifespan.",
   },
 ];
 

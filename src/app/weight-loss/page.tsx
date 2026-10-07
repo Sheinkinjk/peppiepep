@@ -299,17 +299,9 @@ export default function WeightLossHubPage() {
               is slower to get moving. Non-clinical coaching and lifestyle programs put habits first without a
               practitioner assessment, and we do not compare them here.
             </p>
-            <h3 className="pt-2 text-xl font-bold text-[#14120f]">
-              What to check before you sign up to any provider
-            </h3>
             <p>
-              Whichever way you lean, a few checks separate a serious weight loss clinic online from a storefront.
-              Confirm that a registered Australian practitioner reviews your case and that some people are declined.
-              Read the cost model in full, including what the subscription includes.
-              Check what ongoing support and cancellation look like before you commit, not after. And treat any promise
-              of a guaranteed outcome as a red flag. Everything on this page is general information to help you compare
-              services. It is not medical advice, and suitability is decided individually by a
-              qualified health professional.
+              Everything on this page is general information to help you compare services. It is not medical advice,
+              and suitability is decided individually by a qualified health professional.
             </p>
           </div>
         </section>

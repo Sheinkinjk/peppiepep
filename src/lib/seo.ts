@@ -938,7 +938,7 @@ export const seoConfig = {
   costOfGoodSleep: {
     title: "What Does Good Sleep Cost in Australia? 2026 | Refer Labs",
     description:
-      "The free changes worth trying first, where spending helps, and how to work out whether a purchase is worth it over its lifespan.",
+      "Where spending on sleep helps, and how to work out whether a purchase is worth it over its lifespan.",
     url: `${SITE_URL}/sleep/how-much-does-good-sleep-cost`,
     keywords: ["cost of good sleep", "how much to spend on sleep australia", "sleep products worth it australia", "improve sleep australia cost"],
   },
@@ -1834,7 +1834,7 @@ export const seoConfig = {
 
     description:
 
-      "Weight-loss telehealth for women in Australia: what Juniper and Moshy each include, read off their own sites, and the checks to run first. Information only.",
+      "Weight-loss telehealth for women in Australia: what Juniper and Moshy each include, read off their own sites. Information only.",
 
     url: `${SITE_URL}/weight-loss-telehealth-women-australia`,
 
@@ -1888,7 +1888,7 @@ export const seoConfig = {
   weightLossTelehealthMen: {
     title: "Weight Loss Telehealth for Men in Australia 2026",
     description:
-      "How weight-loss telehealth works for men in Australia: the online assessment, the checks to run first, and what Moshy includes. Information only.",
+      "How weight-loss telehealth works for men in Australia: the online assessment and what Moshy includes. Information only.",
     url: `${SITE_URL}/weight-loss-telehealth-men-australia`,
     keywords: [
       "weight loss telehealth men australia",

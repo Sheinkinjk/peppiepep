@@ -24,10 +24,6 @@ const faqs = [
     a: "Mostly in how they charge and what the subscription includes, rather than in the clinical process, which is broadly similar: you complete an assessment, an Australian-registered practitioner reviews it, and the practitioner decides what is appropriate for you after an individual assessment. The differences that affect you are whether you pay per consult or monthly, what the subscription bundles and what is billed separately, whether review appointments cost extra, and how easily you can cancel.",
   },
   {
-    q: "What should I check before signing up to an online men's health clinic?",
-    a: "That a practitioner consults you before anything is decided, which is both a legal requirement and the single most important safety check. Then the commercial terms: the twelve-month cost rather than the first month, what is bundled, whether Medicare applies to any part, and the cancellation process. Ask whether cancelling can be done in the account or requires contacting support, because that difference shows up later.",
-  },
-  {
     q: "Are online men's health clinics regulated in Australia?",
     a: "The practitioners are. Every practitioner must be registered with AHPRA, and you can search the register yourself by name. What is appropriate for you is decided by a registered practitioner after an individual assessment. A service that offers to skip the assessment is operating outside those rules, which is a reason to avoid it rather than a shortcut worth taking.",
   },

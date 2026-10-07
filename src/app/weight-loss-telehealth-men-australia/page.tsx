@@ -105,23 +105,6 @@ export default function WeightLossTelehealthMenPage() {
           </p>
         </section>
 
-        <section className="mb-10">
-          <h2 className="text-xl font-black mb-4">The checklist before signing up with anyone</h2>
-          <ul className="space-y-3">
-            {[
-              "Registered Australian practitioners doing the reviews, not offshore contractors",
-              "A real screening step that declines unsuitable applicants",
-              "Pricing shown in full before you commit, including any minimum term",
-              "An Australian entity operating under Australian health regulations",
-              "A clear path to human support once you are a subscriber",
-            ].map((item) => (
-              <li key={item} className="flex items-start gap-3 text-sm sm:text-base text-[#14120f] leading-relaxed">
-                <Check className="h-4 w-4 shrink-0 mt-1" style={{ color: CYAN_LT }} />
-                {item}
-              </li>
-            ))}
-          </ul>
-        </section>
 
         <section className="space-y-4 mb-10">
           <h2 className="text-xl font-black">Where Moshy fits</h2>

@@ -18,7 +18,7 @@ export const metadata = generateSEOMetadata(seoConfig.telehealthVsGpMens);
 const faqs = [
   {
     q: "Is telehealth cheaper than a GP for men's health in Australia?",
-    a: "Often not, once you annualise both. A bulk-billed GP appointment can cost nothing, and where a gap applies a Medicare rebate reduces it. Most online subscriptions sit outside Medicare and charge every month regardless of whether you consult. Telehealth frequently wins on speed and privacy; it wins on price mainly when you would consult often or when your GP does not bulk bill.",
+    a: "It depends on how often you would consult and whether your GP bulk bills. A bulk-billed GP appointment can cost nothing, and where a gap applies a Medicare rebate reduces it. Online services are usually faster and more private, and they charge in different ways: some per consultation, some by monthly subscription.",
   },
   {
     q: "What is bulk billing and how does it change the comparison?",
@@ -26,15 +26,11 @@ const faqs = [
   },
   {
     q: "How do I compare a subscription against GP appointments?",
-    a: "Annualise both. For the subscription, multiply the monthly figure by twelve and add anything billed separately. For the GP, multiply your realistic number of appointments by the out-of-pocket cost each, then add any pharmacy cost. Comparing a monthly subscription figure against a single consult fee is the error the pricing in this category quietly encourages.",
+    a: "Annualise both. For the subscription, multiply the monthly figure by twelve and add anything billed separately. For the GP, multiply your realistic number of appointments by the out-of-pocket cost each, then add any pharmacy cost.",
   },
   {
     q: "Does telehealth attract a Medicare rebate in Australia?",
-    a: "Some telehealth consultations do, subject to eligibility rules including existing-relationship requirements. Commercial subscription platforms commonly operate outside Medicare. Do not assume either way: ask the specific service whether a rebate applies to its consultations and which item number is billed, then check the current amount on MBS Online.",
-  },
-  {
-    q: "Which should I choose?",
-    a: "If your GP bulk bills and you are comfortable raising it there, that is usually both the cheapest route and the one with the widest clinical view. If you would delay seeking help rather than have the conversation in person, an online service that gets you assessed is worth more than the money you would save by not going. That trade is yours, and it is a legitimate reason to pay more.",
+    a: "Some telehealth consultations do, subject to eligibility rules including existing-relationship requirements. Many commercial platforms operate outside Medicare, and each service states on its own site whether a rebate applies.",
   },
 ];
 
@@ -46,7 +42,7 @@ export default function Page() {
       slug="/mens-health/is-telehealth-or-a-gp-cheaper-for-mens-health"
       crumb="Telehealth or a GP?"
       h1={<>Telehealth or a GP for men&apos;s health: <span>which costs less</span></>}
-      intro="Often not, once you annualise both. A bulk-billed GP appointment can cost nothing and a gap payment attracts a Medicare rebate, while most online subscriptions sit outside Medicare and charge every month whether you consult or not. Telehealth usually wins on speed and privacy. It wins on price only when you would consult often, or when your GP does not bulk bill."
+      intro="It depends on how often you would consult and whether your GP bulk bills. A bulk-billed GP appointment can cost nothing, and a gap payment attracts a Medicare rebate. Online services are usually faster and more private, and they charge in different ways: some per consultation, some by monthly subscription."
       headline="Telehealth or a GP for men's health: which is cheaper?"
       description={seoConfig.telehealthVsGpMens.description}
       faqs={faqs}
@@ -79,9 +75,8 @@ export default function Page() {
           </div>
         </div>
         <p className="mt-4">
-          The variable that decides it is how many appointments you would realistically book. Below roughly two or
-          three a year, a bulk-billing GP is difficult to beat on price. Above that, and particularly where your
-          practice bills privately, a bundled subscription starts to compete.
+          The variables that decide it are how many appointments you would book, whether your GP bulk bills, and
+          whether the online service charges per consultation or by subscription.
         </p>
       </section>
 
@@ -99,12 +94,9 @@ export default function Page() {
             <tbody className="divide-y divide-[#f1ede4]">
               {[
                 ["Medicare", "Rebate on the consult; may bulk bill", "Usually none"],
-                ["Charged when you do not consult", "No", "Yes, on a subscription"],
-                ["Knows your history", "Yes", "Only what you enter"],
-                ["Can refer you onward", "Yes, including rebated pathways", "Limited"],
+                ["Charged when you do not consult", "No", "Only on a subscription"],
                 ["Speed", "Subject to appointment availability", "Usually same or next day"],
                 ["Privacy", "In-person conversation", "No waiting room"],
-                ["Considers other causes", "Yes, as part of general care", "Focused on the presenting issue"],
               ].map(([k, a, b]) => (
                 <tr key={k}>
                   <td className="px-4 py-3 font-semibold text-[#14120f]">{k}</td>
@@ -126,8 +118,7 @@ export default function Page() {
         </p>
         <p className="mt-3">
           If that is you, paying a premium to get assessed is a sensible trade rather than a failure of
-          budgeting. What is worth avoiding is paying the premium without realising you are paying it, which is what
-          the monthly-versus-per-consult framing tends to produce.
+          budgeting.
         </p>
         <p className="mt-3">
           General information for an Australian audience, not medical advice.

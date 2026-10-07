@@ -72,7 +72,6 @@ const rows: [string, string, string][] = [
   ["Who assesses you", "Registered practitioner, reviewing remotely", "Your GP, in person"],
   ["Continuity", "Focused on one program", "Whole-of-health relationship over years"],
   ["Cost", "One program fee covering follow-ups, coaching and meal plans, published on Moshy's site", "In-person consultations, partly offset by Medicare"],
-  ["Best suited to", "The straightforward case, done conveniently", "Complex history, or you value one doctor who knows you"],
 ];
 
 export default function MoshyVsGpPage() {
@@ -126,9 +125,8 @@ export default function MoshyVsGpPage() {
               partly offset by Medicare and Moshy charges one program fee; which costs less depends on how often you
               are seen. Your GP holds your full history and can manage weight alongside the rest of your health, and
               is booked by appointment. Moshy runs the consultation online by phone or video and bundles follow-ups,
-              coaching and meal plans into one program fee, with weight, hair and skin services under one brand. If
-              continuity with one doctor matters most, start with your GP. If speed and convenience matter most,
-              Moshy suits that better. Either way a registered Australian practitioner decides what is appropriate.
+              coaching and meal plans into one program fee, with weight, hair and skin services under one brand. Moshy
+              offers speed and convenience; your GP offers continuity with one doctor. Either way a registered Australian practitioner decides what is appropriate.
             </p>
           </div>
         </section>
@@ -181,8 +179,7 @@ export default function MoshyVsGpPage() {
             no waiting room.
           </p>
           <p className="text-[#56504a] text-sm sm:text-base leading-relaxed">
-            For some people the GP&apos;s office is the better room. Anything urgent, unusual, or layered on top of other
-            conditions belongs with a doctor in person.
+            Anything urgent, unusual, or layered on top of other conditions belongs with a doctor in person.
           </p>
         </section>
 

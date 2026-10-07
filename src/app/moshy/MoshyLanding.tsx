@@ -69,7 +69,7 @@ const toc: [string, string][] = [
   ["code", "The discount code"],
   ["how", "How Moshy works"],
   ["included", "What's included"],
-  ["alternatives", "Alternatives"],
+  ["alternatives", "Comparisons"],
   ["faq", "FAQ"],
 ];
 
@@ -221,7 +221,7 @@ export default function MoshyLanding() {
 
 
             <section id="alternatives" className="mt-12 scroll-mt-24">
-              <h2 className={H2}>Moshy alternatives and comparisons</h2>
+              <h2 className={H2}>Comparisons and related guides</h2>
               <ul className="mt-5 grid gap-3 sm:grid-cols-2">
                 {(moshyConfig.relatedLinks ?? []).map((l) => (
                   <li key={l.href}>

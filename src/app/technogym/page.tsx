@@ -61,7 +61,6 @@ const brand: RetailerBrand = {
         <>
           Our recovery guides price home saunas and ice baths across a wide range, and the cheapest Technogym item
           listed here, at {money(low.price)}, sits above much of that. This is the premium end of home equipment.
-          Cheaper machines exist, we earn nothing from them, and for most people they are the sensible comparison.
         </>,
         <>
           The case for spending at this level is build quality, servicing and resale rather than anything the
@@ -94,8 +93,8 @@ const brand: RetailerBrand = {
       a: `Yes. Australian-dollar prices were shown on its own site for each of the products listed above when we read it on ${readOnLabel}. Where the listing said "from", the figure is an entry point rather than a specific configuration.`,
     },
     {
-      q: "Is Technogym worth the money?",
-      a: "It depends on how much you will use it. The price reflects commercial-grade build, local servicing and resale value.",
+      q: "What does the Technogym price reflect?",
+      a: "Commercial-grade build, local servicing and resale value.",
     },
     {
       q: "Does Refer Labs earn money from this page?",
