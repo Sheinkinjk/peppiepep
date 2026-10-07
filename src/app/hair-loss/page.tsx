@@ -61,7 +61,7 @@ const collectionSchema = {
   dateModified: "2026-10-01",
   name: "Hair loss treatment options in Australia, compared",
   description:
-    "Refer Labs' hair loss hub for Australians: an online consultation, your GP, or over-the-counter products, and who each suits.",
+    "Refer Labs' hair loss hub for Australians: an online consultation, your GP, or over-the-counter products, and how each is priced.",
   url: `${SITE_URL}/hair-loss`,
   inLanguage: "en-AU",
   isPartOf: { "@id": `${SITE_URL}/#website` },
@@ -117,7 +117,7 @@ export default function HairLossHubPage() {
               stacked
               href="/best-hair-loss-treatment-australia"
               title="Compare the three routes"
-              sub="An online consultation, over-the-counter products and your GP, side by side: what each costs and who each suits."
+              sub="An online consultation, over-the-counter products and your GP, side by side: what each involves and how each is priced."
               cta="Compare all options"
               dataCta="hair-hub-hero-compare"
             />

@@ -27,7 +27,7 @@ const faqs = [
   },
   {
     q: "Does Refer Labs sell supplements?",
-    a: "No, and we have no supplement partner, so nothing here earns us anything., We do not name products, both because we are not recommending any and because naming a compound alongside a health benefit is advertising a therapeutic claim. This page is about how to read the evidence yourself.",
+    a: "No, and this page links to no product. Aussie Health Products, a retailer that sells supplements, is a partner in our health and beauty section; nothing on this page links to it. We do not name products, both because we are not recommending any and because naming a compound alongside a health benefit is advertising a therapeutic claim. This page is about how to read the evidence yourself.",
   },
 ];
 

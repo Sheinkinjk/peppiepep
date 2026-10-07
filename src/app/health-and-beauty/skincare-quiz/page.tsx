@@ -66,7 +66,7 @@ export default function SkincareQuizPage() {
         <nav className="flex flex-wrap items-center gap-2 text-sm text-[#56504a]">
           <Link href="/" className="hover:text-[#007a95]">Refer Labs</Link>
           <span>/</span>
-          <Link href="/health-and-beauty" className="hover:text-[#007a95]">Skin &amp; beauty</Link>
+          <Link href="/health-and-beauty" className="hover:text-[#007a95]">Health &amp; beauty</Link>
           <span>/</span>
           <span className="text-[#14120f]">Skincare quiz</span>
         <SectionMark kind="bottle" size={56} /></nav>

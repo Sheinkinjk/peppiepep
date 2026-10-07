@@ -194,7 +194,7 @@ export default function SleepHub() {
           <div className="max-w-2xl">
             <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">Other categories</h2>
             <ul className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold">
-              <li><Link href="/health-and-beauty" className="text-[#007a95] hover:underline">Skin &amp; beauty</Link></li>
+              <li><Link href="/health-and-beauty" className="text-[#007a95] hover:underline">Health &amp; beauty</Link></li>
               <li><Link href="/weight-loss" className="text-[#007a95] hover:underline">Weight loss</Link></li>
               <li><Link href="/hair-loss" className="text-[#007a95] hover:underline">Hair loss</Link></li>
               <li><Link href="/guides" className="text-[#56504a] hover:text-[#007a95] hover:underline">All guides</Link></li>

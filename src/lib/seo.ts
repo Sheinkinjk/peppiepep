@@ -1204,7 +1204,7 @@ export const seoConfig = {
     // options compared" under a "Hair Loss Treatments" title.
     title: "Hair Loss Treatment Options Australia 2026 | Refer Labs",
     description:
-      "Hair loss in Australia: an online practitioner consultation with Mosh, your GP, or over-the-counter products. Who each suits and how each is priced.",
+      "Hair loss in Australia: an online practitioner consultation with Mosh, your GP, or over-the-counter products, and how each is priced.",
     url: `${SITE_URL}/hair-loss`,
     keywords: [
       "hair loss australia",
@@ -1720,7 +1720,7 @@ export const seoConfig = {
   moshyVsJuniper: {
     title: "Moshy vs Juniper 2026: Cost and Who Each Suits",
     description:
-      "Moshy vs Juniper: what each includes, read off their own sites, and who each suits. Codes: REFERRAL120 ($120 off Moshy), JARREDKFC (no charge for Juniper's initial consult).",
+      "Moshy vs Juniper: what each includes, read off their own sites, and how each is priced. Codes: REFERRAL120 ($120 off Moshy), JARREDKFC (no charge for Juniper's initial consult).",
     url: `${SITE_URL}/moshy-vs-juniper`,
     keywords: [
       "moshy vs juniper",
@@ -2196,7 +2196,7 @@ export const seoConfig = {
     noIndex: true,
     title: "Free Australian Weight-Loss Options Guide | Refer Labs",
     description:
-      "A free, plain-English guide to the main weight-loss routes in Australia: online telehealth programs, coaching and the GP route, and who each suits.",
+      "A free, plain-English guide to the main weight-loss routes in Australia: online telehealth programs, coaching and the GP route, and how each works.",
     url: `${SITE_URL}/weight-loss-guide`,
     keywords: ["weight loss options australia", "weight loss guide australia", "weight loss telehealth guide"],
   },
@@ -2876,7 +2876,7 @@ export const seoConfig = {
     // Mosh plan-stage table removed, Mosh's promotion terms linked. Title unchanged.
     title: "Best Hair Loss Treatment Australia 2026: How to Choose",
     description:
-      "Mosh or your GP for hair loss in Australia: how each assessment works, who each suits, and how each is priced. REFERAL55 takes 55% off a new customer's first Mosh order.",
+      "Mosh or your GP for hair loss in Australia: how each assessment works and how each is priced. REFERAL55 takes 55% off a new customer's first Mosh order.",
     url: `${SITE_URL}/best-hair-loss-treatment-australia`,
     keywords: [
       "best hair loss treatment australia 2026",

@@ -74,7 +74,7 @@ const faqs = [
   },
   {
     q: "Does Refer Labs earn from this section?",
-    a: "Not yet. No provider has been added to women's health, so nothing in this section pays us. When one is added, every page linking to it will say so beside the link, and this answer will change.",
+    a: "The UTI and menopause guides earn us nothing: no provider has been added to them. The weight-loss telehealth guide listed here belongs to the weight-loss section, and its Juniper and Moshy links are affiliate links, disclosed on that page. When a women's health provider is added, every page linking to it will say so beside the link.",
   },
 ];
 

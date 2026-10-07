@@ -90,7 +90,7 @@ const sections = [
     guides: [
       { href: "/moshy", label: "Moshy, Offer & Referral Link", desc: `$120 off a first order with code REFERRAL120 at checkout. Read off Moshy's own page on ${checkedOn("REFERRAL120")}.` },
       { href: "/moshy-review", label: "Moshy, Explained", desc: "How the service runs, application to subscription." },
-      { href: "/moshy-vs-juniper", label: "Moshy vs Juniper", desc: "What each includes, read off their own sites, and who each suits." },
+      { href: "/moshy-vs-juniper", label: "Moshy vs Juniper", desc: "What each includes and how each is priced, read off their own sites." },
       { href: "/moshy-vs-gp", label: "Telehealth vs Your GP", desc: "Two doors to the same care. The practical trade." },
       { href: "/weight-loss-telehealth-women-australia", label: "Weight Loss Telehealth for Women", desc: "What Juniper and Moshy each include, and the checks to run first." },
         { href: "/cheapest-weight-loss-telehealth-australia", label: "Cheapest Weight Loss Telehealth", desc: "Where the price differences come from." },
