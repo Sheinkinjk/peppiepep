@@ -205,7 +205,7 @@ export default function MoshReviewPage() {
 
         <div className="border-t border-[#ded8cd] pt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm">
           <Link href="/moshhair" style={{ color: CYAN }} className="hover:opacity-80">Mosh: how it works &amp; the offer →</Link>
-          <Link href="/best-hair-loss-treatment-australia" style={{ color: CYAN }} className="hover:opacity-80">Best hair-loss treatment, compared →</Link>
+          <Link href="/best-hair-loss-treatment-australia" style={{ color: CYAN }} className="hover:opacity-80">Hair-loss options, compared →</Link>
           <Link href="/hair-loss" style={{ color: CYAN }} className="hover:opacity-80">The full hair-loss hub →</Link>
         </div>
 

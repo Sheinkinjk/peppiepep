@@ -288,7 +288,7 @@ export default function HairLossTreatmentCostAustraliaPage() {
             <section>
               <h2 className="text-lg font-bold text-[#14120f]">Keep reading</h2>
               <ul className="mt-3 space-y-2 text-[15px]">
-                <li><Link href="/best-hair-loss-treatment-australia" className="nw-link">Best hair-loss treatment in Australia, compared</Link></li>
+                <li><Link href="/best-hair-loss-treatment-australia" className="nw-link">Hair-loss options in Australia, compared</Link></li>
                 <li><Link href="/moshhair" className="nw-link">Mosh hair-loss: how it works and the current offer</Link></li>
                 <li><Link href="/early-signs-of-hair-loss-australia" className="nw-link">Early signs of hair loss, and where to get it checked</Link></li>
                 <li><Link href="/hair-loss" className="nw-link">The full hair-loss hub</Link></li>

@@ -15,7 +15,7 @@ const R = {
   cost: { href: "/hair-loss-treatment-cost-australia", label: "Hair-loss costs compared" },
   hub: { href: "/hair-loss", label: "Compare all hair-loss options" },
   mosh: { href: "/moshhair", label: "Mosh: how it works & the offer" },
-  best: { href: "/best-hair-loss-treatment-australia", label: "Best hair-loss treatment, compared" },
+  best: { href: "/best-hair-loss-treatment-australia", label: "Hair-loss options, compared" },
   moshReview: { href: "/mosh-review", label: "Is Mosh legit? Our review" },
   receding: { href: "/receding-hairline-treatment-australia", label: "Receding hairline: causes and getting assessed" },
 };
