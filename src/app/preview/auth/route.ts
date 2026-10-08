@@ -3,7 +3,11 @@ import {
   HIMS_REVIEW_COOKIE,
   HIMS_REVIEW_MAX_AGE,
   HIMS_REVIEW_PATH,
+  MOSHY_REVIEW_COOKIE,
+  MOSHY_REVIEW_PATH,
+  MOSHY_REVIEW_SLUG,
   REVIEW_HEADERS,
+  moshyTokenForAttempt,
   reviewTokenForAttempt,
 } from "@/lib/hims/access";
 
@@ -69,7 +73,9 @@ export async function POST(req: NextRequest) {
     attempt = "";
   }
 
-  const token = attempt ? reviewTokenForAttempt(attempt) : null;
+  // The Moshy page preview has its own password and cookie (8 Oct 2026).
+  const moshy = slug === MOSHY_REVIEW_SLUG;
+  const token = attempt ? (moshy ? moshyTokenForAttempt(attempt) : reviewTokenForAttempt(attempt)) : null;
   if (!token) {
     recordFailure(ip);
     return back(req, slug, "wrong");
@@ -77,11 +83,11 @@ export async function POST(req: NextRequest) {
 
   failures.delete(ip);
   const res = back(req, slug);
-  res.cookies.set(HIMS_REVIEW_COOKIE, token, {
+  res.cookies.set(moshy ? MOSHY_REVIEW_COOKIE : HIMS_REVIEW_COOKIE, token, {
     httpOnly: true,
     secure: true,
     sameSite: "lax",
-    path: HIMS_REVIEW_PATH,
+    path: moshy ? MOSHY_REVIEW_PATH : HIMS_REVIEW_PATH,
     maxAge: HIMS_REVIEW_MAX_AGE,
   });
   return res;

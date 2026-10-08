@@ -2,7 +2,7 @@ import { createServerClient } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
 import { logger } from '@/lib/logger'
 import { HIMS_SLUG_LIST } from '@/content/hims/slugs'
-import { HIMS_REVIEW_COOKIE, REVIEW_HEADERS, hasReviewAccess, isHimsSlug } from '@/lib/hims/access'
+import { HIMS_REVIEW_COOKIE, MOSHY_REVIEW_COOKIE, MOSHY_REVIEW_SLUG, REVIEW_HEADERS, hasMoshyReviewAccess, hasReviewAccess, isHimsSlug } from '@/lib/hims/access'
 import { reviewGateHtml, type GateError } from '@/lib/hims/review-gate'
 
 /**
@@ -142,7 +142,12 @@ function reviewArea(request: NextRequest, rest: string): NextResponse {
     headers.set('x-review-slug', rest)
     return withReviewHeaders(NextResponse.rewrite(url, { request: { headers } }))
   }
-  if (hasReviewAccess(request.cookies.get(HIMS_REVIEW_COOKIE)?.value)) {
+  if (rest === MOSHY_REVIEW_SLUG) {
+    // Moshy page preview: its own password and cookie; the Hims cookie does not open it.
+    if (hasMoshyReviewAccess(request.cookies.get(MOSHY_REVIEW_COOKIE)?.value)) {
+      return withReviewHeaders(NextResponse.next())
+    }
+  } else if (hasReviewAccess(request.cookies.get(HIMS_REVIEW_COOKIE)?.value)) {
     return isHimsSlug(rest) ? withReviewHeaders(NextResponse.next()) : notFound()
   }
   const e = request.nextUrl.searchParams.get('error')
@@ -175,9 +180,9 @@ async function runProxy(request: NextRequest) {
       headers: { 'content-type': 'text/html; charset=utf-8', ...REVIEW_HEADERS },
     })
   }
-  // /preview/*: the password-protected review copy. Every response here is noindex
-  // and uncached. Deliberately NOT disallowed in robots.txt: a crawler has to fetch
-  // a page to see its noindex.
+  // /preview/*: the password-protected review copies. Every response here is noindex
+  // and uncached. Disallowed in robots.txt since 8 Oct 2026: every response is a 401
+  // password page or a noindex draft, so there is nothing a crawler needs to deindex.
   if (himsPath === 'preview' || himsPath.startsWith('preview/')) {
     return reviewArea(request, himsPath.slice('preview/'.length))
   }
