@@ -21,16 +21,14 @@ export { MOSHY_TERMS_URL, REFERRAL120_TERMS };
 export const REFERRAL120_CHECKED_ON = checkedOn("REFERRAL120") ?? "";
 
 export const BANNER =
-  "PREVIEW — not live. Pending Moshy approval and legal review. Final Moshy sign-up link to be added.";
+  "PREVIEW, not live. Pending Moshy approval and legal review. Final Moshy sign-up link to be added.";
 
-export const HEADER_RIGHT = "Member page";
+export const HEADER_RIGHT = "Partner page";
 
 export const HERO = {
-  kicker: "Moshy × Refer Labs",
   h1: "Sign up with Moshy.",
-  lede: "Moshy shares the details with you directly once you've signed up on its site. Refer Labs members also get a code for their first order.",
+  lede: "Moshy shares the details once you've signed up on its site. Refer Labs readers also get a code for their first order.",
   button: "Sign up with Moshy",
-  small: "For adults 18+. You sign up on Moshy's own site.",
 };
 
 /** The prominent notice under the hero. */
@@ -38,23 +36,24 @@ export const NOTICE = {
   h2: "Why this page says so little",
   body:
     "Australian advertising rules limit what we can say about health services on this page. Moshy explains everything after you sign up, and a health practitioner decides in a consultation whether anything is suitable for you.",
+  disclosure: "Refer Labs earns a commission if you sign up through this page or use our code. General information only, not medical advice.",
 };
 
 export const CHIPS = [
-  { object: "send", title: "Straight from Moshy", body: "Moshy contacts you directly after you sign up." },
+  { object: "send", title: "Straight from Moshy", body: "Moshy gets in touch after you sign up." },
   { object: "clinic", title: "Practitioner-led", body: "Independent AHPRA-registered doctors and nurses." },
   { object: "phone", title: "From home", body: "Consultations by phone or video, no GP referral." },
-  { object: "offer", title: "Member offer", body: "A Refer Labs code for Moshy, terms below." },
+  { object: "offer", title: "Refer Labs code", body: "A code for your first Moshy order, terms below." },
 ] as const;
 
 export const STEPS_HEADING = "What happens next";
 export const STEPS = [
   { title: "Sign up with Moshy", body: "Add your details on Moshy's site. Refer Labs doesn't collect them." },
-  { title: "Moshy gets in touch", body: "Moshy explains the details to you directly." },
+  { title: "Moshy gets in touch", body: "Moshy explains the details by email or phone." },
   { title: "Talk to a practitioner", body: "If you choose to go ahead, a consultation decides whether anything is suitable for you." },
 ];
 
-export const OFFER_HEADING = "Your Refer Labs member offer";
+export const OFFER_HEADING = "Your Refer Labs code";
 export const OFFER_VALUE = "$120 off your first order";
 export const OFFER_CTA = "Sign up with Moshy";
 export const OFFER_CONFIRM = "Preview: this would open Moshy's sign-up with Refer Labs attribution.";
@@ -68,8 +67,8 @@ export const FAQS = [
   { q: "Is Refer Labs part of Moshy?", a: "No. Refer Labs is an independent comparison site and a Moshy affiliate partner." },
   { q: "Who collects my details?", a: "Moshy does, on its own site. Refer Labs doesn't collect your details on this page." },
   {
-    q: "How do I use the member code?",
-    a: "Enter the code shown in the member offer at checkout with Moshy. Moshy's terms, shown beside the code, apply.",
+    q: "How do I use the Refer Labs code?",
+    a: "Enter the code shown above at checkout with Moshy. Moshy's terms, shown beside the code, apply.",
   },
   {
     q: "Is this medical advice?",
@@ -77,7 +76,7 @@ export const FAQS = [
   },
 ];
 
-export const CLOSING = { h2: "Hear from Moshy directly.", button: "Sign up with Moshy" };
+export const CLOSING = { h2: "Hear it from Moshy first.", button: "Sign up with Moshy" };
 
 export const DISCLOSURE =
   "Refer Labs may receive a commission when you use our code or links. It doesn't change what you pay. Moshy's practitioners decide whether a program is suitable for you. General information only, not medical advice. Pepform Pty Ltd t/a Refer Labs, ABN 32 660 008 159.";

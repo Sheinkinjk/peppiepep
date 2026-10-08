@@ -115,7 +115,10 @@ export default function RootLayout({
         <ChromeGate>
           <SupabaseSessionListener />
         </ChromeGate>
-        <CookieConsent />
+        {/* No banner on /preview/*: nothing loads there that needs consent. */}
+        <NoTrackOnPreview>
+          <CookieConsent />
+        </NoTrackOnPreview>
       </body>
     </html>
   );

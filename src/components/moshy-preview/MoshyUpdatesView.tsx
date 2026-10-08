@@ -56,11 +56,9 @@ export function MoshyUpdatesView({ href, preview, footer }: { href: string; prev
           <section className="mp-hero">
             <div className="rd-w mp-hero__g">
               <div>
-                <p className="rd-kicker">{HERO.kicker}</p>
                 <h1 className="rd-d1 rd-optical">{HERO.h1}</h1>
                 <p className="rd-lede">{HERO.lede}</p>
                 <div className="mp-hero__cta">{cta(HERO.button, "light")}</div>
-                <p className="mp-hero__small">{HERO.small}</p>
               </div>
               <div className="mp-art" aria-hidden="true">
                 <div className="mp-art__plate">
@@ -84,6 +82,7 @@ export function MoshyUpdatesView({ href, preview, footer }: { href: string; prev
               <div>
                 <h2 id="mp-notice-h" className="rd-d3">{NOTICE.h2}</h2>
                 <p>{NOTICE.body}</p>
+                <p className="mp-notice__disc">{NOTICE.disclosure}</p>
               </div>
             </aside>
           </div>
