@@ -89,6 +89,7 @@ const sections = [
       { href: "/moshy", label: "Moshy, Offer & Referral Link", desc: `$120 off a first order with code REFERRAL120 at checkout. Read off Moshy's own page on ${checkedOn("REFERRAL120")}.` },
       { href: "/moshy-review", label: "Moshy, Explained", desc: "How the service runs, application to subscription." },
       { href: "/moshy-vs-juniper", label: "Moshy vs Juniper", desc: "What each includes and how each is priced, read off their own sites." },
+      { href: "/juniper", label: "Juniper, Offer & How It Works", desc: "A women-focused weight program, and the JARREDKFC code for its initial consultation." },
       { href: "/weight-loss-telehealth-women-australia", label: "Weight Loss Telehealth for Women", desc: "What Juniper and Moshy each include, read off their own sites." },
         { href: "/weight-loss-telehealth-cost-australia", label: "What Weight Loss Telehealth Costs", desc: "Consult fees, subscriptions and what is billed separately." },
         { href: "/weight-loss-telehealth-men-australia", label: "Weight Loss Telehealth for Men", desc: "How the men’s services differ." },

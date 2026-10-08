@@ -239,6 +239,7 @@ export default function Page() {
             { href: "/portable-power-station-australia", title: "What they cost and run", desc: "Prices, runtimes and who each size suits.", kind: "cost" },
             { href: "/ecoflow-vs-anker-solix", title: "EcoFlow vs Anker SOLIX", desc: "Both ranges at matching capacities." },
             { href: "/ecoflow", title: "EcoFlow Australia", desc: "The range from A$299 to A$7,299.", kind: "review" },
+            { href: "/anker-solix", title: "Anker SOLIX Australia", desc: "The range in A$, priced per watt-hour.", kind: "review" },
           ]} />
         </section>
 

@@ -239,7 +239,12 @@ export default function PremiumAffiliateLanding({ config }: { config: AffiliateP
         {/* Structured, AI-extractable offer table (auto on every brand page with an offer) */}
         {config.offer && (
           <section className="mt-12">
-            <h2 className="text-lg font-extrabold text-[#14120f]">{config.brand} offer at a glance</h2>
+            {/* Brands with a code get the buyer's question as the heading (9 Oct 2026 audit). */}
+            <h2 className="text-lg font-extrabold text-[#14120f]">
+              {DEALS.some((d) => d.brand === config.brand && d.code)
+                ? `What is the current ${config.brand} discount code?`
+                : `${config.brand} offer at a glance`}
+            </h2>
             <div className="mt-4">
               <OffersTable
                 deals={[dealRow(config.brand, config.offer, config.offerCheckedOn)]}

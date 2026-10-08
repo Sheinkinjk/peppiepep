@@ -162,7 +162,7 @@ const webPageSchema = {
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
 const articleSchema = comparisonArticleSchema({
-  headline: "Weight-management telehealth in Australia: Moshy and Juniper compared",
+  headline: "Weight-management telehealth in Australia, compared",
   description: "Refer Labs compares Australian weight-loss telehealth services on what each includes, how you start and who each is built for.",
   url: "https://referlabs.com.au/best-weight-loss-telehealth-australia",
   datePublished: "2026-07-05",
@@ -194,7 +194,7 @@ export default function BestWeightLossTelehealthPage() {
             <div className="grid items-start gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
               <div className="max-w-3xl">
                 <h1 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-black leading-[1.08] tracking-tight text-[#14120f] mb-4">
-                  Weight-Management Telehealth in Australia: Moshy and Juniper Compared
+                  Weight-Management Telehealth in Australia, Compared
                 </h1>
                 {/* The answer, directly under the h1. Nothing between: check-answer-slot. */}
                 <p className="text-[#14120f] text-base sm:text-lg leading-relaxed">

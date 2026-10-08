@@ -83,6 +83,11 @@ const nextConfig: NextConfig = {
       // 301, not 308: permanent, and 301 is the code every crawler reads as
       // such. Each guide moves with the hub rather than being stranded under a
       // section path that no longer exists.
+      // Direct rules for retired children, so the rename below does not chain into a
+      // second hop (9 Oct 2026 audit).
+      { source: '/skin-and-beauty/acne-treatment-options-and-costs-australia', destination: '/health-and-beauty', statusCode: 301 },
+      { source: '/skin-and-beauty/anti-ageing-treatments-what-they-cost', destination: '/health-and-beauty', statusCode: 301 },
+      { source: '/skin-and-beauty/retinol-vs-prescription-strength-australia', destination: '/health-and-beauty/best-value-skincare-australia-cost-per-use', statusCode: 301 },
       { source: '/skin-and-beauty', destination: '/health-and-beauty', statusCode: 301 },
       { source: '/skin-and-beauty/:path*', destination: '/health-and-beauty/:path*', statusCode: 301 },
       // Two merges (13 Sep 2026). Both pages sat below position 29 against SERPs

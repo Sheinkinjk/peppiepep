@@ -3,6 +3,7 @@ import { CATALOG } from '@/lib/catalog/catalog';
 import { HAIR_LOSS_GUIDES } from '@/lib/hair-loss-guides';
 import { APOLLO_GUIDES } from '@/lib/apollo-guides';
 import { himsSitemapEntries } from "@/lib/hims/sitemap";
+import { pageDates } from "@/lib/page-dates";
 
 const BASE = process.env.NEXT_PUBLIC_SITE_URL || 'https://referlabs.com.au';
 // Deploy-trigger check, 19 Aug 2026: verifying git auto-deploy fires on a single
@@ -20,8 +21,23 @@ const RECENT = new Date('2026-05-20'); // updated within the last few weeks
 const STABLE = new Date('2026-03-10'); // company/service pages, rarely change
 const LEGAL  = new Date('2026-01-15'); // legal, changes yearly
 
+/**
+ * lastmod comes from git (src/lib/page-dates.ts, generated in prebuild) wherever
+ * the route has a page file, so an edit moves the date. The tiers below remain
+ * as the fallback for routes the generator cannot see (catalog and guide-driven
+ * paths). Added 9 Oct 2026: every page in the TODAY tier was claiming 19 Aug,
+ * including pages first published in September.
+ */
+function withGitDates(entries: MetadataRoute.Sitemap): MetadataRoute.Sitemap {
+  return entries.map((e) => {
+    const path = new URL(e.url).pathname.replace(/\/$/, "") || "/";
+    const d = pageDates(path);
+    return d?.updated ? { ...e, lastModified: new Date(`${d.updated}T00:00:00Z`) } : e;
+  });
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
+  return withGitDates([
     // Hims page set: returns nothing until HIMS_PAGES_LIVE=true (preview only, 29 Sep 2026).
     ...himsSitemapEntries(),
 
@@ -257,5 +273,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Excluded as noIndex: /dashboard,
     // /login, /auth/*, /security, /integrations + children.
-  ];
+  ]);
 }

@@ -236,6 +236,7 @@ export default function MoshyVsJuniperPage() {
         </section>
 
         <nav aria-label="Related" className="mt-12 flex flex-wrap gap-x-6 gap-y-2 border-t border-[#ded8cd] pt-8 text-sm">
+          <Link href="/moshy" className="nw-link">Moshy offer and code</Link>
           <Link href="/moshy-review" className="nw-link">Moshy review</Link>
           <Link href="/juniper" className="nw-link">Juniper review</Link>
           <Link href="/best-weight-loss-telehealth-australia" className="nw-link">Weight-loss telehealth, compared</Link>

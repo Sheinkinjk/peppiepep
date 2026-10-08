@@ -1,6 +1,15 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { stripe } from "@/lib/stripe";
 import { logger } from "@/lib/logger";
+
+// Utility page: its own title and canonical so it never inherits the homepage's,
+// and noindex (9 Oct 2026 audit).
+export const metadata: Metadata = {
+  title: "Payment cancelled | Refer Labs",
+  alternates: { canonical: "/payment/cancel" },
+  robots: { index: false, follow: false },
+};
 
 interface PageProps {
   searchParams: Promise<{

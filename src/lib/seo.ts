@@ -1694,7 +1694,9 @@ export const seoConfig = {
     // stop competing for the same query.
     // Retitled 9 Oct 2026: no "best" (Ahpra 4.1 superiority claims; TGA lists "the best"
     // as a promotional characteristic). URL kept to protect ranking.
-    title: "Weight-Management Telehealth Australia 2026: Moshy and Juniper Compared",
+    // Category-led, not brand-pair-led (9 Oct audit): /moshy-vs-juniper owns the
+    // pair query; this page was taking 92 pair impressions at 0 clicks.
+    title: "Weight-Management Telehealth in Australia 2026, Compared",
     description:
       "Moshy and Juniper compared for Australians: what each includes, how you start and what each costs to begin. Codes: REFERRAL120 ($120 off Moshy) and JARREDKFC.",
     url: `${SITE_URL}/best-weight-loss-telehealth-australia`,

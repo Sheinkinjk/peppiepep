@@ -5,7 +5,7 @@ import { lendingDb } from "@/lib/lending-db";
 import { LEAD_STATUSES, statusTone } from "@/lib/lending-status";
 import { AMOUNT_SHORT, label } from "@/lib/lending-schema";
 
-export const metadata: Metadata = { title: "Lending leads", robots: { index: false, follow: false } };
+export const metadata: Metadata = { title: "Lending leads", alternates: { canonical: "/admin/leads" }, robots: { index: false, follow: false } };
 export const dynamic = "force-dynamic"; // always live data, never statically cached
 
 type Lead = Record<string, unknown> & {

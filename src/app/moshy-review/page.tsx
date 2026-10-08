@@ -123,6 +123,12 @@ export default function MoshyReviewPage() {
         </CodeAnswer>
         <OfferSchema code="REFERRAL120" />
 
+        {/* The buyer's question as an h2 ("is moshy legit" lands here), 9 Oct 2026. */}
+        <section className="space-y-4 mb-10">
+          <h2 className="text-2xl font-black">Is Moshy legit?</h2>
+          <p className="text-[#56504a] text-sm sm:text-base leading-relaxed">{faqs[0].a}</p>
+        </section>
+
         <section className="space-y-4 mb-10">
           <h2 className="text-2xl font-black">How Moshy works</h2>
           <p className="text-[#56504a] text-sm sm:text-base leading-relaxed">
