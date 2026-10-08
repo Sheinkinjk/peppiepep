@@ -1,3 +1,4 @@
+import { CODE_CONDITION } from "@/lib/partners/i-screen";
 import { CARRD } from "@/lib/partners/carrd";
 
 // ─── Offers registry ─────────────────────────────────────────────────────────
@@ -176,7 +177,7 @@ export const DEALS: Deal[] = [
   { brand: "Unbounce", logo: "/logos/unbounce.png", href: "/unbounce", offer: "20% off 3 months, or 35% off your first year", category: "Landing pages", featured: true, verified: "2026-09-27", source: { noPublicPage: "Partner-specific, stated on no public page. Recorded in the 25 Aug 2026 sweep note at the top of this file; re-confirm with the partner, not by searching." } },
   { brand: "Superfiliate", logo: "/logos/superfiliate.png", href: "/superfiliate", offer: "15% off your monthly SaaS fee", category: "Creator growth", featured: true, verified: "2026-09-27", source: { noPublicPage: "Partner-specific, stated on no public page. Recorded in the 25 Aug 2026 sweep note at the top of this file; re-confirm with the partner, not by searching." } },
 
-  { brand: "i-screen", logo: "/logos/i-screen.svg", href: "/i-screen", offer: "$20 off your first test", code: "referlabs", category: "Health testing", featured: true, verified: "2026-09-23", exclusive: true, source: { noPublicPage: "Supplied by i-screen directly, 23 September 2026. Checked the same day that i-screen's own terms and FAQ name no coupon codes, so there is no page to re-read it off. Re-confirm with i-screen, not by searching." } },
+  { brand: "i-screen", logo: "/logos/i-screen.svg", href: "/i-screen", offer: "$20 off your first test, signed in to an i-screen account", code: "referlabs", category: "Health testing", featured: true, verified: "2026-09-23", exclusive: true, source: { noPublicPage: "Supplied by i-screen directly, 23 September 2026. Checked the same day that i-screen's own terms and FAQ name no coupon codes, so there is no page to re-read it off. Re-confirm with i-screen, not by searching." } },
   { brand: "Juniper", logo: "/logos/juniper.png", href: "/juniper", offer: "Initial consultation waived, valued at $89", code: "JARREDKFC", category: "Weight loss", featured: true, verified: "2026-09-23", exclusive: true, source: { noPublicPage: "Juniper's affiliate handbook, confirmed by Jarred 23 September 2026. Checked the same day that no public Juniper page states it: myjuniper.com rendered with the code in the query string does not show it, and the help-centre Discount Terms article names no code values. Re-confirm with Juniper, not by searching." } },
 
   // Public trials and free plans below this line: none is specific to our link.
@@ -228,6 +229,8 @@ export interface OfferFacts {
   minimumTerm?: string;
   /** The vendor's own terms page for the code. */
   termsUrl?: string;
+  /** Any other condition the vendor attaches, as one sentence (e.g. an account requirement). */
+  condition?: string;
 }
 
 export const OFFER_FACTS: Record<string, OfferFacts> = {
@@ -262,6 +265,8 @@ export const OFFER_FACTS: Record<string, OfferFacts> = {
     brand: "i-screen", code: "referlabs", amount: "$20 off",
     object: "a new customer's first test",
     newCustomer: true, oneUse: true,
+    // Confirmed with i-screen by Jarred, 9 Oct 2026. Same constant as the brand page.
+    condition: CODE_CONDITION,
   },
   // amount + object: the Juniper DEALS row above. The object is the consultation,
   // NOT the treatment, and the wording has to keep saying so: Juniper takes nothing
@@ -334,6 +339,7 @@ export function offerSchema(code: string) {
     f.newCustomer ? "New customers only." : null,
     f.oneUse ? "One use per customer." : null,
     f.minimumTerm ? `${f.minimumTerm.charAt(0).toUpperCase()}${f.minimumTerm.slice(1)}.` : null,
+    f.condition ?? null,
     f.termsUrl ? `Full terms: ${f.termsUrl}` : null,
   ].filter(Boolean).join(" ");
   return {

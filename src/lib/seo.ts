@@ -746,7 +746,7 @@ export const seoConfig = {
   biologicalAge: {
     title: "Biological Age Testing Australia: Does It Mean Anything?",
     description:
-      "What biological age tests measure in Australia, why two tests can give different ages from one sample, and what the science does not support.",
+      "What biological age tests measure in Australia, how the figure is produced, and why two tests can give different ages from one sample.",
     url: `${SITE_URL}/longevity/diagnostics/biological-age-testing-australia`,
     keywords: ["biological age test australia", "epigenetic age test australia", "biological age testing cost", "dna methylation test australia"],
   },
@@ -2186,7 +2186,7 @@ export const seoConfig = {
   iScreen: {
     title: "i-screen Discount Code 2026: $20 Off Your First Test",
     description:
-      "The i-screen discount code referlabs takes $20 off your first test. Tests run $39 to $1,099, read 23 September 2026, and i-screen's own terms say none of it is Medicare-rebatable.",
+      "The i-screen discount code referlabs takes $20 off your first test when you are signed in to an i-screen account. Tests run $39 to $1,099, read 23 September 2026.",
     url: `${SITE_URL}/i-screen`,
     keywords: ["i-screen", "i-screen review", "i-screen discount code", "iscreen australia", "private blood test australia", "blood test without referral australia", "online pathology australia", "i-screen cost", "private blood tests online"],
   },

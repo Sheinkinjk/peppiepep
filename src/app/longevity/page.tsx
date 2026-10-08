@@ -7,22 +7,22 @@ export const metadata = generateSEOMetadata(seoConfig.longevityHub);
 
 const guides = [
   { href: "/longevity/recovery", title: "Recovery", desc: "Ice baths and saunas: unit prices, running costs, and what the evidence supports." },
-  { href: "/longevity/diagnostics", title: "Diagnostics & screening", desc: "Whole-body MRI, biological-age tests and glucose monitors, with the medical criticism included." },
-  { href: "/longevity/supplements/longevity-supplements-evidence-review", title: "Supplements, reviewed", desc: "What AUST L on a label means, and why the headline claims rarely survive scrutiny." },
+  { href: "/longevity/diagnostics", title: "Diagnostics & screening", desc: "Whole-body MRI, biological-age tests, glucose monitors and private pathology: what each costs." },
+  { href: "/longevity/supplements/longevity-supplements-evidence-review", title: "Supplements, reviewed", desc: "What AUST L on a label means, and how listed supplements are regulated." },
 ];
 
 const faqs = [
   {
     q: "Is the longevity industry regulated in Australia?",
-    a: "In parts. Devices making therapeutic claims are regulated by the TGA and should appear on the ARTG. Supplements sold as listed medicines carry an AUST L number, which means the ingredients are permitted and the sponsor has certified the claims, not that the product was assessed for efficacy. Recovery hardware sold without therapeutic claims is ordinary consumer goods. The claims made in marketing are frequently ahead of what any of those approvals mean.",
+    a: "In parts. Devices making therapeutic claims are regulated by the TGA and should appear on the ARTG. Supplements sold as listed medicines carry an AUST L number, which means the ingredients are permitted and the sponsor has certified the claims, not that the product was assessed for efficacy. Recovery hardware sold without therapeutic claims is ordinary consumer goods.",
   },
   {
     q: "What does longevity spending buy you?",
-    a: "It varies enormously by category, and the ranking is not the one the industry promotes. Sleep, movement and not smoking are free and have the strongest evidence behind them. Recovery hardware is a comfort and consistency purchase with modest supporting evidence. Screening and supplements are where the gap between price and demonstrated benefit is widest, which is why our guides in those areas carry the criticism as well as the pitch.",
+    a: "It varies by category. Recovery hardware such as saunas and ice baths is a one-off purchase with ongoing running costs. Screening and testing is usually paid per test or per year. Supplements are an ongoing cost. Our guides set out what each costs in Australia, with the date each price was read.",
   },
   {
     q: "Does Refer Labs earn from this section?",
-    a: "Yes, from two. Technogym, through Commission Factory since 16 September 2026: we earn a commission if you buy through our link, at no extra cost to you, we hold no Technogym discount code, and it is the premium end of the market with much cheaper equipment we earn nothing from, which these guides say plainly. Technogym is kept off the diagnostics pages, where equipment beside a test result would read as a prescription for one. And i-screen, directly, since 23 September 2026: it gave us the coupon referlabs for $20 off a first test, and that coupon is the only thing that pays us, so a reader who clicks without typing it earns us nothing. The i-screen pages say that a GP-ordered test is frequently bulk billed while i-screen is not Medicare-rebatable at all, which is the argument against the purchase and is on the page for that reason.",
+    a: "Yes, from two. Technogym, through Commission Factory since 16 September 2026: we earn a commission if you buy through our link, at no extra cost to you, and we hold no Technogym discount code. Technogym is kept off the diagnostics pages, where equipment beside a test result would read as a prescription for one. And i-screen, directly, since 23 September 2026: it gave us the coupon referlabs for $20 off a first test, and that coupon is the only thing that pays us, so a reader who clicks without typing it earns us nothing.",
   },
 ];
 
@@ -32,8 +32,8 @@ export default function LongevityHub() {
       slug="/longevity"
       crumbs={[{ label: "Longevity" }]}
       h1={<>Longevity in Australia: <span>what it costs, and what holds up</span></>}
-      intro="A category where the marketing is confident and the evidence is uneven. These guides cover what the hardware and testing cost in Australia, and are equally clear about where the case for spending is weak."
-      note={<><strong className="font-semibold text-[#14120f]">On claims.</strong> We make no health claim for any product or service here. Where something is regulated as a therapeutic good we point you at the ARTG to check it yourself, and where the evidence is thin we say so rather than leaving it out.</>}
+      intro="What recovery hardware, screening and testing cost in Australia, with every price dated to the day it was read."
+      note={<><strong className="font-semibold text-[#14120f]">On claims.</strong> We make no health claim for any product or service here. Where something is regulated as a therapeutic good we point you at the ARTG to check it yourself.</>}
       disclosure={<AffiliateDisclosure compact />}
       partner={
         /* Two partners since 23 Sep 2026, listed alphabetically and given
@@ -55,7 +55,7 @@ export default function LongevityHub() {
             {
               name: "i-screen",
               href: "/go/i-screen-longevity-hub",
-              what: "Private pathology tests ordered without a GP referral, listed from A$39 to A$1,099, read 23 September 2026. The code referlabs takes A$20 off a first test and is the only thing that pays us. None of it is Medicare-rebatable, while a GP-ordered test often is.",
+              what: "Private pathology tests ordered without a GP referral, listed from A$39 to A$1,099, read 23 September 2026. The code referlabs takes A$20 off a first test when you are signed in to an i-screen account, and is the only thing that pays us.",
               checked: "23 September 2026",
               review: { href: "/i-screen", label: "Read our i-screen review" },
             },

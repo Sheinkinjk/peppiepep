@@ -139,7 +139,7 @@ export const picks = {
     {
       kicker: "Longevity", brand: "i-screen", href: "/i-screen", logo: "/logos/i-screen.png",
       offer: "$20 off your first test with code referlabs",
-      body: "Private blood and pathology tests ordered online, with no GP referral, and the results sent to you.",
+      body: "Private blood and pathology tests ordered online, with no GP referral. The code applies when you are signed in to an i-screen account.",
       cta: "See the offer",
     },
     {

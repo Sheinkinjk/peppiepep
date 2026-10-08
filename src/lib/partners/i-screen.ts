@@ -14,16 +14,14 @@
  * arithmetic is derived below rather than typed, because it is the part a reader
  * actually needs and the part that goes stale silently.
  *
- * THE FACT THE MARKETING DOES NOT LEAD WITH, and the reason a page here can earn
- * its place: i-screen's own terms state that none of its services are
- * Medicare-rebatable or eligible for any government subsidy. A GP-ordered test
- * for a clinical indication is frequently bulk billed. That is the comparison a
- * reader is actually making, and it argues against spending in a good number of
- * cases. It is stated on our pages for that reason, not in spite of it.
+ * MEDICARE. i-screen's own terms state that none of its services are
+ * Medicare-rebatable or eligible for any government subsidy. /i-screen states
+ * that once, as a fact from i-screen's terms. No "a GP is cheaper" comparisons
+ * or case-against copy (Jarred, 6 and 9 Oct 2026).
  *
  * CLAIM RULE. This is pathology testing. Nothing on our pages may say a test
  * prevents disease, extends life, detects cancer early, or produces any health
- * outcome. Describe what is measured, what it costs, and who it suits. i-screen's
+ * outcome. Describe what is offered and what it costs; no advice on who should test. i-screen's
  * own terms describe its services as wellness and educational only and not a
  * substitute for medical advice, and our pages say the same.
  *
@@ -57,6 +55,15 @@ export const { readOn, readOnLabel, source } = META;
  */
 export const COUPON = "referlabs";
 export const DISCOUNT_AUD = 20;
+
+/**
+ * The code only applies to a signed-in i-screen account. Confirmed with i-screen
+ * by Jarred on 9 October 2026; i-screen publishes no page stating it. A discount
+ * on a health service has to show its conditions where the code appears
+ * (National Law s 133, ACL s 29), so every place the code is stated carries this.
+ */
+export const CODE_CONDITION = "You need an i-screen account and must be signed in at checkout for the code to apply.";
+export const CODE_CONDITION_SHORT = "signed in to an i-screen account";
 
 export type IScreenTest = {
   name: string;

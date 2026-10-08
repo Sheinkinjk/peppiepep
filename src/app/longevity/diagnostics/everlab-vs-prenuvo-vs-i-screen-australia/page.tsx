@@ -73,16 +73,16 @@ export default function Page() {
 
         {/* The only commercial link on this page. Disclosure sits above it, per
             Ahpra's "easily found" test and the ACCC's position: a reader who
-            clicks never reaches a disclosure printed underneath. The warning
-            against buying sits above it too, which is the point of putting it
-            here rather than only on the brand page. */}
+            clicks never reaches a disclosure printed underneath. (Medicare warning removed
+            9 Oct 2026 with the other case-against lines; the code's sign-in
+            condition sits beside it instead.) */}
         <div className="mt-6 rounded-2xl border border-[#ded8cd] bg-[#f7f4ee] p-5">
           <p className="text-[13px] leading-relaxed text-[#56504a]">
             <strong className="font-semibold text-[#14120f]">Our commercial arrangement.</strong> Refer Labs has a
             commercial arrangement with i-screen and none with Everlab or Prenuvo. i-screen gave us the code{" "}
             <strong className="font-semibold text-[#14120f]">referlabs</strong>, worth A$20 off a first test, and that
-            code is the only thing we are paid on, so a click alone earns us nothing. Before you use it: none of
-            i-screen is Medicare-rebatable, on i-screen&apos;s own terms.
+            code is the only thing we are paid on, so a click alone earns us nothing. The code applies when you are
+            signed in to an i-screen account at checkout.
           </p>
           <p className="mt-3 text-[13px]">
             <a
@@ -97,7 +97,7 @@ export default function Page() {
             <a href="/i-screen" className="font-semibold text-[#007a95] underline">
               i-screen review
             </a>
-            <span className="text-[#56504a]">, which prices the range and says who it does not suit.</span>
+            <span className="text-[#56504a]">, which prices the range and explains how the code works.</span>
           </p>
         </div>
       </section>

@@ -29,7 +29,7 @@ const FAQS = [
    */
   {
     q: "Which discount codes does Refer Labs hold?",
-    a: "Four, each dated in the table above: Moshy (REFERRAL120, with a 3-month minimum commitment), Mosh (REFERAL55), Juniper (JARREDKFC, an $89 consultation waived) and i-screen (referlabs). What each one discounts, and what it does not, is set out on the brand's own page, linked from its row.",
+    a: "Four, each dated in the table above: Moshy (REFERRAL120, with a 3-month minimum commitment), Mosh (REFERAL55), Juniper (JARREDKFC, an $89 consultation waived) and i-screen (referlabs, used while signed in to an i-screen account). What each one discounts, and what it does not, is set out on the brand's own page, linked from its row.",
   },
   {
     q: "Are these discount codes current?",
@@ -116,7 +116,7 @@ export default function DealsPage() {
       <OfferSchema code="REFERRAL120" />
       <OfferSchema code="REFERAL55" />
       <OfferSchema code="referlab2mf" />
-      <OfferSchema code="REFERLABS" />
+      <OfferSchema code="referlabs" />
 
       <main id="main-content" className="mx-auto max-w-5xl px-5 py-12 sm:px-8 sm:py-16">
         <nav className="mb-8 flex items-center gap-2 text-sm text-[#56504a]">

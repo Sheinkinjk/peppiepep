@@ -106,12 +106,6 @@ export default function Page() {
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">If you are worried about diabetes</h2>
-        <p className="mt-3">
-          A GP can assess whether testing is indicated. Diabetes and prediabetes are diagnosed on blood tests read by a clinician; that is the validated diagnostic pathway, it attracts a
-          Medicare rebate where indicated, and it gives you an answer a clinician can act on. A sensor bought online
-          does none of those three things.
-        </p>
         <p className="mt-3">
           General information for an Australian audience, not medical advice, and not a recommendation for or against
           any device.

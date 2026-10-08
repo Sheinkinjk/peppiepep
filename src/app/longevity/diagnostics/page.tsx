@@ -16,7 +16,7 @@ const guides = [
 const faqs = [
   {
     q: "Does Refer Labs earn from these pages?",
-    a: "From one company, i-screen, since 23 September 2026. It gave us the code referlabs, worth $20 off a first test, and that code is the only thing we are paid on: a reader who clicks through and buys without entering it earns us nothing. We earn nothing from Everlab, Prenuvo, or any imaging or pathology provider named in these guides. i-screen's own terms state that none of its services are Medicare-rebatable.",
+    a: "From one company, i-screen, since 23 September 2026. It gave us the code referlabs, worth $20 off a first test, and that code is the only thing we are paid on: a reader who clicks through and buys without entering it earns us nothing. We earn nothing from Everlab, Prenuvo, or any imaging or pathology provider named in these guides.",
   },
   {
     q: "Is preventive health screening covered in Australia?",
@@ -27,12 +27,8 @@ const faqs = [
     a: "No. Medicare rebates apply to imaging requested for a clinical indication, not to screening someone without symptoms, so a whole-body scan bought as a preventive service is paid entirely by you.",
   },
   {
-    q: "What is an incidental finding, and why does it matter?",
-    a: "Something a scan picks up that was not what you were looking for and may never have caused you harm. It matters because it rarely ends with the scan: it typically leads to follow-up imaging, specialist appointments and sometimes biopsy, each with its own cost.",
-  },
-  {
     q: "Are biological age tests accurate?",
-    a: "They are consistent enough to sell and not yet validated enough to act on. Different tests use different methods and can return materially different ages from the same sample, which tells you the number is a model output rather than a measurement of you. Treat it as an interesting figure rather than a health finding."
+    a: "A biological age is an estimate produced by a statistical model, not a direct measurement. Different tests use different methods and can return different ages from the same sample. It is general information, not a diagnosis."
   },
 ];
 
@@ -58,7 +54,7 @@ export default function DiagnosticsHub() {
             {
               name: "i-screen",
               href: "/go/i-screen-diagnostics-hub",
-              what: "Pathology ordered without a GP referral, listed from A$39 to A$1,099, read 23 September 2026. The code referlabs takes A$20 off a first test and is the only thing we are paid on. None of it is Medicare-rebatable, on i-screen's own terms.",
+              what: "Pathology ordered without a GP referral, listed from A$39 to A$1,099, read 23 September 2026. The code referlabs takes A$20 off a first test when you are signed in to an i-screen account, and is the only thing we are paid on.",
               checked: "23 September 2026",
               review: { href: "/i-screen", label: "Read our i-screen review" },
             },
