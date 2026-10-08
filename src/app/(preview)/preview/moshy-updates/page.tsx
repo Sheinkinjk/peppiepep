@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "@/app/home.css";
 import "@/app/theme.css";
 import "@/app/brand.css";
+import "@/components/moshy-preview/moshy-preview.css";
 import { SiteFooterBar } from "@/components/brand/SiteChrome";
 import { MoshyUpdatesView } from "@/components/moshy-preview/MoshyUpdatesView";
 import { moshySignupUrl } from "@/components/moshy-preview/copy";

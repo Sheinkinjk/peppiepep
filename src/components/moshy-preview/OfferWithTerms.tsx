@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Check, Copy } from "lucide-react";
+import { CtaLink } from "./CtaLink";
 
 /**
  * The only place the Moshy code may appear on the page. Every prop is required,
@@ -34,41 +35,26 @@ export function OfferWithTerms({ code, valueLine, terms, ctaHref, ctaLabel, prev
   }
 
   return (
-    <div data-offer-card="" className="rounded-2xl border border-[#ded8cd] bg-white p-6 text-left sm:p-8">
+    <div data-offer-card="" className="mp-card">
       <div className="flex flex-wrap items-center gap-3">
-        <button
-          type="button"
-          onClick={copy}
-          className="inline-flex items-center gap-2 rounded-xl border-2 border-dashed border-[#007a95] bg-[#e4f2f5] px-4 py-2 font-mono text-lg font-bold tracking-wider text-[#14120f] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#007a95]"
-          aria-label={`Copy code ${code}`}
-        >
+        <button type="button" onClick={copy} className="mp-card__code" aria-label={`Copy code ${code}`}>
           {code}
           {copied ? <Check className="h-4 w-4" aria-hidden="true" /> : <Copy className="h-4 w-4" aria-hidden="true" />}
         </button>
-        <span aria-live="polite" className="text-sm text-[#56504a]">
+        <span aria-live="polite" className="mp-card__copied">
           {copied ? "Copied" : ""}
         </span>
       </div>
 
-      <div className="mt-4 text-lg font-semibold text-[#14120f]">{valueLine}</div>
+      <p className="mp-card__val">{valueLine}</p>
 
-      <div className="mt-4 text-sm leading-relaxed text-[#3d3833]">
-        <p className="mb-1 font-semibold text-[#14120f]">Terms</p>
+      <div className="mp-card__terms">
+        <p className="mp-card__terms-h">Terms</p>
         {terms}
       </div>
 
-      <div className="mt-6 flex flex-wrap items-center gap-3">
-        <a
-          href={ctaHref}
-          target="_blank"
-          rel="sponsored noopener"
-          onClick={(e) => {
-            if (preview && !window.confirm(confirmText)) e.preventDefault();
-          }}
-          className="nw-btn inline-flex items-center justify-center px-6 py-3 text-[15px]"
-        >
-          {ctaLabel}
-        </a>
+      <div className="mp-card__cta">
+        <CtaLink href={ctaHref} label={ctaLabel} tone="dark" preview={preview} confirmText={confirmText} />
       </div>
     </div>
   );

@@ -1,113 +1,83 @@
 /**
- * Every user-facing string on /preview/moshy-updates (rewritten 8 Oct 2026).
+ * Every user-facing string on /preview/moshy-updates (premium layout, 8 Oct 2026).
  *
- * A Moshy member-offer page modelled on /moshy. Facts come from the same
- * sources as /moshy (getmoshy.com.au, read 30 Sep 2026; REFERRAL120 checked on
- * Moshy's sign-up page, date from src/lib/offers.ts). Buttons go to Moshy's
- * normal sign-up (our tracked MOSHY_URL), NOT the Moshy waitlist: that page
- * advertises an unnamed new medicine, and linking would make this page part of it.
+ * THIS FILE IS THE ONLY PLACE TO EDIT WORDING. The layout reads every line from
+ * here. Jarred is replacing the hero, notice and closing lines with wording
+ * modelled on Moshy's own sign-up page; the neutral text below holds the slots
+ * until then. Get the lawyer's view before the page is shown outside Moshy.
  *
- * Legal limits: no medicine, class, format, outcome, novelty or urgency; no
- * testimonials or ratings; no "treatment"; the $ amount appears only inside the
- * offer card with its terms (National Law s 133). Do not add copy without review.
+ * Facts about Moshy's current service come from getmoshy.com.au, as on /moshy
+ * (read 30 Sep 2026). The $ amount appears only inside the offer card beside its
+ * terms (National Law s 133). No testimonials or ratings.
+ * tests/moshy-preview-compliance.test.tsx scans the rendered page against the
+ * brief's banned list, so new wording that trips it will fail `npm test`.
  */
 import { MOSHY_URL } from "@/lib/affiliate-links";
 import { MOSHY_TERMS_URL, REFERRAL120_TERMS, checkedOn } from "@/lib/offers";
 
-export const moshySignupUrl = (): string => MOSHY_URL;
+/** Moshy's sign-up page. Set MOSHY_SIGNUP_URL in Vercel when Moshy sends the link; until then our tracked Moshy link. */
+export const moshySignupUrl = (): string => process.env.MOSHY_SIGNUP_URL?.trim() || MOSHY_URL;
 export { MOSHY_TERMS_URL, REFERRAL120_TERMS };
 export const REFERRAL120_CHECKED_ON = checkedOn("REFERRAL120") ?? "";
-export const MOSHY_FACTS_READ_ON = "30 September 2026";
 
 export const BANNER =
-  "PREVIEW — not live. Content, offer and partner details are pending Moshy approval and legal review.";
+  "PREVIEW — not live. Pending Moshy approval and legal review. Final Moshy sign-up link to be added.";
 
-export const HEADER_RIGHT = "in partnership with Moshy";
+export const HEADER_RIGHT = "Member page";
 
 export const HERO = {
-  eyebrow: "Moshy × Refer Labs",
-  h1: "Moshy online weight management, with a Refer Labs member offer",
-  lead:
-    "Moshy is an Australian online weight-management service and the brother brand of Mosh. You answer an online questionnaire, then talk to an independent AHPRA-registered doctor or nurse by phone or video, who decides whether the program is suitable for you.",
-  button: "Continue to Moshy",
-  small: "No GP referral needed. For adults 18+.",
+  kicker: "Moshy × Refer Labs",
+  h1: "Sign up with Moshy.",
+  lede: "Moshy shares the details with you directly once you've signed up on its site. Refer Labs members also get a code for their first order.",
+  button: "Sign up with Moshy",
+  small: "For adults 18+. You sign up on Moshy's own site.",
 };
 
-export const GLANCE: [string, string][] = [
-  ["What it is", "Australian weight-management telehealth, brother brand of Mosh"],
-  ["How it works", "Online questionnaire, then a consultation by phone or video"],
-  ["Practitioners", "Independent AHPRA-registered doctors and nurses"],
-  ["Pricing", "One monthly program fee, shown on Moshy's site before you pay"],
-  ["Member offer", "A Refer Labs code for Moshy, with its terms below"],
-];
+/** The prominent notice under the hero. */
+export const NOTICE = {
+  h2: "Why this page says so little",
+  body:
+    "Australian advertising rules limit what we can say about health services on this page. Moshy explains everything after you sign up, and a health practitioner decides in a consultation whether anything is suitable for you.",
+};
 
-export const TILES = [
-  { icon: "stethoscope", label: "Practitioner-led", line: "Independent AHPRA-registered doctors and nurses" },
-  { icon: "laptop", label: "Online", line: "Phone or video consultation, no GP referral" },
-  { icon: "users", label: "Ongoing support", line: "Coaching, meal plans and a member community in Moshy's app" },
-  { icon: "ticket", label: "Member offer", line: "A Refer Labs code for Moshy (see terms)" },
+export const CHIPS = [
+  { object: "send", title: "Straight from Moshy", body: "Moshy contacts you directly after you sign up." },
+  { object: "clinic", title: "Practitioner-led", body: "Independent AHPRA-registered doctors and nurses." },
+  { object: "phone", title: "From home", body: "Consultations by phone or video, no GP referral." },
+  { object: "offer", title: "Member offer", body: "A Refer Labs code for Moshy, terms below." },
 ] as const;
 
-export const STEPS_HEADING = "How Moshy works";
+export const STEPS_HEADING = "What happens next";
 export const STEPS = [
-  {
-    title: "Answer Moshy's online questionnaire",
-    body: "It covers your health history, your goals and your current situation, and takes a few minutes.",
-  },
-  {
-    title: "Talk to a practitioner",
-    body: "Moshy arranges a consultation by phone or video. The practitioner goes through your answers with you and decides whether the program is suitable for you.",
-  },
-  {
-    title: "Ongoing support",
-    body: "If you go ahead, Moshy says the program fee includes unlimited practitioner support, coaching, meal plans and a member community in its app.",
-  },
+  { title: "Sign up with Moshy", body: "Add your details on Moshy's site. Refer Labs doesn't collect them." },
+  { title: "Moshy gets in touch", body: "Moshy explains the details to you directly." },
+  { title: "Talk to a practitioner", body: "If you choose to go ahead, a consultation decides whether anything is suitable for you." },
 ];
 
-export const INCLUDED_HEADING = "What's included";
-export const INCLUDED_INTRO = `As listed on Moshy's own site, read ${MOSHY_FACTS_READ_ON}:`;
-export const INCLUDED = [
-  "Unlimited practitioner support",
-  "In-app health tracking and health coaching",
-  "Meal plans, recipes and nutrition support from dietitians",
-  "A supportive member community",
-  "A care team including doctors, nurses, dietitians, psychologists and exercise physiologists",
-  "A 30-day money back guarantee and a price match guarantee, each on Moshy's own terms",
-];
-
-export const OFFER_SECTION_TITLE = "Refer Labs member offer";
+export const OFFER_HEADING = "Your Refer Labs member offer";
 export const OFFER_VALUE = "$120 off your first order";
-export const OFFER_CTA = "Continue to Moshy";
+export const OFFER_CTA = "Sign up with Moshy";
 export const OFFER_CONFIRM = "Preview: this would open Moshy's sign-up with Refer Labs attribution.";
 
-export const RIGHT_FOR_ME = {
-  h2: "Is it right for me?",
-  body:
-    "Moshy is for adults who want to talk to a health practitioner about weight management. Only a practitioner can decide whether the program is appropriate for you. If you have concerns about eating or body image, talk to your GP, or contact the Butterfly Foundation on 1800 33 4673.",
-};
+export const ABOUT_HEADING = "About Moshy";
+export const ABOUT_BODY =
+  "Moshy is an Australian online weight-management service and the brother brand of Mosh. Its programs start with an online questionnaire and a consultation by phone or video with an independent AHPRA-registered doctor or nurse.";
 
-export const FAQ_HEADING = "Common questions";
+export const FAQ_HEADING = "Questions";
 export const FAQS = [
   { q: "Is Refer Labs part of Moshy?", a: "No. Refer Labs is an independent comparison site and a Moshy affiliate partner." },
-  {
-    q: "Do I need a GP referral?",
-    a: "No. You start with Moshy's online questionnaire, and Moshy arranges the consultation by phone or video.",
-  },
+  { q: "Who collects my details?", a: "Moshy does, on its own site. Refer Labs doesn't collect your details on this page." },
   {
     q: "How do I use the member code?",
-    a: "Enter the code shown in the member offer at checkout on Moshy's site. Moshy's terms, shown beside the code, apply.",
-  },
-  {
-    q: "Can I get a refund?",
-    a: "Moshy advertises a 30-day money back guarantee and a price match guarantee, each with its own conditions in Moshy's terms at getmoshy.com.au/terms.",
+    a: "Enter the code shown in the member offer at checkout with Moshy. Moshy's terms, shown beside the code, apply.",
   },
   {
     q: "Is this medical advice?",
-    a: "No. This page is general information. Speak to a health practitioner about your circumstances.",
+    a: "No. This page is general information. Speak to a health practitioner about your circumstances. If you have concerns about eating or body image, talk to your GP, or contact the Butterfly Foundation on 1800 33 4673.",
   },
 ];
 
-export const CTA_BAND_H2 = "Start with Moshy";
+export const CLOSING = { h2: "Hear from Moshy directly.", button: "Sign up with Moshy" };
 
 export const DISCLOSURE =
-  "Refer Labs may receive a commission when you use our code or links. It doesn't change what you pay. A Moshy practitioner decides whether the program is suitable for you. General information only, not medical advice. Pepform Pty Ltd t/a Refer Labs, ABN 32 660 008 159.";
+  "Refer Labs may receive a commission when you use our code or links. It doesn't change what you pay. Moshy's practitioners decide whether a program is suitable for you. General information only, not medical advice. Pepform Pty Ltd t/a Refer Labs, ABN 32 660 008 159.";
