@@ -18,7 +18,7 @@ const faqs = [
   },
   {
     q: "Does Medicare cover any of this?",
-    a: "Generally not, because these are screening services for people without symptoms rather than investigations of a clinical problem. If something found leads to a clinically indicated follow-up, that follow-up may attract a rebate. The initial screen does not.",
+    a: "No. All three are private services paid in full.",
   },
 ];
 
@@ -112,17 +112,12 @@ export default function Page() {
 
 
       <section>
-        <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f]">When a test may be rebated</h2>
-        <p className="mt-3">
-          A test requested for a clinical reason, such as a symptom or a family history, can attract a Medicare rebate.
-          A private screen you order yourself is paid in full.
-        </p>
         <p className="mt-3">
           Our{" "}
           <a href="/longevity/diagnostics/whole-body-mri-australia-cost" className="font-semibold text-[#007a95] hover:underline">
             page on whole-body MRI
           </a>{" "}
-          sets out what each provider charges and what the fee leaves out.
+          sets out what each provider charges and what each fee covers.
         </p>
         <p className="mt-3">
           General information for an Australian audience, not medical advice, and not a recommendation for or against

@@ -6,7 +6,7 @@ import { generateMetadata as generateSEOMetadata, seoConfig } from "@/lib/seo";
 export const metadata = generateSEOMetadata(seoConfig.diagnosticsHub);
 
 const guides = [
-  { href: "/longevity/diagnostics/whole-body-mri-australia-cost", title: "Whole-body MRI: what it costs", desc: "Published prices from three providers, what the fee covers, and why no rebate applies." },
+  { href: "/longevity/diagnostics/whole-body-mri-australia-cost", title: "Whole-body MRI: what it costs", desc: "Published prices from the providers' own sites, and what each fee covers." },
   { href: "/longevity/diagnostics/everlab-vs-prenuvo-vs-i-screen-australia", title: "Everlab vs Prenuvo vs i-screen", desc: "What each measures, how each is priced, and who reviews the result." },
   { href: "/longevity/diagnostics/biological-age-testing-australia", title: "Biological age testing", desc: "Why two tests can give different ages from one sample, and what that tells you." },
   { href: "/longevity/diagnostics/cgm-for-non-diabetics-australia", title: "Glucose monitors without diabetes", desc: "What they cost unsubsidised, how access works, and what the evidence supports." },

@@ -739,7 +739,7 @@ export const seoConfig = {
   wholeBodyMri: {
     title: "Whole-Body MRI Cost in Australia 2026: Prices Compared",
     description:
-      "What a whole-body MRI costs in Australia, read off each provider's own site, what the fee includes and what it leaves out, and why no Medicare rebate applies.",
+      "What a whole-body MRI costs in Australia, read off each provider's own site, and what each fee includes.",
     url: `${SITE_URL}/longevity/diagnostics/whole-body-mri-australia-cost`,
     keywords: ["whole body mri australia cost", "prenuvo cost australia", "full body scan australia", "whole body mri medicare"],
   },

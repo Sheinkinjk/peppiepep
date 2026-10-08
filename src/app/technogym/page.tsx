@@ -63,9 +63,8 @@ const brand: RetailerBrand = {
           listed here, at {money(low.price)}, sits above much of that. This is the premium end of home equipment.
         </>,
         <>
-          The case for spending at this level is build quality, servicing and resale rather than anything the
-          equipment does to your body that a cheaper one does not. Judge it as furniture you will use daily, and
-          price it against how often you will actually use it.
+          What the price buys at this level is build quality, design, servicing and resale value. Technogym
+          lists each item's specifications on its own site.
         </>,
       ],
     },
@@ -98,7 +97,7 @@ const brand: RetailerBrand = {
     },
     {
       q: "Does Refer Labs earn money from this page?",
-      a: "Yes, through Commission Factory, if you buy after following our link, and this is the most expensive thing we link to anywhere. That is precisely why the page says cheaper equipment exists and that we earn nothing from it.",
+      a: "Yes. Refer Labs earns a commission through Commission Factory if you buy after following our link, at no extra cost to you.",
     },
   ],
   disclaimer: (
