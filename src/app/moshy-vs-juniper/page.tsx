@@ -190,18 +190,18 @@ export default function MoshyVsJuniperPage() {
 
         <section className="mt-14 grid gap-4 sm:grid-cols-2">
           <div className="rounded-2xl border border-[#ded8cd] bg-[#f7f4ee] p-6">
-            <h2 className="text-lg font-bold text-[#14120f]">Choose Moshy if</h2>
+            <h2 className="text-lg font-bold text-[#14120f]">Moshy also lists</h2>
             <ul className="mt-3 space-y-2 text-[15px] leading-relaxed text-[#56504a]">
-              <li>You may want hair or skin care from the same family of brands later.</li>
-              <li>You want a care team that lists psychologists and exercise physiologists.</li>
-              <li>You want in-app health coaching included in the program fee.</li>
+              <li>Hair and skin services from the same family of brands.</li>
+              <li>A care team that includes psychologists and exercise physiologists.</li>
+              <li>In-app health coaching in the program fee.</li>
             </ul>
           </div>
           <div className="rounded-2xl border border-[#ded8cd] bg-[#f7f4ee] p-6">
-            <h2 className="text-lg font-bold text-[#14120f]">Choose Juniper if</h2>
+            <h2 className="text-lg font-bold text-[#14120f]">Juniper also lists</h2>
             <ul className="mt-3 space-y-2 text-[15px] leading-relaxed text-[#56504a]">
-              <li>You want a program designed around women, with a physio-designed exercise program.</li>
-              <li>You want a practitioner team of specialist GPs and nurse practitioners, with nurses and pharmacists on its medical support team.</li>
+              <li>A program designed around women, with a physio-designed exercise program.</li>
+              <li>A practitioner team of specialist GPs and nurse practitioners, with nurses and pharmacists on its medical support team.</li>
             </ul>
           </div>
         </section>

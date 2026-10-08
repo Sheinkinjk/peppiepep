@@ -18,7 +18,7 @@ const breadcrumbSchema = {
 };
 
 const hubs = [
-  { href: "/weight-loss", label: "Weight Loss", desc: "Telehealth, programs and the GP pathway, compared." },
+  { href: "/weight-loss", label: "Weight Loss", desc: "Online weight-management programs, compared." },
   { href: "/hair-loss", label: "Hair Loss", desc: "Online consultation, your GP or over-the-counter products." },
   { href: "/coming-soon", label: "Coming Soon", desc: "The category still being built out, and what is already readable in it." },
   { href: "/health-and-beauty", label: "Health & Beauty", desc: "Skincare, devices and meal replacements: what each costs here, and which claims survive a check." },

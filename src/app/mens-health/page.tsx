@@ -43,7 +43,7 @@ const guides: GuideLink[] = [
   {
     href: "/midoc",
     title: "Midoc: what it costs and how access works",
-    desc: `Consultations from ${MIDOC.consultStandard}, certificates from ${MIDOC.certificateSingleDay}, and who the service does not suit. Prices read ${MIDOC.readOnShort}.`,
+    desc: `Consultations from ${MIDOC.consultStandard}, certificates from ${MIDOC.certificateSingleDay}. Prices read ${MIDOC.readOnShort}.`,
     kind: "review",
   },
   {
@@ -69,8 +69,8 @@ const OTHER: { href: string; label: string; object: ObjectKind }[] = [
 
 const faqs = [
   {
-    q: "What does men's health treatment cost in Australia?",
-    a: "It depends far more on the access route than on the condition. A GP consult may be bulk-billed or carry a gap, with a Medicare rebate on the consultation. Online clinics generally run subscriptions that bundle a consult with ongoing support. The figure worth comparing is what each route costs over twelve months, not what the first appointment costs.",
+    q: "What does an online men's health consultation cost in Australia?",
+    a: "Online clinics price either per consultation or by subscription, and some bill certificates or follow-ups separately. Check what the fee includes and what is billed on top before you start. Our Midoc guide lists its published prices with the date they were read.",
   },
   {
     q: "Are online men's health clinics legitimate in Australia?",
@@ -78,7 +78,7 @@ const faqs = [
   },
   {
     q: "Is men's health covered by Medicare?",
-    a: "Rebates apply to consultations rather than to products. A GP appointment attracts a rebate and may be bulk-billed. Online clinic subscriptions are often outside Medicare entirely, which is a material difference when comparing them on price.",
+    a: "Medicare rebates apply to eligible consultations rather than to products. Many online clinic fees are private and outside Medicare, so check whether a rebate applies before you book.",
   },
   {
     q: "Do you name specific medicines on these pages?",
@@ -153,11 +153,9 @@ export default function MensHealthHub() {
               </h1>
               {/* The answer, directly under the h1. Nothing between: check-answer-slot. */}
               <p className="mt-5 text-lg leading-relaxed text-[#14120f]">
-                An online clinic and a GP charge for the same thing on different models, and the advertised numbers
-                cannot be compared directly. One bills a subscription every month whether you consult or not; the
-                other bills per appointment, often with a Medicare rebate and sometimes bulk-billed. These guides put
-                both on a twelve-month footing, say what each route includes and what is billed separately, and price
-                the parts you can actually check, from a consultation to a certificate.
+                Online men&apos;s health clinics run consultations by phone or video, and price them either per
+                consultation or by subscription. These guides set out how online access works, what each fee includes
+                and what is billed separately, and price the parts you can check, from a consultation to a certificate.
               </p>
               <AffiliateDisclosure compact className="mt-4" />
             </div>
@@ -179,12 +177,13 @@ export default function MensHealthHub() {
           ctaPrefix="mens-health-hub"
           heading="The provider we cover"
           intro="Every provider on this site answers the same four questions, and the one covered here is no exception. We earn a commission if you sign up through the link, hold no discount code for it, and it cannot pay to be described more favourably."
+          suitsHeading="What it is"
           providers={[
             {
               name: "Midoc",
               href: "/midoc",
               hrefLabel: "Read our Midoc guide",
-              suits: "Someone who wants a consultation or a certificate quickly, without booking a clinic visit.",
+              suits: "Online consultations and medical certificates, without a clinic visit.",
               how: `Online consultations with ${MIDOC.practitioners}, ${MIDOC.waitTime}. Certificates are a separate line with their own prices.`,
               cost: `Standard consultation ${MIDOC.consultStandard}, specialist ${MIDOC.consultSpecialist}, certificates from ${MIDOC.certificateSingleDay}, read ${MIDOC.readOnLabel}.`,
               visitHref: "/go/midoc-mens-health-hub",

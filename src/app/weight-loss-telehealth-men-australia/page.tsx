@@ -109,7 +109,7 @@ export default function WeightLossTelehealthMenPage() {
         <section className="space-y-4 mb-10">
           <h2 className="text-xl font-black">Where Moshy fits</h2>
           <p className="text-[#56504a] text-sm sm:text-base leading-relaxed">
-            Moshy takes anyone a practitioner assesses as suitable and passes the checklist above: AHPRA-registered practitioners, a
+            Moshy takes anyone a practitioner assesses as suitable. It has AHPRA-registered practitioners, a
             screening step, pricing published on its own site, and Australian regulation. It includes in-app coaching,
             dietitian meal plans and a community. Juniper, the other service we compare, is designed for women; our{" "}
             <Link href="/best-weight-loss-telehealth-australia" className="underline decoration-[#ded8cd] underline-offset-2 hover:text-[#14120f]" style={{ color: CYAN }}>

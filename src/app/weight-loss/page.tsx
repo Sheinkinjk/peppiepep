@@ -85,11 +85,11 @@ const faqs = [
   },
   {
     q: "Is a weight loss telehealth service the same as a weight loss clinic?",
-    a: "The care is similar, the format differs. An online clinic runs the assessment and follow-up remotely, while a traditional clinic sees you in person. Both use registered practitioners. Telehealth tends to be faster to start and more flexible; in-person care adds a physical exam and whole-of-health context. Our telehealth vs GP guide sets out the trade.",
+    a: "The care is similar, the format differs. An online clinic runs the assessment and follow-up remotely, while a traditional clinic sees you in person. Both use registered practitioners. The services on this hub run online; a registered practitioner assesses you either way.",
   },
   {
     q: "Where should I start if I'm comparing weight loss options in Australia?",
-    a: "Start by deciding between an online service and your GP. Both begin with a practitioner assessing you; an online service is faster to start, and a GP sees you in person with Medicare offsetting part of the fee. Then compare what each online service includes on our telehealth comparison.",
+    a: "Start with what each online service includes: the consultation, coaching, meal plans and how the fee is structured. Our telehealth comparison lines Moshy and Juniper up on each of those, read off their own sites.",
   },
   {
     q: "Are online weight loss services in Australia legitimate?",
@@ -167,14 +167,14 @@ export default function WeightLossHubPage() {
                 Weight loss telehealth in Australia: online programs compared
               </h1>
               <p className="mt-5 text-lg leading-relaxed text-[#14120f]">
-                Online weight loss telehealth lets you start without waiting weeks for an appointment: you complete an
-                assessment, and a registered practitioner reviews it and decides whether the program is right for you. This hub
-                compares the two Australian online services we cover, Moshy and Juniper, and sets them beside your GP.
+                Online weight loss telehealth runs the consultation remotely: you complete an assessment, and a
+                registered practitioner reviews it and decides whether the program is right for you. This hub compares
+                the two Australian online services we cover, Moshy and Juniper.
               </p>
               {/* Below the lead. The first paragraph after the h1 is the answer;
                   a disclosure in that slot is what an engine lifts instead. Still
                   above the first affiliate link, which is what it is for. */}
-              <AffiliateDisclosure compact required={JUNIPER_REQUIRED?.text} className="mt-4" notWholeMarket="Both online services on this hub pay us, and the GP route earns us nothing. We only cover services we have a commercial relationship with, which is not the whole market." />
+              <AffiliateDisclosure compact required={JUNIPER_REQUIRED?.text} className="mt-4" notWholeMarket="Both online services on this hub pay us. We only cover services we have a commercial relationship with, which is not the whole market." />
               <OfferSchema code="REFERRAL120" />
             </div>
 
@@ -272,15 +272,9 @@ export default function WeightLossHubPage() {
               applicants are declined. That screening step is the single most useful thing to look for. A service that
               promises a particular outcome before a practitioner has assessed you is one to avoid.
             </p>
-            <h3 className="pt-2 text-xl font-bold text-[#14120f]">
-              Telehealth and your GP: the practical difference
-            </h3>
             <p>
-              The two routes above are different products. An online service runs the assessment and follow-ups
-              remotely for a program fee, and both services we cover add app coaching and dietitian support. Your GP
-              sees you in person with your whole health picture in view, and Medicare offsets part of the cost, but it
-              is slower to get moving. Non-clinical coaching and lifestyle programs put habits first without a
-              practitioner assessment, and we do not compare them here.
+              An online service runs the assessment and follow-ups remotely for a program fee, and both services we
+              cover add app coaching and dietitian support.
             </p>
             <p>
               Everything on this page is general information to help you compare services. It is not medical advice,
@@ -304,8 +298,8 @@ export default function WeightLossHubPage() {
           <NewsletterSignup
             variant="band"
             source="weight-loss-hub"
-            heading="New weight-loss services launch constantly"
-            sub="We track them so you don't have to. Get the important updates and new comparisons, no spam."
+            heading="Offers and comparison updates"
+            sub="New comparisons and changes to the offers on this site, by email. No spam."
           />
         </section>
 

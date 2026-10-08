@@ -52,7 +52,7 @@ export default function Page() {
       sectionHref="/womens-health"
       slug="/womens-health/menopause-care-cost-australia"
       crumb="Menopause care costs"
-      h1={<>Menopause care in Australia: <span>what the GP, telehealth and clinic routes cost</span></>}
+      h1={<>Menopause care in Australia: <span>what it costs</span></>}
       intro="The cheapest first step for most women is a Medicare menopause health assessment with their own GP: item 695, rebated at $104.55, in person, and available once every 12 months. Private telehealth menopause services cost more and are often rebated less. A first consult across the seven services we read left between nothing and $326 out of pocket, and their program and support fees attract no rebate at all."
       headline="Menopause care costs in Australia"
       description={seoConfig.whMenopause.description}

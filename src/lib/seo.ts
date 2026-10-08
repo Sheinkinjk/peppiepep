@@ -334,7 +334,7 @@ export const seoConfig = {
   weightLossHub: {
     title: "Weight Loss Telehealth Australia 2026 | Refer Labs",
     description:
-      "Compare weight-loss telehealth in Australia: what Moshy and Juniper each include, and how an online service compares with your GP. Information only.",
+      "Compare weight-loss telehealth in Australia: what Moshy and Juniper each include and how each program is structured. Information only.",
     url: `${SITE_URL}/weight-loss`,
     keywords: [
       "weight loss telehealth australia",
@@ -784,7 +784,7 @@ export const seoConfig = {
     keywords: ["womens health australia", "womens health telehealth australia", "online womens health clinic australia", "womens health without a gp"],
   },
   whMenopause: {
-    title: "Menopause Care Cost Australia 2026: GP, Telehealth, Medicare",
+    title: "Menopause Care Cost Australia 2026: Telehealth and Medicare",
     description:
       "The Medicare menopause assessment pays $104.55, in person, once every 12 months. What private telehealth menopause services charge after the rebate.",
     url: `${SITE_URL}/womens-health/menopause-care-cost-australia`,
@@ -822,7 +822,7 @@ export const seoConfig = {
     // its title did not say telehealth. Same page, now targeting the demand it inherited.
     title: "Men's Health Telehealth in Australia 2026: Costs and How Access Works",
     description:
-      "Independent guides to men's health telehealth in Australia: how online clinics and GPs differ on cost and consult model, and what is bulk-billed.",
+      "Independent guides to men's health telehealth in Australia: how an online consultation works, what it costs to start, and what Medicare covers.",
     url: `${SITE_URL}/mens-health`,
     keywords: ["mens health australia", "mens health telehealth australia", "mens health clinic australia", "mens health cost australia"],
   },
@@ -1082,7 +1082,7 @@ export const seoConfig = {
   hairLossTreatmentCost: {
     title: "Hair Loss Costs in Australia 2026 | Refer Labs",
     description:
-      "How hair-loss care is priced in Australia: over-the-counter products, a GP visit, and a telehealth subscription such as Mosh, plus what Medicare covers.",
+      "How hair-loss care is priced in Australia: over-the-counter products and a telehealth subscription such as Mosh, and what each includes.",
     url: `${SITE_URL}/hair-loss-treatment-cost-australia`,
     keywords: ["hair loss treatment cost australia", "mosh hair loss cost", "hair loss telehealth cost australia", "hair loss telehealth cost", "how much does hair loss treatment cost"],
   },
@@ -2202,7 +2202,7 @@ export const seoConfig = {
     noIndex: true,
     title: "Free Australian Weight-Loss Options Guide | Refer Labs",
     description:
-      "A free, plain-English guide to the main weight-loss routes in Australia: online telehealth programs, coaching and the GP route, and how each works.",
+      "A free, plain-English guide to online weight-management programs in Australia: how telehealth programs and coaching work.",
     url: `${SITE_URL}/weight-loss-guide`,
     keywords: ["weight loss options australia", "weight loss guide australia", "weight loss telehealth guide"],
   },
@@ -2255,7 +2255,7 @@ export const seoConfig = {
   weightLossCostCalculator: {
     title: "Weight Loss Telehealth Cost Calculator Australia",
     description:
-      "Work out what weight-loss telehealth costs in Australia: compare program fees, coaching add-ons and the GP route, and where each provider publishes its price.",
+      "Work out what weight-loss telehealth costs in Australia: program fees, coaching add-ons, and where each provider publishes its price.",
     url: `${SITE_URL}/weight-loss-cost-calculator`,
     keywords: [
       "weight loss telehealth cost calculator",

@@ -62,7 +62,7 @@ export const HAIR_LOSS_GUIDES: HairLossGuideEntry[] = [
       },
     ],
     faqs: [
-      { q: "What is the best treatment for a receding hairline?", a: "No single treatment is right for everyone. A registered practitioner assesses whether any option is appropriate for you. Over-the-counter shampoos and supplements are cosmetic products and involve no assessment." },
+      { q: "How is a receding hairline assessed?", a: "No single approach is right for everyone. A registered practitioner assesses whether any option is appropriate for you. Over-the-counter shampoos and supplements are cosmetic products and involve no assessment." },
       { q: "Is a receding hairline always male pattern baldness?", a: "No. A mature hairline settling slightly higher in your twenties is normal, and other causes of hair loss behave differently and need their own assessment. That is one reason a practitioner review matters before assuming a treatment is right for you." },
       { q: "How do I get a receding hairline assessed in Australia?", a: "Through your GP or an online consultation with a registered practitioner. Telehealth services run this online: you complete a consultation with photos, and a practitioner reviews it and decides whether the program is right for you. Mosh is one such service; Refer Labs readers get 55% off with the code REFERAL55 at checkout (new customers only, first order of a hair program, Mosh's terms apply). Some applicants are declined." },
     ],

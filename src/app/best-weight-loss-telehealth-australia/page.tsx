@@ -152,7 +152,6 @@ const webPageSchema = {
   dateModified: "2026-10-01",
   about: [
     { "@type": "Thing", name: "weight loss telehealth Australia 2026" },
-    { "@type": "Thing", name: "practitioner-assessed treatment telehealth Australia" },
     { "@type": "Thing", name: "online weight management Australia" },
     { "@type": "Thing", name: "Moshy weight loss review" },
     { "@type": "Thing", name: "Juniper weight loss Australia" },

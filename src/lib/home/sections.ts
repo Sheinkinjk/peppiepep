@@ -62,7 +62,7 @@ export const howSteps: { n: number; title: string; body: string; object: ObjectK
     body: "We research the categories where the choice is genuinely hard, from weight-loss and hair-loss telehealth to home batteries, health screening and the software that runs a business." },
   { n: 2, title: "Compare", object: "checklist",
     body: "When we compare providers, we look at the same six things.",
-    chips: ["Pricing", "Eligibility", "Inclusions", "Trade-offs", "Availability in Australia", "Who each option suits"] },
+    chips: ["Pricing", "Eligibility", "Inclusions", "Trade-offs", "Availability in Australia", "What each includes"] },
   { n: 3, title: "Write it up", object: "document",
     body: "Then we write it up in plain language, with prices and offers checked where possible." },
   { n: 4, title: "Disclose", object: "balance",

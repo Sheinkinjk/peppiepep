@@ -46,7 +46,7 @@ export default function Page() {
               <tr>
                 <th className="px-4 py-3 font-semibold">Service</th>
                 <th className="px-4 py-3 font-semibold">Built around</th>
-                <th className="px-4 py-3 font-semibold">Best suited to answering</th>
+                <th className="px-4 py-3 font-semibold">The question it addresses</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-[#f1ede4]">

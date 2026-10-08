@@ -72,7 +72,7 @@ export const moshyConfig: AffiliatePageConfig = {
     },
     {
       q: "Is getmoshy.com.au the official Moshy site, and is Moshy legit?",
-      a: `Yes, getmoshy.com.au is Moshy's own domain; "Get Moshy" and "getmoshy" refer to the same service, and this page is run by Refer Labs, not Moshy. On its own site Moshy says it partners with independent AHPRA-registered doctors and nurses based in Australia, who are paid on a fee-for-service basis. Its weight-loss page states it is NSQPCH-accredited ("Australia's only digital health platform (that we know of)" to hold it), holds QIP Accreditation and LegitScript certification, and is ISO/IEC 27001 certified for information security. Read on getmoshy.com.au on ${MOSHY_FACTS_READ_ON}.`,
+      a: `Yes, getmoshy.com.au is Moshy's own domain; "Get Moshy" and "getmoshy" refer to the same service, and this page is run by Refer Labs, not Moshy. On its own site Moshy says it partners with independent AHPRA-registered doctors and nurses based in Australia, who are paid on a fee-for-service basis. Its weight-loss page states it is NSQPCH-accredited, holds QIP Accreditation and LegitScript certification, and is ISO/IEC 27001 certified for information security. Read on getmoshy.com.au on ${MOSHY_FACTS_READ_ON}.`,
     },
     {
       q: "How much does Moshy cost per month?",
@@ -84,7 +84,7 @@ export const moshyConfig: AffiliatePageConfig = {
     },
     {
       q: "Do I need a GP referral to use Moshy?",
-      a: "No. You start with Moshy's own online questionnaire, and the consultation is arranged by Moshy by phone or video. If you would rather keep your weight management with your own GP, our Moshy vs GP page compares the two routes.",
+      a: "No. You start with Moshy's own online questionnaire, and the consultation is arranged by Moshy by phone or video."
     },
   ],
 

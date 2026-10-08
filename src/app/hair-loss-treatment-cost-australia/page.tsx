@@ -110,7 +110,7 @@ export default function HairLossTreatmentCostAustraliaPage() {
             <span>/</span>
             <Link href="/hair-loss" className="hover:text-[#14120f] transition-colors">Hair loss</Link>
             <span>/</span>
-            <span className="text-[#14120f]">Treatment cost</span>
+            <span className="text-[#14120f]">Costs</span>
           <SectionMark kind="comb" size={56} /></nav>
 
           {/* Hero */}
@@ -244,8 +244,8 @@ export default function HairLossTreatmentCostAustraliaPage() {
                 <p>
                   For the routes themselves, our{" "}
                   <Link href="/best-hair-loss-treatment-australia" className="nw-link">hair-loss comparison</Link>{" "}
-                  sets Mosh beside your GP, and the{" "}
-                  <Link href="/hair-loss" className="nw-link">hair-loss hub</Link> explains who each route suits.
+                  explains how a Mosh consultation works, and the{" "}
+                  <Link href="/hair-loss" className="nw-link">hair-loss hub</Link> lists every guide.
                 </p>
               </div>
             </section>

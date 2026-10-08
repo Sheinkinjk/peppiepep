@@ -150,7 +150,7 @@ export const moshHairConfig: AffiliatePageConfig = {
     {
       href: "/mosh-review",
       label: "Mosh Review: Is It Legit?",
-      desc: "Who runs the consultations, how billing works, and who Mosh does not suit.",
+      desc: "Who runs the consultations and how billing works.",
     },
     {
       href: "/hair-loss-treatment-cost-australia",

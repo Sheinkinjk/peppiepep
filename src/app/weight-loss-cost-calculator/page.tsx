@@ -26,7 +26,7 @@ const faqs = [
   },
   {
     q: "Does Medicare cover weight-loss telehealth?",
-    a: "Telehealth weight-management programs are generally private services, so the program fees are not Medicare-rebated. The GP route is different: eligible in-person or telehealth GP consults may attract Medicare rebates, and some practices bulk-bill, which is why the GP route can suit people prioritising lowest cash cost over speed and convenience. Check your own practice's billing.",
+    a: "Telehealth weight-management programs are generally private services, so the program fees are not Medicare-rebated. Check what the program fee includes before you start."
   },
   {
     q: "Is this tool medical advice?",
