@@ -102,13 +102,8 @@ export const moshyConfig: AffiliatePageConfig = {
     },
     {
       href: "/best-weight-loss-telehealth-australia",
-      label: "Best weight loss telehealth in Australia",
+      label: "Weight-loss telehealth in Australia, compared",
       desc: "The Australian online weight-management providers compared on how they work and how they are priced.",
-    },
-    {
-      href: "/moshy-vs-gp",
-      label: "Moshy vs your GP",
-      desc: "Online telehealth against seeing your own doctor.",
     },
     {
       href: "/moshy-review",

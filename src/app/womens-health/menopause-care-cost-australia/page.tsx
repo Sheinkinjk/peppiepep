@@ -58,7 +58,6 @@ export default function Page() {
       description={seoConfig.whMenopause.description}
       faqs={faqs}
       related={[
-        { href: "/womens-health/uti-treatment-without-a-gp-australia", label: "UTI treatment without a GP" },
       ]}
     >
       <section>

@@ -35,6 +35,15 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // Retired 9 Oct 2026 (Jarred), after the TGA/Ahpra wording review: comparisons
+      // of a telehealth service against GPs (Ahpra guideline 4.1.3, comparative and
+      // price claims), "without a GP" UTI wording (the TGA's own non-compliant
+      // example), and a "cheapest" superlative on a price page for a service that
+      // involves prescription medicines.
+      { source: '/moshy-vs-gp', destination: '/moshy', permanent: true },
+      { source: '/mens-health/is-telehealth-or-a-gp-cheaper-for-mens-health', destination: '/mens-health', permanent: true },
+      { source: '/womens-health/uti-treatment-without-a-gp-australia', destination: '/womens-health', permanent: true },
+      { source: '/cheapest-weight-loss-telehealth-australia', destination: '/best-weight-loss-telehealth-australia', permanent: true },
       // Retired 7 Oct 2026 (Jarred): TGA guidance names eligibility questionnaires
       // that lead to a prescription service as likely advertising.
       { source: '/weight-loss-quiz', destination: '/best-weight-loss-telehealth-australia', permanent: true },

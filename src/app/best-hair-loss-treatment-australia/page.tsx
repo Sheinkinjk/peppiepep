@@ -30,30 +30,35 @@ export const metadata = generateSEOMetadata(seoConfig.bestHairLossTreatmentAustr
  *
  * Title test (5 Sep, read 5 Oct): the title is unchanged. The h1 now repeats it.
  * The body change is a confound, recorded beside the test in seo.ts.
+ *
+ * 9 Oct 2026 (Jarred, after the TGA/Ahpra wording review): retitled with no
+ * "best" or "treatment", and the Mosh-vs-GP comparison removed (Ahpra guideline
+ * 4.1.3, comparative claims). URL kept to protect ranking. The see-a-doctor line
+ * for sudden or patchy loss, or loss in a woman, stays: it is a safety flag.
  */
 
 const MOSH_READ = "30 September 2026";
 
 const FAQS = [
   {
-    q: "What is the best hair loss treatment in Australia?",
-    a: "There is no single best treatment, because what is appropriate depends on the cause and stage of the hair loss. The practical choice is who assesses you: an online service such as Mosh, or your GP. A registered practitioner decides what is appropriate for you. Over-the-counter shampoos and serums are cosmetic and need no consult. Sudden, patchy or unexplained hair loss is a reason to see a GP first.",
+    q: "How do the hair-loss options in Australia differ?",
+    a: "There are two broad options. An assessment by a registered practitioner, such as an online consultation with Mosh, where the practitioner decides what is appropriate for you. And over-the-counter shampoos and serums, which are cosmetic and need no consult. Sudden, patchy or unexplained hair loss is a reason to see a doctor in person.",
   },
   {
-    q: "How much does hair loss treatment cost per month in Australia?",
-    a: "Online hair-loss services such as Mosh charge a subscription that covers the consultation and ongoing check-ins. Mosh lists its plans on its own pricing page; the practitioner decides which, if any, applies, and Mosh shows the price before you pay. A GP consult may be bulk-billed, or carry a gap fee after the Medicare rebate.",
+    q: "How is an online hair-loss service priced?",
+    a: "Online hair-loss services such as Mosh charge a subscription that covers the consultation and ongoing check-ins. Mosh lists its plans on its own pricing page; the practitioner decides which, if any, applies, and Mosh shows the price before you pay.",
   },
   {
     q: "What does Mosh do?",
-    a: `Mosh is an Australian telehealth service for men. For hair loss you complete an online questionnaire with photos, and an AHPRA-registered doctor or nurse practitioner reviews it (getmosh.com.au, read ${MOSH_READ}). It suits men who would rather not book a GP appointment. It is not an emergency or diagnostic service.`,
+    a: `Mosh is an Australian telehealth service for men. For hair loss you complete an online questionnaire with photos, and an AHPRA-registered doctor or nurse practitioner reviews it (getmosh.com.au, read ${MOSH_READ}). It is not an emergency or diagnostic service.`,
   },
   {
     q: "Can I have hair loss assessed online in Australia?",
-    a: "Yes. An online service arranges a consultation with a registered practitioner: a questionnaire and photos, sometimes followed by a call. Mosh runs this for men. Women, and anyone with sudden or patchy loss, are better served by a GP.",
+    a: "Yes. An online service arranges a consultation with a registered practitioner: a questionnaire and photos, sometimes followed by a call. Mosh runs this for men. Women, and anyone with sudden or patchy loss, should see a doctor in person.",
   },
   {
-    q: "Do over-the-counter hair products work on their own?",
-    a: "Shampoos, conditioners and serums sold for thinning hair are cosmetic: they can improve how hair looks and feels, and they need no consult. A pharmacist can tell you what a product is for. If the loss is progressing, an assessment by a practitioner or your GP is the step that finds the cause.",
+    q: "What are over-the-counter hair products?",
+    a: "Shampoos, conditioners and serums sold for thinning hair are cosmetic: they can improve how hair looks and feels, and they need no consult. A pharmacist can tell you what a product is for.",
   },
 ];
 
@@ -65,7 +70,7 @@ const breadcrumbSchema = {
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Refer Labs", item: SITE_URL },
     { "@type": "ListItem", position: 2, name: "Guides", item: `${SITE_URL}/guides` },
-    { "@type": "ListItem", position: 3, name: "Best Hair Loss Treatment Australia 2026", item: `${SITE_URL}/best-hair-loss-treatment-australia` },
+    { "@type": "ListItem", position: 3, name: "Hair-Loss Options Compared", item: `${SITE_URL}/best-hair-loss-treatment-australia` },
   ],
 };
 
@@ -86,19 +91,19 @@ const webPageSchema = {
 };
 
 const articleSchema = comparisonArticleSchema({
-  headline: "Best Hair Loss Treatment Australia 2026: How to Choose",
-  description: "Refer Labs compares an online consultation with Mosh and an appointment with your GP for hair loss in Australia, on how each works and how each is priced.",
+  headline: "Hair-Loss Options in Australia 2026, Compared",
+  description: "How an online hair-loss consultation with Mosh works in Australia and how it is priced, and where over-the-counter products fit.",
   url: "https://referlabs.com.au/best-hair-loss-treatment-australia",
   datePublished: "2026-07-05",
   dateModified: "2026-10-01",
 });
 
-const ROWS: { label: string; mosh: string; gp: string }[] = [
-  { label: "What it is", mosh: "An online consultation with an Australian telehealth service", gp: "An appointment with your own doctor" },
-  { label: "Who assesses you", mosh: "An AHPRA-registered doctor or nurse practitioner, from a questionnaire and photos", gp: "Your GP, face to face, with a full history" },
-  { label: "Who it is for", mosh: "Men", gp: "Anyone" },
-  { label: "Where", mosh: "Online, with no clinic visit", gp: "In person, or by telehealth with your own GP" },
-  { label: "How it is priced", mosh: "A subscription; no charge for the initial consultation", gp: "A consult fee, which may be bulk-billed or rebated by Medicare" },
+const ROWS: { label: string; mosh: string }[] = [
+  { label: "What it is", mosh: "An online consultation with an Australian telehealth service" },
+  { label: "Who assesses you", mosh: "An AHPRA-registered doctor or nurse practitioner, from a questionnaire and photos" },
+  { label: "Who it is for", mosh: "Men" },
+  { label: "Where", mosh: "Online, with no clinic visit" },
+  { label: "How it is priced", mosh: "A subscription; no charge for the initial consultation" },
 ];
 
 export default function BestHairLossTreatmentAustraliaPage() {
@@ -116,33 +121,32 @@ export default function BestHairLossTreatmentAustraliaPage() {
           <span>/</span>
           <Link href="/guides" className="hover:text-[#14120f] transition-colors">Guides</Link>
           <span>/</span>
-          <span className="text-[#14120f]">Best Hair Loss Treatment Australia 2026</span>
+          <span className="text-[#14120f]">Hair-Loss Options Compared</span>
         </nav>
 
         <section className="pt-8 pb-4">
           <div className="grid items-start gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
             <div className="max-w-3xl">
               <h1 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-black leading-[1.08] tracking-tight text-[#14120f] mb-4">
-                Best Hair Loss Treatment Australia 2026: <span>How to Choose</span>
+                Hair-Loss Options in Australia 2026, <span>Compared</span>
               </h1>
               {/* The answer, directly under the h1. Nothing between: check-answer-slot. */}
               <p className="text-[#14120f] text-base sm:text-lg leading-relaxed">
-                The practical choice is who assesses you: an online service such as Mosh, or your GP. A registered
-                practitioner decides what is appropriate for you. Mosh is an online consultation with an
-                AHPRA-registered practitioner; it is for men and runs fully online.
-                A GP sees anyone, can order tests and refer you on, and the consult may be bulk-billed. Over-the-counter
-                shampoos and serums are cosmetic and need no consult. Sudden or patchy loss, or hair loss in a woman, is
-                a reason to start with a GP.
+                Hair-loss options in Australia fall into two groups: an assessment by a registered practitioner, such
+                as an online consultation with Mosh, and over-the-counter cosmetic products. Mosh is an online
+                consultation with an AHPRA-registered practitioner; it is for men and runs fully online, and the
+                practitioner decides what is appropriate for you. Over-the-counter shampoos and serums are cosmetic and
+                need no consult. Sudden or patchy loss, or hair loss in a woman, is a reason to see a doctor in person.
               </p>
-              <AffiliateDisclosure compact className="mt-4" notWholeMarket="Mosh is the only online service we compare, and it pays us. The GP route earns us nothing. Other online hair-loss services exist that this page does not cover." />
+              <AffiliateDisclosure compact className="mt-4" notWholeMarket="Mosh is the only online service we compare, and it pays us. Other online hair-loss services exist that this page does not cover." />
             </div>
             <EdgeObject kind="comb" className="lg:mt-14">
               <MatchPrompt
                 stacked
                 href="#side-by-side"
-                title="See the three routes side by side"
-                sub="An online consultation, over-the-counter products and your GP: what each involves and how each is priced."
-                cta="Jump to the comparison"
+                title="How a Mosh consultation works"
+                sub="Who assesses you, where it happens, how it is priced, and the Refer Labs offer."
+                cta="See the details"
                 dataCta="best-hair-loss-hero-compare"
               />
             </EdgeObject>
@@ -150,25 +154,22 @@ export default function BestHairLossTreatmentAustraliaPage() {
           <OfferSchema code="REFERAL55" />
         </section>
 
-        {/* One side-by-side. Two columns plus a label column fit a 375px screen
-            without a horizontal scroll, so nothing clips. */}
+        {/* Mosh only since 9 Oct 2026: the GP column was a comparative claim. */}
         <section id="side-by-side" className="pt-10">
-          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">Mosh and your GP, side by side</h2>
+          <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">How a Mosh consultation works</h2>
           <p className="mt-3 max-w-3xl text-[15px] leading-relaxed text-[#56504a]">
-            Listed alphabetically. Mosh facts read on getmosh.com.au, {MOSH_READ}.
+            Read on getmosh.com.au, {MOSH_READ}.
           </p>
           <div className="mt-6 overflow-hidden rounded-2xl border border-[#ded8cd] bg-white">
             <table className="w-full table-fixed border-collapse text-[13px] sm:text-sm">
               <colgroup>
-                <col className="w-[28%] sm:w-[22%]" />
-                <col />
+                <col className="w-[34%] sm:w-[26%]" />
                 <col />
               </colgroup>
               <thead>
                 <tr className="bg-[#f7f4ee] text-left">
                   <th scope="col" className="px-3 py-3 sm:px-4"><span className="sr-only">Attribute</span></th>
                   <th scope="col" className="px-3 py-3 font-bold text-[#14120f] sm:px-4">Mosh</th>
-                  <th scope="col" className="px-3 py-3 font-bold text-[#14120f] sm:px-4">Your GP</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-[#f1ede4] align-top">
@@ -176,7 +177,6 @@ export default function BestHairLossTreatmentAustraliaPage() {
                   <tr key={r.label}>
                     <th scope="row" className="px-3 py-3 text-left font-medium text-[#56504a] sm:px-4">{r.label}</th>
                     <td className="px-3 py-3 text-[#14120f] sm:px-4">{r.mosh}</td>
-                    <td className="px-3 py-3 text-[#14120f] sm:px-4">{r.gp}</td>
                   </tr>
                 ))}
                 <tr>
@@ -184,7 +184,6 @@ export default function BestHairLossTreatmentAustraliaPage() {
                   <td className="px-3 py-3 text-[#14120f] sm:px-4">
                     55% off with REFERAL55. Use code REFERAL55 at checkout; our link opens Mosh&apos;s sign-up with the offer.{checked ? ` Checked ${checked}.` : ""}
                   </td>
-                  <td className="px-3 py-3 text-[#14120f] sm:px-4">None</td>
                 </tr>
                 <tr>
                   <th scope="row" className="px-3 py-3 text-left font-medium text-[#56504a] sm:px-4"><span className="sr-only">Next step</span></th>
@@ -202,9 +201,6 @@ export default function BestHairLossTreatmentAustraliaPage() {
                       We earn a commission if you sign up with Mosh through this link, at no extra cost to you.
                     </p>
                   </td>
-                  <td className="px-3 py-4 text-[12px] leading-relaxed text-[#56504a] sm:px-4">
-                    Book with your own GP. We earn nothing from this.
-                  </td>
                 </tr>
               </tbody>
             </table>
@@ -216,21 +212,16 @@ export default function BestHairLossTreatmentAustraliaPage() {
         </section>
 
         <section className="pt-12 pb-2 max-w-3xl">
-          <h2 className="text-xl sm:text-2xl font-black text-[#14120f] mb-4">What is the best hair-loss treatment in Australia?</h2>
+          <h2 className="text-xl sm:text-2xl font-black text-[#14120f] mb-4">How do the hair-loss options in Australia differ?</h2>
           <p className="text-[#14120f] text-sm sm:text-base leading-relaxed">{FAQS[0].a}</p>
         </section>
 
         <section id="gp" className="border-t border-[#ded8cd] mt-10 py-10 max-w-3xl">
-          <h2 className="text-xl sm:text-2xl font-black text-[#14120f] mb-4">When your GP is the better first step</h2>
+          <h2 className="text-xl sm:text-2xl font-black text-[#14120f] mb-4">When to see a doctor in person</h2>
           <div className="space-y-4 text-[#56504a] text-sm sm:text-base leading-relaxed">
             <p>
-              A GP sees you in person, takes a full history, can order blood tests to rule out other causes, and can
-              refer you to a dermatologist. The consult may be bulk-billed or rebated by Medicare. It is slower to
-              arrange, and for straightforward male pattern hair loss many men find an online service more convenient.
-            </p>
-            <p>
-              Go to a GP first if the loss is sudden, patchy, comes with scalp symptoms, or you are a woman: the online
-              service compared here is for men.
+              See a doctor in person if the loss is sudden, patchy or comes with scalp symptoms, or if you are a woman:
+              Mosh&apos;s hair-loss service is for men.
             </p>
           </div>
         </section>
@@ -239,8 +230,7 @@ export default function BestHairLossTreatmentAustraliaPage() {
           <h2 className="text-xl sm:text-2xl font-black text-[#14120f] mb-4">Where over-the-counter products fit</h2>
           <p className="text-[#56504a] text-sm sm:text-base leading-relaxed">
             Pharmacies and supermarkets sell shampoos, conditioners and serums for thinning hair. They are cosmetic,
-            need no consult, and are priced per product. A pharmacist can explain what a product is for. They do not
-            find the cause of hair loss, which is what an assessment by a practitioner or your GP is for. We do not
+            need no consult, and are priced per product. A pharmacist can explain what a product is for. We do not
             recommend a brand, and we earn nothing from this route.
           </p>
         </section>

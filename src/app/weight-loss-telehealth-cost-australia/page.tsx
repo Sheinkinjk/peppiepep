@@ -185,8 +185,8 @@ export default function WeightLossTelehealthCostAustraliaPage() {
                 <p>
                   You can read more about how the service runs end to end in our{" "}
                   <Link href="/moshy-review" className="nw-link">independent Moshy review</Link>, and see how Moshy sits against other
-                  providers in our roundup of the{" "}
-                  <Link href="/best-weight-loss-telehealth-australia" className="nw-link">best weight-loss telehealth in Australia</Link>.
+                  providers in our{" "}
+                  <Link href="/best-weight-loss-telehealth-australia" className="nw-link">weight-loss telehealth comparison</Link>.
                 </p>
               </div>
             </section>
@@ -280,8 +280,7 @@ export default function WeightLossTelehealthCostAustraliaPage() {
                 <li><Link href="/moshy" className="nw-link">Moshy: the offer and how to start</Link></li>
                 <li><Link href="/moshy-review" className="nw-link">Our independent Moshy review</Link></li>
                 <li><Link href="/weight-loss" className="nw-link">Weight loss navigator: how online consultations work</Link></li>
-                <li><Link href="/best-weight-loss-telehealth-australia" className="nw-link">Best weight-loss telehealth in Australia, compared</Link></li>
-                <li><Link href="/cheapest-weight-loss-telehealth-australia" className="nw-link">The cheapest weight-loss telehealth routes</Link></li>
+                <li><Link href="/best-weight-loss-telehealth-australia" className="nw-link">Weight-loss telehealth in Australia, compared</Link></li>
                 <li><Link href="/moshy-vs-juniper" className="nw-link">Moshy vs Juniper, side by side</Link></li>
                 <li><Link href="/weight-loss" className="nw-link">The full weight-loss hub</Link></li>
               </ul>

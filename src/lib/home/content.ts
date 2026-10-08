@@ -48,7 +48,7 @@ export const nav: NavGroup[] = [
     label: "Hair Loss", href: "/hair-loss",
     items: [
       { label: "Mosh", href: "/moshhair", blurb: "How it works, plus 55% off your first order" },
-      { label: "Compare all options", href: "/best-hair-loss-treatment-australia", blurb: "Online consultation or your GP, compared" },
+      { label: "Compare all options", href: "/best-hair-loss-treatment-australia", blurb: "Online consultation and over-the-counter options, compared" },
       { label: "What it costs", href: "/hair-loss-treatment-cost-australia", blurb: "What each route costs" },
     ],
   },
@@ -124,7 +124,7 @@ export const trust = [
 /* ---- 5. this month's top picks ------------------------------------------ */
 
 export const picks = {
-  heading: "This month's top picks",
+  heading: "This month's offers",
   allLink: { label: "All current offers", href: "/deals" },
   /* the date in this sentence is derived at render time, not typed */
   noteBefore: "Each offer below was read off the provider's own page, the oldest of them on ",
@@ -158,7 +158,7 @@ export const categories = {
   items: [
     {
       label: "Weight Loss & Telehealth", href: "/weight-loss",
-      body: "Moshy, Juniper and your GP, compared on what each includes.",
+      body: "Moshy and Juniper, compared on what each includes.",
       links: [
         { label: "Moshy: the offer", href: "/moshy" },
         { label: "Moshy vs Juniper", href: "/moshy-vs-juniper" },
@@ -166,10 +166,10 @@ export const categories = {
     },
     {
       label: "Hair Loss", href: "/hair-loss",
-      body: "Hair-loss telehealth and your GP compared, on cost and how each works.",
+      body: "Hair-loss telehealth and over-the-counter options, compared on cost and how each works.",
       links: [
         { label: "Mosh: the offer", href: "/moshhair" },
-        { label: "Best treatment, compared", href: "/best-hair-loss-treatment-australia" },
+        { label: "Hair-loss options, compared", href: "/best-hair-loss-treatment-australia" },
       ],
     },
     {
@@ -230,9 +230,9 @@ export const comparisons = {
   heading: "Popular comparisons",
   allLink: { label: "All guides", href: "/guides" },
   items: [
-    { kicker: "Hair loss", title: "Best hair loss treatment: Mosh or your GP", href: "/best-hair-loss-treatment-australia" },
+    { kicker: "Hair loss", title: "Hair-loss options, compared", href: "/best-hair-loss-treatment-australia" },
     { kicker: "Solar & energy", title: "Solar and batteries: what to decide, in order", href: "/solar-and-energy" },
-    { kicker: "Weight loss", title: "Telehealth or your GP? A practical comparison", href: "/moshy-vs-gp" },
+    { kicker: "Weight loss", title: "Moshy vs Juniper: what each includes", href: "/moshy-vs-juniper" },
     { kicker: "Creator tools", title: "beehiiv vs Substack vs Kit, compared properly", href: "/best-newsletter-platform" },
   ],
 };
@@ -305,7 +305,7 @@ export const footer = {
     {
       heading: "Top comparisons",
       links: [
-        { label: "Best Weight-Loss Telehealth", href: "/best-weight-loss-telehealth-australia" },
+        { label: "Weight-Loss Telehealth Compared", href: "/best-weight-loss-telehealth-australia" },
         { label: "Hair-Loss Options Compared", href: "/best-hair-loss-treatment-australia" },
         { label: "Best Website Builder", href: "/best-website-builder" },
         { label: "Best Newsletter Platform", href: "/best-newsletter-platform" },

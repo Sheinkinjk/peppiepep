@@ -48,9 +48,9 @@ export const comingSoonCard = {
 export type Matchup = { names: string[]; join: string; object: ObjectKind };
 export const comparisonCards = comparisons.items.map((c) => {
   const m: Record<string, Matchup> = {
-    "/best-hair-loss-treatment-australia": { names: ["Mosh", "Your GP"], join: "or", object: "comb" },
+    "/best-hair-loss-treatment-australia": { names: ["Mosh", "Over the counter"], join: "or", object: "comb" },
     "/solar-and-energy": { names: ["Solar", "Batteries"], join: "+", object: "solar" },
-    "/moshy-vs-gp": { names: ["Telehealth", "Your GP"], join: "or", object: "scale" },
+    "/moshy-vs-juniper": { names: ["Moshy", "Juniper"], join: "vs", object: "scale" },
     "/best-newsletter-platform": { names: ["beehiiv", "Substack", "Kit"], join: "vs", object: "envelope" },
   };
   return { ...c, ...m[c.href] };

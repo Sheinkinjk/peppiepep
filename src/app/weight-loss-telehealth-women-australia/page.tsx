@@ -159,9 +159,8 @@ export default function WeightLossTelehealthWomenPage() {
           <h2 className="text-xl font-black mb-2">What does each include?</h2>
           <WeightInclusionsTable className="mt-4" />
           <p className="mt-4 text-[#56504a] text-sm sm:text-base leading-relaxed">
-            The two include much the same support, so the choice is about fit. Juniper suits someone who wants a program
-            designed around women, with a physio-designed exercise program. Moshy suits someone who wants an all-inclusive fee or may
-            later use Mosh&apos;s hair or skin services. We compare the two question by question in our{" "}
+            The two include much the same support. Juniper is designed around women and lists a physio-designed
+            exercise program. Moshy has an all-inclusive fee and sits alongside Mosh&apos;s hair and skin services. We compare the two question by question in our{" "}
             <Link href="/moshy-vs-juniper" className="underline decoration-[#ded8cd] underline-offset-2 hover:text-[#14120f]" style={{ color: CYAN }}>
               Moshy vs Juniper guide
             </Link>.
@@ -191,7 +190,7 @@ export default function WeightLossTelehealthWomenPage() {
           <Link href="/juniper" style={{ color: CYAN }} className="hover:opacity-80">Juniper review &rarr;</Link>
           <Link href="/moshy" style={{ color: CYAN }} className="hover:opacity-80">Moshy guide &rarr;</Link>
           <Link href="/moshy-review" style={{ color: CYAN }} className="hover:opacity-80">Moshy review &rarr;</Link>
-          <Link href="/best-weight-loss-telehealth-australia" style={{ color: CYAN }} className="hover:opacity-80">Best weight loss telehealth &rarr;</Link>
+          <Link href="/best-weight-loss-telehealth-australia" style={{ color: CYAN }} className="hover:opacity-80">Weight-loss telehealth, comparedth &rarr;</Link>
         </div>
 
         <AffiliateDisclosure partners={["Juniper", "Moshy"]} className="mt-8" />

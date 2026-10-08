@@ -17,7 +17,7 @@ export const metadata = generateSEOMetadata(seoConfig.hairLossHub);
 
 
 const guides = [
-  { href: "/best-hair-loss-treatment-australia", title: "Best hair loss treatment", desc: "Mosh and your GP side by side, and where over-the-counter products fit." },
+  { href: "/best-hair-loss-treatment-australia", title: "Hair-loss options, compared", desc: "How a Mosh online consultation works, and where over-the-counter products fit." },
   { href: "/moshhair", title: "Mosh review & offer", desc: "How the men's hair-loss telehealth service works, plus 55% off your first order." },
   { href: "/mosh-review", title: "Is Mosh legit?", desc: "Who runs the consultations and how billing works." },
   { href: "/hair-loss-treatment-cost-australia", title: "Hair-loss costs compared", desc: "How over-the-counter products, a GP and a telehealth subscription are each priced." },
@@ -59,7 +59,7 @@ const collectionSchema = {
   "@type": "CollectionPage",
   datePublished: "2026-03-16",
   dateModified: "2026-10-01",
-  name: "Hair loss treatment options in Australia, compared",
+  name: "Hair loss options in Australia, compared",
   description:
     "Refer Labs' hair loss hub for Australians: an online consultation, your GP, or over-the-counter products, and how each is priced.",
   url: `${SITE_URL}/hair-loss`,
@@ -96,7 +96,7 @@ export default function HairLossHubPage() {
           <div className="grid items-start gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
           <div className="max-w-2xl">
             <h1 className="mt-4 text-4xl font-bold leading-[1.06] tracking-[-0.01em] text-[#14120f] sm:text-5xl">
-              Hair loss treatment options in Australia, compared
+              Hair loss options in Australia, compared
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#14120f]">
               There are three routes. An online consultation with a service such as Mosh, where a registered
@@ -117,7 +117,7 @@ export default function HairLossHubPage() {
               stacked
               href="/best-hair-loss-treatment-australia"
               title="Compare the three routes"
-              sub="An online consultation, over-the-counter products and your GP, side by side: what each involves and how each is priced."
+              sub="An online consultation and over-the-counter products: what each involves and how each is priced."
               cta="Compare all options"
               dataCta="hair-hub-hero-compare"
             />
@@ -162,7 +162,7 @@ export default function HairLossHubPage() {
                 bulk-billed. The better first step for sudden or patchy loss, and for women. We earn nothing from it.
               </p>
               <p className="mt-5 text-sm font-semibold">
-                <Link href="/best-hair-loss-treatment-australia" className="text-[#007a95] hover:underline">Mosh and your GP, side by side →</Link>
+                <Link href="/best-hair-loss-treatment-australia" className="text-[#007a95] hover:underline">Hair-loss options, compared →</Link>
               </p>
             </div>
             <div className="rounded-2xl border border-[#ded8cd] bg-white p-7">

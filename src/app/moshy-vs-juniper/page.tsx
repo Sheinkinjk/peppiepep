@@ -148,7 +148,7 @@ export default function MoshyVsJuniperPage() {
 
         <p className="nw-kicker mt-8">Weight-loss telehealth · Australia</p>
         <h1 className="mt-3 max-w-3xl text-3xl font-extrabold leading-[1.08] tracking-[-0.02em] text-[#14120f] sm:text-4xl lg:text-[2.7rem]">
-          Moshy vs Juniper: which one is built for you?
+          Moshy vs Juniper: what each includes
         </h1>
         <p className="mt-5 max-w-2xl text-base leading-relaxed text-[#56504a] sm:text-lg">
           Moshy and Juniper are both Australian weight-management telehealth services where a registered practitioner
@@ -238,8 +238,7 @@ export default function MoshyVsJuniperPage() {
         <nav aria-label="Related" className="mt-12 flex flex-wrap gap-x-6 gap-y-2 border-t border-[#ded8cd] pt-8 text-sm">
           <Link href="/moshy-review" className="nw-link">Moshy review</Link>
           <Link href="/juniper" className="nw-link">Juniper review</Link>
-          <Link href="/best-weight-loss-telehealth-australia" className="nw-link">Best weight-loss telehealth</Link>
-          <Link href="/cheapest-weight-loss-telehealth-australia" className="nw-link">Cheapest weight-loss telehealth</Link>
+          <Link href="/best-weight-loss-telehealth-australia" className="nw-link">Weight-loss telehealth, compared</Link>
           <Link href="/guides" className="nw-link">All guides</Link>
         </nav>
 

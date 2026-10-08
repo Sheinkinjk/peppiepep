@@ -50,7 +50,6 @@ export default function Page() {
       description={seoConfig.mensClinicsCompared.description}
       faqs={faqs}
       related={[
-        { href: "/mens-health/is-telehealth-or-a-gp-cheaper-for-mens-health", label: "Telehealth or a GP?" },
         { href: "/mens-health/online-doctor-medical-certificate-australia", label: "Online medical certificates" },
       ]}
     >

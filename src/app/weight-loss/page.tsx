@@ -59,10 +59,8 @@ const guides = [
   { href: "/moshy-review", title: "Moshy review", desc: "How the service runs, from application to subscription." },
   { href: "/moshy-vs-juniper", title: "Moshy vs Juniper", desc: "What each includes and how each is priced, read off their own sites." },
   { href: "/juniper", title: "Juniper review", desc: "Designed for women: what the program includes, who its practitioners are, and how it compares to Moshy." },
-  { href: "/best-weight-loss-telehealth-australia", title: "Best weight loss telehealth", desc: "Moshy and Juniper side by side." },
-  { href: "/cheapest-weight-loss-telehealth-australia", title: "Cheapest weight loss telehealth", desc: "Subscription vs pay-as-you-go, and what cheapest means." },
+  { href: "/best-weight-loss-telehealth-australia", title: "Weight-loss telehealth, compared", desc: "Moshy and Juniper: what each includes." },
   { href: "/weight-loss-telehealth-cost-australia", title: "What it costs", desc: "How telehealth pricing and subscriptions work." },
-  { href: "/moshy-vs-gp", title: "Telehealth vs your GP", desc: "Online consultations or in-person care: the practical trade." },
   { href: "/weight-loss-telehealth-men-australia", title: "The men's guide", desc: "How men's services work and the pre-signup checklist." },
   { href: "/moshy", title: "Moshy offer & referral link", desc: "$120 off your first order with code REFERRAL120 at checkout." },
   { href: "/weight-loss-cost-calculator", title: "Weight-loss cost calculator", desc: "Estimate the monthly cost of each route before you commit." },
@@ -74,12 +72,12 @@ const faqs = [
     a: "You complete a health questionnaire online, a registered Australian practitioner reviews your answers, and if you are suitable they discuss an appropriate plan with you. Everything happens remotely through a secure portal or app. Some applicants are declined at the review stage.",
   },
   {
-    q: "What are the best online weight loss programs in Australia?",
-    a: "There is no single best program, because the right fit depends on whether you want an online service or in-person care with your GP, and on the support you want around it. Moshy and Juniper both include meal plans, a community and app progress tracking; Juniper is designed for women and lists a physio-designed exercise program, and Moshy includes in-app health coaching and also covers hair and skin. Our comparison lines them up on what each includes. We never sell rankings.",
+    q: "Which online weight loss programs does Refer Labs compare?",
+    a: "Moshy and Juniper. Moshy and Juniper both include meal plans, a community and app progress tracking; Juniper is designed for women and lists a physio-designed exercise program, and Moshy includes in-app health coaching and also covers hair and skin. Our comparison lines them up on what each includes. We never sell rankings.",
   },
   {
     q: "How much do online weight loss programs cost in Australia?",
-    a: "Online services charge a program fee: Moshy describes its fee as all-inclusive, and Juniper's varies with the plan and level of support. Both publish pricing on their own sites. A GP visit is partly offset by Medicare. Check what the fee includes and any minimum commitment before you pay.",
+    a: "Online services charge a program fee: Moshy describes its fee as all-inclusive, and Juniper's varies with the plan and level of support. Both publish pricing on their own sites. Check what the fee includes and any minimum commitment before you pay.",
   },
   {
     q: "Can you see a weight-management practitioner online in Australia?",
@@ -200,19 +198,18 @@ export default function WeightLossHubPage() {
             telehealth comparison, so it was a dead end wearing the same clothes
             as a real route. Named in the lead instead, which is the honest
             version: we say the category exists and that we do not cover it.
-            The GP card kept its link, which runs to /moshy-vs-gp, but lost
-            "for plenty of people the right place to begin": that was us making
-            a clinical recommendation we cannot support for an unseen reader. */}
+            The GP card was removed 9 Oct 2026 with /moshy-vs-gp: a telehealth-vs-GP
+            comparison is an Ahpra guideline 4.1.3 risk (comparative claims). */}
         <section className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
           <h2 className="text-2xl font-bold tracking-[-0.01em] text-[#14120f] sm:text-3xl">
             Where telehealth fits
           </h2>
           <p className="mt-3 max-w-3xl text-[15px] leading-relaxed text-[#56504a]">
-            Two routes start with a practitioner assessing you: an online service, or your own GP. This hub compares
-            the online route. Non-clinical coaching and lifestyle programs are a separate market, and we do not compare
-            them here.
+            This hub covers online weight-management services, where a registered practitioner assesses you
+            individually. Non-clinical coaching and lifestyle programs are a separate market, and we do not compare them
+            here.
           </p>
-          <div className="mt-7 grid gap-4 lg:grid-cols-2">
+          <div className="mt-7 grid gap-4">
             <div className="rounded-2xl border border-[#007a95]/30 bg-white p-7">
               <HubObject kind="phone" size={64} className="hy-obj mb-4" />
               <h3 className="text-xl font-bold text-[#14120f]">
@@ -228,20 +225,6 @@ export default function WeightLossHubPage() {
                 <p><Link href="/moshy" className="text-[#007a95] hover:underline">Learn more about Moshy →</Link></p>
                 <p><Link href="/juniper" className="text-[#007a95] hover:underline">Learn more about Juniper →</Link></p>
               </div>
-            </div>
-            <div className="rounded-2xl border border-[#ded8cd] bg-white p-7">
-              <HubObject kind="clinic" size={64} className="hy-obj mb-4" />
-              <h3 className="text-xl font-bold text-[#14120f]">
-                Your GP
-              </h3>
-              <p className="mt-2.5 text-sm leading-relaxed text-[#56504a]">
-                An in-person assessment with your whole health picture in view, and Medicare offsets part of the
-                consultation fee. Slower to start than an online service, and the only one of the two that includes a
-                physical examination.
-              </p>
-              <p className="mt-5 text-sm font-semibold">
-                <Link href="/moshy-vs-gp" className="text-[#007a95] hover:underline">Telehealth and your GP, side by side →</Link>
-              </p>
             </div>
           </div>
 

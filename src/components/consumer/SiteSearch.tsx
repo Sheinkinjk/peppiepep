@@ -11,7 +11,7 @@ import { searchEntries, type SearchEntry } from "@/lib/search-index";
 // Curated "browse" shortcuts for the empty and no-match states.
 const BROWSE: { label: string; href: string; cat: string }[] = [
   { label: "Weight loss & telehealth", href: "/weight-loss", cat: "Weight loss" },
-  { label: "Hair loss treatment", href: "/hair-loss", cat: "Hair loss" },
+  { label: "Hair loss options", href: "/hair-loss", cat: "Hair loss" },
   { label: "Solar & energy", href: "/solar-and-energy", cat: "Solar & energy" },
   { label: "Business software", href: "/business-software", cat: "Software" },
   { label: "All guides", href: "/guides", cat: "Browse" },

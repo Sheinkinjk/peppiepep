@@ -47,12 +47,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Women's health (28 Sep 2026). Coming soon: guides only, no provider links.
     { url: `${BASE}/womens-health`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/womens-health/menopause-care-cost-australia`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.72 },
-    { url: `${BASE}/womens-health/uti-treatment-without-a-gp-australia`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.72 },
     // Men's health (19 Aug 2026). Clinical guides carry no commercial links.
     { url: `${BASE}/mens-health`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${BASE}/midoc`,               lastModified: TODAY, changeFrequency: 'monthly', priority: 0.78 },
     { url: `${BASE}/mens-health/online-mens-health-clinics-compared`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.72 },
-    { url: `${BASE}/mens-health/is-telehealth-or-a-gp-cheaper-for-mens-health`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE}/mens-health/online-doctor-medical-certificate-australia`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.75 },
     { url: `${BASE}/mens-health/sexual-wellness-products`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.6 },
     // Sleep (19 Aug 2026). Category live and indexed ahead of partners.
@@ -132,7 +130,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/moshy`,             lastModified: TODAY, changeFrequency: 'weekly',  priority: 0.92 },
     { url: `${BASE}/juniper`,           lastModified: AUG13, changeFrequency: 'weekly',  priority: 0.85 },
     { url: `${BASE}/moshy-review`,      lastModified: FRESH, changeFrequency: 'monthly', priority: 0.85 },
-    { url: `${BASE}/moshy-vs-gp`,       lastModified: TODAY, changeFrequency: 'monthly', priority: 0.78 },
     { url: `${BASE}/weight-loss-telehealth-men-australia`,   lastModified: TODAY, changeFrequency: 'monthly', priority: 0.82 },
     { url: `${BASE}/weight-loss-telehealth-women-australia`, lastModified: AUG13, changeFrequency: 'monthly', priority: 0.82 },
     { url: `${BASE}/weight-loss-telehealth-cost-australia`,  lastModified: TODAY, changeFrequency: 'monthly', priority: 0.85 },
@@ -212,7 +209,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/best-weight-loss-telehealth-australia`, lastModified: TODAY,  changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/best-hair-loss-treatment-australia`,    lastModified: TODAY,  changeFrequency: 'monthly', priority: 0.78 },
     { url: `${BASE}/moshy-vs-juniper`,                      lastModified: TODAY,  changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE}/cheapest-weight-loss-telehealth-australia`, lastModified: TODAY, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${BASE}/carrd-vs-durable`,                      lastModified: FRESH,  changeFrequency: 'monthly', priority: 0.74 },
     { url: `${BASE}/durable-vs-butternut`,                  lastModified: FRESH,  changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/carrd-vs-butternut`,                    lastModified: FRESH,  changeFrequency: 'monthly', priority: 0.8 },

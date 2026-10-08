@@ -145,7 +145,7 @@ export const moshHairConfig: AffiliatePageConfig = {
     {
       href: "/best-hair-loss-treatment-australia",
       label: "Hair-Loss Options in Australia, Compared",
-      desc: "Mosh and your GP side by side, and where over-the-counter products fit.",
+      desc: "How a Mosh online consultation works, and where over-the-counter products fit.",
     },
     {
       href: "/mosh-review",

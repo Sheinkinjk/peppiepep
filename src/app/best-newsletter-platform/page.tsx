@@ -458,7 +458,7 @@ export default function BestNewsletterPlatformPage() {
                 { href: "/best-website-builder", label: "Best Website Builder 2026" },
                 { href: "/beehiiv", label: "beehiiv Discount & Review" },
                 { href: "/brevo-vs-mailchimp", label: "Brevo vs Mailchimp" },
-                { href: "/best-weight-loss-telehealth-australia", label: "Best Weight Loss Telehealth Australia" },
+                { href: "/best-weight-loss-telehealth-australia", label: "Weight-Loss Telehealth Compared" },
                 { href: "/guides", label: "All Comparison Guides" },
               ].map(({ href, label }) => (
                 <Link

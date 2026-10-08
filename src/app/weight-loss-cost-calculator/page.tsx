@@ -127,8 +127,8 @@ export default function WeightLossCostCalculatorPage() {
                   how weight-loss telehealth pricing works
                 </Link>{" "}
                 and the{" "}
-                <Link href="/cheapest-weight-loss-telehealth-australia" className="text-[#007a95] underline underline-offset-2">
-                  cheapest-options comparison
+                <Link href="/best-weight-loss-telehealth-australia" className="text-[#007a95] underline underline-offset-2">
+                  weight-loss telehealth comparison
                 </Link>.
               </p>
             </div>
@@ -164,7 +164,7 @@ export default function WeightLossCostCalculatorPage() {
             <div className="flex flex-wrap gap-3 mb-6">
               <Link href="/weight-loss-telehealth-cost-australia" className="nw-link text-sm">How pricing works</Link>
               <span className="text-[#56504a]">·</span>
-              <Link href="/best-weight-loss-telehealth-australia" className="nw-link text-sm">Best weight-loss telehealth</Link>
+              <Link href="/best-weight-loss-telehealth-australia" className="nw-link text-sm">Weight-loss telehealth, compared</Link>
               <span className="text-[#56504a]">·</span>
               <Link href="/moshy" className="nw-link text-sm">Moshy: what it costs</Link>
           <Link href="/moshy-review" className="nw-link text-sm">Moshy, explained</Link>

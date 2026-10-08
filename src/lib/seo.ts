@@ -803,6 +803,7 @@ export const seoConfig = {
     description:
       "A pharmacist can assess an uncomplicated UTI in women 18 to 65. Victoria is the one state we found where the consultation is free by rule; elsewhere pharmacies may charge.",
     url: `${SITE_URL}/womens-health/uti-treatment-without-a-gp-australia`,
+    noIndex: true, // retired 9 Oct 2026, 301 to /womens-health in next.config.ts
     keywords: ["uti treatment without gp", "pharmacist uti treatment australia", "uti pharmacy cost", "chemist care now uti", "online uti doctor australia"],
   },
 
@@ -853,6 +854,7 @@ export const seoConfig = {
     description:
       "Comparing an online men's health service against your GP on total cost: consult fees, Medicare rebates and what each route includes over a year.",
     url: `${SITE_URL}/mens-health/is-telehealth-or-a-gp-cheaper-for-mens-health`,
+    noIndex: true, // retired 9 Oct 2026, 301 to /mens-health in next.config.ts
     keywords: ["telehealth vs gp cost australia", "is telehealth cheaper than a gp", "mens health gp or online australia", "bulk billed mens health australia"],
   },
   onlineMedicalCertificate: {
@@ -1078,7 +1080,7 @@ export const seoConfig = {
   },
 
   hairLossTreatmentCost: {
-    title: "Hair Loss Treatment Cost Australia 2026 | Refer Labs",
+    title: "Hair Loss Costs in Australia 2026 | Refer Labs",
     description:
       "How hair-loss care is priced in Australia: over-the-counter products, a GP visit, and a telehealth subscription such as Mosh, plus what Medicare covers.",
     url: `${SITE_URL}/hair-loss-treatment-cost-australia`,
@@ -1202,9 +1204,9 @@ export const seoConfig = {
   hairLossHub: {
     // Title and h1 agree (30 Sep 2026): the h1 read "Hair loss in Australia: the
     // options compared" under a "Hair Loss Treatments" title.
-    title: "Hair Loss Treatment Options Australia 2026 | Refer Labs",
+    title: "Hair Loss Options Australia 2026, Compared | Refer Labs",
     description:
-      "Hair loss in Australia: an online practitioner consultation with Mosh, your GP, or over-the-counter products, and how each is priced.",
+      "Hair loss in Australia: an online practitioner consultation with Mosh, or over-the-counter products, and how each is priced.",
     url: `${SITE_URL}/hair-loss`,
     keywords: [
       "hair loss australia",
@@ -1690,7 +1692,9 @@ export const seoConfig = {
     // This is the roundup; /moshy-vs-juniper owns the head-to-head. The title and
     // keywords deliberately no longer claim "moshy vs juniper", so the two pages
     // stop competing for the same query.
-    title: "Best Weight Loss Telehealth Australia 2026: How to Choose",
+    // Retitled 9 Oct 2026: no "best" (Ahpra 4.1 superiority claims; TGA lists "the best"
+    // as a promotional characteristic). URL kept to protect ranking.
+    title: "Weight-Management Telehealth Australia 2026: Moshy and Juniper Compared",
     description:
       "Moshy and Juniper compared for Australians: what each includes, how you start and what each costs to begin. Codes: REFERRAL120 ($120 off Moshy) and JARREDKFC.",
     url: `${SITE_URL}/best-weight-loss-telehealth-australia`,
@@ -1718,7 +1722,7 @@ export const seoConfig = {
     keywords: ["mosh vs pilot", "pilot vs mosh", "mosh or pilot", "mosh vs pilot hair loss", "is pilot still available australia"],
   },
   moshyVsJuniper: {
-    title: "Moshy vs Juniper 2026: Cost and Who Each Suits",
+    title: "Moshy vs Juniper 2026: Cost and What Each Includes",
     description:
       "Moshy vs Juniper: what each includes, read off their own sites, and how each is priced. Codes: REFERRAL120 ($120 off Moshy), JARREDKFC (no charge for Juniper's initial consult).",
     url: `${SITE_URL}/moshy-vs-juniper`,
@@ -1744,6 +1748,7 @@ export const seoConfig = {
     description:
       "Subscription vs pay-per-consult weight-loss telehealth in Australia: Moshy, Juniper and Doctors for Weight Loss compared. Moshy code REFERRAL120 takes $120 off.",
     url: `${SITE_URL}/cheapest-weight-loss-telehealth-australia`,
+    noIndex: true, // retired 9 Oct 2026, 301 to /best-weight-loss-telehealth-australia in next.config.ts
     keywords: [
       "cheapest weight loss telehealth australia",
       "affordable weight loss telehealth australia",
@@ -1925,6 +1930,7 @@ export const seoConfig = {
     description:
       "Moshy vs your GP for weight management: Moshy runs consultations online by phone or video for one program fee; a GP sees you in person, partly offset by Medicare. Information only, not medical advice.",
     url: `${SITE_URL}/moshy-vs-gp`,
+    noIndex: true, // retired 9 Oct 2026, 301 to /moshy in next.config.ts
     keywords: [
       "moshy vs gp",
       "moshy or gp",
@@ -2874,9 +2880,11 @@ export const seoConfig = {
     // description changed (Mosh and your GP now). Title unchanged.
     // CONFOUND, 1 Oct 2026: TGA/Ahpra copy pass. Lead and two FAQs reworded, the
     // Mosh plan-stage table removed, Mosh's promotion terms linked. Title unchanged.
-    title: "Best Hair Loss Treatment Australia 2026: How to Choose",
+    // Retitled 9 Oct 2026: no "best" or "treatment" (Ahpra 4.1, TGA indirect
+    // reference). URL kept to protect ranking.
+    title: "Hair-Loss Options in Australia 2026, Compared",
     description:
-      "Mosh or your GP for hair loss in Australia: how each assessment works and how each is priced. REFERAL55 takes 55% off a new customer's first Mosh order.",
+      "How an online hair-loss consultation with Mosh works in Australia, and where over-the-counter products fit. REFERAL55 takes 55% off a new customer's first Mosh order.",
     url: `${SITE_URL}/best-hair-loss-treatment-australia`,
     keywords: [
       "best hair loss treatment australia 2026",

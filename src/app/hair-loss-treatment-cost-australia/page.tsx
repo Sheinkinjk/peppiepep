@@ -20,7 +20,7 @@ const SLUG = "/hair-loss-treatment-cost-australia";
 
 const articleSchema = comparisonArticleSchema({
   headline: "Hair loss treatment cost in Australia: Refer Labs' 2026 breakdown",
-  description: "Refer Labs sets out what hair-loss treatment costs in Australia, comparing over-the-counter options with telehealth plans.",
+  description: "Refer Labs sets out how hair-loss care is priced in Australia, from over-the-counter products to telehealth plans.",
   url: "https://referlabs.com.au/hair-loss-treatment-cost-australia",
   datePublished: "2026-07-17",
   dateModified: "2026-10-01",
@@ -32,7 +32,7 @@ const breadcrumbSchema = {
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Refer Labs", item: SITE_URL },
     { "@type": "ListItem", position: 2, name: "Hair Loss", item: `${SITE_URL}/hair-loss` },
-    { "@type": "ListItem", position: 3, name: "Hair Loss Treatment Cost Australia", item: `${SITE_URL}${SLUG}` },
+    { "@type": "ListItem", position: 3, name: "Hair Loss Costs Australia", item: `${SITE_URL}${SLUG}` },
   ],
 };
 
@@ -47,7 +47,7 @@ const MOSH_READ = "30 September 2026";
 
 const faqs = [
   {
-    q: "How much does hair-loss treatment cost in Australia?",
+    q: "How is hair-loss care priced in Australia?",
     a: "It depends on the route. An over-the-counter shampoo or serum is a one-off purchase priced by the retailer. A GP consult may be bulk-billed, or carry a gap fee after the Medicare rebate. A telehealth service such as Mosh charges a subscription, which Mosh publishes on its own pricing page.",
   },
   {
@@ -116,7 +116,7 @@ export default function HairLossTreatmentCostAustraliaPage() {
           {/* Hero */}
           <header className="pt-9 pb-6">
             <h1 className="mt-4 text-3xl sm:text-4xl lg:text-[2.6rem] font-extrabold leading-[1.08] tracking-tight text-[#14120f]">
-              What hair-loss treatment costs in Australia
+              Hair loss costs in Australia
             </h1>
             <p className="mt-5 text-base sm:text-lg leading-relaxed text-[#56504a]">
               There is no single figure, because the three routes are priced on different models. An over-the-counter
@@ -143,7 +143,7 @@ export default function HairLossTreatmentCostAustraliaPage() {
                 click. So this states the cost STRUCTURE of each route. */}
             <section>
               <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#14120f]">
-                How much does hair-loss treatment cost per month in Australia?
+                How is hair-loss care priced in Australia?
               </h2>
               <div className="mt-4 rounded-xl border border-[#b9e3eb] bg-[#e4f2f5] px-6 py-5">
                 <p className="text-[15px] leading-relaxed text-[#14120f]">

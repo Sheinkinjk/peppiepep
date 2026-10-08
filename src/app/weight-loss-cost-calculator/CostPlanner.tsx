@@ -283,8 +283,8 @@ export default function CostPlanner() {
                   <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </Link>
               ) : (
-                <Link href="/moshy-vs-gp" className="inline-flex items-center gap-2 text-sm font-semibold text-[#007a95] hover:text-[#003647]">
-                  Read: telehealth versus your GP, the practical trade-offs
+                <Link href="/weight-loss" className="inline-flex items-center gap-2 text-sm font-semibold text-[#007a95] hover:text-[#003647]">
+                  Read: how online weight-management consultations work
                   <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </Link>
               )}

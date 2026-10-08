@@ -62,7 +62,7 @@ const toc: [string, string][] = [
 
 const related: { href: string; label: string; desc: string }[] = [
   { href: "/moshy-vs-juniper", label: "Moshy vs Juniper", desc: "The two weight-management telehealth services side by side, with each one's code." },
-  { href: "/best-weight-loss-telehealth-australia", label: "Best weight loss telehealth in Australia", desc: "The Australian online weight-management providers compared on how they work and how they are priced." },
+  { href: "/best-weight-loss-telehealth-australia", label: "Weight-loss telehealth in Australia, compared", desc: "The Australian online weight-management providers compared on how they work and how they are priced." },
   { href: "/weight-loss-telehealth-women-australia", label: "Weight-loss telehealth for women", desc: "How the women-focused services work." },
   { href: "/weight-loss-telehealth-cost-australia", label: "What weight-loss telehealth costs", desc: "How the services in this category are priced." },
 ];

@@ -61,7 +61,6 @@ export default function Page() {
       faqs={faqs}
       related={[
         { href: "/midoc", label: "Midoc: what it costs" },
-        { href: "/mens-health/is-telehealth-or-a-gp-cheaper-for-mens-health", label: "Telehealth or a GP?" },
       ]}
     >
       <PartnerRoute

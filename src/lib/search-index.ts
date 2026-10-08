@@ -12,7 +12,7 @@ export const SEARCH_INDEX: SearchEntry[] = [
   // Categories
   { title: "Deals & discount codes", href: "/deals", category: "Deals", kind: "Guide", keywords: "deals discount codes promo codes australia moshy mosh apollo offers current verified" },
   { title: "Weight loss & telehealth", href: "/weight-loss", category: "Health", kind: "Category", keywords: "weight management obesity diet telehealth weight management telehealth online clinic" },
-  { title: "Hair loss treatment", href: "/hair-loss", category: "Health", kind: "Category", keywords: "hair loss balding thinning telehealth online consultation scalp" },
+  { title: "Hair loss options", href: "/hair-loss", category: "Health", kind: "Category", keywords: "hair loss balding thinning telehealth online consultation scalp" },
   { title: "Health & beauty", href: "/health-and-beauty", category: "Health & beauty", kind: "Category", keywords: "health beauty australia skincare meal replacement vlcd devices acne led mask" },
   { title: "Emma Sleep", href: "/emma-sleep", category: "Sleep", kind: "Review", keywords: "emma sleep australia mattress price discount trial was now pricing accc" },
   { title: "Technogym", href: "/technogym", category: "Longevity", kind: "Review", keywords: "technogym australia price home gym bench run bike treadmill reformer" },
@@ -37,10 +37,8 @@ export const SEARCH_INDEX: SearchEntry[] = [
   { title: "Longevity supplements evidence", href: "/longevity/supplements/longevity-supplements-evidence-review", category: "Longevity", kind: "Guide", keywords: "longevity supplements australia aust l evidence review" },
   { title: "Women's health", href: "/womens-health", category: "Women's health", kind: "Category", keywords: "womens health australia uti menopause pharmacist telehealth" },
   { title: "Menopause care costs", href: "/womens-health/menopause-care-cost-australia", category: "Women's health", kind: "Guide", keywords: "menopause cost medicare assessment item 695 telehealth clinic perimenopause" },
-  { title: "UTI treatment without a GP", href: "/womens-health/uti-treatment-without-a-gp-australia", category: "Women's health", kind: "Guide", keywords: "uti pharmacist treatment chemist care now cost state" },
   { title: "Men's health", href: "/mens-health", category: "Men's health", kind: "Category", keywords: "mens health australia online clinic telehealth medical certificate cost" },
   { title: "Online men's health clinics compared", href: "/mens-health/online-mens-health-clinics-compared", category: "Men's health", kind: "Guide", keywords: "online mens health clinic australia subscription consult model ahpra" },
-  { title: "Telehealth or a GP for men's health", href: "/mens-health/is-telehealth-or-a-gp-cheaper-for-mens-health", category: "Men's health", kind: "Guide", keywords: "telehealth vs gp cost mens health bulk billed medicare rebate" },
   { title: "Online medical certificate cost", href: "/mens-health/online-doctor-medical-certificate-australia", category: "Men's health", kind: "Guide", keywords: "online medical certificate australia cost sick certificate telehealth same day carer" },
   { title: "Sexual wellness products", href: "/mens-health/sexual-wellness-products", category: "Men's health", kind: "Guide", keywords: "sexual wellness products australia retail adults artg" },
   { title: "Sleep", href: "/sleep", category: "Sleep", kind: "Category", keywords: "sleep australia sleep apnoea cpap mattress sleep tracker sleep study" },
@@ -65,8 +63,7 @@ export const SEARCH_INDEX: SearchEntry[] = [
   { title: "Moshy, explained: how the service works", href: "/moshy-review", category: "Weight loss", kind: "Guide", keywords: "getmoshy moshy review telehealth weight management online clinic" },
   { title: "Moshy vs Juniper", href: "/moshy-vs-juniper", category: "Weight loss", kind: "Guide", keywords: "compare weight loss telehealth juniper" },
   { title: "Juniper review (women's weight-management)", href: "/juniper", category: "Weight loss", kind: "Guide", keywords: "juniper australia weight loss review cost 349 coaching women weight management vs moshy myjuniper" },
-  { title: "Best weight loss telehealth in Australia", href: "/best-weight-loss-telehealth-australia", category: "Weight loss", kind: "Guide", keywords: "top online weight loss clinic australia weight management" },
-  { title: "Moshy vs your GP", href: "/moshy-vs-gp", category: "Weight loss", kind: "Guide", keywords: "doctor bulk bill medicare gp telehealth" },
+  { title: "Weight-loss telehealth in Australia, compared", href: "/best-weight-loss-telehealth-australia", category: "Weight loss", kind: "Guide", keywords: "top online weight loss clinic australia weight management" },
   { title: "Weight-loss cost calculator", href: "/weight-loss-cost-calculator", category: "Weight loss", kind: "Guide", keywords: "cost calculator price how much pay subscription gp medicare pathway planner tool" },
   { title: "Weight loss telehealth for men", href: "/weight-loss-telehealth-men-australia", category: "Weight loss", kind: "Guide", keywords: "mens weight loss male" },
   { title: "Midoc: telehealth consultation costs", href: "/midoc", category: "Men's health", kind: "Review", keywords: "midoc telehealth online doctor australia medical certificate referral" },
@@ -75,7 +72,7 @@ export const SEARCH_INDEX: SearchEntry[] = [
 
   // Hair loss
   { title: "Hair loss: compare your options", href: "/hair-loss", category: "Hair loss", kind: "Guide", keywords: "hair loss australia compare telehealth gp over the counter options men" },
-  { title: "Best hair loss treatment in Australia", href: "/best-hair-loss-treatment-australia", category: "Hair loss", kind: "Guide", keywords: "mosh or gp telehealth over the counter compare hair loss" },
+  { title: "Hair-loss options in Australia, compared", href: "/best-hair-loss-treatment-australia", category: "Hair loss", kind: "Guide", keywords: "mosh or gp telehealth over the counter compare hair loss" },
   { title: "Mosh hair: what to know & offer", href: "/moshhair", category: "Hair loss", kind: "Guide", keywords: "mosh review mens hair loss telehealth offer discount" },
   { title: "Mosh review: is it legit?", href: "/mosh-review", category: "Hair loss", kind: "Guide", keywords: "mosh review is mosh legit reviews australia" },
   { title: "Early signs of hair loss in men", href: "/early-signs-of-hair-loss-australia", category: "Hair loss", kind: "Guide", keywords: "early signs of hair loss am i going bald how to tell thinning crown balding signs" },
@@ -173,7 +170,6 @@ export const SEARCH_INDEX: SearchEntry[] = [
 
   // Weight loss (guides + head-to-heads not yet indexed)
   { title: "Weight-loss telehealth cost, explained", href: "/weight-loss-telehealth-cost-australia", category: "Weight loss", kind: "Guide", keywords: "cost price how much weight loss telehealth australia subscription" },
-  { title: "Cheapest weight-loss telehealth", href: "/cheapest-weight-loss-telehealth-australia", category: "Weight loss", kind: "Guide", keywords: "cheapest affordable low cost weight loss telehealth australia" },
 
   // Software head-to-heads
   { title: "Carrd vs Butternut", href: "/carrd-vs-butternut", category: "Software", kind: "Guide", keywords: "carrd vs butternut website builder compare" },

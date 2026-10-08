@@ -39,7 +39,6 @@ const SECTIONS = [
     live: "Four guides, live now",
     body: "How the access routes are priced, and why a subscription and a consult fee are not comparable figures. No medicine is named anywhere.",
     links: [
-      { h: "/mens-health/is-telehealth-or-a-gp-cheaper-for-mens-health", l: "Telehealth or a GP: which is cheaper?" },
       { h: "/mens-health/online-doctor-medical-certificate-australia", l: "Medical certificate: cost and speed" },
     ],
   },
@@ -54,7 +53,6 @@ const SECTIONS = [
     live: "Two guides, live now",
     body: "Where a pharmacist can treat a UTI, state by state, and what menopause care costs with and without Medicare. No provider has been added yet.",
     links: [
-      { h: "/womens-health/uti-treatment-without-a-gp-australia", l: "UTI treatment without a GP" },
       { h: "/womens-health/menopause-care-cost-australia", l: "Menopause care: what it costs" },
     ],
   },

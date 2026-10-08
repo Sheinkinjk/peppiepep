@@ -116,7 +116,7 @@ export const liveCategories = [
   {
     href: "/hair-loss",
     label: "Hair loss",
-    blurb: "Hair-loss telehealth and your GP, compared on cost and how each works.",
+    blurb: "Hair-loss telehealth and over-the-counter options, compared on cost and how each works.",
   },
   {
     href: "/solar-and-energy",

@@ -39,12 +39,6 @@ const guides: GuideLink[] = [
     kind: "cost",
   },
   {
-    href: "/womens-health/uti-treatment-without-a-gp-australia",
-    title: "UTI treatment without a GP",
-    desc: "Pharmacist UTI services state by state, and the one state we found where the consultation is free.",
-    kind: "compare",
-  },
-  {
     href: "/weight-loss-telehealth-women-australia",
     title: "Weight-loss telehealth for women",
     desc: "How the women-focused programs differ from the general ones, in the weight-loss section.",

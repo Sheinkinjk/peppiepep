@@ -165,7 +165,6 @@ export default function MidocPage() {
         <section className="mt-12">
           <h2 className="text-xl font-bold text-[#14120f]">Related reading</h2>
           <ul className="mt-4 space-y-2 text-[15px]">
-            <li><Link href="/mens-health/is-telehealth-or-a-gp-cheaper-for-mens-health" className="text-[#007a95] hover:underline">Is telehealth or a GP cheaper for men&apos;s health?</Link></li>
             <li><Link href="/mens-health/online-mens-health-clinics-compared" className="text-[#007a95] hover:underline">Online men&apos;s health clinics compared</Link></li>
             <li><Link href="/mens-health/online-doctor-medical-certificate-australia" className="text-[#007a95] hover:underline">Online medical certificates: cost and turnaround</Link></li>
             <li><Link href="/mens-health" className="text-[#007a95] hover:underline">All men&apos;s health guides</Link></li>

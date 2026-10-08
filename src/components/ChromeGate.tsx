@@ -69,7 +69,6 @@ const STANDALONE_ROUTES = [
   "/beehiiv",
   // Moshy funnel pages
   "/moshy-review",
-  "/moshy-vs-gp",
   "/weight-loss-telehealth-men-australia",
   // Comparison roundups + head-to-heads (not core business)
   "/moshy-vs-juniper",
@@ -97,7 +96,6 @@ const STANDALONE_ROUTES = [
   "/superfiliate",
   // Weight-loss cluster (own light shell)
   "/weight-loss-telehealth-cost-australia",
-  "/cheapest-weight-loss-telehealth-australia",
   "/weight-loss-cost-calculator",
   // Website-builder + peptide head-to-heads
   "/carrd-vs-butternut",

@@ -53,12 +53,6 @@ const guides: GuideLink[] = [
     kind: "compare",
   },
   {
-    href: "/mens-health/is-telehealth-or-a-gp-cheaper-for-mens-health",
-    title: "Telehealth or a GP: which is cheaper?",
-    desc: "The same question costed over a year rather than a single appointment.",
-    kind: "compare",
-  },
-  {
     href: "/mens-health/online-doctor-medical-certificate-australia",
     title: "Online medical certificate: cost and speed",
     desc: `From ${MIDOC.certificateSingleDay} for a single day (read ${MIDOC.readOnShort}), with what the review buys you.`,

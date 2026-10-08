@@ -34,7 +34,7 @@ export const GROUPS: Group[] = [
     label: "Hair Loss",
     items: [
       { href: "/moshhair", label: "Mosh", note: "How it works, plus 55% off your first order" },
-      { href: "/best-hair-loss-treatment-australia", label: "Compare all options", note: "Online consultation or your GP, compared" },
+      { href: "/best-hair-loss-treatment-australia", label: "Compare all options", note: "Online consultation and over-the-counter options, compared" },
       { href: "/hair-loss-treatment-cost-australia", label: "What it costs", note: "What you pay and what is included" },
     ],
   },
