@@ -13,6 +13,7 @@ import { GoogleAnalytics, GoogleTagManager, MetaPixel, LinkedInInsight } from "@
 import { AffiliateClickTracker } from "@/components/AffiliateClickTracker";
 import { AiReferralTracker } from "@/components/AiReferralTracker";
 import { ChromeGate } from "@/components/ChromeGate";
+import { NoTrackOnPreview } from "@/components/NoTrackOnPreview";
 // Cookieless, consent-independent pageview counting, so real traffic is visible
 // even for visitors who decline analytics cookies (GA4 only counts consenters).
 import { Analytics } from "@vercel/analytics/next";
@@ -85,13 +86,15 @@ export default function RootLayout({
             <div className="site-atmosphere-grain" />
           </div>
         </ChromeGate>
-        <GoogleAnalytics />
-        <GoogleTagManager />
-        <MetaPixel />
-        <LinkedInInsight />
-        <Analytics />
-        <AffiliateClickTracker />
-        <AiReferralTracker />
+        <NoTrackOnPreview>
+          <GoogleAnalytics />
+          <GoogleTagManager />
+          <MetaPixel />
+          <LinkedInInsight />
+          <Analytics />
+          <AffiliateClickTracker />
+          <AiReferralTracker />
+        </NoTrackOnPreview>
         <div className="relative z-10 flex min-h-screen flex-col">
           <ChromeGate>
             <StickyHeader />

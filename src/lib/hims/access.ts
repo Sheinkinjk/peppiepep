@@ -57,6 +57,34 @@ export function hasReviewAccess(cookieValue: string | undefined): boolean {
 }
 
 /** Headers every /preview response carries, gate page and auth route included. */
+// Moshy page preview (8 Oct 2026). Same gate page and rate limit as the Hims set,
+// but its OWN password, cookie name, cookie path and HMAC scope, so a Moshy
+// reviewer's password and cookie open nothing else in /preview.
+export const MOSHY_REVIEW_SLUG = "moshy-updates";
+export const MOSHY_REVIEW_COOKIE = "rl_moshy_review";
+export const MOSHY_REVIEW_PATH = "/preview/moshy-updates";
+
+function moshyPassword(): string | null {
+  const pw = process.env.MOSHY_PREVIEW_PASSWORD ?? "";
+  return pw.length >= 12 ? pw : null;
+}
+
+function moshyTokenFor(password: string): string {
+  return createHmac("sha256", password).update("refer-labs:moshy-review:v1").digest("hex");
+}
+
+export function moshyTokenForAttempt(attempt: string): string | null {
+  const pw = moshyPassword();
+  if (!pw) return null;
+  return safeEqual(moshyTokenFor(attempt), moshyTokenFor(pw)) ? moshyTokenFor(pw) : null;
+}
+
+export function hasMoshyReviewAccess(cookieValue: string | undefined): boolean {
+  const pw = moshyPassword();
+  if (!pw || !cookieValue) return false;
+  return safeEqual(cookieValue, moshyTokenFor(pw));
+}
+
 export const REVIEW_HEADERS: Record<string, string> = {
   "x-robots-tag": "noindex, nofollow, noarchive",
   "cache-control": "private, no-store",
