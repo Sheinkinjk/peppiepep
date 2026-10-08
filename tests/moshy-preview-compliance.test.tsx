@@ -94,30 +94,34 @@ describe("/preview/moshy-updates compliance", () => {
         fs.readFileSync(p, "utf8")
           .split("\n")
           .forEach((line, n) => {
-            if (line.includes("REFERRAL120") && !/code="REFERRAL120"/.test(line)) offenders.push(`${d}/${f}:${n + 1}`);
+            // The code as a string literal; identifiers such as REFERRAL120_TERMS are not user-facing.
+            if (/["'`>]REFERRAL120(?![A-Z0-9_])/.test(line) && !/code="REFERRAL120"|checkedOn\("REFERRAL120"\)/.test(line)) offenders.push(`${d}/${f}:${n + 1}`);
           });
       }
     }
     expect(offenders).toEqual([]);
   });
 
-  it("shows the offer with its terms and badges in the same card", () => {
+  it("shows the offer with its terms in the same card", () => {
     const card = doc.querySelector("[data-offer-card]")!;
     expect(card).not.toBeNull();
     expect(card.textContent).toContain("Terms");
-    expect(card.textContent).toContain("Final terms to be supplied verbatim by Moshy");
-    expect(card.textContent).toContain("PLACEHOLDER");
-    expect(card.textContent).toContain("PLACEHOLDER LINK");
-    const link = card.querySelector("a")!;
+    expect(card.textContent).toContain("$120 off your first order");
+    expect(card.textContent).toContain("3-month minimum commitment");
+    expect(card.textContent).toContain("getmoshy.com.au/terms");
+    const link = card.querySelector('a[rel~="sponsored"]')!;
     expect(link.getAttribute("rel")).toBe("sponsored noopener");
     expect(link.getAttribute("target")).toBe("_blank");
   });
 
-  it("badges every placeholder and shows the preview banner", () => {
-    const placeholders = doc.querySelectorAll("[data-placeholder]");
-    expect(placeholders.length).toBeGreaterThanOrEqual(6);
-    placeholders.forEach((p) => expect(p.textContent).toContain("PLACEHOLDER"));
+  it("shows the preview banner", () => {
     expect(doc.querySelector("[data-preview-chrome]")?.textContent).toContain("PREVIEW");
+  });
+
+  it("shows the $ amount only inside the offer card, beside its terms", () => {
+    const clone = doc.body.cloneNode(true) as HTMLElement;
+    clone.querySelectorAll("[data-offer-card]").forEach((n) => n.remove());
+    expect(clone.textContent).not.toMatch(/\$\d/);
   });
 
   it("collects nothing: no form or input on the page", () => {

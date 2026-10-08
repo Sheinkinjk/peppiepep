@@ -15,7 +15,7 @@ export type OfferWithTermsProps = {
   terms: React.ReactNode;
   ctaHref: string;
   ctaLabel: string;
-  /** Preview mode: badges on the code and link, and a confirm step before the link opens. */
+  /** Preview mode: a confirm step before the link opens. */
   preview: boolean;
   confirmText: string;
 };
@@ -45,11 +45,6 @@ export function OfferWithTerms({ code, valueLine, terms, ctaHref, ctaLabel, prev
           {code}
           {copied ? <Check className="h-4 w-4" aria-hidden="true" /> : <Copy className="h-4 w-4" aria-hidden="true" />}
         </button>
-        {preview && (
-          <span className="rounded bg-amber-500 px-1.5 py-px text-[10px] font-bold uppercase tracking-[0.08em] text-[#14120f]">
-            PLACEHOLDER
-          </span>
-        )}
         <span aria-live="polite" className="text-sm text-[#56504a]">
           {copied ? "Copied" : ""}
         </span>
@@ -74,11 +69,6 @@ export function OfferWithTerms({ code, valueLine, terms, ctaHref, ctaLabel, prev
         >
           {ctaLabel}
         </a>
-        {preview && (
-          <span className="rounded bg-amber-500 px-1.5 py-px text-[10px] font-bold uppercase tracking-[0.08em] text-[#14120f]">
-            PLACEHOLDER LINK
-          </span>
-        )}
       </div>
     </div>
   );
