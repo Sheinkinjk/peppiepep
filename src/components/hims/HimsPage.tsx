@@ -594,7 +594,7 @@ export function HimsPage({ content, preview, linkPrefix }: { content: HimsPageCo
         </footer>
       </main>
 
-      <StickyCta href={offer.ctaHref} product="Hims" label={offer.ctaLabel} />
+      <StickyCta href={offer.ctaHref} product="Hims" label={offer.ctaLabel} noReferrer />
 
       {ldBlocks}
     </>

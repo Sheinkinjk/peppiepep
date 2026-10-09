@@ -45,7 +45,9 @@ export function CtaLink({
     <span className={`inline-flex flex-wrap items-center ${block ? "w-full" : ""}`}>
       <a
         href={href}
-        rel="nofollow sponsored noopener"
+        // noreferrer (10 Oct 2026): Hims links must arrive the way an email click does,
+        // with no Referer. Attribution rides on discountCode and utm in the URL.
+        rel="nofollow sponsored noopener noreferrer"
         target={placeholder ? undefined : "_blank"}
         data-cta={loc}
         className={`${style} justify-center ${sizes[size]} ${block ? "w-full" : ""} focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#007a95]`}

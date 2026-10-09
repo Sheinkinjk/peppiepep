@@ -131,7 +131,7 @@ export function HimsPair({
             <a
               href={c.href}
               target="_blank"
-              rel={c.sponsored ? "nofollow sponsored noopener" : "noopener"}
+              rel={`${c.sponsored ? "nofollow sponsored noopener" : "noopener"}${c.name === "Hims" ? " noreferrer" : ""}`}
               data-cta={`${locPrefix}-${c.name.toLowerCase()}`}
               className="nw-btn w-full justify-center"
             >

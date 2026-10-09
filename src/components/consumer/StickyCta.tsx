@@ -18,6 +18,7 @@ export default function StickyCta({
   product,
   offer,
   sponsored = true,
+  noReferrer = false,
 }: {
   href: string;
   label: string;
@@ -25,6 +26,8 @@ export default function StickyCta({
   /** When set, surfaces the deal as the headline line (still discloses the link). */
   offer?: string;
   sponsored?: boolean;
+  /** Send no Referer header to the partner, as an email click does (Hims, 10 Oct 2026). */
+  noReferrer?: boolean;
 }) {
   const [show, setShow] = useState(false);
   const isInternal = href.startsWith("/") || href.startsWith("#");
@@ -68,7 +71,7 @@ export default function StickyCta({
           // and misdescribe the link. Only outbound partner links get those.
           {...(isInternal
             ? {}
-            : { target: "_blank", rel: sponsored ? "nofollow sponsored" : "nofollow" })}
+            : { target: "_blank", rel: `${sponsored ? "nofollow sponsored" : "nofollow"}${noReferrer ? " noopener noreferrer" : ""}` })}
           data-cta="mobile-sticky"
           className="nw-btn min-h-[44px] shrink-0 !px-4 !py-2.5 !text-[13px]"
         >
