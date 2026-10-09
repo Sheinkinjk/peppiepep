@@ -167,7 +167,7 @@ export const INCLUSIONS: Record<InclusionsKey, InclusionsTableData> = {
         mosh: "Cancel anytime",
       },
       { label: "Price match", hims: "Not advertised", mosh: "On substantially comparable hair programs, by application form. Terms apply" },
-      { label: "Prices", hims: "Not published on Hims' hair page; shown after the consult", mosh: "Published on Mosh's pricing page" },
+      { label: "Prices", hims: "Shown after the consultation, before you pay", mosh: "Published on Mosh's pricing page" },
       { label: "Refer Labs code", hims: HIMS_OFFER_CELL, mosh: MOSH_HAIR_OFFER_CELL },
     ],
     sources: { hims: [HIMS_SRC.hair, HIMS_SRC.faq], mosh: [MOSH_SRC.hair, MOSH_SRC.referlabs, MOSH_SRC.pricing, MOSH_SRC.home] },

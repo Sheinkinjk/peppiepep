@@ -16,13 +16,11 @@ export const weight: HimsPageContent = {
   eyebrow: "Men's weight loss telehealth · Australia",
   h1: "Hims weight loss in Australia: how it works, what it costs and what's included",
   standfirst:
-    "Hims, formerly Pilot, runs an online weight program for men in Australia. You take a free two-minute quiz, then talk by phone to an Australian practitioner, who decides whether the program is right for you. You can pay monthly and change or cancel at any time, or pay for 12 months upfront at the lowest price, and both come with a 30-day money-back guarantee under Hims' terms.",
-  standfirstOffer: "With the Refer Labs code REFERLABS89, new patients get a free consultation ($89 value).",
+    "The Refer Labs code REFERLABS89 gives new Hims patients a free consultation ($89 value), and our link applies it for you. Hims, formerly Pilot, runs an online weight program for men in Australia: a free two-minute quiz, then a phone consultation with an Australian practitioner, who decides whether the program is right for you.",
   hub: { label: "Weight loss", href: "/weight-loss" },
   verdictQuestion: "What do you get with Hims weight loss?",
   verdict: [
     "A practitioner-led program run from your phone: unlimited practitioner check-ins, a 24/7 Care Team for questions and plan changes, guidance on eating habits and an optional online community.",
-    "New patients start with a free consultation ($89 value) using the Refer Labs code REFERLABS89, which our link applies for you.",
   ],
   blocks: [
     {
@@ -33,16 +31,11 @@ export const weight: HimsPageContent = {
       rows: [
         { label: "Who it's for", value: "Hims weight plans are designed for men." },
         { label: "How you start", value: "Free two-minute quiz, then a phone consultation with an Australian practitioner." },
-        { label: "Consultation", value: `Free with code ${OFFERS.weight.code} ($89 value) for new patients.` },
-        {
-          label: "Pricing",
-          value: `Hims publishes its weight plan prices on hims.com.au/weight-loss (read ${FACTS_CHECKED_ON}) and shows them in your profile before you pay.`,
-        },
+        { label: "Pricing", value: "On hims.com.au/weight-loss, and in your profile before you pay." },
         { label: "Ways to pay", value: "A monthly plan you can change or cancel at any time, or a 12-month plan paid upfront for the lowest price." },
         { label: "Money-back", value: "30-day money-back guarantee, under Hims' terms." },
         { label: "Support", value: "Unlimited practitioner check-ins and a 24/7 Care Team." },
         { label: "Practitioners", value: "AHPRA-registered, based in Australia." },
-        { label: "Medicare", value: "Not claimable, according to Hims' FAQ." },
       ],
     },
     { type: "offer", id: "offer", vertical: "weight" },
@@ -79,7 +72,7 @@ export const weight: HimsPageContent = {
       id: "ways-to-pay",
       heading: "What are the ways to pay for Hims weight loss?",
       paragraphs: [
-        "A monthly plan can be changed or cancelled at any time. A 12-month plan is paid upfront and gives the lowest price. Both include the 30-day money-back guarantee.",
+        "A monthly plan can be changed or cancelled at any time. A 12-month plan is paid upfront and gives the lowest price.",
         `Hims publishes the prices for both on hims.com.au/weight-loss and shows them again in your profile before you pay (read ${FACTS_CHECKED_ON}).`,
       ],
     },
@@ -102,7 +95,7 @@ export const weight: HimsPageContent = {
       heading: "Is Hims the same as Pilot?",
       paragraphs: [
         `Yes. Pilot is now Hims: Pilot rebranded as Hims on 1 September 2026 (confirmed by Hims in writing, ${HIMS_SUPPLIED_ON}). Hims & Hers Health, the US-listed telehealth company, completed its acquisition of Eucalyptus, the Australian company behind Pilot, on 2 June 2026. pilot.com.au says Pilot has joined the Hims & Hers group, and clicking through from Pilot's site opens the Hims quiz (read ${FACTS_CHECKED_ON}).`,
-        "Pilot weight loss is now Hims weight loss. Former Pilot patients count as previous patients for Hims' new-patient offers.",
+        "Pilot weight loss is now Hims weight loss, with the same phone consultation and the Care Team behind it.",
       ],
     },
     {
@@ -124,7 +117,7 @@ export const weight: HimsPageContent = {
         },
         {
           q: "Can I cancel Hims weight loss?",
-          a: "On a monthly plan you can change or cancel at any time. A 12-month plan is paid upfront for the lowest price. Both include the 30-day money-back guarantee under Hims' terms.",
+          a: "On a monthly plan you can change or cancel at any time. A 12-month plan is paid upfront for the lowest price.",
         },
         {
           q: "Is the Hims consultation by video?",

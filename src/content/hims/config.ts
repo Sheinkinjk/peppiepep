@@ -92,7 +92,7 @@ const TERMS = [
   "New Hims patients in Australia only. Current and previous Hims or Pilot patients are excluded.",
   "Our link applies the code automatically; if it isn't shown, enter it yourself. One use per patient.",
   "Cannot be combined with any other Hims offer.",
-  "A registered practitioner decides whether the program is right for you. Program fees apply.",
+  "Program fees apply.",
   "Hims may change or withdraw this offer. Full terms at hims.com.au/terms-and-conditions.",
 ];
 
@@ -143,9 +143,8 @@ export const OFFERS: Record<Vertical, Offer> = {
 /**
  * WEIGHT PRICING (V2.1, Jarred 9 Oct 2026: "add it, flagged for legal sign-off").
  *
- * Hims' own wording, supplied in writing (Moiz, 9 Oct 2026), plus Hims' public
- * START50 offer as read on hims.com.au/weight-loss the same day, so the reader can
- * see what the Refer Labs code is worth against it. The saving is derived, never typed.
+ * Hims' own wording, supplied in writing (Moiz, 9 Oct 2026). Never name or compare
+ * against Hims' public codes or offers (Jarred, 9 Oct 2026: Hims would not approve it).
  *
  * LEGAL GATE. The TGA's guidance of 18 June 2026 says listing prices for services
  * that involve prescription medicines is likely to be advertising those medicines.
@@ -156,14 +155,10 @@ export const OFFERS: Record<Vertical, Offer> = {
  */
 export const PRICING_LEGAL_CLEARED = false;
 // PRICING:START
-const REFERLABS_ANNUAL_FIRST_MONTH = 160;
-const START50_ANNUAL_FIRST_MONTH = 199;
 export const WEIGHT_PRICING = {
   annual: "Free consultation and first month from $160 with code REFERLABS89, if you select a 12-month plan. $2,899 paid upfront.",
   monthly: "Free consultation and first month from $260 with code REFERLABS89.",
-  publicOffer: "Hims' public offer on its own weight page is a first month from $199 with code START50 on a 12-month plan, $2,938 paid upfront.",
-  saving: `$${START50_ANNUAL_FIRST_MONTH - REFERLABS_ANNUAL_FIRST_MONTH} less than Hims' public START50 offer on the 12-month plan, plus a free consultation.`,
-  source: "Pricing supplied by Hims, 9 October 2026; public offer read on hims.com.au/weight-loss, 9 October 2026. View the latest pricing on Hims' own site.",
+  source: "Pricing supplied by Hims, 9 October 2026. View the latest pricing on Hims' own site.",
 };
 // PRICING:END
 
@@ -176,7 +171,7 @@ export const CODE_LABEL: Record<Vertical, string> = {
 
 export const OFFER_NOTES: Partial<Record<Vertical, string>> = {
   hair: "180-day money-back guarantee on select hair plans, under Hims' terms.",
-  ed: "REFERLABS is exclusive to Refer Labs: Hims has no public ED code (Hims, 9 October 2026).",
+  ed: "Exclusive to Refer Labs: Hims has no public ED code.",
   weight: "30-day money-back guarantee on the weight program, under Hims' terms.",
 };
 
@@ -219,7 +214,7 @@ export const MOSH: Record<Vertical, MoshSide> = {
     terms: [
       "New Mosh customers only; applies to the first order of a Mosh hair program (Mosh's Refer Labs page, read 9 October 2026).",
       "Unless a promotion says otherwise, Mosh's terms allow one use per customer and one promotion per order. Full terms at getmosh.com.au/terms.",
-      "A registered practitioner decides whether the program is right for you. Program fees apply.",
+      "Program fees apply.",
     ],
     href: MOSH_HAIR_URL,
     sponsored: true,
@@ -238,7 +233,7 @@ export const MOSH: Record<Vertical, MoshSide> = {
     terms: [
       "New Moshy customers on a practitioner-assigned weight program, one use per customer.",
       "A minimum commitment of three months applies, and the code cannot be combined with other promotions (Moshy's sign-up page, read 2 October 2026). Full terms at getmoshy.com.au/terms.",
-      "A registered practitioner decides whether the program is right for you. Program fees apply.",
+      "Program fees apply.",
     ],
     href: MOSHY_URL,
     sponsored: true,

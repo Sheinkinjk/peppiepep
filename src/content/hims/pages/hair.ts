@@ -16,13 +16,12 @@ export const hair: HimsPageContent = {
   eyebrow: "Men's hair loss telehealth · Australia",
   h1: "Hims hair loss in Australia, with a 180-day money-back guarantee",
   standfirst:
-    "Hims, formerly Pilot, runs online hair loss consultations for men in Australia. You take a free two-minute quiz, then talk by phone to an Australian practitioner, who decides whether a hair plan is right for you. Select hair plans carry a 180-day money-back guarantee under Hims' terms, you can cancel without a fee before any order is processed, and prices appear after the consultation.",
-  standfirstOffer: "New patients get a free consultation with the Refer Labs code REFERLABS.",
+    "The Refer Labs code REFERLABS gives new Hims patients a free consultation, and our link applies it for you. Hims, formerly Pilot, runs online hair loss consultations for men in Australia: a free two-minute quiz, then a phone call with an Australian practitioner, who decides whether a hair plan is right for you. Select hair plans carry a 180-day money-back guarantee under Hims' terms.",
   hub: { label: "Hair loss", href: "/hair-loss" },
   verdictQuestion: "What happens if a Hims hair plan isn't for you?",
   verdict: [
-    "Hair plans run for months. Select plans carry a 180-day money-back guarantee under Hims' terms, and there is no fee for cancelling before an order.",
-    "The price is shown after the consultation, and with code REFERLABS the consultation is free for new patients.",
+    "Hair plans run as a subscription, with an order every two or three months, and there is no fee for cancelling before an order.",
+    "You see the price after the consultation, before you pay anything.",
   ],
   blocks: [
     {
@@ -33,8 +32,7 @@ export const hair: HimsPageContent = {
       rows: [
         { label: "Who it's for", value: "Men in Australia, from first thinning to more advanced hair loss." },
         { label: "How you start", value: "Free two-minute quiz, then a phone consultation with an Australian practitioner." },
-        { label: "Consultation", value: `Free with code ${OFFERS.hair.code} for new patients.` },
-        { label: "Plan price", value: "Not published on Hims' hair page. You see it after the consultation." },
+        { label: "Plan price", value: "Shown after the consultation, before you pay." },
         { label: "Guarantee", value: "180-day money-back guarantee on select hair plans, under Hims' terms." },
         { label: "Orders", value: "A subscription, with an order every two or three months depending on the plan." },
         { label: "Cancelling", value: "Before your next order is processed, with no cancellation fee." },
@@ -47,7 +45,7 @@ export const hair: HimsPageContent = {
       id: "plans",
       heading: "How does Hims decide which hair plan I get?",
       paragraphs: [
-        "Hims groups its hair plans by the stage of hair loss, from the first signs of thinning to more advanced loss. It does not say what a plan contains, because Australian advertising law stops any provider, or any site writing about one, from naming it.",
+        "Hims groups its hair plans by the stage of hair loss, from the first signs of thinning to more advanced loss.",
         "Which plan is recommended, if any, is the practitioner's decision, based on your quiz answers, the stage and pattern of your hair loss and your health history. You can ask to change plans at any time, and the Care Team books another practitioner appointment to discuss it.",
       ],
     },
@@ -80,7 +78,6 @@ export const hair: HimsPageContent = {
         { label: "Practitioner access", value: "Unlimited practitioner check-ins, included in the cost of the plan, and plan changes made on request." },
         { label: "Care Team", value: "24-hour support from a team Hims says includes nurses, pharmacists and practitioners." },
         { label: "Flexibility", value: "Pause or delay an order from your profile, or cancel before the next order is processed with no fee." },
-        { label: "Guarantee", value: "180-day money-back guarantee on select hair plans, claimed by email to Hims, under Hims' terms." },
       ],
     },
     {
@@ -94,7 +91,7 @@ export const hair: HimsPageContent = {
         },
         {
           q: "How much does Hims hair loss cost in Australia?",
-          a: `Hims doesn't publish hair plan prices on its hair page. You see the price after your phone consultation, and with code ${OFFERS.hair.code} the consultation is free for new patients.`,
+          a: `You see the price after your phone consultation, before you pay anything. With code ${OFFERS.hair.code} the consultation itself is free for new patients.`,
         },
         {
           q: "Does Hims offer a money-back guarantee on hair plans?",
@@ -104,7 +101,7 @@ export const hair: HimsPageContent = {
         { q: "How often am I charged for a Hims hair plan?", a: "Hims hair plans run as a subscription, with an order every two or three months depending on the plan." },
         {
           q: "Is Hims hair loss the same as Pilot hair loss?",
-          a: `Yes. Pilot is now Hims: Pilot rebranded as Hims on 1 September 2026 (confirmed by Hims in writing, ${HIMS_SUPPLIED_ON}), after Hims & Hers Health bought Pilot's owner, Eucalyptus, on 2 June 2026. Signing up on pilot.com.au leads to the Hims quiz. Former Pilot patients count as previous patients for new-patient offers.`,
+          a: `Yes. Pilot is now Hims: Pilot rebranded as Hims on 1 September 2026 (confirmed by Hims in writing, ${HIMS_SUPPLIED_ON}), after Hims & Hers Health bought Pilot's owner, Eucalyptus, on 2 June 2026. Signing up on pilot.com.au leads to the Hims quiz.`,
         },
       ],
     },

@@ -50,7 +50,7 @@ export const edCompare: HimsPageContent = {
       id: "how-it-works",
       heading: "How do online ED consultations work in Australia?",
       paragraphs: [
-        "A private online questionnaire about your health history comes first, and a practitioner reads it before the consultation. The practitioner then decides whether a plan is right for you. Hims says it may have no suitable option for you.",
+        "A private online questionnaire about your health history comes first, and a practitioner reads it before the consultation. The practitioner then decides whether a plan is right for you.",
       ],
     },
     { type: "offer", id: "codes", vertical: "ed" },
@@ -65,7 +65,7 @@ export const edCompare: HimsPageContent = {
         },
         {
           q: "How much does an online ED consultation with Hims cost?",
-          a: "With code REFERLABS the consultation is free for new patients. Hims doesn't publish its ED plan prices; the practitioner covers cost on the call. Its FAQ says its plans are not claimable on Medicare.",
+          a: "With code REFERLABS the consultation is free for new patients, and the practitioner covers the cost of any plan on the call. Hims' FAQ says its plans are not claimable on Medicare.",
         },
         {
           q: "Do I need to be on video for an online ED consultation with Hims?",

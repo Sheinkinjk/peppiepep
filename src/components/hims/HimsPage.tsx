@@ -6,7 +6,6 @@ import type { Block, HimsPageContent, LedgerRow, OverviewContent, Vertical } fro
 import { HIMS_SLUG_LIST } from "@/content/hims/slugs";
 import { SIBLINGS } from "@/content/hims/siblings";
 import {
-  AUTHOR,
   DISCLOSURE,
   DISCLOSURE_REVIEW_NOTE,
   FACTS_CHECKED_ON,
@@ -241,11 +240,9 @@ export function HimsPage({ content, preview, linkPrefix }: { content: HimsPageCo
     },
   ].filter(Boolean);
 
-  const byline = (
-    <p className="mt-5 text-[13px] text-[#56504a]">
-      By {AUTHOR} · Facts read on each provider&rsquo;s own site, {FACTS_CHECKED_ON}
-    </p>
-  );
+  // No byline: consumer pages carry no bylines (site rule). The read date sits in the
+  // offer card, the at-a-glance box and the sources list instead.
+  const byline = null;
 
   const breadcrumbNav = (
     <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2 pt-8 text-sm text-[#56504a]">
@@ -259,7 +256,7 @@ export function HimsPage({ content, preview, linkPrefix }: { content: HimsPageCo
 
   const previewBanner = preview ? (
     <div role="status" className="sticky top-0 z-50 border-b border-[#E3C766] bg-[#FCEFC7] px-4 py-2 text-center text-sm text-[#4A3700]">
-      Draft V2.1 for Hims review, 9 October 2026. This page is not public and is not indexed. Amber tags mark the disclosure wording and the weight pricing, which need written approval before launch.
+      Draft V2 for Hims review, 9 October 2026. This page is not public and is not indexed. Amber tags mark the disclosure wording and the weight pricing, which need written approval before launch.
     </div>
   ) : null;
 
@@ -438,49 +435,54 @@ export function HimsPage({ content, preview, linkPrefix }: { content: HimsPageCo
           <div>
             <HimsLogo />
             <p className="nw-kicker mt-5">{content.eyebrow}</p>
-            <h1 className="mt-3 text-4xl font-extrabold leading-[1.05] tracking-[-0.02em] text-[#14120f] sm:text-5xl lg:text-[3.1rem]">{content.h1}</h1>
-            <Lead content={content} preview={preview} className="mt-6 max-w-xl text-lg leading-relaxed text-[#56504a]" />
+            <h1 className="mt-3 text-[2rem] font-extrabold leading-[1.08] tracking-[-0.02em] text-[#14120f] sm:text-[2.4rem] lg:text-[2.6rem]">{content.h1}</h1>
+            <Lead content={content} preview={preview} className="mt-5 max-w-xl text-[17px] leading-relaxed text-[#56504a]" />
             {byline}
 
             <div className="mt-6 max-w-xl">
               <HimsDisclosure preview={preview} />
             </div>
 
-            <div className="mt-6 flex items-start gap-3 rounded-2xl border border-[#007a95]/30 bg-[#007a95]/[0.08] px-5 py-4">
-              <Gift className="mt-0.5 h-5 w-5 shrink-0 text-[#007a95]" strokeWidth={1.9} aria-hidden />
-              <div className="min-w-0">
-                <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#003647]">{CODE_LABEL[content.vertical]}</p>
-                <p className="mt-1 text-[15px] font-bold leading-snug text-[#14120f]">
+            {/* One offer card, on the /moshy hero pattern (V2.2, 9 Oct 2026): the code,
+                what it gives you, the guarantee and, on weight, Hims' pricing lines. */}
+            <div data-hims-offer-card className="mt-6 overflow-hidden rounded-2xl border border-[#007a95]/30 bg-white shadow-[0_18px_40px_-28px_rgba(0,54,71,0.45)]">
+              <div className="bg-[#007a95]/[0.08] px-5 py-5 sm:px-6">
+                <div className="flex items-center gap-2">
+                  <Gift className="h-4 w-4 shrink-0 text-[#007a95]" strokeWidth={2} aria-hidden />
+                  <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#003647]">{CODE_LABEL[content.vertical]}</p>
+                </div>
+                <p className="mt-2 text-xl font-bold leading-snug text-[#14120f]">
                   {offer.headline}
                   <Flag show={preview && (offer.headlineIsPlaceholder || offer.codeIsPlaceholder)}>Offer and code to confirm</Flag>
                 </p>
-                {OFFER_NOTES[content.vertical] ? (
-                  <p className="mt-1 text-[13.5px] font-semibold leading-snug text-[#003647]">{OFFER_NOTES[content.vertical]}</p>
-                ) : null}
-                <div className="mt-3">
+                <div className="mt-4">
                   <CopyCode code={offer.code} />
                 </div>
-                <p className="mt-2 text-[12px] font-medium text-[#56504a]">Applied automatically by our link. Read by Refer Labs, {FACTS_CHECKED_ON}</p>
               </div>
-            </div>
-
-            {content.vertical === "weight" && (preview || PRICING_LEGAL_CLEARED) ? (
-              <div data-hims-pricing className="mt-4 rounded-2xl border border-[#ded8cd] bg-white px-5 py-4">
-                <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#56504a]">What you pay with {offer.code}</p>
-                <ul className="mt-2 space-y-1.5 text-[14.5px] leading-snug text-[#14120f]">
-                  <li><span className="font-semibold">12-month plan:</span> {WEIGHT_PRICING.annual}</li>
-                  <li><span className="font-semibold">Monthly plan:</span> {WEIGHT_PRICING.monthly}</li>
-                </ul>
-                <p className="mt-2 text-[13.5px] font-semibold text-[#003647]">{WEIGHT_PRICING.saving}</p>
-                <p className="mt-1 text-[12px] leading-relaxed text-[#56504a]">{WEIGHT_PRICING.publicOffer} {WEIGHT_PRICING.source}</p>
-                <Flag show={preview && !PRICING_LEGAL_CLEARED}>
-                  For Hims&rsquo; legal team and Refer Labs&rsquo; lawyer to clear before launch (TGA guidance on listing prices)
-                </Flag>
+              <div className="space-y-3 px-5 py-4 sm:px-6">
+                {content.vertical === "weight" && (preview || PRICING_LEGAL_CLEARED) ? (
+                  <div data-hims-pricing>
+                    <ul className="space-y-2 text-[14.5px] leading-snug text-[#14120f]">
+                      <li><span className="font-semibold">12-month plan.</span> {WEIGHT_PRICING.annual}</li>
+                      <li><span className="font-semibold">Monthly plan.</span> {WEIGHT_PRICING.monthly}</li>
+                    </ul>
+                    <p className="mt-1.5 text-[12px] leading-relaxed text-[#56504a]">{WEIGHT_PRICING.source}</p>
+                    <Flag show={preview && !PRICING_LEGAL_CLEARED}>
+                      Pricing: for Hims&rsquo; legal team and Refer Labs&rsquo; lawyer to clear before launch
+                    </Flag>
+                  </div>
+                ) : null}
+                {OFFER_NOTES[content.vertical] ? (
+                  <p className="flex items-start gap-2 text-[14px] font-semibold leading-snug text-[#003647]">
+                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#007a95]" aria-hidden />
+                    {OFFER_NOTES[content.vertical]}
+                  </p>
+                ) : null}
+                <div className="pt-1">
+                  <CtaLink href={offer.ctaHref} label={offer.ctaLabel} placeholder={offer.ctaIsPlaceholder} preview={preview} loc="hero" size="lg" />
+                </div>
+                <p className="text-[12px] text-[#56504a]">Our link applies the code automatically. Opens hims.com.au &middot; AU only &middot; Read {FACTS_CHECKED_ON}</p>
               </div>
-            ) : null}
-
-            <div className="mt-7">
-              <CtaLink href={offer.ctaHref} label={offer.ctaLabel} placeholder={offer.ctaIsPlaceholder} preview={preview} loc="hero" size="lg" />
             </div>
           </div>
 

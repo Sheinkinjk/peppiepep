@@ -18,13 +18,12 @@ export const ed: HimsPageContent = {
   eyebrow: "Men's sexual health telehealth · Australia",
   h1: "Hims ED in Australia: a private phone consultation with no lock-in contract",
   standfirst:
-    "Hims, formerly Pilot, runs private online consultations for erectile dysfunction in Australia. You answer a free two-minute quiz in private, then speak by phone to an Australian practitioner, who decides whether a plan is right for you. Consultations run from 7am to 11pm AEST, seven days, there are no lock-in contracts, and prices are shown after the consultation.",
-  standfirstOffer: "REFERLABS, exclusive to Refer Labs, gives new patients a free consultation.",
+    "REFERLABS, a code exclusive to Refer Labs, gives new Hims patients a free consultation, and our link applies it for you. Hims, formerly Pilot, runs private online consultations for erectile dysfunction in Australia: a free two-minute quiz in private, then a phone call with an Australian practitioner, who decides whether a plan is right for you. There are no lock-in contracts.",
   hub: { label: "Men's health", href: "/mens-health" },
   verdictQuestion: "What is it like to use Hims for ED?",
   verdict: [
     "The sensitive questions go into an online quiz, the consultation is a phone call, and afterwards the Care Team handles support, so nothing happens in a waiting room.",
-    "Hims doesn't publish ED prices, and there is no lock-in contract.",
+    "There is no lock-in contract, and you see the price after the consultation, before you pay anything.",
   ],
   blocks: [
     {
@@ -36,8 +35,7 @@ export const ed: HimsPageContent = {
         { label: "Who it's for", value: "Men in Australia who have trouble getting or keeping an erection." },
         { label: "How you start", value: "Free two-minute quiz, then a phone consultation with an Australian practitioner." },
         { label: "Hours", value: "Consultations 7am to 11pm AEST, seven days." },
-        { label: "Consultation", value: `Free with code ${OFFERS.ed.code} for new patients. The code is exclusive to Refer Labs.` },
-        { label: "Plan price", value: "Not published on Hims' ED page. You see it after the consultation." },
+        { label: "Plan price", value: "Shown after the consultation, before you pay." },
         { label: "Contract", value: "No lock-in contracts. Pause or cancel at any time." },
         { label: "Support", value: "Unlimited practitioner check-ins and a 24-hour Care Team of nurses, pharmacists and practitioners." },
       ],
@@ -49,7 +47,7 @@ export const ed: HimsPageContent = {
       heading: "What happens on the Hims ED consultation?",
       paragraphs: [
         "You answer the personal questions in the quiz, in your own time, so the practitioner knows the background before the call and the conversation can start from there.",
-        "The practitioner decides whether a plan is right for you. Hims says not every plan suits everyone, and after the quiz and the call it may have no suitable option for you. Australian advertising law keeps what a practitioner may recommend off Hims' site and off Refer Labs, so the specifics come up on the call.",
+        "The practitioner decides whether a plan is right for you, and talks you through the options and the cost on the call.",
       ],
     },
     {
@@ -72,7 +70,7 @@ export const ed: HimsPageContent = {
           q: "Is there a Hims discount code for ED?",
           a: `Yes. ${OFFERS.ed.code} is exclusive to Refer Labs: Hims has confirmed in writing that it has no public ED code (${HIMS_SUPPLIED_ON}). It gives new patients a free consultation with an Australian practitioner, and our link applies it automatically. One use per patient. Read ${FACTS_CHECKED_ON}.`,
         },
-        { q: "How much does Hims ED cost in Australia?", a: "ED plan prices aren't on Hims' ED page; the practitioner covers cost on the consultation, before you order anything." },
+        { q: "How much does Hims ED cost in Australia?", a: "The practitioner covers the cost on the consultation, before you order anything. With code REFERLABS the consultation itself is free for new patients." },
         { q: "Is the Hims ED consultation private?", a: "The quiz is online and the consultation is a phone call, so there is no clinic visit and no video. Hims' practitioners are AHPRA-registered and based in Australia." },
         { q: "Can I cancel Hims ED?", a: "Yes. Hims says you can pause or cancel at any time and it has no lock-in contracts." },
         {
