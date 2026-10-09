@@ -10,13 +10,13 @@ export const weight: HimsPageContent = {
   vertical: "weight",
   kind: "review",
   modified: "2026-10-09",
-  seoTitle: "Hims Weight Loss (ex-Pilot): Free Consult Code REFERLABS89",
+  seoTitle: "Hims Weight Loss (ex-Pilot): Exclusive Code REFERLABS89",
   metaDescription:
-    "Hims, formerly Pilot, runs a men's weight program in Australia. How it works, the two ways to pay, and a free consultation ($89 value) with REFERLABS89.",
+    "Hims, formerly Pilot, runs a men's weight program in Australia. How it works, the two ways to pay, and a free consultation ($89 value) with exclusive code REFERLABS89.",
   eyebrow: "Men's weight loss telehealth · Australia",
   h1: "Hims weight loss in Australia: how it works, what it costs and what's included",
   standfirst:
-    "The Refer Labs code REFERLABS89 gives new Hims patients a free consultation ($89 value), and our link applies it for you. Hims, formerly Pilot, runs an online weight program for men in Australia: a free two-minute quiz, then a phone consultation with an Australian practitioner, who decides whether the program is right for you.",
+    "REFERLABS89, a code exclusive to Refer Labs, gives new Hims patients a free consultation ($89 value), and our link applies it for you. Hims, formerly Pilot, runs an online weight program for men in Australia: a free two-minute quiz, then a phone consultation with an Australian practitioner, who decides whether the program is right for you.",
   hub: { label: "Weight loss", href: "/weight-loss" },
   verdictQuestion: "What do you get with Hims weight loss?",
   verdict: [
@@ -105,7 +105,7 @@ export const weight: HimsPageContent = {
       items: [
         {
           q: "Is there a Hims discount code for weight loss?",
-          a: `Yes. The Refer Labs code for new Hims patients is ${OFFERS.weight.code}: a free consultation ($89 value). Our link applies it automatically. It is for new patients in Australia only, one use per patient, and can't be combined with other Hims offers. Read ${FACTS_CHECKED_ON}.`,
+          a: `Yes. ${OFFERS.weight.code} is exclusive to Refer Labs: a free consultation ($89 value) for new Hims patients. Our link applies it automatically. It is for new patients in Australia only, one use per patient, and can't be combined with other Hims offers. Read ${FACTS_CHECKED_ON}.`,
         },
         {
           q: "How much does Hims weight loss cost in Australia?",

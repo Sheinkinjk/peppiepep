@@ -49,8 +49,8 @@ const MOSH_PRACTITIONERS =
 const MOSH_CONSULT_FEE = "No charge for the initial consultation; program fees apply";
 
 // The Refer Labs offer row, as supplied by Hims (V2, 9 Oct 2026).
-const HIMS_OFFER_CELL = "REFERLABS: free consultation for new patients";
-const HIMS_OFFER_CELL_WEIGHT = "REFERLABS89: free consultation ($89 value) for new patients";
+const HIMS_OFFER_CELL = "REFERLABS: free consultation for new patients, exclusive to Refer Labs";
+const HIMS_OFFER_CELL_WEIGHT = "REFERLABS89: free consultation ($89 value) for new patients, exclusive to Refer Labs";
 const HIMS_OFFER_CELL_ED = "REFERLABS: free consultation for new patients, exclusive to Refer Labs";
 const MOSH_HAIR_OFFER_CELL = "REFERAL55: a discount on a new customer's first hair order";
 

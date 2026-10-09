@@ -851,7 +851,7 @@ function OverviewView({
   const coded = moshCodes.filter((c) => c.side.code);
   const pending = moshCodes.filter((c) => !c.side.code);
   const codesLead =
-    `Refer Labs has two Hims codes, each a free consultation for new patients: ${himsWeight.code} for weight loss ($89 value) and ${hims.code} for hair loss and ED. ` +
+    `Refer Labs has two exclusive Hims codes, each a free consultation for new patients: ${himsWeight.code} for weight loss ($89 value) and ${hims.code} for hair loss and ED. ` +
     `On the Mosh side each program has its own: ${coded.map((c) => `${c.side.code} for ${c.side.name} ${c.program.toLowerCase()}`).join(" and ")}` +
     (pending.length ? `. Mosh's ${pending.map((c) => PROGRAM_LABEL[c.vertical]).join(" and ")} code will be added once Mosh supplies it.` : ".");
 

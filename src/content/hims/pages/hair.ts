@@ -10,13 +10,13 @@ export const hair: HimsPageContent = {
   vertical: "hair",
   kind: "review",
   modified: "2026-10-09",
-  seoTitle: "Hims Hair Loss (ex-Pilot): Free Consult Code REFERLABS",
+  seoTitle: "Hims Hair Loss (ex-Pilot): Exclusive Code REFERLABS",
   metaDescription:
-    "Pilot's hair service is now Hims: a phone consultation, a 180-day money-back guarantee on select plans, and a free consultation with code REFERLABS.",
+    "Pilot's hair service is now Hims: a phone consultation, a 180-day money-back guarantee on select plans, and a free consultation with exclusive code REFERLABS.",
   eyebrow: "Men's hair loss telehealth · Australia",
   h1: "Hims hair loss in Australia, with a 180-day money-back guarantee",
   standfirst:
-    "The Refer Labs code REFERLABS gives new Hims patients a free consultation, and our link applies it for you. Hims, formerly Pilot, runs online hair loss consultations for men in Australia: a free two-minute quiz, then a phone call with an Australian practitioner, who decides whether a hair plan is right for you. Select hair plans carry a 180-day money-back guarantee under Hims' terms.",
+    "REFERLABS, a code exclusive to Refer Labs, gives new Hims patients a free consultation, and our link applies it for you. Hims, formerly Pilot, runs online hair loss consultations for men in Australia: a free two-minute quiz, then a phone call with an Australian practitioner, who decides whether a hair plan is right for you. Select hair plans carry a 180-day money-back guarantee under Hims' terms.",
   hub: { label: "Hair loss", href: "/hair-loss" },
   verdictQuestion: "What happens if a Hims hair plan isn't for you?",
   verdict: [
@@ -87,7 +87,7 @@ export const hair: HimsPageContent = {
       items: [
         {
           q: "Is there a Hims discount code for hair loss?",
-          a: `Yes. ${OFFERS.hair.code} is the Refer Labs code for new Hims patients: a free consultation with an Australian practitioner. Our link applies it automatically. One use per patient, and it can't be combined with any other Hims offer. Read ${FACTS_CHECKED_ON}.`,
+          a: `Yes. ${OFFERS.hair.code} is exclusive to Refer Labs: a free consultation with an Australian practitioner for new Hims patients. Our link applies it automatically. One use per patient, and it can't be combined with any other Hims offer. Read ${FACTS_CHECKED_ON}.`,
         },
         {
           q: "How much does Hims hair loss cost in Australia?",

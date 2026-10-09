@@ -162,10 +162,16 @@ export const WEIGHT_PRICING = {
 };
 // PRICING:END
 
-/** What each code is called on the page. Only ED's is confirmed exclusive in writing (Hims, 9 Oct 2026). */
+/**
+ * What each code is called on the page. All three are exclusive Refer Labs codes
+ * (Jarred, 10 Oct 2026): Hims issued REFERLABS89 and REFERLABS to Refer Labs only.
+ * ED's exclusivity is confirmed in writing (Hims, 9 Oct 2026); weight and hair are
+ * asked for written confirmation in the V2 email. If Hims says otherwise, revert here
+ * and in the page copy that says "exclusive".
+ */
 export const CODE_LABEL: Record<Vertical, string> = {
-  weight: "Your Refer Labs code for new Hims patients",
-  hair: "Your Refer Labs code for new Hims patients",
+  weight: "Exclusive Refer Labs code for new Hims patients",
+  hair: "Exclusive Refer Labs code for new Hims patients",
   ed: "Exclusive Refer Labs code for new Hims patients",
 };
 
