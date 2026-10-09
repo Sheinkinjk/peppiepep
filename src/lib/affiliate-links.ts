@@ -18,10 +18,13 @@ export const MOSHY_URL = "https://www.getmoshy.com.au/start/eligibility-check-mo
 // Mosh tracks via the partner path /start/referlabs. Canonical across all pages.
 export const MOSH_HAIR_URL = "https://www.getmosh.com.au/start/referlabs";
 
-// Hims (formerly Pilot). Tracking link supplied by Hims, 29 Sep 2026. The code in
-// the URL is what Hims attributes on. Used only by the Hims page set, which is
-// preview-only until Hims approves it.
-export const HIMS_URL = "https://www.hims.com.au/?utm_source=affiliate&utm_campaign=jarred&discountCode=JARREDSTART";
+// Hims (formerly Pilot). One tracking link per program, supplied by Hims (Moiz,
+// 9 Oct 2026, V2). The discountCode in each URL applies the Refer Labs code
+// automatically and is what Hims attributes on. Used only by the Hims page set,
+// which is preview-only until Hims approves it in writing.
+export const HIMS_WEIGHT_URL = "https://app.hims.com.au/start/how-it-works?t=weight_loss&utm_source=affiliate&utm_campaign=referlabs&discountCode=REFERLABS89";
+export const HIMS_HAIR_URL = "https://app.hims.com.au/start/how-it-works?t=hair_loss&utm_source=affiliate&utm_campaign=referlabs&discountCode=REFERLABS";
+export const HIMS_ED_URL = "https://app.hims.com.au/start/how-it-works?t=erectile_dysfunction&utm_source=affiliate&utm_campaign=referlabs&discountCode=REFERLABS";
 
 // ── Weight-loss: Juniper (affiliate partner from July 2026) ──────────────────
 // JARREDKFC waives the initial Juniper consultation, which Juniper values at $89,

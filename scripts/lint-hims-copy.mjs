@@ -55,12 +55,18 @@ const REVIEW_FILES = ["pages/weight.ts", "pages/hair.ts", "pages/ed.ts"];
 const COMPETITORS = ["mosh", "moshy", "juniper", "dense", "hub.health", "youly", "midoc", "instantscripts", "updoc", "hola health"];
 
 // Phrases that contain a banned token but are permitted by the handbook.
-const ALLOW = [/money-back guarantee/gi, /price match guarantee/gi, /clinically appropriate/gi];
+// "($89 value)" is the value of the initial consultation in Hims' own offer line
+// (V2, 9 Oct 2026). It is a consultation fee, not a plan or medicine price, which
+// stay off these pages under the TGA price guidance and the no-partner-prices rule.
+const ALLOW = [/money-back guarantee/gi, /price match guarantee/gi, /clinically appropriate/gi, /\(\$89 value\)/g];
 
+// Source files only: partner-mark.png sits in the content folder and its bytes
+// were being scanned as copy (found 9 Oct 2026).
 function walk(dir) {
   return readdirSync(dir).flatMap((f) => {
     const p = join(dir, f);
-    return statSync(p).isDirectory() ? walk(p) : [p];
+    if (statSync(p).isDirectory()) return walk(p);
+    return /\.(ts|tsx)$/.test(p) ? [p] : [];
   });
 }
 

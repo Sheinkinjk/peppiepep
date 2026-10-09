@@ -16,11 +16,11 @@ type Slug = (typeof HIMS_SLUG_LIST)[number];
 export const SIBLINGS: Record<Slug, { label: string; neutralLabel?: string; desc: string }> = {
   hims: {
     label: "Hims weight loss",
-    desc: "How the weight program starts, the twelve-month commitment and the 30-day refund.",
+    desc: "How the weight program works, the two ways to pay and the 30-day money-back guarantee.",
   },
   "hims-hair-loss": {
     label: "Hims hair loss",
-    desc: "The hair consultation, the 180-day guarantee and cancelling before an order.",
+    desc: "The hair consultation, the 180-day money-back guarantee and cancelling before an order.",
   },
   "hims-ed": {
     label: "Hims ED",

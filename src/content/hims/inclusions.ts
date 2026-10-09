@@ -1,6 +1,6 @@
 /**
  * What Hims and Mosh each say they include, read off each provider's own public
- * pages on 30 September 2026 and re-read on 2 October 2026. One source of truth for the comparison pages,
+ * pages on 30 September 2026, re-read on 2 October and again for V2 on 9 October 2026. One source of truth for the comparison pages,
  * on the pattern of src/lib/compare/weight-inclusions.ts.
  *
  * Rules for every cell:
@@ -15,7 +15,7 @@
  *
  * Columns are alphabetical (Hims, Mosh) and there is no winner column.
  */
-export const INCLUSIONS_READ_ON = "2 October 2026";
+export const INCLUSIONS_READ_ON = "9 October 2026";
 
 export type InclusionsKey = "overview" | "weight" | "hair" | "ed";
 
@@ -37,8 +37,9 @@ export type InclusionsTableData = {
 // Shared cells. Declared once so a change moves every table together.
 const HIMS_START = "Free online quiz of about two minutes, then a phone consultation with an Australian practitioner";
 const HIMS_PRACTITIONERS = "AHPRA-registered practitioners based in Australia";
-const HIMS_CONSULT_FEE =
-  "A consult fee applies; Hims refunds it if no suitable plan is found for you or you decide the recommended option isn't for you";
+// V2 (9 Oct 2026): Hims asked for "Free consultation with code REFERLABS" in place of
+// the refund wording, since the code removes the consult fee.
+const HIMS_CONSULT_FEE = "Free consultation with code REFERLABS";
 const HIMS_HOURS = "Consultations from 7am to 11pm AEST, seven days";
 const HIMS_MEDICARE = "Not claimable on Medicare (Hims FAQ)";
 
@@ -47,10 +48,10 @@ const MOSH_PRACTITIONERS =
   "AHPRA-registered medical practitioners and nurse practitioners based in Australia, paid on a fee-for-service basis";
 const MOSH_CONSULT_FEE = "No charge for the initial consultation; program fees apply";
 
-// The Refer Labs offer row. Hims' code and offer are placeholders until Hims'
-// reviewers confirm them (Jarred, 30 Sep 2026).
-const HIMS_OFFER_CELL = "REFERLABS89: no charge for the initial consultation for new patients; program fees apply";
-const HIMS_OFFER_FLAG = "Offer and code to confirm";
+// The Refer Labs offer row, as supplied by Hims (V2, 9 Oct 2026).
+const HIMS_OFFER_CELL = "REFERLABS: free consultation for new patients";
+const HIMS_OFFER_CELL_WEIGHT = "REFERLABS89: free consultation ($89 value) for new patients";
+const HIMS_OFFER_CELL_ED = "REFERLABS: free consultation for new patients, exclusive to Refer Labs";
 const MOSH_HAIR_OFFER_CELL = "REFERAL55: a discount on a new customer's first hair order";
 
 const HIMS_SRC = {
@@ -82,11 +83,11 @@ export const INCLUSIONS: Record<InclusionsKey, InclusionsTableData> = {
       },
       { label: "Programs", hims: "Weight loss, hair loss and sexual health", mosh: "Hair loss, sexual health, mental health and skin; weight loss through Moshy, its partner brand" },
       { label: "How you start", hims: HIMS_START, mosh: MOSH_START },
-      { label: "Consult fee", hims: HIMS_CONSULT_FEE, mosh: MOSH_CONSULT_FEE },
+      { label: "Consult fee", hims: "Free consultation with a Refer Labs code: REFERLABS89 for weight, REFERLABS for hair and sexual health", mosh: MOSH_CONSULT_FEE },
       { label: "Practitioners", hims: HIMS_PRACTITIONERS, mosh: MOSH_PRACTITIONERS },
       {
         label: "Support after you start",
-        hims: "Unlimited practitioner appointments and 24-hour Care Team access from your phone",
+        hims: "Unlimited practitioner check-ins and 24-hour Care Team access from your phone",
         mosh: "Unlimited medical follow-ups",
       },
       {
@@ -96,11 +97,11 @@ export const INCLUSIONS: Record<InclusionsKey, InclusionsTableData> = {
       },
       {
         label: "Money-back",
-        hims: "Weight: 30 days from starting. Hair: 180 days. Under Hims' terms",
+        hims: "Weight: 30 days. Hair: 180 days on select hair plans. Under Hims' terms",
         mosh: "Weight (through Moshy): 30 days. Hair: 180 days on quarterly programs. Under each brand's terms",
       },
       { label: "Prices", hims: "Weight pricing on Hims' weight page; hair and sexual health after the consult", mosh: "Published on Mosh's pricing page" },
-      { label: "Refer Labs code", hims: HIMS_OFFER_CELL, himsFlag: HIMS_OFFER_FLAG, mosh: MOSH_HAIR_OFFER_CELL },
+      { label: "Refer Labs code", hims: "REFERLABS89 for weight; REFERLABS for hair and sexual health. Each a free consultation for new patients", mosh: MOSH_HAIR_OFFER_CELL },
     ],
     sources: { hims: [HIMS_SRC.weight, HIMS_SRC.hair, HIMS_SRC.ed, HIMS_SRC.faq], mosh: [MOSH_SRC.home, MOSH_SRC.pricing, MOSH_SRC.weight, MOSH_SRC.hair, MOSH_SRC.referlabs] },
   },
@@ -112,35 +113,34 @@ export const INCLUSIONS: Record<InclusionsKey, InclusionsTableData> = {
     rows: [
       {
         label: "Who it is for",
-        hims: "Men's telehealth covering weight loss, hair loss and sexual health",
+        hims: "Hims weight plans are designed for men",
         mosh: "An online women's health clinic by its own description; open to anyone a practitioner assesses as suitable",
       },
       { label: "How you start", hims: HIMS_START, mosh: "Free online quiz, then a consult by phone or video" },
       {
         label: "Commitment",
-        hims: "The advertised starting offer is a pay-upfront option with a twelve-month commitment",
+        hims: "Choose a monthly plan you can change or cancel at any time, or a 12-month plan paid upfront for the lowest first-month price",
         mosh: "No lock-in contracts, by Moshy's own description; a code can carry its own minimum term, set out in the offer terms at the foot of this page",
       },
       {
         label: "Money-back",
-        hims: "30-day money-back guarantee: contact Hims within 30 days of starting. Terms apply",
+        hims: "30-day money-back guarantee, under Hims' terms",
         mosh: "30-day money-back guarantee. Terms apply",
       },
       {
         label: "Practitioner and care team",
-        hims: "Unlimited support from your practitioner and a 24/7 Care Team of practitioners, health coaches and pharmacists",
+        hims: "Unlimited practitioner check-ins and a 24/7 Care Team of practitioners, health coaches and pharmacists",
         mosh: "Unlimited medical support from a care team of medical practitioners, nurses, pharmacists, psychologists, dietitians and exercise physiologists",
       },
       {
         label: "Coaching and nutrition",
-        hims: "Nutrition guidance from the Care Team; optional online community",
+        hims: "Unlimited practitioner check-ins, nutrition guidance from the Care Team, and an optional online community",
         mosh: "In-app health coaching, dietitian-approved meal plans and recipes, and a community",
       },
       { label: "How it is priced", hims: "Weight pricing on Hims' weight page", mosh: "An all-inclusive program fee published on Moshy's site" },
       {
         label: "Refer Labs code",
-        hims: HIMS_OFFER_CELL,
-        himsFlag: HIMS_OFFER_FLAG,
+        hims: HIMS_OFFER_CELL_WEIGHT,
         mosh: "REFERRAL120: a discount on a new customer's first Moshy order",
       },
     ],
@@ -153,12 +153,12 @@ export const INCLUSIONS: Record<InclusionsKey, InclusionsTableData> = {
       { label: "Consult fee", hims: HIMS_CONSULT_FEE, mosh: MOSH_CONSULT_FEE },
       {
         label: "Money-back",
-        hims: "180-day money-back guarantee on all hair plans. Terms apply",
+        hims: "180-day money-back guarantee on select hair plans, under Hims' terms",
         mosh: "180-day money-back guarantee on quarterly hair programs. Terms apply",
       },
       {
         label: "Support",
-        hims: "24-hour Care Team of nurses, pharmacists and practitioners; unlimited plan changes on request",
+        hims: "Unlimited practitioner check-ins, a 24-hour Care Team of nurses, pharmacists and practitioners, and plan changes on request",
         mosh: "Unlimited access to your practitioner by text, call or video",
       },
       {
@@ -168,7 +168,7 @@ export const INCLUSIONS: Record<InclusionsKey, InclusionsTableData> = {
       },
       { label: "Price match", hims: "Not advertised", mosh: "On substantially comparable hair programs, by application form. Terms apply" },
       { label: "Prices", hims: "Not published on Hims' hair page; shown after the consult", mosh: "Published on Mosh's pricing page" },
-      { label: "Refer Labs code", hims: HIMS_OFFER_CELL, himsFlag: HIMS_OFFER_FLAG, mosh: MOSH_HAIR_OFFER_CELL },
+      { label: "Refer Labs code", hims: HIMS_OFFER_CELL, mosh: MOSH_HAIR_OFFER_CELL },
     ],
     sources: { hims: [HIMS_SRC.hair, HIMS_SRC.faq], mosh: [MOSH_SRC.hair, MOSH_SRC.referlabs, MOSH_SRC.pricing, MOSH_SRC.home] },
   },
@@ -183,9 +183,9 @@ export const INCLUSIONS: Record<InclusionsKey, InclusionsTableData> = {
       { label: "Practitioners", hims: HIMS_PRACTITIONERS, mosh: null },
       { label: "Consult fee", hims: HIMS_CONSULT_FEE, mosh: null },
       { label: "Contract", hims: "No lock-in contracts; pause or cancel at any time", mosh: null },
-      { label: "Support", hims: "24-hour Care Team of nurses, pharmacists and practitioners", mosh: null },
+      { label: "Support", hims: "Unlimited practitioner check-ins and a 24-hour Care Team of nurses, pharmacists and practitioners", mosh: null },
       { label: "Medicare", hims: HIMS_MEDICARE, mosh: null },
-      { label: "Refer Labs code", hims: HIMS_OFFER_CELL, himsFlag: HIMS_OFFER_FLAG, mosh: null },
+      { label: "Refer Labs code", hims: HIMS_OFFER_CELL_ED, mosh: null },
     ],
     sources: { hims: [HIMS_SRC.ed, HIMS_SRC.faq], mosh: [] },
   },

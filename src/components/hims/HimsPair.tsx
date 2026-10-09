@@ -81,7 +81,7 @@ export function HimsPair({
       side: hims,
       offerBox: (
         <p className="mb-4 rounded-xl bg-[#e4f2f5] px-4 py-3 text-sm leading-snug text-[#14120f]">
-          {offer.headline}. Code <span className="font-mono font-bold tracking-[0.04em]">{offer.code}</span>
+          {offer.headline}.
           <Flag show={preview && (offer.codeIsPlaceholder || offer.headlineIsPlaceholder)}>Offer and code to confirm</Flag>
         </p>
       ),

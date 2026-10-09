@@ -13,12 +13,43 @@
 // suitability checks, and buttons say "Continue to Hims" or "Continue to Mosh".
 
 import type { Vertical } from "./types";
-import { HIMS_URL, MOSH_HAIR_URL, MOSHY_URL } from "@/lib/affiliate-links";
+import { HIMS_ED_URL, HIMS_HAIR_URL, HIMS_WEIGHT_URL, MOSH_HAIR_URL, MOSHY_URL } from "@/lib/affiliate-links";
 
 export const SITE_URL = "https://referlabs.com.au";
 
-/** Date every fact on these pages was last read on the provider's own public site. */
-export const FACTS_CHECKED_ON = "2 October 2026";
+/** Date every Hims fact on these pages was last read on Hims' own public site (V2 re-read). */
+export const FACTS_CHECKED_ON = "9 October 2026";
+
+/**
+ * Facts Hims supplied in writing rather than on a public page (Moiz, Hims, email of
+ * 9 Oct 2026, with the V2 feedback doc). Stated as Hims' own statements.
+ */
+export const HIMS_SUPPLIED_ON = "9 October 2026";
+
+/**
+ * V2 (9 Oct 2026). Hims' claims sheet items deliberately NOT used, with the reason,
+ * so the list can go back to Hims and nobody adds them later by accident:
+ *  - clinical statistics ("over 90% of eligible men", "94% of men", "92% kept or
+ *    regrew", "over 19% bodyweight loss", "up to 20%"): each cites a trial of a
+ *    specific prescription medicine, so it identifies the medicine (TG Act s42DL)
+ *    and creates an expectation of benefit (National Law s133(1)(d));
+ *  - "Thousands of 5 star reviews globally": review-based social proof, which
+ *    s133(1)(c) prohibits for a regulated health service;
+ *  - "helped millions of men ... become the best version of themselves": an
+ *    outcome claim (s133(1)(d));
+ *  - "one of the world's biggest men's health brands": a superiority claim
+ *    (Ahpra guidelines 4.1), against the 9 Oct health wording rule;
+ *  - "over 9,000 Aussies already losing weight with Hims": an outcome claim;
+ *  - "300,000 Australians have joined Hims": not essential (Jarred, 9 Oct 2026);
+ *  - ED and premature ejaculation prevalence stats: not essential, and PE is not
+ *    in the program;
+ *  - "free, discreet delivery to your door": supply language, which points at a
+ *    product (TGA service wording rule, 30 Sep 2026);
+ *  - the weight plan prices ($160, $260, $2,899): the TGA says listing prices for
+ *    services involving prescription medicines is likely advertising (guidance of
+ *    18 June 2026). The page points to Hims' own pricing instead, dated;
+ *  - "see if you're eligible": eligibility framing (TGA lists eligibility checks).
+ */
 
 export const AUTHOR = "Jarred - Founder";
 
@@ -59,29 +90,60 @@ type Offer = {
 
 const TERMS = [
   "New Hims patients in Australia only. Current and previous Hims or Pilot patients are excluded.",
-  "Our link carries the code into Hims' checkout; if it isn't shown, enter it yourself. One use per patient.",
+  "Our link applies the code automatically; if it isn't shown, enter it yourself. One use per patient.",
   "Cannot be combined with any other Hims offer.",
   "A registered practitioner decides whether the program is right for you. Program fees apply.",
   "Hims may change or withdraw this offer. Full terms at hims.com.au/terms-and-conditions.",
 ];
 
-const HIMS_OFFER: Offer = {
-  code: "REFERLABS89",
-  codeIsPlaceholder: true,
-  headline: "No charge for the initial consultation for new Hims patients; program fees apply",
-  headlineIsPlaceholder: true,
-  terms: TERMS,
-  ctaLabel: "Continue to Hims",
-  ctaHref: HIMS_URL,
-  ctaIsPlaceholder: false,
+// Codes, links and offer lines supplied by Hims (V2 feedback, 9 Oct 2026).
+// Weight: Hims' recommended line, verbatim. Hair and ED: Hims asked for "Get started
+// with a free consultation to see if you're eligible"; "see if you're eligible" is
+// eligibility framing the TGA lists as advertising, so it is reworded (Jarred, 9 Oct).
+export const OFFERS: Record<Vertical, Offer> = {
+  weight: {
+    code: "REFERLABS89",
+    codeIsPlaceholder: false,
+    headline: "Free consultation ($89 value) with code REFERLABS89",
+    headlineIsPlaceholder: false,
+    terms: TERMS,
+    ctaLabel: "Continue to Hims",
+    ctaHref: HIMS_WEIGHT_URL,
+    ctaIsPlaceholder: false,
+  },
+  hair: {
+    code: "REFERLABS",
+    codeIsPlaceholder: false,
+    headline: "Free consultation with an Australian practitioner for new patients, with code REFERLABS",
+    headlineIsPlaceholder: false,
+    terms: TERMS,
+    ctaLabel: "Continue to Hims",
+    ctaHref: HIMS_HAIR_URL,
+    ctaIsPlaceholder: false,
+  },
+  ed: {
+    code: "REFERLABS",
+    codeIsPlaceholder: false,
+    headline: "Free consultation with an Australian practitioner for new patients, with code REFERLABS",
+    headlineIsPlaceholder: false,
+    terms: TERMS,
+    ctaLabel: "Continue to Hims",
+    ctaHref: HIMS_ED_URL,
+    ctaIsPlaceholder: false,
+  },
 };
 
-// Link: real, supplied by Hims (it carries JARREDSTART, which is what Hims
-// attributes on). Code and headline: PLACEHOLDERS until Hims' reviewers confirm them.
-export const OFFERS: Record<Vertical, Offer> = {
-  weight: HIMS_OFFER,
-  hair: HIMS_OFFER,
-  ed: HIMS_OFFER,
+/**
+ * One line shown inside the offer box beside the code, per vertical (V2). Hair:
+ * Hims asked for the 180-day guarantee next to the code box. Hims' terms (clause
+ * c, read 9 Oct 2026) apply it to "a particular" hair plan, so it says "select".
+ * ED: REFERLABS is exclusive to Refer Labs; Hims confirmed in writing (9 Oct 2026)
+ * that it has no public ED code.
+ */
+export const OFFER_NOTES: Partial<Record<Vertical, string>> = {
+  hair: "180-day money-back guarantee on select hair plans, under Hims' terms.",
+  ed: "REFERLABS is exclusive to Refer Labs: Hims has no public ED code (Hims, 9 October 2026).",
+  weight: "30-day money-back guarantee on the weight program, under Hims' terms.",
 };
 
 /**
@@ -121,7 +183,7 @@ export const MOSH: Record<Vertical, MoshSide> = {
     ctaLabel: "Continue to Mosh",
     pageUrl: "/moshhair",
     terms: [
-      "New Mosh customers only; applies to the first order of a Mosh hair program (Mosh's Refer Labs page, read 2 October 2026).",
+      "New Mosh customers only; applies to the first order of a Mosh hair program (Mosh's Refer Labs page, read 9 October 2026).",
       "Unless a promotion says otherwise, Mosh's terms allow one use per customer and one promotion per order. Full terms at getmosh.com.au/terms.",
       "A registered practitioner decides whether the program is right for you. Program fees apply.",
     ],

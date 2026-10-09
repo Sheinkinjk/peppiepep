@@ -11,6 +11,7 @@ import {
   DISCLOSURE_REVIEW_NOTE,
   FACTS_CHECKED_ON,
   MOSH,
+  OFFER_NOTES,
   OFFERS,
   SITE_URL,
 } from "@/content/hims/config";
@@ -132,8 +133,12 @@ function PairDisclosure({ partners, preview }: { partners: string[]; preview: bo
  * answers only, never in an offer box, card, codes panel, CTA or sticky bar.
  */
 function OfferTermsFoot({ verticals, mosh }: { verticals: Vertical[]; mosh: Vertical[] }) {
+  // One line per distinct Hims code (V2: REFERLABS89 for weight, REFERLABS for hair and ED).
+  const himsSides = verticals
+    .filter((v, i) => verticals.findIndex((w) => OFFERS[w].code === OFFERS[v].code) === i)
+    .map((v) => ({ name: "Hims", code: OFFERS[v].code, terms: OFFERS[v].terms }));
   const sides = [
-    { name: "Hims", code: OFFERS[verticals[0]].code, terms: OFFERS[verticals[0]].terms },
+    ...himsSides,
     ...mosh
       .map((v) => MOSH[v])
       .filter((m) => m.code && m.terms?.length)
@@ -251,7 +256,7 @@ export function HimsPage({ content, preview, linkPrefix }: { content: HimsPageCo
 
   const previewBanner = preview ? (
     <div role="status" className="sticky top-0 z-50 border-b border-[#E3C766] bg-[#FCEFC7] px-4 py-2 text-center text-sm text-[#4A3700]">
-      Draft for Hims review. This page is not public and is not indexed. Amber tags mark codes, links and facts still to be confirmed.
+      Draft V2 for Hims review, 9 October 2026. This page is not public and is not indexed. The one amber tag marks the disclosure wording, which needs Hims&rsquo; written approval.
     </div>
   ) : null;
 
@@ -443,9 +448,12 @@ export function HimsPage({ content, preview, linkPrefix }: { content: HimsPageCo
               <div>
                 <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#003647]">Refer Labs code for new Hims patients</p>
                 <p className="mt-1 text-[15px] font-bold leading-snug text-[#14120f]">
-                  {offer.headline} (code {offer.code})
+                  {offer.headline}
                   <Flag show={preview && (offer.headlineIsPlaceholder || offer.codeIsPlaceholder)}>Offer and code to confirm</Flag>
                 </p>
+                {OFFER_NOTES[content.vertical] ? (
+                  <p className="mt-1 text-[13.5px] font-semibold leading-snug text-[#003647]">{OFFER_NOTES[content.vertical]}</p>
+                ) : null}
                 <p className="mt-1.5 text-[12px] font-medium text-[#56504a]">Read by Refer Labs, {FACTS_CHECKED_ON}</p>
               </div>
             </div>
@@ -538,7 +546,7 @@ export function HimsPage({ content, preview, linkPrefix }: { content: HimsPageCo
           </h2>
           <p className="mx-auto mt-4 max-w-md text-[15px] leading-relaxed text-white/70">
             The quiz is free and takes about two minutes, and a registered practitioner then decides whether the program is right for
-            you. Our link carries the Refer Labs code; if it isn&rsquo;t shown at checkout, enter it yourself.
+            you. Our link applies the Refer Labs code automatically; if it isn&rsquo;t shown at checkout, enter it yourself.
           </p>
           <p className="mt-5 text-white">
             Code <span className="font-mono text-lg font-bold tracking-[0.08em]">{offer.code}</span>
@@ -560,8 +568,7 @@ export function HimsPage({ content, preview, linkPrefix }: { content: HimsPageCo
             change, so confirm them with Hims before you pay.
           </p>
           <p>
-            Program details are taken from Hims&rsquo; public website and are Hims&rsquo; to confirm. For anything about your own situation,
-            contact Hims.
+            Program details are taken from Hims&rsquo; public website. For anything about your own situation, contact Hims.
           </p>
           <p>Hims is a trademark of Hims, Inc. Refer Labs is independent and is not owned by or part of Hims or any other provider.</p>
         </footer>
@@ -717,7 +724,7 @@ function BlockView({ block, ctx, kind }: { block: Block; ctx: Ctx; kind: "review
               <div className="rounded-2xl border border-[#ded8cd] bg-white p-6 text-sm leading-relaxed text-[#56504a]">
                 <h3 className="text-base font-bold text-[#14120f]">Hims</h3>
                 <p className="mt-2 text-[#14120f]">
-                  {o.headline}. Code <span className="font-mono font-bold">{o.code}</span>.
+                  {o.headline}.
                   <Flag show={ctx.preview && (o.codeIsPlaceholder || o.headlineIsPlaceholder)}>Offer and code to confirm</Flag>
                 </p>
               </div>
@@ -743,7 +750,10 @@ function BlockView({ block, ctx, kind }: { block: Block; ctx: Ctx; kind: "review
                 {o.headline}
                 <Flag show={ctx.preview && o.headlineIsPlaceholder}>Offer to confirm</Flag>
               </p>
-              <p className="mt-1 text-[15px] text-[#56504a]">Our link carries this code into Hims&rsquo; checkout. If it isn&rsquo;t shown, enter it yourself.</p>
+              {OFFER_NOTES[block.vertical] ? (
+                <p className="mt-1 text-[15px] font-semibold text-[#003647]">{OFFER_NOTES[block.vertical]}</p>
+              ) : null}
+              <p className="mt-1 text-[15px] text-[#56504a]">Our link applies this code automatically. If it isn&rsquo;t shown, enter it yourself.</p>
             </div>
           </div>
           <div className="mt-5">
@@ -814,13 +824,14 @@ function OverviewView({
   const faq = content.blocks.find((b): b is Extract<Block, { type: "faq" }> => b.type === "faq");
   const partners = ["Hims", "Mosh", "Moshy"];
   const hims = OFFERS.hair;
+  const himsWeight = OFFERS.weight;
 
   // The codes, derived from config so the sentence cannot drift from the cards.
   const moshCodes = content.overview!.programs.map((p) => ({ program: p.tab, vertical: p.vertical, side: MOSH[p.vertical] }));
   const coded = moshCodes.filter((c) => c.side.code);
   const pending = moshCodes.filter((c) => !c.side.code);
   const codesLead =
-    `Refer Labs has one Hims code, ${hims.code}, which applies to all three programs: ${hims.headline.charAt(0).toLowerCase()}${hims.headline.slice(1)}. ` +
+    `Refer Labs has two Hims codes, each a free consultation for new patients: ${himsWeight.code} for weight loss ($89 value) and ${hims.code} for hair loss and ED. ` +
     `On the Mosh side each program has its own: ${coded.map((c) => `${c.side.code} for ${c.side.name} ${c.program.toLowerCase()}`).join(" and ")}` +
     (pending.length ? `. Mosh's ${pending.map((c) => PROGRAM_LABEL[c.vertical]).join(" and ")} code will be added once Mosh supplies it.` : ".");
 
@@ -976,7 +987,7 @@ function OverviewView({
       {sources}
 
       <footer className="mt-12 max-w-3xl space-y-3 text-xs leading-relaxed text-[#56504a]">
-        <OfferTermsFoot verticals={["hair"]} mosh={overview.programs.map((p) => p.vertical)} />
+        <OfferTermsFoot verticals={["weight", "hair"]} mosh={overview.programs.map((p) => p.vertical)} />
         <AffiliateDisclosure partners={partners} earnsFromAll />
         <Disclosure text={DISCLOSURE} />
         <p>
