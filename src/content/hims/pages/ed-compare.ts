@@ -19,7 +19,7 @@ export const edCompare: HimsPageContent = {
   modified: "2026-10-09",
   seoTitle: "Online ED Consultations in Australia: Hims vs Mosh",
   metaDescription:
-    "Hims (formerly Pilot) consults on ED by phone, 7am to 11pm AEST, with no lock-in contract and a free consultation with REFERLABS. Mosh's ED details are to be added.",
+    "Hims (formerly Pilot) consults on ED by phone, 7am to 11pm AEST, with no lock-in contract. Free consultation with REFERLABS, exclusive to Refer Labs.",
   eyebrow: "Men's sexual health · Australia",
   h1: "Online ED consultations in Australia: Hims vs Mosh",
   standfirst:
@@ -61,7 +61,7 @@ export const edCompare: HimsPageContent = {
       items: [
         {
           q: "Is there a Hims or Mosh discount code for ED?",
-          a: `Refer Labs' Hims code is ${OFFERS.ed.code}, exclusive to Refer Labs: a free consultation for new patients, applied automatically by our link. Hims has no public ED code (Hims, ${HIMS_SUPPLIED_ON}). Read ${FACTS_CHECKED_ON}. Mosh's ED code will be added once Mosh supplies it.`,
+          a: `Refer Labs' Hims code is ${OFFERS.ed.code}, exclusive to Refer Labs: a free consultation for new patients, applied automatically by our link. Hims has no public ED code (confirmed by Hims in writing, ${HIMS_SUPPLIED_ON}). Read ${FACTS_CHECKED_ON}. Mosh's ED code will be added once Mosh supplies it.`,
         },
         {
           q: "How much does an online ED consultation with Hims cost?",
@@ -73,7 +73,7 @@ export const edCompare: HimsPageContent = {
         },
         {
           q: "Is Hims the same as Pilot?",
-          a: `Yes. Pilot is now Hims: Hims says Pilot rebranded as Hims on 1 September 2026 (Hims, ${HIMS_SUPPLIED_ON}). Eucalyptus, the company behind it, has been part of Hims & Hers Health since 2 June 2026, and new patients who start on pilot.com.au are taken to the Hims quiz.`,
+          a: `Yes. Pilot is now Hims: Pilot rebranded as Hims on 1 September 2026 (confirmed by Hims in writing, ${HIMS_SUPPLIED_ON}). Eucalyptus, the company behind it, has been part of Hims & Hers Health since 2 June 2026, and new patients who start on pilot.com.au are taken to the Hims quiz.`,
         },
       ],
     },

@@ -10,19 +10,19 @@ export const weight: HimsPageContent = {
   vertical: "weight",
   kind: "review",
   modified: "2026-10-09",
-  seoTitle: "Hims Weight Loss Australia (formerly Pilot): Free Consultation Code",
+  seoTitle: "Hims Weight Loss (ex-Pilot): Free Consult Code REFERLABS89",
   metaDescription:
-    "Hims, formerly Pilot, runs a men's weight loss program in Australia. How it works, the two ways to pay, what's included, and a free consultation ($89 value) with REFERLABS89.",
+    "Hims, formerly Pilot, runs a men's weight program in Australia. How it works, the two ways to pay, and a free consultation ($89 value) with REFERLABS89.",
   eyebrow: "Men's weight loss telehealth · Australia",
   h1: "Hims weight loss in Australia: how it works, what it costs and what's included",
   standfirst:
-    "Hims is the Australian service of Hims & Hers Health, the US-listed telehealth company, and the men's health brand formerly called Pilot: Hims & Hers bought Pilot's owner, Eucalyptus, on 2 June 2026, and Hims says Pilot rebranded as Hims on 1 September 2026. It runs online consultations with Australian practitioners for weight loss, hair loss and sexual health. The weight program starts with a free two-minute quiz and a phone consultation, and the practitioner decides whether the program is right for you. You can choose a monthly plan you can change or cancel at any time, or a 12-month plan paid upfront, and both include a 30-day money-back guarantee under Hims' terms.",
+    "Hims, formerly Pilot, runs an online weight program for men in Australia. You take a free two-minute quiz, then talk by phone to an Australian practitioner, who decides whether the program is right for you. You can pay monthly and change or cancel at any time, or pay for 12 months upfront at the lowest price, and both come with a 30-day money-back guarantee under Hims' terms.",
   standfirstOffer: "With the Refer Labs code REFERLABS89, new patients get a free consultation ($89 value).",
   hub: { label: "Weight loss", href: "/weight-loss" },
   verdictQuestion: "What do you get with Hims weight loss?",
   verdict: [
-    "A practitioner-led program run from your phone, with unlimited practitioner check-ins and a 24/7 Care Team.",
-    "Two ways to pay: a monthly plan you can change or cancel at any time, or a 12-month plan paid upfront for the lowest price. Hims shows the prices on its own weight page and in your profile before you pay.",
+    "A practitioner-led program run from your phone: unlimited practitioner check-ins, a 24/7 Care Team for questions and plan changes, guidance on eating habits and an optional online community.",
+    "New patients start with a free consultation ($89 value) using the Refer Labs code REFERLABS89, which our link applies for you.",
   ],
   blocks: [
     {
@@ -79,7 +79,7 @@ export const weight: HimsPageContent = {
       id: "ways-to-pay",
       heading: "What are the ways to pay for Hims weight loss?",
       paragraphs: [
-        "Hims offers two ways to pay. A monthly plan can be changed or cancelled at any time. A 12-month plan is paid upfront and gives the lowest price. Both include a 30-day money-back guarantee under Hims' terms.",
+        "A monthly plan can be changed or cancelled at any time. A 12-month plan is paid upfront and gives the lowest price. Both include the 30-day money-back guarantee.",
         `Hims publishes the prices for both on hims.com.au/weight-loss and shows them again in your profile before you pay (read ${FACTS_CHECKED_ON}).`,
       ],
     },
@@ -101,7 +101,7 @@ export const weight: HimsPageContent = {
       id: "about",
       heading: "Is Hims the same as Pilot?",
       paragraphs: [
-        `Yes. Pilot is now Hims: Hims says Pilot rebranded as Hims on 1 September 2026 (Hims, ${HIMS_SUPPLIED_ON}). Hims & Hers Health, the US-listed telehealth company, completed its acquisition of Eucalyptus, the Australian company behind Pilot, on 2 June 2026. pilot.com.au says Pilot has joined the Hims & Hers group, and clicking through from Pilot's site opens the Hims quiz (read ${FACTS_CHECKED_ON}).`,
+        `Yes. Pilot is now Hims: Pilot rebranded as Hims on 1 September 2026 (confirmed by Hims in writing, ${HIMS_SUPPLIED_ON}). Hims & Hers Health, the US-listed telehealth company, completed its acquisition of Eucalyptus, the Australian company behind Pilot, on 2 June 2026. pilot.com.au says Pilot has joined the Hims & Hers group, and clicking through from Pilot's site opens the Hims quiz (read ${FACTS_CHECKED_ON}).`,
         "Pilot weight loss is now Hims weight loss. Former Pilot patients count as previous patients for Hims' new-patient offers.",
       ],
     },

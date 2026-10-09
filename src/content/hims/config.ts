@@ -140,6 +140,40 @@ export const OFFERS: Record<Vertical, Offer> = {
  * ED: REFERLABS is exclusive to Refer Labs; Hims confirmed in writing (9 Oct 2026)
  * that it has no public ED code.
  */
+/**
+ * WEIGHT PRICING (V2.1, Jarred 9 Oct 2026: "add it, flagged for legal sign-off").
+ *
+ * Hims' own wording, supplied in writing (Moiz, 9 Oct 2026), plus Hims' public
+ * START50 offer as read on hims.com.au/weight-loss the same day, so the reader can
+ * see what the Refer Labs code is worth against it. The saving is derived, never typed.
+ *
+ * LEGAL GATE. The TGA's guidance of 18 June 2026 says listing prices for services
+ * that involve prescription medicines is likely to be advertising those medicines.
+ * These lines render in the /preview review copy only. On the public slugs they
+ * render only once PRICING_LEGAL_CLEARED is true, and that flips only when BOTH
+ * Hims' legal team and Refer Labs' lawyer have cleared them in writing.
+ * lint:hims allows dollar figures only between the PRICING markers below.
+ */
+export const PRICING_LEGAL_CLEARED = false;
+// PRICING:START
+const REFERLABS_ANNUAL_FIRST_MONTH = 160;
+const START50_ANNUAL_FIRST_MONTH = 199;
+export const WEIGHT_PRICING = {
+  annual: "Free consultation and first month from $160 with code REFERLABS89, if you select a 12-month plan. $2,899 paid upfront.",
+  monthly: "Free consultation and first month from $260 with code REFERLABS89.",
+  publicOffer: "Hims' public offer on its own weight page is a first month from $199 with code START50 on a 12-month plan, $2,938 paid upfront.",
+  saving: `$${START50_ANNUAL_FIRST_MONTH - REFERLABS_ANNUAL_FIRST_MONTH} less than Hims' public START50 offer on the 12-month plan, plus a free consultation.`,
+  source: "Pricing supplied by Hims, 9 October 2026; public offer read on hims.com.au/weight-loss, 9 October 2026. View the latest pricing on Hims' own site.",
+};
+// PRICING:END
+
+/** What each code is called on the page. Only ED's is confirmed exclusive in writing (Hims, 9 Oct 2026). */
+export const CODE_LABEL: Record<Vertical, string> = {
+  weight: "Your Refer Labs code for new Hims patients",
+  hair: "Your Refer Labs code for new Hims patients",
+  ed: "Exclusive Refer Labs code for new Hims patients",
+};
+
 export const OFFER_NOTES: Partial<Record<Vertical, string>> = {
   hair: "180-day money-back guarantee on select hair plans, under Hims' terms.",
   ed: "REFERLABS is exclusive to Refer Labs: Hims has no public ED code (Hims, 9 October 2026).",

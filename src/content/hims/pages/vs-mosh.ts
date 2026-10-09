@@ -107,7 +107,7 @@ export const vsMosh: HimsPageContent = {
       items: [
         {
           q: "How do Mosh and Pilot differ now that Pilot is Hims?",
-          a: `Pilot is now Hims: Hims says Pilot rebranded as Hims on 1 September 2026 (Hims, ${HIMS_SUPPLIED_ON}), after Hims & Hers Health completed its purchase of Eucalyptus, Pilot's owner, on 2 June 2026. So the live comparison is Hims and Mosh. Hims consults by phone, with unlimited practitioner check-ins and a 24/7 Care Team; Mosh consults by call, text or video and publishes its prices first.`,
+          a: `Pilot is now Hims: Pilot rebranded as Hims on 1 September 2026 (confirmed by Hims in writing, ${HIMS_SUPPLIED_ON}), after Hims & Hers Health completed its purchase of Eucalyptus, Pilot's owner, on 2 June 2026. So the live comparison is Hims and Mosh. Hims consults by phone, with unlimited practitioner check-ins and a 24/7 Care Team; Mosh consults by call, text or video and publishes its prices first.`,
         },
         {
           q: "Who owns Hims and who owns Mosh?",

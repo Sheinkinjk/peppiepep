@@ -76,7 +76,13 @@ const wordRe = (t, flags) => new RegExp(`(?<![A-Za-z0-9])${esc(t)}(?![A-Za-z0-9]
 const errors = [];
 
 function scanText(file, text, { competitors }) {
+  // Hims-supplied weight pricing lives between PRICING markers in config.ts and is
+  // gated behind PRICING_LEGAL_CLEARED (9 Oct 2026). Dollar figures are allowed there
+  // only; every other rule still applies.
+  let inPricing = false;
   text.split("\n").forEach((rawLine, i) => {
+    if (rawLine.includes("// PRICING:START")) inPricing = true;
+    if (rawLine.includes("// PRICING:END")) inPricing = false;
     // Skip comments, imports and Tailwind class strings.
     const trimmed = rawLine.trim();
     if (trimmed.startsWith("//") || trimmed.startsWith("*") || trimmed.startsWith("import ") || trimmed.includes("application/ld+json")) return;
@@ -87,7 +93,7 @@ function scanText(file, text, { competitors }) {
     for (const t of BANNED_CASE_SENSITIVE) if (wordRe(t, "").test(line)) errors.push(`${file}:${i + 1}  banned term "${t}"`);
     if (/\d\s?%/.test(line)) errors.push(`${file}:${i + 1}  percentage (outcome statistic?)`);
     // No partner prices on these pages (Jarred, 29 Sep 2026): readers see prices on the provider's site.
-    if (/\$\s?\d/.test(line)) errors.push(`${file}:${i + 1}  dollar figure (partner prices are not printed on Hims pages)`);
+    if (!inPricing && /\$\s?\d/.test(line)) errors.push(`${file}:${i + 1}  dollar figure (partner prices are not printed on Hims pages)`);
     if (competitors) for (const c of COMPETITORS) if (wordRe(c, "i").test(line)) errors.push(`${file}:${i + 1}  competitor "${c}" on a single-brand review page`);
   });
 }

@@ -12,13 +12,13 @@ export const ed: HimsPageContent = {
   vertical: "ed",
   kind: "review",
   modified: "2026-10-09",
-  seoTitle: "Hims ED Australia (formerly Pilot): Free Consultation Code",
+  seoTitle: "Hims ED (ex-Pilot): Exclusive Free Consult Code REFERLABS",
   metaDescription:
-    "Hims ED, formerly Pilot: a private quiz, then a phone call with an Australian practitioner, 7am to 11pm AEST. No lock-in contract. A free consultation with REFERLABS, exclusive to Refer Labs.",
+    "Hims ED, formerly Pilot: a private quiz, a phone consultation from 7am to 11pm AEST, no lock-in contract, and a free consultation with REFERLABS, exclusive to us.",
   eyebrow: "Men's sexual health telehealth · Australia",
   h1: "Hims ED in Australia: a private phone consultation with no lock-in contract",
   standfirst:
-    "Hims runs private online consultations for erectile dysfunction in Australia, as well as weight loss and hair loss. It belongs to US-listed Hims & Hers Health, which bought Pilot's owner, Eucalyptus, on 2 June 2026, and Hims says Pilot rebranded as Hims on 1 September 2026. You answer a free two-minute quiz in private, then speak by phone to an Australian practitioner, who decides whether a plan is right for you. Consultations run from 7am to 11pm AEST, seven days, and there are no lock-in contracts. ED prices are shown after the consultation.",
+    "Hims, formerly Pilot, runs private online consultations for erectile dysfunction in Australia. You answer a free two-minute quiz in private, then speak by phone to an Australian practitioner, who decides whether a plan is right for you. Consultations run from 7am to 11pm AEST, seven days, there are no lock-in contracts, and prices are shown after the consultation.",
   standfirstOffer: "REFERLABS, exclusive to Refer Labs, gives new patients a free consultation.",
   hub: { label: "Men's health", href: "/mens-health" },
   verdictQuestion: "What is it like to use Hims for ED?",
@@ -70,14 +70,14 @@ export const ed: HimsPageContent = {
       items: [
         {
           q: "Is there a Hims discount code for ED?",
-          a: `Yes. ${OFFERS.ed.code} is exclusive to Refer Labs: Hims told us it has no public ED code (Hims, ${HIMS_SUPPLIED_ON}). It gives new patients a free consultation with an Australian practitioner, and our link applies it automatically. One use per patient. Read ${FACTS_CHECKED_ON}.`,
+          a: `Yes. ${OFFERS.ed.code} is exclusive to Refer Labs: Hims has confirmed in writing that it has no public ED code (${HIMS_SUPPLIED_ON}). It gives new patients a free consultation with an Australian practitioner, and our link applies it automatically. One use per patient. Read ${FACTS_CHECKED_ON}.`,
         },
         { q: "How much does Hims ED cost in Australia?", a: "ED plan prices aren't on Hims' ED page; the practitioner covers cost on the consultation, before you order anything." },
         { q: "Is the Hims ED consultation private?", a: "The quiz is online and the consultation is a phone call, so there is no clinic visit and no video. Hims' practitioners are AHPRA-registered and based in Australia." },
         { q: "Can I cancel Hims ED?", a: "Yes. Hims says you can pause or cancel at any time and it has no lock-in contracts." },
         {
           q: "Is Hims ED the same as Pilot?",
-          a: `Yes. Pilot is now Hims: Hims says Pilot rebranded as Hims on 1 September 2026 (Hims, ${HIMS_SUPPLIED_ON}). Its owner, Eucalyptus, became part of Hims & Hers Health on 2 June 2026, and pilot.com.au sends new patients to the Hims quiz.`,
+          a: `Yes. Pilot is now Hims: Pilot rebranded as Hims on 1 September 2026 (confirmed by Hims in writing, ${HIMS_SUPPLIED_ON}). Its owner, Eucalyptus, became part of Hims & Hers Health on 2 June 2026, and pilot.com.au sends new patients to the Hims quiz.`,
         },
         { q: "Can I claim Hims ED on Medicare?", a: "No. According to Hims' FAQ, none of its plans currently attracts a Medicare benefit." },
       ],

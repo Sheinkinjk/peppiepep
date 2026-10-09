@@ -10,13 +10,13 @@ export const hair: HimsPageContent = {
   vertical: "hair",
   kind: "review",
   modified: "2026-10-09",
-  seoTitle: "Hims Hair Loss Australia (formerly Pilot): 180-Day Guarantee and Code",
+  seoTitle: "Hims Hair Loss (ex-Pilot): Free Consult Code REFERLABS",
   metaDescription:
-    "Pilot's hair loss service is now Hims: a phone consultation, a 180-day money-back guarantee on select hair plans, fee-free cancelling, and a free consultation with REFERLABS.",
+    "Pilot's hair service is now Hims: a phone consultation, a 180-day money-back guarantee on select plans, and a free consultation with code REFERLABS.",
   eyebrow: "Men's hair loss telehealth · Australia",
   h1: "Hims hair loss in Australia, with a 180-day money-back guarantee",
   standfirst:
-    "Hims hair loss is an online service from Hims, the Australian arm of US-listed Hims & Hers Health. Pilot is now Hims: Hims & Hers completed its purchase of Pilot's owner, Eucalyptus, on 2 June 2026, and Hims says Pilot rebranded as Hims on 1 September 2026. Hims also covers weight loss and sexual health. You start with a free two-minute quiz and a phone consultation with an Australian practitioner, who decides whether a hair plan is right for you. Select hair plans carry a 180-day money-back guarantee under Hims' terms, and you can cancel without a fee before any order is processed. Prices appear after the consultation.",
+    "Hims, formerly Pilot, runs online hair loss consultations for men in Australia. You take a free two-minute quiz, then talk by phone to an Australian practitioner, who decides whether a hair plan is right for you. Select hair plans carry a 180-day money-back guarantee under Hims' terms, you can cancel without a fee before any order is processed, and prices appear after the consultation.",
   standfirstOffer: "New patients get a free consultation with the Refer Labs code REFERLABS.",
   hub: { label: "Hair loss", href: "/hair-loss" },
   verdictQuestion: "What happens if a Hims hair plan isn't for you?",
@@ -104,7 +104,7 @@ export const hair: HimsPageContent = {
         { q: "How often am I charged for a Hims hair plan?", a: "Hims hair plans run as a subscription, with an order every two or three months depending on the plan." },
         {
           q: "Is Hims hair loss the same as Pilot hair loss?",
-          a: `Yes. Pilot is now Hims: Hims says Pilot rebranded as Hims on 1 September 2026 (Hims, ${HIMS_SUPPLIED_ON}), after Hims & Hers Health bought Pilot's owner, Eucalyptus, on 2 June 2026. Signing up on pilot.com.au leads to the Hims quiz. Former Pilot patients count as previous patients for new-patient offers.`,
+          a: `Yes. Pilot is now Hims: Pilot rebranded as Hims on 1 September 2026 (confirmed by Hims in writing, ${HIMS_SUPPLIED_ON}), after Hims & Hers Health bought Pilot's owner, Eucalyptus, on 2 June 2026. Signing up on pilot.com.au leads to the Hims quiz. Former Pilot patients count as previous patients for new-patient offers.`,
         },
       ],
     },

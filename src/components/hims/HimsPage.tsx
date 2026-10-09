@@ -10,10 +10,13 @@ import {
   DISCLOSURE,
   DISCLOSURE_REVIEW_NOTE,
   FACTS_CHECKED_ON,
+  CODE_LABEL,
   MOSH,
   OFFER_NOTES,
   OFFERS,
+  PRICING_LEGAL_CLEARED,
   SITE_URL,
+  WEIGHT_PRICING,
 } from "@/content/hims/config";
 import { SCHEMA_AUTHOR, SCHEMA_PUBLISHER } from "@/lib/seo";
 import StickyCta from "@/components/consumer/StickyCta";
@@ -256,7 +259,7 @@ export function HimsPage({ content, preview, linkPrefix }: { content: HimsPageCo
 
   const previewBanner = preview ? (
     <div role="status" className="sticky top-0 z-50 border-b border-[#E3C766] bg-[#FCEFC7] px-4 py-2 text-center text-sm text-[#4A3700]">
-      Draft V2 for Hims review, 9 October 2026. This page is not public and is not indexed. The one amber tag marks the disclosure wording, which needs Hims&rsquo; written approval.
+      Draft V2.1 for Hims review, 9 October 2026. This page is not public and is not indexed. Amber tags mark the disclosure wording and the weight pricing, which need written approval before launch.
     </div>
   ) : null;
 
@@ -445,8 +448,8 @@ export function HimsPage({ content, preview, linkPrefix }: { content: HimsPageCo
 
             <div className="mt-6 flex items-start gap-3 rounded-2xl border border-[#007a95]/30 bg-[#007a95]/[0.08] px-5 py-4">
               <Gift className="mt-0.5 h-5 w-5 shrink-0 text-[#007a95]" strokeWidth={1.9} aria-hidden />
-              <div>
-                <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#003647]">Refer Labs code for new Hims patients</p>
+              <div className="min-w-0">
+                <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#003647]">{CODE_LABEL[content.vertical]}</p>
                 <p className="mt-1 text-[15px] font-bold leading-snug text-[#14120f]">
                   {offer.headline}
                   <Flag show={preview && (offer.headlineIsPlaceholder || offer.codeIsPlaceholder)}>Offer and code to confirm</Flag>
@@ -454,9 +457,27 @@ export function HimsPage({ content, preview, linkPrefix }: { content: HimsPageCo
                 {OFFER_NOTES[content.vertical] ? (
                   <p className="mt-1 text-[13.5px] font-semibold leading-snug text-[#003647]">{OFFER_NOTES[content.vertical]}</p>
                 ) : null}
-                <p className="mt-1.5 text-[12px] font-medium text-[#56504a]">Read by Refer Labs, {FACTS_CHECKED_ON}</p>
+                <div className="mt-3">
+                  <CopyCode code={offer.code} />
+                </div>
+                <p className="mt-2 text-[12px] font-medium text-[#56504a]">Applied automatically by our link. Read by Refer Labs, {FACTS_CHECKED_ON}</p>
               </div>
             </div>
+
+            {content.vertical === "weight" && (preview || PRICING_LEGAL_CLEARED) ? (
+              <div data-hims-pricing className="mt-4 rounded-2xl border border-[#ded8cd] bg-white px-5 py-4">
+                <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#56504a]">What you pay with {offer.code}</p>
+                <ul className="mt-2 space-y-1.5 text-[14.5px] leading-snug text-[#14120f]">
+                  <li><span className="font-semibold">12-month plan:</span> {WEIGHT_PRICING.annual}</li>
+                  <li><span className="font-semibold">Monthly plan:</span> {WEIGHT_PRICING.monthly}</li>
+                </ul>
+                <p className="mt-2 text-[13.5px] font-semibold text-[#003647]">{WEIGHT_PRICING.saving}</p>
+                <p className="mt-1 text-[12px] leading-relaxed text-[#56504a]">{WEIGHT_PRICING.publicOffer} {WEIGHT_PRICING.source}</p>
+                <Flag show={preview && !PRICING_LEGAL_CLEARED}>
+                  For Hims&rsquo; legal team and Refer Labs&rsquo; lawyer to clear before launch (TGA guidance on listing prices)
+                </Flag>
+              </div>
+            ) : null}
 
             <div className="mt-7">
               <CtaLink href={offer.ctaHref} label={offer.ctaLabel} placeholder={offer.ctaIsPlaceholder} preview={preview} loc="hero" size="lg" />
@@ -542,7 +563,7 @@ export function HimsPage({ content, preview, linkPrefix }: { content: HimsPageCo
 
         <section aria-labelledby="next" className="mt-20 overflow-hidden rounded-3xl bg-[#14120f] px-7 py-12 text-center sm:px-12 sm:py-16">
           <h2 id="next" className="mx-auto max-w-xl text-3xl font-bold leading-tight text-white sm:text-4xl">
-            Start with the Hims {PROGRAM_LABEL[content.vertical]} quiz
+            Get your free Hims consultation with {offer.code}
           </h2>
           <p className="mx-auto mt-4 max-w-md text-[15px] leading-relaxed text-white/70">
             The quiz is free and takes about two minutes, and a registered practitioner then decides whether the program is right for
@@ -745,7 +766,7 @@ function BlockView({ block, ctx, kind }: { block: Block; ctx: Ctx; kind: "review
           <div className="flex items-start gap-3">
             <Gift className="mt-1 h-5 w-5 shrink-0 text-[#007a95]" strokeWidth={1.9} aria-hidden />
             <div className="min-w-0">
-              <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#003647]">Refer Labs code for new Hims patients</p>
+              <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#003647]">{CODE_LABEL[block.vertical]}</p>
               <p className="mt-1 text-lg font-bold text-[#14120f]">
                 {o.headline}
                 <Flag show={ctx.preview && o.headlineIsPlaceholder}>Offer to confirm</Flag>
