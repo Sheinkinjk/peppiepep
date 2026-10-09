@@ -97,7 +97,7 @@ export const INCLUSIONS: Record<InclusionsKey, InclusionsTableData> = {
       },
       {
         label: "Money-back",
-        hims: "Weight: 30 days. Hair: 180 days on select hair plans. Under Hims' terms",
+        hims: "Weight: 30 days. Hair: 180 days on select hair plans. T&Cs apply: hims.com.au/terms-and-conditions",
         mosh: "Weight (through Moshy): 30 days. Hair: 180 days on quarterly programs. Under each brand's terms",
       },
       { label: "Prices", hims: "Weight pricing on Hims' weight page; hair and sexual health after the consult", mosh: "Published on Mosh's pricing page" },
@@ -124,7 +124,7 @@ export const INCLUSIONS: Record<InclusionsKey, InclusionsTableData> = {
       },
       {
         label: "Money-back",
-        hims: "30-day money-back guarantee, under Hims' terms",
+        hims: "30-day money-back guarantee. T&Cs apply: hims.com.au/terms-and-conditions",
         mosh: "30-day money-back guarantee. Terms apply",
       },
       {
@@ -153,7 +153,7 @@ export const INCLUSIONS: Record<InclusionsKey, InclusionsTableData> = {
       { label: "Consult fee", hims: HIMS_CONSULT_FEE, mosh: MOSH_CONSULT_FEE },
       {
         label: "Money-back",
-        hims: "180-day money-back guarantee on select hair plans, under Hims' terms",
+        hims: "180-day money-back guarantee on select hair plans. T&Cs apply: hims.com.au/terms-and-conditions",
         mosh: "180-day money-back guarantee on quarterly hair programs. Terms apply",
       },
       {

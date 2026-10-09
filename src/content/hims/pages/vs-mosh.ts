@@ -53,7 +53,7 @@ export const vsMosh: HimsPageContent = {
       },
       {
         label: "Money-back scope",
-        hims: "180 days on select hair plans; 30 days on the weight program. Under Hims' terms.",
+        hims: "180 days on select hair plans; 30 days on the weight program. T&Cs apply: hims.com.au/terms-and-conditions.",
         mosh: "180 days on quarterly hair programs. Moshy: 30 days on weight programs. Under each brand's terms.",
       },
     ],
