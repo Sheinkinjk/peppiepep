@@ -256,7 +256,7 @@ export function HimsPage({ content, preview, linkPrefix }: { content: HimsPageCo
 
   const previewBanner = preview ? (
     <div role="status" className="sticky top-0 z-50 border-b border-[#E3C766] bg-[#FCEFC7] px-4 py-2 text-center text-sm text-[#4A3700]">
-      Draft V2 for Hims review, 9 October 2026. This page is not public and is not indexed. Amber tags mark the disclosure wording and the weight pricing, which need written approval before launch.
+      Draft V2 for Hims review, 9 October 2026. This page is not public and is not indexed. The amber tag marks the disclosure wording, which needs Hims&rsquo; written approval.
     </div>
   ) : null;
 
@@ -467,9 +467,6 @@ export function HimsPage({ content, preview, linkPrefix }: { content: HimsPageCo
                       <li><span className="font-semibold">Monthly plan.</span> {WEIGHT_PRICING.monthly}</li>
                     </ul>
                     <p className="mt-1.5 text-[12px] leading-relaxed text-[#56504a]">{WEIGHT_PRICING.source}</p>
-                    <Flag show={preview && !PRICING_LEGAL_CLEARED}>
-                      Pricing: for Hims&rsquo; legal team and Refer Labs&rsquo; lawyer to clear before launch
-                    </Flag>
                   </div>
                 ) : null}
                 {OFFER_NOTES[content.vertical] ? (

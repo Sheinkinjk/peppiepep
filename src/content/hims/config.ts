@@ -170,9 +170,9 @@ export const CODE_LABEL: Record<Vertical, string> = {
 };
 
 export const OFFER_NOTES: Partial<Record<Vertical, string>> = {
-  hair: "180-day money-back guarantee on select hair plans, under Hims' terms.",
+  hair: "180-day money-back guarantee on select hair plans. T&Cs apply: hims.com.au/terms-and-conditions",
   ed: "Exclusive to Refer Labs: Hims has no public ED code.",
-  weight: "30-day money-back guarantee on the weight program, under Hims' terms.",
+  weight: "30-day money-back guarantee on the weight program. T&Cs apply: hims.com.au/terms-and-conditions",
 };
 
 /**

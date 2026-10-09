@@ -66,7 +66,7 @@ export const vsMosh: HimsPageContent = {
         tab: "Hair loss",
         question: "How do Hims and Mosh differ on hair loss?",
         summary:
-          "Mosh lists hair prices on its pricing page; Hims shows its price after the phone consultation, before you pay. Each backs hair with a 180-day money-back guarantee, which Hims applies to select hair plans and Mosh to quarterly programs. Mosh's practitioners can be reached by text, call or video; Hims includes unlimited practitioner check-ins and a 24-hour Care Team. Each has a Refer Labs code for new patients.",
+          "Mosh lists hair prices on its pricing page; Hims shows its price after the phone consultation, before you pay. Each backs hair with a 180-day money-back guarantee, which Hims applies to select hair plans and Mosh to quarterly programs, under each brand's terms (T&Cs apply). Mosh's practitioners can be reached by text, call or video; Hims includes unlimited practitioner check-ins and a 24-hour Care Team. Each has a Refer Labs code for new patients.",
         rows: ["How you start", "Consult fee", "Money-back", "Support", "Stopping", "Prices", "Refer Labs code"],
         links: [
           { label: "Hims hair loss", href: "/hims-hair-loss" },

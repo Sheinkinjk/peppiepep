@@ -66,7 +66,7 @@ export const hair: HimsPageContent = {
       id: "guarantee",
       heading: "How does the Hims 180-day money-back guarantee work?",
       paragraphs: [
-        "Hims offers a 180-day money-back guarantee on select hair plans if you're not satisfied, claimed by emailing hello@hims.com.au within the first 180 days, under Hims' terms and conditions.",
+        "Hims offers a 180-day money-back guarantee on select hair plans if you're not satisfied, claimed by emailing hello@hims.com.au within the first 180 days. T&Cs apply: hims.com.au/terms-and-conditions.",
         "Cancelling is separate. You can cancel before any upcoming order is processed without a fee. The guarantee returns money already paid; cancelling stops future charges.",
       ],
     },

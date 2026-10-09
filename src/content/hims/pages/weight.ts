@@ -72,7 +72,7 @@ export const weight: HimsPageContent = {
       id: "ways-to-pay",
       heading: "What are the ways to pay for Hims weight loss?",
       paragraphs: [
-        "A monthly plan can be changed or cancelled at any time. A 12-month plan is paid upfront and gives the lowest price.",
+        "Choose a monthly plan you can change or cancel at any time, or a 12-month plan paid upfront for the lowest price. Both include a 30-day money-back guarantee under Hims' terms. T&Cs apply: hims.com.au/terms-and-conditions.",
         `Hims publishes the prices for both on hims.com.au/weight-loss and shows them again in your profile before you pay (read ${FACTS_CHECKED_ON}).`,
       ],
     },
@@ -86,7 +86,7 @@ export const weight: HimsPageContent = {
         { label: "Plan changes", value: "Ask to discuss an alternative plan and the Care Team books another practitioner appointment." },
         { label: "Nutrition", value: "Guidance on eating habits from the Care Team, without a set diet." },
         { label: "Community", value: "An optional online community." },
-        { label: "Money-back", value: "30-day money-back guarantee from the start of the program, claimed by emailing hello@hims.com.au, under Hims' terms." },
+        { label: "Money-back", value: "30-day money-back guarantee from the start of the program, claimed by emailing hello@hims.com.au. T&Cs apply: hims.com.au/terms-and-conditions." },
       ],
     },
     {
@@ -95,7 +95,7 @@ export const weight: HimsPageContent = {
       heading: "Is Hims the same as Pilot?",
       paragraphs: [
         `Yes. Pilot is now Hims: Pilot rebranded as Hims on 1 September 2026 (confirmed by Hims in writing, ${HIMS_SUPPLIED_ON}). Hims & Hers Health, the US-listed telehealth company, completed its acquisition of Eucalyptus, the Australian company behind Pilot, on 2 June 2026. pilot.com.au says Pilot has joined the Hims & Hers group, and clicking through from Pilot's site opens the Hims quiz (read ${FACTS_CHECKED_ON}).`,
-        "Pilot weight loss is now Hims weight loss, with the same phone consultation and the Care Team behind it.",
+        "Pilot weight loss is now Hims weight loss.",
       ],
     },
     {
